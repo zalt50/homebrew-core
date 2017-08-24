@@ -62,6 +62,7 @@ class Dovecot < Formula
       --with-pam
       --with-sqlite
       --without-icu
+      --with-solr
     ]
 
     system "./configure", *args, *std_configure_args
