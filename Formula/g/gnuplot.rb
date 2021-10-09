@@ -38,6 +38,7 @@ class Gnuplot < Formula
   depends_on "qt"
   depends_on "readline"
   depends_on "webp"
+  depends_on "libx11"
 
   on_macos do
     depends_on "gettext"
@@ -50,7 +51,6 @@ class Gnuplot < Formula
       --with-readline=#{Formula["readline"].opt_prefix}
       --disable-wxwidgets
       --with-qt
-      --without-x
       --without-latex
       LRELEASE=#{Formula["qt"].bin}/lrelease
       MOC=#{Formula["qt"].pkgshare}/libexec/moc
