@@ -50,6 +50,7 @@ class Gnuplot < Formula
   depends_on "qtsvg"
   depends_on "readline"
   depends_on "webp"
+  depends_on "libx11"
 
   on_macos do
     depends_on "gettext"
@@ -62,7 +63,6 @@ class Gnuplot < Formula
       --with-readline=#{formula_opt_prefix("readline")}
       --disable-wxwidgets
       --with-qt
-      --without-x
       --without-latex
     ]
 
