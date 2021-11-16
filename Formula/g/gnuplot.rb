@@ -48,7 +48,6 @@ class Gnuplot < Formula
   depends_on "qt5compat"
   depends_on "qtbase"
   depends_on "qtsvg"
-  depends_on "readline"
   depends_on "webp"
   depends_on "libx11"
 
@@ -60,7 +59,7 @@ class Gnuplot < Formula
   def install
     args = %W[
       --disable-silent-rules
-      --with-readline=#{formula_opt_prefix("readline")}
+      --with-readline=builtin
       --disable-wxwidgets
       --with-qt
       --without-latex
