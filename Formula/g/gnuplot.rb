@@ -36,7 +36,6 @@ class Gnuplot < Formula
   depends_on "lua"
   depends_on "pango"
   depends_on "qt"
-  depends_on "readline"
   depends_on "webp"
   depends_on "libx11"
 
@@ -48,7 +47,7 @@ class Gnuplot < Formula
   def install
     args = %W[
       --disable-silent-rules
-      --with-readline=#{Formula["readline"].opt_prefix}
+      --with-readline=builtin
       --disable-wxwidgets
       --with-qt
       --without-latex
