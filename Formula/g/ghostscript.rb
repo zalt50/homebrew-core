@@ -43,7 +43,7 @@ class Ghostscript < Formula
   depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "openjpeg"
-  depends_on "tesseract"
+  depends_on "libx11"
 
   uses_from_macos "expat"
   uses_from_macos "zlib"
@@ -68,8 +68,7 @@ class Ghostscript < Formula
     args = %w[--disable-compile-inits
               --disable-cups
               --disable-gtk
-              --with-system-libtiff
-              --without-x]
+              --with-system-libtiff]
 
     # Set the correct library install names so that `brew` doesn't need to fix them up later.
     ENV["DARWIN_LDFLAGS_SO_PREFIX"] = "#{opt_lib}/"
