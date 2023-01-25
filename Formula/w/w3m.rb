@@ -21,6 +21,7 @@ class W3m < Formula
   depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "openssl@3"
+  depends_on "libsixel"
 
   uses_from_macos "ncurses"
 
@@ -33,7 +34,7 @@ class W3m < Formula
   end
 
   def install
-    system "./configure", "--disable-image",
+    system "./configure", "--enable-image",
                           "--with-ssl=#{formula_opt_prefix("openssl@3")}",
                           *std_configure_args
     system "make", "install"
