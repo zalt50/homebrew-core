@@ -8,9 +8,21 @@ class Tklib < Formula
 
   depends_on "tcl-tk"
 
+  TCLSH_PATH = "#{Formula["tcl-tk"].opt_bin}/tclsh"
+
   def install
     system "./configure", "--prefix=#{prefix}",
-                          "--with-tclsh=#{Formula["tcl-tk"].opt_bin}/tclsh"
+                          "--with-tclsh=#{TCLSH_PATH}"
     system "make", "install-libraries"
+  end
+
+  test do
+    assert_nil pipe_output(TCLSH_PATH, <<~TCL
+      if {[catch {package require Plotchart} errorMsg]} {
+        puts $errorMsg
+      }
+      exit
+    TCL
+    ).chomp!
   end
 end
