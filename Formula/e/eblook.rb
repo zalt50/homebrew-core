@@ -16,4 +16,8 @@ class Eblook < Formula
                           "--with-ebu-conf=#{etc}/ebu.conf"
     system "make install"
   end
+
+  test do
+    system "#{bin}/eblook", "--version"
+  end
 end

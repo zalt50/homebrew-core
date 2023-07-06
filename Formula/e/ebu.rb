@@ -12,4 +12,8 @@ class Ebu < Formula
                           "--prefix=#{prefix}"
     system "make install"
   end
+
+  test do
+    system "#{bin}/ebuunzip", "--version"
+  end
 end
