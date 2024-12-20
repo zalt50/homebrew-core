@@ -5,10 +5,11 @@ class Tklib < Formula
   version "0.7"
   sha256 "5a1283a1056350c7cb89fba4af1e83ed2dbfc2e310c5303013faae0b563e5ece"
   license "TCL"
+  revision 1
 
-  depends_on "tcl-tk"
+  depends_on "tcl-tk@8"
 
-  TCLSH_PATH = "#{Formula["tcl-tk"].opt_bin}/tclsh"
+  TCLSH_PATH = "#{Formula["tcl-tk@8"].opt_bin}/tclsh"
 
   def install
     system "./configure", "--prefix=#{prefix}",
