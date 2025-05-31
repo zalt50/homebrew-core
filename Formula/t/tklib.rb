@@ -1,11 +1,10 @@
 class Tklib < Formula
-  desc "A collection of utility modules for Tk, and a companion to Tcllib"
+  desc "Standard Tk Library (tklib)"
   homepage "http://www.tcl.tk/software/tklib/"
-  url "https://core.tcl-lang.org/tklib/attachdownload/tklib-0.7.tar.bz2?page=Downloads&file=tklib-0.7.tar.bz2"
-  version "0.7"
-  sha256 "5a1283a1056350c7cb89fba4af1e83ed2dbfc2e310c5303013faae0b563e5ece"
+  url "https://core.tcl-lang.org/tklib/raw/tklib-0.9.tar.bz2?name=17f1d6d5fdad54ee"
+  version "0.9"
+  sha256 "dcce6ad0270fad87afe3dd915fb1387f25728451de8a6d1ef6b8240180819c2a"
   license "TCL"
-  revision 1
 
   depends_on "tcl-tk@8"
 
