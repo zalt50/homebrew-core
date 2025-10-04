@@ -1,11 +1,21 @@
 class CeresSolver < Formula
   desc "C++ library for large-scale optimization"
   homepage "http://ceres-solver.org/"
-  url "http://ceres-solver.org/ceres-solver-2.2.0.tar.gz"
-  sha256 "48b2302a7986ece172898477c3bcd6deb8fb5cf19b3327bc49969aad4cede82d"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://ceres-solver.googlesource.com/ceres-solver.git", branch: "master"
+
+  stable do
+    url "http://ceres-solver.org/ceres-solver-2.2.0.tar.gz"
+    sha256 "48b2302a7986ece172898477c3bcd6deb8fb5cf19b3327bc49969aad4cede82d"
+
+    # Backport support for eigen 5.0.0
+    patch :DATA # https://github.com/ceres-solver/ceres-solver/commit/f0720aeb84ec7bb479fe3618b30fa54981baf8fd
+    patch do
+      url "https://github.com/ceres-solver/ceres-solver/commit/f9b7b6651b108136a16df44d91fb31735645f5a7.patch?full_index=1"
+      sha256 "019006cc850b19b442e108118c599c98b18af8eb06ab37c22e6698c55d55a512"
+    end
+  end
 
   livecheck do
     url "http://ceres-solver.org/installation.html"
@@ -58,3 +68,28 @@ class CeresSolver < Formula
     assert_match "CONVERGENCE", shell_output("./build/helloworld")
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f53e9981b..af932c6a7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -234,17 +234,9 @@ unset(CERES_COMPILE_OPTIONS)
+ 
+ # Eigen.
+ # Eigen delivers Eigen3Config.cmake since v3.3.3
+-find_package(Eigen3 3.3 REQUIRED)
++find_package(Eigen3 3.3.4 REQUIRED NO_MODULE)
+ if (Eigen3_FOUND)
+   message("-- Found Eigen version ${Eigen3_VERSION}: ${Eigen3_DIR}")
+-  if (CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64.*|AARCH64.*)" AND
+-      Eigen3_VERSION VERSION_LESS 3.3.4)
+-    # As per issue #289: https://github.com/ceres-solver/ceres-solver/issues/289
+-    # the bundle_adjustment_test will fail for Eigen < 3.3.4 on aarch64.
+-    message(FATAL_ERROR "-- Ceres requires Eigen version >= 3.3.4 on aarch64. "
+-      "Detected version of Eigen is: ${Eigen3_VERSION}.")
+-  endif()
+-
+   if (EIGENSPARSE)
+     message("-- Enabling use of Eigen as a sparse linear algebra library.")
+     list(APPEND CERES_COMPILE_OPTIONS CERES_USE_EIGEN_SPARSE)
