@@ -4,6 +4,7 @@ class Alpscore < Formula
   url "https://github.com/ALPSCore/ALPSCore/archive/refs/tags/v2.3.2.tar.gz"
   sha256 "bd9b5af0a33acc825ffedfaa0bf794a420ab2b9b50f6a4e634ecbde43ae9cc24"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
     rebuild 1
@@ -29,9 +30,14 @@ class Alpscore < Formula
 
   # Apply open PR to support Eigen 5.0.0
   # PR ref: https://github.com/ALPSCore/ALPSCore/pull/651
+  # PR ref: https://github.com/ALPSCore/ALPSCore/pull/656
   patch do
-    url "https://github.com/ALPSCore/ALPSCore/commit/0a7952abb3570e48d04d435d7d9d16ecbd06fb2a.patch?full_index=1"
-    sha256 "f007f65367528149ce5c4ad871aea600bbe05dd374c100588d577a07e3a05818"
+    url "https://github.com/ALPSCore/ALPSCore/commit/b2e21ce65b323196f04490c362694f0c30f8cdde.patch?full_index=1"
+    sha256 "8f237373e7a945126e5a1b88d8707ea2d67a263369134d6302205646f35af4e5"
+  end
+  patch do
+    url "https://github.com/ALPSCore/ALPSCore/commit/98a707d2bef2520df1fccfaf132c94ca7c909bb6.patch?full_index=1"
+    sha256 "ad13d526ccbc7f7c90c1bf2895e7bc0143ad8630729d616d391e86d04ffaecd9"
   end
 
   def install
