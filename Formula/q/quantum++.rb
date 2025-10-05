@@ -4,6 +4,7 @@ class Quantumxx < Formula
   url "https://github.com/softwareQinc/qpp/archive/refs/tags/v6.0.tar.gz"
   sha256 "cdd6acf287b2f2dd124120ef2aba85660eee9482f5484dbd229c93b53a7d8a54"
   license "MIT"
+  revision 1
   head "https://github.com/softwareQinc/qpp.git", branch: "main"
 
   bottle do
@@ -14,6 +15,13 @@ class Quantumxx < Formula
   depends_on "googletest" => :build
   depends_on "eigen"
   depends_on "pybind11"
+
+  # Apply open PR to support eigen 5.0.0
+  # PR ref: https://github.com/softwareQinc/qpp/pull/192
+  patch do
+    url "https://github.com/softwareQinc/qpp/commit/dfe131d87ee304f7ceff5f346825874db3a7b7ed.patch?full_index=1"
+    sha256 "6cda6778e4799e9135b20330a506315de2e41dc6fe2775d07f00606750310a4c"
+  end
 
   def install
     args = %w[
