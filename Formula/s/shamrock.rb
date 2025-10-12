@@ -27,14 +27,14 @@ class Shamrock < Formula
   depends_on "adaptivecpp"
   depends_on "boost"
   depends_on "open-mpi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "libomp"
   end
 
   def python
-    which("python3.13")
+    which("python3.14")
   end
 
   def site_packages(python)
@@ -83,6 +83,6 @@ class Shamrock < Formula
       shamrock.sys.init('0:0')
       shamrock.sys.close()
     PY
-    system "python3.13", testpath/"test.py"
+    system python, testpath/"test.py"
   end
 end
