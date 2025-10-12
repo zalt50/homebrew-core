@@ -28,9 +28,13 @@ class Retdec < Formula
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "zlib"
+
+  on_sequoia do
+    depends_on xcode: ["16.4", :build]
+  end
 
   def install
     # Workaround for CMake 4 compatibility with multiple vendored deps
