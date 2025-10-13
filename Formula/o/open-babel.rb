@@ -38,18 +38,21 @@ class OpenBabel < Formula
   depends_on "cairo"
   depends_on "eigen"
   depends_on "inchi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   conflicts_with "surelog", because: "both install `roundtrip` binaries"
 
   def install
+    # Fix to error: ‘clock’ was not declared in this scope on Linux
+    inreplace "include/openbabel/obutil.h", "#include <math.h>", "#include <ctime>\n\\0"
+
     args = %W[
       -DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}/inchi
       -DOPENBABEL_USE_SYSTEM_INCHI=ON
