@@ -1,26 +1,11 @@
 class Bsc < Formula
   desc "Bluespec Compiler (BSC)"
   homepage "https://github.com/B-Lang-org/bsc"
+  url "https://github.com/B-Lang-org/bsc.git",
+      tag:      "2025.07",
+      revision: "282e82e95da4b8cdedc3af3431a45cc1c630c291"
   license "BSD-3-Clause"
   head "https://github.com/B-Lang-org/bsc.git", branch: "main"
-
-  stable do
-    url "https://github.com/B-Lang-org/bsc.git",
-        tag:      "2025.01.1",
-        revision: "65e3a87a17f6b9cf38cbb7b6ad7a4473f025c098"
-
-    # Backport support for TCL 9
-    patch do
-      url "https://github.com/B-Lang-org/bsc/commit/8dbe999224a5d7d644e11274e696ea3536026683.patch?full_index=1"
-      sha256 "2a17f251216fbf874804ff7664ffd863767969f9b7a7cfe6858b322b1acc027e"
-    end
-    patch do
-      url "https://github.com/B-Lang-org/bsc/commit/36da7029be8ae11e8889db9a312f514663e44b96.patch?full_index=1"
-      sha256 "ba76094403b68d16c47ee4fae124dec4cb2664e4391dc37a06082bde1a23bf72"
-    end
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
