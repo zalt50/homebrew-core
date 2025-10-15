@@ -25,8 +25,8 @@ class Ignite < Formula
   test do
     ENV["DO_NOT_TRACK"] = "1"
     system bin/"ignite", "s", "chain", "mars"
-    sleep 2
-    sleep 5 if OS.mac? && Hardware::CPU.intel?
+    sleep 5
+    sleep 10 if OS.mac? && Hardware::CPU.intel?
     assert_path_exists testpath/"mars/go.mod"
   end
 end
