@@ -4,6 +4,7 @@ class Promptfoo < Formula
   url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.1.tgz"
   sha256 "98f704ac89357f942683226c7b02dae1ece35ce79f0fc0fc705263fb45c0352d"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "75b2ae623b096ebf5f2166d563010763e3d8d238c4e4a12189e90c0400a0162e"
@@ -14,7 +15,7 @@ class Promptfoo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "90541936fec61fe73e05372bbf3f9b73c65583e68516710fd49a88653a9b0172"
   end
 
-  depends_on "node"
+  depends_on "node@24"
 
   def install
     system "npm", "install", *std_npm_args
