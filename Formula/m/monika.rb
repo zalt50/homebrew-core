@@ -4,7 +4,7 @@ class Monika < Formula
   url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.22.0.tgz"
   sha256 "2b2ed6ac3186d72a9f060efb62d183c4b156494b2c37de9808c108f54655b84c"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256                               arm64_tahoe:   "5478609522829f4c4158e9eb9be476ed2886176e47f64da4fc6eff2c5db425cb"
@@ -17,7 +17,7 @@ class Monika < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e525f7478ff11969327f3a1a65e22bb296716c68a3ef064196029f816e19e4c"
   end
 
-  depends_on "node"
+  depends_on "node@24"
 
   on_linux do
     # Workaround for old `node-gyp` that needs distutils.
