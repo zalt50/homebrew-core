@@ -1,8 +1,8 @@
 class Sngrep < Formula
   desc "Command-line tool for displaying SIP calls message flows"
   homepage "https://github.com/irontec/sngrep"
-  url "https://github.com/irontec/sngrep/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "1cd05bddd531b353e3069c5243e7076b60a3ee907dbbc3c9c2834676ed8c4bac"
+  url "https://github.com/irontec/sngrep/releases/download/v1.8.3/sngrep-1.8.3.tar.gz"
+  sha256 "794224f4cd08978a6115a767e9945f756fdf7cbc7c1a34eabca293e0293b21b8"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
@@ -20,18 +20,27 @@ class Sngrep < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "pkgconf" => :build
+
   depends_on "ncurses"
   depends_on "openssl@3"
 
   uses_from_macos "libpcap"
 
+  on_linux do
+    depends_on "libgcrypt"
+  end
+
   def install
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw" if OS.linux?
 
     system "./bootstrap.sh"
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--with-openssl"
+    system "./configure", "--disable-silent-rules",
+                          "--with-openssl",
+                          *std_configure_args
     system "make", "install"
   end
 
