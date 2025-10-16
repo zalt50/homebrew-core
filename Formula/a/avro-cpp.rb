@@ -1,11 +1,10 @@
 class AvroCpp < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.12.0/cpp/avro-cpp-1.12.0.tar.gz"
-  mirror "https://archive.apache.org/dist/avro/avro-1.12.0/cpp/avro-cpp-1.12.0.tar.gz"
-  sha256 "f2edf77126a75b0ec1ad166772be058351cea3d74448be7e2cef20050c0f98ab"
+  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.12.1/cpp/avro-cpp-1.12.1.tar.gz"
+  mirror "https://archive.apache.org/dist/avro/avro-1.12.1/cpp/avro-cpp-1.12.1.tar.gz"
+  sha256 "18a0d155905a4dab0c2bfd66c742358a7d969bcff58cf6f655bcf602879f4fe7"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "6704d6e89acb0c747ea276845a9931aba6be8ccb0555ea7333f6fd871d33ef74"
@@ -22,14 +21,28 @@ class AvroCpp < Formula
   depends_on "fmt" => [:build, :test] # needed for headers
   depends_on "pkgconf" => :build
   depends_on "boost"
+  depends_on "zstd"
 
-  # Fix compatibility with `fmt` 11, https://github.com/apache/avro/pull/3444
-  # Fix to use system installed `fmt`, https://github.com/apache/avro/pull/3447
-  # Both patches are not applicable to the source splitted tarball
-  # Also add workaround for Boost 1.89.0 until next release that drops Boost dep
-  patch :DATA
+  uses_from_macos "zlib"
+
+  # Add missing cmake file from git
+  resource "avro-cpp-config.cmake.in" do
+    url "https://github.com/apache/avro/raw/refs/tags/release-1.12.1/lang/c++/cmake/avro-cpp-config.cmake.in"
+    sha256 "2f100bed5a5ec300bc16e618ef17c64056c165a3dba8dde590a3ef65352440fa"
+  end
 
   def install
+    (buildpath/"cmake").install resource("avro-cpp-config.cmake.in")
+
+    # Boost 1.89+ no longer requires the 'system' component
+    boost_replacements = /Boost\s1.70\sREQUIRED\s(CONFIG\s)?COMPONENTS\s?system/
+    inreplace "CMakeLists.txt" do |s|
+      s.gsub! boost_replacements, "Boost REQUIRED"
+      s.gsub! "$<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::system>>", ""
+      s.gsub! "Boost::system ZLIB::ZLIB", "$<TARGET_NAME_IF_EXISTS:Boost::system> ZLIB::ZLIB"
+    end
+    inreplace "cmake/avro-cpp-config.cmake.in", boost_replacements, "Boost REQUIRED"
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -57,71 +70,7 @@ class AvroCpp < Formula
     CPP
 
     system bin/"avrogencpp", "-i", "cpx.json", "-o", "cpx.hh", "-n", "cpx"
-    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test"
     system "./test"
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 19059a4..afdfdf5 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -80,17 +80,20 @@ endif ()
- 
- 
- find_package (Boost 1.38 REQUIRED
--    COMPONENTS filesystem iostreams program_options regex system)
--
--include(FetchContent)
--FetchContent_Declare(
--        fmt
--        GIT_REPOSITORY  https://github.com/fmtlib/fmt.git
--        GIT_TAG         10.2.1
--        GIT_PROGRESS    TRUE
--        USES_TERMINAL_DOWNLOAD TRUE
--)
--FetchContent_MakeAvailable(fmt)
-+    COMPONENTS filesystem iostreams program_options regex)
-+
-+find_package(fmt)
-+if (NOT fmt_FOUND)
-+    include(FetchContent)
-+    FetchContent_Declare(
-+            fmt
-+            GIT_REPOSITORY  https://github.com/fmtlib/fmt.git
-+            GIT_TAG         10.2.1
-+            GIT_PROGRESS    TRUE
-+            USES_TERMINAL_DOWNLOAD TRUE
-+    )
-+    FetchContent_MakeAvailable(fmt)
-+endif (NOT fmt_FOUND)
- 
- find_package(Snappy)
- if (SNAPPY_FOUND)
-diff --git a/include/avro/Node.hh b/include/avro/Node.hh
-index f76078b..7226d05 100644
---- a/include/avro/Node.hh
-+++ b/include/avro/Node.hh
-@@ -219,7 +219,7 @@ inline std::ostream &operator<<(std::ostream &os, const avro::Node &n) {
- template<>
- struct fmt::formatter<avro::Name> : fmt::formatter<std::string> {
-     template<typename FormatContext>
--    auto format(const avro::Name &n, FormatContext &ctx) {
-+    auto format(const avro::Name &n, FormatContext &ctx) const {
-         return fmt::formatter<std::string>::format(n.fullname(), ctx);
-     }
- };
-diff --git a/include/avro/Types.hh b/include/avro/Types.hh
-index 84a3397..c0533f3 100644
---- a/include/avro/Types.hh
-+++ b/include/avro/Types.hh
-@@ -113,7 +113,7 @@ std::ostream &operator<<(std::ostream &os, const Null &null);
- template<>
- struct fmt::formatter<avro::Type> : fmt::formatter<std::string> {
-     template<typename FormatContext>
--    auto format(avro::Type t, FormatContext &ctx) {
-+    auto format(avro::Type t, FormatContext &ctx) const {
-         return fmt::formatter<std::string>::format(avro::toString(t), ctx);
-     }
- };
