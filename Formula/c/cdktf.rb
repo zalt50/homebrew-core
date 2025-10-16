@@ -4,6 +4,7 @@ class Cdktf < Formula
   url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.21.0.tgz"
   sha256 "5885318063a55b44f87c917fe5806379937f7aecad5fe766bc898a1519de56b6"
   license "MPL-2.0"
+  revision 1
 
   bottle do
     sha256                               arm64_tahoe:   "28174502467ef3850dba6242ce170cba93e634ddbf84ed8a5bc63255ae58f8a3"
@@ -17,11 +18,11 @@ class Cdktf < Formula
   end
 
   depends_on "opentofu" => :test
-  depends_on "node"
+  depends_on "node@24"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    (bin/"cdktf").write_env_script libexec/"bin/cdktf", PATH: "#{Formula["node@24"].opt_bin}:${PATH}"
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase
@@ -39,7 +40,7 @@ class Cdktf < Formula
     ENV["TERRAFORM_BINARY_NAME"] = "tofu"
 
     touch "unwanted-file"
-    output = shell_output("#{bin}/cdktf init --template='python' 2>&1", 1)
+    output = shell_output("#{bin}/cdktf init --template=python 2>&1", 1)
     assert_match "ERROR: Cannot initialize a project in a non-empty directory", output
   end
 end
