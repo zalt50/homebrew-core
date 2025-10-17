@@ -3,8 +3,8 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/44/3f/2d3e16e38372a18901f85c9b83a6559b37c7457b4e7135adfc8a3078efaf/jiratui-1.2.0.tar.gz"
-  sha256 "8fd40b4791add03b44cf37bc7c78ea2e9c522a74c51e10e761475fc310deaca9"
+  url "https://files.pythonhosted.org/packages/5e/dc/989857eb87e3c87f4a692df4830b90e23a26b995796c04dae0b2f36e5c5d/jiratui-1.3.0.tar.gz"
+  sha256 "cec178d2b645683e7b3d9b8a12470316d34fe91f32701224e6c5e8c9f81fa673"
   license "MIT"
 
   no_autobump! because: "has non-PyPI resources"
@@ -22,7 +22,9 @@ class Jiratui < Formula
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
+  depends_on "libmagic"
   depends_on "libyaml"
+  depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
 
   # `tree-sitter-*` sdists are missing C headers and therefore we have to use GitHub sources
@@ -49,6 +51,16 @@ class Jiratui < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
     sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+  end
+
+  resource "gitdb" do
+    url "https://files.pythonhosted.org/packages/72/94/63b0fc47eb32792c7ba1fe1b694daec9a63620db1e313033d18140c2320a/gitdb-4.0.12.tar.gz"
+    sha256 "5ef71f855d191a3326fcfbc0d5da835f26b13fbcba60c32c21091c349ffdb571"
+  end
+
+  resource "gitpython" do
+    url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
+    sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
   resource "h11" do
@@ -97,8 +109,8 @@ class Jiratui < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
@@ -131,6 +143,11 @@ class Jiratui < Formula
     sha256 "f58e68eb46e1faed27e0f574a55a0455eecd7b8a5b88b85a784519ba3cff047f"
   end
 
+  resource "python-magic" do
+    url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
+    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
+  end
+
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -146,6 +163,11 @@ class Jiratui < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
+  resource "smmap" do
+    url "https://files.pythonhosted.org/packages/44/cd/a040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3b/smmap-5.0.2.tar.gz"
+    sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
+  end
+
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
@@ -154,6 +176,11 @@ class Jiratui < Formula
   resource "textual" do
     url "https://files.pythonhosted.org/packages/ff/51/51a0863339c4c3fa204f43044e52dfd688a7ee2ba2c987e021acc9583a42/textual-6.3.0.tar.gz"
     sha256 "a89c557fa740611551dcf4f93643f33853eca488183ef5882200dde8e94315e8"
+  end
+
+  resource "textual-image" do
+    url "https://files.pythonhosted.org/packages/f7/3e/807c5a449e9d99ba3b860acf5b83cf1da7ac46477bfe0e9e4d0149b8ed90/textual_image-0.8.4.tar.gz"
+    sha256 "d13f960da07659cfac9d9e417ca7057b3ac0c17a7827ae8e47c3b164d43776fc"
   end
 
   resource "tree-sitter" do
