@@ -49,7 +49,16 @@ class LuaLanguageServer < Formula
     BASH
   end
 
+  # `lua-language-server` uses `changelog.md` in `libexec`
+  # directory to determine its version. Installing the changelog
+  # in `def install` does not work because it cleanups metafiles
+  # from non-root directory
+  def post_install
+    libexec.install_symlink prefix/"changelog.md"
+  end
+
   test do
+    assert_match version.to_s, shell_output("#{bin}/lua-language-server --version")
     pid = spawn bin/"lua-language-server", "--logpath=."
     sleep 5
     assert_path_exists testpath/"service.log"
