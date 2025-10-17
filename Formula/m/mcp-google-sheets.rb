@@ -8,12 +8,13 @@ class McpGoogleSheets < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ce7513f28b1f54316530cf7bf6e3cff349c2a29b57edf92ce8506defdaa6229f"
-    sha256 cellar: :any,                 arm64_sequoia: "8a41bdd921e8c8c1b6cbb853f6b00461ad14beca89ab8b0d329935ac137806e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "321c21e1a7a1702f5d04e4f5bf12f5f85389286353538d1798d4d5d8160f475d"
-    sha256 cellar: :any,                 sonoma:        "7c57342adddb46387d57757c53236812cc841cb00c0996a0ae71b4d77bae3477"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7973d2eb193624f03e61c20a13db76cad75e792ae7422bcb435d6fbcc090934"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a57ad528fb47c616d78944b77f2982d67861748f4659094ff3525b86f85ec76b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "250e2d9172531de01dc58a76eb7e3091645b6e45cc4e84981c806cbfcd133628"
+    sha256 cellar: :any,                 arm64_sequoia: "ca2277ab7813db8ca5c1681aba0b9995c06141e09fb738dde3c14fe3edcb423c"
+    sha256 cellar: :any,                 arm64_sonoma:  "caeb6c236cede47210ab3ae8e3c154f493ca4514abed68d8ae754c0b8badc6fa"
+    sha256 cellar: :any,                 sonoma:        "c14585c526317e3334833522918c89025c6872018bee6e6ae35b06c666b6798a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "605f4acdee7d97bc8fa161bb3c5f5715f5c4ac5dde9c87e00e584da224277b64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca2a00d6f190bb72a4b45be84d6931a9429627050db68b55ca98c3eed4264393"
   end
 
   depends_on "rust" => :build # for pydantic
