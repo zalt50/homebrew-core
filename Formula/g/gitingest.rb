@@ -8,14 +8,13 @@ class Gitingest < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "68eef31fc59a1ae7d078f8631dcb28e3cecddbb48ca9679ca632dac66cb10d4e"
-    sha256 cellar: :any,                 arm64_sequoia: "3b39d0569b59a67a966c18d8de18c670c896531aa73ac96a04f7c4a6fc4960c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad6695789436fc5f5a187dbf1335c93779058a163cc9a15c26d8d2fe6d93d08c"
-    sha256 cellar: :any,                 arm64_ventura: "bde8af127cc409051c74670e04620e11020ad02220fb4509895480c155d519f5"
-    sha256 cellar: :any,                 sonoma:        "b7856fca688f589ac8451bb1c06c8445149645150cd4076bb56f95067eb66520"
-    sha256 cellar: :any,                 ventura:       "4097f91577743b6ecd20049cab75eb547fcaa4d16c22bde00edeadc1f3ceeff2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4758289236f6193a570fa26ff468dfb87219e2c3f076385bc9c0d1e8e48208d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2bd156be689dc08d39f27715f039133a0e087b747f3bd8008a8c70712f2ae5b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "848976aeb8cc30a996c29b86bab4c577c9455fc2e3dd723f4ec18759f0a0cddd"
+    sha256 cellar: :any,                 arm64_sequoia: "7c313ec986e742f4c8ecb6e9e4e635188a8f034726ad36978ba9f5e4fe5d185c"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb49209e15e6592f40acee2c4bd1e61d756ac71e0104dc0c58fa25290e9cf769"
+    sha256 cellar: :any,                 sonoma:        "efe431c93d7d572af667c15df240f220086bae7c9d67b924199c1dba33fd9d2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a403dd7d0e0d4a22b7913b415ab931e6dd1bde59861f0ef9e50de0ec1adfbab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e10f01916ba6aa5bdafcae66bb8b1899510457927d3a4643d28ad11497b7c479"
   end
 
   depends_on "rust" => :build
