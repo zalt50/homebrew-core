@@ -9,8 +9,6 @@ class Offlineimap < Formula
   revision 3
   head "https://github.com/OfflineIMAP/offlineimap3.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd6dd12fe8c16d4dde77dd664d2a74ff190500faacccbabb7eb36541d5605e52"
@@ -24,7 +22,7 @@ class Offlineimap < Formula
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "krb5"
 
