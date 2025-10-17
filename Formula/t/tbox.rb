@@ -1,10 +1,15 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
   homepage "https://github.com/tboox/tbox"
-  url "https://github.com/tboox/tbox/archive/refs/tags/v1.7.6.tar.gz"
-  sha256 "2622de5473b8f2e94b800b86ff6ef4a535bc138c61c940c3ab84737bb94a126a"
+  url "https://github.com/tboox/tbox/archive/refs/tags/v1.7.7.tar.gz"
+  sha256 "ae387dcf1952aca572516bdce4a47d04e9b411f5bf7add281247af7c874f3c3f"
   license "Apache-2.0"
   head "https://github.com/tboox/tbox.git", branch: "master"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cf6c51285cddb7eb365137a400efddad6c381245ad60d2479c5ace2819a977b"
