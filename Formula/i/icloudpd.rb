@@ -22,7 +22,7 @@ class Icloudpd < Formula
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "gnu-sed" => :build
@@ -163,6 +163,8 @@ class Icloudpd < Formula
     # https://github.com/icloud-photos-downloader/icloud_photos_downloader/issues/922#issuecomment-2252928501
     system "scripts/patch_version"
 
+    # Unpin python for 3.14
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
     virtualenv_install_with_resources
   end
 
