@@ -1,8 +1,8 @@
 class Yamlfmt < Formula
   desc "Extensible command-line tool to format YAML files"
   homepage "https://github.com/google/yamlfmt"
-  url "https://github.com/google/yamlfmt/archive/refs/tags/v0.18.1.tar.gz"
-  sha256 "aec8d5cb8ca395ed60bddeb14d4a4076d5b46939a3a9cd6773eb1913d2d63a0e"
+  url "https://github.com/google/yamlfmt/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "257dd1521895c6b22ab4c71c27fa27f2290d05cedd0734f819573b509039e9b2"
   license "Apache-2.0"
   head "https://github.com/google/yamlfmt.git", branch: "main"
 
