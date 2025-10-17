@@ -4,7 +4,7 @@ class Vineyard < Formula
   url "https://github.com/v6d-io/v6d/releases/download/v0.24.4/v6d-0.24.4.tar.gz"
   sha256 "055bab09ca67542ccb13229de8c176b7875b4ba8c8a818e942218dccc32a6bae"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256                               arm64_tahoe:   "f1e3cf37c97f6df875c231ec0f5c9cf5ba6902efeaa160acea5100f2213f9e7b"
@@ -21,7 +21,7 @@ class Vineyard < Formula
   depends_on "llvm" => :build # for clang Python bindings
   depends_on "openssl@3" => :build # indirect (not linked) but CMakeLists.txt checks for it
   depends_on "python-setuptools" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "apache-arrow"
   depends_on "boost"
   depends_on "cpprestsdk"
@@ -85,7 +85,7 @@ class Vineyard < Formula
     headers = %w[args async child env environment io search_path]
     headers.each { |header| ENV.append "CXXFLAGS", "-include boost/process/v1/#{header}.hpp" }
 
-    python3 = "python3.13"
+    python3 = "python3.14"
     # LLVM is keg-only.
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
     ENV.prepend_path "PYTHONPATH", llvm.opt_prefix/Language::Python.site_packages(python3)
