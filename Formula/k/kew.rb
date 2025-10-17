@@ -7,12 +7,12 @@ class Kew < Formula
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "a72f36e6caa58bb2ac5d9ebf4627eb519cf1017df360068f6c0bf0ebcd815cd2"
-    sha256 arm64_sequoia: "bbe133cb8daa6054c436886a63a36e1dfd6d4284f3f04c0d8e52950792075d9c"
-    sha256 arm64_sonoma:  "f3b30bda387ecf10d85a5fa3da714d74ff0621606ef0941a6c291d261016a5a0"
-    sha256 sonoma:        "0cfd90978d8d3d6cf1e2b0efc53f15938810717c5c22662c152d3ac2b0852e53"
-    sha256 arm64_linux:   "f339460fd565efdbc5b658c75e3ffd5b9e7e6ac5ee9a0d7702eb1c860bf808e2"
-    sha256 x86_64_linux:  "c2096d157b2874f1a5a77d3d0af5cbe0aab5f870c3fb7f1ff7f1aafce458db41"
+    sha256 arm64_tahoe:   "2253cbc3eca181c43dcfc9354f55784bb5ce86395c63ccc7d4bf96d4bd444c7b"
+    sha256 arm64_sequoia: "240b4e4f420e01b494e67fee41e1f39c179ac9ac51086bb088190dab2f0c0e93"
+    sha256 arm64_sonoma:  "c465cd94a7fc95054a88ea9cf7052162073f002eec790e9ab57d1121ec75213e"
+    sha256 sonoma:        "44496088d4200ca1687ba81d8f164a3fc66d6c90676ca97749e2b30eebe60b3e"
+    sha256 arm64_linux:   "3e79bc459782c30eca7f4f9df9e62023445673b1b6641cf86e36410bd1be5d55"
+    sha256 x86_64_linux:  "225f5247045a168a52e87d71f070226a7fb8fa661a1017d2a6821443e8535d4d"
   end
 
   depends_on "pkgconf" => :build
