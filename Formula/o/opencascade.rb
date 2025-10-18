@@ -1,9 +1,9 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_1;sf=tgz"
-  version "7.9.1"
-  sha256 "e70b8c08c74f9693cbc91baa48610f1f5448ad167425fb8b957cf5a8f2cafed5"
+  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_2;sf=tgz"
+  version "7.9.2"
+  sha256 "e9f69bde521e718f10f1896e5bea070fbd5dfb205d8da422f5be2d521db666c5"
   license "LGPL-2.1-only"
 
   # The first-party download page (https://dev.opencascade.org/release)
@@ -46,6 +46,9 @@ class Opencascade < Formula
   end
 
   def install
+    # Fix incorrect version
+    inreplace "adm/cmake/version.cmake", "set (OCC_VERSION_MAINTENANCE 1 )", "set (OCC_VERSION_MAINTENANCE 2 )"
+
     tcltk = Formula["tcl-tk@8"]
     libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
     libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
