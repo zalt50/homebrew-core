@@ -1,8 +1,8 @@
 class Stunnel < Formula
   desc "SSL tunneling program"
   homepage "https://www.stunnel.org/"
-  url "https://www.stunnel.org/downloads/stunnel-5.75.tar.gz"
-  sha256 "0c1ef0ed85240974dccb94fe74fb92d6383474c7c0d10e8796d1f781a3ba5683"
+  url "https://www.stunnel.org/downloads/stunnel-5.76.tar.gz"
+  sha256 "cda37eb4d0fb1e129718ed27ad77b5735e899394ce040bb2be28bbb937fd79e1"
   license "GPL-2.0-or-later"
 
   livecheck do
