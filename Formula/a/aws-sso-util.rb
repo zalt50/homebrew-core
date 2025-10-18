@@ -10,15 +10,13 @@ class AwsSsoUtil < Formula
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "65fdc506df7b340d39e13afc43256a841b172f9ad7ed4b614f126d867bed4abf"
-    sha256 cellar: :any,                 arm64_sequoia: "bab323da7693aca57ed3e3471b3cc3f167462798d1387d1ae2d1b0934d602fda"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ebabf3294219f2ab3c6f135e90a7cf43e28eaebc1f1765bdb341fe83c6b8bcd"
-    sha256 cellar: :any,                 arm64_ventura: "2e4dc4ea27a97b8eeb89059d77842d21f2b6ce42712938f87ec78e2684d00c39"
-    sha256 cellar: :any,                 sonoma:        "8ca33fe59987e3a1a0900bfabb01b31fcf5967b7058c3da76ef6dba55136eb6f"
-    sha256 cellar: :any,                 ventura:       "323c4ba449820a47dff76a78dab8fdba28467b218d4645f4de7a9ac4e9a02175"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd406c079f352fe10c7e2edd987cd813f40a9dfd05a16b492c91bd0b99bc92e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fdf3d0a107bf8706edae93fd5212debbaafc78289ab384b630b979128379fd3"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "63be6b573223c43fb7b71ca0f674fd891b5cb163ac91b616f2d4eef9b3dbd9fb"
+    sha256 cellar: :any,                 arm64_sequoia: "12dae3297fb6a745edeb0f7d266ad8a2627ad0074ae34e75444d41375618000c"
+    sha256 cellar: :any,                 arm64_sonoma:  "3f916a7349fc5ff8ebabb0a51762e19b03e02acacd3ce41d25f707f0ae5364e6"
+    sha256 cellar: :any,                 sonoma:        "5dce9ee0acf705d49de3ea57a1920f751fee1a3ddcab8291abdb267bf3141a57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7701a77fbf5f144fd594ed811b2c14d693cca67d3cb3db3027be1bb9044f790b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f54182900a8c26ce5849947cdf45958088ceaab68852b17947f91a998abfa444"
   end
 
   depends_on "rust" => :build # for rpds-py
