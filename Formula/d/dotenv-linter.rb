@@ -1,8 +1,8 @@
 class DotenvLinter < Formula
   desc "Lightning-fast linter for .env files written in Rust"
   homepage "https://dotenv-linter.github.io"
-  url "https://github.com/dotenv-linter/dotenv-linter/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "ffcd2f0d5bb40a19ea747ad7786fea796a7454f51e6da8f37fec572da8ae3c5f"
+  url "https://github.com/dotenv-linter/dotenv-linter/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "c10f63e84a877b630986a59680df20ee3f49ae3f89daa8d7e65f427d31b13a32"
   license "MIT"
   head "https://github.com/dotenv-linter/dotenv-linter.git", branch: "master"
 
@@ -25,25 +25,24 @@ class DotenvLinter < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "dotenv-cli")
   end
 
   test do
-    checks = shell_output("#{bin}/dotenv-linter list").split("\n")
-    assert_includes checks, "DuplicatedKey"
-    assert_includes checks, "UnorderedKey"
-    assert_includes checks, "LeadingCharacter"
+    assert_match version.to_s, shell_output("#{bin}/dotenv-linter --version")
 
     (testpath/".env").write <<~EOS
       FOO=bar
       FOO=bar
       BAR=foo
     EOS
+
     (testpath/".env.test").write <<~EOS
       1FOO=bar
       _FOO=bar
     EOS
-    output = shell_output(bin/"dotenv-linter", 1)
+
+    output = shell_output("#{bin}/dotenv-linter check .env .env.test", 1)
     assert_match(/\.env:2\s+DuplicatedKey/, output)
     assert_match(/\.env:3\s+UnorderedKey/, output)
     assert_match(/\.env.test:1\s+LeadingCharacter/, output)
