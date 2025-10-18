@@ -8,8 +8,8 @@ class AwscliLocal < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "fd8d0dabd544eafb1a7f07f9d618608fe0aa8afdb16eaa89bf97044f68875ca7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "a52f3f17fb20def59c43e6cb16905e592a51b2e6ebfcc91f63b22448c874ef6b"
   end
 
   depends_on "awscli" => :test # awscli-local can work with any version of awscli
