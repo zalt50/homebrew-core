@@ -21,7 +21,7 @@ class Beanquery < Formula
   depends_on "bison" => :build # for beancount
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "flex" => :build # for beancount
 
