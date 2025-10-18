@@ -8,8 +8,8 @@ class Cfv < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "fb2e9074946326a9618313d03fa78b596e0e65f68b11c3f83de2215a260731c0"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "99b44eb32592c111167965c026854d84137dde520cdce0dd4a60f129555ad3e0"
   end
 
   depends_on "python@3.14"
