@@ -27,7 +27,7 @@ class FreeradiusServer < Formula
   depends_on "collectd"
   depends_on "json-c"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "talloc"
 
   uses_from_macos "krb5"
