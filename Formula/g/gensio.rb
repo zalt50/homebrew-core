@@ -20,7 +20,7 @@ class Gensio < Formula
 
   depends_on "glib"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "tcl-tk"
 
   on_macos do
@@ -36,10 +36,12 @@ class Gensio < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     tcltk = Formula["tcl-tk"]
     args = %W[
       --disable-silent-rules
