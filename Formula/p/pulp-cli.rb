@@ -3,9 +3,10 @@ class PulpCli < Formula
 
   desc "Command-line interface for Pulp 3"
   homepage "https://github.com/pulp/pulp-cli"
-  url "https://files.pythonhosted.org/packages/18/92/23ae95fa65ad1f61cb1e7b8140a7aa315c9ad9cc64f2c7fc9412ba1299f2/pulp-cli-0.36.0.tar.gz"
-  sha256 "1155a3d7efb60c3c1b0b2762b989fa0616e8a941a878f5e1f1fe0ce207eb05c1"
+  url "https://files.pythonhosted.org/packages/69/01/d999e6c13a2d0487edd3ffbffbcf77fa7ef6fd3c1b5ee01837c529f1bec1/pulp_cli-0.36.1.tar.gz"
+  sha256 "5ed0856a97486829e487639e8acf58f81024ee251277de20abd2bd35400b129b"
   license "GPL-2.0-or-later"
+  head "https://github.com/pulp/pulp-cli.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -22,8 +23,8 @@ class PulpCli < Formula
   depends_on "python@3.14"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -32,8 +33,8 @@ class PulpCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "multidict" do
@@ -47,15 +48,13 @@ class PulpCli < Formula
   end
 
   resource "pulp-glue" do
-    url "https://files.pythonhosted.org/packages/b7/6d/d8bac57d69902a0836f1d5be9ebf14da4c401b638913a393725cadfe3fc0/pulp-glue-0.36.0.tar.gz"
-    sha256 "627f6b42a612c4542850a9b5719255373c2399565c779a78d5468378ea584b7c"
-
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/38/ce/3826a8f318fd69ba8b266a4cbbc99b25f66d40893ad71cbbb1c3490e468b/pulp_glue-0.36.1.tar.gz"
+    sha256 "9418b16400aaaeedadf3e7e45ca5ddc32ec0eeb28f53e4a50a369b25d4c83509"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
@@ -64,8 +63,8 @@ class PulpCli < Formula
   end
 
   resource "schema" do
-    url "https://files.pythonhosted.org/packages/d4/01/0ea2e66bad2f13271e93b729c653747614784d3ebde219679e41ccdceecd/schema-0.7.7.tar.gz"
-    sha256 "7da553abd2958a19dc2547c388cde53398b39196175a9be59ea1caf5ab0a1807"
+    url "https://files.pythonhosted.org/packages/fb/2e/8da627b65577a8f130fe9dfa88ce94fcb24b1f8b59e0fc763ee61abef8b8/schema-0.7.8.tar.gz"
+    sha256 "e86cc08edd6fe6e2522648f4e47e3a31920a76e82cce8937535422e310862ab5"
   end
 
   resource "tomli-w" do
@@ -79,8 +78,6 @@ class PulpCli < Formula
   end
 
   def install
-    # Unpin python for 3.14
-    inreplace "pyproject.toml", 'requires-python = ">=3.9,<3.14"', 'requires-python = ">=3.9"'
     virtualenv_install_with_resources
   end
 
@@ -98,18 +95,3 @@ class PulpCli < Formula
     assert_match "valid pulp-cli config", output
   end
 end
-
-__END__
-diff --git a/pyproject.toml b/pyproject.toml
-index 349a206..7db9eab 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -7,7 +7,7 @@ name = "pulp-glue"
- version = "0.36.0"
- description = "Version agnostic glue library to talk to pulpcore's REST API."
- readme = "README.md"
--requires-python = ">=3.9,<3.14"
-+requires-python = ">=3.9,<3.15"
- license = {text = "GPLv2+"}
- authors = [
-   {name = "Pulp Team", email = "pulp-list@redhat.com"},
