@@ -11,15 +11,12 @@ class Freediameter < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256                               arm64_tahoe:   "5eafa2b1cff32588e446f38812e5d28bdbbdc3efca9c5d04d3d8c75aadc63c1a"
-    sha256                               arm64_sequoia: "3a0fdc3ba68de137c1c7565a2bf1952cf239c35717276e185ef2c57d8f042a0f"
-    sha256                               arm64_sonoma:  "77cce28c5fae584b97aefe1d124bf14da292e5f40f62a4bfccb4b545feecf9f8"
-    sha256                               arm64_ventura: "a0a2bb922fe5286a90703eaf346ab465702d3bb43040b11f4c49f2b4296ec768"
-    sha256                               sonoma:        "40a30f89b5587df10f03275e37b9d17c4ca3a59098f2efddf5e521b9a71276b6"
-    sha256                               ventura:       "3b25d64d36dabbcdd24ca3d2c02bf05f8bff8ddcdb764f58d01c3fed25a50e57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f092135225eda295f1bd57f85b49c8b4cdcdf9241878b0d7c9971f28eb5a570"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "224a65066b5831f9a7c9d07c2f4439075fe60f8e287c3a4e19fbfc163124e5b7"
+    sha256                               arm64_tahoe:   "d88969b28d22359bcee5f87c000240bc2703bdbff5af20f8b47c3bfafaa8925b"
+    sha256                               arm64_sequoia: "0dcb6c8ca66c2195ef3a78ab62b0e32b6303c7ea4bb31c3b5244a2c22bc643a9"
+    sha256                               arm64_sonoma:  "f6407fa06f58db5b23da3d1a888a96bc68d2231cf35bd5dd8bf30129a6fcdd1e"
+    sha256                               sonoma:        "b9afd84d7c426896a62987a0ad22e6504f5b4fda0ab85b2555bdce78e7c0d314"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2de09eb57cad6101295a235df9a462d905f2a95a820ea2e80d77b8f81ff6deb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f337536d0f52776b2c4daa5968b309d169f572a8132b14cfe263cf10ed79c8e"
   end
 
   depends_on "cmake" => :build
