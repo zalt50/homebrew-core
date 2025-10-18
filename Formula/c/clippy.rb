@@ -5,6 +5,13 @@ class Clippy < Formula
   sha256 "e1775535ee7b00ba1344696d0d60ae8067b445fa0e3b9ffb5fdfb56a0a10a0be"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85a30b02ea2324f7a0926268ded16b7a7c83422cc48f9b1cfeac1fc1e93a56c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9082c3d04f630353c7e24f177059ff054ac3863b2fb8243c00c923dba4acaee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b35fa12fb7ee1fa69cc18c96dd4595d202180d15c7c8cc0724bd757851ef5bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6e7c9b9c650e237f1175a092e93a57974444836f8352a20305a8b6665b873f5"
+  end
+
   depends_on "go" => :build
   depends_on :macos
 
