@@ -1,8 +1,8 @@
 class Atac < Formula
   desc "Simple API client (Postman-like) in your terminal"
   homepage "https://atac.julien-cpsn.com/"
-  url "https://github.com/Julien-cpsn/ATAC/archive/refs/tags/v0.20.2.tar.gz"
-  sha256 "d2f8163a8df224c7dd07e5aa2db6c000938102fe5b637e583e2a123a731c1ea5"
+  url "https://github.com/Julien-cpsn/ATAC/archive/refs/tags/v0.22.1.tar.gz"
+  sha256 "230fc1730fa8787a390232d88f286ba542e8627426ae9f7897f77d2a728b3578"
   license "MIT"
   head "https://github.com/Julien-cpsn/ATAC.git", branch: "main"
 
@@ -25,15 +25,10 @@ class Atac < Formula
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
 
-    system "cargo", "install", *std_cargo_args
+    # Turn off shell completions to clipboard feature
+    system "cargo", "install", "--no-default-features", *std_cargo_args
 
-    # Completions and manpage are generated as files, not printed to stdout
-    system bin/"atac", "completions", "bash"
-    system bin/"atac", "completions", "fish"
-    system bin/"atac", "completions", "zsh"
-    bash_completion.install "atac.bash" => "atac"
-    fish_completion.install "atac.fish"
-    zsh_completion.install "_atac"
+    generate_completions_from_executable(bin/"atac", "completions")
 
     system bin/"atac", "man"
     man1.install "atac.1"
