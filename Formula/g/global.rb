@@ -33,7 +33,7 @@ class Global < Formula
 
   depends_on "libtool"
   depends_on "ncurses"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "sqlite"
   depends_on "universal-ctags"
 
@@ -45,7 +45,7 @@ class Global < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
