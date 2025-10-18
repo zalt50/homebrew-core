@@ -8,13 +8,12 @@ class Jupytext < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ba7a1ae7e62e48fbefe93658d3a2806d05ea5b9af43645411fe54becdd1abfa4"
-    sha256 cellar: :any,                 arm64_sequoia: "5acffb82e831727d0cf97eaf379960aeb8a35c3cc7ba66bffedbf843b06024bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "640cc79b6cb8e65d4081bf4078775dcb59d6da715114f912784074d17acd75e5"
-    sha256 cellar: :any,                 sonoma:        "2a2907d60bb248d8c2bf5f33cfcbd8df77779c0837d35246638981b61981d351"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12a75517ff219520464761b4cc6482d4421d517aca4b6d214c0232700a8b2183"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82add6cf854568e942f148f75f7cf4039a5121c03e2c55c4f5071c8d6c5571d2"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c97025e7fc4abd3c928364e9b964bfa8d8307b6697850f3ef9a94494483a72d"
+    sha256 cellar: :any,                 arm64_sequoia: "049a9457be1ab53eaa50cbc655481acc7334fed1e11926aec50de8198b206b8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "8aa998043b3951e170ceda24d2f4e971173c9755990e3bee3796aca32352b049"
+    sha256 cellar: :any,                 sonoma:        "20707c373b9e6bda79edb798618d5cfa18418079d48ac9603ecddda21efec1e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57a7daa1b2ed7307ce0563b0c48f073753bdcfa63224176f2b230166de06add7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a0b12a5a8830c8b82e0afdc6f28fe75b82280f1a5eecf8a3ffafcacbca1a9a7"
   end
 
   depends_on "rust" => :build # for rpds-py
