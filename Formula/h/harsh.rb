@@ -1,8 +1,8 @@
 class Harsh < Formula
   desc "Habit tracking for geeks"
   homepage "https://github.com/wakatara/harsh"
-  url "https://github.com/wakatara/harsh/archive/refs/tags/v0.11.3.tar.gz"
-  sha256 "863d2511438e1b9e407995a689cb877f69fcea71a93a88b2e1b9924930e84290"
+  url "https://github.com/wakatara/harsh/archive/refs/tags/0.11.6.tar.gz"
+  sha256 "f978708b70f0189b662f470ef3e2e932cfec3f3fcf63f7cc0cb41799b4cac3db"
   license "MIT"
   head "https://github.com/wakatara/harsh.git", branch: "master"
 
@@ -20,7 +20,7 @@ class Harsh < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/wakatara/harsh/cmd.version=#{version}")
   end
 
   test do
