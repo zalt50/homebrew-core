@@ -7,8 +7,7 @@ class Inja < Formula
   head "https://github.com/pantor/inja.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "78f7fb60abcd044a0fbd19d1723da834a8a754f4df1601de17a02b2010381666"
+    sha256 cellar: :any_skip_relocation, all: "231ca1e3911473b3cad187701813504adcb75628d382b7bb80f08f481728315f"
   end
 
   depends_on "cmake" => :build
