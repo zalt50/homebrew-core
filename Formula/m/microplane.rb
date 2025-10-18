@@ -7,14 +7,12 @@ class Microplane < Formula
   head "https://github.com/Clever/microplane.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18f31cd7526586a56ca273eb22776d1b3a1236520d3d450dc21efda19d56293d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d3f92ce6eb78de3a8789aeb12afe4c021c98c0c257bb46519a5a85fb725d02a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d3f92ce6eb78de3a8789aeb12afe4c021c98c0c257bb46519a5a85fb725d02a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d3f92ce6eb78de3a8789aeb12afe4c021c98c0c257bb46519a5a85fb725d02a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22a8fd778008830116ac7046f6bcaea8e19b647d4660768e337a59359db6f12c"
-    sha256 cellar: :any_skip_relocation, ventura:       "22a8fd778008830116ac7046f6bcaea8e19b647d4660768e337a59359db6f12c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cc8e17634c1fb02ed48848cd31cdd17090488eebd2decea9831fab5aacc3ff3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd4a6e1e4dc1ab0adbeb7815c059ae06a93cad65ae9786756dc413fc74614cdb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "058584a18f49f4de2e888c746d0d8b1c1b37f426f5112f280b3e3d803f1aea1a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "058584a18f49f4de2e888c746d0d8b1c1b37f426f5112f280b3e3d803f1aea1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "058584a18f49f4de2e888c746d0d8b1c1b37f426f5112f280b3e3d803f1aea1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ca2def0a17ca6c5e596c8472f627e8b9af429460dcea2be1ba1e9d2cbbba0d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5435b91897be54e019388f2901e08bd4fe7a2b89106b0c0c8190c4e4d9fc13ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9be326eae77275410bf28f9c682a3b34df3143d8e26123749d204aea973f4da2"
   end
 
   depends_on "go" => :build
