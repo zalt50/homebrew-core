@@ -3,8 +3,8 @@ class Jupytext < Formula
 
   desc "Jupyter notebooks as Markdown documents, Julia, Python or R scripts"
   homepage "https://jupytext.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/15/14/41faf71e168fcc6c48268f0fc67ba0d6acf6ee4e2c5c785c2bccb967c29d/jupytext-1.17.3.tar.gz"
-  sha256 "8b6dae76d63c95cad47b493c38f0d9c74491fb621dcd0980abfcac4c8f168679"
+  url "https://files.pythonhosted.org/packages/8c/2b/c96034a203a41659d58c149da5a0d5e5f11f24e41c9e1fef337cef1868e2/jupytext-1.18.0.tar.gz"
+  sha256 "3661c14adce99ec4b5eb9b60ad71d323ce5eccdf69ca33c730a53c61e46a3258"
   license "MIT"
 
   bottle do
@@ -42,8 +42,8 @@ class Jupytext < Formula
   end
 
   resource "jupyter-core" do
-    url "https://files.pythonhosted.org/packages/99/1b/72906d554acfeb588332eaaa6f61577705e9ec752ddb486f302dafa292d9/jupyter_core-5.8.1.tar.gz"
-    sha256 "0a5f9706f70e64786b75acba995988915ebd4601c8a52e534a40b51c95f59941"
+    url "https://files.pythonhosted.org/packages/02/49/9d1284d0dc65e2c757b74c6687b6d319b02f822ad039e5c512df9194d9dd/jupyter_core-5.9.1.tar.gz"
+    sha256 "4d09aaff303b9566c3ce657f580bd089ff5c91f5f89cf7d8846c3cdf465b5508"
   end
 
   resource "markdown-it-py" do
@@ -82,8 +82,8 @@ class Jupytext < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "rpds-py" do
