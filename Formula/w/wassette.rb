@@ -7,12 +7,12 @@ class Wassette < Formula
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8129b018a65b979a9d624ff37936864d9f8070e39e6f23e48b7b5dfaf918ede"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3742f95a49defe2ae42215f4589de42f3cf05d5962ea87c47899952f4874341"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93ec8445be4fd971290a5e9cf57d32c3bbaa7b3b7ec97dec5bd4c8ebd4be2518"
-    sha256 cellar: :any_skip_relocation, sonoma:        "640dfd173f410727b086dca7f9d3000e3ce5605b72ccc0ab866b0199104900b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff3d3fdac281c6121397f63b642a9b8fcee3c61ebdf91e5fbe1ad2002d607a9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7d2f54e00921d6a0560d11af22f1c8c6271b9d0d543537821939c760aa8a470"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbfebb93232b0f5f22dc73563a853dfac1ad05d99af58693e28a40b5208b2219"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5e07208f45b50b6665cb5ae2c37a6edfd56a23843a9be781dbc83ea161c411b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef44182ef727db254e96583e1496fb5faedb1ed6b07912baee5c68b7c116cc3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91c921d9f6a6e6e519e3702430275ca693586e3f08e342d948508f8cd2049d36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00e434208e2db978524e2ca91e7cc4bc84a111056d1b6dbdfe6e353d6ddbb28f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df2f8ed17ab10ebf51fd4ab03e6f88c89cfd5ca55e0b554fcc38b434ddd9d276"
   end
 
   depends_on "pkgconf" => :build
