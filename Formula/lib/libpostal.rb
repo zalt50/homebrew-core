@@ -1,8 +1,8 @@
 class Libpostal < Formula
   desc "Library for parsing/normalizing street addresses around the world"
   homepage "https://github.com/openvenues/libpostal"
-  url "https://github.com/openvenues/libpostal/archive/refs/tags/v1.1.3.tar.gz"
-  sha256 "02883c2f62658a09f9e49819f7983c7b19a574f9422424ecd5e4ff43cf7830a8"
+  url "https://github.com/openvenues/libpostal/archive/refs/tags/v1.1.4.tar.gz"
+  sha256 "41ad2cd20261e6498f1843c8d21cd737470d17e975deb6ea2a5d1517880729d3"
   license "MIT"
   head "https://github.com/openvenues/libpostal.git", branch: "master"
 
@@ -29,14 +29,29 @@ class Libpostal < Formula
   resource "libpostal_data" do
     url "https://github.com/openvenues/libpostal/releases/download/v1.0.0/libpostal_data.tar.gz"
     sha256 "d2ec50587bf3a7e46e18e5dcde32419134266f90774e3956f2c2f90d818ff9a1"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/openvenues/libpostal/refs/tags/v#{LATEST_VERSION}/versions/base_data"
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+    end
   end
   resource "parser" do
     url "https://github.com/openvenues/libpostal/releases/download/v1.0.0/parser.tar.gz"
     sha256 "7194e9b0095f71aecb861269f675e50703e73e352a0b9d41c60f8d8ef5a03624"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/openvenues/libpostal/refs/tags/v#{LATEST_VERSION}/versions/parser"
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+    end
   end
   resource "language_classifier" do
     url "https://github.com/openvenues/libpostal/releases/download/v1.0.0/language_classifier.tar.gz"
     sha256 "16a6ecb6d37e7e25d8fe514255666852ab9dbd4d9cc762f64cf1e15b4369a277"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/openvenues/libpostal/refs/tags/v#{LATEST_VERSION}/versions/language_classifier"
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+    end
   end
 
   def install
