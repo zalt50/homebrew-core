@@ -6,6 +6,7 @@ class MacCleanupPy < Formula
   url "https://files.pythonhosted.org/packages/be/dc/75d83e78c24d7378dad5d3c0c20b68860c0b8e4d2875d242c5ea51f317eb/mac_cleanup-3.3.0.tar.gz"
   sha256 "6773f059ba2025d8121d0c764afe45d1d10d305df23f604b2a485e1360e526a3"
   license "Apache-2.0"
+  head "https://github.com/mac-cleanup/mac-cleanup-py.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f0bb26ef3c0e0a28523e9c540fa7b55281ed15851399654be5960ee2d66cd17"
@@ -19,7 +20,7 @@ class MacCleanupPy < Formula
   end
 
   depends_on "cffi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
@@ -27,8 +28,8 @@ class MacCleanupPy < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/8a/99/eaf0847301a6ca2042927c83f8cc72a29c153132ce49d9a720fe121440ba/beartype-0.20.2.tar.gz"
-    sha256 "38c60c065ad99364a8c767e8a0e71ba8263d467b91414ed5dcffb7758a2e8079"
+    url "https://files.pythonhosted.org/packages/04/96/43ed27f27127155f24f5cf85df0c27fd2ac2ab67d94cecc8f76933f91679/beartype-0.22.2.tar.gz"
+    sha256 "ff3a7df26af8d15fa87f97934f0f6d41bbdadca971c410819104998dd26013d2"
   end
 
   resource "blessed" do
@@ -100,6 +101,8 @@ class MacCleanupPy < Formula
     # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
+    # Allow 3.14: https://github.com/mac-cleanup/mac-cleanup-py/pull/277
+    inreplace "pyproject.toml", 'python = ">=3.10,<3.14"', 'python = ">=3.10"'
     virtualenv_install_with_resources
   end
 
