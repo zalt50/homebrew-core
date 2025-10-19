@@ -5,6 +5,10 @@ class FennelLs < Formula
   sha256 "564c9db4565decad5495e6112e025baeeb41000b03b82f237854e485f814f74b"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "07813eac3528489a90fd5ac7c0d3e56210f6783021a4e9abb51b069edf456515"
+  end
+
   depends_on "pandoc" => :build
   depends_on "lua"
 
