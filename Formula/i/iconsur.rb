@@ -28,7 +28,7 @@ class Iconsur < Formula
   # We instead prepare a virtualenv with all missing packages.
   on_monterey :or_newer do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
-    depends_on "python@3.13"
+    depends_on "python@3.14"
   end
 
   resource "pyobjc-core" do
@@ -50,7 +50,7 @@ class Iconsur < Formula
       # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
       ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
 
-      venv = virtualenv_create(libexec/"venv", "python3.13")
+      venv = virtualenv_create(libexec/"venv", "python3.14")
       venv.pip_install resources
       bin.install libexec.glob("bin/*")
       bin.env_script_all_files libexec/"bin", PATH: "#{venv.root}/bin:${PATH}"
