@@ -1,16 +1,14 @@
 class Libgphoto2 < Formula
   desc "Gphoto2 digital camera library"
   homepage "http://www.gphoto.org/proj/libgphoto2/"
-  url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.32/libgphoto2-2.5.32.tar.bz2"
-  sha256 "02b29ab0bcfceda1c7f81c75ec7cb5e64d329cf4b8fd0fcd5bc5a89ff09561bc"
+  url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.33/libgphoto2-2.5.33.tar.bz2"
+  sha256 "c55504e725cf44b6ca67e1cd7504ad36dc98d7a0469a9e8d627fd0fb3848aa1d"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
     regex(%r{url=.*?/libgphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "0a5b3e86a52ba18433aa26a723ba0541d7e150cd0a4e105887e8a0b0b3e6d421"
