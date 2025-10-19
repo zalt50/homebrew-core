@@ -33,7 +33,10 @@ class EyeD3 < Formula
   def install
     # Fix to error: SystemError: buffer overflow
     # Issue ref: https://github.com/nicfit/eyeD3/issues/680
-    inreplace "eyed3/utils/console.py", "'\\0'", "b'\\\\0'"
+    inreplace "eyed3/utils/console.py" do |s|
+      s.gsub! "'\\0' * 4", "b'\\\\0' * 8"
+      s.gsub! 'hw = struct.unpack("hh", data)', 'hw = struct.unpack("hhhh", data)'
+    end
 
     virtualenv_install_with_resources
     doc.install Dir["docs/*"]
