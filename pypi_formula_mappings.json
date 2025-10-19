@@ -508,6 +508,9 @@
   "img2pdf": {
     "exclude_packages": ["pillow"]
   },
+  "imgp": {
+    "exclude_packages": ["pillow"]
+  },
   "instaloader": {
     "exclude_packages": ["certifi"]
   },

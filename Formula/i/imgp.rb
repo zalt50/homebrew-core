@@ -12,7 +12,7 @@ class Imgp < Formula
   end
 
   depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     rewrite_shebang detected_python_shebang, "imgp"
