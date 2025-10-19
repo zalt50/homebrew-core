@@ -1,8 +1,8 @@
 class Ipsw < Formula
   desc "Research tool for iOS & macOS devices"
   homepage "https://blacktop.github.io/ipsw"
-  url "https://github.com/blacktop/ipsw/archive/refs/tags/v3.1.629.tar.gz"
-  sha256 "ff09559e87a7f9849897292ebfd71284ec560b02fec688634b0feb673454573d"
+  url "https://github.com/blacktop/ipsw/archive/refs/tags/v3.1.630.tar.gz"
+  sha256 "35919f309e5e36833243a3f7996157c857478f2684702601fa17d8cb7ea9525e"
   license "MIT"
   head "https://github.com/blacktop/ipsw.git", branch: "master"
 
@@ -23,6 +23,8 @@ class Ipsw < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppVersion=#{version}
