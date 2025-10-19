@@ -15,14 +15,12 @@ class Alot < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "700c0f4fdc48d671b6aaf4acb47f69d7953fffaff92eb2558017e1470e4bf91b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "073814ef305c351f5c93c1880471cb250169e6caa8c4455b0267a0c29da89954"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82b9a7a7ddd0c02f46c44a27bb1c55d831ae775c93a11f7fcd2eaffe317d8706"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c02690a7bbec33199fc037d48cbc31c0bdc7b79bae38de2396946970637e369"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5132a9b48acafb997c7c25892500a1be9c825cbbad833eb921e9cea4e92e8972"
-    sha256 cellar: :any_skip_relocation, ventura:       "934dc63df52965e692b31495fce0e451d3e3b7c4a2ef1c3f115f09f801caf530"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c692df1cd71cea83a93793b5895501cfd84804be0deb2206baf93c28fd391d7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc08f2dbe1e0aaa47c56f0fa07fb627256bd3de20dcbd79477e3a2b0ff9279bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "682d580669a0e7e68d83a60bf92d879e8c9260b14cc775a066f9460336186e05"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2073f6c4e5efd15df25adcfb47610e6e660459b4887eb65781758e25122fcce1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce121172682f2fa975d6bea984bc29140c5d15e2acb6711fb4e593e9cd64b861"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0182e95a1b54b00b0d23616ac1e22757ead4f31a7f6d29a71282cfe220ebc538"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fe63c1ecf7ed1c13992b031363ce9fc57c9ed8b8f392a0f37f8b9260018e287"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b9196aa41058870ae15ec07ab9fc659d7c5317547ebc7664af48ba85f223508"
   end
 
   depends_on "sphinx-doc" => :build
