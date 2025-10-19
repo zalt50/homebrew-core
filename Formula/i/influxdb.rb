@@ -31,7 +31,7 @@ class Influxdb < Formula
   depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "bzip2"
 
@@ -41,8 +41,15 @@ class Influxdb < Formula
     end
   end
 
+  # Fix to support Python 3.14
+  # PR ref: https://github.com/influxdata/influxdb/pull/26927
+  patch do
+    url "https://github.com/influxdata/influxdb/commit/b6fef2921d4ae1823e17d08c18eace1ae2cdeac1.patch?full_index=1"
+    sha256 "e568ef1151fb9f003d7e88f45427d43ac461f020ba79b19a0e6dc472a1eb71ad"
+  end
+
   def install
-    python3 = which("python3.13")
+    python3 = which("python3.14")
     ENV["PYO3_PYTHON"] = python3
     ENV["PYTHON_SYS_EXECUTABLE"] = python3
 
