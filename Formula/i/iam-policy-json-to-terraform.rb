@@ -7,14 +7,12 @@ class IamPolicyJsonToTerraform < Formula
   head "https://github.com/flosell/iam-policy-json-to-terraform.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b634b540655afd1707b24be7f6a7f1ac11693f175d846d1e251c36221b8338d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "016bb0b29e4f5c61e1c7e0e0c99ba74757327a146ddf9906df1d628694e31ae2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "016bb0b29e4f5c61e1c7e0e0c99ba74757327a146ddf9906df1d628694e31ae2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "016bb0b29e4f5c61e1c7e0e0c99ba74757327a146ddf9906df1d628694e31ae2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "717be4d1e9c56ce0f37199dee4b9d7e2055f166cc47b56101e7f2f9d22c6d8a3"
-    sha256 cellar: :any_skip_relocation, ventura:       "717be4d1e9c56ce0f37199dee4b9d7e2055f166cc47b56101e7f2f9d22c6d8a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ee9be34d8a9dddfe40f1a969683233cd80495d87f3d91956292db8b13c8846"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f62890eb65845d86e84179b17762c573d9f77a1cafbe3bba430f73602f9b3ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ed193284c1d8208faae3abd91d94659eb6fb11ef1b7e22c34b8bcb7996331eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ed193284c1d8208faae3abd91d94659eb6fb11ef1b7e22c34b8bcb7996331eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ed193284c1d8208faae3abd91d94659eb6fb11ef1b7e22c34b8bcb7996331eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ee1bf82c57af5d24d4afc9224ba88c3914e14c1c8c4b1436a15b71b48bcac64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d821d3d49518f09297da65d562f1a4a9cfb9d8fc3aae30dcb616a7286e5d090"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83859d9fba82033801b53077bcf0728c45db5a2f43f9765977aa94ca57b620f3"
   end
 
   depends_on "go" => :build
