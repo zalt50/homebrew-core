@@ -3,8 +3,8 @@ class Nuitka < Formula
 
   desc "Python compiler written in Python"
   homepage "https://nuitka.net"
-  url "https://files.pythonhosted.org/packages/e7/1d/c301a8a38fcc98e8eb72bd0f34472f0f5e15a39e726c98f05878c68da446/Nuitka-2.8.2.tar.gz"
-  sha256 "36af094e9e36ed3cdb33bc54e04bfe31b1b3a28c54b06875a411f61a2164b917"
+  url "https://files.pythonhosted.org/packages/7f/83/b2219d7d814dfac263028a79ae6873a5aab4191beece2ad36a4770209591/Nuitka-2.8.3.tar.gz"
+  sha256 "10dc85443c49e7d6e4e8d3413cdfaefe7ebf3d8f47d2bfb5324b5676c3d77b5f"
   license "Apache-2.0"
 
   bottle do
