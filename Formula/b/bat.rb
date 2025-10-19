@@ -1,20 +1,10 @@
 class Bat < Formula
   desc "Clone of cat(1) with syntax highlighting and Git integration"
   homepage "https://github.com/sharkdp/bat"
+  url "https://github.com/sharkdp/bat/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "ccf3e2b9374792f88797a28ce82451faeae0136037cb8c8b56ba0a6c1a94fd69"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/sharkdp/bat.git", branch: "master"
-
-  stable do
-    url "https://github.com/sharkdp/bat/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "4433403785ebb61d1e5d4940a8196d020019ce11a6f7d4553ea1d324331d8924"
-
-    # git2 bump to use libgit2 1.9, upstream pr ref, https://github.com/sharkdp/bat/pull/3169
-    patch do
-      url "https://github.com/sharkdp/bat/commit/01680e444ba4273b17d2d6d85a19f7a5e7046820.patch?full_index=1"
-      sha256 "ad450b12f6a4a8332bf1e249a239518c7edfe94ccc6abbbeb705cf22620c5619"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "30742c65afd91a5a2058adee09161de4b7e3ed72d4409155249720684b3ae994"
