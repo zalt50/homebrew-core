@@ -1,8 +1,8 @@
 class LtexLsPlus < Formula
   desc "LTeX+ Language Server: maintained fork of LTeX Language Server"
   homepage "https://ltex-plus.github.io/ltex-plus/"
-  url "https://github.com/ltex-plus/ltex-ls-plus/archive/refs/tags/18.6.0.tar.gz"
-  sha256 "3efdd627a4ab26d01cb393f49902ee9f2136d84595587887432a9752f41981c6"
+  url "https://github.com/ltex-plus/ltex-ls-plus/archive/refs/tags/18.6.1.tar.gz"
+  sha256 "16fa8c88cea5f579fba4a33c7c89b15a1ed45b9b14dd32a07aee740b3d5506c9"
   license "MPL-2.0"
   head "https://github.com/ltex-plus/ltex-ls-plus.git", branch: "develop"
 
