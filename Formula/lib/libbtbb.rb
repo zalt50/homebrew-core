@@ -10,8 +10,6 @@ class Libbtbb < Formula
   revision 1
   head "https://github.com/greatscottgadgets/libbtbb.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_tahoe:   "34d79a3e5a02a398586333593de0c2c290ac52427e9054232ef541838a7ea217"
@@ -25,7 +23,7 @@ class Libbtbb < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     args = %w[-DENABLE_PYTHON=OFF]
@@ -35,7 +33,7 @@ class Libbtbb < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    system "python3.13", "-m", "pip", "install", *std_pip_args(build_isolation: true), "./python/pcaptools"
+    system "python3.14", "-m", "pip", "install", *std_pip_args(build_isolation: true), "./python/pcaptools"
     bin.install "python/pcaptools/btaptap"
     rewrite_shebang detected_python_shebang, bin/"btaptap"
   end
