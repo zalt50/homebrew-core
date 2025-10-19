@@ -27,6 +27,7 @@ class Enex2notion < Formula
   uses_from_macos "libxslt"
 
   # `lxml` is manually updated to support Python 3.14
+  # Issue ref: https://github.com/vzhd1701/enex2notion/issues/126
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
