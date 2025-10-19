@@ -23,7 +23,7 @@ class Ginac < Formula
 
   depends_on "pkgconf" => :build
   depends_on "cln"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "readline"
 
   def install
