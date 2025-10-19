@@ -6,6 +6,10 @@ class Taze < Formula
   license "MIT"
   head "https://github.com/antfu-collective/taze.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "25c73ebfcc612036a9202e01b0c6384cd41446cfdef1c8412e120df3c9cfcc99"
+  end
+
   depends_on "node"
 
   def install
