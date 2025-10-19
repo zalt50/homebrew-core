@@ -17,7 +17,7 @@ class Genometools < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "cairo"
   depends_on "glib"
   depends_on "pango"
@@ -36,7 +36,7 @@ class Genometools < Formula
   conflicts_with "libslax", because: "both install `bin/gt`"
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install
