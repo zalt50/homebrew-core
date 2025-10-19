@@ -8,12 +8,12 @@ class Nuitka < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed3af64b8118c6493cb2853f888c15526b1b5115ec5fd186b396a75117bbb195"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b713a9a0c40945d6ebefeaed645604e0da517b425bab2a5316784bd8e5e93a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abf7acd731074e11d5b1115a151529fd58a436108288cd8a2f900b59f71421fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26c1a15a05c6d56fa9672b4a320b35d521b0a2c2ca54d14a914fd50697a0b04d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6f41b0af8780c13be0850d9aa6f13ad5b47491e19ce77083bbdf0ecb7f75e93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e11cd541a240ebb0bcc90608c82c304ebf0fb8bc8c6e56738c73f9543dd77e65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "004d851611d4f41017e6ed2487a8785afbcd8a6a52c6e6b5a7db5c08acbe72e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ebcd41e1d3fa7479b4aca873ee3d42783c5171568b5bb39b94a11096cab009e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dadbf60ee750c7a52e2162d3f78438f844aaef3f3502ed14b9f0a0f8475a704"
+    sha256 cellar: :any_skip_relocation, sonoma:        "099d51b64b0e21a94322bed7b70d7f68426b4b49acd18f8c89f0b4388a9fd1ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38e8cb4e94e2b2c100c97f9deb21e7de4049e03970c1906b427f9450e5e727b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c85cbf2fee94d7ab70d114bbdc1b2f172ded0b0f3eb26ef80c9c91954df54de"
   end
 
   depends_on "ccache"
