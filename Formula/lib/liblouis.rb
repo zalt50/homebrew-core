@@ -26,12 +26,12 @@ class Liblouis < Formula
 
   depends_on "help2man" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "m4"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
