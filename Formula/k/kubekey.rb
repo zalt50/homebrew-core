@@ -2,10 +2,10 @@ class Kubekey < Formula
   desc "Installer for Kubernetes and / or KubeSphere, and related cloud-native add-ons"
   homepage "https://kubesphere.io"
   url "https://github.com/kubesphere/kubekey.git",
-      tag:      "v3.1.11",
-      revision: "f9d473060ec34cd8ffe5a87f2eceb1dead397f5c"
+      tag:      "v4.0.0",
+      revision: "0381d075cf2b56583060b2f9ed26f8c743eb6ce7"
   license "Apache-2.0"
-  head "https://github.com/kubesphere/kubekey.git", branch: "master"
+  head "https://github.com/kubesphere/kubekey.git", branch: "feature-gitops"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -35,15 +35,8 @@ class Kubekey < Formula
     depends_on "device-mapper"
   end
 
-  # patch for macos build failure, upstream pr ref, https://github.com/kubesphere/kubekey/pull/2744
-  patch do
-    url "https://github.com/kubesphere/kubekey/commit/01e23d7fc422d9b77a8a4a5581a4e3b3e1a64c95.patch?full_index=1"
-    sha256 "57cc282c8282198a59586ae0d75cded669af5e79b6b473bbb870aa0083bd0e80"
-  end
-
   def install
-    tags = "exclude_graphdriver_devicemapper exclude_graphdriver_btrfs containers_image_openpgp"
-    project = "github.com/kubesphere/kubekey/v3"
+    project = "github.com/kubesphere/kubekey/v#{version.major}"
     ldflags = %W[
       -s -w
       -X #{project}/version.gitMajor=#{version.major}
@@ -53,17 +46,13 @@ class Kubekey < Formula
       -X #{project}/version.gitTreeState=clean
       -X #{project}/version.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"kk"), "./cmd/kk"
+    system "go", "build", *std_go_args(ldflags:, tags: "builtin", output: bin/"kk"), "./cmd/kk"
 
-    generate_completions_from_executable(bin/"kk", "completion", "--type", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"kk", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
-    version_output = shell_output("#{bin}/kk version")
-    assert_match "Version:\"v#{version}\"", version_output
-    assert_match "GitTreeState:\"clean\"", version_output
-
-    system bin/"kk", "create", "config", "-f", "homebrew.yaml"
-    assert_path_exists testpath/"homebrew.yaml"
+    assert_match version.to_s, shell_output("#{bin}/kk version 2>&1")
+    assert_match "apiVersion: kubekey.kubesphere.io/v1", shell_output("#{bin}/kk create config")
   end
 end
