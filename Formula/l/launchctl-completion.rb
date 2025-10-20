@@ -6,8 +6,7 @@ class LaunchctlCompletion < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2a7e390f88b9c9af6385e775f96d855d40ebe4bf821a3f14de9903d8f30bad7c"
+    sha256 cellar: :any_skip_relocation, all: "bb5ad864a24035baedca788946f7d39c9d7da36e5a14ab43abf26544ef753e0d"
   end
 
   def install
