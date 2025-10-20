@@ -35,12 +35,12 @@ class Mapserver < Formula
   depends_on "pcre2"
   depends_on "proj"
   depends_on "protobuf-c"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "curl"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
