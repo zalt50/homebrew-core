@@ -14,12 +14,12 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0bc810e227c963c8b5aa5b04fe883a78d41beeab62f71772603a3a81abe4a98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fd2f2a032dac1df3a2999f6c798062f99971518c4e310a3c0a8c73445fae765"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32190d77772876a6b519db3ce16c34bec9275889cf31ae33d4bd459003e636ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ccef41780e9b545d9c586c8b2ce9b8042cbfa137a2f76e89d54308465b7b3297"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbf05e728a273202ed78a75d635369a6f89fb54def8767b47a072f209a7626d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98762ae13456d9917b82d49f0909e4f040b6a242ef7c3886e04f17c267e966d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38f872033e9d74f009d1a0e0d9213e3919c82384fd8bb1632efe9676908e1f37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c436fd84a37f8fa448dfc564471cbde0f7de05f52571627674c4823f8ebee8f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "201c4d814c9e3ac1b109a654760bded2a750416d99509e04548de550682691f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "022ec1d4d83c2d4f895171c434ed4f0b8839db939e955fbb839e7e5cc7026887"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83ffdd06de2ed2a92e29bf8108c6d749801c39447c20c3fe6f1199204890aae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8905a04526a5b077757f5f739399c165b86ea63c0b51e969556a3c6fbac903e"
   end
 
   depends_on "go" => :build
