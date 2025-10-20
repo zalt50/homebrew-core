@@ -1,9 +1,9 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftpmirror.gnu.org/gnu/gnunet/gnunet-0.25.1.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/gnunet/gnunet-0.25.1.tar.gz"
-  sha256 "21336c16cd57f91f9d5fd5359482d9151a7cdf0d6396f8b61828c17ccc668f5c"
+  url "https://ftpmirror.gnu.org/gnu/gnunet/gnunet-0.25.2.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/gnunet/gnunet-0.25.2.tar.gz"
+  sha256 "eab76fc35d393ab15fadb6344f843525c165619400735aa6dde0966f6a26c2e6"
   license "AGPL-3.0-or-later"
 
   bottle do
@@ -39,11 +39,6 @@ class Gnunet < Formula
   end
 
   def install
-    # Workaround for incomplete const change which only modified declaration
-    # https://git.gnunet.org/gnunet.git/commit/src/include/gnunet_testing_lib.h?id=9ac6841eadc9f4b3b1e71e2ec08e75d94e851149
-    files = ["src/lib/testing/testing_api_cmd_finish.c", "src/lib/testing/testing_api_cmd_exec.c"]
-    inreplace files, /\bconst struct GNUNET_TESTING_Command\b/, "struct GNUNET_TESTING_Command"
-
     # Workaround for htobe64 added to macOS 26 SDK until upstream updates
     # https://git.gnunet.org/gnunet.git/plain/src/include/gnunet_common.h
     ENV.append_to_cflags "-include sys/endian.h" if OS.mac? && MacOS.version >= :tahoe
