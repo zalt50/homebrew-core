@@ -1,8 +1,8 @@
 class Docuum < Formula
   desc "Perform least recently used (LRU) eviction of Docker images"
   homepage "https://github.com/stepchowfun/docuum"
-  url "https://github.com/stepchowfun/docuum/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "26bf153c72185516db77ffabc00d75f0ae9d642792ccf204f843ceee94236756"
+  url "https://github.com/stepchowfun/docuum/archive/refs/tags/v0.25.1.tar.gz"
+  sha256 "3566064ff3bbb5f42a35fde10b7541def2a3cef4b12a7c6eecf2b84972c7459f"
   license "MIT"
 
   bottle do
