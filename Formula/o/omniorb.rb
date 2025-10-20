@@ -23,7 +23,7 @@ class Omniorb < Formula
 
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "zstd"
 
   uses_from_macos "zlib"
@@ -44,7 +44,7 @@ class Omniorb < Formula
     build_arg = []
     build_arg << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    ENV["PYTHON"] = python3 = which("python3.13")
+    ENV["PYTHON"] = python3 = which("python3.14")
     xy = Language::Python.major_minor_version python3
     inreplace "configure",
               /am_cv_python_version=`.*`/,
