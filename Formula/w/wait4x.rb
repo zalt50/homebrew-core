@@ -1,8 +1,8 @@
 class Wait4x < Formula
   desc "Wait for a port or a service to enter the requested state"
   homepage "https://wait4x.dev"
-  url "https://github.com/wait4x/wait4x/archive/refs/tags/v3.5.1.tar.gz"
-  sha256 "8ad5b52600ded2da358417a72770221e6725fe8111b5544e2f4f4f56bfbba924"
+  url "https://github.com/wait4x/wait4x/archive/refs/tags/v3.6.0.tar.gz"
+  sha256 "5b8e4ceaefd3902cda157aebd01dae76e29d7c93893fba7eacf7eb1a0ef17c27"
   license "Apache-2.0"
 
   bottle do
