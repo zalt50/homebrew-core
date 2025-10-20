@@ -8,8 +8,7 @@ class PythonArgcomplete < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "5c8549eb5ef97fdf9d6c213c5f327bd2d5d8bce60c1b127635567d8ee581d035"
+    sha256 cellar: :any_skip_relocation, all: "3cbfebfe5fc664a233aec15fcd7049e5ded3cd8d69b7ba58bce32e084e2a2db7"
   end
 
   depends_on "python@3.14"
