@@ -1,8 +1,8 @@
 class Malcontent < Formula
   desc "Supply Chain Attack Detection, via context differential analysis and YARA"
   homepage "https://github.com/chainguard-dev/malcontent"
-  url "https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.16.2.tar.gz"
-  sha256 "8fd29ab7652bf54b1cfa6ae7cdf43cd2a9a8ddd8d37d8c8b954255c5d7078abd"
+  url "https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.16.3.tar.gz"
+  sha256 "8db8b509ef8277f3879154df14dffe04c5ba882df4a34ef4e037eebd9f9403c8"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/malcontent.git", branch: "main"
 
@@ -20,6 +20,8 @@ class Malcontent < Formula
   depends_on "yara-x"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.BuildVersion=#{version}", output: bin/"mal"), "./cmd/mal"
   end
 
