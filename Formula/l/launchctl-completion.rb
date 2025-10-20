@@ -1,11 +1,9 @@
 class LaunchctlCompletion < Formula
   desc "Bash completion for Launchctl"
   homepage "https://github.com/CamJN/launchctl-completion"
-  url "https://github.com/CamJN/launchctl-completion/archive/refs/tags/v1.0.tar.gz"
-  sha256 "b21c39031fa41576d695720b295dce57358c320964f25d19a427798d0f0df7a0"
+  url "https://github.com/CamJN/launchctl-completion/archive/refs/tags/v2.0.tar.gz"
+  sha256 "990499494562cedf361482c5bf9f89b3a8b6a8aee92fda4e1eadaacb96688ecd"
   license "MIT"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
