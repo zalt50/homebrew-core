@@ -8,11 +8,11 @@ class PydanticCore < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0835f8d08862c41a586d622a9bc300fc7d192b6f9affe960716dc90025342d4e"
-    sha256 cellar: :any,                 arm64_sequoia: "e302c527c889c295e81d561c8fc9c4f50d805be6292f7ff3bffe293ff4159876"
-    sha256 cellar: :any,                 arm64_sonoma:  "38fb30ff701c46471a244bf761d071ac36c54c765f502484d29a99efaa0029c4"
-    sha256 cellar: :any,                 sonoma:        "9b0be00237836a31c35e63515c6fdbae6863d8e6fa4fd6a6372abac6e8fed40c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f15ad8e66fb0f290277858daaaf136437ca0936ae75d8d56441365d7e0aff9c9"
+    sha256 cellar: :any,                 arm64_tahoe:   "03e07dbfdc8d8af1e28b997b12246eac3ca36c31e3e30ee511537a7100f90353"
+    sha256 cellar: :any,                 arm64_sequoia: "1428d96bb50eb9df27fb8802b67f0f0c2e8a1f58593adf918140b398f7d95a6e"
+    sha256 cellar: :any,                 arm64_sonoma:  "629ea1f77bd3b2337ed11be11477497e99e7685cf5d02cbf5f264daccfce6243"
+    sha256 cellar: :any,                 sonoma:        "7f83e5e52e2f6d831b7eae4a322807486502a26633a9c74217caad25195b41df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "846245f7d616a112af9c85c8978851b158543681a0242e1f3818e4ca246dda9a"
   end
 
   depends_on "maturin" => :build
