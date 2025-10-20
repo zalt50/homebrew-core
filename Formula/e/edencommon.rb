@@ -1,8 +1,8 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2025.10.13.00.tar.gz"
-  sha256 "45ce4ef98949625306def7047a7d8869704f2846ecda3463b9ef035cf43e3aec"
+  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2025.10.20.00.tar.gz"
+  sha256 "124b3ef1c28b5ad356c0ce13e8b2b52b84b85d46acb86e6e99b8345000c24015"
   license "MIT"
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
@@ -40,7 +40,11 @@ class Edencommon < Formula
     # Avoid having to build FBThrift py library
     inreplace "CMakeLists.txt", "COMPONENTS cpp2 py)", "COMPONENTS cpp2)"
 
-    shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    shared_args = %W[
+      -DCMAKE_CXX_STANDARD=20
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
     linker_flags = %w[-undefined dynamic_lookup -dead_strip_dylibs]
     linker_flags << "-ld_classic" if OS.mac? && MacOS.version == :ventura
     shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}" if OS.mac?
