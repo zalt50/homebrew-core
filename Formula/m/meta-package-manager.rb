@@ -11,15 +11,13 @@ class MetaPackageManager < Formula
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "fb2c5dc73570e208cbd1e371cf15c0ee434d743fd4d052a1bff7d2c23ddaf636"
-    sha256 cellar: :any,                 arm64_sequoia: "c7d6894b523b75f457875745d3df9de5994a1e766e4e48f199c97f1b7f41823b"
-    sha256 cellar: :any,                 arm64_sonoma:  "03abd283ca4f5dd5cb27329af605c026acf2b4470c9d0b8b510e817353870d78"
-    sha256 cellar: :any,                 arm64_ventura: "45cbb8c2032a5222da277e95962a3fdcfcd7999df5e28a9598429da7b2ca80dc"
-    sha256 cellar: :any,                 sonoma:        "70cef6033bfa87bd9398d4e8f85b89ef45322d9409091ce7e5026cee4dede1f7"
-    sha256 cellar: :any,                 ventura:       "a1fae01b5cdb00aaf5049efbdc90a6e019207678ba07d09e859211bef36833cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e565ffebd11a7dee8346c0aba1d4a25f094e0b6a196cc436a529cab0f390275d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56da166000dcd6091fd4577a89c9d7d93fc31b068ba936ba572b4c9af41b480f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "9ccf797feb1dd125ab60c98ca41e8632df5fd29209cb7c7a2443bc8e104c0881"
+    sha256 cellar: :any,                 arm64_sequoia: "f77ae134382c799cd80ab9198557d42624a1ddf387f4ee5d6f703ede1b5e02db"
+    sha256 cellar: :any,                 arm64_sonoma:  "44d3af2cd5533967e36fe749952c1ad2f11f207c7d13a7be3e21237250984851"
+    sha256 cellar: :any,                 sonoma:        "80f8c931a19b59089efb8f3384a33b15d0d782e429b1ec3c1e3625da4e48a3f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfde1905b75e11a8129d822caa268821ba875c60472b4aa4a8dae751c1144b6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1bc4fdb2e6a1d882d9288318697bbde7484c72be9787966c4f094e4e6d6416b"
   end
 
   depends_on "certifi" => :no_linkage
