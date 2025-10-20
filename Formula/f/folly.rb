@@ -1,8 +1,8 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/refs/tags/v2025.10.13.00.tar.gz"
-  sha256 "719423943d6076be646de388e825237c5c9352d6c0542860abdc1279104fd3ab"
+  url "https://github.com/facebook/folly/archive/refs/tags/v2025.10.20.00.tar.gz"
+  sha256 "5c609f57f56e06316f38b05361a8244afa2a5b00e39ba170f96052ea33eda30b"
   license "Apache-2.0"
   head "https://github.com/facebook/folly.git", branch: "main"
 
@@ -106,17 +106,5 @@ index 0b96f0a10..800a3d90b 100644
      regex
 -    system
      thread
-   REQUIRED
- )
-diff --git a/CMake/folly-deps.cmake b/CMake/folly-deps.cmake
-index 7dafece7d..eaf8c2379 100644
---- a/CMake/folly-deps.cmake
-+++ b/CMake/folly-deps.cmake
-@@ -41,7 +41,6 @@ find_package(Boost 1.51.0 MODULE
-     filesystem
-     program_options
-     regex
-     thread
--    system
    REQUIRED
  )
