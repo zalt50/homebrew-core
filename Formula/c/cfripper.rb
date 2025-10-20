@@ -3,8 +3,8 @@ class Cfripper < Formula
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
   homepage "https://cfripper.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/fd/1e/a27bad490eff8d1d32db795ee1dbd664e33b727f7e45b5bd44a2bfdc978a/cfripper-1.18.0.tar.gz"
-  sha256 "755bcbaf4ab8d923ffe8b02c36a3b6b74770c6c4a16b0c0917bb104e49e05656"
+  url "https://files.pythonhosted.org/packages/15/05/17d7f4ed22ad71c79c4d0c708101c3e72f643beb85ab70cb6a15e22aba17/cfripper-1.19.0.tar.gz"
+  sha256 "9b973e29ad884dd21408e652d5972b9860c8b3b490d0214b84989b641459073d"
   license "Apache-2.0"
 
   bottle do
@@ -30,13 +30,13 @@ class Cfripper < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/5c/89/36c09108d8d35e6f722cdc9ff169f003c7458657ecf04c3a375dca973ccb/boto3-1.40.54.tar.gz"
-    sha256 "5f7dbf8539d26e0ee973baea49d0db8c1ee57707a785c5a23307241fdba04327"
+    url "https://files.pythonhosted.org/packages/50/d8/a279c054e0c9731172f05b3d118f3ffc9d74806657f84fc0c93c42d1bb5d/boto3-1.40.55.tar.gz"
+    sha256 "27e35b4fa9edd414ce06c1a748bf57cacd8203271847d93fc1053e4a4ec6e1a9"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d1/c8/8c7509d7fa26de03d21673f18a1edc1ac98198ba261a2b943774ed4f1c44/botocore-1.40.54.tar.gz"
-    sha256 "808232d9fcbf2c295b6e7cd1897119ee2fb97e756edfb313aa6d27ba0b281c66"
+    url "https://files.pythonhosted.org/packages/a4/92/dce4842b2e215d213d34b064fcdd13c6a782c43344e77336bcde586e9229/botocore-1.40.55.tar.gz"
+    sha256 "79b6472e2de92b3519d44fc1eec8c5feced7f99a0d10fdea6dc93133426057c1"
   end
 
   resource "cfn-flip" do
@@ -65,8 +65,8 @@ class Cfripper < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
