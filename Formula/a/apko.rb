@@ -1,8 +1,8 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
   homepage "https://github.com/chainguard-dev/apko"
-  url "https://github.com/chainguard-dev/apko/archive/refs/tags/v0.30.16.tar.gz"
-  sha256 "42771c1f9b01b15c258d93ac49f1555095a4ce2cbb3a41bcaa2f073ed5a05ac8"
+  url "https://github.com/chainguard-dev/apko/archive/refs/tags/v0.30.17.tar.gz"
+  sha256 "22010d4a2e35d8dfff8d88c52e4582a8d0c965bb0733d28deaef4666c483d4ed"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/apko.git", branch: "main"
 
@@ -44,7 +44,7 @@ class Apko < Formula
         repositories:
           - https://dl-cdn.alpinelinux.org/alpine/edge/main
         packages:
-          - alpine-base
+          - apk-tools
 
       entrypoint:
         command: /bin/sh -l
