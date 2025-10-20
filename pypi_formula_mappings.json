@@ -631,7 +631,7 @@
     "extra_packages": ["mako", "packaging", "ply", "pyyaml"]
   },
   "meta-package-manager": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "rpds-py"]
   },
   "mk": {
     "exclude_packages": ["certifi"]
