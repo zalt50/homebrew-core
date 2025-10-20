@@ -1068,7 +1068,7 @@
     "extra_packages": ["requests"]
   },
   "vunnel": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "rpds-py"]
   },
   "watson": {
     "exclude_packages": ["certifi"]
