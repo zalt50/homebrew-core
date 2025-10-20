@@ -1,8 +1,8 @@
 class Scamper < Formula
   desc "Advanced traceroute and network measurement utility"
   homepage "https://www.caida.org/catalog/software/scamper/"
-  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20251002.tar.gz"
-  sha256 "8487c6c915dee110f028d55abb1e19ff773449a220eda6a94f33dfdd7c46464c"
+  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20251020.tar.gz"
+  sha256 "6ef4d8d22c8cb3a4cc0391955d1a6c5f2c8e16f510c434f5cb9e9395676fcccd"
   license "GPL-2.0-only"
 
   livecheck do
