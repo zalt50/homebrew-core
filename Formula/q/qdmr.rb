@@ -1,8 +1,8 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https://dm3mat.darc.de/qdmr/"
-  url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.12.3.tar.gz"
-  sha256 "1ee2adc912120025190eff65c78b1f8a153d1cab14909cbd5291403fb7b04643"
+  url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "c3897831e86d3394f4d21a21548df8e758a64e03edad1484cf83202347f352cd"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -17,16 +17,16 @@ class Qdmr < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "librsvg"
   depends_on "libusb"
-  depends_on "qt@5"
+  depends_on "qtbase"
+  depends_on "qtpositioning"
+  depends_on "qtserialport"
+  depends_on "qttools"
   depends_on "yaml-cpp"
 
   def install
-    args = %w[
-      -DINSTALL_UDEV_RULES=OFF
-    ]
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" # Cmake 4 workaround
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DINSTALL_UDEV_RULES=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
