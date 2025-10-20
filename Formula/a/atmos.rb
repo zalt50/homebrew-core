@@ -1,8 +1,8 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://github.com/cloudposse/atmos"
-  url "https://github.com/cloudposse/atmos/archive/refs/tags/v1.194.1.tar.gz"
-  sha256 "7d9d609c889e0abeee9b0d2a8c2a8708fd249380ffb7884407cfe9921f2bdaf5"
+  url "https://github.com/cloudposse/atmos/archive/refs/tags/v1.195.0.tar.gz"
+  sha256 "b0699b02622b14eddd1555e0d41c4a37406fa917866d894b7ebb8374b2e16372"
   license "Apache-2.0"
   head "https://github.com/cloudposse/atmos.git", branch: "main"
 
@@ -23,10 +23,17 @@ class Atmos < Formula
   end
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
+
+  on_linux do
+    depends_on "systemd" # libudev
+  end
 
   conflicts_with "tenv", because: "tenv symlinks atmos binaries"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/cloudposse/atmos/pkg/version.Version=#{version}'")
 
     generate_completions_from_executable(bin/"atmos", "completion")
