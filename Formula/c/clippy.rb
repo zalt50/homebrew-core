@@ -1,8 +1,8 @@
 class Clippy < Formula
   desc "Copy files from your terminal that actually paste into GUI apps"
   homepage "https://github.com/neilberkman/clippy"
-  url "https://github.com/neilberkman/clippy/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "1f4fcb4c37e9988c744119990b6abe00dfdd85f45b1977d7d65eb4b78573100c"
+  url "https://github.com/neilberkman/clippy/archive/refs/tags/v1.5.3.tar.gz"
+  sha256 "55eadfe29291c7d37869428f7f77a81f193f7159a853bfa63d41375c01de06fc"
   license "MIT"
 
   bottle do
