@@ -8,13 +8,12 @@ class Bsc < Formula
   head "https://github.com/B-Lang-org/bsc.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7073b1c25d1eaa4e1a03a1bca4671e1d9d5ccdb815cb7271569beb25bbabc9d3"
-    sha256 cellar: :any,                 arm64_sequoia: "028d70a33adfee0459fe3b1e86925ee54496b7e9f3ac58d9d4cc1eab1895724a"
-    sha256 cellar: :any,                 arm64_sonoma:  "398571c528bbc22cf0712375da5568afe655c0822457947036f70f4bf6af7014"
-    sha256 cellar: :any,                 sonoma:        "dea530b42317ecab706119b9a802a9b58d7b9765ec150c3627dc17dbcfcf7150"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b7c2c627c3a0d89cb4b3718ef7c9dc90ba7b6ad127537773c2f70f172736c4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "996a523fc7fd725f0630cd44eb71cc3a0e35b5e0cf71285372077a4c436f5998"
+    sha256 cellar: :any,                 arm64_tahoe:   "271fac6bcb893b9ac9ed0816572967482485674525370bac1aec27e5fafdcec8"
+    sha256 cellar: :any,                 arm64_sequoia: "73ca733dc6506343d400fb4b3615473893bb7c14b840f4bc2a87dee1fea1b6dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "a76320a8ef7ff83fdcfee1f8ab422f1907f17e38849ce7b7adf5093941ddeef1"
+    sha256 cellar: :any,                 sonoma:        "99bea46008c809f6f605a517da2c24faf78ae7ce0ebfa015758e7d6c1a5d7744"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71d9a63e7c159e1ac85cff67a5e90f1711785d74ebc9250f470f361dd728648c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43b681c317a2919923ab0fcd8aea8fb74d2e5237fc4fa55cd2adef18cd8710dd"
   end
 
   depends_on "autoconf" => :build
