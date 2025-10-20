@@ -7,12 +7,12 @@ class Nmstatectl < Formula
   head "https://github.com/nmstate/nmstate.git", branch: "base"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85b8f69e7477c2581b290727bf44da5a4f01f62e1fc991c0e1a04d04010a7045"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cd84c1ead0f232d13d6773cd5656e80d5094bf1a37be2000064f71143dc2a7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c0ff525fde51787d725db1df560ef0220982eaf4b142e18ae2e1b359c819424"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56baa081e788ad823f5bed68c7eedc107b6c9b26dbe6feda03a839050e7a3bcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d32bbfbb19446cfb57dc475b594a31d239968cd36d05324cde4998957ca6df3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97a6a6e457e5884f972f4a0c1b7791d4c3a9fcc824d3902712c36efc6b210332"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bd77f2897108a26582b434deb8e12baa3acae9383d4786413c11699c5924944"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf50c518ea0663015ec5f2f1b2ffe6b0e84f0e816ad4f9b37ddb3c7be62ac1cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5e6632399240139ee4b77aa37e0bc8a75048f2232aabdc549d5c7cd435352fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfcf4589a0cc908d60f9976fb3a884d586d256014a36f91d6c3277d1207c1da1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccf4931eebe7a2db12177de68b91792a9fc1a19637656bd944bc50be32f0d208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8637d5b378382f64e9d4dc6b2358409779b403c3a9418913b293a5617c13e8f"
   end
 
   depends_on "rust" => :build
