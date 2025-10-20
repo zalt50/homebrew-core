@@ -1,8 +1,8 @@
 class Nmstatectl < Formula
   desc "Command-line tool that manages host networking settings in a declarative manner"
   homepage "https://nmstate.io/"
-  url "https://github.com/nmstate/nmstate/releases/download/v2.2.53/nmstate-2.2.53.tar.gz"
-  sha256 "62d49d1684474931f12df86d447670b16f631a5c07c00f99c494b18f20e1d36a"
+  url "https://github.com/nmstate/nmstate/releases/download/v2.2.54/nmstate-2.2.54.tar.gz"
+  sha256 "562517d29e9d6051282e74eb77ca224843268e94b6070dab4d50a957159050c9"
   license "Apache-2.0"
   head "https://github.com/nmstate/nmstate.git", branch: "base"
 
