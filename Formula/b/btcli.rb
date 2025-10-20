@@ -3,8 +3,8 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/a0/e2/ab3d34ab01bf3fd92d08a633201ae3d9e1cbdb4b7ead286bce3b501ac671/bittensor_cli-9.13.1.tar.gz"
-  sha256 "cf21ad269c1611accefa35688427e79152e7db1b4f1bb0045ec9b9e262e6bb93"
+  url "https://files.pythonhosted.org/packages/0d/97/b7ebf1f37148c36b757e412c8c074a68a51ef1b919b76a8570b154c65955/bittensor_cli-9.14.0.tar.gz"
+  sha256 "600b8d4a8592bbc4e5851f7fd7ac005c57088c10434a2062a76842b572e988ff"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
@@ -48,8 +48,8 @@ class Btcli < Formula
   end
 
   resource "async-substrate-interface" do
-    url "https://files.pythonhosted.org/packages/d3/a7/b58e14dcc2bd667c5b208bf7dd677627ff49542bc3ff50d242f404784b17/async_substrate_interface-1.5.6.tar.gz"
-    sha256 "5a15334b30f5d9705c2d7f2ef0d9448b7ce9c6148917236c9e210430b75340cc"
+    url "https://files.pythonhosted.org/packages/cc/1a/08c1c7fbb5f45997e7d78ef9016e3c47d49eaaa2f65a5b958ef129ab5822/async_substrate_interface-1.5.7.tar.gz"
+    sha256 "a98aad6cf1aa0238b4c00783f0ec6148d0e495906a56408832ad5b041ed7df16"
   end
 
   resource "attrs" do
@@ -138,8 +138,8 @@ class Btcli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/ae/05/79a5b5a795f36c1aaa002d194c1ef71e5d95f7e1900155bbfde734815ab9/narwhals-2.8.0.tar.gz"
-    sha256 "52e0b22d54718264ae703bd9293af53b04abc995a1414908c3b807ba8c913858"
+    url "https://files.pythonhosted.org/packages/b7/95/aa46616f5e567ff5d262f4c207d5ca79cb2766010c786c351b8e7f930ef4/narwhals-2.9.0.tar.gz"
+    sha256 "d8cde40a6a8a7049d8e66608b7115ab19464acc6f305d136a8dc8ba396c4acfe"
   end
 
   resource "netaddr" do
@@ -193,8 +193,8 @@ class Btcli < Formula
   end
 
   resource "scalecodec" do
-    url "https://files.pythonhosted.org/packages/bc/7c/703893e7a8751318517a3dd8c0c060b2c30ffa33f4ab5dd6a4ed483f7967/scalecodec-1.2.11.tar.gz"
-    sha256 "99a2cdbfccdcaf22bd86b86da55a730a2855514ad2309faef4a4a93ac6cbeb8d"
+    url "https://files.pythonhosted.org/packages/b8/3c/4c3e3fa0efd75eb1e00b9bd6ccce8e0018e0789bff35d76cc9ce554354d0/scalecodec-1.2.12.tar.gz"
+    sha256 "aa54cc901970289fe64ae01edf076f25f60f8d7e4682979b827cab73dde74393"
   end
 
   resource "shellingham" do
@@ -213,8 +213,8 @@ class Btcli < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz"
-    sha256 "9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca"
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "typing-extensions" do
