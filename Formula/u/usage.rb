@@ -1,8 +1,8 @@
 class Usage < Formula
   desc "Tool for working with usage-spec CLIs"
   homepage "https://usage.jdx.dev/"
-  url "https://github.com/jdx/usage/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "a9447fa491cd8b518dc42f46e2eddf25b2f9485e60996ef8e0736f5fc9371582"
+  url "https://github.com/jdx/usage/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "1e96ed370cd52e7393bdd8ed519d79fdfeb84b2a1bdd907f61737f665b9a88df"
   license "MIT"
   head "https://github.com/jdx/usage.git", branch: "main"
 
@@ -16,6 +16,13 @@ class Usage < Formula
   end
 
   depends_on "rust" => :build
+
+  # Add shell fallback
+  # https://github.com/jdx/usage/pull/347
+  patch do
+    url "https://github.com/jdx/usage/commit/1029e4c5d0b20a2ce59be216b7f262326a24c28d.patch?full_index=1"
+    sha256 "690247b27e612ce55353e60bc10d65c3601d8a6fba4e5a686f6d324b2230bf82"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
