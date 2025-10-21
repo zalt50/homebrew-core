@@ -1,9 +1,9 @@
 class Iccdev < Formula
   desc "Demonstration Implementation for iccMAX color profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
-  url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.2.50.tar.gz"
-  sha256 "3ef14e8d143705eced1b3120dcc16d6b8730dac7754fae7fef6861eb53836b56"
-  license "MIT"
+  url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "8795b52a400f18a5192ac6ab3cdeebc11dd7c1809288cb60bb7339fec6e7c515"
+  license "BSD-3-Clause"
 
   bottle do
     rebuild 1
