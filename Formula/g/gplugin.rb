@@ -34,7 +34,7 @@ class Gplugin < Formula
   depends_on "glib"
   depends_on "gtk4"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "gettext"
