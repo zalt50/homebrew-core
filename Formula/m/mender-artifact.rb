@@ -1,8 +1,8 @@
 class MenderArtifact < Formula
   desc "CLI tool for managing Mender artifact files"
   homepage "https://mender.io"
-  url "https://github.com/mendersoftware/mender-artifact/archive/refs/tags/4.1.1.tar.gz"
-  sha256 "d0d30f3624caf99d8c6e70e1f3a99cc589e9d8d63ad8b46605d1290457d9ab3d"
+  url "https://github.com/mendersoftware/mender-artifact/archive/refs/tags/4.2.0.tar.gz"
+  sha256 "14ba008df9b24321de72821de394bc4326e4dd9e17ed7c111340689e90d8b596"
   license "Apache-2.0"
 
   # exclude tags like `3.4.0b1` and `internal-v2020.02`
