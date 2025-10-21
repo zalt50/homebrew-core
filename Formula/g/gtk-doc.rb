@@ -28,7 +28,7 @@ class GtkDoc < Formula
   depends_on "pkgconf" => :build
   depends_on "docbook"
   depends_on "docbook-xsl"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -47,7 +47,7 @@ class GtkDoc < Formula
     # To avoid recording pkg-config shims path
     ENV.prepend_path "PATH", Formula["pkgconf"].bin
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
     ENV.prepend_path "PATH", libexec/"bin"
 
