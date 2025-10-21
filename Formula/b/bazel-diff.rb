@@ -6,7 +6,7 @@ class BazelDiff < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b94f0e97c498a4c087069ff33d17570a0e4b983525ac91d872afa87d6a8fe840"
+    sha256 cellar: :any_skip_relocation, all: "e63158f614be8fb56b1093dca1fbcedab1f661c0041b7a003c9ba6672408b031"
   end
 
   depends_on "bazel" => :test
