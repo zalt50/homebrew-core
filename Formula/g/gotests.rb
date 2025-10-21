@@ -1,8 +1,8 @@
 class Gotests < Formula
   desc "Automatically generate Go test boilerplate from your source code"
   homepage "https://github.com/cweill/gotests"
-  url "https://github.com/cweill/gotests/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "f0236dbebd8a3fd19ec4260f490cb164240e1d518d3971b42872978f7a50c040"
+  url "https://github.com/cweill/gotests/archive/refs/tags/v1.7.3.tar.gz"
+  sha256 "285cd1afef472abfae577a98020af53aa7600a89b200263207283d348844489e"
   license "Apache-2.0"
   head "https://github.com/cweill/gotests.git", branch: "develop"
 
@@ -24,7 +24,7 @@ class Gotests < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2f0b6e37e88deaf7713ebf6a2e34baf767e2a7b6168244f31e909ef4b8f8100"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./gotests"
