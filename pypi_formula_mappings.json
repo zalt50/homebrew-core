@@ -723,7 +723,7 @@
     "exclude_packages": ["certifi", "cffi", "cryptography", "pillow", "pycparser", "rpds-py"]
   },
   "otterdog": {
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
   "parliament": {
     "extra_packages": ["setuptools"]
