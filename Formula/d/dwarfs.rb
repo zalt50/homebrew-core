@@ -12,14 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "2697e428eef2e29f1e8ae0bf08753a671b57dbc568f12fe8bcff8990f81cb8b5"
-    sha256                               arm64_sequoia: "e042bc7ba514d04af91dcab3af3edf91c4d6865fb9aa0b50c5587d1234eb54f5"
-    sha256                               arm64_sonoma:  "708b6313f17ef0813e2ba3fe07923f675893953a780e5b3f2b92a348b4b9b283"
-    sha256                               arm64_ventura: "0ae44a58627292f7e4ff95b2b74d8420182b3e68d7e7fe3dd595dce6448e3171"
-    sha256 cellar: :any,                 sonoma:        "b7ab7c653028882f0688fb1168dc00236117daa712680d1def4366e69ed2f552"
-    sha256 cellar: :any,                 ventura:       "9b69ab73a08b78a3d022b46e6f7dade5cf36ed8c4cf5013ff998d95897a0092e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10ccb1ddec2601891528592b6d954f6d54436c487f380b21f7b85e52050cbfbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e3dfa59eb0ed9299160b51b7e169d23f86fa3df76558cdc1ebadd1eed13e6bf"
+    sha256                               arm64_tahoe:   "741cb17f74eba766025adcaa1d65bc33a99b1feebfdb7949be625efc77b1111c"
+    sha256                               arm64_sequoia: "1515201cc3980a4cba442675f11e193eb5920644fc39c67173ce3750f242b0bc"
+    sha256                               arm64_sonoma:  "9c94c09ae94a1e796b1a277c6c4bae578428e4dcacccd7e04313bff12f256075"
+    sha256 cellar: :any,                 sonoma:        "1c28aaea2630571524c36c7740e613de0463a7a3b21d3ca5196776faef78908f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd30917e87b13a61294bd0e9f06b25bfd83846084bd5d22024a567b976b69dc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6692d8573bce29cfb8c08646762679b611dd7c8f017eb12c2daf18107ef834c"
   end
 
   depends_on "cmake" => :build
