@@ -32,7 +32,7 @@ class Nwchem < Formula
   depends_on "open-mpi"
   depends_on "openblas"
   depends_on "pkgconf"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "scalapack"
 
   uses_from_macos "libxcrypt"
@@ -64,7 +64,7 @@ class Nwchem < Formula
       inreplace "util/util_nwchemrc.F", "/etc/nwchemrc", etc/"nwchemrc"
 
       # needed to use python 3.X to skip using default python2
-      ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.13"
+      ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.14"
       ENV["BLASOPT"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["LAPACK_LIB"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["BLAS_SIZE"] = "4"
