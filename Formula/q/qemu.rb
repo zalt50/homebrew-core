@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-10.1.1.tar.xz"
-  sha256 "e56b93d95953a9b6a64d1985dbcedfb07dc54d92c50b7912526693536c589923"
+  url "https://download.qemu.org/qemu-10.1.2.tar.xz"
+  sha256 "9d75f331c1a5cb9b6eb8fd9f64f563ec2eab346c822cb97f8b35cd82d3f11479"
   license "GPL-2.0-only"
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
 
@@ -24,7 +24,7 @@ class Qemu < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build # keep aligned with meson
+  depends_on "python@3.14" => :build # keep aligned with meson
   depends_on "spice-protocol" => :build
 
   depends_on "capstone"
