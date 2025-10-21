@@ -18,7 +18,17 @@ class Asciinema < Formula
   depends_on "rust" => :build
 
   def install
+    ENV["ASCIINEMA_GEN_DIR"] = "."
+
     system "cargo", "install", *std_cargo_args
+
+    man1.install Dir["man/**/*.1"]
+
+    bash_completion.install "completion/asciinema.bash" => "asciinema"
+    fish_completion.install "completion/asciinema.fish"
+    zsh_completion.install "completion/_asciinema"
+    pwsh_completion.install "completion/_asciinema.ps1" => "asciinema"
+    (share/"elvish/lib").install "completion/asciinema.elv"
   end
 
   test do
