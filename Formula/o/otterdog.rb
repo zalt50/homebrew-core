@@ -12,14 +12,13 @@ class Otterdog < Formula
   no_autobump! because: "'playwright' resource lacks PyPI sdist"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "06fd8aae906e2f7531da171393de1bfce5847f81230805204bba5aea2f57fdd0"
-    sha256 cellar: :any,                 arm64_sequoia: "295d7b6e99161bf89a812659d715b68f6ad09ffcecc0e1047aa24c293e23867b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c09acd7c04e22bdd8169131bf5c5473b0147f424d256b3e8bb562875801df369"
-    sha256 cellar: :any,                 arm64_ventura: "f3269b4350469f57dbc272d7602157bebcdc57fd2e66bbe92b162c385634f8cf"
-    sha256 cellar: :any,                 sonoma:        "a2505d36f55003c5e1dafafa91d858615a70165770f5a9b3f80028eebd49eb86"
-    sha256 cellar: :any,                 ventura:       "2a769449d657c3809248e854e141cfb9a0b72c15eeb82bdcbe2abcc268502f3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd44b1a827d67400c496e0de08b39d0027f9e08b164486a913095a3d132ecc4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51e7ce5d114e8ec3151064e4b28e915ba6ac20293d5d8a3e0376b18b6274e352"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "99257156b6700723367104827453d2e0a2d5462b282f60347aeb89bae0197b4d"
+    sha256 cellar: :any,                 arm64_sequoia: "5f20c8552aaa1072a66810ae512dbd92092aab3c0f1e4df8d948e0fe4d0c98f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "6de91da57b2653adf2ca824839cb9a5d4cf5b685707af6366dbc5f97cb74cf27"
+    sha256 cellar: :any,                 sonoma:        "ecf9448d0afa3f620adf426933e9590dfce2d3fcb5504b4dc8ba856df5881f3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f4f6de5036111648e2da764c6f8ac7272c4e82d25ead2b5849dc16b94991850"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec43bd12f2a973a9448ac8ea8e635cdd32d8a62103f1684cba6cf26c9d86e283"
   end
 
   depends_on "rust" => :build # for rjsonnet
