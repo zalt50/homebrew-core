@@ -7,12 +7,12 @@ class Gotests < Formula
   head "https://github.com/cweill/gotests.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10a259b5cb1684f57af33bb5dd0a2ccef63808f2531d8304ea7b530e9fb5373e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10a259b5cb1684f57af33bb5dd0a2ccef63808f2531d8304ea7b530e9fb5373e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10a259b5cb1684f57af33bb5dd0a2ccef63808f2531d8304ea7b530e9fb5373e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4f223b149bd684c8b26e2b5fa6c108a510e96a541a01b189be4dd934a14cb80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac4b3bc5b4fa3ad6ef70b1d9abc26139c441b42b79e0157e961546ba103510af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "889ef45d6601cb599bd65dcadf910e9b16aeeebfe2939cf3dc911d74720fdc1f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1483768ebe2632ad07c5df4e9429e6679e2fcb169204f902abae0a3e1c446f60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1483768ebe2632ad07c5df4e9429e6679e2fcb169204f902abae0a3e1c446f60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1483768ebe2632ad07c5df4e9429e6679e2fcb169204f902abae0a3e1c446f60"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10baf54aba7e763522277d53b3ae70abe6b2df20501d97142ea8c7631676df3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cd7651074bae1c8505772f781e1db9021a516dcc06e95ece72b69a761479259"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c64872bb9392eabca710417ce18dde058fce1030ea9d9aedf4ce15ca325353e3"
   end
 
   depends_on "go" => [:build, :test]
