@@ -6,8 +6,6 @@ class Gotests < Formula
   license "Apache-2.0"
   head "https://github.com/cweill/gotests.git", branch: "develop"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10a259b5cb1684f57af33bb5dd0a2ccef63808f2531d8304ea7b530e9fb5373e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "10a259b5cb1684f57af33bb5dd0a2ccef63808f2531d8304ea7b530e9fb5373e"
