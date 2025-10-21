@@ -13,8 +13,9 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "fc74cb6b30bcd49addc69adf8ea433e05ef6e367f0977729e1d25a1dfbd1464a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "816d7470053c783689ee0bd125a9b6a8bafca6488dbce36fba028a4fafbff12b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ef75476cfcf3b9cdec62337c80318afdce18c8f4a4db2f218c40990600306fb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ce74a40cbbe8f23d3f9fd99feadb3cc277623ff2d4c5e637ed3b1eb10a7d0bd4"
   end
 
   depends_on "pkgconf" => :build
