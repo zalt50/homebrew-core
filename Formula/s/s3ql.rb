@@ -19,11 +19,11 @@ class S3ql < Formula
 
   depends_on "pkgconf" => :build
 
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "libffi"
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "apsw" do
     url "https://files.pythonhosted.org/packages/02/ea/7469e89d75a07972255aac4c1b98675bfbc74df32a19dd5dc8ba87aa552b/apsw-3.50.4.0.tar.gz"
@@ -86,13 +86,13 @@ class S3ql < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/70/dc/3976b322de9d2e87ed0007cf04cc7553969b6c7b3f48a565d0333748fbcd/setuptools-80.3.1.tar.gz"
-    sha256 "31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/01/c1/68d582b4d3a1c1f8118e18042464bb12a7c1b75d64d75111b297687041e3/trio-0.30.0.tar.gz"
-    sha256 "0781c857c0c81f8f51e0089929a26b5bb63d57f927728a5586f7e36171f064df"
+    url "https://files.pythonhosted.org/packages/76/8f/c6e36dd11201e2a565977d8b13f0b027ba4593c1a80bed5185489178e257/trio-0.31.0.tar.gz"
+    sha256 "f71d551ccaa79d0cb73017a33ef3264fde8335728eb4c6391451fe5d253a9d5b"
   end
 
   resource "six" do
