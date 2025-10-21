@@ -6,7 +6,7 @@ class Openvino < Formula
   url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.3.0.tar.gz"
   sha256 "969a1b881ad0103dd522b5b09738434261d1158ebb23acb000eafef55268f7be"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -27,7 +27,7 @@ class Openvino < Formula
   depends_on "flatbuffers" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "pybind11" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "nlohmann-json"
   depends_on "numpy"
@@ -97,7 +97,7 @@ class Openvino < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
