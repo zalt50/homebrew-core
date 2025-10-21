@@ -3,8 +3,8 @@ class Onionprobe < Formula
 
   desc "Test and monitoring tool for Tor Onion Services"
   homepage "https://tpo.pages.torproject.net/onion-services/onionprobe/"
-  url "https://files.pythonhosted.org/packages/54/5c/cd134dc632131ad3e88bae3c28cacf15443fc76541f731c184f171a54e83/onionprobe-1.4.0.tar.gz"
-  sha256 "ae3131326d669287918aff9a36e0ba21ea34fd7e6c6ec8ee4a20077274318c5a"
+  url "https://files.pythonhosted.org/packages/30/d0/6441b228ce174481ace50dec6a19ce6298eebdb35d06f40f7b1de66f51c4/onionprobe-1.4.1.tar.gz"
+  sha256 "45c12c89829e344422974aa9d56cc653d1e20a2f225e73ee18aeb995ca47a2be"
   license "GPL-3.0-or-later"
   head "https://gitlab.torproject.org/tpo/onion-services/onionprobe.git", branch: "main"
 
@@ -64,10 +64,6 @@ class Onionprobe < Formula
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
-  # Fix to support Python 3.14
-  # Issue ref: https://gitlab.torproject.org/tpo/onion-services/onionprobe/-/issues/116
-  patch :DATA
-
   def install
     virtualenv_install_with_resources
   end
@@ -79,24 +75,3 @@ class Onionprobe < Formula
     assert_match "Status code is 200", output
   end
 end
-
-__END__
-diff --git a/packages/onionprobe/config.py b/packages/onionprobe/config.py
-index 9414f3f..bb9c832 100644
---- a/packages/onionprobe/config.py
-+++ b/packages/onionprobe/config.py
-@@ -277,7 +277,13 @@ def cmdline_parser():
-             parser.add_argument('-e', '--endpoints', nargs='*', help='Add endpoints to the test list', metavar="ONION-ADDRESS1")
- 
-         else:
--            config[argument]['type'] = type(config[argument]['default'])
-+            import argparse as _argparse
-+            if isinstance(config[argument].get('default'), bool):
-+                config[argument].pop('type', None)
-+                config[argument].pop('metavar', None)
-+                config[argument]['action'] = _argparse.BooleanOptionalAction
-+            else:
-+                config[argument]['type'] = type(config[argument]['default'])
- 
-             if not isinstance(config[argument]['default'], bool) and config[argument]['default'] != '':
-                 config[argument]['help'] += ' (default: %(default)s)'
