@@ -55,13 +55,6 @@ jobs:
           cask: false
           stable: ${{ matrix.stable }}
 
-      - name: Cache style cache
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: /home/linuxbrew/.cache/Homebrew/style
-          key: style-cache-${{ matrix.stable && 'stable-' || 'main-' }}${{ github.sha }}
-          restore-keys: style-cache-${{ matrix.stable && 'stable-' || 'main-' }}
-
       - run: brew test-bot --only-tap-syntax ${{ matrix.stable && '--stable' || '' }}
 
   formulae_detect:
@@ -329,7 +322,8 @@ jobs:
         run: brew determine-test-runners --dependents --eval-all "$TESTING_FORMULAE"
 
   test_deps:
-    needs: [tap_syntax, formulae_detect, setup_dep_tests, setup_dep_runners, tests]
+    needs:
+      [tap_syntax, formulae_detect, setup_dep_tests, setup_dep_runners, tests]
     if: >
       (success() ||
       (failure() &&
