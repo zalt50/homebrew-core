@@ -7,12 +7,12 @@ class ClangFormat < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/llvm-21.1.3.src.tar.xz"
-    sha256 "a80f2dbfa24a0c4d81089e6245936dcd0c662c90f643d1706bb44e7bc8338ff1"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.4/llvm-21.1.4.src.tar.xz"
+    sha256 "f311681255deb37f74bbf950a653e9434e7d8383a7b46a603a323c46cd4bf50e"
 
     resource "clang" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/clang-21.1.3.src.tar.xz"
-      sha256 "a70518c2d4c90b8b170732e1342a9854ec2babc310b41d5556a83f4b55a63d1d"
+      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.4/clang-21.1.4.src.tar.xz"
+      sha256 "3e8e25a7478bfb0ef510fff35d1a43bdfb62c7727bf98bb43ad33deef2f9f1a2"
 
       livecheck do
         formula :parent
@@ -20,8 +20,8 @@ class ClangFormat < Formula
     end
 
     resource "cmake" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/cmake-21.1.3.src.tar.xz"
-      sha256 "4db6f028b6fe360f0aeae6e921b2bd2613400364985450a6d3e6749b74bf733a"
+      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.4/cmake-21.1.4.src.tar.xz"
+      sha256 "f4316d84a862ba3023ca1d26bd9c6a995516b4fa028b6fb329d22e24cc6d235e"
 
       livecheck do
         formula :parent
@@ -29,8 +29,8 @@ class ClangFormat < Formula
     end
 
     resource "third-party" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/third-party-21.1.3.src.tar.xz"
-      sha256 "2bae76a7c7db4096b921589ae94c030727ee0dcb600bfe40353878937af61aa0"
+      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.4/third-party-21.1.4.src.tar.xz"
+      sha256 "ae8658390504e08e464f65ecea838a0584df4734c27cecedfe7eb32780e81564"
 
       livecheck do
         formula :parent
