@@ -6,12 +6,12 @@ class Lmod < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "47bbb91e4c1f295ed19df0476cb839326175f207f9f3d67268280d5a6fefffb7"
-    sha256 cellar: :any,                 arm64_sequoia: "df152d7df71cdf65e28bc3f79e6679d89c045721bcd8462ebdae66a532a31d19"
-    sha256 cellar: :any,                 arm64_sonoma:  "03f92c10bfd34886e7cbee44da9c6a71f55f10623754d3055f3dd7ecf0236a17"
-    sha256 cellar: :any,                 sonoma:        "b340750f3850449331a2cd5a2b2238d096580755579b010c7e92da0f73b10c3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ef19c1a2bb046d964b34eacdbd67355e47e5fe5b262ea03a0ad060529bfa034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45ea01c861f7ddba634f186f791eca86949a7fe8fe3869966670304c23899dcc"
+    sha256 cellar: :any,                 arm64_tahoe:   "bceb0a4a8ff3765738f118f8323f96ae0488281834a47a289ad39fcf0ff85159"
+    sha256 cellar: :any,                 arm64_sequoia: "840208e7d62bcdfb5dd13f7ac6ca8693a7eba3dd7fb2b19c09a847e3c5c105e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f1590a0aa6ea9f80e10dbb1fb0404877d86e17b0f6dd43e73095e9cbefdb9b9"
+    sha256 cellar: :any,                 sonoma:        "cdc99fc9a8d1c7246e1c38fe92c5dc12d466731ccf5fee7674312501708d0456"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e7995c48480b6d5f77b82b528faff428537616c1d41f7b4c9dcb23b9d9985d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a9b2dcabdf13f126ff4c516c22118fae91ef91ffc153df99256461c332a20c7"
   end
 
   depends_on "luarocks" => :build
