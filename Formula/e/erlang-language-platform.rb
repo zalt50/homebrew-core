@@ -13,6 +13,7 @@ class ErlangLanguagePlatform < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec1cdb61be4218490856f31cc21913fbe45574bd216e720b9a2bfb6aacff9f81"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b377631223b13b28a3704de569f2ac75718a842b7cb54776c2fa85002a0eeb15"
     sha256 cellar: :any_skip_relocation, sonoma:        "dcb4f04040b91c7b1f96ac6e0231f4f3048cffa976d82abdd4b3dc1514a8c6d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f737b67821c32935f8059b26fba18c8729a36aa1fd389166cd351af9b9fedaaf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "89df1cb575a38666c08a9d17f5ac51e20dcffa9d9745483bffa27b7c5e90705a"
   end
 
