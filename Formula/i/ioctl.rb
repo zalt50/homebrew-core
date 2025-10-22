@@ -1,8 +1,8 @@
 class Ioctl < Formula
   desc "Command-line interface for interacting with the IoTeX blockchain"
   homepage "https://docs.iotex.io/"
-  url "https://github.com/iotexproject/iotex-core/archive/refs/tags/v2.2.2.tar.gz"
-  sha256 "6112f698b90f7e6044c446786e474c783b20031f8b8ee2e4498e7bd3b4e8c15b"
+  url "https://github.com/iotexproject/iotex-core/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "230e7485d61aa1cfa29f76702ebe1f1e017b32ad647f3bfc8aee4da3d0a68aa6"
   license "Apache-2.0"
   head "https://github.com/iotexproject/iotex-core.git", branch: "master"
 
@@ -25,12 +25,22 @@ class Ioctl < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "ioctl"
-    bin.install "bin/ioctl"
+    ENV["CGO_ENABLED"] = "1"
+    ldflags = %W[
+      -s -w
+      -X github.com/iotexproject/iotex-core/v2/pkg/version.PackageVersion=#{version}
+      -X github.com/iotexproject/iotex-core/v2/pkg/version.PackageCommitID=#{tap.user}
+      -X github.com/iotexproject/iotex-core/v2/pkg/version.GitStatus=clean
+      -X github.com/iotexproject/iotex-core/v2/pkg/version.GoVersion=#{Formula["go"].version}
+      -X github.com/iotexproject/iotex-core/v2/pkg/version.BuildTime=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags:, tags: "nosilkworm"), "./tools/ioctl"
   end
 
   test do
-    output = shell_output "#{bin}/ioctl config set endpoint api.iotex.one:443"
+    assert_match version.to_s, shell_output("#{bin}/ioctl version")
+
+    output = shell_output("#{bin}/ioctl config set endpoint api.iotex.one:443")
     assert_match "Endpoint is set to api.iotex.one:443", output
   end
 end
