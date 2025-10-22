@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https://github.com/dolthub/doltgresql"
-  url "https://github.com/dolthub/doltgresql/archive/refs/tags/v0.52.2.tar.gz"
-  sha256 "69af3c15dc64653e6a6ad0ea1b25a1ca15a36ff4e3006a98ede8c3148061d8fc"
+  url "https://github.com/dolthub/doltgresql/archive/refs/tags/v0.52.3.tar.gz"
+  sha256 "6845271979c18e05061329faf4bcc9c4aa61d095cb53722fcefe516ccc0b1289"
   license "Apache-2.0"
   head "https://github.com/dolthub/doltgresql.git", branch: "main"
 
@@ -28,6 +28,8 @@ class Doltgres < Formula
   depends_on "icu4c@77"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "./postgres/parser/build.sh"
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/doltgres"
   end
