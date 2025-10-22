@@ -1,8 +1,8 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https://github.com/GitoxideLabs/gitoxide"
-  url "https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.45.0.tar.gz"
-  sha256 "1914573c9efa69a3a8b8ef97483a7756a4d5ab433a93e43502fb18332f77b623"
+  url "https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.46.0.tar.gz"
+  sha256 "68a60cae90e0882cb3e1e699bc1c7e64902b632cc30209f60444c8ca8b2d820e"
   license "Apache-2.0"
   head "https://github.com/GitoxideLabs/gitoxide.git", branch: "main"
 
@@ -28,10 +28,7 @@ class Gitoxide < Formula
   uses_from_macos "zlib"
 
   def install
-    # Avoid requiring CMake or building a vendored zlib-ng.
-    # Feature array corresponds to the default config (max) sans vendored zlib-ng.
-    # See: https://github.com/GitoxideLabs/gitoxide/blob/b8db2072bb6a5625f37debe9e58d08461ece67dd/Cargo.toml#L88-L89
-    features = %w[max-control gix-features/zlib-stock gitoxide-core-blocking-client http-client-curl]
+    features = %w[max-control gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
     generate_completions_from_executable(bin/"gix", "completions", "-s")
     generate_completions_from_executable(bin/"ein", "completions", "-s")
