@@ -7,14 +7,10 @@ class Shepherd < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "4207333c35b99dcdd78f2542b1ad1dac48c5dd6ae1526a39f6736945cbf78177"
-    sha256 arm64_sequoia: "4207333c35b99dcdd78f2542b1ad1dac48c5dd6ae1526a39f6736945cbf78177"
-    sha256 arm64_sonoma:  "4207333c35b99dcdd78f2542b1ad1dac48c5dd6ae1526a39f6736945cbf78177"
-    sha256 arm64_ventura: "4207333c35b99dcdd78f2542b1ad1dac48c5dd6ae1526a39f6736945cbf78177"
-    sha256 sonoma:        "d8ad6fa793dbf9da37e69c9522494bec375cdd835de75ed82dfb51f4c67e3963"
-    sha256 ventura:       "d8ad6fa793dbf9da37e69c9522494bec375cdd835de75ed82dfb51f4c67e3963"
-    sha256 arm64_linux:   "85951781850470d072f8959f3d658e71628e6b8926347c94a5695ca404f3c3e1"
-    sha256 x86_64_linux:  "a8482d3bcbd91c2db1b208608f65386bc774531ad8f2b64059691bec16c2ab8a"
+    sha256 arm64_tahoe:   "ab697e56b7681791843ef13b65fe83e6ce99097b8aee641b54c5725a5103ac9f"
+    sha256 arm64_sequoia: "ab697e56b7681791843ef13b65fe83e6ce99097b8aee641b54c5725a5103ac9f"
+    sha256 arm64_sonoma:  "ab697e56b7681791843ef13b65fe83e6ce99097b8aee641b54c5725a5103ac9f"
+    sha256 sonoma:        "f186f200570abd84794dd574570953e546ebd572e09e9fec5a02601bb56388c4"
   end
 
   depends_on "pkgconf" => :build
