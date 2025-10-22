@@ -2,8 +2,8 @@ class Calicoctl < Formula
   desc "Calico CLI tool"
   homepage "https://www.tigera.io/project-calico/"
   url "https://github.com/projectcalico/calico.git",
-      tag:      "v3.30.4",
-      revision: "b370415ad69ddc139a0981f8c5c6773e4703846b"
+      tag:      "v3.31.0",
+      revision: "b1f3c43f84370504e218eb5be8a34c81348f866a"
   license "Apache-2.0"
   head "https://github.com/projectcalico/calico.git", branch: "master"
 
@@ -25,10 +25,12 @@ class Calicoctl < Formula
   depends_on "go" => :build
 
   def install
-    commands = "github.com/projectcalico/calico/calicoctl/calicoctl/commands"
-    ldflags = "-X #{commands}.VERSION=#{version} " \
-              "-X #{commands}.GIT_REVISION=#{Utils.git_short_head} " \
-              "-s -w"
+    ldflags = %W[
+      -s -w
+      -X github.com/projectcalico/calico/pkg/buildinfo.Version=#{version}
+      -X github.com/projectcalico/calico/pkg/buildinfo.GitRevision=#{Utils.git_short_head}
+      -X github.com/projectcalico/calico/pkg/buildinfo.BuildDate=#{time.iso8601}
+    ]
     system "go", "build", *std_go_args(ldflags:), "calicoctl/calicoctl/calicoctl.go"
   end
 
