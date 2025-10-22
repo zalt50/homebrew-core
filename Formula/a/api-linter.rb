@@ -7,12 +7,12 @@ class ApiLinter < Formula
   head "https://github.com/googleapis/api-linter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c532109ad5cff38e82fb1c99436c48b373de67f98ab3fad583f4d9cd730233a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c532109ad5cff38e82fb1c99436c48b373de67f98ab3fad583f4d9cd730233a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c532109ad5cff38e82fb1c99436c48b373de67f98ab3fad583f4d9cd730233a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f2ef3124294dd1acbb6b76282717d9c0dfbe4bd83ba8c27b2b7a14ad39daaebd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c566020d250b6ada2b98db582eb50bf1d9f3ee4d829089ca4907ba4b61b94976"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70623acdbee90ba6da0022804b7111c41e4c7c5b55df1a45bd9ae1cd2e20631a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a7a163028bf85f562da0a15a1885f5ed092039bcc2238d8b94d8f00d5d8370a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a7a163028bf85f562da0a15a1885f5ed092039bcc2238d8b94d8f00d5d8370a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a7a163028bf85f562da0a15a1885f5ed092039bcc2238d8b94d8f00d5d8370a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f301a9883efdce8e8bd950fdbf0842919defef460b13ce36a96a0c39e630d06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05fb0f72cab0c1eb5b0dbe9029e5eb378db7d652bf1d9619c77a5f6cea8290c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f748f4f8d76703b2491bb1c39981e68f68ae0ef3702b870a4145263981cc045e"
   end
 
   depends_on "go" => :build
