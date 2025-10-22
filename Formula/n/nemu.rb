@@ -6,16 +6,12 @@ class Nemu < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 arm64_tahoe:    "7f13befef528918b647d1271046b2e6caeb3eed431614e37199bf75571004b93"
-    sha256 arm64_sequoia:  "4c96f0430555710f094365598dddb0e2089ab38b1c756532a11f2a3303bd2768"
-    sha256 arm64_sonoma:   "af6f110c24124397c439c2b8ffc7dd0b9186fcbfe9946ad0d45a4a3a094146de"
-    sha256 arm64_ventura:  "7ee1275f2d0d4420779817a5379e3b5aba1189a2912ccc3bc099c0d149614bf6"
-    sha256 arm64_monterey: "d1e08e1f8edafdf159a802c2f37e4413a61c15265f9cc2821b8d538d293a0a93"
-    sha256 sonoma:         "4eae6f67f094316ff9ae0aaea3be33254e870a74677b962735c2f78a5bfc7682"
-    sha256 ventura:        "f01fb55760affcd6ff698e4b680c3ae12212493b3ed530f75ef626cdba48b82b"
-    sha256 monterey:       "5feb7ba4d086208474da5fbf0c1a98ceb26d783bc2950fe3a9ae1d90519a7289"
-    sha256 arm64_linux:    "14a133841c2ab6395959d5d2a84b20ea4c585571c7bc9ea3d435efc0a4af4872"
-    sha256 x86_64_linux:   "babf6558252a668a49b3fb0552415c50ebabbcee6ba4dad54a64e8f01b8dc79f"
+    sha256 arm64_tahoe:   "a85570304ed9582ca07aab731b00e4cd2e4f88b4dfddaeacf119d5362f1dc670"
+    sha256 arm64_sequoia: "f8e00617670f088a45154eed42c7a37257d23692128cb325e880df8fd340c834"
+    sha256 arm64_sonoma:  "85ed732c4c8c5a1289c3d78d425798876f32d6a3095c04a744d4ef1f32339c4d"
+    sha256 sonoma:        "988e07f3dc2a6a26b82a63b6583775f48b7d8eeed7ca2a648d5ada870d9d97de"
+    sha256 arm64_linux:   "8587fe0509237203b730dd4736cec438559fb2e52c2fe2c219d0764e69851be4"
+    sha256 x86_64_linux:  "a3b5579daa967e5637df12043eaef848eacc00d9dbc44a4180cfec9d3730a467"
   end
 
   depends_on "cmake" => :build
