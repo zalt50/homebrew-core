@@ -90,7 +90,7 @@
     "exclude_packages": ["certifi", "pillow"]
   },
   "aws-sam-cli": {
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
   "aws-sso-util": {
     "exclude_packages": ["certifi"]
