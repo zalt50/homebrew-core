@@ -3,8 +3,8 @@ class Hyfetch < Formula
 
   desc "Fast, highly customisable system info script with LGBTQ+ pride flags"
   homepage "https://github.com/hykilpikonna/hyfetch"
-  url "https://files.pythonhosted.org/packages/35/f2/8b24d32c63110d3ba7e5e4c88827827cb05eb4e3d14c6652304c546b0e71/hyfetch-2.0.2.tar.gz"
-  sha256 "d11eed4b6082095a9e41272fb846e9ed029b172847c9d30e8646eabee9da2b12"
+  url "https://files.pythonhosted.org/packages/b7/ab/6445f1799bd410b9459dd19776646fd0f22559f7b7d07bf9f6835efa36c2/hyfetch-2.0.4.tar.gz"
+  sha256 "d2e08c60d013e3d06e4046e74d4a4cc7af40f71e7e6d5c5dff1a643d554de5b0"
   license "MIT"
   head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
 
@@ -27,6 +27,8 @@ class Hyfetch < Formula
     venv = virtualenv_install_with_resources
     # Install the rust executable where the Python package expects it.
     (venv.site_packages/"hyfetch/rust").install "bin/hyfetch"
+    # Install neowofetch wrapper scrip
+    bin.install venv.site_packages/"hyfetch/scripts/neowofetch"
   end
 
   test do
