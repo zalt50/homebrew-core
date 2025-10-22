@@ -11,14 +11,12 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c7019b81053e9b5a1bb519d3edea232426400749dec1be74f7cfb85edeb38a0"
-    sha256 cellar: :any,                 arm64_sequoia: "c2f2b74da21a9062e4b288dedc5a0041814addbde1829b3113ef2d68e82821cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "cadeb8b67fddfad5831b43590417fd0bc0b259c03baf162bdfc13dd99aa4a7ca"
-    sha256 cellar: :any,                 arm64_ventura: "d66cfeeac9d98b5f4868187eaf49753e5db88d416bdf39faa5357e29bb175367"
-    sha256 cellar: :any,                 sonoma:        "2e7f751a1f1ab3ccef7247e74d6c1f274a861d36c0b6e9df58f57a249eda4b6a"
-    sha256 cellar: :any,                 ventura:       "7249281922ef7324fac986eb4091ae1a38c3c1f3fba5438195b0c976ef675887"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d92efb4e4a7b77fe628ae75e2b01def4457110662e169a6dbcd90809e8c2992"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "422052b9e3633328435bb97e0ce20a001a1f9eea233f0f6bb7d9545b583b80b4"
+    sha256 cellar: :any,                 arm64_tahoe:   "b875ce8663a9289eccae0fa30d62bdcda5d3b631042815a2328cdf7b7ac9dd87"
+    sha256 cellar: :any,                 arm64_sequoia: "9384f064288561194d829c9ae8ddf9317779dbb03719147bd083947102a3eae7"
+    sha256 cellar: :any,                 arm64_sonoma:  "51e1988c65678c7aee681f8bd8e3a9b72990f95261a63462bea27b5e97c34165"
+    sha256 cellar: :any,                 sonoma:        "ee236dbfc3233de084214b44b53b914a335b654eec29091d090ee72831fe76c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d50a89130774edf8e0f479db89fd1c474ead639c66a5c31e5d0774861ea0853a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8598539e03ab4926b51f70220f899345166cce89b72f049da2960a60b80e7692"
   end
 
   keg_only :versioned_formula
