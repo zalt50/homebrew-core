@@ -25,7 +25,7 @@ class Ansible < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libssh"
   depends_on "libyaml"
-  depends_on "python@3.13" # needs bcrypt v5+ foro py3.14
+  depends_on "python@3.14"
   depends_on "tree" # for ansible-role-init
 
   uses_from_macos "krb5"
@@ -33,9 +33,8 @@ class Ansible < Formula
   uses_from_macos "libxslt"
   uses_from_macos "openldap" # for python-ldap
 
-  # passlib doesn't work with bcrypt v5+: https://github.com/ansible/ansible/issues/85919
   pypi_packages exclude_packages: %w[certifi cryptography gnureadline],
-                extra_packages:   %w[ansible-pylibssh apache-libcloud bcrypt<5 boto3 dnspython docker
+                extra_packages:   %w[ansible-pylibssh apache-libcloud boto3 dnspython docker
                                      fqdn junos-eznc jxmlease kerberos ntc-templates openshift
                                      passlib pexpect proxmoxer pynetbox pysphere3 python-consul
                                      python-ldap python-neutronclient pytz pywinrm requests-credssp
@@ -76,8 +75,8 @@ class Ansible < Formula
   end
 
   resource "bcrypt" do
-    url "https://files.pythonhosted.org/packages/bb/5d/6d7433e0f3cd46ce0b43cd65e1db465ea024dbb8216fb2404e919c2ad77b/bcrypt-4.3.0.tar.gz"
-    sha256 "3a3fd2204178b6d2adcf09cb4f6426ffef54762577a7c9b54c159008cb288c18"
+    url "https://files.pythonhosted.org/packages/d4/36/3329e2518d70ad8e2e5817d5a4cac6bba05a47767ec416c7d020a965f408/bcrypt-5.0.0.tar.gz"
+    sha256 "f748f7c2d6fd375cc93d3fba7ef4a9e3a092421b8dbf34d8d4dc06be9492dfdd"
   end
 
   resource "boto3" do
@@ -323,6 +322,11 @@ class Ansible < Formula
   resource "passlib" do
     url "https://files.pythonhosted.org/packages/b6/06/9da9ee59a67fae7761aab3ccc84fa4f3f33f125b370f1ccdb915bf967c11/passlib-1.7.4.tar.gz"
     sha256 "defd50f72b65c5402ab2c573830a6978e5f202ad0d984793c8dde2c4152ebe04"
+
+    # bcrypt no longer truncates long passwords: https://github.com/pyca/bcrypt/commit/d50ab05b2bece07d5c8d6a4179064fc714fd9126
+    # And breaks unmaintained passlib: https://foss.heptapod.net/python-libs/passlib/-/issues/196
+    # See also https://github.com/ansible/ansible/issues/85919
+    patch :DATA
   end
 
   resource "pbr" do
@@ -638,3 +642,17 @@ class Ansible < Formula
     end
   end
 end
+
+__END__
+diff --git a/passlib/handlers/bcrypt.py b/passlib/handlers/bcrypt.py
+--- a/passlib/handlers/bcrypt.py
++++ b/passlib/handlers/bcrypt.py
+@@ -644,7 +644,7 @@
+         config = self._get_config(ident)
+         if isinstance(config, str):
+             config = config.encode("ascii")
+-        hash = _bcrypt.hashpw(secret, config)
++        hash = _bcrypt.hashpw(secret[:72], config)
+         assert isinstance(hash, bytes)
+         if not hash.startswith(config) or len(hash) != len(config)+31:
+             raise uh.exc.CryptBackendError(self, config, hash, source="`bcrypt` package")
