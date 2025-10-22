@@ -1,8 +1,8 @@
 class TailwindcssLanguageServer < Formula
   desc "LSP for TailwindCSS"
   homepage "https://github.com/tailwindlabs/tailwindcss-intellisense/tree/HEAD/packages/tailwindcss-language-server"
-  url "https://github.com/tailwindlabs/tailwindcss-intellisense/archive/refs/tags/v0.14.28.tar.gz"
-  sha256 "f64c2d220be768a93952591650b4f126fe9804347840492509fff6a885195623"
+  url "https://github.com/tailwindlabs/tailwindcss-intellisense/archive/refs/tags/v0.14.29.tar.gz"
+  sha256 "50bd5f0fa99b055871165f950db704ce20b12291476d70ea957f96da132680ab"
   license "MIT"
 
   livecheck do
@@ -23,6 +23,12 @@ class TailwindcssLanguageServer < Formula
 
   depends_on "pnpm" => :build
   depends_on "node"
+
+  # lockfile update
+  patch do
+    url "https://github.com/tailwindlabs/tailwindcss-intellisense/commit/6f19018d336ae1b72e124569dd3ee4f328df2fb6.patch?full_index=1"
+    sha256 "ea45bfe06cd0f89c790d465510408dd1adf4ce8364ed24d56c977b81c22bc635"
+  end
 
   def install
     # Prevent pnpm from downloading another copy due to `packageManager` feature
