@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.28-ga.tar.gz"
-  sha256 "c051b84b55a826ff90ac601ff7501449fb6a578a89357bbc7550990a78bb5f1b"
+  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.29-ga.tar.gz"
+  sha256 "258bc09a2b1ce6d5965a1538ffaa2e2d25670ac3b75a43e7a08d210257e99bfc"
   license "GPL-2.0-only"
 
   livecheck do
@@ -79,13 +79,6 @@ class OpenjdkAT11 < Formula
     resource("boot-jdk").stage boot_jdk
     boot_jdk /= "Contents/Home" if OS.mac? && !Hardware::CPU.arm?
     java_options = ENV.delete("_JAVA_OPTIONS")
-
-    # Fix pack200 failure only when building with newer Clang
-    if OS.mac? && DevelopmentTools.clang_build_version >= 1600
-      inreplace "src/jdk.pack/share/native/common-unpack/constants.h",
-                "(-1)<<13",
-                "static_cast<int32_t>(~0u << 13)"
-    end
 
     args = %W[
       --disable-hotspot-gtest
