@@ -15,6 +15,7 @@ class Scoutsuite < Formula
     sha256 cellar: :any,                 arm64_sequoia: "1d0e3f7dabffe4d65f32a9d65839dfd94c7618deb62ebd9fd21d9ada263a80ac"
     sha256 cellar: :any,                 arm64_sonoma:  "84e183c0045633644a505a1c36169b50fa7d1efa0aeee5db5438b577459de545"
     sha256 cellar: :any,                 sonoma:        "9e7d32ccb40a307baade224db7fa87c41705c8baff780d9579b05e7344c9725c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d1d682b10f2f3c1eefb1cd103d9f08efe3d62d156728ea49833515489f33427"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c95f550a5c33e7513a1bb3d0f14b65d5e03522b934b3c3d8e10404b1adb3d427"
   end
 
