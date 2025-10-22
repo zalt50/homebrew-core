@@ -8,13 +8,12 @@ class Mapproxy < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7b3aa6676ad2964167f4ee7fd6e287b25c2f0030d6e329b04bb2ab49e2d3623a"
-    sha256 cellar: :any,                 arm64_sequoia: "1c6c04210c9cc06f3beac70fc2bab52c35160dc699caf4680b390a24fe52a73e"
-    sha256 cellar: :any,                 arm64_sonoma:  "c641dea15ac5558e4b2c739d4a42b1585f92c67e6431ce679bd0e532e0da64aa"
-    sha256 cellar: :any,                 sonoma:        "5b4fb04c2c2ee523ec97f49c44bdae2ba492577e97348cc9ce724360c6de96ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee81f0600c9580bc7c03a7234684348f207aac8c9212fdf4dac395976ce0f6a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "714bfe89806de48a9645a22dea46e5ffe04c56df5d3bd03b528a7e120a55d02b"
+    sha256 cellar: :any,                 arm64_tahoe:   "bb6f28cac8d3c4e40fb29681377caa49740d9a99a1cf3727934093c8921a9f04"
+    sha256 cellar: :any,                 arm64_sequoia: "755fda386852e471021f1fa2eb05bfa4f3af5abdccec8e4e6098f7338f4519f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "72363021accda8c3880d4f00b7da5c3cbbbbc7d6aa8f4faa087866fd440f5c04"
+    sha256 cellar: :any,                 sonoma:        "287aa830539b53f7125eb3547738cff36df0ce55a35fbe909dcbb845658454be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7d132d7d9201a6e03f16f9286276024dfdf323f51180c1583c632ca76628d7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fad2bb3366611d42fd101408c37fd76150f68a0aecc4a7bf3cecf35ee8dba15"
   end
 
   depends_on "pkgconf" => :build
