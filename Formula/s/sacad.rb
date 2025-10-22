@@ -17,8 +17,8 @@ class Sacad < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2302712f1ecb6af2c8f77208245d6dde6e727140f82c64b224d066c86a7a736"
   end
 
-  depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "pillow" => :no_linkage
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
