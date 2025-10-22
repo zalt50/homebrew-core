@@ -21,7 +21,7 @@ class AnsibleLint < Formula
   depends_on "ansible" => :test
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13" # cannot use py3.14 due to bcrypt v5+ issue for ansible
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: ["cryptography", "rpds-py"]
