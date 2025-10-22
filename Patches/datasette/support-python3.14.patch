@@ -1,0 +1,132 @@
+diff --git a/datasette/app.py b/datasette/app.py
+index 999d6aa6..804ab044 100644
+--- a/datasette/app.py
++++ b/datasette/app.py
+@@ -7,11 +7,11 @@ import functools
+ import glob
+ import hashlib
+ import httpx
++import importlib.metadata
+ import inspect
+ from itsdangerous import BadSignature
+ import json
+ import os
+-import pkg_resources
+ import re
+ import secrets
+ import sys
+@@ -921,9 +921,9 @@ class Datasette:
+         if using_pysqlite3:
+             for package in ("pysqlite3", "pysqlite3-binary"):
+                 try:
+-                    info["pysqlite3"] = pkg_resources.get_distribution(package).version
++                    info["pysqlite3"] = importlib.metadata.version(package)
+                     break
+-                except pkg_resources.DistributionNotFound:
++                except importlib.metadata.PackageNotFoundError:
+                     pass
+         return info
+ 
+diff --git a/datasette/cli.py b/datasette/cli.py
+index fd65ea94..d1310c46 100644
+--- a/datasette/cli.py
++++ b/datasette/cli.py
+@@ -41,6 +41,18 @@ from .utils.sqlite import sqlite3
+ from .utils.testing import TestClient
+ from .version import __version__
+ 
++
++def run_sync(coro_func):
++    """Run an async callable to completion on a fresh event loop."""
++    loop = asyncio.new_event_loop()
++    try:
++        asyncio.set_event_loop(loop)
++        return loop.run_until_complete(coro_func())
++    finally:
++        asyncio.set_event_loop(None)
++        loop.close()
++
++
+ # Use Rich for tracebacks if it is installed
+ try:
+     from rich.traceback import install
+@@ -182,8 +194,7 @@ def inspect(files, inspect_file, sqlite_extensions):
+     operations against immutable database files.
+     """
+     app = Datasette([], immutables=files, sqlite_extensions=sqlite_extensions)
+-    loop = asyncio.get_event_loop()
+-    inspect_data = loop.run_until_complete(inspect_(files, sqlite_extensions))
++    inspect_data = run_sync(lambda: inspect_(files, sqlite_extensions))
+     if inspect_file == "-":
+         sys.stdout.write(json.dumps(inspect_data, indent=2))
+     else:
+@@ -610,10 +621,10 @@ def serve(
+         return ds
+ 
+     # Run the "startup" plugin hooks
+-    asyncio.get_event_loop().run_until_complete(ds.invoke_startup())
++    run_sync(lambda: ds.invoke_startup())
+ 
+     # Run async soundness checks - but only if we're not under pytest
+-    asyncio.get_event_loop().run_until_complete(check_databases(ds))
++    run_sync(lambda: check_databases(ds))
+ 
+     if get:
+         client = TestClient(ds)
+@@ -633,9 +644,7 @@ def serve(
+     if open_browser:
+         if url is None:
+             # Figure out most convenient URL - to table, database or homepage
+-            path = asyncio.get_event_loop().run_until_complete(
+-                initial_path_for_datasette(ds)
+-            )
++            path = run_sync(lambda: initial_path_for_datasette(ds))
+             url = f"http://{host}:{port}{path}"
+         webbrowser.open(url)
+     uvicorn_kwargs = dict(
+diff --git a/datasette/plugins.py b/datasette/plugins.py
+index fef0c8e9..29644a92 100644
+--- a/datasette/plugins.py
++++ b/datasette/plugins.py
+@@ -1,6 +1,6 @@
+-import importlib
++import importlib.metadata
++import importlib.resources
+ import pluggy
+-import pkg_resources
+ import sys
+ from . import hookspecs
+ 
+@@ -40,16 +40,16 @@ def get_plugins():
+         templates_path = None
+         if plugin.__name__ not in DEFAULT_PLUGINS:
+             try:
+-                if pkg_resources.resource_isdir(plugin.__name__, "static"):
+-                    static_path = pkg_resources.resource_filename(
+-                        plugin.__name__, "static"
++                if (importlib.resources.files(plugin.__name__) / "static").is_dir():
++                    static_path = str(
++                        importlib.resources.files(plugin.__name__) / "static"
+                     )
+-                if pkg_resources.resource_isdir(plugin.__name__, "templates"):
+-                    templates_path = pkg_resources.resource_filename(
+-                        plugin.__name__, "templates"
++                if (importlib.resources.files(plugin.__name__) / "templates").is_dir():
++                    templates_path = str(
++                        importlib.resources.files(plugin.__name__) / "templates"
+                     )
+-            except (KeyError, ImportError):
+-                # Caused by --plugins_dir= plugins - KeyError/ImportError thrown in Py3.5
++            except (TypeError, ModuleNotFoundError):
++                # Caused by --plugins_dir= plugins
+                 pass
+         plugin_info = {
+             "name": plugin.__name__,
+@@ -60,6 +60,6 @@ def get_plugins():
+         distinfo = plugin_to_distinfo.get(plugin)
+         if distinfo:
+             plugin_info["version"] = distinfo.version
+-            plugin_info["name"] = distinfo.project_name
++            plugin_info["name"] = distinfo.name
+         plugins.append(plugin_info)
+     return plugins
