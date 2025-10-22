@@ -1,11 +1,9 @@
 class Nemu < Formula
   desc "Ncurses UI for QEMU"
   homepage "https://github.com/nemuTUI/nemu"
-  url "https://github.com/nemuTUI/nemu/archive/refs/tags/v3.3.1.tar.gz"
-  sha256 "7cdb27cbf5df1957d0f0a258fc334f15d9e2d06a450a982bb796094efc3960c0"
+  url "https://github.com/nemuTUI/nemu/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "e272b3e80623f8aef66c3ecb5e2d8846ac89b2514a4bbb5026e74f51c1a5ef42"
   license "BSD-2-Clause"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:    "7f13befef528918b647d1271046b2e6caeb3eed431614e37199bf75571004b93"
@@ -33,12 +31,6 @@ class Nemu < Formula
 
   on_linux do
     depends_on "libusb"
-  end
-
-  # Workaround for CMake 4 compatibility
-  patch do
-    url "https://github.com/nemuTUI/nemu/commit/df667081352f85791e64eb9a3a4e693805d50d66.patch?full_index=1"
-    sha256 "d6844c5d1b4afe032abbf1def917cff780ba3e400f6df4284726e20d51fdc22c"
   end
 
   def install
