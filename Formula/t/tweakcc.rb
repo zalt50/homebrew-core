@@ -6,12 +6,12 @@ class Tweakcc < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "209eddb142dc3f2d6b19c480413af92b37cdd2e63a19ca07f8161b8ce934e789"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "209eddb142dc3f2d6b19c480413af92b37cdd2e63a19ca07f8161b8ce934e789"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "209eddb142dc3f2d6b19c480413af92b37cdd2e63a19ca07f8161b8ce934e789"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff05e652b2c6b4fa62fdfc2246231e9b5b07a16a2ca1ad1f3a548ddbeb6c4ab6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff05e652b2c6b4fa62fdfc2246231e9b5b07a16a2ca1ad1f3a548ddbeb6c4ab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff05e652b2c6b4fa62fdfc2246231e9b5b07a16a2ca1ad1f3a548ddbeb6c4ab6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3566a97b3aa81d928cf4a21c263a248897216b55dcec8f400cf2e26e9e94be92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3566a97b3aa81d928cf4a21c263a248897216b55dcec8f400cf2e26e9e94be92"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3566a97b3aa81d928cf4a21c263a248897216b55dcec8f400cf2e26e9e94be92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef1f74bca09d1e168efd09582c5d843e2b087d46390df2be0ecf55ef6405cae9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef1f74bca09d1e168efd09582c5d843e2b087d46390df2be0ecf55ef6405cae9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef1f74bca09d1e168efd09582c5d843e2b087d46390df2be0ecf55ef6405cae9"
   end
 
   depends_on "node"
