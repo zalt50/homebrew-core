@@ -1,8 +1,8 @@
 class LuajitOpenresty < Formula
   desc "OpenResty's Branch of LuaJIT 2"
   homepage "https://github.com/openresty/luajit2"
-  url "https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20250826.tar.gz"
-  sha256 "5a49743ad6ce4b7f19aac71b55a08052c1feb62750f051982082c12bf62f39c0"
+  url "https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20251022.tar.gz"
+  sha256 "14809c865d465124f213e6435fc38d4c9cea6c61e089eafd3863a8d57e4948f2"
   license "MIT"
   version_scheme 1
   head "https://github.com/openresty/luajit2.git", branch: "v2.1-agentzh"
