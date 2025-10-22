@@ -19,21 +19,21 @@ class Qscintilla2 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ddad06883c9c5df65b6e17804acb56dc53ea49684d385b4036df85de520bbc39"
-    sha256 cellar: :any,                 arm64_sequoia: "2c8fab512519b43c61d7f9134e1d2a0261d3cb737af1112841a127275ab280f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "75d08b71d785906f8b87ec13f23cf9f767038140012dd24112802b21597e8c5a"
-    sha256 cellar: :any,                 sonoma:        "2519a181905c07eca38638de720e413cc37e7cf1b08411df6553c79e9e8e7098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9ad462e34c307445b1a0cf51e33df61c75ef65dcf7e294b9e2ba67b480111ed"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "78da1e80ff4ae84a83a8d0ee56d8b1590b50c8eb0120782b1dc5f9da04264b2b"
+    sha256 cellar: :any,                 arm64_sequoia: "e8db7c7f4770a94417832b5d22d69029b3149d8fc4ce5b906d3201701d312c7e"
+    sha256 cellar: :any,                 arm64_sonoma:  "87b715549db29110255cc022c84c8abefcb29b5710921dbfec55f66f0364b15c"
+    sha256 cellar: :any,                 sonoma:        "96e6d9849c2f04eabc96b3ae045cddf9306c727ffb94643419aa5f1bb0ef04fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f75a9a3c3eb5ca10d731c0bed58aa00b484c2de9dc464ff7e425ef6b93cf0cf6"
   end
 
   depends_on "pyqt-builder" => :build
   depends_on "pyqt"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qtbase"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
