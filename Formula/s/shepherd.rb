@@ -11,6 +11,7 @@ class Shepherd < Formula
     sha256 arm64_sequoia: "ab697e56b7681791843ef13b65fe83e6ce99097b8aee641b54c5725a5103ac9f"
     sha256 arm64_sonoma:  "ab697e56b7681791843ef13b65fe83e6ce99097b8aee641b54c5725a5103ac9f"
     sha256 sonoma:        "f186f200570abd84794dd574570953e546ebd572e09e9fec5a02601bb56388c4"
+    sha256 arm64_linux:   "d563a768de514ed5d4fc4c897a89193224ea3b82222040dbda2e2dd9f2abf212"
   end
 
   depends_on "pkgconf" => :build
