@@ -1,8 +1,8 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
   homepage "https://vale.sh/"
-  url "https://github.com/errata-ai/vale/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "26b4c02024c441929e7fd2d79a9b1f94489f85d2e87cd25f9efa2057d10a65f3"
+  url "https://github.com/errata-ai/vale/archive/refs/tags/v3.13.0.tar.gz"
+  sha256 "a6811e19c0ca8fc453da98238c2ffc7c5d5d1e77346d72d24fd47c09302fd7c0"
   license "MIT"
 
   bottle do
@@ -19,6 +19,8 @@ class Vale < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-X main.version=#{version} -s -w"
     system "go", "build", *std_go_args, "-ldflags=#{ldflags}", "./cmd/vale"
   end
