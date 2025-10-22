@@ -29,11 +29,11 @@ class Qscintilla2 < Formula
 
   depends_on "pyqt-builder" => :build
   depends_on "pyqt"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qtbase"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
