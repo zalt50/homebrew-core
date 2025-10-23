@@ -1,10 +1,9 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
   homepage "https://github.com/libgit2/pygit2"
-  url "https://files.pythonhosted.org/packages/2e/ea/762d00f6f518423cd889e39b12028844cc95f91a6413cf7136e184864821/pygit2-1.18.2.tar.gz"
-  sha256 "eca87e0662c965715b7f13491d5e858df2c0908341dee9bde2bc03268e460f55"
+  url "https://files.pythonhosted.org/packages/6c/4b/da6f1a1a48a4095e3c12c5fa1f2784f4423db3e16159e08740cc5c6ee639/pygit2-1.19.0.tar.gz"
+  sha256 "ca5db6f395a74166a019d777895f96bcb211ee60ce0be4132b139603e0066d83"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
-  revision 1
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
   bottle do
