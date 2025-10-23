@@ -3,8 +3,8 @@ class Sacad < Formula
 
   desc "Automatic cover art downloader"
   homepage "https://github.com/desbma/sacad"
-  url "https://files.pythonhosted.org/packages/b9/ca/2f466cfdbfaecca099e64ccae7930aaf0c2510f88b75af0d6aa5bedd8a1a/sacad-2.8.2.tar.gz"
-  sha256 "72b533f09c6cbdc7d9509ad2e1885f23e2ecc05f9e89d853e1c6fa78eb511ab8"
+  url "https://files.pythonhosted.org/packages/df/39/3ec259100446937a0c36c14e1bc0794e990259100e90f5b83463b23c740d/sacad-2.8.3.tar.gz"
+  sha256 "e9b2b114e3f884f6d4e5dd49ff0ae8d4133f061f56fff433719e186df69aa986"
   license "MPL-2.0"
   head "https://github.com/desbma/sacad.git", branch: "master"
 
