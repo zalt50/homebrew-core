@@ -1,17 +1,10 @@
 class CutterCli < Formula
   desc "Unit Testing Framework for C and C++"
   homepage "https://github.com/clear-code/cutter"
-  url "https://osdn.mirror.constant.com/cutter/73761/cutter-1.2.8.tar.gz"
-  sha256 "bd5fcd6486855e48d51f893a1526e3363f9b2a03bac9fc23c157001447bc2a23"
+  url "https://github.com/clear-code/cutter/archive/refs/tags/1.2.8.tar.gz"
+  sha256 "af29d3d61076fc03313fc1b8da76aa8b884edf683e684898be5d33ba8440df14"
   license "LGPL-3.0-or-later"
-  head "https://github.com/clear-code/cutter.git", branch: "master"
-
-  livecheck do
-    url "https://osdn.net/projects/cutter/releases/"
-    regex(%r{value=["'][^"']*?/rel/cutter/v?(\d+(?:\.\d+)+)["']}i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/clear-code/cutter.git", branch: "main"
 
   bottle do
     sha256 arm64_tahoe:   "5fa63f1c85779a4f91a45834ccadbdc6556835450629e0d27ef207a2ef241047"
@@ -24,8 +17,12 @@ class CutterCli < Formula
     sha256 x86_64_linux:  "7dabd19a5056216d962fb2164a401984cae70c0de41b5e1b859fa10785af4a2f"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "gettext" => :build
+  depends_on "gtk-doc" => :build
   depends_on "intltool" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
 
@@ -42,6 +39,7 @@ class CutterCli < Formula
   def install
     ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
 
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--prefix=#{prefix}",
                           "--disable-glibtest",
                           "--disable-goffice",
