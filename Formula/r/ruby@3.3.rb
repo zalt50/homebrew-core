@@ -1,10 +1,9 @@
 class RubyAT33 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.9.tar.gz"
-  sha256 "d1991690a4e17233ec6b3c7844c1e1245c0adce3e00d713551d0458467b727b1"
+  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.10.tar.gz"
+  sha256 "b555baa467a306cfc8e6c6ed24d0d27b27e9a1bed1d91d95509859eac6b0e928"
   license "Ruby"
-  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -46,13 +45,6 @@ class RubyAT33 < Formula
     end
   end
 
-  # Update the bundled openssl gem for compatibility with OpenSSL 3.6+
-  # Using 3.2.x series to match major/minor version of bundled gem
-  resource "openssl" do
-    url "https://github.com/ruby/openssl/archive/refs/tags/v3.2.2.tar.gz"
-    sha256 "07b282b43090e9b223c7f1df54d5883851a63fa90faebcc4e18217a2e3c7faba"
-  end
-
   def api_version
     "3.3.0"
   end
@@ -62,15 +54,6 @@ class RubyAT33 < Formula
   end
 
   def install
-    openssl_gem_version = File.read("ext/openssl/openssl.gemspec")[/spec\.version\s*=\s*"(\d+(?:\.\d+)+)/, 1]
-    odie "Remove openssl resource!" if Version.new(openssl_gem_version) >= "3.2.2"
-    rm_r(%w[ext/openssl test/openssl])
-    resource("openssl").stage do
-      (buildpath/"ext").install "ext/openssl"
-      (buildpath/"ext/openssl").install "lib", "History.md", "openssl.gemspec"
-      (buildpath/"test").install "test/openssl"
-    end
-
     # otherwise `gem` command breaks
     ENV.delete("SDKROOT")
 
