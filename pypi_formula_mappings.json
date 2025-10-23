@@ -739,7 +739,7 @@
     "exclude_packages": ["certifi"]
   },
   "pdfly": {
-    "exclude_packages": ["pillow"]
+    "exclude_packages": ["certifi", "cryptography", "pillow", "pydantic-core"]
   },
   "pdm": {
     "exclude_packages": ["certifi"]
