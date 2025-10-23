@@ -15,14 +15,12 @@ class MysqlAT80 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "beb7fdd760760aaefbee111e2c79881662f7d306ce977f839f50dd17d3c913b3"
-    sha256 arm64_sequoia: "439c907122db68dae5bccd5bd64d4cd61b56337586183462a370dde96c5bec44"
-    sha256 arm64_sonoma:  "0c774e4e3af7def9666283b902d288811722dc7dd10b29340ed8765c1d501117"
-    sha256 arm64_ventura: "b3bc3ca9b2a54cd06cab9d53cff256bdee1fd02646e4277ae938645f81e50cc4"
-    sha256 sonoma:        "ac23a2a851ed6499febb1e11a5475fb50937b398b6f85bfa7ec4e8e95d8be7f8"
-    sha256 ventura:       "d4cb06554f2032e460e52ee97132d9c6e0589abaa345bc472ea8d154a38780d1"
-    sha256 arm64_linux:   "106b2d0472b4267ec1a8247a7202397b92a810cbc463c6b07043b8769dec43b9"
-    sha256 x86_64_linux:  "a265b87d6a6ce9b9ef7d45ef052e9191d853f64c9c8e952be62e54b8516513f7"
+    sha256 arm64_tahoe:   "3b177845450d0605a97cf6c4eecce54ad81b006545fcc61dca07255bdd488751"
+    sha256 arm64_sequoia: "ddd97c60432c6c4267b2080e785401f677bc49ea40f54d30d3813f5b37444bc1"
+    sha256 arm64_sonoma:  "0fbe40baae837c3b724bb210896b2e0bf408fd0ab9f235e952bafdac5a895d34"
+    sha256 sonoma:        "6ccf913b75924b904d7783212265017c572e5a0cc8f423da667d91b4bc3de50b"
+    sha256 arm64_linux:   "c6fd47ff0fa6b9c02b73285641d019691b49a24a11dd6dd5864f44675ec7b20f"
+    sha256 x86_64_linux:  "4af4482bf0c306ef490f4f0fa6a417aecd2c62191ceefc616f417cb966af8999"
   end
 
   keg_only :versioned_formula
