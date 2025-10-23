@@ -12,15 +12,12 @@ class Abyss < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "81c78f4aadee3c4fb25110d257c115e806d14b437e96d27e77fc4b84a328eafa"
-    sha256 cellar: :any,                 arm64_sequoia: "e101572d7d3f7ec6a519888e90d8202da080add1d774105b406712a5920b68a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "8568ca8de272baac70ea8233665436f6ba0bd26156f5ae6a9eebc9c9a26df696"
-    sha256 cellar: :any,                 arm64_ventura: "0183a197b480d32b9063da4d7d16bdf9e347f9b3e1417b18577d5c1c3fbdeb95"
-    sha256 cellar: :any,                 sonoma:        "7a18163b240f0cd8b95da2dc9b4df409a4f49f56ce24c9032185237a45de08ea"
-    sha256 cellar: :any,                 ventura:       "f14bb039e937d63c3b856bcb51252ef98faf80f0f972220e753eaefd52645157"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f64a28e719e394fcf696127bd2906ab59bcd1d7a5765ae51f36876e533d4389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "246d74b2ccc4a225327db691de91a9e89731052c2b1443040d4ed1870483c7a7"
+    sha256 cellar: :any,                 arm64_tahoe:   "274f0f758f4cc8852779e2a55f8900ea34ccf7dd0e784396752f03c7e6c56767"
+    sha256 cellar: :any,                 arm64_sequoia: "156d580ae0392d7045dd60c744d4a1a32206a950c86588cb25aa600dedd0e8ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "61982df06da982cf2f7edca391a61f935cb3c1542d165f1ed69f60a33b4a6031"
+    sha256 cellar: :any,                 sonoma:        "cd3d743d197a92d98b4cd43a45615de53d5cc403a36ac9e41cdf6e47ce7aee44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57e42e8b368589c943fa3bd23e3c8f8a5af03b307530c445309dc45a72e2d2d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b36e68d3d7b88d89656707fd50185e8649d31bac5359575f160dc875c1d28f"
   end
 
   head do
