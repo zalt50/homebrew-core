@@ -1,13 +1,10 @@
 class Osm2pgrouting < Formula
   desc "Import OSM data into pgRouting database"
   homepage "https://pgrouting.org/docs/tools/osm2pgrouting.html"
-  url "https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v2.3.8.tar.gz"
-  sha256 "e3a58bcacf0c8811e0dcf3cf3791a4a7cc5ea2a901276133eacf227b30fd8355"
+  url "https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v2.3.9.tar.gz"
+  sha256 "54657e2e6769a48fb04dc5653f7956da17fc56b3ae245d1deb41014af9a8314c"
   license "GPL-2.0-or-later"
-  revision 17
-  head "https://github.com/pgRouting/osm2pgrouting.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/pgRouting/osm2pgrouting.git", branch: "develop"
 
   bottle do
     rebuild 1
@@ -28,10 +25,6 @@ class Osm2pgrouting < Formula
   depends_on "postgis"
 
   uses_from_macos "expat"
-
-  # Fix build failure due to missing include
-  # src/osm_elements/osm_tag.cpp:34:18: error: 'transform' is not a member of 'std'
-  patch :DATA
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
   # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
@@ -54,17 +47,3 @@ class Osm2pgrouting < Formula
     system bin/"osm2pgrouting", "--help"
   end
 end
-
-__END__
-diff --git a/src/osm_elements/osm_tag.cpp b/src/osm_elements/osm_tag.cpp
-index 6f122ec..b41d6ff 100644
---- a/src/osm_elements/osm_tag.cpp
-+++ b/src/osm_elements/osm_tag.cpp
-@@ -20,6 +20,7 @@
-
-
- #include "osm_elements/osm_tag.h"
-+#include <algorithm>
- #include <string>
-
- namespace osm2pgr {
