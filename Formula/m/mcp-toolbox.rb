@@ -1,8 +1,8 @@
 class McpToolbox < Formula
   desc "MCP server for databases"
   homepage "https://github.com/googleapis/genai-toolbox"
-  url "https://github.com/googleapis/genai-toolbox/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "779d97aaf152bc26d80315a5c31d0e1c272470e40be24d27f7f94e16a8d21e44"
+  url "https://github.com/googleapis/genai-toolbox/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "90fec5a10c797ce8a9ea04d453f6fdad0d64315ea55a34521a187d10cccdfa87"
   license "Apache-2.0"
 
   bottle do
