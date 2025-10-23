@@ -1,8 +1,8 @@
 class Sftpgo < Formula
   desc "Fully featured SFTP server with optional HTTP/S, FTP/S and WebDAV support"
   homepage "https://sftpgo.com/"
-  url "https://github.com/drakkan/sftpgo/releases/download/v2.6.6/sftpgo_v2.6.6_src_with_deps.tar.xz"
-  sha256 "02d36a540e79ee877585c145cbe294bd48b03db98d2b577273cad4c8b6cf482c"
+  url "https://github.com/drakkan/sftpgo/releases/download/v2.7.0/sftpgo_v2.7.0_src_with_deps.tar.xz"
+  sha256 "7d70361aa52857816d2c14ff8b306429476f0864a10d99d9139b6ef1a8aaa45e"
   license "AGPL-3.0-only"
 
   no_autobump! because: :requires_manual_review
@@ -21,6 +21,8 @@ class Sftpgo < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     git_sha = (buildpath/"VERSION.txt").read.lines.second.strip
     ldflags = %W[
       -s -w
