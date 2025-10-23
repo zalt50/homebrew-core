@@ -2,7 +2,7 @@ class Glm < Formula
   desc "C++ mathematics library for graphics software"
   homepage "https://glm.g-truc.net/"
   url "https://github.com/g-truc/glm/archive/refs/tags/1.0.2.tar.gz"
-  sha256 "f972c5f02cd9fff4d76351268d5ea62518c8972e1e9de5d1dd4910261b50ef54"
+  sha256 "19edf2e860297efab1c74950e6076bf4dad9de483826bc95e2e0f2c758a43f65"
   # GLM is licensed under The Happy Bunny License or MIT License
   license "MIT"
   head "https://github.com/g-truc/glm.git", branch: "master"
