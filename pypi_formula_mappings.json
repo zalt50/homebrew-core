@@ -372,7 +372,7 @@
   },
   "flexget": {
     "package_name": "flexget[transmission]",
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "rpds-py"]
   },
   "flintrock": {
     "exclude_packages": ["cryptography"]

@@ -3,24 +3,24 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/05/fc/f7e77cd696f5ad7192cce1309e6dc63fe07a17425f4d5d8f4502f70a798d/flexget-3.18.16.tar.gz"
-  sha256 "9ceb8e70242318d7afe6313edd45c5614fe95396c760f73d28f803fdd8756708"
+  url "https://files.pythonhosted.org/packages/41/b0/f71de2d0079f0371f21b168aface17ab0111fbaa8088221cbe5f7d05a456/flexget-3.18.17.tar.gz"
+  sha256 "975d9b1126d12fefda609181be8f27d8026d408be244f6ad932808a1f33ffe82"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f5661367823d07b0f060f0857fb5a0b6193db989a0e4400ae4607e784828cfef"
-    sha256 cellar: :any,                 arm64_sequoia: "ab8a8612be4c6c5de293c6508288df4c4d91a0eb12c4a4eb23e547cf78cd2c8f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4fcd1aca6bed5f52dcda0476fd6c57adc884513db9adc8a96a7b8d5fb2460530"
-    sha256 cellar: :any,                 sonoma:        "86964732580618c84e9a9f6826d260323f46736580122af1dc657892e5956abb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c0acad2c4a65e94423d8c2412fdba970786a647a62e8cd85bea59c9761d9afc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1651f5b84ddb6e96a5d77ff19875e3144dea02131521c5d27a91f01eb04681de"
+    sha256 cellar: :any,                 arm64_tahoe:   "3ae8f666787bbbe11a4d87c480394637b632e4c7390ee01d929aa640759ad965"
+    sha256 cellar: :any,                 arm64_sequoia: "0ac1666b0c19211f3ec794b776bbdc3ba0ad74919aad4853c3ebfb6c81b3779d"
+    sha256 cellar: :any,                 arm64_sonoma:  "b75fcc44b470371dfae48eaa985df78b5a42c932d259cd54093c69a9666e47ae"
+    sha256 cellar: :any,                 sonoma:        "0b8dd26acb8683c954eafb8b82b60df588e4ade54a7338ad1ab3e0ef204fca25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30c209b71b8688071569924e29d54eac69cd8c79e16d3d9ecd2038d48bcfa98f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36a485b5cd29f7ec00d17b8c8b723458d3a2479d415805c41e9fbc032b2425bd"
   end
 
   depends_on "rust" => :build
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
-  depends_on "zstd"
+  depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "aniso8601" do
     url "https://files.pythonhosted.org/packages/8b/8d/52179c4e3f1978d3d9a285f98c706642522750ef343e9738286130423730/aniso8601-10.0.1.tar.gz"
@@ -63,8 +63,8 @@ class Flexget < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "cheroot" do
@@ -93,8 +93,8 @@ class Flexget < Formula
   end
 
   resource "flask-compress" do
-    url "https://files.pythonhosted.org/packages/33/77/7d3c1b071e29c09bd796a84f95442f3c75f24a1f2a9f2c86c857579ab4ec/flask_compress-1.18.tar.gz"
-    sha256 "fdbae1bd8e334dfdc8b19549829163987c796fafea7fa1c63f9a4add23c8413a"
+    url "https://files.pythonhosted.org/packages/7e/bd/2b5ca667e86d09453316cb736ba84523c6c297add77964d0383162a47816/flask_compress-1.20.tar.gz"
+    sha256 "55cbc8b0c15622dccea93cb65193bab91321e3dee2bd890d368c142467a11aa6"
   end
 
   resource "flask-cors" do
@@ -112,11 +112,6 @@ class Flexget < Formula
     sha256 "0ae13d77e7d7e4dce513970cfa9db45364aef210e99022de26d2b73eb4dbced5"
   end
 
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
-    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
-  end
-
   resource "guessit" do
     url "https://files.pythonhosted.org/packages/d0/07/5a88020bfe2591af2ffc75841200b2c17ff52510779510346af5477e64cd/guessit-3.8.0.tar.gz"
     sha256 "6619fcbbf9a0510ec8c2c33744c4251cad0507b1d573d05c875de17edc5edbed"
@@ -125,6 +120,13 @@ class Flexget < Formula
   resource "html5lib" do
     url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
+
+    # Fix to build with Python 3.14
+    # PR ref: https://github.com/html5lib/html5lib-python/pull/589
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/b90dafff1bf342d34d539098013d0b9f318c7641.patch?full_index=1"
+      sha256 "779f8bab52308792b7ac2f01c3cd61335587640f98812c88cb074dce9fe8162d"
+    end
   end
 
   resource "idna" do
@@ -210,6 +212,13 @@ class Flexget < Formula
   resource "pendulum" do
     url "https://files.pythonhosted.org/packages/23/7c/009c12b86c7cc6c403aec80f8a4308598dfc5995e5c523a5491faaa3952e/pendulum-3.1.0.tar.gz"
     sha256 "66f96303560f41d097bee7d2dc98ffca716fbb3a832c4b3062034c2d45865015"
+
+    # Bump PyO3 version to add python@3.14 support
+    # https://github.com/python-pendulum/pendulum/pull/914
+    patch do
+      url "https://github.com/python-pendulum/pendulum/commit/0e9299108fc691cf993db31bd4d136b75a86079e.patch?full_index=1"
+      sha256 "cec51de828647d2768bdf739eecd567c6c15986272fc80c9c3eb3ba1f8d470a3"
+    end
   end
 
   resource "plumbum" do
@@ -223,8 +232,8 @@ class Flexget < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/89/fc/889242351a932d6183eec5df1fc6539b6f36b6a88444f1e63f18668253aa/psutil-7.1.1.tar.gz"
+    sha256 "092b6350145007389c1cfe5716050f02030a05219d90057ea867d18fe8d372fc"
   end
 
   resource "pygments" do
@@ -257,11 +266,6 @@ class Flexget < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  resource "pyzstd" do
-    url "https://files.pythonhosted.org/packages/47/82/7bcafbf06ee83a66990ce5badbb8f4dc32184346bab20de7e468b1a2f6ec/pyzstd-0.18.0.tar.gz"
-    sha256 "81b6851ab1ca2e5f2c709e896a1362e3065a64f271f43db77fb7d5e4a78e9861"
-  end
-
   resource "rebulk" do
     url "https://files.pythonhosted.org/packages/f2/06/24c69f8d707c9eefc1108a64e079da56b5f351e3f59ed76e8f04b9f3e296/rebulk-3.2.0.tar.gz"
     sha256 "0d30bf80fca00fa9c697185ac475daac9bde5f646ce3338c9ff5d5dc1ebdfebc"
@@ -280,11 +284,6 @@ class Flexget < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "rpyc" do
@@ -369,14 +368,7 @@ class Flexget < Formula
 
   def install
     ENV["BUNDLE_WEBUI"] = "true"
-
-    venv = virtualenv_install_with_resources without: "pyzstd"
-    # We need to build separately to link to our `zstd`.
-    resource("pyzstd").stage do
-      system_zstd = "--config-settings=--build-option=--dynamic-link-zstd"
-      system venv.root/"bin/python", "-m", "pip", "install", system_zstd,
-                                           *std_pip_args(prefix: false, build_isolation: true), "."
-    end
+    virtualenv_install_with_resources
   end
 
   service do
