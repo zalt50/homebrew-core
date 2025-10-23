@@ -5,6 +5,15 @@ class Btllib < Formula
   sha256 "118a9f8d6445a618178bfbec40d121bbe03014e767261522148f642686090c76"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f28456234329c7647f0f2cc58540744e0f9790b626b77d62cc4e1fc15811857f"
+    sha256 cellar: :any,                 arm64_sequoia: "62a4e2af4d7fc2c9d4a49e354943f4581629e399f78b6f31ad41458859651179"
+    sha256 cellar: :any,                 arm64_sonoma:  "023e2d26013d71ba1f754c22ddca0993f33801e70d17d542a3776b144b0cae6e"
+    sha256 cellar: :any,                 sonoma:        "e5c99cf0f8b060c9fed4bf52fe89bf90fd5e1535571fe59b67b0a80323afe58d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad898baf48d8ac49e1d40209b1a1e5a5f47cf3a79fbffb6975e55dcd77194e90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3473b3fa6fc735ad5f8262edf31a5decf2d998cf046880420dec5dc97679bac0"
+  end
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
