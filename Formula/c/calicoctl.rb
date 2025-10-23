@@ -14,12 +14,12 @@ class Calicoctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15777d0141d030233dc7e12ee0f97334db1ab4df74e935b9eb119588251ffa88"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15777d0141d030233dc7e12ee0f97334db1ab4df74e935b9eb119588251ffa88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15777d0141d030233dc7e12ee0f97334db1ab4df74e935b9eb119588251ffa88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6cc6d0bc776677789b9944e762d32350abc0bcb4039c8a3afcfbc220291dbc84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "900cf0c2fda0b264e43264a2b5430642bac1dbc6a8914136c47f2dc5c766c672"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db865f9149b22dc02141ec9be1ccb4376b0fedfdf6e87048eca2e960ab435171"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "336b83584e2ed16a6fcd453ef30f9769c001845d7dd704604e4189566f0c8b3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "336b83584e2ed16a6fcd453ef30f9769c001845d7dd704604e4189566f0c8b3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "336b83584e2ed16a6fcd453ef30f9769c001845d7dd704604e4189566f0c8b3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e153fbcb33682c973cfa506856a76c287eef87a388f28191fcb98b140ce75a5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7157408c633c321162dca5cafa9d6b981e18d4802fb02b35eee75189c1ef6787"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ee134778550cdc7cbfed76e7897245f21e4196a9da67b72fd163da1d1337a50"
   end
 
   depends_on "go" => :build
