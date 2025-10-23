@@ -4,7 +4,7 @@ class Adaptivecpp < Formula
   url "https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v25.02.0.tar.gz"
   sha256 "8cc8a3be7bb38f88d7fd51597e0ec924b124d4233f64da62a31b9945b55612ca"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
   head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do
@@ -40,7 +40,10 @@ class Adaptivecpp < Formula
       libomp_root = Formula["libomp"].opt_prefix
       ["-DOpenMP_ROOT=#{libomp_root}"]
     else
-      ["-DACPP_EXPERIMENTAL_LLVM=ON"]
+      %W[
+        -DACPP_EXPERIMENTAL_LLVM=ON
+        -DCLANG_EXECUTABLE_PATH=#{Formula["llvm"].opt_bin/"clang++"}
+      ]
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -72,5 +75,11 @@ class Adaptivecpp < Formula
     C
     system bin/"acpp", "hellosycl.cpp", "-o", "hello"
     system "./hello"
+
+    unless OS.mac?
+      refute_match Formula["llvm"].prefix.realpath.to_s,
+                   (etc/"AdaptiveCpp/acpp-core.json").read,
+                   "`acpp-core.json` references `llvm`'s cellar path"
+    end
   end
 end
