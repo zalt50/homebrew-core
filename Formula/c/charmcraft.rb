@@ -8,13 +8,13 @@ class Charmcraft < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "270bccbfabf7a976cb125a87bed4ef9572aec0cfdfdfa3d54ea4e992d0786373"
-    sha256 cellar: :any,                 arm64_sequoia: "4b062aa30b88854f652706d5794046dbc664cd636b8f0e926083b0749b7ce940"
-    sha256 cellar: :any,                 arm64_sonoma:  "491e4de1648a2e67e9b9ac7a2eaaedd1b7438ee27c7b12a0cd83a28ce7f46eee"
-    sha256 cellar: :any,                 sonoma:        "72ad6eb26c717d661edda61566f7cfe0099fa72dff231a100f13deb10e9b2269"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85306c03399c34b0ad42a7377977c1878c4a5d2222de30a9602e849958fed9e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e620af1b58d1fba0f6491b3cd27a4c139de013e271c0cc95fe4b7754ba509efc"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "49e58377836d852fbd5fab77ce0c5d9a41bdaf45172975dd7e0cb605af6aa7d1"
+    sha256 cellar: :any,                 arm64_sequoia: "55b46af7201b974d52298e3f01e7cf8d054fd79d8a268600d949a3a11dc4d0cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a00b7d8284e8b2e8594e501d9453dac0b7e5685e3e550488648483d7983768d"
+    sha256 cellar: :any,                 sonoma:        "29ad6bd0ca2d767f18872f335bb3fe1029ec33971587dce6487d447dcf8eb9e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a4c1583605e8f55c07fa3083e3b8a0b6c396b8db69432d71962f758a89d41af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee134bff7444da780f280941029b0ed54c81a2e1b6a1507fc6e76c05f0367b1"
   end
 
   depends_on "rust" => :build # for pydantic-core
