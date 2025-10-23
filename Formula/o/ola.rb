@@ -63,7 +63,7 @@ class Ola < Formula
   depends_on "libusb"
   depends_on "numpy"
   depends_on "protobuf@29"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -95,7 +95,7 @@ class Ola < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def extra_python_path
