@@ -85,8 +85,8 @@ class Mycli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/9d/c0/a3bb4cc13aced219dd18191ea66e874266bd8aa7b96744e495e1c733aa2d/jiter-0.11.0.tar.gz"
-    sha256 "1d9637eaf8c1d6a63d6562f2a6e5ab3af946c66037eb1b894e8fad75422266e4"
+    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
+    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
   end
 
   resource "llm" do
@@ -95,8 +95,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/de/90/8f26554d24d63ed4f94d33c24271559863223a67e624f4d2e65ba8e48dca/openai-2.3.0.tar.gz"
-    sha256 "8d213ee5aaf91737faea2d7fc1cd608657a5367a18966372a3756ceaabfbd812"
+    url "https://files.pythonhosted.org/packages/ee/c7/e42bcd89dfd47fec8a30b9e20f93e512efdbfbb3391b05bbb79a2fb295fa/openai-2.6.0.tar.gz"
+    sha256 "f119faf7fc07d7e558c1e7c32c873e241439b01bd7480418234291ee8c8f4b9d"
   end
 
   resource "pluggy" do
@@ -120,13 +120,13 @@ class Mycli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
-    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
-    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pyfzf" do
@@ -180,8 +180,8 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/eb/75/9c9a42415ff8b03b7307252f6edf70fb3555ad45dd69d5e03a9236e92bfa/sqlglot-27.27.0.tar.gz"
-    sha256 "c1ce8a3b7ce9b3c9d5a0fc26f202d7ed6a203b7398ae834c979e0c455a99d9ce"
+    url "https://files.pythonhosted.org/packages/b5/3d/bf8b4a96b934c26ec83f94048ec201d17cd95fb3c2e6930bbcfaaaad6813/sqlglot-27.28.1.tar.gz"
+    sha256 "01c03da1aa0c7773002cfb4a58bd4b0656196e0164aee1d83104b3d3cc1475f3"
   end
 
   resource "sqlglotrs" do
