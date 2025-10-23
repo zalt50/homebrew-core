@@ -1,10 +1,9 @@
 class Scip < Formula
   desc "Solver for mixed integer programming and mixed integer nonlinear programming"
   homepage "https://scipopt.org"
-  url "https://scipopt.org/download/release/scip-9.2.3.tgz"
-  sha256 "6f5e81a643bba22d9b4e43cd97583529587c64eafe83b93bb864b07f9f16fab7"
+  url "https://scipopt.org/download/release/scip-9.2.4.tgz"
+  sha256 "d88217393a6f86c18f2957c6d36d90d28287a01473fb7378417ab49ad72a50ea"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://scipopt.org/scipdata.js"
