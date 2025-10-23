@@ -6,7 +6,7 @@ class Gobackup < Formula
   license "MIT"
   head "https://github.com/gobackup/gobackup.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "462cf38b60e9c5fa6842d6a00d75f867712af44c81a1d25a5219915155959796"
