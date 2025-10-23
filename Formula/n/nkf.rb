@@ -1,15 +1,13 @@
 class Nkf < Formula
   desc "Network Kanji code conversion Filter (NKF)"
-  homepage "https://osdn.net/projects/nkf/"
-  # Canonical: https://osdn.net/dl/nkf/nkf-2.1.4.tar.gz
-  url "http://deb.debian.org/debian/pool/main/n/nkf/nkf_2.1.5.orig.tar.gz"
-  mirror "https://dotsrc.dl.osdn.net/osdn/nkf/70406/nkf-2.1.5.tar.gz"
+  homepage "https://github.com/nurse/nkf"
+  url "https://deb.debian.org/debian/pool/main/n/nkf/nkf_2.1.5.orig.tar.gz"
   sha256 "d1a7df435847a79f2f33a92388bca1d90d1b837b1b56523dcafc4695165bad44"
   license "Zlib"
 
   livecheck do
-    url "https://osdn.net/projects/nkf/releases/"
-    regex(%r{=.*?rel/nkf/v?(\d+(?:\.\d+)+[a-z]?)["' >]}i)
+    url "https://deb.debian.org/debian/pool/main/n/nkf/"
+    regex(/href=.*?nkf[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
