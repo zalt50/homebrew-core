@@ -2,8 +2,8 @@ class Packetbeat < Formula
   desc "Lightweight Shipper for Network Data"
   homepage "https://www.elastic.co/products/beats/packetbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v9.1.5",
-      revision: "49b225eb6f526f48c9a77f583b772ef97d90b387"
+      tag:      "v9.2.0",
+      revision: "09b547febe1cc9102a5d3f80ac8fbf68a5fd84f5"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
@@ -22,6 +22,8 @@ class Packetbeat < Formula
   uses_from_macos "libpcap"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     # remove non open source files
     rm_r("x-pack")
 
