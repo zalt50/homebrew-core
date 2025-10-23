@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://github.com/elastic/logstash/archive/refs/tags/v9.1.5.tar.gz"
-  sha256 "f4b5c542ec6864a48594788a940429f70ad78662041496d9c4a7d72045b7ba5b"
+  url "https://github.com/elastic/logstash/archive/refs/tags/v9.2.0.tar.gz"
+  sha256 "22e84c127dc9e969520f29b3c5577141b1abe8ad3b78c79d540f438de515c484"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -28,6 +28,10 @@ class Logstash < Formula
   def install
     # remove non open source files
     rm_r("x-pack")
+    # remove x-pack reference from build.gradle
+    inreplace "build.gradle",
+              'apply from: "${projectDir}/x-pack/distributions/internal/observabilitySRE/build-ext.gradle"',
+              ""
     ENV["OSS"] = "true"
 
     # Build the package from source
