@@ -6,14 +6,13 @@ class Audiowaveform < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a0883230a730a658b0037ad1d4fd80a0843bfcbd6a1820bc463648429df5f216"
-    sha256 cellar: :any,                 arm64_sequoia: "1e9fefd035443e96fc39605c249e618408b8d79852d8b635e4c73fa72633fd80"
-    sha256 cellar: :any,                 arm64_sonoma:  "889c6dfe09ecd0e73ae9aa5640a09ea428b30f50f95a6e8c236d5bd810db65c4"
-    sha256 cellar: :any,                 arm64_ventura: "d18a60880174cfcab31fffaccd30fd4d9599016abc57bea6876482300082cc18"
-    sha256 cellar: :any,                 sonoma:        "4b0a4c44b31fb0d5d4053cdafc13b2f61a7b51511d7c76c5b853745a4ad73544"
-    sha256 cellar: :any,                 ventura:       "03b9eb62b31e53d0aed8a618a3e73c402c816e936763a57d243fe536dcd74852"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ae6cd104cd3c23dccc7a19265ef3a44168abf208c45064a1788155564ad9394"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "513241538f7c5d46a3f0b2830649ce4aab77aee49aa08966bf82d9039f829ae0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "40d9bf787e5f7813ed51079d59716a7f88c6cd2c0076dc04b5838bf0d769536d"
+    sha256 cellar: :any,                 arm64_sequoia: "0847aa9b5ae424d084e9ca3b8d00e703d1935237fe107ac87495ddf3301e360c"
+    sha256 cellar: :any,                 arm64_sonoma:  "0edef92eb11576b39b7b4684c5c853a6e3e42b3784870d1e57406256c8baa110"
+    sha256 cellar: :any,                 sonoma:        "93f324ec4b218cda6afb1459b53efe02d5a1887a1494831b89bcb753749ed752"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5832d40c71610ac220ad80dc716d252108916ad7f2b421f147d185c94ff7e7e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5be140b85eb627cbb179bfc6252d6af35f80dd9972b67426687af659e88a8996"
   end
 
   depends_on "cmake" => :build
