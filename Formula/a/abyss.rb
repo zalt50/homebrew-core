@@ -4,11 +4,13 @@ class Abyss < Formula
   url "https://github.com/bcgsc/abyss/releases/download/2.3.10/abyss-2.3.10.tar.gz"
   sha256 "bbe42e00d1ebb53ec6afaad07779baaaee994aa5c65b9a38cf4ad2011bb93c65"
   license all_of: ["GPL-3.0-only", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
+  revision 1
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "81c78f4aadee3c4fb25110d257c115e806d14b437e96d27e77fc4b84a328eafa"
@@ -30,11 +32,8 @@ class Abyss < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "cmake" => :build # For btllib
   depends_on "google-sparsehash" => :build
-  depends_on "meson" => :build # For btllib
-  depends_on "ninja" => :build # For btllib
-  depends_on "python@3.13" => :build # For btllib
+  depends_on "btllib"
   depends_on "open-mpi"
 
   uses_from_macos "sqlite"
@@ -43,39 +42,20 @@ class Abyss < Formula
     depends_on "libomp"
   end
 
-  resource "btllib" do
-    url "https://github.com/bcgsc/btllib/releases/download/v1.7.3/btllib-1.7.3.tar.gz"
-    sha256 "31e7124e1cda9eea6f27b654258a7f8d3dea83c828f0b2e8e847faf1c5296aa3"
-
-    # Apply FreeBSD patch to fix build with newer Clang, https://github.com/simongog/sdsl-lite/issues/462
-    patch :p0 do
-      url "https://raw.githubusercontent.com/freebsd/freebsd-ports/af74f60a871e4a5aa7aea787fc235a2cb760e764/devel/sdsl-lite/files/patch-include_sdsl_louds__tree.hpp"
-      sha256 "84aef67058947044c40032ac39d9b6d1b8a285c581f660d565cd23aaa4beade7"
-      directory "subprojects/sdsl-lite"
-    end
-  end
-
   def install
-    resource("btllib").stage do
-      with_env(CMAKE_POLICY_VERSION_MINIMUM: "3.5") do
-        args = %w[-Db_ndebug=true -Db_coverage=false]
-        system "meson", "setup", "build", *args, *std_meson_args.map { |s| s.sub prefix, buildpath/"btllib" }
-        system "meson", "compile", "-C", "build", "--verbose"
-        system "meson", "install", "-C", "build"
-      end
-    end
-
     # Help link to libomp on macOS
     ENV["ac_cv_prog_cxx_openmp"] = "-Xpreprocessor -fopenmp -lomp" if OS.mac?
 
+    args = %W[
+      --disable-silent-rules
+      --enable-maxk=128
+      --with-boost=#{Formula["boost"].include}
+      --with-btllib=#{Formula["btllib"].prefix}
+      --with-mpi=#{Formula["open-mpi"].prefix}
+      --with-sparsehash=#{Formula["google-sparsehash"].prefix}
+    ]
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-silent-rules",
-                          "--enable-maxk=128",
-                          "--with-boost=#{Formula["boost"].include}",
-                          "--with-btllib=#{buildpath}/btllib",
-                          "--with-mpi=#{Formula["open-mpi"].prefix}",
-                          "--with-sparsehash=#{Formula["google-sparsehash"].prefix}",
-                          *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
