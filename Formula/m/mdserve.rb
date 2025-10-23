@@ -1,8 +1,8 @@
 class Mdserve < Formula
   desc "Fast markdown preview server with live reload and theme support"
   homepage "https://github.com/jfernandez/mdserve"
-  url "https://github.com/jfernandez/mdserve/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "12f5e32606d18475ad6ed69cd714d89d3e4e97ada63e6f7137f4fe6e2b996244"
+  url "https://github.com/jfernandez/mdserve/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "a35c711df811ff29333c9a3a18d47a370dda1000d7bd2283529bccd355ee3cba"
   license "MIT"
   head "https://github.com/jfernandez/mdserve.git", branch: "main"
 
