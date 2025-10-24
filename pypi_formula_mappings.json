@@ -451,7 +451,7 @@
     "extra_packages": ["lxml-html-clean"]
   },
   "gptme": {
-    "exclude_packages": ["certifi", "pillow"]
+    "exclude_packages": ["certifi", "pillow", "pydantic-core", "rpds-py"]
   },
   "graph-tool": {
     "package_name": "",
