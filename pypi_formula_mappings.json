@@ -747,6 +747,9 @@
   "pdm": {
     "exclude_packages": ["certifi"]
   },
+  "pelican": {
+    "package_name": "pelican[markdown]"
+  },
   "pferd": {
     "exclude_packages": ["certifi", "cryptography"]
   },
