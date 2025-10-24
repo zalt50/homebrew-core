@@ -204,7 +204,7 @@
     "exclude_packages": ["certifi"]
   },
   "check-jsonschema": {
-    "exclude_packages": ["certifi"],
+    "exclude_packages": ["certifi", "rpds-py"],
     "extra_packages": [
       "fqdn", "isoduration", "jsonpointer", "rfc3339-validator",
       "rfc3987", "uri-template", "webcolors"
