@@ -149,7 +149,7 @@
     "extra_packages": ["msgpack", "packaging"]
   },
   "borgmatic": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "rpds-py"]
   },
   "bpython": {
     "exclude_packages": ["certifi"]
