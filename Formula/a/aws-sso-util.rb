@@ -19,10 +19,10 @@ class AwsSsoUtil < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f54182900a8c26ce5849947cdf45958088ceaab68852b17947f91a998abfa444"
   end
 
-  depends_on "rust" => :build # for rpds-py
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
@@ -97,11 +97,6 @@ class AwsSsoUtil < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "s3transfer" do
