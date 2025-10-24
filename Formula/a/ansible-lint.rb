@@ -17,11 +17,11 @@ class AnsibleLint < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for rpds-py
   depends_on "ansible" => :test
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.13"
+  depends_on "rpds-py" => :no_linkage
 
   resource "ansible-compat" do
     url "https://files.pythonhosted.org/packages/e3/06/5e66f1f0d482b21b0dc03c9b9e47cab58dd4efc770f41029bb244e86b608/ansible_compat-25.8.2.tar.gz"
@@ -126,11 +126,6 @@ class AnsibleLint < Formula
   resource "resolvelib" do
     url "https://files.pythonhosted.org/packages/05/57/c5c178e21968123cf2aa90501b5fc14a48e342612695863333f4b70510ad/resolvelib-1.2.0.tar.gz"
     sha256 "c27fbb5098acd7dfc01fb2be3724bd0881168edc2bd3b4dc876ca3f46b8e4a3d"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "ruamel-yaml" do
