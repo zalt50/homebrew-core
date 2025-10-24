@@ -12,12 +12,12 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "71760598c80a29fedf3b11849ca2ff3dce6a9cf8022a52c8d6d819bd57ec3834"
-    sha256 cellar: :any,                 arm64_sequoia: "d04cb7f65b6b60af8c5ce7e5eadb4ecace7da59735ace0d5c9beb9dcfdf76874"
-    sha256 cellar: :any,                 arm64_sonoma:  "af8321781f2942ed09d8cf812e53714940d89e4bdae05cb3a59836034a08026b"
-    sha256 cellar: :any,                 sonoma:        "611adffece389bf2134918d8ac3316585bbe21a5da9c1345e0a1a6410f2a71cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cfbe45e2ea7a24dbae4c8f6c2a0100e05eaa3a463b439ccf846b7050897e698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7dcfed11bf647d210c5cd788e2315775ee851a13a160541d498c0f10884206"
+    sha256 cellar: :any,                 arm64_tahoe:   "bebf80426f629b2665bd73c038cdd90979ab96a3b7ff0695f72ccd9b0fc00a3e"
+    sha256 cellar: :any,                 arm64_sequoia: "ba26468c926cbded09745de35f37727b15de0314f1f571290566b470df4d07f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f22ff7d8a600d43936a16d7fdc6943f5f6c85bd0adb56e359e15d168308f4ce"
+    sha256 cellar: :any,                 sonoma:        "6fd105ce10ede52ac01905f390d0f61f42b823409690f69a3d22906d84a116cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9595aa9bb2a783897a5469f846930d9375ef12f0a0082612fc823ecf08cf2a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ab67b7d265aa62cef5a51af4489f743baec169bc2d680f58191b27f33be6e3"
   end
 
   depends_on "cabal-install" => :build
