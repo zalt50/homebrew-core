@@ -14,8 +14,14 @@ class Ghidra < Formula
   end
 
   depends_on "gradle" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "openjdk@21"
+
+  # Allow to build with Python 3.14, remove in next release
+  patch do
+    url "https://github.com/NationalSecurityAgency/ghidra/commit/5b157d2c26246188d51a7652ac83537efc12cde8.patch?full_index=1"
+    sha256 "bb60cb2b36810e4650b71c0a4a3dc7f4fda1aefa809a486ba1d8772f12caa9b9"
+  end
 
   def install
     inreplace "Ghidra/application.properties", "DEV", "PUBLIC" # Mark as a release
