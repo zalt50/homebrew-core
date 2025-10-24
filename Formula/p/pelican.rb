@@ -7,6 +7,14 @@ class Pelican < Formula
   sha256 "b90234487b818d391733acc1306b785934009749b1fc112b879df9bd89478bd8"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1cee82fa255d1d0d39cf0abf5d2e49fb43911a54b0457f09d3799ffe5564c7d7"
+    sha256 cellar: :any,                 arm64_sequoia: "c5252bf5956fa547e9ca93fccd830cd33ee1ddc60f716c4813a21b64b52fb8df"
+    sha256 cellar: :any,                 arm64_sonoma:  "877968fe032256a758fa346bbc3cc4f92861a268f7359856718c852ae4bf4438"
+    sha256 cellar: :any,                 sonoma:        "a489ab07f7e2e2504b604bf72090ed867f2300c842698dbe0b41b6c95f097e6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8138f91ffb3e24e108f0d3d1dc7804dd2657f04f7d7094c40f030f064586a23c"
+  end
+
   depends_on "rust" => :build # for `watchfiles`
   depends_on "python@3.14"
 
