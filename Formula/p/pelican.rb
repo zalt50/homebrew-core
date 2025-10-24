@@ -12,6 +12,7 @@ class Pelican < Formula
     sha256 cellar: :any,                 arm64_sequoia: "c5252bf5956fa547e9ca93fccd830cd33ee1ddc60f716c4813a21b64b52fb8df"
     sha256 cellar: :any,                 arm64_sonoma:  "877968fe032256a758fa346bbc3cc4f92861a268f7359856718c852ae4bf4438"
     sha256 cellar: :any,                 sonoma:        "a489ab07f7e2e2504b604bf72090ed867f2300c842698dbe0b41b6c95f097e6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b223e259371a23b6ae3e8b83fefdfc508521d59a8f3b63af5df72bb22e7b72b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8138f91ffb3e24e108f0d3d1dc7804dd2657f04f7d7094c40f030f064586a23c"
   end
 
