@@ -1,9 +1,14 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.1.14.tar.gz"
-  sha256 "962e25ca23551ba773f1dd7138dbfdce0ba58aaedeb3eb24005483d39c031e8b"
+  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.2.0.tar.gz"
+  sha256 "1e4b7f9664c9f349420f4aa3dca4eb0795c0cc19dcc0e429d25183f6691c9f52"
   license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    regex(%r{^@core/sync-service@(\d+(?:\.\d+)+)$}i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "198f04b9d844ded94540c553c4c37792aed4e42d1412399eaae9a11f99ecc925"
