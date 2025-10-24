@@ -1,8 +1,8 @@
 class CutterCli < Formula
   desc "Unit Testing Framework for C and C++"
   homepage "https://github.com/clear-code/cutter"
-  url "https://github.com/clear-code/cutter/archive/refs/tags/1.2.8.tar.gz"
-  sha256 "af29d3d61076fc03313fc1b8da76aa8b884edf683e684898be5d33ba8440df14"
+  url "https://github.com/clear-code/cutter/archive/refs/tags/1.2.9.tar.gz"
+  sha256 "9ee1d9edf465110cad864889e70df681f4f5df55470a302593e5d9208249940e"
   license "LGPL-3.0-or-later"
   head "https://github.com/clear-code/cutter.git", branch: "main"
 
