@@ -31,7 +31,7 @@
     "exclude_packages": ["rpds-py"]
   },
   "ansible-lint": {
-    "exclude_packages": ["cryptography"]
+    "exclude_packages": ["cryptography", "rpds-py"]
   },
   "ansible@8": {
     "extra_packages": [
