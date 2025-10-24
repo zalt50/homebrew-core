@@ -544,7 +544,7 @@
   },
   "jupyterlab": {
     "extra_packages": ["appnope", "hatch-jupyter-builder", "hatch-nodejs-version", "jupyter-console", "notebook"],
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "rpds-py"]
   },
   "jupytext": {
     "exclude_packages": ["rpds-py"]
