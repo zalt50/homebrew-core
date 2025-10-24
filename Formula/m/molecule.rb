@@ -16,12 +16,12 @@ class Molecule < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "135dce9731e7790266a823fd52995fe46bd71870e3785f1791017b101494ed09"
   end
 
-  depends_on "rust" => :build
   depends_on "ansible"
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.13"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"
 
@@ -247,11 +247,6 @@ class Molecule < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
     sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "rsa" do
