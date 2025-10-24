@@ -9,8 +9,8 @@ class Touca < Formula
   revision 3
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "28347dcea2a95cf714fad75fb909df2202c64a2ba9f9b83af3f99a7659e0bf17"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, all: "2aef71401d6fa95a1c2a1d9ce7ccf63c49e0131602a7876914ddbb373246b6f3"
   end
 
   deprecate! date: "2025-08-13", because: :unmaintained
