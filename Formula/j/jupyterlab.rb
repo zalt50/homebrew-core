@@ -21,12 +21,12 @@ class Jupyterlab < Formula
 
   depends_on "cmake" => :build # for ipykernel
   depends_on "ninja" => :build # for ipykernel
-  depends_on "rust" => :build # for rpds-py
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "node"
   depends_on "pandoc"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
   depends_on "zeromq"
 
   uses_from_macos "libffi"
@@ -274,8 +274,8 @@ class Jupyterlab < Formula
   end
 
   resource "matplotlib-inline" do
-    url "https://files.pythonhosted.org/packages/99/5b/a36a337438a14116b16480db471ad061c36c3694df7c2084a0da7ba538b7/matplotlib_inline-0.1.7.tar.gz"
-    sha256 "8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90"
+    url "https://files.pythonhosted.org/packages/c7/74/97e72a36efd4ae2bccb3463284300f8953f199b5ffbc04cbbb0ec78f74b1/matplotlib_inline-0.2.1.tar.gz"
+    sha256 "e1ee949c340d771fc39e241ea75683deb94762c8fa5f2927ec57c83c4dffa9fe"
   end
 
   resource "mistune" do
@@ -426,11 +426,6 @@ class Jupyterlab < Formula
   resource "rfc3987-syntax" do
     url "https://files.pythonhosted.org/packages/2c/06/37c1a5557acf449e8e406a830a05bf885ac47d33270aec454ef78675008d/rfc3987_syntax-1.1.0.tar.gz"
     sha256 "717a62cbf33cffdd16dfa3a497d81ce48a660ea691b1ddd7be710c22f00b4a0d"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "send2trash" do
