@@ -1,8 +1,8 @@
 class WebExt < Formula
   desc "Command-line tool to help build, run, and test web extensions"
   homepage "https://github.com/mozilla/web-ext"
-  url "https://registry.npmjs.org/web-ext/-/web-ext-9.0.0.tgz"
-  sha256 "9cf3cfcce04470f2082765ced874ef0d00de415a65d6137924f2fa352c01bf54"
+  url "https://registry.npmjs.org/web-ext/-/web-ext-9.1.0.tgz"
+  sha256 "de34d5e83a75de907549b5e87d37cc81c36bce896f8183afdbbcaee687a08aa1"
   license "MPL-2.0"
 
   bottle do
@@ -50,8 +50,8 @@ class WebExt < Formula
       Validation Summary:
 
       errors          0
-      notices         1
-      warnings        0
+      notices         0
+      warnings        2
 
     EOF
 
