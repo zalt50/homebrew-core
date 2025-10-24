@@ -27,6 +27,9 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
+  "ansible-builder": {
+    "exclude_packages": ["rpds-py"]
+  },
   "ansible-lint": {
     "exclude_packages": ["cryptography"]
   },

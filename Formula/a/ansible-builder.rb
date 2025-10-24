@@ -17,9 +17,9 @@ class AnsibleBuilder < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "193f3b8e8cb1505b87224f8fbf639c4a5666f5a37ec3c3b3fca0f22328c1af77"
   end
 
-  depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
@@ -69,11 +69,6 @@ class AnsibleBuilder < Formula
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
     sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "setuptools" do
