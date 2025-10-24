@@ -230,6 +230,9 @@
   "cobo-cli": {
     "exclude_packages": ["certifi"]
   },
+  "codecov-cli": {
+    "exclude_packages": ["certifi"]
+  },
   "codelimit": {
     "exclude_packages": ["certifi"]
   },
