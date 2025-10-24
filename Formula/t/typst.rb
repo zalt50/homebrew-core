@@ -33,10 +33,8 @@ class Typst < Formula
     ENV["GEN_ARTIFACTS"] = "artifacts"
     system "cargo", "install", *std_cargo_args(path: "crates/typst-cli")
 
-    man1.install Dir["crates/typst-cli/artifacts/*.1"]
-    bash_completion.install "crates/typst-cli/artifacts/typst.bash" => "typst"
-    fish_completion.install "crates/typst-cli/artifacts/typst.fish"
-    zsh_completion.install "crates/typst-cli/artifacts/_typst"
+    man1.install buildpath.glob("crates/typst-cli/artifacts/*.1")
+    generate_completions_from_executable(bin/"typst", "completions")
   end
 
   test do
