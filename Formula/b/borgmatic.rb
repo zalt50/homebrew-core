@@ -8,13 +8,7 @@ class Borgmatic < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "932e40ef8109ad02c4c3d4f9af03cf98ce11fbc18bc24bf88573148fa530812c"
-    sha256 cellar: :any,                 arm64_sequoia: "d62bce3a85f23daece5353c8cb0dd9aa38b859d378ad4c5fbd91654db042290c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e46f638bd9259ed105dfe49f199a87ec4f46ea2be9812c37b57ec232a87da40a"
-    sha256 cellar: :any,                 sonoma:        "8986193746cd4b3469ab8a33b6bb3b7ff084a4f66c3cea5359e9938bdc715226"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3993d0e1907288a90a5d80170f7fe8a0f9e27c3fb625d597c250a150f8907b32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de50ab48338cbda2b4c2223fa3d986f38123d5e04142bbac913705364f638e2c"
+    sha256 cellar: :any_skip_relocation, all: "d8a00c7a6e3e99a5d33afaedd9c6024aa852fa7329f819725a025e52636d10e6"
   end
 
   depends_on "certifi" => :no_linkage
