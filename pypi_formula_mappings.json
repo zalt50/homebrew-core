@@ -195,6 +195,9 @@
   "cffi": {
     "exclude_packages": ["pycparser"]
   },
+  "cfn-lint": {
+    "exclude_packages": ["pydantic-core", "rpds-py"]
+  },
   "charm-tools": {
     "exclude_packages": ["cheetah3", "certifi", "cryptography"],
     "extra_packages": ["ct3"]
