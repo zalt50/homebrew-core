@@ -39,7 +39,7 @@ class Libgusb < Formula
   depends_on "glib"
   depends_on "json-glib"
   depends_on "libusb"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "usb.ids"
 
   def install
