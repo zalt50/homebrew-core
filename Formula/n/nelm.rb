@@ -1,8 +1,8 @@
 class Nelm < Formula
   desc "Kubernetes deployment tool that manages and deploys Helm Charts"
   homepage "https://github.com/werf/nelm"
-  url "https://github.com/werf/nelm/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "a084734d4d7624f6334b0681a5ba676a328f2d2270268ddb4eab80ed5e2977aa"
+  url "https://github.com/werf/nelm/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "fd7a8fb774370070469a6faf1c3fc5ffe2ccf1d8ba3952f2306bc8cdc779bc98"
   license "Apache-2.0"
   head "https://github.com/werf/nelm.git", branch: "main"
 
@@ -27,7 +27,7 @@ class Nelm < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/werf/nelm/internal/common.Version=#{version}
+      -X github.com/werf/nelm/pkg/common.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/nelm"
 
