@@ -3,8 +3,8 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/14/5a/db4f743b29fe9b7446c06575a0f5c26b55b6ca7aa04eaf905bd3dfc3fad4/borgmatic-2.0.7.tar.gz"
-  sha256 "1ee9ca5d5b83193747f82cc841bb64374a11328710ee0561e8c7fa2fbc258406"
+  url "https://files.pythonhosted.org/packages/27/a7/b4b1f41084badb6006a7be278a5f92d2d383fc91e413dcae070281d2e779/borgmatic-2.0.10.tar.gz"
+  sha256 "af498739ee3651c8dc40d8266668a93f8e1a1ba0937b8820059e23f19cc8cc58"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -17,9 +17,9 @@ class Borgmatic < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "de50ab48338cbda2b4c2223fa3d986f38123d5e04142bbac913705364f638e2c"
   end
 
-  depends_on "rust" => :build # for rpds-py
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
@@ -27,8 +27,8 @@ class Borgmatic < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "idna" do
@@ -52,8 +52,8 @@ class Borgmatic < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
@@ -61,25 +61,14 @@ class Borgmatic < Formula
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
-  end
-
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
-    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
+    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
+    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
   end
 
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
-  end
-
-  # Fix invalid Path argument raising exception with 3.14
-  patch do
-    url "https://github.com/borgmatic-collective/borgmatic/commit/2b34c62e6feccc077242c1f906cf41c681b2668d.patch?full_index=1"
-    sha256 "b895d39dfd90d9a74a32af9ce3bbc463b0a2926258eefcb691a176af33ad6619"
   end
 
   def install
@@ -154,15 +143,18 @@ class Borgmatic < Formula
     borg.chmod 0755
 
     # Generate a config
-    system bin/"borgmatic", "config", "generate", "--destination", config_path
-
-    # Replace defaults values
-    inreplace config_path do |s|
-      s.gsub! "- /var/log/syslog*", ""
-      s.gsub! "- /home/user/path with spaces", ""
-      s.gsub! "- path: ssh://user@backupserver/./sourcehostname.borg", "- path: #{repo_path}"
-      s.gsub!(/# ?local_path: borg1/, "local_path: #{borg}")
-    end
+    config_path.write <<~YAML
+      source_directories:
+          - /home
+          - /etc
+      repositories:
+          - path: #{repo_path}
+      local_path: #{borg}
+      patterns:
+          - R #{testpath}
+          - '- #{config_path}'
+      keep_daily: 7
+    YAML
 
     # Initialize Repo
     system bin/"borgmatic", "-v", "2", "--config", config_path, "init", "--encryption", "repokey"
@@ -182,12 +174,14 @@ class Borgmatic < Formula
       info --json #{repo_path}
       init --encryption repokey --debug #{repo_path}
       --version
+      create --patterns-from #{testpath}/borgmatic-.{8}/borgmatic/tmp.{8} #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} --dry-run --list
       create --patterns-from #{testpath}/borgmatic-.{8}/borgmatic/tmp.{8} #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f}
       prune --keep-daily 7 --glob-archives {hostname}-* #{repo_path}
       compact #{repo_path}
       info --json #{repo_path}
       check --glob-archives {hostname}-* #{repo_path}
       --version
+      create --patterns-from #{testpath}/borgmatic-.{8}/borgmatic/tmp.{8} #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} --dry-run --list
       create --patterns-from #{testpath}/borgmatic-.{8}/borgmatic/tmp.{8} --json #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f}
       prune --keep-daily 7 --glob-archives {hostname}-* #{repo_path}
       compact #{repo_path}
