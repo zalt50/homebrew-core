@@ -540,6 +540,9 @@
     "extra_packages": ["appnope", "hatch-jupyter-builder", "hatch-nodejs-version", "jupyter-console", "notebook"],
     "exclude_packages": ["certifi"]
   },
+  "jupytext": {
+    "exclude_packages": ["rpds-py"]
+  },
   "kaskade": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },

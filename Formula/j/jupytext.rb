@@ -16,9 +16,9 @@ class Jupytext < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "94758b2efff2c29b057e1cc512b9526dde7c8b2e61d79c5e21254523d007dc62"
   end
 
-  depends_on "rust" => :build # for rpds-py
   depends_on "libyaml"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
@@ -83,11 +83,6 @@ class Jupytext < Formula
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
     sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "traitlets" do
