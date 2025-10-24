@@ -309,7 +309,7 @@
   },
   "dstack": {
     "package_name": "dstack[aws,azure,gcp,lambda]",
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
   "duplicity": {
     "exclude_packages": ["certifi"],
