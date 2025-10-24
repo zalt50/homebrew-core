@@ -945,7 +945,7 @@
     "exclude_packages": ["certifi"]
   },
   "sgr": {
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
   "sherlock": {
     "exclude_packages": ["certifi", "numpy"]
