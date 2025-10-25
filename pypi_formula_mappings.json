@@ -1028,7 +1028,7 @@
     "extra_packages": ["greenlet", "pyee"]
   },
   "tmt": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
   },
   "toot": {
     "package_name": "toot[images,richtext]",
