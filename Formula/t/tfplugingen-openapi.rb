@@ -6,6 +6,14 @@ class TfplugingenOpenapi < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform-plugin-codegen-openapi.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0aeb3eacbc8acbd4b5b6a3def118e3b020a5b46615cb1404b35ba8172aba72e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0aeb3eacbc8acbd4b5b6a3def118e3b020a5b46615cb1404b35ba8172aba72e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0aeb3eacbc8acbd4b5b6a3def118e3b020a5b46615cb1404b35ba8172aba72e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd1f2d1c1db38774680f5db82b743824fbcedfc44be28f67bcd33ce49f293190"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13808c557251e72adfa46d56d9194aef2a947568441e4bc422489891a6387852"
+  end
+
   depends_on "go" => :build
 
   def install
