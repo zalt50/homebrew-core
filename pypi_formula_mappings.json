@@ -633,7 +633,10 @@
   },
   "mdv": "mdv[yaml]",
   "mentat": {
-    "exclude_packages": ["certifi", "numpy", "pillow", "pytest", "pytest-asyncio", "pytest-mock", "pytest-reportlog"]
+    "exclude_packages": [
+      "certifi", "numpy", "pillow", "pytest",
+      "pytest-asyncio", "pytest-mock", "pytest-reportlog", "rpds-py"
+    ]
   },
   "mesa": {
     "package_name": "",
