@@ -8,11 +8,11 @@ class Archgw < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "268fe6e59d6dcd3141d817f98327cc638745cf6d054feb5ee05927640319dc06"
-    sha256 cellar: :any,                 arm64_sequoia: "58ed34f0fc315c71e0ae110e22e2fc3a759f5c7aa31efedc8f70155a1213e349"
-    sha256 cellar: :any,                 arm64_sonoma:  "833eafb593f7c831e5ff1bdc225c3589fa1a9dc7897e13ab3a05478549ad96d4"
-    sha256 cellar: :any,                 sonoma:        "56cea7a390a5d0fd1344a833fb4626b2ff503ae7011c3f908ae9449461ae305d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb58037040a41d683a74838298ee30f39d54e28ac60a88a767a80805a4799862"
+    sha256 cellar: :any,                 arm64_tahoe:   "9d93869785ddd28ba2878e0946e36aa99a65691e0ca08db78e1bf9996951202c"
+    sha256 cellar: :any,                 arm64_sequoia: "bd8fa30451be7b4f5a21f354525f750162683c1170e19c146730ddba58b1324e"
+    sha256 cellar: :any,                 arm64_sonoma:  "01f812997771cc9bd4aebf79b6b8472d25bbc7d44ff42030348a273546bc458c"
+    sha256 cellar: :any,                 sonoma:        "e8cac2ed9be67d0423756a1ecb8680f384ec0beebb6d21a80945d14b24fdb179"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6baab262484dca0b6adf8f645f0eae4be2186184f3f575c9d18348719dddb0ba"
   end
 
   depends_on "rust" => :build # for pydantic
