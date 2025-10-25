@@ -1,8 +1,8 @@
 class Libjodycode < Formula
   desc "Shared code used by several utilities written by Jody Bruchon"
   homepage "https://codeberg.org/jbruchon/libjodycode"
-  url "https://codeberg.org/jbruchon/libjodycode/archive/v4.1.tar.gz"
-  sha256 "24ab610b81fbd783874b4c6fbedeed52436b0d0aba293d91b9e678c431b092fe"
+  url "https://codeberg.org/jbruchon/libjodycode/archive/v4.1.1.tar.gz"
+  sha256 "dba58704f269d82bc226d361e40c2e0fc627dbdcc29786b74942c1afe5092132"
   license "MIT"
 
   bottle do
@@ -16,12 +16,6 @@ class Libjodycode < Formula
 
   # These files used to be distributed as part of the jdupes formula
   link_overwrite "include/libjodycode.h", "share/man/man7/libjodycode.7", "lib/libjodycode.a"
-
-  # Fix compile-time errors on Linux
-  patch do
-    url "https://codeberg.org/jbruchon/libjodycode/commit/07294bbfd6c3c4be42c40c9ed81eebb5cd3d83a0.patch?full_index=1"
-    sha256 "a9ed883dce6eeb90b20ea851247696b1b9a6f1cfbf8579cf9885ac0e3349e0d1"
-  end
 
   def install
     system "make"
