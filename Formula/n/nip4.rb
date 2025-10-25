@@ -1,8 +1,8 @@
 class Nip4 < Formula
   desc "Image processing spreadsheet"
   homepage "https://github.com/jcupitt/nip4"
-  url "https://github.com/jcupitt/nip4/releases/download/v9.0.13-2/nip4-9.0.13-2.tar.xz"
-  sha256 "ab144b3702eb2376b58df9c39c9a53161e6960fea4c7c71eb5e5fd9cab9af1e1"
+  url "https://github.com/jcupitt/nip4/releases/download/v9.0.14/nip4-9.0.14.tar.xz"
+  sha256 "a5bb0eabdbf5d6d6e1522e1a26ac158ed6a2b289cf47610b8d276fb876aa7b95"
   license "GPL-2.0-or-later"
   head "https://github.com/jcupitt/nip4.git", branch: "main"
 
