@@ -1092,7 +1092,7 @@
     "exclude_packages": ["pillow"]
   },
   "weaviate-cli": {
-    "exclude_packages": ["certifi", "cryptography", "numpy"]
+    "exclude_packages": ["certifi", "cryptography", "numpy", "pydantic-core"]
   },
   "woob": {
     "exclude_packages": ["certifi", "pillow"]

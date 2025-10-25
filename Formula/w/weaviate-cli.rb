@@ -19,11 +19,11 @@ class WeaviateCli < Formula
 
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "numpy"
   depends_on "openssl@3"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
@@ -58,13 +58,13 @@ class WeaviateCli < Formula
   end
 
   resource "faker" do
-    url "https://files.pythonhosted.org/packages/c9/4b/ca43f6bbcef63deb8ac01201af306388670a172587169aab3b192f7490f0/faker-37.11.0.tar.gz"
-    sha256 "22969803849ba0618be8eee2dd01d0d9e2cd3b75e6ff1a291fa9abcdb34da5e6"
+    url "https://files.pythonhosted.org/packages/3d/84/e95acaa848b855e15c83331d0401ee5f84b2f60889255c2e055cb4fb6bdf/faker-37.12.0.tar.gz"
+    sha256 "7505e59a7e02fa9010f06c3e1e92f8250d4cfbb30632296140c2d6dbef09b0fa"
   end
 
   resource "grpcio" do
-    url "https://files.pythonhosted.org/packages/9d/f7/8963848164c7604efb3a3e6ee457fdb3a469653e19002bd24742473254f8/grpcio-1.75.1.tar.gz"
-    sha256 "3e81d89ece99b9ace23a6916880baca613c03a799925afb2857887efa8b1b3d2"
+    url "https://files.pythonhosted.org/packages/b6/e0/318c1ce3ae5a17894d5791e87aea147587c9e702f24122cc7a5c8bbaeeb1/grpcio-1.76.0.tar.gz"
+    sha256 "7be78388d6da1a25c0d5ec506523db58b18be22d9c37d8d3a32c08be4987bd73"
   end
 
   resource "h11" do
@@ -83,8 +83,8 @@ class WeaviateCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "importlib-resources" do
@@ -103,18 +103,13 @@ class WeaviateCli < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/fa/a4/cc17347aa2897568beece2e674674359f911d6fe21b0b8d6268cd42727ac/protobuf-6.32.1.tar.gz"
-    sha256 "ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"
+    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
+    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "semver" do
@@ -125,11 +120,6 @@ class WeaviateCli < Formula
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do
