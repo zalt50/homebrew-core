@@ -118,7 +118,7 @@
     "extra_packages": ["imageio"]
   },
   "bagels": {
-    "exclude_packages": ["numpy"]
+    "exclude_packages": ["certifi", "numpy", "pydantic-core"]
   },
   "bandcamp-dl": {
     "exclude_packages": ["certifi"]
