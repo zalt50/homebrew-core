@@ -1,8 +1,8 @@
 class Portmidi < Formula
   desc "Cross-platform library for real-time MIDI I/O"
   homepage "https://github.com/PortMidi/portmidi"
-  url "https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.6.tar.gz"
-  sha256 "81d22b34051621cd56c8d5ef12908ef2a59764c9cdfba6dae47aabddb71ac914"
+  url "https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.7.tar.gz"
+  sha256 "43fa65b4ed7ebaa68b0028a538ba8b2ca4dc9b86a7e22ec48842070e010f823f"
   license "MIT"
   version_scheme 1
 
