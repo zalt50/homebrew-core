@@ -15,12 +15,14 @@ class Archgw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6baab262484dca0b6adf8f645f0eae4be2186184f3f575c9d18348719dddb0ba"
   end
 
-  depends_on "rust" => :build # for pydantic
-  depends_on "certifi"
+  depends_on "rust" => :build # for hf-xet, jitter and safetensors
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.13"
   depends_on "pytorch"
+  depends_on "rpds-py" => :no_linkage
 
   resource "accelerate" do
     url "https://files.pythonhosted.org/packages/23/60/2757c4f03a8705dbf80b1268b03881927878dca5ed07d74f733fb6c219e0/accelerate-1.11.0.tar.gz"
@@ -227,11 +229,6 @@ class Archgw < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
@@ -260,11 +257,6 @@ class Archgw < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
-    sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
   end
 
   resource "safetensors" do

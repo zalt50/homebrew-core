@@ -71,7 +71,7 @@
     "extra_packages": ["gymnasium"]
   },
   "archgw": {
-    "exclude_packages": ["certifi", "numpy", "torch"]
+    "exclude_packages": ["certifi", "numpy", "pydantic-core", "rpds-py", "torch"]
   },
   "arjun": {
     "exclude_packages": ["certifi"]
