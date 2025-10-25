@@ -6,11 +6,11 @@ class SignalCli < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "397d1c994eb18eb6f2477b0b23580e556f39c8f401e4e12034b77c48ea82fe63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cc3f5bf319c5eda5c526dc3d4e34256274f0ee68d17907f99d4b5937a99d8bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "476f7ea293c97ed62dd4bdac2182594a6602322987311b214612f0f10e00cbae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70a7064dd09651fc1c8db8aaab06abed7ed8e1537553bf047147a445a13285ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de796f5ba76ad56be55239d2872fb6916939b958dabaa512cf8b41551e13fa8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb591048816fdfd36313952cfb10a9a02f40765fd87261faf75fbd68d7b3c070"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57ffb2cba1df9792aa26133a3c7e2180f6b7ebd3f9076a405d7155c140480e7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3eba953dea665181ed5576e95f58e2f9d81fd878f2610131f742020ccc849f83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cd331161e9d7ffe6f3c83a10261c075c28398ad75923eb7b8a76449626898ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4981149ba16679746d5ad9e28af664c9bd8994c1fdd92f630d3aeff2ec7c8f84"
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
