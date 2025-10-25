@@ -1,16 +1,14 @@
 class FsUae < Formula
   desc "Amiga emulator"
   homepage "https://fs-uae.net/"
-  url "https://fs-uae.net/files/FS-UAE/Stable/3.1.66/fs-uae-3.1.66.tar.xz"
-  sha256 "606e1868b500413d69bd33bb469f8fd08d6c08988801f17b7dd022f3fbe23832"
+  url "https://github.com/FrodeSolheim/fs-uae/releases/download/v3.2.35/fs-uae-3.2.35.tar.xz"
+  sha256 "f3d3cb8d3df34b0b0125c45a5a3e187ff71050be5dc8455cc4505c0380269117"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://fs-uae.net/download"
-    regex(/href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    strategy :github_releases
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "a3c4a1d90ae429eb3b3b9c1ecf250ee4b851fde20966963e05849254622ddbab"
