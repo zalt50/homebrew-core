@@ -835,7 +835,7 @@
   },
   "python@3.12": {
     "package_name": "",
-    "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
+    "extra_packages": ["flit-core", "pip", "wheel"]
   },
   "python@3.13": {
     "package_name": "",
