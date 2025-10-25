@@ -22,9 +22,10 @@
     "exclude_packages": ["certifi", "cryptography", "gnureadline"],
     "extra_packages": [
       "ansible-pylibssh", "apache-libcloud", "bcrypt<5", "boto3", "dnspython", "docker",
-      "junos-eznc", "jxmlease", "kerberos", "ntc-templates", "openshift",
+      "fqdn", "junos-eznc", "jxmlease", "kerberos", "ntc-templates", "openshift",
       "passlib", "pexpect", "proxmoxer", "pynetbox", "pysphere3", "python-consul",
-      "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
+      "python-ldap", "python-neutronclient", "pytz", "pywinrm", "requests-credssp",
+      "shade", "zabbix-api"
     ]
   },
   "ansible-builder": {
