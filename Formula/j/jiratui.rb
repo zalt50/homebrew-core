@@ -3,8 +3,8 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/5e/dc/989857eb87e3c87f4a692df4830b90e23a26b995796c04dae0b2f36e5c5d/jiratui-1.3.0.tar.gz"
-  sha256 "cec178d2b645683e7b3d9b8a12470316d34fe91f32701224e6c5e8c9f81fa673"
+  url "https://files.pythonhosted.org/packages/c4/18/0bf07c9c612db9bca489e94435ae59bf992561952140f4d276b138308c06/jiratui-1.4.0.tar.gz"
+  sha256 "2603d4457b2f0a6acb224a7b6b00eab6b53934afc87add0a3a56864503ca42d1"
   license "MIT"
 
   no_autobump! because: "has non-PyPI resources"
@@ -24,6 +24,7 @@ class Jiratui < Formula
   depends_on "libmagic"
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   # `tree-sitter-*` sdists are missing C headers and therefore we have to use GitHub sources
@@ -110,11 +111,6 @@ class Jiratui < Formula
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
