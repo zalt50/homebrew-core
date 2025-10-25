@@ -3,8 +3,8 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/ca/dd/bfcd82e0bc320c0e21880c8d6fafb7ab4e086ef2ff0591dccee9aa857027/bbot-2.7.1.tar.gz"
-  sha256 "180e51ba30740d0717256c2cb1037f636966d5aec478f1fad885ee016f71ac82"
+  url "https://files.pythonhosted.org/packages/1a/09/df14cf3ff1043e0ffd8dfb64c8bf70b8c7ac59c19cf90be58ccd4c1f829c/bbot-2.7.2.tar.gz"
+  sha256 "be929ecc6d67255c501384228dff1f79e4450f8863cbdf07ce75435cbf8c0641"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -148,8 +148,8 @@ class Bbot < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/be/4d/8df5f83256a809c22c4d6792ce8d43bb503be0fb7a8e4da9025754b09658/orjson-3.11.3.tar.gz"
-    sha256 "1c0603b1d2ffcd43a411d64797a19556ef76958aef1c182f22dc30860152a98a"
+    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
+    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "packaging" do
@@ -163,8 +163,8 @@ class Bbot < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
+    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
   end
 
   resource "ptyprocess" do
@@ -183,8 +183,8 @@ class Bbot < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
@@ -228,8 +228,8 @@ class Bbot < Formula
   end
 
   resource "requests-file" do
-    url "https://files.pythonhosted.org/packages/fe/5e/2aca791207e542a16a8cc91fd0e19f5c26f4dff030ee3062deb5606f84ae/requests_file-3.0.0.tar.gz"
-    sha256 "68789589cfde7098e8933fe3e69bbd864f7f0c22f118937b424d94d0e1b7760f"
+    url "https://files.pythonhosted.org/packages/3c/f8/5dc70102e4d337063452c82e1f0d95e39abfe67aa222ed8a5ddeb9df8de8/requests_file-3.0.1.tar.gz"
+    sha256 "f14243d7796c588f3521bd423c5dea2ee4cc730e54a3cac9574d78aca1272576"
   end
 
   resource "resolvelib" do
