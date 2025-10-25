@@ -1111,6 +1111,9 @@
     "exclude_packages": ["certifi"]
   },
   "xonsh": "xonsh[ptk,pygments,proctitle]",
+  "yamlfix": {
+    "exclude_packages": ["pydantic-core"]
+  },
   "yewtube": {
     "exclude_packages": ["certifi"]
   },
