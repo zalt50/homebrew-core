@@ -1,8 +1,8 @@
 class Bkcrack < Formula
   desc "Crack legacy zip encryption with Biham and Kocher's known plaintext attack"
   homepage "https://github.com/kimci86/bkcrack"
-  url "https://github.com/kimci86/bkcrack/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "db45ca2b328a6d11ba879137a35cc6672860434d17c9aaec8faca317e5a0ae04"
+  url "https://github.com/kimci86/bkcrack/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "bb6a6d0bb1ccbb3c39cf8b3113581b5514b127023bbe0e864992c57e79346053"
   license "Zlib"
   head "https://github.com/kimci86/bkcrack.git", branch: "master"
 
