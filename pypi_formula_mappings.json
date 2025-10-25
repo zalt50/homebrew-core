@@ -535,7 +535,7 @@
   },
   "jinja2-cli": "jinja2-cli[yaml,toml,xml]",
   "jiratui": {
-    "exclude_packages": ["certifi", "cryptography", "pillow"]
+    "exclude_packages": ["certifi", "cryptography", "pillow", "pydantic-core"]
   },
   "jrnl": {
     "exclude_packages": ["cryptography"]
