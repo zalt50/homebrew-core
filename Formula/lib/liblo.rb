@@ -1,11 +1,9 @@
 class Liblo < Formula
   desc "Lightweight Open Sound Control implementation"
   homepage "https://liblo.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/liblo/liblo/0.32/liblo-0.32.tar.gz"
-  sha256 "5df05f2a0395fc5ac90f6b538b8c82bb21941406fd1a70a765c7336a47d70208"
+  url "https://downloads.sourceforge.net/project/liblo/liblo/0.34/liblo-0.34.tar.gz"
+  sha256 "69aa0cd365dba5ea7799b850a7da659ad303e6074bbd67f4ab84e4d6f5f6c3a4"
   license "LGPL-2.1-or-later"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "bc3d8a8b87f29fbb5fc1bdbf6538a1cc26e03617a4a42dcaef0f085585db5588"
@@ -27,6 +25,8 @@ class Liblo < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
+
+  depends_on "doxygen" => :build
 
   def install
     if build.head?
