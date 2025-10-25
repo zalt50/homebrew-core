@@ -9,13 +9,13 @@ class Mentat < Formula
   revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "48482f9a835faeb70fb68c0b63e8daec247c80dec23e106bf2e59a99bf0b6531"
-    sha256 cellar: :any,                 arm64_sequoia: "0f6991b9968b030ca948f7a4a4734d5b88b3b17ea7f21567146e8d6803b70047"
-    sha256 cellar: :any,                 arm64_sonoma:  "3dc9f5211ae63c9e57901e748d454b962d258af61feca67f91b7abc1d960b564"
-    sha256 cellar: :any,                 sonoma:        "2d2f5441c08ce0baac7f52700f475a7eb835c0ccecb9c9ed527de4bea372f88d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed1e79e1c41e4b6050a8c0917d096a6292de850bab8b445795f44af1ecd7b355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04c757fb27e2d5f00e7943565beb6fa75f65ea7d5bb404859f18c8c5a896854d"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "d38a4611394ab643c638bc0c116c22f152ced05c49751e30326950167063f5e5"
+    sha256 cellar: :any,                 arm64_sequoia: "a765e0fdac4d8b3595a24aaf770c00a8dd67f12a51c219455532b9dd789bf6ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "c2977668fae924ded06accde2ee9b35f05eab736258dd3ec9d689408f2097e43"
+    sha256 cellar: :any,                 sonoma:        "f3e60fd8c8a59ae88716240c841496efaa087a7b430e45c626322b0b4e218ead"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16b2d3424df2c18d8363f6417f8a874a79ae81358fa9b31e3a83321bd69eacb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0186ccf04b611ad608320b72993b27c50a2d05f4f7d4b21336c1a8fcd3f603b"
   end
 
   # https://github.com/AbanteAI/archive-old-cli-mentat/commit/901f0726418e9e9a66bec78facecf3a45541002d
