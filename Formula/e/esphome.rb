@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/67/22/fbb2889525ed53e021bdb8ce78cb72f2cca4a4821ae0cd44c3cc67fe5cbb/esphome-2025.10.2.tar.gz"
-  sha256 "e33a262ef98bd26164e5af66d8479580118ceb0f1888a90509aff0ad5a39b061"
+  url "https://files.pythonhosted.org/packages/df/c7/fa93e17b3ff5b9253832d731f5fa305854e625f2e468dc762650797dbc91/esphome-2025.10.3.tar.gz"
+  sha256 "3826cf52a5c10ca8f2565d986c61c5fbd1b7be03154bcce62b0a43502cb91ef3"
   license "MIT"
 
   bottle do
@@ -258,8 +258,8 @@ class Esphome < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/9d/90/95cff624a176de6d00a4ddc4fb0238649bca09c19bd37d5b8d1962f8dcfc/rich_click-1.9.3.tar.gz"
-    sha256 "60839150a935604df1378b159da340d3fff91f912903e935da7cb615b5738c1b"
+    url "https://files.pythonhosted.org/packages/bf/d8/f2c1b7e9a645ba40f756d7a5b195fc104729bc6b19061ba3ab385f342931/rich_click-1.9.4.tar.gz"
+    sha256 "af73dc68e85f3bebb80ce302a642b9fe3b65f3df0ceb42eb9a27c467c1b678c8"
   end
 
   resource "ruamel-yaml" do
