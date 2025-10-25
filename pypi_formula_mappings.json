@@ -647,7 +647,7 @@
   },
   "molecule": {
     "extra_packages": ["molecule-plugins[azure,docker,ec2,gce,podman,vagrant,openstack]"],
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
   "mongo-orchestration": {
     "exclude_packages": ["certifi"]
