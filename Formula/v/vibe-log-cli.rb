@@ -10,6 +10,7 @@ class VibeLogCli < Formula
     sha256 cellar: :any,                 arm64_sequoia: "b4bab11e4b314b86f202563b4cfd2ebfdfcbafb19745a5c1aa22c04e81bafe24"
     sha256 cellar: :any,                 arm64_sonoma:  "b4bab11e4b314b86f202563b4cfd2ebfdfcbafb19745a5c1aa22c04e81bafe24"
     sha256 cellar: :any,                 sonoma:        "feb2d5586ce77002cc4f9b7d9d803936635409149b6c2b78b82c183fb62cff3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee6e6e3b667cbecc95ed7e9291236899066916f57f5750e9376e0f47f3ddc9fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7472e3f1a5972317e4eb9610240d7186a48c1c605d5a41476e56391e3f381c25"
   end
 
