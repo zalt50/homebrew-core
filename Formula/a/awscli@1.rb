@@ -26,7 +26,7 @@ class AwscliAT1 < Formula
   keg_only :versioned_formula
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "mandoc"
 
@@ -85,6 +85,10 @@ class AwscliAT1 < Formula
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
+  # Backport Python 3.14 support without CI changes. Remove next release (1.42.60)
+  # https://github.com/aws/aws-cli/commit/44e446748504ed5a17df7c41c77c190bcba9fc5a
+  patch :DATA
+
   def install
     virtualenv_install_with_resources
     pkgshare.install "awscli/examples"
@@ -113,3 +117,42 @@ class AwscliAT1 < Formula
     assert_match "topics", shell_output("#{bin}/aws help")
   end
 end
+
+__END__
+diff --git a/README.rst b/README.rst
+index 51cdb7b9969a7092a77aaaa9c5eb0426391f68b5..063798c14912406788d37dd01ebee65be2f79719 100644
+--- a/README.rst
++++ b/README.rst
+@@ -31,6 +31,7 @@ The aws-cli package works on Python versions:
+ -  3.11.x and greater
+ -  3.12.x and greater
+ -  3.13.x and greater
++-  3.14.x and greater
+ 
+ Notices
+ ~~~~~~~
+diff --git a/awscli/arguments.py b/awscli/arguments.py
+index 1c621b8657408273e75f6319aeb65811bde7f00e..686253ad0f6a5e9bf2c25ce926290755853408ca 100644
+--- a/awscli/arguments.py
++++ b/awscli/arguments.py
+@@ -449,7 +449,7 @@ def add_to_parser(self, parser):
+         cli_name = self.cli_name
+         parser.add_argument(
+             cli_name,
+-            help=self.documentation,
++            help=self.documentation.replace('%', '%%'),
+             type=self.cli_type,
+             required=self.required,
+         )
+diff --git a/setup.py b/setup.py
+index bccbddab5134d481d7dea38af990f526d41af9ad..1daa35629cf75646d5aa35e085da212a4e15f2c8 100644
+--- a/setup.py
++++ b/setup.py
+@@ -63,6 +63,7 @@ def find_version(*file_paths):
+         'Programming Language :: Python :: 3.11',
+         'Programming Language :: Python :: 3.12',
+         'Programming Language :: Python :: 3.13',
++        'Programming Language :: Python :: 3.14',
+     ],
+     project_urls={
+         'Source': 'https://github.com/aws/aws-cli',
