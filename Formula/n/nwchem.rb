@@ -12,7 +12,7 @@ class Nwchem < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256                               arm64_tahoe:   "4ed6bd4d09fcc140d8c37d6746911c0bbbdde7b6701daf6c162c8966604604e4"
