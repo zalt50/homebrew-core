@@ -6,6 +6,14 @@ class Kekkai < Formula
   license "MIT"
   head "https://github.com/catatsuy/kekkai.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e9c740b08ae0d0e541a991ab622fc4d2d5c5d8dd428ddc76e295a8fbdebd5d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e9c740b08ae0d0e541a991ab622fc4d2d5c5d8dd428ddc76e295a8fbdebd5d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e9c740b08ae0d0e541a991ab622fc4d2d5c5d8dd428ddc76e295a8fbdebd5d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a69b2bced21476f08e6252431d6eb68a0773fbafd7445e6e1f7fcc56be1fa90f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3792b8b3d96095c514364a77b4bab907ebf8a5051b2325742697607a530902fa"
+  end
+
   depends_on "go" => :build
 
   def install
