@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/19/62/26cde8f64cf0eb4a5aefc5a943c98f91886655de590a5bcf646df70895d5/flexget-3.18.18.tar.gz"
-  sha256 "cadc897a575b77c408dd2ee82ba1c11ec0f45fb22ca72e10d712d230175b6d9a"
+  url "https://files.pythonhosted.org/packages/98/34/0e88c5c604ad7806821fee562d5d87bad484651fc6600575959d1a57e1e2/flexget-3.18.19.tar.gz"
+  sha256 "22ec8bf83ed0a3d9ca8cfd5495a7bf06cbb1c22d81f7e97d7f2c2c35f7a41650"
   license "MIT"
 
   bottle do
@@ -232,8 +232,8 @@ class Flexget < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/89/fc/889242351a932d6183eec5df1fc6539b6f36b6a88444f1e63f18668253aa/psutil-7.1.1.tar.gz"
-    sha256 "092b6350145007389c1cfe5716050f02030a05219d90057ea867d18fe8d372fc"
+    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
+    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
   end
 
   resource "pygments" do
