@@ -8,13 +8,12 @@ class McpProxy < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "282021630aa5a6c860f0e7755782a609f4bcc67a3c5000665cca55205a6247fb"
-    sha256 cellar: :any,                 arm64_sequoia: "053c526cfbedf6c5fa9d323cce04c03d008e6df2a682a7f9d9248f717ca819d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "571f60a9e0b99eff8af902379c044cf5cb71f4755d8c32305b2dcb04e3e19618"
-    sha256 cellar: :any,                 sonoma:        "c45aa9d5be3d97a17e8d5fd33821126bc2a8e407ef3c2a886356222d2d39f25b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca521df585dd566741bfec5c27578f72f074827f0f809d912fe35fd24a5911b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d514dc2adc8a9c8c88c784da1322276bc973fabdd52e0711fdf8f932e547247"
+    sha256 cellar: :any,                 arm64_tahoe:   "f1f1a7f30e5d2cc0f00fd78c9e4cdafd7535654e0077668c164cc4487e2037ed"
+    sha256 cellar: :any,                 arm64_sequoia: "6c54a85584d165301b7694045d831bb821083e610dbf012cb0b2af847cdfcdc0"
+    sha256 cellar: :any,                 arm64_sonoma:  "927d23b2d357bc6017777eab83434a472579a1d1126b5e162b15aaa5c2cee6ad"
+    sha256 cellar: :any,                 sonoma:        "b5e39ac28cfd33f14ca8a10093b440f50cb4de1b62a6a07739a63979f5f4170e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59dd17e84d87c0bbd1a0c6aa443dc436b400b330844e6d03d85a9332445cf48d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e72e1aa1fc5a238e4c30a978c36a15c9074cb8e4ea45712a71604629658b7a"
   end
 
   depends_on "pkgconf" => :build
