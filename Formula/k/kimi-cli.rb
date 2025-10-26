@@ -12,6 +12,7 @@ class KimiCli < Formula
     sha256 cellar: :any,                 arm64_sequoia: "90d8a75076fbe294f84ac0a2583afc53a0968cd51fcbc74139b0d0ee007b0534"
     sha256 cellar: :any,                 arm64_sonoma:  "3d93b8eae4099ad363b2eadc63e6fc233f3d1ff5ba0f96cb29b6216e546edd78"
     sha256 cellar: :any,                 sonoma:        "c36072e68edc31cd6ea9df710e8079f33ef4cd7afbb630a0a529f02f15d23e5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fa3422263c6a08376c640c567ad92f2f31ca473805eb9bfafcd1da7e80263a9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "677ee3c46498dbe7ec9fb86eaffae3ff02b8fcf9189a0baf28b0b6b351530181"
   end
 
