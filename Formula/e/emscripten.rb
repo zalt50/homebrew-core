@@ -26,7 +26,7 @@ class Emscripten < Formula
 
   depends_on "cmake" => :build
   depends_on "node"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "yuicompressor"
 
   uses_from_macos "llvm" => :build
@@ -226,7 +226,7 @@ class Emscripten < Formula
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: Formula["python@3.13"].opt_bin/"python3.13" }
+    emscript_env = { PYTHON: which("python3.14") }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|
