@@ -31,14 +31,13 @@ class Povray < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "204252605683714d5a61ba06de5cd5d85f99c2611d685af671c32ae116647030"
-    sha256 arm64_sequoia: "44ec7713b1607ecf66042d6111a44a1bf58e7afb2965c42721857af84ce81deb"
-    sha256 arm64_sonoma:  "9785bd774a6e501ac50dacfbce4df93801e2ac799a15e6b8a929d5b35925718a"
-    sha256 arm64_ventura: "b8ea24b342d54d613f811190b424ab43e5a2f6504e9596fbbb02a539fa0c73aa"
-    sha256 sonoma:        "133c0e66166346d88ab44b32c803381b043614c373236dbca5225fff938391ec"
-    sha256 ventura:       "de76dcfa379cd8acb6b9cf407624a30aae1e24884a921c82d8ecbc76ebde17a2"
-    sha256 arm64_linux:   "f15a61a1737781ebbacf39d15915e0e6ef03cb01606225b40bde164706935139"
-    sha256 x86_64_linux:  "56f9af299864280e57cfa641a177d27b056f8c0dfa4034aaa4ace72e5ebf50f5"
+    rebuild 1
+    sha256 arm64_tahoe:   "17590093744d2c86dda3f3d87a39db0db202a5947e3c8d73ba3b9a5a9703578a"
+    sha256 arm64_sequoia: "ad0601b4708711e74b3e8b5b3a749a1868b645742d14302f6bfad7ef0d5d93fa"
+    sha256 arm64_sonoma:  "11f41dfc4f8920a4f13eb9cdd5f3b3b6f700b68ae721b9ab106052f2c64efe08"
+    sha256 sonoma:        "1132092cc0b5439e291b32c098276dba1deb33a44c09794a6be847259e14ad33"
+    sha256 arm64_linux:   "7c8f60ac259482b77f07ff435848294c41242d4d88180aa087003f1abe939642"
+    sha256 x86_64_linux:  "bad283a82fc7128d95e1cda1efc7010dbf97b9a1c82ab30c8635a2d3e963b19e"
   end
 
   head do
