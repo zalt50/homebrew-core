@@ -11,6 +11,7 @@ class Vtcode < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e5f46c8469b0f3c05a7ca0267cc4d644c59f71db214b5206396cb1f93782920"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66ba10fc5e79fa04c513f9d8f432c61ca07fe53cfc36a6684f616231675e8302"
     sha256 cellar: :any_skip_relocation, sonoma:        "a939a7c2fd2f82762cdd8fb49b1f4978c2aacaa3317d938dc9a95dda88c2f017"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b38cf089ebf6125935a318b96616cb9a4765a8c37d36a548260ce4cddad554ea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cca45926bee2b5a5d05c1a8e6112e620c2b8ba98f3097c955d5f8e6bde1af86"
   end
 
