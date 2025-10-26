@@ -3,18 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/bc/3b/c30af894db2c3ec439d0e4168ba7ce705474cabdd0a599033ad9a19ad977/fastmcp-2.13.0.tar.gz"
-  sha256 "57f7b7503363e1babc0d1a13af18252b80366a409e1de85f1256cce66a4bee35"
+  url "https://files.pythonhosted.org/packages/f2/bd/ad8a0cc9ea3e8bfe8fb63a00be985d4c887c3c0a454d26c712c160af489f/fastmcp-2.13.0.1.tar.gz"
+  sha256 "d6dbd52a6b06fc1797db9fe0b487db966b4a4d34d9c7dd87b9918d5ec775dcb7"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c1a5e27fd88367699e5894fcb401e33c7afe215f307029b09baa15e9c9ce39b5"
-    sha256 cellar: :any,                 arm64_sequoia: "a3322f8f3cf5e7e72a25ad1dd25f75f3eef0888ccabd55dc0d3027302d33e926"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccfef45314ef9dd881f044b93709f562b29c4473663f4ab996baad0febb9d4e8"
-    sha256 cellar: :any,                 sonoma:        "32e02b73d794c5d8b174fa911eb8dced53b859bf5592a06ebf3a29085a8bd620"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72c46e33d64b219a878b8c31efd43d30df31880b2f7777e54996c74f03b334d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09440c98628c031aa4a6e42307bdcb6ae1c2a748ffef80d14303c0f20ec622a4"
+    sha256 cellar: :any,                 arm64_tahoe:   "3855a2be4d82c2a724bcba90a2147688bd921be61c5dab26fad34458a99b9263"
+    sha256 cellar: :any,                 arm64_sequoia: "7def996acda1f285aecd48dc0dafe190bf04c38b2b2ee365ee75a67f960ef0b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "2fb777bc8b22be93fe704676249bfd6c858f21059726c0436f769ec710e5fefa"
+    sha256 cellar: :any,                 sonoma:        "5a6af51744c1a9e97776b9056c1c22a2b0592e55078b4d3974f5f8c1b138f154"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "002daa47a895d74960a04cb87f8cd223894a2b912e84ed152a876a6db918f350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "019f8e2e67a4a41a857c8999108438a6fbab678eac0e77f214167408f2a06b0b"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -47,8 +47,8 @@ class Fastmcp < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/86/51/97f0d11d613d3b9650bd75588ff5206a408afcdc337ab7108dafb4c8d1ec/beartype-0.22.3.tar.gz"
-    sha256 "391c457bd6463d6fb0ec5d7e28ad44c336ae02dbaaae0fc55c053b071554855b"
+    url "https://files.pythonhosted.org/packages/e8/77/af43bdf737723b28130f2cb595ec0f23e0e757d211fe068fd0ccdb77d786/beartype-0.22.4.tar.gz"
+    sha256 "68284c7803efd190b1b4639a0ab1a17677af9571b8a2ef5a169d10cb8955b01f"
   end
 
   resource "cachetools" do
@@ -272,8 +272,8 @@ class Fastmcp < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-multipart" do
