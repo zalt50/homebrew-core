@@ -11,13 +11,12 @@ class PipTools < Formula
   head "https://github.com/jazzband/pip-tools.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03cf8b94d1fa945f6f0bf6f60e187ee06c225d57ab422ebff7638251d9d35603"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03cf8b94d1fa945f6f0bf6f60e187ee06c225d57ab422ebff7638251d9d35603"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03cf8b94d1fa945f6f0bf6f60e187ee06c225d57ab422ebff7638251d9d35603"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73b7e6c69dae72b91d5ad8e641ad81d43461319d903771d5e905b993386e0ea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73b7e6c69dae72b91d5ad8e641ad81d43461319d903771d5e905b993386e0ea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73b7e6c69dae72b91d5ad8e641ad81d43461319d903771d5e905b993386e0ea4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b7e6ef29e087417d08ef65b5944c9ec1e4546c57453809dd47f9c805513f732"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b7e6ef29e087417d08ef65b5944c9ec1e4546c57453809dd47f9c805513f732"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b7e6ef29e087417d08ef65b5944c9ec1e4546c57453809dd47f9c805513f732"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b59f26e1ef0666c2d7f3b93fc0037b44f6954ba5c8026e87dd61ae146a3812a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b59f26e1ef0666c2d7f3b93fc0037b44f6954ba5c8026e87dd61ae146a3812a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b59f26e1ef0666c2d7f3b93fc0037b44f6954ba5c8026e87dd61ae146a3812a"
   end
 
   depends_on "python@3.14"
