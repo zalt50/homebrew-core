@@ -565,6 +565,9 @@
     "exclude_packages": ["cryptography"],
     "extra_packages": ["jeepney", "secretstorage"]
   },
+  "kimi-cli": {
+    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
+  },
   "langgraph-cli": {
     "exclude_packages": ["certifi"]
   },
