@@ -1,8 +1,8 @@
 class TrzszSsh < Formula
   desc "Simple ssh client with trzsz ( trz / tsz ) support"
   homepage "https://trzsz.github.io/ssh"
-  url "https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.22.tar.gz"
-  sha256 "ccf5a113d68156b409d89fead784256b4fd6a6bbae6a2d70df1e4403d383a962"
+  url "https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.23.tar.gz"
+  sha256 "e4fa0f6f443faede83380ceca4a0de862c054f37c27983a7bbe6bced1d9f80da"
   license "MIT"
 
   no_autobump! because: :requires_manual_review
