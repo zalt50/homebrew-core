@@ -7,6 +7,14 @@ class KimiCli < Formula
   sha256 "94cad9ccb63095eef4f64702545e36e01c415a8716a76604f2b222fb8403b1af"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "21229948eae88e10f97723dd4bb62d428f8afb96ffb249bd8504637ed227fe6e"
+    sha256 cellar: :any,                 arm64_sequoia: "90d8a75076fbe294f84ac0a2583afc53a0968cd51fcbc74139b0d0ee007b0534"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d93b8eae4099ad363b2eadc63e6fc233f3d1ff5ba0f96cb29b6216e546edd78"
+    sha256 cellar: :any,                 sonoma:        "c36072e68edc31cd6ea9df710e8079f33ef4cd7afbb630a0a529f02f15d23e5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "677ee3c46498dbe7ec9fb86eaffae3ff02b8fcf9189a0baf28b0b6b351530181"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
