@@ -1,10 +1,9 @@
 class Libzim < Formula
   desc "Reference implementation of the ZIM specification"
   homepage "https://github.com/openzim/libzim"
-  url "https://github.com/openzim/libzim/archive/refs/tags/9.3.0.tar.gz"
-  sha256 "791220e51e6a160d349491b9744ec1a9c1a104f11a79e8e73673daf242be69ed"
+  url "https://github.com/openzim/libzim/archive/refs/tags/9.4.0.tar.gz"
+  sha256 "000d6e413963754c0e28327fbdd0a04afd05ea2a728f6438ef96795a2aa3edb8"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "4e89d062e9b266ef32c000632519ecb99f256b701005966f399246f21a8b9575"
@@ -28,13 +27,6 @@ class Libzim < Formula
 
   uses_from_macos "python" => :build
 
-  # Apply commit from open PR to fix build with ICU 76+
-  # PR ref: https://github.com/openzim/libzim/pull/936
-  patch do
-    url "https://github.com/openzim/libzim/commit/48c8c3fa7ad7a54f6df9a5be2676d189bbaf0022.patch?full_index=1"
-    sha256 "f88890feab66aec7861b4eaab58202d6417c7c4d3692fe56f0e4b5fba06c64a3"
-  end
-
   def install
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -50,9 +42,8 @@ class Libzim < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-L#{lib}", "-lzim", "-o", "test", "-std=c++11"
 
-    # Assert the first line of output contains "libzim <version>"
+    system ENV.cxx, "test.cpp", "-L#{lib}", "-lzim", "-o", "test", "-std=c++11"
     assert_match "libzim #{version}", shell_output("./test")
   end
 end
