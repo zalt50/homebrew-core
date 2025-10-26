@@ -18,15 +18,18 @@ class Ki < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6c23ecade167e9a2e175a6b34693c45fbbd2b7b4b9565554aa34ddcf1988d74"
   end
 
+  # not compatible with kotlin 2.0+, https://github.com/Kotlin/kotlin-interactive-shell/issues/131
+  deprecate! date: "2025-10-26", because: :unmaintained
+
   depends_on "maven" => :build
-  depends_on "openjdk"
+  depends_on "openjdk@21"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home
+    ENV["JAVA_HOME"] = Language::Java.java_home("21")
 
     system "mvn", "-DskipTests", "package"
     libexec.install "lib/ki-shell.jar"
-    bin.write_jar_script libexec/"ki-shell.jar", "ki"
+    bin.write_jar_script libexec/"ki-shell.jar", "ki", java_version: "21"
   end
 
   test do
