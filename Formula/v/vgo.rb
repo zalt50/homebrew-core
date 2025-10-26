@@ -11,6 +11,7 @@ class Vgo < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "625060653e73c0e996276bc83f4f6dfc586c10739248ea167e296ef4d1212d64"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "625060653e73c0e996276bc83f4f6dfc586c10739248ea167e296ef4d1212d64"
     sha256 cellar: :any_skip_relocation, sonoma:        "ed465eb32ba71c56fbb1f2430e89f8db84230a825ea361a7332d622065be2ee0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9544aa949090a4777ed45e28cb84512c712899bb7d2f512e4629174e261a3f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "00919354e85aa7eabe2a62e05f80e9704ec285193c5caf5a5a752d26af38084f"
   end
 
