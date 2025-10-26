@@ -1,8 +1,8 @@
 class DerAscii < Formula
   desc "Reversible DER and BER pretty-printer"
   homepage "https://github.com/google/der-ascii"
-  url "https://github.com/google/der-ascii/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "4e5e25b2d3ade22f0dc87264945ece6138858d3c6803143cf39c66183a74c9c5"
+  url "https://github.com/google/der-ascii/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "e59e795eb12ed7618f8ac6fe3969277145536b1705c205d387f1bbc53c418160"
   license "Apache-2.0"
   head "https://github.com/google/der-ascii.git", branch: "main"
 
