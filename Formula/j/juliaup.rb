@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.18.7.tar.gz"
-  sha256 "ded8173e7f87accd142969431136953174e75256d3d83ecbf6bfb6177fcf94f5"
+  url "https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.18.8.tar.gz"
+  sha256 "b4380c2d1ff65a603d1ca56648b23e569c5f07a74da0bd849b7ee0e2c3197fe9"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "main"
 
@@ -10,8 +10,6 @@ class Juliaup < Formula
     url :stable
     strategy :github_latest
   end
-
-  no_autobump! because: :bumped_by_upstream
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6640ac7f5238859be986bcdfb2dfe43a587de4501b775f531da355103bd3a03a"
