@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "trafilatura": {
-    "exclude_packages": ["certifi"]
-  },
   "trailscraper": {
     "extra_packages": ["setuptools"]
   },
