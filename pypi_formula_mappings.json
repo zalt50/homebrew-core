@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pytr": {
-    "exclude_packages": ["certifi"]
-  },
   "qtwebengine": {
     "package_name": "",
     "extra_packages": ["html5lib"]
