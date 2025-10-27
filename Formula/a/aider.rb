@@ -39,6 +39,8 @@ class Aider < Formula
     depends_on "patchelf" => :build
   end
 
+  pypi_packages exclude_packages: "certifi"
+
   # One way to update python resources:
   # 1. remove GitHub url resources
   # 2. run `brew update-python-resources aider`

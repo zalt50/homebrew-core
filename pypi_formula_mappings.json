@@ -1,23 +1,4 @@
 {
-  "abi3audit": {
-    "exclude_packages": ["certifi"]
-  },
-  "acronym": {
-    "exclude_packages": ["numpy"]
-  },
-  "aider": {
-    "exclude_packages": ["certifi"]
-  },
-  "aiven-client": {
-    "exclude_packages": ["certifi"]
-  },
-  "alot": {
-    "exclude_packages": ["notmuch2"],
-    "extra_packages": ["standard-mailcap"]
-  },
-  "animdl": {
-    "exclude_packages": ["certifi"]
-  },
   "ansible": {
     "exclude_packages": ["certifi", "cryptography", "gnureadline"],
     "extra_packages": [
@@ -27,12 +8,6 @@
       "python-ldap", "python-neutronclient", "pytz", "pywinrm", "requests-credssp",
       "shade", "zabbix-api"
     ]
-  },
-  "ansible-builder": {
-    "exclude_packages": ["rpds-py"]
-  },
-  "ansible-lint": {
-    "exclude_packages": ["cryptography", "rpds-py"]
   },
   "ansible@8": {
     "extra_packages": [
@@ -59,47 +34,6 @@
       "passlib", "pexpect", "proxmoxer", "pynetbox", "pysphere3", "python-consul",
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
-  },
-  "apprise": {
-    "exclude_packages": ["certifi"]
-  },
-  "aqtinstall": {
-    "exclude_packages": ["certifi"]
-  },
-  "arcade-learning-environment": {
-    "exclude_packages": ["numpy"],
-    "extra_packages": ["gymnasium"]
-  },
-  "archgw": {
-    "exclude_packages": ["certifi", "numpy", "pydantic-core", "rpds-py", "torch"]
-  },
-  "arjun": {
-    "exclude_packages": ["certifi"]
-  },
-  "arxiv_latex_cleaner": {
-    "exclude_packages": ["pillow"]
-  },
-  "astrometry-net": {
-    "exclude_packages": ["numpy"],
-    "extra_packages": ["fitsio"]
-  },
-  "aws-elasticbeanstalk": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "aws-google-auth": {
-    "exclude_packages": ["certifi", "pillow"]
-  },
-  "aws-sam-cli": {
-    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
-  },
-  "aws-sso-util": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
-  "awscli": {
-    "extra_packages": ["flit-core"]
-  },
-  "awscurl": {
-    "exclude_packages": ["certifi", "cryptography"]
   },
   "b2-tools": {
     "exclude_packages": ["certifi"]
