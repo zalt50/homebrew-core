@@ -947,9 +947,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "wtfis": {
-    "exclude_packages": ["certifi"]
-  },
   "wxpython": {
     "exclude_packages": ["numpy", "pillow"]
   },
