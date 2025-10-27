@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pass-import": {
-    "exclude_packages": ["certifi"]
-  },
   "pdfly": {
     "exclude_packages": ["certifi", "cryptography", "pillow", "pydantic-core"]
   },
