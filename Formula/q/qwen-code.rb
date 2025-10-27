@@ -1,8 +1,8 @@
 class QwenCode < Formula
   desc "AI-powered command-line workflow tool for developers"
   homepage "https://github.com/QwenLM/qwen-code"
-  url "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.0.14.tgz"
-  sha256 "aecde8ce4154ff9d55f459e94e04029ecbf09426dfada0cbe97da71964f12352"
+  url "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.1.0.tgz"
+  sha256 "81ccd19d0904d66aea4d61ea9f04ac20d2ecc91383ed9c9ebaeb2b314aeeb027"
   license "Apache-2.0"
 
   bottle do
@@ -19,6 +19,9 @@ class QwenCode < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove incompatible pre-built binaries
+    rm_r(libexec/"lib/node_modules/@qwen-code/qwen-code/vendor/ripgrep")
   end
 
   test do
