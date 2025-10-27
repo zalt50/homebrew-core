@@ -39,7 +39,7 @@ class PerconaServer < Formula
   depends_on "lz4"
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
   depends_on "openssl@3"
-  depends_on "protobuf@29"
+  depends_on "protobuf"
   depends_on "zlib" # Zlib 1.2.13+
   depends_on "zstd"
 
@@ -61,40 +61,10 @@ class PerconaServer < Formula
     cause "Requires GCC 10 or newer"
   end
 
-  # FreeBSD patches to fix build with newer Clang
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-libs_mysql_serialization_serializer__default__impl.hpp"
-    sha256 "82706b5160fe3397ddfbeebeb24e2d1558cd54776b852b3277c94420e47c9ff4"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-libs_mysql_serialization_serializer__impl.hpp"
-    sha256 "17c23e64fdb0481959812cc3aec0f5165372753d63266bd388a93d45c55902e0"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_binlog__ostream.cc"
-    sha256 "5bbb82ff9d9594ce1c19d34c83e22b088684057fca7c4357a0ba43dcb1ede0fc"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_mdl__context__backup.cc"
-    sha256 "557db2bb30ff8a985f8b4d016b1e2909b7127ea77fdcd2f7611fd66dcea58e4f"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_rpl__log__encryption.cc"
-    sha256 "f5e993a1b56ae86f3c63ea75799493c875d6a08c81f319fede707bbe16a2e59f"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_stream__cipher.cc"
-    sha256 "ac74c60f6051223993c88e7a11ddd9512c951ac1401d719a2c3377efe1bee3cf"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-unittest_gunit_stream__cipher-t.cc"
-    sha256 "fe23c4098e1b8c5113486800e37bb74683be0b7dd61a9608603428f395588e96"
+  # Apply MySQL commit to support Protobuf >= 30
+  patch do
+    url "https://github.com/mysql/mysql-server/commit/4c1fdd1fb34a9a80a062357a54afe134a92f8abc.patch?full_index=1"
+    sha256 "8943cf092d31f2ed788f9a86b11b27973ec310d53718f15f6d2dac618696e1a3"
   end
 
   # Patch out check for Homebrew `boost`.
