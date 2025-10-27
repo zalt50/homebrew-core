@@ -26,6 +26,12 @@ class ConanAT1 < Formula
 
   keg_only :versioned_formula
 
+  # Upstream comments mention 1.x is no longer supported:
+  # https://github.com/conan-io/conan/pull/17938#issuecomment-3051751396
+  # https://github.com/conan-io/conan/issues/18874#issuecomment-3249873665
+  deprecate! date: "2025-10-27", because: :unsupported
+  disable! date: "2026-10-27", because: :unsupported
+
   depends_on "pkgconf" => :build
   depends_on "cmake" => :test
   depends_on "certifi"
