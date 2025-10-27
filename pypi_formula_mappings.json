@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "tartufo": {
-    "exclude_packages": ["pygit2"]
-  },
   "theharvester": {
     "exclude_packages": ["cffi", "certifi", "pydantic-core"],
     "extra_packages": ["greenlet", "pyee"]
