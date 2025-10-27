@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pyinstaller": {
-    "extra_packages": ["macholib"]
-  },
   "pypy3.9": {
     "package_name": "",
     "extra_packages": ["pip", "setuptools"]
