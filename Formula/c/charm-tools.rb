@@ -27,6 +27,9 @@ class CharmTools < Formula
     depends_on "gmp"
   end
 
+  pypi_packages exclude_packages: ["cheetah3", "certifi", "cryptography"],
+                extra_packages:   "ct3"
+
   # `ruamel-yaml` is manually updated to support Python 3.14
   # PR ref: https://github.com/juju/charm-tools/pull/685
 
