@@ -947,9 +947,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "weasyprint": {
-    "exclude_packages": ["pillow"]
-  },
   "weaviate-cli": {
     "exclude_packages": ["certifi", "cryptography", "numpy", "pydantic-core"]
   },
