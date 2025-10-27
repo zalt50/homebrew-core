@@ -4,6 +4,7 @@ class PyqtAT5 < Formula
   url "https://files.pythonhosted.org/packages/0e/07/c9ed0bd428df6f87183fca565a79fee19fa7c88c7f00a7f011ab4379e77a/PyQt5-5.15.11.tar.gz"
   sha256 "fda45743ebb4a27b4b1a51c6d8ef455c4c1b5d610c90d2934c7802b5c1557c52"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ed4d25a6954705434f7e11f5f59cbd966d3040268fc52ec5f23ac3d72aaeb6b3"
@@ -19,7 +20,7 @@ class PyqtAT5 < Formula
   deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
 
   depends_on "pyqt-builder" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qt@5"
 
   # extra components
@@ -29,8 +30,8 @@ class PyqtAT5 < Formula
   end
 
   resource "pyqt5-sip" do
-    url "https://files.pythonhosted.org/packages/01/79/086b50414bafa71df494398ad277d72e58229a3d1c1b1c766d12b14c2e6d/pyqt5_sip-12.17.0.tar.gz"
-    sha256 "682dadcdbd2239af9fdc0c0628e2776b820e128bec88b49b8d692fe682f90b4f"
+    url "https://files.pythonhosted.org/packages/ea/08/88a20c862f40b5c178c517cdc7e93767967dec5ac1b994e226d517991c9b/pyqt5_sip-12.17.1.tar.gz"
+    sha256 "0eab72bcb628f1926bf5b9ac51259d4fa18e8b2a81d199071135458f7d087ea8"
   end
 
   resource "pyqtchart" do
@@ -59,7 +60,7 @@ class PyqtAT5 < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
