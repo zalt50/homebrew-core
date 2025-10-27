@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "policy_sentry": {
-    "exclude_packages": ["certifi"]
-  },
   "prowler": {
     "exclude_packages": ["certifi"]
   },
