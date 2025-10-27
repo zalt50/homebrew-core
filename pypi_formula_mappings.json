@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pwntools": {
-    "exclude_packages": ["capstone", "certifi", "cryptography"]
-  },
   "pygit2": {
     "exclude_packages": ["cffi", "pycparser"]
   },
