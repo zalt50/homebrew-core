@@ -947,9 +947,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "wxpython": {
-    "exclude_packages": ["numpy", "pillow"]
-  },
   "yamlfix": {
     "exclude_packages": ["pydantic-core"]
   },
