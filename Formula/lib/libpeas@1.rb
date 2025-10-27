@@ -29,19 +29,19 @@ class LibpeasAT1 < Formula
   depends_on "gobject-introspection"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "gettext"
   end
 
   def install
-    pyver = Language::Python.major_minor_version "python3.13"
+    pyver = Language::Python.major_minor_version "python3.14"
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
     inreplace "meson.build", "'python3-embed'", "'python-#{pyver}-embed'"
 
-    # ensure Meson uses homebrew python@3.13
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["python@3.13"].opt_lib/"pkgconfig"
+    # ensure Meson uses homebrew python@3.14
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["python@3.14"].opt_lib/"pkgconfig"
 
     args = %w[
       -Dpython3=true
