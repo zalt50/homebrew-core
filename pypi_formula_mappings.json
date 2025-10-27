@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pieces-cli": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
   "pip-audit": {
     "exclude_packages": ["certifi"]
   },
