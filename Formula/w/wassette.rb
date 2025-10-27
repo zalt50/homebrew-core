@@ -1,8 +1,8 @@
 class Wassette < Formula
   desc "Security-oriented runtime that runs WebAssembly Components via MCP"
   homepage "https://github.com/microsoft/wassette"
-  url "https://github.com/microsoft/wassette/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "a93deb1f9f1eda822b7f204b0809080b650b090082eb0cef497368302379e68c"
+  url "https://github.com/microsoft/wassette/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "3aafeefd14143a97b0e8a5c85f428f47ded17fd95214e6cb873bc6574f6596aa"
   license "MIT"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
@@ -20,13 +20,6 @@ class Wassette < Formula
 
   on_linux do
     depends_on "openssl@3"
-  end
-
-  # Version patch, remove in next release
-  # PR ref: https://github.com/microsoft/wassette/pull/402
-  patch do
-    url "https://github.com/microsoft/wassette/commit/b71d3a26c568342dda5cca0ae502739dca2d1b95.patch?full_index=1"
-    sha256 "87fb20240f450d7fb24f8ad8af43e340763865c42efa0cab27c7b8ed5b1b32b8"
   end
 
   def install
