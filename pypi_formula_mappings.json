@@ -947,27 +947,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "watson": {
-    "exclude_packages": ["certifi"]
-  },
-  "waybackpy": {
-    "exclude_packages": ["certifi"]
-  },
-  "weasyprint": {
-    "exclude_packages": ["pillow"]
-  },
-  "weaviate-cli": {
-    "exclude_packages": ["certifi", "cryptography", "numpy", "pydantic-core"]
-  },
-  "woob": {
-    "exclude_packages": ["certifi", "pillow"]
-  },
-  "wtfis": {
-    "exclude_packages": ["certifi"]
-  },
-  "wxpython": {
-    "exclude_packages": ["numpy", "pillow"]
-  },
   "yamlfix": {
     "exclude_packages": ["pydantic-core"]
   },
