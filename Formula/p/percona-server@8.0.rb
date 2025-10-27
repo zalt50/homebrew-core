@@ -45,7 +45,7 @@ class PerconaServerAT80 < Formula
   depends_on "lz4"
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
   depends_on "openssl@3"
-  depends_on "protobuf@29"
+  depends_on "protobuf"
   depends_on "zlib" # Zlib 1.2.13+
   depends_on "zstd"
 
@@ -70,14 +70,6 @@ class PerconaServerAT80 < Formula
     end
   end
 
-  # Patch out check for Homebrew `boost`.
-  # This should not be necessary when building inside `brew`.
-  # https://github.com/Homebrew/homebrew-test-bot/pull/820
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/mysql/boost-check.patch"
-    sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
-  end
-
   # Fix for system ssl add_library error
   # Issue ref: https://perconadev.atlassian.net/jira/software/c/projects/PS/issues/PS-9641
   patch do
@@ -85,43 +77,15 @@ class PerconaServerAT80 < Formula
     sha256 "d4afcdfb0dd8dcb7c0f7e380a88605b515874628107295ab5b892e8f1e019604"
   end
 
-  # FreeBSD patches for fixing build failure with newer clang
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_binlog__ostream.cc"
-    sha256 "16f86edd2daf5f6c87616781c9f51f76d4a695d55b354e44d639a823b1c3f681"
+  # Apply MySQL commit to support Protobuf >= 30
+  patch do
+    url "https://github.com/mysql/mysql-server/commit/4c1fdd1fb34a9a80a062357a54afe134a92f8abc.patch?full_index=1"
+    sha256 "8943cf092d31f2ed788f9a86b11b27973ec310d53718f15f6d2dac618696e1a3"
   end
 
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_mdl__context__backup.cc"
-    sha256 "501646e1cb6ac2ddc5eb42755d340443e4655741d6e76788f48751a2fb8f3775"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/1a72b413508501423ddfa576f6f50681cef398fa/databases/mysql80-server/files/patch-sql_mdl__context__backup.h"
-    sha256 "69be131aca93a8a263a394d61e8f388a9f560d1b19fa0fe8a2f2609bbc9b817d"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_rpl__log__encryption.cc"
-    sha256 "bdadcf4317295d1847283e20dd7fbfa2df2c4acebf45d5a13d0670bc7311f7ba"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_stream__cipher.cc"
-    sha256 "ac74c60f6051223993c88e7a11ddd9512c951ac1401d719a2c3377efe1bee3cf"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/1a72b413508501423ddfa576f6f50681cef398fa/databases/mysql80-server/files/patch-sql_stream__cipher.h"
-    sha256 "ab29351becd9ff8a6a3fcc37abcdfaace5dbc7176b776bce95e6679ee9f81efb"
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-unittest_gunit_stream__cipher-t.cc"
-    sha256 "9e7629a2174e754487737ef0d73c79fc1ed47ba54a982a3a4803e19c72c5dc0f"
-  end
-
-  # More fixes for new clang not covered by the FreeBSD patches.
+  # Patch out check for Homebrew `boost`.
+  # This should not be necessary when building inside `brew`.
+  # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch :DATA
 
   def datadir
@@ -300,16 +264,39 @@ class PerconaServerAT80 < Formula
 end
 
 __END__
-diff --git i/sql/mf_iocache.cc w/sql/mf_iocache.cc
-index 4a7695ff..f640f5a5 100644
---- i/sql/mf_iocache.cc
-+++ w/sql/mf_iocache.cc
-@@ -110,7 +110,7 @@ bool open_cached_file_encrypted(IO_CACHE *cache, const char *dir,
-
-   /* Generate password, it is a random string. */
-   if (my_rand_buffer(password, sizeof(password)) != 0) DBUG_RETURN(true);
--  password_str.append(password, sizeof(password));
-+  password_str.insert(password_str.end(), password, password + sizeof(password));
-
-   auto encryptor = std::make_unique<Aes_ctr_encryptor>();
-   if (encryptor->open(password_str, 0)) DBUG_RETURN(true);
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 22fa212..ad5f90e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1927,31 +1927,6 @@ MYSQL_CHECK_RAPIDJSON()
+ MYSQL_CHECK_FIDO()
+ MYSQL_CHECK_FIDO_DLLS()
+ 
+-IF(APPLE)
+-  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
+-  IF(EXISTS ${HOMEBREW_BASE}/include/boost)
+-    FOREACH(SYSTEM_LIB ICU LIBEVENT LZ4 PROTOBUF ZSTD FIDO)
+-      IF(WITH_${SYSTEM_LIB} STREQUAL "system")
+-        MESSAGE(FATAL_ERROR
+-          "WITH_${SYSTEM_LIB}=system is not compatible with Homebrew boost\n"
+-          "MySQL depends on ${BOOST_PACKAGE_NAME} with a set of patches.\n"
+-          "Including headers from ${HOMEBREW_BASE}/include "
+-          "will break the build.\n"
+-          "Please use WITH_${SYSTEM_LIB}=bundled\n"
+-          "or do 'brew uninstall boost' or 'brew unlink boost'"
+-          )
+-      ENDIF()
+-    ENDFOREACH()
+-  ENDIF()
+-  # Ensure that we look in /usr/local/include or /opt/homebrew/include
+-  FOREACH(SYSTEM_LIB ICU LIBEVENT LZ4 PROTOBUF ZSTD FIDO)
+-    IF(WITH_${SYSTEM_LIB} STREQUAL "system")
+-      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}/include)
+-      BREAK()
+-    ENDIF()
+-  ENDFOREACH()
+-ENDIF()
+-
+ IF(WITH_AUTHENTICATION_FIDO OR WITH_AUTHENTICATION_CLIENT_PLUGINS)
+   IF(WITH_FIDO STREQUAL "system" AND
+     NOT WITH_SSL STREQUAL "system")
