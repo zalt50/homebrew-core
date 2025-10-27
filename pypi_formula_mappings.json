@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "trzsz": {
-    "extra_packages": ["trzsz-iterm2"]
-  },
   "tvnamer": {
     "exclude_packages": ["certifi"]
   },
