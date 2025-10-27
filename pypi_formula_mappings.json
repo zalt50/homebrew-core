@@ -957,10 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "toot": {
-    "package_name": "toot[images,richtext]",
-    "exclude_packages": ["certifi", "pillow"]
-  },
   "torchvision": {
     "exclude_packages": ["certifi", "numpy", "pillow", "torch"]
   },
