@@ -808,9 +808,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "raven": {
-    "exclude_packages": ["certifi"]
-  },
   "rawdog": {
     "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
   },
