@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "parliament": {
-    "extra_packages": ["setuptools"]
-  },
   "parsedmarc": {
     "exclude_packages": ["certifi", "cryptography"]
   },
