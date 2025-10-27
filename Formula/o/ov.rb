@@ -1,18 +1,18 @@
 class Ov < Formula
   desc "Feature-rich terminal-based text viewer"
   homepage "https://noborus.github.io/ov/"
-  url "https://github.com/noborus/ov/archive/refs/tags/v0.44.0.tar.gz"
-  sha256 "87ee2f7d6477b02b5562d0da033e7a8f4f49c92fe7637c47985646c685474984"
+  url "https://github.com/noborus/ov/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "bffde991c53478d8aaeb871f30c21d50cbd4426432666bd95d0978df03f54229"
   license "MIT"
   head "https://github.com/noborus/ov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2596035fce4b5884d118134e4a00f02d840de1fff586146ab91483b55dc0852e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2596035fce4b5884d118134e4a00f02d840de1fff586146ab91483b55dc0852e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2596035fce4b5884d118134e4a00f02d840de1fff586146ab91483b55dc0852e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0cd2fb3dec2cbd1cb19f467586795d583405730585fc5e738f6632486f9f62f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34b4c94c32b3d807209c8e9bd1ae2eca645c55b8e798f2fb911f70d6890c7d76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3d763f017f988be34d4e57a30094c388ffef927a64702356d50e4050929f6eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b4bdc2761aeb2e736d572fdf1fa29fd9b4491364d0e22e2e2fd380415ea3f15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b4bdc2761aeb2e736d572fdf1fa29fd9b4491364d0e22e2e2fd380415ea3f15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b4bdc2761aeb2e736d572fdf1fa29fd9b4491364d0e22e2e2fd380415ea3f15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42b9f2c4ccad56f26a8af98a51ec509a047012d1fbec7880ddba19d93922f66b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a139cc51f7510d98c8e1ec34b6282f3d9533728343a19ea3d9efc893683e5f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20521e472b01271a6a83ed9e231690b2f2d3e3f19fbe09d355547379cbc2610a"
   end
 
   depends_on "go" => :build
