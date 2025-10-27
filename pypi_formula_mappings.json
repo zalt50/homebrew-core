@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pipenv": {
-    "exclude_packages": ["certifi"]
-  },
   "platformio": {
     "exclude_packages": ["certifi"]
   },
