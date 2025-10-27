@@ -896,50 +896,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "tartufo": {
-    "exclude_packages": ["pygit2"]
-  },
-  "theharvester": {
-    "exclude_packages": ["cffi", "certifi", "pydantic-core"],
-    "extra_packages": ["greenlet", "pyee"]
-  },
-  "tmt": {
-    "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
-  },
-  "toot": {
-    "package_name": "toot[images,richtext]",
-    "exclude_packages": ["certifi", "pillow"]
-  },
-  "torchvision": {
-    "exclude_packages": ["certifi", "numpy", "pillow", "torch"]
-  },
-  "touca": {
-    "exclude_packages": ["certifi"]
-  },
-  "trafilatura": {
-    "exclude_packages": ["certifi"]
-  },
-  "trailscraper": {
-    "extra_packages": ["setuptools"]
-  },
-  "trezor-agent": {
-    "exclude_packages": ["certifi", "cryptography", "pillow"],
-    "extra_packages": [
-      "dbus-fast", "ledger-agent", "pyobjc-core", "pyobjc-framework-CoreBluetooth", "pyobjc-framework-libdispatch"
-    ]
-  },
-  "trzsz": {
-    "extra_packages": ["trzsz-iterm2"]
-  },
-  "tvnamer": {
-    "exclude_packages": ["certifi"]
-  },
-  "twarc": {
-    "exclude_packages": ["certifi"]
-  },
-  "twine": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "unoconv":{
     "extra_packages": ["setuptools"]
   },
