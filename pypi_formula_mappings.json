@@ -35,67 +35,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "b4" :{
-    "exclude_packages": ["certifi", "cffi"]
-  },
-  "badkeys": {
-    "exclude_packages": ["cryptography"]
-  },
-  "badread": {
-    "exclude_packages": ["numpy", "scipy"]
-  },
-  "backgroundremover": {
-    "exclude_packages": ["certifi", "numpy", "torch", "torchvision", "pillow", "scipy", "scikit-image"],
-    "extra_packages": ["imageio"]
-  },
-  "bagels": {
-    "exclude_packages": ["certifi", "numpy", "pydantic-core"]
-  },
-  "bandcamp-dl": {
-    "exclude_packages": ["certifi"]
-  },
-  "bashate": {
-    "exclude_packages": ["setuptools"]
-  },
-  "bazarr": {
-    "package_name": "",
-    "extra_packages": ["lxml", "setuptools", "webrtcvad-wheels"]
-  },
-  "bbot": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "beancount": {
-    "exclude_packages": ["certifi"]
-  },
-  "bilix": {
-    "exclude_packages": ["certifi"]
-  },
-  "binwalk": {
-    "exclude_packages": ["numpy", "pillow"],
-    "extra_packages": ["capstone", "gnupg", "matplotlib", "pycryptodome"]
-  },
-  "black": "black[d]",
-  "borgbackup": {
-    "package_name": "",
-    "extra_packages": ["msgpack", "packaging"]
-  },
-  "borgmatic": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
-  "bpython": {
-    "exclude_packages": ["certifi"]
-  },
-  "btcli": {
-    "exclude_packages": ["certifi", "numpy"]
-  },
-  "buku": {
-    "package_name": "buku[server]",
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "bzt": {
-    "exclude_packages": ["certifi", "numpy"],
-    "extra_packages": ["setuptools"]
-  },
   "c7n": {
     "exclude_packages": ["cryptography", "rpds-py"]
   },
