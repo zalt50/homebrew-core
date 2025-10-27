@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pygit2": {
-    "exclude_packages": ["cffi", "pycparser"]
-  },
   "pyinstaller": {
     "extra_packages": ["macholib"]
   },
