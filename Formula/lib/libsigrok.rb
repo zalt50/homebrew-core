@@ -92,7 +92,7 @@ class Libsigrok < Formula
   depends_on "nettle"
   depends_on "numpy"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "gettext"
@@ -104,8 +104,11 @@ class Libsigrok < Formula
     sha256 "c876fd075549e7783a6d5bfc8d99a695cfc583ddbcea0217d8e3f9351d1723af"
   end
 
+  # Fix for swig 4.4 changing the return type of %init
+  patch :DATA
+
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
@@ -191,3 +194,18 @@ class Libsigrok < Formula
     PYTHON
   end
 end
+
+__END__
+diff --git a/bindings/python/sigrok/core/classes.i b/bindings/python/sigrok/core/classes.i
+index a00efff..5fe45eb 100644
+--- a/bindings/python/sigrok/core/classes.i
++++ b/bindings/python/sigrok/core/classes.i
+@@ -85,7 +85,7 @@ typedef guint pyg_flags_type;
+     if (!GLib) {
+         fprintf(stderr, "Import of gi.repository.GLib failed.\n");
+ #if PY_VERSION_HEX >= 0x03000000
+-        return nullptr;
++        return 0;
+ #else
+         return;
+ #endif
