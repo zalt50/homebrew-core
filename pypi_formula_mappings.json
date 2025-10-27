@@ -744,9 +744,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "yewtube": {
-    "exclude_packages": ["certifi"]
-  },
   "ykman": {
     "exclude_packages": ["cryptography"],
     "extra_packages": ["jeepney", "secretstorage"]
