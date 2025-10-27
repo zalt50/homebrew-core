@@ -17,7 +17,7 @@ class Libgr < Formula
 
   depends_on "cmake" => :build
   depends_on "cairo"
-  depends_on "ffmpeg@7" # FFmpeg 8 issue: https://github.com/sciapp/gr/issues/197
+  depends_on "ffmpeg"
   depends_on "freetype"
   depends_on "glfw"
   depends_on "jpeg-turbo"
@@ -34,6 +34,12 @@ class Libgr < Formula
     depends_on "libx11"
     depends_on "libxt"
     depends_on "mesa"
+  end
+
+  # Backport support for FFmpeg 8
+  patch do
+    url "https://github.com/sciapp/gr/commit/1720943f5ecf76b067dc2950fab2d381378aaf18.patch?full_index=1"
+    sha256 "b1b453e5a6aa878d0bea159f777e445dc4a73ba619d1672818341746b1b4e861"
   end
 
   def install
