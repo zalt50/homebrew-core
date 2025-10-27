@@ -744,9 +744,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "yamlfix": {
-    "exclude_packages": ["pydantic-core"]
-  },
   "yewtube": {
     "exclude_packages": ["certifi"]
   },
