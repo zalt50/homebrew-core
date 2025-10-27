@@ -808,10 +808,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "robot-framework": {
-    "extra_packages": ["robotframework-archivelibrary", "robotframework-selenium2library", "robotframework-sshlibrary"],
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "ruff-lsp": {
     "exclude_packages": ["ruff"]
   },
