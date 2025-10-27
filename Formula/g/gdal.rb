@@ -64,7 +64,7 @@ class Gdal < Formula
   depends_on "pcre2"
   depends_on "poppler"
   depends_on "proj"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qhull"
   depends_on "sfcgal"
   depends_on "sqlite"
@@ -98,7 +98,7 @@ class Gdal < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
