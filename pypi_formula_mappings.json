@@ -957,12 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "trezor-agent": {
-    "exclude_packages": ["certifi", "cryptography", "pillow"],
-    "extra_packages": [
-      "dbus-fast", "ledger-agent", "pyobjc-core", "pyobjc-framework-CoreBluetooth", "pyobjc-framework-libdispatch"
-    ]
-  },
   "trzsz": {
     "extra_packages": ["trzsz-iterm2"]
   },
