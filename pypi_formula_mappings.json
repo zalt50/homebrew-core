@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "platformio": {
-    "exclude_packages": ["certifi"]
-  },
   "pocsuite3": {
     "package_name": "pocsuite3[complete]",
     "exclude_packages": ["certifi", "cryptography"]
