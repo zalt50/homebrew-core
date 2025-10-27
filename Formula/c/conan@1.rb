@@ -38,6 +38,9 @@ class ConanAT1 < Formula
   depends_on "libyaml"
   depends_on "python@3.12" # https://github.com/conan-io/conan/issues/17220#issuecomment-2437381133
 
+  pypi_packages exclude_packages: "certifi",
+                extra_packages:   "distro"
+
   resource "bottle" do
     url "https://files.pythonhosted.org/packages/fd/04/1c09ab851a52fe6bc063fd0df758504edede5cc741bd2e807bf434a09215/bottle-0.12.25.tar.gz"
     sha256 "e1a9c94970ae6d710b3fb4526294dfeb86f2cb4a81eff3a4b98dc40fb0e5e021"
