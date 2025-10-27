@@ -13,7 +13,7 @@ class Proguard < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cdaf3838489542597e694dcf540e379050a81f6ba8cde5f4c5077dc9c6a80110"
+    sha256 cellar: :any_skip_relocation, all: "cae9ecd4863737c4fc34f59608f26d3fdb2783b76d82ecb15e6b2370efa218d6"
   end
 
   depends_on "openjdk"
