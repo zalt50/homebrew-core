@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/11/82/ea8f6ec7cb4f445ce7dd0f42a95947937fd65734f06b7ed8482fe014193f/awscli-1.42.50.tar.gz"
-  sha256 "3cce2944592f374364d6bf80cf60b8b13b93213b6f0799306a5fb7b0de862419"
+  url "https://files.pythonhosted.org/packages/44/70/c4a0d0a6ac9b43cb1a1e6a7a29ea8d848333f17c0336cb13b11d39895e48/awscli-1.42.60.tar.gz"
+  sha256 "d2d341fa83f5f43270d8d80ad62a46d5486b0f08ad98c104bc457018945befaf"
   license "Apache-2.0"
 
   livecheck do
@@ -32,8 +32,8 @@ class AwscliAT1 < Formula
   uses_from_macos "mandoc"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5b/66/21d9ac0d37e5c4e55171466351cfc77404d8d664ccc17d4add6dba1dee99/botocore-1.40.50.tar.gz"
-    sha256 "1d3d5b5759c9cb30202cd5ad231ec8afb1abe5be0c088a1707195c2cbae0e742"
+    url "https://files.pythonhosted.org/packages/ea/f7/5313e9f84c962af63e05a0c23b51134b5288b198fa0023cf9dbe1b964504/botocore-1.40.60.tar.gz"
+    sha256 "85443f1829d9240d16ba346781956ebcd104dd8e91742c2901a9b2ace198a829"
   end
 
   resource "colorama" do
@@ -86,10 +86,6 @@ class AwscliAT1 < Formula
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
-  # Backport Python 3.14 support without CI changes. Remove next release (1.42.60)
-  # https://github.com/aws/aws-cli/commit/44e446748504ed5a17df7c41c77c190bcba9fc5a
-  patch :DATA
-
   def install
     virtualenv_install_with_resources
     pkgshare.install "awscli/examples"
@@ -118,42 +114,3 @@ class AwscliAT1 < Formula
     assert_match "topics", shell_output("#{bin}/aws help")
   end
 end
-
-__END__
-diff --git a/README.rst b/README.rst
-index 51cdb7b9969a7092a77aaaa9c5eb0426391f68b5..063798c14912406788d37dd01ebee65be2f79719 100644
---- a/README.rst
-+++ b/README.rst
-@@ -31,6 +31,7 @@ The aws-cli package works on Python versions:
- -  3.11.x and greater
- -  3.12.x and greater
- -  3.13.x and greater
-+-  3.14.x and greater
- 
- Notices
- ~~~~~~~
-diff --git a/awscli/arguments.py b/awscli/arguments.py
-index 1c621b8657408273e75f6319aeb65811bde7f00e..686253ad0f6a5e9bf2c25ce926290755853408ca 100644
---- a/awscli/arguments.py
-+++ b/awscli/arguments.py
-@@ -449,7 +449,7 @@ def add_to_parser(self, parser):
-         cli_name = self.cli_name
-         parser.add_argument(
-             cli_name,
--            help=self.documentation,
-+            help=self.documentation.replace('%', '%%'),
-             type=self.cli_type,
-             required=self.required,
-         )
-diff --git a/setup.py b/setup.py
-index bccbddab5134d481d7dea38af990f526d41af9ad..1daa35629cf75646d5aa35e085da212a4e15f2c8 100644
---- a/setup.py
-+++ b/setup.py
-@@ -63,6 +63,7 @@ def find_version(*file_paths):
-         'Programming Language :: Python :: 3.11',
-         'Programming Language :: Python :: 3.12',
-         'Programming Language :: Python :: 3.13',
-+        'Programming Language :: Python :: 3.14',
-     ],
-     project_urls={
-         'Source': 'https://github.com/aws/aws-cli',
