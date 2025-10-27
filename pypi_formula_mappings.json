@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "tmt": {
-    "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
-  },
   "toot": {
     "package_name": "toot[images,richtext]",
     "exclude_packages": ["certifi", "pillow"]
