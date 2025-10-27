@@ -24,6 +24,8 @@ class Awscli < Formula
   uses_from_macos "libffi"
   uses_from_macos "mandoc"
 
+  pypi_packages extra_packages: "flit-core"
+
   resource "awscrt" do
     url "https://files.pythonhosted.org/packages/82/cf/fb5af0ffac5b3b43d12323ecf7be03da7fd32c5bcb6bb9749d4ff5802698/awscrt-0.27.6.tar.gz"
     sha256 "45f3dd0b3fb13dfbea856dd96c9acfe77beba57b9b019444ee962ed2b76276dd"
