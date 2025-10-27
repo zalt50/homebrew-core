@@ -1044,10 +1044,6 @@
   "wxpython": {
     "exclude_packages": ["numpy", "pillow"]
   },
-  "xdot": {
-    "exclude_packages": ["numpy", "pygobject"],
-    "extra_packages": ["graphviz"]
-  },
   "xml2rfc": {
     "exclude_packages": ["certifi"]
   },
