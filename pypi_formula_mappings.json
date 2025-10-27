@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "trailscraper": {
-    "extra_packages": ["setuptools"]
-  },
   "trezor-agent": {
     "exclude_packages": ["certifi", "cryptography", "pillow"],
     "extra_packages": [
