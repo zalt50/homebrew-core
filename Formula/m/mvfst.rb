@@ -1,8 +1,8 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.10.20.00.tar.gz"
-  sha256 "7dbf57ecf0687edb289619dd44de676ee1139badb97908bc275a2ea5ad4ea044"
+  url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.10.27.00.tar.gz"
+  sha256 "839fcbe9204996f4d30497c55366bd1c8070c3fff9f639f22646dbd65f511046"
   license "MIT"
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
@@ -25,12 +25,6 @@ class Mvfst < Formula
   depends_on "glog"
   depends_on "libsodium"
   depends_on "openssl@3"
-
-  # Fix build with Boost 1.89.0, pr ref: https://github.com/facebook/mvfst/pull/405
-  patch do
-    url "https://github.com/facebook/mvfst/commit/77dfed2a86bd2d065b826c667ae7a26e642a61d9.patch?full_index=1"
-    sha256 "182e642819242a9afe130480fc7eaee5a7f63927efa700b33c0714339e33735c"
-  end
 
   def install
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
