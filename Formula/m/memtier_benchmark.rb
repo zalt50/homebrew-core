@@ -25,9 +25,14 @@ class MemtierBenchmark < Formula
   depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "openssl@3"
-  depends_on "pcre"
 
   uses_from_macos "zlib"
+
+  # Backport removal of pcre dependency
+  patch do
+    url "https://github.com/RedisLabs/memtier_benchmark/commit/f3545b0f59ae21ad8b702aec9d15aacbccdbc41b.patch?full_index=1"
+    sha256 "f78c13a299e7f4dbcd5926b0e111f06143e187d915d7811e4290f12125deab65"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
