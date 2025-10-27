@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/a9/5d/38cbb321cdbd6db09a28d39c2ad68112ef5e5ca5ddd308ae4f4868610f9e/locust-2.42.0.tar.gz"
-  sha256 "b327c613469bd4508ac5fb398e7fce6f2346985e27463db29a6045beefd5f78b"
+  url "https://files.pythonhosted.org/packages/ba/da/6108cb1b5be2ede0f9501bed5a9e1b86f6c4cffe66e18cab1af66aca713a/locust-2.42.1.tar.gz"
+  sha256 "4510dfa92213a9b4965d4a7a9aa40f105b6f886695bd27655cd3a5ba13040a6d"
   license "MIT"
 
   bottle do
@@ -74,8 +74,8 @@ class Locust < Formula
   end
 
   resource "geventhttpclient" do
-    url "https://files.pythonhosted.org/packages/89/19/1ca8de73dcc0596d3df01be299e940d7fc3bccbeb6f62bb8dd2d427a3a50/geventhttpclient-2.3.4.tar.gz"
-    sha256 "1749f75810435a001fc6d4d7526c92cf02b39b30ab6217a886102f941c874222"
+    url "https://files.pythonhosted.org/packages/0a/6b/c9be60c4f4de31e9234d5cd927096cb44136767aa58b21ee4e3f0a60a15e/geventhttpclient-2.3.5.tar.gz"
+    sha256 "0f0cf13528de7628a21b28b80ee90a471d4840e3fe26f84b394644c366595151"
   end
 
   resource "greenlet" do
@@ -109,8 +109,8 @@ class Locust < Formula
   end
 
   resource "locust-cloud" do
-    url "https://files.pythonhosted.org/packages/76/b5/151d10938883fb70538fbb532dc1b94eca868291c5415db374669bafbb02/locust_cloud-1.27.6.tar.gz"
-    sha256 "28c64c56a04a0f7e5893237402fa14092d4f57dcada0ec6208c2ba7d6acf110c"
+    url "https://files.pythonhosted.org/packages/ae/ad/76c4a6af4394c28b8845bcecd60ac5dfb489878028a31b81d5db0bc3e156/locust_cloud-1.27.8.tar.gz"
+    sha256 "cc7821417643db34628551dddd0accc7451511b8160ddb001d60013c44f26d0b"
   end
 
   resource "markupsafe" do
@@ -139,8 +139,8 @@ class Locust < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/89/fc/889242351a932d6183eec5df1fc6539b6f36b6a88444f1e63f18668253aa/psutil-7.1.1.tar.gz"
-    sha256 "092b6350145007389c1cfe5716050f02030a05219d90057ea867d18fe8d372fc"
+    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
+    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
   end
 
   resource "pygments" do
