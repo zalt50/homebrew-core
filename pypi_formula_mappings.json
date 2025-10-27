@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "torchvision": {
-    "exclude_packages": ["certifi", "numpy", "pillow", "torch"]
-  },
   "touca": {
     "exclude_packages": ["certifi"]
   },
