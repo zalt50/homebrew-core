@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pdm": {
-    "exclude_packages": ["certifi"]
-  },
   "pelican": {
     "package_name": "pelican[markdown]"
   },
