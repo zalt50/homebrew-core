@@ -488,16 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pyqt@5": {
-    "exclude_packages": [
-      "pyqt5-qt5", "pyqt3d-qt5", "pyqtchart-qt5", "pyqtdatavisualization-qt5",
-      "pyqtnetworkauth-qt5", "pyqtpurchasing-qt5", "pyqtwebengine-qt5"
-    ],
-    "extra_packages": [
-      "pyqt3d", "pyqtchart", "pyqtdatavisualization",
-      "pyqtnetworkauth", "pyqtpurchasing", "pyqtwebengine"
-    ]
-  },
   "python@3.9": {
     "package_name": "",
     "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
