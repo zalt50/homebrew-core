@@ -55,7 +55,7 @@ class Root < Formula
   depends_on "openblas"
   depends_on "openssl@3"
   depends_on "pcre2"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "sqlite"
   depends_on "tbb"
   depends_on "xrootd"
@@ -84,7 +84,7 @@ class Root < Formula
   skip_clean "bin"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
