@@ -1,10 +1,10 @@
 class Brotli < Formula
   desc "Generic-purpose lossless compression algorithm by Google"
   homepage "https://github.com/google/brotli"
-  url "https://github.com/google/brotli/archive/refs/tags/v1.1.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/brotli-1.1.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/brotli-1.1.0.tar.gz"
-  sha256 "e720a6ca29428b803f4ad165371771f5398faba397edf6778837a18599ea13ff"
+  url "https://github.com/google/brotli/archive/refs/tags/v1.2.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/brotli-1.2.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/brotli-1.2.0.tar.gz"
+  sha256 "816c96e8e8f193b40151dad7e8ff37b1221d019dbcb9c35cd3fadbfe6477dfec"
   license "MIT"
   head "https://github.com/google/brotli.git", branch: "master"
 
@@ -28,7 +28,7 @@ class Brotli < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build", "--verbose"
     system "ctest", "--test-dir", "build", "--verbose"
     system "cmake", "--install", "build"
