@@ -3,8 +3,8 @@ class Reuse < Formula
 
   desc "Tool for copyright and license recommendations"
   homepage "https://reuse.software"
-  url "https://files.pythonhosted.org/packages/76/b0/ffd3a8978504763982db4735b7d87fc16b57f4b511c49a38ca25a7cb9ad3/reuse-6.1.2.tar.gz"
-  sha256 "6019a75f4ca18ad5b2506e0f3ec1b926b27ba6cdc9da88492e7fc65e3ff12c39"
+  url "https://files.pythonhosted.org/packages/05/35/298d9410b3635107ce586725cdfbca4c219c08d77a3511551f5e479a78db/reuse-6.2.0.tar.gz"
+  sha256 "4feae057a2334c9a513e6933cdb9be819d8b822f3b5b435a36138bd218897d23"
   license all_of: [
     "GPL-3.0-or-later",
     "CC-BY-SA-4.0",
@@ -38,8 +38,8 @@ class Reuse < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -78,6 +78,10 @@ class Reuse < Formula
   end
 
   def install
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"reuse", shell_parameter_format: :click)
