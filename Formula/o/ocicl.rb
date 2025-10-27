@@ -4,6 +4,7 @@ class Ocicl < Formula
   url "https://github.com/ocicl/ocicl/archive/refs/tags/v2.8.3.tar.gz"
   sha256 "fd14fc5eb9f426dc462961bc7a85dbde4004701ee14fdb34f109044d25e5f686"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34e0df2787f1c59f4ce17c9c1732ba2aca6535e53a98ab747345ad93778ae287"
