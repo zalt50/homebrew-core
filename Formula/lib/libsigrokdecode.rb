@@ -37,16 +37,16 @@ class Libsigrokdecode < Formula
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "gettext"
   end
 
   def install
-    # While this doesn't appear much better than hardcoding `3.13`, this allows
+    # While this doesn't appear much better than hardcoding `3.xy`, this allows
     # `brew audit` to catch mismatches between this line and the dependencies.
-    python = "python3.13"
+    python = "python3.14"
     py_version = Language::Python.major_minor_version(python)
 
     # We should be able to remove this in libsigrokdecode >0.5.3, who will
