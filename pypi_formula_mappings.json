@@ -744,10 +744,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "ykman": {
-    "exclude_packages": ["cryptography"],
-    "extra_packages": ["jeepney", "secretstorage"]
-  },
   "yle-dl": {
     "exclude_packages": ["certifi"]
   },
