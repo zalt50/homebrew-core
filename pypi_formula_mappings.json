@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "pythran": {
-    "exclude_packages": ["numpy"]
-  },
   "pytorch": {
     "package_name": "torch[opt-einsum]",
     "extra_packages": ["pyyaml"],
