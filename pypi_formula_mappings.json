@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "python-matplotlib": {
-    "exclude_packages": ["numpy", "pillow"]
-  },
   "pythran": {
     "exclude_packages": ["numpy"]
   },
