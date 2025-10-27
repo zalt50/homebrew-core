@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "twine": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "unoconv":{
     "extra_packages": ["setuptools"]
   },
