@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/28/88/8c57f611a7f60375fb8feaf31747615c313d5661967dc2086c44526af87a/gamdl-2.7.1.tar.gz"
-  sha256 "3b7423acccf9b4eb49233082b8eeb31b1f7126c367e8378a0dfe97efb052b8a1"
+  url "https://files.pythonhosted.org/packages/90/75/fddea41f1629a933d6f52de3aaa57dd51de515f75e8d6b33f17797e05bbf/gamdl-2.7.2.tar.gz"
+  sha256 "5d2f9fdb81dbd98614ff37191e33a127ca05558ed12e03bf62886a002f4ce800"
   license "MIT"
 
   bottle do
@@ -110,8 +110,8 @@ class Gamdl < Formula
   end
 
   resource "pywidevine" do
-    url "https://files.pythonhosted.org/packages/99/12/6ff0e6ffa2711187ee629392396d7c18ae6ca8e2e576dcef2d636316d667/pywidevine-1.8.0.tar.gz"
-    sha256 "c14f3fe2864473416b9caa73d9a21251a02d72138e6d54d8c1a3f44b7a6b05c9"
+    url "https://files.pythonhosted.org/packages/52/b6/4855cb958892653029f3cafa8a4724d554b847de0a43a3808cea109b9e78/pywidevine-1.9.0.tar.gz"
+    sha256 "6742daf5fd797c5a4813eb1300efb3181ffcddd0c8c478ee28c7c536aa0e51b2"
   end
 
   resource "pyyaml" do
