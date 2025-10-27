@@ -1,8 +1,8 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://github.com/facebook/proxygen/releases/download/v2025.10.20.00/proxygen-v2025.10.20.00.tar.gz"
-  sha256 "40b4b54d77b5d169186638853f512f421500fea9e0bada27822877d241137495"
+  url "https://github.com/facebook/proxygen/releases/download/v2025.10.27.00/proxygen-v2025.10.27.00.tar.gz"
+  sha256 "250f21c36464b8a0c4bab5825540cdb40a000e2902d4c2e19c1e1a20fcbab946"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
@@ -42,9 +42,6 @@ class Proxygen < Formula
     sha256 "4ea28c2f87732526afad0f2b2b66be330ad3d4fc18d0f20eb5e1242b557a6fcf"
   end
 
-  # Fix build with Boost 1.89.0, pr ref: https://github.com/facebook/proxygen/pull/570
-  patch :DATA
-
   def install
     args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     if OS.mac?
@@ -69,56 +66,3 @@ class Proxygen < Formula
     Process.kill "TERM", pid
   end
 end
-
-__END__
-diff --git i/CMakeLists.txt w/CMakeLists.txt
-index cc189df..9d61345 100644
---- i/CMakeLists.txt
-+++ w/CMakeLists.txt
-@@ -80,17 +80,21 @@ find_package(ZLIB REQUIRED)
- find_package(OpenSSL REQUIRED)
- find_package(Threads)
- find_package(c-ares REQUIRED)
--find_package(Boost 1.58 REQUIRED
--  COMPONENTS
-+set(PROXYGEN_BOOST_COMPONENTS
-     iostreams
-     context
-     filesystem
-     program_options
-     regex
--    system
-     thread
-     chrono
- )
-+find_package(Boost 1.58 REQUIRED COMPONENTS ${PROXYGEN_BOOST_COMPONENTS})
-+if (Boost_MAJOR_VERSION EQUAL 1 AND Boost_MINOR_VERSION LESS 69)
-+    list(APPEND PROXYGEN_BOOST_COMPONENTS system)
-+    find_package(Boost 1.58 REQUIRED COMPONENTS ${PROXYGEN_BOOST_COMPONENTS})
-+endif()
-+string(REPLACE ";" " " PROXYGEN_BOOST_COMPONENTS "${PROXYGEN_BOOST_COMPONENTS}")
- 
- list(APPEND
-     _PROXYGEN_COMMON_COMPILE_OPTIONS
-diff --git i/cmake/proxygen-config.cmake.in w/cmake/proxygen-config.cmake.in
-index 8899242..114aaf7 100644
---- i/cmake/proxygen-config.cmake.in
-+++ w/cmake/proxygen-config.cmake.in
-@@ -31,16 +31,7 @@ find_dependency(Fizz)
- find_dependency(ZLIB)
- find_dependency(OpenSSL)
- find_dependency(Threads)
--find_dependency(Boost 1.58 REQUIRED
--  COMPONENTS
--    iostreams
--    context
--    filesystem
--    program_options
--    regex
--    system
--    thread
--)
-+find_dependency(Boost 1.58 REQUIRED COMPONENTS @PROXYGEN_BOOST_COMPONENTS@)
- find_dependency(c-ares REQUIRED)
- 
- if(NOT TARGET proxygen::proxygen)
