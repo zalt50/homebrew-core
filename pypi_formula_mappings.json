@@ -957,9 +957,6 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "twarc": {
-    "exclude_packages": ["certifi"]
-  },
   "twine": {
     "exclude_packages": ["certifi", "cryptography"]
   },
