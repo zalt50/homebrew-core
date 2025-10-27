@@ -1,9 +1,10 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https://stackql.io/"
-  url "https://github.com/stackql/stackql/archive/refs/tags/v0.8.175.tar.gz"
-  sha256 "5b9c151be27362610ec6e7bd635a62ef07a1fa3ff1824771492528d6a320fb92"
+  url "https://github.com/stackql/stackql/archive/refs/tags/v0.9.250.tar.gz"
+  sha256 "06f0de42c6cc95fff1fdf0ead087528ee0d139c10afa6e655a9fda0917559bdb"
   license "MIT"
+  head "https://github.com/stackql/stackql.git", branch: "main"
 
   livecheck do
     url :stable
@@ -24,6 +25,7 @@ class Stackql < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
     ldflags = %W[
       -s -w
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildMajorVersion=#{version.major}
@@ -34,10 +36,7 @@ class Stackql < Formula
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildDate=#{time.iso8601}
       -X stackql/internal/stackql/planbuilder.PlanCacheEnabled=true
     ]
-    tags = %w[
-      json1
-      sqleanall
-    ]
+    tags = %w[json1 sqleanall]
 
     system "go", "build", *std_go_args(ldflags:, tags:), "./stackql"
   end
