@@ -9,8 +9,7 @@ class Pssh < Formula
   head "https://github.com/lilydjwg/pssh.git", branch: "master"
 
   bottle do
-    rebuild 7
-    sha256 cellar: :any_skip_relocation, all: "eca6f0eb288fe3d7380175a230291c61a552b1e911421df9c093e8085217cf60"
+    sha256 cellar: :any_skip_relocation, all: "71f66f7ce2b43dede8c6719028a4772db8d453d568bc88cd57c93987ecde5743"
   end
 
   depends_on "python@3.14"
