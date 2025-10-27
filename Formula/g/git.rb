@@ -12,12 +12,12 @@ class Git < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "754a766545654c504e744298b09b805f734ea4c71f53ed9469c3fe1398802093"
-    sha256 arm64_sequoia: "7cbefd96707313f71a59e05a68acc3246a575b41799f4ed8cac73f6c3d1cf25b"
-    sha256 arm64_sonoma:  "35decef8080419a2b4b2ed91bd2840f60f5f84cc9ec4310be210c3c82e5804e3"
-    sha256 sonoma:        "47cad57e7b4d4226b89d2dcd9b7f0ef270b4b3d57040b4047b1fe235c7403532"
-    sha256 arm64_linux:   "5e1e125d4bcd2991cd8d2e574d15ecaf3f9f1aa3ee23fe29d5d6cfbd3458872a"
-    sha256 x86_64_linux:  "deb541f638e9483cec1d413dd1087497d972266298b4d2d41371e6233dc6229b"
+    sha256 arm64_tahoe:   "836fd5fa061912ab3394858faed93ab40a3c506fb4dfa924eaf177b1d4784e0f"
+    sha256 arm64_sequoia: "4d6087dab2e5532a019e385391a11954c11f35712accd6a0715dc0ab806089b3"
+    sha256 arm64_sonoma:  "e4274e3925aa1f8f5fcca71db5bfefaa81011e05aa8ac2719b2dffb4ad9d6a04"
+    sha256 sonoma:        "42fa55115915c61663f99b7bfa78ba0a5f04c42bb0be8f5bbe732b8f7b0292b8"
+    sha256 arm64_linux:   "5c2a8a27f13d17a63143558761669b2e2be2ef3fef9b080fbdea31bb9e326b2c"
+    sha256 x86_64_linux:  "404dc8d1ab42ba4faa7a706b4ed93dbe81270191f3867b839e860bbf1100175a"
   end
 
   depends_on "gettext"
