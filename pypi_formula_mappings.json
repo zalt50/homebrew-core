@@ -1008,18 +1008,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "vdirsyncer": {
-    "package_name": "vdirsyncer[google]",
-    "exclude_packages": ["certifi"]
-  },
-  "virt-manager": {
-    "package_name": "",
-    "exclude_packages": ["certifi"],
-    "extra_packages": ["requests"]
-  },
-  "vunnel": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
   "watson": {
     "exclude_packages": ["certifi"]
   },
