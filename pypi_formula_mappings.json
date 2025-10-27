@@ -947,9 +947,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "watson": {
-    "exclude_packages": ["certifi"]
-  },
   "waybackpy": {
     "exclude_packages": ["certifi"]
   },
