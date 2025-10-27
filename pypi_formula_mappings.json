@@ -1008,11 +1008,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "virt-manager": {
-    "package_name": "",
-    "exclude_packages": ["certifi"],
-    "extra_packages": ["requests"]
-  },
   "vunnel": {
     "exclude_packages": ["certifi", "rpds-py"]
   },
