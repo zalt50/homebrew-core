@@ -947,9 +947,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "waybackpy": {
-    "exclude_packages": ["certifi"]
-  },
   "weasyprint": {
     "exclude_packages": ["pillow"]
   },
