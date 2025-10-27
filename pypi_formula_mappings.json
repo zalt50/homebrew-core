@@ -808,9 +808,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "rasterio": {
-    "exclude_packages": ["certifi", "numpy"]
-  },
   "raven": {
     "exclude_packages": ["certifi"]
   },
