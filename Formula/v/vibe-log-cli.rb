@@ -6,12 +6,12 @@ class VibeLogCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "441fb451e5e9ecb74248a229d45bbb4141d19d7489cd1d9485a54a8cdb6d8ea8"
-    sha256 cellar: :any,                 arm64_sequoia: "b4bab11e4b314b86f202563b4cfd2ebfdfcbafb19745a5c1aa22c04e81bafe24"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4bab11e4b314b86f202563b4cfd2ebfdfcbafb19745a5c1aa22c04e81bafe24"
-    sha256 cellar: :any,                 sonoma:        "feb2d5586ce77002cc4f9b7d9d803936635409149b6c2b78b82c183fb62cff3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee6e6e3b667cbecc95ed7e9291236899066916f57f5750e9376e0f47f3ddc9fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7472e3f1a5972317e4eb9610240d7186a48c1c605d5a41476e56391e3f381c25"
+    sha256 cellar: :any,                 arm64_tahoe:   "c231d326670398d397ff3153ce5e23f9908fd264ace8f9bef80045b7d5e02a2b"
+    sha256 cellar: :any,                 arm64_sequoia: "c4810dd59fbfee745729f6a3387d63aa62bcc90fdb7aeb772e6a9fb260a96e82"
+    sha256 cellar: :any,                 arm64_sonoma:  "c4810dd59fbfee745729f6a3387d63aa62bcc90fdb7aeb772e6a9fb260a96e82"
+    sha256 cellar: :any,                 sonoma:        "8329062b20a68f217da43756c5c83cfdab42b5d4da7aabf2e3e4d4f93c67c965"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9f2e12bd9f51d952c3ae76431c60163a8c37d9895cb54ffe4e8acaeba764461"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "358b0d4d6d4bd5e1a9b3751811e2444d6038acf07737021ad4ebc0a577ec31a9"
   end
 
   depends_on "node"
