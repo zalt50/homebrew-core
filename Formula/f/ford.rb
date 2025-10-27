@@ -3,8 +3,8 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https://github.com/Fortran-FOSS-Programmers/ford"
-  url "https://files.pythonhosted.org/packages/96/fe/e06d62822f8eb66e068066c4a342f2dc79c4e6e9c3fef97fd4f80aa73353/ford-7.0.11.tar.gz"
-  sha256 "d682372592de3414e10db6baee3e8bf52867006cf0b198f42b82ea735015128b"
+  url "https://files.pythonhosted.org/packages/9c/59/4bbf96923f76e1330b6b539396ab858d13a8602c724623f1202bb07075fa/ford-7.0.12.tar.gz"
+  sha256 "96a3bec14f23c62db8a9c8072ebe1b6d6e043a315361923146e9cd459f913c59"
   license "GPL-3.0-or-later"
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
@@ -102,10 +102,6 @@ class Ford < Formula
   end
 
   def install
-    # Explicitly use type(self) to avoid issues with Python 3.14
-    # Issue ref: https://github.com/Fortran-FOSS-Programmers/ford/issues/713
-    inreplace "ford/settings.py", "get_type_hints(self)", "get_type_hints(type(self))"
-
     virtualenv_install_with_resources
     doc.install "2008standard.pdf", "2003standard.pdf"
     pkgshare.install "example/example-project-file.md"
