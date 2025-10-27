@@ -488,10 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "python-lsp-server": {
-    "package_name": "python-lsp-server[websockets]",
-    "extra_packages": ["python-lsp-black", "pylsp-mypy", "python-lsp-ruff", "pylsp-rope"]
-  },
   "python-matplotlib": {
     "exclude_packages": ["numpy", "pillow"]
   },
