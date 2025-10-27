@@ -488,10 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "python@3.11": {
-    "package_name": "",
-    "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
-  },
   "python@3.12": {
     "package_name": "",
     "extra_packages": ["flit-core", "pip", "wheel"]
