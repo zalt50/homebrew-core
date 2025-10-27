@@ -488,9 +488,6 @@
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
-  "parsedmarc": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "pass-git-helper": {
     "package_name": "",
     "extra_packages": ["pyxdg"]
