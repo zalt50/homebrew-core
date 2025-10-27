@@ -1069,10 +1069,6 @@
     "package_name": "yt-dlp[default]",
     "exclude_packages": ["certifi"]
   },
-  "zabbix-cli": {
-    "package_name": "zabbix_cli_uio",
-    "exclude_packages": ["certifi"]
-  },
   "zim": {
     "package_name": "",
     "extra_packages": ["pyxdg"]
