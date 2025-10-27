@@ -6,6 +6,7 @@ class Urh < Formula
   url "https://files.pythonhosted.org/packages/7b/af/be36ae7e9184410c2c6d406a1551d7096f394e238cc5f63cb4ddcfc5f2e5/urh-2.9.8.tar.gz"
   sha256 "864130b19553833827931f48f874045a39a6cee219a310a910bcd2ef02cf96b4"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/jopohl/urh.git", branch: "master"
 
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
@@ -26,7 +27,7 @@ class Urh < Formula
   depends_on "pkgconf" => :build
   depends_on "hackrf"
   depends_on "pyqt@5"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_linux do
     depends_on "patchelf" => :build # for numpy
@@ -54,7 +55,7 @@ class Urh < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
     # Need to disable build isolation and install Setuptools since `urh` only
     # has a setup.py which assumes Cython and Setuptools are already installed
