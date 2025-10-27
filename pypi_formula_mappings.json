@@ -808,14 +808,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "recon-ng": {
-    "package_name": "",
-    "exclude_packages": ["certifi", "rpds-py"],
-    "extra_packages": [
-      "pyyaml", "dnspython", "lxml", "mechanize", "requests",
-      "flask", "flask-restful", "flasgger", "dicttoxml", "xlsxwriter", "unicodecsv", "rq"
-    ]
-  },
   "regipy": "regipy[cli]",
   "rich-cli": {
     "exclude_packages": ["certifi"]
