@@ -24,7 +24,7 @@ class Libpeas < Formula
   depends_on "gobject-introspection"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "spidermonkey"
 
   on_macos do
@@ -32,7 +32,7 @@ class Libpeas < Formula
   end
 
   def install
-    pyver = Language::Python.major_minor_version "python3.13"
+    pyver = Language::Python.major_minor_version "python3.14"
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
     inreplace "meson.build", "'python3-embed'", "'python-#{pyver}-embed'"
 
