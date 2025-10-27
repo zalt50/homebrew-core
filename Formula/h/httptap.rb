@@ -7,6 +7,10 @@ class Httptap < Formula
   sha256 "c365dbd7de5ad50caadd2eb827ea3e205a2985f437f3c472fd9fbb324fa01a38"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "bf1e2b486b91ff435070008b41acb5c688d7e1585ccfb9fb295f95624afb0c14"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.14"
 
