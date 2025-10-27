@@ -743,9 +743,5 @@
   "urlwatch": {
     "exclude_packages": ["certifi"]
   },
-  "uvicorn": "uvicorn[standard]",
-  "yt-dlp": {
-    "package_name": "yt-dlp[default]",
-    "exclude_packages": ["certifi"]
-  }
+  "uvicorn": "uvicorn[standard]"
 }
