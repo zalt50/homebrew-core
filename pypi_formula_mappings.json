@@ -35,9 +35,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "b2-tools": {
-    "exclude_packages": ["certifi"]
-  },
   "b4" :{
     "exclude_packages": ["certifi", "cffi"]
   },
