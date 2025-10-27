@@ -17,14 +17,13 @@ class Ffmpegthumbnailer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "99daec9ab7483eb10f980b1876a2af01a5b20c339225f51af9deb7eee2b50fe0"
-    sha256 cellar: :any,                 arm64_sequoia: "4864f88829cb1785b49323ef27cb543847de5f9222568da0ec47b5b8f1ed95d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "f45c64ffeea08f32d6fa8bf2895b3dbb16bac6e1351ab7d3b9f165bc7bf1f553"
-    sha256 cellar: :any,                 arm64_ventura: "7e8ce3a0c5f1d711f67000d6f0f4c16b9f0c8c6cb637ee46fa36287763c26931"
-    sha256 cellar: :any,                 sonoma:        "0da3e60f09e8431204758eee45049da94e9e1d335af0b4d83f46aef733ef5404"
-    sha256 cellar: :any,                 ventura:       "2bd1cee99515643680cca8efd800981497ed5ca0376257d500554c6983bd3092"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9d395260e50724d95a2b6c69bda115fd494a2a058d73c248b7c24c5b1ed50b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f655ccb6868831e733e478aa253684425fe6d880f86a23284f5ec7040d3299d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8780d8815e15357e55cf6def6ba1793f43ac6e615d7925d1a1474d7c8756d436"
+    sha256 cellar: :any,                 arm64_sequoia: "ab7919a1c1b869f076d8bea40fc316670c540dd1c5d5d0331a60b38a9ea16678"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e4aeb810cb0173fda235d57e7070c94891193151f860c7ef70a2899b4eb0bef"
+    sha256 cellar: :any,                 sonoma:        "04890c1ddd1fd2c1725401f4eec72b4faf67d46bce812f69fcac390a73070018"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd8dbfa8b2c7676def8de9b5d76f6d7814edd140c7ba6e5fd2b88235aeec1ee6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e4e92291ae6e0666bd28fc9908c5266d4364472a6a5ab15a42d2cc6a53a6483"
   end
 
   depends_on "cmake" => :build
