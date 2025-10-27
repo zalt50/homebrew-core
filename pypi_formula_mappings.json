@@ -1041,14 +1041,6 @@
   "wxpython": {
     "exclude_packages": ["numpy", "pillow"]
   },
-  "xdot": {
-    "exclude_packages": ["numpy", "pygobject"],
-    "extra_packages": ["graphviz"]
-  },
-  "xml2rfc": {
-    "exclude_packages": ["certifi"]
-  },
-  "xonsh": "xonsh[ptk,pygments,proctitle]",
   "yamlfix": {
     "exclude_packages": ["pydantic-core"]
   },
