@@ -8,12 +8,12 @@ class KimiCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f93c2c4a622d5a17dd6fec5ef600a33f2087b90ebb1686ddda2457b7bd88587"
-    sha256 cellar: :any,                 arm64_sequoia: "055d67f1f67d4b3c95d586e901a22fb022e0723d8a075c641937968bf46fbbe1"
-    sha256 cellar: :any,                 arm64_sonoma:  "a030a32b45d01a8b0996a9bbbc9634876aea20a4ce73f854dc960be0810cc207"
-    sha256 cellar: :any,                 sonoma:        "91a9ca22cce3273e508e6cf42a5e39554aa6682142fec0d5a63dbf892914ac55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4de1f95bb59585506dd164a7bd5cfe8a103563ffb0dbb3c5d314437c213558a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "332e3d311ddb1e9426b20d0d057ea8b58f68c7936beed8c2d5a7f9cf4509b2f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "227fc4bfcc72380a2d5a197944e06898e7e2a60946a8a16588154cd39baa5577"
+    sha256 cellar: :any,                 arm64_sequoia: "1d9c07d2d1fe9d2893f3bf838f0d845804a93ceee9d348ffce1562c6d5adeb46"
+    sha256 cellar: :any,                 arm64_sonoma:  "721f5669050b54d63da26634d457af91b4c659da94aeddbe73a3971662359dfb"
+    sha256 cellar: :any,                 sonoma:        "50cedea5742cbd150f4024b883bd7d492d32c45340cfa7f61971770f520f7294"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90cd4088b8eaf87c62048ca03e8b9d1ff386e0f21aa190c7f0412c02904c07df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64c64cb598503fbf004f4b9243703b1d1af2a28dd8d34d9bf998446c9613c19f"
   end
 
   depends_on "pkgconf" => :build
