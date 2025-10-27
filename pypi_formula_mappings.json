@@ -1008,9 +1008,6 @@
     "exclude_packages": ["certifi"]
   },
   "uvicorn": "uvicorn[standard]",
-  "vunnel": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
   "watson": {
     "exclude_packages": ["certifi"]
   },
