@@ -1,8 +1,8 @@
 class Dnote < Formula
   desc "Simple command-line notebook"
   homepage "https://www.getdnote.com"
-  url "https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.4.tar.gz"
-  sha256 "01851bdd304c05a2ed71ed0d21a6d1cd641aaa5ef6cb44ea95d6e8d035b0a76a"
+  url "https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.5.tar.gz"
+  sha256 "923e959d32885f01e426e37e7240bf9a66addbdfd95620846fa535e4b7f7d2e4"
   license "GPL-3.0-only"
   head "https://github.com/dnote/dnote.git", branch: "master"
 
