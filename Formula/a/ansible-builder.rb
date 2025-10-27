@@ -3,8 +3,8 @@ class AnsibleBuilder < Formula
 
   desc "CLI tool for building Ansible Execution Environments (Containers)"
   homepage "https://ansible-builder.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3c/d5/c94e86098107209a82de9401ec31413fabd4236af0be9427c57a5bdbf855/ansible_builder-3.1.0.tar.gz"
-  sha256 "d2dc573e26a7bd5095e98aeb37ee9b00bc9f5005abea7147d74229c0f3426fcb"
+  url "https://files.pythonhosted.org/packages/fe/6b/0525894e5dd510c3a67da0b8819209333ca939cfa94b7f0d3ef041a628ec/ansible_builder-3.1.1.tar.gz"
+  sha256 "9d88bc15acc7d31056d0c51914a6102dac8e5ad73f9f2d35ba98378c89714ed2"
   license "Apache-2.0"
 
   bottle do
@@ -69,8 +69,8 @@ class AnsibleBuilder < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "setuptools" do
