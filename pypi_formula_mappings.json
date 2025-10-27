@@ -1068,9 +1068,5 @@
   "yt-dlp": {
     "package_name": "yt-dlp[default]",
     "exclude_packages": ["certifi"]
-  },
-  "zim": {
-    "package_name": "",
-    "extra_packages": ["pyxdg"]
   }
 }
