@@ -31,7 +31,7 @@ class Gammaray < Formula
     depends_on "qtwebchannel"
   end
 
-  on_system :linux, macos: :sonoma_or_newer do
+  on_sonoma :or_newer do
     depends_on "qtwebengine"
   end
 
@@ -39,6 +39,11 @@ class Gammaray < Formula
     depends_on "elfutils"
     depends_on "qtwayland"
     depends_on "wayland"
+
+    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
+    on_intel do
+      depends_on "qtwebengine"
+    end
   end
 
   def install
