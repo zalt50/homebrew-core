@@ -132,9 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "jenkins-job-builder": {
-    "exclude_packages": ["certifi"]
-  },
   "jinja2-cli": "jinja2-cli[yaml,toml,xml]",
   "jiratui": {
     "exclude_packages": ["certifi", "cryptography", "pillow", "pydantic-core"]
