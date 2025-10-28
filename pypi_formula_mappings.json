@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "scdl": {
-    "exclude_packages": ["certifi"]
-  },
   "sceptre": {
     "exclude_packages": ["certifi"]
   },
