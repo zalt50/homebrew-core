@@ -132,9 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "jupytext": {
-    "exclude_packages": ["rpds-py"]
-  },
   "kaskade": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
