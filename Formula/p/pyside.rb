@@ -68,13 +68,19 @@ class Pyside < Formula
     depends_on "qtshadertools"
   end
 
-  on_system :linux, macos: :sonoma_or_newer do
+  on_sonoma :or_newer do
     depends_on "qtwebengine"
     depends_on "qtwebview"
   end
 
   on_linux do
     depends_on "mesa"
+
+    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
+    on_intel do
+      depends_on "qtwebengine"
+      depends_on "qtwebview"
+    end
   end
 
   # Fix .../sources/pyside6/qtexampleicons/module.c:4:10: fatal error: 'Python.h' file not found
@@ -129,7 +135,7 @@ class Pyside < Formula
       Widgets
       Xml
     ]
-    modules << "WebEngineCore" if OS.linux? || MacOS.version > :ventura
+    modules << "WebEngineCore" if (OS.linux? && Hardware::CPU.intel?) || (OS.mac? && MacOS.version >= :sonoma)
     modules.each { |mod| system python3, "-c", "import PySide6.Qt#{mod}" }
 
     pyincludes = shell_output("#{python3}-config --includes").chomp.split
