@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gorilla-cli": {
-    "exclude_packages": ["certifi"]
-  },
   "gptline": {
     "exclude_packages": ["certifi", "pillow"],
     "extra_packages": ["lxml-html-clean"]
