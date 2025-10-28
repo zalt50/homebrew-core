@@ -25,13 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gyb": {
-    "package_name": "",
-    "exclude_packages": ["certifi"],
-    "extra_packages": [
-      "google-api-python-client", "google-auth", "google-auth-httplib2", "google-auth-oauthlib", "httplib2"
-    ]
-  },
   "harlequin": {
     "package_name": "harlequin[mysql,odbc,postgres]",
     "exclude_packages": ["numpy", "psycopg-binary", "tree-sitter-languages"],
