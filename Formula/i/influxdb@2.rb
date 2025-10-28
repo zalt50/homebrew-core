@@ -57,6 +57,13 @@ class InfluxdbAT2 < Formula
     # Issue ref: https://github.com/influxdata/flux/issues/5559
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"
 
+    # Workaround to avoid patchelf corruption when cgo is required (for flux)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     # Set up the influxdata pkg-config wrapper to enable just-in-time compilation & linking
     # of the Rust components in the server.
     resource("pkg-config-wrapper").stage do
