@@ -170,9 +170,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "ocrmypdf": {
-    "exclude_packages": ["cryptography", "pillow"]
-  },
   "offlineimap": {
     "exclude_packages": ["certifi"]
   },
