@@ -25,10 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gtk-doc": {
-    "package_name": "",
-    "extra_packages": ["lxml", "pygments"]
-  },
   "gyb": {
     "package_name": "",
     "exclude_packages": ["certifi"],
