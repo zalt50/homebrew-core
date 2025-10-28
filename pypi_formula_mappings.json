@@ -214,10 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "lexicon": {
-    "package_name": "dns-lexicon[full]",
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "linode-cli": {
     "exclude_packages": ["certifi"]
   },
