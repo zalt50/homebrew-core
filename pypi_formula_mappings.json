@@ -1,7 +1,4 @@
 {
-  "howdoi": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "http-prompt": {
     "exclude_packages": ["certifi"]
   },
