@@ -30,6 +30,13 @@ class Diagram < Formula
   end
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for gioui.org/internal/vk)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.defaultFontFile=#{pkgshare}/gloriahallelujah.ttf")
 
     pkgshare.install ["sample.txt", "font/gloriahallelujah.ttf"]
