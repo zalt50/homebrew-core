@@ -13,6 +13,7 @@ class Archgw < Formula
     sha256 cellar: :any,                 arm64_sequoia: "bc16076639115dd44dab5600acb31d5c215abe8d1d7a7bc110c8f8029d1b3275"
     sha256 cellar: :any,                 arm64_sonoma:  "8cb76c7b2b50d8925888cb8ca4474910058609c48ef683cb9cd8b583bde77fd6"
     sha256 cellar: :any,                 sonoma:        "11a828235b4a0a957d336820aec5964e56ba6d1a8537f4704a02b1eeb5134bb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2e1739f657f400affcc71695b885b6a282efecf1227cfd96a6fd25cc844072a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2ebe5a0a8f32d3446f407506fad2b56cb1985b7dd1670992a91e545e76bb06d"
   end
 
