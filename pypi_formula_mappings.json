@@ -170,10 +170,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "organize-tool": {
-    "exclude_packages": ["cryptography"],
-    "extra_packages": ["pyobjc-framework-cocoa"]
-  },
   "osc": {
     "package_name": "",
     "extra_packages": ["ruamel-yaml", "urllib3"],
