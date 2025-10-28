@@ -22,6 +22,9 @@ class Flexget < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages package_name:     "flexget[transmission]",
+                exclude_packages: ["certifi", "rpds-py"]
+
   resource "aniso8601" do
     url "https://files.pythonhosted.org/packages/8b/8d/52179c4e3f1978d3d9a285f98c706642522750ef343e9738286130423730/aniso8601-10.0.1.tar.gz"
     sha256 "25488f8663dd1528ae1f54f94ac1ea51ae25b4d531539b8bc707fed184d16845"
