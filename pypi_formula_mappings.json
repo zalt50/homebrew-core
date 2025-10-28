@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "schemathesis": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
   "scikit-image": {
     "exclude_packages": ["numpy", "pillow", "scipy"]
   },
