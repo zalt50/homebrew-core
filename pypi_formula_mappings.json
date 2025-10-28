@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gptme": {
-    "exclude_packages": ["certifi", "pillow", "pydantic-core", "rpds-py"]
-  },
   "graph-tool": {
     "package_name": "",
     "exclude_packages": ["numpy", "pillow"],
