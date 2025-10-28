@@ -214,9 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "ldeep": {
-    "exclude_packages": ["cryptography"]
-  },
   "lexicon": {
     "package_name": "dns-lexicon[full]",
     "exclude_packages": ["certifi", "cryptography"]
