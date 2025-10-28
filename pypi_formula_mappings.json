@@ -317,9 +317,6 @@
   "mycli": {
     "exclude_packages": ["certifi", "cryptography"]
   },
-  "nicotine-plus": {
-    "exclude_packages": ["pycairo", "pygobject"]
-  },
   "notifiers": {
     "exclude_packages": ["certifi", "rpds-py"]
   },
