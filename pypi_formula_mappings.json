@@ -132,9 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "juju-wait": {
-    "extra_packages": ["setuptools"]
-  },
   "jupyterlab": {
     "extra_packages": ["appnope", "hatch-jupyter-builder", "hatch-nodejs-version", "jupyter-console", "notebook"],
     "exclude_packages": ["certifi", "rpds-py"]
