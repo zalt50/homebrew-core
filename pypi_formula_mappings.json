@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "svtplay-dl": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "sysaidmin": {
     "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
   },
