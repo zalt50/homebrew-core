@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sgr": {
-    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
-  },
   "sherlock": {
     "exclude_packages": ["certifi", "numpy"]
   },
