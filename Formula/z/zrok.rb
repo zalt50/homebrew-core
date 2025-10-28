@@ -14,6 +14,7 @@ class Zrok < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "999818d3fa25c30120a5db6ba5a8dd7ce152593ca017bbf59f18cc7c35b2b1f7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af66c3978664de1a290fc71ab5767e48a7caa81376dd59bd7c690593be4c9e72"
     sha256 cellar: :any_skip_relocation, sonoma:        "fd805e9a12731fefad3b83875236d3c22d2c1fbe8a4c52eed42ba9b35fe48d98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06dd4b43ca1833265863cb58066e3390b7807197df83142fe65bb88cf38f871e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b0c4c54227362d9b43651e76eb09b287fac2106eeece701a6656ca7e7a8fbf5"
   end
 
