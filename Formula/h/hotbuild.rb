@@ -7,19 +7,12 @@ class Hotbuild < Formula
   head "https://github.com/wandercn/hotbuild.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4ccb806636f0fdd5804757bd8333fce15485f16e5e30c05150a913a71429d065"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fbc85999d55d54744d2d91cb460717d72fc448bd5845222218bf3fcf510fd3ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddd19c999dc3804ab7ce881c97e26f62c61579c59ae13aaa3b6d6cfdf8b5bb77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9fc5a6d582ee188052e3daa22aa3c6063fb09aaef924deac5cbfe5f697e02f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "547bc3bac1e2621f3f6d1dbc83ed412897b2aa1def4a08a5fdbfd2a24e9cde2f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0ad321f7a6ab55d11b47e83963984eb51576264653ce4613183a03730f9c7b9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5f9c67fca7d339796057af29edb1792fbf3058bc1c0dde2d20c8ef0be5fa9f61"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0e255bfa37fa3ee34f2c35c5c00ec41879a0c89d17f9073b0dbc215b4be3649"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2c61c0aa4d1a3f4beda6764e28af6de0ff60e0fc1df445e52d941daa921a82b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9c327c9eddb60305d8b6a5ba1a164ae1ae416f2f448048804f12a42dd07bc8dc"
-    sha256 cellar: :any_skip_relocation, catalina:       "32cf72dbf642a44b7a6ad2182fb42946583004a9e87b8a3042f43f918d559c1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "366131bed15afecd0f2cb86718a27699414b81ed6a8ac16303ffde07de5a70ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb2fa25a273f069d799eb0d30e31b73ca3a8e9fd319c76a6f0171a661fe68ad0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "72ec072fe72761ade35c29f2ca68fb14d3d6c1f9b4b72da1fd3fc5bb56fe209b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60d8216f9117ce91e1efa69dc1365c74a1d1c079d1259d1b8accd4042f29ae2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "854bb58ffdd0700d658589a05dd6fd5a61540f6600eca7cbf21bf02c924331ea"
   end
 
   depends_on "go" => :build
