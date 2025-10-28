@@ -17,6 +17,13 @@ class Rqlite < Formula
   depends_on "go" => :build
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     version_ldflag_prefix = "-X github.com/rqlite/rqlite/v#{version.major}"
     ldflags = %W[
       -s -w
