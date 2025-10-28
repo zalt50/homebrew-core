@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "scrapy": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "search-that-hash": {
     "exclude_packages": ["certifi"]
   },
