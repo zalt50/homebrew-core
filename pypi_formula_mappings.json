@@ -132,32 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "icloudpd": {
-    "exclude_packages": ["certifi"]
-  },
-  "iconsur": {
-    "package_name": "",
-    "extra_packages": ["pyobjc-core", "pyobjc-framework-cocoa"]
-  },
-  "img2pdf": {
-    "exclude_packages": ["pillow"]
-  },
-  "imgp": {
-    "exclude_packages": ["pillow"]
-  },
-  "instaloader": {
-    "exclude_packages": ["certifi"]
-  },
-  "instalooter": {
-    "exclude_packages": ["certifi"]
-  },
-  "internetarchive": {
-    "exclude_packages": ["certifi"]
-  },
-  "iocextract": {
-    "exclude_packages": ["certifi"],
-    "extra_packages": ["requests"]
-  },
   "jenkins-job-builder": {
     "exclude_packages": ["certifi"]
   },
