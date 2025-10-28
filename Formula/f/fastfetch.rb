@@ -4,6 +4,7 @@ class Fastfetch < Formula
   url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.54.0.tar.gz"
   sha256 "e6a0516364bc0a4991a588537ee2abb538b86db41f7d9dff795d49baec990529"
   license "MIT"
+  revision 1
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
   livecheck do
@@ -27,7 +28,6 @@ class Fastfetch < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "vulkan-loader" => :build
-  depends_on "yyjson"
 
   uses_from_macos "sqlite" => :build
   uses_from_macos "zlib" => :build
@@ -51,7 +51,7 @@ class Fastfetch < Formula
     args = %W[
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DBUILD_FLASHFETCH=OFF
-      -DENABLE_SYSTEM_YYJSON=ON
+      -DENABLE_SYSTEM_YYJSON=OFF
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
