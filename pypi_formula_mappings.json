@@ -214,9 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "liquidctl": {
-    "exclude_packages": ["pillow"]
-  },
   "llm": {
     "exclude_packages": ["certifi"]
   },
