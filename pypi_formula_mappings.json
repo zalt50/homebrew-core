@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gitingest": {
-    "exclude_packages": ["certifi"]
-  },
   "glances": {
     "package_name": "glances[containers,web]",
     "exclude_packages": ["certifi"]
