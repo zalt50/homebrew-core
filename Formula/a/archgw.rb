@@ -332,7 +332,17 @@ class Archgw < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
-    venv = virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "hf-xet")
+
+    resource("hf-xet").stage do
+      if ENV.effective_arch == :armv8
+        # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto
+        inreplace "data/Cargo.toml",
+                  'sha2 = { workspace = true, features = ["asm"] }',
+                  "sha2 = { workspace = true }"
+      end
+      venv.pip_install Pathname.pwd
+    end
 
     # NOTE: This is an exception to our usual policy as building `pytorch` is complicated
     site_packages = Language::Python.site_packages(venv.root/"bin/python3")
