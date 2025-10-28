@@ -501,6 +501,5 @@
   "systemd": {
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
-  },
-  "uvicorn": "uvicorn[standard]"
+  }
 }
