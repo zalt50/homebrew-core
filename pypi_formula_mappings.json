@@ -25,24 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "ecs-deploy": {
-    "exclude_packages": ["certifi"]
-  },
-  "enex2notion": {
-    "exclude_packages": ["certifi", "pymupdf"]
-  },
-  "eralchemy": {
-    "package_name": "eralchemy[pygraphviz]"
-  },
-  "esphome": {
-    "exclude_packages": ["certifi", "cryptography", "pillow"]
-  },
-  "esptool": {
-    "exclude_packages": ["cryptography"]
-  },
-  "evernote-backup": {
-    "exclude_packages": ["certifi"]
-  },
   "gallery-dl": {
     "exclude_packages": ["certifi"]
   },
