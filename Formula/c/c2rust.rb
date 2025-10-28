@@ -16,7 +16,13 @@ class C2rust < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
-  depends_on "llvm@19" # LLVM 20 hits https://github.com/immunant/c2rust/issues/1252
+  depends_on "llvm"
+
+  # Backport fix for "Encountered unsupported BuiltinType kind 104 for type __mfp8"
+  patch do
+    url "https://github.com/immunant/c2rust/commit/a2c2149dae044629a49e996597ab58eb950072d0.patch?full_index=1"
+    sha256 "9ec18885f174526d3b6228c1e584dae942a5418f49089b4c0fc4439aecde7317"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "c2rust")
