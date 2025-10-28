@@ -93,7 +93,7 @@ jobs:
           while IFS= read -r patch_file; do
             if ! grep -Fxq "$patch_file" "$referenced_patches"; then
               echo "$patch_file" >> "$unused_patches"
-              ((unused_count++))
+              ((++unused_count))
             fi
           done < "$all_patches"
           
