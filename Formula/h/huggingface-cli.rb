@@ -14,6 +14,7 @@ class HuggingfaceCli < Formula
     sha256 cellar: :any,                 arm64_sequoia: "37779da9ced13fe2b691961a72892e76905dd7adce25f9584ae716f1efbe63be"
     sha256 cellar: :any,                 arm64_sonoma:  "4c3cec5c45de604797f558ce2fdff1863e48c0c30817a9225610d4baacc1385d"
     sha256 cellar: :any,                 sonoma:        "548c795aed25a3a41122fb030ac707c1341e533194a8e13fa8616f1232dee20a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dc02664bdb9f578104cccdc83ba9e7b4c05801f56d153691eac7a90d432b912"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb75fca90b64eac0c0ff0bab6bfce3a3ebd02d263a6526ac8af20ced29865ac2"
   end
 
