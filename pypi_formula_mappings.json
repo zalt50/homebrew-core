@@ -1,6 +1,0 @@
-{
-  "qtwebengine": {
-    "package_name": "",
-    "extra_packages": ["html5lib"]
-  }
-}
