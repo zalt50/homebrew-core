@@ -25,11 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "graph-tool": {
-    "package_name": "",
-    "exclude_packages": ["numpy", "pillow"],
-    "extra_packages": ["matplotlib", "setuptools", "zstandard"]
-  },
   "grayskull": {
     "exclude_packages": ["certifi"]
   },
