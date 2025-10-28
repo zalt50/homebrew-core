@@ -49,6 +49,13 @@ class ServiceWeaver < Formula
   conflicts_with "weaver", because: "both install a `weaver` binary"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"weaver"), "./cmd/weaver"
     resource("weaver-gke").stage do
       ["weaver-gke", "weaver-gke-local"].each do |f|
