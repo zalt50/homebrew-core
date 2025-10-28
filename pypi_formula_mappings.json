@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gdown": {
-    "exclude_packages": ["certifi"]
-  },
   "ggshield": {
     "exclude_packages": ["certifi", "cryptography"]
   },
