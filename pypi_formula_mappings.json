@@ -1,7 +1,4 @@
 {
-  "hatch": {
-    "exclude_packages": ["certifi", "cryptography", "uv"]
-  },
   "howdoi": {
     "exclude_packages": ["certifi", "cryptography"]
   },
