@@ -43,52 +43,6 @@
   "evernote-backup": {
     "exclude_packages": ["certifi"]
   },
-  "fabric": {
-    "extra_packages": ["decorator"],
-    "exclude_packages": ["cryptography"]
-  },
-  "fastapi": {
-    "package_name": "fastapi[standard]",
-    "exclude_packages": ["certifi"]
-  },
-  "fastmcp": {
-    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
-  },
-  "fava": {
-    "exclude_packages": ["certifi"]
-  },
-  "fb-client": {
-    "package_name": "",
-    "extra_packages": ["pycurl", "pyxdg"]
-  },
-  "fdroidserver": {
-    "package_name": "fdroidserver[optional]",
-    "exclude_packages": ["certifi", "cryptography", "frida", "numpy", "pillow", "puremagic"]
-  },
-  "fiona": {
-    "exclude_packages": ["certifi"]
-  },
-  "flexget": {
-    "package_name": "flexget[transmission]",
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
-  "flintrock": {
-    "exclude_packages": ["cryptography"]
-  },
-  "flit": {
-    "exclude_packages": ["certifi"]
-  },
-  "fonttools": "fonttools[lxml,woff]",
-  "forbidden": {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser"]
-  },
-  "fred": {
-    "exclude_packages": ["certifi"]
-  },
-  "fwupd": {
-    "package_name": "",
-    "extra_packages": ["jinja2", "markupsafe"]
-  },
   "gallery-dl": {
     "exclude_packages": ["certifi"]
   },
