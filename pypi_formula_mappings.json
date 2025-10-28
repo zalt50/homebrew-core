@@ -25,10 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gptline": {
-    "exclude_packages": ["certifi", "pillow"],
-    "extra_packages": ["lxml-html-clean"]
-  },
   "gptme": {
     "exclude_packages": ["certifi", "pillow", "pydantic-core", "rpds-py"]
   },
