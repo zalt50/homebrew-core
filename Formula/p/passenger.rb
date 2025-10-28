@@ -4,7 +4,7 @@ class Passenger < Formula
   url "https://github.com/phusion/passenger/releases/download/release-6.1.0/passenger-6.1.0.tar.gz"
   sha256 "1cf30bbb6d39f19811141a43cb0d67e7bbf6a4bc3fe8b4145eaeb53a6ee21268"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
 
   bottle do
