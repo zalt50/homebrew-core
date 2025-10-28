@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sarif-tools": {
-    "exclude_packages": ["numpy", "pillow"]
-  },
   "scdl": {
     "exclude_packages": ["certifi"]
   },
