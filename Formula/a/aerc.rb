@@ -22,6 +22,13 @@ class Aerc < Formula
   depends_on "notmuch"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV["BUILD_OPTS"] = "-buildmode=pie -trimpath"
+    end
+
     system "make", "PREFIX=#{prefix}", "VERSION=#{version}"
     system "make", "install", "PREFIX=#{prefix}"
   end
