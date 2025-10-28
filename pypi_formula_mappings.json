@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sysaidmin": {
-    "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
-  },
   "systemd": {
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
