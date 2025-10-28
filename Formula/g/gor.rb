@@ -38,6 +38,13 @@ class Gor < Formula
   uses_from_macos "libpcap"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for gopacket)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-X main.VERSION=#{version}")
   end
 
