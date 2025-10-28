@@ -3,8 +3,8 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/50/91/d74c30aea530dc9c375026dfd6d5b11509610588f86feafd6ca7cee957d0/bittensor_cli-9.14.1.tar.gz"
-  sha256 "434c5c71604afcb289eeb99c2ec60b4ad760d51718d1984c8f6c839fe3155ba6"
+  url "https://files.pythonhosted.org/packages/cb/22/373797c59604d01a4bd72d3410c4a2aa5a55e11be097e7ad18a473bf017e/bittensor_cli-9.14.2.tar.gz"
+  sha256 "68a7e6adae99e93daa5ff45fae96623f148cae8704e5925a46680c3cb8aac364"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
@@ -35,8 +35,8 @@ class Btcli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/25/a8/8e2ba36c6e3278d62e0c88aa42bb92ddbef092ac363b390dab4421da5cf5/aiohttp-3.10.11.tar.gz"
-    sha256 "9dc2b8f3dcab2e39e0fa309c8da50c3b55e6f34ab25f1a71d3288f24924d33a7"
+    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
+    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
   end
 
   resource "aiosignal" do
@@ -140,8 +140,8 @@ class Btcli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/b7/95/aa46616f5e567ff5d262f4c207d5ca79cb2766010c786c351b8e7f930ef4/narwhals-2.9.0.tar.gz"
-    sha256 "d8cde40a6a8a7049d8e66608b7115ab19464acc6f305d136a8dc8ba396c4acfe"
+    url "https://files.pythonhosted.org/packages/56/e5/ef07d31c2e07d99eecac8e14ace5c20aeb00ecba4ed5bb00343136380524/narwhals-2.10.0.tar.gz"
+    sha256 "1c05bbef2048a4045263de7d98c3d06140583eb13d796dd733b2157f05d24485"
   end
 
   resource "netaddr" do
