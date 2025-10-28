@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "safety": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "sail": {
     "exclude_packages": ["certifi", "cryptography"]
   },
