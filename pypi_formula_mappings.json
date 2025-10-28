@@ -402,12 +402,5 @@
   "systemd": {
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
-  },
-  "unoconv":{
-    "extra_packages": ["setuptools"]
-  },
-  "urlwatch": {
-    "exclude_packages": ["certifi"]
-  },
-  "uvicorn": "uvicorn[standard]"
+  }
 }
