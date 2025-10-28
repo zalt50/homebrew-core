@@ -30,6 +30,9 @@ class GimmeAwsCreds < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   "pyobjc-framework-localauthentication"
+
   # Extra package resources are set for platform-specific dependencies in
   # pypi_formula_mappings.json, since the output of `bump-formula-pr` and
   # `update-python-resources` is impacted by whether command is run on macOS

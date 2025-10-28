@@ -61,6 +61,11 @@ class Gnuradio < Formula
     depends_on "llvm"
   end
 
+  pypi_packages package_name:     "",
+                exclude_packages: "rpds-py",
+                extra_packages:   %w[click jsonschema lxml mako
+                                     packaging pygccxml pyyaml setuptools]
+
   # Resources for Python packages based on .conda/recipe/meta.yaml
   # Currently skipping `matplotlib` and `scipy` extra dependencies.
   #

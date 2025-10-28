@@ -10,6 +10,7 @@ class FennelLs < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1662af687fab82378d2a7a6defa17eaecdd45f5d2fe1fdb96ad3d54b4b0f915"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1662af687fab82378d2a7a6defa17eaecdd45f5d2fe1fdb96ad3d54b4b0f915"
     sha256 cellar: :any_skip_relocation, sonoma:        "d1662af687fab82378d2a7a6defa17eaecdd45f5d2fe1fdb96ad3d54b4b0f915"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1662af687fab82378d2a7a6defa17eaecdd45f5d2fe1fdb96ad3d54b4b0f915"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cc1f870f47958e1b37446c8d34fd59598562b068e398ad006150b1519e3728f"
   end
 
