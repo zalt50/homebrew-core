@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "slither-analyzer": {
-    "exclude_packages": ["certifi"]
-  },
   "snakemake": {
     "exclude_packages": ["certifi", "rpds-py"]
   },
