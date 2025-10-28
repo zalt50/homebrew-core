@@ -170,9 +170,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "oci-cli": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "ocrmypdf": {
     "exclude_packages": ["cryptography", "pillow"]
   },
