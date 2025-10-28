@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sail": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "sarif-tools": {
     "exclude_packages": ["numpy", "pillow"]
   },
