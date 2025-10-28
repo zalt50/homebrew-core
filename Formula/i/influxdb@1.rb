@@ -39,6 +39,13 @@ class InfluxdbAT1 < Formula
     # Workaround for `error: hiding a lifetime that's elided elsewhere is confusing` with `rust` 1.89+
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"
 
+    # Workaround to avoid patchelf corruption when cgo is required (for flux)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     # Set up the influxdata pkg-config wrapper
     resource("pkg-config-wrapper").stage do
       system "go", "build", *std_go_args(output: buildpath/"bootstrap/pkg-config")
