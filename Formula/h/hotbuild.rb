@@ -1,12 +1,10 @@
 class Hotbuild < Formula
   desc "Cross platform hot compilation tool for go"
   homepage "https://hotbuild.rustpub.com/"
-  url "https://github.com/wandercn/hotbuild/archive/refs/tags/v1.0.8.tar.gz"
-  sha256 "662fdc31ca85f5d00ba509edcb177b617d8d6d8894086197347cfdbd17dc7c2f"
+  url "https://github.com/wandercn/hotbuild/archive/refs/tags/v1.0.9.tar.gz"
+  sha256 "7e8c5c52269344d12d4dc83ae4f472f8aec05faad76379c844dc21c2da44704c"
   license "MulanPSL-2.0"
   head "https://github.com/wandercn/hotbuild.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4ccb806636f0fdd5804757bd8333fce15485f16e5e30c05150a913a71429d065"
@@ -26,10 +24,14 @@ class Hotbuild < Formula
 
   depends_on "go" => :build
 
+  # Bump version
+  # https://github.com/wandercn/hotbuild/pull/15
+  patch do
+    url "https://github.com/wandercn/hotbuild/commit/1b04ea4e9e1327ef4d462256072d72f4f37040cb.patch?full_index=1"
+    sha256 "b0bbcdf106914307265b4ac81d73667a8b2d4c2fd688cc76dd1e303f690b4021"
+  end
+
   def install
-    # fixed in https://github.com/wandercn/hotbuild/commit/16d2d337fc20b245a96a4bd2cfe7c0ec8657470d
-    # remove in next release
-    inreplace "version/version.go", "v1.0.7", version.to_s
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
