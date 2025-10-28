@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "streamlink": {
-    "exclude_packages": ["certifi"]
-  },
   "streamrip": {
     "exclude_packages": ["certifi", "pillow", "pytest", "pytest-asyncio", "pytest-mock"]
   },
