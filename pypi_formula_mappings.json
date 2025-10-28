@@ -132,9 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "kimi-cli": {
-    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
-  },
   "qtwebengine": {
     "package_name": "",
     "extra_packages": ["html5lib"]
