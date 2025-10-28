@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "shodan": {
-    "exclude_packages": ["certifi"]
-  },
   "showcert": {
     "exclude_packages": ["certifi", "cryptography"]
   },
