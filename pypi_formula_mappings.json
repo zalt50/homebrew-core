@@ -132,26 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "jenkins-job-builder": {
-    "exclude_packages": ["certifi"]
-  },
-  "jinja2-cli": "jinja2-cli[yaml,toml,xml]",
-  "jiratui": {
-    "exclude_packages": ["certifi", "cryptography", "pillow", "pydantic-core"]
-  },
-  "jrnl": {
-    "exclude_packages": ["cryptography"]
-  },
-  "juju-wait": {
-    "extra_packages": ["setuptools"]
-  },
-  "jupyterlab": {
-    "extra_packages": ["appnope", "hatch-jupyter-builder", "hatch-nodejs-version", "jupyter-console", "notebook"],
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
-  "jupytext": {
-    "exclude_packages": ["rpds-py"]
-  },
   "kaskade": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
