@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gallery-dl": {
-    "exclude_packages": ["certifi"]
-  },
   "gamdl": {
     "exclude_packages": ["certifi", "pillow"]
   },
