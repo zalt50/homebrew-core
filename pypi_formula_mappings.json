@@ -1,7 +1,4 @@
 {
-  "http-prompt": {
-    "exclude_packages": ["certifi"]
-  },
   "httpie": {
     "package_name": "httpie",
     "exclude_packages": ["certifi"]
