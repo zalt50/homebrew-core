@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sacad": {
-    "exclude_packages": ["pillow"]
-  },
   "safety": {
     "exclude_packages": ["certifi", "cryptography"]
   },
