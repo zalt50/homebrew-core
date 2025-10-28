@@ -6,7 +6,7 @@ class DbmlCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9efbc98c69dd2242483b7a03071d6d0324848c242a239f31f0e8bb6d44540850"
+    sha256 cellar: :any_skip_relocation, all: "f61f5fc1e78864f8f69f928d10fcf772cf97084cb4743f197336ebd29b07c0ce"
   end
 
   depends_on "node"
