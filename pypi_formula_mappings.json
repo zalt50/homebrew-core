@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "specify": {
-    "exclude_packages": ["certifi"]
-  },
   "sphinx-doc": {
     "exclude_packages": ["certifi"],
     "extra_packages": ["numpydoc"]
