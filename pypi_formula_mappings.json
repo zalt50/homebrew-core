@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "search-that-hash": {
-    "exclude_packages": ["certifi"]
-  },
   "semgrep": {
     "package_name": "semgrep",
     "exclude_packages": ["certifi"]
