@@ -25,6 +25,9 @@ class Fastapi < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages package_name:     "fastapi[standard]",
+                exclude_packages: "certifi"
+
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/d7/a6/dc46877b911e40c00d395771ea710d5e77b6de7bacd5fdcd78d70cc5a48f/annotated_doc-0.0.3.tar.gz"
     sha256 "e18370014c70187422c33e945053ff4c286f453a984eba84d0dbfa0c935adeda"
