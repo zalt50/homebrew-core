@@ -25,14 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gnuradio": {
-    "package_name": "",
-    "exclude_packages": ["rpds-py"],
-    "extra_packages": [
-      "click", "jsonschema", "lxml", "mako",
-      "packaging", "pygccxml", "pyyaml", "setuptools"
-    ]
-  },
   "gobject-introspection": {
     "package_name": "",
     "extra_packages": ["mako", "markdown", "setuptools"]
