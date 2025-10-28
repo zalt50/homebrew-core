@@ -291,10 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "snapcraft": {
-    "exclude_packages": ["certifi", "cryptography", "pygit2"],
-    "extra_packages": ["catkin-pkg", "jeepney", "pylxd", "secretstorage"]
-  },
   "specify": {
     "exclude_packages": ["certifi"]
   },
