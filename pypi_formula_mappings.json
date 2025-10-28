@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gimmecert": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "gimme-aws-creds": {
     "exclude_packages": ["certifi", "cryptography"],
     "extra_packages": ["pyobjc-framework-localauthentication"]
