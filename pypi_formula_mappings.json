@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "showcert": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "shub": {
     "exclude_packages": ["certifi"]
   },
