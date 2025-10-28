@@ -25,62 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "darker": {
-    "package_name": "darker[black]"
-  },
-  "datalad": {
-    "package_name": "datalad[misc]",
-    "extra_packages": ["jeepney", "secretstorage"],
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "datasette": {
-    "exclude_packages": ["certifi"]
-  },
-  "detect-secrets": {
-    "exclude_packages": ["certifi"]
-  },
-  "diffoscope": "diffoscope[cmdline]",
-  "dnsgen": {
-    "exclude_packages": ["certifi"]
-  },
-  "dnsrobocert": {
-    "exclude_packages": ["certifi", "cryptography", "rpds-py"]
-  },
-  "dnstwist": {
-    "package_name": "dnstwist[full]",
-    "exclude_packages": ["certifi"]
-  },
-  "dnsviz": {
-    "extra_packages": ["dnspython", "pygraphviz"]
-  },
-  "docker-squash": {
-    "exclude_packages": ["certifi"]
-  },
-  "dolphie": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "dotdrop": {
-    "exclude_packages": ["certifi"]
-  },
-  "dstack": {
-    "package_name": "dstack[aws,azure,gcp,lambda]",
-    "exclude_packages": ["certifi", "cryptography", "rpds-py"]
-  },
-  "duplicity": {
-    "exclude_packages": ["certifi"],
-    "extra_packages": ["python-novaclient>18", "stone==3.2.1"]
-  },
-  "dvc": {
-    "package_name": "dvc[all]",
-    "exclude_packages": ["certifi", "cryptography", "numpy", "pygit2"]
-  },
-  "dvr-scan": {
-    "exclude_packages": ["numpy"],
-    "extra_packages": ["pyobjc-framework-cocoa"]
-  },
-  "dxpy": {
-    "exclude_packages": ["cryptography", "certifi"]
-  },
   "ecs-deploy": {
     "exclude_packages": ["certifi"]
   },
