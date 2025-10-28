@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "standardebooks": {
-    "exclude_packages": ["certifi", "cffi", "pillow", "pycairo"]
-  },
   "streamlink": {
     "exclude_packages": ["certifi"]
   },
