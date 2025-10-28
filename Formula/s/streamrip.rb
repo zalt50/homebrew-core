@@ -3,7 +3,7 @@ class Streamrip < Formula
 
   desc "Scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer"
   homepage "https://github.com/nathom/streamrip"
-  # Test dependencies should be removed, so they are added to `pypi_formula_mappings`
+  # Test dependencies should be removed, so they are added to `pypi_packages`
   # `pygments` should be added manually, it is removed with test dependencies
   # PR ref: https://github.com/nathom/streamrip/pull/886
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
