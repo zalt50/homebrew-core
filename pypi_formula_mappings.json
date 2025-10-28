@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sherlock": {
-    "exclude_packages": ["certifi", "numpy"]
-  },
   "shodan": {
     "exclude_packages": ["certifi"]
   },
