@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "subliminal": {
-    "exclude_packages": ["certifi"]
-  },
   "svtplay-dl": {
     "exclude_packages": ["certifi", "cryptography"]
   },
