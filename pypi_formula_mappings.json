@@ -132,9 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "keeper-commander": {
-    "exclude_packages": ["certifi", "cryptography", "pillow"]
-  },
   "keepkey-agent": {
     "exclude_packages": ["cryptography"],
     "extra_packages": ["protobuf==3.20.3"]
