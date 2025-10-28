@@ -1,8 +1,4 @@
 {
-  "httpie": {
-    "package_name": "httpie",
-    "exclude_packages": ["certifi"]
-  },
   "huggingface-cli": {
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
