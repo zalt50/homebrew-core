@@ -31,6 +31,11 @@ class Gyb < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
+  pypi_packages package_name:     "",
+                exclude_packages: "certifi",
+                extra_packages:   %w[google-api-python-client google-auth google-auth-httplib2
+                                     google-auth-oauthlib httplib2]
+
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
     sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
