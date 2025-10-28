@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://github.com/onflow/flow-cli/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "6c074dc3fb4718b6a05cb64eed325240eb5cb85f4a0bbc33d3e5bfbd39e072db"
+  url "https://github.com/onflow/flow-cli/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "bcbeb514a033a6766d7a8008d70c780d2b5a0a0da146b97e86f67c99ba09567d"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class FlowCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac0ebdf9510919cb21f158503991764680d8014d2273370e67ee99ed63cbd85f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b4ab9aeab6f7dccabc2754a3c27887e3d24701ab0e8bfc2c29185da67c7c804"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccbc98e7d629e030f57f7f97e9a0e26b164d0f1e0ae6423e6f9d9b272329d4b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "905238b7bff48273bb1ac8c0f1f0c61b4118fed923c9ee640f160551d193b35f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c40b5046fe92b90eab1914ed3c2d0f20d6b267082658934032eb1a616d6f1cad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94681af1d7daf359db39fb00e2e852806407216c397d823bc789c67ea9219a82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db17391edc448337e275295cb691a2f01c080ab52304e40b7b1944e62b1c16c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a1449babca09bfa9359353783763acf83fa68ac83d493eddf13bf5dcecefb31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a02c12257421b60cc645feec3e46a0876faa47f55b300090d42984e01ec6b4b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1297b8b5d3b1b719269415919baa1cdd3072b0209279e6ad673e2a1c041ae2e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1a3effc75a6d40894343aa145220319e7a0426ed7d8c668479e93db5686d9ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c345f2df4a5b9d82396ac98133a4bab1ba33d2da5e30b35cea0a0ea0f0a3c50a"
   end
 
   depends_on "go" => :build
