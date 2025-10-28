@@ -235,23 +235,6 @@
   "mycli": {
     "exclude_packages": ["certifi", "cryptography"]
   },
-  "nanopb": {
-    "package_name": "nanopb",
-    "extra_packages": ["setuptools"]
-  },
-  "nbdime": {
-    "exclude_packages": ["certifi", "jupyter-server", "nbconvert"]
-  },
-  "nicotine-plus": {
-    "exclude_packages": ["pycairo", "pygobject"]
-  },
-  "notifiers": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
-  "nox": {
-    "exclude_packages": ["certifi"]
-  },
-  "nvchecker": "nvchecker[pypi]",
   "oci-cli": {
     "exclude_packages": ["certifi", "cryptography"]
   },
