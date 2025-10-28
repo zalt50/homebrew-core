@@ -10,13 +10,12 @@ class Dolphie < Formula
   no_autobump! because: "some resources have to be updated manually"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f5b64965dc7adc19e90e44ee7da7cde600b6a94352736dda4a780883cc83b2d5"
-    sha256 cellar: :any,                 arm64_sequoia: "4b09e93a915b9be529ae4098e2a574edcf6d506cbab573ac996e940790360b60"
-    sha256 cellar: :any,                 arm64_sonoma:  "68329ecc0e25129c38993c8b875daaf548cf5dbeb4235791104c1d893521baad"
-    sha256 cellar: :any,                 sonoma:        "20c0cf2a1a7ef525aff28d1af2842af54a564c41207eead687ba3d84982ba92b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b108ebed2b7b7a273c1b2452dee6bceb29167ba2265f11849ef10ba087f1d756"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9adcda832df90d33ced9872133f9222cf4942f6f49c7d5cf189c0c52a1ba3978"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8c4757b98dbd21909cc26c9d18f6d680740c8ed739072a38972d8048b29f1c5"
+    sha256 cellar: :any,                 arm64_sequoia: "df26fa16a390e432c1067d23423138a229f415c6cf5c63d6d1d503346171faac"
+    sha256 cellar: :any,                 arm64_sonoma:  "79b69c744016e0f634ca015efd8ed71c970797c482a03df334c9c5414786f527"
+    sha256 cellar: :any,                 sonoma:        "5fc9487b70318bf5c9a2a54cacc8911e0cf449077a4c8870833c54d4ac54fbbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1491e3215ad48d01ab8434f2a3be701fa45c865fa1778f9d7bb9e1047485caf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83df552221cbf7d9794d4c95a8d731db25132c2d56174b179c4d5a4bd38100f6"
   end
 
   depends_on "rust" => :build # for orjson
