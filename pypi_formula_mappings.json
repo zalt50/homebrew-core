@@ -1,26 +1,4 @@
 {
-  "harlequin": {
-    "package_name": "harlequin[mysql,odbc,postgres]",
-    "exclude_packages": ["numpy", "psycopg-binary", "tree-sitter-languages"],
-    "extra_packages": ["psycopg-c"]
-  },
-  "hatch": {
-    "exclude_packages": ["certifi", "cryptography", "uv"]
-  },
-  "howdoi": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "http-prompt": {
-    "exclude_packages": ["certifi"]
-  },
-  "httpie": {
-    "package_name": "httpie",
-    "exclude_packages": ["certifi"]
-  },
-  "huggingface-cli": {
-    "package_name": "huggingface_hub[cli]",
-    "exclude_packages": ["certifi"]
-  },
   "qtwebengine": {
     "package_name": "",
     "extra_packages": ["html5lib"]
