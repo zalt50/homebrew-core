@@ -1,8 +1,8 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://github.com/processone/ejabberd/archive/refs/tags/25.08.tar.gz"
-  sha256 "edc95cff239d74bfb16e437f7cf84f0e86144e5fe764d7ee7dc248b2d59778f1"
+  url "https://github.com/processone/ejabberd/archive/refs/tags/25.10.tar.gz"
+  sha256 "f676b71e7dbf143291728bc0247673afb256e75917da89520795c01df1154598"
   license "GPL-2.0-only"
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
@@ -96,6 +96,11 @@ class Ejabberd < Formula
   end
 
   test do
+    pid = spawn sbin/"ejabberdctl", "start"
+    sleep 1
     system sbin/"ejabberdctl", "ping"
+  ensure
+    Process.kill "TERM", pid
+    Process.wait pid
   end
 end
