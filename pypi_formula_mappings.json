@@ -214,9 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "literate-git": {
-    "exclude_packages": ["pygit2"]
-  },
   "liquidctl": {
     "exclude_packages": ["pillow"]
   },
