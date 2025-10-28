@@ -170,9 +170,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "oterm": {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "pillow", "pycparser", "rpds-py"]
-  },
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography", "rpds-py"]
   },
