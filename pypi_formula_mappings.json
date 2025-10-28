@@ -317,9 +317,6 @@
   "mycli": {
     "exclude_packages": ["certifi", "cryptography"]
   },
-  "nbdime": {
-    "exclude_packages": ["certifi", "jupyter-server", "nbconvert"]
-  },
   "nicotine-plus": {
     "exclude_packages": ["pycairo", "pygobject"]
   },
