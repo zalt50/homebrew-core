@@ -132,11 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "keyring": {
-    "package_name": "keyring[completion]",
-    "exclude_packages": ["cryptography"],
-    "extra_packages": ["jeepney", "secretstorage"]
-  },
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
