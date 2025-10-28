@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "goolabs": {
-    "exclude_packages": ["certifi"]
-  },
   "gorilla-cli": {
     "exclude_packages": ["certifi"]
   },
