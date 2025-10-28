@@ -214,9 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "llm": {
-    "exclude_packages": ["certifi"]
-  },
   "localstack": {
     "exclude_packages": ["certifi", "cryptography"]
   },
