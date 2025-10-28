@@ -170,9 +170,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "offlineimap": {
-    "exclude_packages": ["certifi"]
-  },
   "okta-awscli": {
     "exclude_packages": ["certifi"]
   },
