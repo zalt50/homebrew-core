@@ -502,8 +502,5 @@
     "package_name": "",
     "extra_packages": ["jinja2", "lxml"]
   },
-  "urlwatch": {
-    "exclude_packages": ["certifi"]
-  },
   "uvicorn": "uvicorn[standard]"
 }
