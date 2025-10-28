@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "scoutsuite": {
-    "exclude_packages": ["certifi", "cryptography", "pydantic-core"]
-  },
   "scrapy": {
     "exclude_packages": ["certifi", "cryptography"]
   },
