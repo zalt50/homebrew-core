@@ -291,10 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sphinx-doc": {
-    "exclude_packages": ["certifi"],
-    "extra_packages": ["numpydoc"]
-  },
   "ssh-mitm": {
     "exclude_packages": ["cryptography"]
   },
