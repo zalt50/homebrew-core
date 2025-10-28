@@ -291,10 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "semgrep": {
-    "package_name": "semgrep",
-    "exclude_packages": ["certifi"]
-  },
   "sgr": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
