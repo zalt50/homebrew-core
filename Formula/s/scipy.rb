@@ -30,6 +30,8 @@ class Scipy < Formula
     depends_on "patchelf" => :build
   end
 
+  pypi_packages exclude_packages: "numpy"
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
