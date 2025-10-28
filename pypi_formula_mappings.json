@@ -25,10 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "gobject-introspection": {
-    "package_name": "",
-    "extra_packages": ["mako", "markdown", "setuptools"]
-  },
   "goolabs": {
     "exclude_packages": ["certifi"]
   },
