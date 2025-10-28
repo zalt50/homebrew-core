@@ -317,9 +317,6 @@
   "mycli": {
     "exclude_packages": ["certifi", "cryptography"]
   },
-  "nox": {
-    "exclude_packages": ["certifi"]
-  },
   "nvchecker": "nvchecker[pypi]",
   "oci-cli": {
     "exclude_packages": ["certifi", "cryptography"]
