@@ -214,10 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "litani": {
-    "package_name": "",
-    "extra_packages": ["jinja2", "markupsafe", "pyyaml"]
-  },
   "litecli": {
     "exclude_packages": ["certifi", "setuptools"]
   },
