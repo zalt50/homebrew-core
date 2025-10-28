@@ -1,8 +1,4 @@
 {
-  "huggingface-cli": {
-    "package_name": "huggingface_hub[cli]",
-    "exclude_packages": ["certifi"]
-  },
   "qtwebengine": {
     "package_name": "",
     "extra_packages": ["html5lib"]
