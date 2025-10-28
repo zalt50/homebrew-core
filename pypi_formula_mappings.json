@@ -625,43 +625,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "ramalama": {
-    "exclude_packages": ["rpds-py"]
-  },
-  "rasterio": {
-    "exclude_packages": ["certifi", "numpy"]
-  },
-  "raven": {
-    "exclude_packages": ["certifi"]
-  },
-  "rawdog": {
-    "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
-  },
-  "rbtools": {
-    "exclude_packages": ["certifi"]
-  },
-  "rdiff-backup": {
-    "extra_packages": ["pyxattr"]
-  },
-  "recon-ng": {
-    "package_name": "",
-    "exclude_packages": ["certifi", "rpds-py"],
-    "extra_packages": [
-      "pyyaml", "dnspython", "lxml", "mechanize", "requests",
-      "flask", "flask-restful", "flasgger", "dicttoxml", "xlsxwriter", "unicodecsv", "rq"
-    ]
-  },
-  "regipy": "regipy[cli]",
-  "rich-cli": {
-    "exclude_packages": ["certifi"]
-  },
-  "robot-framework": {
-    "extra_packages": ["robotframework-archivelibrary", "robotframework-selenium2library", "robotframework-sshlibrary"],
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "ruff-lsp": {
-    "exclude_packages": ["ruff"]
-  },
   "sacad": {
     "exclude_packages": ["pillow"]
   },
