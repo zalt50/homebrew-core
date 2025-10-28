@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "ssh-mitm": {
-    "exclude_packages": ["cryptography"]
-  },
   "standardebooks": {
     "exclude_packages": ["certifi", "cffi", "pillow", "pycairo"]
   },
