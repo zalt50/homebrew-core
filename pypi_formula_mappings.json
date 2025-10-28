@@ -132,9 +132,6 @@
     "package_name": "huggingface_hub[cli]",
     "exclude_packages": ["certifi"]
   },
-  "jiratui": {
-    "exclude_packages": ["certifi", "cryptography", "pillow", "pydantic-core"]
-  },
   "jrnl": {
     "exclude_packages": ["cryptography"]
   },
