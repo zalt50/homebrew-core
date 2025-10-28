@@ -170,58 +170,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "oci-cli": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "ocrmypdf": {
-    "exclude_packages": ["cryptography", "pillow"]
-  },
-  "offlineimap": {
-    "exclude_packages": ["certifi"]
-  },
-  "okta-awscli": {
-    "exclude_packages": ["certifi"]
-  },
-  "omnara": {
-    "exclude_packages": ["certifi", "cryptography", "rpds-py"]
-  },
-  "onionprobe": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "onlykey-agent": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
-  "openai-whisper": {
-    "exclude_packages": ["certifi", "numpy", "torch"]
-  },
-  "openstackclient": {
-    "extra_packages": [
-      "keystoneauth-websso", "osc-placement", "python-barbicanclient",
-      "python-cloudkittyclient", "python-designateclient",
-      "python-glanceclient", "python-heatclient", "python-ironicclient",
-      "python-magnumclient", "python-manilaclient", "python-mistralclient",
-      "python-octaviaclient"
-    ],
-    "exclude_packages": ["certifi", "cryptography", "gnureadline", "rpds-py"]
-  },
-  "organize-tool": {
-    "exclude_packages": ["cryptography"],
-    "extra_packages": ["pyobjc-framework-cocoa"]
-  },
-  "osc": {
-    "package_name": "",
-    "extra_packages": ["ruamel-yaml", "urllib3"],
-    "exclude_packages": ["cryptography"]
-  },
-  "osc-cli": {
-    "exclude_packages": ["certifi"]
-  },
-  "oterm": {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "pillow", "pycparser", "rpds-py"]
-  },
-  "otterdog": {
-    "exclude_packages": ["certifi", "cryptography", "rpds-py"]
-  },
   "qtwebengine": {
     "package_name": "",
     "extra_packages": ["html5lib"]
