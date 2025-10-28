@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sigstore": {
-    "exclude_packages": ["certifi", "cryptography"]
-  },
   "slither-analyzer": {
     "exclude_packages": ["certifi"]
   },
