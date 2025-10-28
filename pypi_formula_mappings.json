@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "snakemake": {
-    "exclude_packages": ["certifi", "rpds-py"]
-  },
   "snowflake-cli": {
     "exclude_packages": ["certifi", "cryptography"],
     "extra_packages": ["snowflake-core"]
