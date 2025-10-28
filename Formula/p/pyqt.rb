@@ -40,8 +40,15 @@ class Pyqt < Formula
     depends_on "qtshadertools"
   end
 
-  on_system :linux, macos: :sonoma_or_newer do
+  on_sonoma :or_newer do
     depends_on "qtwebengine"
+  end
+
+  on_linux do
+    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
+    on_intel do
+      depends_on "qtwebengine"
+    end
   end
 
   pypi_packages exclude_packages: %w[pyqt6-3d-qt6 pyqt6-charts-qt6
@@ -85,6 +92,18 @@ class Pyqt < Formula
     "python3.14"
   end
 
+  def webengine_supported?
+    on_sonoma :or_newer do
+      return true
+    end
+    on_linux do
+      on_intel do
+        return true
+      end
+    end
+    false
+  end
+
   def install
     # HACK: there is no option to set the plugindir
     inreplace "project.py", "builder.qt_configuration['QT_INSTALL_PLUGINS']", "'#{share}/qt/plugins'"
@@ -105,7 +124,7 @@ class Pyqt < Formula
     resources.each do |r|
       next if r.name == "pyqt6-sip"
       # Don't build WebEngineCore bindings on macOS if the SDK is too old to have built qtwebengine in qt.
-      next if r.name == "pyqt6-webengine" && OS.mac? && MacOS.version <= :ventura
+      next if r.name == "pyqt6-webengine" && !webengine_supported?
 
       r.stage do
         inreplace "pyproject.toml", "[tool.sip.project]", <<~TOML
@@ -140,7 +159,7 @@ class Pyqt < Formula
       Xml
     ]
     # Don't test WebEngineCore bindings on macOS if the SDK is too old to have built qtwebengine in qt.
-    pyqt_modules << "WebEngineCore" if OS.linux? || MacOS.version > :ventura
+    pyqt_modules << "WebEngineCore" if webengine_supported?
     pyqt_modules.each { |mod| system python3, "-c", "import PyQt#{version.major}.Qt#{mod}" }
 
     # Make sure plugin is installed as it currently gets skipped on wheel build,  e.g. `pip install`
