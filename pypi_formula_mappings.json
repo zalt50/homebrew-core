@@ -290,9 +290,5 @@
   "qtwebengine": {
     "package_name": "",
     "extra_packages": ["html5lib"]
-  },
-  "systemd": {
-    "package_name": "",
-    "extra_packages": ["jinja2", "lxml"]
   }
 }
