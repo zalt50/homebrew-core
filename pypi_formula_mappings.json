@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "git-review": {
-    "exclude_packages": ["certifi"]
-  },
   "gitingest": {
     "exclude_packages": ["certifi"]
   },
