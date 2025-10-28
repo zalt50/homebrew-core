@@ -17,6 +17,7 @@ class InfluxdbAT2 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "29507ee2c4d7d0bbcb83dfb45e168a4c613a57d0aaeb1f378f9d0e44f223a933"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac9c07dba2be80e138d1366b96a819de10c0909fc6d80b89475fb784a0ea5751"
     sha256 cellar: :any_skip_relocation, sonoma:        "66c5ae27e567c475874392643347addea7970ac720364ae690ff698c596f2d68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d204bf8b14bb2a8708d9bac0f30f343bc679e5e4ef8ebcf484fc546d2a74f318"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5fb80475b08420aa318194dcc9789961fa4722e651b17ed0c48abe3271cb873"
   end
 
