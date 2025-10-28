@@ -113,6 +113,9 @@ class Qtwebengine < Formula
     depends_on "webp"
   end
 
+  pypi_packages package_name:   "",
+                extra_packages: "html5lib"
+
   resource "html5lib" do
     url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
