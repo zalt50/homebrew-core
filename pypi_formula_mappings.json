@@ -317,10 +317,6 @@
   "mycli": {
     "exclude_packages": ["certifi", "cryptography"]
   },
-  "nanopb": {
-    "package_name": "nanopb",
-    "extra_packages": ["setuptools"]
-  },
   "nbdime": {
     "exclude_packages": ["certifi", "jupyter-server", "nbconvert"]
   },
