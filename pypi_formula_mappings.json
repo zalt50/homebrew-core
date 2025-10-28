@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "shub": {
-    "exclude_packages": ["certifi"]
-  },
   "sickchill": {
     "exclude_packages": ["certifi", "cryptography"],
     "extra_packages": ["setuptools"]
