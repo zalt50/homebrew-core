@@ -27,6 +27,13 @@ class MenderArtifact < Formula
   depends_on "openssl@3"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for github.com/mendersoftware/openssl)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     ldflags = "-s -w -X github.com/mendersoftware/mender-artifact/cli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
