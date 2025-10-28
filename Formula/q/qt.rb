@@ -65,20 +65,38 @@ class Qt < Formula
   depends_on "qtwebchannel"
   depends_on "qtwebsockets"
 
-  on_system :linux, macos: :sonoma_or_newer do
+  on_sonoma :or_newer do
     depends_on "qtwebengine"
     depends_on "qtwebview"
   end
 
   on_linux do
     depends_on "qtwayland"
+
+    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
+    on_intel do
+      depends_on "qtwebengine"
+      depends_on "qtwebview"
+    end
+  end
+
+  def webengine_supported?
+    on_sonoma :or_newer do
+      return true
+    end
+    on_linux do
+      on_intel do
+        return true
+      end
+    end
+    false
   end
 
   def install
     # Check for any new formulae that need to be created before bottling
     if build.bottle?
       submodules = File.read("md5sums.txt").scan(/^\h+[ \t]+(\S+)-everywhere-src-/i).flatten.to_set
-      submodules -= ["qtwebengine", "qtwebview"] if OS.mac? && MacOS.version < :sonoma
+      submodules -= ["qtwebengine", "qtwebview"] unless webengine_supported?
       submodules.delete("qtwayland") unless OS.linux?
       submodules.delete("qtactiveqt") # Windows-only
       submodules.delete("qtdoc") # skip HTML documentation
@@ -124,34 +142,27 @@ class Qt < Formula
   end
 
   test do
-    webengine_supported = !OS.mac? || MacOS.version > :ventura
     modules = %w[Core Gui Widgets Sql Concurrent 3DCore Svg Quick3D Network NetworkAuth]
-    modules << "WebEngineCore" if webengine_supported
+    modules << "WebEngineCore" if webengine_supported?
 
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION #{Formula["cmake"].version})
+      cmake_minimum_required(VERSION 4.0)
       project(test VERSION 1.0.0 LANGUAGES CXX)
-
-      set(CMAKE_CXX_STANDARD 17)
-      set(CMAKE_CXX_STANDARD_REQUIRED ON)
-      set(CMAKE_AUTOMOC ON)
-      set(CMAKE_AUTORCC ON)
-      set(CMAKE_AUTOUIC ON)
-
       find_package(Qt6 REQUIRED COMPONENTS #{modules.join(" ")})
-      add_executable(test main.cpp)
+      qt_standard_project_setup()
+      qt_add_executable(test main.cpp)
       target_link_libraries(test PRIVATE Qt6::#{modules.join(" Qt6::")})
     CMAKE
 
-    (testpath/"test.pro").write <<~EOS
-      QT += #{modules.join(" ").downcase}
-      TARGET = test
-      CONFIG += console
-      CONFIG -= app_bundle
+    (testpath/"test.pro").write <<~QMAKE
+      QT      += #{modules.join(" ").downcase}
+      TARGET   = test
+      CONFIG  += console
+      CONFIG  -= app_bundle
       TEMPLATE = app
       SOURCES += main.cpp
       INCLUDEPATH += #{Formula["vulkan-headers"].opt_include}
-    EOS
+    QMAKE
 
     (testpath/"main.cpp").write <<~CPP
       #undef QT_NO_DEBUG
@@ -164,7 +175,7 @@ class Qt < Formula
       #include <QtSvg>
       #include <QDebug>
       #include <QVulkanInstance>
-      #{"#include <QtWebEngineCore>" if webengine_supported}
+      #{"#include <QtWebEngineCore>" if webengine_supported?}
       #include <iostream>
 
       int main(int argc, char *argv[])
