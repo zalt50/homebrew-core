@@ -11,12 +11,13 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8a183ed01b6fe006ac586d9446541ef685d3e679b93b01de299843301e0db0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c23fca24bbbc18e445dac20f3b54eb11c52ac80f8922a2a69d6bdd5b79f23040"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "465f7a947695009583c10bd8872f3dd242edb61d0743275b642f7abe03eeb168"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9107773b557041c8613a6d8fec37846f91864ddcf89e4b77e61761e96674da4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d473bceb3ef50277a236ca1468d01595bb628691fa9898c4996497328610268a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b8422af505f105db8fa020fafe3809db71963a40464b2213da4b55e20eaf5be"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d31a025f56b9d695875a1e39b33c51cda863c4bfc51c76d0fd82605a72b965b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cc62b31f0978d14aa2fe4eef4c82fcac0943af072479240c0db031437e382a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f9b738cd1572576217565a40b7a82eac9b6535b3db136e07f98ed6d456969e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0fab5b51c72b7854c10d8554758ef44922b5a1615aa8c5718686330cd722446b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abba8b4693897cd235ae690cefaeb079b76700af532d2d4bdb6ac53cf01ccf01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc412efe2b9593e920f226199cc42a64719f8ee2435f9a6e00a3b57122fcb5d3"
   end
 
   depends_on "cmake" => :build
