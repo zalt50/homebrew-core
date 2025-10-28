@@ -214,9 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "linode-cli": {
-    "exclude_packages": ["certifi"]
-  },
   "litani": {
     "package_name": "",
     "extra_packages": ["jinja2", "markupsafe", "pyyaml"]
