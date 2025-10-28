@@ -291,10 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "sickchill": {
-    "exclude_packages": ["certifi", "cryptography"],
-    "extra_packages": ["setuptools"]
-  },
   "sigma-cli": {
     "exclude_packages": ["certifi"],
     "extra_packages": ["pysigma-backend-sqlite"]
