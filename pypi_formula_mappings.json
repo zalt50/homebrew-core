@@ -214,9 +214,6 @@
   "kimi-cli": {
     "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
   },
-  "locust": {
-    "exclude_packages": ["certifi"]
-  },
   "lue-reader": {
     "exclude_packages": ["certifi", "pymupdf"]
   },
