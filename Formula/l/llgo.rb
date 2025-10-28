@@ -51,6 +51,13 @@ class Llgo < Formula
     ]
     tags = nil
     if OS.linux?
+      # Workaround to avoid patchelf corruption when cgo is required
+      if Hardware::CPU.arch == :arm64
+        ENV["CGO_ENABLED"] = "1"
+        ENV["GO_EXTLINK_ENABLED"] = "1"
+        ENV.append "GOFLAGS", "-buildmode=pie"
+      end
+
       ENV.prepend "CGO_CPPFLAGS",
         "-I#{llvm.opt_include} " \
         "-D_GNU_SOURCE " \
