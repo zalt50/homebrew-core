@@ -25,9 +25,6 @@
       "python-neutronclient", "pytz", "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ]
   },
-  "grayskull": {
-    "exclude_packages": ["certifi"]
-  },
   "grip": {
     "exclude_packages": ["certifi"]
   },
