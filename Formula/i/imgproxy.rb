@@ -11,6 +11,7 @@ class Imgproxy < Formula
     sha256 cellar: :any,                 arm64_sequoia: "1682d02e84955e52224d37dcd2fe4a9e0caeee24bd06f9a60bfeb53f938c99a9"
     sha256 cellar: :any,                 arm64_sonoma:  "1a6b1b7ab05c113e2d88757ca429714ae43ceeebbf0f58df7fd1d1946b416554"
     sha256 cellar: :any,                 sonoma:        "cb7b326929e752d3f57024eb2c7d481aa4cbfe70b9b57ffbbd276800a48c947d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a6c33c5d5c946971a406771854168b10fccb4d834a4c0296eeeeff10a0f20f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9838b42cefbaedca10d093e8ccc29c63a789b10fc092f0a8a2d6193eb58a5191"
   end
 
