@@ -291,9 +291,6 @@
     "package_name": "",
     "extra_packages": ["html5lib"]
   },
-  "streamrip": {
-    "exclude_packages": ["certifi", "pillow", "pytest", "pytest-asyncio", "pytest-mock"]
-  },
   "subliminal": {
     "exclude_packages": ["certifi"]
   },
