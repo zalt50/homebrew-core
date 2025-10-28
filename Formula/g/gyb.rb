@@ -4,7 +4,7 @@ class Gyb < Formula
 
   desc "CLI for backing up and restoring Gmail messages"
   homepage "https://github.com/GAM-team/got-your-back/"
-  # Check gyb.py imports for any changes. Update pypi_formula_mappings.json (if necessary)
+  # Check gyb.py imports for any changes. Update `pypi_packages` (if necessary)
   # and then run `brew update-python-resources gyb`.
   url "https://github.com/GAM-team/got-your-back/archive/refs/tags/v1.95.tar.gz"
   sha256 "96d8ec7c63bb33e5484f5ad6ac28c5762e9f2a2296d55955e0f48527ebcde45c"
