@@ -9,13 +9,12 @@ class ZabbixCli < Formula
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "adaa38257e3e76e8b7306c2f355fe1b6e67d052597e17a504ebc2c6b95f34da8"
-    sha256 cellar: :any,                 arm64_sequoia: "a70accbe96873c95d1452d2a4f00b11c76b193f30aefd3d801135bc19ed92316"
-    sha256 cellar: :any,                 arm64_sonoma:  "efc1aa44918a2c33f5ea73ffd1a6a66feb8ce55fa779a896434fa468f19127d9"
-    sha256 cellar: :any,                 sonoma:        "3427b4af12256e935e95717cb258eed9a3b6f5883181eb4d477fde7215d7885b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7343db0757d14e04b4ecdffa47a8472c0fc5dfded7b5f882924a127e09c47957"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bff14ecac574c2079c05ece6865d2f4edb90e836cbee3ee8608584e92d6f95b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "b2a1d0dd2c5ddc842546bf03d0be23e42af85d04cda4e9d959fed13a4a47aaa5"
+    sha256 cellar: :any,                 arm64_sequoia: "e2a3c6fd831cdba6d37c31a45e841aea482b0bad2956470315d0463487ec5bbd"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb879a8a2a74e4950d08ff31b81642e973d990965bae168d85fd034e75538d68"
+    sha256 cellar: :any,                 sonoma:        "e5be06b1c9a54a89b8665af5522faa4584d19ef9b096bfafca483090a4c29f72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be84f26984c84401530a987d1d8deb74281a4a5f1b03b2dcaaff95ea649577e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cb73c66316346321a929617bf4fa549ed7408415b8fe4323e7b03a199d1a676"
   end
 
   depends_on "rust" => :build # for pydantic_core
