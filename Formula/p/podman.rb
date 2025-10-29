@@ -47,6 +47,7 @@ class Podman < Formula
     depends_on "libseccomp"
     depends_on "passt"
     depends_on "slirp4netns"
+    depends_on "sqlite"
     depends_on "systemd"
   end
 
@@ -131,6 +132,13 @@ class Podman < Formula
       ENV["PREFIX"] = prefix
       ENV["HELPER_BINARIES_DIR"] = opt_libexec/"podman"
       ENV["BUILD_ORIGIN"] = "brew"
+
+      # Workaround to avoid patchelf corruption when cgo is required
+      if Hardware::CPU.arch == :arm64
+        ENV["CGO_ENABLED"] = "1"
+        ENV["GO_EXTLINK_ENABLED"] = "1"
+        ENV.append "GOFLAGS", "-buildmode=pie -trimpath"
+      end
 
       system "make"
       system "make", "install", "install.completions"
