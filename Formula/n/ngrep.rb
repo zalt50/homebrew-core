@@ -1,8 +1,8 @@
 class Ngrep < Formula
   desc "Network grep"
   homepage "https://github.com/jpr5/ngrep"
-  url "https://github.com/jpr5/ngrep/archive/refs/tags/V1_47.tar.gz"
-  sha256 "dc4dbe20991cc36bac5e97e99475e2a1522fd88c59ee2e08f813432c04c5fff3"
+  url "https://github.com/jpr5/ngrep/archive/refs/tags/v1.48.0.tar.gz"
+  sha256 "49a20b83f6e3d9191c0b5533c0875fcde83df43347938c4c6fa43702bdbd06b4"
   license :cannot_represent # Described as 'BSD with advertising' here: https://src.fedoraproject.org/rpms/ngrep/blob/rawhide/f/ngrep.spec#_8
 
   no_autobump! because: :requires_manual_review
@@ -24,40 +24,19 @@ class Ngrep < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b54a418af69d95d16a04604e385faa40791e6ae6bc488a7f146b0f22a2845a5b"
   end
 
-  uses_from_macos "libpcap"
+  depends_on "libpcap"
+  depends_on "pcre2"
 
   def install
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
-
-    sdk = if OS.mac? && MacOS.sdk_path_if_needed
-      MacOS.sdk_path
-    else
-      ""
-    end
-
     args = [
       "--enable-ipv6",
+      "--enable-pcre2",
       "--prefix=#{prefix}",
-      # this line required to avoid segfaults
-      # see https://github.com/jpr5/ngrep/commit/e29fc29
-      # https://github.com/Homebrew/homebrew/issues/27171
-      "--disable-pcap-restart",
     ]
 
-    args << if OS.mac?
-      # this line required to make configure succeed
-      "--with-pcap-includes=#{sdk}/usr/include/pcap"
-    else
-      # this line required to make configure succeed
-      "--with-pcap-includes=#{Formula["libpcap"].opt_include}/pcap"
-    end
-
-    # Resolve implicit `stdlib.h` function declarations
-    args << "ac_cv_header_stdc=yes" if OS.mac?
+    args << "--with-pcap-includes=#{Formula["libpcap"].opt_include}"
 
     system "./configure", *args
-
     system "make", "install"
   end
 
