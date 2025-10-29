@@ -1,9 +1,9 @@
 class Kea < Formula
   desc "DHCP server"
   homepage "https://www.isc.org/kea/"
-  url "https://ftp.isc.org/isc/kea/3.0.1/kea-3.0.1.tar.xz"
-  mirror "https://dl.cloudsmith.io/public/isc/kea-3-0/raw/versions/3.0.1/kea-3.0.1.tar.xz"
-  sha256 "ec84fec4bb7f6b9d15a82e755a571e9348eb4d6fbc62bb3f6f1296cd7a24c566"
+  url "https://ftp.isc.org/isc/kea/3.0.2/kea-3.0.2.tar.xz"
+  mirror "https://dl.cloudsmith.io/public/isc/kea-3-0/raw/versions/3.0.2/kea-3.0.2.tar.xz"
+  sha256 "29f4e44fa48f62fe15158d17411e003496203250db7b3459c2c79c09f379a541"
   license "MPL-2.0"
   head "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
 
