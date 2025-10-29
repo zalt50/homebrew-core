@@ -8,12 +8,12 @@ class Schemathesis < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "628ffbd573541a5d2acb3439e57b45935f891b8d4da5f4785eee7f16d2632cd7"
-    sha256 cellar: :any,                 arm64_sequoia: "0efca2edb82af66aa661f1e6999e1125e22bf687c16aae3229766f0fe0638ea1"
-    sha256 cellar: :any,                 arm64_sonoma:  "129ed3adfd6f3e3c039164e89ceb7fe7cbfed377fd02a4b0ca199a3334d97d08"
-    sha256 cellar: :any,                 sonoma:        "821f3a5d2d77bd211ef2ece12e5833080d0a3f78d1f61f0e0bbc02decdb40252"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf6abee19ef03e768cb0b06da795ea56b93d7a52fb67b1d5ef04433e972dfe97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edc02402bae23dddfc48901a5dd09208c2f752002e93f5b5b63102795e481db9"
+    sha256 cellar: :any,                 arm64_tahoe:   "db11e15e84a190988147baed7534ac2a85058a07dafabf4b2992a4e30b08a432"
+    sha256 cellar: :any,                 arm64_sequoia: "dba56044e7690e6196036577f36fa4c499444afa2ce87144ecbd1e89263109e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "44742d08d294462508edc6be1f6b2ee606db69a9ac180013cf12500fa7276321"
+    sha256 cellar: :any,                 sonoma:        "0e7f063697208aaed0ed94c53a18f8ed343db370e6cb30524e6309fd78182d13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1262154e254b3a31afc8290b792bae688f9fa69cd85a30083ef12615cf199ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e76be5ef0553ba8e287e8ca331bb8dd35de2e758a40edfbe457be6d1d5c58fba"
   end
 
   depends_on "certifi" => :no_linkage
