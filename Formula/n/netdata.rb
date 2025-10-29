@@ -52,6 +52,12 @@ class Netdata < Formula
     depends_on "zstd"
   end
 
+  # Backport fix for arm64 linux
+  patch do
+    url "https://github.com/netdata/netdata/commit/e8d12d47bf6b9c3105363ccafaa53cdc80b2237b.patch?full_index=1"
+    sha256 "b4a541f1528083665e29a5aa4d89786008114ea400aec8ae94d43e34ea7e3944"
+  end
+
   def install
     # Fix to error: no member named 'tcps_sc_zonefail' in 'struct tcpstat'
     # Issue ref: https://github.com/netdata/netdata/issues/20985
