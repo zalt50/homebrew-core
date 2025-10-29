@@ -1,8 +1,8 @@
 class Apptainer < Formula
   desc "Application container and unprivileged sandbox platform for Linux"
   homepage "https://apptainer.org/"
-  url "https://github.com/apptainer/apptainer/releases/download/v1.4.3/apptainer-1.4.3.tar.gz"
-  sha256 "dfb85b8ad48bd366245c7f6a1d0b56d2ce480cfdf18d7a64397098184b4ade90"
+  url "https://github.com/apptainer/apptainer/releases/download/v1.4.4/apptainer-1.4.4.tar.gz"
+  sha256 "eb806e22dabfb6549c398b55e50c747e4c51b57f8879da9e29813de40af54b48"
   license "BSD-3-Clause"
   head "https://github.com/apptainer/apptainer.git", branch: "main"
 
@@ -21,6 +21,8 @@ class Apptainer < Formula
   depends_on "squashfs"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if Hardware::CPU.arm?
+
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
