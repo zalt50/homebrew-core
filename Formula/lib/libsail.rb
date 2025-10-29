@@ -4,6 +4,7 @@ class Libsail < Formula
   url "https://github.com/HappySeaFox/sail/archive/refs/tags/v0.9.10.tar.gz"
   sha256 "dc0d6fa87cb4fa8b514f450a3fb13cee6e3e60f03250f683564fabbec0f722e3"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "5f8c26637695566448fa06d5d0a50084a7b96faf043eacc0515e4d0615e8fa46"
@@ -16,15 +17,15 @@ class Libsail < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "brotli"
   depends_on "giflib"
-  depends_on "highway"
-  depends_on "jasper"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libavif"
+  depends_on "libheif"
   depends_on "libpng"
   depends_on "libtiff"
+  depends_on "openexr"
+  depends_on "openjpeg"
   depends_on "resvg"
   depends_on "webp"
 
