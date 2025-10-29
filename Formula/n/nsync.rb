@@ -1,10 +1,9 @@
 class Nsync < Formula
   desc "C library that exports various synchronization primitives"
   homepage "https://github.com/google/nsync"
-  url "https://github.com/google/nsync/archive/refs/tags/1.29.2.tar.gz"
-  sha256 "1d63e967973733d2c97e841e3c05fac4d3fa299f01d14c86f2695594c7a4a2ec"
+  url "https://github.com/google/nsync/archive/refs/tags/1.30.0.tar.gz"
+  sha256 "883a0b3f8ffc1950670425df3453c127c1a3f6ed997719ca1bbe7f474235b6cc"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2fdf47744fa4557e3c6caafb8688671775c4947ff5748365952b8b66ef817e49"
@@ -19,16 +18,11 @@ class Nsync < Formula
 
   depends_on "cmake" => :build
 
-  # PR ref: https://github.com/google/nsync/pull/24
-  patch :DATA
-
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DNSYNC_ENABLE_TESTS=OFF
     ]
-    # Workaround for CMake 4 compatibility
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
@@ -52,17 +46,3 @@ class Nsync < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index fcc3f41..9dbe677 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -125,7 +125,6 @@ elseif ("${CMAKE_SYSTEM_NAME}X" STREQUAL "DarwinX")
- 		${NSYNC_OS_CPP_SRC}
- 		"platform/c++11/src/nsync_semaphore_mutex.cc"
- 		"platform/posix/src/clock_gettime.c"
--		"platform/posix/src/nsync_semaphore_mutex.c"
- 	)
- elseif ("${CMAKE_SYSTEM_NAME}X" STREQUAL "LinuxX")
- 	set (NSYNC_POSIX ON)
