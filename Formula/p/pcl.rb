@@ -78,6 +78,11 @@ class Pcl < Formula
     # The AppleClang versions shipped on current MacOS versions do not support the -march=native flag on arm
     args << "-DPCL_ENABLE_MARCHNATIVE:BOOL=OFF" if build.bottle?
 
+    # Work around ../../lib/libpcl_cc_tool_interface.a(mocs_compilation.cpp.o):
+    # relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol `...' which may bind
+    # externally can not be used when making a shared object; recompile with -fPIC
+    args << "-DCMAKE_POSITION_INDEPENDENT_CODE=ON" if OS.linux? && Hardware::CPU.arm?
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
