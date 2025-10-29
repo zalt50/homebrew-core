@@ -6,6 +6,7 @@ class McpProxy < Formula
   url "https://files.pythonhosted.org/packages/fc/05/da3d5ccf2b5ff2a99f5295965d7f698604cc359fb4ecc2d23fc5d2111071/mcp_proxy-0.10.0.tar.gz"
   sha256 "d354bd75d0c43e028fb4a0aea57608d53656db0cd7cf94f511a88761a36f8639"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f1f1a7f30e5d2cc0f00fd78c9e4cdafd7535654e0077668c164cc4487e2037ed"
@@ -129,8 +130,8 @@ class McpProxy < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "typing-extensions" do
