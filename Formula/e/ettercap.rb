@@ -40,17 +40,13 @@ class Ettercap < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:    "a1aa67d19c55d86f3cff890fdbe7ce4f46be7aaebbb3f66a76f6dbb9ee95155a"
-    sha256 arm64_sequoia:  "4c2d77df3c85c46b78d941966c625306f0d2054bb3029e14826636a8550b7785"
-    sha256 arm64_sonoma:   "314023a2a65ca174dd90a8e777a0ce694ee24619e419e893a8f3d8a82b004935"
-    sha256 arm64_ventura:  "59f3ecc8f33ff3a865e2b608b8969f8d31e77c8aa82218707cecf21ce466bf60"
-    sha256 arm64_monterey: "ad36dab4532384d39be0e58ce0752b499bfae8cce41c317d6748479707e416d1"
-    sha256 sonoma:         "197cbb987473cb58c67447cd85f104762640df66e2e24f8ab6366539dc3fa087"
-    sha256 ventura:        "385d806561cfbb2513e6b0bb3b487312eaba6e5bdbcfffb36f6004a53f1348e8"
-    sha256 monterey:       "e09c5c23e3f73b224dd8d6be74ca8b80bf24989eaaa786b102d82f2979fda47e"
-    sha256 arm64_linux:    "b82aa41d486d4ee548e666a325bd8a2c7e1e3bfdb40c4431b151628d0995d412"
-    sha256 x86_64_linux:   "ed90068515d35787a0e19066936f3689eea7a1e7ed85ab1119ab60a71c7881d6"
+    rebuild 2
+    sha256 arm64_tahoe:   "2244ce8f708f9889ff92f8861bbae03a92aac0a2cf7457bc0b334301f4bff2bd"
+    sha256 arm64_sequoia: "6d98587a5e98e2db83bf85117ea496c15f114fab7d702459811591af756f3c7c"
+    sha256 arm64_sonoma:  "a72d69fae20cd902444c9aed9ac7c2b34861319ffc2847b0ea2d23723bb8c181"
+    sha256 sonoma:        "9c04bde58b1776e853b1b9092899d28d90270907cd644d889db1fc00f32f18d3"
+    sha256 arm64_linux:   "8f7f88b2aa5083456ebaa7694d2ddafb83c46d0d8fad766e2ea4e583e3e0ffa0"
+    sha256 x86_64_linux:  "e825ecc7c84a08331974048d31b39125c15c8d8d44d002744be0686a000a3b4a"
   end
 
   depends_on "cmake" => :build
