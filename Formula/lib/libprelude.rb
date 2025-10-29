@@ -38,6 +38,16 @@ class Libprelude < Formula
     sha256 "cd03b3dc208c2a4168a0a85465d451c7aa521bf0b8446ff4777f2c969be386ba"
   end
 
+  # Apply Debian patch to fix segmentation fault on arm64 linux
+  patch do
+    on_linux do
+      on_arm do
+        url "https://sources.debian.org/data/main/libp/libprelude/5.2.0-5/debian/patches/005-fix_pthread_atfork.patch"
+        sha256 "5d3e2961b9901fe2109516c422956f20685da780dfd550d7741f61f5e43f7d0c"
+      end
+    end
+  end
+
   def python3
     "python3.12"
   end
