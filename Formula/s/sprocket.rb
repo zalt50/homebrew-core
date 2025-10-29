@@ -1,10 +1,17 @@
 class Sprocket < Formula
   desc "Bioinformatics workflow engine built on the Workflow Description Language (WDL)"
   homepage "https://sprocket.bio"
-  url "https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "cf72f8d4930ce16ae3adc73f82c9ed82aceb8f09330e5f78658a88e0b5d99986"
+  # pull from git tag to get submodules
+  url "https://github.com/stjude-rust-labs/sprocket.git",
+      tag:      "v0.18.0",
+      revision: "3f19960e232ac96af539ab8aeda7a8101832d213"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "900f29532e238df4be8d3b87b4c6be773df42df2027aaa38bc0bc685831442ce"
@@ -52,8 +59,8 @@ class Sprocket < Formula
 
     expected = <<~JSON.strip
       {
-        "say_hello.greeting": "String",
-        "say_hello.name": "String"
+        "say_hello.greeting": "String <REQUIRED>",
+        "say_hello.name": "String <REQUIRED>"
       }
     JSON
 
