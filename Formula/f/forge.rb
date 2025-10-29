@@ -33,7 +33,6 @@ class Forge < Formula
   depends_on "pkgconf" => :build
 
   depends_on "fontconfig"
-  depends_on "freeimage"
   depends_on "freetype"
   depends_on "glfw"
   depends_on "glm"
@@ -44,6 +43,10 @@ class Forge < Formula
   end
 
   def install
+    # FreeImage has multiple CVEs (https://github.com/arrayfire/forge/issues/248) and has
+    # been dropped by distros like Arch Linux (https://archlinux.org/todo/drop-freeimage/).
+    odie "FreeImage should not be a dependency!" if deps.map(&:name).include?("freeimage")
+
     system "cmake", "-S", ".", "-B", "build", "-DFG_BUILD_EXAMPLES=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
