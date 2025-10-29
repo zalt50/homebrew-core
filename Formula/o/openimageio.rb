@@ -42,8 +42,7 @@ class Openimageio < Formula
   depends_on "python@3.14"
   depends_on "tbb"
   depends_on "webp"
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   # https://github.com/AcademySoftwareFoundation/OpenImageIO/blob/main/INSTALL.md
   fails_with :gcc do
