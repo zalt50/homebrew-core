@@ -1,9 +1,8 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_2;sf=tgz"
-  version "7.9.2"
-  sha256 "e9f69bde521e718f10f1896e5bea070fbd5dfb205d8da422f5be2d521db666c5"
+  url "https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V7_9_2.tar.gz"
+  sha256 "3cd080d3fc33ba0c6c157e110afe3e015859524c4694dbb09812ec9d61595639"
   license "LGPL-2.1-only"
 
   # The first-party download page (https://dev.opencascade.org/release)
@@ -33,7 +32,6 @@ class Opencascade < Formula
   depends_on "doxygen" => :build
   depends_on "rapidjson" => :build
   depends_on "fontconfig"
-  depends_on "freeimage"
   depends_on "freetype"
   depends_on "tbb"
   depends_on "tcl-tk@8" # TCL 9 issue: https://tracker.dev.opencascade.org/view.php?id=33725
@@ -44,20 +42,20 @@ class Opencascade < Formula
   end
 
   def install
-    # Fix incorrect version
-    inreplace "adm/cmake/version.cmake", "set (OCC_VERSION_MAINTENANCE 1 )", "set (OCC_VERSION_MAINTENANCE 2 )"
+    # FreeImage has multiple CVEs and has been dropped by distros like Arch Linux
+    # Ref: https://archlinux.org/todo/drop-freeimage/
+    odie "FreeImage should not be a dependency!" if deps.map(&:name).include?("freeimage")
 
     tcltk = Formula["tcl-tk@8"]
     libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
     libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DUSE_FREEIMAGE=ON",
+                    "-DUSE_FREEIMAGE=OFF",
                     "-DUSE_RAPIDJSON=ON",
                     "-DUSE_TBB=ON",
                     "-DINSTALL_DOC_Overview=ON",
                     "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
-                    "-D3RDPARTY_FREEIMAGE_DIR=#{Formula["freeimage"].opt_prefix}",
                     "-D3RDPARTY_FREETYPE_DIR=#{Formula["freetype"].opt_prefix}",
                     "-D3RDPARTY_RAPIDJSON_DIR=#{Formula["rapidjson"].opt_prefix}",
                     "-D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{Formula["rapidjson"].opt_include}",
