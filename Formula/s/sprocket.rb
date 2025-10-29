@@ -14,12 +14,12 @@ class Sprocket < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "900f29532e238df4be8d3b87b4c6be773df42df2027aaa38bc0bc685831442ce"
-    sha256 cellar: :any,                 arm64_sequoia: "5ee7d0e3d30fe78fd7a6cf97940710ab23e6d8e2cbb945fb70f01aef88ce9717"
-    sha256 cellar: :any,                 arm64_sonoma:  "4a2ec2fa95e2bd0196435e40541b4800bf8258dee998637929b621201d09f795"
-    sha256 cellar: :any,                 sonoma:        "fa4ce7cd37fac0a61e0fe2c45d506101e1681264b8b16eba30be67a187363f79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7929b4f8f95be452937e95c2ac58774beebd06464cab42aad772360fdcbecd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b60cea4c2d9916e741fdfd6b573edffe06721340f39485a242ffdbee42e3be1b"
+    sha256 cellar: :any,                 arm64_tahoe:   "a918c88d1763c710a25b4f8c5f1948d8e3ef2a691fc0648d34bdb2985aa62f6f"
+    sha256 cellar: :any,                 arm64_sequoia: "c5e4197d5538054f53c52d913b76279418b17f4fb9d21eaa3df0f2a5f2185208"
+    sha256 cellar: :any,                 arm64_sonoma:  "c54e8c7d944f5bdc3629e9570514683671f643e03c56c0278b1f9a091a4ff6d0"
+    sha256 cellar: :any,                 sonoma:        "716ad267bcb384d7426b5400da2aeff12248d2f14058a33acf607641104262da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cd2e170f6047a11b389b3fad33d2678b35909e6bb9271221bb1440f5cc62d3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5f9aa2bb7563e48898cb0562e5b03909dceb53d0dbec30419af68ce81603cb4"
   end
 
   depends_on "pkgconf" => :build
