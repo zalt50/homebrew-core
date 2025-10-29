@@ -1,8 +1,8 @@
 class Qbec < Formula
   desc "Configure Kubernetes objects on multiple clusters using jsonnet"
   homepage "https://qbec.io"
-  url "https://github.com/splunk/qbec/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "f2b2bde6cb70e6721f776214bfe23f36bd3f1ee3ca0ec1ece88cd15da7ac06dc"
+  url "https://github.com/splunk/qbec/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "65a3c7601d71ef65af5471807e138481959ffbe28ef65b6f8e87d308f4e60a6b"
   license "Apache-2.0"
   head "https://github.com/splunk/qbec.git", branch: "main"
 
