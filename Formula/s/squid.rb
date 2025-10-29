@@ -15,12 +15,12 @@ class Squid < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "3c24a5f1cb2a991860831a3dac5bcf94b7921231d593953f0072fcb4d60b35a8"
-    sha256 arm64_sequoia: "25eb944f397881be303d454d4177a167f369b2232a93ee327545bb7e97e96c69"
-    sha256 arm64_sonoma:  "f65d585f6909c5e49aa7984b5d2dea4ba225b31c3923f2d9ff2dc03cf13bfcca"
-    sha256 sonoma:        "171aeec1c40349702836054f49a787dbebaa0b57fcfc88c1047768bb574e9ab3"
-    sha256 arm64_linux:   "837d738110e896b847a166337cdc0aef183e790abb779984dddd39c43f100d0a"
-    sha256 x86_64_linux:  "f3bb698cb95dcdb2e78712cfc4652a3ef11df72aae17dea08789d1b741aecd04"
+    sha256 arm64_tahoe:   "9bbca04a45b49503c0f9b936aab993fd17a00213a4e76649ec5ddc2316042922"
+    sha256 arm64_sequoia: "49501db2c4b7921131f37025d26513dec1ba817407184a61a077dff8c8310143"
+    sha256 arm64_sonoma:  "1faee147f4720de4c88fec34f73fb4e1468c8f24794ef893eada83c0d33ae090"
+    sha256 sonoma:        "b57c7f8e1a09663f5b560c9e41b797107932bf9918a850cfd6280ce7a260f8fa"
+    sha256 arm64_linux:   "2e61d953c90f9093df8db0a5f1f3289955ea9212194948cbc081d4a8a6fb2670"
+    sha256 x86_64_linux:  "ce7f04ed768aaf3696bba47d0062e1a828ae4ebe550b5f88487c0e70aa0d1687"
   end
 
   head do
