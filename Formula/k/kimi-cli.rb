@@ -9,12 +9,12 @@ class KimiCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "227fc4bfcc72380a2d5a197944e06898e7e2a60946a8a16588154cd39baa5577"
-    sha256 cellar: :any,                 arm64_sequoia: "1d9c07d2d1fe9d2893f3bf838f0d845804a93ceee9d348ffce1562c6d5adeb46"
-    sha256 cellar: :any,                 arm64_sonoma:  "721f5669050b54d63da26634d457af91b4c659da94aeddbe73a3971662359dfb"
-    sha256 cellar: :any,                 sonoma:        "50cedea5742cbd150f4024b883bd7d492d32c45340cfa7f61971770f520f7294"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90cd4088b8eaf87c62048ca03e8b9d1ff386e0f21aa190c7f0412c02904c07df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64c64cb598503fbf004f4b9243703b1d1af2a28dd8d34d9bf998446c9613c19f"
+    sha256 cellar: :any,                 arm64_tahoe:   "f1f1ac80a2d133ae34a7730a5f406403169276d2ca73743d0d28d65594716a56"
+    sha256 cellar: :any,                 arm64_sequoia: "7c87014c16ab652c74dfd1e59c8965db57572afe5e3bff14eb980c1eb0017948"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1b1249780a18c95f221e0e6f81b021abb5bf4de61a6b43d948435110cfc1601"
+    sha256 cellar: :any,                 sonoma:        "5254ded4d29e36e2fe9604872b0f0d455095551a565627dc7414caa378e5a551"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69b6855726f12fd23c76eb8b7cdd4779f42ee7abed68c5a918bee68b8b3561d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6ed7891d21a1248fd4b3caa1412b01a6073c050161495e9a1543a18f416ce5"
   end
 
   depends_on "pkgconf" => :build
