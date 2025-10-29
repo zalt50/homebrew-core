@@ -6,14 +6,12 @@ class Wgo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6990624fe3f87d1eff2f87d58fe7154fc8446a7ecd35ba56e2b0b0997ac693b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78157d813cf8873382ee72b9d2aa8d842e89746fd52921be2a6f6d0152deac13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78157d813cf8873382ee72b9d2aa8d842e89746fd52921be2a6f6d0152deac13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "78157d813cf8873382ee72b9d2aa8d842e89746fd52921be2a6f6d0152deac13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e5a3c3e58b374ffbf760343e3f06e3ffa0eef05d5cce3805972af1ba6572150"
-    sha256 cellar: :any_skip_relocation, ventura:       "2e5a3c3e58b374ffbf760343e3f06e3ffa0eef05d5cce3805972af1ba6572150"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d274c4983c5d924d0b11f3b260b3a08ab63e012cceab9968d79a0b7197ba55b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d47f8b6a742e5e07968ce8f37c85e0888806cc1071d3db786aa0e73e763cb2bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "395cb5a0eeaafa8a6ee2b2c9ecd1b5a4ee8b9be6b0618aa3e0cde0d86c34bb8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "395cb5a0eeaafa8a6ee2b2c9ecd1b5a4ee8b9be6b0618aa3e0cde0d86c34bb8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "395cb5a0eeaafa8a6ee2b2c9ecd1b5a4ee8b9be6b0618aa3e0cde0d86c34bb8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8359d00255875e5ec9a248e6775666b34f6a89f883e7062a571286d3ca67a9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bae3cfab9891153f2aa31d0930b95fd9ded449cbf0387e098a70ab3142e143b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d47060c6e8f58748c77440e8ad453ae682bf41b44f1546010853182ef4756250"
   end
 
   depends_on "go" => :build
