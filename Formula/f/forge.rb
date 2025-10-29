@@ -18,6 +18,7 @@ class Forge < Formula
     sha256 cellar: :any,                 arm64_sequoia: "8c0915cfdc9484eebbe0252e8738eb16ae63b7c190a81b601488f1d8b7bad1f5"
     sha256 cellar: :any,                 arm64_sonoma:  "64fad9bd021d5d62a6242e6d5779ce8ae9d99b287507807289fce8ce6a77fce8"
     sha256 cellar: :any,                 sonoma:        "4dd5af8ea60cb6b21df5db738bd2f4da9197f31a6c57858a0915533d0d26cf2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f457ab3e2f70eb0b2b4c98fb9fd7ce6714c99c2d05088f9568d1f350718557ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "36ab3de65058a78ead732348764aae2bfbc0c3d30c0ad36c4969ff91f5fe8775"
   end
 
