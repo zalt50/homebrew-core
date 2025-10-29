@@ -1,14 +1,16 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.7.tar.gz"
-  mirror "https://github.com/lsh123/xmlsec/releases/download/1.3.7/xmlsec1-1.3.7.tar.gz"
-  sha256 "d82e93b69b8aa205a616b62917a269322bf63a3eaafb3775014e61752b2013ea"
+  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.8.tar.gz"
+  mirror "https://github.com/lsh123/xmlsec/releases/download/1.3.8/xmlsec1-1.3.8.tar.gz"
+  sha256 "d0180916ae71be28415a6fa919a0684433ec9ec3ba1cc0866910b02e5e13f5bd"
   license "MIT"
 
+  # Checking the first-party download page persistently fails in the autobump
+  # environment, so we check GitHub releases as a workaround.
   livecheck do
-    url "https://www.aleksey.com/xmlsec/download/"
-    regex(/href=.*?xmlsec1[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://github.com/lsh123/xmlsec"
+    strategy :github_latest
   end
 
   bottle do
