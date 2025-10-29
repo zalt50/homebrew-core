@@ -26,6 +26,7 @@ class Opencascade < Formula
     sha256 cellar: :any,                 arm64_sequoia: "450ba8e8785c1348a3a7254d20847de69a237b39c1dc6bdb50218e1c3e306380"
     sha256 cellar: :any,                 arm64_sonoma:  "39160ae92917d9be76d9c79056a8bfdc41b3d129eada5474be5538d98c9db912"
     sha256 cellar: :any,                 sonoma:        "90aab756f98430cf0d80a62e9ef3725117900a4784080039c821166d2f621e0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6855b87069a1f30230b0c2b359b19518e155f2bdfc35be94b7aecb63dac97a11"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0a579da97350eb4843ed2a1d77c106ea74329a2b8d4e9e74bbbd150896d2e32"
   end
 
