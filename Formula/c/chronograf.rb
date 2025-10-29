@@ -17,14 +17,35 @@ class Chronograf < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node" => :build
+  # Avoid C++20 from Node 23+ until "@parcel/watcher >= 2.2.0" for "node-addon-api >= 4"
+  # Issue ref: https://github.com/nodejs/node-addon-api/issues/1007
+  depends_on "node@22" => :build
+  depends_on "python-setuptools" => :build
   depends_on "yarn" => :build
   depends_on "influxdb"
   depends_on "kapacitor"
 
   def install
-    # Fix build with latest node: https://github.com/influxdata/chronograf/issues/6040
-    system "yarn", "upgrade", "nan@^2.13.2", "--dev", "--ignore-scripts"
+    # Check if workarounds can be removed
+    if build.stable?
+      yarn_lock = File.read("yarn.lock")
+
+      # distutils usage removed in https://github.com/nodejs/node-gyp/commit/707927cd579205ef2b4b17e61c1cce24c056b452
+      node_gyp_version = Version.new(yarn_lock[%r{/node-gyp[._-]v?(\d+(?:\.\d+)+)\.t}i, 1])
+      odie "Remove `python-setuptools` dependency!" if node_gyp_version >= 10
+
+      # node 22 (V8 12) fix in https://github.com/nodejs/nan/commit/1b630ddb3412cde35b64513662b440f9fd71e1ff
+      nan_version = Version.new(yarn_lock[%r{/nan[._-]v?(\d+(?:\.\d+)+)\.t}i, 1])
+      odie "Remove `nan` resolution workaround!" if nan_version >= "2.19.0"
+    end
+
+    # Workaround to build with newer node until `nan` dependency is updated
+    # https://github.com/influxdata/chronograf/issues/6040
+    package_json = JSON.parse(File.read("package.json"))
+    (package_json["resolutions"] ||= {})["nan"] = "2.23.0"
+    File.write("package.json", JSON.pretty_generate(package_json))
+
+    ENV["npm_config_build_from_source"] = "true"
     ENV.deparallelize
     system "make"
     bin.install "chronograf"
