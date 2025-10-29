@@ -21,11 +21,12 @@ class Opencascade < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4660451ad938efaa9866c11e26feaf6477e9ffc2ed465ec0e9c9ee3e883aa1c7"
-    sha256 cellar: :any,                 arm64_sequoia: "909aa33f35f20ba42068fcc35030389f878f6fa71dafa481148bcc40a1224922"
-    sha256 cellar: :any,                 arm64_sonoma:  "192f5b9934455b54a1e4d90b7bfa4b0f983aea39ceae5f75ff49e09d519ccb01"
-    sha256 cellar: :any,                 sonoma:        "94081fbc6d9504ef3fd83ca3d76cdd86ca3808d009b68c6e33a6920bb724c314"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3878643a038002cd189e57aff2dd2424159cc46b8126ae16b08c2d40df707926"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "05c90efe2139c4c46c4f53536e554d356765281b824301ca21f62d5264fa1473"
+    sha256 cellar: :any,                 arm64_sequoia: "450ba8e8785c1348a3a7254d20847de69a237b39c1dc6bdb50218e1c3e306380"
+    sha256 cellar: :any,                 arm64_sonoma:  "39160ae92917d9be76d9c79056a8bfdc41b3d129eada5474be5538d98c9db912"
+    sha256 cellar: :any,                 sonoma:        "90aab756f98430cf0d80a62e9ef3725117900a4784080039c821166d2f621e0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0a579da97350eb4843ed2a1d77c106ea74329a2b8d4e9e74bbbd150896d2e32"
   end
 
   depends_on "cmake" => [:build, :test]
