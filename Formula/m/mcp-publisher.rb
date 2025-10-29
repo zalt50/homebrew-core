@@ -1,18 +1,18 @@
 class McpPublisher < Formula
   desc "Publisher CLI tool for the Official Model Context Protocol (MCP) Registry"
   homepage "https://github.com/modelcontextprotocol/registry"
-  url "https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.3.6.tar.gz"
-  sha256 "3807baed298714540b24126f16a6297f74cb526a69b6657af985d60975db3e02"
+  url "https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.3.7.tar.gz"
+  sha256 "9ef6546d443f8b0fc08705e0ac048b72236855ceb484423e953835f7b8866f79"
   license "MIT"
   head "https://github.com/modelcontextprotocol/registry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bca969bf1f9e707955ab5cbd559f8ff3bc67f526988daf8d1daa58c97b652c92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca969bf1f9e707955ab5cbd559f8ff3bc67f526988daf8d1daa58c97b652c92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bca969bf1f9e707955ab5cbd559f8ff3bc67f526988daf8d1daa58c97b652c92"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e4483f7787d1feebbc54af7acb6d4b70bfbf77279fa7db775f04214a3fe560e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9daef2621ad03312612b04e127cc737f3f19129d07ebc0fbaae3aba00459ed56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24a6e9cae5b3957b8fe53872af3bbb29671b83d74e60faf9a99663234297a626"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60865ad5bf91a806deffe1bcd648178caea86dc6057af6ace1e1db44c2a8a5ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60865ad5bf91a806deffe1bcd648178caea86dc6057af6ace1e1db44c2a8a5ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60865ad5bf91a806deffe1bcd648178caea86dc6057af6ace1e1db44c2a8a5ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b5461216e5db944a012b07a4fac8c90b598818b621483fb2866e6997ba886b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be027b837d4dd80c95fcc40da741317fc1c865581477e2762b2a834b96ef6078"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c33653b79eb58d4cfc4e85597e82c891c13380053523489150cf27128ae41fd"
   end
 
   depends_on "go" => :build
