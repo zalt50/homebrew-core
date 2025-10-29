@@ -6,6 +6,7 @@ class Mcpm < Formula
   url "https://files.pythonhosted.org/packages/00/8b/3a50e60c76b6d97417cf4e01e25701caa0cb71422af3134f9560fdf7eb89/mcpm-2.9.0.tar.gz"
   sha256 "2a054d47e0540de708268d9d59947af855c62052b9d73d550225505779679916"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 2
@@ -185,8 +186,8 @@ class Mcpm < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/89/fc/889242351a932d6183eec5df1fc6539b6f36b6a88444f1e63f18668253aa/psutil-7.1.1.tar.gz"
-    sha256 "092b6350145007389c1cfe5716050f02030a05219d90057ea867d18fe8d372fc"
+    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
+    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
   end
 
   resource "pydantic" do
@@ -210,8 +211,8 @@ class Mcpm < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-multipart" do
@@ -235,8 +236,8 @@ class Mcpm < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/9d/90/95cff624a176de6d00a4ddc4fb0238649bca09c19bd37d5b8d1962f8dcfc/rich_click-1.9.3.tar.gz"
-    sha256 "60839150a935604df1378b159da340d3fff91f912903e935da7cb615b5738c1b"
+    url "https://files.pythonhosted.org/packages/bf/d8/f2c1b7e9a645ba40f756d7a5b195fc104729bc6b19061ba3ab385f342931/rich_click-1.9.4.tar.gz"
+    sha256 "af73dc68e85f3bebb80ce302a642b9fe3b65f3df0ceb42eb9a27c467c1b678c8"
   end
 
   resource "rich-color-ext" do
@@ -270,8 +271,8 @@ class Mcpm < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "tomli" do
