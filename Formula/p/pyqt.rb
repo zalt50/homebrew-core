@@ -11,6 +11,7 @@ class Pyqt < Formula
     sha256 cellar: :any,                 arm64_sequoia: "833063eb751c9f567fc44419b8b9dd684f549bfd17cf1eb712f34fe99793e788"
     sha256 cellar: :any,                 arm64_sonoma:  "a3e3d4d23c601a5c934ea3716b279d08c087eb133db0fbcac08797cd3ba8bfa1"
     sha256 cellar: :any,                 sonoma:        "26409133a114e2bdd390d46d417bbec3d3431278accb45d078109576e7f06d40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "436ddf3b8bb890928733f18731bb67b1b9ebe55761a9e1226c587a808fbd69ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ecd65eba914578b6de62620a246926d98f2c51db9d1cc099ae89795b51043ab"
   end
 
