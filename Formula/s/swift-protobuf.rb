@@ -1,8 +1,11 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https://github.com/apple/swift-protobuf"
-  url "https://github.com/apple/swift-protobuf/archive/refs/tags/1.32.0.tar.gz"
-  sha256 "630887931bb51260f1602d2641e4a1dff3db260ed8ba62092cb9651007d7a115"
+  # We use a git checkout as swift needs to find submodule files specified
+  # in Package.swift even though they aren't built for `protoc-gen-swift`
+  url "https://github.com/apple/swift-protobuf.git",
+      tag:      "1.33.3",
+      revision: "c169a5744230951031770e27e475ff6eefe51f9d"
   license "Apache-2.0"
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
@@ -31,7 +34,7 @@ class SwiftProtobuf < Formula
     else
       ["--static-swift-stdlib"]
     end
-    system "swift", "build", *args, "-c", "release"
+    system "swift", "build", *args, "-c", "release", "--product", "protoc-gen-swift"
     bin.install ".build/release/protoc-gen-swift"
     doc.install "Documentation/PLUGIN.md"
   end
