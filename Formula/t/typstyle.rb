@@ -7,12 +7,12 @@ class Typstyle < Formula
   head "https://github.com/typstyle-rs/typstyle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b240422fe58922b24803d4c8f5831da7f7b4dd36dec7ab3757b4596152315ebf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff803f16fbe3333da8db943a58c73583ef61e7f62dac3c15a9d2ce17b8b09f2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "072c0192042b9aa7ce98f881d0c147869fb0c2191764ed2a7fae10f1f3be413f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "27c986e285f17c1e59a0b07a5b13d5868031d70e11c93a9f2695490de4d95451"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b41bd5981eb41a879ec88748a1b090ce145de90c74f3a42464f5bf6dcd1bf5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a83f495d4bb7bada45f42de2c45f6cb3bdfef09f8ee44e409a2ab6051905a24f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cac2fb3c996e48fc566eafb3098bdc4f69314dbfb9472b8640a326c0cd246c98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f3e172415c655e2a28df13792cf81f4cf70958f86c9447410a006017937d6c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1fcf6b6a08b4fa9af73bd931779fca76d627156e4754c21137db8bb1d15a085"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08b719ed51fb0f422b4b904fd9716c0ef3e7ae287405f0a0eba3f3d9e98517fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c0d60dda2506dc7649b2a45af0a57264fd5adb03e5fcf42b95285e16b5af463"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfe607bd48a10a001d35d12f58383ee2f5379669738808e211dca5e21a5f7c3c"
   end
 
   depends_on "rust" => :build
