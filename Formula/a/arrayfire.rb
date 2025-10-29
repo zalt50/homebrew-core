@@ -12,6 +12,7 @@ class Arrayfire < Formula
     sha256 cellar: :any,                 arm64_sequoia: "8150e85b70b32027bc8c87a55b13b546b7dc6405458306112606a4c7965a45ae"
     sha256 cellar: :any,                 arm64_sonoma:  "66dc68b838926eb3d689a0e9a9fcb7deeaf9b90f4f809f419ef0ba8a7f031a44"
     sha256 cellar: :any,                 sonoma:        "7b0f4d0fde20847ba10c28ed6be785bd03ca904e0b916d27faf21a11e67e92c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68cc847cd44e1e1b1243f7dfbef1e1993c1d680f5e991409b23d94d3ef2114a3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2893d19f51840edf453d8f85da08c1864cc8cb539e00d12fb8e78f1808a83295"
   end
 
