@@ -20,7 +20,6 @@ class Arrayfire < Formula
   depends_on "clblast"
   depends_on "fftw"
   depends_on "fmt"
-  depends_on "freeimage"
   depends_on "openblas"
   depends_on "spdlog"
 
@@ -44,6 +43,10 @@ class Arrayfire < Formula
   patch :DATA
 
   def install
+    # FreeImage has multiple CVEs (https://github.com/arrayfire/arrayfire/issues/3547) and
+    # has been dropped by distros like Arch Linux (https://archlinux.org/todo/drop-freeimage/).
+    odie "FreeImage should not be a dependency!" if deps.map(&:name).include?("freeimage")
+
     # Fix for: `ArrayFire couldn't locate any backends.`
     rpaths = [
       rpath(source: lib, target: Formula["fftw"].opt_lib),
