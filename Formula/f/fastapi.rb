@@ -6,19 +6,21 @@ class Fastapi < Formula
   url "https://files.pythonhosted.org/packages/40/cc/28aff6e246ee85bd571b26e4a793b84d42700e3bdc3008c3d747eda7b06d/fastapi-0.120.1.tar.gz"
   sha256 "b5c6217e9ddca6dfcf54c97986180d4a1955e10c693d74943fc5327700178bff"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e0e96c5fc236544936e7b6615eb662a8ed445892fb0587cbac8a440e47810be5"
-    sha256 cellar: :any,                 arm64_sequoia: "b66e033c94cb791406f36ab77f3fc0b3c2deb2cfe32569f5da8cf242812e62cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d5578b5d1478ff37ec93da790fa0e22f70220292b9167cdc835b3619179fe21"
-    sha256 cellar: :any,                 sonoma:        "5a91e686ec91f8f59d310758a9fb5fca1310cca9dd7e0dea3801ce09f67faba1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fd91e6ffe6abdeb80be6da9dabb9dff89538386e84fb988f9ba69c6b059d49b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08e30a88e904a3295ebc8e3563beb2e025d9f12ca09586719c2836d77905c72a"
+    sha256 cellar: :any,                 arm64_tahoe:   "0f3b8592f830725311d5190e9de975e6c836fb9ea2dc9727d7649545a23c8dd0"
+    sha256 cellar: :any,                 arm64_sequoia: "adfb90ceae9c3a779b7d6b3b3b56febaa30322df520b169de461933bf27ce5b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1c2d052c5473138a53246f0813db29ecc32d76adc92206e6713cc3af76196b7"
+    sha256 cellar: :any,                 sonoma:        "fc15e4976c451b2cf5ceb4fc36d5dfd5e90c29558f3cdb892cc11391d076ef73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6692ba3dbd5440d4e2df8e05e2ee624432037a78111118248b94fa185de8edde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f60d2b6a78eb017a11420252b160d2b8b2a80634f11524e8cee9fe816a7569e2"
   end
 
-  depends_on "rust" => :build # for pydantic
-  depends_on "certifi"
+  depends_on "rust" => :build # for annotated-doc
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
@@ -26,7 +28,7 @@ class Fastapi < Formula
   uses_from_macos "libxslt"
 
   pypi_packages package_name:     "fastapi[standard]",
-                exclude_packages: "certifi"
+                exclude_packages: ["certifi", "pydantic-core"]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/d7/a6/dc46877b911e40c00d395771ea710d5e77b6de7bacd5fdcd78d70cc5a48f/annotated_doc-0.0.3.tar.gz"
@@ -118,11 +120,6 @@ class Fastapi < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -174,18 +171,13 @@ class Fastapi < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "typer" do
     url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
     sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do
