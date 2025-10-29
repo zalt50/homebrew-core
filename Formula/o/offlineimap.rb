@@ -9,13 +9,12 @@ class Offlineimap < Formula
   head "https://github.com/OfflineIMAP/offlineimap3.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b2f3a0fd3ac8f2633e4787ba3e6874a38113a2762f720557999abe906c754db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe87903fa864769f72337b116bbd9e14f3ee79614a811b0a85cbc6ab8d2edd19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1a28a3ca108dae4e0bc04832cda86fc8c808d4e171e0df6e8bb900e132570f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eea4147c9b8aec69ccc1974caf0d08677cc370e98e690bc917405b7706256777"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b94a7824487d05f8565187c89317a0e703e1cf686ec74bfbbafaeac93818dca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9125706c6663f9878214df3a4943178b9c83617e48627d962532c547a229b4dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f251f42c4fa68a9fbc3f3b8778f96d5b64753cd5f9c1ca0c3d8ed563239f3acf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f251f42c4fa68a9fbc3f3b8778f96d5b64753cd5f9c1ca0c3d8ed563239f3acf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f251f42c4fa68a9fbc3f3b8778f96d5b64753cd5f9c1ca0c3d8ed563239f3acf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "965d0ae92184e0f04e1739fef4fff253affbced651c03646b777d0b360d4c869"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "965d0ae92184e0f04e1739fef4fff253affbced651c03646b777d0b360d4c869"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "965d0ae92184e0f04e1739fef4fff253affbced651c03646b777d0b360d4c869"
   end
 
   depends_on "certifi"
