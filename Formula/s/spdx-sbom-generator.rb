@@ -25,12 +25,13 @@ class SpdxSbomGenerator < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    target = if Hardware::CPU.arm?
-      "build-mac-arm64"
-    elsif OS.mac?
-      "build-mac"
-    else
+    target = if OS.linux?
+      inreplace "Makefile", "GOARCH=amd64", "GOARCH=arm64" if Hardware::CPU.arm?
       "build"
+    elsif Hardware::CPU.arm?
+      "build-mac-arm64"
+    else
+      "build-mac"
     end
 
     system "make", target
