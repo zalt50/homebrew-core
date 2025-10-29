@@ -6,8 +6,7 @@ class Semtag < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "933179267efd127dbeca0f0b337bdb6eb1150ef3c8706759195b00a0a30bb16b"
+    sha256 cellar: :any_skip_relocation, all: "604f7f8fae481b73da08c4c4465852d2b955954df5401961bd4a2c16ad7918af"
   end
 
   depends_on "bash" # Needs Bash 4.x>
