@@ -41,7 +41,7 @@ jobs:
         stable: [false, true]
     name: tap_syntax${{ matrix.stable && ' (stable)' || '' }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.stable }}
+    continue-on-error: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'CI-no-fail-fast-syntax') }}
     container:
       image: ghcr.io/homebrew/ubuntu22.04:${{ matrix.stable && 'latest' || 'main'}}
     env:
