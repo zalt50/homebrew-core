@@ -28,12 +28,15 @@ class Bsdiff < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "648a52a8af8e8f17feb9e34168dd0f00abfc98e9f0f3aa7fd88fb1458a782098"
   end
 
-  depends_on "bsdmake" => :build
+  depends_on "bmake" => :build
+
+  uses_from_macos "bzip2"
 
   patch :DATA
 
   def install
-    system "bsdmake"
+    ENV.append "LDLIBS", "-lbz2" unless OS.mac?
+    system "bmake"
     bin.install "bsdiff"
     man1.install "bsdiff.1"
   end
