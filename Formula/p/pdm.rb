@@ -13,6 +13,7 @@ class Pdm < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d734ef0c46ee89733a80cbd1797905f51c5193919c222885692c4b0d43b272f9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bf712b50be5d322573d581de3554686a2fe142dbc8071447ee6789f26fcffde"
     sha256 cellar: :any_skip_relocation, sonoma:        "f48d583ed2b142d0bc0a9d3cb0dc1084e6479a92895633ae95c183ad7e448bc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7bc98b83a556cba341286f386d8302092c603fffa392463aa6e015dda41e97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7fd10f5c2ea5e6ce4fb87939c77fd48e8072b41e794a561b4fee22510cc23c0"
   end
 
