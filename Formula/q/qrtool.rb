@@ -1,8 +1,8 @@
 class Qrtool < Formula
   desc "Utility for encoding or decoding QR code"
   homepage "https://sorairolake.github.io/qrtool/book/index.html"
-  url "https://github.com/sorairolake/qrtool/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "05f5c0abf7d312ed72a827426543969ca723d42068cd77e36e480cd670931893"
+  url "https://github.com/sorairolake/qrtool/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "f3a088d11e60439f3cc7970572cc50d4f61163439ea9205aaf16843ec8a7e69c"
   license all_of: [
     "CC-BY-4.0",
     any_of: ["Apache-2.0", "MIT"],
