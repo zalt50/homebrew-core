@@ -6,6 +6,14 @@ class HarborCli < Formula
   license "Apache-2.0"
   head "https://github.com/goharbor/harbor-cli.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7dba396bcb743afdb4369377188da49c0c7c9401ca02cda017a67f10c7366c0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7dba396bcb743afdb4369377188da49c0c7c9401ca02cda017a67f10c7366c0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dba396bcb743afdb4369377188da49c0c7c9401ca02cda017a67f10c7366c0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "21873226774fb128fe5b9762315e54f7a22aaccd781e9a658546e88a8d648b91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e78633ed481ca1e21566ea4036a3cdc5c8cbc7276da376d5c37efe96f9b4f1f0"
+  end
+
   depends_on "go" => :build
 
   def install
