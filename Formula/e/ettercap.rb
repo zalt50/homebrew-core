@@ -3,12 +3,11 @@ class Ettercap < Formula
   homepage "https://ettercap.github.io/ettercap/"
   license "GPL-2.0-or-later"
   revision 2
+  head "https://github.com/Ettercap/ettercap.git", branch: "master"
 
   stable do
     url "https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.3.1.tar.gz"
     sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
-
-    depends_on "pcre"
 
     # Part of libmaxminddb backport that cannot be added via patch.
     # Remove in the next release along with corresponding install
@@ -29,6 +28,13 @@ class Ettercap < Formula
       url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/ettercap/libmaxminddb-backport.diff"
       sha256 "b7869963df256af7cfae0f9e936e6dac4ec51a8b38dcfef6ea909e81e3ab8d0e"
     end
+
+    # Apply Debian's upstreamed patch for pcre2 support. Remove in the next release.
+    # https://github.com/Ettercap/ettercap/commit/b1686d46792aecc10662e4a8ec221c9727661878
+    patch do
+      url "https://sources.debian.org/data/main/e/ettercap/1%3A0.8.3.1-15/debian/patches/1170.patch"
+      sha256 "a3c426d36f84487bbdb5d02b831df295af33373fcb59ee81254cee6807a50a4c"
+    end
   end
 
   no_autobump! because: :requires_manual_review
@@ -47,12 +53,6 @@ class Ettercap < Formula
     sha256 x86_64_linux:   "ed90068515d35787a0e19066936f3689eea7a1e7ed85ab1119ab60a71c7881d6"
   end
 
-  head do
-    url "https://github.com/Ettercap/ettercap.git", branch: "master"
-
-    depends_on "pcre2"
-  end
-
   depends_on "cmake" => :build
   depends_on "gdk-pixbuf"
   depends_on "glib"
@@ -61,6 +61,7 @@ class Ettercap < Formula
   depends_on "libnet"
   depends_on "ncurses"
   depends_on "openssl@3"
+  depends_on "pcre2"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -89,7 +90,7 @@ class Ettercap < Formula
 
     args = %W[
       -DBUNDLED_LIBS=OFF
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib/"ettercap")}
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DENABLE_CURSES=ON
       -DENABLE_GTK=ON
