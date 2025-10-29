@@ -9,13 +9,12 @@ class Gitingest < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "848976aeb8cc30a996c29b86bab4c577c9455fc2e3dd723f4ec18759f0a0cddd"
-    sha256 cellar: :any,                 arm64_sequoia: "7c313ec986e742f4c8ecb6e9e4e635188a8f034726ad36978ba9f5e4fe5d185c"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb49209e15e6592f40acee2c4bd1e61d756ac71e0104dc0c58fa25290e9cf769"
-    sha256 cellar: :any,                 sonoma:        "efe431c93d7d572af667c15df240f220086bae7c9d67b924199c1dba33fd9d2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a403dd7d0e0d4a22b7913b415ab931e6dd1bde59861f0ef9e50de0ec1adfbab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e10f01916ba6aa5bdafcae66bb8b1899510457927d3a4643d28ad11497b7c479"
+    sha256 cellar: :any,                 arm64_tahoe:   "10ddf715a3a217726293629da7f2dece4eb88f8f098ca0cea41d678668f57231"
+    sha256 cellar: :any,                 arm64_sequoia: "c56974f5dd037914c002f1fa2a43c99d1c20703334b23e0b56ae01c8da35b7a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "1defe0174ab756e32a484379995ce3266871fbfd3ca741d0c4f3e03b54f56c5d"
+    sha256 cellar: :any,                 sonoma:        "995ac9c84617bb554bd897f4565a1ec4bae909fdea9a97d617b843ad3f155e0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35d9c29ffd61a2289490435c8cfc7a8aea7944d64f22a38f18a73a09777f18d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3041149a69365bd7951e0fc14ae78a084b6edb6a31f28fcd7e2834b3e3004208"
   end
 
   depends_on "rust" => :build
