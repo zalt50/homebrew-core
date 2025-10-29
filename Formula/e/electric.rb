@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.2.0.tar.gz"
-  sha256 "1e4b7f9664c9f349420f4aa3dca4eb0795c0cc19dcc0e429d25183f6691c9f52"
+  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.2.2.tar.gz"
+  sha256 "8860d1e3e01ebeca08470c1386aa681c4b3754ec0b8383faf539a844efed0cf6"
   license "Apache-2.0"
 
   livecheck do
@@ -60,6 +60,9 @@ class Electric < Formula
       ENV["DATABASE_URL"] = "postgres://#{ENV["USER"]}:@localhost:#{port}/postgres?sslmode=disable"
       ENV["ELECTRIC_INSECURE"] = "true"
       ENV["ELECTRIC_PORT"] = free_port.to_s
+
+      mkdir_p testpath/"persistent/shapes/single_stack/.meta/backups/shape_status_backups"
+
       spawn bin/"electric", "start"
 
       output = shell_output("curl -s --retry 5 --retry-connrefused localhost:#{ENV["ELECTRIC_PORT"]}/v1/health")
