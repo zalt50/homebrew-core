@@ -4,6 +4,7 @@ class N8nMcp < Formula
   url "https://registry.npmjs.org/n8n-mcp/-/n8n-mcp-2.22.8.tgz"
   sha256 "796bc1a8505d56da90c3b3823d227fec57b6495bab4aa79d19091fb13d6572ff"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b905ee372343613fd16a67332798ecfbb5625f7f6810865811f997411ca0ec40"
@@ -14,7 +15,7 @@ class N8nMcp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "60c4e5a62ef274eddb835668d32d1fc69491611729de8bcae2f5322e0d44eefc"
   end
 
-  depends_on "node"
+  depends_on "node@22"
 
   def install
     system "npm", "install", *std_npm_args
