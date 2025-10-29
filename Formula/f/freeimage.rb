@@ -55,7 +55,8 @@ class Freeimage < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Fix build error on Linux: ImathVec.h:771:37: error: ISO C++17 does not allow dynamic exception specifications
-    ENV["CXXFLAGS"] = "-std=c++98" if OS.linux?
+    ENV.append "CXX", "-std=c++98" if OS.linux?
+
     system "make", "-f", "Makefile.gnu"
     system "make", "-f", "Makefile.gnu", "install", "PREFIX=#{prefix}"
     system "make", "-f", "Makefile.fip"
