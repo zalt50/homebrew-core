@@ -3,12 +3,12 @@ class Beautysh < Formula
 
   desc "Bash beautifier"
   homepage "https://github.com/lovesegfault/beautysh"
-  url "https://files.pythonhosted.org/packages/34/5a/4acfcfecca6fe9e1dc25f71f39fea011672569040e5f816e36f55f48e588/beautysh-6.3.1.tar.gz"
-  sha256 "58eb9d67627c09d0565e0e77892c5ff7cb7ba086cdac7e960452757daff14410"
+  url "https://files.pythonhosted.org/packages/f9/fe/5ee6d507a194b9a321f3489b75660e6a611721d237906e4e0c9b67bcb380/beautysh-6.3.3.tar.gz"
+  sha256 "a86e1ea1bc42c9251eb2543403156356805b0983f29b4139b5cc27f270f963a7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a2e483466ead879c0fec54ec23b676a33657d90ac8f4802a15eb06da9c6660b1"
+    sha256 cellar: :any_skip_relocation, all: "89bb768556c9ebfb0810981dc09fb6d1fca15f0495785bc46d9fad637657ef03"
   end
 
   depends_on "python@3.14"
