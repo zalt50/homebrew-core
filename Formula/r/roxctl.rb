@@ -1,8 +1,8 @@
 class Roxctl < Formula
   desc "CLI for Stackrox"
   homepage "https://www.stackrox.io/"
-  url "https://github.com/stackrox/stackrox/archive/refs/tags/4.8.5.tar.gz"
-  sha256 "2ffa4ed0ac799cd4e738a19494c024da125a77c4dba19fa45cc258a7e0ed7512"
+  url "https://github.com/stackrox/stackrox/archive/refs/tags/4.9.0.tar.gz"
+  sha256 "6095572514a536986b6531104d3db578896c8d427c090c54bf596881b593b9dc"
   license "Apache-2.0"
   head "https://github.com/stackrox/stackrox.git", branch: "master"
 
@@ -33,10 +33,7 @@ class Roxctl < Formula
 
   test do
     output = shell_output("#{bin}/roxctl central whoami 2<&1", 1)
-    assert_match <<~EOS, output
-      ERROR:	obtaining auth information for localhost:8443: \
-      retrieving token: no credentials found for localhost:8443, please run \
-      "roxctl central login" to obtain credentials
-    EOS
+
+    assert_match "please run \"roxctl central login\" to obtain credentials", output
   end
 end
