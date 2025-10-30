@@ -1,8 +1,8 @@
 class BazelAT7 < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://github.com/bazelbuild/bazel/releases/download/7.6.1/bazel-7.6.1-dist.zip"
-  sha256 "c1106db93eb8a719a6e2e1e9327f41b003b6d7f7e9d04f206057990775a7760e"
+  url "https://github.com/bazelbuild/bazel/releases/download/7.7.0/bazel-7.7.0-dist.zip"
+  sha256 "277946818c77fff70be442864cecc41faac862b6f2d0d37033e2da0b1fee7e0f"
   license "Apache-2.0"
 
   livecheck do
@@ -34,19 +34,7 @@ class BazelAT7 < Formula
   on_linux do
     # We use a workaround to prevent modification of the `bazel-real` binary
     # but this means brew cannot rewrite paths for non-default prefix
-    on_arm do
-      pour_bottle? only_if: :default_prefix
-    end
-    on_intel do
-      pour_bottle? only_if: :default_prefix
-    end
-  end
-
-  # Fix to avoid fdopen() redefinition for vendored `zlib`
-  # PR ref: https://github.com/bazelbuild/bazel/pull/26956
-  patch do
-    url "https://github.com/bazelbuild/bazel/commit/0d4c2130e356923849033c85d1d31c17372ce8f2.patch?full_index=1"
-    sha256 "6196b60c916e0152eefbc79249758675a860b51c84a6dfd258e83b1698664067"
+    pour_bottle? only_if: :default_prefix
   end
 
   def bazel_real
@@ -54,13 +42,11 @@ class BazelAT7 < Formula
   end
 
   def install
-    # Workaround for "missing LC_UUID load command in .../xcode-locator"
-    # https://github.com/bazelbuild/bazel/pull/27014
-    inreplace "tools/osx/BUILD", " -Wl,-no_uuid ", " "
-
     java_home_env = Language::Java.java_home_env("21")
 
     ENV["EMBED_LABEL"] = "#{version}-homebrew"
+    # https://github.com/bazelbuild/bazel/issues/27401
+    ENV["BAZEL_DEV_VERSION_OVERRIDE"] = ENV["EMBED_LABEL"]
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
     # Force Bazel to use brew OpenJDK
