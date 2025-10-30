@@ -1,8 +1,8 @@
 class Hgrep < Formula
   desc "Grep with human-friendly search results"
   homepage "https://github.com/rhysd/hgrep"
-  url "https://github.com/rhysd/hgrep/archive/refs/tags/v0.3.8.tar.gz"
-  sha256 "a8c554bab136be4083429e97a41d70b8cabcdf113ac3a2ce6c801b5c8710d1d2"
+  url "https://github.com/rhysd/hgrep/archive/refs/tags/v0.3.9.tar.gz"
+  sha256 "c8246d7ff9a8b7cb11f18892f68d16fbd8b7237c37e9bc34c95aaab43be48222"
   license "MIT"
   head "https://github.com/rhysd/hgrep.git", branch: "main"
 
