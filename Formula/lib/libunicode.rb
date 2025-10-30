@@ -22,6 +22,10 @@ class Libunicode < Formula
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
   end
 
+  on_linux do
+    depends_on "gcc" if DevelopmentTools.gcc_version < 13
+  end
+
   fails_with :clang do
     build 1500
     cause "Requires C++20"
@@ -33,8 +37,6 @@ class Libunicode < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-
     args = %W[
       -DLIBUNICODE_EXAMPLES=OFF
       -DLIBUNICODE_TESTING=OFF
@@ -48,11 +50,6 @@ class Libunicode < Formula
   end
 
   test do
-    # ENV.llvm_clang doesn't work in the test block
-    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-    # Do not upload a Linux bottle that bypasses audit and needs Linux-only GCC dependency
-    ENV.method(DevelopmentTools.default_compiler).call if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <libunicode/capi.h>
@@ -66,7 +63,7 @@ class Libunicode < Formula
       }
     CPP
 
-    system ENV.cxx, "-std=c++17", "-o", "test", "test.cpp", "-I#{include}", "-L#{lib}", "-lunicode"
+    system ENV.cxx, "-std=c++20", "-o", "test", "test.cpp", "-I#{include}", "-L#{lib}", "-lunicode"
     assert_match "Grapheme cluster count: 7", shell_output("./test")
 
     assert_match "HYPHEN", shell_output("#{bin}/unicode-query U+2D")
