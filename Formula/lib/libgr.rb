@@ -1,10 +1,9 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
   homepage "https://gr-framework.org/"
-  url "https://github.com/sciapp/gr/archive/refs/tags/v0.73.17.tar.gz"
-  sha256 "dafd6ee72d36226d4664ca32d85d0b68224d5dba710abb8a4578c427259858e1"
+  url "https://github.com/sciapp/gr/archive/refs/tags/v0.73.18.tar.gz"
+  sha256 "0821ce71be438b09fdf4a62c567197ce5b35a0ab1e9c925d2817f0ff1ff67294"
   license "MIT"
-  revision 1
 
   bottle do
     rebuild 2
@@ -35,12 +34,6 @@ class Libgr < Formula
     depends_on "libx11"
     depends_on "libxt"
     depends_on "mesa"
-  end
-
-  # Backport support for FFmpeg 8
-  patch do
-    url "https://github.com/sciapp/gr/commit/1720943f5ecf76b067dc2950fab2d381378aaf18.patch?full_index=1"
-    sha256 "b1b453e5a6aa878d0bea159f777e445dc4a73ba619d1672818341746b1b4e861"
   end
 
   def install
