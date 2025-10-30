@@ -5,6 +5,7 @@ class Vcpkg < Formula
   version "2025.10.16"
   sha256 "70c25e3c3653e917c8d776c90b35b55490152bec36b8be87ca88491697fde3ef"
   license "MIT"
+  revision 1
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
   # The source repository has pre-release tags with the same
@@ -35,6 +36,12 @@ class Vcpkg < Formula
   depends_on "cmrc" => :build
   depends_on "fmt"
   depends_on "ninja" # This will install its own copy at runtime if one isn't found.
+
+  # upstream pr ref, https://github.com/microsoft/vcpkg-tool/pull/1826
+  patch do
+    url "https://github.com/microsoft/vcpkg-tool/commit/7e5f9b42018d19172e87236783bb0c713f176b7a.patch?full_index=1"
+    sha256 "2537ff975b66809c14790887090daacadcdd213123d6356a891667048c3b32fe"
+  end
 
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.
