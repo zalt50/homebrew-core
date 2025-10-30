@@ -1,18 +1,18 @@
 class Qbec < Formula
   desc "Configure Kubernetes objects on multiple clusters using jsonnet"
   homepage "https://qbec.io"
-  url "https://github.com/splunk/qbec/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "65a3c7601d71ef65af5471807e138481959ffbe28ef65b6f8e87d308f4e60a6b"
+  url "https://github.com/splunk/qbec/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "695655a2e1b73f261cd912b9861fb7f9868de6084117d2862da40e0a0d0e61c1"
   license "Apache-2.0"
   head "https://github.com/splunk/qbec.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35e13e166d5e0a379815a76c7217eb2a522d9f7fe35b1ea6e437a18a90ed86a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18ce8302fb409c413518431c9ef81ad0bd3333f1ad326ca25741a29273aa08a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c37ff3a3923240cf248b11fab797cac9ab63ce4d3011185f2c5c8f851cf5fd8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43c2eca319505a652c3c2f0574105aa201c53d164c3214df7fa7b7865208f079"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ae266459e4b949793b0385d6d41c8d7ea9fa97af90d7175acfa1dac584fd356"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cab3a400ad6839d7d7b1f3fba7554dcd2c2fb7d89dbe9a08862ff5bacbcbcb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3f75b2207008d35a2c8415be3594e568e52950cfb25988f4a1048907f0784c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "874b79d4452f007950d69b5bcc04d396c3b20e252b358b510ac7550ccfd58d04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9753343d85518350b3707b6234c7e731aa8334df71fa9aaef725c7cd8b5b736d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94680c8d457bb019c4034f63081ea38bd7755d103dc9e698936577329f17969b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5680d7fa51b7f9b7bf6392b8c6ec72a297155cc9946df061258060ecce4fab07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbb8fd321f87c1a2277ce2f7d351305797e428b2916bf86b886aea6eaf8b1162"
   end
 
   depends_on "go" => :build
