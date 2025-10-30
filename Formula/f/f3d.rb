@@ -33,7 +33,6 @@ class F3d < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "freeimage"
     depends_on "freetype"
     depends_on "glew"
     depends_on "hdf5"
