@@ -17,11 +17,11 @@ class Charmcraft < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee134bff7444da780f280941029b0ed54c81a2e1b6a1507fc6e76c05f0367b1"
   end
 
-  depends_on "rust" => :build # for pydantic-core
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "pygit2" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
@@ -29,7 +29,7 @@ class Charmcraft < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pygit2 rpds-py],
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core pygit2 rpds-py],
                 extra_packages:   ["jeepney", "secretstorage"]
 
   resource "annotated-types" do
@@ -247,11 +247,6 @@ class Charmcraft < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pylxd" do
     url "https://files.pythonhosted.org/packages/9b/8e/6a31a694560adaba20df521c3102bdecec06a0fea9c73ff1466834e2df30/pylxd-2.3.5.tar.gz"
     sha256 "d67973dd2dc1728e3e1b41cc973e11e6cbceae87878d193ac04cc2b65a7158ef"
@@ -355,11 +350,6 @@ class Charmcraft < Formula
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
     sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do
