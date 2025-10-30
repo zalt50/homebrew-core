@@ -1,8 +1,8 @@
 class Martin < Formula
   desc "Blazing fast tile server, tile generation, and mbtiles tooling"
   homepage "https://martin.maplibre.org"
-  url "https://github.com/maplibre/martin/archive/refs/tags/martin-v0.19.3.tar.gz"
-  sha256 "0352758cb439bae89c110839b8f5500e3252dd1f5b419a22829d697fa23571ba"
+  url "https://github.com/maplibre/martin/archive/refs/tags/martin-v0.20.0.tar.gz"
+  sha256 "1dca1c1df3fb4966deec7b2c64931c576b1dcda57ef86c8cba7082bac4d1122d"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -22,6 +22,8 @@ class Martin < Formula
   depends_on "node" => :build
   depends_on "rust" => :build
 
+  uses_from_macos "sqlite" => :test
+
   def install
     system "cargo", "install", *std_cargo_args(path: "martin")
     system "cargo", "install", *std_cargo_args(path: "mbtiles")
@@ -29,7 +31,10 @@ class Martin < Formula
   end
 
   test do
-    mbtiles = pkgshare/"mbtiles/world_cities.mbtiles"
+    sqlfile = pkgshare/"mbtiles/world_cities.sql"
+    system "sqlite3 world_cities.mbtiles < #{sqlfile}"
+    mbtiles = testpath/"world_cities.mbtiles"
+
     port = free_port
     fork do
       exec bin/"martin", mbtiles, "-l", "127.0.0.1:#{port}"
