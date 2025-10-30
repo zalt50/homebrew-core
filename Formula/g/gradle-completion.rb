@@ -1,8 +1,8 @@
 class GradleCompletion < Formula
   desc "Bash and Zsh completion for Gradle"
   homepage "https://gradle.org/"
-  url "https://github.com/gradle/gradle-completion/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "ae8f8caa79950385ada597bb6d9ba08a3668e04f771bd997b5e6c41c6aec22ea"
+  url "https://github.com/gradle/gradle-completion/archive/refs/tags/v9.2.0.tar.gz"
+  sha256 "982ec3aab5d7eb50b18af01fb50ca66556151928a374ed7234f21a34f0efe59c"
   license "MIT"
   head "https://github.com/gradle/gradle-completion.git", branch: "master"
 
