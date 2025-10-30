@@ -3,8 +3,8 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/31/6f/6266d464de3ad88356bcff686e1d52aa27b71ca4c67414a005f3174c955f/harlequin-2.3.0.tar.gz"
-  sha256 "47138f525a5e84abd321203d9398f295b5ef7166a70dad0b1a1a7ecdecd09dbb"
+  url "https://files.pythonhosted.org/packages/12/a0/759028c7d05143faa097f9f60e67ded4a2cad6117283af7660ba5a47ec37/harlequin-2.4.0.tar.gz"
+  sha256 "2fd424e629aea66fe39ea3fded89cdb3e879ef7f689f2d6e2a77db541a4a8773"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
@@ -41,41 +41,23 @@ class Harlequin < Formula
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/ea/e7/21cf50a3d52ffceee1f0bcc3997fa96a5062e6bab705baee4f6c4e33cce5/duckdb-1.4.1.tar.gz"
-    sha256 "f903882f045d057ebccad12ac69975952832edfe133697694854bb784b8d6c76"
+    url "https://files.pythonhosted.org/packages/e5/26/a28dae619f5f823d654e014299a91551ea990ed21e0e20c9d1ed084dcb26/duckdb-1.5.0.dev90.tar.gz"
+    sha256 "bce21b88266622663074b5fd38b271b7b1fc2e2954425b4bea07daad0d0672b9"
   end
 
   resource "harlequin-mysql" do
-    url "https://files.pythonhosted.org/packages/fc/32/6bd3cc35881314afbed404c52bba09970a8b969ccec4720a3b7d9e3e52fa/harlequin_mysql-1.2.0.tar.gz"
-    sha256 "2278ac1734b71dfc5bafaa54eba4f54a6f8a128d8df81c2fd608b79395745562"
-
-    # Allow python 3.14: https://github.com/tconbeer/harlequin-mysql/pull/36
-    patch do
-      url "https://github.com/tconbeer/harlequin-mysql/commit/81f6297f2940e1d811ac0054e453b1120fc49720.patch?full_index=1"
-      sha256 "36f838c31f85092138c3993dbced446aa1153dada0ffbed90bdb80246986d597"
-    end
+    url "https://files.pythonhosted.org/packages/5a/66/15e9df6a4c99bbb887869e5b01d02ee5a8d5811239573c975a267fbd2fd3/harlequin_mysql-1.3.0.tar.gz"
+    sha256 "98840b0e03be1c16ea62c5bbae2e8b87cd16b25a7913c7239aee3a1c06143131"
   end
 
   resource "harlequin-odbc" do
-    url "https://files.pythonhosted.org/packages/e5/c0/a012185883fd7d472954e945dbcb5fbad50272c5d0b84396886896bf8682/harlequin_odbc-0.3.1.tar.gz"
-    sha256 "c12ea98101ba5dffe212df2d5fbe0aef2e786eaa58d03d911bc3bbf89491be01"
-
-    # Allow python 3.14: https://github.com/tconbeer/harlequin-odbc/pull/22
-    patch do
-      url "https://github.com/tconbeer/harlequin-odbc/commit/4a2372384ae03bd9ff96d91e5f77d7804d2e7604.patch?full_index=1"
-      sha256 "c9693cd8391ed135a7346723c3b11f4ea1dd4e944acf975635ca78246cdafdbb"
-    end
+    url "https://files.pythonhosted.org/packages/c1/1b/e5bc547d98771ce87a8c5ef3c96908e93c95406b50462085a3ebfcd2f86d/harlequin_odbc-0.4.0.tar.gz"
+    sha256 "98356c5ebaacc23daff35e165d4490e1ea10dc591fa9cb0824f41272b39d13f0"
   end
 
   resource "harlequin-postgres" do
-    url "https://files.pythonhosted.org/packages/9d/2e/ee282a4eeb39492befbbec4d26529b33cdfcfe407e26f75efdcc4e1fc5a4/harlequin_postgres-1.2.2.tar.gz"
-    sha256 "bbfc7c271d727d4b454985faa32bce64999d3d66da3a4167dce19076ac722bc0"
-
-    # Allow python 3.14: https://github.com/tconbeer/harlequin-postgres/pull/48
-    patch do
-      url "https://github.com/tconbeer/harlequin-postgres/commit/59a8cf6500edc8d04a047e2e46a0d6e641be9670.patch?full_index=1"
-      sha256 "2153d4c277cd7018b8ddb267833e1c74dad0c1525fbcae707cc844ece43abc89"
-    end
+    url "https://files.pythonhosted.org/packages/53/f2/1583d9c25b6245a04ab982fcf6bc08e6602668ecd8c5003f398dce267dad/harlequin_postgres-1.3.0.tar.gz"
+    sha256 "d3532594693c745796b5ba4434218662ce3f9e5abb68b2e4159a825c62eb378b"
   end
 
   resource "jinja2" do
@@ -324,8 +306,6 @@ class Harlequin < Formula
   end
 
   def install
-    # Unpin python for 3.14: https://github.com/tconbeer/harlequin/pull/879
-    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
     virtualenv_install_with_resources
     generate_completions_from_executable(bin/"harlequin", shell_parameter_format: :click)
   end
