@@ -3,8 +3,8 @@ class Pelican < Formula
 
   desc "Static site generator that supports Markdown and reST syntax"
   homepage "https://getpelican.com/"
-  url "https://files.pythonhosted.org/packages/27/42/c06c1a7a3136729ece5a1f98544ede83edd593b3cd9110c9ad61bcc7f4dd/pelican-4.11.0.tar.gz"
-  sha256 "b90234487b818d391733acc1306b785934009749b1fc112b879df9bd89478bd8"
+  url "https://files.pythonhosted.org/packages/cf/ab/a5e863de66054c561e111687b4c1f7cb2ad5f2d4805d2bb12863f0f637cd/pelican-4.11.0.post0.tar.gz"
+  sha256 "0d5e9c0cc9c6713ab6c25b2c4b64844f34d9be8c8c8cc7f42c3a8aa6b3bbbe33"
   license "AGPL-3.0-or-later"
 
   bottle do
