@@ -1,8 +1,8 @@
 class VibeLogCli < Formula
   desc "CLI tool for analyzing Claude Code sessions"
   homepage "https://vibe-log.dev/"
-  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.7.3.tgz"
-  sha256 "d6eaca7886fc97aedf93857f47c5158a72bffb58a0b37a09f6591449a6ebe11a"
+  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.7.4.tgz"
+  sha256 "0333995c3aa99e029410c151315b993bee8f6e708a19037cf790cc8f899cfa01"
   license "MIT"
 
   bottle do
@@ -16,6 +16,10 @@ class VibeLogCli < Formula
 
   depends_on "node"
 
+  on_linux do
+    depends_on "xsel"
+  end
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
@@ -23,6 +27,15 @@ class VibeLogCli < Formula
     # Remove incompatible pre-built binaries
     vendor_dir = libexec/"lib/node_modules/vibe-log-cli/node_modules/@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
     rm_r(vendor_dir)
+
+    clipboardy_fallbacks_dir = libexec/"lib/node_modules/#{name}/node_modules/clipboardy/fallbacks"
+    rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
+    if OS.linux?
+      linux_dir = clipboardy_fallbacks_dir/"linux"
+      linux_dir.mkpath
+      # Replace the vendored pre-built xsel with one we build ourselves
+      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+    end
   end
 
   test do
