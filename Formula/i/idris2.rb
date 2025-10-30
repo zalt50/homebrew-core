@@ -4,7 +4,7 @@ class Idris2 < Formula
   url "https://github.com/idris-lang/Idris2/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "7a8612a1cd9f1f737893247260c6942bf93f193375d4b3df0148f7abf74d6e14"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
