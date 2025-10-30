@@ -1,8 +1,8 @@
 class CypherShell < Formula
   desc "Command-line shell where you can execute Cypher against Neo4j"
   homepage "https://neo4j.com"
-  url "https://dist.neo4j.org/cypher-shell/cypher-shell-2025.09.0.zip"
-  sha256 "959bb111f414b4310ee693b848eac1ea2ce466426e2e196350fe38265128cc13"
+  url "https://dist.neo4j.org/cypher-shell/cypher-shell-2025.10.1.zip"
+  sha256 "7434f54404a4b05b5ebf0a609aa3f7ebf11e5096a23aca1ffa8a52e2a06799e6"
   license "GPL-3.0-only"
   version_scheme 1
 
