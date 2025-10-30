@@ -9,6 +9,8 @@ class Xcbeautify < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "079fe5b9f9bc7f06751790e7deba241128bf638a315ac0061a4024e5da2def8d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "91eed8c305ebe1dca3edf8946657efef481f315932a84bdaf6aa1bd3e534d13c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1ee2ce174564e663ed57ef161598d5707a3edc3ad219d1235e5b75c9d6b50f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "189bd8c5bca42521c18d210ae848b37db7a5515955434dd0480d04ff9677d7e4"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "e3c2750a7b5034492b496c59b9364bc22420447f1041e1e574bfda302824d0fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "581fb133f3b7c65089cb77730e59fbc79bedd8594d51d3db1f41623c7488b003"
   end
