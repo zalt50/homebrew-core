@@ -11,6 +11,7 @@ class PostgresLanguageServer < Formula
     sha256 cellar: :any,                 arm64_sequoia: "f21869b23db9a186e6ecc6cff40ccd24c5d4239fef7887b53d4035e1e07851f1"
     sha256 cellar: :any,                 arm64_sonoma:  "fba208f8d36d825a9be2f9cb56ee57ff856b5c0ec9ca1d48cb5e761ba30c6ea8"
     sha256 cellar: :any,                 sonoma:        "607cdca7a4040e31e679ff65cb06d41b9492de8aebb4ac753f8afc3aae84aca2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e70cde4802daf411a8f7ad31444b754874ca286d1a905f167063bafda671280a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "df82689c8cb1a7c0d594b171da01bd7f0750fe03ad6196e2d6793f695526217c"
   end
 
