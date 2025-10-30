@@ -7,10 +7,11 @@ class Libunicode < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "ea5fcaea62d8df857de80e1283e9e2ad9c76b0ba39c0c5ac4f067ee596dd8268"
-    sha256 cellar: :any, arm64_sequoia: "b13740bd4f2da17cfd0671cacc40a0cc153c8965225a0e3333ab38b99f8bb48d"
-    sha256 cellar: :any, arm64_sonoma:  "d03f19ed3d3d4397531d61d943f1eff14fa14762a496a2df7cfb23d0464b3ae5"
-    sha256 cellar: :any, sonoma:        "b175e397353176dd09255afbb507fe39c57f51535edbb88209d481909abd46de"
+    sha256 cellar: :any,                 arm64_tahoe:   "ea5fcaea62d8df857de80e1283e9e2ad9c76b0ba39c0c5ac4f067ee596dd8268"
+    sha256 cellar: :any,                 arm64_sequoia: "b13740bd4f2da17cfd0671cacc40a0cc153c8965225a0e3333ab38b99f8bb48d"
+    sha256 cellar: :any,                 arm64_sonoma:  "d03f19ed3d3d4397531d61d943f1eff14fa14762a496a2df7cfb23d0464b3ae5"
+    sha256 cellar: :any,                 sonoma:        "b175e397353176dd09255afbb507fe39c57f51535edbb88209d481909abd46de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce22e0ecd71d651779c581de2301af8f86549af6125ce5fb05271968107d9c68"
   end
 
   depends_on "cmake" => :build
