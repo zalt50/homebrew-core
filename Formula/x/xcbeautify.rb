@@ -14,9 +14,7 @@ class Xcbeautify < Formula
   end
 
   # needs Swift tools version 6.1.0
-  depends_on xcode: ["16.3", :build]
-
-  uses_from_macos "swift" => :build
+  uses_from_macos "swift" => :build, since: :sequoia
   uses_from_macos "libxml2"
 
   def install
