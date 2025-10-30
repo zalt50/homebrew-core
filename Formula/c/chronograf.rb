@@ -13,6 +13,7 @@ class Chronograf < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ba7d5a5e977bc21bd5b38c992c9e662971edef12bfffdb564fe0aae14f85a325"
     sha256 cellar: :any_skip_relocation, sonoma:        "2f4bc398a63f400a368e0ac15b5c76695fa4931d1a12cfeebdefeb8f2099ab41"
     sha256 cellar: :any_skip_relocation, ventura:       "bf4bceda8fe5e269e3fb1e431afa340871ea7fbb6508fbef4e633b7cbf191231"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa7a72d163fef81177dba41159edde265a214d4fcbde8d4e05e441802689b0f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbb34f30e0bfcd31f6a12a844471439e68c0fa470f8d14eb70f01b0172e19944"
   end
 
