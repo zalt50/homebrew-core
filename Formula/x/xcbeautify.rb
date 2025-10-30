@@ -1,16 +1,16 @@
 class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/cpisciotta/xcbeautify"
-  url "https://github.com/cpisciotta/xcbeautify/archive/refs/tags/3.0.0.tar.gz"
-  sha256 "de5c61f00adb8cfd56029a113920d5420345cdac4462e8eb3324a154d4765ac6"
+  url "https://github.com/cpisciotta/xcbeautify/archive/refs/tags/3.1.0.tar.gz"
+  sha256 "3b96197098efc79a855f8f5950bc25142f3fe4e561e15f311fc018479f90d5ee"
   license "MIT"
   head "https://github.com/cpisciotta/xcbeautify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f41771ed89a4c862b243befc8af41bae4522dd6d84f4f0688b6b7d70566c511"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03457fe184970c4f780fa8bc01b00c9823a628750586a4e0b85b6f15e3f2743a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fde9a0a133d0c5d4cc2feff22f107a0893c6c49cedd40ccbc50882503bf03a74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b34fa006a10d84d03bcd5db42f60e7a66a23265723329c5a3bcb1fc5641418a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "079fe5b9f9bc7f06751790e7deba241128bf638a315ac0061a4024e5da2def8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91eed8c305ebe1dca3edf8946657efef481f315932a84bdaf6aa1bd3e534d13c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3c2750a7b5034492b496c59b9364bc22420447f1041e1e574bfda302824d0fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "581fb133f3b7c65089cb77730e59fbc79bedd8594d51d3db1f41623c7488b003"
   end
 
   # needs Swift tools version 6.1.0
