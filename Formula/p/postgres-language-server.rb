@@ -6,6 +6,14 @@ class PostgresLanguageServer < Formula
   license "MIT"
   head "https://github.com/supabase-community/postgres-language-server.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1b902f96e99e20f2b597f032da9ece01e4c67f7c2fedf1a41832244019ea4caa"
+    sha256 cellar: :any,                 arm64_sequoia: "f21869b23db9a186e6ecc6cff40ccd24c5d4239fef7887b53d4035e1e07851f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "fba208f8d36d825a9be2f9cb56ee57ff856b5c0ec9ca1d48cb5e761ba30c6ea8"
+    sha256 cellar: :any,                 sonoma:        "607cdca7a4040e31e679ff65cb06d41b9492de8aebb4ac753f8afc3aae84aca2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df82689c8cb1a7c0d594b171da01bd7f0750fe03ad6196e2d6793f695526217c"
+  end
+
   depends_on "llvm" => :build
   depends_on "node" => :build
   depends_on "rust" => :build
