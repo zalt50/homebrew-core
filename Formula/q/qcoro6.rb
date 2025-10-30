@@ -10,6 +10,7 @@ class Qcoro6 < Formula
     sha256 cellar: :any,                 arm64_sequoia: "c77df01948a62ed7857b568b86ea585018632050d2ba57872205a3ae54eadb76"
     sha256 cellar: :any,                 arm64_sonoma:  "f0d57a2e74521709c59b8c8c13727dcc91127378507b5c43e9757e5aaa4ddc44"
     sha256 cellar: :any,                 sonoma:        "4dcbd1c72b2d23a8a7c870611ac6de0f47d6c473c49da1fd111908b253914a9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72c9a6c92632c060f34b85158517ecd7d204da2ebab40b7994e8c9228b613755"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "28ffddc636d502cc3d763fab6deef4348c4f77c7b8e6d14594cfd30d5cdad1d2"
   end
 
