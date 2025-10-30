@@ -5,6 +5,14 @@ class Neonctl < Formula
   sha256 "aae3286d3cf1024741e0d3f2267f92eb6e862f9681840e0c11bf4a396301c277"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "dee22094b5c5ee8a749c7dd85468bf34e3d2d9e61c9e5b723be7ffd8abcd1ec8"
+    sha256 cellar: :any,                 arm64_sequoia: "95445dcdc896141e21edd712de429b97eda93ee4df5e36bc3ab5189481ed64a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "95445dcdc896141e21edd712de429b97eda93ee4df5e36bc3ab5189481ed64a5"
+    sha256 cellar: :any,                 sonoma:        "22d12b43c3f470375b32bab3288f4be58a8da947703705aa450f2111de34d204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992b9c47fb9f0958895f285f03a705c9d2bc16a06eee9af356742e3d34125b14"
+  end
+
   depends_on "node"
 
   def install
