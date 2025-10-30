@@ -4,7 +4,7 @@ class Cabin < Formula
   url "https://github.com/cabinpkg/cabin/archive/refs/tags/0.13.0.tar.gz"
   sha256 "f9115bb0566800beedb41106e00f44a7eaf1dea0fa6528281e31de5f80864177"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
   bottle do
@@ -44,6 +44,12 @@ class Cabin < Formula
   fails_with :gcc do
     version "11"
     cause "Requires C++20"
+  end
+
+  # allow to build with fmt 12.1.0, upstream pr ref, https://github.com/cabinpkg/cabin/pull/1231
+  patch do
+    url "https://github.com/cabinpkg/cabin/commit/b506326b996cd4d5a6578ceb5bbbb7a903dbdf12.patch?full_index=1"
+    sha256 "baf74ab11f7a1f7e2a75916acdc7fed76114e24f02e09d057c261b2e469e5203"
   end
 
   def install
