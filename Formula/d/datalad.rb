@@ -9,12 +9,12 @@ class Datalad < Formula
   head "https://github.com/datalad/datalad.git", branch: "maint"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e78a82d94c754322c85798995c73ac51ecff2f64252fbd583b8aceb4a5202cec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b254a79836cd93a5952bc35d9407f56e05a48895cede589ca7514505047c852a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7cc9378ebe45c943a265af8d1ca4d427074fd1d701169d09c4839b266ea445a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33f25d4efeb0dec64f602dae30a695056e709a3b2f306f322a8135b19b3730e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b68ce98e5c84d4999a3fc246402bef8cea54df79a865243b42d00897c2980b72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "861da2f04558516a9a16baf54023526ee8fb2d1a4237bee11122378f31a34b33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e24d7e7dd58cecd80ab668ac21a21cafd594a140c3eb013cf82046b9137509a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80666c4f9125ded64c4d1bc0f58424e7b94179165ff604d930c7e3a283f5397a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f97231caf8b645675d9173ccf891804633252f73c842532a37c7c8a37e3f617a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82d23ff20db27e9f4ac0e5999354d241422271e369133c98601a7b72c8746c96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c2196c510131a36022352394570e26f69276544f4b4ed32fe35966698e8ba86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a3d2aca82edb1c6262821a00ed9b0d430a17cd5bfc1d2c6a1ba5a92eaee4ffb"
   end
 
   depends_on "certifi" => :no_linkage
