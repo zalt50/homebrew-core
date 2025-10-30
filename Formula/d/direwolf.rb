@@ -1,26 +1,14 @@
 class Direwolf < Formula
   desc "Software \"soundcard\" AX.25 packet modem/TNC and APRS encoder/decoder"
   homepage "https://github.com/wb2osz/direwolf"
+  url "https://github.com/wb2osz/direwolf/archive/refs/tags/1.8.tar.gz"
+  sha256 "20af50f397ce492a1e42889a1e2eba54581334c0754adae8e196433998a44e3a"
   license all_of: [
     "GPL-2.0-or-later",
     "ISC", # external/misc/{strlcpy.c,strlcat.c} (Linux)
     :cannot_represent, # external/geotranz, see https://github.com/externpro/geotranz/blob/v2.4.2/readme.txt
   ]
-  revision 1
   head "https://github.com/wb2osz/direwolf.git", branch: "master"
-
-  stable do
-    url "https://github.com/wb2osz/direwolf/archive/refs/tags/1.7.tar.gz"
-    sha256 "6301f6a43e5db9ef754765875592a58933f6b78585e9272afc850acf7c5914be"
-
-    # cmake 4 build patch
-    patch do
-      url "https://github.com/wb2osz/direwolf/commit/c499496bbc237d0efdcacec5786607f5e17c1c7e.patch?full_index=1"
-      sha256 "3b5e2aeecf89284f1684b3e83f4de1bb80dc3bdd5b6ed626856be640718dc8a6"
-    end
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256                               arm64_tahoe:   "9cc1935dc9cdff6065923b9b6881beaba7334bb2681f1383713c962e0ed2303a"
@@ -38,6 +26,7 @@ class Direwolf < Formula
   depends_on "hamlib"
 
   on_macos do
+    depends_on "hidapi"
     depends_on "portaudio"
   end
 
@@ -47,9 +36,8 @@ class Direwolf < Formula
   end
 
   def install
-    inreplace "src/decode_aprs.c", "/opt/local/share", share
     inreplace "src/symbols.c", "/opt/local/share", share
-    inreplace "conf/CMakeLists.txt", " /etc/udev/rules.d", " #{lib}/udev/rules.d"
+    inreplace "conf/CMakeLists.txt", " /usr/lib/udev/rules.d", " #{lib}/udev/rules.d"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
