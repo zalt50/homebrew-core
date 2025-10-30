@@ -4,7 +4,7 @@ class Paps < Formula
   url "https://github.com/dov/paps/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "8fd8db04e6f8c5c164806d2c1b5fea6096daf583f83f06d1e4813ea61edc291f"
   license "LGPL-2.0-or-later"
-  revision 2
+  revision 3
 
   no_autobump! because: :requires_manual_review
 
@@ -39,6 +39,13 @@ class Paps < Formula
   patch do
     url "https://github.com/dov/paps/commit/e6ec698be127822661e31f7fca7d2e0107944b24.patch?full_index=1"
     sha256 "52848f9618dab9bc98c1554cc8a7a0b3ce419cfca53781b909d543ec4e4b27ea"
+  end
+
+  # Fix compatibility with fmt 12.
+  # https://github.com/dov/paps/pull/77
+  patch do
+    url "https://github.com/dov/paps/commit/a26a20d7ca3feb08476a8a19fd97c3ececcc1e2e.patch?full_index=1"
+    sha256 "604bc9e60b33162b522d18f251e3436745ca20b39a763202cfc7660423d9a9fe"
   end
 
   def install
