@@ -5,6 +5,14 @@ class Qcoro6 < Formula
   sha256 "809afafab61593f994c005ca6e242300e1e3e7f4db8b5d41f8c642aab9450fbc"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "29e63a82cea7891ef2e9844a57e7836d9c4ebf91db2991432038fa9ce4b971a6"
+    sha256 cellar: :any,                 arm64_sequoia: "c77df01948a62ed7857b568b86ea585018632050d2ba57872205a3ae54eadb76"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0d57a2e74521709c59b8c8c13727dcc91127378507b5c43e9757e5aaa4ddc44"
+    sha256 cellar: :any,                 sonoma:        "4dcbd1c72b2d23a8a7c870611ac6de0f47d6c473c49da1fd111908b253914a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28ffddc636d502cc3d763fab6deef4348c4f77c7b8e6d14594cfd30d5cdad1d2"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "qtbase"
   depends_on "qtdeclarative"
