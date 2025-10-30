@@ -1,5 +1,5 @@
 class NodeAT24 < Formula
-  desc "Platform built on V8 to build network applications"
+  desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   url "https://nodejs.org/dist/v24.11.0/node-v24.11.0.tar.xz"
   sha256 "cf9c906d46446471f955b1f2c6ace8a461501d82d27e1ae8595dcb3b0e2c312a"
