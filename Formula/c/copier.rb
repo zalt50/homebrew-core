@@ -16,9 +16,11 @@ class Copier < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0e59ce279a8f8820e1291199d73e15d6dd222c12e3656162417f68f29cb17e8"
   end
 
-  depends_on "rust" => :build
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+
+  pypi_packages exclude_packages: "pydantic-core"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -85,11 +87,6 @@ class Copier < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -103,11 +100,6 @@ class Copier < Formula
   resource "questionary" do
     url "https://files.pythonhosted.org/packages/f6/45/eafb0bba0f9988f6a2520f9ca2df2c82ddfa8d67c95d6625452e97b204a5/questionary-2.1.1.tar.gz"
     sha256 "3d7e980292bb0107abaa79c68dd3eee3c561b83a0f89ae482860b181c8bd412d"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do
