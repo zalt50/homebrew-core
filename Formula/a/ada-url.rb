@@ -4,6 +4,7 @@ class AdaUrl < Formula
   url "https://github.com/ada-url/ada/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "75565e2d4cc8e3ce2dd7927f5c75cc5ebbd3b620468cb0226501dae68d8fe1cd"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
