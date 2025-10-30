@@ -11,12 +11,12 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dee0f092274f70060add0d41ab16a5ef50fb659a9b9796e2d614ef4b27d05908"
-    sha256 cellar: :any,                 arm64_sequoia: "38782f35410e86a3c1e5a38b0d6630e8d994574247ef4cd6ad2bcf05ea21cfdc"
-    sha256 cellar: :any,                 arm64_sonoma:  "efd5e022343c89fcd6b67eb718d5aeb8c271b9f0a85dcbf5730141a552bb6a3c"
-    sha256 cellar: :any,                 sonoma:        "807658746e000837f05e4698a75349222015dbcc9349c950372858f4fc76970b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9c1cf804df5bb212ec145cdf6c789739629f968dfd7a62d1287d30299fca5c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b28de78d1501c59aa73e3b1c09211a95bb1e6c5471a5abdcb29ccb1d9c8eb51f"
+    sha256 cellar: :any,                 arm64_tahoe:   "85ed13630c7552d67ae01d7e0436371863942162d903c9e9108bbf39ada0ee30"
+    sha256 cellar: :any,                 arm64_sequoia: "72f245ad01140349e56c1cde54b48837e87371865194be47acc03bdd179d4319"
+    sha256 cellar: :any,                 arm64_sonoma:  "3285882ee44db943895a39f4c7c866a858c940852f0c0ead278e2d855ace2d88"
+    sha256 cellar: :any,                 sonoma:        "5f310bfa41c1deff63d96346ff9a145ed3b00789b8bcfe724fb5e35407412d41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ef0dfff370e8a7a4efdf2b8c90f62ece04369add30dcb638f1e96e2ca62ce4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "380bbee0b2b612b660387897541e9092f9a788b2a3ef406557c7c82135397a81"
   end
 
   depends_on "elixir" => :build
