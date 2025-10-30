@@ -1,8 +1,8 @@
 class Skeema < Formula
   desc "Declarative pure-SQL schema management for MySQL and MariaDB"
   homepage "https://www.skeema.io/"
-  url "https://github.com/skeema/skeema/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "05e526ae3b22ba3baaac69b7170a1095a18cf3c4b0600fe7691e0d5bc6476b44"
+  url "https://github.com/skeema/skeema/archive/refs/tags/v1.13.1.tar.gz"
+  sha256 "075fdd68c42f753263990f7001b0fa24f20e1675496e4cd7c3408271a246875a"
   license "Apache-2.0"
   head "https://github.com/skeema/skeema.git", branch: "main"
 
@@ -20,7 +20,8 @@ class Skeema < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
