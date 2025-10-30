@@ -22,10 +22,11 @@ class Socat < Formula
   end
 
   depends_on "openssl@3"
-  depends_on "readline"
 
   def install
-    system "./configure", *std_configure_args, "--mandir=#{man}"
+    # NOTE: readline must be disabled as the license is incompatible with GPL-2.0-only,
+    # https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility
+    system "./configure", "--disable-readline", *std_configure_args
     system "make", "install"
   end
 
