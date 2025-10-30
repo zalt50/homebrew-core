@@ -3,9 +3,10 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/d9/9b/150dddf8bbcaa4970c721f1b8c8b0da72fe9ac3100e9dddf02414257b42a/kimi_cli-0.43.tar.gz"
-  sha256 "55595734b6d654977158b7eb26de47d4f384f647585e4386aa7bb05bfc59f5ae"
+  url "https://files.pythonhosted.org/packages/ca/cf/5c412b725a8b7a98089144ca9298707d13e3b2368ffc7607b9bec4bcebe0/kimi_cli-0.44.tar.gz"
+  sha256 "a2fdc35287a7c3e60a195046f90ca8bdc23b90ec8247052ce527372d577a6b7d"
   license "Apache-2.0"
+  head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "cfba0070dad88c9a400c5d029ff703664b41002a67ef9b7861a23309c7a1d6f0"
@@ -98,8 +99,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/89/98/ddc27d2f9b1784d872ba214e893b473aaf05f7cfed29482821591b1cf7ff/cyclopts-4.1.0.tar.gz"
-    sha256 "18d3e4647729c88fda3a3192d7fab905e6770769465476658f173f02c28ef1ec"
+    url "https://files.pythonhosted.org/packages/b4/98/fe539f0622b76defabb53427acd204da33e160ca7ad76ef71be82bf6739e/cyclopts-4.2.0.tar.gz"
+    sha256 "99d1fe9a0675f8f957f382f273700464b00a148da97a11e73d198820a49950b6"
   end
 
   resource "dateparser" do
@@ -419,8 +420,8 @@ class KimiCli < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
-    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
+    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
+    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
   end
 
   resource "starlette" do
