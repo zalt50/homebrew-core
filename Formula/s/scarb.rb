@@ -1,8 +1,8 @@
 class Scarb < Formula
   desc "Cairo package manager"
   homepage "https://docs.swmansion.com/scarb/"
-  url "https://github.com/software-mansion/scarb/archive/refs/tags/v2.12.2.tar.gz"
-  sha256 "69a37170a5e352da835fe2101ef6bfd8cef952411f86ba8a23d2d96ab6931fe8"
+  url "https://github.com/software-mansion/scarb/archive/refs/tags/v2.13.1.tar.gz"
+  sha256 "110bcab81bbe587a0d12146abd7918c69c6b4b7a5237a2174514ea3740a2671d"
   license "MIT"
   head "https://github.com/software-mansion/scarb.git", branch: "main"
 
@@ -27,7 +27,6 @@ class Scarb < Formula
     %w[
       scarb
       extensions/scarb-cairo-language-server
-      extensions/scarb-cairo-run
       extensions/scarb-cairo-test
       extensions/scarb-doc
     ].each do |f|
@@ -36,7 +35,7 @@ class Scarb < Formula
   end
 
   test do
-    ENV["SCARB_INIT_TEST_RUNNER"] = "cairo-test"
+    ENV["SCARB_INIT_TEST_RUNNER"] = "none"
 
     assert_match "#{testpath}/Scarb.toml", shell_output("#{bin}/scarb manifest-path")
 
@@ -45,7 +44,6 @@ class Scarb < Formula
     assert_match "brewtest", (testpath/"Scarb.toml").read
 
     assert_match version.to_s, shell_output("#{bin}/scarb --version")
-    assert_match version.to_s, shell_output("#{bin}/scarb cairo-run --version")
     assert_match version.to_s, shell_output("#{bin}/scarb cairo-test --version")
     assert_match version.to_s, shell_output("#{bin}/scarb doc --version")
   end
