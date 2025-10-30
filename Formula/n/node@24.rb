@@ -10,6 +10,15 @@ class NodeAT24 < Formula
     regex(%r{href=["']?v?(24(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "a36f94ec840c048f8e4a43e75094c1757d23cd8428d79ba2ad964c85df8c15a0"
+    sha256 arm64_sequoia: "30b38c46042ae2c985133277e9cd710880e213bd722fb9f391b62da28270342e"
+    sha256 arm64_sonoma:  "33de3f20e7c28b6c6960727415af3effecc12d0ab9cc590163a185154eb1848a"
+    sha256 sonoma:        "e8b283e36f0655af2a1b4de776895be733da837f03621b79b36b91d18957b2ab"
+    sha256 arm64_linux:   "76e0457c42e8d20e9517473f47775993d4e6d2faf3bef3fb446f30a9173c70b3"
+    sha256 x86_64_linux:  "58fb0bbe9312b4569a5a7f4556d8b97bcd513218f319fc96d372fad7411a46bd"
+  end
+
   keg_only :versioned_formula
 
   # https://github.com/nodejs/release#release-schedule
