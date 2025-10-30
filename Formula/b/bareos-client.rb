@@ -11,12 +11,12 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "44d2e16910be4d8157b85e74e5808a3dab896a6c3b95c755a225e6a910cafbc7"
-    sha256 arm64_sequoia: "4ecb6c5b7850660cba699fe647658511528ce28a66f7e1720957d537687bb779"
-    sha256 arm64_sonoma:  "0508271ef904c3b67c42b97eb65e8fb4d49fa4d254e25fe1e24b15b0de115d63"
-    sha256 sonoma:        "fe7d169d94073f46b819ec7a3f5ab021fd19afe8be2219e06209e01a5390a186"
-    sha256 arm64_linux:   "d83056ca32967129c82b7cb33c97430afd948463f87c5ad118381fc8b474b2af"
-    sha256 x86_64_linux:  "2c71b16efa01b0edfde15ee8d995bcd43560f7e099392ff28626059a023ebb04"
+    sha256 arm64_tahoe:   "ca9e8fbf99e22526a8f24268580b3f30647a33c9ced707820e549d0db495c8e0"
+    sha256 arm64_sequoia: "5f9fda83af5d2473bd373ca531df308cf611d9283dccdce106a2893a8acd6389"
+    sha256 arm64_sonoma:  "c401f9deecf6c02ed83e9515d82798f61ce85f2107aa95d84312f76463d85579"
+    sha256 sonoma:        "00f574b386df4bbd673956a3eacdf9bd929bfedbfeddb815909c29f0c77d07dc"
+    sha256 arm64_linux:   "508990f99a02d75beb2d30e57f9426666b939b098357bbdec333f0a293977f65"
+    sha256 x86_64_linux:  "6c03646b46d8ad6fcfd0a131c6ba22b710a8291fddbe2863c9a5d70fd2b82a0c"
   end
 
   depends_on "cli11" => :build
