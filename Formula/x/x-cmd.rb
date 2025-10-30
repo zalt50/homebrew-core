@@ -13,12 +13,12 @@ class XCmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e111617d7377e8658d6202a6de66627f1964242ec1f2282f1d5aa233becff6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e111617d7377e8658d6202a6de66627f1964242ec1f2282f1d5aa233becff6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e111617d7377e8658d6202a6de66627f1964242ec1f2282f1d5aa233becff6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fba821e8dfd51fcad27673fc3bd32e48e23660f045645483a428e738fdc43744"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e01721d374a9cadcd5d4a0a93f9fd8f9f1cf66c8d14322e724b7c86b9dba35f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e01721d374a9cadcd5d4a0a93f9fd8f9f1cf66c8d14322e724b7c86b9dba35f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adea7e7933b0896793fbb068f6e48995d8f405c2ac60e0fd5521089902670247"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adea7e7933b0896793fbb068f6e48995d8f405c2ac60e0fd5521089902670247"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adea7e7933b0896793fbb068f6e48995d8f405c2ac60e0fd5521089902670247"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff7c46cc57ba01fd49627d73a96d2cb89860b2e01d31ed394acf18acc525b7a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97a187c542d247a92328963550d7f683715e51f3ce459ddcbd827f6307fb151d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97a187c542d247a92328963550d7f683715e51f3ce459ddcbd827f6307fb151d"
   end
 
   def install
