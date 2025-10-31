@@ -1,8 +1,8 @@
 class Decompose < Formula
   desc "Reverse-engineering tool for docker environments"
   homepage "https://github.com/s0rg/decompose"
-  url "https://github.com/s0rg/decompose/archive/refs/tags/v1.11.4.tar.gz"
-  sha256 "280dbbcb7d3e8351bfe0eec883495a0888dfc76df6d4f26ef3d2c1a114fea979"
+  url "https://github.com/s0rg/decompose/archive/refs/tags/v1.11.5.tar.gz"
+  sha256 "1f2575d792bc5e04c57090534b871a9fac8b1f02a444beee76bf67a298f19090"
   license "MIT"
   head "https://github.com/s0rg/decompose.git", branch: "master"
 
