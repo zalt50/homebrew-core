@@ -1,17 +1,17 @@
 class VibeLogCli < Formula
   desc "CLI tool for analyzing Claude Code sessions"
   homepage "https://vibe-log.dev/"
-  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.7.4.tgz"
-  sha256 "0333995c3aa99e029410c151315b993bee8f6e708a19037cf790cc8f899cfa01"
+  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.7.5.tgz"
+  sha256 "e9dc1e81205e44ed87f52350b7f99025ad0eeffd9f56ca896365fa1cb1139aa4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d8a32edb59f36371e41f8b9832a07b8c0954a86614cd1c614dd7d3003657c3ca"
-    sha256 cellar: :any,                 arm64_sequoia: "919deee0f65d467307e724e05d54575a0964b1d3b692e283d68d25afd7a9555e"
-    sha256 cellar: :any,                 arm64_sonoma:  "919deee0f65d467307e724e05d54575a0964b1d3b692e283d68d25afd7a9555e"
-    sha256 cellar: :any,                 sonoma:        "9ca01cb29945ffbd0598b72e23582bf4579ea845f84fb14589b7d0402eb1f00f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7af7583d5d627a88e00cb8e369d51840491709cd936dce4ccdae4048d9816b42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18c06610794232aec2a9904492695bd54821666728d58b962aa6ced524673ed8"
+    sha256 cellar: :any,                 arm64_tahoe:   "dd02a765fcfa5638fa84c7ef83dc7f09c09517e0fb90fd79a824d90c00910019"
+    sha256 cellar: :any,                 arm64_sequoia: "06ce7d5ac3d456cb880154df538719aa28ed9c7ffe064a5cb72299db719a7bdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "06ce7d5ac3d456cb880154df538719aa28ed9c7ffe064a5cb72299db719a7bdc"
+    sha256 cellar: :any,                 sonoma:        "04881a3f89f67b9ff8c2cd5c4c40e15b6d37c0b6598408d77d852e120e31f1ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c78004c627b3b4726f05980c4a02dc21e9f981662e799b5e50984810d4abe6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db53c03747380854e656c6b8ecfc81cf306f0439761034c33d10786b81aff09d"
   end
 
   depends_on "node"
