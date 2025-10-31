@@ -5,10 +5,9 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # pull from git tag to get submodules
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.141.0",
-      revision: "9f972b3b65f64ec02b4a841d1ca8c300f528f4f0"
+      tag:      "v1.142.0",
+      revision: "4111b9ccdef768302c97de7a6e8f9f6d36a4ecdf"
   license "LGPL-2.1-only"
-  revision 1
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -302,8 +301,8 @@ class Semgrep < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
-    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
+    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
+    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
   end
 
   resource "starlette" do
