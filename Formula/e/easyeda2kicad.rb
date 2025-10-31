@@ -10,13 +10,8 @@ class Easyeda2kicad < Formula
   head "https://github.com/uPesy/easyeda2kicad.py.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "05b51b9b90b6e9df21cc4d50a2a54d9c69a5e25085088ad821df4b6ef12c76bf"
-    sha256 cellar: :any,                 arm64_sequoia: "682e2bc10f6286a65763322476ce3ca59a7d5f06e56f29b4a37397cef9a58962"
-    sha256 cellar: :any,                 arm64_sonoma:  "129a8336006cd5193dbd47bab453d753d87f8c827c2eceed5eb0a1e08884ad98"
-    sha256 cellar: :any,                 sonoma:        "08894a9b07d9fd9674cca066b444f5da23705f8ea8f4e3c781917ac0d11fc89f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40fbda375b8dbe3cd44926ea6cd2d95cab3669fdd6ffe3a1c6d66d6b4bffa753"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a62b9475e1f4ea420ac06a4ac56377ed11285f00a6393eb29cdb93baf236acb1"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "fef36a0d6772f498a58f8dd65683dd7fcad415f7ca4a26413467073e589e6b02"
   end
 
   depends_on "certifi" => :no_linkage
