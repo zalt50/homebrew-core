@@ -1,8 +1,8 @@
 class Opa < Formula
   desc "Open source, general-purpose policy engine"
   homepage "https://www.openpolicyagent.org"
-  url "https://github.com/open-policy-agent/opa/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "90d370c4b0fe4084fcc2e35639348661e9e4d2a2149ffa955d45394e135772a7"
+  url "https://github.com/open-policy-agent/opa/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "c61567b0e20b2a2aa97e16235974a967d7be707a00adb13e2c85f9785005bb86"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/opa.git", branch: "main"
 
@@ -31,7 +31,7 @@ class Opa < Formula
 
   test do
     output = shell_output("#{bin}/opa eval -f pretty '[x, 2] = [1, y]' 2>&1")
-    assert_equal "+---+---+\n| x | y |\n+---+---+\n| 1 | 2 |\n+---+---+\n", output
+    assert_equal "┌───┬───┐\n│ x │ y │\n├───┼───┤\n│ 1 │ 2 │\n└───┴───┘\n", output
     assert_match "Version: #{version}", shell_output("#{bin}/opa version 2>&1")
   end
 end
