@@ -10,6 +10,11 @@ class Gcl < Formula
     "LOOP", # mod/gcl_loop.lsp
   ]
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "dfa35d12b4ccf9fb802cbfef7fdc2e8300734a3d6eb375520db4070ef8b5428d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "28c991bd2a4fcde47e5ed5199c69d521406cfe75a1e84b9b9ac282b6c3bbe384"
+  end
+
   depends_on "gmp"
   depends_on "libtirpc"
   depends_on :linux
