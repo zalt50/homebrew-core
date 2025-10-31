@@ -8,12 +8,12 @@ class Archgw < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7e26f99b1d0af187f843bf7b7ad8a742ccec41bcb3ea4ae199dff773f241eb22"
-    sha256 cellar: :any,                 arm64_sequoia: "ad6cc3ebc095532c7deb0756d063bfba56f76e40bdade5ce2df7310643e35de2"
-    sha256 cellar: :any,                 arm64_sonoma:  "395b43bf0cce0537fb5b836307db5cdcd5f2d777db10ce427e2f0b4a7c90ac67"
-    sha256 cellar: :any,                 sonoma:        "cb0362495fa14147b4cf36561ce3d48c2df5c8a3162a757ecee6567b8b0d34fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6009409acef8156df5ed2a5682ccae1a582e1a02b71c076373964722cfeb0320"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdc37119620b24af89df157d9cbd0d273a933cafbb978074932ef208565539b5"
+    sha256 cellar: :any,                 arm64_tahoe:   "7c16e461db8536b55f415929444a2b8a89a1c2df44e85fbece2c1cf7bc7a1eea"
+    sha256 cellar: :any,                 arm64_sequoia: "3bbd2c1f6767359fb0ceb058ec0fd018f5c9829a43389167c5fe761393a61c09"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2effa6d3e9c74987109912e53b556e8ca6bb46f4a475f581dd022304bf11056"
+    sha256 cellar: :any,                 sonoma:        "497fe9db6b48f0e9bbdded016ea751474ac7fe804bffdbbdb56f944d58361d99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "315fe9576a17ca71095d5b74fbdd8463d4415d7f9702a98f153b5d9cff0c0949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e462b7760b2dd3ebbc79acb58cddf5393aa87359ab4af2d0c4fdb6fa36ddbcb"
   end
 
   depends_on "rust" => :build # for hf-xet, jitter and safetensors
