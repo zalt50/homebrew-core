@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/ca/cf/5c412b725a8b7a98089144ca9298707d13e3b2368ffc7607b9bec4bcebe0/kimi_cli-0.44.tar.gz"
-  sha256 "a2fdc35287a7c3e60a195046f90ca8bdc23b90ec8247052ce527372d577a6b7d"
+  url "https://files.pythonhosted.org/packages/82/c6/44333d7bba6f5769f0ec2e8a02eb205cd1c2c6437cf0239c85311de0da57/kimi_cli-0.45.tar.gz"
+  sha256 "0edfcc5c150b9e2af304262629f59479cb9143b4d25eb4201a3563676d90ee87"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -99,8 +99,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/b4/98/fe539f0622b76defabb53427acd204da33e160ca7ad76ef71be82bf6739e/cyclopts-4.2.0.tar.gz"
-    sha256 "99d1fe9a0675f8f957f382f273700464b00a148da97a11e73d198820a49950b6"
+    url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
+    sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
   end
 
   resource "dateparser" do
@@ -214,8 +214,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/fa/01/b304165febf77506b488032ff6e2b8ad68fe95f677cc131df56ada3d5562/kosong-0.16.1.tar.gz"
-    sha256 "a0ab85024b7ea0bc79f3db583eaafb6cf3d552e1059d9b75a60d8894a9275b2b"
+    url "https://files.pythonhosted.org/packages/68/28/208757d2322795951eee884c89009c99ff3e587fda4da6ddcfb671926a70/kosong-0.16.2.tar.gz"
+    sha256 "e88613338009918cfdce1bffbfae4e49fbc3136e34e641dad5c0abf6276cc2dd"
   end
 
   resource "lazy-object-proxy" do
