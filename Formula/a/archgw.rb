@@ -3,10 +3,9 @@ class Archgw < Formula
 
   desc "CLI for Arch Gateway"
   homepage "https://github.com/katanemo/archgw/tree/main/arch/tools"
-  url "https://files.pythonhosted.org/packages/99/97/24c0999cc5aa5e5cd9f1a50d7f7d86ba129a69c3e5258d536f0f5a34453f/archgw-0.3.17.tar.gz"
-  sha256 "dee2439288f47981f6411127a2cc4ca0ad17e92d68c41fe95299c5399fa1ecbb"
+  url "https://files.pythonhosted.org/packages/d6/96/90e4129b14fe6fdc03692818ee2831d51eb6759d6e17ce880c9cc70c74b8/archgw-0.3.18.tar.gz"
+  sha256 "68bdebbf5854a3662d3e88b8ac55db6cfa916ff5ff8875ec3a200593bd75d4f3"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "7e26f99b1d0af187f843bf7b7ad8a742ccec41bcb3ea4ae199dff773f241eb22"
@@ -44,8 +43,8 @@ class Archgw < Formula
   end
 
   resource "archgw-modelserver" do
-    url "https://files.pythonhosted.org/packages/c3/8a/83714832160be0c40d1fa20df74fa6953490fd8f2a1541644ddfcda3560b/archgw_modelserver-0.3.17.tar.gz"
-    sha256 "1c0f4a8efdee42b392ca29523415f8ccbee3e1e6f556a51776d609a383532d7b"
+    url "https://files.pythonhosted.org/packages/60/87/bbb11cf400ca2b01e0de55a0e4c1b14280b08f3d1452714ec87beefa997f/archgw_modelserver-0.3.18.tar.gz"
+    sha256 "9c32f48e0c7e0b886e803218c4289c0fb27362b567a02fba25e1bd8dd5a9fb65"
   end
 
   resource "asgiref" do
@@ -224,8 +223,8 @@ class Archgw < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/89/fc/889242351a932d6183eec5df1fc6539b6f36b6a88444f1e63f18668253aa/psutil-7.1.1.tar.gz"
-    sha256 "092b6350145007389c1cfe5716050f02030a05219d90057ea867d18fe8d372fc"
+    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
+    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
   end
 
   resource "pydantic" do
