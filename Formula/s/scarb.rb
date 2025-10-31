@@ -12,12 +12,12 @@ class Scarb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d8b70f3e241a1e6eeaeb9193c1962624633910f0843a038629011a7248e1d57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f725bbcdf57df264acbff40d2a829fe5d4e0721dfca785828be0c41ff1065ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cde688a72cc73bf4ac68645d49e72cadeec612f8092abb622102cea7aa100c33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe7107120aed3068864143ddbbbdb8436c6133ba4c0a8083afcb8694f28e1976"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eab8e589ff95c270de43dce6504d07ded7eace174a10b45b3595e85597b769a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cee6486b22d60d5944efdbab3c913c76f2eb149c6cd1d7335902de8bc551debe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86965ab12b89a74f1cdd18a795ba9ee16805baa5ddc9d0da236837eb8f3e4d41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eed00734c65ccfb20c22c376ad00ab9b88797c7a7c04b24608cd74c388cff35e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4492ec6bc7732b00af7554e4fe1c47662e2a605dd2923ffa2b7e0b42ccbda2a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c1afe644860df329508102e62452327b4d38f9b8f55ae643873bd8c50344c22f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfa1f4aaad1f0e9b859c013d6d92082a650973a33bd7bd4d9a512700f890f3d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "082cdf97736fb93eec95cbb361759071614e8509c10a6ede8aa0b5c935b0b891"
   end
 
   depends_on "rust" => :build
