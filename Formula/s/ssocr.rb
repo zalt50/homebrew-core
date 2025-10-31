@@ -1,8 +1,8 @@
 class Ssocr < Formula
   desc "Seven Segment Optical Character Recognition"
   homepage "https://www.unix-ag.uni-kl.de/~auerswal/ssocr/"
-  url "https://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.25.0.tar.bz2"
-  sha256 "75caf81b4ddce2ecbd5142db3bb1c26178889e37010074b8ec4fe0b5009c676a"
+  url "https://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.25.1.tar.bz2"
+  sha256 "e7588bb9ec56b568362ca0b68c216b0af37b42bb3f63602ee21628aa731b84be"
   license "GPL-3.0-or-later"
   head "https://github.com/auerswal/ssocr.git", branch: "master"
 
