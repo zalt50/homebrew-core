@@ -7,12 +7,12 @@ class Rqlite < Formula
   head "https://github.com/rqlite/rqlite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ba251cb39f88ca0af3a6813c223c3778de2cd0c9607206589d58c9e8495c45d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa1754bab9a2831be80c4dc2bcbf1f417ab7b62f948fcf13c326556938a0af46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2dd6aaf1f5a58e9ce42d6acc0c5822606008b0cf815e5f5d237e45cfea622b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf82ffc5830d53fc50d0c4ed0768ef99ade247d7f342a78cb6bf5b61d909225e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74b2aad7c9c2f0f4a1a11d1226d81a01f3bcc23b0a839b47480bf203d165814f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59fc5a5a620b1369bfc938f741b4e4366bb84ca78a6de68e171a83e035c6ae33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55a7af126d29fb399b3aef276cbbb77c201d260b1c1d6612ab964db2ed864391"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46d5e85f4158eeea73c69cb9f875943dab5ca2a842aa220fa6ba4ed4ebb7e7ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "321f9f10f656d09d8fa26040521dbebbab0f57ef7f1d9e0f036f64352461289d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c290c838aba4302c95e3989fb8e8ffbb53050f02c07a541ed411269184f8773"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c788d00ee7e615d46b55319ad868b0e39da5eab6af31e26b14f9dbd26c3d97b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e029add514a61263851135a41e5eb277eafe839c08c5201b1a0f9961c16e57b5"
   end
 
   depends_on "go" => :build
