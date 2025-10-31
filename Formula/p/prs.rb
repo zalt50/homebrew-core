@@ -1,8 +1,8 @@
 class Prs < Formula
   desc "Secure, fast & convenient password manager CLI with GPG & git sync"
   homepage "https://timvisee.com/projects/prs"
-  url "https://github.com/timvisee/prs/archive/refs/tags/v0.5.4.tar.gz"
-  sha256 "c337537b9c9b383354a30cb1a945502c8c3e77baae725336b614f1a6655e9a6a"
+  url "https://github.com/timvisee/prs/archive/refs/tags/v0.5.5.tar.gz"
+  sha256 "833e47894b64e9da25183782fd10b16c6879d201cf5f60e02ce3d4c654309f53"
   license "GPL-3.0-only"
 
   bottle do
