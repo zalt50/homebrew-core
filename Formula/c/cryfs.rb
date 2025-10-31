@@ -10,8 +10,8 @@ class Cryfs < Formula
   head "https://github.com/cryfs/cryfs.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "84998e8d9c47171a1bbb8f5bfb27cc69bf92ad5a5637b774da240c8c6a33d72e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "492435da4d170be2c2cb6f3c2876a5eb7e466592bbf56a3f5779963cdf490fae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "47146379f054330f91b6ade148957e79a93cce9c6f6bc1cd0070bb39decba471"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "823beaba77708c4fef1ecf93dc955667cafa57893f687f9d136ad276fb22b227"
   end
 
   depends_on "cmake" => :build
