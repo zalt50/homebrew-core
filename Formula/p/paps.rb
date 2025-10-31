@@ -9,16 +9,12 @@ class Paps < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "f7b29bbba1d1a030c3d618bf48ec24052340e47758f00264252a3e3a1e97290e"
-    sha256 cellar: :any, arm64_sequoia:  "1dc9e0d4ae5edd03013091933251474c8dcd4b1bc4f72a4df502734228c62f6f"
-    sha256 cellar: :any, arm64_sonoma:   "df67721a4260dd63be5164d348ba57058f3a43298915726c7c1d0d3c43927794"
-    sha256 cellar: :any, arm64_ventura:  "fa4ca77e9a2dd79350b705ec7cfcb559cce5e726777431b9a286ebb9b2ec00d2"
-    sha256 cellar: :any, arm64_monterey: "b66abd39b5a6c8ee5b65603beb8e33357448af5a0fd8112610b63ffe6fc09df7"
-    sha256 cellar: :any, sonoma:         "d9cd43c14cd780ac32cbd23e42b129db879e0dc6f1dd13e1b6d554845b46cc11"
-    sha256 cellar: :any, ventura:        "eae81c50573f8ef3d0220e2237326bd8b712f15ed7c37cac40709feafdab7c86"
-    sha256 cellar: :any, monterey:       "82f0ec08cfa698dafb97b18e8f5508c8648c9f1a80445c2077a3ab80168c7829"
-    sha256               arm64_linux:    "1400c61fe5c429d51c0a3032a6f8a405503b89062b8082d7ab415466cff7f61f"
-    sha256               x86_64_linux:   "9edc0fa1b1d9b411f896f492b1bc10fe2c8e85c70065212630f358b1c8d5d771"
+    sha256 cellar: :any, arm64_tahoe:   "8d95f99591217a56718331ee68a6996b39f059ca4aecfe5d0921a11566d75735"
+    sha256 cellar: :any, arm64_sequoia: "b26fed1929f8d01dac18fb575c540f386006b2db8ce860288001f1424b3e6baa"
+    sha256 cellar: :any, arm64_sonoma:  "e3679db03c165c79cdbb9a8ceac9fc0df4f3226622590452249e076e38ebe0ff"
+    sha256 cellar: :any, sonoma:        "183b02cb1d125fa77ad0320bd003589aa346d9077d530ab85779916c41503547"
+    sha256               arm64_linux:   "f8bff76dd84fc102e71509567f16a62036320efb8d3fb10240cee22ae5b70d19"
+    sha256               x86_64_linux:  "cf456bd3c1d9da480517bda9f2bf04ca1545c409538e802caba1c11411329029"
   end
 
   depends_on "meson" => :build
