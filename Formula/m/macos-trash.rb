@@ -1,8 +1,8 @@
 class MacosTrash < Formula
   desc "Move files and folders to the trash"
   homepage "https://github.com/sindresorhus/macos-trash"
-  url "https://github.com/sindresorhus/macos-trash/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "87089efd5f47e4281986647c8e6ea8dc10429ba83ae7e7386a91dfccc03bee20"
+  url "https://github.com/sindresorhus/macos-trash/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "daa545407550ecc46e5088669d1e9eae41219d29ff83d46f46c658bad1c00f85"
   license "MIT"
   head "https://github.com/sindresorhus/macos-trash.git", branch: "main"
 
