@@ -1,8 +1,8 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
   homepage "https://beringresearch.github.io/macpine/"
-  url "https://github.com/beringresearch/macpine/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "fd2d315a6bd42c9af2c6c395d46b95731484ea1d79d1902bc919e2f95f73fe69"
+  url "https://github.com/beringresearch/macpine/archive/refs/tags/v1.1.5.tar.gz"
+  sha256 "59dab9df872adffe0f2b5032d1dce086048551041289c08662280ae5b6407f2f"
   license "Apache-2.0"
   head "https://github.com/beringresearch/macpine.git", branch: "main"
 
@@ -35,9 +35,6 @@ class Macpine < Formula
   conflicts_with "alpine", because: "both install `alpine` binaries"
 
   def install
-    # bump to use go1.25, https://github.com/beringresearch/macpine/pull/223
-    inreplace "go.mod", "1.23", Formula["go"].version.to_s
-
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"alpine")
     generate_completions_from_executable(bin/"alpine", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
