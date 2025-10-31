@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/ByteNess/aws-vault"
-  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.7.6.tar.gz"
-  sha256 "d6f51eb3afb7bfb6332ef991c0cace658090c3cb47837aac7f4574a57c4a5779"
+  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.7.7.tar.gz"
+  sha256 "349790f4aff5e1797074a33e444a6543e722e48bc1e6dec3a18a8626b6b85b68"
   license "MIT"
   head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
