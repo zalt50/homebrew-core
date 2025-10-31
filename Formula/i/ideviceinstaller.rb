@@ -1,13 +1,10 @@
 class Ideviceinstaller < Formula
   desc "Tool for managing apps on iOS devices"
   homepage "https://libimobiledevice.org/"
-  url "https://github.com/libimobiledevice/ideviceinstaller/releases/download/1.1.1/ideviceinstaller-1.1.1.tar.bz2"
-  sha256 "deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063"
+  url "https://github.com/libimobiledevice/ideviceinstaller/releases/download/1.2.0/ideviceinstaller-1.2.0.tar.bz2"
+  sha256 "26115288e50d003bbb7d23c05441c54ea69b255974303bfd44fef6943e042f94"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/libimobiledevice/ideviceinstaller.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "9fb056a71779f3ae968d5b59235434363cb890f43439c53cfbdc12c2fd73391b"
