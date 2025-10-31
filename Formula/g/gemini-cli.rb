@@ -1,17 +1,17 @@
 class GeminiCli < Formula
   desc "Interact with Google Gemini AI models from the command-line"
   homepage "https://github.com/google-gemini/gemini-cli"
-  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.11.1.tgz"
-  sha256 "0dbd27a044d9677dcf030dff5135ac266675113615370cc8a769b453f73d24a5"
+  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.11.2.tgz"
+  sha256 "5903d91f6b9d08deed5231bb42e600be20b1f8bc2f4b268d2b0d9e230c076d59"
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_tahoe:   "240a3dfb37b6c35104a053771b1987326e97e138b4a7137995361a5089d120fd"
-    sha256                               arm64_sequoia: "0cf9d8a92b44c39c11c78f9e5599ad01cad8f75b4588689c5c2e6b955b371207"
-    sha256                               arm64_sonoma:  "8cd87cd303531f02db6f249a6cc3c293b8dce1d182042ddf8ef07ede2a4849e0"
-    sha256                               sonoma:        "d3554dd75a19e209bf518955882b885a6fc6009800f8f66742f25df5c58d1489"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35a380a255cdb72df1b9158f0c69686da140a68045293535f3161fab972cee1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a45737f8d65dfe4441c50777fcf2ef791d1105f55f9bba4fce504aa0562b990c"
+    sha256                               arm64_tahoe:   "bd2aac166c28f490cd293180ca93bda2658697086f0f662d8bba7f12ded1e12f"
+    sha256                               arm64_sequoia: "b4918276ae085d90e1a6b4aa96e83f57ab5ae657bbf11762947503ba286f5262"
+    sha256                               arm64_sonoma:  "a46207a88a3e135045ee66ef06f814bbf0195c3321bf709f0b38637d2740f1dc"
+    sha256                               sonoma:        "614391e367ccbc8763465893df18f8be08ff04778030ea710a2bac83b34349f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6794f5f52d563f38b9c2f479c7475e8c21004defdb497aab3c806d2cac68c5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a9fdbb44de4c1d4edf5409459ceea9b05a8a3aa653c1c638b2513eedb2091a"
   end
 
   depends_on "node"
