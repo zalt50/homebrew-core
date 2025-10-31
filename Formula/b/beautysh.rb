@@ -3,8 +3,8 @@ class Beautysh < Formula
 
   desc "Bash beautifier"
   homepage "https://github.com/lovesegfault/beautysh"
-  url "https://files.pythonhosted.org/packages/b2/21/ee1b4ffeb44601683bfc4f83b3ace4d1a57138ac2b0c71c942e3a338c928/beautysh-6.4.0.tar.gz"
-  sha256 "d758d74e81ed11d073e0ebafe817b030f7745773a648748f68dbd5e9ecd1c8a0"
+  url "https://files.pythonhosted.org/packages/ce/72/6d47e5f15b16b650f6ac9da202bea6866bf327d4be133944a62cedf94d63/beautysh-6.4.1.tar.gz"
+  sha256 "5beeccdddf02cb11088e009d60e367a28aab1609fbe8da9e5a19a7c59fa28f56"
   license "MIT"
 
   bottle do
