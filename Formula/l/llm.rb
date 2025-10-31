@@ -17,12 +17,13 @@ class Llm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b54670d54564c9057475ba987afeb4d879dafd317f103d7b55d6023e307805d"
   end
 
-  depends_on "rust" => :build
-  depends_on "certifi"
+  depends_on "rust" => :build # for jiter
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -75,13 +76,13 @@ class Llm < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/9d/c0/a3bb4cc13aced219dd18191ea66e874266bd8aa7b96744e495e1c733aa2d/jiter-0.11.0.tar.gz"
-    sha256 "1d9637eaf8c1d6a63d6562f2a6e5ab3af946c66037eb1b894e8fad75422266e4"
+    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
+    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/de/90/8f26554d24d63ed4f94d33c24271559863223a67e624f4d2e65ba8e48dca/openai-2.3.0.tar.gz"
-    sha256 "8d213ee5aaf91737faea2d7fc1cd608657a5367a18966372a3756ceaabfbd812"
+    url "https://files.pythonhosted.org/packages/c4/44/303deb97be7c1c9b53118b52825cbd1557aeeff510f3a52566b1fa66f6a2/openai-2.6.1.tar.gz"
+    sha256 "27ae704d190615fca0c0fc2b796a38f8b5879645a3a52c9c453b23f97141bb49"
   end
 
   resource "pluggy" do
@@ -95,13 +96,8 @@ class Llm < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "python-dateutil" do
@@ -157,11 +153,6 @@ class Llm < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do
