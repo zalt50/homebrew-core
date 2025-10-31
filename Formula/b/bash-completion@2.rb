@@ -1,8 +1,8 @@
 class BashCompletionAT2 < Formula
   desc "Programmable completion for Bash 4.2+"
   homepage "https://github.com/scop/bash-completion"
-  url "https://github.com/scop/bash-completion/releases/download/2.16.0/bash-completion-2.16.0.tar.xz"
-  sha256 "3369bd5e418a75fb990863925aed5b420398acebb320ec4c0306b3eae23f107a"
+  url "https://github.com/scop/bash-completion/releases/download/2.17.0/bash-completion-2.17.0.tar.xz"
+  sha256 "dd9d825e496435fb3beba3ae7bea9f77e821e894667d07431d1d4c8c570b9e58"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -22,7 +22,7 @@ class BashCompletionAT2 < Formula
   end
 
   head do
-    url "https://github.com/scop/bash-completion.git", branch: "master"
+    url "https://github.com/scop/bash-completion.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
