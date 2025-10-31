@@ -25,11 +25,10 @@ class Macvim < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "6ce80ac9251b02957aac5b79e3f0ea3458db1eadf191025014ea410f9af885b1"
-    sha256 cellar: :any, arm64_sequoia: "7129bf4c94a515c95e3772042dde97289d0047032bd0b015cf793404c6759043"
-    sha256 cellar: :any, arm64_sonoma:  "c42009e9e2f8b9c00177af43d6835467537429d2d6ea025a41a5bb83af387ab9"
-    sha256 cellar: :any, sonoma:        "1096e8771956b2cec30b5af4b08c7dddaeafdca56b58cd6b0c9ba07a4af284ff"
+    sha256 cellar: :any, arm64_tahoe:   "080aafdee7b089bdb764625f0ac7a19c69c17263b15c579298ed349425069952"
+    sha256 cellar: :any, arm64_sequoia: "7411602e3e72396de784580bd449c590df25137ec2071c412eb03dc29a85cfe2"
+    sha256 cellar: :any, arm64_sonoma:  "c7550a62ad426be5c7fbb149d848dd139227ea0b3cb51174bbe7219cddb6736f"
+    sha256 cellar: :any, sonoma:        "c8adcf1e753a966f80166c98c684a45518c10e7315e95195b6da26b544f46542"
   end
 
   depends_on "gettext" => :build
