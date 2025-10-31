@@ -9,12 +9,8 @@ class McpProxy < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad7ec10f51ea1b9e44bdfafed3890eff62f8ca95804350116998a560e7835539"
-    sha256 cellar: :any,                 arm64_sequoia: "5a1cbd394e9b3d1e6c436b880aa44724ce1ccd0675670890ad5ea1d1234d0109"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b93837e414c1cb7277ad5e8281fd3130b35c98f21beb8427575ba87caf15e5b"
-    sha256 cellar: :any,                 sonoma:        "dc5cc0202fd568c5b43a3c6a8f5eead3de41e4e220c81633c5fed3e302fc3b00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5878b13e17be50961ed6463776aa238de5ccb0d3fe6342817c3f65a2bd8fbfda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1d04a1119d5f70bbf0ffc3ed69c9bba9fb1a70152d8ae1d0d4a642fbc5f7b45"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3b0225508b0b2a6da1f445eabeb423d030124e701dbe8c82a4717de00f36c0cf"
   end
 
   depends_on "certifi" => :no_linkage
