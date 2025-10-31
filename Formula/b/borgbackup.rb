@@ -3,9 +3,10 @@ class Borgbackup < Formula
 
   desc "Deduplicating archiver with compression and authenticated encryption"
   homepage "https://www.borgbackup.org/"
-  url "https://files.pythonhosted.org/packages/d3/8b/f24d8ab37b8d8cd85a55fa6cfaf98754bb7b6c7534c03ffe087506080a53/borgbackup-1.4.1.tar.gz"
-  sha256 "b8fbf8f1c19d900b6b32a5a1dc131c5d8665a7c7eea409e9095209100b903839"
+  url "https://files.pythonhosted.org/packages/de/79/2031c715a35c1fc943cdac83337b0070737d29796270454bedf52d2ac457/borgbackup-1.4.2.tar.gz"
+  sha256 "8923f5e953205d81138d1d7276c8a1c864215e230994d620c397635568ed376f"
   license "BSD-3-Clause"
+  head "https://github.com/borgbackup/borg.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -29,13 +30,9 @@ class Borgbackup < Formula
     depends_on "acl"
   end
 
-  pypi_packages extra_packages: ["msgpack", "packaging"]
-
-  # `msgpack` needs to be kept as v1.1.0
-
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/cb/d0/7555686ae7ff5731205df1012ede15dd9d927f6227ea151e901c7406af4f/msgpack-1.1.0.tar.gz"
-    sha256 "dd432ccc2c72b914e4cb77afce64aab761c1137cc698be3984eee260bcb2896e"
+    url "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz"
+    sha256 "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"
   end
 
   resource "packaging" do
@@ -62,10 +59,8 @@ class Borgbackup < Formula
     # Create a repo and archive, then test extraction.
     cp test_fixtures("test.pdf"), testpath
 
-    Dir.chdir(testpath) do
-      system bin/"borg", "init", "-e", "none", "test-repo"
-      system bin/"borg", "create", "--compression", "zstd", "test-repo::test-archive", "test.pdf"
-    end
+    system bin/"borg", "init", "-e", "none", "test-repo"
+    system bin/"borg", "create", "--compression", "zstd", "test-repo::test-archive", "test.pdf"
     mkdir testpath/"restore" do
       system bin/"borg", "extract", testpath/"test-repo::test-archive"
     end
