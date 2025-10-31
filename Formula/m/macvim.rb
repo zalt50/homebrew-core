@@ -2,9 +2,9 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https://github.com/macvim-dev/macvim"
-  url "https://github.com/macvim-dev/macvim/archive/refs/tags/release-181.tar.gz"
-  version "9.1.1128"
-  sha256 "ee4127ff18f55f04b69e401fc444c94b9e4d2bf60580ed18e85b78f2e34efbd3"
+  url "https://github.com/macvim-dev/macvim/archive/refs/tags/release-182.tar.gz"
+  version "9.1.1887"
+  sha256 "82148b9f7fa4c83e18ba7fea3f65289b1eb3e2775a4d17a4c3e0fe16087e0e53"
   license "Vim"
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
@@ -22,7 +22,7 @@ class Macvim < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     rebuild 1
