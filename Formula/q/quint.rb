@@ -5,6 +5,10 @@ class Quint < Formula
   sha256 "80eb1993ecb28271cfda7313304a22f866c84274082dffeec52b806cb1a6623a"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "1cd5380ed6a33bfe31dc2dcafddbd59c1c47cd2219fefc24934cc3eec5f60366"
+  end
+
   depends_on "node"
 
   def install
