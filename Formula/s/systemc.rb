@@ -1,8 +1,8 @@
 class Systemc < Formula
   desc "Core SystemC language and examples"
   homepage "https://systemc.org/overview/systemc/"
-  url "https://github.com/accellera-official/systemc/archive/refs/tags/3.0.1.tar.gz"
-  sha256 "d07765d0d2ffd6c01767880d0c6aaf53cd9487975f898c593ffffd713258fcbb"
+  url "https://github.com/accellera-official/systemc/archive/refs/tags/3.0.2.tar.gz"
+  sha256 "9b3693ed286aab958b9e5d79bb0ad3bc523bbc46931100553275352038f4a0c4"
   license "Apache-2.0"
 
   livecheck do
@@ -27,13 +27,6 @@ class Systemc < Formula
   depends_on "automake" => :build
   depends_on "doxygen" => :build
   depends_on "libtool" => :build
-
-  # Workaround "No rule to make target 'DEVELOPMENT.md', needed by 'all-am'":
-  # Ref: https://forums.accellera.org/topic/8068-no-rule-to-make-target-developmentmd-needed-by-all-am/
-  patch do
-    url "https://sources.debian.org/data/main/s/systemc/3.0.1-1/debian/patches/doc-targets.patch"
-    sha256 "3c4c79453599fed2a0082b9564e6a2dd845615afcc173d0e235933b2d2b18bf4"
-  end
 
   def install
     ENV.append "CXXFLAGS", "-std=gnu++17"
