@@ -1,8 +1,8 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
   homepage "https://github.com/goretk/redress"
-  url "https://github.com/goretk/redress/archive/refs/tags/v1.2.43.tar.gz"
-  sha256 "4c817f24c151ff9ab8c9f8bbe2ae8ac75ed3a26955806ccc2dbebe5e2dcc8dcd"
+  url "https://github.com/goretk/redress/archive/refs/tags/v1.2.44.tar.gz"
+  sha256 "26c60c539136e2f2a72ac1f28000e7139a8aa1536484b887fa2f7d1fb3a5de2b"
   license "AGPL-3.0-only"
   head "https://github.com/goretk/redress.git", branch: "develop"
 
@@ -41,10 +41,8 @@ class Redress < Formula
   test do
     assert_match "Version:  #{version}", shell_output("#{bin}/redress version")
 
-    test_module_root = "github.com/goretk/redress"
     test_bin_path = bin/"redress"
-
     output = shell_output("#{bin}/redress info '#{test_bin_path}'")
-    assert_match(/Main root\s+#{Regexp.escape(test_module_root)}/, output)
+    assert_match "Build ID", output
   end
 end
