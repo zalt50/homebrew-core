@@ -7,7 +7,7 @@ class Hexo < Formula
   head "https://github.com/hexojs/hexo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f14b7f075d26f0f39c4c2c8b1f65c586587ffd730970401b29b713bd57b60f9b"
+    sha256 cellar: :any_skip_relocation, all: "2c6f2cc571e1e498c3ce32d4c3dcf162a70cf7e8d9db2c0046ef58a971972376"
   end
 
   depends_on "node"
