@@ -6,6 +6,10 @@ class FrameworkToolTui < Formula
   license "MIT"
   head "https://github.com/grouzen/framework-tool-tui.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "62b235653ef049ed554ca7314b7cb5b6d242000593b47d4c75a4128677769643"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on arch: :x86_64
