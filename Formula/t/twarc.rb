@@ -7,6 +7,15 @@ class Twarc < Formula
   sha256 "54537495c6575863769e82ba4a0db7d68538e7c5afa9b8fcc8856a0ae94d9fa0"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d3a127a7b46efa8bcb391710a9f5aa29658e58c5fe61f98d18ec2a7ac111ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "583aafb5dc3bfdf6d172d3cb3b31f9aac6d6e4b656db6746aca71fcead8d45b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3ca42e6d22c10a0bccdd8e8360bedec03e0814eb0940d8c68ff03c6020c4305"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb1b24aaa73b69d3feb1e34b5b5c61e04260ae247bea3db5297b519f547eab2e"
+    sha256                               arm64_linux:   "5517806c5d66a65bb1d555bd6ff31a42cfce3fe14dbd44e1607c146abc6c5506"
+    sha256                               x86_64_linux:  "87c7ac41550c8909529c200c4dde5199b543f4f4510a19da1d216aa0767e7b8f"
+  end
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
