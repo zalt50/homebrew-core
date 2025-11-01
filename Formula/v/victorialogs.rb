@@ -1,8 +1,8 @@
 class Victorialogs < Formula
   desc "Open source user-friendly database for logs from VictoriaMetrics"
   homepage "https://docs.victoriametrics.com/victorialogs/"
-  url "https://github.com/VictoriaMetrics/VictoriaLogs/archive/refs/tags/v1.37.1.tar.gz"
-  sha256 "ebe6e84a3ff7dad47a5b28ed8b309e08e45d138883ace1574d55b4d8c37349b2"
+  url "https://github.com/VictoriaMetrics/VictoriaLogs/archive/refs/tags/v1.37.2.tar.gz"
+  sha256 "3f70cf19f5404fed3460a5255bfd6268508bf1a0384f12b9f7e7de24026b4f10"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Victorialogs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "626c7a084f37c7fe0509dc184474aa6890145136590b9b48d20294b77e5f96c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "597a2ed0b3ea9912faf51a564f77fcf0e14f00741e3c7447f4c992e27747f8f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f72aae03590fa9c029de5c42d0f1a9225357e70a156cf46eff237db216ff349"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae46163c1549cf739f5c6f3a66eeb837a9f726ac4b9c16d57a4fad7ff89223af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f2ddf0145cac6e185df5df42a4661cfb4c6c1107628870b7745ac9bc4e803fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9299cdefd915efebef025c7475f9fd0bcd321ec856cbeb950065b65fc8209a16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a5c2455b20ec21a654419f6867afe7c5563b53162794da15d92823718e398f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e02502ad690151bc8870cb5539363c77f4d16ad383effd2fa2fe6ca3c9cf4bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a8c8cab888164c5f71f58c503cb5129bd82b0b7a69957ee102d96d3f18be538"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4332c4da1522aeedb41b6b3f862d45ed34993269611f20b77548d81f2b86be5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7289997dda4f5301013b0864482ff2395ba81662bc95aa5d025373226b13da65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "635f73adda9cb069481d7ed30f96e93d1b17c67d4e90ef5ed6ed6695eecda459"
   end
 
   depends_on "go" => :build
