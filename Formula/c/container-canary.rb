@@ -6,6 +6,15 @@ class ContainerCanary < Formula
   license "Apache-2.0"
   head "https://github.com/NVIDIA/container-canary.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f05da274de16c17ed5b55914e94aa49245b13947f2684c45bb38241a3b64923"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d8aa6baa36bc85bd7f15afc41f04bfd76098b1e9d5f682ea1ea35a2373db933"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e092b3c8ee848f790f0288d740df5b7f52148f017fb32701c58f8884970593f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "644611fee14fa1426fbf69f998a4090763e39542e957146c21b5f65d80cde033"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c605a4323c42a1525fda0f8c1252f9ded6731329219aeadf9c782751731339c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fa7d10e14e625b54c9b2ea110d3f4db00f62293f944c764f3b45257425ea6aa"
+  end
+
   depends_on "go" => :build
   depends_on "docker" => :test
 
