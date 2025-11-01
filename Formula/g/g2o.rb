@@ -5,6 +5,7 @@ class G2o < Formula
   version "20241228"
   sha256 "d691ead69184ebbb8256c9cd9f4121d1a880b169370efc0554dd31a64802a452"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -24,6 +25,16 @@ class G2o < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen"
+
+  # Backport support for eigen 5.0.0
+  patch do
+    url "https://github.com/RainerKuemmerle/g2o/commit/5ad2b3d8b550bad67242d90115f28c5b725da2a1.patch?full_index=1"
+    sha256 "f2c0139a045b0ef7380d56d368d1ee0cbd11feeff2dede9858d6a8532a7103bb"
+  end
+  patch do
+    url "https://github.com/RainerKuemmerle/g2o/commit/ef80e643adeb700536dd282dd4316c90cfc05fe8.patch?full_index=1"
+    sha256 "ac9abf38a4425fd95ceb4a295160bec5a2f2bbd2bb2f8695951ba9e0c101edc4"
+  end
 
   def install
     cmake_args = std_cmake_args + %w[-DG2O_BUILD_EXAMPLES=OFF]
