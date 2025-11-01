@@ -18,19 +18,18 @@ class Oterm < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for textual_speedups
   depends_on "certifi" => :no_linkage
-  depends_on "cffi"
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
-  depends_on "pycparser"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
-  depends_on "rpds-py"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "zlib"
 
-  pypi_packages exclude_packages: %w[certifi cffi cryptography pillow pycparser rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic-core rpds-py]
 
   resource "aiosql" do
     url "https://files.pythonhosted.org/packages/98/3a/105cdf480d444ee059f3fbea65616fba006fba29d32e382fb1a4d947f4b7/aiosql-13.4.tar.gz"
@@ -73,8 +72,8 @@ class Oterm < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/89/98/ddc27d2f9b1784d872ba214e893b473aaf05f7cfed29482821591b1cf7ff/cyclopts-4.1.0.tar.gz"
-    sha256 "18d3e4647729c88fda3a3192d7fab905e6770769465476658f173f02c28ef1ec"
+    url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
+    sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
   end
 
   resource "dnspython" do
@@ -242,11 +241,6 @@ class Oterm < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
@@ -318,8 +312,8 @@ class Oterm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
-    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
+    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
+    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
   end
 
   resource "starlette" do
@@ -355,11 +349,6 @@ class Oterm < Formula
   resource "typer" do
     url "https://files.pythonhosted.org/packages/1d/3e/30bff313f4868538330c6254bbbe178d6143e43c6f3e7a34788d381f701c/typer-0.17.5.tar.gz"
     sha256 "a6fe2d187feb1b4a10322b910267b6339e4cc98257fae34d22299a47eac704f1"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do
