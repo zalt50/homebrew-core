@@ -6,12 +6,12 @@ class SpirvLlvmTranslator < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d942ac770e34477fd1e0504ee101d5958829f4c325f4c5a3149388b951668b22"
-    sha256 cellar: :any,                 arm64_sequoia: "8c95e5988672691a13850335435e5909fe97cd030cb4709588633f2554f2d6d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "e53665e81c97d9448fd2d30a8232d07326f7362bf4994190009fb205929abb0e"
-    sha256 cellar: :any,                 sonoma:        "1d02b3dfe148e926720944e163404c1037e0c6f7161fc1b16469e6717f0d006e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "572dccf23605f62e8e6dbdc54e1aec62bf000e9cef6092865aa8ac2019ca1f77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de849b0a2eb42453fb5d2c84d5ff13184614ad0bd3739b5b946e9dc020e3ad1c"
+    sha256 cellar: :any,                 arm64_tahoe:   "b433cf150af8c0d5d3aefc23befeebdc8e6b14f3cf9040f68527abfdc28e5258"
+    sha256 cellar: :any,                 arm64_sequoia: "6dd67b03ad4d82575fc85d2f5b339a653078bcd22d0f22f2f957804471166792"
+    sha256 cellar: :any,                 arm64_sonoma:  "01bea0a098167e495b468347b7a6bddfa64f1aa7957b1a7edf04c7cebad9c294"
+    sha256 cellar: :any,                 sonoma:        "6f1da4ec580ca6db8e102caa88d5d4ea4c36542d82e091e6d2518920097904ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93c2ce103fb4548da20d7a089641e3879dc10ad83dc12ad7da8c06098cc21a5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "957ad4f6b409706f8171f1b7a95bc58d8d13b0e40b0d15b053d2bb2e5ea6c958"
   end
 
   depends_on "cmake" => :build
