@@ -5,6 +5,7 @@ class Libedit < Formula
   version "20251016-3.1"
   sha256 "21362b00653bbfc1c71f71a7578da66b5b5203559d43134d2dd7719e313ce041"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -25,10 +26,17 @@ class Libedit < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
+
+    # Create readline compatibility symlinks for use by license incompatible
+    # software. We put these in libexec to avoid conflict with readline.
+    # Similar to https://packages.debian.org/sid/libeditreadline-dev
+    %w[history readline].each do |libname|
+      (libexec/"include/readline").install_symlink include/"editline/readline.h" => "#{libname}.h"
+      (libexec/"lib").install_symlink lib/shared_library("libedit") => shared_library("lib#{libname}")
+      (libexec/"lib").install_symlink lib/"libedit.a" => "lib#{libname}.a"
+    end
   end
 
   test do
