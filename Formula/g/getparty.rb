@@ -6,6 +6,15 @@ class Getparty < Formula
   license "BSD-3-Clause"
   head "https://github.com/vbauerster/getparty.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b9e711f896a88e06c342de31e24c2700a0880acd24d9dd7d800d31b759478f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b9e711f896a88e06c342de31e24c2700a0880acd24d9dd7d800d31b759478f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b9e711f896a88e06c342de31e24c2700a0880acd24d9dd7d800d31b759478f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79edbdedc30489bfbfddd60c4075ab204b674ef81698fc193fe5eddff6053377"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e3814ce128281e7c479e790e52ef9d8e40331da5e075e9c4db14291a7c8dd1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c707930702422ac791f069da961aa15c5e3d4b3d14fe8799afe402166bfd384"
+  end
+
   depends_on "go" => :build
 
   def install
