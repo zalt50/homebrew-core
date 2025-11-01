@@ -4,6 +4,7 @@ class Votca < Formula
   url "https://github.com/votca/votca/archive/refs/tags/v2025.1.tar.gz"
   sha256 "85b487d2b2a31f26869be422c98f816b95c88a4ab112ea4650cccd4c2706bdbf"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     rebuild 1
@@ -33,6 +34,13 @@ class Votca < Formula
     depends_on "libomp"
   end
 
+  # Apply open PR to support eigen 5.0.0
+  # PR ref: https://github.com/votca/votca/pull/1189
+  patch do
+    url "https://github.com/votca/votca/commit/cc581d91196c3505c649e35ba69bcc8ec33fa14b.patch?full_index=1"
+    sha256 "08da2d4fd694eb1b3909fe4ef452b042a0b0733ca5d8b68e0e655b09842cb069"
+  end
+
   def install
     args = [
       "-DINSTALL_RC_FILES=OFF",
@@ -42,7 +50,7 @@ class Votca < Formula
       "-DENABLE_RPATH_INJECT=ON",
       "-DPYrdkit_FOUND=OFF",
     ]
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
