@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/58/7f/0bde88308d169717c27e15f58276fbab83d35d236971f8652f53c573df47/mycli-1.40.0.tar.gz"
-  sha256 "7f8eedc2176eacd3369bcb596d1f4d58a0fbd332065a089f65db57efc6f27db8"
+  url "https://files.pythonhosted.org/packages/62/63/0686c6336f9797da19d2a3d58befeec4fb62991f9b8a8cfdd2ab646e0e36/mycli-1.41.0.tar.gz"
+  sha256 "d919d7c3a53257cb8db67d50d7ce51e97c36201c923e923d82f55f32d4bf1d5a"
   license "BSD-3-Clause"
 
   bottle do
@@ -26,7 +26,8 @@ class Mycli < Formula
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic-core"]
+  pypi_packages package_name:     "mycli[llm]",
+                exclude_packages: %w[certifi cryptography pydantic-core]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
