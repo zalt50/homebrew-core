@@ -365,7 +365,7 @@ jobs:
                 p11-kit|\
                 pango|\
                 pcre2|\
-                python@3.13|\
+                python@3.14|\
                 rav1e|\
                 rust|\
                 sdl2|\
@@ -425,7 +425,7 @@ jobs:
                 libva|\
                 libxml2|\
                 openssl@3|\
-                python@3.13|\
+                python@3.14|\
                 wayland-protocols|\
                 zlib|\
                 ).rb"
