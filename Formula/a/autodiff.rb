@@ -4,6 +4,7 @@ class Autodiff < Formula
   url "https://github.com/autodiff/autodiff/archive/refs/tags/v1.1.2.tar.gz"
   sha256 "86f68aabdae1eed214bfbf0ddaa182c78ea1bb99e4df404efb7b94d30e06b744"
   license "MIT"
+  revision 1
   head "https://github.com/autodiff/autodiff.git", branch: "main"
 
   bottle do
@@ -19,7 +20,7 @@ class Autodiff < Formula
   depends_on "cmake" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.14" => [:build, :test]
-  depends_on "eigen"
+  depends_on "eigen@3"
   depends_on "pybind11"
 
   def python3
@@ -41,9 +42,9 @@ class Autodiff < Formula
 
   test do
     system ENV.cxx, pkgshare/"test/forward.cpp", "--std=c++17",
-                    "-I#{include}", "-I#{Formula["eigen"].opt_include}/eigen3", "-o", "forward"
+                    "-I#{include}", "-I#{Formula["eigen@3"].opt_include}/eigen3", "-o", "forward"
     system ENV.cxx, pkgshare/"test/reverse.cpp", "--std=c++17",
-                    "-I#{include}", "-I#{Formula["eigen"].opt_include}/eigen3", "-o", "reverse"
+                    "-I#{include}", "-I#{Formula["eigen@3"].opt_include}/eigen3", "-o", "reverse"
     assert_match "u = 8.19315\ndu/dx = 5.25\n", shell_output(testpath/"forward")
     assert_match "u = 8.19315\nux = 5.25\n", shell_output(testpath/"reverse")
     system python3, "-c", "import autodiff"
