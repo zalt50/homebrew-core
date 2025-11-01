@@ -4,6 +4,7 @@ class Ifopt < Formula
   url "https://github.com/ethz-adrl/ifopt/archive/refs/tags/2.1.4.tar.gz"
   sha256 "da38f91a282f3ed305db163954c37d999b6e95f5d2c913a63bae3fef9ffb3a37"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5bf0d19327f812c4fafdd5bf01874b2d4a3699dc194d9e1d57cfe7936b8b6020"
@@ -21,6 +22,13 @@ class Ifopt < Formula
   depends_on "eigen"
   depends_on "ipopt"
 
+  # Apply open PR to support eigen 5.0.0
+  # PR ref: https://github.com/ethz-adrl/ifopt/pull/110
+  patch do
+    url "https://github.com/ethz-adrl/ifopt/commit/deb3209d5e34cdaa896c7432f6ee1138148ddfda.patch?full_index=1"
+    sha256 "95e1ee352d1842811b2e015a78be304bfce0af867f8233f7e5e7e94aa01aae2d"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
@@ -30,7 +38,7 @@ class Ifopt < Formula
 
   test do
     cp pkgshare/"test/ex_test_ipopt.cc", "test.cpp"
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+    system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
                     "-I#{Formula["eigen"].opt_include}/eigen3",
                     "-L#{lib}", "-lifopt_core", "-lifopt_ipopt"
     assert_match "Optimal Solution Found", shell_output("./test")
