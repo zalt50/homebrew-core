@@ -25,12 +25,13 @@ class Llgo < Formula
 
   depends_on "bdw-gc"
   depends_on "go@1.24"
-  depends_on "libffi"
   depends_on "libuv"
   depends_on "lld@19"
   depends_on "llvm@19"
   depends_on "openssl@3"
   depends_on "pkgconf"
+
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   on_linux do
