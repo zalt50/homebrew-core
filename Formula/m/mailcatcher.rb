@@ -18,12 +18,12 @@ class Mailcatcher < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "libedit"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "ruby"
 
   uses_from_macos "xz" => :build
+  uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
