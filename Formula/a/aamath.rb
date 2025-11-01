@@ -30,10 +30,7 @@ class Aamath < Formula
 
   uses_from_macos "bison" => :build # for yacc
   uses_from_macos "flex" => :build
-
-  on_linux do
-    depends_on "readline"
-  end
+  uses_from_macos "libedit" # readline's license is incompatible with GPL-2.0-only
 
   # Fix build on clang; patch by Homebrew team
   # https://github.com/Homebrew/homebrew/issues/23872
@@ -43,6 +40,13 @@ class Aamath < Formula
   end
 
   def install
+    unless OS.mac?
+      inreplace "Makefile" do |s|
+        s.change_make_var! "CFLAGS", "#{s.get_make_var("CFLAGS")} -I#{Formula["libedit"].opt_libexec}/include"
+        s.change_make_var! "LFLAGS", "#{s.get_make_var("LFLAGS")} -L#{Formula["libedit"].opt_libexec}/lib"
+      end
+    end
+
     ENV.deparallelize
     system "make"
 
