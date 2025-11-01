@@ -12,12 +12,12 @@ class Topgrade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93cd18e30f7d6d7c4092d0cee410ff771caa32e198aa55231a8f4ee978037373"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6eaf586b84ca28f550599d15e1d585ab43282d212f7cb1ea174b6fca5c56c8aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ace0372e7497272c80028b4b7e67ef09ebedc336a9d6f114f028c0f24fa93ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5eb80daf46a4f90a317fd9a8c9337cc2b62fd933fa279fd47f9c8b2067f0bca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86aed919e6ba72a10fa52bde00cf9308e15eb1e0765b44a331ed4733848cb655"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c6664d45d269b8bd6e3cdace9b09af43f5052f34129c422639b485d54713820"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d40cf5766e03976879e8d895a5ab0e70008186d90e81cd19bac9eb5baf73970b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21a48792e6f2daa67dc43a456e98a44a200950531d1ca15ec6c5d1d8078bc743"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e65b35781852af5a695687b07300526c89848a41fbc4543aab470f0d647c27dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3318cf6721ade4975f4b4cb8009ad4a54e028f9cd276502bc4dece5b44582009"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e471fd67b7cb5a8d60f7f2e5214f8b481559052761a5ef8852d2014a6f0e64fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca7450f730d7355498595f6afc85f01ce2ed84e4f935788f2c75a380963cef9f"
   end
 
   depends_on "rust" => :build
