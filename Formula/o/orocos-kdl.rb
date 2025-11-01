@@ -4,6 +4,7 @@ class OrocosKdl < Formula
   url "https://github.com/orocos/orocos_kinematics_dynamics/archive/refs/tags/1.5.3.tar.gz"
   sha256 "3895eed1b51a6803c79e7ac4acd6a2243d621b887ac26a1a6b82a86a1131c3b6"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "63bd25562899d50286d71174337878609041305d72923eee5eee59110ed8a688"
@@ -18,8 +19,8 @@ class OrocosKdl < Formula
   depends_on "eigen"
 
   def install
-    ENV.cxx11
     system "cmake", "-S", "orocos_kdl", "-B", "build",
+                    "-DCMAKE_CXX_STANDARD=14",
                     "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
                     *std_cmake_args
     system "cmake", "--build", "build"
@@ -39,7 +40,7 @@ class OrocosKdl < Formula
       }
     CPP
 
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lorocos-kdl",
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{lib}", "-lorocos-kdl",
                     "-o", "test"
     system "./test"
   end
