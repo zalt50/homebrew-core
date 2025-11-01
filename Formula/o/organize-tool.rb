@@ -9,13 +9,13 @@ class OrganizeTool < Formula
   head "https://github.com/tfeldmann/organize.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "00ecd02f231ccc41e8d6904bd3e515338ad5a611bbedf703d35e248c64462d5a"
-    sha256 cellar: :any,                 arm64_sequoia: "b89341f3fe80e692800f633167b7112504af0923e9ac1d441d58b3cd1ecc87a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "60b4ae1616ef9e18fa1dcb893850f76dc3828cd6907b91d0a7a8e3416fbbb5f0"
-    sha256 cellar: :any,                 sonoma:        "92b79bde399d75dab3c41a5b4e51861cc0c72d4e728fbf8b568f46be84972f9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8406576338ceba88cf0e641663283837165b60a339187ff5ef3006e0db1cd094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a385f80de1ed412c49ceaa39e931212bc6c254a686e75da7128e34266e23e5ff"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "82f2d77b517f37e35f50676b15ec7c9e6f80d43b2c53dfab649c722912ba4f95"
+    sha256 cellar: :any,                 arm64_sequoia: "4e2acbe0d1b7d0dac77d8d6bc1cb3ea12bece402305b5d7b8e3081b180f6cdcd"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ae3771db125f2270a6455d1ac603942eda74347ea433d9b8f0bcfc1263d7cc7"
+    sha256 cellar: :any,                 sonoma:        "8153a2c04f628593063397b7672519f00b4e526b2c5cf1ec10e4a4c521686d37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f659544fc071c5bb66a2d0d1c385cfa6fb013275850e86ba1ebf56e00ab9cdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ab8fce87d692379b3d64d0cd2fb6a7ef15adbb17391ef32b2bb9b2f5e08cb3"
   end
 
   depends_on "cmake" => :build
