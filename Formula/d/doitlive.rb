@@ -3,10 +3,9 @@ class Doitlive < Formula
 
   desc "Replay stored shell commands for live presentations"
   homepage "https://doitlive.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/32/75/c94e4d4e7fac8606e199fad35a00b33e4252d00078f25285f91e97e546c0/doitlive-5.1.0.tar.gz"
-  sha256 "b6bcd25f9f037b7e96e34d68549306adb3e8c83f6e92c51ec2b225abc05b25c5"
+  url "https://files.pythonhosted.org/packages/c4/bb/96c5bb76723fcfd7031482817717e5b55441ae66b7fd7dedfa0e1c7bfaf1/doitlive-5.2.0.tar.gz"
+  sha256 "041bbdf197c36b2a497c4d0a69dac53a777a77564b57ac02d4777d6058d170fa"
   license "MIT"
-  revision 3
   head "https://github.com/sloria/doitlive.git", branch: "main"
 
   bottle do
