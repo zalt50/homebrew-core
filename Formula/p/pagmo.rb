@@ -4,7 +4,7 @@ class Pagmo < Formula
   url "https://github.com/esa/pagmo2/archive/refs/tags/v2.19.1.tar.gz"
   sha256 "ecc180e669fa6bbece959429ac7d92439e89e1fd1c523aa72b11b6c82e414a1d"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
-  revision 5
+  revision 6
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "970141f824a1df8a43acb58e2d7f833d07b6fc783805fbeb691dafc8611c2f4d"
@@ -22,6 +22,16 @@ class Pagmo < Formula
   depends_on "eigen"
   depends_on "nlopt"
   depends_on "tbb"
+
+  # Backport support for eigen 5.0.0
+  patch do
+    url "https://github.com/esa/pagmo2/commit/bdd8559d7663536c3a5f56b013f07da11a35c9b8.patch?full_index=1"
+    sha256 "f8679d6ca0d4bd5d9b44382da35ddc6f80404d389813ce05f050d00f5ce3706c"
+  end
+  patch do
+    url "https://github.com/esa/pagmo2/commit/d0e70403179769c326f2694673473e1d3ef0bec7.patch?full_index=1"
+    sha256 "6dcf5ac2cbd8e9b0de20845a51ef5d8eeb0ffd0472f32bcc833ce3f314718f0b"
+  end
 
   def install
     args = %w[
