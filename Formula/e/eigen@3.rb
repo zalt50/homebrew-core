@@ -19,6 +19,10 @@ class EigenAT3 < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "213fb8af2b98a2329bb16d3e3ed14e657af1ba01ac48c2c59613f465158196d0"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
