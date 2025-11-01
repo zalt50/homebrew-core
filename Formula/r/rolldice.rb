@@ -23,9 +23,7 @@ class Rolldice < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c528a9c75ae75ef5bf9c28db1b40cd8e30fee54029580bbd05c7b5cbc8449936"
   end
 
-  on_linux do
-    depends_on "readline"
-  end
+  uses_from_macos "libedit" # readline's license is incompatible with GPL-2.0-only
 
   # Submitted upstream at https://github.com/sstrickl/rolldice/pull/25
   # Remove if merged and included in a tagged release
@@ -35,6 +33,11 @@ class Rolldice < Formula
   end
 
   def install
+    unless OS.mac?
+      ENV.append_to_cflags "-I#{Formula["libedit"].opt_libexec}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["libedit"].opt_libexec}/lib"
+    end
+
     system "make", "CC=#{ENV.cc}"
     bin.install "rolldice"
     man6.install Utils::Gzip.compress("rolldice.6")
