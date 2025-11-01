@@ -9,13 +9,8 @@ class Wtfis < Formula
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c8dbe65f1229af327705efd43310424eb6c41148462a9bbd7d41ec33cda6f3b3"
-    sha256 cellar: :any,                 arm64_sequoia: "e5c25ad01c8ff74e9229ffd0582a43ab1c13ce6b7d624d49052bc5b3882ac9f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "35abe0e15bfcd8fade367774d39d066ce0916c34e9fc799bfa674f2a4f044d1e"
-    sha256 cellar: :any,                 sonoma:        "0561ba93bacb9c6e2b8d6408c684fd1ad5b802f766671533ee2509aa2ae8fe21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9deb24f96cf93ecd49086d19ca28e81340e3cd68ae8c83bb119a08d51de1e949"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3601d8ea6bc604e9991e4e625a8e9317196a2f2366afe921d452b13a62587e2e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "9b6a4a8976dbb4749c0647c81eba578041c97589031650c0f746d649d02507f5"
   end
 
   depends_on "certifi" => :no_linkage
