@@ -8,13 +8,13 @@ class PodcastArchiver < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "735ec2e25f631178b5883db2602b4b6c6fab6a15d90759ee8566395df95ce90f"
-    sha256 cellar: :any,                 arm64_sequoia: "233331b281dbb7f33a6e04e79af8cf5e5aa4e485328e94a5010643a44c80b3e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c40ff676ecaddff8ec890830d998ae0454d44ef6b0d249c317fc44b6a109df02"
-    sha256 cellar: :any,                 sonoma:        "b99ba64a222d08434c49110f9db92d1c0f217360a8893bd40f693ff07aaa0359"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4defcb82adaa9dbf418cc6c09268aa91531fbff7a550eb7cc3e5694f00438b28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbe7c8a96200f384d8fba457c567809466748933718019e928250ae9eaf9676d"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "50145c2ca3dc8c26e6edd170d9b12bca045699d307b3ea0de5a29310409cd9dc"
+    sha256 cellar: :any,                 arm64_sequoia: "fdbc8a8b4d11480e9c5e31c58663f2f9333835f7dc1c47bbef71e29ee909029f"
+    sha256 cellar: :any,                 arm64_sonoma:  "93bec0f4917c4355bb5e14393cee8d786a2f8d9b24542737c6273c27e942aa5b"
+    sha256 cellar: :any,                 sonoma:        "84f770398a986409d08014b23173f32be1fa4463a896b21ed10ac89a276ed410"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bc8bf94b19ec9c0a74de24ae0d049b9b193722deda0af00f1a92a7bc321cdc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1703539685bd628621226495fa098b0738c732b29bca91354b16397a0bfed89"
   end
 
   depends_on "certifi" => :no_linkage
