@@ -1,8 +1,8 @@
 class Austin < Formula
   desc "Python frame stack sampler for CPython"
   homepage "https://github.com/P403n1x87/austin"
-  url "https://github.com/P403n1x87/austin/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "225968a4302529b62d212db07fa692446a6df58049f2f444011ef4866604339e"
+  url "https://github.com/P403n1x87/austin/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "1a857d4590092cd8f7fc110cd83c31311dde03113a5dc4cb93c4eb31e5c8f884"
   license "GPL-3.0-or-later"
   head "https://github.com/P403n1x87/austin.git", branch: "master"
 
@@ -31,12 +31,11 @@ class Austin < Formula
   end
 
   test do
+    command = "#{bin}/austin -o samples.mojo -i 1ms python3 -c 'from time import sleep; sleep(1)' 2>&1"
     if OS.mac?
-      assert_match "Insufficient permissions. Austin requires the use of sudo",
-        shell_output("#{bin}/austin --gc 2>&1", 37)
+      assert_match "Insufficient permissions. Austin requires the use of sudo", shell_output(command, 2)
     else
-      assert_match "need either a command to run or a PID to attach to",
-        shell_output("#{bin}/austin --gc 2>&1", 255)
+      assert_match "Sampling Statistics", shell_output(command)
     end
     assert_equal "austin #{version}", shell_output("#{bin}/austin --version").chomp
   end
