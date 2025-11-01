@@ -43,8 +43,7 @@ class KeeperCommander < Formula
   end
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic-core],
-                extra_packages:   %w[cbor2 pyobjc-core pyobjc-framework-cocoa pyobjc-framework-localauthentication
-                                     pyobjc-framework-security]
+                extra_packages:   %w[cbor2 pyobjc-framework-localauthentication]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
