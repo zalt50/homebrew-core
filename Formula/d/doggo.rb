@@ -7,12 +7,12 @@ class Doggo < Formula
   head "https://github.com/mr-karan/doggo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a266726e6f93f4646727ddcfbdb9c3e0c5ba51448c4a4a104f960fc22c248c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78a266726e6f93f4646727ddcfbdb9c3e0c5ba51448c4a4a104f960fc22c248c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78a266726e6f93f4646727ddcfbdb9c3e0c5ba51448c4a4a104f960fc22c248c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d9d03a814577a28f5f75d277d5d6fdaf4fc335de14c2faa44985445dc19e8bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e57d986e9ff91e3849c23a37f18b82c64da4a7aeb476df15b2ce595b4585cc8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181bd9737a7cb0dc7ca01ffb3145e170380fe225ab059db9f9168936fdf24e0b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55cd5cb1fd855a26931c937a8c1e4ee14a8522f5ebf66bc01631baa57d03427e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55cd5cb1fd855a26931c937a8c1e4ee14a8522f5ebf66bc01631baa57d03427e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55cd5cb1fd855a26931c937a8c1e4ee14a8522f5ebf66bc01631baa57d03427e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "72406c85b8aeaef6359ba85e4c991559c95864989db88a797b4301695ff1536f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb95a59da2fcfe9d6806672b78f1c2fa4470453818a40fd65fc1958016537dd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "268a18dafb27a97dbbf9986ae512c496a2b63e3db3a93b766a9f8d2d56c89a13"
   end
 
   depends_on "go" => :build
