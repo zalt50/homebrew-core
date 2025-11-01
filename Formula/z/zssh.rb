@@ -33,18 +33,18 @@ class Zssh < Formula
   depends_on "libtool"  => :build
   depends_on "lrzsz"
 
-  on_linux do
-    depends_on "readline"
-  end
-
   def install
     # Workaround for Xcode 15
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     rm_r "lrzsz-0.12.20"
 
+    # NOTE: readline must be disabled as the license is incompatible with GPL-2.0-only,
+    # https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility
+    args = ["--disable-readline"] if OS.linux?
+
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
 
     bin.install "zssh", "ztelnet"
