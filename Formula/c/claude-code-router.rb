@@ -5,6 +5,10 @@ class ClaudeCodeRouter < Formula
   sha256 "41dda7ca6afca38db8ca5c522d825673cde5e0bdbc5ac1c8b7d31a9a5ee4fcaf"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "c1fcb78dfc5a3ba7a2ede78f04adb4306d2f592a72a49d27de52ce2e03d09570"
+  end
+
   depends_on "node"
 
   def install
