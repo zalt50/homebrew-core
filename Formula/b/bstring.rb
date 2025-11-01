@@ -1,8 +1,8 @@
 class Bstring < Formula
   desc "Fork of Paul Hsieh's Better String Library"
   homepage "https://mike.steinert.ca/bstring/"
-  url "https://github.com/msteinert/bstring/releases/download/v1.0.2/bstring-1.0.2.tar.xz"
-  sha256 "9d2d207385edeb39935c53f55da57501936b67939998f3e5c5ae91cb8063fbd0"
+  url "https://github.com/msteinert/bstring/releases/download/v1.0.3/bstring-1.0.3.tar.xz"
+  sha256 "90db08fd33e9494aea3f00f9b71cdcf3114c65457ee35558e8274df6ebac43f3"
   license "BSD-3-Clause"
   head "https://github.com/msteinert/bstring.git", branch: "main"
 
