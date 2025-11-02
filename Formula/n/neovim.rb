@@ -6,11 +6,11 @@ class Neovim < Formula
   head "https://github.com/neovim/neovim.git", branch: "master"
 
   stable do
-    url "https://github.com/neovim/neovim/archive/refs/tags/v0.11.4.tar.gz"
-    sha256 "83cf9543bedab8bec8c11cd50ccd9a4bf1570420a914b9a28f83ad100ca6d524"
+    url "https://github.com/neovim/neovim/archive/refs/tags/v0.11.5.tar.gz"
+    sha256 "c63450dfb42bb0115cd5e959f81c77989e1c8fd020d5e3f1e6d897154ce8b771"
 
     # Keep resources updated according to:
-    # https://github.com/neovim/neovim/blob/v#{version}/cmake.deps/CMakeLists.txt
+    # https://github.com/neovim/neovim/blob/v#{version}/cmake.deps/deps.txt
 
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https://github.com/orgs/Homebrew/discussions/3611
@@ -51,8 +51,6 @@ class Neovim < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "185a130c175de49954d5bad5a92d83c3319e7e4deb2169128f210d9356505ac6"
