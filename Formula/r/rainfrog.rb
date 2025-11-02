@@ -1,8 +1,8 @@
 class Rainfrog < Formula
   desc "Database management TUI for PostgreSQL/MySQL/SQLite"
   homepage "https://github.com/achristmascarl/rainfrog"
-  url "https://github.com/achristmascarl/rainfrog/archive/refs/tags/v0.3.8.tar.gz"
-  sha256 "d748ce64b20c5a9b04f9557ae573ae88482c87fe5fddea0c0f30668f97730c98"
+  url "https://github.com/achristmascarl/rainfrog/archive/refs/tags/v0.3.9.tar.gz"
+  sha256 "a2034bad6a07ddb2273aac931284d341c219d944b0088e207957831b5302b2c4"
   license "MIT"
   head "https://github.com/achristmascarl/rainfrog.git", branch: "main"
 
