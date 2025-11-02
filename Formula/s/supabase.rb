@@ -6,6 +6,11 @@ class Supabase < Formula
   license "MIT"
   head "https://github.com/supabase/cli.git", branch: "develop"
 
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91e055b5b8210f14427fdfc4963410863f06c200d6ace6eb53fda7d08853995f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "62bd8b7a78df2cfb504252a4643a0e39712d7628e28c1b50c02791dcae97a1b6"
