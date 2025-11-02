@@ -4,7 +4,7 @@ class Rtabmap < Formula
   url "https://github.com/introlab/rtabmap/archive/refs/tags/0.22.1.tar.gz"
   sha256 "3988ad84c409e39048a6b23317076d4ee1a0123e94a5ad6574db93647d7a80c0"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -53,6 +53,9 @@ class Rtabmap < Formula
   end
 
   def install
+    # Use eigen's cmake configuration to support eigen 5.0.0
+    rm "cmake_modules/FindEigen3.cmake"
+
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
