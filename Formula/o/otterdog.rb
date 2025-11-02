@@ -265,6 +265,10 @@ class Otterdog < Formula
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"otterdog", shell_parameter_format: :click)
+
+    # Help find playwright when installed inside virtualenv
+    rm(bin/name)
+    (bin/name).write_env_script libexec/"bin"/name, PATH: "#{libexec}/bin:${PATH}"
   end
 
   test do
