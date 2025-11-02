@@ -7,7 +7,8 @@ class Spectra < Formula
   head "https://github.com/yixuan/spectra.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "377f0b18a9ecae4ecf76abd9d031c9000f35176e4252331a6930927a2a7ea8ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "edd1c8fc5c4b6ea0ba64a9b48a0b86f986b0b24c4f6b624b45908b84ea3963f1"
   end
 
   depends_on "cmake" => :build
