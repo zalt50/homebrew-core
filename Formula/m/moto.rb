@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/73/f9/5e4129558fa8f255c44b3b938a189ffc2c8a85e4ed3f9ddb3bf4d0f79df7/moto-5.1.15.tar.gz"
-  sha256 "2ad9cc9710a3460505511543dba6761c8bd2006a49954ad3988bbf20ce9e6413"
+  url "https://files.pythonhosted.org/packages/33/0e/346bdadba09fd86854fa3363892ca12f4232652c9d210b93c673c48807ea/moto-5.1.16.tar.gz"
+  sha256 "792045b345d16a8aa09068ad4a7656894e707c796f0799b438fffb738e8fae7c"
   license "Apache-2.0"
 
   bottle do
@@ -58,13 +58,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/5d/fb/db063c9600cbe2c52009edd436262c696b18bafaf49835a7f17ba1679a84/boto3-1.40.63.tar.gz"
-    sha256 "3bf4b034900c87a6a9b3b3b44c4aec26e96fc73bff2505f0766224b7295178ce"
+    url "https://files.pythonhosted.org/packages/08/d2/e508e5f42dc1c8a7412f5170751e626a18ed32c6e95c5df30bde6c5addf1/boto3-1.40.64.tar.gz"
+    sha256 "b92d6961c352f2bb8710c9892557d4b0e11258b70967d4e740e1c97375bcd779"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a2/08/62f4d332dd729d14190073eaf6db63803a5bc2d9b8f1248ae3cbc6c9cb64/botocore-1.40.63.tar.gz"
-    sha256 "0324552c3c800e258cbcb8c22b495a2e2e0260a7408d08016196e46fa0d1b587"
+    url "https://files.pythonhosted.org/packages/c1/15/109cb31c156a64bfaf4c809d2638fd95d8ba39b6deb7f1d0526c05257fd7/botocore-1.40.64.tar.gz"
+    sha256 "a13af4009f6912eafe32108f6fa584fb26e24375149836c2bcaaaaec9a7a9e58"
   end
 
   resource "cfn-lint" do
@@ -98,8 +98,8 @@ class Moto < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/c4/16/7574029da84834349b60ed71614d66ca3afe46e9bf9c7b9562102acb7d4f/graphql_core-3.2.6.tar.gz"
-    sha256 "c08eec22f9e40f0bd61d805907e3b3b1b9a320bc606e23dc145eebca07c8fbab"
+    url "https://files.pythonhosted.org/packages/ac/9b/037a640a2983b09aed4a823f9cf1729e6d780b0671f854efa4727a7affbe/graphql_core-3.2.7.tar.gz"
+    sha256 "27b6904bdd3b43f2a0556dad5d579bdfdeab1f38e8e8788e555bdcb586a6f62c"
   end
 
   resource "idna" do
@@ -203,8 +203,8 @@ class Moto < Formula
   end
 
   resource "py-partiql-parser" do
-    url "https://files.pythonhosted.org/packages/58/a1/0a2867e48b232b4f82c4929ef7135f2a5d72c3886b957dccf63c70aa2fcb/py_partiql_parser-0.6.1.tar.gz"
-    sha256 "8583ff2a0e15560ef3bc3df109a7714d17f87d81d33e8c38b7fed4e58a63215d"
+    url "https://files.pythonhosted.org/packages/56/7a/a0f6bda783eb4df8e3dfd55973a1ac6d368a89178c300e1b5b91cd181e5e/py_partiql_parser-0.6.3.tar.gz"
+    sha256 "09cecf916ce6e3da2c050f0cb6106166de42c33d34a078ec2eb19377ea70389a"
   end
 
   resource "pydantic" do
