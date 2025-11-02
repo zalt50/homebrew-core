@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/2f/81/448a5f1704d50b8330bfc8e1efa6792c3783e2d904698187882e8fed73b0/schemathesis-4.3.16.tar.gz"
-  sha256 "17e779f29896afffdb02b075207a2f181eeec65612c5b34ea95a6de59a47963d"
+  url "https://files.pythonhosted.org/packages/57/bb/e64bc2dc49d72feb6fb25939295bd1770653e63fc6e59c38c4bcc6f66739/schemathesis-4.3.17.tar.gz"
+  sha256 "c3f5723b25430735e960930df29cacd365c03930a4364d074a22e677b85bc925"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "095197ef5c4eefd000dcd15f4b76d4a5bcffc2d942fd2ae304b757853c55803a"
-    sha256 cellar: :any,                 arm64_sequoia: "6a19e649db02817fbbf7ecf7dfa9b5e4dbd5de619c9b1e7fde848eb68b580356"
-    sha256 cellar: :any,                 arm64_sonoma:  "8674b0fd91a46e5a59e81abeb179a5bced0f755304b55c74fe9396e2f5ba6a89"
-    sha256 cellar: :any,                 sonoma:        "eff2a4cf1b2cc3e7d7250acc3184882c000e37ff7428df54f29ce43ac4192e59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcd662832f5fa975a6404efc893e939bb6c51b1754476e6f355945f1520a5216"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "763af8b83421d0b07f5e5f2f22b72ae6517a61572cfc6cabe2875f8761774687"
+    sha256 cellar: :any,                 arm64_tahoe:   "4016f6adf494d1b1477f7986ede6a24f5cf90e045b7c2abbd2deb75144688925"
+    sha256 cellar: :any,                 arm64_sequoia: "ac6705592f03f91e79c4bb149a35c0effda9205e2293d7f38cf73156ad40e4f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "acc7447206a89572a1e32188da3d58303f3ee928c191b4c1b461bbdeb2829767"
+    sha256 cellar: :any,                 sonoma:        "a1ff0293e1189228ba5a88226f9f4779220c03acff32825e3ef4433119215196"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58c40626caeaeb83056bb597716ef431bfb4500e6742372ab3e2c8762cab2a4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d9f903ad48390c39fab15f6930dcbef659698bf1a6e07daad4d2d34f51762ea"
   end
 
   depends_on "certifi" => :no_linkage
@@ -66,8 +66,8 @@ class Schemathesis < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/c4/16/7574029da84834349b60ed71614d66ca3afe46e9bf9c7b9562102acb7d4f/graphql_core-3.2.6.tar.gz"
-    sha256 "c08eec22f9e40f0bd61d805907e3b3b1b9a320bc606e23dc145eebca07c8fbab"
+    url "https://files.pythonhosted.org/packages/ac/9b/037a640a2983b09aed4a823f9cf1729e6d780b0671f854efa4727a7affbe/graphql_core-3.2.7.tar.gz"
+    sha256 "27b6904bdd3b43f2a0556dad5d579bdfdeab1f38e8e8788e555bdcb586a6f62c"
   end
 
   resource "h11" do
@@ -91,8 +91,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/47/0b/76a062d1d6cd68342b460c2f5627e1ad1102a3dd781acd5c096c75aca0d6/hypothesis-6.142.4.tar.gz"
-    sha256 "b3e71a84708994aa910ea47f1483ad892a7c390839959d689b2a2b07ebfd160e"
+    url "https://files.pythonhosted.org/packages/12/77/1a89c2498e678d7ad4040f3012b5ec4ea2e44b9f3ec9a7b703f0af02e917/hypothesis-6.143.0.tar.gz"
+    sha256 "37dcd5cf9396deb832553dabe6c75003c0d3bcbbb77ac3db9321971dc914d2d0"
   end
 
   resource "hypothesis-graphql" do
@@ -236,8 +236,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
-    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "starlette-testclient" do
@@ -266,8 +266,8 @@ class Schemathesis < Formula
   end
 
   resource "webcolors" do
-    url "https://files.pythonhosted.org/packages/7b/29/061ec845fb58521848f3739e466efd8250b4b7b98c1b6c5bf4d40b419b7e/webcolors-24.11.1.tar.gz"
-    sha256 "ecb3d768f32202af770477b8b65f318fa4f566c22948673a977b00d589dd80f6"
+    url "https://files.pythonhosted.org/packages/1d/7a/eb316761ec35664ea5174709a68bbd3389de60d4a1ebab8808bfc264ed67/webcolors-25.10.0.tar.gz"
+    sha256 "62abae86504f66d0f6364c2a8520de4a0c47b80c03fc3a5f1815fedbef7c19bf"
   end
 
   resource "werkzeug" do
