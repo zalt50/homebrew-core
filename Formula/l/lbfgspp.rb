@@ -10,7 +10,7 @@ class Lbfgspp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "915d14792b76cd42afb89064bd50c8119dcf4ba0f500d3d06032c6126a349011"
+    sha256 cellar: :any_skip_relocation, all: "5a7448c359aea68fd3317768eb086befc6442be56cf0d1c864d59aea9150d9da"
   end
 
   depends_on "cmake" => :build
