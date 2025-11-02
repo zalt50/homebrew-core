@@ -1,10 +1,9 @@
 class Rtabmap < Formula
   desc "Visual and LiDAR SLAM library and standalone application"
   homepage "https://introlab.github.io/rtabmap"
-  url "https://github.com/introlab/rtabmap/archive/refs/tags/0.22.1.tar.gz"
-  sha256 "3988ad84c409e39048a6b23317076d4ee1a0123e94a5ad6574db93647d7a80c0"
+  url "https://github.com/introlab/rtabmap/archive/refs/tags/0.23.1.tar.gz"
+  sha256 "8f0463d0b46418921da0503d5f991c7d0b8308b4926a069d9fe4ec811113502f"
   license "BSD-3-Clause"
-  revision 5
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -44,6 +43,7 @@ class Rtabmap < Formula
     depends_on "flann"
     depends_on "freetype"
     depends_on "glew"
+    depends_on "libfreenect"
     depends_on "libomp"
     depends_on "libpcap"
     depends_on "libpng"
