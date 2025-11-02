@@ -1,8 +1,8 @@
 class Vtcode < Formula
   desc "CLI Semantic Coding Agent"
   homepage "https://github.com/vinhnx/vtcode"
-  url "https://static.crates.io/crates/vtcode/vtcode-0.37.1.crate"
-  sha256 "bddd5488eef052d41a3d03ef82623fa07f19c1686faccbb661d1315989ec7d9a"
+  url "https://static.crates.io/crates/vtcode/vtcode-0.38.1.crate"
+  sha256 "59186348816cb208d07252dcb583c2117b821b96a86c0975bc330a46b8f2e994"
   license "MIT"
   head "https://github.com/vinhnx/vtcode.git", branch: "main"
 
@@ -17,6 +17,8 @@ class Vtcode < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3"
