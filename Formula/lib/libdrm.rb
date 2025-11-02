@@ -11,8 +11,8 @@ class Libdrm < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "0f92d6e20ef88cff8b5a8bf3d79bd05031fb7ec83349ce182148d3f41ce7be72"
-    sha256 x86_64_linux: "6792abe84afd80a96dbbe19c48acf10b8cf04d713ea202d6447f72b35d40e7c3"
+    sha256 arm64_linux:  "313db0a06079680e322be93749c32a367ad26e808cec044977766471f1ae8746"
+    sha256 x86_64_linux: "f1924d6c9a59ae009d53d4f9685c7441359bd23269def4840bdc8e3a5b5c9c5c"
   end
 
   depends_on "docutils" => :build
