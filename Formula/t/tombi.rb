@@ -23,12 +23,16 @@ class Tombi < Formula
   depends_on "rust" => :build
 
   def install
+    ENV["TOMBI_VERSION"] = version.to_s
+    system "cargo", "xtask", "set-version"
     system "cargo", "install", *std_cargo_args(path: "rust/tombi-cli")
 
     generate_completions_from_executable(bin/"tombi", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/tombi --version")
+
     require "open3"
 
     json = <<~JSON
