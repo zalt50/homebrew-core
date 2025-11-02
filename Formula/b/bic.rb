@@ -74,11 +74,14 @@ class Bic < Formula
 
   depends_on "gmp"
 
-  on_linux do
-    depends_on "readline"
-  end
+  uses_from_macos "libedit" # readline's license is incompatible with GPL-2.0-only
 
   def install
+    unless OS.mac?
+      ENV.append_to_cflags "-I#{Formula["libedit"].opt_libexec}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["libedit"].opt_libexec}/lib"
+    end
+
     system "autoreconf", "--force", "--install", "--verbose" if build.head? || (OS.mac? && Hardware::CPU.arm?)
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
