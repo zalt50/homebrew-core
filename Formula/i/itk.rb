@@ -4,7 +4,7 @@ class Itk < Formula
   url "https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.4.4/InsightToolkit-5.4.4.tar.gz"
   sha256 "d2092cd018a7b9d88e8c3dda04acb7f9345ab50619b79800688c7bc3afcca82a"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "main"
 
   livecheck do
@@ -45,6 +45,13 @@ class Itk < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "unixodbc"
+  end
+
+  # Apply open PR to build with eigen 5.0.0
+  # PR ref: https://github.com/InsightSoftwareConsortium/ITK/pull/5590
+  patch do
+    url "https://github.com/InsightSoftwareConsortium/ITK/commit/ada8399edb0259ba9272c957ab4033978bdfdded.patch?full_index=1"
+    sha256 "ad229d4d0600ddbdb2abeade76d582f061f315b938126d68ff725d31a9453e8c"
   end
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
