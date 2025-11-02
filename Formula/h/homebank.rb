@@ -2,9 +2,9 @@ class Homebank < Formula
   desc "Manage your personal accounts at home"
   homepage "http://homebank.free.fr"
   # A mirror is used as primary URL because the official one is unstable.
-  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.9.1.orig.tar.gz"
-  mirror "http://homebank.free.fr/public/sources/homebank-5.9.1.tar.gz"
-  sha256 "b350edc3a6e321414e6c26f8550e2b2c130dc1fb459669556b61ffd7e8f2e380"
+  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.9.5.orig.tar.gz"
+  mirror "http://homebank.free.fr/public/sources/homebank-5.9.5.tar.gz"
+  sha256 "ff6c8b0f6da411133e29b848e91f48fdb88de40ad02cba20a8840930a3e7ed43"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -50,10 +50,6 @@ class Homebank < Formula
     depends_on "perl-xml-parser" => :build
   end
 
-  # Fix to error: expected expression
-  # upstream bug report, https://bugs.launchpad.net/homebank/+bug/2111663
-  patch :DATA
-
   def install
     system "./configure", "--with-ofx", *std_configure_args
     chmod 0755, "./install-sh"
@@ -65,26 +61,3 @@ class Homebank < Formula
     system bin/"homebank", "--help"
   end
 end
-
-__END__
-diff --git a/src/ui-assign.c b/src/ui-assign.c
-index bf6984c..766f728 100644
---- a/src/ui-assign.c
-+++ b/src/ui-assign.c
-@@ -147,13 +147,15 @@ gint retval = 0;
- 			break;
- 
- 		case LST_DEFASG_SORT_TAGS:
--		gchar *t1, *t2;
-+			{
-+			gchar *t1, *t2;
- 
- 			t1 = tags_tostring(item1->tags);
- 			t2 = tags_tostring(item2->tags);
- 			retval = hb_string_utf8_compare(t1, t2);
- 			g_free(t2);
- 			g_free(t1);
-+			}
- 			break;
- 
- 		case LST_DEFASG_SORT_NOTES:
