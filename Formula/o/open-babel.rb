@@ -2,7 +2,7 @@ class OpenBabel < Formula
   desc "Chemical toolbox"
   homepage "https://github.com/openbabel/openbabel"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https://github.com/openbabel/openbabel.git", branch: "master"
 
   stable do
@@ -64,6 +64,13 @@ class OpenBabel < Formula
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     inreplace "CMakeLists.txt", "cmake_policy(SET CMP0042 OLD)",
                                 "cmake_policy(SET CMP0042 NEW)"
+
+    # Workaround to build with eigen 5.0.0
+    # Issue ref: https://github.com/openbabel/openbabel/issues/2839
+    args += %W[-DEIGEN3_FOUND=ON -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3]
+    inreplace "CMakeLists.txt", "set (CMAKE_CXX_STANDARD 11)", "set (CMAKE_CXX_STANDARD 14)"
+    rm "cmake/modules/FindEigen3.cmake"
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
