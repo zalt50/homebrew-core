@@ -10,12 +10,13 @@ class PiecesCli < Formula
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e4994f747f077732f4d1952808294a9b70ec35e34534a65f1d2037e68963f53"
-    sha256 cellar: :any,                 arm64_sequoia: "50eca67149507eed219cdc906e4333b288a46cb07fd073b4f6995de54a02b618"
-    sha256 cellar: :any,                 arm64_sonoma:  "c68c0df0b15928bfd2c67a018a015fe80bed0fc17aa3ae311d4e9f3b50e9112f"
-    sha256 cellar: :any,                 sonoma:        "0127b237f959dc5f139da0b7cdd92627f808c05adc34021d9c39546e69edc541"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8840e2deae0deeb9f359962d2f1c4c04beed83a54a15adeeebe37e76ab4c045"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5eaac9ab856b010bc1f95cd27fbedb782e9097e10b7d17a155593415f07c5c22"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "569d6c18a7eddac688b45181d601fdf67fd373cf593877c2aca84ba43eb2a7d5"
+    sha256 cellar: :any,                 arm64_sequoia: "fb37237268b2692a36387d8389d337decd51a64d7675954038216b94926c1c1a"
+    sha256 cellar: :any,                 arm64_sonoma:  "2bb94a1a9a07634e2a075c641688d284566ff738bc605cbf4ec38d1c8dac6258"
+    sha256 cellar: :any,                 sonoma:        "02d8e298c6a510dcf57759cf25af3bacdd2327c11bb37c90a256c3bde62aa7f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b115e0f948102d4a6ed3b5fad49af635d21632323fbbeabe6ad05f0b9d590d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa4bc1dc96a70d2bdde705c31ec9eda4a488f031df856e4342d6199dc28060f"
   end
 
   depends_on "rust" => :build # for pydantic-core
