@@ -7,14 +7,12 @@ class Pagmo < Formula
   revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "970141f824a1df8a43acb58e2d7f833d07b6fc783805fbeb691dafc8611c2f4d"
-    sha256 cellar: :any,                 arm64_sequoia: "d990228017c8de47ef6a251f01d9d3f1256692df3516459b13bbe9b409e45400"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6f6f191b85a838faf5d10addc32f9f8e6565c4317caf8867bc80ce17d2ead44"
-    sha256 cellar: :any,                 arm64_ventura: "436417c8ba3422bd8fe6f3a5e8c5a20cd3256baae1137f3a928343303891414d"
-    sha256 cellar: :any,                 sonoma:        "669f2fed9d5aac73db355fa9ca25c2f16f9dbf32eaa9aae56ab9b2dc707e089c"
-    sha256 cellar: :any,                 ventura:       "3327fd6748b1d7cb0fffe50f567e9baea9c088e6c9c2e069aa1073ecd16fb2f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44c6934ddde022ea5fbdeb64b5a8dfa0f0b3ad01407b051023a3ad274552fbd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee1febbdbb2ebf081daef299a4cfbaea9b3f3182bd3efa0583fd2dee8bf1322b"
+    sha256 cellar: :any,                 arm64_tahoe:   "967ca7afd0f94fe22053b2cf187c97a14c853e160668700db06e8a64f76a704e"
+    sha256 cellar: :any,                 arm64_sequoia: "9d5ab6ee707031ed11dd9291c579b778e03ed5357a159fa2fa5c9b572c8fe49f"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ec05c1307d3e5375802ddf095106412287eea4024037c4179960564284104f4"
+    sha256 cellar: :any,                 sonoma:        "9c6488dd49f684f62e4035943dc9a370a08eed979d71a5139061700570135ff3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe0c1de3105984b315801418a3f104de528645485da9ca587777efe7b6da1820"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bf66c10d87861392ebe1158c0f58ed438190310415b2f2093f53571c00eeaa7"
   end
 
   depends_on "cmake" => :build
