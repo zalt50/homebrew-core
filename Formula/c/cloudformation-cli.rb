@@ -22,9 +22,9 @@ class CloudformationCli < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic-core" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/aws/serverless-application-model/issues/3831
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core"],
+  pypi_packages exclude_packages: %w[certifi pydantic-core],
                 extra_packages:   %w[cloudformation-cli-go-plugin cloudformation-cli-java-plugin
                                      cloudformation-cli-python-plugin setuptools]
 
@@ -99,8 +99,8 @@ class CloudformationCli < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/e5/31/24e8be99d813060a7ab522458fcd843c75a8c0654a8a8996554526af6480/hypothesis-6.142.5.tar.gz"
-    sha256 "7bb5ed8ec3b6ea0c5d2fe92316cc123d7cf9a5f472099a25dc25476e0d3a356c"
+    url "https://files.pythonhosted.org/packages/12/77/1a89c2498e678d7ad4040f3012b5ec4ea2e44b9f3ec9a7b703f0af02e917/hypothesis-6.143.0.tar.gz"
+    sha256 "37dcd5cf9396deb832553dabe6c75003c0d3bcbbb77ac3db9321971dc914d2d0"
   end
 
   resource "idna" do
