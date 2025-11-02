@@ -25,12 +25,12 @@ class CeresSolver < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "313ed5690a361970bdea14a72c09a8303dc2172b84fc1d8204dbb79b913d00e7"
-    sha256 cellar: :any,                 arm64_sequoia: "4e5508fed469c7de173c44f6875a93e27758aa61a1f3ee0daa1bea279b5703b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "4dc3d66678294486b58e513950109a4d593286eeb02d21b076de35d1aae0d126"
-    sha256 cellar: :any,                 sonoma:        "c17ec0c69c71db298cc62c1447e9c108cbbd8711e676051d7768049ec6614caa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceceda8cfbf36c576474fef71487f756ee03183c20453e1fe25ba304972ee994"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bf8a2f59441ee79ae0d2fab7a7cfabf6f3aec910c1c2695a215fe673bf7a0c5"
+    sha256 cellar: :any,                 arm64_tahoe:   "81b100c1ef3f92810a9b4f2b9a602b7a1e6b6d7e11a88a677a2886f53fcaccb6"
+    sha256 cellar: :any,                 arm64_sequoia: "dae580fccf96c376fc90bca15973a3375dd56dfe6a3760a19041ec52fc6c621e"
+    sha256 cellar: :any,                 arm64_sonoma:  "66b7cfa4fabfc643db7d86944657198286a8665f2c00302071091680b6fa03b3"
+    sha256 cellar: :any,                 sonoma:        "d997d14192319044b9a573c2d550779dd24c90c574f2c285ca5d705de509f648"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dc978b76da56deeec522b9c78fee5348c3d34849704c218cef09c63604aea85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e9385fbe9eeb9f92b0a190ad029bbf9aa916d05c8784afcce5f86b307848ac8"
   end
 
   depends_on "cmake" => [:build, :test]
