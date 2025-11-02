@@ -3,8 +3,8 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/c4/18/0bf07c9c612db9bca489e94435ae59bf992561952140f4d276b138308c06/jiratui-1.4.0.tar.gz"
-  sha256 "2603d4457b2f0a6acb224a7b6b00eab6b53934afc87add0a3a56864503ca42d1"
+  url "https://files.pythonhosted.org/packages/cd/2f/0448b1786e2856f17cec35b9676805fae57b5d8f112f6d3aeddc1ee468e4/jiratui-1.5.0.tar.gz"
+  sha256 "22bd60aff242530c762c6fc2c65cef964a0607635bd6ca8eed7d5aa0c8360bb7"
   license "MIT"
 
   no_autobump! because: "has non-PyPI resources"
@@ -131,8 +131,8 @@ class Jiratui < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-json-logger" do
@@ -171,8 +171,8 @@ class Jiratui < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/ff/51/51a0863339c4c3fa204f43044e52dfd688a7ee2ba2c987e021acc9583a42/textual-6.3.0.tar.gz"
-    sha256 "a89c557fa740611551dcf4f93643f33853eca488183ef5882200dde8e94315e8"
+    url "https://files.pythonhosted.org/packages/af/90/59757aa887ddcea61428820274f1a2d1f986feb7880374a5420ab5d37132/textual-6.5.0.tar.gz"
+    sha256 "e5f152cdd47db48a635d23b839721bae4d0e8b6d855e3fede7285218289294e3"
   end
 
   resource "textual-image" do
