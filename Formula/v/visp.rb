@@ -4,7 +4,7 @@ class Visp < Formula
   url "https://visp-doc.inria.fr/download/releases/visp-3.6.0.tar.gz"
   sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 18
+  revision 19
 
   livecheck do
     url "https://visp.inria.fr/download/"
@@ -107,6 +107,7 @@ class Visp < Formula
                          "-DDC1394_LIBRARY=#{Formula["libdc1394"].opt_lib/shared_library("libdc1394")}",
                          "-DUSE_EIGEN3=ON",
                          "-DEigen3_DIR=#{Formula["eigen"].opt_share}/eigen3/cmake",
+                         "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
                          "-DUSE_GSL=ON",
                          "-DGSL_INCLUDE_DIR=#{Formula["gsl"].opt_include}",
                          "-DGSL_cblas_LIBRARY=#{Formula["gsl"].opt_lib/shared_library("libgslcblas")}",
