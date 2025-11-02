@@ -24,9 +24,14 @@ class Gqlplus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0953b6a9b940124d8922f196387f0f9553d2a36824e41633da5643a0668619f"
   end
 
-  depends_on "readline"
+  # readline's license is incompatible with GPL-2.0-only.
+  # We also cannot use macOS libedit as it lacks _history_list
+  depends_on "libedit"
 
   def install
+    ENV.append_to_cflags "-I#{Formula["libedit"].opt_libexec}/include"
+    ENV.append "LDFLAGS", "-L#{Formula["libedit"].opt_libexec}/lib"
+
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
