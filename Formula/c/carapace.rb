@@ -7,12 +7,12 @@ class Carapace < Formula
   head "https://github.com/carapace-sh/carapace-bin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6a4debaf398d6943cedc23d19cd6e4dbafdf3c17e7d447032af9a5af8350572"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6a4debaf398d6943cedc23d19cd6e4dbafdf3c17e7d447032af9a5af8350572"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6a4debaf398d6943cedc23d19cd6e4dbafdf3c17e7d447032af9a5af8350572"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb968189a169ed27b4dbba1aa69b9ddceeaf60d62da48998dfa1c548f9d2f6e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74e008027e4e44d19166e22b553df189e59af87615ca309cb973baa174887fd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aac3aecd30195ce5e7744211c2a037b73d955221d4af87d420396b5e36dad7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c90f638c23b938830a050bbc2b6faa3d9aaf160ef24c4e0039310ae897d7830"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c90f638c23b938830a050bbc2b6faa3d9aaf160ef24c4e0039310ae897d7830"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c90f638c23b938830a050bbc2b6faa3d9aaf160ef24c4e0039310ae897d7830"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01d71d466dce8b39dbf16f64b89a34c2ac77c07c9a0a56489ee4645e0e5352c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6065367cbab1e8ffb423f92141c27e2e24d011b924840932c5d402a6dfd2d5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdaf47f1e4065632ce8af7ff634acee78004a8e3060d61adb7fec36d54eef360"
   end
 
   depends_on "go" => :build
