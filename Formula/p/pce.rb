@@ -40,13 +40,21 @@ class Pce < Formula
   end
 
   depends_on "nasm" => :build
-  depends_on "readline"
+  uses_from_macos "libedit" # readline's license is incompatible with GPL-2.0-only
 
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # src/cpu/e68000/e68000.a(e68000.o):(.bss+0x0): multiple definition of `e68_ea_tab'
     # TODO: Remove in the next release.
     ENV.append_to_cflags "-fcommon" if OS.linux? && build.stable?
+
+    if OS.mac?
+      # Workaround to allow macOS libedit to be used instead of readline
+      inreplace "configure", " -lhistory ", " "
+    else
+      ENV.append_to_cflags "-I#{Formula["libedit"].opt_libexec}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["libedit"].opt_libexec}/lib"
+    end
 
     system "./configure", "--enable-readline",
                           "--without-x",
