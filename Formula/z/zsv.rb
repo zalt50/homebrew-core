@@ -1,8 +1,8 @@
 class Zsv < Formula
   desc "Tabular data swiss-army knife CLI"
   homepage "https://github.com/liquidaty/zsv"
-  url "https://github.com/liquidaty/zsv/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "63b4d8221a7e27b7ef7842afb3233e32cd2473d3e3389a0daa86833bfe56b50d"
+  url "https://github.com/liquidaty/zsv/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "54c6e2b31cc18c7cca3e345613721545f6fb05873f11bf3afb414950f064386a"
   license "MIT"
   head "https://github.com/liquidaty/zsv.git", branch: "main"
 
@@ -21,6 +21,8 @@ class Zsv < Formula
 
   def install
     system "./configure", *std_configure_args
+
+    ENV.deparallelize
     system "make", "install", "VERSION=#{version}"
   end
 
