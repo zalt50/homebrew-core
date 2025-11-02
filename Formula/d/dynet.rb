@@ -4,6 +4,7 @@ class Dynet < Formula
   url "https://github.com/clab/dynet/archive/refs/tags/2.1.2.tar.gz"
   sha256 "014505dc3da2001db54f4b8f3a7a6e7a1bb9f33a18b6081b2a4044e082dab9c8"
   license "Apache-2.0"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
@@ -24,7 +25,7 @@ class Dynet < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "eigen"
+  depends_on "eigen@3" # cannot use Eigen >= 5 due to EIGEN_EMPTY_STRUCT_CTOR removal
 
   on_linux do
     on_arm do
@@ -39,7 +40,7 @@ class Dynet < Formula
   def install
     args = %W[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3
+      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen@3"].opt_include}/eigen3
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
