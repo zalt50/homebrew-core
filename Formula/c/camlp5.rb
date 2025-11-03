@@ -2,13 +2,13 @@ class Camlp5 < Formula
   desc "Preprocessor and pretty-printer for OCaml"
   homepage "https://camlp5.github.io/"
   url "https://github.com/camlp5/camlp5/archive/refs/tags/8.04.00.tar.gz"
-  sha256 "b00579277a5f18209a33f4adc4df04a40b5ca09e1509e702b464aa68ca44fc34"
+  sha256 "eb8c5bc0f47ce4b9518d37bcbf8be05ee80243c38e7019f8c3808456be8f15a8"
   license "BSD-3-Clause"
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
-    url :stable
-    regex(/^(?:rel[._-]?)?v?(\d+(?:\.\d+)+)$/i)
+    url "https://opam.ocaml.org/packages/camlp5/"
+    regex(%r{href=.*?/refs/tags/(?:rel[._-]?)?v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
