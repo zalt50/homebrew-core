@@ -5,6 +5,10 @@ class Docmd < Formula
   sha256 "89b6b3b18a466b8851f61b1353f688df00ef793a5261fefaa0fb1d7b4c498935"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "24267b6f7303375c652bfa77b8a1267b21d4f137ed2accd0e7b559ea878eab14"
+  end
+
   depends_on "node"
 
   def install
