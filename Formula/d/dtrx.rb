@@ -8,7 +8,7 @@ class Dtrx < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b821b88a4437f7a9350a8f05b9387aca29d73b305bba01fa1ae0033f032fdca0"
+    sha256 cellar: :any_skip_relocation, all: "5d20b9765b801e3900f290def6de47f5e32ac38bf43723848e4b03bc6b00a742"
   end
 
   # Include a few common decompression handlers in addition to the python dep
