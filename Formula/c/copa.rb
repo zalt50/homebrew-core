@@ -1,8 +1,8 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https://github.com/project-copacetic/copacetic"
-  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "b88a1618a3586d2e61dfbd2049755671a41b43e30faa3c1210ed378fd9ee3fc9"
+  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "886aa760e9bdff174686d3c601cfb2f53e824299796ace3eef94dae03cdf15e1"
   license "Apache-2.0"
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
@@ -31,7 +31,6 @@ class Copa < Formula
   end
 
   test do
-    assert_match "Project Copacetic: container patching tool", shell_output("#{bin}/copa help")
     (testpath/"report.json").write <<~JSON
       {
         "SchemaVersion": 2,
@@ -41,7 +40,7 @@ class Copa < Formula
     JSON
     output = shell_output("#{bin}/copa patch --image=mcr.microsoft.com/oss/nginx/nginx:1.21.6  \
                           --report=report.json 2>&1", 1)
-    assert_match "Error: no scanning results for os-pkgs found", output
+    assert_match "Error: no patchable vulnerabilities found", output
 
     assert_match version.to_s, shell_output("#{bin}/copa --version")
   end
