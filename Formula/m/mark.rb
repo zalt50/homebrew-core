@@ -6,6 +6,15 @@ class Mark < Formula
   license "Apache-2.0"
   head "https://github.com/kovetskiy/mark.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "248563380bc62932e47c4818a09cbaf038a52c36ddbe568a2b5abb752bb1bd4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "248563380bc62932e47c4818a09cbaf038a52c36ddbe568a2b5abb752bb1bd4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "248563380bc62932e47c4818a09cbaf038a52c36ddbe568a2b5abb752bb1bd4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de0b17fea47dd1ee981263b16baa2eb030e8d8b559b5e7a62e0de6719ddad301"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9690dfadc6ed1c8425d2861c9bab6dfd67d00a18dfa1a91f55cf3b6189189653"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "093f6e5a2750052c4cb005f773f4e6b91ffddad3622e4d4f8bfb71283b74919d"
+  end
+
   depends_on "go" => :build
 
   def install
