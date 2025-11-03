@@ -7,14 +7,12 @@ class IsFast < Formula
   head "https://github.com/Magic-JD/is-fast.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7fad53aafdc6f26096d8b0d78e3286bb7f32a6987dfc098077860ed50a226e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f9d792dd1d3f36ce2c01d17e0a6b8ded81940594e8d86171b4c503afbc5cf10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c32f5c4bf5e5df7659d20fcf66364bfb0a5ab8d9059d7e394216357b9cc3634f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8bc007dcc8ae63a11f79e8539a05c336772ea9452b1ea28e06f3679088a3f83"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8eb1fa4431d78ac13a63f70130ebda6a16703ce6d946acd52a6b0622eaccbcfe"
-    sha256 cellar: :any_skip_relocation, ventura:       "12c66d548fce7cdb64c0036a2a78cfe0dd249e86bb9aa2cd1ab776ad4a8b4278"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e04a32b86ef54e608d206ae1f31a9f839eec76a0b1b706392fbc20db11468c53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a4c46a3c63f91cd076e3b09986ebb0c5fdd020586256c4e2f2a4ee3ca3b072d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14711b9c8ae69321ee1b81399c3c64647b48ba7218d77fed36bffa1478fa6f73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e81b62dd87d0e533972f4a6701e84cddace55382ea4ebafbafce565873a1e545"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fdd7bd18b3385f5d6845aef15df2598dcc1db2010d149a8cb1062aa0be6c555"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a16cd06f533b8b4d664bf10544f7fcefbac517809daf35017b896dd3b9ceefc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5abd6b2dc7895c20eb444f1f93dd80d766f83516213c5a35bacc8c5c4cd804ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4aef171428f9a175b248d0cc8fcfa061cf6b06535758491d2148f34b6c820aa6"
   end
 
   depends_on "rust" => :build
