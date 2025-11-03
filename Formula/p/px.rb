@@ -3,8 +3,8 @@ class Px < Formula
 
   desc "Ps and top for human beings (px / ptop)"
   homepage "https://github.com/walles/px"
-  url "https://files.pythonhosted.org/packages/df/b2/93e062e66cc36d455ef8141a052c907e0ef3841aec038cdbf27ba84bbbba/pxpx-3.8.0.tar.gz"
-  sha256 "957421a3436a8d3b929d65b5e443bf3fb248d3a15fae5dca37652e7ea5ac8f37"
+  url "https://files.pythonhosted.org/packages/17/7f/42d82f262d4d2ae8bba8d02b3e4a9116f95df60b8b799713201848154445/pxpx-3.9.0.tar.gz"
+  sha256 "1c9854f6d337a330c8ab75db3728d8c9e80d88cbba6169e3394affb8113470c1"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
