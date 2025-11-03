@@ -1,8 +1,8 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
   homepage "https://github.com/brocode/fblog"
-  url "https://github.com/brocode/fblog/archive/refs/tags/v4.16.0.tar.gz"
-  sha256 "061288675d40ca9b70c8e3e0508f09ddee70b8a09f25c7b8ef2dbd6406d4e213"
+  url "https://github.com/brocode/fblog/archive/refs/tags/v4.17.0.tar.gz"
+  sha256 "6582020850aa9205fbdc4e169401c20e8ecc9b5decdc25dfcceeb955c83e3bcf"
   license "WTFPL"
   head "https://github.com/brocode/fblog.git", branch: "master"
 
