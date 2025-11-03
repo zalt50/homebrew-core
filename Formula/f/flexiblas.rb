@@ -1,8 +1,8 @@
 class Flexiblas < Formula
   desc "BLAS and LAPACK wrapper library with runtime exchangable backends"
   homepage "https://www.mpi-magdeburg.mpg.de/projects/flexiblas"
-  url "https://csc.mpi-magdeburg.mpg.de/mpcsc/software/flexiblas/flexiblas-3.4.5.tar.xz"
-  sha256 "626b698bb73877019d64cf258f853885d28d3c6ac820ccd2c1a77fb7542a34a0"
+  url "https://csc.mpi-magdeburg.mpg.de/mpcsc/software/flexiblas/flexiblas-3.5.0.tar.xz"
+  sha256 "504c0eeac09dca98e4bc930757f44bc409cb770f8fa7578ddb18c0d6accba072"
   license all_of: [
     "LGPL-3.0-or-later",
     "LGPL-2.1-or-later", # libcscutils/
@@ -30,17 +30,8 @@ class Flexiblas < Formula
   depends_on "gcc" # for gfortran
   depends_on "openblas"
 
-  on_macos do
-    depends_on "libomp" => :build
-  end
-
-  fails_with :gcc do
-    version "11"
-    cause "Need to build with same GCC as GFortran for LTO"
-  end
-
   def blas_backends
-    backends = %w[OPENBLASOPENMP NETLIB]
+    backends = %w[OpenBLASOpenMP NETLIB]
     on_sonoma :or_newer do
       backends.unshift("APPLE")
     end
@@ -50,23 +41,21 @@ class Flexiblas < Formula
     backends
   end
 
-  # 3.4.5 build patch, upstream commit ref, https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release/-/commit/80e00aaca18857ea02e255e88f1f282580940661
-  patch do
-    url "https://raw.githubusercontent.com/chenrui333/homebrew-tap/f6261b3c60d3fb6fa1d464a6ad13e0639e96e67e/patches/flexiblas/3.4.5.patch"
-    sha256 "5f0d5a6e293aba60b4692739b9c3fa09985068682ffa81f0814d90a83d12868f"
-  end
-
   def install
-    # Remove -flat_namespace usage
-    inreplace "src/fallback_blas/CMakeLists.txt", " -flat_namespace\"", '"'
+    # Need to build with same GCC as GFortran for LTO on Linux
+    ENV["HOMEBREW_CC"] = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}" if OS.linux?
 
-    # Add HOMEBREW_PREFIX path to default searchpath to allow detecting separate formulae
-    inreplace "CMakeLists.txt",
-              %r{(FLEXIBLAS_DEFAULT_LIB_PATH "\${CMAKE_INSTALL_FULL_LIBDIR}/\${flexiblasname}/)"},
-              "\\1:#{HOMEBREW_PREFIX}/lib/${flexiblasname}\""
+    # Remove -flat_namespace usage
+    flat_namespace_files = %w[
+      src/fallback_blas/CMakeLists.txt
+      src/fallback_lapack/CMakeLists.txt
+      src/hooks/dummy/CMakeLists.txt
+      src/hooks/profile/CMakeLists.txt
+    ]
+    inreplace flat_namespace_files, " -flat_namespace\"", '"'
 
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib/"flexiblas")}
       -DFLEXIBLAS_DEFAULT=#{blas_backends.first}
       -DSYSCONFDIR=#{etc}
       -DEXAMPLES=OFF
@@ -80,14 +69,12 @@ class Flexiblas < Formula
       -DMklTBB=OFF
     ]
 
-    etc_before = etc.glob("flexiblasrc.d/*")
-
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     # Let brew manage linking/deleting config files that are intended to be read-only
-    (prefix/"etc/flexiblasrc.d").install (etc.glob("flexiblasrc.d/*") - etc_before)
+    blas_backends.each { |backend| (prefix/"etc/flexiblasrc.d").install etc/"flexiblasrc.d/#{backend}.conf" }
   end
 
   def caveats
@@ -98,7 +85,7 @@ class Flexiblas < Formula
   end
 
   test do
-    assert_match "Active Default: #{blas_backends.first} (System)", shell_output("#{bin}/flexiblas print")
+    assert_match "Active Default: #{blas_backends.first.upcase} (System)", shell_output("#{bin}/flexiblas print")
 
     (testpath/"test.c").write <<~C
       #include <stdio.h>
@@ -130,7 +117,7 @@ class Flexiblas < Formula
 
     blas_backends.each do |backend|
       expected = <<~EOS
-        Current loaded backend: #{backend}
+        Current loaded backend: #{backend.upcase}
         11.000000 -9.000000 5.000000 -9.000000 21.000000 -1.000000 5.000000 -1.000000 3.000000
       EOS
       with_env(FLEXIBLAS: backend) do
