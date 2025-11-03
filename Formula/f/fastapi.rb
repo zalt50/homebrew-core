@@ -3,8 +3,8 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/3f/3a/0bf90d5189d7f62dc2bd0523899629ca59b58ff4290d631cd3bb5c8889d4/fastapi-0.120.4.tar.gz"
-  sha256 "2d856bc847893ca4d77896d4504ffdec0fb04312b705065fca9104428eca3868"
+  url "https://files.pythonhosted.org/packages/8c/e3/77a2df0946703973b9905fd0cde6172c15e0781984320123b4f5079e7113/fastapi-0.121.0.tar.gz"
+  sha256 "06663356a0b1ee93e875bbf05a31fb22314f5bed455afaaad2b2dad7f26e98fa"
   license "MIT"
 
   bottle do
@@ -150,8 +150,8 @@ class Fastapi < Formula
   end
 
   resource "rignore" do
-    url "https://files.pythonhosted.org/packages/b1/b5/1fe06acc517315fba13db19039e77a2b9689451e0b5b02e03f26f05f24ec/rignore-0.7.2.tar.gz"
-    sha256 "b343749a59b53db30be1180ffab6995a914a244860e31a5cbea25bb647c38a61"
+    url "https://files.pythonhosted.org/packages/e9/04/ecf19d701a0c9ddacbe0a01024acc5642045ff68afedd6c6e5822255e0ae/rignore-0.7.4.tar.gz"
+    sha256 "84c1c6bdfae8b28ef2c5fa5cc7b08d7e9cf1df1f4079c16bc669da4937634907"
   end
 
   resource "sentry-sdk" do
@@ -170,8 +170,8 @@ class Fastapi < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
-    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
+    url "https://files.pythonhosted.org/packages/de/1a/608df0b10b53b0beb96a37854ee05864d182ddd4b1156a22f1ad3860425a/starlette-0.49.3.tar.gz"
+    sha256 "1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284"
   end
 
   resource "typer" do
