@@ -1,8 +1,8 @@
 class Kahip < Formula
   desc "Karlsruhe High Quality Partitioning"
   homepage "https://algo2.iti.kit.edu/documents/kahip/index.html"
-  url "https://github.com/KaHIP/KaHIP/archive/refs/tags/v3.19.tar.gz"
-  sha256 "ab128104d198061b4dcad76f760aca240b96de781c1b586235ee4f12fd6829c6"
+  url "https://github.com/KaHIP/KaHIP/archive/refs/tags/v3.21.tar.gz"
+  sha256 "0c3d53e211a9c880a8466839235f218591f2ecefce62bbf04afc8adfdb9c1e65"
   license "MIT"
   head "https://github.com/KaHIP/KaHIP.git", branch: "master"
 
