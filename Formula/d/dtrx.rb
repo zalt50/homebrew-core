@@ -3,8 +3,8 @@ class Dtrx < Formula
 
   desc "Intelligent archive extraction"
   homepage "https://pypi.org/project/dtrx/"
-  url "https://files.pythonhosted.org/packages/b7/e6/204294b57be7bb5072c217a1c3ddd5acf9b60b006c215e13e11121c04108/dtrx-8.5.3.tar.gz"
-  sha256 "eec67869b85068fac8406f5018d781aee5b55422f3b7698bfea43468b2cec67c"
+  url "https://files.pythonhosted.org/packages/57/b3/f47772c9476cdd7dbc469f871aee6ddd8a2617c7d90d62c5279c1e5694e3/dtrx-8.6.0.tar.gz"
+  sha256 "94697941b640ffcd3c689895df8fb88e52ea98dec05dc181b9e996df761311a1"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -20,14 +20,6 @@ class Dtrx < Formula
   uses_from_macos "zip" => :test
   uses_from_macos "bzip2"
   uses_from_macos "unzip"
-
-  # Apply commit from open PR to fix `--flat` on Python 3.12+
-  # Issue ref: https://github.com/dtrx-py/dtrx/issues/58
-  # PR ref: https://github.com/dtrx-py/dtrx/pull/59
-  patch do
-    url "https://github.com/dtrx-py/dtrx/commit/4f2868c87e7d2eef97c9dbcbea4d1738e947463d.patch?full_index=1"
-    sha256 "f81b0ed271ddfa22ee0e1d26f9ac3c5ea3e979497918594e8fc266b24b561a51"
-  end
 
   def install
     virtualenv_install_with_resources
