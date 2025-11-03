@@ -3,12 +3,12 @@ class Dtrx < Formula
 
   desc "Intelligent archive extraction"
   homepage "https://pypi.org/project/dtrx/"
-  url "https://files.pythonhosted.org/packages/57/b3/f47772c9476cdd7dbc469f871aee6ddd8a2617c7d90d62c5279c1e5694e3/dtrx-8.6.0.tar.gz"
-  sha256 "94697941b640ffcd3c689895df8fb88e52ea98dec05dc181b9e996df761311a1"
+  url "https://files.pythonhosted.org/packages/0e/41/53459c8452da0f357d55943704ff960dab35c33a068b057a40512faa3e03/dtrx-8.7.0.tar.gz"
+  sha256 "d7c58048cd4a0e05337f0e0e01b05ad9ebc2b450a0f6706afc4b69abea81096f"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b821b88a4437f7a9350a8f05b9387aca29d73b305bba01fa1ae0033f032fdca0"
+    sha256 cellar: :any_skip_relocation, all: "5d20b9765b801e3900f290def6de47f5e32ac38bf43723848e4b03bc6b00a742"
   end
 
   # Include a few common decompression handlers in addition to the python dep
