@@ -24,17 +24,16 @@ class Wimlib < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
 
-  uses_from_macos "libxml2"
+  on_linux do
+    depends_on "libfuse"
+    depends_on "ntfs-3g"
+  end
 
   def install
-    # fuse requires librt, unavailable on OSX
-    args = %w[
-      --disable-silent-rules
-      --without-fuse
-      --without-ntfs-3g
-    ]
+    args = %w[--disable-silent-rules]
+    args += %w[--without-fuse --without-ntfs-3g] if OS.mac?
+
     system "./configure", *args, *std_configure_args
     system "make", "install"
   end
