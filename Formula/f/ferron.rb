@@ -1,10 +1,10 @@
 class Ferron < Formula
   desc "Fast, memory-safe web server written in Rust"
   homepage "https://www.ferronweb.org/"
-  url "https://github.com/ferronweb/ferron/archive/refs/tags/1.3.6.tar.gz"
-  sha256 "323ebee7cb4deec64b1998da885fee1bc415fddbf2891463cfceb0412f0d3881"
+  url "https://github.com/ferronweb/ferron/archive/refs/tags/2.0.0.tar.gz"
+  sha256 "8ba66d445badf821ba108d3e597b12268132e21b09da26a3d2f389400c305c33"
   license "MIT"
-  head "https://github.com/ferronweb/ferron.git", branch: "develop"
+  head "https://github.com/ferronweb/ferron.git", branch: "develop-2.x"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d64d431c5155adda2727fdfa97876ea41d9679612e85472e714208eb4dd6b76a"
@@ -26,18 +26,107 @@ class Ferron < Formula
 
     (testpath/"ferron.yaml").write "global: {\"port\":#{port}}"
     expected_output = <<~HTML.chomp
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>404 Not Found</title>
-      </head>
-      <body>
-          <h1>404 Not Found</h1>
-          <p>The requested resource wasn't found. Double-check the URL if entered manually.</p>
-      </body>
-      </html>
+      <!doctype html>
+             <html lang="en">
+                 <head>
+                     <meta charset="UTF-8" />
+                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                     <title>404 Not Found</title>
+                     <style>html,
+      body {
+          margin: 0;
+          padding: 0;
+          font-family:
+              system-ui,
+              -apple-system,
+              BlinkMacSystemFont,
+              "Segoe UI",
+              Roboto,
+              Oxygen,
+              Ubuntu,
+              Cantarell,
+              "Open Sans",
+              "Helvetica Neue",
+              sans-serif;
+          background-color: #ffffff;
+          color: #0f172a;
+      }
+
+      body {
+          padding: 1em;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 1280px;
+          margin: 0 auto;
+      }
+
+      header {
+          text-align: center;
+      }
+
+      h1 {
+          font-size: 2.5em;
+      }
+
+      a {
+          color: #f47825;
+      }
+
+      @media screen and (max-width: 512px) {
+          h1 {
+              font-size: 2em;
+          }
+      }
+
+      @media screen and (prefers-color-scheme: dark) {
+          html,
+          body {
+              background-color: #14181f;
+              color: #f2f2f2;
+          }
+      }
+      </style>
+      <style>html {
+          height: 100%;
+      }
+
+      body {
+          display: table;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+          height: 100%;
+      }
+
+      .error-container {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+      }
+
+      .error-code {
+          display: block;
+          font-size: 4em;
+      }
+
+      .error-message {
+          display: block;
+      }
+      </style>
+                 </head>
+                 <body>
+                     <main class="error-container">
+            <h1>
+                <span class="error-code">404</span>
+                <span class="error-message">Not Found</span>
+            </h1>
+            <p class="error-description">The requested resource wasn't found. Double-check the URL if entered manually.</p>
+        </main>
+                 </body>
+             </html>
     HTML
 
     begin
