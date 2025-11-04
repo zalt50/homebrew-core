@@ -3,10 +3,20 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://github.com/standardebooks/tools/archive/refs/tags/2.10.0.tar.gz"
-  sha256 "817948c4d7c0d25db2c8a05c09449f9d6a39e75343ca31571430f2c3fba0a8e9"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/standardebooks/tools.git", branch: "master"
+
+  stable do
+    url "https://github.com/standardebooks/tools/archive/refs/tags/2.10.0.tar.gz"
+    sha256 "817948c4d7c0d25db2c8a05c09449f9d6a39e75343ca31571430f2c3fba0a8e9"
+
+    # Backport fix for libxml2 >= 2.15
+    patch do
+      url "https://github.com/standardebooks/tools/commit/16387537a0ca44d251168eabb5fd239cb73c1c8c.patch?full_index=1"
+      sha256 "ef57b70a33cf2e90fd09deff2c385d6cd05174af2f447cd54b31a0797130cff3"
+    end
+  end
 
   bottle do
     rebuild 1
