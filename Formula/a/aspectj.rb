@@ -1,8 +1,8 @@
 class Aspectj < Formula
   desc "Aspect-oriented programming for Java"
   homepage "https://eclipse.dev/aspectj/"
-  url "https://github.com/eclipse-aspectj/aspectj/releases/download/V1_9_24/aspectj-1.9.24.jar"
-  sha256 "a7e50eb6e3fc84dca67ef98bfd23e0f7d62b854ee6e460ee76d2c84aa2f94d64"
+  url "https://github.com/eclipse-aspectj/aspectj/releases/download/V1_9_25/aspectj-1.9.25.jar"
+  sha256 "0190878539658cdaa654b422f56cf294183c2e5570ecd16cfc3aa2ddd5226fed"
   license "EPL-2.0"
 
   livecheck do
@@ -16,7 +16,7 @@ class Aspectj < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce8b388d6fe6709c0b6a9fdce84592dc63ca42aa64b56f21514ba849e6e10b64"
