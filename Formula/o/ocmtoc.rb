@@ -1,11 +1,9 @@
 class Ocmtoc < Formula
   desc "Mach-O to PE/COFF binary converter"
   homepage "https://github.com/acidanthera/ocmtoc"
-  url "https://github.com/acidanthera/ocmtoc/archive/refs/tags/1.0.3.tar.gz"
-  sha256 "9954194f28823e4b1774d2029a1d043e63b99ff31900bff2841973a63f9e916f"
+  url "https://github.com/acidanthera/ocmtoc/archive/refs/tags/1.0.4.tar.gz"
+  sha256 "dbc33ca5d5ae436b2845e36fc13ba878261480788db86fc6daab89dc5588e51a"
   license "APSL-2.0"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "854ce0c7ca53731e0c311e9bf8ea8edfa5c45634d2da3f318bf31cb275b2ed9a"
@@ -26,10 +24,6 @@ class Ocmtoc < Formula
   conflicts_with "mtoc", because: "both install `mtoc` binaries"
 
   def install
-    # error: DT_TOOLCHAIN_DIR cannot be used to evaluate HEADER_SEARCH_PATHS, use TOOLCHAIN_DIR instead
-    inreplace "xcode/libstuff.xcconfig", "${DT_TOOLCHAIN_DIR}/usr/local/include",
-                                         "${TOOLCHAIN_DIR}/usr/local/include"
-
     xcodebuild "-arch", Hardware::CPU.arch,
                "-project", "cctools.xcodeproj",
                "-scheme", "mtoc",
