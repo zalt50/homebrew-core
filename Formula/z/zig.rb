@@ -1,8 +1,8 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
-  url "https://ziglang.org/download/0.15.1/zig-0.15.1.tar.xz"
-  sha256 "816c0303ab313f59766ce2097658c9fff7fafd1504f61f80f9507cd11652865f"
+  url "https://ziglang.org/download/0.15.2/zig-0.15.2.tar.xz"
+  sha256 "d9b30c7aa983fcff5eed2084d54ae83eaafe7ff3a84d8fb754d854165a6e521c"
   license "MIT"
 
   livecheck do
@@ -37,7 +37,9 @@ class Zig < Formula
   skip_clean "lib/zig/libc/darwin/libSystem.tbd"
 
   # Fix linkage with libc++.
-  # https://github.com/ziglang/zig/pull/23264
+  #   https://github.com/ziglang/zig/pull/23264
+  # Fix max_rss
+  #   https://github.com/Homebrew/homebrew-core/issues/252365
   patch :DATA
 
   def install
@@ -159,3 +161,18 @@ index 15762f0ae881..ea729f408f74 100644
              },
              .windows => {
                  if (target.abi != .msvc) mod.link_libcpp = true;
+
+--------------------------------------------------------------------------------
+diff --git a/build.zig b/build.zig
+index 9e672a4ca7..77959757f7 100644
+--- a/build.zig
++++ b/build.zig
+@@ -738,7 +738,7 @@ fn addCompilerMod(b: *std.Build, options: AddCompilerModOptions) *std.Build.Modu
+ fn addCompilerStep(b: *std.Build, options: AddCompilerModOptions) *std.Build.Step.Compile {
+     const exe = b.addExecutable(.{
+         .name = "zig",
+-        .max_rss = 7_800_000_000,
++        .max_rss = 6_900_000_000,
+         .root_module = addCompilerMod(b, options),
+     });
+     exe.stack_size = stack_size;
