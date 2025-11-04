@@ -4,6 +4,7 @@ class Raptor < Formula
   url "https://download.librdf.org/source/raptor2-2.0.16.tar.gz"
   sha256 "089db78d7ac982354bdbf39d973baf09581e6904ac4c92a98c5caadb3de44680"
   license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
+  revision 1
 
   livecheck do
     url :homepage
