@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3c/d1/4e9a69a0607131dc724b3666ed7724f329c8ed2e2395da42691e0c2c3a31/snakemake-9.13.4.tar.gz"
-  sha256 "5e88682f3e55670950483bc76cfb1bedff32e368177a0a02891efd00da9af923"
+  url "https://files.pythonhosted.org/packages/47/90/0656e35f38f5ddc8722dc1e038a51f10eb89196eabfda45d3842ec122c73/snakemake-9.13.5.tar.gz"
+  sha256 "12e8871386f800c31a8bcaedab3ee1a61326bd6e098f52dd618caeae60e6783a"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -143,8 +143,8 @@ class Snakemake < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/89/fc/889242351a932d6183eec5df1fc6539b6f36b6a88444f1e63f18668253aa/psutil-7.1.1.tar.gz"
-    sha256 "092b6350145007389c1cfe5716050f02030a05219d90057ea867d18fe8d372fc"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "pulp" do
@@ -173,8 +173,8 @@ class Snakemake < Formula
   end
 
   resource "smart-open" do
-    url "https://files.pythonhosted.org/packages/ed/1a/8de851644371c2c88ee5ff006d58355979247a02370494d63d091ef0cd01/smart_open-7.4.1.tar.gz"
-    sha256 "5c20f09026875e6dec708e9610e0cd13d24d91f0a2c12e6511b9e478a566b4a0"
+    url "https://files.pythonhosted.org/packages/a9/7a/0607d2739a29f1a753c5efaf71f29761de89f5e8554c7924411b5c721515/smart_open-7.4.3.tar.gz"
+    sha256 "f32839234a287e2cb2ecdccc5b315de34a8e79db4db729e1a864ab3b359f9fee"
   end
 
   resource "smmap" do
@@ -198,8 +198,8 @@ class Snakemake < Formula
   end
 
   resource "snakemake-interface-report-plugins" do
-    url "https://files.pythonhosted.org/packages/f1/0f/b0986bacc1087d549e2ce5f5987de73980dc7041b7c518286f5035160d89/snakemake_interface_report_plugins-1.2.0.tar.gz"
-    sha256 "36cff4d50e7763ae0def0a7cf36d85e6c575d7bad1a3ade26b66c9b2b8831c02"
+    url "https://files.pythonhosted.org/packages/18/d6/6160ed98de665d6871dd356597dbf726688cc786e88668359ca37b7d9f54/snakemake_interface_report_plugins-1.3.0.tar.gz"
+    sha256 "fc9495298bec4e69721ab8afe6d6d88a86966fda2eeb003db56b9a88b86d5934"
   end
 
   resource "snakemake-interface-scheduler-plugins" do
