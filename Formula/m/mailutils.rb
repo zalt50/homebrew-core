@@ -5,6 +5,7 @@ class Mailutils < Formula
   mirror "https://ftp.gnu.org/gnu/mailutils/mailutils-3.20.tar.gz"
   sha256 "d10ee65ba391d6463952d8a81551f8a6e667538ee8587b3c801137e657087d4c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "6226a3e8389ad9ce81ec1b43a07196b2ad6469e16b58402d106748a191b30754"
