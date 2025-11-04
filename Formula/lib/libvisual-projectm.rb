@@ -1,11 +1,9 @@
 class LibvisualProjectm < Formula
   desc "Visualization plug-in for projectM support from Libvisual"
   homepage "https://github.com/projectM-visualizer/frontend-libvisual-plug-in"
-  url "https://github.com/projectM-visualizer/frontend-libvisual-plug-in/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "eb8269c2a923546600d3f40ff90c011f03a215847215ee8bef44bfae305b4dd7"
+  url "https://github.com/projectM-visualizer/frontend-libvisual-plug-in/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "b83cd19bfaaa35254489bac3dec315ff305171e19cf19387644c3c5c56207208"
   license "GPL-3.0-or-later"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256                               arm64_tahoe:    "a98c14ac06d512d06109fe20afb1bb39f3c59448858392a6389120fbe871558f"
