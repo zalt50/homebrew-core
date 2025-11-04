@@ -1,8 +1,8 @@
 class Q < Formula
   desc "Tiny command-line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH"
   homepage "https://github.com/natesales/q"
-  url "https://github.com/natesales/q/archive/refs/tags/v0.19.9.tar.gz"
-  sha256 "18a68f067daccce97f2a7e4ce4c72e206eba03a1c57040f8c7488f100040d2fc"
+  url "https://github.com/natesales/q/archive/refs/tags/v0.19.10.tar.gz"
+  sha256 "994d248ce9be9552872c6e62d20dfb0aa93919e78e9a889c40012907728a8c3e"
   license "GPL-3.0-only"
 
   bottle do
