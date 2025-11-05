@@ -4,6 +4,7 @@ class GnomeBuilder < Formula
   url "https://download.gnome.org/sources/gnome-builder/49/gnome-builder-49.1.tar.xz"
   sha256 "3b9e4798388f959e1032c6ace4a5fb7b4e588b6339fce4c22ec26abe869f8a2b"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://gitlab.gnome.org/GNOME/gnome-builder.git", branch: "main"
 
   bottle do
