@@ -1,8 +1,8 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https://gitleaks.io/"
-  url "https://github.com/gitleaks/gitleaks/archive/refs/tags/v8.28.0.tar.gz"
-  sha256 "c681af8aeacacf9d14f7ad97d534cf087f6d2d6fbd50dd02020b0f929b7a1c41"
+  url "https://github.com/gitleaks/gitleaks/archive/refs/tags/v8.29.0.tar.gz"
+  sha256 "c6c1dd94896f1b6db2172ff4d61690f59a1a4546ae28d8ad42337cc63a90f671"
   license "MIT"
   head "https://github.com/gitleaks/gitleaks.git", branch: "master"
 
@@ -28,7 +28,7 @@ class Gitleaks < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/zricethezav/gitleaks/v#{version.major}/cmd.Version=#{version}"
+    ldflags = "-s -w -X github.com/zricethezav/gitleaks/v#{version.major}/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"gitleaks", "completion")
