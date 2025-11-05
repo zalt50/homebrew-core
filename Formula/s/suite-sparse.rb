@@ -1,8 +1,8 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
   homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
-  url "https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.11.0.tar.gz"
-  sha256 "93ed4c4e546a49fc75884c3a8b807d5af4a91e39d191fbbc60a07380b12a35d1"
+  url "https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.12.1.tar.gz"
+  sha256 "794ae22f7e38e2ac9f5cbb673be9dd80cdaff2cdf858f5104e082694f743b0ba"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.1-or-later",
@@ -42,11 +42,13 @@ class SuiteSparse < Formula
   end
 
   def install
+    ENV["CC"] = "#{Formula["gcc"].opt_bin}/gcc-15"
+
     # Avoid references to Homebrew shims
     inreplace "GraphBLAS/cmake_modules/GraphBLAS_JIT_configure.cmake",
               "C_COMPILER_BINARY \"${CMAKE_C_COMPILER}\"", "C_COMPILER_BINARY \"#{ENV.cc}\""
 
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}",
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", "-DCMAKE_C_COMPILER=#{ENV.cc}",
                                               *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
