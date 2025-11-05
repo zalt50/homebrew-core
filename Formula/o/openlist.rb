@@ -5,6 +5,15 @@ class Openlist < Formula
   sha256 "9cb26d5a41a9df56a6c937bc37a572ff104e2d5a72c0ec8813273f2e67c0a092"
   license "AGPL-3.0-only"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86f038b34ec22fe8a8ea2e086a9b54610e77c9a354b63f4eb53a719ae0462da4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4445b0c149b979b183b0ffbffa00985c9b7d189df805cbf3c41d4a68601b64c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa183fd7280328392f2c5a35a226cd736d8ecf1d46964d6fbb273fab1d63833d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "84dffae4d030e0739f6b942ab7695ff0de42bde086e7d023f050a1a0970f5b83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46e04c99fbb9f2005a2ef2dece35b3799b8d6f323ee924fed90cef5f94223f82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e3b264448b796fc21b3529cfc69f781020e06e564ec3fc2efd9c7b4b9242cd"
+  end
+
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "pnpm" => :build
