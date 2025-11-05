@@ -3,10 +3,9 @@ class Datasette < Formula
 
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/db/94/e6408997861e9de3ec61fb8107efe9eaf70f765ad2cd4e20b552dd340899/datasette-0.65.1.tar.gz"
-  sha256 "d8be37ae6dafbfd8e510d49c0dc0fc6696081614d048a507eed86dd2ae433223"
+  url "https://files.pythonhosted.org/packages/80/26/80b5480921d71891b8ff880fed6d44150b9164903d683efe2eb7405b61d8/datasette-0.65.2.tar.gz"
+  sha256 "be956fb2633b8380d7f818b5ddab40d5c7346d5e9d4d24e81c43b1fb60267432"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
@@ -153,15 +152,6 @@ class Datasette < Formula
   resource "uvicorn" do
     url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
     sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
-  end
-
-  # Fix to replace deprecated asyncio methods and SyntaxWarning, remove in next release
-  # Commit ref
-  # - https://github.com/simonw/datasette/commit/852f5014853943fa27f43ddaa2d442545b3259fb
-  # - https://github.com/simonw/datasette/commit/909448fb7a0c940a822477d5a25a6525c2060b68
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/Homebrew-core/f33ebd86/Patches/datasette/support-python3.14.patch"
-    sha256 "1e031573c391fd10baef7e8e8858939b5e9086bba798e9ad9acfe2e41bd25cad"
   end
 
   def install
