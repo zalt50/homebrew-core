@@ -4,6 +4,7 @@ class Evince < Formula
   url "https://download.gnome.org/sources/evince/48/evince-48.1.tar.xz"
   sha256 "7d8b9a6fa3a05d3f5b9048859027688c73a788ff6e923bc3945126884943fa10"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "bc6af3370e6e8ee239eae47d9e706876a2586613a8b4d147e17749b89d9585e0"
