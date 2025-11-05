@@ -4,6 +4,7 @@ class Sourcery < Formula
   url "https://github.com/krzysztofzablocki/Sourcery/archive/refs/tags/2.3.0.tar.gz"
   sha256 "097aa2628cfbba2f8c2d412c57f7179c96082ab034fc6b2a2e905a0d344269e6"
   license "MIT"
+  revision 1
   version_scheme 1
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
@@ -28,8 +29,9 @@ class Sourcery < Formula
 
   def install
     # Build script is unfortunately not customisable.
-    # We want static stdlib on Linux as the stdlib is not ABI stable there.
-    inreplace "Rakefile", "--disable-sandbox", "--static-swift-stdlib" if OS.linux?
+    # We want static stdlib on Linux as the stdlib is not ABI stable there
+    # and use our ld shim to help find Homebrew libraries
+    inreplace "Rakefile", "--disable-sandbox", "--static-swift-stdlib -Xswiftc -use-ld=ld" if OS.linux?
 
     system "rake", "build"
     bin.install "cli/bin/sourcery"
