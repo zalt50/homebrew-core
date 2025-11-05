@@ -3,8 +3,8 @@ class FlowControl < Formula
   homepage "https://flow-control.dev/"
   # version is used to build by `git describe --always --tags`
   url "https://github.com/neurocyte/flow.git",
-      tag:      "v0.5.0",
-      revision: "28da270834b233e3692153cb0575c051361557ff"
+      tag:      "v0.6.0",
+      revision: "98855a73e4b5f01b282d3a735ca205934a226627"
   license "MIT"
   head "https://github.com/neurocyte/flow.git", branch: "master"
 
@@ -19,10 +19,7 @@ class FlowControl < Formula
     sha256                               x86_64_linux:  "47791b0fb0591a8eeb5c87c6fdf37061ed0457c7a6ae61b289e551f3daece8bb"
   end
 
-  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
-  deprecate! date: "2026-02-19", because: "does not build with Zig >= 0.15"
-
-  depends_on "zig@0.14" => :build
+  depends_on "zig" => :build
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
@@ -33,10 +30,18 @@ class FlowControl < Formula
     else Hardware.oldest_cpu
     end
 
-    args = []
+    # Do not use `std_zig_args` or `--release=` flag here
+    # as after using it all targets are installed into directories with
+    # names like `<os>-<arch>-release` instead of `bin`
+    args = %W[
+      --prefix #{prefix}
+      -Doptimize=ReleaseFast
+      --summary all
+    ]
     args << "-Dcpu=#{cpu}" if build.bottle?
+    args << "-fno-rosetta" if OS.mac? && Hardware::CPU.intel?
 
-    system "zig", "build", *args, *std_zig_args
+    system "zig", "build", *args
   end
 
   test do
