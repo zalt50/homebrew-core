@@ -8,6 +8,15 @@ class MysqlToSqlite3 < Formula
   license "MIT"
   head "https://github.com/techouse/mysql-to-sqlite3.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63dc15c94786b5a2178a1fd53e51b00a833ffa24ecc8c246a529f426bf3c8a55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "783c41951b2c5be659fd737022eb8dd3b0002bfded22a251c240c749ea1d0d72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e3a5c6157882e64c31ca7dea7072175e4f45e2f20cdfe750f7b19a3682ca107"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ac8bd2fb65f38c4562b046b9ee7409868319c2f082575b98528dea33e97f5d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46bc074fa550213ed49d97c788b6e09c7c0fb8902e7186a18b8fdd7d4d07307f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f92fb62a97dc0430e2060b3b7f1e67f30d9cc8a635bc1b0000093977a045ae2b"
+  end
+
   depends_on "python@3.14"
 
   uses_from_macos "sqlite"
