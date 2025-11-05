@@ -6,12 +6,12 @@ class Networkit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "eea2f6104c4737420512d88437d0181430254e9349a674d6eae84850a97a697b"
-    sha256 cellar: :any, arm64_sequoia: "4cb1ea5c0169d17ac2c6c75cd0cca09baa274a76823d5aa93beed997b0d25b2e"
-    sha256 cellar: :any, arm64_sonoma:  "9847f90f7fa1fed977b6e4931ec2c886600114a8222c7931e6ba52d747f12fb3"
-    sha256 cellar: :any, sonoma:        "8e40e5d67717edec14a48dc7895d73c65ee82da6afb562e1352b890a2d997c5c"
-    sha256               arm64_linux:   "900374b83c60b1885e5e0a90047935ae08d89d34caca37f9b291efff351c6c6a"
-    sha256               x86_64_linux:  "13aa55d4f8306d980d6109a5e77c3bd855278f44fc8293861348c3165bdd0f3a"
+    sha256 cellar: :any, arm64_tahoe:   "7bfe393457656684e4d99dde255af9d08e2fb0398e8af143f649d8d0f13caf6f"
+    sha256 cellar: :any, arm64_sequoia: "beda63eb01b52c280720c5c836772bd5a3f32d4f21e8e1a7943fb75b50df979f"
+    sha256 cellar: :any, arm64_sonoma:  "5956b4c185583fc4647acad32be3769323eb8d5db4ef49ad9dc1dddd1acd6e83"
+    sha256 cellar: :any, sonoma:        "f1facd484f2223890376be420ae5cb588b8720dd7a6ce5fac6ea28b09470b578"
+    sha256               arm64_linux:   "b8a4e9fcd03bf9c5b7340aede1d10af2ab37456f63ad0a7b819e3e878d237278"
+    sha256               x86_64_linux:  "2dde033c4a4b5963d0f646cdbe87a929fcf1d6795c2c0c2c63c69b73f5fd3e6f"
   end
 
   depends_on "cmake" => :build
