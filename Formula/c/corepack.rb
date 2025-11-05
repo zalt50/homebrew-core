@@ -10,6 +10,10 @@ class Corepack < Formula
     regex(/["']version["']:\s*?["']([^"']+)["']/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "8a7abdcbc25cfe2764ca51bf69ddbc16539481643bfd9fce7dde924339f9b9e6"
+  end
+
   depends_on "node"
 
   def install
