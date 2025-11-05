@@ -21,7 +21,7 @@ class Openfga < Formula
     ldflags = %W[
       -s -w
       -X github.com/openfga/openfga/internal/build.Version=#{version}
-      -X github.com/openfga/openfga/internal/build.Commit=brew
+      -X github.com/openfga/openfga/internal/build.Commit=#{tap.user}
       -X github.com/openfga/openfga/internal/build.Date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/openfga"
@@ -30,6 +30,8 @@ class Openfga < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/openfga version 2>&1")
+
     port = free_port
     pid = fork do
       exec bin/"openfga", "run", "--playground-port", port.to_s
