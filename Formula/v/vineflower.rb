@@ -1,8 +1,8 @@
 class Vineflower < Formula
   desc "Java decompiler"
   homepage "https://vineflower.org/"
-  url "https://github.com/Vineflower/vineflower/archive/refs/tags/1.11.1.tar.gz"
-  sha256 "104df4042023190416bff2ad0e2386ddf7669c6aa585f19b9d965a7f5ca5132b"
+  url "https://github.com/Vineflower/vineflower/archive/refs/tags/1.11.2.tar.gz"
+  sha256 "f37543cd5e99e0f74870dd2a5d2b8e84a03711ab6bf0c89a5377affea8547027"
   license "Apache-2.0"
 
   bottle do
