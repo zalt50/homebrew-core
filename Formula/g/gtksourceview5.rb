@@ -4,6 +4,7 @@ class Gtksourceview5 < Formula
   url "https://download.gnome.org/sources/gtksourceview/5.18/gtksourceview-5.18.0.tar.xz"
   sha256 "051a78fe38f793328047e5bcd6d855c6425c0b480c20d9432179e356742c6ac0"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
