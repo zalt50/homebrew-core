@@ -9,8 +9,7 @@ class Ipython < Formula
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ccc93100c57fb32383efcbbc169e93a58a2a02175f87e36bf558a89d8d7c25cb"
+    sha256 cellar: :any_skip_relocation, all: "46c3a258b3382c3458244e01c08336e984fefea147cac87923400a4397bc5f9a"
   end
 
   depends_on "python@3.14"
