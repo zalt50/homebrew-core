@@ -24,7 +24,6 @@
   "cloudflare-wrangler2": "cloudflare-wrangler",
   "commonmark": "cmark",
   "coq": "rocq",
-  "corepack": "node",
   "cppformat": "fmt",
   "crystal-lang": "crystal",
   "cutter": "cutter-cli",
