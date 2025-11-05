@@ -1,15 +1,13 @@
 class Libnetworkit < Formula
   desc "NetworKit is an OS-toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
-  url "https://github.com/networkit/networkit/archive/refs/tags/11.1.tar.gz"
-  sha256 "c8db0430f6d7503eaf1e59fbf181374dc9eaa70f572c56d2efa75dd19a3548a9"
+  url "https://github.com/networkit/networkit/archive/refs/tags/11.2.tar.gz"
+  sha256 "ed762fb2b893425fe05074fa746db58c1e7bef4d96d9921e72d6ae8ca387f995"
   license "MIT"
 
   livecheck do
     formula "networkit"
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "6967c249b9baf0ef738331f4dcde82cce059b76aac0a6afbfbf1a1fe00c76b1d"
