@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/ByteNess/aws-vault"
-  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.7.7.tar.gz"
-  sha256 "349790f4aff5e1797074a33e444a6543e722e48bc1e6dec3a18a8626b6b85b68"
+  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.7.8.tar.gz"
+  sha256 "3c08ae536956b4a296d4030e26e75228944cf6c8a710ab885e99d4ee4b528e93"
   license "MIT"
   head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
@@ -23,6 +23,8 @@ class AwsVault < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     # Remove this line because we don't have a certificate to code sign with
     inreplace "Makefile",
       "codesign --options runtime --timestamp --sign \"$(CERT_ID)\" $@", ""
