@@ -79,10 +79,13 @@ class Curl < Formula
       --with-fish-functions-dir=#{fish_completion}
     ]
 
-    args << if OS.mac?
-      "--with-gssapi"
+    args += if OS.mac?
+      %w[
+        --with-apple-sectrust
+        --with-gssapi
+      ]
     else
-      "--with-gssapi=#{Formula["krb5"].opt_prefix}"
+      ["--with-gssapi=#{Formula["krb5"].opt_prefix}"]
     end
 
     args += if OS.mac? && MacOS.version >= :ventura
