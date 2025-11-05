@@ -6,14 +6,15 @@ class QtAT5 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   # NOTE: Use *.diff for GitLab/KDE patches to avoid their checksums changing.
-  url "https://download.qt.io/official_releases/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
+  url "https://download.qt.io/archive/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
   mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
   sha256 "85eb566333d6ba59be3a97c9445a6e52f2af1b52fc3c54b8a2e7f9ea040a7de4"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   livecheck do
-    url "https://download.qt.io/official_releases/qt/5.15/"
+    url "https://download.qt.io/archive/qt/5.15/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
@@ -139,8 +140,8 @@ class QtAT5 < Formula
 
     # Use Debian patches for ICU 75+, brew Ninja and Python 3.13
     patch do
-      url "https://deb.debian.org/debian/pool/main/q/qtwebengine-opensource-src/qtwebengine-opensource-src_5.15.19+dfsg-3.debian.tar.xz"
-      sha256 "38ef54e497ad0464950776b1055807d9e6b1a42aa0f8f76aa3b1323f7d59fa55"
+      url "https://deb.debian.org/debian/pool/main/q/qtwebengine-opensource-src/qtwebengine-opensource-src_5.15.19+dfsg2-1.debian.tar.xz"
+      sha256 "ef152684cfaf20640cf80466c3fec9a3c9595e5f1b09995847e6d231dc10d11e"
       apply "patches/build-with-c++17.patch",
             "patches/ninja-1.12.patch",
             "patches/python3.13-pipes.patch"
@@ -207,13 +208,13 @@ class QtAT5 < Formula
     end
   end
 
-  # Below are CVE patches from https://download.qt.io/official_releases/qt/5.15/
+  # Below are CVE patches from https://download.qt.io/archive/qt/5.15/
   # detailed at https://wiki.qt.io/List_of_known_vulnerabilities_in_Qt_products
 
   # CVE-2024-39936
   # Remove with Qt 5.15.18
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2024-39936-qtbase-5.15.patch"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2024-39936-qtbase-5.15.patch"
     sha256 "2cc23afba9d7e48f8faf8664b4c0324a9ac31a4191da3f18bd0accac5c7704de"
     directory "qtbase"
   end
@@ -221,7 +222,7 @@ class QtAT5 < Formula
   # CVE-2025-23050
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-23050-qtconnectivity-5.15.diff"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-23050-qtconnectivity-5.15.diff"
     sha256 "76e303b6465babb6d0d275792f7f3c41e3df87a6a17992e8b7b8e47272682ce7"
     directory "qtconnectivity"
   end
@@ -229,7 +230,7 @@ class QtAT5 < Formula
   # CVE-2025-30348
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-30348-qtbase-5.15.diff"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-30348-qtbase-5.15.diff"
     sha256 "fcd011754040d961fec1b48fe9828b2c8d501f2d9c30f0f475487a590de6d3c8"
     directory "qtbase"
   end
@@ -237,7 +238,7 @@ class QtAT5 < Formula
   # CVE-2025-4211
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-4211-qtbase-5.15.diff"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-4211-qtbase-5.15.diff"
     sha256 "7bc92fb0423f25195fcc59a851570a2f944cfeecbd843540f0e80f09b6b0e822"
     directory "qtbase"
   end
@@ -245,7 +246,7 @@ class QtAT5 < Formula
   # CVE-2025-5455
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-5455-qtbase-5.15.patch"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-5455-qtbase-5.15.patch"
     sha256 "967fe137ee358f60ac3338f658624ae2663ec77552c38bcbd94c6f2eff107506"
     directory "qtbase"
   end
