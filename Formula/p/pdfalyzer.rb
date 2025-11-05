@@ -3,8 +3,8 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https://github.com/michelcrypt4d4mus/pdfalyzer"
-  url "https://files.pythonhosted.org/packages/67/10/57182cc25ba70c657f1cdde68f6a56f7fea7950bba8b3164079005d2b31f/pdfalyzer-1.17.7.tar.gz"
-  sha256 "6c8569b4ca2da89a66fdedb8a30a87834b7a1a6bbc9568c69a19aeaf5c864e79"
+  url "https://files.pythonhosted.org/packages/5c/76/42c17b19399e723ddfa954d5780478113e942f728cb3ae673d9b2c9a7b19/pdfalyzer-1.17.9.tar.gz"
+  sha256 "54876e775890c333473749102d0a331685247ac11251e542fe39528c1bebdf8d"
   license "GPL-3.0-or-later"
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
