@@ -1,12 +1,9 @@
 class Networkit < Formula
   desc "Performance toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
-  url "https://github.com/networkit/networkit/archive/refs/tags/11.1.tar.gz"
-  sha256 "c8db0430f6d7503eaf1e59fbf181374dc9eaa70f572c56d2efa75dd19a3548a9"
+  url "https://github.com/networkit/networkit/archive/refs/tags/11.2.tar.gz"
+  sha256 "ed762fb2b893425fe05074fa746db58c1e7bef4d96d9921e72d6ae8ca387f995"
   license "MIT"
-  revision 1
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "eea2f6104c4737420512d88437d0181430254e9349a674d6eae84850a97a697b"
@@ -37,10 +34,6 @@ class Networkit < Formula
   end
 
   def install
-    # Fix to networkit/graphtools.pyx:408:17: Can only parameterize template functions.
-    # Issue ref: https://github.com/networkit/networkit/issues/1350
-    inreplace "networkit/graphtools.pyx", "return volume[vector[node].iterator]", "return volume"
-
     site_packages = Language::Python.site_packages(python3)
 
     ENV.prepend_create_path "PYTHONPATH", prefix/site_packages
