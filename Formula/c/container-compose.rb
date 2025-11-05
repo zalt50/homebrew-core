@@ -7,7 +7,7 @@ class ContainerCompose < Formula
   head "https://github.com/mcrich23/container-compose.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe: "0d34c45230d457ddb5cc2398256e90e43eb37a5d01f00d97a432f6fe7e896fc3"
+    sha256 arm64_tahoe: "32878f76c1de9507cfddb8da3afc9d14e0f84f1dbd71b74d686cf1cb7d478157"
   end
 
   depends_on xcode: ["26.0", :build]
