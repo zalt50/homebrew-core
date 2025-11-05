@@ -1,8 +1,8 @@
 class Di < Formula
   desc "Advanced df-like disk information utility"
   homepage "https://diskinfo-di.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/diskinfo-di/di-6.1.0.tar.gz"
-  sha256 "4cdd0944db0a9566f55fab375de605778b91fc91daef8005cc0dbfaac61f6af0"
+  url "https://downloads.sourceforge.net/project/diskinfo-di/di-6.1.0.1.tar.gz"
+  sha256 "21d925d6e625cc4ddcc33ccce4c4b3fa427e2faacaee90451b0e1917717a6a4f"
   license "Zlib"
 
   # This only matches tarballs in the root directory, as a way of avoiding
