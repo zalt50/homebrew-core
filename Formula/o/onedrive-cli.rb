@@ -1,8 +1,8 @@
 class OnedriveCli < Formula
   desc "Folder synchronization with OneDrive"
   homepage "https://github.com/abraunegg/onedrive"
-  url "https://github.com/abraunegg/onedrive/archive/refs/tags/v2.5.7.tar.gz"
-  sha256 "b8526bf8b0ad98967f17634271eef4435ace5c1d116ada7d2e2809b84837be4c"
+  url "https://github.com/abraunegg/onedrive/archive/refs/tags/v2.5.8.tar.gz"
+  sha256 "dd10bf958326d452dec0848ea334c8da2d4d891790c81383a442bba62a9c4633"
   license "GPL-3.0-only"
 
   bottle do
@@ -37,8 +37,8 @@ class OnedriveCli < Formula
   test do
     assert_match <<~EOS, pipe_output("#{bin}/onedrive 2>&1", "")
       Using IPv4 and IPv6 (if configured) for all network operations
-      Attempting to contact Microsoft OneDrive Login Service
-      Successfully reached Microsoft OneDrive Login Service
+      Attempting to contact the Microsoft OneDrive Service
+      Successfully reached the Microsoft OneDrive Service
     EOS
   end
 end
