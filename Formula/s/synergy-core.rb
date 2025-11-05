@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://github.com/symless/synergy/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "c18750b6d6b217f8439199ac90bb4633ef0611d4a962a383c6b424a984f388fa"
+  url "https://github.com/symless/synergy/archive/refs/tags/v1.20.0.tar.gz"
+  sha256 "c41a25ccc9fa2ea41706170338c5069890503f0de02668551250f89afe8fa012"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://github.com/symless/synergy-core.git", branch: "master"
 
@@ -55,7 +55,7 @@ class SynergyCore < Formula
 
   resource "synergy-extra" do
     url "https://github.com/symless/synergy-extra.git",
-        revision: "e68812d06139df5b836f361047a68f8c86efac17"
+        revision: "5056ed0d4a22e00a4c410733cc0129040de84099"
 
     # Version.cmake in `synergy-extra` reads .git folder of `synergy`.
     # but it's submodule uses ssh protocol which will be failed in CI
