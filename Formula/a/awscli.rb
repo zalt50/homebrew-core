@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/refs/tags/2.31.28.tar.gz"
-  sha256 "b148c740182df5da73263eb985e7118e04f6c4c78a525185c0e3315841032f2b"
+  url "https://github.com/aws/aws-cli/archive/refs/tags/2.31.29.tar.gz"
+  sha256 "a664e5669ab135a5c340e6d6ab4c6a508ee32ba82c574b8d6eed44c6211a07db"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "60cfc7b2bdc27d7a8136cf6d10f4aae3c7a6413825599fbd12faa8d2bc71b63d"
-    sha256 cellar: :any,                 arm64_sequoia: "d135766e0867d0e209cf7c123a89319053ceffad77d9fe7f39155df2608c5835"
-    sha256 cellar: :any,                 arm64_sonoma:  "e414a4230c0a7789460562beb17a23b5e6043cea5d9c91faab1a77a798f1c214"
-    sha256 cellar: :any,                 sonoma:        "128c0dbcd0c887ba4b475da6b59520144511a5c7baf5f0986cbcc186b924cb04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a5723f77c6d0b2b705d6c90f7693fc6646423d1ebbcd316ad2ce50a0fa62dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18111413e76c1a1885620d0ebaac9f705b597c3dea7f782f0db9494a4bd1dec1"
+    sha256 cellar: :any,                 arm64_tahoe:   "d3975e4159b62da0c8d1f95635c99271200447effdbe92b7fc7749e491e61828"
+    sha256 cellar: :any,                 arm64_sequoia: "808fc20de3ab8c2cfcfc797f8a9fcc9acedd96140ff55a8f6637cc60b0b8a932"
+    sha256 cellar: :any,                 arm64_sonoma:  "af7ffe6faf50005892d5f4568b747239690edc877dc4d86ec4982166b12d3155"
+    sha256 cellar: :any,                 sonoma:        "9e4d1eeb74bba26685c4b3500ec733185bf245274e798e097ab4ff0cb52cc719"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4184192bfb6d54e88ccf955744c797e742d14050658a0cb3e35ba8c01b01276c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3278c7756c737f5d327614fd28376f5f82704a5beb15d4b2c4c05beabf818e6a"
   end
 
   depends_on "cmake" => :build
