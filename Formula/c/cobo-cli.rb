@@ -3,8 +3,8 @@ class CoboCli < Formula
 
   desc "Build, test, and manage your integration with Cobo Wallet-as-a-Service"
   homepage "https://github.com/CoboGlobal/cobo-cli"
-  url "https://files.pythonhosted.org/packages/a6/b7/7a4cbb7b9a426d1d1f15c58f162b5ca7f7e410516d0ce96680967c56d5ba/cobo_cli-0.0.7.tar.gz"
-  sha256 "aed9356a758067dc3f0e80a635d86bd2254673188d3889bb5e847ecf6efe0554"
+  url "https://files.pythonhosted.org/packages/cf/b5/eab301fba17bd78fb28c6258f1d3ec7177976c93cbea8b9f5338ff024703/cobo_cli-0.0.8.tar.gz"
+  sha256 "dee36ca6c335c929f9155ccbd45d4f1bdb8cd5ea950e1c16e142b9f2e34b7bc1"
   license "MIT"
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
