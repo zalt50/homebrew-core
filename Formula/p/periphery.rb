@@ -4,6 +4,7 @@ class Periphery < Formula
   url "https://github.com/peripheryapp/periphery/archive/refs/tags/3.2.0.tar.gz"
   sha256 "84041cf27e1f7b1f9981651f0d7c78b317388040f1f31cf131dabb744a5f922c"
   license "MIT"
+  revision 1
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
@@ -26,7 +27,7 @@ class Periphery < Formula
     args = if OS.mac?
       ["--disable-sandbox"]
     else
-      ["--static-swift-stdlib"]
+      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld"]
     end
     system "swift", "build", *args, "--configuration", "release", "--product", "periphery"
     bin.install ".build/release/periphery"
