@@ -4,7 +4,7 @@ class Libgdata < Formula
   url "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz"
   sha256 "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   no_autobump! because: :requires_manual_review
 
