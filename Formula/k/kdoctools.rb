@@ -9,6 +9,7 @@ class Kdoctools < Formula
     "LGPL-2.1-or-later",
     any_of: ["LGPL-2.1-only", "LGPL-3.0-only"],
   ]
+  revision 1
   head "https://invent.kde.org/frameworks/kdoctools.git", branch: "master"
 
   livecheck do
