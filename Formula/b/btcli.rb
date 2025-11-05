@@ -3,18 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/1e/9d/2e5e1bb80934d7ca4399eeb5190a17f7979ac3f726d111033a33128925c6/bittensor_cli-9.15.0.tar.gz"
-  sha256 "7412707d4897c3c35c95ca1b2667b0bb572b5a6fb93aebce2320b3cdde17f584"
+  url "https://files.pythonhosted.org/packages/65/c7/68274b592922425a3fc0bf206395b6e341baa9899b906b766c06cfd54d6f/bittensor_cli-9.15.1.tar.gz"
+  sha256 "be3a508f78991eebb5dbdbe877664d4d99518c06b9ba91fd63d1670208603892"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8db33a7be1ff115f4205c99f92a6b523f332252ddfec4a5755e067363e2bbfd6"
-    sha256 cellar: :any,                 arm64_sequoia: "fb20766b803fe544453c88b2b57ac4fe794350475c1a01316cea6fb242cb98fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "f2f0b0b0c8531f2cceb43dc65f2dcc57dc4d4b2913f3c78437e4d0d8205688e1"
-    sha256 cellar: :any,                 sonoma:        "5a3a76078144754c9a2c69533682069c336daad44136f4778d5cdf21c4884cab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44610011f67d8a96f458b6b090eaf9d1b79fe9a5053c21f064f56d4b858b013f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a0522680750fe95cb5d583e07aaa9723ccce908b24ac34092fddddeb4d3525f"
+    sha256 cellar: :any,                 arm64_tahoe:   "a472b12aa472b242e80b2d81fc7fda755bc8a5d38df375db70d3b728df2466c2"
+    sha256 cellar: :any,                 arm64_sequoia: "d0f6a727d1bba884d310c9fdb96dab42e4c7ed4577cb7be86b2cb8f9f29851cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "c067c1d186912fb1d91ca9c94c4acd30881bfeb4665c4c4c2a51542dfecb76ed"
+    sha256 cellar: :any,                 sonoma:        "9c6627d9c05f3a2fd9b4cc02d8876b56d90f222310e688afe9bcb1f9e08d8ddd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "388cdef02b39b88eb6a920ced20231069e40ac1422fc6efe7adb76ebcf770424"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1c69ba1aafb7efc29b2c3caf93e2af4b659c191cb81dc1a55dc40bdda8705d8"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
