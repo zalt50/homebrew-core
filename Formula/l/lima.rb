@@ -35,6 +35,7 @@ class Lima < Formula
     end
 
     bin.install Dir["_output/bin/*"]
+    libexec.install Dir["_output/libexec/*"]
     share.install Dir["_output/share/*"]
 
     # Install shell completions
