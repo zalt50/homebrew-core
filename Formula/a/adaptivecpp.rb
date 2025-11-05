@@ -1,10 +1,9 @@
 class Adaptivecpp < Formula
   desc "SYCL and C++ standard parallelism for CPUs and GPUs"
   homepage "https://adaptivecpp.github.io/"
-  url "https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v25.02.0.tar.gz"
-  sha256 "8cc8a3be7bb38f88d7fd51597e0ec924b124d4233f64da62a31b9945b55612ca"
+  url "https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v25.10.0.tar.gz"
+  sha256 "334b16ebff373bd2841f83332c2ae9a45ec192f2cf964d5fdfe94e1140776059"
   license "BSD-2-Clause"
-  revision 3
   head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do
@@ -17,7 +16,6 @@ class Adaptivecpp < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost" # needed to use collective_execution_engine.hpp
 
   uses_from_macos "python"
 
@@ -26,13 +24,9 @@ class Adaptivecpp < Formula
   end
 
   on_linux do
+    depends_on "lld"
     depends_on "llvm"
-
-    # Backport support for LLVM 21
-    patch do
-      url "https://github.com/AdaptiveCpp/AdaptiveCpp/commit/623aa0b1840c5ccd7a45d3e8b228f1bff5257056.patch?full_index=1"
-      sha256 "d3b8708ded954f04b87ad22254fd949c1d584d6de7a3f8a7e978ff715ca1a33d"
-    end
+    depends_on "numactl"
   end
 
   def install
@@ -43,6 +37,7 @@ class Adaptivecpp < Formula
       %W[
         -DACPP_EXPERIMENTAL_LLVM=ON
         -DCLANG_EXECUTABLE_PATH=#{Formula["llvm"].opt_bin/"clang++"}
+        -DACPP_LLD_PATH=#{Formula["lld"].opt_bin/"ld.lld"}
       ]
     end
 
