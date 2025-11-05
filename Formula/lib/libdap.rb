@@ -4,6 +4,7 @@ class Libdap < Formula
   url "https://www.opendap.org/pub/source/libdap-3.21.1.tar.gz"
   sha256 "1f6c084bdbf2686121f9b2f5e767275c1e37d9ccf67c8faabc762389f95a0c38"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://www.opendap.org/pub/source/"
@@ -40,6 +41,11 @@ class Libdap < Formula
   on_linux do
     depends_on "libtirpc"
     depends_on "util-linux"
+
+    on_arm do
+      # FIXME: illegal instruction in test_simple_3_error_1 with Ubuntu GCC
+      depends_on "gcc@12" => :build
+    end
   end
 
   def install
