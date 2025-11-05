@@ -1,8 +1,8 @@
 class Zeek < Formula
   desc "Network security monitor"
   homepage "https://zeek.org/"
-  url "https://github.com/zeek/zeek/releases/download/v8.0.3/zeek-8.0.3.tar.gz"
-  sha256 "c178a85e502835cef9584e9a5cb049b4a6abc00bd2bd3c07d4bc3466e5df6eee"
+  url "https://github.com/zeek/zeek/releases/download/v8.0.4/zeek-8.0.4.tar.gz"
+  sha256 "b11aa1391e240c6ab49838de949bb8ea44635ee8fb8350db4e100c31e83b6a24"
   license "BSD-3-Clause"
   head "https://github.com/zeek/zeek.git", branch: "master"
 
