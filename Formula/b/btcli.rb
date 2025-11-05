@@ -3,8 +3,8 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/1e/9d/2e5e1bb80934d7ca4399eeb5190a17f7979ac3f726d111033a33128925c6/bittensor_cli-9.15.0.tar.gz"
-  sha256 "7412707d4897c3c35c95ca1b2667b0bb572b5a6fb93aebce2320b3cdde17f584"
+  url "https://files.pythonhosted.org/packages/65/c7/68274b592922425a3fc0bf206395b6e341baa9899b906b766c06cfd54d6f/bittensor_cli-9.15.1.tar.gz"
+  sha256 "be3a508f78991eebb5dbdbe877664d4d99518c06b9ba91fd63d1670208603892"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
