@@ -6,12 +6,12 @@ class Q < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d601d03915b15c3729f1b1ce5d1f1e5a2d59cb25953cae53d1d2e8354899115"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d601d03915b15c3729f1b1ce5d1f1e5a2d59cb25953cae53d1d2e8354899115"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d601d03915b15c3729f1b1ce5d1f1e5a2d59cb25953cae53d1d2e8354899115"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4dcaa7ed1d6a1bf6d852a5b98feb09d613452685f2e35c6536e23b1aab881b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30281c1a7141b9e26ee5c9ca5695c167341d6ee46809e8373dcea5a4f9788fd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d99cb88155b05dfea7798eacf2aba53dbb764aa2ca87f3fe249fab5e163482be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8eb36a748ef1e7d3788f3e8dca7714964bb1eecb7488040e151b2566e69b82e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8eb36a748ef1e7d3788f3e8dca7714964bb1eecb7488040e151b2566e69b82e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eb36a748ef1e7d3788f3e8dca7714964bb1eecb7488040e151b2566e69b82e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6caa1e226f9e704b29ee49439a1c67df7f0d28ceb5a9039adb042b5a8f7328f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41de6e7e399efbc87012758a02cd29b715edf074ec0481dfe4339b582c7ddcd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4d87e0aca754929a28e89a2112492f9e4448b7df7bf5247d2f3f679080db63d"
   end
 
   depends_on "go" => :build
