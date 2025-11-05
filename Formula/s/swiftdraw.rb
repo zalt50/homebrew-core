@@ -4,6 +4,7 @@ class Swiftdraw < Formula
   url "https://github.com/swhitty/SwiftDraw/archive/refs/tags/0.25.1.tar.gz"
   sha256 "7016b9a8a035cd6a87d72bbfadba168948b5e1f069bb922ca1419b1122aff254"
   license "Zlib"
+  revision 1
   head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
@@ -26,7 +27,7 @@ class Swiftdraw < Formula
     args = if OS.mac?
       ["--disable-sandbox"]
     else
-      ["--static-swift-stdlib"]
+      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld"]
     end
     system "swift", "build", *args, "--configuration", "release"
     bin.install ".build/release/swiftdrawcli" => "swiftdraw"
