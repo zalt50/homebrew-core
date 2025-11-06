@@ -10,13 +10,13 @@ class SlitherAnalyzer < Formula
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a604b0d55991c0a1c68d4077e7fa07b75abdf1b2d1adf37d88a8bdc6d79eed7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93ea3ed0768bcbac5d7f6b011c95f2bc80a406a6c7305bdd797762033e8ffe51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d86244f2ea64820da270ee5037de93d44704967af90259f3e53433f0480268c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c308c481788cdc828a5fcff6c6fa766b6941367607f7474a8d342926bb8da5a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "399528d89fe21138e19d4f88e937253bb21ef3d88f5daf23480d72f5470c5125"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb55a19322f47407859278cd7cfc89ca4d69bccab29e196c25b631381323dbaa"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84f69262fceb9c906c3f9a7c3b1d919b50b2e4131d434f887a45e656f302dd8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e001edca4c14a267a7416ff953e0ff353c5f92d1f1eb9b46e61dd60f9f5e5c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40acdffd1f7bbd1996e03a8a7cc761d2b23e275f3e8e2661c31296d6908ed772"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8707e45e0d1e593b26fa857d39214f5168be3b4cfba51d963eb086593c264a24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9833a1ad980832d99b14f9ccd394e3ac1de732b70ba61cb91386ba7c572bdd42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "611c8673e49167d01cfd8f7e953518e68bf67e29314eacca98f7a2cec105b812"
   end
 
   depends_on "certifi" => :no_linkage
