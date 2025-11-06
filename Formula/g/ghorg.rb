@@ -1,8 +1,8 @@
 class Ghorg < Formula
   desc "Quickly clone an entire org's or user's repositories into one directory"
   homepage "https://github.com/gabrie30/ghorg"
-  url "https://github.com/gabrie30/ghorg/archive/refs/tags/v1.11.5.tar.gz"
-  sha256 "6ec9096049110c3fa47068b9c91affed522e065156e3261989677fbfa2b11b37"
+  url "https://github.com/gabrie30/ghorg/archive/refs/tags/v1.11.6.tar.gz"
+  sha256 "187dd7de0b57b2e92002471730ab26082bb52e4f15f53c1807e513c91d5f472b"
   license "Apache-2.0"
   head "https://github.com/gabrie30/ghorg.git", branch: "master"
 
