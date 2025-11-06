@@ -9,13 +9,12 @@ class Safety < Formula
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "554c2de57ce98912457825f25df6743946cc5c76005aa3999541a2991598f0a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be14bd26ae9dc0111124b4bdadb03e1e681cbbff11879a357e8f1a697872a37d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e63a931d24e848dca220f9ef296dcd98e245b18939772508c1edc4083683da7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e8d5c4db524abc5f9a29ddaaba3b6196a651943c55894e67f8d162cb4624c3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cb6d771c9fba5ebff7fbd6a11ff0a7a51aad1cf89d27727d0dda394b60bce80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "299f3a552c610a7d6b8e6eb511ac06a4613109d708af56f266a9240e295bfa26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38dc3419e08fd916438d6f4ba667bc394f1665ba79e53121c6defcb999d19d8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbc0734477f73cbb476ee44a1c34a7aece3cad66f237d708e96382e1c575df8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08ba9498e6f78f2bf9f34f1a3335ca6fc45660269ea46de0684d7cb1b81b80c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af3815795ca2f9e970b06d8a964210ae0c8af5bdaef63b2a3ad43a30751c7b21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fe874612ce4b0fcdece9b810060c100ca32b0f7fc5d4de098dc1a2597d8cff7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f551c705407abcfbedaa897f46818bf1b0bf7dfde548a60d9d25d402db2f4a"
   end
 
   depends_on "certifi" => :no_linkage
