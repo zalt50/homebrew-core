@@ -8,12 +8,12 @@ class Img2pdf < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d31f692a2983d5bc98d11466673c45a4f94a64ecb54eaee752e0e2d86d16d17"
-    sha256 cellar: :any,                 arm64_sequoia: "551cf1509f635a544b1b59c4391608e0a6b20a0612ae7c57907fc9a293b82f39"
-    sha256 cellar: :any,                 arm64_sonoma:  "db3f99324a3d1b96efbd6f18575c4b392e7a1a1401c70a3f771c86b507b2db71"
-    sha256 cellar: :any,                 sonoma:        "40a2edaa42895e0d5f9b6000fe9648838e035d82eee4fa9fee1dbd680693bab6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7da29336c3e06edb02a8229716e2794b6d0b386fcbae676e2c44e21752064f9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "badaac16e89bf071dbe1d7765965d199f879cf2b74e0f8dccec0a9a873888490"
+    sha256 cellar: :any,                 arm64_tahoe:   "49cb1ad33cd2a254b41237c2ce064bda97dc24f74cfae3b81710ddb7d85be1c9"
+    sha256 cellar: :any,                 arm64_sequoia: "b9fe1e781a5fae8818fdd093aba34df2ca8d39c05f44b88ba283f8fccc804d6f"
+    sha256 cellar: :any,                 arm64_sonoma:  "da1e80de87f316015f4df8a677889b8b3ddee005180e289da01088ec9b22aeaa"
+    sha256 cellar: :any,                 sonoma:        "9f7d81616da3c98aaf7ae9821b1790a321bcb6c5b1ddfa93ed35d1cff5f06748"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8dfa6ee752c5a807e635c0dae1d411f62f0b2be1a7ea63df6367936555eacfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fe8d3cf44d3c9199684b3f457b4aba7397f8c864d57ee60a0b09ac042717c60"
   end
 
   depends_on "pillow" => :no_linkage
