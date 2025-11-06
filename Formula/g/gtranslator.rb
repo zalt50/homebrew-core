@@ -21,7 +21,7 @@ class Gtranslator < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "adwaita-icon-theme"
+  depends_on "adwaita-icon-theme" => :no_linkage
   depends_on "cairo"
   depends_on "gettext"
   depends_on "glib"
@@ -29,10 +29,10 @@ class Gtranslator < Formula
   depends_on "gtksourceview5"
   depends_on "json-glib"
   depends_on "libadwaita"
-  depends_on "libgda"
   depends_on "libsoup"
   depends_on "libspelling"
   depends_on "pango"
+  depends_on "sqlite"
 
   uses_from_macos "libxml2"
 
