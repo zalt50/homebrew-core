@@ -9,12 +9,13 @@ class Bbot < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "098a18c833b039afc829f9108498693e8f70c7004d55d35039e127f78749aa13"
-    sha256 cellar: :any,                 arm64_sequoia: "9ce78e43ac752bec2d6d082e4db2ca1bf5c9322176cbdf376c535092c51d6562"
-    sha256 cellar: :any,                 arm64_sonoma:  "4a923d55298eadd584e8fb28e0293af3ddd1a40049de62cf6b6480cee598947f"
-    sha256 cellar: :any,                 sonoma:        "fb986bdf472e9d0ba3a50acfe57727e30fc721042bda407ffcd3b618bee43b71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a85b9bef76e0a0d637361b1e9f240db6bec20a8a4467bcc80e1f86c527257cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "293d4f74875c684ae86c40cfc36105adbadb218bd5b72d962af0c659a9c1cbc2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "809f15fe693725fe73f088dea1e4214373d230085a9a0c32fa813006767cbfdf"
+    sha256 cellar: :any,                 arm64_sequoia: "8731041f849bcaef58c80b57105af6a0d0e950dc566ddad1a725215ca6ba34dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "334b994ba0db1f462be4fe4e5e72d4330d776c18e78fb9cd9f9b035c461b6bad"
+    sha256 cellar: :any,                 sonoma:        "42fb8b77383edf7c848944e0136e221a2281b216e7bb9f1328c3ec657c691ccf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bcbe54f7c349266ca9d8abdce61ce2d291cae2adb600f6884e0273240edf2f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56d35ed832f28db445a26ed43fcf2596c1be1b33d7d4219f215d31ee525bde3c"
   end
 
   depends_on "cmake" => :build
@@ -26,23 +27,18 @@ class Bbot < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "openssl@3"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "zeromq"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic-core"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/aa/20/036f20185b8a65de24b0759efa8666577804f42b31beccb96309c67aa6d4/ansible_core-2.19.3.tar.gz"
-    sha256 "243a69669a007be0794360bc4477f70e0128ce0091dc3af4c5cb81c6a466f573"
+    url "https://files.pythonhosted.org/packages/02/5b/8992daa4102cf92eca06f7e40d9c9cfdb2d6440719dff9944417c570fea6/ansible_core-2.20.0.tar.gz"
+    sha256 "cd73faf28a056c933bc1eee8f66ab597e7ec7309d42c8a6e5d6e4294c4a78b54"
   end
 
   resource "ansible-runner" do
@@ -166,8 +162,8 @@ class Bbot < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
-    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "ptyprocess" do
@@ -183,11 +179,6 @@ class Bbot < Formula
   resource "pycryptodome" do
     url "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz"
     sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pyjwt" do
@@ -269,11 +260,6 @@ class Bbot < Formula
   resource "tldextract" do
     url "https://files.pythonhosted.org/packages/97/78/182641ea38e3cfd56e9c7b3c0d48a53d432eea755003aa544af96403d4ac/tldextract-5.3.0.tar.gz"
     sha256 "b3d2b70a1594a0ecfa6967d57251527d58e00bb5a91a74387baa0d87a0678609"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "unidecode" do
