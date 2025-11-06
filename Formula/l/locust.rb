@@ -6,14 +6,15 @@ class Locust < Formula
   url "https://files.pythonhosted.org/packages/ba/da/6108cb1b5be2ede0f9501bed5a9e1b86f6c4cffe66e18cab1af66aca713a/locust-2.42.1.tar.gz"
   sha256 "4510dfa92213a9b4965d4a7a9aa40f105b6f886695bd27655cd3a5ba13040a6d"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d79456ca62a7b2592e98ec679b41dc2cbe123cdbd28a052b651982382b8d724"
-    sha256 cellar: :any,                 arm64_sequoia: "aa8af3c815498d2aad1a6a7d43dda9b1dcb020965345bc5753b779c93b4a3226"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f132ec828d8707463e4b0518e9b0c0f92d12d93dd5811a7e01fca552c093d54"
-    sha256 cellar: :any,                 sonoma:        "a51ed139602801ca135d2111cb87e656c5fa66907ddadf338e711a26c453c244"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "898d394d28aa5d961abfbf058a45a78350d52aaa820c152c47c6350b8498e5c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee8db63608bfb8f977dcf22f3b906d5ee6e91050e3f5644789602be77538b6d"
+    sha256 cellar: :any,                 arm64_tahoe:   "bf0e5e3dc32950e35feb6136698b4db772bcad119ac311ac1bfb39ecedb24db7"
+    sha256 cellar: :any,                 arm64_sequoia: "90a04696e25f88226413ff3ab85a3a1802b4646c1ed6f23cbe0a09947f280d10"
+    sha256 cellar: :any,                 arm64_sonoma:  "d69238d10e89937ab1bdbfa9ae27eb1a19f8f8342778fedd573558aee7ce31d4"
+    sha256 cellar: :any,                 sonoma:        "d718f19475e4d301108fbca0054845f370a98164b3ca8339c2dd1e879c794188"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c97e7afd94cb360c54e0aa8ae622886a06aaa720591e82a19f3c6441ac62744"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1561aac5e5d1a5b56c445573e20973a6c186bfe7445802001cc126f9db7c182"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -35,8 +36,8 @@ class Locust < Formula
   end
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
+    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
   end
 
   resource "charset-normalizer" do
@@ -110,8 +111,8 @@ class Locust < Formula
   end
 
   resource "locust-cloud" do
-    url "https://files.pythonhosted.org/packages/ae/ad/76c4a6af4394c28b8845bcecd60ac5dfb489878028a31b81d5db0bc3e156/locust_cloud-1.27.8.tar.gz"
-    sha256 "cc7821417643db34628551dddd0accc7451511b8160ddb001d60013c44f26d0b"
+    url "https://files.pythonhosted.org/packages/df/40/5c640da49e70cdf6de761aba8838aab2fe301bb46e307ccf7d49a56d0d24/locust_cloud-1.27.12.tar.gz"
+    sha256 "d226fb74a1fdc9d3ed319ccbf328897310a2e04160ed31714322485531ad54e4"
   end
 
   resource "markupsafe" do
@@ -140,8 +141,8 @@ class Locust < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
-    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "pygments" do
@@ -160,8 +161,8 @@ class Locust < Formula
   end
 
   resource "python-socketio" do
-    url "https://files.pythonhosted.org/packages/ab/80/f31077368adbf65be17245ee69cbccde2891582623e6a8ad647c7a254db3/python_socketio-5.14.2.tar.gz"
-    sha256 "5da35caa04059048a4521b1378340a33a15439c6a748765046112fa0d145fb1b"
+    url "https://files.pythonhosted.org/packages/c0/3f/02f5970c82285bd015ec433078bfc3275580b03715ed6024607dbe0f1966/python_socketio-5.14.3.tar.gz"
+    sha256 "cd8da5e0666e741b4be19e07882e880f57a4751d1645f92c2bc746c95f23b1eb"
   end
 
   resource "pyzmq" do
