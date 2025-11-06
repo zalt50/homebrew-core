@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/16/1d/a1e13f053fafa55955eb7ccdc8d65b20709c59f17c42cbf6068668668ddb/kimi_cli-0.49.tar.gz"
-  sha256 "eb02c0858d1c62f0f771df5ef29601e8c1b5908b50105881e0cb320bf6067d91"
+  url "https://files.pythonhosted.org/packages/d4/e3/ce3d0ff13a7711c5db0c4aaeb4530023038511ccc5e21d7d38fa1b23acf5/kimi_cli-0.50.tar.gz"
+  sha256 "abb0111f0bbf8dad639dca18f2cc626cbf90d43d25d0fb4b95bf08df30121d8b"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
