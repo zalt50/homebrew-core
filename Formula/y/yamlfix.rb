@@ -8,13 +8,13 @@ class Yamlfix < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8851fd9cd546d4cb2371c0e90771cd633a478d0505f3ca2f5253a21fbc539ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8851fd9cd546d4cb2371c0e90771cd633a478d0505f3ca2f5253a21fbc539ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8851fd9cd546d4cb2371c0e90771cd633a478d0505f3ca2f5253a21fbc539ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ef664d82e27b7ddb6c8605eb21962c8836f57234d0927cf07e7b24ea165cc48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef664d82e27b7ddb6c8605eb21962c8836f57234d0927cf07e7b24ea165cc48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ef664d82e27b7ddb6c8605eb21962c8836f57234d0927cf07e7b24ea165cc48"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d3a68e877b5a09ed4ea835daa1b6d9f3e374565c7f56428b2a7777f8abbcf44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d3a68e877b5a09ed4ea835daa1b6d9f3e374565c7f56428b2a7777f8abbcf44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d3a68e877b5a09ed4ea835daa1b6d9f3e374565c7f56428b2a7777f8abbcf44"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e34ad4aa38e4286df238735c8c4cd9767797d7865eee70a7004e41765141818c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e34ad4aa38e4286df238735c8c4cd9767797d7865eee70a7004e41765141818c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e34ad4aa38e4286df238735c8c4cd9767797d7865eee70a7004e41765141818c"
   end
 
   depends_on "pydantic" => :no_linkage
