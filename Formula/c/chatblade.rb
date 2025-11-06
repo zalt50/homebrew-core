@@ -9,13 +9,13 @@ class Chatblade < Formula
   revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "1afc59e5fc46ba955998dd61ab88dafde251a504d0934e4a19c971c0614ea6a9"
-    sha256 cellar: :any,                 arm64_sequoia: "8b77b289ac5e7895308d2a5f6f61355a47dfc7b18eaf8ffaf008ae20733adb4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "77bc45bb28c79bf0ab23bf0807e34b9ae7de980bd381eab523ec585598f87c69"
-    sha256 cellar: :any,                 sonoma:        "a3d0005e0ed04bdbe4b9d77d1d95afe01a42d09ab75c6d8772844bab32e68f2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36dae3baa8cb3c7d320400f2d860b7e6b98ff0ca8b2a0a3d6e168563d7c4ea06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d42a6723ec44d54885f0d9bca1e4be66a4d25d42ddeba4f3008e5c8f8fb943dd"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "165f6a5e26ea14d773c853d1e7a88b9fa723869aa3f8fa7608bbe0e2807e08c6"
+    sha256 cellar: :any,                 arm64_sequoia: "ea832d9bb69cf30ce8b59cec68b157a30342937dcbafc1f5cf31584daeb04dce"
+    sha256 cellar: :any,                 arm64_sonoma:  "67651fb0e8a5a650ad425499f4d411417f04150c67c76622a155d12866fa087c"
+    sha256 cellar: :any,                 sonoma:        "b2127d265c2a3660d689b836cf2d7da63f81c10428967499f4ee0223ba083319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d29952f86965547bf2deabf88cfe86d4832c24260bd2217b73e4326d9a22ce6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f650f455f1fe60f6bca907d99fa6838a84b0b1fdf2f4df67581af6e3c9086ed"
   end
 
   depends_on "rust" => :build # for tiktoken
