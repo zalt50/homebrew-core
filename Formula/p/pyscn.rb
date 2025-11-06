@@ -1,8 +1,8 @@
 class Pyscn < Formula
   desc "Intelligent Python Code Quality Analyzer"
   homepage "https://github.com/ludo-technologies/pyscn"
-  url "https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "dbb5a4708eb9dcd850b979e73b311dda308e99ae110a5733e00776ccc4a5f3a6"
+  url "https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "f91541bf07b9bee4167710dc3d68d682a7bb1b696de86d9d25fd1e4990b63a05"
   license "MIT"
   head "https://github.com/ludo-technologies/pyscn.git", branch: "main"
 
@@ -42,6 +42,6 @@ class Pyscn < Formula
     PY
 
     output = shell_output("#{bin}/pyscn analyze #{testpath}/test.py 2>&1")
-    assert_match "Health Score: 98/100 (Grade: A)", output
+    assert_match "Health Score: 97/100 (Grade: A)", output
   end
 end
