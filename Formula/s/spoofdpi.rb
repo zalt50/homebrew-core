@@ -15,12 +15,12 @@ class Spoofdpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5537d060d91ee7bc56404f202ce34b903ea24ecad005d90bbe9020224b972927"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5537d060d91ee7bc56404f202ce34b903ea24ecad005d90bbe9020224b972927"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5537d060d91ee7bc56404f202ce34b903ea24ecad005d90bbe9020224b972927"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab11ce8f3bb4f4e24cfb49d4c03e327721b0c975e85e6ae68dd318ada8c60f03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e06d30ce79749f99c60eb7fcb6068facf98a13f8ae948d1f707411ef22835d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a19ee7d6a2a6a7ede6269571afd4d2c8f3ca6005bd58d9137556a4550fce813f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e1b156bdad9850e43b438b5ca0c87e0589b931224717e0a836a5ce5170729b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43882aad50becaeabe8fa49cdb8d758d99b2217bc3b5eb4fcff04c35279cdbdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "908d20f5df91c7092d8923ef72ba88b7e9b4a2e674615152afbba773ab71556a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3864893371a61523e9f4c0cfe9608725087af503dff1cc90cf99738005872862"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bdb60291cb0bb8e52fa0e334ec385f84cfb72aa5c4996feeb02d8c95d22dea1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa35262b1da125ba26060aa67d116e2295bc14959a127c61b32dc95763bf417a"
   end
 
   depends_on "go" => :build
