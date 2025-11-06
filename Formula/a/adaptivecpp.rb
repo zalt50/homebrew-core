@@ -7,12 +7,12 @@ class Adaptivecpp < Formula
   head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do
-    sha256 arm64_tahoe:   "c7d4959352b8ebddf43641929597f0ba52212c921c1f3933980f32fa06d925fe"
-    sha256 arm64_sequoia: "8d7276450c277fe9378aa8bb2c959adbec2ea0a4072ec9416cb3cb43263b6950"
-    sha256 arm64_sonoma:  "a7d8243f1f5151c7a3b2875f9fba1412755663d5b085c87e9ec3b6a005f9cb35"
-    sha256 sonoma:        "0e5825f933f4d87ec3d66a25c4d7a931cd5be6aaf7d0dd5e2d62cfdcca9e8396"
-    sha256 arm64_linux:   "1442b54a1ed1362ef94e93e073c8090df229b495195131e5e66467cc6b1be3eb"
-    sha256 x86_64_linux:  "ba6fea3e06fe2291cad07ec926c56cc1335b29401ca984a01be13484689def1e"
+    sha256 arm64_tahoe:   "47170783eb0de616f48a47f956ead8d7940144c6d942c068ec47d6b5039800b4"
+    sha256 arm64_sequoia: "2541023a8c2434dfe59c6e8fe3da3092c238aa253fe6cb3584e16dbd8b3b4890"
+    sha256 arm64_sonoma:  "e9c912e6c181be13a3238c9ad4ae3c8d55c367717872955ba471066cd08fe375"
+    sha256 sonoma:        "3084318448f81ec7c534cdc5533c8e04776e609a7a3749e8494c5b957f35dfe5"
+    sha256 arm64_linux:   "0cb9c3ee690bb883104eeff0bef2a0961c194f63e37779dcff364adeb34a8571"
+    sha256 x86_64_linux:  "6b697146bf34c4d6ec13b85483297174f9e88e5b989d0af56abdc38ab44ccce8"
   end
 
   depends_on "cmake" => :build
