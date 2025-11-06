@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/47/90/0656e35f38f5ddc8722dc1e038a51f10eb89196eabfda45d3842ec122c73/snakemake-9.13.5.tar.gz"
-  sha256 "12e8871386f800c31a8bcaedab3ee1a61326bd6e098f52dd618caeae60e6783a"
+  url "https://files.pythonhosted.org/packages/f9/03/073f2d4156840a60800c53252f173a7ef35c5f7253a106857dfad17996d4/snakemake-9.13.6.tar.gz"
+  sha256 "07646a4a8c75796928be3fb1773a9c923e8e9f6207f74f3bba9b1d09d8440237"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -62,8 +62,8 @@ class Snakemake < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/4a/c0/89fe6215b443b919cb98a5002e107cb5026854ed1ccb6b5833e0768419d1/docutils-0.22.2.tar.gz"
-    sha256 "9fdb771707c8784c8f2728b67cb2c691305933d68137ef95a75db5f4dfbc213d"
+    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
+    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
   end
 
   resource "dpath" do
@@ -172,8 +172,8 @@ class Snakemake < Formula
   end
 
   resource "smart-open" do
-    url "https://files.pythonhosted.org/packages/a9/7a/0607d2739a29f1a753c5efaf71f29761de89f5e8554c7924411b5c721515/smart_open-7.4.3.tar.gz"
-    sha256 "f32839234a287e2cb2ecdccc5b315de34a8e79db4db729e1a864ab3b359f9fee"
+    url "https://files.pythonhosted.org/packages/e3/f7/490afdfad6351586409a192da7e1aab90f8cc02e51080dc79f54d784a4e3/smart_open-7.4.4.tar.gz"
+    sha256 "2c264f43c55c2fcdea37b1752dcd06bb152afd514490a0aee5d21db0424b0669"
   end
 
   resource "smmap" do
