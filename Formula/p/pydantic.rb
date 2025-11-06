@@ -7,6 +7,15 @@ class Pydantic < Formula
   sha256 "0f8cb9555000a4b5b617f66bfd2566264c4984b27589d3b845685983e8ea85ac"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "072d1fb04d90cb1c85737e299f5dfa81a17b4753e1c5ec4c8757400218a5a56b"
+    sha256 cellar: :any,                 arm64_sequoia: "1e6b7462653aff4092b3dbaa986d8341e0372ec5a0000d755deb5ba0ce14f6a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "a81ed5785760069cf140b134af256535aaeac6b85968b25e2efea30c6128bb18"
+    sha256 cellar: :any,                 sonoma:        "12157cdfacdefb620f44603884f82f20611e1692912eff93a700e7e7fd1e0681"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a9ba62930ba831f126a5d9e2995131e9b8013cb4227d1384df52ee80a6b843b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff0b840cf632666cfbe22f7f45f8ea1ac2939e972748f5296af3a88018fa24b"
+  end
+
   depends_on "maturin" => :build
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
