@@ -9,8 +9,8 @@ class Wtfis < Formula
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "9b6a4a8976dbb4749c0647c81eba578041c97589031650c0f746d649d02507f5"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "3b38ab6e4df69a3273029970d9457314d49f55bbe5b254c1d9153d23328201ac"
   end
 
   depends_on "certifi" => :no_linkage
