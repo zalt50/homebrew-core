@@ -3,20 +3,18 @@ class Safety < Formula
 
   desc "Checks Python dependencies for known vulnerabilities and suggests remediations"
   homepage "https://safetycli.com/product/safety-cli"
-  url "https://files.pythonhosted.org/packages/4c/5a/dc84e854574cc5c24a53e04180e18bf3590c8283b80a1b1b3d3ca4390031/safety-3.6.2.tar.gz"
-  sha256 "2e148cd9a4ad2e387d2c142878b7b5a3a9cb9e6538167043faa1ba7023a032be"
+  url "https://files.pythonhosted.org/packages/6f/e8/1cfffa0d8836de8aa31f4fa7fdeb892c7cfa97cd555039ad5df71ce0e968/safety-3.7.0.tar.gz"
+  sha256 "daec15a393cafc32b846b7ef93f9c952a1708863e242341ab5bde2e4beabb54e"
   license "MIT"
-  revision 1
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "554c2de57ce98912457825f25df6743946cc5c76005aa3999541a2991598f0a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be14bd26ae9dc0111124b4bdadb03e1e681cbbff11879a357e8f1a697872a37d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e63a931d24e848dca220f9ef296dcd98e245b18939772508c1edc4083683da7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e8d5c4db524abc5f9a29ddaaba3b6196a651943c55894e67f8d162cb4624c3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cb6d771c9fba5ebff7fbd6a11ff0a7a51aad1cf89d27727d0dda394b60bce80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "299f3a552c610a7d6b8e6eb511ac06a4613109d708af56f266a9240e295bfa26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38dc3419e08fd916438d6f4ba667bc394f1665ba79e53121c6defcb999d19d8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbc0734477f73cbb476ee44a1c34a7aece3cad66f237d708e96382e1c575df8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08ba9498e6f78f2bf9f34f1a3335ca6fc45660269ea46de0684d7cb1b81b80c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af3815795ca2f9e970b06d8a964210ae0c8af5bdaef63b2a3ad43a30751c7b21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fe874612ce4b0fcdece9b810060c100ca32b0f7fc5d4de098dc1a2597d8cff7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f551c705407abcfbedaa897f46818bf1b0bf7dfde548a60d9d25d402db2f4a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -116,11 +114,6 @@ class Safety < Formula
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -149,11 +142,6 @@ class Safety < Formula
   resource "safety-schemas" do
     url "https://files.pythonhosted.org/packages/c2/ef/0e07dfdb4104c4e42ae9fc6e8a0da7be2d72ac2ee198b32f7500796de8f3/safety_schemas-0.0.16.tar.gz"
     sha256 "3bb04d11bd4b5cc79f9fa183c658a6a8cf827a9ceec443a5ffa6eed38a50a24e"
-  end
-
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "shellingham" do
