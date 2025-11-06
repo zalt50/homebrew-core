@@ -6,16 +6,16 @@ class Fonttools < Formula
   url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
   sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15c0f815274279adaccda8da7447099c2cf0c6a48d1d265422b765177dcaf140"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd9bdb261eba38f01da918b4c51aab21d8e52b27380000bbb30e194719eb69bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5df016a7a7ebc9e2c835b44625b08d880901ba721dddcecca9986dce4c3ac547"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17eac0a58d3c06cad0b5591699a51de1c5bb2d81ad3ba4c87a5439c7477e6097"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bae2b4e45bf04b5fc707431f691bd30ce1d4b8b2480b21df8d1fb45b6de20c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e92f98edbcda6155e54809a1d4f4dcc08db76794d99c5b96e291df691df2a38f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38ad82d14b727b99fe1b9600738327b1eeef5f666685220c3417258204755b6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42312742d0d4e3e2e397c956c94d1ba7b4c03b26e47522f21ca8a467bdccb288"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "933704c12dd547642f635357461f18e04e769eae241e4ae611394dd831875dd9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "adb7ebe84ed7b3201155eea6f4efc142970ce8821b852f52d39504d7a2910975"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f388dee9dc5a5966a790e735d0695488b50354e37a07b2a29365aff21a3217e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81dc5cc04a1952a9d5fb3b277132edc0e4640aa7a217c094eee1d7006e7b67da"
   end
 
   depends_on "python@3.14"
@@ -26,8 +26,8 @@ class Fonttools < Formula
   pypi_packages package_name: "fonttools[lxml,woff]"
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
+    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
   end
 
   resource "lxml" do
