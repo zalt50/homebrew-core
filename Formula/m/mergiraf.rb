@@ -7,12 +7,12 @@ class Mergiraf < Formula
   head "https://codeberg.org/mergiraf/mergiraf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5c707523be55ef45945f624325043303cee8eb7450b7f3fd7284934c9d67423"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1db32935fdbc41b2c3b0cac96230588948f9931bf7fbce8e25d4a8a6131c9858"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0463ff64b10fbd79a9271a8dce8b75b126c33251151f87d964d8303566288b46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82b85bb2476b9a117d493e78481f9ca1c6e9ed7eb0b1103175372bae490d6aaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85c3214034957249a281375b050e42af0439d17701629804ada0642bc58e740d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b0b9ea5f2c8e6ad67b14807265a767e3f6478bea3454cf9111f5e51ac30fc35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ade306908441fd6f50a8171cef4c0f746825e85c7f802f3da06f7d34ce615e2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac6651430b16832afcb4bb62bfbbdad81190f4f64fdae032e3b6fdd4d059e1c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df24ba0756567ccdfd695c1d0ecf805e1fba8ebfbe533875035e2fc509406a09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8636612a4bf42b5be0dff9ea412d57e548434ac63936f5b8848d01cc4ca8cf03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "381572b8911db273813375af7e93d620c8a206c7dbb27d5fc1652cdfde66b0e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b2f93bfcbdc41183d7e16d8d65bbeb1e6c6e2a807071adeaf623dff7ee85ebe"
   end
 
   depends_on "rust" => :build
