@@ -13,12 +13,12 @@ class Kubeseal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45bb258dffcb5288632808e3a697b7d273c1eb20925e70b9b9d2e89b725a82eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da25997951a0a6a6b53c83387b4a313708c89f9d92a26e3120704faa9e44f3a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd082a390c5d94f8f44eb1802b635c7ee45854e568e66d1d83409a870b752f7c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54ecbb5b8d0cd41473f30eb42b5f3ac339cf4c1a4145a23cd623ff10a299ee89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2f81074c423295bf6e009867d88e9574ff2949d2810f6c6137d9d89348430a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70b6af2bd3f210ba122f6551f863bd61ebe439f87c3315e832d7752c6297911b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fa7f4cfbc0a6c4840e9e7a325edbc6e6010888318a1e73f2892c78e83d3b9a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d5f40e4c61b7fe6a956cf9e2c74180d55265756d390db1a5f7810a04b0f067d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87dbb5a2b27785f37f43379950e412bc170e01b22a2f6bee20dca8895f235fa5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ee58313e3edb67c7c9dd09020dbc81aabcc7ca9e18080656d1c75646ab34a72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0052878fa99a9c21d0c883173838a2a9a6bb7a32108d64fce98948cdab6e77f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e665848846bfca20876a569e34788eef50418ab64e5ddcb362fc784b14ede7e0"
   end
 
   depends_on "go" => :build
