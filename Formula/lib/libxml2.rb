@@ -44,12 +44,6 @@ class Libxml2 < Formula
   end
 
   def install
-    # Work around build failure due to icu4c 75+ adding -std=c11 to installed
-    # files when built without manually setting "-std=" in CFLAGS. This causes
-    # issues on Linux for `libxml2` as `addrinfo` needs GNU extensions.
-    # nanohttp.c:1019:42: error: invalid use of undefined type 'struct addrinfo'
-    ENV.append "CFLAGS", "-std=gnu11" if OS.linux?
-
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
@@ -57,7 +51,6 @@ class Libxml2 < Formula
                           "--with-http",
                           "--with-icu",
                           "--with-legacy", # https://gitlab.gnome.org/GNOME/libxml2/-/issues/751#note_2157870
-                          "--without-python",
                           *std_configure_args
     system "make", "install"
 
@@ -66,14 +59,12 @@ class Libxml2 < Formula
       s.gsub! icu4c.prefix.realpath, icu4c.opt_prefix, audit_result: false
     end
 
-    # `icu4c` is keg-only, so we need to tell `pkg-config` where to find its
-    # modules.
-    if OS.mac?
-      icu_uc_pc = icu4c.opt_lib/"pkgconfig/icu-uc.pc"
-      inreplace lib/"pkgconfig/libxml-2.0.pc",
-                /^Requires\.private:(.*)\bicu-uc\b(.*)$/,
-                "Requires.private:\\1#{icu_uc_pc}\\2"
-    end
+    # `icu4c` is keg-only on macOS and can be during migration on Linux,
+    # so we need to tell `pkg-config` where to find its modules.
+    icu_uc_pc = icu4c.opt_lib/"pkgconfig/icu-uc.pc"
+    inreplace lib/"pkgconfig/libxml-2.0.pc",
+              /^Requires\.private:(.*)\bicu-uc\b(.*)$/,
+              "Requires.private:\\1#{icu_uc_pc}\\2"
   end
 
   test do
