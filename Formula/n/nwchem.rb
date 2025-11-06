@@ -1,9 +1,9 @@
 class Nwchem < Formula
   desc "High-performance computational chemistry tools"
   homepage "https://nwchemgit.github.io"
-  url "https://github.com/nwchemgit/nwchem/releases/download/v7.3.0-release/nwchem-7.3.0-release.revision-e60d3d90-src.2025-10-24.tar.xz"
-  version "7.3.0"
-  sha256 "12f6d110c7549b246cc1261f73bc8aa63f2304407d13d44a8fb11960936ceedc"
+  url "https://github.com/nwchemgit/nwchem/releases/download/v7.3.1-release/nwchem-7.3.1-release.revision-23c3b41b-src.2025-11-06.tar.xz"
+  version "7.3.1"
+  sha256 "7bc6f9bae6e4bf45750968e97a3206b0b026eabd8aa7b5e54317a9a26afcbe60"
   license "ECL-2.0"
 
   livecheck do
@@ -67,7 +67,7 @@ class Nwchem < Formula
       ENV["LIBXC_LIB"] = Formula["libxc"].opt_lib.to_s
       ENV["LIBXC_INCLUDE"] = Formula["libxc"].opt_include.to_s
       os = OS.mac? ? "MACX64" : "LINUX64"
-      system "make", "nwchem_config", "NWCHEM_MODULES=all python gwmol", "USE_MPI=Y"
+      system "make", "nwchem_config", "NWCHEM_MODULES=all python gwmol bsemol", "USE_MPI=Y"
       system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
       bin.install "../bin/#{os}/nwchem"
       pkgshare.install "basis/libraries"
