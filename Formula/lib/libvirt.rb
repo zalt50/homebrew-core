@@ -30,16 +30,14 @@ class Libvirt < Formula
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-c"
-  depends_on "libgcrypt"
   depends_on "libiscsi"
   depends_on "libssh2"
   depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
-  depends_on "yajl"
 
+  uses_from_macos "libxslt" => :build
   uses_from_macos "perl" => :build
   uses_from_macos "curl"
   uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   on_macos do
     depends_on "gettext"
@@ -47,6 +45,7 @@ class Libvirt < Formula
 
   on_linux do
     depends_on "acl"
+    depends_on "cyrus-sasl"
     depends_on "libnl"
     depends_on "libtirpc"
     depends_on "util-linux"
