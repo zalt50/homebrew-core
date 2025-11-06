@@ -1,8 +1,8 @@
 class Checkbashisms < Formula
   desc "Checks for bashisms in shell scripts"
   homepage "https://launchpad.net/ubuntu/+source/devscripts/"
-  url "https://deb.debian.org/debian/pool/main/d/devscripts/devscripts_2.25.24.tar.xz"
-  sha256 "1945aadc379c465719ab8e73131897aa80e323ab38424f478f7323bea97a2ccc"
+  url "https://deb.debian.org/debian/pool/main/d/devscripts/devscripts_2.25.25.tar.xz"
+  sha256 "72df8d03f8a50be7f1348421338ec0f9d9b8fce7888c7da297a557666bcb5e65"
   license "GPL-2.0-or-later"
 
   livecheck do
