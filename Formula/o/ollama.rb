@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.12.9",
-      revision: "392a270261dfb1d1cee1de3713836b503a7526ce"
+      tag:      "v0.12.10",
+      revision: "80d34260ea16e76c9ef0d014a86cc130421855f1"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -30,6 +30,9 @@ class Ollama < Formula
   conflicts_with cask: "ollama-app"
 
   def install
+    # Remove ui app directory
+    rm_r("app")
+
     ENV["CGO_ENABLED"] = "1"
 
     # Silence tens of thousands of SDK warnings
