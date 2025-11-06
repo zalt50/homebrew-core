@@ -9,13 +9,13 @@ class Sgr < Formula
   revision 15
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "6feb861ec91823ffd348ece37306331ce0e77d2e48693d09ccfa73bee0755690"
-    sha256 cellar: :any,                 arm64_sequoia: "a953b261de45aee3eb159e82e6f858a2ad51dd365ec0942e718a97cb3875968d"
-    sha256 cellar: :any,                 arm64_sonoma:  "7477c83eb0a2f9d16bf2a5a716db61ccfa64ba22aa48cfb05f233da450e1e3f9"
-    sha256 cellar: :any,                 sonoma:        "c17d376459bc63c361d343e4c3fac98f6f8088fa65f08a2a775344adf8adfb24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1354bd840ba92237d2d9cac8d027b0482998f6f313fcb68e6fb14ffc7426ec12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa9b1f0c9f2c3afe966f547ec7f72c452aa44572744999352d107106daa02f7"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_tahoe:   "036e61b33905ed94d6d42f3bf0cd49e55972d4e53082e54f974d84e3d37d050a"
+    sha256 cellar: :any,                 arm64_sequoia: "7f04ebc68b5751fbc448763ae2d443eff87dc7fbf65e5f3cadd93aaf58bcbb1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "23166a0b5d54c75edcc0ae098634464b422aa5a93212fb8206706025e9a21280"
+    sha256 cellar: :any,                 sonoma:        "1125ba2533381b0faf43c0749859ab39b0e650118b8f9cee0ca6fd3012cff74e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04d689f2ceb5b4178b1da5ac37fb62ce03d5f2c8facc1f90fbb9429bc7fccfed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b867b12a506b59d62d17c3f614255a04581762104f7b8beda6e9e7f52b2ecce4"
   end
 
   deprecate! date: "2025-06-21", because: :unmaintained
