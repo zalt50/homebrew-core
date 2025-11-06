@@ -9,19 +9,20 @@ class Charmcraft < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "540172624d9939e0268b8adec69f4fb0f473d1faf0413e51c0cde7d30e1421f6"
-    sha256 cellar: :any,                 arm64_sequoia: "e2551b1cb4962c505f258bc837fc8c279e6d66f576d039b65986417a70c11948"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1c7ac3ec317b8b50903a825b7f377bb1ef5091c9eb3ac0522b30fcc3bf19200"
-    sha256 cellar: :any,                 sonoma:        "e4939fa9a9beb4023a0a8cbf4c096e4a1b2933fdd7a57c225c956e2221e0d51f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab23c8cade2417e26afc1d58b6fe443354435d3aaafd4cb7a35f5126b3ba54d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "568e8233ee5c91d685918b85ff23550af6e4a5f6ffe935e7cb58f7689ad180e3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "89a56802f735a513c1404ae12d2c06318bef34b25908a6fc3b650024e3fb609a"
+    sha256 cellar: :any,                 arm64_sequoia: "12b49c1b57f78be9f97bdd4c987fa0497e465b6b283daad6416bc19ffcee7c89"
+    sha256 cellar: :any,                 arm64_sonoma:  "65f634f3aa9a237260768e80240ea3b29ba1fa078c4a2a6ce65356c32494f21c"
+    sha256 cellar: :any,                 sonoma:        "d0beb2fa0005918e39268f4cfc12af1f5b409a156f41f6929d6b78dd11941973"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "135d6ac1023b7cddcac1e923dca89bd261d823c99efcf22edede9664fb956531"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a39fcfc4d24244bb2ce6964f60fed3750d2b7566c2915cc11b9aab7f60c257a"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "pygit2" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
@@ -29,13 +30,8 @@ class Charmcraft < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core pygit2 rpds-py],
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic pygit2 rpds-py],
                 extra_packages:   ["jeepney", "secretstorage"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -242,14 +238,9 @@ class Charmcraft < Formula
     sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pylxd" do
-    url "https://files.pythonhosted.org/packages/9b/8e/6a31a694560adaba20df521c3102bdecec06a0fea9c73ff1466834e2df30/pylxd-2.3.5.tar.gz"
-    sha256 "d67973dd2dc1728e3e1b41cc973e11e6cbceae87878d193ac04cc2b65a7158ef"
+    url "https://files.pythonhosted.org/packages/d3/45/8a7b71aeac58e7c42f296a8878c7275728cfb579a4116ea676e8c55f4333/pylxd-2.3.6.tar.gz"
+    sha256 "1c6e064e264a5a215826b5d1ecba981a7fe09771e1b83eff0809e0643a390a14"
   end
 
   resource "pymacaroons" do
@@ -350,11 +341,6 @@ class Charmcraft < Formula
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
     sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do
