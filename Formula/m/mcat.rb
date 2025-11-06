@@ -6,6 +6,15 @@ class Mcat < Formula
   license "MIT"
   head "https://github.com/Skardyy/mcat.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bcb3b7981114a80f23e907ce7cbc6c88b37442da04628ff2b6045448655da2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88047f17e1f5b1cd3a15ba1df8b342f11d9bdeb3b5cfaefcee1f4fb29e726eb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6c8ee6ab311f8d6449e2e782be087607b7b4e68205ec8c0c7ec19a6d99a03a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fd8ee2207119d128b2a10f48f69b21425c8adaef34b741211510f00bf62cb5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1579b18388b971398c761ec3e9f814cc3825d4d51e7e87bc66ff7f02ce030f3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e0fc1bd937d01c371aef3ea2777b75188822bc45914997e7b363488ceb86661"
+  end
+
   depends_on "rust" => :build
 
   def install
