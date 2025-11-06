@@ -1,10 +1,9 @@
 class Tiledb < Formula
   desc "Universal storage engine"
   homepage "https://tiledb.com/"
-  url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.29.1.tar.gz"
-  sha256 "e507b6edf2a3893038ae92c74b4756561f3c11a03c6c311c7ae76d40f924cc05"
+  url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.29.2.tar.gz"
+  sha256 "44fd4c6c25938a123edc711f082a1c3e632a9f8365e64fe745bbf1e782d671d4"
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
