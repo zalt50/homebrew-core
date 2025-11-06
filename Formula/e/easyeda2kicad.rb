@@ -10,8 +10,8 @@ class Easyeda2kicad < Formula
   head "https://github.com/uPesy/easyeda2kicad.py.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "fef36a0d6772f498a58f8dd65683dd7fcad415f7ca4a26413467073e589e6b02"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, all: "8337d5c65f54a3a162b400b28cd2b683b145aa869fdf2ade1e1f421f8b46b9a8"
   end
 
   depends_on "certifi" => :no_linkage
