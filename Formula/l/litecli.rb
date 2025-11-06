@@ -8,13 +8,13 @@ class Litecli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "7604024dd975547d4472701173a61e21f9d47396615fdf10458b5c8eb8e94019"
-    sha256 cellar: :any,                 arm64_sequoia: "b157bebacb0dde886282a88ded907edddb288d566b15267ccfa2a41419dbb056"
-    sha256 cellar: :any,                 arm64_sonoma:  "7002be8187c8f2e5df6dbb196d5c822d659878faa9fb4de76d997d7dd0135bec"
-    sha256 cellar: :any,                 sonoma:        "b4d7fd5c2dd3b02d945d8a1608b7c1f15efe1f3a8bfe4ed61daccba8fa68ff27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0f24c353989c2ff531014a3cea4ce32be5531d63857c4107c64d9cebb63edde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "748184080db4e449147586076e16219bc33b004aa8601bcd39b97e33b487958b"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "becc6fb363f8febd1295149e5958705e146560956bd69aa902f9242926e6c919"
+    sha256 cellar: :any,                 arm64_sequoia: "295f5e0ca0acb11d5436197db293d8b6876c4d8f8ca3fb82372496ebe031ff00"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebfdbe8b7280437b3a59c06c3a205bd3ef8b7223c82470ae6530eaf2bbe5d1d6"
+    sha256 cellar: :any,                 sonoma:        "7d6b415368a5cc010d4e4babf9ffc26cd416af900f472bab13f384ee22b072f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "880bf2366a97870e9b6a477d37a079e3459ab7fb5c9967beccecb66abc93a805"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "261be847818fd5b2a5c9d94fd10bfb40d18ddb528fad510ebd74541042e20fd9"
   end
 
   depends_on "rust" => :build # for jiter
