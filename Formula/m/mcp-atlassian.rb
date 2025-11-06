@@ -9,12 +9,13 @@ class McpAtlassian < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fc5ec3f31982f9f531660583c0076ed3e677227203ca60b3f9f1352999a992af"
-    sha256 cellar: :any,                 arm64_sequoia: "ac849e1752e5cfa46bd7dabaedb828a2df974df370bf0a3bc738280da19a8098"
-    sha256 cellar: :any,                 arm64_sonoma:  "1eb05b82b9777e40ce7499f70981ff2be21675d04ba94de75a666d159b959b26"
-    sha256 cellar: :any,                 sonoma:        "3cdb69eb7fc72189060c12f2da6e5c2eb53522fb586b4f07cd9a2faa70b9ad55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f4a88590965a8da77ad081319ccd542105c007935539207269f9ddbaa3b9e41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f9ff5aad39789f566732c05030c4cb97f3d0b084419dcbef521eb0716a34c9f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "29953cf4be342f62341ac1aec80efb52034db1bd0b67e7dd73b8fe9ccda99088"
+    sha256 cellar: :any,                 arm64_sequoia: "db388ee04f30883e31576c454723bd9504f3088ccd322ad02218231b2b5e3655"
+    sha256 cellar: :any,                 arm64_sonoma:  "845d42ed7d830f1c4d5e0a85c149105ac1d31b48ca86d95d54d63250a0bfd537"
+    sha256 cellar: :any,                 sonoma:        "cca3807bce2c9501ecabd70645e1c27954e5a318f48ce7600282d52380d4943e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f600cedb71af22459dedbc103d856102007ea0fb6e115ada44137c54b9df5b44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee7e809a09f79673b131c8b82850cb5c2b8b728249298591031fa1e2b68517a3"
   end
 
   depends_on "certifi" => :no_linkage
