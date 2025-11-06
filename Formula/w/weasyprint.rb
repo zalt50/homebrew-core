@@ -6,6 +6,7 @@ class Weasyprint < Formula
   url "https://files.pythonhosted.org/packages/32/99/480b5430b7eb0916e7d5df1bee7d9508b28b48fee28da894d0a050e0e930/weasyprint-66.0.tar.gz"
   sha256 "da71dc87dc129ac9cffdc65e5477e90365ab9dbae45c744014ec1d06303dde40"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     rebuild 1
@@ -26,8 +27,8 @@ class Weasyprint < Formula
   pypi_packages exclude_packages: "pillow"
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
+    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
   end
 
   resource "cffi" do
