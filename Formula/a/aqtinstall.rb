@@ -6,7 +6,7 @@ class Aqtinstall < Formula
   url "https://files.pythonhosted.org/packages/76/19/24a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7/aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     rebuild 2
@@ -30,8 +30,8 @@ class Aqtinstall < Formula
   end
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
+    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
   end
 
   resource "bs4" do
@@ -75,8 +75,8 @@ class Aqtinstall < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "py7zr" do
