@@ -8,13 +8,13 @@ class Llm < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "64b190b913f11de4c6624459d47a9a22cf572fbe7ee3c025f3d41189efce19e8"
-    sha256 cellar: :any,                 arm64_sequoia: "30ec4d15e1b2ec1e3612ae3c7b102f871b3562d836f4fbd59a3c09f15fdc1408"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce30b6943aed62b410652916a7f334ff8280348abd3e04bd95c95c40a38ffa9c"
-    sha256 cellar: :any,                 sonoma:        "5efffe226fcaf29560ed0e3759f5f68c929ed3c5857e8cd2b42d68490fcb739c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9faa29e038623ef5b3438e5530cf746fe23479ccd17175f4f908752d78a2490f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6da3273f4d51d941a3bb12c92f51225c186d732cdc51fd7bbdac997f632aec33"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "74a12c5c01a314cfc551a7c1113d1a2252f71b96b0ffece91dc86c38fcc3c323"
+    sha256 cellar: :any,                 arm64_sequoia: "bfdec5e82e202538e7050fbc04b5ab50e0bfe3d49c3fd23cdebe4f0352e64117"
+    sha256 cellar: :any,                 arm64_sonoma:  "c127ab9aea790f6b27d2d9a355d363f64e2efff0e48e44cdc637f217f01472aa"
+    sha256 cellar: :any,                 sonoma:        "e075f453cade0b27f49655f158df54e05e602fcc2233c10d7228c47275af9190"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc058163c276b4d35e6f63b0809cd6b605aef3f2438f0a18b6232a0a9bcc9b71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b3fa8677c4cafe7aa749d8f85a9e1cf401835a428c5f93d1497f37ead05102"
   end
 
   depends_on "rust" => :build # for jiter
