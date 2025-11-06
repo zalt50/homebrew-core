@@ -8,7 +8,7 @@ class Zimfw < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "da833b86e814243b438d819009dcf738fd6f7ef8fa2dc18fd0107e648cccacd0"
+    sha256 cellar: :any_skip_relocation, all: "68f140ab880c552d07fbc40934b2344e898dae6090564a730c04a032d4949e02"
   end
 
   uses_from_macos "zsh" => :test
