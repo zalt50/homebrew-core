@@ -1,8 +1,8 @@
 class Libmediainfo < Formula
   desc "Shared library for mediainfo"
   homepage "https://mediaarea.net/en/MediaInfo"
-  url "https://mediaarea.net/download/source/libmediainfo/25.09/libmediainfo_25.09.tar.xz"
-  sha256 "8562e8ea03e2af8bde27f66d79a0f573859b8f13193ec115abf10f735b313a12"
+  url "https://mediaarea.net/download/source/libmediainfo/25.10/libmediainfo_25.10.tar.xz"
+  sha256 "ad13d9797b046ce39d0c65a6f81d2aef2429734c21865a6a4c592c7c01f249dd"
   license "BSD-2-Clause"
   head "https://github.com/MediaArea/MediaInfoLib.git", branch: "master"
 
