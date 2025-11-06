@@ -10,13 +10,13 @@ class Posting < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "381eaf060278a6cc497e1e17a70741829ac0173c28479c03233c488f73a587b9"
-    sha256 cellar: :any,                 arm64_sequoia: "0fc93cf601756b1089ab170e5f5ad8b20e739fa1c368d3d0ca8b3261f91d1194"
-    sha256 cellar: :any,                 arm64_sonoma:  "55ff1db4dc71a5cc318c44593c79d5f2e7ea08a1579b92164c86526f2e215258"
-    sha256 cellar: :any,                 sonoma:        "cf652f0eebb7b422abd0fb1531fbf7f6d4e3cb04601eca5eb5c43a83548028a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d5477266fb7ec5e30e02c7c38ec55dd6adff228c2d172ae28dc019455fe4d1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13fc29a93708315f4acf513cd6fdaf81e1e0556cde25654be15a22f159787f5e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "949881575f16d1a15bfa6079750a3043db64dab31e2c935e6753825e3ffec787"
+    sha256 cellar: :any,                 arm64_sequoia: "8ca18e4c7641d0fa09efee5dc3b7de3eb4c8abeb465549ecf6f450b6c5e9d755"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8a2c291872067ab09995435d4874614200b2f941564da4e2efe15ffb79796c5"
+    sha256 cellar: :any,                 sonoma:        "79515d6d59d23f33519075a143da4fce5ddab922e61ce67a6e5c4191f0e8d9ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72e8702ae3427b66255ccbca7c64628fd09a1c5cb4a721f56bbd981f2859c5c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dfeef51d2ccebdeb7d89a1432178f8cfec47418df589d46312adb170edf89d8"
   end
 
   depends_on "cmake" => :build
