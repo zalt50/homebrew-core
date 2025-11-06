@@ -6,6 +6,7 @@ class YtDlp < Formula
   url "https://files.pythonhosted.org/packages/08/70/cf4bd6c837ab0a709040888caa70d166aa2dfbb5018d1d5c983bf0b50254/yt_dlp-2025.10.22.tar.gz"
   sha256 "db2d48133222b1d9508c6de757859c24b5cefb9568cf68ccad85dac20b07f77b"
   license "Unlicense"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55304a4d7f4ac88bf3e92f0561d28fca74ed697bf6aafcc233edec89f9f37750"
@@ -33,8 +34,8 @@ class YtDlp < Formula
                 exclude_packages: "certifi"
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
+    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
   end
 
   resource "charset-normalizer" do
