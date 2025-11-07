@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/f9/03/073f2d4156840a60800c53252f173a7ef35c5f7253a106857dfad17996d4/snakemake-9.13.6.tar.gz"
-  sha256 "07646a4a8c75796928be3fb1773a9c923e8e9f6207f74f3bba9b1d09d8440237"
+  url "https://files.pythonhosted.org/packages/31/0a/f7891925554c0387b0ae7ee628ee122aad26fc21982cb6e70e8771f2c86c/snakemake-9.13.7.tar.gz"
+  sha256 "c9e64fe5b8b57330680d4acc7ffd4e3d78c053379f940942dd3016281bc05383"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -232,8 +232,8 @@ class Snakemake < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/49/19/5e5bcd855d808892fe02d49219f97a50f64cd6d8313d75df3494ee97b1a3/wrapt-2.0.0.tar.gz"
-    sha256 "35a542cc7a962331d0279735c30995b024e852cf40481e384fd63caaa391cbb9"
+    url "https://files.pythonhosted.org/packages/49/2a/6de8a50cb435b7f42c46126cf1a54b2aab81784e74c8595c8e025e8f36d3/wrapt-2.0.1.tar.gz"
+    sha256 "9c9c635e78497cacb81e84f8b11b23e0aacac7a136e73b8e5b2109a1d9fc468f"
   end
 
   resource "yte" do
