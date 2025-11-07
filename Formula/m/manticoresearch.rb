@@ -1,15 +1,14 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/13.13.0.tar.gz"
-  sha256 "9c2e730ab86d5c9fc330c86703ef9210562247340e626f6d7ba6733a4d574f6b"
+  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/14.1.0.tar.gz"
+  sha256 "659c7b6f459c8e62df9f769b6651862508a4c48c9b61f756e6de6a911f9fe8e9"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
-  revision 1
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
@@ -58,8 +57,6 @@ class Manticoresearch < Formula
   def install
     # Avoid statically linking to boost
     inreplace "src/CMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
-    # Fix to error: call to non-‘constexpr’ function
-    inreplace "src/sphinxquery/transform_commonkeywords.cpp", "constexpr uint64_t", "inline uint64_t"
 
     ENV["ICU_ROOT"] = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                           .to_formula.opt_prefix.to_s
