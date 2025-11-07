@@ -35,8 +35,10 @@ class Wireshark < Formula
   depends_on "libsmi"
   depends_on "libssh"
   depends_on "lua"
+  depends_on "lz4"
   depends_on "pcre2"
   depends_on "speexdsp"
+  depends_on "zstd"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -53,7 +55,10 @@ class Wireshark < Formula
   conflicts_with cask: "wireshark-app"
 
   def install
+    plugindir = lib/"wireshark/plugins/#{version.major}-#{version.minor}"
     args = %W[
+      -DENABLE_BROTLI=OFF
+      -DENABLE_SNAPPY=OFF
       -DLUA_INCLUDE_DIR=#{Formula["lua"].opt_include}/lua
       -DLUA_LIBRARY=#{Formula["lua"].opt_lib/shared_library("liblua")}
       -DCARES_INCLUDE_DIR=#{Formula["c-ares"].opt_include}
@@ -63,7 +68,8 @@ class Wireshark < Formula
       -DBUILD_wireshark=OFF
       -DBUILD_logray=OFF
       -DENABLE_APPLICATION_BUNDLE=OFF
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: libexec/"wireshark/extcap")}
+      -DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{rpath(source: plugindir/"codecs")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
