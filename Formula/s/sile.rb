@@ -4,6 +4,7 @@ class Sile < Formula
   url "https://github.com/sile-typesetter/sile/releases/download/v0.15.13/sile-0.15.13.tar.zst"
   sha256 "5e97c19651aff710687b93292d5361cb411652094bcc8c62c811c19f7a81464b"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1ed8cdeeb01ac51c7bd776ec684b7c525c586cd5fb456675cd9d0308cf2c15bb"
@@ -31,7 +32,7 @@ class Sile < Formula
 
   depends_on "fontconfig"
   depends_on "harfbuzz"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libpng"
   depends_on "luajit"
   depends_on "luarocks"
