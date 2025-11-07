@@ -1,8 +1,8 @@
 class VibeLogCli < Formula
   desc "CLI tool for analyzing Claude Code sessions"
   homepage "https://vibe-log.dev/"
-  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.7.6.tgz"
-  sha256 "e53b35ca24b0ad207a969e3af3b02fa4d2ac98517e8a01a021f20a5c0478988b"
+  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.0.tgz"
+  sha256 "01308991ab3ad3544520a594fa992ebc46b9d01e2b64e9936e936dbd79e27080"
   license "MIT"
 
   bottle do
@@ -14,7 +14,9 @@ class VibeLogCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd48f8cace0b9fc94bf2e5ebe65acaf177c1313bb715d54e6960b2f255c2f3f7"
   end
 
-  depends_on "node"
+  # `better-sqlite3` needs to be built with `c++17`, but `node` v25  compile with `c++20` by default
+  # Issue ref: https://github.com/WiseLibs/better-sqlite3/issues/1411
+  depends_on "node@24"
 
   on_linux do
     depends_on "xsel"
