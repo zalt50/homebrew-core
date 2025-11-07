@@ -1,8 +1,8 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https://traefik.io/"
-  url "https://github.com/traefik/traefik/releases/download/v3.5.4/traefik-v3.5.4.src.tar.gz"
-  sha256 "27b7b9c475ca9d83385c4a135b278699e45027e02721e2b8453928d982914579"
+  url "https://github.com/traefik/traefik/releases/download/v3.5.6/traefik-v3.5.6.src.tar.gz"
+  sha256 "3392c6d1250be6dcbbe96ac6e1a49abed2ed0e4942e1fd63f9bdb0235009025e"
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
@@ -15,6 +15,7 @@ class Traefik < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b304cd0a52e9cdc461305416e9bbdde1e2b3396a81ff8da1c04c4800f7480b7a"
   end
 
+  depends_on "corepack" => :build
   depends_on "go" => :build
   depends_on "node" => :build
 
