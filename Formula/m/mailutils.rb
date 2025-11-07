@@ -24,7 +24,6 @@ class Mailutils < Formula
   depends_on "readline"
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "python"
 
   on_macos do
     depends_on "gettext"
@@ -38,6 +37,7 @@ class Mailutils < Formula
     end
 
     system "./configure", "--disable-mh",
+                          "--disable-python",
                           "--disable-silent-rules",
                           "--without-fribidi",
                           "--without-guile",
