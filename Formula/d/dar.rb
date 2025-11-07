@@ -21,16 +21,23 @@ class Dar < Formula
 
   depends_on "argon2"
   depends_on "libgcrypt"
+  depends_on "libgpg-error"
+  depends_on "lz4"
   depends_on "lzo"
-
+  depends_on "xz"
+  depends_on "zstd"
+  uses_from_macos "bzip2"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--disable-build-html",
                           "--disable-dar-static",
                           "--disable-dependency-tracking",
-                          "--disable-libxz-linking",
                           "--enable-mode=64"
     system "make", "install"
   end
