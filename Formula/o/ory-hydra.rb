@@ -2,8 +2,8 @@ class OryHydra < Formula
   desc "OpenID Certified OAuth 2.0 Server and OpenID Connect Provider"
   homepage "https://www.ory.sh/hydra/"
   url "https://github.com/ory/hydra.git",
-      tag:      "v2.3.0",
-      revision: "ee8c339ddada3a42529c0416897abc32bad03bbb"
+      tag:      "v25.4.0",
+      revision: "de9baaa9bc1b1865710d4e07e4bd0c4aca599447"
   license "Apache-2.0"
 
   livecheck do
@@ -27,6 +27,8 @@ class OryHydra < Formula
   conflicts_with "hydra", because: "both install `hydra` binaries"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/ory/hydra/v2/driver/config.Version=v#{version}
