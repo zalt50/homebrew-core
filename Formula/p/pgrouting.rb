@@ -12,12 +12,12 @@ class Pgrouting < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "635b794cef3d095e2dd87b630953c191bdfa2773ed0bec3c6c308ca2891b50ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a726b05d0bb7a9e9595b56ab81382ead5cdffe5e1b5a4c87f615f362f3420549"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cbfdcd6a1ebbff590ba6d8891e6771d374cb648600cbe7ddf8c5c349956e309"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c5e7218e0d1621047793dfb8085bfd2229c4d581f50a226434b6e51d1556874"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edf26d8ee0b61b633e621b699eff3210a01d6809c6560836c3ddd23e586a1525"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "761046a6b81bde4e46bffc7c7e07f79a2a4167ee2162fcf150be89abb2aa8f0f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54666eef457b30d344fc22df0ba5805a858c437461b4e2792e61a721da9ade87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb93e2d574ab28ea6b89694292636c55c2e977cf18f8f11c2be0c299d0519164"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef6245564c6014e84263a954eff9f905bec78ce732a204b07f224317efa73998"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b0a15f53bfea899254a307b5385a566f32c766c9b9c5b7ba275f0af1bc5d02e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f9e8c29472cb6cc1cb9f2a845cfb20504e00ed8bb0239dbb2fc8486ff73c4e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a400606bace6b3281c68c641b8d675cca6913e6cca426a161194e2577a4144b7"
   end
 
   depends_on "boost" => :build
