@@ -4,6 +4,7 @@ class Neovide < Formula
   url "https://github.com/neovide/neovide/archive/refs/tags/0.15.2.tar.gz"
   sha256 "a8179c461d41277b41692edcae64af6d1c80454aafff608af0268c5abca95b5c"
   license "MIT"
+  revision 1
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
@@ -31,7 +32,7 @@ class Neovide < Formula
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "harfbuzz"
-    depends_on "icu4c@77"
+    depends_on "icu4c@78"
     depends_on "jpeg-turbo"
     depends_on "libpng"
     # `libxcursor` is loaded when using X11 (DISPLAY) instead of Wayland (WAYLAND_DISPLAY).
