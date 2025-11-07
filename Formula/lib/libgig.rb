@@ -1,16 +1,14 @@
 class Libgig < Formula
   desc "Library for Gigasampler and DLS (Downloadable Sounds) Level 1/2 files"
   homepage "https://www.linuxsampler.org/libgig/"
-  url "https://download.linuxsampler.org/packages/libgig-4.5.0.tar.bz2"
-  sha256 "0879d28b9b6392da5985826dbdd8d9c957b2a032a2f10190506aef2e22f3c54a"
+  url "https://download.linuxsampler.org/packages/libgig-4.5.1.tar.bz2"
+  sha256 "3489349f328eb0d07b3ada8859f9e30d8db8b2a3c833ec7f206542a0bb588f61"
   license "GPL-2.0-or-later"
 
   livecheck do
     url "https://download.linuxsampler.org/packages/"
     regex(/href=.*?libgig[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d51d3d54a702c19a591256af864444e7dac11782d3099e05b72dcfac8be474d2"
