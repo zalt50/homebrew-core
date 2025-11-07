@@ -1,18 +1,18 @@
 class Hexhog < Formula
   desc "Hex viewer/editor"
   homepage "https://github.com/DVDTSB/hexhog"
-  url "https://github.com/DVDTSB/hexhog/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "d97176d41b9e9662909445a4002850f0ac12b902b28bc4e85a3b5bf983c93e61"
+  url "https://github.com/DVDTSB/hexhog/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "5858dcb32b3f12647784c9a6ba2e107e157b9a82884bcfed3e994a70c7584b29"
   license "MIT"
   head "https://github.com/DVDTSB/hexhog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b2e7f595bf4326c75c12c57e2a68871a8d5fea82012add3481c19924d7a1640"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8b84d49eae0805cbf492bd7132e3f0d264fc5d0bac3c8de48924152e7b7f859"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "139feabeaed76e99b95211d1873eec9da003514c249080f622bedbe255aae729"
-    sha256 cellar: :any_skip_relocation, sonoma:        "491a18427c27d596123b3aba3eb23727baa761170a370c554b63e735e0b676e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4eee337de8005b314544f5269a1933ec14b795a7384ed164a6549d3f9e054a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ca7fa34b0392291d065c22ee2e034a4d05a6fbdb626386d9dab837736cddb46"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bde40a9e189b6f6be35e4ba2898a82d45e254d1189fc9e3f73e4342d91b09d8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "935652feeff33ebcd7ae3e5cb78b48d8090dd530d1ed2b08c2ffcbd28fcf5a6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b2eb1a539e108f115bf83759ca462e975cd4acf0489ae71bd6ab777ffdcc2b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "138dace07719c079ca390a4b4c88c69be559c818059582b2f08198f73f138e55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c6c0e9270acf11f12ba6c94e3e113de6bc1ac22a433afdf89563e7d99ecc592"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e76097f40c985fb9c842e70d9c67055f8bca05912e3211967849a897a58e3b63"
   end
 
   depends_on "rust" => :build
