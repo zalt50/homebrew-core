@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/ca/30/eda49a8fddbd312814499b463a5815f13a8f8b0ff526bd802217f681d55f/schemathesis-4.4.2.tar.gz"
-  sha256 "14eb4c34520e3d0727c9070967022ab10d9ef73bf6d2ac1eea09f2f4c09f7dbe"
+  url "https://files.pythonhosted.org/packages/4b/f7/9565f0b3b5877abec9d23b3db82cd7810ab7cafc772748688bbaafecf59a/schemathesis-4.4.3.tar.gz"
+  sha256 "d58962a602ee66039fd0c3e50de3fa32aaf7fc56cc0e2677ed6159ba3c2e54e8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "28ac8965ecaef024cf1eb66a86417b48daf57e544b94dce5a05da7cf585f0a17"
-    sha256 cellar: :any,                 arm64_sequoia: "63f69b2bdcde1d908e095e6466a79823d0928d922307d81304be56e794d96c69"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd30d88373cb6892ef47c9a57e08ab24d2266c32c8215a7f8866336e60d0d1c5"
-    sha256 cellar: :any,                 sonoma:        "68b13283f3914b39c9a382feb5b7286d56fa7d4b7daef825a0283a41784779f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cb6cbc69068f90bb4266b04b911b9a8aad1830a3280b0df731e25d0c4f955cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5318abf7fbf1a060ac8cdb06df5753e65b240daa9dcf78a87ed5078e6a44a972"
+    sha256 cellar: :any,                 arm64_tahoe:   "75ffc5f2a3e355ebedce6c64585c990c49d2df5c790caf47bd15499e4f3984d1"
+    sha256 cellar: :any,                 arm64_sequoia: "c71255620c7b2879748c68d6a86a0ee05e2b9e5645a2f201da0cb93bcbb3eef1"
+    sha256 cellar: :any,                 arm64_sonoma:  "be8e4aaf2248db191c0d0548278ac0ed9c48f96c3d56edf13acc25b942b43f49"
+    sha256 cellar: :any,                 sonoma:        "dca83e5dd2d3e184b16fb8da7e329836313a51c76add88bb4fc717fa218e7a1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c3ca313a32060d8366159cced4711a180a7bd81b30df201fd8ce863f5da73df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02a185988cb6d57a65fca803bdcb89dab166f7d7e430fe58dd2fdcf738a0edf5"
   end
 
   depends_on "certifi" => :no_linkage
