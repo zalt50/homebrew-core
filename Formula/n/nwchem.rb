@@ -15,12 +15,12 @@ class Nwchem < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256                               arm64_tahoe:   "4ed6bd4d09fcc140d8c37d6746911c0bbbdde7b6701daf6c162c8966604604e4"
-    sha256                               arm64_sequoia: "fbc7ab523a9d7bd91417af21e526723d9c69286c216aad69923beafb9348369b"
-    sha256                               arm64_sonoma:  "229bba2c53122f3890939ca77dcd2293a26372cc4a1368288f5e6227fdeedf4f"
-    sha256 cellar: :any,                 sonoma:        "6716a589699d8bc3d363b5c35c26f608da1c071f5ca23e68cb9bbc58b0270e7e"
-    sha256                               arm64_linux:   "7532621093cf89cf04cf1f257e312a9b65d458270b7949c00e693b5eb7da9517"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc41324443a9a912494f65460663f41f353863d0081fb927ee3425b68c5b599"
+    sha256                               arm64_tahoe:   "954e8393c1e675dd1fd472151f8f09262aaa695139a4c1ef7a8f9338c989f5ad"
+    sha256                               arm64_sequoia: "7ae2ce68fa21a12535252186aef8b0637afb7ad843dec38683994afb7b54a06c"
+    sha256                               arm64_sonoma:  "4fd81543886acd86fb770ad330b6b3a924ef11733bd9346b40567de49513fabe"
+    sha256 cellar: :any,                 sonoma:        "9d5376f4c3c69d949a44da05f796ec85aaa9e9efa728ba857a5cf9fc9d893715"
+    sha256                               arm64_linux:   "b9178a4091dbe5915a185bae713c9f7776ab75ef760d43e29b1c42bd324c987c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d6237051cbc357a67c05782d316bc33ca96dcbf87066b70026bb87f40d4b06"
   end
 
   depends_on "gcc" # for gfortran
