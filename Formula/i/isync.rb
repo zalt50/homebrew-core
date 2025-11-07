@@ -25,6 +25,7 @@ class Isync < Formula
   depends_on "berkeley-db@5"
   depends_on "openssl@3"
 
+  uses_from_macos "cyrus-sasl"
   uses_from_macos "zlib"
 
   def install
