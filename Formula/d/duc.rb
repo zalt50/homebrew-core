@@ -1,12 +1,10 @@
 class Duc < Formula
   desc "Suite of tools for inspecting disk usage"
   homepage "https://github.com/zevv/duc"
-  url "https://github.com/zevv/duc/releases/download/1.4.5/duc-1.4.5.tar.gz"
-  sha256 "c69512ca85b443e42ffbb4026eedd5492307af612047afb9c469df923b468bfd"
+  url "https://github.com/zevv/duc/releases/download/1.4.6/duc-1.4.6.tar.gz"
+  sha256 "e91592e367f3f8be671899660756b25e2c37f316c42ebd2a36dd684be3e2f25a"
   license "LGPL-3.0-only"
   head "https://github.com/zevv/duc.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "737e5d14b749b58fa2640bc9a7ee42a49f7a546ea7332c928a3a19d274b8f875"
