@@ -141,6 +141,7 @@
   "presto": "prestodb",
   "prestosql": "trino",
   "prql-compiler": "prqlc",
+  "pydantic-core": "pydantic",
   "pyqt5": "pyqt@5",
   "python-certifi": "certifi",
   "python-chardet": "chardet",
