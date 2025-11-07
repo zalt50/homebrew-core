@@ -3,8 +3,8 @@ class Pssh < Formula
 
   desc "Parallel versions of OpenSSH and related tools"
   homepage "https://github.com/lilydjwg/pssh"
-  url "https://github.com/lilydjwg/pssh/archive/refs/tags/v2.3.5.tar.gz"
-  sha256 "97277f9d08b512c6a1b6dc5eac9677f34038096bae24484452d326137ba0d080"
+  url "https://github.com/lilydjwg/pssh/archive/refs/tags/v2.3.6.tar.gz"
+  sha256 "dfe1b898e483377213b44b8316a81fd6e1bbe427e1607e76be18366071c04c85"
   license "BSD-3-Clause"
   head "https://github.com/lilydjwg/pssh.git", branch: "master"
 
