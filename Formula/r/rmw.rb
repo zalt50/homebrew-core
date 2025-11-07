@@ -1,8 +1,8 @@
 class Rmw < Formula
   desc "Trashcan/recycle bin utility for the command-line"
   homepage "https://theimpossibleastronaut.github.io/rmw-website/"
-  url "https://github.com/theimpossibleastronaut/rmw/releases/download/v0.9.3/rmw-0.9.3.tar.xz"
-  sha256 "a7215af12694d50282e4cfb9b9062fb7806bde8770d61a2a0cd8260e28db2749"
+  url "https://github.com/theimpossibleastronaut/rmw/releases/download/v0.9.4/rmw-0.9.4.tar.xz"
+  sha256 "81c6b7f1868695f4662be45a5e645fd149fda362e8ec1a822d74d735735ba808"
   license "GPL-3.0-or-later"
   head "https://github.com/theimpossibleastronaut/rmw.git", branch: "master"
 
