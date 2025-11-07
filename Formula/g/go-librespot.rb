@@ -1,8 +1,8 @@
 class GoLibrespot < Formula
   desc "Spotify client"
   homepage "https://github.com/devgianlu/go-librespot"
-  url "https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "31ecb4535a530e868721e867151e9fdf644a29d0ff489f2d6bfc9d2d7620a1c7"
+  url "https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "afeb0225afd8e94c283864ddc1b67e29f9f339e23e094d9aec4d146c7d750d70"
   license "GPL-3.0-only"
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
@@ -17,6 +17,7 @@ class GoLibrespot < Formula
 
   depends_on "go" => :build
   depends_on "pkgconf" => :build
+  depends_on "flac"
   depends_on "libogg"
   depends_on "libvorbis"
 
@@ -25,6 +26,8 @@ class GoLibrespot < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/devgianlu/go-librespot.version=#{version}
