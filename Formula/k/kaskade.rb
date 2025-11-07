@@ -9,13 +9,12 @@ class Kaskade < Formula
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c7e20c5370e68c03530d9e60dad4120c1dc18036588c22380a9205db1c03461e"
-    sha256 cellar: :any,                 arm64_sequoia: "c5a2e5a440bee1ec5cc20bc6fc19e0654fca9025e48c7b33457ff9b5b6cbbad7"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc6889e6cffb1f3c389d50ae104241260e4a1e46f45d381feb6f9e44d4cf477b"
-    sha256 cellar: :any,                 sonoma:        "43f144b7461f3ea9ec934f0f66f381b6bce10036cb5d609a230e8ac8e536600e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "375adf0aaf97f7aea94aaea504d44057bca1b6966845515d4dc7a989bb104388"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c45c35ac1950e1a107621e264b0c831d869c30ff4e9dfd65fcd458f5dea5c7"
+    sha256 cellar: :any,                 arm64_tahoe:   "fb359bd2afb1197186ce634a8a775ed5ff63ce976e6de8e811ce8dd454fd27c1"
+    sha256 cellar: :any,                 arm64_sequoia: "774698a5aa2882e61c927b18654533315a1835a126c14d4d0cfa83b0be102068"
+    sha256 cellar: :any,                 arm64_sonoma:  "470dbad7d48540b0d08b7abd0ee2e96b6c06cd65c88c8fd4adf26bb1fe01ddb9"
+    sha256 cellar: :any,                 sonoma:        "f5b901e3bb29209730b2a05eeb8f1c58490ae518c7ff94d97d83d47111697bd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dde448f9ccdbdc3d50a39d4f6d4724f0a078476b2e1468ae00a5b8d4529428d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c090305ba623a7d1da4d6b38b9c11836c44d589906389fa4ea7053ce80f9d54"
   end
 
   depends_on "rust" => :build # for orjson
