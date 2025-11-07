@@ -5,6 +5,7 @@ class PhpIntl < Formula
   mirror "https://fossies.org/linux/www/php-8.4.14.tar.xz"
   sha256 "bac90ee7cf738e814c89b6b27d4d2c4b70e50942a420837e1a22f5fd5f9867a3"
   license "PHP-3.01"
+  revision 1
   head "https://github.com/php/php-src.git", branch: "master"
 
   livecheck do
@@ -21,7 +22,7 @@ class PhpIntl < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "php"
 
   def php
