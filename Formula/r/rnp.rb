@@ -4,7 +4,7 @@ class Rnp < Formula
   url "https://github.com/rnpgp/rnp/releases/download/v0.18.0/rnp-v0.18.0.tar.gz"
   sha256 "a90e3ac5b185a149665147f9284c0201a78431e81924883899244522fd3f9240"
   license all_of: ["MIT", "BSD-2-Clause", "BSD-3-Clause"]
-  revision 1
+  revision 2
   head "https://github.com/rnpgp/rnp.git", branch: "main"
 
   livecheck do
