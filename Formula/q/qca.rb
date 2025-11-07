@@ -4,7 +4,7 @@ class Qca < Formula
   url "https://download.kde.org/stable/qca/2.3.10/qca-2.3.10.tar.xz"
   sha256 "1c5b722da93d559365719226bb121c726ec3c0dc4c67dea34f1e50e4e0d14a02"
   license "LGPL-2.1-or-later"
-  revision 2
+  revision 3
   head "https://invent.kde.org/libraries/qca.git", branch: "master"
 
   livecheck do
