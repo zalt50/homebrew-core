@@ -1,11 +1,9 @@
 class FlipLink < Formula
   desc "Adds zero-cost stack overflow protection to your embedded programs"
   homepage "https://github.com/knurling-rs/flip-link"
-  url "https://github.com/knurling-rs/flip-link/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "9389806ffda4ed5aa47f39fc71ac2a19be59cc28aab93bfb32bb514ed7165f75"
+  url "https://github.com/knurling-rs/flip-link/archive/refs/tags/v0.1.11.tar.gz"
+  sha256 "d32d9c79ae93a46e721b809a103ffe8fc7d1e0a71f661a4221845dd63048e675"
   license any_of: ["Apache-2.0", "MIT"]
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "740bdc600861c9f0b5d343d6294c94965c854f26938d2e0d36979e6b1058f46b"
