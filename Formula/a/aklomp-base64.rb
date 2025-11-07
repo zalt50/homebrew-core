@@ -16,7 +16,7 @@ class AklompBase64 < Formula
 
   depends_on "cmake" => :build
 
-  # TODO: conflicts_with "base64", because: "both install `base64` binaries"
+  conflicts_with "base64", because: "both install `base64` binaries"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
