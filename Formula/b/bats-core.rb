@@ -11,7 +11,7 @@ class BatsCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f044362c7a483163c2b7498130fbbf76f6e081cf025e5ed25a15817fdeec130a"
+    sha256 cellar: :any_skip_relocation, all: "9e117b2e74af3e8a6edf752036fb1622382d7fc8861076cdc49e372cc9f991fb"
   end
 
   depends_on "coreutils"
