@@ -3,8 +3,8 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https://badkeys.info"
-  url "https://files.pythonhosted.org/packages/55/db/bc7583f7f0ed8effe33c20c0f4190b7167ae25a81641d8670a9e3ecb7adc/badkeys-0.0.14.tar.gz"
-  sha256 "5eec8c646e90e1f8f64115ee9ea120d6886a231aae7d619017506f8cc630f48d"
+  url "https://files.pythonhosted.org/packages/11/5b/2a1400df2f62c3f473d46dd8ef8f7591a9a052b7f73b364d71f88bc7ae95/badkeys-0.0.15.tar.gz"
+  sha256 "620b07053f1bff5041201923187c839454332ee474dcd793b4ce6c90276ffd6b"
   license "MIT"
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
@@ -18,7 +18,7 @@ class Badkeys < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bd97a3fd9c0cb48b4e9d2079f98d715b386a5688fd1455e7db2e8e9a4a5178d"
   end
 
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "gmp"
   depends_on "libmpc"
   depends_on "mpfr"
@@ -51,7 +51,7 @@ class Badkeys < Formula
       -----END RSA PUBLIC KEY-----
     EOS
 
-    output = shell_output("#{bin}/badkeys #{testpath}/rsa-debianweak.key")
+    output = shell_output("#{bin}/badkeys #{testpath}/rsa-debianweak.key", 4)
     assert_match "blocklist/debianssl vulnerability, rsa[2048], #{testpath}/rsa-debianweak.key", output
   end
 end
