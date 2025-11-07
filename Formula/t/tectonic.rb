@@ -2,7 +2,7 @@ class Tectonic < Formula
   desc "Modernized, complete, self-contained TeX/LaTeX engine"
   homepage "https://tectonic-typesetting.github.io/"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/tectonic-typesetting/tectonic.git", branch: "master"
 
   stable do
@@ -46,7 +46,7 @@ class Tectonic < Formula
   depends_on "freetype"
   depends_on "graphite2"
   depends_on "harfbuzz"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libpng"
   depends_on "openssl@3"
 
