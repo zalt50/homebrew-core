@@ -2,7 +2,7 @@ class Planck < Formula
   desc "Stand-alone ClojureScript REPL"
   homepage "https://planck-repl.org/"
   license "EPL-1.0"
-  revision 3
+  revision 4
   head "https://github.com/planck-repl/planck.git", branch: "master"
 
   stable do
@@ -33,7 +33,7 @@ class Planck < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on xcode: :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libzip"
 
   uses_from_macos "vim" => :build # for xxd
