@@ -3,8 +3,8 @@ class ErlangAT26 < Formula
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.15/otp_src_26.2.5.15.tar.gz"
-  sha256 "28e6d63d82927f132d56289dd3c428ef8bce6bf2283c8549aa0a7afca1a8fe3b"
+  url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.16/otp_src_26.2.5.16.tar.gz"
+  sha256 "932d091933f818d89c2cf7a8c23d84781bbae4b1ee7b846e8676e22768570cae"
   license "Apache-2.0"
 
   livecheck do
@@ -38,8 +38,8 @@ class ErlangAT26 < Formula
   end
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.15/otp_doc_html_26.2.5.15.tar.gz"
-    sha256 "3888506f90c90ed47b0a74827a87b7b5bf86d05b7436a45fb1da45a985c158eb"
+    url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.16/otp_doc_html_26.2.5.16.tar.gz"
+    sha256 "c28d1d00301a9dc24249bfc47934c8da5e5547ce808f224ae90d22504d5446fd"
 
     livecheck do
       formula :parent
