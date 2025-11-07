@@ -1,16 +1,14 @@
 class Ntl < Formula
   desc "C++ number theory library"
   homepage "https://libntl.org"
-  url "https://libntl.org/ntl-11.5.1.tar.gz"
-  sha256 "210d06c31306cbc6eaf6814453c56c776d9d8e8df36d74eb306f6a523d1c6a8a"
+  url "https://libntl.org/ntl-11.6.0.tar.gz"
+  sha256 "bc0ef9aceb075a6a0673ac8d8f47d5f8458c72fe806e4468fbd5d3daff056182"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url "https://libntl.org/download.html"
     regex(/href=.*?ntl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "a403f10e051b7654eb42b3e0d5f1ec028e96eb44ce25673962aeb1cfa0adaf65"
@@ -29,13 +27,6 @@ class Ntl < Formula
   end
 
   depends_on "gmp"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-    directory "src/libtool-origin"
-  end
 
   def install
     args = ["PREFIX=#{prefix}", "SHARED=on"]
