@@ -1,8 +1,8 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997024.tar.gz"
-  sha256 "df02d482d90332ed61dd2a7c80732395e941eb915374f00af546e1c079542805"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.998000.tar.gz"
+  sha256 "1c2a126ed5524c960c72fa00fc5330c5e631e2771416c6507d06d8ade7369602"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "main"
 
@@ -72,8 +72,8 @@ class Cpm < Formula
   end
 
   resource "ExtUtils::InstallPaths" do
-    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-InstallPaths-0.014.tar.gz"
-    sha256 "ae65d20cc3c7e14b3cd790915c84510f82dfb37a4c9b88aa74b2e843af417d01"
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-InstallPaths-0.015.tar.gz"
+    sha256 "7d64eb2dfa87ead010cdf55c8a1bdfde50b7b5852d7cb8cf2304f55bea2eb007"
   end
 
   resource "ExtUtils::MakeMaker::CPANfile" do
@@ -131,6 +131,11 @@ class Cpm < Formula
     sha256 "b73cbdd4202b29eab97e0c08dcd59d9273633610e8721cf449078656bd591a7c"
   end
 
+  resource "Parse::LocalDistribution" do
+    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Parse-LocalDistribution-0.20.tar.gz"
+    sha256 "664f4351e55ee9473c9b012af87d2832f652979cb89ade7954e6f38cd126a859"
+  end
+
   resource "Parse::PMFile" do
     url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Parse-PMFile-0.47.tar.gz"
     sha256 "26817cf3d72e245452375dcff9e923a061ee0a40bbf060d3a08ebe60a334aaae"
@@ -147,8 +152,8 @@ class Cpm < Formula
   end
 
   resource "URI" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.32.tar.gz"
-    sha256 "9632067d34e14e0dae2da94631c4f25a387fcc48d06fa29330e8b3c04c4e913d"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.34.tar.gz"
+    sha256 "de64c779a212ff1821896c5ca2bb69e74767d2674cee411e777deea7a22604a8"
   end
 
   resource "Win32::ShellQuote" do
