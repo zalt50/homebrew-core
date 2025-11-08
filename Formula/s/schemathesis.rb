@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/4b/f7/9565f0b3b5877abec9d23b3db82cd7810ab7cafc772748688bbaafecf59a/schemathesis-4.4.3.tar.gz"
-  sha256 "d58962a602ee66039fd0c3e50de3fa32aaf7fc56cc0e2677ed6159ba3c2e54e8"
+  url "https://files.pythonhosted.org/packages/22/84/edc1ca80076f9356a4ca854393906fa14e67fa81ae8c53194042e6e8c1c2/schemathesis-4.4.4.tar.gz"
+  sha256 "04a8e495b458734e7fc61caa347a047f257db00af411d78531a318dcf7128179"
   license "MIT"
 
   bottle do
@@ -38,11 +38,6 @@ class Schemathesis < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
     sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
-  end
-
-  resource "backoff" do
-    url "https://files.pythonhosted.org/packages/47/d7/5bbeb12c44d7c4f2fb5b56abce497eb5ed9f34d85701de869acedd602619/backoff-2.2.1.tar.gz"
-    sha256 "03f829f5bb1923180821643f8753b0502c3b682293992485b0eef2807afa5cba"
   end
 
   resource "charset-normalizer" do
@@ -243,6 +238,11 @@ class Schemathesis < Formula
   resource "starlette-testclient" do
     url "https://files.pythonhosted.org/packages/cd/64/6debec8fc6e9abde0c7042145dc27a562bd1cd79350a55b80bf612a10ccb/starlette_testclient-0.4.1.tar.gz"
     sha256 "9e993ffe12fab45606116257813986612262fe15c1bb6dc9e39cc68693ac1fc5"
+  end
+
+  resource "tenacity" do
+    url "https://files.pythonhosted.org/packages/0a/d4/2b0cd0fe285e14b36db076e78c93766ff1d529d70408bd1d2a5a84f1d929/tenacity-9.1.2.tar.gz"
+    sha256 "1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb"
   end
 
   resource "typing-extensions" do
