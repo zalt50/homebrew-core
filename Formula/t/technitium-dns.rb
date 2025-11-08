@@ -1,11 +1,9 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https://technitium.com/dns/"
-  url "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v13.6.0.tar.gz"
-  sha256 "37ade6327dc63700b4a63db6347d3174112d8ffcb817645073f7e5e114e76400"
+  url "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v14.0.0.tar.gz"
+  sha256 "c21e1e2f74cec3fb6a7a2baa8fe031a4e023776dca646fcaa8e7748d5960ab8a"
   license "GPL-3.0-or-later"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ab3ef53a19ae5424598fc16147cf78d2e5a13b7e26adce5b54133698e7db1c6"
@@ -17,9 +15,7 @@ class TechnitiumDns < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40c481b7ad55f8e17df945cef5b74b02fb887d3a9c75cb999761b79c23c0721"
   end
 
-  # TODO: update dotnet version
-  # Issue ref: https://github.com/TechnitiumSoftware/DnsServer/issues/1303
-  depends_on "dotnet@8"
+  depends_on "dotnet"
   depends_on "libmsquic"
   depends_on "technitium-library"
 
@@ -30,7 +26,7 @@ class TechnitiumDns < Formula
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
 
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -49,12 +45,12 @@ class TechnitiumDns < Formula
       #!/bin/bash
       export DYLD_FALLBACK_LIBRARY_PATH=#{Formula["libmsquic"].opt_lib}
       export DOTNET_ROOT=#{dotnet.opt_libexec}
-      exec #{dotnet.opt_libexec}/dotnet #{libexec}/DnsServerApp.dll #{etc}/technitium-dns
+      exec #{dotnet.opt_libexec}/dotnet #{libexec}/DnsServerApp.dll #{etc}/technitium-dns "$@"
     SHELL
   end
 
   service do
-    run opt_bin/"technitium-dns"
+    run [opt_bin/"technitium-dns", "--stop-if-bind-fails"]
     keep_alive true
     error_log_path var/"log/technitium-dns.log"
     log_path var/"log/technitium-dns.log"
@@ -62,7 +58,7 @@ class TechnitiumDns < Formula
   end
 
   test do
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     tmpdir = Pathname.new(Dir.mktmpdir)
     # Start the DNS server
     require "pty"
