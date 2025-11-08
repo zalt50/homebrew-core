@@ -1,9 +1,9 @@
 class Dnote < Formula
   desc "Simple command-line notebook"
   homepage "https://www.getdnote.com"
-  url "https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.5.tar.gz"
-  sha256 "923e959d32885f01e426e37e7240bf9a66addbdfd95620846fa535e4b7f7d2e4"
-  license "GPL-3.0-only"
+  url "https://github.com/dnote/dnote/archive/refs/tags/cli-v0.16.0.tar.gz"
+  sha256 "fb63c6099ca441a2027a9e8ae2a3c38376e5c0950bef9e8028b96ca2b8b6427f"
+  license "Apache-2.0"
   head "https://github.com/dnote/dnote.git", branch: "master"
 
   livecheck do
@@ -25,7 +25,7 @@ class Dnote < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    ldflags = "-s -w -X main.versionTag=#{version} -X main.apiEndpoint=http://localhost:3000/api"
+    ldflags = "-s -w -X main.versionTag=#{version} -X main.apiEndpoint=http://localhost:3001/api"
     system "go", "build", *std_go_args(ldflags:, tags: "fts5"), "./pkg/cli"
   end
 
