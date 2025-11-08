@@ -6,7 +6,7 @@ class Rasterio < Formula
   url "https://files.pythonhosted.org/packages/de/19/ab4326e419b543da623ce4191f68e3f36a4d9adc64f3df5c78f044d8d9ca/rasterio-1.4.3.tar.gz"
   sha256 "201f05dbc7c4739dacb2c78a1cf4e09c0b7265b0a4d16ccbd1753ce4f2af350a"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 3
