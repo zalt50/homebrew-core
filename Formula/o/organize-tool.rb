@@ -6,6 +6,7 @@ class OrganizeTool < Formula
   url "https://files.pythonhosted.org/packages/3c/bd/1b4217217aadce0d46e28042c0e06bb28863bfdfb383ce7afb18f69a1553/organize_tool-3.3.0.tar.gz"
   sha256 "034fdcf9ffeb23d21b495e038665278e589fa04dc7c0c0a01a4a3b30a06c539f"
   license "MIT"
+  revision 1
   head "https://github.com/tfeldmann/organize.git", branch: "main"
 
   bottle do
@@ -95,8 +96,8 @@ class OrganizeTool < Formula
   end
 
   resource "pdfminer-six" do
-    url "https://files.pythonhosted.org/packages/78/46/5223d613ac4963e1f7c07b2660fe0e9e770102ec6bda8c038400113fb215/pdfminer_six-20250506.tar.gz"
-    sha256 "b03cc8df09cf3c7aba8246deae52e0bca7ebb112a38895b5e1d4f5dd2b8ca2e7"
+    url "https://files.pythonhosted.org/packages/1d/50/5315f381a25dc80a8d2ea7c62d9a28c0137f10ccc263623a0db8b49fcced/pdfminer_six-20251107.tar.gz"
+    sha256 "5fb0c553799c591777f22c0c72b77fc2522d7d10c70654e25f4c5f1fd996e008"
   end
 
   resource "platformdirs" do
