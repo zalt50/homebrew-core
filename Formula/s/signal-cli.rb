@@ -14,7 +14,7 @@ class SignalCli < Formula
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
-  depends_on "gradle" => :build
+  depends_on "gradle@8" => :build # older version needed for `libsignal-client`
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
@@ -22,10 +22,6 @@ class SignalCli < Formula
 
   uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
-
-  on_linux do
-    depends_on arch: :x86_64 # `:libsignal-cli:test` failure, https://github.com/AsamK/signal-cli/issues/1787
-  end
 
   # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
   # To check the version of `libsignal-client`, run:
@@ -37,32 +33,25 @@ class SignalCli < Formula
   end
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home("21")
-    system "gradle", "build"
-    system "gradle", "installDist"
-    libexec.install (buildpath/"build/install/signal-cli").children
-    (libexec/"bin/signal-cli.bat").unlink
-    (bin/"signal-cli").write_env_script libexec/"bin/signal-cli", Language::Java.overridable_java_home_env("21")
+    java_version = "21"
+    ENV["JAVA_HOME"] = Language::Java.java_home(java_version)
+
+    # FIXME: find a better way to handle resource version check as this can easily break
+    regexp = /^## \[#{Regexp.escape(version.to_s)}\].*\s+Requires libsignal-client version (\d+(?:\.\d+)+)/i
+    libsignal_client_version = File.read("CHANGELOG.md")[regexp, 1]
+    odie "Could not find libsignal-client version in CHANGELOG.md" if libsignal_client_version.blank?
 
     resource("libsignal-client").stage do |r|
-      # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#manual-build
-
-      libsignal_client_jar = libexec.glob("lib/libsignal-client-*.jar").first
-      embedded_jar_version = Version.new(libsignal_client_jar.to_s[/libsignal-client-(.*)\.jar$/, 1])
-      res = r.resource
-      odie "#{res.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != res.version
-
-      system "zip", "-d", libsignal_client_jar, "libsignal_jni_*.so", "libsignal_jni_*.dylib", "signal_jni_*.dll"
-
-      cd "java" do
-        inreplace "settings.gradle", "include ':android'", ""
-        system "./build_jni.sh", "desktop"
-        cd "client/src/main/resources" do
-          arch = Hardware::CPU.intel? ? "amd64" : "aarch64"
-          system "zip", "-u", libsignal_client_jar, shared_library("libsignal_jni_#{arch}")
-        end
-      end
+      odie "#{r.name} needs to be updated to #{libsignal_client_version}!" if libsignal_client_version != r.version
+      system "gradle", "--no-daemon", "--project-dir=java", "-PskipAndroid", ":client:jar"
+      buildpath.install Pathname.glob("java/client/build/libs/libsignal-client-*.jar")
     end
+
+    libsignal_client_jar = buildpath.glob("libsignal-client-*.jar").first
+    system "gradle", "--no-daemon", "-Plibsignal_client_path=#{libsignal_client_jar}", "installDist"
+    libexec.install (buildpath/"build/install/signal-cli").children
+    (libexec/"bin/signal-cli.bat").unlink
+    (bin/"signal-cli").write_env_script libexec/"bin/signal-cli", Language::Java.overridable_java_home_env(java_version)
   end
 
   test do
