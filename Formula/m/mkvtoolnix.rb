@@ -2,12 +2,11 @@ class Mkvtoolnix < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
   license "GPL-2.0-or-later"
-  revision 1
 
   stable do
-    url "https://mkvtoolnix.download/sources/mkvtoolnix-95.0.tar.xz"
-    mirror "https://fossies.org/linux/misc/mkvtoolnix-95.0.tar.xz"
-    sha256 "4e5481dee444f9995c176a42b6da2d2da1ba701cabec754b29dc79ea483a194f"
+    url "https://mkvtoolnix.download/sources/mkvtoolnix-96.0.tar.xz"
+    mirror "https://fossies.org/linux/misc/mkvtoolnix-96.0.tar.xz"
+    sha256 "509a1e3aca1f63fe5cc96b4c7272ba533dbcbb69c61d1c5114dccf610fd405cb"
 
     # Backport fix for older Xcode
     patch do
