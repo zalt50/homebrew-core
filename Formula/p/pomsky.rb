@@ -1,12 +1,10 @@
 class Pomsky < Formula
   desc "Regular expression language"
   homepage "https://pomsky-lang.org/"
-  url "https://github.com/pomsky-lang/pomsky/archive/refs/tags/v0.11.tar.gz"
-  sha256 "602cf73d7f7343b8c59ae82973635f5f62f26e2fe341fa990fca5fe504736384"
+  url "https://github.com/pomsky-lang/pomsky/archive/refs/tags/v0.12.tar.gz"
+  sha256 "a6265bac4e9ddb03f85ddb9a9c2cc391472b8b0d14570719146272fd3cf361d3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/pomsky-lang/pomsky.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
