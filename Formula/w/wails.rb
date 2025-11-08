@@ -1,8 +1,8 @@
 class Wails < Formula
   desc "Create beautiful applications using Go"
   homepage "https://wails.io"
-  url "https://github.com/wailsapp/wails/archive/refs/tags/v2.10.2.tar.gz"
-  sha256 "864b53f22ca98ed17e456b352ec4691cfc2105bdcb23e87df8f826035b08d8c0"
+  url "https://github.com/wailsapp/wails/archive/refs/tags/v2.11.0.tar.gz"
+  sha256 "3dbdf683ce67968c1319436950e6da1f27e6d64802d477105fc4d7a60be19860"
   license "MIT"
   head "https://github.com/wailsapp/wails.git", branch: "master"
 
