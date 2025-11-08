@@ -4,6 +4,7 @@ class LibtorrentRakshasa < Formula
   url "https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.2.tar.gz"
   sha256 "68391b28a55cb039eb385a20cc9333ade0646bea4d13c05e2b40c080d33c7505"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -29,6 +30,12 @@ class LibtorrentRakshasa < Formula
   uses_from_macos "zlib"
 
   conflicts_with "libtorrent-rasterbar", because: "both use the same libname"
+
+  # Backport fix for arm64 page size
+  patch do
+    url "https://github.com/rakshasa/libtorrent/commit/b16ecf23fde95857a462dd4cb3545b4ea9408aca.patch?full_index=1"
+    sha256 "d40e3f46691e6ac0f6c238823a65d59cad102c905c3714505d3f710b55821dca"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
