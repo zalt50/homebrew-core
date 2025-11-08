@@ -6,13 +6,11 @@ class TechnitiumLibrary < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "492665baab8d63961a06444ce1c653865cf3269b129f3cf4e7cd6cbd1e55349e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e4cb83b00dd9588bf345937b4221fd0b8c5e12ba18f149ff5de729bc6df4334"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28984faece182530989be911c65002be59e1ed4a8a828d10ce834223af4ce65d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a130d29c1e2c741cf0d27b613d0b73196ea28f72027d20d26d787c4d2a7a8357"
-    sha256 cellar: :any_skip_relocation, ventura:       "d6ca1c337f27ceb3c4019a9cdd99872667f6ae3e7d4c5ea7d3db76ad69411461"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5d4297401a01a142b864d51d70fbc4726a6c5e93d802a59b67c404c0431cd13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a8b06b6c37b37f17a0f6ef36e5ff08ff9c5a32089b69b1f7be8695fe0acc35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84363db9eed156ac53cc5b0370f1b6a601229551870c2258daee911385e6bee1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fa68f42b0fb663a65679928f13a476622641f28fd09dc195e2160119e8ffa88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "880011f190fed3cbf8d1171d0dab26e2d69d42a8dc899abe3dcd9295a57dbeef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc77f9421d2137d838cfd710211478bf1681e875a3e9f9b1d275e540bcf9e94b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42fad5bf240cc743c4f7a650c87e02722ba85b109b8aae24f20a535225b2c015"
   end
 
   depends_on "dotnet"
