@@ -1,11 +1,9 @@
 class TechnitiumLibrary < Formula
   desc "Library for technitium .net based applications"
   homepage "https://technitium.com"
-  url "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v13.6.0.tar.gz"
-  sha256 "b191357282562662b11563d80476d18061e7cb7adf6d5b0637e012c5e961faae"
+  url "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v14.0.0.tar.gz"
+  sha256 "857f221ea0e5346693529a2d0b414af3cf566a6f69ea2db590c3993552859588"
   license "GPL-3.0-only"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "492665baab8d63961a06444ce1c653865cf3269b129f3cf4e7cd6cbd1e55349e"
@@ -17,12 +15,12 @@ class TechnitiumLibrary < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a8b06b6c37b37f17a0f6ef36e5ff08ff9c5a32089b69b1f7be8695fe0acc35"
   end
 
-  depends_on "dotnet@8"
+  depends_on "dotnet"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
 
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -33,10 +31,11 @@ class TechnitiumLibrary < Formula
 
     system "dotnet", "publish", "TechnitiumLibrary.ByteTree/TechnitiumLibrary.ByteTree.csproj", *args
     system "dotnet", "publish", "TechnitiumLibrary.Net/TechnitiumLibrary.Net.csproj", *args
+    system "dotnet", "publish", "TechnitiumLibrary.Security.OTP/TechnitiumLibrary.Security.OTP.csproj", *args
   end
 
   test do
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     target_framework = "net#{dotnet.version.major_minor}"
 
     (testpath/"test.cs").write <<~CSHARP
