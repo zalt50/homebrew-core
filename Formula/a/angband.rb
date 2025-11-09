@@ -31,9 +31,7 @@ class Angband < Formula
     depends_on "automake" => :build
   end
 
-  on_system :linux, macos: :sonoma_or_newer do
-    depends_on "ncurses" # ncurse5.4-config is broken on recent macOS
-  end
+  uses_from_macos "ncurses"
 
   def install
     args = %W[
@@ -44,9 +42,16 @@ class Angband < Formula
       --disable-sdltest
       --disable-x11
     ]
-    if OS.mac? && MacOS.version < :sonoma
-      ENV["NCURSES_CONFIG"] = "#{MacOS.sdk_path}/usr/bin/ncurses5.4-config"
-      args << "--with-ncurses-prefix=#{MacOS.sdk_path}/usr"
+    if OS.mac?
+      sdk = MacOS.sdk_for_formula(self).path
+      ENV["NCURSES_CONFIG"] = "#{sdk}/usr/bin/ncurses5.4-config"
+      args << "--with-ncurses-prefix=#{sdk}/usr"
+
+      # ncurse5.4-config is broken on recent macOS and will return nonexistent -lncursesw
+      if MacOS.version >= :sonoma
+        (buildpath/"brew").install_symlink sdk/"usr/lib/libncurses.tbd" => "libncursesw.tbd"
+        ENV.append "LDFLAGS", "-L#{buildpath}/brew"
+      end
     end
     system "./autogen.sh" if build.head?
     system "./configure", *args, *std_configure_args
