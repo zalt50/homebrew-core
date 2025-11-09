@@ -1,11 +1,9 @@
 class Intermodal < Formula
   desc "Command-line utility for BitTorrent torrent file creation, verification, etc."
   homepage "https://imdl.io"
-  url "https://github.com/casey/intermodal/archive/refs/tags/v0.1.14.tar.gz"
-  sha256 "4b42fc39246a637e8011a520639019d33beffb337ed4e45110260eb67ecec9cb"
+  url "https://github.com/casey/intermodal/archive/refs/tags/v0.1.15.tar.gz"
+  sha256 "a01fde996f2e506c7e90a6015a6e130cb4757d21e98063c38672bdccf2e99d9c"
   license "CC0-1.0"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d890bea1f4494192ef6927276c312d952d8c1930da5034a37095c41fa1e3b6dd"
