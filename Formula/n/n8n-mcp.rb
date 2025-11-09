@@ -1,8 +1,8 @@
 class N8nMcp < Formula
   desc "MCP for Claude Desktop, Claude Code, Windsurf, Cursor to build n8n workflows"
   homepage "https://www.n8n-mcp.com/"
-  url "https://registry.npmjs.org/n8n-mcp/-/n8n-mcp-2.22.13.tgz"
-  sha256 "f08bdc7c3cbdd19ce633c3c3d596034b928fbb961768c2b5ea6577baf13ed6fb"
+  url "https://registry.npmjs.org/n8n-mcp/-/n8n-mcp-2.22.14.tgz"
+  sha256 "89ab950d9afa86b43d9c201e07ace7994381fce6915b4be901a943857839d203"
   license "MIT"
 
   bottle do
