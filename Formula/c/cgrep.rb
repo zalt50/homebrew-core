@@ -2,8 +2,8 @@ class Cgrep < Formula
   desc "Context-aware grep for source code"
   homepage "https://github.com/awgn/cgrep"
   # TODO: Check if `rawfilepath` workaround can be removed
-  url "https://github.com/awgn/cgrep/archive/refs/tags/v8.2.0.tar.gz"
-  sha256 "e874b3b2ce4c8a4a01d5bbf52269d25da631b18c39bfe1b261052bcde1b62240"
+  url "https://github.com/awgn/cgrep/archive/refs/tags/v9.0.0.tar.gz"
+  sha256 "6f7be7a24446289421fabe98393d00a46a1751ce1f605d84135e83d0ddf1d49e"
   license "GPL-2.0-or-later"
   head "https://github.com/awgn/cgrep.git", branch: "master"
 
@@ -33,10 +33,12 @@ class Cgrep < Formula
     end
   end
 
-  # Import missing `toShortByteString` function.
-  # The upstream fixed this https://github.com/awgn/cgrep/commit/42016a46e4aebe6db37a084016d2f49a9627face
-  # but the tarball is still missing it
-  patch :DATA
+  # Fix CPP directives alignment
+  # https://github.com/awgn/cgrep/pull/50
+  patch do
+    url "https://github.com/awgn/cgrep/commit/72748d85dbc2bb8059c4a4782be52347fc071eaa.patch?full_index=1"
+    sha256 "04ecc69ec482f0c07edcc07823c284e93e9822128f0398bf00918a81b08227ca"
+  end
 
   def install
     # Work around "error: call to undeclared function 'execvpe'" by imitating part of removed
@@ -49,6 +51,9 @@ class Cgrep < Formula
     end
     # Help resolver pick package versions compatible with newer GHC
     constraints = ["--constraint=async>=2"]
+
+    # `base <4.16.0.0` is not available in the most recent GHC
+    inreplace "cgrep.cabal", "base ^>=4.15.0.0", "base >=4.15.0.0"
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *constraints, *std_cabal_v2_args
@@ -66,16 +71,3 @@ class Cgrep < Formula
     assert_match ":2", shell_output("#{bin}/cgrep --count puts t.rb")
   end
 end
-__END__
-diff --git a/src/CGrep/Output.hs b/src/CGrep/Output.hs
-index 8312e39..a751fff 100644
---- a/src/CGrep/Output.hs
-+++ b/src/CGrep/Output.hs
-@@ -91,6 +91,7 @@ import Options (
-  )
- import Data.ByteString.Short (ShortByteString)
- import System.OsString.Data.ByteString.Short (fromShort)
-+import OsPath (toShortByteString)
- 
- data Output = Output
-     { outFilePath :: OsPath
