@@ -12,19 +12,12 @@ class Libdvdnav < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "96da091d8cd2f383ed296945d5022043df053962c612f7e1e85138069f106534"
-    sha256 cellar: :any,                 arm64_sequoia:  "b29b26c47215e0956115db5aa20172efaa92d178877f7f2e526efa661282f481"
-    sha256 cellar: :any,                 arm64_sonoma:   "77516e8cb99cad1e25fd119a6c573e0fb9c96b5ed7685f1222b9f76a5d1d1013"
-    sha256 cellar: :any,                 arm64_ventura:  "77a874039ce80696ea655e95514dc26776a34f1c9675f583ebc0b9ae083be84c"
-    sha256 cellar: :any,                 arm64_monterey: "efafd019d3a0cff8710e286c2fd7817865b1be5ff539c39639c71de9f61d9c50"
-    sha256 cellar: :any,                 arm64_big_sur:  "e3ea0ddda7b96b799c2a67fd6687c25679001e2dc3893f200c70d4a599bc3996"
-    sha256 cellar: :any,                 sonoma:         "1652846a6a793bc010056d0720931b73ae544fe5f378681b3223b9595b8b41be"
-    sha256 cellar: :any,                 ventura:        "53d1dde0566dc12fe4e804d379d7b7cdfdc411dae8b290e866517c6f1023b796"
-    sha256 cellar: :any,                 monterey:       "56d2c8450b882b776d5935a138d8031585366f59a740ea26db871d06c94d7d95"
-    sha256 cellar: :any,                 big_sur:        "cabd25ecc0df8a3729e7196737e56041d8d6b9f369972d66de1ade19b4bfbafb"
-    sha256 cellar: :any,                 catalina:       "ded7214f830c32676e5a64c2836b5498e44aeaa4967c5753a89c48af66edeaf7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "1a7a8631234c11e7d11e3ef82761671345883d42f2294382280bce8ddc7601a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0aadfc77f6807e5067f04391b0da4b6a0173c0219552f90ee300e17bd5679d9"
+    sha256 cellar: :any, arm64_tahoe:   "de06e1e44ed91415e861f0bd79e41de8136e9786fc430d4cb81b46be8bdc9643"
+    sha256 cellar: :any, arm64_sequoia: "572d32a3743e5b4aa64e8db20ebe4c524709229e167247e7563063d4d4a1fe43"
+    sha256 cellar: :any, arm64_sonoma:  "0fd026d465fda11f3b47ebe709f5c31efe1e74fd862a1869f14f51697d54ef35"
+    sha256 cellar: :any, sonoma:        "05fc8e61a4945df5d16c96014062b79477a44a271b4371398f5c9f91a526fe71"
+    sha256               arm64_linux:   "18d641647018fcea9fac4d0bc26bf04aa8a47ef5206de9bdfa91af2d23f9ebd7"
+    sha256               x86_64_linux:  "013483294308424c90b6d2cf46335160df2f5ad9d2a12935d8bb0e12669d28d7"
   end
 
   depends_on "meson" => :build
