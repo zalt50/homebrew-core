@@ -39,6 +39,7 @@ class Mapnik < Formula
   depends_on "libxml2"
   depends_on "openssl@3"
   depends_on "proj"
+  depends_on "protozero"
   depends_on "sqlite"
   depends_on "webp"
 
@@ -52,6 +53,7 @@ class Mapnik < Formula
       -DBUILD_DEMO_CPP:BOOL=OFF
       -DBUILD_DEMO_VIEWER:BOOL=OFF
       -DCMAKE_INSTALL_RPATH:PATH=#{rpath}
+      -DUSE_EXTERNAL_MAPBOX_PROTOZERO=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
