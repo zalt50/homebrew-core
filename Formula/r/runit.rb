@@ -1,8 +1,8 @@
 class Runit < Formula
   desc "Collection of tools for managing UNIX services"
   homepage "https://smarden.org/runit/"
-  url "https://smarden.org/runit/runit-2.2.0.tar.gz"
-  sha256 "95ef4d2868b978c7179fe47901e5c578e11cf273d292bd6208bd3a7ccb029290"
+  url "https://smarden.org/runit/runit-2.3.0.tar.gz"
+  sha256 "190e11c1f8072b543bb6bd53850555c458d6e306d53df3fc1232d300c3e21b51"
   license "BSD-3-Clause"
 
   livecheck do
