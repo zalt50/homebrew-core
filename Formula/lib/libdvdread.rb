@@ -1,25 +1,15 @@
 class Libdvdread < Formula
   desc "C library for reading DVD-video images"
   homepage "https://www.videolan.org/developers/libdvdnav.html"
+  url "https://download.videolan.org/pub/videolan/libdvdread/7.0.1/libdvdread-7.0.1.tar.xz"
+  sha256 "2e3e04a305c15c3963aa03ae1b9a83c1d239880003fcf3dde986d3943355d407"
   license "GPL-2.0-or-later"
-
-  stable do
-    url "https://download.videolan.org/pub/videolan/libdvdread/6.1.3/libdvdread-6.1.3.tar.bz2"
-    sha256 "ce35454997a208cbe50e91232f0e73fb1ac3471965813a13b8730a8f18a15369"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
+  head "https://code.videolan.org/videolan/libdvdread.git", branch: "master"
 
   livecheck do
     url "https://download.videolan.org/pub/videolan/libdvdread/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "3bf9b853635ca319646c757110872d67d4125abb66e5e4d092068527342fa586"
@@ -37,21 +27,30 @@ class Libdvdread < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5805295785ab4ce6aeb1bdfeb7fe1aab4946ea9df2555f2016bbc540322f9c81"
   end
 
-  head do
-    url "https://code.videolan.org/videolan/libdvdread.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkgconf" => :test
   depends_on "libdvdcss"
 
   def install
-    ENV.append "CFLAGS", "-DHAVE_DVDCSS_DVDCSS_H"
-    ENV.append "LDFLAGS", "-ldvdcss"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+  end
 
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args
-    system "make", "install"
+  test do
+    (testpath/"test.c").write <<~C
+      #include <dvdread/version.h>
+      #include <stdio.h>
+
+      int main(int argc, char** argv) {
+        printf("%s\\n", DVDREAD_VERSION_STRING);
+        return 0;
+      }
+    C
+
+    pkg_config_flags = shell_output("pkgconf --cflags --libs dvdread").chomp.split
+    system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
+    assert_match version.to_s, shell_output("./test")
   end
 end
