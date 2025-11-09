@@ -1,8 +1,8 @@
 class Edbrowse < Formula
   desc "Command-line editor and web browser"
   homepage "https://edbrowse.org"
-  url "https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.14.tar.gz"
-  sha256 "4463d4ad9d06f183ebca8dfee0eeb7f4240bc6becb83257e394fdeb84b120360"
+  url "https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.15.tar.gz"
+  sha256 "17c19179ec659a560ca4070103f2db37d29b71bc5d483c5f9d8a616abbfeb190"
   license "GPL-2.0-or-later"
   head "https://github.com/edbrowse/edbrowse.git", branch: "master"
 
@@ -24,10 +24,13 @@ class Edbrowse < Formula
   depends_on "unixodbc"
 
   def install
+    ENV.append_to_cflags "-DQ_NG=0"
+
     cd "src" do
       make_args = [
         "QUICKJS_INCLUDE=#{Formula["quickjs"].opt_include}/quickjs",
         "QUICKJS_LIB=#{Formula["quickjs"].opt_lib}/quickjs",
+        "QUICKJS_LIB_NAME=quickjs",
       ]
 
       system "make", *make_args
