@@ -1,25 +1,15 @@
 class Libdvdnav < Formula
   desc "DVD navigation library"
   homepage "https://www.videolan.org/developers/libdvdnav.html"
+  url "https://download.videolan.org/pub/videolan/libdvdnav/7.0.0/libdvdnav-7.0.0.tar.xz"
+  sha256 "a2a18f5ad36d133c74bf9106b6445806fa253b09141a46392550394b647b221e"
   license "GPL-2.0-or-later"
-
-  stable do
-    url "https://download.videolan.org/pub/videolan/libdvdnav/6.1.1/libdvdnav-6.1.1.tar.bz2"
-    sha256 "c191a7475947d323ff7680cf92c0fb1be8237701885f37656c64d04e98d18d48"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
+  head "https://code.videolan.org/videolan/libdvdnav.git", branch: "master"
 
   livecheck do
     url "https://download.videolan.org/pub/videolan/libdvdnav/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "96da091d8cd2f383ed296945d5022043df053962c612f7e1e85138069f106534"
@@ -37,19 +27,30 @@ class Libdvdnav < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0aadfc77f6807e5067f04391b0da4b6a0173c0219552f90ee300e17bd5679d9"
   end
 
-  head do
-    url "https://code.videolan.org/videolan/libdvdnav.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
-  depends_on "pkgconf" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libdvdread"
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <dvdnav/version.h>
+      #include <stdio.h>
+
+      int main(int argc, char** argv) {
+        printf("%s\\n", DVDNAV_VERSION_STRING);
+        return 0;
+      }
+    C
+
+    pkg_config_flags = shell_output("pkgconf --cflags --libs dvdnav").chomp.split
+    system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
+    assert_match version.to_s, shell_output("./test")
   end
 end
