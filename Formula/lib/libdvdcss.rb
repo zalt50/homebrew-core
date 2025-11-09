@@ -1,16 +1,15 @@
 class Libdvdcss < Formula
   desc "Access DVDs as block devices without the decryption"
   homepage "https://www.videolan.org/developers/libdvdcss.html"
-  url "https://download.videolan.org/pub/videolan/libdvdcss/1.4.3/libdvdcss-1.4.3.tar.bz2"
-  sha256 "233cc92f5dc01c5d3a96f5b3582be7d5cee5a35a52d3a08158745d3d86070079"
+  url "https://download.videolan.org/pub/videolan/libdvdcss/1.5.0/libdvdcss-1.5.0.tar.xz"
+  sha256 "529463e4d1befef82e5c6e470db7661a2db0343e092a2fb0d6c037cab8a5c399"
   license "GPL-2.0-or-later"
+  head "https://code.videolan.org/videolan/libdvdcss.git", branch: "master"
 
   livecheck do
     url "https://download.videolan.org/pub/libdvdcss/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "4f096a2de5e3d8409bfa2627dfff5bf3a14099f2384f2ec018ffaa4a6dcad182"
@@ -28,16 +27,29 @@ class Libdvdcss < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b3979306018ca60bc17dc7547699ef716342c46c1e755ba15d53f6eb9ac92dd"
   end
 
-  head do
-    url "https://code.videolan.org/videolan/libdvdcss.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkgconf" => :test
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <dvdcss/version.h>
+      #include <stdio.h>
+
+      int main(int argc, char** argv) {
+        printf("%s\\n", DVDCSS_VERSION_STRING);
+        return 0;
+      }
+    C
+
+    pkg_config_flags = shell_output("pkgconf --cflags --libs libdvdcss").chomp.split
+    system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
+    assert_match version.to_s, shell_output("./test")
   end
 end
