@@ -1,8 +1,8 @@
 class Pgbouncer < Formula
   desc "Lightweight connection pooler for PostgreSQL"
   homepage "https://www.pgbouncer.org/"
-  url "https://www.pgbouncer.org/downloads/files/1.24.1/pgbouncer-1.24.1.tar.gz"
-  sha256 "da72a3aba13072876d055a3e58dd4aba4a5de4ed6148e73033185245598fd3e0"
+  url "https://www.pgbouncer.org/downloads/files/1.25.0/pgbouncer-1.25.0.tar.gz"
+  sha256 "290bad449e4580f0174d3677c26c1076d4ce5dd7ca116ae1fca10272ef74d10e"
   license "ISC"
 
   livecheck do
@@ -27,12 +27,14 @@ class Pgbouncer < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
-    depends_on "pandoc" => :build
   end
 
+  depends_on "pandoc" => :build
   depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "openssl@3"
+
+  uses_from_macos "python" => :build
 
   def install
     system "./autogen.sh" if build.head?
