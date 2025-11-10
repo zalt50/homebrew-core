@@ -14,12 +14,12 @@ class Kyverno < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f002574aee466087b760af7802b205a0a2c5400d3d3747b762fa7d05003912c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "592f9de07647a0a24735412490d76da88afc7218f7d8df5fb9fb68491d83a262"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d76fba16c6e217f95e5da4fab0507d63338693d1a1d20a383db5b6055810347"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c6b99258e6fef26246455fc1dd058feb658b5ded87b829f31eb048b493bec20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d82dd4b40cc40ac7e3361351716c457e72c6361c0d62a0b7f3a449390504e81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e0bed3d818d1e291fc66d5ab5e9eff41ac6d8ed475c024514541db9223ec66b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d037f8efade5c4a7b1e75b213730d2cb9330412ad4250692f579200d6fb7867e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e91b66016ad37368ec6b8a8002f0941f9afff50a819f0dedf2f7869e66c94c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aec8c8280812f7ceb3c5f19a1eedab28d7b9925fe025c21a379d9af51065c051"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c39bacc470739a9745c801886cb397ac9770e39fc7a4f4456dfe1eeda2ad4bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "054448cc5d0fe0f73412478ae97b10221ec5fce52cfb163e3d1cc29eb27281ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20ff5d368ceabe42d4c16c31d8dbf3252ec9436c67389b3fe611f6ad23abdd1f"
   end
 
   depends_on "go" => :build
