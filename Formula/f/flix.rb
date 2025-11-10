@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https://flix.dev/"
-  url "https://github.com/flix/flix/archive/refs/tags/v0.66.1.tar.gz"
-  sha256 "ab9327a31be785551844f218f2bb7b2d6a6bc9637ed4715d0ac449e99f3267ba"
+  url "https://github.com/flix/flix/archive/refs/tags/v0.66.2.tar.gz"
+  sha256 "2e16ea2a63677c080b37a1e2bdbc4912217c82556ab3eea721120b264e205521"
   license "Apache-2.0"
   head "https://github.com/flix/flix.git", branch: "master"
 
