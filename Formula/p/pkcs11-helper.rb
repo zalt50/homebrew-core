@@ -1,8 +1,8 @@
 class Pkcs11Helper < Formula
   desc "Library to simplify the interaction with PKCS#11"
   homepage "https://github.com/OpenSC/OpenSC/wiki/pkcs11-helper"
-  url "https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.30.0/pkcs11-helper-1.30.0.tar.bz2"
-  sha256 "4c5815ba910cabf26df08d449ca2909daf4538c9899aa7f7fadc61229d3488a9"
+  url "https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.31.0/pkcs11-helper-1.31.0.tar.bz2"
+  sha256 "46f0067bccd7be2c28f88b8bca775172b9e52fb6fc1280b44ca8bb831433fef9"
   license any_of: ["BSD-3-Clause", "GPL-2.0-or-later"]
   head "https://github.com/OpenSC/pkcs11-helper.git", branch: "master"
 
@@ -11,8 +11,6 @@ class Pkcs11Helper < Formula
     regex(/pkcs11-helper[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "dc2f5704425099ef5e72485ab502243159567b827452fc009c753b0f0d11878e"
