@@ -48,12 +48,15 @@ class Krb5 < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "libedit"
 
+  on_linux do
+    depends_on "keyutils"
+  end
+
   def install
     cd "src" do
       system "./configure", "--disable-nls",
                             "--disable-silent-rules",
                             "--without-system-verto",
-                            "--without-keyutils",
                             *std_configure_args
       system "make"
       system "make", "install"
