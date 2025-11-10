@@ -1,10 +1,9 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://github.com/dartsim/dart/archive/refs/tags/v6.15.0.tar.gz"
-  sha256 "bbf954e283f464f6d0a8a5ab43ce92fd49ced357ccdd986c7cb4c29152df8692"
+  url "https://github.com/dartsim/dart/archive/refs/tags/v6.16.0.tar.gz"
+  sha256 "a036d943688fdd6fb34f140a1f3e8d44376361a265b734a3702da5dea9f75786"
   license "BSD-2-Clause"
-  revision 6
 
   bottle do
     sha256                               arm64_tahoe:   "1920dc73653aeb057dcf27644f2ec2b57749ee6c9d2328733712cd0876d4df98"
