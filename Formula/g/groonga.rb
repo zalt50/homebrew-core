@@ -11,12 +11,12 @@ class Groonga < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2f980ee600bc446b3d03b9d3340665a04ffcd0597670990b987d9b7b2e9c05b1"
-    sha256 arm64_sequoia: "0744bb7efb2f0aa0b4f77feec0eeaf15d6990ea81446c6492085a440c088a37f"
-    sha256 arm64_sonoma:  "7880548a364d0a54e2e120d8e084f52520f511db2ca3b7dffd0e6dae9f2a876b"
-    sha256 sonoma:        "3bcb8db038c9d4a8dcb2ce1e1668fcc3eff8e61ae7633c27f335dc368cb8002e"
-    sha256 arm64_linux:   "3c913ba6ca0c8264e6639bc2aca7be7147ff6a5b9ad6ccd716f49b7347ce51a8"
-    sha256 x86_64_linux:  "2f5ebe8f2204fd0a6845908b0fa5ff3f09ed559c465f089735d1b4d501fa1a71"
+    sha256 arm64_tahoe:   "0b93b8de437edcf2b3b3124fb29a5b0d787ce564a16d6820b88837a75ac9a687"
+    sha256 arm64_sequoia: "fd4e7c1ce563f0102bd6d62a3c3bf6ac89b20174d10a08cdc9e728b291ecc04a"
+    sha256 arm64_sonoma:  "064980a90488546ec0d88927c40762a26fb6e045299438d84454e20a6133aa1a"
+    sha256 sonoma:        "4da26624de3010e6555b22f8ca179875bf8a66a020f88c1c63eeeacaa7d3dfb7"
+    sha256 arm64_linux:   "0d4de21abdbbb51107675eddc7af4ec705d15a56517d0bf27b1cb8f485948c9b"
+    sha256 x86_64_linux:  "d94da2b207e533bab701a1c4e3b1d084cd764c760a6e007dc2a813a5aa6a83c1"
   end
 
   head do
