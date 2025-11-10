@@ -1,9 +1,9 @@
 class Vrpn < Formula
   desc "Virtual reality peripheral network"
   homepage "https://github.com/vrpn/vrpn/wiki"
-  url "https://github.com/vrpn/vrpn.git",
-      tag:      "v07.36",
-      revision: "79deb000cc0b47ae49a80c92c78167c02d8a04d8"
+  # Avoid git checkout which pulls in bundled libraries as submodules
+  url "https://github.com/vrpn/vrpn/archive/refs/tags/v07.36.tar.gz"
+  sha256 "bed00ae060fc7c0cfdaa2fa01f6f2db4976d431971e8824b710eb63cfbba0df7"
   license "BSL-1.0"
   head "https://github.com/vrpn/vrpn.git", branch: "master"
 
@@ -19,18 +19,28 @@ class Vrpn < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "hidapi"
+  depends_on "jsoncpp"
   depends_on "libusb" # for HID support
 
   def install
+    # Workaround for jsoncpp_lib resulting in jsoncpp_lib-NOTFOUND which may be
+    # a side effect of switching the `jsoncpp` build to meson.
+    inreplace "cmake/FindJsonCpp.cmake",
+              "set(JSONCPP_LIBRARY ${JSONCPP_IMPORTED_LIBRARY})",
+              "set(JSONCPP_LIBRARY \"#{Formula["jsoncpp"].opt_lib/shared_library("libjsoncpp")}\")"
+
     args = %w[
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_CXX_STANDARD=11
       -DVRPN_BUILD_CLIENTS=OFF
       -DVRPN_BUILD_JAVA=OFF
-      -DVRPN_USE_WIIUSE=OFF
       -DVRPN_BUILD_PYTHON=OFF
       -DVRPN_BUILD_PYTHON_HANDCODED_3X=OFF
+      -DVRPN_USE_LOCAL_HIDAPI=OFF
+      -DVRPN_USE_LOCAL_JSONCPP=OFF
+      -DVRPN_USE_WIIUSE=OFF
     ]
-
-    args << "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
