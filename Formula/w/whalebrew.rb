@@ -43,6 +43,6 @@ class Whalebrew < Formula
     assert_match "whalebrew/whalesay", shell_output("#{bin}/whalebrew search whalesay")
 
     output = shell_output("#{bin}/whalebrew install whalebrew/whalesay -y 2>&1", 255)
-    assert_match(/connect to the Docker daemon|operation not permitted/, output)
+    assert_match(/failed to connect to the docker API|permission denied/, output)
   end
 end
