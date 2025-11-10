@@ -11,7 +11,7 @@ class PhpCodeSniffer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bce4ee5f352f48fba985123fbae7b41ee52f211abd2ddd6b07e36833d27a75da"
+    sha256 cellar: :any_skip_relocation, all: "e834532e38c631734e2ef9eb71dc4e91f91813ce9e70a6c6851f279b66f23078"
   end
 
   depends_on "php"
