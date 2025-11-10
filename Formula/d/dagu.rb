@@ -22,7 +22,7 @@ class Dagu < Formula
   def install
     system "pnpm", "--dir=ui", "install", "--frozen-lockfile"
     system "pnpm", "--dir=ui", "run", "build"
-    (buildpath/"internal/frontend/assets").install (buildpath/"ui/dist").children
+    (buildpath/"internal/service/frontend/assets").install (buildpath/"ui/dist").children
 
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd"
