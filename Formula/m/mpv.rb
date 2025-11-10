@@ -2,7 +2,7 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   license :cannot_represent
-  revision 4
+  revision 5
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   stable do
