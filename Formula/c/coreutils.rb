@@ -1,9 +1,9 @@
 class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
   homepage "https://www.gnu.org/software/coreutils/"
-  url "https://ftpmirror.gnu.org/gnu/coreutils/coreutils-9.8.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/coreutils/coreutils-9.8.tar.xz"
-  sha256 "e6d4fd2d852c9141a1c2a18a13d146a0cd7e45195f72293a4e4c044ec6ccca15"
+  url "https://ftpmirror.gnu.org/gnu/coreutils/coreutils-9.9.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/coreutils/coreutils-9.9.tar.xz"
+  sha256 "19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -52,12 +52,6 @@ class Coreutils < Formula
   def breaks_macos_users
     %w[dir dircolors vdir]
   end
-
-  # Coreutils 9.8 had a bug in `tail` that made it seek to the wrong place in
-  # files. Only update src/tail.c from the upstream commit otherwise `autoconf`
-  # will be invoked.
-  # https://github.com/coreutils/coreutils/commit/914972e80dbf82aac9ffe3ff1f67f1028e1a788b.patch?full_index=1
-  patch :DATA
 
   def install
     ENV.runtime_cpu_detection
@@ -133,19 +127,3 @@ class Coreutils < Formula
     system bin/"gln", "-f", "test", "test.sha1"
   end
 end
-
-__END__
-
-diff --git a/src/tail.c b/src/tail.c
-index b8bef1d91cdb6cde2b666b6c1575376e075eaeb8..c7779c77dfe4cf5a672a265b6e796c7153590170 100644
---- a/src/tail.c
-+++ b/src/tail.c
-@@ -596,7 +596,7 @@ file_lines (char const *prettyname, int fd, struct stat const *sb,
-           goto free_buffer;
-         }
-
--      pos = xlseek (fd, -bufsize, SEEK_CUR, prettyname);
-+      pos = xlseek (fd, -(bufsize + bytes_read), SEEK_CUR, prettyname);
-       bytes_read = read (fd, buffer, bufsize);
-       if (bytes_read < 0)
-         {
