@@ -6,7 +6,7 @@ class Aider < Formula
   url "https://files.pythonhosted.org/packages/87/60/42ee32c47d6711635d591c729eea6bc56fa244099a18e0b82da064951af9/aider_chat-0.86.1.tar.gz"
   sha256 "48e489d20a4dfdd90ac4acc781f0170f688aaa5c5f2017d035e2d947fb801bbb"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/Aider-AI/aider.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
@@ -640,6 +640,8 @@ class Aider < Formula
                                              "--config-settings=setup-args=-Dlapack=openblas",
                                              *std_pip_args(prefix: false, build_isolation: true), "."
     end
+
+    generate_completions_from_executable(bin/"aider", "--shell-completions", shells: [:bash, :zsh])
   end
 
   test do
