@@ -31,6 +31,6 @@ class Kind < Formula
 
     # Should error out as creating a kind cluster requires root
     status_output = shell_output("#{bin}/kind get kubeconfig --name homebrew 2>&1", 1)
-    assert_match "Cannot connect to the Docker daemon", status_output
+    assert_match "failed to connect to the docker API", status_output
   end
 end
