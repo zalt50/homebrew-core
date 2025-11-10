@@ -3,8 +3,8 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https://cli.codecov.io/"
-  url "https://files.pythonhosted.org/packages/18/8a/7ffb9a25cef38d2313c5c407026f90e8f07f92f2b787a697b00a1058feb4/codecov_cli-11.2.4.tar.gz"
-  sha256 "07a2f080f32be52dc7948b10a289279c8758e0e3f235d48b513562e0ba68c2c0"
+  url "https://files.pythonhosted.org/packages/1d/e0/73e86182c7cde8c4342d85d24f451b8b9cbc38688df99cbae47e8db1b476/codecov_cli-11.2.5.tar.gz"
+  sha256 "e0568edd4372d863435ca8472283f90f46a6237977ded391c6b1e48c544914fb"
   license "Apache-2.0"
 
   bottle do
@@ -59,23 +59,13 @@ class CodecovCli < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/31/04/ec8c1dd9250847303d98516e917978cb1c7083024770d86d657d2ccb5a70/sentry_sdk-2.42.1.tar.gz"
-    sha256 "8598cc6edcfe74cb8074ba6a7c15338cdee93d63d3eb9b9943b4b568354ad5b6"
+    url "https://files.pythonhosted.org/packages/b3/18/09875b4323b03ca9025bae7e6539797b27e4fc032998a466b4b9c3d24653/sentry_sdk-2.43.0.tar.gz"
+    sha256 "52ed6e251c5d2c084224d73efee56b007ef5c2d408a4a071270e82131d336e20"
   end
 
   resource "test-results-parser" do
-    url "https://files.pythonhosted.org/packages/e9/25/c6459ae54e5b57944417a8f72662d186ab43b0eae956193d6de281619ce4/test_results_parser-0.5.4.tar.gz"
-    sha256 "2fbfd809a2c1f746360146809b6df30690c992463d7d43e7b1fed31c1a7c15b4"
-
-    # Bump `pyo3` to support Python 3.14
-    # Upstream version 0.5.4 is actually same as 0.5.1 and the next of 0.5.3 is not developing,
-    # so manually add the patch here.
-    # Issue ref: https://github.com/codecov/test-results-parser/issues/86
-    # Related PR ref: https://github.com/codecov/test-results-parser/pull/87
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/Homebrew-core/0a81f140/Patches/codecov-cli/support-python3.14.patch"
-      sha256 "e6401a73c44388aa4ee4330436d91693f1a8d1ab8430d1d47a1730ec229a872f"
-    end
+    url "https://files.pythonhosted.org/packages/a5/8a/2695581eab1cffe8d3b5e25df3c04b396777135ad3a091f2d9b514a2ec77/test_results_parser-0.6.0.tar.gz"
+    sha256 "8580213273b4efb357361a1e2f5e7def360c6443373970513a60d73657557912"
   end
 
   resource "urllib3" do
