@@ -7,12 +7,13 @@ class Dagu < Formula
   head "https://github.com/dagu-org/dagu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70a1717535b0e0ede40a6b982641f640b315b39295ce557231be9a3ef236f80b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cabef5066a858e9bc745ab23fd686eefc60d9db0b45f765828d58d4573e2fa7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5db5fa667c4fc56457d45cd1518b41092fb66c0058768a32c3344e3b0bbd0e40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a099d3d6694aae7e4934d1925c26464563e55fa1d341d937ca34973e801fe39c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a54039a3818b2fd772b3ff3e7648fcbb615846ecd499ce116c64bb468f8e167"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a764da3703e15b344e469bef28873c4dd6ba30ab15667191eb42a16c84788612"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbe70dbfc7ab0a1e5348feea7e1a67ac42cd56167c3335a2e199d1f1465dadb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58d9a12cb4744d22558cc454ebefd6fee23365c90bc68b67e4bf2e5322685bcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1144a32d14a95cb06e872e77e7bb63f6baa15c9b65021fe7bcb5130c2d4edb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b25d80b9ec43e26a9e484ef0609dad4a6cec1024a7adc182e0b380875348f51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4467b99359581de59a5e67987f4abc02167a33eae2dc975931cdd6284a1f8084"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "746ed9a34d29af2c1258ef37a53f0f80ad823598d17c5e6bd589b806e02a50b7"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class Dagu < Formula
   def install
     system "pnpm", "--dir=ui", "install", "--frozen-lockfile"
     system "pnpm", "--dir=ui", "run", "build"
-    (buildpath/"internal/frontend/assets").install (buildpath/"ui/dist").children
+    (buildpath/"internal/service/frontend/assets").install (buildpath/"ui/dist").children
 
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd"
