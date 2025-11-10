@@ -7,14 +7,12 @@ class Stgit < Formula
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68706dbfcc157701b6a546cba0a69f7cd5cd5f6dde1890e0381a9947aa98b9fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c96f21fe97582311cdc5abee743363ead3328f20a77184d94ddd6bcbd334cba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "489238c99e6439cdc34aab55027149540a5971ccafd700c2ffda734453688c93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e61c0afc7c47bc38cb4d9ea60046cfac6bf5138d0107f45f66081830113d05c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df156e1a803551b56953427f95d98d689686e98ad1a6243d47ab968c6eaaf80f"
-    sha256 cellar: :any_skip_relocation, ventura:       "feed72e3869b2a795a8e40163844a1d4b5f689a46f9f6e8886e77696a94a24aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fca60d8be3921d049e75dba241a9e06f3438db3a036aa1c64c1bc4e30759f53a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e98c643ace9a0f0c55e307c714b9a7686e90a01abfeac3f532ad35015880d1a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfa705de0e5b9cf7922189296afc03f16fef2811f5c24cedbe5c135d5cb95429"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "865742c4070ee13e3c4748ac2bcae3922f672ab08ddaa79ca8464460e35d4cf3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cff8da4697cfc9c7194d8ea374f17a1a91294034f4100cfb4f2f4b8a8e66c4b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af4ca09482dab011146d4a1a2f70b9ec064ccd206746dcfa2239d64ef49235aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c269dbb61d372efc698fe438f201358a25799455964580b5759d7af287a21394"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f763cbd3a555abae3450c8d3bd755f1cc6def5ecec49d20764653a38f9875fcc"
   end
 
   depends_on "asciidoc" => :build
