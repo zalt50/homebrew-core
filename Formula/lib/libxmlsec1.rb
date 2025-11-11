@@ -1,16 +1,15 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.8.tar.gz"
-  mirror "https://github.com/lsh123/xmlsec/releases/download/1.3.8/xmlsec1-1.3.8.tar.gz"
-  sha256 "d0180916ae71be28415a6fa919a0684433ec9ec3ba1cc0866910b02e5e13f5bd"
+  url "https://github.com/lsh123/xmlsec/releases/download/1.3.9/xmlsec1-1.3.9.tar.gz"
+  mirror "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.9.tar.gz"
+  sha256 "a631c8cd7a6b86e6adb9f5b935d45a9cf9768b3cb090d461e8eb9d043cf9b62f"
   license "MIT"
-  revision 1
 
   # Checking the first-party download page persistently fails in the autobump
   # environment, so we check GitHub releases as a workaround.
   livecheck do
-    url "https://github.com/lsh123/xmlsec"
+    url :stable
     strategy :github_latest
   end
 
@@ -25,7 +24,6 @@ class Libxmlsec1 < Formula
 
   depends_on "pkgconf" => :build
   depends_on "gnutls" # Yes, it wants both ssl/tls variations
-  depends_on "libgcrypt"
   depends_on "libxml2"
   depends_on "openssl@3"
   uses_from_macos "libxslt"
@@ -34,14 +32,14 @@ class Libxmlsec1 < Formula
   patch :DATA
 
   def install
-    args = [
-      "--disable-crypto-dl",
-      "--disable-apps-crypto-dl",
-      "--with-nss=no",
-      "--with-nspr=no",
-      "--enable-mscrypto=no",
-      "--enable-mscng=no",
-      "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+    args = %W[
+      --disable-apps-crypto-dl
+      --disable-crypto-dl
+      --disable-mscrypto
+      --disable-mscng
+      --without-nss
+      --without-nspr
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
     system "./configure", *args, *std_configure_args
