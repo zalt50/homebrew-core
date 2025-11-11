@@ -1,7 +1,8 @@
 class Virtuoso < Formula
   desc "High-performance object-relational SQL database"
   homepage "https://virtuoso.openlinksw.com"
-  url "https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.16/virtuoso-opensource-7.2.16.tar.gz"
+  url "https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.16.1/virtuoso-opensource-7.2.16.tar.gz"
+  version "7.2.16.1"
   sha256 "0a70dc17f0e333d73307c9c46e8a7a82df70a410ddfe027a5bf7ba6c9204a928"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
@@ -47,9 +48,9 @@ class Virtuoso < Formula
 
   def install
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--without-internal-zlib"
+    system "./configure", "--disable-silent-rules",
+                          "--without-internal-zlib",
+                          *std_configure_args
     system "make", "install"
   end
 
