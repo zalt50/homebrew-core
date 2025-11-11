@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://github.com/block/goose/archive/refs/tags/v1.13.2.tar.gz"
-  sha256 "02827beeaa9425f93f6198d51df4dd7d90a5d567162fd4633aa58e79cbf6b6cf"
+  url "https://github.com/block/goose/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "c0bb782103e75ccb912035274b5b3cec8dbaa0a150f56ecde532dca04d7b82bf"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -39,6 +39,9 @@ class BlockGooseCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/goose --version")
-    assert_match "goose Locations", shell_output("#{bin}/goose info")
+    output = shell_output("#{bin}/goose info")
+    assert_match "Paths:", output
+    assert_match "Config dir:", output
+    assert_match "Sessions DB (sqlite):", output
   end
 end
