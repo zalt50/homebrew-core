@@ -16,23 +16,34 @@ class Dicebear < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45af81803b2bf97e8d4f50f64ba27a817f88b9b5cad916fa22bbf9232a78dc38"
   end
 
+  depends_on "pkgconf" => :build
+  depends_on "glib"
   depends_on "node"
+  depends_on "vips"
 
-  on_linux do
-    depends_on "vips"
+  on_macos do
+    depends_on "gettext"
+  end
+
+  # Resources needed to build sharp from source to avoid bundled vips
+  # https://sharp.pixelplumbing.com/install/#building-from-source
+  resource "node-addon-api" do
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz"
+    sha256 "d12f07c8162283b6213551855f1da8dac162331374629830b5e640f130f07910"
+  end
+
+  resource "node-gyp" do
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.0.0.tgz"
+    sha256 "bbe606e43a53869933de6129c5158e9b67e43952bc769986bcd877070e85fd1c"
   end
 
   def install
-    system "npm", "install", *std_npm_args
+    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
+    system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
-    node_modules = libexec/"lib/node_modules/dicebear/node_modules"
-
-    # Remove incompatible pre-built `bare-fs`/`bare-os` binaries
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os}/prebuilds/*")
-                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    # Remove prebuilts which still get installed as optional dependencies
+    rm_r(libexec.glob("lib/node_modules/dicebear/node_modules/@img/sharp-*"))
   end
 
   test do
@@ -41,5 +52,11 @@ class Dicebear < Formula
     assert_path_exists testpath/"avataaars-0.svg"
 
     assert_match version.to_s, shell_output("#{bin}/dicebear --version")
+
+    require "utils/linkage"
+    sharp = libexec.glob("lib/node_modules/dicebear/node_modules/sharp/src/build/Release/sharp-*.node").first
+    libvips = Formula["vips"].opt_lib/shared_library("libvips")
+    assert sharp && Utils.binary_linked_to_library?(sharp, libvips),
+           "No linkage with #{libvips.basename}! Sharp is likely using a prebuilt version."
   end
 end
