@@ -6,12 +6,12 @@ class Odpi < Formula
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "05f95e0a4d38b09840028849feb22d6c93cc6973a2e728ee156f51efa949a6e9"
-    sha256 cellar: :any,                 arm64_sequoia: "f040d00a9fca66140004d8e8e565d0a2bb6aa197036e5fd9d560f9ee7ef1d972"
-    sha256 cellar: :any,                 arm64_sonoma:  "aa444faf14de50a3819af2a5540fd78935e6a2ec0327e7213fb85d4c1b8698ee"
-    sha256 cellar: :any,                 sonoma:        "3c1463f2b8a30b378c19a25ed4264b9bcf6a3817791e2765f2e2b8e9e299ea91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ae52b460b7cd40be01e9b179b64ed3942ad1706c833b040902dc2bc804317dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7d55b5e5d167b8d1f16f80e0f1c407d44e0c7b99d8b5f7ee5203d3d9bab7b24"
+    sha256 cellar: :any,                 arm64_tahoe:   "8a6676b58158a1c7d3748565cc3db376b66aea0172f0a1507843a13f4c4a376c"
+    sha256 cellar: :any,                 arm64_sequoia: "ce314efcbe39364995d9ef2b88f145f81c1648914d5d53a374d9f76c0d03c95b"
+    sha256 cellar: :any,                 arm64_sonoma:  "09803feb041abef5738b31b18350f5e4551947e7b3960170f48671e10a6423a6"
+    sha256 cellar: :any,                 sonoma:        "cbe010ec61585e5b0559f9694001c7f2953d9c5267232ce746fdecc33b858383"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69f242660d2cea8f4ada128a8a7204dfb7595d354cf07a1ba8fa33c46c6e52dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d442d47435cba91054e84e264668f7a55be6a2c3c07618da5671d649fb7a6fc8"
   end
 
   def install
