@@ -1,8 +1,8 @@
 class Harsh < Formula
   desc "Habit tracking for geeks"
   homepage "https://github.com/wakatara/harsh"
-  url "https://github.com/wakatara/harsh/archive/refs/tags/0.11.6.tar.gz"
-  sha256 "f978708b70f0189b662f470ef3e2e932cfec3f3fcf63f7cc0cb41799b4cac3db"
+  url "https://github.com/wakatara/harsh/archive/refs/tags/0.11.8.tar.gz"
+  sha256 "2b860af22ef69b4a7fdf9b27670eb5fbe7891c346b7615f97fb0618182ca14db"
   license "MIT"
   head "https://github.com/wakatara/harsh.git", branch: "master"
 
