@@ -2,10 +2,10 @@ class Kubekey < Formula
   desc "Installer for Kubernetes and / or KubeSphere, and related cloud-native add-ons"
   homepage "https://kubesphere.io"
   url "https://github.com/kubesphere/kubekey.git",
-      tag:      "v4.0.0",
-      revision: "0381d075cf2b56583060b2f9ed26f8c743eb6ce7"
+      tag:      "v4.0.1",
+      revision: "423d9f1b33010a16ec848f12cc6c4dce25bfcf26"
   license "Apache-2.0"
-  head "https://github.com/kubesphere/kubekey.git", branch: "feature-gitops"
+  head "https://github.com/kubesphere/kubekey.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
