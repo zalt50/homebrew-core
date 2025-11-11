@@ -9,12 +9,13 @@ class Watchman < Formula
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "704cb72c432146daadb1e7d3603cd2b08b1d6c074a1b116d8f56cb90b25c5e9a"
-    sha256 cellar: :any,                 arm64_sequoia: "f93d6cd64c26aefc78a0b4e0203ec33b7c564316da0cc19d3d6bec81b0232aec"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ca41c86f33a49f5c2cf508f94b21de99714b7c65880d3b062e76c51c2c4a859"
-    sha256 cellar: :any,                 sonoma:        "ace9db8c26f57ae155b523802ef9bbcbcbf684d9acdb1148d8cea67d7da48362"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4efe98c45c1801cf33fd80fed2cb6883138e77fc0b21439d13950fe72e7bf15d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33932b33ccbe715d8ecd2dd8b5feeb20344439793e6cb6b187846f1070fcc73f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d0fa92a57ebcfcb98e87238b4833404f84da20ecdd53679af115286ee39cd3d1"
+    sha256 cellar: :any,                 arm64_sequoia: "87afa044f95bf3f032c5569944a6a437ed2f4928aea639906c54953151bc327c"
+    sha256 cellar: :any,                 arm64_sonoma:  "694ec63d803587eb0cae52a7b79c6a7214f61e2ec24e67d4df2421d5aad381ec"
+    sha256 cellar: :any,                 sonoma:        "f621361e1aa3e0539f3eeb20c9d35592ff89491728650e4b2a1537a8469f7cb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "998d1dd062badef4f11ccdb9c58c7f9fe5d805508afb65de9f0f873f4dd5f393"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b9aacb6124832c7b2bdbb92b03827f37bf03f1ca3ca5852659cda5577b04469"
   end
 
   depends_on "cmake" => :build
@@ -55,6 +56,7 @@ class Watchman < Formula
       -DWATCHMAN_VERSION_OVERRIDE=#{version}
       -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
       -DWATCHMAN_STATE_DIR=
+      -DWATCHMAN_USE_XDG_STATE_HOME=ON
       -DCMAKE_CXX_STANDARD=20
     ]
     # Avoid overlinking with libsodium and mvfst
