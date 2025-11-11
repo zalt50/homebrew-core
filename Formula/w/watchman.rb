@@ -55,6 +55,7 @@ class Watchman < Formula
       -DWATCHMAN_VERSION_OVERRIDE=#{version}
       -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
       -DWATCHMAN_STATE_DIR=
+      -DWATCHMAN_USE_XDG_STATE_HOME=ON
       -DCMAKE_CXX_STANDARD=20
     ]
     # Avoid overlinking with libsodium and mvfst
