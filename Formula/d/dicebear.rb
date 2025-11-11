@@ -6,14 +6,13 @@ class Dicebear < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "22e8bc01e12dddc25982aecfe7436c0c0ac53299191039060b2d1b2f440ac6a0"
-    sha256 cellar: :any,                 arm64_sequoia: "6cd2e65e517ada31b350201063bab3ec51163447732ba73541e68158d565b1ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "6cd2e65e517ada31b350201063bab3ec51163447732ba73541e68158d565b1ae"
-    sha256 cellar: :any,                 arm64_ventura: "6cd2e65e517ada31b350201063bab3ec51163447732ba73541e68158d565b1ae"
-    sha256 cellar: :any,                 sonoma:        "bec6992b45e1ace0b2862d90c2764aaf21d270227e652d05620078e3ec8e4f9a"
-    sha256 cellar: :any,                 ventura:       "bec6992b45e1ace0b2862d90c2764aaf21d270227e652d05620078e3ec8e4f9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7828cf098c33bd975cad5f657ec7cdf4faad2c78cacf65293f0713fc42e198ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45af81803b2bf97e8d4f50f64ba27a817f88b9b5cad916fa22bbf9232a78dc38"
+    rebuild 1
+    sha256                               arm64_tahoe:   "1b976223644c8e073419d9faab43f37ea04cf575b2ffc6273335c9b3bdbdb05c"
+    sha256                               arm64_sequoia: "8b3bbe8b750c33981cd3682062ac7842bea26e9d996dc61ed42478b454421b34"
+    sha256                               arm64_sonoma:  "c7a5f82835088e08c93ee24cc708c74d0757a487ab611725442a485d990b5e14"
+    sha256                               sonoma:        "cdffe3248922f05d9a5374bcd987bfc6216cf2d4ff5c73e3040f14040f99e464"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22a9186779dfb53b76481329c4d8888185ebb087d5c1af3b4094272a05bb24dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "303a1d6e868ebe7d9b6d46eef48cbc17b5dd9d5d58338a804a8c659535536aa9"
   end
 
   depends_on "pkgconf" => :build
