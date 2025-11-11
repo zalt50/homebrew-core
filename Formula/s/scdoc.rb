@@ -1,11 +1,9 @@
 class Scdoc < Formula
   desc "Small man page generator"
   homepage "https://sr.ht/~sircmpwn/scdoc/"
-  url "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.3.tar.gz"
-  sha256 "4c5c6136540384e5455b250f768e7ca11b03fdba1a8efc2341ee0f1111e57612"
+  url "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.4.tar.gz"
+  sha256 "e1a9c2000f855123a1a50c8f897073e0ee95fc41787431efe3864c2f1c2e7092"
   license "MIT"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "302458b7a30126590298d20f73b027e7b32663d4ec79e7d5d8f40fc455889afa"
