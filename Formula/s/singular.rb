@@ -1,11 +1,10 @@
 class Singular < Formula
   desc "Computer algebra system for polynomial computations"
   homepage "https://www.singular.uni-kl.de/"
-  url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/4-4-1/singular-4.4.1p4.tar.gz"
-  version "4.4.1p4"
-  sha256 "454fdc7127875dd232bf15035514cb5a6043c8d9a2f7fc50320c987ba4581751"
+  url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/4-4-1/singular-4.4.1p5.tar.gz"
+  version "4.4.1p5"
+  sha256 "bce5a40bd10b6e9fe991de97e6284f62cdb566c8aef4b2836b4d1307eb7d9edf"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/"
