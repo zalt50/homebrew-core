@@ -27,6 +27,7 @@ class Fastfetch < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "vulkan-loader" => :build
+  depends_on "yyjson"
 
   uses_from_macos "sqlite" => :build
   uses_from_macos "zlib" => :build
@@ -50,8 +51,12 @@ class Fastfetch < Formula
     args = %W[
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DBUILD_FLASHFETCH=OFF
-      -DENABLE_SYSTEM_YYJSON=OFF
+      -DENABLE_SYSTEM_YYJSON=ON
     ]
+    if HOMEBREW_PREFIX.to_s != HOMEBREW_DEFAULT_PREFIX
+      # CMake already adds default Homebrew prefixes to rpath.
+      args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
+    end
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
