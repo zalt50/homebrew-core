@@ -1,17 +1,17 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
   homepage "https://github.com/mongodb/kingfisher"
-  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v1.63.0.tar.gz"
-  sha256 "34845403e0a3c75d13e67732cd57f17b07e9cbe576b0381d262eb5c9658bdc61"
+  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v1.63.1.tar.gz"
+  sha256 "93b8fbe1c86a0d811b803f004f25b4bef22c3ec03b15155a461c4e8b1848cce8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99bc62466c3f7e0ec45835583b55beac01039bab318f19d3d340eb9a2aca2e08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f84159ce4040af492c5a909e338ba49672e7faada27cab7eceda78d3869a6f56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1e33ff15dde228d2ea6082184c59906626c552a8475f0bf195a19a6dbf67130"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b2983b11eceb8c5e5cdf113c4d1fc196252702c50b4c77cdcf1e6ba970bb14f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1027c5f346165e304b10ce1e05bc6e062bae5ee38020d424f03a80b897f5a27d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a80e7ed247a32f8d9ac92d51ac33ae052d400a29b368e6f0f711c7cde401f86a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e29875d7bd4f889b81b094c9d57d8df75c79d215b17121362d94146c72fdce88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21ce563cf4a75194a9f4bcd3d2ba90694250dea97b6716355367a5bdfd7f617c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94b8e55a4d7f91187588076427df2c589a8349dc15ec0ac9f0afb13b1c439c35"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2309c13f305daac81c11203819f5fdd41583c232e6312dbe66552b1b4a86d01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10cceba702f1813a10548b8e7d38cfba72cbc73e530ad7ef79633395c1e368ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "533f6b507737c28e02c1dd20fc3e60f53105c394404cb0f08b485cbd05234976"
   end
 
   depends_on "boost" => :build
