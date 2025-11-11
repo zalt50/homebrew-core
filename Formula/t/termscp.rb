@@ -1,8 +1,8 @@
 class Termscp < Formula
   desc "Feature rich terminal file transfer and explorer"
   homepage "https://termscp.veeso.dev/"
-  url "https://github.com/veeso/termscp/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "3791b4c4b63dd4ea31b6e4d7be754edf9441c5a84c9e7be878463411c4337588"
+  url "https://github.com/veeso/termscp/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "0f5316b43335896012c18cba20fa40cbf4eb2e53961fbfa29d560318ae0eaf74"
   license "MIT"
   head "https://github.com/veeso/termscp.git", branch: "main"
 
@@ -20,12 +20,12 @@ class Termscp < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
+  depends_on "samba"
 
   uses_from_macos "zlib"
 
   on_linux do
     depends_on "dbus"
-    depends_on "samba"
   end
 
   def install
