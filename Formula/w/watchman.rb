@@ -48,14 +48,11 @@ class Watchman < Formula
     #       RPATHs configured, so will need to be installed and relocated manually
     #       if they are built as shared libraries. They're not used by any other
     #       formulae, so let's link them statically instead. This is done by default.
-    #
-    # Use the upstream default for WATCHMAN_STATE_DIR by unsetting it.
     args = %W[
       -DENABLE_EDEN_SUPPORT=ON
       -DPython3_EXECUTABLE=#{which("python3.14")}
       -DWATCHMAN_VERSION_OVERRIDE=#{version}
       -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
-      -DWATCHMAN_STATE_DIR=
       -DWATCHMAN_USE_XDG_STATE_HOME=ON
       -DCMAKE_CXX_STANDARD=20
     ]
