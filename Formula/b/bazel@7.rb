@@ -1,8 +1,8 @@
 class BazelAT7 < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://github.com/bazelbuild/bazel/releases/download/7.7.0/bazel-7.7.0-dist.zip"
-  sha256 "277946818c77fff70be442864cecc41faac862b6f2d0d37033e2da0b1fee7e0f"
+  url "https://github.com/bazelbuild/bazel/releases/download/7.7.1/bazel-7.7.1-dist.zip"
+  sha256 "6181b3570c2f657d989b1141fb0c1a08eb5f08106ca577dc7dc52e7d0238379a"
   license "Apache-2.0"
 
   livecheck do
