@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/a4/e4/9349754fcfe8e377a9600484624cdb38aba95fd6b46f17282bc8659eec15/gamdl-2.7.3.tar.gz"
-  sha256 "3f5d45900e4f11a6bb2478052849396414b8c9cd1c342db43f58e08c15d72157"
+  url "https://files.pythonhosted.org/packages/5c/3a/3d89f32239607da9f8124b865d918987dbabc182c9fe0b3a8e17f5180ef9/gamdl-2.7.4.tar.gz"
+  sha256 "ba8bbb6d441ebac4f6f8e4bfb541f38f3756378b484f6378f68806071db07757"
   license "MIT"
 
   bottle do
@@ -147,8 +147,8 @@ class Gamdl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/08/70/cf4bd6c837ab0a709040888caa70d166aa2dfbb5018d1d5c983bf0b50254/yt_dlp-2025.10.22.tar.gz"
-    sha256 "db2d48133222b1d9508c6de757859c24b5cefb9568cf68ccad85dac20b07f77b"
+    url "https://files.pythonhosted.org/packages/cf/41/53ad8c6e74d6627bd598dfbb8ad7c19d5405e438210ad0bbaf1b288387e7/yt_dlp-2025.11.12.tar.gz"
+    sha256 "5f0795a6b8fc57a5c23332d67d6c6acf819a0b46b91a6324bae29414fa97f052"
   end
 
   def install
@@ -159,7 +159,7 @@ class Gamdl < Formula
     assert_match version.to_s, shell_output("#{bin}/gamdl --version")
 
     touch testpath/"cookies.txt"
-    assert_match "'./cookies.txt' does not look like a Netscape format cookies file",
+    assert_match "cookies.txt' does not look like a Netscape format cookies file",
                  shell_output("#{bin}/gamdl fake_url 2>&1", 1)
   end
 end
