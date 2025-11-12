@@ -7,12 +7,12 @@ class Pyrefly < Formula
   head "https://github.com/facebook/pyrefly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d04ccd96f88549e5c9d93034ef43df99c034af56c0ddc2bac76eb843bf215b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51a312fcf97531e514d15294438eafd80fe5268b3d2fc396899f0ac9d0cc2469"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba5c4571dca48a2956d7dcddac54eadeda4d47c8e67c60b647e60e4e91efbb73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b8bb6d3e38e0ec36dbdd5a3635336a73c3af18343e897f21d22fa917faf5870"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68203e6424672006b3db2c7a7008e8d5a1ff4328760faae3d87b9a1badf86dd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05caef4abad3cbf85a35daa133575718b75b3bf9afaf98391bf77c59a40648ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c4d751710465b4a5c698b7f091d68b002a3438ca842300f39e61bbc73c97bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01206fa51c0388db0f65eaccba7615746925b162d772a1c0724230abe5efde04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88f20916cfb9aebe3b04fcc0ac2eed6cd68648a6cde5e0dc27cf61fd588ea806"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e702ce3cb4144b7e95db78ffea9eac32bb028468893d046a568e32f121eecb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fa392c12c31fa48362a4604790025ae5a28096c8c92eed9e6c5155de5a040da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d62af9906415d44a4202f203376465279a8c233607073d1bf8fdc22382b5831"
   end
 
   depends_on "rust" => :build
