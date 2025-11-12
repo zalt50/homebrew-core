@@ -1,11 +1,10 @@
 class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
-  homepage "https://mavsdk.mavlink.io"
+  homepage "https://mavsdk.mavlink.io/main/en/index.html"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v3.10.2",
-      revision: "fb2b989b5b9849358bf9c2cb082f496d55edf173"
+      tag:      "v3.11.0",
+      revision: "554e28378fe79b83216a128de148c2af4fe6ec20"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url :stable
@@ -58,7 +57,7 @@ class Mavsdk < Formula
     # Regenerate files to support newer protobuf
     system "tools/generate_from_protos.sh"
 
-    %w[mavlink picosha2 libmavlike].each do |dep|
+    %w[mavlink picosha2 libevents libmavlike].each do |dep|
       system "cmake", "-S", "third_party/#{dep}", "-B", "build_#{dep}", *std_cmake_args(install_prefix: libexec)
       system "cmake", "--build", "build_#{dep}"
       system "cmake", "--install", "build_#{dep}"
