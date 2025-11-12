@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/a6/43/b826e0ecf026a64001f8a002c8bf300741b5ff65c9298595bcb45f882679/kimi_cli-0.52.tar.gz"
-  sha256 "9e0623483debe28667c4fe858beb05e3aca1fda3ef3e1ad70ddeaf1034d972c6"
+  url "https://files.pythonhosted.org/packages/15/07/aa99d237d1d39f662494d42c1b1faae7b0cb4f5ec5a5ccbb87ab61f1345c/kimi_cli-0.53.tar.gz"
+  sha256 "6d47d8ab562c1c0907d7dc04c971a3accba096a2e57baf0591df372af1ca55c5"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -59,8 +59,8 @@ class KimiCli < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/49/07/61f3ca8e69c5dcdaec31b36b79a53ea21c5b4ca5e93c7df58c71f43bf8d8/anthropic-0.72.0.tar.gz"
-    sha256 "8971fe76dcffc644f74ac3883069beb1527641115ae0d6eb8fa21c1ce4082f7a"
+    url "https://files.pythonhosted.org/packages/dd/f3/feb750a21461090ecf48bbebcaa261cd09003cc1d14e2fa9643ad59edd4d/anthropic-0.72.1.tar.gz"
+    sha256 "a6d1d660e1f4af91dddc732f340786d19acaffa1ae8e69442e56be5fa6539d51"
   end
 
   resource "anyio" do
@@ -99,8 +99,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/34/ab/67bd1b010aaa09c6b627a535cbb0c6453920c290df83cbdccb0b097227d9/cyclopts-4.2.2.tar.gz"
-    sha256 "d5eb7d5ab688f8e86bc6fc7b8ab85951b2fe34aebcf1a48c4c9a6b43c14cb78b"
+    url "https://files.pythonhosted.org/packages/82/2a/c06f1346079dbeddf5307bc7f4a190f26d2692d7420042d2fef21b9513e4/cyclopts-4.2.3.tar.gz"
+    sha256 "5949d5d0fc8f269547bdc507985d4d973cf6794ab781bf0600d5994eda29a471"
   end
 
   resource "dateparser" do
@@ -209,8 +209,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/d0/4e/83e6a6b6982747602dddfbb6be9a238ff8f0575d08ae7d35f0d3bb837e22/kosong-0.22.0.tar.gz"
-    sha256 "bc78334338e216379c8f7980ecbc87f68d8175b32a2b963ff367dfa0ecb274be"
+    url "https://files.pythonhosted.org/packages/43/a7/ccd25127f814ce97fd2c0bf9ab590550171973f86bb8f938e2503788655f/kosong-0.24.0.tar.gz"
+    sha256 "5ecb5cab7bb99057565fa54e05201346dcdecfe5c9d2c21573367ac4cc3d35db"
   end
 
   resource "lazy-object-proxy" do
