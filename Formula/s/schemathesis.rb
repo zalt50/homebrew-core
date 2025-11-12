@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/22/84/edc1ca80076f9356a4ca854393906fa14e67fa81ae8c53194042e6e8c1c2/schemathesis-4.4.4.tar.gz"
-  sha256 "04a8e495b458734e7fc61caa347a047f257db00af411d78531a318dcf7128179"
+  url "https://files.pythonhosted.org/packages/56/84/cb7feba2b3faa8107c9c3b8695deb33845c32b1b159ddb5cfbe86f1d8f9c/schemathesis-4.5.0.tar.gz"
+  sha256 "182303f19917bfe0aed55ea5917541a97ff3ee5def75fe413eea9b2f4850a408"
   license "MIT"
 
   bottle do
@@ -171,8 +171,8 @@ class Schemathesis < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/a3/5c/00a0e072241553e1a7496d638deababa67c5058571567b92a7eaa258397c/pytest-8.4.2.tar.gz"
-    sha256 "86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01"
+    url "https://files.pythonhosted.org/packages/da/1d/eb34f286b164c5e431a810a38697409cca1112cee04b287bb56ac486730b/pytest-9.0.0.tar.gz"
+    sha256 "8f44522eafe4137b0f35c9ce3072931a788a21ee40a2ed279e817d3cc16ed21e"
   end
 
   resource "pytest-subtests" do
