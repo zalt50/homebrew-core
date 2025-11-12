@@ -1,9 +1,9 @@
 class M68kElfBinutils < Formula
   desc "GNU Binutils for m68k-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-  sha256 "1393f90db70c2ebd785fb434d6127f8888c559d5eeb9c006c354b203bab3473e"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.1.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.1.tar.bz2"
+  sha256 "860daddec9085cb4011279136fc8ad29eb533e9446d7524af7f517dd18f00224"
   license "GPL-3.0-or-later"
 
   livecheck do
