@@ -3,8 +3,8 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/c3/fd/c2bd16532a2e5ad3318d62b0295ca9274ac3e09f795d6e2adff1174663c0/check_jsonschema-0.34.1.tar.gz"
-  sha256 "024ca6b1d645fdc33025f915ea4aa72a84df002b12209ee172a7bfd089f34832"
+  url "https://files.pythonhosted.org/packages/e4/ab/6dd807d9e6fd6bdd92801a7116de974563dff5f17fadfcba8f5ebc4919a3/check_jsonschema-0.35.0.tar.gz"
+  sha256 "e1078b6e42c5e05c1a807252ac5b26b8fa2c826bad57fe9f5dd15ea27d40e16e"
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
@@ -133,8 +133,8 @@ class CheckJsonschema < Formula
   end
 
   resource "webcolors" do
-    url "https://files.pythonhosted.org/packages/7b/29/061ec845fb58521848f3739e466efd8250b4b7b98c1b6c5bf4d40b419b7e/webcolors-24.11.1.tar.gz"
-    sha256 "ecb3d768f32202af770477b8b65f318fa4f566c22948673a977b00d589dd80f6"
+    url "https://files.pythonhosted.org/packages/1d/7a/eb316761ec35664ea5174709a68bbd3389de60d4a1ebab8808bfc264ed67/webcolors-25.10.0.tar.gz"
+    sha256 "62abae86504f66d0f6364c2a8520de4a0c47b80c03fc3a5f1815fedbef7c19bf"
   end
 
   def install
