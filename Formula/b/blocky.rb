@@ -1,8 +1,8 @@
 class Blocky < Formula
   desc "Fast and lightweight DNS proxy as ad-blocker for local network"
   homepage "https://0xerr0r.github.io/blocky/"
-  url "https://github.com/0xerr0r/blocky/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "c8d333ac554f69a90111dfedbf4d5abce7da97fc54221025a580a5e094ff5d84"
+  url "https://github.com/0xerr0r/blocky/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "959b8182a4a4cdb0d58e86cf0417d092105b3023914d723cd72e09740839007a"
   license "Apache-2.0"
   head "https://github.com/0xerr0r/blocky.git", branch: "main"
 
