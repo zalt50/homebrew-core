@@ -1,17 +1,17 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.0.55.tgz"
-  sha256 "1193162c390d75be2fb9372bf16d3ed7f8381099871cc0cabaacfe900e5428b6"
+  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.0.58.tgz"
+  sha256 "cfbb397f5eb7488430af7aff855df4412a720f789d152a42fedae340ff7da971"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "46522d30877a51badf48f296bc25480d68a80af646c5789c3efc29ce66a666a9"
-    sha256                               arm64_sequoia: "46522d30877a51badf48f296bc25480d68a80af646c5789c3efc29ce66a666a9"
-    sha256                               arm64_sonoma:  "46522d30877a51badf48f296bc25480d68a80af646c5789c3efc29ce66a666a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87b83988937a785608bee2ee873e7cff5ddf701aefe335da412e6f46b492bfae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "423f15a5c8d8a2dbaebba3ba07c76dbd1a1b7d4c02916e0c135f125e0dd269ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9d7bfbe88f68506527e1f0794b3a4c5b5caca646e3e8ac61173c75cf439dce3"
+    sha256                               arm64_tahoe:   "e42b2f4fbb23612b73a27fc169966b11ed5056ca1a05ff174ff19d54687f9429"
+    sha256                               arm64_sequoia: "e42b2f4fbb23612b73a27fc169966b11ed5056ca1a05ff174ff19d54687f9429"
+    sha256                               arm64_sonoma:  "e42b2f4fbb23612b73a27fc169966b11ed5056ca1a05ff174ff19d54687f9429"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f669169cb6cd49379802c055755cac1190b8909812dce9217efb02e4a170c8df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b57231a3a2990bfc55c6e53e7f7caffd0dea2615782cc4d0cd8fd33bd912162d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b93a779de78e7f7d7830be3eebd151c335f6e1c41e54c92034fc32282b4bde78"
   end
 
   depends_on "node"
@@ -19,6 +19,15 @@ class Opencode < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove binaries for other architectures, `-musl`, `-baseline`, and `-baseline-musl`
+    arch = Hardware::CPU.arm? ? "arm64" : "x64"
+    os = OS.linux? ? "linux" : "darwin"
+    (libexec/"lib/node_modules/opencode-ai/node_modules").children.each do |d|
+      next unless d.directory?
+
+      rm_r d if d.basename.to_s != "opencode-#{os}-#{arch}"
+    end
   end
 
   test do
