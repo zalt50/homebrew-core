@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/22/84/edc1ca80076f9356a4ca854393906fa14e67fa81ae8c53194042e6e8c1c2/schemathesis-4.4.4.tar.gz"
-  sha256 "04a8e495b458734e7fc61caa347a047f257db00af411d78531a318dcf7128179"
+  url "https://files.pythonhosted.org/packages/56/84/cb7feba2b3faa8107c9c3b8695deb33845c32b1b159ddb5cfbe86f1d8f9c/schemathesis-4.5.0.tar.gz"
+  sha256 "182303f19917bfe0aed55ea5917541a97ff3ee5def75fe413eea9b2f4850a408"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2acb1be47e9c607a95c3ef021acd019e65420bee301d7e88c86206fc40bb1bb6"
-    sha256 cellar: :any,                 arm64_sequoia: "e7beb27f8cee3accdf0140c37da9aafee2a7a9bc0f1e04e87a1e63af6c783bd2"
-    sha256 cellar: :any,                 arm64_sonoma:  "27cbb78e0c1b57d96e7885c8e519f68c76f84613037dd84ce2a3f36caab55051"
-    sha256 cellar: :any,                 sonoma:        "9bd7ede8323f63ee366c26435cb79669fd18aa63b9dd2d8d54e478272b0af172"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3c82975499d98ab6e51db7a1d4390f403c2aa210028a91a4c61b1c60c60c2ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb439745cddd5fdc237f4643297831e8f3c3f7c57563bb04ebf125b804909ebf"
+    sha256 cellar: :any,                 arm64_tahoe:   "22262b67f7d4be88705530a8881f6758d3e658fcdef65dce50d87177788d05e9"
+    sha256 cellar: :any,                 arm64_sequoia: "44e135838ffe71e8f8dba8990f9ebb80950c78c89158f0c22fa905c6bf2ea0a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "02b3c6df36ee03eda9e2c30c8005b11cbc8e1882e84c65806f1507a3fe06cd2e"
+    sha256 cellar: :any,                 sonoma:        "fc825a7480d673950f4354c00e366f0c35a84d7c171591e370ecbabbebe069e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "533fc703f2f394e9d3fb09a81febff5d6ff7794155e061fb7a071ecff4f24418"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbb68104e4b9fbb20a204c777a89fdf47caa68f43e3363dd1fb9c63f021eef9b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -171,8 +171,8 @@ class Schemathesis < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/a3/5c/00a0e072241553e1a7496d638deababa67c5058571567b92a7eaa258397c/pytest-8.4.2.tar.gz"
-    sha256 "86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01"
+    url "https://files.pythonhosted.org/packages/da/1d/eb34f286b164c5e431a810a38697409cca1112cee04b287bb56ac486730b/pytest-9.0.0.tar.gz"
+    sha256 "8f44522eafe4137b0f35c9ce3072931a788a21ee40a2ed279e817d3cc16ed21e"
   end
 
   resource "pytest-subtests" do
