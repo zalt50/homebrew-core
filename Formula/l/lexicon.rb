@@ -3,18 +3,18 @@ class Lexicon < Formula
 
   desc "Manipulate DNS records on various DNS providers in a standardized way"
   homepage "https://github.com/dns-lexicon/dns-lexicon"
-  url "https://files.pythonhosted.org/packages/15/2a/e798730a6d57beb4a5be210cc5ee3abb5f08aba512ef9bc4ea32a5228af3/dns_lexicon-3.22.0.tar.gz"
-  sha256 "980fe68c9eff052c57fe8ead31f9445e8cc30c4e9d20213e8630858ec9cf6b32"
+  url "https://files.pythonhosted.org/packages/6e/f5/23d19dc37eb3891e0986031ba85c337666e217f368014cc9e147e7adfa39/dns_lexicon-3.23.0.tar.gz"
+  sha256 "a729a3883f04a21918ed4331ded9f78bd132f5c520ffd74b645de9ad9382cf26"
   license "MIT"
   head "https://github.com/dns-lexicon/dns-lexicon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bcbc898d00d8d63f4ac9c1fd8445016b921003f8f37910dc8ae145aa9cbb44a3"
-    sha256 cellar: :any,                 arm64_sequoia: "74b51b00d8ae92694d772489b9cc9b5a589ba3f48f03925fe9dcd2a6b9ec3e81"
-    sha256 cellar: :any,                 arm64_sonoma:  "21c6bb4a79b40de8dddf44c3ce2482e9a3e0e3791bee9559b2feedd9ab78a651"
-    sha256 cellar: :any,                 sonoma:        "57497a402e3fbe0b3089efeb3ffc5128dd421fc88de2f1886319033f73fd3118"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95a73b544ea7f678277a1dc5a9f71d73624e3fb34950e55959e66b78f9b0d1ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0107b03afeea7a3640484bd6e81d93e91b82994d1e0653cf19f887952ff89f0"
+    sha256 cellar: :any,                 arm64_tahoe:   "3d837c4b80851c821bd0425e1f3d04ce12d866b3df9fac3357d98f93c6ff8a96"
+    sha256 cellar: :any,                 arm64_sequoia: "89f271b46f02fd7c06eb9263a9abc4f3aac48b9c3bf179826c5b177048400b28"
+    sha256 cellar: :any,                 arm64_sonoma:  "697529e71361f0ec3e77a763bd56f8db2822051b68fcaf77650311f8ff6350fc"
+    sha256 cellar: :any,                 sonoma:        "d56035de97c5c8b7b7024d13d03b10c9b5de428744843ba5a8566e5763070053"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f31a7d2f13a2bbbd55760f34076ee04fd443da09f7bc641271775d43eb8aff0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b99ffe151a7100a9423c8b9425543fb3f2f4f17f4a90700ab2249b8c5a892bb0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -39,13 +39,13 @@ class Lexicon < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/37/12/d5ac34e0536e1914dde28245f014a635056dde0427f6efa09f104d7999f4/boto3-1.40.70.tar.gz"
-    sha256 "191443707b391232ed15676bf6bba7e53caec1e71aafa12ccad2e825c5ee15cc"
+    url "https://files.pythonhosted.org/packages/2e/d8/c316637525560e01cbf048fd88f29be73214411ad26e743f3b1950df76f0/boto3-1.40.71.tar.gz"
+    sha256 "6d38e0250154552658be92a62cd48adf8ca8fd4abc181fb52d13371b53179503"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/35/c1/8c4c199ae1663feee579a15861e34f10b29da11ae6ea0ad7b6a847ef3823/botocore-1.40.70.tar.gz"
-    sha256 "61b1f2cecd54d1b28a081116fa113b97bf4e17da57c62ae2c2751fe4c528af1f"
+    url "https://files.pythonhosted.org/packages/5f/2f/7e5b9a0f9f9c958e1b70734be9b5cbcef64a1bfa9a570bcaafea0c997840/botocore-1.40.71.tar.gz"
+    sha256 "7ed28c2e092fc0d67fbfba818fbdccc92426b452cc936bf034db6de717e0d068"
   end
 
   resource "charset-normalizer" do
