@@ -7,12 +7,12 @@ class Chdig < Formula
   head "https://github.com/azat/chdig.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9731d8efb07fc6d06bc5b259da60ea94d44292a360a48ac4d601baf0d2cd1a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3856626060f6c5587a8e459e5a9289c067d3fb1bff87690f9880b8c7cee3a06b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f446ed4cb5826e166aae1ca595d0f892622def2024dbea9b762323867970468"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2e48785e9af0fd527e23e30b86454407d3ab563e30e008b37b90cd39f213b38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ebbcddd73ee1867ea42961109c6fc988f62890f5460c609af35bfcf8f917c18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17fad0142bad85ed4a58f4b474f8d8ab2432f24aeb62cef027ae632d802ff391"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39910eedc4660dafd48ba30d6d4a6ebb352b756a617535b3d056406c0a987df5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1080f54b7d4885e10a1ad941b704d40b67cf97e23db944960427e40017a4dbf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "052bffd1ca78a0089b6523cf040476da25f0fecaafc07a5f99827d7f5a5972bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4dce2741c885ced576be6bd8992e3a58b06f5f31191f07893e40e7ad65fd7861"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4423e02a9f19f9bbbcd830a62ea72c392181fb00acecbf347744e0096b93acc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae1564ceb97c3987ffeee7585eb864a8653c05fc8e8458f48e91947c8a7b741f"
   end
 
   depends_on "rust" => :build
