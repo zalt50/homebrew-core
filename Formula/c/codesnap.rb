@@ -1,8 +1,8 @@
 class Codesnap < Formula
   desc "Generates code snapshots in various formats"
   homepage "https://github.com/codesnap-rs/codesnap"
-  url "https://github.com/codesnap-rs/codesnap/archive/refs/tags/v0.12.10.tar.gz"
-  sha256 "b5cecb80f845730333f7f6ea06f167b575a85481908e8852de9b7f3befda7cb0"
+  url "https://github.com/codesnap-rs/codesnap/archive/refs/tags/v0.12.11.tar.gz"
+  sha256 "67ea9342913f4c974c0f6dabfe039509d3ebc4ed671196848a8f7474c7cf5a42"
   license "MIT"
   head "https://github.com/codesnap-rs/codesnap.git", branch: "main"
 
