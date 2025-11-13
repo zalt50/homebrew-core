@@ -3,8 +3,6 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-25.2.6.tar.xz"
-  sha256 "361c97e8afa5fe20141c5362c5b489040751e12861c186a16c621a2fb182fc42"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -20,8 +18,25 @@ class Mesa < Formula
     { "GPL-1.0-or-later" => { with: "Linux-syscall-note" } }, # include/drm-uapi/sync_file.h
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # include/drm-uapi/{d3dkmthk.h,dma-buf.h,etnaviv_drm.h}
   ]
-  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
+
+  stable do
+    url "https://archive.mesa3d.org/mesa-25.3.0.tar.xz"
+    sha256 "0fd54fea7dbbddb154df05ac752b18621f26d97e27863db3be951417c6abe8ae"
+
+    on_macos do
+      # both patches are from https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/38429
+      patch do
+        url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/e70c5c722f403462cec2eb9496d4b70d2eb299a0.diff"
+        sha256 "f84670115455500fbc7dfbbf6d47fe651979e133b39285b13a67f328e11a052e"
+      end
+
+      patch do
+        url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/18c025b189852ef0b0f9b428fd7ec748004f1186.diff"
+        sha256 "156ebff695a4c498db3fa0be13593e97a568b86d9c3a3c2db089217c39563981"
+      end
+    end
+  end
 
   bottle do
     sha256 arm64_tahoe:   "fe5460fa333c2872772c0a80b340d87cd220d80ac5c0f0d00f98347749cdc82f"
@@ -69,7 +84,6 @@ class Mesa < Formula
     depends_on "directx-headers" => :build
     depends_on "gzip" => :build
     depends_on "libva" => :build
-    depends_on "libvdpau" => :build
     depends_on "pycparser" => :build
     depends_on "valgrind" => :build
     depends_on "wayland-protocols" => :build
@@ -150,7 +164,7 @@ class Mesa < Formula
       %W[
         -Dgallium-drivers=llvmpipe,zink
         -Dmoltenvk-dir=#{Formula["molten-vk"].prefix}
-        -Dtools=etnaviv,glsl,nir,nouveau,imagination,dlclose-skip
+        -Dtools=etnaviv,glsl,nir,nouveau,dlclose-skip
         -Dvulkan-drivers=swrast
         -Dvulkan-layers=intel-nullhw,overlay,screenshot,vram-report-limit
       ]
@@ -164,7 +178,6 @@ class Mesa < Formula
         -Dgallium-drivers=#{drivers}
         -Dgallium-extra-hud=true
         -Dgallium-va=enabled
-        -Dgallium-vdpau=enabled
         -Dgbm=enabled
         -Dgles1=enabled
         -Dgles2=enabled
