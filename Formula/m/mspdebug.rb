@@ -1,8 +1,8 @@
 class Mspdebug < Formula
   desc "Debugger for use with MSP430 MCUs"
   homepage "https://dlbeer.co.nz/mspdebug/"
-  url "https://github.com/dlbeer/mspdebug/archive/refs/tags/v0.25.tar.gz"
-  sha256 "347b5ae5d0ab0cddb54363b72abe482f9f5d6aedb8f230048de0ded28b7d1503"
+  url "https://github.com/dlbeer/mspdebug/archive/refs/tags/v0.26.tar.gz"
+  sha256 "9e2c1562adeee79c73d75f0521032b01543163772f5ec30a7d6e9f6d708214b8"
   license "GPL-2.0-or-later"
   head "https://github.com/dlbeer/mspdebug.git", branch: "master"
 
