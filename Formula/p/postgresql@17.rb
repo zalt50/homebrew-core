@@ -11,12 +11,12 @@ class PostgresqlAT17 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "02c97673158525d330bcb9167ef65e58ca19ef2cd79e3b2f2e361b9320f0ad2c"
-    sha256 arm64_sequoia: "7602514fa232f3969202f375f95410ad4510436bb582e7878c489730cb03c142"
-    sha256 arm64_sonoma:  "977db4ce35796157b8e9c8b51b578aa439805dc5b4c0a862a6549deea94edf85"
-    sha256 sonoma:        "13b831b5499821444fa168c5fbb4964cf2ab4bc3a4daa53dc1cd3f3cb2c99124"
-    sha256 arm64_linux:   "65029f71d229eb4c1f0870ddbf0d5d700d6c50bcf7a83f0c5a55bb5325af2c8f"
-    sha256 x86_64_linux:  "70a086f9154feca10467ddb4d21a65f0b8b44a12cc32a3390b7ab6fafdb0ee6c"
+    sha256 arm64_tahoe:   "fe0e1c07ec222d8462c9d3781df02c891ace6a30a972493213713ac4463d6b1f"
+    sha256 arm64_sequoia: "dc25244bf06569a8886bb2d0dd4d361f6ca6ffc4040208a4a2f67d29c1393447"
+    sha256 arm64_sonoma:  "64e75b4b51670974d1a4ca75f1f67ced14c4a8d65be998f95db93d40be40f51a"
+    sha256 sonoma:        "ecd08b49055c62ff3682d21e0f24f60873ec79f90d66a8658cb9f6264c35eafc"
+    sha256 arm64_linux:   "913ef72e2702e11d50a0ccf444f24eb2c81fbbc58855275230130908e6f767c3"
+    sha256 x86_64_linux:  "187bb9fbc2edb394d7de6ecc33c746fead3d1503368dedda4ad3c5571ee6b73e"
   end
 
   keg_only :versioned_formula
