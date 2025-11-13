@@ -12,8 +12,8 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "8a3ad77e8f5afebb904199bb91e4d60371bc655eba32dff50bf684bd6858d3ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "433442b742af45ca942c9f93269aefd93955f2dd47b935374d025d56a725f429"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "87c0de05a539ec51f0b74209774ff81f99752380c4efa4ee264b75eb764197e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c234163bd2a61d6aaf487de700be2a958d950384e377ba93a1e227b6e15341f4"
   end
 
   keg_only :versioned_formula
