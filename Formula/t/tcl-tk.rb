@@ -1,9 +1,9 @@
 class TclTk < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.2/tcl9.0.2-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/tcl9.0.2-src.tar.gz"
-  sha256 "e074c6a8d9ba2cddf914ba97b6677a552d7a52a3ca102924389a05ccb249b520"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.3/tcl9.0.3-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl9.0.3-src.tar.gz"
+  sha256 "2537ba0c86112c8c953f7c09d33f134dd45c0fb3a71f2d7f7691fd301d2c33a6"
   license "TCL"
 
   livecheck do
@@ -63,9 +63,9 @@ class TclTk < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.2/tk9.0.2-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk9.0.2-src.tar.gz"
-    sha256 "76fb852b2f167592fe8b41aa6549ce4e486dbf3b259a269646600e3894517c76"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.3/tk9.0.3-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk9.0.3-src.tar.gz"
+    sha256 "bf344efadb618babb7933f69275620f72454d1c8220130da93e3f7feb0efbf9b"
 
     livecheck do
       formula :parent
