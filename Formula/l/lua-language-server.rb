@@ -48,13 +48,6 @@ class LuaLanguageServer < Formula
         --metapath="${XDG_CACHE_HOME:-${HOME}/.cache}/lua-language-server/meta" \
         "$@"
     BASH
-  end
-
-  # `lua-language-server` uses `changelog.md` in `libexec`
-  # directory to determine its version. Installing the changelog
-  # in `def install` does not work because it cleanups metafiles
-  # from non-root directory
-  def post_install
     libexec.install_symlink prefix/"changelog.md"
   end
 
