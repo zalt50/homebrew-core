@@ -41,6 +41,9 @@ class Rust < Formula
   uses_from_macos "python" => :build
   uses_from_macos "curl"
 
+  # Required by Rust, see https://github.com/rust-lang/rust/issues/39870
+  preserve_rpath
+
   link_overwrite "etc/bash_completion.d/cargo"
   # These used to belong in `rustfmt`.
   link_overwrite "bin/cargo-fmt", "bin/git-rustfmt", "bin/rustfmt", "bin/rustfmt-*"
@@ -200,23 +203,14 @@ class Rust < Formula
       lib/"rustlib/uninstall.sh",
       (lib/"rustlib").glob("manifest-*"),
     ])
-  end
-
-  def post_install
-    lib.glob("rustlib/**/*.dylib") do |dylib|
-      chmod 0664, dylib
-      MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
-      MachO.codesign!(dylib) if Hardware::CPU.arm?
-      chmod 0444, dylib
-    end
     return unless OS.mac?
 
-    # Symlink our LLVM here to make sure the adjacent bin/rust-* tools can find it.
-    # Needs to be done in `postinstall` to avoid having `change_dylib_id` done on it.
-    lib.glob("rustlib/*/lib") do |dir|
-      # Use `ln_sf` instead of `install_symlink` to avoid resolving this into a Cellar path.
-      ln_sf llvm.opt_lib/shared_library("libLLVM"), dir
-    end
+    # Replace the renamed llvm-objcopy with a symlink to make sure it can find libLLVM
+    arch = Hardware::CPU.arm? ? :aarch64 : Hardware::CPU.arch
+    rust_objcopy = lib/"rustlib/#{arch}-apple-darwin/bin/rust-objcopy"
+    llvm_objcopy = llvm.opt_bin/"llvm-objcopy"
+    rm(rust_objcopy)
+    ln_sf llvm_objcopy.relative_path_from(rust_objcopy.dirname), rust_objcopy
   end
 
   def caveats
