@@ -2,10 +2,9 @@ class DotnetAT8 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.121.tar.gz"
-  sha256 "a1f127c69ddd4b665bd300b0458e7359adf2d9f720e101de327e87e504a938ca"
+  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.122.tar.gz"
+  sha256 "5ef94ebdc3f673aff23016038e0f8e9fd1a36ccb8ed89bb003c220d135a0fe96"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +12,8 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "8a3ad77e8f5afebb904199bb91e4d60371bc655eba32dff50bf684bd6858d3ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "433442b742af45ca942c9f93269aefd93955f2dd47b935374d025d56a725f429"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "87c0de05a539ec51f0b74209774ff81f99752380c4efa4ee264b75eb764197e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c234163bd2a61d6aaf487de700be2a958d950384e377ba93a1e227b6e15341f4"
   end
 
   keg_only :versioned_formula
@@ -47,8 +46,8 @@ class DotnetAT8 < Formula
   end
 
   resource "release.json" do
-    url "https://github.com/dotnet/dotnet/releases/download/v8.0.121/release.json"
-    sha256 "ba61d54adf402098d6772763dbc021bf60a82c28abeebefba94c74b50e1dbbc4"
+    url "https://github.com/dotnet/dotnet/releases/download/v8.0.122/release.json"
+    sha256 "a5ca063371dd8165cc0c4448e58e8c6d88bf9de7c6b634089e9349709e3f5d03"
 
     livecheck do
       formula :parent
