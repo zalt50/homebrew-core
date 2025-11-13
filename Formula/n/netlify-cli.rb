@@ -1,8 +1,8 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-23.10.0.tgz"
-  sha256 "379457c467315d08b681dfeb0519fe5ed6b29d56953ff8665a4d6fe4bfcf8711"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-23.11.0.tgz"
+  sha256 "d5d100b88c12f4fbc1bc0e68f152d06aa062b632b4e7d348bfde2b7294c1e756"
   license "MIT"
 
   bottle do
@@ -25,21 +25,25 @@ class NetlifyCli < Formula
 
   on_linux do
     depends_on "gmp"
-    depends_on "vips"
     depends_on "xsel"
   end
 
+  # Resource needed to build sharp from source to avoid bundled vips
+  # https://sharp.pixelplumbing.com/install/#building-from-source
+  resource "node-gyp" do
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.1.0.tgz"
+    sha256 "492bca8e813411386e61e488f95b375262aa8f262e6e8b20d162e26bdf025f16"
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
+    system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
-    # Remove incompatible pre-built binaries
+    # Remove incompatible and unneeded pre-built binaries
     node_modules = libexec/"lib/node_modules/netlify-cli/node_modules"
-
-    if OS.linux?
-      (node_modules/"@lmdb/lmdb-linux-x64").glob("*.musl.node").map(&:unlink)
-      (node_modules/"@msgpackr-extract/msgpackr-extract-linux-x64").glob("*.musl.node").map(&:unlink)
-    end
+    rm_r(node_modules.glob("@img/sharp-*"))
+    rm_r(node_modules.glob("@parcel/watcher-{darwin,linux}*"))
 
     clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
@@ -49,15 +53,15 @@ class NetlifyCli < Formula
       # Replace the vendored pre-built xsel with one we build ourselves
       ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
     end
-
-    # Remove incompatible pre-built `bare-fs`/`bare-os` binaries
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os}/prebuilds/*")
-                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do
     assert_match "Not logged in. Please log in to see project status.", shell_output("#{bin}/netlify status")
+
+    require "utils/linkage"
+    sharp = libexec.glob("lib/node_modules/netlify-cli/node_modules/sharp/src/build/Release/sharp-*.node").first
+    libvips = Formula["vips"].opt_lib/shared_library("libvips")
+    assert sharp && Utils.binary_linked_to_library?(sharp, libvips),
+           "No linkage with #{libvips.basename}! Sharp is likely using a prebuilt version."
   end
 end
