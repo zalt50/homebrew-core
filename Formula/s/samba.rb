@@ -7,6 +7,7 @@ class Samba < Formula
   url "https://download.samba.org/pub/samba/stable/samba-4.23.2.tar.gz"
   sha256 "2de330647e1486683597e261285d04a9b7514ab5c7da27711736e22c7f2b9c2e"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.samba.org/samba/download/"
@@ -14,12 +15,12 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9ec67a969c788b8da3b104fe5ed4daf79f7894acad44316796edb62efce0dd59"
-    sha256 arm64_sequoia: "dffb40e4725ebcf64995eb1d907f16e9be77ab23db55a65e712014d33ec48aa0"
-    sha256 arm64_sonoma:  "d4abb4e5291673890d96487b2db82c09b42c463f09c06e5a5cb3b59a130e370e"
-    sha256 sonoma:        "2c0063330bb2bf78848e7a6c704a8feda62ac42ac9c91fdbd6baca7703b6812e"
-    sha256 arm64_linux:   "23ac8fca43f157daa55d076e3d7315ae618d887652814d49d14ec69275405786"
-    sha256 x86_64_linux:  "79cfebcbf209d4a647ed7dd579cba475bb9296647d7f558ea7cec113881ed0e0"
+    sha256 arm64_tahoe:   "270382d3497f16abb9e15f9269826829fecd6cf2226a847db852fdc256edd34f"
+    sha256 arm64_sequoia: "c1e81e45dfbcc94cd62dc2688e4443832994bb8b77a6226277e0412327d64269"
+    sha256 arm64_sonoma:  "4745c40d817a3410431ed3f8f7fcae89ea31480ceabeef3a468ed4bfe2a3ce24"
+    sha256 sonoma:        "9e09f6fca320bed0fb69ebb1379beb7b00db0a442837b5e54b56f47ba7c27b6f"
+    sha256 arm64_linux:   "0c767053a516bac9ef0e63752ae654bfed58ce58a110f408489fad9ffd1a3a8e"
+    sha256 x86_64_linux:  "7c2d7aa7d93aee036d321b8840325cf49b553ca6cf1f83c7bba5b15e3c1620f9"
   end
 
   depends_on "bison" => :build
@@ -28,7 +29,7 @@ class Samba < Formula
   depends_on "gnutls"
   # icu4c can get linked if detected by pkg-config and there isn't a way to force disable
   # without disabling spotlight support. So we just enable the feature for all systems.
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "krb5"
   depends_on "libtasn1"
   depends_on "libxcrypt"
