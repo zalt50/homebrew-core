@@ -25,7 +25,7 @@ class Vcluster < Formula
   end
 
   depends_on "go" => :build
-  depends_on "helm"
+  depends_on "helm@3"
   depends_on "kubernetes-cli"
 
   def install
@@ -37,6 +37,8 @@ class Vcluster < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["helm@3"].opt_bin
+
     assert_match version.to_s, shell_output("#{bin}/vcluster version")
 
     output = shell_output("#{bin}/vcluster create vcluster -n vcluster --create-namespace 2>&1", 1)
