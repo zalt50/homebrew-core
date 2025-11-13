@@ -8,13 +8,12 @@ class Dvc < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "bbbdb3a79177791a2f3dbbdda044582c881643f529bc9c7aff12eda883526ff6"
-    sha256 cellar: :any,                 arm64_sequoia: "39504b25725702be3c49704d2711de290bfd7d171f6332c8b885626aa8202543"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f80f4d48bd97a3ee057df2b3d83377109fa4cc81177f2ed206635ccdd69aae5"
-    sha256 cellar: :any,                 sonoma:        "a0fa983841271d7955ffe63b97f4f261d76d0b267c9b2e80282fbaee472fbfbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb41af5a6c500deb88488de7d42ba78ae0dab1f0d1d295b9662baf9fc5b1ebed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b600e6204020071d6428479d5ac262ecdd0ed23eaaf461937c5676ea72878a2"
+    sha256 cellar: :any,                 arm64_tahoe:   "64fe7c2d5c010567f55a3ff5434c420340cb6653bed2c1f7d1d3f166026a5e23"
+    sha256 cellar: :any,                 arm64_sequoia: "ebc73526d4179c523f1770e6e3433dfebeb39c16f23308d6b80c7537624907f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a0e21d4e62af854c9bff9e73bd17baa24e778f87d6435a1668013a04708c207"
+    sha256 cellar: :any,                 sonoma:        "ba62573da5d5c7642f2311ac77af85487b417c3fc06718e294dc0951fd865e16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1474442d7805fb31110c0635eea5d0f3c7bf3379f1773b7d88c5e10b9ab994f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c43dfea8e292fa0b702c2eef2a9ef238eeb6a45e46357ef07aedefad581fe23"
   end
 
   depends_on "cmake" => :build # for pyarrow
