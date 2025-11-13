@@ -15,15 +15,12 @@ class Inko < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "61eb97a6c71d33389ac906a5d69f143172f61d78a91b91c667e50e71a0604f19"
-    sha256 cellar: :any,                 arm64_sequoia: "ee26a0c11c1c527151fde51739a7f4fe5ac5f721805deb98e1a5f2bd3024d038"
-    sha256 cellar: :any,                 arm64_sonoma:  "44fc95eba234a04e7cfe132a17874892a86fdcf0b198a07de3ca5807fdead3be"
-    sha256 cellar: :any,                 arm64_ventura: "e61d4dd6bacfdb7d01a885493de960998271cf10f6bf4931a2deecef27a59eec"
-    sha256 cellar: :any,                 sonoma:        "487151f34bc632c5d5618cb65d06efd23afd8f8dac3becf13f2b2597e18aa4e5"
-    sha256 cellar: :any,                 ventura:       "f4b935a853326a2422c5f2bb826c765d9cfa27dd32ebf8005e1d1f7bdbdd58f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "578ff3eacb96844be7e983fd7c8bf8c7481138ea12425cbdd9cf2c95e317060a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7af46ba20d2d34d8d5ec23574d97caa98a50278eca21fd9e1573856cf58ee24f"
+    sha256 cellar: :any,                 arm64_tahoe:   "bddaed79422f3a2fb9105da1cd96c58c717de0fefb973ec2999ca2d398a3d72d"
+    sha256 cellar: :any,                 arm64_sequoia: "bd6b91afa47d549e6d38fc0cac071db2afbd45f6959199c412ea7a2c6e27fd36"
+    sha256 cellar: :any,                 arm64_sonoma:  "55c06dd1342079a5822b1d03fcbae4e2f1ca79114cc14087b9e35357d36ffedb"
+    sha256 cellar: :any,                 sonoma:        "8008e252687334b2475f2a925990d19a32053b6e3346fb9bba79f2887eb990e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4073f68d1769c856d26625e23955bf6c98f7633bb1a115418b05ace33c7bceb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "729da31aad19a58cad802277d887e317595508da5c55e3893e56680cabd96449"
   end
 
   depends_on "rust" => :build
