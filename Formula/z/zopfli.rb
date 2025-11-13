@@ -25,6 +25,8 @@ class Zopfli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6994139461f1d64975551091d1254a906a8957c3ce08c0c2b6d8d5c995b66f05"
   end
 
+  deprecate! date: "2025-11-13", because: :repo_archived
+
   depends_on "cmake" => :build
 
   # Backport fix for CMake 4 compatibility
