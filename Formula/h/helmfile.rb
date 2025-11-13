@@ -17,7 +17,7 @@ class Helmfile < Formula
   end
 
   depends_on "go" => :build
-  depends_on "helm"
+  depends_on "helm@3"
 
   def install
     ldflags = %W[
@@ -34,6 +34,8 @@ class Helmfile < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["helm@3"].opt_bin
+
     (testpath/"helmfile.yaml").write <<~YAML
       repositories:
       - name: stable
@@ -48,7 +50,7 @@ class Helmfile < Formula
         chart: stable/vault    # the chart being installed to create this release, referenced by `repository/chart` syntax
         version: ~1.24.1       # the semver of the chart. range constraint is supported
     YAML
-    system Formula["helm"].opt_bin/"helm", "create", "foo"
+    system "helm", "create", "foo"
     output = "Adding repo stable https://charts.helm.sh/stable"
     assert_match output, shell_output("#{bin}/helmfile -f helmfile.yaml repos 2>&1")
     assert_match version.to_s, shell_output("#{bin}/helmfile -v")
