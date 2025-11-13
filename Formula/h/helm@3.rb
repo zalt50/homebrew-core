@@ -11,6 +11,15 @@ class HelmAT3 < Formula
     regex(/^v?(3(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8873a2f317dbcfbe2d5514e16c6e0dfddf1d55fd4bf3955dbd6ef692aadd5e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afe38f14296cc3ffa4bcd35a142641c7d3043293662dd42cc0ad405b3ab104c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70321d70be984eebc9f35c8b5c3b55f0dcba18197feecdd0a9c0eea0ffb4a4e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2853045bfdcf7b3ee2929270ed5ec574d3ff8aa079db55d8f06ca0386018dbc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf0fd686f862717ec932c9ca8190c9cd3c390c3b9ca184b90d1ed41fc7b01ca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1e298e142a0a7379a9f0896b5094f90060322275c7e045ec51897a84ef07534"
+  end
+
   keg_only :versioned_formula
 
   depends_on "go" => :build
