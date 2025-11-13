@@ -17,9 +17,9 @@ class Odin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a87a15901c3adee32462cf6a30ee54176c5ffbd9fffc5a92aefaaac58cc79f1"
   end
 
-  depends_on "glfw"
-  depends_on "lld@20"
-  depends_on "llvm@20"
+  depends_on "glfw" => :no_linkage
+  depends_on "lld"
+  depends_on "llvm"
   depends_on "raylib"
 
   resource "raygui" do
