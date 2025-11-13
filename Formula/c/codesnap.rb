@@ -1,18 +1,18 @@
 class Codesnap < Formula
   desc "Generates code snapshots in various formats"
   homepage "https://github.com/codesnap-rs/codesnap"
-  url "https://github.com/codesnap-rs/codesnap/archive/refs/tags/v0.12.11.tar.gz"
-  sha256 "67ea9342913f4c974c0f6dabfe039509d3ebc4ed671196848a8f7474c7cf5a42"
+  url "https://github.com/codesnap-rs/codesnap/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "6617439cfb498d967ee8df9b9a3c6a9019ca1a0db40835d5f17c14773ccb6bde"
   license "MIT"
   head "https://github.com/codesnap-rs/codesnap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53bf54d9368e93213e8686790b5f185cbcafad22dd339aafe2368488e310ac8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0dbeb179afada0a6b2a841f2cda76ac1c0d1c9012cc4fcca236b6a46d4e44a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db1a43e9f8d22c5f6c9d2105ab5ca7ed7efef59fb0b6b4ed87c948beb9443601"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5648fa530969a21d89d1cf099838615e86a99076fb25308ac9bae793e7590769"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89413743db625a4f248a7739d890774bf33bede50fd828812139265aa5b03d83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed1cc52a6e3ce45272d2b63a458b71e5c1554059de732c685f97901cb8120176"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ee2783935293b574c17651936f5b29889e2b949197105e60d8fd375d7136056"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a41f0f2d35184ecc9b985a22c2decfd2af34c5e3788eac0cc87a132337d16d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a50c60255897eeae5c435edf62582f9bf3da2c15d9b4d9c0ddb4c2cdb6d9f6ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51e7d8a1d906cedd120a72f78abeda8c2642cd206222e717c4945587a43adb98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa07bb208cb58cfc0c043645af6b37bdb1dd55e7da0ee3d60a3d452bf325159c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4054af86c3decea8d02eb249d2bdfd141e2db31408c01fd7a0e09bcb41acd3e"
   end
 
   depends_on "pkgconf" => :build
