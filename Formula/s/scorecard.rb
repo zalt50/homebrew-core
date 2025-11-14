@@ -2,8 +2,8 @@ class Scorecard < Formula
   desc "Security health metrics for Open Source"
   homepage "https://github.com/ossf/scorecard"
   url "https://github.com/ossf/scorecard.git",
-      tag:      "v5.3.0",
-      revision: "c22063e786c11f9dd714d777a687ff7c4599b600"
+      tag:      "v5.4.0",
+      revision: "80ee3ecfedf8b19ab8991713a9fdb2e7dcd7262e"
   license "Apache-2.0"
   head "https://github.com/ossf/scorecard.git", branch: "main"
 
@@ -44,10 +44,10 @@ class Scorecard < Formula
 
   test do
     ENV["GITHUB_AUTH_TOKEN"] = "test"
-    output = shell_output("#{bin}/scorecard --repo=github.com/kubernetes/kubernetes --checks=Maintained 2>&1", 1)
-    expected_output = "Error: scorecard.Run: repo unreachable: GET https://api.github.com/repos/kubernetes/kubernetes"
+    output = shell_output("#{bin}/scorecard --repo=github.com/kubernetes/kubernetes --checks=Maintained 2>&1")
+    expected_output = "repo unreachable: GET https://api.github.com/repos/kubernetes/kubernetes"
     assert_match expected_output, output
 
-    assert_match version.to_s, shell_output("#{bin}/scorecard version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/scorecard version")
   end
 end
