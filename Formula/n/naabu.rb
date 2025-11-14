@@ -1,8 +1,8 @@
 class Naabu < Formula
   desc "Fast port scanner"
   homepage "https://docs.projectdiscovery.io/tools/naabu/overview"
-  url "https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.3.5.tar.gz"
-  sha256 "6b754a7cb49e8cbc68b64ca7ed0130c2f6fe6436b4cf3d1acb8b62a5e83a56a3"
+  url "https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.3.6.tar.gz"
+  sha256 "1813bc2300eecca988b8d7b36d7f48362f90abe2db4bbf4c55a131d7a91f689a"
   license "MIT"
   head "https://github.com/projectdiscovery/naabu.git", branch: "dev"
 
@@ -22,6 +22,8 @@ class Naabu < Formula
   uses_from_macos "libpcap"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/naabu"
   end
 
