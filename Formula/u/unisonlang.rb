@@ -5,12 +5,12 @@ class Unisonlang < Formula
 
   stable do
     url "https://github.com/unisonweb/unison.git",
-        tag:      "release/0.5.50",
-        revision: "6e59c0a34ff0929dcdf2dc8e7ac5833b0f374455"
+        tag:      "release/1.0.0",
+        revision: "177d0635420f2dd9d0ba425d65eea5911253d5bb"
 
     resource "local-ui" do
-      url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/0.5.50.tar.gz"
-      sha256 "b245364195eeeaf3cb7b28b9ccecfee61876989121890879f4c11bbb99c9b129"
+      url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.0.0.tar.gz"
+      sha256 "8e7fbe261f84ae8d4ccbb144d5fe71bf7b48dbdf05219d9db10541f5b995e1cf"
 
       livecheck do
         formula :parent
@@ -44,7 +44,9 @@ class Unisonlang < Formula
   depends_on "elm-format" => :build
   depends_on "ghc@9.6" => :build
   depends_on "haskell-stack" => :build
-  depends_on "node" => :build
+  # FIXME: `html-webpack-plugin` for `local-ui` fails to build on node 25+
+  # https://github.com/jantimon/html-webpack-plugin/pull/1880
+  depends_on "node@24" => :build
 
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
