@@ -3,8 +3,8 @@ class Lexicon < Formula
 
   desc "Manipulate DNS records on various DNS providers in a standardized way"
   homepage "https://github.com/dns-lexicon/dns-lexicon"
-  url "https://files.pythonhosted.org/packages/6e/f5/23d19dc37eb3891e0986031ba85c337666e217f368014cc9e147e7adfa39/dns_lexicon-3.23.0.tar.gz"
-  sha256 "a729a3883f04a21918ed4331ded9f78bd132f5c520ffd74b645de9ad9382cf26"
+  url "https://files.pythonhosted.org/packages/47/67/5715a9631d16a751aefd9620471f9b48a4bdfc613f5b9ecf60abca095883/dns_lexicon-3.23.1.tar.gz"
+  sha256 "b05117bd2f0ce73f8f30567c759ff55abaf82592c820a325c74267daa2ff9462"
   license "MIT"
   head "https://github.com/dns-lexicon/dns-lexicon.git", branch: "main"
 
@@ -39,13 +39,13 @@ class Lexicon < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/2e/d8/c316637525560e01cbf048fd88f29be73214411ad26e743f3b1950df76f0/boto3-1.40.71.tar.gz"
-    sha256 "6d38e0250154552658be92a62cd48adf8ca8fd4abc181fb52d13371b53179503"
+    url "https://files.pythonhosted.org/packages/d0/d1/3be32bf855200fb2defb4ab2b251aba4d05e787235adbf3ae1ba2099545b/boto3-1.40.73.tar.gz"
+    sha256 "3716703cb8b126607533853d7e2a85f0bb23b0b9d4805c69170abead33d725ef"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5f/2f/7e5b9a0f9f9c958e1b70734be9b5cbcef64a1bfa9a570bcaafea0c997840/botocore-1.40.71.tar.gz"
-    sha256 "7ed28c2e092fc0d67fbfba818fbdccc92426b452cc936bf034db6de717e0d068"
+    url "https://files.pythonhosted.org/packages/51/83/4afe8a1fdd4b5200ceff986b1e72be16c55010980bf337360535733d85c3/botocore-1.40.73.tar.gz"
+    sha256 "0650ceada268824282da9af8615f3e4cf2453be8bf85b820f9207eff958d56d0"
   end
 
   resource "charset-normalizer" do
@@ -199,8 +199,8 @@ class Lexicon < Formula
   end
 
   resource "tencentcloud-sdk-python" do
-    url "https://files.pythonhosted.org/packages/42/b3/c736229d09235c2aa20ea57addb00144bde28ea7a9cb65b09e05431aa85f/tencentcloud_sdk_python-3.0.1486.tar.gz"
-    sha256 "1d4b8c9d756d21f5f4ad66f10bc921aec220a5d8a8ff480e15453a9477acf2c2"
+    url "https://files.pythonhosted.org/packages/8e/80/ab76fde7899f768e7ef7691eebf62a8b23237250cfc2d202ecb6c2992c57/tencentcloud_sdk_python-3.0.1488.tar.gz"
+    sha256 "f78d4d17270d98f9f7e52595c74ed46a429b652111191c13082cfc3a9331f44c"
   end
 
   resource "tldextract" do
