@@ -7,12 +7,12 @@ class ConfigFileValidator < Formula
   head "https://github.com/Boeing/config-file-validator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00d8fa20356bcbc53c4ef85a293cb05510901e713d8f33d3f4c5f260afc8551e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00d8fa20356bcbc53c4ef85a293cb05510901e713d8f33d3f4c5f260afc8551e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00d8fa20356bcbc53c4ef85a293cb05510901e713d8f33d3f4c5f260afc8551e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84aaa61b1cc799fe5cee90dab4f458f5630912e27e5d1209f7232f49d9082afb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "931710a4e774c8dc61d225089715b7bedfff3086713b09c1251eb1e8b612b5c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0bcb1d4be243ae3e6606946650aec179de717df9e26654867e850993f66fbc2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5a58f44aadec8a1109872627b707c6a4358509a8e5ef377e68babee4f4feebe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5a58f44aadec8a1109872627b707c6a4358509a8e5ef377e68babee4f4feebe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5a58f44aadec8a1109872627b707c6a4358509a8e5ef377e68babee4f4feebe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d511b2d4fa7be594876f6d3843382f90fa1938c3f98a1eda8d430185144d685"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d2daadd38666cca27ca348eb2cc03e76395de359a55bbecf265f3db81f3c8d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc160061c3544a6f3f0dfb5b5b3857a09275b74227115fa8dd60cbdfa6707d61"
   end
 
   depends_on "go" => :build
