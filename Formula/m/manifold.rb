@@ -1,17 +1,17 @@
 class Manifold < Formula
   desc "Geometry library for topological robustness"
   homepage "https://github.com/elalish/manifold"
-  url "https://github.com/elalish/manifold/releases/download/v3.3.0/manifold-3.3.0.tar.gz"
-  sha256 "af0ea17e5006c71b439371570ccc143cd5fbd77a18c4fa713a508ef1fc3e2845"
+  url "https://github.com/elalish/manifold/releases/download/v3.3.1/manifold-3.3.1.tar.gz"
+  sha256 "d068189301194c986b496d0251d5f634d9b822ce4e1a8ffdc2d1dc67664a9699"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5227a815585053204ee1b1abef077bf288f03a4cc893e4bf468b9044d6c11024"
-    sha256 cellar: :any,                 arm64_sequoia: "5b74e3ea9344c69db2f5176b1c9f08d9b978001dea42fd13cddf8c647e6ef82d"
-    sha256 cellar: :any,                 arm64_sonoma:  "82336a4cd514fd3a4db7a367a9c59f3b2145959348197093a0d52b8370386650"
-    sha256 cellar: :any,                 sonoma:        "ae5579a7cc4a5c318aa02e2355dea010e83d06ae33ccd0dc763b056d971e84a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05c5ba643c345e243930c62a694de1d733306bb356e83a368f0105f072aeb3d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3445c2c7a4f5a3064e304b534055a6729eb7376ae44b64a3f65841d1d74bcb7d"
+    sha256 cellar: :any,                 arm64_tahoe:   "34b49038853f4b2cd3a37911c9acac8ab76a8444548e9a25129fbec3ceb912f1"
+    sha256 cellar: :any,                 arm64_sequoia: "8305bd00a01b45e1bd8457cdb37469d7b92c4b6ca4274174c42ad3fb1ccd9a00"
+    sha256 cellar: :any,                 arm64_sonoma:  "293a2ad00c957b304c4339e279288779d8c1676582bc9832d2e628e212214324"
+    sha256 cellar: :any,                 sonoma:        "255179fdcd8cc51fa224e371bfe784fd87fe961ea3352782698aec1fe6920a99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f5add191f016065cc61ac4eaf162b68d4e4c077f82ad4bffe7d24e6d808a00e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77cbcf1d76e2fb223eed1372f85d35da23b1f08c4afd58562811dba42d37a2e0"
   end
 
   depends_on "cmake" => :build
