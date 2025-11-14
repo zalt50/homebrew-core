@@ -1,8 +1,8 @@
 class Bandicoot < Formula
   desc "C++ library for GPU accelerated linear algebra"
   homepage "https://coot.sourceforge.io/"
-  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/2.1.1/bandicoot-code-2.1.1.tar.bz2"
-  sha256 "128a02062426fbb88aaf6a00af227ee9d40e083e4c78fa560498ff06ae381544"
+  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/3.0.0/bandicoot-code-3.0.0.tar.bz2"
+  sha256 "55fd4f11c09fced2793b999a60ac32e160b53c136e6c3cb38b8170b13e7e24e0"
   license "Apache-2.0"
 
   bottle do
@@ -18,7 +18,7 @@ class Bandicoot < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "clblas"
+  depends_on "clblast"
   depends_on "openblas"
 
   # Ensure CL components are present on Linux
@@ -28,8 +28,15 @@ class Bandicoot < Formula
     depends_on "pocl"
   end
 
+  # Avoid including `cl_half.h`` on macOS
+  # PR ref: https://gitlab.com/bandicoot-lib/bandicoot-code/-/merge_requests/182
+  patch do
+    url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/commit/2c44303b510605f3210bfcb8d5e539408cb92c53.diff"
+    sha256 "9c6fccd6bba9bd05c729ff4705f5a224ce633d2ba78dd19c5894187b05e45dc4"
+  end
+
   def install
-    args = []
+    args = ["-DFIND_CUDA=false"]
     # Enable the detection of OpenBLAS on macOS. Avoid specifying detection for linux
     args += ["-DALLOW_OPENBLAS_MACOS=ON", "-DALLOW_BLAS_LAPACK_MACOS=ON"] if OS.mac?
 
