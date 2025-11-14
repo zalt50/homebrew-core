@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/9c/38/9107cbbe219c42bbbbe2d9bda6297218b87660d05635f01adfacb9e0dab1/ggshield-1.44.1.tar.gz"
-  sha256 "5c9bb82919efa2996a95f7a30f26a5e1f42debf069516df07290556be88ecb18"
+  url "https://files.pythonhosted.org/packages/56/66/483db468f88c8eb9f75f285b9713d68edcf97fdbc0443ae451bb7bcf7493/ggshield-1.45.0.tar.gz"
+  sha256 "8c4a75920f50e7e1f7d43d0a58e6c2036c4a2bf0cf28e18fde97642d55c893e9"
   license "MIT"
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
@@ -75,8 +75,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/2e/1e/efbcbb0c6edd571dffdc62f63c2707931fb7670e105aa01dec422e130fb8/pygitguardian-1.26.0.tar.gz"
-    sha256 "a6d4aa7d117ce05a7e652f96699c0fbb9fe22011530c55e0162c718df803e91f"
+    url "https://files.pythonhosted.org/packages/d1/4d/b0adec91a5e76360f13a54595a35ea473e50c4a800ce65aab0d1804b6b11/pygitguardian-1.27.0.tar.gz"
+    sha256 "e8a75beefbd48ba96b307877d057176e260fbfaed125548f6cb2279efe671373"
   end
 
   resource "pygments" do
