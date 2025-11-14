@@ -3,8 +3,8 @@ class Lexicon < Formula
 
   desc "Manipulate DNS records on various DNS providers in a standardized way"
   homepage "https://github.com/dns-lexicon/dns-lexicon"
-  url "https://files.pythonhosted.org/packages/47/67/5715a9631d16a751aefd9620471f9b48a4bdfc613f5b9ecf60abca095883/dns_lexicon-3.23.1.tar.gz"
-  sha256 "b05117bd2f0ce73f8f30567c759ff55abaf82592c820a325c74267daa2ff9462"
+  url "https://files.pythonhosted.org/packages/85/18/347d64669e77c26a61f90c7cdd83a6e7dc2af996a25f63e8d7dc902bb9ee/dns_lexicon-3.23.2.tar.gz"
+  sha256 "3c40174e9d657289d4d4f81d44451c4d63f8c26c8513e4d7a61c30ac456aab8f"
   license "MIT"
   head "https://github.com/dns-lexicon/dns-lexicon.git", branch: "main"
 
@@ -199,8 +199,8 @@ class Lexicon < Formula
   end
 
   resource "tencentcloud-sdk-python" do
-    url "https://files.pythonhosted.org/packages/8e/80/ab76fde7899f768e7ef7691eebf62a8b23237250cfc2d202ecb6c2992c57/tencentcloud_sdk_python-3.0.1488.tar.gz"
-    sha256 "f78d4d17270d98f9f7e52595c74ed46a429b652111191c13082cfc3a9331f44c"
+    url "https://files.pythonhosted.org/packages/c9/dd/6169d77cca5c4d5722cfa07305b6c0c0c6db640dc820ebf5a6e61421e548/tencentcloud_sdk_python-3.0.1489.tar.gz"
+    sha256 "3a944b234b84754e684c4018328703b57215a3dec7383f97bdcac53b2ba559df"
   end
 
   resource "tldextract" do
