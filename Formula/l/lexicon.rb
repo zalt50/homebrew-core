@@ -3,18 +3,18 @@ class Lexicon < Formula
 
   desc "Manipulate DNS records on various DNS providers in a standardized way"
   homepage "https://github.com/dns-lexicon/dns-lexicon"
-  url "https://files.pythonhosted.org/packages/47/67/5715a9631d16a751aefd9620471f9b48a4bdfc613f5b9ecf60abca095883/dns_lexicon-3.23.1.tar.gz"
-  sha256 "b05117bd2f0ce73f8f30567c759ff55abaf82592c820a325c74267daa2ff9462"
+  url "https://files.pythonhosted.org/packages/85/18/347d64669e77c26a61f90c7cdd83a6e7dc2af996a25f63e8d7dc902bb9ee/dns_lexicon-3.23.2.tar.gz"
+  sha256 "3c40174e9d657289d4d4f81d44451c4d63f8c26c8513e4d7a61c30ac456aab8f"
   license "MIT"
   head "https://github.com/dns-lexicon/dns-lexicon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "44809ce6e3c3420f648e85540b3d6a98fb885626dbb98f97be8e54821962b9ac"
-    sha256 cellar: :any,                 arm64_sequoia: "a1ed1bf3a68baec56d45b34505db08c1e676c3eab9fe8fb11fb1303cbd9dcb51"
-    sha256 cellar: :any,                 arm64_sonoma:  "f0833c8c93955e8714fb5b138a1a257a7b8eb40427df191bcb3bdf342ad3db58"
-    sha256 cellar: :any,                 sonoma:        "74c6415607e4667b522a61913ed1f56ba78bf702e116e2bfdca004592ad6e373"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cca06ce1b71ca78eebfd8e17ece1bfecf997b09d46e824ac5f1a8618662d9ea0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55abd3e430cf66a5dd17ce419941486a702e9d1482eb467bac973f74967b5986"
+    sha256 cellar: :any,                 arm64_tahoe:   "bac11e53dd6d5bb2ff4b1b3ed1a7e34fef5ae968fe1871dd18a93088eafa6297"
+    sha256 cellar: :any,                 arm64_sequoia: "dc43966d309f483a7b1c4f25a1d3d72d3af7bdd97a4e6596c3a1541013307623"
+    sha256 cellar: :any,                 arm64_sonoma:  "36bc69422b189d721d99bd6192c27d7271b8e42ab3653c32c2ba48b8f5c309cf"
+    sha256 cellar: :any,                 sonoma:        "54f382cd4135cffad71f8376070f5f6d8f2e13c09b51455b4c5fc7d45dcf61b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4cb8b75f77ecf63b603729feec2488ada016f236dc1e121cf040b35d24f9352"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74b954ce479ca6299a0a66d367eb81c4f14ec7e0d2e30deb3f1599aec677224c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -199,8 +199,8 @@ class Lexicon < Formula
   end
 
   resource "tencentcloud-sdk-python" do
-    url "https://files.pythonhosted.org/packages/8e/80/ab76fde7899f768e7ef7691eebf62a8b23237250cfc2d202ecb6c2992c57/tencentcloud_sdk_python-3.0.1488.tar.gz"
-    sha256 "f78d4d17270d98f9f7e52595c74ed46a429b652111191c13082cfc3a9331f44c"
+    url "https://files.pythonhosted.org/packages/c9/dd/6169d77cca5c4d5722cfa07305b6c0c0c6db640dc820ebf5a6e61421e548/tencentcloud_sdk_python-3.0.1489.tar.gz"
+    sha256 "3a944b234b84754e684c4018328703b57215a3dec7383f97bdcac53b2ba559df"
   end
 
   resource "tldextract" do
