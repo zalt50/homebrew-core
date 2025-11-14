@@ -8,12 +8,12 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7b60607d3051d05fbf52b4ccca8aed3a2f1e6b3bd43cd3151b96d07dcf99d7ea"
-    sha256 cellar: :any,                 arm64_sequoia: "57e3fa6c425dc9eb42dd8976acb7d7c5049083412a3086887b5e64e9e3d2de07"
-    sha256 cellar: :any,                 arm64_sonoma:  "beceddc21710e11449f2f13c8b18223395b6e7884c997cf95e2b00346080ed7d"
-    sha256 cellar: :any,                 sonoma:        "7aa92157e4fcc0a716e3eda449b244dc60276f695c57a0c1ada798c70960731c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "50c89221d0f7e21f22cec7228439f0936d8e0d6a0417a196fd5c7c9c7e837372"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f7f1427543e1cafc6567d846004e68391eb2bbed9a1544a326a6d6d8ce38db2"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6004f3843e7e7fc3e35c12c2861d3eb30f54f568ee6c57f0596c8c4338afbb9"
+    sha256 cellar: :any,                 arm64_sequoia: "deff399c0d9c06aea97cee90143aecae189c238d1a7b99751e8906eac9b074f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "487b56670b80651f91ec264e53c3252e51372ef43d928bf3af285e4725046eb2"
+    sha256 cellar: :any,                 sonoma:        "88c92eb5686d7c9f7f58769de511b5418db1a425bfcb41cefcdaad0428ccc33c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b96fbf1d9193445d1208749761d39f2c9a8e1946d4d48b6cb9dc0d167b20b18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9699940b26538d4465ff79f1d8d7643d28f565560451d8fd701f75baa26d614f"
   end
 
   depends_on "certifi" => :no_linkage
