@@ -12,12 +12,12 @@ class WasmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0da05ed9b6bb5ab308fc3f5c35ecefc7419830dbe266c78919b4f38f34e7401"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8b4968383d3b4a9b21e8d519d72f13f55f2d47f1ae6f3f02e7d1d695f9f5806"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad3b29ece01cb3596378c533cadc50d86ec575db68117b414c4b21ea07e5285b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd08a822f26480e64624e500af7a74d0a9accf70201e432bb3e5c6bde39626bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3183d512d8728c445307cacf428410d50a1c7d043ea33c2547b6b75f9e67393f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6768f3a6f860a956d871bb495ea667f668acd0323790d1b9c78d39bcd71a4c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47d85f7dfae51eac9d4d6850b46f2eea2e9cdc265292540663d5cd87c3874ed4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51b63e4ecde572ffc4905080f964baec741fe7fe25b59a11b624696d5e229bae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a7673e43ab9ac59b70a9a7ae7abf04460f9b4f8e28e2f59128107af2e207c55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73d6b7ed31aead27262db4ada47cc66cbde6dbc91670908d3269931d2bf28c24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aff17fa1b3ca7823111cdc0690493fadf55009b1516341d274e504f8e304d9dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1fb36f70693aca6444e896757d87907754240a5bda4b6c004ddcdabe1d3c28b"
   end
 
   depends_on "rust" => :build
