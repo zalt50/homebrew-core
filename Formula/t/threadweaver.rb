@@ -1,8 +1,8 @@
 class Threadweaver < Formula
   desc "Helper for multithreaded programming"
   homepage "https://api.kde.org/threadweaver-index.html"
-  url "https://download.kde.org/stable/frameworks/6.19/threadweaver-6.19.0.tar.xz"
-  sha256 "d8d4d0b6e62b067a8ce4fed7aefeed02ed43a43f97f085db3baedf9210070da1"
+  url "https://download.kde.org/stable/frameworks/6.20/threadweaver-6.20.0.tar.xz"
+  sha256 "9313f25a2ea6e2431d34e0b00f68dad6881849c34f1e40515a539a70dd6fbb19"
   license "LGPL-2.0-or-later"
   head "https://invent.kde.org/frameworks/threadweaver.git", branch: "master"
 
