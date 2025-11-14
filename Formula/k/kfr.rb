@@ -1,8 +1,8 @@
 class Kfr < Formula
   desc "Fast, modern C++ DSP framework"
   homepage "https://www.kfrlib.com/"
-  url "https://github.com/kfrlib/kfr/archive/refs/tags/6.3.1.tar.gz"
-  sha256 "800f8e782fb514176c06526792ec766b718a7b91c73e9d07efe47dff6cb0816d"
+  url "https://github.com/kfrlib/kfr/archive/refs/tags/7.0.1.tar.gz"
+  sha256 "42b36126f2af8719eff6f26e87e9f155816bc3bb110376e4747ba5de536c2cce"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -17,6 +17,7 @@ class Kfr < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "boost"
 
   on_arm do
     # FIXME: `uses_from_macos` is not allowed in `on_arm` block
@@ -30,7 +31,7 @@ class Kfr < Formula
   end
 
   def install
-    args = []
+    args = ["-DKFR_USE_BOOST=ON"]
     # C API requires some clang extensions.
     args << "-DKFR_ENABLE_CAPI_BUILD=ON" if ENV.compiler == :clang
 
@@ -52,7 +53,7 @@ class Kfr < Formula
     CPP
 
     ENV.clang if OS.linux? && Hardware::CPU.arm?
-    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-lkfr_io",
+    system ENV.cxx, "test.cpp", "-std=c++20", "-I#{include}", "-L#{lib}", "-lkfr_io",
                     "-o", "test"
     assert_equal "Hello KFR!", shell_output("./test").chomp
   end
