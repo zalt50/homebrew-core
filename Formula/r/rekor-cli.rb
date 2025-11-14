@@ -1,8 +1,8 @@
 class RekorCli < Formula
   desc "CLI for interacting with Rekor"
   homepage "https://docs.sigstore.dev/logging/overview/"
-  url "https://github.com/sigstore/rekor/archive/refs/tags/v1.4.2.tar.gz"
-  sha256 "c3e8eaa5ee8b61467da9c69d083dda767ba563d54e237ba3f40970494ee9be87"
+  url "https://github.com/sigstore/rekor/archive/refs/tags/v1.4.3.tar.gz"
+  sha256 "bc459b43c3da644c827ae15e3675bbf3ed7cb1135f07eff0d98fc8cd6495f2e3"
   license "Apache-2.0"
 
   livecheck do
