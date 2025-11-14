@@ -1,8 +1,8 @@
 class GitGraph < Formula
   desc "Command-line tool to show clear git graphs arranged for your branching model"
   homepage "https://github.com/mlange-42/git-graph"
-  url "https://github.com/mlange-42/git-graph/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "7620d1e6704a418ccdaee4a9d863a4426e3e92aa7f302de8d849d10ee126b612"
+  url "https://github.com/mlange-42/git-graph/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "105980d19b93324e27ee714abde35cb05b29e21d3c42cd972afe4d4500af05ee"
   license "MIT"
   head "https://github.com/mlange-42/git-graph.git", branch: "master"
 
