@@ -1,8 +1,8 @@
 class ConfigFileValidator < Formula
   desc "CLI tool to validate different configuration file types"
   homepage "https://boeing.github.io/config-file-validator/"
-  url "https://github.com/Boeing/config-file-validator/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "e7c50fded0e036ef56d2479a2fee1eba35ea7fd232a4ba7c98ab087e4ae521ed"
+  url "https://github.com/Boeing/config-file-validator/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "373e66f60ef03026f7efa3116fc5d64c04a6b7e88ea081d66eab8d69957293d4"
   license "Apache-2.0"
   head "https://github.com/Boeing/config-file-validator.git", branch: "main"
 
