@@ -7,12 +7,12 @@ class Mdz < Formula
   head "https://github.com/LerianStudio/midaz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4c804d545671437d702b1a6f989c32c1229df1aaa6a0e84bcc103ebfd6d8617"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef6be8a35d7c4284886fc3488662a981e529ea4e0637feda950de065243c0c37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "827d01c8d736491566a945d29581a85e7fba3907c9780530767c8175fb7340b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9174d26e42ad46d9c4b2589a0e48c6ee3160307d1ae518d33fe34787ef54a84c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88e586adced15dc5d62fc7cbac6a2977819213ca2295c97f2ecfe2a8dabee0e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f9ed7b904705e6d600879c5f87fe7e51bd8dcae12b74fee7fdd451312adbe51"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3069fe9758c55c750ca879ef4cd2a75341e9b976dfdeca079140803818a0d89"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "310303093f2f28ae11eeebf648ea5ad11080851786e935a082e0ab23ced0cfe2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c9bafd24c0c573e3c14144066094269056eff33844b171e0dd79cedbbfe5638"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23aa00d43c0d3ece23dffbda36a0d03c27cfa81ea3237db1429201233f02ddd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbb01f95bd3377d747f902bfc6ae5161b3ff9a305b1c9c343d5c28e81fe4c42c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c8019928de853025002031b55c48b5424d4e1132c0791fcb3eea9c8f6e3d21b"
   end
 
   depends_on "go" => :build
