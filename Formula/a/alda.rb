@@ -30,6 +30,8 @@ class Alda < Formula
       libexec.install "build/libs/alda-player-fat.jar"
       bin.write_jar_script libexec/"alda-player-fat.jar", "alda-player"
     end
+
+    generate_completions_from_executable(bin/"alda", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
