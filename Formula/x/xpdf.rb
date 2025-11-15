@@ -1,16 +1,14 @@
 class Xpdf < Formula
   desc "PDF viewer"
   homepage "https://www.xpdfreader.com/"
-  url "https://dl.xpdfreader.com/xpdf-4.05.tar.gz"
-  sha256 "92707ed5acb6584fbd73f34091fda91365654ded1f31ba72f0970022cf2a5cea"
+  url "https://dl.xpdfreader.com/xpdf-4.06.tar.gz"
+  sha256 "1c38f527c46caee0f712386d42a885b96a31ed9ce11904e872559859894d137e"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
     url "https://www.xpdfreader.com/download.html"
     regex(/href=.*?xpdf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
@@ -37,8 +35,6 @@ class Xpdf < Formula
 
   def install
     args = %W[-DSYSTEM_XPDFRC=#{etc}/xpdfrc]
-    # Workaround for CMake 4 compatibility
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
