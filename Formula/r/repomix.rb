@@ -1,8 +1,8 @@
 class Repomix < Formula
   desc "Pack repository contents into a single AI-friendly file"
   homepage "https://github.com/yamadashy/repomix"
-  url "https://registry.npmjs.org/repomix/-/repomix-1.9.0.tgz"
-  sha256 "506a2baa57b0adc1e620eb14b7d2a7262d0876ac342560929d54bc64bb03ddc5"
+  url "https://registry.npmjs.org/repomix/-/repomix-1.9.1.tgz"
+  sha256 "1e8b3209709be03e1357fc6d1484da4510fe5a3dab35343461e6eb15bb61cbfa"
   license "MIT"
 
   bottle do
@@ -42,6 +42,6 @@ class Repomix < Formula
 
     output = shell_output("#{bin}/repomix --style plain --compress #{testpath}/test_repo")
     assert_match "Packing completed successfully!", output
-    assert_match "This file is a merged representation of the entire codebase", (testpath/"repomix-output.xml").read
+    assert_match "This file is a merged representation of the entire codebase", (testpath/"repomix-output.txt").read
   end
 end
