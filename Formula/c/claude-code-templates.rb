@@ -6,7 +6,7 @@ class ClaudeCodeTemplates < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "29a77311b7c48121d23552b94157e98d776ce0da5f3e55d8fa034b8e83526a94"
+    sha256 cellar: :any_skip_relocation, all: "1a1181ba5f784997d5cd478cb405504d38209b9f8087ab37236dc7f05c6124c5"
   end
 
   depends_on "node"
