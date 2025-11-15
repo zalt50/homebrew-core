@@ -5,6 +5,15 @@ class Gotun < Formula
   sha256 "d63768ad7ae61b2fa29f100e22af19b9d43886eb85712e64c58d24b9408b92c1"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "700956caa0621363c75435dcb00f638b26ac709be5b41cc850561b05c99bc94b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "700956caa0621363c75435dcb00f638b26ac709be5b41cc850561b05c99bc94b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "700956caa0621363c75435dcb00f638b26ac709be5b41cc850561b05c99bc94b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9359d4ea158a6c165a1f02c694cde47e5155234933c2136500fb5433027b562b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d25f8a2fc8013990e210a4654bd55d91fb53135133a300c6f778235434ed6037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f89af90bec14e9b584e6e2fb1751f11809f72ad43d570c6ef56ff69c79b52d94"
+  end
+
   depends_on "go" => :build
 
   def install
