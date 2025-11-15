@@ -11,13 +11,12 @@ class Xpdf < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "cb4be570e78e5683aa5f8d1cd38863940ceff5c450841611b8c869cb2438a9e7"
-    sha256 cellar: :any,                 arm64_sequoia: "a427e2fdfcf6d7941ee319dc9dc483104177a6460cc8d198d5905934a4b5c1c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "2fcac810f853552814f046a8c9121237cf1d6e2962e09977cc6e57e5b1bf26b8"
-    sha256 cellar: :any,                 sonoma:        "c7c880aa82976bfd35833f8a2cb71cfab406a15f293b09b38119ec5a95f1769a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "192177145fa3698a7180404e21393799c506fdd206caf5ec3735732c9d0e94e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1968ec32654250b756e84e6dce636b032d6c439cb05ec58903f6b48b265aea"
+    sha256 cellar: :any,                 arm64_tahoe:   "4dd0eb582bdc7b4379aa8e77644af37c4e8e096a8696d4a0fbdc23ccc4cba193"
+    sha256 cellar: :any,                 arm64_sequoia: "60cc7f994a18afe6a5ae628ab060f6c6c5413d83f01df8b06c1a25bc63c91cb0"
+    sha256 cellar: :any,                 arm64_sonoma:  "6cfb145e1263312e350bd59bb67cbcc92f5e30fce85b66868ca2cc2e052c008d"
+    sha256 cellar: :any,                 sonoma:        "6189984381ed79a12c107361576d6d2dc387e9c7f96a95b29214b490344559aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54e5a8dfab3cc64ed798baed055e7ebc46ce23990c3af9f10cc3df4a43732456"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ebbcae1282fab3ebb7f695353528f51bd149bdf426d36d889b6c88fc85551a"
   end
 
   depends_on "cmake" => :build
