@@ -12,14 +12,12 @@ class WoofDoom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e4f6a2d1ff1092cd0277ffcb92e41b6759b80b3ddfc14be7b53cd29448f2fcb0"
-    sha256 cellar: :any,                 arm64_sequoia: "9f0b9979cbb09840542e15f524abb725a5531e1c10b7d4bbcfc9333096acd39d"
-    sha256 cellar: :any,                 arm64_sonoma:  "5cbd903199d7c932b11e369c48ed666f975f54f7e0095d8d282827a16215f370"
-    sha256 cellar: :any,                 arm64_ventura: "ecb8f5469dc35e84049fa7ba8fe21548f16c12374fd883503fe301dc8d69e5bc"
-    sha256 cellar: :any,                 sonoma:        "1a0bb7a3fc9683e6d515d68e18132f7cab5e1b5815e75adf7144869e6078a4c0"
-    sha256 cellar: :any,                 ventura:       "9bd1b3c7acae2ef026e6d701aaf6daff8037ee9f4477c7a2d207b0403f7e3dd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dacc4a1a6f973620fc386939b682a9727ddbc26759d8484cfa1a56fe5c815d92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65ec9fc0998e63cc399282a54cc1cdd7f3dd4c676907cc6ed377ad0af0bbd898"
+    sha256 cellar: :any,                 arm64_tahoe:   "5fe5942382f6b24dfd928f023279f36ea7fc8686a92affbfe9dac93d4df6ea50"
+    sha256 cellar: :any,                 arm64_sequoia: "9af289e62db9550c0d9d04903f596e46f0ab67a3fe7d42fff1294511549b6fa9"
+    sha256 cellar: :any,                 arm64_sonoma:  "eefa1a71e7e29f5a19ee0f50f6332ac37d1334d2b6c72e09eddeb9e9dd2de9a8"
+    sha256 cellar: :any,                 sonoma:        "ce1a252768cd9d70a653330c55b3fc53b8a8c922d15fd7184d36561e2403a48a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f97536230d32c3733dbee65719503d45d620112ab004de741542f1c125e193f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f25b3b170b7b2b6bd627f551ea0dd4fe229898bf039a72508a441fd1ecf4ca6"
   end
 
   head do
