@@ -17,16 +17,13 @@ class Stlink < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:    "7cc317395306550102803a7cd3ee1416ab2d7bcc0993d8641a5d1a879df58cce"
-    sha256 arm64_sequoia:  "234d04d230556d8342bc80d9d8564e7c643f86ebd39c8e3d9cd10667076c4459"
-    sha256 arm64_sonoma:   "182146c51940a4851235c5a1e66e0a1455d5833a112537c366b68314f4280d62"
-    sha256 arm64_ventura:  "11f6ede1d7a55e0ceb814ea59df7e88560f317fd9ed9d1bf47c9905bb1b28b68"
-    sha256 arm64_monterey: "5aec98fdb4a07aa5abfd1292ec15bf9c385869845fc107c905f35baf2c21bb75"
-    sha256 sonoma:         "123d84cd6f2bdeeabce247febb96aed963876789e3e23bec7312098b2590483c"
-    sha256 ventura:        "96b6ee1f313c0b377a3882eb33191164b751f171dd1ba2c6c9e8ef525b663798"
-    sha256 monterey:       "5c33e3d172d272295fa0d27e08d80fd86e0429156e44b72b934898c11d08ab11"
-    sha256 arm64_linux:    "4b0deecf90ccc793307fb68a4b72e13a7cd8eebf05012ad6d26fd4f2adfa80e7"
-    sha256 x86_64_linux:   "7872c14d351e27c5953bc0565d4eb64312d3e54abc898b05197af8a631abab2c"
+    rebuild 1
+    sha256 arm64_tahoe:   "a1318d007d2ebd3a5efac196e4c2be465b0bb7a4f6b7b937211d17ad447d983e"
+    sha256 arm64_sequoia: "74429f7151b0a5f5ec7e8f150dadcaad6fc89c8c100edbada6360195e257322c"
+    sha256 arm64_sonoma:  "f446d762cfa087474e6c4110af9cfd1764501715b1f6e6c67e73f66950a4ab08"
+    sha256 sonoma:        "535d44df1d077f72e893542b763d70fd8cb527dd23801e9bea188146f2f4b7e8"
+    sha256 arm64_linux:   "3acecdba1528f1b3be80a7323eee6810539ef12e53943db52ee2806354e9d4a8"
+    sha256 x86_64_linux:  "08e0054f6e1ecf8c7298ca5938e79b3d9533d2ddbcc90585adf1303bf2ef0423"
   end
 
   head do
