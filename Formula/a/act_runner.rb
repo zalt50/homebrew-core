@@ -26,19 +26,14 @@ class ActRunner < Formula
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"act_runner", "completion")
 
-    pkgetc.mkpath
-    (pkgetc/"config.yaml").write Utils.safe_popen_read(bin/"act_runner", "generate-config")
-  end
-
-  def post_install
+    (buildpath/"config.yaml").write Utils.safe_popen_read(bin/"act_runner", "generate-config")
+    pkgetc.install "config.yaml"
     # Create working dir for services
     (var/"lib/act_runner").mkpath
   end
 
   def caveats
-    <<~EOS
-      Config file: #{pkgetc}/config.yaml
-    EOS
+    "Config file: #{pkgetc}/config.yaml"
   end
 
   service do
