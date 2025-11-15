@@ -1,8 +1,8 @@
 class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
   homepage "https://graphviz.org/"
-  url "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.0.2/graphviz-14.0.2.tar.xz"
-  sha256 "31af4728cd0d7db91013d29286227ae6b5264ff897647c2ebfeb85f47c08177e"
+  url "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.0.4/graphviz-14.0.4.tar.xz"
+  sha256 "a005977de2fec13753f5bde767cf97fdc28ac54bfd6a2737c563748bc4f32317"
   license "EPL-1.0"
   version_scheme 1
 
