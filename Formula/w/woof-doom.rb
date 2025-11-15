@@ -1,10 +1,15 @@
 class WoofDoom < Formula
   desc "Woof! is a continuation of the Boom/MBF bloodline of Doom source ports"
   homepage "https://github.com/fabiangreffrath/woof"
-  url "https://github.com/fabiangreffrath/woof/archive/refs/tags/woof_15.2.0.tar.gz"
-  sha256 "aa2842c2897b1a8c733a79db190c2e6c17cef10651c5cd5105c7bf1360799932"
   license "GPL-2.0-only"
-  head "https://github.com/fabiangreffrath/woof.git", branch: "master"
+
+  stable do
+    url "https://github.com/fabiangreffrath/woof/archive/refs/tags/woof_15.3.0.tar.gz"
+    sha256 "ace929952479bf42f2bbf404f6bc95ca5fabde23f3c8d656c6d1339b9baebbcc"
+
+    depends_on "sdl2"
+    depends_on "sdl2_net"
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e4f6a2d1ff1092cd0277ffcb92e41b6759b80b3ddfc14be7b53cd29448f2fcb0"
@@ -17,14 +22,19 @@ class WoofDoom < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "65ec9fc0998e63cc399282a54cc1cdd7f3dd4c676907cc6ed377ad0af0bbd898"
   end
 
+  head do
+    url "https://github.com/fabiangreffrath/woof.git", branch: "master"
+
+    depends_on "sdl3"
+  end
+
   depends_on "cmake" => :build
   depends_on "fluid-synth"
   depends_on "libebur128"
   depends_on "libsndfile"
   depends_on "libxmp"
   depends_on "openal-soft"
-  depends_on "sdl2"
-  depends_on "sdl2_net"
+  depends_on "yyjson"
 
   on_linux do
     depends_on "alsa-lib"
@@ -33,16 +43,18 @@ class WoofDoom < Formula
   conflicts_with "woof", because: "both install `woof` binaries"
 
   def install
+    # Remove bundled libraries
+    rm_r("third-party/yyjson")
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    testdata = <<~EOS
+    (testpath/"test_invalid.wad").write <<~EOS
       Invalid IWAD file
     EOS
-    (testpath/"test_invalid.wad").write testdata
 
     expected_output = "Error: Failed to load test_invalid.wad"
     assert_match expected_output, shell_output("#{bin}/woof -nogui -iwad test_invalid.wad 2>&1", 255)
