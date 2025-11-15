@@ -19,16 +19,16 @@ class Simdjson < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DSIMDJSON_BUILD_STATIC_LIB=ON",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "build"
-    lib.install "build/libsimdjson.a"
   end
 
   test do
-    (testpath/"test.json").write "{\"name\":\"Homebrew\",\"isNull\":null}"
+    (testpath/"test.json").write({ name: "Homebrew", isNull: nil }.to_json)
     (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <simdjson.h>
