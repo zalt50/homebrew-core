@@ -29,6 +29,8 @@ class Anchor < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cli")
+
+    generate_completions_from_executable(bin/"anchor", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
