@@ -14,6 +14,11 @@ class Pipewire < Formula
     regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
   end
 
+  bottle do
+    sha256 arm64_linux:  "6d572cd52c0c3329c53e77a3d6c1d4a6bdd001fb78ddb641248a5e93486892e4"
+    sha256 x86_64_linux: "0c0e172381438d5b4abc7b2b478bcee91342ae768a9b11b5e584157a6c1f1304"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
