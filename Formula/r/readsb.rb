@@ -1,8 +1,8 @@
 class Readsb < Formula
   desc "ADS-B decoder swiss knife"
   homepage "https://github.com/wiedehopf/readsb"
-  url "https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.5.tar.gz"
-  sha256 "0457b158d99619903fd37e24566c1c540356d49279d3781efb4d2058a09fdf5a"
+  url "https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.6.tar.gz"
+  sha256 "6006328dfa3a1b7214989ccd8df3777bbbb772cb6344d94f118924c00329d397"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -56,6 +56,6 @@ class Readsb < Formula
     EOS
 
     (testpath/"input.bin").write Base64.decode64(enc)
-    assert_match "ICAO Address:", shell_output("#{bin}/readsb --device-type ifile --ifile input.bin 2>/dev/null")
+    assert_match "ICAO Address:", shell_output("#{bin}/readsb --device-type ifile --ifile input.bin 2>/dev/null", 1)
   end
 end
