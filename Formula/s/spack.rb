@@ -1,8 +1,8 @@
 class Spack < Formula
   desc "Package manager that builds multiple versions and configurations of software"
   homepage "https://spack.io"
-  url "https://github.com/spack/spack/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "c0d4f142ba45160b7cb3fa0c6bb23633734cef689a4a193eb91d08c233ba1f1b"
+  url "https://github.com/spack/spack/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "518474f546e87723c43b80143d83a51c065a8d54333c8140da6f48bc7d9e50c1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spack/spack.git", branch: "develop"
 
@@ -33,7 +33,8 @@ class Spack < Formula
     ENV["SPACK_USER_CONFIG_PATH"] = testpath
     (testpath/"config.yaml").write <<~YAML
       config:
-        install_tree: #{testpath}/opt/spack
+        install_tree:
+          root: #{testpath}/opt/spack
     YAML
 
     system bin/"spack", "--version"
