@@ -6,8 +6,8 @@ class Ccls < Formula
   #       https://github.com/Homebrew/homebrew-core/pull/106939
   #       https://github.com/MaskRay/ccls/issues/786
   #       https://github.com/MaskRay/ccls/issues/895
-  url "https://github.com/MaskRay/ccls/archive/refs/tags/0.20250815.tar.gz"
-  sha256 "179eff95569faca76a1cdbd0d8f773c2cbbafa90e0fcce3d67a8a680066dce7a"
+  url "https://github.com/MaskRay/ccls/archive/refs/tags/0.20250815.1.tar.gz"
+  sha256 "b44d9f981e65dcf950525886f8211727da8a41d3070d323d558f950749bc493c"
   license "Apache-2.0"
   head "https://github.com/MaskRay/ccls.git", branch: "master"
 
