@@ -8,6 +8,10 @@ class Torrra < Formula
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "340ffb9b0af67b970c4dfa6097df6673f85c8856e4361c314531b2a40601ecb0"
+  end
+
   depends_on "certifi"
   depends_on "libtorrent-rasterbar"
   depends_on "python@3.14"
