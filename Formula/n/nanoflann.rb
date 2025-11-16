@@ -1,8 +1,8 @@
 class Nanoflann < Formula
   desc "Header-only library for Nearest Neighbor search with KD-trees"
   homepage "https://github.com/jlblancoc/nanoflann"
-  url "https://github.com/jlblancoc/nanoflann/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "887e4e57e9c5fbf1c2937f9f5a9bc461c4786d54729b57a9c19547bdedb46986"
+  url "https://github.com/jlblancoc/nanoflann/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "14e82a1de64a8b26486322d36817449a8bc2e63ea3b91bfee64f320155790a9c"
   license "BSD-3-Clause"
   head "https://github.com/jlblancoc/nanoflann.git", branch: "master"
 
