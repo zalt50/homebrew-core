@@ -9,8 +9,7 @@ class EyeD3 < Formula
   head "https://github.com/nicfit/eyeD3.git", branch: "0.9.x"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "0824e1bb0ea2d8c4254435b14c48c6845b5a1b610bd0de4e5762e7ed68dc1154"
+    sha256 cellar: :any_skip_relocation, all: "c6bbc59b8cca30423c14cd273ec694b3025e2c3aa2b6425966301121fb791889"
   end
 
   depends_on "python@3.14"
