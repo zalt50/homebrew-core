@@ -1,8 +1,8 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https://github.com/chaqchase/lla"
-  url "https://github.com/chaqchase/lla/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "a11ba912b4fdca16d5c9b0624c2a08c52de7de3048e2a225c4a6a9d2013e4fe5"
+  url "https://github.com/chaqchase/lla/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "34afc823a0bfda6379966cdbcaeaabda4ffc2e9f122c2a85f3b8ba9a77e53c22"
   license "MIT"
 
   bottle do
@@ -43,10 +43,10 @@ class Lla < Formula
   test do
     test_config = testpath/".config/lla/config.toml"
 
-    system bin/"lla", "init"
+    system bin/"lla", "init", "--default"
 
     output = shell_output("#{bin}/lla config")
-    assert_match "Current configuration at \"#{test_config}\"", output
+    assert_match "Config file: #{test_config}", output
 
     system bin/"lla"
 
