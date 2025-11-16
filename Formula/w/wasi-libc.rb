@@ -20,12 +20,8 @@ class WasiLibc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17e4a77b687c84974474f58bb51730e05edd490297bf524da80b1c84430d2ae4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17e4a77b687c84974474f58bb51730e05edd490297bf524da80b1c84430d2ae4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17e4a77b687c84974474f58bb51730e05edd490297bf524da80b1c84430d2ae4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17e4a77b687c84974474f58bb51730e05edd490297bf524da80b1c84430d2ae4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df3c7604191a99d4e45b25af688dfa8264a4bd8e5d18a81d1ce8154fa67a9c8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df3c7604191a99d4e45b25af688dfa8264a4bd8e5d18a81d1ce8154fa67a9c8b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a529c0735dbb8a0650b31e03540ce34aa2821efba92b1b032e15e47a662fe5d9"
   end
 
   depends_on "llvm" => [:build, :test]
@@ -42,12 +38,10 @@ class WasiLibc < Formula
     ENV.remove_cc_etc
     ENV.remove "PATH", Superenv.shims_path
 
-    # Flags taken from Arch:
-    # https://gitlab.archlinux.org/archlinux/packaging/packages/wasi-libc/-/blob/main/PKGBUILD
     make_args = [
-      "WASM_CC=#{Formula["llvm"].opt_bin}/clang",
-      "WASM_AR=#{Formula["llvm"].opt_bin}/llvm-ar",
-      "WASM_NM=#{Formula["llvm"].opt_bin}/llvm-nm",
+      "CC=#{Formula["llvm"].opt_bin}/clang",
+      "AR=#{Formula["llvm"].opt_bin}/llvm-ar --format=gnu",
+      "NM=#{Formula["llvm"].opt_bin}/llvm-nm",
       "INSTALL_DIR=#{share}/wasi-sysroot",
     ]
 
