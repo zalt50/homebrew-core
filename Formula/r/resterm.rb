@@ -6,6 +6,15 @@ class Resterm < Formula
   license "Apache-2.0"
   head "https://github.com/unkn0wn-root/resterm.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2cc4f80d6d8c65edc17b68e67ec790c406af4d30aac3ae35cb733b3d0e47b62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2cc4f80d6d8c65edc17b68e67ec790c406af4d30aac3ae35cb733b3d0e47b62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2cc4f80d6d8c65edc17b68e67ec790c406af4d30aac3ae35cb733b3d0e47b62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77d6991b9f4b950fef3bdc94a8c09b9fc65dd520e08d8b54c7af86b64e18dc8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "991ab6b38aa35857407ee72dfec719896db8f745379bf618d31782a6868b3293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99f0ca4f6b87857b6e904baf619c885772039b500c0b5edac9c767a93aef53bf"
+  end
+
   depends_on "go" => :build
 
   def install
