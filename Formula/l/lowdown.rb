@@ -8,14 +8,12 @@ class Lowdown < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "649de2546b83ee9f6072b1ea1f3df0aad0d9cb2eb7368a35c46850c982277f37"
-    sha256 cellar: :any,                 arm64_sequoia: "72539b273d1f011b41a404ec609e5e5f90d95ecfed55de488ca96a599e7aa671"
-    sha256 cellar: :any,                 arm64_sonoma:  "db56e9a27e486ab120cfb60b6c0c35906bebedbde3542c0228413bd2c7327659"
-    sha256 cellar: :any,                 arm64_ventura: "682e3e2c5bb4100111aa12a3295758a33c9ef0fb688026730ba72c38d0e4a618"
-    sha256 cellar: :any,                 sonoma:        "39ca5b7e92d47aedfd37487c61560c0bf81952682a2f210c75e430532ee0f3fb"
-    sha256 cellar: :any,                 ventura:       "939b0d8f64b94d96ba9e865a89872d4f031b2c538fb20ba215f9be95ca3ab5d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a643fc2ad9a4c717c3a5c507cd05cd48e31a521e8d5912c753e68745f89df2ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8ccef0a88b45b09cebd38dd16dff22a85e83475e036a539cbff5c7d948dcb08"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f0f66ad467ae9149a73953e2bbfe58da4eb6056357ffed64f1d3a8bfe1e4319"
+    sha256 cellar: :any,                 arm64_sequoia: "d27c4fdd19aec3b062d8d3162b1034de6af7224d3574ba1e3b8b2db3bd00f42b"
+    sha256 cellar: :any,                 arm64_sonoma:  "22b3f1bee02bc72f745080561fd2f6f0995e04357138f1f33cb570158106109f"
+    sha256 cellar: :any,                 sonoma:        "3f665399d8b0a1d688c64e5e10652dc6ddd1afd38b9bbadebc496299284adbc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e4ec4b0c90f02891833118478258195d578109a3774308439760f0447671a7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a312ed190ac61e031d5761fe9e97e43e84134449d0fdfab50461c3868e45a153"
   end
 
   depends_on "bmake" => :build
