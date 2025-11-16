@@ -12,12 +12,12 @@ class Graphviz < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "22e300b506629d228c066a287c1bfc8f5261f4255597353fb11ea662462e548a"
-    sha256 arm64_sequoia: "9d94b5765b75e1dc569cffdff90659d71ace0a3262ae14aec39080e0ddb0717d"
-    sha256 arm64_sonoma:  "6f3bd83a592e321a85ac4c05cff0ada14212ba0d75202222e01f1a608bb04cdd"
-    sha256 sonoma:        "54fb0df64204b991cc424aee0ea9ca65c52acf21f0410f9f21542c3fe940dfcc"
-    sha256 arm64_linux:   "9269b27985b9f5196f64bd5560c1715bfeecdb3b1af277df0b8cb02a8b46a32d"
-    sha256 x86_64_linux:  "1629d02edf622f0882e703698d5bc520311c687dd6adc35dde163a4b47043e6d"
+    sha256 arm64_tahoe:   "cce0dc29c78a32b066a47802aaaaabf72a7d463adc60142bf5a42ab820e07a31"
+    sha256 arm64_sequoia: "6e25e19cc2b16342ef73ffa3c81803851d359735b36fc0d3da428ea0ca62b2aa"
+    sha256 arm64_sonoma:  "272258992639d52f83ab17559e227b5026d29f2c200d525def530022dfee5135"
+    sha256 sonoma:        "f2d178512138c415d1f91aa66eccf15ad6188e8b4dbf50eb4d20206f63bb8076"
+    sha256 arm64_linux:   "5cdc27b9e2f8cf425d1403add65d4767c5234a7b367cfeeb0c63ccd4f26a0bb8"
+    sha256 x86_64_linux:  "0c28a182e25425e4fa20d74a971cad8eb072bc55f3209d98b8aaa180e334dfe1"
   end
 
   head do
