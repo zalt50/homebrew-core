@@ -42,12 +42,10 @@ class WasiLibc < Formula
     ENV.remove_cc_etc
     ENV.remove "PATH", Superenv.shims_path
 
-    # Flags taken from Arch:
-    # https://gitlab.archlinux.org/archlinux/packaging/packages/wasi-libc/-/blob/main/PKGBUILD
     make_args = [
-      "WASM_CC=#{Formula["llvm"].opt_bin}/clang",
-      "WASM_AR=#{Formula["llvm"].opt_bin}/llvm-ar",
-      "WASM_NM=#{Formula["llvm"].opt_bin}/llvm-nm",
+      "CC=#{Formula["llvm"].opt_bin}/clang",
+      "AR=#{Formula["llvm"].opt_bin}/llvm-ar --format=gnu",
+      "NM=#{Formula["llvm"].opt_bin}/llvm-nm",
       "INSTALL_DIR=#{share}/wasi-sysroot",
     ]
 
