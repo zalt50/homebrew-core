@@ -1,11 +1,11 @@
 class Lowdown < Formula
   desc "Simple markdown translator"
   homepage "https://kristaps.bsd.lv/lowdown"
-  url "https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_2_0_2.tar.gz"
-  sha256 "9718c0f6c99a2cef923357feced0e0f86d8047260238c5c37fd2b51ca620e373"
+  url "https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_2_0_3.tar.gz"
+  sha256 "2c6251ca35002dfc8729dd29ddbff7df700b9ca8de39f36f7a826fcfd20ef426"
   license "ISC"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "649de2546b83ee9f6072b1ea1f3df0aad0d9cb2eb7368a35c46850c982277f37"
@@ -19,6 +19,13 @@ class Lowdown < Formula
   end
 
   depends_on "bmake" => :build
+
+  # Fix dylib suffix
+  # https://github.com/kristapsdz/lowdown/pull/169
+  patch do
+    url "https://github.com/kristapsdz/lowdown/commit/79b610ca90ad7e0e20b7acf16e52a2481312810e.patch?full_index=1"
+    sha256 "5bd0e774e48e7649a959553422181a8f0f7a76cdacb3775631763751f48840d4"
+  end
 
   def install
     configure_args = %W[MANDIR=#{man} PREFIX=#{prefix}]
