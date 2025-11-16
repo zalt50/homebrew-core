@@ -8,6 +8,15 @@ class Hapless < Formula
   license "MIT"
   head "https://github.com/bmwant/hapless.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f1b7e79dfde8dbe3455de9b60c62a99beb47ad4c4205ed6dc41eac53ad5e658"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64caa2c200a8de591971236bc8d4d3278659a168b54a1276f270e8bf668afca3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc139bf4e116e32d5361c3b4ee0d852a8652fb1045a8a198788024880cf69c58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0002b73048141bbfee5af4902268a678ea4e8b43a5c15a4fa2f6f18378d54980"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dacaef22d5d890857200588faf20af1754969ccf1ba9857777cc922b83f3b80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a67ed90db3f8ae881ae0d5419219deca72c4afba42e88cfb9c12def1d094698c"
+  end
+
   depends_on "python@3.14"
 
   resource "click" do
