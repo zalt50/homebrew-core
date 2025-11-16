@@ -6,16 +6,12 @@ class Freeglut < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "02d0d77d39cedd975d5fb4982261aeb9eb4ba6d379b6560b40c944b3cc569595"
-    sha256 cellar: :any,                 arm64_sequoia:  "15142599aa482cf0cd446ae930ea18cc39d0244ac980254ab1f97b135000e1af"
-    sha256 cellar: :any,                 arm64_sonoma:   "cbd441a4a55c8b7db3732964e1dea5709fc7a9698a3bfc8df498f306a19b7df9"
-    sha256 cellar: :any,                 arm64_ventura:  "9e1d3f9c8cedb8b611e66158e898d46bbcb4e28aaf5280536917b0f30b207cb7"
-    sha256 cellar: :any,                 arm64_monterey: "02606145d1a13b1a22e9ce8b61c61701dd903b17aa962f9abbdfe558cc3e00ca"
-    sha256 cellar: :any,                 sonoma:         "ae8ac9e040e9fdefa287e882cd7fec7b0952a98dc5bf025875b0b16d2c6a37a6"
-    sha256 cellar: :any,                 ventura:        "e636688689f5be4828151ce0ad415387fd10b0a6fd4610a9c0919882c8e084c9"
-    sha256 cellar: :any,                 monterey:       "95b2565476d715ae6a7a8230ae2af1539455cdba8b898e640ef1f7ca2e7926a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3405d3188375a12576a2c5a4fb747b2699b5cc8c771222a1d94cc0067d0edff9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dd41f7adaac60fd1674cd3147c0f10d6eb37f48345b1b13d6f080c4d0e1a68b"
+    sha256 cellar: :any,                 arm64_tahoe:   "c702ef020f0ee587f8a6c583bd91f0e0ae905aae875b19c9ce91a30918b04c77"
+    sha256 cellar: :any,                 arm64_sequoia: "4c326ac55184f3e15dd828ac8f3c39a3f132aaca816a7429492a3a8a7a9e4dc0"
+    sha256 cellar: :any,                 arm64_sonoma:  "7428dbf49dcc32e79623cbf4653640b5e847062f6cd0f0522a893e698734a2fe"
+    sha256 cellar: :any,                 sonoma:        "271aaea7bbd3cce73d950c7dfbe2f68d1246e2dc35d3efd7e1e111f921aa870d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4028f390685ccdbc27d63e8a13b13ac04eeb38d59ea713a02e0e4cd957cd87e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a792596562e423cfc3c800166b2347d12b805a70395339bfe175752474d354"
   end
 
   depends_on "cmake" => :build
