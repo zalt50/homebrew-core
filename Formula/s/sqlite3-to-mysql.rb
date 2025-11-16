@@ -3,18 +3,18 @@ class Sqlite3ToMysql < Formula
 
   desc "Transfer data from SQLite to MySQL"
   homepage "https://github.com/techouse/sqlite3-to-mysql"
-  url "https://files.pythonhosted.org/packages/9c/9b/21ab069571c6c1730eb4546c3f32380661d67092602611e2538b7012a536/sqlite3_to_mysql-2.5.4.tar.gz"
-  sha256 "1c8d55cdb794706d697257c5ed2c7304ae2ae137035b2fe7e4ca3069d959c494"
+  url "https://files.pythonhosted.org/packages/7f/a6/a472f84f2df6a604e85cc70d6cad2dca3a392bdd97906afc5958f5802919/sqlite3_to_mysql-2.5.5.tar.gz"
+  sha256 "f12165f80d8208ab4c1c668953862d08278fcf65a7aaf39ca99a347eae905127"
   license "MIT"
   head "https://github.com/techouse/sqlite3-to-mysql.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d0333fd803311b79609be5ef71484fd923923818015abe9136e359af4d2fc61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35eb58b13abe7b64dc98406133563045b2b9a924fe1218fb59ca23fd16d7819f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6872db3781b348bd67dfdef22c881d9209b4ce2579c54176bae293fd728807af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec771d7a193b5a196dc15e362bb50828ecdd3fd75508b5a37a9546e9ca7321f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77582b75d88239f99116d8b8b661a4a17b21a2fec8b76e1c739eb4bde84be357"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c46103bf988aefe8cde3299a3ad36b8a1eb942ced47469488cdf86d96815558"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a80a65c33f0547f1cf2cb4304e038068b2c9df3f5d812b6052de2f0882817f3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b9f5b5e322e20404b73139c11b5b5f5602df16efd7df92b9ace2de152b7ac40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f4ffe7eaecd4693a79605294951697b756dbe72164f6ba2500c24687b79c1d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0197289254d099a817481e153cc9cd51793a2ea1682f6c52a46ee14c92d0ba1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a06aefbec9089d1a72696e888252e18404f1e4507ce821fca2f743888b994f04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d3e9b5646c2c5c0e59355aeacedff10c05e35b99c50c45559697dcbe069df31"
   end
 
   depends_on "python@3.14"
