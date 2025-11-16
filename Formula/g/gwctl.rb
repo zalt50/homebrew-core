@@ -6,6 +6,15 @@ class Gwctl < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/gwctl.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e532ca99c3da95393e97b339892130b0e12aca45c85ed3654e5291f948bbd740"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3914314844c5e36493c6b5d20241622e42ec0ef52ac72cfbd5bcc102a328c9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b388488f06cb1c253349fe72708d6e0ca8f12bad25253fd2df35fea04d2ed5c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4bf7cc7c350a7bb5e99b5eb36e2782d4159b3abb012daa771922fcf0831b4d01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5c806bf7a5be421ce61a498c8cfc5d3baaa7e6806556046fc1a8bc4786979b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "031872ef641d1f928e6b0e1e70e34f01943783535564f8ccc17df5562d1549a7"
+  end
+
   depends_on "go" => :build
 
   def install
