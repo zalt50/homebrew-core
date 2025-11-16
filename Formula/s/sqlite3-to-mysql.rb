@@ -3,18 +3,18 @@ class Sqlite3ToMysql < Formula
 
   desc "Transfer data from SQLite to MySQL"
   homepage "https://github.com/techouse/sqlite3-to-mysql"
-  url "https://files.pythonhosted.org/packages/e1/5c/3a6bcedf151a51f554cd79741abde8db3eab91e4d166668d49e07197d5df/sqlite3_to_mysql-2.5.3.tar.gz"
-  sha256 "6073bb6435599da1b4bf671b33a271884c1b237234caa52f6b05b9dc79f8a48d"
+  url "https://files.pythonhosted.org/packages/9c/9b/21ab069571c6c1730eb4546c3f32380661d67092602611e2538b7012a536/sqlite3_to_mysql-2.5.4.tar.gz"
+  sha256 "1c8d55cdb794706d697257c5ed2c7304ae2ae137035b2fe7e4ca3069d959c494"
   license "MIT"
   head "https://github.com/techouse/sqlite3-to-mysql.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3d8df9be62aa05f51a9677973936ce9f41b098cf392094ae3d5144472db95b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "123cae34bd202c7e4c90f6e7b34cca35d1b5f399404251e4b0f9ff6b889e068e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "061243d903df558891eabb0bb862c592ac4e5534ef9f7a09810a24e03853bb40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "889bc3f87a454e34f6f15c4c68f3c4d18e0dec69c0d7ecb73e8ca12d10ebdacc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c7438d659ec173a6f6cac8c18985d3034b2e4f7d5a1a6b139a24bfccb2184b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24e987ae30ed0f555d0f49980df7fcb85edb81a235ba9c548e0445bac654c67f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d0333fd803311b79609be5ef71484fd923923818015abe9136e359af4d2fc61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35eb58b13abe7b64dc98406133563045b2b9a924fe1218fb59ca23fd16d7819f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6872db3781b348bd67dfdef22c881d9209b4ce2579c54176bae293fd728807af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec771d7a193b5a196dc15e362bb50828ecdd3fd75508b5a37a9546e9ca7321f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77582b75d88239f99116d8b8b661a4a17b21a2fec8b76e1c739eb4bde84be357"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c46103bf988aefe8cde3299a3ad36b8a1eb942ced47469488cdf86d96815558"
   end
 
   depends_on "python@3.14"
@@ -22,8 +22,8 @@ class Sqlite3ToMysql < Formula
   uses_from_macos "sqlite"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "mysql-connector-python" do
@@ -34,11 +34,6 @@ class Sqlite3ToMysql < Formula
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "python-dateutil" do
@@ -56,6 +51,11 @@ class Sqlite3ToMysql < Formula
     sha256 "5fe7a6ce14d1c300d80d08695b7f7e633de6cd72c80644021874d985b3393649"
   end
 
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+  end
+
   resource "sqlglot" do
     url "https://files.pythonhosted.org/packages/d1/50/766692a83468adb1bde9e09ea524a01719912f6bc4fdb47ec18368320f6e/sqlglot-27.29.0.tar.gz"
     sha256 "2270899694663acef94fa93497971837e6fadd712f4a98b32aee1e980bc82722"
@@ -71,12 +71,7 @@ class Sqlite3ToMysql < Formula
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
-  end
-
-  resource "Unidecode" do
+  resource "unidecode" do
     url "https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63/Unidecode-1.4.0.tar.gz"
     sha256 "ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23"
   end
