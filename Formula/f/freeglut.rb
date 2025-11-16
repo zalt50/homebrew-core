@@ -1,8 +1,8 @@
 class Freeglut < Formula
   desc "Open-source alternative to the OpenGL Utility Toolkit (GLUT) library"
   homepage "https://freeglut.sourceforge.net/"
-  url "https://github.com/freeglut/freeglut/releases/download/v3.6.0/freeglut-3.6.0.tar.gz"
-  sha256 "9c3d4d6516fbfa0280edc93c77698fb7303e443c1aaaf37d269e3288a6c3ea52"
+  url "https://github.com/freeglut/freeglut/releases/download/v3.8.0/freeglut-3.8.0.tar.gz"
+  sha256 "674dcaff25010e09e450aec458b8870d9e98c46f99538db457ab659b321d9989"
   license "MIT"
 
   bottle do
@@ -37,10 +37,7 @@ class Freeglut < Formula
   end
 
   def install
-    # Can remove cmake policy minimum in next release
-    # https://github.com/freeglut/freeglut/commit/2294389397912c9a6505a88221abb7dca0a4fb79
     args = %W[
-      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DFREEGLUT_BUILD_DEMOS=OFF
       -DOPENGL_INCLUDE_DIR=#{Formula["mesa"].include}
       -DOPENGL_gl_LIBRARY=#{Formula["mesa"].lib/shared_library("libGL")}
