@@ -5,6 +5,15 @@ class Libaegis < Formula
   sha256 "ce855320369f5e46d4c3512bf28a0cb8b8260b6d079b6b9bfda61ccd452fe9ce"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "c1b48f7d944a1efaf012835ebb0a4d0dba36a54adf00d83f85d8ed8718bb9d7a"
+    sha256 cellar: :any,                 arm64_sequoia: "6b79e84ea50fd699153450124e58979f68be5226595b2ebc432b3ca9db2cc83b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac6041073171b59762aa5f273fda40e93146f9d9f572046e4451c4e91c9bf3c1"
+    sha256 cellar: :any,                 sonoma:        "44df6bc158dc5bedc84b2f712c90c6f55fd7e58485d220e4df71f48d4ffd2385"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae17516ae33b9cc90eb29d8760d29662026cb2fac06b0e0dd4a5f27a8568146a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9074a6d5299fc0c95acd349c84a66791c5458ff3b49433b8318291c248d6b837"
+  end
+
   depends_on "cmake" => :build
 
   on_arm do
