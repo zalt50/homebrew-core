@@ -6,6 +6,15 @@ class Kagent < Formula
   license "Apache-2.0"
   head "https://github.com/kagent-dev/kagent.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b15d1a7d809a50282247c0836d67c2d2118b5dea716dd9d34bd2e5642be657e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b15d1a7d809a50282247c0836d67c2d2118b5dea716dd9d34bd2e5642be657e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b15d1a7d809a50282247c0836d67c2d2118b5dea716dd9d34bd2e5642be657e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb89976df3c6e90974e539af61a150b88505530524131b076f02d67fda0f9b3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5734fbd03ded1f0c28b9d7fd65ad93bde141c20f4a221d0540e198a86cf02696"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f520c292e5911386213f4c05b60a1dcf0838c4c67fba4eaae6666010729b945"
+  end
+
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
 
