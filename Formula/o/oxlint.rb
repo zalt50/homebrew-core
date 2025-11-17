@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "Suite of high-performance tools for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://registry.npmjs.org/oxlint/-/oxlint-1.28.0.tgz"
-  sha256 "7f3aeba525e1d26deb06f91a165cd1ed389e7332cd65eef05e7123db3fb9b1c7"
+  url "https://registry.npmjs.org/oxlint/-/oxlint-1.29.0.tgz"
+  sha256 "7db5550a3692d94d98d529f7bd0855898e19593daa3f4550196455b7cd81bf63"
   license "MIT"
 
   bottle do
