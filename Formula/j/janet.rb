@@ -7,12 +7,12 @@ class Janet < Formula
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "13c05dafba288275617c921cc564c8e6824f6baa3dba34888b06c2f29075cfec"
-    sha256 cellar: :any,                 arm64_sequoia: "b22c0f782b155705dc444a2ff957194e7a6880e400807b40418a1fbf024f71a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "8feeb845715d4418e68c5bb8b4a59005805b432e66bd89133ff1446e37534701"
-    sha256 cellar: :any,                 sonoma:        "a4886c409affd40815a443dabef86304e457941fa72583f38412c6454ae096a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87c4f78014b25f29c493018dd04989a73fc5feb4af30b552eb58b2f21a7a1525"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a8debc2ce440144e0a12ecb026e92c92b89fa20b1d2c2b5357674b2657ccb3b"
+    sha256 cellar: :any,                 arm64_tahoe:   "2fa3160c82a4a677ce269164b910709b28116157ea3857e49e3efb7c41bcf60a"
+    sha256 cellar: :any,                 arm64_sequoia: "93b8a690c9042fe369088c02cc0913eff00ba88da180bfb108b209780a805418"
+    sha256 cellar: :any,                 arm64_sonoma:  "120186d5f3c6411f0adcb97a793881a4e8d972a8b13af824e263ef087aac4df9"
+    sha256 cellar: :any,                 sonoma:        "1fa642c765900c1cd7b2b0510ca0166a39f7a0e2d3ec8aa3aa6e9b562586a330"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65fc5b396bcf8cb0ef6adccc2bf37f3d1ced6efed55af1b8860c79bae5aee543"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74e59dd4b45474ce5dd2b8a7666c8bc2ddee03323fbc772da0bcf3300de4d4bf"
   end
 
   resource "jpm" do
