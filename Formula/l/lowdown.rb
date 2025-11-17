@@ -8,12 +8,12 @@ class Lowdown < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1f0f66ad467ae9149a73953e2bbfe58da4eb6056357ffed64f1d3a8bfe1e4319"
-    sha256 cellar: :any,                 arm64_sequoia: "d27c4fdd19aec3b062d8d3162b1034de6af7224d3574ba1e3b8b2db3bd00f42b"
-    sha256 cellar: :any,                 arm64_sonoma:  "22b3f1bee02bc72f745080561fd2f6f0995e04357138f1f33cb570158106109f"
-    sha256 cellar: :any,                 sonoma:        "3f665399d8b0a1d688c64e5e10652dc6ddd1afd38b9bbadebc496299284adbc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e4ec4b0c90f02891833118478258195d578109a3774308439760f0447671a7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a312ed190ac61e031d5761fe9e97e43e84134449d0fdfab50461c3868e45a153"
+    sha256 cellar: :any,                 arm64_tahoe:   "5c10c8fa1e5eb3dbb8faaf67e7fc6d14f75746251949b9da220c246f0a97ef0a"
+    sha256 cellar: :any,                 arm64_sequoia: "25da16e680e999d5056143dbbdfe0c8bb33c69fb8336976138e86448f18fe95f"
+    sha256 cellar: :any,                 arm64_sonoma:  "f295e5c08db61418c19191b835c44f1211184f8051fd4c532759493bc57c3d84"
+    sha256 cellar: :any,                 sonoma:        "ebb97e53cd7cb113b2e726ffecacc726bd4b9a463c1539806b1fc797891134b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cdb239f485481d566a7a91586d168812c5dbda702cc23ff207b1f01fe19c8e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d85c28e32bdb68fe885de165de08ef6f3c085f5da1e6c9c91844fea8dcc1997e"
   end
 
   depends_on "bmake" => :build
