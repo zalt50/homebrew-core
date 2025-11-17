@@ -9,12 +9,12 @@ class Scrapy < Formula
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22918f761de546e520afdffaf04bb85862b1fa14745094aad8991de8fa5843fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "886df6f16aff7025f1b777c1df434a00b5d74b766056311bd4aa46bf2cc9cbdc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf94b47369519fd0e92de17cded3c1071e4983c9936d640159f0ac5a01018b52"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8fdb863224c198c9265b4d804298821533c26a5e573aa789b8f73f4836483a3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f948adef64de2d5aa60bcad39a44421af73b83f1504d3a4303d885df90e899a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07744bd55fdd6ad08ec858b5125837558b90ef103a30da079950f975279b6444"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a134d804685aea4546d725d947e251cc3b4f6b0ae7c17cee36a0eb1b4e514b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a43e161ce844d00d822539974bec9c260398ff1cb28c144b031c49f8bea1838a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "603c4e0d916b3f97d3018d9c2c378df2824cb76432366eab0af1b8a832b1874d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7cc21d1b123b2ae46289871b9273c67ae3cac2572695bb9de2ab4eba4235a32e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97393edcddcf67c95b32cf2804d02a9f16309d4e294b087179d87eb643423e64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbc4d3ea619b7e49e2bd367f58713e444c0382452f8c79ec63c6693f1352cea5"
   end
 
   depends_on "certifi" => :no_linkage
