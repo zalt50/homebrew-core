@@ -11,10 +11,10 @@ class WildflyAs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c6a6fd5ccbbeefe61cd2f2e8ddf87657e159ad0482ca1dd97e6506ba3e7cc300"
-    sha256 cellar: :any, arm64_sequoia: "6d54dd12de1bf7277939e7a21ded5365d77ec08020ec3b0559d8bf58b2a283f0"
-    sha256 cellar: :any, arm64_sonoma:  "6d54dd12de1bf7277939e7a21ded5365d77ec08020ec3b0559d8bf58b2a283f0"
-    sha256 cellar: :any, sonoma:        "fe3ad0511d3167cbe85a3c519dda2030aa294f2468e062efd901fe05295ae8a5"
+    sha256 cellar: :any, arm64_tahoe:   "5849de27b0267d965396b1a10a431e1bcd670b77623e91a5301d6f231687da8c"
+    sha256 cellar: :any, arm64_sequoia: "4f4140e4b29756da5cb7f04db5b946c45409ccdbf865d997ad1b5dd108eee3ed"
+    sha256 cellar: :any, arm64_sonoma:  "4f4140e4b29756da5cb7f04db5b946c45409ccdbf865d997ad1b5dd108eee3ed"
+    sha256 cellar: :any, sonoma:        "7a6c17373ce94017450b539f8d60f881866d8ec55eb403873ab2f5e72c621c4e"
   end
 
   # Installs a pre-built `libartemis-native-64.so` file with linkage to libaio.so.1
