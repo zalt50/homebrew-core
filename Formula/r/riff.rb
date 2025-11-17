@@ -1,8 +1,8 @@
 class Riff < Formula
   desc "Diff filter highlighting which line parts have changed"
   homepage "https://github.com/walles/riff"
-  url "https://github.com/walles/riff/archive/refs/tags/3.6.0.tar.gz"
-  sha256 "2583fbf797033d87a9a2ee8b05c331070f9acb2e6a8a336f5eee14a31361a511"
+  url "https://github.com/walles/riff/archive/refs/tags/3.6.1.tar.gz"
+  sha256 "d360058f0e51d162235307498485f92dc57518877f5646f00521b97e92957bbe"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
