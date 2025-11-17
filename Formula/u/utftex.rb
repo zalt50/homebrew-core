@@ -1,11 +1,9 @@
 class Utftex < Formula
   desc "Pretty print math in monospace fonts, using a TeX-like syntax"
   homepage "https://github.com/bartp5/libtexprintf"
-  url "https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.25.tar.gz"
-  sha256 "c50a44e33eba551526ff553c0af0bdd3f3a219d8ed60f11fcd9d7b30cd028af1"
+  url "https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.27.tar.gz"
+  sha256 "1ee792e5a4b1691272367c837e58fe5c7c90d1253bde522eca28c48aa244963f"
   license "GPL-3.0-only"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "810152b38fa50c074810e0955537874ef3b0022a8d704690a3b59a57f49be63d"
