@@ -3,8 +3,8 @@ class Plutoprint < Formula
 
   desc "Generate PDFs and Images from HTML"
   homepage "https://github.com/plutoprint/plutoprint"
-  url "https://files.pythonhosted.org/packages/ef/d0/af1b23123d37d1f672dbf5d68cf33b1ad1e274936079d33118ae9e18ce47/plutoprint-0.12.0.tar.gz"
-  sha256 "cbca7d1f2bc1c61c14c3feb9ab16b54583cfaa350ec8266de879940494e7dbe1"
+  url "https://files.pythonhosted.org/packages/77/7f/50144b12fceab37b5d5273d52466c31d27da49ca272b03ff3e20e98d3d00/plutoprint-0.13.0.tar.gz"
+  sha256 "02ec801a7cdee89085d050b274ad9c3366949c085909149a563d1acf383a57aa"
   license "MIT"
 
   bottle do
