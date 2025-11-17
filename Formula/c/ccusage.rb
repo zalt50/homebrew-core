@@ -6,7 +6,7 @@ class Ccusage < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62f07a2a84ee78c191d144cdcda8abe2d35b4f30f99df996f6f6ef3d961c9c68"
+    sha256 cellar: :any_skip_relocation, all: "8a4ff8804362c4cdd319ecf7624ff1694c0dbe81bcf129918c3ea19e63a13b7a"
   end
 
   depends_on "node"
