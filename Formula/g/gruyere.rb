@@ -8,6 +8,15 @@ class Gruyere < Formula
   license "MIT"
   head "https://github.com/savannahostrowski/gruyere.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90a81502df03e2e968bd3ff2a6c7e088bac089ca64fc69ccd4ea0426b0ee8cd9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6ef93dad80d59c173799067278348e055e3ef182b52cedb21add8c974d25c73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9519eaf15fefeae28488cd73b8191e0ee9e1d7b128b7c5383758f512d50f2bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07cfbc9e0b80b6daca02643be26b8c1e6dd8b90e12c9cf09c2864573168acc1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08cfb2bab077691a82880215594e9145ee5f5848c0e1cd63fde553b7eae5c076"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e579c37299f0453b06f74f5dc7781f18c0018e7c5bd346c14aadacabf80abeda"
+  end
+
   depends_on "python@3.14"
 
   resource "click" do
