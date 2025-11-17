@@ -44,9 +44,7 @@ class Unisonlang < Formula
   depends_on "elm-format" => :build
   depends_on "ghc@9.6" => :build
   depends_on "haskell-stack" => :build
-  # FIXME: `html-webpack-plugin` for `local-ui` fails to build on node 25+
-  # https://github.com/jantimon/html-webpack-plugin/pull/1880
-  depends_on "node@24" => :build
+  depends_on "node" => :build
 
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
