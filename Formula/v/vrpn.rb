@@ -8,14 +8,13 @@ class Vrpn < Formula
   head "https://github.com/vrpn/vrpn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e621c7902a1bf2c9eaedc06eb6d6fba8240754df7e05ca825878841b921fb1da"
-    sha256 cellar: :any,                 arm64_sequoia: "6df76cd24b9715b3cd44fba0da667b8d6999759e2da6a00c8ac1e5aaf5cdc7cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "96810647768b9f76928312becdbdf4566475faf3dfad67524d633e0f19456c35"
-    sha256 cellar: :any,                 arm64_ventura: "e4cadc44e87394fa280711cb00ecb7b0363a63e459a3bec2604cb66dea4707e9"
-    sha256 cellar: :any,                 sonoma:        "c07c530ba62053c232c91eaa9953b7ded4a7f874a88b57b591a9523afa4f43b7"
-    sha256 cellar: :any,                 ventura:       "85bf1f7e010c6298a774fc915b12a27efbec8c511ba8afefd4fc2027a60c9fe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9973bb24a161a50bd8406bb48d97dfed0d9235c00b27d196b81e38841dd4d31d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12b74a67ae4e340f4226650337b007bb94edbe27c751ccc83429120a4a91f37c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7a981cfd4e68e7163f971f6e56085100c03ac7520145e90f7323f2b5c2751934"
+    sha256 cellar: :any,                 arm64_sequoia: "d99728e78e407b8273e823ce437e72c974a74b04c96b51e07d32933dcfc8a75d"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a640c1246bb42659b8f827c27e0102f22b42455cd0da26ea634c60ecf9def79"
+    sha256 cellar: :any,                 sonoma:        "5430e050e017cf4f2be4f9022f0c8619464064c9ce3894cdb5d61447417caae3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae557530fbcb369b6ada4d947509c369cb73a4c04705733e15d881a09c0ca5ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc618017186b6bad9f673099037a120edae12fcef7cf7ed07820117888b4a4b0"
   end
 
   depends_on "cmake" => :build
