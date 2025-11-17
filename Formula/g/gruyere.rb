@@ -1,7 +1,7 @@
 class Gruyere < Formula
   include Language::Python::Virtualenv
 
-  desc "Powerful and secure TUI environment variable manager"
+  desc "TUI program for viewing and killing processes listening on ports"
   homepage "https://github.com/savannahostrowski/gruyere"
   url "https://files.pythonhosted.org/packages/b0/a3/0951f7043389bc2a32ce8613dbc6b5078d10a4a754bc136294e7c2661a77/gruyere-0.0.9.tar.gz"
   sha256 "71bbc896188584744009b73363dc5631d3cf7a4855fdf0249be7bf09a84153fa"
