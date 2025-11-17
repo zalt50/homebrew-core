@@ -4,7 +4,7 @@ class LastpassCli < Formula
   url "https://github.com/lastpass/lastpass-cli/releases/download/v1.6.1/lastpass-cli-1.6.1.tar.gz"
   sha256 "5e4ff5c9fef8aa924547c565c44e5b4aa31e63d642873847b8e40ce34558a5e1"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
-  revision 1
+  revision 2
   head "https://github.com/lastpass/lastpass-cli.git", branch: "master"
 
   bottle do
@@ -32,6 +32,13 @@ class LastpassCli < Formula
   patch do
     url "https://github.com/lastpass/lastpass-cli/commit/31a4ad5f735933ff8e96403103d5b4f61faee945.patch?full_index=1"
     sha256 "a4c2a16fd47942a511c0ebbce08bee5ffdb0d6141f6c9b60ce397db9e207d8be"
+  end
+
+  # Workaround for for API change in OpenSSL 3.5
+  # PR ref: https://github.com/lastpass/lastpass-cli/pull/718
+  patch do
+    url "https://github.com/lastpass/lastpass-cli/commit/95fff9accc5832264e31af3f54f49af461339693.patch?full_index=1"
+    sha256 "5d7559511b1814c6f9d8cccc02b7c5dbf8a4e6d2927a94cf76d090cc45a47dd2"
   end
 
   def install
