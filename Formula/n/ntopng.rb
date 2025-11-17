@@ -1,8 +1,8 @@
 class Ntopng < Formula
   desc "Next generation version of the original ntop"
   homepage "https://www.ntop.org/products/traffic-analysis/ntop/"
-  url "https://github.com/ntop/ntopng/archive/refs/tags/6.4.tar.gz"
-  sha256 "3eaff9f13566e349cada66d41191824a80288ea19ff4427a49a682386348931d"
+  url "https://github.com/ntop/ntopng/archive/refs/tags/6.6.tar.gz"
+  sha256 "2e97fbd26c2f9ac526214e2a2e22ecb218e38f5e99a688c25ae6cedbbc3a892c"
   license "GPL-3.0-only"
   head "https://github.com/ntop/ntopng.git", branch: "dev"
 
@@ -21,6 +21,7 @@ class Ntopng < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "cmake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "valkey" => :test
@@ -49,23 +50,16 @@ class Ntopng < Formula
     depends_on "libcap"
   end
 
-  # Add `--with-dynamic-ndpi` configure flag
-  # Remove in the next release
-  patch do
-    url "https://github.com/ntop/ntopng/commit/a195be91f7685fcc627e9ec88031bcfa00993750.patch?full_index=1"
-    sha256 "208b9332eed6f6edb5b756e794de3ee7161601e8208b813d2555a006cf6bef40"
-  end
-
-  # Fix compilation error when using `--with-synamic-ndpi` flag
-  # https://github.com/ntop/ntopng/pull/9252
-  patch do
-    url "https://github.com/ntop/ntopng/commit/0fc226046696bb6cc2d95319e97fad6cb3ab49e1.patch?full_index=1"
-    sha256 "807d9c58ee375cb3ecf6cdad96a00408262e2af10a6d9e7545936fd3cc528509"
+  resource "clickhouse-cpp" do
+    url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.6.0.tar.gz"
+    sha256 "f694395ab49e7c2380297710761a40718278cefd86f4f692d3f8ce4293e1335f"
   end
 
   def install
     # Remove bundled libraries
     rm_r Dir["third-party/{json-c,rrdtool}*"]
+
+    resource("clickhouse-cpp").stage buildpath/"third-party/clickhouse-cpp"
 
     args = %W[
       --with-dynamic-ndpi
