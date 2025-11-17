@@ -12,12 +12,12 @@ class Kokkos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9000991d4e73900384ce718c2ffb3fd54ca9897e61b64cbdc7912ecfbf28e60a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7faf47f3685b91d2bacee7333f3bbe4f382adf077743e29368aff6beefac4ee3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a9bb59190dc1969c205ca26717572f0b8b28cd652eeacd94324b816720cb9f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84f8d30a1d815b45de40a1eab1725e6072935d629a41fdd28a1304c411fa4d01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8986f9c376c4555ae7d1bcdd058637eec4f0816a0dca32dda2fd51d24b0bf5fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5f0ce6bad4a2e2d1fe35d46d3bddf3f3eba4b7ec00998195bc1576d374346d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d28b12d4d7526ab7d4913f9e6528549ce289da8251368a94bdd7ad3b76eed51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5550105baedaeecf14ca78f96843bbc6b278d60c7e282374f4bd4901a5aaaf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6996c7d11551f169d95b1926b54c78d4e1a0ae8dba0f2f110a3af7c1078e252b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae3e40a3c7bdab67f66de6e40c9714020d2ce09ac8f193f7edf92b1fb725b185"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cf23bca3e15af3d30b89a8beaee75dbd9e4ca08a1ae18b60118544f75237bc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0effa6677e6bea0b7f92a60fea4e73de45572b9e02f7778b797afb83e9e4f4e3"
   end
 
   depends_on "cmake" => :build
