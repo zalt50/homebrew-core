@@ -1,8 +1,8 @@
 class Qman < Formula
   desc "Modern man page viewer"
   homepage "https://github.com/plp13/qman"
-  url "https://github.com/plp13/qman/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "785441bf11e99ff27869c08f0d36ce3f5c75db1b045b8712fe515059cf396780"
+  url "https://github.com/plp13/qman/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "e550958523d0fef90fd0123a61a8f10099ed0c9735e06d8152662d8965b5a0e1"
   license "BSD-2-Clause"
 
   bottle do
