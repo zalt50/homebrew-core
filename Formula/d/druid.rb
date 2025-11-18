@@ -12,7 +12,7 @@ class Druid < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6142abfc9a042da4990f758ac9e284b7f59ede3e94dc30e85a7fc357d06ba917"
+    sha256 cellar: :any_skip_relocation, all: "5308a2997de74d7320b7d6dbc623d0bb6dc2581a72d06d6f3478d6110a8c607e"
   end
 
   depends_on "zookeeper" => :test
