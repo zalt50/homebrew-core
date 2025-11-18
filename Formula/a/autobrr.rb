@@ -27,9 +27,7 @@ class Autobrr < Formula
 
     system "go", "build", *std_go_args(output: bin/"autobrr", ldflags:), "./cmd/autobrr"
     system "go", "build", *std_go_args(output: bin/"autobrrctl", ldflags:), "./cmd/autobrrctl"
-  end
 
-  def post_install
     (var/"autobrr").mkpath
   end
 
@@ -52,12 +50,9 @@ class Autobrr < Formula
       sessionSecret = "secret-session-key"
     TOML
 
-    pid = fork do
-      exec bin/"autobrr", "--config", "#{testpath}/"
-    end
-    sleep 4
-
+    pid = spawn bin/"autobrr", "--config", "#{testpath}/"
     begin
+      sleep 4
       system "curl", "-s", "--fail", "http://127.0.0.1:#{port}/api/healthz/liveness"
     ensure
       Process.kill("TERM", pid)
