@@ -5,6 +5,7 @@ class Blast < Formula
   version "2.17.0"
   sha256 "502057a88e9990e34e62758be21ea474cc0ad68d6a63a2e37b2372af1e5ea147"
   license :public_domain
+  revision 1
 
   livecheck do
     url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/VERSION"
@@ -21,7 +22,7 @@ class Blast < Formula
   end
 
   depends_on "lmdb"
-  depends_on "mbedtls"
+  depends_on "mbedtls@3"
   depends_on "pcre2"
 
   uses_from_macos "cpio" => :build
@@ -60,7 +61,7 @@ class Blast < Formula
       args = %W[
         --prefix=#{prefix}
         --with-bin-release
-        --with-mbedtls=#{Formula["mbedtls"].opt_prefix}
+        --with-mbedtls=#{Formula["mbedtls@3"].opt_prefix}
         --with-mt
         --with-pcre2=#{Formula["pcre2"].opt_prefix}
         --without-strip
