@@ -31,18 +31,13 @@ class Backupninja < Formula
   depends_on "dialog"
   depends_on "gawk"
 
-  skip_clean "etc/backup.d"
-
   def install
-    system "./configure", *std_configure_args,
+    system "./configure", "BASH=#{Formula["bash"].opt_bin}/bash",
                           "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
-                          "BASH=#{Formula["bash"].opt_bin}/bash"
+                          *std_configure_args
     system "make", "install", "SED=sed"
-  end
-
-  def post_install
     (var/"log").mkpath
   end
 
