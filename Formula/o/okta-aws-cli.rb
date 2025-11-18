@@ -12,14 +12,12 @@ class OktaAwsCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4189c9a089c7dff88db33d591ae6248cc448b394b5f61b667cd27d25e901ee7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "391a7c50e9b1c816c5b65122d29d6aacaadd19d01520e2c134774ad0ae592648"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "391a7c50e9b1c816c5b65122d29d6aacaadd19d01520e2c134774ad0ae592648"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "391a7c50e9b1c816c5b65122d29d6aacaadd19d01520e2c134774ad0ae592648"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89981ade5d232179f4f30d9842286cbcec53b012db792edce069837d8496eaf0"
-    sha256 cellar: :any_skip_relocation, ventura:       "89981ade5d232179f4f30d9842286cbcec53b012db792edce069837d8496eaf0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b664ffeb276c2f87bcc51836aa3f5eb962e25d9fa6047865843ef74dd6759d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0722e0df4cd81b34ebe80025de7393276c27ad51961f0691c31838ae810651e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e58aa4aa282022c36d1353d265dadaf40f78be077fcd8e39cedf27ab8e7aef63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e58aa4aa282022c36d1353d265dadaf40f78be077fcd8e39cedf27ab8e7aef63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e58aa4aa282022c36d1353d265dadaf40f78be077fcd8e39cedf27ab8e7aef63"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8c60a47a42b009829c814017fa65c1e573499626ac6b98d7af1ad97644f2402"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "070520ed3fb031e13f9c1a836b32c89541e18c7c8178aea70f99e5c8eb3f7181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a93368251368737cb1180d07acfa7eb2ff185888a6c688f0affe7885d94bfce"
   end
 
   depends_on "go" => :build
