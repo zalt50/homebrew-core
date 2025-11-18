@@ -72,6 +72,8 @@ class Fail2ban < Formula
 
     # Install into `bash-completion@2` path as not compatible with `bash-completion`
     (share/"bash-completion/completions").install "files/bash-completion" => "fail2ban"
+
+    (var/"run/fail2ban").mkpath
   end
 
   def inreplace_etc_var(targets, audit_result: true)
@@ -81,17 +83,12 @@ class Fail2ban < Formula
     end
   end
 
-  def post_install
-    (etc/"fail2ban").mkpath
-    (var/"run/fail2ban").mkpath
-  end
-
   def caveats
     <<~EOS
       You must enable any jails by editing:
-        #{etc}/fail2ban/jail.conf
+        #{pkgetc}/jail.conf
 
-      Other configuration files are in #{etc}/fail2ban. See more instructions at
+      Other configuration files are in #{pkgetc}. See more instructions at
       https://github.com/fail2ban/fail2ban/wiki/Proper-fail2ban-configuration.
     EOS
   end
