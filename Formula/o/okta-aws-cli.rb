@@ -1,8 +1,8 @@
 class OktaAwsCli < Formula
   desc "Okta federated identity for AWS CLI"
   homepage "https://github.com/okta/okta-aws-cli"
-  url "https://github.com/okta/okta-aws-cli/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "e47f39fd2021cbcc3c86e0bfb96ee46aad506b8de4f35935a5cb86d8fd33e939"
+  url "https://github.com/okta/okta-aws-cli/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "26615db3644bea9e1f610a7d53dc83f366a64e46dbfd2efbe45284f1cb7b9e3b"
   license "Apache-2.0"
   head "https://github.com/okta/okta-aws-cli.git", branch: "master"
 
@@ -23,6 +23,12 @@ class OktaAwsCli < Formula
   end
 
   depends_on "go" => :build
+
+  # version patch, upstream pr ref, https://github.com/okta/okta-aws-cli/pull/292
+  patch do
+    url "https://github.com/okta/okta-aws-cli/commit/3d3d19ba7ea0925f61c3a090cf24d3647622b285.patch?full_index=1"
+    sha256 "dfc56e683281c3c0b8ed310eb66ebcb75b9cc08479301b02a6da33d3b1d12f8f"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/okta-aws-cli"
