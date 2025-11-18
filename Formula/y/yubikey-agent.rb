@@ -33,10 +33,8 @@ class YubikeyAgent < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}")
-  end
-
-  def post_install
     (var/"run").mkpath
     (var/"log").mkpath
   end
