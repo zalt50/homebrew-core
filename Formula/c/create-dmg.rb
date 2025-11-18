@@ -6,7 +6,7 @@ class CreateDmg < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ed92cefd6df282057e6c1a162eb453d4c8d3b34a4a8637bf292813817badef81"
+    sha256 cellar: :any_skip_relocation, all: "12d2a8ffd877f5078b9a30d9a7a52fd0cc1375548f070569c6087dd8b695b3d4"
   end
 
   depends_on :macos
