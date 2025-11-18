@@ -6,7 +6,7 @@ class Haxe < Formula
       tag:      "4.3.7",
       revision: "e0b355c6be312c1b17382603f018cf52522ec651"
   license all_of: ["GPL-2.0-or-later", "MIT"]
-  revision 1
+  revision 2
   head "https://github.com/HaxeFoundation/haxe.git", branch: "development"
 
   livecheck do
@@ -26,7 +26,7 @@ class Haxe < Formula
   depends_on "ocaml" => :build
   depends_on "opam" => :build
   depends_on "pkgconf" => :build
-  depends_on "mbedtls"
+  depends_on "mbedtls@3"
   depends_on "neko"
   depends_on "pcre2"
 
