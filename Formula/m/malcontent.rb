@@ -1,8 +1,8 @@
 class Malcontent < Formula
   desc "Supply Chain Attack Detection, via context differential analysis and YARA"
   homepage "https://github.com/chainguard-dev/malcontent"
-  url "https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.17.2.tar.gz"
-  sha256 "2329a42c4c06f550dc9989dda65dd0e069eace33239221d72203c922cd0593b1"
+  url "https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.17.3.tar.gz"
+  sha256 "a1c34baab98c91b0e43ae12606fe03d2b1899ad43720ce8b6f30a14205d39829"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/malcontent.git", branch: "main"
 
