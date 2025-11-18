@@ -15,10 +15,10 @@ class Mas < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cd574ef2fa8fcbd57d51208b7b78c1dce49bee72d7a94c2b6c38eb8ee185301"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81091c673925397daa82d39e78a7fecce014ce8942ece4a3804d0458f9a6dbc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9968a96c48d37995da35a2e357563edb333b856774e0d1d69f3a9da30d0fac1f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7edfb5bcdf496b08a8d3fe5e9443c51c43930e437292896e34f1050a9bb57ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae10a5a0d268290095e2974c5f55a183ead471def9c8abb95c9b776e1be27743"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6de27da09ea41eeaf8096fad0bce5abf34aaeee80ff3fe0a23adaa301874a434"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b25f39c6267094e3fcfe477a252611a85bb58fe263691224e6d699d6dadd006"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7046b5239d663697d60d8a5e6266a0f6702368dcb4eaeb614a0cf05e1b890bb4"
   end
 
   depends_on xcode: ["15.0", :build]
