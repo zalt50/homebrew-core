@@ -51,9 +51,7 @@ class Auditbeat < Formula
 
     chmod 0555, bin/"auditbeat"
     generate_completions_from_executable(bin/"auditbeat", "completion", shells: [:bash, :zsh])
-  end
 
-  def post_install
     (var/"lib/auditbeat").mkpath
     (var/"log/auditbeat").mkpath
   end
