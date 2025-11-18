@@ -1,9 +1,9 @@
 class Druid < Formula
   desc "High-performance, column-oriented, distributed data store"
   homepage "https://druid.apache.org/"
-  url "https://dlcdn.apache.org/druid/33.0.0/apache-druid-33.0.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/druid/33.0.0/apache-druid-33.0.0-bin.tar.gz"
-  sha256 "5ee5ddbcc2273834af8a18dd173b2a04b9a911cb7ce516279db605788abd7d79"
+  url "https://dlcdn.apache.org/druid/35.0.0/apache-druid-35.0.0-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/druid/35.0.0/apache-druid-35.0.0-bin.tar.gz"
+  sha256 "d4c2d2cf5f37e7741ceb0683083ce62a266a460436fbf3a4a02185395df3c361"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Druid < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6142abfc9a042da4990f758ac9e284b7f59ede3e94dc30e85a7fc357d06ba917"
+    sha256 cellar: :any_skip_relocation, all: "5308a2997de74d7320b7d6dbc623d0bb6dc2581a72d06d6f3478d6110a8c607e"
   end
 
   depends_on "zookeeper" => :test
@@ -83,13 +83,13 @@ class Druid < Formula
     begin
       pid = fork { exec bin/"druid-broker.sh", "start" }
       sleep 40
-      output = shell_output("curl -s http://localhost:8082/status")
-      assert_match "version", output
     ensure
       system bin/"druid-broker.sh", "stop"
       # force zookeeper stop since it is sometimes still alive after druid-broker.sh finishes
       system Formula["zookeeper"].opt_bin/"zkServer", "stop"
       Process.wait pid
     end
+
+    assert_match "All servers have been synced successfully at least once.", (testpath/"broker.log").read
   end
 end
