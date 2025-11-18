@@ -1,8 +1,8 @@
 class JqLsp < Formula
   desc "Jq language server"
   homepage "https://github.com/wader/jq-lsp"
-  url "https://github.com/wader/jq-lsp/archive/refs/tags/v0.1.13.tar.gz"
-  sha256 "badf5c72063ae3232bd18f938980308f77fe2b4c5f3b8db6fccb8ca6db523834"
+  url "https://github.com/wader/jq-lsp/archive/refs/tags/v0.1.14.tar.gz"
+  sha256 "1cdfead7b79fc732f57003e43cf1abf013ce8c7ba4cfacefd7e2667748bf07e3"
   license "MIT"
   head "https://github.com/wader/jq-lsp.git", branch: "master"
 
@@ -28,11 +28,11 @@ class JqLsp < Formula
 
     expected = JSON.parse(<<~JSON)
       {
-        "message": null,
-        "name": null
+        "name": "jq-lsp",
+        "version": "#{version}"
       }
     JSON
-    query = ".[0] | {message: .test.message, name: .test.name}"
+    query = ".config | {name: .name, version: .version}"
 
     assert_equal expected, JSON.parse(shell_output("#{bin}/jq-lsp --query '#{query}'"))
   end
