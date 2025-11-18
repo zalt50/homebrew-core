@@ -30,9 +30,7 @@ class Immudb < Formula
       bin.install binary
       generate_completions_from_executable(bin/binary, "completion")
     end
-  end
 
-  def post_install
     (var/"immudb").mkpath
   end
 
