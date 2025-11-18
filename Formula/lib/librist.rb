@@ -4,6 +4,7 @@ class Librist < Formula
   url "https://code.videolan.org/rist/librist/-/archive/v0.2.11/librist-v0.2.11.tar.gz"
   sha256 "84e413fa9a1bc4e2607ecc0e51add363e1bc5ad42f7cc5baec7b253e8f685ad3"
   license "BSD-2-Clause"
+  revision 1
   head "https://code.videolan.org/rist/librist.git", branch: "master"
 
   livecheck do
@@ -26,7 +27,7 @@ class Librist < Formula
   depends_on "ninja" => :build
   depends_on "cjson"
   depends_on "libmicrohttpd"
-  depends_on "mbedtls"
+  depends_on "mbedtls@3"
 
   # remove brew setup
   patch :DATA
