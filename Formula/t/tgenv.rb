@@ -1,8 +1,8 @@
 class Tgenv < Formula
   desc "Terragrunt version manager inspired by tfenv"
   homepage "https://github.com/tgenv/tgenv"
-  url "https://github.com/tgenv/tgenv/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "241b18ee59bd993256c9dc0847e23824c9ebf42b4d121db11fbdff9ddb6432b2"
+  url "https://github.com/tgenv/tgenv/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "cccf0d5714cf1156aaa9f451d98601afa3e7bb0b104eda61013a9a8849bee2fb"
   license "MIT"
   head "https://github.com/tgenv/tgenv.git", branch: "main"
 
