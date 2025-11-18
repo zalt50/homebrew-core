@@ -35,6 +35,7 @@ class GoLibrespot < Formula
     ldflags << "-X github.com/devgianlu/go-librespot.commit=#{Utils.git_short_head(length: 8)}" if build.head?
 
     system "go", "build", *std_go_args(output: bin/"go-librespot", ldflags: ldflags), "./cmd/daemon"
+    (var/"log").mkpath
 
     # On macOS, create a minimal config that selects the correct backend.
     return unless OS.mac?
@@ -45,10 +46,6 @@ class GoLibrespot < Formula
       audio_backend: audio-toolbox
     YAML
     pkgetc.install "config.yml"
-  end
-
-  def post_install
-    (var/"log").mkpath
   end
 
   service do
