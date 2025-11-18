@@ -44,7 +44,6 @@ class FreeradiusServer < Formula
     ENV.deparallelize
 
     args = %W[
-      --prefix=#{prefix}
       --sbindir=#{bin}
       --localstatedir=#{var}
       --with-openssl-includes=#{Formula["openssl@3"].opt_include}
@@ -52,15 +51,12 @@ class FreeradiusServer < Formula
       --with-talloc-lib-dir=#{Formula["talloc"].opt_lib}
       --with-talloc-include-dir=#{Formula["talloc"].opt_include}
     ]
-
     args << "--without-rlm_python" if OS.mac?
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
-  end
 
-  def post_install
     (var/"run/radiusd").mkpath
     (var/"log/radius").mkpath
   end
