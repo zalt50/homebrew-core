@@ -2,6 +2,7 @@ class Hashlink < Formula
   desc "Virtual machine for Haxe"
   homepage "https://hashlink.haxe.org/"
   license "MIT"
+  revision 1
   head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
   stable do
@@ -34,7 +35,7 @@ class Hashlink < Formula
   depends_on "libpng"
   depends_on "libuv"
   depends_on "libvorbis"
-  depends_on "mbedtls"
+  depends_on "mbedtls@3"
   depends_on "openal-soft"
   depends_on "sdl2"
 
