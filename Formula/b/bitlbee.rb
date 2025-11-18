@@ -61,9 +61,7 @@ class Bitlbee < Formula
     system "make", "install-dev"
     # This build has an extra step.
     system "make", "install-etc"
-  end
 
-  def post_install
     (var/"bitlbee/run").mkpath
     (var/"bitlbee/lib").mkpath
   end
