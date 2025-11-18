@@ -53,9 +53,7 @@ class ApachePulsar < Formula
 
       (bin/path.basename).write_env_script path, java_home_env
     end
-  end
 
-  def post_install
     (var/"log/pulsar").mkpath
   end
 
