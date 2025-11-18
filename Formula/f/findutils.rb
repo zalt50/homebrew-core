@@ -22,17 +22,14 @@ class Findutils < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
-      --localstatedir=#{var}/locate
-      --disable-dependency-tracking
-      --disable-debug
       --disable-nls
+      --localstatedir=#{var}/locate
       --with-packager=Homebrew
       --with-packager-bug-reports=#{tap.issues_url}
     ]
-
     args << "--program-prefix=g" if OS.mac?
-    system "./configure", *args
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     if OS.mac?
@@ -46,9 +43,6 @@ class Findutils < Formula
     end
 
     (libexec/"gnubin").install_symlink "../gnuman" => "man"
-  end
-
-  def post_install
     (var/"locate").mkpath
   end
 
