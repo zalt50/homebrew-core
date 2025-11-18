@@ -38,9 +38,6 @@ class Couchdb < Formula
     rm("rel/couchdb/bin/couchdb.cmd")
     # install files
     prefix.install Dir["rel/couchdb/*"]
-  end
-
-  def post_install
     # creating database directory
     (var/"couchdb/data").mkpath
   end
