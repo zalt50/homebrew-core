@@ -25,10 +25,7 @@ class Tinyproxy < Formula
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --localstatedir=#{var}
       --sysconfdir=#{etc}
       --disable-regexcheck
@@ -37,11 +34,9 @@ class Tinyproxy < Formula
       --enable-transparent
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     (var/"log/tinyproxy").mkpath
     (var/"run/tinyproxy").mkpath
   end
