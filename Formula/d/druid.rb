@@ -58,9 +58,7 @@ class Druid < Formula
     Pathname.glob("#{bin}/*.sh") do |file|
       mv file, bin/"druid-#{file.basename}"
     end
-  end
 
-  def post_install
     %w[
       druid/hadoop-tmp
       druid/indexing-logs
