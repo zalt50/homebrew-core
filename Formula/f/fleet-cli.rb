@@ -12,12 +12,12 @@ class FleetCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ebc131c8167a06b5d7c2401f03a6d939811a8bbd49938a0ce98567845efd2bbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08d79cb94fe96c0bb79f34e70a0f5b7c70204c5b86de46c4c1758b6a6f48917b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e085bff97e4039a9143c1e18784ee29614dd3bdc75421dfe2e65775800c59103"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84b29a27cd222042cd2b52f17940e2878353712e1e4c6602b2cab764bd016af9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fb09a91c66a4c760e6f99d4d8995e085c98ff1d6a5934c9254f96a6dfb6b9f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02c7f2a78bf6126f679cd27a3d3a4a2144522a66bfb44cad90f594d45341e30e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68d100213cbc5a7b259df8e05d629759fb2fa399d5bb5fa5b0b810d89d73c933"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48d76596d929ae6ea2fe3241b1b413ef2cb46f04dba0dcefcb81fc44bf52ba6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "781f1553b3f37b7e9fbdbb76f32a6f1e467be0cdb34e5df75d063ee6c674dc6e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a215cebc6d397e7a1bacc38f9604383fff1f8c8f1bc67f351d806511ddb30d2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "798a579e36cc0fdd3a8bf311853cc7b9897e20beb2e2fc6053865e75ffcec14c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47e19492f9217265cd4b0e6ad980178b44b37be00311127d575ad2c0b3c79926"
   end
 
   depends_on "go" => :build
