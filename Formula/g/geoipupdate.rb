@@ -30,9 +30,6 @@ class Geoipupdate < Formula
     etc.install  "build/GeoIP.conf"
     man1.install "build/geoipupdate.1"
     man5.install "build/GeoIP.conf.5"
-  end
-
-  def post_install
     (var/"GeoIP").mkpath
   end
 
