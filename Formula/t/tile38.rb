@@ -18,10 +18,6 @@ class Tile38 < Formula
 
   depends_on "go" => :build
 
-  def datadir
-    var/"tile38/data"
-  end
-
   def install
     ldflags = %W[
       -s -w
@@ -31,17 +27,9 @@ class Tile38 < Formula
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"tile38-server"), "./cmd/tile38-server"
     system "go", "build", *std_go_args(ldflags:, output: bin/"tile38-cli"), "./cmd/tile38-cli"
-  end
 
-  def post_install
     # Make sure the data directory exists
-    datadir.mkpath
-  end
-
-  def caveats
-    <<~EOS
-      To connect: tile38-cli
-    EOS
+    (var/"tile38/data").mkpath
   end
 
   service do
@@ -54,9 +42,7 @@ class Tile38 < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"tile38-server", "-q", "-p", port.to_s
-    end
+    pid = spawn bin/"tile38-server", "-q", "-p", port.to_s
     sleep 2
     # remove `$408` in the first line output
     json_output = shell_output("#{bin}/tile38-cli -p #{port} server")
