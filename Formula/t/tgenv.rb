@@ -7,7 +7,7 @@ class Tgenv < Formula
   head "https://github.com/tgenv/tgenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b51fcece0e2a8b77f96f8460b123aedb1ab6cd9497b5da570e00639258324ece"
+    sha256 cellar: :any_skip_relocation, all: "41d63971b87c2f8003c821f8cfc00eaf264acef2560a75c7e0dc631da4a726a6"
   end
 
   uses_from_macos "unzip"
