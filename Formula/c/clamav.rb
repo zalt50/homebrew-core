@@ -40,7 +40,7 @@ class Clamav < Formula
 
   def install
     args = %W[
-      -DAPP_CONFIG_DIRECTORY=#{etc}/clamav
+      -DAPP_CONFIG_DIRECTORY=#{pkgetc}
       -DDATABASE_DIRECTORY=#{var}/lib/clamav
       -DENABLE_JSON_SHARED=ON
       -DENABLE_STATIC_LIB=ON
@@ -53,9 +53,7 @@ class Clamav < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
     (var/"lib/clamav").mkpath
   end
 
@@ -68,7 +66,7 @@ class Clamav < Formula
   def caveats
     <<~EOS
       To finish installation & run clamav you will need to edit
-      the example conf files at #{etc}/clamav/
+      the example conf files at #{pkgetc}/
     EOS
   end
 
