@@ -37,9 +37,7 @@ class TkeySshAgent < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/tkey-ssh-agent"
     man1.install "system/tkey-ssh-agent.1"
-  end
 
-  def post_install
     (var/"run").mkpath
     (var/"log").mkpath
   end
