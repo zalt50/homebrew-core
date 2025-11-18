@@ -56,16 +56,11 @@ class AircrackNg < Formula
                            *std_configure_args
     system "make", "install"
     inreplace sbin/"airodump-ng-oui-update", "/usr/local", HOMEBREW_PREFIX
-  end
-
-  def post_install
     pkgetc.mkpath
   end
 
   def caveats
-    <<~EOS
-      Run `airodump-ng-oui-update` install or update the Airodump-ng OUI file.
-    EOS
+    "Run `airodump-ng-oui-update` install or update the Airodump-ng OUI file."
   end
 
   test do
