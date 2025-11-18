@@ -83,11 +83,8 @@ class Dpkg < Formula
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
 
     (buildpath/"dummy").write "Vendor: dummy\n"
-    (etc/"dpkg/origins").install "dummy"
-    (etc/"dpkg/origins").install_symlink "dummy" => "default"
-  end
-
-  def post_install
+    (pkgetc/"origins").install "dummy"
+    (pkgetc/"origins").install_symlink "dummy" => "default"
     (var/"lib/dpkg").mkpath
     (var/"log").mkpath
   end
