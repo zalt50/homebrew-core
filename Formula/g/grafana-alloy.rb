@@ -53,9 +53,6 @@ class GrafanaAlloy < Formula
     system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"alloy")
 
     generate_completions_from_executable(bin/"alloy", "completion")
-  end
-
-  def post_install
     pkgetc.mkpath
   end
 
