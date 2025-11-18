@@ -6,6 +6,7 @@ class Harlequin < Formula
   url "https://files.pythonhosted.org/packages/84/81/0b2d50e4f0bef2d7ccda8e0364c1b2864a6cd0d6da4ea8366911f61ee68d/harlequin-2.4.1.tar.gz"
   sha256 "05a9f041021a8d7fa7bdb97cac8c26ca0233235fa553d9d7c53e238097297655"
   license "MIT"
+  revision 1
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
@@ -41,8 +42,8 @@ class Harlequin < Formula
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/e5/26/a28dae619f5f823d654e014299a91551ea990ed21e0e20c9d1ed084dcb26/duckdb-1.5.0.dev90.tar.gz"
-    sha256 "bce21b88266622663074b5fd38b271b7b1fc2e2954425b4bea07daad0d0672b9"
+    url "https://files.pythonhosted.org/packages/fc/23/690341f9d07eae3a33d07cce4f6730856c085331d5819ed09e68409ec6cf/duckdb-1.5.0.dev94.tar.gz"
+    sha256 "14f44ec532d2d151f65e4e55306f429f7b9fc3c38f1c1788bb87bf8d003bfbb8"
   end
 
   resource "harlequin-mysql" do
@@ -126,8 +127,8 @@ class Harlequin < Formula
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/ef/c2/ea068b8f00905c06329a3dfcd40d0fcc2b7d0f2e355bdb25b65e0a0e4cd4/pyarrow-21.0.0.tar.gz"
-    sha256 "5051f2dccf0e283ff56335760cbc8622cf52264d67e359d5569541ac11b6d5bc"
+    url "https://files.pythonhosted.org/packages/30/53/04a7fdc63e6056116c9ddc8b43bc28c12cdd181b85cbeadb79278475f3ae/pyarrow-22.0.0.tar.gz"
+    sha256 "3d600dc583260d845c7d8a6db540339dd883081925da2bd1c5cb808f720b3cd9"
   end
 
   resource "pygments" do
