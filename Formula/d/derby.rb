@@ -14,17 +14,12 @@ class Derby < Formula
   depends_on "openjdk"
 
   def install
+    env = Language::Java.java_home_env.merge(DERBY_INSTALL: libexec, DERBY_HOME: libexec)
     rm_r(Dir["bin/*.bat"])
     libexec.install %w[lib test index.html LICENSE NOTICE RELEASE-NOTES.html
                        KEYS docs javadoc demo]
     bin.install Dir["bin/*"]
-    bin.env_script_all_files libexec/"bin",
-                             JAVA_HOME:     Formula["openjdk"].opt_prefix,
-                             DERBY_INSTALL: libexec,
-                             DERBY_HOME:    libexec
-  end
-
-  def post_install
+    bin.env_script_all_files libexec/"bin", env
     (var/"derby").mkpath
   end
 
