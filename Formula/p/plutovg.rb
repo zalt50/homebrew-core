@@ -1,8 +1,8 @@
 class Plutovg < Formula
   desc "Tiny 2D vector graphics library in C"
   homepage "https://github.com/sammycage/plutovg"
-  url "https://github.com/sammycage/plutovg/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "bea672eb96ee36c2cbeb911b9bac66dfe989b3ad9a9943101e00aeb2df2aefdb"
+  url "https://github.com/sammycage/plutovg/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "7bd4e79ce18b1d47517e7e91fbb7cf19d4f01942804a519bc7c0bf32b6325dd5"
   license "MIT"
 
   bottle do
