@@ -16,12 +16,12 @@ class Kcptun < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ee13b9308ed507aafa085da9b681a56f788dbd009e631f9ef026a73dd605d52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ee13b9308ed507aafa085da9b681a56f788dbd009e631f9ef026a73dd605d52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ee13b9308ed507aafa085da9b681a56f788dbd009e631f9ef026a73dd605d52"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6961c70255f05c11a801171e421f4f0b8045e4b42f62c37125c815ac8f875802"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1b9f818b9b1ef3a01d268e92dc9a4b52470e38b4047b68ab0bedb6ce4737c5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c242dc48c0c1a2822c170f3411f4dcfdf3dfa917766ae55b8a89f1a3531f287"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "616c58f2545be78ac9b58ca214deca9aa84ee66dfada94849c55445c6b84f6f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "616c58f2545be78ac9b58ca214deca9aa84ee66dfada94849c55445c6b84f6f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "616c58f2545be78ac9b58ca214deca9aa84ee66dfada94849c55445c6b84f6f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d6f83a8abd509e068f08eda2236fb4b8e654441ac2bab0aece2b7631300e06c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "422e570b5033ee9d638ee3ec86686df2f4b2b6ac22404452234c47ea341be5ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9863b8fe60c0f60478e4784433deaa5789fb000ac37edd111740bfc71c716f93"
   end
 
   depends_on "go" => :build
