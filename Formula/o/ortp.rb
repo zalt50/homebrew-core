@@ -2,6 +2,7 @@ class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
   license "GPL-3.0-or-later"
+  revision 1
 
   stable do
     url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.60/ortp-5.4.60.tar.bz2"
@@ -42,7 +43,7 @@ class Ortp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "mbedtls"
+  depends_on "mbedtls@3"
 
   def install
     odie "bctoolbox resource needs to be updated" if build.stable? && version != resource("bctoolbox").version
