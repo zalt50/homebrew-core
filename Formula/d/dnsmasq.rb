@@ -50,9 +50,6 @@ class Dnsmasq < Formula
     system "make", "install", "PREFIX=#{prefix}"
 
     etc.install "dnsmasq.conf.example" => "dnsmasq.conf"
-  end
-
-  def post_install
     (var/"lib/misc/dnsmasq").mkpath
     (var/"run/dnsmasq").mkpath
     (etc/"dnsmasq.d/ppp").mkpath
@@ -68,6 +65,6 @@ class Dnsmasq < Formula
   end
 
   test do
-    system "#{sbin}/dnsmasq", "--test"
+    system sbin/"dnsmasq", "--test"
   end
 end
