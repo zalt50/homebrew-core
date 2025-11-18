@@ -49,13 +49,11 @@ class Fourstore < Formula
     (buildpath/".version").write version.to_s
 
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
-                          "--with-storage-path=#{var}/fourstore",
-                          "--sysconfdir=#{etc}/fourstore"
+    system "./configure", "--with-storage-path=#{var}/fourstore",
+                          "--sysconfdir=#{pkgetc}",
+                          *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     (var/"fourstore").mkpath
   end
 
