@@ -3,8 +3,8 @@ class Unoserver < Formula
 
   desc "Server for file conversions with Libre Office"
   homepage "https://github.com/unoconv/unoserver"
-  url "https://files.pythonhosted.org/packages/eb/4d/1bdb4f4a8c7fa128a5ca047672d5760228bafc290f2d5ce8cd46d4d1658a/unoserver-3.4.tar.gz"
-  sha256 "3dcf2204013def1d1ddd3671f38b11346bdf349fef9728277462666a8a634419"
+  url "https://files.pythonhosted.org/packages/6c/63/9e1f7e83a303c5f74f9720b4de12d4742469d6bed0ceaa109d8ece1fed6b/unoserver-3.5.tar.gz"
+  sha256 "0924adc3e06bde0361164f25972632fcf6b388a5359c37d00928d061c712d775"
   license "MIT"
 
   bottle do
