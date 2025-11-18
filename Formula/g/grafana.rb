@@ -54,9 +54,7 @@ class Grafana < Formula
     pkgetc.install "conf/sample.ini" => "grafana.ini"
     pkgetc.install "conf/grafana.ini.example"
     pkgshare.install "conf", "public", "tools"
-  end
 
-  def post_install
     (var/"log/grafana").mkpath
     (var/"lib/grafana/plugins").mkpath
   end
