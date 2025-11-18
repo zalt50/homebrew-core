@@ -6,6 +6,15 @@ class Vibecheck < Formula
   license "MIT"
   head "https://github.com/rshdhere/vibecheck.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb80314145aba56290bb93d4ecb674d8a04481c68b4261b1c2b272af3fd25f14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb80314145aba56290bb93d4ecb674d8a04481c68b4261b1c2b272af3fd25f14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb80314145aba56290bb93d4ecb674d8a04481c68b4261b1c2b272af3fd25f14"
+    sha256 cellar: :any_skip_relocation, sonoma:        "beef349656851c582710ea1dcd4f3e7abab54945c7d95301387336c131e4e9bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "614af0c87f35708d720e799e23b20faf624a5ac65ede9d765e0692a0291d26e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bbfdbe9e89fcfa4778f755fa530ba165ed022a0b343dabc41544588ba4e4c96"
+  end
+
   depends_on "go" => :build
 
   def install
