@@ -15,12 +15,12 @@ class Logtalk < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00331b4a9927b93ee3115ef914b345e2d4e00d9ca7969051a38e520371f6de2f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8efbe46bbf1020e43b663768aa3b015119b8a816c5888a99b6177403f1f54eb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b07ccd5e48a5370a1e7cf3dddd04f056f302e8d183a24dd745889a5c488aac06"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91285bc40e41a994fe54b223448f693d49bd80b78027023fa0023c759e5ce94f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f80704a8a8861b52871488634258bb3d323d6a49b90c17dabf9c220581a44d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54524c5f7a895a56d1e8cb9354594d4766833600b0fa90819a3681b267d11f0c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09dceb6066096756e510f9ff5292a3a254dfd7869fe3f4c00bf03be980283c7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0efc88edb608423d0f744ff0fa8edeb2ac9f5655e356b819c4572b658c99f933"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25abd26659147d7d9d8160f3f11143cb00521866788cebb670db04fb18ddfacb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6bc4f58d0c10fcda0f94e42b3799452056876e4494ce777404bdf757519b4917"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e5decff954dded85a057e62bdf49f9791e2b2afb5d1fb4789ee3155b8b2ff02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19e5c3cf7545a6540957413d37310fbb5cb08786268ec2845ee2dd9bc484c16a"
   end
 
   depends_on "gnu-prolog"
