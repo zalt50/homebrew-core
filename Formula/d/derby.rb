@@ -7,8 +7,8 @@ class Derby < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "687e0c8f8bfbcd850af4ef20e9588aa7b6a0ff52087896b3e05f2505abefa70e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "a4ec775f18dc3de32bd09a237f3ed1eba99aa4b137cf4eedb529232a03e85201"
   end
 
   depends_on "openjdk"
