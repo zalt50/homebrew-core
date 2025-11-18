@@ -4,6 +4,7 @@ class Gauche < Formula
   url "https://github.com/shirok/Gauche/releases/download/release0_9_15/Gauche-0.9.15.tgz"
   sha256 "3643e27bc7c8822cfd6fb2892db185f658e8e364938bc2ccfcedb239e35af783"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -29,7 +30,7 @@ class Gauche < Formula
   end
 
   depends_on "ca-certificates"
-  depends_on "mbedtls"
+  depends_on "mbedtls@3"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
