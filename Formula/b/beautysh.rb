@@ -8,7 +8,7 @@ class Beautysh < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "877d75cebb64f21378b443632702a99d5e057f34f29ed8c12b36156a7f64f485"
+    sha256 cellar: :any_skip_relocation, all: "f8469966c24a8d2733c3f61018fa3c066dfaad0a79d24f0e50c794ee276f62b9"
   end
 
   depends_on "python@3.14"
