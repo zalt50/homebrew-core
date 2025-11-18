@@ -5,6 +5,7 @@ class Neko < Formula
   version "2.4.1"
   sha256 "702282028190dffa2078b00cca515b8e2ba889186a221df2226d2b6deb3ffaca"
   license "MIT"
+  revision 1
   head "https://github.com/HaxeFoundation/neko.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
@@ -24,7 +25,7 @@ class Neko < Formula
   depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "mariadb-connector-c"
-  depends_on "mbedtls"
+  depends_on "mbedtls@3"
   depends_on "pcre2"
 
   uses_from_macos "apr"
