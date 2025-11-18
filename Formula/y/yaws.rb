@@ -53,21 +53,15 @@ class Yaws < Formula
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *extra_args, *std_configure_args
     system "make", "install", "WARNINGS_AS_ERRORS="
-
-    cd "applications/yapp" do
-      system "make"
-      system "make", "install"
-    end
+    system "make", "-C", "applications/yapp", "install"
 
     # the default config expects these folders to exist
     (lib/"yaws/examples/ebin").mkpath
     (lib/"yaws/examples/include").mkpath
 
     # Remove Homebrew shims references on Linux
-    inreplace Dir["#{prefix}/var/yaws/www/*/Makefile"], Superenv.shims_path, "/usr/bin" if OS.linux?
-  end
+    inreplace prefix.glob("var/yaws/www/*/Makefile"), Superenv.shims_path, "/usr/bin" if OS.linux?
 
-  def post_install
     (var/"log/yaws").mkpath
     (var/"yaws/www").mkpath
   end
