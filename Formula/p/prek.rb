@@ -7,13 +7,12 @@ class Prek < Formula
   head "https://github.com/j178/prek.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d034900cc159d91b2d767c5387a8b7ed527905062fe4fa64268fa696a7541e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4233b505dc9367a1fb2dc402981183a4548bd3ef44e25c00731fbfd719945f1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb6950da24e9016af6d03fb4a674f8b78f96cdf6bad5cdc192c27c77855647ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e22a39beb79c4ebb6dd16e7a55e1c1b8caba363136ca55566d31e6c26d709db3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27b9dc1aee4086fcbdebf5c1369d947c63a664c0108d9b0def77c1cb1446aab0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed498e27bf88d222ef9888f59da979dcfca04ec4f7d77d35a779e50378dbf770"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b65de7fb3d2ace7dc260cc97be7079d2d851f9ffb8aff3a6731f22e85757ddd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b614a68890e2b765e9576ba7ca6140f624631c7de94101667944baef5e2a115"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d69ee480ebf4079d90b1e115864d2a2eefa07dda678eb8f5c1cd5874c5d7d26e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59bf54ee5d7ffc8fa5dbdcc0d97390c892c509f4a14fb80fc8820d484f91f2bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1ca4dce2fc1808daecef13bb27980f9123bb7c8ec3750eae567faf5ab220dae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1d419996200fdb8e5b8148ff61afca6779cf6a9659d88d20ec8a5852ca05350"
   end
 
   depends_on "rust" => :build
