@@ -13,12 +13,13 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7090200631313db088488d3fcfdbc384f62b056ae586b08f6e226d5bd0bf46b5"
-    sha256 cellar: :any,                 arm64_sequoia: "29db1e5f61048b1f0b5d2ed5346a3479c0720ebf2636b220d04451daa7238c2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "721f3e3c203813dc8ec77b6fa3cb8a9aab185386f9924dc11a570f648d8debc5"
-    sha256 cellar: :any,                 sonoma:        "8ddb47a249e9041cbaf4118d45347f37ce2e9e75647dc184cf31ce800e869255"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d313188cd5682673f9e52e9d0375bd1aac1d9ba9d8cce8c02296a3652209ab08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58b34aaa7a92a5b8c58f689ed27f6179e2ff8cd0c32a201ef6f4740fed337fd1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "92a0c739ee265c742845c4e00aff95955f3d0acac83dee33de307e92f55ceb58"
+    sha256 cellar: :any,                 arm64_sequoia: "06eafe8275da3707459ad2da4ddc8adc0593e5ffd7d0952249891a76777e5b51"
+    sha256 cellar: :any,                 arm64_sonoma:  "810620f68155b14fb993d23715108f2032859892429d69858514f41fad07b6a4"
+    sha256 cellar: :any,                 sonoma:        "033449d1fa78e8e14304ccc03eff0cbd62e91014371ddfc0e5c13667c7866406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9089c2cd7818c81c7748d36f5eefe68ceac2c04ed7c98f20329e789248a99369"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d50027ac56687d56fa3629951d0e8f98308bbfdb398835df2742b9916268f120"
   end
 
   depends_on "go" => :build
@@ -27,13 +28,9 @@ class Dolt < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    chdir "go" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
-    end
-  end
+    system "go", "build", "-C", "go", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
 
-  def post_install
-    (var/"log").mkpath unless (var/"log").exist?
+    (var/"log").mkpath
     (var/"dolt").mkpath
   end
 
