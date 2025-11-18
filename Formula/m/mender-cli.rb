@@ -1,16 +1,14 @@
 class MenderCli < Formula
   desc "General-purpose CLI tool for the Mender backend"
   homepage "https://mender.io"
-  url "https://github.com/mendersoftware/mender-cli/archive/refs/tags/1.12.0.tar.gz"
-  sha256 "7b68fdeef96a99ee4560cb9dccd673658b27e2f3a9be2e3451d204c50395caa0"
+  url "https://github.com/mendersoftware/mender-cli/archive/refs/tags/2.0.0.tar.gz"
+  sha256 "1fda34045cdbe9914f04d7eaebc0933f7d14c2952dd9c149f278479cd47e37fc"
   license "Apache-2.0"
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ee2b581f8602959a93a3aa84c52c36d0ccf9ea1a2db7249d68e7131c5f6dba5e"
@@ -24,9 +22,13 @@ class MenderCli < Formula
   end
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
+  depends_on "openssl@3"
   depends_on "xz"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X github.com/mendersoftware/mender-cli/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
