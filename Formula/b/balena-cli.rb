@@ -13,12 +13,12 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "ca251783450e5b9f9a3716fbbe2febd41df7e4056bb73f7528074c3ad463ef43"
-    sha256                               arm64_sequoia: "910c2b817f69c27ce3a0d94d68ae163455ae0820a7a07e0d67e79e616cd84c9d"
-    sha256                               arm64_sonoma:  "06882fe278afa6c3cc262ed16d689f25f4a9c7dde6816bf20977fb82d6c348fe"
-    sha256                               sonoma:        "51fcaf6f535f5e682d7289d993e1f7526976e185a9ac24e4e2833f117ec326d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "264b4fb963140e89385e1f8570ff2197e6e7924ee163cd43824057726c45a2a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7ea04026215ace765408163db3e15a530ca2d4b861eee2c6635aab5d3644c2b"
+    sha256                               arm64_tahoe:   "18cbfe23fe2a8ea61911256616e09cbb4b2b961f51d8e76071c74f5ab531d3e0"
+    sha256                               arm64_sequoia: "f9675890db7d6e9d743d72c78b26857b36ddfa74dadc29e5a38b208725fab71b"
+    sha256                               arm64_sonoma:  "fd5427219c03a5c9eb764f4ee3a88e723eeea08579fe289a6ec5c65a0bb65d35"
+    sha256                               sonoma:        "d925e821dfbb00e7c8a96ac4b2a9c470086878ccd1df8881323c9d5eccaf7e9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b416763b0c199519c963179a52be45ef72a068ea0b4ddf9f49cd774d8dd950a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52bc44c73117f9cd356d7d940313a883474382fdba6525d6722ac65f01752b43"
   end
 
   # align with upstream, https://github.com/balena-io/balena-cli/blob/master/.github/actions/publish/action.yml#L21
