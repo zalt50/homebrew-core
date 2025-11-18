@@ -18,6 +18,8 @@ class Prek < Formula
   depends_on "rust" => :build
 
   def install
+    ENV["PREK_COMMIT_HASH"] = ENV["PREK_COMMIT_SHORT_HASH"] = tap.user
+    ENV["PREK_COMMIT_DATE"] = time.strftime("%F")
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"prek", shell_parameter_format: :clap)
   end
