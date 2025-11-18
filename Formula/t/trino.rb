@@ -118,9 +118,7 @@ class Trino < Formula
       # https://bugs.openjdk.org/browse/CODETOOLS-7903447
       -Djol.skipHotspotSAAttach=true
     CONFIG
-  end
 
-  def post_install
     (var/"trino/data").mkpath
   end
 
