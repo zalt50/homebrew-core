@@ -28,9 +28,6 @@ class Webdis < Formula
     end
 
     etc.install "webdis.json", "webdis.prod.json"
-  end
-
-  def post_install
     (var/"log").mkpath
   end
 
