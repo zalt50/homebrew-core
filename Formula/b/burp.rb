@@ -68,25 +68,21 @@ class Burp < Formula
     ENV.prepend "CPPFLAGS", "-I#{buildpath}/uthash/include"
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-
-    system "./configure", "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}/burp",
+    system "./configure", "--sysconfdir=#{pkgetc}",
                           "--sbindir=#{bin}",
-                          "--localstatedir=#{var}"
-
+                          "--localstatedir=#{var}",
+                          *std_configure_args
     system "make", "install-all"
-  end
 
-  def post_install
     (var/"run").mkpath
     (var/"spool/burp").mkpath
   end
 
   def caveats
-    <<~EOS
+    <<~CAVEATS
       Before installing the launchd entry you should configure your burp client in
-        #{etc}/burp/burp.conf
-    EOS
+        #{pkgetc}/burp.conf
+    CAVEATS
   end
 
   service do
