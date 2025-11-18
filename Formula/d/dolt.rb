@@ -27,13 +27,9 @@ class Dolt < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    chdir "go" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
-    end
-  end
+    system "go", "build", "-C", "go", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
 
-  def post_install
-    (var/"log").mkpath unless (var/"log").exist?
+    (var/"log").mkpath
     (var/"dolt").mkpath
   end
 
