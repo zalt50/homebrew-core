@@ -32,16 +32,13 @@ class Vnstat < Formula
       s.gsub! "\"eth0\"", "\"en0\"", audit_result: false if OS.mac?
     end
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
+    system "./configure", "--disable-silent-rules",
+                          "--localstatedir=#{var}",
                           "--sbindir=#{bin}",
-                          "--localstatedir=#{var}"
+                          "--sysconfdir=#{etc}",
+                          *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     (var/"db/vnstat").mkpath
     (var/"log/vnstat").mkpath
     (var/"run/vnstat").mkpath
