@@ -5,6 +5,7 @@ class Freediameter < Formula
   sha256 "0bb4ed33ada0b57ab681d86ae3fe0e3a9ce95892f492c401cbb68a87ec1d47bc"
   license "BSD-3-Clause"
   head "https://github.com/freeDiameter/freeDiameter.git", branch: "master"
+
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
@@ -38,14 +39,10 @@ class Freediameter < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
+    cp "doc/freediameter.conf.sample", "freeDiameter.conf"
+    etc.install "freeDiameter.conf"
     doc.install Dir["doc/*"]
     pkgshare.install "contrib"
-  end
-
-  def post_install
-    return if File.exist?(etc/"freeDiameter.conf")
-
-    cp doc/"freediameter.conf.sample", etc/"freeDiameter.conf"
   end
 
   def caveats
