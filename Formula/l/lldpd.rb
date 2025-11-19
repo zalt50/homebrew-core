@@ -27,28 +27,22 @@ class Lldpd < Formula
   uses_from_macos "libxml2"
 
   def install
-    readline = Formula["readline"]
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --with-launchddaemonsdir=no
       --with-privsep-chroot=/var/empty
       --with-privsep-group=nogroup
       --with-privsep-user=nobody
       --with-readline
       --with-xml
+      --without-launchddaemonsdir
       --without-snmp
-      CPPFLAGS=-I#{readline.include}\ -DRONLY=1
-      LDFLAGS=-L#{readline.lib}
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
-  end
 
-  def post_install
     (var/"run").mkpath
   end
 
