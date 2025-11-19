@@ -1,8 +1,8 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/helmfile/helmfile"
-  url "https://github.com/helmfile/helmfile/archive/refs/tags/v1.1.9.tar.gz"
-  sha256 "e783c93cbe8f7ab114f87fa9118b06939e63e8136c3ffdef0113c45ccbc4c74f"
+  url "https://github.com/helmfile/helmfile/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "8428bb148e6c53ab9a1ba136b66da5257c69dc46ef04703b9674aa2535a2ff18"
   license "MIT"
   version_scheme 1
   head "https://github.com/helmfile/helmfile.git", branch: "main"
@@ -18,7 +18,7 @@ class Helmfile < Formula
   end
 
   depends_on "go" => :build
-  depends_on "helm@3"
+  depends_on "helm"
 
   def install
     ldflags = %W[
@@ -35,8 +35,6 @@ class Helmfile < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["helm@3"].opt_bin
-
     (testpath/"helmfile.yaml").write <<~YAML
       repositories:
       - name: stable
