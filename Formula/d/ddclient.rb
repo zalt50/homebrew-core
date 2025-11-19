@@ -67,18 +67,16 @@ class Ddclient < Formula
     end
 
     system "./autogen"
-    system "./configure", *std_configure_args, "--sysconfdir=#{etc}", "--localstatedir=#{var}", "CURL=curl"
+    system "./configure", "--sysconfdir=#{etc}", "--localstatedir=#{var}", "CURL=curl", *std_configure_args
     system "make", "install", "CURL=curl"
 
     # Install sample files
-    inreplace "sample-ddclient-wrapper.sh", "/etc/ddclient", "#{etc}/ddclient"
+    inreplace "sample-ddclient-wrapper.sh", "/etc/ddclient/", "#{pkgetc}/"
     inreplace "sample-etc_cron.d_ddclient", "/usr/bin/ddclient", "#{opt_bin}/ddclient"
 
     doc.install %w[sample-ddclient-wrapper.sh sample-etc_cron.d_ddclient]
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"]) if OS.linux?
-  end
 
-  def post_install
     (var/"run").mkpath
     chmod "go-r", pkgetc/"ddclient.conf"
   end
@@ -86,7 +84,7 @@ class Ddclient < Formula
   def caveats
     <<~EOS
       For ddclient to work, you will need to customise the configuration
-      file at `#{etc}/ddclient.conf`.
+      file at `#{pkgetc}/ddclient.conf`.
 
       Note: don't enable daemon mode in the configuration file; see
       additional information below.
@@ -99,7 +97,7 @@ class Ddclient < Formula
   end
 
   service do
-    run [opt_bin/"ddclient", "-file", etc/"ddclient.conf"]
+    run [opt_bin/"ddclient", "-file", etc/"ddclient/ddclient.conf"]
     run_type :interval
     interval 300
     require_root true
@@ -107,14 +105,14 @@ class Ddclient < Formula
 
   test do
     begin
-      pid = fork do
-        exec bin/"ddclient", "-file", etc/"ddclient.conf", "-debug", "-verbose", "-noquiet"
-      end
+      pid = spawn bin/"ddclient", "-file", pkgetc/"ddclient.conf", "-debug", "-verbose", "-noquiet"
       sleep 1
     ensure
       Process.kill "TERM", pid
       Process.wait
     end
     $CHILD_STATUS.success?
+
+    assert_equal "0600", (pkgetc/"ddclient.conf").stat.mode.to_s(8)[-4..], "ddclient.conf permissions"
   end
 end
