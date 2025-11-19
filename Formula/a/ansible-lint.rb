@@ -6,6 +6,7 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/ea/5a/ca084c650abd30f10d58c8727f9f64ed7e36f9c26f064559d22473cb9a33/ansible_lint-25.11.0.tar.gz"
   sha256 "79e35246c8bdaacdbe37aa30a6ea471177482ac58fbcf1868f765bdafca3427e"
   license all_of: ["MIT", "GPL-3.0-or-later"]
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b939f41e6d8e3d359239692f47ea70b174bbaeb1361f24b926e61d014e754b0c"
@@ -20,7 +21,7 @@ class AnsibleLint < Formula
   depends_on "ansible" => :test
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.13" # cannot use py3.14 due to bcrypt v5+ issue for ansible
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: ["cryptography", "rpds-py"]
@@ -31,8 +32,8 @@ class AnsibleLint < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/6b/ef/35f14c0d8877f6ed233c4a03f5bc161b88342e97dec3e8e04f418f28136f/ansible_core-2.19.4.tar.gz"
-    sha256 "888db6593f2fd42cd05bdbe546704d9c969dce99e3373a54498f6dbefcfa1917"
+    url "https://files.pythonhosted.org/packages/02/5b/8992daa4102cf92eca06f7e40d9c9cfdb2d6440719dff9944417c570fea6/ansible_core-2.20.0.tar.gz"
+    sha256 "cd73faf28a056c933bc1eee8f66ab597e7ec7309d42c8a6e5d6e4294c4a78b54"
   end
 
   resource "attrs" do
@@ -51,8 +52,8 @@ class AnsibleLint < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "distro" do
@@ -136,8 +137,8 @@ class AnsibleLint < Formula
   end
 
   resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d8/e9/39ec4d4b3f91188fad1842748f67d4e749c77c37e353c4e545052ee8e893/ruamel.yaml.clib-0.2.14.tar.gz"
-    sha256 "803f5044b13602d58ea378576dd75aa759f52116a0232608e8fdada4da33752e"
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "subprocess-tee" do
