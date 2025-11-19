@@ -7,12 +7,12 @@ class Subfinder < Formula
   head "https://github.com/projectdiscovery/subfinder.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d64760336155d22c5ef72eeb907dc73969992cc9d5f86fb68f5fb9f5d3553f64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e1ae86daad76d90829041cc7d826808def24abbbfe148dc5b0780df3a61e1b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "844e40d933ab2a261aae0deec7e20b53e52e9ed735742cbb5586cdc5e2e99690"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e2039c4056b2893d3de6557a113c33c53f5dd34e9e89e3a8a260d7337350589"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb6b080231f2ffcfb7b94d5f1b02a544af0f3c445cfab13fc526c7748bdaa43f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f431031aea8794558f1bd04e41e399cf017ad0eb180a4d20bab4fde6fddd6284"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5a755bd5f06e480aa88f936ea46e81688cc4ea25776d71b1718fa54dd3fc032"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3057a6d0243fc0c6e7712aa4a110eaff53a8fbacd846479c4491a0ccebe3282c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eead1297d013e9582621eba4f7987ead1f602b22e25d596f039ae2f2fd38fad2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2a66ac1e8285897ba49da131b01236515adc87a82b0ede48025c73fecdc89ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d0e1e42d13724183619807395b0f9d668590066fb4b76d2dcd2709e44cc2c64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "685ea79eb23417b8ae38f78e6ea36706e41a76b7b60fd752844c4deaf524b941"
   end
 
   depends_on "go" => :build
