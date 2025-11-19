@@ -16,6 +16,8 @@ class Solr < Formula
   def install
     pkgshare.install "bin/solr.in.sh"
     (var/"lib/solr").install "server/solr/README.md", "server/solr/solr.xml", "server/solr/zoo.cfg"
+    (var/"log/solr").mkpath
+    (var/"run/solr").mkpath
     prefix.install "licenses", "modules", "server"
     bin.install "bin/solr", "bin/post"
 
@@ -26,11 +28,6 @@ class Solr < Formula
     bin.env_script_all_files libexec, env
 
     inreplace libexec/"solr", "/usr/local/share/solr", pkgshare
-  end
-
-  def post_install
-    (var/"run/solr").mkpath
-    (var/"log/solr").mkpath
   end
 
   service do
