@@ -1,10 +1,9 @@
 class Recc < Formula
   desc "Remote Execution Caching Compiler"
   homepage "https://buildgrid.gitlab.io/recc"
-  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.3.42/buildbox-1.3.42.tar.gz"
-  sha256 "23eb5041bea63a86143c7ec8c8a48b45533f2553973303e270d24fc9adb49539"
+  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.3.43/buildbox-1.3.43.tar.gz"
+  sha256 "27ff8d526f0ff68860d3c0824a9355e837a0b0c70884d683262ed8a9d39c4634"
   license "Apache-2.0"
-  revision 1
   head "https://gitlab.com/BuildGrid/buildbox/buildbox.git", branch: "master"
 
   bottle do
