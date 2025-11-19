@@ -58,14 +58,11 @@ class Knot < Formula
 
     (buildpath/"knot.conf").write(knot_conf)
     etc.install "knot.conf"
-  end
-
-  def post_install
     (var/"knot").mkpath
   end
 
   def knot_conf
-    <<~EOS
+    <<~YAML
       server:
         rundir: "#{var}/knot"
         listen: [ "127.0.0.1@53", "::@53" ]
@@ -80,7 +77,7 @@ class Knot < Formula
       template:
         - id: "default"
           storage: "#{var}/knot"
-    EOS
+    YAML
   end
 
   service do
