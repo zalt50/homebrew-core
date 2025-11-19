@@ -1,8 +1,8 @@
 class Kuttl < Formula
   desc "KUbernetes Test TooL"
-  homepage "https://kuttl.dev"
-  url "https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "45777fdca82d14030b9661a2819b15e6380a9f4b0f8bbcfd826d8b21ffae7803"
+  homepage "https://github.com/kudobuilder/kuttl"
+  url "https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "99d701c0fd9966e4ab77138a69137ec1f4d860f4fb6f6a9a89ef9141cb26eb08"
   license "Apache-2.0"
   head "https://github.com/kudobuilder/kuttl.git", branch: "main"
 
@@ -24,9 +24,9 @@ class Kuttl < Formula
     project = "github.com/kudobuilder/kuttl"
     ldflags = %W[
       -s -w
-      -X #{project}/pkg/version.gitVersion=v#{version}
-      -X #{project}/pkg/version.gitCommit=#{tap.user}
-      -X #{project}/pkg/version.buildDate=#{time.iso8601}
+      -X #{project}/internal/version.gitVersion=v#{version}
+      -X #{project}/internal/version.gitCommit=#{tap.user}
+      -X #{project}/internal/version.buildDate=#{time.iso8601}
     ]
 
     system "go", "build", *std_go_args(output: bin/"kubectl-kuttl", ldflags:), "./cmd/kubectl-kuttl"
