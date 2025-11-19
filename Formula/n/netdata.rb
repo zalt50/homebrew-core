@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://www.netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v2.7.3/netdata-v2.7.3.tar.gz"
-  sha256 "f940fb0978c09f2353343cc4480dd3abfdba025f6690c90747fbc9a143e6bb9b"
+  url "https://github.com/netdata/netdata/releases/download/v2.8.0/netdata-v2.8.0.tar.gz"
+  sha256 "f52b6ec82020ddb6cdd7b048adadb54136ac987ddfc94c2e46f25682a0f547d1"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -52,12 +51,6 @@ class Netdata < Formula
     depends_on "systemd"
     depends_on "util-linux"
     depends_on "zstd"
-  end
-
-  # Backport fix for arm64 linux
-  patch do
-    url "https://github.com/netdata/netdata/commit/e8d12d47bf6b9c3105363ccafaa53cdc80b2237b.patch?full_index=1"
-    sha256 "b4a541f1528083665e29a5aa4d89786008114ea400aec8ae94d43e34ea7e3944"
   end
 
   def install
