@@ -34,9 +34,7 @@ class RpkiClient < Formula
                           "--localstatedir=#{var}",
                           *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     # make the var/db,cache/rpki-client dirs
     (var/"db/rpki-client").mkpath
     (var/"cache/rpki-client").mkpath
