@@ -2,6 +2,7 @@ class Tinc < Formula
   desc "Virtual Private Network (VPN) tool"
   homepage "https://www.tinc-vpn.org/"
   url "https://tinc-vpn.org/packages/tinc-1.0.36.tar.gz"
+  mirror "http://tinc-vpn.org/packages/tinc-1.0.36.tar.gz"
   sha256 "40f73bb3facc480effe0e771442a706ff0488edea7a5f2505d4ccb2aa8163108"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
@@ -38,12 +39,11 @@ class Tinc < Formula
   patch :DATA
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--sysconfdir=#{etc}",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
+    system "./configure", "--sysconfdir=#{etc}",
+                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+                          *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     (var/"run/tinc").mkpath
   end
 
