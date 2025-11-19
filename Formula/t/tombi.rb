@@ -1,8 +1,8 @@
 class Tombi < Formula
   desc "TOML formatter, linter and language server"
   homepage "https://github.com/tombi-toml/tombi"
-  url "https://github.com/tombi-toml/tombi/archive/refs/tags/v0.6.51.tar.gz"
-  sha256 "5df097e074ec17027aafa3e8c4d79ccb640df889f5996fe3fa9442000f8366ea"
+  url "https://github.com/tombi-toml/tombi/archive/refs/tags/v0.6.52.tar.gz"
+  sha256 "7a9d1143146e20b7c2581edd6df596af93a01b10410710e4893dd2bb0bdb54a6"
   license "MIT"
   head "https://github.com/tombi-toml/tombi.git", branch: "main"
 
