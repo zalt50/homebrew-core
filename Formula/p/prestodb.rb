@@ -84,9 +84,7 @@ class Prestodb < Formula
     libprocname_dirs.reject! { |dir| dir.basename.to_s == "Linux-x86_64" }
     libprocname_dirs.reject! { |dir| dir.basename.to_s == "#{OS.kernel_name}-#{Hardware::CPU.arch}" }
     rm_r libprocname_dirs
-  end
 
-  def post_install
     (var/"presto/data").mkpath
   end
 
