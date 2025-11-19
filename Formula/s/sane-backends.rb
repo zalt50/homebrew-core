@@ -54,9 +54,7 @@ class SaneBackends < Formula
                           "--with-usb=yes",
                           *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     # Some drivers require a lockfile
     (var/"lock/sane").mkpath
   end
