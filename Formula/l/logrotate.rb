@@ -28,9 +28,7 @@ class Logrotate < Formula
 
     inreplace "examples/logrotate.conf", "/etc/logrotate.d", "#{etc}/logrotate.d"
     etc.install "examples/logrotate.conf" => "logrotate.conf"
-  end
 
-  def post_install
     (etc/"logrotate.d").mkpath
     (var/"lib").mkpath
   end
@@ -49,7 +47,7 @@ class Logrotate < Formula
         copytruncate
       }
     EOS
-    system "#{sbin}/logrotate", "-s", "logstatus", "testlogrotate.conf"
-    assert(File.size?("test.log").nil?, "File is not zero length!")
+    system sbin/"logrotate", "-s", "logstatus", "testlogrotate.conf"
+    assert_predicate testpath/"test.log", :zero?
   end
 end
