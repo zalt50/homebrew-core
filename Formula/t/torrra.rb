@@ -14,7 +14,7 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "340ffb9b0af67b970c4dfa6097df6673f85c8856e4361c314531b2a40601ecb0"
+    sha256 cellar: :any_skip_relocation, all: "ad60430c701f202f3116a5a61d642dd30a933e712789c5e110016c9097c4fb91"
   end
 
   depends_on "rust" => :build # for uv-build backend
