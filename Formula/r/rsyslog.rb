@@ -42,13 +42,11 @@ class Rsyslog < Formula
       # minimal config file for receiving logs over UDP port 10514
       $ModLoad imudp
       $UDPServerRun 10514
-      *.* /usr/local/var/log/rsyslog-remote.log
+      *.* #{var}/log/rsyslog-remote.log
     EOS
     etc.install buildpath/"rsyslog.conf"
-  end
 
-  def post_install
-    mkdir_p var/"run"
+    (var/"run").mkpath
   end
 
   service do
