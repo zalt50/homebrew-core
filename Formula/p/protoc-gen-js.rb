@@ -1,8 +1,8 @@
 class ProtocGenJs < Formula
   desc "Protocol buffers JavaScript generator plugin"
   homepage "https://github.com/protocolbuffers/protobuf-javascript"
-  url "https://github.com/protocolbuffers/protobuf-javascript/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "7d3cd714bf99660ecc96882468a5a23465efca07064ff8105da634372649ee6e"
+  url "https://github.com/protocolbuffers/protobuf-javascript/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "123fac2e86109b24e80ccd356aa914e268bf5863ad1354d224d6ceaed6f5c45b"
   license "BSD-3-Clause"
   head "https://github.com/protocolbuffers/protobuf-javascript.git", branch: "main"
 
@@ -17,6 +17,7 @@ class ProtocGenJs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc107e124e47d727df28d35d2b5899dacf383e2985024aef639a156cd11a939a"
   end
 
+  depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "protobuf@29"
@@ -25,6 +26,7 @@ class ProtocGenJs < Formula
   # and Protobuf that get statically linked into binary. Check for any upstream changes at
   # https://github.com/protocolbuffers/protobuf-javascript/blob/main/generator/BUILD.bazel
   def install
+    system "node", "generate-version-header.js", "generator/version.h"
     protobuf_flags = Utils.safe_popen_read("pkgconf", "--cflags", "--libs", "protobuf").chomp.split.uniq
     system ENV.cxx, "-std=c++17", *Dir["generator/*.cc"], "-o", "protoc-gen-js", "-I.", *protobuf_flags, "-lprotoc"
     bin.install "protoc-gen-js"
