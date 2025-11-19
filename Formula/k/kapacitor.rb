@@ -70,9 +70,6 @@ class Kapacitor < Formula
     end
 
     etc.install "etc/kapacitor/kapacitor.conf"
-  end
-
-  def post_install
     (var/"kapacitor/replay").mkpath
     (var/"kapacitor/tasks").mkpath
   end
