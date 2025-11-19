@@ -55,7 +55,6 @@ class Bind < Formula
     ENV.append_to_cflags "-DLIBXML_HAS_DEPRECATED_MEMORY_ALLOCATION_FUNCTIONS" if OS.mac?
 
     args = [
-      "--prefix=#{prefix}",
       "--sysconfdir=#{pkgetc}",
       "--localstatedir=#{var}",
       "--with-json-c",
@@ -63,17 +62,15 @@ class Bind < Formula
       "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
       "--without-lmdb",
     ]
-    system "./configure", *args
 
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 
     (buildpath/"named.conf").write named_conf
-    system "#{sbin}/rndc-confgen", "-a", "-c", "#{buildpath}/rndc.key"
+    system sbin/"rndc-confgen", "-a", "-c", "#{buildpath}/rndc.key"
     pkgetc.install "named.conf", "rndc.key"
-  end
 
-  def post_install
     (var/"log/named").mkpath
     (var/"named").mkpath
   end
