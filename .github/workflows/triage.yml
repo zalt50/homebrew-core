@@ -170,7 +170,7 @@ jobs:
               path: Formula/.+@.+
               except:
                 - Formula/b/bash-completion@2.rb
-                - Formula/i/icu4c@77.rb
+                - Formula/i/icu4c@78.rb
                 - Formula/lib/libxml++@5.rb
                 - Formula/o/openssl@3.rb
                 - Formula/p/postgresql@18.rb
@@ -275,7 +275,6 @@ jobs:
               path: "Formula/.+/(\
                 agda|\
                 apache-pulsar|\
-                arangodb|\
                 aws-sdk-cpp|\
                 cbmc|\
                 cp2k|\
