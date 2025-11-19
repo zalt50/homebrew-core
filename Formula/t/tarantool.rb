@@ -39,13 +39,6 @@ class Tarantool < Formula
   end
 
   def install
-    # Workaround for clang >= 16 until upstream fix is available[^1].
-    # Also, trying to apply LuaJIT commit[^2] worked on Xcode 16 but caused issue on Xcode 15.
-    #
-    # [^1]: https://github.com/tarantool/tarantool/issues/10566
-    # [^2]: https://github.com/LuaJIT/LuaJIT/commit/2240d84464cc3dcb22fd976f1db162b36b5b52d5
-    ENV.append "LDFLAGS", "-Wl,-no_deduplicate" if DevelopmentTools.clang_build_version >= 1600
-
     icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula
     args = %W[
@@ -67,9 +60,7 @@ class Tarantool < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
     (var/"lib/tarantool").mkpath
     (var/"log/tarantool").mkpath
     (var/"run/tarantool").mkpath
