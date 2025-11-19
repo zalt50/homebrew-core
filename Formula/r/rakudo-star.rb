@@ -11,12 +11,12 @@ class RakudoStar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "fdfd3a284bf9daf006ad5cc81046bb4168f8eb22c84f4e62fe699b4a69dda921"
-    sha256 arm64_sequoia: "249f3394cc5e7e15784a1f8e0477158646a4bbebd51641fbca360e17cace7594"
-    sha256 arm64_sonoma:  "e35ac5a8b9b06830911bc5e80574a152e34a357cd6b50d5cb8ae4b911cfa6af5"
-    sha256 sonoma:        "95c86481e09cfb608e8a58a2c2b1fec4e17d34182e0e2abab0cf758be41acbf8"
-    sha256 arm64_linux:   "99edd9086d32556cda5efb0042ab1feb9702c0d1836dc288a0e061d7cff7c39d"
-    sha256 x86_64_linux:  "3f4f22657b142cb15a086bf4f85ea2ed6c8c4f379ef8b4becae62e3a302de3b1"
+    sha256 arm64_tahoe:   "6b45c84373201b93d98b1293856547eac8b2acd8de6730ed41b061314c0550fe"
+    sha256 arm64_sequoia: "836ebddb14f0d56994f85ccdda47fb52ca27750c8c0476ef238b6464b62835b8"
+    sha256 arm64_sonoma:  "7d93ca03092269655a1cc285122a259400c6a12d82a416fcdc28a4612488efdb"
+    sha256 sonoma:        "cafa9811cc48f3c27fd3c0695c0438285486fc1dba72102cd5d4066125a278c3"
+    sha256 arm64_linux:   "d7077964cb4b70d814a1c404c0273dd4fe1fb806df1c86564ec6573f95016e55"
+    sha256 x86_64_linux:  "dacfe42333c7e0e4c1a6174c08b8008eeb717cf7201822161eccd912a9ede8c0"
   end
 
   depends_on "bash" => :build
