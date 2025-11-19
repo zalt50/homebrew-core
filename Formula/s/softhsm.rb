@@ -46,16 +46,14 @@ class Softhsm < Formula
   def install
     system "sh", "./autogen.sh" if build.head?
     system "./configure", "--disable-silent-rules",
-                          "--sysconfdir=#{etc}/softhsm",
                           "--localstatedir=#{var}",
+                          "--sysconfdir=#{pkgetc}",
                           "--with-crypto-backend=openssl",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
                           "--disable-gost",
                           *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     (var/"lib/softhsm/tokens").mkpath
   end
 
