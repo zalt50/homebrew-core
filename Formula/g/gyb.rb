@@ -154,16 +154,11 @@ class Gyb < Formula
     rewrite_shebang rw_info, "gyb.py"
     bin.install "gyb.py" => "gyb"
     venv.site_packages.install buildpath.glob("*.py")
-  end
-
-  def post_install
     pkgetc.mkpath
   end
 
   def caveats
-    <<~EOS
-      Default config_folder: #{pkgetc}
-    EOS
+    "Default config_folder: #{pkgetc}"
   end
 
   test do
