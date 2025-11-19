@@ -22,12 +22,13 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9c5232a0657ebf17b63076ec3d3b0d9c3d6e4490592ef5c54104ecb2c4ce5708"
-    sha256 arm64_sequoia: "0502ef875f6332fd50ea3d39863f6ec0d59db2a25b1a39c13d0c9594eae95895"
-    sha256 arm64_sonoma:  "232d7bf67edbfb286be4add39a203c827c7beb2db8d2c1a78f66da4ce0df7268"
-    sha256 sonoma:        "e01a9e2f76cd3748b549cad2c7e09b0a399ed4cf4d49bd3b87ea6c08178cc663"
-    sha256 arm64_linux:   "ceb01847565089cc1f28957c4b223ee8857b48ff88c5c4d98682de44810856ff"
-    sha256 x86_64_linux:  "daf4032e30a04a1a9d304841ffc0f9081e8fe4ea47f28f16d04434b5b1f64c8a"
+    rebuild 1
+    sha256 arm64_tahoe:   "a2fae93332c3ac996601e55b513d6d0052decb524e6a9ed77a29a7650bd331b6"
+    sha256 arm64_sequoia: "8268950e829a4c80f9a79694e74bf43ca97cf8cb99cb6dee5f651191373f1ca4"
+    sha256 arm64_sonoma:  "dfc5c3690894a2cb2427775d6331f2566cad0c93ac4d3b884029c4261afc20c1"
+    sha256 sonoma:        "5e04dbb8323ed1836a982f2faaccebf8bbbc2b19c10c213ed366ef8bb870b0d4"
+    sha256 arm64_linux:   "a6f5ce4200fe6a5c7064875a98e399bab0ccc09d26c030816c1264b0f2603ea7"
+    sha256 x86_64_linux:  "a4d550c7b25b41648592c20b32301a199609c5220b39e4005abe90bc2662254f"
   end
 
   depends_on "pkgconf" => :build
