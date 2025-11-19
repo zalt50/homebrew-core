@@ -1,8 +1,8 @@
 class CloudfoundryCli < Formula
   desc "Official command-line client for Cloud Foundry"
   homepage "https://docs.cloudfoundry.org/cf-cli"
-  url "https://github.com/cloudfoundry/cli/archive/refs/tags/v8.14.1.tar.gz"
-  sha256 "231cdb5c10615447b122b605ff2280d734dc6d8dd82f559287415813448f70f2"
+  url "https://github.com/cloudfoundry/cli/archive/refs/tags/v8.17.0.tar.gz"
+  sha256 "301bbbdab2477b594123a4ca74171d2ea9fa4c372aec2fd63b420ddb25e9717e"
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/cli.git", branch: "main"
 
@@ -29,9 +29,9 @@ class CloudfoundryCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X code.cloudfoundry.org/cli/version.binaryVersion=#{version}
-      -X code.cloudfoundry.org/cli/version.binarySHA=#{tap.user}
-      -X code.cloudfoundry.org/cli/version.binaryBuildDate=#{time.iso8601}
+      -X code.cloudfoundry.org/cli/v8/version.binaryVersion=#{version}
+      -X code.cloudfoundry.org/cli/v8/version.binarySHA=#{tap.user}
+      -X code.cloudfoundry.org/cli/v8/version.binaryBuildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"cf")
   end
