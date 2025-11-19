@@ -1,8 +1,8 @@
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://docs.balena.io/reference/balena-cli/latest/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-23.1.2.tgz"
-  sha256 "bec13255fcc4fe0c16b930ddb3c69803e97781f8215b00f5a57277f984e08965"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-23.1.3.tgz"
+  sha256 "b0bf59f0c4d2ccd7b3743683ab13a09cc60d81a42995a25a8662173424282447"
   license "Apache-2.0"
 
   livecheck do
