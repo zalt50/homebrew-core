@@ -33,22 +33,21 @@ class KnotResolver < Formula
   depends_on "luajit"
   depends_on "protobuf-c"
 
+  uses_from_macos "libedit"
+
   on_linux do
     depends_on "libcap-ng"
-    depends_on "libedit"
     depends_on "systemd"
   end
 
   def install
-    args = ["--default-library=static"]
+    args = []
     args << "-Dsystemd_files=enabled" if OS.linux?
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-  end
 
-  def post_install
     (var/"knot-resolver").mkpath
   end
 
