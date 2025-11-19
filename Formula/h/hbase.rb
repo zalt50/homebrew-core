@@ -130,9 +130,7 @@ class Hbase < Formula
             <value>#{loopback}</value>
           </property>
       XML
-  end
 
-  def post_install
     (var/"log/hbase").mkpath
     (var/"run/hbase").mkpath
   end
