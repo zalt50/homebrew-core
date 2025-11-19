@@ -1,8 +1,8 @@
 class Pyrefly < Formula
   desc "Fast type checker and IDE for Python"
   homepage "https://pyrefly.org/"
-  url "https://github.com/facebook/pyrefly/archive/refs/tags/0.42.1.tar.gz"
-  sha256 "709855106b5828f38764d3c59b02d7aa4f626216c1d82396769c839e0bf6932e"
+  url "https://github.com/facebook/pyrefly/archive/refs/tags/0.42.2.tar.gz"
+  sha256 "4815733da564d6e5fd68cc6bb3ee516a0ad30329fca64b08b2081308577bbcbc"
   license "MIT"
   head "https://github.com/facebook/pyrefly.git", branch: "main"
 
