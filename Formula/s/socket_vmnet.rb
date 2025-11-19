@@ -20,9 +20,7 @@ class SocketVmnet < Formula
   def install
     # make: skip "install.launchd"
     system "make", "install.bin", "install.doc", "VERSION=#{version}", "PREFIX=#{prefix}"
-  end
 
-  def post_install
     (var/"run").mkpath
     (var/"log/socket_vmnet").mkpath
   end
