@@ -20,7 +20,7 @@ class Moto < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/aws/serverless-application-model/issues/3831
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "moto[all,server]",
@@ -282,7 +282,7 @@ class Moto < Formula
   end
 
   def python3
-    which("python3.14")
+    which("python3.13")
   end
 
   def install
