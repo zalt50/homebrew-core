@@ -56,10 +56,8 @@ class ShibbolethSp < Formula
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
-    (var/"run/shibboleth/").mkpath
+    (var/"run/shibboleth").mkpath
     (var/"cache/shibboleth").mkpath
   end
 
