@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.27.0.tar.gz"
-  sha256 "6f52c75c9d09866265ed0e2a025d9b78daa2e165c6c2ff79d14a8a9ea10df4f7"
+  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.28.0.tar.gz"
+  sha256 "62d9b51d0a9798b4c1b15641ab31d661b687dedd959945272c9bf6b7112476ab"
   license "GPL-3.0-or-later"
   head "https://github.com/ooni/probe-cli.git", branch: "master"
 
@@ -25,6 +25,8 @@ class Ooniprobe < Formula
   depends_on "tor"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ooniprobe"
     (var/"ooniprobe").mkpath
   end
