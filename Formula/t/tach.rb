@@ -3,8 +3,8 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https://docs.gauge.sh/getting-started/introduction"
-  url "https://files.pythonhosted.org/packages/c0/03/71dc08afb67a98f75f338cbe06cafa4d4266a80b5f3192fae73289a38412/tach-0.29.0.tar.gz"
-  sha256 "0b27b9265eee34f396515a2e918fa783d3d02e69edfb6ea1dfd1843d49021429"
+  url "https://files.pythonhosted.org/packages/e9/f0/4e6857fc643a579efc77adfde5b4f19450a5a909a2b112f479a37e44c062/tach-0.32.0.tar.gz"
+  sha256 "62a19bc6373f1d1673e48e5131092e2cd8bda0658193f1cdb9e3143fb7761bff"
   license "MIT"
   head "https://github.com/gauge-sh/tach.git", branch: "main"
 
@@ -53,8 +53,8 @@ class Tach < Formula
   end
 
   resource "pydot" do
-    url "https://files.pythonhosted.org/packages/66/dd/e0e6a4fb84c22050f6a9701ad9fd6a67ef82faa7ba97b97eb6fdc6b49b34/pydot-3.0.4.tar.gz"
-    sha256 "3ce88b2558f3808b0376f22bfa6c263909e1c3981e2a7b629b65b451eee4a25d"
+    url "https://files.pythonhosted.org/packages/50/35/b17cb89ff865484c6a20ef46bf9d95a5f07328292578de0b295f4a6beec2/pydot-4.0.1.tar.gz"
+    sha256 "c2148f681c4a33e08bf0e26a9e5f8e4099a82e0e2a068098f32ce86577364ad5"
   end
 
   resource "pygments" do
@@ -73,8 +73,8 @@ class Tach < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "smmap" do
