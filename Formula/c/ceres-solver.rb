@@ -2,7 +2,7 @@ class CeresSolver < Formula
   desc "C++ library for large-scale optimization"
   homepage "http://ceres-solver.org/"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://ceres-solver.googlesource.com/ceres-solver.git", branch: "master"
 
   stable do
@@ -56,7 +56,7 @@ class CeresSolver < Formula
   test do
     cp pkgshare/"examples/helloworld.cc", testpath
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 3.10)
       project(helloworld)
       find_package(Ceres REQUIRED COMPONENTS SuiteSparse)
       add_executable(helloworld helloworld.cc)
