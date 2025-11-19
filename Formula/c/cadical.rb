@@ -1,8 +1,8 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "https://fmv.jku.at/cadical/"
-  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-2.1.3.tar.gz"
-  sha256 "abfe890aa4ccda7b8449c7ad41acb113cfb8e7e8fbf5e49369075f9b00d70465"
+  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-2.2.0.tar.gz"
+  sha256 "46694892c2d2ebc7a77cd33edb35c71c8bf92a5aae600f04fbb977b1c7824083"
   license "MIT"
 
   livecheck do
@@ -22,9 +22,10 @@ class Cadical < Formula
   end
 
   def install
-    ENV.append_to_cflags "-fPIC" if OS.linux?
+    args = []
+    args << "-fPIC" if OS.linux?
 
-    system "./configure"
+    system "./configure", *args
     chdir "build" do
       system "make"
       bin.install "cadical"
