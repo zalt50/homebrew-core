@@ -49,8 +49,8 @@ class Httpd < Formula
     end
 
     if OS.mac?
-      libxml2 = "#{MacOS.sdk_path_if_needed}/usr"
-      zlib = "#{MacOS.sdk_path_if_needed}/usr"
+      libxml2 = "#{MacOS.sdk_for_formula(self).path}/usr"
+      zlib = "#{MacOS.sdk_for_formula(self).path}/usr"
     else
       libxml2 = Formula["libxml2"].opt_prefix
       zlib = Formula["zlib"].opt_prefix
@@ -120,9 +120,7 @@ class Httpd < Formula
       s.gsub! "${prefix}/lib/httpd/modules", HOMEBREW_PREFIX/"lib/httpd/modules"
       s.gsub! Superenv.shims_path, HOMEBREW_PREFIX/"bin"
     end
-  end
 
-  def post_install
     (var/"cache/httpd").mkpath
     (var/"www").mkpath
   end
