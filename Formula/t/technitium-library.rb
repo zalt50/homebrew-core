@@ -6,11 +6,11 @@ class TechnitiumLibrary < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be407b55a44283bd47b88a31a6fbc639d58ccf84ca47c2bcedc0584b26ef1060"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "274f474608e7884c7197032ee1788304736f521779ca4806dc8294dfd5243348"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be843b0a8b7b881059d27d98db4d872c4ada675014ea3e699e8b99419f1a87c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d412f6988935ebe02cf59e2f31c060f09d0f4498211e00abeea9eb4ae70cd3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0363178b469cb544315d5e4bf8466eb17775194405dde39d6ecd55c1f4531b2b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f9613d21241b14e3323a4dc71fbc1631ab24f56a8d61f60e6a81f6e02e21a31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91865cb5874441dab112c6e9267a3f5d2cc081194551bff59636d42dc9501dd9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07697844a8f88098f9d137d01725c30da8e9254a0eb622146419a8d147d20561"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d59db73228efb8ee264679d107ded9c8ca33b3fa697a98f16364e98e6de0ae7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d376bc911451deb25373c99e92946358ba6dfda5ccac6c9f8a38c7e557e2ad5"
   end
 
   depends_on "dotnet"
