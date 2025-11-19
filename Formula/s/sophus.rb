@@ -4,7 +4,7 @@ class Sophus < Formula
   url "https://github.com/strasdat/Sophus/archive/refs/tags/1.24.6.tar.gz"
   sha256 "3f3098bdac2c74d42a921dbfb0e5e4b23601739e35a1c1236c2807c399da960c"
   license "MIT"
-  revision 1
+  revision 2
   version_scheme 1
   head "https://github.com/strasdat/Sophus.git", branch: "main"
 
