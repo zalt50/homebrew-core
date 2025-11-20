@@ -61,8 +61,9 @@ class Logstash < Formula
     libexec.install Dir["*"]
 
     # Move config files into etc
-    (etc/"logstash").install Dir[libexec/"config/*"]
+    pkgetc.install Dir[libexec/"config/*"]
     rm_r(libexec/"config")
+    libexec.install_symlink pkgetc => "config"
 
     bin.install libexec/"bin/logstash", libexec/"bin/logstash-plugin"
     bin.env_script_all_files libexec/"bin", LS_JAVA_HOME: "${LS_JAVA_HOME:-#{Language::Java.java_home("21")}}"
@@ -77,14 +78,8 @@ class Logstash < Formula
     rm_r libexec/"vendor/jruby/lib/ruby/stdlib/libfixposix/binary/arm64-darwin" if OS.mac? && Hardware::CPU.arm?
   end
 
-  def post_install
-    ln_s etc/"logstash", libexec/"config" unless (libexec/"config").exist?
-  end
-
   def caveats
-    <<~EOS
-      Configuration files are located in #{etc}/logstash/
-    EOS
+    "Configuration files are located in #{pkgetc}/"
   end
 
   service do
