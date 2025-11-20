@@ -9,6 +9,7 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2a003628feb260b4b9cbadce0fc1fc87b02d8068942f9c88812a5905a41136d5"
@@ -305,8 +306,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/7d/97/369dd928d0561e7a8ae673156d2470664a83935320b068fa35b54d19f0bd/notebook-7.0.7.tar.gz"
-    sha256 "3bcff00c17b3ac142ef5f436d50637d936b274cfa0b41f6ac0175363de9b4e09"
+    url "https://files.pythonhosted.org/packages/89/ac/a97041621250a4fc5af379fb377942841eea2ca146aab166b8fcdfba96c2/notebook-7.5.0.tar.gz"
+    sha256 "3b27eaf9913033c28dde92d02139414c608992e1df4b969c843219acf2ff95e4"
   end
 
   resource "notebook-shim" do
