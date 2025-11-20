@@ -1,8 +1,8 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
   homepage "https://k6.io"
-  url "https://github.com/grafana/k6/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "a2f5ccf6ca7be527cf510d7b1ef7d7b45a2f487023ded0f3bfc88cf8dbf1cbdb"
+  url "https://github.com/grafana/k6/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "70e49dc1405bde34eaaa4678f7dec6f1e3c3bc0c365676f7f4dd543534e63329"
   license "AGPL-3.0-or-later"
   head "https://github.com/grafana/k6.git", branch: "master"
 
@@ -21,6 +21,12 @@ class K6 < Formula
   end
 
   depends_on "go" => :build
+
+  # version patch, upstream pr ref, https://github.com/grafana/k6/pull/5440
+  patch do
+    url "https://github.com/grafana/k6/commit/6cdc35c615ad31e8b0ca6c6a0d6050e6f4f6afe2.patch?full_index=1"
+    sha256 "00bd1b2328de3b7ad0df18da4089afd6414a807ae25c605e5b9850acbb5f4564"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
