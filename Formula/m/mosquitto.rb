@@ -47,9 +47,7 @@ class Mosquitto < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
     (var/"mosquitto").mkpath
   end
 
