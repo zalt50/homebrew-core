@@ -6,12 +6,12 @@ class Openexr < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "229c88e8cdcd4a5c5f61a16eb916b0ae96252e488207fcd0a0c637f83c81fe71"
-    sha256 cellar: :any,                 arm64_sequoia: "3a11bd94ee231d80ad15b599fc21c39b62c2c196dae1508ef49f711bb0be1f4b"
-    sha256 cellar: :any,                 arm64_sonoma:  "66f0cbee5a2f99e9ea626454f69012f07d097b32f5d1d9e8b3ccd584a84b8d44"
-    sha256 cellar: :any,                 sonoma:        "6b60da1e1ceea853b825eb68057441a08552edd920585640d267a1f3927cdf00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c266b07b6d85cfa3c473d5c43007752182bd5e7a747e8050ff05de561b2db097"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0365c45bed3c97610307f86aa11e428cd2fa9d1ba7df6493e35295cc9f5d3c20"
+    sha256 cellar: :any,                 arm64_tahoe:   "9c3adc9aa85652da4e19a571a8eb4b565b9b8035ce56fd276f2725bb902a7e9d"
+    sha256 cellar: :any,                 arm64_sequoia: "5d301d5d5bcdaa7be22bafe95bcb6fdb9097bef450920027cbcffcdfdba7fc6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f2fc593061df83e56bfa19da797fdb1c24cd0dc004bfd6f374c3d8ce3c992aa"
+    sha256 cellar: :any,                 sonoma:        "87f1dae191d3cd0d00e78ee11808bb488e0b1a10cb15e7b4f192680e8abb161d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48890260ead06a31bd0c5ff9c7754651b4904774c28421fbba9bf5b70799396a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f897a365243bdab2c0f39adfe11a92cd3d9b5191f52a45f2bfe62212146574b"
   end
 
   depends_on "cmake" => :build
