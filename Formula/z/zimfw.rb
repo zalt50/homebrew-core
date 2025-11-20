@@ -1,8 +1,8 @@
 class Zimfw < Formula
   desc "Zsh plugin manager"
   homepage "https://zimfw.sh"
-  url "https://github.com/zimfw/zimfw/releases/download/v1.19.0/zimfw.zsh.gz"
-  sha256 "5fa592e45be94ec8c4e787c6d64f65e12ee6cc0e7fa97a9ba43b79107734d9aa"
+  url "https://github.com/zimfw/zimfw/releases/download/v1.19.1/zimfw.zsh.gz"
+  sha256 "73a1cdc8c025994942a4a4827a47a4740f97903b37b74abf558206f8da387fa6"
   license "MIT"
 
   no_autobump! because: :requires_manual_review
