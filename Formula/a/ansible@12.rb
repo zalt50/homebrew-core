@@ -1,21 +1,30 @@
-class Ansible < Formula
+class AnsibleAT12 < Formula
   include Language::Python::Virtualenv
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/5b/34/f6ca83d5fb10954bc4ac07cda823f8f822edeadbbb5f9d16942e6d9ce62c/ansible-13.0.0.tar.gz"
-  sha256 "fd0f4a29c3e77617011b98d80e4579c31e1d58f40928d3e8fd5e434696676797"
+  url "https://files.pythonhosted.org/packages/00/1e/154896819d41cb9a5266759244285c7b594a199e2543263764a022b86618/ansible-12.2.0.tar.gz"
+  sha256 "0563dfd33ebd28caf6ccdc7a6d22a7fdafbd9c9c42fefcae5179616a53a35211"
   license "GPL-3.0-or-later"
-  head "https://github.com/ansible/ansible.git", branch: "devel"
+
+  livecheck do
+    url "https://pypi.org/rss/project/ansible/releases.xml"
+    regex(/^v?(12(?:\.\d+)+)$/i)
+    strategy :xml do |xml, regex|
+      xml.get_elements("//item/title").map { |item| item.text[regex, 1] }
+    end
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4df254059fee6ee70cfcdaf5f39711ac79cf9ed37b8a7cfef5e4973f19f38e45"
-    sha256 cellar: :any,                 arm64_sequoia: "a75f3bd37d9c75ab47d3686c838ee877814eb678ae4d26d8c9c225bbcf7778c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae55994b08b26e9214e86fcde79c11c731e19f63dce34d17705b2c4b525fc143"
-    sha256 cellar: :any,                 sonoma:        "f5cabac6b32842c48596fb174b06df48fc9c41bb62d7e2c89d885415a882f30e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2115c4d65b912f0e7776be604869d15c531e16ebef37d8741a48ed31c5a597f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca1b2779ba622a9ecbaad6aacf682404a32ffef8930a1901df06468272ed875a"
+    sha256 cellar: :any,                 arm64_tahoe:   "e08dd4f9d7412b7826b51bed51d8b169832e7ed56882b472cca262d25ea1c5df"
+    sha256 cellar: :any,                 arm64_sequoia: "676bef46e2caaf4a3433d3488dd39a1e6b8bd283011d987c38ad310ae4240427"
+    sha256 cellar: :any,                 arm64_sonoma:  "e40a073c035f7c034321fd2fb059f3ed1421db2e63b43016612889245b589c8e"
+    sha256 cellar: :any,                 sonoma:        "271b1d7ec5e2baf478e0331ca46d4ea5638b742c460d962a6f69045240c11de0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59d4453be3451cb8b6f821ef4b5da37d17435b3d466507a13c798f44b105aca1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2c5a58be27e8a00e03cd9e683b500e19d297058388784c3f1d221a02dcea609"
   end
+
+  keg_only :versioned_formula
 
   # `pkgconf` and `rust` are for bcrypt
   depends_on "pkgconf" => :build
@@ -25,7 +34,7 @@ class Ansible < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libssh"
   depends_on "libyaml"
-  depends_on "python@3.13" # needs bcrypt v5+ foro py3.14
+  depends_on "python@3.13"
   depends_on "tree" # for ansible-role-init
 
   uses_from_macos "krb5"
@@ -50,8 +59,8 @@ class Ansible < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/02/5b/8992daa4102cf92eca06f7e40d9c9cfdb2d6440719dff9944417c570fea6/ansible_core-2.20.0.tar.gz"
-    sha256 "cd73faf28a056c933bc1eee8f66ab597e7ec7309d42c8a6e5d6e4294c4a78b54"
+    url "https://files.pythonhosted.org/packages/6b/ef/35f14c0d8877f6ed233c4a03f5bc161b88342e97dec3e8e04f418f28136f/ansible_core-2.19.4.tar.gz"
+    sha256 "888db6593f2fd42cd05bdbe546704d9c969dce99e3373a54498f6dbefcfa1917"
   end
 
   resource "ansible-pylibssh" do
@@ -81,13 +90,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/26/04/8cf6cf7e6390c71b9c958f3bfedc45d1182b51a35f7789354bf7b2ff4e8c/boto3-1.40.76.tar.gz"
-    sha256 "16f4cf97f8dd8e0aae015f4dc66219bd7716a91a40d1e2daa0dafa241a4761c5"
+    url "https://files.pythonhosted.org/packages/dd/4f/92744c97f42e214948b9c8eff86e7e72c7ca8be788867a8aea80dc192052/boto3-1.41.0.tar.gz"
+    sha256 "73bf7f63152406404c0359c013a692e884b98a3b297160058a38f00ef19e375b"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/07/eb/50e2d280589a3c20c3b649bb66262d2b53a25c03262e4cc492048ac7540a/botocore-1.40.76.tar.gz"
-    sha256 "2b16024d68b29b973005adfb5039adfe9099ebe772d40a90ca89f2e165c495dc"
+    url "https://files.pythonhosted.org/packages/c4/8d/af94a3a0a5dc3ff255fdbd9a4bdf8e41beb33ea61ebab92e3d8e017f9ee4/botocore-1.41.0.tar.gz"
+    sha256 "555afbf86a644bfa4ebd7bd98d717b53b792e6bbb2c49f2b308fb06964cf1655"
   end
 
   resource "cachetools" do
