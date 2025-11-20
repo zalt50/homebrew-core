@@ -8,12 +8,13 @@ class Molecule < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "696240463635bc5b968243ebd2e71b42ee11c3f5aefb88d8426e4ea9e85342da"
-    sha256 cellar: :any,                 arm64_sequoia: "fc5de0e3ae7fef837b36df41c649cc13dbd00a0cb591e8041341a135451d3abd"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a03d5017e0e1abd95b5ea4956eddc283f030d94f9af2cfdeba310d8ad3a18a4"
-    sha256 cellar: :any,                 sonoma:        "0b30eca96f81ee2514878393c1a350bff3007cc4294dd0cbd89e4e56a428d467"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c2886e049eee0c98993e3142ad9838e1da0c00bcebfd5ca86c1cca202ade2a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "990a120b934393943143c80d2d55a162fac37345ab3894163d026e0cf789f681"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3496cb6d30037033158224f1f7cf92d484650dc0f9cc0e829f3abfd7c6e28856"
+    sha256 cellar: :any,                 arm64_sequoia: "844e30ba078a1a5b262fbd303d0842320c5df77f6255586acfe176f4d13fc96d"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f67fa4e8ae2626bf6a56598a4ea44edb80d5f338dfe5c29efed52d7d248147c"
+    sha256 cellar: :any,                 sonoma:        "c11b6605a432abde1d674d278a84180bca6beccdf27424a1a75c358d91a58e51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d09508ef53bf9a23450241bd2a41353e03613d8bc38bc2d9fe6addfe1867942c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41cc0c6451573682ebf14062e6347883dadaf2fbd0523214a2be556da0a1f107"
   end
 
   depends_on "ansible"
