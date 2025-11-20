@@ -8,13 +8,12 @@ class Tmt < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e8ddd35cf0e617f0d4cfa54869a6367929e202c87e9d32169f136f049f66bcf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bdc5c4d58a9eb04e1ff20a7d12e7e6dc1db73724337bd25e2a67e167e79f7d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13dcde709d6dcb4bb773fd54a32d85369bbae36ca161237249fa3061b01cbe0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4d3da5c02b325532be07129c1786d6e847cfb53ca517e3a7a56a0e0eb12df33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb47fcb86e8deaa1130dfa4bf5d9c8b2d8811424b20a1c1038b39f73f91bea8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0596cd4fe55a1ebfc8a466be94ffaf535328c0174c025eecdf89d237c5b6990f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69f84f850a8075726504632ffe5d26e9eb4b5db69cbf70c8a9cc345b8f4db16b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e0ee44305e3cd42274ea12bb3a587dc9f05c6f57c1c85e808360d4c486e2c07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9498aec774e9ed9c498ade5f77c46d5d8cf2e3543628c5a95f9ca61a8de6697"
+    sha256 cellar: :any_skip_relocation, sonoma:        "86f5cd756fcfda1eb33c8fb4fe59536db8a8dc0f96483f817763c6aa9993aba4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91f3046e4995d5aeb6ef42fc850882fad4c4a62e29640d1855533dd74b2c5713"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f586069b67f85dd6d82394fb31e713b43bca67a7487d4aa9db7db6ea88d963b3"
   end
 
   depends_on "beakerlib"
