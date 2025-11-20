@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/bb/f9/ba22c81fb6fbb81610e4c661c6ffe4f495cbb5d5e8296de31964e710feb8/locust-2.42.3.tar.gz"
-  sha256 "01227890df7bf5268332f2dc041558ae45561b72a06193b068f7e02774f75ab2"
+  url "https://files.pythonhosted.org/packages/75/ce/9f4dddaf9717bcaeeea7305a6e71e2dd84a672854c97abb44ed81587c485/locust-2.42.4.tar.gz"
+  sha256 "b97ab0bbee37bf8108816b5cc4c5312f0aa221c8b91e1ff3a459008833a38396"
   license "MIT"
 
   bottle do
@@ -45,8 +45,8 @@ class Locust < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "configargparse" do
@@ -110,8 +110,8 @@ class Locust < Formula
   end
 
   resource "locust-cloud" do
-    url "https://files.pythonhosted.org/packages/cf/11/c9b8ebef10a5dd3df11ebf371e1defddbf123cd798f2010dfaeece03c642/locust_cloud-1.28.1.tar.gz"
-    sha256 "c010a80dbd26fbd791a9c1202c63c59ddb96e9f3cc4ff5af48a9ee858057a56c"
+    url "https://files.pythonhosted.org/packages/5d/59/9779e5606e9580795ad1fdf45e259300a1cbd18155994e84277fa7bb2aa9/locust_cloud-1.29.0.tar.gz"
+    sha256 "2fd2465eef49253e9c39ac6f7d7ac18588159ceff9520218860de0d798581e44"
   end
 
   resource "markupsafe" do
@@ -150,8 +150,8 @@ class Locust < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/a3/5c/00a0e072241553e1a7496d638deababa67c5058571567b92a7eaa258397c/pytest-8.4.2.tar.gz"
-    sha256 "86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01"
+    url "https://files.pythonhosted.org/packages/07/56/f013048ac4bc4c1d9be45afd4ab209ea62822fb1598f40687e6bf45dcea4/pytest-9.0.1.tar.gz"
+    sha256 "3e9c069ea73583e255c3b21cf46b8d3c56f6e3a1a8f6da94ccb0fcf57b9d73c8"
   end
 
   resource "python-engineio" do
