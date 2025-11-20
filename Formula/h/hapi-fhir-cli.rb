@@ -16,7 +16,7 @@ class HapiFhirCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e9295a4733ee51ed0d1bd66973ee391e15f6cc12b004364d6dcb9bb051902320"
+    sha256 cellar: :any_skip_relocation, all: "7aa82af50a1ec8bf4c6f1ddf193af1ce480eacad3c82c43825ac0366cffeacfc"
   end
 
   depends_on "openjdk"
