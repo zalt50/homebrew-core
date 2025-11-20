@@ -46,9 +46,7 @@ class PgpoolIi < Formula
       s.gsub! "#memqcache_max_num_cache = 1000000", "memqcache_max_num_cache = 1000"
     end
     etc.install etc/"pgpool.conf.sample" => "pgpool.conf"
-  end
 
-  def post_install
     (var/"log").mkpath
     (var/"pgpool-ii").mkpath
   end
