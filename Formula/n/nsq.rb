@@ -23,9 +23,6 @@ class Nsq < Formula
 
   def install
     system "make", "DESTDIR=#{prefix}", "PREFIX=", "install"
-  end
-
-  def post_install
     (var/"log").mkpath
     (var/"nsq").mkpath
   end
