@@ -64,12 +64,10 @@ class Nexus < Formula
     libexec.install Dir["#{assembly}/*"]
     chmod "+x", Dir["#{libexec}/bin/*"]
     (bin/"nexus").write_env_script libexec/"bin/nexus", java_env
-  end
 
-  def post_install
-    (var/"log/nexus").mkpath unless (var/"log/nexus").exist?
-    (var/"nexus").mkpath unless (var/"nexus").exist?
-    pkgetc.mkpath unless pkgetc.exist?
+    (var/"log/nexus").mkpath
+    (var/"nexus").mkpath
+    pkgetc.mkpath
   end
 
   service do
