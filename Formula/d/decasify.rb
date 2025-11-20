@@ -1,8 +1,8 @@
 class Decasify < Formula
   desc "Utility for casting strings to title-case according to locale-aware style guides"
   homepage "https://github.com/alerque/decasify"
-  url "https://github.com/alerque/decasify/releases/download/v0.11.1/decasify-0.11.1.tar.zst"
-  sha256 "f2b6bb59af7f7cab3d50063e1622dcf490f344b378e5c02de91cba3f7ff32fa5"
+  url "https://github.com/alerque/decasify/releases/download/v0.11.2/decasify-0.11.2.tar.zst"
+  sha256 "f43794dd8e6f4e1a75132a9892d69f8b4f5272d96dc0909c04915be09eda2e1e"
   license "LGPL-3.0-only"
 
   bottle do
