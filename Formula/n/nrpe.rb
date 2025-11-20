@@ -49,9 +49,7 @@ class Nrpe < Formula
 
     system "make", "all"
     system "make", "install", "install-config"
-  end
 
-  def post_install
     (var/"run").mkpath
   end
 
