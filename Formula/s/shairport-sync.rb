@@ -46,7 +46,7 @@ class ShairportSync < Formula
       --with-soxr
       --with-metadata
       --with-piddir=#{var}/run
-      --sysconfdir=#{etc}/shairport-sync
+      --sysconfdir=#{pkgetc}
     ]
     if OS.mac?
       args << "--with-dns_sd" # Enable bonjour
@@ -54,9 +54,7 @@ class ShairportSync < Formula
     end
     system "./configure", *args, *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
     (var/"run").mkpath
   end
 
