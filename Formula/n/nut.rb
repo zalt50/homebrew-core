@@ -78,9 +78,7 @@ class Nut < Formula
 
     system "./configure", *args
     system "make", "install"
-  end
 
-  def post_install
     (var/"state/ups").mkpath
     (var/"run").mkpath
   end
