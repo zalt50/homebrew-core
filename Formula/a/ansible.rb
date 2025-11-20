@@ -9,12 +9,13 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4df254059fee6ee70cfcdaf5f39711ac79cf9ed37b8a7cfef5e4973f19f38e45"
-    sha256 cellar: :any,                 arm64_sequoia: "a75f3bd37d9c75ab47d3686c838ee877814eb678ae4d26d8c9c225bbcf7778c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae55994b08b26e9214e86fcde79c11c731e19f63dce34d17705b2c4b525fc143"
-    sha256 cellar: :any,                 sonoma:        "f5cabac6b32842c48596fb174b06df48fc9c41bb62d7e2c89d885415a882f30e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2115c4d65b912f0e7776be604869d15c531e16ebef37d8741a48ed31c5a597f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca1b2779ba622a9ecbaad6aacf682404a32ffef8930a1901df06468272ed875a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "cc16bbe89bbabb08a53bcebe2e447adc2154bd003428aa717d9e7d4b420d8865"
+    sha256 cellar: :any,                 arm64_sequoia: "4146688d02670b1bd5234902df9e8b8cbd2064790d92437e6712a1116f3398f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f681233f36458e5ef39296c0782fd72e042729e53533aefa679edcf6a66582c"
+    sha256 cellar: :any,                 sonoma:        "37bbe665f86050eacf683781b29a2ad8b88f6a5c242f1524df444bd289954483"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "752dc3be865a7326cf08193b6d72b410bd8fa9fe7d2e4cad60860a814edb8e9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b4e400522527c80761b1181c62dd2c8a0de30808632b1f06fd45f5088c1a5a7"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -25,7 +26,7 @@ class Ansible < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libssh"
   depends_on "libyaml"
-  depends_on "python@3.13" # needs bcrypt v5+ foro py3.14
+  depends_on "python@3.14"
   depends_on "tree" # for ansible-role-init
 
   uses_from_macos "krb5"
@@ -33,9 +34,8 @@ class Ansible < Formula
   uses_from_macos "libxslt"
   uses_from_macos "openldap" # for python-ldap
 
-  # passlib doesn't work with bcrypt v5+: https://github.com/ansible/ansible/issues/85919
   pypi_packages exclude_packages: %w[certifi cryptography gnureadline],
-                extra_packages:   %w[ansible-pylibssh apache-libcloud bcrypt<5 boto3 dnspython docker
+                extra_packages:   %w[ansible-pylibssh apache-libcloud boto3 dnspython docker
                                      fqdn junos-eznc jxmlease kerberos ntc-templates openshift
                                      passlib pexpect proxmoxer pynetbox pysphere3 python-consul
                                      python-ldap python-neutronclient pytz pywinrm requests-credssp
@@ -76,8 +76,8 @@ class Ansible < Formula
   end
 
   resource "bcrypt" do
-    url "https://files.pythonhosted.org/packages/bb/5d/6d7433e0f3cd46ce0b43cd65e1db465ea024dbb8216fb2404e919c2ad77b/bcrypt-4.3.0.tar.gz"
-    sha256 "3a3fd2204178b6d2adcf09cb4f6426ffef54762577a7c9b54c159008cb288c18"
+    url "https://files.pythonhosted.org/packages/d4/36/3329e2518d70ad8e2e5817d5a4cac6bba05a47767ec416c7d020a965f408/bcrypt-5.0.0.tar.gz"
+    sha256 "f748f7c2d6fd375cc93d3fba7ef4a9e3a092421b8dbf34d8d4dc06be9492dfdd"
   end
 
   resource "boto3" do
@@ -323,6 +323,11 @@ class Ansible < Formula
   resource "passlib" do
     url "https://files.pythonhosted.org/packages/b6/06/9da9ee59a67fae7761aab3ccc84fa4f3f33f125b370f1ccdb915bf967c11/passlib-1.7.4.tar.gz"
     sha256 "defd50f72b65c5402ab2c573830a6978e5f202ad0d984793c8dde2c4152ebe04"
+
+    # bcrypt no longer truncates long passwords: https://github.com/pyca/bcrypt/commit/d50ab05b2bece07d5c8d6a4179064fc714fd9126
+    # And breaks unmaintained passlib: https://foss.heptapod.net/python-libs/passlib/-/issues/196
+    # See also https://github.com/ansible/ansible/issues/85919
+    patch :DATA
   end
 
   resource "pbr" do
@@ -638,3 +643,17 @@ class Ansible < Formula
     end
   end
 end
+
+__END__
+diff --git a/passlib/handlers/bcrypt.py b/passlib/handlers/bcrypt.py
+--- a/passlib/handlers/bcrypt.py
++++ b/passlib/handlers/bcrypt.py
+@@ -644,7 +644,7 @@
+         config = self._get_config(ident)
+         if isinstance(config, str):
+             config = config.encode("ascii")
+-        hash = _bcrypt.hashpw(secret, config)
++        hash = _bcrypt.hashpw(secret[:72], config)
+         assert isinstance(hash, bytes)
+         if not hash.startswith(config) or len(hash) != len(config)+31:
+             raise uh.exc.CryptBackendError(self, config, hash, source="`bcrypt` package")
