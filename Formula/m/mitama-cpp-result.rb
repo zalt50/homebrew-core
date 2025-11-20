@@ -6,6 +6,10 @@ class MitamaCppResult < Formula
   license "MIT"
   head "https://github.com/loliGothicK/mitama-cpp-result.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "28440190e9a47c233c1ad311a8adb5d4ecee78b57ee8b790c35a12ae27110419"
+  end
+
   depends_on "cmake" => :build
   depends_on "fmt" => :test
 
