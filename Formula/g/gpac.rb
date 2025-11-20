@@ -2,7 +2,7 @@ class Gpac < Formula
   desc "Multimedia framework for research and academic purposes"
   homepage "https://gpac.io/"
   license "LGPL-2.1-or-later"
-  revision 3
+  revision 4
   head "https://github.com/gpac/gpac.git", branch: "master"
 
   stable do
