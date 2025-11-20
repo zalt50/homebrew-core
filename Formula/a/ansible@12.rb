@@ -15,6 +15,15 @@ class AnsibleAT12 < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "e08dd4f9d7412b7826b51bed51d8b169832e7ed56882b472cca262d25ea1c5df"
+    sha256 cellar: :any,                 arm64_sequoia: "676bef46e2caaf4a3433d3488dd39a1e6b8bd283011d987c38ad310ae4240427"
+    sha256 cellar: :any,                 arm64_sonoma:  "e40a073c035f7c034321fd2fb059f3ed1421db2e63b43016612889245b589c8e"
+    sha256 cellar: :any,                 sonoma:        "271b1d7ec5e2baf478e0331ca46d4ea5638b742c460d962a6f69045240c11de0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59d4453be3451cb8b6f821ef4b5da37d17435b3d466507a13c798f44b105aca1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2c5a58be27e8a00e03cd9e683b500e19d297058388784c3f1d221a02dcea609"
+  end
+
   keg_only :versioned_formula
 
   # `pkgconf` and `rust` are for bcrypt
