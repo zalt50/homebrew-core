@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/d6/83/ee7895bbf6c1dc9c28d4359616397d86a633caeeec873930e5f0d06c2120/kimi_cli-0.56.tar.gz"
-  sha256 "32ca77c49ac91cd0c797f676a15d5a7b2e0cf305477e66424903cda2cd99dcff"
+  url "https://files.pythonhosted.org/packages/78/23/6b0e099c222d3109bd964af0d2e184e474e2d02fd106c9384583f0c06301/kimi_cli-0.57.tar.gz"
+  sha256 "94a5129c04713bc514e600287f3c8e09abc252b366d1498f0f0375001b185dfd"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -59,8 +59,8 @@ class KimiCli < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/5b/f9/baa1b885c8664b446e6a13003938046901e54ffd70b532bbebd01256e34b/anthropic-0.74.0.tar.gz"
-    sha256 "114ec10cb394b6764e199da06335da4747b019c5629e53add33572f66964ad99"
+    url "https://files.pythonhosted.org/packages/d7/7b/609eea5c54ae69b1a4a94169d4b0c86dc5c41b43509989913f6cdc61b81d/anthropic-0.74.1.tar.gz"
+    sha256 "04c087b2751385c524f6d332d066a913870e4de8b3e335fb0a0c595f1f88dc6e"
   end
 
   resource "anyio" do
@@ -224,8 +224,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/07/8e/fc3f52c5725a18814ea1f270aeef7379db5d0302860c5bb3be9620d3b835/kosong-0.26.1.tar.gz"
-    sha256 "dcea636b8ec92894b35b430d91ee47243c87cd24d26ba998e2f3363dfe7d9366"
+    url "https://files.pythonhosted.org/packages/7b/b0/96f7ef4795ae8981d7cabb7df1987524778a08314ed2923598342cc3a2d6/kosong-0.26.2.tar.gz"
+    sha256 "6372e7f94f809cb351c9c6ae587cf58bd9d38e5ba9d63b2c312c610db343f229"
   end
 
   resource "lazy-object-proxy" do
@@ -279,8 +279,8 @@ class KimiCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/71/e3/cec27fa28ef36c4ccea71e9e8c20be9b8539618732989a82027575aab9d4/openai-2.7.2.tar.gz"
-    sha256 "082ef61163074d8efad0035dd08934cf5e3afd37254f70fc9165dd6a8c67dcbd"
+    url "https://files.pythonhosted.org/packages/d5/e4/42591e356f1d53c568418dc7e30dcda7be31dd5a4d570bca22acb0525862/openai-2.8.1.tar.gz"
+    sha256 "cb1b79eef6e809f6da326a7ef6038719e35aa944c42d081807bfa1be8060f15f"
   end
 
   resource "openapi-core" do
@@ -306,11 +306,6 @@ class KimiCli < Formula
   resource "parse" do
     url "https://files.pythonhosted.org/packages/4f/78/d9b09ba24bb36ef8b83b71be547e118d46214735b6dfb39e4bfde0e9b9dd/parse-1.20.2.tar.gz"
     sha256 "b41d604d16503c79d81af5165155c0b20f6c8d6c559efa66b4b695c3e5a0a0ce"
-  end
-
-  resource "patch-ng" do
-    url "https://files.pythonhosted.org/packages/65/bb/ebd7c6058dcfbf634986f9a8b3fb638f3269501c73701a48b7530042da5b/patch-ng-1.19.0.tar.gz"
-    sha256 "27484792f4ac1c15fe2f3e4cecf74bb9833d33b75c715b71d199f7e1e7d1f786"
   end
 
   resource "pathable" do
