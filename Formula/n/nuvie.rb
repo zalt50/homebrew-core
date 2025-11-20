@@ -62,9 +62,6 @@ class Nuvie < Formula
     system "make"
     bin.install "nuvie"
     pkgshare.install "data"
-  end
-
-  def post_install
     (var/"nuvie/game").mkpath
   end
 
