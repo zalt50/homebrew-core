@@ -23,12 +23,12 @@ class Vcpkg < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "873c34e3f99a7997215192fde00f98988237e2c048d90218bbb45bfe08471c6a"
-    sha256 cellar: :any,                 arm64_sequoia: "68406e2d085c69d20c67f7e10f46c6255587b117cb776c0321a7be64e1b27944"
-    sha256 cellar: :any,                 arm64_sonoma:  "0adc67aca72dfe2221783f13ae5941876e39a35606c2bc7e0e0d6063a8e2e3b7"
-    sha256 cellar: :any,                 sonoma:        "8644221c17f6d1cc616fa4f7be900ab8ba8a78df5c1ec5f05f87d0f12206c8e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e04b09aa086260813feec548f6e2520ff166b5347412f3f832d06930fa13497"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b740efebb04f73e6100e84b9c9449d1a7f6e9cb76154fc2778d5855bdca2c46d"
+    sha256 cellar: :any,                 arm64_tahoe:   "648e6834b99399768e45a04fd8e102e9465819b0915ab84acacccc41af8cf73b"
+    sha256 cellar: :any,                 arm64_sequoia: "e36927e3c977cc137c4204b496b9086513f4812a01dce1cbcc49ef887ad2316b"
+    sha256 cellar: :any,                 arm64_sonoma:  "71a1794318082c24ab12f37c232ee1bacf5ab63e2233e26cc305e5714b47e4fc"
+    sha256 cellar: :any,                 sonoma:        "9311bca0cacb63b61cca20e9816b0b483ba809d94707a09a79053b92d9fae51e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3281d6f7a04ea1013636d3ff505ba5f2ee364d76a090352b429af805c004506"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20ad882483268d589d34e72ce5b1e211e8108fde0a2b011facb452adef45ced9"
   end
 
   depends_on "cmake" => :build
