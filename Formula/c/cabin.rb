@@ -16,6 +16,7 @@ class Cabin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d80d56f13208f944f50bdec29141ca1133a857f78952f9c9eb43a0c36e2e1d7d"
   end
 
+  depends_on "mitama-cpp-result" => :build
   depends_on "nlohmann-json" => :build
   depends_on "pkgconf" => :build
   depends_on "toml11" => :build
@@ -53,8 +54,9 @@ class Cabin < Formula
   end
 
   def install
-    # Avoid cloning `toml11` at build-time.
+    # Avoid cloning `toml11` and `mitama-cpp-result` at build-time.
     (buildpath/"build/DEPS/toml11").install_symlink Formula["toml11"].opt_include
+    (buildpath/"build/DEPS/mitama-cpp-result").install_symlink Formula["mitama-cpp-result"].opt_include
     system "make", "BUILD=release", "PREFIX=#{prefix}", "install"
   end
 
