@@ -15,12 +15,12 @@ class Roxctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbc3584f207143d35f4b0993116f94209c4c7acfff225f1f0e49857a67c07e95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9cfdcb483a2f31260fc01b712d2d2d078bf715a671c1b7e8314cd1292c35551"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23f4f751735c5ad9f29c3899523e6a19721d5a142eeaf7dbc22fbc250668d99d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7dbe34c8552865dd27b90f275dc167e68b957bb900cd183ef90a942c9c33c2cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dc71d11f2fc0af5b580fe1241fca1e02499f6e9cd444dd77fdbe837c60c20a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b948eaaff62e0384ec0da59f25dcd35240ac4d8eb42e785208c3c50f654c6423"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a092f2cecb244f1e4d4ac57a56e1cff6593aef1404bae0e4d7d947958e855986"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1de3dee793d1221f6e8b5a615a13f5904237214d9866907c31147100ce762497"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b5ff557ee3e52a592dca11577f74969bb24f8f744e43e936523fbc216e6c3c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0057223a349b25807d64182a94e12c3e3a13d2d2c352afe92738012543c39c26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34db6bcd1c1017d4dc557c6f4c86b1d64c8eb077a84ddad5370f7b1ede4cf479"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fe326cfac8d9686022e78d6f38d3c34e674572bcbea11765fb950b1830877b"
   end
 
   depends_on "go" => :build
