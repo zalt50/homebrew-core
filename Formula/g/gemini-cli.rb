@@ -1,8 +1,8 @@
 class GeminiCli < Formula
   desc "Interact with Google Gemini AI models from the command-line"
   homepage "https://github.com/google-gemini/gemini-cli"
-  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.16.0.tgz"
-  sha256 "e308f29581b66784bc550273e6f71640df50d88be42b02c986770abefc54be3c"
+  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.17.0.tgz"
+  sha256 "6d2abece09ff466a354f9d40b3d4b914a84bba70729631954603757ee0acc167"
   license "Apache-2.0"
 
   bottle do
@@ -16,6 +16,10 @@ class GeminiCli < Formula
 
   depends_on "node"
 
+  on_linux do
+    depends_on "xsel"
+  end
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
@@ -26,6 +30,15 @@ class GeminiCli < Formula
     node_modules = libexec/"lib/node_modules/@google/gemini-cli/node_modules"
     libexec.glob("#{node_modules}/tree-sitter-bash/prebuilds/*")
            .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
+    clipboardy_fallbacks_dir = libexec/"lib/node_modules/@google/#{name}/node_modules/clipboardy/fallbacks"
+    rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
+    if OS.linux?
+      linux_dir = clipboardy_fallbacks_dir/"linux"
+      linux_dir.mkpath
+      # Replace the vendored pre-built xsel with one we build ourselves
+      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+    end
   end
 
   test do
