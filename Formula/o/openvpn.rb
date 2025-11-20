@@ -56,9 +56,7 @@ class Openvpn < Formula
 
     # We don't use mbedtls, so this file is unnecessary & somewhat confusing.
     rm doc/"README.mbedtls"
-  end
 
-  def post_install
     (var/"run/openvpn").mkpath
   end
 
