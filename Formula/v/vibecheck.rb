@@ -1,8 +1,8 @@
 class Vibecheck < Formula
   desc "AI-powered git commit assistant written in Go"
   homepage "https://github.com/rshdhere/vibecheck"
-  url "https://github.com/rshdhere/vibecheck/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "1de99d1535f153288897e22ba65710057eac18057f10387a768122a82c6fe0da"
+  url "https://github.com/rshdhere/vibecheck/archive/refs/tags/v1.4.4.tar.gz"
+  sha256 "de18718d0d2e9e8b7efbe2f2e51be7ec9e264dcb181747b44e491f0afcc2dbab"
   license "MIT"
   head "https://github.com/rshdhere/vibecheck.git", branch: "main"
 
