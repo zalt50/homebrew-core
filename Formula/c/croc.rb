@@ -1,18 +1,18 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://github.com/schollz/croc/archive/refs/tags/v10.2.7.tar.gz"
-  sha256 "eea957c840041e11cc214b5f9c31801b0f8b51621d6629b89ba5743788d8e7c6"
+  url "https://github.com/schollz/croc/archive/refs/tags/v10.3.0.tar.gz"
+  sha256 "ca0ee9694ddc98ca55f77cf9d8eb123af10bf8674fec8e356c2edc43f5705532"
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8fa0ad31ca554185a8fdf72401aeb5784d6d5bc20a6f8cd93d723829c02aed4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8fa0ad31ca554185a8fdf72401aeb5784d6d5bc20a6f8cd93d723829c02aed4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8fa0ad31ca554185a8fdf72401aeb5784d6d5bc20a6f8cd93d723829c02aed4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c95cc1b65e3f08afb81fb9b241465daeec7bdf5b044b06f803545c9165d073a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35bccd61ddaf84eaaf08877a5328a8dbbd2e8a97a9d972a2749573fe7f983c90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91bb81e86e2399372843b839b37149a8d0cae04e6e88321e83903c4286954dfa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3449c091612da575dfcf6ad355ff847da3513e0d3986be272214a91169cd7f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3449c091612da575dfcf6ad355ff847da3513e0d3986be272214a91169cd7f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3449c091612da575dfcf6ad355ff847da3513e0d3986be272214a91169cd7f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "410e60594d71b95615bc13a45115b37b4b339e8db2b77d43af87c4510b88a7f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c45f2f900023f018f205ef92f8a9da974409fab19164a23c507c0e24ff0489a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0da5b6e9f77f00f356cf5a17ad32f4027fe3bdf5682233b88ea52753ac62797e"
   end
 
   depends_on "go" => :build
