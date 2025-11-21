@@ -1,8 +1,8 @@
 class KubectlRookCeph < Formula
   desc "Rook plugin for Ceph management"
   homepage "https://rook.io/"
-  url "https://github.com/rook/kubectl-rook-ceph/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "178b12b7beb225243cdedc7bb43b7ae7b475c9ab365b23f4a785d5a4ff75042f"
+  url "https://github.com/rook/kubectl-rook-ceph/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "877ca57eeefd44b1776b335dc7ea36d8431c268f37a7b77274e0f286a6e6053e"
   license "Apache-2.0"
   head "https://github.com/rook/kubectl-rook-ceph.git", branch: "master"
 
