@@ -15,11 +15,11 @@ class SbomTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c085f49baa49436a269813eb7ad56ea879928fb5c576aaecfda66d71d2b9b90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff7012a666d8fd826c4e2f694271c0424b9a42320cc98dc2facaaffb6246e55"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29b3eacb58a469d024486efa5d5fc86ce727cf8b7512faaf66357fab3bdb6f4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cfec54a08d07b209776172824827abc224e0787dda54e6940e0e278567f01af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cb55721ec430a16f646bbe897f4bc0a036c8b1ee8b2ff3a10702500fd7d3c48"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ee5dac96bebd91fe1253a2b6c267773677890118096a9d291cdc24f31174372"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0acf99320e915ccee1511b294dfba95639d79826fefc02b57ea0adcb4c34d82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fcf92e1f1c0ead9cc6867b9fc64e1bb089d6fad2aa4628c44732e6c350ab5bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb12da6615eea0eebc4c9fa282c8f3f54c5537d93ab54ef03c66f3ff57c63ff0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09b6a8d4d149d1dec313a8b9fba5f096f67d7ade1e7f7f363ee580db7a795be9"
   end
 
   depends_on "dotnet@8"
