@@ -1,8 +1,8 @@
 class EditorconfigChecker < Formula
   desc "Tool to verify that your files are in harmony with your .editorconfig"
   homepage "https://github.com/editorconfig-checker/editorconfig-checker"
-  url "https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v3.4.1.tar.gz"
-  sha256 "dd19acaac32fa525f3b5bc3403dced0f79d9970dcebedd5fefbd1807add978e7"
+  url "https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v3.5.0.tar.gz"
+  sha256 "11ecb806c1cbedc0dea73d479d300ba8622e88dea1dbe4827d9715849fdbafef"
   license "MIT"
   head "https://github.com/editorconfig-checker/editorconfig-checker.git", branch: "main"
 
@@ -23,6 +23,10 @@ class EditorconfigChecker < Formula
   end
 
   test do
+    (testpath/".editorconfig").write <<~EOS
+      [version.txt]
+      charset = utf-8
+    EOS
     (testpath/"version.txt").write <<~EOS
       version=#{version}
     EOS
