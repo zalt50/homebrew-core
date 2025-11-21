@@ -1,8 +1,8 @@
 class Vapor < Formula
   desc "Command-line tool for Vapor (Server-side Swift web framework)"
   homepage "https://vapor.codes"
-  url "https://github.com/vapor/toolbox/archive/refs/tags/19.2.0.tar.gz"
-  sha256 "c2970459166469afe8614ecdca33dae556a5e2fb386b92eeba2498af9014fc60"
+  url "https://github.com/vapor/toolbox/archive/refs/tags/20.0.0.tar.gz"
+  sha256 "b3b215a69ae8b5235d4f37229313ee1947de5c5b9ad2142a76b17c105dd758cf"
   license "MIT"
   head "https://github.com/vapor/toolbox.git", branch: "main"
 
@@ -17,7 +17,9 @@ class Vapor < Formula
     sha256                               x86_64_linux:  "68d00588ea3a03d785c0e2fd0745d3310136cd5f366de20a9b2db8142d0be06b"
   end
 
-  uses_from_macos "swift", since: :sequoia # Swift 6.0
+  depends_on macos: :sequoia
+
+  uses_from_macos "swift", since: :tahoe # Swift 6.1
 
   def install
     args = if OS.mac?
