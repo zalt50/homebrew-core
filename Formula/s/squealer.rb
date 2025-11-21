@@ -7,14 +7,12 @@ class Squealer < Formula
   head "https://github.com/owenrumney/squealer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bbbca0998a02f9934bf8dde6839cd83d40fcf0e1b1a6fae1ced092f43f06cbfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba32cfb4a7e85c23c6f8662837dd12a8ed2b2b36b62600243f45c18df7ba84f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba32cfb4a7e85c23c6f8662837dd12a8ed2b2b36b62600243f45c18df7ba84f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba32cfb4a7e85c23c6f8662837dd12a8ed2b2b36b62600243f45c18df7ba84f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0abbec834255a9bff97cb798916053c892f986147faaf7d5ac465becb2e328db"
-    sha256 cellar: :any_skip_relocation, ventura:       "0abbec834255a9bff97cb798916053c892f986147faaf7d5ac465becb2e328db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a07b215b0de89a8f913fc7ed7660c623d9a94a3a741b46ba54fd3180fa02b03b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dda2adeb9318b7b5c786b084221ade08a917ef2760c5cbd362b8107c0584985"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f50def689d5a53e1e68649f2e333ef8b396185264496f78551251e44f38d230"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f50def689d5a53e1e68649f2e333ef8b396185264496f78551251e44f38d230"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f50def689d5a53e1e68649f2e333ef8b396185264496f78551251e44f38d230"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e70ddc65dd49956dbe67cb51bf20294b8e11103831036f7777affd6788a0d375"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa2f6dfb3492dc035ada3240f826d1541344d4daf7af553834bfc6e0a846c9a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d5915c6dda915ee730544e936a0a1c7874f2d7638e8e5b3b521da899d13fb90"
   end
 
   depends_on "go" => :build
