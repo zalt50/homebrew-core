@@ -3,10 +3,9 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/68/d8/4c1827aa29bc22f4a8f4cb4a755f4505c7e84fc54a6a67e3a5bbd4dc0389/otterdog-1.1.0.tar.gz"
-  sha256 "b1dc49d7cd0b4f077aa84d924299412539960cb848efbfbe69d9689adebc4832"
+  url "https://files.pythonhosted.org/packages/0d/1c/c1017834ec7263f13e6f13ac02a39f93a8f7fdc69753941578ac4e58ff2e/otterdog-1.1.1.tar.gz"
+  sha256 "37b0b2a6ebdc5b4641bf78278be79a597dc75c866dade8a2ea9250ce769ca8da"
   license "EPL-2.0"
-  revision 1
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   # https://github.com/microsoft/playwright-python/issues/2579
@@ -34,8 +33,8 @@ class Otterdog < Formula
   # No sdist on PyPI, so we use the GitHub tarball
   # Ref: https://github.com/microsoft/playwright-python/issues/2579
   resource "playwright" do
-    url "https://github.com/microsoft/playwright-python/archive/refs/tags/v1.55.0.tar.gz"
-    sha256 "adda41b4a6c02f414d535b7a0e03bc5f4c4f77fb3d4ef3028f8b609ca71f3613"
+    url "https://github.com/microsoft/playwright-python/archive/refs/tags/v1.56.0.tar.gz"
+    sha256 "906f858568c32ddd6a6fbaef8fad182eb10ed2c972abf508c2a3f45945fa3768"
   end
 
   resource "aiofiles" do
@@ -104,8 +103,8 @@ class Otterdog < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "frozenlist" do
@@ -204,8 +203,8 @@ class Otterdog < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/06/c6/a3124dee667a423f2c637cfd262a54d67d8ccf3e160f3c50f622a85b7723/pynacl-1.6.0.tar.gz"
-    sha256 "cb36deafe6e2bce3b286e5d1f3e1c246e0ccdb8808ddb4550bb2792f2df298f2"
+    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
+    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
   end
 
   resource "referencing" do
