@@ -10,6 +10,15 @@ class MbedtlsAT3 < Formula
     regex(/(?:mbedtls[._-])v?(3(?:\.\d+)+)/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "d3a58038145d2683f3b6700a281487a437ece4e73c6cc6fcd8efbd07e2e2c045"
+    sha256 cellar: :any,                 arm64_sequoia: "024755c986d3514f84e462ea08a94bf677ede572dc03340fab817ddeb6787836"
+    sha256 cellar: :any,                 arm64_sonoma:  "8133322a7fe33d6181da0bec7657506e5bd2b196da726e56ea1872628f27ce5a"
+    sha256 cellar: :any,                 sonoma:        "713afec227329cb142f271b24ac471a6e1322368ac4e2f2bacf33aeaddc055dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "395307a648d0d72f75a35c84c79b2398618ed7b74d76a0978e64d67857ff4344"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b3e45329e73450bb838d8d223798e0d2f23847093dc5ae3a97a66963dbd86e5"
+  end
+
   keg_only :versioned_formula
   depends_on "cmake" => :build
 
