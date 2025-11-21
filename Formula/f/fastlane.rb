@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://github.com/fastlane/fastlane/archive/refs/tags/2.228.0.tar.gz"
-  sha256 "c481eb8fda99ec15fdae7c1092b9bfb0ab974fcc48fe814b790704cd2d890e45"
+  url "https://github.com/fastlane/fastlane/archive/refs/tags/2.229.0.tar.gz"
+  sha256 "8caedc04fbd775a35173a2fbc6668e813cd30469f5adb7f27efcaca68f2861df"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
@@ -30,6 +30,12 @@ class Fastlane < Formula
 
   def fastlane_gem_home
     "${HOME}/.local/share/fastlane/#{Formula["ruby"].version.major_minor}.0"
+  end
+
+  # patch to add `base64`, `nkf` gems, upstream pr ref, https://github.com/fastlane/fastlane/pull/29767
+  patch do
+    url "https://github.com/fastlane/fastlane/commit/5a1264350c16c83f42937caee6071a5fb52892d6.patch?full_index=1"
+    sha256 "00c2e201544ffe211ce2e1b0977bc269a6b89213e62e1e1b11b1b6eb7bed8960"
   end
 
   def install
