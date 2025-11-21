@@ -10,15 +10,7 @@ class Pickle < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6710d3de2aa7ed4fac47695b81fe4101759a759534dbeb5920a3a6956084c6ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f639f368ae43bb57ae421bbd3426bab6edc063da8f7ec66f53344c104073f430"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f639f368ae43bb57ae421bbd3426bab6edc063da8f7ec66f53344c104073f430"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f639f368ae43bb57ae421bbd3426bab6edc063da8f7ec66f53344c104073f430"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91002e34b82efb2b8514339bfc45b0d0a0455dc8ba05c1ccd30fef75841914f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "91002e34b82efb2b8514339bfc45b0d0a0455dc8ba05c1ccd30fef75841914f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23f1c4215357e0916796420abb44f644c492a3788993b0fcdab6e74a37843b4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f639f368ae43bb57ae421bbd3426bab6edc063da8f7ec66f53344c104073f430"
+    sha256 cellar: :any_skip_relocation, all: "2d08a3524b6b3addc133a13e292110ebac7ef414b426b8158022afae6eb2a132"
   end
 
   depends_on "php@8.4"
