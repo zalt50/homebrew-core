@@ -1,18 +1,18 @@
 class Kubeone < Formula
   desc "Automate cluster operations on all your environments"
   homepage "https://kubeone.io"
-  url "https://github.com/kubermatic/kubeone/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "6aea5f4d761430cb25b0136e1814d1c46884ae20d876856c1429446ee0e7a701"
+  url "https://github.com/kubermatic/kubeone/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "8a436ffcb96b932053e3d115c574fd49076b2747bf74d885b90990ab4df0940d"
   license "Apache-2.0"
   head "https://github.com/kubermatic/kubeone.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28d2f0248f792abe7c6cc5253f115e81f1597b2c0bbe285001eb987bb402aaa5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26aaf6dcbfb6ce8a1df591a052a14d9a835c6ec07a684d311dcd31974373b697"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "686976d467df70c20d537b8296145528b3f920ec06a294087e7536b7848fa8ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0ba180e138f97618de0156cfd4dfe0404652da47a695a7ed652d6ab01b56a3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e2e9b2b7529bbf6d25d80d4810f6dbd9cd7baf1c18e91a0c4531028840c7657"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3194a43bc35ebba3f7e68f5edbcc4195f7e4869695fbdc6bd875bada1db6941"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb20c27f993d6d504c97155163925d7a3e17827e8745e7eed3f4258cb738a915"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ec559a16e2b8560d90294af0c4f0f0e91a9b6c8c1c74e13404a10d823f73f89"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba47adf00c8da524c9564959d49a9d07ecac074496e06521b877775a90fc366a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e162c2731fff3e1b3d449faf7caa967cd8bee7ac694be8f574766790154eb200"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02f3f3cb5b747f9bb08817e2db5b983c7691a8d095793f1527fbc25a507b221d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc5ea375526ce5f9523e1c8c900ff3d194246a4b337e4b3b01e121c930627c17"
   end
 
   depends_on "go" => :build
