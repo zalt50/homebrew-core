@@ -6,6 +6,13 @@ class Devcockpit < Formula
   license "GPL-3.0-only"
   head "https://github.com/caioricciuti/dev-cockpit.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a25af8b7c4bd01d8a57740d3cde4bf7d414875fabee82094bc775ffc2a15e78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f144344e18802921f1086c3e12a4fc2c36d5acfe5e10d00b18d488978d8a3750"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "156101ae088f57254b78ef3d8e48f94da079eedf3e7a9d04713aa8e727d56532"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a78c8abb5c2445639be83fe271a6cbc0d2888272bca1554826de924a166e1b3e"
+  end
+
   depends_on "go" => :build
   depends_on arch: :arm64
 
