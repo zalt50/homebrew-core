@@ -52,6 +52,8 @@ class Hqx < Formula
           [bits] => 8
           [channels] => 3
           [mime] => image/jpeg
+          [width_unit] => px
+          [height_unit] => px
       )
     EOS
   end
