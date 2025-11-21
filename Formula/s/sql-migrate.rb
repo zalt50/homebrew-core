@@ -1,8 +1,8 @@
 class SqlMigrate < Formula
   desc "SQL schema migration tool for Go"
   homepage "https://github.com/rubenv/sql-migrate"
-  url "https://github.com/rubenv/sql-migrate/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "692eabfc9d92f1c128381e5c637caa2f3777d16566104af67ad814db54ffddba"
+  url "https://github.com/rubenv/sql-migrate/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "461b813600b570acff9cf031dc6eaf996c5b52482ccc9a95380bab0a597c3517"
   license "MIT"
   head "https://github.com/rubenv/sql-migrate.git", branch: "master"
 
@@ -20,6 +20,8 @@ class SqlMigrate < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X Main.Version=#{version}"), "./sql-migrate"
   end
 
