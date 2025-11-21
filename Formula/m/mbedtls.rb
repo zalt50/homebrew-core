@@ -13,14 +13,12 @@ class Mbedtls < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2004e7da883fb0e369e680797085545e0e357bdaaf80f4b51d926c96a325b97d"
-    sha256 cellar: :any,                 arm64_sequoia: "1d8f7928cbeb8380b3d39591956c884a2353f411f2537654db8e37c6d4cd771d"
-    sha256 cellar: :any,                 arm64_sonoma:  "b52142a9212d2ba22c583d0d490f8f60c668265061aecec8083339cffcc605eb"
-    sha256 cellar: :any,                 arm64_ventura: "6e20b77f9c4d0db9e5b7c8bf8c0e5cc4ccb82e36686d879cf1f2731101adf17a"
-    sha256 cellar: :any,                 sonoma:        "d6868d898949c78b4cbb9ea8c2bac0b858102344e84d516dd8759a0905019b02"
-    sha256 cellar: :any,                 ventura:       "f0eb7a4df4d1a64e30d293544089706ca5ce4ff23acd32246fc101cf27e39b61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfdcc6a8f16a79601d3aa0b24a8e3722144d92b938c3ebd637b77ab7c72f44e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf0c211ef718cfc840979ee95ddce71e548e86733017cdec1e0555aac2df6ad5"
+    sha256 cellar: :any,                 arm64_tahoe:   "27ea10c369948aae4c0569064e1b8628ca5fd5dcab0bbb02214f494b2bf3f2bb"
+    sha256 cellar: :any,                 arm64_sequoia: "0c694fd452f2098a5d0e6987e387e38c15ec98911a4a5ef708d22813cedc5a4e"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e575f2b42bec807a9b044ab00b07f28dbddf4630e5235d053584113d3779abf"
+    sha256 cellar: :any,                 sonoma:        "c96bd36a7136fcf036acff89c6e71fc91bbed9d4b20905d7dceeb0b5ba3c26f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba7c9b4c5b1562ec7161c3406b4a87b5b7fcce2b372fab323261482c96ea253"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df82e43cbff336f226c4ee56c7db63190cb3915af6287fad76b99c458f1fb4bc"
   end
 
   depends_on "cmake" => :build
