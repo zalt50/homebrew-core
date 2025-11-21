@@ -36,12 +36,12 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2d3c9cb2197f56c1d5aa35de18e33875d144a9d3e7b16d5a137aeb90601c5f96"
-    sha256 arm64_sequoia: "b4ddec5308ba19b6407ad47e4b9ecf38df80353813dab934ef193d2c051d08a7"
-    sha256 arm64_sonoma:  "86bea4cbab3ebba2ecfe276e44dba58c7ff2a00822a3f3b00ed1769ec596a76d"
-    sha256 sonoma:        "072b97561bae3a9fc72e1815d57295c301e21226383a7a17177cf7c966957b21"
-    sha256 arm64_linux:   "eb937832abb57c1e99bef572d649873e3e5e84c5f0c2bcae6832a2cb5cb40afd"
-    sha256 x86_64_linux:  "de0188add0c7fce1c3a3099715f8465c5a914b8d55bf91fad15538d2c4a898c9"
+    sha256 arm64_tahoe:   "03b97964f87cb37c098baf62b9f169d2eba6d884f4081c66aff692f56bec9812"
+    sha256 arm64_sequoia: "451d75733fba64fb6e84a28333bb2b02ec83dd14137bc83c8473a26b83344829"
+    sha256 arm64_sonoma:  "4fe86395bd69087c9813c861d569f40bea798f2d5eb889f231013f31ee471c2c"
+    sha256 sonoma:        "802c83d269609153296be37dbcb14373d3d9589c1d158aeaa67218dcf9c3e3e3"
+    sha256 arm64_linux:   "f22af7b3c6b3dc169f8b44a7d21e53b0c677785cb5d0ae22dbffa30f08353cf9"
+    sha256 x86_64_linux:  "d5d380cdeefea8b7d1a264f9bff9d0cf867aae9effcf0491913de1cf4a12b99f"
   end
 
   head do
