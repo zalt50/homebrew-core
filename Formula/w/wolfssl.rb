@@ -4,8 +4,8 @@ class Wolfssl < Formula
   # Git checkout automatically enables extra hardening flags
   # Ref: https://github.com/wolfSSL/wolfssl/blob/master/m4/ax_harden_compiler_flags.m4#L71
   url "https://github.com/wolfSSL/wolfssl.git",
-      tag:      "v5.8.2-stable",
-      revision: "decea12e223869c8f8f3ab5a53dc90b69f436eb2"
+      tag:      "v5.8.4-stable",
+      revision: "59f4fa568615396fbf381b073b220d1e8d61e4c2"
   license "GPL-3.0-or-later"
   head "https://github.com/wolfSSL/wolfssl.git", branch: "master"
 
