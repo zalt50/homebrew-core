@@ -6,8 +6,7 @@ class ApibuilderCli < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "39cbf3461c7f364bf4f50327ef24d23e877c8ab8cd27253f9c1a29a94ba359bc"
+    sha256 cellar: :any_skip_relocation, all: "076899e855f4137de04f4f32e18a2179c4ab1b46ff0bd4075eabcc2ae903bd1e"
   end
 
   uses_from_macos "ruby"
