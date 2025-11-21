@@ -1,8 +1,8 @@
 class Xclogparser < Formula
   desc "Tool to parse the SLF serialization format used by Xcode"
   homepage "https://github.com/MobileNativeFoundation/XCLogParser"
-  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/refs/tags/v0.2.42.tar.gz"
-  sha256 "38f02fc3359b557b4eddb1bd0c12e063858bad19f65171a50c61d7b393b9ec17"
+  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/refs/tags/v0.2.43.tar.gz"
+  sha256 "ad1aaa2a598dd6feb798bd6d9ecae3a9ca467257e84a537bba9596389a898d79"
   license "Apache-2.0"
 
   bottle do
@@ -31,7 +31,7 @@ class Xclogparser < Formula
     args = if OS.mac?
       ["--disable-sandbox"]
     else
-      ["--static-swift-stdlib"]
+      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld"]
     end
     system "swift", "build", *args, "--configuration", "release"
     bin.install ".build/release/xclogparser"
