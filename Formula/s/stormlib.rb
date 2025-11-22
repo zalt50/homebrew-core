@@ -1,8 +1,8 @@
 class Stormlib < Formula
   desc "Library for handling Blizzard MPQ archives"
   homepage "http://www.zezula.net/en/mpq/stormlib.html"
-  url "https://github.com/ladislav-zezula/StormLib/archive/refs/tags/v9.30.tar.gz"
-  sha256 "a709a6b034d206404f5297d85e474371203ff5483639955195d99b737bbf7dfe"
+  url "https://github.com/ladislav-zezula/StormLib/archive/refs/tags/v9.31.tar.gz"
+  sha256 "c8d77e626cc907c8f2d00bb5c48f9d6c70344848d49cab4468f6234afaf815c1"
   license "MIT"
   head "https://github.com/ladislav-zezula/StormLib.git", branch: "master"
 
