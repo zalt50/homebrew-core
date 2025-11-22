@@ -14,11 +14,20 @@ class Promptfoo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "05490fcfba5a96ca12b0f4fe3cf6b9b77391c6e3a14e248ac425d3a21e01f13f"
   end
 
-  depends_on "node@24"
+  depends_on "node"
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
+  end
 
   def install
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
+
+    # Allow newer better-sqlite
+    # Backport of https://github.com/promptfoo/promptfoo/commit/9c70bbf438f65e38d7a026d8c42d63272c6ef801
+    inreplace "package.json", '"better-sqlite3": "12.4.1"', '"better-sqlite3": "12.4.6"'
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/promptfoo/node_modules"
@@ -31,7 +40,7 @@ class Promptfoo < Formula
 
     system bin/"promptfoo", "init", "--no-interactive"
     assert_path_exists testpath/"promptfooconfig.yaml"
-    assert_match "description: \"My eval\"", (testpath/"promptfooconfig.yaml").read
+    assert_match 'description: "My eval"', (testpath/"promptfooconfig.yaml").read
 
     assert_match version.to_s, shell_output("#{bin}/promptfoo --version")
   end
