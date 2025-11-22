@@ -4,7 +4,7 @@ class PyqtAT5 < Formula
   url "https://files.pythonhosted.org/packages/0e/07/c9ed0bd428df6f87183fca565a79fee19fa7c88c7f00a7f011ab4379e77a/PyQt5-5.15.11.tar.gz"
   sha256 "fda45743ebb4a27b4b1a51c6d8ef455c4c1b5d610c90d2934c7802b5c1557c52"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "7c644cc70170c656e7c4f6604b663a5af0f8bc1d09b095711cab7a920a397386"
@@ -23,9 +23,9 @@ class PyqtAT5 < Formula
 
   pypi_packages exclude_packages: %w[pyqt5-qt5 pyqt3d-qt5 pyqtchart-qt5
                                      pyqtdatavisualization-qt5 pyqtnetworkauth-qt5
-                                     pyqtpurchasing-qt5 pyqtwebengine-qt5],
+                                     pyqtpurchasing-qt5],
                 extra_packages:   %w[pyqt3d pyqtchart pyqtdatavisualization
-                                     pyqtnetworkauth pyqtpurchasing pyqtwebengine]
+                                     pyqtnetworkauth pyqtpurchasing]
 
   # extra components
   resource "pyqt3d" do
@@ -56,11 +56,6 @@ class PyqtAT5 < Formula
   resource "pyqtpurchasing" do
     url "https://files.pythonhosted.org/packages/68/cf/005c9e79536473c8354c1c2b59a2adcae8aa5b7269b42c06514490aa47fb/PyQtPurchasing-5.15.6.tar.gz"
     sha256 "304b1ea3bfb6555202751220700d9a98d1de9eab464515dfccca96f306ddf00e"
-  end
-
-  resource "pyqtwebengine" do
-    url "https://files.pythonhosted.org/packages/18/e8/19a00646866e950307f8cd73841575cdb92800ae14837d5821bcbb91392c/PyQtWebEngine-5.15.7.tar.gz"
-    sha256 "f121ac6e4a2f96ac289619bcfc37f64e68362f24a346553f5d6c42efa4228a4d"
   end
 
   def python3
@@ -107,7 +102,6 @@ class PyqtAT5 < Formula
       Network
       Quick
       Svg
-      WebEngineWidgets
       Widgets
       Xml
     ]
