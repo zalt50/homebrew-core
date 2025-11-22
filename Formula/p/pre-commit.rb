@@ -3,8 +3,8 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/a6/49/7845c2d7bf6474efd8e27905b51b11e6ce411708c91e829b93f324de9929/pre_commit-4.4.0.tar.gz"
-  sha256 "f0233ebab440e9f17cabbb558706eb173d19ace965c68cdce2c081042b4fab15"
+  url "https://files.pythonhosted.org/packages/f4/9b/6a4ffb4ed980519da959e1cf3122fc6cb41211daa58dbae1c73c0e519a37/pre_commit-4.5.0.tar.gz"
+  sha256 "dc5a065e932b19fc1d4c653c6939068fe54325af8e741e74e88db4d28a4dd66b"
   license "MIT"
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
@@ -21,8 +21,8 @@ class PreCommit < Formula
   depends_on "python@3.14"
 
   resource "cfgv" do
-    url "https://files.pythonhosted.org/packages/11/74/539e56497d9bd1d484fd863dd69cbbfa653cd2aa27abfe35653494d85e94/cfgv-3.4.0.tar.gz"
-    sha256 "e52591d4c5f5dead8e0f673fb16db7949d2cfb3f7da4582893288f0ded8fe560"
+    url "https://files.pythonhosted.org/packages/4e/b5/721b8799b04bf9afe054a3899c6cf4e880fcf8563cc71c15610242490a0c/cfgv-3.5.0.tar.gz"
+    sha256 "d5b1034354820651caa73ede66a6294d6e95c1b00acc5e9b098e917404669132"
   end
 
   resource "distlib" do
