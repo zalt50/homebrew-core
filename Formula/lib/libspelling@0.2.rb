@@ -20,6 +20,7 @@ class LibspellingAT02 < Formula
   keg_only :versioned_formula
 
   deprecate! date: "2025-01-11", because: :versioned_formula
+  disable! date: "2026-01-11", because: :versioned_formula
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
@@ -31,7 +32,7 @@ class LibspellingAT02 < Formula
   depends_on "glib"
   depends_on "gtk4"
   depends_on "gtksourceview5"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "pango"
 
   on_macos do
