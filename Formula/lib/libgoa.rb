@@ -1,8 +1,8 @@
 class Libgoa < Formula
   desc "Single sign-on framework for GNOME - client library"
   homepage "https://gitlab.gnome.org/GNOME/gnome-online-accounts"
-  url "https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.1.tar.xz"
-  sha256 "64459360a3531eb7edee2e03bd5ab77ec95f1051b569e11a479b4f94f405c53f"
+  url "https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.2.tar.xz"
+  sha256 "ce88df65457f0e63a0d8daff13322e29ecb584197a187f48a3a21be2fcd1c824"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/gnome-online-accounts.git", branch: "master"
 
