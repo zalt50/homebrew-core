@@ -1,8 +1,8 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
   homepage "https://github.com/projectdiscovery/subfinder"
-  url "https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.10.0.tar.gz"
-  sha256 "714649906f533b5948eeaa5027dbe284789039b818d2a034ce47ed67953e95c4"
+  url "https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.10.1.tar.gz"
+  sha256 "fab71430b869ee26d4a44cd2b0685b80bd61326a9cd42925247f6a8eb6d4c4f7"
   license "MIT"
   head "https://github.com/projectdiscovery/subfinder.git", branch: "dev"
 
@@ -17,12 +17,6 @@ class Subfinder < Formula
 
   depends_on "go" => :build
 
-  # version patch, upstream pr ref, https://github.com/projectdiscovery/subfinder/pull/1669
-  patch do
-    url "https://github.com/projectdiscovery/subfinder/commit/dfcd02d5baf865ef6b6eeccfcf0df01ddaae60a4.patch?full_index=1"
-    sha256 "b3a79b83e8cd5df72a82b59a46e893679a05458d1fe98236a6df1860d4c25506"
-  end
-
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/subfinder"
   end
@@ -31,13 +25,14 @@ class Subfinder < Formula
     assert_match "docs.brew.sh", shell_output("#{bin}/subfinder -d brew.sh")
 
     # upstream issue, https://github.com/projectdiscovery/subfinder/issues/1124
-    if OS.mac?
-      assert_path_exists testpath/"Library/Application Support/subfinder/config.yaml"
-      assert_path_exists testpath/"Library/Application Support/subfinder/provider-config.yaml"
+    config_prefix = if OS.mac?
+      testpath/"Library/Application Support/subfinder"
     else
-      assert_path_exists testpath/".config/subfinder/config.yaml"
-      assert_path_exists testpath/".config/subfinder/provider-config.yaml"
+      testpath/".config/subfinder"
     end
+
+    assert_path_exists config_prefix/"config.yaml"
+    assert_path_exists config_prefix/"provider-config.yaml"
 
     assert_match version.to_s, shell_output("#{bin}/subfinder -version 2>&1")
   end
