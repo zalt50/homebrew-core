@@ -1,10 +1,9 @@
 class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/cpisciotta/xcbeautify"
-  url "https://github.com/cpisciotta/xcbeautify/archive/refs/tags/3.1.0.tar.gz"
-  sha256 "3b96197098efc79a855f8f5950bc25142f3fe4e561e15f311fc018479f90d5ee"
+  url "https://github.com/cpisciotta/xcbeautify/archive/refs/tags/3.1.1.tar.gz"
+  sha256 "662ea05a051f27c0ce4ffc7e6d815865d49f8821615438f24bde15cff9dc2acc"
   license "MIT"
-  revision 1
   head "https://github.com/cpisciotta/xcbeautify.git", branch: "main"
 
   bottle do
@@ -20,16 +19,18 @@ class Xcbeautify < Formula
   uses_from_macos "swift" => :build, since: :sequoia
   uses_from_macos "libxml2"
 
+  on_sequoia do
+    # Workaround for https://github.com/apple/swift-argument-parser/issues/827
+    # Conditional should really be Swift >= 6.2 but not available so using
+    # a check on the specific ld version included with Xcode >= 26
+    depends_on xcode: :build if DevelopmentTools.ld64_version >= "1221.4"
+  end
+
   def install
-    if OS.mac?
-      args = %w[--disable-sandbox]
+    args = if OS.mac?
+      %w[--disable-sandbox]
     else
-      libxml2_lib = Formula["libxml2"].opt_lib
-      args = %W[
-        --static-swift-stdlib
-        -Xlinker -L#{libxml2_lib}
-      ]
-      ENV.prepend_path "LD_LIBRARY_PATH", libxml2_lib
+      %w[--static-swift-stdlib -Xswiftc -use-ld=ld]
     end
     system "swift", "build", *args, "--configuration", "release"
     bin.install ".build/release/xcbeautify"
