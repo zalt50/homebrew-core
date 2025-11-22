@@ -7,6 +7,10 @@ class StrandsAgentsSops < Formula
   sha256 "b829c6ac4350eb9f94d57f2404c9dd6b684e2a3d64958d39fc3474103bb614f0"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "8b0d32078d0f68e446b1e49e4472dd64aef7da47cac7f7649a952a3509b7e6dc"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "pydantic" => :no_linkage
