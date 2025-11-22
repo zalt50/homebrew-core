@@ -1,8 +1,8 @@
 class VibeLogCli < Formula
   desc "CLI tool for analyzing Claude Code sessions"
   homepage "https://vibe-log.dev/"
-  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.4.tgz"
-  sha256 "5c95548bb8354c827b45e7cf51b6be33e96c4f9cea867bd71ccbc2d9cf9f9a5f"
+  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.5.tgz"
+  sha256 "d3febe4a8a999a02345c281f85a687445039dd0d22d4b1fe305785d5948e594e"
   license "MIT"
 
   bottle do
