@@ -14,23 +14,30 @@ class VibeLogCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a11a6e86878083cde7d658eb4672eb5c803bca5612d2b2ff9a144efe6b36a9b0"
   end
 
-  # `better-sqlite3` needs to be built with `c++17`, but `node` v25  compile with `c++20` by default
-  # Issue ref: https://github.com/WiseLibs/better-sqlite3/issues/1411
-  depends_on "node@24"
+  depends_on "node"
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
+  end
 
   on_linux do
     depends_on "xsel"
   end
 
   def install
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
+
+    # Allow newer better-sqlite: https://github.com/vibe-log/vibe-log-cli/pull/11
+    inreplace "package.json", '"better-sqlite3": "^11.0.0"', '"better-sqlite3": "^12.0.0"'
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
-    vendor_dir = libexec/"lib/node_modules/vibe-log-cli/node_modules/@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
+    node_modules = libexec/"lib/node_modules/vibe-log-cli/node_modules"
+    vendor_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
     rm_r(vendor_dir)
 
-    clipboardy_fallbacks_dir = libexec/"lib/node_modules/#{name}/node_modules/clipboardy/fallbacks"
+    clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
     if OS.linux?
       linux_dir = clipboardy_fallbacks_dir/"linux"
