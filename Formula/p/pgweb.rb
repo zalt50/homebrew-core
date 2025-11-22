@@ -6,14 +6,12 @@ class Pgweb < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7fa72d8b2f7d3810aa0aca016ade3067b07024298659471ffb1b8f81ef98f73"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "797a6578aded844b296169c74045b4735a435451bee8a6dd9bbc27b6a7955fc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "797a6578aded844b296169c74045b4735a435451bee8a6dd9bbc27b6a7955fc5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "797a6578aded844b296169c74045b4735a435451bee8a6dd9bbc27b6a7955fc5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "619152d700dfe8d083c8575d8f26dc2b026380d0c2ea8f0b8719cac147e31c08"
-    sha256 cellar: :any_skip_relocation, ventura:       "619152d700dfe8d083c8575d8f26dc2b026380d0c2ea8f0b8719cac147e31c08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6123d2f00a1c4d13a8d7180bfb0db2dbb16ed57b979b30594924dd991e4897d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c65033295bd08ffa0c3cc4d6a30b17ae7b62b957582ef0ae9689b9c5ddae332"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23107185892b8505ddbcadd2d8b65d27d70aa3967e70739bc5116076156970e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23107185892b8505ddbcadd2d8b65d27d70aa3967e70739bc5116076156970e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23107185892b8505ddbcadd2d8b65d27d70aa3967e70739bc5116076156970e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e90f55a950135a612407fdd3573b0b47fda4d4342242e6a0f5cb551f2fd0a694"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0670ea9a92e7ca6385393bb9ec4f661697e5cc4817920527811e2074e43d2a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b839a6b99f66db0edcbbbee6bc75189f3d281aaccd17e9f4261bc64676cb0219"
   end
 
   depends_on "go" => :build
