@@ -1,16 +1,9 @@
 class Archivemount < Formula
   desc "File system for accessing archives using libarchive"
-  homepage "https://github.com/cybernoid/archivemount"
-  url "https://slackware.uk/~urchlay/src/archivemount-0.9.1.tar.gz"
-  sha256 "c529b981cacb19541b48ddafdafb2ede47a40fcaf16c677c1e2cd198b159c5b3"
+  homepage "https://git.sr.ht/~nabijaczleweli/archivemount-ng"
+  url "https://git.sr.ht/~nabijaczleweli/archivemount-ng/archive/0.9.1.tar.gz"
+  sha256 "882faf07fe9241a5015eff9691c4702fdadb177265833b385135562a1c2c2059"
   license "LGPL-2.0-or-later"
-
-  livecheck do
-    url "https://raw.githubusercontent.com/cybernoid/archivemount/refs/heads/master/CHANGELOG"
-    regex(/\*\s+v?(\d+(?:\.\d+)+)\s+/i)
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
