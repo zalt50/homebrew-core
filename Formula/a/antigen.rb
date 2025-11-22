@@ -7,8 +7,8 @@ class Antigen < Formula
   head "https://github.com/zsh-users/antigen.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c5b90cbbac10593d4cdc737303340894b65b0598a564cc9eafe1466f33936503"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "3256f387fafd0971b040e466f519ba6be88de0a5d98aec8310b173b8ebfed7a8"
   end
 
   # project has no commits and release since 2019
