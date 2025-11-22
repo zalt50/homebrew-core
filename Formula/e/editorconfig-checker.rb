@@ -7,12 +7,12 @@ class EditorconfigChecker < Formula
   head "https://github.com/editorconfig-checker/editorconfig-checker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99593624a26a691635d9cf5240fab7e974d551f962c2ce6cccc66bc53f69ac1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99593624a26a691635d9cf5240fab7e974d551f962c2ce6cccc66bc53f69ac1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99593624a26a691635d9cf5240fab7e974d551f962c2ce6cccc66bc53f69ac1f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae526484a05a7c1e500cac44ac31fe31e192dd51ba62c245237506449066734a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8732cac6173a8d023e6e3f7e5b5c8889521eed087766652385bb4fc7630d453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b600cf6f456086f638d405dc78ec29af8157ddca281609d560b795f5b5d7ab88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b306542a787964bc2e2ab55b7c5378a1f196804e3d08b2a1aa406f39d32da9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b306542a787964bc2e2ab55b7c5378a1f196804e3d08b2a1aa406f39d32da9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b306542a787964bc2e2ab55b7c5378a1f196804e3d08b2a1aa406f39d32da9e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c4f17575394654085af6a747946338769c074b08ef0f6dae89fa5a3eec52300"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8c1ce1ed45f23bb619a9bda29411bf57c7fd74adb5c03bf7f530812ab659389"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e45d03f08d4af657810c27799bbe2f29e3e774abf8a08a5ecd6333667dd69006"
   end
 
   depends_on "go" => :build
