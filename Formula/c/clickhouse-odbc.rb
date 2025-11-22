@@ -29,7 +29,7 @@ class ClickhouseOdbc < Formula
   depends_on "cmake" => :build
   depends_on "folly" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "openssl@3"
   depends_on "poco"
   depends_on "utf8proc"
@@ -37,6 +37,12 @@ class ClickhouseOdbc < Formula
   on_macos do
     depends_on "libiodbc"
     depends_on "pcre2"
+  end
+
+  on_sequoia do
+    # Workaround until successful version bump to >= 1.4.3 to get
+    # https://github.com/ClickHouse/clickhouse-odbc/commit/574d58a6cfa94f27cc165374e32ef6eea7b7e0db
+    depends_on xcode: ["16.4", :build]
   end
 
   on_linux do
