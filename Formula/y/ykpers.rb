@@ -6,13 +6,6 @@ class Ykpers < Formula
   license "BSD-2-Clause"
   revision 2
 
-  livecheck do
-    url "https://developers.yubico.com/yubikey-personalization/Releases/"
-    regex(/href=.*?ykpers[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "d7ff46bee401db439de4f88382d2efcbb74cdda8555434f9ea1728a73be55648"
     sha256 cellar: :any,                 arm64_sequoia:  "b1a84b25eb98c3a81bb369743de29418fc21af87cc28e6596ee38a4595c793df"
@@ -28,6 +21,10 @@ class Ykpers < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "975467c8f02063b77d1d990642731133866564da4bb1d3537ecde9bec8387959"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eee945e8cc748d69622f20b470e327fee279b356b78be2df9a75dc10ab945f1d"
   end
+
+  # https://www.yubico.com/support/terms-conditions/yubico-end-of-life-policy/eol-products/
+  deprecate! date: "2025-11-22", because: :unmaintained, replacement_formula: "ykman"
+  disable! date: "2026-11-22", because: :unmaintained, replacement_formula: "ykman"
 
   depends_on "pkgconf" => :build
   depends_on "json-c"
