@@ -1,11 +1,9 @@
 class Shelltestrunner < Formula
   desc "Portable command-line tool for testing command-line programs"
   homepage "https://github.com/simonmichael/shelltestrunner"
-  url "https://hackage.haskell.org/package/shelltestrunner-1.10/shelltestrunner-1.10.tar.gz"
-  sha256 "07bd3365fbbde9b4c80a3139792c30c1b1929736175fc207b4af1285bb97cbb0"
+  url "https://hackage.haskell.org/package/shelltestrunner-1.11/shelltestrunner-1.11.tar.gz"
+  sha256 "b1742f8c0262034197faa879f1871848a3c404bc8a8aab706fbd053130d3414d"
   license "GPL-3.0-or-later"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "f1b8d8c242e9220cb7614ac47d110975539cfc97b3d8b2857e9dde0685bce584"
