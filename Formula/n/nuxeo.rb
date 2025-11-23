@@ -46,9 +46,7 @@ class Nuxeo < Formula
       s.gsub!(/#nuxeo\.pid\.dir.*/, "nuxeo.pid.dir=#{var}/run/nuxeo")
     end
     etc.install "#{libexec}/bin/nuxeo.conf"
-  end
 
-  def post_install
     (var/"log/nuxeo").mkpath
     (var/"lib/nuxeo/data").mkpath
     (var/"run/nuxeo").mkpath
@@ -66,8 +64,6 @@ class Nuxeo < Formula
   end
 
   test do
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-
     # Copy configuration file to test path, due to some automatic writes on it.
     cp "#{etc}/nuxeo.conf", "#{testpath}/nuxeo.conf"
     inreplace "#{testpath}/nuxeo.conf" do |s|
@@ -75,6 +71,7 @@ class Nuxeo < Formula
       s.gsub!(/#nuxeo\.tmp\.dir.*/, "nuxeo.tmp.dir=#{testpath}/tmp")
     end
 
+    ENV["JAVA_HOME"] = Language::Java.java_home
     ENV["NUXEO_CONF"] = "#{testpath}/nuxeo.conf"
 
     assert_match %r{#{testpath}/nuxeo\.conf}, shell_output("#{libexec}/bin/nuxeoctl config --get nuxeo.conf")
