@@ -1,8 +1,8 @@
 class DashMpdCli < Formula
   desc "Download media content from a DASH-MPEG or DASH-WebM MPD manifest"
   homepage "https://emarsden.github.io/dash-mpd-cli/"
-  url "https://github.com/emarsden/dash-mpd-cli/archive/refs/tags/v0.2.27.tar.gz"
-  sha256 "01a4a513ddebdc9affed8f6e51575df7b7bc2bcdeb785f8e321c84b46c94eb63"
+  url "https://github.com/emarsden/dash-mpd-cli/archive/refs/tags/v0.2.28.tar.gz"
+  sha256 "f30fd28c3a13f9e9236369acbb53bb9cb274ba0fc01cadcb0e6e011a6fd74880"
   license "MIT"
   head "https://github.com/emarsden/dash-mpd-cli.git", branch: "main"
 
