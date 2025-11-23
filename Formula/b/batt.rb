@@ -38,6 +38,8 @@ class Batt < Formula
     system "make", "GOTAGS=brew", "VERSION=v#{version}"
     bin.install "bin/batt"
     prefix.install "hack/cc.chlc.batt.plist"
+
+    generate_completions_from_executable(bin/"batt", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   def caveats
