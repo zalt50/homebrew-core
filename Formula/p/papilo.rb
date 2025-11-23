@@ -7,12 +7,12 @@ class Papilo < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "da754d46c250c041cf12a60fdd1884d3992468dcede72a6415566696c1bca6e5"
-    sha256 cellar: :any,                 arm64_sequoia: "7777103edae9fff71e0ff26dc43982943679c839046c922b19fa7985e7a64a53"
-    sha256 cellar: :any,                 arm64_sonoma:  "ddf9ab7f8febc4832debfbbfe7de9feed110a2e04c98309772fd025b2a1b3e85"
-    sha256 cellar: :any,                 sonoma:        "95609e2035153a940f0e62fc4cf22dab6691875ac3954dc39167edea298d8117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "724e6d10cfea779ec91761dca3040febeb11519dd8c71a2281d97fc05aa1bde9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47394fd9bddd12b1170b3ccf46620c0a42e69af12bb3bf4aa28e95ba5a006591"
+    sha256 cellar: :any,                 arm64_tahoe:   "fb291966dc8cb4ce2532bf93abd2e79fd454edbc5bbd64bdf2daa0a98d4aa49c"
+    sha256 cellar: :any,                 arm64_sequoia: "b02c95f0b3c2d0c6f8c1df1ca0bfff9357e80ef314dcc7ab0c083c66ef37f059"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ec5ffce9ee2ac4cd987d1a99ecb02bb21d073a1cefd4f64bbb1e71f5fbcb14d"
+    sha256 cellar: :any,                 sonoma:        "7d6abd8183c60285028003f8e434aca0e25011f111d5d2b75650ee47652c5c39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e963fdfa7aeaf2d76acea49963bf4ace93dada9f985d4a3cad4d3b1509ec617f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a866a3f11b67dde89f3e06c822aca21bce295790d22c854755c50c09166f5cf"
   end
 
   depends_on "cmake" => :build
