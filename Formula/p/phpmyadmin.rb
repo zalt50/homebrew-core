@@ -22,12 +22,8 @@ class Phpmyadmin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfd3b06a94a0a347fbd5867091eacb91f18b28580f28da8fbccd59fe53457a73"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfd3b06a94a0a347fbd5867091eacb91f18b28580f28da8fbccd59fe53457a73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfd3b06a94a0a347fbd5867091eacb91f18b28580f28da8fbccd59fe53457a73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a26dd35fa9ff398d8c6f69f332764f845d81e7f9b149e04783847f4a4236964"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a26dd35fa9ff398d8c6f69f332764f845d81e7f9b149e04783847f4a4236964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a26dd35fa9ff398d8c6f69f332764f845d81e7f9b149e04783847f4a4236964"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2047290d2b40a179ad79f4ed3890ebcbb5a6177c6f5279f55d8d41e866a1111a"
   end
 
   depends_on "php" => :test
