@@ -1,9 +1,9 @@
 class Gpsd < Formula
   desc "Global Positioning System (GPS) daemon"
   homepage "https://gpsd.gitlab.io/gpsd/"
-  url "https://download.savannah.gnu.org/releases/gpsd/gpsd-3.26.1.tar.xz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.26.1.tar.xz"
-  sha256 "45c0d4779324bd59a47cfcb7ac57180d2dbdf418603d398a079392dabf1f740c"
+  url "https://download.savannah.gnu.org/releases/gpsd/gpsd-3.27.tar.xz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.27.tar.xz"
+  sha256 "aaddd19f7b67fb410178f3f8e27a8b40d434d5921d1c50272ddb3d6b9ca65ea9"
   license "BSD-2-Clause"
   head "https://gitlab.com/gpsd/gpsd.git", branch: "master"
 
@@ -11,8 +11,6 @@ class Gpsd < Formula
     url "https://download.savannah.gnu.org/releases/gpsd/"
     regex(/href=.*?gpsd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "c5997ed5f203725d794c2e5c64151244707cd8944de3656a756457e193673c5f"
