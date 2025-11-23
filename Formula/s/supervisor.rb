@@ -9,8 +9,8 @@ class Supervisor < Formula
   head "https://github.com/Supervisor/supervisor.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3ad1418d9387810ffedc4e281eb309045371119ca80cf1fbac67141079aa66c9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "9230f2d5ca368fe07907e906e02f3ef3aabee153d88e4d068587206a30a19b23"
   end
 
   depends_on "python@3.14"
