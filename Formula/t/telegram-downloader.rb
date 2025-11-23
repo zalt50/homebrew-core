@@ -1,12 +1,12 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloader/tools written in Golang"
   homepage "https://docs.iyear.me/tdl/"
-  url "https://github.com/iyear/tdl/archive/refs/tags/v0.19.2.tar.gz"
-  sha256 "b30c37f1c0ce86027288b2e26c7c445bf0ac17608023967ebb4893928fd3e7d7"
+  url "https://github.com/iyear/tdl/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "3b80a480f718e83a7bdb85f1989093d17a15048ef0cd380e844aa9fa556a6ea9"
   license "AGPL-3.0-only"
   head "https://github.com/iyear/tdl.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c37182e227783ef49b902c0f26ee5942f954474080ea311130eae47051ccc749"
