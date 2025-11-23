@@ -4,6 +4,7 @@
   "cabal-install": "3.16",
   "flarectl": "v0",
   "libngspice": "master",
+  "libpng": "libpng16",
   "msgpack": "c_master",
   "msgpack-cxx": "cpp_master",
   "ngspice": "master",
