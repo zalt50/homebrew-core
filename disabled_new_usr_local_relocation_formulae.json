@@ -1,6 +1,7 @@
 [
   "davmail",
   "meson",
-  "rabbitmq",
-  "python-setuptools"
+  "phpmyadmin",
+  "python-setuptools",
+  "rabbitmq"
 ]

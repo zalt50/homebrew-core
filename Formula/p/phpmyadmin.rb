@@ -30,9 +30,20 @@ class Phpmyadmin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a26dd35fa9ff398d8c6f69f332764f845d81e7f9b149e04783847f4a4236964"
   end
 
-  depends_on "php@8.3" => :test
+  depends_on "php" => :test
 
   def install
+    # Make bottles uniform
+    usr_local_files = %w[
+      libraries/classes/Plugins/Transformations/Abs/ExternalTransformationsPlugin.php
+      vendor/composer/ca-bundle/src/CaBundle.php
+      vendor/tecnickcom/tcpdf/tcpdf_autoconfig.php
+      vendor/thecodingmachine/safe/generated/info.php
+      vendor/thecodingmachine/safe/generated/pcntl.php
+    ]
+    inreplace usr_local_files, "/usr/local", HOMEBREW_PREFIX
+    inreplace "vendor/composer/ca-bundle/src/CaBundle.php", "/opt/homebrew", HOMEBREW_PREFIX
+
     pkgshare.install Dir["*"]
 
     etc.install pkgshare/"config.sample.inc.php" => "phpmyadmin.config.inc.php"
@@ -61,7 +72,7 @@ class Phpmyadmin < Formula
   end
 
   test do
-    php = Formula["php@8.3"].opt_bin/"php"
+    php = Formula["php"].opt_bin/"php"
     cd pkgshare do
       assert_match "German", shell_output("#{php} #{pkgshare}/index.php")
     end
