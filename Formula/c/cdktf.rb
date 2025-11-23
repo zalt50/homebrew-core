@@ -16,11 +16,17 @@ class Cdktf < Formula
   end
 
   depends_on "opentofu" => :test
-  depends_on "node@24"
+  depends_on "node"
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
+  end
 
   def install
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
+
     system "npm", "install", *std_npm_args
-    (bin/"cdktf").write_env_script libexec/"bin/cdktf", PATH: "#{Formula["node@24"].opt_bin}:${PATH}"
+    bin.install_symlink libexec.glob("bin/*")
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase
