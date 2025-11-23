@@ -1,19 +1,17 @@
 class MoonBuggy < Formula
   desc "Drive some car across the moon"
-  homepage "https://www.seehuhn.de/pages/moon-buggy.html"
-  url "https://m.seehuhn.de/programs/moon-buggy-1.0.tar.gz"
-  sha256 "f8296f3fabd93aa0f83c247fbad7759effc49eba6ab5fdd7992f603d2d78e51a"
+  homepage "https://www.seehuhn.de/programs/moon-buggy"
+  url "https://www.seehuhn.de/programs/moon-buggy/moon-buggy-1.1.0.tar.gz"
+  sha256 "259ae6e7b1838c40532af5c0f20cd7c6173cd5c552ede408114064475bcfc5b6"
   license any_of: ["GPL-2.0-or-later", "GPL-3.0-or-later"]
 
   # Upstream uses a similar version format for stable and unstable versions
   # (e.g. 1.0 is stable but 1.0.51 is experimental), so this identifies stable
-  # versions by looking for the trailing `(stable version)` annotation.
+  # versions by looking for the trailing `stable version` annotation.
   livecheck do
     url :homepage
-    regex(/moon-buggy\s+(?:version\s+|v)?(\d+(?:\.\d+)+)[^<]+?\(stable\s+version\)/im)
+    regex(/href=.*?moon[._-]buggy[._-]v?(\d+(?:\.\d+)+)\.t.*[^<]+?stable\s+version/im)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:    "992d1d21838d81ddfe48f7140aff6c7050892d7250adca9f87ae1d3a39a360c7"
@@ -33,6 +31,7 @@ class MoonBuggy < Formula
 
   head do
     url "https://github.com/seehuhn/moon-buggy.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
