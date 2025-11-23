@@ -8,7 +8,7 @@ class RstLint < Formula
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c2e88b7f8cbb985e6da3a2a2bc4ce53a3009fe3ca27d40dc341cfce8deefb4c3"
+    sha256 cellar: :any_skip_relocation, all: "185f8cb77b1622016cf30ee43d7aaf5674fe67c424bc5b706a38515f538bcf7e"
   end
 
   depends_on "python@3.14"
