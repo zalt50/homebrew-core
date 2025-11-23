@@ -10,9 +10,8 @@
 class Mutt < Formula
   desc "Mongrel of mail user agents (part elm, pine, mush, mh, etc.)"
   homepage "http://www.mutt.org/"
-  url "https://gitlab.com/muttmua/mutt/-/archive/mutt-2-2-15-rel/mutt-mutt-2-2-15-rel.tar.gz"
-  version "2.2.15"
-  sha256 "3c931dd65993d2e63a3dcd6bbf1fd88c033ae0f6e377c5d4f88b14fe9170817d"
+  url "http://ftp.mutt.org/pub/mutt/mutt-2.2.16.tar.gz"
+  sha256 "1d3109a743ad8b25eef97109b2bdb465db7837d0a8d211cd388be1b6faac3f32"
   license "GPL-2.0-or-later"
 
   # Livecheck uses GitLab tags to determine current version.
@@ -34,13 +33,13 @@ class Mutt < Formula
   head do
     url "https://gitlab.com/muttmua/mutt.git", branch: "master"
 
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+
     resource "html" do
       url "https://muttmua.gitlab.io/mutt/manual-dev.html"
     end
   end
-
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
 
   depends_on "gpgme"
   depends_on "libgpg-error"
@@ -80,7 +79,8 @@ class Mutt < Formula
       --with-tokyocabinet
     ]
 
-    system "./prepare", *args, *std_configure_args
+    configure = build.head? ? "./prepare" : "./configure"
+    system configure, *args, *std_configure_args
     system "make"
 
     # This permits the `mutt_dotlock` file to be installed under a group
