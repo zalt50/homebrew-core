@@ -1,11 +1,14 @@
 class Tdom < Formula
   desc "XML/DOM/XPath/XSLT/HTML/JSON implementation for Tcl"
   homepage "https://tdom.org/"
-  url "https://tdom.org/downloads/tdom-0.9.5-src.tgz"
-  sha256 "ce22e3f42da9f89718688bf413b82fbf079b40252ba4dd7f2a0e752232bb67e8"
+  url "https://tdom.org/downloads/tdom-0.9.6-src.tgz"
+  sha256 "6d24734aef46d1dc16f3476685414794d6a4e65f48079e1029374477104e8319"
   license "MPL-2.0"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :homepage
+    regex(/Version\s+(\d+(?:\.\d+)+)/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "fbf84ebf5d244be2bc9ed3c6fe9a996c8bef2377f9a2b058d8b915f30ff75141"
