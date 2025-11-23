@@ -45,9 +45,7 @@ class Pgbouncer < Formula
       s.gsub!(/auth_file = .*/, "auth_file = #{etc}/userlist.txt")
     end
     etc.install %w[etc/pgbouncer.ini etc/userlist.txt]
-  end
 
-  def post_install
     (var/"log").mkpath
     (var/"run").mkpath
   end
