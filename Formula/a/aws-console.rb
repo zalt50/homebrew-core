@@ -25,6 +25,8 @@ class AwsConsole < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/aws-console"
+
+    generate_completions_from_executable(bin/"aws-console", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
