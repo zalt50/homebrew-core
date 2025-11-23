@@ -21,15 +21,11 @@ class Mx < Formula
     libexec.install Dir["*"]
     (bin/"mx").write_env_script libexec/"mx", MX_PYTHON: "#{Formula["python@3.14"].opt_libexec}/bin/python"
     bash_completion.install libexec/"bash_completion/mx" => "mx"
-  end
 
-  def post_install
-    # Run a simple `mx` command to create required empty directories inside libexec
-    Dir.mktmpdir do |tmpdir|
-      with_env(HOME: tmpdir) do
-        system bin/"mx", "--user-home", tmpdir, "version"
-      end
-    end
+    # Run a simple `mx` command to create required directories inside libexec
+    ENV.remove "PATH", Superenv.shims_path # avoid ninja shim
+    chmod 0555, bin/"mx"
+    system bin/"mx", "version"
   end
 
   test do
