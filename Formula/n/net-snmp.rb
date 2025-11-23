@@ -47,7 +47,6 @@ class NetSnmp < Formula
   def install
     args = [
       "--disable-debugging",
-      "--prefix=#{prefix}",
       "--enable-ipv6",
       "--with-defaults",
       "--with-persistent-directory=#{var}/db/net-snmp",
@@ -60,15 +59,13 @@ class NetSnmp < Formula
       "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
     ]
 
-    system "autoreconf", "-fvi" if Hardware::CPU.arm?
-    system "./configure", *args
+    system "autoreconf", "--force", "--install", "--verbose" if Hardware::CPU.arm?
+    system "./configure", *args, *std_configure_args
     system "make"
     # Work around snmptrapd.c:(.text+0x1e0): undefined reference to `dropauth'
     ENV.deparallelize if OS.linux?
     system "make", "install"
-  end
 
-  def post_install
     (var/"db/net-snmp").mkpath
     (var/"log").mkpath
   end
