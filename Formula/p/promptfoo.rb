@@ -6,12 +6,13 @@ class Promptfoo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ec1d1fa21322e1e5823644e99bca3308e265d003e5c9a6516ffc02479a69cfbd"
-    sha256 cellar: :any,                 arm64_sequoia: "b7b69a0ba671bbb6f523da0a1f17fdf937302d4d3ba9ae279f2318e9e7656c24"
-    sha256 cellar: :any,                 arm64_sonoma:  "c069fc14416aa1afa78d5e3ffb6c12695feff07345c9a3a5c4b0287bf9023128"
-    sha256 cellar: :any,                 sonoma:        "5ee06ea38dc812a82c3204b5386de9f2755c8f285c93d58115b14e2821c4d707"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53041a635f75a41943884ea685e57ffc8f0c3756156df6237482176dcabae3a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05490fcfba5a96ca12b0f4fe3cf6b9b77391c6e3a14e248ac425d3a21e01f13f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1f1fda3c5335c87e7b9ee25566dccd216dc81e89309e87b8a417c945fc9e7bad"
+    sha256 cellar: :any,                 arm64_sequoia: "b1cd922f948fc28530fb81a38da59b5c3884edb3c14409b360e9d910f19915e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b7fd8f0dcfb1a59f399f88a6a13cc30f618a1474ab4fac9aef52bb05f3fab28"
+    sha256 cellar: :any,                 sonoma:        "196d6cb2e7e9d8a5571425bbf739da59b92e08230e26215eb60eba46c09b1b72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa801d0b2078334ea5b3a9ee8af14e37edc0f91b23088400d34395fe2a1ac6c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e30685ed592d38196ecbb862b2b112ce5101c0d9c741ace6bd31eab1678ae0c3"
   end
 
   depends_on "node"
