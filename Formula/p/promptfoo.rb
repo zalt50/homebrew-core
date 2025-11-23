@@ -1,8 +1,8 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.9.tgz"
-  sha256 "3d16dd0c00a8acc47cb3f6177c487639df9355e69dd1abb2946ece9660240e1d"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.10.tgz"
+  sha256 "663f3f077b3d97854bd2f0ea69a10795634df836c7deeb48594293cef045978c"
   license "MIT"
 
   bottle do
@@ -24,11 +24,8 @@ class Promptfoo < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
 
-    # Allow newer better-sqlite
-    # Backport of https://github.com/promptfoo/promptfoo/commit/9c70bbf438f65e38d7a026d8c42d63272c6ef801
-    inreplace "package.json", '"better-sqlite3": "12.4.1"', '"better-sqlite3": "12.4.6"'
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/promptfoo/node_modules"
