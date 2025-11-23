@@ -19,10 +19,7 @@ class Neo4j < Formula
   depends_on "openjdk@21"
 
   def install
-    env = {
-      JAVA_HOME:  Formula["openjdk@21"].opt_prefix,
-      NEO4J_HOME: libexec,
-    }
+    env = Language::Java.java_home_env("21").merge(NEO4J_HOME: libexec)
     # Remove windows files
     rm(Dir["bin/*.bat"])
 
@@ -43,9 +40,7 @@ class Neo4j < Formula
       server.directories.data=#{var}/neo4j/data
       server.directories.logs=#{var}/log/neo4j
     EOS
-  end
 
-  def post_install
     (var/"log/neo4j").mkpath
     (var/"neo4j").mkpath
   end
