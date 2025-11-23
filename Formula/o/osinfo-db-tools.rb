@@ -32,12 +32,11 @@ class OsinfoDbTools < Formula
   uses_from_macos "pod2man" => :build
   uses_from_macos "libxml2"
 
+  skip_clean "share/osinfo"
+
   def install
     system "meson", "setup", "build", *std_meson_args
     system "meson", "install", "-C", "build"
-  end
-
-  def post_install
     share.install_symlink HOMEBREW_PREFIX/"share/osinfo"
   end
 
