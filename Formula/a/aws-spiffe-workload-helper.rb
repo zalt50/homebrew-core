@@ -6,6 +6,15 @@ class AwsSpiffeWorkloadHelper < Formula
   license "Apache-2.0"
   head "https://github.com/spiffe/aws-spiffe-workload-helper.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ff51eab0a8f05b348bbbd5cbc3716d66fc1ba822da8dd0f12750521fc2fea62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ff51eab0a8f05b348bbbd5cbc3716d66fc1ba822da8dd0f12750521fc2fea62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ff51eab0a8f05b348bbbd5cbc3716d66fc1ba822da8dd0f12750521fc2fea62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a905126844616c11ebaf6b08b2e2c0f30c90f4ef56e0c0b00126db9aa928ba3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b7d29ecbf03bc4e70d824a211f7efbab2d6c951b244bc497cab721bc5074fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ae53213ffa8c3cc2507d8b922edea19f64756b7d54c34b0258a4e231411f01"
+  end
+
   depends_on "go" => :build
 
   def install
