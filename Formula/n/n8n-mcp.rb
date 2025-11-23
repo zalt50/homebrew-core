@@ -14,11 +14,11 @@ class N8nMcp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "244a99537d0e8613c426be607144276efc51be72baee80ad5aa42b2231d2e12c"
   end
 
-  depends_on "node@22"
+  depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
