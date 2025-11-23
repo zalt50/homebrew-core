@@ -1,8 +1,8 @@
 class Kibi < Formula
   desc "Text editor in ≤1024 lines of code, written in Rust"
   homepage "https://github.com/ilai-deutel/kibi"
-  url "https://github.com/ilai-deutel/kibi/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "2905743c8fc065054d3776e9b16fe89903cc0547eaedd8d33b66d2e29ceb0191"
+  url "https://github.com/ilai-deutel/kibi/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "150fde4664ebe47a4c588cf8ff2583392c76038339982a7180ee9282ce6c3cf2"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
