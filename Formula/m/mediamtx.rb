@@ -24,10 +24,8 @@ class Mediamtx < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
     # Install default config
-    (etc/"mediamtx").install "mediamtx.yml"
-  end
+    pkgetc.install "mediamtx.yml"
 
-  def post_install
     (var/"log/mediamtx").mkpath
   end
 
@@ -46,9 +44,7 @@ class Mediamtx < Formula
     assert_match version.to_s, shell_output("#{bin}/mediamtx --help")
 
     mediamtx_api = "127.0.0.1:#{port}"
-    pid = fork do
-      exec({ "MTX_API" => "yes", "MTX_APIADDRESS" => mediamtx_api }, bin/"mediamtx", etc/"mediamtx/mediamtx.yml")
-    end
+    pid = spawn({ "MTX_API" => "yes", "MTX_APIADDRESS" => mediamtx_api }, bin/"mediamtx", pkgetc/"mediamtx.yml")
     sleep 3
 
     # Check API output matches configuration
