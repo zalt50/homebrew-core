@@ -8,6 +8,10 @@ class MailDeduplicate < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "c9c3f476fca7d42f97da1b23ffa292b93dc779c6f97928b11bdf99479ede827d"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
