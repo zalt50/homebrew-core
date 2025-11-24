@@ -4,6 +4,7 @@ class Asyncapi < Formula
   url "https://registry.npmjs.org/@asyncapi/cli/-/cli-4.1.1.tgz"
   sha256 "2f4d12597d6fc30615b6dd27fdac2c63222726005d50f62300d1f6a257f6cf61"
   license "Apache-2.0"
+  version_scheme 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "3ebd61013a46b45e87e720f6a29a01b21f30284eb2cc189b64192b4ada07bf39"
