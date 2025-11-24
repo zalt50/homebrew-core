@@ -1,12 +1,10 @@
 class Smlpkg < Formula
   desc "Package manager for Standard ML libraries and programs"
   homepage "https://github.com/diku-dk/smlpkg"
-  url "https://github.com/diku-dk/smlpkg/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "53440d8b0166dd689330fc686738076225ac883a00b283e65394cf9312575c33"
+  url "https://github.com/diku-dk/smlpkg/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "85af735bd031c5e15a2b627ff6f911648ba8d81f709865b032afad26e42cddd8"
   license "MIT"
   head "https://github.com/diku-dk/smlpkg.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
