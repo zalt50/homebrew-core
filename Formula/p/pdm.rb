@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/35/84/50e05b927fc9d23289b588affd6c2e2f50239f8a1afccba720c42751572a/pdm-2.26.1.tar.gz"
-  sha256 "60a568201424a7193b661f6fed6e446e39695b52edc5e0904ba0b07fcaf2e787"
+  url "https://files.pythonhosted.org/packages/a2/f8/cb7f2cdb69885f7c8fe2a166398acf26c2df7c241e315889260c8dc0b4fc/pdm-2.26.2.tar.gz"
+  sha256 "98207f8aabd6913a25ee0b4985e79e1652e2db274915f3ccf9408e33191ede4e"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -58,8 +58,8 @@ class Pdm < Formula
   end
 
   resource "findpython" do
-    url "https://files.pythonhosted.org/packages/1a/17/5a72566eecc9cbc1609459befe9f7dc65e101b66519a79999cc48044993c/findpython-0.7.0.tar.gz"
-    sha256 "8b31647c76352779a3c1a0806699b68e6a7bdc0b5c2ddd9af2a07a0d40c673dc"
+    url "https://files.pythonhosted.org/packages/d1/83/2fec4c27a2806bd6de061fc3823dea72a9b41305c5baaf9ca720ce2afdc9/findpython-0.7.1.tar.gz"
+    sha256 "9f29e6a3dabdb75f2b39c949772c0ed26eab15308006669f3478cdab0d867c78"
   end
 
   resource "h11" do
@@ -118,8 +118,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/c5/a8/7d0367a979c209482ac8d4ae84b0b0aa36950157399a1d0a00a4d2bb4045/pbs_installer-2025.10.28.tar.gz"
-    sha256 "399f1788b17c650e69c42729ba9e74d240909f36cfe187b5f9b60488314ba154"
+    url "https://files.pythonhosted.org/packages/24/8b/f20eb7f555f15fa39257bab0a392e7523b6b0975a5913b554d32ac867b09/pbs_installer-2025.11.20.tar.gz"
+    sha256 "6469b854835fa316c24c938df4563a72adae3d14b659eb4b23fa4bb347fd45f3"
   end
 
   resource "platformdirs" do
