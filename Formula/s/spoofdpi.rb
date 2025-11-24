@@ -1,8 +1,8 @@
 class Spoofdpi < Formula
   desc "Simple and fast anti-censorship tool written in Go"
-  homepage "https://github.com/xvzc/SpoofDPI"
-  url "https://github.com/xvzc/SpoofDPI/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "ce784f8d00ef139659df2388a37604bb50c4008c6c957e43f647c2837a9da9d1"
+  homepage "https://spoofdpi.xvzc.dev"
+  url "https://github.com/xvzc/SpoofDPI/releases/download/v1.1.3/spoofdpi-1.1.3.tar.gz"
+  sha256 "8baedfd4986ffbf19bcc56c874438b59aba13e95a237c8074aa73e4917806ffc"
   license "Apache-2.0"
   head "https://github.com/xvzc/SpoofDPI.git", branch: "main"
 
@@ -25,12 +25,20 @@ class Spoofdpi < Formula
 
   depends_on "go" => :build
 
-  uses_from_macos "libpcap"
-
   def install
-    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+    # Disable CGO for Linux builds
+    ENV["CGO_ENABLED"] = OS.linux? ? "0" : "1"
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/spoofdpi"
+    # Prepare linker flags to inject version information
+    ldflags = %W[
+      -s -w
+      -X main.version=#{version}
+      -X main.commit=#{File.read("COMMIT")}
+      -X main.build=homebrew
+    ]
+
+    # Build directly from source
+    system "go", "build", *std_go_args(ldflags:), "./cmd/spoofdpi"
   end
 
   service do
@@ -41,8 +49,10 @@ class Spoofdpi < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/spoofdpi -v")
+
     port = free_port
-    pid = spawn bin/"spoofdpi", "-system-proxy=false", "-listen-port", port.to_s
+    pid = spawn bin/"spoofdpi", "--listen-port", port.to_s
     begin
       sleep 3
       # "nothing" is an invalid option, but curl will process it
