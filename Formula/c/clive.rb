@@ -7,12 +7,12 @@ class Clive < Formula
   head "https://github.com/koki-develop/clive.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8453e96034ffae1201417b2f0fc748fcc923ece46ade09b2ec7a8673e1e8196"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8453e96034ffae1201417b2f0fc748fcc923ece46ade09b2ec7a8673e1e8196"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8453e96034ffae1201417b2f0fc748fcc923ece46ade09b2ec7a8673e1e8196"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b11df80e6486a90008055d418d3286a8e29d3f59da8450d31edf542f1a25b488"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab130a9b1fb5e5ac176a03eb9c4fee933f467c231647daa18ea779fcb5ceaede"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dab03d63f2c6b8910a0eeda77fa78d40bc02929ab6650efe5294ec79ed8f07d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2d71b0d1b05e6b6c09868737a60c050131fd0c767e3f4ffe85ecaa257a5616e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d71b0d1b05e6b6c09868737a60c050131fd0c767e3f4ffe85ecaa257a5616e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2d71b0d1b05e6b6c09868737a60c050131fd0c767e3f4ffe85ecaa257a5616e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2e1fc445fafc0787bebc5ae37e97d3328d56dc862a1a955078a6cb5a5ebbb6f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8ea017327fe4cc27530d2b70ce15bffabb0b440bd99efcafc6bd47b56ae1eae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b770a84fbd1e6a60e3f07649effd1f73933d864b4a99bb4cfc595b5f2b29ff5"
   end
 
   depends_on "go" => :build
