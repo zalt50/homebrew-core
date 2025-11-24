@@ -11,6 +11,15 @@ class E1s < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "433ebf2fe184d1973d350cc3af5dbaf2fd881bb66824f75a8af2f0e84799cc10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "433ebf2fe184d1973d350cc3af5dbaf2fd881bb66824f75a8af2f0e84799cc10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "433ebf2fe184d1973d350cc3af5dbaf2fd881bb66824f75a8af2f0e84799cc10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd1204d8fb9748e1fa1e5fbc4eb02befdb8c2e6c0f72fd0f75b2ae9655e76f2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7aba9728b9d27885219a5dbc55fc96508f90efca276229641b47989c9e9180c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7f1acef3f4de9c2fee4698f18a55894dd228d2a91135d8ad062554db9593ee8"
+  end
+
   depends_on "go" => :build
 
   def install
