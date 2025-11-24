@@ -1,8 +1,8 @@
 class Kraken2 < Formula
   desc "Taxonomic sequence classification system"
   homepage "https://github.com/DerrickWood/kraken2"
-  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.17.tar.gz"
-  sha256 "69380e7c22e314245cbe61b2a69d6719c95edadd80ad171577c1e681927c7b88"
+  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.17.1.tar.gz"
+  sha256 "4dc64ead045b5ae9180731c260046aa37b6642244be085a9ba9b15db78ab442d"
   license "MIT"
   head "https://github.com/DerrickWood/kraken2.git", branch: "master"
 
@@ -33,9 +33,6 @@ class Kraken2 < Formula
   end
 
   def install
-    # Skip `libtax` installation, issue ref: https://github.com/DerrickWood/kraken2/issues/993
-    inreplace "src/Makefile", /^(PROGS\s+=\s+.*)\slibtax$/, "\\1"
-
     system "./install_kraken2.sh", libexec
     %w[k2 kraken2 kraken2-build kraken2-inspect].each do |f|
       bin.install_symlink libexec/f
