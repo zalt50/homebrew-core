@@ -35,12 +35,11 @@ class FontUtil < Formula
     system "./configure", *args, *std_configure_args
     system "make"
     system "make", "fontrootdir=#{share}/fonts/X11", "install"
-  end
 
-  def post_install
     dirs = %w[encodings 75dpi 100dpi misc]
     dirs.each do |d|
-      mkdir_p share/"fonts/X11/#{d}"
+      (share/"fonts/X11/#{d}").mkpath
+      touch share/"fonts/X11/#{d}/.keepme"
     end
   end
 
