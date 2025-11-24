@@ -1,8 +1,8 @@
 class Komac < Formula
   desc "Community Manifest Creator for Windows Package Manager (WinGet)"
   homepage "https://github.com/russellbanks/Komac"
-  url "https://github.com/russellbanks/Komac/archive/refs/tags/v2.13.0.tar.gz"
-  sha256 "de416c0b4e0e7e81a5e078a534aff70f8864151c7f53ec5a94a027a7965f01e9"
+  url "https://github.com/russellbanks/Komac/archive/refs/tags/v2.14.0.tar.gz"
+  sha256 "00e2dbc44bbc25bdfa9c8b425b641736b6677bc8b388d288e2c9bc37531d4ddd"
   license "GPL-3.0-or-later"
   head "https://github.com/russellbanks/Komac.git", branch: "main"
 
