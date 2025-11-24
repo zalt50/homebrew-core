@@ -16,12 +16,12 @@ class QtAT5 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ccffe1390fd587e2e6b094e278b2fd765746eccd30f9e59c8ff17abe5a3348da"
-    sha256 cellar: :any,                 arm64_sequoia: "2c95f726f4ec9546aab4355a0cab1e3a68afdbd43c4200d40f730214d97db754"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ae245b551b5e82988ad8188961fe75dc942e7a192a32f5917eb39f295a974b9"
-    sha256 cellar: :any,                 sonoma:        "0a5f4640f5b93ebb10661262899af5cf226c821f489f8a06bdc9425932b1f1ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3ec83bcc8404ba35d4a38c3aed8bb1f3235a3d9062d2945b613295d9208fa61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02bcdc299c2b64c2a097cf52396e92310a2f99c48ebb01233b8d24b6a8cd567e"
+    sha256 cellar: :any,                 arm64_tahoe:   "cd8c7ae611392bd37adbb4627da29590a449364bf791eadbc844ab43af09a793"
+    sha256 cellar: :any,                 arm64_sequoia: "bf59af2d056ff752867e4a7644c5345294db703dd530b27a12696252a3d049cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef8f1cad7f33032b321ef7ce0c615d6cc088858dd83348051d029b46cd2b1226"
+    sha256 cellar: :any,                 sonoma:        "2f51c28d5df0a599c59f83dba9b622bea6956711bc1faabd7d4aa1701000501b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d60e61eff3d32923ef688aaf8424b6db13ba03b3bb67027cc0bdceeabf8c8bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2a8a128dbd22813720394f555be69b3bde75e530e1b5d8257787caf77cba012"
   end
 
   keg_only :versioned_formula
