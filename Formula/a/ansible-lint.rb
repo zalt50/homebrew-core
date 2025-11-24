@@ -3,10 +3,9 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/ea/5a/ca084c650abd30f10d58c8727f9f64ed7e36f9c26f064559d22473cb9a33/ansible_lint-25.11.0.tar.gz"
-  sha256 "79e35246c8bdaacdbe37aa30a6ea471177482ac58fbcf1868f765bdafca3427e"
+  url "https://files.pythonhosted.org/packages/cb/df/bec71ebd33b7dc0a9f857ef2af51642f6bca42d3bc242195148a147ae517/ansible_lint-25.11.1.tar.gz"
+  sha256 "f9d7ce3877eeda5c39ee70acf9b88677732fea4cfc28a005c014dfaaa8678c85"
   license all_of: ["MIT", "GPL-3.0-or-later"]
-  revision 1
 
   bottle do
     rebuild 1
@@ -135,11 +134,6 @@ class AnsibleLint < Formula
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
     sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
-    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "subprocess-tee" do
