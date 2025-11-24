@@ -7,12 +7,12 @@ class PyqtAT5 < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7c644cc70170c656e7c4f6604b663a5af0f8bc1d09b095711cab7a920a397386"
-    sha256 cellar: :any,                 arm64_sequoia: "7db6700257362834be48fdb3f21216c623062568dbee04ee726eaf1b38b98365"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b4dd05af3998cc273b6ad22754cdbca605889c291992bfea744d190e09d4d38"
-    sha256 cellar: :any,                 sonoma:        "091e15df83f1e875c8994b8ba89393a30ab2ddc891f39c6c102475d0022164f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9febdc10fe92c98c76bd1cb3d58acdde779a65d6fbebc21c5bc0effed143b24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97e6286b2b996eac230230c2d886f3f901ff77288881e488fada2124d13f6c6d"
+    sha256 cellar: :any,                 arm64_tahoe:   "d3944d21d80b85aadc871416d4072fad865a21b7d19c213bcced248534c1c1c2"
+    sha256 cellar: :any,                 arm64_sequoia: "b92c0343b0fe78cd9d028e0b8c8d3ba566b044482415cef4f359df8b6c2b3ae2"
+    sha256 cellar: :any,                 arm64_sonoma:  "b04e80d2ce51fbd1700e73cb12b733554a994cf297718b2b985f205de92aa377"
+    sha256 cellar: :any,                 sonoma:        "9071ce79a740aaf8fad54d9f28796bc76a1a81342a377df0c143647155f09eb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f0b1de8c364103ad2bdca8a22f6b786960d0f3df2ca86ec981ad8908bc0f5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cba9e3e411e7161d02642f0bf4cd4254d03b180a5c108f184d45e346b9c7c123"
   end
 
   deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
