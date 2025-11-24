@@ -7,13 +7,12 @@ class Smlpkg < Formula
   head "https://github.com/diku-dk/smlpkg.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "28c00c67af3693cac8219c8cbb574b81d24bc772a01861379ad51e8dea23d608"
-    sha256 cellar: :any,                 arm64_sequoia: "a6d8ea56df569f46bf0a674cbdd5506fe90fa9a9377d5a2bb626eb51e7c2659d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf39a2cb3d8362fe82da4e15466587cb521403386f0cc5d187d8bf542ab6facc"
-    sha256 cellar: :any,                 sonoma:        "bc992113b06930535a168b765c1e9f0274e642d8bc1a886ecebf07ef574a05ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8fda41d263626cf760a549e000900a2b8810667aea5816dc9157ac207406f2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c781ec2d9590a65aaa91ccb66462d4527d5dbf5254ec3aacd939b73e5d322bf7"
+    sha256 cellar: :any,                 arm64_tahoe:   "64d7a0494c5c2e5cac024a7219c083c8b8808d7a4afe981d798960d2805d2801"
+    sha256 cellar: :any,                 arm64_sequoia: "ed01342c1a3716807c933c7720e8189445b2414da715ecaac739e146138622da"
+    sha256 cellar: :any,                 arm64_sonoma:  "d09d40f9b6d4baa32c05ad84c20d3087606a740b00a87a2f2416addb1556181e"
+    sha256 cellar: :any,                 sonoma:        "6b61b0040f28343604bb21cac27de6c8f59f5181cd99fb0a793a571d6781b58b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aaddfe9d11c8d933bb7229aaed52a878e9c4b1601a2efd1d1ee4170f116c0d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6685aa1a52fb4b26af6a7b489f825bffd9bdd2251a8fe71635552d3a86cb346"
   end
 
   depends_on "mlton" => :build
