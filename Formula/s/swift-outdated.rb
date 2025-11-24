@@ -1,8 +1,8 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
   homepage "https://github.com/kiliankoe/swift-outdated"
-  url "https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.10.1.tar.gz"
-  sha256 "d2496a02c6261a72025d27e526cdbde25decee5fe790593f90c1661af63430ff"
+  url "https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "60a82a00446151359962754d34ab0d1dc41cbfa71ac6e41ef9e38f45bad66ccb"
   license "MIT"
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
@@ -17,7 +17,7 @@ class SwiftOutdated < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a959433bb6fc3748c13003c3aebee4be103d43e0ec4afc70ba8c9e570dd5bb5"
   end
 
-  uses_from_macos "swift" => :build, since: :sonoma # swift 6.0+
+  uses_from_macos "swift" => :build, since: :tahoe # swift 6.2+
 
   def install
     inreplace "Sources/SwiftOutdated/SwiftOutdated.swift", "dev", version.to_s
