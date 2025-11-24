@@ -4,7 +4,7 @@ class Libgsf < Formula
   url "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.53.tar.xz"
   sha256 "0eb59a86e0c50f97ac9cfe4d8cc1969f623f2ae8c5296f2414571ff0a9e8bcba"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
 
   bottle do
     sha256 arm64_tahoe:   "c9198abd992dd04f3aae0030ac3e67af9e4a4096f906eb5a3f8681f33da18a7c"
