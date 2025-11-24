@@ -1,8 +1,8 @@
 class RolesanywhereCredentialHelper < Formula
   desc "Manages getting temporary security credentials from IAM Roles Anywhere"
   homepage "https://github.com/aws/rolesanywhere-credential-helper"
-  url "https://github.com/aws/rolesanywhere-credential-helper/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "80baa67fd94c347779419b2adb72aabcd5af8952267b5c63a3a97b1718f45f75"
+  url "https://github.com/aws/rolesanywhere-credential-helper/archive/refs/tags/v1.7.2.tar.gz"
+  sha256 "e8e0e207ff9d649fb5a0e67367f7a47dbdcf0c705507520f1e9a1f4a990c9ef1"
   license "Apache-2.0"
   head "https://github.com/aws/rolesanywhere-credential-helper.git", branch: "main"
 
@@ -18,6 +18,8 @@ class RolesanywhereCredentialHelper < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X github.com/aws/rolesanywhere-credential-helper/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"aws_signing_helper")
 
