@@ -9,13 +9,12 @@ class Pyinstaller < Formula
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc10b01609a928c23f3b44059c7084c8ae2206e49514c4219d6a9500698cb0db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "473e6c10eb021090c32fd031dce1473e9a0847523c2eb5c6a2cb7ff08a3000c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8b1b597fcb354e4ffce092b91457adaff8a6775c52852b87dbf6639e7a4247c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68894b05bf5b8ca0934d8300d3ed75f0fc93e5de0be425caf048d117faa16f49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1010bf24a461d198a984f668a6d4a5a663c5f5538130ec22edb336f6c87e21df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87db990b0f53f2b143d829272b420dc6c462c20d6451b495ecd443358a9567bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7e96b3f523e51044da85f3ca341760a4930c5318177c2b6163d63ba2b169d90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85dc53558ea9cda946226a12cc6727820888ca4e776ccfa55c5dc3dc222f4dd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4f7395eb516a67fa349bbb82420310cfb5d1a36fb9bd639b6ef030a93dfc5d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba44b64a6b5d3847ee413843c7a2440641ea284fa3447742b84ac3ace187ae59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "539a78aeb61eeefc2d2f45d688b7fd928bfd01011d729fbb72776388e7186b3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d76b4e71317267ec560e4931bf7428c784929c0ef8653f7624bbc24d90c2021"
   end
 
   depends_on "python@3.14"
