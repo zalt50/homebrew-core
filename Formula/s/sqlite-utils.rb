@@ -8,13 +8,12 @@ class SqliteUtils < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "143905b7ed6a8f14901a426dff00dc50c3595c292bd18308bf09341711749f84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "143905b7ed6a8f14901a426dff00dc50c3595c292bd18308bf09341711749f84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "143905b7ed6a8f14901a426dff00dc50c3595c292bd18308bf09341711749f84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19ab058d0e946b1c89d13dc42825879c7b711ff74f32acb332f27f8525248c5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19ab058d0e946b1c89d13dc42825879c7b711ff74f32acb332f27f8525248c5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ab058d0e946b1c89d13dc42825879c7b711ff74f32acb332f27f8525248c5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "101286c6739f5cc0bfd502ad4a2c68767f917adfae4410b5fa7324ca8502ded4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "101286c6739f5cc0bfd502ad4a2c68767f917adfae4410b5fa7324ca8502ded4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "101286c6739f5cc0bfd502ad4a2c68767f917adfae4410b5fa7324ca8502ded4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90d9defe35dffeee6ef36ca08c0ce5b7f7de8042ffb0b14c9af6e0a8a1150e3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90d9defe35dffeee6ef36ca08c0ce5b7f7de8042ffb0b14c9af6e0a8a1150e3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90d9defe35dffeee6ef36ca08c0ce5b7f7de8042ffb0b14c9af6e0a8a1150e3a"
   end
 
   depends_on "python@3.14"
