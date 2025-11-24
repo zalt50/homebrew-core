@@ -6,6 +6,15 @@ class Xleak < Formula
   license "MIT"
   head "https://github.com/bgreenwell/xleak.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "098c3d52ad1df85f462d4d47762da98f786c8e80718a49522421a9d0535c9edd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ee2f3a9ab68024db618d712051a6e31f5efe12e05ad8f1d3da05b08b7f858ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6ae0b90ab3c11cca515d62da5c9673fd9c75bb3c1f9817b8c540a2061846c61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a410e53c5523c979c993a3d476160c96cdd8578fb2c022cf9da3ec793f8036ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "762f06c25fea18d688b8a351bcaf5aa6ac52957a8197244066dcd599ce67dc7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32c13f804048bd868354d9af5bc5f6737abe83bb8415245ed63da535e03fecd9"
+  end
+
   depends_on "rust" => :build
 
   def install
