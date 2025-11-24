@@ -3,8 +3,8 @@ class Gruyere < Formula
 
   desc "TUI program for viewing and killing processes listening on ports"
   homepage "https://github.com/savannahostrowski/gruyere"
-  url "https://files.pythonhosted.org/packages/b0/a3/0951f7043389bc2a32ce8613dbc6b5078d10a4a754bc136294e7c2661a77/gruyere-0.0.9.tar.gz"
-  sha256 "71bbc896188584744009b73363dc5631d3cf7a4855fdf0249be7bf09a84153fa"
+  url "https://files.pythonhosted.org/packages/16/0f/d951dda46ba3b3dcbdf14f55355130b016445f9aa6b021dd70a9a567026a/gruyere-0.1.0.tar.gz"
+  sha256 "3fe1ff4eef9a53ed46f17a7aa5efa2eb0212a2c6de618c2b36735bcc71d358be"
   license "MIT"
   head "https://github.com/savannahostrowski/gruyere.git", branch: "main"
 
@@ -20,8 +20,8 @@ class Gruyere < Formula
   depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "markdown-it-py" do
