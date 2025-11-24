@@ -1,9 +1,9 @@
 class ScalaAT213 < Formula
   desc "JVM-based programming language"
   homepage "https://www.scala-lang.org/"
-  url "https://github.com/scala/scala/releases/download/v2.13.17/scala-2.13.17.tgz"
-  mirror "https://www.scala-lang.org/files/archive/scala-2.13.17.tgz"
-  sha256 "ada6b8deb341875838cced8d32070c63f96f77a833033f4ca5e30fe2ee6a171b"
+  url "https://github.com/scala/scala/releases/download/v2.13.18/scala-2.13.18.tgz"
+  mirror "https://www.scala-lang.org/files/archive/scala-2.13.18.tgz"
+  sha256 "1834d09fd5c78ec77e9a933ab76c724280a8ec9595a332a6112823787a9ac3e6"
   license "Apache-2.0"
 
   livecheck do
