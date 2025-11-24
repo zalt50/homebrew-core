@@ -42,7 +42,6 @@
   "postgresql@18",
   "pytorch",
   "qt",
-  "qt@5",
   "qtbase",
   "qtwebengine",
   "spades",
