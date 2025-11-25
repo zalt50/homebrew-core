@@ -143,14 +143,11 @@ jobs:
       long-timeout: ${{ steps.check-labels.outputs.long-timeout }}
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
       test-bot-dependents-args: ${{ steps.check-labels.outputs.test-bot-dependents-args }}
+      download-concurrency: ${{ steps.check-labels.outputs.download-concurrency }}
     steps:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           persist-credentials: false
-
-      - name: Check if nodejs formula
-        if: contains(github.event.pull_request.labels.*.name, 'nodejs')
-        run: exit 1
 
       - name: Check for CI labels
         id: check-labels
@@ -177,6 +174,10 @@ jobs:
             } catch (error) {
               console.error(error);
             }
+
+      - name: Check if nodejs formula
+        if: fromJson(steps.check-labels.outputs.nodejs)
+        run: exit 1
 
   setup_runners:
     needs: [formulae_detect, setup_tests]
@@ -244,6 +245,7 @@ jobs:
             --deleted-formulae="$DELETED_FORMULAE" \
             <<<"$TEST_BOT_FORMULAE_ARGS"
         env:
+          HOMEBREW_DOWNLOAD_CONCURRENCY: ${{ needs.setup_tests.outputs.download-concurrency }}
           TEST_BOT_FORMULAE_ARGS: ${{ needs.setup_tests.outputs.test-bot-formulae-args }}
           TESTING_FORMULAE: ${{ needs.formulae_detect.outputs.testing_formulae }}
           ADDED_FORMULAE: ${{ needs.formulae_detect.outputs.added_formulae }}
@@ -273,6 +275,7 @@ jobs:
       long-timeout: ${{ steps.check-labels.outputs.long-timeout }}
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
       test-bot-dependents-args: ${{ steps.check-labels.outputs.test-bot-dependents-args }}
+      download-concurrency: ${{ steps.check-labels.outputs.download-concurrency }}
     steps:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
@@ -376,6 +379,7 @@ jobs:
             --tested-formulae="$TESTED_FORMULAE" \
             <<<"$TEST_BOT_DEPENDENTS_ARGS"
         env:
+          HOMEBREW_DOWNLOAD_CONCURRENCY: ${{ needs.setup_dep_tests.outputs.download-concurrency }}
           TEST_BOT_DEPENDENTS_ARGS: ${{ needs.setup_dep_tests.outputs.test-bot-dependents-args }}
           TESTED_FORMULAE: ${{ needs.formulae_detect.outputs.testing_formulae }}
         working-directory: ${{ env.BOTTLES_DIR }}
