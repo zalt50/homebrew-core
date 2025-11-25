@@ -1,8 +1,8 @@
 class Tfmcp < Formula
   desc "Terraform Model Context Protocol (MCP) Tool"
   homepage "https://github.com/nwiizo/tfmcp"
-  url "https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "a89882037b1c0a85d900b9e5d34edbc3c4ca78c648e7e54f423663c286f769cd"
+  url "https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "e6ef00157370981ec2fc1447c83f6b47dd10884c4852332a1b090cdda78c9449"
   license "MIT"
   head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
