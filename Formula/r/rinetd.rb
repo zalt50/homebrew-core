@@ -43,19 +43,15 @@ class Rinetd < Formula
     end
     inreplace "rinetd.conf", "/var/log", "#{var}/log"
 
-    # Install conf file only as example and have post_install put it into place
-    mv "rinetd.conf", "rinetd.conf.example"
+    # Install conf file only as example and let etc.install handle existing config
+    cp "rinetd.conf", "rinetd.conf.example"
+    etc.install "rinetd.conf"
     inreplace "Makefile", "rinetd.conf", "rinetd.conf.example"
 
     system "make", "install"
   end
 
-  def post_install
-    conf = etc/"rinetd.conf"
-    cp "#{share}/rinetd.conf.example", conf unless conf.exist?
-  end
-
   test do
-    system "#{sbin}/rinetd", "-h"
+    system sbin/"rinetd", "-h"
   end
 end
