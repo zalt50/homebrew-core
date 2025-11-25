@@ -1,8 +1,8 @@
 class Kagent < Formula
   desc "Kubernetes native framework for building AI agents"
   homepage "https://kagent.dev"
-  url "https://github.com/kagent-dev/kagent/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "8400dd140b0966ce952d79fdd6ea8372d5d6971ff651fbf8b7e6cbb751b0397c"
+  url "https://github.com/kagent-dev/kagent/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "d1c5c5ed40bc46d0df15f0c1dd642c263bcc63fa58035134ee1ecc1621b750bb"
   license "Apache-2.0"
   head "https://github.com/kagent-dev/kagent.git", branch: "main"
 
@@ -46,7 +46,7 @@ class Kagent < Formula
     cd "dice" do
       pid = spawn bin/"kagent", "run", "--config", testpath/"config.yaml", err: "test.log"
       sleep 3
-      assert_match "Error: failed to start docker-compose", File.read("test.log")
+      assert_match "failed to start docker-compose", File.read("test.log")
     ensure
       Process.kill "TERM", pid
       Process.wait pid
