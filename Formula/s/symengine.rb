@@ -4,7 +4,7 @@ class Symengine < Formula
   url "https://github.com/symengine/symengine/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f5f3a894c1f8ebf1564f60f7bea8e02011d7cf229fe2b686d2cb468246e885aa"
