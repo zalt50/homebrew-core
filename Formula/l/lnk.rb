@@ -6,14 +6,12 @@ class Lnk < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df9b9bc47194322d14caa6523ea2eee7c66adaf9ddcae133a8163ba901b32e54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d71fc2be863d7be2913848dd5486e4b9243fbf04effa1cf809173bc1aa1fc2fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d71fc2be863d7be2913848dd5486e4b9243fbf04effa1cf809173bc1aa1fc2fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d71fc2be863d7be2913848dd5486e4b9243fbf04effa1cf809173bc1aa1fc2fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb37e958c139a758a0fd2f895a3aba48bcb7ae79f636130ee1801b3d0a26631e"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb37e958c139a758a0fd2f895a3aba48bcb7ae79f636130ee1801b3d0a26631e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63f5acaa7b5238f9e758333747b6d394c83da24fc82600ddd9388420f77a48d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2150e35b28dea149e41d618fee43d8d418dd793cfbcf75935768cc206248dade"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bdfa814f7e2cb0beca968390b851594778eac8acbd4094d3b24c89ca2fa9079"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bdfa814f7e2cb0beca968390b851594778eac8acbd4094d3b24c89ca2fa9079"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bdfa814f7e2cb0beca968390b851594778eac8acbd4094d3b24c89ca2fa9079"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57d415d120c7491ba3360354bdceab4017e3f4f15708f84bd7d620ca60f2f99e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4a69b32d91349e951882b718b8df5efb2645ffbabaceafe676398eb970fe8e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76b53749911e3b1c28addc7e4588afbe0b9abfbaadc05fdc57b451db5ec6b0b4"
   end
 
   depends_on "go" => :build
