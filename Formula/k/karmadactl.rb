@@ -27,7 +27,7 @@ class Karmadactl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/karmadactl"
 
-    generate_completions_from_executable(bin/"karmadactl", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"karmadactl", "completion")
   end
 
   test do
