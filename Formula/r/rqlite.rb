@@ -1,8 +1,8 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "https://www.rqlite.io/"
-  url "https://github.com/rqlite/rqlite/archive/refs/tags/v9.3.1.tar.gz"
-  sha256 "61cc017b410cc73b1ec53b715f8387d315e63525cb5395b157bd4d4d06d4f96e"
+  url "https://github.com/rqlite/rqlite/archive/refs/tags/v9.3.2.tar.gz"
+  sha256 "5a48675999a442f3f3b323ddf638f01f366941bf2833f53c941edf6f16b51c7f"
   license "MIT"
   head "https://github.com/rqlite/rqlite.git", branch: "master"
 
