@@ -1,9 +1,16 @@
 class Foma < Formula
   desc "Finite-state compiler and C library"
-  homepage "https://code.google.com/p/foma/"
-  url "https://bitbucket.org/mhulden/foma/downloads/foma-0.9.18.tar.gz"
-  sha256 "cb380f43e86fc7b3d4e43186db3e7cff8f2417e18ea69cc991e466a3907d8cbd"
-  license "GPL-2.0-only"
+  homepage "https://github.com/mhulden/foma"
+  # Upstream didn't tag for new releases, issue ref: https://github.com/mhulden/foma/issues/93
+  url "https://github.com/mhulden/foma/archive/dfe1ccb1055af99be0232a26520d247b5fe093bc.tar.gz"
+  version "0.10.0"
+  sha256 "8016c800eca020a28ac2805841cce20562b617ffafe215d53a23dc9a3e252186"
+  license "Apache-2.0"
+
+  livecheck do
+    url "https://raw.githubusercontent.com/mhulden/foma/refs/heads/master/foma/CHANGELOG"
+    regex(/v?(\d+(?:\.\d+)+)/i)
+  end
 
   no_autobump! because: :requires_manual_review
 
@@ -24,6 +31,8 @@ class Foma < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed4b46bd3f62ab26bbb0407019c2989448d3b9df0680ebb87266bdbfe5b3e9c9"
   end
 
+  depends_on "bison" => :build # requires Bison 3.0+
+
   uses_from_macos "flex" => :build
   uses_from_macos "zlib"
 
@@ -33,22 +42,21 @@ class Foma < Formula
 
   conflicts_with "freeling", because: "freeling ships its own copy of foma"
 
-  def install
-    # Work around failure from GCC 10+ using default of `-fno-common`
-    # multiple definition of `g_defines_f'; int_stack.o:(.bss+0x1800000): first defined here
-    # multiple definition of `g_defines'; int_stack.o:(.bss+0x1800008): first defined here
-    if OS.linux?
-      inreplace "Makefile" do |s|
-        s.change_make_var! "CFLAGS", "#{s.get_make_var("CFLAGS")} -fcommon"
-      end
-    end
+  # Fedora patch for C99 compatibility
+  patch do
+    url "https://src.fedoraproject.org/rpms/foma/raw/rawhide/f/foma-c99.patch"
+    sha256 "af278be0b812e457c72e1538dd985f5247c33141a3ba39cd5ef0871445173f07"
+  end
 
-    system "make"
-    system "make", "install", "prefix=#{prefix}"
+  def install
+    cd "foma" do
+      system "make"
+      system "make", "install", "prefix=#{prefix}"
+    end
   end
 
   test do
-    # Source: https://code.google.com/p/foma/wiki/ExampleScripts
+    # Source: https://code.google.com/archive/p/foma/wikis/ExampleScripts.wiki
     (testpath/"toysyllabify.script").write <<~EOS
       define V [a|e|i|o|u];
       define Gli [w|y];
