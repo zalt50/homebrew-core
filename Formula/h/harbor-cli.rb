@@ -7,12 +7,12 @@ class HarborCli < Formula
   head "https://github.com/goharbor/harbor-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7dba396bcb743afdb4369377188da49c0c7c9401ca02cda017a67f10c7366c0c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7dba396bcb743afdb4369377188da49c0c7c9401ca02cda017a67f10c7366c0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dba396bcb743afdb4369377188da49c0c7c9401ca02cda017a67f10c7366c0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21873226774fb128fe5b9762315e54f7a22aaccd781e9a658546e88a8d648b91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d263e0f8b5f28a38d06f5fbca4118661984e7b78b18c71b7a4a8a054f6deccdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e78633ed481ca1e21566ea4036a3cdc5c8cbc7276da376d5c37efe96f9b4f1f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e78a24b1c8308b67e46f19a9df083a6253e4a33d13df18e35d3a23bdf79043eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e78a24b1c8308b67e46f19a9df083a6253e4a33d13df18e35d3a23bdf79043eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e78a24b1c8308b67e46f19a9df083a6253e4a33d13df18e35d3a23bdf79043eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e5da3257ca34c7b9035ae893aac44ce75a1abb8ac92f4255e71cb8dd7b8c35af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54f5ae8e66d99a8f9c43412d709b3d159e885a509e3fb3b40216c4b0c7462ac8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c2af0b68ae68bbee178472b06c2b9bda57655c0df2dccd4c7ef90cf075bda54"
   end
 
   depends_on "go" => :build
