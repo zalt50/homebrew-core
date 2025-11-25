@@ -19,6 +19,8 @@ module.exports = async ({github, context, core}, formulae_detect, dependent_test
       console.log('No CI-syntax-only label found. Running tests job.')
     }
 
+    core.setOutput('nodejs', !syntax_only && label_names.includes('nodejs'))
+
     core.setOutput('syntax-only', syntax_only)
     if (syntax_only) {
       return
@@ -146,6 +148,4 @@ module.exports = async ({github, context, core}, formulae_detect, dependent_test
 
     core.setOutput('test-bot-formulae-args', test_bot_formulae_args.join(" "))
     core.setOutput('test-bot-dependents-args', test_bot_dependents_args.join(" "))
-
-    core.setOutput('nodejs', label_names.includes('nodejs'))
 }
