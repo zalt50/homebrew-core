@@ -1,8 +1,8 @@
 class XorgServer < Formula
   desc "X Window System display server"
   homepage "https://www.x.org"
-  url "https://www.x.org/releases/individual/xserver/xorg-server-21.1.20.tar.xz"
-  sha256 "7695bc61824b3a81b6bad2f78b05400ca015003de402d1b322117105b702e937"
+  url "https://www.x.org/releases/individual/xserver/xorg-server-21.1.21.tar.xz"
+  sha256 "c0cbe5545b3f645bae6024b830d1d1154a956350683a4e52b2fff5b0fa1ab519"
   license all_of: ["MIT", "APSL-2.0"]
 
   bottle do
@@ -57,13 +57,13 @@ class XorgServer < Formula
     depends_on "systemd"
 
     resource "xvfb-run" do
-      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.13-3/debian/local/xvfb-run"
-      sha256 "fd05e0f8e6207c3984b980a0f037381c9c4a6f22a6dd94fdcfa995318db2a0a4"
+      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.20-1/debian/local/xvfb-run"
+      sha256 "97e86a102eee7212bfa3bf87d452b27dd4f16ef6e68658eeae20bca63db2ceee"
     end
 
     resource "xvfb-run.1" do
-      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.13-3/debian/local/xvfb-run.1"
-      sha256 "08f14f55e14e52e5d98713c4d8f25ae68d67e2ee188dc0247770c6ada6e27c05"
+      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.20-1/debian/local/xvfb-run.1"
+      sha256 "7e8e39c98ae006b8ba583b59c8be0419885eaead062c3ae87592854de33e5a00"
     end
   end
 
