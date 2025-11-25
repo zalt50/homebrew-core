@@ -41,6 +41,8 @@ class RakudoStar < Formula
   conflicts_with "parrot"
   conflicts_with "rakudo"
 
+  skip_clean "share/perl6/vendor/short"
+
   # Allow adding arguments via inreplace to unbundle libraries in MoarVM
   patch :DATA
 
@@ -86,10 +88,6 @@ class RakudoStar < Formula
     #  Installed scripts are now in share/perl/{site|vendor}/bin, so we need to symlink it too.
     bin.install_symlink (share/"perl6/vendor/bin").children.select(&:executable?)
     bin.install_symlink (share/"perl6/site/bin").children.select(&:executable?)
-  end
-
-  def post_install
-    (share/"perl6/vendor/short").mkpath
   end
 
   test do
