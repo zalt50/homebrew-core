@@ -13,13 +13,12 @@ class Erlang < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "39d5f145b5aa4ae0487bf59f00b6abfa30c9ac6bdca24fce85d3d8b77eb06759"
-    sha256 cellar: :any,                 arm64_sequoia: "cc0b9a4dd139b9d4a2e8e6b7e9485ef2aa5ffc5c4394091213cd71e43e02887a"
-    sha256 cellar: :any,                 arm64_sonoma:  "b0d849bddd55b795a3c59f8ef4e09b1bf5489c2edd050cfd25708187dcca289f"
-    sha256 cellar: :any,                 sonoma:        "f91692ab9db3b0fbb1bef48577254f7bdaf3eca5309d4324280e723b35578a38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b714aa7736f2cbda9c2fa68d4b862f2c2c8db9c5b620a29eccabebf943f3db34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "562056102144b2c367fb5cf6e8cd04055b5fc0a74fd1f5708059ce3acaa79f8e"
+    sha256 cellar: :any,                 arm64_tahoe:   "74879e1a45ec26bbd78b1d9d35ee7a097f76e6bd366f572bfdb9c34443609cc6"
+    sha256 cellar: :any,                 arm64_sequoia: "1595b9db3961ad31a97e273719c34f0a86a0243acc1b44bcc0cc83e1dd77751e"
+    sha256 cellar: :any,                 arm64_sonoma:  "c1cea949cdfc7913bf14273fd09f36a3749b5c5db77f05c0c6c3ac4eabf1da62"
+    sha256 cellar: :any,                 sonoma:        "6d6cda25532527bcefdb3d0a9b01c584557af2bd6ff0092af95682e876bb1dd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6609b4f73c02641caa374dac47ec57fc146eec19b4bbd05f997abe857fc93adb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74b1182d2db16e1dfade4c8cbaee9f09c54618ffbb8f887fedf0f70c236062c2"
   end
 
   head do
