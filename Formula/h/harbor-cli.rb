@@ -1,8 +1,8 @@
 class HarborCli < Formula
   desc "CLI for Harbor container registry"
   homepage "https://github.com/goharbor/harbor-cli"
-  url "https://github.com/goharbor/harbor-cli/archive/refs/tags/v0.0.14.tar.gz"
-  sha256 "a0518de7b09f0aac262a556d51a149841846dc85a5a4a1eebe79b6da68b6468b"
+  url "https://github.com/goharbor/harbor-cli/archive/refs/tags/v0.0.15.tar.gz"
+  sha256 "f7323306672e4b1cf88152e6293e95faa42a410d8cbf1bec7b2adb0d27994101"
   license "Apache-2.0"
   head "https://github.com/goharbor/harbor-cli.git", branch: "main"
 
