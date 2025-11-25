@@ -33,11 +33,9 @@ class Lgeneral < Formula
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
-    %w[nations scenarios units sounds maps gfx].each { |dir| (pkgshare/dir).mkpath }
-    %w[flags units terrain].each { |dir| (pkgshare/"gfx"/dir).mkpath }
+    # Preserve all empty directories which are needed at runtime
+    touch pkgshare.find.filter_map { |path| path/".keepme" if path.directory? && path.children.empty? }
   end
 
   def caveats
