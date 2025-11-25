@@ -450,7 +450,7 @@ jobs:
 
             - label: shell-completion
               path: Formula/.+
-              content: (generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)
+              patch_content: (generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)
 
   # Handle this separately since the `workflows` label affects bottle cache usage
   # and hardens us against cache poisoning attacks.
