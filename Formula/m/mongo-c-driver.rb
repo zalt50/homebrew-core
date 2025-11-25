@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.1.2.tar.gz"
-  sha256 "df1280403326611dd3d8277a93be2301fae481c68cc749bb746d7bea81417ee9"
+  url "https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.2.0.tar.gz"
+  sha256 "bbbe7718f0c2c264083da15a132f877f8286d31c9f5bba15605ffc58c0bc94ae"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
@@ -24,6 +24,7 @@ class MongoCDriver < Formula
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
   depends_on "openssl@3"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 
