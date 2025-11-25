@@ -148,6 +148,10 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Check if nodejs formula
+        if: contains(github.event.pull_request.labels.*.name, 'nodejs')
+        run: exit 1
+
       - name: Check for CI labels
         id: check-labels
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
