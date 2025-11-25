@@ -7,12 +7,12 @@ class Harsh < Formula
   head "https://github.com/wakatara/harsh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59a1613eb33c708f8ae63ca5a2fc98319b3d26380fb59681ad280d0debc6dc93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59a1613eb33c708f8ae63ca5a2fc98319b3d26380fb59681ad280d0debc6dc93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59a1613eb33c708f8ae63ca5a2fc98319b3d26380fb59681ad280d0debc6dc93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f972d5e4546ce81b54db0762b69e04b919d26b0abc497746d3c411bf12c1256"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37d974cc84dab2bba14d8c10fd84c007e0140b3539e5b91bc139ba52e3882ac9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6f95bd36ed7207e6b5ed542bb2aca21a3a42e75fb4b8b2ba0987c63e0be4bad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d36a1f26846410136d4e3dc362114d33fd020c75beb65ae752844dd29416b71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d36a1f26846410136d4e3dc362114d33fd020c75beb65ae752844dd29416b71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d36a1f26846410136d4e3dc362114d33fd020c75beb65ae752844dd29416b71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87600cfd1462a12d4028db76d39ac22d2e82071928a166b4aa033e546de3cec4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2780c2db34a2834a2609730a736b256d089eab1b46f7b348ecf71501d2e8f58f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28616bd7a987093e07f5d5cd2bced81b60afcd9378d41ff7429c7573ff3c3a0c"
   end
 
   depends_on "go" => :build
