@@ -20,6 +20,10 @@ class Granted < Formula
   def install
     ldflags = "-s -w -X github.com/common-fate/granted/internal/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/granted"
+    bin.install_symlink "granted" => "assumego"
+    # these must be in bin, and not sourced automatically
+    bin.install "scripts/assume"
+    bin.install "scripts/assume.fish"
   end
 
   test do
@@ -27,5 +31,15 @@ class Granted < Formula
 
     output = shell_output("#{bin}/granted auth configure 2>&1", 1)
     assert_match "[✘] please provide a url argument", output
+
+    ENV["GRANTED_ALIAS_CONFIGURED"] = "true"
+    assert_match version.to_s, shell_output("#{bin}/assume --version")
+    assert_match version.to_s, shell_output("#{bin}/assumego --version")
+
+    # assume is interactive; pipe_output provides empty stdin causing prompts to fail.
+    # Match varies by environment: "does not match" (with browser), "Could not find
+    # default browser" (no browser configured), or "EOF" (when stdin closes).
+    output = pipe_output("#{bin}/assume non-existing-role 2>&1", "")
+    assert_match(/does not match any profiles|Could not find default browser|EOF/, output)
   end
 end
