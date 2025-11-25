@@ -74,7 +74,7 @@ class Gstreamer < Formula
   depends_on "libshout"
   depends_on "libsndfile"
   depends_on "libsodium"
-  depends_on "libsoup" # no linkage on Linux as dlopen'd
+  depends_on "libsoup" => :no_linkage # dlopen'd
   depends_on "libusrsctp"
   depends_on "libvorbis"
   depends_on "libvpx"
@@ -94,7 +94,7 @@ class Gstreamer < Formula
   depends_on "opus"
   depends_on "orc"
   depends_on "pango"
-  depends_on "pygobject3"
+  depends_on "pygobject3" => :no_linkage
   depends_on "python@3.14"
   depends_on "rtmpdump"
   depends_on "speex"
@@ -137,6 +137,8 @@ class Gstreamer < Formula
   def python3
     which("python3.14")
   end
+
+  skip_clean "lib/gstreamer-1.0/libgstnice.dylib", "lib/gstreamer-1.0/libgstnice.so"
 
   # These paths used to live in various `gst-*` formulae.
   link_overwrite "bin/gst-*", "lib/ligst*", "lib/libges*", "lib/girepository-1.0/Gst*-1.0.typelib"
@@ -222,11 +224,8 @@ class Gstreamer < Formula
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-  end
 
-  def post_install
     # Support finding the `libnice` plugin, which is in a separate formula.
-    # Needs to be done in `post_install`, since bottling prunes this symlink.
     libnice_gst_plugin = Formula["libnice-gstreamer"].opt_libexec/"gstreamer-1.0"/shared_library("libgstnice")
     gst_plugin_dir = lib/"gstreamer-1.0"
     ln_sf libnice_gst_plugin.relative_path_from(gst_plugin_dir), gst_plugin_dir
