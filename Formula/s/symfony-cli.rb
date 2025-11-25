@@ -1,8 +1,8 @@
 class SymfonyCli < Formula
   desc "Build, run, and manage Symfony applications"
   homepage "https://github.com/symfony-cli/symfony-cli"
-  url "https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.16.0.tar.gz"
-  sha256 "50573dea965e33961e21737350386256f7f962316cdfbc6776572d369afad490"
+  url "https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.16.1.tar.gz"
+  sha256 "9222ea6c4996c1231577f7475c65902f2eb332ee5249d06c6017218dc35c6a19"
   license "AGPL-3.0-or-later"
 
   bottle do
