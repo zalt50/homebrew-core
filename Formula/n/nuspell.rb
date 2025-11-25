@@ -1,10 +1,9 @@
 class Nuspell < Formula
   desc "Fast and safe spellchecking C++ library"
   homepage "https://nuspell.github.io/"
-  url "https://github.com/nuspell/nuspell/archive/refs/tags/v5.1.6.tar.gz"
-  sha256 "5d4baa1daf833a18dc06ae0af0571d9574cc849d47daff6b9ce11dac0a5ded6a"
+  url "https://github.com/nuspell/nuspell/archive/refs/tags/v5.1.7.tar.gz"
+  sha256 "9aee944e86924ce44434741cb950fee8f9a6ff9c4f002803ab5f04698c8e4c68"
   license "LGPL-3.0-or-later"
-  revision 4
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5c3a95852340bbb21b54820e886e41d1fc2b4b8967fd96fe25e020f73d883c0d"
@@ -16,6 +15,7 @@ class Nuspell < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "doxygen" => :build
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :test
   depends_on "icu4c@78"
