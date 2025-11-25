@@ -6,12 +6,12 @@ class Kingfisher < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e109b2556cdf3b4e65bf487222412ca2614006a756ce403cb4792f6fc425723c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36b22458827dd858d9133da8a6a0ab87099614cbba7108c830832c2446351f82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1eef244bb511cfe6ffbe274aa9546e6f8c7ba1f60882497b5296bed0e433e9b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2082880bcdbaf47e1cb861ccbfddccb9dd95b05ea3f562f0b710d3c7e9923b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f0b55c4fa4f5f7bf70802067a554fc1c5ce9db45198f611f8c4373f6d97c10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58f3f894553c6a9dac5f743e32ce3f869e99c73455f9c69c7169e5c8abc767e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7633216dffaa4f3cdd7be40e472d3d856ac992f7c2afde3c14b4d48acbc0465c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "668465e7e71c836852ba679e52714318a66476e3d27896f68bdeca29ebce061a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e325c44ffee8dfeed3f91b1aef4fa921c7cf120dd2fba1e37152210840a6e6fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da385fb2074b3affb9996fae517c504ff40fa95e0c4c3b2af16f2ca59b7d9e6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dddcf3d42ce5b9573e1b41cfe26c93e053de3b0acd9683fba97fc53bcc6c1f65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0e37a997f2e83958e818c215fdca72ffcb8017d6683e77914f5eef0c1da142e"
   end
 
   depends_on "boost" => :build
