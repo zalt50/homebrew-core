@@ -10,7 +10,7 @@ class Bash < Formula
     mirror "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.3.tar.gz"
     sha256 "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba"
-    version "5.3.3"
+    version "5.3.8"
 
     # Add new patches using this format:
     #
@@ -24,6 +24,11 @@ class Bash < Formula
       001 1f608434364af86b9b45c8b0ea3fb3b165fb830d27697e6cdfc7ac17dee3287f
       002 e385548a00130765ec7938a56fbdca52447ab41fabc95a25f19ade527e282001
       003 f245d9c7dc3f5a20d84b53d249334747940936f09dc97e1dcb89fc3ab37d60ed
+      004 9591d245045529f32f0812f94180b9d9ce9023f5a765c039b852e5dfc99747d0
+      005 cca1ef52dbbf433bc98e33269b64b2c814028efe2538be1e2c9a377da90bc99d
+      006 29119addefed8eff91ae37fd51822c31780ee30d4a28376e96002706c995ff10
+      007 c0976bbfffa1453c7cfdd62058f206a318568ff2d690f5d4fa048793fa3eb299
+      008 097cd723cbfb8907674ac32214063a3fd85282657ec5b4e544d2c0f719653fb4
     ]
 
     patch_checksum_pairs.each_slice(2) do |p, checksum|
