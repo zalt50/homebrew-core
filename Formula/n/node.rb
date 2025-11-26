@@ -79,6 +79,7 @@ class Node < Formula
       --prefix=#{prefix}
       --without-npm
       --with-intl=system-icu
+      --shared
       --shared-brotli
       --shared-cares
       --shared-libuv
