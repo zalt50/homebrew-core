@@ -1,20 +1,10 @@
 class Catimg < Formula
   desc "Insanely fast image printing in your terminal"
   homepage "https://github.com/posva/catimg"
+  url "https://github.com/posva/catimg/archive/refs/tags/v2.8.0.tar.gz"
+  sha256 "1f4f54c237cd3b70c8a125044eb2578e8263c12b42d401a42c02c32f10f62548"
   license "MIT"
-  head "https://github.com/posva/catimg.git", branch: "master"
-
-  stable do
-    url "https://github.com/posva/catimg/archive/refs/tags/2.7.0.tar.gz"
-    sha256 "3a6450316ff62fb07c3facb47ea208bf98f62abd02783e88c56f2a6508035139"
-
-    # CMake 4 build patch, remove in the next release
-    # PR ref: https://github.com/posva/catimg/pull/73
-    patch do
-      url "https://github.com/posva/catimg/commit/155786229230e2ddc2dd97e4e0219d1e2aa66099.patch?full_index=1"
-      sha256 "a06dddb1d563ee546bf1060fe2157436cc19d3adde9461cc0ddf5a3df787a0e5"
-    end
-  end
+  head "https://github.com/posva/catimg.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d92945a35325613398793b13459b570974bde19f5b0ad2fede646b1a44345dac"
