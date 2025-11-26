@@ -1,8 +1,8 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https://tmux.github.io/"
-  url "https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz"
-  sha256 "16216bd0877170dfcc64157085ba9013610b12b082548c7c9542cc0103198951"
+  url "https://github.com/tmux/tmux/releases/download/3.6/tmux-3.6.tar.gz"
+  sha256 "136db80cfbfba617a103401f52874e7c64927986b65b1b700350b6058ad69607"
   license "ISC"
 
   livecheck do
@@ -10,8 +10,6 @@ class Tmux < Formula
     regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "9e191356b2a932e1e0e640219344a21ab61eb68fe24256d80281d7d037838867"
