@@ -72,6 +72,7 @@ class NodeAT24 < Formula
     args = %W[
       --prefix=#{prefix}
       --with-intl=system-icu
+      --shared
       --shared-brotli
       --shared-cares
       --shared-libuv
