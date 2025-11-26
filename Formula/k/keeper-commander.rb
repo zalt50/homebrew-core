@@ -9,13 +9,12 @@ class KeeperCommander < Formula
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "4bfe4a8394c840defc6ff95c795140b953e7258f714290f76508b15ae9db73ca"
-    sha256 cellar: :any,                 arm64_sequoia: "da58a91857d20c22e7c26a7618097c84ef1d483b3b7fc7d514aa1fe69de20df6"
-    sha256 cellar: :any,                 arm64_sonoma:  "3744fc4031f8091f894db9784019f8c561af0f5a4a521c4fb450434acdaa2c46"
-    sha256 cellar: :any,                 sonoma:        "9199166bc266271c107c97c16e412c61b0f2a61fa94817b0147a45d8bc6954ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1992d9462f917ebef334678fc7804138939d3a8eee80852bf4c59abf971b0a17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7513d48c872c9421b241bae9160121e8dc16a44b4213c579429072150b6e788a"
+    sha256 cellar: :any,                 arm64_tahoe:   "63887a29160b85793482c3db0cdbea18186710485d51a934d8bbaf887d74760f"
+    sha256 cellar: :any,                 arm64_sequoia: "b61968a32c9e05821ccb26252a44c36e63c145f81bf403973017d6904f4d8b82"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa29a31d994c4697bbc37cc5c779df418652dd5c37fcaf3311086b52ef3e3679"
+    sha256 cellar: :any,                 sonoma:        "cd3522c11a3cc816fccd2d4524b7394249e18c420d370f25983d660d555cd7ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3af215acca4759675afb49f72620e28cbe22e66d496e832e0c94cc2b0770e613"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f79546ffaed77a3c7af7228a37c4e5eb5183598ecf4ebd479083979cfbd6f07"
   end
 
   depends_on "pkgconf" => :build
