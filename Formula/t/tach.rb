@@ -3,8 +3,8 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https://docs.gauge.sh/getting-started/introduction"
-  url "https://files.pythonhosted.org/packages/e9/f0/4e6857fc643a579efc77adfde5b4f19450a5a909a2b112f479a37e44c062/tach-0.32.0.tar.gz"
-  sha256 "62a19bc6373f1d1673e48e5131092e2cd8bda0658193f1cdb9e3143fb7761bff"
+  url "https://files.pythonhosted.org/packages/45/b0/4878127ecbef5a50ce19655f98ec677021a4b390dde44f2d49cf6e7bed0a/tach-0.32.1.tar.gz"
+  sha256 "1c85cd8313ed5cf1c99aa7b33441747d4c73c266fdccf4b8344eff0a5a3c7760"
   license "MIT"
   head "https://github.com/gauge-sh/tach.git", branch: "main"
 
@@ -42,8 +42,8 @@ class Tach < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/6c/4f/ccdb8ad3a38e583f214547fd2f7ff1fc160c43a75af88e6aec213404b96a/networkx-3.5.tar.gz"
-    sha256 "d4c6f9cf81f52d69230866796b82afbccdec3db7ae4fbd1b65ea750feed50037"
+    url "https://files.pythonhosted.org/packages/e8/fc/7b6fd4d22c8c4dc5704430140d8b3f520531d4fe7328b8f8d03f5a7950e8/networkx-3.6.tar.gz"
+    sha256 "285276002ad1f7f7da0f7b42f004bcba70d381e936559166363707fdad3d72ad"
   end
 
   resource "prompt-toolkit" do
