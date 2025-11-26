@@ -1,12 +1,10 @@
 class Mob < Formula
   desc "Tool for smooth Git handover in mob programming sessions"
   homepage "https://mob.sh"
-  url "https://github.com/remotemobprogramming/mob/archive/refs/tags/v5.4.0.tar.gz"
-  sha256 "9082fa79688a875a386f9266e4f09efaeff5d14ad1288a710f6fb730974f3040"
+  url "https://github.com/remotemobprogramming/mob/archive/refs/tags/5.4.1.tar.gz"
+  sha256 "6f5b534887cac436f696e38e488b481b38c6cb1c3ad3860e56faf8e87f858344"
   license "MIT"
   head "https://github.com/remotemobprogramming/mob.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0633c2be00a269ce2e1b19523593aa4b674e06910ebebb09faff8d91d68d078"
