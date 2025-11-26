@@ -1,12 +1,10 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https://runme.dev/"
-  url "https://github.com/runmedev/runme/archive/refs/tags/v3.16.1.tar.gz"
-  sha256 "aa5705ed56f74651ad8cbeabc8fa402a93be8d2845bacd26e16159ca440c6942"
+  url "https://github.com/runmedev/runme/archive/refs/tags/v3.16.2.tar.gz"
+  sha256 "b33b8630ab5be9013d28a84f8d46ebb79267b366ef57cd8d4a2a7a8796390ca9"
   license "Apache-2.0"
   head "https://github.com/runmedev/runme.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d3adb661ce491cd1430f4eacfb2b8188d34848fdff9830e31f546403fa2cf31"
