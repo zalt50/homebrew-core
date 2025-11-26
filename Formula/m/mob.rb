@@ -7,14 +7,12 @@ class Mob < Formula
   head "https://github.com/remotemobprogramming/mob.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0633c2be00a269ce2e1b19523593aa4b674e06910ebebb09faff8d91d68d078"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea259acacda5e76abcb29c2291753b5567acc90d86d7e698645b48cfe5eb4a21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea259acacda5e76abcb29c2291753b5567acc90d86d7e698645b48cfe5eb4a21"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea259acacda5e76abcb29c2291753b5567acc90d86d7e698645b48cfe5eb4a21"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edd877ddebf533a27a61a45d4ffe44b909678a3fac5d80883e6cd73c33a45284"
-    sha256 cellar: :any_skip_relocation, ventura:       "edd877ddebf533a27a61a45d4ffe44b909678a3fac5d80883e6cd73c33a45284"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21c94ec97b871a9b36f9fd42db04c5d0f858cded7e23a0caa85c91a2ba334474"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a41769e9089f0fb440df59c22add6b1578b1b445c7cdae53496126d7283caa74"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "086f5ffec348d1ac11b75fe9521a5581466d54069d6be0734d44ed378c5d89f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "086f5ffec348d1ac11b75fe9521a5581466d54069d6be0734d44ed378c5d89f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "086f5ffec348d1ac11b75fe9521a5581466d54069d6be0734d44ed378c5d89f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0974903ce2af25f109e4f8889e905f27dde5a201c2dfeb03fa8e914fdc415c63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fd8edcfc7f0b9837ab6bd96ee67c79171d89664e4e6b83416761f08b65e4a85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "277ccddb45fc4ff59bcf5dbfd4ae88c0e354d37dbcc1ce5a208cf12f7bce47d0"
   end
 
   depends_on "go" => :build
