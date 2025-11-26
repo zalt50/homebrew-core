@@ -12,12 +12,12 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7bf93df13539bfb7306d1acf4a88211165db45be028dae1bc8bfc9e4740cbab2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bf93df13539bfb7306d1acf4a88211165db45be028dae1bc8bfc9e4740cbab2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bf93df13539bfb7306d1acf4a88211165db45be028dae1bc8bfc9e4740cbab2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "005a8a8349c3b29d06eec49bcd9cf83a10443dbf6f6a6a541e38353299c1defa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b37b54118da834eba06d7ca557398167bcfc9b6561e7694dd069667a962d3fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f19496f4c0c5761e0756eb1c9af48505955ada9d37c86033f0591c8aa41c48df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "858f4d9986bd49175a367a90cca9ade363b14c61a4eccdc03800fadffd87308f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "858f4d9986bd49175a367a90cca9ade363b14c61a4eccdc03800fadffd87308f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "858f4d9986bd49175a367a90cca9ade363b14c61a4eccdc03800fadffd87308f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8e91edc3a729d59e7b6fc8c5f72ad3eeedbf34d210d2376dd314c09352462ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb95e03807c12d9b278ad81fd51edb2896ec2a4a1391933aac875b9c4277f1ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a869209050a8fac32723f22ab311f964a180149a729894b35601f4fa690945e"
   end
 
   depends_on "go" => :build
