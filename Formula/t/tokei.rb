@@ -1,8 +1,8 @@
 class Tokei < Formula
   desc "Program that allows you to count code, quickly"
   homepage "https://github.com/XAMPPRocky/tokei"
-  url "https://github.com/XAMPPRocky/tokei/archive/refs/tags/v12.1.2.tar.gz"
-  sha256 "81ef14ab8eaa70a68249a299f26f26eba22f342fb8e22fca463b08080f436e50"
+  url "https://github.com/XAMPPRocky/tokei/archive/refs/tags/v13.0.0.tar.gz"
+  sha256 "b426ab03b8eedf4fe3ea70ca8379a2355981b0e9ca1d0083a66e623858e7e481"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/XAMPPRocky/tokei.git", branch: "master"
 
