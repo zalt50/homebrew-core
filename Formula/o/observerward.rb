@@ -1,8 +1,8 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https://blog.kali-team.cn/projects/observer_ward/"
-  url "https://github.com/emo-crab/observer_ward/archive/refs/tags/v2025.11.23.tar.gz"
-  sha256 "d9db74bd0d07f6300063f5273123aefa7d45abfd3626a36e31e4798d1f51dc07"
+  url "https://github.com/emo-crab/observer_ward/archive/refs/tags/v2025.11.26.tar.gz"
+  sha256 "9ae709d5da525637435167c1751b96622c6bf08f46f446417f63f3297e593c5a"
   license "GPL-3.0-only"
 
   bottle do
@@ -14,6 +14,7 @@ class Observerward < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab31264b723fa112f4e64af6d7f0e84710edc0cc35caff6d92f1487e221baf21"
   end
 
+  depends_on "protobuf" => :build
   depends_on "rust" => :build
 
   def install
