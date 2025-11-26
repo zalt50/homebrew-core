@@ -1,8 +1,8 @@
 class Localai < Formula
   desc "OpenAI alternative"
   homepage "https://localai.io"
-  url "https://github.com/mudler/LocalAI/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "3481e10fff8eedfcd4ac734998f1b0832e34d794c8b8637ebec15a87a927fd04"
+  url "https://github.com/mudler/LocalAI/archive/refs/tags/v3.8.0.tar.gz"
+  sha256 "869aba75d65ea6c24972c35e7518a4790eeceaf3aba1a48b9067361e05aa27bc"
   license "MIT"
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
@@ -30,11 +30,16 @@ class Localai < Formula
   test do
     addr = "127.0.0.1:#{free_port}"
 
-    spawn bin/"local-ai", "run", "--address", addr
+    pid = spawn bin/"local-ai", "run", "--address", addr
     sleep 5
     sleep 20 if OS.mac? && Hardware::CPU.intel?
 
-    response = shell_output("curl -s -i #{addr}")
-    assert_match "HTTP/1.1 200 OK", response
+    begin
+      response = shell_output("curl -s -i #{addr}/readyz")
+      assert_match "HTTP/1.1 200 OK", response
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
