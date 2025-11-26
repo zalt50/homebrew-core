@@ -2,7 +2,7 @@ class Soplex < Formula
   desc "Optimization package for solving linear programming problems (LPs)"
   homepage "https://soplex.zib.de/"
   url "https://soplex.zib.de/download/release/soplex-8.0.0.tgz"
-  sha256 "6c3d0a3a2a0f6520a7334d10eaadb34a2f258035e8df40abc18ccf862a0b892a"
+  sha256 "7b69b4a3dad3c85bbffb30f1a7862e441b9c2984c063e60468d883df0ca0cf28"
   license "Apache-2.0"
 
   livecheck do
@@ -22,11 +22,11 @@ class Soplex < Formula
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "gmp"
-  depends_on "tbb"
+  depends_on "mpfr"
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DPAPILO=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "src/example.cpp"
@@ -47,10 +47,14 @@ class Soplex < Formula
        x4
       End
     EOS
-    assert_match "problem is solved [optimal]", shell_output("#{bin}/soplex test.lp")
+    assert_match "problem is solved [optimal]",
+      shell_output("#{bin}/soplex test.lp")
+    assert_match "problem is solved [optimal]",
+      shell_output("#{bin}/soplex test.lp -f0 -o0 --readmode=1 --solvemode=2")
 
     system ENV.cxx, pkgshare/"example.cpp", "-std=c++14", "-L#{lib}", "-I#{include}",
-      "-L#{Formula["gmp"].opt_lib}", "-lsoplex", "-lz", "-lgmp", "-o", "test"
+      "-L#{Formula["gmp"].opt_lib}", "-L#{Formula["mpfr"].opt_lib}",
+      "-lsoplex", "-lz", "-lgmp", "-lmpfr", "-o", "test"
     system "./test"
   end
 end
