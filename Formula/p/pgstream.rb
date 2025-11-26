@@ -1,8 +1,8 @@
 class Pgstream < Formula
   desc "PostgreSQL replication with DDL changes"
   homepage "https://github.com/xataio/pgstream"
-  url "https://github.com/xataio/pgstream/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "8701243d3ea0a78d30a94f2c5e07c416c4f3b8100b30442d906e6892f1a04186"
+  url "https://github.com/xataio/pgstream/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "62a645a39b3685873839a40630533bcadb6bd6016098fbedfb65698ec874b5bd"
   license "Apache-2.0"
 
   bottle do
