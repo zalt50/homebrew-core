@@ -1,12 +1,10 @@
 class Ropebwt3 < Formula
   desc "BWT construction and search"
   homepage "https://github.com/lh3/ropebwt3"
-  url "https://github.com/lh3/ropebwt3/archive/refs/tags/v3.9.tar.gz"
-  sha256 "0c04879f97c92607017c00e0afc5a4e0428a8467573336300ebf3c1a6bcc4d75"
+  url "https://github.com/lh3/ropebwt3/archive/refs/tags/v3.10.tar.gz"
+  sha256 "072231015c834d7ffcdc621c9ae260dafebf9f22ed9a780fe0026c2e0a845c5a"
   license all_of: ["MIT", "Apache-2.0"]
   head "https://github.com/lh3/ropebwt3.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1fd8c8dd77a58cf32286767fa19cdeb1336b68b1355cae82fd65307cc4ea3562"
