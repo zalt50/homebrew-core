@@ -15,20 +15,12 @@ class Foma < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "52b664ad631e0e6a8d46deffc2c9021609d47cd6d83b437661a4addf442c9856"
-    sha256 cellar: :any,                 arm64_sequoia:  "cac3217fb92f4bdd36f498474518fef5dabd74dbaa606e5ced0cbcea2686f555"
-    sha256 cellar: :any,                 arm64_sonoma:   "8e14b1f28eb40350b2f337bd468a4a3971dbfab55ef04c5bc0d4732daf090913"
-    sha256 cellar: :any,                 arm64_ventura:  "c5378bb8f0183650512e47377197a74d7603a8f05c6d6e27cc1c67cbc478b524"
-    sha256 cellar: :any,                 arm64_monterey: "bad60b2c29b968a05b7c9f7cc7a7d3350bb0dfd831e9f788d2eb1a102dd6403b"
-    sha256 cellar: :any,                 arm64_big_sur:  "8cac09b69356887a31f4d2314b9eb7a193ad21858b0cc43ade7d48a485e4b55d"
-    sha256 cellar: :any,                 sonoma:         "38e83f4dabe638b27c003cbf55df8d39bb930497bb6966727524dfdae0e53380"
-    sha256 cellar: :any,                 ventura:        "dda2e7f7f7aedfd6bb1dccff1a489c0787b8e2b2680969e57525db9c3ba04b8f"
-    sha256 cellar: :any,                 monterey:       "45c56570de4b909b5d145bb2f6cb83ef3852d2076150e6d96432c44ed3441f2e"
-    sha256 cellar: :any,                 big_sur:        "cdf3b3105f0207ddea3f5b0ba458b650cab22b1ac3db85896631ec5304cc5bf1"
-    sha256 cellar: :any,                 catalina:       "dc0a238f67280d9e15e50bc7064669f1715170c9a59d608537ed195801db0c9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "725abcddb8ddd46b7d328624b335a6a0f660c596340cee2ec69c45a68b7e6537"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed4b46bd3f62ab26bbb0407019c2989448d3b9df0680ebb87266bdbfe5b3e9c9"
+    sha256 cellar: :any,                 arm64_tahoe:   "e4cb80b9bef5eb789f32ecf4f5cfdfe7902b90f313deb075fb00f7beabac109d"
+    sha256 cellar: :any,                 arm64_sequoia: "47f8d424b8248c2f74f396f9309187b43d064ba5c0e3eacca3349280044cce21"
+    sha256 cellar: :any,                 arm64_sonoma:  "9bea57b9f5a74412381ed49257330b3257ce541c1afa95dd0e57fcddf6e94902"
+    sha256 cellar: :any,                 sonoma:        "644647569cc3488beffb05f57d9842fa81e78192849f96819311f5d36f6e0175"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82857ffc399e1601beafe572b038435d92a47417acb309ee041ab45a9df8c4e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebdadf93fa2cba6e03d1ff96f277aececc9f3297ba5d49b1027d7a9ef65063bb"
   end
 
   depends_on "bison" => :build # requires Bison 3.0+
