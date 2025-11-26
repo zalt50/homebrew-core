@@ -1,10 +1,9 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
   homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.5.4.tar.gz"
-  sha256 "674249c4ac07c4392566d761c0189c7bb11dd7b17e9a331c69d6881f7d01e043"
+  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.5.5.tar.gz"
+  sha256 "76d88164a71e56be4d49a377475242f5e3b999c76beb68293d22c2b68f1bd827"
   license "GPL-3.0-or-later"
-  revision 1
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
