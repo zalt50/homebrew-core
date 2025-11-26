@@ -3,8 +3,8 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/ac/98/1c2c2d6dafb28ed3a9e29265df758a2ce3a0a34a796adee4ab88cc98dd00/keepercommander-17.1.14.tar.gz"
-  sha256 "451142edb7dba83382d5db6100cd0a78b4f2c0d46e5ab2c8f1a7813f7573916e"
+  url "https://files.pythonhosted.org/packages/db/69/a201d5934a3b205191094d8deb7d6c4e69bc59d3762859b5bcf3654207c4/keepercommander-17.1.15.tar.gz"
+  sha256 "0611f89d43ed27240cac4251e0c3739300a24f178a0e366415e3a53b0c97ac9d"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
@@ -136,8 +136,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/17/cb/578235f3fe045da38623cb999d981270f9bc8f7c045fae3b6d1a5134644e/keeper_pam_webrtc_rs-1.1.6.tar.gz"
-    sha256 "30fb4a9389ff0060412bc7dfa153fc868f6d2eb3a31b151a0b65d9fa4673eaaf"
+    url "https://files.pythonhosted.org/packages/2a/ad/21dad8a8c14e17e5050f0ce15cf3d9cec06b9cc50c8436062e8b77a84f81/keeper_pam_webrtc_rs-1.1.7.tar.gz"
+    sha256 "e919ea219c7ea7b6bee03bf9e3d9f804154900dcc57c11a60e4d3bfc58beb2c5"
   end
 
   resource "keeper-secrets-manager-core" do
