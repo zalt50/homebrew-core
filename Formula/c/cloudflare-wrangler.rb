@@ -1,8 +1,8 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/workers-sdk"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-4.50.0.tgz"
-  sha256 "8882e7c3192137048d2fb368e82622c3c2d62c6fa8e5ad9e53529d1152dfa407"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-4.51.0.tgz"
+  sha256 "9f4edd8b82e3ca32d8a0cc739017febdf1a6f7de20b23a397600ee6232362096"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
@@ -19,6 +19,9 @@ class CloudflareWrangler < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/wrangler*"]
+
+    node_modules = libexec/"lib/node_modules/wrangler/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
