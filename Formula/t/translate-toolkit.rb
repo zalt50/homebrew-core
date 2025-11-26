@@ -3,10 +3,9 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/5f/26/200ba39b505d8b0a7d4e072e6aa84a4d757fae8c00e5e3a2f2ccba2ab198/translate_toolkit-3.16.3.tar.gz"
-  sha256 "d9656526a8bb0f0a88a16a08ed463036589cd34af059daf80aaaa90b9246586c"
+  url "https://files.pythonhosted.org/packages/c0/7a/f3e022443bf110271a5a63e538da9f00dff381a0e81f0feff380ab8f09d8/translate_toolkit-3.17.0.tar.gz"
+  sha256 "c842ce7f0d8ea92feec849f33328963121fc3896ba6fe382fd77d99d650d2f77"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/translate/translate.git", branch: "master"
 
   bottle do
@@ -26,6 +25,11 @@ class TranslateToolkit < Formula
   resource "lxml" do
     url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
     sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+  end
+
+  resource "uniseg" do
+    url "https://files.pythonhosted.org/packages/26/9e/179eab698c565904a25bf0d8c999ef7ec858c9828809df2d1a5b92a5dd67/uniseg-0.10.0.tar.gz"
+    sha256 "b5ea258b3a21bfe9ce1adde56836c0d055743a69aba44cb9d3596bda4f0c52a3"
   end
 
   resource "wcwidth" do
