@@ -16,14 +16,14 @@ class Marksman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "50abec82ec280c5c3c35c770fe08bceeafc3bb20ba8e474843b15a49272907ff"
   end
 
-  depends_on "dotnet@8"
+  depends_on "dotnet"
 
   uses_from_macos "zlib"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
 
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
