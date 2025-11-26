@@ -1,12 +1,10 @@
 class Trimal < Formula
   desc "Automated alignment trimming in large-scale phylogenetic analyses"
   homepage "https://trimal.readthedocs.io/"
-  url "https://github.com/inab/trimal/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "3fba2e07bffb7290c34e713a052d0f0ff1ce0792861740a8cec46f40685c6d73"
+  url "https://github.com/inab/trimal/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "58751054861b152e92214ff8c01a132071230614e8e777a7c9280d03648cde3b"
   license "GPL-3.0-only"
   head "https://github.com/inab/trimal.git", branch: "trimAl"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6b8f43f9bf10254985da1367d4016fa241b2dce9227d727475738c42f667978"
