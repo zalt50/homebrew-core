@@ -1,8 +1,8 @@
 class Qshell < Formula
   desc "Shell Tools for Qiniu Cloud"
   homepage "https://github.com/qiniu/qshell"
-  url "https://github.com/qiniu/qshell/archive/refs/tags/v2.16.1.tar.gz"
-  sha256 "40748fe8f194111e94bc6cc483c71f19c07575133e8d356df06d47d67fa4e8c6"
+  url "https://github.com/qiniu/qshell/archive/refs/tags/v2.17.0.tar.gz"
+  sha256 "bec44991966fc6a80a0dc7d0cbb95bfdbd607819a6b63c60d87e56a30a51eb54"
   license "MIT"
   head "https://github.com/qiniu/qshell.git", branch: "master"
 
