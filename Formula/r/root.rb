@@ -2,12 +2,11 @@ class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/root-project/root.git", branch: "master"
 
   stable do
-    url "https://root.cern/download/root_v6.36.04.source.tar.gz"
-    sha256 "cc6367d8f563c6d49ca34c09d0b53cb0f41a528db6f86af111fd76744cda4596"
+    url "https://root.cern/download/root_v6.36.06.source.tar.gz"
+    sha256 "62f9d38d2f2ed3d46653529c98e8cbc9b8866776494eb40ba0c23e2f46b681c4"
 
     # Backport part of https://github.com/root-project/root/commit/b2acf687d6b5f887b8f97f35d9b3b011adad5be4
     patch :DATA
