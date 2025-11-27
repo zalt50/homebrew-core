@@ -175,10 +175,6 @@ jobs:
               console.error(error);
             }
 
-      - name: Check if nodejs formula
-        if: fromJson(steps.check-labels.outputs.nodejs)
-        run: exit 1
-
   setup_runners:
     needs: [formulae_detect, setup_tests]
     if: >
