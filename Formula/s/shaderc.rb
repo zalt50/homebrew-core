@@ -4,25 +4,43 @@ class Shaderc < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/google/shaderc/archive/refs/tags/v2025.4.tar.gz"
-    sha256 "8a89fb6612ace8954470aae004623374a8fc8b7a34a4277bee5527173b064faf"
+    url "https://github.com/google/shaderc/archive/refs/tags/v2025.5.tar.gz"
+    sha256 "fca5041b1fdea6daba167b63e04e55e5059fab40828342126169336643445447"
 
     resource "glslang" do
       # https://github.com/google/shaderc/blob/DEPS
       url "https://github.com/KhronosGroup/glslang.git",
-          revision: "d213562e35573012b6348b2d584457c3704ac09b"
+          revision: "7a47e2531cb334982b2a2dd8513dca0a3de4373d"
+      version "7a47e2531cb334982b2a2dd8513dca0a3de4373d"
+
+      livecheck do
+        url "https://raw.githubusercontent.com/google/shaderc/refs/tags/v#{LATEST_VERSION}/DEPS"
+        regex(/["']glslang_revision["']:\s*["']([0-9a-f]+)["']/i)
+      end
     end
 
     resource "spirv-headers" do
       # https://github.com/google/shaderc/blob/DEPS
       url "https://github.com/KhronosGroup/SPIRV-Headers.git",
-          revision: "01e0577914a75a2569c846778c2f93aa8e6feddd"
+          revision: "b824a462d4256d720bebb40e78b9eb8f78bbb305"
+      version "b824a462d4256d720bebb40e78b9eb8f78bbb305"
+
+      livecheck do
+        url "https://raw.githubusercontent.com/google/shaderc/refs/tags/v#{LATEST_VERSION}/DEPS"
+        regex(/["']spirv_headers_revision["']:\s*["']([0-9a-f]+)["']/i)
+      end
     end
 
     resource "spirv-tools" do
       # https://github.com/google/shaderc/blob/DEPS
       url "https://github.com/KhronosGroup/SPIRV-Tools.git",
-          revision: "19042c8921f35f7bec56b9e5c96c5f5691588ca8"
+          revision: "262bdab48146c937467f826699a40da0fdfc0f1a"
+      version "262bdab48146c937467f826699a40da0fdfc0f1a"
+
+      livecheck do
+        url "https://raw.githubusercontent.com/google/shaderc/refs/tags/v#{LATEST_VERSION}/DEPS"
+        regex(/["']spirv_tools_revision["']:\s*["']([0-9a-f]+)["']/i)
+      end
     end
   end
 
