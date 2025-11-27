@@ -1,8 +1,8 @@
 class Uncover < Formula
   desc "Tool to discover exposed hosts on the internet using multiple search engines"
   homepage "https://github.com/projectdiscovery/uncover"
-  url "https://github.com/projectdiscovery/uncover/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "63858b248a5e5729d2887a080359335bbf435965bc8c75acb26b377ff5db98ce"
+  url "https://github.com/projectdiscovery/uncover/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "367e569a7b1d1be00b5b6b36b9e9853287828bedb0673d255d314e9d54c24a00"
   license "MIT"
   head "https://github.com/projectdiscovery/uncover.git", branch: "main"
 
@@ -20,6 +20,8 @@ class Uncover < Formula
   depends_on "go" => :build
 
   def install
+    # upstream pr ref, https://github.com/projectdiscovery/uncover/pull/707
+    inreplace "runner/banners.go", "1.1.0", version.to_s if build.stable?
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/uncover"
   end
 
