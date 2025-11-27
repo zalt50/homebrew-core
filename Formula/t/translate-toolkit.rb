@@ -3,8 +3,8 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/c0/7a/f3e022443bf110271a5a63e538da9f00dff381a0e81f0feff380ab8f09d8/translate_toolkit-3.17.0.tar.gz"
-  sha256 "c842ce7f0d8ea92feec849f33328963121fc3896ba6fe382fd77d99d650d2f77"
+  url "https://files.pythonhosted.org/packages/35/7a/a924676cdc005a9a30284b116d6545547524222b2e85381ff4a5df06d544/translate_toolkit-3.17.1.tar.gz"
+  sha256 "1a34870fc9a0dd6610b89d3ba93af1f87732f192e40b4978eddac0d15493019e"
   license "GPL-2.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
@@ -17,6 +17,7 @@ class TranslateToolkit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aecec91a191856d1061249bf15ebcc38a625a9c395c016e72d4c07200a5cb20c"
   end
 
+  depends_on "rust" => :build # for `unicode_segmentation_py`
   depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
@@ -27,9 +28,9 @@ class TranslateToolkit < Formula
     sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
-  resource "uniseg" do
-    url "https://files.pythonhosted.org/packages/26/9e/179eab698c565904a25bf0d8c999ef7ec858c9828809df2d1a5b92a5dd67/uniseg-0.10.0.tar.gz"
-    sha256 "b5ea258b3a21bfe9ce1adde56836c0d055743a69aba44cb9d3596bda4f0c52a3"
+  resource "unicode-segmentation-py" do
+    url "https://files.pythonhosted.org/packages/25/29/0d55d00861190194f6c9ecf75c986b8a7cf76fbf088c466119c282af88a5/unicode_segmentation_py-0.1.1.tar.gz"
+    sha256 "b9de0860441e8f3c2143ab814435cb43198c0aaf8870988a3156e4f84a6c06df"
   end
 
   resource "wcwidth" do
