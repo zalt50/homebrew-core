@@ -3,8 +3,8 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/9b/98/b2b8ca94b394a2db55d482a84e8ff3e4c3d5666a2451cbf2977fb0de2d05/dstack-0.19.39.tar.gz"
-  sha256 "c376aec51820dbfa2992a2612e54c61348fa85302ffb80ed2617525dfcd51f6d"
+  url "https://files.pythonhosted.org/packages/e0/c4/1cc285c58de7913f55103c35b401423312509132383b1d7b0d7561f88cdf/dstack-0.19.40.tar.gz"
+  sha256 "d11d2b7eb9e96f24bc5d1e102628152069f2da6b66b7be67475cd93b405fe0c3"
   license "MPL-2.0"
 
   bottle do
