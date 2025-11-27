@@ -6,6 +6,11 @@ class Thorvg < Formula
   license "MIT"
   head "https://github.com/thorvg/thorvg.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "9d87490684470b10afc64c6fe45a03468145bed36759cf41365e04352953ee24"
     sha256 cellar: :any,                 arm64_sequoia: "69d5298cd5ac913d954b5ee999023788c0db21d00c5e63de95c79aea3a64e783"
