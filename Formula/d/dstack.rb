@@ -3,17 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/b7/af/a7966cb2788006cedc4d2b39f881701fd07b5dc4f24ae90e05e135683d0b/dstack-0.19.38.tar.gz"
-  sha256 "3ce016d9569871fe6f12dfd5ad027292b8be711ec7befedd332d02ab82e23caa"
+  url "https://files.pythonhosted.org/packages/9b/98/b2b8ca94b394a2db55d482a84e8ff3e4c3d5666a2451cbf2977fb0de2d05/dstack-0.19.39.tar.gz"
+  sha256 "c376aec51820dbfa2992a2612e54c61348fa85302ffb80ed2617525dfcd51f6d"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c053ee0296d08a52f1a365159541e58affbe3f563f0dd32bce077fb8e8e205ca"
-    sha256 cellar: :any,                 arm64_sequoia: "9f7d95cc1ff7e9427ca57099ebb47f1ef64e5e06971a6e11cce348a3de65aa92"
-    sha256 cellar: :any,                 arm64_sonoma:  "e2f44138d7fdd3e0bac7d603f60b1cfb75b383c3c408fad9a3a4744fee452a25"
-    sha256 cellar: :any,                 sonoma:        "7ec2ef84e5341c17dcf3c50576a2e1e5b49b259c683771302551c0af3caae1bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6011c368c0ab217e419f3c84e49ed8bd32c2496096ed7e7c88884bf0fa6f01d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5429f8feb580e623ad7a7457f8c7bedf48736f8eee82c5f71cda8a2269de7be1"
+    sha256 cellar: :any,                 arm64_tahoe:   "0c5deb462b4d7e6bc8078b453c92929a1da6f61fcac37d8bf8d91b107da8c200"
+    sha256 cellar: :any,                 arm64_sequoia: "4253d0435811a3cc77090d577c0c2c20e9d835d503e9bae44ce076cdfb5ddcb4"
+    sha256 cellar: :any,                 arm64_sonoma:  "c4329298bc785d92df70c59dda0eb7aff7c40f48beb31b488b4b42a63c432b4c"
+    sha256 cellar: :any,                 sonoma:        "e9139ffa670e90afdd766619a1b8916f268f2e9af402214845bdc8c2b0eef126"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "580402cc56dce378c0475dc2bb0e8a81234a3a564369c680bfd4568dc0af8d4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e56c1b8e92efc3f4666ee1a02e0a1b217ab7d2b57e38156a66e8d689f413f22"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -75,8 +75,8 @@ class Dstack < Formula
   end
 
   resource "asyncpg" do
-    url "https://files.pythonhosted.org/packages/2f/4c/7c991e080e106d854809030d8584e15b2e996e26f16aee6d757e387bc17d/asyncpg-0.30.0.tar.gz"
-    sha256 "c551e9928ab6707602f44811817f82ba3c446e018bfe1d3abecc8ba5f3eac851"
+    url "https://files.pythonhosted.org/packages/fe/cc/d18065ce2380d80b1bcce927c24a2642efd38918e33fd724bc4bca904877/asyncpg-0.31.0.tar.gz"
+    sha256 "c989386c83940bfbd787180f2b1519415e2d3d6277a70d9d0f0145ac73500735"
   end
 
   resource "attrs" do
@@ -145,13 +145,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/19/9d/a8d41de19d81c87dd9d7528e8ad2f4f0c0282d0899a70a3d963472064063/boto3-1.41.1.tar.gz"
-    sha256 "fdee48cff828cfe0fb66295ae4d5f47736ee35f11e1de6be6c6dcd910f0810a4"
+    url "https://files.pythonhosted.org/packages/5b/81/450cd4143864959264a3d80f9246175a20de8c1e50ec889c710eaa28cdd9/boto3-1.41.5.tar.gz"
+    sha256 "bc7806bee681dfdff2fe2b74967b107a56274f1e66ebe4d20dc8eee1ea408d17"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/eb/f3/d14135ce1c0fe175254e969a2cf7394062a7e52bf1a3d699b30982c0622a/botocore-1.41.1.tar.gz"
-    sha256 "e98095492ef8f18d0d6a02ba87d9135c663d4627322e049228143b3a4ef4c2a3"
+    url "https://files.pythonhosted.org/packages/90/22/7fe08c726a2e3b11a0aef8bf177e83891c9cb2dc1809d35c9ed91a9e60e6/botocore-1.41.5.tar.gz"
+    sha256 "0367622b811597d183bfcaab4a350f0d3ede712031ce792ef183cabdee80d3bf"
   end
 
   resource "cached-classproperty" do
@@ -185,8 +185,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/80/f0/086c442c6516195786131b8ca70488c6ef11d2f2e33c9a893576b2b0d3f7/fastapi-0.121.3.tar.gz"
-    sha256 "0055bc24fe53e56a40e9e0ad1ae2baa81622c406e548e501e717634e2dfbc40b"
+    url "https://files.pythonhosted.org/packages/b2/de/3ee97a4f6ffef1fb70bf20561e4f88531633bb5045dc6cebc0f8471f764d/fastapi-0.122.0.tar.gz"
+    sha256 "cd9b5352031f93773228af8b4c443eedc2ac2aa74b27780387b853c3726fb94b"
   end
 
   resource "filelock" do
@@ -560,8 +560,8 @@ class Dstack < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/61/89/1561b3dc8e28bf7978d031893297e89be266f53650c87bb14a29406a9791/sentry_sdk-2.45.0.tar.gz"
-    sha256 "e9bbfe69d5f6742f48bad22452beffb525bbc5b797d817c7f1b1f7d210cdd271"
+    url "https://files.pythonhosted.org/packages/7c/d7/c140a5837649e2bf2ec758494fde1d9a016c76777eab64e75ef38d685bbb/sentry_sdk-2.46.0.tar.gz"
+    sha256 "91821a23460725734b7741523021601593f35731808afc0bb2ba46c27b8acd91"
   end
 
   resource "simple-term-menu" do
