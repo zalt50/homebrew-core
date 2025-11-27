@@ -1,16 +1,10 @@
 class Libnice < Formula
   desc "GLib ICE implementation"
   homepage "https://wiki.freedesktop.org/nice/"
-  url "https://libnice.freedesktop.org/releases/libnice-0.1.22.tar.gz"
-  sha256 "a5f724cf09eae50c41a7517141d89da4a61ec9eaca32da4a0073faed5417ad7e"
+  url "https://libnice.freedesktop.org/releases/libnice-0.1.23.tar.gz"
+  sha256 "618fc4e8de393b719b1641c1d8eec01826d4d39d15ade92679d221c7f5e4e70d"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
-
-  livecheck do
-    url "https://github.com/libnice/libnice.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/libnice/libnice.git", branch: "master"
 
   bottle do
     rebuild 1
