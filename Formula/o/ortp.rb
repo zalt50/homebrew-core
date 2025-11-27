@@ -2,17 +2,16 @@ class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
   license "GPL-3.0-or-later"
-  revision 1
 
   stable do
-    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.60/ortp-5.4.60.tar.bz2"
-    sha256 "c5368ff08b22c789a3d94613fce5d20e7b98c3b795663e4d9f56bc5f57ea35bb"
+    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.63/ortp-5.4.63.tar.bz2"
+    sha256 "1e53d3a47913f2b9df7e416f2361a76158cd14d7ce29d9230274802b757a830f"
 
     # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
     # https://github.com/BelledonneCommunications/bctoolbox
     resource "bctoolbox" do
-      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.60/bctoolbox-5.4.60.tar.bz2"
-      sha256 "c3585e63d776242dd4cc9588ae6ea625fb53ee686022765ee94ae16bf99e3b25"
+      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.63/bctoolbox-5.4.63.tar.bz2"
+      sha256 "a53ff2bf101df0c175d287136c0ce418b77331972ba4c0df0e70370151fa2c76"
 
       livecheck do
         formula :parent
