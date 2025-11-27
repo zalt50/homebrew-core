@@ -7,12 +7,12 @@ class JqLsp < Formula
   head "https://github.com/wader/jq-lsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe2d0416f509cbf40f2023581b4d0b4835b1a33206889243a6589908297a975d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe2d0416f509cbf40f2023581b4d0b4835b1a33206889243a6589908297a975d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe2d0416f509cbf40f2023581b4d0b4835b1a33206889243a6589908297a975d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e20cf52e80e4c80c2e9e66a7b25308ca3875832b091b78a6c98d99f20febd915"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a628404c82373d66469a3fcbccfadd2f9df400045c35b6caffb9e1d6465719b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbc48c5f1420199db1201e3bdd7124605d0edbeae5ea1802089c5943fdd73dcb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "115478691dfbe74b6be6e80bdab1af763aeae7b488f21a2af2f17ee79419035f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "115478691dfbe74b6be6e80bdab1af763aeae7b488f21a2af2f17ee79419035f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "115478691dfbe74b6be6e80bdab1af763aeae7b488f21a2af2f17ee79419035f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1e445a4064ce44be225fc606c2fcff75917feeed398f02a5b9ee5d125a5028d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbf7411589b3489a6efc411cb4eede66c46280d70b8794cd4d5b9c97edc4a176"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f62f9d9aec3e138c6c4bed4654b9c104636b31eff1a8c0d664c8585b5fc0293"
   end
 
   depends_on "go" => :build
