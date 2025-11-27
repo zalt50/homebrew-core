@@ -1,10 +1,10 @@
 class ZlibNgCompat < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https://github.com/zlib-ng/zlib-ng"
-  url "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/zlib-ng-2.2.5.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/zlib-ng-2.2.5.tar.gz"
-  sha256 "5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18"
+  url "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.1.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/zlib-ng-2.3.1.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/zlib-ng-2.3.1.tar.gz"
+  sha256 "94cfa0a53a8265c813c8369d3963bf09ac6a357824ad1f93aee13486176e152e"
   license "Zlib"
   head "https://github.com/zlib-ng/zlib-ng.git", branch: "develop"
 
