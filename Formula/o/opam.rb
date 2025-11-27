@@ -1,10 +1,9 @@
 class Opam < Formula
   desc "OCaml package manager"
   homepage "https://opam.ocaml.org"
-  url "https://github.com/ocaml/opam/releases/download/2.4.1/opam-full-2.4.1.tar.gz"
-  sha256 "c4d053029793c714e4e7340b1157428c0f90783585fb17f35158247a640467d9"
+  url "https://github.com/ocaml/opam/releases/download/2.5.0/opam-full-2.5.0.tar.gz"
+  sha256 "25fb98f962c4227c1261e142afc68a416778e6e819600bd5ee3ec4a18ae1e238"
   license "LGPL-2.1-only"
-  revision 1
   head "https://github.com/ocaml/opam.git", branch: "master"
 
   # Upstream sometimes publishes tarballs with a version suffix (e.g. 2.2.0-2)
