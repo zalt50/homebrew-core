@@ -44,6 +44,8 @@ class Graphite2 < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    inreplace lib/"pkgconfig/graphite2.pc", prefix.realpath, opt_prefix
   end
 
   test do
