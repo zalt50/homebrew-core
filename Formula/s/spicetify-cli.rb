@@ -7,12 +7,12 @@ class SpicetifyCli < Formula
   head "https://github.com/spicetify/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "347c4073618b6855e01b9f9372264a43193a34e291f347a2b36b5ef475ed419a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "347c4073618b6855e01b9f9372264a43193a34e291f347a2b36b5ef475ed419a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "347c4073618b6855e01b9f9372264a43193a34e291f347a2b36b5ef475ed419a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e9ee34463066fdd3ae610b1df68d504e4646464aefebd7eada46c1992afc7e5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aba2bab7f1f67ffb19bf22201c64cab814b7b07e7d7824937b13f5316dc390d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "504b257c7e0093044036e45b2096d3bd5b6257a496f13044b7bf2e12ccec02ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7730828c325f118c5b7cda8176325c5138255a906805d9cc040a75e87421ecc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7730828c325f118c5b7cda8176325c5138255a906805d9cc040a75e87421ecc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7730828c325f118c5b7cda8176325c5138255a906805d9cc040a75e87421ecc9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e75f1614c7b8e1824f93e7c8ab527b2a0d1f6d00d7d2534f4469a488eab9737"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "709848e4b1d8b662022cf5e130b6e1c8f839b677583db6a468c2768735fd72ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee33c6a04113305f92bdfb36486cda84d69bec9090022f2fb3bdbe4a23bb244a"
   end
 
   depends_on "go" => :build
