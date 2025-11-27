@@ -1,8 +1,9 @@
 class Libcoap < Formula
   desc "Lightweight application-protocol for resource-constrained devices"
   homepage "https://github.com/obgm/libcoap"
-  url "https://github.com/obgm/libcoap/archive/refs/tags/v4.3.5.tar.gz"
-  sha256 "a417ed26ec6c95c041b42353b5b6fad1602e2bf42a6e26c09863450e227b7b5f"
+  url "https://github.com/obgm/libcoap/archive/refs/tags/v4.3.5a.tar.gz"
+  version "4.3.5a"
+  sha256 "bca78a2076ebb02179f93ab6cf2363b1256d878b540f810c238ea231ad5948ab"
   license "BSD-2-Clause"
 
   bottle do
