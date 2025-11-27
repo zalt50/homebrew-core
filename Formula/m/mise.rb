@@ -12,12 +12,12 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acbca5a82414344fe0c97d5b76354f0fbea72969b40c291cffdcbb9cf6db4c8f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fd3bc3dfe822d1481c7dcfb0b08ebcbf57ac98f1c0113c08a94b87f26bee70e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a5cc7c12913714bdb163a030000c93dfc155618a282536665a1f3bfb2c0202c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8efae560e50a2cd864bf4917ce5cac105fb6db57fe2b6afda0d73b723cf4e47d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e622684630d5002ece43ff9dd6bb3657638ea8f9a25ac0ea4ed735797e5ab940"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0043615d61864238d57aed6997b0b6580f9e8d827e8a8cc938cb50b98af5f595"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0ccf42767e106a9eaca4a169f790dea6dd7afa08673d185186de0dadac6e704"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0226c2998635f9bd81030bfb6ee6f433e3a6d4ceeb24e41f15ae3b347f839901"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9098454ff14cd0b1a71aee2e12ed8d6ff4cde16015bdbf33032624d916b172f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e6f2dcd62a19c14dfbf417dc6253575bed9076126c53f91c98dd76dca7f135a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b5fae58ebd46da35640f3c59b327adb169aa123afa032bcd6c7910efab86252"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02c912307abe92c4c38b8e7c0a36b92ef8b55961e1326e13ab83ae433f828bb1"
   end
 
   depends_on "cmake" => :build
