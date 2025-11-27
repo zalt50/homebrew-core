@@ -1,15 +1,13 @@
 class LibniceGstreamer < Formula
   desc "GStreamer Plugin for libnice"
   homepage "https://wiki.freedesktop.org/nice/"
-  url "https://libnice.freedesktop.org/releases/libnice-0.1.22.tar.gz"
-  sha256 "a5f724cf09eae50c41a7517141d89da4a61ec9eaca32da4a0073faed5417ad7e"
+  url "https://libnice.freedesktop.org/releases/libnice-0.1.23.tar.gz"
+  sha256 "618fc4e8de393b719b1641c1d8eec01826d4d39d15ade92679d221c7f5e4e70d"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
 
   livecheck do
     formula "libnice"
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "7d8ec7c8991e1c12e4382372d7ce519b9a7cd64938ec2e3b454ed415f7083dd3"
@@ -64,38 +62,7 @@ Subject: [PATCH] meson: Add an option to build only the gstreamer plugin
 
 This is one possible approach to break the circular dep between
 gstreamer and libnice.
----
- .gitlab-ci.yml    | 12 ++++++++++++
- gst/gstnicesink.h |  2 +-
- gst/gstnicesrc.h  |  2 +-
- gst/meson.build   |  3 ++-
- meson.build       | 32 +++++++++++++++++++++-----------
- meson_options.txt |  2 ++
- 6 files changed, 39 insertions(+), 14 deletions(-)
 
-diff --git a/.gitlab-ci.yml b/.gitlab-ci.yml
-index 88102067..00b8dff1 100644
---- a/.gitlab-ci.yml
-+++ b/.gitlab-ci.yml
-@@ -89,6 +89,18 @@ build:
-     paths:
-       - build/
-
-+build gstreamer-plugin-only:
-+  stage: build
-+  extends:
-+  - build
-+  script:
-+    ## && true to make gitlab-ci happy
-+    - source scl_source enable rh-python36 && true
-+    - meson --werror --warnlevel 2 -Dgtk_doc=enabled -Dgstreamer=disabled -Dgstreamer-plugin-only=false --prefix=$PREFIX -Db_coverage=true build_libs/
-+    - ninja -C build_libs install
-+    - meson --werror --warnlevel 2 -Dgstreamer=enabled -Dgstreamer-plugin-only=true --prefix=$PREFIX -Db_coverage=true --pkg-config-path=$PREFIX/lib64/pkgconfig build_plugin/
-+    - ninja -C build_plugin/ install
-+
-
- .build windows:
-   image: 'registry.freedesktop.org/gstreamer/gstreamer/amd64/windows:2023-08-24.0-main'
 diff --git a/gst/gstnicesink.h b/gst/gstnicesink.h
 index b9e6e6c5..49c2d5ce 100644
 --- a/gst/gstnicesink.h
@@ -140,27 +107,21 @@ index 4ed4794f..31e3e5fb 100644
    install_dir: gst_plugins_install_dir,
    install: true)
 diff --git a/meson.build b/meson.build
-index 4faffb40..81cd7eaf 100644
+index 3936658..12f6601 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -31,6 +31,7 @@ nice_datadir = join_paths(get_option('prefix'), get_option('datadir'))
-
+ 
  cc = meson.get_compiler('c')
  static_build = get_option('default_library') == 'static'
 +gstreamer_plugin_only = get_option('gstreamer-plugin-only')
-
+ 
  syslibs = []
-
-@@ -79,12 +80,17 @@ add_project_arguments('-D_GNU_SOURCE',
-   '-DHAVE_CONFIG_H',
-   '-DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_' + glib_req_minmax_str,
+ 
+@@ -81,6 +82,15 @@ add_project_arguments('-D_GNU_SOURCE',
    '-DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_' + glib_req_minmax_str,
--  '-DNICE_VERSION_MAJOR=' + version_major,
--  '-DNICE_VERSION_MINOR=' + version_minor,
--  '-DNICE_VERSION_MICRO=' + version_micro,
--  '-DNICE_VERSION_NANO=' + version_nano,
    language: 'c')
-
+ 
 +if not gstreamer_plugin_only
 +  add_project_arguments(
 +    '-DNICE_VERSION_MAJOR=' + version_major,
@@ -170,13 +131,13 @@ index 4faffb40..81cd7eaf 100644
 +    language: 'c')
 +endif
 +
- cdata = configuration_data()
-
- cdata.set_quoted('PACKAGE_STRING', meson.project_name())
-@@ -296,11 +302,15 @@ endif
-
+ # Same logic as in GLib.
+ glib_debug = get_option('glib_debug')
+ disable_cast_checks = glib_debug.disabled() or (
+@@ -313,11 +323,15 @@ endif
+ 
  gir = find_program('g-ir-scanner', required : get_option('introspection'))
-
+ 
 -subdir('agent')
 -subdir('stun')
 -subdir('socket')
@@ -191,23 +152,23 @@ index 4faffb40..81cd7eaf 100644
 +  subdir('random')
 +  subdir('nice')
 +endif
-
+ 
  if gst_dep.found()
    subdir('gst')
-@@ -316,11 +326,11 @@ else
+@@ -333,11 +347,11 @@ else
    endif
  endif
-
+ 
 -if not get_option('tests').disabled()
 +if not gstreamer_plugin_only and not get_option('tests').disabled()
    subdir('tests')
  endif
-
+ 
 -if not get_option('examples').disabled()
 +if not gstreamer_plugin_only and not get_option('examples').disabled()
    subdir('examples')
  endif
-
+ 
 diff --git a/meson_options.txt b/meson_options.txt
 index cd980cb5..cd7c879b 100644
 --- a/meson_options.txt
