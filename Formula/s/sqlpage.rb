@@ -1,8 +1,8 @@
 class Sqlpage < Formula
   desc "Web app builder using SQL queries to create dynamic webapps quickly"
   homepage "https://sql-page.com/"
-  url "https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.39.1.tar.gz"
-  sha256 "6c720179fe660afbb58c66713854e5c44c9e4274157884aab8d661d789e0657e"
+  url "https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.40.0.tar.gz"
+  sha256 "1550ef8ee187f2ddf16b182b51716606d7b3e6ba71a6c5007de0a61c94d71bec"
   license "MIT"
   head "https://github.com/sqlpage/SQLpage.git", branch: "main"
 
@@ -24,12 +24,16 @@ class Sqlpage < Formula
 
   test do
     port = free_port
-    pid = fork do
-      ENV["PORT"] = port.to_s
-      exec "sqlpage"
-    end
-    sleep(2)
+
+    ENV["PORT"] = port.to_s
+    pid = spawn bin/"sqlpage"
+
+    sleep 2
+    sleep 3 if OS.mac? && Hardware::CPU.intel?
+
     assert_match "It works", shell_output("curl -s http://localhost:#{port}")
-    Process.kill(9, pid)
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
