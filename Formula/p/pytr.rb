@@ -3,8 +3,8 @@ class Pytr < Formula
 
   desc "Use TradeRepublic in terminal and mass download all documents"
   homepage "https://github.com/pytr-org/pytr"
-  url "https://files.pythonhosted.org/packages/c3/ae/4e19a7477f65d432421a001af03d70e2caafb4f7398d791b28bd8d47a892/pytr-0.4.3.tar.gz"
-  sha256 "efd6f11506e2be93d7c0e0e4fe4feaf9cb6b466beb76ba2ef03c6197d3ab719d"
+  url "https://files.pythonhosted.org/packages/a2/64/25ce842142742a5dfbb3505674ebed72d6ea21bca06bc1d059877b85fa26/pytr-0.4.4.tar.gz"
+  sha256 "21e5f26da56ecc4ebd713dd294dcd08b008352973f3440728136263203417108"
   license "MIT"
 
   bottle do
@@ -28,8 +28,8 @@ class Pytr < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "coloredlogs" do
@@ -78,8 +78,8 @@ class Pytr < Formula
   end
 
   resource "shtab" do
-    url "https://files.pythonhosted.org/packages/5a/3e/837067b970c1d2ffa936c72f384a63fdec4e186b74da781e921354a94024/shtab-1.7.2.tar.gz"
-    sha256 "8c16673ade76a2d42417f03e57acf239bfb5968e842204c17990cae357d07d6f"
+    url "https://files.pythonhosted.org/packages/b0/7a/7f131b6082d8b592c32e4312d0a6da3d0b28b8f0d305ddd93e49c9d89929/shtab-1.8.0.tar.gz"
+    sha256 "75f16d42178882b7f7126a0c2cb3c848daed2f4f5a276dd1ded75921cc4d073a"
   end
 
   resource "six" do
