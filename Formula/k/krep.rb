@@ -1,8 +1,8 @@
 class Krep < Formula
   desc "High-Performance String Search Utility"
   homepage "https://github.com/davidesantangelo/krep"
-  url "https://github.com/davidesantangelo/krep/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "76b0a9224b1e31aff49637c103b68e0d45d6b46456069e67e57b876a5c1ade59"
+  url "https://github.com/davidesantangelo/krep/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "0508099e1de0c38d35afad283586798fcb9cbd5c3ddbdae4028a6dfdba205405"
   license "BSD-2-Clause"
 
   bottle do
@@ -15,9 +15,6 @@ class Krep < Formula
   end
 
   def install
-    # Version mismatch, remove in next release
-    inreplace "krep.c", 'VERSION "1.2"', 'VERSION "1.3"'
-
     system "make", "install", "PREFIX=#{prefix}"
   end
 
