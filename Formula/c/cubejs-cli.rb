@@ -1,8 +1,8 @@
 class CubejsCli < Formula
   desc "Cube.js command-line interface"
   homepage "https://cube.dev/"
-  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-1.5.5.tgz"
-  sha256 "ca98cf87d0d2c20a704c4c2df3da3751f15db4328b3eed9c01374cc53d357aa0"
+  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-1.5.10.tgz"
+  sha256 "d4a6467f01faf01ffd18636e4a951051149638e675d9633b5cbfc0a6da93b4cf"
   license "Apache-2.0"
 
   bottle do
@@ -20,6 +20,9 @@ class CubejsCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    node_modules = libexec/"lib/node_modules/cubejs-cli/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
