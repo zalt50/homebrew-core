@@ -1,8 +1,8 @@
 class Television < Formula
   desc "General purpose fuzzy finder TUI"
   homepage "https://github.com/alexpasmantier/television"
-  url "https://github.com/alexpasmantier/television/archive/refs/tags/0.13.11.tar.gz"
-  sha256 "a524e0cb07224794df7fda729a0aa90d77d7dfbb87a1a46a9b3b1a3c838532d5"
+  url "https://github.com/alexpasmantier/television/archive/refs/tags/0.13.12.tar.gz"
+  sha256 "bae0aa3b2df57417321f237b77aaa0a40a533988f33e7c05b68ffab248768206"
   license "MIT"
   head "https://github.com/alexpasmantier/television.git", branch: "main"
 
@@ -22,12 +22,14 @@ class Television < Formula
   def install
     system "cargo", "install", *std_cargo_args
     man1.install "man/tv.1"
+
+    generate_completions_from_executable(bin/"tv", "init")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tv -V")
 
     output = shell_output("#{bin}/tv help")
-    assert_match "Cross-platform", output
+    assert_match "fuzzy finder for the terminal", output
   end
 end
