@@ -1,8 +1,8 @@
 class Cagent < Formula
   desc "Agent Builder and Runtime by Docker Engineering"
   homepage "https://github.com/docker/cagent"
-  url "https://github.com/docker/cagent/archive/refs/tags/v1.9.27.tar.gz"
-  sha256 "615bb73b3dea2ad9287f2e4e151b6db89d740a11095e31cb55f1c764066e9f88"
+  url "https://github.com/docker/cagent/archive/refs/tags/v1.9.29.tar.gz"
+  sha256 "bb0f61a71f4609c8c53e4637032828d573e43c203edc4771cc417d28644f6936"
   license "Apache-2.0"
   head "https://github.com/docker/cagent.git", branch: "main"
 
@@ -18,6 +18,8 @@ class Cagent < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/docker/cagent/pkg/version.Version=v#{version}
