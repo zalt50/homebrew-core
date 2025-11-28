@@ -1,8 +1,8 @@
 class Gwctl < Formula
   desc "CLI for managing and inspecting Gateway API resources in Kubernetes clusters"
   homepage "https://github.com/kubernetes-sigs/gwctl"
-  url "https://github.com/kubernetes-sigs/gwctl/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "07e300a95a9c2e8e88f96c8507e5acdc1e051f8b79125ee9c8174a06676ef655"
+  url "https://github.com/kubernetes-sigs/gwctl/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "ee3bf78df7645f518db0adc21aa156507847c4f0727eb949d7d49c8aa8cb9c73"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/gwctl.git", branch: "main"
 
