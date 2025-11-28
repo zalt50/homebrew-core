@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/ec/38/6550ada4217e5583b27495e50504b12b8a8a326362cb6d241b669bd3ee0f/gamdl-2.7.5.tar.gz"
-  sha256 "40c32c64de2bf1c2db592a2c2a001d18ac21150088c9358f375e06fa3d0b29c2"
+  url "https://files.pythonhosted.org/packages/20/f9/4dc8cab6707346e6b8a2fed6d6f89d232098a8234f26a671340ade4285ae/gamdl-2.8.tar.gz"
+  sha256 "01543c4079c30dc5db5414e91fd70197c997672229434810008cd10d328144b8"
   license "MIT"
 
   bottle do
@@ -42,8 +42,8 @@ class Gamdl < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "construct" do
@@ -97,8 +97,8 @@ class Gamdl < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
-    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
+    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
+    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
   end
 
   resource "pycryptodome" do
