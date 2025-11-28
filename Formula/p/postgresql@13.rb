@@ -1,15 +1,9 @@
 class PostgresqlAT13 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v13.22/postgresql-13.22.tar.bz2"
-  sha256 "d36d83dc89e625502cf6fb1d0529642ba1266bd614b4e4a41cefd1dddcf09080"
+  url "https://ftp.postgresql.org/pub/source/v13.23/postgresql-13.23.tar.bz2"
+  sha256 "6ec3c82726af92b7dec873fa1cdf881eca92a4219787dfad05acb6b10e041fd6"
   license "PostgreSQL"
-  revision 2
-
-  livecheck do
-    url "https://ftp.postgresql.org/pub/source/"
-    regex(%r{href=["']?v?(13(?:\.\d+)+)/?["' >]}i)
-  end
 
   bottle do
     sha256 arm64_tahoe:   "2c454420afe5f7f053a6d8c449f769440c85466faec54a9859718305820c83cc"
