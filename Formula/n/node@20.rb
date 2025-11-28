@@ -1,8 +1,8 @@
 class NodeAT20 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v20.19.5/node-v20.19.5.tar.xz"
-  sha256 "230c899f4e2489c4b8d2232edd6cc02f384fb2397c2a246a22e415837ee5da51"
+  url "https://nodejs.org/dist/v20.19.6/node-v20.19.6.tar.xz"
+  sha256 "2026f9ff52c286d7c7d99932b21be313d1736aea524c5aff1748d41ab0bd9a20"
   license "MIT"
 
   livecheck do
