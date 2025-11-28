@@ -45,12 +45,12 @@ class Shaderc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f13a92f1904a7217831b416a3e7272cf08e7c8c1599fc1cdf21538b5a49b8f06"
-    sha256 cellar: :any,                 arm64_sequoia: "a063f7f50db8978dcb52f36dae50459daa6990e5b8fa7838543301486273405b"
-    sha256 cellar: :any,                 arm64_sonoma:  "d52d1ddaca69c31d353f0d023944e47d94a3563d9c17e38b110f4bfded8699d7"
-    sha256 cellar: :any,                 sonoma:        "376c3d44b2ad8a48d0921004782644cd28a5d2e0a245a6da4ce63f823829829a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "569a4cc1839f7f218feaee7e28bce9816d5e613002959d872986e4d53c18d7a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3e1488c44b3557dad4fb152414a2a4e175e1a8a232fb7be87ffffff770213e5"
+    sha256 cellar: :any,                 arm64_tahoe:   "372d9e06a002208c4d7ddfc7e67bbf7fe3d5966f31c3404a003dc41a837209f8"
+    sha256 cellar: :any,                 arm64_sequoia: "031f39fb5aa52cbf117f95dc26d2a147fd83040fd12ed4709723eb3765a635a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a28cc58ee63a9c26170c1ab2fb22ff85529d19b90b65f58864306ae3c62c097"
+    sha256 cellar: :any,                 sonoma:        "10f3643dbf87cd29da487f16276ca6260e64c2fed5623baa7ee1a4f89e8a0201"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9623a77760fffa38fa4d09106bd2995da14dbc980d33f6146af253449f4a4964"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9effa4b6a3ba860fcbe23c9cbc218dc541e7152eb7bf31416322a1289cbbe5dc"
   end
 
   head do
