@@ -12,14 +12,12 @@ class LibatomicOps < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3b35d20b9a9f01c1a7b115b1aa74a7676f0737383b3d391e91b7272a58ff4902"
-    sha256 cellar: :any,                 arm64_sequoia: "6db0b93459945fdc338138364b1b35e7529dc75c6040216934c8cb6320055c51"
-    sha256 cellar: :any,                 arm64_sonoma:  "f78f714dbd114495d19a8da331eb4fd7725c7d3cf000285a40cfc824a5d34bef"
-    sha256 cellar: :any,                 arm64_ventura: "2754abd7cdb11446d6f9621e126df341fd98dbf06b07853f8f314469b5c74a5e"
-    sha256 cellar: :any,                 sonoma:        "b728e6b5fbaf5f16dc8d96fa2571928dd81d4201b2edb6e59420ed49a77746b1"
-    sha256 cellar: :any,                 ventura:       "d3fe9707a966374d76581696952651843bdb8d1c3d866ca9e10a7632bf3a3ca9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33efd752c43a582af745c79abf29d4e7cd5183ec7649f378f29477acd5b7611f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a759ccaad62a2cea05d353353d2212bbe8c76241821fbd148b672db6a4e98944"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b3dae32f7ff10faaa84a3a5ee3486cf65496feb75519dcaa2cf2d171be73fd7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4378fe1188ad59424d8f452c9123fd04d117a44644a94ba8cc6376a6dcee2a00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81c1175fc0dc5c6c001328997b805cb39be52690b3609df78ccead64b655f694"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab9bc50267eab633db6d61166db93be0e5bf365b09106e1aeaaf581c093f3c46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "241c6cae391092c83e9d29d593085476df8ace090d633578d7e387bbbe730765"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11be1a0fc988f891a83af51dcaa1712b17e4475acf92abf19f4f15a7ae92364e"
   end
 
   depends_on "cmake" => :build
