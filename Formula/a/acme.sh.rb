@@ -1,8 +1,8 @@
 class AcmeSh < Formula
   desc "ACME client"
   homepage "https://github.com/acmesh-official/acme.sh"
-  url "https://github.com/acmesh-official/acme.sh/archive/refs/tags/3.1.1.tar.gz"
-  sha256 "c5d623ac0af400e83cd676aefaf045228f60e9fc597fea5db4c3a5bd7f6bfcf4"
+  url "https://github.com/acmesh-official/acme.sh/archive/refs/tags/3.1.2.tar.gz"
+  sha256 "a51511ad0e2912be45125cf189401e4ae776ca1a29d5768f020a1e35a9560186"
   license "GPL-3.0-only"
 
   bottle do
@@ -30,11 +30,7 @@ class AcmeSh < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/acme.sh --version")
 
-    expected = if OS.mac?
-      "Main_Domain  KeyLength  SAN_Domains  CA  Created  Renew\n"
-    else
-      "Main_Domain\tKeyLength\tSAN_Domains\tCA\tCreated\tRenew\n"
-    end
+    expected = /Main_Domain\s*KeyLength\s*SAN_Domains\s*Profile\s*CA\s*Created\s*Renew/i
     assert_match expected, shell_output("#{bin}/acme.sh --list")
   end
 end
