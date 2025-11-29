@@ -8,6 +8,15 @@ class Py7zr < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/miurahr/py7zr.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02da521b47f7f8947c63b64a6344054b49c030ae9d9b267dcc1f46196ac465b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3dfa9479719f8c0271aed5d34f305b0f0cd4d169bd7d70a868a79123152ea687"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c60c530c0945439a23240b325ce941c1473d77668eaacd83f5ab13a42dc39d5a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed9f82f2e1a078061d9ba1b77fa6fa593af2f73436f3497230053a1775423802"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0427b82540823f8277aa2ca891a396570f10a5e39da9e6854972ebc703346e0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d895e0a0fcebf5f927c0e2eff5d047211aa6024699275971bb6398031068e7"
+  end
+
   depends_on "python@3.14"
 
   resource "brotli" do
