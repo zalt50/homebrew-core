@@ -7,12 +7,12 @@ class Sqlpage < Formula
   head "https://github.com/sqlpage/SQLpage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "504cbefb84b0953189d489da5f74aff9fba606e09ddbc79400a3adf802bcca83"
-    sha256 cellar: :any,                 arm64_sequoia: "4e28d0d76f4d5765247cdc9f5996f9471f87678b301eada21e47eedc8330a410"
-    sha256 cellar: :any,                 arm64_sonoma:  "4eeabfd69e1940408d44b5875eaa4e813c61faafc7364fb1f634b68510077344"
-    sha256 cellar: :any,                 sonoma:        "c568135b35cafd9931d9238dab3eca10aa1c6ebb32d4401e7452e84e3660216c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00fbbc3f93f695d0ed947886b28f1f7539db72b834cd0fbb5e0e0e55094e2fa4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b61281eea6ac79e79552bbebd7fcf9619d4a037ec2681b19b00a72935e9504cd"
+    sha256 cellar: :any,                 arm64_tahoe:   "fbb8faaff6ff8031ce45cdb4f902776d91e88e39b4f87fafe8fd594227dda373"
+    sha256 cellar: :any,                 arm64_sequoia: "3c3a6a1f2a41528e3c576adb4168aa66a1d0e7d0d84222ffbc16ceee64998cd3"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cfc5fb55701ca049f891488cfd8390f14c5a8c9095c6f750607f2bae512068d"
+    sha256 cellar: :any,                 sonoma:        "c598d70af92811e6b18177969bcb982fe3e02b7d58e5296e6b30104a8aeefdf7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7af59b25dc9825511f9264a2c98202b33f7c37e361ed0780f3c0cc270ea1d36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cced23443e621fa7d01bc67c1bb972219ae96c7c6909385cf7d34158b70e7bec"
   end
 
   depends_on "rust" => :build
