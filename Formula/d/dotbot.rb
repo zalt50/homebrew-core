@@ -8,13 +8,12 @@ class Dotbot < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ee51eb3c9c781b874266489e72eaedde69b5835768927a0564caa07754c94b1b"
-    sha256 cellar: :any,                 arm64_sequoia: "a01aca0b02a12194ab780fc68f9782048a8e07d80bf85921a308a0f2e4a4c29a"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef8170a154784e43ed2aa42da39277048053e5a4df02dd34edb3b76979478abe"
-    sha256 cellar: :any,                 sonoma:        "9130e0815cae534f4e554b39653145bd888f54bd70224522e54d6c0ca7d53be8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f66f6e4ec5fdcdc198b6fb925ae52de5a90d44ed0da1320772f1ff6650f05c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98f397c00719cc2e5959d51c36ea47d2a0f7bc39601c9154506647b15759cbce"
+    sha256 cellar: :any,                 arm64_tahoe:   "a40f62aa621daccfe4a1a40c39117876eeac862a9d95e079b5ed1817bc633f68"
+    sha256 cellar: :any,                 arm64_sequoia: "cc0da0c4f520eb535c8267f7a94f44e508b68165d363f92f5d4d75af93ffad5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e93677b6e8c350f53ef70d95c6e27b8e447d4d994e102f528f0cc98661878cf0"
+    sha256 cellar: :any,                 sonoma:        "0a7973e810721b5b016729e597f638cd85898bd59ef6195400edeace22c5ec18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7779c8acc1f27d91a99a80eb5ab9eb49101b3b9df09364569f910f06d8c256db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf9c4b4b11dd4993d6e921804063729f7e004a2cc00b6b33dd2ddc87d555372b"
   end
 
   depends_on "libyaml"
