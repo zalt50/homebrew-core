@@ -33,6 +33,8 @@ class Bkmr < Formula
 
       system "cargo", "install", *std_cargo_args
     end
+
+    generate_completions_from_executable(bin/"bkmr", "completion")
   end
 
   test do
