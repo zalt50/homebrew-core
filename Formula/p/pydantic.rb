@@ -6,6 +6,7 @@ class Pydantic < Formula
   url "https://files.pythonhosted.org/packages/69/44/36f1a6e523abc58ae5f928898e4aca2e0ea509b5aa6f6f392a5d882be928/pydantic-2.12.5.tar.gz"
   sha256 "4d351024c75c0f085a9febbb665ce8c0c6ec5d30e903bdb6394b7ede26aebb49"
   license "MIT"
+  version_scheme 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "a52a3b0086991e6e565fd431625d357b94752e282f70a23b2a9c19384c88d805"
