@@ -7,12 +7,12 @@ class Cpr < Formula
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "37ad08fc58f3a53c425e9ffcf1f4118d937ad7041de61d45d7af06969cfcf46c"
-    sha256 cellar: :any,                 arm64_sequoia: "b4f49c44c7af2a84f22f73e1d12c548a96b16a2e57c82a51e03c268f5c689393"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f78a171abb588806831d5f810c1be1d2243a7234163dca49b1f04a1adbaab9d"
-    sha256 cellar: :any,                 sonoma:        "f6cd693e2e3b3c94c576278c6d173e50fab8495178e5a0663244059025f6df84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bce11bbeceb0bc7a7db13cb703889561aab1f3d1774e53e5c08771df69acff4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c6dfbd95b5dab11ebeee3e1df53f8e344ef82306a5abd12c6f75d71d624debe"
+    sha256 cellar: :any,                 arm64_tahoe:   "2f6fedaaf9ada689d14bc1854d24ea140cb9c42bc4920bac7b7ab476705f621c"
+    sha256 cellar: :any,                 arm64_sequoia: "48d1fd8759a8834695b3faca744b46c9da6977b2b2c5fc912d261a78a483e348"
+    sha256 cellar: :any,                 arm64_sonoma:  "518ed4d3f72ee56e3c078e6d9233726c00248c26aad77c223ecbe21243ceaa12"
+    sha256 cellar: :any,                 sonoma:        "cab1af9d093f2029d4b1fc0af5d6c15184734d3290b31f99ee61254742cacea7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "516258c353c3a7524c61b540b98e9ad31863c3145cd212aeac87a6ea168bcdc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71bc13d254bcfe7b03a844b9d49a70b92806ce146d98a0e78bd41accf89debbc"
   end
 
   depends_on "cmake" => :build
