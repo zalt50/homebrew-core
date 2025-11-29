@@ -1,8 +1,8 @@
 class Karmadactl < Formula
   desc "CLI for Karmada control plane"
   homepage "https://karmada.io/"
-  url "https://github.com/karmada-io/karmada/archive/refs/tags/v1.15.2.tar.gz"
-  sha256 "f70ef3701ec6ab9711a529970fcdf983ab83558989eea4a3caf539c7486c9455"
+  url "https://github.com/karmada-io/karmada/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "61c0e81f91e5b638775b22e0e324fcb974a36b136008ceb841a3398ef04b79a4"
   license "Apache-2.0"
   head "https://github.com/karmada-io/karmada.git", branch: "master"
 
