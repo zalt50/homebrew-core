@@ -6,14 +6,7 @@ class AcmeSh < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d00192c5ed57c194866906887b7407562b52c191d0db0df2462dfb31b46db3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d00192c5ed57c194866906887b7407562b52c191d0db0df2462dfb31b46db3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d00192c5ed57c194866906887b7407562b52c191d0db0df2462dfb31b46db3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d00192c5ed57c194866906887b7407562b52c191d0db0df2462dfb31b46db3c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2dea65246401fb500e1cdee17b5ddf2b9b06079d736e1de9d4082464b3fbe5d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "2dea65246401fb500e1cdee17b5ddf2b9b06079d736e1de9d4082464b3fbe5d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d00192c5ed57c194866906887b7407562b52c191d0db0df2462dfb31b46db3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d00192c5ed57c194866906887b7407562b52c191d0db0df2462dfb31b46db3c"
+    sha256 cellar: :any_skip_relocation, all: "cc4d42523258dba4a4c1c9b64668577023e123887971d5a1ede2ed1b33de39c1"
   end
 
   def install
