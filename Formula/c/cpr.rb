@@ -1,8 +1,8 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
   homepage "https://docs.libcpr.org/"
-  url "https://github.com/libcpr/cpr/archive/refs/tags/1.14.0.tar.gz"
-  sha256 "db9b4d615f71b1dbaa7ee5d972a15001b98100da0cf62fe99249b8eec85eabd8"
+  url "https://github.com/libcpr/cpr/archive/refs/tags/1.14.1.tar.gz"
+  sha256 "213ccc7c98683d2ca6304d9760005effa12ec51d664bababf114566cb2b1e23c"
   license "MIT"
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
