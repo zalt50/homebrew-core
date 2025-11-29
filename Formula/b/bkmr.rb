@@ -12,12 +12,13 @@ class Bkmr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a5db2f972a1acb355c17586f7acc7308250b066f2460751c48e8fbf945fe70c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cf7d172d55aa136fed990a344924383cc61c853b6a11143ad74c96e4a3403df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07baa20a0d1da068725d291f130088deaae11b3216cfa5edcbefeb1882ef9f29"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e14ad916c71da05a9dbdf6db3de98fb75de1b7e09e3a0dcc72575fb071b607ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f8122806c317de414ea777c3d1e5f27bbd233e5fa14cf2443804d56baad67d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bc224d4b4e729f798ed4c70e9399af92a8cfbebb9b66b2ebd9124874f9557ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a46e2f3171e258f7d79f5cd8a43bb0f2df0fae4b37a898996c68f95407020ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79a8264d15ea0041568f7f0366f70a2aec6a061ccd59442d6974fed6045e6f12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2042d459082422fcea6eb00f8c8f7b64be50fb1e94c42bbd496649df65ffb1f9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c47f48870344c7e4c8d91d6cc865f0c607fdc7a3a6f585e0661a4dde0d6dca9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d97879e99f8a9f9330f168ab7886b6b6dab471c706ac0d810ae42b2aef3433db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fb9fedac7bbb991f87c2a3c5c89fc71457dbd39f08b811224d50fdfd3092e06"
   end
 
   depends_on "rust" => :build
@@ -33,6 +34,8 @@ class Bkmr < Formula
 
       system "cargo", "install", *std_cargo_args
     end
+
+    generate_completions_from_executable(bin/"bkmr", "completion")
   end
 
   test do
