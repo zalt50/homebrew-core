@@ -1,8 +1,8 @@
 class Fastbuild < Formula
   desc "High performance build system for Windows, OSX and Linux"
   homepage "https://fastbuild.org/"
-  url "https://github.com/fastbuild/fastbuild/archive/refs/tags/v1.17.tar.gz"
-  sha256 "f789b19468aaab0a8e2f013c42e3a53e2412c659948f007f15b46b4674ff5434"
+  url "https://github.com/fastbuild/fastbuild/archive/refs/tags/v1.18.tar.gz"
+  sha256 "9668d332ecb74303687680b6156caa6b9684db1dfbe9ce8b6846efdbb74ba4c4"
   license "Zlib"
 
   bottle do
@@ -19,12 +19,12 @@ class Fastbuild < Formula
 
   resource "bootstrap-fastbuild" do
     on_macos do
-      url "https://fastbuild.org/downloads/v1.16/FASTBuild-OSX-x64%2BARM-v1.16.zip"
-      sha256 "b1267a0284cddf72db9d5fc89e10695ca3a56734f156f8d7f05d789359431109"
+      url "https://fastbuild.org/downloads/v1.17/FASTBuild-OSX-x64%2BARM-v1.17.zip"
+      sha256 "66ac01d8aa2e04f7a9c4870fdb7ef79674473462a0dde818768b67c25eaa893b"
     end
     on_linux do
-      url "https://fastbuild.org/downloads/v1.16/FASTBuild-Linux-x64-v1.16.zip"
-      sha256 "691363548e1c1b2d0cda6ae1fbddb9efc9719688c05cc45acffbb49d37689a34"
+      url "https://fastbuild.org/downloads/v1.17/FASTBuild-Linux-x64-v1.17.zip"
+      sha256 "cbaae008fad417339734a32e24180958d5f0df640bc324d2b976cdb9dc97f2ac"
     end
   end
 
