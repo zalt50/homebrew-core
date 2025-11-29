@@ -22,12 +22,16 @@ class Dqlite < Formula
   depends_on "sqlite"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if Hardware::CPU.arm?
+
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
+    ENV["CGO_ENABLED"] = "1" if Hardware::CPU.arm?
+
     resource "dqlite-demo" do
       url "https://raw.githubusercontent.com/canonical/go-dqlite/2425f137a185a27e2b2fee7c2cb5f97d459e695d/cmd/dqlite-demo/dqlite-demo.go"
       sha256 "302890eb50419e7fee4d8c5dc27a77353ed7e9d9047f65e872def971fd3ef178"
