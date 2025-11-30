@@ -30,12 +30,12 @@ class Luajit < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "03729d1d5511c1e64e6561d53aec06b33ea9e3c5d693d1360d8f5d2d641ed2aa"
-    sha256 cellar: :any,                 arm64_sequoia: "99ba0d2c9df7204096e217642d328855e44e9e87d479854e663147fb3cdaf46c"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee060d26ae49377919623418c3a8e2d3d4b1da4af044a181b18a87afc9816f6c"
-    sha256 cellar: :any,                 sonoma:        "6b4e00d74b1357e7362500306b3f60ddc5d1156c6e3ab82bbda33813a3d54091"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "150a904de3c02daa3dd7e26b79ecc4d05cfed9e69db732e80a4fd44aa518940d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "130a0a068b7735213b73ef5627449e54ce915fe1345cf6273f87412bbd0c1b32"
+    sha256 cellar: :any,                 arm64_tahoe:   "d5c00d6a08a086808912a9f0affcf065b94e7723dfdfa30044cdb2af45fd8ec1"
+    sha256 cellar: :any,                 arm64_sequoia: "5d3d77d79034db39e77516741446fa36044ff75c8d57ea920ce4940d32958773"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b533ee47036b9bb94abaa806da0519d99798dcfa31475829f45ed66785f451a"
+    sha256 cellar: :any,                 sonoma:        "175b2d7c3a6642a13b75b0c91fb2632deb743bca7aa68458ebb21b57008dc637"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6a1c7f94f351c11cf853291e96a73c48c53bd8ffccaf744481a96a5200a9ab7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56bede0e4b642544371a241aefb0f707113f3012b85e74ccdc69149992d09f81"
   end
 
   def install
