@@ -1,8 +1,8 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https://dm3mat.darc.de/qdmr/"
-  url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "72d93d53dcdd781fd18e6769d985caff77e13fdd21e7466c9ffec65a4b0af56f"
+  url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.13.2.tar.gz"
+  sha256 "245809ac742e30085d94bc77386c65d78ff36961928e83eca68c0f1850b5a30a"
   license "GPL-3.0-or-later"
 
   bottle do
