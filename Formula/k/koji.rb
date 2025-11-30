@@ -1,8 +1,8 @@
 class Koji < Formula
   desc "Interactive CLI for creating conventional commits"
   homepage "https://github.com/cococonscious/koji"
-  url "https://github.com/cococonscious/koji/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "648b9d47de121895a79e3d963f5fc6e781d82a1531eeec6b3aa91db5951e058a"
+  url "https://github.com/cococonscious/koji/archive/refs/tags/v3.3.1.tar.gz"
+  sha256 "fe3a56bc7f0829d434b82d8bda51c6cae7dbc909a1ae7980b31c63338349af73"
   license "MIT"
   head "https://github.com/cococonscious/koji.git", branch: "main"
 
