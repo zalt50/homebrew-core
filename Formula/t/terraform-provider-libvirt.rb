@@ -1,8 +1,8 @@
 class TerraformProviderLibvirt < Formula
   desc "Terraform provisioning with Linux KVM using libvirt"
   homepage "https://github.com/dmacvicar/terraform-provider-libvirt"
-  url "https://github.com/dmacvicar/terraform-provider-libvirt/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "15b929d2eb4e64ae4bb26939789ca40e753c3b2847eee7992fcb4dd3b5df83e4"
+  url "https://github.com/dmacvicar/terraform-provider-libvirt/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "e547e2b46a18a8796fd91283f474fc4f8ccc494ea054f43fca3c3e8cea9c7ed4"
   license "Apache-2.0"
 
   bottle do
@@ -20,6 +20,7 @@ class TerraformProviderLibvirt < Formula
   depends_on "libvirt"
 
   def install
+    system "go", "run", "./internal/codegen"
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
