@@ -1,8 +1,8 @@
 class Gopeed < Formula
   desc "Modern download manager that supports all platform"
   homepage "https://gopeed.com"
-  url "https://github.com/GopeedLab/gopeed/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "61750c024e9a1e476ced472427ab77158deccdc756b5478b3ca72a3705a23fe8"
+  url "https://github.com/GopeedLab/gopeed/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "06c8214fca54f54f94dd66df1a653735b75743e0a1af2c2958a352ad071fc767"
   license "GPL-3.0-or-later"
   head "https://github.com/GopeedLab/gopeed.git", branch: "main"
 
