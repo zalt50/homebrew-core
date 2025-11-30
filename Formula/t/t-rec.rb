@@ -6,12 +6,12 @@ class TRec < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5319c1aa9451c7a84a857a910e41c072cb3d4abdec88add35707d247414f35bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b63e20fce33644f61b8e731de0aa1a74f440dc8a9143cb16c3aa90391b36a29b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7265a01ec58dd498e376c906e450c58dfd0a45faa73d1d503c4e50429283b559"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3259b8f7c5b339e1cce01165d0889cbfea93d67a3ac0d0d4088a33061633bd0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd2a9ca8f83ab9c10366f9992809212e787de7d9c92954887b77432d1ea15d71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfb872054d6ddda78ee243cf58b323dc2d47fd3e96453460487afa8e735c7874"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "852a7ac1fb4100e661f0362148e037b98f6265f80e0acfea231f04cd7b061021"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aef99e88ecc19a351b3b5bb4ca629329306df5acae5bb92677bafdc597126079"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2448a0566e75ce35dc8dde2a03393d919645ffc83cab945556f5254607c712b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3589d7616135b56fa6f1d19d2546366b55592e23454efd8e81b6d10d15a203fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3da2b0275e3b643dc7e1170744fa49e99b2be3b650a064e3c94849da35a76105"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "654217c6f18d4b2f575a10174361199135a083c5657fa0765d02d335fdab6bd2"
   end
 
   depends_on "rust" => :build
