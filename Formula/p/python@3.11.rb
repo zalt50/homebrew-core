@@ -310,6 +310,9 @@ class PythonAT311 < Formula
       s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
     end
 
+    # Ensure that our new pip wheel is globally readable.
+    chmod "ugo+r", lib_cellar.glob("ensurepip/_bundled/pip-*.whl")
+
     # Write out sitecustomize.py
     (lib_cellar/"sitecustomize.py").atomic_write(sitecustomize)
 
