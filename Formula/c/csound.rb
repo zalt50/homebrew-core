@@ -2,7 +2,7 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https://csound.com"
   license "LGPL-2.1-or-later"
-  revision 12
+  revision 13
   head "https://github.com/csound/csound.git", branch: "develop"
 
   # Remove `stable` block when patches are no longer needed
@@ -99,6 +99,9 @@ class Csound < Formula
       url "https://github.com/csound/plugins/commit/13800c4dd58e3c214e5d7207180ad7115b4e2f27.patch?full_index=1"
       sha256 "e088cc300845408f3956f070fa34a900b700c7860678bc6d37f7506d615787a6"
     end
+
+    # Fix Eigen detection to work with Homebrew's Eigen formula
+    patch :DATA
   end
 
   resource "getfem" do
@@ -144,6 +147,7 @@ class Csound < Formula
       # https://github.com/csound/plugins/commit/0a95ad72b5eb0a81bc680c2ac04da9a7c220715b
       args = %W[
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+        -DCMAKE_CXX_STANDARD=17
         -DABLETON_LINK_HOME=#{buildpath}/ableton-link
         -DBUILD_ABLETON_LINK_OPCODES=ON
         -DBUILD_CHUA_OPCODES=ON
@@ -285,3 +289,39 @@ class Csound < Formula
                                           "-Djava.library.path=#{libexec}", "test"
   end
 end
+
+__END__
+diff --git a/cmake/Modules/FindEIGEN3.cmake b/cmake/Modules/FindEIGEN3.cmake
+index 9eec7b4..40c3af0 100644
+--- a/cmake/Modules/FindEIGEN3.cmake
++++ b/cmake/Modules/FindEIGEN3.cmake
+@@ -36,27 +36,8 @@ if(NOT Eigen3_FIND_VERSION)
+ endif(NOT Eigen3_FIND_VERSION)
+ 
+ macro(_eigen3_check_version)
+-  file(READ "${EIGEN3_INCLUDE_DIR}/Eigen/src/Core/util/Macros.h" _eigen3_version_header)
+-
+-  string(REGEX MATCH "define[ \t]+EIGEN_WORLD_VERSION[ \t]+([0-9]+)" _eigen3_world_version_match "${_eigen3_version_header}")
+-  set(EIGEN3_WORLD_VERSION "${CMAKE_MATCH_1}")
+-  string(REGEX MATCH "define[ \t]+EIGEN_MAJOR_VERSION[ \t]+([0-9]+)" _eigen3_major_version_match "${_eigen3_version_header}")
+-  set(EIGEN3_MAJOR_VERSION "${CMAKE_MATCH_1}")
+-  string(REGEX MATCH "define[ \t]+EIGEN_MINOR_VERSION[ \t]+([0-9]+)" _eigen3_minor_version_match "${_eigen3_version_header}")
+-  set(EIGEN3_MINOR_VERSION "${CMAKE_MATCH_1}")
+-
+-  set(EIGEN3_VERSION ${EIGEN3_WORLD_VERSION}.${EIGEN3_MAJOR_VERSION}.${EIGEN3_MINOR_VERSION})
+-  if(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
+-    set(EIGEN3_VERSION_OK FALSE)
+-  else(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
+-    set(EIGEN3_VERSION_OK TRUE)
+-  endif(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
+-
+-  if(NOT EIGEN3_VERSION_OK)
+-
+-    message(STATUS "Eigen3 version ${EIGEN3_VERSION} found in ${EIGEN3_INCLUDE_DIR}, "
+-                   "but at least version ${Eigen3_FIND_VERSION} is required")
+-  endif(NOT EIGEN3_VERSION_OK)
++  set(EIGEN3_VERSION "5.0.1")
++  set(EIGEN3_VERSION_OK TRUE)
+ endmacro(_eigen3_check_version)
+ 
+ if (EIGEN3_INCLUDE_DIR)
