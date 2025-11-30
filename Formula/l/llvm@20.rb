@@ -27,7 +27,7 @@ class LlvmAT20 < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "swig" => :build
   depends_on "xz"
   depends_on "zstd"
@@ -51,7 +51,7 @@ class LlvmAT20 < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def clang_config_file_dir
