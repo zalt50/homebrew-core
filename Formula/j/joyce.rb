@@ -5,6 +5,15 @@ class Joyce < Formula
   sha256 "85659a6ac9b94fdf78c28d5d8d65a4f69e7520e1c02a915b971c2754695ab82c"
   license "GPL-2.0-or-later"
 
+  bottle do
+    sha256 arm64_tahoe:   "20c5f21b6b676f4519154d1102c52754dd27dabdc86b315608606df1c3ba37b4"
+    sha256 arm64_sequoia: "ae0fdeaa3809a10e27b240f1f29e70d158f88534129099ec6d99217486def25a"
+    sha256 arm64_sonoma:  "57b24a9e0cffaf5db60282d1c187fc8d0696ea650e0516cc9c56357c6dce623d"
+    sha256 sonoma:        "fb292d0294d469f5581f695956bc4c2ca6126c2fc4f138d7d2397fc4675115b7"
+    sha256 arm64_linux:   "b43b277ef8c1c0cf306e87253cb9857809b5a03823fd511982745c2081b63f28"
+    sha256 x86_64_linux:  "844d5e4d8fa06ff2d18adba05365c9a5378d712cfc867d89ef8087e8ef742395"
+  end
+
   depends_on "libdsk"
   depends_on "libpng"
   depends_on "sdl12-compat"
