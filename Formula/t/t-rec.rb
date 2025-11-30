@@ -1,8 +1,8 @@
 class TRec < Formula
   desc "Blazingly fast terminal recorder that generates animated gif images for the web"
   homepage "https://github.com/sassman/t-rec-rs"
-  url "https://github.com/sassman/t-rec-rs/archive/refs/tags/v0.7.11.tar.gz"
-  sha256 "752d0bb13e5f99c479b55dc08b4c840f06451c1578e9b84c2e3156280ccc315b"
+  url "https://github.com/sassman/t-rec-rs/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "7e7b8a99b2fc29a67ca798726376da59d58f5c010f207ff427137541ecbbe8c5"
   license "GPL-3.0-only"
 
   bottle do
