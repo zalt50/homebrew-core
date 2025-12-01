@@ -13,13 +13,12 @@ class C7n < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3badbef6e1d7551575d0c96a3c7a0ba242d3ef4e42183e347152cbdc8c7bf204"
-    sha256 cellar: :any,                 arm64_sequoia: "6d9621adac20088702a85744df01c3da71642bfad35b232e1a1768b88339e0d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "26bbffa87085f66c5c95afa5efbca7ea8bddf7d73c539df9d2196b9382d3f166"
-    sha256 cellar: :any,                 sonoma:        "ec7e3e73fe4d55fc17f29a8fcf5c52017ff2d1d9d9cd7614eff23fa8d6d4f803"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab5d8d979e14aa39ebe4174ae23e31588220bacc6482b6637760e8db2834d39e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b24e2464b2eebfb4acde37e2564bf70a1c0b00891e17ebb0492359b19cc31d"
+    sha256 cellar: :any,                 arm64_tahoe:   "d980723ca4dfc1d495b22ecf1cc8657b6dc2a2c7be7ec7c0e3a60dbdf7377d41"
+    sha256 cellar: :any,                 arm64_sequoia: "d4075d91fb34876a3dd8ad628d5793d8026ff9a7b44ea421af9d2fbbb3dbeed2"
+    sha256 cellar: :any,                 arm64_sonoma:  "8de4010906c5af030ddac4c0b0985ef809b1ce660e4014b9d188b940dd2adb75"
+    sha256 cellar: :any,                 sonoma:        "55a81eff4cd89c66fd8d8803f8d8b99afc631e73b47f717263ec0b908646eef0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91c27127b222d2b86855ce6051adb9ba798897deedda78c8c5778ba6b3437f8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65e8e675505551c5c1d7b9da16c873aa3472793f78a5c9afadb01a916978a5be"
   end
 
   depends_on "cryptography" => :no_linkage
