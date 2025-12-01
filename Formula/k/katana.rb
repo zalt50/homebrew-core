@@ -1,10 +1,10 @@
 class Katana < Formula
   desc "Crawling and spidering framework"
   homepage "https://github.com/projectdiscovery/katana"
-  url "https://github.com/projectdiscovery/katana/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "c2ad433917ee61e613532e70b6f004884b0bdda1ac962a35b8146fc35cdcbabc"
+  url "https://github.com/projectdiscovery/katana/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "e49a8ac7e28e55b925cc8ebfb8d999dcb9ec8bb81e17f315573a3ccb17397d88"
   license "MIT"
-  head "https://github.com/projectdiscovery/katana.git", branch: "main"
+  head "https://github.com/projectdiscovery/katana.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d36effbbe9c84baf4a6336895e21f52329058e00ab804daf8db61c5ff3e3eb7e"
@@ -20,6 +20,8 @@ class Katana < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/katana"
   end
 
