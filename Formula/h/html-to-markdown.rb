@@ -6,6 +6,15 @@ class HtmlToMarkdown < Formula
   license "MIT"
   head "https://github.com/JohannesKaufmann/html-to-markdown.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e981d5e00545a518711ac932cd67108ea14efe6a9f66585b68f274a830b6dc99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e981d5e00545a518711ac932cd67108ea14efe6a9f66585b68f274a830b6dc99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e981d5e00545a518711ac932cd67108ea14efe6a9f66585b68f274a830b6dc99"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee47b6c4ae135218396b7e4b38acfd2096158f853586bf6e5f829b82358648f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4544cefddf21f3e7bc6a4288bb2c74d9b247676e9327b898ff1292718c149d54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3980c2ba3963118b9166de4bb4f1f23635c6d33060f145bb4d738f06d7aaa2f7"
+  end
+
   depends_on "go" => :build
 
   def install
