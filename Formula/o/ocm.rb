@@ -1,8 +1,8 @@
 class Ocm < Formula
   desc "CLI for the Red Hat OpenShift Cluster Manager"
   homepage "https://www.openshift.com/"
-  url "https://github.com/openshift-online/ocm-cli/archive/refs/tags/v1.0.9.tar.gz"
-  sha256 "11c735be6e50ffd660cdda11151d1a287b7b4d1a474662b153af8d4c20bd8941"
+  url "https://github.com/openshift-online/ocm-cli/archive/refs/tags/v1.0.10.tar.gz"
+  sha256 "e8dd8a436892f0b75d703f98e4dabe66c6e3e567a6afb4511ef252045ff1229b"
   license "Apache-2.0"
   head "https://github.com/openshift-online/ocm-cli.git", branch: "main"
 
