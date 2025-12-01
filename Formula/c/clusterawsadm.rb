@@ -13,12 +13,12 @@ class Clusterawsadm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cd8460a8d758906590371137adbdba66ac6fe597e4b043e89713637c9a09bca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c076a79d8392e14e6a0dfd46a755eb9d51175f64b1e28ef046ac66a76f1d291"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2060156ae5378427f8e33493cb038b8ca301efc7c2247051d456739950a7f5a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f40b8e253953f7a4494d8c2e0c54c3573921fb4d4f93abbcb28d022a7cb9ea3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b695523f1e2e7b13b5e8f9ed30d89ed01bb7f5c04bfeaa34a23302f4254f35a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3422ae1b3a966750710fe40b6c77f04a69437c751fdb0108db554ed7b397c31c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1efc88576eb2aeb8550ae8b0f80581562879a31c0c9a10ecc13a9a7cdf8f689f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8c6afd16a182d88113af661e4d3b0ae2fa4abf7783d3553cec341624c45cd23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42d53101223b46b267d4c76594c0b251ec31be6d79e20c558ad508c13b680ab4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ded8fbddb7fd4715741ee45abb7b2d8bc85ef18f895dfeb524489a290656c5d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25cef8c09625d0dfdda1519117c89ef1bc2a3a8727934ad9185916854fdb8cd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4465ab5739556ea147170d6ac1815f49e1d1b2262bb9d945b1e6b049eee3bedc"
   end
 
   depends_on "go" => :build
