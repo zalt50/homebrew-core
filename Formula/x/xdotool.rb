@@ -1,12 +1,10 @@
 class Xdotool < Formula
   desc "Fake keyboard/mouse input and window management for X"
   homepage "https://www.semicomplete.com/projects/xdotool/"
-  url "https://github.com/jordansissel/xdotool/releases/download/v3.20211022.1/xdotool-3.20211022.1.tar.gz"
-  sha256 "96f0facfde6d78eacad35b91b0f46fecd0b35e474c03e00e30da3fdd345f9ada"
+  url "https://github.com/jordansissel/xdotool/releases/download/v4.20251130.1/xdotool-4.20251130.1.tar.gz"
+  sha256 "eee789b00d6a13d47b31bbc139727e6408c21b5f6ba5e804fdf6ecfb8c781356"
   license "BSD-3-Clause"
   head "https://github.com/jordansissel/xdotool.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
@@ -26,14 +24,6 @@ class Xdotool < Formula
   depends_on "libxinerama"
   depends_on "libxkbcommon"
   depends_on "libxtst"
-
-  # Disable clock_gettime() workaround since the real API is available on macOS >= 10.12
-  # Note that the PR from this patch was actually closed originally because of problems
-  # caused on pre-10.12 environments, but that is no longer a concern.
-  patch do
-    url "https://github.com/jordansissel/xdotool/commit/dffc9a1597bd96c522a2b71c20301f97c130b7a8.patch?full_index=1"
-    sha256 "447fa42ec274eb7488bb4aeeccfaaba0df5ae747f1a7d818191698035169a5ef"
-  end
 
   def install
     # Work-around for build issue with Xcode 15.3
