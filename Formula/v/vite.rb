@@ -1,8 +1,8 @@
 class Vite < Formula
   desc "Next generation frontend tooling. It's fast!"
   homepage "https://vitejs.dev/"
-  url "https://registry.npmjs.org/vite/-/vite-7.2.4.tgz"
-  sha256 "29b8291a529e29c88603eda24bfa91803019952e96b279021723ecfc9166dc2b"
+  url "https://registry.npmjs.org/vite/-/vite-7.2.6.tgz"
+  sha256 "a46f01eb42f7f444b447d1e78eb773e29d133870d12e9e6de613f46acad34bcd"
   license "MIT"
 
   bottle do
@@ -19,6 +19,9 @@ class Vite < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    node_modules = libexec/"lib/node_modules/vite/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
