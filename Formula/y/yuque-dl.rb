@@ -6,12 +6,12 @@ class YuqueDl < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "41436c29a4665958f28a894c089416172431d55f781ba6211901e97de4a177a8"
-    sha256 cellar: :any,                 arm64_sequoia: "d226c087bc29796c3d6fa3064f93c7afd0b547b274dc7facaefa4102437462e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "d226c087bc29796c3d6fa3064f93c7afd0b547b274dc7facaefa4102437462e7"
-    sha256 cellar: :any,                 sonoma:        "000953329ce9afabd28ab3de15ee079a3f6e0f36bbdde017d95d9236e8c9f30d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba5fe4834fec519d47a46ae1dd53bce11a4403b783bb8df10c8c810b1fdc8476"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7237877d2337be79ddfb00999acd2aa3e02ac17ba8d46e07fa812930e0507bba"
+    sha256 cellar: :any,                 arm64_tahoe:   "05348a27c4fdacb0aafa56640f7854f64a9372a3c22869a2ce7088b7b293738f"
+    sha256 cellar: :any,                 arm64_sequoia: "5f1d1f6cd16185f72770189893f0cc637e7ccdeccfbe2938beed48516f0657b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f1d1f6cd16185f72770189893f0cc637e7ccdeccfbe2938beed48516f0657b3"
+    sha256 cellar: :any,                 sonoma:        "9602931143ae5ebd737686fcbc977e2aa2079174190a9182cb44a1ee343df995"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d08476f02505d35494c06039bc9891ce10c97908f4a5f151ca08acdca430a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a3d519a492ab878455a4ecf7c3f7fb86d31fc278147bdf6e691c813d7c9f69"
   end
 
   depends_on "node"
