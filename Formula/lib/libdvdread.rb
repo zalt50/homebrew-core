@@ -22,7 +22,7 @@ class Libdvdread < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :test
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libdvdcss"
 
   def install
