@@ -3,8 +3,8 @@ class Dtrx < Formula
 
   desc "Intelligent archive extraction"
   homepage "https://pypi.org/project/dtrx/"
-  url "https://files.pythonhosted.org/packages/0e/41/53459c8452da0f357d55943704ff960dab35c33a068b057a40512faa3e03/dtrx-8.7.0.tar.gz"
-  sha256 "d7c58048cd4a0e05337f0e0e01b05ad9ebc2b450a0f6706afc4b69abea81096f"
+  url "https://files.pythonhosted.org/packages/12/c2/e678320a0051cbbe5de91d1836998bac858086852a135441d7d0bfddc1c1/dtrx-8.7.1.tar.gz"
+  sha256 "d3be625ce7860c82d5159a551bbd215eada8a11cf4f82557e4f77eabc0986e43"
   license "GPL-3.0-or-later"
 
   bottle do
