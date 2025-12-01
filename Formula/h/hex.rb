@@ -1,12 +1,10 @@
 class Hex < Formula
   desc "Futuristic take on hexdump"
   homepage "https://github.com/sitkevij/hex"
-  url "https://github.com/sitkevij/hex/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "7952ee2b6782e49259f82155c3b5287f1be72f15360a88e379c9270bd0d2416c"
+  url "https://github.com/sitkevij/hex/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "397e997125ba7ca87893ead100384b9d4f0c97bbc37405009c791ec69a93febb"
   license "MIT"
   head "https://github.com/sitkevij/hex.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9cbefe809459d90f9c69126f6abfcf3b6f30336485b63dcf1b2c5d5132193293"
