@@ -7,12 +7,12 @@ class Lf < Formula
   head "https://github.com/gokcehan/lf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48b3e4e66692e756ea97a19af4dd41449d3841e91f450e530fa3597ea567694f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48b3e4e66692e756ea97a19af4dd41449d3841e91f450e530fa3597ea567694f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48b3e4e66692e756ea97a19af4dd41449d3841e91f450e530fa3597ea567694f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59553d9f91e56998879b86ac919d50788759169cdbded07a7f6b7834339e35ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da396acff0af2dfb1cf13bf94ba2a606df46c7bdbbb68bf0049325a1c1f7b70a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc0c8ab91b155179d8e5b6e84963bab0062efe65fae3dd4623f911de793667fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26b70c4fcbd458b20288eda4a5fb712d75815e37898e764fbfad87759fc381fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26b70c4fcbd458b20288eda4a5fb712d75815e37898e764fbfad87759fc381fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26b70c4fcbd458b20288eda4a5fb712d75815e37898e764fbfad87759fc381fa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "958324781000f3b0421533e65ec8e12fb3ea02c9c274379cce7a0dfb7cc6d87f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae7d98e56a200c0cb91d2e4d06fc0f3eae04b03335a45321928e56029991b6dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89a85624e5e97bff76eb87938c3e3a8590874f73f95a64eb97851b03196c2431"
   end
 
   depends_on "go" => :build
