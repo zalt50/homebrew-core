@@ -2,8 +2,8 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io/main/en/index.html"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v3.11.1",
-      revision: "52825795bc79a9c0b8fbf02d3a5e2df2f58a32c8"
+      tag:      "v3.11.2",
+      revision: "a25fd153f92a7572c4bb6964bfcdbc7ba96e0892"
   license "BSD-3-Clause"
 
   livecheck do
@@ -48,6 +48,18 @@ class Mavsdk < Formula
     EOS
   end
 
+  # Git is required to fetch submodules
+  resource "mavlink" do
+    url "https://github.com/mavlink/mavlink.git",
+        revision: "d6a7eeaf43319ce6da19a1973ca40180a4210643"
+    version "d6a7eeaf43319ce6da19a1973ca40180a4210643"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/mavlink/MAVSDK/refs/tags/v#{LATEST_VERSION}/third_party/CMakeLists.txt"
+      regex(/MAVLINK_HASH.*(\h{40})/i)
+    end
+  end
+
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
@@ -57,11 +69,20 @@ class Mavsdk < Formula
     # Regenerate files to support newer protobuf
     system "tools/generate_from_protos.sh"
 
+    # `mavlink` repo and hash info moved to `third_party/CMakeLists.txt` only for SUPERBUILD,
+    # so we have to manage the hash manually, but then it is better to keep it as a resource.
+    (buildpath/"third_party/mavlink").install resource("mavlink")
+
     %w[mavlink picosha2 libevents libmavlike].each do |dep|
       system "cmake", "-S", "third_party/#{dep}", "-B", "build_#{dep}", *std_cmake_args(install_prefix: libexec)
       system "cmake", "--build", "build_#{dep}"
       system "cmake", "--install", "build_#{dep}"
     end
+
+    # Install MAVLink message definitions manually
+    messages_files = "{minimal,standard,common,ardupilotmega}.xml"
+    messages_dir = Dir["#{buildpath}/third_party/mavlink/message_definitions/v1.0/#{messages_files}"]
+    (libexec/"include/mavlink/message_definitions/v1.0").install messages_dir
 
     # Source build adapted from
     # https://mavsdk.mavlink.io/main/en/cpp/guide/build.html
