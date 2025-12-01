@@ -1,8 +1,8 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.11.tgz"
-  sha256 "43df9f47e4a9e9105e5ac2a25135384846df288ba954d6643909d6fda3969eea"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.14.tgz"
+  sha256 "ac507d1902d59fae78f84a89b1db4ac8c9d4a110d6bf168278ed647fd5509433"
   license "MIT"
 
   bottle do
@@ -23,13 +23,17 @@ class Promptfoo < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
 
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-musl"
+    arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
 
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/promptfoo/node_modules"
-    ripgrep_vendor_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
-    rm_r(ripgrep_vendor_dir)
+    rm_r(node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep")
+    codex_vendor = node_modules/"@openai/codex-sdk/vendor"
+    codex_vendor.children.each { |dir| rm_r dir if dir.basename.to_s != "#{arch}-#{os}" }
   end
 
   test do
