@@ -5,6 +5,7 @@ class PandocCrossref < Formula
   version "0.3.22a"
   sha256 "6957b4bdd121200ed61c2a3b466f192e4afce547677c4c7a5fdee3925d3daab0"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "11535bcc07f67f87326e56e6297a5466a293d938a04ed8fdfee04bb80dc81f4e"
@@ -17,9 +18,11 @@ class PandocCrossref < Formula
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
+  depends_on "gmp"
   depends_on "pandoc"
 
   uses_from_macos "unzip" => :build
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   def install
