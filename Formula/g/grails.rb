@@ -1,8 +1,8 @@
 class Grails < Formula
   desc "Web application framework for the Groovy language"
   homepage "https://grails.apache.org/"
-  url "https://github.com/apache/grails-core/releases/download/v7.0.3/apache-grails-7.0.3-bin.zip"
-  sha256 "5ba5d30f3df4d6885fee9f0391dec8853b43cc6202fc0abf5d1d4c48b0f6aa9b"
+  url "https://github.com/apache/grails-core/releases/download/v7.0.4/apache-grails-7.0.4-bin.zip"
+  sha256 "3223dfa7e0dfc4140fdcbeee520ca524f325088ecc526a673668c670c8391bbf"
   license "Apache-2.0"
 
   livecheck do
