@@ -6,12 +6,12 @@ class Openlist < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ee7dfb8fdf34a3b82a8d483fcebf1e87917868f7d535b66c24d3aea550f6fff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b48d44ac9df7bb1de7b64638da26362e0cbcb9ecad51a3259697ef53a62b606"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5a0b94e7a9c426555f358f476974d471689c3a215b8730c4a8f8dd289601bce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df53a1df7587bcbc7389014decb32a5d6c6b47977a079fa8c6bceb18a98d04bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "599577eb4b27afc71e75cd2b973fdbaa4129f6c2cd8733b81eeb027b1a57837b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "791a70a7d49e0cbf9311ef3a959ddc31490c4b1691a5b9826864ce7056df18dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2f7268bdf7cc74cd2b6d5106c24b624e4d74fa0a6be4d05268baa9420c9fa6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "609304072300fe7808cf53fc7634a3e79b84ea59187f78d3965f100e91f34dd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74fd740af36b85ad14ab0841807d951f32704037d9bc665478ee691f76eb959d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b70b096997004034dcd47a1dbbd65fbc096ca30da8cf40e30bf23c9b3b8488ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c25d06885c7072e80be39c156a15701772eb822edf2c395319d91888147fba12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12eb6b166e988e5f857008ba66f81c9bdea3e90f53b1990ea50ed3362efc98f2"
   end
 
   depends_on "go" => :build
