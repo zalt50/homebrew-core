@@ -22,10 +22,12 @@ class GitAnnex < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
   depends_on "pkgconf" => :build
+  depends_on "gmp"
   depends_on "libmagic"
 
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   def install
