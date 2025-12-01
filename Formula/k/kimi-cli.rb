@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/de/4d/0ef06082efb10d6ddf6f4cb3b3fb1c71ecf9f2be495b98b50e31f410d87c/kimi_cli-0.59.tar.gz"
-  sha256 "7eab8f43e2ae6615ad4d1691b45f3c7a4fad868482e8daaa45453a1658fc933b"
+  url "https://files.pythonhosted.org/packages/95/69/bc0d50a54cb488ff3a48e37787dbe0cd1a2d0c5d0df9ad868b202f7699a8/kimi_cli-0.60.tar.gz"
+  sha256 "4de6eeb39f49747acfc482125be1566bda39649c4d5cf2df2126398bf28b999c"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -64,8 +64,8 @@ class KimiCli < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "attrs" do
@@ -224,8 +224,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/0a/99/7833457d812fdc8e5365a91f690d115dcb6757fb536e6c0c74ab5a8be372/kosong-0.28.0.tar.gz"
-    sha256 "42c02c3b03b6dc3ae2313a1914e737cfcadfc0c3446cd1a982aaade9f4916b58"
+    url "https://files.pythonhosted.org/packages/30/ae/abbf84ea2d243500694584d7acb470a515cc3a8a426082b844fe709cae3f/kosong-0.28.1.tar.gz"
+    sha256 "8f5bbeaac57cb8a92de8dc614f1e1d32da193d2f5718c79e383e871a7c06ab35"
   end
 
   resource "lazy-object-proxy" do
