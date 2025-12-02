@@ -1,8 +1,8 @@
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://docs.balena.io/reference/balena-cli/latest/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-23.2.0.tgz"
-  sha256 "ce0c0207d1465eb0e38f6583940c002d1d2caa565f7b8f5bafa321a192eff6fe"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-23.2.2.tgz"
+  sha256 "d7e3a2e21e0867d1af5d3dbf60654372a1082eada1be85bf91626a9f7bfacce8"
   license "Apache-2.0"
 
   livecheck do
@@ -49,7 +49,6 @@ class BalenaCli < Formula
                   end
                 end
 
-    rm_r(node_modules/"lzma-native/build")
     rm_r(node_modules/"usb") if OS.linux?
 
     # Replace universal binaries with native slices
