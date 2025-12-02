@@ -9,7 +9,7 @@ class MailDeduplicate < Formula
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "277835433a625f16dd2c5d31927e8af263f31efa2f4eba9af148f262d65f219c"
+    sha256 cellar: :any_skip_relocation, all: "d1f1969c961b594cc2faff97f3a8fe45a844c0f5e04d1cb7f68a70539335a17b"
   end
 
   depends_on "certifi" => :no_linkage
