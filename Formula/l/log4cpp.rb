@@ -1,8 +1,8 @@
 class Log4cpp < Formula
   desc "Configurable logging for C++"
   homepage "https://log4cpp.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.4.tar.gz"
-  sha256 "696113659e426540625274a8b251052cc04306d8ee5c42a0c7639f39ca90c9d6"
+  url "https://downloads.sourceforge.net/project/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.5.tar.gz"
+  sha256 "6ae48cc0081b24270ec3398e71b68f77b45e93be15ff4d44c00259c9cdc5cc5a"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -27,17 +27,16 @@ class Log4cpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cce5ef111899b449de8806d1ba7a63ad3f841219c7b0d8734e94a18ee67e8983"
   end
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
     ENV.cxx11
     args = []
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *args, *std_configure_args
     system "make", "install"
   end
