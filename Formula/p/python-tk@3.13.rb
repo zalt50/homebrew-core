@@ -1,8 +1,8 @@
 class PythonTkAT313 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.9/Python-3.13.9.tgz"
-  sha256 "c4c066af19c98fb7835d473bebd7e23be84f6e9874d47db9e39a68ee5d0ce35c"
+  url "https://www.python.org/ftp/python/3.13.10/Python-3.13.10.tgz"
+  sha256 "de5930852e95ba8c17b56548e04648470356ac47f7506014664f8f510d7bd61b"
   license "Python-2.0"
 
   livecheck do
@@ -23,13 +23,6 @@ class PythonTkAT313 < Formula
 
   def python3
     "python3.13"
-  end
-
-  # Apply commit from open PR to fix TCL 9 threaded detection
-  # PR ref: https://github.com/python/cpython/pull/128103
-  patch do
-    url "https://github.com/python/cpython/commit/a2019e226e4650cef35ebfde7ecd7ce044a4a670.patch?full_index=1"
-    sha256 "03c4b6a293d4a51f534858657717bdc1465c42acb3b78e64c41f9011f966e449"
   end
 
   # Backport of https://github.com/python/cpython/commit/47cbf038850852cdcbe7a404ed7c64542340d58a
