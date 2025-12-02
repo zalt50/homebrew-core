@@ -2,8 +2,8 @@ class InfluxdbAT2 < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v2.7.12",
-      revision: "ec9dcde5d6f0e1c4d15ff2332127987a42ca30fc"
+      tag:      "v2.8.0",
+      revision: "40a633239e25dde9efcf0f21d5950897051cf8a9"
   license "MIT"
 
   livecheck do
