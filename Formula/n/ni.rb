@@ -1,8 +1,8 @@
 class Ni < Formula
   desc "Selects the right Node package manager based on lockfiles"
   homepage "https://github.com/antfu-collective/ni"
-  url "https://registry.npmjs.org/@antfu/ni/-/ni-27.0.1.tgz"
-  sha256 "58d9a674cbd9e0d507fa638f597b2f1edd54c035063d03f5b0c81442b521da51"
+  url "https://registry.npmjs.org/@antfu/ni/-/ni-28.0.0.tgz"
+  sha256 "c42870d682f7192d822f1f59660a1296ea1184e0bb0e107e44e6c564df90c458"
   license "MIT"
 
   bottle do
