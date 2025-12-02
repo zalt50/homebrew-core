@@ -1,18 +1,18 @@
 class Pug < Formula
   desc "Drive terraform at terminal velocity"
   homepage "https://github.com/leg100/pug"
-  url "https://github.com/leg100/pug/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "e65a6b9b83625a6e1613125287775a92bee50121974362dae618e01da44f2868"
+  url "https://github.com/leg100/pug/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "baa000b8a3dcc1a10c91f0a0fef984ea35424143e22f7112ee7108956754c3bf"
   license "MPL-2.0"
   head "https://github.com/leg100/pug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0aec8a282fff48c161c20fdb85112281821a78be34bc5e5b4b3e65f4835739ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0aec8a282fff48c161c20fdb85112281821a78be34bc5e5b4b3e65f4835739ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0aec8a282fff48c161c20fdb85112281821a78be34bc5e5b4b3e65f4835739ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fffeda9bdedf61acb9648746d8234c0cc62d0194f39a9854558a883a84bccf5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d370e68c688222514317ef7f31bb306a3bbeea006c12f73d09a466a1b136eb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad1d67a56b0596316c25506def63cb419a1d889bc6d69c4bef7bcf8a3031c132"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa3b73b784bd3dd810fa886cddb0f594fb6f4b43efee2ec76b6748ead630ac01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa3b73b784bd3dd810fa886cddb0f594fb6f4b43efee2ec76b6748ead630ac01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa3b73b784bd3dd810fa886cddb0f594fb6f4b43efee2ec76b6748ead630ac01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df3210925ccfca2efaff01e3124aae5a97bbf512ea099832675101332d59663f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ec99af216ab909cd29281034616eba0d9681d48301103827149cab3f736d0e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da2a112863f1bf13e77e70f70979de780d649057e5a2f5de785ccba55143eb56"
   end
 
   depends_on "go" => :build
