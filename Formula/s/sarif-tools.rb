@@ -6,7 +6,7 @@ class SarifTools < Formula
   url "https://files.pythonhosted.org/packages/16/3c/68e41db88aa15124175936017928e99182b3df8e6913c5e194c67d641996/sarif_tools-3.0.5.tar.gz"
   sha256 "52d09c101121231fb3489ad8c7af56896b8a95415cef726a6db5e7d74c6834d2"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/microsoft/sarif-tools.git", branch: "main"
 
   bottle do
@@ -55,8 +55,8 @@ class SarifTools < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
-    sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
+    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
   end
 
   resource "jinja2" do
