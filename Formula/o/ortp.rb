@@ -24,12 +24,13 @@ class Ortp < Formula
   no_autobump! because: "resources cannot be updated automatically"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f4036d6d1ecc587ac38b917c9ee7212ee3f873268530944514443de49dc4b98"
-    sha256 cellar: :any,                 arm64_sequoia: "c94660b5863e83e14d30b129570068bdb89ad7546e64f203829acd62aaec32ad"
-    sha256 cellar: :any,                 arm64_sonoma:  "95016dbdbd9baed93e2e51c8741d4d2c1b44d6b7bd540f0635d1646de3a18420"
-    sha256 cellar: :any,                 sonoma:        "b5e18148def0f1df105de7a3d158514df5186940e417e67726070dcb3bd4f2de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf1c33177868c6be84da67fa32435220dce3321f52fcbbc0241c693dfd2a858b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c160aca28623991d9f61817b8621ba76458056136bc250da335d47ae9f7566b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b34c76a2b6c6402c5451556d32593df1093820f0a31716738f93bb493008087d"
+    sha256 cellar: :any,                 arm64_sequoia: "0c29edd8a9da07e162e053064e543e768435055cc836854025417ca5e02b0610"
+    sha256 cellar: :any,                 arm64_sonoma:  "1095e20896fdf6f7b536105f4c7ac70cf396438ba46a9baa1b930de2b980069e"
+    sha256 cellar: :any,                 sonoma:        "cfae74b62d03aac89fa18c2f530b24317d814ce98d266f3d894bbc066ceeed89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4142d57d7aacf74603c979a427620c03d0e9cb5281521b2acdb3110c94777c49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e033762038c4b25e371fbe23ff64be5d9bf08216809663182fe4b8f55156903a"
   end
 
   depends_on "cmake" => :build
