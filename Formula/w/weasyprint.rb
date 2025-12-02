@@ -6,15 +6,15 @@ class Weasyprint < Formula
   url "https://files.pythonhosted.org/packages/32/99/480b5430b7eb0916e7d5df1bee7d9508b28b48fee28da894d0a050e0e930/weasyprint-66.0.tar.gz"
   sha256 "da71dc87dc129ac9cffdc65e5477e90365ab9dbae45c744014ec1d06303dde40"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53f75bd61bef8b6f816efb2abef6991df20f9093436c158835c07a6653abe651"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "861042e56b90b8168c31e1630a8ff52f634c65058a66dce68db6d557fa39b928"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "108324bd1b51c685660c0ae434536d27792d0a4f46bcdf80f707e88f1656a17e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a57bceba9d7cff9f6fea8ff4994d3dd3aca984a22e84c16278648738d06f180"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c11b843f4ba877f36571327177c5b4aac04c8682ea3b096f5113a67aa5032472"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8deddc0ecdbd3cbc6542c1ba6db677516b7ae7f755105c99db7007ec93bdf63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0d5280a96db93d74b31b6e0b13aac4e0d5535e6b6b2ba9daba5c88584262a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f02c4a680bdcab9009a0311f1147e32be03498d8c266be2867bc84c2106815b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd88a23d9225c06fea5fabbf01194280f0151ff3c86cd4ea4f9c8d6c6ba111f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eeaa493c475cb3ccb3788b10ccf195ae52495620c8caa1ed1af0f34170262dd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de4415fe81574244e82aaa3efa9d65ef1101776d27594d33861562493e32bcfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e292623a7d28959118904a47ebb0adc2d508da7d257bf229cd1dba868f5a551"
   end
 
   depends_on "pango"
@@ -41,8 +41,8 @@ class Weasyprint < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
-    sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
+    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
   end
 
   resource "pycparser" do
@@ -61,8 +61,8 @@ class Weasyprint < Formula
   end
 
   resource "tinycss2" do
-    url "https://files.pythonhosted.org/packages/7a/fd/7a5ee21fd08ff70d3d33a5781c255cbe779659bd03278feb98b19ee550f4/tinycss2-1.4.0.tar.gz"
-    sha256 "10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"
+    url "https://files.pythonhosted.org/packages/a3/ae/2ca4913e5c0f09781d75482874c3a95db9105462a92ddd303c7d285d3df2/tinycss2-1.5.1.tar.gz"
+    sha256 "d339d2b616ba90ccce58da8495a78f46e55d4d25f9fd71dfd526f07e7d53f957"
   end
 
   resource "tinyhtml5" do
@@ -76,8 +76,8 @@ class Weasyprint < Formula
   end
 
   resource "zopfli" do
-    url "https://files.pythonhosted.org/packages/5e/7c/a8f6696e694709e2abcbccd27d05ef761e9b6efae217e11d977471555b62/zopfli-0.2.3.post1.tar.gz"
-    sha256 "96484dc0f48be1c5d7ae9f38ed1ce41e3675fd506b27c11a6607f14b49101e99"
+    url "https://files.pythonhosted.org/packages/be/4c/efa0760686d4cc69e68a8f284d3c6c5884722c50f810af0e277fb7d61621/zopfli-0.4.0.tar.gz"
+    sha256 "a8ee992b2549e090cd3f0178bf606dd41a29e0613a04cdf5054224662c72dce6"
   end
 
   def install
