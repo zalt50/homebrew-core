@@ -9,13 +9,12 @@ class SnowflakeCli < Formula
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bcfb2f0b88eea1f491fbf8113d05f68bff28563a18c1bb41288d58f954276ede"
-    sha256 cellar: :any,                 arm64_sequoia: "6711b2ec1cdd56987d0d8b0e6343bcd4a81062e7a012de96a983e520f0eae449"
-    sha256 cellar: :any,                 arm64_sonoma:  "08ffeb1fc67048ac12bbc880866a17a61c579edac910600ca5aa33ed6feba681"
-    sha256 cellar: :any,                 sonoma:        "4e0d1d7c17c39d7ab89e363daf83e93d58e8484d4a1c28e872df1489533ce67d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46943bd993991d509886617310c67012ef1900799c0544061b215029a43c9052"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e733eeefbd5718741a96f76f9bf960fcca3afb7e8cb172d4498d430035efdcf"
+    sha256 cellar: :any,                 arm64_tahoe:   "660eabb8636192ab8a2b3000085be7946204bc7c7a33ea90a3865358f3046150"
+    sha256 cellar: :any,                 arm64_sequoia: "f78def27d7b74b6e102b518e97dedc9ecd440d7dc101457911a1869df86de2a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a66c1267cd397549c86b17e31da2dd9d95a784e93067c665106e55016a15cc7"
+    sha256 cellar: :any,                 sonoma:        "8530124a6dc5da8653ea08f56daaa162b946ca0a0a2a5b5366e0e95895454b4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9673251841a5feaacd65289ea16d6266f021866a70a945b85c3b858ed2bdc9d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2d0822bbb5a6f0bcb7f7208db483d3f595007a9f51464fd9a8d15b5c30fe36a"
   end
 
   depends_on "certifi" => :no_linkage
