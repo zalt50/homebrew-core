@@ -7,12 +7,12 @@ class Bat < Formula
   head "https://github.com/sharkdp/bat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7c49743f75958c8333a3ef923906045bca3cfb890659b87b3d38f1ab9ffa0496"
-    sha256 cellar: :any,                 arm64_sequoia: "b07dd7fec6a90bdb42c73b5dc4ee330570610810c8cd397e3bd4171a22aaef14"
-    sha256 cellar: :any,                 arm64_sonoma:  "fab51c86bad02391ff22d8b6fa8225b2ee5588236cffd1c13fa882340d9403a2"
-    sha256 cellar: :any,                 sonoma:        "4b147697e73d74adf80ef3e3b1bc6c5b3e09538f16d66ee783a5d86d5acf1f7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1eac312a8a8e8c7c1357cfcd2facd210de2872cf376083f370ee1977d09f1cbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8694f4ab8f7dde1dbb026624d83410efb4788ff10fcc39f508d46f4a3f65d44"
+    sha256 cellar: :any,                 arm64_tahoe:   "d209bb9f1f7eab77b65f9b5573007ce52f39fb90b379ffefeffc2181119991aa"
+    sha256 cellar: :any,                 arm64_sequoia: "072537d409b056879cb735bcbc0454562b8bae732fbbfac9242afea736410f88"
+    sha256 cellar: :any,                 arm64_sonoma:  "9492e6fd0b1ee200e279476da087bf1cb6b2202c5e4c2507336c583b836c5049"
+    sha256 cellar: :any,                 sonoma:        "033b483e2d1b96c314365048f59a80a83c1827a82bcad99d7b7bc5ef90aa0f77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0211b0cbe32b5b14b76a02a1a15f47c96f677c35102739a3789fb376183b5e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d5a088fbd751c14317ee725a3b9751b835bf0a5ecbd4cfa7671ef90ce8ca922"
   end
 
   depends_on "pkgconf" => :build
