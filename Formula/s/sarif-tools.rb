@@ -10,12 +10,12 @@ class SarifTools < Formula
   head "https://github.com/microsoft/sarif-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac1d888b3d768b9815a89d5ae47bd1fbbd75850dc4d9eb124e98bb28a6610b24"
-    sha256 cellar: :any,                 arm64_sequoia: "d10b0e6dbbc688063943540bc4cb674c7d2447a5ea1dbebb75442e967cee9e66"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c2d5ff5672a5737103ad8fa3d98c1582c37bb8b3c2a8c59c5b1c310713b5619"
-    sha256 cellar: :any,                 sonoma:        "8a340c090880eb6099cc85a65cdedfb9b096634133a4b67e04b8b804d2768990"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e12a81bc40e5034ba9fdc8cfe1e73f372cd011392c3e9a95c7b261c74615826"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07d4fc23c24f233958f0c11280b380d0ef747a2fbee5d7da6dc23488779fa6bd"
+    sha256 cellar: :any,                 arm64_tahoe:   "550644070de6931b18d2ab82c9ac5cfd44fca3a1df13c9abf530e2c4a155b8e1"
+    sha256 cellar: :any,                 arm64_sequoia: "bc0635459d0ce7aa8ff56c94e79de38fdf2d315d60647b349540d6383b31e390"
+    sha256 cellar: :any,                 arm64_sonoma:  "682c452c073f418a4644b29a49a7d43ddd788e8779347b4e2f9688815ab7f46a"
+    sha256 cellar: :any,                 sonoma:        "d4f532efd411bee51b1f4a112acf5cf1d47839919e19003f4804687a4996f58a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "961c48827b16bcdb7463bb8acd0ff7c64b61aa2419fa550ecdb2c6c12a8aa0e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db17e58b02d613b2030d9c4f5e60f646ac10fb6de997dbb1caf1e5a955b9980c"
   end
 
   depends_on "cmake" => :build
