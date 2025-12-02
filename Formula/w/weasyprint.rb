@@ -3,10 +3,9 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/32/99/480b5430b7eb0916e7d5df1bee7d9508b28b48fee28da894d0a050e0e930/weasyprint-66.0.tar.gz"
-  sha256 "da71dc87dc129ac9cffdc65e5477e90365ab9dbae45c744014ec1d06303dde40"
+  url "https://files.pythonhosted.org/packages/fd/bc/79a65b3a406cb62a1982fec8b49134b25a3b31abb094ca493c9fddff5492/weasyprint-67.0.tar.gz"
+  sha256 "fdfbccf700e8086c8fd1607ec42e25d4b584512c29af2d9913587a4e448dead4"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0d5280a96db93d74b31b6e0b13aac4e0d5535e6b6b2ba9daba5c88584262a2e"
@@ -51,8 +50,8 @@ class Weasyprint < Formula
   end
 
   resource "pydyf" do
-    url "https://files.pythonhosted.org/packages/2e/c2/97fc6ce4ce0045080dc99446def812081b57750ed8aa67bfdfafa4561fe5/pydyf-0.11.0.tar.gz"
-    sha256 "394dddf619cca9d0c55715e3c55ea121a9bf9cbc780cdc1201a2427917b86b64"
+    url "https://files.pythonhosted.org/packages/36/ee/fb410c5c854b6a081a49077912a9765aeffd8e07cbb0663cfda310b01fb4/pydyf-0.12.1.tar.gz"
+    sha256 "fbd7e759541ac725c29c506612003de393249b94310ea78ae44cb1d04b220095"
   end
 
   resource "pyphen" do
