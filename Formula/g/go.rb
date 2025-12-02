@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.25.4.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.25.4.src.tar.gz"
-  sha256 "160043b7f17b6d60b50369436917fda8d5034640ba39ae2431c6b95a889cc98c"
+  url "https://go.dev/dl/go1.25.5.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.25.5.src.tar.gz"
+  sha256 "22a5fd0a91efcd28a1b0537106b9959b2804b61f59c3758b51e8e5429c1a954f"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -44,21 +44,21 @@ class Go < Formula
 
     on_arm do
       on_macos do
-        url "https://storage.googleapis.com/golang/go#{version}.darwin-arm64.tar.gz"
+        url "https://go.dev/dl/go#{version}.darwin-arm64.tar.gz"
         sha256 checksums["darwin-arm64"]
       end
       on_linux do
-        url "https://storage.googleapis.com/golang/go#{version}.linux-arm64.tar.gz"
+        url "https://go.dev/dl/go#{version}.linux-arm64.tar.gz"
         sha256 checksums["linux-arm64"]
       end
     end
     on_intel do
       on_macos do
-        url "https://storage.googleapis.com/golang/go#{version}.darwin-amd64.tar.gz"
+        url "https://go.dev/dl/go#{version}.darwin-amd64.tar.gz"
         sha256 checksums["darwin-amd64"]
       end
       on_linux do
-        url "https://storage.googleapis.com/golang/go#{version}.linux-amd64.tar.gz"
+        url "https://go.dev/dl/go#{version}.linux-amd64.tar.gz"
         sha256 checksums["linux-amd64"]
       end
     end
