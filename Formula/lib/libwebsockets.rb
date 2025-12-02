@@ -25,8 +25,6 @@ class Libwebsockets < Formula
   depends_on "libuv"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DLWS_IPV6=ON",
