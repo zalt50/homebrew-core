@@ -13,12 +13,12 @@ class OpenshiftCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50a6a6ac4c3d532747ed0ce2bb31d87668b8b6df3d230ee841b5ac97d79416ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14b053bd2615453e9f50f8e50ef21b3fce5e96cf80f9f1f2de1b6987303578a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51a4b207ad137307940e3b040c867b193d6dbfe8d335a9848ae99d7b54dfe4a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a66bb51fd2a83626b9273b45fbd7f5f706d7e24243c151306da48c23a2585e0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27c70ec101040386b5b79f47512602bdff840119e7b4d6ef0b8fbe8444c4539d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1baf10f3bda7bc79c531b8241eb15a9232a48f96058b7af689b1ad10913d9ee9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f9198427f6c39f1ea2e494c6e4382f06fef0a9c8bde4fe005d26c103a3d3994"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fd0fdf225c82ed927defd54b265d6aadb343f43a924960d0607c3452b848ab1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1703c3c9f6d5a4f5859d2eb15d7f29bbc1acaa123c820d3b9f23ff6f81ed0f9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a25a9d2a417870495a2b59aab1dc7c117519a22162c7a6f59e3fc52d937dcfb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2e18345f88cc011b65c4c35cae3825b22c5b4e27543ad87d1db932eb433c289"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbc5f875b467d3b5da311d208c6744be4177307c8ea6627381a7c04c368b6293"
   end
 
   depends_on "go" => :build
