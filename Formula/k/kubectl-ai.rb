@@ -11,12 +11,12 @@ class KubectlAi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cba1b7cab964a0077c93f23172a12558b0c67024b8a2957fb28a0d9f304a9973"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cba1b7cab964a0077c93f23172a12558b0c67024b8a2957fb28a0d9f304a9973"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cba1b7cab964a0077c93f23172a12558b0c67024b8a2957fb28a0d9f304a9973"
-    sha256 cellar: :any_skip_relocation, sonoma:        "334cc26b6dbff0a308253bdf922b344bcac1c76bb50b00679ee68cdec874cca7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0991d99996b97825340205069c4bf8f532d1b9786f489ad4154f0ef8928e517e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93961496074bccd806d03a70cc6af23b9ce3d11617884117eec449b3405a03fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a55f94f1953ddaec0707e1572a6a9537251a3eda5ccaadc5712e85a950453d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a55f94f1953ddaec0707e1572a6a9537251a3eda5ccaadc5712e85a950453d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a55f94f1953ddaec0707e1572a6a9537251a3eda5ccaadc5712e85a950453d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a1bc2c5fdd677d4ef9f4179d784724c61cfe5e7ec1181238c0f49d81532db54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb1c4844e7a10ef7fa38f195285900105f84cf388b4a0567ab4a6842130c77dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9282d1dfac83cf8b9bedb6ed2c6e549ee49af76e4d3cef97f36487cd55157d3a"
   end
 
   depends_on "go" => :build
