@@ -1,8 +1,8 @@
 class Rumdl < Formula
   desc "Markdown Linter and Formatter written in Rust"
   homepage "https://github.com/rvben/rumdl"
-  url "https://github.com/rvben/rumdl/archive/refs/tags/v0.0.187.tar.gz"
-  sha256 "889052cc5f87e8c540d3129fffbbbaed4f51d4841ad35f8e158acbccd8e888a2"
+  url "https://github.com/rvben/rumdl/archive/refs/tags/v0.0.188.tar.gz"
+  sha256 "9aa960bf8298f89bbfcf3c2bc91dbfbe4d927453fb8549ee5f377a21719e58bd"
   license "MIT"
 
   livecheck do
