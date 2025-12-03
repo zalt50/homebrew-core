@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/a6/1b/c5fa4f4f99f6905b567dce6f212a531fb9a486b45f30aa91022d6ede10ab/snakemake-9.14.0.tar.gz"
-  sha256 "d1126fe73cd182c6810a7981130c197ce8b707122ab3aa30b510eaa69f6dec06"
+  url "https://files.pythonhosted.org/packages/d3/30/d8de3c57e1d58b7807f6e4a815c465699345b46edc96a659152a3e38fdf9/snakemake-9.14.1.tar.gz"
+  sha256 "e3eaf7a91a0c1101c4d9ef086507d55afade2eaf13c1197412d6d28b2c32162a"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -207,8 +207,8 @@ class Snakemake < Formula
   end
 
   resource "snakemake-interface-storage-plugins" do
-    url "https://files.pythonhosted.org/packages/dd/b3/cd5256e56cfe6fc51319a7d9df1a3a2a7584499fadd3c3fc5619ff39f74f/snakemake_interface_storage_plugins-4.2.3.tar.gz"
-    sha256 "95be93d1aa1c56c189d9ff661930a6475e847a79a74013822c9570c0ef691755"
+    url "https://files.pythonhosted.org/packages/d4/0c/906d09e4e99733b605a5b24b03fcdbe40c47787c770aea42421f225f9171/snakemake_interface_storage_plugins-4.3.2.tar.gz"
+    sha256 "2f45c6b784e2af5b6e7102d3cb700d597b7cf7515fcf02d7d1153065e90a7895"
   end
 
   resource "tabulate" do
