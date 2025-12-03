@@ -1,19 +1,18 @@
 class Appwrite < Formula
   desc "Command-line tool for Appwrite"
   homepage "https://appwrite.io"
-  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-12.0.0.tgz"
-  sha256 "c29de83fe0d45dd177c66879193dcc0da36af2f8184bee570239dc78f840aa08"
+  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-12.0.1.tgz"
+  sha256 "6219e1bef799c67518d2871fbeeeda978349d75b9094b2928c28e7727605a2f8"
   license "BSD-3-Clause"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "800d8e7f3109848eccffe317da92bbfc7feee08cefc2d8eda139a53f60931a4e"
-  end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    node_modules = libexec/"lib/node_modules/appwrite-cli/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
 
     # Ensure uniform bottles
     file = libexec/"lib/node_modules/appwrite-cli/lib/commands/update.js"
