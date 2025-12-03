@@ -6,6 +6,7 @@ class Fastmcp < Formula
   url "https://files.pythonhosted.org/packages/c8/7a/4c6375a56f7458a4a6af62f4c4838a2c957a665cf5edad26fe95395666f1/fastmcp-2.13.2.tar.gz"
   sha256 "2a206401a6579fea621974162674beba85b467ad72c70c1a3752a31951dff7f0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
@@ -44,8 +45,8 @@ class Fastmcp < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/2c/49/e28a77f8a3868b1c9ff6a030678e84de24c4783bae4c12cec9443cf8fb54/beartype-0.22.7.tar.gz"
-    sha256 "c7269855b71e32b7c9f0fc662baade752eb525107266e053338c2f6e8873826b"
+    url "https://files.pythonhosted.org/packages/8c/1d/794ae2acaa67c8b216d91d5919da2606c2bb14086849ffde7f5555f3a3a5/beartype-0.22.8.tar.gz"
+    sha256 "b19b21c9359722ee3f7cc433f063b3e13997b27ae8226551ea5062e621f61165"
   end
 
   resource "cachetools" do
@@ -144,8 +145,8 @@ class Fastmcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/a3/a2/c5ec0ab38b35ade2ae49a90fada718fbc76811dc5aa1760414c6aaa6b08a/mcp-1.22.0.tar.gz"
-    sha256 "769b9ac90ed42134375b19e777a2858ca300f95f2e800982b3e2be62dfc0ba01"
+    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
+    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
   end
 
   resource "mdurl" do
