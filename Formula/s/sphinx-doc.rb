@@ -3,8 +3,8 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/bb/f5/7aedfbc7833b7e40c9c921c4f813e22c0abc1d8ee5f778c479c102001d7f/sphinx-9.0.1.tar.gz"
-  sha256 "c820d856657ce7cd41ce2c097f478ac3d7ddad9779ad83de4f0136a81ff388fd"
+  url "https://files.pythonhosted.org/packages/7f/b5/5c27876e4357ae1059bf765ae9a8341c04e8cdbe8a96d53b33597926cf1c/sphinx-9.0.2.tar.gz"
+  sha256 "96fe90c40bff08f0a4a05f3a8f637ded4109f442088f896a0c7392973b1df913"
   license "BSD-2-Clause"
 
   bottle do
@@ -63,8 +63,8 @@ class SphinxDoc < Formula
   end
 
   resource "numpydoc" do
-    url "https://files.pythonhosted.org/packages/2f/19/7721093e25804cc82c7c1cdab0cce6b9343451828fc2ce249cee10646db5/numpydoc-1.9.0.tar.gz"
-    sha256 "5fec64908fe041acc4b3afc2a32c49aab1540cf581876f5563d68bb129e27c5b"
+    url "https://files.pythonhosted.org/packages/e9/3c/dfccc9e7dee357fb2aa13c3890d952a370dd0ed071e0f7ed62ed0df567c1/numpydoc-1.10.0.tar.gz"
+    sha256 "3f7970f6eee30912260a6b31ac72bba2432830cd6722569ec17ee8d3ef5ffa01"
   end
 
   resource "packaging" do
