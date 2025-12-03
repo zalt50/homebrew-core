@@ -6,14 +6,14 @@ class Ortp < Formula
 
   stable do
     # TODO: Switch to monorepo in 5.5.x
-    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.65/ortp-5.4.65.tar.bz2"
-    sha256 "4ecee5c64b60c8e0b34f6c44cbfd022705d5a06bddbb010e442c4c5503e7022b"
+    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.67/ortp-5.4.67.tar.bz2"
+    sha256 "1cf5e5baa1fb8f469b19025429e7cf248b9e15516dabbd95c9e009d9ede46f4f"
 
     # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
     # https://github.com/BelledonneCommunications/bctoolbox
     resource "bctoolbox" do
-      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.65/bctoolbox-5.4.65.tar.bz2"
-      sha256 "0cb41b759b19dd24cf29847c2bcf96ac0c68cdd210c0b0ba862d43ebaedb35f2"
+      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.67/bctoolbox-5.4.67.tar.bz2"
+      sha256 "51ae4f9400d6553ba735c27e10e5fc78c19c699f533e0d6a0aaa75c2fe4327e7"
 
       livecheck do
         formula :parent
