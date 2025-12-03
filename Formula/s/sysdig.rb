@@ -16,12 +16,12 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "f3267f8943266b61bb104b28bc0e8b63a9ca9529a8ddd4b341208b1c739d170a"
-    sha256                               arm64_sequoia: "94b6f2f8c0cd991fe54dd5e650b91bd3f257eab4973cc9950c964f86122aff5a"
-    sha256                               arm64_sonoma:  "7d1638aa65b38eb8339d9f0af572c505b9f9c9c18bacb1d74e4c835868cf8583"
-    sha256                               sonoma:        "5cd5fc06fbe7f8f7c608755510dc8d3cb4e42e36d6262668d050ba1bf6bfd60e"
-    sha256                               arm64_linux:   "8c4f64bf5f36d10dbec80403410d488eea80c7cb4e0a03622fe515bdd538df06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "720f1f0fb7ad28958dac7f5cfcb8b8f7c8fea3a55106264f44c8ad411bdb861f"
+    sha256                               arm64_tahoe:   "4960c4fecf7a32e4d3cc46df757ee5e3bc7e4ad7475ca7403838758a3b11a05e"
+    sha256                               arm64_sequoia: "727c81ff9f04938a576b781b9978b12a0c2784571a56a8aa6811a6047aa0b760"
+    sha256                               arm64_sonoma:  "7459d67abddbbd21e42c837638669655414c14c35590a4419d0140e15ab1aead"
+    sha256                               sonoma:        "357adf23e7fc935ef3f6cb8458cafd02f5100835be7b280617eee444aba6c492"
+    sha256                               arm64_linux:   "9c6d27c8f64e1fd3b75635fc8b7a2069ac3533737883ea79a46ec6f0880d0eda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95edd53870a7a0b3a14cb787dc4143c3f50b64240d3aa8b283c93d76637593a0"
   end
 
   # FIXME: switch to brewed `falcosecurity-libs`
