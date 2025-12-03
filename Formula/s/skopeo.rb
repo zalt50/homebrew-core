@@ -1,8 +1,8 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://github.com/containers/skopeo/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "0c19fe51b2cd8d1bd5e38c03b97421e318fc08153bdf5ef2f816a29889eacdef"
+  url "https://github.com/containers/skopeo/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "f76eeddf697a3cc7a872e3077ab4d0fdbebe9f3c6171462e3e9feb84368b3fac"
   license "Apache-2.0"
 
   bottle do
@@ -36,7 +36,7 @@ class Skopeo < Formula
       Utils.safe_popen_read("hack/libsubid_tag.sh").chomp,
     ].uniq
 
-    ldflag_prefix = "github.com/containers/image/v5"
+    ldflag_prefix = "go.podman.io/image/v5"
     ldflags = %W[
       -X main.gitCommit=
       -X #{ldflag_prefix}/docker.systemRegistriesDirPath=#{etc}/containers/registries.d
