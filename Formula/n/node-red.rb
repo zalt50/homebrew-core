@@ -1,8 +1,8 @@
 class NodeRed < Formula
   desc "Low-code programming for event-driven applications"
   homepage "https://nodered.org/"
-  url "https://registry.npmjs.org/node-red/-/node-red-4.1.1.tgz"
-  sha256 "bf4e7a0ae54720f6c58580a0743dc6d456fcf7366c18e99feae397f566964381"
+  url "https://registry.npmjs.org/node-red/-/node-red-4.1.2.tgz"
+  sha256 "a0203340780a07e7214d2e1bc88a575ee431da89a2045665142a9d55f57f79eb"
   license "Apache-2.0"
 
   bottle do
