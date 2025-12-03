@@ -1,8 +1,8 @@
 class Groovy < Formula
   desc "Java-based scripting language"
   homepage "https://www.groovy-lang.org/"
-  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-5.0.2.zip"
-  sha256 "70f82f11b1b764e207dcf5568882c78dc77293f307816242394a3f7a74f20e81"
+  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-5.0.3.zip"
+  sha256 "9d711dcb1dea94df9119558365beb6ac2909a22e30b58ae31de8bcb0dcf33698"
   license "Apache-2.0"
 
   livecheck do
