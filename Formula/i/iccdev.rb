@@ -1,10 +1,9 @@
 class Iccdev < Formula
   desc "Developer tools for interacting with and manipulating ICC profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
-  url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "8795b52a400f18a5192ac6ab3cdeebc11dd7c1809288cb60bb7339fec6e7c515"
+  url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.1.tar.gz"
+  sha256 "de8750b0fbf9e3ec1e7260c0752427f54c9bb81b2f9366eaf75b7a7509d80097"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d434b22f04c894203cde92c60e9a590b0a6705c942f23572e13e3274d5da6c78"
