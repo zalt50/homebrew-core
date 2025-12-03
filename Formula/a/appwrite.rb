@@ -5,6 +5,15 @@ class Appwrite < Formula
   sha256 "6219e1bef799c67518d2871fbeeeda978349d75b9094b2928c28e7727605a2f8"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8847b1978d3abab44203533deb860639e261536193b88d41b518a88b403866a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03f8c6ab339bd087f9a5b1f81eaea505e7033f906a69af8a49b9b233d67f84e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03f8c6ab339bd087f9a5b1f81eaea505e7033f906a69af8a49b9b233d67f84e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4412406673e641bb53943452ad2e1751c8426528388cba319e15f29fba6335e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b079320906ce2b534317e9ef820b53d3b858aaf14792323a464a6a91f4f26be7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b079320906ce2b534317e9ef820b53d3b858aaf14792323a464a6a91f4f26be7"
+  end
+
   depends_on "node"
 
   def install
