@@ -1,8 +1,8 @@
 class Kuttl < Formula
   desc "KUbernetes Test TooL"
   homepage "https://github.com/kudobuilder/kuttl"
-  url "https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "99d701c0fd9966e4ab77138a69137ec1f4d860f4fb6f6a9a89ef9141cb26eb08"
+  url "https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "d576b1be8294451a53dee27e9c95b814d2641573bd4a1963de468498347802cf"
   license "Apache-2.0"
   head "https://github.com/kudobuilder/kuttl.git", branch: "main"
 
