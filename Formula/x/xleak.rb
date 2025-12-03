@@ -1,8 +1,8 @@
 class Xleak < Formula
   desc "Terminal Excel viewer with an interactive TUI"
   homepage "https://github.com/bgreenwell/xleak"
-  url "https://github.com/bgreenwell/xleak/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "f5d95817d3729ed47f45afa499e7de7209cb41a5bc44fc1a9d121b14d9838191"
+  url "https://github.com/bgreenwell/xleak/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "35f5785239743f23e40abb816fda3f2ea97014ab320558d97faa95df9a1d3683"
   license "MIT"
   head "https://github.com/bgreenwell/xleak.git", branch: "main"
 
