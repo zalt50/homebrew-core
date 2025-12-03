@@ -1,8 +1,8 @@
 class CargoShear < Formula
   desc "Detect and remove unused dependencies from `Cargo.toml` in Rust projects"
   homepage "https://github.com/Boshen/cargo-shear"
-  url "https://github.com/Boshen/cargo-shear/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "338686a1d413b59d406da4ec7e336020bf62ca4cd9fb82c9b98b8f0a5ce24680"
+  url "https://github.com/Boshen/cargo-shear/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "7e8c7b0d1f6413d6f77c2489f11b75d153b2e2aaeca5712ca63620348897b0f2"
   license "MIT"
   head "https://github.com/Boshen/cargo-shear.git", branch: "main"
 
@@ -46,13 +46,8 @@ class CargoShear < Formula
 
       (crate/"lib.rs").write "use libc;"
 
-      output = shell_output("cargo shear", 1)
       # bear is unused
-      assert_match <<~OUTPUT, output
-        demo-crate -- Cargo.toml:
-          unused dependencies:
-            bear
-      OUTPUT
+      assert_match "unused dependency `bear`", shell_output("cargo shear", 1)
     end
   end
 end
