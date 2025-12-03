@@ -1,8 +1,8 @@
 class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
-  url "https://github.com/draios/sysdig/archive/refs/tags/0.41.1.tar.gz"
-  sha256 "923c01ac708870aa42b0296e282f4ffc57a0b1d5ebd22257f4b4ff97f1a7b415"
+  url "https://github.com/draios/sysdig/archive/refs/tags/0.41.2.tar.gz"
+  sha256 "7ca055ce63a43de7dc390b237caeb13455616f84d4f4052c1744f65d9bb6ae2f"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] },                  # `falcosecurity-libs`, driver/
@@ -16,12 +16,12 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "4960c4fecf7a32e4d3cc46df757ee5e3bc7e4ad7475ca7403838758a3b11a05e"
-    sha256                               arm64_sequoia: "727c81ff9f04938a576b781b9978b12a0c2784571a56a8aa6811a6047aa0b760"
-    sha256                               arm64_sonoma:  "7459d67abddbbd21e42c837638669655414c14c35590a4419d0140e15ab1aead"
-    sha256                               sonoma:        "357adf23e7fc935ef3f6cb8458cafd02f5100835be7b280617eee444aba6c492"
-    sha256                               arm64_linux:   "9c6d27c8f64e1fd3b75635fc8b7a2069ac3533737883ea79a46ec6f0880d0eda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95edd53870a7a0b3a14cb787dc4143c3f50b64240d3aa8b283c93d76637593a0"
+    sha256                               arm64_tahoe:   "7f63b6e9d6b16ae0c2c0c52944799f6d4a4178c8edf74ec48d3af4312b06c41b"
+    sha256                               arm64_sequoia: "1416275442d0c6a75a78a614508d79f3112991fab06bb83f0f2dfa96a90e7e15"
+    sha256                               arm64_sonoma:  "7e9af5795a1ba5a21b7d4c262e35da1e0b98e5b72a9ca8a1c5f76f4f501d0eb4"
+    sha256                               sonoma:        "febcf960f78e96fecb7402b35792594bd12ac6529f400a6c8e6453f036beb552"
+    sha256                               arm64_linux:   "ebaa07fa9c03e27c8e24616abdec5f8e12b1ea0d0fc908fe1a81152df4e29432"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "beb29e061c3e604cab057c60ce7cc2becffb3208276c9f068e5e4c6cc02624f7"
   end
 
   # FIXME: switch to brewed `falcosecurity-libs`
