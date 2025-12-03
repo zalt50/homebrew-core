@@ -1,8 +1,10 @@
 class Zuban < Formula
   desc "Python language server and type checker, written in Rust"
   homepage "https://zubanls.com/"
-  url "https://github.com/zubanls/zuban/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "8d621c57b10bc6ff81dcfaeb09930563a110f6c96d9056afb04643a68cef7357"
+  # pull from git tag to get submodules
+  url "https://github.com/zubanls/zuban.git",
+    tag:      "v0.3.0",
+    revision: "a159f755ca4bf8307a0cab01494ae2526437eb89"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
@@ -15,16 +17,12 @@ class Zuban < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1f7db114da498edfd70442dafa292dfa1aa8dc65be7d1db92f4e176426bb0f7"
   end
 
-  depends_on "mypy" => :build
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/zuban")
-
-    # Work around zubanls not reading ZUBAN_TYPESHED (https://github.com/zubanls/zuban/issues/53)
-    (typeshed = libexec/"lib/python3/site-packages/zuban/typeshed").mkpath
-    cp_r Formula["mypy"].opt_libexec.glob("lib/python*/site-packages/mypy/typeshed").first.children, typeshed
-    bin.env_script_all_files libexec/"bin", ZUBAN_TYPESHED: typeshed
+    libexec.install (buildpath/"third_party/typeshed").children
+    bin.env_script_all_files libexec/"bin", ZUBAN_TYPESHED: libexec
   end
 
   test do
