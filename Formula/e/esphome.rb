@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/f5/1b/8ef377d1c0df94b64d995ca59e37e6cbc094c064dba0d6b6e8a553d6902a/esphome-2025.11.2.tar.gz"
-  sha256 "b7c0f5e4af7575de46c0b35f12acbf14df692358cb9e9557845576ac81e291e7"
+  url "https://files.pythonhosted.org/packages/a7/12/33ac02495e8a7f76b41ac50bf3dc6c1525e456245d0b26f788c5ac5e4e58/esphome-2025.11.3.tar.gz"
+  sha256 "8683eb405325c3534b10de04caddd8b1bdcd9ea5089a459cbb2a6a4464b8cc3f"
   license "MIT"
 
   bottle do
@@ -40,8 +40,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "argcomplete" do
@@ -277,11 +277,6 @@ class Esphome < Formula
   resource "semantic-version" do
     url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
     sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "starlette" do
