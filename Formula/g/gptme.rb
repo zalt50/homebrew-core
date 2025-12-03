@@ -6,6 +6,7 @@ class Gptme < Formula
   url "https://files.pythonhosted.org/packages/cf/48/95c9aa7ab0c6144de90fb56394720c570af139a453d1c5e2729c61df8780/gptme-0.30.0.tar.gz"
   sha256 "02406e255091fc116b1bad4b8c5ec1d79f306045a354d9cb3d5a15797097b161"
   license "MIT"
+  revision 1
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
@@ -37,8 +38,8 @@ class Gptme < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "asttokens" do
@@ -162,8 +163,8 @@ class Gptme < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/15/bb/147bf5d47b8d6f3fb315204cd2f567b1ad85511acd8d59e85cccf7cce65c/mcp-1.21.2.tar.gz"
-    sha256 "b6497b7f7a77aabe263931a3335956dfd45fe8b1e2168931e455914ba1a7f4c9"
+    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
+    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
   end
 
   resource "mdurl" do
