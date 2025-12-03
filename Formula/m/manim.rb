@@ -9,13 +9,12 @@ class Manim < Formula
   head "https://github.com/manimCommunity/manim.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "718bc3d08a4fb47ee15142edf3e0650b7c2f232047330d011c8aea88c2301c59"
-    sha256 cellar: :any,                 arm64_sequoia: "77154bf5226d7f19c505699c21f54bebeec4def08053eabf110097eccf0605ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "3db1d9748f59313478c70ac898e9c53a2475c1c93afe145f2324c96879486985"
-    sha256 cellar: :any,                 sonoma:        "8c2a0b447fbcafd7dbfc6a3f5f8a5f0fb136a22b8aac9b69f5b47438055f44a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06198e65f21538891c164ba65902269f18b524ff1233f236effda146712514b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bfff49f7410cb89bcfa2d5e153cd0ab679e00e501b3ee20db106850bb38ee8d"
+    sha256 cellar: :any,                 arm64_tahoe:   "6b931a4e744203bd2f386f5ebd5b186e1d1b07391f5df3914700f592a08d283b"
+    sha256 cellar: :any,                 arm64_sequoia: "e3f30c62f1c9e6462de378f085179fcb80bc7e551592d5e67ba8ee9075a6fa2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e943b82f9b04c7bf3ce6a4c4864ad92d48e77a2c5e6be4b15a10bfa80b13e06"
+    sha256 cellar: :any,                 sonoma:        "f95492cdf3ecc22f8c5cc4a6dcddb112a1ea0f55a16d61b3281a4331120a2e8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d8bb2db174efaad49b3c19a954e804f42879f32ed93a786cbc8d2000ee9227e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91ac5147ec4549eb8249157e7c9179c040ee4430618fbb1342d8ca2c56d3887c"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut
