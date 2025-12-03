@@ -1,8 +1,8 @@
 class Xgo < Formula
   desc "AI-native programming language that integrates software engineering"
   homepage "https://xgo.dev/"
-  url "https://github.com/goplus/xgo/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "68ef472acd5853f69d5378845d92619c51834a637092e2bf0924ad1cea2dd1ac"
+  url "https://github.com/goplus/xgo/archive/refs/tags/v1.5.3.tar.gz"
+  sha256 "af10b9e8d3980e4c4f4b9bf3d341e3d1dd72d1324ca26825b360c3ce865b7da0"
   license "Apache-2.0"
   head "https://github.com/goplus/xgo.git", branch: "main"
 
