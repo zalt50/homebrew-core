@@ -31,7 +31,7 @@ class DockerCompose < Formula
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
       -s -w
-      -X github.com/docker/compose/v2/internal.Version=#{version}
+      -X github.com/docker/compose/v#{version.major}/internal.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd"
 
