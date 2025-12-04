@@ -1,19 +1,25 @@
 class DbmlCli < Formula
   desc "Convert DBML file to SQL and vice versa"
   homepage "https://www.dbml.org/cli/"
-  url "https://registry.npmjs.org/@dbml/cli/-/cli-5.2.0.tgz"
-  sha256 "76121a6f7d4f946cb7b51cc1136b9bef25dbe06514f9be388aecffb5618e0474"
+  url "https://registry.npmjs.org/@dbml/cli/-/cli-5.3.0.tgz"
+  sha256 "e6053e39a06a99b5e26d45f3372495fce1a02ef18d72245aa24a7875e5df80f1"
   license "Apache-2.0"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "db05827d4a69c1b4d111528f02b52536c4212e4c46aa6a67b519588fc364ea84"
-  end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove incompatible pre-built binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/@dbml/cli/node_modules"
+    node_modules.glob("oracledb/build/Release/oracledb-*.node").each do |f|
+      rm(f) unless f.basename.to_s.match?("#{os}-#{arch}")
+    end
+
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
