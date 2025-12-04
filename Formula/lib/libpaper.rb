@@ -1,8 +1,8 @@
 class Libpaper < Formula
   desc "Library for handling paper characteristics"
   homepage "https://github.com/rrthomas/libpaper"
-  url "https://github.com/rrthomas/libpaper/releases/download/v2.2.6/libpaper-2.2.6.tar.gz"
-  sha256 "500d39dc58768ee09688738c8b5bfe07640ba2fd6c25a6dc78810eb69c719e93"
+  url "https://github.com/rrthomas/libpaper/releases/download/v2.2.7/libpaper-2.2.7.tar.gz"
+  sha256 "3925401edf1eda596277bc2485e050b704fd7f364f257c874b0c40ac5aa627c0"
   license "LGPL-2.1-or-later"
 
   bottle do
