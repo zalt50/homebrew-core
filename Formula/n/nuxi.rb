@@ -1,8 +1,8 @@
 class Nuxi < Formula
   desc "Nuxt CLI (nuxi) for creating and managing Nuxt projects"
   homepage "https://github.com/nuxt/cli"
-  url "https://registry.npmjs.org/nuxi/-/nuxi-3.30.0.tgz"
-  sha256 "210145c695b60cfa6698aeafc9c98161b4c7c45222be62bccc13afec6a410a94"
+  url "https://registry.npmjs.org/nuxi/-/nuxi-3.31.0.tgz"
+  sha256 "a24380a43f0613a5033889ca9c1d828d75fb8e002c58aa72e0bf88167289ffc5"
   license "MIT"
   head "https://github.com/nuxt/cli.git", branch: "main"
 
@@ -26,7 +26,7 @@ class Nuxi < Formula
     ENV["CI"] = "1"
     target = testpath/"nuxi-tmp"
     output = shell_output(
-      "#{bin}/nuxt init . --cwd #{target} -f --no-install --packageManager npm --gitInit -M --preferOffline",
+      "#{bin}/nuxt init . --cwd #{target} -f --template=minimal --gitInit --packageManager=npm --preferOffline",
     )
     assert_predicate target, :directory?
     assert_predicate target/".git", :directory?
