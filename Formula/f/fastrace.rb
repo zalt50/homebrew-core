@@ -1,8 +1,8 @@
 class Fastrace < Formula
   desc "Dependency-free traceroute implementation in pure C"
   homepage "https://davidesantangelo.github.io/fastrace/"
-  url "https://github.com/davidesantangelo/fastrace/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "b8c79571191266f0f3ef58033b24bb27c81182bfd4f99cd868e778e6876b08bd"
+  url "https://github.com/davidesantangelo/fastrace/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "b40aadb9c3b5114972abe26241d847cbffec99c3d0f69ea77d94ba53825ac407"
   license "BSD-2-Clause"
 
   bottle do
