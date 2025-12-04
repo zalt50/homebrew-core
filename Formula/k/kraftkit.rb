@@ -1,8 +1,8 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
   homepage "https://unikraft.org/docs/cli"
-  url "https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.3.tar.gz"
-  sha256 "321439fd15bbdb485943899ea1dc6f6693d2cfe56ff275ac2aedd91b807040f0"
+  url "https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.4.tar.gz"
+  sha256 "a5d60037bacc2d292ef916296c9e9c7add2aa02e18e7e32e1982abd31d2801ca"
   license "BSD-3-Clause"
   head "https://github.com/unikraft/kraftkit.git", branch: "staging"
 
@@ -37,7 +37,12 @@ class Kraftkit < Formula
       -X kraftkit.sh/internal/version.commit=#{tap.user}
       -X kraftkit.sh/internal/version.buildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin/"kraft"), "./cmd/kraft"
+    # Upstream suggested workaround for undefined: securejoin functions
+    # Issue ref: https://github.com/unikraft/kraftkit/issues/2581
+    tags = %w[
+      containers_image_storage_stub containers_image_openpgp netgo osusergo
+    ]
+    system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"kraft"), "./cmd/kraft"
 
     generate_completions_from_executable(bin/"kraft", "completion")
   end
