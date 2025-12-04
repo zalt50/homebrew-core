@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/78/b8/c6e916565af8a8e1c8f5a4736b31a6995adb51dbd4cbefc8b022e753ecb9/fastapi-0.123.5.tar.gz"
-  sha256 "54bbb660ca231d3985474498b51c621ddcf8888d9a4c1ecb10aa40ec217e4965"
+  url "https://files.pythonhosted.org/packages/d0/82/50cc47c8d29b66ef28da8fd07b9012bbeb82d443297032609f7142ee9f59/fastapi-0.123.6.tar.gz"
+  sha256 "48ec836abdc781b7e9f0f804963a82719c5ad681d24c35bba0b939e2e86b8a6a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a45109ede91e11c29ff64e3517d242af76ce86ce237fa162a3b5f3353d9a7a8a"
-    sha256 cellar: :any,                 arm64_sequoia: "d30ae301be3a543f7b95fbfdda92e840d34e5a96d835bc369b554146eed813cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf60eb9098d7ad6f2f5824a87d6f2350c4daaf337928cdcbd6c94c160e70174c"
-    sha256 cellar: :any,                 sonoma:        "60bd27d1476a32e0d4e4ac040cac94a3a66368b6799f1099d07670068ea9daa8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2bffa9167e7bd97fc55fbdd3b9e4aaaa028d7a2beddde763786d950c5c442f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51cf1152d07685ca53df7f39e15ccf094655a488481c5b887e29e955dc3d86b6"
+    sha256 cellar: :any,                 arm64_tahoe:   "9e761506898e7b0ccb39d0993e04592bb6b47aa1b9eb3c14abd3a3ba95a689ef"
+    sha256 cellar: :any,                 arm64_sequoia: "2415d24a3d10028bf480ec7621770a68c20a3bed8a81ed98ef21b5f8a4619df0"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbdebf23282ad039ed7fd7792094ab25836b4e5496b3f554caa15bfb1ea134b7"
+    sha256 cellar: :any,                 sonoma:        "48911bc69b2586456ba2fff40d1406c55578333e09aff6c35573c2f1d51b582a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0604a387a6641f2406838be6094ad3381e15bf6c64c2ca7fc11348778dc9d985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9ca3bbb6b47ff7e2fb1be7018f13ab2ee78299b7c9d926e303dd1462dcdd961"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -146,8 +146,8 @@ class Fastapi < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/7c/d7/c140a5837649e2bf2ec758494fde1d9a016c76777eab64e75ef38d685bbb/sentry_sdk-2.46.0.tar.gz"
-    sha256 "91821a23460725734b7741523021601593f35731808afc0bb2ba46c27b8acd91"
+    url "https://files.pythonhosted.org/packages/4a/2a/d225cbf87b6c8ecce5664db7bcecb82c317e448e3b24a2dcdaacb18ca9a7/sentry_sdk-2.47.0.tar.gz"
+    sha256 "8218891d5e41b4ea8d61d2aed62ed10c80e39d9f2959d6f939efbf056857e050"
   end
 
   resource "shellingham" do
