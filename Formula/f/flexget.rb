@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/6c/75/078a03c28576603c6a0d6ff30fc0667bbdfcc23ded1c9196aae0b0bab4cc/flexget-3.18.28.tar.gz"
-  sha256 "6bed91ae2645fe0394b74d85f7430aa89dfd1333f10022d7286b021928a8690a"
+  url "https://files.pythonhosted.org/packages/98/79/0bc1912b0bb3f0fa90e08d65338ef6651654194a86f703f0800f29b0434f/flexget-3.18.29.tar.gz"
+  sha256 "94c59b46b56550149c6f7ab7fafa2427e10dbabc88da35676f236a0ec0d1621a"
   license "MIT"
 
   bottle do
@@ -116,8 +116,8 @@ class Flexget < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
-    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
+    url "https://files.pythonhosted.org/packages/c7/e5/40dbda2736893e3e53d25838e0f19a2b417dfc122b9989c91918db30b5d3/greenlet-3.3.0.tar.gz"
+    sha256 "a82bb225a4e9e4d653dd2fb7b8b2d36e4fb25bc0165422a11e48b88e9e6f78fb"
   end
 
   resource "guessit" do
