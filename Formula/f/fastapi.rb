@@ -3,8 +3,8 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/b8/99/8f2d4be9af90b3e56b865a07bdd390398e53d67c9c95c729b5772e528179/fastapi-0.123.8.tar.gz"
-  sha256 "d106de125c8dd3d4341517fa2ae36d9cffe82a6500bd910d3c080e6c42b1b490"
+  url "https://files.pythonhosted.org/packages/2c/01/c3fb48c0135d89586a03c3e2c5bc04540dda52079a1af5cac4a63598efb9/fastapi-0.123.9.tar.gz"
+  sha256 "ab33d672d8e1cc6e0b49777eb73c32ccf20761011f5ca16755889ab406fd1de0"
   license "MIT"
 
   bottle do
@@ -56,8 +56,8 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cloud-cli" do
-    url "https://files.pythonhosted.org/packages/27/6c/32527a1fd7eee91dd0c52bbe6b7c21e3272b24beb436b142b2c9c01f922d/fastapi_cloud_cli-0.5.2.tar.gz"
-    sha256 "34d04ffadb2562c3ebb39e6f5a599c47353750f75a2ef0a2d9c1442ed09f3308"
+    url "https://files.pythonhosted.org/packages/c2/dd/e5890bb4ee63f9d8988660b755490e346cf5769aaa7f5f3ced9afb9f090a/fastapi_cloud_cli-0.6.0.tar.gz"
+    sha256 "2c333fff2e4b93b9efbec7896ce3ffa3e77ce4cf3d8cb14e35b4f823dfddac02"
   end
 
   resource "fastar" do
