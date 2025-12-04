@@ -1,9 +1,9 @@
 class A2ps < Formula
   desc "Any-to-PostScript filter"
   homepage "https://www.gnu.org/software/a2ps/"
-  url "https://ftpmirror.gnu.org/gnu/a2ps/a2ps-4.15.7.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.7.tar.gz"
-  sha256 "715f38670afd950b4ca71c01f468feefad265ca52d3f112934c63c0a8bfbb8af"
+  url "https://ftpmirror.gnu.org/gnu/a2ps/a2ps-4.15.8.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.8.tar.gz"
+  sha256 "8d13915a36ebbfa8e7b236b350cc81adc714acb217a18e8d8c60747c0ad353f9"
   license "GPL-3.0-or-later"
 
   bottle do
