@@ -13,12 +13,12 @@ class Ldns < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2002e705ab0503ef65d8f9f1f810bf7a3973790ebbc20154c74c547ecf4e3fad"
-    sha256 cellar: :any,                 arm64_sequoia: "cafc56249b3b8f7f226b2890df163b76b692b8a541a12d2ee37aebbd7b2b48d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc39729a2c4ba4a2a171539338ad298b8bf6a2a8a48a42a0515f71ed1f47ae72"
-    sha256 cellar: :any,                 sonoma:        "babaa19154f91c1256b486dca3ba2e3fe390adc73bad62ce68353110bd695acf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d01ef4425bae969379c2466ecfc3bca21436cc69b7e21298342d098b82a6dd3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55a6aff98a9036107f56b657a605fa5b3b73cdfd673b86fe0daf69f063ff5787"
+    sha256 cellar: :any,                 arm64_tahoe:   "629f7a51a1a2803dd5416db7237b7c640e72b04614f2012df5fe08cd9639636f"
+    sha256 cellar: :any,                 arm64_sequoia: "714d554e3c767062e77498ba92c0ff91b0871d86197ad91f90da65d9db3ab254"
+    sha256 cellar: :any,                 arm64_sonoma:  "81f4fd69ea66890b1b1db8122b5da93744270950657363ba40c32dec57b0df80"
+    sha256 cellar: :any,                 sonoma:        "190aaba1359ad4d26285d31902e53da00ee506610528baafdc1fbf539fb4f9a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ee79e560ef1f4d78924cf2070eb8dadca89a504f0f5417a99d3bd3730589d70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad62627c746df971912e4cafba581db58e81f0bd90cb93bba6292213467237f"
   end
 
   depends_on "swig" => :build
