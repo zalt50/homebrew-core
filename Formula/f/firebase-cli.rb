@@ -1,8 +1,8 @@
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-14.26.0.tgz"
-  sha256 "aea1df82f95b11012c616f9534931b4496cc2064f0ef42af84be2d62c73d9858"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-14.27.0.tgz"
+  sha256 "09f6af948285fd3f72df7cf5191f10352f63143334df38c66118875527cc2aa5"
   license "MIT"
 
   bottle do
@@ -19,6 +19,9 @@ class FirebaseCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    node_modules = libexec/"lib/node_modules/firebase-tools/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
