@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.35.4.tar.gz"
-  sha256 "8713884f7b325bc7eb42daa6d5aca8802494cf60ddcd0b165d348edb06242867"
+  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.36.3.tar.gz"
+  sha256 "1deec2031b935b6520eb1b5941efd5065c0f38ffcaba5230c52db6e2f3c8b9eb"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -62,6 +62,10 @@ class Envoy < Formula
       # Workaround to build with Clang 20 until envoy uses newer dd-trace-cpp (with newer nlohmann-json)
       # https://github.com/DataDog/dd-trace-cpp/commit/a7d71b5e0599125d5957f7b8d3d56f0bcc6ae485
       args << "--copt=-Wno-deprecated-literal-operator"
+
+      # Workaround to build with Clang 21, upstream also ignores this warning
+      # https://github.com/google/cel-cpp/blob/439003a0016ed7ace068cffdf494357a3f75e3b2/common/values/value_variant.h#L735-L743
+      args << "--copt=-Wno-nontrivial-memcall"
     end
 
     # Workaround to build with Xcode 16.3 / Clang 19
