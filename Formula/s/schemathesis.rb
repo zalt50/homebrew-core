@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/b4/ab/61677294c20568240973da258263eae51fbaaef5386bac802a946e7ca49b/schemathesis-4.6.6.tar.gz"
-  sha256 "b39112ab93c70cfb0f89da321e11c11ec9a85eb701a12b041a942c85bad6e156"
+  url "https://files.pythonhosted.org/packages/b7/87/06e5b318e8752bed8a28d7eefa331f31508ceef45189e9283768e0616e69/schemathesis-4.6.7.tar.gz"
+  sha256 "efc7c377fdb062a196e5344b44c7e0a3c2abec280cabfc2041e49e7804c9cb84"
   license "MIT"
 
   bottle do
@@ -86,8 +86,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/13/3b/36d12da8dde97520bbec240de77765291cf764e46f96030604c5724ddd94/hypothesis-6.148.5.tar.gz"
-    sha256 "bb0c67bff155b8d8cfe8fbc1f1218028f7e2f0ee7f24d8ccc89f4c14ee4e65c0"
+    url "https://files.pythonhosted.org/packages/20/2f/828a50d0a87acf28e3788b1987250ed1cd08d7f0c91a138e3b4f9ffe5198/hypothesis-6.148.6.tar.gz"
+    sha256 "0ef1381f893650590f2c5918318d4c8240c79e481bbb621a49acc3dba868d80f"
   end
 
   resource "hypothesis-graphql" do
