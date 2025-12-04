@@ -5,6 +5,10 @@ class Gtl < Formula
   sha256 "1547ab78f62725c380f50972f7a49ffd3671ded17a3cb34305da5c953c6ba8e7"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "07f48a0ff25c60a6fd034c7027aa1cb362fe1aa48e767ddaa16ecbf47e9e68c0"
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
 
