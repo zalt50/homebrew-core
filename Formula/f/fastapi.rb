@@ -3,8 +3,8 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/78/b8/c6e916565af8a8e1c8f5a4736b31a6995adb51dbd4cbefc8b022e753ecb9/fastapi-0.123.5.tar.gz"
-  sha256 "54bbb660ca231d3985474498b51c621ddcf8888d9a4c1ecb10aa40ec217e4965"
+  url "https://files.pythonhosted.org/packages/d0/82/50cc47c8d29b66ef28da8fd07b9012bbeb82d443297032609f7142ee9f59/fastapi-0.123.6.tar.gz"
+  sha256 "48ec836abdc781b7e9f0f804963a82719c5ad681d24c35bba0b939e2e86b8a6a"
   license "MIT"
 
   bottle do
@@ -146,8 +146,8 @@ class Fastapi < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/7c/d7/c140a5837649e2bf2ec758494fde1d9a016c76777eab64e75ef38d685bbb/sentry_sdk-2.46.0.tar.gz"
-    sha256 "91821a23460725734b7741523021601593f35731808afc0bb2ba46c27b8acd91"
+    url "https://files.pythonhosted.org/packages/4a/2a/d225cbf87b6c8ecce5664db7bcecb82c317e448e3b24a2dcdaacb18ca9a7/sentry_sdk-2.47.0.tar.gz"
+    sha256 "8218891d5e41b4ea8d61d2aed62ed10c80e39d9f2959d6f939efbf056857e050"
   end
 
   resource "shellingham" do
