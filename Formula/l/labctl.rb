@@ -5,6 +5,15 @@ class Labctl < Formula
   sha256 "38373d00cc5fb0bec1f9332dcf7c21e320441be294b02f630ff1dff9d04c9d08"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f83cdb4850af7bfc40642f791b7b346f195f47fdf02d4e06ddb12584879d789"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f83cdb4850af7bfc40642f791b7b346f195f47fdf02d4e06ddb12584879d789"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f83cdb4850af7bfc40642f791b7b346f195f47fdf02d4e06ddb12584879d789"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a79a585151434d1ae1e6bbe086e41ba3f7b9ebab07726ba633ee29ab8454248"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44b3605da5e3c200fceb70ba052d12ba19a2ec1b864d5a6f085ed7ee0abc359e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a0615dbd751bc249d1cc25441fc8a5393dbc387fea43db47acd024322863522"
+  end
+
   depends_on "go" => :build
 
   def install
