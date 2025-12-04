@@ -424,6 +424,7 @@ jobs:
                 libcap|\
                 libva|\
                 libxml2|\
+                mesa|\
                 openssl@3|\
                 python@3.14|\
                 wayland-protocols|\
