@@ -14,12 +14,12 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "667a01ea551e798670b78cd5083926dc8fd965cd3f727fdde5c807699748a1de"
-    sha256 cellar: :any, arm64_sequoia: "33eb3c022db2ca58dafcbf7a517cc2b009c7a1d3c01a6bc350a282c27bed2317"
-    sha256 cellar: :any, arm64_sonoma:  "912df86aad5a1f94c98fe160f18d5cd434d3d30e9e058a2202b06350050cbab1"
-    sha256 cellar: :any, sonoma:        "492da56e4e263ff214b1c29df9dc6f090df18581ab85330418938b6669d50e05"
-    sha256               arm64_linux:   "3d2a2f63c30773ff81df9f40438eca8598e0cc28b405ed4c66f3bb4517de6f1c"
-    sha256               x86_64_linux:  "55a13461a952884e84eb8fd3b541ce76b6485182eea664c67072cb8259130be5"
+    sha256 cellar: :any, arm64_tahoe:   "72065a3f205979a178246bc65ad1992997b4b4eec04d9f6808286bdb7a1a8837"
+    sha256 cellar: :any, arm64_sequoia: "8b5c72cc6a426ba95550cd3bf59ab12d9d5eb1507ea4077df2850c23f09391ca"
+    sha256 cellar: :any, arm64_sonoma:  "eb56f1feb439617bd8ad6c468fa07111247cfca819a3d09e4b4af52a6701a6bb"
+    sha256 cellar: :any, sonoma:        "26a4f7e45919f9928c4e49dece892037d761a14eb7315437cf23a36ca6886bed"
+    sha256               arm64_linux:   "5f82c30e835417ed0776bf9b231fcee76a4d91a7e97fd12b1018137be83f0cc5"
+    sha256               x86_64_linux:  "0c17b4c9ae6df17b31f0f6ce4c8167ab64da171234e9b5e32fac8fcdc445c472"
   end
 
   depends_on "cmake" => [:build, :test]
