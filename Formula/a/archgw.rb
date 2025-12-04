@@ -3,8 +3,8 @@ class Archgw < Formula
 
   desc "CLI for Arch Gateway"
   homepage "https://github.com/katanemo/archgw/tree/main/arch/tools"
-  url "https://files.pythonhosted.org/packages/16/01/dc2924342d8ce9896e1788cadd8c1e6849c1679d9cf0cffd151bf47f44c8/archgw-0.3.20.tar.gz"
-  sha256 "62a6b3dc740b86d1214da5c4271dd81621005f7b9b83535227203f5375923f53"
+  url "https://files.pythonhosted.org/packages/57/41/b5d306bd0e55840718507d5dc5ad95565f1ba96d8d10a71d01fc904ffbc2/archgw-0.3.21.tar.gz"
+  sha256 "b351ec7ef228d6cb673f26dd21b3ccb7792190b4f00a9749d85d1329dd7c9958"
   license "Apache-2.0"
 
   bottle do
