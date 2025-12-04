@@ -7,12 +7,12 @@ class Xleak < Formula
   head "https://github.com/bgreenwell/xleak.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "869af96a8d1fed6b6aa516a9ac93a4763997bf27b24708d6d995d9371a526d65"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b402ccb4842c5e1c5607433b6e8145d76dcd280c40c9df2691ec32a081e09bf5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39db0b70848ef39ef66c893138e4916a786a6ca4185a16c94d5d1160f749f2d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "646b223453e96a51a57cac18732bddb25a1842a2efb9d89137ef4a6e4d9be45b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb2597822285a93c4cea71af36b01bb9cf0e374acb69b3bce168a1edd227f187"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfae323630b48bbabde25773cc9e990ebac6ea13c9c236a9a8e7f6aeadaccbd7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bef72cbb6bb1a7984b5d09133e036843eec5eaa8787817bd2690bacc2b726bfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47547298db308efb9f95968b341ef9261cb6cbd5d6c10a2f0ccf736d68f059d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cde0103694fb7c2e31e1a6901639b0cdab783f5c82a15c10755f92eb1606f0e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27aaeb456b311fb8df0b1cd330808b67f752d6f1d0b5f2e52b89d391c2a2d7e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a276c5b77a040710e2a88a0bb15a94b9b6c6cd816eeed1076197bcfaf2920db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc18d21466b88d33db28308844a637d167ae3ce01be7a4831ec30ff36b407acd"
   end
 
   depends_on "rust" => :build
