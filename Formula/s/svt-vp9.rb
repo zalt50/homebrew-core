@@ -6,6 +6,10 @@ class SvtVp9 < Formula
   license "BSD-2-Clause-Patent"
   head "https://github.com/OpenVisualCloud/SVT-VP9.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f651f843f3c74d02f346f08b5b5cb2c5fac49a13d63d24a6209b8ad6801a6625"
+  end
+
   depends_on "cmake" => :build
   depends_on "yasm" => :build
 
