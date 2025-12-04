@@ -1,17 +1,17 @@
 class Labctl < Formula
   desc "CLI tool for interacting with iximiuz labs and playgrounds"
   homepage "https://github.com/iximiuz/labctl"
-  url "https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.50.tar.gz"
-  sha256 "38373d00cc5fb0bec1f9332dcf7c21e320441be294b02f630ff1dff9d04c9d08"
+  url "https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.51.tar.gz"
+  sha256 "867c943d981e3e87e634a5a86c4afe9477274cce1068e312210c5e86015b2017"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f83cdb4850af7bfc40642f791b7b346f195f47fdf02d4e06ddb12584879d789"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f83cdb4850af7bfc40642f791b7b346f195f47fdf02d4e06ddb12584879d789"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f83cdb4850af7bfc40642f791b7b346f195f47fdf02d4e06ddb12584879d789"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a79a585151434d1ae1e6bbe086e41ba3f7b9ebab07726ba633ee29ab8454248"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44b3605da5e3c200fceb70ba052d12ba19a2ec1b864d5a6f085ed7ee0abc359e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a0615dbd751bc249d1cc25441fc8a5393dbc387fea43db47acd024322863522"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7797d2c0255d9c1a4e7c3b89fa1ab79b9a7de63e8c65a2fe369dd871f2057ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7797d2c0255d9c1a4e7c3b89fa1ab79b9a7de63e8c65a2fe369dd871f2057ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7797d2c0255d9c1a4e7c3b89fa1ab79b9a7de63e8c65a2fe369dd871f2057ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5cd5f69c74e6d175844a80564b986c3df4ff35cf00c36c818e13813e93167ff6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b870f1e0dec7c4efdeb49371e70ea93237df8dddec79b1b43712fce160b1cb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94843b20e1011da68c8ec57a083b952fa510114f6359c90c97c2d3860f77bb06"
   end
 
   depends_on "go" => :build
