@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https://stackql.io/"
-  url "https://github.com/stackql/stackql/archive/refs/tags/v0.9.250.tar.gz"
-  sha256 "06f0de42c6cc95fff1fdf0ead087528ee0d139c10afa6e655a9fda0917559bdb"
+  url "https://github.com/stackql/stackql/archive/refs/tags/v0.9.311.tar.gz"
+  sha256 "423f1ca086c8aa192620f0859db819c59a2456bc36dcfa530ce303af628d2a82"
   license "MIT"
   head "https://github.com/stackql/stackql.git", branch: "main"
 
@@ -21,6 +21,13 @@ class Stackql < Formula
   end
 
   depends_on "go" => :build
+
+  # Update `go.sum`
+  # PR ref: https://github.com/stackql/stackql/pull/595
+  patch do
+    url "https://github.com/stackql/stackql/commit/e4dcd39105323d68f058ef938e428ed4a8a37025.patch?full_index=1"
+    sha256 "9230b53241076c7cd1ccc55d516982b94974a4fbf9f123a8387530257525311d"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "1"
