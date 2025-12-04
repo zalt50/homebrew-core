@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/95/69/bc0d50a54cb488ff3a48e37787dbe0cd1a2d0c5d0df9ad868b202f7699a8/kimi_cli-0.60.tar.gz"
-  sha256 "4de6eeb39f49747acfc482125be1566bda39649c4d5cf2df2126398bf28b999c"
+  url "https://files.pythonhosted.org/packages/7f/67/37a1660f447d5e1592ce3b39eded22653d84cd6cc9b8fc9568059f8c2617/kimi_cli-0.61.tar.gz"
+  sha256 "42a4321cf2caccdf736a36d480ede7c2f051fbe0b3033af8d3ff31224df7556f"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -159,8 +159,8 @@ class KimiCli < Formula
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/09/4e/0ad8585d05312074bb69711b2d81cfed69ce0ae441913d57bf169bed20a7/google_genai-1.52.0.tar.gz"
-    sha256 "a74e8a4b3025f23aa98d6a0f84783119012ca6c336fd68f73c5d2b11465d7fc5"
+    url "https://files.pythonhosted.org/packages/de/b3/36fbfde2e21e6d3bc67780b61da33632f495ab1be08076cf0a16af74098f/google_genai-1.53.0.tar.gz"
+    sha256 "938a26d22f3fd32c6eeeb4276ef204ef82884e63af9842ce3eac05ceb39cbd8d"
   end
 
   resource "h11" do
@@ -224,8 +224,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/30/ae/abbf84ea2d243500694584d7acb470a515cc3a8a426082b844fe709cae3f/kosong-0.28.1.tar.gz"
-    sha256 "8f5bbeaac57cb8a92de8dc614f1e1d32da193d2f5718c79e383e871a7c06ab35"
+    url "https://files.pythonhosted.org/packages/7d/8a/57d3fec38478a832b3d4d8db19def2a2c7994b7b8ae824398548eba18a99/kosong-0.31.0.tar.gz"
+    sha256 "fcfe4822cd1a0e623cb737b74ae85af8fcf71232e8283d32ee10c715b4add767"
   end
 
   resource "lazy-object-proxy" do
@@ -341,6 +341,11 @@ class KimiCli < Formula
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
+  resource "pykaos" do
+    url "https://files.pythonhosted.org/packages/e9/f5/fe745ec4a52fd48867b81373c1ad2b16c03497a15b3814f916aabdfb233f/pykaos-0.3.0.tar.gz"
+    sha256 "a91cd3dc9204a3683c0de8ef51dfb69a1ee4c9e9abe625804020075485ac6d6d"
   end
 
   resource "pyperclip" do
