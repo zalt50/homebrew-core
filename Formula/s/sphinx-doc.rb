@@ -3,17 +3,17 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/7f/b5/5c27876e4357ae1059bf765ae9a8341c04e8cdbe8a96d53b33597926cf1c/sphinx-9.0.2.tar.gz"
-  sha256 "96fe90c40bff08f0a4a05f3a8f637ded4109f442088f896a0c7392973b1df913"
+  url "https://files.pythonhosted.org/packages/7e/54/71ce749f6cc6128da1b0aaf488330ac9caeae930050afe6792cc11f360da/sphinx-9.0.3.tar.gz"
+  sha256 "98ea46e18e3fbfe222c2aebd1988b52fb20afd0dd430f8b7ce06f64d2f53300f"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c13f1a8126d0e6286fdc99a9c6bb98f6d2b1ad80c063242cdd6ffff7bbdb503d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e1cc713dc6f6055432d5d9ad94d1d6e52aa547e5f6876326a165a513dd60501"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d74dcbd238060ecfb2190272a5cec61ff382f80aec75d2b52fffb8a5e6aa038b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b75de80652e9923b152ee3ad69ed1f715b3a44ada762b75162ee6da3af49d74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dafb91498a747857d319afc633f4143d14d63f977431c563f7593ffe23632c69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec4392ac38954deb4d430f30418e12d69da714e64c7a44eefbf0728c8914619"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "657d16eac972e1a8f740f77297b5c5018f46d06882d36d588a7982338de8ebea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcdee5ee43c380a03b3aeb4d31396009113921c31dc33db8e8c81b2cd61e0888"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e89b703593690ad3ea09107ed2c4c997213650a32849d9f6717df6bb6a263f02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92b23d4dcf874fa29d70e5f404d57cc9e3d1701e76633d67844aa7e6fe7cb452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "343e0e90c121326f96fbeb5da784b69b06e4a630b9e25d7d757ac050448cac6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29e18ca83f478190777fe701443e8a39e4b9edb7311e1b8b7582fc0fc47d8bff"
   end
 
   depends_on "certifi"
