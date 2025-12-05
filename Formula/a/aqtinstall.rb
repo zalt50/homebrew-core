@@ -9,12 +9,12 @@ class Aqtinstall < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "30909cf4a345708b0bc6e06b9d528cd328d27e725f4c9e118147d6e45e9fe905"
-    sha256 cellar: :any,                 arm64_sequoia: "3fa8448f74e8b9fd2a55594ce42d74dfdec9e0c5dec33bf44916969118f8554d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5a9b0c80a6d0c172996883138d3993873cb825d5ec78878b78088af847ff0a8"
-    sha256 cellar: :any,                 sonoma:        "6b40325eacc9390dab88363256b95873f884620f9efc26837760708a083a56cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f44158ac6618d87baaf820f5a2a2ae799ab9b65c8385150530563ebc18eedff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36cb37d74b6e3016794765a1be454128e4ebb7a56ad96eb6ede3512f7344a862"
+    sha256 cellar: :any,                 arm64_tahoe:   "19d6aa761b04609f77ca52e7df9d4443d4a90d06f28097b7b75bce38963893c1"
+    sha256 cellar: :any,                 arm64_sequoia: "8b856e6e4fc4a07e7fcd4358ed37c1357e7a36097ec0000f1f8891a8690cfc3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "90bd7529d01a9f82e7ece0bfda87fb579dea5d1971f0764fb66e72fb835a0601"
+    sha256 cellar: :any,                 sonoma:        "d96a94efc0ee716d69c01488fa1239f66ee270811ab671a5f450275a9a5887e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3d1e4e5fb4153d617256364458f0b3594958507a973912f1c4f880e8b96b1eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "334749a6a081bc81bdfe2443709fa95e74d75403f08927eb7589085e79f5b601"
   end
 
   depends_on "certifi" => :no_linkage
