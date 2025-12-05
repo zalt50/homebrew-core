@@ -1,8 +1,8 @@
 class Zls < Formula
   desc "Language Server for Zig"
   homepage "https://zigtools.org/zls/"
-  url "https://github.com/zigtools/zls/archive/refs/tags/0.15.0.tar.gz"
-  sha256 "337d478ca90bab965070ed139408909f1968ad709afb61594b6368dbacc0b631"
+  url "https://github.com/zigtools/zls/archive/refs/tags/0.15.1.tar.gz"
+  sha256 "40a4559c3007ed9333769fc3e111ed466403b53f31ad9242874a62ab385b331b"
   license "MIT"
   head "https://github.com/zigtools/zls.git", branch: "master"
 
