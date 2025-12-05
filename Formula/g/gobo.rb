@@ -1,8 +1,8 @@
 class Gobo < Formula
   desc "Free and portable Eiffel tools and libraries"
   homepage "https://www.gobosoft.com/"
-  url "https://downloads.sourceforge.net/project/gobo-eiffel/gobo-eiffel/25.10/gobo-25.10.tar.gz"
-  sha256 "09775e976891df2e118b33daa045871da0bed25df4a61bcd36ca3b44a7ac4c9c"
+  url "https://downloads.sourceforge.net/project/gobo-eiffel/gobo-eiffel/25.12/gobo-25.12.tar.gz"
+  sha256 "d8db1bd9fffa32b09eca4cfc3748bb8e6e8e0d71a8e12d33acc366bf675493a8"
   license "MIT"
 
   bottle do
