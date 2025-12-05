@@ -10,8 +10,7 @@ class BandcampDl < Formula
   head "https://github.com/evolution0/bandcamp-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "4d7a02493e7d856497e73b9b7051206046438f72f93c0c26c5905e1b5095335e"
+    sha256 cellar: :any_skip_relocation, all: "2505971784afe936459d53c81926b22e4ac7db640869dee849dcf47e0bda6da1"
   end
 
   depends_on "certifi"
