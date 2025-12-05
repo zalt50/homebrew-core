@@ -6,7 +6,7 @@ class CharmTools < Formula
   url "https://files.pythonhosted.org/packages/da/8c/26dcc9b99c6fbacd989f5d54b7a3a976cfa5b8ac26f6992d134091add085/charm_tools-3.0.8.tar.gz"
   sha256 "ad1e8aaf8f6aece19f3f7db1d45010b471be998b54a0b2861f24b62912f24b9d"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 2
@@ -55,8 +55,8 @@ class CharmTools < Formula
   end
 
   resource "ct3" do
-    url "https://files.pythonhosted.org/packages/a4/61/aa8c457288d06dd160e495b9ede433ba847a29cac41d6dfe56746720acff/ct3-3.4.0.tar.gz"
-    sha256 "ddc493b775b02b09737b1fb628a973dbe9aa91d694045a6764a8e3f5296fa1eb"
+    url "https://files.pythonhosted.org/packages/96/c2/2a1605af41829cd2a247271b5b6f6b2dbc2e9407df2dd9bcafdceafcd4b3/ct3-3.4.0.post5.tar.gz"
+    sha256 "1c5f2000d52d591703c74f6f5f7ef427ed1b6501be28e3f1634f62c3a5d792e1"
   end
 
   resource "dict2colander" do
@@ -135,8 +135,8 @@ class CharmTools < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pyrsistent" do
@@ -195,8 +195,8 @@ class CharmTools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "vergit" do
@@ -205,8 +205,8 @@ class CharmTools < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
-    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
+    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
+    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
   end
 
   def install
@@ -219,7 +219,7 @@ class CharmTools < Formula
       # Package was renamed due to PyPI 2FA requirement and charm-tools use of
       # `pkg_resources` raises an exception on missing requirement
       # https://github.com/CheetahTemplate3/cheetah3/commit/673259b2d139b4ea970b1c2da12607b7ac39cbec
-      inreplace "SetupConfig.py", "name = 'CT3'", "name = 'cheetah3'"
+      inreplace "SetupConfig.py", "name = 'ct3'", "name = 'cheetah3'"
       venv.pip_install Pathname.pwd
     end
   end
