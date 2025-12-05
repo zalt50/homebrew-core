@@ -8,8 +8,8 @@ class Libnl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_linux:  "cf02f2e5551dbb36e507e97a53c96710e6e7042232de601fe8f23bd92f0d3e65"
-    sha256 x86_64_linux: "4f38d449757989f549668b55ff19e6d5a19d574c720bb15e3543b15564db966b"
+    sha256 arm64_linux:  "75c3dff2c1bd4a952ab0b661639b0629829b1d447e20cb6bb7471655d13ffe83"
+    sha256 x86_64_linux: "1d3128ef9d8dde95c5da2f454abc2b4b62670fd72528f4a0b9f62e7e163561f7"
   end
 
   depends_on "bison" => :build
