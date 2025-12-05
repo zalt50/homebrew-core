@@ -25,6 +25,7 @@ class Ghq < Formula
     bin.install "ghq"
     bash_completion.install "misc/bash/_ghq" => "ghq"
     zsh_completion.install "misc/zsh/_ghq"
+    fish_completion.install "misc/fish/ghq.fish"
   end
 
   test do
