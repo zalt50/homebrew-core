@@ -10,8 +10,7 @@ class Awslogs < Formula
   head "https://github.com/jorgebastida/awslogs.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b705f89824369179c2e868aabf5639c06545dab9cff39c267f55f87478a7328e"
+    sha256 cellar: :any_skip_relocation, all: "7f092f2c96fcdd9a34f3e00e743b2b99e907a4dbfc118abf3b553b8d9df8c339"
   end
 
   depends_on "python@3.14"
