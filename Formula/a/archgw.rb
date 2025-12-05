@@ -6,6 +6,7 @@ class Archgw < Formula
   url "https://files.pythonhosted.org/packages/57/41/b5d306bd0e55840718507d5dc5ad95565f1ba96d8d10a71d01fc904ffbc2/archgw-0.3.21.tar.gz"
   sha256 "b351ec7ef228d6cb673f26dd21b3ccb7792190b4f00a9749d85d1329dd7c9958"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "4c94b95a5b3cd1160ca8b4f4436d18ff53e020bb0141bec6590ceced711baf4a"
@@ -79,8 +80,8 @@ class Archgw < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install
