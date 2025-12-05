@@ -6,6 +6,7 @@ class Certbot < Formula
   url "https://files.pythonhosted.org/packages/ab/3b/58c18b4820a2135921a24f188b05ef9fa3fe3e64fa77f8be68230ccddc43/certbot-5.2.1.tar.gz"
   sha256 "5faed67634a3f8a62782655b5f739161804fc9999577b263ea7dd76eba62f406"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
@@ -129,8 +130,8 @@ class Certbot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install
