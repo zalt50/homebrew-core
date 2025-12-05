@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https://stackql.io/"
-  url "https://github.com/stackql/stackql/archive/refs/tags/v0.9.311.tar.gz"
-  sha256 "423f1ca086c8aa192620f0859db819c59a2456bc36dcfa530ce303af628d2a82"
+  url "https://github.com/stackql/stackql/archive/refs/tags/v0.9.315.tar.gz"
+  sha256 "44b28cd9a1181d596cd74fb26a4c02e9f9ccb01918f7a1ae351321eb4c15644c"
   license "MIT"
   head "https://github.com/stackql/stackql.git", branch: "main"
 
@@ -12,22 +12,15 @@ class Stackql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db54ee1e34667e8173434ea97d05ca3c545527560f5050232562140305ed1b6d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "225acb1a1032adbbae22dc77ed1f0d0b9b833511b9cfc9e30d4ada4a8a5c3738"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f04ea6e9fda483ec423d9008ffa4684165798888463be455fb16a55b0cdc82bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6391853c3171f92036447edae6e0a05c589c9cf70becb9e0b04dedd9c8c3e41b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8003414e95d9b97495a276fb35a53a969eb29a8179b919585629fddc2181d2e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7a4801a25213e2b37abb40b3cb304eef543ca2122f08153ef8b0a421c171f20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4baaefe6b849e5b2f9e8d03aef59398deba3b2600781945f9dacbd13b0b9169"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bdc9b071a465249f6f5a9da918960f330872124da7459d7e18daaba26ecedb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15612373a0e8b949efe1acf218bb4f13a96843ed57734f52d70206ecafd99b14"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ef899d9e7bf499c2044d920d7b6697f0f7aff31e8628bd2b0568346865fc26d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "863c8e17c5515b09273d82f63178121e8d9ea1c4e26bc17a0d9a5a443fb893d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9198f06340dde6050fdb3d41e0aa5e21fd1999c843eaf807018cab37e510905"
   end
 
   depends_on "go" => :build
-
-  # Update `go.sum`
-  # PR ref: https://github.com/stackql/stackql/pull/595
-  patch do
-    url "https://github.com/stackql/stackql/commit/e4dcd39105323d68f058ef938e428ed4a8a37025.patch?full_index=1"
-    sha256 "9230b53241076c7cd1ccc55d516982b94974a4fbf9f123a8387530257525311d"
-  end
 
   def install
     ENV["CGO_ENABLED"] = "1"
