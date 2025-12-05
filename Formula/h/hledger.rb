@@ -15,12 +15,12 @@ class Hledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6dff0cbd1fdfcb2bb2db88506c70fce9daa72f08bc2ff398eba470e869d4fb88"
-    sha256 cellar: :any,                 arm64_sequoia: "389a0c69a63f3f904b7012c9ff5c7673c2782a625a9c41e7150c5fcd52cdccff"
-    sha256 cellar: :any,                 arm64_sonoma:  "a309ca602adb98d1efaad0f7c5b428776d55f413654b13717ed47cf1064da67c"
-    sha256 cellar: :any,                 sonoma:        "7d2440f3cf95172dd45fe71bed7c36bec77e5efb6987ab716c6325f9d122b6da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f281762c39d77ab34945839d2e9634772dac8ec7a3cf442f85ff7c7e70bc075"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2e4f5cbc266c52b97bc572aafc3c554cb9ef067fecfccfae4ab48b7ba1a40e6"
+    sha256 cellar: :any,                 arm64_tahoe:   "02c499cb97af380a03d9c819cafec5d71535f121cca7dee1d4e51387ab7ad87a"
+    sha256 cellar: :any,                 arm64_sequoia: "43da4a902b6f15e5cf6ee1dd30928100446c4fc2231300776459efe520c5c365"
+    sha256 cellar: :any,                 arm64_sonoma:  "1db85764c9498f6622406b1a3cbe440fdb682418abccb57340e696743d2f7b6f"
+    sha256 cellar: :any,                 sonoma:        "a1cf2148c201d7b7b89ad8d7132c5d7014596ae3c735f5b4c655f355929381c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43ad79e12fa30d6261a243dccd554610a3cd6a948c2b2ad1f5afa45535042a94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24abc66c21377a60d6eaa81ef0ea4c25cbe79c660e9d939551b424bf88742b88"
   end
 
   depends_on "ghc" => :build
