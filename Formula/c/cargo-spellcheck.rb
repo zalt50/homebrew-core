@@ -26,6 +26,9 @@ class CargoSpellcheck < Formula
   def install
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"cargo-spellcheck", shell_parameter_format: :clap,
+                                                                 shells:                 [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
