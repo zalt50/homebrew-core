@@ -1,11 +1,11 @@
 class Cdrdao < Formula
   desc "Record CDs in Disk-At-Once mode"
   homepage "https://cdrdao.sourceforge.net/"
-  url "https://github.com/cdrdao/cdrdao/archive/refs/tags/rel_1_2_5.tar.gz"
-  sha256 "b347189ab550ae5bd1a19d323cdfd8928039853c23aa5e33d7273ab8c750692a"
+  url "https://github.com/cdrdao/cdrdao/archive/refs/tags/rel_1_2_6.tar.gz"
+  sha256 "ba3eadcae7b62a709e9e23988d7fb41f822c408dcec9bd99ff1a343d1bcbc524"
   license "GPL-2.0-or-later"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 arm64_tahoe:    "8bdc4963c13e5aa89fb923d6d15138740b978665301706598eccb6a41dd98d4b"
