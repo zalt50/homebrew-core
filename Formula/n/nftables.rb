@@ -3,8 +3,8 @@ class Nftables < Formula
 
   desc "Netfilter tables userspace tools"
   homepage "https://netfilter.org/projects/nftables/"
-  url "https://www.netfilter.org/pub/nftables/nftables-1.1.5.tar.xz"
-  sha256 "1daf10f322e14fd90a017538aaf2c034d7cc1eb1cc418ded47445d714ea168d4"
+  url "https://www.netfilter.org/pub/nftables/nftables-1.1.6.tar.xz"
+  sha256 "372931bda8556b310636a2f9020adc710f9bab66f47efe0ce90bff800ac2530c"
   license "GPL-2.0-or-later"
 
   livecheck do
