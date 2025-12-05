@@ -1,8 +1,8 @@
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-3.1.1.tgz"
-  sha256 "dfdbfa84113a6617810b32e96e6136fe059d845f84cc4d1f1d9ae89d7ac9e1b0"
+  url "https://registry.npmjs.org/appium/-/appium-3.1.2.tgz"
+  sha256 "0e2a7525aa9c147bf511f0a21bd16bd4bda016a3b155cd86aac1ef419ea99f19"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
@@ -40,11 +40,7 @@ class Appium < Formula
     ENV["APPIUM_SKIP_CHROMEDRIVER_INSTALL"] = "1"
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    resources.each do |r|
-      system "npm", "install", *std_npm_args(prefix: false), r.cached_download
-    end
-
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove prebuilts which still get installed as optional dependencies
