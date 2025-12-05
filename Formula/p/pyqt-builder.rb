@@ -9,13 +9,12 @@ class PyqtBuilder < Formula
   head "https://github.com/Python-PyQt/PyQt-builder.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecfcd5b57f733f4ed32dea12d7826bea613bb2da1109ebcded9c15e27a16599b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecfcd5b57f733f4ed32dea12d7826bea613bb2da1109ebcded9c15e27a16599b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecfcd5b57f733f4ed32dea12d7826bea613bb2da1109ebcded9c15e27a16599b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30112f1fa107c03b9b474b41fee3ae63a1932905e7c9c355281e4068455b6f8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30112f1fa107c03b9b474b41fee3ae63a1932905e7c9c355281e4068455b6f8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30112f1fa107c03b9b474b41fee3ae63a1932905e7c9c355281e4068455b6f8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07ab06eaad9e2b670a52a0e57317557df1c72c9771a11120b8294d9f85a8d42b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07ab06eaad9e2b670a52a0e57317557df1c72c9771a11120b8294d9f85a8d42b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ab06eaad9e2b670a52a0e57317557df1c72c9771a11120b8294d9f85a8d42b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfb6e43b07a4ef29e83828b189082444da152310ceaa37ce7e53be2283700828"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb6e43b07a4ef29e83828b189082444da152310ceaa37ce7e53be2283700828"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfb6e43b07a4ef29e83828b189082444da152310ceaa37ce7e53be2283700828"
   end
 
   depends_on "python@3.14"
