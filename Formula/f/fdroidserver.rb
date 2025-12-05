@@ -6,6 +6,7 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/dd/1e/4f8b300092cef6f90f46041743c653156347063c15e81cdc60728c70dd28/fdroidserver-2.4.3.tar.gz"
   sha256 "bb0da11f4ff087061af900a1c12404e7c26392aee8a214e1f842fa129a33a0db"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "64f214b2171e35299f1bd18f73bab4f64831bd4c710c24644d79093f74e6020e"
@@ -172,11 +173,6 @@ class Fdroidserver < Formula
     sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
-    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
-  end
-
   resource "idna" do
     url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
@@ -283,8 +279,8 @@ class Fdroidserver < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "prompt-toolkit" do
@@ -398,8 +394,8 @@ class Fdroidserver < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcwidth" do
