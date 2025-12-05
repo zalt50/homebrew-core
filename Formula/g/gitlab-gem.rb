@@ -6,14 +6,12 @@ class GitlabGem < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "87d2c74b681accd514f34cbc225b5033659d7016b7a90394bb87783dd60d57be"
-    sha256 cellar: :any,                 arm64_sequoia: "2db88a26ef2ad02dce9460fd0f0ec1d1a27df0f7da41f3bc1d8aee1e0f9f0bcd"
-    sha256 cellar: :any,                 arm64_sonoma:  "c87c1a72f1d4770fedf06887007f64436a6876439726394dad089cc35bdd4901"
-    sha256 cellar: :any,                 arm64_ventura: "955384293995236ffa6baef6c2b48a0c4d172bf35ea7276e52bdd20db9e54c99"
-    sha256 cellar: :any,                 sonoma:        "bca39b4ac6f7a6f39a1eb09518121bc830adcdcb11b044c2bb030e23811fef8b"
-    sha256 cellar: :any,                 ventura:       "5124a2de109b13f4e6f840fe8a0b5b659ee8b909aec301f39e0c376473e9fb9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b40a309432dd207f09baf705b58872833d21552b1ca00216be8a9ebfe7d28e0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ed9be89b1924b80695a196bbb9b14e05521cff6fa576c1993cf5c74dcc9e453"
+    sha256 cellar: :any,                 arm64_tahoe:   "c0cc7c186322cbf0bf53a18dff9f351169c1d65753f1816e068763f2562cf7f3"
+    sha256 cellar: :any,                 arm64_sequoia: "9c87fb811cf87ef957b24aaa25fabb8ce5275977eb87e405835a910e087028b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa19170f69f26d852f3223fdb8db731203c930eff9757040599d83e491fa252f"
+    sha256 cellar: :any,                 sonoma:        "ee5796c9eef2dd4d486d42f958e2ccd238d438cc456b6ee33f64c51b2ca827a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3248511c3ab3e1ee0dd368bdae9cb69ad28601186a1a635ea302a7f17b04d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "140f4b4fc43ad933379f0eddf64df119c78c6c56c89a24fc57d7926305cfac15"
   end
 
   depends_on "ruby"
