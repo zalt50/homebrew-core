@@ -8,12 +8,12 @@ class CodecovCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3198609e86794e5f6f856313053f4e87da2cf972085f87cc49c7bec420f7178f"
-    sha256 cellar: :any,                 arm64_sequoia: "aeb88f9615ab4aa4a9907d29dc572b36a021a65614f4acb0c5158f8f9ddd3056"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b08167a69dc6059453b5c10eb7d60fc1f88f0d7d2128dfbf4a366bc1bae2e40"
-    sha256 cellar: :any,                 sonoma:        "47f8750288d2111c72ec1101e6d51d72e24bc902500f3384b748cae556009a06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "859327cbb118a7aa4c66ac4c4962865d56fe68daa1d77c318ec4207a7d54c231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75405d4e48a1b815b46cd983c7deb299bf93f52d407c8e77a483492901f64a7a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ef5f7fba7dce7525f62e02e7907510fd09d69bf36b748e31ddaf3de641cdd0db"
+    sha256 cellar: :any,                 arm64_sequoia: "cd596b1e317c6c9a73e78c2c1c258484e03fdeea7b9bcfe209bccd3534556986"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed6a879f1454a389af261ae2010b8c726c6e7defae0884f5e5649f0f4e0767f4"
+    sha256 cellar: :any,                 sonoma:        "8a6c9d3b7a1f63daa6c953788d938c0bed6b71cf2f47ed64435c0c65cf5a64be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b893c78fef1b87d5cfd355953a6a143c43a43409fc979fe5a151b2dab52bce54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fdc3d34762de729af6becbbee33f05b55422aa692966246b244c78e912446cd"
   end
 
   depends_on "rust" => :build
