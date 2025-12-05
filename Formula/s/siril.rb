@@ -1,10 +1,9 @@
 class Siril < Formula
   desc "Astronomical image processing tool"
   homepage "https://www.siril.org"
-  url "https://free-astro.org/download/siril-1.2.6.tar.bz2"
-  sha256 "312f82e78599f796d163a6d1c90589df1ed920b9ff2bb7ab5b808e43872817fa"
+  url "https://free-astro.org/download/siril-1.4.0.tar.bz2"
+  sha256 "439def7c40ad783afb82e87f3c656d85b449c701f67ab0a9b97ca372ea2d73c9"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   livecheck do
@@ -28,7 +27,6 @@ class Siril < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "adwaita-icon-theme"
   depends_on "cairo"
   depends_on "cfitsio"
   depends_on "exiv2"
@@ -40,29 +38,37 @@ class Siril < Formula
   depends_on "gnuplot"
   depends_on "gsl"
   depends_on "gtk+3"
+  depends_on "gtksourceview4"
+  depends_on "healpix"
   depends_on "jpeg-turbo"
+  depends_on "jpeg-xl"
   depends_on "json-glib"
+  depends_on "libgit2"
   depends_on "libheif"
   depends_on "libpng"
   depends_on "libraw"
   depends_on "librsvg"
   depends_on "libtiff"
+  depends_on "little-cms2"
   depends_on "netpbm"
   depends_on "opencv"
   depends_on "pango"
   depends_on "wcslib"
+  depends_on "yyjson"
 
   uses_from_macos "perl" => :build
+  uses_from_macos "curl"
 
   on_macos do
     depends_on "gettext"
-    depends_on "gtk-mac-integration"
     depends_on "libomp"
   end
 
   def install
     args = %w[
       --force-fallback-for=kplot
+      -DlibXISF=false
+      -Dcriterion=false
     ]
 
     system "meson", "setup", "_build", *args, *std_meson_args
