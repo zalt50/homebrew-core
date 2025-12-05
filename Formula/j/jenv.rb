@@ -9,7 +9,7 @@ class Jenv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b454f9bfe4726a30422faed10c3fa103050a5dcb0fa39f366691bda94269cd9f"
+    sha256 cellar: :any_skip_relocation, all: "41e433160ef6ac63f3b9d2d07ace490965d38a4125380e65930d8fd5670592c7"
   end
 
   def install
