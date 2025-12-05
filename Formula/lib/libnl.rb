@@ -1,8 +1,8 @@
 class Libnl < Formula
   desc "Netlink Library Suite"
   homepage "https://github.com/thom311/libnl"
-  url "https://github.com/thom311/libnl/releases/download/libnl3_11_0/libnl-3.11.0.tar.gz"
-  sha256 "2a56e1edefa3e68a7c00879496736fdbf62fc94ed3232c0baba127ecfa76874d"
+  url "https://github.com/thom311/libnl/releases/download/libnl3_12_0/libnl-3.12.0.tar.gz"
+  sha256 "fc51ca7196f1a3f5fdf6ffd3864b50f4f9c02333be28be4eeca057e103c0dd18"
   license "LGPL-2.1-or-later"
 
   no_autobump! because: :requires_manual_review
@@ -14,7 +14,7 @@ class Libnl < Formula
 
   depends_on "bison" => :build
   depends_on "flex" => :build
-  depends_on "pkgconf" => :test
+  depends_on "pkgconf" => [:build, :test]
   depends_on :linux # Netlink sockets are only available in Linux.
 
   def install
