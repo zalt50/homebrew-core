@@ -1,8 +1,8 @@
 class AbAv1 < Formula
   desc "AV1 re-encoding using ffmpeg, svt-av1 & vmaf"
   homepage "https://github.com/alexheretic/ab-av1"
-  url "https://github.com/alexheretic/ab-av1/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "933024405569e0f120db2a78dbfb3488553765d69ae43d99cba8eda64c7886c6"
+  url "https://github.com/alexheretic/ab-av1/archive/refs/tags/v0.10.3.tar.gz"
+  sha256 "e8978c23661db5ce114f1905768b4378b75d435a95608f99a62be98aa8d6f094"
   license "MIT"
   head "https://github.com/alexheretic/ab-av1.git", branch: "main"
 
