@@ -3,10 +3,9 @@ class McpGoogleSheets < Formula
 
   desc "MCP server integrates with your Google Drive and Google Sheets"
   homepage "https://github.com/xing5/mcp-google-sheets"
-  url "https://files.pythonhosted.org/packages/84/98/f074cb169453374e779997a2e9c4fc5f91679f31389cf28d3f15f6182e87/mcp_google_sheets-0.5.2.tar.gz"
-  sha256 "f64dec3a6a4a4907fabdf2fa20bf3351dda330d2a1d70142138738dacf92246c"
+  url "https://files.pythonhosted.org/packages/49/5c/f2a7e5bfc4557ad2fd7559a2dcd75633e5ecef9673a2070fe5b685fc6b14/mcp_google_sheets-0.6.0.tar.gz"
+  sha256 "9c1523c6ec2fd5c06a39e37e25116d489e9af04cd97d7bb41e14fc3c586c95ac"
   license "MIT"
-  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "468dbeaf16ece935dc8dd3707bab3923b108936b307bf5023c423d3ceebd944b"
