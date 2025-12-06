@@ -6,6 +6,7 @@ class Mcpm < Formula
   url "https://files.pythonhosted.org/packages/83/5b/a4dcc3baedea5f5cec6c79728a9be9007986a4b62da5f9596be08a1ea555/mcpm-2.10.0.tar.gz"
   sha256 "51c2089ce666a6818aa92ec449aaf20e226e3923c8c1f0ba29a44beff87755ed"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f686a158fd43d570a3a08d4e454ba22e809da888dddcc10bb9ee8a3ed3cad43c"
@@ -279,8 +280,8 @@ class Mcpm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do
