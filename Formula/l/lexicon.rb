@@ -10,12 +10,12 @@ class Lexicon < Formula
   head "https://github.com/dns-lexicon/dns-lexicon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bac11e53dd6d5bb2ff4b1b3ed1a7e34fef5ae968fe1871dd18a93088eafa6297"
-    sha256 cellar: :any,                 arm64_sequoia: "dc43966d309f483a7b1c4f25a1d3d72d3af7bdd97a4e6596c3a1541013307623"
-    sha256 cellar: :any,                 arm64_sonoma:  "36bc69422b189d721d99bd6192c27d7271b8e42ab3653c32c2ba48b8f5c309cf"
-    sha256 cellar: :any,                 sonoma:        "54f382cd4135cffad71f8376070f5f6d8f2e13c09b51455b4c5fc7d45dcf61b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4cb8b75f77ecf63b603729feec2488ada016f236dc1e121cf040b35d24f9352"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74b954ce479ca6299a0a66d367eb81c4f14ec7e0d2e30deb3f1599aec677224c"
+    sha256 cellar: :any,                 arm64_tahoe:   "dec0a89b100cacbe160b679d62e70b0651b88a5673f0f5f58cc9fa61f1bfc848"
+    sha256 cellar: :any,                 arm64_sequoia: "a7a925f9a98fc09c910cdddf580cf4335430195a7bb0e6351cec876b834fb2c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9c6e45c164e252b3091a0346f26bfdcd638f17b2b9488ca0a39763117f2d021"
+    sha256 cellar: :any,                 sonoma:        "5111198533f020e270a059aa0954077972e7200006ee084dd7e72ebd0560a4ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4f8f5ddd8684ecdc7cec32a3bf282dcc352ce124cf14a6ebb6d1b461a5bac74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e03ec76512d6b1902311ae22bc2704d278d57754555fd2497c3c4a82bb05c276"
   end
 
   depends_on "certifi" => :no_linkage
