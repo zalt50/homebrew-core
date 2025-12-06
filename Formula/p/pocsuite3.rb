@@ -10,12 +10,12 @@ class Pocsuite3 < Formula
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "497c4438f71eb744a852c1ad4c476cd8dab4a702a497b310656034a0db0c6aa4"
-    sha256 cellar: :any,                 arm64_sequoia: "e71fbb7a782638a1b21c4348602be525332b171109ccf6f25fef79feae7706f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "e6e25f5fa7eb6007f396fe06e2b591771cd60d39b7b3429fc59ea796dc09235c"
-    sha256 cellar: :any,                 sonoma:        "f04cdfcac4f8e80466bb15fa2f2cc420a52a03eadbb1ed80698dc58893d40c22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc6941b1dd072dce9c4365e28e6143344a035120db71bbc666278bd786ed3641"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edd4484847240b1bcbbd39ddf103cf1cf742ceb08d6057e3b81d7ed88c17c5e3"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ee1e662bdb7b7178bbda5f378e8f43290d13cbf1afb9e186b8d4b421f89fb72"
+    sha256 cellar: :any,                 arm64_sequoia: "9f8e66539c8ac71654dd9bc586ec4fa2b961b370123bc5d25c1ad9e394625438"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b6c41c3bb1889812f62c2260390226ba4a0ca583f1ecda849dd07fb1cecd010"
+    sha256 cellar: :any,                 sonoma:        "f1235853eb81e0e1c1be9279426a2418d79776742c8bdd35f5e13f4a82b359cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86f2a78eb08a5016b97c22ce0af7f05c17f36ebb54e6f61470306baad566cae4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afc76b39e04f9dd7a9804e42dc4b058b65b16fd514581316e8e1533d41337b66"
   end
 
   depends_on "pkgconf" => :build
