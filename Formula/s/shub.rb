@@ -6,6 +6,7 @@ class Shub < Formula
   url "https://files.pythonhosted.org/packages/11/a4/91a0d8c3dccf5dedb7e75a65ecd0bb2a1d789ef34e1630642864b62dea75/shub-2.16.0.tar.gz"
   sha256 "776283a538b6cd1749f4bf6a94db9d39da208383e37558603b0cf2ed64acbd08"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
@@ -29,8 +30,8 @@ class Shub < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "docker" do
@@ -89,8 +90,8 @@ class Shub < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install
