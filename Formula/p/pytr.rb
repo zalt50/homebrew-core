@@ -6,6 +6,7 @@ class Pytr < Formula
   url "https://files.pythonhosted.org/packages/a2/64/25ce842142742a5dfbb3505674ebed72d6ea21bca06bc1d059877b85fa26/pytr-0.4.4.tar.gz"
   sha256 "21e5f26da56ecc4ebd713dd294dcd08b008352973f3440728136263203417108"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bae1aced459121c50d44e0029c4a4267513fe00a9dd7b4793aa629874ca1448"
@@ -87,8 +88,8 @@ class Pytr < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "websockets" do
