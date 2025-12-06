@@ -7,7 +7,7 @@ class Tmuxinator < Formula
   head "https://github.com/tmuxinator/tmuxinator.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1c45ae4bfb41c07a583d68ddc77781abc085169a332a356bb645a226f1bcc1d9"
+    sha256 cellar: :any_skip_relocation, all: "a9ff335a312a7cc07ec67c66da6d1295300d9ce304d66773664a1a24790c687b"
   end
 
   depends_on "ruby"
