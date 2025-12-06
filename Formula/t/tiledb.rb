@@ -1,8 +1,8 @@
 class Tiledb < Formula
   desc "Universal storage engine"
   homepage "https://tiledb.com/"
-  url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.29.2.tar.gz"
-  sha256 "44fd4c6c25938a123edc711f082a1c3e632a9f8365e64fe745bbf1e782d671d4"
+  url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.30.0.tar.gz"
+  sha256 "c5f94da6de0e0f93925f7ad107bd80fef0615f9b3d111a5bae245f75b1fcc173"
   license "MIT"
 
   livecheck do
@@ -19,7 +19,9 @@ class Tiledb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "34ab078fe1250242ff17222bef7b2b494f8fd20a52a336c1d14c5b7af7e8563b"
   end
 
+  depends_on "c-blosc2" => :build
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
 
   depends_on "fmt"
   depends_on "lz4"
