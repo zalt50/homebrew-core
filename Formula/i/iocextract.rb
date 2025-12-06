@@ -10,13 +10,12 @@ class Iocextract < Formula
   head "https://github.com/InQuest/iocextract.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31c12d5fd8e46848a5a35905b7dea98f547fea01dcdae8ee6bf244b6396ffa0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c946ca9ee349de4759321f4f07508ea639865b61247d0b50f85823375d1d5f66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f50f86c15d5fe7b3cbcdd8ed01461ca0e26de18b7af6533c843ef3ab2cc97c19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75652df63a121954ae6867259dfd2c01409a92e4df0e61254a86052b680c479f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0f175e68cf2017c28b20d86a5f688c0c845a7fd6b495e3738ab7ee564f755d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ce8cb6e21d75d91e43401721abee8ccbb72ee778b360a6e7098ecec8ef0ff3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16795362d34d140ec1cd4fafd8a256f324526f8397bcf263baa48bb5d5ec2053"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9ec829a7b62fc1e3157fee7f763a0cda59a6b5931c272185fb04f99b8d2f7f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a3528a13ebe26f5096926dc535d82782ab4b83542d540e918d09bc4498a613d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f169df33da1f4504f175fb8143d8973bf1f21c94b9113ed0c94328ddce02b293"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4a22b14c024b471705fe80cdd7c9fc7920524e55f0cf1464fcdaf26283a66f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d78ab2c95f0acd9b69859458c53b74c5c33f6b62d40f6016695e0be1bd4dad7c"
   end
 
   depends_on "certifi" => :no_linkage
