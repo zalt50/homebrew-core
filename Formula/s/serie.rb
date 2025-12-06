@@ -1,8 +1,8 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https://github.com/lusingander/serie"
-  url "https://github.com/lusingander/serie/archive/refs/tags/v0.5.4.tar.gz"
-  sha256 "bc7dd9317fc3b78097ec8305d0fc7a45170a6d7a2e3d9d8ffdeae49715acdbf2"
+  url "https://github.com/lusingander/serie/archive/refs/tags/v0.5.5.tar.gz"
+  sha256 "6383e79eb1005f83fa69059973bf75ae4a7b0f2d0900b1642d5a23805695b27a"
   license "MIT"
   head "https://github.com/lusingander/serie.git", branch: "master"
 
@@ -34,6 +34,7 @@ class Serie < Formula
       output_log = testpath/"output.log"
       pid = spawn bin/"serie", [:out, :err] => output_log.to_s
       sleep 1
+      sleep 2 if OS.mac? && Hardware::CPU.intel?
       assert_match "Initial commit", output_log.read
     ensure
       Process.kill("TERM", pid)
