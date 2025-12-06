@@ -9,8 +9,7 @@ class RichCli < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "60c3d881c9c423dc3479c6ef1f6d1e090975a5e14a76ee683616a99293c3e734"
+    sha256 cellar: :any_skip_relocation, all: "e6131549892c86af3c4723c364cfca15b05e8ee12962ebd20092374ee37888c3"
   end
 
   depends_on "certifi" => :no_linkage
