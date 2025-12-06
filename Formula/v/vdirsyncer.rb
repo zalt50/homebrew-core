@@ -10,15 +10,14 @@ class Vdirsyncer < Formula
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75ab31ff785fba1735d79baea47e6d38838d18785582a45fc68bb5d42657d3b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c91b81a552b82994bb1aeb26469d33d0dcffb25b1a48028d3cff35ff4dcabfd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30230a16cfd07581a92e4d1b529f94677d2f6f0cbfbb4014604e496e623a9b5b"
-    sha256 cellar: :any_skip_relocation, tahoe:         "60056fb254bc02d0a06b38eff09fe8db64a4024713779ba1ed13e1ed774f47d8"
-    sha256 cellar: :any_skip_relocation, sequoia:       "1bf072ade0401bba421e2d5f47294721014c6ac45960cdc2b8f2e02d4396eb0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50f047aa9305c8335bbc586b55db5c02c15cfdbe71b3a19ca9e95464ab9ab997"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd0cfa246d0eb9cbaecae07a26a88566288b402627c69789f8979bd5326791aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d885fef88156092f417a482cf0daa9e986704c527392450b080308f35170689"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18649857c342320430445fb0b665f4964fc60d910754ca5481200b53a8da0a98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06a93508a034ebd0cc3d5d7ace2162cea7195aa430c0b44b5970f3167d9b370b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e605b5da44c7f7c4bf22af6c987266b5160d3523065805a4be07a6c9ced0707"
+    sha256 cellar: :any_skip_relocation, tahoe:         "28d40d0b29284835bd3a2f981654bb4f1f08ca99cdd0a25310221527a633114d"
+    sha256 cellar: :any_skip_relocation, sequoia:       "9be7605e324f40e1fc9ec940aabe60030152efbf597fcc9cac7a2c0ecb588d50"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85aaf2864a32e077111a5b7789f28d46275a88ed4d20d27e2b020e3d1dfb562c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d3d01383b4518a9dae3e0ff9fce674a918e83981619b7306a1fe7adc2c1b38e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16101917c4aa7366cd661ba0257304291e91878ba5d747d36b97c74d4d5f44a9"
   end
 
   depends_on "certifi"
