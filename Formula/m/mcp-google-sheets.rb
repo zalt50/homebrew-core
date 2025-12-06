@@ -6,15 +6,15 @@ class McpGoogleSheets < Formula
   url "https://files.pythonhosted.org/packages/84/98/f074cb169453374e779997a2e9c4fc5f91679f31389cf28d3f15f6182e87/mcp_google_sheets-0.5.2.tar.gz"
   sha256 "f64dec3a6a4a4907fabdf2fa20bf3351dda330d2a1d70142138738dacf92246c"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23e96fdb3facb62602bd70fda0a2cdffccf7841a51006ee17a739cd126b118e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50dfd196215e4095d46622ecbb7f63ba84b995aefd93fd906d92375bb721cbad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b742d6dcc5e268ddc4287734abd2a9b2cacb1238a3ca6a4e523c665a9019e733"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5760205271fe60be25f63c5d96364ae4aa192e117557e9fe832685758f402751"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4d5c3e4655acc5e99877496e884f842638e3b22206a39dd92a665629640157c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60b4ec3307becb1dc2d35411ed8636273a53463bc62002a78d667a796280c8e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "468dbeaf16ece935dc8dd3707bab3923b108936b307bf5023c423d3ceebd944b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72d354754b5bfcaf9bd60bc14881b1e03669169922c182e1d51d7e74491340a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db9eb66fb5ec3f7312b3049a976d68b05964ae78ff5813a5b5976bcdfa2deeb6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6dafef93a237b94cffa0da9c28a7631640442b1dd9c620d5399bc55b2b37047"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1c3be054db3b56fed4ac847d0ed71cfa22a8799151eee3f5a2193a92a8c757f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fb223f541b709a74091f65b8b92fdcbc0300d827ab248d6d9e56e7f8c6bca76"
   end
 
   depends_on "certifi" => :no_linkage
@@ -136,8 +136,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "pyasn1" do
@@ -211,8 +211,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do
