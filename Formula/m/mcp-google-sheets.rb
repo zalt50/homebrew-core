@@ -3,18 +3,17 @@ class McpGoogleSheets < Formula
 
   desc "MCP server integrates with your Google Drive and Google Sheets"
   homepage "https://github.com/xing5/mcp-google-sheets"
-  url "https://files.pythonhosted.org/packages/84/98/f074cb169453374e779997a2e9c4fc5f91679f31389cf28d3f15f6182e87/mcp_google_sheets-0.5.2.tar.gz"
-  sha256 "f64dec3a6a4a4907fabdf2fa20bf3351dda330d2a1d70142138738dacf92246c"
+  url "https://files.pythonhosted.org/packages/49/5c/f2a7e5bfc4557ad2fd7559a2dcd75633e5ecef9673a2070fe5b685fc6b14/mcp_google_sheets-0.6.0.tar.gz"
+  sha256 "9c1523c6ec2fd5c06a39e37e25116d489e9af04cd97d7bb41e14fc3c586c95ac"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "468dbeaf16ece935dc8dd3707bab3923b108936b307bf5023c423d3ceebd944b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72d354754b5bfcaf9bd60bc14881b1e03669169922c182e1d51d7e74491340a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db9eb66fb5ec3f7312b3049a976d68b05964ae78ff5813a5b5976bcdfa2deeb6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6dafef93a237b94cffa0da9c28a7631640442b1dd9c620d5399bc55b2b37047"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1c3be054db3b56fed4ac847d0ed71cfa22a8799151eee3f5a2193a92a8c757f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fb223f541b709a74091f65b8b92fdcbc0300d827ab248d6d9e56e7f8c6bca76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cef7ff509c0f562c9d7361f83e0b06fa9d7d5582850d71c6a8f70dd3dc8face"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc3cd0a39094e1503a9a55c441bb7aed8f56a9b6803bab4050da8c20556d7906"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43d50b5552b1c64f42bba1c5c82d5d4ccc6cdc8c2e63e463cbb959d699d186c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0bead8e49cf0155f17d4aa9501ac60df0b24b56763d8db147862a89de9ece213"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f34f5fa2b17c87f79c77d11b0ad2bf3a4a60c8280542ddd2eaa1346ece80242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e02dfb7f9f03e08a61e8abfd4b19466846212454fbd31f8f93ede31af4b22c0"
   end
 
   depends_on "certifi" => :no_linkage
