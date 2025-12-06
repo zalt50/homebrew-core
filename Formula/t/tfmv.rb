@@ -1,8 +1,8 @@
 class Tfmv < Formula
   desc "CLI to rename Terraform resources and generate moved blocks"
   homepage "https://github.com/suzuki-shunsuke/tfmv"
-  url "https://github.com/suzuki-shunsuke/tfmv/archive/refs/tags/v0.2.8.tar.gz"
-  sha256 "c2ae0d1c0bb5d0d7cdbb256f8a784753df5c2f9e1175e91449849efe5a7e668f"
+  url "https://github.com/suzuki-shunsuke/tfmv/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "2783acb97c2b24f311a971cb22ff478ecc2323e2bab402457ef070051f754e9d"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/tfmv.git", branch: "main"
 
