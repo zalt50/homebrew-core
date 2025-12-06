@@ -1,12 +1,10 @@
 class Cjdns < Formula
   desc "Advanced mesh routing system with cryptographic addressing"
   homepage "https://github.com/cjdelisle/cjdns/"
-  url "https://github.com/cjdelisle/cjdns/archive/refs/tags/cjdns-v22.1.tar.gz"
-  sha256 "3fcd4dcbfbf8d34457c6b22c1024edb8be4a771eea34391a7e7437af72f52083"
+  url "https://github.com/cjdelisle/cjdns/archive/refs/tags/cjdns-v22.2.tar.gz"
+  sha256 "ac4fb3325a5f55c0f63f5c510e8cfef455b796a627ca19d44b0cc186ccce5b3f"
   license all_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "BSD-3-Clause", "MIT"]
   head "https://github.com/cjdelisle/cjdns.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d18396bceef1747e59f66a52cccbaf6b6220c4f75af427b2c165d4140cb4b537"
@@ -22,17 +20,18 @@ class Cjdns < Formula
   depends_on "node" => :build
   depends_on "rust" => :build
 
-  # rust 1.89 build patch, upstream pr ref, https://github.com/cjdelisle/cjdns/pull/1271
+  # remove inode check, upstream pr ref, https://github.com/cjdelisle/cjdns/pull/1272
   patch do
-    url "https://github.com/cjdelisle/cjdns/commit/53007ebb2e18e8052054675f979fcaeea5de0437.patch?full_index=1"
-    sha256 "04b9a820806a5f5318fcedae3335a5c91daeb6a52555d42b9d6120ad41ed177e"
+    url "https://github.com/cjdelisle/cjdns/commit/4848490a8532c03d9918adf5ee7d28c66eb65fd1.patch?full_index=1"
+    sha256 "4eb2abe4d52270018d8a1d1d938ee1323d9b1675f35e36f5c6bf2f0ba50a47e8"
   end
 
   def install
-    system "./do"
-    bin.install "cjdroute"
-    bin.install "cjdnstool"
+    ENV["NO_TEST"] = "1"
 
+    system "./do"
+
+    bin.install "cjdroute", "cjdnstool"
     man1.install "doc/man/cjdroute.1"
     man5.install "doc/man/cjdroute.conf.5"
   end
