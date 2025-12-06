@@ -1,16 +1,14 @@
 class Vttest < Formula
   desc "Test compatibility of VT100-compatible terminals"
   homepage "https://invisible-island.net/vttest/"
-  url "https://invisible-mirror.net/archives/vttest/vttest-20241208.tgz"
-  sha256 "8fee3bac7e87d4aa4a217bd2b38ab9910c3b8cf9a605b450c76ccc0ad2a6519d"
+  url "https://invisible-mirror.net/archives/vttest/vttest-20251205.tgz"
+  sha256 "cd6886f9aefe6a3f6c566fa61271a55710901a71849c630bf5376aa984bf77cc"
   license "BSD-3-Clause"
 
   livecheck do
     url "https://invisible-mirror.net/archives/vttest/"
     regex(/href=.*?vttest[._-]v?(\d+(?:[.-]\d+)*)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4a0aeb7d6b51f67003a4c244abed71bd83ec1ad5cd074cb3ccfd2d1fbef1301"
