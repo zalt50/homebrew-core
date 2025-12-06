@@ -10,12 +10,12 @@ class Xml2rfc < Formula
   head "https://github.com/ietf-tools/xml2rfc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f18d86e7b2fa60587d8a594ad20e68c1586e90f6dee6656d5b8346e7bf60e294"
-    sha256 cellar: :any,                 arm64_sequoia: "6255a8f3ccf9370cff0210a9162692840e75138ab2b54ce08c7859d6f82fe246"
-    sha256 cellar: :any,                 arm64_sonoma:  "42d30f845e9bf29c3a040d54a6955432c95a8876b32c17e5c4eb44853a1efeda"
-    sha256 cellar: :any,                 sonoma:        "609bafb56b3582e07ca168090b34d56b0648947fc96169248e2688dae1e169c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72a6b211f38fd0550e320901a7333e560af4f790999abd982c53a94b765c83d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80b154aea07d192be381e69d8b50d8d763e4cd8a541f2e93708020dd0a1ced84"
+    sha256 cellar: :any,                 arm64_tahoe:   "93d9008adefbb5703e8c345424a65ceed7aaf856e272c8bf52ac1a51aa595e4a"
+    sha256 cellar: :any,                 arm64_sequoia: "973298e5def3f6846696b2b16e342fca8bfbc1ef64c3564b73b6318fe5800878"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d8d2271d5b1fcb4c96147c621e128472340da5f34bc2e2c7e60a4a74d92ce25"
+    sha256 cellar: :any,                 sonoma:        "bfe7e52c6d271acf8e7c51b3e4c7d8404a6dc768a512e9c4bf5a39ee12e46934"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "364c2b8082502dc9d4c677d9598d53bb974cf24c8eef08b1a36e0a13a011276a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "299d3442d19ec5b30889a27cdfcb72050864987486445302496489e83d64c544"
   end
 
   depends_on "certifi" => :no_linkage
