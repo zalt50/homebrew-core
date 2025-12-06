@@ -10,13 +10,12 @@ class Poetry < Formula
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3634e2e46795a773ef17e811c89a03bf2730aee8135c6d01d9a1a85b7a71a2ba"
-    sha256 cellar: :any,                 arm64_sequoia: "73154a8324caaa733cbcf4fa4b967c33ab2c7c9fd4d2346af71d11374c02f8ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab15d46a72f4fbd2ff9917e491acd33bb223a2a4081e36b20265f1af1db19815"
-    sha256 cellar: :any,                 sonoma:        "84680fdd2134cef84d1172855cebce9d7abf5c6dd51eb618a817f2146fe595f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c20b4bfe11be553beecc812b5e033992b39dd54620fc1ef2511bcdb8ee5f759"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4bf4acdf938b4f10d98b311c76478446989061c5bc8ca543ddb7c19d7c21ce8"
+    sha256 cellar: :any,                 arm64_tahoe:   "d4c21a33627cc0be9093dc3ebcdbaacc9e20196b501048539cbb389654f4659c"
+    sha256 cellar: :any,                 arm64_sequoia: "aa9dd9929c79a298f2b4c2843607b31117ff7c5857014f8ef82e69cd2c63be3f"
+    sha256 cellar: :any,                 arm64_sonoma:  "a39542191e06ef49ac5aaf4e87bc1636ac0013ac7daae6c51be9624f2e5085bb"
+    sha256 cellar: :any,                 sonoma:        "f82a7e5afb8c3de4772944dc570638395c9d12e879efcb6cef3f42b63d8ecc58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fb9f877e9cb17ee158c5a45a8aba289311a08f2ec91f03c58fad602d811bcab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dea18f78ffb03b73c81d1df7671fbcba51e53b426507e0092aed0ff35c7e6fe"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
