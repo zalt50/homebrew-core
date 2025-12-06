@@ -9,12 +9,12 @@ class Fdroidserver < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "64f214b2171e35299f1bd18f73bab4f64831bd4c710c24644d79093f74e6020e"
-    sha256 cellar: :any,                 arm64_sequoia: "1eb794fca872ae8800c1f4f4626f0f68f12d72118c86181c3e700271f94d63ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "df076b4d7f43c89d71113accba8bdaa0aa0c36ee9647932f07caed34f566c078"
-    sha256 cellar: :any,                 sonoma:        "ba4b11d8661515650cce3850700a7e41fbfe32e9c78360695e89cc27a0826da3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3644e752f9d28e0a1a6dd6a4a2cb5fb15e949f87bcf1ddad92520e9403071af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72e3a5604b8f469edf6853ed0bb1cacac96bcb0a691f7b8a7056426483e24eec"
+    sha256 cellar: :any,                 arm64_tahoe:   "bd0cffd10be973e8583a097c18733bceb457321067832cb9e007fa8774248df2"
+    sha256 cellar: :any,                 arm64_sequoia: "9aebbea9ab56a078b9b66c3bea9688da02085a469c7648e7f7f0c8563008f6bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "2015e0ea2ee3b67d7604d4e719dab7dc38fda96dc3fd6c1a94b39d5beebe4930"
+    sha256 cellar: :any,                 sonoma:        "62cf313c8305492591ad9da46e6843cf50bf0f079446a03e7dc6150be0c863c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e8c21891d3ca7ceb7e90681cedcdfc3075c49370bcab6e3a574703e0e08ceb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef744ace5aec6b69ab9a1c6646a7fdc431b7cb084700e2f9c603373186c435b5"
   end
 
   depends_on "ninja" => :build
