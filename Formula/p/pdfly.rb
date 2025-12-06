@@ -9,7 +9,7 @@ class Pdfly < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "72b09bd2d84da693d03328d5f63747c452186f75387e9b731b772da0c754119c"
+    sha256 cellar: :any_skip_relocation, all: "3e7eb4d370639db333cd96ee1eddfad5f8a5f67566e1d0754110b3629a351160"
   end
 
   depends_on "pkgconf" => :build
