@@ -10,13 +10,12 @@ class Cloudsplaining < Formula
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b029c54550a9c69b7d18214faad6276c3a717c66e00aaa038288a86b4e6b3693"
-    sha256 cellar: :any,                 arm64_sequoia: "66f00293ed3edd39ad132ca5742c804ecd3a702ec77e716d962db936d117bdf3"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb0b9ee33848dc1be4541ef3bce0de0449a899ae227e80fc8ead297ec62e9204"
-    sha256 cellar: :any,                 sonoma:        "4cdce525a9d48bf240fceb6c904654d8883e7a6165e9e377f1674105b9596430"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aa4fe725c6e96f20396dd8f147cb5bb686e643bdc8cfcb6b2afbbc104cd82fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "153a121eb5c89605f357fda4fd5ded4a3454ee91cd6ae82d1ceb50aebc2a913c"
+    sha256 cellar: :any,                 arm64_tahoe:   "f54e182a3a0780702507e17a54cecaadb169b5a7c62db07ba802cdfa0e0ad762"
+    sha256 cellar: :any,                 arm64_sequoia: "db5f4123104544b148c4737fada2f9b3ae5b26b890e27ba5e26b4b37625b870a"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3a94a8d37f2c737fc430c5d22ac883f0d5f2b99a3ae75b20286e3b25afb44de"
+    sha256 cellar: :any,                 sonoma:        "ca88e6ac80c69504e50f56f537a089312a6c3461720f7f591509d8b4ed647171"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a559ca266cf585b900467f44e1eacc9f3bc1d5b71e45db852ba53e73ca62376d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cb9933d28223be6d184c463477d3bbde516a1ad48d43dde0f1c78049b6e43b1"
   end
 
   depends_on "rust" => :build # for orjson
