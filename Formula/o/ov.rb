@@ -6,6 +6,11 @@ class Ov < Formula
   license "MIT"
   head "https://github.com/noborus/ov.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a680c356f64f025522345ce4217414ae21ae612984f6ca6b156ea237cef77a8e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a680c356f64f025522345ce4217414ae21ae612984f6ca6b156ea237cef77a8e"
