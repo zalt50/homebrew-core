@@ -7,12 +7,12 @@ class Gat < Formula
   head "https://github.com/koki-develop/gat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "088a70bb3a504a16638f378f5972619bc9315e824b434f6be458d5daecbb5bad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "088a70bb3a504a16638f378f5972619bc9315e824b434f6be458d5daecbb5bad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "088a70bb3a504a16638f378f5972619bc9315e824b434f6be458d5daecbb5bad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de9a1cdadace9dfa46b6e8e2b16885d920fe4ededc1c29d50c83d13261b8d534"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c548795052c11d8013ba1d4a2cd8f2aba00e465cdc968c963e6b835175214b0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c02650f3ac67a71060f3f14a4f8e90ebe6313720b4bf6450228bfdeff96e8a4e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51613e969d1c13520996ebb7e207f50894551f45fbd71a01b9830e2c1bb0adbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51613e969d1c13520996ebb7e207f50894551f45fbd71a01b9830e2c1bb0adbc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51613e969d1c13520996ebb7e207f50894551f45fbd71a01b9830e2c1bb0adbc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aea00aa6c20457e1a7f3e1d9bf0c53e89e0d09a299a85cf7a6e2a270efc0588f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39b6ae59377d6bc2cfd8492aee581810fc17192daeb7ad82608cdd570b11232a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2861b77cfb1d84dc0b91651fecc72d6f1b17f2680795965f06d3f3c5e40d8184"
   end
 
   depends_on "go" => :build
