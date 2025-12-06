@@ -6,6 +6,7 @@ class KimiCli < Formula
   url "https://files.pythonhosted.org/packages/7f/67/37a1660f447d5e1592ce3b39eded22653d84cd6cc9b8fc9568059f8c2617/kimi_cli-0.61.tar.gz"
   sha256 "42a4321cf2caccdf736a36d480ede7c2f051fbe0b3033af8d3ff31224df7556f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
@@ -490,8 +491,8 @@ class KimiCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do
