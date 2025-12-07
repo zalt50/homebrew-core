@@ -22,16 +22,12 @@ class Cmix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "087b737dfd467bda8b0ce62227d8bf0946754ee55507130a0cd84ddbdf3b42c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8eebb90a33656eaff7664633fa0422d594d6c5e3fd2c8270e9831516844b610a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e9ba39f214720c1b65d25eb08fd16b0a84cfc424143817bb8fcbb33a863cea3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe893125d8092e5bdabbb902ff589d2368a012c863cfe71def0d98652ad6fb8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "301859a5c0ae275d3e4bd543662fa0e8ec55c80f386c95acc82aca75bf3adf1f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "161b8e7138face7fa88bb94541da7444183ea3b02c819e8a406120349cc3d12b"
-    sha256 cellar: :any_skip_relocation, ventura:        "257458d58bd2f6e17013d22904190dde42b96f5c6e28dff73b5874832db82439"
-    sha256 cellar: :any_skip_relocation, monterey:       "a9241607506b03b1e9c0a77a09be19a3ae069f8e98d2507de654410774839a13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "87e851c4cc26bcfe1fab20b165cd369351d5cfd27586dec415e373bf1c1d1674"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0092c27accca6642f12d8c0d79423e5722dd17cbd20a93c194f231999d0e8655"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "379aab1a270951b5ba407f3e8bcc4f63acb751dca478600943ba06137f87d510"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24a3714aab5a450ebea1c2ffcbc6162259fd28a48c996116d1476d254c6266c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22caa14e1877a3352912eb0be97b97ee9be649167d76448d34a6c9537f405e03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "020968e1af5885da7049c369f4afd706a31c77d780fbf74e8daaf00ab3132058"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dd768510439ff99e1e5c47dbe7f9559005bbd26999d706276daba9b18073c9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9cf2a6c621b035fe17a770bc368b684240e193bc294f92e9d415bd88f1618d1"
   end
 
   # Fix to error: unknown type name '__m128i' on intel architectures
