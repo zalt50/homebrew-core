@@ -1,8 +1,8 @@
 class Hercules < Formula
   desc "System/370, ESA/390 and z/Architecture Emulator"
   homepage "https://sdl-hercules-390.github.io/html/"
-  url "https://github.com/SDL-Hercules-390/hyperion/archive/refs/tags/Release_4.9.tar.gz"
-  sha256 "a4ace85ee03c222d8885e7f54d767c2c7d9dc491c2bb0eb47c7b948c9c58fdd6"
+  url "https://github.com/SDL-Hercules-390/hyperion/archive/refs/tags/Release_4.9.1.tar.gz"
+  sha256 "22768fee6a949c31fed075886dffc7d81ac89ffc3d2f5cb2fc971e71be1c22a7"
   license "QPL-1.0"
   head "https://github.com/SDL-Hercules-390/hyperion.git", branch: "master"
 
