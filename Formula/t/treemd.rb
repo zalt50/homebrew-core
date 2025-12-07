@@ -1,8 +1,8 @@
 class Treemd < Formula
   desc "TUI and CLI dual pane markdown viewer"
   homepage "https://github.com/epistates/treemd"
-  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "d696d7336eb7bcccc12b4599cc0e4917d71b0a318cd467f7c8c0e7fa93c11490"
+  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.4.7.tar.gz"
+  sha256 "9186ea695bf9c63caa42bd83a4780c0503fbfc02ba0ea100b916fa31be290f76"
   license "MIT"
   head "https://github.com/epistates/treemd.git", branch: "main"
 
