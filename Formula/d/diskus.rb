@@ -1,8 +1,8 @@
 class Diskus < Formula
   desc "Minimal, fast alternative to 'du -sh'"
   homepage "https://github.com/sharkdp/diskus"
-  url "https://github.com/sharkdp/diskus/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "9733570d64a1eafcf96fe233fd978ec3855c77705005037ad253c49a188fdf51"
+  url "https://github.com/sharkdp/diskus/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "c4c9e4cd3cda25f55172130e3d6a58b389f0113fcefa96c73e4c80565547d1bf"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
