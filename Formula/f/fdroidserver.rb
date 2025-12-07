@@ -45,7 +45,8 @@ class Fdroidserver < Formula
   # `ruamel-yaml` is manually updated to support Python 3.14
 
   pypi_packages package_name:     "fdroidserver[optional]",
-                exclude_packages: %w[certifi cryptography frida numpy pillow puremagic]
+                exclude_packages: %w[certifi cryptography frida numpy pillow puremagic],
+                extra_packages:   "greenlet"
 
   resource "alembic" do
     url "https://files.pythonhosted.org/packages/02/a6/74c8cadc2882977d80ad756a13857857dbcf9bd405bc80b662eb10651282/alembic-1.17.2.tar.gz"
@@ -171,6 +172,11 @@ class Fdroidserver < Formula
   resource "gitpython" do
     url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
     sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/c7/e5/40dbda2736893e3e53d25838e0f19a2b417dfc122b9989c91918db30b5d3/greenlet-3.3.0.tar.gz"
+    sha256 "a82bb225a4e9e4d653dd2fb7b8b2d36e4fb25bc0165422a11e48b88e9e6f78fb"
   end
 
   resource "idna" do
@@ -409,7 +415,9 @@ class Fdroidserver < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "matplotlib"
+    without = ["matplotlib"]
+    without << "greenlet" unless OS.linux?
+    venv = virtualenv_install_with_resources(without:)
 
     # `matplotlib` needs extra inputs to use system libraries.
     # Ref: https://github.com/matplotlib/matplotlib/blob/v3.9.2/doc/install/dependencies.rst#use-system-libraries
