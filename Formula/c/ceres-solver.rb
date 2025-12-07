@@ -2,7 +2,7 @@ class CeresSolver < Formula
   desc "C++ library for large-scale optimization"
   homepage "http://ceres-solver.org/"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https://ceres-solver.googlesource.com/ceres-solver.git", branch: "master"
 
   stable do
