@@ -1,8 +1,8 @@
 class Oxipng < Formula
   desc "Multithreaded PNG optimizer written in Rust"
   homepage "https://github.com/oxipng/oxipng"
-  url "https://github.com/oxipng/oxipng/archive/refs/tags/v9.1.5.tar.gz"
-  sha256 "8f99d5c67efa2a7550023bf610b90e65d421375c9ed7f37097f83ae5c05f85bd"
+  url "https://github.com/oxipng/oxipng/archive/refs/tags/v10.0.0.tar.gz"
+  sha256 "c834f87cab52c621b113dd6ac718d591638043471705b0c4fa4aa958796e0051"
   license "MIT"
 
   bottle do
@@ -19,16 +19,6 @@ class Oxipng < Formula
   depends_on "rust" => :build
 
   def install
-    # Upstream uses qemu to cross compile for Linux aarch64, which is not desirable in brew.
-    # https://github.com/oxipng/oxipng/commit/1f2e0f336a826bd578a49c1dd477fb38773dd6ce
-    #
-    # cargo allows setting the variable to some other non-empty string, but not fully
-    # unsetting it, so remove the assignment from the source file.
-    # https://github.com/toml-lang/toml/issues/30
-    # https://doc.rust-lang.org/cargo/reference/config.html#environment-variables
-    # https://doc.rust-lang.org/cargo/reference/config.html#command-line-overrides
-    inreplace ".cargo/config.toml", "runner = \"qemu-aarch64\"", ""
-
     system "cargo", "install", *std_cargo_args
     system "cargo", "run",
            "--manifest-path", "xtask/Cargo.toml",
@@ -39,6 +29,6 @@ class Oxipng < Formula
   end
 
   test do
-    system bin/"oxipng", "--pretend", test_fixtures("test.png")
+    system bin/"oxipng", "--dry-run", test_fixtures("test.png")
   end
 end
