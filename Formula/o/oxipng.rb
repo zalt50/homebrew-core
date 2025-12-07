@@ -6,14 +6,12 @@ class Oxipng < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fed9aa78c4a1e95303dcdb8fb95fb4c36b3fa6134866c70bb53c192b047129e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6eed490e9f3c9a9668213862587fed4ec27f6aa1230a5556618bc7e3de86b9a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "865784029579b8c2b4446dba962ef46379c015c554cf7f99bcdb20b94fb8b9a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c4e48bbdb999086c8a73ceaf4bc3d1fb88e61f044bdcb0b37e21277a952cd07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a30bed265b000ba4a8ae568c40244ba8005b9cf9d8afaa41da56ba42759b3831"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce9a889f4f0df4bddaf29a866971bbabc78c35a32c07807ab3e0a8f57668a0c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3d37e577eb6aa04680c7714a307eeb1714ac3bd9eb46d25b48dec8819983356"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d810a1834a72c9c2ae54ff64a67c6fd0f6100e70d52dac77ca1638b80327ab17"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ebf46bc85c5ad6d6d63f8ae1d61de1ab0604ce2c5975e2f3a2907e1544cc7097"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a2b9a0684635b79758f2e7468347d4b09d4fc3aaf00d44e02e215e68042aa05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eaf327db6522d0d984c820968262443f4a2833c5dd2b32d7c534f220b8f03c24"
+    sha256 cellar: :any_skip_relocation, sonoma:        "132e413389174f87c78854611e3a15ee486d83713bcc40c75d761df96e24ea4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3adab467f862e6585bef7a698ff46b3d29f1f69edf1607a01034e7eb7a845e3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "289df09536c2c33ed08aad19c64db4a83dcac3c8925243f878ce75961d6c3eca"
   end
 
   depends_on "rust" => :build
