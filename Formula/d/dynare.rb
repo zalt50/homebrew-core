@@ -27,14 +27,12 @@ class Dynare < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "fftw"
   depends_on "gcc" # for gfortran
   depends_on "gsl"
-  depends_on "hdf5"
   depends_on "libmatio"
-  depends_on "metis"
   depends_on "octave"
   depends_on "openblas"
+  depends_on "slicot"
   depends_on "suite-sparse"
 
   fails_with :clang do
@@ -44,30 +42,14 @@ class Dynare < Formula
     EOS
   end
 
-  resource "slicot" do
-    url "https://deb.debian.org/debian/pool/main/s/slicot/slicot_5.0+20101122.orig.tar.gz"
-    sha256 "fa80f7c75dab6bfaca93c3b374c774fd87876f34fba969af9133eeaea5f39a3d"
-  end
-
   def install
-    resource("slicot").stage do
-      system "make", "lib", "OPTS=-fPIC", "SLICOTLIB=../libslicot_pic.a",
-             "FORTRAN=gfortran", "LOADER=gfortran"
-      system "make", "clean"
-      system "make", "lib", "OPTS=-fPIC -fdefault-integer-8",
-             "FORTRAN=gfortran", "LOADER=gfortran",
-             "SLICOTLIB=../libslicot64_pic.a"
-      (buildpath/"slicot/lib").install "libslicot_pic.a", "libslicot64_pic.a"
-    end
-
     # This needs a bit of extra help in finding the Octave libraries on Linux.
     octave = Formula["octave"]
     ENV.append "LDFLAGS", "-Wl,-rpath,#{octave.opt_lib}/octave/#{octave.version.major_minor_patch}" if OS.linux?
 
-    # Help meson find `boost`, `suite-sparse` and `slicot`
+    # Help meson find `boost` and `suite-sparse`
     ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
     ENV.append_path "LIBRARY_PATH", Formula["suite-sparse"].opt_lib
-    ENV.append_path "LIBRARY_PATH", buildpath/"slicot/lib"
 
     system "meson", "setup", "build", "-Dbuild_for=octave", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -88,8 +70,7 @@ class Dynare < Formula
       sha256 "570d52af975ea9861a6fb024c23fc0f403199e4b56d7a883ee6ca17072e26990"
     end
 
-    ENV.cxx
-    ENV.append "CXXFLAGS", "-std=c++17" # octave >= 10 requires c++17
+    ENV.delete "CXX" # avoid overriding Octave flags
     ENV.delete "LDFLAGS" # avoid overriding Octave flags
 
     statistics = resource("statistics")
