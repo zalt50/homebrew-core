@@ -1,8 +1,8 @@
 class Toktop < Formula
   desc "LLM usage monitor in terminal"
   homepage "https://github.com/htin1/toktop"
-  url "https://github.com/htin1/toktop/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "3ce3a9a9737d0d29f10ce1f34a8dfef076ceade49e4ec1202dc7cba955eace66"
+  url "https://github.com/htin1/toktop/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "9e01566757971e7cf42dd881ea9e8a8a53bbda4dade210a3c80df71638418ee4"
   license "MIT"
   head "https://github.com/htin1/toktop.git", branch: "main"
 
