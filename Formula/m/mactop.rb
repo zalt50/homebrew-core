@@ -7,9 +7,9 @@ class Mactop < Formula
   head "https://github.com/context-labs/mactop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c0a933ce73ad73eda57b6af68e96cd02a0ff41132452b6b9d14ef55e72c8eac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82ea5f3e98f71f330319a56f8ab57081a8354521856daf387757072def9f6cbc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4ffaa07fdf378c050cc4f2031c1686532de2a6cceebb3d006e3d63e80870ca5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93e5baab5a142b7132de086e25d536392caae9c7f64ab0ad45d3cf31c304743b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e7f8496ad4c4551a1ec0b793be69e6cf531ac19b088c2311d8d692a949bbabf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed46cd535abd6b54a2f098b5682f50547b3de591d21eb60c3ef37ccb38fa773f"
   end
 
   depends_on "go" => :build
