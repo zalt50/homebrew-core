@@ -1,8 +1,8 @@
 class GhzWeb < Formula
   desc "Web interface for ghz"
   homepage "https://ghz.sh"
-  url "https://github.com/bojand/ghz/archive/refs/tags/v0.120.0.tar.gz"
-  sha256 "e058b1dc3aa09ca7594a79f92bad3b481c4193a0db31b2ac310b54ad802b2580"
+  url "https://github.com/bojand/ghz/archive/refs/tags/v0.121.0.tar.gz"
+  sha256 "d92ed00a2cd1be3b14fe680e1615e9dace4fd4cf6d679811173ae7f2611ad762"
   license "Apache-2.0"
   head "https://github.com/bojand/ghz.git", branch: "master"
 
@@ -26,6 +26,8 @@ class GhzWeb < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ghz-web"
   end
