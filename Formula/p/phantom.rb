@@ -5,6 +5,10 @@ class Phantom < Formula
   sha256 "d4656179367893a97d41559e185926e8fcb43fc968eb80b2149d0f94148207bc"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "ac40d55a8811db0f8c58300a6babb906da296f9f9755e7cf72befb487bbb39f7"
+  end
+
   depends_on "node"
 
   def install
