@@ -1,8 +1,8 @@
 class Nanobind < Formula
   desc "Tiny and efficient C++/Python bindings"
   homepage "https://github.com/wjakob/nanobind"
-  url "https://github.com/wjakob/nanobind/archive/refs/tags/v2.10.0.tar.gz"
-  sha256 "338832c62492c8927a8d2cb6babd26c01ddf81aee2f0a1b77f5339d79defefd4"
+  url "https://github.com/wjakob/nanobind/archive/refs/tags/v2.10.1.tar.gz"
+  sha256 "f24f145b95dafc246e9b495110585b70bf9821c1468f1328f99d79bd40059267"
   license "BSD-3-Clause"
   head "https://github.com/wjakob/nanobind.git", branch: "master"
 
