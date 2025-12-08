@@ -7,8 +7,8 @@ class S3fs < Formula
   head "https://github.com/s3fs-fuse/s3fs-fuse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "498ca33627f03956baf1e59675c0dcb84f714d541cd8a06a68927eb3d0949592"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "570753427deb94c2b35cce9af745c36b87c6ab1faebf20d860c180ad94ab6116"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "98936a769c49e9d9d7fe5e654304a08906a4fd9276f507d468f1d667a016528a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3fd8a38dd94f3523cfe03b544b4e12cd3dbfe724a34098c3e7373bbe799bee11"
   end
 
   depends_on "autoconf" => :build
