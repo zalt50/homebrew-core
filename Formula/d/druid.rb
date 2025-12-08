@@ -70,6 +70,20 @@ class Druid < Formula
     ].each do |dir|
       (var/dir).mkpath
     end
+
+    # Reduce bottle and install size by hardlinking duplicate JARs
+    # TODO: Move logic to brew DSL
+    libexec.glob("**/*.jar").each_with_object({}) do |jar, jars_hash|
+      next if !jar.file? || jar.symlink?
+
+      found_jar = jars_hash[jar.basename.to_s]
+      if found_jar.nil?
+        jars_hash[jar.basename.to_s] = jar
+      elsif found_jar.stat.ino != jar.stat.ino && compare_file(found_jar, jar)
+        rm(jar)
+        jar.make_link(found_jar)
+      end
+    end
   end
 
   test do
