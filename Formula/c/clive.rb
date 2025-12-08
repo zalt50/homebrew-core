@@ -20,6 +20,7 @@ class Clive < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/koki-develop/clive/cmd.version=v#{version}")
+    generate_completions_from_executable(bin/"clive", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
