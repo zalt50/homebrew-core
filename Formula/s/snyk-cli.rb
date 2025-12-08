@@ -1,8 +1,8 @@
 class SnykCli < Formula
   desc "Scans and monitors projects for security vulnerabilities"
   homepage "https://snyk.io"
-  url "https://registry.npmjs.org/snyk/-/snyk-1.1301.0.tgz"
-  sha256 "635aca1e076ec601529681fc6dd859df626d7efcf7e372a698a8c9ee26ce716b"
+  url "https://registry.npmjs.org/snyk/-/snyk-1.1301.1.tgz"
+  sha256 "ef775cda275765ace425a8d75dcfdeb2a74c0402806e2f1cefc77c4993c7c4ff"
   license "Apache-2.0"
 
   bottle do
@@ -17,7 +17,8 @@ class SnykCli < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
+    # Highly dependents on npm scripts to install wrapper bin files
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove x86-64 ELF binaries on incompatible platforms
