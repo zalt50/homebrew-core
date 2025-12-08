@@ -1,8 +1,8 @@
 class DoubleConversion < Formula
   desc "Binary-decimal and decimal-binary routines for IEEE doubles"
   homepage "https://github.com/google/double-conversion"
-  url "https://github.com/google/double-conversion/archive/refs/tags/v3.3.1.tar.gz"
-  sha256 "fe54901055c71302dcdc5c3ccbe265a6c191978f3761ce1414d0895d6b0ea90e"
+  url "https://github.com/google/double-conversion/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "42fd4d980ea86426e457b24bdfa835a6f5ad9517ddb01cdb42b99ab9c8dd5dc9"
   license "BSD-3-Clause"
   head "https://github.com/google/double-conversion.git", branch: "master"
 
@@ -18,13 +18,6 @@ class DoubleConversion < Formula
   end
 
   depends_on "cmake" => :build
-
-  # Fix to cmake 4 compatibility
-  # PR ref: https://github.com/google/double-conversion/pull/240
-  patch do
-    url "https://github.com/google/double-conversion/commit/69880f0e68d6ddcb760285709195d63c5fd193c4.patch?full_index=1"
-    sha256 "9895afd264e304368d78d83d4bedf85fbd282f79fe99f70cd7384cde2baab329"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "shared", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
