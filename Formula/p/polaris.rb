@@ -7,12 +7,12 @@ class Polaris < Formula
   head "https://github.com/FairwindsOps/polaris.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b85278302fa410b54bb57509ba76719fca66958f51dbe16ca1dbb55a978a8181"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81e0533e29be4fec5f3dcf1de025720ba040e0f17e88d5e3596a36caed07e8c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a46d318db8249de42f9682b85641c7cc7414949ddb0db891a759a3a02a6a09f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae661c67473ed220721522e013b56aa730275a94e9bb3812745f09bcdc4c871b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e4f3c9de2305212091f8182f55dcbf42f3abf40b87dd643d88c6878d3c6b93e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ef47cf49db79185e1b88b6dbcf21f2a0de30c94550d06ad52e090dfec851eea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd7bd03e67b6dfebf14fd04353910ff437789b085b543a452895c4e6c239831d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d66210fc9a2c1f8734b3f726e6fc590eb2ee073340d579e07a98949ce2e622df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "397d4edde9178e7a6ba027880efe4621ce11ae84ef3e78ef25e31471bfa9b85a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25919769685ca991f65992b8020fee7dad9243ccd2e82ed6c639c45a6b74ba48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "677e1b0140ab2c10d144719bb13b88fd5a38ded134ee21d27f5acbfa1ade53ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6741fae123a99f1c79fe28ab58aae29bd4a418f522f2ea8fb6e830638a92ab2"
   end
 
   depends_on "go" => :build
