@@ -108,7 +108,7 @@ class GhcAT910 < Formula
     ENV["PYTHON"] = which("python3.14")
 
     # Workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/26166
-    if DevelopmentTools.ld64_version == "1221.4"
+    if DevelopmentTools.ld64_version >= "1221.4"
       inreplace "rts/rts.cabal", /("-Wl,-undefined,dynamic_lookup)"/, "\\1,-ld_classic\""
     end
 
@@ -144,6 +144,8 @@ class GhcAT910 < Formula
       -j#{ENV.make_jobs}
       --prefix=#{prefix}
       --flavour=release
+      --docs=no-haddocks
+      --docs=no-sphinx-html
       --docs=no-sphinx-pdfs
     ]
     # Let hadrian handle its own parallelization
