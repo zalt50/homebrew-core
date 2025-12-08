@@ -1,9 +1,9 @@
 class Wcslib < Formula
   desc "Library and utilities for the FITS World Coordinate System"
   homepage "https://www.atnf.csiro.au/computing/software/wcs/"
-  url "https://www.atnf.csiro.au/computing/software/wcs/wcslib-8.4.tar.bz2"
-  sha256 "960b844426d14a8b53cdeed78258aa9288cded99a7732c0667c64fa6a50126dc"
-  license "GPL-3.0-or-later"
+  url "https://www.atnf.csiro.au/computing/software/wcs/wcslib-releases/wcslib-8.5.tar.bz2"
+  sha256 "f1fd1b78fbfdbabda363f8045e0c59e32735eca45482a5302191e56fe062eace"
+  license "LGPL-3.0-or-later"
 
   livecheck do
     url :homepage
@@ -24,13 +24,15 @@ class Wcslib < Formula
   depends_on "cfitsio"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    # Remove all the revision control files which mention prior GPL license
+    # to avoids accidentally compiling GPL code which would impact license.
+    rm_r buildpath.glob("**/RCS/")
+
+    system "./configure", "--disable-fortran",
                           "--with-cfitsiolib=#{Formula["cfitsio"].opt_lib}",
                           "--with-cfitsioinc=#{Formula["cfitsio"].opt_include}",
                           "--without-pgplot",
-                          "--disable-fortran"
+                          *std_configure_args
     system "make", "install"
   end
 
