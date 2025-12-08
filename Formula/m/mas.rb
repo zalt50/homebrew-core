@@ -2,8 +2,8 @@ class Mas < Formula
   desc "Mac App Store command-line interface"
   homepage "https://github.com/mas-cli/mas"
   url "https://github.com/mas-cli/mas.git",
-      tag:      "v4.0.0",
-      revision: "21205c013fa941e89463e1d8e553d6e4e3eb8b3f"
+      tag:      "v4.1.0",
+      revision: "4fa8f4c1f5f2ae7e9a554451621d054bba0c7057"
   license "MIT"
   head "https://github.com/mas-cli/mas.git", branch: "main"
 
@@ -27,9 +27,7 @@ class Mas < Formula
   def install
     ENV["MAS_DIRTY_INDICATOR"] = ""
     system "Scripts/build", "homebrew/core/mas", "--disable-sandbox", "-c", "release"
-    (libexec/"bin").install "Scripts/mas"
-    (libexec/"bin").install ".build/release/mas" => "mas-bin"
-    bin.install_symlink "#{libexec}/bin/mas"
+    bin.install ".build/release/mas"
     system "swift", "package", "--disable-sandbox", "generate-manual"
     man1.install ".build/plugins/GenerateManual/outputs/mas/mas.1"
     bash_completion.install "contrib/completion/mas-completion.bash" => "mas"
