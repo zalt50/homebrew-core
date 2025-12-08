@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/98/79/0bc1912b0bb3f0fa90e08d65338ef6651654194a86f703f0800f29b0434f/flexget-3.18.29.tar.gz"
-  sha256 "94c59b46b56550149c6f7ab7fafa2427e10dbabc88da35676f236a0ec0d1621a"
+  url "https://files.pythonhosted.org/packages/3a/98/ffdfbf3946077983ef96e272b8edbe96a54249914dedc6c47369c1c46a95/flexget-3.18.30.tar.gz"
+  sha256 "9490e8910c37462eaa69b279e13cc255e6daecf54267d1e70122b88a2d2cf2e0"
   license "MIT"
 
   bottle do
@@ -350,8 +350,8 @@ class Flexget < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "webencodings" do
