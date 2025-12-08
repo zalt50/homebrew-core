@@ -50,17 +50,16 @@ class Blast < Formula
       if Hardware::CPU.arm? && OS.linux?
         rm_r("include/util/compress/zlib_cloudflare")
         rm_r("src/util/compress/zlib_cloudflare")
-        inreplace "src/build-system/Makefile.mk.in" do |s|
-          cmprs_lib = s.get_make_var("CMPRS_LIB").split
-          cmprs_lib.delete("zcf")
-          s.change_make_var! "CMPRS_LIB", cmprs_lib.join(" ")
-        end
+
+        zcf_files = ["src/build-system/Makefile.mk.in", "src/util/compress/api/Makefile.compress.lib"]
+        inreplace zcf_files, /(=.*) zcf(\s)/, "\\1\\2"
       end
 
       # Boost is only used for unit tests.
       args = %W[
         --prefix=#{prefix}
         --with-bin-release
+        --with-dll
         --with-mbedtls=#{Formula["mbedtls@3"].opt_prefix}
         --with-mt
         --with-pcre2=#{Formula["pcre2"].opt_prefix}
