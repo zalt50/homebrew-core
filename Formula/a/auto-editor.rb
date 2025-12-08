@@ -1,8 +1,8 @@
 class AutoEditor < Formula
   desc "Efficient media analysis and rendering"
   homepage "https://auto-editor.com"
-  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.3.1.tar.gz"
-  sha256 "6cfe85e08f034656b488c2455dc8556a45e585572d544193eeb9635de7230d1e"
+  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.4.0.tar.gz"
+  sha256 "f40a636c46d29b185704808ab5a730ce272856ad176438bb7782595992009acd"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
