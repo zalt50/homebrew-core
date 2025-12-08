@@ -3,8 +3,8 @@ class Prestodb < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https://prestodb.io"
-  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.295/presto-server-0.295.tar.gz"
-  sha256 "a585527431a57212baadb201eb1b971b9ab8d2e3323c14d089ba41f60fd0812d"
+  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.296/presto-server-0.296.tar.gz"
+  sha256 "3c009ed344c4d903df169893fffcc03d6b2f813894c6e94aa9179a4ddd250821"
   license "Apache-2.0"
 
   # Upstream has said that we should check Maven for Presto version information
@@ -24,8 +24,8 @@ class Prestodb < Formula
   depends_on "python@3.14"
 
   resource "presto-cli" do
-    url "https://github.com/prestodb/presto/releases/download/0.295/presto-cli-0.295-executable.jar"
-    sha256 "e5b15f37ef402d9b9eb5e71b2e4593241bb24fcb551327359353f06176c69624"
+    url "https://github.com/prestodb/presto/releases/download/0.296/presto-cli-0.296-executable.jar"
+    sha256 "5c7a6e1fd6f3e41035038348bb93a84b25e1662c2499f94cb6c5f7ac85a50056"
 
     livecheck do
       formula :parent
