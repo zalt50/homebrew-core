@@ -3,10 +3,9 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/7f/67/37a1660f447d5e1592ce3b39eded22653d84cd6cc9b8fc9568059f8c2617/kimi_cli-0.61.tar.gz"
-  sha256 "42a4321cf2caccdf736a36d480ede7c2f051fbe0b3033af8d3ff31224df7556f"
+  url "https://files.pythonhosted.org/packages/f0/31/dfb998c9b25f243ed2f8f416101fc7feab9bccf2de01e7771b8faaf7264d/kimi_cli-0.62.tar.gz"
+  sha256 "3eacc24cddbc32df6897dde61b90772193ae4db935807d5f266297e4174c3d84"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
@@ -35,8 +34,8 @@ class KimiCli < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py]
 
   resource "agent-client-protocol" do
-    url "https://files.pythonhosted.org/packages/c6/fe/147187918c5ba695db537b3088c441bcace4ac9365fae532bf36b1494769/agent_client_protocol-0.6.3.tar.gz"
-    sha256 "ea01a51d5b55864c606401694dad429d83c5bedb476807d81b8208031d6cf3d8"
+    url "https://files.pythonhosted.org/packages/7d/4d/e33e4e997de8fdc6c7154e59490a20c455cd46543b62dab768ae99317046/agent_client_protocol-0.7.0.tar.gz"
+    sha256 "c66811bb804868c4e7728b18b67379bcb0335afba3b1c2ff0fcdfd0c48d93029"
   end
 
   resource "aiofiles" do
@@ -225,8 +224,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/7d/8a/57d3fec38478a832b3d4d8db19def2a2c7994b7b8ae824398548eba18a99/kosong-0.31.0.tar.gz"
-    sha256 "fcfe4822cd1a0e623cb737b74ae85af8fcf71232e8283d32ee10c715b4add767"
+    url "https://files.pythonhosted.org/packages/d3/f3/b56cff200ed582d0ebcbc358a47adfed3b885b99c6841da182243f378774/kosong-0.32.0.tar.gz"
+    sha256 "2ad924a1a09e2ca381a1f1eb1868371b650dd3286d66566d3cb8f1908fd093b0"
   end
 
   resource "lazy-object-proxy" do
@@ -280,8 +279,8 @@ class KimiCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/d5/e4/42591e356f1d53c568418dc7e30dcda7be31dd5a4d570bca22acb0525862/openai-2.8.1.tar.gz"
-    sha256 "cb1b79eef6e809f6da326a7ef6038719e35aa944c42d081807bfa1be8060f15f"
+    url "https://files.pythonhosted.org/packages/09/48/516290f38745cc1e72856f50e8afed4a7f9ac396a5a18f39e892ab89dfc2/openai-2.9.0.tar.gz"
+    sha256 "b52ec65727fc8f1eed2fbc86c8eac0998900c7ef63aa2eb5c24b69717c56fa5f"
   end
 
   resource "openapi-core" do
@@ -345,8 +344,8 @@ class KimiCli < Formula
   end
 
   resource "pykaos" do
-    url "https://files.pythonhosted.org/packages/e9/f5/fe745ec4a52fd48867b81373c1ad2b16c03497a15b3814f916aabdfb233f/pykaos-0.3.0.tar.gz"
-    sha256 "a91cd3dc9204a3683c0de8ef51dfb69a1ee4c9e9abe625804020075485ac6d6d"
+    url "https://files.pythonhosted.org/packages/0f/f9/ced0c3f359f10e4ef97eb49b806bc9417721ae012e4d759ce81c32468b09/pykaos-0.4.0.tar.gz"
+    sha256 "83109ee1454dd931063f3a8c0bb78c8ca9639f7d083b94313755f2136c37e390"
   end
 
   resource "pyperclip" do
@@ -491,8 +490,8 @@ class KimiCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "uvicorn" do
