@@ -1,9 +1,9 @@
 class AmmoniteRepl < Formula
   desc "Ammonite is a cleanroom re-implementation of the Scala REPL"
   homepage "https://ammonite.io/"
-  url "https://github.com/com-lihaoyi/Ammonite/releases/download/3.0.4/3.3-3.0.4"
-  version "3.0.4"
-  sha256 "b3ac7c6cf5e22450a8afebfb3dc0312c53ec676baf93583ab59b8ef81627937d"
+  url "https://github.com/com-lihaoyi/Ammonite/releases/download/3.0.5/3.3-3.0.5"
+  version "3.0.5"
+  sha256 "addc1ae07851b8e8ad3e157602b4d97fab1fcd03be2be3961564168c5c06f3d2"
   license "MIT"
 
   # There can be a gap between when a GitHub release is created and when the
