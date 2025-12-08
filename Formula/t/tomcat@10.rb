@@ -1,9 +1,9 @@
 class TomcatAT10 < Formula
   desc "Implementation of Java Servlet and JavaServer Pages"
   homepage "https://tomcat.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.49/bin/apache-tomcat-10.1.49.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.49/bin/apache-tomcat-10.1.49.tar.gz"
-  sha256 "d1f5969fbaf7ade296fb8acf7b13a1ef1305d27f2caa3a4c5124e8d4c8aa2b88"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.50/bin/apache-tomcat-10.1.50.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.50/bin/apache-tomcat-10.1.50.tar.gz"
+  sha256 "f74f9f1a7ac2cf6eeede2c50f45088d9c3e55f77d5777f9f7033ed3d43ef529c"
   license "Apache-2.0"
 
   livecheck do
