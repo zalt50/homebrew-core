@@ -7,7 +7,7 @@ class Container < Formula
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe: "d5fd417e334bd5312db4f427ae03deacaebc5b38221537c8e688cfd72c760b64"
+    sha256 arm64_tahoe: "6546cae49446c8ed44a6552cf9855717b1ec5b66e55132e768270954d1b30da2"
   end
 
   depends_on xcode: ["26.0", :build]
