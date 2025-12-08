@@ -19,7 +19,7 @@ class Gbox < Formula
   depends_on "frpc"
   depends_on "yq"
 
-  uses_from_macos "jq"
+  uses_from_macos "jq", since: :sequoia
 
   def install
     system "make", "install", "prefix=#{prefix}", "VERSION=#{version}", "COMMIT_ID=#{File.read("COMMIT")}", "BUILD_TIME=#{time.iso8601}"
