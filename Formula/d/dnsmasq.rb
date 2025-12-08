@@ -57,6 +57,13 @@ class Dnsmasq < Formula
     touch etc/"dnsmasq.d/dhcpc/.keepme"
   end
 
+  def caveats
+    <<~EOS
+      On current macOS releases, `/etc/resolver/<domain>` resolver overrides do not work if the nameserver is `127.0.0.1` and dnsmasq is running on a non-53 port.
+      To use scoped resolver zones reliably, bind dnsmasq to a non-localhost IP (e.g., a loopback alias like 10.0.0.1) on port 53.
+    EOS
+  end
+
   service do
     run [opt_sbin/"dnsmasq", "--keep-in-foreground", "-C", etc/"dnsmasq.conf", "-7", etc/"dnsmasq.d,*.conf"]
     keep_alive true
