@@ -8,8 +8,8 @@ class AwsKeychain < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "07b563b515bc0baa71f648ce63989009e50160d6ef87bd821e045be451cffb53"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "133f33991e2bb9a17768272ab806e803b25935480f4eec03826c8ecfb3d93272"
   end
 
   depends_on :macos
