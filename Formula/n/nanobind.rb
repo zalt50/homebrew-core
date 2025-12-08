@@ -1,19 +1,32 @@
 class Nanobind < Formula
   desc "Tiny and efficient C++/Python bindings"
   homepage "https://github.com/wjakob/nanobind"
-  url "https://github.com/wjakob/nanobind/archive/refs/tags/v2.9.2.tar.gz"
-  sha256 "8ce3667dce3e64fc06bfb9b778b6f48731482362fb89a43da156632266cd5a90"
+  url "https://github.com/wjakob/nanobind/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "338832c62492c8927a8d2cb6babd26c01ddf81aee2f0a1b77f5339d79defefd4"
   license "BSD-3-Clause"
   head "https://github.com/wjakob/nanobind.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "aea1ec0524fce6cb6899de31e2af7e52c62dee38f24a1e36c053a1f83181f474"
+    sha256 cellar: :any_skip_relocation, all: "06820269f6dc754596531f3776c4bb77905eeb8500c9706442adacd5199215dc"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
   depends_on "robin-map" => :no_linkage
+
+  on_linux do
+    on_arm do
+      depends_on "gcc" => :build if DevelopmentTools.gcc_version("gcc") < 13
+
+      fails_with :gcc do
+        version "12"
+        cause <<~CAUSE
+          Fails to compile because of undefined `_Float16` type
+          https://godbolt.org/z/nKbrjPTvG
+        CAUSE
+      end
+    end
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",
