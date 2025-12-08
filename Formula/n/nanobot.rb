@@ -1,18 +1,18 @@
 class Nanobot < Formula
   desc "Build MCP Agents"
   homepage "https://www.nanobot.ai/"
-  url "https://github.com/nanobot-ai/nanobot/archive/refs/tags/v0.0.42.tar.gz"
-  sha256 "830489e8d5f5758dcd1d7a8e76fbbda435403aa0bd8aeb01cf5ad86a045d4d7a"
+  url "https://github.com/nanobot-ai/nanobot/archive/refs/tags/v0.0.43.tar.gz"
+  sha256 "daccf1991ed245d7b0521bae69bd8be3597b1460195415d65ec20942fd1d1ed5"
   license "Apache-2.0"
   head "https://github.com/nanobot-ai/nanobot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40ef262062a634a7f5ea2842bcc469c81929572e52c8908335ac1fc7feeed81a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "971919f2589dcecada97b84dc0a41777ac9c373041a43ba90758730043a5539f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01a3c4fa5eb92226917c939ed30354d61df2e3f3245b0deecdd40f351f04dfab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "041e7ad2e7326ad8d9b90e86971470a2ba827e2dfd762881899c9045c1936438"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "546c1cc5062985d582b1caa91badad07b42b27323c30caf0764b0fd85ead1547"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd00652429eb271929a8779166cdc55d7aef82473f09236a18a1d06e46098a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "141cf849f37d84328a9f3bc0e2613a3936e8455e35b1081c37de5c3f597c5ab8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d99bfb44a5e2a984a226985cf3c9452f1567d8c6418d4f6a8ca3b863b0388c8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6be4d52c87f53ee57751e863a07ffa5fa31e37e7a28f865cbaa08b6cf5accfee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2c81ea90ef6f9fa732204155ba0b97b70bc62f30fb1c3fc73ed8edf6fa138e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a22c802ab41603986f87ba3e6cbc536b734bc2639ed85c02984bf07ce2c4368a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cf451bb427abaf46b49df2063c5992b1684758181dd45a1bb258caf3aa8e509"
   end
 
   depends_on "go" => :build
