@@ -1,8 +1,8 @@
 class Nanobind < Formula
   desc "Tiny and efficient C++/Python bindings"
   homepage "https://github.com/wjakob/nanobind"
-  url "https://github.com/wjakob/nanobind/archive/refs/tags/v2.9.2.tar.gz"
-  sha256 "8ce3667dce3e64fc06bfb9b778b6f48731482362fb89a43da156632266cd5a90"
+  url "https://github.com/wjakob/nanobind/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "338832c62492c8927a8d2cb6babd26c01ddf81aee2f0a1b77f5339d79defefd4"
   license "BSD-3-Clause"
   head "https://github.com/wjakob/nanobind.git", branch: "master"
 
@@ -14,6 +14,20 @@ class Nanobind < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
   depends_on "robin-map" => :no_linkage
+
+  on_linux do
+    on_arm do
+      depends_on "gcc" => :build if DevelopmentTools.gcc_version("gcc") < 13
+
+      fails_with :gcc do
+        version "12"
+        cause <<~CAUSE
+          Fails to compile because of undefined `_Float16` type
+          https://godbolt.org/z/nKbrjPTvG
+        CAUSE
+      end
+    end
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",
