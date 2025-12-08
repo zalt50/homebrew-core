@@ -1,8 +1,8 @@
 class Tssh < Formula
   desc "SSH Lightweight management tools"
   homepage "https://github.com/luanruisong/tssh"
-  url "https://github.com/luanruisong/tssh/archive/refs/tags/2.1.3.tar.gz"
-  sha256 "35b2b28eea5e41d6faa1e0eeee30ad18e069cc3489121257661097297692cd73"
+  url "https://github.com/luanruisong/tssh/archive/refs/tags/2.1.4.tar.gz"
+  sha256 "bbe8938b96c04aad5a843405a4414dde925f8827f29ac9c7d855d1bc84348b75"
   license "Apache-2.0"
 
   no_autobump! because: :requires_manual_review
