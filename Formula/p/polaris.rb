@@ -1,8 +1,8 @@
 class Polaris < Formula
   desc "Validation of best practices in your Kubernetes clusters"
   homepage "https://www.fairwinds.com/polaris"
-  url "https://github.com/FairwindsOps/polaris/archive/refs/tags/10.1.2.tar.gz"
-  sha256 "16897c2e419b3ad28a0330113b4a1ed3ad2ced376e0b2e7c7bb92ccb88bfdea5"
+  url "https://github.com/FairwindsOps/polaris/archive/refs/tags/10.1.3.tar.gz"
+  sha256 "eaa15224739aea756f67ae84a2e086ec1f6716539245ed37572c064d3d598f46"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/polaris.git", branch: "master"
 
