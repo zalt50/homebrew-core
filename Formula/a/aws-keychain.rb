@@ -12,6 +12,10 @@ class AwsKeychain < Formula
     sha256 cellar: :any_skip_relocation, all: "133f33991e2bb9a17768272ab806e803b25935480f4eec03826c8ecfb3d93272"
   end
 
+  # https://github.com/pda/aws-keychain/commit/c071a06bac9ebfef8fbbfbb883595c5dd0f38ce3
+  deprecate! date: "2025-12-08", because: :unmaintained, replacement_formula: "aws-vault"
+  disable! date: "2026-12-08", because: :unmaintained, replacement_formula: "aws-vault"
+
   depends_on :macos
 
   def install
