@@ -1,8 +1,8 @@
 class Laszip < Formula
   desc "Lossless LiDAR compression"
   homepage "https://laszip.org/"
-  url "https://github.com/LASzip/LASzip/archive/refs/tags/3.4.4.tar.gz"
-  sha256 "6d034bf3a400f81317a5dbad59d1b7ce82d971e887ca22d15813b914f0a5c281"
+  url "https://github.com/LASzip/LASzip/archive/refs/tags/3.5.0.tar.gz"
+  sha256 "6e9baac8689dfd2e1502ceafabb20c62b6cd572744d240fb755503fd57c2a6af"
   license "Apache-2.0"
   head "https://github.com/LASzip/LASzip.git", branch: "master"
 
@@ -20,6 +20,12 @@ class Laszip < Formula
   end
 
   depends_on "cmake" => :build
+
+  # build patch to scope C++ standard flag, upstream pr ref, https://github.com/LASzip/LASzip/pull/122
+  patch do
+    url "https://github.com/LASzip/LASzip/commit/a2060ce7bbdde90774e067579fbfd1f53837a015.patch?full_index=1"
+    sha256 "131816847a2e44df85e34c945e5e60f5112d94e6f9781c25316293832f08510c"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
