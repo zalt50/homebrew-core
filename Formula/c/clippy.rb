@@ -24,6 +24,8 @@ class Clippy < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/clippy"
     system "go", "build", *std_go_args(ldflags:, output: bin/"pasty"), "./cmd/pasty"
+
+    generate_completions_from_executable(bin/"clippy", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
