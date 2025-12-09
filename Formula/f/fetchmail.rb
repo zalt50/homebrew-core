@@ -17,12 +17,12 @@ class Fetchmail < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1e5aad87b142f8508d48e70a0f71df5d25f74eb91ad6700b016f80884c1b2a8b"
-    sha256 cellar: :any, arm64_sequoia: "b3c0dc3045a8d0e72d907cdf4cbc64fd1527da0a15bf0795770df6378f4e3998"
-    sha256 cellar: :any, arm64_sonoma:  "a4edf647692e84c117f1b414a614ac82c1027a5c5486dfc476ee7c656185fb1d"
-    sha256 cellar: :any, sonoma:        "db1b4a47f4ae77673089eda86a654d31e90b1e211a1c6401ec10bdf38ccc90c5"
-    sha256               arm64_linux:   "f7628cdc9128b89d7805bb35be58f781743236c5b2e812bfa62b6a619e0097e4"
-    sha256               x86_64_linux:  "08a3ef52b092730dc0f74c2b6479d725c357561129431ecc065eea339ca1c8ec"
+    sha256 cellar: :any, arm64_tahoe:   "52ae4f8d948af438737e6ecff27dbb60f5e0b5985f7675657f6dc6a25d000b20"
+    sha256 cellar: :any, arm64_sequoia: "2ec075beef02a14da192168555cabaefd70a50230572746a47d3f8ca75f094c2"
+    sha256 cellar: :any, arm64_sonoma:  "a5ab2daae7ee8de83520a2f44c9e23df7df51ce782d94a36f25a45853ea4e9d3"
+    sha256 cellar: :any, sonoma:        "af36771e465fb908411295ddf164c3690c9b1b646431791efa120d3ceaca3818"
+    sha256               arm64_linux:   "a795fec5c4a0582d04b84fafd7b4cee71fd836419c3c036c36009229e4f43cbb"
+    sha256               x86_64_linux:  "8942310d36cfc9e04abd493ad0761c414413595d2f96bb02e444104eecb7a75f"
   end
 
   depends_on "pkgconf" => :build
