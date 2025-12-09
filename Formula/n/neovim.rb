@@ -2,12 +2,17 @@ class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io/"
   license "Apache-2.0"
-
-  head "https://github.com/neovim/neovim.git", branch: "master"
+  revision 1
 
   stable do
+    # TODO: Bump to use tree-sitter 0.26+ when new Neovim release supports it
+    # TODO: remove `head` block when stable supports tree-sitter 0.26+.
     url "https://github.com/neovim/neovim/archive/refs/tags/v0.11.5.tar.gz"
     sha256 "c63450dfb42bb0115cd5e959f81c77989e1c8fd020d5e3f1e6d897154ce8b771"
+
+    # TODO: Consider backporting for compatibility with 0.26
+    # https://github.com/neovim/neovim/commit/f4fc769c81af6f8d9235d59aec75cfe7c104b3ce
+    depends_on "tree-sitter@0.25"
 
     # Keep resources updated according to:
     # https://github.com/neovim/neovim/blob/v#{version}/cmake.deps/deps.txt
@@ -61,13 +66,18 @@ class Neovim < Formula
     sha256 x86_64_linux:  "3b77d0557a0470516fa2fe1645e2671ac1d49472dbd4fa042b2c307b32cddc43"
   end
 
+  # TODO: remove `head` block when stable supports tree-sitter 0.26+.
+  head do
+    url "https://github.com/neovim/neovim.git", branch: "master"
+    depends_on "tree-sitter"
+  end
+
   depends_on "cmake" => :build
   depends_on "gettext"
   depends_on "libuv"
   depends_on "lpeg"
   depends_on "luajit"
   depends_on "luv"
-  depends_on "tree-sitter"
   depends_on "unibilium"
   depends_on "utf8proc"
 
