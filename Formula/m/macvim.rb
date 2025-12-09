@@ -76,6 +76,9 @@ class Macvim < Formula
                           "--with-macarchs=#{Hardware::CPU.arch}"
     system "make"
 
+    # Sign with the correct runtime entitlements
+    system "make", "-C", "src", "macvim-signed-adhoc"
+
     prefix.install "src/MacVim/build/Release/MacVim.app"
     %w[gvimtutor mvim vimtutor xxd].each { |e| bin.install_symlink prefix/"MacVim.app/Contents/bin/#{e}" }
 
