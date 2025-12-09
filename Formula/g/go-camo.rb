@@ -1,8 +1,8 @@
 class GoCamo < Formula
   desc "Secure image proxy server"
   homepage "https://github.com/cactus/go-camo"
-  url "https://github.com/cactus/go-camo/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "95b2d8ee6fadb601276e9889243d2357fa63164f8bd856fef0f0ef3f42bed26a"
+  url "https://github.com/cactus/go-camo/archive/refs/tags/v2.7.2.tar.gz"
+  sha256 "3e4bb9e58e5f9f8fb2e6d4c484a67ad2a98fe0fd355db48e6014d6e993eb0dd2"
   license "MIT"
   head "https://github.com/cactus/go-camo.git", branch: "master"
 
@@ -16,9 +16,10 @@ class GoCamo < Formula
   end
 
   depends_on "go" => :build
+  depends_on "just" => :build
 
   def install
-    system "make", "build", "APP_VER=#{version}"
+    system "just", "build"
     bin.install Dir["build/bin/*"]
   end
 
