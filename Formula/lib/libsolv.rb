@@ -22,6 +22,7 @@ class Libsolv < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "rpm"
   depends_on "xz"
   depends_on "zstd"
 
@@ -46,6 +47,9 @@ class Libsolv < Formula
       -DENABLE_BZIP2_COMPRESSION=ON
       -DENABLE_ZSTD_COMPRESSION=ON
       -DENABLE_ZCHUNK_COMPRESSION=ON
+      -DENABLE_RPMDB=ON
+      -DENABLE_RPMMD=ON
+      -DENABLE_RPMPKG=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
