@@ -19,7 +19,12 @@ class Granted < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/common-fate/granted/internal/build.Version=#{version}"
+    ldflags = %W[
+      -s -w
+      -X github.com/common-fate/granted/internal/build.Version=#{version}
+      -X github.com/common-fate/granted/internal/build.ConfigFolderName=.granted
+    ]
+
     system "go", "build", *std_go_args(ldflags:), "./cmd/granted"
     bin.install_symlink "granted" => "assumego"
     # these must be in bin, and not sourced automatically
