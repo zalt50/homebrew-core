@@ -8,12 +8,12 @@ class LanggraphCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "717001cba8611ddcf026258f7bb335b09a21a915ae63c00b430d016e8222db23"
-    sha256 cellar: :any,                 arm64_sequoia: "8bc6e70d0178cf8bc4a5ef01c96f84ae33911e56d6214a8cf29ddd741947aa8d"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e19faa2c9f4f453f9004da2f7bc13c4b1039205545308a3dd543dc5d8d1b399"
-    sha256 cellar: :any,                 sonoma:        "6ef3b428b051ed1208896fa2e09bc3e12edc96562397353aafca0c0078b5c03c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c63b9335e26ed0e9b13be7ef1e4e546a4943ef57484d705fa22e72fd9065bbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fed6e371a32ec562eb7d7f68f275ae7a7088e6645b7fb753bd029f179ee14e1"
+    sha256 cellar: :any,                 arm64_tahoe:   "bd298f4a276b583836b4d199f2856e93146dd96fbe81924d2431dfdb4e5db914"
+    sha256 cellar: :any,                 arm64_sequoia: "776f265631ed8e2e736c0556cec65fbbf0940387c25e1698f4c7f670d792d488"
+    sha256 cellar: :any,                 arm64_sonoma:  "abd1558df3c9b16bf5ed09a4042a124965c9f0a6bcc04986592378999038d8eb"
+    sha256 cellar: :any,                 sonoma:        "50cb4de14953bdca55b0c2d519dc0a6b94a011b8da74da344641de62063cde15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc1c8705ebce46a3a3d04e8d8669000da25b487c7f4c9b5a331ab8196bc97f5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b79c7b8c4835940e35d139106e6bbbd2b3368e5852b2bde8312d16920db090bd"
   end
 
   depends_on "rust" => :build # for orjson
