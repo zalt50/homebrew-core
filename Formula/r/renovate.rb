@@ -20,7 +20,7 @@ class Renovate < Formula
     sha256 cellar: :any_skip_relocation, all: "4b8e0d311cebad13f0e1aa03e7541e6c9dc02001ee05a1fb0c91fbd73c16b824"
   end
 
-  depends_on "node@22"
+  depends_on "node@24"
 
   uses_from_macos "git", since: :monterey
 
