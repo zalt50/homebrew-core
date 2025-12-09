@@ -1,11 +1,12 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
+  # TODO: Bump to use tree-sitter 0.26+ when new Emacs release supports it
   url "https://ftpmirror.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
   mirror "https://ftp.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
   sha256 "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     sha256 arm64_tahoe:   "03f5efc7f8ff8fa0b71b053e6fa55e88d44e0bf0c6724dc3879199868b3f3e70"
@@ -27,7 +28,7 @@ class Emacs < Formula
   depends_on "texinfo" => :build
   depends_on "gmp"
   depends_on "gnutls"
-  depends_on "tree-sitter"
+  depends_on "tree-sitter@0.25"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
