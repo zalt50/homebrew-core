@@ -6,7 +6,7 @@ class OpenaiWhisper < Formula
   url "https://files.pythonhosted.org/packages/35/8e/d36f8880bcf18ec026a55807d02fe4c7357da9f25aebd92f85178000c0dc/openai_whisper-20250625.tar.gz"
   sha256 "37a91a3921809d9f44748ffc73c0a55c9f366c85a3ef5c2ae0cc09540432eb96"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/openai/whisper.git", branch: "main"
 
   no_autobump! because: "`update-python-resources` cannot update resource blocks"
@@ -43,8 +43,8 @@ class OpenaiWhisper < Formula
   end
 
   resource "llvmlite" do
-    url "https://files.pythonhosted.org/packages/c1/39/be3a8255c8c40fcab6d54d147ae5bda00104e861b108c541f2b2ecb30c44/llvmlite-0.46.0b1.tar.gz"
-    sha256 "ea7208f342cc157e600093862ff87ab5d296680d7dfff0a01dc13668ecbc60d0"
+    url "https://files.pythonhosted.org/packages/74/cd/08ae687ba099c7e3d21fe2ea536500563ef1943c5105bf6ab4ee3829f68e/llvmlite-0.46.0.tar.gz"
+    sha256 "227c9fd6d09dce2783c18b754b7cd9d9b3b3515210c46acc2d3c5badd9870ceb"
   end
 
   resource "more-itertools" do
@@ -53,13 +53,13 @@ class OpenaiWhisper < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/8b/ce/efb2667849b0abac22d1499bc855f67b97c3d23bb4f43c1d854ec2a0c716/numba-0.63.0b1.tar.gz"
-    sha256 "66b7a0052e2cfe8befa273e5af3eae75e102ac9c3da7d2ca361b7b72cf5051c8"
+    url "https://files.pythonhosted.org/packages/c5/00/c45e314a72382c5e32e642de45a4fd33f7d519b3d9b49bc33171ded3f55b/numba-0.63.0.tar.gz"
+    sha256 "27e525ce6f9f727c4f61e89b9d453d4a7d0aabbbf110278988334f43cbd70fdc"
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f8/c8/1d2160d36b11fbe0a61acb7c3c81ab032d9ec8ad888ac9e0a61b85ab99dd/regex-2025.10.23.tar.gz"
-    sha256 "8cbaf8ceb88f96ae2356d01b9adf5e6306fa42fa6f7eab6b97794e37c959ac26"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "requests" do
@@ -78,8 +78,8 @@ class OpenaiWhisper < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   def install
