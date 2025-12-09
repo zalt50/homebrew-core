@@ -1,8 +1,8 @@
 class SlackMcpServer < Formula
   desc "Powerful MCP Slack Server with multiple transports and smart history fetch logic"
   homepage "https://github.com/korotovsky/slack-mcp-server"
-  url "https://github.com/korotovsky/slack-mcp-server/archive/refs/tags/v1.1.26.tar.gz"
-  sha256 "68ce43e9edbdb8df87aead39abfda1d068e21559b2bbd341531fb7715e1e7425"
+  url "https://github.com/korotovsky/slack-mcp-server/archive/refs/tags/v1.1.28.tar.gz"
+  sha256 "71d6a6de907d4bc2a9927d434dc1a686ec4ccfda2730fb3d3fac58b0126e5114"
   license "MIT"
   head "https://github.com/korotovsky/slack-mcp-server.git", branch: "master"
 
