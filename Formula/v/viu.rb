@@ -1,8 +1,8 @@
 class Viu < Formula
   desc "Simple terminal image viewer written in Rust"
   homepage "https://github.com/atanunq/viu"
-  url "https://github.com/atanunq/viu/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "bd1bc61367420dcbb1ab46df53a46fd7d35379960c9ab39bbccb7ace5afaeb62"
+  url "https://github.com/atanunq/viu/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "2164d8626b8210227ded514a0ca18fc4092571e174f55905facd33837fe2eb4c"
   license "MIT"
   head "https://github.com/atanunq/viu.git", branch: "master"
 
@@ -24,7 +24,7 @@ class Viu < Formula
   end
 
   test do
-    expected_output = "\e[0m\e[38;5;202m▀\e[0m"
+    expected_output = "\e_Gi=31,s=1,v=1,a=q,t=d,f=24;AAAA\e\\\e[c\e[0m\e[38;5;202m▀\e[0m"
     output = shell_output("#{bin}/viu #{test_fixtures("test.jpg")}").chomp
     assert_equal expected_output, output
   end
