@@ -11,8 +11,7 @@ class Xdot < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "31da3f49cb2d321330f9caf9ead425cc46dfb18b4bb9b85b572a4b985131dfa9"
+    sha256 cellar: :any_skip_relocation, all: "193dbb59ae557ef88dccf429fe0e1f8fd4fd82a0180b3bcf021dc84c5a891b9b"
   end
 
   depends_on "adwaita-icon-theme"
