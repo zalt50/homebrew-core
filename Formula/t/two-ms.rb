@@ -1,8 +1,8 @@
 class TwoMs < Formula
   desc "Detect secrets in files and communication platforms"
   homepage "https://github.com/Checkmarx/2ms"
-  url "https://github.com/Checkmarx/2ms/archive/refs/tags/v4.8.1.tar.gz"
-  sha256 "6186852dfd3ccee0f9b7c8156ce2b749f608d698f1a93f8c6339856946fb8caf"
+  url "https://github.com/Checkmarx/2ms/archive/refs/tags/v4.8.2.tar.gz"
+  sha256 "a1db420bf5bd15a071a4a5165a2036b959b8c741f5535b0bad7b20a09ffdbacf"
   license "Apache-2.0"
   head "https://github.com/Checkmarx/2ms.git", branch: "master"
 
