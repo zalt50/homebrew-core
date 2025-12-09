@@ -6,12 +6,12 @@ class VulsioGost < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35a73401f7fa6b69b6af81402d8116722f47a846a8853fe87d34a5139c9f7bc1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35a73401f7fa6b69b6af81402d8116722f47a846a8853fe87d34a5139c9f7bc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35a73401f7fa6b69b6af81402d8116722f47a846a8853fe87d34a5139c9f7bc1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cd5c4ecf1ff7ce9d33aa4b3f6e95c5ba82810c8c0452b28466a7007f4ab3b00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c62a7a554861cad139d2b4bf8d369a7b988cdd540cff391d63bf67cbf368b7f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68e4b8cff66df393723fad3e63f4bc186f5ee9dde268c2f3b9d1075ada5812d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef1e4f34fc896f7cd417d261fa2e2c3f81f4d8ce7da45e1496d3a326a9244486"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef1e4f34fc896f7cd417d261fa2e2c3f81f4d8ce7da45e1496d3a326a9244486"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef1e4f34fc896f7cd417d261fa2e2c3f81f4d8ce7da45e1496d3a326a9244486"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09c21122932ebe6f1b65067dae6f12118f845347251774e7f959e6d41fd6a304"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a01361bfdfd62c862e1382a9cbd3b19e0c89e4b63ec382a30846f2b35cb3a0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "394315676580dff1b3828ff24a4842a069b6420479cce77569ab5c5ff850dedb"
   end
 
   depends_on "go" => :build
