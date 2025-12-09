@@ -1,8 +1,8 @@
 class CloudSqlProxy < Formula
   desc "Utility for connecting securely to your Cloud SQL instances"
   homepage "https://github.com/GoogleCloudPlatform/cloud-sql-proxy"
-  url "https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/refs/tags/v2.19.0.tar.gz"
-  sha256 "6bea89b43b858590a4f6f7cc48a8490eb8415f22caca408c4ed8eabd47241bcc"
+  url "https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/refs/tags/v2.20.0.tar.gz"
+  sha256 "e7e7574409bc466d816c20e9cbcc476ed9d78ba923fb54be5e91cc5fccb12a55"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/cloud-sql-proxy.git", branch: "main"
 
