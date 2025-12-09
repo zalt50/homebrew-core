@@ -13,9 +13,8 @@ class Ansiweather < Formula
     sha256 cellar: :any_skip_relocation, all: "038fbe9d452985ee47b312d1c9cfcab030622d4d4e9e803e7062f0c7f2bb42c8"
   end
 
-  depends_on "jq"
-
   uses_from_macos "bc"
+  uses_from_macos "jq", since: :sequoia
 
   def install
     bin.install "ansiweather"
