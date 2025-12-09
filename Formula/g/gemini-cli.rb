@@ -1,8 +1,8 @@
 class GeminiCli < Formula
   desc "Interact with Google Gemini AI models from the command-line"
   homepage "https://github.com/google-gemini/gemini-cli"
-  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.19.4.tgz"
-  sha256 "2ae7ab76decd7133d2fd72993860e5860c4fcbe3b570855de73db11cb417b4b5"
+  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.20.0.tgz"
+  sha256 "4cc7875e42ce6d470c95e8b12107e27505a81b6698ac09f5518f5ab2ffff893f"
   license "Apache-2.0"
 
   bottle do
@@ -44,6 +44,6 @@ class GeminiCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/gemini --version")
 
-    assert_match "Please set an Auth method", shell_output("#{bin}/gemini --prompt Homebrew 2>&1", 1)
+    assert_match "Please set an Auth method", shell_output("#{bin}/gemini --prompt Homebrew 2>&1", 41)
   end
 end
