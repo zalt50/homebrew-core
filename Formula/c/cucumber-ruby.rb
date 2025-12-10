@@ -11,12 +11,12 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2aceddfdb79578d359d8320eb3bab1f04511e459813a1b28e6767a2397e7b39f"
-    sha256 cellar: :any,                 arm64_sequoia: "3d7a5f633260a999fcab1857900c37aec93373689b9869e8484b56187fed0ef7"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e822c38dad4670a97ffd0456ded75deab670b99682c2c0a010c617844983ac8"
-    sha256 cellar: :any,                 sonoma:        "adde4676146e2264f613be3bc430b107ab6b5c2e73b0adcea03656a75e6f5844"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fa4dacc7b0986a30b77f0dc46969f7fc9b728ca5892d1601f4619c6e5ff5716"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19b6e962a229393ad00ce81d9847c2a5b125d6d5a6c3d49dda39afecbffa48e8"
+    sha256 cellar: :any,                 arm64_tahoe:   "5420167939b0b1bd56a89186e10c84b3c8ae7172e34861542b51fa164bb461ca"
+    sha256 cellar: :any,                 arm64_sequoia: "7310bd384745f2f0e9f4cd9ffaabb9b4a17acd788050fbc912f4b3a4f9b3b44a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f908da84fd02b0c18c8f00e354aff6a244bd27ab3d1d57414737083268583aae"
+    sha256 cellar: :any,                 sonoma:        "2bb20715a4038be6250b0859c39b3e03c1026dd8cda9114e2ee669a2141e81fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "846624710607d4909e7b12a7bce7a6e15cee66bb9ab0ca53617c6b11cad9c3b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceffdfce5de65b49bc17086ac08c89451d1b32ba537fc0b852ae0ea87293347c"
   end
 
   depends_on "pkgconf" => :build
