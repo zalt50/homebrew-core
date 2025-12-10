@@ -3,8 +3,8 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/48/9c/11969bd3e3bc4aa3a711f83dd3720239d3565a934929c74fc32f6c9f3638/fastapi-0.124.0.tar.gz"
-  sha256 "260cd178ad75e6d259991f2fd9b0fee924b224850079df576a3ba604ce58f4e6"
+  url "https://files.pythonhosted.org/packages/a1/cd/51b0df6347fc5205ea2b7cff6f1299c2112ad2a0abc0183f86f9a32b3f96/fastapi-0.124.1.tar.gz"
+  sha256 "659166e4d3c19b26e1e77bfd64d649f64233dcc47677a97a822f38cefb64db47"
   license "MIT"
 
   bottle do
@@ -166,8 +166,8 @@ class Fastapi < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "uvicorn" do
