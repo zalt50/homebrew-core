@@ -1,10 +1,9 @@
 class Tfel < Formula
   desc "Code generation tool dedicated to material knowledge for numerical mechanics"
   homepage "https://thelfer.github.io/tfel/web/index.html"
-  url "https://github.com/thelfer/tfel/archive/refs/tags/TFEL-5.0.1.tar.gz"
-  sha256 "820b2f9d54e237b2c2d9d6f06aaf7d4a1d3f34fb373e6549bee4fd8b55ecfad1"
+  url "https://github.com/thelfer/tfel/archive/refs/tags/TFEL-5.0.2.tar.gz"
+  sha256 "3ba5ff8d369c15b38a56a1d33d489681ad2d2bb2ec93a67800bb5968cd1e89ec"
   license "GPL-1.0-or-later"
-  revision 2
   head "https://github.com/thelfer/tfel.git", branch: "master"
 
   bottle do
@@ -18,8 +17,15 @@ class Tfel < Formula
 
   depends_on "cmake" => :build
   depends_on "gcc" => :build # for gfortran
-  depends_on "boost-python3"
+  depends_on "pybind11" => :build
   depends_on "python@3.14"
+
+  # Fix to error: assignment of member in read-only object
+  # PR ref: https://github.com/thelfer/tfel/pull/894
+  patch do
+    url "https://github.com/thelfer/tfel/commit/fb5ef740a47f2bef1b0d35b16b79a1fce7439ca9.patch?full_index=1"
+    sha256 "bf5581c83529af35ac70687f9195f117c9a655aec3c06c1cea231707f15d4ede"
+  end
 
   def install
     args = [
@@ -28,7 +34,8 @@ class Tfel < Formula
       "-Denable-website=OFF",
       "-Dlocal-castem-header=ON",
       "-Denable-python=ON",
-      "-Denable-python-bindings=ON", # requires boost-python
+      "-Denable-python-bindings=ON",
+      "-Denable-pybind11=ON", # requires pybind11
       "-Denable-numpy-support=OFF",
       "-Denable-fortran=ON",
       "-Denable-cyrano=ON",
@@ -43,11 +50,6 @@ class Tfel < Formula
       "-Denable-testing=OFF",
       "-Dpython-static-interpreter-workaround=ON",
     ]
-
-    # Avoid linkage to boost container and graph modules
-    # Issue ref: https://github.com/boostorg/boost/issues/985
-    args << "-DCMAKE_MODULE_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
-
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
