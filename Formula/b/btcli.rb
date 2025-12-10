@@ -3,10 +3,9 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/b2/83/ce69587c3431d150b839a54fa9daab18cdfffb53ae3de8d3b071216e2503/bittensor_cli-9.15.3.tar.gz"
-  sha256 "8f2ef717a2201fdfdc0f4a11c892d79d571576efc2246f8bb2fefaf1e524cc3f"
+  url "https://files.pythonhosted.org/packages/1c/ee/d301a3c311461c686a03cec354c8f3ac532e1012f77aaa86212e69d7aa87/bittensor_cli-9.16.0.tar.gz"
+  sha256 "9d981cdd87eabd9f3560b547501f571ff557a25cabd5e11ed8a7e8a498e3958d"
   license "MIT"
-  revision 1
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
@@ -68,6 +67,11 @@ class Btcli < Formula
   resource "base58" do
     url "https://files.pythonhosted.org/packages/7f/45/8ae61209bb9015f516102fa559a2914178da1d5868428bd86a1b4421141d/base58-2.1.1.tar.gz"
     sha256 "c5d0cb3f5b6e81e8e35da5754388ddcc6d0d14b6c6a132cb93d69ed580a7278c"
+  end
+
+  resource "bittensor-drand" do
+    url "https://files.pythonhosted.org/packages/17/3d/23837d6721cc055491b54477b60a17ab6b3092dd31d209018ef7c4f248fb/bittensor_drand-1.2.0.tar.gz"
+    sha256 "da63e13fe48cceecebbfbeead01c518ceaf5649d1bee9f8f9e8456f5c008ffd8"
   end
 
   resource "bittensor-wallet" do
@@ -226,8 +230,8 @@ class Btcli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "websockets" do
