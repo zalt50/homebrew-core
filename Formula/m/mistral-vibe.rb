@@ -8,6 +8,15 @@ class MistralVibe < Formula
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "3a486a1e9e13b3ef75279eae1d592cada11156aef9e396d40e416020c41c580d"
+    sha256 cellar: :any,                 arm64_sequoia: "33a614c9bb2e37bb390df556eb099e96551712f4f938f9f81f1ec4b4ef05892e"
+    sha256 cellar: :any,                 arm64_sonoma:  "17c794a0f59965b6e3bda6882bb94ae65e8346a90c571cdd3d849cf7b60f0034"
+    sha256 cellar: :any,                 sonoma:        "7bd69e9cb9c69dafde11088275460b238d291aedfb87018b89a5ad6ee12e970e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2edbcfe68c57e911eda18da5d989bfe51e22f22a9dec364ca825492e2f4af86e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9614bc77976c37b782facce2a6835c2fbc0b65787c5846289303f524bf73006c"
+  end
+
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
