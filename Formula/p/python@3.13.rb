@@ -82,7 +82,7 @@ class PythonAT313 < Formula
   # The HOMEBREW_PREFIX location of site-packages.
   def site_packages = HOMEBREW_PREFIX/"lib/python#{version.major_minor}/site-packages"
 
-  def altinstall? = self != Formula["python3"]
+  def altinstall? = name != Formula["python3"].name
 
   def python3 = bin/"python#{version.major_minor}"
 
