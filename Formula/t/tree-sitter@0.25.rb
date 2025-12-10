@@ -1,24 +1,25 @@
-class TreeSitter < Formula
+class TreeSitterAT025 < Formula
   desc "Incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.2.tar.gz"
-  sha256 "3cda4166a049fc736326941d6f20783b698518b0f80d8735c7754a6b2d173d9a"
+  url "https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.25.10.tar.gz"
+  sha256 "ad5040537537012b16ef6e1210a572b927c7cdc2b99d1ee88d44a7dcdc3ff44c"
   license "MIT"
-  head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(0\.25(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8108dc08b2401166cf3d68ae4aa78ab86685a841a04581139d29e475b265d880"
-    sha256 cellar: :any,                 arm64_sequoia: "c15a8755db277a5379e0880cefe11b9082cd60f2e7ef43b54b37e04aa6a7ffbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef3514b619e6f56870bdbcb8ce9fcc047fc1470a22a2cf029e431205bad72cce"
-    sha256 cellar: :any,                 sonoma:        "e81fe9fe4c6e39b172e9d184cc8ce568845c6318258bbc0d7736c6589f41512d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a863dd1e11b224ebb61f5ecca232a2f0eea5eb87d3cd3774c7ae39ed4e65f76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3479c317764bb6299d2e1748b21a54ec1bb501ee8016ab667c3b08568047509f"
+    sha256 cellar: :any,                 arm64_tahoe:   "8768100aef39bb857dd027746285ab4de42f2e109b729823293ac651268a3405"
+    sha256 cellar: :any,                 arm64_sequoia: "e4fb44830a89485b29db99ef123987d4f7695d731b72151bd5e4ef9952e2d4f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb13239c0da50c5d2383d99704b80449e86dead3f089698e34813eb958c33850"
+    sha256 cellar: :any,                 sonoma:        "9ec1aa4a91c20b0693207a95136afb902e11b27d152df2e484ec5cb2b27a69c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92c10305824b1813976f9ed542e9fee4e040fd093a396d7f03dd103b46f7c8bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2755f015c219318a8c7173c338439c7431402e04690b17e4b6d2f255ab424c84"
   end
+
+  keg_only :versioned_formula
 
   def install
     system "make", "install", "AMALGAMATED=1", "PREFIX=#{prefix}"
@@ -60,7 +61,7 @@ class TreeSitter < Formula
         return 0;
       }
     C
-    system ENV.cc, "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
+    system ENV.cc, "-I#{include}", "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
     assert_equal "tree creation failed", shell_output("./test_program")
   end
 end
