@@ -1,8 +1,8 @@
 class Ptex < Formula
   desc "Texture mapping system"
   homepage "https://ptex.us/"
-  url "https://github.com/wdas/ptex/archive/refs/tags/v2.4.3.tar.gz"
-  sha256 "435aa2ee1781ff24859bd282b7616bfaeb86ca10604b13d085ada8aa7602ad27"
+  url "https://github.com/wdas/ptex/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "d3c2116f5cd650b22217fcdfad9586b6389173fd1d0b694413622743e52083ee"
   license "BSD-3-Clause"
 
   livecheck do
@@ -25,11 +25,12 @@ class Ptex < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "libdeflate"
 
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=17", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
