@@ -2,9 +2,10 @@ class Xonsh < Formula
   include Language::Python::Virtualenv
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
-  homepage "https://xon.sh/"
-  url "https://files.pythonhosted.org/packages/5a/2b/3c20de9b70fcf097d5e1b0b50dea677fb23ce9e672d9541493058e23f3ee/xonsh-0.21.1.tar.gz"
-  sha256 "9d3849091a6e4252ad0d500cfd83e4d8a2043f54d67e318541e7a773070a64dc"
+  # xon.sh homepage bug report, https://github.com/xonsh/xonsh/issues/5984
+  homepage "https://github.com/xonsh/xonsh"
+  url "https://files.pythonhosted.org/packages/99/06/4a802b802bae2c81a5da0a4c49806df46c9a9a892e87dd41269f10f82432/xonsh-0.21.2.tar.gz"
+  sha256 "85bdc5577e22f587b3a3be7b5789335dbf9efb25e2f5f9d7a518eb7db39307aa"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
