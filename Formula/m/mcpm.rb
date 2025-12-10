@@ -3,10 +3,9 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/83/5b/a4dcc3baedea5f5cec6c79728a9be9007986a4b62da5f9596be08a1ea555/mcpm-2.10.0.tar.gz"
-  sha256 "51c2089ce666a6818aa92ec449aaf20e226e3923c8c1f0ba29a44beff87755ed"
+  url "https://files.pythonhosted.org/packages/87/0f/3b8be95769ec53b1e58515abead9d8f3f255d801c508c7dce0705f41a31b/mcpm-2.11.0.tar.gz"
+  sha256 "bc1672b8788a124775afde58fd9cb838f3904a41f28fcc442d9010dbd352837d"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "3c91f53ec61491750009848491c2943e4aa42e29df387b21dba908e5e51afaff"
@@ -64,8 +63,8 @@ class Mcpm < Formula
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/81/99/ac6c105118751cc3ccae980b12e44847273f3402e647ec3197aff2251e23/duckdb-1.4.2.tar.gz"
-    sha256 "df81acee3b15ecb2c72eb8f8579fb5922f6f56c71f5c8892ea3bc6fab39aa2c4"
+    url "https://files.pythonhosted.org/packages/7f/da/17c3eb5458af69d54dedc8d18e4a32ceaa8ce4d4c699d45d6d8287e790c3/duckdb-1.4.3.tar.gz"
+    sha256 "fea43e03604c713e25a25211ada87d30cd2a044d8f27afab5deba26ac49e5268"
   end
 
   resource "email-validator" do
@@ -145,8 +144,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
-    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
+    url "https://files.pythonhosted.org/packages/a7/a4/d06a303f45997e266f2c228081abe299bbcba216cb806128e2e49095d25f/mcp-1.23.3.tar.gz"
+    sha256 "b3b0da2cc949950ce1259c7bfc1b081905a51916fcd7c8182125b85e70825201"
   end
 
   resource "mdurl" do
@@ -200,8 +199,8 @@ class Mcpm < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/07/56/f013048ac4bc4c1d9be45afd4ab209ea62822fb1598f40687e6bf45dcea4/pytest-9.0.1.tar.gz"
-    sha256 "3e9c069ea73583e255c3b21cf46b8d3c56f6e3a1a8f6da94ccb0fcf57b9d73c8"
+    url "https://files.pythonhosted.org/packages/d1/db/7ef3487e0fb0049ddb5ce41d3a49c235bf9ad299b6a25d5780a89f19230f/pytest-9.0.2.tar.gz"
+    sha256 "75186651a92bd89611d1d9fc20f0b4345fd827c41ccd5c299a868a05d70edf11"
   end
 
   resource "python-dotenv" do
@@ -280,8 +279,8 @@ class Mcpm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "uvicorn" do
