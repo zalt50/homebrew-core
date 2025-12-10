@@ -16,7 +16,23 @@ class GitlabGem < Formula
 
   depends_on "ruby"
 
-  # list with `gem install --explain httparty terminal-table`
+  # List with `gem install --explain gitlab -v #{version}`
+  # https://rubygems.org/gems/gitlab/versions/#{version}/dependencies
+
+  resource "unicode-emoji" do
+    url "https://rubygems.org/gems/unicode-emoji-4.1.0.gem"
+    sha256 "4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5"
+  end
+
+  resource "unicode-display_width" do
+    url "https://rubygems.org/gems/unicode-display_width-3.2.0.gem"
+    sha256 "0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42"
+  end
+
+  resource "terminal-table" do
+    url "https://rubygems.org/gems/terminal-table-4.0.0.gem"
+    sha256 "f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2"
+  end
 
   resource "bigdecimal" do
     url "https://rubygems.org/gems/bigdecimal-3.3.1.gem"
@@ -34,28 +50,18 @@ class GitlabGem < Formula
   end
 
   resource "csv" do
-    url "https://rubygems.org/gems/csv-3.3.5.gem"
-    sha256 "6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f"
+    url "https://rubygems.org/gems/csv-3.3.2.gem"
+    sha256 "6ff0c135e65e485d1864dde6c1703b60d34cc9e19bed8452834a0b28a519bd4e"
   end
 
   resource "httparty" do
-    url "https://rubygems.org/gems/httparty-0.23.1.gem"
-    sha256 "3ac1dd62f2010f6ece551716f5ceec2b2012011d89f1751917ab7f724e966b55"
+    url "https://rubygems.org/gems/httparty-0.23.2.gem"
+    sha256 "72d52830ab5862115a3c9a4b16738dd67d9a691ffd796cf86bad8abaa8f1febb"
   end
 
-  resource "unicode-emoji" do
-    url "https://rubygems.org/gems/unicode-emoji-4.1.0.gem"
-    sha256 "4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5"
-  end
-
-  resource "unicode-display_width" do
-    url "https://rubygems.org/gems/unicode-display_width-3.2.0.gem"
-    sha256 "0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42"
-  end
-
-  resource "terminal-table" do
-    url "https://rubygems.org/gems/terminal-table-4.0.0.gem"
-    sha256 "f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2"
+  resource "base64" do
+    url "https://rubygems.org/gems/base64-0.3.0.gem"
+    sha256 "27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b"
   end
 
   def install
