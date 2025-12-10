@@ -1,8 +1,8 @@
 class Openapi < Formula
   desc "CLI tools for working with OpenAPI, Arazzo and Overlay specifications"
   homepage "https://github.com/speakeasy-api/openapi"
-  url "https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "71fdb9cc8abc6d84f4f62499a181c2933c7b95f3942d757ee747aa0f040c4eac"
+  url "https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "b514781724a65c15f5a15aee6b63e2fe231acf08109544ebdd95d68d9ca673be"
   license "MIT"
   head "https://github.com/speakeasy-api/openapi.git", branch: "main"
 
