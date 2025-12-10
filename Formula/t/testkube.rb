@@ -1,8 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://github.com/kubeshop/testkube/archive/refs/tags/2.4.4.tar.gz"
-  sha256 "c7cf62a46210dd5f14259d8af9c98f9e9f14150f3b7ea11a21056c5711368ef2"
+  url "https://github.com/kubeshop/testkube/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "3ba01a1b47bbf501aceafecb0e71aa5d5fb27f5456e4bd072d811246ef5e1601"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -34,7 +34,7 @@ class Testkube < Formula
   end
 
   test do
-    output = shell_output("#{bin}/kubectl-testkube get tests 2>&1", 1)
+    output = shell_output("#{bin}/kubectl-testkube get testworkflow 2>&1", 1)
     assert_match("no configuration has been provided", output)
 
     output = shell_output("#{bin}/kubectl-testkube help")
