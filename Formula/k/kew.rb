@@ -1,8 +1,8 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v3.6.4.tar.gz"
-  sha256 "0f8db62bda7cf41ede9c41a5132d78537d96f90ef9e06fc5072a509a9f3b30bd"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v3.7.0.tar.gz"
+  sha256 "8101a8d1a386e80192af538cf537f9beae973aa685325e7195ba4846f8ca6102"
   license "GPL-2.0-only"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
@@ -37,7 +37,7 @@ class Kew < Formula
   end
 
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    system "make", "install", "PREFIX=#{prefix}", "LANGDIRPREFIX=#{prefix}"
     man1.install "docs/kew.1"
   end
 
