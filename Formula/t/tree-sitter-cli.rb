@@ -11,12 +11,12 @@ class TreeSitterCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d7997c710a29c99f823c4f19596db1ec1511c204b7b74c45d7c9eff5ec637f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9f79036f5265e03b7365ce303c413b51ce1f66c3c20362f4d040fb2b6f8327d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9311741beeb74356d9d7653a64beb2990858389457849d0d96d2cd2580580f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd67480759e3b56974e91cc6c47af09113f7dfb5de2e92ff4871dd12b1eec0e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f55705990d6330ff1958e780708a86fed5e0bd9bbadcd93598271bcf98e5315"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0b636167c67993dc97c347b7b5a01b04af40a3bcdb2803fcd8980efb58de312"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7c719caad9841dfdb3f7ed4c5305cd3c82649ffa859e4f45a46fbf8e030038f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "915628b12602559abe298fa5b3dbde49fafff516f5310b47ead10819eb5f375a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "023fdaf0d901bffc51f3e94542284deb2739bb56fb9cdabc2c1c6c227b3e76e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de9f5f0694be1b112d79a0aff9ed90081e02b4ef4c2da45c23584eb39831327c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96abe563d42d927494d576ae6869a135d07eaa6e7ae47e660f7dbc08ab77b674"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "442c18f88462dfbfe873865b2f3d5189887e57b264e4a14ecc0c3dcbd06e2ab2"
   end
 
   depends_on "rust" => :build
