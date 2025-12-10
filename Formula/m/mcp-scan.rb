@@ -8,6 +8,15 @@ class McpScan < Formula
   license "Apache-2.0"
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "c399936ca4660b97ff714d1ade9f491e6161fb6621b582801b8ae95a7b5599bc"
+    sha256 cellar: :any,                 arm64_sequoia: "1cd0f629d9d87cc55488d53b16d3f2202046becb4783e244c34eed47500fa577"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1278acbf5985b6c5d14f3599c399593383bfef198bd86f7c783fb84449bfb77"
+    sha256 cellar: :any,                 sonoma:        "81fddea833b9a5a17abbee41c635fd4da53e9e25af97b7b80fc322facea3686c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cf778ef96f08981d2b4222f7d96b4a29317fd34158d799293c8db004cbe48c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "847d014e7516a72b39293198f2d38f17e7938149e9d7fc010342c1884e3df4de"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
