@@ -1,8 +1,8 @@
 class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
-  url "https://github.com/draios/sysdig/archive/refs/tags/0.41.2.tar.gz"
-  sha256 "7ca055ce63a43de7dc390b237caeb13455616f84d4f4052c1744f65d9bb6ae2f"
+  url "https://github.com/draios/sysdig/archive/refs/tags/0.41.3.tar.gz"
+  sha256 "ec5a4a485655ccf14395ac5b8fc71344c6fd46c8336c686aabe22f89f138da20"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] },                  # `falcosecurity-libs`, driver/
@@ -54,6 +54,13 @@ class Sysdig < Formula
   resource "falcosecurity-libs" do
     url "https://github.com/falcosecurity/libs/archive/refs/tags/0.21.0.tar.gz"
     sha256 "9e977001dd42586df42a5dc7e7a948c297124865a233402e44bdec68839d322a"
+  end
+
+  # Fix inclusion of removed `zlib.cmake` module
+  # https://github.com/draios/sysdig/pull/2176
+  patch do
+    url "https://github.com/draios/sysdig/commit/1f4565219b74c8b8ff9084425e24c50b43ec3d7b.patch?full_index=1"
+    sha256 "6002ab9759c08e79d6382b48e43f47e70cf07141981be5a1717bdc4ad503402a"
   end
 
   def install
