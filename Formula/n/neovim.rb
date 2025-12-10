@@ -58,12 +58,12 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "41f09e8ed67664dab655bb181990c7f7fc9aca5a559390469138eb1956af00e9"
-    sha256 arm64_sequoia: "8cceee45e745aa161781b544977a8576d868e77ef506778c588d67cd47da2608"
-    sha256 arm64_sonoma:  "f0014976d5aa5cadd26434d5a4339a637f8b4fa37a1e6d1a736662528180a0e9"
-    sha256 sonoma:        "805931882993d986ebff0098f9c7a13088cbbeee6221a4498f45385951efad48"
-    sha256 arm64_linux:   "6d4a7736d5e033075b29f8b1e28432a04a2ee0e2437de98a15a32ed5f05f1ecd"
-    sha256 x86_64_linux:  "3b77d0557a0470516fa2fe1645e2671ac1d49472dbd4fa042b2c307b32cddc43"
+    sha256 arm64_tahoe:   "5444020bff8a2253e8760178e8be3bacf88bc755162ff5534539eb452385d8bb"
+    sha256 arm64_sequoia: "6ba0dc0368baeb5d53161f666092c933f81062ce7dbafe2903d2543b802cd9cb"
+    sha256 arm64_sonoma:  "8f5e68f365cf54244c24ca7552959cbeab809a7ad27d0065a1fe94e6d2c81eb4"
+    sha256 sonoma:        "f133d0f05bd0fedf628543328838a824b9b15bdd7bdaaf35553a524e746430f7"
+    sha256 arm64_linux:   "5e9c3847e51132f1e55d89d7f29bae30fcab992f4a2da7f4925fd3f0faadad0d"
+    sha256 x86_64_linux:  "caaa35a53bbd9771f295e2480cb3a9f506d50c6fc33bcc8dbdac67cd68b0f55a"
   end
 
   # TODO: remove `head` block when stable supports tree-sitter 0.26+.
