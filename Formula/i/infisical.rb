@@ -1,18 +1,18 @@
 class Infisical < Formula
   desc "CLI for Infisical"
   homepage "https://infisical.com/docs/cli/overview"
-  url "https://github.com/Infisical/cli/archive/refs/tags/v0.43.40.tar.gz"
-  sha256 "9fc9b487cc4b1dface728512e66fd72e01dce83ee2652643a3bc1070eebc3a58"
+  url "https://github.com/Infisical/cli/archive/refs/tags/v0.43.41.tar.gz"
+  sha256 "fad31ef430565191fa8795099d79a760f43a9b8f5eb76b9e7b132e9688641f8a"
   license "MIT"
   head "https://github.com/Infisical/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d257d9a9ec2673959163f35122b8426fd427056f3ce1d59f755b064cf85d1343"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d257d9a9ec2673959163f35122b8426fd427056f3ce1d59f755b064cf85d1343"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d257d9a9ec2673959163f35122b8426fd427056f3ce1d59f755b064cf85d1343"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9079a2e0aafc8148ab5e596f0b42429fef2de8d3cf13d44cfe56003eac71ebc6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e2f45d21d007f05ac9b4bcf19bf9e19650bde168a0d013e2155a86037655ca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca48c9c1bb4cb85c9cd04be7177cfcf81d4273cbddff1edd64345b73a7bff272"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3083ce7d1cbd0507aa82685d053a313dbac572ec383954747edf5a8d28c48cef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3083ce7d1cbd0507aa82685d053a313dbac572ec383954747edf5a8d28c48cef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3083ce7d1cbd0507aa82685d053a313dbac572ec383954747edf5a8d28c48cef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "55598960857f7fc08d35886c220ea972237593d43982e5239fd3afe7f057bd0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f7b2fd91061b51b6a2772c9dc7f94a4f4010c2448eda8a5d5b08e752b8ebfe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2ac29d9c929d6744922dd9383876b82b6ebe4bc5a9b3787070ff61dc1535b02"
   end
 
   depends_on "go" => :build
