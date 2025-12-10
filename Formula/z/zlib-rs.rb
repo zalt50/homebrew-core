@@ -1,8 +1,8 @@
 class ZlibRs < Formula
   desc "C API for zlib-rs"
   homepage "https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#libz-rs-sys-cdylib"
-  url "https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "c26eacb667c98dcb6df097b4755b3805bc26cd8a37dc8862e1c5cb1a295fe7ab"
+  url "https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "1069ad8b8dab0ab3f3d7ccccc380c81709d13f788f57b7ca167db774778ec1a7"
   license "Zlib"
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
