@@ -21,17 +21,14 @@ class S2geometry < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
-  depends_on "glog"
   depends_on "openssl@3"
 
   def install
+    # Keep C++ standard in sync with `abseil.rb`.
     args = %W[
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DBUILD_TESTS=OFF
-      -DWITH_GFLAGS=1
-      -DWITH_GLOG=1
       -DCMAKE_CXX_STANDARD=17
-      -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
     ]
 
     # Fix missing include of unaligned.h
