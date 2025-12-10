@@ -411,6 +411,7 @@ jobs:
                 envoy|\
                 qt@5|\
                 qtwebengine|\
+                sui|\
                 teleport|\
                 texlive\
                 ).rb"
