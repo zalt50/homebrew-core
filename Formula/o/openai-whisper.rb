@@ -12,12 +12,12 @@ class OpenaiWhisper < Formula
   no_autobump! because: "`update-python-resources` cannot update resource blocks"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7f2aca24bef213888b85b6a6836ccd0741b654f02a1033f724bcdca45b93ffc2"
-    sha256 cellar: :any,                 arm64_sequoia: "65535d05c8598cbd0ee9781228d27abac5f412b41eb47740303dda0cc23406b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "9eefa0114835eb0beb294045f72a9dcde73589bc9f232a26d79f15cacb2ed009"
-    sha256 cellar: :any,                 sonoma:        "a022fc299bf43a63cd011699f68fb6739904f7c3f43e3ef05802a394669f85d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce2a701ecdbbd852ae2537ad1a72ebd74789e2b08436eb389b963f0b8d3000d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c7784c62adef0cd329ae435f3d5ad7d680b3d652037fcd3e376b3dd9f6fc579"
+    sha256 cellar: :any,                 arm64_tahoe:   "f19821ab4fa585b941fa4ec46f82b99a7dbff8a51c99b7fc603a1acccb0bd17d"
+    sha256 cellar: :any,                 arm64_sequoia: "966b2e05957225b9ef816b42232b1424330026278d549043d1f9b7af36f480f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1ab142f391af14060da500aada3f80850eb3a726b5c385a28c3ceaed88f2910"
+    sha256 cellar: :any,                 sonoma:        "ba8fd943ef0179dde3ac68fbab1ce28be7492fadbd1c87fedfe9e75986fcfbfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db1e24eaa82f062c000196172417d8027028cbae7dfa205f742aac75f4b4652b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74169f9fe5cb20a9119cf89339ccefe31d9be690c4d3ce6d9bc7d72c5612de7a"
   end
 
   depends_on "cmake" => :build
