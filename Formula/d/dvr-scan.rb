@@ -7,7 +7,7 @@ class DvrScan < Formula
   version "1.7.0.1"
   sha256 "f7036f8e679cd14bb61417266b1f8cff4f365a00227bff3d6ed75200f33e5c53"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
   head "https://github.com/Breakthrough/DVR-Scan.git", branch: "main"
 
   bottle do
