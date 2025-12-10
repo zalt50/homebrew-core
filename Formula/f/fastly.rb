@@ -1,8 +1,8 @@
 class Fastly < Formula
   desc "Build, deploy and configure Fastly services"
   homepage "https://www.fastly.com/documentation/reference/cli/"
-  url "https://github.com/fastly/cli/archive/refs/tags/v13.1.0.tar.gz"
-  sha256 "732338087b184fc01990de61d27dbe6f64fc99e8abe07331dec87cdf5f06669e"
+  url "https://github.com/fastly/cli/archive/refs/tags/v13.2.0.tar.gz"
+  sha256 "fe8b7630efad5232273550d73783f5149803e39b9cd385b17f904db8468a870d"
   license "Apache-2.0"
   head "https://github.com/fastly/cli.git", branch: "main"
 
