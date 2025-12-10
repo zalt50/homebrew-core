@@ -6,10 +6,9 @@ class FxUpscale < Formula
   license "CC0-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c73a1a3250d5d984521abe78e97eaabd32eefae16ab490e6a8deedcf579e425b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8538f7bfd182a095ec0eadffaabbd6e293dc7cf585bd155a5fa4b2d748635636"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46c040ef682faa11c4dd8cce69473ebf07839bce23bbf6dfa0e5e5919dee72f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e53602ebf1d934e614a683ae7b564860ce1067ef7994d658cc8b5e9471a128a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0f620bda60b7d000408b66c42e1e96605035df1405052d68256cdcb56ef5406"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c97e26e89b16e1b5757f59f6a663d49a7e02d4abcb50cc1bf2720bd6ea2a995"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7ec14d59739a1c80918ae3021a350cecec106c22858ec1b9cd3138d4a0efcdd"
   end
 
   depends_on xcode: ["15.0", :build]
