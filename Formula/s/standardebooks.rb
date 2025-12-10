@@ -3,8 +3,8 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://github.com/standardebooks/tools/archive/refs/tags/2.10.1.tar.gz"
-  sha256 "8d237ab65bd628a9e1517d955ac2d370b115e5adad9899e26933eceac51e4f8d"
+  url "https://github.com/standardebooks/tools/archive/refs/tags/2.10.2.tar.gz"
+  sha256 "9fedd680f600802b259dd50ef0bee5a6d7a54f2ad0290ab14e8731c61e8f0203"
   license "GPL-3.0-or-later"
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
