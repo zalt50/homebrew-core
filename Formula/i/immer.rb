@@ -1,8 +1,8 @@
 class Immer < Formula
   desc "Library of persistent and immutable data structures written in C++"
   homepage "https://sinusoid.es/immer/"
-  url "https://github.com/arximboldi/immer/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "de8411c84830864604bb685dc8f2e3c0dbdc40b95b2f6726092f7dcc85e75209"
+  url "https://github.com/arximboldi/immer/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "4e9f9a9018ac6c12f5fa92540feeedffb0a0a7db0de98c07ee62688cc329085a"
   license "BSL-1.0"
 
   livecheck do
