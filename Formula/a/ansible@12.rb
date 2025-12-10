@@ -26,6 +26,11 @@ class AnsibleAT12 < Formula
 
   keg_only :versioned_formula
 
+  # https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
+  # https://forum.ansible.com/t/release-announcement-ansible-community-package-12-3-0/44980
+  deprecate! date: "2025-12-09", because: :unmaintained
+  disable! date: "2026-12-09", because: :unmaintained
+
   # `pkgconf` and `rust` are for bcrypt
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
