@@ -4,7 +4,7 @@ class Visp < Formula
   url "https://visp-doc.inria.fr/download/releases/visp-3.6.0.tar.gz"
   sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 19
+  revision 20
 
   livecheck do
     url "https://visp.inria.fr/download/"
@@ -133,6 +133,7 @@ class Visp < Formula
                          "-DZBAR_INCLUDE_DIRS=#{Formula["zbar"].opt_include}",
                          "-DZBAR_LIBRARIES=#{Formula["zbar"].opt_lib/shared_library("libzbar")}",
                          "-DUSE_ZLIB=ON",
+                         "-DUSE_MAVSDK=OFF",
                          *std_cmake_args
 
     # Replace generated references to OpenCV's Cellar path
