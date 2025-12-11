@@ -1,8 +1,8 @@
 class Phpunit < Formula
   desc "Programmer-oriented testing framework for PHP"
   homepage "https://phpunit.de"
-  url "https://phar.phpunit.de/phpunit-12.5.2.phar"
-  sha256 "1de5c53b6125ba554cd43d3b753f8e88cff4e6332cd4473b9cb2ce1def55eafb"
+  url "https://phar.phpunit.de/phpunit-12.5.3.phar"
+  sha256 "b50ff73802ed1f30c1b071a59a0567f8e39c65c5847bf3e741e82c728c56612a"
   license "BSD-3-Clause"
 
   livecheck do
