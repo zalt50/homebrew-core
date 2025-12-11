@@ -5,8 +5,8 @@ class Perbase < Formula
   head "https://github.com/sstadick/perbase.git", branch: "master"
 
   stable do
-    url "https://github.com/sstadick/perbase/archive/refs/tags/v1.1.0.tar.gz"
-    sha256 "6b9e030ce0692631482ef074a7d6c37519d6400be21d2f7533ba44a0ec5dc237"
+    url "https://github.com/sstadick/perbase/archive/refs/tags/v1.2.0.tar.gz"
+    sha256 "35b35573e48e5af17d953e66d345c5e8b2ea69bb072e5bbaff87adbfc02cb472"
 
     uses_from_macos "xz" => :build
     uses_from_macos "curl"
@@ -15,8 +15,8 @@ class Perbase < Formula
     # Resource to avoid building bundled curl, xz and zlib-ng
     # Issue ref: https://github.com/rust-bio/hts-sys/issues/23
     resource "hts-sys" do
-      url "https://static.crates.io/crates/hts-sys/hts-sys-2.1.1.crate"
-      sha256 "deebfb779c734d542e7f14c298597914b9b5425e4089aef482eacb5cab941915"
+      url "https://static.crates.io/crates/hts-sys/hts-sys-2.2.0.crate"
+      sha256 "e38d7f1c121cd22aa214cb4dadd4277dc5447391eac518b899b29ba6356fbbb2"
 
       livecheck do
         url "https://raw.githubusercontent.com/sstadick/perbase/refs/tags/v#{LATEST_VERSION}/Cargo.lock"
@@ -41,12 +41,15 @@ class Perbase < Formula
   depends_on "bamtools" => :test
 
   uses_from_macos "bzip2"
+  uses_from_macos "llvm" # for `libclang`
 
   on_linux do
     depends_on "openssl@3" # need to build `openssl-sys`
   end
 
   def install
+    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+
     if build.stable?
       # TODO: remove this check when bump-formula-pr can automatically update resources
       hts_sys_version = File.read("Cargo.lock")[/name = "hts-sys"\nversion = "(\d+(?:\.\d+)+)"/i, 1]
