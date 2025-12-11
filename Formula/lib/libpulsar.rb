@@ -1,11 +1,10 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.8.0/apache-pulsar-client-cpp-3.8.0.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.8.0/apache-pulsar-client-cpp-3.8.0.tar.gz"
-  sha256 "e5abff91da01cbc19eb8c08002f1ba765f99ce5b7abe1b1689b320658603b70b"
+  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-4.0.0/apache-pulsar-client-cpp-4.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-4.0.0/apache-pulsar-client-cpp-4.0.0.tar.gz"
+  sha256 "8bad1ed09241ba62daa82b84446b3c45e9de5873c407ef09f533fac0332918bc"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "06c8b663c02f0aa3885c3e7ae1feec2baa316624356a4d38234a197b08ab2b0b"
@@ -27,9 +26,6 @@ class Libpulsar < Formula
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
-
-  # Workaround for Protobuf 30+, issue ref: https://github.com/apache/pulsar-client-cpp/issues/478
-  patch :DATA
 
   def install
     args = %W[
@@ -56,24 +52,7 @@ class Libpulsar < Formula
       }
     CPP
 
-    system ENV.cxx, "-std=gnu++11", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
+    system ENV.cxx, "-std=c++17", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
     system "./test"
   end
 end
-
-__END__
-diff --git a/lib/ProtobufNativeSchema.cc b/lib/ProtobufNativeSchema.cc
-index 5cddf74..4bf45cf 100644
---- a/lib/ProtobufNativeSchema.cc
-+++ b/lib/ProtobufNativeSchema.cc
-@@ -39,8 +39,8 @@ SchemaInfo createProtobufNativeSchema(const google::protobuf::Descriptor* descri
-     }
-
-     const auto fileDescriptor = descriptor->file();
--    const std::string& rootMessageTypeName = descriptor->full_name();
--    const std::string& rootFileDescriptorName = fileDescriptor->name();
-+    const std::string rootMessageTypeName = std::string(descriptor->full_name());
-+    const std::string rootFileDescriptorName = std::string(fileDescriptor->name());
-
-     FileDescriptorSet fileDescriptorSet;
-     internalCollectFileDescriptors(fileDescriptor, fileDescriptorSet);
