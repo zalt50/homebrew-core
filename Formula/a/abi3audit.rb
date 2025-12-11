@@ -8,7 +8,7 @@ class Abi3audit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9964c74297ec7cc7cbba42749be2a7ddb9ac9d7454e61d33260ef80e74aba569"
+    sha256 cellar: :any_skip_relocation, all: "fa4eefe4d47d9e84e4bf5bdae2096c2ddb867c25ffe41e8feea9e61a1b8798c5"
   end
 
   depends_on "cmake" => :build
