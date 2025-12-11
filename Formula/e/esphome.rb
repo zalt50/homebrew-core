@@ -3,10 +3,9 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/6a/42/581c64ef757d3998c691fd7304700d2180115e174d320f0c9a84183480fe/esphome-2025.11.4.tar.gz"
-  sha256 "d4433daac71e8fc468d3ffc42dbbc06db8aafcd30152ab8249056a8ae62e4f17"
+  url "https://files.pythonhosted.org/packages/c0/bc/6bcec19615710a4e878d0c975d0a74fbe8b7f5af0d98a394c08597c0f0c0/esphome-2025.11.5.tar.gz"
+  sha256 "9f47f158b6db4d0035f2f3827f11a4393f56ce6d0529e857e37c045f28e523de"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e671f39c1daf00504c7bfe5cff1d26d823550494dfb47f4c3f3d14548fe1d238"
@@ -341,8 +340,8 @@ class Esphome < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "uvicorn" do
