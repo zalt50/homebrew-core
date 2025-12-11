@@ -1,8 +1,8 @@
 class Terratag < Formula
   desc "CLI to automate tagging for AWS, Azure & GCP resources in Terraform"
   homepage "https://www.terratag.io/"
-  url "https://github.com/env0/terratag/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "01d40560d92ddd2cfce53d3bb71008a23de804f2a8b64006e9a0bd10b489c718"
+  url "https://github.com/env0/terratag/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "9d10d54242150ede67a44d3eda147a448a769e428f92470abe06fac66c78596c"
   license "MPL-2.0"
   head "https://github.com/env0/terratag.git", branch: "master"
 
@@ -33,11 +33,8 @@ class Terratag < Formula
       }
     EOS
 
-    system bin/"terratag", "-dir", testpath.to_s, "-tags", '{"environment":"test","owner":"brew"}',
-                           "-rename=false"
-
     output = shell_output("#{bin}/terratag -dir #{testpath} " \
-                          "-tags '{\"environment\":\"test\",\"owner\":\"brew\"}' -rename=false 2>&1")
+                          "-tags '{\"environment\":\"test\",\"owner\":\"brew\"}' -rename=false 2>&1", 1)
 
     assert_match "terraform init must run before running terratag", output
   end
