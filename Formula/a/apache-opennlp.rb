@@ -3,9 +3,9 @@ class ApacheOpennlp < Formula
   homepage "https://opennlp.apache.org/"
   # Switched to official Maven until upstream adds files to Apache server
   # url "https://www.apache.org/dyn/closer.lua?path=opennlp/opennlp-2.5.6.1/apache-opennlp-2.5.6.1-bin.tar.gz"
-  url "https://search.maven.org/remotecontent?filepath=org/apache/opennlp/opennlp-distr/2.5.6.1/opennlp-distr-2.5.6.1-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/opennlp/opennlp-2.5.6.1/apache-opennlp-2.5.6.1-bin.tar.gz"
-  sha256 "da5ddb4c7aa2a89349dbd079c359974910c2e5f0a433d8dfde193ec85e3f2b5b"
+  url "https://search.maven.org/remotecontent?filepath=org/apache/opennlp/opennlp-distr/2.5.7/opennlp-distr-2.5.7-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/opennlp/opennlp-2.5.7/apache-opennlp-2.5.7-bin.tar.gz"
+  sha256 "8de91d4705d2d546986fe4ad4dc6e1d9ed7bfce0ef32340bb0f996eda6787a6f"
   license "Apache-2.0"
 
   bottle do
