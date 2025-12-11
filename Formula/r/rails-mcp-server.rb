@@ -1,17 +1,17 @@
 class RailsMcpServer < Formula
   desc "MCP server for Rails applications"
   homepage "https://github.com/maquina-app/rails-mcp-server"
-  url "https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.2.3.tar.gz"
-  sha256 "679f894c2fce87eb56f29cef9332edde9aafe87fb4aa0587a3f65cd96c112395"
+  url "https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "666458c19f368551c7764602b2de6b9d954ca85e66a250b35ba4239b2cbc4efd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a035b879c8340fe514b53020e87d5c56badc0818025349f0d2d5f78806daf61"
-    sha256 cellar: :any,                 arm64_sequoia: "d5e9d141cb526b10b92bc650e8612807e1a197535f9404af8989ebeffd2f94df"
-    sha256 cellar: :any,                 arm64_sonoma:  "da4dc96f326399108a10cefb7b892fe5dddbced6c4986ebce80416b048fc1701"
-    sha256 cellar: :any,                 sonoma:        "c20ed88da80953c89f1e851365ff6ba8bfa375047b633ade123b32e8e7d8ac1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42603401417642b6f5079f519c6ed4a20e3ea67a47aa0f8007caacca14e934b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a64bb245bd7fa8ebcfda6117c55a03001bd27c67bc054d62c0f9d0be3c5afe"
+    sha256 cellar: :any,                 arm64_tahoe:   "d4cda119c2ea44dbf1c0365fb1d6fb0d35a5a6fe7a1d52a31011cd0a7a14bb89"
+    sha256 cellar: :any,                 arm64_sequoia: "d1b57b2fb3243c8bd860ef19b49837e2d01e1677149af66576bbeee9b8cbec4d"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf572dbf1b0318f7ee7ea9ee712c97dfba692573354b1a49d339808008b115f6"
+    sha256 cellar: :any,                 sonoma:        "8fe66977794a4a37c3ee3d779c7cd47ecc44b9bf91b958767237b4688124b608"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "108f655cefb5d85a0b3830f69c088bf0aa4cabbc6a0f5b256c7a773d2d6a8a77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8d0a30d1265ac1847706486318c851b9191d1a6f71c9a3e95c51a29f52ff623"
   end
 
   depends_on "openssl@3"
