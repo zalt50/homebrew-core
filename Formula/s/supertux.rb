@@ -2,13 +2,19 @@ class Supertux < Formula
   desc "Classic 2D jump'n run sidescroller game"
   homepage "https://www.supertux.org/"
   license "GPL-3.0-or-later"
-  revision 12
+  revision 13
 
   stable do
     url "https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3-Source.tar.gz"
     sha256 "f7940e6009c40226eb34ebab8ffb0e3a894892d891a07b35d0e5762dd41c79f6"
 
     depends_on "boost"
+
+    # Backport fix for newer GCC
+    patch do
+      url "https://github.com/SuperTux/supertux/commit/81809dd5e6f611b1d64d952f6d96310bcc9c5fca.patch?full_index=1"
+      sha256 "cd251ef6831c482c32e5aa2c56422cad2898747493797b4018f02131ea19dc88"
+    end
 
     # Workaround to build with Boost 1.89.0 until new release that drops Boost dependency
     # https://github.com/SuperTux/supertux/commit/5333cebf629eb20621b284fc96b494257f3314bb
