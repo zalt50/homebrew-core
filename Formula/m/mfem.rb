@@ -1,10 +1,9 @@
 class Mfem < Formula
   desc "Free, lightweight, scalable C++ library for FEM"
   homepage "https://mfem.org/"
-  url "https://github.com/mfem/mfem/archive/refs/tags/v4.8.tar.gz"
-  sha256 "65472f732d273832c64b2c39460649dd862df674222c71bfa82cf2da76705052"
+  url "https://github.com/mfem/mfem/archive/refs/tags/v4.9.tar.gz"
+  sha256 "ea3ac13e182c09f05b414b03a9bef7a4da99d45d67ee409112b8f11058447a7c"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/mfem/mfem.git", branch: "master"
 
   bottle do
@@ -22,13 +21,6 @@ class Mfem < Formula
   depends_on "open-mpi"
   depends_on "openblas"
   depends_on "suite-sparse"
-
-  # build patch to support Hypre 3.0, bug report, https://github.com/mfem/mfem/issues/5042
-  # upstream pr ref, https://github.com/mfem/mfem/pull/4975
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/mfem/4.8-support-hypre-3.0.patch"
-    sha256 "e490973f6b74f71c54f6449a8832575eb96c1562468210c444847109470d114f"
-  end
 
   def install
     # fix `lib/cmake/mfem/MFEMConfig.cmake` file audit failure
