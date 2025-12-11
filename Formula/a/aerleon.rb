@@ -3,10 +3,9 @@ class Aerleon < Formula
 
   desc "Generate firewall configs for multiple firewall platforms"
   homepage "https://aerleon.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/aa/59/bdfba424f08f2942bac1c630653ef8177938421e0cfd00ccaf358744bbed/aerleon-1.11.0.tar.gz"
-  sha256 "51ece6e194b802a21213a66a502e8b8f227b09542571c2b0d42b924750ec2dbb"
+  url "https://files.pythonhosted.org/packages/07/f7/25b8ed9c98060d0aaf9280bcae867bd1a6189bf2306f6d2d7edb083cb798/aerleon-1.12.1.tar.gz"
+  sha256 "78c94c8ac3e5c563e212b647420cb94e3ed5b72a860f5de0b927d2a5500dc82c"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
   bottle do
@@ -24,8 +23,8 @@ class Aerleon < Formula
   conflicts_with "cgrep", because: "both install `cgrep` binaries"
 
   resource "absl-py" do
-    url "https://files.pythonhosted.org/packages/79/c9/45ecff8055b0ce2ad2bfbf1f438b5b8605873704d50610eda05771b865a0/absl-py-1.4.0.tar.gz"
-    sha256 "d2c244d01048ba476e7c080bd2c6df5e141d211de80223460d5b3b8a2a58433d"
+    url "https://files.pythonhosted.org/packages/10/2a/c93173ffa1b39c1d0395b7e842bbdc62e556ca9d8d3b5572926f3e4ca752/absl_py-2.3.1.tar.gz"
+    sha256 "a97820526f7fbfd2ec1bce83f3f25e3a14840dac0d8e02a0b71cd75db3f77fc9"
   end
 
   resource "ply" do
@@ -34,16 +33,20 @@ class Aerleon < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   def install
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
   end
 
