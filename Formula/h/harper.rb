@@ -1,8 +1,8 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
   homepage "https://github.com/Automattic/harper"
-  url "https://github.com/Automattic/harper/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "8f840285d7ae3222e67c3b858822b80da66ebb3ed2b35693fa045f2c2afc6817"
+  url "https://github.com/Automattic/harper/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "86ebe50c09a8e606431cded973a0b259489bc8cb1613907e99ff686feff2d34e"
   license "Apache-2.0"
   head "https://github.com/Automattic/harper.git", branch: "master"
 
@@ -40,7 +40,7 @@ class Harper < Formula
     assert_match "test.md: No lints found", lint_output
 
     output = shell_output("#{bin}/harper-cli parse test.md")
-    assert_equal "Word", JSON.parse(output.lines.first)["kind"]["kind"]
+    assert_equal "HeadingStart", JSON.parse(output.lines.first)["kind"]["kind"]
 
     assert_match "\"iteration\"", shell_output("#{bin}/harper-cli words")
 
