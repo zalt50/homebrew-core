@@ -1,17 +1,17 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.32.tar.gz"
-  sha256 "fc2d083c84b1b74d76fc69993891e70d51ff65ca562ba812d68fefb34e8e8144"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.34.tar.gz"
+  sha256 "c36e2ff9100b72fa910f4fd671fb35bf2cc50efca9ed71d6cad66f0a7a8a3f09"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be9e964c60155ae7f5eacf563cf7df5196e1ef7fafbc38ca06da8295d0222361"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b388ecab1f6e4d677b4a92b634f09fa6713baa18b3db771323ccce267d63b5fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8811d02aec61c4762a9e57fba261781d0a224fbbd840514313d1b9d6c0270131"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82bbf22b5cb588e8f94623aecb72c66cca66176293d342f075404a38e324f6d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2394d4915d911a2c93997c055546685525709432991d0747c1fdfffcccd3bd23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3404e76eca67b801576fb2bb7208619f204764ab4fd67147f332fa21988e675"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd20e5f8c08f3d60ff0961be0d629e46c027ce9442045fb2e97ebb255ca16565"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af4aff17007b7cabe044d5284f8fa4b8565920e6cdad758e4d8e7478f607fea6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1483733989639fc5810337140bc0eac1e6434609dca5ebce723b0edbe723eb3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54f20dfa7d08854b87c1c3c838d494fad1229efdd161cf50f6b868d9220915e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4345f959e14b784f68f376deb25e0adaafe8679e4ac25e92c57ab4a1e651368e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ede89c7c0ce351d860c418fa474cd0a80b1052a4d60e5dbbb4bf3205e511735c"
   end
 
   depends_on "rust" => :build
