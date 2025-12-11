@@ -6,12 +6,12 @@ class RailsMcpServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d4cda119c2ea44dbf1c0365fb1d6fb0d35a5a6fe7a1d52a31011cd0a7a14bb89"
-    sha256 cellar: :any,                 arm64_sequoia: "d1b57b2fb3243c8bd860ef19b49837e2d01e1677149af66576bbeee9b8cbec4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf572dbf1b0318f7ee7ea9ee712c97dfba692573354b1a49d339808008b115f6"
-    sha256 cellar: :any,                 sonoma:        "8fe66977794a4a37c3ee3d779c7cd47ecc44b9bf91b958767237b4688124b608"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "108f655cefb5d85a0b3830f69c088bf0aa4cabbc6a0f5b256c7a773d2d6a8a77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8d0a30d1265ac1847706486318c851b9191d1a6f71c9a3e95c51a29f52ff623"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6463d51cc5b0db9b326569342cee4d6aea9c9268cd0b353a0cd2b06ac2d254a"
+    sha256 cellar: :any,                 arm64_sequoia: "40c7b7c44b4ac3af2d3159665d8af7a2efbbd143f6a93e3ced278f327f9d62c5"
+    sha256 cellar: :any,                 arm64_sonoma:  "e009e8da2ba9ac9318e45df214d0049cbaf856635ee5acce9a4a612c25437c4b"
+    sha256 cellar: :any,                 sonoma:        "6a5277bd9f7b6e45317a06c0489bcdc6d9c332558d21dcff22a924280e580a40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "254e5dcbf6f694d3ef29c4f3a3bc2b9bf6256d25a379b9f8fefdeb70bbf2616e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7a5ae6520989d1d4638742a51a3c04e97d1637853b9915b9bb6a24eab9dad84"
   end
 
   depends_on "openssl@3"
