@@ -8,12 +8,12 @@ class Localstack < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dbcb0f7d5344f84cbac9118e01e3d25f9283463b16fc369d42f0ce6050ff3932"
-    sha256 cellar: :any,                 arm64_sequoia: "3981f851b017205eb9dc406ae281276fdebdf595b80b74ce63afaa0f606bd48a"
-    sha256 cellar: :any,                 arm64_sonoma:  "4654f51e1e4d7d1766f71ebb5eb37574fa0ab3f5e37d25dbefea6ed68fe19f0f"
-    sha256 cellar: :any,                 sonoma:        "260ba1e90b81020489c9fdfd52c01931ca95ca3eae90120562fce0a25eeaa855"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7583159501c155bbb9c743ab15b3c938ca0f2fb7171b6b948f2bd6788fa4110c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a13c8581defbbc6d787ea95da72c9fa04d48e7fa5bc192ec0a4500c5d91b8746"
+    sha256 cellar: :any,                 arm64_tahoe:   "ca4ae41210325936f56f7446fcfc8b6b03d14c8f56f73392475ca85fa2c59dc3"
+    sha256 cellar: :any,                 arm64_sequoia: "22aed4154cfa23744ecb4f7a80c532404f07d44b7e9b514de90b10c4d7e3fbe5"
+    sha256 cellar: :any,                 arm64_sonoma:  "87174696707ccce616ab89e6f55b4903cba73b44f5e41a7b769cf92b6f807b52"
+    sha256 cellar: :any,                 sonoma:        "b9379e2659f576b247d3176bab56004ce382a5f8e25a3b488d7e53d024097dc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6473d2015a98c7d0979d8e35c50921ea0a5ba1c8d9beea79e0b8f18151f49f1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "768a39d098eab3052a13f61fad35c7d1169cbaa773db9a2e210d27fcb0e14aff"
   end
 
   depends_on "rust" => :build # for orjson
