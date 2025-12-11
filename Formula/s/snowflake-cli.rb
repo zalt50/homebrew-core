@@ -3,8 +3,8 @@ class SnowflakeCli < Formula
 
   desc "CLI for snowflake"
   homepage "https://docs.snowflake.com/developer-guide/snowflake-cli/index"
-  url "https://files.pythonhosted.org/packages/3d/4e/5212fe6c326cc9199284116e5958d5d4c7148c99e40b480f2fda2d73f6ca/snowflake_cli-3.13.1.tar.gz"
-  sha256 "a671d72758cf5445aad2cf33097a1c338a3aed67fc4c46c6c60123a9a83bd383"
+  url "https://files.pythonhosted.org/packages/df/79/30b7d1c12f50888252103dffbcc36901dae4cbdc0bcddcc8d2d0a00d3d34/snowflake_cli-3.14.0.tar.gz"
+  sha256 "126ae3158354b512202bba9dffbcaf32a21e0f442206bbe3f6801ef84d811491"
   license "Apache-2.0"
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
@@ -25,8 +25,14 @@ class SnowflakeCli < Formula
 
   conflicts_with "snow", because: "both install `snow` binaries"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic],
-                extra_packages:   "snowflake-core"
+  # Remove `snowflake-snowpark-python` and related dependencies for now,
+  # some of their dependencies doesn't have sdist and cause build failure
+  # https://github.com/snowflakedb/snowflake-cli/commit/602760651e746de475318e5da954dd75c268f312
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic snowflake-snowpark-python],
+                extra_packages:   %w[asn1crypto boto3 botocore charset-normalizer filelock idna jeepney
+                                     jmespath packaging platformdirs pyjwt pyopenssl python-dateutil
+                                     pytz pyyaml requests s3transfer secretstorage setuptools six
+                                     snowflake-connector-python sortedcontainers tomlkit urllib3]
 
   resource "asn1crypto" do
     url "https://files.pythonhosted.org/packages/de/cf/d547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6ee/asn1crypto-1.5.1.tar.gz"
@@ -34,13 +40,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f0/9b/eef5346ce3148bf4856318fe629e0fd7f6dd73ffd55ea08e316c967f8af0/boto3-1.42.0.tar.gz"
-    sha256 "9c67729a6112b7dced521ea70b0369fba138e89852b029a7876041cd1460c084"
+    url "https://files.pythonhosted.org/packages/8c/07/dfa651dbd57bfc34d952a101280928bab08ed6186f009c660a36c211ccff/boto3-1.42.9.tar.gz"
+    sha256 "cdd4cc3e5bb08ed8a0c5cc77eca78f98f0239521de0991f14e44b788b0c639b2"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/03/04/8e8ca38631eeb499a1099dcc2a081faaea399f9d46080720540ff54ec609/botocore-1.41.6.tar.gz"
-    sha256 "08fe47e9b306f4436f5eaf6a02cb6d55c7745d13d2d093ce5d917d3ef3d3df75"
+    url "https://files.pythonhosted.org/packages/fd/f3/2d2cfb500e2dc00b0e33e3c8743306e6330f3cf219d19e9260dab2f3d6c2/botocore-1.42.9.tar.gz"
+    sha256 "74f69bfd116cc7c8215481284957eecdb48580e071dd50cb8c64356a866abd8c"
   end
 
   resource "charset-normalizer" do
@@ -94,10 +100,8 @@ class SnowflakeCli < Formula
   end
 
   resource "jeepney" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
-      sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
-    end
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jinja2" do
@@ -141,8 +145,8 @@ class SnowflakeCli < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pluggy" do
@@ -265,22 +269,9 @@ class SnowflakeCli < Formula
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
-  resource "jeepney" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
-      sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
-    end
-  end
-
-  resource "secretstorage" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/31/9f/11ef35cf1027c1339552ea7bfe6aaa74a8516d8b5caf6e7d338daf54fd80/secretstorage-3.4.0.tar.gz"
-      sha256 "c46e216d6815aff8a8a18706a2fbfd8d53fcbb0dce99301881687a1b0289ef7c"
-    end
-  end
-
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
     # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
     # disable it to allow `typer` to use argument as shell for completions
     # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
