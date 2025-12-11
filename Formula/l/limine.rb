@@ -1,8 +1,8 @@
 class Limine < Formula
   desc "Modern, advanced, portable, multiprotocol bootloader and boot manager"
   homepage "https://codeberg.org/Limine/Limine"
-  url "https://codeberg.org/Limine/Limine/releases/download/v10.4.0/limine-10.4.0.tar.gz"
-  sha256 "c823588c61b907e1bef2588955973e556d99a926ee702e7961f13142478cbfa4"
+  url "https://codeberg.org/Limine/Limine/releases/download/v10.5.0/limine-10.5.0.tar.gz"
+  sha256 "da14c18eff4bda562cc44c69c7e2aebd9419ac1f1c8be32d76232eaa367503d2"
   license "BSD-2-Clause"
 
   livecheck do
