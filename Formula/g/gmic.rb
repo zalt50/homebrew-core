@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.6.4.tar.gz"
-  sha256 "c482f7aa0751aef263ec83dc5057c886fd3c862fa8ff73e15686e12a25c8e731"
+  url "https://gmic.eu/files/source/gmic_3.6.5.tar.gz"
+  sha256 "0987e54d64dc3a82df6a3052e6aa5d5b5f1e9115c6fd4155e1aceb78e462169a"
   license "CECILL-2.1"
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
@@ -38,6 +38,8 @@ class Gmic < Formula
   end
 
   def install
+    rm "src/CImg.h" if build.stable?
+
     args = %W[
       -DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}
       -DENABLE_DYNAMIC_LINKING=ON
