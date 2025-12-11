@@ -1,8 +1,8 @@
 class Tzdb < Formula
   desc "Time Zone Database"
   homepage "https://www.iana.org/time-zones"
-  url "https://data.iana.org/time-zones/releases/tzdb-2025b.tar.lz"
-  sha256 "ec2f98c739009fd81a654efe2ee75069f54bcee5e0d80f510ee7e1f469ed293a"
+  url "https://data.iana.org/time-zones/releases/tzdb-2025c.tar.lz"
+  sha256 "fbe5b52a151c992c1aeb49bc6ca41e170ca9f8d3fb810ec459eeb79c82d6972b"
   license all_of: ["BSD-3-Clause", :public_domain]
 
   livecheck do
