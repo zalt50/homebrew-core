@@ -1,27 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
+  url "https://mupdf.com/downloads/archive/mupdf-1.27.0-source.tar.gz"
+  sha256 "ae2442416de499182d37a526c6fa2bacc7a3bed5a888d113ca04844484dfe7c6"
   license "AGPL-3.0-or-later"
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
-
-  stable do
-    url "https://mupdf.com/downloads/archive/mupdf-1.26.11-source.tar.gz"
-    sha256 "eee47fdb64de309124df21081d4a4da4ad0e917824ab2ed68fc8008f6b523979"
-
-    # libclang-20 patches
-    patch do
-      url "https://github.com/ArtifexSoftware/mupdf/commit/df0b5ee3bb9b12d8c57df55d7b41faf1b874a14d.patch?full_index=1"
-      sha256 "6968a8b80221b01cc30d46bf832ecbcba99d75de238c41315be318f2b02ac892"
-    end
-    patch do
-      url "https://github.com/ArtifexSoftware/mupdf/commit/559e45ac8c134712cd8eaee01536ea3841e3a449.patch?full_index=1"
-      sha256 "868c2955cbebcb99b5336c005cbe4a5867f8654cb9b008bd24ae67df84438968"
-    end
-    patch do
-      url "https://github.com/ArtifexSoftware/mupdf/commit/4bbf411898341d3ba30f521a6c137a788793cd45.patch?full_index=1"
-      sha256 "ac2b1c1b6c21626aaf009928262f7c31e407a886b192d276674ddb94672b1d38"
-    end
-  end
 
   livecheck do
     url "https://mupdf.com/releases"
@@ -47,7 +30,6 @@ class Mupdf < Formula
   depends_on "jbig2dec"
   depends_on "jpeg-turbo"
   depends_on "leptonica"
-  depends_on "mujs"
   depends_on "openjpeg"
   depends_on "openssl@3"
   depends_on "python@3.14"
@@ -68,10 +50,24 @@ class Mupdf < Formula
 
   conflicts_with "mupdf-tools", because: "both install the same binaries"
 
+  # Currently, some source of mujs is required for building mupdf, so can't use formula
+  # Issue ref: https://bugs.ghostscript.com/show_bug.cgi?id=708968
+  resource "mujs" do
+    url "https://mujs.com/downloads/mujs-1.3.8.tar.gz"
+    sha256 "506d34882f2620a2fdeb6db63dbb7a8ffd98f417689d8f3c84f2feac275e39a9"
+
+    livecheck do
+      "mujs"
+    end
+  end
+
   def install
     # Remove bundled libraries excluding `extract` and "strongly preferred" `lcms2mt` (lcms2 fork)
     keep = %w[extract lcms2]
     (buildpath/"thirdparty").each_child { |path| rm_r(path) if keep.exclude? path.basename.to_s }
+
+    # Install mujs from resource
+    (buildpath/"thirdparty/mujs").install resource("mujs")
 
     # For python bindings needed by `pymupdf`: https://pymupdf.readthedocs.io/en/latest/packaging.html
     site_packages = Language::Python.site_packages("python3.14")
@@ -86,7 +82,7 @@ class Mupdf < Formula
       pydir=#{prefix/site_packages}
       CC=#{ENV.cc}
       USE_SYSTEM_LIBS=yes
-      USE_SYSTEM_MUJS=yes
+      USE_SYSTEM_MUJS=no
       VENV_FLAG=
     ]
 
@@ -121,8 +117,11 @@ class Mupdf < Formula
         s.gsub! "_mupdf.$(SO)", "_mupdf.so"
       end
 
-      ENV.cxx11
+      ENV.append "CXX", "-std=c++14"
     end
+
+    # Missing rpath for python bindings on macOS
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}" if OS.mac?
 
     system "make", "install", *args
     system "make", "install-shared-python", *args
