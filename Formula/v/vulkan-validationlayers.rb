@@ -1,8 +1,8 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
   homepage "https://github.com/KhronosGroup/Vulkan-ValidationLayers"
-  url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/vulkan-sdk-1.4.328.1.tar.gz"
-  sha256 "91d9be1347a270288bcc50206bda8ccf6aad33bab8318c0643dd36bef97478f9"
+  url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/vulkan-sdk-1.4.335.0.tar.gz"
+  sha256 "464f754abdebef13c342e18861eab87be0ecc36cb1c257f6b2ddfa10afb8401a"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
@@ -28,6 +28,8 @@ class VulkanValidationlayers < Formula
   depends_on "vulkan-headers"
   depends_on "vulkan-loader"
   depends_on "vulkan-utility-libraries"
+
+  uses_from_macos "python" => :build
 
   on_linux do
     depends_on "libx11" => :build
