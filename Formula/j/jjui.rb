@@ -6,12 +6,12 @@ class Jjui < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78ac8e0e220c7003ab0675e908778b1a5293f8b2c263f402a6c6fbc94b6c37de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78ac8e0e220c7003ab0675e908778b1a5293f8b2c263f402a6c6fbc94b6c37de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78ac8e0e220c7003ab0675e908778b1a5293f8b2c263f402a6c6fbc94b6c37de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2102d9f0433da1ad0ce83c61208c9c5bbdd24e3f8bbf2e5c64bea2b69cce90a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e26a0795cd7a20a0939c4ee984f11b6e7e3f4ef908eb56ea0ead9bb632502113"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64018a0a34ba23f4d1220185809f6979e3b546cd81a6cdcabe02424a2380ddf8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7eab8f4970c0d8bdd698d26b37ad12453bba2fb1d688de2ed0a673760126d6a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7eab8f4970c0d8bdd698d26b37ad12453bba2fb1d688de2ed0a673760126d6a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7eab8f4970c0d8bdd698d26b37ad12453bba2fb1d688de2ed0a673760126d6a3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76223739ce82fad6fdae3fe7d587cba888bcf276275a82a78b4be6b8b084296f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "494e9c76265547bb120f327698a70ed98f59c57bbd2837fb77c4ea94fe8894fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "420af7e16efe6da7e4e6666947f1a6eb1c7e101a5bd7f7725cbc61ee484cea02"
   end
 
   depends_on "go" => :build
