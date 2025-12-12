@@ -1,12 +1,10 @@
 class Jump < Formula
   desc "Helps you navigate your file system faster by learning your habits"
   homepage "https://github.com/gsamokovarov/jump"
-  url "https://github.com/gsamokovarov/jump/archive/refs/tags/v0.51.0.tar.gz"
-  sha256 "ce297cada71e1dca33cd7759e55b28518d2bf317cdced1f3b3f79f40fa1958b5"
+  url "https://github.com/gsamokovarov/jump/archive/refs/tags/v0.67.0.tar.gz"
+  sha256 "b54bc4d1173be7ad5e4866f3b76f02c59506cc66b05fafe4aa3854cad1d2d531"
   license "MIT"
   head "https://github.com/gsamokovarov/jump.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
