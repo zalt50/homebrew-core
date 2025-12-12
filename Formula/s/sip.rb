@@ -19,9 +19,16 @@ class Sip < Formula
 
   depends_on "python@3.14"
 
+  pypi_packages extra_packages: "platformdirs"
+
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "setuptools" do
@@ -39,6 +46,10 @@ class Sip < Formula
     # Modify the path sip-install writes in scripts as we install into a
     # virtualenv but expect dependents to run with path to Python formula
     inreplace venv.site_packages/"sipbuild/builder.py", /\bsys\.executable\b/, "\"#{which(python3)}\""
+
+    # Replace vendored platformdirs with latest version for easier relocation
+    # https://github.com/pypa/setuptools/pull/5076
+    venv.site_packages.glob("setuptools/_vendor/platformdirs*").map(&:rmtree)
   end
 
   test do
