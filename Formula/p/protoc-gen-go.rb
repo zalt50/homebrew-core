@@ -1,10 +1,9 @@
 class ProtocGenGo < Formula
   desc "Go support for Google's protocol buffers"
   homepage "https://github.com/protocolbuffers/protobuf-go"
-  url "https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/v1.36.10.tar.gz"
-  sha256 "41671a3121345fb6b9f98cf41609379ba379c0aaf86be9e862f87a1d69a40e89"
+  url "https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/v1.36.11.tar.gz"
+  sha256 "517b935001f3d43640489cd1aab531a3ed5927fb34379fa6cb1c1a514e9cb8e8"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/protocolbuffers/protobuf-go.git", branch: "master"
 
   bottle do
