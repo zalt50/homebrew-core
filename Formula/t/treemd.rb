@@ -1,21 +1,28 @@
 class Treemd < Formula
   desc "TUI and CLI dual pane markdown viewer"
   homepage "https://github.com/epistates/treemd"
-  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "cca71d9ca4b7082a6f81c5445d54230d4ce728f06da2691875d3d59a0e1c152a"
+  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "096b9f17a5801f7d2e1ab9ebc4dd4eb63e70d5f587a3dfe067fd53fef8cffb12"
   license "MIT"
   head "https://github.com/epistates/treemd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d89aaec1520db00da857720d15e06bc0ec4cc4587919837f1080d00597511e4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d6906c5c55c8b47ae112d9c4ffef60a6275a6356838993e91da91ba08992205"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1acd72df788d4858d4ca1589118d5e3215b3d68e1b6314c7a20baaee637b6138"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92fcbe47c5fcf2e44a624735cdc64d87a07d403930d15b5d6063af4e914162c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd2598b8ff199b5164846da9acefc9ebf96f00c44f8da87a8a299436b4c612d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94d41b3a6ce6a3997c3cf9518cfeff9ea49589655959bf18126c77a274179cbf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "776eb27114b6248d5e501c49dfc412ebb1f9867befd799551f05cd27df772a91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f746dd099343c28d5a76e2cf158d33af959d4e660129c026baf13ff430846022"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "281a92a1174b9fc23d52c12d8bc4c512eaa5da8c0a0582dab703c5aa3f74516e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28d31b543fc463836211651a65d8d9b817a8e26942d1904e836125f6cc7d7b6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2d24253b986505fb733dfae024bac29997ad3ab58412ff924f6c06003e9ed7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41fc3234721ff04261ab4e39e89e7c4c74b394dc711a752aaf52873110c135a8"
   end
 
   depends_on "rust" => :build
+
+  # Fix incorrect version number.
+  # Remove in next release.
+  patch do
+    url "https://github.com/Epistates/treemd/commit/20525eaf5e31ec8df0935703c4845f06fb37c1fa.patch?full_index=1"
+    sha256 "4ac9104f8527dd8293ff29b7ef31f85fad5c52775b27a5d78504b532a8ac18b7"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
