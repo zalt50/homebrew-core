@@ -1,10 +1,9 @@
 class Mgis < Formula
   desc "Provide tools to handle MFront generic interface behaviours"
   homepage "https://thelfer.github.io/mgis/web/index.html"
-  url "https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-3.0.tar.gz"
-  sha256 "dae915201fd20848b69745dabda1a334eb242d823af600825b8b010ddc597640"
+  url "https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-3.0.2.tar.gz"
+  sha256 "189b53789d4e2af3a69970880f5b1e90ff596ad3a71109ace69b2026333a8641"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
-  revision 3
   head "https://github.com/thelfer/MFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
@@ -17,8 +16,8 @@ class Mgis < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pybind11" => :build
 
-  depends_on "boost-python3"
   depends_on "gcc" # for gfortran
   depends_on "numpy"
   depends_on "python@3.14"
@@ -34,7 +33,8 @@ class Mgis < Formula
       "-Denable-enable-doxygen-doc=OFF",
       "-Denable-c-bindings=ON",
       "-Denable-fortran-bindings=ON",
-      "-Denable-python-bindings=ON",  # requires boost-python
+      "-Denable-python-bindings=ON",
+      "-Denable-pybind11=ON",         # requires pybind11
       "-Denable-fenics-bindings=OFF", # experimental and very limited
       "-Denable-julia-bindings=OFF",  # requires CxxWrap library
       "-Denable-enable-static=OFF",
