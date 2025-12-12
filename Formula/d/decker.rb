@@ -6,12 +6,12 @@ class Decker < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7503099783f8f0781fb71b5be796350843033b463223d0b322906de687bf695b"
-    sha256 cellar: :any,                 arm64_sequoia: "a64853dd827468960f00053b372fe768864e6e867bf5ad24cee5a19b0deb4f4a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c6d1d0e6e2f24ec97f491b48cc5eb7273d79979403e7a98d44b44f2945da986a"
-    sha256 cellar: :any,                 sonoma:        "c04fda8355b3568ce8593ab6c5b2298971839c99a598d1d0611c92c29a3ce9e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26887fce224dc9970c4d3492efed104214424db627648129305962f5befbb365"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46f6bf8755974f86abb89e964470b0abbdc47e9b9f0520b210b256449004f451"
+    sha256 cellar: :any,                 arm64_tahoe:   "1400662f32d196181f59c5d8576f663c5aa47e354aa536f5004e972520db089d"
+    sha256 cellar: :any,                 arm64_sequoia: "ecc163afdee6f99b23937507d58542d3dc16f0cc55e0428f079478ea42986dc4"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd081790a0237c86501e633a2302a903b5ff78cbbfb786349cce0c3989e76d42"
+    sha256 cellar: :any,                 sonoma:        "3075696db27dd53c917d5c285568161ba383ee110bd9fa3c81c197bbf4881e17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0eaa1867b2eec5e55be75b874552f13c3fd0ea74880d88575cea7d4d004dfb09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d255fd7bc35a2307db75742da5dcdc2ec3f50299a9873969a086c11d4463bb1"
   end
 
   depends_on "sdl2"
