@@ -4,6 +4,7 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/48/d6/09b28f027b510838559f7748807192149c419b30cb90e6d5f0cf916dc9dc/pymupdf-1.26.7.tar.gz"
   sha256 "71add8bdc8eb1aaa207c69a13400693f06ad9b927bea976f5d5ab9df0bb489c3"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "0111cd0136789c1d0dc81f8c0c955213299fd080dfccf60872215117073909b8"
@@ -29,7 +30,10 @@ class Pymupdf < Formula
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
     ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include}:#{Formula["freetype"].opt_include}/freetype2"
-    ENV["PYMUPDF_MUPDF_LIB"] = Formula["mupdf"].opt_lib.to_s
+
+    mupdf_libpath = Formula["mupdf"].opt_lib.to_s
+    ENV["PYMUPDF_MUPDF_LIB"] = mupdf_libpath
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{mupdf_libpath}" if OS.mac?
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
