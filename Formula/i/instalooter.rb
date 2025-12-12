@@ -9,12 +9,8 @@ class Instalooter < Formula
   revision 14
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50d75e25afec7336088d8b88f1b5cec4a397451e8d61da048de4f0bdc694d68c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50d75e25afec7336088d8b88f1b5cec4a397451e8d61da048de4f0bdc694d68c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50d75e25afec7336088d8b88f1b5cec4a397451e8d61da048de4f0bdc694d68c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af3d2b5811fb8eaec6504318825fd346d07d207efa2e17984e52a6c5e39ecc9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af3d2b5811fb8eaec6504318825fd346d07d207efa2e17984e52a6c5e39ecc9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af3d2b5811fb8eaec6504318825fd346d07d207efa2e17984e52a6c5e39ecc9b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "70dae1557bbe7466db51d87f095ef21219f1ede14454a866f8399dbdbb2eb785"
   end
 
   depends_on "certifi" => :no_linkage
