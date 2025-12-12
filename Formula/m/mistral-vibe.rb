@@ -3,8 +3,8 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/8a/c8/177ba0241ddaa36ce62bc6adae443f525ab0f7b13945d7a7163a5d37322e/mistral_vibe-1.1.2.tar.gz"
-  sha256 "b0313bba7fe2f0622de75f46affc8684e1d0c6ccefa2c2bbdd9a72545a74feda"
+  url "https://files.pythonhosted.org/packages/f7/51/629d73f9d455d12955d358c892385f67bc7c9674cae19c3cf8965aff7a7c/mistral_vibe-1.1.3.tar.gz"
+  sha256 "cf3e79e0b32ee788fd3ced6ce3ff446125c0478c29760eb15e61d9a0a5d0ffdf"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
@@ -108,8 +108,8 @@ class MistralVibe < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/a7/a4/d06a303f45997e266f2c228081abe299bbcba216cb806128e2e49095d25f/mcp-1.23.3.tar.gz"
-    sha256 "b3b0da2cc949950ce1259c7bfc1b081905a51916fcd7c8182125b85e70825201"
+    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
+    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
   end
 
   resource "mdit-py-plugins" do
