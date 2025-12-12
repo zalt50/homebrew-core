@@ -1,8 +1,8 @@
 class FishLsp < Formula
   desc "LSP implementation for the fish shell language"
   homepage "https://www.fish-lsp.dev"
-  url "https://registry.npmjs.org/fish-lsp/-/fish-lsp-1.1.1.tgz"
-  sha256 "8cf14e16170a68bb95ece08c7de3d3f5d7fc93e906ed31ff31422f5d136ac7ca"
+  url "https://registry.npmjs.org/fish-lsp/-/fish-lsp-1.1.2.tgz"
+  sha256 "8e06bd897f314214dda89241f2c0cb3132b22f8c06ce6c1dbb2b6165846cfc95"
   license "MIT"
 
   bottle do
