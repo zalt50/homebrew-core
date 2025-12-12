@@ -9,12 +9,8 @@ class PyqtBuilder < Formula
   head "https://github.com/Python-PyQt/PyQt-builder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07ab06eaad9e2b670a52a0e57317557df1c72c9771a11120b8294d9f85a8d42b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07ab06eaad9e2b670a52a0e57317557df1c72c9771a11120b8294d9f85a8d42b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ab06eaad9e2b670a52a0e57317557df1c72c9771a11120b8294d9f85a8d42b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfb6e43b07a4ef29e83828b189082444da152310ceaa37ce7e53be2283700828"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb6e43b07a4ef29e83828b189082444da152310ceaa37ce7e53be2283700828"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfb6e43b07a4ef29e83828b189082444da152310ceaa37ce7e53be2283700828"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "109c45b488442c303a287a1688cc02841d29fb727608a482f11f250df3572b2a"
   end
 
   depends_on "python@3.14"
