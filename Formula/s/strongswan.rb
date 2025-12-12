@@ -1,8 +1,8 @@
 class Strongswan < Formula
   desc "VPN based on IPsec"
   homepage "https://www.strongswan.org"
-  url "https://download.strongswan.org/strongswan-6.0.3.tar.bz2"
-  sha256 "288f2111f5c9f6ec85fc08fa835bf39232f5c4044969bb4de7b4335163b1efa9"
+  url "https://download.strongswan.org/strongswan-6.0.4.tar.bz2"
+  sha256 "79576bb61b9a406cea9eb73d0c565cc6254a6b6d2e7198f44758d2d7c61a7aec"
   license "GPL-2.0-or-later"
 
   livecheck do
