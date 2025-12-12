@@ -9,12 +9,8 @@ class OscCli < Formula
   revision 10
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d7fc382263e778ec0f091a55cadb587e502331027d39e56049becc95f12584f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d7fc382263e778ec0f091a55cadb587e502331027d39e56049becc95f12584f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d7fc382263e778ec0f091a55cadb587e502331027d39e56049becc95f12584f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04c875f69ca219e288927e93d3f66c658dcebd030e850924c102d8c8ef839545"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04c875f69ca219e288927e93d3f66c658dcebd030e850924c102d8c8ef839545"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04c875f69ca219e288927e93d3f66c658dcebd030e850924c102d8c8ef839545"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "67d966bcb73fd3f74296d867eb8f5713e10657ddbba737b963dfdab13757d51a"
   end
 
   depends_on "certifi" => :no_linkage
