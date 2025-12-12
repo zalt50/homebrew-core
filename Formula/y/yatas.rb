@@ -1,12 +1,10 @@
 class Yatas < Formula
   desc "Tool to audit AWS/GCP infrastructure for misconfiguration or security issues"
   homepage "https://github.com/padok-team/yatas"
-  url "https://github.com/padok-team/yatas/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "53abe26a7025aabf73918e3153c66d91cc5567e2fcd6df388e7c82e36704bd0e"
+  url "https://github.com/padok-team/yatas/archive/refs/tags/v1.6.1.tar.gz"
+  sha256 "d4ecca0180fe9c5447cc13ce9a2b2bdab4a5b977060f5e89b87e9f4ca71d5857"
   license "Apache-2.0"
   head "https://github.com/padok-team/yatas.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "38a23bdfc24c39424fae9ad0c654b18805b54f7ab481c42161700a55a74cf670"
