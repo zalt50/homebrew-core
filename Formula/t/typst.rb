@@ -1,8 +1,8 @@
 class Typst < Formula
   desc "Markup-based typesetting system"
   homepage "https://typst.app/"
-  url "https://github.com/typst/typst/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "83d132348a8c9481a8a483cdf823d5083ba456466410935f25240f6c26e23c38"
+  url "https://github.com/typst/typst/archive/refs/tags/v0.14.2.tar.gz"
+  sha256 "70a56445020ca05efc571c7b07a1a9f52eb93842d420518693c077ae74e54142"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/typst/typst.git", branch: "main"
