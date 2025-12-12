@@ -4,6 +4,8 @@ class Httping < Formula
   url "https://github.com/folkertvanheusden/HTTPing/archive/refs/tags/v4.4.0.tar.gz"
   sha256 "87fa2da5ac83c4a0edf4086161815a632df38e1cc230e1e8a24a8114c09da8fd"
   license "AGPL-3.0-only"
+  revision 1
+  head "https://github.com/folkertvanheusden/HTTPing.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -26,6 +28,8 @@ class Httping < Formula
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build # for msgfmt
+  depends_on "pkgconf" => :build
+  depends_on "fftw"
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"
@@ -41,12 +45,21 @@ class Httping < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DUSE_SSL=ON", "-DUSE_GETTEXT=ON", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_BUILD_TYPE=Release",
+                    "-DUSE_SSL=ON",
+                    "-DUSE_GETTEXT=ON",
+                    "-DUSE_TUI=ON",
+                    "-DUSE_FFTW3=ON",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
+    expected = /HTTPing v#{Regexp.escape(version.to_s)}.*SSL support included.*ncurses interface with FFT included/m
+    assert_match expected, shell_output("#{bin}/httping --version 2>&1")
+
     system bin/"httping", "-c", "2", "-g", "https://brew.sh/"
   end
 end
