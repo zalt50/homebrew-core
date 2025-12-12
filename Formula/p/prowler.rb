@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/57/6b/6fdc9546629055903394636e92f1ac25793e6cc2c26d18895011b974d00b/prowler-5.15.0.tar.gz"
-  sha256 "96d907421efbc54f9ab660054fc2326c60de98d4da7463dcb263de1c6d9cfcc8"
+  url "https://files.pythonhosted.org/packages/e5/d0/2903f9b1d17be75b9a0f8ceea8134f728a5f8d5f3f1c832a5bdda0670086/prowler-5.15.1.tar.gz"
+  sha256 "19ad2c7410219a7db08c3b39a7bec9a675d9b1a9a1f8cef917f035f34572a961"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
@@ -253,8 +253,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/0a/c4/d4ff3bc3ddf155156460bff340bbe9533f99fac54ddea165f35a8619f162/azure_core-1.36.0.tar.gz"
-    sha256 "22e5605e6d0bf1d229726af56d9e92bc37b6e726b141a18be0b4d424131741b7"
+    url "https://files.pythonhosted.org/packages/ef/83/41c9371c8298999c67b007e308a0a3c4d6a59c6908fa9c62101f031f886f/azure_core-1.37.0.tar.gz"
+    sha256 "7064f2c11e4b97f340e8e8c6d923b822978be3016e46b7bc4aa4b337cfb48aee"
   end
 
   resource "azure-identity" do
@@ -458,8 +458,8 @@ class Prowler < Formula
   end
 
   resource "darabonba-core" do
-    url "https://files.pythonhosted.org/packages/ed/eb/ba06fedf78dedfec715d58b86deb3dd3a46a6844578b100306ea46eed21a/darabonba_core-1.0.4.tar.gz"
-    sha256 "6ede4e9bfd458148bab19ab2331716ae9b5c226ba5f6d221de6f88ee65704137"
+    url "https://files.pythonhosted.org/packages/66/d3/a7daaee544c904548e665829b51a9fa2572acb82c73ad787a8ff90273002/darabonba_core-1.0.5-py3-none-any.whl"
+    sha256 "671ab8dbc4edc2a8f88013da71646839bb8914f1259efc069353243ef52ea27c"
   end
 
   resource "dash" do
@@ -583,8 +583,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/c1/c9/84074583c5bf1312cd2114a2548700cd687184f4027e0e1fcebcf6c1c661/iamdata-0.1.202512111.tar.gz"
-    sha256 "d618a34a6d68abc550bf7bef1acfb34e2cbded8cb573e060f5d5d400752f0d09"
+    url "https://files.pythonhosted.org/packages/09/10/ae638fad971ceedde6408198b7a25aa99a8eace482d6e1679df61d002716/iamdata-0.1.202512121.tar.gz"
+    sha256 "2cd9478e5d59ecb4963cc138c23657ef6432ef98f44bb532a7d51de3ce69a30c"
   end
 
   resource "idna" do
