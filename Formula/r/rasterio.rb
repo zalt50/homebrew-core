@@ -3,10 +3,9 @@ class Rasterio < Formula
 
   desc "Reads and writes geospatial raster datasets"
   homepage "https://rasterio.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/de/19/ab4326e419b543da623ce4191f68e3f36a4d9adc64f3df5c78f044d8d9ca/rasterio-1.4.3.tar.gz"
-  sha256 "201f05dbc7c4739dacb2c78a1cf4e09c0b7265b0a4d16ccbd1753ce4f2af350a"
+  url "https://files.pythonhosted.org/packages/ec/fa/fce8dc9f09e5bc6520b6fc1b4ecfa510af9ca06eb42ad7bdff9c9b8989d0/rasterio-1.4.4.tar.gz"
+  sha256 "c95424e2c7f009b8f7df1095d645c52895cd332c0c2e1b4c2e073ea28b930320"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "7256545e4edd7ec2b315ffa23770dcd4d6543eab648254cdf2d71c35d295ec48"
@@ -45,8 +44,8 @@ class Rasterio < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-plugins" do
