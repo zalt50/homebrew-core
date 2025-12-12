@@ -1,8 +1,8 @@
 class Tombi < Formula
   desc "TOML formatter, linter and language server"
   homepage "https://github.com/tombi-toml/tombi"
-  url "https://github.com/tombi-toml/tombi/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "a6d3dc9f8060fe7492a23906b853ffccc70c3fc88a8f35f2f3778d99b35136cd"
+  url "https://github.com/tombi-toml/tombi/archive/refs/tags/v0.7.7.tar.gz"
+  sha256 "fea32038db8bca1f4833d4040dff7fb5f35e8991efcd02f6a85d9769953ea281"
   license "MIT"
   head "https://github.com/tombi-toml/tombi.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Tombi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42818d8e04f7e5b00a99fca07d11d1c0a57c1f1a344f132199eed4a042a980f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33ba781422c822906ed409c1482765f7e504f5de5d55cd8a7a2a650198c760e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cc2a21232598c4938dc95010fa719f4aaf4980739c47ff9ef26eeb144ba21e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "025885c0c66e20edaf8dfe5d1b1c8fb0e7bc59ecbf51d4256759e7b4d8b31c2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d5246ff5d3ed82e92f28cf7bfc2333f0cb641ff1e0809c9adbbed47f1e20998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "367c10ebc1f54510788c0352cb2dc3da8dd1fa744a11816f13c4e9050ef9b73d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d60b8040a7a31ec4541ca3d8b0a538f65c81dc6a99315942c6eb59208427cb4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "589bc330a51e863c2b7053ee6d17ddf040f8da322a5d9464ac463d4f6734519a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4108c83260392440594e4ff1583bdf2f557af36b0b8b9f84b6d714156da83e2e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d5d723bb99de9884f813446bd318ca2d34498f82abc827ff9fe0c16dec79114"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c291b4a69ae359d82dde13ab1b35eba1e26bbc84f328c54a0b96fbb79653998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f394bde8e874ed2aad5dd8ed62ba3a856ab30d271bd3c3299b02f1a16f6149a"
   end
 
   depends_on "rust" => :build
