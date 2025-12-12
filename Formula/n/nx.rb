@@ -1,8 +1,8 @@
 class Nx < Formula
   desc "Smart, Fast and Extensible Build System"
   homepage "https://nx.dev"
-  url "https://registry.npmjs.org/nx/-/nx-22.2.1.tgz"
-  sha256 "7cc166598e3db963c12d4e13a0fb374a8f6d851a1c843c0f72ef75df3258d960"
+  url "https://registry.npmjs.org/nx/-/nx-22.2.2.tgz"
+  sha256 "c0c56ae062c49d8985f7c6d25eb227d1a05c95608b36097906bbdeed2f6e12ce"
   license "MIT"
   version_scheme 1
 
