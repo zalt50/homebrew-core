@@ -1,8 +1,8 @@
 class Treemd < Formula
   desc "TUI and CLI dual pane markdown viewer"
   homepage "https://github.com/epistates/treemd"
-  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "cca71d9ca4b7082a6f81c5445d54230d4ce728f06da2691875d3d59a0e1c152a"
+  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "096b9f17a5801f7d2e1ab9ebc4dd4eb63e70d5f587a3dfe067fd53fef8cffb12"
   license "MIT"
   head "https://github.com/epistates/treemd.git", branch: "main"
 
@@ -16,6 +16,13 @@ class Treemd < Formula
   end
 
   depends_on "rust" => :build
+
+  # Fix incorrect version number.
+  # Remove in next release.
+  patch do
+    url "https://github.com/Epistates/treemd/commit/20525eaf5e31ec8df0935703c4845f06fb37c1fa.patch?full_index=1"
+    sha256 "4ac9104f8527dd8293ff29b7ef31f85fad5c52775b27a5d78504b532a8ac18b7"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
