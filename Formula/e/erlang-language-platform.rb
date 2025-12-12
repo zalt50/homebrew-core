@@ -3,8 +3,8 @@ class ErlangLanguagePlatform < Formula
   homepage "https://whatsapp.github.io/erlang-language-platform/"
   # We require the submodules, so we fetch via git
   url "https://github.com/WhatsApp/erlang-language-platform.git",
-      tag:      "2025-11-04",
-      revision: "9e99f9644ed76baa13ae2396a6c325b65f0b099a"
+      tag:      "2025-12-12",
+      revision: "553c90d63143c82057d4888b40109ec9dca2f329"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/WhatsApp/erlang-language-platform.git", branch: "main"
 
@@ -61,7 +61,7 @@ class ErlangLanguagePlatform < Formula
     ERL
 
     # Run ELP lint to detect diagnostics
-    output = shell_output("#{bin}/elp lint my_module.erl", 101)
+    output = shell_output("#{bin}/elp lint my_module.erl")
 
     # Verify that ELP detected the unused variable diagnostic
     assert_match("variable 'X' is unused", output)
