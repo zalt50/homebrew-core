@@ -4,6 +4,7 @@ class Ibazel < Formula
   url "https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.28.0.tar.gz"
   sha256 "57997600ef4a6d54464d93a1ce8a35ad9b52e94bab823f97d4769d90c80022f4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/bazelbuild/bazel-watcher.git", branch: "main"
 
   bottle do
@@ -28,7 +29,7 @@ class Ibazel < Formula
 
     # Write MODULE.bazel with Bazel module dependencies
     (testpath/"MODULE.bazel").write <<~STARLARK
-      bazel_dep(name = "rules_go", version = "0.57.0")
+      bazel_dep(name = "rules_go", version = "0.59.0")
 
       # Register brewed go
       go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
