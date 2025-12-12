@@ -8,12 +8,12 @@ class Charmcraft < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8d5e978205d4740daab83d3b120b976a34804ebe1a20484c9ec22bf4b7974988"
-    sha256 cellar: :any,                 arm64_sequoia: "223e20ea06fd2714a281d4d9ca036b02880d8777f5ecb97726d807c4315bb3ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "fcb8515b3523566f19c0bf5846442ee24523f3cf9637f901260add769fdb02f2"
-    sha256 cellar: :any,                 sonoma:        "e7edf5ab10616010a907017dd160fc2e8363f5c8be4dc12475c39969443d09a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "810259a794077f873e42927fd757c20031bf6aebbccdfeec8b13bb58945f5a98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fafc0e7d084dea5101e11cb358a42a5a782859e636109936f16456ba829ede7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "56e5530a412dd30f5dbab534c99c6aefd951b664909278a4944e08b6bbc1df9e"
+    sha256 cellar: :any,                 arm64_sequoia: "1ff385112c3f1a3b40feb5dd2d95ceb9cbd381caa8c84c431eb5003a76e01fd9"
+    sha256 cellar: :any,                 arm64_sonoma:  "53dca8613dd82bb5175160bcd8c7e10da49a4c8e577bb277deac1425bf8cdafb"
+    sha256 cellar: :any,                 sonoma:        "7960faed3326b70d46370868ab254a4b4e95e8bd9bed35dcd39ac06b1d65b83a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bde4887603c2859322151ebc9848ce90a37730de2b93c9cd07d87099ae5c94bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d31ea05e4f02d7167dcf3a70d8bb54d330d2a8a1ce63a590fe1f01bb460efa"
   end
 
   depends_on "certifi" => :no_linkage
