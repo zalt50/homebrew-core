@@ -1,8 +1,8 @@
 class Mintoolkit < Formula
   desc "Minify and secure Docker images"
   homepage "https://slimtoolkit.org/"
-  url "https://github.com/mintoolkit/mint/archive/refs/tags/1.41.7.tar.gz"
-  sha256 "a5375339dda7752b8c7a1d29d25cc7e7e52c60b2badb6a3f6d816f7743fde91a"
+  url "https://github.com/mintoolkit/mint/archive/refs/tags/1.41.8.tar.gz"
+  sha256 "c48a44d34622d1baa3a8245f19b5659d7d8fa4435cc51c5e2f492916b8e8ea25"
   license "Apache-2.0"
   head "https://github.com/mintoolkit/mint.git", branch: "master"
 
