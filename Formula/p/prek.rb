@@ -1,8 +1,8 @@
 class Prek < Formula
   desc "Pre-commit re-implemented in Rust"
   homepage "https://github.com/j178/prek"
-  url "https://github.com/j178/prek/archive/refs/tags/v0.2.21.tar.gz"
-  sha256 "9cb2d55043047cac307eb0f15ef1b5ef491f4626def3e564a67055ba3d74806e"
+  url "https://github.com/j178/prek/archive/refs/tags/v0.2.22.tar.gz"
+  sha256 "2104a7ab915262341d8454cb344b317f658e9189448b27d5b90cfbba63ad8de1"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "master"
 
@@ -20,7 +20,7 @@ class Prek < Formula
   def install
     ENV["PREK_COMMIT_HASH"] = ENV["PREK_COMMIT_SHORT_HASH"] = tap.user
     ENV["PREK_COMMIT_DATE"] = time.strftime("%F")
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/prek")
     generate_completions_from_executable(bin/"prek", shell_parameter_format: :clap)
   end
 
