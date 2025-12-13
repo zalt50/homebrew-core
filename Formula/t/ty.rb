@@ -1,6 +1,4 @@
 class Ty < Formula
-  include Language::Python::Virtualenv
-
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
   url "https://files.pythonhosted.org/packages/f5/f9/f467d2fbf02a37af5d779eb21c59c7d5c9ce8c48f620d590d361f5220208/ty-0.0.1a34.tar.gz"
@@ -18,10 +16,13 @@ class Ty < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.14"
 
   def install
-    virtualenv_install_with_resources
+    ENV["TY_COMMIT_SHORT_HASH"] = tap.user
+    # Not using `time` since SOURCE_DATE_EPOCH is set to 2006
+    ENV["TY_COMMIT_DATE"] = Time.now.utc.strftime("%F")
+    system "cargo", "install", *std_cargo_args(path: "ruff/crates/ty")
+    generate_completions_from_executable(bin/"ty", "generate-shell-completion")
   end
 
   test do
