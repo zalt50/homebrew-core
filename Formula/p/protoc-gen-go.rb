@@ -8,12 +8,12 @@ class ProtocGenGo < Formula
   head "https://github.com/protocolbuffers/protobuf-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54a88571329f7a1cedfe1bb20d6e216ec8dcdc03302d1a800f879e0f02f3edf9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54a88571329f7a1cedfe1bb20d6e216ec8dcdc03302d1a800f879e0f02f3edf9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54a88571329f7a1cedfe1bb20d6e216ec8dcdc03302d1a800f879e0f02f3edf9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ad92eb7e2e6a5e91d5ebc21ca2a718e27e3671c25a5da5a31370fb42c5cbd12"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "078aa03a0d5c3fb93240afc99bbaa40074e806f30a276a251f23059cec11a7ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d68e135ce9be4aadd202bcb969accc48113d57e511d1d35f1565b5154735dfab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e14c2750612d7c309c6cfb4d8fe01d7fb94ca916ff0990378d7d0693dd39a64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e14c2750612d7c309c6cfb4d8fe01d7fb94ca916ff0990378d7d0693dd39a64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e14c2750612d7c309c6cfb4d8fe01d7fb94ca916ff0990378d7d0693dd39a64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47aaa1633f8161906f6ef7cae6cd7a30bb87bfaafb665977e0d1fbda61efe82d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3749467807e9b0664808f44027664b3dc715a40b424881c044e34dd3c275daf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d9a5b240b366cf9701d4aa474422e27c36af4c06af187a7d2232d8e3825b38c"
   end
 
   depends_on "go" => :build
