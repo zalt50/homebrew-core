@@ -9,13 +9,13 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbe7882af1ba4b5a251c58e775f405382e4d19e7ac86d6d1abdd39023f0948fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14991f7289929523e9cceeaed383a0047cf94f728730a5e0b29313c72c5d990f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "002ba3444d9cc43ca195f51eb9f44ea4a9073923355887cbf3e1850e60e8d98a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "194c3b50e319727301c199ebc1652b6ad1085649c2e6abb26fa6d24fc922ed5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a7fc0d787f903feac1306c4eb0de99f5e04a90360c445654cfd5299c70604d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5665d529fb05f130d4aae2e888e37dd23fa500579875c81c9de6d83fe91b9e0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d93f6407c3dae82d92052a1e0760697c2b38d10fa0b73c09bffecf50f829abcb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4222550be02dc68325842f0e17c2c966cb1b8eb461c688059c8017bc5b728539"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b13eca2812f39cd08bb1e1bce2db68b075cb61a3daadba2ddf74025ff27859"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f33032bc682ff08e443e9b0d40ee8969f6e6568c3de9a627e8f69082cbe56c25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11aa2264ec26273507721ada76824e0457d036151dfe551e289a4932e92632e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3af26ac4ca2a0ce6535d0d5ef6b93d35544af3ac3072073b7141bd8331c25f3b"
   end
 
   depends_on "cmake" => :build # for more-itertools
