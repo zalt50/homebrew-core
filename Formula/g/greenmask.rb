@@ -1,8 +1,8 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
   homepage "https://www.greenmask.io/"
-  url "https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.14.tar.gz"
-  sha256 "093e677914f3191de33bca479debd5305fff68420055873b3e331f829748f2c5"
+  url "https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.15.tar.gz"
+  sha256 "d9cc46c66caf3610abe35feda46cb3e341faaf8b7b3503dfc964357da9def21c"
   license "Apache-2.0"
   head "https://github.com/GreenmaskIO/greenmask.git", branch: "main"
 
