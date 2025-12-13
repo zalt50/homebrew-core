@@ -6,6 +6,15 @@ class Flecs < Formula
   license "MIT"
   head "https://github.com/SanderMertens/flecs.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1948ed7316bb35b72c97963a91e5b63283b3ab29d15d6142eec5a58aaa584b64"
+    sha256 cellar: :any,                 arm64_sequoia: "23ffa4826670bbc60027eb73317ab5cbc9d67d63a35da3b6feee0f05fb1b80bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "70a192afc7f284346d313a2bc4d345fa6cb3e3fc1ccf0a796cbe854623b729e2"
+    sha256 cellar: :any,                 sonoma:        "6575962e5371627197bccaeea24a6ee2ee43222068dac476b1bf2d69e354a187"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9a05018d389b69b91b4d5cdc506e99a77ada22faa368c987ce4038eadccc4ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61397dd0b15abb4d5656cc819bf676d39e8d2043156baca646ffb5e8e11b8599"
+  end
+
   depends_on "cmake" => [:build, :test]
 
   def install
