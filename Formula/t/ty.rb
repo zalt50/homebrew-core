@@ -8,6 +8,15 @@ class Ty < Formula
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fbdf628ec1e95fe88574b219140bcbd0c3db2ee2410e0ebe29300f75a548d58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92fba572465bf73de24812dbc82e5a1364b8c5549f7465dac4de9714116f5543"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8cb91798566953027b0c1dc746c30fc1a83c6b4fb04f974cd99f2bf447ff05c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1c89a134c58c01a79a1f1854c792c716ffacfe5cfe609f34cb0d38d1786221a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c7dd16676226d20dab918271e18dfcae30170f34d77ff122a8b8d9d4b18aea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aaf78004d766af58cdde99ddb7789d10c1d0ab70783b2b1c59d6de841ad53b8"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.14"
 
