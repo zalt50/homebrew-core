@@ -5,22 +5,17 @@ class Duplicity < Formula
   homepage "https://gitlab.com/duplicity/duplicity"
   # TODO: Restore `depends_on "cryptography"` once pydrive2 replaces oauth2client
   # Issue ref: https://github.com/iterative/PyDrive2/issues/361
-  url "https://files.pythonhosted.org/packages/97/44/d1aa0f5484a8c685bda04fdbaef9d107f43894c0b843ad4b9c8abc23a324/duplicity-3.0.6.2.tar.gz"
-  sha256 "d22ee49173a19bbca23afa6d2984437da74fdbefac50049291c8d0f1a2994606"
+  url "https://files.pythonhosted.org/packages/7c/5b/ca25e39ace138a15afb0631c6dc1681c3d70b3ebe4edf72e04f5ad768b27/duplicity-3.0.6.3.tar.gz"
+  sha256 "56472b3fccadec4ee436df50cf1cd283b77d86227393924c9ebf9d0b55d190f4"
   license "GPL-2.0-or-later"
-  revision 1
-
-  # TODO: need to allow autobump to install libxml2/libxslt to resolve lxml
-  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2eeccd3abc64003d4e6b6b4728e45f15de81445ffafcd416c3c6a7225b6e4fbd"
-    sha256 cellar: :any,                 arm64_sequoia: "9ee7f7ac522ef3d4ad2b827b5ea95b8f22f2200113b66955fd22bab0e2ba386b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6a2227b84f137e238f081bb05fd60b2b4fcdc1a0347ca7873b1c29e650090a1c"
-    sha256 cellar: :any,                 sonoma:        "cc0680b67083af85ae772f85d3416d0902c0433957e67e69e20c45a7364e3c4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "128fc8077a22bca882e666d234c9899cd72fbe5bc455642655ed1acd19dffab3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d1db4a3727252c23eac7df6ca86e1cb4f8aa338ced7840dbf8149f7060fcd7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "ccad6150fd773bfd38b9c57b1a8f0d692b1bdaa99f4ec95df223763883ecc271"
+    sha256 cellar: :any,                 arm64_sequoia: "298f942ad00f0fd0c3d6151755cd8e3f0d01f7c14385dad8856cecbba4cbe9bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0bd155337b98e409a0426a96b6256c39b1157650efd9ac7f5c02395ec4b6395"
+    sha256 cellar: :any,                 sonoma:        "0f2e9cc704d12a775dc8fa61988c29ae3bc49eed904e61b5022312ceb4d66ab1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f647124c2d06ed044b556639ed0251b60fd942b7b04e35d61552c1998920722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de83529803c5b496a001a2dbc8d25466a2ee4e3048ee2cd48b39a9e627e7bd1a"
   end
 
   depends_on "gettext" => :build # for msgfmt
