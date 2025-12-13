@@ -19,12 +19,12 @@ class Swift < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3621d248da54aeccb31972f76fad2e460fe3a191e089e5716dcce669f48d6742"
-    sha256 cellar: :any, arm64_sequoia: "3c74797f9f2d736d3298d5df7a4b34da06b8ce917b15eb30cae247cfc054ac62"
-    sha256 cellar: :any, arm64_sonoma:  "4fa27b5f6ea8822595480926c241e1afa7e2451474d9bd616d99e3a8d89766ec"
-    sha256 cellar: :any, sonoma:        "2f7cbf95ffd35eaf6dffb18fe7b74539d30bd67e85db1d3ce0de1a4f3aaec2df"
-    sha256               arm64_linux:   "48727b0616cb1147bf2a5e24b50a7cb45311009265116ef19c7e76b4cd1e0ddb"
-    sha256               x86_64_linux:  "179289943ea8e52d9085e3b6aac660f55c94d5e3cd775334d3441acc1bc9fbdb"
+    sha256 cellar: :any, arm64_tahoe:   "07898aef3209bbd38dbeaf5644a39ec63c778f1610a1c2383719486d574c1fa6"
+    sha256 cellar: :any, arm64_sequoia: "b978aa81c16cad852e2d6ccf7ecf502ee32cbec88aff1c4ed3216eaab91c65df"
+    sha256 cellar: :any, arm64_sonoma:  "640cd8d8f585816e076bace6c0e2f56931c1ddb28a9a1d3bf05916f523b24ee8"
+    sha256 cellar: :any, sonoma:        "6fd2a69663a3aecb4363a892f83e2223943cb91107c644c73e341fe43f45a42a"
+    sha256               arm64_linux:   "d7aa21f9206ed4b645aa0318db80623efd7d4d7d8acb0b4d2bd3b9b16f84c5ca"
+    sha256               x86_64_linux:  "701ec69ee5d9d7773ebe904e7a76d821b13a0dfb423dee7a776f8816ce881b1a"
   end
 
   keg_only :provided_by_macos
