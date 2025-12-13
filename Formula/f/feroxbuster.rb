@@ -6,12 +6,12 @@ class Feroxbuster < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95e78aaa0ae74a6fe25a19776aa739616c74b67b23b84468dac101d2b4b44b80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba73b57bdcef33fdaadaea5f6b79127cf5cd525a9665076da381e3f6d6466ff0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0aa8747e2c197f0111baf30ea0233bd8c93ed05e2c2de3ca000d5b49b17e8024"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3bf6438f6fc75f515ff88ffbb9e69a596b447734e999d79943d745a9506cbbad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "494023a21a90bd45c10b49b9f0d53a94e62bb826328bb8d07928df9f0939be77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97175185099c811858825eca8eff095dd3d8a890bfb73d1bd0dcc5ede1de0902"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf3d55e45eb9afabc85f7c67eae77c6709d1fc4a8185778623123a80122c6c28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ab47077afdd89da24c43701285b8c72907793e5f8c37c45937d658477468b78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48a383c603dd30adc6c913746686c4e7ffa734b7a5891e0fa26ec70a7e3d763a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71c0e2331a9c2181491888c1bc1c76aadd6ee454fea4c872115ae661ea2abd19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2352ef2c7a4f221b5ab323274e35ff40793ec3d787a0daf8744637645b7467f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20afd4144eff9917898c9708e1073c071c27a5a8b4dfff6ba65f211b86862c9c"
   end
 
   depends_on "pkgconf" => :build
