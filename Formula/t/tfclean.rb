@@ -6,6 +6,15 @@ class Tfclean < Formula
   license "MIT"
   head "https://github.com/takaishi/tfclean.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df641214713341ef11d2ca48c7be0ca7177a04d520de95fb208b9207686dc575"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df641214713341ef11d2ca48c7be0ca7177a04d520de95fb208b9207686dc575"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df641214713341ef11d2ca48c7be0ca7177a04d520de95fb208b9207686dc575"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9eee9b26fce4debefcd8eaf347bd597e7097cfd11869916137f7c41901bba9a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "440e7542791dcc04e314419c30d04ba7c834c13567d87db73e91a47eb815c9a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9769e497d7b7eb81618c7146b0c93a25d730b0f070d2a513b516cc77e05bcb02"
+  end
+
   depends_on "go" => :build
 
   def install
