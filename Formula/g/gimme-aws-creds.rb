@@ -10,13 +10,13 @@ class GimmeAwsCreds < Formula
   head "https://github.com/Nike-Inc/gimme-aws-creds.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "309b2b1d8fab8ff79aab405c159ab2c76dc702f1dfd32a7500353542723b1fb6"
-    sha256 cellar: :any,                 arm64_sequoia: "b3baf7b3285d562d8e969e4539cbdfc06d0ca82f0cb61c310a53f49a6ba7e7ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "22cb5ec970cd13cc469892cdc60a0ce357fff4b5dc43d31c7f8353d54f48ac64"
-    sha256 cellar: :any,                 sonoma:        "36613272c201c105a5b1f29ebd793045e49c19dde7966f0809204b35f9b90795"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ba09476be848721e4fadbe2d487bd245a25d3fdc5364558b04a4aa94d63364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54dbf64248890f9c30cba91d17774931752178eb05573414d04b5ab73e240c7f"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "6dcd6833ff8f8af21c333fa0becc75c89371e2df3071a36bf5e2e5b501b08e03"
+    sha256 cellar: :any,                 arm64_sequoia: "22268f59c3b71df45c5385773a1086c1bcec4067a282ed4dc32f983a89430cf9"
+    sha256 cellar: :any,                 arm64_sonoma:  "72f0b352dc736aac05c3f00573ce8ac8b558a820d6adb627eb21058d60a6e58f"
+    sha256 cellar: :any,                 sonoma:        "c2e0e5f418cc9f664a094c92f36c16d7ad4eade3270a70eeb2e57f781e637b04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3aba4171d3172a422f3f66b32fa85831778af5113e4576fad88c96b165b50ec1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "debd178cc8114f64624385a013a6fe1b6e54541d4e91e78fc82b49c4ef5aa470"
   end
 
   depends_on "certifi"
