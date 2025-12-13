@@ -199,7 +199,8 @@ class Datalad < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "datalad", "--shell")
   end
 
