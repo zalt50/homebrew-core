@@ -9,12 +9,13 @@ class Fastmcp < Formula
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac8942ee845290a2b2cfaf203e8ec7d858db1d3ea81f2bf8475da74ac94288d3"
-    sha256 cellar: :any,                 arm64_sequoia: "0be14c0fb2b8e74bd98214ef9fb134ab2b18ef23ae03b50ff509e19a6d011db7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3105b469e6dfc2f8ee8a965c8acc6024497577f6883a0cde9d4599cdd2a7bf3"
-    sha256 cellar: :any,                 sonoma:        "4e6b69faeb6174af8360d8efa255ea6fc3169a50a6dcedc59fbaf529474c20a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "922d7577ebcf644ec75c10df9a0ccd00aa7709bc5c7aa836f6a1515a627f4cd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a15d3b573535b5a27b103e6da98d967ea9a28f41bf8744e6181d10940bad3d91"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3c93872c2022e16504878e9a9620afab835a797bd7fa9737b2582219a74fdc38"
+    sha256 cellar: :any,                 arm64_sequoia: "08db990b87d1a4ccf7cd9dd930db6822abf19032f8560eaeaefc9a7d23128636"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c1fc0aa9b790615a0bd0d4c2169a5c875a5182f0b57d41874c620ec22621e08"
+    sha256 cellar: :any,                 sonoma:        "c35af371018604deb706854729384330b22254903fb295dba1854aa1ebb1fc96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "016ff21ccb8b0d8b6266a1bbe04e6667987397e30ba7b2806f1c6ae68ddc22f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65dc12b7d6f482908490999beca5b4679fc5625a393746e0355a2633358086f"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
