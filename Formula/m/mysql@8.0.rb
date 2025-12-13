@@ -26,6 +26,9 @@ class MysqlAT80 < Formula
 
   keg_only :versioned_formula
 
+  # See: https://endoflife.date/mysql
+  deprecate! date: "2026-04-30", because: :unsupported
+
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
