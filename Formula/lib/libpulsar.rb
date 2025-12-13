@@ -1,19 +1,18 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.8.0/apache-pulsar-client-cpp-3.8.0.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.8.0/apache-pulsar-client-cpp-3.8.0.tar.gz"
-  sha256 "e5abff91da01cbc19eb8c08002f1ba765f99ce5b7abe1b1689b320658603b70b"
+  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-4.0.0/apache-pulsar-client-cpp-4.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-4.0.0/apache-pulsar-client-cpp-4.0.0.tar.gz"
+  sha256 "8bad1ed09241ba62daa82b84446b3c45e9de5873c407ef09f533fac0332918bc"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "06c8b663c02f0aa3885c3e7ae1feec2baa316624356a4d38234a197b08ab2b0b"
-    sha256 cellar: :any,                 arm64_sequoia: "b5267dd907569faf3d9247081ac74d87529d8d347886e081c159d9ad614972ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "724067279cee63476399ac7dea32dc0ab64767ffa085d008e7858b388dccf2bc"
-    sha256 cellar: :any,                 sonoma:        "a0d978207818c07e3e6c42ad8cca01e57d12e3f49007c862eed0840aac9a5823"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddecccac3c8fa766e9ab84a92bfcce2e2e723791e3b8131106a6bca063f36994"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40e9c12187756f1a0189c2c735dad6173391de4e674b34683f8fc3bb3c97d36d"
+    sha256 cellar: :any,                 arm64_tahoe:   "4484abf642d604912a93d4acb4486c1660873a156b324cbe389d2fb7f528f460"
+    sha256 cellar: :any,                 arm64_sequoia: "32c8a45d86d01dbd6e09215493d42a1fb74d12f283f31f8736042c9ed9cfedaf"
+    sha256 cellar: :any,                 arm64_sonoma:  "01ae811c6a55650199fbeb469fb01ebce634b5acca1a60f746db5a6ebec2946c"
+    sha256 cellar: :any,                 sonoma:        "63677fbc61e7bab1dedd878286e264931b21da4bdec4af5847f7e5d9f92940ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6faf9ade1e8aafdd1387b5c19c062d5191755165e5572b8d6a27a1722ea2ba06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e22ebd5aa7a6b414c19c817b31bc3074dfa5bf16e0c2ab5d6fd922c00300528"
   end
 
   depends_on "boost" => :build
@@ -27,9 +26,6 @@ class Libpulsar < Formula
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
-
-  # Workaround for Protobuf 30+, issue ref: https://github.com/apache/pulsar-client-cpp/issues/478
-  patch :DATA
 
   def install
     args = %W[
@@ -56,24 +52,7 @@ class Libpulsar < Formula
       }
     CPP
 
-    system ENV.cxx, "-std=gnu++11", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
+    system ENV.cxx, "-std=c++17", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
     system "./test"
   end
 end
-
-__END__
-diff --git a/lib/ProtobufNativeSchema.cc b/lib/ProtobufNativeSchema.cc
-index 5cddf74..4bf45cf 100644
---- a/lib/ProtobufNativeSchema.cc
-+++ b/lib/ProtobufNativeSchema.cc
-@@ -39,8 +39,8 @@ SchemaInfo createProtobufNativeSchema(const google::protobuf::Descriptor* descri
-     }
-
-     const auto fileDescriptor = descriptor->file();
--    const std::string& rootMessageTypeName = descriptor->full_name();
--    const std::string& rootFileDescriptorName = fileDescriptor->name();
-+    const std::string rootMessageTypeName = std::string(descriptor->full_name());
-+    const std::string rootFileDescriptorName = std::string(fileDescriptor->name());
-
-     FileDescriptorSet fileDescriptorSet;
-     internalCollectFileDescriptors(fileDescriptor, fileDescriptorSet);
