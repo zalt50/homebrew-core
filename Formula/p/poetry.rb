@@ -30,11 +30,11 @@ class Poetry < Formula
   uses_from_macos "libffi"
 
   on_linux do
-    depends_on "cryptography"
+    depends_on "cryptography" => :no_linkage
   end
 
   pypi_packages exclude_packages: %w[certifi cryptography],
-                extra_packages:   %w[cffi jeepney secretstorage xattr]
+                extra_packages:   %w[jeepney secretstorage xattr]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
@@ -217,8 +217,8 @@ class Poetry < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "virtualenv" do
@@ -241,7 +241,10 @@ class Poetry < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
-    venv = virtualenv_install_with_resources without: "zstandard"
+    without = ["zstandard"]
+    without += OS.mac? ? ["jeepney", "secretstorage"] : ["xattr"]
+    venv = virtualenv_install_with_resources(without:)
+
     resource("zstandard").stage do
       system_zstd = "--config-settings=--build-option=--system-zstd"
       system venv.root/"bin/python", "-m", "pip", "install", system_zstd, *std_pip_args(prefix: false), "."
