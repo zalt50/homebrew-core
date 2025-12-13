@@ -1,8 +1,8 @@
 class TsQueryLs < Formula
   desc "LSP implementation for Tree-sitter's query files"
   homepage "https://github.com/ribru17/ts_query_ls"
-  url "https://github.com/ribru17/ts_query_ls/archive/refs/tags/v3.13.0.tar.gz"
-  sha256 "69d4d72335aeb981ab5e776a1d19799d8e0c6fa833d8fd898ad823af3a12235e"
+  url "https://github.com/ribru17/ts_query_ls/archive/refs/tags/v3.14.0.tar.gz"
+  sha256 "cfe3bd81bd9fcd153e3813e8b6b7084eab40fc967d1eae4a4418637e37635b9d"
   license "MIT"
 
   bottle do
