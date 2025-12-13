@@ -7,7 +7,7 @@ class EasyRsa < Formula
   head "https://github.com/OpenVPN/easy-rsa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "27faeb23bcc2261704d7df714c7a5295e9af55781843523f766ded08ca04d80c"
+    sha256 cellar: :any_skip_relocation, all: "9e5f7f681e8b28d23fa4f883443566caeb27ec57d32902f935b9d3a6cece4059"
   end
 
   depends_on "openssl@3"
