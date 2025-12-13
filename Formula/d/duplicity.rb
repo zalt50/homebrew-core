@@ -5,13 +5,9 @@ class Duplicity < Formula
   homepage "https://gitlab.com/duplicity/duplicity"
   # TODO: Restore `depends_on "cryptography"` once pydrive2 replaces oauth2client
   # Issue ref: https://github.com/iterative/PyDrive2/issues/361
-  url "https://files.pythonhosted.org/packages/97/44/d1aa0f5484a8c685bda04fdbaef9d107f43894c0b843ad4b9c8abc23a324/duplicity-3.0.6.2.tar.gz"
-  sha256 "d22ee49173a19bbca23afa6d2984437da74fdbefac50049291c8d0f1a2994606"
+  url "https://files.pythonhosted.org/packages/7c/5b/ca25e39ace138a15afb0631c6dc1681c3d70b3ebe4edf72e04f5ad768b27/duplicity-3.0.6.3.tar.gz"
+  sha256 "56472b3fccadec4ee436df50cf1cd283b77d86227393924c9ebf9d0b55d190f4"
   license "GPL-2.0-or-later"
-  revision 1
-
-  # TODO: need to allow autobump to install libxml2/libxslt to resolve lxml
-  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
     rebuild 1
