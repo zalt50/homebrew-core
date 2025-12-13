@@ -1,8 +1,8 @@
 class Mlc < Formula
   desc "Check for broken links in markup files"
   homepage "https://github.com/becheran/mlc"
-  url "https://github.com/becheran/mlc/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "50d722891b9590e53b979e2d041eaf10f69525ffe1a0f40e12596fa4f0caaad5"
+  url "https://github.com/becheran/mlc/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "635c05b2dacc3769089f3a8854bebac2b06605280648d07d0136996b1d1de596"
   license "MIT"
   head "https://github.com/becheran/mlc.git", branch: "master"
 
