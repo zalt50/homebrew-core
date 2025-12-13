@@ -26,7 +26,8 @@ class Hatch < Formula
     depends_on "pycparser"
   end
 
-  pypi_packages exclude_packages: %w[certifi cryptography uv]
+  pypi_packages exclude_packages: %w[certifi cryptography uv],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
@@ -199,7 +200,8 @@ class Hatch < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
 
     generate_completions_from_executable(bin/"hatch", shell_parameter_format: :click)
   end
