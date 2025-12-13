@@ -10,6 +10,15 @@ class Rockcraft < Formula
   license "GPL-3.0-only"
   head "https://github.com/canonical/rockcraft.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "2c926287246f81ad6e25a0d570155f87a5d6e789bb3d22ea1fc8d292fbb7c291"
+    sha256 cellar: :any,                 arm64_sequoia: "3a37fd6b19cb45dc7baefddd78ff2f75e4d4388b465dff0af0cdd56308560572"
+    sha256 cellar: :any,                 arm64_sonoma:  "f658f4bfac91ff3a53945d39614590094fc37c6ac52f6ceebb97f26a75a3f6de"
+    sha256 cellar: :any,                 sonoma:        "33c5e74cd516f66bf8c1afa09d17632c476711441094d63b5273651570723a4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d991e44a6614737e12a0d4c9573b47c2dedce8580af2fdd8b45d96caaffafacf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea6d479814327b593e835e730b6b5b4e829bac0ab6f4af2ef9ade23a28966f9a"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography"
   depends_on "libsodium"
