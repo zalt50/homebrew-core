@@ -28,6 +28,10 @@ class Git < Formula
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libiconv"
+  end
+
   on_linux do
     depends_on "openssl@3" # Uses CommonCrypto on macOS
   end
@@ -77,6 +81,7 @@ class Git < Formula
     perl_version = Utils.safe_popen_read("perl", "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
 
     if OS.mac?
+      ENV["ICONVDIR"] = Formula["libiconv"].opt_prefix
       ENV["PERLLIB_EXTRA"] = %W[
         #{MacOS.active_developer_dir}
         /Library/Developer/CommandLineTools
