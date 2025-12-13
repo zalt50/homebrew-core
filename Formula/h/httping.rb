@@ -16,14 +16,12 @@ class Httping < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5895bed583e9faad9d7be382a6890f92ca1cd229729977729246a0b3b8603597"
-    sha256 arm64_sequoia: "2edf3ec3576fcb84bcd40124d94c84e80fedba5975fa7c22aa30375e40ab48c6"
-    sha256 arm64_sonoma:  "f51c8f88fcfdf499b9402d73c8e694395f1ee09af0a1d988774f02cdd7ae9fed"
-    sha256 arm64_ventura: "cd0bd242c917ce8ce4699733fb6bd36cfccefd36bd8b0b7fba4822842601a351"
-    sha256 sonoma:        "5c887df378bbfbe24b8049e579a6325bbd7d8cba076eebe392ae3dab8dd6f832"
-    sha256 ventura:       "12e2cbfeb500c53bd2cde0ec98d9426a9736d4a40cce70035869b5220108ff6f"
-    sha256 arm64_linux:   "21a1a7426bddeb581154982e0752a0a745069893d7fb04872e2700bccb8a26db"
-    sha256 x86_64_linux:  "d216d2e231fe96782beab3f205156d657da0c91f6c6c98e2a2ab1218a1db0f33"
+    sha256 arm64_tahoe:   "071348d10108c95a9cd23e105942b81e63fbd1caea8f2367427a554f406b68e4"
+    sha256 arm64_sequoia: "b6188bb2590af36f19f4f7d2fdee0004bc740cca357770f823eace71fd576195"
+    sha256 arm64_sonoma:  "194a46abe5b4fd668eac0dbdc42d94e72b84dc7abb6fb75b180cec07f03dfda7"
+    sha256 sonoma:        "aab01cd51be36a661adb1fab505740b3cdf0b156e13d96ba6886e1389761bf1a"
+    sha256 arm64_linux:   "3dfe264e40fbf0b9759dbb72b968bc9b3a87fe01f8acb603dfab8d285880f509"
+    sha256 x86_64_linux:  "51e8dc57762f328e29329501734ca6e2b9437a69613abcc68830cc4fcf13bbd7"
   end
 
   depends_on "cmake" => :build
