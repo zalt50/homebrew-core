@@ -1,11 +1,9 @@
 class Libemf2svg < Formula
   desc "Microsoft (MS) EMF to SVG conversion library"
   homepage "https://github.com/kakwa/libemf2svg"
-  url "https://github.com/kakwa/libemf2svg/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "ad48d2de9d1f4172aca475d9220bbd152b7280f98642db561ee6688faf50cd1e"
+  url "https://github.com/kakwa/libemf2svg/archive/refs/tags/1.8.0.tar.gz"
+  sha256 "090f84711968608b3a2324e06d1314c5b581248ee834edc0e7dfbc015f0619e2"
   license "GPL-2.0-only"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "adf093b34e21931b3ef18d375f067f7b725684ee2c1c2326f47136e0ff7d8838"
@@ -28,14 +26,19 @@ class Libemf2svg < Formula
   depends_on "freetype"
   depends_on "libpng"
 
+  uses_from_macos "libxml2"
+
   on_macos do
     depends_on "argp-standalone" => :build
   end
 
   def install
+    # Bypass to check brew setup
+    # https://github.com/kakwa/libemf2svg/issues/50
+    inreplace "CMakeLists.txt", "Darwin", "PASS" if OS.mac?
+
     args = %W[-DCMAKE_INSTALL_RPATH=#{rpath}]
-    # Workaround for CMake 4 compatibility
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    args << "-DEXTERNAL_ICONV=iconv" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
