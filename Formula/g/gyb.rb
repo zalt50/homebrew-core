@@ -19,13 +19,15 @@ class Gyb < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cce016a539a683c057b8629de4141347c68e17020b32bf208a51a227c62765f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79284b61261f22098a5464fd12ddf47eaf775e4249fb17ef84b9db3af0fcc63b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41a173a2d05c2dcab747540fd493bbb968d9713c73e3952c64a93fba4cf8184d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5ca4b2f0565c78f16374dfe92d6896899391d7d9a73727a06d14b5890202955"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cadd244873a95f56800351ea23dafc2d8df312b7a0741d343c0dac26a2973ba9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7435f2202b6595ceef4b1fd0cef794caf5daaa0331c43ce81b1950ccd363891"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37fddd7a434ddbc88a53a8e2e43dbcf86d76f59ea9cd749ffb3822209c849bb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "008bda79cfd000e69dad69d3235f1a7d72a30d57a5585211213718a47e666478"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9507c1755aa60cf27d54554da0e656539891de802654b2be87090f6e9bfb918"
+    sha256 cellar: :any_skip_relocation, tahoe:         "2f221e1cba8746c483eed0ec3e8cc66bf733b446554f91e61d68a23e9c86407e"
+    sha256 cellar: :any_skip_relocation, sequoia:       "5e34af589170c41831de80947e701d64e8d1caf6497ed55bb20f6b99160d9c26"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e26fe30655ffbcdbdecf83cc9b87fec6fc5c253de532474a8c393c3aac1ac15c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26f76bd20d931941941fa60cc98e2b18a5556e050d7d56bcf54fdbd7bc8a0f16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "232f8f4c3bfea904d5fe76e2118c26373e7d8c6efaea739af13e253d99434d64"
   end
 
   depends_on "certifi"
