@@ -1,8 +1,8 @@
 class Gkrellm < Formula
   desc "Extensible GTK system monitoring application"
   homepage "https://billw2.github.io/gkrellm/gkrellm.html"
-  url "https://gkrellm.srcbox.net/releases/gkrellm-2.4.0.tar.bz2"
-  sha256 "6f83665760b936ad4b55f9182b1ec7601faf38a0f25ea1e4bddc9965088f032d"
+  url "https://gkrellm.srcbox.net/releases/gkrellm-2.5.0.tar.bz2"
+  sha256 "68c75a03a06b935afa93d3331ca1c2d862c1d50c3e9df19d9a8d48970d766b55"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -21,6 +21,9 @@ class Gkrellm < Formula
     sha256 x86_64_linux:  "866d5ec29d28c584d77357100e4f8909cf2524cefb6859670578695c4dcb6cfb"
   end
 
+  depends_on "cmake" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "at-spi2-core"
   depends_on "cairo"
@@ -43,17 +46,12 @@ class Gkrellm < Formula
     depends_on "libx11"
   end
 
-  # disable systemd service handling on macos, upstream pr ref: https://git.srcbox.net/gkrellm/gkrellm/pulls/44
-  patch do
-    url "https://git.srcbox.net/gkrellm/gkrellm/commit/bb444190052b3d4096bbaaeaef15a57df4212b3c.patch?full_index=1"
-    sha256 "20e7d9ed74977450c4417b558a2bd3bbb2cbaf6c0e8cd4df12ea07cf574fb703"
-  end
-
   def install
-    args = ["INSTALLROOT=#{prefix}"]
-    args << "macosx" if OS.mac?
-    system "make", *args
-    system "make", "INSTALLROOT=#{prefix}", "install"
+    args = []
+    args << "-Dx11=disabled" if OS.mac?
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
