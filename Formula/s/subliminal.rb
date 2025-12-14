@@ -3,10 +3,9 @@ class Subliminal < Formula
 
   desc "Library to search and download subtitles"
   homepage "https://subliminal.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/f9/d1/f55d55bf7d585f6d749b60479b4f405de0d8805324d83c598ee3d540df79/subliminal-2.4.0.tar.gz"
-  sha256 "73df6d1940166ef0e2cdeb4f8d655a4afe1082d481ec090ad2a9e66b1a1621fc"
+  url "https://files.pythonhosted.org/packages/74/f6/2ab857184363b1153212be632e88c66b2332329d2793c98d5bba5c2efc34/subliminal-2.5.0.tar.gz"
+  sha256 "3c79507e9c304895fb41eb0039b11f5abcb9f77376fe550cb605932836dfadc3"
   license "MIT"
-  revision 1
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
@@ -160,8 +159,8 @@ class Subliminal < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
