@@ -2,10 +2,9 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io/main/en/index.html"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v3.11.2",
-      revision: "a25fd153f92a7572c4bb6964bfcdbc7ba96e0892"
+      tag:      "v3.12.0",
+      revision: "d28d6b07eeefa80c6e562ab783ef0eebfe8d952e"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -75,7 +74,9 @@ class Mavsdk < Formula
     (buildpath/"third_party/mavlink").install resource("mavlink")
 
     %w[mavlink picosha2 libevents libmavlike].each do |dep|
-      system "cmake", "-S", "third_party/#{dep}", "-B", "build_#{dep}", *std_cmake_args(install_prefix: libexec)
+      system "cmake", "-S", "third_party/#{dep}", "-B", "build_#{dep}",
+                      "-DMAVLINK_DIALECT=ardupilotmega",
+                      *std_cmake_args(install_prefix: libexec)
       system "cmake", "--build", "build_#{dep}"
       system "cmake", "--install", "build_#{dep}"
     end
