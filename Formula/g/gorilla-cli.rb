@@ -9,8 +9,8 @@ class GorillaCli < Formula
   revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "875f732f209ffb9df9a5b906164932428081780919b1e7e4790116b30ec61f35"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "90ce1cb08fa3609ce611dcfbfb001512cd5a5c4f1bfa19de9b7be1d5994eb799"
   end
 
   # service is down: https://github.com/gorilla-llm/gorilla-cli/issues/64
