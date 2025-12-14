@@ -1,8 +1,8 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.14.6.tar.gz"
-  sha256 "cfabc77bff69b440cbc8909771f724c6c240e9b0f9787cb7c948d2d333fd8cf1"
+  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "e5ab52ee8abafc18f66d332ad23f144f3a5f4abce76793c2ad9f69aa70cad1b3"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
@@ -31,7 +31,7 @@ class Mdfried < Formula
       # Hello World
     MARKDOWN
 
-    output = shell_output("#{bin}/mdfried #{testpath}/test.md")
-    assert_match "system fonts detected", output
+    output = shell_output("#{bin}/mdfried #{testpath}/test.md 2>&1")
+    assert_match "cursor position could not be read", output
   end
 end
