@@ -103,8 +103,8 @@ class Sgr < Formula
   end
 
   resource "minio" do
-    url "https://files.pythonhosted.org/packages/71/99/1ad8733fa3f2fa82726e470f8c321e17f9321083b234ab45ad6b59d80d9f/minio-7.2.18.tar.gz"
-    sha256 "173402a5716099159c5659f9de75be204ebe248557b9f1cc9cf45aa70e9d3024"
+    url "https://files.pythonhosted.org/packages/40/df/6dfc6540f96a74125a11653cce717603fd5b7d0001a8e847b3e54e72d238/minio-7.2.20.tar.gz"
+    sha256 "95898b7a023fbbfde375985aa77e2cd6a0762268db79cf886f002a9ea8e68598"
   end
 
   resource "packaging" do
@@ -178,8 +178,8 @@ class Sgr < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   # Switch build-system to poetry-core to avoid rust dependency on Linux.
