@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggml-org/llama.cpp"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b7340",
-      revision: "086a63e3a5d2dbbb7183a74db453459e544eb55a"
+      tag:      "b7400",
+      revision: "0759b09c90f9e1bb8beebe74882b9f094b91f7bb"
   license "MIT"
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
@@ -68,8 +68,8 @@ class LlamaCpp < Formula
     # The test below is flaky on slower hardware.
     return if OS.mac? && Hardware::CPU.intel? && MacOS.version <= :monterey
 
-    system bin/"llama-cli", "--hf-repo", "ggml-org/tiny-llamas",
-                            "-m", "stories260K.gguf",
-                            "-n", "400", "-p", "I", "-ngl", "0"
+    system bin/"llama-completion", "--hf-repo", "ggml-org/tiny-llamas",
+                                   "-m", "stories260K.gguf",
+                                   "-n", "400", "-p", "I", "-ngl", "0"
   end
 end
