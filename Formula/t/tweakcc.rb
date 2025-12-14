@@ -1,8 +1,8 @@
 class Tweakcc < Formula
   desc "Customize your Claude Code themes, thinking verbs, and more"
   homepage "https://github.com/Piebald-AI/tweakcc"
-  url "https://registry.npmjs.org/tweakcc/-/tweakcc-3.1.6.tgz"
-  sha256 "f52019446f3d2b885548b6860df83e52644c74219565e410ee360550891ba7bc"
+  url "https://registry.npmjs.org/tweakcc/-/tweakcc-3.2.0.tgz"
+  sha256 "8f807276fa2d3ce7d029b8ff93ca63e8b8ea23426233ee20fd3483e15b787e21"
   license "MIT"
 
   bottle do
@@ -23,13 +23,17 @@ class Tweakcc < Formula
     # Remove binaries for other architectures and musl
     os = OS.linux? ? "linux" : "darwin"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
-    prebuilds = libexec/"lib/node_modules/tweakcc/node_modules/node-lief/prebuilds"
+    node_modules = libexec/"lib/node_modules/tweakcc/node_modules"
+    prebuilds = node_modules/"node-lief/prebuilds"
     prebuilds.children.each do |d|
       next unless d.directory?
 
       rm_r d if d.basename.to_s != "#{os}-#{arch}"
     end
     rm prebuilds/"#{os}-#{arch}/node-lief.musl.node" if OS.linux?
+
+    # Replace universal binaries with their native slices
+    deuniversalize_machos node_modules/"app-path/main" if OS.mac?
   end
 
   test do
