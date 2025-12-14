@@ -3,10 +3,9 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/4e/49/496c1dcd299bec19f5cc9b9e9b07c5baa7a774e4f960d3b18c6e821d60c9/streamlink-8.0.0.tar.gz"
-  sha256 "fb6252b87cb1d4d14dfc5bf1f4add1001e87016b150b7495e22e97aeae264655"
+  url "https://files.pythonhosted.org/packages/ad/bc/75add1d40af43e2d665c6ca56de31bab47f538e81e9fe8259d0a64831c41/streamlink-8.1.0.tar.gz"
+  sha256 "acd297219a0cbaaffe4e292290554b9c45408fa9f6e4dc1211d1ccd1f4a44039"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
@@ -104,8 +103,8 @@ class Streamlink < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "websocket-client" do
