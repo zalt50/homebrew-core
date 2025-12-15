@@ -7,14 +7,12 @@ class Ppsspp < Formula
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a66702cd0e81bd04a626ebc871b728043ea4bda90d198b1212c06c40e14a0a16"
-    sha256 cellar: :any, arm64_sequoia: "8f5212b45e4cc85e00696a97c7b2f19faf46eaff672261ffe4a9a1600f88918b"
-    sha256 cellar: :any, arm64_sonoma:  "15ea4f6454395652c4bc38f9162265f037c73f6adedc72ee24e1d6d8152da938"
-    sha256 cellar: :any, arm64_ventura: "cb233294259787c8052cbb7bf288ae9f96cfb2409349471c62345a77daf05e2b"
-    sha256 cellar: :any, sonoma:        "0251f2c42361a1a554ad9525992f22009291e6a540a0f5a656d59fd837884817"
-    sha256 cellar: :any, ventura:       "1343d50d74938e6f46ff7b8a478af9437f1195952877c9d964af6b6c71d5fd56"
-    sha256               arm64_linux:   "713d5f95e87d12e957e1c1fe542bc7db12d962164d1c736c711c3eec85319ec3"
-    sha256               x86_64_linux:  "db4ce3ac375ce1f4e6bf06a3453c8cf5b118a2080e7614b244db39da56a0f367"
+    sha256 cellar: :any, arm64_tahoe:   "ba081e90098ef595823c51bd0905005d5064eccec9fe7a2ab5cdd28bb7f6beb9"
+    sha256 cellar: :any, arm64_sequoia: "c52b76eec8f4d933a4a5a6d160b9b753c1f0e4fad97f500b953bc32ae4717670"
+    sha256 cellar: :any, arm64_sonoma:  "46aebb39a4f125ecfde641e0ba89f6abc01ce3afcdcf9017c56608f22113feb2"
+    sha256 cellar: :any, sonoma:        "7cbe7e5b1ee008c846e9dd75900f85483fd7672882373f313e7bb37cb5fa18b1"
+    sha256               arm64_linux:   "8b9509f8cca92b1b7ea3ad47c4f3275b0ad24ac45cd6e2eac8891148764c77b6"
+    sha256               x86_64_linux:  "e5be3400883cef9c47ed65e3fa02ff499d605364b0af88f0093b5ea1e84beed7"
   end
 
   depends_on "cmake" => :build
