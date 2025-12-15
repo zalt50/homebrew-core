@@ -1,8 +1,8 @@
 class Hl < Formula
   desc "Fast and powerful log viewer and processor"
   homepage "https://github.com/pamburus/hl"
-  url "https://github.com/pamburus/hl/archive/refs/tags/v0.33.0.tar.gz"
-  sha256 "bfc3108b10e9a18a6bcffa50388f5a61fa3fec8fbec35126994b1f4f3311ebd4"
+  url "https://github.com/pamburus/hl/archive/refs/tags/v0.33.1.tar.gz"
+  sha256 "179d8e5072e83918f42c6bf5de9e7943426322f693a6872b035a4cd41771e4fe"
   license "MIT"
   head "https://github.com/pamburus/hl.git", branch: "master"
 
