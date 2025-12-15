@@ -1,8 +1,8 @@
 class Pkl < Formula
   desc "CLI for the Pkl programming language"
   homepage "https://pkl-lang.org"
-  url "https://github.com/apple/pkl/archive/refs/tags/0.30.1.tar.gz"
-  sha256 "9f5d1b29d5c43a52b0a52f345f9e4cfaa1566b935e5f4b4f2348dd91f437deef"
+  url "https://github.com/apple/pkl/archive/refs/tags/0.30.2.tar.gz"
+  sha256 "0b18b123286f4ccf8a063e3fa5129135c1289e5c5d0241afa03d0caa1e367a3a"
   license "Apache-2.0"
 
   bottle do
@@ -14,7 +14,7 @@ class Pkl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5c8172cdf23c4ca49343fd68550fb9f90264f08fb16e795c1043df78055500f"
   end
 
-  depends_on "gradle@8" => :build
+  depends_on "gradle" => :build
   depends_on "openjdk@21" => :build
 
   uses_from_macos "zlib"
