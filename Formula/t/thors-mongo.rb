@@ -2,12 +2,9 @@ class ThorsMongo < Formula
   desc "Mongo API and Serialization library"
   homepage "https://github.com/Loki-Astari/ThorsMongo"
   url "https://github.com/Loki-Astari/ThorsMongo.git",
-      tag:      "7.0.07",
-      revision: "2fbd6b84e2b154b36e03b5d8ab1aae97a62ff5da"
+      tag:      "8.0.02",
+      revision: "6b978082056e1602ce6fb7b5f849c3e66c09f94e"
   license "GPL-3.0-only"
-  revision 1
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ca3983dbd95526122f10a78064e756f3f90d829604cb168a765e0a9e75344360"
