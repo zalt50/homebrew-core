@@ -1,10 +1,9 @@
 class Dcmtk < Formula
   desc "OFFIS DICOM toolkit command-line utilities"
   homepage "https://dicom.offis.de/dcmtk.php.en"
-  url "https://dicom.offis.de/download/dcmtk/dcmtk369/dcmtk-3.6.9.tar.gz"
-  sha256 "b93ff5561244916a6e1e7e3ecccf2e26e6932c4edb5961268401cea7d4ab9c16"
+  url "https://dicom.offis.de/download/dcmtk/dcmtk370/dcmtk-3.7.0.tar.gz"
+  sha256 "f103df876040a4f904f01d2464f7868b4feb659d8cd3f46a5f1f61aa440be415"
   license "BSD-3-Clause"
-  revision 1
   head "https://git.dcmtk.org/dcmtk.git", branch: "master"
 
   livecheck do
@@ -12,7 +11,7 @@ class Dcmtk < Formula
     regex(/href=.*?dcmtk[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 arm64_tahoe:   "76dc8240010bf2c6acf90a08fda3b77c4776ffa192f06b12aa838074529c66a4"
