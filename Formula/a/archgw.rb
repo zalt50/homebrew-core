@@ -3,10 +3,9 @@ class Archgw < Formula
 
   desc "CLI for Arch Gateway"
   homepage "https://github.com/katanemo/archgw/tree/main/arch/tools"
-  url "https://files.pythonhosted.org/packages/57/41/b5d306bd0e55840718507d5dc5ad95565f1ba96d8d10a71d01fc904ffbc2/archgw-0.3.21.tar.gz"
-  sha256 "b351ec7ef228d6cb673f26dd21b3ccb7792190b4f00a9749d85d1329dd7c9958"
+  url "https://files.pythonhosted.org/packages/a4/76/79f9d1fab003cf58703ac6db13f8f84f75fd9135c57e4937ae363aaf37fb/archgw-0.3.22.tar.gz"
+  sha256 "809a97dfe33e797616b4e039d21c2a9bee8fc3af8e45e98724155e6702d32cdb"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "6cf2e57e4066834a1c73eb10da9b9ae310a5aba20af98285d39c090d731aa777"
@@ -80,8 +79,8 @@ class Archgw < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
