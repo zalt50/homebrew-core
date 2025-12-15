@@ -9,12 +9,12 @@ class Mypy < Formula
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b1db1b9addc619d9e00dfdf33d9d1797856f40d70e5bc675650c84c7f9d6457"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff732eeee1dc705104a6d1f7feccfe25178e110220cdf73d053fc3a3446281a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04d4cd9160fd37d171149cb6127c39cab31f617a78e19398a8d49d03d8dc9082"
-    sha256 cellar: :any_skip_relocation, sonoma:        "372667c102b355db956082db92284e4880e226ecc14b340a0bcfe50b762e850d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9f66deae374a96a8865f5d67e520159ee5561e01587e26c6271973ed776e8cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d32d569e87057c9496a4d73c53320106aa2350b49819082da211aeb05ebb4ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3875d2fb32d436f8f678fdfa05314b505ac15d271e421b81672b35ee1c528a0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "102f98f96062193f74584db037ff5b902276e7e827cc1fcf9912f6c431f554cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc4f0f17ed1e3f8bb52c84914a3577f189f669a81c73eb836bec4bb40b501363"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4a02386b625de7c50c1a97d6f2ddbf6d8b150768c589d82e9d8ef5a049af854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b2d4c49ec804c1c1dafe2a905ec331944b7a770dc1dce26175dc8ed33e8a412"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97b121d058c43255715d92b58044ea0e6bd0d6cfe77d79417067387fc5032656"
   end
 
   depends_on "python@3.14"
