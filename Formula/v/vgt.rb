@@ -1,8 +1,8 @@
 class Vgt < Formula
   desc "Visualising Go Tests"
   homepage "https://github.com/roblaszczak/vgt"
-  url "https://github.com/roblaszczak/vgt/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "1db7e7d9c2e2d0b4c5c6f33a71b4e13142a20319238f7d47166fea68919488c5"
+  url "https://github.com/roblaszczak/vgt/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "c442980c2205d45d527205fc9f832f4d27f4d3e8c815f471f428266f6fcf33c6"
   license "MIT"
   head "https://github.com/roblaszczak/vgt.git", branch: "main"
 
