@@ -4,6 +4,7 @@ class PostgresLanguageServer < Formula
   url "https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.18.0.tar.gz"
   sha256 "e40dbf0301ea345e18885b0710187f08bcad2e3426f3b24181b8efc8cb357929"
   license "MIT"
+  revision 1
   head "https://github.com/supabase-community/postgres-language-server.git", branch: "main"
 
   bottle do
