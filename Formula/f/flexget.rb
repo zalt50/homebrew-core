@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/08/a3/d29e21b9f94aa2e8b3518deb9ae3d96d2ecf3654b11245bc5467376c1fbe/flexget-3.18.31.tar.gz"
-  sha256 "561bc48eb3077ac6e25042a0f5f6b10d8030bd59effdfb08832af8920892f971"
+  url "https://files.pythonhosted.org/packages/df/ee/7240d25763dd16d4657e00dd647fb09d1e3c7de5b1e36abfc554f7497308/flexget-3.18.32.tar.gz"
+  sha256 "e0bffad0b724e0e973afa6b128033720cd4a7dae6cbc1c8577308eef8818302a"
   license "MIT"
 
   bottle do
@@ -101,8 +101,8 @@ class Flexget < Formula
   end
 
   resource "flask-cors" do
-    url "https://files.pythonhosted.org/packages/76/37/bcfa6c7d5eec777c4c7cf45ce6b27631cebe5230caf88d85eadd63edd37a/flask_cors-6.0.1.tar.gz"
-    sha256 "d81bcb31f07b0985be7f48406247e9243aced229b7747219160a0559edd678db"
+    url "https://files.pythonhosted.org/packages/70/74/0fc0fa68d62f21daef41017dafab19ef4b36551521260987eb3a5394c7ba/flask_cors-6.0.2.tar.gz"
+    sha256 "6e118f3698249ae33e429760db98ce032a8bf9913638d085ca0f4c5534ad2423"
   end
 
   resource "flask-login" do
@@ -340,8 +340,8 @@ class Flexget < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "tzlocal" do
@@ -350,8 +350,8 @@ class Flexget < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "webencodings" do
