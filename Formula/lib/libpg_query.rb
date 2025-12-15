@@ -1,12 +1,10 @@
 class LibpgQuery < Formula
   desc "C library for accessing the PostgreSQL parser outside of the server environment"
   homepage "https://github.com/pganalyze/libpg_query"
-  url "https://github.com/pganalyze/libpg_query/archive/refs/tags/17-6.1.0.tar.gz"
-  version "17-6.1.0"
-  sha256 "a3dc0e4084a23da35128d4e9809ff27241c29a44fde74ba40a378b33d2cdefe2"
+  url "https://github.com/pganalyze/libpg_query/archive/refs/tags/17-6.2.0.tar.gz"
+  version "17-6.2.0"
+  sha256 "4d5f70f23d44b6a35f1420f15b42e83b383b9db91931bdb15c9b1856800c9fa7"
   license all_of: ["BSD-3-Clause", "PostgreSQL"]
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "14f536ec31d48c53677d8f707d8a1a3629064126620071316f46c64651d676ca"
@@ -22,6 +20,7 @@ class LibpgQuery < Formula
   def install
     system "make"
     system "make", "install", "prefix=#{prefix}"
+    include.install "postgres_deparse.h"
     pkgshare.install "examples"
   end
 
