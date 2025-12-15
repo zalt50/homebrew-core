@@ -4,6 +4,7 @@ class Biosig < Formula
   url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.2.src.tar.xz"
   sha256 "3f988b0923b323d2d25d642f0f749fbfa59194a9fc18c86e224d5caaa2399c5e"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
