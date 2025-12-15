@@ -12,6 +12,8 @@ class GitOctopus < Formula
     sha256 cellar: :any_skip_relocation, all: "7ab7be1a2f2ae60aeaf6a8887b4d7c444e282a9d55d82ce974932279b2569c25"
   end
 
+  deprecate! date: "2025-12-14", because: :repo_archived
+
   def install
     system "make", "build"
     bin.install "bin/git-octopus", "bin/git-conflict", "bin/git-apply-conflict-resolution"
