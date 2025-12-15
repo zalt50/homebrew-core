@@ -1,8 +1,8 @@
 class Bettercap < Formula
   desc "Swiss army knife for network attacks and monitoring"
   homepage "https://www.bettercap.org/"
-  url "https://github.com/bettercap/bettercap/archive/refs/tags/v2.41.4.tar.gz"
-  sha256 "384848630f594fadd48e80406f4cf8ceccfe3f32dd9182f7e18c20240e74a5fd"
+  url "https://github.com/bettercap/bettercap/archive/refs/tags/v2.41.5.tar.gz"
+  sha256 "85513871e105a182eb92f80ba9563ac37cb8a48bcfa98d30e1197e74c42ff15a"
   license "GPL-3.0-only"
   head "https://github.com/bettercap/bettercap.git", branch: "master"
 
@@ -29,10 +29,11 @@ class Bettercap < Formula
 
   resource "ui" do
     url "https://github.com/bettercap/ui.git",
-        revision: "6e126c470e97542d724927ba975011244127dbb1"
+        revision: "ca482e9820552bc71acba6047504efbd0a05043f"
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     (buildpath/"modules/ui/ui").install resource("ui")
     system "make", "build"
     bin.install "bettercap"
