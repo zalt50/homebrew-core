@@ -1,8 +1,8 @@
 class Recur < Formula
   desc "Retry a command with exponential backoff and jitter"
   homepage "https://github.com/dbohdan/recur"
-  url "https://github.com/dbohdan/recur/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "e1237455a14cc2b5c6a36f93b42b7fe98f24a0aad22cda7d7c7f29d83fbb261f"
+  url "https://github.com/dbohdan/recur/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "b61f4d0679492d007d326c041065ca31d2a15e08ccf55540747564631d94f43b"
   license "MIT"
 
   bottle do
