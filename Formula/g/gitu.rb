@@ -1,8 +1,8 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
   homepage "https://github.com/altsem/gitu"
-  url "https://github.com/altsem/gitu/archive/refs/tags/v0.39.0.tar.gz"
-  sha256 "db46dd349e60c82b325eadcaa64e72630fba94ce230e87aa1aaac26fa077cdba"
+  url "https://github.com/altsem/gitu/archive/refs/tags/v0.40.0.tar.gz"
+  sha256 "68a014a5b6b920ae1f82b473e7dddf9251755ada57df126c9a0a98725d1552bb"
   license "MIT"
   head "https://github.com/altsem/gitu.git", branch: "master"
 
