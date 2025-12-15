@@ -1,8 +1,8 @@
 class Mgis < Formula
   desc "Provide tools to handle MFront generic interface behaviours"
   homepage "https://thelfer.github.io/mgis/web/index.html"
-  url "https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-3.0.2.tar.gz"
-  sha256 "189b53789d4e2af3a69970880f5b1e90ff596ad3a71109ace69b2026333a8641"
+  url "https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-3.1.tar.gz"
+  sha256 "61afae1a367dbb150b24ca85f042efb15a77184a54a746f11c08d9b7cb9e94f3"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
   head "https://github.com/thelfer/MFrontGenericInterfaceSupport.git", branch: "master"
 
@@ -21,6 +21,7 @@ class Mgis < Formula
   depends_on "gcc" # for gfortran
   depends_on "numpy"
   depends_on "python@3.14"
+  depends_on "tbb"
 
   def python3
     which("python3.14")
