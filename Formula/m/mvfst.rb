@@ -1,10 +1,9 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.11.10.00.tar.gz"
-  sha256 "c970a893f4bcfe5658c217e91ffe81ca1283d91340d699cc5496da9f4e96bd75"
+  url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.12.15.00.tar.gz"
+  sha256 "acbb76ffdf9a2c38fff0a80efbb04422c2c7ba4934bdc0630626d8bb2db9f144"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
@@ -26,6 +25,13 @@ class Mvfst < Formula
   depends_on "glog"
   depends_on "libsodium"
   depends_on "openssl@3"
+
+  # Fix CMake config
+  # https://github.com/facebook/mvfst/pull/416
+  patch do
+    url "https://github.com/facebook/mvfst/commit/a65e4d4042dd6a37448550bb7de42cc591a917e9.patch?full_index=1"
+    sha256 "a6d7602b0372ea791664948a1ecdb006479c352b402174f42596384ee9b6c864"
+  end
 
   def install
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
