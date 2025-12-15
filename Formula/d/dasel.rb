@@ -1,8 +1,8 @@
 class Dasel < Formula
   desc "JSON, YAML, TOML, XML, and CSV query and modification tool"
   homepage "https://github.com/TomWright/dasel"
-  url "https://github.com/TomWright/dasel/archive/refs/tags/v2.8.1.tar.gz"
-  sha256 "ba8da9569f38e7f33453c03ac988382291a01004a96c307d52cccadb9ef7837e"
+  url "https://github.com/TomWright/dasel/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "08eb0a602233e9a400aeca7c19e122a58da2315370fc8a14d61692931c7c210f"
   license "MIT"
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
@@ -23,14 +23,12 @@ class Dasel < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/tomwright/dasel/v2/internal.Version=#{version}"
+    ldflags = "-s -w -X github.com/tomwright/dasel/v#{version.major}/internal.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/dasel"
-
-    generate_completions_from_executable(bin/"dasel", "completion")
   end
 
   test do
-    assert_equal "\"Tom\"", shell_output("echo '{\"name\": \"Tom\"}' | #{bin}/dasel -r json 'name'").chomp
-    assert_match version.to_s, shell_output("#{bin}/dasel --version")
+    assert_equal "\"Tom\"", shell_output("echo '{\"name\": \"Tom\"}' | #{bin}/dasel -i json 'name'").chomp
+    assert_match version.to_s, shell_output("#{bin}/dasel version")
   end
 end
