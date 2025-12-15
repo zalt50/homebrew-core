@@ -2,8 +2,8 @@ class Vroom < Formula
   desc "Vehicle Routing Open-Source Optimization Machine"
   homepage "http://vroom-project.org/"
   url "https://github.com/VROOM-Project/vroom.git",
-      tag:      "v1.13.0",
-      revision: "c87a87c4053b01396fb1011f665910c696e27c91"
+      tag:      "v1.14.0",
+      revision: "1fd711bc8c20326dd8e9538e2c7e4cb1ebd67bdb"
   license "BSD-2-Clause"
 
   no_autobump! because: :requires_manual_review
@@ -32,11 +32,13 @@ class Vroom < Formula
   # PR ref: https://github.com/VROOM-Project/vroom/pull/1279
   patch :DATA
 
-  def install
-    # fixes https://github.com/VROOM-Project/vroom/issues/997 , remove in version > 1.13.0
-    inreplace "src/main.cpp", "throw cxxopts::OptionException", "throw cxxopts::exceptions::parsing"
-    inreplace "src/main.cpp", "catch (const cxxopts::OptionException", "catch (const cxxopts::exceptions::exception"
+  # remove jthread usage, upstream PR ref, https://github.com/VROOM-Project/vroom/pull/1065
+  patch do
+    url "https://github.com/VROOM-Project/vroom/commit/0cd72771fb79840a2a0ff64a58f0c18830665119.patch?full_index=1"
+    sha256 "b271c6a7f27c17fbc5eb47c7b80bd697e29af8f631a4e27d68d00f9b08e9e9f9"
+  end
 
+  def install
     # Use brewed dependencies instead of vendored dependencies
     cd "include" do
       rm_r(["cxxopts", "rapidjson"])
@@ -44,6 +46,14 @@ class Vroom < Formula
       ln_s Formula["cxxopts"].opt_include, "cxxopts/include"
       ln_s Formula["rapidjson"].opt_include, "rapidjson"
     end
+
+    files = %w[
+      src/routing/http_wrapper.h
+      src/utils/input_parser.cpp
+      src/utils/output_json.cpp
+      src/utils/output_json.h
+    ]
+    inreplace files, "../include/rapidjson/include/rapidjson", "rapidjson"
 
     cd "src" do
       system "make"
