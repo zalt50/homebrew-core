@@ -2,10 +2,9 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_09_1.tar.gz"
-  sha256 "7fb3510b69af358009e2d0763c1d9665ac34f4c2cd3314cf5210ee3d5a33d501"
+  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_09_3.tar.gz"
+  sha256 "2d68e147086d107d210477b38bcea6df286de5acf1eab5e22ac9aec3b3b15d5a"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -118,6 +117,8 @@ class Rdkit < Formula
       system "cmake", "--build", "#{builddir}/Code/PgSQL/rdkit"
       system "cmake", "--install", builddir, "--component", "pgsql"
     end
+
+    rm lib/"libexpat.a" # conflicts with `expat` formula
   end
 
   def caveats
