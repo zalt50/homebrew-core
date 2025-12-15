@@ -3,10 +3,9 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/6d/a9/0a55bc84983ed23bcda8b0d61c83a941b60f92faf1c275edc5acdf99fc5f/vunnel-0.43.0.tar.gz"
-  sha256 "8c434be0accbbc4a3cbcdc2fe899550bc1e36730917234cb632fbfd5108e0a6f"
+  url "https://files.pythonhosted.org/packages/08/67/95a9a2da687bb890926677645b33b43bc79bc1bfa59cc75721663227c574/vunnel-0.45.2.tar.gz"
+  sha256 "e28f2af815c8d25c7a9aa24e8b683171b6613b5ba83a4e7e024081fbc0290e93"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
@@ -22,7 +21,7 @@ class Vunnel < Formula
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.13" # requires-python = "<3.14,>=3.13", https://github.com/anchore/vunnel/issues/952
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
