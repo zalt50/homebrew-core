@@ -1,8 +1,8 @@
 class Rollup < Formula
   desc "Next-generation ES module bundler"
   homepage "https://rollupjs.org/"
-  url "https://registry.npmjs.org/rollup/-/rollup-4.53.3.tgz"
-  sha256 "47655fd29e58c4bae4acac4ba191549d3f771de3992832d326d1dcf4ca23e7b8"
+  url "https://registry.npmjs.org/rollup/-/rollup-4.53.4.tgz"
+  sha256 "7ea2ce4ca2b294e86fd8c8e034e0c83dd8483dbc546540c87f1235587c9cf017"
   license all_of: ["ISC", "MIT"]
 
   bottle do
@@ -19,6 +19,10 @@ class Rollup < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Replace universal binaries with their native slices
+    node_modules = libexec/"lib/node_modules/rollup/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node"
   end
 
   test do
