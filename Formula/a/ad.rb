@@ -1,8 +1,8 @@
 class Ad < Formula
   desc "Adaptable text editor inspired by vi, kakoune, and acme"
   homepage "https://github.com/sminez/ad"
-  url "https://github.com/sminez/ad/archive/refs/tags/0.3.1.tar.gz"
-  sha256 "809cd09550daf38b1c4b7d19b975e6dbeb85f424f8942f20fc9cd7808c1ef196"
+  url "https://github.com/sminez/ad/archive/refs/tags/0.4.0.tar.gz"
+  sha256 "e35cf1030bc24bf336066fcd367e8a022d097357b896cb316183993951d4ffb8"
   license "MIT"
   head "https://github.com/sminez/ad.git", branch: "develop"
 
@@ -41,7 +41,7 @@ class Ad < Formula
     (testpath/"hello.ad").write <<~AD
       ,
       x/[Hh]ello, (.*)!/
-      p/$1\n/
+      p/{1}\\n/
     AD
 
     assert_match "World\nJohn\n", shell_output("#{bin}/ad -f #{testpath}/hello.ad #{testpath}/test.txt")
