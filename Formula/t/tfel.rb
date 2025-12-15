@@ -1,8 +1,8 @@
 class Tfel < Formula
   desc "Code generation tool dedicated to material knowledge for numerical mechanics"
   homepage "https://thelfer.github.io/tfel/web/index.html"
-  url "https://github.com/thelfer/tfel/archive/refs/tags/TFEL-5.0.2.tar.gz"
-  sha256 "3ba5ff8d369c15b38a56a1d33d489681ad2d2bb2ec93a67800bb5968cd1e89ec"
+  url "https://github.com/thelfer/tfel/archive/refs/tags/TFEL-5.1.0.tar.gz"
+  sha256 "1afd98200de332e97e86d109ce0e1aaa8f18cc6c6c81daec3218809509cdfad7"
   license "GPL-1.0-or-later"
   head "https://github.com/thelfer/tfel.git", branch: "master"
 
@@ -19,13 +19,6 @@ class Tfel < Formula
   depends_on "gcc" => :build # for gfortran
   depends_on "pybind11" => :build
   depends_on "python@3.14"
-
-  # Fix to error: assignment of member in read-only object
-  # PR ref: https://github.com/thelfer/tfel/pull/894
-  patch do
-    url "https://github.com/thelfer/tfel/commit/fb5ef740a47f2bef1b0d35b16b79a1fce7439ca9.patch?full_index=1"
-    sha256 "bf5581c83529af35ac70687f9195f117c9a655aec3c06c1cea231707f15d4ede"
-  end
 
   def install
     args = [
