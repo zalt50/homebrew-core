@@ -15,8 +15,8 @@ class DeviceMapper < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "f0100077ccff5761921b7c7ad3cab987d096998519b412bfe8f13bb7db47caf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a31222fd0e5591a6141f787e3275a98b27904fb5c6be0f8884239be4d13764d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c45e5431a10e40be3f485b58b39253f002b5f6e9585d5bdbf83a98a92e437981"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "521f27696d917df2d0f19399092b2536cba464aa783e9a4c14631a848d9bebc9"
   end
 
   depends_on "pkgconf" => :build
