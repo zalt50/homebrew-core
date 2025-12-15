@@ -72,11 +72,14 @@ class Pinocchio < Formula
       system "git", "pull", "--unshallow", "--tags"
     end
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
-                    "-DBUILD_UNIT_TESTS=OFF",
-                    "-DBUILD_WITH_COLLISION_SUPPORT=ON",
-                    *std_cmake_args
+    args = %W[
+      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DBUILD_UNIT_TESTS=OFF
+      -DBUILD_WITH_COLLISION_SUPPORT=ON
+    ]
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-rpath,#{rpath}" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
