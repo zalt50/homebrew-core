@@ -3,9 +3,6 @@ class Streamrip < Formula
 
   desc "Scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer"
   homepage "https://github.com/nathom/streamrip"
-  # Test dependencies should be removed, so they are added to `pypi_packages`
-  # `pygments` should be added manually, it is removed with test dependencies
-  # PR ref: https://github.com/nathom/streamrip/pull/886
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
   sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
   license "GPL-3.0-only"
@@ -27,11 +24,12 @@ class Streamrip < Formula
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: %w[certifi pillow pytest-asyncio pytest-mock]
+  pypi_packages exclude_packages: %w[certifi pillow pytest-asyncio pytest-mock],
+                extra_packages:   "pygments"
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/e6/11/238e97cbf5c1c0f725d590a092e0618dcdc50f44dbd1e2a926fae27e6f06/aiodns-3.6.0.tar.gz"
-    sha256 "9b0ef54339e6687cdbd39a7d73d7de2467cb5c115281da28f2598f058633dac8"
+    url "https://files.pythonhosted.org/packages/85/2f/9d1ee4f937addda60220f47925dac6c6b3782f6851fd578987284a8d2491/aiodns-3.6.1.tar.gz"
+    sha256 "b0e9ce98718a5b8f7ca8cd16fc393163374bc2412236b91f6c851d066e3324b6"
   end
 
   resource "aiofiles" do
@@ -185,8 +183,8 @@ class Streamrip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "yarl" do
@@ -203,6 +201,8 @@ class Streamrip < Formula
   end
 
   test do
-    system bin/"rip", "url", "https://soundcloud.com/radiarc/radiarc-irrelevance-fading"
+    assert_match version.to_s, shell_output("#{bin}/rip --version")
+
+    system bin/"rip", "database", "browse", "Downloads"
   end
 end
