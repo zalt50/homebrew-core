@@ -1,9 +1,9 @@
 class Inetutils < Formula
   desc "GNU utilities for networking"
   homepage "https://www.gnu.org/software/inetutils/"
-  url "https://ftpmirror.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz"
-  sha256 "68bedbfeaf73f7d86be2a7d99bcfbd4093d829f52770893919ae174c0b2357ca"
+  url "https://ftpmirror.gnu.org/gnu/inetutils/inetutils-2.7.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/inetutils/inetutils-2.7.tar.gz"
+  sha256 "a156be1cde3c5c0ffefc262180d9369a60484087907aa554c62787d2f40ec086"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -46,10 +46,10 @@ class Inetutils < Formula
   end
 
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-idn",
-                          "--program-prefix=g"
+                          "--program-prefix=g",
+                          *std_configure_args
     system "make", "SUIDMODE=", "install"
 
     no_conflict = OS.mac? ? noshadow : []
@@ -58,7 +58,7 @@ class Inetutils < Formula
     # (ftpd, inetd, rexecd, rlogind, rshd, syslogd, talkd, telnetd, tftpd, uucpd)
     if OS.linux?
       libexec.find.each do |path|
-        next if !File.executable?(path) || File.directory?(path)
+        next if !path.executable? || path.directory?
 
         cmd = path.basename.to_s.sub(/^g/, "")
         sbin.install_symlink libexec/"g#{cmd}" => cmd
@@ -69,7 +69,7 @@ class Inetutils < Formula
     # Symlink commands without 'g' prefix into libexec/gnubin and
     # man pages into libexec/gnuman
     bin.find.each do |path|
-      next if !File.executable?(path) || File.directory?(path)
+      next if !path.executable? || path.directory?
 
       cmd = path.basename.to_s.sub(/^g/, "")
       no_conflict << cmd unless OS.mac?
