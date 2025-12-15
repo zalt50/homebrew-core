@@ -1,10 +1,9 @@
 class MscGenerator < Formula
   desc "Draws signalling charts from textual description"
   homepage "https://gitlab.com/msc-generator/msc-generator"
-  url "https://gitlab.com/api/v4/projects/31167732/packages/generic/msc-generator/8.6.3/msc-generator-8.6.3.tar.gz"
-  sha256 "476115a4f4dc3f71fae43071c388db6323bf2298f9d3b6f5214557a570ceacf2"
+  url "https://gitlab.com/api/v4/projects/31167732/packages/generic/msc-generator/8.6.4/msc-generator-8.6.4.tar.gz"
+  sha256 "4f9b44f5439c512f95b686755526fd8772aa9df8c52e7e13bd60276a2d558557"
   license "AGPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://gitlab.com/api/v4/projects/31167732/packages"
@@ -16,8 +15,6 @@ class MscGenerator < Formula
       end
     end
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "f59601f0cbde128e5bf006d6e209896fece79956672e1b68530d7fd32a9fa7fd"
