@@ -1,12 +1,10 @@
 class Libconfig < Formula
   desc "Configuration file processing library"
   homepage "https://hyperrealm.github.io/libconfig/"
-  url "https://github.com/hyperrealm/libconfig/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "e95798d2992a66ecd547ce3651d7e10642ff2211427c43a7238186ff4c372627"
+  url "https://github.com/hyperrealm/libconfig/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "8e71983761b08c65b15b769b3ec1d980036c461fdfd415c7183378a4b3eac8f4"
   license "LGPL-2.1-or-later"
   head "https://github.com/hyperrealm/libconfig.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2748d8bececbd0c049b704a83376b556314cec841d107f5a0d2da4b72caaf034"
