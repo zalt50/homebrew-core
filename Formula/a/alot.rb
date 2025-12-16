@@ -14,12 +14,12 @@ class Alot < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "682d580669a0e7e68d83a60bf92d879e8c9260b14cc775a066f9460336186e05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2073f6c4e5efd15df25adcfb47610e6e660459b4887eb65781758e25122fcce1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce121172682f2fa975d6bea984bc29140c5d15e2acb6711fb4e593e9cd64b861"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0182e95a1b54b00b0d23616ac1e22757ead4f31a7f6d29a71282cfe220ebc538"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fe63c1ecf7ed1c13992b031363ce9fc57c9ed8b8f392a0f37f8b9260018e287"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b9196aa41058870ae15ec07ab9fc659d7c5317547ebc7664af48ba85f223508"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bafe239bf49b35e9221611636ee2fdeb27ab6c87226cd361d6cc2db75d0ec1b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c32a9fc2edc767926054eec0088f7e046896a0ddb6db4fe81d8dcc6c3d2b6a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df061f67b09ef2ba202ee591aa2494f8d28f67102e4ad12dde5857a0f4d03d4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2cf7be85bb47c92443c4d4073783ffe081bb1b516a3c71906ecae224119db89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5388543c998b2781ad298027a5c3b78747d68f2ec4b2f50b28f51d723b7445b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a5d1724c70d5a0e9afb11d269cce3b395ce1d3e58ac2bbd6236968004d4f505"
   end
 
   depends_on "sphinx-doc" => :build
