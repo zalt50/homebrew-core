@@ -1,30 +1,62 @@
 class Typedb < Formula
   desc "Strongly-typed database with a rich and logical type system"
   homepage "https://typedb.com/"
-  url "https://github.com/typedb/typedb/releases/download/2.23.0/typedb-all-mac-2.23.0.zip"
-  sha256 "93a5540c02e3e4f4b7783a2d14a8907dcfde3c2b051984ca6b2df79abc3830ce"
-  license "AGPL-3.0-or-later"
+  url "https://github.com/typedb/typedb/archive/refs/tags/3.7.2.tar.gz"
+  sha256 "0eb029ceb84be6d25b84653d7fd34dab708fc44c44965c290398a71f6f2f1926"
+  license "MPL-2.0"
 
-  no_autobump! because: :requires_manual_review
-
-  bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "dc3d91037b148bc7c232e2146eae539b52e328c6c76de01b137aa4639d6a6976"
-  end
-
-  depends_on "openjdk"
+  depends_on "protobuf" => :build
+  depends_on "rust" => :build
 
   def install
-    libexec.install Dir["*"]
-    mkdir_p var/"typedb/data"
-    inreplace libexec/"server/conf/config.yml", "server/data", var/"typedb/data"
-    mkdir_p var/"typedb/logs"
-    inreplace libexec/"server/conf/config.yml", "server/logs", var/"typedb/logs"
-    bin.install libexec/"typedb"
-    bin.env_script_all_files(libexec, Language::Java.java_home_env)
+    system "cargo", "install", *std_cargo_args
+    bin.install_symlink "typedb_server_bin" => "typedb"
+
+    inreplace "server/config.yml" do |s|
+      s.gsub!(/data-directory: .+$/, "data-directory: \"#{var}/typedb\"")
+      s.gsub!(/directory: .+$/, "directory: \"#{var}/log/typedb\"")
+    end
+    (etc/"typedb").install "server/config.yml"
+  end
+
+  service do
+    run [opt_bin/"typedb", "--config", etc/"typedb/config.yml"]
+    keep_alive true
+    working_dir var/"typedb"
   end
 
   test do
-    assert_match "A STRONGLY-TYPED DATABASE", shell_output("#{bin}/typedb server --help")
+    assert_match version.to_s, shell_output("#{bin}/typedb --version")
+
+    server_port = free_port
+    log_path = testpath/"typedb.log"
+
+    (testpath/"config.yml").write <<~YAML
+      server:
+        address: 0.0.0.0:#{server_port}
+        http:
+            enabled: false
+            address: 0.0.0.0:#{free_port}
+        authentication:
+            token-expiration-seconds: 5000
+        encryption:
+            enabled: false
+
+      storage:
+          data-directory: "#{testpath}/data"
+
+      logging:
+          directory: "#{testpath}/log"
+    YAML
+
+    pid = spawn bin/"typedb", "--config", testpath/"config.yml", [:out, :err] => log_path.to_s
+    sleep 5
+
+    output = log_path.read
+    assert_match "Running TypeDB", output
+    assert_match "Serving gRPC on 0.0.0.0:#{server_port} without TLS.", output
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
