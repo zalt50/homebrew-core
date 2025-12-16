@@ -1,19 +1,10 @@
-class ThorsMongo < Formula
-  desc "Mongo API and Serialization library"
-  homepage "https://github.com/Loki-Astari/ThorsMongo"
-  url "https://github.com/Loki-Astari/ThorsMongo.git",
-      tag:      "8.0.02",
-      revision: "6b978082056e1602ce6fb7b5f849c3e66c09f94e"
+class ThorsAnvil < Formula
+  desc "Set of modern C++20 libraries for writing interactive Web-Services"
+  homepage "https://github.com/Loki-Astari/ThorsAnvil"
+  url "https://github.com/Loki-Astari/ThorsAnvil.git",
+      tag:      "8.0.04",
+      revision: "f7bf4c45fa33d7fb4bf924d424d29a537ec56b01"
   license "GPL-3.0-only"
-
-  bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2d1ab5584eb9f49de7fabf424f87eb99b1093b60b091697afc9c9a52d3fbd39f"
-    sha256 cellar: :any,                 arm64_sequoia: "2488a6b4c438730689a96d191f4b3954cfd928de2c8f7dc24cfa50c9783c0c60"
-    sha256 cellar: :any,                 arm64_sonoma:  "e61212ba929d3f2c5be2aff3993ae8a57fb2808382a6ee25e3eb5204a67fb341"
-    sha256 cellar: :any,                 sonoma:        "5409a6b22e0dd7b59f782df8fd54cced90ca816dc4b9ab5a2bb9f900c95b8b5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3937f2bfe3f76a68d2084f4942d19e2501b9049782cc238e66ea314eb0c90911"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94cfd4096dae3b44612e06e3b9d493120b761aefa4131efaf328f7b7b5a8d032"
-  end
 
   depends_on "cmake" => :build
   depends_on "boost"
