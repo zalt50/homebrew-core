@@ -14,8 +14,8 @@ class Libdecor < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "0ce1db47f5f6e33e2eb9e56441bfd76e0743d3d73fe36ec03fc70706546e1c0b"
-    sha256 x86_64_linux: "01ed6ba19998c4ec2aa7093b943d75a8c491616c0a3638779c7297e4da276ea1"
+    sha256 arm64_linux:  "a33126a6a50cb479b6e6cf78afb9c78993e0d4c32fcaf9a7b0809b74691185e2"
+    sha256 x86_64_linux: "615d9589a6c9b46664d33c1f955b29659c09b7503ef0e1ccd7444a400cbcec90"
   end
 
   depends_on "meson" => :build
