@@ -1,12 +1,11 @@
 class ApacheSpark < Formula
   desc "Engine for large-scale data processing"
   homepage "https://spark.apache.org/"
-  url "https://dlcdn.apache.org/spark/spark-4.0.1/spark-4.0.1-bin-hadoop3.tgz"
-  mirror "https://archive.apache.org/dist/spark/spark-4.0.1/spark-4.0.1-bin-hadoop3.tgz"
-  version "4.0.1"
-  sha256 "bd5315fa89db737f005971835b94e093c3d2b8581d2411737d281627d6803cc3"
+  url "https://dlcdn.apache.org/spark/spark-4.1.0/spark-4.1.0-bin-hadoop3.tgz"
+  mirror "https://archive.apache.org/dist/spark/spark-4.1.0/spark-4.1.0-bin-hadoop3.tgz"
+  version "4.1.0"
+  sha256 "d201371b704c04eff1d979f5225af20365550c1a50eda827c43415669538ae8a"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/apache/spark.git", branch: "master"
 
   # The download page creates file links using JavaScript, so we identify
