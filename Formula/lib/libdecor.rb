@@ -1,8 +1,8 @@
 class Libdecor < Formula
   desc "Client-side decorations library for Wayland client"
   homepage "https://gitlab.freedesktop.org/libdecor/libdecor"
-  url "https://gitlab.freedesktop.org/libdecor/libdecor/-/releases/0.2.4/downloads/libdecor-0.2.4.tar.xz"
-  sha256 "b17cf420e8dcb526bf82da5d36f8443a91fad0777083fa4ec5c1df8ee877416f"
+  url "https://gitlab.freedesktop.org/libdecor/libdecor/-/releases/0.2.5/downloads/libdecor-0.2.5.tar.xz"
+  sha256 "7fd50f780a4fee90a03f7b2c09055033e488654cbaff4a0c4bbae616bac9cd1c"
   license "MIT"
 
   livecheck do
