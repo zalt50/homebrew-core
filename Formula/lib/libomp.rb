@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.7/openmp-21.1.7.src.tar.xz"
-  sha256 "0f892ed2e85e1a9bc9f55699aec0a5a020c9f0a77ce8d29fb4cdf3aee1b72033"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/openmp-21.1.8.src.tar.xz"
+  sha256 "856b023748b41ac7b2c83fd8e9f765ff48a4df2fe6777d2811ef7c7ed8f2f977"
   license "MIT"
 
   livecheck do
@@ -31,8 +31,8 @@ class Libomp < Formula
   end
 
   resource "cmake" do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.7/cmake-21.1.7.src.tar.xz"
-    sha256 "f25ca011e4453ac035e940aa729d482d08eb83a91b4aaf1f230dc9ea28cadfa4"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/cmake-21.1.8.src.tar.xz"
+    sha256 "85735f20fd8c81ecb0a09abb0c267018475420e93b65050cc5b7634eab744de9"
 
     livecheck do
       formula :parent
