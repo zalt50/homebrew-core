@@ -14,8 +14,6 @@ class BatsCore < Formula
     sha256 cellar: :any_skip_relocation, all: "9e117b2e74af3e8a6edf752036fb1622382d7fc8861076cdc49e372cc9f991fb"
   end
 
-  depends_on "coreutils"
-
   uses_from_macos "bc" => :test
 
   def install
