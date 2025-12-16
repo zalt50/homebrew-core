@@ -9,30 +9,26 @@ class SnowflakeCli < Formula
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5367b6b5f8e39e46c1914505e60f205cf253b82ea43bbb5a7ed4321aefed0a17"
-    sha256 cellar: :any,                 arm64_sequoia: "a3572826c2e70fab3446d19d75d6b3273bd1fa45877399828232d17c6d53730f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8df0964d0e69016ea6bdac7f907e21c3c0fddfe648eaa8eeae060fec2c944db8"
-    sha256 cellar: :any,                 sonoma:        "4ef00bafbc33db5fde193a5b25a3c6c398ddd0e3780abf6da3fe00eac2689ea1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee2e88e5b4585e0d82563637e40038d6e6cba809f8837c15ee9622dd0dc5b2a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b0b745d306846eda5ad7dc1b34995be93cd175be4d70e929220664ddc0f2586"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1953897091ec1e19befab0fde54ea9f17ebdcaf1f619baf9e0075603178f869c"
+    sha256 cellar: :any,                 arm64_sequoia: "4a5043508ccb21ac9190fc4b24c532cb3bb759aa3aee40495ecaec3b8466d5bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "57504ac1870f1d7e8a4626ec6361260c93da970af94af7337ced166884385064"
+    sha256 cellar: :any,                 sonoma:        "402f50653da1304a0e35ff3e948a2c078e909675c4e27baa44f7c080f95ead58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "846052e83f347987bcb5f1829e6ab4e4d143486a9614a889cc772893280079e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d83054a4fa1f12e340b6a40366bb2ada9b33d3569af3b22537b519491b17b99c"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
+  depends_on "protobuf"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # `snowflake-*-python` doesn't support Python 3.14, https://github.com/snowflakedb/snowflake-cli/issues/2669
 
   conflicts_with "snow", because: "both install `snow` binaries"
 
-  # Remove `snowflake-snowpark-python` and related dependencies for now,
-  # some of their dependencies doesn't have sdist and cause build failure
-  # https://github.com/snowflakedb/snowflake-cli/commit/602760651e746de475318e5da954dd75c268f312
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic snowflake-snowpark-python],
-                extra_packages:   %w[asn1crypto boto3 botocore charset-normalizer filelock idna jeepney
-                                     jmespath packaging platformdirs pyjwt pyopenssl python-dateutil
-                                     pytz pyyaml requests s3transfer secretstorage setuptools six
-                                     snowflake-connector-python sortedcontainers tomlkit urllib3]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic],
+                extra_packages:   %w[jeepney mypy-protobuf secretstorage]
 
   resource "asn1crypto" do
     url "https://files.pythonhosted.org/packages/de/cf/d547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6ee/asn1crypto-1.5.1.tar.gz"
@@ -40,13 +36,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/8c/07/dfa651dbd57bfc34d952a101280928bab08ed6186f009c660a36c211ccff/boto3-1.42.9.tar.gz"
-    sha256 "cdd4cc3e5bb08ed8a0c5cc77eca78f98f0239521de0991f14e44b788b0c639b2"
+    url "https://files.pythonhosted.org/packages/3e/32/9d54ee4e36d5ae4c302336ed6e5dc64b8d830632c0c75dea98c9e0359825/boto3-1.42.10.tar.gz"
+    sha256 "8b7a1eb83ab7f0c89bb449ccac400eeca6f4ba6e33ba312e2281c6d864602bc3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fd/f3/2d2cfb500e2dc00b0e33e3c8743306e6330f3cf219d19e9260dab2f3d6c2/botocore-1.42.9.tar.gz"
-    sha256 "74f69bfd116cc7c8215481284957eecdb48580e071dd50cb8c64356a866abd8c"
+    url "https://files.pythonhosted.org/packages/92/78/62e3a929fe655cf79313b930c7ca774ef064831cc234b660a6a2869c32f5/botocore-1.42.10.tar.gz"
+    sha256 "84312c37ddc34cd0cce25436f26370af1edb9e1b1944359ee15350239537cdaa"
   end
 
   resource "charset-normalizer" do
@@ -59,9 +55,14 @@ class SnowflakeCli < Formula
     sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
+  resource "cloudpickle" do
+    url "https://files.pythonhosted.org/packages/52/39/069100b84d7418bc358d81669d5748efb14b9cceacd2f9c75f550424132f/cloudpickle-3.1.1.tar.gz"
+    sha256 "b216fa8ae4019d5482a8ac3c95d8f6346115d8835911fd4aefd1a445e4242c64"
+  end
+
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "gitdb" do
@@ -159,6 +160,11 @@ class SnowflakeCli < Formula
     sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
   end
 
+  resource "protobuf" do
+    url "https://files.pythonhosted.org/packages/52/f3/b9655a711b32c19720253f6f06326faf90580834e2e83f840472d752bc8b/protobuf-6.31.1.tar.gz"
+    sha256 "d8cac4c982f0b957a4dc73a80e2ea24fab08e679c0de9deb835f4a12d69aca9a"
+  end
+
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -244,6 +250,14 @@ class SnowflakeCli < Formula
     sha256 "8655a94c211ae04d1d803dbc876249de6d3f8021cc5738d689aea842d1b66a7f"
   end
 
+  resource "snowflake-snowpark-python" do
+    url "https://files.pythonhosted.org/packages/f3/3c/cc3a4b4c02aa080dc13ec47f4069cfe08557f67f33f9cd772b42dc317175/snowflake_snowpark_python-1.41.0.tar.gz"
+    sha256 "19c90354eb103c37c6502e5b880b47235db6abb0fac1910c022aa98740331785"
+
+    # Remove `protoc-wheel-0` dependency, it can be replaced with `protobuf` formula
+    patch :DATA
+  end
+
   resource "sortedcontainers" do
     url "https://files.pythonhosted.org/packages/e8/c4/ba2f8066cceb6f23394729afe52f3bf7adec04bf9ed2c820b39e19299111/sortedcontainers-2.4.0.tar.gz"
     sha256 "25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"
@@ -259,6 +273,11 @@ class SnowflakeCli < Formula
     sha256 "0c600503d472bcf98d29914d4dcd67f80c24cc245395e2e00ba3603c9332e8ba"
   end
 
+  resource "tzlocal" do
+    url "https://files.pythonhosted.org/packages/8b/2e/c14812d3d4d9cd1773c6be938f89e5735a1f11a9f184ac3639b93cef35d5/tzlocal-5.3.1.tar.gz"
+    sha256 "cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"
+  end
+
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
@@ -267,6 +286,11 @@ class SnowflakeCli < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
+    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
   end
 
   def install
@@ -285,3 +309,17 @@ class SnowflakeCli < Formula
     assert_match "No data", shell_output("#{bin}/snow connection list")
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index 6b87735..34b6f7d 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,7 +1,6 @@
+ [build-system]
+ requires = [
+     "setuptools",
+-    "protoc-wheel-0==21.1", # Protocol buffer compiler for Snowpark IR
+     "mypy-protobuf", # used in generating typed Python code from protobuf for Snowpark IR
+ ]
+ build-backend = "setuptools.build_meta"
