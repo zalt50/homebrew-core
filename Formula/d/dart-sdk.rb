@@ -6,12 +6,12 @@ class DartSdk < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd4221a5e0f8eea99d6e8390ce66e64bb9e53750f735ef4b15aa001f7f30799a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10f5f4da4cd7c2bcc978bb0499c016bff7ef2cff6c8e43c0a296c4779a0f455f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eae5c7be17524aa4f3228178e4aa73e5fee434a01b1b86065241f7ef57a0499"
-    sha256 cellar: :any_skip_relocation, sonoma:        "efb7993dd17dc00e646188eaa58c70517b4280cc4c136fc6f37f614d3381f44f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2772347a65f1b9c8e7cf9b4bbc631cc74c804f7d2724ddcc1f10ed850cdcf5d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "754cd6cede6ba86a897a1a76bf1dbd96d2e9df59ee56f13279801d60c4f8e529"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c5e4b33cee9deb59b6498026a02f1b4975c6563c9023250248654c7de5d4e63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f42030530798cd0ab20de929aeb6aa813159f5ad2cbb2af988df7cfabaf1647"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b67f14efc3482848ee9a2d010a757177910ff9c23c487195cb331919f707dbed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfadc7e47ea079d3892d1b9d91c0157308f16201a1bc80a0cdb0287cf5b1bb8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fcae4c10bdade822d75a554144e880a64ab013195b9bd05178060892b18ec1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46c0652c44bfda332127e6e2d28b51d14a940c6540f96232adc9506d5cc2c61c"
   end
 
   depends_on "ninja" => :build
