@@ -1,8 +1,8 @@
 class Xh < Formula
   desc "Friendly and fast tool for sending HTTP requests"
   homepage "https://github.com/ducaale/xh"
-  url "https://github.com/ducaale/xh/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "6145f48cbefbb2bd1aa97ebcc8528d15ada1303e6e80fdd6a4637014f0f1df1c"
+  url "https://github.com/ducaale/xh/archive/refs/tags/v0.25.3.tar.gz"
+  sha256 "ba331c33dc5d222f43cc6ad9f602002817772fd52ae28541976db49f34935ae3"
   license "MIT"
   head "https://github.com/ducaale/xh.git", branch: "master"
 
@@ -28,7 +28,7 @@ class Xh < Formula
   end
 
   test do
-    hash = JSON.parse(shell_output("#{bin}/xh -I -f POST https://httpbin.org/post foo=bar"))
-    assert_equal hash["form"]["foo"], "bar"
+    assert_match version.to_s, shell_output("#{bin}/xh --version")
+    assert_match "Accept-Encoding: gzip, deflate, br, zstd", shell_output("#{bin}/xh --offline https://httpbin.org/get")
   end
 end
