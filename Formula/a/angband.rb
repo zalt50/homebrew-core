@@ -1,16 +1,14 @@
 class Angband < Formula
   desc "Dungeon exploration game"
   homepage "https://rephial.org/"
-  url "https://github.com/angband/angband/releases/download/4.2.5/Angband-4.2.5.tar.gz"
-  sha256 "c4cacbdf28f726fcb1a0b30b8763100fb06f88dbb570e955232e41d83e0718a6"
+  url "https://github.com/angband/angband/releases/download/4.2.6/Angband-4.2.6.tar.gz"
+  sha256 "8c0ffa2b85d74bd0cc273752f61c0440dba93323cd790be460f90c8dced7cbf4"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
