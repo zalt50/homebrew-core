@@ -1,8 +1,8 @@
 class ContainerStructureTest < Formula
   desc "Validate the structure of your container images"
   homepage "https://github.com/GoogleContainerTools/container-structure-test"
-  url "https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "94f6ae60ddb13ba1774a226e3f2650f736871bad61a18982e0b825bde2ad568a"
+  url "https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.22.1.tar.gz"
+  sha256 "186bb1493ebb3c597e53b2a7abd5460c683c63d404e44a64223d26bb3315841d"
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/container-structure-test.git", branch: "main"
 
