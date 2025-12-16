@@ -1,8 +1,8 @@
 class Dropbear < Formula
   desc "Small SSH server/client for POSIX-based system"
   homepage "https://matt.ucc.asn.au/dropbear/dropbear.html"
-  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2025.88.tar.bz2"
-  sha256 "783f50ea27b17c16da89578fafdb6decfa44bb8f6590e5698a4e4d3672dc53d4"
+  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2025.89.tar.bz2"
+  sha256 "0d1f7ca711cfc336dc8a85e672cab9cfd8223a02fe2da0a4a7aeb58c9e113634"
   license "MIT"
 
   livecheck do
@@ -37,6 +37,16 @@ class Dropbear < Formula
 
   def install
     ENV.deparallelize
+
+    # It doesn't compile on macOS with these macros because of the missing `setresgid()` function
+    # There's no option to disable it via `./configure` flags and upstream suggests to fix it
+    # by changing `src/default_options.h` manually (see `CHANGES`)
+    if OS.mac?
+      inreplace "src/default_options.h" do |s|
+        s.gsub! "#define DROPBEAR_SVR_DROP_PRIVS DROPBEAR_SVR_MULTIUSER", ""
+        s.gsub! "#define DROPBEAR_SVR_LOCALSTREAMFWD 1", ""
+      end
+    end
 
     if build.head?
       system "autoconf"
