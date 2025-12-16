@@ -3,8 +3,8 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/79/8e/e26977a5f918cfa63fdc3364ca2b2784a6a3b4824d0e1e48e43236e02291/dxpy-0.401.0.tar.gz"
-  sha256 "1f8c09aa191941210c4371fdad4566ff9c9a689b0f72ca9a09a9a233207e880b"
+  url "https://files.pythonhosted.org/packages/0b/b8/b25a425d2a31dd8324b6b356d06c33ccfe6a1a80518e5e0d4d6f6addf0b1/dxpy-0.402.0.tar.gz"
+  sha256 "ae3d43ac10b54162b2b51e646e3054d9824af251f771f2a846776087141e9198"
   license "Apache-2.0"
 
   bottle do
@@ -16,21 +16,44 @@ class Dxpy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bb51069fde0160143d86cb3d15d1881ddcb426f415d87b6a924c47e971b1c3f"
   end
 
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "cmake" => :build # for awscrt
+  depends_on "aws-c-auth"
+  depends_on "aws-c-cal"
+  depends_on "aws-c-common"
+  depends_on "aws-c-compression"
+  depends_on "aws-c-event-stream"
+  depends_on "aws-c-http"
+  depends_on "aws-c-io"
+  depends_on "aws-c-mqtt"
+  depends_on "aws-c-s3"
+  depends_on "aws-c-sdkutils"
+  depends_on "aws-checksums"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "openssl@3"
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
   on_macos do
-    depends_on "readline"
+    depends_on "readline" => :no_linkage
   end
 
-  pypi_packages exclude_packages: ["cryptography", "certifi"]
+  on_linux do
+    depends_on "aws-lc"
+    depends_on "s2n"
+  end
+
+  pypi_packages exclude_packages: %w[cryptography certifi]
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
     sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
+  end
+
+  resource "awscrt" do
+    url "https://files.pythonhosted.org/packages/82/1b/b5578329a77fe06aa66645f3827a4f5c1291ad39925775b49343f209b5d5/awscrt-0.30.0.tar.gz"
+    sha256 "e1a133430e71116e9c0f101b0d11227f47b7c561ad5303f5af00f6c33a16f382"
   end
 
   resource "crc32c" do
@@ -39,8 +62,8 @@ class Dxpy < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "python-dateutil" do
@@ -64,6 +87,9 @@ class Dxpy < Formula
   end
 
   def install
+    ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
+    ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBS"] = "1"
+
     virtualenv_install_with_resources
   end
 
