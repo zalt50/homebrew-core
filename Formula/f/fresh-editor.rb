@@ -1,8 +1,8 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.44.tar.gz"
-  sha256 "1f57ff792c7886c8c0edd8327c2aa88892a3fb8bd1d331485e9b1d17dd729553"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.52.tar.gz"
+  sha256 "a454ebf90b53a0e0097b317d13a413f71549e3d1685e6607361dd63c01cd3e35"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -28,7 +28,8 @@ class FreshEditor < Formula
       {"type":"quit"}
     JSON
 
-    pipe_output("#{bin}/fresh --script-mode --no-session test.txt", commands)
-    assert_match "Hello from Homebrew", (testpath/"test.txt").read
+    pipe_output("#{bin}/fresh --no-session test.txt --log-file fresh.log", commands)
+    log_output = (testpath/"fresh.log").read.gsub(/\e\[\d+(;\d+)?m/, "")
+    assert_match "INFO fresh: Editor starting", log_output
   end
 end
