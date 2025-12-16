@@ -27,13 +27,12 @@ class Polynote < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "83a7b0af49ba4ab4ad4da51b15ffe2e9609cda61d2027f566d97d87461557974"
-    sha256 cellar: :any, arm64_sequoia: "4747bf5c546668f894b6fe33984237f7dd1bd6bb90220df4923797f670b014ee"
-    sha256 cellar: :any, arm64_sonoma:  "1ee1662e8ef70df9244d5d4bff9df24ab2ac50c06871f1ee77902a4453f41dc3"
-    sha256 cellar: :any, sonoma:        "987e62d3b5ccf2d0bf0b3d7055628478d3b8fcd4d7ad889c13c8fa9aff6ded02"
-    sha256               arm64_linux:   "426f9eafe5932f3b4e48f8dcab47ea25b0af7c7683fb3f7c814d27439dd2bd09"
-    sha256               x86_64_linux:  "6815b22885a9e13f6d381db68b8bddc4249786d2f33bacd98ef95df6a9bcb8ca"
+    sha256 cellar: :any, arm64_tahoe:   "636648fae058e34b1cffa00390fa593cafac97dd8fce2f04027ac414ca689931"
+    sha256 cellar: :any, arm64_sequoia: "b92dd9392d2464b4f47c04cd4949962fb2c8b0c7e0583ce6e945f09ca6d7a3f0"
+    sha256 cellar: :any, arm64_sonoma:  "a41d74539228e264fcc881cd92efb34df5480ffbc12ec1718e675e4bd537b078"
+    sha256 cellar: :any, sonoma:        "3cb02416bef3a72f1ebf4a5457c6dafe5bab77dde8b6b13c20182e1d38cc98a5"
+    sha256               arm64_linux:   "8a34a94e02df60a7ba9603fa1fbab473ca5cb855e57d38ed024940ec1dbc1a2e"
+    sha256               x86_64_linux:  "ab2b732d4b3f2480a58bfee82768ed0143295a27d7a639b6b50e6cf8c01297cd"
   end
 
   depends_on "node" => :build
