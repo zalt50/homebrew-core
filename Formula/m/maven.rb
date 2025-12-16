@@ -12,8 +12,7 @@ class Maven < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "2f1d82c971cd4c85e9d2dac09ecab088398d2313144648110efad51a0eccb53b"
+    sha256 cellar: :any_skip_relocation, all: "aee06a657afd6f9c20b4183c0c8e90325dfc29c75f300eaf22556852e58d4676"
   end
 
   depends_on "openjdk"
