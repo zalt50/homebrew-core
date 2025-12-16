@@ -1,8 +1,8 @@
 class Helmsman < Formula
   desc "Helm Charts as Code tool"
   homepage "https://github.com/mkubaczyk/helmsman"
-  url "https://github.com/mkubaczyk/helmsman/archive/refs/tags/v4.0.2.tar.gz"
-  sha256 "cac2a5bf8740072da474294abac8b9e56a65f15fbcb3849a74c5798a7551a6ba"
+  url "https://github.com/mkubaczyk/helmsman/archive/refs/tags/v4.0.3.tar.gz"
+  sha256 "d91e0938ea095abd48931fc73867b53b248ec4280dfb9adf6624669525f458ab"
   license "MIT"
   head "https://github.com/mkubaczyk/helmsman.git", branch: "master"
 
