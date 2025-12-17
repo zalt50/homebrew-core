@@ -3,8 +3,8 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.7.tar.gz"
-  sha256 "23815a6d095696f7919090fdc3e2f9459b2c83d57224b2e446ce1f5f7333ef36"
+  url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.8.tar.gz"
+  sha256 "53c4ddad41fbb6189f1f5ee0db57a51d54bd1f87f8755b3d68604156a35b045b"
   license "Ruby"
 
   # This regex restricts matching to versions other than X.Y.0.
