@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-25.3.1.tar.xz"
-  sha256 "059d0d985622f49588f01aa29152804f4da8ffe6add046e00a52923379c2d8da"
+  url "https://archive.mesa3d.org/mesa-25.3.2.tar.xz"
+  sha256 "e69dab0d0ea03e3e8cb141b032f58ea9fcf3b9c1f61b31f6592cb4bbd8d0185d"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
