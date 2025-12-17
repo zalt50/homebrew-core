@@ -1,8 +1,8 @@
 class Kanata < Formula
   desc "Cross-platform software keyboard remapper for Linux, macOS and Windows"
   homepage "https://github.com/jtroo/kanata"
-  url "https://github.com/jtroo/kanata/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "6c2d0bec8390cd0d7807aeb2550d0888434cd71d3e8c89a2765c18dd53b946ac"
+  url "https://github.com/jtroo/kanata/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "c61ea1405e2822ee7c2ab151d8b6160b9061d8bd89abf7ce6abf0da1ce91cea5"
   license "LGPL-3.0-only"
   head "https://github.com/jtroo/kanata.git", branch: "main"
 
