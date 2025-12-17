@@ -12,12 +12,12 @@ class NatsServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a503bb0342109600e803c52033d6899019cff023d0b6010da5758b1d31d804c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a503bb0342109600e803c52033d6899019cff023d0b6010da5758b1d31d804c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a503bb0342109600e803c52033d6899019cff023d0b6010da5758b1d31d804c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e185c1a328ce58683b6d8d2a1aaedb2425189cf8581dd043a8c70fab89a2b10c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c32bd67d005459e259b29c24942890e54a868ea99a7214a54c52373ec00f1cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14a10cf28b7e365a4e818c61d534add6ca61152f26c7ec42a9360078a5c3065f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1237be07b11ee612fb164d095b4784c51d3deb4a71ee51d019f539d74e6d7a41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1237be07b11ee612fb164d095b4784c51d3deb4a71ee51d019f539d74e6d7a41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1237be07b11ee612fb164d095b4784c51d3deb4a71ee51d019f539d74e6d7a41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f7ec243cd6f2a1c9a68316e4777ea9c9fa50afe79732e896d9302ce366c2ee3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f93b26cd005a8ed98ee7a2224453651fce12642ca6178a71059b7a26c83720"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72f19997100f7ac0676e908164cf8e807396d7945ae590964778c3d80632d7bd"
   end
 
   depends_on "go" => :build
