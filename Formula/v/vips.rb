@@ -1,8 +1,8 @@
 class Vips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.17.3/vips-8.17.3.tar.xz"
-  sha256 "41e9a1439cd57dcc6d4435a085e2cfe181d9da1962fa84a484f09e8b536e4b77"
+  url "https://github.com/libvips/libvips/releases/download/v8.18.0/vips-8.18.0.tar.xz"
+  sha256 "b85ab92280c30d22f5c8fe2f68b809cddb7eaac437d8c33474475dac84ddc574"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -38,9 +38,11 @@ class Vips < Formula
   depends_on "libheif"
   depends_on "libimagequant"
   depends_on "libmatio"
+  depends_on "libpng"
+  depends_on "libraw"
   depends_on "librsvg"
-  depends_on "libspng"
   depends_on "libtiff"
+  depends_on "libultrahdr"
   depends_on "little-cms2"
   depends_on "mozjpeg"
   depends_on "openexr"
