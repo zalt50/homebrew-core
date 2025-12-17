@@ -7,26 +7,20 @@ class Ruby < Formula
   stable do
     # Consider changing the default of `Gem.default_user_install` to true with Ruby 3.5.
     # This may depend on https://github.com/rubygems/rubygems/issues/5682.
-    url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.7.tar.gz"
-    sha256 "23815a6d095696f7919090fdc3e2f9459b2c83d57224b2e446ce1f5f7333ef36"
+    url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.8.tar.gz"
+    sha256 "53c4ddad41fbb6189f1f5ee0db57a51d54bd1f87f8755b3d68604156a35b045b"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
     # formula & the versioned equivalents and bumping the revisions.
     resource "rubygems" do
-      url "https://rubygems.org/rubygems/rubygems-3.7.2.tgz"
-      sha256 "efece01225a532f4b52cf8764d20a00e0d29ed6f85b33d9302df4896a90fa5ab"
+      url "https://rubygems.org/rubygems/rubygems-4.0.2.tgz"
+      sha256 "a5fdbcbd3cbd616360fc9b82d75cdfa1aea3cf1aa357496d8aecce6574d85bf8"
 
       livecheck do
         url "https://rubygems.org/pages/download"
         regex(/href=.*?rubygems[._-]v?(\d+(?:\.\d+)+)\.t/i)
       end
-    end
-
-    # Update the bundled openssl gem for compatibility with OpenSSL 3.6+
-    resource "openssl" do
-      url "https://github.com/ruby/openssl/archive/refs/tags/v3.3.1.tar.gz"
-      sha256 "ca9b8f5940153e67b0d5e7e075ecd64b9d28b9f9b2f2c9f0748c1538734dfe10"
     end
   end
 
@@ -79,17 +73,6 @@ class Ruby < Formula
   end
 
   def install
-    if build.stable?
-      openssl_gem_version = File.read("ext/openssl/openssl.gemspec")[/spec\.version\s*=\s*"(\d+(?:\.\d+)+)/, 1]
-      odie "Remove openssl resource!" if Version.new(openssl_gem_version) >= "3.3.1"
-      rm_r(%w[ext/openssl test/openssl])
-      resource("openssl").stage do
-        (buildpath/"ext").install "ext/openssl"
-        (buildpath/"ext/openssl").install "lib", "History.md", "openssl.gemspec"
-        (buildpath/"test").install "test/openssl"
-      end
-    end
-
     # otherwise `gem` command breaks
     ENV.delete("SDKROOT")
 
