@@ -5,6 +5,13 @@ class Typedb < Formula
   sha256 "0eb029ceb84be6d25b84653d7fd34dab708fc44c44965c290398a71f6f2f1926"
   license "MPL-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d4b71f2f1d936b4478b1350f651c973cbf1dcf7d2f5be03621dc96521ef79cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb6f59c177a75e0ada51fa413a0b429ce79b4d4c6eaf1fd93ff1787521c266c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6ebba0c9c893074f58ceb8e3fd509e1262d3a66aa255546e51c73d7c05fbf14"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19d7f606482ae54bd649e7552c0bfd9fe973a2701c5554c10dc4b93714c88f68"
+  end
+
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
