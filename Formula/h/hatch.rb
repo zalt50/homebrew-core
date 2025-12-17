@@ -6,6 +6,7 @@ class Hatch < Formula
   url "https://files.pythonhosted.org/packages/b9/c1/8598996a6f264d430c530799dc65fb13942fb29092e35505039a5f2fb5dc/hatch-1.16.2.tar.gz"
   sha256 "f288938da85b4b90e47d94788e19e9976dcd6fd53b48343ea251a2a37256a980"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 1
@@ -46,8 +47,8 @@ class Hatch < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "h11" do
