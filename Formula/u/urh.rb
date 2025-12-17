@@ -11,12 +11,12 @@ class Urh < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac9e1a2e9eb4ef1d2a51dd85e54252794f1082f3de02ae077b86bcf7c9c6cc24"
-    sha256 cellar: :any,                 arm64_sequoia: "62ea259eba408187297df3dada6609c7e3c132dac3005165d0e641e52220caa0"
-    sha256 cellar: :any,                 arm64_sonoma:  "44fca98d4457a4a5798ccc36bc43d3d5bb163f5206d371d7348b20babc8c8aed"
-    sha256 cellar: :any,                 sonoma:        "859acfa8aa4edfa004eabc14350f08ab187986d9fb20f1ebb724daf421fcdc83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d39c8f2f760344dff758d9ab2dff7334046172ff77d8687327dc949dd9e60898"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcb7995e05db0dfd4a416f43bc7cc57b6d31638b2b908e3f5d12ab849062a613"
+    sha256 cellar: :any,                 arm64_tahoe:   "d045c9c12bfa3c15c40058b62984619e91fc1e7883b39ff2693e140e806f71fc"
+    sha256 cellar: :any,                 arm64_sequoia: "21043800855ce2da2456d600a7710040f1af40e620f6e7269890cd9ce16e0b0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac8bf70afb6a48022aa28d9cdc411b6be8d1d7b1bc6e632b25ade589f495f568"
+    sha256 cellar: :any,                 sonoma:        "cb5dc00b8b7b0a563fc01e313b2a42aab04446fb17a02577d115a725ed336e12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "519ef56378fa53f474781233ceb35cd6fc46b21c9be649aed61089846c3b1ee1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07c1c8a80f51c56feeed46ceeb671839ef925ddafffefc669ce3a67fc0c5947f"
   end
 
   depends_on "pkgconf" => :build
