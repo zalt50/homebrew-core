@@ -1,8 +1,8 @@
 class Carl < Formula
   desc "Calendar for the command-line"
   homepage "https://github.com/b1rger/carl"
-  url "https://github.com/b1rger/carl/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "82518ea8fbd89985c40591a1b2c030b969829e9ce12ac52cd4923bd852dcd884"
+  url "https://github.com/b1rger/carl/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "741704427403353f62993687a6d2c5a7452bfbf4c108fd32757522600c4eb2e5"
   license "MIT"
   head "https://github.com/b1rger/carl.git", branch: "main"
 
