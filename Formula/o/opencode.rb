@@ -6,12 +6,12 @@ class Opencode < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "06f72551ca442a94331f6db7b8d53133e327a268febf586238e98e479b1e57be"
-    sha256                               arm64_sequoia: "06f72551ca442a94331f6db7b8d53133e327a268febf586238e98e479b1e57be"
-    sha256                               arm64_sonoma:  "06f72551ca442a94331f6db7b8d53133e327a268febf586238e98e479b1e57be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "852833e479e38673c40c2d8d266ef5b9b7c04dd6796e35a446a301e5a3066f5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb78c971c377d5e4c38588846d75014faa3b92d523b6ccdeae12d69545540841"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08fb1ed10668c069d5aca9c16371ecbdc58d93055cd9f3e618df7ed344e680ca"
+    sha256                               arm64_tahoe:   "e5f1c0f257f936154e610bd22cc78ac788290cc27b41ab45950d27a7863decd3"
+    sha256                               arm64_sequoia: "e5f1c0f257f936154e610bd22cc78ac788290cc27b41ab45950d27a7863decd3"
+    sha256                               arm64_sonoma:  "e5f1c0f257f936154e610bd22cc78ac788290cc27b41ab45950d27a7863decd3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ade27c60f461b0568d014fda145e16a7e905b84e9ecea13afaad5c1a48456031"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6772158bb7951f98c3cfe20ca5dc5cb95dc6580dfb9fa2f1619235cf6a70f08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ac0ee80830c82f4820be4fc165937b587f7a7c94c8c1a5c0bc9a59a9418d0d6"
   end
 
   depends_on "node"
