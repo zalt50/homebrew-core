@@ -1,8 +1,8 @@
 class Gotun < Formula
   desc "Lightweight HTTP proxy over SSH"
   homepage "https://github.com/Sesame2/gotun"
-  url "https://github.com/Sesame2/gotun/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "d63768ad7ae61b2fa29f100e22af19b9d43886eb85712e64c58d24b9408b92c1"
+  url "https://github.com/Sesame2/gotun/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "068bc457d87bb389fe107c8bcf5c132ba372b4700c79d4978e9de6bb8e3d0620"
   license "MIT"
 
   bottle do
@@ -45,7 +45,7 @@ class Gotun < Formula
       # GNU/Linux raises EIO when read is done on closed pty
     end
 
-    assert_match "HTTP-over-SSH", output
+    assert_match "GoTun dev", output
     assert_match "localhost:#{port}", output
   ensure
     Process.kill "TERM", server_pid
