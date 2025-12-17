@@ -31,6 +31,8 @@ class Rover < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"rover", "completion", shells: [:bash, :zsh])
   end
 
   test do
