@@ -7,12 +7,12 @@ class Carl < Formula
   head "https://github.com/b1rger/carl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fafc29ae2ab8e50cc0f7d547010cf7fa7c3a02fa69bb96f5a895afda858e5077"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a24e089317286996916a752bbe9db465f4be90e7e266f0caa35635982086d9e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9be8efd8f1f3a08c2cd598eef4014d479c0884befdd20720a1f0a39355a61013"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3bf67b636554ec5e2d7dd4d56d299ca46f04bc402af5cfba091be09769d00a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5836b6a32a188ff23e42be42af8773a984e7aa9cd6404d2b64c876d45d2ed24b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a4d985cb1d18aaaabe14401811aafa79245f504a816ec200b09600d647fabcb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7beca609fc53282dc7451f872b8bb92908f1ece042fa5a79e2a05aa99c6a10e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59176df3ef6d8ec8af4ce37f782617d4592d2cd16f763f9fc07f606ff49aa978"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "289a18bc4257358856cf2c3752c063d96446c7c16e3abee45d39db5e0ab4b667"
+    sha256 cellar: :any_skip_relocation, sonoma:        "443eb7433ca97631f287ca1b9916a9f71afa8b9e2287575c658c8414721e4188"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18ccfaa0aba8cff9d91e1d5aaf8d876b4324d48915548b65c37b2f5f38a99cbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43a50cd2291193a6d5763989250b18c220e2ff719f71d301174c580c4d2d20ae"
   end
 
   depends_on "rust" => :build
