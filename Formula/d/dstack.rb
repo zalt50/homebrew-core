@@ -3,10 +3,9 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/e0/c4/1cc285c58de7913f55103c35b401423312509132383b1d7b0d7561f88cdf/dstack-0.19.40.tar.gz"
-  sha256 "d11d2b7eb9e96f24bc5d1e102628152069f2da6b66b7be67475cd93b405fe0c3"
+  url "https://files.pythonhosted.org/packages/e8/60/9ca14a46a710ec9ab5c1936e3f3e9d92c7484d553178626b26011e8669c9/dstack-0.20.0.tar.gz"
+  sha256 "282d6b4471f9c9d7c0236d405567ffe11f88ee201b8d04e8c226bc6072f4c11d"
   license "MPL-2.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "88dd2dca8defea2c90ca9e5029637c00ed5c3afccc25760a3afc22aaad6e0462"
@@ -281,8 +280,8 @@ class Dstack < Formula
   end
 
   resource "gpuhunt" do
-    url "https://files.pythonhosted.org/packages/34/a6/50d29e7aa8a5b4fd8c8b2e283bc8c4049ed532234c035b168290aff7dfd8/gpuhunt-0.1.13.tar.gz"
-    sha256 "e2403594a540d29c90f097a33a222f3470c3bf08415b086edc14ad97493cd8d1"
+    url "https://files.pythonhosted.org/packages/a5/78/71184f4e9d73d437761a878ce660e3c0e45a24f432b50916d428c54991e5/gpuhunt-0.1.15.tar.gz"
+    sha256 "184c1134c570b428c6930391418cfa4d537cfa27cc6d2c673f6c7aab9ff242f3"
   end
 
   resource "greenlet" do
@@ -516,8 +515,8 @@ class Dstack < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
+    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
   end
 
   resource "pyyaml" do
