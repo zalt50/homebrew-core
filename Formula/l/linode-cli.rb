@@ -3,10 +3,9 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://github.com/linode/linode-cli"
-  url "https://files.pythonhosted.org/packages/32/03/d5a093199a0b934bd90f6bcb1714572be344d2049793168650723af74b7b/linode_cli-5.64.0.tar.gz"
-  sha256 "d91a5ec0d8cf291eeee8dd16ff0319185b58865f34a9f8f0d97b55c5715eb7c3"
+  url "https://files.pythonhosted.org/packages/0d/d1/0b26fcfb93890e3a6277e1ffdb999a4a1cf1127e5d007256a7e83dd63d6e/linode_cli-5.65.0.tar.gz"
+  sha256 "1f690964136a32fad0baeb3691ed4335da6c27c46d2b17e4003a06c1f9a5e453"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/linode/linode-cli.git", branch: "dev"
 
   bottle do
@@ -84,6 +83,11 @@ class LinodeCli < Formula
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
+  resource "pytimeparse" do
+    url "https://files.pythonhosted.org/packages/37/5d/231f5f33c81e09682708fb323f9e4041408d8223e2f0fb9742843328778f/pytimeparse-1.1.8.tar.gz"
+    sha256 "e86136477be924d7e670646a98561957e8ca7308d44841e21f5ddea757556a0a"
+  end
+
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -100,8 +104,8 @@ class LinodeCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
