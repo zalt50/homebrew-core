@@ -6,8 +6,6 @@ class Dasel < Formula
   license "MIT"
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cabd6f40da7d2b4207224112e732f913f3d5968e3e975360f8d163b787f389c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cabd6f40da7d2b4207224112e732f913f3d5968e3e975360f8d163b787f389c"
