@@ -3,18 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/e0/c4/1cc285c58de7913f55103c35b401423312509132383b1d7b0d7561f88cdf/dstack-0.19.40.tar.gz"
-  sha256 "d11d2b7eb9e96f24bc5d1e102628152069f2da6b66b7be67475cd93b405fe0c3"
+  url "https://files.pythonhosted.org/packages/e8/60/9ca14a46a710ec9ab5c1936e3f3e9d92c7484d553178626b26011e8669c9/dstack-0.20.0.tar.gz"
+  sha256 "282d6b4471f9c9d7c0236d405567ffe11f88ee201b8d04e8c226bc6072f4c11d"
   license "MPL-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "88dd2dca8defea2c90ca9e5029637c00ed5c3afccc25760a3afc22aaad6e0462"
-    sha256 cellar: :any,                 arm64_sequoia: "72f7e30cc20f6f60aca6f4ab4ce552c93213159b2474c5e15e498aa46dd6e74b"
-    sha256 cellar: :any,                 arm64_sonoma:  "61f7a0ff2a22b55ea06e4075a3de96738ac362d5a1cf7c07db337a4f5b0ec240"
-    sha256 cellar: :any,                 sonoma:        "6948a26ae475b42ae756b816f44d4a6350d9307f6a54b17b8237134b33df34f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a090a4164495d9b3c781e93ebc64d93a65de19b5c8d2481fcc1771a25eca7bb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddedb3102427c36572b753d6227ac73b56f9792c9a2563c76829d7e016b3c297"
+    sha256 cellar: :any,                 arm64_tahoe:   "9dcf7348652e0f7fb64253637a3cce535367f5aaaec9637c3f37c55b5e7ce642"
+    sha256 cellar: :any,                 arm64_sequoia: "84c3df648f28b8be1514406e324c273ffdd5a81887615345f2775c1924f30c41"
+    sha256 cellar: :any,                 arm64_sonoma:  "aac806eb655ac77ec18161c35c7cb7dd2b2989518fe0c768ec7e1f133d54d2b3"
+    sha256 cellar: :any,                 sonoma:        "dd3de881198f8831efd6230f3e59a9ec8b130ff04f14317ea58f8f9a33d45c74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57cf23a7ae57a7a3b833a455be4a9bc1f223e83f81de50895b5eb9c65dcaecb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18c12f665160170afd165871c2a6cd77878bc112aab4679c49d88bc13ec8daf5"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -281,8 +280,8 @@ class Dstack < Formula
   end
 
   resource "gpuhunt" do
-    url "https://files.pythonhosted.org/packages/34/a6/50d29e7aa8a5b4fd8c8b2e283bc8c4049ed532234c035b168290aff7dfd8/gpuhunt-0.1.13.tar.gz"
-    sha256 "e2403594a540d29c90f097a33a222f3470c3bf08415b086edc14ad97493cd8d1"
+    url "https://files.pythonhosted.org/packages/a5/78/71184f4e9d73d437761a878ce660e3c0e45a24f432b50916d428c54991e5/gpuhunt-0.1.15.tar.gz"
+    sha256 "184c1134c570b428c6930391418cfa4d537cfa27cc6d2c673f6c7aab9ff242f3"
   end
 
   resource "greenlet" do
@@ -516,8 +515,8 @@ class Dstack < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
+    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
   end
 
   resource "pyyaml" do
