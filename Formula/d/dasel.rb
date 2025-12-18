@@ -7,12 +7,12 @@ class Dasel < Formula
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37933e0dd89b30937024350bf396a844502979aa4d2b04884e5f79467bc98b67"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37933e0dd89b30937024350bf396a844502979aa4d2b04884e5f79467bc98b67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37933e0dd89b30937024350bf396a844502979aa4d2b04884e5f79467bc98b67"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d0bc7cda0cee3a9a241d40b9a7647b803f4d999b683d476d0d0d5311f46cd8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "327b6a208ca23d43d61cb80477fb34a335301d86ebaf7f5f45257c681a80cdc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf55017ac90f1cf4d6224e9530bdf71dc3f6bdd71bf06afdfe0c2527394ff90d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df9ea314dd7a3d2ea02ed3fb71673780ce80660254d3934f762f4710dd15e822"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df9ea314dd7a3d2ea02ed3fb71673780ce80660254d3934f762f4710dd15e822"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df9ea314dd7a3d2ea02ed3fb71673780ce80660254d3934f762f4710dd15e822"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6d04d8f5298ba487a735aad144a8804b8bfaf5bbcd8adb1118e9ca4f4bb2291"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f92e08354f030a708e72c0ccf6219f6f519fb8b5406f7cc2bf27a9c34145d782"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66ee01e5527562ec304d08e50b255c9405f679e9e31bd68a094d77cf498e47d4"
   end
 
   depends_on "go" => :build
