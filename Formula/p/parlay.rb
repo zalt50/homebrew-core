@@ -1,8 +1,8 @@
 class Parlay < Formula
   desc "Enrich SBOMs with data from third party services"
   homepage "https://github.com/snyk/parlay"
-  url "https://github.com/snyk/parlay/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "b06ae57019144bdec330747dc2593bf07976acab06990682731205a8ce819a72"
+  url "https://github.com/snyk/parlay/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "a903162d52c8e040affd3bf9790e1b5362e75b6f277dcb49ecfc628b84e6f658"
   license "Apache-2.0"
   head "https://github.com/snyk/parlay.git", branch: "main"
 
