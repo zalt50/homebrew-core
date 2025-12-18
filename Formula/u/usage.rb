@@ -19,6 +19,7 @@ class Usage < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
+    man1.install "cli/assets/usage.1"
     generate_completions_from_executable(bin/"usage", "--completions")
   end
 
