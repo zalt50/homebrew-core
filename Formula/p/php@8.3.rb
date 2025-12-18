@@ -2,9 +2,9 @@ class PhpAT83 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.3.28.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.3.28.tar.xz"
-  sha256 "25e3860f30198a386242891c0bf9e2955931f7b666b96c3e3103d36a2a322326"
+  url "https://www.php.net/distributions/php-8.3.29.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.3.29.tar.xz"
+  sha256 "f7950ca034b15a78f5de9f1b22f4d9bad1dd497114d175cb1672a4ca78077af5"
   license all_of: [
     "PHP-3.01",
 
