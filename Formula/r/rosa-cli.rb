@@ -12,12 +12,12 @@ class RosaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76fa2933976bf13c81823b87f8c5dc4d47f3bb78b1ded5cedca43580ec2715bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "372ef5c6b6abd6a0e8ba6e87f5bc771e5b256ca9fb3ee662737d5e370a13ea7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d164b3a7dac7c63fdb4d26b68296583a3e9a25aa75fbe4cf3dc93ab5b75acaf2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4bba0a0bdb02328ea274b0f6a80ed1e5242027f720091c39c83c3ccc38113e65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93c7ca49b46c5aa1f2320cadce69feda61ba97bb101245efccf174d492bece9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8cf08b8f74c2b2afd7ec9aa2dbe0f444caf3f5eb51acc2e5c89abd0146b68f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "215cf15631f6c2171b77029b728afc8b54b3e9673756061fe6738ea89890acc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ea60dc73dcfe6135d6bf5c225032f74c21eb6de41bef524cb539171ebcd0e68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01b10b4331f7bae9f051bee0ce59c6a0f6f33404e7929220141ae1069e49b8bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16bc8d7e1716d3494c0afccbb1f456d123bf905b19e64d2d3a5f0369b7fd5bbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "871407809db89f8f4685a6244d6118c39f29a9d0bece635a9a672d70a8c134db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b46ba39da40169a4fded2871ce7e1dff234934d855ffaf440e227f272b00db25"
   end
 
   depends_on "go" => :build
