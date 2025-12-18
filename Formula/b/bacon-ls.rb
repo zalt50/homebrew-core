@@ -1,8 +1,8 @@
 class BaconLs < Formula
   desc "Rust diagnostic provider based on Bacon"
   homepage "https://github.com/crisidev/bacon-ls"
-  url "https://github.com/crisidev/bacon-ls/archive/refs/tags/0.25.0.tar.gz"
-  sha256 "778daa6102df7223fa654816dc908cbe1593789645bc9af13d04ddc742a7ead6"
+  url "https://github.com/crisidev/bacon-ls/archive/refs/tags/0.26.0.tar.gz"
+  sha256 "7964f7c20d9d466ac24e5d0ceb482d130b277df43fbc4c0917249af71e6cf598"
   license "MIT"
   head "https://github.com/crisidev/bacon-ls.git", branch: "main"
 
