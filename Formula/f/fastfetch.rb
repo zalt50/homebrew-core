@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.56.0.tar.gz"
-  sha256 "8df6f21b168069dc35eb361eed47815650a5253f5e0f6948c5490faf375aad74"
+  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.56.1.tar.gz"
+  sha256 "6ffd75c32b2a885fd8497867645ac837ed37d588c94e0df05408cdaa0c8fd2c7"
   license "MIT"
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
