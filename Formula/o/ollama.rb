@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.13.4",
-      revision: "89eb795293f353d575ab52eb9252f73e0269819c"
+      tag:      "v0.13.5",
+      revision: "7325791599409de52534429897481918717a9e85"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
