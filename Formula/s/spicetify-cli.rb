@@ -1,8 +1,8 @@
 class SpicetifyCli < Formula
   desc "Command-line tool to customize Spotify client"
   homepage "https://spicetify.app/"
-  url "https://github.com/spicetify/cli/archive/refs/tags/v2.42.5/v2.42.5.tar.gz"
-  sha256 "d04d1f465da7a2972f6bf5a9ba99b4a4efcb8c57068b862b2f63d4eaa032f64c"
+  url "https://github.com/spicetify/cli/archive/refs/tags/v2.42.6/v2.42.6.tar.gz"
+  sha256 "3643bda0fda5b3d6dd9437f6d3f357a946a7490e57a458565de6df965ea03d19"
   license "LGPL-2.1-only"
   head "https://github.com/spicetify/cli.git", branch: "main"
 
@@ -41,6 +41,7 @@ class SpicetifyCli < Formula
     pref_file = spotify_folder/"com.spotify.client.plist"
     mkdir_p spotify_folder
     touch pref_file
+
     path = testpath/".config/spicetify/config-xpui.ini"
     path.write <<~INI
       [Setting]
@@ -52,7 +53,7 @@ class SpicetifyCli < Formula
     quiet_system bin/"spicetify", "config"
     assert_match version.to_s, shell_output("#{bin}/spicetify -v")
 
-    output = shell_output("#{bin}/spicetify config current_theme 2>&1", 1)
-    assert_match "com.spotify.Client is not a valid path", output
+    output = shell_output("#{bin}/spicetify config current_theme")
+    assert_match "SpicetifyDefault", output
   end
 end
