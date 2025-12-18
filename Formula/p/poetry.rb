@@ -6,7 +6,7 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/19/28/f790e21769afaaa1f326d9634f9a5c700c4cdb4c468a1707c6db0b350505/poetry-2.2.1.tar.gz"
   sha256 "bef9aa4bb00ce4c10b28b25e7bac724094802d6958190762c45df6c12749b37c"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
@@ -83,8 +83,8 @@ class Poetry < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "findpython" do
@@ -158,8 +158,8 @@ class Poetry < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/3f/23/4ab46102595bb44a9e622b3f3f10da1058fd2bd09fc8e6343341e19e7bb1/pbs_installer-2025.12.5.tar.gz"
-    sha256 "3d03347d73f4a58ddfbe26473b622065476633e57de44fb025527c8852e4efa7"
+    url "https://files.pythonhosted.org/packages/9c/64/5cf67f6347e518f7e63902b8d43fd2d5594ea1819754f507bf1dde752809/pbs_installer-2025.12.17.tar.gz"
+    sha256 "cf32043fadd168c17a1b18c1c3f801090281bd5c9ce101e2deb7e0e51c8279dd"
   end
 
   resource "pkginfo" do
