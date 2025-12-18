@@ -9,7 +9,7 @@ class Tox < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a80d5e7e1e14a51252720aea7849cffa531365a6a8ae015aabcda19ed7aa73ca"
+    sha256 cellar: :any_skip_relocation, all: "0073521f3d546e6be6c6889c419ecf28578a4ce2c181f6ca3d5a111f6b70cf52"
   end
 
   depends_on "python@3.14"
