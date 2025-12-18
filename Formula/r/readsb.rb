@@ -1,8 +1,8 @@
 class Readsb < Formula
   desc "ADS-B decoder swiss knife"
   homepage "https://github.com/wiedehopf/readsb"
-  url "https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.6.tar.gz"
-  sha256 "6006328dfa3a1b7214989ccd8df3777bbbb772cb6344d94f118924c00329d397"
+  url "https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.7.tar.gz"
+  sha256 "a61d3b486f729ae0652102e06df1fd3af38093691b69b0778499fc939a64dae2"
   license "GPL-3.0-or-later"
 
   bottle do
