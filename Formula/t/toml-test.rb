@@ -1,8 +1,8 @@
 class TomlTest < Formula
   desc "Language agnostic test suite for TOML parsers"
   homepage "https://github.com/toml-lang/toml-test"
-  url "https://github.com/toml-lang/toml-test/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "79ee1f9edef786e28cc54504179672071dbc7bad24d73348e8e7d7e766068abc"
+  url "https://github.com/toml-lang/toml-test/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "ea14319a926cfd7d418e4b450b47264c478b38ce99280f0cf273c574536e544b"
   license "MIT"
 
   bottle do
@@ -24,15 +24,15 @@ class TomlTest < Formula
   end
 
   test do
-    system bin/"toml-test", "-version"
-    system bin/"toml-test", "-help"
+    system bin/"toml-test", "version"
+    system bin/"toml-test", "help"
+
     (testpath/"stub-decoder").write <<~SH
       #!/bin/sh
       cat #{pkgshare}/tests/valid/example.json
     SH
+
     chmod 0755, testpath/"stub-decoder"
-    system bin/"toml-test", "-testdir", pkgshare/"tests",
-                            "-run", "valid/example*",
-                            "--", testpath/"stub-decoder"
+    system bin/"toml-test", "test", "-decoder", testpath/"stub-decoder", "-run", "valid/example*"
   end
 end
