@@ -13,12 +13,12 @@ class Deno < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "71fa886d735235ec5b3a14ae3ae685f3417eea06cf23fef9abbb2a4bbd66285e"
-    sha256 cellar: :any,                 arm64_sequoia: "17419cf4a542bfe430fe81bf8879a25cd05a8a903b99b489037cd1a204676d4a"
-    sha256 cellar: :any,                 arm64_sonoma:  "00d193bf9ae2974f6f30e88df3afc6febab342ec6e51898a54862cd76c72d10c"
-    sha256 cellar: :any,                 sonoma:        "728fb29eaf1088733c54d250129fe4b30acd1aed772a298a8c696e0ee281234e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f36c6dda7a1822c55d2075b2465d909b78f70b4b629c5125caecf1c2540a24db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02bb7d53bddecb3bdc119785a1f18801e4c0e921abf62764615b763d7a309924"
+    sha256 cellar: :any,                 arm64_tahoe:   "a12b903386cfb67c342f1782bb353da875f7c04351585978b854dad8906b20a7"
+    sha256 cellar: :any,                 arm64_sequoia: "abaaf945001ee7e0fb22fedc1e97ba3451a7d36b0a0dbf292b0ffddf2834ca3c"
+    sha256 cellar: :any,                 arm64_sonoma:  "c63fe6f04513b02b98cfb86893bec990a5c7931b17c0a312f7c96f9c40274aa8"
+    sha256 cellar: :any,                 sonoma:        "4bd457b7bee29d4dbbb51d14b6d332165e82e2d291412098ec4915fae87611ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd9328ebb7aee198ac9aab61985737859283921b788f6237bbf55c67efc4ff2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc66bce698910b2d38f69422f117b68959d43ad722c560619ea08a597859a3f"
   end
 
   depends_on "cmake" => :build
