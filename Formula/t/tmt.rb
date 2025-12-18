@@ -6,15 +6,15 @@ class Tmt < Formula
   url "https://files.pythonhosted.org/packages/48/1c/afd8cec15ef95491145b24274e58b58e9b4263356c40af4647d5599373e0/tmt-1.63.0.tar.gz"
   sha256 "57a78da5e27b5770f41a3aa95cf89c7c528b7a0d2d302e225f5572619dc3218d"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00dc8c4fef4239fccbf69c4f45ecdf7b008410801eb25773ef81aef8e8233166"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36a229159700717ebd6216ea727a810e6eb503e156ca620d47b6ca257af9a88f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf7d4c8389918a01257ce9e9333b40d35996532c0b4b0f7c2650dc5c2050e012"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4253c30571726110853591822589d354e637ba7c95baad905ea6ef0e09cc703b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e98566094d26a7e1962612f79822d7e8dc78443b9f9591db8e7459ab868695a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77f991c050825260d9d9e1692f1e43608af824cb4f729c40a5331bbbc00cadd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "214d3761b69340ba16fe5a6d6bd670ff105b71611136ac1c867b31bf58d74b37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6045e5da910b2e439e05dc147fafa3c3f9b9fb5d5868ca8e510ee5165ffe42c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ecd0105f9aa459b1ac9a66276ccb3a434f5b56f1983a6ec882e4e378bb54022"
+    sha256 cellar: :any_skip_relocation, sonoma:        "63006f39508ffe08d68204b9e23efb7efb08a8c95e649b7c464e0ae9b3928246"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "facd2f83bff9d6950dc1a1d332a08eaba36c00b451b9312271cad2a0384b1a9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2b805d953e505e22775805e12cd0fcd72fec07434eb624a400072a5ecd97f2f"
   end
 
   depends_on "beakerlib"
@@ -46,8 +46,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "flexcache" do
@@ -121,13 +121,18 @@ class Tmt < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
-    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
+    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
+    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
