@@ -6,7 +6,7 @@ class Scrapy < Formula
   url "https://files.pythonhosted.org/packages/08/ef/827db21986672723741ef1c384f4e5a09b0a552936ae638b6426e71d3a6e/scrapy-2.13.4.tar.gz"
   sha256 "e09bce40c56b56f9f86b0d078a0e5cdd08283c83076170ce7a8eec7189ac2493"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
@@ -58,8 +58,8 @@ class Scrapy < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "hyperlink" do
@@ -78,8 +78,8 @@ class Scrapy < Formula
   end
 
   resource "itemadapter" do
-    url "https://files.pythonhosted.org/packages/e9/50/2fd91416acfbd316b58de909cfc2a5c2daaa4ced67fb76cb0dedcbd13197/itemadapter-0.12.2.tar.gz"
-    sha256 "8e05c07cea966a7a8c4f096150ee2c91d9b4104a76f9afd029b235e1b564a61f"
+    url "https://files.pythonhosted.org/packages/4c/41/227d1c97c9ff6637b07719276ff21a4b47d5da5bbec7ab06b434bfa20d47/itemadapter-0.13.0.tar.gz"
+    sha256 "bed9ef00e3bcb04f0c8478f11fdebe63ebf45bacffe802719dfb070e969d2062"
   end
 
   resource "itemloaders" do
@@ -179,8 +179,8 @@ class Scrapy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "w3lib" do
