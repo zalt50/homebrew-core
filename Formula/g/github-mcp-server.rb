@@ -1,8 +1,8 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
   homepage "https://github.com/github/github-mcp-server"
-  url "https://github.com/github/github-mcp-server/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "1b41def72bdf11dcdfe2494aa301c462db2d9d1f7ebcd4b837c3f634f17d9677"
+  url "https://github.com/github/github-mcp-server/archive/refs/tags/v0.26.2.tar.gz"
+  sha256 "1c02a38ac4afd8ae46d2f7b048555ba6fca35ce491b741964ec9a14c38a489f3"
   license "MIT"
   head "https://github.com/github/github-mcp-server.git", branch: "main"
 
@@ -35,16 +35,11 @@ class GithubMcpServer < Formula
     ENV["GITHUB_PERSONAL_ACCESS_TOKEN"] = "test"
 
     json = <<~JSON
-      {
-        "jsonrpc": "2.0",
-        "id": 3,
-        "params": {
-          "name": "get_me"
-        },
-        "method": "tools/call"
-      }
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"homebrew","version":"#{version}"}}}
+      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
     JSON
 
-    assert_match "GitHub MCP Server running on stdio", pipe_output("#{bin}/github-mcp-server stdio 2>&1", json, 0)
+    out = pipe_output("#{bin}/github-mcp-server stdio 2>&1", json, 1)
+    assert_includes out, "GitHub MCP Server running on stdio"
   end
 end
