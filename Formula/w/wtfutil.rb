@@ -1,8 +1,8 @@
 class Wtfutil < Formula
   desc "Personal information dashboard for your terminal"
   homepage "https://wtfutil.com"
-  url "https://github.com/wtfutil/wtf/archive/refs/tags/v0.47.1.tar.gz"
-  sha256 "b03c8b12649d5b670a2786879379aa8e14bfaa67e583ab40774c12cca55e40ed"
+  url "https://github.com/wtfutil/wtf/archive/refs/tags/v0.48.0.tar.gz"
+  sha256 "89dc415d539bee6258a5c8886499203dea485cd5159f4c7cb07e28d03ab57931"
   license "MPL-2.0"
   head "https://github.com/wtfutil/wtf.git", branch: "trunk"
 
