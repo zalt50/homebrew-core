@@ -1,8 +1,8 @@
 class Dsvpn < Formula
   desc "Dead Simple VPN"
   homepage "https://github.com/jedisct1/dsvpn"
-  url "https://github.com/jedisct1/dsvpn/archive/refs/tags/0.1.4.tar.gz"
-  sha256 "b98604e1ca2ffa7a909bf07ca7cf0597e3baa73c116fbd257f93a4249ac9c0c5"
+  url "https://github.com/jedisct1/dsvpn/archive/refs/tags/0.1.5.tar.gz"
+  sha256 "53c9ff2518acea188926a4f10d38929da7b61b6770d6ec00f73a4c82ff918c5e"
   license "MIT"
   head "https://github.com/jedisct1/dsvpn.git", branch: "master"
 
