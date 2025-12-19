@@ -1,8 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://github.com/ispc/ispc/archive/refs/tags/v1.28.2.tar.gz"
-  sha256 "0b7d1d73afa93c015814b99c97b88fa45bce822d7904e8fc4a95666ba8e3fb92"
+  url "https://github.com/ispc/ispc/archive/refs/tags/v1.29.1.tar.gz"
+  sha256 "d5819f3feb66eeba31e080a880b5b47b6bdbf8462cc145cdf71f535af249d88f"
   license "BSD-3-Clause"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -38,6 +38,31 @@ class Ispc < Formula
   end
 
   def install
+    # Disable 32-bit Linux x86 target to avoid needing 32-bit glibc headers which
+    # are not available in our build environment. Also fix the dispatch target triple
+    # so clang can find the architecture-specific glibc headers.
+    if OS.linux? && Hardware::CPU.intel?
+      inreplace "cmake/GenerateBuiltins.cmake" do |s|
+        s.gsub! "builtin_to_cpp(32 linux x86)", "# builtin_to_cpp(32 linux x86)"
+        s.gsub! "--target=x86_64-unknown-unknown", "--target=x86_64-unknown-linux-gnu"
+      end
+      inreplace "cmake/GenericTargets.cmake",
+                "\"x86,32\"",
+                "# \"x86,32\""
+
+      # Patch the skip function to ignore 32-bit Unix/Linux targets during stdlib generation.
+      # This prevents the build from running the new 'ispc' binary for 32-bit targets it doesn't support.
+      inreplace "cmake/CommonStdlibBuiltins.cmake",
+                "set(skip FALSE)",
+                <<~EOS
+                  if ("${bit}" STREQUAL "32" AND "${os}" STREQUAL "unix")
+                    set(${out_skip} TRUE PARENT_SCOPE)
+                    return()
+                  endif()
+                  set(skip FALSE)
+                EOS
+    end
+
     args = %W[
       -DISPC_INCLUDE_EXAMPLES=OFF
       -DISPC_INCLUDE_TESTS=OFF
