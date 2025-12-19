@@ -7,12 +7,12 @@ class KubeLinter < Formula
   head "https://github.com/stackrox/kube-linter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7830759e1688fa7b45842ede9fef8d2861c6b0d8a87873ef85d4a450cb215234"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7830759e1688fa7b45842ede9fef8d2861c6b0d8a87873ef85d4a450cb215234"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7830759e1688fa7b45842ede9fef8d2861c6b0d8a87873ef85d4a450cb215234"
-    sha256 cellar: :any_skip_relocation, sonoma:        "329de0f096b6bbb58674ff7466371fd34c845fd26650cd4589459dc7e992229a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7676a74b2886c13490d233d01ffaa3562206d69b0d0cdf7e13b101fe21f10a88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d1ac7d564028714d17f0c6eec4b0b9c7b4f89d522689de1a9114b64e81d1c18"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "705d3764645b7d0b1815612519fb513f79a26199dea851ab296586043fd19b5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "705d3764645b7d0b1815612519fb513f79a26199dea851ab296586043fd19b5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "705d3764645b7d0b1815612519fb513f79a26199dea851ab296586043fd19b5d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fb36d6862854e138b99df86cf74eee81f01e67b34c771e25c86f09d9a21d6677"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e44dd33ea4346bf2c300ce6911b814fd71647595cf088d83b4d0eaa773bb48b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd843379c860581f873d27ec76baf068e72de600d57141964a64f1d8c3241087"
   end
 
   depends_on "go" => :build
