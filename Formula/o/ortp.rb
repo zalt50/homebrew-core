@@ -1,27 +1,11 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
+  # TODO: Switch to monorepo in 5.5.x
+  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.69/ortp-5.4.69.tar.bz2"
+  sha256 "f00808e19d8d9d91e8535254c5fc5159d0d4973bccfc2a3e5498eb23b2be6147"
   license all_of: ["AGPL-3.0-or-later", "GPL-3.0-or-later"]
   head "https://gitlab.linphone.org/BC/public/linphone-sdk.git", branch: "master"
-
-  stable do
-    # TODO: Switch to monorepo in 5.5.x
-    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.67/ortp-5.4.67.tar.bz2"
-    sha256 "1cf5e5baa1fb8f469b19025429e7cf248b9e15516dabbd95c9e009d9ede46f4f"
-
-    # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
-    # https://github.com/BelledonneCommunications/bctoolbox
-    resource "bctoolbox" do
-      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.67/bctoolbox-5.4.67.tar.bz2"
-      sha256 "51ae4f9400d6553ba735c27e10e5fc78c19c699f533e0d6a0aaa75c2fe4327e7"
-
-      livecheck do
-        formula :parent
-      end
-    end
-  end
-
-  no_autobump! because: "resources cannot be updated automatically"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "a982a18b02b6fa6d99b62843f70fadf6e1c87b67fb45068fdd96f5ef056b0f71"
@@ -35,6 +19,15 @@ class Ortp < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
+
+  resource "bctoolbox" do
+    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.69/bctoolbox-5.4.69.tar.bz2"
+    sha256 "23059194f633581c268cf79cb5a6b338273e89889c5e3be9c94aa8c90550294f"
+
+    livecheck do
+      formula :parent
+    end
+  end
 
   def install
     if build.stable?
