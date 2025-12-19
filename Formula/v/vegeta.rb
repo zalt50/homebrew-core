@@ -2,7 +2,7 @@ class Vegeta < Formula
   desc "HTTP load testing tool and library"
   homepage "https://github.com/tsenart/vegeta"
   url "https://github.com/tsenart/vegeta/archive/refs/tags/v12.13.0.tar.gz"
-  sha256 "0a3d46beefbe2df2b9c448f383fd574117bcc56f2b2d0965abb9e2b49979567f"
+  sha256 "4a360c815f5a8bdcae6db184860788696bb1c63d6999cc676e47690fc8b659e5"
   license "MIT"
 
   bottle do
