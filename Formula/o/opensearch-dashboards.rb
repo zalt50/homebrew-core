@@ -2,8 +2,8 @@ class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
   homepage "https://docs.opensearch.org/latest/dashboards/"
   url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
-      tag:      "3.2.0",
-      revision: "9d91d4639ea0e0cbb909ccfda66de3288d0f02d7"
+      tag:      "3.4.0",
+      revision: "c1d92e84395038f5f99e64e27b00c00fbabcd075"
   license "Apache-2.0"
 
   livecheck do
@@ -86,11 +86,9 @@ class OpensearchDashboards < Formula
     os_port = free_port
     (testpath/"data").mkdir
     (testpath/"logs").mkdir
-    fork do
-      exec Formula["opensearch"].bin/"opensearch", "-Ehttp.port=#{os_port}",
-                                                   "-Epath.data=#{testpath}/data",
-                                                   "-Epath.logs=#{testpath}/logs"
-    end
+    os_pid = spawn Formula["opensearch"].bin/"opensearch", "-Ehttp.port=#{os_port}",
+                                                           "-Epath.data=#{testpath}/data",
+                                                           "-Epath.logs=#{testpath}/logs"
 
     (testpath/"config.yml").write <<~YAML
       server.host: "127.0.0.1"
@@ -99,7 +97,7 @@ class OpensearchDashboards < Formula
     YAML
 
     osd_port = free_port
-    fork { exec bin/"opensearch-dashboards", "-p", osd_port.to_s, "-c", testpath/"config.yml" }
+    osd_pid = spawn bin/"opensearch-dashboards", "-p", osd_port.to_s, "-c", testpath/"config.yml"
 
     output = nil
 
@@ -117,6 +115,11 @@ class OpensearchDashboards < Formula
     end
 
     assert_includes output, "<title>OpenSearch Dashboards</title>"
+  ensure
+    Process.kill("TERM", osd_pid)
+    Process.wait(osd_pid)
+    Process.kill("TERM", os_pid)
+    Process.wait(os_pid)
   end
 end
 
