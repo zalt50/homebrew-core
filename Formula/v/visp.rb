@@ -1,17 +1,14 @@
 class Visp < Formula
   desc "Visual Servoing Platform library"
   homepage "https://visp.inria.fr/"
-  url "https://visp-doc.inria.fr/download/releases/visp-3.6.0.tar.gz"
-  sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
+  url "https://visp-doc.inria.fr/download/releases/visp-3.7.0.tar.gz"
+  sha256 "997f247f3702c83f0a8a6dc2f72ff98cfe3a5dcbd82f7c9f01d37ccd3b8ea97a"
   license "GPL-2.0-or-later"
-  revision 21
 
   livecheck do
     url "https://visp.inria.fr/download/"
     regex(/href=.*?visp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "bc139fcd6ecbac13823589c2ed2c125d43310440c18b89024028967b5f62e0bc"
@@ -52,37 +49,6 @@ class Visp < Formula
 
   on_linux do
     depends_on "libnsl"
-  end
-
-  # Backport fix for recent Apple Clang
-  patch do
-    url "https://github.com/lagadic/visp/commit/8c1461661f99a5db31c89ede9946d2b0244f8123.patch?full_index=1"
-    sha256 "1e0126c731bf14dfe915088a4205a16ec0b6d5f2ea57d0e84f2f69b8e86b144f"
-  end
-  patch do
-    url "https://github.com/lagadic/visp/commit/e41aa4881e0d58c182f0c140cc003b37afb99d39.patch?full_index=1"
-    sha256 "c0dd6678f1b39473da885f7519daf16018e20209c66cdd04f660a968f6fadbba"
-  end
-
-  # Backport fix for VTK include directories detection
-  patch do
-    url "https://github.com/lagadic/visp/commit/44d06319430c4933127e8dc31094259d92c63c2e.patch?full_index=1"
-    sha256 "a474659656764ca7b98d7ab7bad162cd9d36c50018d3033eb59806d2ac309850"
-  end
-  patch do
-    url "https://github.com/lagadic/visp/commit/09c900480c5b9d3b2d97244fe3b109e48f8e2d27.patch?full_index=1"
-    sha256 "417c3fa88cd5718e48e970ddd590ccaaafbe01db328dee79390fb931afa67da9"
-  end
-  patch do
-    url "https://github.com/lagadic/visp/commit/d6aebe3af2700c95c17c75aafb4f25d478a8f853.patch?full_index=1"
-    sha256 "740cb92ff79a368475af7979ff6ac4c443f90808bd02dd841aec3428cdbc95ed"
-  end
-
-  # One usage of OpenCV Universal Intrinsics API altered starting from 4.9.0
-  # TODO: Remove this patch in the next release
-  patch do
-    url "https://github.com/lagadic/visp/commit/ebfa2602faca0f40db2dd1cc0cfb72cd8177640c.patch?full_index=1"
-    sha256 "7fac428ca4fee039a84770e9c7877c43e28945038ff21233da74f3ae159703e0"
   end
 
   def install
@@ -152,7 +118,7 @@ class Visp < Formula
     system "cmake", "--install", "."
 
     # Make sure software built against visp don't reference opencv's cellar path either
-    inreplace [lib/"pkgconfig/visp.pc", lib/"cmake/visp/VISPConfig.cmake", lib/"cmake/visp/VISPModules.cmake"],
+    inreplace [lib/"pkgconfig/visp.pc", lib/"cmake/visp/VISPConfig.cmake"],
               opencv.prefix.realpath, opencv.opt_prefix
   end
 
