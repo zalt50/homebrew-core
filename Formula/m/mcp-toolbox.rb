@@ -1,8 +1,8 @@
 class McpToolbox < Formula
   desc "MCP server for databases"
   homepage "https://github.com/googleapis/genai-toolbox"
-  url "https://github.com/googleapis/genai-toolbox/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "be4c779101b23c0ba373f89eaf15b791acb692ccbcd913c74a9653e583382002"
+  url "https://github.com/googleapis/genai-toolbox/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "8544b048dab7025d1c5adb1695d674c6cd59fd21b3a82ca4eda59fdfa41484ec"
   license "Apache-2.0"
 
   bottle do
@@ -19,6 +19,8 @@ class McpToolbox < Formula
   conflicts_with "kahip", because: "both install `toolbox` binaries"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/googleapis/genai-toolbox/cmd.buildType=#{tap.user}
