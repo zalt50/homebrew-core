@@ -1,18 +1,18 @@
 class KubeLinter < Formula
   desc "Static analysis tool for Kubernetes YAML files and Helm charts"
   homepage "https://github.com/stackrox/kube-linter"
-  url "https://github.com/stackrox/kube-linter/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "f761520494e514966ef95ecd085f55d6a479a6a746e2b553ac9776fca983cd0a"
+  url "https://github.com/stackrox/kube-linter/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "412a2951851c8a3f279fb99b7d1aebd0b3a6483d1d4a6a2194e24d4859b93c6b"
   license "Apache-2.0"
   head "https://github.com/stackrox/kube-linter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "705d3764645b7d0b1815612519fb513f79a26199dea851ab296586043fd19b5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "705d3764645b7d0b1815612519fb513f79a26199dea851ab296586043fd19b5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "705d3764645b7d0b1815612519fb513f79a26199dea851ab296586043fd19b5d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb36d6862854e138b99df86cf74eee81f01e67b34c771e25c86f09d9a21d6677"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e44dd33ea4346bf2c300ce6911b814fd71647595cf088d83b4d0eaa773bb48b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd843379c860581f873d27ec76baf068e72de600d57141964a64f1d8c3241087"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c6429c5315d4b5a0bef1d989edebc2d96ab91508c9142f9aabc92ab82d46523"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c6429c5315d4b5a0bef1d989edebc2d96ab91508c9142f9aabc92ab82d46523"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c6429c5315d4b5a0bef1d989edebc2d96ab91508c9142f9aabc92ab82d46523"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a7b8243658b8eb9346921dc65f87d80b22d01c8b56aa1cf872b29f411fbbb5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f2aac26be0042bab65336eaf6068601fdb2b3d43cf6a4396418c02c8515e875"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41267624d034c2d2e5b31012512177f6763f5688ab42f6b8d1a50480911ebcef"
   end
 
   depends_on "go" => :build
