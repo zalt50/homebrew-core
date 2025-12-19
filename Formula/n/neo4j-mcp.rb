@@ -6,6 +6,15 @@ class Neo4jMcp < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/neo4j/mcp.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4653e1c9c0371dad6334d7ea51a7e427542e0c9a0fdcabc4cb559b899892e15a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4653e1c9c0371dad6334d7ea51a7e427542e0c9a0fdcabc4cb559b899892e15a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4653e1c9c0371dad6334d7ea51a7e427542e0c9a0fdcabc4cb559b899892e15a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e66bedaf4466a34ae710406c8c3b361db1c06b698718b6ece9aa62d74671811"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06d300cf80367db388b918f5be88ddce3d1563cdcf82a0025091964ce5841482"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae61bebd506468e003c70d96178e11650f26d9c3c011807d7add7cc61d56815b"
+  end
+
   depends_on "go" => :build
 
   def install
