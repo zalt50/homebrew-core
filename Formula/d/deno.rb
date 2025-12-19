@@ -7,12 +7,12 @@ class Deno < Formula
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a12b903386cfb67c342f1782bb353da875f7c04351585978b854dad8906b20a7"
-    sha256 cellar: :any,                 arm64_sequoia: "abaaf945001ee7e0fb22fedc1e97ba3451a7d36b0a0dbf292b0ffddf2834ca3c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c63fe6f04513b02b98cfb86893bec990a5c7931b17c0a312f7c96f9c40274aa8"
-    sha256 cellar: :any,                 sonoma:        "4bd457b7bee29d4dbbb51d14b6d332165e82e2d291412098ec4915fae87611ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd9328ebb7aee198ac9aab61985737859283921b788f6237bbf55c67efc4ff2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc66bce698910b2d38f69422f117b68959d43ad722c560619ea08a597859a3f"
+    sha256 cellar: :any,                 arm64_tahoe:   "23f789108cc08096bcc2eaa14ec1e557d880d573c1decad16f8e6c8ae82f4bb5"
+    sha256 cellar: :any,                 arm64_sequoia: "c7786442a7f77d1873608c97400ad8aec6284cc5ef4abb28eb757538d20beec8"
+    sha256 cellar: :any,                 arm64_sonoma:  "26d7581ee85c6bc2e48f3a74b7b915eeeb7aa0bd36722996b683d3a9c3d0207c"
+    sha256 cellar: :any,                 sonoma:        "80edd4c0ad9d8545eee58d2c4675b1cf35642c241cc3a603e6edbd72f6bb7c41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0de7236ebafa40990b761decdd4aa57a35af92eed337ccdd8e76634ea9ce202"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7a21f588bb7cb715811516a5675de7196847b62ab808654a0fd509991865dc5"
   end
 
   depends_on "cmake" => :build
