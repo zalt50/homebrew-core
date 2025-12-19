@@ -7,12 +7,12 @@ class Hcloud < Formula
   head "https://github.com/hetznercloud/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "290cd3bb0a6090e6c125ddb04a1bc15f5a957381abeada90d52bff7c6d39069c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2dfa03017cfab9b7873296bb7ff798b8699954b6dd20df3c9db27da605dc1a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df765b395ef066fa7d3c4365665ef13e0211dfcd2a07f043a592586ec6c93d53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "717e2e9b8d2250453319ce774779ef36fa22d57a7f36147e644060aa28a8e107"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d329996ffa1d7e76498168352852bbeafcbfdd708eddcde6743855282efb115a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "448635e0f502574d40d8edcd5fc66e10892d4a87b804b70332c516639aac5bcb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "024f06608feff047736c4db16396b2ce0a189a48319ab0e5987e0fad46974690"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c097e044fbfaaaa7fb31272311b86fa700ece0d80c1f8a4920d601e30102508"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7b9f619a2ce1cedd9d26e20768d22b89e93e681392532363ed5ad2002e72805"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4501333556aca50a54b9d78f109b6c67539d24c7b5b8af377a5a1a9ffef3c895"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6b9c9f79552846af00c07210ff941e9eed06a0599854db3d74a85983aed021c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8895261a22197730265c42355b5a9759d800272d1b2f9dfd23a4fca32363d3d4"
   end
 
   depends_on "go" => :build
