@@ -3,10 +3,9 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/84/81/0b2d50e4f0bef2d7ccda8e0364c1b2864a6cd0d6da4ea8366911f61ee68d/harlequin-2.4.1.tar.gz"
-  sha256 "05a9f041021a8d7fa7bdb97cac8c26ca0233235fa553d9d7c53e238097297655"
+  url "https://files.pythonhosted.org/packages/68/f9/4385c313706b54a7b122d721948cdd1367df55215c82b590ca88de61004c/harlequin-2.5.0.tar.gz"
+  sha256 "9797160f2d5cd0ceed884e1cacbd0a1bf72bed183c08aa3fb4b26de18dc86af5"
   license "MIT"
-  revision 1
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
@@ -42,8 +41,8 @@ class Harlequin < Formula
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/fc/23/690341f9d07eae3a33d07cce4f6730856c085331d5819ed09e68409ec6cf/duckdb-1.5.0.dev94.tar.gz"
-    sha256 "14f44ec532d2d151f65e4e55306f429f7b9fc3c38f1c1788bb87bf8d003bfbb8"
+    url "https://files.pythonhosted.org/packages/d5/79/bff4697585519a039e2ec3f89dea5018e97852ded09f75c09fc4e066eb1f/duckdb-1.5.0.dev103.tar.gz"
+    sha256 "f164bf55184e78dc29cf1f906eeca1061402085e1980e25c282a5c8b43932974"
   end
 
   resource "harlequin-mysql" do
@@ -102,8 +101,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "prompt-toolkit" do
@@ -212,8 +211,8 @@ class Harlequin < Formula
   end
 
   resource "tree-sitter-bash" do
-    url "https://files.pythonhosted.org/packages/bb/94/fe115f24fd8a3e1073e240c1e766b573ea678a87f1f5e036ec071bdfe419/tree_sitter_bash-0.25.0.tar.gz"
-    sha256 "6b6410ea5f54abe8780e4b260b01adbfec3a0729907c7a62a3448f670010e72e"
+    url "https://files.pythonhosted.org/packages/8e/0e/f0108be910f1eef6499eabce517e79fe3b12057280ed398da67ce2426cba/tree_sitter_bash-0.25.1.tar.gz"
+    sha256 "bfc0bdaa77bc1e86e3c6652e5a6e140c40c0a16b84185c2b63ad7cd809b88f14"
   end
 
   resource "tree-sitter-css" do
@@ -292,8 +291,8 @@ class Harlequin < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "uc-micro-py" do
