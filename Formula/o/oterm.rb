@@ -28,7 +28,8 @@ class Oterm < Formula
 
   uses_from_macos "zlib"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "aiosql" do
     url "https://files.pythonhosted.org/packages/f3/cd/ecd308258210ffa71a17ef770ae98a4eeeb7cba29f0d5f98f7ecbce43898/aiosql-14.1.tar.gz"
@@ -456,12 +457,14 @@ class Oterm < Formula
   end
 
   def install
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
+
     # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
     # defer installation to allow `typer` to use argument as shell for completions
     # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    venv = virtualenv_install_with_resources without: "shellingham"
-    generate_completions_from_executable(bin/"oterm", "--show-completion")
-    venv.pip_install resource("shellingham")
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
+    generate_completions_from_executable(bin/"oterm", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
