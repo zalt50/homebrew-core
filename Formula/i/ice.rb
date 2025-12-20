@@ -11,16 +11,12 @@ class Ice < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "163b12ea66fc9210f121ee9c2f0fc18404d8f660a963d3bf492af0b807eb19d8"
-    sha256 cellar: :any,                 arm64_sequoia:  "7c514dfb78c4739a0e3a89fef4c6cb238fa944b43efab26bda3aea20ec4ae47e"
-    sha256 cellar: :any,                 arm64_sonoma:   "9e16e4dc54af25f1f87ada450ac1179be3f2ddbdfaf53d75fc242f20dd093721"
-    sha256 cellar: :any,                 arm64_ventura:  "c13e1bd19804740b88a1a91acb548a66a4407bb234c74423bf0fa5a4c529b59c"
-    sha256 cellar: :any,                 arm64_monterey: "0193902362ba7001f9ada681d417b2ff2178a259e1742a1ef7b40a13a0c1659f"
-    sha256 cellar: :any,                 sonoma:         "7f5e821c0f5341f106eb7ac794cc28212fff4cb1ea7c1bc4a9b4be0f9045453f"
-    sha256 cellar: :any,                 ventura:        "f51b98196d1bbd54ebc2f5fd0afc4ca79581109d94546741cf60abb6c7a5f32f"
-    sha256 cellar: :any,                 monterey:       "0cddb56c9be86ab8f4c9741f3ef2b4b1cebd4893692f8ddd06085c4e6bd82512"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "303296e9ae326b721e3cc46e5d1d714ae03c74ca4b0504539d65c9e1517e9f42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52ec26319cdc6a02479ca493939ca965d97fde730b6d2f35eb151f55b0735e2a"
+    sha256 cellar: :any,                 arm64_tahoe:   "e0571d68dbdc9d073f52bcc8dde10ba8273cea43d6fd245b5929905cbf1a18f9"
+    sha256 cellar: :any,                 arm64_sequoia: "5b59424b75dd9c915c2ae6f7ca309fb24a7d86daa0f8016ba86bcff4ef9cecd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d1f90a90863feb399931937ae20030dbab7b59370f985f7af98d0be12025429"
+    sha256 cellar: :any,                 sonoma:        "606185d3a72b5f41517abd9820a5d9aecde6e2f29ba40cbcdf57e72b054fffa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1f791eec7808a1d4a4eaebe3d8f9c751d1a8f462e0eb220f563762b617f08f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb9505307af9af938603a49a7078ef093337a7a8b760a29a25d541ebeab26e96"
   end
 
   depends_on "lmdb"
