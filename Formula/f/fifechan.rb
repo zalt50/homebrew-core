@@ -44,6 +44,7 @@ class Fifechan < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DENABLE_SDL_CONTRIB=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
