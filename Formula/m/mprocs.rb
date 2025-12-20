@@ -1,8 +1,8 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
   homepage "https://github.com/pvolok/mprocs"
-  url "https://github.com/pvolok/mprocs/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "813045cba9104663ab9b48e157aaea453f019d20f47f90b5d4419111f96ca4bb"
+  url "https://github.com/pvolok/mprocs/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "34a56708b4c562ca64d9dc1bf21f138bf15fd6494c1d0b3c1c8da9e42d27b5b0"
   license "MIT"
   head "https://github.com/pvolok/mprocs.git", branch: "master"
 
