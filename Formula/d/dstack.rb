@@ -8,12 +8,13 @@ class Dstack < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9dcf7348652e0f7fb64253637a3cce535367f5aaaec9637c3f37c55b5e7ce642"
-    sha256 cellar: :any,                 arm64_sequoia: "84c3df648f28b8be1514406e324c273ffdd5a81887615345f2775c1924f30c41"
-    sha256 cellar: :any,                 arm64_sonoma:  "aac806eb655ac77ec18161c35c7cb7dd2b2989518fe0c768ec7e1f133d54d2b3"
-    sha256 cellar: :any,                 sonoma:        "dd3de881198f8831efd6230f3e59a9ec8b130ff04f14317ea58f8f9a33d45c74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57cf23a7ae57a7a3b833a455be4a9bc1f223e83f81de50895b5eb9c65dcaecb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18c12f665160170afd165871c2a6cd77878bc112aab4679c49d88bc13ec8daf5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ba915e7d57920b1ce23f6a195ad84207e0a5ed7441c140977d7bdc7ef144cbe7"
+    sha256 cellar: :any,                 arm64_sequoia: "cf7ce0eb32317b91ed936a4415c59c6595d5ecbb60d3173fa5312739ae85a7a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "14ff10dbe135ec8b9cdd9a9ef2a6e28e1c734d0ce9b8e5f00681fc27f6bd1943"
+    sha256 cellar: :any,                 sonoma:        "19045aa0b0d09b81f6bb6b228cd68718b23d3f6a6382d7d63ad4b68fa0787504"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44afb0581386cbf7cc0d864569f81108f8ff7c0810a45bca893ab044f567bb1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f69882d513ff12245fde6c294a1348e13c7d286261b5c708f2f76496d1947143"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
