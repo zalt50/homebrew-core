@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/4d/f5/e49dcb756debbbcd70dd46a939951e8e5bdd84692410ac6a9b17a5b53154/mycli-1.41.2.tar.gz"
-  sha256 "227ceb264d603d694978cf0863a9429b477174ddda6eb78a52a51e89e1f60ec7"
+  url "https://files.pythonhosted.org/packages/8b/bd/65e05ae1c111413ffe8a064cbb2841338b82786e9ed9e345f3ca2c7f43b9/mycli-1.42.0.tar.gz"
+  sha256 "b974188353a5f4fa03f4c51ff0a2aabec2dfe6703d8311780f93302a9756e025"
   license "BSD-3-Clause"
 
   bottle do
@@ -29,8 +29,8 @@ class Mycli < Formula
                 exclude_packages: %w[certifi cryptography pydantic]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "cli-helpers" do
@@ -89,13 +89,13 @@ class Mycli < Formula
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/05/7f/f2fe103b8fa6c5a96ba117fef46af15c766d4c28640893c2c7feb79c0df3/llm-0.27.1.tar.gz"
-    sha256 "02b0b393e31cf0e0ee1f2a6006c451c74ec18c7ec3973218de56e76fd72baa80"
+    url "https://files.pythonhosted.org/packages/cb/91/5071c6e0e7eabbf3a95870a4b2ec0fc585e0d4d57532d305d08d6595f8a3/llm-0.28.tar.gz"
+    sha256 "e3d8bcc0f016fae8aeca1d702491a1891523702983459cb66afec99d74cabfc1"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/d5/e4/42591e356f1d53c568418dc7e30dcda7be31dd5a4d570bca22acb0525862/openai-2.8.1.tar.gz"
-    sha256 "cb1b79eef6e809f6da326a7ef6038719e35aa944c42d081807bfa1be8060f15f"
+    url "https://files.pythonhosted.org/packages/d8/b1/12fe1c196bea326261718eb037307c1c1fe1dedc2d2d4de777df822e6238/openai-2.14.0.tar.gz"
+    sha256 "419357bedde9402d23bf8f2ee372fca1985a73348debba94bddff06f19459952"
   end
 
   resource "pluggy" do
@@ -189,13 +189,13 @@ class Mycli < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/51/43/ce9183a21911e0b73248c8fb83f8b8038515cb80053912c2a009e9765564/sqlite_utils-3.38.tar.gz"
-    sha256 "1ae77b931384052205a15478d429464f6c67a3ac3b4eafd3c674ac900f623aab"
+    url "https://files.pythonhosted.org/packages/b3/e3/6b1106349e2576c18409b27bd3b16f193b1cf38220d98ad22aa454c5e075/sqlite_utils-3.39.tar.gz"
+    sha256 "bfa2eac29b3e3eb5c9647283797527febcf4efd4a9bbb31d979a14a11ef9dbcd"
   end
 
   resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/e5/40/edede8dd6977b0d3da179a342c198ed100dd2aba4be081861ee5911e4da4/sqlparse-0.5.3.tar.gz"
-    sha256 "09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272"
+    url "https://files.pythonhosted.org/packages/90/76/437d71068094df0726366574cf3432a4ed754217b436eb7429415cf2d480/sqlparse-0.5.5.tar.gz"
+    sha256 "e20d4a9b0b8585fdf63b10d30066c7c94c5d7a7ec47c889a2d83a3caa93ff28e"
   end
 
   resource "tabulate" do
