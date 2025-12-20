@@ -30,9 +30,14 @@ class Freediameter < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  # cmake rpath patch, upstream pr ref, https://github.com/freeDiameter/freeDiameter/pull/84
+  patch do
+    url "https://github.com/freeDiameter/freeDiameter/commit/3037ee7735b969d106b197818c1a5bcdb4586d77.patch?full_index=1"
+    sha256 "146a8e6586b1a1146f06771129609583d43a792bbd94eea7a3c0348f02eb26b2"
+  end
+
   def install
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DDEFAULT_CONF_PATH=#{etc}
       -DDISABLE_SCTP=ON
     ]
