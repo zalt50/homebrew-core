@@ -99,8 +99,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/8e/45/81b94a52caed434b94da65729c03ad0fb7665fab0f7db9ee54c94e541403/typer_slim-0.20.0.tar.gz"
-    sha256 "9fc6607b3c6c20f5c33ea9590cbeb17848667c51feee27d9e314a579ab07d1a3"
+    url "https://files.pythonhosted.org/packages/3f/3d/6a4ec47010e8de34dade20c8e7bce90502b173f62a6b41619523a3fcf562/typer_slim-0.20.1.tar.gz"
+    sha256 "bb9e4f7e6dc31551c8a201383df322b81b0ce37239a5ead302598a2ebb6f7c9c"
   end
 
   resource "typing-extensions" do
@@ -120,6 +120,9 @@ class HuggingfaceCli < Formula
       end
       venv.pip_install Pathname.pwd
     end
+
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
+    generate_completions_from_executable(bin/"hf", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
