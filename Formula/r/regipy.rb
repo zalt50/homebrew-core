@@ -23,8 +23,8 @@ class Regipy < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "construct" do
@@ -49,6 +49,14 @@ class Regipy < Formula
 
   def install
     virtualenv_install_with_resources
+
+    cmds = %w[
+      regipy-parse-header regipy-dump regipy-plugins-run
+      regipy-plugins-list regipy-diff regipy-process-transaction-logs
+    ]
+    cmds.each do |cmd|
+      generate_completions_from_executable(bin/cmd, shell_parameter_format: :click)
+    end
   end
 
   test do
