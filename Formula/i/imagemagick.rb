@@ -29,6 +29,7 @@ class Imagemagick < Formula
   depends_on "liblqr"
   depends_on "libpng"
   depends_on "libraw"
+  depends_on "librsvg"
   depends_on "libtiff"
   depends_on "libtool"
   depends_on "libultrahdr"
@@ -70,6 +71,7 @@ class Imagemagick < Formula
       "--enable-shared",
       "--enable-static",
       "--with-freetype=yes",
+      "--with-rsvg=yes",
       "--with-gvc=no",
       "--with-modules",
       "--with-openjp2",
@@ -114,7 +116,7 @@ class Imagemagick < Formula
 
     # Check support for recommended features and delegates.
     features = shell_output("#{bin}/magick -version")
-    %w[Modules freetype heic jpeg png raw tiff].each do |feature|
+    %w[Modules freetype heic jpeg png raw rsvg tiff].each do |feature|
       assert_match feature, features
     end
 
