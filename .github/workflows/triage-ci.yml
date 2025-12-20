@@ -24,7 +24,7 @@ env:
 
 jobs:
   comment:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     if: >
       github.repository_owner == 'Homebrew' &&
       github.event.workflow_run.conclusion == 'failure' &&

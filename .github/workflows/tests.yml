@@ -93,7 +93,7 @@ jobs:
         run: brew test-bot --only-bottles-fetch --testing-formulae="$TESTING_FORMULAE"
 
   report_analytics:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     needs: formulae_detect
     if: github.repository_owner == 'Homebrew' && github.event_name == 'pull_request'
     steps:
@@ -132,7 +132,7 @@ jobs:
     permissions:
       pull-requests: read
     if: github.repository_owner == 'Homebrew' && github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     needs: formulae_detect
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
@@ -260,7 +260,7 @@ jobs:
     permissions:
       pull-requests: read
     if: github.repository_owner == 'Homebrew' && github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     needs: [setup_tests, formulae_detect]
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
@@ -392,7 +392,7 @@ jobs:
   conclusion:
     needs: [tests, test_deps, setup_tests, setup_runners]
     if: always() && github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - name: Check `tests` result
         env:

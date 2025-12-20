@@ -344,7 +344,7 @@ jobs:
       pull-requests: write # for Homebrew/actions/post-comment
     needs: [bottle, upload]
     if: failure() && inputs.issue > 0
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - name: Post comment on failure
         uses: Homebrew/actions/post-comment@main

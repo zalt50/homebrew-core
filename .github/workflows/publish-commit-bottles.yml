@@ -59,7 +59,7 @@ env:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     outputs:
       bottles: ${{steps.pr-branch-check.outputs.bottles}}
       head_sha: ${{steps.pr-branch-check.outputs.head_sha}}

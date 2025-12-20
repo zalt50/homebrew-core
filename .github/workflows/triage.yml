@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: read
     if: always() && github.repository_owner == 'Homebrew'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
@@ -36,7 +36,7 @@ jobs:
       issues: write
       pull-requests: write
     if: always() && github.repository_owner == 'Homebrew' && github.actor != 'BrewTestBot'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     env:
       PR: ${{ github.event.number }}
     steps:
@@ -115,7 +115,7 @@ jobs:
         run: gh pr comment "${PR}" --body "${BODY}" --repo "${GITHUB_REPOSITORY}"
 
   triage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     permissions:
       contents: read
       issues: write
@@ -463,7 +463,7 @@ jobs:
       issues: write
       pull-requests: write
     if: always() && github.repository_owner == 'Homebrew'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     env:
       PR: ${{ github.event.number }}
     steps:
