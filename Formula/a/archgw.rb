@@ -89,6 +89,8 @@ class Archgw < Formula
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"archgw", shell_parameter_format: :click)
   end
 
   test do
