@@ -8,8 +8,7 @@ class Nodeenv < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d1109702686c7f630b61ee8fc84746139594fdd512b04c1019e30adcaec2a7ac"
+    sha256 cellar: :any_skip_relocation, all: "2ffa768f40d3865b095678e91ad8e2658d061d3c3d5571c0050d96ae0c4069f6"
   end
 
   uses_from_macos "python"
