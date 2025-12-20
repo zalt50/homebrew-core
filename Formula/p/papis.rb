@@ -8,6 +8,15 @@ class Papis < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/papis/papis.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "988f60b32bbb0f5b8cf42c0b729f70c59e160abd8447931d6d97b2fac238a223"
+    sha256 cellar: :any,                 arm64_sequoia: "546dc318879cae79da1a08a00609d49e36185b469374885ff78483f5ea26fcf6"
+    sha256 cellar: :any,                 arm64_sonoma:  "341a949dad96707deecfc52f42f8c3cc2ecffaa94864f140852ba15329cf8b34"
+    sha256 cellar: :any,                 sonoma:        "185118873cb3ebfef3461c802d4ad446998adf2e03542239e2c9efca88557720"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1983cecdee3fb529832a7fe1f280e92ce85afbebd63848c4eaefcc07d923a2a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "686b7c2ba7a370f0b2b1a792e045581591393e95ac81b448423360e5ad351334"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
