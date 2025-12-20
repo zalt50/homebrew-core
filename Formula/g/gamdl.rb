@@ -23,9 +23,6 @@ class Gamdl < Formula
 
   pypi_packages exclude_packages: %w[certifi pillow]
 
-  # `protobuf` is manually updated to support Python 3.14, gamdl > pywidevine > protobuf
-  # Issue ref: https://github.com/devine-dl/pywidevine/issues/55
-
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
     sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
@@ -132,8 +129,8 @@ class Gamdl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do
@@ -148,6 +145,8 @@ class Gamdl < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"gamdl", shell_parameter_format: :click)
   end
 
   test do
