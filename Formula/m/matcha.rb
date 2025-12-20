@@ -1,8 +1,8 @@
 class Matcha < Formula
   desc "Daily digest generator for your RSS feeds"
   homepage "https://github.com/piqoni/matcha"
-  url "https://github.com/piqoni/matcha/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "239f97bed3014c8809d3d70c7840b77985c7cd12dc73510ae7a2fe3f557a0e1d"
+  url "https://github.com/piqoni/matcha/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "be0f8674638bdb1c34bd523ca6622f8d73efcfbef18d8002558af2b295caa5e3"
   license "MIT"
   head "https://github.com/piqoni/matcha.git", branch: "main"
 
