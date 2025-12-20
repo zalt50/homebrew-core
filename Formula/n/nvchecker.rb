@@ -8,13 +8,12 @@ class Nvchecker < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a8618b16390f9b5ec17e807a0919cd56640108fbbe761a1b3ae466112de3f66c"
-    sha256 cellar: :any,                 arm64_sequoia: "25d88546c21293037867d79d0c5dc2454be8e2e5e4b3e216f06eb84944347e4a"
-    sha256 cellar: :any,                 arm64_sonoma:  "e75f82e2d200d9cdd27a7e0b12f54cee48208d22ad563477915088b25643cfbb"
-    sha256 cellar: :any,                 sonoma:        "a28b5f6a568a2b676e083bc03da732a6d163c5f087a6d61dc0622843cf7c8c41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e3a126a9e804fcec5dbbaa41b8d800a23a48a24f128eab56ebe78d1e2e9342e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51b1838ef2e3709866d15ba400318e89f92c88018c22d4643f74d0eee8bed68e"
+    sha256 cellar: :any,                 arm64_tahoe:   "61cd7ebffbb7ccbafa43fc83b0572034c42c70458d5987da07239afb81fabe5b"
+    sha256 cellar: :any,                 arm64_sequoia: "0aefa92f8827e6cad2905da0f50f3997c228f66f865ee554f67e5f96816bd60c"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6761462bf59bf8e471cf579e0aa127e38c09b533a5186892afc100ea8d77a6b"
+    sha256 cellar: :any,                 sonoma:        "4448e060cee80a57f751deccf38f6a685aa60209078f1189b7a556d21d23de87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d781ccc8e1d49e45ce8c63e19e08b28bc2ede7c573d96b4080af10c64ccdfc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d143cf969b33ba0638ebfffaa840e26f93c6d316b8a7b921497f5069a8e7372c"
   end
 
   depends_on "curl"
