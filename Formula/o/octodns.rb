@@ -8,6 +8,15 @@ class Octodns < Formula
   license "MIT"
   head "https://github.com/octodns/octodns.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "c1061f5e2edc1f510078e849f33229f8982c20b2d7c4d247a202060fdc2b1cfe"
+    sha256 cellar: :any,                 arm64_sequoia: "b6568486aad3927a3846bda48072d1657f97f6ca30b056e96ed974bcf7c7df4a"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff4bcac0dce9b61868919a337c116fdfee0775f5bc64f4f9d1bd60d5c95dfcf6"
+    sha256 cellar: :any,                 sonoma:        "ec06d5d4b8935b79f8cea55dd92b0168f3b0ad1371b012649c30edb4f5e5870d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "903ae2c41cb66dd3f671f4ed6854079dfcf7e227a2a198470afb299966f70648"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c803d32de899f47f7f5208f74e499c1473d92c9314fcd1f0acc3f007691f73d0"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.14"
 
