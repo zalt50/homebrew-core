@@ -193,6 +193,9 @@ class Fastapi < Formula
   def install
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/fastapi"
+
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
+    generate_completions_from_executable(bin/"fastapi", "--show-completion", shells: [:bash, :zsh, :fish])
   end
 
   test do
