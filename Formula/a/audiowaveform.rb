@@ -1,10 +1,9 @@
 class Audiowaveform < Formula
   desc "Generate waveform data and render waveform images from audio files"
   homepage "https://codeberg.org/chrisn/audiowaveform"
-  url "https://codeberg.org/chrisn/audiowaveform/archive/1.10.3.tar.gz"
-  sha256 "f33680a4c74a718648ee0567511537ad80e015fb3bf5c8440a8176414afb415a"
+  url "https://codeberg.org/chrisn/audiowaveform/archive/1.11.0.tar.gz"
+  sha256 "87f7422b823ccb1621d715010649a9b0c1a0ce9a4e4b26c2784cb7f2b94589f4"
   license "GPL-3.0-only"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2d47b4665522e77242a8b50ef9238082d917b7135b60f80814c90bc24be1d0b5"
