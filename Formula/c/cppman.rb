@@ -3,10 +3,9 @@ class Cppman < Formula
 
   desc "C++ 98/11/14/17/20 manual pages from cplusplus.com and cppreference.com"
   homepage "https://github.com/aitjcize/cppman"
-  url "https://files.pythonhosted.org/packages/f7/ec/3965a47a4bfb8426037061ab429320cc306c229827db1c213eda52fe4a4d/cppman-0.5.9.tar.gz"
-  sha256 "15a4e40ab025b4dcec5a73a50df26b7ddaef7c148fcb197940fff2484f9e9903"
+  url "https://files.pythonhosted.org/packages/bd/f7/3fe2da627877a1b091d9f00fa494bc62a2eea1cad27a4fd64c23bd29a4fd/cppman-0.6.0.tar.gz"
+  sha256 "4426d6128356eb28ed3371066d17fa02d250fa5b1f666b09d2ee8f0c8900a790"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50314626915da53a6878e6a05c01067c3c4d64b941c592ecabbbd95c789cf03a"
@@ -80,6 +79,6 @@ class Cppman < Formula
   end
 
   test do
-    assert_match "std::extent", shell_output("#{bin}/cppman -f :extent")
+    assert_match "std::extent", shell_output("#{bin}/cppman -n 1 -f :extent")
   end
 end
