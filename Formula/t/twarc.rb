@@ -117,13 +117,13 @@ class Twarc < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
@@ -132,10 +132,15 @@ class Twarc < Formula
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"twarc2", shell_parameter_format: :click)
   end
 
   test do
-    assert_equal "usage: twarc [-h] [--log LOG] [--consumer_key CONSUMER_KEY]",
-                 shell_output("#{bin}/twarc -h").chomp.split("\n").first
+    (testpath/"config").write <<~EOS
+      bearer_token = 'test'
+    EOS
+    assert_match version.to_s, shell_output("#{bin}/twarc2 --config config version")
+    assert_match "Unauthorized", shell_output("#{bin}/twarc2 --config #{testpath}/config tweet 123 2>&1")
   end
 end
