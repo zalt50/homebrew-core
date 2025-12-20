@@ -10,7 +10,8 @@ class Toot < Formula
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "52423f31a9a6de54287e8659cc834854eb98830c788126f0a074fdd6a5cbe9b6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7058b2b9868457b536b2230be6b5ecfbd99cf01de1b9549bf59610486fb4e030"
   end
 
   depends_on "certifi" => :no_linkage
