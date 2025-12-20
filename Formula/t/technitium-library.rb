@@ -1,8 +1,8 @@
 class TechnitiumLibrary < Formula
   desc "Library for technitium .net based applications"
   homepage "https://technitium.com"
-  url "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v14.2.0.tar.gz"
-  sha256 "a87df80bccedb78af89c5fae022288475c1ade7723ae5c8cc9a43b545371db07"
+  url "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v14.3.0.tar.gz"
+  sha256 "fd0b37e7906f95679f279c8704e5e197d853771f24c169f4702562a7f26ab254"
   license "GPL-3.0-only"
 
   bottle do
