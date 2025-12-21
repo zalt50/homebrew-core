@@ -22,7 +22,7 @@ class Garage < Formula
   end
 
   service do
-    run [opt_bin/"garage", "server", "--config", etc/"garage/config.toml"]
+    run [opt_bin/"garage", "--config", etc/"garage/config.toml", "server"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
     log_path var/"log/garage.log"
