@@ -1,8 +1,8 @@
 class Papeer < Formula
   desc "Convert websites into eBooks and Markdown"
   homepage "https://papeer.tech"
-  url "https://github.com/lapwat/papeer/archive/refs/tags/v0.8.6.tar.gz"
-  sha256 "c40556e73611ec35b63fa3ced92b7479dd1c1107658de7501670a4a5365566ee"
+  url "https://github.com/lapwat/papeer/archive/refs/tags/v0.8.7.tar.gz"
+  sha256 "8055548c34cfe21a993e41339a94f2fcb3c88cb27aeeaa2d3df3e6f63d2b1aff"
   license "GPL-3.0-only"
 
   bottle do
