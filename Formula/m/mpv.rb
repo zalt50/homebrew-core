@@ -1,26 +1,10 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
+  url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.41.0.tar.gz"
+  sha256 "ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209"
   license :cannot_represent
-  revision 5
   head "https://github.com/mpv-player/mpv.git", branch: "master"
-
-  stable do
-    url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz"
-    sha256 "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3"
-
-    # Backport support for FFmpeg 8
-    patch do
-      url "https://github.com/mpv-player/mpv/commit/26b29fba02a2782f68e2906f837d21201fc6f1b9.patch?full_index=1"
-      sha256 "ac7e5d8e765186af2da3bef215ec364bd387d43846ee776bd05f01f9b9e679b2"
-    end
-
-    # Backport fix for old macOS
-    patch do
-      url "https://github.com/mpv-player/mpv/commit/00415f1457a8a2b6c2443b0d585926483feb58b7.patch?full_index=1"
-      sha256 "4d54edac689d0b5d2e3adf0a52498f307fa96e6bae14f026b62322cd9d6a9ba6"
-    end
-  end
 
   bottle do
     sha256 arm64_tahoe:   "b0c96c2de5c40cc4aa8013f8f8bd99ac84ebb6712e4c72f7475fb14aac0cf9cf"
