@@ -1,12 +1,15 @@
 class Feedgnuplot < Formula
   desc "Tool to plot realtime and stored data from the command-line"
   homepage "https://github.com/dkogan/feedgnuplot"
-  url "https://github.com/dkogan/feedgnuplot/archive/refs/tags/v1.62.tar.gz"
-  sha256 "7a3854c3620f7cc6bf5bf13546f5e8cbead2bb1afedd455b9ecabf367a6e78df"
+  url "https://github.com/dkogan/feedgnuplot/archive/refs/tags/v1.63.tar.gz"
+  sha256 "be65e5b06cdaff8ab38e339f0a30304e4721660218db0c0ab3f68636688f25c4"
   license any_of: ["GPL-1.0-or-later", "Artistic-1.0"]
-  revision 1
 
-  no_autobump! because: :requires_manual_review
+  # Ignore `debian/<version>` tags
+  livecheck do
+    url :stable
+    regex(/v?(\d+(?:\.\d+)+)/i)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "281415695dee735e09fd941c316edf238a5f2b04c0dc91c4b1ddd079646c8235"
@@ -25,8 +28,8 @@ class Feedgnuplot < Formula
 
   on_linux do
     resource "Exporter::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.002002.tar.gz"
-      sha256 "00f0b95716b18157132c6c118ded8ba31392563d19e490433e9a65382e707101"
+      url "https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.006003.tar.gz"
+      sha256 "6499f09a6432cf87b133fb9580a8a9a9a6c566821346b1fdee95f7b64c0317b1"
     end
 
     resource "List::MoreUtils" do
