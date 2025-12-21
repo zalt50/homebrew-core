@@ -3,18 +3,18 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://www.uvicorn.org/"
-  url "https://files.pythonhosted.org/packages/ae/4f/f9fdac7cf6dd79790eb165639b5c452ceeabc7bbabbba4569155470a287d/uvicorn-0.39.0.tar.gz"
-  sha256 "610512b19baa93423d2892d7823741f6d27717b642c8964000d7194dded19302"
+  url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
+  sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   license "BSD-3-Clause"
   head "https://github.com/encode/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "361ef6a64f871d71475e3790fd19ef0d93c9c208925c01b14aca8bd3ae5b23ee"
-    sha256 cellar: :any,                 arm64_sequoia: "6e5a9037a5af40ac14a5c80e71ad1a1ff34d8f2254c359aecfab79f8956669e3"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf152e630acab7fa9e6d63c5c9f3800c028acacb963bf65c4b323d741ee37e0a"
-    sha256 cellar: :any,                 sonoma:        "00425194250d14ee74d4aa14c3a2ceb5d8ed830f4da228d0388ac4087a00ceb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa395343c3a423279e56b4826e8d40b552c6ea999ab6b713df8a7f3ad6b2dc54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a021d7259845f4664640d892d2790adea82924b55106e1425f762cdd8733e312"
+    sha256 cellar: :any,                 arm64_tahoe:   "6474ecd00488abd4e47700ef8f685aa45e64d6b3e67b2441db25711829447d08"
+    sha256 cellar: :any,                 arm64_sequoia: "b4a3ed9c6c6ad6f696d174a85efff450a558ec0e54a9be3a27977bace47b38c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd20fa77ee9814acc3aee1fc36d5808cb1f00cbf6aa4f3dc8d66fe92dd13ffd7"
+    sha256 cellar: :any,                 sonoma:        "fbc2c58942ad5ae961ed17f311b6c861ca79dc66786f01421ef916bf64719b5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba0b08e1309a011ecaa249d1eb6c5b1a974445f90e63d7b960cc05d533a220c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d0204627baf6763c45819fcf30614b67be74fef5062cca4fa0396756742a7a5"
   end
 
   depends_on "rust" => :build
