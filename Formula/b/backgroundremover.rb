@@ -3,17 +3,17 @@ class Backgroundremover < Formula
 
   desc "Remove background from images and video using AI"
   homepage "https://github.com/nadermx/backgroundremover"
-  url "https://files.pythonhosted.org/packages/dc/27/17f2999cb4b53fd8b36bf04c4ed71a7728390bb7defd05eaf0db2e4eea21/backgroundremover-0.3.7.tar.gz"
-  sha256 "5a42cc2628658154528d42d401b6d9ec05d22171d0ba85420198ef1379e53fb7"
+  url "https://files.pythonhosted.org/packages/b9/4a/18deace4c210d722e4dde75a7f445f105d96d190f767b9132d789b1503dd/backgroundremover-0.3.8.tar.gz"
+  sha256 "0f6c25e500eab0268fdc3f50574e5f8aca1f5f47fcad86f4b52ea2af814a7434"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94be17025e285d461b1d84a4986e6e429e5ea49a4457f1a1a99c5bcd8681ed00"
-    sha256 cellar: :any,                 arm64_sequoia: "34663a60519d7cb4fcbdc63ec83570eca7ca86f8ec73683b4cc828711bb270ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "e1ce48fba91656a7b386c533c32c65e25bbcf8fc0bb295584f56763cb182aa89"
-    sha256 cellar: :any,                 sonoma:        "f5d9c788e88f0f7a3a25c81266231abe020ad59aa6fa13ecacbad587aaaa3e6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f95619ebc010163c0ce8dbd893e1ea6e7b8b02688689dc2f85e38a8a95723bd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32238368f4b7750407d5b1e4bb523302ea90cf78cbde95aad474535a01060b2b"
+    sha256 cellar: :any,                 arm64_tahoe:   "439bb8b2a126c5e7f592d68607c38be3c64e439b71efc09a034d31d104440810"
+    sha256 cellar: :any,                 arm64_sequoia: "48c9dfed0f393ef209cdb9d7b7807352df24e2fc84b382ba956c9e24b083e139"
+    sha256 cellar: :any,                 arm64_sonoma:  "df09f2dd3dbfbe8e016fd88b740cabaeafec577ad3ca18fe101dc433e9543e6a"
+    sha256 cellar: :any,                 sonoma:        "480c37df09ae11fc7154f3ba626b1dbcc5ad7b35544d2f3567a16917522dd43f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edbbec3253c94cafb35618c968db917da7b5ddee4d3652297d1862ac96bccc5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "349c9a0b169755d0f8f82902131f1b50b0e672219ab21daadaa6aa8f78f37b18"
   end
 
   depends_on "cmake" => :build
@@ -91,6 +91,11 @@ class Backgroundremover < Formula
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
+  resource "imageio" do
+    url "https://files.pythonhosted.org/packages/a3/6f/606be632e37bf8d05b253e8626c2291d74c691ddc7bcdf7d6aaf33b32f6a/imageio-2.37.2.tar.gz"
+    sha256 "0212ef2727ac9caa5ca4b2c75ae89454312f440a756fcfc8ef1993e718f50f8a"
+  end
+
   resource "imageio-ffmpeg" do
     url "https://files.pythonhosted.org/packages/44/bd/c3343c721f2a1b0c9fc71c1aebf1966a3b7f08c2eea8ed5437a2865611d6/imageio_ffmpeg-0.6.0.tar.gz"
     sha256 "e2556bed8e005564a9f925bb7afa4002d82770d6b08825078b7697ab88ba1755"
@@ -162,8 +167,8 @@ class Backgroundremover < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "waitress" do
