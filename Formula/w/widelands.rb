@@ -1,10 +1,9 @@
 class Widelands < Formula
   desc "Free real-time strategy game like Settlers II"
   homepage "https://www.widelands.org/"
-  url "https://github.com/widelands/widelands/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "799bfd32048ef20118c48e21f3fc843ae0451c42bb8bf2eabcb9b26bf6fe54b4"
+  url "https://github.com/widelands/widelands/archive/refs/tags/v1.3.tar.gz"
+  sha256 "8468b6bc0ddb70749c09c5603109ceeb79b95f3602d3aa55ecfad84f8ea82571"
   license "GPL-2.0-or-later"
-  revision 2
   version_scheme 1
 
   livecheck do
@@ -46,12 +45,6 @@ class Widelands < Formula
 
   on_linux do
     depends_on "mesa"
-  end
-
-  # Backport fix for newer asio
-  patch do
-    url "https://github.com/widelands/widelands/commit/c0b44ccc04df35a9a23ca9be3e05f5d3a5428f6f.patch?full_index=1"
-    sha256 "8db8447ab83e10031e0903cc0accec962f30f5b9fa31a8ce68db788efa7756b4"
   end
 
   def install
