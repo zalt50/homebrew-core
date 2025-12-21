@@ -1,8 +1,8 @@
 class Yamlresume < Formula
   desc "Resumes as code in YAML"
   homepage "https://github.com/yamlresume/yamlresume"
-  url "https://registry.npmjs.org/yamlresume/-/yamlresume-0.8.1.tgz"
-  sha256 "021fbab2315534aa0b6c521f353f6550bd6e9f9db23ce9574169e78d6b64ee4d"
+  url "https://registry.npmjs.org/yamlresume/-/yamlresume-0.9.0.tgz"
+  sha256 "01133e934005131cdee1a31db3bfeafe623ed481abcc645034c8d296f4a33440"
   license "MIT"
 
   bottle do
