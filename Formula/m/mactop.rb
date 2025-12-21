@@ -1,10 +1,10 @@
 class Mactop < Formula
-  desc "Apple Silicon Monitor Top written in Golang"
-  homepage "https://github.com/context-labs/mactop"
-  url "https://github.com/context-labs/mactop/archive/refs/tags/v0.2.7.tar.gz"
-  sha256 "16f8f55fcd9f05d6282d869cb08027e233fbd6ccdfffb56986422044472b8fec"
+  desc "Apple Silicon Monitor Top written in Go Lang"
+  homepage "https://github.com/metaspartan/mactop"
+  url "https://github.com/metaspartan/mactop/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "af5abc8dff539da7c1d8771327307bd1fac12d4cf768f6696826a49c493a2abf"
   license "MIT"
-  head "https://github.com/context-labs/mactop.git", branch: "main"
+  head "https://github.com/metaspartan/mactop.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c3635ce548446112507a878d84ebf8d1a6c0af995c9b64a26d5489b244f1d3e"
@@ -18,13 +18,6 @@ class Mactop < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-  end
-
-  def caveats
-    <<~EOS
-      mactop requires root privileges, so you will need to run `sudo mactop`.
-      You should be certain that you trust any software you grant root privileges.
-    EOS
   end
 
   test do
