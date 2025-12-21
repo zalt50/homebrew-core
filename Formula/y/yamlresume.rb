@@ -6,7 +6,7 @@ class Yamlresume < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2000ae710f694301ed939f1f811493fd2713afb038aa4e22f0bdc6a5309e4cad"
+    sha256 cellar: :any_skip_relocation, all: "8e521d8570ee0fc92a743a63d339f06643b6c916383cc667a8a8dfedc0dbc3d2"
   end
 
   depends_on "node"
