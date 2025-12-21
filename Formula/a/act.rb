@@ -20,6 +20,8 @@ class Act < Formula
   def install
     system "make", "build", "VERSION=#{version}"
     bin.install "dist/local/act"
+
+    generate_completions_from_executable(bin/"act", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
