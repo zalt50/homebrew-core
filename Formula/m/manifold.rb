@@ -4,6 +4,7 @@ class Manifold < Formula
   url "https://github.com/elalish/manifold/releases/download/v3.3.2/manifold-3.3.2.tar.gz"
   sha256 "efdae7cd75aabab20fa2673603a9ac263d5b48912559664dde37f5d9e85eced8"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "a575c8cb9f02762ee83d3afe0bb1ec335e7118695c8b70a89ad18f7610fef32d"
