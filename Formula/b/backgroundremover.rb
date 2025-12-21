@@ -22,7 +22,6 @@ class Backgroundremover < Formula
   depends_on "ffmpeg"
   depends_on "libheif"
   depends_on "llvm@20"
-  depends_on "numpy"
   depends_on "pillow"
   depends_on "python@3.14"
   depends_on "scikit-image"
@@ -31,10 +30,12 @@ class Backgroundremover < Formula
 
   on_linux do
     depends_on "patchelf" => :build
+    depends_on "openblas"
   end
 
-  pypi_packages exclude_packages: %w[certifi numpy torch torchvision pillow scipy scikit-image],
-                extra_packages:   "imageio"
+  # numba 0.63.1 does not support numpy 2.4.x, see https://github.com/numba/numba/issues/10263
+  pypi_packages exclude_packages: %w[certifi torch torchvision pillow scipy scikit-image],
+                extra_packages:   %w[imageio numpy]
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
@@ -124,6 +125,11 @@ class Backgroundremover < Formula
   resource "numba" do
     url "https://files.pythonhosted.org/packages/dc/60/0145d479b2209bd8fdae5f44201eceb8ce5a23e0ed54c71f57db24618665/numba-0.63.1.tar.gz"
     sha256 "b320aa675d0e3b17b40364935ea52a7b1c670c9037c39cf92c49502a75902f4b"
+  end
+
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/76/65/21b3bc86aac7b8f2862db1e808f1ea22b028e30a225a34a5ede9bf8678f2/numpy-2.3.5.tar.gz"
+    sha256 "784db1dcdab56bf0517743e746dfb0f885fc68d948aba86eeec2cba234bdf1c0"
   end
 
   resource "pillow-heif" do
