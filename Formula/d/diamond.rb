@@ -1,8 +1,8 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.16.tar.gz"
-  sha256 "bdbe7264ea64c29745af83a011345f6fa4b9a5c98e89fbaaba3f04e088f821a8"
+  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.17.tar.gz"
+  sha256 "71d0bad8453823f25c92634d00cf8dac02972840a19f4d34783e1e52d2d13d77"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,17 +16,23 @@ class Diamond < Formula
 
   depends_on "cmake" => :build
 
+  uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
   def install
-    # Fix to error: no member named 'uncaught_exception' in namespace 'std'; did you mean 'uncaught_exceptions'?
     if DevelopmentTools.clang_build_version >= 1700
+      # Fix to error: no member named 'uncaught_exception' in namespace 'std'; did you mean 'uncaught_exceptions'?
       inreplace "src/util/log_stream.h",
                 "!std::uncaught_exception()",
                 "std::uncaught_exceptions() == 0"
+      # Fix to error: no matching function for call to object of type 'const __copy_n'
+      # TransformIterator is not an input_iterator in C++20 iterator concepts
+      inreplace "src/util/data_structures/flat_array.h",
+                "data_.insert(data_.end(), begin, end);",
+                "std::for_each(begin, end, [&](auto&& v){ data_.push_back(v); });"
     end
 
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
