@@ -1,8 +1,8 @@
 class Veilid < Formula
   desc "Peer-to-peer network for easily sharing various kinds of data"
   homepage "https://veilid.com/"
-  url "https://gitlab.com/veilid/veilid/-/archive/v0.4.8/veilid-v0.4.8.tar.bz2"
-  sha256 "e041a1b3d2008cb51c3b18daf5d760d45de39240f24b8bb0cbd78b02aa7375fa"
+  url "https://gitlab.com/veilid/veilid/-/archive/v0.5.0/veilid-v0.5.0.tar.bz2"
+  sha256 "927b6186d939a75dab06cb3b4f5bf5ade63ac454f0ea9223c9966ddcb6fa3f23"
   license "MPL-2.0"
   head "https://gitlab.com/veilid/veilid.git", branch: "main"
 
