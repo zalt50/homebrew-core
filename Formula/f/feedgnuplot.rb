@@ -12,14 +12,12 @@ class Feedgnuplot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "281415695dee735e09fd941c316edf238a5f2b04c0dc91c4b1ddd079646c8235"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "281415695dee735e09fd941c316edf238a5f2b04c0dc91c4b1ddd079646c8235"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f6265ef15bfe79ba7eb98b7c726fddcf19819ffa4ee0f613af37df07d396c48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85639667a8f91888be75bf1f0fb1074b6f23adf6d3e2a4ec3048efaceed0d53e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f6265ef15bfe79ba7eb98b7c726fddcf19819ffa4ee0f613af37df07d396c48"
-    sha256 cellar: :any_skip_relocation, ventura:       "85639667a8f91888be75bf1f0fb1074b6f23adf6d3e2a4ec3048efaceed0d53e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a2d8d23c361d988cb5f8f0b9e4fa18b6afbb82586c1dacbd59f8b8e842b64cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40767525dd58b22625351aef13957ca8c923e7c7aff998f0c00a92a1bdcca51d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf1aeed43aaa7cf8f3768bd466a78e9d111d8afc0fc0fed93b680a01c490f6e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf1aeed43aaa7cf8f3768bd466a78e9d111d8afc0fc0fed93b680a01c490f6e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf1aeed43aaa7cf8f3768bd466a78e9d111d8afc0fc0fed93b680a01c490f6e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf1aeed43aaa7cf8f3768bd466a78e9d111d8afc0fc0fed93b680a01c490f6e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57d0e26eeb8359f7bca0de4034b7daca8f26f93d47a65856e1b907f030159b1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d72feb683b5f898eb85aade085b37c5194e3e7441fb6b51b85bb38981cac84be"
   end
 
   depends_on "gnuplot"
