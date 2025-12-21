@@ -11,14 +11,12 @@ class Clipper2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6c32c400b83531261299a333feafd72ee660ec63811bac621debed98d986b04b"
-    sha256 cellar: :any,                 arm64_sequoia: "5344952baad694ee32003946b5ed28a8212f58564a79df0ee97a245a2e35fb31"
-    sha256 cellar: :any,                 arm64_sonoma:  "dab66cd4bfc560cc95579a0586f44cd3a8a6c477abad07e5dce0d9812a97f9db"
-    sha256 cellar: :any,                 arm64_ventura: "c3634a45b7e445d258db0179b7946b08e4e746ec3d04c8f4c9a71f6d351a99b7"
-    sha256 cellar: :any,                 sonoma:        "e488dd77e4e22dcc5c7031904749e89f67483e28d9c3e300674d4907ebc610c4"
-    sha256 cellar: :any,                 ventura:       "beeaceb4432c6aba698d3e23f55e35f5aabc4aeb2a69323a94791b37b9e73532"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3827936a12835ab57ea26493a4b38da08705e0d0e743384a58f80b7817cf1acd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8346e821c65cac35259db00c4a43d56bd53dc4cc581bf0922b963968c2b9bd17"
+    sha256 cellar: :any,                 arm64_tahoe:   "644de3fa5088f0f37d9d1d1530567896fef82371eaf7cb848e8114c3ae4974ca"
+    sha256 cellar: :any,                 arm64_sequoia: "fa455f826081f9afa0964f14d73f607d2fc9853404a15f26f2aa8c7b12650c34"
+    sha256 cellar: :any,                 arm64_sonoma:  "67363d807e6023dfbf747be4c4dc1a6499d64c581ed7ab7fe4b83edcd6d88975"
+    sha256 cellar: :any,                 sonoma:        "cf100e91f23707d6e3e0d6689699d728e7cdcd841d3e980086af70ae92b2dff7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ff4c9f1e061afb3bd3c4c9920b0dc76562cb21edb4dbd7ddcaa76e88a061047"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61a77a2e151b24edfbb6e18bdb1f6b00d53ab552e40532f021490a02e0c1d9f1"
   end
 
   depends_on "cmake" => :build
