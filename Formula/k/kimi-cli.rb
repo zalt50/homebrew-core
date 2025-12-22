@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/ac/da/9f2533e1a6e95f60f1cdfc975a917fb9ed0290aa40075f1144a1e176e06d/kimi_cli-0.66.tar.gz"
-  sha256 "6659131254238a03bd6fe398a567f82b08e3e7912afcddeb6436b6d41cb12624"
+  url "https://files.pythonhosted.org/packages/5b/c6/aab5f5423bc2963556f2f3d712553fba671d74d86d657bd6c9ebe7983377/kimi_cli-0.67.tar.gz"
+  sha256 "42a2fb97248040a9141e327937c1dc26fefd1920c40f4fe131a8f2a87d5489f3"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -109,8 +109,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/da/3a/fd746469c7000ccaa75787e8ebd60dc77e4541576ca4ed241cd8b9e7e9ad/cyclopts-4.4.0.tar.gz"
-    sha256 "16764f5a807696b61da7d19626f34d261cdffe33345e87a194cf3286db2bd9cc"
+    url "https://files.pythonhosted.org/packages/40/99/e1b75193ee23bd10a05a3b90c065d419b1c8c18f61cae6b8218c7158f792/cyclopts-4.4.1.tar.gz"
+    sha256 "368a404926b46a49dc328a33ccd7e55ba879296a28e64a42afe2f6667704cecf"
   end
 
   resource "dateparser" do
@@ -229,8 +229,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/f9/7a/439c51c197508be629af136432e6d0ecbb39505726d43f175276929b486f/kosong-0.34.0.tar.gz"
-    sha256 "2a27305229908be69b0a9e0214d1ce3b3134c1f2def7c0ada1f5ed54bf2386ee"
+    url "https://files.pythonhosted.org/packages/4a/5c/5bd0630569bd3ff41a06b74e3a6caa6518e1fff1a69ac286239800828502/kosong-0.34.1.tar.gz"
+    sha256 "20672d1c6a35a989ff00c714b830657bd5553cf2491830fd840f98b385d855b1"
   end
 
   resource "lazy-object-proxy" do
@@ -485,8 +485,8 @@ class KimiCli < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
-    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
+    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
+    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
   end
 
   resource "tzlocal" do
@@ -500,8 +500,8 @@ class KimiCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
-    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
+    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
+    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   end
 
   resource "wcwidth" do
