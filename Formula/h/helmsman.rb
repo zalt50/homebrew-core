@@ -7,12 +7,12 @@ class Helmsman < Formula
   head "https://github.com/mkubaczyk/helmsman.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d97c608759c29c325f2809fe9b49309689da05800f2735fe897b9315b678bd46"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d97c608759c29c325f2809fe9b49309689da05800f2735fe897b9315b678bd46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d97c608759c29c325f2809fe9b49309689da05800f2735fe897b9315b678bd46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ecc2594e50d4dd309d7fa0d6755051c208bbccfd64cba669c364e12fd9b97eef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8da38d9f21737694d08b00905c61b610d6bdf5395d92274539092db32250113d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eddfb23ca0e29b7c3027a1b0ffa95bdb72e3e9cc1ef0ad48e1db4c64451690f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0986f7255d73086e919183a568edf55acc8262bb5a94ec7e7d0efa5052c34f2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0986f7255d73086e919183a568edf55acc8262bb5a94ec7e7d0efa5052c34f2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0986f7255d73086e919183a568edf55acc8262bb5a94ec7e7d0efa5052c34f2f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e39df64f641a76be673ca5b1bfcfb8ea7f2ed705d0ec2557924ec3532d1d77ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a94fae4fec4750c965ed5be21263782949cc1d9355f69d46dbde8019719beba8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d696735585ea0c667b3895086e0a341ea31912e8db59a44532f8811ba6755c4"
   end
 
   depends_on "go" => :build
