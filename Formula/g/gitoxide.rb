@@ -12,12 +12,12 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14b1a20c26fd24166f8ef2ec15144dd3b2628a82611ec3f911f0eef8a5ebb5c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebd3c69f1b0190dc44f8bf2b4fe7c8818cc1a1ae66b7e71ec631e7bd4129762d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9970ee97af41143e3b16bbb2a1323e03a38ee8bb517d6a03b32c83039a71d1d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb1e7ffbde4ccbed1e9eca2c016c219729db5cd9f7429bea8667c71337a74fb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ebef419c0341e19057868b3adf3985e962cdc7653e01023d670056c990710a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "012f49f82f4349fb5dd120dfbe4f7cbb9bbf8d968c4f9085422d9563bdc78dcc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c791f16c6de9d0cacdb94a82103c0b82911a7c6ab080f0b59242d04f13d2ea47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f9dbd4c01328c1658ea2773da5530c26b7735f9d565ea8a19b800bf4154ef67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6700092d7df1a4aaef186308752dd3df62da2d64f0050e009e5023fc9a299ffd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c16fa9a787f883bbf2b0a5162b78c0b24d329154240d30ececca530de961968f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ecbc63f0e044fa3538555f12c6a8fd79a59e69f14eaea18a739c91dcf051f47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89897b4f9820a2aa3bd17b7ba7e5b00b4f116f00e74623a3878b6b1cc07f83fc"
   end
 
   depends_on "pkgconf" => :build
