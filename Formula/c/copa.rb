@@ -26,6 +26,7 @@ class Copa < Formula
       -X main.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
+    generate_completions_from_executable(bin/"copa", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
