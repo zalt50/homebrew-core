@@ -5,10 +5,9 @@ class Breezy < Formula
   # homepage "https://www.breezy-vcs.org/" # https://bugs.launchpad.net/brz/+bug/2102204
   homepage "https://github.com/breezy-team/breezy"
   # pypi sdist bug report, https://bugs.launchpad.net/brz/+bug/2111649
-  url "https://github.com/breezy-team/breezy/archive/refs/tags/brz-3.3.17.tar.gz"
-  sha256 "87aa018059e94debf8a6bf27117f36570e89d412a467d2bc6a31fecb374110f5"
+  url "https://github.com/breezy-team/breezy/archive/refs/tags/brz-3.3.20.tar.gz"
+  sha256 "8e4af88a0f55d1994c9f5f704db467e9967f8bf0e170440bc4077a972276114c"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -35,8 +34,8 @@ class Breezy < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/3e/7c/cb4a5fb0d3d0f6585894759730ae9052e8dd9d2e5172bff544d369b24243/dulwich-0.24.10.tar.gz"
-    sha256 "30e028979b6fa7220c913da9c786026611c10746c06496149742602b36a11f6b"
+    url "https://files.pythonhosted.org/packages/6f/97/f65ab4c7d999bb10c717cace283bfe60dcaa02993ba445574e217ae7c71e/dulwich-0.25.0.tar.gz"
+    sha256 "baa84b539fea0e6a925a9159c3e0a1d08cceeea5260732b84200e077444a4b0e"
   end
 
   resource "fastbencode" do
@@ -60,8 +59,8 @@ class Breezy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
