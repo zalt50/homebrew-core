@@ -6,6 +6,15 @@ class Klog < Formula
   license "MIT"
   head "https://github.com/jotaen/klog.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ab3b48dba0abb8cdfd6c3b28e2c83caa69ffa2623a715612a3ebcc5efcbf52c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ab3b48dba0abb8cdfd6c3b28e2c83caa69ffa2623a715612a3ebcc5efcbf52c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ab3b48dba0abb8cdfd6c3b28e2c83caa69ffa2623a715612a3ebcc5efcbf52c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c03caffc30d0419f6ce2c531cad8cf66715e71631aeee6457a4e6a3c0c0bbb01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9587564b1ec293057890feaaf927631b6304a19fdde4c8d6bc37bbfa385410f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b828b967c16475108e80dc579901550a8584b8833a523e61f8df051db48231fc"
+  end
+
   depends_on "go" => :build
 
   def install
