@@ -22,16 +22,19 @@ class TronbytServer < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    commit = build.head? ? Utils.git_short_head : tap.user.to_s
     ldflags = %W[
       -s -w
       -X tronbyt-server/internal/version.Version=#{version}
-      -X tronbyt-server/internal/version.Commit=#{commit}
       -X tronbyt-server/internal/version.BuildDate=#{time.iso8601}
     ]
+    ldflags << "-X tronbyt-server/internal/version.Commit=#{Utils.git_short_head}" if build.head?
     system "go", "build", *std_go_args(ldflags:), "./cmd/server"
+  end
 
-    (var/"tronbyt-server/.env").write <<~EOS
+  def post_install
+    (var/"tronbyt-server").mkpath
+    dot_env = var/"tronbyt-server/.env"
+    dot_env.write <<~EOS unless dot_env.exist?
       # Add application configuration here.
       # For example:
       # LOG_LEVEL=INFO
