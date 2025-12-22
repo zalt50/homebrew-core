@@ -1,8 +1,8 @@
 class GeminiCli < Formula
   desc "Interact with Google Gemini AI models from the command-line"
   homepage "https://github.com/google-gemini/gemini-cli"
-  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.21.3.tgz"
-  sha256 "f0fc8b317ddd6e20519517810c133c03022f6aea819edf54b13ec7e0b202596c"
+  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.22.0.tgz"
+  sha256 "107754b0955c76a0dffbea4a3560b10393069fedb07f0fe0e0dc27c5481f908e"
   license "Apache-2.0"
 
   bottle do
@@ -28,8 +28,10 @@ class GeminiCli < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/@google/gemini-cli/node_modules"
-    libexec.glob("#{node_modules}/tree-sitter-bash/prebuilds/*")
-           .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    (node_modules/"tree-sitter-bash/prebuilds").glob("*")
+                                               .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    (node_modules/"node-pty/prebuilds").glob("*")
+                                       .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     clipboardy_fallbacks_dir = libexec/"lib/node_modules/@google/#{name}/node_modules/clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
