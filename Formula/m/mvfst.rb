@@ -1,10 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.12.15.00.tar.gz"
-  sha256 "acbb76ffdf9a2c38fff0a80efbb04422c2c7ba4934bdc0630626d8bb2db9f144"
   license "MIT"
   head "https://github.com/facebook/mvfst.git", branch: "main"
+
+  stable do
+    url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.12.22.00.tar.gz"
+    sha256 "67777456d8460d5f2efc7eb95ccafce55cbe70ce64089763cb0bfeb02c3336af"
+
+    # Add PacerFactory.cpp to the build
+    patch do
+      url "https://github.com/facebook/mvfst/commit/1832b36f31b892a78a86c9c54101c4b86f6da7b6.patch?full_index=1"
+      sha256 "58bcb121f9c778b4cdc849d969602f9251f934beaba5e806443c6572a4abb473"
+    end
+  end
 
   bottle do
     sha256                               arm64_tahoe:   "c410c628fd0ad0f7116a670358f505588c785c37d98041f1f57fe0bbb31fcc7d"
@@ -25,13 +34,6 @@ class Mvfst < Formula
   depends_on "glog"
   depends_on "libsodium"
   depends_on "openssl@3"
-
-  # Fix CMake config
-  # https://github.com/facebook/mvfst/pull/416
-  patch do
-    url "https://github.com/facebook/mvfst/commit/a65e4d4042dd6a37448550bb7de42cc591a917e9.patch?full_index=1"
-    sha256 "a6d7602b0372ea791664948a1ecdb006479c352b402174f42596384ee9b6c864"
-  end
 
   def install
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
