@@ -4,6 +4,7 @@ class WasiRuntimes < Formula
   url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-project-21.1.8.src.tar.xz"
   sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -215,11 +216,18 @@ class WasiRuntimes < Formula
     clang = Formula["llvm"].opt_bin/"clang"
     targets.each do |target|
       system clang, "--target=#{target}", "-v", "test.c", "-o", "test-#{target}"
-      assert_equal "the answer is 42", shell_output("wasmtime #{testpath}/test-#{target}")
+      wasmtime_flags = if target.end_with?("-threads")
+        "-W threads=y -W shared-memory=y -S threads=y"
+      else
+        ""
+      end
+      assert_equal "the answer is 42",
+                   shell_output("wasmtime run #{wasmtime_flags} #{testpath}/test-#{target}").strip
 
       pthread_flags = target.end_with?("-threads") ? ["-pthread"] : []
       system "#{clang}++", "--target=#{target}", "-v", "test.cc", "-o", "test-cxx-#{target}", *pthread_flags
-      assert_equal "hello from C++ main with cout!", shell_output("wasmtime #{testpath}/test-cxx-#{target}").chomp
+      assert_equal "hello from C++ main with cout!",
+                   shell_output("wasmtime run #{wasmtime_flags} #{testpath}/test-cxx-#{target}").chomp
     end
   end
 end
