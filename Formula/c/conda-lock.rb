@@ -3,10 +3,9 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://github.com/conda/conda-lock"
-  url "https://files.pythonhosted.org/packages/92/f9/f69356267a3ba56adb3ab531cb797990d32938532eaeb8097a09d4f8f681/conda_lock-3.0.4.tar.gz"
-  sha256 "7ba6f8067834b3aae8662ed6316c5f15def431f129ddf423f7957c6181523db6"
+  url "https://files.pythonhosted.org/packages/96/5d/fed650427a858cacf41f2827d8c00e5fcc6619c05d17ce352f3960bcaea3/conda_lock-4.0.0.tar.gz"
+  sha256 "050305a490861baa98d6c3876ed7b394707a67587d939548aac5e20b91b41d36"
   license "MIT"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "91f58fdb8f718a63da16d9fb8a1b3593fa5108d108627ddd98163d704f201b85"
@@ -83,8 +82,8 @@ class CondaLock < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/d4/8b/0f2de00c0c0d5881dc39be147ec2918725fb3628deeeb1f27d1c6cf6d9f4/dulwich-0.22.8.tar.gz"
-    sha256 "701547310415de300269331abe29cb5717aa1ea377af826bf513d0adfb1c209b"
+    url "https://files.pythonhosted.org/packages/3e/7c/cb4a5fb0d3d0f6585894759730ae9052e8dd9d2e5172bff544d369b24243/dulwich-0.24.10.tar.gz"
+    sha256 "30e028979b6fa7220c913da9c786026611c10746c06496149742602b36a11f6b"
   end
 
   resource "ensureconda" do
@@ -133,8 +132,8 @@ class CondaLock < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jeepney" do
@@ -203,8 +202,13 @@ class CondaLock < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
-    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
+    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
+    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "secretstorage" do
