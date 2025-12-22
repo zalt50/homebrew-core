@@ -1,8 +1,8 @@
 class Libemf2svg < Formula
   desc "Microsoft (MS) EMF to SVG conversion library"
   homepage "https://github.com/kakwa/libemf2svg"
-  url "https://github.com/kakwa/libemf2svg/archive/refs/tags/1.8.0.tar.gz"
-  sha256 "090f84711968608b3a2324e06d1314c5b581248ee834edc0e7dfbc015f0619e2"
+  url "https://github.com/kakwa/libemf2svg/archive/refs/tags/1.8.1.tar.gz"
+  sha256 "5a4b0051a2e8a7f999ecc1bb3451032833dc4c4f1e4bc6d938e4d5b4bec19c10"
   license "GPL-2.0-only"
 
   bottle do
