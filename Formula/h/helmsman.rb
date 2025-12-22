@@ -1,8 +1,8 @@
 class Helmsman < Formula
   desc "Helm Charts as Code tool"
   homepage "https://github.com/mkubaczyk/helmsman"
-  url "https://github.com/mkubaczyk/helmsman/archive/refs/tags/v4.0.3.tar.gz"
-  sha256 "d91e0938ea095abd48931fc73867b53b248ec4280dfb9adf6624669525f458ab"
+  url "https://github.com/mkubaczyk/helmsman/archive/refs/tags/v4.0.4.tar.gz"
+  sha256 "6dd47674471c18852e1d0a7c1ea81a9c8a88136f51dd9a9e57a96fb688581659"
   license "MIT"
   head "https://github.com/mkubaczyk/helmsman.git", branch: "master"
 
@@ -20,7 +20,11 @@ class Helmsman < Formula
   depends_on "kubernetes-cli"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/helmsman"
+    ldflags = %W[
+      -s -w
+      -X github.com/mkubaczyk/helmsman/internal/app.appVersion=#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags:), "./cmd/helmsman"
     pkgshare.install "examples/example.yaml", "examples/job.yaml"
   end
 
