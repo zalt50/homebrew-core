@@ -1,13 +1,10 @@
 class Glew < Formula
   desc "OpenGL Extension Wrangler Library"
   homepage "https://glew.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/glew/glew/2.2.0/glew-2.2.0.tgz"
-  sha256 "d4fc82893cfb00109578d0a1a2337fb8ca335b3ceccf97b97e5cc7f08e4353e1"
+  url "https://downloads.sourceforge.net/project/glew/glew/2.3.0/glew-2.3.0.tgz"
+  sha256 "b261a06dfc8b970e0a1974488530e58dd2390acf68acb05b45235cd6fb17a086"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/nigels-com/glew.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
@@ -35,12 +32,10 @@ class Glew < Formula
     depends_on "mesa-glu"
   end
 
-  # cmake 4.0 build patch, upstream bug report, https://github.com/nigels-com/glew/issues/432
-  patch :DATA
-
   def install
-    system "cmake", "-S", "./build/cmake", "-B", "_build",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+    args = ["-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    args << "-DOPENGL_glx_LIBRARY=#{Formula["mesa"].opt_lib}/libGL.so" if OS.linux?
+    system "cmake", "-S", "./build/cmake", "-B", "_build", *args,
                     *std_cmake_args(find_framework: "FIRST")
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
@@ -108,17 +103,3 @@ class Glew < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/build/cmake/CMakeLists.txt b/build/cmake/CMakeLists.txt
-index 419c243..8c66ae2 100644
---- a/build/cmake/CMakeLists.txt
-+++ b/build/cmake/CMakeLists.txt
-@@ -4,7 +4,7 @@ endif ()
-
- project (glew C)
-
--cmake_minimum_required (VERSION 2.8.12)
-+cmake_minimum_required (VERSION 3.5)
-
- include(GNUInstallDirs)
