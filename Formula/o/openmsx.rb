@@ -4,6 +4,7 @@ class Openmsx < Formula
   url "https://github.com/openMSX/openMSX/releases/download/RELEASE_21_0/openmsx-21.0.tar.gz"
   sha256 "28838bfa974a0b769b04a8820ad7953a7ad0835eb5d1764db173deac75984b6f"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/openMSX/openMSX.git", branch: "master"
 
   livecheck do
