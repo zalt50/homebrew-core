@@ -1,8 +1,8 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.17.2.tar.gz"
-  sha256 "35c0b44a07b8277a581e4b357e11c1fa5b2144612c822bfa6258427bfd7b4edf"
+  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.17.3.tar.gz"
+  sha256 "508039eb451c063b29890538c4519d1d82aa12ad4c975ad9a94fc07b049cc697"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
@@ -15,7 +15,14 @@ class Mdfried < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "615715ac216d9e709cf7204bfd669bcc24566f98a56e3b505e3896e80309cfc1"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "chafa"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "glib"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
