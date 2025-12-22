@@ -1,8 +1,8 @@
 class Libva < Formula
   desc "Hardware accelerated video processing library"
   homepage "https://github.com/intel/libva"
-  url "https://github.com/intel/libva/releases/download/2.22.0/libva-2.22.0.tar.bz2"
-  sha256 "e3da2250654c8d52b3f59f8cb3f3d8e7fb1a2ee64378dbc400fbc5663de7edb8"
+  url "https://github.com/intel/libva/releases/download/2.23.0/libva-2.23.0.tar.bz2"
+  sha256 "9ac190a87017bfd49743248f5df7cf3b18a99a9962175caf6bbe3f1ea41b6dbb"
   license "MIT"
 
   livecheck do
