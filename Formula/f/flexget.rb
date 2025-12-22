@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/df/ee/7240d25763dd16d4657e00dd647fb09d1e3c7de5b1e36abfc554f7497308/flexget-3.18.32.tar.gz"
-  sha256 "e0bffad0b724e0e973afa6b128033720cd4a7dae6cbc1c8577308eef8818302a"
+  url "https://files.pythonhosted.org/packages/01/f5/ce42f9bd8f84f17a3115669273e511d6e97f105a4430f85b1bf19b9f1494/flexget-3.18.33.tar.gz"
+  sha256 "d8e7817e169eda32f298a3ec0b2cba774f692e2ebd4d17272b969fe42ffec0e8"
   license "MIT"
 
   bottle do
@@ -31,8 +31,8 @@ class Flexget < Formula
   end
 
   resource "apscheduler" do
-    url "https://files.pythonhosted.org/packages/d0/81/192db4f8471de5bc1f0d098783decffb1e6e69c4f8b4bc6711094691950b/apscheduler-3.11.1.tar.gz"
-    sha256 "0db77af6400c84d1747fe98a04b8b58f0080c77d11d338c4f507a9752880f221"
+    url "https://files.pythonhosted.org/packages/07/12/3e4389e5920b4c1763390c6d371162f3784f86f85cd6d6c1bfe68eef14e2/apscheduler-3.11.2.tar.gz"
+    sha256 "2a9966b052ec805f020c8c4c3ae6e6a06e24b1bf19f2e11d91d8cca0473eef41"
   end
 
   resource "attrs" do
@@ -163,8 +163,8 @@ class Flexget < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jaraco-text" do
@@ -255,8 +255,8 @@ class Flexget < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
-    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
+    url "https://files.pythonhosted.org/packages/62/1d/d559954c70be4aade5a6c292c2a940718c4f1da764866b82d8f4261eea3c/pyparsing-3.3.0.tar.gz"
+    sha256 "0de16f2661afbab11fe6645d9472c3b96968d2fffea5b0cc9da88f5be286f039"
   end
 
   resource "pyrss2gen" do
@@ -315,8 +315,8 @@ class Flexget < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "sqlalchemy" do
