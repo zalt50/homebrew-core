@@ -4,6 +4,7 @@ class ArxLibertatis < Formula
   url "https://arx-libertatis.org/files/arx-libertatis-1.2.1/arx-libertatis-1.2.1.tar.xz"
   sha256 "aafd8831ee2d187d7647ad671a03aabd2df3b7248b0bac0b3ac36ffeb441aedf"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://arx-libertatis.org/files/"
