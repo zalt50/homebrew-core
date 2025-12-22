@@ -4,6 +4,7 @@ class Ppsspp < Formula
   url "https://github.com/hrydgard/ppsspp/releases/download/v1.19.3/ppsspp-1.19.3.tar.xz"
   sha256 "054401fa7fffbd99b7fd80e98a2951d6f0c3de83cb4b54719899c98bfad99614"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
+  revision 1
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   bottle do
