@@ -7,12 +7,12 @@ class Mprocs < Formula
   head "https://github.com/pvolok/mprocs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4660b579c769ff9d92f58c492c1a3c71f21ead5e46a7efeafdea2e4a6b5d69c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e77a1ce871e0020c8ca6e8dfc250c569ae841c7d1ea41253b5bc51381ac87f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08fd9548d080c92ddbe70ceb910b144916711c5bbaefaeaf33dae8cf20bb9712"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11a8c256082269703ac31842e10c0c32f6652f860ffadf80e0e406d52c9a5bdd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e1e70f7e572b0693229a5feb3101936905491bcb6b11bfb27d8719f2f9662dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "326387f1683ae8859ec0a6676fee7ed6d0350532525b8672549e16380a249953"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "126f7a6a91c1517731cf9dec8895e66b1ed7ac1e5c064b3137187fcc7263f1de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce625145e06d5a804675c5471d7e6182822d35568d85cbc7284b3e5843082b78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cae3348cf54183705dc2ab8961c277bb20240db7ade123771c4feaf0a39e453a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a921efe63cb35f57c7a60635c9d7d366c53230aefd6d71e6681e8841223b0ac6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d75ea976ee3f856b00631758c0cdb49f93b647f3e08de91cb37edaefde76c07d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4567e7036d0f95c0dc14dd2528344ad092b94f0de3c54e19f61c33b1a16bde97"
   end
 
   depends_on "rust" => :build
