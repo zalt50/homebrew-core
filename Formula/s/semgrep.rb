@@ -395,8 +395,6 @@ class Semgrep < Formula
     end
 
     venv.pip_install_and_link buildpath/"cli"
-
-    generate_completions_from_executable(bin/"semgrep", "--legacy", shell_parameter_format: :click)
   end
 
   test do
