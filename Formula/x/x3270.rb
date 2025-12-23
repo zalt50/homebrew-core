@@ -1,8 +1,8 @@
 class X3270 < Formula
   desc "IBM 3270 terminal emulator for the X Window System and Windows"
   homepage "https://x3270.bgp.nu/"
-  url "https://x3270.bgp.nu/download/04.04/suite3270-4.4ga6-src.tgz"
-  sha256 "8438eee59795cd3bfbf1963053369b9aa30af6b85e4d927b7254d24e992433b1"
+  url "https://downloads.sourceforge.net/project/x3270/x3270/4.5ga5/suite3270-4.5ga5-src.tgz"
+  sha256 "01576fa58598ccdd3d366febfaef61e3d1de93eb60a93f9ac6ba5faf84144c6f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -27,16 +27,14 @@ class X3270 < Formula
   depends_on "tcl-tk@8"
 
   uses_from_macos "python" => :build
+  uses_from_macos "expat"
   uses_from_macos "ncurses"
 
   def install
-    # Fix to read SOURCE_DATE_EPOCH as an unix timestamp not a date string
-    inreplace "Common/mkversion.py", "strptime(os.environ['SOURCE_DATE_EPOCH'], '%a %b %d %H:%M:%S %Z %Y')",
-                                     "fromtimestamp(int(os.environ['SOURCE_DATE_EPOCH']))"
-
     ENV.append "CPPFLAGS", "-I#{Formula["tcl-tk@8"].opt_include}/tcl-tk"
 
     args = %w[
+      --disable-x3270
       --enable-c3270
       --enable-pr3287
       --enable-s3270
