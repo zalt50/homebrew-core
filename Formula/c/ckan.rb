@@ -11,7 +11,7 @@ class Ckan < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0c13567285bd77c9390aa195b9e323b21cabfdfecc58d212fb54aec8e5dbc684"
+    sha256 cellar: :any_skip_relocation, all: "c0d0e423272db4767bdbd53bcef9a7140114f5501b9328a0bebe75ad06b27c04"
   end
 
   depends_on "mono"
