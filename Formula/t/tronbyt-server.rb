@@ -7,12 +7,13 @@ class TronbytServer < Formula
   head "https://github.com/tronbyt/server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "27a2e16e65d019ddfca118b6a605f4269c51b480e7ddad61542bb67baa4bd661"
-    sha256 cellar: :any,                 arm64_sequoia: "68a6401915ca2ea4a25942ca19af3cfc25a4ceee17ab329ecc0b492ce5d1ea26"
-    sha256 cellar: :any,                 arm64_sonoma:  "694fb1c30f88ca46ab4cd9fd2b771f5fb70abdc7b304b4cb8a622ae17b49194d"
-    sha256 cellar: :any,                 sonoma:        "2c3019d83299ac73baa7d716cb685e08146227deadfb4d4943540c851118bebb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3197e73468d9479d115daa38ddbfc2b096b92894d8d872ea4f8d8aa6c821db1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a48a5ff884660e3f54ffa2f0c539638bf783ef5f38fa7691f328e8c7f287a1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2abc50ddf450310e259a0c96158706e8cdde12fb9e9730e9e5ab76ad2ce6fb40"
+    sha256 cellar: :any,                 arm64_sequoia: "0b9d5e001f84ea4d411766a35d235c2028cee58be7464ad6572e6178cd187901"
+    sha256 cellar: :any,                 arm64_sonoma:  "31cfe7c54eb8bf45cb2218ff23fb0f073aef847b218de9bc491611edb3836aed"
+    sha256 cellar: :any,                 sonoma:        "e42d555585c5c621ee39f717f39e887fdc411e47294ec7752280504ba47cb13b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49b31d97fe3cc84cec4ad6ad7aaeaf81e2921d18e3bacd5a0ee7e8d8a0e344a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb2b2a67ea78646c53edb69ece17ae068e18558c7bd0188fb4bfcabd0d9dd789"
   end
 
   depends_on "go" => :build
@@ -22,16 +23,19 @@ class TronbytServer < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    commit = build.head? ? Utils.git_short_head : tap.user.to_s
     ldflags = %W[
       -s -w
       -X tronbyt-server/internal/version.Version=#{version}
-      -X tronbyt-server/internal/version.Commit=#{commit}
       -X tronbyt-server/internal/version.BuildDate=#{time.iso8601}
     ]
+    ldflags << "-X tronbyt-server/internal/version.Commit=#{Utils.git_short_head}" if build.head?
     system "go", "build", *std_go_args(ldflags:), "./cmd/server"
+  end
 
-    (var/"tronbyt-server/.env").write <<~EOS
+  def post_install
+    (var/"tronbyt-server").mkpath
+    dot_env = var/"tronbyt-server/.env"
+    dot_env.write <<~EOS unless dot_env.exist?
       # Add application configuration here.
       # For example:
       # LOG_LEVEL=INFO
