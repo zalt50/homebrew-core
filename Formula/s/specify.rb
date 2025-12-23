@@ -11,7 +11,7 @@ class Specify < Formula
     sha256 cellar: :any_skip_relocation, all: "01a68d6c52d0f6be7ddfba533acb7e8efb44961e886c63cfe728e8dbab6a8df8"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi"
@@ -108,7 +108,12 @@ class Specify < Formula
   end
 
   def install
+    # Turn on shell completions option
+    inreplace "src/specify_cli/__init__.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"specify", shell_parameter_format: :typer)
   end
 
   test do
