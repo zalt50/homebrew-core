@@ -18,12 +18,12 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "457abe1231e8881262b4d4bbfd8054a7cbb5721b31d907012a456c3016863c52"
-    sha256 cellar: :any,                 arm64_sequoia: "8eb3b48cecc755cbb676ed9403df98f80bea91b0771adce36b938e10d8877b7d"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4c5d7d6934f77daaf56c09ea51d2079427609902d8f1d27297a4c74408992d6"
-    sha256 cellar: :any,                 sonoma:        "6b9ccd93b95fdd69d66113e660fae54b3e604daba84bc83addd6e38a61b12ac5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "deadffa867dfaf755ae2084c764d359e8f3c1fb19f041344dc746e72a0e442e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b16a0fdb09210519c03654a1c7d035d395c8f28a32e3eeff39e43f78653b964e"
+    sha256 cellar: :any,                 arm64_tahoe:   "f6face3615798814237ca294c99b77b9ebdf49f37a285299612c6ed811c863a6"
+    sha256 cellar: :any,                 arm64_sequoia: "b895f97ac3241b36cfcf83b28aaf4fa0c814e574673ce65cb40a636bf249d0e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb84d67558aaf8045eddbccf0575c65bd7cb5b9ff40bffde11501ac7591739c5"
+    sha256 cellar: :any,                 sonoma:        "24e9e23e5debaaef99e6785b2169d38653be0263a75f0f24e43ce4d5280e7301"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70502bd7d57392aae8727dbc123f0fb7df6ae41f13f76b004ca157058c3f93ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77fb1831f4f42e2ef70e317c4899e3332691cccba3b1d1a614b6a96057059aa8"
   end
 
   depends_on "binaryen" => :build
