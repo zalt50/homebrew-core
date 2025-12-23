@@ -1,8 +1,8 @@
 class AutoEditor < Formula
   desc "Efficient media analysis and rendering"
   homepage "https://auto-editor.com"
-  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.4.0.tar.gz"
-  sha256 "f40a636c46d29b185704808ab5a730ce272856ad176438bb7782595992009acd"
+  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.5.0.tar.gz"
+  sha256 "f4298cd4759de8da0e1123c058aa9785bee32f25f12e7b6f0616b2ccc95c841c"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
@@ -21,8 +21,10 @@ class AutoEditor < Formula
   depends_on "ffmpeg"
   depends_on "lame"
   depends_on "libvpx"
+  depends_on "llama.cpp"
   depends_on "opus"
   depends_on "svt-av1"
+  depends_on "whisper-cpp"
   depends_on "x264"
   depends_on "x265"
 
