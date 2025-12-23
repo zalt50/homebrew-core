@@ -15,12 +15,12 @@ class Breezy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1736f8ac39a966a34dcdabbabc050621212466f696cbcefc3f61b0c64d0ab18c"
-    sha256 cellar: :any,                 arm64_sequoia: "48097b0d61adc860e51fec157e38d84054978d3c10bb1bb8e9793b75a4924cc6"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff56abd3ea258458f0404be67a39f5886b1d709d2ae25fa2e5899ea240e1ee56"
-    sha256 cellar: :any,                 sonoma:        "156ee77535a21c9828782c0ca56ee3c5ea4c0f13f67b707bf9fe8aa426122f7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "034fa3e489b3f031db70b8d206e1cca6c99baa3340bdd841f1a34cd25540baa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67fbbe89dae622ae498546ce9d178095683795aa2df66b61c87fdf6aba5d4d1a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ca212f8ccd074ee517804ba397c5246817386531b4e6177aaff4c5d2f5acbb86"
+    sha256 cellar: :any,                 arm64_sequoia: "1d500ba45017525b0cebead6bd88160df8d76eab707b5c6cc1c255114c5d1585"
+    sha256 cellar: :any,                 arm64_sonoma:  "0264869428361bc45c5b0dade6578d6b63d5a6d596a74d98abbafdfae6219231"
+    sha256 cellar: :any,                 sonoma:        "c80977b799c8d664eee605c2f2688d07e2d6bc81e82ea75948a23aad5ebca78f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "488159b71a7f01667b0af73bb3540baa30ac740f50399a84886a3a21e6598584"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c5a7dc51ab106e04ef976af7c0ada1660b507cdee7e6259360a2f1ec4ea9260"
   end
 
   depends_on "gettext" => :build
