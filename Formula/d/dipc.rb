@@ -1,8 +1,8 @@
 class Dipc < Formula
   desc "Convert your favorite images/wallpapers with your favorite color palettes/themes"
   homepage "https://github.com/doprz/dipc"
-  url "https://github.com/doprz/dipc/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "f94d5f1ace68427ada4b59179f75d56ac37b9783fce855a1366aad020286c4af"
+  url "https://github.com/doprz/dipc/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "3cc4e46cb6531b4b903d2c1a209c19667acac34d91caff5967600ed51c4bebc0"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
