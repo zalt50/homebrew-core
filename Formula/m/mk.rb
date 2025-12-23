@@ -225,8 +225,7 @@ class Mk < Formula
     without = %w[jeepney secretstorage] unless OS.linux?
     virtualenv_install_with_resources(without:)
 
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"mk", "--show-completion")
+    generate_completions_from_executable(bin/"mk", shell_parameter_format: :typer)
   end
 
   test do
