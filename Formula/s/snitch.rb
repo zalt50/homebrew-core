@@ -1,24 +1,29 @@
 class Snitch < Formula
   desc "Prettier way to inspect network connections"
   homepage "https://github.com/karol-broda/snitch"
-  url "https://github.com/karol-broda/snitch/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "308d7f5a91deb55feaf525bc2d8e02c04f9717090a17b1ac14a275c0363e3f2d"
+  url "https://github.com/karol-broda/snitch/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "5dce1da7674ffd46ad9aefdd638a52b06fd4f1862fb19d5d087dcd16a429bf76"
   license "MIT"
   head "https://github.com/karol-broda/snitch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e246e974728965429127e0c3643de8eba12f6ea805ede435973f4ccca7c3fc7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aeb8145f36d69a6be6e92cbc399ff1d5ffcf26b807f54422224ab73b0107fcf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a65217b5e9ede694b59593bf875e1cee96eb9cf8127b134673b9f0547754f04"
-    sha256 cellar: :any_skip_relocation, sonoma:        "143199be11d530c3abaac5b0433033bcdc1e76d6e703d16d5e9eb4325d6246fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "633d992f34afa3d47f223209ef13b5c5930331ec9de641dd61e6dcdcf7dd0472"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b338548750f5ea0cf7cfd9c99532f570b1c829b0ea2334e7aba53c9432c82b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98feefadbed40bf2b2808643cf0fd9befb89db271727650c447b8b8580f0ad4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c47e2025387605971bd5541195f80208181e90026412a86f961f7ab95b0c05f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7cbcddd8562da00af308ffefafe80e5601a225f5f8e1fe8f3761459b842733c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9adffabe798d31c90ff6129cf5effd0d575837a6e1a28022fa1e18ca3e95fd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbb15c156495d7ac29e582a4fad06782cc2d79e7435ea78f10f4e2ee68c99ab8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fd024b1aa37d3e34adfc01d70e3c8e92002b6908695083a81ba3d6ed8c6e390"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X snitch/cmd.Version=#{version} -X snitch/cmd.Commit=#{tap.user}"
+    ldflags = %W[
+      -s -w
+      -X github.com/karol-broda/snitch/cmd.Version=#{version}
+      -X github.com/karol-broda/snitch/cmd.Date=#{time.iso8601}
+      -X github.com/karol-broda/snitch/cmd.Commit=#{tap.user}
+    ]
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"snitch", "completion")
   end
