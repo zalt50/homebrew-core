@@ -8,6 +8,10 @@ class Cinecli < Formula
   license "MIT"
   head "https://github.com/eyeblech/cinecli.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "e00feb9434bfb6c287a93a4937723c42ac05f6c681870c1eebcb970e6c3a96a0"
+  end
+
   depends_on "certifi"
   depends_on "python@3.14"
 
