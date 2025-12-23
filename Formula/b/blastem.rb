@@ -2,7 +2,7 @@ class Blastem < Formula
   desc "Fast and accurate Genesis emulator"
   homepage "https://www.retrodev.com/blastem/"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://www.retrodev.com/repos/blastem", using: :hg
 
   stable do
