@@ -3,10 +3,9 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/11/84/d1a1c726076d1beb61d623feec1b5ea30ef6c13ee8f3fe2f6b7048dad44d/esphome-2025.12.1.tar.gz"
-  sha256 "e5ad2e4d58fbbff7b060d2512c51ebed6868fbd172115dce557cbe78d6928c1a"
+  url "https://files.pythonhosted.org/packages/df/1a/e26335e3edc3267a720a8076cd35d5694ef9741a734e4c53044acb567b7e/esphome-2025.12.2.tar.gz"
+  sha256 "41e02af22c6de7f5de951c31ea8955e216d4225029c21ba39831b374174060dc"
   license "MIT"
-  revision 1
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
   no_autobump! because: "macOS resources cannot be updated on linux CI"
