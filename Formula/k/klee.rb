@@ -4,10 +4,9 @@ class Klee < Formula
 
   desc "Symbolic Execution Engine"
   homepage "https://klee-se.org"
-  url "https://github.com/klee/klee/archive/refs/tags/v3.1.tar.gz"
-  sha256 "ae3d97209fa480ce6498ffaa7eaa7ecbbe22748c739cb7b2389391d0d9c940f7"
+  url "https://github.com/klee/klee/archive/refs/tags/v3.2.tar.gz"
+  sha256 "83d9b9ce0ba187e48c0e55623bf1a68b5eb61376da7ce82551c9d885715a21dd"
   license "NCSA"
-  revision 5
   head "https://github.com/klee/klee.git", branch: "master"
 
   bottle do
