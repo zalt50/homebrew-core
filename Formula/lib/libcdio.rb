@@ -1,11 +1,14 @@
 class Libcdio < Formula
   desc "Compact Disc Input and Control Library"
   homepage "https://savannah.gnu.org/projects/libcdio/"
-  url "https://github.com/libcdio/libcdio/releases/download/2.2.0/libcdio-2.2.0.tar.gz"
-  sha256 "1b6c58137f71721ddb78773432d26252ee6500d92d227d4c4892631c30ea7abb"
+  url "https://github.com/libcdio/libcdio/releases/download/2.3.0/libcdio-2.3.0.tar.gz"
+  sha256 "37bcb13296febbcff9dc4485834bac09212cb463c31fcea52f70ee1dd3a5a5de"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1a05d43f9bfaf6ae9d98ea2ee4130270809bf9b0cb03c8db4a920207575c421a"
