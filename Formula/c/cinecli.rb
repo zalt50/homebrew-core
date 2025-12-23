@@ -9,10 +9,11 @@ class Cinecli < Formula
   head "https://github.com/eyeblech/cinecli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e00feb9434bfb6c287a93a4937723c42ac05f6c681870c1eebcb970e6c3a96a0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "76ea5574fbf64de54361efcf07115cabfe29f2005bae3dc4e48f215efa486712"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: ["certifi"]
@@ -80,11 +81,7 @@ class Cinecli < Formula
   def install
     virtualenv_install_with_resources
 
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # disable it to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"cinecli", "--show-completion")
+    generate_completions_from_executable(bin/"cinecli", shell_parameter_format: :typer)
   end
 
   test do
