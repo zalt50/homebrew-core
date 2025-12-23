@@ -160,7 +160,12 @@ class Cruft < Formula
   end
 
   def install
+    # Turn on shell completions option
+    inreplace "cruft/_cli.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"cruft", shell_parameter_format: :typer)
   end
 
   test do
