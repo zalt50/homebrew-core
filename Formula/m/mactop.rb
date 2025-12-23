@@ -1,8 +1,8 @@
 class Mactop < Formula
   desc "Apple Silicon Monitor Top written in Go Lang"
   homepage "https://github.com/metaspartan/mactop"
-  url "https://github.com/metaspartan/mactop/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "af5abc8dff539da7c1d8771327307bd1fac12d4cf768f6696826a49c493a2abf"
+  url "https://github.com/metaspartan/mactop/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "67e18a66fdad76c2c94fab20996f7ccd7864e774dae92bb0c6cc38a94daa2e74"
   license "MIT"
   head "https://github.com/metaspartan/mactop.git", branch: "main"
 
