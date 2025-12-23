@@ -529,7 +529,12 @@ class KimiCli < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
+    # Turn on shell completions option
+    inreplace "src/kimi_cli/cli.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"kimi", shell_parameter_format: :typer)
   end
 
   test do
