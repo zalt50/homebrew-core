@@ -1,8 +1,8 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "https://fmv.jku.at/cadical/"
-  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-2.2.1.tar.gz"
-  sha256 "16d24cc143632b9990a3fbe062e2858d5dd9599a0f369dc02a40c2a76036f931"
+  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-3.0.0.tar.gz"
+  sha256 "282b1c9422fde8631cb721b86450ae94df4e8de0545c17a69a301aaa4bf92fcf"
   license "MIT"
 
   livecheck do
@@ -23,6 +23,7 @@ class Cadical < Formula
     args = []
     args << "-fPIC" if OS.linux?
 
+    # No options in `std_configure_args` are supported
     system "./configure", *args
     chdir "build" do
       system "make"
@@ -50,11 +51,12 @@ class Cadical < Formula
       #include <cassert>
       int main() {
         CaDiCaL::Solver solver;
-        solver.add(1);
+        int var = solver.declare_one_more_variable();
+        solver.add(var);
         solver.add(0);
         int res = solver.solve();
         assert(res == 10);
-        res = solver.val(1);
+        res = solver.val(var);
         assert(res > 0);
         return 0;
       }
