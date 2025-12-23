@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.6.5.tar.gz"
-  sha256 "43dcb860e7099d3e322418378e856935f76bb4f3f09b9024c9b7d65af55e4036"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.7.0.tar.gz"
+  sha256 "7f3edabb04ab7e22087d550e112c6666915df37ba833df722d96ddcb47313547"
   license all_of: ["HPND", "ISC"] # ISC is only for src/utils/strlcpy.c
 
   livecheck do
@@ -44,7 +44,7 @@ class PgpoolIi < Formula
     # Install conf file with low enough memory limits for default `memqcache_method = 'shmem'`
     inreplace etc/"pgpool.conf.sample" do |s|
       s.gsub! "#pid_file_name = '/var/run/pgpool/pgpool.pid'", "pid_file_name = '#{var}/pgpool-ii/pgpool.pid'"
-      s.gsub! "#logdir = '/tmp'", "logdir = '#{var}/log'"
+      s.gsub! "#log_directory = '/tmp/pgpool_logs'", "logdir = '#{var}/pgpool_logs'"
       s.gsub! "#memqcache_total_size = 64MB", "memqcache_total_size = 1MB"
       s.gsub! "#memqcache_max_num_cache = 1000000", "memqcache_max_num_cache = 1000"
     end
