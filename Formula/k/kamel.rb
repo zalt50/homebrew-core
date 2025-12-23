@@ -1,8 +1,8 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
-  url "https://github.com/apache/camel-k/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "1e2864045f826fb8bf1f298f40b46e3ba6ff7462010165fef47c87a4df4699cf"
+  url "https://github.com/apache/camel-k/archive/refs/tags/v2.9.0.tar.gz"
+  sha256 "6a1f3639706546e075730da65f9424522ec5f211f58f9227d86f3ae81c590ccc"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git", branch: "main"
 
@@ -23,10 +23,8 @@ class Kamel < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/apache/camel-k/v2/pkg/util/defaults.GitCommit=#{tap.user}-#{version}"
+    ldflags = "-s -w -X github.com/apache/camel-k/v#{version.major}/pkg/util/defaults.GitCommit=#{tap.user}-#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kamel"
-
-    generate_completions_from_executable(bin/"kamel", "completion", shells: [:bash, :zsh])
   end
 
   test do
