@@ -1,8 +1,8 @@
 class Ghc < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.12.2/ghc-9.12.2-src.tar.xz"
-  sha256 "0e49cd5dde43f348c5716e5de9a5d7a0f8d68d945dc41cf75dfdefe65084f933"
+  url "https://downloads.haskell.org/~ghc/9.14.1/ghc-9.14.1-src.tar.xz"
+  sha256 "2a83779c9af86554a3289f2787a38d6aa83d00d136aa9f920361dd693c101e77"
   license "BSD-3-Clause"
   head "https://gitlab.haskell.org/ghc/ghc.git", branch: "master"
 
@@ -28,7 +28,7 @@ class Ghc < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "sphinx-doc" => :build
   depends_on "xz" => :build
   depends_on "gmp"
@@ -44,41 +44,37 @@ class Ghc < Formula
 
   on_linux do
     on_arm do
-      depends_on "gcc" => :build if DevelopmentTools.gcc_version("gcc") < 12
-
-      fails_with :gcc do
-        version "11"
-        cause <<~CAUSE
-          _build/stage1/compiler/build/GHC.p_dyn_o:(.text..LsO3B_info+0x198):
-          relocation truncated to fit: R_AARCH64_JUMP26 against symbol
-          `ghczm9zi12zi2zminplace_GHCziUtilsziPanic_showGhcException_info'
-          defined in .text.ghczm9zi12zi2zminplace_GHCziUtilsziPanic_showGhcException_info
-          section in _build/stage1/compiler/build/GHC/Utils/Panic.p_dyn_o
-        CAUSE
-      end
+      # Work around build failure with Ubuntu 22.04 toolchain (gcc/ld):
+      #
+      # _build/stage1/compiler/build/GHC.p_dyn_o:(.text..LsO3B_info+0x198): relocation truncated to fit:
+      # R_AARCH64_JUMP26 against symbol `ghczm9zi12zi2zminplace_GHCziUtilsziPanic_showGhcException_info'
+      # defined in .text.ghczm9zi12zi2zminplace_GHCziUtilsziPanic_showGhcException_info section in
+      # _build/stage1/compiler/build/GHC/Utils/Panic.p_dyn_o
+      depends_on "gcc@12" => :build
     end
   end
 
   # A binary of ghc is needed to bootstrap ghc
+  # NOTE: GHC 9.12.3 fails https://gitlab.haskell.org/ghc/ghc/-/issues/26715
   resource "binary" do
     on_macos do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.10.1/ghc-9.10.1-aarch64-apple-darwin.tar.xz"
-        sha256 "ffaf83b5d7a8b2c04920c6e3909c0be21dde27baf380d095fa27e840a3a2e804"
+        url "https://downloads.haskell.org/~ghc/9.12.2/ghc-9.12.2-aarch64-apple-darwin.tar.xz"
+        sha256 "4b61b933028c63ace950236ea3382d02e51a3d9cbd1ca3f6cf4fe14c71ff436c"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.10.1/ghc-9.10.1-x86_64-apple-darwin.tar.xz"
-        sha256 "8cf22188930e10d7ac5270d425e21a3dab606af73a655493639345200c650be9"
+        url "https://downloads.haskell.org/~ghc/9.12.2/ghc-9.12.2-x86_64-apple-darwin.tar.xz"
+        sha256 "e7a40e39059dd3619d7884b7382f357e79a0f4e430181b805bdd57b3be9a7300"
       end
     end
     on_linux do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.10.1/ghc-9.10.1-aarch64-deb10-linux.tar.xz"
-        sha256 "e6df50e62b696e3a8b759670fc79207ccc26e88a79a047561ca1ccb8846157dd"
+        url "https://downloads.haskell.org/~ghc/9.12.2/ghc-9.12.2-aarch64-deb10-linux.tar.xz"
+        sha256 "6048eae62ede069459398fa6f2e92ab9719e1b83e93a9014e6a410c54ed2755f"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.10.1/ghc-9.10.1-x86_64-ubuntu20_04-linux.tar.xz"
-        sha256 "ae3be406fdb73bd2b0c22baada77a8ff2f8cde6220dd591dc24541cfe9d895eb"
+        url "https://downloads.haskell.org/~ghc/9.12.2/ghc-9.12.2-x86_64-ubuntu20_04-linux.tar.xz"
+        sha256 "0cffff0a74131465bb5d1447400ea46080a10e3cd46d6c9559aa6f2a6a7537ac"
       end
     end
   end
@@ -86,22 +82,22 @@ class Ghc < Formula
   resource "cabal-install" do
     on_macos do
       on_arm do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.14.1.1/cabal-install-3.14.1.1-aarch64-darwin.tar.xz"
-        sha256 "bd40920fb3d5bcf3d78ce93445039ba43bc5edf769c52234223f25b83e3cc682"
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.16.1.0/cabal-install-3.16.1.0-aarch64-darwin.tar.xz"
+        sha256 "e02f4561fbce72b198a3c6c81b9f211f9c7cbf40c073f8f2ee59f835dd1dd502"
       end
       on_intel do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.14.1.1/cabal-install-3.14.1.1-x86_64-darwin.tar.xz"
-        sha256 "3690d8f7aa368141574f9eaf8e75bc26932ed7b422f5ade107d6972b3b72532f"
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.16.1.0/cabal-install-3.16.1.0-x86_64-darwin.tar.xz"
+        sha256 "e09fec9aa6379d79a749d337446fa72f03f880a577d149c7b039592860bea095"
       end
     end
     on_linux do
       on_arm do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.14.1.1/cabal-install-3.14.1.1-aarch64-linux-deb10.tar.xz"
-        sha256 "bf5fbe5d911c771b1601b80b00e9f9fb3db7f800258204322e411fdf1661a866"
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.16.1.0/cabal-install-3.16.1.0-aarch64-linux-deb10.tar.xz"
+        sha256 "88363ac9f40849adf050872c14c0891eafcba5482f73537c9f2892943d135aa7"
       end
       on_intel do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.14.1.1/cabal-install-3.14.1.1-x86_64-linux-ubuntu20_04.tar.xz"
-        sha256 "91d2b65907e95462396fa96892ebbd903861fc07b5cb74993c612e33d4c0cc65"
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.16.1.0/cabal-install-3.16.1.0-x86_64-linux-ubuntu20_04.tar.xz"
+        sha256 "4396b9beb4e77e9a732aea35c3f12fa0993a64ea32d257add4b7b7d5b23c7894"
       end
     end
   end
@@ -117,12 +113,7 @@ class Ghc < Formula
     ENV["CC"] = ENV["ac_cv_path_CC"] = OS.linux? ? "cc" : ENV.cc
     ENV["CXX"] = ENV["ac_cv_path_CXX"] = OS.linux? ? "c++" : ENV.cxx
     ENV["LD"] = ENV["MergeObjsCmd"] = "ld"
-    ENV["PYTHON"] = which("python3.13")
-
-    # Workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/26166
-    if DevelopmentTools.ld64_version == "1221.4"
-      inreplace "rts/rts.cabal", /("-Wl,-undefined,dynamic_lookup)"/, "\\1,-ld_classic\""
-    end
+    ENV["PYTHON"] = which("python3.14")
 
     binary = buildpath/"binary"
     args = %W[
@@ -157,6 +148,8 @@ class Ghc < Formula
       -j#{ENV.make_jobs}
       --prefix=#{prefix}
       --flavour=release
+      --docs=no-haddocks
+      --docs=no-sphinx-html
       --docs=no-sphinx-pdfs
     ]
     # Let hadrian handle its own parallelization
