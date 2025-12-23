@@ -1,8 +1,8 @@
 class DbmlCli < Formula
   desc "Convert DBML file to SQL and vice versa"
   homepage "https://www.dbml.org/cli/"
-  url "https://registry.npmjs.org/@dbml/cli/-/cli-5.3.0.tgz"
-  sha256 "e6053e39a06a99b5e26d45f3372495fce1a02ef18d72245aa24a7875e5df80f1"
+  url "https://registry.npmjs.org/@dbml/cli/-/cli-5.3.1.tgz"
+  sha256 "09da9a76ac734d24101e403ccc5e856a7764806f38b01e2eaf611eb90bcf59ae"
   license "Apache-2.0"
 
   bottle do
@@ -26,6 +26,11 @@ class DbmlCli < Formula
     node_modules = libexec/"lib/node_modules/@dbml/cli/node_modules"
     node_modules.glob("oracledb/build/Release/oracledb-*.node").each do |f|
       rm(f) unless f.basename.to_s.match?("#{os}-#{arch}")
+    end
+
+    suffix = OS.linux? ? "-gnu" : ""
+    node_modules.glob("snowflake-sdk/dist/lib/minicore/binaries/sf_mini_core_*.node").each do |f|
+      rm(f) unless f.basename.to_s.match?("#{os}-#{arch}#{suffix}")
     end
 
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
