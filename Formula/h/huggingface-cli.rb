@@ -122,8 +122,7 @@ class HuggingfaceCli < Formula
       venv.pip_install Pathname.pwd
     end
 
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"hf", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"hf", shell_parameter_format: :typer)
   end
 
   test do
