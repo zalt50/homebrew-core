@@ -6,7 +6,7 @@ class Basedpyright < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f547aa97304391e5ee53d2df71ea8549a662cade87fb1f0a9b7213b9619ca2f6"
+    sha256 cellar: :any_skip_relocation, all: "5bff247feb9f44ba8e875e2b2c679291775f3ec7a515032929d70375df712003"
   end
 
   depends_on "node"
