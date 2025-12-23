@@ -15,12 +15,12 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "acd724bb7f64d985b8d232e17417af090231c0c82ce7d0eb685193dac340062c"
-    sha256 cellar: :any,                 arm64_sequoia: "860f44f28f71a111c16b859d772a81db6eb03ef36c478ecc4b55bdb629b7a472"
-    sha256 cellar: :any,                 arm64_sonoma:  "e892518e61bc53ae1649eb5ee6cf463e3ac84fd6f4fb4ae44c937898f988c454"
-    sha256 cellar: :any,                 sonoma:        "3c1374bc7fd7b7ff338cd3d00aa1e85d08e6bcea4efea3b1950ec1ace8aff64d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0861cf4e0463d24c5799a8d9b8425d6b3ebd2c3ce67196a15083451fc85155b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a7d399f5223e726dfca95955ef5f86cdecd07a98da8e20a2866f05f9bd6ae30"
+    sha256 cellar: :any,                 arm64_tahoe:   "a1b0ac366537608166b8e7f73ee33ff6da0158d0ed2ca1d91618ddbd8f2d6d2e"
+    sha256 cellar: :any,                 arm64_sequoia: "503bb6c3c25984532d8a9fa6c37f16d0defb3f466ec374e656a1182ea83b0216"
+    sha256 cellar: :any,                 arm64_sonoma:  "60ba359b3bcd6ef93e7903e3fb12e2b14f2a6cc5fb6a34450cc10f6b285a7ea4"
+    sha256 cellar: :any,                 sonoma:        "e13f4946478ca8dea582e594c5ad9788338413ecc3943f25333d56921d2575ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b14d0e6a6a9ee8783711a88b9de6409d1d02c0e919c72bf28488138551e14db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2c012cc1cb8c63d969a0d466acc649d86c44f84e2dda99611f28c774e32128a"
   end
 
   depends_on "cmake" => :build
