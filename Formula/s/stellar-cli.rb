@@ -1,8 +1,8 @@
 class StellarCli < Formula
   desc "Stellar command-line tool for interacting with the Stellar network"
   homepage "https://developers.stellar.org"
-  url "https://github.com/stellar/stellar-cli/archive/refs/tags/v23.3.0.tar.gz"
-  sha256 "52dec385891110256241e2c2d01c280ebd5a7a8ae04b86a90c5a2d6b84d4f825"
+  url "https://github.com/stellar/stellar-cli/archive/refs/tags/v23.4.0.tar.gz"
+  sha256 "6bba70b31ba1b1cbaa37ab6c0db350d34d759f03b9767cb073314c0157474ca8"
   license "Apache-2.0"
   head "https://github.com/stellar/stellar-cli.git", branch: "main"
 
