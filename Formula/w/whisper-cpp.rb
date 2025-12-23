@@ -47,6 +47,10 @@ class WhisperCpp < Formula
     bin.install_symlink libexec.glob("bin/*")
     (lib/"pkgconfig").install_symlink libexec.glob("lib/pkgconfig/*")
 
+    # Install whisper headers and libraries for opt paths
+    include.install_symlink libexec.glob("include/whisper.h")
+    lib.install_symlink libexec.glob("lib/libwhisper*")
+
     pkgshare.install "models/for-tests-ggml-tiny.bin", "samples/jfk.wav"
   end
 
