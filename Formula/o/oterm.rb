@@ -461,11 +461,7 @@ class Oterm < Formula
     without = %w[jeepney secretstorage] unless OS.linux?
     virtualenv_install_with_resources(without:)
 
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # defer installation to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"oterm", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"oterm", shell_parameter_format: :typer)
   end
 
   test do
