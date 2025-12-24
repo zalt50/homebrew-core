@@ -33,7 +33,7 @@ class Apigeecli < Formula
     gcflags = 'all="-l"'
     system "go", "build", *std_go_args(ldflags:, gcflags:), "./cmd/apigeecli"
 
-    generate_completions_from_executable(bin/"apigeecli", "completion")
+    generate_completions_from_executable(bin/"apigeecli", shell_parameter_format: :cobra)
   end
 
   test do
