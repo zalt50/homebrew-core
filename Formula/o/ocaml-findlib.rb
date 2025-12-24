@@ -1,13 +1,13 @@
 class OcamlFindlib < Formula
   desc "OCaml library manager"
   homepage "http://projects.camlcity.org/projects/findlib.html"
-  url "http://download.camlcity.org/download/findlib-1.9.8.tar.gz"
-  sha256 "662c910f774e9fee3a19c4e057f380581ab2fc4ee52da4761304ac9c31b8869d"
+  url "https://github.com/ocaml/ocamlfind/archive/refs/tags/findlib-1.9.8.tar.gz"
+  sha256 "d6899935ccabf67f067a9af3f3f88d94e310075d13c648fa03ff498769ce039d"
   license "MIT"
   revision 2
 
   livecheck do
-    url "http://download.camlcity.org/download/"
+    url "https://opam.ocaml.org/packages/ocamlfind/"
     regex(/href=.*?findlib[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
