@@ -29,7 +29,7 @@ class Astro < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/astronomer/astro-cli/version.CurrVersion=#{version}")
 
-    generate_completions_from_executable(bin/"astro", "completion")
+    generate_completions_from_executable(bin/"astro", shell_parameter_format: :cobra)
   end
 
   test do
