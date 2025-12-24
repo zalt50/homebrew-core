@@ -1,8 +1,8 @@
 class Skalibs < Formula
   desc "Skarnet's library collection"
   homepage "https://skarnet.org/software/skalibs/"
-  url "https://skarnet.org/software/skalibs/skalibs-2.14.4.0.tar.gz"
-  sha256 "0e626261848cc920738f92fd50a24c14b21e30306dfed97b8435369f4bae00a5"
+  url "https://skarnet.org/software/skalibs/skalibs-2.14.5.0.tar.gz"
+  sha256 "d8d9ec756b112ab6d4a9896ba0f53aca92559bc90aeaccd53ed8177e6e159764"
   license "ISC"
   head "git://git.skarnet.org/skalibs.git", branch: "main"
 
@@ -20,10 +20,9 @@ class Skalibs < Formula
   end
 
   def install
-    # Shared libraries are linux targets and not supported on macOS.
     args = %w[
       --disable-silent-rules
-      --disable-shared
+      --enable-shared
       --enable-pkgconfig
     ]
     system "./configure", *args, *std_configure_args
