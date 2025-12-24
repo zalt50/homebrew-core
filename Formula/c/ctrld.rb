@@ -23,6 +23,7 @@ class Ctrld < Formula
       -X github.com/Control-D-Inc/ctrld/cmd/cli.commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/ctrld"
+    generate_completions_from_executable(bin/"ctrld", shell_parameter_format: :cobra)
   end
 
   test do
