@@ -1,8 +1,8 @@
 class LeetcodeCli < Formula
   desc "May the code be with you"
   homepage "https://github.com/clearloop/leetcode-cli"
-  url "https://github.com/clearloop/leetcode-cli/archive/refs/tags/v0.4.7.tar.gz"
-  sha256 "326759d8bb413ae95ee358219014060802d0aa2df6f3c357e1e97814fa956dc6"
+  url "https://github.com/clearloop/leetcode-cli/archive/refs/tags/v0.4.8.tar.gz"
+  sha256 "20666a77fc18997bf878e4dc902f705d6493c551fbdd78199aa0f5279d1018b5"
   license "MIT"
   head "https://github.com/clearloop/leetcode-cli.git", branch: "master"
 
