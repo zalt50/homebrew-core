@@ -18,6 +18,8 @@ class Anyquery < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     tags = %w[
       vtable
       fts5
@@ -25,7 +27,8 @@ class Anyquery < Formula
       sqlite_math_functions
     ]
     system "go", "build", *std_go_args(ldflags: "-s -w", tags:)
-    generate_completions_from_executable(bin/"anyquery", "completion")
+
+    generate_completions_from_executable(bin/"anyquery", shell_parameter_format: :cobra)
   end
 
   test do
