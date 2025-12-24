@@ -22,7 +22,7 @@ class Act < Formula
     system "make", "build", "VERSION=#{version}"
     bin.install "dist/local/act"
 
-    generate_completions_from_executable(bin/"act", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"act", shell_parameter_format: :cobra)
   end
 
   test do
