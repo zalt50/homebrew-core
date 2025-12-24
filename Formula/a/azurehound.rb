@@ -25,7 +25,7 @@ class Azurehound < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/bloodhoundad/azurehound/v2/constants.Version=#{version}")
 
-    generate_completions_from_executable(bin/"azurehound", "completion")
+    generate_completions_from_executable(bin/"azurehound", shell_parameter_format: :cobra)
   end
 
   test do
