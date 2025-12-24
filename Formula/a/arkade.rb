@@ -32,7 +32,7 @@ class Arkade < Formula
 
     bin.install_symlink "arkade" => "ark"
 
-    generate_completions_from_executable(bin/"arkade", "completion")
+    generate_completions_from_executable(bin/"arkade", shell_parameter_format: :cobra)
     # make zsh completion also work for `ark` symlink
     inreplace zsh_completion/"_arkade", "#compdef arkade", "#compdef arkade ark=arkade"
   end
