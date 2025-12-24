@@ -1,8 +1,8 @@
 class NotionMcpServer < Formula
   desc "MCP Server for Notion"
   homepage "https://github.com/makenotion/notion-mcp-server"
-  url "https://registry.npmjs.org/@notionhq/notion-mcp-server/-/notion-mcp-server-1.9.1.tgz"
-  sha256 "64d941e1d43cb0cab4030daa25390e10c4f0957290f0636e0ab779e3ef62621b"
+  url "https://registry.npmjs.org/@notionhq/notion-mcp-server/-/notion-mcp-server-2.0.0.tgz"
+  sha256 "dcd2ac43fbb74e9638e4ba669e4f2463876f2ee1e55c709143df3713f376f763"
   license "MIT"
 
   bottle do
@@ -22,6 +22,6 @@ class NotionMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    assert_match "Identifier for a Notion database", pipe_output(bin/"notion-mcp-server", json, 0)
+    assert_match "Identifier for a Notion data source", pipe_output(bin/"notion-mcp-server", json, 0)
   end
 end
