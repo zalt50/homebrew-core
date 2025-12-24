@@ -32,7 +32,7 @@ class Alda < Formula
       bin.write_jar_script libexec/"alda-player-fat.jar", "alda-player"
     end
 
-    generate_completions_from_executable(bin/"alda", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"alda", shell_parameter_format: :cobra)
   end
 
   test do
