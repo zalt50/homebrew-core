@@ -8,8 +8,8 @@ class Passt < Formula
   head "git://passt.top/passt", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "6fda302706da3803399c1605748de663281575b50503ac9ef5eac6971241bd3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6b0120f42db8f4471e5ad84923c887fe1b4bc95f8e0d9b6c5b1a4a6717725a20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c366301ff08f9b901de549476353fdb8d4354303be5b0fc87e9acd5f986d145d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "27cf9fbd11c805d9a762ac62a87398349b2ac7da4f9b46c884defdc7b5318729"
   end
 
   depends_on :linux
