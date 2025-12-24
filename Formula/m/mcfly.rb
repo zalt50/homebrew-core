@@ -1,8 +1,8 @@
 class Mcfly < Formula
   desc "Fly through your shell history"
   homepage "https://github.com/cantino/mcfly"
-  url "https://github.com/cantino/mcfly/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "194383276095b71dd6d085fb959ba7981384cbe09776fd5f182e95bbed5a3a13"
+  url "https://github.com/cantino/mcfly/archive/refs/tags/v0.9.4.tar.gz"
+  sha256 "31cdd76bfab3b05b4873bc20f03eb022e5a5d68f6595bc6df5dd9fce4b519e53"
   license "MIT"
   head "https://github.com/cantino/mcfly.git", branch: "master"
 
