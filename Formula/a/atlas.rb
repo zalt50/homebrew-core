@@ -3,19 +3,18 @@ class Atlas < Formula
   homepage "https://atlasgo.io/"
   # Upstream may not mark patch releases as latest on GitHub; it is fine to ship them.
   # See https://github.com/ariga/atlas/issues/1090#issuecomment-1225258408
-  url "https://github.com/ariga/atlas/archive/refs/tags/v0.38.0.tar.gz"
-  sha256 "70c0efefa3605279c8eb6fb69447b461f304a6846205d23d394570fc4cd95d69"
+  url "https://github.com/ariga/atlas/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "06c0d2488147466d88aaf14d7ecd6ea9f7f94763cfa45b88689d299b9a496e1b"
   license "Apache-2.0"
   head "https://github.com/ariga/atlas.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acc4e7dc0dd8afc3d07f1d037759902f23c8b29572c824f3e22a6aaf31ecc67b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "391d1a9ef7903b398c7bf9668a96d519581023df3c1d0a8082953f74dc7e7b18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46ebe99c6186195460cb0c765bc7b004a46c65290370169ecc98155d852cbe91"
-    sha256 cellar: :any_skip_relocation, sonoma:        "384d4d3c0985caf2ece9ae68188c999f325343ef001264e031d6bee10c230f6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d39ac4e581d2115434a67c570bb724015465edf1727f959f8a8a6bf99431eed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a17aa5bdf705c8fe6361e2ec073f2c25cc44d42fe36debf6a4f5cad89e376e9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76dc3ad810709204c2e8bda197effd2a4b2280272f03ba6656fed3efd35c135f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "620d120ae8edbfdfb4966dcd600aaff413abb1e2a48f50ab3cab7a9048e0b8a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f97878d9a446e154dc76e978e5a18e3dc4bbc9fb74473187383ed9f2d01b33ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6cbc5c0a63215e0cdece14f92d419149316f3426cdc95729463f9cfd5c148588"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de49555e8a1cf3a1d64172ad9f473d2e07b27a8513fbdc56134174783290d8da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4c654cf0302eb8fcf3d458cb3a1177f5660019365f9f503d69ae6b1869d62fd"
   end
 
   depends_on "go" => :build
