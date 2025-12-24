@@ -22,7 +22,7 @@ class ArgocdAutopilot < Formula
     system "make", "cli-package", "DEV_MODE=false"
     bin.install "dist/argocd-autopilot"
 
-    generate_completions_from_executable(bin/"argocd-autopilot", "completion")
+    generate_completions_from_executable(bin/"argocd-autopilot", shell_parameter_format: :cobra)
   end
 
   test do
