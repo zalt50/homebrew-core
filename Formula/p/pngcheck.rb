@@ -1,16 +1,9 @@
 class Pngcheck < Formula
   desc "Print info and check PNG, JNG, and MNG files"
-  homepage "http://www.libpng.org/pub/png/apps/pngcheck.html"
-  url "http://www.libpng.org/pub/png/src/pngcheck-3.0.3.tar.gz"
-  sha256 "c36a4491634af751f7798ea421321642f9590faa032eccb0dd5fb4533609dee6"
-  license all_of: ["MIT", "GPL-2.0-or-later"]
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?pngcheck[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  homepage "https://github.com/pnggroup/pngcheck"
+  url "https://github.com/pnggroup/pngcheck/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "a24ac2348efca5895e9d6f53fd316f3d5c409ab92a74b2b8106541759304da53"
+  license "HPND"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "450096a7464e3698c4c42388293c1a21ee77c377b1e63fad1beb1c852258b8cb"
@@ -28,11 +21,18 @@ class Pngcheck < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bee1eb579044cbdf33c6e4f045a800debb49b2f9ca4d3517d718956872a58a97"
   end
 
+  depends_on "cmake" => :build
   uses_from_macos "zlib"
 
   def install
-    system "make", "-f", "Makefile.unx", "ZINC=", "ZLIB=-lz"
-    bin.install %w[pngcheck pngsplit png-fix-IDAT-windowsize]
+    # Remove files only needed on non-Unix. Doesn't need to be removed as CMake handles it
+    # but they have different or dubious licenses so let's be explicit to prove that the above license DSL is correct.
+    rm_r "amiga"
+    rm_r "third_party"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
