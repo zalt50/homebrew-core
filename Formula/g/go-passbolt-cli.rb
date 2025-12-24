@@ -1,8 +1,8 @@
 class GoPassboltCli < Formula
   desc "CLI for passbolt"
   homepage "https://www.passbolt.com/"
-  url "https://github.com/passbolt/go-passbolt-cli/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "009042a200146ddb1c8c2ed20084efb1fc65047219ef21a21d6c490af228f0cf"
+  url "https://github.com/passbolt/go-passbolt-cli/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "0887d9c30b43db30d7386ebd7472ec39a38f3529b0aeda3eff0e619e388e8228"
   license "MIT"
   head "https://github.com/passbolt/go-passbolt-cli.git", branch: "main"
 
