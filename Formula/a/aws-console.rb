@@ -11,13 +11,12 @@ class AwsConsole < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2c61763d2de9bb0dcbbfce237f1ac173dcbd61d7c87064f139fde56011cec14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2c61763d2de9bb0dcbbfce237f1ac173dcbd61d7c87064f139fde56011cec14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2c61763d2de9bb0dcbbfce237f1ac173dcbd61d7c87064f139fde56011cec14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "756ded56390fffb191d6b2ad08ae11f5d9a4cbdb108f5e2fa39648f4be0369e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0e5025628d1f41ff08095ad057c4f02feb6b438ace39ef700556b2163a99b4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de1c8bade06cbe0150489b13059561fd9a38c59f543dbe7c3a1da22c5d09c177"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d3e1f67db37e75fb9a1e235ef374391ba4ef617eb66fc8b9d4d7ef42f799b0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d3e1f67db37e75fb9a1e235ef374391ba4ef617eb66fc8b9d4d7ef42f799b0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d3e1f67db37e75fb9a1e235ef374391ba4ef617eb66fc8b9d4d7ef42f799b0f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "171c8394feec2ceb590f5c92e7a871a461756f0edbea6581013f85065e48b7b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "563a99de5e589be7e627bf12937e37cd949789a40290b6a13da97a98615a66a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b03b6059cc2de5a06553356a3b88b8d6e554395825ca925f923e59d5c4440b4"
   end
 
   depends_on "go" => :build
