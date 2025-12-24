@@ -11,12 +11,13 @@ class AwsConsole < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68fc0a3b33b9ee90ea34333821ba7e5215b6859098e71dda5f8d983095bb95be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68fc0a3b33b9ee90ea34333821ba7e5215b6859098e71dda5f8d983095bb95be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68fc0a3b33b9ee90ea34333821ba7e5215b6859098e71dda5f8d983095bb95be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a00d99757596cb31db6caf995f242c996887c3daebc454fca58286be5992eae8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "939ea6f9ef977edea8a25ce381be0b254cd1775e2c6d262d32136561bf51de2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ac453d523c40a7e6174945c161fd780f70612db88a3ada8dcfce5ea5496d588"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2c61763d2de9bb0dcbbfce237f1ac173dcbd61d7c87064f139fde56011cec14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2c61763d2de9bb0dcbbfce237f1ac173dcbd61d7c87064f139fde56011cec14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2c61763d2de9bb0dcbbfce237f1ac173dcbd61d7c87064f139fde56011cec14"
+    sha256 cellar: :any_skip_relocation, sonoma:        "756ded56390fffb191d6b2ad08ae11f5d9a4cbdb108f5e2fa39648f4be0369e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0e5025628d1f41ff08095ad057c4f02feb6b438ace39ef700556b2163a99b4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de1c8bade06cbe0150489b13059561fd9a38c59f543dbe7c3a1da22c5d09c177"
   end
 
   depends_on "go" => :build
@@ -24,7 +25,7 @@ class AwsConsole < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/aws-console"
 
-    generate_completions_from_executable(bin/"aws-console", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"aws-console", shell_parameter_format: :cobra)
   end
 
   test do
