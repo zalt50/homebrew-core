@@ -1,8 +1,8 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://www.groestlcoin.org/groestlcoin-core-wallet/"
-  url "https://github.com/Groestlcoin/groestlcoin/releases/download/v29.0/groestlcoin-29.0.tar.gz"
-  sha256 "48298150c83e38ca0b9b449c99fd1c18118849397e09261312a052517f504746"
+  url "https://github.com/Groestlcoin/groestlcoin/releases/download/v30.1/groestlcoin-30.1.tar.gz"
+  sha256 "8c67fab6a12e5cff8861b9c8be91ea5ca5590de6b92a85508e76098a1964591a"
   license "MIT"
   head "https://github.com/groestlcoin/groestlcoin.git", branch: "master"
 
@@ -21,6 +21,7 @@ class Groestlcoin < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "berkeley-db@5"
+  depends_on "capnp"
   depends_on "libevent"
   depends_on macos: :big_sur
   depends_on "miniupnpc"
