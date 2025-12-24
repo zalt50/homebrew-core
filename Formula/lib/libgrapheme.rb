@@ -1,8 +1,8 @@
 class Libgrapheme < Formula
   desc "Unicode string library"
   homepage "https://libs.suckless.org/libgrapheme/"
-  url "https://dl.suckless.org/libgrapheme/libgrapheme-2.0.2.tar.gz"
-  sha256 "a68bbddde76bd55ba5d64116ce5e42a13df045c81c0852de9ab60896aa143125"
+  url "https://dl.suckless.org/libgrapheme/libgrapheme-3.0.0.tar.gz"
+  sha256 "32585af73dda62fbcc0fed14f199aa1bc988ad01dad0bfbd06cf175d9cf3d68c"
   license "ISC"
   head "https://git.suckless.org/libgrapheme/", using: :git, branch: "master"
 
@@ -10,8 +10,6 @@ class Libgrapheme < Formula
     url "https://dl.suckless.org/libgrapheme/"
     regex(/href=.*?libgrapheme[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "1a83f1b069707a62ab7144ecd7702ce69bb04c622d873f984498dbf8dd355ed6"
