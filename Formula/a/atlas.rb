@@ -9,12 +9,13 @@ class Atlas < Formula
   head "https://github.com/ariga/atlas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34207701799315abfe7a888cde24f2b86fe5b5fa5ff75e3382c130b0674756d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7a3e90c2446f3e7a1c99f328624950f79b5a2278d78133ed33088a7af35f84e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "465d79753381fe25c1d707e76a979a2635b532c01cffdeeac45976cb18d4f28a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e07364e03dbdbbd95c0c6c8d1e4091aab6ffecf200dbac35d72e3584c89e956a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b764d1659b61f6d095290397af53d4f8ac35795fa4322abaf25d14de84f365bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1822b313630f1c80e9c10e48d2d6ab4b0be616a1d4d3bc60c04642e91f3090ad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acc4e7dc0dd8afc3d07f1d037759902f23c8b29572c824f3e22a6aaf31ecc67b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "391d1a9ef7903b398c7bf9668a96d519581023df3c1d0a8082953f74dc7e7b18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46ebe99c6186195460cb0c765bc7b004a46c65290370169ecc98155d852cbe91"
+    sha256 cellar: :any_skip_relocation, sonoma:        "384d4d3c0985caf2ece9ae68188c999f325343ef001264e031d6bee10c230f6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d39ac4e581d2115434a67c570bb724015465edf1727f959f8a8a6bf99431eed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a17aa5bdf705c8fe6361e2ec073f2c25cc44d42fe36debf6a4f5cad89e376e9c"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class Atlas < Formula
       system "go", "build", *std_go_args(ldflags:)
     end
 
-    generate_completions_from_executable(bin/"atlas", "completion")
+    generate_completions_from_executable(bin/"atlas", shell_parameter_format: :cobra)
   end
 
   test do
