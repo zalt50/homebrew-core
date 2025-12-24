@@ -26,7 +26,7 @@ class Azqr < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/azqr"
 
-    generate_completions_from_executable(bin/"azqr", "completion")
+    generate_completions_from_executable(bin/"azqr", shell_parameter_format: :cobra)
   end
 
   test do
