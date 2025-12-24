@@ -23,7 +23,7 @@ class ActRunner < Formula
       -X gitea.com/gitea/act_runner/internal/pkg/ver.version=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"act_runner", "completion")
+    generate_completions_from_executable(bin/"act_runner", shell_parameter_format: :cobra)
 
     (buildpath/"config.yaml").write Utils.safe_popen_read(bin/"act_runner", "generate-config")
     pkgetc.install "config.yaml"
