@@ -1,8 +1,8 @@
 class ClaudeSquad < Formula
   desc "Manage multiple AI agents like Claude Code, Aider and Codex in your terminal"
   homepage "https://smtg-ai.github.io/claude-squad/"
-  url "https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.13.tar.gz"
-  sha256 "f621646464912f19196e1bf9da928fb3230854917d0cdfa112db4229f9e18053"
+  url "https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.14.tar.gz"
+  sha256 "19951f70917aef7fda3810b47e3e2dc3110fb04027ff5dbbe3f3c502999b9610"
   license "AGPL-3.0-only"
   head "https://github.com/smtg-ai/claude-squad.git", branch: "main"
 
