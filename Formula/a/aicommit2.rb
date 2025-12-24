@@ -1,12 +1,12 @@
 class Aicommit2 < Formula
   desc "Reactive CLI that generates commit messages for Git and Jujutsu with AI"
   homepage "https://github.com/tak-bro/aicommit2"
-  url "https://registry.npmjs.org/aicommit2/-/aicommit2-2.4.18.tgz"
-  sha256 "ffe860008d37a181d525b7d9e0a955eea375a089fa5a56d09b57215e1452c85a"
+  url "https://registry.npmjs.org/aicommit2/-/aicommit2-2.4.19.tgz"
+  sha256 "41cf40f3d7f305cc3b74d343d7070d6d55b745f665a19570fb45ef6226b576aa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "853fc04ad7048d2f4733c6c014cd6fa8dc619c60d983fcdf7cd51c5d75752ecb"
+    sha256 cellar: :any_skip_relocation, all: "291b6e52c02b1a738b96baadad02e5455f53b68268f3c4b176f3454711e0641c"
   end
 
   depends_on "node"
