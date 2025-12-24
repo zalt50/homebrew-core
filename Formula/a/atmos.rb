@@ -36,7 +36,7 @@ class Atmos < Formula
 
     system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/cloudposse/atmos/pkg/version.Version=#{version}'")
 
-    generate_completions_from_executable(bin/"atmos", "completion")
+    generate_completions_from_executable(bin/"atmos", shell_parameter_format: :cobra)
   end
 
   test do
