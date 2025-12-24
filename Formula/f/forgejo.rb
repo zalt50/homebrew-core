@@ -21,6 +21,7 @@ class Forgejo < Formula
   uses_from_macos "sqlite"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     ENV["TAGS"] = "bindata sqlite sqlite_unlock_notify"
     system "make", "build"
     bin.install "gitea" => "forgejo"
