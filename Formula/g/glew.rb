@@ -4,6 +4,7 @@ class Glew < Formula
   url "https://downloads.sourceforge.net/project/glew/glew/2.3.0/glew-2.3.0.tgz"
   sha256 "b261a06dfc8b970e0a1974488530e58dd2390acf68acb05b45235cd6fb17a086"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/nigels-com/glew.git", branch: "master"
 
   bottle do
@@ -22,6 +23,13 @@ class Glew < Formula
     depends_on "libx11"
     depends_on "mesa"
     depends_on "mesa-glu"
+  end
+
+  # OpenGL extension fixes.
+  # Upstream PR ref: https://github.com/nigels-com/glew/pull/455
+  patch do
+    url "https://github.com/nigels-com/glew/commit/a7c9cc7c01fa9d59322edf702b6d59e10fe427cb.patch?full_index=1"
+    sha256 "d177dc99fb81d310d2b78b051cdddb4432843904806952794040f8201d702c0c"
   end
 
   def install
