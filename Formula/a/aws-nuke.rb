@@ -27,7 +27,7 @@ class AwsNuke < Formula
 
     pkgshare.install "pkg/config"
 
-    generate_completions_from_executable(bin/"aws-nuke", "completion")
+    generate_completions_from_executable(bin/"aws-nuke", shell_parameter_format: :cobra)
   end
 
   test do
