@@ -20,7 +20,7 @@ class Delve < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"dlv"), "./cmd/dlv"
 
-    generate_completions_from_executable(bin/"dlv", "completion")
+    generate_completions_from_executable(bin/"dlv", shell_parameter_format: :cobra)
   end
 
   test do
