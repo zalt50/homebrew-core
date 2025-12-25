@@ -35,7 +35,7 @@ class Hugo < Formula
     tags = %w[extended withdeploy]
     system "go", "build", *std_go_args(ldflags:, tags:)
 
-    generate_completions_from_executable(bin/"hugo", "completion")
+    generate_completions_from_executable(bin/"hugo", shell_parameter_format: :cobra)
     system bin/"hugo", "gen", "man", "--dir", man1
   end
 
