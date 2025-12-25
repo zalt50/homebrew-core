@@ -30,7 +30,7 @@ class JiraCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"jira"), "./cmd/jira"
 
-    generate_completions_from_executable(bin/"jira", "completion")
+    generate_completions_from_executable(bin/"jira", shell_parameter_format: :cobra)
     (man7/"jira.7").write Utils.safe_popen_read(bin/"jira", "man")
   end
 
