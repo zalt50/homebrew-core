@@ -33,7 +33,7 @@ class K3sup < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"k3sup", "completion")
+    generate_completions_from_executable(bin/"k3sup", shell_parameter_format: :cobra)
   end
 
   test do
