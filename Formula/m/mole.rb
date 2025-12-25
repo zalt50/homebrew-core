@@ -6,6 +6,13 @@ class Mole < Formula
   license "MIT"
   head "https://github.com/tw93/Mole.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e8d66c0d767a642a3cbd8a81854c6cfedfaa8c99013a17939474b57fb54954c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6259f2cab9d8aff70d029417de208e87e2a81ffa0fca3194a6b2cb3345395899"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b843645507f5c4d55798fb175c59fcd997241d214239d8d8477ab29954ee98c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ce564d0b53acd4992bdadfa826fcdfbb7750f90fdde03fcb0c4e33a36226896"
+  end
+
   depends_on "go" => :build
   depends_on :macos
 
