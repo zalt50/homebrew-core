@@ -7,6 +7,7 @@ class Licensefinder < Formula
       tag:      "v7.2.1",
       revision: "00b04cb91e8ec9021c939ccfceb69d4047f4c8ca"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4cb34b2334a48e59f4f6e345ec724015ce1fcbef28863c8a7f1e45b7d851c3a7"
@@ -31,6 +32,10 @@ class Licensefinder < Formula
     sha256 "7a7a9b201cd34a5f868901841ba5f144f0e75580664c8ec024792449348f5875"
   end
 
+  # The logger gem was removed from the stdlib in Ruby 4.0.0.
+  # Project has had no commits since May 2024, so we patch the gemspec to add it as a dependency.
+  patch :DATA
+
   def install
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "license_finder.gemspec"
@@ -54,3 +59,16 @@ class Licensefinder < Formula
                   shell_output(bin/"license_finder", 1)
   end
 end
+__END__
+diff --git a/license_finder.gemspec b/license_finder.gemspec
+index 419a3a6d..62e40adc 100644
+--- a/license_finder.gemspec
++++ b/license_finder.gemspec
+@@ -45,6 +45,7 @@ Gem::Specification.new do |s|
+
+   s.add_dependency 'bundler'
+   s.add_dependency 'csv', '~> 3.2'
++  s.add_dependency 'logger', '~> 1.6.4'
+   s.add_dependency 'rubyzip', '>=1', '<3'
+   s.add_dependency 'thor', '~> 1.2'
+   s.add_dependency 'tomlrb', '>= 1.3', '< 2.1'
