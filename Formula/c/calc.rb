@@ -12,12 +12,12 @@ class Calc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bd1e254d1989f6977033f573e1f1ddf61be476517f243d8ab8e839b868f6104a"
-    sha256 arm64_sequoia: "b153be75bc10456efcf51a98d4512d83e1c87c7eeeef1fef2f16dfb3467e4997"
-    sha256 arm64_sonoma:  "4e35948668aab1b66012d6455a694b5babbb6da2830d25dacc8ddb5ebc9e3de2"
-    sha256 sonoma:        "9ddf82a49ae71ea8c450a08fc4c58fc6496717f387b0e4ede4206c072a0b856e"
-    sha256 arm64_linux:   "fbdf5d699f602875da1150f54e791b0a06c7344a277a72037d92a53749d6c3fb"
-    sha256 x86_64_linux:  "0207c6127c7f5d7b94d4ba4a6319e8ff2561a174854a6f52c669891360656269"
+    sha256 arm64_tahoe:   "1f25c5cf2be18583c2efb5398201e364d78924d3e7844533be579e318029d535"
+    sha256 arm64_sequoia: "d5b454444ffa2a0bd1612918e5f3f15c9444fbe0431127dc18f9f1268a5e85db"
+    sha256 arm64_sonoma:  "1bce935da138101d2b98db52d19833bddbd3c8a35fd7fc5ddd519b6bf18ad8da"
+    sha256 sonoma:        "f13c2c7e1e6513065c4e833f664cfd29514e341edeac14ca3e76f87bca3750e6"
+    sha256 arm64_linux:   "3c76aeabbbad915bf540ba7c28cc1560b5145b1f238d30a416454b4b33d91e62"
+    sha256 x86_64_linux:  "2c1c0693a263b34967b55312ce6e4253334c7b1a09dcaead1005cbf205ce2bf5"
   end
 
   depends_on "readline"
