@@ -4,7 +4,7 @@ class Travis < Formula
   url "https://github.com/travis-ci/travis.rb/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "6fe418bf33b025a106dd99762aa8ebc595b4b549d4087c6921d5565b741f7361"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e8824ef084cf3367d7f585718d44436dc5b931e321059aa120e57379cb7665ff"
@@ -18,7 +18,7 @@ class Travis < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "ruby"
+  depends_on "ruby@3.4"
 
   uses_from_macos "libffi"
 
