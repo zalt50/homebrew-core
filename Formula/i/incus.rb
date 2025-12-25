@@ -25,7 +25,7 @@ class Incus < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/incus"
 
-    generate_completions_from_executable(bin/"incus", "completion")
+    generate_completions_from_executable(bin/"incus", shell_parameter_format: :cobra)
   end
 
   test do
