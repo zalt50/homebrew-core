@@ -25,7 +25,7 @@ class Crane < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/crane"
 
-    generate_completions_from_executable(bin/"crane", "completion")
+    generate_completions_from_executable(bin/"crane", shell_parameter_format: :cobra)
   end
 
   test do
