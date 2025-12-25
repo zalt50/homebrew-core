@@ -27,7 +27,7 @@ class Goctl < Formula
       system "go", "build", *std_go_args(ldflags: "-s -w"), "goctl.go"
     end
 
-    generate_completions_from_executable(bin/"goctl", "completion")
+    generate_completions_from_executable(bin/"goctl", shell_parameter_format: :cobra)
   end
 
   test do
