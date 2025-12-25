@@ -44,7 +44,7 @@ class Kraftkit < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"kraft"), "./cmd/kraft"
 
-    generate_completions_from_executable(bin/"kraft", "completion")
+    generate_completions_from_executable(bin/"kraft", shell_parameter_format: :cobra)
   end
 
   test do
