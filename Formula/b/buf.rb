@@ -30,7 +30,7 @@ class Buf < Formula
       system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/name), "./cmd/#{name}"
     end
 
-    generate_completions_from_executable(bin/"buf", "completion")
+    generate_completions_from_executable(bin/"buf", shell_parameter_format: :cobra)
     man1.mkpath
     system bin/"buf", "manpages", man1
   end
