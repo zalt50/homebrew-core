@@ -24,7 +24,7 @@ class CfTerraforming < Formula
     ldflags = "-s -w -X #{proj}/internal/app/cf-terraforming/cmd.versionString=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/cf-terraforming"
 
-    generate_completions_from_executable(bin/"cf-terraforming", "completion")
+    generate_completions_from_executable(bin/"cf-terraforming", shell_parameter_format: :cobra)
   end
 
   test do
