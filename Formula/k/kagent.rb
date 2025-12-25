@@ -28,7 +28,7 @@ class Kagent < Formula
       system "go", "build", *std_go_args(ldflags:), "./cli/cmd/kagent"
     end
 
-    generate_completions_from_executable(bin/"kagent", "completion")
+    generate_completions_from_executable(bin/"kagent", shell_parameter_format: :cobra)
   end
 
   test do
