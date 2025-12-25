@@ -19,7 +19,7 @@ class Opencode < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove binaries for other architectures, `-musl`, `-baseline`, and `-baseline-musl`
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
