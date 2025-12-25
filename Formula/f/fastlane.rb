@@ -4,6 +4,7 @@ class Fastlane < Formula
   url "https://github.com/fastlane/fastlane/archive/refs/tags/2.230.0.tar.gz"
   sha256 "e496600b49a3eda2463964eedcfdb4d0c25751cf2a1fa59de9f09719d249ed06"
   license "MIT"
+  revision 1
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -30,15 +31,18 @@ class Fastlane < Formula
     "${HOME}/.local/share/fastlane/#{Formula["ruby"].version.major_minor}.0"
   end
 
+  # Include gems that are no longer part of the standard library in Ruby 4.0+
+  # Upstream PR ref: https://github.com/fastlane/fastlane/pull/29833
+  patch do
+    url "https://github.com/fastlane/fastlane/commit/104113ad1d16ad44cf4a74e60993ba44cef2d787.patch?full_index=1"
+    sha256 "ccf3358fca5e43a20fe89f114a5234efe1e8c897c384d9db7a0d13d9c3c3edfb"
+  end
+
   def install
     ENV["GEM_HOME"] = libexec
     ENV["GEM_PATH"] = libexec
     ENV["LANG"] = "en_US.UTF-8"
     ENV["LC_ALL"] = "en_US.UTF-8"
-
-    # `abbrev`, `mutex_m` gem no longer with ruby 3.4+, upstream patch pr, https://github.com/fastlane/fastlane/pull/29182
-    system "gem", "install", "abbrev", "--no-document"
-    system "gem", "install", "mutex_m", "--no-document"
 
     system "gem", "build", "fastlane.gemspec"
     system "gem", "install", "fastlane-#{version}.gem", "--no-document"
@@ -69,6 +73,9 @@ class Fastlane < Formula
   end
 
   test do
+    ENV["LANG"] = "en_US.UTF-8"
+    ENV["LC_ALL"] = "en_US.UTF-8"
+
     assert_match "fastlane #{version}", shell_output("#{bin}/fastlane --version")
 
     actions_output = shell_output("#{bin}/fastlane actions")
