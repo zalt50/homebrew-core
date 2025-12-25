@@ -18,12 +18,13 @@ class Flyctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2aea9dccac3fc1869572d2b2d602ed385b1e229dc9c4899ca5b07728f8e96616"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2aea9dccac3fc1869572d2b2d602ed385b1e229dc9c4899ca5b07728f8e96616"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2aea9dccac3fc1869572d2b2d602ed385b1e229dc9c4899ca5b07728f8e96616"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9637d714c55fc4d4e92ec8b06c865dad5936c932464a2d92ba8b35bf5838ad4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60514c0279c7d5fd43d69210fbea8f8b5edb62c4e5ce6a960614396dfbe3db80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7fc4bfb2f0826446df6592e9970b903770b3ce0aa8de8fbf68ecb7f60ce1dc6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a11de6699ebb3b7ff3df7c886fb97ab574b3d09a06770ebb70b327a1d2b5bce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a11de6699ebb3b7ff3df7c886fb97ab574b3d09a06770ebb70b327a1d2b5bce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a11de6699ebb3b7ff3df7c886fb97ab574b3d09a06770ebb70b327a1d2b5bce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88a52cfd75998bf7ec3b977af9d01138f2b5bfa3afcd10676b9fb9c003e2b569"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c24a6a620db738dcb66968d06d46cc159b3ea710c9b171bcc982f28eee131c17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3099eef290fc7990704ff3842d23826264c60387c23fa723d10c16f812ae10e0"
   end
 
   depends_on "go" => :build
@@ -40,8 +41,9 @@ class Flyctl < Formula
 
     bin.install_symlink "flyctl" => "fly"
 
-    generate_completions_from_executable(bin/"flyctl", "completion")
-    generate_completions_from_executable(bin/"fly", "completion")
+    %w[flyctl fly].each do |cmd|
+      generate_completions_from_executable(bin/cmd, shell_parameter_format: :cobra)
+    end
   end
 
   test do
