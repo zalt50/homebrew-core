@@ -23,7 +23,7 @@ class Frizbee < Formula
     ldflags = "-s -w -X github.com/stacklok/frizbee/internal/cli.CLIVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"frizbee", "completion")
+    generate_completions_from_executable(bin/"frizbee", shell_parameter_format: :cobra)
   end
 
   test do
