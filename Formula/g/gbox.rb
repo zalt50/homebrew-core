@@ -24,7 +24,7 @@ class Gbox < Formula
 
   def install
     system "make", "install", "prefix=#{prefix}", "VERSION=#{version}", "COMMIT_ID=#{File.read("COMMIT")}", "BUILD_TIME=#{time.iso8601}"
-    generate_completions_from_executable(bin/"gbox", "completion")
+    generate_completions_from_executable(bin/"gbox", shell_parameter_format: :cobra)
   end
 
   test do
