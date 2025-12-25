@@ -34,7 +34,7 @@ class Kubeaudit < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd"
 
-    generate_completions_from_executable(bin/"kubeaudit", "completion")
+    generate_completions_from_executable(bin/"kubeaudit", shell_parameter_format: :cobra)
   end
 
   test do
