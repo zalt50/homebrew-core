@@ -23,7 +23,7 @@ class Cyphernetes < Formula
     system "make", "operator-manifests"
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/cyphernetes"
 
-    generate_completions_from_executable(bin/"cyphernetes", "completion")
+    generate_completions_from_executable(bin/"cyphernetes", shell_parameter_format: :cobra)
   end
 
   test do
