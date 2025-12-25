@@ -28,7 +28,7 @@ class Epinio < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/epinio/epinio/internal/version.Version=v#{version}")
 
-    generate_completions_from_executable(bin/"epinio", "completion")
+    generate_completions_from_executable(bin/"epinio", shell_parameter_format: :cobra)
   end
 
   test do
