@@ -1,8 +1,8 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https://github.com/chaqchase/lla"
-  url "https://github.com/chaqchase/lla/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "34afc823a0bfda6379966cdbcaeaabda4ffc2e9f122c2a85f3b8ba9a77e53c22"
+  url "https://github.com/chaqchase/lla/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "070ed3248049b6c657e735552fb2e42a4fe116e1f0dbe230d5a33c9c6f62383e"
   license "MIT"
 
   bottle do
@@ -16,6 +16,12 @@ class Lla < Formula
 
   depends_on "protobuf" => :build
   depends_on "rust" => :build
+
+  # fix `editor = null` toml config parsing error, upstream pr ref, https://github.com/chaqchase/lla/pull/148
+  patch do
+    url "https://github.com/chaqchase/lla/commit/2a5901cd5108759915cd8370669ec130d9b2df34.patch?full_index=1"
+    sha256 "cafb622a851c085e616b361fffcba7b2b3e33290f823e406acc0b2dc0f2b0ff5"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "lla")
