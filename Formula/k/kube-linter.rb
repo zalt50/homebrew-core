@@ -22,7 +22,7 @@ class KubeLinter < Formula
     ldflags = "-s -w -X golang.stackrox.io/kube-linter/internal/version.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kube-linter"
 
-    generate_completions_from_executable(bin/"kube-linter", "completion")
+    generate_completions_from_executable(bin/"kube-linter", shell_parameter_format: :cobra)
   end
 
   test do
