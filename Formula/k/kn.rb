@@ -30,7 +30,7 @@ class Kn < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/kn"
 
-    generate_completions_from_executable(bin/"kn", "completion")
+    generate_completions_from_executable(bin/"kn", shell_parameter_format: :cobra)
   end
 
   test do
