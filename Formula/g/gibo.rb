@@ -25,7 +25,7 @@ class Gibo < Formula
       -X github.com/simonwhitaker/gibo/cmd.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"gibo", "completion")
+    generate_completions_from_executable(bin/"gibo", shell_parameter_format: :cobra)
   end
 
   test do
