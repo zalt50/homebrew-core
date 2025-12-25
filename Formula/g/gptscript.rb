@@ -25,7 +25,7 @@ class Gptscript < Formula
     system "go", "build", *std_go_args(ldflags:)
 
     pkgshare.install "examples"
-    generate_completions_from_executable(bin/"gptscript", "completion")
+    generate_completions_from_executable(bin/"gptscript", shell_parameter_format: :cobra)
   end
 
   test do
