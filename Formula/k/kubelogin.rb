@@ -23,7 +23,7 @@ class Kubelogin < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"kubectl-oidc_login")
 
-    generate_completions_from_executable(bin/"kubectl-oidc_login", "completion")
+    generate_completions_from_executable(bin/"kubectl-oidc_login", shell_parameter_format: :cobra)
   end
 
   test do
