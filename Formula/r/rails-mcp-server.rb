@@ -4,6 +4,7 @@ class RailsMcpServer < Formula
   url "https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "aef71b34cb41b4dbcd93d97f8e750d4f2fd15e74fb03c363dbceba22d6d5fa52"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d6463d51cc5b0db9b326569342cee4d6aea9c9268cd0b353a0cd2b06ac2d254a"
