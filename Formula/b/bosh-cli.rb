@@ -22,7 +22,7 @@ class BoshCli < Formula
     inreplace "cmd/version.go", "[DEV BUILD]", "#{version}-#{tap.user}-#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"bosh-cli", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"bosh-cli", shell_parameter_format: :cobra)
   end
 
   test do
