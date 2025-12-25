@@ -26,7 +26,7 @@ class Greenmask < Formula
     ldflags = "-s -w -X github.com/greenmaskio/greenmask/cmd/greenmask/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, tags: "viper_bind_struct"), "./cmd/greenmask"
 
-    generate_completions_from_executable(bin/"greenmask", "completion")
+    generate_completions_from_executable(bin/"greenmask", shell_parameter_format: :cobra)
   end
 
   test do
