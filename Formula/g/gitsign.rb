@@ -29,7 +29,7 @@ class Gitsign < Formula
     system "go", "build", *std_go_args(ldflags:, output: bin/"gitsign-credential-cache"),
       "./cmd/gitsign-credential-cache"
 
-    generate_completions_from_executable(bin/"gitsign", "completion")
+    generate_completions_from_executable(bin/"gitsign", shell_parameter_format: :cobra)
   end
 
   test do
