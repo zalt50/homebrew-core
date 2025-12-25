@@ -21,7 +21,7 @@ class Changie < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"changie", "completion")
+    generate_completions_from_executable(bin/"changie", shell_parameter_format: :cobra)
   end
 
   test do
