@@ -30,7 +30,7 @@ class DockerBuildx < Formula
     (lib/"docker/cli-plugins").install_symlink bin/"docker-buildx"
     doc.install buildpath.glob("docs/reference/*.md")
 
-    generate_completions_from_executable(bin/"docker-buildx", "completion")
+    generate_completions_from_executable(bin/"docker-buildx", shell_parameter_format: :cobra)
   end
 
   def caveats
