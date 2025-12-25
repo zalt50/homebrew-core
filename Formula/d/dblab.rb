@@ -20,7 +20,7 @@ class Dblab < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin/"dblab", "completion")
+    generate_completions_from_executable(bin/"dblab", shell_parameter_format: :cobra)
   end
 
   test do
