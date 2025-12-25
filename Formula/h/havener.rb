@@ -23,7 +23,7 @@ class Havener < Formula
     ldflags = "-s -w -X github.com/homeport/havener/internal/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/havener"
 
-    generate_completions_from_executable(bin/"havener", "completion")
+    generate_completions_from_executable(bin/"havener", shell_parameter_format: :cobra)
   end
 
   test do
