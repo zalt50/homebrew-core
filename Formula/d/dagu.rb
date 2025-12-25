@@ -26,6 +26,7 @@ class Dagu < Formula
 
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd"
+    generate_completions_from_executable(bin/"dagu", shell_parameter_format: :cobra)
   end
 
   service do
