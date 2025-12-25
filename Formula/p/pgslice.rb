@@ -4,6 +4,7 @@ class Pgslice < Formula
   url "https://github.com/ankane/pgslice/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "9c4b597c376217f81b40775906a07d1a294f22236f357bc88551b4a3a67b6172"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "4b804ee8c22a1b234028f9119170e2172641c89fb39adf7c46ffcbb420aff89f"
@@ -18,16 +19,19 @@ class Pgslice < Formula
 
   depends_on "postgresql@18" => :test
   depends_on "libpq"
-  depends_on "ruby"
+  depends_on "ruby@3.4"
 
-  resource "pg" do
-    url "https://rubygems.org/gems/pg-1.6.0.gem"
-    sha256 "26ea1694e4ed2e387a8292373acbb62ff9696d691d3a1b8b76cf56eb1d9bd40b"
-  end
+  # List with `gem install --explain pgslice -v #{version}`
+  # https://rubygems.org/gems/pgslice/versions/#{version}/dependencies
 
   resource "thor" do
     url "https://rubygems.org/gems/thor-1.4.0.gem"
     sha256 "8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d"
+  end
+
+  resource "pg" do
+    url "https://rubygems.org/gems/pg-1.6.2.gem"
+    sha256 "58614afd405cc9c2c9e15bffe8432e0d6cfc58b722344ad4a47c73a85189c875"
   end
 
   def install
