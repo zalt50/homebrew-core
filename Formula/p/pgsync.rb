@@ -4,6 +4,7 @@ class Pgsync < Formula
   url "https://github.com/ankane/pgsync/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "485c38e4c5bfec943bf8781f8c8ca4b773011c5767fb30be44d373566f40d5dc"
   license "MIT"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
