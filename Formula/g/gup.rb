@@ -20,7 +20,9 @@ class Gup < Formula
   def install
     ldflags = "-s -w -X github.com/nao1215/gup/internal/cmdinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"gup", "completion")
+
+    generate_completions_from_executable(bin/"gup", shell_parameter_format: :cobra)
+
     ENV["MANPATH"] = man1.mkpath
     system bin/"gup", "man"
   end
