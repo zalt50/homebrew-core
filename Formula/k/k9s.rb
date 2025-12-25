@@ -31,7 +31,7 @@ class K9s < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"k9s", "completion")
+    generate_completions_from_executable(bin/"k9s", shell_parameter_format: :cobra)
   end
 
   test do
