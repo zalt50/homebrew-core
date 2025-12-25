@@ -31,7 +31,7 @@ class Ipsw < Formula
       -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppBuildCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/ipsw"
-    generate_completions_from_executable(bin/"ipsw", "completion")
+    generate_completions_from_executable(bin/"ipsw", shell_parameter_format: :cobra)
   end
 
   test do
