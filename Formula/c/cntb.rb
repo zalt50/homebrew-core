@@ -23,7 +23,7 @@ class Cntb < Formula
     ldflags = "-s -w -X contabo.com/cli/cntb/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"cntb", "completion")
+    generate_completions_from_executable(bin/"cntb", shell_parameter_format: :cobra)
   end
 
   test do
