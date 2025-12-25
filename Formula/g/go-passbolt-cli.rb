@@ -21,7 +21,7 @@ class GoPassboltCli < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"passbolt")
 
-    generate_completions_from_executable(bin/"passbolt", "completion")
+    generate_completions_from_executable(bin/"passbolt", shell_parameter_format: :cobra)
     mkdir "man"
     system bin/"passbolt", "gendoc", "--type", "man"
     man1.install Dir["man/*.1"]
