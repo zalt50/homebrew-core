@@ -27,7 +27,7 @@ class Clusterawsadm < Formula
     system "make", "clusterawsadm"
     bin.install Dir["bin/*"]
 
-    generate_completions_from_executable(bin/"clusterawsadm", "completion")
+    generate_completions_from_executable(bin/"clusterawsadm", shell_parameter_format: :cobra)
   end
 
   test do
