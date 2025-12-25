@@ -22,7 +22,7 @@ class Bomber < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"bomber", "completion")
+    generate_completions_from_executable(bin/"bomber", shell_parameter_format: :cobra)
 
     pkgshare.install "_TESTDATA_"
   end
