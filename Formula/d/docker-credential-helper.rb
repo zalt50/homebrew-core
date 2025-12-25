@@ -24,15 +24,17 @@ class DockerCredentialHelper < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     if OS.mac?
       system "make", "osxkeychain"
       bin.install "bin/build/docker-credential-osxkeychain"
     else
-      system "make", "pass"
       system "make", "secretservice"
-      bin.install "bin/build/docker-credential-pass"
       bin.install "bin/build/docker-credential-secretservice"
     end
+    system "make", "pass"
+    bin.install "bin/build/docker-credential-pass"
   end
 
   test do
@@ -40,11 +42,10 @@ class DockerCredentialHelper < Formula
       run_output = shell_output("#{bin}/docker-credential-osxkeychain", 1)
       assert_match "Usage: docker-credential-osxkeychain", run_output
     else
-      run_output = shell_output("#{bin}/docker-credential-pass list")
-      assert_match "{}", run_output
-
       run_output = shell_output("#{bin}/docker-credential-secretservice list", 1)
       assert_match "Cannot autolaunch D-Bus without X11", run_output
     end
+    run_output = shell_output("#{bin}/docker-credential-pass list")
+    assert_match "{}", run_output
   end
 end
