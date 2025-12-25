@@ -1,8 +1,8 @@
 class Sttr < Formula
   desc "CLI to perform various operations on string"
   homepage "https://github.com/abhimanyu003/sttr"
-  url "https://github.com/abhimanyu003/sttr/archive/refs/tags/v0.2.29.tar.gz"
-  sha256 "ee9031656861671fd6103fb8d74cede331d92c39afd13b95d0b323debf26bf84"
+  url "https://github.com/abhimanyu003/sttr/archive/refs/tags/v0.2.30.tar.gz"
+  sha256 "64c4ddd6f84c99f197053e96c489dea48c0bd83a33dfdd69ab209653bc38b9c8"
   license "MIT"
   head "https://github.com/abhimanyu003/sttr.git", branch: "main"
 
