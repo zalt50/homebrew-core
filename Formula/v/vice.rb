@@ -1,18 +1,15 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.9.tar.gz"
-  sha256 "40202b63455e26b87ecc63eb5a52322c6fa3f57cab12acf0c227cf9f4daec370"
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.10.tar.gz"
+  sha256 "8e5bac18cbcb9f192380ad3ef881f8790f5b75c41d7b3da65d831985d864d6d1"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
     url :stable
     regex(%r{url=.*?/vice[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "48ff65acfffb8aa3e3be49a0af15e562b31b5399d4e6af0b753b5703e7affd32"
@@ -60,6 +57,7 @@ class Vice < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "fontconfig"
+    depends_on "libevdev"
     depends_on "libx11"
     depends_on "mesa"
     depends_on "pulseaudio"
@@ -79,7 +77,6 @@ class Vice < Formula
                           "--with-vorbis",
                           "--with-gif",
                           "--with-png",
-                          "--without-evdev", # TODO: needs libevdev
                           *std_configure_args
     system "make", "install"
   end
