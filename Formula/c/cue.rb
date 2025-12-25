@@ -20,7 +20,7 @@ class Cue < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X cuelang.org/go/cmd/cue/cmd.version=v#{version}"), "./cmd/cue"
 
-    generate_completions_from_executable(bin/"cue", "completion")
+    generate_completions_from_executable(bin/"cue", shell_parameter_format: :cobra)
   end
 
   test do
