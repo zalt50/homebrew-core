@@ -22,7 +22,7 @@ class Ipatool < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/majd/ipatool/v2/cmd.version=#{version}")
 
-    generate_completions_from_executable(bin/"ipatool", "completion")
+    generate_completions_from_executable(bin/"ipatool", shell_parameter_format: :cobra)
   end
 
   test do
