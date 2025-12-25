@@ -22,7 +22,7 @@ class Kool < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X kool-dev/kool/commands.version=#{version}")
 
-    generate_completions_from_executable(bin/"kool", "completion")
+    generate_completions_from_executable(bin/"kool", shell_parameter_format: :cobra)
   end
 
   test do
