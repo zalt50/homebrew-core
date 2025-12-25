@@ -22,7 +22,7 @@ class Eksctl < Formula
     system "make", "binary"
     bin.install "eksctl"
 
-    generate_completions_from_executable(bin/"eksctl", "completion")
+    generate_completions_from_executable(bin/"eksctl", shell_parameter_format: :cobra)
   end
 
   test do
