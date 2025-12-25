@@ -20,6 +20,8 @@ class Ffmate < Formula
   depends_on "pnpm" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     cd "ui" do
       system "pnpm", "install"
       system "pnpm", "run", "generate"
@@ -31,7 +33,7 @@ class Ffmate < Formula
 
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"ffmate", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"ffmate", shell_parameter_format: :cobra)
   end
 
   test do
