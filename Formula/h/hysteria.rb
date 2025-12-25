@@ -30,7 +30,7 @@ class Hysteria < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./app"
 
-    generate_completions_from_executable(bin/"hysteria", "completion")
+    generate_completions_from_executable(bin/"hysteria", shell_parameter_format: :cobra)
   end
 
   service do
