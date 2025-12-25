@@ -27,7 +27,7 @@ class Kops < Formula
     ldflags = "-s -w -X k8s.io/kops.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "k8s.io/kops/cmd/kops"
 
-    generate_completions_from_executable(bin/"kops", "completion")
+    generate_completions_from_executable(bin/"kops", shell_parameter_format: :cobra)
   end
 
   test do
