@@ -34,6 +34,8 @@ class AwsIamAuthenticator < Formula
       -buildid=
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/aws-iam-authenticator"
+
+    generate_completions_from_executable(bin/"aws-iam-authenticator", shell_parameter_format: :cobra)
   end
 
   test do
