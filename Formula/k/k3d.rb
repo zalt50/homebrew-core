@@ -39,7 +39,7 @@ class K3d < Formula
 
     system "go", "build", "-mod=readonly", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"k3d", "completion")
+    generate_completions_from_executable(bin/"k3d", shell_parameter_format: :cobra)
   end
 
   test do
