@@ -26,7 +26,7 @@ class Kapp < Formula
     ldflags = "-s -w -X carvel.dev/kapp/pkg/kapp/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kapp"
 
-    generate_completions_from_executable(bin/"kapp", "completion")
+    generate_completions_from_executable(bin/"kapp", shell_parameter_format: :cobra)
   end
 
   test do
