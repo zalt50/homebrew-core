@@ -28,7 +28,7 @@ class GolangciLint < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/golangci-lint"
 
-    generate_completions_from_executable(bin/"golangci-lint", "completion")
+    generate_completions_from_executable(bin/"golangci-lint", shell_parameter_format: :cobra)
   end
 
   test do
