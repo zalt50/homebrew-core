@@ -26,7 +26,7 @@ class KubectlCnpg < Formula
       -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubectl-cnpg"
-    generate_completions_from_executable(bin/"kubectl-cnpg", "completion")
+    generate_completions_from_executable(bin/"kubectl-cnpg", shell_parameter_format: :cobra)
 
     kubectl_plugin_completion = <<~EOS
       #!/usr/bin/env sh
