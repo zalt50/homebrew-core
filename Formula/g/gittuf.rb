@@ -23,7 +23,7 @@ class Gittuf < Formula
     ldflags = "-s -w -X github.com/gittuf/gittuf/internal/version.gitVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gittuf", "completion")
+    generate_completions_from_executable(bin/"gittuf", shell_parameter_format: :cobra)
   end
 
   test do
