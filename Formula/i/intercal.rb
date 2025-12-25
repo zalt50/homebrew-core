@@ -1,18 +1,9 @@
 class Intercal < Formula
   desc "Esoteric, parody programming language"
   homepage "http://catb.org/~esr/intercal/"
+  url "http://catb.org/~esr/intercal/intercal-0.33.tar.gz"
+  sha256 "211e0c5bbfe8064d28a4ca366cb87d64a2a87d5b43aa5eebccae092bacf1e1ca"
   license "GPL-2.0-or-later"
-
-  stable do
-    url "http://catb.org/~esr/intercal/intercal-0.31.tar.gz"
-    sha256 "93d842b81ecdc82b352beb463fbf688749b0c04445388a999667e1958bba4ffc"
-
-    # Backport fix for GCC 10 and newer
-    patch do
-      url "https://gitlab.com/esr/intercal/-/commit/f33a8f3a96e955a6eb3e8db850d0edac44c22176.diff"
-      sha256 "2cd1be13f779a0fd93aa3c50e1dbf62596b81727c539674d872b4e912ad62a55"
-    end
-  end
 
   # The latest version tags in the Git repository are `0.31` (2019-06-12) and
   # `0.30` (2015-04-02) but there are older versions like `1.27` (2010-08-25)
@@ -59,11 +50,20 @@ class Intercal < Formula
   end
 
   def install
+    # clang doesn't support -fno-toplevel-reorder, so we
+    # edit it out for macOS only.
+    if OS.mac?
+      %w[buildaux/Makefile.in buildaux/Makefile.am].each do |file|
+        inreplace file, /\\\s*\n\s*-fno-toplevel-reorder/, "" if File.exist?(file)
+      end
+    end
+
     if build.head?
       cd "buildaux" do
         system "./regenerate-build-system.sh"
       end
     end
+
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
@@ -76,7 +76,7 @@ class Intercal < Formula
     (testpath/"test").mkpath
     cp pkgshare/"pit/beer.i", "test"
     cd "test" do
-      system bin/"ick", "beer.i"
+      system bin/"ick", "-b", "beer.i"
       system "./beer"
     end
   end
