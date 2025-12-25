@@ -4,6 +4,7 @@ class Cdxgen < Formula
   url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-12.0.0.tgz"
   sha256 "9e9aa47d26cd7a0f44c9741186ccd8d6d755bc89c76c3df0dca06fa8d688a6dd"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "34942afde718740b411e0e59d23a55a15c148593e54ddc812d5ea8fbcc6534b9"
