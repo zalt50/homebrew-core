@@ -1,10 +1,9 @@
 class XmlrpcC < Formula
   desc "Lightweight RPC library (based on XML and HTTP)"
   homepage "https://xmlrpc-c.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.60.05/xmlrpc-c-1.60.05.tgz"
-  sha256 "67d860062459ea2784c07b4d7913319d9539fa729f534378e8e41c8918f2adf6"
+  url "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.64.03/xmlrpc-1.64.03.tgz"
+  sha256 "74729d364edbedbe42e782822da1e076f3f45c65c4278a3cfba5f2342d7cedbe"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2b6ed5b519e919c5e5d01c4398b5265650dc4be735152c2ef6284710a3cd24b9"
