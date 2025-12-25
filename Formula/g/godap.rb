@@ -19,7 +19,7 @@ class Godap < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
-    generate_completions_from_executable(bin/"godap",  "completion")
+    generate_completions_from_executable(bin/"godap",  shell_parameter_format: :cobra)
   end
 
   test do
