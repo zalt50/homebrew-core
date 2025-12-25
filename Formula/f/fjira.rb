@@ -20,7 +20,7 @@ class Fjira < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fjira-cli"
 
-    generate_completions_from_executable(bin/"fjira", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"fjira", shell_parameter_format: :cobra)
   end
 
   test do
