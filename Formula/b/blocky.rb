@@ -28,7 +28,7 @@ class Blocky < Formula
 
     pkgetc.install "docs/config.yml"
 
-    generate_completions_from_executable(sbin/"blocky", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(sbin/"blocky", shell_parameter_format: :cobra)
   end
 
   service do
