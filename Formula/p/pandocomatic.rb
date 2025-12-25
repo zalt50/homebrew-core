@@ -4,6 +4,7 @@ class Pandocomatic < Formula
   url "https://github.com/htdebeer/pandocomatic/archive/refs/tags/2.2.0.tar.gz"
   sha256 "8138b403aaa1d23db11701bf2bbcbf14447d89b7b05030fc2faf91d6fe11163c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "610b5a3d8aedb25990e082c6ba6630be1f9ee44a4ee0bbd20cc67927fb36ee9d"
@@ -16,7 +17,7 @@ class Pandocomatic < Formula
 
   depends_on "libyaml"
   depends_on "pandoc"
-  depends_on "ruby"
+  depends_on "ruby@3.4"
 
   def install
     ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
