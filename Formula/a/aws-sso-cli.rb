@@ -28,6 +28,9 @@ class AwsSsoCli < Formula
       -X main.CommitID=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"aws-sso"), "./cmd/aws-sso"
+
+    generate_completions_from_executable(bin/"aws-sso", "setup", "completions", "--source",
+                                         shell_parameter_format: :arg)
   end
 
   test do
