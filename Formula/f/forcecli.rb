@@ -20,7 +20,7 @@ class Forcecli < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"force")
 
-    generate_completions_from_executable(bin/"force", "completion")
+    generate_completions_from_executable(bin/"force", shell_parameter_format: :cobra)
   end
 
   test do
