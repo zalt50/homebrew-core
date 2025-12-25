@@ -20,7 +20,7 @@ class Crd2pulumi < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/pulumi/crd2pulumi/cmd.Version=#{version}")
 
-    generate_completions_from_executable(bin/"crd2pulumi", "completion")
+    generate_completions_from_executable(bin/"crd2pulumi", shell_parameter_format: :cobra)
   end
 
   test do
