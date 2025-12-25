@@ -40,7 +40,7 @@ class Batt < Formula
     bin.install "bin/batt"
     prefix.install "hack/cc.chlc.batt.plist"
 
-    generate_completions_from_executable(bin/"batt", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"batt", shell_parameter_format: :cobra)
   end
 
   def caveats
