@@ -20,7 +20,7 @@ class KubeBench < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/aquasecurity/kube-bench/cmd.KubeBenchVersion=#{version}")
 
-    generate_completions_from_executable(bin/"kube-bench", "completion")
+    generate_completions_from_executable(bin/"kube-bench", shell_parameter_format: :cobra)
   end
 
   test do
