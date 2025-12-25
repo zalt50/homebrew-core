@@ -28,7 +28,7 @@ class JenkinsCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"jcli")
 
-    generate_completions_from_executable(bin/"jcli", "completion")
+    generate_completions_from_executable(bin/"jcli", shell_parameter_format: :cobra)
   end
 
   test do
