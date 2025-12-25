@@ -32,7 +32,7 @@ class ChainBench < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X=main.version=#{version}"), "./cmd/chain-bench"
 
-    generate_completions_from_executable(bin/"chain-bench", "completion")
+    generate_completions_from_executable(bin/"chain-bench", shell_parameter_format: :cobra)
   end
 
   test do
