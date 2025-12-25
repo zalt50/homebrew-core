@@ -40,8 +40,9 @@ class Flyctl < Formula
 
     bin.install_symlink "flyctl" => "fly"
 
-    generate_completions_from_executable(bin/"flyctl", "completion")
-    generate_completions_from_executable(bin/"fly", "completion")
+    %w[flyctl fly].each do |cmd|
+      generate_completions_from_executable(bin/cmd, shell_parameter_format: :cobra)
+    end
   end
 
   test do
