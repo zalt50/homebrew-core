@@ -1,8 +1,8 @@
 class Snitch < Formula
   desc "Prettier way to inspect network connections"
   homepage "https://github.com/karol-broda/snitch"
-  url "https://github.com/karol-broda/snitch/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "247f8fbb13a6739ffbb85db7e4bb5b8110a01e09eb21879cfe543b7e3e6ed6ce"
+  url "https://github.com/karol-broda/snitch/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "0dca3cad9563e2bc76c0f23dc475d1707644971d51f52ed0a4cd317f30d05cb8"
   license "MIT"
   head "https://github.com/karol-broda/snitch.git", branch: "master"
 
