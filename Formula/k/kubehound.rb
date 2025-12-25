@@ -35,7 +35,7 @@ class Kubehound < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "no_backend"), "./cmd/kubehound/"
 
-    generate_completions_from_executable(bin/"kubehound", "completion")
+    generate_completions_from_executable(bin/"kubehound", shell_parameter_format: :cobra)
   end
 
   test do
