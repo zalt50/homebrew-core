@@ -4,6 +4,7 @@ class Mikutter < Formula
   url "https://mikutter.hachune.net/bin/mikutter-5.1.1.tar.gz"
   sha256 "ddff538aae249bd636604128bac1ccb526a4ed5c32f00b45d3c3c1dbcdb655de"
   license "MIT"
+  revision 1
   head "git://mikutter.hachune.net/mikutter.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
