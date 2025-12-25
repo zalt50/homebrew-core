@@ -4,6 +4,7 @@ class GitlabGem < Formula
   url "https://github.com/NARKOZ/gitlab/archive/refs/tags/v6.1.0.tar.gz"
   sha256 "a1a0d2885994d15ef432818bdcaf1421c98a95c364d66284d46be432e115569d"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     rebuild 1
@@ -21,8 +22,8 @@ class GitlabGem < Formula
   # https://rubygems.org/gems/gitlab/versions/#{version}/dependencies
 
   resource "unicode-emoji" do
-    url "https://rubygems.org/gems/unicode-emoji-4.1.0.gem"
-    sha256 "4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5"
+    url "https://rubygems.org/gems/unicode-emoji-4.2.0.gem"
+    sha256 "519e69150f75652e40bf736106cfbc8f0f73aa3fb6a65afe62fefa7f80b0f80f"
   end
 
   resource "unicode-display_width" do
@@ -36,13 +37,13 @@ class GitlabGem < Formula
   end
 
   resource "bigdecimal" do
-    url "https://rubygems.org/gems/bigdecimal-3.3.1.gem"
-    sha256 "eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218"
+    url "https://rubygems.org/gems/bigdecimal-4.0.1.gem"
+    sha256 "8b07d3d065a9f921c80ceaea7c9d4ae596697295b584c296fe599dd0ad01c4a7"
   end
 
   resource "multi_xml" do
-    url "https://rubygems.org/gems/multi_xml-0.7.2.gem"
-    sha256 "307a96dc48613badb7b2fc174fd4e62d7c7b619bc36ea33bfd0c49f64f5787ce"
+    url "https://rubygems.org/gems/multi_xml-0.8.0.gem"
+    sha256 "8d4adcd092f8e354db496109829ffd36969fdc8392cb5fde398ca800d9e6df73"
   end
 
   resource "mini_mime" do
@@ -51,8 +52,8 @@ class GitlabGem < Formula
   end
 
   resource "csv" do
-    url "https://rubygems.org/gems/csv-3.3.2.gem"
-    sha256 "6ff0c135e65e485d1864dde6c1703b60d34cc9e19bed8452834a0b28a519bd4e"
+    url "https://rubygems.org/gems/csv-3.3.5.gem"
+    sha256 "6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f"
   end
 
   resource "httparty" do
