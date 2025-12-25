@@ -33,7 +33,7 @@ class Istioctl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./istioctl/cmd/istioctl"
 
-    generate_completions_from_executable(bin/"istioctl", "completion")
+    generate_completions_from_executable(bin/"istioctl", shell_parameter_format: :cobra)
     system bin/"istioctl", "collateral", "--man"
     man1.install Dir["*.1"]
   end
