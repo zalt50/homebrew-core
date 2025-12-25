@@ -4,6 +4,7 @@ class Mdless < Formula
   url "https://github.com/ttscoff/mdless/archive/refs/tags/2.1.62.tar.gz"
   sha256 "1819b0b082b6cea95be542e39828b3ced344334bcfe62a318df71386518d07a6"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b7fdbd007a51aceeccf6ec8d24e419d4fa6fa89f9884fe6aef6e7b2ad6f8ea17"
