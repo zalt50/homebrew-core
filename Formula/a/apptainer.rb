@@ -37,6 +37,8 @@ class Apptainer < Formula
       system "make"
       system "make", "install"
     end
+
+    generate_completions_from_executable(bin/"apptainer", shell_parameter_format: :cobra)
   end
 
   test do
