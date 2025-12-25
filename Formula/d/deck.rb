@@ -20,7 +20,7 @@ class Deck < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/deck"
 
-    generate_completions_from_executable(bin/"deck", "completion")
+    generate_completions_from_executable(bin/"deck", shell_parameter_format: :cobra)
   end
 
   test do
