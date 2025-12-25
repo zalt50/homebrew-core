@@ -6,7 +6,7 @@ class Solargraph < Formula
       tag:      "v0.57.0",
       revision: "9c707a291291ef6b86a030bca80b92b4cc3de7d0"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "63101bffec08eb9253262eed21549333a101961ed2a626b4645f3370685973e0"
@@ -17,9 +17,10 @@ class Solargraph < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0c185e820b08014e35583e5f74c5ffb2cdbb56208f34d5c2da2aca75198f587"
   end
 
-  depends_on "ruby" # Requires >= Ruby 2.7
-
+  depends_on "ruby"
   depends_on "xz"
+
+  uses_from_macos "zlib"
 
   def install
     ENV["GEM_HOME"] = libexec
