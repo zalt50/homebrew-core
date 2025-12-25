@@ -4,7 +4,7 @@ class Mailcatcher < Formula
   url "https://github.com/sj26/mailcatcher/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "4cd027e22878342d6a002402306d42ada1f34045cc1d7f35b5a7fa37b944326e"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 1
