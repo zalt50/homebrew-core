@@ -28,7 +28,7 @@ class DockerDebug < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/docker-debug"
 
-    generate_completions_from_executable(bin/"docker-debug", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"docker-debug", shell_parameter_format: :cobra)
   end
 
   test do
