@@ -22,8 +22,7 @@ class Goreleaser < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{Utils.git_head} -X main.builtBy=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
-    # Install shell completions
-    generate_completions_from_executable(bin/"goreleaser", "completion")
+    generate_completions_from_executable(bin/"goreleaser", shell_parameter_format: :cobra)
   end
 
   test do
