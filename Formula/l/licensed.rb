@@ -5,6 +5,7 @@ class Licensed < Formula
       tag:      "v5.0.4",
       revision: "6f7a4675fdf69647f524af3facd1d55f6f221d46"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 1
