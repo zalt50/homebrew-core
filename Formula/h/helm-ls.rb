@@ -29,7 +29,7 @@ class HelmLs < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"helm_ls")
 
-    generate_completions_from_executable(bin/"helm_ls", "completion")
+    generate_completions_from_executable(bin/"helm_ls", shell_parameter_format: :cobra)
   end
 
   test do
