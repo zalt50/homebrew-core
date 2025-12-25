@@ -5,6 +5,11 @@ class Libevdev < Formula
   sha256 "73f215eccbd8233f414737ac06bca2687e67c44b97d2d7576091aa9718551110"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "b1e035ed8ce1a581d5d9c317f04a158fc22a80ca48b8686971935424a3302311"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "70e3e3f2f3524ac16d9380aefe34e1f47d33a06a76a9f460d1bcfcd83df245f7"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on :linux
