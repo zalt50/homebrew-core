@@ -23,7 +23,7 @@ class Gut < Formula
     ldflags = "-s -w -X github.com/julien040/gut/src/telemetry.gutVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gut", "completion")
+    generate_completions_from_executable(bin/"gut", shell_parameter_format: :cobra)
   end
 
   test do
