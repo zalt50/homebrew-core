@@ -33,7 +33,7 @@ class HelmAT3 < Formula
       man1.install Dir["*"]
     end
 
-    generate_completions_from_executable(bin/"helm", "completion")
+    generate_completions_from_executable(bin/"helm", shell_parameter_format: :cobra)
   end
 
   test do
