@@ -5,17 +5,15 @@ class Ruby < Formula
   head "https://github.com/ruby/ruby.git", branch: "master"
 
   stable do
-    # Consider changing the default of `Gem.default_user_install` to true with Ruby 3.5.
-    # This may depend on https://github.com/rubygems/rubygems/issues/5682.
-    url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.8.tar.gz"
-    sha256 "53c4ddad41fbb6189f1f5ee0db57a51d54bd1f87f8755b3d68604156a35b045b"
+    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"
+    sha256 "2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
     # formula & the versioned equivalents and bumping the revisions.
     resource "rubygems" do
-      url "https://rubygems.org/rubygems/rubygems-4.0.2.tgz"
-      sha256 "a5fdbcbd3cbd616360fc9b82d75cdfa1aea3cf1aa357496d8aecce6574d85bf8"
+      url "https://rubygems.org/rubygems/rubygems-4.0.3.tgz"
+      sha256 "f5f728a40603773eec1a5c0857693485e7a118619f6ae70dcece6c2e719129a0"
 
       livecheck do
         url "https://rubygems.org/pages/download"
@@ -194,6 +192,15 @@ class Ruby < Formula
           alias :old_default_specifications_dir :default_specifications_dir
         end
 
+
+        # TODO: decide on defaulting to user install
+        #
+        # def self.default_user_install
+        #   return true unless ENV.key?("GEM_HOME")
+        #
+        #   false
+        # end
+
         def self.default_dir
           path = [
             "#{HOMEBREW_PREFIX}",
@@ -257,6 +264,7 @@ class Ruby < Formula
   end
 
   def caveats
+    # TODO: add a caveat once we decide how to handle `Gem.default_user_install`
     <<~EOS
       By default, binaries installed by gem will be placed into:
         #{rubygems_bindir}
@@ -274,10 +282,10 @@ class Ruby < Formula
     ENV["GEM_HOME"] = testpath
     system bin/"gem", "install", "json"
 
-    (testpath/"Gemfile").write <<~EOS
+    (testpath/"Gemfile").write <<~RUBY
       source 'https://rubygems.org'
       gem 'github-markup'
-    EOS
+    RUBY
     system bin/"bundle", "exec", "ls" # https://github.com/Homebrew/homebrew-core/issues/53247
     system bin/"bundle", "install", "--binstubs=#{testpath}/bin"
     assert_path_exists testpath/"bin/github-markup", "github-markup is not installed in #{testpath}/bin"
