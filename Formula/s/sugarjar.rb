@@ -4,6 +4,7 @@ class Sugarjar < Formula
   url "https://github.com/jaymzh/sugarjar/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "7ae427d8dff1a293f063617365e76615ea7d238aaa7def260fd2b6f2cfa5e768"
   license "Apache-2.0"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
