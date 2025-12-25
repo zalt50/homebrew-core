@@ -33,7 +33,7 @@ class Colima < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/colima"
 
-    generate_completions_from_executable(bin/"colima", "completion")
+    generate_completions_from_executable(bin/"colima", shell_parameter_format: :cobra)
   end
 
   service do
