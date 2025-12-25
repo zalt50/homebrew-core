@@ -1,8 +1,8 @@
 class Yutu < Formula
   desc "MCP server and CLI for YouTube"
   homepage "https://github.com/eat-pray-ai/yutu"
-  url "https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "00c4ee6850705ae4557733580d9ebbd9f378a28eb39f3a261fb5df10e8764423"
+  url "https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.4.tar.gz"
+  sha256 "7d0b4f69b75119f619cdbb4fe565a7c22c0b178de5d2a132fbe05ad80d3ccc14"
   license "Apache-2.0"
   head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
