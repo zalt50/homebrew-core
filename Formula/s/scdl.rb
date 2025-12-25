@@ -9,7 +9,7 @@ class Scdl < Formula
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5d697031528a616adfc9b11ab89764818f583a50954d8111a8a5759db41bce6c"
+    sha256 cellar: :any_skip_relocation, all: "940baabf676ea5cc0cf64ae20e288640674ea224015f331c9572cdd37a6c4b17"
   end
 
   depends_on "certifi" => :no_linkage
