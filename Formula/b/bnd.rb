@@ -11,7 +11,7 @@ class Bnd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7d052030c8ad5e158aed2587be01436bb0ec5d3f6133646108ee435bc46a7651"
+    sha256 cellar: :any_skip_relocation, all: "3dfde3cf303a2bc03117208ee393c0d71d782ed0603a68ae4e4727c4e05e5508"
   end
 
   depends_on "openjdk"
