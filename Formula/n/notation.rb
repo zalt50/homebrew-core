@@ -29,7 +29,7 @@ class Notation < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/notation"
 
-    generate_completions_from_executable(bin/"notation", "completion")
+    generate_completions_from_executable(bin/"notation", shell_parameter_format: :cobra)
   end
 
   test do
