@@ -17,6 +17,12 @@ class Ipget < Formula
 
   depends_on "go" => :build
 
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/ipfs/ipget/pull/189
+  patch do
+    url "https://github.com/ipfs/ipget/commit/8788a6e7c33a534a5822edcb973b5467274c9858.patch?full_index=1"
+    sha256 "a9da66913347839ecfcfcd95ae833e59d11700a56b377fe7b8e4c21fb9211115"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
