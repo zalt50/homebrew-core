@@ -31,7 +31,7 @@ class OperatorSdk < Formula
     ENV["GOBIN"] = bin
     system "make", "install", "CGO_ENABLED=1"
 
-    generate_completions_from_executable(bin/"operator-sdk", "completion")
+    generate_completions_from_executable(bin/"operator-sdk", shell_parameter_format: :cobra)
   end
 
   test do
