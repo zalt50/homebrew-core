@@ -25,6 +25,12 @@ class FlowCli < Formula
 
   conflicts_with "flow", because: "both install `flow` binaries"
 
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/onflow/flow-cli/pull/2239
+  patch do
+    url "https://github.com/onflow/flow-cli/commit/bec1ee457616b9e39552bc15dc1d0370472445d5.patch?full_index=1"
+    sha256 "95c667fd71df39479f3368d5400351d47c3a870592497daba484f38efa88d446"
+  end
+
   def install
     system "make", "cmd/flow/flow", "VERSION=v#{version}"
     bin.install "cmd/flow/flow"
