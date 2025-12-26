@@ -1,18 +1,18 @@
 class Resterm < Formula
   desc "Terminal client for .http/.rest files with HTTP, GraphQL, and gRPC support"
   homepage "https://github.com/unkn0wn-root/resterm"
-  url "https://github.com/unkn0wn-root/resterm/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "62dfe476380f7323d669c0590e99c02a9fa444b533ede98167126b15f8fb9a0e"
+  url "https://github.com/unkn0wn-root/resterm/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "23387ff60dc6223c81407ab70786f598a31ebf4b5cb4a96281129d440e8e7785"
   license "Apache-2.0"
   head "https://github.com/unkn0wn-root/resterm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c81b7477ac4e3a24f7233fe5598131392a3f596b3889c3cfdbf22623b28a0318"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c81b7477ac4e3a24f7233fe5598131392a3f596b3889c3cfdbf22623b28a0318"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c81b7477ac4e3a24f7233fe5598131392a3f596b3889c3cfdbf22623b28a0318"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f38169cfa525559f4ab48e09a5d66e8326de06766dbd6d8a632025d6f13556f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c392c1c6a38e2fbf8d39f1c651315cdeb071528ee0982da8baf314f69aa92f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eff4553d77bf6e7de91693eff56152d77c9f63e57ac53949aff6f1d6af234950"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "187fd1ac18d0c5e94304e6b81441e32105bc9aca1ee27ef10ca6e0c6327a04a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "187fd1ac18d0c5e94304e6b81441e32105bc9aca1ee27ef10ca6e0c6327a04a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "187fd1ac18d0c5e94304e6b81441e32105bc9aca1ee27ef10ca6e0c6327a04a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a9d38a445c957409705b41a2de553ca003ba9851aef190bdfdaf0f3c3c27023"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63290cf913fa3fd43bcf77191c7edb64e756ec32657da7d867bfdd99fc8e11f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9669f0419af177dcd4ea2d26c4c9785e87b0c3dd24c6ad01fe6d2133dac7f9b"
   end
 
   depends_on "go" => :build
