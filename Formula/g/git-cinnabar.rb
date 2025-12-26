@@ -1,10 +1,9 @@
 class GitCinnabar < Formula
   desc "Git remote helper to interact with mercurial repositories"
   homepage "https://github.com/glandium/git-cinnabar"
-  url "https://github.com/glandium/git-cinnabar.git",
-      tag:      "0.7.3",
-      revision: "b8fb36adbac08be229148c570a852817e1463f55"
-  license "GPL-2.0-only"
+  url "https://static.crates.io/crates/git-cinnabar/git-cinnabar-0.7.3.crate"
+  sha256 "18adcda45eeb4a1e82f28f404f788ed9051125c6fd760e468fd2763f17dd6cfe"
+  license all_of: ["MPL-2.0", "GPL-2.0-only"]
   head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
   bottle do
@@ -19,11 +18,14 @@ class GitCinnabar < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "git"
   depends_on "mercurial"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "pkgconf" => :build # for curl-sys, not used on macOS
+  end
 
   conflicts_with "git-remote-hg", because: "both install `git-remote-hg` binaries"
 
@@ -33,10 +35,7 @@ class GitCinnabar < Formula
   end
 
   test do
-    # Protocol \"https\" not supported or disabled in libcurl"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system "git", "clone", "hg::https://www.mercurial-scm.org/repo/hello"
+    system "git", "-c", "cinnabar.check=traceback", "clone", "hg::https://www.mercurial-scm.org/repo/hello"
     assert_path_exists testpath/"hello/hello.c", "hello.c not found in cloned repo"
   end
 end
