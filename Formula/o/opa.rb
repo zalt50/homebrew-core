@@ -26,7 +26,7 @@ class Opa < Formula
     system "./build/gen-man.sh", "man1"
     man.install "man1"
 
-    generate_completions_from_executable(bin/"opa", "completion")
+    generate_completions_from_executable(bin/"opa", shell_parameter_format: :cobra)
   end
 
   test do
