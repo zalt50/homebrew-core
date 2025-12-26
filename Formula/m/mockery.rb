@@ -29,7 +29,7 @@ class Mockery < Formula
     ldflags = "-s -w -X github.com/vektra/mockery/v#{version.major}/internal/logging.SemVer=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"mockery", "completion")
+    generate_completions_from_executable(bin/"mockery", shell_parameter_format: :cobra)
   end
 
   test do
