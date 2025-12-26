@@ -21,7 +21,7 @@ class Litmusctl < Formula
     ldflags = "-s -w -X main.CLIVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"litmusctl", "completion")
+    generate_completions_from_executable(bin/"litmusctl", shell_parameter_format: :cobra)
   end
 
   test do
