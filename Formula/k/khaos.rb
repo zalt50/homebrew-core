@@ -8,6 +8,15 @@ class Khaos < Formula
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1464711513e4c7c943cbd479b455e434db8c5c7edbb6c014d1b60a38c165eff5"
+    sha256 cellar: :any,                 arm64_sequoia: "1764e2425153244ee495a05543b516a08269a07c42ea9beff906ebfd120a0e9e"
+    sha256 cellar: :any,                 arm64_sonoma:  "a25356661dadbf7ff2acb47bd6d242bd7ef1fbabef5dee2b58cfd733ef4baa3c"
+    sha256 cellar: :any,                 sonoma:        "2d383437c2cbbb0758c3bead8aa44d1bc9ec450dd5bf0a40fecc45530252b9b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40795b09b12287e3de8e1f2722e0d1c61adde7d94caf0057bfcf0dd696197c91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cea38a145baa945b1a8539c84d1364222afdf767e7f9e230fbc4972a99917de3"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "librdkafka"
