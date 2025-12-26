@@ -27,7 +27,7 @@ class Mcap < Formula
       system "make", "build", "VERSION=v#{version}"
       bin.install "bin/mcap"
     end
-    generate_completions_from_executable(bin/"mcap", "completion")
+    generate_completions_from_executable(bin/"mcap", shell_parameter_format: :cobra)
   end
 
   test do
