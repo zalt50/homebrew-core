@@ -20,7 +20,7 @@ class Lxc < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./lxc"
 
-    generate_completions_from_executable(bin/"lxc", "completion")
+    generate_completions_from_executable(bin/"lxc", shell_parameter_format: :cobra)
   end
 
   test do
