@@ -20,13 +20,9 @@ class Intercal < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 sonoma:       "bdbcb6b6741a84e30ab923c62dc0dbced0348ba9c35b95f9441bdc4bb821130a"
-    sha256 ventura:      "996598c6c8145f0a45dac7109aa3cb39b5854396b58c3b7ab75c784844160877"
-    sha256 monterey:     "a691470666ee0f15af22265be65eda2757fabd8f6fbc5fa8341f8c3059749d34"
-    sha256 big_sur:      "487fc70071a54c09cccdbba0284db23c156983b76416a4b4c03f44130531213c"
-    sha256 catalina:     "a2c1673fbed3d331e725694196acf9ea4cd6bc6df3b86568af3e67ee90d70b30"
-    sha256 arm64_linux:  "dcf9671a1cd68f29ad22ed2ea028a790f03cd0b794a4156d3e958794dec68052"
-    sha256 x86_64_linux: "31105eaa4a4800c562060caa8fa7c241b946c8dca2e92f0b2e101c34830787e8"
+    sha256 sonoma:       "d9b34181204263b17a9046ea236d9a2ef7eb49b9de6415349b7408f86aa21ead"
+    sha256 arm64_linux:  "88da8548d1711605f7fd7f8047a53b9526f09b42951f4bed028d2a3bb177d8ce"
+    sha256 x86_64_linux: "40cc61c43817df434de521373dd522acc5d65cd28c6ee74abe1bf6ab7a377d43"
   end
 
   head do
