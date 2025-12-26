@@ -20,7 +20,7 @@ class Nfpm < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), "./cmd/nfpm"
 
-    generate_completions_from_executable(bin/"nfpm", "completion")
+    generate_completions_from_executable(bin/"nfpm", shell_parameter_format: :cobra)
   end
 
   test do
