@@ -24,7 +24,7 @@ class Minder < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
 
-    generate_completions_from_executable(bin/"minder", "completion")
+    generate_completions_from_executable(bin/"minder", shell_parameter_format: :cobra)
   end
 
   test do
