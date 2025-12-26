@@ -5,6 +5,13 @@ class Lispkit < Formula
   sha256 "33ce9c6c4bd99e91308ec2a92c3850f6d63d373b8be2ec71d7e5b329fc6e394a"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aed3fe5511491779f67507c14838f405e2d4b6d3a38df203f4fa8966065c2ea7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd42539ccef65523343d04437fa164e3cec899ec0e5cd44adcc9f1c3baed0615"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff174228531270ed810d4919b43e87ab9e65486133ab55ba784f23d44c929e4c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e623e98acd76353cb32327f37cc63c10bc8a7fd7f764cd71c2a8376e98158197"
+  end
+
   depends_on xcode: ["14.0", :build]
   depends_on :macos
 
