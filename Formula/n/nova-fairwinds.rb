@@ -23,7 +23,7 @@ class NovaFairwinds < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(output: bin/"nova", ldflags:)
 
-    generate_completions_from_executable(bin/"nova", "completion")
+    generate_completions_from_executable(bin/"nova", shell_parameter_format: :cobra)
   end
 
   test do
