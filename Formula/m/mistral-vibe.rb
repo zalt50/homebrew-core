@@ -3,8 +3,8 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/f7/bc/e7c67a7fa3c49a835d6c51b1565e1001db92f26362e7c0af0e71578cf429/mistral_vibe-1.3.2.tar.gz"
-  sha256 "b48a10b71df25ee8c2bf362c604f4525af418f4a34279a65c3517a10dcc2db2d"
+  url "https://files.pythonhosted.org/packages/c1/a7/a9dce16e9ab81140665783a40f9174c98946212425d96a63fe664d6ec661/mistral_vibe-1.3.3.tar.gz"
+  sha256 "1c4e6a96325cd028a1e86076e72914b9538223961a8acb27265c1af5c0758b22"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
@@ -203,8 +203,8 @@ class MistralVibe < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
-    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
+    url "https://files.pythonhosted.org/packages/62/08/8f554b0e5bad3e4e880521a1686d96c05198471eed860b0eb89b57ea3636/sse_starlette-3.1.1.tar.gz"
+    sha256 "bffa531420c1793ab224f63648c059bcadc412bf9fdb1301ac8de1cf9a67b7fb"
   end
 
   resource "starlette" do
