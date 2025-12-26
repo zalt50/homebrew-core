@@ -25,7 +25,7 @@ class Leetgo < Formula
       -X github.com/j178/leetgo/constants.BuildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"leetgo", "completion")
+    generate_completions_from_executable(bin/"leetgo", shell_parameter_format: :cobra)
   end
 
   test do
