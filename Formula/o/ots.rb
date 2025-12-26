@@ -23,7 +23,7 @@ class Ots < Formula
     ldflags = "-s -w -X github.com/sniptt-official/ots/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"ots", "completion")
+    generate_completions_from_executable(bin/"ots", shell_parameter_format: :cobra)
   end
 
   test do
