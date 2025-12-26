@@ -25,7 +25,7 @@ class Octosql < Formula
     ldflags = "-s -w -X github.com/cube2222/octosql/cmd.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"octosql", "completion")
+    generate_completions_from_executable(bin/"octosql", shell_parameter_format: :cobra)
   end
 
   test do
