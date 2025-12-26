@@ -1,21 +1,27 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https://github.com/chaqchase/lla"
-  url "https://github.com/chaqchase/lla/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "34afc823a0bfda6379966cdbcaeaabda4ffc2e9f122c2a85f3b8ba9a77e53c22"
+  url "https://github.com/chaqchase/lla/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "070ed3248049b6c657e735552fb2e42a4fe116e1f0dbe230d5a33c9c6f62383e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f130bebb333bf11899d53b6f6a79aa9d07a02665f7cfcf36c5657cd8e25ef0f"
-    sha256 cellar: :any,                 arm64_sequoia: "1ec7b484b2a76c7f10ecc07b65936bc86c6cb692c4a8073f4be284f6b8b914ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "79f8c5c5290b55fbb1b85d24c8fa5aa1fb1092c95321d78b94eb8fae2cb1a622"
-    sha256 cellar: :any,                 sonoma:        "7a4409ef9e8ecc8a918754277dad9a56a7e70fc1831dceacb2dec5d8ab18a12a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e22b8c64d52926fd3b302b054ca709b242fc0024a7f0136f10cf60f226fd29d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46166d55d1a24cfbf378b89fd9b1cab1387dfc45d92117cee20e6d66943f094f"
+    sha256 cellar: :any,                 arm64_tahoe:   "49090628388fe9b079a0d142257c9d41faeb202ecc4b48722fc622565185d67b"
+    sha256 cellar: :any,                 arm64_sequoia: "a9d18f9e18ea44f28c9e3bd7191af8ffd53838498deef40fa489800d68f09530"
+    sha256 cellar: :any,                 arm64_sonoma:  "66e6642528f8a29d679e4a086999a4affb3557e477b3bce809dbd9d7d8b9ec2a"
+    sha256 cellar: :any,                 sonoma:        "4973582d5b9a92bf07cafcdfb5a8179dc5b7d72200e8a285adbe917a82eac83f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "977f7378d7f8851be28d3e815788e2806455a259c6e781517d545841bb7fee14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc4538a4d9b4a436b2fef781cbf02b2b55753e52bb58a8a174909551ed6620e3"
   end
 
   depends_on "protobuf" => :build
   depends_on "rust" => :build
+
+  # fix `editor = null` toml config parsing error, upstream pr ref, https://github.com/chaqchase/lla/pull/148
+  patch do
+    url "https://github.com/chaqchase/lla/commit/2a5901cd5108759915cd8370669ec130d9b2df34.patch?full_index=1"
+    sha256 "cafb622a851c085e616b361fffcba7b2b3e33290f823e406acc0b2dc0f2b0ff5"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "lla")
