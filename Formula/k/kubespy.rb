@@ -23,7 +23,7 @@ class Kubespy < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/pulumi/kubespy/version.Version=#{version}")
 
-    generate_completions_from_executable(bin/"kubespy", "completion")
+    generate_completions_from_executable(bin/"kubespy", shell_parameter_format: :cobra)
   end
 
   test do
