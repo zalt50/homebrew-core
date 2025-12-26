@@ -28,7 +28,7 @@ class Netfetch < Formula
     ldflags = "-s -w -X github.com/deggja/netfetch/backend/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./backend"
 
-    generate_completions_from_executable(bin/"netfetch", "completion")
+    generate_completions_from_executable(bin/"netfetch", shell_parameter_format: :cobra)
   end
 
   test do
