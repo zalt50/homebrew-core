@@ -1,10 +1,9 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://github.com/igraph/igraph/releases/download/1.0.0/igraph-1.0.0.tar.gz"
-  sha256 "91e23e080634393dec4dfb02c2ae53ac4e3837172bb9047d32e39380b16c0bb0"
+  url "https://github.com/igraph/igraph/releases/download/1.0.1/igraph-1.0.1.tar.gz"
+  sha256 "969f2d7d22f67e788d8638c9a8c96615f50d7819c08978b3ef4a787bb6daa96c"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "fe00edb994e146b0cbec52620726016f7f0cfc9c30e24e34ebfd057770cbf20d"
