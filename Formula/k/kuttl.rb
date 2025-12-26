@@ -19,6 +19,12 @@ class Kuttl < Formula
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
 
+  # patch to add Go 1.26 testDeps ModulePath, upstream pr ref, https://github.com/kudobuilder/kuttl/pull/664
+  patch do
+    url "https://github.com/kudobuilder/kuttl/commit/80911cc18d690efe88a8b12a32b419b495d7bb20.patch?full_index=1"
+    sha256 "8749ea6b9cabaa92b44894b8ed5e6a5271a9bbb5fa76f35502df948d529b83cb"
+  end
+
   def install
     project = "github.com/kudobuilder/kuttl"
     ldflags = %W[
