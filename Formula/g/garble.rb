@@ -17,10 +17,8 @@ class Garble < Formula
   end
 
   depends_on "go" => [:build, :test]
-  depends_on "git"
 
   def install
-    inreplace "internal/linker/linker.go", "\"git\"", "\"#{Formula["git"].opt_bin}/git\""
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
@@ -34,6 +32,12 @@ class Garble < Formula
           fmt.Println("Hello World")
       }
     GO
+
+    # `garble` breaks our git shim by clearing the environment.
+    # Remove once git is no longer needed. See caveats:
+    # https://github.com/burrowers/garble?tab=readme-ov-file#caveats
+    ENV.remove "PATH", "#{HOMEBREW_SHIMS_PATH}/shared:"
+
     system bin/"garble", "-literals", "-tiny", "build", testpath/"hello.go"
     assert_equal "Hello World\n", shell_output("#{testpath}/hello")
 
