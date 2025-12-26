@@ -8,12 +8,12 @@ class Dcd < Formula
   head "https://github.com/dlang-community/dcd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bbb691c67719c1f58da3d76c505e8a90cd5d78669bb1303963875074d1b2facc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0da4b4e83076dd9e146aaeb64c680497144e900ead2899f181898cf9468bf39e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e1d7b3248e4a89c141494da410a773c17ea51b2fdfbc675fb69f6b0ae81bf42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f780454314f4172b87f43e4b18053b50434be7fa8cf6bc90218786011a9a9aa4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef6275d317f4e2bd5497db511d594d2d6e95669c9cd2edb45239f7960aad8b10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfe10c5f269474c143e57fe407e68f3bbcda77e7c51adf71a1cea82501bafb3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1966e81506f5f625ed5b722e5c175627e6e0d43a92476cf5c9d0ccf913543342"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4f17aaf983de82ecebb439d2930d0931f0fc14cdf26461eedf8957324a305a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f14a2baca4b73884355567d5f7f79704228fbbec0b9d393ad57ef03258358873"
+    sha256 cellar: :any_skip_relocation, sonoma:        "069055822ce1852715cc2f0706817a14c4d44850828518c8a89cfcd5dce89e86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee6cafd4c32a6e22bf4413553a3f0e146b793705d10e7a184607f01dc7361ac3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b1a68af1ecbab4810fce908f67b3f569e28bc55cf4e851c07d456ca11a92d96"
   end
 
   depends_on "ldc" => :build
