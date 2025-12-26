@@ -34,7 +34,7 @@ class Kyverno < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli/kubectl-kyverno"
 
-    generate_completions_from_executable(bin/"kyverno", "completion")
+    generate_completions_from_executable(bin/"kyverno", shell_parameter_format: :cobra)
   end
 
   test do
