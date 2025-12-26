@@ -26,7 +26,7 @@ class Mani < Formula
       -X github.com/alajmo/mani/cmd.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "netgo")
-    generate_completions_from_executable(bin/"mani", "completion")
+    generate_completions_from_executable(bin/"mani", shell_parameter_format: :cobra)
     system bin/"mani", "gen"
     man1.install "mani.1"
   end
