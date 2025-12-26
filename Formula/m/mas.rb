@@ -24,6 +24,8 @@ class Mas < Formula
   depends_on xcode: ["16.0", :build]
   depends_on :macos
 
+  uses_from_macos "swift" => :build, since: :sequoia # swift 6.2+
+
   def install
     ENV["MAS_DIRTY_INDICATOR"] = ""
     system "Scripts/build", "homebrew/core/mas", "--disable-sandbox", "-c", "release"
