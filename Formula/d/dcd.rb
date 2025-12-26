@@ -8,18 +8,12 @@ class Dcd < Formula
   head "https://github.com/dlang-community/dcd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "27e72e0e89866c4a7b0a6c42abf17b57d58fd7f856ed1c79c39b50760691c202"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df136836a7f0fd898d199c404fb3a51b47612950fbd325ccc712689fa79a0f49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e65b4d941203d3b3afbaa704b02d9180b5dc2d6f46f45fdd816a78ba5528418"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b667329fc26ff55eba9b62027200818deef9378c15f5524e0031f35d471bf9e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1007cccd0a4c996e5a5515f978eefb67e57598d372ba7e43467d1c2220c80920"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6ce58f93e86c4d23bbb23da6acb37c31d707cc2da062b9c541ff6ea65b303c6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fb5f1ff6bb06fc3ce9684604f04dc94e0f68a83df3ac59d6b511d923ae57746c"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c9cb410387c80d7d596bb925cf90cc0d1dfc8c0f9d3780b0ad1302540352265"
-    sha256 cellar: :any_skip_relocation, monterey:       "70550825ebf34833947ca9e7bcb9ec03292d6ecbf77e6691d4791eaadc4218ea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5711120e29181ce752e1616c5777eea9864ac15d6583dc634aa3a9d9f47de647"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "f1c5f7d42c7c39ac7e2bf1e937faf6fc06b909f3ddb01e53be9018f37b2793eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "658abefb0b260e852fb16078e353b453929f6f04fa8af8f636ed2d5e2aa89fca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6006048904b7f5e4ae9b27dce450550d44fc36deed5f12f4fd515fcd35b9adc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08616ad079c10f675b49bc3cb7d820e163da474949c7654b7cd50446981a6116"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bb7f264a3fc6ab05e1a22535436f4437161a6e89c8238f3d1dcbc74c087f262"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2a1567a8b9f743d13db617fbdfb75888b656fe5dc7a63910143f45c954dc32a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22689ad2c5fec047715511e638ed5f4c015d2e5bc28d500deedbca0be8baca7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afcd67c61b56ac8da2ad9cea624cbe758d49729fce9dcfb8644377f00800cf3b"
   end
 
   depends_on "ldc" => :build
