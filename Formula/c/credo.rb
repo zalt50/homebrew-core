@@ -1,8 +1,8 @@
 class Credo < Formula
   desc "Static code analysis tool for the Elixir"
   homepage "https://github.com/rrrene/credo"
-  url "https://github.com/rrrene/credo/archive/refs/tags/v1.7.14.tar.gz"
-  sha256 "4ff5f180dfd409515022279e958a6fa850ea13f2f08a791bf00e60ff6f6d71ac"
+  url "https://github.com/rrrene/credo/archive/refs/tags/v1.7.15.tar.gz"
+  sha256 "29ab2c89bf26d4a0884e203c99ac5de65c7a984f7121bca5a5558f4fb00b3339"
   license "MIT"
 
   bottle do
