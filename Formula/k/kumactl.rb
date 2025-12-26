@@ -32,7 +32,7 @@ class Kumactl < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./app/kumactl"
 
-    generate_completions_from_executable(bin/"kumactl", "completion")
+    generate_completions_from_executable(bin/"kumactl", shell_parameter_format: :cobra)
   end
 
   test do
