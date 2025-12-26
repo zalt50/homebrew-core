@@ -40,7 +40,7 @@ class KubernetesCliAT133 < Formula
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"
 
-    generate_completions_from_executable(bin/"kubectl", "completion")
+    generate_completions_from_executable(bin/"kubectl", shell_parameter_format: :cobra)
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree
