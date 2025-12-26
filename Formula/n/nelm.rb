@@ -31,7 +31,7 @@ class Nelm < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/nelm"
 
-    generate_completions_from_executable(bin/"nelm", "completion")
+    generate_completions_from_executable(bin/"nelm", shell_parameter_format: :cobra)
   end
 
   test do
