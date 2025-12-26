@@ -21,6 +21,12 @@ class Plakar < Formula
 
   depends_on "go" => :build
 
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/PlakarKorp/plakar/pull/1845
+  patch do
+    url "https://github.com/PlakarKorp/plakar/commit/79c5ce3cf30822010e395d33078b6abc6a0b992a.patch?full_index=1"
+    sha256 "37df26982c016c3eefb1103db63622cffe65a8b79e114a3c5201b236276317fc"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
