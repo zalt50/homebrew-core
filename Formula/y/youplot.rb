@@ -4,7 +4,7 @@ class Youplot < Formula
   url "https://github.com/red-data-tools/YouPlot/archive/refs/tags/v0.4.6.tar.gz"
   sha256 "126278103f6dbc4e28983b9e90a4e593f17e78b38d925a7df16965b5d3c145a4"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256                               arm64_tahoe:   "d29e20bfabf80a960825bb2f5eb22b697d946e019683e2844d5a96df3e4c76b5"
