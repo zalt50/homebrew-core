@@ -26,12 +26,12 @@ class Kubescape < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/kubescape/kubescape/v3/core/cautils.BuildNumber=v#{version}
+      -X github.com/kubescape/kubescape/v#{version.major}/core/cautils.BuildNumber=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kubescape", "completion")
+    generate_completions_from_executable(bin/"kubescape", "completion", shells: [:bash, :zsh, :fish])
   end
 
   test do
