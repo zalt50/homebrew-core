@@ -25,11 +25,14 @@ class Ipfs < Formula
 
   depends_on "go" => :build
 
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/ipfs/kubo/pull/11124
+  patch do
+    url "https://github.com/ipfs/kubo/commit/ecf967de3a0ac32c0e2c4f2391518b64741376df.patch?full_index=1"
+    sha256 "2ed099b25219f9fde686461e684ff8fbe26fb8ab66b2e6cb213975e84e82dee1"
+  end
+
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/ipfs/kubo.CurrentCommit=#{tap.user}
-    ]
+    ldflags = "-s -w -X github.com/ipfs/kubo.CurrentCommit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ipfs"
 
     generate_completions_from_executable(bin/"ipfs", "commands", "completion")
