@@ -23,7 +23,7 @@ class Oslo < Formula
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/oslo"
 
-    generate_completions_from_executable(bin/"oslo", "completion")
+    generate_completions_from_executable(bin/"oslo", shell_parameter_format: :cobra)
 
     pkgshare.install "test"
   end
