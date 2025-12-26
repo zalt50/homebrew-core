@@ -22,7 +22,7 @@ class Oauth2c < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"oauth2c", "completion")
+    generate_completions_from_executable(bin/"oauth2c", shell_parameter_format: :cobra)
   end
 
   test do
