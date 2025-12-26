@@ -27,7 +27,7 @@ class Minikube < Formula
     system "make"
     bin.install "out/minikube"
 
-    generate_completions_from_executable(bin/"minikube", "completion")
+    generate_completions_from_executable(bin/"minikube", shell_parameter_format: :cobra)
   end
 
   test do
