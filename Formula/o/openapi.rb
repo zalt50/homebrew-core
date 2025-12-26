@@ -26,7 +26,7 @@ class Openapi < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/openapi"
 
-    generate_completions_from_executable(bin/"openapi", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"openapi", shell_parameter_format: :cobra)
   end
 
   test do
