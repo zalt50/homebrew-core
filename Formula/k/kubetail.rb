@@ -28,7 +28,7 @@ class Kubetail < Formula
   def install
     system "make", "build", "VERSION=#{version}"
     bin.install "bin/kubetail"
-    generate_completions_from_executable(bin/"kubetail", "completion")
+    generate_completions_from_executable(bin/"kubetail", shell_parameter_format: :cobra)
   end
 
   test do
