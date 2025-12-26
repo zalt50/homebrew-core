@@ -1,8 +1,8 @@
 class Btop < Formula
   desc "Resource monitor. C++ version and continuation of bashtop and bpytop"
   homepage "https://github.com/aristocratos/btop"
-  url "https://github.com/aristocratos/btop/archive/refs/tags/v1.4.5.tar.gz"
-  sha256 "0ffe03d3e26a3e9bbfd5375adf34934137757994f297d6b699a46edd43c3fc02"
+  url "https://github.com/aristocratos/btop/archive/refs/tags/v1.4.6.tar.gz"
+  sha256 "4beb90172c6acaac08c1b4a5112fb616772e214a7ef992bcbd461453295a58be"
   license "Apache-2.0"
   head "https://github.com/aristocratos/btop.git", branch: "main"
 
@@ -19,28 +19,26 @@ class Btop < Formula
 
   on_macos do
     depends_on "coreutils" => :build
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1499
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
   end
 
-  on_ventura do
-    # Ventura seems to be missing the `source_location` header.
-    depends_on "llvm" => :build
+  on_linux do
+    depends_on "gcc"
   end
 
-  # -ftree-loop-vectorize -flto=12 -s
-  # Needs Clang 16 / Xcode 15+
   fails_with :clang do
-    build 1499
-    cause "Requires C++20 support"
+    build 1600
+    cause "Requires C++23 support for `std::ranges::to`"
   end
 
   fails_with :gcc do
-    version "9"
-    cause "requires GCC 10+"
+    version "13"
+    cause "Requires C++23 support for `std::ranges::to`"
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1499 || MacOS.version == :ventura)
+    ENV.append "CC", "-D_GNU_SOURCE" if OS.linux? && Hardware::CPU.intel?
+
     system "make", "CXX=#{ENV.cxx}", "STRIP=true"
     system "make", "PREFIX=#{prefix}", "install"
   end
