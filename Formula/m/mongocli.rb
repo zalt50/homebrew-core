@@ -31,7 +31,7 @@ class Mongocli < Formula
     end
     bin.install "bin/mongocli"
 
-    generate_completions_from_executable(bin/"mongocli", "completion")
+    generate_completions_from_executable(bin/"mongocli", shell_parameter_format: :cobra)
   end
 
   test do
