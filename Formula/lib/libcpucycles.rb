@@ -1,8 +1,8 @@
 class Libcpucycles < Formula
   desc "Microlibrary for counting CPU cycles"
   homepage "https://cpucycles.cr.yp.to/"
-  url "https://cpucycles.cr.yp.to/libcpucycles-20250925.tar.gz"
-  sha256 "62313d42ad5a3cbd8d41a9fb7088edc328ef499d426e1f191612331d0fcbe301"
+  url "https://cpucycles.cr.yp.to/libcpucycles-20251226.tar.gz"
+  sha256 "5dc17b801b9b27f3861aab0e1754285b1703bffe9b8f469dc666de6d9be2f93f"
   license any_of: [:public_domain, "CC0-1.0", "0BSD", "MIT-0", "MIT"]
 
   livecheck do
