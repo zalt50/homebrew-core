@@ -27,7 +27,7 @@ class Oras < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/oras"
 
-    generate_completions_from_executable(bin/"oras", "completion")
+    generate_completions_from_executable(bin/"oras", shell_parameter_format: :cobra)
   end
 
   test do
