@@ -27,7 +27,7 @@ class Liqoctl < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/liqoctl"
 
-    generate_completions_from_executable(bin/"liqoctl", "completion")
+    generate_completions_from_executable(bin/"liqoctl", shell_parameter_format: :cobra)
   end
 
   test do
