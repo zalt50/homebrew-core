@@ -37,7 +37,7 @@ class Lima < Formula
     share.install Dir["_output/share/*"]
 
     # Install shell completions
-    generate_completions_from_executable(bin/"limactl", "completion")
+    generate_completions_from_executable(bin/"limactl", shell_parameter_format: :cobra)
   end
 
   def caveats
