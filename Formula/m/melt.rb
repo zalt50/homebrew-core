@@ -22,7 +22,7 @@ class Melt < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/melt"
 
-    generate_completions_from_executable(bin/"melt", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"melt", shell_parameter_format: :cobra)
   end
 
   test do
