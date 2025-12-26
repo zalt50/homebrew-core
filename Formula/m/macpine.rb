@@ -36,7 +36,7 @@ class Macpine < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"alpine")
-    generate_completions_from_executable(bin/"alpine", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"alpine", shell_parameter_format: :cobra)
   end
 
   service do
