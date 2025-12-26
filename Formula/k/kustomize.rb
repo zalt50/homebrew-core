@@ -31,7 +31,7 @@ class Kustomize < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./kustomize"
 
-    generate_completions_from_executable(bin/"kustomize", "completion")
+    generate_completions_from_executable(bin/"kustomize", shell_parameter_format: :cobra)
   end
 
   test do
