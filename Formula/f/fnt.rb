@@ -14,8 +14,8 @@ class Fnt < Formula
   depends_on "lcdf-typetools"
   depends_on "xz"
 
-  on_macos do
-    depends_on "md5sha1sum"
+  on_sonoma :or_older do
+    depends_on "coreutils" # needs md5sum
   end
 
   def install
