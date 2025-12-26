@@ -31,7 +31,7 @@ class Leetgo < Formula
 
   test do
     assert_match "leetgo version #{version}", shell_output("#{bin}/leetgo --version")
-    system bin/"leetgo", "init"
+    system bin/"leetgo", "init", "--site", "us"
     assert_path_exists testpath/"leetgo.yaml"
   end
 end
