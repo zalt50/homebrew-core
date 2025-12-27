@@ -29,7 +29,7 @@ class Risor < Formula
       ldflags = "-s -w -X 'main.version=#{version}' -X 'main.date=#{time.iso8601}'"
       tags = "aws,k8s,vault"
       system "go", "build", *std_go_args(ldflags:, tags:)
-      generate_completions_from_executable(bin/"risor", "completion")
+      generate_completions_from_executable(bin/"risor", shell_parameter_format: :cobra)
     end
   end
 
