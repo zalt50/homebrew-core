@@ -1,8 +1,8 @@
 class Fcft < Formula
   desc "Simple library for font loading and glyph rasterization"
   homepage "https://codeberg.org/dnkl/fcft"
-  url "https://codeberg.org/dnkl/fcft/archive/3.3.2.tar.gz"
-  sha256 "79e52aaafc0b57fa2b68ed6127de13e98318050399a939691b8ca30d44d48591"
+  url "https://codeberg.org/dnkl/fcft/archive/3.3.3.tar.gz"
+  sha256 "c0d8d485b45b1af829f73101d6588f404a32bf3c7543236b1a4707d44be81b60"
   license "MIT"
 
   bottle do
