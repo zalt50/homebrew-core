@@ -52,6 +52,7 @@ class Gpredict < Formula
 
   on_linux do
     depends_on "perl-xml-parser" => :build
+    depends_on "xorg-server" => :test
   end
 
   def install
@@ -65,8 +66,8 @@ class Gpredict < Formula
   end
 
   test do
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    assert_match "real-time", shell_output("#{bin}/gpredict -h")
+    cmd = "#{bin}/gpredict -h"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "real-time", shell_output(cmd)
   end
 end
