@@ -21,12 +21,27 @@ class Nak < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
+  def shell_output_with_tty(cmd)
+    return shell_output(cmd) if $stdout.tty?
+
+    require "pty"
+    output = []
+    PTY.spawn(cmd) do |r, _w, pid|
+      r.each { |line| output << line }
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      Process.wait(pid)
+    end
+
+    assert_equal 0, $CHILD_STATUS.exitstatus
+    output.join("\n")
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/nak --version")
 
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    assert_match "hello from the nostr army knife", shell_output("#{bin}/nak event")
-    assert_match "failed to fetch 'listblockedips'", shell_output("#{bin}/nak relay listblockedips 2>&1")
+    assert_match "hello from the nostr army knife", shell_output_with_tty("#{bin}/nak event")
+    assert_match "failed to fetch 'listblockedips'", shell_output_with_tty("#{bin}/nak relay listblockedips 2>&1")
   end
 end
