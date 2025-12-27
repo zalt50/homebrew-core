@@ -23,7 +23,7 @@ class RolesanywhereCredentialHelper < Formula
     ldflags = "-s -w -X github.com/aws/rolesanywhere-credential-helper/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"aws_signing_helper")
 
-    generate_completions_from_executable(bin/"aws_signing_helper", "completion")
+    generate_completions_from_executable(bin/"aws_signing_helper", shell_parameter_format: :cobra)
   end
 
   test do
