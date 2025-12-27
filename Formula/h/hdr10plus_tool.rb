@@ -1,8 +1,8 @@
 class Hdr10plusTool < Formula
   desc "CLI utility to work with HDR10+ in HEVC files"
   homepage "https://github.com/quietvoid/hdr10plus_tool"
-  url "https://github.com/quietvoid/hdr10plus_tool/archive/refs/tags/1.7.1.tar.gz"
-  sha256 "39a6b63f83c8433e6e2ea1a4b54a3de6dbf24fff64b69566a99e6328f4f1d2e2"
+  url "https://github.com/quietvoid/hdr10plus_tool/archive/refs/tags/1.7.2.tar.gz"
+  sha256 "cc917e769bad85323c7f596179798cc96ac878a01ddfd53b210fecae4c891849"
   license "MIT"
   head "https://github.com/quietvoid/hdr10plus_tool.git", branch: "main"
 
