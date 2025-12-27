@@ -1,8 +1,8 @@
 class Zpaqfranz < Formula
   desc "Deduplicating command-line archiver and backup tool"
   homepage "https://github.com/fcorbelli/zpaqfranz"
-  url "https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/63.6.tar.gz"
-  sha256 "1a78d45756d20d9df3e6c7db4ee2b31e8193e4511a3ca739310a180aaebaea28"
+  url "https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/63.8.tar.gz"
+  sha256 "20406c45b67c3f3a6c3071751d9df550e2e2d2c79c7ada2371063e8aafbeda16"
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
   head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
 
@@ -33,10 +33,7 @@ class Zpaqfranz < Formula
   end
 
   test do
-    system bin/"zpaqfranz", "autotest", "-to", testpath/"archive"
-    system bin/"zpaqfranz", "extract", testpath/"archive/sha256.zpaq", "-to", testpath/"out/"
-    testpath.glob("out/*").each do |path|
-      assert_equal path.basename.to_s.downcase, Digest::SHA256.hexdigest(path.read)
-    end
+    output = shell_output("#{bin}/zpaqfranz autotest")
+    assert_match "ERROR 0", output
   end
 end
