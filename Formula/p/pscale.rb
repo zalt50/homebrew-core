@@ -21,7 +21,7 @@ class Pscale < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/pscale"
 
-    generate_completions_from_executable(bin/"pscale", "completion")
+    generate_completions_from_executable(bin/"pscale", shell_parameter_format: :cobra)
   end
 
   test do
