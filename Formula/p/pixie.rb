@@ -40,7 +40,7 @@ class Pixie < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"px"), "./src/pixie_cli"
 
-    generate_completions_from_executable(bin/"px", "completion")
+    generate_completions_from_executable(bin/"px", shell_parameter_format: :cobra)
   end
 
   test do
