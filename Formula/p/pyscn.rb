@@ -28,7 +28,7 @@ class Pyscn < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/pyscn"
 
-    generate_completions_from_executable(bin/"pyscn", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"pyscn", shell_parameter_format: :cobra)
   end
 
   test do
