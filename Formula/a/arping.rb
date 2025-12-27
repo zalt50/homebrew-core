@@ -1,8 +1,8 @@
 class Arping < Formula
   desc "Utility to check whether MAC addresses are already taken on a LAN"
   homepage "https://github.com/ThomasHabets/arping"
-  url "https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.26.tar.gz"
-  sha256 "58e866dce813d848fb77d5e5e0e866fb4a02b55bab366a0d66409da478ccb12f"
+  url "https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.27.tar.gz"
+  sha256 "b54a1c628c1cd5222a787c739e544b0a456684aa1d4b04757ce2340cdd4eb506"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -22,10 +22,16 @@ class Arping < Formula
 
   uses_from_macos "libpcap"
 
+  # Fix build portability.
+  # Upstream PR ref: https://github.com/ThomasHabets/arping/pull/58
+  patch do
+    url "https://github.com/ThomasHabets/arping/commit/9c6758ad17b0b11ab5abacbed511379ff62255ca.patch?full_index=1"
+    sha256 "b618a1e6cd517b40d42a2561d6b0c6dbfc90e89d5d5d6032e9b899d3caf17e92"
+  end
+
   def install
     system "./bootstrap.sh"
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
