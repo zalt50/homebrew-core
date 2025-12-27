@@ -25,7 +25,7 @@ class Snitch < Formula
       -X github.com/karol-broda/snitch/cmd.Commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"snitch", "completion")
+    generate_completions_from_executable(bin/"snitch", shell_parameter_format: :cobra)
   end
 
   test do
