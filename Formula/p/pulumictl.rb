@@ -23,7 +23,7 @@ class Pulumictl < Formula
     ldflags = "-s -w -X github.com/pulumi/pulumictl/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/pulumictl"
 
-    generate_completions_from_executable(bin/"pulumictl", "completion")
+    generate_completions_from_executable(bin/"pulumictl", shell_parameter_format: :cobra)
   end
 
   test do
