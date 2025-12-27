@@ -11,7 +11,7 @@ class Cimg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9d92b69822c309335264fdd40fe70ef7123a8946ad889d23ad0adf7cafc1473e"
+    sha256 cellar: :any_skip_relocation, all: "e4f00078996908d2c49eb07311d009ebbb94cf873319a4f26795213be7505c3d"
   end
 
   def install
