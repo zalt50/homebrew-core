@@ -29,7 +29,7 @@ class Ratify < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/ratify"
 
-    generate_completions_from_executable(bin/"ratify", "completion")
+    generate_completions_from_executable(bin/"ratify", shell_parameter_format: :cobra)
   end
 
   test do
