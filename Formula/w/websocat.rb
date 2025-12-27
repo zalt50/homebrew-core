@@ -1,8 +1,8 @@
 class Websocat < Formula
   desc "Command-line client for WebSockets"
   homepage "https://github.com/vi/websocat"
-  url "https://github.com/vi/websocat/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "919ee83c961074c176a129874a77c02889401f3548c2536a84c4427f97cfeb26"
+  url "https://github.com/vi/websocat/archive/refs/tags/v1.14.1.tar.gz"
+  sha256 "5c976c535800ca635b72839fe49d0fe4ad2479db8744c5a00f0cf911e4832e2d"
   license "MIT"
 
   livecheck do
@@ -21,17 +21,11 @@ class Websocat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "47743949aee1665357d781c961840c97f3d781650995f7b0c9cb541f898c756f"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
-  end
-
-  # bump traitobject to build against rust 1.87
-  patch do
-    url "https://github.com/vi/websocat/commit/d4455623e777231d69b029d69d7a17c0de2bafe7.patch?full_index=1"
-    sha256 "505f8fa7311ef11c60f9e665aa1479fbdf4b666e9eae01db56567a3f25866c05"
   end
 
   def install
