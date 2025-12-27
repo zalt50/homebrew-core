@@ -22,17 +22,18 @@ class Bookokrat < Formula
   end
 
   test do
-    # Fails in Linux CI with `No such device or address (os error 6)` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    begin
-      pid = spawn bin/"bookokrat"
-      sleep 2
-      assert_path_exists testpath/".bookokrat_settings.yaml"
-      assert_match "Starting Bookokrat EPUB reader", (testpath/"bookokrat.log").read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
+    pid = if OS.mac?
+      spawn bin/"bookokrat"
+    else
+      require "pty"
+      PTY.spawn(bin/"bookokrat").last
     end
+
+    sleep 2
+    assert_path_exists testpath/".bookokrat_settings.yaml"
+    assert_match "Starting Bookokrat EPUB reader", (testpath/"bookokrat.log").read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
