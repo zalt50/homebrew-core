@@ -8,14 +8,12 @@ class Braid < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf994c891b0d901bceab7e31c21b326527f158a9d919c7d763d5f5a25844e6ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf994c891b0d901bceab7e31c21b326527f158a9d919c7d763d5f5a25844e6ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf994c891b0d901bceab7e31c21b326527f158a9d919c7d763d5f5a25844e6ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf994c891b0d901bceab7e31c21b326527f158a9d919c7d763d5f5a25844e6ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf994c891b0d901bceab7e31c21b326527f158a9d919c7d763d5f5a25844e6ac"
-    sha256 cellar: :any_skip_relocation, ventura:       "cf994c891b0d901bceab7e31c21b326527f158a9d919c7d763d5f5a25844e6ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ed0a0fa749864a7a1ebfd8eb8864f49166d3d6e772dab487f985d2866f0604f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a30ac7001f8b4ee4cd78f913c580d432205a7bedf006ff557de41ae771f47dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78e214117c886ec92c2b3d84876a19e9e312f646f7880c21bcaa8b2f1498262b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78e214117c886ec92c2b3d84876a19e9e312f646f7880c21bcaa8b2f1498262b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78e214117c886ec92c2b3d84876a19e9e312f646f7880c21bcaa8b2f1498262b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78e214117c886ec92c2b3d84876a19e9e312f646f7880c21bcaa8b2f1498262b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "227918651f6ee7548fa9f85de4ee3bfbf4ed168591caafaaac909b65e56fa6f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15697bebe2c12c8ae85c97b3fbfb612805e7e780366c55a492068484bd0d1fa7"
   end
 
   uses_from_macos "ruby"
