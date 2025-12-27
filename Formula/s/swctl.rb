@@ -33,7 +33,7 @@ class Swctl < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/swctl"
 
-    generate_completions_from_executable(bin/"swctl", "completion")
+    generate_completions_from_executable(bin/"swctl", shell_parameter_format: :cobra)
   end
 
   test do
