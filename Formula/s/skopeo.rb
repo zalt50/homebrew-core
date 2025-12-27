@@ -49,7 +49,7 @@ class Skopeo < Formula
     (etc/"containers").install "default-policy.json" => "policy.json"
     (etc/"containers/registries.d").install "default.yaml"
 
-    generate_completions_from_executable(bin/"skopeo", "completion")
+    generate_completions_from_executable(bin/"skopeo", shell_parameter_format: :cobra)
   end
 
   test do
