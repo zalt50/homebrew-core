@@ -38,7 +38,7 @@ class SlsaVerifier < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cli/slsa-verifier"
 
-    generate_completions_from_executable(bin/"slsa-verifier", "completion")
+    generate_completions_from_executable(bin/"slsa-verifier", shell_parameter_format: :cobra)
   end
 
   test do
