@@ -24,7 +24,7 @@ class Sidekick < Formula
     ldflags = "-s -w -X 'github.com/mightymoud/sidekick/cmd.version=v#{version}'"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"sidekick", "completion")
+    generate_completions_from_executable(bin/"sidekick", shell_parameter_format: :cobra)
   end
 
   test do
