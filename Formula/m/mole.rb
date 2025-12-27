@@ -7,10 +7,10 @@ class Mole < Formula
   head "https://github.com/tw93/Mole.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b3538f7e955fd91410952c870b91b2db9fbd304ec15c6fd2d4abf6b74306222"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7058f6c0a3e94b2541baa719e31dd0e1c8c465aaf296160fa07d7a0b3686391a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e377d7067cf8d2bcde491484633216096cb44cc5133ad4166577a4d6a659a92f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae85d82397d531191efdc9383128d8de011c629962a53e6f8766b5d3e715b931"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1b40abe11364768b15a4d1954c5e48df17ffa000b3197f7b8ae3621e52013b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "467cc70e45557e899afa15afa758c17ffd6a01fb3b5c94eb498a12268438e086"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5643f0e2d1c60dd7b1e53831a5c4d2d6e6e2f598d3394e0c7de8cdae1a4b3133"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5fabfbbca01eacaa8582f637e159d8a3206e85f37010f96ab19896b0bd86897e"
   end
 
   depends_on "go" => :build
