@@ -39,7 +39,7 @@ class Scorecard < Formula
     system "make", "generate-docs"
     doc.install "docs/checks.md"
 
-    generate_completions_from_executable(bin/"scorecard", "completion")
+    generate_completions_from_executable(bin/"scorecard", shell_parameter_format: :cobra)
   end
 
   test do
