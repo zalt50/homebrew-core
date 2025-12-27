@@ -7,12 +7,12 @@ class Krane < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "881a059dd30331ba9a9e17bfa51906ad228ac2adf9881ab4d4cf9d06ce1d14bd"
-    sha256 cellar: :any,                 arm64_sequoia: "3d9fa3cc1a63d7d191e1a0dfe3fd87da728fedd057d70ad712b676df86d21457"
-    sha256 cellar: :any,                 arm64_sonoma:  "1775c1f38a52ca595446ac343993a8f4beaee320f9469dfe6f3177df00e4d6b4"
-    sha256 cellar: :any,                 sonoma:        "0af000dce011204dc420d6a28d8d64fd39370f714a03efe7d258b98897bb8a8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c6129d4397b21098219b707ea6dd0208380500a641515e39eeacfbaaa0cbeb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b25328ec83904ca0014b94b67742d1f5293d106ab8b9341989c78fd0f5a6b74"
+    sha256 cellar: :any,                 arm64_tahoe:   "ff4375ada94e25c3be816718edb77de00a3e50383107e074cae3b547503fe949"
+    sha256 cellar: :any,                 arm64_sequoia: "1c84ffec42dfd7237722c245d8f38560ab47fcedcca86cda16d88cbfc01c0fec"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb6e6df4a27b749c1e21e83939ddb9a6cbec3e81765641d277a876c29a1ca331"
+    sha256 cellar: :any,                 sonoma:        "be1b01b767e055268246eb7b49412d917656f3fe13988418cea9d1a9de663cdc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c121303653c3a4ec91d9a1c50d29295602db6d744bff3d0978634de1f79a9b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b1686a84c692ea97f3e6670e28769518f028a155fb32a8290401a516d8dc93"
   end
 
   depends_on "kubernetes-cli"
