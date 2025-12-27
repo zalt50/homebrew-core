@@ -29,7 +29,7 @@ class Prestd < Formula
     ldflags = "-s -w -X github.com/prest/prest/helpers.PrestVersionNumber=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/prestd"
 
-    generate_completions_from_executable(bin/"prestd", "completion")
+    generate_completions_from_executable(bin/"prestd", shell_parameter_format: :cobra)
   end
 
   test do
