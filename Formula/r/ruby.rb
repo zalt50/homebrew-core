@@ -5,6 +5,7 @@ class Ruby < Formula
   head "https://github.com/ruby/ruby.git", branch: "master"
 
   stable do
+    # TODO: enable default_user_install when updating to Ruby 4.1
     url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"
     sha256 "2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271"
 
@@ -170,6 +171,7 @@ class Ruby < Formula
     config_file.write rubygems_config
   end
 
+  # TODO: remove when enabling default_user_install
   def post_install
     # Since Gem ships Bundle we want to provide that full/expected installation
     # but to do so we need to handle the case where someone has previously
@@ -192,8 +194,7 @@ class Ruby < Formula
           alias :old_default_specifications_dir :default_specifications_dir
         end
 
-
-        # TODO: decide on defaulting to user install
+        # TODO: enable this with Ruby 4.1
         #
         # def self.default_user_install
         #   return true unless ENV.key?("GEM_HOME")
@@ -264,7 +265,7 @@ class Ruby < Formula
   end
 
   def caveats
-    # TODO: add a caveat once we decide how to handle `Gem.default_user_install`
+    # TODO: update path when enabling `Gem.default_user_install`
     <<~EOS
       By default, binaries installed by gem will be placed into:
         #{rubygems_bindir}
