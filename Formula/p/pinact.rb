@@ -14,12 +14,12 @@ class Pinact < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a85f1bc4acf0a22e10a89da72092996dc0f377614697efdaf2cb300b3fc22c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a85f1bc4acf0a22e10a89da72092996dc0f377614697efdaf2cb300b3fc22c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a85f1bc4acf0a22e10a89da72092996dc0f377614697efdaf2cb300b3fc22c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae81355fe2ccc24c68845c42afb3611a5a4305b780c7e3b1a99a53e98969908f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b896e27c8f56909d5d95c82dd206b64103a923634be5288bec382481f1f96902"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4930c3b53de3fc82dfc06dc455ded70f3f3be26b6eb1a2a128f303db3d0dedc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da3c6356bd2508840e39203152b74673e0ec72b0853a669c853fe4b9f7784e8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da3c6356bd2508840e39203152b74673e0ec72b0853a669c853fe4b9f7784e8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da3c6356bd2508840e39203152b74673e0ec72b0853a669c853fe4b9f7784e8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6828cdabb12180ac09462f5bbbd3da3ba767103a008dc6f4f3b7c8fdac28a303"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7c198d1cd7919efaa52d3cc51d702c60bc9828af972a744331d686154cc6e0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf797794d40b8f3d737a90d3c32861f54314649a3aacc664a816b2bb7cea6f86"
   end
 
   depends_on "go" => :build
