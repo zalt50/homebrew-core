@@ -1,42 +1,25 @@
-class Ruby < Formula
+class RubyAT34 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
+  url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.8.tar.gz"
+  sha256 "53c4ddad41fbb6189f1f5ee0db57a51d54bd1f87f8755b3d68604156a35b045b"
   license "Ruby"
-  head "https://github.com/ruby/ruby.git", branch: "master"
-
-  stable do
-    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"
-    sha256 "2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271"
-
-    # Should be updated only when Ruby is updated (if an update is available).
-    # The exception is Rubygem security fixes, which mandate updating this
-    # formula & the versioned equivalents and bumping the revisions.
-    resource "rubygems" do
-      url "https://rubygems.org/rubygems/rubygems-4.0.3.tgz"
-      sha256 "f5f728a40603773eec1a5c0857693485e7a118619f6ae70dcece6c2e719129a0"
-
-      livecheck do
-        url "https://rubygems.org/pages/download"
-        regex(/href=.*?rubygems[._-]v?(\d+(?:\.\d+)+)\.t/i)
-      end
-    end
-  end
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/releases/"
-    regex(/href=.*?ruby[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?ruby[._-]v?(3\.4(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ffcf4d95fcb57a386b607cf7ad0b27f7854c4e2c00d303c9df9bbcf762f642d7"
-    sha256 arm64_sequoia: "4da301fd3d1b2bfcb6a9a0f23913a6c5b8a89543285b7fec027296ce82a3ff4c"
-    sha256 arm64_sonoma:  "37c080c3eac2f30abc34f7cd19f43ba374ddbe6afd4a288c4a399610b9ceae7e"
-    sha256 sonoma:        "89bb9d9ca1da84424beb728554067dbfeb942f6098e3ca504236f619387285cd"
-    sha256 arm64_linux:   "28c510f962a9beaa5294849e4b1c7fd47852a9c6a8c7222e3689439b02775301"
-    sha256 x86_64_linux:  "171d6fd23383917db7fe413620edfff205f8745b590d4c8a4f64b15fd2c80d64"
+    sha256 arm64_tahoe:   "3b0ed1b56645ded18c4ab1ed955b858f6450c203748e7c5e68c4f617be3f227f"
+    sha256 arm64_sequoia: "0b5e493658e419377f090ec5b2eebc9367f3f17c5357ecba86a95f7aaaefc7ae"
+    sha256 arm64_sonoma:  "037460ae5af98e5f8f4c1114554d2715bac05763116e758dfd5adbf76db53733"
+    sha256 sonoma:        "13a288d9444f7a471fcad02ff523f28b6dcd229773fd04034ed3f29e66ef4abc"
+    sha256 arm64_linux:   "123560dbe2a0329f88fe8c3dbf4eee6dce5b5f0eef9dc9f7303d438612678252"
+    sha256 x86_64_linux:  "ebc5b7784c4b6b816d21f479ef7060c2c2c7ba0eb6f6418ce8c16b320aafd122"
   end
 
-  keg_only :provided_by_macos
+  keg_only :versioned_formula
 
   depends_on "autoconf" => :build
   depends_on "pkgconf" => :build
@@ -49,21 +32,25 @@ class Ruby < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
+  # Should be updated only when Ruby is updated (if an update is available).
+  # The exception is Rubygem security fixes, which mandate updating this
+  # formula & the versioned equivalents and bumping the revisions.
+  resource "rubygems" do
+    url "https://rubygems.org/rubygems/rubygems-4.0.2.tgz"
+    sha256 "a5fdbcbd3cbd616360fc9b82d75cdfa1aea3cf1aa357496d8aecce6574d85bf8"
+
+    livecheck do
+      url "https://rubygems.org/pages/download"
+      regex(/href=.*?rubygems[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    end
+  end
+
   def determine_api_version
     Utils.safe_popen_read(bin/"ruby", "-e", "print Gem.ruby_api_version")
   end
 
   def api_version
-    if head?
-      if latest_head_prefix
-        determine_api_version
-      else
-        # Best effort guess
-        "#{stable.version.major.to_i}.#{stable.version.minor.to_i + 1}.0+0"
-      end
-    else
-      "#{version.major.to_i}.#{version.minor.to_i}.0"
-    end
+    "#{version.major.to_i}.#{version.minor.to_i}.0"
   end
 
   def rubygems_bindir
@@ -79,8 +66,6 @@ class Ruby < Formula
     #       https://github.com/Homebrew/brew/pull/12508
     inreplace "tool/mkconfig.rb", /^(\s+val = )'"\$\(SDKROOT\)"'\+/, "\\1"
 
-    system "./autogen.sh" if build.head?
-
     paths = %w[libyaml openssl@3].map { |f| Formula[f].opt_prefix }
     args = %W[
       --prefix=#{prefix}
@@ -91,7 +76,6 @@ class Ruby < Formula
       --with-opt-dir=#{paths.join(":")}
       --without-gmp
     ]
-    args << "--with-baseruby=#{RbConfig.ruby}" if build.head?
     args << "--disable-dtrace" if OS.mac? && !MacOS::CLT.installed?
 
     # Correct MJIT_CC to not use superenv shim
@@ -135,33 +119,29 @@ class Ruby < Formula
       end
     end
 
-    if build.stable? # Use bundled RubyGems for --HEAD (will be newer)
-      # This is easier than trying to keep both current & versioned Ruby
-      # formulae repeatedly updated with Rubygem patches.
-      resource("rubygems").stage do
-        ENV.prepend_path "PATH", bin
+    resource("rubygems").stage do
+      ENV.prepend_path "PATH", bin
 
-        system bin/"ruby", "setup.rb", "--prefix=#{buildpath}/vendor_gem"
-        rg_in = lib/"ruby/#{api_version}"
-        rg_gems_in = lib/"ruby/gems/#{api_version}"
+      system bin/"ruby", "setup.rb", "--prefix=#{buildpath}/vendor_gem"
+      rg_in = lib/"ruby/#{api_version}"
+      rg_gems_in = lib/"ruby/gems/#{api_version}"
 
-        # Remove bundled Rubygem and Bundler
-        rm_r rg_in/"bundler"
-        rm rg_in/"bundler.rb"
-        rm_r Dir[rg_gems_in/"gems/bundler-*"]
-        rm Dir[rg_gems_in/"specifications/default/bundler-*.gemspec"]
-        rm_r rg_in/"rubygems"
-        rm rg_in/"rubygems.rb"
-        rm bin/"gem"
+      # Remove bundled Rubygem and Bundler
+      rm_r rg_in/"bundler"
+      rm rg_in/"bundler.rb"
+      rm_r Dir[rg_gems_in/"gems/bundler-*"]
+      rm Dir[rg_gems_in/"specifications/default/bundler-*.gemspec"]
+      rm_r rg_in/"rubygems"
+      rm rg_in/"rubygems.rb"
+      rm bin/"gem"
 
-        # Drop in the new version.
-        rg_in.install Dir[buildpath/"vendor_gem/lib/*"]
-        (rg_gems_in/"gems").install Dir[buildpath/"vendor_gem/gems/*"]
-        (rg_gems_in/"specifications/default").install Dir[buildpath/"vendor_gem/specifications/default/*"]
-        bin.install buildpath/"vendor_gem/bin/gem" => "gem"
-        bin.install buildpath/"vendor_gem/bin/bundle" => "bundle"
-        bin.install buildpath/"vendor_gem/bin/bundler" => "bundler"
-      end
+      # Drop in the new version.
+      rg_in.install Dir[buildpath/"vendor_gem/lib/*"]
+      (rg_gems_in/"gems").install Dir[buildpath/"vendor_gem/gems/*"]
+      (rg_gems_in/"specifications/default").install Dir[buildpath/"vendor_gem/specifications/default/*"]
+      bin.install buildpath/"vendor_gem/bin/gem" => "gem"
+      bin.install buildpath/"vendor_gem/bin/bundle" => "bundle"
+      bin.install buildpath/"vendor_gem/bin/bundler" => "bundler"
     end
 
     # Customize rubygems to look/install in the global gem directory
@@ -191,15 +171,6 @@ class Ruby < Formula
           alias :old_ruby :ruby
           alias :old_default_specifications_dir :default_specifications_dir
         end
-
-
-        # TODO: decide on defaulting to user install
-        #
-        # def self.default_user_install
-        #   return true unless ENV.key?("GEM_HOME")
-        #
-        #   false
-        # end
 
         def self.default_dir
           path = [
@@ -264,7 +235,6 @@ class Ruby < Formula
   end
 
   def caveats
-    # TODO: add a caveat once we decide how to handle `Gem.default_user_install`
     <<~EOS
       By default, binaries installed by gem will be placed into:
         #{rubygems_bindir}
