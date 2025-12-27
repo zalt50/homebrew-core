@@ -17,17 +17,35 @@ class Fedify < Formula
 
   depends_on "deno" => :build
 
+  on_linux do
+    # We use a workaround to prevent modification of the `fedify` binary
+    # but this means brew cannot rewrite paths for non-default prefix
+    pour_bottle? only_if: :default_prefix
+  end
+
   def install
     system "deno", "task", "codegen"
     system "deno", "compile", "--allow-all", "--output=#{bin/"fedify"}", "packages/cli/src/mod.ts"
     generate_completions_from_executable(bin/"fedify", "completions")
+
+    # FIXME: patchelf corrupts the ELF binary as Deno needs to find a magic
+    # trailer string `d3n0l4nd` at a specific location. This workaround should
+    # be made into a brew DSL to skip running patchelf.
+    if OS.linux? && build.bottle?
+      prefix.install bin/"fedify"
+      Utils::Gzip.compress(prefix/"fedify")
+    end
+  end
+
+  def post_install
+    if (prefix/"fedify.gz").exist?
+      system "gunzip", prefix/"fedify.gz"
+      bin.install prefix/"fedify"
+      (bin/"fedify").chmod 0755
+    end
   end
 
   test do
-    # Skip test on Linux CI due to environment-specific failures that don't occur in local testing.
-    # This test passes on macOS CI and all local environments (including Linux).
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     version_output = shell_output "NO_COLOR=1 #{bin}/fedify --version"
     assert_equal "fedify #{version}", version_output.strip
 
