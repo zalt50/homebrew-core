@@ -6,12 +6,12 @@ class TsQueryLs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb26613f8bb99d8ce15dd820297efc5fb7ba65a664cf5502c384f2b7d4f09361"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3109adce793b2f0eb7d07cbdea85e62d5b1cc00ce7d93fb1b3f1ce0d50de9ca3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fbc2340e74d90a00bc6d9e806c3ee9d34284c57d6d0328d0f47a2dd7db508dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f10f1bb30ef7b205065c425efadce29cf9059581310439f95128366babe89409"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2b3690a5d19bbac3887dc1cbd5a1bf38deb42b9295f6c1ac613f21eb30d1723"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe3bb5ec2d2f1f7a1f5477a767d07dacce8aceebf3486a54da67e9e68cc9ff38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "288687ce1a1c71fa37e149a9b4178d7fb7379a60f472559aec624d1ad9342d45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5a7e3e6eb885174275a45a96618261940092166e5871d5ca75d24582da16ecd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b97d0c19c6b7b0c3ef9c68c0ec8b052241e9ed7875d05bbaeab340532696925e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1461ea591924258d07c9bf8c34bcaa04551170c9521493c97eb91e0ea61ff26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3aa5b6b417b27b2c8e81f7c05fafed40abb95b918939f9dd71669e2477f321e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97f47d251050ac4c0881216fbcbfa275df5a5be6f807c1fa2575f94a7b7dab3d"
   end
 
   depends_on "cmake" => :build
