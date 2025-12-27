@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https://github.com/cargo-bins/cargo-binstall"
-  url "https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.16.5.tar.gz"
-  sha256 "102162a158dc8dec1456dd57bc2332a194615b4547a5419eaee44dafe9aec651"
+  url "https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.16.6.tar.gz"
+  sha256 "f96ba30a65888aaa48e7539512b734f88b6bdd03b40e06a765cc298087ef4618"
   license "GPL-3.0-only"
   head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
 
