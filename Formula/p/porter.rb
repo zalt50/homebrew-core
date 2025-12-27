@@ -26,7 +26,7 @@ class Porter < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/porter"
-    generate_completions_from_executable(bin/"porter", "completion")
+    generate_completions_from_executable(bin/"porter", shell_parameter_format: :cobra)
   end
 
   test do
