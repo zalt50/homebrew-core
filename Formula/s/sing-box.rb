@@ -29,8 +29,8 @@ class SingBox < Formula
       with_utls
       with_wireguard
     ]
-    system "go", "build", *std_go_args(ldflags:, tags: tags.join(",")), "./cmd/sing-box"
-    generate_completions_from_executable(bin/"sing-box", "completion")
+    system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/sing-box"
+    generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
   end
 
   service do
