@@ -10,6 +10,15 @@ class RubyAT34 < Formula
     regex(/href=.*?ruby[._-]v?(3\.4(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "3b0ed1b56645ded18c4ab1ed955b858f6450c203748e7c5e68c4f617be3f227f"
+    sha256 arm64_sequoia: "0b5e493658e419377f090ec5b2eebc9367f3f17c5357ecba86a95f7aaaefc7ae"
+    sha256 arm64_sonoma:  "037460ae5af98e5f8f4c1114554d2715bac05763116e758dfd5adbf76db53733"
+    sha256 sonoma:        "13a288d9444f7a471fcad02ff523f28b6dcd229773fd04034ed3f29e66ef4abc"
+    sha256 arm64_linux:   "123560dbe2a0329f88fe8c3dbf4eee6dce5b5f0eef9dc9f7303d438612678252"
+    sha256 x86_64_linux:  "ebc5b7784c4b6b816d21f479ef7060c2c2c7ba0eb6f6418ce8c16b320aafd122"
+  end
+
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
