@@ -6,8 +6,7 @@ class Jbake < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1dba6c35944fe67596c7203fcbf3e291f0a48ce159afde7b943a446ed61c76b9"
+    sha256 cellar: :any_skip_relocation, all: "ef25972c89cab47c6cd977ca550134d0ad630af0eac2a479295d6a07b72c3fca"
   end
 
   depends_on "openjdk"
