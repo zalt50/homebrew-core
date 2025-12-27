@@ -26,7 +26,7 @@ class RosaCli < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"rosa"), "./cmd/rosa"
 
-    generate_completions_from_executable(bin/"rosa", "completion")
+    generate_completions_from_executable(bin/"rosa", shell_parameter_format: :cobra)
   end
 
   test do
