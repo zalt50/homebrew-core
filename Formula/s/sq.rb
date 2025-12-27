@@ -24,6 +24,8 @@ class Sq < Formula
   conflicts_with "squirrel-lang", because: "both install `sq` binaries"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     pkg = "github.com/neilotoole/sq/cli/buildinfo"
     ldflags = %W[
       -s -w
@@ -36,7 +38,8 @@ class Sq < Formula
       sqlite_json sqlite_math_functions
     ]
     system "go", "build", *std_go_args(ldflags:, tags:)
-    generate_completions_from_executable(bin/"sq", "completion")
+
+    generate_completions_from_executable(bin/"sq", shell_parameter_format: :cobra)
     (man1/"sq.1").write Utils.safe_popen_read(bin/"sq", "man")
   end
 
