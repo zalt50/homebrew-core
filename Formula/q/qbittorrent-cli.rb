@@ -23,7 +23,7 @@ class QbittorrentCli < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"qbt"), "./cmd/qbt"
 
-    generate_completions_from_executable(bin/"qbt", "completion")
+    generate_completions_from_executable(bin/"qbt", shell_parameter_format: :cobra)
   end
 
   test do
