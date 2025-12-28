@@ -25,7 +25,8 @@ class Temporal < Formula
   def install
     ldflags = "-s -w -X github.com/temporalio/cli/temporalcli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/temporal"
-    generate_completions_from_executable bin/"temporal", "completion"
+
+    generate_completions_from_executable(bin/"temporal", shell_parameter_format: :cobra)
   end
 
   service do
