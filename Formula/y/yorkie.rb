@@ -31,7 +31,7 @@ class Yorkie < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/yorkie"
 
-    generate_completions_from_executable(bin/"yorkie", "completion")
+    generate_completions_from_executable(bin/"yorkie", shell_parameter_format: :cobra)
   end
 
   service do
