@@ -1,10 +1,19 @@
 class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
   homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
-  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz"
-  sha256 "053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
   head "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git", branch: "master"
+
+  stable do
+    url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz"
+    sha256 "053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5"
+
+    # Backport fix to run on macOS
+    patch do
+      url "https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/commit/c1990dd02647405b0c13aab59f75d05cbb202336.diff"
+      sha256 "46505b7f915a96a4e5f4c46cd8a2cfb5a74586bfd585d69f31b7b2e27e17a4c8"
+    end
+  end
 
   # The regex here avoids x.99 releases, as they're pre-release versions.
   livecheck do
@@ -56,8 +65,6 @@ class Pulseaudio < Formula
       ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
       "enabled"
     else
-      # Restore coreaudio module as default on macOS
-      inreplace "meson.build", "cdata.set('HAVE_COREAUDIO', 0)", "cdata.set('HAVE_COREAUDIO', 1)"
       "disabled"
     end
 
@@ -92,7 +99,7 @@ class Pulseaudio < Formula
     system "meson", "install", "-C", "build"
 
     # Don't hardcode Cellar references in configuration files
-    inreplace etc.glob("pulse/*"), prefix, opt_prefix, audit_result: false
+    inreplace etc.glob("pulse/*").select(&:file?), prefix, opt_prefix, audit_result: false
 
     # Create the `default.pa.d` directory to avoid error messages like
     # https://github.com/Homebrew/homebrew-core/issues/224722
