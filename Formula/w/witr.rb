@@ -15,6 +15,8 @@ class Witr < Formula
   end
 
   depends_on "go" => :build
+  # macOS support PR ref: https://github.com/pranshuparmar/witr/pull/9
+  depends_on :linux
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"), "./cmd/witr"
