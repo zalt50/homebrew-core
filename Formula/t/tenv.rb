@@ -35,7 +35,7 @@ class Tenv < Formula
     %w[tenv terraform terragrunt terramate tf tofu atmos].each do |f|
       system "go", "build", *std_go_args(ldflags:, output: bin/f), "./cmd/#{f}"
     end
-    generate_completions_from_executable(bin/"tenv", "completion")
+    generate_completions_from_executable(bin/"tenv", shell_parameter_format: :cobra)
   end
 
   test do
