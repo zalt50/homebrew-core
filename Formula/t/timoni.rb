@@ -22,7 +22,7 @@ class Timoni < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}"), "./cmd/timoni"
 
-    generate_completions_from_executable(bin/"timoni", "completion")
+    generate_completions_from_executable(bin/"timoni", shell_parameter_format: :cobra)
   end
 
   test do
