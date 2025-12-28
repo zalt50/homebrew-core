@@ -37,15 +37,25 @@ class Dissent < Formula
     depends_on "harfbuzz"
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arm64?
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    # Fails in Linux CI with "Failed to open display"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     # dissent is a GUI application
-    system bin/"dissent", "--help"
+    cmd = "#{bin}/dissent --help"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "Show all help options", shell_output(cmd)
   end
 end
