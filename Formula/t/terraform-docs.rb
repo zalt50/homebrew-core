@@ -25,7 +25,7 @@ class TerraformDocs < Formula
 
     bin.install "bin/#{os}-#{cpu}/terraform-docs"
 
-    generate_completions_from_executable(bin/"terraform-docs", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"terraform-docs", "completion")
   end
 
   test do
