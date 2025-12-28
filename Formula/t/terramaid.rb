@@ -22,7 +22,7 @@ class Terramaid < Formula
     ldflags = "-s -w -X github.com/RoseSecurity/terramaid/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"terramaid", "completion")
+    generate_completions_from_executable(bin/"terramaid", shell_parameter_format: :cobra)
   end
 
   test do
