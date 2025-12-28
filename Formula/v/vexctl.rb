@@ -27,7 +27,7 @@ class Vexctl < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"vexctl", "completion")
+    generate_completions_from_executable(bin/"vexctl", shell_parameter_format: :cobra)
   end
 
   test do
