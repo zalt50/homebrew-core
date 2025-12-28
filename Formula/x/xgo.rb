@@ -24,7 +24,7 @@ class Xgo < Formula
     libexec.install Dir["*"] - Dir[".*"]
     bin.install_symlink Dir[libexec/"bin/*"]
 
-    generate_completions_from_executable(bin/"xgo", "completion")
+    generate_completions_from_executable(bin/"xgo", shell_parameter_format: :cobra)
   end
 
   test do
