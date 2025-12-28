@@ -26,7 +26,7 @@ class Vhs < Formula
 
     (man1/"vhs.1").write Utils.safe_popen_read(bin/"vhs", "man")
 
-    generate_completions_from_executable(bin/"vhs", "completion")
+    generate_completions_from_executable(bin/"vhs", shell_parameter_format: :cobra)
   end
 
   test do
