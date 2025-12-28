@@ -23,7 +23,7 @@ class TfProfile < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w", tags: "netgo")
     pkgshare.install "test"
 
-    generate_completions_from_executable(bin/"tf-profile", "completion")
+    generate_completions_from_executable(bin/"tf-profile", shell_parameter_format: :cobra)
   end
 
   test do
