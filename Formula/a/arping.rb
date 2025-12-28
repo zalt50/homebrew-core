@@ -1,8 +1,8 @@
 class Arping < Formula
   desc "Utility to check whether MAC addresses are already taken on a LAN"
   homepage "https://github.com/ThomasHabets/arping"
-  url "https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.27.tar.gz"
-  sha256 "b54a1c628c1cd5222a787c739e544b0a456684aa1d4b04757ce2340cdd4eb506"
+  url "https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.28.tar.gz"
+  sha256 "43b94dbb96d288096ebe0e81c0411c2e69d329d7447ac1fd7b758eda38fd35a8"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -19,13 +19,6 @@ class Arping < Formula
   depends_on "libnet"
 
   uses_from_macos "libpcap"
-
-  # Fix build portability.
-  # Upstream PR ref: https://github.com/ThomasHabets/arping/pull/58
-  patch do
-    url "https://github.com/ThomasHabets/arping/commit/9c6758ad17b0b11ab5abacbed511379ff62255ca.patch?full_index=1"
-    sha256 "b618a1e6cd517b40d42a2561d6b0c6dbfc90e89d5d5d6032e9b899d3caf17e92"
-  end
 
   def install
     system "./bootstrap.sh"
