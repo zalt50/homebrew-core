@@ -7,12 +7,12 @@ class Vtcode < Formula
   head "https://github.com/vinhnx/vtcode.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d6e16dd743dda1f9c7076e5a72a7445ca186a20cc5b406d11f28b48ebbfaca2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05c13520c00c8167b3b7ae6d7bb5c0ee04326a6a460cd22495426d4b2e7a96d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29f53b8c71557c1850a4bafa915585fa16d335f632491fbfffc941e32f1cf5a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "855a5d85fb6d3340c5c37caeb02d88aee2f7ff75a767f8d2b1ecb03e106b9a2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c43d4603e29943bd25456355635784fed7a7d927e4cabe1a545b2ab3a9873ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8b44a7dfa9836660b41ae2305400f77c27b86ce33e2aab18433368e881ad6cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bc2babc1080cd3de30b67142d08accf160e11a8138133a04af12d57fa6646e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adb80d7a8d61e6ffb72b41c4b4bb27bcdc958049318061ce024e34eb7770d245"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fed56c0c71d1994cf8e172776da75d546fdcc8b95b11477838815e0346ff976"
+    sha256 cellar: :any_skip_relocation, sonoma:        "175026942a64fe0526e854aea2d975910967224ea4b93f6d98dba448f05da69b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88b5abc37212410c843001e35a884ec8ce4f15bea84070ee6b9d37f46ac4c622"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44588c47bb7f7a04d07727c80cdf36b2ed7925eee38f2bb87128867e448972fa"
   end
 
   depends_on "pkgconf" => :build
