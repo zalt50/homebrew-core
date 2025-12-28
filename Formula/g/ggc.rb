@@ -17,6 +17,8 @@ class Ggc < Formula
 
   depends_on "go" => :build
 
+  uses_from_macos "vim"
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
@@ -24,10 +26,6 @@ class Ggc < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ggc version")
-
-    # `vim` not found in `PATH`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     assert_equal "main", shell_output("#{bin}/ggc config get default.branch").chomp
   end
 end
