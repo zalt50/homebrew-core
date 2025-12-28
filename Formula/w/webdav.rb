@@ -21,7 +21,7 @@ class Webdav < Formula
     ldflags = "-s -w -X github.com/hacdias/webdav/v5/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"webdav", "completion")
+    generate_completions_from_executable(bin/"webdav", shell_parameter_format: :cobra)
   end
 
   test do
