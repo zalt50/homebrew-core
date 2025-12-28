@@ -20,7 +20,7 @@ class Vultr < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"vultr", "completion")
+    generate_completions_from_executable(bin/"vultr", shell_parameter_format: :cobra)
   end
 
   test do
