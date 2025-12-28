@@ -29,7 +29,7 @@ class Virtctl < Formula
     ldflags = "-s -w -X kubevirt.io/client-go/version.gitVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/virtctl"
 
-    generate_completions_from_executable(bin/"virtctl", "completion")
+    generate_completions_from_executable(bin/"virtctl", shell_parameter_format: :cobra)
   end
 
   test do
