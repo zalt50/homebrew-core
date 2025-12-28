@@ -11,6 +11,15 @@ class Kyua < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "cf92949e914060b023d35f613ab94ccdc61a567fdeb2f97ab1ecc8bd76f07f86"
+    sha256 arm64_sequoia: "efa4be0f2c6ba270d92a837a28fc12a2c2ae556ba18049a9b1b651ff13aff060"
+    sha256 arm64_sonoma:  "8d71d68fc24a0d42ad67d1a7c08c8c39f41ec6f7d56e3743eb400e66d5b6c087"
+    sha256 sonoma:        "54c01bbaa9eb73a6dbd47ff636ceec11eb72104ecac9d7774f60d2b0a31133a4"
+    sha256 arm64_linux:   "9491024b99bc4b9c3cb628c94fdef74fb7dede7dfa0a335dd03b4a9d211f29e0"
+    sha256 x86_64_linux:  "d01915cc4e5d4b63e64b3fda56c343ab81bf2f21662c312cd5acd22264fc5282"
+  end
+
   depends_on "pkgconf" => [:build, :test]
   depends_on "atf"
   depends_on "lua"
