@@ -26,7 +26,7 @@ class VulsioGost < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"gost")
 
-    generate_completions_from_executable(bin/"gost", "completion")
+    generate_completions_from_executable(bin/"gost", shell_parameter_format: :cobra)
   end
 
   test do
