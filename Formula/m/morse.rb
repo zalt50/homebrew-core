@@ -1,14 +1,15 @@
 class Morse < Formula
   desc "QSO generator and morse code trainer"
   homepage "http://www.catb.org/~esr/morse/"
-  # reported the artifact issue on the project page, https://gitlab.com/esr/morse-classic/-/issues/1
   url "https://gitlab.com/esr/morse-classic/-/archive/2.6/morse-classic-2.6.tar.bz2"
   sha256 "ec44144d52a1eef36fbe0ca400c54556a7ba8f8c3de38d80512d19703b89f615"
   license "BSD-2-Clause"
 
+  # The homepage links to the `stable` tarball but it can take longer than the
+  # ten second livecheck timeout, so we check the Git tags as a workaround.
   livecheck do
-    url :homepage
-    regex(/href=.*?morse[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,6 +29,12 @@ class Morse < Formula
   depends_on "xmlto" => :build
   depends_on "pulseaudio"
 
+  # Apply Debian patch to open a mono stream to fix "pa_simple_Write failed"
+  patch do
+    url "https://salsa.debian.org/debian-hamradio-team/morse/-/raw/7acc68ab78dc8b634c0c81dc56fee0634fc9fc3b/debian/patches/04fix-pa_simple_write-with-mono-output.patch"
+    sha256 "ae37ff290eba510fd52fe8babbe86c3ab56755b3ad5a9b7f9949b6a899b06288"
+  end
+
   patch :DATA
 
   def install
@@ -44,10 +51,12 @@ class Morse < Formula
   end
 
   test do
-    # Fails in Linux CI with "pa_simple_Write failed"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    assert_match "Could not initialize audio", shell_output("#{bin}/morse -- 2>&1", 1)
+    if OS.mac?
+      # Cannot set up pulseaudio on CI runners so just check for error message
+      assert_match "Could not initialize audio", shell_output("#{bin}/morse -m brew 2>&1", 1).strip
+    else
+      assert_equal "-... .-. . .--", shell_output("#{bin}/morse -m brew").strip
+    end
   end
 end
 
