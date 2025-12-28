@@ -32,7 +32,7 @@ class Whalebrew < Formula
       -X github.com/whalebrew/whalebrew/version.Version=#{version}+homebrew
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"whalebrew", "completion")
+    generate_completions_from_executable(bin/"whalebrew", shell_parameter_format: :cobra)
   end
 
   test do
