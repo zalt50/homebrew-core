@@ -20,11 +20,11 @@ class Zbctl < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.com/camunda-community-hub/zeebe-client-go/v8/cmd/zbctl/internal/commands"
+    project = "github.com/camunda-community-hub/zeebe-client-go/v#{version.major}/cmd/zbctl/internal/commands"
     ldflags = "-s -w -X #{project}.Version=#{version} -X #{project}.Commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:, tags: "netgo"), "./cmd/zbctl"
 
-    generate_completions_from_executable(bin/"zbctl", "completion")
+    generate_completions_from_executable(bin/"zbctl", shell_parameter_format: :cobra)
   end
 
   test do
