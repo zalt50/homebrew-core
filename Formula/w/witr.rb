@@ -6,13 +6,16 @@ class Witr < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "d7241f8fd0b182e8c3be4c8e04a729eef7e542b37361c0a0f9735ac480d0c71f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "efd5dabb1e235a9d62b75455d4fd65615d3c3dca73f446285f42609441fa754d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d1d87b6680102abefc57482c4b339733ce6f846520a64ed2514d24552a27a79"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d1d87b6680102abefc57482c4b339733ce6f846520a64ed2514d24552a27a79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d1d87b6680102abefc57482c4b339733ce6f846520a64ed2514d24552a27a79"
+    sha256 cellar: :any_skip_relocation, sonoma:        "517bc9b81db2de6b2054e5b47a2091b2ad81ee445d40b17c3a3205e2fee9c538"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "faab68bd4539896e97aff48f49cd42738538646036152c68e4c4bbc0d329c400"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3236ab219398015a9b203973631df16f0ee2ee4c5585d5bd187b99e0b9ca189"
   end
 
   depends_on "go" => :build
-  # macOS support PR ref: https://github.com/pranshuparmar/witr/pull/9
-  depends_on :linux
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"), "./cmd/witr"
