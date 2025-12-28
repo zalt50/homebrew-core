@@ -27,7 +27,7 @@ class VespaCli < Formula
       with_env(VERSION: version.to_s, PREFIX: prefix.to_s) do
         system "make", "install", "manpages"
       end
-      generate_completions_from_executable(bin/"vespa", "completion")
+      generate_completions_from_executable(bin/"vespa", shell_parameter_format: :cobra)
     end
   end
 
