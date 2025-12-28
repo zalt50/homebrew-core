@@ -1,9 +1,10 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://github.com/fish-shell/fish-shell/releases/download/4.2.1/fish-4.2.1.tar.xz"
-  sha256 "0f99222a3063377c91fbf78d9850edab7a0b91bdbed201cf79da48ea3a41f393"
+  url "https://github.com/fish-shell/fish-shell/releases/download/4.3.1/fish-4.3.1.tar.xz"
+  sha256 "78f8881b971ab95ace5f2a9a25efef66f6c180396b2085b9852f21f8e4a30408"
   license "GPL-2.0-only"
+  head "https://github.com/fish-shell/fish-shell.git", branch: "master"
 
   livecheck do
     url :stable
@@ -21,19 +22,21 @@ class Fish < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "642bd9f9c853f578cd7189765260c3b82478889a021c2cb67bac5e2b1e25bbc8"
   end
 
-  head do
-    url "https://github.com/fish-shell/fish-shell.git", branch: "master"
-
-    depends_on "sphinx-doc" => :build
-  end
-
   depends_on "cmake" => :build
   depends_on "rust" => :build
+  depends_on "sphinx-doc" => :build
   depends_on "pcre2"
+
+  # Fix to respect our extra_* dirs: https://github.com/fish-shell/fish-shell/issues/12226
+  patch do
+    url "https://github.com/fish-shell/fish-shell/commit/a3cbb01b27a7e881d5117688be79e19e1684657a.patch?full_index=1"
+    sha256 "06d3d04cc44f52d22a0179233a406795cb43392894ebf1e604bd6e53bc12ec0d"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
+                    "-DWITH_DOCS=ON",
                     "-Dextra_functionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_functions.d",
                     "-Dextra_completionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d",
                     "-Dextra_confdir=#{HOMEBREW_PREFIX}/share/fish/vendor_conf.d"
@@ -49,5 +52,7 @@ class Fish < Formula
 
   test do
     system bin/"fish", "-c", "echo"
+    output = shell_output("#{bin}/fish -c 'set --show fish_function_path'")
+    assert_match "#{HOMEBREW_PREFIX}/share/fish/vendor_functions.d", output
   end
 end
