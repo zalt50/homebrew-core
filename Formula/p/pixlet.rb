@@ -1,8 +1,8 @@
 class Pixlet < Formula
   desc "App runtime and UX toolkit for pixel-based apps"
   homepage "https://github.com/tronbyt/pixlet"
-  url "https://github.com/tronbyt/pixlet/archive/refs/tags/v0.49.7.tar.gz"
-  sha256 "ac5ae9507edbcd4bba7d652d4849fdc1dd1469d504e6b3514c0e74b50615a070"
+  url "https://github.com/tronbyt/pixlet/archive/refs/tags/v0.49.8.tar.gz"
+  sha256 "5d8b8e6d1c625eadb7bf9bbf05a557e4fdde2387c56a67a71d765d61ed00e408"
   license "Apache-2.0"
   head "https://github.com/tronbyt/pixlet.git", branch: "main"
 
