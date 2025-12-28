@@ -52,7 +52,7 @@ class Werf < Formula
 
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/werf"
 
-    generate_completions_from_executable(bin/"werf", "completion")
+    generate_completions_from_executable(bin/"werf", shell_parameter_format: :cobra)
   end
 
   test do
