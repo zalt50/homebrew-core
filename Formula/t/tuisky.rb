@@ -1,8 +1,8 @@
 class Tuisky < Formula
   desc "TUI client for bluesky"
   homepage "https://github.com/sugyan/tuisky"
-  url "https://github.com/sugyan/tuisky/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "b87e50c8483624a2ccb4beeceb0503c3ad1f0a7ff3ac20a6da92eb952752c85d"
+  url "https://github.com/sugyan/tuisky/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "b3db8969aa5152692f7178a17f51d694a2cc4e06bb8ff18e43b0f4c7a5d83fa8"
   license "MIT"
   head "https://github.com/sugyan/tuisky.git", branch: "main"
 
