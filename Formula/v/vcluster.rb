@@ -33,7 +33,7 @@ class Vcluster < Formula
     system "go", "generate", "./..."
     system "go", "build", "-mod", "vendor", *std_go_args(ldflags:), "./cmd/vclusterctl"
 
-    generate_completions_from_executable(bin/"vcluster", "completion")
+    generate_completions_from_executable(bin/"vcluster", shell_parameter_format: :cobra)
   end
 
   test do
