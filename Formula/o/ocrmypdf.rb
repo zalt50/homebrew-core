@@ -6,6 +6,7 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/8c/52/be1aaece0703a736757d8957c0d4f19c37561054169b501eb0e7132f15e5/ocrmypdf-16.13.0.tar.gz"
   sha256 "29d37e915234ce717374863a9cc5dd32d29e063dfe60c51380dda71254c88248"
   license "MPL-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b1068631c1c6bae711b1735681b6c430cec607fa7228ca6db5e3dc99a2a1cbe1"
@@ -80,8 +81,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pdfminer-six" do
-    url "https://files.pythonhosted.org/packages/1d/50/5315f381a25dc80a8d2ea7c62d9a28c0137f10ccc263623a0db8b49fcced/pdfminer_six-20251107.tar.gz"
-    sha256 "5fb0c553799c591777f22c0c72b77fc2522d7d10c70654e25f4c5f1fd996e008"
+    url "https://files.pythonhosted.org/packages/fb/ef/543d0d44c9b03ac08316d31afd8e52b8ab8a86d03620ee0d61d6006bba9c/pdfminer_six-20251227.tar.gz"
+    sha256 "1d98781cf884d7274c694e742a94ffe6326ee11ee7ea79e73e1e75c4c74d91eb"
   end
 
   resource "pi-heif" do
