@@ -6,14 +6,12 @@ class Spglib < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d1f0145c7fce622faa3b2663a0e5f3dc807d71d5d325a0284959a89db1512ed1"
-    sha256 cellar: :any,                 arm64_sequoia: "1f70bfc567f1349913975ebe3a2173dfb68dd234dab1a6fd199f62b494a75919"
-    sha256 cellar: :any,                 arm64_sonoma:  "f4b1b449ad705a09d66de2d0b3868f7ed6d4cec38aea989e4639529e3bbf4f46"
-    sha256 cellar: :any,                 arm64_ventura: "ab9d0638a60bc897b4d3ce4f2f37e451df8470f15af4eb7e638253673b636622"
-    sha256 cellar: :any,                 sonoma:        "0c8d96842c11f26dcde4627aaec4d0a89739e65e7315f8b933162e88483ac2e6"
-    sha256 cellar: :any,                 ventura:       "d1cef9ba99ecafd8b47b46a1f1e00f4203f371a08943cd986e2469a07534e737"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23b327e09f38b1b1a3b1e66a78502dd0f48019876b43f657bf5303f7d3db046f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0e14500cec9a4a450740bd534d71ac558d58faf86b3ae893aa4b3ba33c09d44"
+    sha256 cellar: :any,                 arm64_tahoe:   "0ac52612168b066678114e398e0c280774a507fa7368dac07b1485b93c268846"
+    sha256 cellar: :any,                 arm64_sequoia: "98e08556202a78099fb3ef2677d981b9d45205f79ee5ec513c40585710fbfa08"
+    sha256 cellar: :any,                 arm64_sonoma:  "edecb2cca0fec6d88c7254a587a5a5d894d9780085614704cdb31d83cbb54e45"
+    sha256 cellar: :any,                 sonoma:        "b04a116c09270ca9d4a648abb13330250b7131eeb5927453780af847dd50903b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3af78dc77ef69efe7487239209ea4f4fb73d149dc03e8e140c89d71f91987b74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79a41e046b7f33096acbbc6018b0e23885cd732501dbc0083aa1c77ea5abfcce"
   end
 
   depends_on "cmake" => [:build, :test]
