@@ -9,7 +9,7 @@ class Regipy < Formula
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "78c33e3ea7bd9976f90511f7e411a90a3a666b1610ba6d9d0f507401a6f0f5a5"
+    sha256 cellar: :any_skip_relocation, all: "e99eb47c68013b67186902254f535312cc54f22b654724de8c5c4dec6360a9fb"
   end
 
   depends_on "python@3.14"
