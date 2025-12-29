@@ -3,8 +3,8 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/4c/31/b63b8c7a28c5895c7035cef68010d5a6d24cd03b9753c2357f8f50078de6/regipy-6.1.0.tar.gz"
-  sha256 "1358fa6cebb3d8816ac25d4f6f1a4a250cf1dbc38332ef7a3bdea42a3d0d2e4e"
+  url "https://files.pythonhosted.org/packages/44/85/b1bd8f1011954d6541c7450934a84962f39bed5dec390ea0ca5062effb0b/regipy-6.2.0.tar.gz"
+  sha256 "a1290ce2894200b3e86efbd18c1ff9b1d407f1da755f561f2de04bd460a41302"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
