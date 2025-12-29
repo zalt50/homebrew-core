@@ -3,18 +3,18 @@ class Khaos < Formula
 
   desc "Kafka traffic simulator for observability and chaos engineering"
   homepage "https://github.com/aleksandarskrbic/khaos"
-  url "https://files.pythonhosted.org/packages/56/21/e141421bbeec357238902169392f8de1417ee856e9cb742499e5547d66a6/khaos_cli-0.6.0.tar.gz"
-  sha256 "30c62c64bf96786e1e52956d10c88315bc216785d5a78fd8fe2d44278808f890"
+  url "https://files.pythonhosted.org/packages/0f/70/ff6027de843d508548dd3dd6ccfc6b55ff08b79faf2032605fb61e443416/khaos_cli-0.6.3.tar.gz"
+  sha256 "1511af48a2414a21028a6cb8a09446158ad9cc48e7deae2ab525725259a197d3"
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2e6c8dfdb2ad960784c6a548ce0ab055025ac4f4011c44d45ce4c6685b7742d1"
-    sha256 cellar: :any,                 arm64_sequoia: "9118fe458146dd0ace277967ce89314f478a6940f704fb3b3d646527b8d21fef"
-    sha256 cellar: :any,                 arm64_sonoma:  "9df8d77f364b3d0aa71d699532887d0d0df385ebd8acd1a4145fc141049359b0"
-    sha256 cellar: :any,                 sonoma:        "bcf1e57789f26b1a7ebfe08d55eede517c9f1301e497e0762b3a804d97d29ac1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a399a83c754db737c4063e85c1fffa9a6a3a1905232e6a9fe75907453ef361ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97a0a149cfb3b3b3012819569f4575a637ec477eaa7ec270d58e9211501ef34e"
+    sha256 cellar: :any,                 arm64_tahoe:   "277849db0972f33a1547c9638a072c2d24d5d5e1f9e71f653fd406cbfb449a44"
+    sha256 cellar: :any,                 arm64_sequoia: "0438aa00534342888d0e714f08616c50eaa60e6748b6cea8ed61192343cd6d56"
+    sha256 cellar: :any,                 arm64_sonoma:  "b32538b47e8b160815cb144d7cc5bc1db1c27179421a56355b319ceb955267af"
+    sha256 cellar: :any,                 sonoma:        "8b1b801c40acb92cadacdb18c59e32a40faa94ed26028672f14e056f883dd921"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34cab9f8b1ab0d808f5040a065f4e51a33c4d0bc383ed31ee2d5f6a00ff78308"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "984fe81a765affa61e14959b4e823591dbf02fe8172f0b5b6fd7c689090920e8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -148,6 +148,6 @@ class Khaos < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/khaos --version")
-    assert_match "No scenarios found", shell_output("#{bin}/khaos list")
+    assert_match "Available Scenarios", shell_output("#{bin}/khaos list")
   end
 end
