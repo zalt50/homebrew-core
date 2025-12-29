@@ -4,7 +4,7 @@ class Libbi < Formula
   url "https://github.com/lawmurray/LibBi/archive/refs/tags/1.4.5.tar.gz"
   sha256 "af2b6d30e1502f99a3950d63ceaf7d7275a236f4d81eff337121c24fbb802fbe"
   license "GPL-2.0-only"
-  revision 5
+  revision 6
   head "https://github.com/lawmurray/LibBi.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
