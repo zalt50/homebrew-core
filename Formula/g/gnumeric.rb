@@ -4,7 +4,7 @@ class Gnumeric < Formula
   url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.59.tar.xz"
   sha256 "cb3750b176d641f9423df721b831658c829557552f8887fedf8a53d907eceb51"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
-  revision 1
+  revision 2
 
   bottle do
     sha256                               arm64_tahoe:   "a1cd006c66673bf6024dc8875650e9a0bca3df72598a54597abb9850a4a6ac38"
