@@ -1,11 +1,9 @@
 class Libfyaml < Formula
   desc "Fully feature complete YAML parser and emitter"
   homepage "https://github.com/pantoniou/libfyaml"
-  url "https://github.com/pantoniou/libfyaml/releases/download/v0.9/libfyaml-0.9.tar.gz"
-  sha256 "7731edc5dfcc345d5c5c9f6ce597133991a689dabede393cd77bae89b327cd6d"
+  url "https://github.com/pantoniou/libfyaml/releases/download/v0.9.1/libfyaml-0.9.1.tar.gz"
+  sha256 "f3c9233f386bc31e25b6101bbda9f6c18e867a029cd29d6768ec804d1cc24b3b"
   license "MIT"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "2af9a61ac94f34469841b23e4fd9c82049b46225c6acc7580f6a9703acec3750"
