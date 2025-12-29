@@ -20,38 +20,39 @@ class Irssi < Formula
     sha256 x86_64_linux:  "95c4d44868122787004f3ec4f0157bd221827fde3d6ae58885032721dd596dd2"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "openssl@3"
+  depends_on "perl"
 
   uses_from_macos "ncurses"
-  uses_from_macos "perl"
 
   on_macos do
     depends_on "gettext"
   end
 
-  # Fix build with Perl 5.40+
-  # Upstream PR ref: https://github.com/irssi/irssi/pull/1573
-  patch do
-    url "https://github.com/irssi/irssi/commit/6395b93cc8461f8a3da1877c18b4abff490a3965.patch?full_index=1"
-    sha256 "55b68fe2ae2e7c893cea2ffb1ccdfd6e52b3c6658d26cd5d46ec8612723bd3a8"
-  end
-
   def install
     args = %W[
-      --sysconfdir=#{etc}
-      --with-proxy
-      --enable-true-color
-      --with-socks=no
-      --with-perl=yes
-      --with-perl-lib=#{lib}/perl5/site_perl
+      -Dwith-proxy=yes
+      -Dwith-perl=yes
+      -Dwith-perl-lib=#{lib}/perl5/site_perl
     ]
 
-    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
-    # "make" and "make install" must be done separately on some systems
-    system "make"
-    system "make", "install"
+    # Add RPATH to Perl modules so Homebrew's audit can find libperl.so.
+    # The modules are loaded by Perl (which already has libperl), so this
+    # isn't strictly needed at runtime, but satisfies the linkage check.
+    if OS.linux?
+      perl = Formula["perl"]
+      perlarch = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch
+      perl_core = perl.opt_lib/"perl5"/perl.version.major_minor/"#{perlarch}-linux-thread-multi/CORE"
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_core}"
+    end
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -62,11 +63,9 @@ class Irssi < Formula
     stdout, = PTY.spawn("#{bin}/irssi -c irc.freenode.net -n testbrew")
     assert_match "Terminal doesn't support cursor movement", stdout.readline
 
-    # This is not how you'd use Perl with Irssi but it is enough to be
-    # sure the Perl element didn't fail to compile, which is needed
-    # because upstream treats Perl build failures as non-fatal.
-    # To debug a Perl problem copy the following test at the end of the install
-    # block to surface the relevant information from the build warnings.
+    # Verify the Perl module compiled successfully. Upstream treats Perl
+    # build failures as non-fatal, so they can go unnoticed. To debug,
+    # move this test into the install block to surface build warnings.
     ENV["PERL5LIB"] = lib/"perl5/site_perl"
     system "perl", "-e", "use Irssi"
   end
