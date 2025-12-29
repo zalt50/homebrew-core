@@ -3,8 +3,8 @@ class Glom < Formula
 
   desc "Declarative object transformer and formatter, for conglomerating nested data"
   homepage "https://glom.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/05/89/b57cfbc448189426f2e01b244fbe9226b059ef5423a9d49c1d335a1f1026/glom-24.11.0.tar.gz"
-  sha256 "4325f96759a912044af7b6c6bd0dba44ad8c1eb6038aab057329661d2021bb27"
+  url "https://files.pythonhosted.org/packages/78/74/8387f95565ba7c30cd152a585b275ebb9a834d1d32782425c5d2fe0a102c/glom-25.12.0.tar.gz"
+  sha256 "1ae7da88be3693df40ad27bdf57a765a55c075c86c971bcddd67927403eb0069"
   license "BSD-3-Clause"
 
   bottle do
