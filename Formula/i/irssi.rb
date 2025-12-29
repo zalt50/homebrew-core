@@ -11,8 +11,6 @@ class Irssi < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:   "93d6623c013c8a0706babc77ef4d9991da385e441db4cdabe08ef916008e6b94"
     sha256 arm64_sequoia: "9f640f1d64cf5331669a1f872ef3f797d4c4360015bba172c9b2ce4c48412453"
@@ -33,6 +31,13 @@ class Irssi < Formula
 
   on_macos do
     depends_on "gettext"
+  end
+
+  # Fix build with Perl 5.40+
+  # Upstream PR ref: https://github.com/irssi/irssi/pull/1573
+  patch do
+    url "https://github.com/irssi/irssi/commit/6395b93cc8461f8a3da1877c18b4abff490a3965.patch?full_index=1"
+    sha256 "55b68fe2ae2e7c893cea2ffb1ccdfd6e52b3c6658d26cd5d46ec8612723bd3a8"
   end
 
   def install
