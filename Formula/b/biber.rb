@@ -4,7 +4,7 @@ class Biber < Formula
   url "https://github.com/plk/biber/archive/refs/tags/v2.21.tar.gz"
   sha256 "2652cf3ae0abff5fb233aa77f18e70014cc2c70b94a8693c099a3cad9bbb4b20"
   license "Artistic-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "65fc8db1fa5c46ef2e9e5401156eb28d4fad1fe9e0eceb68d02b750c96155155"
