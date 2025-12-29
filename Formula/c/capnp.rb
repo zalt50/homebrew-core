@@ -47,8 +47,8 @@ class Capnp < Formula
                     "-DCMAKE_CXX_FLAGS=-fPIC",
                     *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install buildpath.glob("build_static/src/capnp/*.a")
-    lib.install buildpath.glob("build_static/src/kj/*.a")
+    lib.install buildpath.glob("build_static/c++/src/capnp/*.a")
+    lib.install buildpath.glob("build_static/c++/src/kj/*.a")
   end
 
   test do
