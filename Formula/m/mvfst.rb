@@ -1,19 +1,10 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
+  url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.12.29.00.tar.gz"
+  sha256 "a8b8863a0a80855b60d9b688e8412950e56861d4e2e993b922b9f174f4e05e90"
   license "MIT"
   head "https://github.com/facebook/mvfst.git", branch: "main"
-
-  stable do
-    url "https://github.com/facebook/mvfst/archive/refs/tags/v2025.12.22.00.tar.gz"
-    sha256 "67777456d8460d5f2efc7eb95ccafce55cbe70ce64089763cb0bfeb02c3336af"
-
-    # Add PacerFactory.cpp to the build
-    patch do
-      url "https://github.com/facebook/mvfst/commit/1832b36f31b892a78a86c9c54101c4b86f6da7b6.patch?full_index=1"
-      sha256 "58bcb121f9c778b4cdc849d969602f9251f934beaba5e806443c6572a4abb473"
-    end
-  end
 
   bottle do
     sha256                               arm64_tahoe:   "cb6ee52d133042740f85ffed4c1818b281670effd381c5e557be2acea7c8bd4e"
