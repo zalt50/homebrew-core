@@ -6,16 +6,12 @@ class Libfyaml < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "2af9a61ac94f34469841b23e4fd9c82049b46225c6acc7580f6a9703acec3750"
-    sha256 cellar: :any,                 arm64_sequoia:  "4296a8c80863d912ba93d237d0635b4b6568dfaec713cd69d5424ea77ad4097e"
-    sha256 cellar: :any,                 arm64_sonoma:   "f048b398ea675ff84cffed39be72aad7aebc2ff7b343291e82982e1d8aa299bc"
-    sha256 cellar: :any,                 arm64_ventura:  "7e0abdbb0374744a92305e607e3fccee6ba6bc09f01906719ec91b721a7176a8"
-    sha256 cellar: :any,                 arm64_monterey: "a4b6daf2e59d3361a9eeda457e5964672ecba38d7126c731684aec495db5bd2c"
-    sha256 cellar: :any,                 sonoma:         "6758d7c2b7667096e19a1b6f5a41b072fe34aafda17650fc873b781eeebc7211"
-    sha256 cellar: :any,                 ventura:        "24121cefb2cdd277652bfc857f9fd2b01042769aeeb9a622aba142e978ba99c0"
-    sha256 cellar: :any,                 monterey:       "4730aa6a64ffd960a0d82cbcc69734ffddb7abf29ae27450dfed7fc818a17935"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d657e265f72bf3f8704c2d903d419ecbf89ad79803c4b67563e619733530117d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e4efc82a84ba883c56fe0ee85008a68a91863460ae0eae5dc02952143c8983d"
+    sha256 cellar: :any,                 arm64_tahoe:   "d3ea19ebfac0717aeade3dbd3e01c051e915887f88e44d0869b1e0a04fa379ed"
+    sha256 cellar: :any,                 arm64_sequoia: "0e04b50c675dd473f2f55dd9b62950e4b4b7e16202abe67160b76b5dc02d4c3e"
+    sha256 cellar: :any,                 arm64_sonoma:  "76ec397532cdc6cf1974209cb70ed634b6b6ed185db026080c6a0f84e31d975f"
+    sha256 cellar: :any,                 sonoma:        "dbb0c19f197f1e62e425bbc59aae052854607a29a1f30dc2935a876d6f109ffe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9df8155f432550e8d344d41847909330c8debdfbaf9e618a557517c7798785dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e83d09a481791be4d2dc101620e3e1b125200bb86b5823c04bab0c3b13e9826"
   end
 
   uses_from_macos "m4" => :build
