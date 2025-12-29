@@ -1,8 +1,8 @@
 class Cgns < Formula
   desc "CFD General Notation System"
   homepage "https://cgns.github.io/"
-  url "https://github.com/CGNS/CGNS/archive/refs/tags/v4.5.0.tar.gz"
-  sha256 "c72355219318755ba0a8646a8e56ee1c138cf909c1d738d258d2774fa4b529e9"
+  url "https://github.com/CGNS/CGNS/archive/refs/tags/v4.5.1.tar.gz"
+  sha256 "5da0e19907c1649a2f4b5d2abdb733674ae1a58d7436916a5fba1eb2f33f395f"
   license "BSD-3-Clause"
   head "https://github.com/CGNS/CGNS.git", branch: "develop"
 
@@ -25,15 +25,14 @@ class Cgns < Formula
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
   depends_on "hdf5"
-  depends_on "libaec"
-
-  uses_from_macos "zlib"
 
   def install
+    # Use GCC matching gfortran to avoid ABI issues with Fortran interface on Linux
+    ENV["CC"] = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}" if OS.linux?
+
     args = %w[
       -DCGNS_ENABLE_64BIT=YES
       -DCGNS_ENABLE_FORTRAN=YES
-      -DCGNS_ENABLE_HDF5=YES
     ]
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
