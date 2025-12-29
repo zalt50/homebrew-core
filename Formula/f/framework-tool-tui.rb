@@ -1,8 +1,8 @@
 class FrameworkToolTui < Formula
   desc "TUI for controlling and monitoring Framework Computers hardware"
   homepage "https://github.com/grouzen/framework-tool-tui"
-  url "https://github.com/grouzen/framework-tool-tui/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "bdf22ee6dd06949cb8322d60649dbdd9a61013e923365c973fabb066cf04ebcd"
+  url "https://github.com/grouzen/framework-tool-tui/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "a7da9130bf143d9ad128032a289db7250282f37dc94458a34668d4e9196447b2"
   license "MIT"
   head "https://github.com/grouzen/framework-tool-tui.git", branch: "main"
 
