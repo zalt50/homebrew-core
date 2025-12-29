@@ -4,6 +4,7 @@ class Innotop < Formula
   url "https://github.com/innotop/innotop/archive/refs/tags/v1.15.2.tar.gz"
   sha256 "cfedf31ba5617a5d53ff0fedc86a8578f805093705a5e96a5571d86f2d8457c0"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
+  revision 1
   head "https://github.com/innotop/innotop.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
