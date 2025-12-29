@@ -1,17 +1,18 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://docs.solo.io/gloo-edge/main/reference/cli/glooctl/"
-  # NOTE: Please wait until the newest stable release is finished building and
-  # no longer marked as "Pre-release" before creating a PR for a new version.
   url "https://github.com/solo-io/gloo.git",
-      tag:      "v1.20.6",
-      revision: "79a4e04862fc0a5948bba9fc9db58d579480bef5"
+      tag:      "v1.20.7",
+      revision: "887d34e7892059e8b8e6551cafa12ddec07d943b"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
