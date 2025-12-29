@@ -7,8 +7,7 @@ class Pgbadger < Formula
   head "https://github.com/darold/pgbadger.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7660efd39ced9f239c33d6f2eddfa4741e980cfe7e90d8947cd268847fc2643b"
+    sha256 cellar: :any_skip_relocation, all: "0bb5a45931dcd0a4936f649e36b01e3b4dffb63193b565c99f57a409162c36ac"
   end
 
   def install
