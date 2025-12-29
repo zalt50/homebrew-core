@@ -15,10 +15,10 @@ class Mas < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0efd112f24f3de3a298713288c2718341f1251e157caad937a98f73bfa85685"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "482815a1137f0aa77c81c097d612ff6f3307ea84dd82735e5ac02aebf1023b8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5587da348f094aaa2be97ce0893c4531cae1c4e6e1a1e2bacd8d92ab836b67d"
-    sha256 cellar: :any,                 sonoma:        "fab3b6f671726181bd30600c479e7736496e7271cddd0eaef3dd3eaabcfca0df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c1e573cfabd3269bc752a1a16075cce8872793a5cf1d994b984a5ca4f363adb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23519ffb411cd47dd21b16d51677d9e52419cc6860ee59f67bc452f990675951"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae464d0f74a50e0b782b7f074796ebd68f0513cbaffe12410a4be1affbdadcc8"
+    sha256 cellar: :any,                 sonoma:        "9b678a6a15e6048b097fff3f4250d7a2c8ae18e87c501e3318921d498627617f"
   end
 
   depends_on :macos
