@@ -4,6 +4,7 @@ class Rex < Formula
   url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.16.1.tar.gz"
   sha256 "b66ff756db8c8479ab99d2c9ec9827bf624b8bca2e96ef9ccf2395e279731662"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0c9642847deaa4d8bf040a6d54def45ce7aa3f658109a7eabc731fb073901cb"
