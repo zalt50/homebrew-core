@@ -4,6 +4,7 @@ class PostgresqlAT16 < Formula
   url "https://ftp.postgresql.org/pub/source/v16.11/postgresql-16.11.tar.bz2"
   sha256 "6deb08c23d03d77d8f8bd1c14049eeef64aef8968fd8891df2dfc0b42f178eac"
   license "PostgreSQL"
+  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
