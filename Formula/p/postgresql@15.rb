@@ -4,6 +4,7 @@ class PostgresqlAT15 < Formula
   url "https://ftp.postgresql.org/pub/source/v15.15/postgresql-15.15.tar.bz2"
   sha256 "5753aaeb8b09cbf61016f78aa69bf5cbdf01b43263f010cbf168c82896213aaa"
   license "PostgreSQL"
+  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
