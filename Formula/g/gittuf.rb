@@ -4,6 +4,7 @@ class Gittuf < Formula
   url "https://github.com/gittuf/gittuf/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "7411dbcf69122633e3ee140e76fead29abf7cd5e688a8481bfe20520965c34be"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/gittuf/gittuf.git", branch: "main"
 
   bottle do
@@ -22,6 +23,7 @@ class Gittuf < Formula
   def install
     ldflags = "-s -w -X github.com/gittuf/gittuf/internal/version.gitVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags:, output: bin/"git-remote-gittuf"), "./internal/git-remote-gittuf"
 
     generate_completions_from_executable(bin/"gittuf", "completion")
   end
@@ -32,6 +34,9 @@ class Gittuf < Formula
 
     output = shell_output("#{bin}/gittuf sync 2>&1", 1)
     assert_match "Error: unable to identify git directory for repository", output
+
+    output = shell_output("#{bin}/git-remote-gittuf 2>&1", 1)
+    assert_match "usage: #{bin}/git-remote-gittuf <remote-name> <url>", output
 
     assert_match version.to_s, shell_output("#{bin}/gittuf version")
   end
