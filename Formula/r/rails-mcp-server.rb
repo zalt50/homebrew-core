@@ -1,10 +1,9 @@
 class RailsMcpServer < Formula
   desc "MCP server for Rails applications"
   homepage "https://github.com/maquina-app/rails-mcp-server"
-  url "https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "aef71b34cb41b4dbcd93d97f8e750d4f2fd15e74fb03c363dbceba22d6d5fa52"
+  url "https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "3a9fdb7c03ba728e200780a04c10c058e87d51f81470abfcb97075d64208c11d"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "4da7b2c531ffc5359df7787e39c6d0082c09bcf926dc78ff5f86e9375bca1c53"
@@ -34,9 +33,7 @@ class RailsMcpServer < Formula
 
   test do
     (testpath/".config/rails-mcp/projects.yml").write <<~YAML
-      projects:
-        - name: test
-          path: #{testpath}
+      test: #{testpath}
     YAML
 
     json = <<~JSON
