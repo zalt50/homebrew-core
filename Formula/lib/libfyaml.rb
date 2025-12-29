@@ -1,8 +1,8 @@
 class Libfyaml < Formula
   desc "Fully feature complete YAML parser and emitter"
   homepage "https://github.com/pantoniou/libfyaml"
-  url "https://github.com/pantoniou/libfyaml/releases/download/v0.9.1/libfyaml-0.9.1.tar.gz"
-  sha256 "f3c9233f386bc31e25b6101bbda9f6c18e867a029cd29d6768ec804d1cc24b3b"
+  url "https://github.com/pantoniou/libfyaml/releases/download/v0.9.2/libfyaml-0.9.2.tar.gz"
+  sha256 "d76da1dcc91f5d74cb9812ecce141477be93a258001e05a268a86715c0eea098"
   license "MIT"
 
   bottle do
