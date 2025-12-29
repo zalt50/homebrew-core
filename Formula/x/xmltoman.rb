@@ -8,7 +8,7 @@ class Xmltoman < Formula
   url "https://downloads.sourceforge.net/project/xmltoman/xmltoman/xmltoman-0.4.tar.gz/xmltoman-0.4.tar.gz"
   sha256 "948794a316aaecd13add60e17e476beae86644d066cb60171fc6b779f2df14b0"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   no_autobump! because: :requires_manual_review
 
@@ -23,6 +23,7 @@ class Xmltoman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f936fff8828e2d4766a273f91521c76e87e3895d43d0a8cc823a18b214f910"
   end
 
+  uses_from_macos "expat"
   uses_from_macos "perl"
 
   resource "XML::Parser" do
