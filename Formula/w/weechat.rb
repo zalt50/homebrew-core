@@ -4,7 +4,7 @@ class Weechat < Formula
   url "https://weechat.org/files/src/weechat-4.8.1.tar.xz"
   sha256 "e7ac1fbcc71458ed647aada8747990905cb5bfb93fd8ccccbc2a969673a4285a"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/weechat/weechat.git", branch: "main"
 
   bottle do
