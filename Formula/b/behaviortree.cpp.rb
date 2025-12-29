@@ -6,12 +6,12 @@ class BehaviortreeCpp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "67342d96ba2d203b132223ce51ba81bd0fc1d498d53957ba5bded071c384da11"
-    sha256 cellar: :any,                 arm64_sequoia: "bae8f0836a5e497e927de88478139970d78595b03447c3eddd38ef7891bf9a8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a0e9cef835e063ab997f313050f4bc9d5d66f1c795636fb3de7206bc673ae3d"
-    sha256 cellar: :any,                 sonoma:        "aa5867b56b1270c40d11616a038e26cc5a319f6199fbe810a65609af8dde2b3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "163b27a6eba8374810b3d612608a323d8d9e30c4bb0277aba2825be0864717ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2dbdf83f6a1582a640313f179a6229bf1e22389e84f208ed513a8aef865ea99"
+    sha256 cellar: :any,                 arm64_tahoe:   "38fa09006213a158b3e7a44a6dd05e262d0d023ae0023d0c6170cd43cec10af9"
+    sha256 cellar: :any,                 arm64_sequoia: "cf394ad3965bf08a9b2781c33c28b25dc18ac6d0a95b8329297b83e347ff08ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "52c9a14ae699319b92bdda1b6d6f2b1c6243c61d7d8882e581cc8e5675f2df2a"
+    sha256 cellar: :any,                 sonoma:        "5cede9c4f6ccb47cda23d4719aea5a5af46603be4f83ad6307dbf55dcccf12b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e107c4b8565cda9812ec680a2e0af285dee6ab4848601946183171709ab038b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad0169f839d35f724efa69e55c57b561cf7437a287d847542f469ac52067a359"
   end
 
   depends_on "cmake" => :build
