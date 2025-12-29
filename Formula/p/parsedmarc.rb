@@ -3,8 +3,8 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/ac/e8/a845a7de63e3b6059103aa43bcb8a0c07b5abab0764b9a4951a5bc438ddd/parsedmarc-9.0.7.tar.gz"
-  sha256 "4c8e319e454918a8d8d3b483f2e2f6fbab855e9cfa5112195bbcdc95a4c4c2c9"
+  url "https://files.pythonhosted.org/packages/91/b8/183509122785d68069b586ef2c196b3e1a3870bbb278e8c068eeab72fd88/parsedmarc-9.0.8.tar.gz"
+  sha256 "52c0b2d876845ba7813528fe94121db4eade19438aebe2c7dbe3d244933ad3f5"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
@@ -64,13 +64,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/8d/cf/6e4a794e73cbf3e774ec27a5acc8442ce55d97cfc5226a20c1f58d8aee16/boto3-1.42.17.tar.gz"
-    sha256 "8a2e345e96d5ceba755c55539c93f99705f403fbfdeef2e838eabdc56750828b"
+    url "https://files.pythonhosted.org/packages/f0/f0/00b15a4ffe86d35bd83551b1b355d514c0229cf7b1fd46e36ba82bf29be9/boto3-1.42.18.tar.gz"
+    sha256 "6388d8908331f29e7fc7a464f24aaa49070fac70bda1284ba3b7996c32f55465"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/4d/d2/128e2d8b9d426bd3a339e7dcf3eedca55f449af121604b6891ae80f6be9a/botocore-1.42.17.tar.gz"
-    sha256 "d73fe22c8e1497e4d59ff7dc68eb05afac68a4a6457656811562285d6132bc04"
+    url "https://files.pythonhosted.org/packages/04/e3/163d8c95de39b039b27fd50794456f226412c16ca048a981162589fd7e2c/botocore-1.42.18.tar.gz"
+    sha256 "49fe04e25ec90e516a1399aceee2a38ebf63e183d25e4823a8d8e01349589742"
   end
 
   resource "cachetools" do
@@ -199,8 +199,8 @@ class Parsedmarc < Formula
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/6f/dc/4902733501462800f830ff6e01380e53f4d1fcb4cb2a772c0ec0359776ed/mailsuite-1.11.0.tar.gz"
-    sha256 "da5ec90a0301728038f61b897dcd62fcfdee3fa47dd57b410bcec0843087f890"
+    url "https://files.pythonhosted.org/packages/9d/6c/e39906068978b6721c2a86803edceaa831017b5b94dfca725cb65545079b/mailsuite-1.11.1.tar.gz"
+    sha256 "695d252079258e36213a2820041b6374f90776f935cfcf980e248af3cba04fbf"
   end
 
   resource "maxminddb" do
