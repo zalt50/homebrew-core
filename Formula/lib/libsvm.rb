@@ -1,8 +1,8 @@
 class Libsvm < Formula
   desc "Library for support vector machines"
   homepage "https://www.csie.ntu.edu.tw/~cjlin/libsvm/"
-  url "https://www.csie.ntu.edu.tw/~cjlin/libsvm/libsvm-3.36.tar.gz"
-  sha256 "bc92901fbb928c44bb6d0c38189624c7443bcdbf1dd8350b4914e58e57b93c11"
+  url "https://www.csie.ntu.edu.tw/~cjlin/libsvm/libsvm-3.37.tar.gz"
+  sha256 "1fa553edc776be3d62fab4607b96ffa505093ea6e3e759a4c7f96294ff75e29a"
   license "BSD-3-Clause"
   head "https://github.com/cjlin1/libsvm.git", branch: "master"
 
