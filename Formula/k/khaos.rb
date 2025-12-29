@@ -9,12 +9,12 @@ class Khaos < Formula
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "277849db0972f33a1547c9638a072c2d24d5d5e1f9e71f653fd406cbfb449a44"
-    sha256 cellar: :any,                 arm64_sequoia: "0438aa00534342888d0e714f08616c50eaa60e6748b6cea8ed61192343cd6d56"
-    sha256 cellar: :any,                 arm64_sonoma:  "b32538b47e8b160815cb144d7cc5bc1db1c27179421a56355b319ceb955267af"
-    sha256 cellar: :any,                 sonoma:        "8b1b801c40acb92cadacdb18c59e32a40faa94ed26028672f14e056f883dd921"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34cab9f8b1ab0d808f5040a065f4e51a33c4d0bc383ed31ee2d5f6a00ff78308"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "984fe81a765affa61e14959b4e823591dbf02fe8172f0b5b6fd7c689090920e8"
+    sha256 cellar: :any,                 arm64_tahoe:   "ee2d759c237859d60dfc96bd316bff8ded32e6fc07ceebb65ae438b2463386d2"
+    sha256 cellar: :any,                 arm64_sequoia: "141924a53979738e9486d95dd47e1aba5357db90a86881ae2f6ae481b921d764"
+    sha256 cellar: :any,                 arm64_sonoma:  "2fbb742662c487ee54d47d5187fe62e1d501a44bfd83e6c5737167e80cead558"
+    sha256 cellar: :any,                 sonoma:        "c2c981fd5315e08c49501c00c0811ce6a1459cfad9243acf24f7a4ba96e547b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fed1ef62511685fd7a6a233080e6c4bb8c69545a9663b85d677fab3172b64877"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e39bc9dff89559a8136c37bd77ca94b159ccfbd1adb725123834ba1eb5d6524"
   end
 
   depends_on "certifi" => :no_linkage
