@@ -43,7 +43,7 @@ class Dotnet < Formula
   depends_on "pkgconf" => :build
   depends_on "rapidjson" => :build
   depends_on "brotli"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build
@@ -57,6 +57,21 @@ class Dotnet < Formula
   on_linux do
     depends_on "libunwind"
     depends_on "lttng-ust"
+
+    on_intel do
+      depends_on "llvm" => :build
+
+      fails_with :gcc do
+        cause "Illegal instruction when running crossgen2"
+      end
+
+      # Backport fix for Clang 21
+      patch do
+        url "https://github.com/dotnet/runtime/commit/d4ff34564bcaf4ec5a02ecdca17ea63e5481cc42.patch?full_index=1"
+        sha256 "6b2485ca234b6dbab8ae5e2e5007c8e8d28130d14213cd5c5546cdefc27d8373"
+        directory "src/runtime"
+      end
+    end
   end
 
   conflicts_with cask: "dotnet-runtime"
@@ -65,13 +80,17 @@ class Dotnet < Formula
   conflicts_with cask: "dotnet-sdk@preview"
 
   def install
+    # Make sure CoreCLR builds with our compiler shims
+    ENV["CLR_CC"] = which(ENV.cc)
+    ENV["CLR_CXX"] = which(ENV.cxx)
+
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
       ENV.prepend_path "PATH", Formula["grep"].libexec/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
-      ENV["SDKROOT"] = MacOS.sdk_path
+      ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path
     else
       icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
       ENV.append_path "LD_LIBRARY_PATH", icu4c_dep.to_formula.opt_lib
