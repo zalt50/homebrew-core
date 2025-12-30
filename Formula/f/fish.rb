@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://github.com/fish-shell/fish-shell/releases/download/4.3.1/fish-4.3.1.tar.xz"
-  sha256 "78f8881b971ab95ace5f2a9a25efef66f6c180396b2085b9852f21f8e4a30408"
+  url "https://github.com/fish-shell/fish-shell/releases/download/4.3.2/fish-4.3.2.tar.xz"
+  sha256 "36a09cfc7fc2d1f1d0b6f5caf3828998621721f8c60a7a31ec55679286a9fe1c"
   license "GPL-2.0-only"
   head "https://github.com/fish-shell/fish-shell.git", branch: "master"
 
@@ -26,12 +26,6 @@ class Fish < Formula
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
   depends_on "pcre2"
-
-  # Fix to respect our extra_* dirs: https://github.com/fish-shell/fish-shell/issues/12226
-  patch do
-    url "https://github.com/fish-shell/fish-shell/commit/a3cbb01b27a7e881d5117688be79e19e1684657a.patch?full_index=1"
-    sha256 "06d3d04cc44f52d22a0179233a406795cb43392894ebf1e604bd6e53bc12ec0d"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
