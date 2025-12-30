@@ -5,6 +5,15 @@ class Patchpal < Formula
   sha256 "19b726eee7c7f6f4471ca7ed0fd3aaa79bf5f196682e314b5917545244bda940"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "fbe61dd12f6367030dc8443302d433ee629e99d6455d93a11aa6ca82fe491c74"
+    sha256 cellar: :any,                 arm64_sequoia: "4f932830c599d9ca79d2991e2048e1ba8afcc07c844685577ef5b8f38062b4f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "34fa8d1ea9e9984b159df5d5f3e976418318487bf6203ca62038e82392ed3f74"
+    sha256 cellar: :any,                 sonoma:        "4562d2c14cda0ac450fc2403f426a7dab435791c64ad29632db4cc2d299f1a5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bc82fa9e7aa73505b8ad067507dd833cec4f8191bc95fa30929de83fda48eab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c98cb552cf448e49ec2c39ac19d58944fbe39b134382058f0d9c614764cbd684"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
