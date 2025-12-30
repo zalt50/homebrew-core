@@ -20,6 +20,8 @@ class Gauge < Formula
   def install
     system "go", "run", "build/make.go"
     system "go", "run", "build/make.go", "--install", "--prefix", prefix
+
+    generate_completions_from_executable(bin/"gauge", shell_parameter_format: :cobra)
   end
 
   test do
