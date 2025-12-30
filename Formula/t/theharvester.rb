@@ -3,8 +3,8 @@ class Theharvester < Formula
 
   desc "Gather materials from public sources (for pen testers)"
   homepage "https://www.edge-security.com"
-  url "https://github.com/laramies/theHarvester/archive/refs/tags/4.9.0.tar.gz"
-  sha256 "2a844d229f3f803321e4498048e1ac57fdffd57eca7e0e4b066e1f486a863809"
+  url "https://github.com/laramies/theHarvester/archive/refs/tags/4.9.1.tar.gz"
+  sha256 "0f6ef00f61726dfc3f74e061bf3bceaabe0dae2a65800da108a4030bebad38cf"
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
@@ -73,8 +73,8 @@ class Theharvester < Formula
   end
 
   resource "aiosqlite" do
-    url "https://files.pythonhosted.org/packages/3a/0d/449c024bdabd0678ae07d804e60ed3b9786facd3add66f51eee67a0fccea/aiosqlite-0.22.0.tar.gz"
-    sha256 "7e9e52d72b319fcdeac727668975056c49720c995176dc57370935e5ba162bb9"
+    url "https://files.pythonhosted.org/packages/4e/8a/64761f4005f17809769d23e518d915db74e6310474e733e3593cfc854ef1/aiosqlite-0.22.1.tar.gz"
+    sha256 "043e0bd78d32888c0a9ca90fc788b38796843360c855a7262a532813133a0650"
   end
 
   resource "annotated-doc" do
@@ -143,8 +143,8 @@ class Theharvester < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/17/71/2df15009fb4bdd522a069d2fbca6007c6c5487fce5cb965be00fc335f1d1/fastapi-0.125.0.tar.gz"
-    sha256 "16b532691a33e2c5dee1dac32feb31dc6eb41a3dd4ff29a95f9487cb21c054c0"
+    url "https://files.pythonhosted.org/packages/52/08/8c8508db6c7b9aae8f7175046af41baad690771c9bcde676419965e338c7/fastapi-0.128.0.tar.gz"
+    sha256 "1cc179e1cef10a6be60ffe429f79b829dce99d8de32d7acb7e6c8dfdf7f2645a"
   end
 
   resource "filelock" do
@@ -222,6 +222,8 @@ class Theharvester < Formula
     sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
   end
 
+  # pycares 5.0.0 fails to build with from source
+  # https://github.com/saghul/pycares/issues/292
   resource "pycares" do
     url "https://files.pythonhosted.org/packages/8d/ad/9d1e96486d2eb5a2672c4d9a2dd372d015b8d7a332c6ac2722c4c8e6bbbf/pycares-4.11.0.tar.gz"
     sha256 "c863d9003ca0ce7df26429007859afd2a621d3276ed9fef154a9123db9252557"
@@ -243,8 +245,8 @@ class Theharvester < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
@@ -293,8 +295,8 @@ class Theharvester < Formula
   end
 
   resource "tldextract" do
-    url "https://files.pythonhosted.org/packages/97/78/182641ea38e3cfd56e9c7b3c0d48a53d432eea755003aa544af96403d4ac/tldextract-5.3.0.tar.gz"
-    sha256 "b3d2b70a1594a0ecfa6967d57251527d58e00bb5a91a74387baa0d87a0678609"
+    url "https://files.pythonhosted.org/packages/65/7b/644fbbb49564a6cb124a8582013315a41148dba2f72209bba14a84242bf0/tldextract-5.3.1.tar.gz"
+    sha256 "a72756ca170b2510315076383ea2993478f7da6f897eef1f4a5400735d5057fb"
   end
 
   resource "ujson" do
@@ -308,8 +310,8 @@ class Theharvester < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
-    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
+    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
+    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   end
 
   resource "uvloop" do
@@ -333,9 +335,6 @@ class Theharvester < Formula
   end
 
   def install
-    # Issue ref: https://github.com/laramies/theHarvester/issues/2219
-    inreplace "pyproject.toml", 'requires-python = ">=3.12, <3.14"', 'requires-python = ">=3.12, <3.15"'
-
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLAYWRIGHT"] = resource("playwright").version
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/theHarvester" => "theharvester"
