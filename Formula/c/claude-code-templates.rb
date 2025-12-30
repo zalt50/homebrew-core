@@ -1,8 +1,8 @@
 class ClaudeCodeTemplates < Formula
   desc "CLI tool for configuring and monitoring Claude Code"
   homepage "https://www.aitmpl.com/agents"
-  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.28.9.tgz"
-  sha256 "bc326fa63f21c639723a605e23e312e623a4acd2acd72ed202453bf624ba0618"
+  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.28.11.tgz"
+  sha256 "279b0df06a6c0103acaee65ba923c801ce28df46832857891b867beff20a10e1"
   license "MIT"
 
   bottle do
