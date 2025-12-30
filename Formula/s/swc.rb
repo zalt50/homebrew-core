@@ -1,8 +1,8 @@
 class Swc < Formula
   desc "Super-fast Rust-based JavaScript/TypeScript compiler"
   homepage "https://swc.rs"
-  url "https://github.com/swc-project/swc/archive/refs/tags/v1.15.7.tar.gz"
-  sha256 "2a76299a9a26aba5cc167f331d8990e6de0c15c18fb6f6bcefafd6a2792df650"
+  url "https://github.com/swc-project/swc/archive/refs/tags/v1.15.8.tar.gz"
+  sha256 "b5c6099877a9653e026971e21af578a28eaf6db59e6b42be596d204f95827be9"
   license "Apache-2.0"
   head "https://github.com/swc-project/swc.git", branch: "main"
 
@@ -37,7 +37,7 @@ class Swc < Formula
     system bin/"swc", "compile", "test.js", "--out-file", "test.out.js"
     assert_path_exists testpath/"test.out.js"
 
-    output = shell_output("#{bin}/swc lint 2>&1", 101)
+    output = shell_output("#{bin}/swc lint 2>&1", 134)
     assert_match "Lint command is not yet implemented", output
   end
 end
