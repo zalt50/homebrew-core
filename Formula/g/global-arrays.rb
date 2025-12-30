@@ -5,6 +5,15 @@ class GlobalArrays < Formula
   sha256 "cbf15764bf9c04e47e7a798271c418f76b23f1857b23feb24b6cb3891a57fbf2"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80442594d07072d82f44fd596e5c600e32cb3323ecd8d69030450222493306d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "426c2d6a96b66a43adaf73ab90b4ebffe52ba64de01ab72aa06d279ab74571a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fa668a34db60ab92a8af3093aa1a639a482a5e9d8b3c4008a95e1c63b3c0e8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "569b318d34df76a58dc52e1c959ba0afd50d2a230d5bff9c20757f83bb5edb4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d1a103bdd3fbc420638d69af603c621e4369298bfe9242210782353b6eac3fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbe1747a4dcc6ba882ebd19aba91348f34d1b2e9809caedf8f8d896b9f099cf3"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "open-mpi"
 
