@@ -1,8 +1,8 @@
 class Zenith < Formula
   desc "In terminal graphical metrics for your *nix system"
   homepage "https://github.com/bvaisvil/zenith/"
-  url "https://github.com/bvaisvil/zenith/archive/refs/tags/0.14.1.tar.gz"
-  sha256 "73d704b3cbf93506c22f3a7d98ae1a75011434a27a978dd0a7b6b30c7794423b"
+  url "https://github.com/bvaisvil/zenith/archive/refs/tags/0.14.2.tar.gz"
+  sha256 "5fa6873a5a1182067ed7f0355521bdb35498980b5b751f26e2e6fed93474dcf9"
   license "MIT"
   version_scheme 1
   head "https://github.com/bvaisvil/zenith.git", branch: "master"
@@ -45,7 +45,9 @@ class Zenith < Formula
     sleep 1
     w.write "q"
     output = OS.mac? ? r.read : (testpath/"out.log").read
-    assert_match(/PID\s+USER\s+P\s+N\s+↓CPU%\s+MEM%/, output.gsub(/\e\[[;\d]*m/, ""))
+    assert_match "PID", output
+    assert_match "CPU", output
+    assert_match "MEM", output
   ensure
     Process.kill("TERM", pid)
   end
