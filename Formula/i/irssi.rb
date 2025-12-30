@@ -12,13 +12,12 @@ class Irssi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "74e1b6d8caa18817f530fcadf38bb9953b59f38ce6737eeef7d48637c1378c87"
-    sha256 arm64_sequoia: "6648cf9bbf5d3e6b5881764f5c2b7d7c26bbfcaf2aff8be1239254fbe2d31aa8"
-    sha256 arm64_sonoma:  "c01e49f0179eb2539e8b64b7d88c52cce505d126becaa9d8a60a4ac339fc5783"
-    sha256 sonoma:        "568e0b0c2515f6cd4e8b219b4b812d36c3cf1af511d5ecb8b63b024ef5ff36ea"
-    sha256 arm64_linux:   "1f38e18fa6a4bfcfc28d10076927f3f845334df4f8cca64bb51a69f6cca6ab79"
-    sha256 x86_64_linux:  "8393b14f9ae8a38f55d99ce3e3f8fa2601b84d2b90a10568092bbdc7b4458c1a"
+    sha256 arm64_tahoe:   "282823efaf7f56ecf1c24a585836da3bc9bbcaa44248c7b5483c0eceadc5f8ce"
+    sha256 arm64_sequoia: "262cce3f4d6d06d0889360f32af77995a8a61b47ff89d4ce0859d370b679bb1e"
+    sha256 arm64_sonoma:  "f9564eb23df20605176542ccf7ff19b09296397111ec182a659dee69ff3bd871"
+    sha256 sonoma:        "bfff7b69bf67956139c9e3f2e00ea00fe9f53baa541e05ec6699b5490074728b"
+    sha256 arm64_linux:   "80dd1ed6b479814ce5119818964446c1bd6aa6a3783e46a7b6b83fdc8a474eb7"
+    sha256 x86_64_linux:  "95c4d44868122787004f3ec4f0157bd221827fde3d6ae58885032721dd596dd2"
   end
 
   depends_on "pkgconf" => :build
