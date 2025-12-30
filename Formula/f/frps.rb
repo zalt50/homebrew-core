@@ -22,6 +22,8 @@ class Frps < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w", tags: "frps"), "./cmd/frps"
 
     (etc/"frp").install "conf/frps.toml"
+
+    generate_completions_from_executable(bin/"frps", "completion")
   end
 
   service do
