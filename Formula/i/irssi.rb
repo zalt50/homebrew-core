@@ -12,46 +12,48 @@ class Irssi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "282823efaf7f56ecf1c24a585836da3bc9bbcaa44248c7b5483c0eceadc5f8ce"
-    sha256 arm64_sequoia: "262cce3f4d6d06d0889360f32af77995a8a61b47ff89d4ce0859d370b679bb1e"
-    sha256 arm64_sonoma:  "f9564eb23df20605176542ccf7ff19b09296397111ec182a659dee69ff3bd871"
-    sha256 sonoma:        "bfff7b69bf67956139c9e3f2e00ea00fe9f53baa541e05ec6699b5490074728b"
-    sha256 arm64_linux:   "80dd1ed6b479814ce5119818964446c1bd6aa6a3783e46a7b6b83fdc8a474eb7"
-    sha256 x86_64_linux:  "95c4d44868122787004f3ec4f0157bd221827fde3d6ae58885032721dd596dd2"
+    rebuild 1
+    sha256 arm64_tahoe:   "e838b3335dd0b71b4b964e940581f17d1d5fc8a119ffe39cd82b56e2988c5898"
+    sha256 arm64_sequoia: "9c578d13963910805f69c3134b94f56ee2539b48bab23f09f8ba5e91cf5bb715"
+    sha256 arm64_sonoma:  "829ab4654ce73add153d8ce958261a01546bc336c5492e996b9da46616fe7410"
+    sha256 sonoma:        "325ec802f037de5afdfd31447b888796f7baabb9dbcbe82b2b1aab13e00f0a8d"
+    sha256 arm64_linux:   "051d92da2db9dcd16362dc6204dcff2ef9bebbfd337c05a3848e9f3823c67c63"
+    sha256 x86_64_linux:  "b6b393fae0dd1c43829314886be5ee26018a3ed2b8ea18c633d0e9ed37c7d642"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "openssl@3"
+  depends_on "perl"
 
   uses_from_macos "ncurses"
-  uses_from_macos "perl"
 
   on_macos do
     depends_on "gettext"
   end
 
-  # Fix build with Perl 5.40+
-  # Upstream PR ref: https://github.com/irssi/irssi/pull/1573
-  patch do
-    url "https://github.com/irssi/irssi/commit/6395b93cc8461f8a3da1877c18b4abff490a3965.patch?full_index=1"
-    sha256 "55b68fe2ae2e7c893cea2ffb1ccdfd6e52b3c6658d26cd5d46ec8612723bd3a8"
-  end
-
   def install
     args = %W[
-      --sysconfdir=#{etc}
-      --with-proxy
-      --enable-true-color
-      --with-socks=no
-      --with-perl=yes
-      --with-perl-lib=#{lib}/perl5/site_perl
+      -Dwith-proxy=yes
+      -Dwith-perl=yes
+      -Dwith-perl-lib=#{lib}/perl5/site_perl
     ]
 
-    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
-    # "make" and "make install" must be done separately on some systems
-    system "make"
-    system "make", "install"
+    # Add RPATH to Perl modules so Homebrew's audit can find libperl.so.
+    # The modules are loaded by Perl (which already has libperl), so this
+    # isn't strictly needed at runtime, but satisfies the linkage check.
+    if OS.linux?
+      perl = Formula["perl"]
+      perlarch = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch
+      perl_core = perl.opt_lib/"perl5"/perl.version.major_minor/"#{perlarch}-linux-thread-multi/CORE"
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_core}"
+    end
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -62,11 +64,9 @@ class Irssi < Formula
     stdout, = PTY.spawn("#{bin}/irssi -c irc.freenode.net -n testbrew")
     assert_match "Terminal doesn't support cursor movement", stdout.readline
 
-    # This is not how you'd use Perl with Irssi but it is enough to be
-    # sure the Perl element didn't fail to compile, which is needed
-    # because upstream treats Perl build failures as non-fatal.
-    # To debug a Perl problem copy the following test at the end of the install
-    # block to surface the relevant information from the build warnings.
+    # Verify the Perl module compiled successfully. Upstream treats Perl
+    # build failures as non-fatal, so they can go unnoticed. To debug,
+    # move this test into the install block to surface build warnings.
     ENV["PERL5LIB"] = lib/"perl5/site_perl"
     system "perl", "-e", "use Irssi"
   end
