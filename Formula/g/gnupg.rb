@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Privacy Guard (OpenPGP)"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.8.tar.bz2"
-  sha256 "b58c80d79b04d3243ff49c1c3fc6b5f83138eb3784689563bcdd060595318616"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.9.tar.bz2"
+  sha256 "dd17ab2e9a04fd79d39d853f599cbc852062ddb9ab52a4ddeb4176fd8b302964"
   license "GPL-3.0-or-later"
 
   # GnuPG appears to indicate stable releases with an even-numbered minor
