@@ -11,8 +11,8 @@ class Distribution < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "fb43e41f635c1b01bc7f1d518d871c3f9462cbfebadbb526a484bac260da213a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "51f9e979ccce6ace7efb959a4e7bee9b9db4b6faa7eea4049ff06b98358a02fc"
   end
 
   uses_from_macos "python"
