@@ -45,6 +45,8 @@ class Pylint < Formula
 
   def install
     virtualenv_install_with_resources
+
+    inreplace libexec/"pyvenv.cfg", HOMEBREW_PREFIX, prefix
   end
 
   test do
