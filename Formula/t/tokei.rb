@@ -1,8 +1,8 @@
 class Tokei < Formula
   desc "Program that allows you to count code, quickly"
   homepage "https://github.com/XAMPPRocky/tokei"
-  url "https://github.com/XAMPPRocky/tokei/archive/refs/tags/v13.0.0.tar.gz"
-  sha256 "b426ab03b8eedf4fe3ea70ca8379a2355981b0e9ca1d0083a66e623858e7e481"
+  url "https://github.com/XAMPPRocky/tokei/archive/refs/tags/v14.0.0.tar.gz"
+  sha256 "4e561dbb83ef1b46359714fc623fd45eddfb14821ece63a219470500fdd1cd26"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/XAMPPRocky/tokei.git", branch: "master"
 
@@ -10,8 +10,6 @@ class Tokei < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfbfb50e668f1d8ee2b207916f0a269605d1febb47cedabc482a4d65ccd55f89"
