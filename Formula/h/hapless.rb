@@ -3,8 +3,8 @@ class Hapless < Formula
 
   desc "Run and manage background processes"
   homepage "https://bmwant.link/hapless-easily-run-and-manage-background-processes/"
-  url "https://files.pythonhosted.org/packages/06/cd/6aac45f40878b332beb9397a67a0bd303c40739020fafa9118d11ec87941/hapless-0.14.0.tar.gz"
-  sha256 "8eb7631d95336fd8ab33d3b1edc04bd48acc64ce6f2fd678bddfb0dca82cfe76"
+  url "https://files.pythonhosted.org/packages/3e/b9/ef10de2bb7245bae7aed75cb52c713cebeed4a119fcd7a48ce7ac2f5dd4b/hapless-0.15.0.tar.gz"
+  sha256 "e6abb39255025f1ff7c2359c35247bdd4767bbe015265c9470f123e0625a744d"
   license "MIT"
   head "https://github.com/bmwant/hapless.git", branch: "main"
 
@@ -31,8 +31,8 @@ class Hapless < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
-    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "markdown-it-py" do
