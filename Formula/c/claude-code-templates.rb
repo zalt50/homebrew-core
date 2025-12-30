@@ -1,8 +1,8 @@
 class ClaudeCodeTemplates < Formula
   desc "CLI tool for configuring and monitoring Claude Code"
   homepage "https://www.aitmpl.com/agents"
-  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.28.3.tgz"
-  sha256 "9ca00ea99b8fb644d6d7951e9a31cc2cc6890cdcb012901ffa1ec5173d10b765"
+  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.28.5.tgz"
+  sha256 "fb1fe8a7f261d9925b6944da02939c64475789b7834f499efadad8dc38f8956d"
   license "MIT"
 
   bottle do
@@ -12,7 +12,7 @@ class ClaudeCodeTemplates < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
   end
 
