@@ -16,8 +16,6 @@ class Statesmith < Formula
   end
 
   depends_on "dotnet"
-  depends_on "icu4c@77"
-  uses_from_macos "zlib"
 
   def install
     dotnet = Formula["dotnet"]
