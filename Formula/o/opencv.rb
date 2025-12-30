@@ -2,31 +2,18 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 19
 
   stable do
-    url "https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz"
-    sha256 "44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d"
+    url "https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
+    sha256 "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d"
 
     resource "contrib" do
-      url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.12.0.tar.gz"
-      sha256 "4197722b4c5ed42b476d42e29beb29a52b6b25c34ec7b4d589c3ae5145fee98e"
+      url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.13.0.tar.gz"
+      sha256 "1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b"
 
       livecheck do
         formula :parent
       end
-    end
-
-    # Backport support for FFmpeg 8.0
-    patch do
-      url "https://github.com/opencv/opencv/commit/90c444abd387ffa70b2e72a34922903a2f0f4f5a.patch?full_index=1"
-      sha256 "5b662eea7b5de1dac3e06895c711955c9d1515d1202191b68594f4f9cfa23242"
-    end
-
-    # Backport support for eigen 5.0.0
-    patch do
-      url "https://github.com/opencv/opencv/commit/468de9b36740b3355f0d5cd8be2ce28b340df120.patch?full_index=1"
-      sha256 "b86ca3cf644a49ab7219348db2bc78497235df75ceef714d46fc80e9e80f2a06"
     end
   end
 
@@ -34,8 +21,6 @@ class Opencv < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "77c66be0dc07971d34d302dd41b3d6d71b23cd5c23ddbf6ee7d19ebce56e3587"
