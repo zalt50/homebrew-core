@@ -30,20 +30,19 @@ class Dotnet < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "343566caa1011741a13303014ceee74a91d807de9cd77f0438324939f9ff65bb"
-    sha256 cellar: :any,                 arm64_sequoia: "0f23879804542b8e66c8521b87af973069165fc9379749083a25537aae9f94b1"
-    sha256 cellar: :any,                 arm64_sonoma:  "5fbde0a48d63af42c31612f0384e009d879ee9af741d22fc5422d5df4b41d6b5"
-    sha256 cellar: :any,                 arm64_ventura: "15e04bd0623d3981d7f19ccd7211e408113359382bd924ecf2df77c818d3c994"
-    sha256 cellar: :any,                 ventura:       "cf89f9ff2627bbc1c5deb19df544de345e7b59f0b2f701dac30742795d0ddbe0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1c0d7633d3c96929f02dc32132377889ee6585b9b9b6e115312434af40ca24f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22511e3d0ff36ec596f3cfdd8cfee282a67b4226f2916b94ebf162bc83c0f9c9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a1b24324c061daa9a731bbb303e60eb43689bd822120da9605f43ab71bf93b63"
+    sha256 cellar: :any,                 arm64_sequoia: "e55904e35df71a03c7ae60380a90fd71e6c82f326400a10347cbb87c0aff03bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6f8eaec3dc688c78955c76b357df4d2a60c722d68564245e37946971e3a1619"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5817bc023256cfb4918c541fcb27a54f3b5227552bebf3ed2a44ab2f7b867cf"
+    sha256                               x86_64_linux:  "5ca877b33a5e072d19cfffbf716c1300d82c42470a02ccffb63a0903f805b1ff"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rapidjson" => :build
   depends_on "brotli"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build
@@ -57,6 +56,21 @@ class Dotnet < Formula
   on_linux do
     depends_on "libunwind"
     depends_on "lttng-ust"
+
+    on_intel do
+      depends_on "llvm" => :build
+
+      fails_with :gcc do
+        cause "Illegal instruction when running crossgen2"
+      end
+
+      # Backport fix for Clang 21
+      patch do
+        url "https://github.com/dotnet/runtime/commit/d4ff34564bcaf4ec5a02ecdca17ea63e5481cc42.patch?full_index=1"
+        sha256 "6b2485ca234b6dbab8ae5e2e5007c8e8d28130d14213cd5c5546cdefc27d8373"
+        directory "src/runtime"
+      end
+    end
   end
 
   conflicts_with cask: "dotnet-runtime"
@@ -65,13 +79,17 @@ class Dotnet < Formula
   conflicts_with cask: "dotnet-sdk@preview"
 
   def install
+    # Make sure CoreCLR builds with our compiler shims
+    ENV["CLR_CC"] = which(ENV.cc)
+    ENV["CLR_CXX"] = which(ENV.cxx)
+
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
       ENV.prepend_path "PATH", Formula["grep"].libexec/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
-      ENV["SDKROOT"] = MacOS.sdk_path
+      ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path
     else
       icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
       ENV.append_path "LD_LIBRARY_PATH", icu4c_dep.to_formula.opt_lib
