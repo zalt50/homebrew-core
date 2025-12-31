@@ -1,8 +1,8 @@
 class Evtx < Formula
   desc "Windows XML Event Log parser"
   homepage "https://github.com/omerbenamram/evtx"
-  url "https://github.com/omerbenamram/evtx/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "e5f5221879a68b455a086653ab457f815544d1580e591f52d3b0ed5b4b24f328"
+  url "https://github.com/omerbenamram/evtx/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "c5c88de46921325a2f32abc8f621be115959a589823d881f9ad2c4ba4391811a"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/omerbenamram/evtx.git", branch: "master"
 
