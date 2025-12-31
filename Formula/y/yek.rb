@@ -1,10 +1,10 @@
 class Yek < Formula
   desc "Fast Rust based tool to serialize text-based files for LLM consumption"
-  homepage "https://github.com/bodo-run/yek"
-  url "https://github.com/bodo-run/yek/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "ecbdf29ba2955fc33c4e43b3177577a08b05435523b1849924ec10605d2632bf"
+  homepage "https://github.com/mohsen1/yek"
+  url "https://github.com/mohsen1/yek/archive/refs/tags/v0.25.2.tar.gz"
+  sha256 "9e8dc80daafcadff586cff6d1e3f586e25cd43cd60bc7bbec1ac8b1a96a359da"
   license "MIT"
-  head "https://github.com/bodo-run/yek.git", branch: "main"
+  head "https://github.com/mohsen1/yek.git", branch: "main"
 
   livecheck do
     url :stable
