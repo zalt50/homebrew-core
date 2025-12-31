@@ -9,14 +9,14 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83c4ac3cfcbe349686688398f61a08f045991ee5ea057971b48ae94c87f880f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2ef4700db76554a995a6bc762f55368c7320bd3b577843993bca4fb51ec6071"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "855562442db8071fa2fff697356a69351d9ac4ea0e1b7941f3918543badb76b3"
-    sha256 cellar: :any_skip_relocation, tahoe:         "042e8422fc256ce3f84f283b8b8417c6f4e235bca828726403eebd78a7446b76"
-    sha256 cellar: :any_skip_relocation, sequoia:       "873d7d73197bfbf03f4076a99127af27c867ad04e9219ce4f4edfcb913dd5f02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6552faec89be20496db9102b531cbe001607812176347ad92c766ce52c6916d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72ed9e9a1b6a6125e2ed06f0981563687f0f8950e678943ba8b57431eff3767"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e35d0be8294a6955941a44f32ce4db2ee5b4dc8a98816d30f367a427a9c68db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc7f20c88ebc8240d3c462fad9d105cbe1e00403a3429e5830b2356967ffd574"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53dae5d4cdcee5fb12c56c61a9a12fc3fef1f1744205aa2713e5a095dea182f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0edbc7dcfeb094abb3bfc4e00f079152ada2cccca8e7b1ead23395b2be66d412"
+    sha256 cellar: :any_skip_relocation, tahoe:         "6c3d5dd01cb4cc8b9887fe3b1b4a6c4510a49b44b1b5b6430e1aac689cc53346"
+    sha256 cellar: :any_skip_relocation, sequoia:       "3e133d9de7bd2d16e549049779a8e713660aa8ae64072b7a12d00d0aae4f19d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be8f17b06e5004f7342603f172d8b358fd1f3ce17d35a116aa7ec176af70ec68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff67b98f467483cbebd6e7fe4ebf8cb974cbe403a528e509d9d50f12dea523a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e545b726ddd1dfd6a2ec285b11629cba7ce9cf6f236a57e4639534ae2dfe54"
   end
 
   depends_on "python@3.14"
