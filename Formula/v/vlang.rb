@@ -2,8 +2,8 @@ class Vlang < Formula
   desc "V programming language"
   homepage "https://vlang.io"
   # NOTE: Keep this in sync with V compiler below when updating
-  url "https://github.com/vlang/v/archive/refs/tags/0.4.12.tar.gz"
-  sha256 "65e3579df61ae0a7314aa5f0c7eb3b0b9b45170a0275e392e9c168be23046e89"
+  url "https://github.com/vlang/v/archive/refs/tags/0.5.tar.gz"
+  sha256 "53474b6920aba3bb13a12f6ca430581b3b9b90d2e1432c7afd90da45f1566aaa"
   license "MIT"
 
   livecheck do
@@ -35,11 +35,12 @@ class Vlang < Formula
   conflicts_with "v", because: "both install `v` binaries"
 
   resource "vc" do
-    # For every vlang release there is a matching commit of the V compiler in the format
-    # "[v:master] {short SHA of the vlang release commit} - {vlang version number}".
-    # The sources of this V compiler commit need to be used here
-    url "https://github.com/vlang/vc/archive/e377b42e26eb9c703ccaf65f37d700a7369ac3db.tar.gz"
-    sha256 "92714821ca60606751500c3d740de6015b575c078e52fa7c73b0e3346f966de4"
+    # The vc repo (https://github.com/vlang/vc) contains bootstrapping compiler sources.
+    # When updating vlang, find the vc commit whose message matches this release:
+    #   [v:master] <vlang commit SHA> - V <version>
+    # Then use that vc commit's SHA in the URL below.
+    url "https://github.com/vlang/vc/archive/294bff4ef87427743d0b35c0f7eb1b34a6dd061b.tar.gz"
+    sha256 "bc5ba06d186b5ae33de9fe8176d3bc6e39543c4454a6b2bd4392c73785dfada8"
 
     on_big_sur :or_older do
       patch do
