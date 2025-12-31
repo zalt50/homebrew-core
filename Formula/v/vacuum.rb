@@ -1,8 +1,8 @@
 class Vacuum < Formula
   desc "World's fastest OpenAPI & Swagger linter"
   homepage "https://quobix.com/vacuum/"
-  url "https://github.com/daveshanley/vacuum/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "90d3b90caeea8f94ca3a69dbd8abb4ef20b3d8c8953191401a67251c5da2ee13"
+  url "https://github.com/daveshanley/vacuum/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "d9f0e100e88ecfb03ff5e4ecf83d0791ba3271f67675cfc57c80caf40465e247"
   license "MIT"
   head "https://github.com/daveshanley/vacuum.git", branch: "main"
 
