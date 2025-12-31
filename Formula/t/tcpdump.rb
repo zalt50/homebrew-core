@@ -39,10 +39,7 @@ class Tcpdump < Formula
     match = if OS.mac?
       "tcpdump: en0: (cannot open BPF device) /dev/bpf0: Operation not permitted"
     else
-      <<~EOS
-        tcpdump: eth0: You don't have permission to perform this capture on that device
-        (socket: Operation not permitted)
-      EOS
+      "tcpdump: eth0: You don't have permission to perform this capture on that device"
     end
     assert_match match, shell_output("#{bin}/tcpdump ipv6 2>&1", 1)
   end
