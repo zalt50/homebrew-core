@@ -1,18 +1,18 @@
 class Vibecheck < Formula
   desc "AI-powered git commit assistant written in Go"
   homepage "https://github.com/rshdhere/vibecheck"
-  url "https://github.com/rshdhere/vibecheck/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "d8a2cc26fa1db2cc957adc217a1530054f2472dad5f693c83cd86b88ac5ee0e4"
+  url "https://github.com/rshdhere/vibecheck/archive/refs/tags/v1.6.6.tar.gz"
+  sha256 "2d0e13a1adc8511c4d12145bb4b7d006bd1af2a66f41044b4b89e37f1caea889"
   license "MIT"
   head "https://github.com/rshdhere/vibecheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e847b1d8843ec2affa176576d7c66fbedc961f8a67a97ea678f8850e43ab4d5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e847b1d8843ec2affa176576d7c66fbedc961f8a67a97ea678f8850e43ab4d5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e847b1d8843ec2affa176576d7c66fbedc961f8a67a97ea678f8850e43ab4d5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c04048dd848fc03713350aba34f4ab7badb7eed7d3e205376ae4277e70aed1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adb1f66d909ba50b45d0310fa8db6e62ec6d443ef8d5520ab06980581915bf9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07aa29d75540113dadd64a02cf033f06fd0b1822e62539340d7309bb8d7ce0da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52861a5c3f9ccd87738af97eb94f2282473e75751e99002c04d42d9fcd3e03be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52861a5c3f9ccd87738af97eb94f2282473e75751e99002c04d42d9fcd3e03be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52861a5c3f9ccd87738af97eb94f2282473e75751e99002c04d42d9fcd3e03be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10e80923c9aba1e1c492fb74422f2b3452cbd79d229b125f827ebfa9a9f4f717"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cd637d38038f6c08cd2d77e79b83e1c830780cd6c03cd07e1f89801eca17330"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "817197e978add271a7505eb0e3d58cf16f8a1d5f3caeb46b0ed923a28359a9b9"
   end
 
   depends_on "go" => :build
