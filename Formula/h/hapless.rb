@@ -3,8 +3,8 @@ class Hapless < Formula
 
   desc "Run and manage background processes"
   homepage "https://bmwant.link/hapless-easily-run-and-manage-background-processes/"
-  url "https://files.pythonhosted.org/packages/3e/b9/ef10de2bb7245bae7aed75cb52c713cebeed4a119fcd7a48ce7ac2f5dd4b/hapless-0.15.0.tar.gz"
-  sha256 "e6abb39255025f1ff7c2359c35247bdd4767bbe015265c9470f123e0625a744d"
+  url "https://files.pythonhosted.org/packages/2c/ab/a5c875f00927421371c9c36849030ba84dc171e7157575fd85126e893064/hapless-0.15.1.tar.gz"
+  sha256 "b54707a5f77ac8e779bfd0c8c49344333e9d40a5c9479f0da1c303ffa237077d"
   license "MIT"
   head "https://github.com/bmwant/hapless.git", branch: "main"
 
@@ -62,11 +62,6 @@ class Hapless < Formula
   resource "structlog" do
     url "https://files.pythonhosted.org/packages/ef/52/9ba0f43b686e7f3ddfeaa78ac3af750292662284b3661e91ad5494f21dbc/structlog-25.5.0.tar.gz"
     sha256 "098522a3bebed9153d4570c6d0288abf80a031dfdb2048d59a49e9dc2190fc98"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   def install
