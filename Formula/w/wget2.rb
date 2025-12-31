@@ -1,10 +1,9 @@
 class Wget2 < Formula
   desc "Successor of GNU Wget, a file and recursive website downloader"
   homepage "https://gitlab.com/gnuwget/wget2"
-  url "https://ftpmirror.gnu.org/gnu/wget/wget2-2.2.0.tar.gz"
-  sha256 "2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357"
+  url "https://ftpmirror.gnu.org/gnu/wget/wget2-2.2.1.tar.gz"
+  sha256 "d7544b13e37f18e601244fce5f5f40688ac1d6ab9541e0fbb01a32ee1fb447b4"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -24,7 +23,6 @@ class Wget2 < Formula
 
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "lzlib" => :build # static lib
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :build
   depends_on "texinfo" => :build # Build fails with macOS-provided `texinfo`
@@ -35,6 +33,7 @@ class Wget2 < Formula
   depends_on "libidn2"
   depends_on "libnghttp2"
   depends_on "libpsl"
+  depends_on "lzlib" # static lib
   depends_on "pcre2"
   depends_on "xz"
   depends_on "zstd"
