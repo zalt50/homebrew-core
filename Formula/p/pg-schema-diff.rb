@@ -1,8 +1,8 @@
 class PgSchemaDiff < Formula
   desc "Diff Postgres schemas and generating SQL migrations"
   homepage "https://github.com/stripe/pg-schema-diff"
-  url "https://github.com/stripe/pg-schema-diff/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "036abefc48a7c4b3fe73f8ab659f7d3f3379d85b3747cd2ceb973ae542192667"
+  url "https://github.com/stripe/pg-schema-diff/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "c8788c2f585bdffc4a675ae0142527639ddbb06aea712e071aa19bd428580368"
   license "MIT"
   head "https://github.com/stripe/pg-schema-diff.git", branch: "main"
 
