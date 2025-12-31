@@ -326,7 +326,10 @@ class Ansible < Formula
     # bcrypt no longer truncates long passwords: https://github.com/pyca/bcrypt/commit/d50ab05b2bece07d5c8d6a4179064fc714fd9126
     # And breaks unmaintained passlib: https://foss.heptapod.net/python-libs/passlib/-/issues/196
     # See also https://github.com/ansible/ansible/issues/85919
-    patch :DATA
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/31c70b01322a41e3337c3c2443940e4b81110c3a/Patches/ansible/passlib-1.7.4.patch"
+      sha256 "16a8c2c3ebc0a1d494567f04a12c1b58fa4f50113b364c7ee8fb39d856882861"
+    end
   end
 
   resource "pbr" do
@@ -642,17 +645,3 @@ class Ansible < Formula
     end
   end
 end
-
-__END__
-diff --git a/passlib/handlers/bcrypt.py b/passlib/handlers/bcrypt.py
---- a/passlib/handlers/bcrypt.py
-+++ b/passlib/handlers/bcrypt.py
-@@ -644,7 +644,7 @@
-         config = self._get_config(ident)
-         if isinstance(config, str):
-             config = config.encode("ascii")
--        hash = _bcrypt.hashpw(secret, config)
-+        hash = _bcrypt.hashpw(secret[:72], config)
-         assert isinstance(hash, bytes)
-         if not hash.startswith(config) or len(hash) != len(config)+31:
-             raise uh.exc.CryptBackendError(self, config, hash, source="`bcrypt` package")
