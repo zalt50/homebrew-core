@@ -1,8 +1,8 @@
 class Newsraft < Formula
   desc "Terminal feed reader"
   homepage "https://codeberg.org/newsraft/newsraft"
-  url "https://codeberg.org/newsraft/newsraft/archive/newsraft-0.34.tar.gz"
-  sha256 "8d55441ddfc2e7d49ad3ff36c384ad4c1533de97d92a9fcaf3f6753b49b37c7c"
+  url "https://codeberg.org/newsraft/newsraft/archive/newsraft-0.35.tar.gz"
+  sha256 "6a87c8a9b8556650d18443baf827cf930aa4a5c5361a36397b95f275e28d540d"
   license "ISC"
 
   bottle do
@@ -31,6 +31,9 @@ class Newsraft < Formula
   end
 
   test do
+    ENV["LANG"] = "en_US.UTF-8"
+    ENV["LC_ALL"] = "en_US.UTF-8"
+
     assert_match version.to_s, shell_output("#{bin}/newsraft -v 2>&1")
 
     system "#{bin}/newsraft -l test 2>&1 || :"
