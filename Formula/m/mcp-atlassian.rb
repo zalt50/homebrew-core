@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/3d/3c/93af83a23e1fb1beb9a5d8d0e74edd3772ede4dbcc2c80171deea65dc250/mcp_atlassian-0.11.11.tar.gz"
-  sha256 "cc4a1f1c0df0c12a4d0a2a1420372c6a858cbde8fd2dbfaa402f658ce80f4b97"
+  url "https://files.pythonhosted.org/packages/6e/54/4a638ad9c7297bbbeabf6bdbffec680f8a233957d9de27c8f5268db64c34/mcp_atlassian-0.12.0.tar.gz"
+  sha256 "1c0f67b7bacb6fca8e158ca7bd43531308eebfeec59164a93a29f52a64cc96fb"
   license "MIT"
 
   bottle do
@@ -132,8 +132,8 @@ class McpAtlassian < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/9e/50/d38e4371bdc34e709f4731b1e882cb7bc50e51c1a224859d4cd381b3a79b/fastmcp-2.14.1.tar.gz"
-    sha256 "132725cbf77b68fa3c3d165eff0cfa47e40c1479457419e6a2cfda65bd84c8d6"
+    url "https://files.pythonhosted.org/packages/d1/1e/e3528227688c248283f6d86869b1e900563ffc223eff00f4f923d2750365/fastmcp-2.14.2.tar.gz"
+    sha256 "bd23d1b808b6f446444f10114dac468b11bfb9153ed78628f5619763d0cf573e"
   end
 
   resource "h11" do
@@ -352,8 +352,8 @@ class McpAtlassian < Formula
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/72/2d/9f30cee56d4d6d222430d401e85b0a6a1ae229819362f5786943d1a8c03b/pymdown_extensions-10.19.1.tar.gz"
-    sha256 "4969c691009a389fb1f9712dd8e7bd70dcc418d15a0faf70acb5117d022f7de8"
+    url "https://files.pythonhosted.org/packages/3e/35/e3814a5b7df295df69d035cfb8aab78b2967cdf11fcfae7faed726b66664/pymdown_extensions-10.20.tar.gz"
+    sha256 "5c73566ab0cf38c6ba084cb7c5ea64a119ae0500cce754ccb682761dfea13a52"
   end
 
   resource "pyperclip" do
@@ -457,8 +457,8 @@ class McpAtlassian < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/62/08/8f554b0e5bad3e4e880521a1686d96c05198471eed860b0eb89b57ea3636/sse_starlette-3.1.1.tar.gz"
-    sha256 "bffa531420c1793ab224f63648c059bcadc412bf9fdb1301ac8de1cf9a67b7fb"
+    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
+    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
   end
 
   resource "starlette" do
@@ -492,8 +492,8 @@ class McpAtlassian < Formula
   end
 
   resource "types-lxml" do
-    url "https://files.pythonhosted.org/packages/6e/30/63ad18e633f61d848444fe4f1b95fcfcf80283bc5578f308501ef7210437/types_lxml-2025.11.25.tar.gz"
-    sha256 "30e7ff9a2d8d7c2ea7967c5d71c8169dd1806b58503ed4972af1ce602919b0e4"
+    url "https://files.pythonhosted.org/packages/22/4a/06a169bd65a7570d107216200b61f4f81c0833d7d9c5410fd0166f2ac776/types_lxml-2026.1.1.tar.gz"
+    sha256 "b1066ab033bab6c046e4c9e6f0368ab5713fe0a2e30ffe8f92ff449e07662d2d"
   end
 
   resource "types-markdown" do
