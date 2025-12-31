@@ -9,8 +9,7 @@ class GitCola < Formula
   head "https://github.com/git-cola/git-cola.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "4ddf9297d3761462640203f03f2e0e54b2690386f4da74fcd1c54066b523d2e2"
+    sha256 cellar: :any_skip_relocation, all: "61b07c21b3b3b632991e4a3b7ce45f3a7bdaeab57d56cecaba1e625f283a06b1"
   end
 
   depends_on "git-gui"
