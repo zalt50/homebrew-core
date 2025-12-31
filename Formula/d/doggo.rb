@@ -22,7 +22,7 @@ class Doggo < Formula
     ldflags = "-s -w -X main.buildVersion=#{version} -X main.buildDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/doggo"
 
-    generate_completions_from_executable(bin/"doggo", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"doggo", "completions")
   end
 
   test do
