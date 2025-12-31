@@ -1,14 +1,12 @@
 class Ncurses < Formula
   desc "Text-based UI library"
   homepage "https://invisible-island.net/ncurses/announce.html"
-  url "https://ftpmirror.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
-  mirror "https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz"
-  mirror "ftp://ftp.invisible-island.net/ncurses/ncurses-6.5.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
-  sha256 "136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6"
+  url "https://ftpmirror.gnu.org/gnu/ncurses/ncurses-6.6.tar.gz"
+  mirror "https://invisible-mirror.net/archives/ncurses/ncurses-6.6.tar.gz"
+  mirror "ftp://ftp.invisible-island.net/ncurses/ncurses-6.6.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/ncurses/ncurses-6.6.tar.gz"
+  sha256 "355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11"
   license "X11-distribute-modifications-variant"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:    "cdf1f60b77e8f2f431f010c987a57452b95c1c6426e4ddf829f701f6e7ce5058"
@@ -41,9 +39,6 @@ class Ncurses < Formula
       "--without-ada",
     ]
     args << "--with-terminfo-dirs=#{share}/terminfo:/etc/terminfo:/lib/terminfo:/usr/share/terminfo" if OS.linux?
-
-    odie "`-std=gnu17` workaround should be removed!" if build.stable? && version > "6.5"
-    ENV.append_to_cflags "-std=gnu17" if OS.linux? && DevelopmentTools.gcc_version("gcc") >= 15
 
     system "./configure", *args
     system "make", "install"
