@@ -1,8 +1,8 @@
 class Tcpdump < Formula
   desc "Command-line packet analyzer"
   homepage "https://www.tcpdump.org/"
-  url "https://www.tcpdump.org/release/tcpdump-4.99.5.tar.gz"
-  sha256 "8c75856e00addeeadf70dad67c9ff3dd368536b2b8563abf6854d7c764cd3adb"
+  url "https://www.tcpdump.org/release/tcpdump-4.99.6.tar.gz"
+  sha256 "5839921a0f67d7d8fa3dacd9cd41e44c89ccb867e8a6db216d62628c7fd14b09"
   license "BSD-3-Clause"
   head "https://github.com/the-tcpdump-group/tcpdump.git", branch: "master"
 
@@ -41,7 +41,7 @@ class Tcpdump < Formula
     assert_match "OpenSSL #{Formula["openssl@3"].version}", output
 
     match = if OS.mac?
-      "tcpdump: (cannot open BPF device) /dev/bpf0: Operation not permitted"
+      "tcpdump: en0: (cannot open BPF device) /dev/bpf0: Operation not permitted"
     else
       <<~EOS
         tcpdump: eth0: You don't have permission to perform this capture on that device
