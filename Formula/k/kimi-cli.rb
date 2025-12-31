@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/7c/39/5e8f7ace98d7c7c2c7c980d289f422bea8e13307b1ec74058a3ec38e3594/kimi_cli-0.69.tar.gz"
-  sha256 "57b2bdb192d291ea9da76180d3ef520e2fdfff5453e25d7f52139d25c1ce4eaa"
+  url "https://files.pythonhosted.org/packages/95/d5/4b7d5cbc45c82fe0ad6763463c25fc0f2773307ae980fb3d78156094c963/kimi_cli-0.70.tar.gz"
+  sha256 "67c8b0f434a55fa5f5f7abe85a72ee55c40678c357240630f070e6811228a9ff"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -229,8 +229,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/84/30/ce13877611e59f3cea3c700beec9607a8be9cd85f190a234e76a9ca878b2/kosong-0.35.4.tar.gz"
-    sha256 "5fe0daf6fe8c5f466e0cb2702a29f19cfd033a5d3952357d50ef6104fcceed30"
+    url "https://files.pythonhosted.org/packages/2e/c1/ffeb1034ceb3a29664c90545ed1336a8bd8f05a485482abe1952f8a4b8a1/kosong-0.36.0.tar.gz"
+    sha256 "fed6d8de6bf5ad5e819afba46513a47ba720df23d7f70f33576d4ba31af53c3a"
   end
 
   resource "lazy-object-proxy" do
@@ -445,8 +445,8 @@ class KimiCli < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/62/08/8f554b0e5bad3e4e880521a1686d96c05198471eed860b0eb89b57ea3636/sse_starlette-3.1.1.tar.gz"
-    sha256 "bffa531420c1793ab224f63648c059bcadc412bf9fdb1301ac8de1cf9a67b7fb"
+    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
+    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
   end
 
   resource "starlette" do
