@@ -6,12 +6,12 @@ class Witr < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfda096376dba262cffc42dee4095b0a8047fc294108f3a40026d95e3e02fc38"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfda096376dba262cffc42dee4095b0a8047fc294108f3a40026d95e3e02fc38"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfda096376dba262cffc42dee4095b0a8047fc294108f3a40026d95e3e02fc38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9701b698724f10104c24ee35a56ad02b57ab18b0e794ea88da08505540bc33e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8b2cb619641a8503e020d354f4acb9a5c6dde1c670d75fbd65e3cdd9eb911e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cf1d14cff45729320ed0601c1ea235457b54673f85018709a2ed6f668f82a1b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59d36600adef9829276f1a2c90d1e75db8be57935a046edabffa3f3a3e435173"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59d36600adef9829276f1a2c90d1e75db8be57935a046edabffa3f3a3e435173"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59d36600adef9829276f1a2c90d1e75db8be57935a046edabffa3f3a3e435173"
+    sha256 cellar: :any_skip_relocation, sonoma:        "853cc8a25b3e9c774dd177bf45bc833dc70fe8979888d516706076ad94dcc026"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "100f19e4be255b52fb2cc9f28979da82030e53f9d1a3320ce7ee0984852d2d24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5764ea2154e4299bf01e595f9402fb6cdd554f221efd98ea040ee527cb978880"
   end
 
   depends_on "go" => :build
