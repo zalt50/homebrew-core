@@ -3,8 +3,8 @@ class Sqlmap < Formula
 
   desc "Penetration testing for SQL injection and database servers"
   homepage "https://sqlmap.org"
-  url "https://github.com/sqlmapproject/sqlmap/archive/refs/tags/1.9.12.tar.gz"
-  sha256 "c0d825644222c147c044a9215642515f760f047d690329bbf806dd89e873b68a"
+  url "https://github.com/sqlmapproject/sqlmap/archive/refs/tags/1.10.tar.gz"
+  sha256 "aea3bf921d9a2466bc0e33cf43bc941f527eabf7981ec1de104220def3a1cba4"
   license "GPL-2.0-or-later"
   head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
@@ -27,6 +27,8 @@ class Sqlmap < Formula
 
     # Build an `:all` bottle
     inreplace libexec/"thirdparty/magic/magic.py", "/usr/local/Cellar", "#{HOMEBREW_PREFIX}/Cellar"
+    inreplace libexec/"lib/core/dicts.py", "/usr/local/var/www", "#{HOMEBREW_PREFIX}/var/www"
+    inreplace libexec/"lib/core/settings.py", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do
