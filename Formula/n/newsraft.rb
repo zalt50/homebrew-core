@@ -6,12 +6,12 @@ class Newsraft < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0503f56ec8df91c2409370bbd1e4bb6a4fe1bb7b548f7c6a5027131c4e1fd069"
-    sha256 cellar: :any,                 arm64_sequoia: "9c5b76e287744cb22b88c329d7d4efd68c003318e15ccaa4769d46b249c7f89d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e64d69519df37f57f796f6ae387ee3b5e8a0d79bc87d48bb42a3ff3e6a0965c3"
-    sha256 cellar: :any,                 sonoma:        "fc236bce58fb28f56e1f764323bdbdde38da104f9c4aee981ce5733b785b5eee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b43f6a0257ee551eee06a888208a2294e5febc7ccd4b80110f91f9b8c2788b2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34f94f14616c1fe0f6d7ae4c5ba9dda5f13af30acd2e550646c82ade823731f1"
+    sha256 cellar: :any,                 arm64_tahoe:   "3359d9c4fe6e8c481cb183cbf285db4dd79de23b3a62b3aaede24949673ec4a6"
+    sha256 cellar: :any,                 arm64_sequoia: "8a85c664f289e94a188da97781a5f8368a2d449086259ca9e2e24b5a44f9be5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9f4da93f3a9b7cb74b657fb6b415c4f20b6c2d63745a145f5743f820159e0e6"
+    sha256 cellar: :any,                 sonoma:        "5099cad517f5cfd2705c0e91e8dff754fbc51026cb32a8a511fda6e986053bbd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a837f6a4e8dc1b0cda26326ed191c520c4c0007b4aa65a225dac0ffe241621b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d188302de5fed681da52c266c876d425418c44435624dbd790b384f31b20f13e"
   end
 
   depends_on "scdoc" => :build
