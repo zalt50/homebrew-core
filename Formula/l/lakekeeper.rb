@@ -1,8 +1,8 @@
 class Lakekeeper < Formula
   desc "Apache Iceberg REST Catalog"
   homepage "https://github.com/lakekeeper/lakekeeper"
-  url "https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "00c3fd4a22c7427805eea96a322168253ca55f6086e81ad6a0d04554b74b69c3"
+  url "https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "baa3cd3f8fe7738052b65cfec67b421d19291988c3215f1bf5f870e0ae075f91"
   license "Apache-2.0"
   head "https://github.com/lakekeeper/lakekeeper.git", branch: "main"
 
@@ -19,6 +19,8 @@ class Lakekeeper < Formula
   depends_on "rust" => :build
   depends_on "postgresql@18" => :test
   depends_on "openssl@3"
+
+  uses_from_macos "llvm" => :build # for libclang
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
