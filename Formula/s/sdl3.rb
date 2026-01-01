@@ -1,8 +1,8 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https://libsdl.org/"
-  url "https://github.com/libsdl-org/SDL/releases/download/release-3.2.28/SDL3-3.2.28.tar.gz"
-  sha256 "1330671214d146f8aeb1ed399fc3e081873cdb38b5189d1f8bb6ab15bbc04211"
+  url "https://github.com/libsdl-org/SDL/releases/download/release-3.4.0/SDL3-3.4.0.tar.gz"
+  sha256 "082cbf5f429e0d80820f68dc2b507a94d4cc1b4e70817b119bbb8ec6a69584b8"
   license "Zlib"
   head "https://github.com/libsdl-org/SDL.git", branch: "main"
 
@@ -36,9 +36,10 @@ class Sdl3 < Formula
   def install
     inreplace "cmake/sdl3.pc.in", "@SDL_PKGCONFIG_PREFIX@", HOMEBREW_PREFIX
 
-    args = [
-      "-DSDL_HIDAPI=ON",
-      "-DSDL_WAYLAND=OFF",
+    args = %w[
+      -DSDL_HIDAPI=ON
+      -DSDL_WAYLAND=OFF
+      -DSDL_X11_XTEST=OFF
     ]
 
     args += if OS.mac?
