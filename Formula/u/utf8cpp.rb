@@ -7,7 +7,7 @@ class Utf8cpp < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "68e034076d7c7bafa63e645d0779ab2c01efe283217f0d09edaea21f6541e3fc"
+    sha256 cellar: :any_skip_relocation, all: "5e326ac5dcf874a01fe9feab70c26db351f7cf272b07c127f8af2aca5dd98e72"
   end
 
   depends_on "cmake" => [:build, :test]
