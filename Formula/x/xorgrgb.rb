@@ -1,11 +1,9 @@
 class Xorgrgb < Formula
   desc "X.Org: color names database"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.gz"
-  sha256 "77142e3d6f06cfbfbe440e29596765259988a22db40b1e706e14b8ba4c962aa5"
+  url "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.1.tar.gz"
+  sha256 "9bceca0821a46ff54989ab08ab00d6dd87eb2779fc15165d848eaa0ddd742fbe"
   license "MIT"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b4c43ac48800387feaa8d8d91d20977069578a7a13efdf0f4198b9a2eb763062"
