@@ -7,6 +7,15 @@ class Khard < Formula
   sha256 "b3e5bfadf6b5d7e8f168d0c320c74b954e4d0ef4194b28791140fe577a48f948"
   license "GPL-3.0-only"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5518339fb9e38d369d0f5c16dde65f96e628e66fee456fabb2b1f1300146f270"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d369c1710a688b2d4b88ffb4ae7722e1856ee365ab832cbd02fd96caec98831"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bb265a3d491639f98b2d79a922ca6d9a2d64984eabb20771593f1e518e9aa88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b36a867168a0ec439838d2f400c20f3c5601190ae0f43906635fd3e6cd24383d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edcb3d36eaec81549a894614250bd2a1c9fe32aca283f04a804bd8f9cde9cf35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d06c2fe4f7dc9be8bae61d3572bc77e670aebefc93c84e23f74a97376aa65f5"
+  end
+
   depends_on "python@3.14"
 
   resource "configobj" do
