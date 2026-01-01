@@ -1,8 +1,8 @@
 class JqLsp < Formula
   desc "Jq language server"
   homepage "https://github.com/wader/jq-lsp"
-  url "https://github.com/wader/jq-lsp/archive/refs/tags/v0.1.15.tar.gz"
-  sha256 "34a693262ca1df0375701847962c43043ab4a2dd720ed637ce8f73d34243db97"
+  url "https://github.com/wader/jq-lsp/archive/refs/tags/v0.1.16.tar.gz"
+  sha256 "984115bdf6ab8ba155cd72011a75971366dfe240811e4fdba44a957a87cae217"
   license "MIT"
   head "https://github.com/wader/jq-lsp.git", branch: "master"
 
@@ -24,14 +24,26 @@ class JqLsp < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/jq-lsp --version")
 
-    expected = JSON.parse(<<~JSON)
+    require "open3"
+
+    json = <<~JSON
       {
-        "name": "jq-lsp",
-        "version": "#{version}"
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "processId": 88075,
+          "rootUri": null,
+          "capabilities": {},
+          "trace": "verbose",
+          "workspaceFolders": null
+        }
       }
     JSON
-    query = ".config | {name: .name, version: .version}"
 
-    assert_equal expected, JSON.parse(shell_output("#{bin}/jq-lsp --query '#{query}'"))
+    Open3.popen3(bin/"jq-lsp") do |stdin, stdout|
+      stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
+    end
   end
 end
