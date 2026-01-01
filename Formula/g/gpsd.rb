@@ -1,9 +1,9 @@
 class Gpsd < Formula
   desc "Global Positioning System (GPS) daemon"
   homepage "https://gpsd.gitlab.io/gpsd/"
-  url "https://download.savannah.gnu.org/releases/gpsd/gpsd-3.27.1.tar.xz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.27.1.tar.xz"
-  sha256 "0d1fb9d01612a3c36a85d1cf252a684831a636a94c3a8d85999062e2a856b40a"
+  url "https://download.savannah.gnu.org/releases/gpsd/gpsd-3.27.3.tar.xz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.27.3.tar.xz"
+  sha256 "e4a3c978a00242ba68ef50cd7c466a8ab3ecb5fe07fd3f9cf2054619ccad5653"
   license "BSD-2-Clause"
   head "https://gitlab.com/gpsd/gpsd.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Gpsd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e2e272a9b4fe497f4e9f3c9fc0d936804e9a62c3c1f5aa99e2fc8027a012d00f"
-    sha256 cellar: :any,                 arm64_sequoia: "0aa3bb1363d93f597cdb0815ab76199dcf885f2d9e5118aafcafe9e280d654d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c8446f0c18a1c6e1b43d507eb2d7c5dacadb8bf5293e0598b8917d03b852595"
-    sha256 cellar: :any,                 sonoma:        "91dd545a375aaa045b350712e39e0e91ce782091ae0604d38381d09b9316cd02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f2ad4911ac1e2bc6ea0598c09dc9557117f921653c1870bd5d81573daf3957d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0bac38fe3812df5b7465c89e5cad092c0f6adf21b331e5adb6bcfad2884402a"
+    sha256 cellar: :any,                 arm64_tahoe:   "c26ce8784557e63069c262612d00a2aefb59e2fe7d354b6079947b0e6941d299"
+    sha256 cellar: :any,                 arm64_sequoia: "c689bc54231aa8d1b2215b45b5141e4bc34b5b5877f6eda691d1e1a88c713a20"
+    sha256 cellar: :any,                 arm64_sonoma:  "ccfefb5befe37f9de0759a2a32fedb946cc12a04e2e9d3e9b4d77de496a2a017"
+    sha256 cellar: :any,                 sonoma:        "fad68bb702fae024c3310b6a2a3ab1b85b11def499afb3b56a8896846e9744fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4681c8bdf5ac15814dc37055e21b8cac2089eeb217c847a50559fb0a3aa4f82c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8323a9faa31fe5e626ab3ff84b830fcffb446552f6f37b98c4e102187d966195"
   end
 
   depends_on "asciidoctor" => :build

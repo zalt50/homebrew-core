@@ -1,17 +1,21 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.0.186.tgz"
-  sha256 "b28906685a17b9fe468de65178be5845a945a3e61048d336f42141813858579b"
+  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.0.220.tgz"
+  sha256 "c4bf1790626001477af0c1feca476c53091e351bccfa0585c1e8c47c0bd57b70"
   license "MIT"
 
+  livecheck do
+    throttle 10
+  end
+
   bottle do
-    sha256                               arm64_tahoe:   "5352fb11ba0938c4cc0e6f376a4b13c896d8f097e44617931e358c04a0c595e6"
-    sha256                               arm64_sequoia: "5352fb11ba0938c4cc0e6f376a4b13c896d8f097e44617931e358c04a0c595e6"
-    sha256                               arm64_sonoma:  "5352fb11ba0938c4cc0e6f376a4b13c896d8f097e44617931e358c04a0c595e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d486aa3979647c8e8a348c976c7ee62a7355987a3d3bcf66849409ee4ed3f9a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6d99e4846108d66bb4e0f81170a1f6a0f4955832ce7eb9f3a99e3b5a1d6b217"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61d53a64d1474ae24c79dba519a0f8a49a3f3022a7019710589acab31604bff1"
+    sha256                               arm64_tahoe:   "9b73883da81dbdb07c59ae54acb6447b3780d1bbd8e2dc1fdd0604ee398ba093"
+    sha256                               arm64_sequoia: "9b73883da81dbdb07c59ae54acb6447b3780d1bbd8e2dc1fdd0604ee398ba093"
+    sha256                               arm64_sonoma:  "9b73883da81dbdb07c59ae54acb6447b3780d1bbd8e2dc1fdd0604ee398ba093"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57c5ed35393c033db9180793affc2a89ab2325a892d4bcb750d6e6e4acf77d6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5829a5d3479830dbba3e1375b7efec6e9c657dffe87fb02dd8272fc469f4b40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d525cd1368cddddc44c68d1af96a2d71b9aef09395e0f562c78a3d18f8331b1f"
   end
 
   depends_on "node"
@@ -19,7 +23,7 @@ class Opencode < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove binaries for other architectures, `-musl`, `-baseline`, and `-baseline-musl`
     arch = Hardware::CPU.arm? ? "arm64" : "x64"

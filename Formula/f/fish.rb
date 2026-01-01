@@ -1,9 +1,10 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://github.com/fish-shell/fish-shell/releases/download/4.2.1/fish-4.2.1.tar.xz"
-  sha256 "0f99222a3063377c91fbf78d9850edab7a0b91bdbed201cf79da48ea3a41f393"
+  url "https://github.com/fish-shell/fish-shell/releases/download/4.3.2/fish-4.3.2.tar.xz"
+  sha256 "36a09cfc7fc2d1f1d0b6f5caf3828998621721f8c60a7a31ec55679286a9fe1c"
   license "GPL-2.0-only"
+  head "https://github.com/fish-shell/fish-shell.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,27 +14,23 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81f3d22ec56e50b64673a2dd1aac3f1224a116e59a83f9074f386b90626f68bd"
-    sha256 cellar: :any,                 arm64_sequoia: "46632c26e0d251497a12e586bd69670d0a030085de6c915754827f7a75c5241b"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa64841ba5c10513253a746473d63890855363a52e9509d0951c2618a522f9ba"
-    sha256 cellar: :any,                 sonoma:        "dae5e8d1a2cdc06ef2f5322ff229fdcfd4c3cdc2cb24e3ba31c029650ba53f4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e32db9b07e3426b93ed15bbd4e77f32d699e50c14b507de50ef1021e435218a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "642bd9f9c853f578cd7189765260c3b82478889a021c2cb67bac5e2b1e25bbc8"
-  end
-
-  head do
-    url "https://github.com/fish-shell/fish-shell.git", branch: "master"
-
-    depends_on "sphinx-doc" => :build
+    sha256 cellar: :any,                 arm64_tahoe:   "6ccdae85617de43722cadd998417d307eff399c8421b715305b67562b5889fd9"
+    sha256 cellar: :any,                 arm64_sequoia: "84daf68777d0464cca7a1b23e862aa3d619df031aa9da7a8365f3b4707f8ca01"
+    sha256 cellar: :any,                 arm64_sonoma:  "e06f02a3d1afca9df5ac2997dc6aeb68ccc80ee1d88901c8ffea57c77c024feb"
+    sha256 cellar: :any,                 sonoma:        "886f002b74d9c1418d7f77392900e110cab3619e97a1c9c6392a77a69929acb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54b437171109ac9a4259cb432deef5c703892df9f492bd8b91b13517e6f8095d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb216be580eb43f11398fa5d07ad8de6ba4b0eff8822c0c08112d8aa3e4a0f24"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
+  depends_on "sphinx-doc" => :build
   depends_on "pcre2"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
+                    "-DWITH_DOCS=ON",
                     "-Dextra_functionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_functions.d",
                     "-Dextra_completionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d",
                     "-Dextra_confdir=#{HOMEBREW_PREFIX}/share/fish/vendor_conf.d"
@@ -49,5 +46,7 @@ class Fish < Formula
 
   test do
     system bin/"fish", "-c", "echo"
+    output = shell_output("#{bin}/fish -c 'set --show fish_function_path'")
+    assert_match "#{HOMEBREW_PREFIX}/share/fish/vendor_functions.d", output
   end
 end

@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/0c/02/2cbbecf6551e0c1a06f9b9765eb8f7ae126362fbba43babbb11b0e3b7db3/fastapi-0.127.0.tar.gz"
-  sha256 "5a9246e03dcd1fdb19f1396db30894867c1d630f5107dc167dcbc5ed1ea7d259"
+  url "https://files.pythonhosted.org/packages/52/08/8c8508db6c7b9aae8f7175046af41baad690771c9bcde676419965e338c7/fastapi-0.128.0.tar.gz"
+  sha256 "1cc179e1cef10a6be60ffe429f79b829dce99d8de32d7acb7e6c8dfdf7f2645a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2e48f0e5a16186a6fd029d5bdfd256354f88a370e3470d5352b914ea094db0b9"
-    sha256 cellar: :any,                 arm64_sequoia: "e74478a7201377ab804d70e30f2374d62dcbe15d762681472b5ae0383945ee9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5ce7959b85aa22265f5c4b8f5ccf41f44f78f95b86a4196edd4071640255147"
-    sha256 cellar: :any,                 sonoma:        "aa2aadea21cf058a3955c6b7af99224bb6057cf3b80013d49a2b3fa25815f7e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecbe3047a04de8d24bab732406fc8c7411a07eb6d88b234f8064e3194169d3e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8557d5581ddcb7dcf2e4171e510bdeb4078f5004f4a841d151d836690090163d"
+    sha256 cellar: :any,                 arm64_tahoe:   "3373d41aa166c856656af29c836735f6cb708a298635ee81d334df45a331ca54"
+    sha256 cellar: :any,                 arm64_sequoia: "6d6b7d5df1e4ad090536105d9c120dd9fdb21aeda71df38b719ef065981c645f"
+    sha256 cellar: :any,                 arm64_sonoma:  "0627fec802db7c3daad53a269558e40cf9de5c91e6e47a7f361fcd9a80c1090b"
+    sha256 cellar: :any,                 sonoma:        "215063be1f4de140aa64c90595b3c20a7ec39994371d3f56e55b90b40a3cbdc1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad50df0cf061a0dc2849d97d692384052484658d2c3d966a248689576c254f39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20169dca24731939d942008db559103626d7d0e81edebc91602b4240c2cda7f8"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -51,13 +51,13 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cli" do
-    url "https://files.pythonhosted.org/packages/99/75/9407a6b452be4c988feacec9c9d2f58d8f315162a6c7258d5a649d933ebe/fastapi_cli-0.0.16.tar.gz"
-    sha256 "e8a2a1ecf7a4e062e3b2eec63ae34387d1e142d4849181d936b23c4bdfe29073"
+    url "https://files.pythonhosted.org/packages/d3/ca/d90fb3bfbcbd6e56c77afd9d114dd6ce8955d8bb90094399d1c70e659e40/fastapi_cli-0.0.20.tar.gz"
+    sha256 "d17c2634f7b96b6b560bc16b0035ed047d523c912011395f49f00a421692bc3a"
   end
 
   resource "fastapi-cloud-cli" do
-    url "https://files.pythonhosted.org/packages/cf/0d/3b0d2991f481c122c552b4ae38a8b400a75ab0edbc85536f2a6224f72da2/fastapi_cloud_cli-0.7.0.tar.gz"
-    sha256 "8b025944475c3d53262105886dfe051f46383e4f287787a46892b524922ac0b6"
+    url "https://files.pythonhosted.org/packages/51/5d/3b33438de35521fab4968b232caa9a4bd568a5078f2b2dfb7bb8a4528603/fastapi_cloud_cli-0.8.0.tar.gz"
+    sha256 "cf07c502528bfd9e6b184776659f05d9212811d76bbec9fbb6bf34bed4c7456f"
   end
 
   resource "fastar" do
@@ -171,8 +171,8 @@ class Fastapi < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
-    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
+    url "https://files.pythonhosted.org/packages/85/30/ff9ede605e3bd086b4dd842499814e128500621f7951ca1e5ce84bbf61b1/typer-0.21.0.tar.gz"
+    sha256 "c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53"
   end
 
   resource "urllib3" do
@@ -204,8 +204,7 @@ class Fastapi < Formula
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/fastapi"
 
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"fastapi", "--show-completion", shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"fastapi", shell_parameter_format: :typer)
   end
 
   test do

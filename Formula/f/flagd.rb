@@ -2,8 +2,8 @@ class Flagd < Formula
   desc "Feature flag daemon with a Unix philosophy"
   homepage "https://github.com/open-feature/flagd"
   url "https://github.com/open-feature/flagd.git",
-      tag:      "flagd/v0.12.9",
-      revision: "1ee636aa039ad862f055831bd2ab42216fe30865"
+      tag:      "flagd/v0.13.1",
+      revision: "5e4218cefabe40138f20d07f0ca0665d4ab34c09"
   license "Apache-2.0"
   head "https://github.com/open-feature/flagd.git", branch: "main"
 
@@ -18,14 +18,12 @@ class Flagd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5c17ef41e3729296edf75c50db51717e77e5546523707befa40753ca057fc22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86b5457cbffac14b621c2f7c3b10d924cbb3f257b066528ae73b16ac13308e3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd540364119080d40fbd5f151f508f4aaf957eb8aa7795d48d1cc5421de7ce88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c1be9a397de335ee8a293474c20fa344001190b3a7e1adc762ae685ef0e5268"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7da35ae4bd545fa9b9ae0f547d6b8fc377a034cc973e638139c8ba696536cc41"
-    sha256 cellar: :any_skip_relocation, ventura:       "0dec4c7fcf3fe7be3bb23167b153887b2e2dc7afb52a2bfca529e839923c890c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02a3f67aa69c850e9ff180db4170a5250894c1b7db22a9a9baaece04cfe08990"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61f8c0876041ddd70834ea658876fa57becf3a5393253f76291e6259bc6a8c9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e89948218eb4104ff49ee880910e9f98692abb474ed193ba9b55fcdfbc90324d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6342aa169b15ab4c92579b1f76281c9b411801ff2053fb9c13357dd3d004c83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdb75ab72a14eafa80260dea605892f62dd70b5813bbe0773968b205c5e571ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e36ea31fda9f026adb5d7bdbc2bdf24d68547c018a055d9b16d0a87e5fc5b72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7612f9f667d24ab2aed06cbd0607dd0c455c2d1f2cb35dbcfc5d5a2884426af2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87c1ef02e1f0c3303a4a4c410fc9cd1943e2c80c35f7c55799a339c870c2280f"
   end
 
   depends_on "go" => :build
@@ -41,7 +39,7 @@ class Flagd < Formula
 
     system "make", "workspace-init"
     system "go", "build", *std_go_args(ldflags:), "./flagd/main.go"
-    generate_completions_from_executable(bin/"flagd", "completion")
+    generate_completions_from_executable(bin/"flagd", shell_parameter_format: :cobra)
   end
 
   test do

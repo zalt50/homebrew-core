@@ -1,18 +1,18 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https://cuelang.org/"
-  url "https://github.com/cue-lang/cue/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "d1bd4fe4fe39febdc07819e6feac8f8be9fc374202744d464ab540569855c7d8"
+  url "https://github.com/cue-lang/cue/archive/refs/tags/v0.15.3.tar.gz"
+  sha256 "73d9c4b83c452020446a069685e9d7a0998d62014cdb13cc00e10683d088bd8f"
   license "Apache-2.0"
   head "https://github.com/cue-lang/cue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc2e60cd8e2d9206fbdf041242792f3c172a3808bab0d404ea547c3eb70e46f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc2e60cd8e2d9206fbdf041242792f3c172a3808bab0d404ea547c3eb70e46f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc2e60cd8e2d9206fbdf041242792f3c172a3808bab0d404ea547c3eb70e46f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49908dfd95a49f28c82dc6dc0bafc4d05b86d08affcd06351180e5e493ed1840"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2c275509c6de23906af38b5a85365609b3d11259d8e5c331897d4def4ead772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72df844309135e9f5bfef9fcf644512f5e405cca81f91e7a39ce43f901e30b5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70e1ed999ddf38839a455cf7f4d7361729e3f6de16fcca86f02cb4306d93694c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70e1ed999ddf38839a455cf7f4d7361729e3f6de16fcca86f02cb4306d93694c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70e1ed999ddf38839a455cf7f4d7361729e3f6de16fcca86f02cb4306d93694c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05c2bf53e8316ce44d9669c7aafe4468c726b230976a56bc338a2a4ae373c5d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4dcd6cee6ce31c0eea6fac965d21e767dba2a30af895569315db8af29593af8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cebb99cdc2eafd5b027f01203ae7a105295b3c6c9b14c34c3297fab5b1e6b82"
   end
 
   depends_on "go" => :build
@@ -20,7 +20,7 @@ class Cue < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X cuelang.org/go/cmd/cue/cmd.version=v#{version}"), "./cmd/cue"
 
-    generate_completions_from_executable(bin/"cue", "completion")
+    generate_completions_from_executable(bin/"cue", shell_parameter_format: :cobra)
   end
 
   test do

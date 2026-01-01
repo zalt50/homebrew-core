@@ -1,19 +1,19 @@
 class Aicommit2 < Formula
   desc "Reactive CLI that generates commit messages for Git and Jujutsu with AI"
   homepage "https://github.com/tak-bro/aicommit2"
-  url "https://registry.npmjs.org/aicommit2/-/aicommit2-2.4.17.tgz"
-  sha256 "0b0562a290edff376250cef19ab7696b24c974731bab86be44ee128118a611d6"
+  url "https://registry.npmjs.org/aicommit2/-/aicommit2-2.4.20.tgz"
+  sha256 "376318e26b37f7ebac0c1f76bbc9b640e577e511d8ee9ab5dcbcdede249a49b1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b3e5d62b0c26388bdd1b3abc96908b2ece33e047b63c14f5bbb59c7a87ef22fc"
+    sha256 cellar: :any_skip_relocation, all: "9ec313d9ce0a8ee983572933e2a086501b1578a40fd376f294ebb11933a81157"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

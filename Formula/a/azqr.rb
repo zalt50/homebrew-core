@@ -3,18 +3,18 @@ class Azqr < Formula
   homepage "https://azure.github.io/azqr/"
   # pull from git tag to get submodules
   url "https://github.com/Azure/azqr.git",
-      tag:      "v.2.14.0",
-      revision: "cee1b0429e1db489e2f632f70c412143be55e926"
+      tag:      "v.2.15.0",
+      revision: "e1f526cbe6af4e67517e947deb7b9508a45915fe"
   license "MIT"
   head "https://github.com/Azure/azqr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b63f9ef88abb6df326aff2b36fe9382a4fcfea9c098c8554afc84dc372032b61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b63f9ef88abb6df326aff2b36fe9382a4fcfea9c098c8554afc84dc372032b61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b63f9ef88abb6df326aff2b36fe9382a4fcfea9c098c8554afc84dc372032b61"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90ba14dec54237d99cdb5f8b2d6111b270dac2329c9a2ccc526681b0eb46abc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83a359e29a60019ac4a34ec478970451354569bcb153e045cae3d78ccb01886a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "845759d5c25579a99ed29b546b4bc4aff1c31f6a4fa7383f8f15260189235154"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df691c55cd43c03be1e8ad5ac40cdbdc806468c1d519420cfca1eac926654eab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df691c55cd43c03be1e8ad5ac40cdbdc806468c1d519420cfca1eac926654eab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df691c55cd43c03be1e8ad5ac40cdbdc806468c1d519420cfca1eac926654eab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a3bd3340a5f06ed2f98a41153372a8633a1a2fcce122d3c1bdd36574a9681c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bed9f84afde61dc4ead3de68c59549e9595ed954b8a3d0ed433766209e312da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ae962cb4039fee4dedd331827fcb119968d6297c9e9e4201ba8f9046d0da555"
   end
 
   depends_on "go" => :build
@@ -26,7 +26,7 @@ class Azqr < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/azqr"
 
-    generate_completions_from_executable(bin/"azqr", "completion")
+    generate_completions_from_executable(bin/"azqr", shell_parameter_format: :cobra)
   end
 
   test do

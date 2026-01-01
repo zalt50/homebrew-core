@@ -3,20 +3,20 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/11/84/d1a1c726076d1beb61d623feec1b5ea30ef6c13ee8f3fe2f6b7048dad44d/esphome-2025.12.1.tar.gz"
-  sha256 "e5ad2e4d58fbbff7b060d2512c51ebed6868fbd172115dce557cbe78d6928c1a"
+  url "https://files.pythonhosted.org/packages/1a/c6/4fade03f4fc9167313d56d4608c0ea6bb3bce5e0a46f18366eb588f1b616/esphome-2025.12.3.tar.gz"
+  sha256 "7b362b2e36c1cfe7c5c8721671073b590b9c401e535dbba673359bbb32d491ec"
   license "MIT"
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d55814dc2efda8be929b89ec0647c2c0989f6cd50f4d1570565cf0781c6e9065"
-    sha256 cellar: :any,                 arm64_sequoia: "5be6c268fecc63e94f7e51f677c70e1e0344a5a8c9d90fa65e00d89a4203b0d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f1cba596d5712278d3c60e6ba667b466baaee81421a2d5da8e3d6ba16d11451"
-    sha256 cellar: :any,                 sonoma:        "df1d906b61826a91555bdc03bdf1dfad4cff0307c7732009885e1f0b52070633"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5956b1f6dd2bdaee17dd77830b79335d26a9ebd0c6d2f20533780f85db73e2f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f44d38e06d94bf234d83157d2e03f4c3f985ad406df323d1d5cd1564c505654"
+    sha256 cellar: :any,                 arm64_tahoe:   "95be628d86aec4297801132a26a722dad1518ac52e2a2935c3e5f518ff4d77c9"
+    sha256 cellar: :any,                 arm64_sequoia: "fdf8ecb2a73af39472e3cba28603d1d1dba239a970307847824866d9d96d68ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "19b89fabd00eb05cf38d61a88fcdd9e53c6f8d14ac1286d41633b446a455098d"
+    sha256 cellar: :any,                 sonoma:        "530cb84ccfd4095f5360237b9e2e9ad4a6b409e2da7fa0f2b7e1e09a946a026b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae2988ada3f32f79a856f4e491cc68e45d6704c935e815bee9a900fd03aec497"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "626997a4653638309314e7c4ebe58cf75c322b78813fcf97ae91021dd4ad9999"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class Esphome < Formula
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/12/b6/cf4c0334fd51a4f87b8b49393e7918c9ec5480793af02022be610fcd969e/aioesphomeapi-43.2.1.tar.gz"
-    sha256 "68dd71451a7befb07d99b33bafa0d35cebe38e3197ea3b1e81212adcde6ff4b2"
+    url "https://files.pythonhosted.org/packages/89/21/58c9a185e97b870588e164b22e289bb51fe3b746f7c0bcc55fa9698bcaa5/aioesphomeapi-43.9.1.tar.gz"
+    sha256 "eccac7b3af2701201ad1757c7d1ce91ab88fa6124b0ca7e7c906a28200dae412"
   end
 
   resource "aiohappyeyeballs" do
@@ -73,8 +73,8 @@ class Esphome < Formula
   end
 
   resource "bleak" do
-    url "https://files.pythonhosted.org/packages/ce/cb/20f3dd0498a820278c7078dce786676d18342721a3723591d5853323b363/bleak-2.0.0.tar.gz"
-    sha256 "a8043fc0f3af1a00a84963824195463ca39789ae4f6804d3d7b1423e6083254a"
+    url "https://files.pythonhosted.org/packages/77/84/639b3e7fef9d5e2edec1f0be68137a03b995d7b4e89755e4d407e9127948/bleak-2.1.0.tar.gz"
+    sha256 "f628d61efddc8b4b2338649195cbbe32b3f0f79e11678fcb3f30de9e1be537da"
   end
 
   resource "bottle" do
@@ -108,8 +108,8 @@ class Esphome < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "colorama" do
@@ -193,8 +193,8 @@ class Esphome < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/ab/5e/5e53d26b42ab75491cda89b871dab9e97c840bf12c63ec58a1919710cd06/marshmallow-3.26.1.tar.gz"
-    sha256 "e6d8affb6cb61d39d26402096dc0aee12d5a26d490a121f118d2e81dc0719dc6"
+    url "https://files.pythonhosted.org/packages/e9/e1/5edfd1edf05d3cc98415b0810ca45fa19d7dee6def0d0ec639eb4eb14e20/marshmallow-4.1.2.tar.gz"
+    sha256 "083f250643d2e75fd363f256aeb6b1af369a7513ad37647ce4a601f6966e3ba5"
   end
 
   resource "mdurl" do
@@ -213,8 +213,8 @@ class Esphome < Formula
   end
 
   resource "paho-mqtt" do
-    url "https://files.pythonhosted.org/packages/f8/dd/4b75dcba025f8647bc9862ac17299e0d7d12d3beadbf026d8c8d74215c12/paho-mqtt-1.6.1.tar.gz"
-    sha256 "2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f"
+    url "https://files.pythonhosted.org/packages/39/15/0a6214e76d4d32e7f663b109cf71fb22561c2be0f701d67f93950cd40542/paho_mqtt-2.1.0.tar.gz"
+    sha256 "12d6e7511d4137555a3f6ea167ae846af2c7357b10bc6fa4f7c3968fc1723834"
   end
 
   resource "platformio" do
@@ -263,8 +263,8 @@ class Esphome < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
-    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
+    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
+    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
   end
 
   resource "pyserial" do
@@ -293,13 +293,13 @@ class Esphome < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/bf/d8/f2c1b7e9a645ba40f756d7a5b195fc104729bc6b19061ba3ab385f342931/rich_click-1.9.4.tar.gz"
-    sha256 "af73dc68e85f3bebb80ce302a642b9fe3b65f3df0ceb42eb9a27c467c1b678c8"
+    url "https://files.pythonhosted.org/packages/6b/d1/b60ca6a8745e76800b50c7ee246fd73f08a3be5d8e0b551fc93c19fa1203/rich_click-1.9.5.tar.gz"
+    sha256 "48120531493f1533828da80e13e839d471979ec8d7d0ca7b35f86a1379cc74b6"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
-    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
+    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
+    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
   end
 
   resource "ruamel-yaml-clib" do
@@ -313,8 +313,8 @@ class Esphome < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ce/20/08dfcd9c983f6a6f4a1000d934b9e6d626cff8d2eeb77a89a68eef20a2b7/starlette-0.46.2.tar.gz"
-    sha256 "7f7361f34eed179294600af672f565727419830b54b7b084efe44bb82d2fccd5"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "tabulate" do
@@ -328,8 +328,8 @@ class Esphome < Formula
   end
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/09/ce/1eb500eae19f4648281bb2186927bb062d2438c2e5093d1360391afd2f90/tornado-6.5.2.tar.gz"
-    sha256 "ab53c8f9a0fa351e2c0741284e06c7a45da86afb544133201c5cc8578eb076a0"
+    url "https://files.pythonhosted.org/packages/37/1d/0a336abf618272d53f62ebe274f712e213f5a03c0b2339575430b8362ef2/tornado-6.5.4.tar.gz"
+    sha256 "a22fa9047405d03260b483980635f0b041989d8bcc9a313f8fe18b411d84b1d7"
   end
 
   resource "tzdata" do
@@ -348,13 +348,13 @@ class Esphome < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/de/ad/713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8e/uvicorn-0.34.3.tar.gz"
-    sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
+    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
+    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   end
 
   resource "voluptuous" do
-    url "https://files.pythonhosted.org/packages/91/af/a54ce0fb6f1d867e0b9f0efe5f082a691f51ccf705188fca67a3ecefd7f4/voluptuous-0.15.2.tar.gz"
-    sha256 "6ffcab32c4d3230b4d2af3a577c87e1908a714a11f6f95570456b1849b0279aa"
+    url "https://files.pythonhosted.org/packages/92/f4/0738e6849858deae22218be3bbb8207ba83a96e9d0ec7e8e8cd67b30e5ca/voluptuous-0.16.0.tar.gz"
+    sha256 "006535e22fed944aec17bef6e8725472476194743c87bd233e912eb463f8ff05"
   end
 
   resource "webencodings" do

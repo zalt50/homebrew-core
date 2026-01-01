@@ -1,18 +1,19 @@
 class Tbls < Formula
   desc "CI-Friendly tool to document a database"
   homepage "https://github.com/k1LoW/tbls"
-  url "https://github.com/k1LoW/tbls/archive/refs/tags/v1.92.1.tar.gz"
-  sha256 "1ce3c19cad9d0d96ed6884828fa15af7d88ed0fa6d01bc462239d5e0e232a27d"
+  url "https://github.com/k1LoW/tbls/archive/refs/tags/v1.92.2.tar.gz"
+  sha256 "068f4eb86146c917f29372dbdcda42f6a59a56a70841f3aa48021cf49975accd"
   license "MIT"
   head "https://github.com/k1LoW/tbls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03fa77c8d038e867c1ab86ac5918998ffa52354153082a23f31b720a6f98098a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9acb31e432c6a690aed5ccb9d0b04c6e9eb784c40b142d9115e0c75b9bd3d2bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d0480cff7474dc0a8331d67d5f504afb4bf68fd753341ff9171eb5bbef52d3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62fb0d9dc913becb43c28efd6486f927d07f6550a5dbe4ac4e7a7536bbfd226c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f2c4324e57a6a7c215b51128400bf7c4f006fa62f4b64a35b724ad095be71db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b3eb254929428f12a7cea7999cbaa0f68eb6f9832b5dea7d548242f742d5670"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e775c0bb0abebe003d30377667ad4560ed80b50cb4aafeed146412f3c4f800a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55d8de514eb4ce7828974010bdef0868c108ba1de054255b8518f10cbf781eb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b986874d4a28f807828abd6eaf12d481cdc6b93c376d9cb612120624cbc48897"
+    sha256 cellar: :any_skip_relocation, sonoma:        "927f7cb508009725263811270b5d0ddb5beeea74d4e23a94a970a574a35203e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5283b61c4ef109226ffa79b5a04d112450ec30ab0616dd350893918e3fe7447e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9acb9001574bfbe444140cc500f888e4c55759af93cdf4733818af165485d4f9"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Tbls < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"tbls", "completion")
+    generate_completions_from_executable(bin/"tbls", shell_parameter_format: :cobra)
   end
 
   test do

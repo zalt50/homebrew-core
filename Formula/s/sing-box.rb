@@ -1,18 +1,19 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.13.tar.gz"
-  sha256 "e8bc2c059757af705f8e96c1909e2693f79a4c5c573464529af95c5c93046f1b"
+  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.14.tar.gz"
+  sha256 "f19761d09f88e2d33aadfdb3c4ff471654f34b28561826e4786b9859654ca887"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "763515732a4b6b2b0d6f2fc29cbe03c50cd847a604ed8717f2041f1d0ab7e1f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96b431bb2e2d67270f0d46e7794862cadc260b4a1f5f6369fcdb2979f6db61c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0c3b14234532511b58f723c2fda7062c0785391bb9dc0e96e63c9078396780e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e75fe64d6d2bdef91934e7617b9af592fb7136ec3f01c42d2fa4dcf26f70a4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ce751ad0c7843b9f29f6fa49ebec797ece57fa04d461f38f54e4443ecaa760e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "572715eb97cf434e4c6fa844ca4944ac67d1af58f354e072bbe9887db1840ae5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fefe9f37379ebee522206e5eaef26b7423a7f680563e5096db93eefe15b77c74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4e011367a3b2f56bf8404e37a7cc528c81ac165e03b523c8e144624d7a2e270"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3ba719e6858441a84f6d18c172b8b419f60fc68478c9a808bcce36674de51e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8d340a84f8006b90aedd9c3540c5e725e6ed63cbad3e343ede854c2577f31b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ab58213fc7d3a0ba7904275184b9eb3270474c4c6fae6c7b5c14c6b67d7dd13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1642aac4505870f485c34576c3a451e654ad6290f0858c6761c54457b7a1c7bf"
   end
 
   depends_on "go" => :build
@@ -29,8 +30,8 @@ class SingBox < Formula
       with_utls
       with_wireguard
     ]
-    system "go", "build", *std_go_args(ldflags:, tags: tags.join(",")), "./cmd/sing-box"
-    generate_completions_from_executable(bin/"sing-box", "completion")
+    system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/sing-box"
+    generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
   end
 
   service do

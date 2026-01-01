@@ -23,7 +23,7 @@ class Gittuf < Formula
     system "go", "build", *std_go_args(ldflags:)
     system "go", "build", *std_go_args(ldflags:, output: bin/"git-remote-gittuf"), "./internal/git-remote-gittuf"
 
-    generate_completions_from_executable(bin/"gittuf", "completion")
+    generate_completions_from_executable(bin/"gittuf", shell_parameter_format: :cobra)
   end
 
   test do

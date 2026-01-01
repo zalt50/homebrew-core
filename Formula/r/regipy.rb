@@ -3,24 +3,18 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/9a/15/27bdafd21f4cb822ac0520487bea7b822a0f299a0f2a3083c855d00653e7/regipy-5.2.0.tar.gz"
-  sha256 "cf1e977625e9dcf6fe4facb0cffa21ce6300bf585dee6d451e5f03b26fc61336"
+  url "https://files.pythonhosted.org/packages/44/85/b1bd8f1011954d6541c7450934a84962f39bed5dec390ea0ca5062effb0b/regipy-6.2.0.tar.gz"
+  sha256 "a1290ce2894200b3e86efbd18c1ff9b1d407f1da755f561f2de04bd460a41302"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "9e9a174701b1fad8d188b6b3973b4cfa0dc3524ecf40c5cf4089060d7738982e"
+    sha256 cellar: :any_skip_relocation, all: "e99eb47c68013b67186902254f535312cc54f22b654724de8c5c4dec6360a9fb"
   end
 
   depends_on "python@3.14"
 
   pypi_packages package_name: "regipy[cli]"
-
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
-  end
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"

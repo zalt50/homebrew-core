@@ -4,8 +4,9 @@ class Grokj2k < Formula
   # pull from git tag to get submodules
   url "https://github.com/GrokImageCompression/grok.git",
       tag:      "v20.0.4",
-      revision: "8a576b8157b8c55945b23b02abfffee2ed94b934"
+      revision: "e5edba003dc28dc7e3a1e56dc42493dcdd81d2ce"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
   livecheck do
@@ -14,12 +15,12 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c7e92721c13381eec2ee59f9ee5f6ba1cf9ecdcb64b00c07e33afbbd1234dd0e"
-    sha256 cellar: :any,                 arm64_sequoia: "e53f6d31a9f318d5298990246d05703c2a5bff654d18d458f374f3f7bd4b3f44"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bf47ddf246877376dfb94dea41b8fe3799d25d6170e723ea934379cbfd10e94"
-    sha256 cellar: :any,                 sonoma:        "c9e8f4f961e891fd5b226110914ac52f45735862f5cfa0dce6713d878ad7d3d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38bfb196adf3559881f7d4f7faaf32df62e61d947df85d3000c9f6bb9f0903b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0340d5eb837faa45642c47880b744ad5ec73c45771e7860ab700720b93bf0b43"
+    sha256 cellar: :any,                 arm64_tahoe:   "456b0d1276d3c219a1992c5efe74c562ec42b4c3dfdef24fc42df7a5276ea64d"
+    sha256 cellar: :any,                 arm64_sequoia: "324832fc1a19a008e5b802abce65478ae4b79d8543f91c73abf3592aeba0cbc4"
+    sha256 cellar: :any,                 arm64_sonoma:  "3498013acabdf7dc96cb5c8307be1efb85d96db4a6a14f0f0842a2bb54486ec1"
+    sha256 cellar: :any,                 sonoma:        "aec2355095c0f581d3937ce74c440a9f1e3e4528499fe6fe290d062db5cd6656"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec5fd7569893d7428900783d56ce4f4edf4fc6b460695ad888258a4152de973e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dd4df214538aadf95857191c39b667c03fa533ea7cec3a08030e902ddd539e9"
   end
 
   depends_on "cmake" => :build

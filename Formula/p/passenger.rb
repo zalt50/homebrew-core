@@ -1,19 +1,19 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via Apache/NGINX"
   homepage "https://www.phusionpassenger.com/"
-  url "https://github.com/phusion/passenger/releases/download/release-6.1.0/passenger-6.1.0.tar.gz"
-  sha256 "1cf30bbb6d39f19811141a43cb0d67e7bbf6a4bc3fe8b4145eaeb53a6ee21268"
+  url "https://github.com/phusion/passenger/releases/download/release-6.1.1/passenger-6.1.1.tar.gz"
+  sha256 "26c37dba603e1e9dfa3f924484af39300621add7b0ab75e85acfd25d099703e8"
   license "MIT"
-  revision 3
+  revision 1
   head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0dfd5093bffc0a6fd00a026c7ac7038c290e1da4960882f99119b2f0b2aa737e"
-    sha256 cellar: :any,                 arm64_sequoia: "c73b864b35b287ac767d12080f8e0bbd97a58bc274c9cb6d49f3f3b3a1cc0242"
-    sha256 cellar: :any,                 arm64_sonoma:  "bbc2a9d2c55a41186d2d6f268e527ef9e1613ef9a3c4652b196e681edce0e587"
-    sha256 cellar: :any,                 sonoma:        "a825b542e388f326768a0409e2151dcf74f46b2d57b9c095b0cec5404c452d33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51f4dc8bcbd317c93c7e480225bcc124e914c118f54a133e01b4cb3d6dbf560c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab65e4248cd9630aa419db70d36f8a174e6ab278b00f8c301ab1a36f7350fe48"
+    sha256 cellar: :any,                 arm64_tahoe:   "83accd6c0e4afe703f9db3bd3014199adf45ff9f66a8ccbfac048a94e3df48d9"
+    sha256 cellar: :any,                 arm64_sequoia: "069f2bcda6001ce9ef60d19060c272fc011b35a46d83987fbbd93cc3bb21eef7"
+    sha256 cellar: :any,                 arm64_sonoma:  "e028652db3362668fb0b41ecd394882762103f6bbc5c6adcbe41464a6ef96c6b"
+    sha256 cellar: :any,                 sonoma:        "786c43165addb08c3dd1838b950b59c59deef7cda437befe169cc8f9fd3e6f96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f09b6088cc06d1bc822979f92dce5c1b012a86c75bc7874dfa3a98303aa2a34f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e759478b5c67a018368669207e9c38a5634b87483378aabc67d358504416f58f"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
@@ -70,7 +70,7 @@ class Passenger < Formula
     cp_r necessary_files, libexec, preserve: true
 
     # Allow Homebrew to create symlinks for the Phusion Passenger commands.
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Ensure that the Phusion Passenger commands can always find their library
     # files.

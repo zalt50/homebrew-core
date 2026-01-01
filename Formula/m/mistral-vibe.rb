@@ -3,18 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/08/08/e2185bbaf5e7d86c6ab516021445aaa46345075be2783ed8b893dafee67a/mistral_vibe-1.2.2.tar.gz"
-  sha256 "42efc3bd01a223ade3e70ab92df03c282513bfa5f05272e6891b17ae8bc89189"
+  url "https://files.pythonhosted.org/packages/c1/a7/a9dce16e9ab81140665783a40f9174c98946212425d96a63fe664d6ec661/mistral_vibe-1.3.3.tar.gz"
+  sha256 "1c4e6a96325cd028a1e86076e72914b9538223961a8acb27265c1af5c0758b22"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a5f21184504164e80e551690dfc4ef8fe66d8600b3aaad23bdccf0d8e36a7b35"
-    sha256 cellar: :any,                 arm64_sequoia: "ba785cc72b6f1b6f790a3b605d9984d3ed52c116ea7fad030b437200b9cb4b76"
-    sha256 cellar: :any,                 arm64_sonoma:  "f17a7af9b26eea5ca84c1f2f2b619e9a456436e2fb2489e2403bd3993fa12916"
-    sha256 cellar: :any,                 sonoma:        "2287dd4f1139b15991b4afca0be09db2322fe78320aa01dec67efdb7a60d2379"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de1c7cb4fd067fe8c40ff0867f6fffc6cf7a8520d8c97dbbd65e4af8ede94c47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed0aebe678e8b3c0ea0ac962e1b8058db743c6bb675a40e1f212f6ce571d47d5"
+    sha256 cellar: :any,                 arm64_tahoe:   "121494f6907d16c4b6969e7b3d4e6a0fef5d0421aa6f6a5386a5f0751dbe4e3c"
+    sha256 cellar: :any,                 arm64_sequoia: "b0da5e372e27a3a935842637d4038494393ca1d9ec1249394f9bc8c327333c4f"
+    sha256 cellar: :any,                 arm64_sonoma:  "fec1e21ecc62e57ea6c634fbaab14cada80804e864c6836780b06b9f5ccf2285"
+    sha256 cellar: :any,                 sonoma:        "9fa49fa7eeaeebc60810d1f174d7f7c641fc72e68bed894c922356a8624bc7e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09c05d05a0e61671008d431213a86efcd9fc74b91a3fbd1f2f559ba6555dc4d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a80ec9624bfd1f68ba4b4a3f1270e833ac3ab71b2691be84a202628d35a4220"
   end
 
   depends_on "rust" => :build
@@ -203,8 +203,8 @@ class MistralVibe < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
-    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
+    url "https://files.pythonhosted.org/packages/62/08/8f554b0e5bad3e4e880521a1686d96c05198471eed860b0eb89b57ea3636/sse_starlette-3.1.1.tar.gz"
+    sha256 "bffa531420c1793ab224f63648c059bcadc412bf9fdb1301ac8de1cf9a67b7fb"
   end
 
   resource "starlette" do

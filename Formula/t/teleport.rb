@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
-  url "https://github.com/gravitational/teleport/archive/refs/tags/v18.5.0.tar.gz"
-  sha256 "e3596062dd1d673c348f1242918f85dc82258cd55075c8cd875634405aa9e53a"
+  url "https://github.com/gravitational/teleport/archive/refs/tags/v18.6.1.tar.gz"
+  sha256 "96923c4f116c9b4726f3abd0da6878c771fa0494631a1737b9200225e425a93f"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -18,14 +18,15 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "457abe1231e8881262b4d4bbfd8054a7cbb5721b31d907012a456c3016863c52"
-    sha256 cellar: :any,                 arm64_sequoia: "8eb3b48cecc755cbb676ed9403df98f80bea91b0771adce36b938e10d8877b7d"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4c5d7d6934f77daaf56c09ea51d2079427609902d8f1d27297a4c74408992d6"
-    sha256 cellar: :any,                 sonoma:        "6b9ccd93b95fdd69d66113e660fae54b3e604daba84bc83addd6e38a61b12ac5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "deadffa867dfaf755ae2084c764d359e8f3c1fb19f041344dc746e72a0e442e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b16a0fdb09210519c03654a1c7d035d395c8f28a32e3eeff39e43f78653b964e"
+    sha256 cellar: :any,                 arm64_tahoe:   "ef87c716916b73aded5ce7c7905919cb2ca4e5b488a196cdc439b3bae5ecf949"
+    sha256 cellar: :any,                 arm64_sequoia: "279f31f42859fc9ff756f2678da07f5167f9fc533926eee4a2527ef8084f9632"
+    sha256 cellar: :any,                 arm64_sonoma:  "da8d4ff36ddf0eb082b146036f1c0f3f7125019099e6731e264568cb2f8adc7a"
+    sha256 cellar: :any,                 sonoma:        "0908dad3662dbe669ea8fc96db59a6bde698d99457446e20420bdc66481c1601"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e0785eb19d45d2f6e8131f18d6cdf899bb64f38f21ecdd6355af8785eae8ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7457dcff2605fa5d39bd7d0efe8edb0d3065c05a4f39203bea0371d0e46f6621"
   end
 
+  depends_on "binaryen" => :build
   depends_on "go" => :build
   depends_on "node@22" => :build # node 24 support issue, https://github.com/gravitational/teleport/issues/57202
   depends_on "pkgconf" => :build
@@ -33,7 +34,6 @@ class Teleport < Formula
   depends_on "rust" => :build
   # TODO: try to remove rustup dependancy, see https://github.com/Homebrew/homebrew-core/pull/191633#discussion_r1774378671
   depends_on "rustup" => :build
-  depends_on "wasm-pack" => :build
   depends_on "libfido2"
   depends_on "openssl@3"
 
@@ -45,6 +45,11 @@ class Teleport < Formula
   conflicts_with cask: "teleport-suite@17"
   conflicts_with cask: "teleport-suite@16"
   conflicts_with cask: "tsh", because: "both install `tsh` binaries"
+
+  resource "wasm-bindgen" do
+    url "https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.99.tar.gz"
+    sha256 "1df06317203c9049752e55e59aee878774c88805cc6196630e514fa747f921f2"
+  end
 
   # disable `wasm-opt` for ironrdp pkg release build, upstream pr ref, https://github.com/gravitational/teleport/pull/50178
   patch :DATA
@@ -58,6 +63,13 @@ class Teleport < Formula
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
+
+    resource("wasm-bindgen").stage do
+      system "cargo", "install", *std_cargo_args(path: "crates/cli", root: buildpath)
+    end
+
+    # Replace wasm-bindgen binary call to the built one
+    inreplace "Makefile", "wasm-bindgen target", buildpath/"bin/wasm-bindgen target"
 
     ENV.deparallelize { system "make", "full", "FIDO2=dynamic" }
     bin.install Dir["build/*"]

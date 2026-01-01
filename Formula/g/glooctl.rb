@@ -1,26 +1,27 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://docs.solo.io/gloo-edge/main/reference/cli/glooctl/"
-  # NOTE: Please wait until the newest stable release is finished building and
-  # no longer marked as "Pre-release" before creating a PR for a new version.
   url "https://github.com/solo-io/gloo.git",
-      tag:      "v1.20.5",
-      revision: "2958882043c371a422c8fe964c4cef8dece7461a"
+      tag:      "v1.20.7",
+      revision: "887d34e7892059e8b8e6551cafa12ddec07d943b"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7467d0e5a6f9ea55db4bbd5356f88e9861be49cddfbe551c3cceb37fbda75cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89e210dc793018f7764108cde2a92e8795087f0eefe7c78308ab1844ba54c290"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cab0449d8d570f078be16e7ff9f464d4b90ee5d5198d3f53a63dbff67003ded5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4a1d2e9ef48c0c3311ae05690228be4d9b6d2e5328b6834aa27426f9ae70dc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35d90de7e5965a1f6330dc94e814ca7ec3a09df05458f938de3c63116b524479"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f5b3faa13a00da5d97b8815fb46943c7c679beea60b8045adf64e1800b9416e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12478e7053b05ae5fde9b7b70c2551d421383d0bad2d4e025bd3e4f8ad638f0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a868a466a927d036c9e123ed3665db6a55b22f87b49712e49677143f1a3d1a6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5ed07e9cf0b41fbc9db7ad78dc9550421df3d6c5d7b9fec1ea2d17c0481bc1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9526f0977f57373db7e7ee3b32becab270211165e8deb9f0f81b6ea02ff2c42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "134be858550650b76fef05f2f327765897c31ec5b18629b9b97db33de509de48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecb3b91a2a2558a7555aaacbc81aee228f37ce065e91c276a44e4afee8dcf701"
   end
 
   depends_on "go" => :build

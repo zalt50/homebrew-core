@@ -1,8 +1,8 @@
 class Buf < Formula
   desc "New way of working with Protocol Buffers"
   homepage "https://github.com/bufbuild/buf"
-  url "https://github.com/bufbuild/buf/archive/refs/tags/v1.61.0.tar.gz"
-  sha256 "97459176763e09f55311fd99b38f097c8782d4a4abb0eb1e853092220547ecb6"
+  url "https://github.com/bufbuild/buf/archive/refs/tags/v1.62.1.tar.gz"
+  sha256 "9f4221484f622ed657c103651f29ca448d0d8ddff72fa1b35b14b8a3e02bb1b5"
   license "Apache-2.0"
   head "https://github.com/bufbuild/buf.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Buf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a30ad357770a0ccab763521523d70da8d33a36788f45eca2b6a7f5a4b4d41a7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a30ad357770a0ccab763521523d70da8d33a36788f45eca2b6a7f5a4b4d41a7b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a30ad357770a0ccab763521523d70da8d33a36788f45eca2b6a7f5a4b4d41a7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43c2a93cce548c9069eb9d2b4a7c1d735044d9f4dc025de986c4be49ac5c8440"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be12ee373dcfe3b3eacc6b9e229de822e5a87f23de4e7c8147246ceecd5adb6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b1dc26fd28f4db6132fc3a5b11bee3a80a1ba96de0af1190e66ea0e9fa93cdd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc9768398d76126019abfcdb32ddd377282d4ee9aaeada3d2039a9c6ac71b7ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc9768398d76126019abfcdb32ddd377282d4ee9aaeada3d2039a9c6ac71b7ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc9768398d76126019abfcdb32ddd377282d4ee9aaeada3d2039a9c6ac71b7ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eba7e7f101ebca0cfe727d84165514e7fa95fa1438d594a7533f43648aa5f29f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de2fd2b551365354584aafcdccffc30866d2750243cbabd107ce54191c678c95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b775f881e5b91fe4f8c1700301849bacdf6e1edb4b3245dd7169d3051aa58714"
   end
 
   depends_on "go" => :build
@@ -30,7 +30,7 @@ class Buf < Formula
       system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/name), "./cmd/#{name}"
     end
 
-    generate_completions_from_executable(bin/"buf", "completion")
+    generate_completions_from_executable(bin/"buf", shell_parameter_format: :cobra)
     man1.mkpath
     system bin/"buf", "manpages", man1
   end

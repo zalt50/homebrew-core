@@ -1,8 +1,8 @@
 class Rumdl < Formula
   desc "Markdown Linter and Formatter written in Rust"
   homepage "https://github.com/rvben/rumdl"
-  url "https://github.com/rvben/rumdl/archive/refs/tags/v0.0.199.tar.gz"
-  sha256 "9f4a38c9fbcbe080b4a5e58eab4b10015d84247e519af7aa635f87efd0eaefb5"
+  url "https://github.com/rvben/rumdl/archive/refs/tags/v0.0.207.tar.gz"
+  sha256 "93772563373f8f575d0c45325548e796f773332065f8d5f1dca2a4f3d14b43f1"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Rumdl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54e15092b4590f085bf1aa57a0454660136e38a04274b7db13865cb568609d0e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6c60e06aa1cad21053bbb869c072e4163dc71f296c4f498fedce25b2354066b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7bb5c76d6ace6b4794908067bc0a20f936c3e4f46bb6f0fb0357a11e3c6fffe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41785ef2a067744ba795a0b4b2770c6cf7b4c5247acf3adf9e6cd411a354b046"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "774ecb844d5c3fc492a4cd2203dcd3a5cc5dc55fba5c463634b4fdeefd3d54c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd673e281726d334e9c361947c8ec90914c357da454377550383696c8dd98fb0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a95a8702075914c0b16f066a2ff6e23c762090aa17120eae5af9164b7fef8fec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7392fee734fdeb1f968b70ba2c7656c2d775e4c01cb63ab6f7f461b6ed3ae584"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e222cfc0eb880e140d5a122f12830dfd59c0a1a54bc03b0cd23380b98e2d2ab1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5472d1516c895f5c5cb66e0ddf3aa783f9384269b8888db350b0fe44c28a3c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e3376281f3f846cc0bef6a9ff77218b398f3f8658d851fd9102dc6fd9832e96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a146dfcfa7b5028ed11ec25eeda614358ab70a69c7fc85fdf8b14e1f59e6bbf"
   end
 
   depends_on "rust" => :build

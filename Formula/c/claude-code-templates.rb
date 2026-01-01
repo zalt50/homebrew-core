@@ -1,19 +1,19 @@
 class ClaudeCodeTemplates < Formula
   desc "CLI tool for configuring and monitoring Claude Code"
   homepage "https://www.aitmpl.com/agents"
-  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.28.3.tgz"
-  sha256 "9ca00ea99b8fb644d6d7951e9a31cc2cc6890cdcb012901ffa1ec5173d10b765"
+  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.28.12.tgz"
+  sha256 "672972de436cfe0cb691dea078526bb14229851a2a51fea062a587ba4bbaab7f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a03fa2f92ac53d7efc6b7c6f77d7aa10eebe892fd423d525169574a507651253"
+    sha256 cellar: :any_skip_relocation, all: "e6968ecf041a17b9722c22c2d99f7e09913bf5ad1dd720714a61a3e8fb130b4d"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
