@@ -4,6 +4,7 @@ class Qbe < Formula
   url "https://c9x.me/compile/release/qbe-1.2.tar.xz"
   sha256 "a6d50eb952525a234bf76ba151861f73b7a382ac952d985f2b9af1df5368225d"
   license "MIT"
+  head "git://c9x.me/qbe.git", branch: "master"
 
   livecheck do
     url "https://c9x.me/compile/releases.html"
