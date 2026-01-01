@@ -19,6 +19,8 @@ class Utf8cpp < Formula
   end
 
   test do
+    assert_match("PACKAGE_VERSION \"#{version}\"", (share/"utf8cpp/cmake/utf8cppConfigVersion.cmake").read)
+
     (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0 FATAL_ERROR)
       project(utf8_append LANGUAGES CXX)
