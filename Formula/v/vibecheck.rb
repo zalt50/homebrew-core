@@ -7,12 +7,12 @@ class Vibecheck < Formula
   head "https://github.com/rshdhere/vibecheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52861a5c3f9ccd87738af97eb94f2282473e75751e99002c04d42d9fcd3e03be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52861a5c3f9ccd87738af97eb94f2282473e75751e99002c04d42d9fcd3e03be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52861a5c3f9ccd87738af97eb94f2282473e75751e99002c04d42d9fcd3e03be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10e80923c9aba1e1c492fb74422f2b3452cbd79d229b125f827ebfa9a9f4f717"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cd637d38038f6c08cd2d77e79b83e1c830780cd6c03cd07e1f89801eca17330"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "817197e978add271a7505eb0e3d58cf16f8a1d5f3caeb46b0ed923a28359a9b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80e3d1635f98c2f8707a6b049d3a39d8b379ad34a20d72c19434b745c420a433"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80e3d1635f98c2f8707a6b049d3a39d8b379ad34a20d72c19434b745c420a433"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80e3d1635f98c2f8707a6b049d3a39d8b379ad34a20d72c19434b745c420a433"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49078092ae2a8d8462779fbe5bcc0dc4cad387d490324916b789b382c2f23684"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75ab0f7d9477251e64a98c01ca22cf8833f468766a7fed0f0dbdeffdf225b74a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db75e80372148a830d17fddae73662ee9ab9c8683e43cd4aec97a217419ff279"
   end
 
   depends_on "go" => :build
