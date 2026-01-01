@@ -1,10 +1,9 @@
 class Haiti < Formula
   desc "Hash type identifier"
   homepage "https://noraj.github.io/haiti/#/"
-  url "https://github.com/noraj/haiti/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "f6b8bf21104cedda21d1cdfa9931b5f7a6049231aedba984a0e92e49123a3791"
+  url "https://github.com/noraj/haiti/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "505ae91562ad8c21e31874b77c0000fc8bf649aaf031a05b15aaa92124f2ddf2"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "fa443195d86019eb3dbf68c67289d5fcc9310844d968f16f8f064973942df8d9"
@@ -21,11 +20,6 @@ class Haiti < Formula
   uses_from_macos "llvm" # for libclang
 
   def install
-    # Support Ruby 4.x.x and Bundler 4.x.x
-    # Upstrem PR ref: https://github.com/noraj/haiti/pull/229
-    inreplace "Gemfile", "'bundler', '~> 2.1'", "'bundler', '>= 2.1'"
-    inreplace "#{name}.gemspec", "'>= 3.1.0', '< 4.0'", "'>= 3.1.0', '< 5.0'"
-
     ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
     ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["BUNDLE_WITHOUT"] = "development test"
