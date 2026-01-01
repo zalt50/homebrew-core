@@ -59,7 +59,7 @@ class Watch < Formula
     require "pty"
     output = []
     PTY.spawn("#{bin}/watch --errexit --chgexit --interval 1 date") do |r, w, pid|
-      r.winsize = [24, 80]
+      r.winsize = [24, 160]
       begin
         r.each_char { |char| output << char }
       rescue Errno::EIO
