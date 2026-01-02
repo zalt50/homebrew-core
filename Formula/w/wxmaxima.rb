@@ -12,15 +12,12 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "cc11b4097517d7f5703e8f68fce4584e1e0bc54608d734c8d1d0375635dad68c"
-    sha256 arm64_sequoia: "ec8ca3fae6f7edc7593eb84c6c4216f9ae2dd4a3c014dbb7553acd78e3302e3d"
-    sha256 arm64_sonoma:  "7d82d9ec873119248214f833fb7029eac8875aa57c5701a57370b44f76e3cd58"
-    sha256 arm64_ventura: "d557599c3b3eefd79b147758ca60611e9b6d57e57c1e41c004140e418d2205d4"
-    sha256 sonoma:        "24fa662cd77d0dd9f745942e8c1b74467b3711e03f13b9dae6f087687abaec69"
-    sha256 ventura:       "b66e7b2778a0b7588bebac86db1f4b3aaa7726b40f5acb606fc36a5e096b2ffe"
-    sha256 arm64_linux:   "4bb515d654a2f26fc2b3ca0f8482970c48d475ab3329e262504ca6a24e2a51d0"
-    sha256 x86_64_linux:  "e321b5e9522666e570bcdbec80ab1573bdc874933adbdcc4ce324393dae553ee"
+    sha256 arm64_tahoe:   "9e270b833c8403d08a0aa85b14e9b0cf1e0827325a1dc12270f9badaf7ad8e61"
+    sha256 arm64_sequoia: "53bc46eeadfd5673a607207fb7168e1917668aa4a1df24567f4bf299095940fc"
+    sha256 arm64_sonoma:  "c1c38751311436cb37bfd701862e83a5efc75918cf8ed23c466d94965776747d"
+    sha256 sonoma:        "7f8d1081ad2c1e05c5a2e9ad0ca552f5d8ea9cea965fe220cadb0eeb1c450609"
+    sha256 arm64_linux:   "6eee61bbe356b373f5d8f5ceb80f2b76b8f3e38885fe9acba4da2ec50e6393e1"
+    sha256 x86_64_linux:  "53f774facb87ebf51f2b9a93c8b878494ee97fc297c58275b10686d6e4851867"
   end
 
   depends_on "cmake" => :build
