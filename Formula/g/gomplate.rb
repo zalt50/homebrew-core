@@ -27,6 +27,7 @@ class Gomplate < Formula
   def install
     system "make", "build", "VERSION=#{version}"
     bin.install "bin/gomplate" => "gomplate"
+    generate_completions_from_executable(bin/"gomplate", shell_parameter_format: :cobra)
   end
 
   test do
