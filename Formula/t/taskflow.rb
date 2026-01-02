@@ -7,7 +7,7 @@ class Taskflow < Formula
   head "https://github.com/taskflow/taskflow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fec211cfb51a98e86ef5d7f7f710432d5ab50b9c268b7c6f30d28ea51c94ee7e"
+    sha256 cellar: :any_skip_relocation, all: "ad26c3494c386b2c0be1bc7b84dfc4a764b2ee710e865bf8f09b9505f9fd010e"
   end
 
   depends_on "cmake" => :build
