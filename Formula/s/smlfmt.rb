@@ -1,12 +1,10 @@
 class Smlfmt < Formula
   desc "Custom parser and code formatter for Standard ML"
   homepage "https://github.com/shwestrick/smlfmt"
-  url "https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "6517b0186518308d26f388d882af3b6106103a3ca3f00a4974e54fb526225df5"
+  url "https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "9d26a87bfba7d49929edf3cbdc060e9a58cd5a5b1367456281aed2e3e267926a"
   license "MIT"
   head "https://github.com/shwestrick/smlfmt.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "90962a33b9f4c6ced5fe20c3f9d44e4a0757d028ed454cae1e47e6d9833830ad"
