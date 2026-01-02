@@ -1,8 +1,8 @@
 class Ktop < Formula
   desc "Top-like tool for your Kubernetes clusters"
   homepage "https://github.com/vladimirvivien/ktop"
-  url "https://github.com/vladimirvivien/ktop/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "205f022f7560bb4196e2045ba8834f35225773e9e8136b4b5c4e85b87b2371a6"
+  url "https://github.com/vladimirvivien/ktop/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "857bbe49ee0942e3050836b5fb44d41c97c44fca0aa27b3e2a0c7db381558e66"
   license "Apache-2.0"
   head "https://github.com/vladimirvivien/ktop.git", branch: "main"
 
