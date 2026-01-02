@@ -1,8 +1,8 @@
 class Taskflow < Formula
   desc "General-purpose Task-parallel Programming System using Modern C++"
   homepage "https://github.com/taskflow/taskflow"
-  url "https://github.com/taskflow/taskflow/archive/refs/tags/v3.11.0.tar.gz"
-  sha256 "5e45a7ee032cae136843c76824519acbc0306f02d682f7e69fb1d53f69173dcb"
+  url "https://github.com/taskflow/taskflow/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "0a9e0f700e7750834f717d7523660399ff7ec455e51000009b3e17923c26b80d"
   license "MIT"
   head "https://github.com/taskflow/taskflow.git", branch: "master"
 
