@@ -7,6 +7,15 @@ class Topydo < Formula
   sha256 "4e466c33934b4ffe48ee3c65347799276adc47b3010fb617bf8b8693473f8799"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b6969f8adb29ce8988ecebf3643dbf48cc01c4e6e979295f634803604e0613d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "301c37f5084e65866d3db3cf88697aa5d27019b16e2316f4a64f581cc9efb2b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9c7fff3dbca0f0e713440c448a38513146dd323a441fec8fd53de7061af0917"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1aa56eb1b5f125dfabda76cf2139dc13d54487ff78bb2d0bff4ab25cbb6f88a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7097c9179591dbbf690d067816c3afcff533c4e5ed72f8bb69254d07710436ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7097c9179591dbbf690d067816c3afcff533c4e5ed72f8bb69254d07710436ec"
+  end
+
   depends_on "python@3.14"
 
   pypi_packages package_name: "topydo[columns,prompt]"
