@@ -6,12 +6,12 @@ class Haiti < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fa443195d86019eb3dbf68c67289d5fcc9310844d968f16f8f064973942df8d9"
-    sha256 cellar: :any,                 arm64_sequoia: "def333e10a42ff0a31ff160cf9baeaec0f4d51c865595f126fac3535762fc229"
-    sha256 cellar: :any,                 arm64_sonoma:  "c448f3eada543dc9614cd076b2e26ff11f28afe2afcde76668ffb7e8ae5d0887"
-    sha256 cellar: :any,                 sonoma:        "9a8ddd511fc386df87826a4c665082cf9e93d8fe7c1fd85e790d5eee01600abf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a99cdc8ea6ccbfb5094d92a33343e386251c33150bbf23943bd2bf76bf711c57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373d6c82d524c8a543942e39fc466d61672457e5ec7a924927afa7bd3dfbb4d7"
+    sha256 cellar: :any,                 arm64_tahoe:   "ef09a5e3923e7e0ba00693183a5668851a36f8e47e768f13a5180132800568c9"
+    sha256 cellar: :any,                 arm64_sequoia: "c09ce65d5cd612629fe4ff0b7649fc42a72c0ac3d3b1e4a2941581a068d04551"
+    sha256 cellar: :any,                 arm64_sonoma:  "fae6b77a4120e87608d8f8b348b911909f6add74b33de49c5f0588e65579597d"
+    sha256 cellar: :any,                 sonoma:        "2da2d09fcb8c96f0c3d84a39a8fc828203e78f7481ae0d5b13ef6092fa90ffba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "067e1f33aede4a03ec15b5eed62e99079e842deca55926c36671efd0286c11fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca7559ce9ec6e944ce9516dfc68d0c9b19d01ad85b10604df164080ab280ba9a"
   end
 
   depends_on "rust" => :build # for commonmarker
