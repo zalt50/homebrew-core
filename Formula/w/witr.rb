@@ -1,8 +1,8 @@
 class Witr < Formula
   desc "Why is this running?"
   homepage "https://github.com/pranshuparmar/witr"
-  url "https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "af591d42098866d5407610ee7684aeac10aa08f617411820e738f7db00a794ae"
+  url "https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "a9092216c396292972d6f4d83b55f1b3688e6c3e07ed6251ba77adc4dc34c039"
   license "Apache-2.0"
 
   bottle do
@@ -17,12 +17,12 @@ class Witr < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"), "./cmd/witr"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.buildDate=#{time.iso8601}"), "./cmd/witr"
+    generate_completions_from_executable(bin/"witr", "completion")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/witr --version")
-    output = shell_output("#{bin}/witr --pid 99999999", 1)
-    assert_match "No matching process or service found", output
+    assert_match "Error: no process ancestry found", shell_output("#{bin}/witr --pid 99999999 2>&1", 1)
   end
 end
