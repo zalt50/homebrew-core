@@ -36,13 +36,25 @@ class UutilsFindutils < Formula
     system "cargo", "install", *std_cargo_args(root: libexec)
     mv libexec/"bin", libexec/"uubin"
     Dir.children(libexec/"uubin").each do |cmd|
-      bin.install_symlink libexec/"uubin"/cmd => "u#{cmd}" unless unwanted_bin_link? cmd
+      next if unwanted_bin_link? cmd
+
+      bin.install_symlink libexec/"uubin"/cmd => "uu-#{cmd}"
+
+      # Create a temporary compatibility executable for previous 'u' prefix.
+      # All users should get the warning in 0.9.0. Similar to brew's odeprecate
+      # timeframe, the removal can be done after 2 minor releases, i.e. 0.11.0.
+      odie "Remove compatibility exec scripts!" if build.stable? && version >= "0.11.0"
+      (bin/"u#{cmd}").write <<~SHELL
+        #!/bin/bash
+        echo "WARNING: u#{cmd} has been renamed to uu-#{cmd} and will be removed in 0.11.0" >&2
+        exec "#{bin}/uu-#{cmd}" "$@"
+      SHELL
     end
   end
 
   def caveats
     <<~EOS
-      Commands also provided by macOS have been installed with the prefix "u".
+      Commands have been installed with the prefix "uu-".
       If you need to use these commands with their normal names, you
       can add a "uubin" directory to your PATH from your bashrc like:
         PATH="#{opt_libexec}/uubin:$PATH"
@@ -53,7 +65,8 @@ class UutilsFindutils < Formula
     require "utils/linkage"
 
     touch "HOMEBREW"
-    assert_match "HOMEBREW", shell_output("#{bin}/ufind .")
+    assert_match "HOMEBREW", shell_output("#{bin}/ufind .") # TODO: remove in 0.11.0
+    assert_match "HOMEBREW", shell_output("#{bin}/uu-find .")
     assert_match "HOMEBREW", shell_output("#{opt_libexec}/uubin/find .")
 
     expected_linkage = {
