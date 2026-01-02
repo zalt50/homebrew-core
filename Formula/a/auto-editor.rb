@@ -1,8 +1,8 @@
 class AutoEditor < Formula
   desc "Efficient media analysis and rendering"
   homepage "https://auto-editor.com"
-  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.5.0.tar.gz"
-  sha256 "f4298cd4759de8da0e1123c058aa9785bee32f25f12e7b6f0616b2ccc95c841c"
+  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.6.0.tar.gz"
+  sha256 "fa212ea93f114b7dfe8b196b9c68055e8123cdeda296560500b9ad384e120dee"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
@@ -28,15 +28,7 @@ class AutoEditor < Formula
   depends_on "x264"
   depends_on "x265"
 
-  on_intel do
-    depends_on "nasm" => :build
-  end
-
   def install
-    # Install Nim dependencies
-    system "nimble", "install", "-y"
-
-    # Build auto-editor
     system "nimble", "make"
     bin.install "auto-editor"
   end
