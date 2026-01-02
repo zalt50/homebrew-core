@@ -6,8 +6,7 @@ class Latexdiff < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1a230eb09bffbf99ebf1b39acc145a728223d5c97a4ade526295743f02fa1a97"
+    sha256 cellar: :any_skip_relocation, all: "746b7460cf8014f4097fe356f29c89316814db4f3bc3ce2a638dca6c6e9fd0bd"
   end
 
   # osx default perl cause compilation error
