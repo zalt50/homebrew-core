@@ -1,20 +1,10 @@
 class Mkvtoolnix < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
+  url "https://mkvtoolnix.download/sources/mkvtoolnix-97.0.tar.xz"
+  mirror "https://fossies.org/linux/misc/mkvtoolnix-97.0.tar.xz"
+  sha256 "5d43bf66e011ff5af09516a2dba2fb717b1631791a3a7498fcf74849a86929d3"
   license "GPL-2.0-or-later"
-  revision 1
-
-  stable do
-    url "https://mkvtoolnix.download/sources/mkvtoolnix-96.0.tar.xz"
-    mirror "https://fossies.org/linux/misc/mkvtoolnix-96.0.tar.xz"
-    sha256 "509a1e3aca1f63fe5cc96b4c7272ba533dbcbb69c61d1c5114dccf610fd405cb"
-
-    # Backport fix for older Xcode
-    patch do
-      url "https://codeberg.org/mbunkus/mkvtoolnix/commit/a821117045d0328b1448ca225d0d5b9507aa00af.diff"
-      sha256 "4d537e37b1351ff23590199685dfc61c99844421629a9c572bb895edced1ac67"
-    end
-  end
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -67,8 +57,8 @@ class Mkvtoolnix < Formula
     # Remove bundled libraries
     rm_r(buildpath.glob("lib/*") - buildpath.glob("lib/{avilib,librmff}*"))
 
-    # Boost Math needs at least C++14, Qt needs at least C++17
-    ENV.append "CXXFLAGS", "-std=c++17"
+    # Configure script needs help with C++ standard in Boost Math
+    ENV.append "CXXFLAGS", "-std=c++20"
 
     features = %w[flac gmp libebml libmatroska libogg libvorbis]
     extra_includes = ""
