@@ -1,20 +1,10 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://wxmaxima-developers.github.io/wxmaxima/"
+  url "https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-26.01.0.tar.gz"
+  sha256 "1716c4f27636f909673f63ed0c7c30621683e35eb7bf05a5d5010fa67f0397f6"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
-
-  stable do
-    url "https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-25.04.0.tar.gz"
-    sha256 "ec0b3005c3663f1bb86b0cc5028c2ba121e1563e3d5b671afcb9774895f4191b"
-
-    # Backport fix for wxWidgets 3.3
-    patch do
-      url "https://github.com/wxMaxima-developers/wxmaxima/commit/0449b7e42809db16df87c3fbe95c37a756c04587.patch?full_index=1"
-      sha256 "9784a43c08ec0b57c6ba710943a0665bbcdfc16bd4ab59fb4dc7c26586291c34"
-    end
-  end
 
   livecheck do
     url :stable
@@ -59,8 +49,6 @@ class Wxmaxima < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
-
     # Disable CMake fixup_bundle to prevent copying dylibs
     inreplace "src/CMakeLists.txt", "fixup_bundle(", "# \\0"
 
