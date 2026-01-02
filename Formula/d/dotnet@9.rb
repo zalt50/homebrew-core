@@ -11,6 +11,14 @@ class DotnetAT9 < Formula
     regex(/^v?(9(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "a4746785b5f969bd7a8824efffbd32b08545650d7f12cb2cf314292dc85a0b26"
+    sha256 cellar: :any,                 arm64_sequoia: "a027d7eb2089f1c7736c83fad3b3f89dcaa885c0939713a0655ac67dc4005b8e"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b82449cbb7cae0cf24ab243dfc43f74fb0d90e923bfbbf974d4df8c4c37269f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "647ba2c7ec49b03a1ca226767f135482c6cd1a8ccdaef84e088cc36be52466cf"
+    sha256                               x86_64_linux:  "65971dc8d44c8d0d739b3349e69be6bf2e24aebd07be37b8645a177815f78f88"
+  end
+
   keg_only :versioned_formula
 
   # https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core#lifecycle
