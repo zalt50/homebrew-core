@@ -15,12 +15,12 @@ class Libadwaita < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a180fad9a4873bf8614a4d0cdfea759a31de1e07248d833435d3281065fedbbc"
-    sha256 arm64_sequoia: "dd0156e753ba7d982b369a016bf35eb4c8b4aac04764448395c4465d315f096f"
-    sha256 arm64_sonoma:  "3b5ba5a9be9f9da18b30e8b5fa71d90219ddc95f1ae417bf96133d46145b3023"
-    sha256 sonoma:        "dbd33e584299ee018f86891d4fcb134e15c4d312bd21e80d3ab7873f0d476ee8"
-    sha256 arm64_linux:   "d8d77fea00c37a0ff8d021218ac64d3c31b88492b884caa3f72acd6c9c63de71"
-    sha256 x86_64_linux:  "99d2aca5353bd886aa140199ea6d5cef879a4caedf12f4150b83570fcbd8847d"
+    sha256 arm64_tahoe:   "9191ac9e3becc4f3a4abb1b5ca57e2a301c19f51de8175e2279f7dc81f84f3d9"
+    sha256 arm64_sequoia: "f0b3bd127cdf46cb4934def2cfc2bf81b77e7a171fece0bf9850766019407f11"
+    sha256 arm64_sonoma:  "a23d17a10ecc6ab82aa4314dbdd9f049357eae1c389968191dd882121e07e9f7"
+    sha256 sonoma:        "1cc3d2f0e6b2d781c4b9303b6eb614529b7f2397728f0567e08d78a3738ea862"
+    sha256 arm64_linux:   "515e6d779712f29f1df2de3169012a085b456190bbe88aa829f371dc8d2aaeeb"
+    sha256 x86_64_linux:  "f3b8b89abe7fb4b80c48f314c28ce40b6e21472e6dfc1073a9d8f225d49aea4c"
   end
 
   depends_on "gettext" => :build
