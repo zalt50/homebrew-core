@@ -1,8 +1,8 @@
 class Gotun < Formula
   desc "Lightweight HTTP proxy over SSH"
   homepage "https://github.com/Sesame2/gotun"
-  url "https://github.com/Sesame2/gotun/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "068bc457d87bb389fe107c8bcf5c132ba372b4700c79d4978e9de6bb8e3d0620"
+  url "https://github.com/Sesame2/gotun/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "c0521f2e4df9bd8bae9afbca4bd4ab48bc1b3b24ef06ec17301dcfa1dfef1f93"
   license "MIT"
 
   bottle do
