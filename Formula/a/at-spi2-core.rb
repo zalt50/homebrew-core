@@ -1,8 +1,8 @@
 class AtSpi2Core < Formula
   desc "Protocol definitions and daemon for D-Bus at-spi"
   homepage "https://www.freedesktop.org/wiki/Accessibility/AT-SPI2/"
-  url "https://download.gnome.org/sources/at-spi2-core/2.58/at-spi2-core-2.58.2.tar.xz"
-  sha256 "a2823b962ed16cdd5cb1fc5365029fd218394d852acd4098b321854bd6692f6e"
+  url "https://download.gnome.org/sources/at-spi2-core/2.58/at-spi2-core-2.58.3.tar.xz"
+  sha256 "b0fabea6c9742eda8c9c675f9b8c1d1babba1da82da03ea1103710233717c1b0"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -34,12 +34,6 @@ class AtSpi2Core < Formula
   end
 
   def install
-    if OS.linux?
-      # Work around brew not adding dependencies of build dependencies to PKG_CONFIG_PATH
-      icu4c_dep = Formula["libxml2"].deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
-      ENV.append_path "PKG_CONFIG_PATH", icu4c_dep.to_formula.opt_lib/"pkgconfig"
-    end
-
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
