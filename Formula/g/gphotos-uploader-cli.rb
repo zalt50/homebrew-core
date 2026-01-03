@@ -24,6 +24,7 @@ class GphotosUploaderCli < Formula
       -X github.com/gphotosuploader/gphotos-uploader-cli/version.versionString=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
+    generate_completions_from_executable(bin/"gphotos-uploader-cli", shell_parameter_format: :cobra)
   end
 
   test do
