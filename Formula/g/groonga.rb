@@ -1,9 +1,24 @@
 class Groonga < Formula
   desc "Fulltext search engine and column store"
   homepage "https://groonga.org/"
-  url "https://github.com/groonga/groonga/releases/download/v15.2.1/groonga-15.2.1.tar.gz"
-  sha256 "77d9aa56e33c0986bbec6ddd2ee897aba6c347cff45fce988f2708145e0c9d77"
   license "LGPL-2.1-or-later"
+  head "https://github.com/groonga/groonga.git", branch: "main"
+
+  stable do
+    url "https://github.com/groonga/groonga/releases/download/v15.2.1/groonga-15.2.1.tar.gz"
+    sha256 "77d9aa56e33c0986bbec6ddd2ee897aba6c347cff45fce988f2708145e0c9d77"
+
+    # Workaround for missing CMake file. Remove when fixed in release.
+    # PR ref: https://github.com/groonga/groonga/pull/2709
+    resource "FindGroongalibedit.cmake" do
+      url "https://raw.githubusercontent.com/groonga/groonga/refs/tags/v15.2.1/cmake/FindGroongalibedit.cmake"
+      sha256 "26319863f76345bff0fbb4cfde5c1c43430a18b1a36cc58bfe7d26d2910e8d34"
+
+      livecheck do
+        formula :parent
+      end
+    end
+  end
 
   livecheck do
     url :homepage
@@ -19,26 +34,18 @@ class Groonga < Formula
     sha256 x86_64_linux:  "c35747420293fa0c96f9a5e668bc156312d20259c7030cf67f4b0c9edec3306b"
   end
 
-  head do
-    url "https://github.com/groonga/groonga.git", branch: "main"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "lz4"
   depends_on "mecab"
-  depends_on "mecab-ipadic"
+  depends_on "mecab-ipadic" => :no_linkage
   depends_on "msgpack"
-  depends_on "openssl@3"
+  depends_on "onigmo"
+  depends_on "simdjson"
+  depends_on "zstd"
 
-  uses_from_macos "libxcrypt"
+  uses_from_macos "libedit"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "glib"
-  end
 
   link_overwrite "lib/groonga/plugins/normalizers/"
   link_overwrite "share/doc/groonga-normalizer-mysql/"
@@ -50,27 +57,50 @@ class Groonga < Formula
   end
 
   def install
-    args = %w[
-      --disable-zeromq
-      --disable-apache-arrow
-      --with-luajit=no
-      --with-ssl
-      --with-zlib
-      --without-libstemmer
-      --with-mecab
-    ]
-
-    system "./autogen.sh" if build.head?
-
-    mkdir "builddir" do
-      system "../configure", *args, *std_configure_args
-      system "make", "install"
+    if build.stable?
+      odie "Remove FindGroongalibedit.cmake resource!" if (buildpath/"cmake/FindGroongalibedit.cmake").exist?
+      resource("FindGroongalibedit.cmake").stage(buildpath/"cmake")
     end
 
+    # Removed bundled libraries but keep files needed by build scripts even when unused
+    rm_r(Dir["vendor/*"] - ["vendor/CMakeLists.txt", "vendor/mecab", "vendor/mruby", "vendor/plugins"])
+
+    # Explicitly disable features to avoid opportunistic linkage from superenv CMAKE_PREFIX_PATH.
+    # Also set FETCHCONTENT_FULLY_DISCONNECTED=ON to avoid fallback to fetching bundled copies.
+    args = %W[
+      -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib/"groonga/plugins/functions")}
+      -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
+      -DFETCHCONTENT_FULLY_DISCONNECTED=ON
+      -DGRN_WITH_BASE64=no
+      -DGRN_WITH_BUNDLED_ONIGMO=OFF
+      -DGRN_WITH_CURL=no
+      -DGRN_WITH_FAISS=no
+      -DGRN_WITH_H3=no
+      -DGRN_WITH_KYTEA=no
+      -DGRN_WITH_LIBEDIT=system
+      -DGRN_WITH_LLAMA_CPP=no
+      -DGRN_WITH_LIBSTEMMER=no
+      -DGRN_WITH_LZ4=system
+      -DGRN_WITH_MECAB=yes
+      -DGRN_WITH_MESSAGE_PACK=system
+      -DGRN_WITH_SIMDJSON=system
+      -DGRN_WITH_XSIMD=no
+      -DGRN_WITH_XXHASH=no
+      -DGRN_WITH_ZEROMQ=no
+      -DGRN_WITH_ZLIB=yes
+      -DGRN_WITH_ZSTD=system
+      -DGroongalz4_FIND_QUIETLY=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
+
     resource("groonga-normalizer-mysql").stage do
-      ENV.prepend_path "PATH", bin
-      ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
-      system "cmake", "-S", ".", "-B", "_build", *std_cmake_args
+      args = ["-DCMAKE_INSTALL_RPATH=#{rpath(source: lib/"groonga/plugins/normalizers")}"]
+
+      system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
       system "cmake", "--build", "_build"
       system "cmake", "--install", "_build"
     end
