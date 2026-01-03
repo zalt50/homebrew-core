@@ -1,8 +1,8 @@
 class Ocicl < Formula
   desc "OCI-based ASDF system distribution and management tool for Common Lisp"
   homepage "https://github.com/ocicl/ocicl"
-  url "https://github.com/ocicl/ocicl/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "5f3d1292c20b0b43f8230cde9646ee580c4a842b512a9f959508b38d5b2a297f"
+  url "https://github.com/ocicl/ocicl/archive/refs/tags/v2.14.1.tar.gz"
+  sha256 "9ce6e37fc361b1c63386171981f2c899366637263ab7cb6a7146852fdc92290c"
   license "MIT"
 
   bottle do
