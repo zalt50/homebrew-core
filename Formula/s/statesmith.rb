@@ -1,6 +1,7 @@
 class Statesmith < Formula
   desc "State machine code generation tool suitable for bare metal, embedded and more"
   homepage "https://github.com/StateSmith/StateSmith"
+  # Try upgrade to latest `dotnet` on version bump
   url "https://github.com/StateSmith/StateSmith/archive/refs/tags/cli-v0.19.0.tar.gz"
   sha256 "62eb44d15a978c82f1ad8a54506f750b76c3dd30ebd1087384366a939a118749"
   license "Apache-2.0"
@@ -14,10 +15,10 @@ class Statesmith < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fb6e2df6189fddea319ff63410c71874a3f599fb06e0cac9b42247ff520409d"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@9"
 
   def install
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     args = %W[
       -c Release
       --framework net#{dotnet.version.major_minor}
