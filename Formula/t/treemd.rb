@@ -1,8 +1,8 @@
 class Treemd < Formula
   desc "TUI and CLI dual pane markdown viewer"
   homepage "https://github.com/epistates/treemd"
-  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.5.4.tar.gz"
-  sha256 "4f559a8d4ee9abc306db3bfa0e3ba57aff88784f107113d4ba6188e6339f7941"
+  url "https://github.com/Epistates/treemd/archive/refs/tags/v0.5.5.tar.gz"
+  sha256 "244b62bf235b2a75a166b9f0f11c53e655a54018c24fd5efded70a936dce58b8"
   license "MIT"
   head "https://github.com/epistates/treemd.git", branch: "main"
 
@@ -35,7 +35,7 @@ class Treemd < Formula
         r, _w, pid = PTY.spawn("#{bin}/treemd #{testpath}/test.md > #{output_log}")
         r.winsize = [80, 43]
       end
-      sleep 1
+      sleep 3
       assert_match "treemd - test.md - 1 headings", output_log.read
     ensure
       Process.kill("TERM", pid)
