@@ -6,14 +6,12 @@ class Tldx < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76759fb677db0005af23b2da332e69128e055472d504ba29b1223b9abd72ce1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84bddde265a819e8ca9466fa889b68ce364cc362c83d3c3f18e5491025bca97f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84bddde265a819e8ca9466fa889b68ce364cc362c83d3c3f18e5491025bca97f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "84bddde265a819e8ca9466fa889b68ce364cc362c83d3c3f18e5491025bca97f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a1dbaa3bf0602624c72c21bbf828f50717d921de9891ffee378696a60ebe533"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a1dbaa3bf0602624c72c21bbf828f50717d921de9891ffee378696a60ebe533"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "def1739918a5766e8ee7b466e9b84b6b6abdd9c93b7561da1d0d8e817a924768"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc23b2e244244574127afec5b6194eb2d2ed206dd0e3fe42fb5f054154a9096f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c9d62b0c89a31f5a17ac6f6ce36c7c74fce59eb5e3819d6f792eaf768e3d826"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c9d62b0c89a31f5a17ac6f6ce36c7c74fce59eb5e3819d6f792eaf768e3d826"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c9d62b0c89a31f5a17ac6f6ce36c7c74fce59eb5e3819d6f792eaf768e3d826"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c42432ee30a7319e322d1ebb760961dee55f35e8257f9ba5bc483eff8f1c2361"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e17c2a89ba7251add592ea67332c33c4d1e786ba46ec90a8551aa3a0584c48d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2790ada80cef3c9b7b3d04c5d6395f4de6cb85233e340510dcc058f5ae4faeb8"
   end
 
   depends_on "go" => :build
