@@ -1,8 +1,8 @@
 class Gitbackup < Formula
   desc "Tool to backup your Bitbucket, GitHub and GitLab repositories"
   homepage "https://github.com/amitsaha/gitbackup"
-  url "https://github.com/amitsaha/gitbackup/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "dc25680b498995ea4c52b1cb2c756aee200f163fc7dbfa695f0d0fd4cc10c28c"
+  url "https://github.com/amitsaha/gitbackup/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "cd3d042e3aafe76bba7e1d47ee7de89b5b9c33132d352100016daedcbb367bce"
   license "MIT"
   head "https://github.com/amitsaha/gitbackup.git", branch: "master"
 
@@ -29,6 +29,6 @@ class Gitbackup < Formula
   end
 
   test do
-    assert_match "Please specify the git service type", shell_output("#{bin}/gitbackup 2>&1", 1)
+    assert_match "please specify the git service type", shell_output("#{bin}/gitbackup 2>&1", 1)
   end
 end
