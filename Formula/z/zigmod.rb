@@ -19,8 +19,11 @@ class Zigmod < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "404076d214fae1b64dcc4f17ec37606fc303fa18f475342933cfd93331817323"
   end
 
+  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
+  deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
+
   depends_on "pkgconf" => :build
-  depends_on "zig@0.14"
+  depends_on "zig@0.14" # https://github.com/nektro/zigmod/issues/113
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
