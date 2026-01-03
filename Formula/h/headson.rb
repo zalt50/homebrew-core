@@ -6,6 +6,15 @@ class Headson < Formula
   license "MIT"
   head "https://github.com/kantord/headson.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "184287ab7881ff0692b672749daa111c620c00df5ffdb0a229b15d9a26eec2cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cea00a30795a3863dfd0d081f8fc6cef9534fb2794025236c37c51191a487d75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e29f2f786e0016d5c9e6331285479e0af6682b6437ca6f3d2bcaf675266cf24"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4adeda4f452fe48d4aaed3c11dc7971f30ffd90d12cd505a677ac1d919dd111"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59e20ee42eef6939499c83501c6e410f6c2096eae76b5fac6013d408a47d091e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d459753c0e6a219def36425a06c50e2d604c4f4c585cfb0e9fba270dd96cad84"
+  end
+
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
