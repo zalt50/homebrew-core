@@ -1,9 +1,11 @@
 class TechnitiumLibrary < Formula
   desc "Library for technitium .net based applications"
   homepage "https://technitium.com"
+  # Try upgrade to latest `dotnet` on version bump
   url "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v14.3.0.tar.gz"
   sha256 "fd0b37e7906f95679f279c8704e5e197d853771f24c169f4702562a7f26ab254"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0484ef1f628ac0f09ba258021f98062f8b61af5a052d1e952e193acf019d89b5"
@@ -13,12 +15,12 @@ class TechnitiumLibrary < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "18d6fcf5085f34372a85bc48cd44ce62e384f68b40a9f699e1f811814fc5c43f"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@9"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
 
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -33,7 +35,7 @@ class TechnitiumLibrary < Formula
   end
 
   test do
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     target_framework = "net#{dotnet.version.major_minor}"
 
     (testpath/"test.cs").write <<~CSHARP
