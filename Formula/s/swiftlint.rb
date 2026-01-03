@@ -2,10 +2,9 @@ class Swiftlint < Formula
   desc "Tool to enforce Swift style and conventions"
   homepage "https://github.com/realm/SwiftLint"
   url "https://github.com/realm/SwiftLint.git",
-      tag:      "0.62.2",
-      revision: "da9d742874d88f6d5d0f7b315d1fcf12655f2311"
+      tag:      "0.63.0",
+      revision: "e294d77dd198133c5a5cdd74e7715aa3b86dda2f"
   license "MIT"
-  revision 1
   head "https://github.com/realm/SwiftLint.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
