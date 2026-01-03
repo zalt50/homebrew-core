@@ -16,7 +16,8 @@ class Meson < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cfaeb1188e74248f4a38e85c4b515a28371f59bca5ca830a4185523724f804af"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1d795f4fb3d1f6f8046e95d58f8f47d5c95e15e4299a1789cd91677a9df45445"
   end
 
   depends_on "ninja"
