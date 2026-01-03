@@ -1,17 +1,9 @@
 class Gedit < Formula
   desc "GNOME text editor"
   homepage "https://gedit-technology.github.io/apps/gedit/"
-  url "https://download.gnome.org/sources/gedit/48/gedit-48.1.tar.xz"
-  sha256 "971e7ac26bc0a3a3ded27a7563772415687db0e5a092b4547e5b10a55858b30a"
+  url "https://gitlab.gnome.org/World/gedit/gedit/-/archive/49.0/gedit-49.0.tar.bz2"
+  sha256 "f3437a675790c8593d511355252d751ab94328357bc6846d1106bf288161a5ed"
   license "GPL-2.0-or-later"
-  revision 1
-
-  # gedit doesn't seem to follow the typical GNOME version scheme, so we
-  # provide a regex to disable the `Gnome` strategy's version filtering.
-  livecheck do
-    url :stable
-    regex(/gedit[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   no_autobump! because: :requires_manual_review
 
@@ -55,9 +47,17 @@ class Gedit < Formula
     depends_on "gtk-mac-integration"
   end
 
+  resource "libgd" do
+    url "https://gitlab.gnome.org/GNOME/libgd.git",
+      revision: "3cccf99234288a6121b3945a25cd4ec3b7445c74"
+  end
+
   def install
+    resource("libgd").stage buildpath/"subprojects/libgd"
+
     ENV["DESTDIR"] = "/"
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/gedit" if OS.linux?
 
     system "meson", "setup", "build", *std_meson_args
