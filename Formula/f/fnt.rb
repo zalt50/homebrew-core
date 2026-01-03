@@ -6,8 +6,7 @@ class Fnt < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "5cf790744e15280ed2d5fa7114f0724e1a2ca96e3014ccecb8012c1ac1df964d"
+    sha256 cellar: :any_skip_relocation, all: "739eb3bc354e7cb07938c6e58079a7a56b143feacd8eecba4b841d6ac2b34ebb"
   end
 
   depends_on "chafa"
