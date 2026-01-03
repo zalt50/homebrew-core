@@ -19,6 +19,7 @@ class Gotpm < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gotpm"
+    generate_completions_from_executable(bin/"gotpm", shell_parameter_format: :cobra)
   end
 
   test do
