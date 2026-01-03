@@ -1,9 +1,11 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https://technitium.com/dns/"
+  # Try upgrade to latest `dotnet` on version bump
   url "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v14.3.0.tar.gz"
   sha256 "5f71c0661d22a5dd75374a9888bbd67469d1ba0b6b9947df770ec4833b7f36c3"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44a0aacc0e40a4ded693196af29585b824d50a89eab604596e6baf39d75b618b"
@@ -13,7 +15,7 @@ class TechnitiumDns < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75da168d8b3f17970b6c90ffd0853cbc5a704bdfeff6a9240a3e398c53ddf94d"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@9"
   depends_on "libmsquic"
   depends_on "technitium-library"
 
@@ -24,7 +26,7 @@ class TechnitiumDns < Formula
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
 
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -56,7 +58,7 @@ class TechnitiumDns < Formula
   end
 
   test do
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     tmpdir = Pathname.new(Dir.mktmpdir)
     # Start the DNS server
     require "pty"
