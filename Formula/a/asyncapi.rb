@@ -1,8 +1,8 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-4.1.1.tgz"
-  sha256 "2f4d12597d6fc30615b6dd27fdac2c63222726005d50f62300d1f6a257f6cf61"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-5.0.1.tgz"
+  sha256 "0de5f31c69e8df147e4ff5cecdda6abeabb25c57533f7387c494e71b60a60ff6"
   license "Apache-2.0"
   version_scheme 1
 
@@ -19,6 +19,9 @@ class Asyncapi < Formula
   depends_on "node"
 
   def install
+    # Set the log directory to var/log/asyncapi
+    inreplace "lib/utils/logger.js", /const logDir = .*;/, "const logDir = '#{var}/log/asyncapi';"
+
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
@@ -28,6 +31,8 @@ class Asyncapi < Formula
 
     # Replace universal binaries with their native slices
     deuniversalize_machos node_modules/"fsevents/fsevents.node"
+
+    (var/"log/asyncapi").mkpath
   end
 
   test do
