@@ -30,6 +30,7 @@ class AutoEditor < Formula
 
   def install
     system "nimble", "make"
+    generate_completions_from_executable("nimble", "zshcomplete", "--silent", shells: [:zsh])
     bin.install "auto-editor"
   end
 
