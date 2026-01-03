@@ -28,9 +28,24 @@ class Openbao < Formula
   conflicts_with "bao", because: "both install `bao` binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["node@22"].opt_libexec/"bin" # for npm
-    system "make", "bootstrap", "static-dist", "dev-ui"
-    bin.install "bin/bao"
+    # Build ui assets
+    cd "ui" do
+      ENV.prepend_path "PATH", Formula["node@22"].opt_libexec/"bin" # for npm
+      system "yarn", "install", "--immutable"
+      system "yarn", "build"
+    end
+
+    # Bootstrap go modules
+    system "go", "generate", "-tags", "tools", "tools/tools.go"
+
+    ldflags = %W[
+      -s -w
+      -X github.com/openbao/openbao/version.fullVersion=#{version}
+      -X github.com/openbao/openbao/version.GitCommit=#{Utils.git_head}
+      -X github.com/openbao/openbao/version.BuildDate=#{time.iso8601}
+    ]
+    tags = %w[testonly ui]
+    system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"bao")
   end
 
   service do
@@ -49,6 +64,7 @@ class Openbao < Formula
     pid = spawn bin/"bao", "server", "-dev"
     sleep 5
     system bin/"bao", "status"
+
     # Check the ui was properly embedded
     assert_match "User-agent", shell_output("curl #{addr}/robots.txt")
   ensure
