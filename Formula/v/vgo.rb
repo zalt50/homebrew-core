@@ -1,8 +1,8 @@
 class Vgo < Formula
   desc "Project scaffolder for Go, written in Go"
   homepage "https://github.com/vg006/vgo"
-  url "https://github.com/vg006/vgo/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "3a2fee499c91225f2abe1acdb8a640560cda6f4364f4b1aff04756d8ada6282d"
+  url "https://github.com/vg006/vgo/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "262ab18eb8e2f68031e17727c1c8b0e01e61c385dcd7addbd2c1ae86ecd312b4"
   license "MIT"
   head "https://github.com/vg006/vgo.git", branch: "main"
 
