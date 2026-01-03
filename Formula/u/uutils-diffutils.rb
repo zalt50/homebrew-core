@@ -7,16 +7,12 @@ class UutilsDiffutils < Formula
   head "https://github.com/uutils/diffutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1f477add026e8b2295da234cfc09ec20062d59156b7a96dcde891ed18fe9eb5e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5b9c46a4be56b29642e8ea525e0e4f805fbb17285bb255359f20b373fb8ad189"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d016794b8782c3113ba872639c5969b51f49b58e2e39956ebdca05b62c5662cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acdb4a2f8fbe583ed632f18cac365ca767af2e86739dd636e77ad8bd912e0d1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bca2a21c5c80ada29af665c945506e8f592bdaac961bd6ed6fb5eb8a498e05d5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f6c35358ce672179dfcca353ac742008c4a674f40a6ac414f87250279ccbed1b"
-    sha256 cellar: :any_skip_relocation, ventura:        "164477ab12dacdd32526a9fab350043799be6d63a0341995e86d1f170d112389"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc5c26ab72d931c1a0c4f6f6c40ccf9986d4ce96b43b5e9471444d2e4351b1d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "cbffc8e98550a7bfbacb94a2294de960775adae4472b69e3c0f57c942098cf67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e18f180be6675b73db0198972f114cb11af7b36a5f8b99c005b5447d42c7415"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3335444221ff7d6756894ed48088e1a5b1c702699bb903f6631b8141ca384618"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16b1308ebadbc4934d36a3b2a1a4394abc1534aefa2d7255a18d85d9e6bd7cdd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a9e4412033cc45d68bd1757e7349199c58c91b585c272386321a475ea5fc0d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d75c01d3d68f9fca442a8586c12d20928d5c7f04996ac3f1d1f23206a746d62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c96ae075a0ecf59313598b7c69f22cc41c3dbfd66b43d76c0813c35eb0a01d1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d1e9f3d5321efbd029288b90b287d8321ffc29e8dde1dbb203ae8a67db56bbf"
   end
 
   depends_on "rust" => :build
