@@ -3,8 +3,8 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https://badkeys.info"
-  url "https://files.pythonhosted.org/packages/11/5b/2a1400df2f62c3f473d46dd8ef8f7591a9a052b7f73b364d71f88bc7ae95/badkeys-0.0.15.tar.gz"
-  sha256 "620b07053f1bff5041201923187c839454332ee474dcd793b4ce6c90276ffd6b"
+  url "https://files.pythonhosted.org/packages/57/7d/f74cca4803f32e3088ae24e5186693facff1fb9c9e3f81497c4fbde63591/badkeys-0.0.16.tar.gz"
+  sha256 "c9d292ea1c78f6076662b923d854620f08dce46df1d4c162185625c7bfe58030"
   license "MIT"
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
@@ -26,8 +26,8 @@ class Badkeys < Formula
   pypi_packages exclude_packages: "cryptography"
 
   resource "gmpy2" do
-    url "https://files.pythonhosted.org/packages/07/bd/c6c154ce734a3e6187871b323297d8e5f3bdf9feaafc5212381538bc19e4/gmpy2-2.2.1.tar.gz"
-    sha256 "e83e07567441b78cb87544910cb3cc4fe94e7da987e93ef7622e76fb96650432"
+    url "https://files.pythonhosted.org/packages/fa/58/aff69026cd43a284b979d6be8104a82bd2378ca8f1aaa036508dbee7f1d9/gmpy2-2.2.2.tar.gz"
+    sha256 "d9b8c81e0f5e1a3cabf1ea8d154b29b5ef6e33b8f4e4c37b3da957b2dd6a3fa8"
   end
 
   def install
