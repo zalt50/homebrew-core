@@ -23,12 +23,12 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "77c66be0dc07971d34d302dd41b3d6d71b23cd5c23ddbf6ee7d19ebce56e3587"
-    sha256 arm64_sequoia: "b40ba53ca8a546c5f09dc428d8cfcd1db52872fcaade464ff7c0c11826a20600"
-    sha256 arm64_sonoma:  "72eb63442dae08eaedecbff5d3e9b39b77ee90ece7c33469e761804d5da6064b"
-    sha256 sonoma:        "805ee5e6b9f2e56a620456a276019049d5c6632db1fb8fbfb893145f1156828a"
-    sha256 arm64_linux:   "e8433ac6b9d66dbb01eec9d4161b17eb91e86b9342c29944e8d91aab74b15e43"
-    sha256 x86_64_linux:  "6e85d605250fbba1014bc7abc4b23589c6a3064b75f1b15a1c6e9212378f9d8d"
+    sha256 arm64_tahoe:   "1e8c2311fa4bbf564a4568bd954da27c34ac24f7df97d4bf31fbb84be7df21de"
+    sha256 arm64_sequoia: "c18fa9478ef8cd0097cacc7b044d543dafac4955b60f2cff62ee0fb9eafef918"
+    sha256 arm64_sonoma:  "0bb6bc7722070ad666307d5cc730876a74f665003497373278e025b2f18936db"
+    sha256 sonoma:        "1640498a328ef8cd7fab676126bfe7ebb864295e3b9cf40545f44a53171ea1e9"
+    sha256 arm64_linux:   "835404f6e9e6aa909e4d9080614e10fa0582a479ca1a45ad5aa744e67505aff9"
+    sha256 x86_64_linux:  "b8d639eb0fb3c53c3f7224da90becdccfefa12e759b248feb60e4807b196f752"
   end
 
   head do
