@@ -1,11 +1,9 @@
 class Pstoedit < Formula
   desc "Convert PostScript and PDF files to editable vector graphics"
   homepage "http://www.pstoedit.net/"
-  url "https://downloads.sourceforge.net/project/pstoedit/pstoedit/4.02/pstoedit-4.02.tar.gz"
-  sha256 "5588b432d2c6b2ad9828b44915ea5813ff9a3a3312a41fa0de4c38ddac9df72f"
+  url "https://github.com/woglu/pstoedit/archive/refs/tags/v4.3.tar.gz"
+  sha256 "36dfdc79c750930dd57e2c4a4dee2a6ab1a1fe65cd8fc4dc047dbfb6f2cfa15b"
   license "GPL-2.0-or-later"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "e773007c11d92ed03d522da9acddabe00010345187e10dcf2b8921bdcac62cb4"
@@ -18,19 +16,26 @@ class Pstoedit < Formula
     sha256 x86_64_linux:  "c2c8d0315852f2dca193e34433526f2635f9a8b3b6fd02ccca85646f92cbf56a"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
+
   depends_on "gd"
   depends_on "ghostscript"
   depends_on "imagemagick"
   depends_on "plotutils"
 
   def install
-    # Avoid Linux libc-specific behavior when building on macOS
-    # Notified author about the issue via email
-    inreplace "src/pstoedit.cpp", "#ifndef _MSC_VER\n", "#if !defined(_MSC_VER) && !defined(__APPLE__)\n"
+    # Workaround for windows only header `io.h`
+    inreplace "src/drvsvg.cpp", "#include <io.h>", "#include <unistd.h>\n#include <fcntl.h>"
 
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--enable-docs=no", *std_configure_args
+
+    # The GitHub release tarball does not ship the generated manpage (pstoedit.1),
+    # so building the doc/ subdir fails. Build/install only src/.
+    system "make", "-C", "src", "install"
   end
 
   test do
