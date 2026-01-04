@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/95/d5/4b7d5cbc45c82fe0ad6763463c25fc0f2773307ae980fb3d78156094c963/kimi_cli-0.70.tar.gz"
-  sha256 "67c8b0f434a55fa5f5f7abe85a72ee55c40678c357240630f070e6811228a9ff"
+  url "https://files.pythonhosted.org/packages/7f/ba/453d31765ac4160269101c7875f73007bc54a3f8721008c62915ef3bb194/kimi_cli-0.71.tar.gz"
+  sha256 "60bebdbb649671fedf86eeef78227fcb35ac771dd40c359edd4c215fa1a4ae12"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -530,7 +530,7 @@ class KimiCli < Formula
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     # Turn on shell completions option
-    inreplace "src/kimi_cli/cli.py", "add_completion=False", "add_completion=True"
+    inreplace "src/kimi_cli/cli/__init__.py", "add_completion=False", "add_completion=True"
 
     virtualenv_install_with_resources
 
