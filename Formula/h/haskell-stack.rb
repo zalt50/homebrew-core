@@ -1,14 +1,10 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
+  url "https://github.com/commercialhaskell/stack/archive/refs/tags/v3.9.1.tar.gz"
+  sha256 "9e3a40df6bcf3ca012d5b924eaf3b5b24563bfe07a6b4ed20098b73b15870c54"
   license "BSD-3-Clause"
-
-  stable do
-    url "https://github.com/commercialhaskell/stack/archive/refs/tags/v3.7.1.tar.gz"
-    sha256 "e2ce0d053566634a426ba1916592dfcefe48bdebbfe6a0da07e23a79c0ed7759"
-
-    depends_on "ghc@9.8" => :build
-  end
+  head "https://github.com/commercialhaskell/stack.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,14 +22,11 @@ class HaskellStack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8342bcb2b1b190c7f4278e29b2e91301024dbe884da0d865b756dc5ddd9b8f6e"
   end
 
-  head do
-    url "https://github.com/commercialhaskell/stack.git", branch: "master"
-
-    depends_on "ghc" => :build
-  end
-
   depends_on "cabal-install" => :build
+  depends_on "ghc" => :build
+  depends_on "gmp"
 
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   def install
