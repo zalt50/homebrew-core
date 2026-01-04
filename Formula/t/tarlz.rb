@@ -12,14 +12,12 @@ class Tarlz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75626336deac9be501e32bfe2f05fc391b56ef668cc6674da26a0dfdcca6ed88"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6ad4e0ffe9444a31b9dd00c618834f3929a075849575310215035d689fbac9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93ed3e0ca784a60679dec53ce55dc8948b81bb677fe5cd91d7f7847dc602577f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe03db2f1b10579d8ff7bbc962ab84351ea9299d9b19ae65550c9fe799fca8f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8dc7b46bdef760864e10f7922512fe8b4922cb196443488355f2fb1be31b6304"
-    sha256 cellar: :any_skip_relocation, ventura:       "8bc7f3fcd10fafbd3f675688a34db7590539b7ea40f51202febedbb253e1ed7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c6814a91403d1f9b976d9b803497b997fdb857aa2f25a4682d5a231b4353b3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a7dead1614f09e2a87c8f2cfd49baa970780b82b228f07bfd9dffe45ed84ef7"
+    sha256 cellar: :any,                 arm64_tahoe:   "335d682a3b430cba57a287119c7e87b46f1c90d6a50bc426ea6312a33aaaafc1"
+    sha256 cellar: :any,                 arm64_sequoia: "1f521f67485ce19c2224ce90ddc08c1a21d12c1bb0f90b0e298ea0faa832f544"
+    sha256 cellar: :any,                 arm64_sonoma:  "193f7909ef30f70836db95c0f28593e2f4154cf90a8addebffcefec1bec4137e"
+    sha256 cellar: :any,                 sonoma:        "d45112e00709bb96c1a60b4ca33f789a5f0e1ae6cf26d9b356173a8dea5270fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "762ba14cdcc171ec8f7e6884f7fe4ba7d21e916d0ed95cfd6cac379c9850b200"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e55b50e47918fb42455d602c9c900d851c7ff4875cb8fdfa06e60f46ed25b98a"
   end
 
   depends_on "lzlib"
