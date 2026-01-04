@@ -40,24 +40,18 @@ class Rqlite < Formula
 
   test do
     port = free_port
-    fork do
-      exec bin/"rqlited", "-http-addr", "localhost:#{port}",
-                          "-raft-addr", "localhost:#{free_port}",
-                          testpath
-    end
-    sleep 5
-
-    (testpath/"test.sql").write <<~SQL
+    test_sql = <<~SQL
       CREATE TABLE foo (id INTEGER NOT NULL PRIMARY KEY, name TEXT)
       .schema
       quit
     SQL
-    output = shell_output("#{bin}/rqlite -p #{port} < test.sql")
-    assert_match "foo", output
 
-    output = shell_output("#{bin}/rqbench -a localhost:#{port} 'SELECT 1'")
-    assert_match "Statements/sec", output
-
+    spawn bin/"rqlited", "-http-addr", "localhost:#{port}",
+                         "-raft-addr", "localhost:#{free_port}",
+                         testpath
+    sleep 5
+    assert_match "foo", pipe_output("#{bin}/rqlite -p #{port}", test_sql, 0)
+    assert_match "Statements/sec", shell_output("#{bin}/rqbench -a localhost:#{port} 'SELECT 1'")
     assert_match "Version v#{version}", shell_output("#{bin}/rqlite -v")
   end
 end
