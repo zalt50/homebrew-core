@@ -1,8 +1,8 @@
 class Privoxy < Formula
   desc "Advanced filtering web proxy"
   homepage "https://www.privoxy.org/"
-  url "https://downloads.sourceforge.net/project/ijbswa/Sources/4.0.0%20%28stable%29/privoxy-4.0.0-stable-src.tar.gz"
-  sha256 "c08e2ba0049307017bf9d8a63dd2a0dfb96aa0cdeb34ae007776e63eba62a26f"
+  url "https://downloads.sourceforge.net/project/ijbswa/Sources/4.1.0%20%28stable%29/privoxy-4.1.0-stable-src.tar.gz"
+  sha256 "23e4686e5848c74cb680c09c2811f0357739ecfe641f9c4072ee42399092c97b"
   license "GPL-2.0-or-later"
 
   livecheck do
