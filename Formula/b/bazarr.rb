@@ -3,10 +3,9 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://github.com/morpheus65535/bazarr/releases/download/v1.5.2/bazarr.zip"
-  sha256 "63519d9855e5b84c947b18d72fa36dfa9341a040879d1079bfde2fabfe8ab30e"
+  url "https://github.com/morpheus65535/bazarr/releases/download/v1.5.4/bazarr.zip"
+  sha256 "cad2afdf10e3f654cd4e95013193edb91bdc31885a3405348253f3339ebd1dd6"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
@@ -115,7 +114,7 @@ class Bazarr < Formula
       Timeout.timeout(45) do
         stderr.each do |line|
           refute_match "ERROR", line unless line.match? "Error trying to get releases from Github"
-          break if line.include? "BAZARR is started and waiting for requests on: http://0.0.0.0:#{port}"
+          break if line.include? "BAZARR is started and waiting for requests on: http://***.***.***.***:#{port}"
         end
         assert_match "<title>Bazarr</title>", shell_output("curl --silent http://localhost:#{port}")
       end
