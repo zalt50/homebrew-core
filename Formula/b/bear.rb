@@ -7,12 +7,12 @@ class Bear < Formula
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "f7b1e00ac4c2948a24c54955d254938b9a3ae8af47a477df4bb6badae9f14f39"
-    sha256 arm64_sequoia: "121bcd357125ab7002a4cbb8411e9ff6b2ce9ecc1a359e69ed37c601205a48d9"
-    sha256 arm64_sonoma:  "5ef89d2d97ef43dacfb7d3e439eeb4fdf1f1adc9d13e19a2dc0ba5c4571f4371"
-    sha256 sonoma:        "c0aed585dbbceb78a37af319bd74be9c58a9de6eb59e79d8c7d8d72d5b22d7eb"
-    sha256 arm64_linux:   "edd556206477844c1555d63a5d976ef7ad29ecc3c3e3f2980958fb84de534cd5"
-    sha256 x86_64_linux:  "0489f2c3ba1362f7858dfa31c3e79ce65c073fc268cea0d9bd9ee6d5e3cde8b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd0e223eca36212cf0d2f241c7125685ec295e974f97a34558da9f0f5a09f60f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b65b4be2ddbc983c6e6816b77e7af8319018245fb408789385b037c53e520e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39b592bb458ac7b0b268c3ab6d99940505218db1dddbab96016540f9ce6ddd78"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e568dbf70c67422189c162c0639179b700bdb407a59aa4ff5ae64ffb9eb6e44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c64aecd479c7c0aeb67e02142ffc3838651a436439487fd5f77534300b9b0f60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa1cb90c53b09900e7fd97c7f287e39bc0d199a7a867238ac96013ae79951b2c"
   end
 
   depends_on "pkgconf" => :build
