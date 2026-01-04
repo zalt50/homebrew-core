@@ -1,17 +1,15 @@
 class Libopusenc < Formula
   desc "Convenience library for creating .opus files"
   homepage "https://www.opus-codec.org/"
-  url "https://ftp.osuosl.org/pub/xiph/releases/opus/libopusenc-0.2.1.tar.gz"
-  mirror "https://archive.mozilla.org/pub/opus/libopusenc-0.2.1.tar.gz"
-  sha256 "8298db61a8d3d63e41c1a80705baa8ce9ff3f50452ea7ec1c19a564fe106cbb9"
+  url "https://ftp.osuosl.org/pub/xiph/releases/opus/libopusenc-0.3.tar.gz"
+  mirror "https://archive.mozilla.org/pub/opus/libopusenc-0.3.tar.gz"
+  sha256 "f616d3aff9b2034547894ccb8ab56c36cf1a4acb0d922c5d7119f97bbe58642c"
   license "BSD-3-Clause"
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/opus/?C=M&O=D"
     regex(%r{href=(?:["']?|.*?/)libopusenc[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
