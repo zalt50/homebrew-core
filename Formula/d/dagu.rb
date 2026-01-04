@@ -1,8 +1,8 @@
 class Dagu < Formula
   desc "Lightweight and powerful workflow engine"
   homepage "https://dagu.cloud"
-  url "https://github.com/dagu-org/dagu/archive/refs/tags/v1.29.2.tar.gz"
-  sha256 "7a1f650478fefed9e0a959bc199e690deef64ac3b3bc56720fe0932ee2651b78"
+  url "https://github.com/dagu-org/dagu/archive/refs/tags/v1.30.2.tar.gz"
+  sha256 "8eff791a9069c302e83a0baa2f7883853d2083b74f2e06048ec754849abf30ec"
   license "GPL-3.0-only"
   head "https://github.com/dagu-org/dagu.git", branch: "main"
 
@@ -23,6 +23,7 @@ class Dagu < Formula
     system "pnpm", "--dir=ui", "install", "--frozen-lockfile"
     system "pnpm", "--dir=ui", "run", "build"
     (buildpath/"internal/service/frontend/assets").install (buildpath/"ui/dist").children
+    (buildpath/"internal/service/frontend/assets").install buildpath/"schemas/dag.schema.json"
 
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd"
@@ -51,6 +52,6 @@ class Dagu < Formula
 
     system bin/"dagu", "start", "hello.yaml"
     shell_output = shell_output("#{bin}/dagu status hello.yaml")
-    assert_match "The DAG completed successfully", shell_output
+    assert_match "Result: Succeeded", shell_output
   end
 end
