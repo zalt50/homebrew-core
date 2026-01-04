@@ -1,8 +1,8 @@
 class Imake < Formula
   desc "Build automation system written for X11"
   homepage "https://xorg.freedesktop.org"
-  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.10.tar.xz"
-  sha256 "75decbcea8d7b354cf36adc9675e53c4790ee3de56a14bd87b42c8e8aad2ecf5"
+  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.11.tar.xz"
+  sha256 "55955527eaebe94633e4083d4fe5f2160a65fe4c6dafdee48b89fea5f1ca8a78"
   license "MIT"
 
   livecheck do
@@ -25,13 +25,15 @@ class Imake < Formula
     sha256 x86_64_linux:   "296155e61983cc533d3f5ab094d796d2ab3d992606be73da1f7a51f3920ea41e"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "xorgproto" => :build
   depends_on "tradcpp"
 
   resource "xorg-cf-files" do
-    url "https://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-1.0.8.tar.xz"
-    sha256 "7408955defcfab0f44d1bedd4ec0c20db61914917ad17bfc1f1c9bf56acc17b9"
+    url "https://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-1.0.9.tar.xz"
+    sha256 "07716eb1fe1fd1f8a1d6588457db0101cae70cb896d49dc65978c97b148ce976"
   end
 
   def install
@@ -44,8 +46,6 @@ class Imake < Formula
       #undef USE_CC_E"
     C
 
-    inreplace "imake.man", /__cpp__/, cpp_program
-
     # also use gcc's cpp during buildtime to pass ./configure checks
     ENV["RAWCPP"] = cpp_program
 
@@ -56,9 +56,11 @@ class Imake < Formula
       # Fix for different X11 locations.
       inreplace "X11.rules", "define TopXInclude	/**/",
                 "define TopXInclude	-I#{HOMEBREW_PREFIX}/include"
-      system "./configure", "--with-config-dir=#{lib}/X11/config",
-                            "--prefix=#{HOMEBREW_PREFIX}"
-      system "make", "install"
+
+      system "meson", "setup", "build", "-Dwith-config-dir=#{lib}/X11/config",
+                      "--prefix=#{HOMEBREW_PREFIX}", "--buildtype=release", "--wrap-mode=nofallback"
+      system "meson", "compile", "-C", "build", "--verbose"
+      system "meson", "install", "-C", "build"
     end
   end
 
