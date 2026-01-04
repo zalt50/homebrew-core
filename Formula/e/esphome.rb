@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/1a/c6/4fade03f4fc9167313d56d4608c0ea6bb3bce5e0a46f18366eb588f1b616/esphome-2025.12.3.tar.gz"
-  sha256 "7b362b2e36c1cfe7c5c8721671073b590b9c401e535dbba673359bbb32d491ec"
+  url "https://files.pythonhosted.org/packages/a2/83/33665c626d1dfac91dde7763b6b2fd953fd72217eafbc21c71f2b4d82965/esphome-2025.12.4.tar.gz"
+  sha256 "7382efb80425f7cdc9a7d782cf8893a887c79808296107a13ecbf1793061c1c3"
   license "MIT"
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
@@ -33,8 +33,8 @@ class Esphome < Formula
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/89/21/58c9a185e97b870588e164b22e289bb51fe3b746f7c0bcc55fa9698bcaa5/aioesphomeapi-43.9.1.tar.gz"
-    sha256 "eccac7b3af2701201ad1757c7d1ce91ab88fa6124b0ca7e7c906a28200dae412"
+    url "https://files.pythonhosted.org/packages/a9/44/2f94e51314fe07f6d2a2afa64b003f9defa47a8dd41e88f01bc88f8f9188/aioesphomeapi-43.10.1.tar.gz"
+    sha256 "98bf21d22de4f66f45a48b4a79dd18169707603ccbe2fbf9496ead409faff53b"
   end
 
   resource "aiohappyeyeballs" do
@@ -73,8 +73,8 @@ class Esphome < Formula
   end
 
   resource "bleak" do
-    url "https://files.pythonhosted.org/packages/77/84/639b3e7fef9d5e2edec1f0be68137a03b995d7b4e89755e4d407e9127948/bleak-2.1.0.tar.gz"
-    sha256 "f628d61efddc8b4b2338649195cbbe32b3f0f79e11678fcb3f30de9e1be537da"
+    url "https://files.pythonhosted.org/packages/45/8a/5acbd4da6a5a301fab56ff6d6e9e6b6945e6e4a2d1d213898c21b1d3a19b/bleak-2.1.1.tar.gz"
+    sha256 "4600cc5852f2392ce886547e127623f188e689489c5946d422172adf80635cf9"
   end
 
   resource "bottle" do
@@ -193,8 +193,8 @@ class Esphome < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/e9/e1/5edfd1edf05d3cc98415b0810ca45fa19d7dee6def0d0ec639eb4eb14e20/marshmallow-4.1.2.tar.gz"
-    sha256 "083f250643d2e75fd363f256aeb6b1af369a7513ad37647ce4a601f6966e3ba5"
+    url "https://files.pythonhosted.org/packages/bc/34/55d47aab1ef03fb5aab96257a31acfc58791d274cf86c044e6e75e6d3bfe/marshmallow-4.2.0.tar.gz"
+    sha256 "908acabd5aa14741419d3678d3296bda6abe28a167b7dcd05969ceb8256943ac"
   end
 
   resource "mdurl" do
@@ -298,8 +298,8 @@ class Esphome < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
-    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
   resource "ruamel-yaml-clib" do
