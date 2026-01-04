@@ -6,12 +6,12 @@ class Cython < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0f6b81f2e97c5285de1a912e893aa1479853ff2535c6e66233321ffc0c13d70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59544556451d741f852cbeb45da74649c5afc258595e6a9c6ff97910b8bdf411"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa4fab1a942968b0d2974a47539b029b5e1a4c95223be8d09602f3e094cf82cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c4bde0ef9e895276aac4b09c4522f3e12c8ee805fac020360aa2df8a4795269"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a3f479f97dfdefcd030311af48c35bfaa6a46228db5f40d8248dd008c2851cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6110b3581a5e3d407dda0bc3700c5d276a3f2c8d26f9e52d5739b0af909970a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2275bff675c022e817525d3506587e8493146285c2c903e2cc52bcf14c963c0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b5a3f554069a98e3651123e5d1614e3ab0db62e0a7707338c11ccf7bdc6a59f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b20515999f8665929b6ee05b9132c688f53965720b91dec161eb2d18bff6818"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96d84017528cb1850a627c5d0e3665bd39572542808e9c0053cb5eb3d5509e35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df8630249fef1eebb4d86fedf72037eeba54fbe0c44190f07aad274dcc27a925"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16afa410ecef6646080b4b82f376f5f00aabc41d342c59bc4317fa5120785d29"
   end
 
   keg_only <<~EOS
