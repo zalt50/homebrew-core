@@ -29,6 +29,7 @@ class Mole < Formula
     libexec.install "bin", "lib"
     bin.install "mole"
     bin.install_symlink bin/"mole" => "mo"
+    generate_completions_from_executable(bin/"mole", "completion")
   end
 
   test do
