@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/7f/ba/453d31765ac4160269101c7875f73007bc54a3f8721008c62915ef3bb194/kimi_cli-0.71.tar.gz"
-  sha256 "60bebdbb649671fedf86eeef78227fcb35ac771dd40c359edd4c215fa1a4ae12"
+  url "https://files.pythonhosted.org/packages/05/a6/69f8740180e08e3d65276af399669eb3640d2de11afd2086869bfc76c37f/kimi_cli-0.72.tar.gz"
+  sha256 "aa29409b5bd94989157cd53df20f849a4c370935da3aecd15afa88e148421848"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -229,8 +229,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/2e/c1/ffeb1034ceb3a29664c90545ed1336a8bd8f05a485482abe1952f8a4b8a1/kosong-0.36.0.tar.gz"
-    sha256 "fed6d8de6bf5ad5e819afba46513a47ba720df23d7f70f33576d4ba31af53c3a"
+    url "https://files.pythonhosted.org/packages/34/03/3a53deec2a890eddaf8e89eb0242e549cc9203c46f6eb1e7f66a867a3fea/kosong-0.36.1.tar.gz"
+    sha256 "139abafc09e061bac645b064015ea7c606c4ca8aeb03aa985f011f27ba27c337"
   end
 
   resource "lazy-object-proxy" do
