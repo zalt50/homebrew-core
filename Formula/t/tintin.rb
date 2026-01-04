@@ -1,8 +1,8 @@
 class Tintin < Formula
   desc "MUD client"
   homepage "https://tintin.mudhalla.net/"
-  url "https://github.com/scandum/tintin/releases/download/2.02.51/tintin-2.02.51.tar.gz"
-  sha256 "9279f25d18defddf449863f4bad6ec971feacd297a9d9ddaac28c9b5d5eced02"
+  url "https://github.com/scandum/tintin/releases/download/2.02.60/tintin-2.02.60.tar.gz"
+  sha256 "b638031d56029ae03365b81e6ef9069837a71a4fb8fb2d52453261114a76cc41"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -22,7 +22,7 @@ class Tintin < Formula
   end
 
   depends_on "gnutls"
-  depends_on "pcre" # PCRE2 issue: https://github.com/scandum/tintin/issues/163
+  depends_on "pcre2"
 
   uses_from_macos "zlib"
 
