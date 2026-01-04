@@ -4,6 +4,7 @@ class Tiledb < Formula
   url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.30.0.tar.gz"
   sha256 "c5f94da6de0e0f93925f7ad107bd80fef0615f9b3d111a5bae245f75b1fcc173"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
