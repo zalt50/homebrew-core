@@ -4,6 +4,7 @@ class Jackett < Formula
   url "https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.726.tar.gz"
   sha256 "16c6018772457666a2f7339a6b62e646f94f2d58772e0366ed9be3415f3dec14"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
@@ -14,13 +15,13 @@ class Jackett < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce1b33a5d34d86713ce545536600bb32d3960f439983f621c08c1b862fe6ae2c"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@9"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
 
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
 
     args = %W[
       --configuration Release
