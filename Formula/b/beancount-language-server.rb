@@ -1,8 +1,8 @@
 class BeancountLanguageServer < Formula
   desc "Language server for beancount files"
   homepage "https://github.com/polarmutex/beancount-language-server"
-  url "https://github.com/polarmutex/beancount-language-server/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "d8a7ed7eba4461d851574bcb42c614180513144bd56e429f803997a3555dfdaf"
+  url "https://github.com/polarmutex/beancount-language-server/archive/refs/tags/1.5.0.tar.gz"
+  sha256 "9fa5fc1bb29b856583984570183731501c0e338e4deacf1d7de0f02bcd218df0"
   license "MIT"
   head "https://github.com/polarmutex/beancount-language-server.git", branch: "main"
 
