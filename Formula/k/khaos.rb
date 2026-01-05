@@ -3,8 +3,8 @@ class Khaos < Formula
 
   desc "Kafka traffic simulator for observability and chaos engineering"
   homepage "https://github.com/aleksandarskrbic/khaos"
-  url "https://files.pythonhosted.org/packages/e0/ff/d7648a6290f398517b335642a1fa2f912a6b2f6d8c7ba24dd1835fba967f/khaos_cli-0.7.0.tar.gz"
-  sha256 "e40f2f32144d7fb0674a478329da72074ed310aeed821f2e3685fa4e362e866a"
+  url "https://files.pythonhosted.org/packages/7f/0c/932228842cb6c0357fa4f41c5e68afaf3b41b7698f0794af300533594432/khaos_cli-0.7.1.tar.gz"
+  sha256 "f5eb232f427dab15bbaa7ff8200a17d04c036a695c1c614e862bf87d93917b20"
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
@@ -51,8 +51,8 @@ class Khaos < Formula
   end
 
   resource "confluent-kafka" do
-    url "https://files.pythonhosted.org/packages/c2/cd/18ffb1d2a7e189fee50b4a9597255e1078580d679daf913c25d0d13c3f88/confluent_kafka-2.12.2.tar.gz"
-    sha256 "5a50bfcd24f9dcf34b986f837f80126a71087364d44fcb8b45e8e74080fb6e98"
+    url "https://files.pythonhosted.org/packages/b4/d0/1f5055331fa660225de6829b143e6f083913f0a96481134a91390bad62c1/confluent_kafka-2.13.0.tar.gz"
+    sha256 "eff7a4391a9e6d4a33f0c05d0935b200a7463834f1f5d6e6253be318f910babd"
   end
 
   resource "faker" do
