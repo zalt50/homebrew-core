@@ -1,8 +1,8 @@
 class Witr < Formula
   desc "Why is this running?"
   homepage "https://github.com/pranshuparmar/witr"
-  url "https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "6338acdd363614d3327e8b4826492b98133748997b43016354a45fa55e799eca"
+  url "https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "31ec1c55d9898a27a066de684caa44becbced2fe8c12c0b0e831b2ff9d62f6d0"
   license "Apache-2.0"
 
   bottle do
