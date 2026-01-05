@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/ab/25/95040bb5d2325bbe6855a88a6bbaf1db6bedbc9a4077eaf326afc208a82d/flexget-3.18.34.tar.gz"
-  sha256 "c94f176dabb28383233186056ee16a839d170a230ba6f2a58bbd873b98772b5d"
+  url "https://files.pythonhosted.org/packages/14/e8/b0b76935588abf944c5bf4ac3ad0ad46681691f35463d2ff069b25853ea0/flexget-3.18.35.tar.gz"
+  sha256 "3c2f6880c66abe854175e3c119c6b40775f570017c6f0ca580b0521672562a97"
   license "MIT"
 
   bottle do
