@@ -1,8 +1,8 @@
 class Xc < Formula
   desc "Markdown defined task runner"
   homepage "https://xcfile.dev/"
-  url "https://github.com/joerdav/xc/archive/refs/tags/v0.8.6.tar.gz"
-  sha256 "142c28aafa454b461b2950d980f0a8a5d89b59fb9032bbe23ca1015472bff691"
+  url "https://github.com/joerdav/xc/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "afcb5e1fbd1be5f0b6dcb802e02c96527ac0e96ddeb47471b8ad4056f91ccc72"
   license "MIT"
   head "https://github.com/joerdav/xc.git", branch: "main"
 
