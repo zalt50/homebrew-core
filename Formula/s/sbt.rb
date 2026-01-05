@@ -1,9 +1,9 @@
 class Sbt < Formula
   desc "Build tool for Scala projects"
   homepage "https://www.scala-sbt.org/"
-  url "https://github.com/sbt/sbt/releases/download/v1.11.7/sbt-1.11.7.tgz"
-  mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.11.7/sbt-1.11.7.tgz"
-  sha256 "1232818f91c39639a93bbe1108e12d94c7044a646a7847f1a3977b9e46716cd6"
+  url "https://github.com/sbt/sbt/releases/download/v1.12.0/sbt-1.12.0.tgz"
+  mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.12.0/sbt-1.12.0.tgz"
+  sha256 "e4ade3f4bdbe1e7445be9acf02cb1b3574beb460362e17287e246b7eaf9bb952"
   license "Apache-2.0"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
