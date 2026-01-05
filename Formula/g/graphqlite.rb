@@ -1,8 +1,8 @@
 class Graphqlite < Formula
   desc "SQLite graph database extension"
   homepage "https://colliery-io.github.io/graphqlite/"
-  url "https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "1f159b8d97394bf822d92c075bf974fe8ed05366e16c2e64050a90d2a8b11403"
+  url "https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "2b7c31bcd4acf94123e4b68c2a8a9fbb5b9c26e1b6a9b3b3fe077fea287dad48"
   license "MIT"
 
   bottle do
