@@ -1,8 +1,8 @@
 class Iccdev < Formula
   desc "Developer tools for interacting with and manipulating ICC profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
-  url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.1.tar.gz"
-  sha256 "de8750b0fbf9e3ec1e7260c0752427f54c9bb81b2f9366eaf75b7a7509d80097"
+  url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.2.tar.gz"
+  sha256 "c2de941c493af4a01f89369d297528e649df38b2e270c29f7b04d245b63bc4bd"
   license "BSD-3-Clause"
 
   bottle do
