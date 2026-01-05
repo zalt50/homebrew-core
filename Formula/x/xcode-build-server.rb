@@ -11,7 +11,7 @@ class XcodeBuildServer < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3ac127101dc6e3887a1d9baebf97452cf19b129c4ab75667c16719484fd38a37"
+    sha256 cellar: :any_skip_relocation, all: "61793d886e98bf6a18b02c32944dfd9f98b0186040f3abc5816802840a8dfe91"
   end
 
   depends_on "gzip"
