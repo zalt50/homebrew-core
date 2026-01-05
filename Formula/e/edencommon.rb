@@ -7,12 +7,12 @@ class Edencommon < Formula
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "7b8df0f264899f298d912927c60761721ac23dbbaa9168269085251c8e196f80"
-    sha256                               arm64_sequoia: "eaf5cf398c43f1384f171d41ca8968e362ebc9edec9e2bfe4a185ecbe0b29a61"
-    sha256                               arm64_sonoma:  "d7daf26bd638c46fc3ffb36963c88535da1a08483235807e9435932b4a522ace"
-    sha256 cellar: :any,                 sonoma:        "6f889a57cacce31d1e849dbe7a17e73c216b7958fa73290a698ec20d3c803e9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3012f9a767c00edee396630c5d4c9bc20b9ceade6dc11f660a552af67d134096"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91a07fd3080ef40c899ebbeb49fb26fd04479bf04a5b55e5c741e47e3736384a"
+    sha256                               arm64_tahoe:   "4e133d8d82f6ace15ba55a07c90751d2238bcbe90a7e0a0b41daa9a34aba0404"
+    sha256                               arm64_sequoia: "e40c757aad19252445c6bd7606b71ea51159cae9d41cda67c7cb8a50405368e9"
+    sha256                               arm64_sonoma:  "007893c8710557c8f1e7c362ab564e45702eb58fab3255a3207efee75e47af5e"
+    sha256 cellar: :any,                 sonoma:        "a2b4c1662e79624da4d8a228cd607c155adbacb73547138889bf76384b2ec068"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74ee5c4445af11e81e90be9b82f4b429525132c51bcf0c0b894675dfaf6852ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4170439237fc18d89e97a902cc7e80529310757fc6eefc277f4e5c57d76910"
   end
 
   depends_on "cmake" => :build
