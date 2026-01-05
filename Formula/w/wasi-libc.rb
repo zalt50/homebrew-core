@@ -20,8 +20,7 @@ class WasiLibc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "a529c0735dbb8a0650b31e03540ce34aa2821efba92b1b032e15e47a662fe5d9"
+    sha256 cellar: :any_skip_relocation, all: "e5019f0f9e847b3b1eabbfb77e7d76a809c9668d3e7d318df270102c21fd1106"
   end
 
   depends_on "llvm" => [:build, :test]
