@@ -17,6 +17,13 @@ class Vitess < Formula
   depends_on "go" => :build
   depends_on "etcd"
 
+  # Support Go 1.26 and later with Swiss maps always enabled
+  # Upstream PR ref: https://github.com/vitessio/vitess/pull/19088
+  patch do
+    url "https://github.com/vitessio/vitess/commit/1e131ea41b87a047acff3b1977d9fece8e25bfff.patch?full_index=1"
+    sha256 "6dd13ffbde947a2c0d426c5a6361e3f0f708c9fc1bd1df7b000ad06fa8644a9c"
+  end
+
   def install
     # -buildvcs=false needed for build to succeed on Go 1.18.
     # It can be removed when this is no longer the case.
