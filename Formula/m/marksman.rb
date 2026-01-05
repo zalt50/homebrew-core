@@ -4,6 +4,7 @@ class Marksman < Formula
   url "https://github.com/artempyanykh/marksman/archive/refs/tags/2025-12-13.tar.gz"
   sha256 "7dcfb73538690d16950aa43a78aa58c1c144548851797e6088d3e76cd8a3f2ba"
   license "MIT"
+  revision 1
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
   bottle do
@@ -14,14 +15,14 @@ class Marksman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61ea482c5ee1ea3806cc72053a63e1bde0033d21af843dff723a0b2bc76b150a"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@9"
 
   uses_from_macos "zlib"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
 
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
