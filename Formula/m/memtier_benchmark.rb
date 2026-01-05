@@ -1,8 +1,8 @@
 class MemtierBenchmark < Formula
   desc "Redis and Memcache traffic generation and benchmarking tool"
   homepage "https://github.com/RedisLabs/memtier_benchmark"
-  url "https://github.com/RedisLabs/memtier_benchmark/archive/refs/tags/2.2.0.tar.gz"
-  sha256 "73bcdaca9a5e9c87c6f060637125885f8a01f178061fd67cd05f9da762d3490d"
+  url "https://github.com/RedisLabs/memtier_benchmark/archive/refs/tags/2.2.1.tar.gz"
+  sha256 "e417382826ea1b93f93441bfa52d7556fb41a85b29e20d5f87c4b1a972ee3a6b"
   license all_of: [
     "GPL-2.0-only",
     any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
@@ -26,12 +26,6 @@ class MemtierBenchmark < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  # Backport removal of pcre dependency
-  patch do
-    url "https://github.com/RedisLabs/memtier_benchmark/commit/f3545b0f59ae21ad8b702aec9d15aacbccdbc41b.patch?full_index=1"
-    sha256 "f78c13a299e7f4dbcd5926b0e111f06143e187d915d7811e4290f12125deab65"
-  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
