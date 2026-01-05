@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/confluentinc/librdkafka"
-  url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.12.1.tar.gz"
-  sha256 "ec103fa05cb0f251e375f6ea0b6112cfc9d0acd977dc5b69fdc54242ba38a16f"
+  url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.13.0.tar.gz"
+  sha256 "ac44ed450ccd2c4ab4cdeba70115e6f878d794d6df3e61c9f47902f766852058"
   license "BSD-2-Clause"
   head "https://github.com/confluentinc/librdkafka.git", branch: "master"
 
