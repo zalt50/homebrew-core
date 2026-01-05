@@ -1,8 +1,8 @@
 class Meli < Formula
   desc "Terminal e-mail client and e-mail client library"
   homepage "https://meli-email.org/"
-  url "https://git.meli-email.org/meli/meli/archive/v0.8.12.tar.gz"
-  sha256 "6f03f50b7e3ee29d34716f31d77e75eca72ab651d67ea1de2dffc5813565180f"
+  url "https://git.meli-email.org/meli/meli/archive/v0.8.13.tar.gz"
+  sha256 "b1414defb7973a96ed0510b5cb888aa8671fe4f3f832c5baa0c79dcd61ba2edf"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -23,10 +23,7 @@ class Meli < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "openssl@3"
-  end
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "meli")
