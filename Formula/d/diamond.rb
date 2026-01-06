@@ -1,8 +1,8 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.17.tar.gz"
-  sha256 "71d0bad8453823f25c92634d00cf8dac02972840a19f4d34783e1e52d2d13d77"
+  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.18.tar.gz"
+  sha256 "aeae3a5f20bc8770b08ae14e563c8e86f26886b238492b43cd91218ebe891f46"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -19,19 +19,14 @@ class Diamond < Formula
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
-  def install
-    if DevelopmentTools.clang_build_version >= 1700
-      # Fix to error: no member named 'uncaught_exception' in namespace 'std'; did you mean 'uncaught_exceptions'?
-      inreplace "src/util/log_stream.h",
-                "!std::uncaught_exception()",
-                "std::uncaught_exceptions() == 0"
-      # Fix to error: no matching function for call to object of type 'const __copy_n'
-      # TransformIterator is not an input_iterator in C++20 iterator concepts
-      inreplace "src/util/data_structures/flat_array.h",
-                "data_.insert(data_.end(), begin, end);",
-                "std::for_each(begin, end, [&](auto&& v){ data_.push_back(v); });"
-    end
+  # Fixes building with Clang 17+
+  # Upstream PR ref: https://github.com/bbuchfink/diamond/pull/921
+  patch do
+    url "https://github.com/bbuchfink/diamond/commit/72b78f6b994984602f650fe664d5f83ea15b24b6.patch?full_index=1"
+    sha256 "606ffcfc8f68d6a043a0b2a48e3e93a68463017490da9e7be0c9782f825e3ee1"
+  end
 
+  def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
