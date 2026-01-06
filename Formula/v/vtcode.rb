@@ -1,18 +1,22 @@
 class Vtcode < Formula
   desc "CLI Semantic Coding Agent"
   homepage "https://github.com/vinhnx/vtcode"
-  url "https://static.crates.io/crates/vtcode/vtcode-0.58.24.crate"
-  sha256 "b163b1020ec080ba272c41c2552e2eb9ba404540e2cabe429e388574f166b2f4"
+  url "https://static.crates.io/crates/vtcode/vtcode-0.58.25.crate"
+  sha256 "414d4ac68282be52014551e225fc4c61c8d5f297ec87256f1e17f237157f5999"
   license "MIT"
   head "https://github.com/vinhnx/vtcode.git", branch: "main"
 
+  livecheck do
+    throttle 5
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf1e4c201ca968683d6ba2149d4db9176576dbcda45f90d421b3598e80595b03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a37d9c5f4892a981f249246487d2fd947b0805c3540081140f07961dc1511c74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "934f3ebd4361ed8aeb0e7ab8b2170d83c0457a7d7d5f1a157a22794b509070db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2cd85737eff911685950cbcc16afcf386a59104aa9838e70a984d71f75a9d8cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ee1fa788d99a90c992340f5c8b571f37cd8b7d7dbbbc67e92ccd4655139bf4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b4dea8bcec9e3fb5d8ec139f2919fe7677ddc244af690c8add469dc4e92f986"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "593578206d440398bec774342b3c01003f7e907a153e8bbfe4d71393efc781dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a2bc5f123190664c6e1465a10a9838659095cedf76a85eb74b8f7903ed4eb93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d69331b3f0f21c2dd6eb46436568ba1f1e646e73c36330ab7b4dd31c846c5a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9955ef63120474cff5bafbe2f928e9d4dbdb3d153e5c1a8dc99977d82f4e34fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cb979a5290dd955b90b625652e5344daede3bd972d25b7be1ba1e2408739967"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d56b220fdcfa113534b6b210f8dcab6973d1c5af437044ed59ef86e043444fd1"
   end
 
   depends_on "pkgconf" => :build
