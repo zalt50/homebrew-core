@@ -1,8 +1,8 @@
 class Nuxi < Formula
   desc "Nuxt CLI (nuxi) for creating and managing Nuxt projects"
   homepage "https://github.com/nuxt/cli"
-  url "https://registry.npmjs.org/nuxi/-/nuxi-3.31.3.tgz"
-  sha256 "735a15232ee42e5dd04add97a62618d2afa2550341b53e1aadb0f90c4e187c6f"
+  url "https://registry.npmjs.org/nuxi/-/nuxi-3.32.0.tgz"
+  sha256 "c36926ad44b1b18cb7126246315aa2405cdf2ccaf793a60d1f08d8ebc55d9882"
   license "MIT"
   head "https://github.com/nuxt/cli.git", branch: "main"
 
