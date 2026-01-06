@@ -9,15 +9,14 @@ class Airshare < Formula
   revision 20
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c7aa338e132df922f46aad3ae1bdec2a9cd43c7183e18f4e8813d7f42fd312a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2dcabbbd54bd5da35935c8238ee8900765305ed8ad40972ed025df4e161a117"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fcd49116e73bae96338dc36e1d4a7c2ecc653a7a92bfeb0ef0fa9f6d6452756"
-    sha256 cellar: :any_skip_relocation, tahoe:         "1e893f669c8427dade0c89a32701db287cb358bdaa37d8eef823d5b4be1d8807"
-    sha256 cellar: :any_skip_relocation, sequoia:       "10a698233cc855f571e5daef91c702cfd07fb7c97e8388f22ab9d302e828bdc9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "37b6becefbb3f05ba988c04bc19e1264e9342c61d94344c820c6ae0237553334"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b0c4a438352a20849254d628b530b6ff3cb071458e4eb09ae14f17785c31727"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d643e22bcce769e287a63f8d6a8609f72838e489174de1a693d79351057c7c9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cb3c3aa258ea1bfe4ed2304885d0645e9d2b1bcde2886c8d27f9687c79b0a8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1172f376c45d4854b3f75715141e4f175c9723577b616eb38c3bd4f5bdee5544"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "454c0870d6338e84fd37ac099890bbff5d200aa0d61471829b0ff6bb966f9d84"
+    sha256 cellar: :any_skip_relocation, tahoe:         "950d288be598da6f75e72b8877402f5098a19c51d7e6d11fd4b235ac3b7d99db"
+    sha256 cellar: :any_skip_relocation, sequoia:       "a23ee3a587ac01d75a20d7b2aba99c58626ec127c4594c29c2ea9092d3ab256e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e724ecd21be0d9919d1e79d06bddb68754012ab76601ed2bf530cb7594c7a89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43f7e9ea5a7b38ea3c41d44faa533364128dd04365b2c0343a57455a1ca37af9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "897f2a55aadc88923917d891ba6aa309bcc7fb1bb28befc4e1662ca9714f07cb"
   end
 
   depends_on "certifi" => :no_linkage
