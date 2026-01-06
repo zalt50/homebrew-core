@@ -1,16 +1,14 @@
 class Libsodium < Formula
   desc "NaCl networking and cryptography library"
   homepage "https://libsodium.org/"
-  url "https://download.libsodium.org/libsodium/releases/libsodium-1.0.20.tar.gz"
-  sha256 "ebb65ef6ca439333c2bb41a0c1990587288da07f6c7fd07cb3a18cc18d30ce19"
+  url "https://download.libsodium.org/libsodium/releases/libsodium-1.0.21.tar.gz"
+  sha256 "9e4285c7a419e82dedb0be63a72eea357d6943bc3e28e6735bf600dd4883feaf"
   license "ISC"
 
   livecheck do
     url "https://download.libsodium.org/libsodium/releases/"
     regex(/href=.*?libsodium[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "fc8c1b02d3c050f67d92d6ca76b10b6f4d720a6ec148e1438ae12a5a13a502f0"
@@ -34,6 +32,9 @@ class Libsodium < Formula
   end
 
   def install
+    # Allow type conversion between vectors on Arm Linux
+    ENV.append_to_cflags "-flax-vector-conversions" if OS.linux? && Hardware::CPU.arm?
+
     system "./autogen.sh", "-sb" if build.head?
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
