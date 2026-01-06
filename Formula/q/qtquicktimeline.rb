@@ -1,10 +1,10 @@
 class Qtquicktimeline < Formula
   desc "Enables keyframe-based animations and parameterization"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtquicktimeline-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtquicktimeline-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtquicktimeline-everywhere-src-6.9.3.tar.xz"
-  sha256 "284f4ba65ea71fa32751525c845f540c99d2f86fed88387e8c3d5869cf6c11f7"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtquicktimeline-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtquicktimeline-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtquicktimeline-everywhere-src-6.10.1.tar.xz"
+  sha256 "882ed289b4c229ace324e2545a71d7611c201626bc007d50e514bfd2f6e251b7"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
