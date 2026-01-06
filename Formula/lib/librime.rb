@@ -2,10 +2,9 @@ class Librime < Formula
   desc "Rime Input Method Engine"
   homepage "https://rime.im"
   url "https://github.com/rime/librime.git",
-      tag:      "1.15.0",
-      revision: "75bc43ae9acdd2042d150a8c446e9ac8b6d77c84"
+      tag:      "1.16.0",
+      revision: "a251145d3aafa33871824a40bbec04c966bd8b56"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e9ac3d0096903a7c93752b927f6a827189cb8b922564a2eab8cf3715cd68e239"
