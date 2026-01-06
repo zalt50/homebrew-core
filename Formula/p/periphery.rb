@@ -1,8 +1,8 @@
 class Periphery < Formula
   desc "Identify unused code in Swift projects"
   homepage "https://github.com/peripheryapp/periphery"
-  url "https://github.com/peripheryapp/periphery/archive/refs/tags/3.3.0.tar.gz"
-  sha256 "2829c8041b9050154bda16fde19631c2643fb57a295abbf35032e921b1f41299"
+  url "https://github.com/peripheryapp/periphery/archive/refs/tags/3.4.0.tar.gz"
+  sha256 "6b053a1c36503d7fbb9f812940ae2300cca0a499a5131c8a5e550dc760881370"
   license "MIT"
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
@@ -15,7 +15,7 @@ class Periphery < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9d6af0730d6edb3cac5abf3c56123dc67eba7f05dc30ee4e5de172235c8e7a1"
   end
 
-  depends_on xcode: ["16.0", :build]
+  depends_on xcode: ["16.4", :build]
 
   uses_from_macos "swift" => [:build, :test]
   uses_from_macos "curl"
