@@ -9,9 +9,9 @@ class MlxLm < Formula
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1bdeb8a07f2849aec1ca9ee16f1b6180209863948bf97c372828b97caa8628bf"
-    sha256 cellar: :any, arm64_sequoia: "8d6355bd789776f398c8ebd836da4d4c36234c80dbe8ec0c2c411b3c1e4cd2b6"
-    sha256 cellar: :any, arm64_sonoma:  "9a0b0286bdfa9b295b3a543c3c5fa59a3740de17e84c2e5af282b777c6e91942"
+    sha256 cellar: :any, arm64_tahoe:   "3e13d3b98e254ca9679787ae51e66d9acb441b2eaed8058680c54a4a2f8ce00b"
+    sha256 cellar: :any, arm64_sequoia: "ccefe149102e0a76420ae0cbfabd10d4b377c39c802a81b761c0d9fcfdcb9ddc"
+    sha256 cellar: :any, arm64_sonoma:  "d1cf79c42124c9e86e5c1c512f8f1e8ac4c447e15b5bac261c455bbc35b825c5"
   end
 
   depends_on "pkgconf" => :build
