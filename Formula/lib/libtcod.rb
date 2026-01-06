@@ -1,8 +1,8 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
   homepage "https://github.com/libtcod/libtcod"
-  url "https://github.com/libtcod/libtcod/archive/refs/tags/2.2.1.tar.gz"
-  sha256 "5eb8e30d937840986c11c7baa22ffa93252aa4ac1824fe2c5fa1d760b3496a8e"
+  url "https://github.com/libtcod/libtcod/archive/refs/tags/2.2.2.tar.gz"
+  sha256 "69f30fe65df1c84049a8f4f4b1ea0894191221da3a671be61832e33e75df898e"
   license all_of: [
     "BSD-3-Clause",
     "Zlib", # src/vendor/lodepng.c
@@ -24,6 +24,7 @@ class Libtcod < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "sdl3"
+  depends_on "utf8proc"
 
   uses_from_macos "zlib"
 
@@ -33,13 +34,17 @@ class Libtcod < Formula
   def install
     rm_r("src/vendor/zlib")
 
+    # We bypass brew's dependency provider to set `FETCHCONTENT_TRY_FIND_PACKAGE_MODE`
+    # which redirects FetchContent_Declare() to find_package() and helps find our `sdl3`.
+    # To re-block fetches, we use the not-recommended `FETCHCONTENT_FULLY_DISCONNECTED`.
     system "cmake", "-S", ".", "-B", "build",
+                    "-DHOMEBREW_ALLOW_FETCHCONTENT=ON",
+                    "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
+                    "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_INCLUDEDIR=#{include}",
-                    "-DCMAKE_TOOLCHAIN_FILE=",
                     "-DLIBTCOD_LODEPNG=vendored",
                     "-DLIBTCOD_STB=vendored",
-                    "-DLIBTCOD_UTF8PROC=vendored", # https://github.com/JuliaStrings/utf8proc/pull/260
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
