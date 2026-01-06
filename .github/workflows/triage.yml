@@ -302,6 +302,7 @@ jobs:
                 openvino|\
                 pcl|\
                 ponyc|\
+                prowler|\
                 pytorch|\
                 qtwebengine|\
                 root|\
