@@ -16,16 +16,12 @@ class Abricate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa7164afab8cc06e68a0f38525ed946bcf55505fb5b81d398d551fbf58d260a6"
   end
 
+  depends_on "any2fasta"
   depends_on "bioperl"
   depends_on "blast"
   depends_on "perl"
 
   uses_from_macos "unzip"
-
-  resource "any2fasta" do
-    url "https://raw.githubusercontent.com/tseemann/any2fasta/v0.4.2/any2fasta"
-    sha256 "ed20e895c7a94d246163267d56fce99ab0de48784ddda2b3bf1246aa296bf249"
-  end
 
   # Perl dependencies originally installed via cpanminus.
   # For `JSON Path::Tiny List::MoreUtils LWP::Simple` and dependencies.
@@ -140,17 +136,11 @@ class Abricate < Formula
   end
 
   def install
-    resource("any2fasta").stage do
-      bin.install "any2fasta"
-    end
-
     ENV.prepend_path "PERL5LIB", Formula["bioperl"].opt_libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", libexec/"perl5/lib/perl5"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
 
     resources.each do |r|
-      next if r.name == "any2fasta"
-
       r.stage do
         system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}/perl5"
         system "make", "install"
