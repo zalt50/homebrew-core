@@ -2,8 +2,8 @@ class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
   # Using git tarball as Debian does not retain old versions at deb.debian.org
-  url "https://salsa.debian.org/apt-team/apt/-/archive/3.1.12/apt-3.1.12.tar.bz2"
-  sha256 "9a4acfe5954debae7bdc218aec5b17e1db5fcfd2544ac092619ed52533596e50"
+  url "https://salsa.debian.org/apt-team/apt/-/archive/3.1.13/apt-3.1.13.tar.bz2"
+  sha256 "1d15f5d270a59f125822da535dbb036679ffd0e15e43e34bc576bc4fe8d8f6e1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -30,6 +30,7 @@ class Apt < Formula
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "bzip2"
   depends_on "dpkg"
+  depends_on "gcc"
   depends_on :linux
   depends_on "lz4"
   depends_on "openssl@3"
@@ -40,6 +41,11 @@ class Apt < Formula
   depends_on "xz"
   depends_on "zlib"
   depends_on "zstd"
+
+  fails_with :gcc do
+    version "12"
+    cause "Requires C++23 support for `std::ranges::contains`"
+  end
 
   resource "triehash" do
     url "https://github.com/julian-klode/triehash/archive/refs/tags/v0.3.tar.gz"
@@ -88,5 +94,5 @@ index 7ea1878..117644d 100644
  #include <cstring>
 +#include <optional>
  #include <unistd.h>
- 
+
  #include <algorithm>
