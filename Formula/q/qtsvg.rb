@@ -1,10 +1,10 @@
 class Qtsvg < Formula
   desc "Classes for displaying the contents of SVG files"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtsvg-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtsvg-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtsvg-everywhere-src-6.9.3.tar.xz"
-  sha256 "db76aa3358cbbe6fce7da576ff4669cb9801920188c750d3b12783bbe97026e2"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtsvg-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtsvg-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtsvg-everywhere-src-6.10.1.tar.xz"
+  sha256 "c02f355a58f3bbcf404a628bf488b6aeb2d84a94c269afdb86f6e529343ab01f"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
