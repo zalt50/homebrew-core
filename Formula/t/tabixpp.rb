@@ -4,6 +4,7 @@ class Tabixpp < Formula
   url "https://github.com/vcflib/tabixpp/archive/refs/tags/v1.1.2.tar.gz"
   sha256 "c850299c3c495221818a85c9205c60185c8ed9468d5ec2ed034470bb852229dc"
   license "MIT"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
@@ -21,6 +22,12 @@ class Tabixpp < Formula
   depends_on "htslib"
   depends_on "xz"
 
+  # Backport library rename needed by dependents
+  patch do
+    url "https://github.com/vcflib/tabixpp/commit/4cebc981b35c67486e7454064c54cddf547fd58a.patch?full_index=1"
+    sha256 "d08f2eb62fb7be5457adb4615c7fbda587993899e8d18a9b8ed0647144c8f3f9"
+  end
+
   def install
     htslib_include = Formula["htslib"].opt_include
     args = %W[
@@ -29,9 +36,11 @@ class Tabixpp < Formula
       HTS_LIB=
       PREFIX=#{prefix}
       DESTDIR=
-      SLIB=
     ]
+    args << "SLIB=libtabixpp.$(SOVERSION).dylib" if OS.mac?
+
     system "make", "install", *args
+    lib.install_symlink shared_library("libtabixpp", version.major.to_s) => shared_library("libtabixpp")
     pkgshare.install "test"
   end
 
