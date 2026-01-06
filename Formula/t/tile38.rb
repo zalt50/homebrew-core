@@ -2,8 +2,8 @@ class Tile38 < Formula
   desc "In-memory geolocation data store, spatial index, and realtime geofence"
   homepage "https://tile38.com/"
   url "https://github.com/tidwall/tile38.git",
-      tag:      "1.36.5",
-      revision: "0b31bf10dfcfcbe1044a2e74e86a7e40cd72f82d"
+      tag:      "1.37.0",
+      revision: "48aa3d2f303447513bbc9dc06dedac42269f4ad2"
   license "MIT"
   head "https://github.com/tidwall/tile38.git", branch: "master"
 
