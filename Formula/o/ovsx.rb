@@ -6,12 +6,12 @@ class Ovsx < Formula
   license "EPL-2.0"
 
   bottle do
-    sha256                               arm64_tahoe:   "e427e4992a6dbf269c4eaf1de8a95ab3c3fc9ad39fee183a116fd0a59e80be7b"
-    sha256                               arm64_sequoia: "8617f49925a1b7aff82ad37897e4e63760fd9e2b91657d323c466ce875d94a11"
-    sha256                               arm64_sonoma:  "5fac4075d52c22062da7978fdcf25153f95795cd49f062f1e34d75a260a392fc"
-    sha256                               sonoma:        "c33eafc72cfcb5b0b3c89e6e4e8e911fe48feff5122fd8c87e6fa0052a14283c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21650d33785b07df120de9841f42af6104c6d606b0e3c407a5871ac83d4d4324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e025efef6eb7b2f51f9d01695b00cea6bbbf1c1d3643ac71f072def4330c856"
+    sha256 cellar: :any,                 arm64_tahoe:   "7ad8529b476195ca06b25a023c3a31fcf7be71906ee2a51a3d74a53d1392b06c"
+    sha256 cellar: :any,                 arm64_sequoia: "790a326dc46eac796a9b60a73d749d3e3f7c264fff1d7c6a88d640df620223b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "790a326dc46eac796a9b60a73d749d3e3f7c264fff1d7c6a88d640df620223b5"
+    sha256 cellar: :any,                 sonoma:        "f44724cdbb32e921450d2c709ebca2ce79d20ca8381b85c57225d7edad232437"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02cb4d0acb339f5a0a07162e68bc50d1527473770c581f0efa90953bc91a81e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "202635305a80be66d8f70b9a1226e76e035870829699f466500d0c15be99daff"
   end
 
   depends_on "node"
