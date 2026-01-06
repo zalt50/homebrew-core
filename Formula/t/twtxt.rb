@@ -9,15 +9,14 @@ class Twtxt < Formula
   revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "770eca225a0a54216e7df9eeabc1f62662ad7c3e843ec7932fe5f8fa9dc3ebfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65084f6db31ebe76cb66b50614e0efc3fc33ce5d5b2d8b7b5b95c6b41301cbae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98acc47c361296e7cd9d4d6d85e355b81bc91f6418ab7425c8868b5faf7d167e"
-    sha256 cellar: :any_skip_relocation, tahoe:         "cc6acc2cf1214951a2fa8c20f71559d3a7bb1964f04067c38459026db532c608"
-    sha256 cellar: :any_skip_relocation, sequoia:       "f3786d5fb528221022304c98473b3a95b99a9a97075ef2423b4ba70b7fa130b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68cce3972d43daca56824086ee5abe882b5e48dfb176f54adfbe48a32271c09a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e56165f0ffc1993594d02f626a9fba47a06d26237f702e9fb47fff1df48f5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40b14baf842363c7ec3cfb9a64196afc01fb7d6d35b11c2678a87d9adcf33047"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "911f4cf4aaaa2b13ca4d5e1ac85d6251dfdf3734d58a6c37501b0ea277ae0f21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59e000dd4fbe0d09e6a33ac3bf74fb7d112f7647346692e82f28dcf516dd3f34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18fa8469eacee8cc37794e87d22a0e93fa6a8b4dc8e7decca224122728d6a497"
+    sha256 cellar: :any_skip_relocation, tahoe:         "7a35287fe061b310150f595648d9439d98e3efbbb898d2d122cd1bab51c45733"
+    sha256 cellar: :any_skip_relocation, sequoia:       "c3027ffc990a91d54b90fa734b81c2c941afa082844c794687e7d8ce33cbd0b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9acd630daf3082262aefe8084c9665dced3e955dde467b7c30469a1ae7986034"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a1e2e46b6a887d111e84d9df0708fbf492f59dafac19bf8e7d625c862699a9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf642358ef57540439860600486f807ab0938d04aa6e42875fba28579bfc4e6"
   end
 
   depends_on "python@3.14"
