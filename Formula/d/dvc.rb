@@ -3,18 +3,17 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/cc/85/1689824deb1c507a2c0ec68e9bd4c7608796e45d765e4d802aac4f4219fb/dvc-3.65.0.tar.gz"
-  sha256 "212fc1d79a29ef76f1a61260e7b0262057a7383dfa047e66d98cfa0a8a18b50e"
+  url "https://files.pythonhosted.org/packages/31/36/f8f074250f3b75cef0c183f3c1446b56dd61d7a343871792f7d169ace21e/dvc-3.66.0.tar.gz"
+  sha256 "de999939f21fc258cc0ecc34558e1ac14750b167de8f7c78354ad0fd83be1e09"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "551b82a5370fe9f64e63d9083739c9abc57bbac60a52d04ad5deb6b043c84454"
-    sha256 cellar: :any,                 arm64_sequoia: "812929bb55f3dd682be600981c33e4c4d8202bd0220a732b64cfc7b819d48685"
-    sha256 cellar: :any,                 arm64_sonoma:  "896567fd501df7c8cbc86b27bfecf9f79ad656f8ae4af3bec6b429ad9ae1f959"
-    sha256 cellar: :any,                 sonoma:        "c3cd3843fa8ef4520e8f6c6c82546b9cbcfaf9b77b48d8d92b2559a599e517ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77bd7775d501d8e6a2939608a670c4db83cb2bed93b371025736927842b3fa3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf105c7757f120a348e3112b205b2ad75fecad7e0b0e98a75a2bc078192a0704"
+    sha256 cellar: :any,                 arm64_tahoe:   "1479af0a185af0f797e965c6b47764b100a047ce93e53c83c20beae69f9c35c4"
+    sha256 cellar: :any,                 arm64_sequoia: "aebaea84061bfa68cef83c674fa9133630c9ad25b7fd425bc419c3ba61958883"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1f85fb99a57dcb265b71671bd96c04ab236618757342511881844a06a4400d3"
+    sha256 cellar: :any,                 sonoma:        "c55d19a1796bba5949d59010e2e0ca36a3781803450e5faa2b8b9e59ef2ce400"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2d79288477e3037dc487da4c8c5412f8dc2d388ddbd52f71f03f5ffad827e39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41d8ef126aa79f428cb90e48c595c63ffedd7fc3d14f15cf4a3d67199fbf2e62"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -98,8 +97,8 @@ class Dvc < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "appdirs" do
@@ -338,8 +337,8 @@ class Dvc < Formula
   end
 
   resource "flufl-lock" do
-    url "https://files.pythonhosted.org/packages/90/78/80f98f67deb8ba9b67e00a91ceb1ded5a7b8eb2b7801b89625d3396fc9d4/flufl_lock-8.2.0.tar.gz"
-    sha256 "15b333c35fab1a36b223840057258aeb4cd79f0fbaf82c144f23cdf6cf14d5e3"
+    url "https://files.pythonhosted.org/packages/23/90/242e0362ae44826309dde73311312b7cb1a8017487221685ab8af4519ae5/flufl_lock-9.0.0.tar.gz"
+    sha256 "270a46e754af3937735cdd4f8a8f43a2dc4e5c40a24fdf972f5dc6db0862e8bb"
   end
 
   resource "frozenlist" do
@@ -573,8 +572,8 @@ class Dvc < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/c2/97/39352be14d20d377a387828daf9d3f765fad1ff29bd49913d5bbf4cefe61/pathspec-1.0.0.tar.gz"
-    sha256 "9ada63a23541746b0cf7d5672a39ea77eac31dd23a80470be90df83537512131"
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
+    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   end
 
   resource "platformdirs" do
@@ -783,8 +782,8 @@ class Dvc < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/85/30/ff9ede605e3bd086b4dd842499814e128500621f7951ca1e5ce84bbf61b1/typer-0.21.0.tar.gz"
-    sha256 "c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53"
+    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
+    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
   end
 
   resource "tzdata" do
