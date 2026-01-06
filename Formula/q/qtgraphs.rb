@@ -1,10 +1,10 @@
 class Qtgraphs < Formula
   desc "Provides functionality for 2D and 3D graphs"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtgraphs-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtgraphs-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtgraphs-everywhere-src-6.9.3.tar.xz"
-  sha256 "50dc63d055125c30c0bf3a15dd1f71363e474f2fdcb35f927e754042440e048c"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtgraphs-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtgraphs-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtgraphs-everywhere-src-6.10.1.tar.xz"
+  sha256 "4d4fa0b21fa3c6b72ad5056e2a06e96e4bfda651e0a824d1f8e896c9ce5e576e"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
