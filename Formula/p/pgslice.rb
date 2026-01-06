@@ -1,10 +1,9 @@
 class Pgslice < Formula
   desc "Postgres partitioning as easy as pie"
   homepage "https://github.com/ankane/pgslice"
-  url "https://github.com/ankane/pgslice/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "9c4b597c376217f81b40775906a07d1a294f22236f357bc88551b4a3a67b6172"
+  url "https://github.com/ankane/pgslice/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "8c028497e33be976c7431fbd7d4f5b2318422ffd99625f7aa5c8dcf664179d51"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b4b4be0e0a1b904fdf2f4e7070bbe4584d1f5c6ffc396d4adb1f2235ff929b09"
@@ -17,7 +16,7 @@ class Pgslice < Formula
 
   depends_on "postgresql@18" => :test
   depends_on "libpq"
-  depends_on "ruby@3.4"
+  depends_on "ruby"
 
   # List with `gem install --explain pgslice -v #{version}`
   # https://rubygems.org/gems/pgslice/versions/#{version}/dependencies
@@ -28,8 +27,13 @@ class Pgslice < Formula
   end
 
   resource "pg" do
-    url "https://rubygems.org/gems/pg-1.6.2.gem"
-    sha256 "58614afd405cc9c2c9e15bffe8432e0d6cfc58b722344ad4a47c73a85189c875"
+    url "https://rubygems.org/gems/pg-1.6.3.gem"
+    sha256 "1388d0563e13d2758c1089e35e973a3249e955c659592d10e5b77c468f628a99"
+  end
+
+  resource "cgi" do
+    url "https://rubygems.org/gems/cgi-0.5.1.gem"
+    sha256 "e93fcafc69b8a934fe1e6146121fa35430efa8b4a4047c4893764067036f18e9"
   end
 
   def install
