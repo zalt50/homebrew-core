@@ -10,10 +10,10 @@ class Qttools < Formula
   head "https://code.qt.io/qt/qttools.git", branch: "dev"
 
   stable do
-    url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qttools-everywhere-src-6.9.3.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qttools-everywhere-src-6.9.3.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qttools-everywhere-src-6.9.3.tar.xz"
-    sha256 "0cf7ab0e975fc57f5ce1375576a0a76e9ede25e6b01db3cf2339cd4d9750b4e9"
+    url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qttools-everywhere-src-6.10.1.tar.xz"
+    mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qttools-everywhere-src-6.10.1.tar.xz"
+    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qttools-everywhere-src-6.10.1.tar.xz"
+    sha256 "8148408380ffea03101a26305c812b612ea30dbc07121e58707601522404d49b"
 
     # Backport fix for build on Linux
     patch do
