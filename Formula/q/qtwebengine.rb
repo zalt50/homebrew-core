@@ -3,10 +3,10 @@ class Qtwebengine < Formula
 
   desc "Provides functionality for rendering regions of dynamic web content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtwebengine-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtwebengine-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtwebengine-everywhere-src-6.9.3.tar.xz"
-  sha256 "d50b3b11d51dd876418cc36b4d6c96b4721e0aab773a3dd6beda606d46da8966"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtwebengine-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtwebengine-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtwebengine-everywhere-src-6.10.1.tar.xz"
+  sha256 "77b5ea6186a0429a6b8e656faedd5cd3e8019d33856ee59637698ab578ead1e3"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qwebengine_convert_dict; QtWebEngineProcess
@@ -28,7 +28,6 @@ class Qtwebengine < Formula
     :public_domain,      # sigslot; SPL-SQRT-FLOOR
     { all_of: ["ISC", "OpenSSL"] }, # boringssl, TODO: remove in Chromium 134+
   ]
-  revision 2
   head "https://code.qt.io/qt/qtwebengine.git", branch: "dev"
 
   livecheck do
