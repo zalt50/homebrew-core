@@ -177,14 +177,13 @@ class MlxLm < Formula
 
   test do
     port = free_port
-    pid = fork { exec bin/"mlx_lm.server", "--port=#{port}" }
-    sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
+    pid = spawn bin/"mlx_lm.server", "--port=#{port}"
     begin
-      output = JSON.parse shell_output("curl -s localhost:#{port}/health")
+      output = JSON.parse(shell_output("curl --silent --retry 5 --retry-connrefused localhost:#{port}/health"))
       assert_equal "ok", output["status"]
     ensure
       Process.kill "SIGTERM", pid
+      Process.wait pid
     end
   end
 end
