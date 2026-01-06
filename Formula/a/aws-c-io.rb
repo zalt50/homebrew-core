@@ -1,8 +1,8 @@
 class AwsCIo < Formula
   desc "Event driven framework for implementing application protocols"
   homepage "https://github.com/awslabs/aws-c-io"
-  url "https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.24.2.tar.gz"
-  sha256 "ba9477f15c386b98281abb8ebb9927c0c46133f4262951e57a676169b395f782"
+  url "https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "94706c99418a5c8f10396e737fe7ca96302dfcc962b627da58d77de66a54fa04"
   license "Apache-2.0"
 
   bottle do
