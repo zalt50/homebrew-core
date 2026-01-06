@@ -1,11 +1,11 @@
 class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/md5sums.txt"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/md5sums.txt"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/md5sums.txt"
-  version "6.9.3"
-  sha256 "6da59a97380cfb2dd7e93c8172e794f2cc2ccc6ab29620689932ee3b8169c964"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/md5sums"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/md5sums"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/md5sums"
+  version "6.10.1"
+  sha256 "e7e9670eef892eeab7849ad3de3613c11f150859f601fa78fa893ba6d3862707"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -96,7 +96,8 @@ class Qt < Formula
   def install
     # Check for any new formulae that need to be created before bottling
     if build.bottle?
-      submodules = File.read("md5sums.txt").scan(/^\h+[ \t]+(\S+)-everywhere-src-/i).flatten.to_set
+      # FIXME: brew produces inconsistent filenames as it thinks /qt.io/ in some mirror URLs is a filename
+      submodules = File.read(Dir["*"].first).scan(/^\h+[ \t]+(\S+)-everywhere-src-/i).flatten.to_set
       submodules -= ["qtwebengine", "qtwebview"] unless webengine_supported?
       submodules.delete("qtwayland") unless OS.linux?
       submodules.delete("qtactiveqt") # Windows-only
