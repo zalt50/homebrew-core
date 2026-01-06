@@ -7,12 +7,12 @@ class TronbytServer < Formula
   head "https://github.com/tronbyt/server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6b08850e20751b6c2a179b874492e5b4c85b599ee47ab85bef7ca58f01db74a"
-    sha256 cellar: :any,                 arm64_sequoia: "71e7688e2192d78046012c966c711c2fb36552b617ca525ad69b49f75f3cb396"
-    sha256 cellar: :any,                 arm64_sonoma:  "45d380e109d65f374e79450ab429cc91cc2019686125220c2c503f2c9283cfb0"
-    sha256 cellar: :any,                 sonoma:        "305b5851762410a661385c656d912f6241acaeb31c8885ae3e338f121d784b55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f86e5fbddac71e3900da02034d1d27d6ca4755d7ce39b1421c7d887c6269b00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f76fa2be3f96c471ab1a60f2f5feecb0c5fb5c8cd27897b503152651422e7538"
+    sha256 cellar: :any,                 arm64_tahoe:   "57236435ef65f522f521066e21a15dcba6b6c0b9ec4aadeefd838a5195dd11c1"
+    sha256 cellar: :any,                 arm64_sequoia: "1df840276ff647b9aa29072238d3732f1effe1c65d8642ea1d8adbb83eec2d55"
+    sha256 cellar: :any,                 arm64_sonoma:  "77aebad4b3fc1c241a19f39999a9ba442f0abb214585fefa12f6ee6363d93343"
+    sha256 cellar: :any,                 sonoma:        "81246d499e4fca970cd60d731ecb128d3e91775493b7fd4ec7e1e30bf3cf7132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbaf7bab6d7a5f61047a4c12eee0fecdc0e0ca5a127fb6032abc0fd29ba69598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a166147a8ef1f4dd7f064332d34d3c140729da8c8e6d049a02aff6f15173aa2b"
   end
 
   depends_on "go" => :build
