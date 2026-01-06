@@ -1,8 +1,8 @@
 class Ipget < Formula
   desc "Retrieve files over IPFS and save them locally"
   homepage "https://github.com/ipfs/ipget/"
-  url "https://github.com/ipfs/ipget/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "4a5016260d5a2be0f0599534f6faaaa3026131c4c13ef0ca30644d39a8ab9103"
+  url "https://github.com/ipfs/ipget/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "a0ea59e5847554ed9f9881d2da0e15a932cb10e5b3c0b8db8ce59e2f1b985aa8"
   license "MIT"
   head "https://github.com/ipfs/ipget.git", branch: "master"
 
@@ -17,12 +17,6 @@ class Ipget < Formula
   end
 
   depends_on "go" => :build
-
-  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/ipfs/ipget/pull/189
-  patch do
-    url "https://github.com/ipfs/ipget/commit/8788a6e7c33a534a5822edcb973b5467274c9858.patch?full_index=1"
-    sha256 "a9da66913347839ecfcfcd95ae833e59d11700a56b377fe7b8e4c21fb9211115"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
