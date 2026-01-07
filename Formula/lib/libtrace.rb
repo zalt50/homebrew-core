@@ -1,9 +1,9 @@
 class Libtrace < Formula
   desc "Library for trace processing supporting multiple inputs"
   homepage "https://github.com/LibtraceTeam/libtrace"
-  url "https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.28-1.tar.gz"
-  version "4.0.28"
-  sha256 "94406738d590a4a65172dcb1a1957f00781b793398f212e35e8119598ff95bcc"
+  url "https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.29-1.tar.gz"
+  version "4.0.29"
+  sha256 "daec03300ac611eeb89ec21b0232494ee0cef6159b8ca94447ff7bc1655af698"
   license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -36,6 +36,13 @@ class Libtrace < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
+
+  # Fix build with missing input variable for `format_bpf.c`
+  # PR ref: https://github.com/LibtraceTeam/libtrace/pull/218
+  patch do
+    url "https://github.com/LibtraceTeam/libtrace/commit/593a045f314b87ab6dfb6c5ba9e1883fb17ddc9c.patch?full_index=1"
+    sha256 "a8658c93ecdc3dbffe232d4a3a78feb8da54e32256e5721eb7f7bbc2ed88cf30"
+  end
 
   def install
     system "./bootstrap.sh"
