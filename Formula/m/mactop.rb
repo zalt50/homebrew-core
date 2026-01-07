@@ -7,9 +7,9 @@ class Mactop < Formula
   head "https://github.com/metaspartan/mactop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27767f55be2df79df6ff6268b57a05820f88e5b7124ede1c5574e1118ea7bdef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dedadb5538cc6fe7b3a7888cf2c75025a36b69cbb7afaef2fc5df8705d49aa86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "581471d6a294e75932ac3920ff2f748ce5242d8098c596f07c966eb6fb8b545f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55579ed1da40f4d68b28207a309aec6d7c2140ddc54d9eae5addc1ff70f5ad39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "facaef487632d04f416094102d321c42083e32474714838abf730f0ed396ed86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea34481fad33e2c2672478f3fbcaf1dfa5b1a9d22252941db36fe31983ddd873"
   end
 
   depends_on "go" => :build
