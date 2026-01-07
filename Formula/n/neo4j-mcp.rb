@@ -1,8 +1,8 @@
 class Neo4jMcp < Formula
   desc "Neo4j official Model Context Protocol server for AI tools"
   homepage "https://neo4j.com/docs/mcp/current/"
-  url "https://github.com/neo4j/mcp/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "ae622058f73f862162b2a0c51f33b3f50ae972844af3218c62ae7136e864b5d2"
+  url "https://github.com/neo4j/mcp/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "806a91fe1f819fa49f1f65cfb55dc67b8431dceca3540a6436506c7206106ce7"
   license "GPL-3.0-or-later"
   head "https://github.com/neo4j/mcp.git", branch: "main"
 
