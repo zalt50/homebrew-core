@@ -6,6 +6,7 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/65/34/08813891da57999cf953e9c553193c900ff363c4cdfdd48a74f65536a883/magic_wormhole-0.22.0.tar.gz"
   sha256 "52a3ae2f0c56d0d4cd52188e50f10d2fe14bfd46e287dd50b72e7f7e851434ac"
   license "MIT"
+  revision 1
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
@@ -106,8 +107,8 @@ class MagicWormhole < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pyopenssl" do
