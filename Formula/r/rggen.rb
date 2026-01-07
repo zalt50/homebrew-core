@@ -5,25 +5,25 @@ class Rggen < Formula
 
   stable do
     url "https://github.com/rggen/rggen.git",
-      tag:      "v0.35.2",
-      revision: "7c90c80913e39efa838ecdf05d95214dbb1f2d94"
+      tag:      "v0.36.0",
+      revision: "cf27c0abf99ab2fd421c1973885265af3e37046e"
 
     resource "rggen-verilog" do
       url "https://github.com/rggen/rggen-verilog.git",
-        tag:      "v0.13.2",
-        revision: "07128f7c93bf0ac273b6e5eaa516544fd95ab87a"
+        tag:      "v0.14.0",
+        revision: "d54d92b4e17c1607947f1b6d108ebd94d80e2686"
     end
 
     resource "rggen-veryl" do
       url "https://github.com/rggen/rggen-veryl.git",
-        tag:      "v0.5.2",
-        revision: "766447aa7d23211644c15064329f0f8f60d210f4"
+        tag:      "v0.6.0",
+        revision: "d29d7ae019b9c6832780d519af38b99222956c8d"
     end
 
     resource "rggen-vhdl" do
       url "https://github.com/rggen/rggen-vhdl.git",
-        tag:      "v0.12.2",
-        revision: "b65b5cd6db9926b6d2e589bcdd208b0ad5fce9e2"
+        tag:      "v0.13.0",
+        revision: "d8872192d78381b416423d0e5c88315d4d6c0578"
     end
   end
 
