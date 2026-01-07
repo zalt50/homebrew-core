@@ -4,7 +4,7 @@ class Pdftoipe < Formula
   url "https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.29.1.tar.gz"
   sha256 "604ef6e83ad8648fa09c41a788549db28193bb3638033d69cac2b0b3f33bd69b"
   license "GPL-2.0-or-later"
-  revision 12
+  revision 13
 
   no_autobump! because: :requires_manual_review
 
@@ -22,9 +22,14 @@ class Pdftoipe < Formula
 
   # Backport fix for `poppler` 25+ compatibility
   # PR ref: https://github.com/otfried/ipe-tools/pull/72
+  # PR ref: https://github.com/otfried/ipe-tools/pull/77
   patch do
     url "https://github.com/otfried/ipe-tools/commit/0da954e50fbdedf43796291853890fe36248bc16.patch?full_index=1"
     sha256 "65f7010897fa4dd94cfa933d986cae6978ddd4e33e2aa1479ec7c11786e100c3"
+  end
+  patch do
+    url "https://github.com/otfried/ipe-tools/commit/2f59d3b747a23cd4b13b09ebee9f703b8129116c.patch?full_index=1"
+    sha256 "b1b48088c9dd4067d862d788643c750fc6981102cd85f62a85f898948ca33771"
   end
 
   def install
