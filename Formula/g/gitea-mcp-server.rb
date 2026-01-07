@@ -7,12 +7,12 @@ class GiteaMcpServer < Formula
   head "https://gitea.com/gitea/gitea-mcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b4a2beed4821ef3634896b2eaf14cd18b2892421fc06a7ad9f707945c7d9741"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b4a2beed4821ef3634896b2eaf14cd18b2892421fc06a7ad9f707945c7d9741"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b4a2beed4821ef3634896b2eaf14cd18b2892421fc06a7ad9f707945c7d9741"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dc931b698628c3cbfd94f58edfe3ec7340423c1edcbe540abef0daf32a7bf08a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b1ddf2216668b858e877d0fcda73e3eed9ff8cb61c274a65360d570a2dd94e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acd702185817ec859807d3c41ef524f737935d90aae2dc0fe09d960e5668ef2b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de9e4c6407ecbc5312da893c5c872931800b17ba2eac135407279520644eb0f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de9e4c6407ecbc5312da893c5c872931800b17ba2eac135407279520644eb0f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de9e4c6407ecbc5312da893c5c872931800b17ba2eac135407279520644eb0f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0a47c1500fa8151237266619e232691f04a675879e497cad19bb026e02b3b17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c255d45a8414b6ecc04e1fc056eec19f829ccb00ee6ca56392a81d4f4cb320d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71174d341bdb94611a537171aef12ff262a9cee7054712199eac118d484bd09f"
   end
 
   depends_on "go" => :build
