@@ -383,7 +383,7 @@ jobs:
 
             - label: CI-build-dependents-from-source
               path:
-                - 'Formula/.+/(cabal-install|docbook-xsl|emscripten|erlang|ocaml|ocaml-findlib|ocaml-num|openjdk|rust)\.rb'
+                - 'Formula/.+/(cabal-install|docbook-xsl|emscripten|erlang|ocaml|ocaml-findlib|ocaml-num|openjdk|pyqt-builder|rust)\.rb'
                 - 'Aliases/(ghc|go)(@[0-9.]+)?$'
               missing_content: '\n  revision [0-9]+\n'
               keep_if_no_match: true
