@@ -1,8 +1,8 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
   homepage "https://prometheus.io/"
-  url "https://github.com/prometheus/prometheus/archive/refs/tags/v3.9.0.tar.gz"
-  sha256 "8fd489fc447eb94c6143ac62e3970162e16953401720f0965916daa2827bd74c"
+  url "https://github.com/prometheus/prometheus/archive/refs/tags/v3.9.1.tar.gz"
+  sha256 "b97651c0aa00d0f6fd2973b773b18d31fe0402a4ca75b1eba7e788d7de42c9c0"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
