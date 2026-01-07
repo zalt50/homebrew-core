@@ -1,8 +1,8 @@
 class Tinymist < Formula
   desc "Services for Typst"
   homepage "https://myriad-dreamin.github.io/tinymist/"
-  url "https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.14.6.tar.gz"
-  sha256 "c49cbfc6ddb4abd3a2f74259b8272c72f86fc82090a887fa5b7c0b84b718a9ac"
+  url "https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.14.8.tar.gz"
+  sha256 "22d4d682df5ad56496da6965e74f0a89f00133c22a30c1c07f1bb45acd841aa7"
   license "Apache-2.0"
   head "https://github.com/Myriad-Dreamin/tinymist.git", branch: "main"
 
