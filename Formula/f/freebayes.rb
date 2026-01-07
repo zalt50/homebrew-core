@@ -50,13 +50,16 @@ class Freebayes < Formula
   end
 
   def install
-    # add contrib to include directories
-    inreplace "meson.build", "incdir = include_directories(", "incdir = include_directories('contrib',"
+    inreplace "meson.build" do |s|
+      # add contrib to include directories
+      s.gsub! "incdir = include_directories(", "incdir = include_directories('contrib',"
+
+      # add tabixpp to library directories, https://github.com/mesonbuild/meson/issues/8091
+      s.gsub! "find_library('tabixpp'", "\\0, dirs: '#{Formula["tabixpp"].opt_lib}'"
+    end
 
     # install intervaltree
     (buildpath/"contrib/intervaltree").install resource("intervaltree")
-    # add tabixpp to include directories
-    ENV.append_to_cflags "-I#{Formula["tabixpp"].opt_include} -L#{Formula["tabixpp"].opt_lib} -ltabix"
 
     # Set prefer_system_deps=false as we don't have formulae for these and some are not versioned/tagged
     system "meson", "setup", "build", "-Dcpp_std=c++14", "-Dprefer_system_deps=false", *std_meson_args
