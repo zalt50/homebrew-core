@@ -9,12 +9,12 @@ class OnlykeyAgent < Formula
   revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9b4a11c4877111b534597d25dce4f80af51bf4124872c7c41ebb76e86951b2ba"
-    sha256 cellar: :any,                 arm64_sequoia: "ec671e0f48cb4c122d1a677f6b96a67c5c6b6b06d38ef5130ba3bd08dc437615"
-    sha256 cellar: :any,                 arm64_sonoma:  "c089c0e63350f3b37cedfd7b802f2755cd90f4bd4488a8516842e0b38c1a1489"
-    sha256 cellar: :any,                 sonoma:        "09504b091a875e7f6f3a617eef95bc143eed075ff7f8e267036d1e107abbe4e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d0fcd2bc34ee8ac15476fbf80219966faac22a2d32a33148c1736b83ea130d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04ae2643d70a6eed37771ec364ee271b2f0364e7babaeb8901d763a8b5fda298"
+    sha256 cellar: :any,                 arm64_tahoe:   "41f51879b9ccc2e1dc8c987ecb4b84d01b4b4f448687f65268d778bcfb8dff8a"
+    sha256 cellar: :any,                 arm64_sequoia: "29507222f8d8f2a984af9a9ae79f523a206bd0936f82b1c0ea9a2d16c45aba8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8da9d194e5671af61277f450ea0423463cf7c243c5bfd7df50b4d10a6ab0a48"
+    sha256 cellar: :any,                 sonoma:        "edec80bda54b4517ceb4cc6805f7184878bb2395ad094d7d8d43bec64e2f5a78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76ec93e57d12f3357da2ea0e7307594c17272fbc57d9d816311203472fe7ef4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85a7aaa27c6ca881a19d246faf5be929ceaed3353e551194b72ca83141699166"
   end
 
   depends_on "pkgconf" => :build
