@@ -1,8 +1,8 @@
 class Dtsroll < Formula
   desc "CLI tool for bundling TypeScript declaration files"
   homepage "https://github.com/privatenumber/dtsroll"
-  url "https://registry.npmjs.org/dtsroll/-/dtsroll-1.4.1.tgz"
-  sha256 "26a3030a532a715ee29fcd8ec9b2cc20e92293d925d135c6c69ee114f39d71da"
+  url "https://registry.npmjs.org/dtsroll/-/dtsroll-1.5.0.tgz"
+  sha256 "0df47a60f01130264f7f314f82d65dcf3782c215782ab7bb2da7134edaab3b3e"
   license "MIT"
 
   bottle do
@@ -21,6 +21,9 @@ class Dtsroll < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    node_modules = libexec/"lib/node_modules/dtsroll/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
