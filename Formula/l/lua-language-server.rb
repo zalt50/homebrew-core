@@ -31,6 +31,9 @@ class LuaLanguageServer < Formula
       "os.exit(lt.run(), true)",
       "os.exit(true, true)"
 
+    # remove git metadata from submodules
+    rm_r Dir["meta/3rd/*/.git"]
+
     chdir "3rd/luamake" do
       system "compile/install.sh"
     end
