@@ -1,16 +1,14 @@
 class Yazpp < Formula
   desc "C++ API for the Yaz toolkit"
   homepage "https://www.indexdata.com/resources/software/yazpp/"
-  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.0.tar.gz"
-  sha256 "17aa0f5b45edbfa9ee0363cb3b684e895d3d05e74024384d6c8707875621dcfc"
+  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.1.tar.gz"
+  sha256 "7fe5487d66fafdb0a3c2ceeec2b7ad27d8d8718c57f5d6d7a5598d724ccee5d2"
   license "BSD-3-Clause"
 
   livecheck do
     url "https://ftp.indexdata.com/pub/yazpp/"
     regex(/href=.*?yazpp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1282e706247f55d29fd6ae7db1132e0360339d64b7641d7a539cba08b6474532"
@@ -23,6 +21,7 @@ class Yazpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fadea04212654ddcc34aa0a5bf5127f6c53a652c21d98a52b168c584e3a3fccc"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "yaz"
 
   def install
