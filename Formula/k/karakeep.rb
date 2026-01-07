@@ -5,6 +5,10 @@ class Karakeep < Formula
   sha256 "c262313c828f8f7676b440d2183478567c31e9712f71b547717267747ce859a4"
   license "AGPL-3.0-only"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "d5d3a2a129d3393449741d26fbe625c50c002c7cbfcb0255b783a6ad0b334db5"
+  end
+
   depends_on "node"
 
   def install
