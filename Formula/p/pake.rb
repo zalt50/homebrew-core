@@ -5,6 +5,15 @@ class Pake < Formula
   sha256 "3f5d2712b7cf63bc6cc576e731c5cb37136ed74abb56bee2fe4cb327993a98d4"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ddeaa2ccc2377d8e321811170e064b9d9df0ace28153588f3ae313c212a1b058"
+    sha256 cellar: :any,                 arm64_sequoia: "ce56fda6ea7a06a190b80438f81fb30ab5a7cd45424f87de1ebbb38a1cfabb19"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce56fda6ea7a06a190b80438f81fb30ab5a7cd45424f87de1ebbb38a1cfabb19"
+    sha256 cellar: :any,                 sonoma:        "6d6d070a6b3fdc1ba030c62be57b6db088db1e41fd542b7e4065f821b48cdfde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c744be7b3261eb7a727e456a4025a0485e586fe301c02d4ee8fc102081da4d78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfaa1aae34c48a1355d63bed7b4aec5d70341d30ec314a6332e396f5ccdd5197"
+  end
+
   depends_on "node"
   depends_on "pnpm"
   depends_on "rust"
