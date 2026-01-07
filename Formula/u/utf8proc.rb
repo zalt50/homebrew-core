@@ -15,8 +15,12 @@ class Utf8proc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2faa88cd8a625700d288ae4b89b3913273a0de36ef941a990b7f2fe242cf00e"
   end
 
+  depends_on "cmake" => :build
+
   def install
-    system "make", "install", "prefix=#{prefix}"
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
