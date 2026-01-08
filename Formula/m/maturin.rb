@@ -15,11 +15,10 @@ class Maturin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f669a6d2987f00613e384ebea87ca7f2ccf95a766a37fcfc2fe8f72a24c42e7e"
   end
 
+  depends_on "pkgconf" => :build
+  depends_on "rust" => [:build, :test]
   depends_on "python@3.14" => :test
-  depends_on "rust"
-
-  uses_from_macos "bzip2"
-  uses_from_macos "xz"
+  depends_on "xz"
 
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
