@@ -10,12 +10,12 @@ class Bpython < Formula
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26cf692603fb30a8b833b14e423115fc4f375bb8aa8e8e3a0fbe138992a77e7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "768c96a4a6980781c9bb3cebf2a569af3a697f5320206a5c89558f6702b6426a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b1b150468ae7e61b7bd8bd484300a9a6a13ec703b13041caff522d706ee9c8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5dc4660896910e093ed62002d6f99c0e687dac54336de66656842e2f31c46289"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d179986984a052130e83b10b740818cb6af477ea032b306c741fb053181e581"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c20b23e11d41902a6bcda73de253191f719ed9d97b1f297bf7392455f6614957"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "993caa0f820df15958cf204030750aa1ba8e1b02ec27de609b7097ad333059e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b6505564e9e79ec15450c355eeaa309f10217636048b8aa110bc5d7cbed5ba1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "573725d972b81031ebf405234a45ed9dfd33f44f25030d50369ad8ade2796e62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e7c426822b644ea7a879329f20e540c414d8eeed1263cfd60d3ec1a8162076b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcb94ebfba3d03fe2259f7fe0199cd854db7041d4834a4749e407014bd01a60f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cced3a11eaf8380ec74cd46476852805bb6b0d20487c9e44ff3991cbc2660ba2"
   end
 
   depends_on "certifi" => :no_linkage
