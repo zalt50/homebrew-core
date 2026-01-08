@@ -9,12 +9,12 @@ class AwsShell < Formula
   revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9131227fc18547dff2407285499f6d938cbbb845183b745c5b350f0a64a09507"
-    sha256 cellar: :any,                 arm64_sequoia: "0b6775c88741401d3ac1d7a8f96ed2ae1e6e10aa55f59dc704ca808a01b527d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "03684a55d498698e0b725bc1a3259e83f7b8bebcdc7d5f02ded24968feeb7cca"
-    sha256 cellar: :any,                 sonoma:        "d8179e3bf4474efd4bfe04cca6b269dd17b37be264f86756cb3b0d6145477fd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a44091bad2ae28f13651d9613b04db354b7cab69d74e8b1091845d5882cea14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4100ab6e3892de4e4efd35ccfb85be7e10eac08fbdfe8956efa357dfe4a52686"
+    sha256 cellar: :any,                 arm64_tahoe:   "3fbe8b475df196e009bb8d9012ef4bba359d1b4f61961a7d39553f32e10453b1"
+    sha256 cellar: :any,                 arm64_sequoia: "3a87785ccaf9a41f48e50e5cb84fa4cd6d50ed5c597fb5ecc6ec21d1b2b9488a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c46890e163c5bb7b057806ea485e47667e6e7d98f046acf1ff3a7b96c2753952"
+    sha256 cellar: :any,                 sonoma:        "48909acded7cd844bcd246ce7ac7d288a7e93f3692e79efcbadca9349d09448a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ef4445eedc3df2bab16f45b04e66206215d25ef7ad5b8e6b5cf786a2b69e05b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b4ce92db9bbc0aba25cff5f20cb04e9274d9a568683976bfecf197bcd0fa57c"
   end
 
   depends_on "libyaml"
