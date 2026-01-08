@@ -1,8 +1,8 @@
 class Checkmake < Formula
   desc "Linter/analyzer for Makefiles"
   homepage "https://github.com/checkmake/checkmake"
-  url "https://github.com/checkmake/checkmake/archive/refs/tags/0.2.2.tar.gz"
-  sha256 "4e5914f1ee3e5f384d605406f30799bf556a06b9785d5b0e555fd88b43daf19c"
+  url "https://github.com/checkmake/checkmake/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "37f14cbf37135e3c7507b990234c4fdfd9643d4227924541db901b84a66dcd14"
   license "MIT"
   head "https://github.com/checkmake/checkmake.git", branch: "main"
 
@@ -52,6 +52,6 @@ class Checkmake < Formula
 
       .PHONY: clean test
     EOS
-    assert_match "phonydeclared", shell_output("#{bin}/checkmake #{sh}", 2)
+    assert_match "phonydeclared", shell_output("#{bin}/checkmake #{sh}", 1)
   end
 end
