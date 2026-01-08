@@ -1,8 +1,8 @@
 class Krep < Formula
   desc "High-Performance String Search Utility"
   homepage "https://github.com/davidesantangelo/krep"
-  url "https://github.com/davidesantangelo/krep/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "cfe921da29aaf3877531837ee5fac244555f619da9ebc948fa135790dfe647fd"
+  url "https://github.com/davidesantangelo/krep/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "d0201fb5fb6fbea95fc76318b343281ce9c622297b82133f53b2bfe2ddcf5a17"
   license "BSD-2-Clause"
 
   bottle do
