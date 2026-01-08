@@ -9,14 +9,14 @@ class Airshare < Formula
   revision 21
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cb3c3aa258ea1bfe4ed2304885d0645e9d2b1bcde2886c8d27f9687c79b0a8f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1172f376c45d4854b3f75715141e4f175c9723577b616eb38c3bd4f5bdee5544"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "454c0870d6338e84fd37ac099890bbff5d200aa0d61471829b0ff6bb966f9d84"
-    sha256 cellar: :any_skip_relocation, tahoe:         "950d288be598da6f75e72b8877402f5098a19c51d7e6d11fd4b235ac3b7d99db"
-    sha256 cellar: :any_skip_relocation, sequoia:       "a23ee3a587ac01d75a20d7b2aba99c58626ec127c4594c29c2ea9092d3ab256e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e724ecd21be0d9919d1e79d06bddb68754012ab76601ed2bf530cb7594c7a89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43f7e9ea5a7b38ea3c41d44faa533364128dd04365b2c0343a57455a1ca37af9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "897f2a55aadc88923917d891ba6aa309bcc7fb1bb28befc4e1662ca9714f07cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9636e624073ef0bf3852365718a9933eb208116b1d0ae2932a969c67f2c4b548"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f444b8bbe938a458c0e5c8fde4248d1bb2e1a0b1afbdabf8880d895110fc18f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eec9a022c355f4cdbf5f390eb3488b4b1855b759e5b22e0111d9a54bd9ad0e6"
+    sha256 cellar: :any_skip_relocation, tahoe:         "ddb59378d94f743c482c92948df250fd1bb603def143fa21db6230c7dfe5d67a"
+    sha256 cellar: :any_skip_relocation, sequoia:       "dcfb19818e5470def9d6baca0edbd7434db9985481fde02d853b5bf6c7724c95"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ec4708178196534ee179dbf7a935c79ab727301e5dc40785b9266f5a9b543d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c02b42a4ae32c2de7fc16367ae5014a020ee3cbd1b9c0aae6c050ebafcc84a71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1507a6fb1ca8151b9027443e9f81a5e62d4d452d7a872e90f0d37da94590e844"
   end
 
   depends_on "certifi" => :no_linkage
