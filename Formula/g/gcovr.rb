@@ -3,10 +3,9 @@ class Gcovr < Formula
 
   desc "Reports from gcov test coverage program"
   homepage "https://gcovr.com/"
-  url "https://files.pythonhosted.org/packages/e4/ce/b7516854699f807f58c3c9801ad44de7f51a952be16b62a5948b358f1aa4/gcovr-8.4.tar.gz"
-  sha256 "8ea0cf23176b1029f28db679d712ca6477b3807097c3755c135bdc53b51cfa72"
+  url "https://files.pythonhosted.org/packages/47/12/460c5d026ea8877cade21473e090a125288442ff930cd08bdf5e3f9eb194/gcovr-8.5.tar.gz"
+  sha256 "9f0e21aab72b70fc26a4a0b6e35f25b97eefb5ce6e9c57388bf4a065726f7965"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/gcovr/gcovr.git", branch: "main"
 
   bottle do
@@ -24,8 +23,8 @@ class Gcovr < Formula
   uses_from_macos "libxslt"
 
   resource "colorlog" do
-    url "https://files.pythonhosted.org/packages/d3/7a/359f4d5df2353f26172b3cc39ea32daa39af8de522205f512f458923e677/colorlog-6.9.0.tar.gz"
-    sha256 "bfba54a1b93b94f54e1f4fe48395725a3d92fd2a4af702f6bd70946bdc0c6ac2"
+    url "https://files.pythonhosted.org/packages/a2/61/f083b5ac52e505dfc1c624eafbf8c7589a0d7f32daa398d2e7590efa5fda/colorlog-6.10.1.tar.gz"
+    sha256 "eb4ae5cb65fe7fec7773c2306061a8e63e02efc2c72eba9d27b0fa23c94f1321"
   end
 
   resource "jinja2" do
