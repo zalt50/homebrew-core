@@ -1,8 +1,8 @@
 class Pyright < Formula
   desc "Static type checker for Python"
   homepage "https://github.com/microsoft/pyright"
-  url "https://registry.npmjs.org/pyright/-/pyright-1.1.407.tgz"
-  sha256 "24f3e5481fe638415622774c0ba0fc949dc560e2baab0d604c6d67f10bb3c0a4"
+  url "https://registry.npmjs.org/pyright/-/pyright-1.1.408.tgz"
+  sha256 "16f73d4281d00ddbd549d5dbe574d0f2cf0aec34f276f91bd6ae63fe1001473e"
   license "MIT"
 
   bottle do
@@ -12,8 +12,11 @@ class Pyright < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
+
+    # Remove empty directory to make all bottle
+    rm_r libexec/"lib/node_modules/pyright/node_modules" if OS.mac?
   end
 
   test do
