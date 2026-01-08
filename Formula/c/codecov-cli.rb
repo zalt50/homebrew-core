@@ -6,6 +6,7 @@ class CodecovCli < Formula
   url "https://files.pythonhosted.org/packages/8d/61/a9fb6cd8b44671d078f86893985b8f430c1796b5f0c63a0e1d1929c0fe75/codecov_cli-11.2.6.tar.gz"
   sha256 "fcd87c0af11809fd17c52638f16243b35be2e067011f916a04d0f1115bed39ef"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ef5f7fba7dce7525f62e02e7907510fd09d69bf36b748e31ddaf3de641cdd0db"
@@ -59,8 +60,8 @@ class CodecovCli < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/4a/2a/d225cbf87b6c8ecce5664db7bcecb82c317e448e3b24a2dcdaacb18ca9a7/sentry_sdk-2.47.0.tar.gz"
-    sha256 "8218891d5e41b4ea8d61d2aed62ed10c80e39d9f2959d6f939efbf056857e050"
+    url "https://files.pythonhosted.org/packages/40/f0/0e9dc590513d5e742d7799e2038df3a05167cba084c6ca4f3cdd75b55164/sentry_sdk-2.48.0.tar.gz"
+    sha256 "5213190977ff7fdff8a58b722fb807f8d5524a80488626ebeda1b5676c0c1473"
   end
 
   resource "test-results-parser" do
@@ -69,8 +70,8 @@ class CodecovCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
