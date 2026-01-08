@@ -6,6 +6,7 @@ class Apprise < Formula
   url "https://files.pythonhosted.org/packages/a9/a7/bb182d81f35c3fe405505f0976da4b74f942cfdd53c7193b0fe50412aa27/apprise-1.9.6.tar.gz"
   sha256 "4206be9cb5694a3d08dd8e0393bbb9b36212ac3a7769c2633620055e75c6caef"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2b7822ce3d4c7a41a432ca017ccb79493eaa20bab1a96fe455f5eb27548edb07"
@@ -63,8 +64,8 @@ class Apprise < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
