@@ -1,12 +1,10 @@
 class Upx < Formula
   desc "Compress/expand executable files"
   homepage "https://upx.github.io/"
-  url "https://github.com/upx/upx/releases/download/v5.0.2/upx-5.0.2-src.tar.xz"
-  sha256 "209b219bbcfa58c249ffe6eba3c244e0910fa8be792b5521e4daf938167f05cc"
+  url "https://github.com/upx/upx/releases/download/v5.1.0/upx-5.1.0-src.tar.xz"
+  sha256 "9f7a810b8a810b1ca2c5cb01ffcf23066e3fb8a51ddc406ea05bdd5d37d0b8bd"
   license "GPL-2.0-or-later"
   head "https://github.com/upx/upx.git", branch: "devel"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a10f0dbe257ac5d72be40562532c272d3fe14aa4c49c0f3454ec23f0691806e8"
