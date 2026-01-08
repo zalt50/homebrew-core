@@ -1,12 +1,10 @@
 class Fetch < Formula
   desc "Download assets from a commit, branch, or tag of GitHub repositories"
   homepage "https://www.gruntwork.io/"
-  url "https://github.com/gruntwork-io/fetch/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "81086290cc82a990a7369c710179869e3d1a5b3fea60df5997138a96688e9899"
+  url "https://github.com/gruntwork-io/fetch/archive/refs/tags/v0.4.8.tar.gz"
+  sha256 "8192dddb375e2a8765e54e27c65b544068b35bd349f9ad669d6269734f3b5f76"
   license "MIT"
   head "https://github.com/gruntwork-io/fetch.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "67c1c63e303407f85f811013248bd0ea071b7f387cf941104d770e3c14c90d70"
@@ -30,9 +28,11 @@ class Fetch < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/fetch --version")
+
     repo_url = "https://github.com/gruntwork-io/fetch"
 
-    assert_match "Downloading release asset SHA256SUMS to SHA256SUMS",
-      shell_output("#{bin}/fetch --repo=\"#{repo_url}\" --tag=\"v0.3.10\" --release-asset=\"SHA256SUMS\" . 2>&1")
+    assert_match "Downloading asset SHA256SUMS to SHA256SUMS",
+      shell_output("#{bin}/fetch --repo=\"#{repo_url}\" --tag=\"v0.4.6\" --release-asset=\"SHA256SUMS\" . 2>&1")
   end
 end
