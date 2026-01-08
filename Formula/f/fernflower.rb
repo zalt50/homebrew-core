@@ -12,7 +12,7 @@ class Fernflower < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "52259458265148eb68cf72f1c80e3d6692d073c37e28d81f0d4987a08a3f4d3a"
+    sha256 cellar: :any_skip_relocation, all: "9772120e9b5fddf07caccc2aa3f7c4bf5beb8edd5db8d334735a44b607bae970"
   end
 
   depends_on "openjdk"
