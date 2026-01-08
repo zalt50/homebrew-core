@@ -8,13 +8,12 @@ class Jinja2Cli < Formula
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "157e6a406008cdc0be4df1286a88c2c950a37aa9d3c1d91b132aa51618f3bdd3"
-    sha256 cellar: :any,                 arm64_sequoia: "5ca7098ef9032def0541e94247d55465e1da685d0e96485bd92b7b91f91b8fd4"
-    sha256 cellar: :any,                 arm64_sonoma:  "2317ec1250bc8823be5988d3d033e1db2809984f0ee28fdf678e663e67ff0935"
-    sha256 cellar: :any,                 sonoma:        "ff49c01c6798c5bb2e9dd9079248450d156b24c55a0ec975587521233aaeb829"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b963413db8832b24396afebe937648fbcd6e2135d10329ed324df7600ec8fdf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c284b0eee62b02969ce0b167081fd1b77f0d50647c32d17f65b7173b6d61dfd7"
+    sha256 cellar: :any,                 arm64_tahoe:   "b528139b50bb29cf676845e237df5c3cdff7a17280b377d9513079607f338582"
+    sha256 cellar: :any,                 arm64_sequoia: "52c17d029191c588d01d61db382a75c8b3ecfe2d9c920f6a21b2a51a168900f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "88fd33c859ccee78eec2be6a828798fb5a3dbdefc4bc7f63beedf761a1e7110f"
+    sha256 cellar: :any,                 sonoma:        "4b49e0fcc8ac730c12d14a2de2d190497cf8e3c972f59cb166d05c0c047f5417"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d631c54a86744ffa9848ab95a496749b06013296b8c52d078771d783ce73b4a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e4b2551085d23cb09309f3526f1e0903d67c72e72146dc686fffe0fce486563"
   end
 
   depends_on "rust" => :build
