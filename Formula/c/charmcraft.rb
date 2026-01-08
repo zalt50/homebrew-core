@@ -6,7 +6,7 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/08/66/48bba084a9e894571107eacdac3eae04ece27e83ceae4e71b5f8ed59077b/charmcraft-4.1.0.tar.gz"
   sha256 "b8b81cd6fcf58997fb9d28b3d0124b178d92a9eed4f77cc6350d778629f21653"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "58bea37feb4c04db2c27a36406c227a360a17b6c6f746382891c9bcae0c905e3"
@@ -343,8 +343,8 @@ class Charmcraft < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wadllib" do
