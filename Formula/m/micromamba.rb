@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://github.com/mamba-org/mamba/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "a49646eadb913d5c761e316dfcb9f277278c5fd99fc2851d06e4bcf00f1c1412"
+  url "https://github.com/mamba-org/mamba/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "2d8761e423275b2e2b46352c99bdedc062ca22b98871ffa82e044d2be74b350f"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
@@ -60,6 +60,7 @@ class Micromamba < Formula
 
     args = %W[
       -DBUILD_LIBMAMBA=ON
+      -DBUILD_LIBMAMBA_SPDLOG=ON
       -DBUILD_SHARED=ON
       -DBUILD_STATIC=OFF
       -DBUILD_MAMBA=ON
