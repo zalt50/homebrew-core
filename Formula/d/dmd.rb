@@ -4,20 +4,18 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    url "https://github.com/dlang/dmd/archive/refs/tags/v2.111.0.tar.gz"
-    sha256 "40b64dd049642dcdaef60815451d5c718ef6c861b6a02a3da998a6a3377900c1"
+    url "https://github.com/dlang/dmd/archive/refs/tags/v2.112.0.tar.gz"
+    sha256 "33592dc18855bd113914ca065d9e88018745afaa5fbf85b971fbc1a6663c9ec5"
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/refs/tags/v2.111.0.tar.gz"
-      sha256 "b4a7beb5acac54457dc6dc2ab0899a713e446be10a9a584089238babf4e16d5a"
+      url "https://github.com/dlang/phobos/archive/refs/tags/v2.112.0.tar.gz"
+      sha256 "99e046c1107bc3f365910f5cb52937483c9a5528f2d4ef543b8690ad66723f16"
 
       livecheck do
         formula :parent
       end
     end
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 sonoma:       "58cc3b27e8e385cefb7105d6943a0ae6dec8718ca504901a165b6074bdf3d9d5"
