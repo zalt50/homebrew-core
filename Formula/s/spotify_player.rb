@@ -1,8 +1,8 @@
 class SpotifyPlayer < Formula
   desc "Command driven spotify player"
   homepage "https://github.com/aome510/spotify-player"
-  url "https://github.com/aome510/spotify-player/archive/refs/tags/v0.21.2.tar.gz"
-  sha256 "63fce17376105ba57a3a20d9e237141dfe655a4df606d6cd666a6cdd485f2f24"
+  url "https://github.com/aome510/spotify-player/archive/refs/tags/v0.21.3.tar.gz"
+  sha256 "1f7e42ebb340b7c83c0ab96a8ef21bce5acae9ef899ff9ecd377570fdd1f1dbe"
   license "MIT"
   head "https://github.com/aome510/spotify-player.git", branch: "master"
 
@@ -34,9 +34,10 @@ class SpotifyPlayer < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/spotify_player --version")
+
     cmd = "#{bin}/spotify_player -C #{testpath}/cache -c #{testpath}/config 2>&1"
     _, stdout, = Open3.popen2(cmd)
-    assert_match "No cached credentials found", stdout.gets("\n")
-    assert_match version.to_s, shell_output("#{bin}/spotify_player --version")
+    assert_match "https://accounts.spotify.com/authorize", stdout.gets("\n")
   end
 end
