@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/f0/44/b8d89d8a016cf333cdf60b1eaf22a4e799a0fc9a2f04c05126405ba2448e/mycli-1.43.1.tar.gz"
-  sha256 "7d46f0e08db8aa90f2ba34014363485404dac33ebb98123ca2b662e439f6700d"
+  url "https://files.pythonhosted.org/packages/83/90/be2cf35ad5133fdd64c56e094bd95582612ef06048e0a4fb52a4f4d7cc16/mycli-1.44.0.tar.gz"
+  sha256 "550ff5a2c4500dbf5600fd525f811a9632f2c2b9e771a5739e161e0f5f93938b"
   license "BSD-3-Clause"
 
   bottle do
@@ -29,8 +29,8 @@ class Mycli < Formula
                 exclude_packages: %w[certifi cryptography pydantic]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "cli-helpers" do
