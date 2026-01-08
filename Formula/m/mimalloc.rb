@@ -1,8 +1,8 @@
 class Mimalloc < Formula
   desc "Compact general purpose allocator"
   homepage "https://github.com/microsoft/mimalloc"
-  url "https://github.com/microsoft/mimalloc/archive/refs/tags/v3.1.5.tar.gz"
-  sha256 "1c6949032069d5ebea438ec5cedd602d06f40a92ddf0f0d9dcff0993e5f6635c"
+  url "https://github.com/microsoft/mimalloc/archive/refs/tags/v3.2.6.tar.gz"
+  sha256 "bd5756fb2e9f5c275b37ce1d530ac1c98baca0bad6818dcda5c83d6139108a97"
   license "MIT"
 
   livecheck do
@@ -23,6 +23,13 @@ class Mimalloc < Formula
 
   depends_on "cmake" => :build
 
+  # Fix test code to compile correctly, remove in next release
+  # Issue ref: https://github.com/microsoft/mimalloc/issues/1194
+  patch do
+    url "https://github.com/microsoft/mimalloc/commit/41faf0a45e31689371f49e5de82e85597eec4b92.patch?full_index=1"
+    sha256 "557c259599c85bdddecb418076ea742ef4cef28f66e5917bc011a41c71fd8311"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DMI_INSTALL_TOPLEVEL=ON", *std_cmake_args
     system "cmake", "--build", "build"
@@ -33,6 +40,6 @@ class Mimalloc < Formula
   test do
     cp pkgshare/"test/main.c", testpath
     system ENV.cc, "main.c", "-L#{lib}", "-lmimalloc", "-o", "test"
-    assert_match "heap stats", shell_output("./test 2>&1")
+    assert_match(/pages\s+peak\s+total\s+current\s+block\s+total/, shell_output("./test 2>&1"))
   end
 end
