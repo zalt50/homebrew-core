@@ -1,16 +1,14 @@
 class Tofrodos < Formula
   desc "Converts DOS <-> UNIX text files, alias tofromdos"
   homepage "https://www.thefreecountry.com/tofrodos/"
-  url "https://www.thefreecountry.com/tofrodos/tofrodos-1.8.3.zip"
-  sha256 "44d76fb024164982aa5e166c1a3c29fa7555c9e0ee8e196cc52595c57a4b55dc"
+  url "https://www.thefreecountry.com/tofrodos/tofrodos-1.8.4.zip"
+  sha256 "fd7b5b5b368a38104dd3c8845c1f24198d973d8b96d4765e24643266a0fa2034"
   license "GPL-2.0-only"
 
   livecheck do
     url :homepage
     regex(/href=.*?tofrodos[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ed51d90d1c7e5a548f75ee9aeac84b5f11dd5f1ee683674b4b2edec39b053de"
