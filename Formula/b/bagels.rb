@@ -6,7 +6,7 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "c3b995908eccbd43319faa0279607d006879e3267f3c8a657317d0ec800ce465"
@@ -196,8 +196,8 @@ class Bagels < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "werkzeug" do
