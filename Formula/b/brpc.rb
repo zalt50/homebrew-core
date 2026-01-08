@@ -1,11 +1,20 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://dlcdn.apache.org/brpc/1.15.0/apache-brpc-1.15.0-src.tar.gz"
-  sha256 "0bc8c2aee810c96e6c77886f828fbfdf32ae353ce997eb46f2772c0088010c35"
   license "Apache-2.0"
   revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
+
+  stable do
+    url "https://dlcdn.apache.org/brpc/1.15.0/apache-brpc-1.15.0-src.tar.gz"
+    sha256 "0bc8c2aee810c96e6c77886f828fbfdf32ae353ce997eb46f2772c0088010c35"
+
+    # Backport support for Protobuf 30+
+    patch do
+      url "https://github.com/apache/brpc/commit/8d87814330d9ebbfe5b95774fdb71056fcb3170c.patch?full_index=1"
+      sha256 "33a133c583d39a1d8394174c8c5f02b791411036faa3b1afe38841c3e6b2e0f1"
+    end
+  end
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "a717956c5a369f398e56b76ff82b4d174bee5ac45e146c71622d150752cc8204"
@@ -21,7 +30,7 @@ class Brpc < Formula
   depends_on "gflags"
   depends_on "leveldb"
   depends_on "openssl@3"
-  depends_on "protobuf@29"
+  depends_on "protobuf"
 
   on_linux do
     depends_on "pkgconf" => :test
@@ -72,7 +81,7 @@ class Brpc < Formula
       }
     CPP
 
-    protobuf = Formula["protobuf@29"]
+    protobuf = Formula["protobuf"]
     flags = %W[
       -I#{include}
       -I#{protobuf.opt_include}
