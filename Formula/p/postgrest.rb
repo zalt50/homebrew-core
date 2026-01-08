@@ -21,14 +21,19 @@ class Postgrest < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build # GHC 9.10 blocked by deps, e.g. https://github.com/protolude/protolude/issues/149
+  depends_on "ghc" => :build
+  depends_on "gmp"
   depends_on "libpq"
 
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   def install
+    # Workaround to build with GHC >= 9.10
+    args = ["--allow-newer=base,fuzzyset:text"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", "--ignore-project", *std_cabal_v2_args
+    system "cabal", "v2-install", "--ignore-project", *args, *std_cabal_v2_args
   end
 
   test do
