@@ -7,6 +7,9 @@ class Purescript < Formula
   stable do
     # TODO: Switch back to hackage in next release and remove livecheck
     # url "https://hackage.haskell.org/package/purescript-0.15.15/purescript-0.15.15.tar.gz"
+    #
+    # NOTE: If the build fails due to dependency resolution, do not report issue
+    # upstream as we modify upstream's constraints in order to use a newer GHC.
     url "https://github.com/purescript/purescript/archive/refs/tags/v0.15.15.tar.gz"
     sha256 "7f6c5b1025f1dfa3b74f6fd11133d8472cb5297038619ce2bd00dea99af8127a"
 
@@ -65,14 +68,19 @@ class Purescript < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc" => :build
+  depends_on "gmp"
 
+  uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
+    # Minimal set of dependencies that need to be unbound to build with newer GHC
+    args = ["--allow-newer=base,template-haskell"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do
