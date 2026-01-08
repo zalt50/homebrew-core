@@ -55,16 +55,13 @@ class Purescript < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "2b9aeb3f72c90bcf7747ac0000e2609b7d39ad535d00a7ba733dd40f51dbcb5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3c1767c6fe89d2e486911f5c60c81222996c3b47971d57b533bb57ace2d22a4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69551d14eb101c3640582d055929b2d6338310c5422530edb2b1e35dbd648830"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "720d717ad6d38ba67c288cca2cc03b236cf29ed3badeb823743d1ab091f8704f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d4a9daf4fca5b870a4e45590a13e56e8e78f9bef3729047f064a48a86e7e3f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "133fd37b35ea0ebc610965f55332f02bbf67a00db14c4b518f9e7b714fdd705f"
-    sha256 cellar: :any_skip_relocation, ventura:        "25f3df8f4c4e5eaf94f4fb9411dfcd48ffaaf257f96e454eef88ff387dd7bc8d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5cf0585bded8ce93f09124d885a8dc00b373b6ca63407300d5b3bcc10aebe9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b63d16bc91ca4f7bb745607399bf01273f7a4b31afb689ea10b7db7ac43bd13e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07fee914dfa9648df6df6152b7c5d7f0297d2e8133a653a4f3511dcfb72b01c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c756170a50204cdf15a8860de91d790406f3700854f4bc2dff3d19c9d48262e0"
+    sha256 cellar: :any,                 arm64_sequoia: "ef1cdddbd66ac94205a03942dfedd868f6e2bca9d960c20c6dda374f92458e5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "c131e80cd223e18506deab074eda3134e21a338792fd9202d12dbe9a76c40026"
+    sha256 cellar: :any,                 sonoma:        "905810197a1336b51a8b5b82b2d111a90c921841e7c746453f651bea6a85fcd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4b97017de69541d9a93fb76c2942acbb0303a5eeea58a2c178b8c68a93678cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dec7c0fd9fc1fa96c302c5b241d7b5b5f379027d1fbc7f5da5fa4bf534856729"
   end
 
   depends_on "cabal-install" => :build
