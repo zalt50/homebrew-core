@@ -6,7 +6,7 @@ class AivenClient < Formula
   url "https://files.pythonhosted.org/packages/35/6b/6a7eccb8c7c9713972d32d6c7de3bf26b96685bda6b338260588e137f73b/aiven_client-4.11.0.tar.gz"
   sha256 "8edc77d6c44c7deb9d0c35a192c56482cdf0978407c9590ee907383b0f63cd16"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
@@ -39,8 +39,8 @@ class AivenClient < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
