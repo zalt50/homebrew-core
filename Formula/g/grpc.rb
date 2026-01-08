@@ -1,12 +1,21 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
-  url "https://github.com/grpc/grpc.git",
-      tag:      "v1.76.0",
-      revision: "f5ffb68d8a2fd603dff16287e90a4ac571e1fec6"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/grpc/grpc.git", branch: "master"
+
+  stable do
+    url "https://github.com/grpc/grpc.git",
+        tag:      "v1.76.0",
+        revision: "f5ffb68d8a2fd603dff16287e90a4ac571e1fec6"
+
+    # backport fix for missing include
+    patch do
+      url "https://github.com/grpc/grpc/commit/d54219b508423f0a2ff6a0b98c16fb6dafd44b84.patch?full_index=1"
+      sha256 "ff479e563ae01e4e0461b79a3258c1ad544a0d1ca4f0161f64c4ec88b14cfb7d"
+    end
+  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
