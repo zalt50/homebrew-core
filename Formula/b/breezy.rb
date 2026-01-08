@@ -6,8 +6,9 @@ class Breezy < Formula
   homepage "https://github.com/breezy-team/breezy"
   # pypi sdist bug report, https://bugs.launchpad.net/brz/+bug/2111649
   url "https://github.com/breezy-team/breezy/archive/refs/tags/brz-3.3.20.tar.gz"
-  sha256 "8e4af88a0f55d1994c9f5f704db467e9967f8bf0e170440bc4077a972276114c"
+  sha256 "32d26d0af0716e3580d7d97dda56ae441ab173f192092bcf762f590162f6bdae"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -59,8 +60,8 @@ class Breezy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
