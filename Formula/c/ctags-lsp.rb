@@ -6,12 +6,12 @@ class CtagsLsp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0af0d350a649fa0d4eb8988e9f1681c8b1ce433faad9a1e99b399c941503814"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0af0d350a649fa0d4eb8988e9f1681c8b1ce433faad9a1e99b399c941503814"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0af0d350a649fa0d4eb8988e9f1681c8b1ce433faad9a1e99b399c941503814"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93de3055d51303ac73584661762fdd1d36ab77f2c401269d188f5cca34a1dc44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb4c747a9f7768952316a105fe204ea03cd1f5583406019525dc5e8b9076d363"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "985ceb83d2239dde1fd3c23259a3041d46706f869c5cfdc7c15527d6f4a5cdbb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "babde21b15a5e7a0030c1b66fa745d77200c516d2d76f20a514f82bbb0c86672"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "babde21b15a5e7a0030c1b66fa745d77200c516d2d76f20a514f82bbb0c86672"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "babde21b15a5e7a0030c1b66fa745d77200c516d2d76f20a514f82bbb0c86672"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9fb858ef4ab14a587d7d7927f0f44a69aafc75ee426d106cf0dd63a895e2262"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33d6be3e70c549404ecd9a8966cf0295e9d99102c2ab5774f716da1aefe1056f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "010b011513cafae9cc758d8f1c8198d5fe6c831f38a4f02f844c3c63a9526b66"
   end
 
   depends_on "go" => :build
