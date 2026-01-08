@@ -1,13 +1,10 @@
 class Dtools < Formula
   desc "D programming language tools"
   homepage "https://dlang.org/"
-  url "https://github.com/dlang/tools/archive/refs/tags/v2.111.0.tar.gz"
-  sha256 "4c391349e929f73b7ffe97da7b98fbbdb04effda3e6389d9d46dc9d9938ece3b"
+  url "https://github.com/dlang/tools/archive/refs/tags/v2.112.0.tar.gz"
+  sha256 "4d3b8d683770f16f1cb2e44a246f17b199a8aabde7b6ce7d7566aebc36a12d32"
   license "BSL-1.0"
-  revision 1
   head "https://github.com/dlang/tools.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "274178ae030c4b9871cbdd75b0a4325d8d7017a60d0fc443c1c94c8049eec142"
