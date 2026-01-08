@@ -2,7 +2,7 @@ class Bloaty < Formula
   desc "Size profiler for binaries"
   homepage "https://github.com/google/bloaty"
   license "Apache-2.0"
-  revision 44
+  revision 45
   head "https://github.com/google/bloaty.git", branch: "main"
 
   stable do
@@ -36,6 +36,9 @@ class Bloaty < Formula
   depends_on "re2"
 
   def install
+    # Workaround until new release with
+    # https://github.com/google/bloaty/commit/9677d4938ec5be44f04eae774c94e10d339fd3a7
+    ENV.append "CXXFLAGS", "-include stdexcept"
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
     # Remove vendored dependencies
