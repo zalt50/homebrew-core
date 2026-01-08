@@ -1,8 +1,8 @@
 class Orc < Formula
   desc "Oil Runtime Compiler (ORC)"
-  homepage "https://gstreamer.freedesktop.org/projects/orc.html"
-  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.41.tar.xz"
-  sha256 "cb1bfd4f655289cd39bc04642d597be9de5427623f0861c1fc19c08d98467fa2"
+  homepage "https://gstreamer.freedesktop.org/modules/orc.html"
+  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.42.tar.xz"
+  sha256 "7ec912ab59af3cc97874c456a56a8ae1eec520c385ec447e8a102b2bd122c90c"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause"]
 
   livecheck do
@@ -25,7 +25,7 @@ class Orc < Formula
   depends_on "ninja" => :build
 
   def install
-    system "meson", "setup", "build", "-Dgtk_doc=disabled", *std_meson_args
+    system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
