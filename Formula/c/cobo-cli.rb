@@ -6,7 +6,7 @@ class CoboCli < Formula
   url "https://files.pythonhosted.org/packages/85/f5/b116ad0bc82961a47f7407611d6950f18078bdd3b193d2a34cf1e8b8065c/cobo_cli-0.0.9.tar.gz"
   sha256 "70932b6e5b115e222bdc418e5ce7a17b3229ac530157534c3e374f832cd056cf"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
@@ -139,8 +139,8 @@ class CoboCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "websocket-client" do
