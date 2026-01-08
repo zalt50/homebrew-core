@@ -10,7 +10,7 @@ class Awscurl < Formula
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3d1b74eee6601ba3f8bf47a5416d4f596b7411939da707cbf301767ae2a86b77"
+    sha256 cellar: :any_skip_relocation, all: "d591ce8c32173fb4db02ac1b857588730cd2dc62565c115f62ef444e41262046"
   end
 
   depends_on "certifi" => :no_linkage
