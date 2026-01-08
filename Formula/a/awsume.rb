@@ -10,12 +10,12 @@ class Awsume < Formula
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "341c096373e442dce6b7e55f08950f4129ddc2433c93cb4f42b3e9d1d16387fe"
-    sha256 cellar: :any,                 arm64_sequoia: "eac4f1c139fbc766854cb4cdf569bdf4250f1764a8ecf58dd61bd09bea2db3fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "55497d8ef432ffd61ec0e216ebd016a03adc60af46008ce8fec32dfeebd7b3cd"
-    sha256 cellar: :any,                 sonoma:        "1a20f9d9eaf3deec2e6aa2fe7b935e34392f3996b37c4f9ab2b1584022970e7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f778fd38daacb11a65745c4cdf11c8c2e186015ddbb8fa016dd23f015b3aafcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3104c507142fdce875622f7fe85a4a3820d70304dba5d3770e3a09f83bee4bb"
+    sha256 cellar: :any,                 arm64_tahoe:   "291da60dfad12fb69b285baa4a3a0191c7050f28f3e2f7e7731aaa816e952274"
+    sha256 cellar: :any,                 arm64_sequoia: "aa571e1e53c3ec283a25373ae31e210752d840fab3f5202746a5d744a435bc2a"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c26846f3db6ff1b90ff8cb2210edc5130625d1027a22e94eda53496eee766b1"
+    sha256 cellar: :any,                 sonoma:        "1fe3cee2c0f63310a8d39317a19a694acd56d190aca08ff43ef3b1962bac1a84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5976b79fdea5c2b2537a1bd6acb71c6d2fc63594179b54f243b07c4c80615f33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8bf71b944bd680dfc34d4f4a8c5a35cb8077f9d108522498574db1d2a4cd1b9"
   end
 
   depends_on "libyaml"
