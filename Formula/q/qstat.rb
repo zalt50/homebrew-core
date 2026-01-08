@@ -1,11 +1,9 @@
 class Qstat < Formula
   desc "Query Quake servers from the command-line"
   homepage "https://github.com/Unity-Technologies/qstat"
-  url "https://github.com/Unity-Technologies/qstat/archive/refs/tags/v2.17.tar.gz"
-  sha256 "ff0a050e867ad1d6fdf6b5d707e2fc7aea2826b8a382321220b390c621fb1562"
+  url "https://github.com/Unity-Technologies/qstat/archive/refs/tags/v2.18.tar.gz"
+  sha256 "a74564bd9c31db3dc1fcc0a68ffaf694630b9e67f0d31ff76b2a3c3196ee4f1f"
   license "Artistic-2.0"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256                               arm64_tahoe:    "588775a7cf8278e02f0a64a1567357dc445ac85016bc356a04715cdbf2cce1c3"
