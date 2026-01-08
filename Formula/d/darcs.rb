@@ -17,9 +17,10 @@ class Darcs < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
   depends_on "gmp"
 
+  uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
@@ -35,8 +36,11 @@ class Darcs < Formula
   patch :DATA
 
   def install
+    # Workaround to build with GHC >= 9.12
+    args = ["--allow-newer=base"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do
