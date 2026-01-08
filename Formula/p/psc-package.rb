@@ -23,8 +23,11 @@ class PscPackage < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
+  depends_on "gmp"
   depends_on "purescript"
+
+  uses_from_macos "libffi"
 
   # Apply upstream patch to fix build. Remove with next release.
   patch do
@@ -37,7 +40,7 @@ class PscPackage < Formula
 
   def install
     # Workaround to build with GHC 9.10 until upstream allows `turtle >= 1.6`
-    args = ["--allow-newer=turtle:text"]
+    args = ["--allow-newer=base,turtle:text"]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args
