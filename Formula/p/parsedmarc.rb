@@ -3,10 +3,9 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/91/b8/183509122785d68069b586ef2c196b3e1a3870bbb278e8c068eeab72fd88/parsedmarc-9.0.8.tar.gz"
-  sha256 "52c0b2d876845ba7813528fe94121db4eade19438aebe2c7dbe3d244933ad3f5"
+  url "https://files.pythonhosted.org/packages/0f/5f/057b0b850ee67f5678c3587f8e5a3d5cc38ce03c5b4663c2aede8d80c5ad/parsedmarc-9.0.9.tar.gz"
+  sha256 "726ec405355581192eef0660b2af95a7e9fa76a30242d80d0f1703e9251fc941"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
@@ -65,13 +64,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/4f/91/87a0cedb0335f2c0653fe7353fc47d785b092353dab5b2d7141efd5d74b5/boto3-1.42.22.tar.gz"
-    sha256 "8550d91432dec1e587ab6d97f7e031bb334ca4fbb7824b8b63bca6e69c7e84b5"
+    url "https://files.pythonhosted.org/packages/ee/21/8be0e3685c3a4868be48d8d2f6e5b4641727e1d8a5d396b8b401d2b5f06e/boto3-1.42.24.tar.gz"
+    sha256 "c47a2f40df933e3861fc66fd8d6b87ee36d4361663a7e7ba39a87f5a78b2eae1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a9/86/b6f00de81a3f0e7e83328354b38376fbb9f0be1c8b66626ac9a274cdca4e/botocore-1.42.22.tar.gz"
-    sha256 "635c9213a448885a1cf735f1a950b83adaced0860b8159fc26d1242abc042443"
+    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
+    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
   end
 
   resource "cachetools" do
@@ -260,8 +259,8 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/d7/5b/99fbfa1125179d3bbaf5c331652038f62a941e580d2368b96cef23e0651a/publicsuffixlist-1.0.2.20251229.tar.gz"
-    sha256 "bfe05e029bec0aa7f840d68df9bfbaa18c8acfbfca51245ff1f80815c608cffe"
+    url "https://files.pythonhosted.org/packages/91/4e/d48447099defc7353deae11f8d66d34f3e4fa4a96c1dbabdeca37d113468/publicsuffixlist-1.0.2.20260108.tar.gz"
+    sha256 "26b9bbd2d45f73c9117f82bbfbcd72185c41a9f974bb255a60b4cd684e64110c"
   end
 
   resource "pyasn1" do
