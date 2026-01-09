@@ -10,12 +10,12 @@ class DetectSecrets < Formula
   head "https://github.com/Yelp/detect-secrets.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "31dad7ec3b2ae375b3df551969b23bdaedfdd0c1f966ecef25e30faa149639c1"
-    sha256 cellar: :any,                 arm64_sequoia: "28aadb9b3f34e00178624247000811b5dc83d763c47dde2267e0f517a1855842"
-    sha256 cellar: :any,                 arm64_sonoma:  "1866e771ed78e8df2afc88fcab7f905afb382f647afff60ec497daf3d9080ea9"
-    sha256 cellar: :any,                 sonoma:        "fe3d981166e88378dd2e481ee10b612369f38d5344803a4f12a64d572141298f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "888bd6a2746929ea47095946c773c46be5376a6038432f41d34ba882c6579c54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af52e314437b44cb23bea19789d7544edd1348c8dbe91d29666548c3efd2949f"
+    sha256 cellar: :any,                 arm64_tahoe:   "66be52d00a30de52fd13fcbcd8d131b2554ce099710a17de20dc85a4396a3af9"
+    sha256 cellar: :any,                 arm64_sequoia: "a50394007d9287afeffb9f5eff81b99fe8be78fc3944c53f720227599d2de31f"
+    sha256 cellar: :any,                 arm64_sonoma:  "72804eb6fa71c4845b0e46649b425cf11526c70e4c4e049634188c2faae5a622"
+    sha256 cellar: :any,                 sonoma:        "64f613a0163a24daa7fb22e6638c80662c65179b887b99aafc06e4ee7d1665d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6327443cbc5cd935e77e92d5e1480a99086c326bc850b5e78025210e196fb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fcd594da373f0236fd0ef2b26cbb5dd7cc12fad8915de3a5c991dc7bc859229"
   end
 
   depends_on "certifi" => :no_linkage
