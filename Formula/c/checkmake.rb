@@ -1,8 +1,8 @@
 class Checkmake < Formula
   desc "Linter/analyzer for Makefiles"
   homepage "https://github.com/checkmake/checkmake"
-  url "https://github.com/checkmake/checkmake/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "37f14cbf37135e3c7507b990234c4fdfd9643d4227924541db901b84a66dcd14"
+  url "https://github.com/checkmake/checkmake/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "4c45c5eda4d22b1b603cad7836805927f047ca5e3a88fbefbbf1a636c87495b7"
   license "MIT"
   head "https://github.com/checkmake/checkmake.git", branch: "main"
 
