@@ -1,8 +1,8 @@
 class Wuchale < Formula
   desc "Protobuf-like i18n from plain code"
   homepage "https://wuchale.dev/"
-  url "https://registry.npmjs.org/wuchale/-/wuchale-0.19.2.tgz"
-  sha256 "d2074607a82559262eb03ca1d0cb711a8cfd04fa2a5c15e323bc48fcf1839d35"
+  url "https://registry.npmjs.org/wuchale/-/wuchale-0.19.4.tgz"
+  sha256 "ac5f9e23ee2a76b3831f4e406e4ce1fa9c101ce11c11fc04514ef1a11444301f"
   license "MIT"
 
   bottle do
