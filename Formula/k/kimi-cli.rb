@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/a4/c3/0c65733b87376cb89c41e15fda353fad25d2d10cd736e5a48b1b68d0c9d3/kimi_cli-0.73.tar.gz"
-  sha256 "4b8248fe2c6b1eb1639395db81f9a64d94a76c173bb5e0439eb699ee19aefd92"
+  url "https://files.pythonhosted.org/packages/45/fd/6274a3a251728e506efd4d5049302afbe8a163eb24f5012f10d8cb6de48d/kimi_cli-0.74.tar.gz"
+  sha256 "6e9837cc5e0698fdd8b2114bda93400a4e71eda6a2becd2e0a38397116b2ee77"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -339,8 +339,8 @@ class KimiCli < Formula
   end
 
   resource "pykaos" do
-    url "https://files.pythonhosted.org/packages/12/8b/f862a3c4cfe2d85a5ff0148a59be8b6f5576d31a95a7b18cc1d798cb2de6/pykaos-0.5.4.tar.gz"
-    sha256 "646bffbd016c5dba813196e6567e55595f9860442d86748cd2baa526425e4d16"
+    url "https://files.pythonhosted.org/packages/4f/b9/d30975957232dbd291f4991d03964b0a985df2acbe118645547ddc64100c/pykaos-0.6.0.tar.gz"
+    sha256 "87522cc07548243d55ee65ce7c6f17caf323bc7ba8bd43f611e4a48adb978bde"
   end
 
   resource "pyperclip" do
@@ -510,8 +510,8 @@ class KimiCli < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "yarl" do
