@@ -1,8 +1,8 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.106.2.tgz"
-  sha256 "229822c9b6952faf1dae454ad13573ddbae190d73eeecca3f417a4774e8c8b50"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.107.1.tgz"
+  sha256 "82df6b608d8dc6acd747bb6d6d60e4e80462f12d8d295b9c43bbbbdcf514c8c2"
   license "MIT"
 
   bottle do
@@ -29,21 +29,16 @@ class CodeServer < Formula
     # Fix broken node-addon-api: https://github.com/nodejs/node/issues/52229
     ENV.append "CXXFLAGS", "-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT"
 
-    system "npm", "install", *std_npm_args(prefix: false), "--unsafe-perm", "--omit", "dev"
+    system "npm", "install", *std_npm_args(ignore_scripts: false, prefix: false), "--unsafe-perm", "--omit", "dev"
 
     libexec.install Dir["*"]
     bin.install_symlink libexec/"out/node/entry.js" => "code-server"
 
-    # Remove incompatible pre-built binaries
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    vscode = libexec/"lib/vscode/node_modules/@parcel"
-    permitted_dir = OS.linux? ? "watcher-#{os}-#{arch}-glibc" : "watcher-#{os}-#{arch}"
-    vscode.glob("watcher-*").each do |dir|
-      next unless (Pathname.new(dir)/"watcher.node").exist?
-
-      rm_r(dir) if permitted_dir != dir.basename.to_s
-    end
+    # Remove pre-built binaries where source in not available to allow compilation
+    # https://www.npmjs.com/package/@azure/msal-node-runtime
+    # https://github.com/AzureAD/microsoft-authentication-library-for-cpp
+    dist = libexec/"lib/vscode/extensions/microsoft-authentication/dist"
+    rm([dist/"libmsalruntime.so", dist/"msal-node-runtime.node"])
   end
 
   def caveats
