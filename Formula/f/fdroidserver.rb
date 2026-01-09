@@ -6,7 +6,7 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/dd/1e/4f8b300092cef6f90f46041743c653156347063c15e81cdc60728c70dd28/fdroidserver-2.4.3.tar.gz"
   sha256 "bb0da11f4ff087061af900a1c12404e7c26392aee8a214e1f842fa129a33a0db"
   license "AGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "a3075ff6dce19124927f0958392a65d926ec4f82a995e76680e2c3a6239d15e6"
@@ -275,8 +275,8 @@ class Fdroidserver < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/28/2e/83722ece0f6ee24387d6cb830dd562ddbcd6ce0b9d76072c6849670c31b4/pathspec-1.0.1.tar.gz"
-    sha256 "e2769b508d0dd47b09af6ee2c75b2744a2cb1f474ae4b1494fd6a1b7a841613c"
+    url "https://files.pythonhosted.org/packages/41/b9/6eb731b52f132181a9144bbe77ff82117f6b2d2fbfba49aaab2c014c4760/pathspec-1.0.2.tar.gz"
+    sha256 "fa32b1eb775ed9ba8d599b22c5f906dc098113989da2c00bf8b210078ca7fb92"
   end
 
   resource "pexpect" do
@@ -400,8 +400,8 @@ class Fdroidserver < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do
