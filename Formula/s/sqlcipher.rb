@@ -1,9 +1,9 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
   homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.6.1.tar.gz"
-  sha256 "d8f9afcbc2f4b55e316ca4ada4425daf3d0b4aab25f45e11a802ae422b9f53a3"
-  license "BSD-3-Clause"
+  url "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.12.0.tar.gz"
+  sha256 "151a1c618c7ae175dfd0f862a8d52e8abd4c5808d548072290e8656032bb0f12"
+  license all_of: ["BSD-3-Clause", "blessing"]
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do
@@ -23,18 +23,10 @@ class Sqlcipher < Formula
 
   # Build scripts require tclsh. `--disable-tcl` only skips building extension
   uses_from_macos "tcl-tk" => :build
-  uses_from_macos "sqlite"
+  uses_from_macos "sqlite" => :test # check for conflicts on Linux
   uses_from_macos "zlib"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --enable-tempstore=yes
-      --with-crypto-lib=#{Formula["openssl@3"].opt_prefix}
-      --enable-load-extension
-      --disable-tcl
-    ]
-
     # Build with full-text search enabled
     cflags = %w[
       -DSQLITE_HAS_CODEC
@@ -43,14 +35,47 @@ class Sqlcipher < Formula
       -DSQLITE_ENABLE_FTS3_PARENTHESIS
       -DSQLITE_ENABLE_FTS5
       -DSQLITE_ENABLE_COLUMN_METADATA
+      -DSQLITE_EXTRA_INIT=sqlcipher_extra_init
+      -DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown
     ].join(" ")
-    args << "CFLAGS=#{cflags}"
 
-    args << "LIBS=-lm" if OS.linux?
+    args = %W[
+      --disable-tcl
+      --dll-basename=libsqlcipher
+      --enable-load-extension
+      --includedir=#{include}/sqlcipher
+      --prefix=#{prefix}
+      --with-tempstore=yes
+      CFLAGS=#{cflags}
+      LDFLAGS=-lcrypto
+    ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
+
+    # Modify file names to avoid conflicting with sqlite. Similar to
+    # * Debian  - https://salsa.debian.org/debian/sqlcipher/-/blob/master/debian/rules
+    # * Liguros - https://gitlab.com/liguros/liguros-repo/-/blob/develop/dev-db/sqlcipher/sqlcipher-4.12.0.ebuild
+    # * OpenBSD - https://codeberg.org/OpenBSD/ports/src/branch/master/databases/sqlcipher/Makefile
+    [
+      bin/"sqlite3",
+      man1/"sqlite3.1",
+      lib/"pkgconfig/sqlite3.pc",
+      lib/"libsqlite3.a",
+      lib/shared_library("libsqlcipher"),
+      *lib.glob(shared_library("libsqlite3", "*")),
+    ].each do |path|
+      basename = path.basename.sub("sqlite3", "sqlcipher")
+      if path.symlink?
+        source = path.readlink.sub("sqlite3", "sqlcipher")
+        rm(path)
+        path.dirname.install_symlink source => basename
+      else
+        path.dirname.install path => basename
+      end
+    end
+    inreplace lib/"pkgconfig/sqlcipher.pc", "-lsqlite3", "-lsqlcipher"
   end
 
   test do
