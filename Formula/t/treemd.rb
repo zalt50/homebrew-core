@@ -7,12 +7,12 @@ class Treemd < Formula
   head "https://github.com/epistates/treemd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dbd03c61e69d488eece4db6fdf09b98fcaa459c21bc2fcc6a53feccc1a57b3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0377b352e3e0a2ebd6bebd604c142bb9245853951634a5c335ccdf29ec72e190"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77772260d9d7c9139a89414feb9ec237ec3d957417caacfe19ff6e8e169abd79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02b6edabfdb0931770df45603492e4fc40d05af2b80e86a0ba1d7566d3492194"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acb899cb06a9dc9ddcdfbd9a5478e4a9380709a6d22145be95a698f394d85e49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "833f33c344d856b5a091a141b5a01888a710c0c0394a27e1808e6338e2c1ffd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb7879add17ffe677185f39c857031dc1f257fe373cc4f59dc1e3e29d655bd80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ffc207eda98099d22794403e790fbc641cfb9fe75e86c8ce9ce5f6ede83055"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b9fe76f8387055c7da177af3963e43a1fe512c3be07e8f3f1336e39eec049ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c7abb931c098670144f1c898c077d4f0c59cefe8333921b3c59ec8e3cf27d947"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52fbe2ce801bf84a569d2a5af3cc010220b6252f4976c17c70b7dec822d77547"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d78667f128a291707bf7a9e052175111a3675b59be18e2a152cb691b8184efbb"
   end
 
   depends_on "rust" => :build
