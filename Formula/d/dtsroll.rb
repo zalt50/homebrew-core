@@ -1,8 +1,8 @@
 class Dtsroll < Formula
   desc "CLI tool for bundling TypeScript declaration files"
   homepage "https://github.com/privatenumber/dtsroll"
-  url "https://registry.npmjs.org/dtsroll/-/dtsroll-1.5.0.tgz"
-  sha256 "0df47a60f01130264f7f314f82d65dcf3782c215782ab7bb2da7134edaab3b3e"
+  url "https://registry.npmjs.org/dtsroll/-/dtsroll-1.6.0.tgz"
+  sha256 "0420b6887c938c066a9c785bfdc202cdc40e4a4554bdb10d58101cf134db2ebe"
   license "MIT"
 
   bottle do
