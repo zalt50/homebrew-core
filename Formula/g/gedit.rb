@@ -8,14 +8,12 @@ class Gedit < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "0323b81935c3fc2d9872740e65cc9fd088430a153664a784b78713f06e3fc532"
-    sha256 arm64_sequoia: "ec5719d26fed80776a4fb1777662122d2e7b434d1492fada3a8cdaacf748e6ef"
-    sha256 arm64_sonoma:  "dd25c3dad8b9a1fe25f124f51124753017104adadc18f149ea773c7ba6133eb2"
-    sha256 arm64_ventura: "ea63034c7a611a56e45bbc86465ac8c32eced7f5373999b6a83c7c34b960771f"
-    sha256 sonoma:        "a47a58a07db6e69d0571b0b8a37560ae46d484a3bd9e8a30961c8aea09ec3b62"
-    sha256 ventura:       "4d0d3119fe0a87a1de634fba76cabd8b5ae905ddc9846d3d148162eb12bdf3f3"
-    sha256 arm64_linux:   "eec17f8ae2606d4c7ba933d2ac5d0049e2b2c8d63890140c5b7d23cada3e1e26"
-    sha256 x86_64_linux:  "9c42111b4fa4da254c01d5884a5bae04041efa34d557f99691a142bff1479a5c"
+    sha256 arm64_tahoe:   "f16f039fa3d91301dbdffbb90fe7a7e516298ca030f1d599ab9869bea105987a"
+    sha256 arm64_sequoia: "a455eb1e0da6e1c6b453e53e1643c3f31a080d60870216c8c4ad7d62d69c386c"
+    sha256 arm64_sonoma:  "16afa1324bafcb923f6d8f0fec2cf8878d631c109ef24173fedb5aa43db65ff5"
+    sha256 sonoma:        "cc0e19ab35a92f1160e2d307422f9a78720cc851f0c1c74bc7e0a075a5702c02"
+    sha256 arm64_linux:   "a7180250047f87965dcdac66475a5818f8ce37f8eafa3d82ecbbf924ed10fa11"
+    sha256 x86_64_linux:  "77b6f806c5a7cfba5bdff000085f51c165fe6bfa64bece69054703030de7e7e6"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
