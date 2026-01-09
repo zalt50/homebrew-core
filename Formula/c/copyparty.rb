@@ -3,8 +3,8 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/11/75/407a5e7e079c605446cee5bb1248d647e1c9aa1b212a7b63b723fab2888b/copyparty-1.20.0.tar.gz"
-  sha256 "dfe5ac4e175729423eba01eda23a6ad7faf15393bfb30d0a36129aaf08596f50"
+  url "https://files.pythonhosted.org/packages/79/1a/b87034dec560646a4e6e56a63273da75af3f55b036d814b7676f27b041f2/copyparty-1.20.1.tar.gz"
+  sha256 "d7da2b724d5bfd2216326171560034183ca34be18484f5289c21b60fd79af98b"
   license "MIT"
 
   bottle do
@@ -63,13 +63,13 @@ class Copyparty < Formula
   end
 
   resource "pyasynchat" do
-    url "https://files.pythonhosted.org/packages/8a/fd/aacc6309abcc5a388c66915829cd8175daccac583828fde40a1eea5768e4/pyasynchat-1.0.4.tar.gz"
-    sha256 "3f5333df649e46c56d48c57e6a4b7163fd07f626bfd884e22ef373ab3c3a4670"
+    url "https://files.pythonhosted.org/packages/ec/d2/b41df9021c12ca314146abcde7bdd3d9d37d44cc01559d7f13df459ee586/pyasynchat-1.0.5.tar.gz"
+    sha256 "36665473ae730dac51e6d7dad70f8295962120c830ab692f0a31efba32687e24"
   end
 
   resource "pyasyncore" do
-    url "https://files.pythonhosted.org/packages/25/6e/956e2bc9b47e3310cd524036f506b779a77788c2a1eb732e544240ad346f/pyasyncore-1.0.4.tar.gz"
-    sha256 "2c7a8b9b750ba6260f1e5a061456d61320a80579c6a43d42183417da89c7d5d6"
+    url "https://files.pythonhosted.org/packages/4e/43/035dfe0cb01687c1940fdc008f46a43c41067e226e862df49327469764a0/pyasyncore-1.0.5.tar.gz"
+    sha256 "dd483d5103a6d59b66b86e0ca2334ad43dca732ff23a0ac5d63c88c52510542e"
   end
 
   resource "pyftpdlib" do
