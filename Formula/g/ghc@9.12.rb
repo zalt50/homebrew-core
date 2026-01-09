@@ -97,6 +97,14 @@ class GhcAT912 < Formula
     end
   end
 
+  # Apply open MR fix for regression similar to Fedora
+  # https://discourse.haskell.org/t/critical-code-generation-bug-with-ghc-9-12-3/13505
+  # https://gitlab.haskell.org/ghc/ghc/-/merge_requests/15264
+  patch do
+    url "https://gitlab.haskell.org/ghc/ghc/-/commit/65370007e2d9f1976fbcfbb514917fb111117148.diff"
+    sha256 "09e9e9313134959b90c8222213e5ab8af7d6dbd10a5c25454d7b85eced281eb8"
+  end
+
   def install
     # ENV.cc and ENV.cxx return specific compiler versions on Ubuntu, e.g.
     # gcc-11 and g++-11 on Ubuntu 22.04. Using such values effectively causes
