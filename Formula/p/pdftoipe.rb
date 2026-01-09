@@ -9,12 +9,12 @@ class Pdftoipe < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e3d4d692c2253565531d6d3528369cbab28c9194ef9fbbc238be5002fa48a27c"
-    sha256 cellar: :any,                 arm64_sequoia: "c73bb159f9affa4880783e91c9401855224fccb2ed117183c443402df7e5871a"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6d9745bbcc1b6998d72df33104ae054e297c101803550e426c1525e882d6b7d"
-    sha256 cellar: :any,                 sonoma:        "69746169dc58843b334d93ddbb9a3bef9a2eaad73cec4b28a4e7970fe9fe33a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "981277405c2540515901c3a6c9613649b0b742cfe3711a05e17454e9cedd8dda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05fb13c54ad24bbd54f5edb777b932fd061fdb9e1c4488023f412d787cb44258"
+    sha256 cellar: :any,                 arm64_tahoe:   "e458140ae6523ea3475820d032dd70f5a393a265888a8c1d3b7ff1973517d320"
+    sha256 cellar: :any,                 arm64_sequoia: "80eaeb8f45bbb3a96b00dd9987b0d4db8f4b6d4a4002225c801ccf7b999d39d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "44bbb9e7b11499efa631d60cdd7e3547b92d75901549113b496707085d8fbd1f"
+    sha256 cellar: :any,                 sonoma:        "76fa0169012ab888fe0c67b3881dcdbb5698a600805f64223c8318c2be1a9763"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "267054e95a5198879301dfd50d7395fe431a993f6aa1f0c5e30981a6cca5262e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81410873242c35cda5b1bc12c56a11ded781ef6c2947ef40b876286823ff3822"
   end
 
   depends_on "pkgconf" => :build
