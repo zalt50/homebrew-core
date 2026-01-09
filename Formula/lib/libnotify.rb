@@ -1,8 +1,8 @@
 class Libnotify < Formula
   desc "Library that sends desktop notifications to a notification daemon"
   homepage "https://gitlab.gnome.org/GNOME/libnotify"
-  url "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.7.tar.xz"
-  sha256 "4be15202ec4184fce1ac15997ece5530d2be32fe9573875aeb10e3b573858748"
+  url "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.8.tar.xz"
+  sha256 "23420ef619dc2cb5aebad613f4823a2fa41c07e5a1d05628d40f6ec4b35bfddd"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -26,14 +26,6 @@ class Libnotify < Formula
 
   on_macos do
     depends_on "gettext"
-  end
-
-  # Do not include <gio/gdesktopappinfo.h> header
-  # on the platforms that do not support it (i.e. macOS)
-  # https://gitlab.gnome.org/GNOME/libnotify/-/merge_requests/53
-  patch do
-    url "https://gitlab.gnome.org/GNOME/libnotify/-/commit/13de65ad2a76255ffde5d6da91d246cd7226583b.diff"
-    sha256 "243f8b03abb80bbd9df9d69f4883ee249b44d6260fbf7bc2e54c9f612f478c59"
   end
 
   def install
