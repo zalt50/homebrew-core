@@ -1,8 +1,8 @@
 class Jjui < Formula
   desc "TUI for interacting with the Jujutsu version control system"
   homepage "https://github.com/idursun/jjui"
-  url "https://github.com/idursun/jjui/archive/refs/tags/v0.9.8.tar.gz"
-  sha256 "2752e6586c1cd010d077aff202d7da00923c593bd8e124d17c6b44804a521a93"
+  url "https://github.com/idursun/jjui/archive/refs/tags/v0.9.9.tar.gz"
+  sha256 "2bb02c22f1164856909152a7f13aaa24b8e97169b8377c711d4682fd32d8d85b"
   license "MIT"
 
   bottle do
@@ -24,6 +24,6 @@ class Jjui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/jjui -version")
-    assert_match "Error: There is no jj repo in", shell_output("#{bin}/jjui 2>&1", 1)
+    assert_match "There is no jj repo in", shell_output("#{bin}/jjui 2>&1", 1)
   end
 end
