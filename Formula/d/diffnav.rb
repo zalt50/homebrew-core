@@ -1,8 +1,8 @@
 class Diffnav < Formula
   desc "Git diff pager based on delta but with a file tree"
   homepage "https://github.com/dlvhdr/diffnav"
-  url "https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "a38552e6cc71100a65fd6a72b1e210c50a0cb16e12d7c2a4693f41b81cd9d3c7"
+  url "https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "3866b98df7c2b5a55c9598e493ddaf7c9b6187dfa570656259221e1a14a6b59b"
   license "MIT"
   head "https://github.com/dlvhdr/diffnav.git", branch: "main"
 
