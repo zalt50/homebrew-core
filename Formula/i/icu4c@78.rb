@@ -1,8 +1,8 @@
 class Icu4cAT78 < Formula
   desc "C/C++ and Java libraries for Unicode and globalization"
   homepage "https://icu.unicode.org/home"
-  url "https://github.com/unicode-org/icu/releases/download/release-78.1/icu4c-78.1-sources.tgz"
-  sha256 "6217f58ca39b23127605cfc6c7e0d3475fe4b0d63157011383d716cb41617886"
+  url "https://github.com/unicode-org/icu/releases/download/release-78.2/icu4c-78.2-sources.tgz"
+  sha256 "3e99687b5c435d4b209630e2d2ebb79906c984685e78635078b672e03c89df35"
   license "ICU"
 
   # We allow the livecheck to detect new `icu4c` major versions in order to
