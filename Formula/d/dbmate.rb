@@ -1,8 +1,8 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https://github.com/amacneil/dbmate"
-  url "https://github.com/amacneil/dbmate/archive/refs/tags/v2.28.0.tar.gz"
-  sha256 "129cb7f978e4316d6d02d2038eb346a94e1f988bcfb30a83aa99c6685c71d359"
+  url "https://github.com/amacneil/dbmate/archive/refs/tags/v2.29.0.tar.gz"
+  sha256 "dbfa6f9ec7faf859352eb329edd937a86a2c9561a4d45a2dfd024fd54634bc78"
   license "MIT"
   head "https://github.com/amacneil/dbmate.git", branch: "main"
 
@@ -22,6 +22,7 @@ class Dbmate < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
     tags = %w[
       sqlite_omit_load_extension sqlite_json sqlite_fts5
     ]
