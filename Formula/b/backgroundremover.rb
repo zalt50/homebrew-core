@@ -6,7 +6,7 @@ class Backgroundremover < Formula
   url "https://files.pythonhosted.org/packages/b9/4a/18deace4c210d722e4dde75a7f445f105d96d190f767b9132d789b1503dd/backgroundremover-0.3.8.tar.gz"
   sha256 "0f6c25e500eab0268fdc3f50574e5f8aca1f5f47fcad86f4b52ea2af814a7434"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "cb9535742c2272ef1b00e3e1c4b22717a003d57342b7d26a08a77279fc996a67"
@@ -184,8 +184,8 @@ class Backgroundremover < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   def install
