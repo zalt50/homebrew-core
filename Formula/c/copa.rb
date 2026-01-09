@@ -1,8 +1,8 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https://github.com/project-copacetic/copacetic"
-  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "886aa760e9bdff174686d3c601cfb2f53e824299796ace3eef94dae03cdf15e1"
+  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "94fcb4cdaa40f42c20b39685e7436f06ab78f18e7379b69601b117f4ed5cc780"
   license "Apache-2.0"
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
@@ -39,8 +39,8 @@ class Copa < Formula
       }
     JSON
     output = shell_output("#{bin}/copa patch --image=mcr.microsoft.com/oss/nginx/nginx:1.21.6  \
-                          --report=report.json 2>&1", 1)
-    assert_match "Error: no patchable vulnerabilities found", output
+                          --report=report.json 2>&1")
+    assert_match "Image is already up-to-date. No patch was applied.", output
 
     assert_match version.to_s, shell_output("#{bin}/copa --version")
   end
