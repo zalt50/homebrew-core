@@ -37,6 +37,8 @@ class GitDelta < Formula
 
     system "cargo", "install", *std_cargo_args
 
+    pkgshare.install "themes.gitconfig"
+
     generate_completions_from_executable(bin/"delta", "--generate-completion")
   end
 
