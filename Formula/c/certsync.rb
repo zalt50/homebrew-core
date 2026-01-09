@@ -9,12 +9,12 @@ class Certsync < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c2e8c9b8c93922eb6dbc43836d945175978ee843181274f02f1bbf9194b7c7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e8fc8fbb2c12672b6b11097ae5f47f2f6f77e64eb3beb32049c098fe5f1f0e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49871ac450e5996a04e2e0498a1adca800fe32f68571620353d6a63b32354201"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb8c99ea5580c81f5b4e62edf5a211fb41cca3383a54a3f390e28e5a9ab0653d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15ff67eca1e1753622dc2a599f7e345b1715e9a3ab770d73e7ebc0b41be3ca9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "136bda80b2cecd166925de85a2c34324f961c8c2b67db3267234e2b6de60ec3b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f386009da03d710bcaa6b74a9a8fc3d2ca7fbcd3876870f02127ac7e698e386"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "573ed1eca2b3d380a5f08f1126c4ffe63e19e88a9ab5377626ed5d6e09b61308"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "059f1186f032aaecac8720fe710da1c1bee205f8394c8e490851f3edc63b284e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bada84b87b02e2fa4595b341fb59be57cf7339bf1cb2c077a569476373c2e77d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e55479c5d9c680131e4435fa690c841f18af7db3752dd354a08dacb1e7f1d2d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebdb8644bd712a2926605eb15fe5a630e25e7d6fdf0c9acc5e06e066e7abf96f"
   end
 
   depends_on "certifi" => :no_linkage
