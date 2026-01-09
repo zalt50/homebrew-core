@@ -1,9 +1,9 @@
 class SqliteRsync < Formula
   desc "SQLite remote copy tool"
   homepage "https://www.sqlite.org/"
-  url "https://sqlite.org/2025/sqlite-src-3510100.zip"
-  version "3.51.1"
-  sha256 "0f8e765ac8ea7c36cf8ea9bffdd5c103564f4a8a635f215f9f783b338a13d971"
+  url "https://sqlite.org/2026/sqlite-src-3510200.zip"
+  version "3.51.2"
+  sha256 "85110f762d5079414d99dd5d7917bc3ff7e05876e6ccbd13d8496a3817f20829"
   license "blessing"
 
   livecheck do
