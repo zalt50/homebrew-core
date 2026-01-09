@@ -6,12 +6,12 @@ class Gastown < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "957bf04b2367e20753c5e2ef4615cc4e47c3a7b3f3d82a895d8f7fca03dd6e85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "957bf04b2367e20753c5e2ef4615cc4e47c3a7b3f3d82a895d8f7fca03dd6e85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "957bf04b2367e20753c5e2ef4615cc4e47c3a7b3f3d82a895d8f7fca03dd6e85"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3877777ccffeb2b554a196139f03196fcbb5ed296ece3e145e7b29057a467b20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d790981431d0149cc96baba8b6e1760be17ee2027732bd8922eb48feef526784"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2456002a0593d6db1231b4d034a3735ae7e94d3dbe7d05fdbcb87b9543ce6d4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77a7fcf723413ffb971d0aabe4b8086d868d4f5aef81fc2b061f0bc150369da7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77a7fcf723413ffb971d0aabe4b8086d868d4f5aef81fc2b061f0bc150369da7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77a7fcf723413ffb971d0aabe4b8086d868d4f5aef81fc2b061f0bc150369da7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "81841a135a999c644715491278110c1bb3e261c6b74feb7ad52db7c741357827"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54b36c661e3bbd347de5760c04412757effd7f05d0474589a592d5f6b7381f37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fd680b9a59ede3d2f90a9209c60e9aea472903d355dc9af1cf6c9eaa8ca1c40"
   end
 
   depends_on "go" => :build
