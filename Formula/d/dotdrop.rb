@@ -9,12 +9,12 @@ class Dotdrop < Formula
   revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e72eb0627f08995f942d195da2703d64ebf84e5b3c91779742681995efb7408d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cebfaf6c5f20729fe7170fbc8405d86564c91dd81592eb8c40ca1e94ca7be6a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6881f69d7a6295eb2413e1a3b6eec9731cf1df132a5886251ee1ed229b15a7a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "790849e1b0cdf2402653f2668050d27541ca977d101f42932016b03409b3f246"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b28fc29c9af5d3fe8ef72043a4397f9ee14dca0bab5ebf74b05eee7d16275e55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e1cdc409369d4cf2229207732f7c8f53520d02bdec6d1204b7e93b19769d59a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d919b35517a87294b333d3724b7220faa43cebfa9e818709866eae9e8f4c6c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f9c965ec5587fbbbefe51901af682c54e61b028226fe6dcdc96b588ac4960e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8545757e816241a3790ce0e7d7b1a43a44bddce1eff47c1c0a085de22569b81"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cfc427630c16fdd8751a5587255a23d01458f7c2c1b92d0da76a82538077c75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "181bbc4727f74de35553ef27d3722d6af8f144ab76f5eb66f32686e9a625f609"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fb159a10f45dd7b27bcb421bc9d9b91e3f8d37ac9b5b982df8c2acd05864617"
   end
 
   depends_on "certifi" => :no_linkage
