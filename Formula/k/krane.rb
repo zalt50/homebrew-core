@@ -6,12 +6,12 @@ class Krane < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff4375ada94e25c3be816718edb77de00a3e50383107e074cae3b547503fe949"
-    sha256 cellar: :any,                 arm64_sequoia: "1c84ffec42dfd7237722c245d8f38560ab47fcedcca86cda16d88cbfc01c0fec"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb6e6df4a27b749c1e21e83939ddb9a6cbec3e81765641d277a876c29a1ca331"
-    sha256 cellar: :any,                 sonoma:        "be1b01b767e055268246eb7b49412d917656f3fe13988418cea9d1a9de663cdc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c121303653c3a4ec91d9a1c50d29295602db6d744bff3d0978634de1f79a9b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b1686a84c692ea97f3e6670e28769518f028a155fb32a8290401a516d8dc93"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6f7ce0880691e99783350621b81f818c2ab45895deda32fb071b718f7ae9c3c"
+    sha256 cellar: :any,                 arm64_sequoia: "d7654441d438414758693a1ea71be2f1158b81363cc392de3854566c9805d1a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "6201a5021aaf84c0783e76164be2007faa3194d8277e607296c82c35a180c510"
+    sha256 cellar: :any,                 sonoma:        "fcee877569b1606da620e2e189084e1aa1d902f56ca0b453d6838e2f625dd643"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08545226cfed372f535b9aa70549de7ab57782bbc5793082005f357a04f5d768"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56898f13d9e4ece67e8720802746036fab763dad1a8bf90de3cd59e0c905d0d6"
   end
 
   depends_on "kubernetes-cli"
