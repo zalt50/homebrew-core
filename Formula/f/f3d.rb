@@ -1,8 +1,8 @@
 class F3d < Formula
   desc "Fast and minimalist 3D viewer"
   homepage "https://f3d.app"
-  url "https://github.com/f3d-app/f3d/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "f3feeaed716022bc3440b891afbd5eba82a69af7215f66bb9aa72344d7591126"
+  url "https://github.com/f3d-app/f3d/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "a0e17eb352c32aa2f8e7123cf75ec5633d25e230112d4dc2ba2b7024011e2615"
   license "BSD-3-Clause"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
