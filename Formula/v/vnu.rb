@@ -7,7 +7,7 @@ class Vnu < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "213b65a53c5e20d305814044daaa2b0938eb89bcfcb7c9cabd5932399847a711"
+    sha256 cellar: :any_skip_relocation, all: "644a3be74b92ee25a031a0a38446901b1513b92e5534fb065691f1f33470795f"
   end
 
   depends_on "openjdk"
