@@ -6,7 +6,7 @@ class HttpPrompt < Formula
   url "https://files.pythonhosted.org/packages/bf/e2/bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4c/http-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 14
+  revision 15
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
@@ -120,8 +120,8 @@ class HttpPrompt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do
