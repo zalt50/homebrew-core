@@ -9,10 +9,10 @@ class AwsSamCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2ae2bc81060e333af6be0081f0af8fe2e7632f91a7245f698714791ac1bd9211"
-    sha256 cellar: :any, arm64_sequoia: "7643d3c3c3048bb29e52911017e26560fd9f410dfdf5772685c074de66023b2a"
-    sha256 cellar: :any, arm64_sonoma:  "697c3bb02800e3f510da8174915355a0b0b02d2184dc1c8d3d916a9ba6eedf50"
-    sha256 cellar: :any, sonoma:        "2a3a1cd81bfcc802f0440a19ea11ad9d175802b064edab58846f86e42b4005d5"
+    sha256 cellar: :any, arm64_tahoe:   "dec1c11b5c3b51f864c7f06ff38382fc27fb6772bc74148c5a8d550d175e6712"
+    sha256 cellar: :any, arm64_sequoia: "df415446ad311c5b390bf1b8bfb9c86623d575aade4d433f66908964d38727c5"
+    sha256 cellar: :any, arm64_sonoma:  "22034e4038f26cb8aa5d1de48e3cf529d1760ce74e2108b6a6bf2a7dcaffedf6"
+    sha256 cellar: :any, sonoma:        "b3c603fe7a25ba10ffa703c95a9689f353c13d6e2534f3e68d457089f0ea960a"
   end
 
   depends_on "cmake" => :build # for `awscrt`
