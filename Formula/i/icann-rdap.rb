@@ -1,8 +1,8 @@
 class IcannRdap < Formula
   desc "Full-rich client for the Registry Data Access Protocol (RDAP) sponsored by ICANN"
   homepage "https://github.com/icann/icann-rdap/wiki"
-  url "https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.25.tar.gz"
-  sha256 "c8747f0c5a1bbc475018b76046db9c40b85018b239f2a9ba8b1fcdca295eef68"
+  url "https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.26.tar.gz"
+  sha256 "85150d97000e4457d1bc6b78c303bae4749a145eac5ded011e8b8af452ccb469"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
@@ -26,18 +26,16 @@ class IcannRdap < Formula
   end
 
   test do
-    # check version of rdap
     assert_match "icann-rdap-cli #{version}", shell_output("#{bin}/rdap -V")
-
-    # check version of rdap-test
     assert_match "icann-rdap-cli #{version}", shell_output("#{bin}/rdap-test -V")
 
     # lookup com TLD at IANA with rdap
-    output = shell_output("#{bin}/rdap -O pretty-json https://rdap.iana.org/domain/com")
+    url = "https://rdap.iana.org/domain/com"
+    output = shell_output("#{bin}/rdap -O pretty-json #{url}")
     assert_match '"ldhName": "com"', output
 
     # test com TLD at IANA with rdap-test
-    output = shell_output("#{bin}/rdap-test -O pretty-json --skip-v6 -C icann-error https://rdap.iana.org/domain/com")
+    output = shell_output("#{bin}/rdap-test -O pretty-json --skip-v6 -C gtld-profile-error #{url}")
     assert_match '"status_code": 200', output
   end
 end
