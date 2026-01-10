@@ -3,10 +3,9 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/14/e8/b0b76935588abf944c5bf4ac3ad0ad46681691f35463d2ff069b25853ea0/flexget-3.18.35.tar.gz"
-  sha256 "3c2f6880c66abe854175e3c119c6b40775f570017c6f0ca580b0521672562a97"
+  url "https://files.pythonhosted.org/packages/ea/8c/057ab675f1a759bb5deb07373a4091302b7e0a6d6b1ab15fec9d704c2079/flexget-3.18.36.tar.gz"
+  sha256 "2d5593c2b1e1a143ec39a7cf0e9ce3f3eb9b0efddf7dfae3548976ea68c75bd9"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "7e3de19ce13d1bebe8ae75a4673451b63cfee7114b0c13883418acb2a2340e95"
@@ -114,6 +113,11 @@ class Flexget < Formula
   resource "flask-restx" do
     url "https://files.pythonhosted.org/packages/43/89/9b9ca58cbb8e9ec46f4a510ba93878e0c88d518bf03c350e3b1b7ad85cbe/flask-restx-1.3.2.tar.gz"
     sha256 "0ae13d77e7d7e4dce513970cfa9db45364aef210e99022de26d2b73eb4dbced5"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/c7/e5/40dbda2736893e3e53d25838e0f19a2b417dfc122b9989c91918db30b5d3/greenlet-3.3.0.tar.gz"
+    sha256 "a82bb225a4e9e4d653dd2fb7b8b2d36e4fb25bc0165422a11e48b88e9e6f78fb"
   end
 
   resource "guessit" do
