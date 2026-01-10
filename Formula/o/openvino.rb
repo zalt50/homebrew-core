@@ -6,6 +6,7 @@ class Openvino < Formula
   url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.4.1.tar.gz"
   sha256 "9926c8a8188d0baa9730623efaeb9f0bccf7059f5e4e957a8d238c3226c2b19b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -135,6 +136,7 @@ class Openvino < Formula
 
     resource("mlas").stage buildpath/"src/plugins/intel_cpu/thirdparty/mlas"
     resource("onednn_cpu").stage buildpath/"src/plugins/intel_cpu/thirdparty/onednn"
+    resource("onednn_gpu").stage buildpath/"src/plugins/intel_gpu/thirdparty/onednn_gpu" if OS.linux?
 
     if Hardware::CPU.arm?
       resource("arm_compute").stage buildpath/"src/plugins/intel_cpu/thirdparty/ComputeLibrary"
@@ -143,8 +145,6 @@ class Openvino < Formula
       # TODO: Remove once able to build with xbyak >= 7.29
       resource("xbyak").stage buildpath/"thirdparty/xbyak"
     end
-
-    resource("onednn_gpu").stage buildpath/"src/plugins/intel_gpu/thirdparty/onednn_gpu" if OS.linux?
 
     cmake_args = %w[
       -DENABLE_CPPLINT=OFF
@@ -181,11 +181,13 @@ class Openvino < Formula
 
     # build & install python bindings
     ENV["OPENVINO_BINARY_DIR"] = openvino_binary_dir
-    ENV["PY_PACKAGES_DIR"] = Language::Python.site_packages(python3)
+    ENV["PY_PACKAGES_DIR"] = site_packages = Language::Python.site_packages(python3)
     ENV["WHEEL_VERSION"] = version
     ENV["SKIP_RPATH"] = "1"
     ENV["PYTHON_EXTENSIONS_ONLY"] = "1"
     ENV["CPACK_GENERATOR"] = "BREW"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: libexec/site_packages/"openvino")}"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: libexec/site_packages/"openvino/frontend/onnx")}"
 
     # Allow our newer `numpy`
     inreplace "pyproject.toml", "numpy>=1.16.6,<2.4.0", "numpy>=1.16.6"
