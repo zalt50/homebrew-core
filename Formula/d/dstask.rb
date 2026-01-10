@@ -1,8 +1,8 @@
 class Dstask < Formula
   desc "Git-powered personal task tracker"
   homepage "https://github.com/naggie/dstask"
-  url "https://github.com/naggie/dstask/archive/refs/tags/1.0.tar.gz"
-  sha256 "faec7a671331435ddf5be644404a62eef3b6fc0f895811b1f7c6b840e0bec234"
+  url "https://github.com/naggie/dstask/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "afca526d049874e2609d91c0e5f186d614c684ec13b2fe517e00ec4eeb4f70da"
   license "MIT"
   head "https://github.com/naggie/dstask.git", branch: "master"
 
@@ -18,9 +18,14 @@ class Dstask < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/dstask/main.go"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"dstask-import"), "./cmd/dstask-import/main.go"
+    ldflags = %W[
+      -s -w
+      -X github.com/naggie/dstask.GIT_COMMIT=#{tap.user}
+      -X github.com/naggie/dstask.VERSION=#{version}
+      -X github.com/naggie/dstask.BUILD_DATE=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags:), "./cmd/dstask"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"dstask-import"), "./cmd/dstask-import"
 
     bash_completion.install "completions/bash.sh" => "dstask"
     fish_completion.install "completions/completions.fish" => "dstask.fish"
@@ -28,6 +33,8 @@ class Dstask < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/dstask version")
+
     mkdir ".dstask" do
       system "git", "init"
       system "git", "config", "user.name", "BrewTestBot"
