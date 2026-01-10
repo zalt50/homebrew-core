@@ -7,12 +7,12 @@ class Dstask < Formula
   head "https://github.com/naggie/dstask.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d379782fdfe58917c3d3310212d98e545f755b8b683ba8e95b351bcabd8af2ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d379782fdfe58917c3d3310212d98e545f755b8b683ba8e95b351bcabd8af2ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d379782fdfe58917c3d3310212d98e545f755b8b683ba8e95b351bcabd8af2ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94159ed9d40ad3a46383decca4b4c8bba53e403cb66b714a01e852e69d722ffe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1b50f896d950aa96139cb7a0daf9bf8d84257fb49e40e457d5727910a7eefe3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e79b38c96912b93fb54858df0b845cd5c6fbbda269e7da398218492081eb1b6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "efdbaee9c2da836d8c3d05b93d720bc050fcb6f46877cef12e76f414bf6569a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efdbaee9c2da836d8c3d05b93d720bc050fcb6f46877cef12e76f414bf6569a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efdbaee9c2da836d8c3d05b93d720bc050fcb6f46877cef12e76f414bf6569a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9f4a54b271f2bdf01ee6ab72ec6362c4771c73fb9d8f600411eece08014b354"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e2fb5c0a8e18d13225127f8456e9c7c8a1420c8428716a05accc2710bf5fb6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a6ac3f39000b80965df68e139c59b8b81d9f68bae6146c5f718fede4cfe7a00"
   end
 
   depends_on "go" => :build
