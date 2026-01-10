@@ -47,10 +47,14 @@ class Gammaray < Formula
   end
 
   def install
+    rpaths = [rpath]
+    # Workaround to stop brew from complaining about missing RPATH
+    rpaths << "#{loader_path}/../../../../../../Frameworks" if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_DISABLE_FIND_PACKAGE_Graphviz=ON",
                     "-DCMAKE_DISABLE_FIND_PACKAGE_VTK=OFF",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
