@@ -33,6 +33,7 @@ class Qmmp < Formula
   depends_on "libbs2b"
   depends_on "libcddb"
   depends_on "libcdio"
+  depends_on "libcdio-paranoia"
   depends_on "libmms"
   depends_on "libmodplug"
   depends_on "libogg"
@@ -41,7 +42,6 @@ class Qmmp < Formula
   depends_on "libsndfile"
   depends_on "libsoxr"
   depends_on "libvorbis"
-  depends_on "libxcb"
   depends_on "libxmp"
   depends_on "mad"
   depends_on "mpg123"
@@ -67,6 +67,7 @@ class Qmmp < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "libx11"
+    depends_on "libxcb"
     depends_on "mesa"
   end
 
@@ -81,8 +82,9 @@ class Qmmp < Formula
   end
 
   def install
+    rpaths = [rpath, "#{loader_path}/../.."]
     cmake_args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
       -DCMAKE_STAGING_PREFIX=#{prefix}
       -DUSE_SKINNED=ON
       -DUSE_ENCA=ON
@@ -100,7 +102,7 @@ class Qmmp < Formula
 
     ENV.append_path "PKG_CONFIG_PATH", lib/"pkgconfig"
     resource("qmmp-plugin-pack").stage do
-      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
+      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}", *std_cmake_args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
