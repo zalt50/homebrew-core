@@ -10,7 +10,7 @@ class MailDeduplicate < Formula
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "831b5ba6e78c566751519449d4f13b9469f77c61cb04204ba90ebbf33f56476f"
+    sha256 cellar: :any_skip_relocation, all: "03bcd3be40f5122e5bf174e5edd3aa219bfb410b57e86fd9f1108fa2150e86dc"
   end
 
   depends_on "rust" => :build # for click_extra > uv_build
