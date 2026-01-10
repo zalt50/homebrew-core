@@ -6,6 +6,15 @@ class Minizign < Formula
   license "ISC"
   head "https://github.com/jedisct1/zig-minisign.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a349db551b3508819e74a44d4a429f9ffd0bc12b93331a3a305c0efbf17a34d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3520b2254e1d0f5e9096961e925746b2ba4e825ededb7ca0e879be5006d3e77f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c959ed56c57e4b9ac4f9d76ac3fe4f6f39d2d5186f3f7b7f02e75b920f6f095"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af5f32f6bce23feaf291f5b3ad22ab4b4a0e4a9d2f9b012b6c0a9e98204add79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbfa1168118d9f119e205f38e1093c50508fe4849e9174ea09408b330cfacc13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc703647a481bb360cd6413e1e926898dcc6b7cad9bcf8ae02f139b3afee7f1e"
+  end
+
   depends_on "zig" => :build
 
   def install
