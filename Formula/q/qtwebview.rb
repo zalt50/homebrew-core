@@ -16,10 +16,11 @@ class Qtwebview < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "947db711d5f0f8ab191e29de0553f239bc1185c771f9530e934c848eb92866d2"
-    sha256 cellar: :any, arm64_sequoia: "22d6ba49c800d218f0a5192d0fbfe57a38c9235a9ff6b04f298f3e8b29ad99ce"
-    sha256 cellar: :any, arm64_sonoma:  "d573d105c7beb73481f4241fef7ae009d00935f46d7a80bc4b8ef6959ec3167c"
-    sha256 cellar: :any, sonoma:        "b0ffcd76cca19d77e46e26d9025ef2c78fd9c54e245e668f4568d8077fcbb8f4"
+    sha256 cellar: :any,                 arm64_tahoe:   "947db711d5f0f8ab191e29de0553f239bc1185c771f9530e934c848eb92866d2"
+    sha256 cellar: :any,                 arm64_sequoia: "22d6ba49c800d218f0a5192d0fbfe57a38c9235a9ff6b04f298f3e8b29ad99ce"
+    sha256 cellar: :any,                 arm64_sonoma:  "d573d105c7beb73481f4241fef7ae009d00935f46d7a80bc4b8ef6959ec3167c"
+    sha256 cellar: :any,                 sonoma:        "b0ffcd76cca19d77e46e26d9025ef2c78fd9c54e245e668f4568d8077fcbb8f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20ae68c1b1aeaf831c0bc3643d6a5f96d61583e6dd260b6ca579e3d1aba5f5cc"
   end
 
   depends_on "cmake" => :build
