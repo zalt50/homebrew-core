@@ -21,8 +21,8 @@ class Qtwayland < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "e97508f41212028a79bf46340f0dcb228178eff02c22e5aa0ef192be7c885144"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b64595c383ef49bbfa53f62c4b736dbfebf6037af5c85c37ee21cd5671115b8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "999370ec94c1db29b70138f5f5152bb10a4b9c826b3e50301affbc053b904c17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d94968104eb77a38423e0ff2050d29978aa32ec249d4b04683b2c5ede563057"
   end
 
   depends_on "cmake" => :build
