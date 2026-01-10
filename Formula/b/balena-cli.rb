@@ -21,8 +21,7 @@ class BalenaCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae97416208c92e9466bd05aafc9339652477e9243931d118f792f0e38ce57a69"
   end
 
-  # align with upstream, https://github.com/balena-io/balena-cli/blob/master/.github/actions/publish/action.yml#L21
-  depends_on "node@22"
+  depends_on "node"
 
   on_linux do
     depends_on "libusb"
