@@ -9,12 +9,12 @@ class MkdocsMaterial < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "acda41724d2cca69c14263d0417ef381c1994763a1251826bf2b085ab4c0446a"
-    sha256 cellar: :any,                 arm64_sequoia: "c25f8b11baefe05664b426e1f084e30360a0abe7c6698706cca3cc81172fc6d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "81a557e6fa56a48c0af9241cddfe6eb8ff1cd9ba01e057bb7b453f1f002e5676"
-    sha256 cellar: :any,                 sonoma:        "e1e748c52aae95a3ce7664c526cc9a43f24473897b3330752e8f5ea41ab2a5d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73b8f78083ee1197484449ff76ed1727382d9eba5b57ce66d4e75da245fe8292"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffc83b7ef04857ba696f9c4e498819e6e584422e827c42bfa6500e06a6aad162"
+    sha256 cellar: :any,                 arm64_tahoe:   "a69135178e71094bfab1fc1f2a97479947156a46eb3a337504070110c550f50e"
+    sha256 cellar: :any,                 arm64_sequoia: "eb0851bd4ef9d9740ef87c49bde86fc8f95a6360af3ef8060c14a43057dbb563"
+    sha256 cellar: :any,                 arm64_sonoma:  "957085519b8932e82b8de99e94baf6854ac56743cd7a130fc5fd503a16894603"
+    sha256 cellar: :any,                 sonoma:        "8bc06321bbd76b6245b527668a9acbfd973b98a635cd58ac6e48b340d61993b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0efa2420bce1a01d2de347ac98ed1034cbde4c3b3e8ba9f25ce73d786a12543d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46a364ddcf5e15abc42c4c85acf22add4254d402594008aecfcf426cdeb3d4c3"
   end
 
   depends_on "certifi" => :no_linkage
