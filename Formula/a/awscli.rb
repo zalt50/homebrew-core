@@ -10,12 +10,12 @@ class Awscli < Formula
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dd8ef22cca7bc5f9b68b91ffa837253d0dcdf743f100e9ee5e609329265d9e45"
-    sha256 cellar: :any,                 arm64_sequoia: "866700b1d28c11ddcb98ecbcd9c02eadf5f763339e275ded8292e3ff26cc5893"
-    sha256 cellar: :any,                 arm64_sonoma:  "45336fcd31bbb95a5736ff63d8845843eda4732acd467e9370d46d6b9bd504a2"
-    sha256 cellar: :any,                 sonoma:        "a1e97507560f16ab5f6c8e52dbbfecc8cedf447729de6b080e12dd105bdc085e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "805f96e1ef096cbb2b970d21323f6d1c11418de91ff6bf913ec71960b7fa574f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2cb9f1e310b7908c7c7d866019e90afd22e6992b74e30445d9e4999beef39aa"
+    sha256 cellar: :any,                 arm64_tahoe:   "30ed0283b78dc4b0391a9fe943ef67098cb0f19ea19aae7bdbf541a363aff20a"
+    sha256 cellar: :any,                 arm64_sequoia: "156e69a7f7c99158a08f488fd5036ff21946ee1c35d44e70de61cc6364664ece"
+    sha256 cellar: :any,                 arm64_sonoma:  "f064fbfacc3868f51964a0d09442138c6a1642f18bcff226e0ea2031bb75584b"
+    sha256 cellar: :any,                 sonoma:        "17cfa47c133b6f62ae60b15abda6c0d7ef5e26ef0a12a4ba595e99ea4aec5bdd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "900bb6ce6662eac8135aaa00286c4d1eaca1b29b38dcf8a0ba72bf9eafe7e5a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e91d5d793ba912bfc1e10d7afcf41891428c27260f5dbda5b44e0db11d9328a4"
   end
 
   depends_on "cmake" => :build
