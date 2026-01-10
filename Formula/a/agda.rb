@@ -4,6 +4,7 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
+  revision 1
 
   stable do
     url "https://github.com/agda/agda/archive/refs/tags/v2.8.0.tar.gz"
@@ -84,7 +85,9 @@ class Agda < Formula
 
   depends_on "cabal-install" => :build
   depends_on "emacs" => :build
-  depends_on "ghc"
+  # TODO: switch to the latest GHC in the next release
+  # https://github.com/agda/agda/pull/8303
+  depends_on "ghc@9.12"
   depends_on "gmp"
 
   uses_from_macos "libffi"
