@@ -1,8 +1,8 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-30.1/bitcoin-30.1.tar.gz"
-  sha256 "5d5518782c3000f64717ec1b4291e7e609a1f900d9729ee83c982243779c3f43"
+  url "https://bitcoincore.org/bin/bitcoin-core-30.2/bitcoin-30.2.tar.gz"
+  sha256 "6fd00b8c42883d5c963901ad4109a35be1e5ec5c2dc763018c166c21a06c84cb"
   license all_of: [
     "MIT",
     "BSD-3-Clause", # src/crc32c, src/leveldb
