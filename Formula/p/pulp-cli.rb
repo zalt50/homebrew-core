@@ -6,6 +6,7 @@ class PulpCli < Formula
   url "https://files.pythonhosted.org/packages/06/3d/0e8e6d47f88af35fa3f7c49f45332ba7cf7c017fba4396279c5604fdba3a/pulp_cli-0.37.0.tar.gz"
   sha256 "28f0d4a85d4ed1caddd983fcb7296b2e9629190b45e2c8146cb812da1b49f731"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/pulp/pulp-cli.git", branch: "main"
 
   bottle do
@@ -74,8 +75,8 @@ class PulpCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
