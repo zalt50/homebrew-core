@@ -12,12 +12,12 @@ class QtMariadb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8bf1788850de1c6cec6aa1db77a53340d5dcb39c06e4656405ad063fb377bcdc"
-    sha256 cellar: :any,                 arm64_sequoia: "8e9eca41a0b17b84d468b04f043259e9515ba0d0a4d1d851b1cf0f55af0956ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f255d8ed571f6bc636303d9d125e4e2c0ceeb739fdf5c2b8b2baf39d89c48d9"
-    sha256 cellar: :any,                 sonoma:        "de0dc48006e82698892b108199782fecaf51fd3c2564cd7f24f195b91e14b428"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59e21db9adbe41790b543341bcf70a73669eb3a886783b774e802839466afdbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ea7baba2dbba72d8a457901a22a6750095a3edfd57a681815a4a3697ba6366b"
+    sha256 cellar: :any,                 arm64_tahoe:   "2ebc59fa1f35abd51b11b445dd22253839a7c69649c6e88de33a548b63738994"
+    sha256 cellar: :any,                 arm64_sequoia: "1753663bd6ee09090960786be39b4727ad51b25a72f728fc27e428cb43e90a12"
+    sha256 cellar: :any,                 arm64_sonoma:  "b11dd465938edfbc1f8a739f4cda394725f079c4130337a1c7d76299f9f37317"
+    sha256 cellar: :any,                 sonoma:        "b317fbd6b6ad2f383895be0026436bf09557c601facc871b52c7f44e8abb24ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1abce7e6ee5cb234f7f4c88e06288a1dde12c166835f5b8b2ee2e0dba8bb495f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3deec1325eb991d72032ad34211b0d2b89790cfba25eac52ac78c64381d0faa8"
   end
 
   depends_on "cmake" => [:build, :test]
