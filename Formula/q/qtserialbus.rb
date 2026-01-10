@@ -17,12 +17,12 @@ class Qtserialbus < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "854ed284b3edd23113f1a8ad41071fe71e632b4025020eebf87798ee3d05babb"
-    sha256 cellar: :any,                 arm64_sequoia: "eedebb571a0bd192211723eb32c09a2d5bf397f2dd514c44e59800725d3db312"
-    sha256 cellar: :any,                 arm64_sonoma:  "49d639f622ba2c58ed055c00ab083d6e4139c0e8cf4a77ac92e7a636a20190a0"
-    sha256 cellar: :any,                 sonoma:        "f22b0a4973e5082e8d9ef5cd9e05b952146e45a8c3906c9ac8d63dc9d1a76cf1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28553934744f46bf5a20949ad5cbd788cc28c672fe010ca31bd27f8045394602"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2564f16918575baaac56edace8e77bd0320be2209bc39cdcd09758e0a3c30232"
+    sha256 cellar: :any,                 arm64_tahoe:   "d78c8fc9e7bc8419bc22c167947a7b3e319971d07ed5099b16efe313eacb8786"
+    sha256 cellar: :any,                 arm64_sequoia: "914c05ddf480dc35eab4679d1d36e83cea6411fd57388ba5100cc59fa654aaf6"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd9595c3a751d32b21f362e024b7cbc668332c0c947fe43b0163899374726131"
+    sha256 cellar: :any,                 sonoma:        "7eef07a5893a3935a9bb41ad778ded01d6ccee47a8ae0d1c4e2c0041ece34eb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2cf6edcf384e8e91c4281a84dc72a3fef0e7eea1e28e55085ede116df70b2f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52df1e698c28a1d3acace49b0b3dd15c2e7855c1c35db8386cc38afda932d4d1"
   end
 
   depends_on "cmake" => [:build, :test]
