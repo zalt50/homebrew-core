@@ -5,6 +5,10 @@ class Azurite < Formula
   sha256 "6c04d7a78b0f41eb7b82004a9be640a1aab722137aa1801813eb06263576f753"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b6c97acb5b1302435b24071f37b2583f4fd6bb87377f1051a69bf1d556c8a52b"
+  end
+
   depends_on "node"
 
   def install
