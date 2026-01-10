@@ -18,12 +18,12 @@ class Qtgrpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9c507352edd0674d4ae6bf4dafced50ea801b4a1bbe722a8a26c9479cbfbeb3c"
-    sha256 cellar: :any,                 arm64_sequoia: "6ca3afa83a872e597d7fdc68fd90747d4448cecc0b4b66fd070159aa18d4aad8"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a9ff2aa679592d1bea574c56afced34c22bf8a33b572aaa21307c341541650b"
-    sha256 cellar: :any,                 sonoma:        "c45141f26c2a4748255f90a1a21dd43a7ff3648475d41fcc3e31bab49d3ccf80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac0fd7ab49ec66c85a12fd4ce9fc5d5b5716755d8a0d143e417d7f1889ca25aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "203e94dc2e170f0383407de1dcd9d1f528eb1530162fe8124fef982072187d1b"
+    sha256 cellar: :any,                 arm64_tahoe:   "999e0df239f1c59eeadb853b0e8f8f743590a64e947fc4a3f323c8f5de9f277f"
+    sha256 cellar: :any,                 arm64_sequoia: "11b2a06ed0a47e7f44d91d937ed9a288ad3aef7f5e1b9e28cb5dd4eabab82bf0"
+    sha256 cellar: :any,                 arm64_sonoma:  "0bdca7aeb6b062587515acfe830e299ff5703e600c1cdd6ced1a462c1a1d96f7"
+    sha256 cellar: :any,                 sonoma:        "8c343665a9e0c32236e5ec743a0210cbf361cc0832740207735ea75ea1348136"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e417790dd141754d3c8472428ad559335a0b3f1c5d7ee75d3c4268e1c1e3ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff72f3154f6b72ff69598b8a662d964cf868e2b1df222ee5c26a8ac5cbd5f79d"
   end
 
   depends_on "cmake" => [:build, :test]
