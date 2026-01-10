@@ -1,8 +1,8 @@
 class Bookokrat < Formula
   desc "Terminal EPUB Book Reader"
   homepage "https://bugzmanov.github.io/bookokrat/index.html"
-  url "https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "45cf2216993cbb2fda2d71f2fdf0f479d62cb5a5a0867c9b4413e4c9d38e335a"
+  url "https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "24f68f902744138efb72f50388d96b95677b9455ce080263a5b5795ec1cd60d2"
   license "MIT"
   head "https://github.com/bugzmanov/bookokrat.git", branch: "main"
 
@@ -22,6 +22,8 @@ class Bookokrat < Formula
   end
 
   test do
+    ENV["HOME"] = testpath
+
     pid = if OS.mac?
       spawn bin/"bookokrat"
     else
@@ -30,7 +32,12 @@ class Bookokrat < Formula
     end
 
     sleep 2
-    assert_path_exists testpath/".bookokrat_settings.yaml"
+    config_prefix = if OS.mac?
+      testpath/"Library/Application Support/bookokrat"
+    else
+      testpath/".config/bookokrat"
+    end
+    assert_path_exists config_prefix/"config.yaml"
     assert_match "Starting Bookokrat EPUB reader", (testpath/"bookokrat.log").read
   ensure
     Process.kill("TERM", pid)
