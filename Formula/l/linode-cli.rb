@@ -6,6 +6,7 @@ class LinodeCli < Formula
   url "https://files.pythonhosted.org/packages/0d/d1/0b26fcfb93890e3a6277e1ffdb999a4a1cf1127e5d007256a7e83dd63d6e/linode_cli-5.65.0.tar.gz"
   sha256 "1f690964136a32fad0baeb3691ed4335da6c27c46d2b17e4003a06c1f9a5e453"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/linode/linode-cli.git", branch: "dev"
 
   bottle do
@@ -24,8 +25,8 @@ class LinodeCli < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "charset-normalizer" do
@@ -54,8 +55,8 @@ class LinodeCli < Formula
   end
 
   resource "linode-metadata" do
-    url "https://files.pythonhosted.org/packages/72/30/0707067f33ca0af20ca96bcfbc7bf699faa9e6cfbccfc3e0d8d9bdd36b19/linode_metadata-0.3.2.tar.gz"
-    sha256 "e7fb476303ff69c21dc825b5beefb32923f2c1ab475b0c5c50d6c2e7d4c87017"
+    url "https://files.pythonhosted.org/packages/bb/b4/870c06f401a2a3d04021518fb7c1a13bb7d4841a397ad0da1a27ec1408ee/linode_metadata-0.3.3.tar.gz"
+    sha256 "138a8e03bc4db9ec5ffe7bd363ca86a1d2ed943d681b3f35792b00de8207986b"
   end
 
   resource "markdown-it-py" do
@@ -104,8 +105,8 @@ class LinodeCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
