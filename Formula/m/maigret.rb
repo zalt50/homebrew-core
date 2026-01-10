@@ -6,7 +6,7 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/3d/29/ef75d365917075a72ad88b7b1027bc6f93d6e45f27aec1ee6410607eb5f6/maigret-0.5.0.tar.gz"
   sha256 "d85c7f799cce51b6edf7179dda36019d0081bba528ce77284925499b07a49be7"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
@@ -319,8 +319,8 @@ class Maigret < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/4d/9b/db1056a54eda8cd44f9e5128e87e1142cb328295dad92bbec0d39f251641/pypdf-6.5.0.tar.gz"
-    sha256 "9e78950906380ae4f2ce1d9039e9008098ba6366a4d9c7423c4bdbd6e6683404"
+    url "https://files.pythonhosted.org/packages/d8/f4/801632a8b62a805378b6af2b5a3fcbfd8923abf647e0ed1af846a83433b2/pypdf-6.6.0.tar.gz"
+    sha256 "4c887ef2ea38d86faded61141995a3c7d068c9d6ae8477be7ae5de8a8e16592f"
   end
 
   resource "pypdf2" do
@@ -444,8 +444,8 @@ class Maigret < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do
@@ -459,8 +459,8 @@ class Maigret < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "xhtml2pdf" do
