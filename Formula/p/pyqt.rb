@@ -1,17 +1,17 @@
 class Pyqt < Formula
   desc "Python bindings for v6 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/5c/f5/530b553ea1e239704c5ba86e9e6dd09e4b6240c5b4ee0567d7a135e8466a/pyqt6-6.10.1.tar.gz"
-  sha256 "d733a6c712c0b7a7b99e4ad59b211ea25a5d1b9d1131e47a1f50b5e524266e57"
+  url "https://files.pythonhosted.org/packages/96/03/e756f52e8b0d7bb5527baf8c46d59af0746391943bdb8655acba22ee4168/pyqt6-6.10.2.tar.gz"
+  sha256 "6c0db5d8cbb9a3e7e2b5b51d0ff3f283121fa27b864db6d2f35b663c9be5cc83"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d77493bf10cf4a4fcfb77e5f96c97d21306b2f277209da5d0017760d5fc372aa"
-    sha256 cellar: :any,                 arm64_sequoia: "02f96ab128174eb91ad3c1f49020a0d4ba138a81df307b2ebb3211a82e5b5141"
-    sha256 cellar: :any,                 arm64_sonoma:  "e41392c9541dc0d03143ad916479139a0cf78407cb7de3b036eb4a7714128266"
-    sha256 cellar: :any,                 sonoma:        "eb6370b53e4d1d160e0d9e2edd23f49131dad007fcaef0083834ba309c155b35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2fa1c8bb46ecc1c39994907c2436464fe001ae5e82929dd4d52162512f3bafd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1afb1ab53b82a29e53b69e0687d41420cb9c59af19676a3018f964a7420323ff"
+    sha256 cellar: :any,                 arm64_tahoe:   "1da5eaaf94662961f84964b14d4bad63a997d1ee9a33bf1ca52cda6a97c83e2a"
+    sha256 cellar: :any,                 arm64_sequoia: "decc8ae8a3b3e148bbf11b5a5ac4c1b711bc43768f699bb66fef94ba02f22348"
+    sha256 cellar: :any,                 arm64_sonoma:  "f570a9802e539f69fc516a8e435bfad4c642d7826b3dc30c1b031ea87d192297"
+    sha256 cellar: :any,                 sonoma:        "6fa5127fa04872e243f90c50a3a8524c5bb8b4bc28b190558139f337dc1df1a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2b2dbe475515323dfd19fdcc55ba4b05b5d8c7b5492960df04dd47d73ed902b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92efa396ff59ce6c73a2759b7693fef39941c012b0cf0b9146348c0a6d4f182b"
   end
 
   depends_on "pyqt-builder" => :build
