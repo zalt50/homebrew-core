@@ -15,12 +15,12 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "be0edcca9548d1cf3886a67080293614b07c785616f627c9354c0ad459e0b847"
-    sha256 cellar: :any,                 arm64_sequoia: "d8ca163be8f631515a7a9afc91927e1aa539dfc45ad68890b4469d2bca16dca2"
-    sha256 cellar: :any,                 arm64_sonoma:  "8eae04908b6b00f11d2fd8c9eed615c16492b952b7ec857d71b437e9b8a0119d"
-    sha256 cellar: :any,                 sonoma:        "16d57f763260abcaab594b6572d4ea529e3abf2b66d0bd558f1af1d1f6ab1ab0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf159df9668b97d36499652e8e655a6d131ec96b8e3d937a6793adc07919fba4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c300839744686331e75eaa00f18e48f4ca5d4a0918528056bd422c8aab08cef"
+    sha256 cellar: :any,                 arm64_tahoe:   "9947db439e8e1092c057336347f3411aff37328887f65535449269e12dfaf627"
+    sha256 cellar: :any,                 arm64_sequoia: "119b3ba0c1e37d5378a7b67f8e9b554d7d5ff72550d992d80468150fa5c94051"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebedc58d43a5f8407de489e7f6b0ffbe5f836607c104435749a585a188bdc794"
+    sha256 cellar: :any,                 sonoma:        "5ec9203c130b261b0817cbe1067af1507a35d8f5f4f621ad3c84cfe8c9cb0da5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6703ce72841f81d5c6eeb6fcdd5382886aae76be30c0ec3bf29eaefadc1362d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a7057c3ce448835684fc54410639da248ad6b2f23621ae00db181ffdb4b62b8"
   end
 
   depends_on "go" => :build
