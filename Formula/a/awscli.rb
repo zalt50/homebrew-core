@@ -6,6 +6,7 @@ class Awscli < Formula
   url "https://github.com/aws/aws-cli/archive/refs/tags/2.32.32.tar.gz"
   sha256 "2042e9c26c01da03a52387390707cce809ea0b632935b6313ca98e7aebe05e59"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
@@ -82,8 +83,8 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/e4/e8/6ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392f/urllib3-1.26.20.tar.gz"
-    sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do
