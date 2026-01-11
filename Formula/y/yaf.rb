@@ -25,7 +25,6 @@ class Yaf < Formula
   depends_on "glib"
   depends_on "libfixbuf"
   depends_on "libtool"
-  depends_on "pcre"
 
   uses_from_macos "libpcap"
   uses_from_macos "zlib"
@@ -43,7 +42,7 @@ class Yaf < Formula
 
   test do
     input = test_fixtures("test.pcap")
-    output = pipe_output("#{bin}/yafscii", shell_output("#{bin}/yaf --in #{input}"))
+    output = pipe_output("#{bin}/yafscii", shell_output("#{bin}/yaf --in #{input}"), 0)
     expected = "2014-10-02 10:29:06.168497 - 10:29:06.169875 (0.001378 sec) tcp " \
                "192.168.1.115:51613 => 192.168.1.118:80 71487608:98fc8ced " \
                "S/APF:AS/APF (7/453 <-> 5/578) rtt 451 us"
