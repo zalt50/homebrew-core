@@ -18,10 +18,9 @@ class MinLang < Formula
 
   depends_on "nim"
   depends_on "openssl@3"
-  depends_on "pcre"
 
   def install
-    system "nimble", "build", '--passL:"-lpcre -lssl -lcrypto"'
+    system "nimble", "build", '--passL:"-lssl -lcrypto"'
     bin.install "min"
   end
 
