@@ -2,11 +2,18 @@ class Cwb3 < Formula
   desc "Tools for managing and querying large text corpora with linguistic annotations"
   homepage "https://cwb.sourceforge.io/"
   license "GPL-2.0-or-later"
+  head "svn://svn.code.sf.net/p/cwb/code/cwb/trunk"
 
   stable do
     url "https://downloads.sourceforge.net/project/cwb/cwb/cwb-3.5/source/cwb-3.5.0-src.tar.gz"
     sha256 "20bbd00b7c830389ce384fe70124bc0f55ea7f3d70afc3a159e6530d51b24059"
-    depends_on "pcre"
+
+    # Backport support for PCRE2 to help with EOL `pcre` deprecation
+    # https://sourceforge.net/p/cwb/code/1831/
+    patch :p0 do
+      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/071dacd02a9613204ca265eeb18fe74a1a838329/Patches/cwb3/r1831.diff"
+      sha256 "b20d91efc9eb7bc515880ba9a29f49c553615cc9ab1cfbc6d09638ad677de4a7"
+    end
   end
 
   livecheck do
@@ -32,13 +39,9 @@ class Cwb3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36c736d9eee76fc6c3db520901f42677e8dfc1ea390b319264c4e0d75b612ccc"
   end
 
-  head do
-    url "svn://svn.code.sf.net/p/cwb/code/cwb/trunk"
-    depends_on "pcre2"
-  end
-
   depends_on "pkgconf" => :build
   depends_on "glib"
+  depends_on "pcre2"
   depends_on "readline"
 
   uses_from_macos "bison" => :build
@@ -70,8 +73,7 @@ class Cwb3 < Formula
     # Avoid rebuilds when dependencies are bumped.
     inreplace bin/"cwb-config" do |s|
       s.gsub! Formula["glib"].prefix.realpath, Formula["glib"].opt_prefix
-      pcre = build.head? ? "pcre2" : "pcre"
-      s.gsub! Formula[pcre].prefix.realpath, Formula[pcre].opt_prefix
+      s.gsub! Formula["pcre2"].prefix.realpath, Formula["pcre2"].opt_prefix
     end
   end
 
