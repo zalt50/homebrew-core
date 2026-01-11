@@ -29,16 +29,20 @@ class Libmp3splt < Formula
 
   depends_on "pkgconf" => :build
   depends_on "flac"
-  depends_on "gettext"
   depends_on "libid3tag"
   depends_on "libogg"
   depends_on "libtool"
   depends_on "libvorbis"
   depends_on "mad"
-  depends_on "pcre"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
-    system "./configure", *std_configure_args
+    # Disabling usage of EOL `pcre`. Can be reconsidered if upstream ports to `pcre2`.
+    # Issue ref: https://github.com/mp3splt/mp3splt/issues/366
+    system "./configure", "--disable-pcre", *std_configure_args
     system "make", "install"
   end
 end
