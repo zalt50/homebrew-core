@@ -24,13 +24,12 @@ class Idsgrep < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pcre"
 
   def install
-    system "./configure", "--disable-silent-rules"
-    system "make", "idsgrep"
-    bin.install "idsgrep"
-    man1.install "idsgrep.1"
+    system "./configure", "--disable-silent-rules",
+                          "--without-pcre",
+                          *std_configure_args.reject { |arg| arg["--libdir"] }
+    system "make", "install"
     pkgshare.install "chise.eids"
   end
 
@@ -46,6 +45,6 @@ class Idsgrep < Formula
       【𭊼】⿱<酒>⿰氵酉<吒>⿰口<乇>⿱丿七
       【𭳒】⿰<酒>⿰氵酉<或>⿹戈<CDP-8BE2>⿱口一
     EOS
-    assert_equal expected, shell_output("#{bin}/idsgrep -d '...酒' #{pkgshare}/chise.eids")
+    assert_equal expected, shell_output("#{bin}/idsgrep -dk '...酒' #{pkgshare}/chise.eids")
   end
 end
