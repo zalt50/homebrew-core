@@ -8,12 +8,13 @@ class Abricate < Formula
   head "https://github.com/tseemann/abricate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3f819c849bbd8866baeb6ce2236d223f219e7aefd225fd85b7cdbd8764df4ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "708fe4cc0278ee0d7ae6072998f83b092e4872df46e517a1d4d4b381a52069e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e817daa3059603b115b4f755b46f60a35de15ef3f0863e18a7a5177584cf6a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02864f33d3adfb3e83011d51578722b9f561e8e06f77f583c30cb4a24635d51c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "801c29301c45e9c2428d7c78f2abaed418a77857788d5f7dfa8dea6021e218a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa7164afab8cc06e68a0f38525ed946bcf55505fb5b81d398d551fbf58d260a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21c1296ed3a481e1636f59ff850cdeb965c25998136116848fb935b656fb8807"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e89b313a84f277c596aacc0a9b956f712fb8bb117addd9e20500491308c4a2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d1b925954d6ccc797cef2873d31e34fddae38d6e7ad60b481f819d4bdcfdd1f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6866f78ceb5be17bca2efaca9507d111cc20d1bf7a41d6f0dfc6195c7f22d80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73fed6fed04f7dc4720392aa7e34b204edb669f777350e553194b419fd1c7571"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "141c67d33465d33bd724dab3078f9eae776863804dc79486fcf9158146dc9f85"
   end
 
   depends_on "any2fasta"
