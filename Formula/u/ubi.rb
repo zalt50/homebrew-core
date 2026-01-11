@@ -1,8 +1,8 @@
 class Ubi < Formula
   desc "Universal Binary Installer"
   homepage "https://github.com/houseabsolute/ubi"
-  url "https://github.com/houseabsolute/ubi/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "8f58d2dd267eb9dab99f59e4a9fdc2341f50bafedb1589f9773bc52ca2346f74"
+  url "https://github.com/houseabsolute/ubi/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "81f04e80b246dbac7371da822ea22afa2411ec0bde0fd04fa575c9c1a52f8471"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/houseabsolute/ubi.git", branch: "master"
 
