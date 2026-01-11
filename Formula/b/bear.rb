@@ -1,8 +1,8 @@
 class Bear < Formula
   desc "Generate compilation database for clang tooling"
   homepage "https://github.com/rizsotto/Bear"
-  url "https://github.com/rizsotto/Bear/archive/refs/tags/4.0.0.tar.gz"
-  sha256 "27dbb0b23c4d94018c764c429f7d6222b2736ffa7b9e101f746bc827c3bf83a0"
+  url "https://github.com/rizsotto/Bear/archive/refs/tags/4.0.1.tar.gz"
+  sha256 "64bcd65a333c6060d929c62b461edbd172a7256e42aae6d327982a0ce643a20c"
   license "GPL-3.0-or-later"
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
@@ -24,26 +24,17 @@ class Bear < Formula
 
   def install
     # Patch build.rs to use Homebrew's libexec path instead of /usr/local/libexec
-    inreplace "bear/build.rs",
-      'WRAPPER_EXECUTABLE_PATH=/usr/local/libexec/bear/wrapper");',
-      "WRAPPER_EXECUTABLE_PATH=#{libexec}/bear/wrapper\");"
-
-    inreplace "bear/build.rs",
-      'PRELOAD_LIBRARY_PATH=/usr/local/libexec/bear/$LIB/libexec.so");',
-      "PRELOAD_LIBRARY_PATH=#{libexec}/bear/lib/libexec.so\");"
-
-    mkdir_p libexec/"bear"
+    inreplace "bear/build.rs" do |s|
+      s.gsub! "/usr/local/libexec/bear/$LIB", "#{libexec}/$LIB"
+      s.gsub! "/usr/local/libexec/bear", libexec/"bin"
+    end
 
     system "cargo", "install", *std_cargo_args(path: "intercept-wrapper", root: libexec)
-    mv "#{libexec}/bin/wrapper", "#{libexec}/bear/wrapper"
-
     system "cargo", "install", *std_cargo_args(path: "bear")
 
     if OS.linux?
       system "cargo", "build", "--release", "--lib", "--manifest-path=intercept-preload/Cargo.toml"
-
-      mkdir_p libexec/"bear/lib"
-      cp "target/release/libexec.so", "#{libexec}/bear/lib/"
+      (libexec/"lib").install "target/release/libexec.so"
     end
   end
 
