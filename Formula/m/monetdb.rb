@@ -27,7 +27,7 @@ class Monetdb < Formula
   depends_on "pkgconf" => :build
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "readline" # Compilation fails with libedit
   depends_on "xz"
 
