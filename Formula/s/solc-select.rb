@@ -10,15 +10,14 @@ class SolcSelect < Formula
   head "https://github.com/crytic/solc-select.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcd3dba43e5b829cb1678cdea5dfad0f88b1bf5e88639dac06bae7a03d0cf828"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "976171dbf9ae245a10d75162c2da94b6154512678d6b986c7b65e04c0f0d54e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edd45e039237ea555c60ae48a49fec8018f4a2fbbfc2b4fce15bd709f50a4182"
-    sha256 cellar: :any_skip_relocation, tahoe:         "66ef9fd24b05dcb88eebd2ca9bdc89f73afd8dcac16f2914f01b91bc60d314fe"
-    sha256 cellar: :any_skip_relocation, sequoia:       "478eaf22516bbbd67fd7856ceb9d2375173fd15d67a06ffcfd7a99933e4eb722"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f52067fa818f5d5dcaaf6dba9e5fc81805f4327dded6aa437fa13d1e4976748c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63faa76f11a00f5e79ebc3abaf359e41b5e0bcd343acfe7462b9a92e87585389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad4c7233516e78d57e7d9f7518abd4f5648bfbe95dd89b4ef44b26162dfdc314"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fad784f517f25560079fab570297d97420e85c31be47b21446f5c6bf3623494f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99b2972e69f47d5d216c916090a0584e543389e80d2e8520ec894fb1dc0b6a30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c77a374d6ac0bc29041979b11b31f6f4622ace9bb51beffc2c40bfa7f923828"
+    sha256 cellar: :any_skip_relocation, tahoe:         "ca6c1da8fbf96201cdcd31f93696f2f775a18ac210e80d9b8cb57599ddaf985f"
+    sha256 cellar: :any_skip_relocation, sequoia:       "471c53b820c0372635b8199c5ed395488644edd40526dcbbae1d149ceda1f05b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e37a09d2e64296b744e12be0feae56ab5f2fa1a2009a93d5855ffa83bef3eb6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d4c92940ff09255409d65c0f4655474d3cbec26e84e1ec0a730f25a122e495d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d93f3a1db63e47bf89cf93bad487060ef2ad929b34d687e16e1cd322c8d01502"
   end
 
   depends_on "certifi" => :no_linkage
