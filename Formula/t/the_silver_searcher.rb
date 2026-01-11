@@ -27,10 +27,16 @@ class TheSilverSearcher < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkgconf" => :build
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "xz"
 
   uses_from_macos "zlib"
+
+  # Apply Debian patch to port from pcre to pcre2.
+  patch do
+    url "https://sources.debian.org/data/main/s/silversearcher-ag/2.2.0%2Bgit20200805-1.2/debian/patches/enable_pcre2_support.patch"
+    sha256 "86b4758595d96e6d049dca70b160ae4f60ea1198daa713a058628a749ab1be75"
+  end
 
   def install
     ENV.append_to_cflags "-fcommon" if ENV.compiler.to_s.start_with?("gcc")
