@@ -1,8 +1,8 @@
 class Hyx < Formula
   desc "Powerful hex editor for the console"
   homepage "https://yx7.cc/code/"
-  url "https://yx7.cc/code/hyx/hyx-2024.02.29.tar.xz"
-  sha256 "76e7f1df3b1a6de7aded1a7477ad0c22e36a8ac21077a52013b5836583479771"
+  url "https://yx7.cc/code/hyx/hyx-2026.01.11.tar.xz"
+  sha256 "550863c9e6a2c0e2618c16a562c8ee995e88c1d30e62abfdf4ecb819b3c4df54"
   license "MIT"
 
   livecheck do
