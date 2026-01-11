@@ -10,13 +10,13 @@ class Luvit < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "17d057bd4ad2a454a31b24662102fff392681e72675de5d64e5deb1dfe7af479"
-    sha256 cellar: :any,                 arm64_sequoia: "50c277e8b5c4ac5d75481e09e520a8d119d997d7ab420ab01c5d2e9e700f08a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ef80abb496d68a40c367126cfc343da468e67161b18f96bd239914166ce5875"
-    sha256 cellar: :any,                 sonoma:        "2a28032e61257c09d6282ae24a2e0cd64b97de9279a3337a7966b4cf36afedae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c7531ea1451526770ec5f04853cc6cc1b9a9db3803418bb3d8d5e36000f8456"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c7587270f4a47365d876feb28f09e2be713dea9bf8dd666e019071b93738d2c"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_tahoe:   "d1e0e16c87a8b221d4408ff878ffa7389fa3f718073d29e2ca5159b48af6fe4b"
+    sha256 cellar: :any,                 arm64_sequoia: "d11505fcc3846d0e0a60eac5dd556f8ac586791ce7a4bb3110423bf2e4525e82"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf5880e2bd02b7e42e13aa343eaa206e60bf56e3237d4d9756b7c95585d6eb7f"
+    sha256 cellar: :any,                 sonoma:        "9310c05dcfed32c3755617a078497e7bab9ff92185006867b2af25728aa565aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5532c8f6059d548a09b29be24f3f2da71a1e7ab3c4ed1c97a5dbeac5276bb54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "519b09540eb5b7a824ac52135c5d82863ed0dc6e9e719c24867a0f4221f1ec44"
   end
 
   depends_on "cmake" => :build
