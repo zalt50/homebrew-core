@@ -25,6 +25,7 @@ class Invoice < Formula
 
   def install
     system "go", "build", *std_go_args
+    generate_completions_from_executable(bin/"invoice", shell_parameter_format: :cobra)
   end
 
   test do
