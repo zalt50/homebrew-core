@@ -9,12 +9,12 @@ class SvtplayDl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cda7c8e4c03e5a5ff3c12c63163a0fd565c0199c0b892e0c16f54781b5d95087"
-    sha256 cellar: :any,                 arm64_sequoia: "67865b040972beb0cd4fb5e9b468dfcda049c4843a267a5c8d5292d0e18db2b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6b88986faf3bfa306f97e6605fe7eb44dc5aaf1500073251b9c53a8f8d4d9b6"
-    sha256 cellar: :any,                 sonoma:        "32a2bf647eb31ad490ecb9d53107df9056b77e6fb4d96f0e794520dd904f47e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9870555d7c9ea90390aa1d74295b51d5cb37a6202aeb9d458d8e46847d102587"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f139b1180a9106cb38b33049d6a7ea0194b8c7ccd6befa6d8f49dc92fbd266d"
+    sha256 cellar: :any,                 arm64_tahoe:   "fbea456b4f9d08bd24d7b94dcec67892b632aa096ddc4734960074dfa3be7e7a"
+    sha256 cellar: :any,                 arm64_sequoia: "1fc2721a691a57ce4b81073e01f47d35523d7c6b9a2a03b44caa67d9e613bbb6"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad77a77487e5514cc4fb0193a1f2fa095118481d3090b042e863567a9232bf81"
+    sha256 cellar: :any,                 sonoma:        "8f77f6d00e40a8fe08179cc99f1b2ad2514761aed9567dcd60ed7dc522abf545"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d386d53b5c6c21ccff114d39f20b4611d9d82cf2bcd29e1f279957adfabe1822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33cceb4e73b1c48179bf51f043eaae6cc90873661d42313978d812a5eda60060"
   end
 
   depends_on "certifi"
