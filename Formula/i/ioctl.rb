@@ -33,6 +33,8 @@ class Ioctl < Formula
       -X github.com/iotexproject/iotex-core/v2/pkg/version.BuildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "nosilkworm"), "./tools/ioctl"
+
+    generate_completions_from_executable(bin/"ioctl", shell_parameter_format: :cobra)
   end
 
   test do
