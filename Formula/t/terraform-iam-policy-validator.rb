@@ -9,12 +9,12 @@ class TerraformIamPolicyValidator < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "437c5ff4f25dc62b5c1a5bde0d9266e21e81f337e3f0745cee8efb38fc74e883"
-    sha256 cellar: :any,                 arm64_sequoia: "59abe7788c086800af67f08681515e41f71b050b5ef64425126a9579e803baad"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fd3ebeaa9d5e0aee127b7b078a1e6149f7e3d4c1948f9ba06401d93429e7fb2"
-    sha256 cellar: :any,                 sonoma:        "963031588714f6c02217f44eb9b96cde1ee440404ada7aeec8772c51be794285"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3baaa856c2cd7c6ba3022cb2370ba3e2e795b3d05841f2dec4bc94596b3b316"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e69109b409174b41b398ac204327b93afa497ce79d9d541fbe076d1f949fc54e"
+    sha256 cellar: :any,                 arm64_tahoe:   "fa92c957894d7bb18c16f94805a161224543dca85c62435ad8d1eb67b40d134b"
+    sha256 cellar: :any,                 arm64_sequoia: "b43c6889783593be47ab5fe5918e44fefae1fd0d9e44747bed466b1cd6eaefd1"
+    sha256 cellar: :any,                 arm64_sonoma:  "79175ca1928cf881712fcc690abd96dfaf19b5ce3a00c7c9b7f6a529b65665f9"
+    sha256 cellar: :any,                 sonoma:        "8f41ec6727f2c24b9b5da9152c50a1def43f34d8bd3646f689880c19db402274"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b80c51ff935222abb97911171d961f8172742875edea329979bcab1328be643f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4b848d3c6acfb9af196ea920911cf0abb09ff24f2539db72b07aa3374b70c04"
   end
 
   depends_on "libyaml"
