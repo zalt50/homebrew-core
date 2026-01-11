@@ -31,15 +31,12 @@ class SLang < Formula
 
   depends_on "libpng"
 
-  on_linux do
-    depends_on "pcre"
-  end
-
   def install
     png = Formula["libpng"]
     system "./configure", "--prefix=#{prefix}",
                           "--with-pnglib=#{png.lib}",
-                          "--with-pnginc=#{png.include}"
+                          "--with-pnginc=#{png.include}",
+                          "--without-pcre" # avoid EOL `pcre`
     ENV.deparallelize
     system "make"
     system "make", "install"
