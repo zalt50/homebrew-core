@@ -10,14 +10,14 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc7f20c88ebc8240d3c462fad9d105cbe1e00403a3429e5830b2356967ffd574"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53dae5d4cdcee5fb12c56c61a9a12fc3fef1f1744205aa2713e5a095dea182f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0edbc7dcfeb094abb3bfc4e00f079152ada2cccca8e7b1ead23395b2be66d412"
-    sha256 cellar: :any_skip_relocation, tahoe:         "6c3d5dd01cb4cc8b9887fe3b1b4a6c4510a49b44b1b5b6430e1aac689cc53346"
-    sha256 cellar: :any_skip_relocation, sequoia:       "3e133d9de7bd2d16e549049779a8e713660aa8ae64072b7a12d00d0aae4f19d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be8f17b06e5004f7342603f172d8b358fd1f3ce17d35a116aa7ec176af70ec68"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff67b98f467483cbebd6e7fe4ebf8cb974cbe403a528e509d9d50f12dea523a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e545b726ddd1dfd6a2ec285b11629cba7ce9cf6f236a57e4639534ae2dfe54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "211ee48397a8f9eca38fec6af3c1d5e8335eebff704764ab9e22d0e6adff7a95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e9ecbe4420edc217523594a628800aea581afbd7c35db6d2253433346aaac04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5241d6c9aec195bc6288f1c3fe5a889a1a739c77548db59cec6a1734135ba9f"
+    sha256 cellar: :any_skip_relocation, tahoe:         "33088e0ae994011cc9b5bc16bd6abc065381ffa58833fe0158f5494a9ff8206a"
+    sha256 cellar: :any_skip_relocation, sequoia:       "9e25f573e5f95de355d48c96aabbc4c72833cc82ae8cc2137bc4bb7ecf093bee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf40d4c9a115696fed23acaa1b86c8944f21b7fb57c888797963170af8702ad6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70af4fce0008f94a13dc225cab22db39e0f96d3a6fab0456845428b48bd93bac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66611bec486644411b49e4e9a2e182e3777da0fc11283954cbde3081b57262a8"
   end
 
   depends_on "python@3.14"
