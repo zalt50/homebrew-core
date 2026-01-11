@@ -1,12 +1,10 @@
 class GoStatik < Formula
   desc "Embed files into a Go executable"
   homepage "https://github.com/rakyll/statik"
-  url "https://github.com/rakyll/statik/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "cd05f409e63674f29cff0e496bd33eee70229985243cce486107085fab747082"
+  url "https://github.com/rakyll/statik/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "670d14b003fb883efbd68f3e813b1022ce2325a6b4b6d2e9e6445f38db51f902"
   license "Apache-2.0"
   head "https://github.com/rakyll/statik.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
