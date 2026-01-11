@@ -6,7 +6,7 @@ class Xml2rfc < Formula
   url "https://files.pythonhosted.org/packages/e5/bf/958badb4a48c9a91abf1e4896f81a2164127f86b53b0b099fc024c849584/xml2rfc-3.31.0.tar.gz"
   sha256 "0a1d4ccc4425aed39b5f0f833a8eb1e0f9e8f1897d3441c3a15877dee36cf484"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/ietf-tools/xml2rfc.git", branch: "main"
 
   bottle do
@@ -54,8 +54,8 @@ class Xml2rfc < Formula
   end
 
   resource "intervaltree" do
-    url "https://files.pythonhosted.org/packages/50/fb/396d568039d21344639db96d940d40eb62befe704ef849b27949ded5c3bb/intervaltree-3.1.0.tar.gz"
-    sha256 "902b1b88936918f9b2a19e0e5eb7ccb430ae45cde4f39ea4b36932920d33952d"
+    url "https://files.pythonhosted.org/packages/53/c3/b2afa612aa0373f3e6bb190e6de35f293b307d1537f109e3e25dbfcdf212/intervaltree-3.2.1.tar.gz"
+    sha256 "f3f7e8baeb7dd75b9f7a6d33cf3ec10025984a8e66e3016d537e52130c73cfe2"
   end
 
   resource "jinja2" do
@@ -99,8 +99,8 @@ class Xml2rfc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do
