@@ -25,7 +25,6 @@ class Cppcheck < Formula
 
   depends_on "cmake" => :build
   depends_on "python@3.14" => [:build, :test]
-  depends_on "pcre"
   depends_on "tinyxml2"
 
   uses_from_macos "libxml2" => :build
@@ -37,8 +36,13 @@ class Cppcheck < Formula
   def install
     ENV.deparallelize
 
+    # Rules are disabled due to requiring EOL `pcre`. This is same choice made by Debian[^1].
+    # Feature can be re-enabled if upstream adds support for std::regex[^2] or `pcre2`.
+    #
+    # [^1]: https://salsa.debian.org/reichel/cppcheck/-/commit/82df7e7d2aaa717eb594d69861f10d2e4d383ad7
+    # [^2]: https://github.com/danmar/cppcheck/pull/7893
     args = %W[
-      -DHAVE_RULES=ON
+      -DHAVE_RULES=OFF
       -DUSE_BUNDLED_TINYXML2=OFF
       -DPYTHON_EXECUTABLE=#{python3}
       -DFILESDIR=#{pkgshare}
