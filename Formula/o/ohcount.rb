@@ -26,8 +26,17 @@ class Ohcount < Formula
 
   depends_on "gperf" => :build
   depends_on "libmagic"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "ragel"
+
+  # Apply Debian patch to port to `pcre2`
+  # Issue ref: https://github.com/blackducksoftware/ohcount/issues/93
+  patch do
+    url "https://deb.debian.org/debian/pool/main/o/ohcount/ohcount_4.0.0-5.debian.tar.xz"
+    sha256 "740228713ed4494577f9932ec13fe4be863daba9868d0bd2ac3f082c847d6a4b"
+    apply "patches/build-cflags.diff",
+          "patches/pcre2.patch"
+  end
 
   def install
     system "./build", "ohcount"
