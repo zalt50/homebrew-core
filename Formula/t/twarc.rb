@@ -9,13 +9,12 @@ class Twarc < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8eb0504f36f0fe60258156527ff6e41bbde1d210d9364dfb4f418deb252573c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba00e29a8477469255d98b031dffa6ef58db1c864e87fc30853815a80f8d5c39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87cc3f1aa9ac22f477a8b16377526dbfcfbe14b7dfbbdeadbc3df41fd2b3ba4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a44433d6df97c382fcfe65457bd81e0718ef99be1b62d196f3ea24438b9e554"
-    sha256                               arm64_linux:   "3bd61c27be902d005aca0c40c9e005e6dfe02db9f36f5577d496343edbb2ce6f"
-    sha256                               x86_64_linux:  "103c2c355bc9000205381bc608229f9166c5d1e405c73ddf39ba6b7054f9d2ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db9e6c81fdf10b57b1088a8ab38e39df62e6c7e7a4ff59ac7c99a831b6e3a436"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8ece55dd20076323c923f67c06cc05ce2dbc3d535d3746c08420cdd9613daaa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbf83545193ee50cbdca9c86d942a41556754ad4d4c55bfd6f4ae3cea04c7242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b175e12ab700e554a919fb5ed97b10cf97d3d039db90ef7bbb97f2ac741b8224"
+    sha256                               arm64_linux:   "97ac9dcf94d545374e82cceeab9a681b5aa9381986ed82ce55dd0f90aa5a8075"
+    sha256                               x86_64_linux:  "d553debe051e9d6d6797a7d89ccd0b943234542d4fd576b6722250cc533a7432"
   end
 
   depends_on "cmake" => :build
