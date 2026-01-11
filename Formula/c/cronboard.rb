@@ -7,6 +7,15 @@ class Cronboard < Formula
   sha256 "826a44a90b49f42036b2076761329b6efb8aa457e93d04ae287b584de4b836cd"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "51a843a1936d0668a7d97e9d9f7a483f781746bce0c5b1257100f4a79915b609"
+    sha256 cellar: :any,                 arm64_sequoia: "ab2f60f764e0cf52c14c62d7f10a2fdd1e4e60c5a573b96e42c01c300771a708"
+    sha256 cellar: :any,                 arm64_sonoma:  "b84330748259a51b8a1fda8964cbec16e0f7af750733cf0c21ab260e940b0712"
+    sha256 cellar: :any,                 sonoma:        "8b2ae22d7e9ee68ab9197c94f00cbb79db95b7150a83f75f7575d1886877f1db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3eafefd1dc63e8fb42b57a646b2b3e44b49160c676c3634c25275e766cd1ed9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3beff8ca8b255f6fa69210458406aa90622382fc5c938de4b0eb0ab8a76009b1"
+  end
+
   depends_on "rust" => :build
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"
