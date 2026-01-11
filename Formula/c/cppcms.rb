@@ -8,13 +8,12 @@ class Cppcms < Formula
   license "MIT"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "c67928d45ecdf779f5cbde1a74527f1f474063e8038fc6103222f6066c058ff8"
-    sha256 cellar: :any,                 arm64_sequoia: "b274decb22153c7de85e5fa491fe54493186b6b6258de506695aa6e725a3a1b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "c81184c372aced3829c5dc2df3c748b19afe1522ca7b25195559ed4de6777ba0"
-    sha256 cellar: :any,                 sonoma:        "5afdc34fc8074dc1589f9d84f34fd7db0374c83fe57ddf69b8898898b8d524f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a621276dcd5bf2942c3cbf70f4ccb2033603598b9cd0b69a04302f93a173c274"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf5e4745de3da3bc5794c0d8d36e434288d41627aca22209d837bf526dc81b9e"
+    sha256 cellar: :any,                 arm64_tahoe:   "5900ff545cb23a62aeee87f0298f708dea78f5276f18a26f26ca25af67dc32f7"
+    sha256 cellar: :any,                 arm64_sequoia: "e0c6465ebda4259d556b40968bd23dc813d9767f67726a65c2830c3c3ba2e232"
+    sha256 cellar: :any,                 arm64_sonoma:  "81bab19d59c5e6892944778302cbb0e78d04a8c36b20aecf02e59d9c7b655d78"
+    sha256 cellar: :any,                 sonoma:        "72d3733bbf759cb8886a96b97046c50f48ec5589ff14c1fb2b17316dd789a1cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26ff565057fd36a3c9f7f834764447a9442789580dd13c3a0689a0df31610f3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a43f290fed874f7b5e88c3727f084ffb4332662a5534abc8b610a2c11b9b9d81"
   end
 
   depends_on "cmake" => :build
