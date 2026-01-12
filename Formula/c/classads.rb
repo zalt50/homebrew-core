@@ -29,9 +29,6 @@ class Classads < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "21874caebbec12fa4ee41c6f4830146dc725dfec2658b8c08eb02dc7d2585583"
   end
 
-  # PCRE2 commit ref: https://github.com/htcondor/htcondor/commit/b7d84f79384dec9c500611afed87d71d77148176
-  depends_on "pcre" # PCRE2 needs new release. Upstream fix in HTCondor requires new CMake build system.
-
   on_macos do
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,7 +40,7 @@ class Classads < Formula
   patch :DATA
 
   def install
-    args = ["--enable-namespace"]
+    args = ["--enable-namespace", "--without-pcre"]
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
