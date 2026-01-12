@@ -6,7 +6,7 @@ class Phantom < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2c16803ded6e936c1c1d2bfbf74b2339254ed6d91a5d8e866da7585d5bb5e42d"
+    sha256 cellar: :any_skip_relocation, all: "95f621c48ef1e7062ff8350df36e7f5da2b068f07d0865acbd146c7b2810c690"
   end
 
   depends_on "node"
