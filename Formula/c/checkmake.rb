@@ -22,11 +22,13 @@ class Checkmake < Formula
     ENV["BUILDER_NAME"] = "Homebrew"
     ENV["BUILDER_EMAIL"] = "homebrew@brew.sh"
     ENV["PREFIX"] = prefix
-    system "make"
+    system "make", "VERSION=#{version}"
     system "make", "install"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/checkmake --version")
+
     sh = testpath/"Makefile"
     sh.write <<~EOS
       clean:
