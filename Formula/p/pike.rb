@@ -22,12 +22,10 @@ class Pike < Formula
     sha256 x86_64_linux:  "59dae235eeb446e2a34bcf99aa113b9571bb012f4559e44b973d2fbbd6d40832"
   end
 
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "nettle"
-  depends_on "pcre"
   depends_on "webp"
 
   uses_from_macos "bzip2"
@@ -38,10 +36,7 @@ class Pike < Formula
 
   on_macos do
     depends_on "gnu-sed" => :build
-  end
-
-  on_linux do
-    depends_on "libnsl"
+    depends_on "gettext"
   end
 
   def install
@@ -62,6 +57,7 @@ class Pike < Formula
       --without-bundles
       --without-freetype
       --without-gdbm
+      --without-libpcre
       --without-odbc
     ]
 
