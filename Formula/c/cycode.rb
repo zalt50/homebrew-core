@@ -3,8 +3,8 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/b6/87/e5ba58d8947287fbb792a95a8564268ccb9e6f33cb612d75e3942d2400d6/cycode-3.8.4.tar.gz"
-  sha256 "954fb48bd686ec7a50222d93f483fa7397945c634a6938f298ca0a98bfda3bec"
+  url "https://files.pythonhosted.org/packages/97/a1/050568401a2dce123146680c56f47cb7c8d67b46da6bb57599d8a433fd99/cycode-3.8.5.tar.gz"
+  sha256 "8db1f4961204eb82914c1daea00b50e15b5acf9ed553e33d63bb34f522aaf514"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
@@ -222,8 +222,8 @@ class Cycode < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
-    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
+    url "https://files.pythonhosted.org/packages/e7/65/5a1fadcc40c5fdc7df421a7506b79633af8f5d5e3a95c3e72acacec644b9/starlette-0.51.0.tar.gz"
+    sha256 "4c4fda9b1bc67f84037d3d14a5112e523509c369d9d47b111b2f984b0cc5ba6c"
   end
 
   resource "tenacity" do
