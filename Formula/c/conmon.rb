@@ -1,8 +1,8 @@
 class Conmon < Formula
   desc "OCI container runtime monitor"
   homepage "https://github.com/containers/conmon"
-  url "https://github.com/containers/conmon/archive/refs/tags/v2.1.13.tar.gz"
-  sha256 "350992cb2fe4a69c0caddcade67be20462b21b4078dae00750e8da1774926d60"
+  url "https://github.com/containers/conmon/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "300d21c2244e1b5e90cc62d796da3e94812bec281bae6868d6e738432155319d"
   license "Apache-2.0"
   head "https://github.com/containers/conmon.git", branch: "main"
 
@@ -12,6 +12,7 @@ class Conmon < Formula
   end
 
   depends_on "go" => :build
+  depends_on "go-md2man" => :build
   depends_on "pkgconf" => :build
 
   depends_on "glib"
