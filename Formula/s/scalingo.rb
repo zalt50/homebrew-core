@@ -1,8 +1,8 @@
 class Scalingo < Formula
   desc "CLI for working with Scalingo's PaaS"
   homepage "https://doc.scalingo.com/cli"
-  url "https://github.com/Scalingo/cli/archive/refs/tags/1.41.1.tar.gz"
-  sha256 "92a37e60eed5e9b08d9b5a75bc124e8d08eac584c1af302d180a5bed3301549c"
+  url "https://github.com/Scalingo/cli/archive/refs/tags/1.42.0.tar.gz"
+  sha256 "190d3dde9b308213b8f2c3d83c6a52175b728c0238a1059677765153019f12e1"
   license "BSD-4-Clause"
 
   bottle do
