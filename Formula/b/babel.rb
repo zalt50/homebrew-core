@@ -1,19 +1,18 @@
 class Babel < Formula
   desc "Compiler for writing next generation JavaScript"
   homepage "https://babeljs.io/"
-  url "https://registry.npmjs.org/@babel/cli/-/cli-7.28.3.tgz"
-  sha256 "7166334788706818cba54d9f4daca3d1f45859e5586dc8a155f187a1ec6d62eb"
+  url "https://registry.npmjs.org/@babel/cli/-/cli-7.28.6.tgz"
+  sha256 "f615e694e3af72ae0f522d765b905454921ec4e81eb63c24b17b963a41463390"
   license "MIT"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "a7bba0de148f0f36c7bcb50a74f05b66068249554645dab0e558822278ae6476"
-  end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    node_modules = libexec/"lib/node_modules/@babel/cli/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
