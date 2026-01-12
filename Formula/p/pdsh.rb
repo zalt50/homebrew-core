@@ -1,12 +1,10 @@
 class Pdsh < Formula
   desc "Efficient rsh-like utility, for using hosts in parallel"
   homepage "https://github.com/chaos/pdsh"
-  url "https://github.com/chaos/pdsh/releases/download/pdsh-2.35/pdsh-2.35.tar.gz"
-  sha256 "75ef15347848fff43f8d6ff9c4424fe05c7dd2cdba029139901f861a05093cfe"
+  url "https://github.com/chaos/pdsh/releases/download/pdsh-2.36/pdsh-2.36.tar.gz"
+  sha256 "a661095ce51dd5fb05e398cf5d0e1d63157123958441f6d3512bcf1a7d25c517"
   license "GPL-2.0-or-later"
   head "https://github.com/chaos/pdsh.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:    "6c84261f0429af978db16961106e2de4752c4f2addcf29ab0934f002b2e21212"
