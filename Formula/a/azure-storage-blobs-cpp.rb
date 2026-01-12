@@ -4,7 +4,7 @@ class AzureStorageBlobsCpp < Formula
   url "https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_12.15.0.tar.gz"
   sha256 "00040ef20d25918eafd5e89e8c237d5a647810efb1466677fbe0cbb766213f7c"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
