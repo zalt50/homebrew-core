@@ -1,8 +1,8 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://github.com/storj/storj/archive/refs/tags/v1.144.4.tar.gz"
-  sha256 "bc1cad2ef193c3f4ba3db12242c809a6886d92ffd06dcc6890124733e2fda009"
+  url "https://github.com/storj/storj/archive/refs/tags/v1.145.3.tar.gz"
+  sha256 "9f7b8af602cf92c1dc0fa675feadbd8d322a97e25de1f9f3de8ccefd5ef48b12"
   license "AGPL-3.0-only"
 
   # Upstream creates stable releases and marks them as "pre-release" before
