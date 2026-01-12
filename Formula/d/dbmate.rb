@@ -1,8 +1,8 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https://github.com/amacneil/dbmate"
-  url "https://github.com/amacneil/dbmate/archive/refs/tags/v2.29.2.tar.gz"
-  sha256 "8b8a37e95fe3a85ad621c63124959171418a95970e20d21b968301366d45c4e6"
+  url "https://github.com/amacneil/dbmate/archive/refs/tags/v2.29.3.tar.gz"
+  sha256 "661daeac607260171f6d9fb25cfbd892d31314871bfb8983c544cc29a7c7d97c"
   license "MIT"
   head "https://github.com/amacneil/dbmate.git", branch: "main"
 
