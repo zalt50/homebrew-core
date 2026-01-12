@@ -16,11 +16,12 @@ class MysqlAT80 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "8496c7b8f945e6e1f44872191504bb1ba82e381d393c083b06e56108605d6b24"
-    sha256 arm64_sequoia: "6091483c97de7ef5c4bb6512c27c0270021649a84665d4327ee1c315a8dcf7bc"
-    sha256 arm64_sonoma:  "2be48366bfb4bda7c56e759ae064034112914a939836efd4d908108ac328af9f"
-    sha256 sonoma:        "6a0a207e4891841ec0bab978bc459ca3a44cb79bc6bf92b8679d608d29ba4adf"
-    sha256 x86_64_linux:  "cea19464e84e3900665e72f97fa78609729e76dea6269fb57870a3f365ecc6bc"
+    rebuild 1
+    sha256 arm64_tahoe:   "3eed63e7c6f884b84eff35d8effad3220ce1fe317600a720cdc60792898e2772"
+    sha256 arm64_sequoia: "ca94ae0ab960cc228eba83ac95911f7a9efeb4e21e47b71fce570e9416e117be"
+    sha256 arm64_sonoma:  "afcd1c30aa047b8ccf1c3f88d33257b4ddc6eb5fe1811131affd3595c8ad599f"
+    sha256 sonoma:        "64b8aa4b65a17dd78fe1c09f66f339146954417a345650d34e28222895049b0e"
+    sha256 x86_64_linux:  "791bd1eeec3c2d006fb9001c8113865876c870129f19f28b7cca38884516dc28"
   end
 
   keg_only :versioned_formula
