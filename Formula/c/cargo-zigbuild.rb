@@ -7,12 +7,12 @@ class CargoZigbuild < Formula
   head "https://github.com/rust-cross/cargo-zigbuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c65223970d9dfbe2d9804b983a6f9f3e1371dd0ade686764bbff652540345e02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00f4da27163915af3e178f9b85b684a6da1f15d15de0ad56c6cd8719f28cf01a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2d63d4d51fe4c28d26a8fb001393b9e12c10b2b9f2ee67cc886f3814ef8a241"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3ff5460b5a3b023c58dca042347b30c6fdca12a9312add8eb90c7d42c6565446"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "038306d02d4aec7abd00c0885fb7334c07fde21ba120c5d06cf66523919da42b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b81557e70d11a18eaf8129c94a2096ae835cd734bd85f1cdb31827cd00f1c161"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "025318c5cd584a1ffb38b88f9153abd27539fd3af8bdf024b94d259f71516dcd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7dca479a8548775b8b813f8e0fa61f9b8661bcb3637aa7cadf0da645f5977d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b43a1c1ba52fa46ffb64d51273a0954c7cfa4307a4a951bcff541621dffe3a21"
+    sha256 cellar: :any_skip_relocation, sonoma:        "020e0879764a3d69b041aaca63103afbc753d3353042ba1c5bd2187f7d619ef6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c7c5e6273522970b17585078c6b8a25ca3eda870a1d50d422232d7ce0ca2691"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a279320f184d7f2f66220e12a9a511899c766b627e660bfbb31bc1e8e869fb2"
   end
 
   depends_on "rust" => :build
