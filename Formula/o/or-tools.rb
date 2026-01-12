@@ -1,25 +1,10 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
+  url "https://github.com/google/or-tools/archive/refs/tags/v9.15.tar.gz"
+  sha256 "6395a00a97ff30af878ee8d7fd5ad0ab1c7844f7219182c6d71acbee1b5f3026"
   license "Apache-2.0"
-  revision 11
   head "https://github.com/google/or-tools.git", branch: "stable"
-
-  # Remove `stable` block when patch is no longer needed.
-  stable do
-    url "https://github.com/google/or-tools/archive/refs/tags/v9.14.tar.gz"
-    sha256 "9019facf316b54ee72bb58827efc875df4cfbb328fbf2b367615bf2226dd94ca"
-
-    # Fix for wrong target name for `libscip`.
-    # https://github.com/google/or-tools/issues/4750.
-    patch do
-      url "https://github.com/google/or-tools/commit/9d3350dcbc746d154f22a8b44d21f624604bd6c3.patch?full_index=1"
-      sha256 "fb39e1aa1215d685419837dc6cef339cda36e704a68afc475a820f74c0653a61"
-    end
-
-    # Workaround for SCIP 10 compatibility.
-    patch :DATA
-  end
 
   livecheck do
     url :stable
@@ -56,12 +41,6 @@ class OrTools < Formula
     depends_on "mpfr"
     depends_on "openblas"
     depends_on "osi"
-  end
-
-  # Workaround until upstream updates Abseil. Likely will be handled by sync with internal copy
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/6d739af5/Patches/or-tools/abseil-bump.diff"
-    sha256 "586f6c0f16acd58be769436aae4d272356bd4740d6426a9ed8d92795d34bab8e"
   end
 
   def install
@@ -148,40 +127,3 @@ class OrTools < Formula
     system "./highs_test"
   end
 end
-
-__END__
-diff --git a/ortools/linear_solver/proto_solver/scip_proto_solver.cc b/ortools/linear_solver/proto_solver/scip_proto_solver.cc
-index f40a10d4749..d96d74755da 100644
---- a/ortools/linear_solver/proto_solver/scip_proto_solver.cc
-+++ b/ortools/linear_solver/proto_solver/scip_proto_solver.cc
-@@ -50,7 +50,13 @@
- #include "scip/cons_indicator.h"
- #include "scip/cons_linear.h"
- #include "scip/cons_or.h"
-+#if SCIP_VERSION_MAJOR >= 10
-+#include "scip/cons_nonlinear.h"
-+#define SCIPcreateConsBasicQuadratic SCIPcreateConsBasicQuadraticNonlinear
-+#define SCIPcreateConsQuadratic SCIPcreateConsQuadraticNonlinear
-+#else
- #include "scip/cons_quadratic.h"
-+#endif  // SCIP_VERSION_MAJOR >= 10
- #include "scip/cons_sos1.h"
- #include "scip/cons_sos2.h"
- #include "scip/def.h"
-diff --git a/ortools/gscip/gscip.cc b/ortools/gscip/gscip.cc
-index 872043d23aa..7bcac209d5f 100644
---- a/ortools/gscip/gscip.cc
-+++ b/ortools/gscip/gscip.cc
-@@ -47,7 +47,12 @@
- #include "scip/cons_indicator.h"
- #include "scip/cons_linear.h"
- #include "scip/cons_or.h"
-+#if SCIP_VERSION_MAJOR >= 10
-+#include "scip/cons_nonlinear.h"
-+#define SCIPcreateConsQuadratic SCIPcreateConsQuadraticNonlinear
-+#else
- #include "scip/cons_quadratic.h"
-+#endif  // SCIP_VERSION_MAJOR >= 10
- #include "scip/cons_sos1.h"
- #include "scip/cons_sos2.h"
- #include "scip/def.h"
