@@ -1,8 +1,8 @@
 class EnpassCli < Formula
   desc "Enpass command-line client"
   homepage "https://github.com/hazcod/enpass-cli"
-  url "https://github.com/hazcod/enpass-cli/archive/refs/tags/v1.6.5.tar.gz"
-  sha256 "0665056659ac31444920f0fed522aa72effb3a090365f8a854e44c35ae97f4db"
+  url "https://github.com/hazcod/enpass-cli/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "8dd9b954edf587f20a02204a81c4e54eb8c0049172b5e18a0a82c165b435b840"
   license "MIT"
   head "https://github.com/hazcod/enpass-cli.git", branch: "master"
 
@@ -20,6 +20,7 @@ class EnpassCli < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
     system "go", "build", *std_go_args(ldflags: "-s -w -X 'main.version=#{version}'"), "./cmd/enpasscli"
     pkgshare.install "test/vault.json", "test/vault.enpassdb"
   end
