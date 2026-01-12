@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/c4/aa/e0188faa6eecd4293a1d4213ea2b2ddcbed7f8f248ef41594662a78bba92/commitizen-4.11.0.tar.gz"
-  sha256 "d311297a0165ef9f30e0877e04608b786d5fd69760f32245fbf1c21e793e91df"
+  url "https://files.pythonhosted.org/packages/d6/5e/b6da2c7eb4e209beafcdfe785ba558c3b47e13685ff886f8eff05e655e87/commitizen-4.11.2.tar.gz"
+  sha256 "718a5a2a1be7c8fb1fecd3cb8da57b22fb6a2f54b7897e4d69d3adacf9c3bdeb"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
@@ -17,6 +17,8 @@ class Commitizen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5abcc178aada0d158239d229f9f4e816f2317033d75a99294eb713f33ff5760"
   end
 
+  depends_on "maturin" => :build
+  depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
 
