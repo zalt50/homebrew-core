@@ -21,6 +21,7 @@ class MysqlAT80 < Formula
     sha256 arm64_sequoia: "ca94ae0ab960cc228eba83ac95911f7a9efeb4e21e47b71fce570e9416e117be"
     sha256 arm64_sonoma:  "afcd1c30aa047b8ccf1c3f88d33257b4ddc6eb5fe1811131affd3595c8ad599f"
     sha256 sonoma:        "64b8aa4b65a17dd78fe1c09f66f339146954417a345650d34e28222895049b0e"
+    sha256 arm64_linux:   "bac56773884f44dccb9a61abfa50c03e0bc38113150ec4a623c282e4cca560df"
     sha256 x86_64_linux:  "791bd1eeec3c2d006fb9001c8113865876c870129f19f28b7cca38884516dc28"
   end
 
