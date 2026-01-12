@@ -27,7 +27,6 @@ class OpenSimh < Formula
   end
 
   depends_on "libpng"
-  depends_on "pcre"
   depends_on "vde"
 
   uses_from_macos "libedit"
@@ -38,13 +37,11 @@ class OpenSimh < Formula
   conflicts_with "sigma-cli", because: "both install `sigma` binaries"
 
   def install
-    ENV.append_to_cflags "-Os -fcommon" if OS.linux?
-    inreplace "makefile" do |s|
-      s.gsub! "+= /usr/lib/", "+= /usr/lib/ #{HOMEBREW_PREFIX}/lib/" if OS.linux?
-      s.gsub! "GCC = gcc", "GCC = #{ENV.cc}"
-      s.gsub! "= -O2", "= #{ENV.cflags}"
+    if OS.linux?
+      ENV.append_to_cflags "-fcommon"
+      inreplace "makefile", "+= /usr/lib/", "+= /usr/lib/ #{HOMEBREW_PREFIX}/lib/"
     end
-    system "make", "all"
+    system "make", "GCC=#{ENV.cc}", "CFLAGS_G=#{ENV.cflags}", "all"
 
     bin.install Dir["BIN/*"]
     doc.install Dir["doc/*"]
@@ -55,6 +52,6 @@ class OpenSimh < Formula
   end
 
   test do
-    assert_match(/Goodbye/, pipe_output("#{bin}/altair", "exit\n", 0))
+    assert_match "Goodbye", pipe_output("#{bin}/altair", "exit\n", 0)
   end
 end
