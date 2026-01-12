@@ -16,6 +16,10 @@ class Renovate < Formula
     throttle 10
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "03e36dd3dd3f410d1ac56d33f8a6a9f9a474d1ed345f195e634a9814879800af"
+  end
+
   depends_on "node@24"
 
   uses_from_macos "git", since: :monterey
