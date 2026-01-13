@@ -3,8 +3,8 @@ class Pyinstaller < Formula
 
   desc "Bundle a Python application and all its dependencies"
   homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/01/80/9e0dad9c69a7cfd4b5aaede8c6225d762bab7247a2a6b7651e1995522001/pyinstaller-6.17.0.tar.gz"
-  sha256 "be372bd911392b88277e510940ac32a5c2a6ce4b8d00a311c78fa443f4f27313"
+  url "https://files.pythonhosted.org/packages/9f/b8/0fe3359920b0a4e7008e0e93ff383003763e3eee3eb31a07c52868722960/pyinstaller-6.18.0.tar.gz"
+  sha256 "cdc507542783511cad4856fce582fdc37e9f29665ca596889c663c83ec8c6ec9"
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
@@ -20,6 +20,8 @@ class Pyinstaller < Formula
   depends_on "python@3.14"
 
   uses_from_macos "zlib"
+
+  pypi_packages extra_packages: "macholib"
 
   resource "altgraph" do
     url "https://files.pythonhosted.org/packages/7e/f8/97fdf103f38fed6792a1601dbc16cc8aac56e7459a9fff08c812d8ae177a/altgraph-0.17.5.tar.gz"
@@ -37,8 +39,8 @@ class Pyinstaller < Formula
   end
 
   resource "pyinstaller-hooks-contrib" do
-    url "https://files.pythonhosted.org/packages/26/4f/e33132acdb8f732978e577b8a0130a412cbfe7a3414605e3fd380a975522/pyinstaller_hooks_contrib-2025.10.tar.gz"
-    sha256 "a1a737e5c0dccf1cf6f19a25e2efd109b9fec9ddd625f97f553dac16ee884881"
+    url "https://files.pythonhosted.org/packages/45/2f/2c68b6722d233dae3e5243751aafc932940b836919cfaca22dd0c60d417c/pyinstaller_hooks_contrib-2025.11.tar.gz"
+    sha256 "dfe18632e06655fa88d218e0d768fd753e1886465c12a6d4bce04f1aaeec917d"
   end
 
   resource "setuptools" do
@@ -50,7 +52,8 @@ class Pyinstaller < Formula
     cd "bootloader" do
       system "python3.14", "./waf", "all", "--no-universal2", "STRIP=/usr/bin/strip"
     end
-    virtualenv_install_with_resources
+    without = ["macholib"] unless OS.mac?
+    virtualenv_install_with_resources(without:)
   end
 
   test do
