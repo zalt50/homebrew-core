@@ -1,8 +1,8 @@
 class Witness < Formula
   desc "Automates, normalizes, and verifies software artifact provenance"
   homepage "https://witness.dev"
-  url "https://github.com/in-toto/witness/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "5c4702a0b15380f82c1e421c15582671321c5c0a406093129bcfe288c68693dc"
+  url "https://github.com/in-toto/witness/archive/refs/tags/v0.10.2.tar.gz"
+  sha256 "b9eb19bc078cc83daa6a8f87f57bbfd22252f4935d2b952b5a87bfb62c8629ac"
   license "Apache-2.0"
   head "https://github.com/in-toto/witness.git", branch: "main"
 
