@@ -2,8 +2,8 @@ class Stanc3 < Formula
   desc "Stan transpiler"
   homepage "https://github.com/stan-dev/stanc3"
   url "https://github.com/stan-dev/stanc3.git",
-      tag:      "v2.37.0",
-      revision: "31d2a6e3a7a84e97a3bd8cabc205c76a063fb91f"
+      tag:      "v2.38.0",
+      revision: "e05ba2b1c68af5abf6bb4ce4279e82b6d1059f8b"
   license "BSD-3-Clause"
 
   bottle do
