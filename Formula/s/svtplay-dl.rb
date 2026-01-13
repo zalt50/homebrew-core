@@ -3,10 +3,9 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/a5/2c/0e31b3ff89e499a02b3b48b886d489f3838cce0d0e237f024d6f0105d213/svtplay_dl-4.167.tar.gz"
-  sha256 "55cf66826547c960c422985304414894e0b7795457d1ed6eca78c8bd788d50c4"
+  url "https://files.pythonhosted.org/packages/34/37/e1d6da9ba4fe77111df66873ad74e4d46a560cd0fc57891cde6908d1e6ea/svtplay_dl-4.173.tar.gz"
+  sha256 "d50405a8eaaae44482a74cdcacfead72d6926d39e9239404ff6206f84275144b"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "fbea456b4f9d08bd24d7b94dcec67892b632aa096ddc4734960074dfa3be7e7a"
