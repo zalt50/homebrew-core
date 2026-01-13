@@ -18,14 +18,26 @@ class SymfonyCli < Formula
   depends_on "composer" => :test
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.channel=stable", output: bin/"symfony")
+    ldflags = %W[
+      -s -w
+      -X main.version=#{version}
+      -X main.buildDate=#{time.iso8601}
+      -X main.channel=stable
+    ]
+    system "go", "build", *std_go_args(ldflags:, output: bin/"symfony")
+
+    generate_completions_from_executable(bin/"symfony", "self:completion")
+  end
+
+  service do
+    run ["#{opt_bin}/symfony", "local:proxy:start", "--foreground"]
+    keep_alive true
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/symfony self:version")
+
     system bin/"symfony", "new", "--no-git", testpath/"my_project"
     assert_path_exists testpath/"my_project/symfony.lock"
-    output = shell_output("#{bin}/symfony -V")
-    assert_match version.to_s, output
-    assert_match "stable", output
   end
 end
