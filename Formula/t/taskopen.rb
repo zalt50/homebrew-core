@@ -1,8 +1,8 @@
 class Taskopen < Formula
   desc "Tool for taking notes and open urls with taskwarrior"
   homepage "https://github.com/jschlatow/taskopen"
-  url "https://github.com/jschlatow/taskopen/archive/refs/tags/v2.0.2.tar.gz"
-  sha256 "249cce42ac427376a8909e81e49f2d2ba0e79d29b9f83224560cb45df8b7d31c"
+  url "https://github.com/jschlatow/taskopen/archive/refs/tags/v2.0.3.tar.gz"
+  sha256 "fe16f839279e8baff96dcead55feb03997aebdaa3cee7a421dadc8e7cb8c1581"
   license "GPL-2.0-only"
   head "https://github.com/jschlatow/taskopen.git", branch: "master"
 
