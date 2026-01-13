@@ -8,12 +8,12 @@ class Mongosh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51b764312585b0e918c40b648ede465b04ad0b9e3a4526e7cda7184e56413fbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51b764312585b0e918c40b648ede465b04ad0b9e3a4526e7cda7184e56413fbf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51b764312585b0e918c40b648ede465b04ad0b9e3a4526e7cda7184e56413fbf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30bcc38c17624b628fd1a256fd638c42d093a113a0eb313e998b4c64c75f5e26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "756f84e2b00017c0ab40ff7687c92b495e95b513ad21dee8dfef21b3f097fcf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "756f84e2b00017c0ab40ff7687c92b495e95b513ad21dee8dfef21b3f097fcf9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df6f63cd5805ead173ba860dd70ff5a2e6e23ecbf8076f52770fe4cd92e4e74c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "318773263a854bf00a90298f1d1157a33471a878cdacc523f717335387b68a60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "318773263a854bf00a90298f1d1157a33471a878cdacc523f717335387b68a60"
   end
 
   depends_on "node"
