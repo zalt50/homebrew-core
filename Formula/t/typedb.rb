@@ -1,8 +1,8 @@
 class Typedb < Formula
   desc "Strongly-typed database with a rich and logical type system"
   homepage "https://typedb.com/"
-  url "https://github.com/typedb/typedb/archive/refs/tags/3.7.2.tar.gz"
-  sha256 "0eb029ceb84be6d25b84653d7fd34dab708fc44c44965c290398a71f6f2f1926"
+  url "https://github.com/typedb/typedb/archive/refs/tags/3.7.3.tar.gz"
+  sha256 "43bd8479b088373af807d4cb250847c7d8c732d10dfaae20c01453aec069aebb"
   license "MPL-2.0"
 
   bottle do
@@ -14,6 +14,8 @@ class Typedb < Formula
 
   depends_on "protobuf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "llvm" => :build # for libclang
 
   def install
     system "cargo", "install", *std_cargo_args
