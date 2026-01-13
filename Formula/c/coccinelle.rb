@@ -1,14 +1,13 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
   homepage "https://coccinelle.gitlabpages.inria.fr/website/"
-  url "https://github.com/coccinelle/coccinelle.git",
-      tag:      "1.3.0",
-      revision: "e1906ad639c5eeeba2521639998eafadf989b0ac"
+  url "https://coccinelle.gitlabpages.inria.fr/website/distrib/coccinelle-1.3.1.tar.gz"
+  sha256 "f76ddd4fbe41019af6ed1986121523f0a0498aaf193e19fb2d7ab0b7cdf8eb46"
   license "GPL-2.0-only"
   head "https://github.com/coccinelle/coccinelle.git", branch: "master"
 
   livecheck do
-    url :stable
+    url :head
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
@@ -24,31 +23,42 @@ class Coccinelle < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "hevea" => :build
+  depends_on "menhir" => :build
+  depends_on "ocaml" => :build
   depends_on "ocaml-findlib" => :build
-  depends_on "opam" => :build
-  depends_on "pkgconf" => :build
-  depends_on "python@3.14" => :build
-  depends_on "ocaml"
-  depends_on "pcre"
 
-  uses_from_macos "unzip" => :build
+  # Apply Fedora patch to allow stdcompat to build with ocaml 5.4.0.
+  # When removing patch, also remove autoreconf and make autoconf/automake HEAD-only.
+  # Issue ref: https://github.com/ocamllibs/stdcompat/issues/62
+  patch do
+    url "https://src.fedoraproject.org/rpms/ocaml-stdcompat/raw/2f4345ccea8eda0cd2a4cc33c337a9d92d66eb3c/f/ocaml-stdcompat-ocaml5.4.patch"
+    sha256 "f30c8c3d75f9486020c47cf7d1701917e18497c92956b3c11cea79adbbeb7689"
+    directory "bundles/stdcompat/stdcompat-current"
+  end
 
   def install
-    ENV["OPAMROOT"] = buildpath/".opam"
-    ENV["OPAMYES"] = "1"
-    ENV["OPAMVERBOSE"] = "1"
-    system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
-    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
-    system "./autogen"
-    system "opam", "exec", "--", "./configure", "--disable-silent-rules",
-                                                "--enable-ocaml",
-                                                "--enable-opt",
-                                                "--without-pdflatex",
-                                                "--with-bash-completion=#{bash_completion}",
-                                                *std_configure_args
+    # Remove unused bundled libraries
+    rm_r(["bundles/menhirLib", "bundles/pcre"])
+
+    # Help find built libraries on macOS
+    inreplace "bundles/pyml/Makefile", " LD_LIBRARY_PATH=", " DYLD_LIBRARY_PATH=" if OS.mac?
+
+    # TODO: remove when patch is no longer needed
+    cd "bundles/stdcompat/stdcompat-current" do
+      system "autoreconf", "--force", "--install", "--verbose"
+    end
+
+    system "./autogen" if build.head?
+    system "./configure", "--disable-silent-rules",
+                          "--disable-pcre-syntax", # needs EOL `pcre`
+                          "--enable-ocaml",
+                          "--enable-opt",
+                          "--with-bash-completion=#{bash_completion}",
+                          "--with-python=python3",
+                          "--without-pdflatex",
+                          *std_configure_args
+    system "make"
     ENV.deparallelize
-    system "opam", "exec", "--", "make"
     system "make", "install"
 
     pkgshare.install "demos/simple.cocci", "demos/simple.c"
