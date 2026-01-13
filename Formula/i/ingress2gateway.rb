@@ -1,8 +1,8 @@
 class Ingress2gateway < Formula
   desc "Convert Kubernetes Ingress resources to Kubernetes Gateway API resources"
   homepage "https://github.com/kubernetes-sigs/ingress2gateway"
-  url "https://github.com/kubernetes-sigs/ingress2gateway/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "7c511e4c309b62d01ce2128643922637f0ca77524bab2c4c6811bebbb43ff119"
+  url "https://github.com/kubernetes-sigs/ingress2gateway/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "6afffb36873af934f1499d68ea73d432bb711a3025e8f3f5ab330162798ce871"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/ingress2gateway.git", branch: "main"
 
@@ -19,7 +19,8 @@ class Ingress2gateway < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X github.com/kubernetes-sigs/ingress2gateway/pkg/i2gw.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"ingress2gateway", shell_parameter_format: :cobra)
   end
@@ -64,7 +65,6 @@ class Ingress2gateway < Formula
       metadata:
         annotations:
           gateway.networking.k8s.io/generator: ingress2gateway-#{version}
-        creationTimestamp: null
         name: nginx
         namespace: bar
       spec:
@@ -90,7 +90,6 @@ class Ingress2gateway < Formula
       metadata:
         annotations:
           gateway.networking.k8s.io/generator: ingress2gateway-#{version}
-        creationTimestamp: null
         name: foo-foo-bar
         namespace: bar
       spec:
