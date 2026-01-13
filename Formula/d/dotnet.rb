@@ -7,23 +7,17 @@ class Dotnet < Formula
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.101.tar.gz"
-    sha256 "cac1181919374d061ff73e7e58cc9f7a5480acb0c8dc2e309c5bd844217f7962"
+    url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.102-sb1.tar.gz"
+    version "10.0.102"
+    sha256 "cc544f357e3674f3f4d170c82f781f6f9406760e8badbe1fbcaf04657e1554d4"
 
     resource "release.json" do
-      url "https://github.com/dotnet/dotnet/releases/download/v10.0.101/release.json"
-      sha256 "9c27aa3643fa1562356bb8c4ab0a94fa22f7d2d23bdc546ecf61ed089cb4ffa1"
+      url "https://github.com/dotnet/dotnet/releases/download/v10.0.102-sb1/release.json"
+      sha256 "f22c317a69e38fbd5f1b0cf482065c8cc40dddedb4c3dc7f659c07b3603c46ed"
 
       livecheck do
         formula :parent
       end
-    end
-
-    # Backport fix for https://github.com/dotnet/dotnet/issues/4037
-    patch do
-      url "https://github.com/dotnet/source-build-reference-packages/commit/1f538e55a45f4672186a68a08639160d5a4d3ce6.patch?full_index=1"
-      sha256 "3ae2156ee50e9351295a71551e8fc4a096b3bfa61a14a40b5266629afc6ae1bd"
-      directory "src/source-build-reference-packages"
     end
   end
 
@@ -108,7 +102,7 @@ class Dotnet < Formula
     end
 
     args = %w[
-      --branding rtm
+      --branding release
       --clean-while-building
       --source-build
       --with-system-libs all
