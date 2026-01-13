@@ -6,7 +6,7 @@ class StyleDictionary < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "202221920b4ea42796d187efe65f4fe7e5bc68154e0e08b70f2e9965a37e11ff"
+    sha256 cellar: :any_skip_relocation, all: "316ad2b92b0bd8922648c0bbd427b016da0746c311138da7b41ee365a5bcd631"
   end
 
   depends_on "node"
