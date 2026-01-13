@@ -1,11 +1,9 @@
 class Triton < Formula
   desc "Joyent Triton CLI"
   homepage "https://www.npmjs.com/package/triton"
-  url "https://registry.npmjs.org/triton/-/triton-7.17.0.tgz"
-  sha256 "00792c7668da5fc711e79cce1ee130e3e4adf5696a622b995f7b2a4127a4dc7f"
+  url "https://registry.npmjs.org/triton/-/triton-7.18.0.tgz"
+  sha256 "dfbecc0a7ff8ba4ebc3fccabe0db0457e135f4a03e04e653b2e415118ce0d823"
   license "MPL-2.0"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
