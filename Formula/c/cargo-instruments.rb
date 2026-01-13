@@ -1,8 +1,8 @@
 class CargoInstruments < Formula
   desc "Easily generate Instruments traces for your rust crate"
   homepage "https://github.com/cmyr/cargo-instruments"
-  url "https://github.com/cmyr/cargo-instruments/archive/refs/tags/v0.4.12.tar.gz"
-  sha256 "0ecc0440dd36a40aed1cfc5222c93ec432f084b0ffa569ba9f48439c4bf41211"
+  url "https://github.com/cmyr/cargo-instruments/archive/refs/tags/v0.4.14.tar.gz"
+  sha256 "8ae3cb70873ee299f6082ce3bbd1a6c2b7dc1b11e8140881847fd970d86c8bbf"
   license "MIT"
 
   bottle do
