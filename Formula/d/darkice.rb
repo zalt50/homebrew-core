@@ -1,8 +1,8 @@
 class Darkice < Formula
   desc "Live audio streamer"
   homepage "http://www.darkice.org/"
-  url "https://github.com/rafael2k/darkice/releases/download/v1.5/darkice-1.5.tar.gz"
-  sha256 "18b4c4573a7ccfe09c1094eb5798159e2a9892106ea62d753933f6f2a746058e"
+  url "https://github.com/rafael2k/darkice/archive/refs/tags/v1.6.tar.gz"
+  sha256 "52807d887d60646776110b63543d3845ebe9ed52d3eea44bed7c4bdd95b6575e"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -23,9 +23,13 @@ class Darkice < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e96398becc4f8c42c2fa104ea86e96207756ee073a301d0acb0fe56fd665ebcb"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
 
   depends_on "faac"
+  depends_on "fdk-aac"
   depends_on "jack"
   depends_on "lame"
   depends_on "libogg"
@@ -39,16 +43,22 @@ class Darkice < Formula
 
   def install
     ENV.cxx11
-    system "./configure", "--sysconfdir=#{etc}",
-                          "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
-                          "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
-                          "--with-twolame",
-                          "--with-jack",
-                          "--with-vorbis",
-                          "--with-samplerate",
-                          "--without-opus",
-                          *std_configure_args
-    system "make", "install"
+    # TODO: Remove when source is back to the release tarball
+    cd "darkice/trunk" do
+      system "autoreconf", "--install", "--force", "--verbose"
+
+      system "./configure", "--sysconfdir=#{etc}",
+                            "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
+                            "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
+                            "--with-fdkaac-prefix=#{Formula["fdk-aac"].opt_prefix}",
+                            "--with-twolame",
+                            "--with-jack",
+                            "--with-vorbis",
+                            "--with-samplerate",
+                            "--without-opus",
+                            *std_configure_args
+      system "make", "install"
+    end
   end
 
   test do
