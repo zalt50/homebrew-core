@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.9.0.tar.gz"
   sha256 "2788627298d10da946546e7e57c6d622d91ed44d110180583dfe8210c7188983"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
   livecheck do
