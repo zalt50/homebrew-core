@@ -12,13 +12,12 @@ class Coccinelle < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "6674635eed7e10d0c59addbe4334400c00fce2757a0b976dcf6bc9c26f7a7232"
-    sha256 arm64_sequoia: "0faa904330204e02b784ec7e6c99a15617729ad7ac81f6ed66402b6f7e666d12"
-    sha256 arm64_sonoma:  "0b15c96cad2e7deb89c174cfe2ee50d29cae1fa30e7dcc622784e7efad86e635"
-    sha256 sonoma:        "c3c10e081708afbc74243fe20cb096da013911b3cd7ffe4a0bb759e8c05170ad"
-    sha256 arm64_linux:   "fe10716f2b88622a10a28155bf96c10a20ddca724fc73edd6a2b758cd4fe39bc"
-    sha256 x86_64_linux:  "2d29e8edd51256bcc58964055ca65ebf75a7ebaf953be4d8300cb127817bdd8a"
+    sha256 arm64_tahoe:   "68d31e6e796053a1990fd57125cfe3698d42cde6f7d86881ad94cf0c08d63692"
+    sha256 arm64_sequoia: "955dd52ff552b0758e7c943eb94dbbb9bb59bb7c258d7cf9e8fd6c8c8dffb56a"
+    sha256 arm64_sonoma:  "5333d358275ab1578b2cdaecc1ba0fd319f8674a5d3fa884d8e5c4617e67b30f"
+    sha256 sonoma:        "e4f41aeb38cad12db61935111361b68bd4d45c506f8c9ce70aa419a328f2750d"
+    sha256 arm64_linux:   "81caea3577c51cd4675f8a083bd2c3f11da58e480b3bec32a20b3031d3ae72c2"
+    sha256 x86_64_linux:  "ffbdeba6cd8f0f65c86c7d48b0fe13f4a27c1c9ba62895570d49683085abb773"
   end
 
   depends_on "autoconf" => :build
