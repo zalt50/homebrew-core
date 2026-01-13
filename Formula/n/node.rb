@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v25.2.1/node-v25.2.1.tar.xz"
-  sha256 "aa7c4ac1076dc299a8949b8d834263659b2408ec0e5bba484673a8ce0766c8b9"
+  url "https://nodejs.org/dist/v25.3.0/node-v25.3.0.tar.xz"
+  sha256 "97939099edd035a0c1a2d1fc849cac018ec2a38c0c28dd8e8246fd883cdb9e9e"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -61,8 +61,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.6.2.tgz"
-    sha256 "585f95094ee5cb2788ee11d90f2a518a7c9ef6e083fa141d0b63ca3383675a20"
+    url "https://registry.npmjs.org/npm/-/npm-11.7.0.tgz"
+    sha256 "292f142dc1a8c01199ba34a07e57cf016c260ea2c59b64f3eee8aaae7a2e7504"
   end
 
   def install
