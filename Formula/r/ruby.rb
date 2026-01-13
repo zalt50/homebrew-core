@@ -6,8 +6,8 @@ class Ruby < Formula
 
   stable do
     # TODO: enable default_user_install when updating to Ruby 4.1
-    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"
-    sha256 "2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271"
+    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.1.tar.gz"
+    sha256 "3924be2d05db30f4e35f859bf028be85f4b7dd01714142fd823e4af5de2faf9d"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
