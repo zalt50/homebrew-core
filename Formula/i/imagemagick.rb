@@ -4,6 +4,7 @@ class Imagemagick < Formula
   url "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-12.tar.xz"
   sha256 "e22c5dc6cd3f8e708a2809483fd10f8e37438ef7831ec8d3a07951ccd70eceba"
   license "ImageMagick"
+  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -60,6 +61,12 @@ class Imagemagick < Formula
   end
 
   skip_clean :la
+
+  # Patch to fix build with LibRaw 0.22+
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/imagemagick/-/raw/ca9b35f767e1c4a166847fbfe17c2d715aa80582/libraw-0.22.patch"
+    sha256 "baed7cbfb378734d32d277b6e13882ac541932ef67e6aa8867b185ffef12f986"
+  end
 
   def install
     # Avoid references to shim
