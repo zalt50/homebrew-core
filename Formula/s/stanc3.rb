@@ -17,40 +17,25 @@ class Stanc3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb5ab07bb40e6941e98d579dfc196f1294f0ae3f55a45a092aed2182a40e0e0d"
   end
 
-  depends_on "ocaml@4" => :build # FIXME: pinned ppx_deriving.5.2.1 not compatible with OCaml >= 5.3
+  depends_on "ocaml" => :build
   depends_on "opam" => :build
 
   uses_from_macos "unzip" => :build
 
-  # Workaround for error due to `-mpopcnt` on arm64 macOS with Xcode 16.3+.
-  # TODO: Remove once base >= 0.17.3 or if fix is backported to 0.14 and released
-  on_sequoia :or_newer do
-    on_arm do
-      resource "base" do
-        url "https://github.com/janestreet/base/archive/refs/tags/v0.16.4.tar.gz"
-        sha256 "200c053b69c04dd5cdc5bcb3ae27d098a88a311fb48c28d6382abe76e2a588f5"
-
-        patch do
-          url "https://github.com/janestreet/base/commit/68f18ed6a5e94dda1ed423c3435d1515259dcc7d.patch?full_index=1"
-          sha256 "054fc30c7e748b2ad8ba8e2b8eead1309b8d7229821b57478cb604d5da5b69c6"
-        end
-      end
-    end
-  end
-
   def install
+    # Workaround to build with OCaml 5.4.0
+    inreplace "stanc.opam" do |s|
+      s.gsub! '"ocaml" {= "4.14.1"}', '"ocaml" {>= "4.14.1"}'
+      s.gsub! '"core" {= "v0.16.1"}', '"core" {= "v0.17.1"}'
+      s.gsub! '"ppx_deriving" {= "5.2.1"}', '"ppx_deriving" {= "6.1.1"}'
+    end
+
     ENV["OPAMROOT"] = buildpath/".opam"
     ENV["OPAMYES"] = "1"
     ENV["OPAMVERBOSE"] = "1"
 
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
-    # Workaround for https://github.com/janestreet/base/issues/164
-    if OS.mac? && MacOS.version >= :sequoia
-      resource("base").stage do
-        system "opam", "install", ".", "--yes", "--no-depexts", "--working-dir"
-      end
-    end
-    system "bash", "-x", "scripts/install_build_deps.sh"
+    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
     system "opam", "exec", "dune", "subst"
     system "opam", "exec", "dune", "build", "@install"
 
