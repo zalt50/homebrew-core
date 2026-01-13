@@ -11,8 +11,7 @@ class Colordiff < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5a83886f7e7aacfc46cc6a759f91dd8b80a068cf0bb6b4fa4815c4b310ecefd8"
+    sha256 cellar: :any_skip_relocation, all: "0925b7ca0eb5b58f2cf3f85f7354eb1f57bdc5114c3d509c829abf1df7479dec"
   end
 
   depends_on "coreutils" => :build # GNU install
