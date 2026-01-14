@@ -9,12 +9,12 @@ class KimiCli < Formula
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7286aaab79532d206bb331e1abd26c52902dc25261c58a93431926d3d71281b9"
-    sha256 cellar: :any,                 arm64_sequoia: "3bf04f8a602bffed465b8f31b944ca047b6465ce7aac27cdc4a08ccfc0452c15"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ae8105e3c1d7c1fa65c9b1afa391a0c6ae1b05ba11375c697e7036b09ae55e5"
-    sha256 cellar: :any,                 sonoma:        "40ffd01c45550803ba93b971d1df7996e58f01e1d14f1615a79fed66fea600c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec756b94215ed1b68870a9e2eb9dbdb85c1d33a5d50973a3d615472297d7aec0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d64a01a2d3a3fd2b3df7885a7d99677e28f8be445837d7a912c1daa71752977"
+    sha256 cellar: :any,                 arm64_tahoe:   "cba0e5db6c5dd23599602c30f92049bbc4038b0a08dabd142310a065e5b34f31"
+    sha256 cellar: :any,                 arm64_sequoia: "62ba349faa89024b158964710ba40e815f1a94d7a083c1337ac7999d8f94c4a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f6cc3ed440f4d90feb0c19614ef8183a506df94f55814a27e53dadaf67a8e45"
+    sha256 cellar: :any,                 sonoma:        "1578f35f7e56579e84c28f2e593b404f2713591a00c1b73fa18a092fc01ec3fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f035896e66968aac60c3ef6a101a312ecbf18dd51628b763d9ae5a68f2207f62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cae412037809eeabe6a8cfb20150c83fee9b80f4f629678b6ce69cb99674d5d5"
   end
 
   depends_on "pkgconf" => :build
