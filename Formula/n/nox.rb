@@ -9,7 +9,7 @@ class Nox < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c74018c4d5b9a150f1e1e7036cb8d1e51fdf7b914cad16ed03a0ec38fe929318"
+    sha256 cellar: :any_skip_relocation, all: "8959f8d55bfa96a2907dcad2cb25febbb2c96f39d81c462b436d1af3faa4304a"
   end
 
   depends_on "certifi" => :no_linkage
