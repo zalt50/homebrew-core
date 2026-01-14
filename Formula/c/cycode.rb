@@ -3,8 +3,8 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/97/a1/050568401a2dce123146680c56f47cb7c8d67b46da6bb57599d8a433fd99/cycode-3.8.5.tar.gz"
-  sha256 "8db1f4961204eb82914c1daea00b50e15b5acf9ed553e33d63bb34f522aaf514"
+  url "https://files.pythonhosted.org/packages/bf/51/effc00acf854b29020be12583de2448075099c68239d247e556ce586df50/cycode-3.8.6.tar.gz"
+  sha256 "ce5ffbe8b77d7890083d293c5b6101036ee28949ec251bb3c3f6e0858c232f5d"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
