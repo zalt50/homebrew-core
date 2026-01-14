@@ -6,7 +6,7 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 12
+  revision 13
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
@@ -85,8 +85,8 @@ class Gptline < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
-    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "h11" do
@@ -150,8 +150,8 @@ class Gptline < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/d8/b1/12fe1c196bea326261718eb037307c1c1fe1dedc2d2d4de777df822e6238/openai-2.14.0.tar.gz"
-    sha256 "419357bedde9402d23bf8f2ee372fca1985a73348debba94bddff06f19459952"
+    url "https://files.pythonhosted.org/packages/94/f4/4690ecb5d70023ce6bfcfeabfe717020f654bde59a775058ec6ac4692463/openai-2.15.0.tar.gz"
+    sha256 "42eb8cbb407d84770633f31bf727d4ffb4138711c670565a41663d9439174fba"
   end
 
   resource "prompt-toolkit" do
