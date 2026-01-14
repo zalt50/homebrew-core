@@ -6,7 +6,7 @@ class McpScan < Formula
   url "https://files.pythonhosted.org/packages/e7/52/b1165560e3b06e0fd34e60cf16e81069da3c0c9683c57924948d69711bbd/mcp_scan-0.3.36.tar.gz"
   sha256 "618550fc145f7982bd6fc7be8c2c1b04438bb652a91daf5f99bcd85f0173936d"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
@@ -52,8 +52,8 @@ class McpScan < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "attrs" do
@@ -72,8 +72,8 @@ class McpScan < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
-    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "frozenlist" do
@@ -107,8 +107,8 @@ class McpScan < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -222,8 +222,8 @@ class McpScan < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/85/30/ff9ede605e3bd086b4dd842499814e128500621f7951ca1e5ce84bbf61b1/typer-0.21.0.tar.gz"
-    sha256 "c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53"
+    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
+    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
   end
 
   resource "types-aiofiles" do
