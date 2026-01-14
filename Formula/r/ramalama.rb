@@ -17,9 +17,12 @@ class Ramalama < Formula
   end
 
   depends_on "libyaml"
-  depends_on "llama.cpp"
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
+
+  on_macos do
+    depends_on "llama.cpp"
+  end
 
   pypi_packages exclude_packages: "rpds-py"
 
