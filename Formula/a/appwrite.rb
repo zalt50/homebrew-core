@@ -1,8 +1,8 @@
 class Appwrite < Formula
   desc "Command-line tool for Appwrite"
   homepage "https://appwrite.io"
-  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-12.0.1.tgz"
-  sha256 "6219e1bef799c67518d2871fbeeeda978349d75b9094b2928c28e7727605a2f8"
+  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-13.0.0.tgz"
+  sha256 "6834da4e136706e36d795786b9d345877212968a9de7acf81fd9bf4eae4438f7"
   license "BSD-3-Clause"
 
   bottle do
@@ -22,15 +22,6 @@ class Appwrite < Formula
 
     node_modules = libexec/"lib/node_modules/appwrite-cli/node_modules"
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
-
-    # Ensure uniform bottles
-    file = libexec/"lib/node_modules/appwrite-cli/lib/commands/update.js"
-    homebrew_check_str = "scriptPath.includes('/opt/homebrew/') || scriptPath.includes('/usr/local/Cellar/')"
-    inreplace file do |s|
-      s.gsub! "scriptPath.includes('/usr/local/lib/node_modules/')", "scriptPath.includes('/lib/node_modules/')"
-      s.gsub! "scriptPath.includes('/opt/homebrew/lib/node_modules/') ||", ""
-      s.gsub! homebrew_check_str, "true"
-    end
   end
 
   test do
