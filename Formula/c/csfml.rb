@@ -1,11 +1,9 @@
 class Csfml < Formula
-  # Don't update CSFML until there's a corresponding SFML release
   desc "SMFL bindings for C"
   homepage "https://www.sfml-dev.org/"
-  url "https://github.com/SFML/CSFML/archive/refs/tags/2.6.1.tar.gz"
-  sha256 "f3f3980f6b5cad85b40e3130c10a2ffaaa9e36de5f756afd4aacaed98a7a9b7b"
+  url "https://github.com/SFML/CSFML/archive/refs/tags/3.0.0.tar.gz"
+  sha256 "903cd4a782fb0b233f732dc5b37861b552998e93ae8f268c40bd4ce50b2e88ca"
   license "Zlib"
-  revision 1
   head "https://github.com/SFML/CSFML.git", branch: "master"
 
   bottle do
@@ -20,29 +18,35 @@ class Csfml < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "sfml@2" # milestone to support sfml 3.0, https://github.com/SFML/CSFML/milestone/1
+  depends_on "sfml"
 
   def install
-    args = %W[
-      -DCMAKE_MODULE_PATH=#{Formula["sfml@2"].share}/SFML/cmake/Modules/
-    ]
-
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.c").write <<~C
-      #include <SFML/Window.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <CSFML/Window/Window.h>
 
-      int main (void)
+      int main()
       {
-        sfWindow * w = sfWindow_create (sfVideoMode_getDesktopMode (), "Test", 0, NULL);
-        return 0;
+          sfVideoMode m = {800, 600, 32};
+          sfWindow* w = sfWindow_create(m, "csfml", sfClose, sfWindowed, NULL);
+
+          while (sfWindow_isOpen(w))
+          {
+              sfEvent e;
+              sfWindow_pollEvent(w, &e);
+              sfWindow_close(w);
+          }
+
+          sfWindow_destroy(w);
+          return 0;
       }
-    C
-    system ENV.cc, "test.c", "-L#{lib}", "-lcsfml-window", "-o", "test"
+    CPP
+    system ENV.cxx, "test.cpp", "-L#{lib}", "-lcsfml-window", "-o", "test"
     # Disable this part of the test on Linux because display is not available.
     system "./test" if OS.mac?
   end
