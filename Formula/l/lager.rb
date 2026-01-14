@@ -7,8 +7,7 @@ class Lager < Formula
   head "https://github.com/arximboldi/lager.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "092b29ac8e64b817faba834b6b03d4970ce7cf939a271e812bdfcfd09dd081ff"
+    sha256 cellar: :any_skip_relocation, all: "ebbb63b2e8a33ba657c94b3e3cf14879d196bc909805a3a507b75739ee145e83"
   end
 
   depends_on "cmake" => :build
