@@ -1,8 +1,8 @@
 class Pan < Formula
   desc "Usenet newsreader that's good at both text and binaries"
   homepage "https://gitlab.gnome.org/GNOME/pan"
-  url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.164/pan-v0.164.tar.bz2"
-  sha256 "862609baaabbc516fe23fd9f62ae54f1a6b6481178913f3c5a6f4597d0c39244"
+  url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.165/pan-v0.165.tar.bz2"
+  sha256 "0e393f81efe59ec9169cf8b0d519500e4da7c73f8cb3635d2c5c0f98db3bf573"
   license "GPL-2.0-only"
 
   bottle do
