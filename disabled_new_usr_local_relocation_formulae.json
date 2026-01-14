@@ -4,5 +4,6 @@
   "meson",
   "phpmyadmin",
   "python-setuptools",
-  "rabbitmq"
+  "rabbitmq",
+  "ruby-install"
 ]
