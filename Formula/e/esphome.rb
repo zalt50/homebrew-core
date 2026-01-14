@@ -3,10 +3,9 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/5f/34/bf5a8b06ad5d8c300a090126043e35b770ab439dec51660574a881d3d930/esphome-2025.12.5.tar.gz"
-  sha256 "6bcf05efc74a430f2a73be69bc853723269fb953e341047fe41f8ee0c5e023e1"
+  url "https://files.pythonhosted.org/packages/91/42/f5b5aa7307bedefd708bbc9592a812be5a7876e746e4e7ac22adcacbeee1/esphome-2025.12.6.tar.gz"
+  sha256 "eadb7806a758dca1f90dd4e6656bf2fc4bdd0c009671418eb01bbec7007d9da4"
   license "MIT"
-  revision 1
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
   no_autobump! because: "macOS resources cannot be updated on linux CI"
@@ -224,8 +223,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
-    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
+    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
+    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
   end
 
   resource "puremagic" do
