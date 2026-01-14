@@ -14,12 +14,12 @@ class Duplicity < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4d3eea2606f8cc3e952bb33b60113e410574a0669b74c327034f2a32a03910dc"
-    sha256 cellar: :any,                 arm64_sequoia: "36dd7d8772480f82fa111426cff9ca9dd56342108b80708db1f6ab8802fa7a72"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c4ee6d7c4c3b15df586058b1069dffab3d34d87767df6305d0545b50a61c310"
-    sha256 cellar: :any,                 sonoma:        "29c8b4cba378e055362d8f8320e9bd25e3c8cff8e803619608c208d63e036b22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f59c42118d361677424ebb63c26fd07a24f44cd7fb3e9c4ddba18e062fa8f42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "975df8e13e056f1352fea5d5dcd307733c4b71624d4de738d6999c4172df95a3"
+    sha256 cellar: :any,                 arm64_tahoe:   "2ae027c0e05d28d2fc26a2689b2592e952be00d87f643ec176b1d6b59da178e0"
+    sha256 cellar: :any,                 arm64_sequoia: "d22fc445e4453095caa3a4e025577fe76c1cd249063824a5d1e050e18bceaefe"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d2adccc45a9fbcf2cce4a21e931ff1ce8f68758b8bc6ed382cdee3805dbcfbd"
+    sha256 cellar: :any,                 sonoma:        "bfff05321032ef3a8a199ce12c24df9017ad7a1c90b3ba8f5a4d4ceb628d01eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4554313e5d32b95712577f28f8e086f351e189f7745abf6b7b20636ca5d559e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39a45d175d55f6ee74361df06f1cff2dec038575513a00aabc468d0c09aeef45"
   end
 
   depends_on "gettext" => :build # for msgfmt
