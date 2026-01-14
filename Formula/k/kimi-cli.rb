@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/7a/c3/3596b3a407d8452a633e1cb7d20dd5f1bd78e01b9659583ae3812d464d35/kimi_cli-0.76.tar.gz"
-  sha256 "6d41245bd95ff84fef6640684f82d78f5539811877992bb4f590ad87be05315e"
+  url "https://files.pythonhosted.org/packages/e5/82/82ad9a6dd1bee95b3d1a68ea5fafcb5ddf94178618b0fc50e3386b695411/kimi_cli-0.77.tar.gz"
+  sha256 "617981dd04c3e1556cb52efaa61c8a37d51118f8ac2db9c08cbfe61b5e1ebeff"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -59,8 +59,8 @@ class KimiCli < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/04/1f/08e95f4b7e2d35205ae5dcbb4ae97e7d477fc521c275c02609e2931ece2d/anthropic-0.75.0.tar.gz"
-    sha256 "e8607422f4ab616db2ea5baacc215dd5f028da99ce2f022e33c7c535b29f3dfb"
+    url "https://files.pythonhosted.org/packages/6e/be/d11abafaa15d6304826438170f7574d750218f49a106c54424a40cef4494/anthropic-0.76.0.tar.gz"
+    sha256 "e0cae6a368986d5cf6df743dfbb1b9519e6a9eee9c6c942ad8121c0b34416ffe"
   end
 
   resource "anyio" do
@@ -104,8 +104,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/43/c4/60b6068e703c78656d07b249919754f8f60e9e7da3325560574ee27b4e39/cyclopts-4.4.4.tar.gz"
-    sha256 "f30c591c971d974ab4f223e099f881668daed72de713713c984ca41479d393dd"
+    url "https://files.pythonhosted.org/packages/4f/31/0c2526868b1454f2e7aaac5b05f262df4513917942beef9c0040415c7664/cyclopts-4.4.5.tar.gz"
+    sha256 "02c2c9375c57bb7622a4aab3511cdeb9d762dd0579b13ab467535e34f6be3c54"
   end
 
   resource "dateparser" do
@@ -229,8 +229,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/da/d8/ea9c1d7487fbed23129b2733cafa163e212a0bc50733149311e133f7df67/kosong-0.37.0.tar.gz"
-    sha256 "36b451774fbdf673ed49e456e641e08fae3a9314ab1d1c98e0aa20a7c13437d0"
+    url "https://files.pythonhosted.org/packages/12/ab/e0c5432a83ec0e15588954b804e1f9c261f7bdba69a9b9773fa188a7e7c0/kosong-0.38.0.tar.gz"
+    sha256 "9033df1d4afd409f56e6cda9540d326b51498a67c3763a95cf2a3a7a2d6400ca"
   end
 
   resource "lazy-object-proxy" do
@@ -384,8 +384,8 @@ class KimiCli < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/ad/f2/638ef50852dc5741dc3bb3c7d4e773d637bc20232965ef8b6e7f6f7d4445/regex-2026.1.14.tar.gz"
+    sha256 "7bdd569b6226498001619751abe6ba3c9e3050f79cfe097e84f25b2856120e78"
   end
 
   resource "requests" do
