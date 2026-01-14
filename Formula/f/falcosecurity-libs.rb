@@ -1,8 +1,8 @@
 class FalcosecurityLibs < Formula
   desc "Core libraries for Falco and Sysdig"
   homepage "https://falcosecurity.github.io/libs/"
-  url "https://github.com/falcosecurity/libs/archive/refs/tags/0.23.0.tar.gz"
-  sha256 "3c492398193a492d3fbf563af7346e500fb4e6480f1b1b9d263a5647d6f68020"
+  url "https://github.com/falcosecurity/libs/archive/refs/tags/0.23.1.tar.gz"
+  sha256 "38c580626b072ed24518e8285a629923c8c4c6d6794b91b3b93474db7fd85cf7"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
