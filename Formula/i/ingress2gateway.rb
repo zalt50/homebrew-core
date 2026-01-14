@@ -7,13 +7,12 @@ class Ingress2gateway < Formula
   head "https://github.com/kubernetes-sigs/ingress2gateway.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04f6588efa4dd83dc15982b8d5b01d0e8277d28e394092b05dd4a15c107f4250"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23e65c559979436b7ac7a5e97c36a4c11295b36f85fdd70e52d5dd869492db03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60a08648e43d612dcd661cae2db2c37ac32f44905324f93671d9ac750269d9cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6adfe802ae0473b4dfeccad977f810a78d69e4e27a7dd6f173aec976527f1cc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51775975c980566a1ac2c74de42cf0532e810e5d8b072e8dce8ca5ffdb817996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd87e3f7ea0ad3345827af7335342dfe3cdfa856637334371af64da4d30e426c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19f1d9a3652f55e3469d0a6b6fdcc5a59e62fdb0591797e6c541e347535fd6ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19f1d9a3652f55e3469d0a6b6fdcc5a59e62fdb0591797e6c541e347535fd6ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19f1d9a3652f55e3469d0a6b6fdcc5a59e62fdb0591797e6c541e347535fd6ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fda5b0dea1e86df82a07f08cc65f37e5ce8089b92e608272406a3b0551c21f6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31a12392fde4047e27597340d74968a952054c0a0316b82e165cd04e80ea049a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "837f74795b0f866473130c6aae03f2b829ea23b17fcc5d51eef45394912db239"
   end
 
   depends_on "go" => :build
