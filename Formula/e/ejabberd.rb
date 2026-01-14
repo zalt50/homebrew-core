@@ -94,7 +94,13 @@ class Ejabberd < Formula
   end
 
   test do
-    pid = spawn sbin/"ejabberdctl", "start"
+    ENV["EJABBERD_BYPASS_WARNINGS"] = "true"
+    ENV["EJABBERD_CONFIG_PATH"] = testpath/"ejabberd.yml"
+
+    cp etc/"ejabberd/ejabberd.yml", testpath/"ejabberd.yml"
+    inreplace testpath/"ejabberd.yml", "port: 1883", "port: #{free_port}"
+
+    pid = spawn sbin/"ejabberdctl", "foreground"
     sleep 1
     system sbin/"ejabberdctl", "ping"
   ensure
