@@ -6,7 +6,7 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/c6/5c/4526e8a5c9d055991d50556d124129c96f1567b7899e9e0088fa527f8982/prowler-5.16.1.tar.gz"
   sha256 "bb485798e6769a4746413553800f2def79d62c039c888fb5b6ff95c33a144f2d"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
@@ -254,8 +254,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/ef/83/41c9371c8298999c67b007e308a0a3c4d6a59c6908fa9c62101f031f886f/azure_core-1.37.0.tar.gz"
-    sha256 "7064f2c11e4b97f340e8e8c6d923b822978be3016e46b7bc4aa4b337cfb48aee"
+    url "https://files.pythonhosted.org/packages/dc/1b/e503e08e755ea94e7d3419c9242315f888fc664211c90d032e40479022bf/azure_core-1.38.0.tar.gz"
+    sha256 "8194d2682245a3e4e3151a667c686464c3786fed7918b394d035bdcd61bb5993"
   end
 
   resource "azure-identity" do
@@ -564,8 +564,8 @@ class Prowler < Formula
   end
 
   resource "httplib2" do
-    url "https://files.pythonhosted.org/packages/52/77/6653db69c1f7ecfe5e3f9726fdadc981794656fcd7d98c4209fecfea9993/httplib2-0.31.0.tar.gz"
-    sha256 "ac7ab497c50975147d4f7b1ade44becc7df2f8954d42b38b3d69c515f531135c"
+    url "https://files.pythonhosted.org/packages/77/df/6eb1d485a513776bbdbb1c919b72e59b5acc51c5e7ef28ad1cd444e252a3/httplib2-0.31.1.tar.gz"
+    sha256 "21591655ac54953624c6ab8d587c71675e379e31e2cfe3147c83c11e9ef41f92"
   end
 
   resource "httpx" do
@@ -579,8 +579,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/6a/a5/4155a3779c441294bab6ca9cee41c12defffc8cbc940a5206e74b5728794/iamdata-0.1.202601101.tar.gz"
-    sha256 "9ce90ea3029a75d9083466d9ba8db0271084f576aecd44501da47e0b891678aa"
+    url "https://files.pythonhosted.org/packages/b4/53/7c23f9568deaa9c4788f7890f50282ce2b68e12b9a39a6f5f324fccd26fa/iamdata-0.1.202601141.tar.gz"
+    sha256 "a27fd79610465635749c1a93bfa6d215ee61b47a7d818feab6c49265a1d7859a"
   end
 
   resource "idna" do
@@ -780,8 +780,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/cc/5c/f912bdebdd4af4160da6a2c2b1b3aaa1b8c578d0243ba8f694f93c7095f0/protobuf-6.33.3.tar.gz"
-    sha256 "c8794debeb402963fddff41a595e1f649bcd76616ba56c835645cab4539e810e"
+    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
+    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
   end
 
   resource "py-iam-expand" do
