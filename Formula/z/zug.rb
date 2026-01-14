@@ -1,11 +1,10 @@
 class Zug < Formula
   desc "C++ library providing transducers"
   homepage "https://sinusoid.es/zug/"
-  url "https://github.com/arximboldi/zug/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "1b9c8f962e40baa6f0c6af35f957444850063d550078a3ebd0227727b8ef193c"
+  url "https://github.com/arximboldi/zug/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "75ff666a4ce1615b3ca26abbb17b10f5cb5cf5f86c9c293ec430c34750d3ea27"
   license "BSL-1.0"
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/arximboldi/zug.git", branch: "master"
 
   bottle do
     rebuild 1
