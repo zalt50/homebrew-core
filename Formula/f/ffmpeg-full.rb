@@ -12,6 +12,15 @@ class FfmpegFull < Formula
     formula "ffmpeg"
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "35f83f7e54a03bfd0e703457877748eaf26830c8a0e5549005e493287ac3aefe"
+    sha256 arm64_sequoia: "3f93e78d820ce0abdbf2d7ca85abef2114f4158ab8a42279717000f730a0b73f"
+    sha256 arm64_sonoma:  "71ab6bdc0a0dc9e2e125e2101f9ba1cd8bbfd8da0753a45ac8b3ae11ce09805f"
+    sha256 sonoma:        "051d412ce667496d5f917e717ae317c5df25fd78ddff019c27e16f857aa5e7a4"
+    sha256 arm64_linux:   "e991199149ba3be42d3a6e3250b87a4692488ae2ab6957866d5bdf419fab38c5"
+    sha256 x86_64_linux:  "118476947da3654a3db8c37e83f5d20247a515cc554cc400463d30fd69df0646"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkgconf" => :build
