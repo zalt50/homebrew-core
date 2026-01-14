@@ -12,12 +12,12 @@ class Turso < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad0d62c1d75c47f14528850203753be9afca92515c9d854a928c71ce3df730ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb807b8c7c07c4484fbbe8b0f49ce719dd043fc63c99bebdd96d143b56fac885"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2394c51edc692232157564e664aed0a2e57681fb2064867e82fb321bf91e813d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61e1a22c25ff297452a75a9918c00817b8f3e7a6fd3ca44a8dcdffb9a2c8b77b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "701b1bb4edcae8fc1b74289f31eba12d51b7c08915c1c2420a4066f2b90d7329"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "736440df08755f57554b39364e1f90bf280c73d1ad04be483f6eb6be8f717006"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79a87c7858f161b533070b946b8f849367ace0e6b1518f85d9ee57bafbd22137"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5c1438c8bc6492c9acac6ff3b741cf9a0966ff2c509bceb893450f9f6cfacf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3881e2e3e6f944ae8b7468c2018c36d0f40b1547544630ab25774f353fd65adc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4d27763582b2fc3b1c2a79d064cf8185bcd54e29211449364ba91de78845952"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "335ebeae7e44424fd52de456b87904c96b34ff8d1a081b60b50d8abe5a28fe76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3733f0eedca65b6bb37470ce4450ca6f4a3d6dc78bc6c334f02c8509a9a6416"
   end
 
   depends_on "rust" => :build
