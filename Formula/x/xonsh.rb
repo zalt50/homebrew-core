@@ -4,8 +4,8 @@ class Xonsh < Formula
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   # xon.sh homepage bug report, https://github.com/xonsh/xonsh/issues/5984
   homepage "https://github.com/xonsh/xonsh"
-  url "https://files.pythonhosted.org/packages/a3/d8/e485a7bdb64a126957c93b9db78ae8c608cd94975384e2cebc7af83f26a1/xonsh-0.22.0.tar.gz"
-  sha256 "e4bd25a1d6be698444634212029109cefedccc3a6a85f2bacfde33bfd5461488"
+  url "https://files.pythonhosted.org/packages/ad/a1/2da93b1a7abdac61ef06fc343723c9449400f3ad25cc776b5ff3eeaf7d95/xonsh-0.22.1.tar.gz"
+  sha256 "99db059725dc7061c1647099fe8ce619ba2ce520018606a2f7a720032622a9b5"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
