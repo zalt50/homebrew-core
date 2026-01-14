@@ -1,8 +1,8 @@
 class Yozefu < Formula
   desc "TUI for exploring data in a Kafka cluster"
   homepage "https://github.com/MAIF/yozefu"
-  url "https://github.com/MAIF/yozefu/archive/refs/tags/v0.0.24.tar.gz"
-  sha256 "20bc3c9f88bde4595ac658ac4d4929b214a9857971d0427b24569a4cf2766762"
+  url "https://github.com/MAIF/yozefu/archive/refs/tags/v0.0.25.tar.gz"
+  sha256 "82c3cafd34152527c680780dd0a68c18bf8d00a94696c4a8781e458c1ac43707"
   license "Apache-2.0"
   head "https://github.com/MAIF/yozefu.git", branch: "main"
 
