@@ -1,9 +1,9 @@
 class Spigot < Formula
   desc "Command-line streaming exact real calculator"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/spigot/"
-  url "https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20240909.f158e08.tar.gz"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20260114.ed81b83.tar.gz"
   version "20240909"
-  sha256 "f2b7b8b9b0e0b138dcfd6ac4eb46fa79706b1842522894c45ddfd731d27bf673"
+  sha256 "40a1bcfc52d6c581ae67b2a1456ec9f28b959789a00faf487cd06b4585576e67"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class Spigot < Formula
     regex(/href=.*?spigot[._-]v?(\d+(?:\.\d+)*)(?:[._-][\da-z]+)?\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "101f725aafee893f70ecd25457844a6c3a4d1d432d7c2dc82f285ad02a51389e"
