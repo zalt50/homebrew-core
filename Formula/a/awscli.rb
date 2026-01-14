@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/refs/tags/2.32.34.tar.gz"
-  sha256 "b2393deebef2a91b07e1a4b30b47bdff717a37cad8ab231b2981d28423194526"
+  url "https://github.com/aws/aws-cli/archive/refs/tags/2.33.0.tar.gz"
+  sha256 "8bebe606ad8a903b895811e80130fefe1595b3adc6649fefc805203fd488f93b"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -19,7 +19,7 @@ class Awscli < Formula
 
   depends_on "cmake" => :build
   depends_on "openssl@3"
-  depends_on "python@3.13" # Python 3.14 issue: https://github.com/aws/aws-cli/issues/9783
+  depends_on "python@3.13" # Python 3.14 issue: https://github.com/aws/aws-cli/issues/9914
 
   uses_from_macos "libffi"
   uses_from_macos "mandoc"
