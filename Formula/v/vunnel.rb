@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/50/38/ac08d36432c60064a89d4c8eadd4a606ee85e421d3084b3f09ac24464cef/vunnel-0.46.4.tar.gz"
-  sha256 "79fedcaa3f6a0f9509fd886a67763f8ec1ca7b6e0c2ec5a40f1dc8d41a8019d3"
+  url "https://files.pythonhosted.org/packages/9a/7a/a1a6bcc83a2c9a24ef385a762a08fe00d1e579dca8f5c44fc21043a9abff/vunnel-0.47.0.tar.gz"
+  sha256 "f8d1f2a059d966769146445781fe6064205c0345e8c7a319d67de424b5570bd4"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -204,8 +204,8 @@ class Vunnel < Formula
   end
 
   resource "tomli" do
-    url "https://files.pythonhosted.org/packages/52/ed/3f73f72945444548f33eba9a87fc7a6e969915e7b1acc8260b30e1f76a2f/tomli-2.3.0.tar.gz"
-    sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
+    url "https://files.pythonhosted.org/packages/82/30/31573e9457673ab10aa432461bee537ce6cef177667deca369efb79df071/tomli-2.4.0.tar.gz"
+    sha256 "aa89c3f6c277dd275d8e243ad24f3b5e701491a860d5121f2cdd399fbb31fc9c"
   end
 
   resource "toposort" do
