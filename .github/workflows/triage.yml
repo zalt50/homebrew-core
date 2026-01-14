@@ -391,6 +391,7 @@ jobs:
 
             - label: CI-skip-recursive-dependents
               path: "Formula/.+/(\
+                alsa-lib|\
                 ca-certificates|\
                 certifi|\
                 cmake|\
@@ -422,7 +423,6 @@ jobs:
 
             - label: CI-linux-self-hosted-deps
               path: "Formula/.+/(\
-                alsa-lib|\
                 glib|\
                 libcap|\
                 libva|\
