@@ -6,6 +6,15 @@ class Pgroll < Formula
   license "Apache-2.0"
   head "https://github.com/xataio/pgroll.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca030051ad86090d752f73fd9d749044e56fc3e1ae86d164d1f114dbe2e63b65"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8b2bdf2170755b2d1a66b945dbaea9cad59ced1214b9942020b135fdf0b727d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d88074487b75820fa6fd9b63e969ebcd3a9aa67cad4f06ee6ab6b2c441c11d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a66210ae7b370203372b6b4f7f0ccb032f112c80219d94a57d569ee6b778b960"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f3cb3b44068696f3958bab5bc91286550e11e28c39e361ead8b64a36101e790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b5872ca350406cdbc87c4922e37690db50f9275dcd4e2c27796a774d9fae2f7"
+  end
+
   depends_on "go" => :build
   depends_on "postgresql@18" => :test
   depends_on "libpg_query"
