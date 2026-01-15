@@ -1,8 +1,8 @@
 class Bulletty < Formula
   desc "Pretty feed reader (ATOM/RSS) that stores articles in Markdown files"
   homepage "https://bulletty.croci.dev/"
-  url "https://github.com/CrociDB/bulletty/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "855aa55629ca0846b1b50a87f2c18c2b7f76d8aa0fbd276187b70a5cb3bc34da"
+  url "https://github.com/CrociDB/bulletty/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "5c5cc4065e2b9529a7ac2262d4fbc7355065ae3d632dead7dcfa7e3ed385c304"
   license "MIT"
   head "https://github.com/CrociDB/bulletty.git", branch: "main"
 
