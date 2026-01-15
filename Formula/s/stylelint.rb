@@ -6,7 +6,7 @@ class Stylelint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6ffd9a82804ed2c480fb3119fcb810893e98c16d396270d20752479df4b67ceb"
+    sha256 cellar: :any_skip_relocation, all: "722984df88e2d30ecc09b84e78ad6f4281e869badcb3906163b6a0d86ac02212"
   end
 
   depends_on "node"
