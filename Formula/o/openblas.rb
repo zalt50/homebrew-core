@@ -1,8 +1,8 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
-  homepage "http://www.openmathlib.org/OpenBLAS/"
-  url "https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz"
-  sha256 "27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d"
+  homepage "https://www.openblas.net/"
+  url "https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.31.tar.gz"
+  sha256 "6dd2a63ac9d32643b7cc636eab57bf4e57d0ed1fff926dfbc5d3d97f2d2be3a6"
   # The main license is BSD-3-Clause. Additionally,
   # 1. OpenBLAS is based on GotoBLAS2 so some code is under original BSD-2-Clause-Views
   # 2. lapack-netlib/ is a bundled LAPACK so it is BSD-3-Clause-Open-MPI
@@ -33,6 +33,13 @@ class Openblas < Formula
   depends_on "pkgconf" => :test
   depends_on "gcc" # for gfortran
   fails_with :clang
+
+  # Fix configuration header on Linux Arm with GCC 12
+  # https://github.com/OpenMathLib/OpenBLAS/pull/5606
+  patch do
+    url "https://github.com/OpenMathLib/OpenBLAS/commit/c077708852c7262b6bc0da6bc094b447e7ba7b3c.patch?full_index=1"
+    sha256 "e59596a7bec1fa6c22c4bee20c8040faa15fa57aa6486acd99b9688aef15f4da"
+  end
 
   def install
     ENV.runtime_cpu_detection
