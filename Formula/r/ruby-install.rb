@@ -7,7 +7,7 @@ class RubyInstall < Formula
   head "https://github.com/postmodern/ruby-install.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "830bb609eb27783b5bb8de44341d16bffd24f18fdc6f453d6f21ea136ef7b4e3"
+    sha256 cellar: :any_skip_relocation, all: "e5a4d9773747627d398183719dfdb18e6bf26258dba032ea3c8f6d24e1186fac"
   end
 
   depends_on "xz"
