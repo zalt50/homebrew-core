@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggml-org/llama.cpp"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b7730",
-      revision: "d34aa07193d27aa04da9a77c63ee125ec614714a"
+      tag:      "b7750",
+      revision: "6e7fc8a146556fe20be36906e1b1b7e03bc36d44"
   license "MIT"
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
@@ -29,7 +29,7 @@ class LlamaCpp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  uses_from_macos "curl"
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "openblas"
@@ -49,7 +49,7 @@ class LlamaCpp < Formula
       -DGGML_METAL_EMBED_LIBRARY=#{OS.mac? ? "ON" : "OFF"}
       -DGGML_NATIVE=#{build.bottle? ? "OFF" : "ON"}
       -DLLAMA_ALL_WARNINGS=OFF
-      -DLLAMA_CURL=ON
+      -DLLAMA_OPENSSL=ON
     ]
     args << "-DLLAMA_METAL_MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
 
