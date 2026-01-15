@@ -1,8 +1,8 @@
 class Dagger < Formula
   desc "Portable devkit for CI/CD pipelines"
   homepage "https://dagger.io"
-  url "https://github.com/dagger/dagger/archive/refs/tags/v0.19.9.tar.gz"
-  sha256 "b0afe1ae1b8c8583d129a0acabfefd3232cd4d3aa6719d3832377e44e0e352f0"
+  url "https://github.com/dagger/dagger/archive/refs/tags/v0.19.10.tar.gz"
+  sha256 "8e4e8eb13d84bd3ef054b3058e7a53af51286a5f8bfcff28438acd9bd9bb8ab6"
   license "Apache-2.0"
   head "https://github.com/dagger/dagger.git", branch: "main"
 
