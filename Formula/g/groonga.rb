@@ -1,24 +1,10 @@
 class Groonga < Formula
   desc "Fulltext search engine and column store"
   homepage "https://groonga.org/"
+  url "https://github.com/groonga/groonga/releases/download/v15.2.3/groonga-15.2.3.tar.gz"
+  sha256 "0f02cd5e1abf69dada8d7d875f40a9afa5014fcc8c0d645f6bfb180e718ea672"
   license "LGPL-2.1-or-later"
   head "https://github.com/groonga/groonga.git", branch: "main"
-
-  stable do
-    url "https://github.com/groonga/groonga/releases/download/v15.2.1/groonga-15.2.1.tar.gz"
-    sha256 "77d9aa56e33c0986bbec6ddd2ee897aba6c347cff45fce988f2708145e0c9d77"
-
-    # Workaround for missing CMake file. Remove when fixed in release.
-    # PR ref: https://github.com/groonga/groonga/pull/2709
-    resource "FindGroongalibedit.cmake" do
-      url "https://raw.githubusercontent.com/groonga/groonga/refs/tags/v15.2.1/cmake/FindGroongalibedit.cmake"
-      sha256 "26319863f76345bff0fbb4cfde5c1c43430a18b1a36cc58bfe7d26d2910e8d34"
-
-      livecheck do
-        formula :parent
-      end
-    end
-  end
 
   livecheck do
     url :homepage
@@ -58,11 +44,6 @@ class Groonga < Formula
   end
 
   def install
-    if build.stable?
-      odie "Remove FindGroongalibedit.cmake resource!" if (buildpath/"cmake/FindGroongalibedit.cmake").exist?
-      resource("FindGroongalibedit.cmake").stage(buildpath/"cmake")
-    end
-
     # Removed bundled libraries but keep files needed by build scripts even when unused
     rm_r(Dir["vendor/*"] - ["vendor/CMakeLists.txt", "vendor/mecab", "vendor/mruby", "vendor/plugins"])
 
