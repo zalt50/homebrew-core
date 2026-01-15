@@ -3,8 +3,8 @@ class ErlangLanguagePlatform < Formula
   homepage "https://whatsapp.github.io/erlang-language-platform/"
   # We require the submodules, so we fetch via git
   url "https://github.com/WhatsApp/erlang-language-platform.git",
-      tag:      "2025-12-12",
-      revision: "553c90d63143c82057d4888b40109ec9dca2f329"
+      tag:      "2026-01-15",
+      revision: "da5ec8d23af9df264c33cc1ce2d74844d13a5b77"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/WhatsApp/erlang-language-platform.git", branch: "main"
 
