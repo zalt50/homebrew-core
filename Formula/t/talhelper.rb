@@ -7,12 +7,12 @@ class Talhelper < Formula
   head "https://github.com/budimanjojo/talhelper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0cd96a4c96bdd29ebcbe49bbaa2c475f940c7feb1add69436019441c768f3db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0cd96a4c96bdd29ebcbe49bbaa2c475f940c7feb1add69436019441c768f3db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0cd96a4c96bdd29ebcbe49bbaa2c475f940c7feb1add69436019441c768f3db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b94906b3a76507c9a7c4b9f383054f677275180baa7af549fefde1f9d4d7e2b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f268d624fc262639806bd6502e5b6f11222bf5c6e78bc3bbffbbd1d3ac865f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e0c835a2e4fbe02e7e68922953ff3fb85260e45b6685a528e223a022a39150d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfb6ea5678f169e8ed4df77be75d3611eb5d94d549da16707954367834102093"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfb6ea5678f169e8ed4df77be75d3611eb5d94d549da16707954367834102093"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfb6ea5678f169e8ed4df77be75d3611eb5d94d549da16707954367834102093"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04514ad558f244211edd30c381fc81fd625ace38b86a33c4c8137ec04ecbbb6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa3a3e902cc5eb96c5f79e23b07e8b3261a7ab3fe09ba63958c5a06ecc8abcad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3209e0652f5a0cf9f2d4beef17cc8473b53b7656b59dd921c5c831cd891fd44d"
   end
 
   depends_on "go" => :build
