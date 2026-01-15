@@ -5,6 +5,10 @@ class Shiki < Formula
   sha256 "a0550a23b3501889ed103761331b7d6da636abb062aff63e30bbf770ba56b77c"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "65e912aaf5a1128a09329a4c931f0a86607709f75166c77e9e79bb0fc0c6d0af"
+  end
+
   depends_on "node"
 
   def install
