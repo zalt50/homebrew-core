@@ -3,17 +3,17 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/08/57/ed0bd5bf1f6b85d48200ead17283467fd0d96836098783f1c5c3514d64c4/mcpm-2.12.1.tar.gz"
-  sha256 "679c1ca197233ce2d6f8de2f47902f1d02468cba336a64cfadd9ff33857ba9d6"
+  url "https://files.pythonhosted.org/packages/84/68/152700f8bd9fe0d3d6631fccebbf6bd76213cd0817aa89fb2cd1ecd4111b/mcpm-2.13.0.tar.gz"
+  sha256 "da6c0fd0282b5710138eeecb65c5042395927c213afd52c8e33b77a451110269"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3617621c8069587a1e0e0371616d1f13f42144c19ed5c6430c8ad61884a4ca2d"
-    sha256 cellar: :any,                 arm64_sequoia: "8c3b4f8a2baa14d367d0a5ebaca4c8179da62a53e9ee40b19352550afef7f8a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebb3f7f2b19347299d23e7f7267ad01606d5db1b17a8b9e6066d1f836432b264"
-    sha256 cellar: :any,                 sonoma:        "bc12b3be4291e767fc9ae314fd8921d5a42ff52e2def36d2878a8c47fa111da0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d07a01a8a1222093e70c7328d26fa95e39b7ea18a7ec97978c6c54c05670ce2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebb691ded8f658d3c189d66212c777213d2bbbaefcac3224cceef140579a04c2"
+    sha256 cellar: :any,                 arm64_tahoe:   "a65c3ae719e6bcf22445173e6bd94ea4468a3e78b9a1a5196fcec27df9a8fb11"
+    sha256 cellar: :any,                 arm64_sequoia: "8df2fcd54181d398310a0ba76dc5b37b2fe31caf3fcd95ec3c4597106f8f73ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "c773f0d045ae345f105a3545bcb8604a2f129931914728ffc451b1b966e5f7e5"
+    sha256 cellar: :any,                 sonoma:        "b54b64fd6ab55fd1f2a8c17194b2ed78edac5e71c1a1c338919962bea767c661"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec22ce9683e85c3fee8f002bcb93d00eeb7e4d96d582d5310c454b8ea7c0b77e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73cecd5b06b818b8930c973e85407732f6fa3eba71d74de8e262da9bd331521d"
   end
 
   depends_on "cmake" => :build # for duckdb
