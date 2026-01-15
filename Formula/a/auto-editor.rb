@@ -1,10 +1,9 @@
 class AutoEditor < Formula
-  desc "Efficient media analysis and rendering"
+  desc "Effort free video editing!"
   homepage "https://auto-editor.com"
-  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.6.0.tar.gz"
-  sha256 "fa212ea93f114b7dfe8b196b9c68055e8123cdeda296560500b9ad384e120dee"
+  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.6.2.tar.gz"
+  sha256 "71144d2deb1796ba289853507d15e74a45099d250d606eba2d6d8e3aaf3ed6a1"
   license "Unlicense"
-  revision 1
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
@@ -18,8 +17,9 @@ class AutoEditor < Formula
 
   depends_on "nim" => :build
   depends_on "pkgconf" => :build
+  depends_on "ffmpeg" => :test
   depends_on "dav1d"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg-full"
   depends_on "lame"
   depends_on "libvpx"
   depends_on "llama.cpp"
@@ -30,6 +30,7 @@ class AutoEditor < Formula
   depends_on "x265"
 
   def install
+    ENV["DISABLE_VPL"] = "1"
     system "nimble", "make"
     generate_completions_from_executable("nimble", "zshcomplete", "--silent", shells: [:zsh])
     bin.install "auto-editor"
