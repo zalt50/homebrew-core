@@ -1,14 +1,10 @@
 class Nagios < Formula
   desc "Network monitoring and management system"
   homepage "https://www.nagios.org/"
-  url "https://downloads.sourceforge.net/project/nagios/nagios-4.x/nagios-4.5.9/nagios-4.5.9.tar.gz"
-  sha256 "b0add4cb7637b46bca8d5b1645ffa2537747649bdc881f228f916539677951ec"
+  url "https://github.com/NagiosEnterprises/nagioscore/releases/download/nagios-4.5.11/nagios-4.5.11.tar.gz"
+  sha256 "1bf85d6704a75e6b89a09844836f68b1cfc61ab1ef005574041e36e73fdb797a"
   license "GPL-2.0-only"
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/nagios[._-]v?(\d+(?:\.\d+)+)\.t}i)
-  end
+  head "https://github.com/NagiosEnterprises/nagioscore.git", branch: "master"
 
   bottle do
     sha256 arm64_tahoe:   "85acb132e68bd3e6ce2ee9b136dc771c6f5e22799d6b0122c3456671e7a64c33"
@@ -21,6 +17,7 @@ class Nagios < Formula
     sha256 x86_64_linux:  "17ea83b36c6ff5f2cc372297b7398649f4032afdb56bf5c86ae59d4dd20ba100"
   end
 
+  depends_on xcode: :build
   depends_on "gd"
   depends_on "libpng"
   depends_on "openssl@3"
@@ -29,6 +26,12 @@ class Nagios < Formula
 
   on_macos do
     depends_on "jpeg-turbo"
+  end
+
+  # Fix compilation error on in lib/runcmd.c; https://github.com/NagiosEnterprises/nagioscore/pull/1048
+  patch do
+    url "https://github.com/NagiosEnterprises/nagioscore/commit/874a7688fca646f14eef17abf744d8561c60c0c2.patch?full_index=1"
+    sha256 "c7d3a4a6d5f918a67a7b49f9cd30af45234510ad1697745313dbcfa4ff767ad0"
   end
 
   def nagios_sbin
