@@ -13,12 +13,12 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0129a693acacc05afc055b6713d8a35d2f917029e61ef03b2a1a7b4c77e1656"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cffa68cadc5837605d171d1dcb7a2c8e0eb56a4a011921ebbba3e43991c8f81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cffa68cadc5837605d171d1dcb7a2c8e0eb56a4a011921ebbba3e43991c8f81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8ccdab2d9bc422c2acc6174c6c4dc92158f33642c5ed116b3f8b0a1832a3a21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51633e0909994bc49ef0a34a4349135a1182ca8e48452f172f7e915691750547"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a2d4caaafc71c00d30a74f0fc3ca8a70338bb22c195070786726f8016670ad1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70e8cbaa7f0d1f9211b0be5afbf973b5d590762e9e9715c3ab565aec87a34bbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0152533dce6727f90822a47f74240b6c64e67985c623fecc66e74681a5df5ba6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0152533dce6727f90822a47f74240b6c64e67985c623fecc66e74681a5df5ba6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "098980dcd466976179f3f3d19c04f3bdc29303130c54a320c133657ff94854f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55c263e73885e2feb0f4549177bbb4aafddf87491f656dfd4ebd7e163e776586"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "522bf2b8891097b5f2f96e598feb1382883eef0ccc71454bb0b14938fd75e766"
   end
 
   depends_on "node"
