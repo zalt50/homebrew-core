@@ -1,8 +1,8 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://github.com/dicebear/dicebear"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-9.2.4.tgz"
-  sha256 "ab8e430f1b4fb999372cf78b274e04ca999fff16891f19ece63f63ab7f7aa373"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-9.3.0.tgz"
+  sha256 "b2106cdda1421cec9ab5ad847d72d3ccda4c606b083b6944d6aea56f0168fd3d"
   license "MIT"
 
   bottle do
@@ -38,7 +38,7 @@ class Dicebear < Formula
 
   def install
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
-    system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
+    system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove prebuilts which still get installed as optional dependencies
