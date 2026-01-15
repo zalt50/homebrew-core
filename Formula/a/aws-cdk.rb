@@ -6,12 +6,12 @@ class AwsCdk < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcb79792633946cd19038096f0e0a1394bf91cf92895c74ae58fd44e8c6cbe49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c774ba1e4aab64828053b23460641667fd563f7ed9f7f92619d2e1d715ba17af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c774ba1e4aab64828053b23460641667fd563f7ed9f7f92619d2e1d715ba17af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da797de6e592cc1845bac582b98b89d42024fad0949dec7f8adca0df5f8fc356"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76e0fb6ff5543799cd1dc89990729a4398de2bb436c57726449444227bc6acc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76e0fb6ff5543799cd1dc89990729a4398de2bb436c57726449444227bc6acc4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6107629b7038bc570a870530004acb0f62b7de3e466a2292029b26732cc9e7b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be0206426ba9445361111f5a5b192d5e54c99634d1e2b166f78272e124bab8ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be0206426ba9445361111f5a5b192d5e54c99634d1e2b166f78272e124bab8ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04ec81e26b5cb44991137186cd57e72b82483b9a40616e4f0147c69994008c98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d9aaa0e8cd6f8725a7ba15775109d3960f1f8f3a8e83ba600b86159480dd8ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d9aaa0e8cd6f8725a7ba15775109d3960f1f8f3a8e83ba600b86159480dd8ca"
   end
 
   depends_on "node"
