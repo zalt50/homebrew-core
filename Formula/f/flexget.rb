@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/29/3e/bd89a08225c31e852c09af970dfafdc2af4dfc02da837a8b05ba6e5d3fd9/flexget-3.18.37.tar.gz"
-  sha256 "03e41e1843b01d783e058aa9445a307e97d58e477b0eeb9d08ac3afe4be68c56"
+  url "https://files.pythonhosted.org/packages/c4/78/25c46fec65d3dc17b4b3157427f16d2350616e897147979e45d53105398e/flexget-3.18.38.tar.gz"
+  sha256 "c3eac48a0df5937560786ebf220ff14995f0a8d41ee69e2154d4efab4868d746"
   license "MIT"
 
   bottle do
@@ -158,8 +158,8 @@ class Flexget < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
-    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
   end
 
   resource "jaraco-functools" do
