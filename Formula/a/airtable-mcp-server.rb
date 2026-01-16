@@ -1,8 +1,8 @@
 class AirtableMcpServer < Formula
   desc "MCP Server for Airtable"
   homepage "https://github.com/domdomegg/airtable-mcp-server"
-  url "https://registry.npmjs.org/airtable-mcp-server/-/airtable-mcp-server-1.9.6.tgz"
-  sha256 "f6adad7f4c67b3238209cb8be252dcff40203df361ff155ddcb560c125c4d685"
+  url "https://registry.npmjs.org/airtable-mcp-server/-/airtable-mcp-server-1.10.0.tgz"
+  sha256 "a0fe0f9d32e46d69af7aee638d8b2ff01bb1bf1b7fdc24745fcd85fb1a37bc83"
   license "MIT"
 
   bottle do
