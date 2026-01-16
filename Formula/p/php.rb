@@ -3,9 +3,9 @@ class Php < Formula
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
   # TODO: Remove TAILCALL VM workaround in next release
-  url "https://www.php.net/distributions/php-8.5.1.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.1.tar.xz"
-  sha256 "3f5bf99ce81201f526d25e288eddb2cfa111d068950d1e9a869530054ff98815"
+  url "https://www.php.net/distributions/php-8.5.2.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.2.tar.xz"
+  sha256 "cb75a9b00a2806f7390dd64858ef42a47b443b3475769c8af6af33a18b1381f1"
   license all_of: [
     "PHP-3.01",
 
@@ -30,7 +30,6 @@ class Php < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
-  revision 2
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
