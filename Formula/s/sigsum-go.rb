@@ -1,8 +1,8 @@
 class SigsumGo < Formula
   desc "Key transparency toolkit"
   homepage "https://sigsum.org"
-  url "https://git.glasklar.is/sigsum/core/sigsum-go/-/archive/v0.13.1/sigsum-go-v0.13.1.tar.bz2"
-  sha256 "0f2526a7be209618bc890ac8e8b31196ba34e12daae8426f997001a233c329cf"
+  url "https://git.glasklar.is/sigsum/core/sigsum-go/-/archive/v0.14.0/sigsum-go-v0.14.0.tar.bz2"
+  sha256 "be70fb30a76f19bcf7ae8223887c375239426e3212520e8577e2ed708abe1973"
   license "BSD-2-Clause"
 
   bottle do
