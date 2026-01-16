@@ -1,8 +1,8 @@
 class Gf < Formula
   desc "App development framework of Golang"
   homepage "https://goframe.org"
-  url "https://github.com/gogf/gf/archive/refs/tags/v2.9.7.tar.gz"
-  sha256 "9e509ef355c3bc80ae5f200bacaccf9d9b61fbc814dc1f64e38dd992dab0162a"
+  url "https://github.com/gogf/gf/archive/refs/tags/v2.9.8.tar.gz"
+  sha256 "1b3d28dd8bff2821d87d66ffa84fd3c8c4970148f53e9bc3c9c04899f8cba88a"
   license "MIT"
   head "https://github.com/gogf/gf.git", branch: "master"
 
