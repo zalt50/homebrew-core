@@ -1,8 +1,8 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-5.0.5.tgz"
-  sha256 "76a3159cf2fac4f2e4c5240a2846312f33413c2332a7cd4666a48e0b75360c28"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-5.0.6.tgz"
+  sha256 "4a40fa5ac97cea750d2c3cba482edeba1e181e814625aa5533991fcc5d7cb0b2"
   license "Apache-2.0"
   version_scheme 1
 
