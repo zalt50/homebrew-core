@@ -17,6 +17,8 @@ class RvR < Formula
   depends_on "rust" => :build
   depends_on "r" => :test
 
+  conflicts_with "rv", because: "both install `rv` binary"
+
   def install
     system "cargo", "install", "--features", "cli", *std_cargo_args
   end
