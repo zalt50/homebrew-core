@@ -16,6 +16,8 @@ class RigR < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "rig", because: "both install `rig` binary"
+
   def install
     system "cargo", "install", *std_cargo_args
   end
