@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggml-org/llama.cpp"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b7730",
-      revision: "d34aa07193d27aa04da9a77c63ee125ec614714a"
+      tag:      "b7750",
+      revision: "6e7fc8a146556fe20be36906e1b1b7e03bc36d44"
   license "MIT"
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
@@ -19,17 +19,17 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e4c8dbdaa50c993a872cfff0ef07fcc5b197fc108a2247129153d8d1f99334d3"
-    sha256 cellar: :any,                 arm64_sequoia: "0b606c7dbc4cb54aa33fff274f181e317f1733c5bfe39f57ccabe7043f32f55c"
-    sha256 cellar: :any,                 arm64_sonoma:  "7215065a80550f8726c303a32006be0c7d3553988df52aeef7cddc0ae4582b94"
-    sha256 cellar: :any,                 sonoma:        "b929d076d1957f15721139c95041cbf08e9a776836c040f89511c6a25a58f68d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88538a7ed0cf0fb0ff60656a24ff74972e027ea6338174a4f4c9059379f8fd53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efe5bbd2dc439c5f195901aa1361cea0ccf87681613d3fa1c57e010bdca2dcff"
+    sha256 cellar: :any,                 arm64_tahoe:   "e3cd173e917f65c52551640ccb80db302f90e8ddcb51dda34941062715285e9b"
+    sha256 cellar: :any,                 arm64_sequoia: "770c4814f8927d1b4cc4de6ab56ffc4962f07521bff3f4734515170bf2a764c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d9fc5681532a32034b73dee4bc9cedaf7805f17728924cbbeafc78613964f45"
+    sha256 cellar: :any,                 sonoma:        "947df49388da48add329d099c95bda0c9391e3730ea89855176fe6988a42508a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0eb082c5cb66e881d6487a8350e8aeb12cc73f2ad084af94c51e665c3c1a904"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78b81900bc995aba754b6159d14688d3462ef88ea9804b4ecad8a28e15adb241"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  uses_from_macos "curl"
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "openblas"
@@ -49,7 +49,7 @@ class LlamaCpp < Formula
       -DGGML_METAL_EMBED_LIBRARY=#{OS.mac? ? "ON" : "OFF"}
       -DGGML_NATIVE=#{build.bottle? ? "OFF" : "ON"}
       -DLLAMA_ALL_WARNINGS=OFF
-      -DLLAMA_CURL=ON
+      -DLLAMA_OPENSSL=ON
     ]
     args << "-DLLAMA_METAL_MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
 
