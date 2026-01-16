@@ -33,8 +33,9 @@ class Pstoedit < Formula
     system "./configure", "--enable-docs=no", *std_configure_args
 
     # The GitHub release tarball does not ship the generated manpage (pstoedit.1),
-    # so building the doc/ subdir fails. Build/install only src/.
+    # so building the doc/ subdir fails. Build/install only src/ and config/.
     system "make", "-C", "src", "install"
+    system "make", "-C", "config", "install"
   end
 
   test do
