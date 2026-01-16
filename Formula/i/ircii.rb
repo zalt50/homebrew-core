@@ -1,9 +1,9 @@
 class Ircii < Formula
   desc "IRC and ICB client"
   homepage "http://www.eterna23.net/ircii/"
-  url "https://ircii.warped.com/ircii-20240918.tar.bz2"
-  mirror "https://deb.debian.org/debian/pool/main/i/ircii/ircii_20240918.orig.tar.bz2"
-  sha256 "f4b9b380ba5143261a3ef219abfdef749c44ce4f669908da60bc3997af649ca9"
+  url "https://ircii.warped.com/ircii-20260115.tar.bz2"
+  mirror "https://deb.debian.org/debian/pool/main/i/ircii/ircii_20260115.orig.tar.bz2"
+  sha256 "a42749250a5eee0a57db3b72fe709bd6b8b81ec76c04c4f89f0878ef899168eb"
   license all_of: [
     "BSD-3-Clause",
     "BSD-2-Clause",
