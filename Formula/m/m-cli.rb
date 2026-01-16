@@ -1,8 +1,8 @@
 class MCli < Formula
   desc "Swiss Army Knife for macOS"
   homepage "https://github.com/rgcr/m-cli"
-  url "https://github.com/rgcr/m-cli/archive/refs/tags/v2.0.6.tar.gz"
-  sha256 "cb6b4c73d45f5d7b99b9663b1addcb7fefd3098f4033f4c88d1a94f6f43c61da"
+  url "https://github.com/rgcr/m-cli/archive/refs/tags/v2.0.7.tar.gz"
+  sha256 "38c55e845ecea36a4b8fad02232014823bd38099c67d2f40b6dbbc4e63a64806"
   license "MIT"
   head "https://github.com/rgcr/m-cli.git", branch: "main"
 
