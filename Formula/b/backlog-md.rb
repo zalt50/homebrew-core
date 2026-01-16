@@ -6,12 +6,12 @@ class BacklogMd < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "a978d9ef12b1ddbe47be2c22d00c98eed20590eb65acc3c822c45356a883b53f"
-    sha256                               arm64_sequoia: "a978d9ef12b1ddbe47be2c22d00c98eed20590eb65acc3c822c45356a883b53f"
-    sha256                               arm64_sonoma:  "a978d9ef12b1ddbe47be2c22d00c98eed20590eb65acc3c822c45356a883b53f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35860e9c5efc3acf8757ccd9c05c5d6fd55a9b30cf08de28da4af0db460cfceb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38bca711e9d1d73be6b4750814a0b1330a682df7bf432dea94d28ded1a3ae1e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3a92a9365057fae397f991bdf77dc61d6ffd74897f15608749a69014ceaea01"
+    sha256                               arm64_tahoe:   "b74279e67333c84ba676736e8d52171fb6560ba57f866df324ad6d2115604ab3"
+    sha256                               arm64_sequoia: "b74279e67333c84ba676736e8d52171fb6560ba57f866df324ad6d2115604ab3"
+    sha256                               arm64_sonoma:  "b74279e67333c84ba676736e8d52171fb6560ba57f866df324ad6d2115604ab3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "533f6b8cb9eab259a809eecb07b031727690df333a6dccdedc7570cda48aa684"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71f3247bf5029fcbe27fda935a977d452753bc3755d4778d24c374e0847e3c6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dc19e203b5a732971f58c6aec7a62fd00ae44d4757f86c163bbbbdfb9cee7a5"
   end
 
   depends_on "node"
