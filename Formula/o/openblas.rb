@@ -1,6 +1,6 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
-  homepage "https://www.openblas.net/"
+  homepage "http://www.openmathlib.org/OpenBLAS/"
   url "https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz"
   sha256 "27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d"
   # The main license is BSD-3-Clause. Additionally,
