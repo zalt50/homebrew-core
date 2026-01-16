@@ -7,12 +7,12 @@ class Mihomo < Formula
   head "https://github.com/MetaCubeX/mihomo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09832d888f6c498224a499c0c5d5707e6cf76819f038e6bbe7dade058fedf590"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a16e13e6fa7ed224387d41e5ee19b23808e75fd2b8085e70e8b70894a695fc6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be0134c172944205ea6781d92f49970c7b2da9e1bad210c05d6360d22303a33e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74b92c644c14d62e0839796362bba6a1101d21740fd80d1cb0005ca5158124c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6c615583fde410899d0d3f65de981cc965da1fddd502737a866c87692865377"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ffa4d6e0d9e3273ebe10210c95af99bdc85be3706b8308ac78d613237a2c7fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4458d597515c9bcd15f3207562a6c57b970f65b0b926f4b8510eebb21dbd4d0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4458d597515c9bcd15f3207562a6c57b970f65b0b926f4b8510eebb21dbd4d0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4458d597515c9bcd15f3207562a6c57b970f65b0b926f4b8510eebb21dbd4d0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a3c6b58e1846a72c0ccad4772f54ee4239db1feca1e4209709e5e291e8b6a90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac195b12302de54f5f6abefc651a07921d6eb66b2b6db520654dc64ec3af6dc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31bb8ade75f570d86812d99014cc08f918c1006a259668bfc0b36e7f412d9c2f"
   end
 
   depends_on "go" => :build
