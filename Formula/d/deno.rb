@@ -62,6 +62,7 @@ class Deno < Formula
     ENV["GN_ARGS"] = "clang_version=#{llvm.version.major} use_lld=#{OS.linux?}"
 
     system "cargo", "install", "--no-default-features", "-vv", *std_cargo_args(path: "cli")
+    bin.install_symlink bin/"deno" => "dx"
     generate_completions_from_executable(bin/"deno", "completions")
   end
 
@@ -83,6 +84,7 @@ class Deno < Formula
     assert_match "hello deno", shell_output("#{bin}/deno run hello.ts")
     assert_match "Welcome to Deno!",
       shell_output("#{bin}/deno run https://deno.land/std@0.100.0/examples/welcome.ts")
+    assert_match "hello deno", shell_output("#{bin}/dx -y cowsay hello deno")
 
     linked_libraries = [
       Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
