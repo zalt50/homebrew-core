@@ -11,16 +11,12 @@ class Darkice < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "164c7248bbc46a4a79b4156816e541a874247a98fb95d7d43759182022983c0d"
-    sha256 cellar: :any,                 arm64_sequoia:  "63d77f3484a28636bd7c5a7a804a0d8e3e410e3b07b4859d27ce0a8b9b714233"
-    sha256 cellar: :any,                 arm64_sonoma:   "089a73da66e99a1289c3259dc974acf0ffcc053af05facf3b760f8b0d7c4b0e9"
-    sha256 cellar: :any,                 arm64_ventura:  "22abd05d4b3d880d9b1ad6abaf636f7d31c65ff3d20a7ce54c888d5464b32369"
-    sha256 cellar: :any,                 arm64_monterey: "d70aab113619347c2b1ab5dc69b265a0dcacab27c30a81ad852c12417960e670"
-    sha256 cellar: :any,                 sonoma:         "01555e1eff33f033c509891563900a3bd69bbaa658570d298e40f5ed6438a0eb"
-    sha256 cellar: :any,                 ventura:        "f922c9ca8895e789a65b11fdabda217f1301d91ce1c19890de8e433a19f8c5f8"
-    sha256 cellar: :any,                 monterey:       "47f4bafaa04a5c4eb24783771215f643bf032dbd911145812b3b27d8d3034b39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "95f5d5e05e922c398d1f8277465fe2d1350cf7f330d1aa7228026a52a674397d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e96398becc4f8c42c2fa104ea86e96207756ee073a301d0acb0fe56fd665ebcb"
+    sha256 cellar: :any,                 arm64_tahoe:   "20fadd1b316d8b747e228c02b325d21329a90591a3aab8b02bcfe02d4898a905"
+    sha256 cellar: :any,                 arm64_sequoia: "0958adc999ddfef904b1b9df902c624cf22fcfc2dc85d04baa6764dd530ad378"
+    sha256 cellar: :any,                 arm64_sonoma:  "736bf8e9a4e8d8fac78557dbd7cd3cacf25998edc324271a75b8ea4fcdca0835"
+    sha256 cellar: :any,                 sonoma:        "ebde2620aa8397e50338a25ba5d370ef82fbe08ed2b4c9fd7da46baef13fac45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02aeec8949bff8c5e533dcc7bf3b55793a96f791b3f053ffbf5457da241e0733"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26e67b2c6571fc9bafab6e97febb01e97e86f9f77a18397b1e08ccb944c4805c"
   end
 
   depends_on "autoconf" => :build
