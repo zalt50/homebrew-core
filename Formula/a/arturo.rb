@@ -17,11 +17,35 @@ class Arturo < Formula
   depends_on "nim" => :build
   depends_on "gmp"
   depends_on "mpfr"
+  depends_on "openssl@3"
+  depends_on "pcre2" => :no_linkage # accessed via dlsym
+
+  on_linux do
+    depends_on "pkgconf" => :build
+    depends_on "glib"
+    depends_on "gtk+3"
+    depends_on "libxcb"
+    depends_on "webkitgtk"
+  end
 
   def install
+    # Remove bundled libraries
+    rm_r("src/deps")
+
+    # FIXME: Unbundle OpenSSL. Should find a way to do this upstream
+    inreplace "src/library/Net.nim",
+              /\{\.passL: "[^"]*(-lcrypto|libcrypto\.a)[^"]*"\.\}/,
+              "{.passL: \"-Wl,-rpath,#{Formula["openssl@3"].opt_lib} -lssl -lcrypto\".}"
+
+    # Workaround to use pcre2 after patching `nimble`
+    inreplace "src/vm/values/custom/vregex.nim",
+              /\{\.passL: "[^"]*(-lpcre|libpcre\.a)[^"]*"\.\}/,
+              "{.passL: \"-Wl,-rpath,#{Formula["pcre2"].opt_lib}\"}"
+
+    # Adjust installation path to homebrew one
     inreplace "build.nims", 'targetDir = getHomeDir()/".arturo"', "targetDir=\"#{prefix}\""
 
-    system "./build.nims", "--install", "--mode", "mini"
+    system "./build.nims", "--install", "--log"
   end
 
   test do
