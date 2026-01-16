@@ -26,13 +26,18 @@ class Ffmpeg < Formula
 
   depends_on "pkgconf" => :build
 
-  # Only add dependencies required for dependents in homebrew-core.
-  # Add other dependencies to ffmpeg-full formula.
+  # Only add dependencies required for dependents in homebrew-core
+  # or INCREDIBLY widely used and light codecs in the current year.
+  # Add other dependencies to ffmpeg-full formula or consider making
+  # formulae dependent on ffmpeg-full.
+  depends_on "dav1d"
   depends_on "lame"
+  depends_on "libvpx"
   depends_on "opus"
   depends_on "sdl2"
   depends_on "svt-av1"
   depends_on "x264"
+  depends_on "x265"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -53,6 +58,7 @@ class Ffmpeg < Formula
     # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.ld64_version.between?("1015.7", "1022.1")
 
+    # Fine adding any new options that don't add dependencies to the formula.
     args = %W[
       --prefix=#{prefix}
       --enable-shared
@@ -67,6 +73,9 @@ class Ffmpeg < Formula
       --enable-libopus
       --enable-libx264
       --enable-libmp3lame
+      --enable-libdav1d
+      --enable-libvpx
+      --enable-libx265
     ]
 
     # Needs corefoundation, coremedia, corevideo
