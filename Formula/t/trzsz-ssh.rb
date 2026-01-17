@@ -1,8 +1,8 @@
 class TrzszSsh < Formula
-  desc "Simple ssh client with trzsz ( trz / tsz ) support"
+  desc "Alternative ssh client with additional features to meet your needs"
   homepage "https://trzsz.github.io/ssh"
-  url "https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.23.tar.gz"
-  sha256 "e4fa0f6f443faede83380ceca4a0de862c054f37c27983a7bbe6bced1d9f80da"
+  url "https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.24.tar.gz"
+  sha256 "8c7ef4ace4c7aed564f447f3f91142367f782eef87b58a95f587480ca1ae08ba"
   license "MIT"
 
   no_autobump! because: :requires_manual_review
@@ -25,11 +25,10 @@ class TrzszSsh < Formula
   end
 
   test do
-    assert_match "trzsz ssh #{version}", shell_output("#{bin}/tssh -V 2>&1")
-    assert_match "trzsz ssh #{version}", shell_output("#{bin}/tssh --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/tssh -v")
 
-    assert_match "invalid option", shell_output("#{bin}/tssh -o abc 2>&1", 255)
-    assert_match "invalid bind specification", shell_output("#{bin}/tssh -D xyz 2>&1", 255)
-    assert_match "invalid forward specification", shell_output("#{bin}/tssh -L 123 2>&1", 255)
+    assert_match "invalid option", shell_output("#{bin}/tssh -o abc 2>&1", 11)
+    assert_match "invalid bind specification", shell_output("#{bin}/tssh -D xyz 2>&1", 11)
+    assert_match "invalid forwarding specification", shell_output("#{bin}/tssh -L 123 2>&1", 11)
   end
 end
