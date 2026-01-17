@@ -1,8 +1,8 @@
 class Vtcode < Formula
   desc "CLI Semantic Coding Agent"
   homepage "https://github.com/vinhnx/vtcode"
-  url "https://static.crates.io/crates/vtcode/vtcode-0.60.0.crate"
-  sha256 "e74274035ad620ef8b7c73d7dbf5b096bd63a51c06bb60bb44cb9f394b33a567"
+  url "https://static.crates.io/crates/vtcode/vtcode-0.65.0.crate"
+  sha256 "70370fb58a9d43b88bb89c56dbb27fe3ef744330393b5518a9c404d22e79203a"
   license "MIT"
   head "https://github.com/vinhnx/vtcode.git", branch: "main"
 
@@ -21,6 +21,7 @@ class Vtcode < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "ripgrep"
 
   uses_from_macos "zlib"
 
@@ -35,7 +36,8 @@ class Vtcode < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/vtcode --version")
 
-    output = shell_output("#{bin}/vtcode init 2>&1", 1)
-    assert_match "No API key found for OpenAI provider", output
+    ENV["OPENAI_API_KEY"] = "test"
+    output = shell_output("#{bin}/vtcode models list --provider openai")
+    assert_match "gpt-5", output
   end
 end
