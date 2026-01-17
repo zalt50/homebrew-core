@@ -7,12 +7,12 @@ class Ferron < Formula
   head "https://github.com/ferronweb/ferron.git", branch: "develop-2.x"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b496ba9407885b85e5ba75a09204786e8a21a69dab28230014f9a877565d07ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b9ecf45d34f3b31631a64c28cfa200cdac5d0894a0eb5013e51b615f7d89089"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "996b9d38cf4154ca05467bdfb789ed2648cedd566340742042b13df7bfd7ea71"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c9a70b603d99533f18911cd83a41239eea28708c09bc8aa90f9ba97de2b58d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce7f8e9c22fcae63d9c997c6e0c6cb8ba3dabc2e5bcc3478800f26cc7367e174"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27d460f6ad50b889a6e3271c6279ac6baf21a5da13d6df23a75424f88a985627"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b56d878fea78eaf4b18ad45a31774fe3f98011357b49ca46e092c82dc7a5ee80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73a95ed6f1e812c962434277cf27e8e232cdf875d7e044e39b0ba40bd97a08e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12a8a0d86d8f067683e22962a5c348b259c8750258b641d766bdb890f89a6814"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c1ac70468977f4df1adfa99cc0dea901598072d10bc932626300833298b644a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9e3e2a8646486b32bdcf135a5beab97f94564bc27d3de0ea026f800eba7363f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "987860197abe4eb78d22c8a40d7468690b8230d249c15b9a534e04e4e4120347"
   end
 
   depends_on "rust" => :build
