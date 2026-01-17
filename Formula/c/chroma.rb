@@ -7,12 +7,12 @@ class Chroma < Formula
   head "https://github.com/alecthomas/chroma.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5d8f149037f6a14370543a6076dff7b3de8dc2c547bde78b2eac421bbde029c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5d8f149037f6a14370543a6076dff7b3de8dc2c547bde78b2eac421bbde029c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5d8f149037f6a14370543a6076dff7b3de8dc2c547bde78b2eac421bbde029c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3576feace91b6a25c766ce3774dba589b2762b29bebcadf344e25e9bb7db5646"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c28edee1b84db05fb8e58a81f752f932cf98acbccfe9fb64070440a1ddfaf57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c4ea376fed6b7ec307d55e49af9f2533c6c92de7f3fa611341ceac36d4980bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0539c62450620338f363784d48d2204ede641162697a0bb48f9ac7a27726a0ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0539c62450620338f363784d48d2204ede641162697a0bb48f9ac7a27726a0ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0539c62450620338f363784d48d2204ede641162697a0bb48f9ac7a27726a0ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a3068377da0f9532cb8639d02f55e0ebb3ed23dce2d558ad44626eda22665eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e32372513a7cdb1e7e2d168385dfbcd97e7eb1bae7776325a79dd35537e5ce95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27dd697a6825117ecbb09760547dba9fa5444e53e3a754b80f62a88a3645675d"
   end
 
   depends_on "go" => :build
