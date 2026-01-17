@@ -17,9 +17,15 @@ class MinLang < Formula
 
   depends_on "nim"
   depends_on "openssl@3"
+  depends_on "pcre2" => :no_linkage
 
   def install
-    system "nimble", "build", '--passL:"-lssl -lcrypto"'
+    # Remove bundled libraries
+    rm_r(["minpkg/vendor/openssl", "minpkg/vendor/pcre"])
+    inreplace ["minpkg/lib/min_crypto.nim", "minpkg/lib/min_http.nim"], /passL: "-B?static /, 'passL: "'
+    inreplace "minpkg/lib/min_global.nim", /passL: "-B?static (.*) -lpcre([" ])/, "passL: \"\\1\\2"
+
+    system "nimble", "build", "--passL:\"-lssl -lcrypto -Wl,-rpath,#{rpath(target: Formula["pcre2"].opt_lib)}\""
     bin.install "min"
   end
 
