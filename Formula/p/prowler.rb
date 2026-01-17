@@ -6,7 +6,7 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/c6/5c/4526e8a5c9d055991d50556d124129c96f1567b7899e9e0088fa527f8982/prowler-5.16.1.tar.gz"
   sha256 "bb485798e6769a4746413553800f2def79d62c039c888fb5b6ff95c33a144f2d"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
@@ -26,6 +26,7 @@ class Prowler < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
+  depends_on "lz4"
   depends_on "openssl@3"
   depends_on "python@3.12" # https://github.com/prowler-cloud/prowler/issues/6737
 
@@ -149,8 +150,8 @@ class Prowler < Formula
   end
 
   resource "alibabacloud-openapi-util" do
-    url "https://files.pythonhosted.org/packages/f6/50/5f41ab550d7874c623f6e992758429802c4b52a6804db437017e5387de33/alibabacloud_openapi_util-0.2.2.tar.gz"
-    sha256 "ebbc3906f554cb4bf8f513e43e8a33e8b6a3d4a0ef13617a0e14c3dda8ef52a8"
+    url "https://files.pythonhosted.org/packages/f6/51/be5802851a4ed20ac2c6db50ac8354a6e431e93db6e714ca39b50983626f/alibabacloud_openapi_util-0.2.4.tar.gz"
+    sha256 "87022b9dcb7593a601f7a40ca698227ac3ccb776b58cb7b06b8dc7f510995c34"
   end
 
   resource "alibabacloud-oss-util" do
@@ -579,8 +580,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/b4/53/7c23f9568deaa9c4788f7890f50282ce2b68e12b9a39a6f5f324fccd26fa/iamdata-0.1.202601141.tar.gz"
-    sha256 "a27fd79610465635749c1a93bfa6d215ee61b47a7d818feab6c49265a1d7859a"
+    url "https://files.pythonhosted.org/packages/e8/f8/fc9fa887032fa7e58694915750ec9f13afcaf2dee6f6cbe69a75f1778b17/iamdata-0.1.202601171.tar.gz"
+    sha256 "04aacce609692c037dc32fa44768529f8b99f0be4c14dc8c04ec2044e55b0533"
   end
 
   resource "idna" do
@@ -765,8 +766,8 @@ class Prowler < Formula
   end
 
   resource "plotly" do
-    url "https://files.pythonhosted.org/packages/d6/ff/a4938b75e95114451efdb34db6b41930253e67efc8dc737bd592ef2e419d/plotly-6.5.1.tar.gz"
-    sha256 "b0478c8d5ada0c8756bce15315bcbfec7d3ab8d24614e34af9aff7bfcfea9281"
+    url "https://files.pythonhosted.org/packages/e3/4f/8a10a9b9f5192cb6fdef62f1d77fa7d834190b2c50c0cd256bd62879212b/plotly-6.5.2.tar.gz"
+    sha256 "7478555be0198562d1435dee4c308268187553cc15516a2f4dd034453699e393"
   end
 
   resource "propcache" do
@@ -795,8 +796,8 @@ class Prowler < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do
