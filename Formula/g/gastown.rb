@@ -1,8 +1,8 @@
 class Gastown < Formula
   desc "Multi-agent workspace manager"
   homepage "https://github.com/steveyegge/gastown"
-  url "https://github.com/steveyegge/gastown/archive/refs/tags/v0.2.6.tar.gz"
-  sha256 "486bdf94f6777abd5b83f5a41af4edf0d080241f7a12b3c98f9b69dab5d346c0"
+  url "https://github.com/steveyegge/gastown/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "f5c6cfb8af34d5543a2291fd22ff2084d09b93ff79ce4dd2fed446bba29b4ffd"
   license "MIT"
 
   bottle do
@@ -18,7 +18,14 @@ class Gastown < Formula
   depends_on "beads"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gt"
+    ldflags = %W[
+      -s -w
+      -X github.com/steveyegge/gastown/internal/cmd.Version=#{version}
+      -X github.com/steveyegge/gastown/internal/cmd.Build=#{tap.user}
+      -X github.com/steveyegge/gastown/internal/cmd.Commit=#{tap.user}
+      -X github.com/steveyegge/gastown/internal/cmd.Branch=v#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags:), "./cmd/gt"
     bin.install_symlink "gastown" => "gt"
   end
 
