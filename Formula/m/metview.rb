@@ -1,9 +1,9 @@
 class Metview < Formula
   desc "Meteorological workstation software"
   homepage "https://metview.readthedocs.io/en/latest/"
-  url "https://confluence.ecmwf.int/download/attachments/51731119/MetviewBundle-2025.10.1-Source.tar.gz"
-  version "5.26.1"
-  sha256 "2dc2be8146cb7bcbae3d7cd833f521e426d8bb743452202f0e36e857b38f6d85"
+  url "https://confluence.ecmwf.int/download/attachments/51731119/MetviewBundle-2026.1.0-Source.tar.gz"
+  version "5.26.2"
+  sha256 "2bf48203c63c09303938323ac99b3a40d78d51d258b44e7d0d42ab2935d791a2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Metview < Formula
     regex(%r{>\s*Metview\s*<.+?<td[^>]*?>\s*v?(\d+(?:\.\d+)+)\s*</td}im)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 arm64_tahoe:   "03ae4c9f90756a5b43d28f796be7c4f4dc98ad812ae7b6290e847847ea14857d"
