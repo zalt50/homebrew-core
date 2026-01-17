@@ -7,10 +7,10 @@ class Xcsift < Formula
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "240ec668972a5a83df0ac37f542cc558cc36524540a50ed901f458b19fbc1c6a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ef6a6748671d597ad42e919a64efda975e3307fe8b73574f64f8ebc64edd1ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7df94b05a736f9b983554dd02e731e7fa36c9acda0f3f493183ec58826008666"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca743d4ba4082fb938512aa34092380e12662be2164db3a5af9d551a36fe44f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fbb9c3f3370c529a0d9dd20e0db9df4dc23b8fab855ff0077f17f184aab329b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49436f3c01c7af870fb86898ad110e9fcbf3152d17c82846a19952cc4d789f3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b03032b8dae5134379c5c4e667d841668813668470f9d2d8a7abeb3cbe81ca4f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0ef63274f0f61f0804e9ea35d6a06738b035dcecc4dab26d6496a8fcc76aa67"
   end
 
   depends_on xcode: ["16.0", :build]
