@@ -6,7 +6,7 @@ class Parsedmarc < Formula
   url "https://files.pythonhosted.org/packages/0f/5f/057b0b850ee67f5678c3587f8e5a3d5cc38ce03c5b4663c2aede8d80c5ad/parsedmarc-9.0.9.tar.gz"
   sha256 "726ec405355581192eef0660b2af95a7e9fa76a30242d80d0f1703e9251fc941"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
@@ -65,18 +65,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/8d/99/65569052c911160702ad371b0b08b751bb1df29deeef0c5c117528074c29/boto3-1.42.27.tar.gz"
-    sha256 "a8a53abb98ff1a24d9a88d9d8c0285bf02d23189666130456e8951ede2f7db98"
+    url "https://files.pythonhosted.org/packages/42/79/2dac8b7cb075cfa43908ee9af3f8ee06880d84b86013854c5cca8945afac/boto3-1.42.30.tar.gz"
+    sha256 "ba9cd2f7819637d15bfbeb63af4c567fcc8a7dcd7b93dd12734ec58601169538"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/65/90/55b003d38f947c90c0d7e306d377dcdfd9cd0dc1e184082b2d1a6adb0eec/botocore-1.42.27.tar.gz"
-    sha256 "c8e1e3ffb6c871622b1c8054f064d60cbc786aa5ca1f97f5f9fd5fa0a9d82d05"
-  end
-
-  resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
-    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
+    url "https://files.pythonhosted.org/packages/44/38/23862628a0eb044c8b8b3d7a9ad1920b3bfd6bce6d746d5a871e8382c7e4/botocore-1.42.30.tar.gz"
+    sha256 "9bf1662b8273d5cc3828a49f71ca85abf4e021011c1f0a71f41a2ea5769a5116"
   end
 
   resource "charset-normalizer" do
@@ -135,8 +130,8 @@ class Parsedmarc < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/a8/af/5129ce5b2f9688d2fa49b463e544972a7c82b0fdb50980dafee92e121d9f/google_auth-2.41.1.tar.gz"
-    sha256 "b76b7b1f9e61f0cb7e88870d14f6a94aeef248959ef6992670efee37709cbfd2"
+    url "https://files.pythonhosted.org/packages/60/3c/ec64b9a275ca22fa1cd3b6e77fefcf837b0732c890aa32d2bd21313d9b33/google_auth-2.47.0.tar.gz"
+    sha256 "833229070a9dfee1a353ae9877dcd2dec069a8281a4e72e72f77d4a70ff945da"
   end
 
   resource "google-auth-httplib2" do
@@ -145,8 +140,8 @@ class Parsedmarc < Formula
   end
 
   resource "google-auth-oauthlib" do
-    url "https://files.pythonhosted.org/packages/86/a6/c6336a6ceb682709a4aa39e2e6b5754a458075ca92359512b6cbfcb25ae3/google_auth_oauthlib-1.2.3.tar.gz"
-    sha256 "eb09e450d3cc789ecbc2b3529cb94a713673fd5f7a22c718ad91cf75aedc2ea4"
+    url "https://files.pythonhosted.org/packages/90/dd/211f27c1e927e2292c2a71d5df1a2aaf261ce50ba7d50848c6ee24e20970/google_auth_oauthlib-1.2.4.tar.gz"
+    sha256 "3ca93859c6cc9003c8e12b2a0868915209d7953f05a70f4880ab57d57e56ee3e"
   end
 
   resource "googleapis-common-protos" do
@@ -260,13 +255,13 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/24/04/25b53ed15b5997c8fdacaf9efdd1fdc921f214acb4e012642908b215debd/publicsuffixlist-1.0.2.20260114.tar.gz"
-    sha256 "3cefa4a292841d406a6c5a07bc65504156ecb1be1dd99cd730b98b6332f1d52d"
+    url "https://files.pythonhosted.org/packages/db/a0/df4d9eb48b7e6359bd66e2ba28cdc191bf602f8db0fd9f54e0aa622c142d/publicsuffixlist-1.0.2.20260117.tar.gz"
+    sha256 "24e11230db4fe4d7e68bb43203f80bf527f614c0625a7dc2749d7b0444d858e5"
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do
@@ -305,8 +300,8 @@ class Parsedmarc < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
+    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
   end
 
   resource "requests" do
