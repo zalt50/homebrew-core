@@ -6,6 +6,15 @@ class AzureDev < Formula
   license "MIT"
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1316afc543fc2ca6c6d735bc7c07768fd19bf19c7c93cc3ef9df46bda0d8a2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbc970a4bcfd20b1d89c55bf6c0227d9b5779baa07fac41e6e422b502012fdb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d52137b82ea630a30f71e1ea56bc5a419f585fa5e933374cc1017bac583ad6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b5291daa012f9ed18a14af3eab8582a9df62d4158e931a5e661d17187f08803d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b97ea822c395c135ade6597bafb355545a92bd473a09e9c97da57500238b90bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "109cf1bec1f69d8fa275cdefdd6fd23b57ad9cebb40d82b72ba5a43b97b40910"
+  end
+
   depends_on "go" => :build
 
   def install
