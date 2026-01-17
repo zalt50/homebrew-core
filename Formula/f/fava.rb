@@ -3,10 +3,13 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/50/cf/92cc763f24bbc84ac42bfe52846a125080be8ef8764f162eed084b867fce/fava-1.30.10.tar.gz"
-  sha256 "0a63eb498cfd6f9d04ffe251396c6049a4f1a91df3e136f403d157d85d7b5d73"
+  url "https://files.pythonhosted.org/packages/2f/bc/8dcbaf4711603a8c62f3943b19bebfed25a8226d921ad942b19e3d8abec7/fava-1.30.11.tar.gz"
+  sha256 "384b71b654e1ea8df23f6f7a2a11a2c5f8ebe6206d3b01b7f77f9677e5e88b37"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
+
+  # FIXME: Fails trying to resolve beancount as pip tries compiling it but cannot find bison
+  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b9b879cf5dafb185ba2eb38502a9bb42d91c7c6acf872f4ef5f0642a96a917f3"
@@ -155,8 +158,8 @@ class Fava < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
+    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
   end
 
   resource "simplejson" do
@@ -175,8 +178,8 @@ class Fava < Formula
   end
 
   resource "tatsu-lts" do
-    url "https://files.pythonhosted.org/packages/ec/c3/d542908e1e541ec028dd6a7be800c20da02282bda15b57de441afff98bfb/tatsu_lts-5.14.0.tar.gz"
-    sha256 "1f09f328aa4a5b53242055e8e24493ef7d9e4f770b90daa4d4de7c88523c232a"
+    url "https://files.pythonhosted.org/packages/d3/81/9ab714191017d23a0e73921e7d869890e5bf6a5eca89dee57d2b76c6c536/tatsu_lts-5.16.0.tar.gz"
+    sha256 "40ad376b4ed4e139a8d00d00bd6659d44c3b7546933fb3314132f776bfa1f44f"
   end
 
   resource "typing-extensions" do
