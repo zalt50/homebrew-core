@@ -6,7 +6,7 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/65/34/08813891da57999cf953e9c553193c900ff363c4cdfdd48a74f65536a883/magic_wormhole-0.22.0.tar.gz"
   sha256 "52a3ae2f0c56d0d4cd52188e50f10d2fe14bfd46e287dd50b72e7f7e851434ac"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
@@ -77,8 +77,8 @@ class MagicWormhole < Formula
   end
 
   resource "iterable-io" do
-    url "https://files.pythonhosted.org/packages/40/be/27d59b5c1d74ecbd26c1142f84b61d6cb04f0d0337697149645f34406b2d/iterable-io-1.0.0.tar.gz"
-    sha256 "fb9e1b739587a9ba0d5c60a3e1eb71246761583bc9f18b3c35bb112b44b18c3c"
+    url "https://files.pythonhosted.org/packages/9e/ad/cc53869e3357520033e3ab9a7d6043045bcdd666da427583678efdbb446e/iterable_io-1.0.1.tar.gz"
+    sha256 "55db222c5914097a8508dc722f8db6112f636a04a8acb94ee6589d9b14bd4bb7"
   end
 
   resource "msgpack" do
@@ -97,8 +97,8 @@ class MagicWormhole < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do
@@ -167,8 +167,8 @@ class MagicWormhole < Formula
   end
 
   resource "zope-interface" do
-    url "https://files.pythonhosted.org/packages/71/c9/5ec8679a04d37c797d343f650c51ad67d178f0001c363e44b6ac5f97a9da/zope_interface-8.1.1.tar.gz"
-    sha256 "51b10e6e8e238d719636a401f44f1e366146912407b58453936b781a19be19ec"
+    url "https://files.pythonhosted.org/packages/86/a4/77daa5ba398996d16bb43fc721599d27d03eae68fe3c799de1963c72e228/zope_interface-8.2.tar.gz"
+    sha256 "afb20c371a601d261b4f6edb53c3c418c249db1a9717b0baafc9a9bb39ba1224"
   end
 
   def install
