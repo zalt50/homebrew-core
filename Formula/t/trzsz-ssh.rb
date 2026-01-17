@@ -8,12 +8,12 @@ class TrzszSsh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5366a0fc68e55f86518f33296a6594c11d8ce788b283badfd869ee787615a8d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5366a0fc68e55f86518f33296a6594c11d8ce788b283badfd869ee787615a8d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5366a0fc68e55f86518f33296a6594c11d8ce788b283badfd869ee787615a8d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b49a6e4f5145e57aeafbec67bf1f200393b64e931af6906e1c940bade7941f2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52121142aa23b88a5f98b2c2980a428bc00c837bc46dfa14829f90798cc44b2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3502362a3dc731febbb45ff0cd6b1b1228424fc7dbad0307695b237ad1f0358"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5ed283aba0b804c2cb5c97e23b6129e0dbba74a5d531d81914679349e142265"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5ed283aba0b804c2cb5c97e23b6129e0dbba74a5d531d81914679349e142265"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5ed283aba0b804c2cb5c97e23b6129e0dbba74a5d531d81914679349e142265"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40a483218088b4650b3daccd27900b30c8e5476bd4ff48dc817f9fb9e39c6773"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c7ff339a7ea7d6883cbf8beb71b879b4e5d0121e7ebae8f1d2c5a4b7c5de5d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa6aa165501893dcd974e973f0e8c702dbd8d7e1ec665ff7277fa5eeb39d7317"
   end
 
   depends_on "go" => :build
