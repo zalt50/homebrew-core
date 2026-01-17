@@ -1,9 +1,9 @@
 class GnuUnits < Formula
   desc "GNU unit conversion tool"
   homepage "https://www.gnu.org/software/units/"
-  url "https://ftpmirror.gnu.org/gnu/units/units-2.24.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/units/units-2.24.tar.gz"
-  sha256 "1e502c4edfacf20b29284716c72e5ddb51a495a2365d7b03e7960494c4a0c902"
+  url "https://ftpmirror.gnu.org/gnu/units/units-2.25.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/units/units-2.25.tar.gz"
+  sha256 "36edf43ac00b4d6304baea91387e65ab05118bf65c921f73d3b08828e5a6ec0b"
   license "GPL-3.0-or-later"
 
   bottle do
