@@ -1,16 +1,14 @@
 class Prips < Formula
   desc "Print the IP addresses in a given range"
   homepage "https://devel.ringlet.net/sysutils/prips/"
-  url "https://devel.ringlet.net/files/sys/prips/prips-1.2.2.tar.xz"
-  sha256 "f9d710ba19ea0d9f68b633b7093092c84f519313ca28ec0632b37c4e5a85a0b2"
+  url "https://devel.ringlet.net/files/sys/prips/prips-1.3.1.tar.xz"
+  sha256 "5369056ec32216ec4aabf93bc410a1b8a40f04003ec923fc0250a4427bfe009d"
   license "GPL-2.0-or-later"
 
   livecheck do
     url "https://devel.ringlet.net/sysutils/prips/download/"
     regex(/href=.*?prips[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6ebfff5e1dc46e910a96a6c503115aa7b8774cdb74593bfa0b06fe3aa3ecb12"
@@ -23,9 +21,10 @@ class Prips < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e565bae503a491ee0e2ecc37889989bfab8cfe96571877a3163cbf28544d61"
   end
 
+  depends_on "rust" => :build
+
   def install
-    system "make"
-    bin.install "prips"
+    system "cargo", "install", *std_cargo_args(path: "rust")
     man1.install "prips.1"
   end
 
