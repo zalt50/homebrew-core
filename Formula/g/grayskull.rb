@@ -3,10 +3,9 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https://github.com/conda/grayskull"
-  url "https://files.pythonhosted.org/packages/c7/20/c8557733b2b52ea1714c018a24b735e33cb69f9b44dbcef9cf4dd562f849/grayskull-2.9.2.tar.gz"
-  sha256 "874890191b1999bfde97b09ac6d37dae4636aa87a9dd2ee1bf10e748ffba20ef"
+  url "https://files.pythonhosted.org/packages/5b/cd/b5a1755af96a07d13c398e9aed60896f6af2c81005e253a9e58c530a9aa6/grayskull-3.0.0.tar.gz"
+  sha256 "266362f51ccd71453001224e9a89770745c455fb131982d770cfb005d388b885"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/conda/grayskull.git", branch: "main"
 
   bottle do
@@ -41,8 +40,8 @@ class Grayskull < Formula
   end
 
   resource "conda-souschef" do
-    url "https://files.pythonhosted.org/packages/78/6a/c4d067f8ef39b058a9bd03018093e97f69b7b447b4e1c8bd45439a33155d/conda-souschef-2.2.3.tar.gz"
-    sha256 "9bf3dba0676bc97616636b80ad4a75cd90582252d11c86ed9d3456afb939c0c3"
+    url "https://files.pythonhosted.org/packages/5b/bb/1d24463afd34bd572d4da1cae26a353925c8102241944d47c75b23321eb8/conda_souschef-3.0.1.tar.gz"
+    sha256 "0df9fa12d826ab349e8006e498c6067b3a5161cf5b860baf08601829cb1b200b"
   end
 
   resource "idna" do
