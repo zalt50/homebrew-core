@@ -1,8 +1,8 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.18.tar.gz"
-  sha256 "aeae3a5f20bc8770b08ae14e563c8e86f26886b238492b43cd91218ebe891f46"
+  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.19.tar.gz"
+  sha256 "245436374e4f0f025465a686963852492a0d036a58f01185b7ec9eed145cc347"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -18,13 +18,6 @@ class Diamond < Formula
 
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
-
-  # Fixes building with Clang 17+
-  # Upstream PR ref: https://github.com/bbuchfink/diamond/pull/921
-  patch do
-    url "https://github.com/bbuchfink/diamond/commit/72b78f6b994984602f650fe664d5f83ea15b24b6.patch?full_index=1"
-    sha256 "606ffcfc8f68d6a043a0b2a48e3e93a68463017490da9e7be0c9782f825e3ee1"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
