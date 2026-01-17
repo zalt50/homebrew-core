@@ -2,8 +2,8 @@ class Rubyfmt < Formula
   desc "Ruby autoformatter"
   homepage "https://github.com/fables-tales/rubyfmt"
   url "https://github.com/fables-tales/rubyfmt.git",
-      tag:      "v0.11.0",
-      revision: "55f41919cf5779fb9e2c410c04e2f613f7d79f2b"
+      tag:      "v0.12.0",
+      revision: "6221b009587c39f326b376085c931eed25f42ebc"
   license "MIT"
   head "https://github.com/fables-tales/rubyfmt.git", branch: "trunk"
 
@@ -15,7 +15,7 @@ class Rubyfmt < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
     rebuild 1
@@ -38,6 +38,7 @@ class Rubyfmt < Formula
   # use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
   depends_on macos: :monterey
 
+  uses_from_macos "llvm" => :build # for libclang to build ruby-prism-sys
   uses_from_macos "libxcrypt"
   uses_from_macos "ruby"
   uses_from_macos "zlib"
