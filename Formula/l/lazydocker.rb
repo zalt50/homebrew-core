@@ -1,8 +1,8 @@
 class Lazydocker < Formula
   desc "Lazier way to manage everything docker"
   homepage "https://github.com/jesseduffield/lazydocker"
-  url "https://github.com/jesseduffield/lazydocker/archive/refs/tags/v0.24.3.tar.gz"
-  sha256 "d6676b678105517a183d878180b041f186cd45a5591a2a7f25f30d5c0ee17670"
+  url "https://github.com/jesseduffield/lazydocker/archive/refs/tags/v0.24.4.tar.gz"
+  sha256 "f8299de3c1a86b81ff70e2ae46859fc83f2b69e324ec5a16dd599e8c49fb4451"
   license "MIT"
   head "https://github.com/jesseduffield/lazydocker.git", branch: "master"
 
