@@ -26,19 +26,8 @@ class Rubyfmt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "de56de3073592a683d1f8b29dd696eb723b8a818ee57fc2d237052fdd3133e4b"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "bison" => :build
   depends_on "rust" => :build
-  # https://bugs.ruby-lang.org/issues/18616
-  # error: '__declspec' attributes are not enabled;
-  # use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
-  depends_on macos: :monterey
-
   uses_from_macos "llvm" => :build # for libclang to build ruby-prism-sys
-  uses_from_macos "libxcrypt"
-  uses_from_macos "ruby"
-  uses_from_macos "zlib"
 
   def install
     system "cargo", "install", *std_cargo_args
