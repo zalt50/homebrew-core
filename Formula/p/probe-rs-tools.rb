@@ -1,8 +1,8 @@
 class ProbeRsTools < Formula
   desc "Collection of on chip debugging tools to communicate with microchips"
   homepage "https://probe.rs"
-  url "https://github.com/probe-rs/probe-rs/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "73cd494f6864d4a74709a9c8adc251105c27d039f91a8b05a01c1ac10a07aab9"
+  url "https://github.com/probe-rs/probe-rs/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "7a5022d6956daaa8dba96bb3aedf2ace0b5a76a60729d93971c9dab439ac045e"
   license "Apache-2.0"
   head "https://github.com/probe-rs/probe-rs.git", branch: "master"
 
