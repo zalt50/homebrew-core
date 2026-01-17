@@ -7,6 +7,10 @@ class DoviConvert < Formula
   sha256 "ab53d2a64524ebb26ff3734c199d93d948848d00ea1fe7565abf132f5bd3f7e2"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "8478fae5ae341ee2c41709819529d0473a39829d47e5a5d1deed0999b070d148"
+  end
+
   depends_on "dovi_tool"
   depends_on "ffmpeg"
   depends_on "media-info"
