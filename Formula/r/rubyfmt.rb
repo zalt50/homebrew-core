@@ -1,9 +1,8 @@
 class Rubyfmt < Formula
   desc "Ruby autoformatter"
   homepage "https://github.com/fables-tales/rubyfmt"
-  url "https://github.com/fables-tales/rubyfmt.git",
-      tag:      "v0.12.0",
-      revision: "6221b009587c39f326b376085c931eed25f42ebc"
+  url "https://github.com/fables-tales/rubyfmt/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "6972f8083a199bee4825ba03805baebd6e4203c543b5f96b716d6964f5628a87"
   license "MIT"
   head "https://github.com/fables-tales/rubyfmt.git", branch: "trunk"
 
@@ -41,12 +40,8 @@ class Rubyfmt < Formula
   uses_from_macos "zlib"
 
   def install
-    # Work around build failure with recent Rust
-    # Issue ref: https://github.com/fables-tales/rubyfmt/issues/467
-    ENV.append_to_rustflags "--allow dead_code"
-
     system "cargo", "install", *std_cargo_args
-    bin.install "target/release/rubyfmt-main" => "rubyfmt"
+    bin.install bin/"rubyfmt-main" => "rubyfmt"
   end
 
   test do
