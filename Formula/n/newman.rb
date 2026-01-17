@@ -6,8 +6,7 @@ class Newman < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "293d0a0e52c8d5c1e3ddebee286788baa6329839f4e664ee12240f7c80b28831"
+    sha256 cellar: :any_skip_relocation, all: "5e59cba1703fcbc98551294a4b3ac984652d062e3f6ebff82ff7448dff88b0f6"
   end
 
   depends_on "node"
