@@ -6,7 +6,7 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/61/18/f13c9a462ef20893d30bd11c4089edee02b5ef1d31e1c2634da592732279/ansible-13.2.0.tar.gz"
   sha256 "fac46e202d1020027341659918b39e588dd7c43cef26537d7ca7fe51c324fe31"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
@@ -81,13 +81,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/5c/24/1dd85b64004103c2e60476d0fa8d78435f5fed9db1129cd2cd332784037a/boto3-1.42.29.tar.gz"
-    sha256 "247e54f24116ad6792cfc14b274288383af3ec3433b0547da8a14a8bd6e81950"
+    url "https://files.pythonhosted.org/packages/42/79/2dac8b7cb075cfa43908ee9af3f8ee06880d84b86013854c5cca8945afac/boto3-1.42.30.tar.gz"
+    sha256 "ba9cd2f7819637d15bfbeb63af4c567fcc8a7dcd7b93dd12734ec58601169538"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/70/08/8a8e0255949845f764c5126f97b1bc09a6484077f124c2177b979ecfbbff/botocore-1.42.29.tar.gz"
-    sha256 "0fe869227a1dfe818f691a31b8c1693e39be8056a6dff5d6d4b3fc5b3a5e7d42"
+    url "https://files.pythonhosted.org/packages/44/38/23862628a0eb044c8b8b3d7a9ad1920b3bfd6bce6d746d5a871e8382c7e4/botocore-1.42.30.tar.gz"
+    sha256 "9bf1662b8273d5cc3828a49f71ca85abf4e021011c1f0a71f41a2ea5769a5116"
   end
 
   resource "charset-normalizer" do
@@ -359,8 +359,8 @@ class Ansible < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do
