@@ -12,7 +12,7 @@ class Wartremover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "33e7b55a78ababfb289aa8e6e8f4dd2fe75ce6a4d1f0042fa32bb0325c2af087"
+    sha256 cellar: :any_skip_relocation, all: "6deb9199afe08a68daf66f923f9ddb568677790d20c1b2efafe2d8fb71cb6291"
   end
 
   depends_on "sbt" => :build
