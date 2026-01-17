@@ -9,12 +9,12 @@ class Dvc < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2026a804309f34c470c246391fcdda6c21245282fb6e47a7fcd3785ab6807018"
-    sha256 cellar: :any,                 arm64_sequoia: "b6c4b6230b7202a464a599f6164ee2f5b3a5e12d019fb61c5d3560ea73adbfec"
-    sha256 cellar: :any,                 arm64_sonoma:  "7b8a82df5090a5d137ab41a12d1205c016233332671df339d5e737be52b9e16f"
-    sha256 cellar: :any,                 sonoma:        "74f2809764b6c4b8bdfde4b2df9f56d049f04c20f021e60109be960c6fad5a87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3039dad3ab1e902fd59851b6038aa71d147250e5283c837b9680411b3aa3dbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df7cdec4d0bf89e3a6f9194fc053e77a36fd6ca611855fd94198bd57609d35c"
+    sha256 cellar: :any,                 arm64_tahoe:   "d519a0cac2968bd9523d181a52f62fea6e6714375a145e7a81b92a59695c4173"
+    sha256 cellar: :any,                 arm64_sequoia: "c1224cc286a1f4691dc0dd16cc5bd0c60ec49e714343742ac88a4cf79730908c"
+    sha256 cellar: :any,                 arm64_sonoma:  "29dca1c3da0d93170b54c888effc55c00bee3c1d481a913918a4e7f532784711"
+    sha256 cellar: :any,                 sonoma:        "c4d6364de13d60e717e6da982155a79f37801a950a329613ef6111fcc4099b05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa2cd4ef5cdbec073a08013bd92a632d86a17b4f98eb0106829cf5c850e417d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d24753857008617e3edb34dad2d202f33addc57be15580d19b6c307f3998c47"
   end
 
   depends_on "cmake" => :build # for pyarrow
