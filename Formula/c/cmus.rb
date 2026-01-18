@@ -32,14 +32,13 @@ class Cmus < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ccb3ef033e545c2f1610612c73c28ee5b2d195829f8a061137ff6345ba7198ec"
-    sha256 arm64_sequoia: "e09385ddb5a370d854f4608b76c5a263541547ac91b7cc4a6517e1f3099a19a3"
-    sha256 arm64_sonoma:  "a9d12ff2708a54953541bc5ae8ccb1ef3fd24aeb3365dbc8834337076faebd72"
-    sha256 arm64_ventura: "ae3c328349aeb668ccb369a9aa2a6147e6718aec702cffc145de37a0f3b82e0e"
-    sha256 sonoma:        "f67433b09c4f9f4c52ac189f99277c1698d8869196bf992265784b18ab63c443"
-    sha256 ventura:       "af29c51757aea6aaf9c7aab6758ec590e31f7f5e323a7c682f76496fb8e1599e"
-    sha256 arm64_linux:   "6d9800c3e1c74383aa02badeb42de89294de79afacb0fdeb7e09770e40ef9b4b"
-    sha256 x86_64_linux:  "6fa906d04b003647aec2093fa275eee0d2ca65d1601b6048b76dfa2016e0ba4e"
+    rebuild 1
+    sha256 arm64_tahoe:   "51b42ebc31527eea5562974b745eb1c961436282882ffed5a183e043a997987d"
+    sha256 arm64_sequoia: "9878efe2232228b9e5e67a588ebd22867bb0b13fb9d7155bb1c697d2ecaf0376"
+    sha256 arm64_sonoma:  "c13b26723f0d2547bb8fcc31d8437c738c437f01f4245b281e294e0c3928d7f7"
+    sha256 sonoma:        "09934b3459b7b8d617aa3f46f6a7012d245d92d85d70a3c46fd22f80d8dff083"
+    sha256 arm64_linux:   "5ac1322da5e1d6ab4dd872e5a50dfc938628f9d6e57d2454c8e6435c4eb004cf"
+    sha256 x86_64_linux:  "47bdd3c67a317fd239b8af7b6e0a177e16ba1047c729e30af4dfb4b6598ed878"
   end
 
   depends_on "pkgconf" => :build
