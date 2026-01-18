@@ -18,9 +18,15 @@ class Gifski < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "ffmpeg@6"
+  depends_on "ffmpeg"
 
   uses_from_macos "llvm" => :build
+
+  # Apply Arch Linux patch to support FFmpeg 8. Also used by Alpine Linux.
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/gifski/-/raw/592ebed61803fb8eb86fa8b5e33caec854e60ddf/ffmpeg-8.patch"
+    sha256 "ce67b34864c276a87b5e8324c06297d3c52bd8fd625fd38236d3473d23513039"
+  end
 
   def install
     system "cargo", "install", "--features", "video", *std_cargo_args
