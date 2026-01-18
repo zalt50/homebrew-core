@@ -9,14 +9,13 @@ class Spek < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a7906a3f0fb330c1e1646fdda11d561f67868b95144e2524e2a5563ba17c310"
-    sha256 cellar: :any,                 arm64_sequoia: "5d4388acbd2adc2e46f4efd39bfc028aa3235d3bc97aed3fb025e7b8387ca036"
-    sha256 cellar: :any,                 arm64_sonoma:  "f41ddbde93ab3cdbce6c949b3607a2d77068a7fff377d6902752636347a9c3f6"
-    sha256 cellar: :any,                 arm64_ventura: "228c5ca814faaef7d3d2182ecb10fda16e8d33bd4ff4194b61d8732f86687e81"
-    sha256 cellar: :any,                 sonoma:        "76e769f535f5e3a4139447ac9ac7348f660ee4bfb016cc2ed9bdc9d356fc2b8b"
-    sha256 cellar: :any,                 ventura:       "cf266c54c4e3b363c902715216e61a4ef90837b5ae36631e0700068d7eb20d4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be666699556a55ff1a7e9aea8b6615c7c4c26390d9dba1d54fef65c81afbf919"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361440ed42bfd45dc6c00d23839b5170e7be9e00231a131a882f645e712b7729"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b34b86506ec485c0484cbbe9dcfe85ad038197d3105fb675dc77e0e96b695d33"
+    sha256 cellar: :any,                 arm64_sequoia: "df8fa85d5512e450ccc2926781aec5008481653cfecdaddac231f8c86bd7b42f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c57e32cbbce35e350cb366266e1772720f1abb2ba53c555b3d6d46c0f8cc8a53"
+    sha256 cellar: :any,                 sonoma:        "4b2bcddb3709a988d2c1d4390801c45bc15e7e186e53b4ae18e5928cd0c4c02e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42e2043889ce46cf7176e1ad1da7eac5919ff7d3c17fe8d9fe514520d439f22e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ced6196710aeedae773b3edcbb4dd104e3ca6c50de51a29586b5365863dc70c"
   end
 
   depends_on "gettext" => :build
