@@ -1,8 +1,8 @@
 class Superseedr < Formula
   desc "BitTorrent Client in your Terminal"
   homepage "https://github.com/Jagalite/superseedr"
-  url "https://github.com/Jagalite/superseedr/archive/refs/tags/v0.9.30.tar.gz"
-  sha256 "641dccd58b7851ae0a903cc16f3557ff55f03f35716dd6078d0895d9ad145834"
+  url "https://github.com/Jagalite/superseedr/archive/refs/tags/v0.9.31.tar.gz"
+  sha256 "00dc6d26c8de5d515f42c7db2d29ce5e42d34abc0164aa7b01905a226865955c"
   license "GPL-3.0-or-later"
   head "https://github.com/Jagalite/superseedr.git", branch: "main"
 
