@@ -26,11 +26,11 @@ class VapoursynthImwri < Formula
   depends_on "pkgconf" => :build
 
   depends_on "imagemagick"
+  depends_on "libheif"
   depends_on "vapoursynth"
 
   on_macos do
     depends_on "jpeg-xl"
-    depends_on "libheif"
     depends_on "libtiff"
   end
 
