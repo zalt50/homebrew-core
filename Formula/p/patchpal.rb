@@ -23,11 +23,11 @@ class Patchpal < Formula
   depends_on "graphene"
   depends_on "gtk4"
   depends_on "harfbuzz"
+  depends_on "llvm"
   depends_on "pango"
 
   on_macos do
     depends_on "gettext"
-    depends_on "llvm"
   end
 
   on_linux do
