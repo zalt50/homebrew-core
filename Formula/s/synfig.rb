@@ -2,18 +2,15 @@ class Synfig < Formula
   desc "Command-line renderer"
   homepage "https://www.synfig.org/"
   # TODO: Update livecheck to track only stable releases when 1.6.x is available.
-  url "https://github.com/synfig/synfig/releases/download/v1.5.3/synfig-1.5.3.tar.gz"
-  sha256 "913c9cee6e5ad8fd6db3b3607c5b5ae0312f9ee6720c60619e3a97da98501ea8"
+  url "https://github.com/synfig/synfig/releases/download/v1.5.4/synfig-1.5.4.tar.gz"
+  sha256 "b8fb9d609e3aedebde7b0efa0c3de3b1fa5c4b61f5493b7f797b496a80f15fd0"
   license "GPL-3.0-or-later"
-  revision 4
   head "https://github.com/synfig/synfig.git", branch: "master"
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256                               arm64_tahoe:   "2949d65a521165cb25962acc9d6e3090d6c07e2b64ab9406857a180646d8503c"
@@ -50,6 +47,7 @@ class Synfig < Formula
   depends_on "libsigc++@2"
   depends_on "libtool"
   depends_on "libxml++"
+  depends_on "libzip"
   depends_on "mlt"
   depends_on "openexr"
   depends_on "pango"
