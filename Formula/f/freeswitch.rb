@@ -87,6 +87,7 @@ class Freeswitch < Formula
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "ldns"
+  depends_on "libks"
   depends_on "libpng"
   depends_on "libpq"
   depends_on "libsndfile"
@@ -100,14 +101,15 @@ class Freeswitch < Formula
   depends_on "speex"
   depends_on "speexdsp"
   depends_on "sqlite"
-  depends_on "util-linux"
 
   uses_from_macos "curl"
   uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
-  # https://github.com/Homebrew/homebrew/issues/42865
+  on_linux do
+    depends_on "util-linux"
+  end
 
   #----------------------- Begin sound file resources -------------------------
   sounds_url_base = "https://files.freeswitch.org/releases/sounds"
@@ -120,6 +122,11 @@ class Freeswitch < Formula
     url "#{sounds_url_base}/freeswitch-sounds-music-8000-#{moh_version}.tar.gz"
     version moh_version
     sha256 "2491dcb92a69c629b03ea070d2483908a52e2c530dd77791f49a45a4d70aaa07"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/signalwire/freeswitch/refs/tags/v#{LATEST_VERSION}/build/moh_version.txt"
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+    end
   end
   resource "sounds-music-16000" do
     url "#{sounds_url_base}/freeswitch-sounds-music-16000-#{moh_version}.tar.gz"
@@ -145,6 +152,11 @@ class Freeswitch < Formula
     url "#{sounds_url_base}/freeswitch-sounds-en-us-callie-8000-#{sounds_en_version}.tar.gz"
     version sounds_en_version
     sha256 "24a2baad88696169950c84cafc236124b2bfa63114c7c8ac7d330fd980c8db05"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/signalwire/freeswitch/refs/tags/v#{LATEST_VERSION}/build/sounds_version.txt"
+      regex(/^en-us-callie v?(\d+(?:\.\d+)+)$/i)
+    end
   end
   resource "sounds-en-us-callie-16000" do
     url "#{sounds_url_base}/freeswitch-sounds-en-us-callie-16000-#{sounds_en_version}.tar.gz"
@@ -166,14 +178,8 @@ class Freeswitch < Formula
 
   # There's no tags for now https://github.com/freeswitch/spandsp/issues/13
   resource "spandsp" do
-    url "https://github.com/freeswitch/spandsp.git",
-        revision: "67d2455efe02e7ff0d897f3fd5636fed4d54549e"
-  end
-
-  resource "libks" do
-    url "https://github.com/signalwire/libks.git",
-        tag:      "v2.0.8",
-        revision: "b148f20186dfc5f168b57d2cc64c61f783801d29"
+    url "https://github.com/freeswitch/spandsp/archive/67d2455efe02e7ff0d897f3fd5636fed4d54549e.tar.gz"
+    sha256 "aae3c3ae9f99311b2760bd344d28ab420f3b211f58355e010c8035cecf88ecfb"
   end
 
   resource "signalwire-c" do
@@ -190,20 +196,6 @@ class Freeswitch < Formula
       ENV.deparallelize { system "make", "install" }
 
       ENV.append_path "PKG_CONFIG_PATH", libexec/"spandsp/lib/pkgconfig"
-    end
-
-    resource("libks").stage do
-      system "cmake", ".", *std_cmake_args(install_prefix: libexec/"libks")
-      system "cmake", "--build", "."
-      system "cmake", "--install", "."
-
-      ENV.append_path "PKG_CONFIG_PATH", libexec/"libks/lib/pkgconfig"
-      ENV.append "CFLAGS", "-I#{libexec}/libks/include"
-
-      # Add RPATH to libks2.pc so libks2.so can be found by freeswitch modules.
-      inreplace libexec/"libks/lib/pkgconfig/libks2.pc",
-                "-L${libdir}",
-                "-Wl,-rpath,${libdir} -L${libdir}"
     end
 
     resource("signalwire-c").stage do
