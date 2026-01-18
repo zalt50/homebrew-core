@@ -1,8 +1,8 @@
 class CodebergCli < Formula
   desc "CLI for Codeberg"
   homepage "https://codeberg.org/Aviac/codeberg-cli"
-  url "https://codeberg.org/Aviac/codeberg-cli/archive/v0.5.3.tar.gz"
-  sha256 "2c61338400569660d069304a213d2f3bfc9ef8e9f541f561eb4da23a98304499"
+  url "https://codeberg.org/Aviac/codeberg-cli/archive/v0.5.4.tar.gz"
+  sha256 "dd19f9b4ada8759b8736303c24a04bc5c697d2ab72f8bbcfb13e84899cc6f635"
   license "AGPL-3.0-or-later"
   head "https://codeberg.org/Aviac/codeberg-cli.git", branch: "main"
 
