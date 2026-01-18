@@ -11,6 +11,15 @@ class Libks < Formula
   ]
   head "https://github.com/signalwire/libks.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f73a64c0f07c4391a8d65430fd5f634993a4e9f515ea7242ee66d4f4095c044a"
+    sha256 cellar: :any,                 arm64_sequoia: "a7e8dffe7957121f41ad61a87877170d701316647d25cee1be287b4d7cb9fcf4"
+    sha256 cellar: :any,                 arm64_sonoma:  "8659789bf2947c1ce0a865c46ec177f41b278eb0d054095c0b014bf8e4158816"
+    sha256 cellar: :any,                 sonoma:        "3a1e0878d7f81e5ddf99e93f8f1cd583b00e48f8b685da254a516e3ed5158b87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef344cc88ef01ac0e1375013469ee3c3197b5f1bb37b3cb4718815e8056c7278"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "706ed3466fd408dff3622234395571be20e522eaf07e0471cc32f8af5c3588de"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
