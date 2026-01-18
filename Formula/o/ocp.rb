@@ -1,10 +1,9 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.0.1.tar.xz"
-  sha256 "60a03d73883ea9c5dd94253907fc2002aa229e0fc41febb17d7baa341b228db1"
+  url "https://stian.cubic.org/ocp/ocp-3.1.1.tar.xz"
+  sha256 "33f5c780058eaf8098916b92ee4676c3d6bfce1a2abed39c19cd38154fdccba7"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
   livecheck do
@@ -51,19 +50,28 @@ class Ocp < Formula
     depends_on "alsa-lib"
   end
 
-  # pin to 15.0.6 to use precompiled fonts
+  # Fix qoaplay.c:226:5: error: expected expression
+  # PR ref: https://github.com/mywave82/opencubicplayer/pull/147
   resource "unifont" do
-    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-15.0.06/unifont-15.0.06.tar.gz"
-    sha256 "36668eb1326d22e1466b94b3929beeafd10b9838bf3d41f4e5e3b52406ae69f1"
+    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-16.0.02/unifont-16.0.02.tar.gz"
+    sha256 "f128ec8763f2264cd1fa069f3195631c0b1365366a689de07b1cb82387aba52d"
   end
+
+  patch do
+    url "https://github.com/mywave82/opencubicplayer/commit/9afa7489578258e6f07196a177dcbb7aa014ffe2.patch?full_index=1"
+    sha256 "f6dfa4da0815e5dd70ba7463c0ebbfb4e1a1965f9cac70e63e897c3b3dfe1c9c"
+  end
+
+  # pin to 16.0.02 to use precompiled fonts
+  # https://github.com/mywave82/opencubicplayer/blob/master/mingw/versionsconf.sh#L20
 
   def install
     # Required for SDL2
     resource("unifont").stage do |r|
       cd "font/precompiled" do
-        share.install "unifont-#{r.version}.ttf" => "unifont.ttf"
-        share.install "unifont_csur-#{r.version}.ttf" => "unifont_csur.ttf"
-        share.install "unifont_upper-#{r.version}.ttf" => "unifont_upper.ttf"
+        share.install "unifont-#{r.version}.otf" => "unifont.otf"
+        share.install "unifont_csur-#{r.version}.otf" => "unifont_csur.otf"
+        share.install "unifont_upper-#{r.version}.otf" => "unifont_upper.otf"
       end
     end
 
