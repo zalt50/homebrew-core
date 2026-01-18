@@ -1,8 +1,8 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.76.tar.gz"
-  sha256 "8a1ff544f754d560d35adfffd7938af69d48d2e46ca7e69e15fe71447f1fff03"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.81.tar.gz"
+  sha256 "91c202e98b2d86e4d2bf5d125bcd6d33233d748a508a1365186bc6d9c88b6dfe"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -16,20 +16,14 @@ class FreshEditor < Formula
 
   depends_on "rust" => :build
 
+  uses_from_macos "llvm" => :build # for libclang to build rquickjs-sys
+
   def install
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args(path: "crates/fresh-editor")
   end
 
   test do
-    # Test script mode: type text, save, and quit
-    commands = <<~JSON
-      {"type":"type_text","text":"Hello from Homebrew"}
-      {"type":"key","code":"s","modifiers":["ctrl"]}
-      {"type":"quit"}
-    JSON
-
-    pipe_output("#{bin}/fresh --no-session test.txt --log-file fresh.log", commands)
-    log_output = (testpath/"fresh.log").read.gsub(/\e\[\d+(;\d+)?m/, "")
-    assert_match "INFO fresh: Editor starting", log_output
+    assert_match version.to_s, shell_output("#{bin}/fresh --version")
+    assert_equal "high-contrast", JSON.parse(shell_output("#{bin}/fresh --dump-config"))["theme"]
   end
 end
