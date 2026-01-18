@@ -20,7 +20,7 @@ class Mpv < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on xcode: :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg-full"
   depends_on "jpeg-turbo"
   depends_on "libarchive"
   depends_on "libass"
@@ -119,6 +119,7 @@ class Mpv < Formula
     assert_match "vapoursynth", shell_output("#{bin}/mpv --vf=help")
 
     # Make sure `pkgconf` can parse `mpv.pc` after the `inreplace`.
+    ENV.append_path "PKG_CONFIG_PATH", Formula["ffmpeg-full"].opt_lib/"pkgconfig"
     system "pkgconf", "--print-errors", "mpv"
   end
 end
