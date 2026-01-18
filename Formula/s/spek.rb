@@ -19,21 +19,24 @@ class Spek < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "361440ed42bfd45dc6c00d23839b5170e7be9e00231a131a882f645e712b7729"
   end
 
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg"
   depends_on "wxwidgets"
 
   on_linux do
     depends_on "xorg-server" => :test
   end
 
+  # Apply commit from open PR for FFmpeg 8 support similar to FreeBSD and NixOS.
+  # PR ref: https://github.com/alexkay/spek/pull/338
+  patch do
+    url "https://github.com/alexkay/spek/commit/df8402575f1550d79c751051e9006fd3b7fa0fe0.patch?full_index=1"
+    sha256 "1ec33c6a2c0dd6d445368e233a3c0855c4607af902e2ca5dd48b2472df7df797"
+  end
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
-    system "make"
-
-    # https://github.com/alexkay/spek/issues/235
-    cp "data/spek.desktop.in", "data/spek.desktop" if OS.linux?
-
     system "make", "install"
   end
 
