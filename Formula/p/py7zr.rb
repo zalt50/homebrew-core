@@ -9,12 +9,12 @@ class Py7zr < Formula
   head "https://github.com/miurahr/py7zr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76e176ae724439be2fdb57ead788790e95cbe3e3c5dc7a26d0495e34edba428c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a6b7f7344bdac24401dc35317de15374ed269f91190f6d4244f96608e060f8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e1c42bec9c464152baba0f1952859e1f1c12979fda919b72e26968849290a61"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d71e877e3032ef07e045441ce1d78b0381359b28b1ad8b6381fd5cdac2119b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c64c8806a211bebcec79846abb38efb00c6bddda059bcd2a4bef8d96356308a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4376a9a488122f15d14d4a669f117de6f0243c2df459db443ab6bd52c3fa5ba9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "512ca004fa7a5233852a2ce5c1d346389999fc137b1e7d22e76a05426ec41637"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed0f3c6bc59d671f39e0699b510f47de2914e6571f2dbdf48292bd8082a79ddc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2bd932a1c3bcc66c6c8080aa86b76b32cd4f5f92338c9c7d96cf10ba67501a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93b22c3c5b747e709f35fba1ab47db02792ad766cb3c595bb380eb75e50eb9c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed79d4fe8efb6e16890f7d4fd3ce52adb63317ce4f7ff91536c4ae56f0d0bedf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "736d3eb7c4122879700be4fdb8a038b705c07d3423f82e9e80df9e1e41640593"
   end
 
   depends_on "python@3.14"
