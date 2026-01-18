@@ -4,8 +4,8 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/55/04/b6c2432a812ec3cbb184a124fbc45b75af63d89e6cb7bebf354635a22937/meta_package_manager-6.0.2.tar.gz"
-  sha256 "6d84f35f890414640f30d37c8ff7a3cfb35a0f96de277473ae637f2717fc304a"
+  url "https://files.pythonhosted.org/packages/38/55/3d0e52ca7363a6a16347f0730de828e238c9a4e4f226679be82582e76b1c/meta_package_manager-6.1.0.tar.gz"
+  sha256 "8e053d13ee1e8bd9026ab6c06f7cdad29816b534bbacea326763db9d1ea3ff7e"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
@@ -101,8 +101,8 @@ class MetaPackageManager < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/fb/df/73e313d4ecca7b703b6f369d9ed0c2c0d4d8a149e1c675e9915f8426a513/extra_platforms-6.0.0.tar.gz"
-    sha256 "ff0d392e390d2447183af4b300dd4569d2dbf760adf1e30c2b0cefb30ee58488"
+    url "https://files.pythonhosted.org/packages/8c/36/1cf59977458a824a759a38b8279c7d5e41d8de12368f3685d188a5cc3ce4/extra_platforms-7.0.0.tar.gz"
+    sha256 "e45d539ae667e59711d3d4c25bba36bf0a45af7d444a64f6d22466cec3826965"
   end
 
   resource "fqdn" do
