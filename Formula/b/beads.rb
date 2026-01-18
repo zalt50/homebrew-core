@@ -19,7 +19,14 @@ class Beads < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/bd"
+    ldflags = %W[
+      -s -w
+      -X main.Version=#{version}
+      -X main.Build=#{tap.user}
+      -X main.Commit=#{tap.user}
+      -X main.Branch=v#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags:), "./cmd/bd"
     bin.install_symlink "beads" => "bd"
 
     generate_completions_from_executable(bin/"bd", shell_parameter_format: :cobra)
