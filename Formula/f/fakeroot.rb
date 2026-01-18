@@ -1,10 +1,9 @@
 class Fakeroot < Formula
   desc "Provide a fake root environment"
   homepage "https://tracker.debian.org/pkg/fakeroot"
-  url "https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.37.1.2.orig.tar.gz"
-  sha256 "959496928c8a676ec8377f665ff6a19a707bfad693325f9cc4a4126642f53224"
+  url "https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.37.2.orig.tar.gz"
+  sha256 "0eea60fbe89771b88fcf415c8f2f0a6ccfe9edebbcf3ba5dc0212718d98884db"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/f/fakeroot/"
@@ -22,29 +21,15 @@ class Fakeroot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "41acec3bc608043a4a49fcca0008b90bbc45abc655d9b1c13b74577df13297a2"
   end
 
-  # Needed to apply patches below. Remove when no longer needed.
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-
   on_linux do
     depends_on "libcap" => :build
   end
 
-  # https://salsa.debian.org/clint/fakeroot/-/merge_requests/34/
-  patch :p1 do
-    # Fix for macOS
-    url "https://salsa.debian.org/clint/fakeroot/-/merge_requests/34/diffs.diff"
-    sha256 "0517ce18112d08cec2268dd2a5d78f033917454c68882665125d9e70c26983fc"
-  end
-
   def install
-    system "./bootstrap" # remove when patches are no longer needed
-
     args = ["--disable-silent-rules"]
     args << "--disable-static" if OS.mac?
 
-    system "./configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make"
     system "make", "install"
   end
