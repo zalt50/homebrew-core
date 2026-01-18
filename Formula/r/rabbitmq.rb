@@ -91,9 +91,19 @@ class Rabbitmq < Formula
 
   test do
     ENV["RABBITMQ_MNESIA_BASE"] = testpath/"var/lib/rabbitmq/mnesia"
+    ENV["RABBITMQ_CONFIG_FILE"] = testpath/"rabbitmq.conf"
+
+    mqtt_port = free_port
+    (testpath/"rabbitmq.conf").write <<~CONF
+      mqtt.listeners.tcp.default=#{mqtt_port}
+    CONF
+
     pid = spawn sbin/"rabbitmq-server"
     system sbin/"rabbitmq-diagnostics", "wait", "--pid", pid
     system sbin/"rabbitmqctl", "status"
     system sbin/"rabbitmqctl", "stop"
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
