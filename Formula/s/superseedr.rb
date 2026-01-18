@@ -7,12 +7,12 @@ class Superseedr < Formula
   head "https://github.com/Jagalite/superseedr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d81b6011cb52be1a0f6e3b21e7c8e8883def5b63c435cb2eda790a7114dc1ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "410bcc53e8d94a71d6469bc4afb68f43e7d8604d1dfb54cb6d391c3a09a92557"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e17176fef824ce58a3bfd5386fd763f0fcc9a3ef1d6d625378531e13eca786d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "159cb9447c7d9846dc14c4a6a5416b7573c1e46315e55e80e55f4fdad8872a2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b15631ead8128b1b239a2e9f6999285ca64e1c7e85818b37de61703fbaafb52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c225e9ba6d22b283fc8884414b4a452330bd393701cecbcb96dda23247c1987e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96b9632585778abf7fdd476ef2ebf56a2fcc98ff6140d2e67f0a8bf6341d0e84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e3cb9da6de0c72fa251822d1388de035009986273468ec6d9bbbace763cc81f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0b1e77d62af3a7f255216f70279d65d23de9f9b92e88493369a991348e1e870"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47b36b37ecc4eded5db2e3d3f3e490a50546d113c86be45d7eac769139b32e96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46816cb3f844f86fe220c2976dcebf4653e726a6a24acc14c62cf36f8c0bae91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c45da8770b6eec0eaea3c91663a5f08ca24b87d02410ec5854daf01907a6aa96"
   end
 
   depends_on "pkgconf" => :build
