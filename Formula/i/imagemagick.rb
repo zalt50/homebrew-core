@@ -13,12 +13,12 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "70a4007af2df1cbceee0f1d245b9c3b63610c7e47ea17bafb6722964b401c8b3"
-    sha256 arm64_sequoia: "aa09d81bf684995f2b039a6fea27b58c5fa68d69af3b1111bc4f659a691e55ba"
-    sha256 arm64_sonoma:  "3a6ab91642e7cd983422eddfc2535c56365dad208e4ecc10b2162fab2029e55d"
-    sha256 sonoma:        "126ce8dfc0ac26bcc92193f6c27d49a9d79a9fa652cf56bb37107f2789736940"
-    sha256 arm64_linux:   "0e44e1adc76f7985b20ef49cbeb1a96128b748fc27c2c8d52b3b2e192744c38d"
-    sha256 x86_64_linux:  "97bf08e3d0a9dc3adaed58d3b6142bee0542de0add7c7882ccebf28f783a8949"
+    sha256 arm64_tahoe:   "aad5fc7749d91edf4f9f8340a9a89b042368dc353e7751ab3fa463e2c78ec336"
+    sha256 arm64_sequoia: "cb1edb6b9073b44f9a9a9a96e88f2061be3332a8a933e329540764f8cc0f2983"
+    sha256 arm64_sonoma:  "068e0c8ba5387c15421a00265147b04c3afdff8aa7c56cb1841c9a9c4467955a"
+    sha256 sonoma:        "d5b690a4b989f732c022673dc1a76ee566a10d290c536435b7408f74ef96c1f5"
+    sha256 arm64_linux:   "724870b999a939457eb40326bdc8e8231b9a71f94a8b6cf50c19199b4b583df2"
+    sha256 x86_64_linux:  "f9f3f1107aa32df9e481fca5cf2ade56b6d22072283d83d9007d1234d724c78c"
   end
 
   depends_on "pkgconf" => :build
