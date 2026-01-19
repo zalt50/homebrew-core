@@ -1,8 +1,8 @@
 class Xgo < Formula
   desc "AI-native programming language that integrates software engineering"
   homepage "https://xgo.dev/"
-  url "https://github.com/goplus/xgo/archive/refs/tags/v1.5.3.tar.gz"
-  sha256 "af10b9e8d3980e4c4f4b9bf3d341e3d1dd72d1324ca26825b360c3ce865b7da0"
+  url "https://github.com/goplus/xgo/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "11b2389f189d74843b441f4fc9ebcbb36b0ee5e3787e72db5189af8de2f6b39b"
   license "Apache-2.0"
   head "https://github.com/goplus/xgo.git", branch: "main"
 
@@ -25,6 +25,10 @@ class Xgo < Formula
 
   def install
     ENV["GOPROOT_FINAL"] = libexec
+
+    # Add VERSION file
+    (buildpath/"VERSION").write version
+
     system "go", "run", "cmd/make.go", "--install"
 
     libexec.install Dir["*"] - Dir[".*"]
@@ -34,13 +38,14 @@ class Xgo < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/xgo version")
+
     system bin/"xgo", "mod", "init", "hello"
     (testpath/"hello.xgo").write <<~XGO
       println("Hello World")
     XGO
 
     # Run xgo fmt, run, build
-    assert_equal "v#{version}", shell_output("#{bin}/xgo env XGOVERSION").chomp
     system bin/"xgo", "fmt", "hello.xgo"
     assert_equal "Hello World\n", shell_output("#{bin}/xgo run hello.xgo 2>&1")
     system bin/"xgo", "build", "-o", "hello"
