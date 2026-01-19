@@ -5,6 +5,10 @@ class FzfTab < Formula
   sha256 "c83cdf6d50fe6af8bf4343bd27162949852041bdfe6e444e16db5e0be0cf7c74"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "24223cd008a939bd2cc6bbca48e8fa942ff8ef91dd304e35206fa9852e7ced2c"
+  end
+
   uses_from_macos "zsh"
 
   def install
