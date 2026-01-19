@@ -1,8 +1,8 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https://github.com/skim-rs/skim"
-  url "https://github.com/skim-rs/skim/archive/refs/tags/v0.20.5.tar.gz"
-  sha256 "c9b367bd37daa38b95a5da1e8f967279f4127168a38986b2f7d33a4b5fd413c2"
+  url "https://github.com/skim-rs/skim/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "e7c83b2d23beee56cc6e6818153f232834e6bb53b77192bcbb353f12762ff8d6"
   license "MIT"
   head "https://github.com/skim-rs/skim.git", branch: "master"
 
@@ -25,7 +25,7 @@ class Sk < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "skim")
+    system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"sk", "--shell")
     bash_completion.install "shell/key-bindings.bash"
