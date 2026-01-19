@@ -5,6 +5,10 @@ class Vtsls < Formula
   sha256 "f065ff01476d71395caad2647fb56539bb80131f37081767b2aeee8586cbc0c9"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "de419b0bdd589e5c05682892abd17adef45bda4568a150001a326cdcddc0659d"
+  end
+
   depends_on "node"
 
   def install
