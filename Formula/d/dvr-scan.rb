@@ -3,11 +3,9 @@ class DvrScan < Formula
 
   desc "Extract scenes with motion from videos"
   homepage "https://www.dvr-scan.com/"
-  url "https://files.pythonhosted.org/packages/8c/9e/b4772f3c942a00a1ea7cce8055958e503292d314bff51feda1429a271f7a/dvr_scan-1.7.tar.gz"
-  version "1.7.0.1"
-  sha256 "f7036f8e679cd14bb61417266b1f8cff4f365a00227bff3d6ed75200f33e5c53"
+  url "https://files.pythonhosted.org/packages/36/a0/ebc12a29cbc069d7b7ac2144372f6f219d659854b2d04e06576597ccbeff/dvr_scan-1.8.2.tar.gz"
+  sha256 "ec571e154ae845eeab9769d5c80e8b1ef007ef512a472a5269a02b6233ac2a72"
   license "BSD-2-Clause"
-  revision 5
   head "https://github.com/Breakthrough/DVR-Scan.git", branch: "main"
 
   bottle do
@@ -24,13 +22,14 @@ class DvrScan < Formula
   depends_on "ffmpeg"
   depends_on "numpy"
   depends_on "opencv"
+  depends_on "pillow"
   depends_on "python@3.14"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
-  pypi_packages exclude_packages: "numpy",
+  pypi_packages exclude_packages: %w[numpy opencv-contrib-python pillow],
                 extra_packages:   "pyobjc-framework-cocoa"
 
   resource "click" do
@@ -39,13 +38,13 @@ class DvrScan < Formula
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/83/36/cce2972e13e83ffe58bc73bfd9d37340b5e5113e8243841a57511c7ae1c2/cython-3.2.1.tar.gz"
-    sha256 "2be1e4d0cbdf7f4cd4d9b8284a034e1989b59fd060f6bd4d24bf3729394d2ed8"
+    url "https://files.pythonhosted.org/packages/91/85/7574c9cd44b69a27210444b6650f6477f56c75fee1b70d7672d3e4166167/cython-3.2.4.tar.gz"
+    sha256 "84226ecd313b233da27dc2eb3601b4f222b8209c3a7216d8733b031da1dc64e6"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pyobjc-core" do
