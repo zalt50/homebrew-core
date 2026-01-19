@@ -5,6 +5,13 @@ class Sandvault < Formula
   sha256 "c7a3494816c09bddbddfb9598a8f40befa4a2ac42963522fdc9655a24af0ca53"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd10315ee1862bf1937f6a7f897a3686930478b5c1fe396872a9f8f0e55843c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd10315ee1862bf1937f6a7f897a3686930478b5c1fe396872a9f8f0e55843c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd10315ee1862bf1937f6a7f897a3686930478b5c1fe396872a9f8f0e55843c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "20bfdf0f67e2ab1f5c4cd5b2691b7046e3d8b7e94f7a0c8c94983c9858354faf"
+  end
+
   depends_on :macos
 
   def install
