@@ -9,12 +9,12 @@ class DvrScan < Formula
   head "https://github.com/Breakthrough/DVR-Scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "615f45d4bf1fa68e406b53b8b199c56776b9510a54f901e8c43acea13fa6d4c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bef76ecef9c331766417448b39593c6fefa12f07ee0dff6cff9d0a0d27798681"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c64e93888cf0690ef600f079f46fd2c9d68a78ae641ffc80fa2c75088cf76ab6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "432a6cb5df4718821b2bb715c8ac724c36ec5d22d262d1b20736ec88f19beba2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34e7f0780c54472d92672fb9ddb51390feab7a74c2e4f91b25d0ce919b101113"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7268cfd381609bb86410fb190c31a7d1fbff99e19173abc7b0339ad334a3afed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "464bddf177aeb6c154631675e314162fc3e1462bc9deb38ae99ac8018a103429"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8596755c7279f78f7fc5dd44e91ea2e5e214854ac0de87ccccc001a06d76d96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0034c3ff1658001475f364ad63d700dee62e60b08b1b5f45b9688cf16307bb71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2d5d5db27b73844d6a4e972696e4fd0de5c243ba9777f3a5ecd4f7f50572a59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "641ec3e00a7615df22dc06d476fab1e8388e35fab29967818f3daff6e1807a26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b02e8587351d6ae7e8b6b15698ec3d20129ba7f2f7c8490cd3fef86225030b8"
   end
 
   depends_on "cmake" => :build
