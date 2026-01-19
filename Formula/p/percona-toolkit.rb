@@ -1,10 +1,19 @@
 class PerconaToolkit < Formula
   desc "Command-line tools for MySQL, MariaDB and system tasks"
   homepage "https://www.percona.com/software/percona-toolkit/"
-  url "https://downloads.percona.com/downloads/percona-toolkit/3.7.1/source/tarball/percona-toolkit-3.7.1.tar.gz"
-  sha256 "d5abd944905e75800e29176aff7fdeb7062da212511e82c265be50ac03b4c19b"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
   head "https://github.com/percona/percona-toolkit.git", branch: "3.x"
+
+  stable do
+    url "https://downloads.percona.com/downloads/percona-toolkit/3.7.1/source/tarball/percona-toolkit-3.7.1.tar.gz"
+    sha256 "d5abd944905e75800e29176aff7fdeb7062da212511e82c265be50ac03b4c19b"
+
+    # Fix Makefile.PL to also install go tools
+    patch do
+      url "https://github.com/percona/percona-toolkit/commit/23be00fca557c7812ee0adfd3f9519429096d2ac.patch?full_index=1"
+      sha256 "1431e42904411c5011e174f94d7c0c063f9e4d6a2744ec76b7bf92f14ef01fda"
+    end
+  end
 
   livecheck do
     url "https://www.percona.com/products-api.php", post_form: {
