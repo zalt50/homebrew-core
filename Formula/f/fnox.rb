@@ -7,12 +7,12 @@ class Fnox < Formula
   head "https://github.com/jdx/fnox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4c781cee0f0bbeeb754eec480af42d9a1b34cea8197929a299f8d857d3741ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de848756d3f6de6c956a376df50bbcaada4b0d73bcdafaa7474d97cc9de2442f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea26b383731f0db37e618adf61aaf4dbb8f399121232dde2b5986e0f473daa35"
-    sha256 cellar: :any_skip_relocation, sonoma:        "974642ecbdc081042c08d6e94900e02f762d034c7d0e575bfbf4398ef9ebafdd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80d66598d13e32837dd6a98f888b2b8630ed79ecc834fbe6a84f9db025295aac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2765b82dfab84224afa3220b1c100342ed6d5511fe7b21858f3d3b29a2ff4676"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "850129cb773f52a13396408c4d1089f6490d844e1033a7b960f72379e544d922"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "659869427d0deacecc26f707814fd20dd7b5e0515a176788e3e50f6c8e35e86c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfed8a8b98ad59d7f27a1bda8c335d960a875bac9c81c9280ec822b6293b9794"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3947983253cf23bdbc3fb5b2480ab755e4f7be34c5df6f8a389bffa5f1094ea2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3423868f8c23ff75c98de4395e60975573231dca4e3ed54a93fd3df4d19445f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c526295118f1ebcd4e204295a9ac049106ed6836f2ab5f8b4ba4923ba352e391"
   end
 
   depends_on "pkgconf" => :build
