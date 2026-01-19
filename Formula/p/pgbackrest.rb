@@ -1,10 +1,9 @@
 class Pgbackrest < Formula
   desc "Reliable PostgreSQL Backup & Restore"
   homepage "https://pgbackrest.org"
-  url "https://github.com/pgbackrest/pgbackrest/archive/refs/tags/release/2.57.0.tar.gz"
-  sha256 "d794519c0ecb4ec17f41c4267d07fe80ab6b3ac9cc1de5c7984887c5e6d7448a"
+  url "https://github.com/pgbackrest/pgbackrest/archive/refs/tags/release/2.58.0.tar.gz"
+  sha256 "2517ec0a7f66be0f1bc77795c3a19cd41c4b106699321d3ac511bc539dd2bfca"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "d3cf07a615ec618eb8dbdc3cefa03ce8dd3895d3d6a5557116b7b5e431a48ab6"
