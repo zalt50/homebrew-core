@@ -1,8 +1,8 @@
 class TodoistCli < Formula
   desc "CLI for Todoist"
   homepage "https://github.com/sachaos/todoist"
-  url "https://github.com/sachaos/todoist/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "b8220ec1ec14f298afed0e32e4028067b8833553a6976f99d7ee35b7a75d5a71"
+  url "https://github.com/sachaos/todoist/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "2987f9919b61609e121aaee4fd3296c40c7e5437784c84eb707a55dc0757ad9b"
   license "MIT"
   head "https://github.com/sachaos/todoist.git", branch: "master"
 
