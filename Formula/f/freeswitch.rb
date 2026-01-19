@@ -69,13 +69,13 @@ class Freeswitch < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "f242f81b7d51d7508fda54b6c733bc4c1b32ea83b4b88d3ddba83465bee05dc0"
-    sha256 arm64_sequoia: "22c26fbbba270a2ff54f11cdcc272bad656af8d594f921039afa246fefd1f15f"
-    sha256 arm64_sonoma:  "b720f921e808967c121436b6b397bcea568793595418df361ba2b3a7fdcadfab"
-    sha256 sonoma:        "1ec22357741dbfb505410fb992ae391ded48f03bf500dd550ff16d3fcd5e7c22"
-    sha256 arm64_linux:   "c50815be96dba1fd11234d3c9b21bf0eb1f1150e5c45c924b796c33f7af4d91d"
-    sha256 x86_64_linux:  "c0fe050fad77c2eaa8c7633d9f51384c6f38dcd578b0f08b06171c9bab2bc848"
+    rebuild 4
+    sha256 arm64_tahoe:   "9cb8409408cc01cc8e19a512f9eda755f265a04f206a73d8e4f1603fb83f6952"
+    sha256 arm64_sequoia: "26ad3b1d0473455bc8de23fb19319039bba987ccd691cf6f056a4bd2f287fc03"
+    sha256 arm64_sonoma:  "e10676bb9b427165069892057a399218500dba99b5f8ab6830ef425cb88d6dfe"
+    sha256 sonoma:        "86246d29684a3845246c201c54ab73c3b521b7a9cbd690cd98e649f4efc38b47"
+    sha256 arm64_linux:   "7ac4e295edcb214731c6f0acbf463e44828b33e2ebd773dbc78611cac146f75b"
+    sha256 x86_64_linux:  "c38b84dcd8b19b037354c7924ed564b942b517f1634844075b2e37d307aaf1d0"
   end
 
   depends_on "autoconf" => :build
