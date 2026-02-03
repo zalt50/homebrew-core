@@ -4,7 +4,7 @@ class Gromacs < Formula
   url "https://ftp.gromacs.org/pub/gromacs/gromacs-2026.0.tar.gz"
   sha256 "229726f436cc515bfd8c4aa7af3a97b18072f71b5ebd0b08daf6565571e2d9eb"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.gromacs.org/pub/gromacs/"
@@ -73,6 +73,7 @@ class Gromacs < Formula
       -DGMX_USE_LMFIT=EXTERNAL
       -DGMX_USE_MUPARSER=EXTERNAL
       -DGMX_SIMD=#{gmx_simd}
+      -DGMX_USE_RDTSCP=OFF
     ]
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
