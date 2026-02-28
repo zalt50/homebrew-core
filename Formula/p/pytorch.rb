@@ -3,9 +3,11 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
+  # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
   url "https://github.com/pytorch/pytorch/releases/download/v2.10.0/pytorch-v2.10.0.tar.gz"
   sha256 "fa8ccbe87f83f48735505371c1c313b4aa6db400b0ae4f8a02844d1e150c695f"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -32,8 +34,8 @@ class Pytorch < Formula
   depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
   depends_on "openblas"
-  depends_on "protobuf"
-  depends_on "pybind11"
+  depends_on "protobuf@33"
+  # TODO: depends_on "pybind11"
   depends_on "sleef"
 
   on_macos do
@@ -134,7 +136,7 @@ class Pytorch < Formula
     ENV["USE_NNPACK"] = "OFF"
     ENV["USE_OPENMP"] = "ON"
     ENV["USE_SYSTEM_EIGEN_INSTALL"] = "ON"
-    ENV["USE_SYSTEM_PYBIND11"] = "ON"
+    ENV["USE_SYSTEM_PYBIND11"] = "OFF"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
     ENV["USE_KLEIDIAI"] = "OFF"
@@ -156,7 +158,7 @@ class Pytorch < Formula
 
     # Expose C++ API
     torch = venv.site_packages/"torch"
-    include.install_symlink ((torch/"include").children - [torch/"include/fmt"])
+    include.install_symlink ((torch/"include").children - [torch/"include/fmt", torch/"include/pybind11"])
     lib.install_symlink (torch/"lib").children
     (share/"cmake").install_symlink (torch/"share/cmake").children
   end
