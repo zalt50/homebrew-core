@@ -3,7 +3,7 @@ class Virtuoso < Formula
   homepage "https://virtuoso.openlinksw.com"
   url "https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.16.1/virtuoso-opensource-7.2.16.tar.gz"
   version "7.2.16.1"
-  sha256 "0a70dc17f0e333d73307c9c46e8a7a82df70a410ddfe027a5bf7ba6c9204a928"
+  sha256 "7e1d5842840f0b4d967c6c668187959a62414f39698e6ee53793c24594f7bbe7"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
@@ -32,11 +32,11 @@ class Virtuoso < Formula
   uses_from_macos "gperf" => :build
   uses_from_macos "python" => :build
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "net-tools" => :build
     depends_on "xz" # for liblzma
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "unixodbc", because: "both install `isql` binaries"
