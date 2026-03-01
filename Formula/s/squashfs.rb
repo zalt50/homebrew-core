@@ -1,8 +1,8 @@
 class Squashfs < Formula
   desc "Compressed read-only file system for Linux"
   homepage "https://github.com/plougher/squashfs-tools"
-  url "https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.4.tar.gz"
-  sha256 "91c49f9a1ed972ad00688a38222119e2baf49ba74cf5fda05729a79d7d59d335"
+  url "https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.5.tar.gz"
+  sha256 "547b7b7f4d2e44bf91b6fc554664850c69563701deab9fd9cd7e21f694c88ea6"
   license "GPL-2.0-or-later"
   head "https://github.com/plougher/squashfs-tools.git", branch: "master"
 
@@ -32,6 +32,13 @@ class Squashfs < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Fix Darwin `struct stat` field selection (`st_atimespec` vs `st_atim`).
+  # Upstream PR ref: https://github.com/plougher/squashfs-tools/pull/356
+  patch do
+    url "https://github.com/plougher/squashfs-tools/commit/f88f4a659d6ab432a57e90fe2f6191149c6b343f.patch?full_index=1"
+    sha256 "3f3f568514c57fd50f508fef67e0e293a9668067801f42d4471b429a79bd1575"
   end
 
   def install
