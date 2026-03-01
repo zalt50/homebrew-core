@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.1.3.tar.xz"
-  sha256 "4e8579b18d47ba2f4c667f577aa3286f6f8c4ea0b6192ff743f0f21678e60afd"
+  url "https://stian.cubic.org/ocp/ocp-3.2.0.tar.xz"
+  sha256 "c2f6fe7edc89a2625ae22f88628f9bc294621cb49efaacb1cd42a4005920098a"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -33,7 +33,7 @@ class Ocp < Formula
   depends_on "libpng"
   depends_on "libvorbis"
   depends_on "mad"
-  depends_on "sdl2"
+  depends_on "sdl3"
 
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
@@ -48,17 +48,20 @@ class Ocp < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Fix qoaplay.c:226:5: error: expected expression
-  # PR ref: https://github.com/mywave82/opencubicplayer/pull/147
-  # pin to 16.0.02 to use precompiled fonts
   # https://github.com/mywave82/opencubicplayer/blob/master/mingw/versionsconf.sh#L20
   resource "unifont" do
-    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-16.0.02/unifont-16.0.02.tar.gz"
-    sha256 "f128ec8763f2264cd1fa069f3195631c0b1365366a689de07b1cb82387aba52d"
+    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-17.0.03/unifont-17.0.03.tar.gz"
+    sha256 "9a26aa9adfa8eb1f91b0cd9b83e7f95ea9e14c6e85be71aa3ab0df5cb4e69c35"
+  end
+
+  # Fix clang parse failure for declarations after labels, upstream PR ref, https://github.com/mywave82/opencubicplayer/pull/168
+  patch do
+    url "https://github.com/mywave82/opencubicplayer/commit/af5e034a317abbf5e352fd371308fae47d0d1e58.patch?full_index=1"
+    sha256 "1c0d58d4097e1d439718b0eddfdf46c60f53721f3b66c9bf180b566de3f342f0"
   end
 
   def install
-    # Required for SDL2
+    # Required for SDL3
     resource("unifont").stage do |r|
       cd "font/precompiled" do
         share.install "unifont-#{r.version}.otf" => "unifont.otf"
