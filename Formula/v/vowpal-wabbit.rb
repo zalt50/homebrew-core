@@ -1,10 +1,9 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.10.0.tar.gz"
-  sha256 "9f4ec5cddf67af2c7aa9b380b23fe22c4b11e2109f2cbaa1314bdf3570749a4d"
+  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.0.tar.gz"
+  sha256 "ccf3810413bcf35314ebfacced3e2186b05d9d8fa6e4dfa9d2ef34ed7d9b50a5"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
@@ -32,17 +31,11 @@ class VowpalWabbit < Formula
     depends_on "sse2neon" => :build
   end
 
-  # Reported at https://github.com/VowpalWabbit/vowpal_wabbit/issues/4700
+  # Fix system RapidJSON packages that export include dirs but no CMake target.
+  # Upstream PR ref: https://github.com/VowpalWabbit/vowpal_wabbit/pull/4902
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/vowpal-wabbit/fmt11.diff"
-    sha256 "15f6f9013715bd1dc33456394b3f464aed863ef726479bb272a2f92db2ee7ea0"
-  end
-
-  # Apply open PR to support eigen 5.0.0
-  # PR ref: https://github.com/VowpalWabbit/vowpal_wabbit/pull/4720
-  patch do
-    url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/1c8a86786f415d44a001e64ba823c5f3e80f48a0.patch?full_index=1"
-    sha256 "035973d7b49ac3cf266700c4777950b2b0ded095114873110b75467bfe3c2199"
+    url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/887a1fdf2d3443b615bd8b4d066518eb84fbb693.patch?full_index=1"
+    sha256 "1204402159a276d31f0883dbdb3191ad6e5e084dcf90e7d8cd3d349c89f70ef5"
   end
 
   def install
