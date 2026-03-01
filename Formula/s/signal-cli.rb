@@ -1,8 +1,8 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.13.24.tar.gz"
-  sha256 "c76e290f5ae5f0490eaf7b1d5fe6089d1d1305ee2bebe836cb405f976dd8dbf1"
+  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "fe45bf77a3dd735aa677b24c88c5b6d6af653ed9d844d5bd79e5a1f264cd2d32"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -15,11 +15,11 @@ class SignalCli < Formula
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
-  depends_on "gradle@8" => :build # older version needed for `libsignal-client`
+  depends_on "gradle" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
-  depends_on "openjdk@21"
+  depends_on "openjdk"
 
   uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
@@ -29,16 +29,23 @@ class SignalCli < Formula
   # url=https://github.com/AsamK/signal-cli/releases/download/v$version/signal-cli-$version.tar.gz
   # curl -fsSL $url | tar -tz | grep libsignal-client
   resource "libsignal-client" do
-    url "https://github.com/signalapp/libsignal/archive/refs/tags/v0.87.0.tar.gz"
-    sha256 "bfa6415dfc05cd578b0428605d57ae2474b4c7f85236122a55ffce29bc7de2d9"
+    url "https://github.com/signalapp/libsignal/archive/refs/tags/v0.87.4.tar.gz"
+    sha256 "76b7e851475846e33c1dd0a95d60806a7db001c0911f28ff8903843a22ea8adf"
+
+    # Workaround for gradle 9.x
+    # PR ref: https://github.com/signalapp/libsignal/pull/653
+    patch do
+      url "https://github.com/signalapp/libsignal/commit/88cd7aa21e1d8db12188c8126f87d47182ae4d6c.patch?full_index=1"
+      sha256 "2c37d16b01cfc4bb62a56c6e8c3ba762c47affdcfc983bb33f5510eb99124d72"
+    end
   end
 
   def install
-    java_version = "21"
+    java_version = "25"
     ENV["JAVA_HOME"] = Language::Java.java_home(java_version)
 
     # FIXME: find a better way to handle resource version check as this can easily break
-    regexp = /^## \[#{Regexp.escape(version.to_s)}\].*\s+Requires libsignal-client version (\d+(?:\.\d+)+)/i
+    regexp = /^## \[#{Regexp.escape(version.to_s)}\](?:.*\s+){1,2}Requires libsignal-client version (\d+(?:\.\d+)+)/i
     libsignal_client_version = File.read("CHANGELOG.md")[regexp, 1]
     odie "Could not find libsignal-client version in CHANGELOG.md" if libsignal_client_version.blank?
 
