@@ -12,8 +12,6 @@ class Ldapvi < Formula
     regex(/href=.*?ldapvi[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "74bc513ed1c36a4f5f71454e94d55bdf2386ec43c5d84106d54615f5c29d3b48"
     sha256 cellar: :any,                 arm64_sequoia:  "619197cac0a0f9f7c8df2d5ced5e42f95e421c645ae87b7ae0d44048cbec6359"
