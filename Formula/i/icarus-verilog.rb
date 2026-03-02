@@ -1,9 +1,9 @@
 class IcarusVerilog < Formula
   desc "Verilog simulation and synthesis tool"
   homepage "https://steveicarus.github.io/iverilog/"
-  url "https://github.com/steveicarus/iverilog/archive/refs/tags/v12_0.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/i/iverilog/iverilog_12.0.orig.tar.gz"
-  sha256 "a68cb1ef7c017ef090ebedb2bc3e39ef90ecc70a3400afb4aa94303bc3beaa7d"
+  url "https://github.com/steveicarus/iverilog/archive/refs/tags/v13_0.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/i/iverilog/iverilog_13.0.orig.tar.gz"
+  sha256 "c897bbfa9848688982c6d5c30529fc29d68df0b9ff22ffa73bad89db73a7ce49"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https://github.com/steveicarus/iverilog.git", branch: "master"
 
