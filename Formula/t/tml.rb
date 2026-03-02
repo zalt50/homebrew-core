@@ -1,8 +1,8 @@
 class Tml < Formula
   desc "Tiny markup language for terminal output"
   homepage "https://github.com/liamg/tml"
-  url "https://github.com/liamg/tml/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "68a87626aeba0859c39eebfe96d40db2d39615865bfe55e819feda3c7c9e1824"
+  url "https://github.com/liamg/tml/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "45824c36e810c568365d7f04c69900a0ef1abb46644f94a054cfe2d160999320"
   license "Unlicense"
   head "https://github.com/liamg/tml.git", branch: "master"
 
