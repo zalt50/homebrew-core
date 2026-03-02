@@ -7,7 +7,7 @@ class Quint < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "19a69a901a152ac9fb9e83a48b521548376aaec6c59c4e466c59379d8bdc2870"
+    sha256 cellar: :any_skip_relocation, all: "e23549d53ff802e620b55539f16ce88eda7d81298c5ec39104c1ebcd242a692d"
   end
 
   # Remove when Node 25 is fixed upstream: https://github.com/nodejs/node/issues/61971
