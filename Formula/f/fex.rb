@@ -5,11 +5,6 @@ class Fex < Formula
   sha256 "03043c8eac74f43173068a2e693b6f73d5b45f453a063e6da11f34455d0e374e"
   license "Apache-2.0"
 
-  livecheck do
-    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/semicomplete/downloads-page-1.json"
-    regex(/fex[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "176a130c8c8b14eee48303c89fcab8d8dd6534e43fb042d8fab5b30486e2641b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d0777ac160fda3d6860d6a7077e98e05e0a7a80f75c4c15e39c58699bd9c22ff"
