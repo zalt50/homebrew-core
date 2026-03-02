@@ -1,10 +1,9 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https://github.com/facebook/fb303"
-  url "https://github.com/facebook/fb303/archive/refs/tags/v2026.01.12.00.tar.gz"
-  sha256 "e455652551702d040b9ba7c9e3991f556c851fc513fd28b039a56127a1190dd5"
+  url "https://github.com/facebook/fb303/archive/refs/tags/v2026.03.02.00.tar.gz"
+  sha256 "194c458684b68cc51aec63b44fd7bd41f3260390fa181cc35ece07988a4d37f4"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
@@ -17,19 +16,15 @@ class Fb303 < Formula
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on "fizz" => [:build, :test]
   depends_on "mvfst" => [:build, :test]
   depends_on "fbthrift"
-  depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
-  depends_on "openssl@3"
 
   def install
-    # Workaround to build with glog >= 0.7 until fixed upstream
-    inreplace "CMakeLists.txt", /^find_package\(Glog MODULE /, "# \\0"
-
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
