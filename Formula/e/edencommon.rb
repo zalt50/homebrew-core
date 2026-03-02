@@ -1,10 +1,9 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.01.12.00.tar.gz"
-  sha256 "3b60d7dd939c5844b1758a843a37f42cfafda37536a4396eb3876cee70a844bd"
+  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.03.02.00.tar.gz"
+  sha256 "9d8a1cee7f5e95b11f67b7b553940b9e578eb699a33c5a75427b45b8172f8f4c"
   license "MIT"
-  revision 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
@@ -17,29 +16,25 @@ class Edencommon < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "fbthrift" => :build
+  depends_on "gflags" => :build
+  depends_on "glog" => :build
   depends_on "googletest" => :build
   depends_on "mvfst" => :build
   depends_on "wangle" => :build
   depends_on "boost"
   depends_on "fb303"
-  depends_on "fbthrift"
   depends_on "fmt"
   depends_on "folly"
-  depends_on "gflags"
-  depends_on "glog"
-  depends_on "openssl@3"
 
   def install
-    # Workaround to build with glog >= 0.7 until fixed upstream
-    inreplace "CMakeLists.txt", /^find_package\(Glog MODULE /, "# \\0"
-
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
-    inreplace buildpath.glob("eden/common/{os,utils}/test/CMakeLists.txt"),
-              /gtest_discover_tests\((.*)\)/,
-              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
-    inreplace "eden/common/utils/test/CMakeLists.txt",
-              /gtest_discover_tests\((.*)\)/,
-              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
+    # Related: https://gitlab.kitware.com/cmake/cmake/-/issues/26773
+    test_cmakelists = %w[
+      eden/common/os/test/CMakeLists.txt
+      eden/common/utils/test/CMakeLists.txt
+    ]
+    inreplace test_cmakelists, /(gtest_discover_tests\(.*)\)/, "\\1 DISCOVERY_TIMEOUT 60)"
 
     # Avoid having to build FBThrift py library
     inreplace "CMakeLists.txt", "COMPONENTS cpp2 py)", "COMPONENTS cpp2)"
@@ -49,9 +44,7 @@ class Edencommon < Formula
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    linker_flags = %w[-undefined dynamic_lookup -dead_strip_dylibs]
-    linker_flags << "-ld_classic" if OS.mac? && MacOS.version == :ventura
-    shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}" if OS.mac?
+    shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup -Wl,-dead_strip_dylibs" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "_build", *shared_args, *std_cmake_args
     system "cmake", "--build", "_build"
