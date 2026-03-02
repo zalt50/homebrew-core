@@ -12,11 +12,6 @@ class Cmigemo < Formula
     patch :DATA
   end
 
-  livecheck do
-    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/cmigemo/downloads-page-1.json"
-    regex(/cmigemo[._-]default[._-]src[._-]v?(\d{8})\.z/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "b8bf233fe044c8a2bd5bc24fc9bf11eed7aeb0464f67bd7d7ad48f6d9e8edbbf"
     sha256 cellar: :any,                 arm64_sequoia:  "68bc0630d1414e71d16c8a0f39add12897a7f874119a8eeae19e44f28df8706c"
