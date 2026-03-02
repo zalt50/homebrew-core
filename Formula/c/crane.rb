@@ -7,12 +7,12 @@ class Crane < Formula
   head "https://github.com/google/go-containerregistry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d277dd958813eb4effd94b232314cec31ceaf34e082545b09c3553687ce486ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d277dd958813eb4effd94b232314cec31ceaf34e082545b09c3553687ce486ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d277dd958813eb4effd94b232314cec31ceaf34e082545b09c3553687ce486ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0787d0f1bd29563a0573397662cde8b7786cfd489902772dcde108991a5dc3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "481b3ce1a79397faec8825f8e758b3a701945e3be78563150f0ad15a5f608be6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "125167071247cc372e694166ee487415089b026b6d0295cf898f487e06481869"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afe54e46ae44c1a5a5ea600d3b114aacb0161d7e62625e01dc1ba645a672471f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afe54e46ae44c1a5a5ea600d3b114aacb0161d7e62625e01dc1ba645a672471f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afe54e46ae44c1a5a5ea600d3b114aacb0161d7e62625e01dc1ba645a672471f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1e2f70f95fe1a1a19256a2b7d4c182ca8dbc2138eb3ea67c3b4dd18f21ec631"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a7870bb77c80f31197918707d286f63cbdd2552444499ffb931c5c4f1d9f452"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ee232e2b59bbc12cd1e83a7611fdfe79bb481ecddbe981ff3abee9ce3e1ef2d"
   end
 
   depends_on "go" => :build
