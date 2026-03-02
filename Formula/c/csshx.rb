@@ -8,11 +8,6 @@ class Csshx < Formula
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/brockgr/csshx.git", branch: "master"
 
-  livecheck do
-    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/csshx/downloads-page-1.json"
-    regex(/csshX[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "b8bdc972870bbf205b870ecd86251a2975d517f0da679aecdc0299b9472ef338"

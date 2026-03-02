@@ -5,11 +5,6 @@ class Aoeui < Formula
   sha256 "0655c3ca945b75b1204c5f25722ac0a07e89dd44bbf33aca068e918e9ef2a825"
   license "GPL-2.0-only"
 
-  livecheck do
-    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/aoeui/downloads-page-1.json"
-    regex(/aoeui[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5db4e6bc86d61cb543bba6cfc8f46bb1db2dd51314701866c881c50b09e4aab8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d884318d049fd6851389c8c37f7c0eb1042fbeb00c7cf7d0829ce6ab3d45d81d"

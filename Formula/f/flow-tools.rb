@@ -5,11 +5,6 @@ class FlowTools < Formula
   sha256 "80bbd3791b59198f0d20184761d96ba500386b0a71ea613c214a50aa017a1f67"
   license "BSD-2-Clause"
 
-  livecheck do
-    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/flow-tools/downloads-page-1.json"
-    regex(/flow-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     rebuild 2
     sha256 arm64_tahoe:   "c6ac8dfec95def2a25acdf33db6ddd896f473f64c402e415753a316d0eef78b1"
