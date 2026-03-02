@@ -6,6 +6,8 @@ class Killswitch < Formula
   license "BSD-3-Clause"
   head "https://github.com/vpn-kill-switch/killswitch.git", branch: "main"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a1f8910f36c6144ab78183ea8bc519dc3ec5e0ed00faffe5e6eb74c375e4c02"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ddae10928e2d9cde999613705ee3d2ab807035cb125b5f174b0f87117e1aeb8"
