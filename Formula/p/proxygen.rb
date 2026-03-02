@@ -1,10 +1,9 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://github.com/facebook/proxygen/releases/download/v2026.01.12.00/proxygen-v2026.01.12.00.tar.gz"
-  sha256 "66364e2119618a98f5c3ad62765b53d8bc2c34a9e51e0e861345aa7a5e87414f"
+  url "https://github.com/facebook/proxygen/releases/download/v2026.03.02.00/proxygen-v2026.03.02.00.tar.gz"
+  sha256 "9a6bfc54ad2adebd7dd2d1a9afc6c659601425a9abcbab0727fa22112b235106"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
@@ -40,15 +39,10 @@ class Proxygen < Formula
 
   conflicts_with "hq", because: "both install `hq` binaries"
 
-  # Fix name of `liblibhttperf2`.
-  # https://github.com/facebook/proxygen/pull/574
-  patch do
-    url "https://github.com/facebook/proxygen/commit/415ed3320f3d110f1d8c6846ca0582a4db7d225a.patch?full_index=1"
-    sha256 "4ea28c2f87732526afad0f2b2b66be330ad3d4fc18d0f20eb5e1242b557a6fcf"
-  end
-
   def install
-    args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    # FIXME: shared libraries are currently broken. Unlikely to get much upstream
+    # support given `BUILD_SHARED_LIBS` says: "This is generally discouraged".
+    args = ["-DBUILD_SHARED_LIBS=OFF", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     if OS.mac?
       args += [
         "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
