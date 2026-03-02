@@ -1,8 +1,8 @@
 class OpenclawCli < Formula
   desc "Your own personal AI assistant"
   homepage "https://openclaw.ai/"
-  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.2.26.tgz"
-  sha256 "b021c79864a673e86598f49ab3ad37c73ef923e54fb9b2feb9daf46ce5d3e860"
+  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.3.1.tgz"
+  sha256 "c4851a440981d67b7fe40fe578e09735bdfbb8d5744ee8bf4481eb861e01f618"
   license "MIT"
 
   bottle do
