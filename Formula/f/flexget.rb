@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/af/d0/c02557584dfe14cfffe42b5b2ed3955a56fd20a9d2fdb673ef47afaddbc7/flexget-3.18.52.tar.gz"
-  sha256 "8c0cb775d0c8e16aa506cb8acb6612fccbb4b57d620ddab43a8c896d031b0452"
+  url "https://files.pythonhosted.org/packages/ac/86/91cb61b072dbc733d2fded4ceeb7c71a3789447e3f9c2e060dff7460d143/flexget-3.18.53.tar.gz"
+  sha256 "3ec86e469eb7bbdb444f5099fc39d3f39fb20f6c24d407306452d4edf12383f1"
   license "MIT"
 
   bottle do
@@ -325,8 +325,8 @@ class Flexget < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/cd/4b/1e00561093fe2cd8eef09d406da003c8a118ff02d6548498c1ae677d68d9/sqlalchemy-2.0.47.tar.gz"
-    sha256 "e3e7feb57b267fe897e492b9721ae46d5c7de6f9e8dee58aacf105dc4e154f3d"
+    url "https://files.pythonhosted.org/packages/1f/73/b4a9737255583b5fa858e0bb8e116eb94b88c910164ed2ed719147bde3de/sqlalchemy-2.0.48.tar.gz"
+    sha256 "5ca74f37f3369b45e1f6b7b06afb182af1fd5dde009e4ffd831830d98cbe5fe7"
   end
 
   resource "tempora" do
