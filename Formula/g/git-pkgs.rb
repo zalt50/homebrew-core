@@ -6,6 +6,15 @@ class GitPkgs < Formula
   license "MIT"
   head "https://github.com/git-pkgs/git-pkgs.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04e94428ca28595ee6ff4f924265b374b25b744118c1466320347d86328988b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04e94428ca28595ee6ff4f924265b374b25b744118c1466320347d86328988b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04e94428ca28595ee6ff4f924265b374b25b744118c1466320347d86328988b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "751e5354aaff0eb436858d7cd45ac78597949429a21737b856bbfea2a83bbe3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dba7f711e2b5ea3e51515751ba81f4935c55bc2b725d32976040bc61c6cae44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "138ebff62bd21f6bb696013a7372245c7c1e701c0b28d73b3d0050c2bc2bb066"
+  end
+
   depends_on "go" => :build
 
   def install
