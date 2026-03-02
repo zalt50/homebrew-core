@@ -1,10 +1,9 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://github.com/facebook/wangle/archive/refs/tags/v2026.01.12.00.tar.gz"
-  sha256 "49b8e318a44e6bcdce37d79644ffd4efc7084621d08b6822cc357047819634ec"
+  url "https://github.com/facebook/wangle/archive/refs/tags/v2026.03.02.00.tar.gz"
+  sha256 "46ee6bdf3f2625e8ec1f7b26cad6faa3b4e58fc981148233fc433f9ac36f706b"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do
@@ -17,23 +16,19 @@ class Wangle < Formula
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on "libevent" => :build
   depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
-  depends_on "libevent"
-  depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "zstd"
-  uses_from_macos "bzip2"
 
   def install
     args = ["-DBUILD_TESTS=OFF"]
     # Prevent indirect linkage with boost, libsodium, snappy and xz
-    linker_flags = %w[-dead_strip_dylibs]
-    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}" if OS.mac?
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
     system "cmake", "-S", "wangle", "-B", "build/shared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build/shared"
