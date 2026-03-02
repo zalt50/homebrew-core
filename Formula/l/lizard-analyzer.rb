@@ -3,12 +3,12 @@ class LizardAnalyzer < Formula
 
   desc "Extensible Cyclomatic Complexity Analyzer"
   homepage "https://github.com/terryyin/lizard"
-  url "https://files.pythonhosted.org/packages/fd/09/52deafdd70a33461022bbc72e494d1e88e99e16818d09beda4fc001aaf31/lizard-1.21.0.tar.gz"
-  sha256 "35e62e2a42e06d379de4545f5866eb562c0b4fce5aeae779ec9dbda946e0b958"
+  url "https://files.pythonhosted.org/packages/4f/ae/a34e7a9b2b66bbf6b7dbc64ba5c926ff5003de5a85518ea8417c798d1e52/lizard-1.21.1.tar.gz"
+  sha256 "6217f65c4bc724262735e387340477e2931a19a685e95ea217619f76429c20e4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1a994a99de756f1ab73ff910c78edc439b0617fe8a4b2efc5182cdcc36f2e757"
+    sha256 cellar: :any_skip_relocation, all: "6c343e4061223be1607f22a812bd608ece6c7f00453e5ed1633713a3e0acbfa7"
   end
 
   depends_on "python@3.14"
