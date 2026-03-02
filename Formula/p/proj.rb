@@ -1,8 +1,8 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
   homepage "https://proj.org/"
-  url "https://github.com/OSGeo/PROJ/releases/download/9.7.1/proj-9.7.1.tar.gz"
-  sha256 "6c097dc803c561929cdfcc46e4bf9945ea977611fb31493ad14e88edaeae260f"
+  url "https://github.com/OSGeo/PROJ/releases/download/9.8.0/proj-9.8.0.tar.gz"
+  sha256 "a8b493b00cf4d08b712b9e063ed5e53e2be90fcde46770e9dbd773341f378f43"
   license "MIT"
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
