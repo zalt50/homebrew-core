@@ -16,12 +16,12 @@ class Meilisearch < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7b5c128c04d56e86bfdf7a1e3e703bd9d0974ea3fbfd084d7189f6442867e1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7397415ee6c6d7dcb3df28d41c0ce3a34e4ffb1eead17f4005719820b471b91c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a7b87b36e5fa09904f607179c13326b7f21059c5338c3e920ac33c3eea8fbed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e7102d2faccfd0c8ccdb64883309a13636e240865f08d791bad0749d7b89696"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2603dc339301d36bd7a69de20ea9089f4b97baae14744cafb150483c4d3ef95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75c793b5526a42e53fdd88c1e5cbff4544193a3e8875c77bd5bfb4145b9170f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e84f289d3633e499ed679254d10b8431a5fd33b71226f68d280cf8377495420a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c63bf2a047ca99271445d9bb1b5f47940f0b7353e40c1776afd1292d0dbc4bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e6a1a689ad954e5df7822e63015e35ed5a8928c7da014d9dbc352d0f3e045e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "65868f37ac51b9ccb1ef48f3741f80bb2c3abedf0f7c91d7511bf46b84093bef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fa1116c8e231bdd90511553bdb3a35042df8a0e37e3b2ebcc8a7055b0d6cadb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b054e469f096ccb8eea93173dca4b71e027c3c1b379be50c9284b582bd85a9d7"
   end
 
   depends_on "rust" => :build
