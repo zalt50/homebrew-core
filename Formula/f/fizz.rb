@@ -1,10 +1,9 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://github.com/facebookincubator/fizz/archive/refs/tags/v2026.01.12.00.tar.gz"
-  sha256 "b7ae5196273553ee2d04830120830c1f1604b9e96d78db9b58c2ef2b753580d2"
+  url "https://github.com/facebookincubator/fizz/archive/refs/tags/v2026.03.02.00.tar.gz"
+  sha256 "f5756c8a869ecbff50cc720816bb6c7f99b61b0581edcef0fad7f0b0cb98c3d8"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
@@ -18,11 +17,10 @@ class Fizz < Formula
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on "gflags" => :build
   depends_on "libevent" => :build
-  depends_on "double-conversion"
   depends_on "fmt"
   depends_on "folly"
-  depends_on "gflags"
   depends_on "glog"
   depends_on "libsodium"
   depends_on "openssl@3"
@@ -33,12 +31,17 @@ class Fizz < Formula
   end
 
   def install
-    args = ["-DBUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    args = %W[
+      -DBUILD_EXAMPLES=OFF
+      -DBUILD_TESTS=OFF
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
     if OS.mac?
       # Prevent indirect linkage with boost and snappy.
-      args += [
-        "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
-        "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
+      args += %w[
+        -DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs
+        -DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs
       ]
     end
     system "cmake", "-S", "fizz", "-B", "build", *args, *std_cmake_args
