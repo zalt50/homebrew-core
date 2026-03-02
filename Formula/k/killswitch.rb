@@ -7,10 +7,10 @@ class Killswitch < Formula
   head "https://github.com/vpn-kill-switch/killswitch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a1f8910f36c6144ab78183ea8bc519dc3ec5e0ed00faffe5e6eb74c375e4c02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ddae10928e2d9cde999613705ee3d2ab807035cb125b5f174b0f87117e1aeb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e2a297f1b904bd4115c86e655ff8d153d2a0afd4f5d3be3441a8c6a7429c555"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f0f6a769dd08ae5a45253cbbda6824813c5d585e2cb43d230b3925eb65ffc2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7a1663a4d840a24e873605173d5b3b268f1e658f348e11fdc65e59da8db1feb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e0ec09f4b48481274648ca33d56be42d804d1a24d4f607e1d12d9f228496807"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4366691141c65359723d291c0d2f0912d3738a90f3bfb650a8f16ad19b60577e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cdb2b9555122b312ebc31e7d79d9a5cd5d3afb98d3584d81f80327fc8bb62b29"
   end
 
   depends_on "rust" => :build
