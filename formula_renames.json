@@ -110,6 +110,7 @@
   "limbo": "turso",
   "llama": "walk",
   "mat": "mat2",
+  "mcp-scan": "snyk-agent-scan",
   "minizip2": "minizip-ng",
   "mist": "mist-cli",
   "mkl-dnn": "onednn",
