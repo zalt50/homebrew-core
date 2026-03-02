@@ -8,7 +8,10 @@ class Csshx < Formula
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/brockgr/csshx.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/csshx/downloads-page-1.json"
+    regex(/csshX[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     rebuild 1
