@@ -5,6 +5,15 @@ class Containerd < Formula
   sha256 "af5707a26891486332142cc0ade4f0c543f707d3954838f5cecee73b833cf9b4"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0850ba663dc8327abb6cce239020c9077e320787988288ae2c9abf3454e24a0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "097355bee19a21a1d2fd2a78fd0f06d48127525f808ff03eece6c4c10293bc21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8137c15e6528780e88964d58b56a3fe3f3603071ebd960f9241935270e436544"
+    sha256 cellar: :any_skip_relocation, sonoma:        "473049b263fea41fe437092dff651952cebd7879710d1e456d7e203902744276"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "920271989e5c33cb7fceb0402414005fc06b00bb4d186c0ba7714496951791f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f32a955582337a52580ad5c28d605b0930ea7945004686e6a38b2a068b99e6ec"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
