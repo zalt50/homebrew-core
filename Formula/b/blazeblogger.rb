@@ -5,7 +5,10 @@ class Blazeblogger < Formula
   sha256 "39024b70708be6073e8aeb3943eb3b73d441fbb7b8113e145c0cf7540c4921aa"
   license "GPL-3.0-only"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/blazeblogger/downloads-page-1.json"
+    regex(/blazeblogger[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     rebuild 3
