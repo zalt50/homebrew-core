@@ -1,17 +1,15 @@
 class Tinc < Formula
   desc "Virtual Private Network (VPN) tool"
   homepage "https://www.tinc-vpn.org/"
-  url "https://tinc-vpn.org/packages/tinc-1.0.36.tar.gz"
-  mirror "http://tinc-vpn.org/packages/tinc-1.0.36.tar.gz"
-  sha256 "40f73bb3facc480effe0e771442a706ff0488edea7a5f2505d4ccb2aa8163108"
+  url "https://tinc-vpn.org/packages/tinc-1.0.37.tar.gz"
+  mirror "http://tinc-vpn.org/packages/tinc-1.0.37.tar.gz"
+  sha256 "f63b7e21c32c4c637576d85f36bdd28ea678b5aa17fad02427645dea30e52ac7"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
     url "https://www.tinc-vpn.org/download/"
     regex(/href=.*?tinc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 3
