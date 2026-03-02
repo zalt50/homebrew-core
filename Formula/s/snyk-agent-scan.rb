@@ -7,6 +7,15 @@ class SnykAgentScan < Formula
   sha256 "5a169ba9cb8c6cca94ecd7dbc69e5ae20e4db57196294019a3583a80ee5a9bb8"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "7d4567faee17fb0e296029a8a0beae9e1da1320a6200693d2cb6daecf9a902fb"
+    sha256 cellar: :any,                 arm64_sequoia: "048171e354a8617da89e18808cb3c9594aef98071befe8f828ed774a9bea84a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "387296ff88f10ee2bf7497d6e7a7373847fe13b0ce7307895405db779a316c22"
+    sha256 cellar: :any,                 sonoma:        "e7b87cd022ef8d709c6ecae8d8e3d2028473076946d5baf01ed8ffd00dcd9913"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0e93a47ec23ae54ba4e362be45b124d37bad979571d1731833d005db436c163"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8f41940365e5c28639b99b98be5f1d3859e4bbd8480d8b6eebb6fb4be634bef"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
