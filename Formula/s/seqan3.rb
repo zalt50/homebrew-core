@@ -6,7 +6,7 @@ class Seqan3 < Formula
   license all_of: ["BSD-3-Clause", "CC-BY-4.0", "CC0-1.0", "MIT", "Zlib"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a635a8d9cfb3c75f5e2372778210d4e955fb600679f52303c325a2124a624bb5"
+    sha256 cellar: :any_skip_relocation, all: "50312c448c0fead8614ee076b90cdd71413ab0f2f80c2d76544f5bfc743f12b3"
   end
 
   depends_on "cereal" => :build
