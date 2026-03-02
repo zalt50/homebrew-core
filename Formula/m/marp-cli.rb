@@ -4,6 +4,7 @@ class MarpCli < Formula
   url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.2.3.tgz"
   sha256 "e5851716df96b0d5fbe3216e38b1f0ce8f7c6ea0bd1c00e712e77d9da56a2bc8"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "7af2e65036c931e145ac5239ceb623be4c743d0304fb30845d4299bdcce010af"
@@ -16,7 +17,9 @@ class MarpCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c18593d51a84e812d5bdba8784633a0a80f2e7cac84db0f915a7b7804fdcae7d"
   end
 
-  depends_on "node"
+  # Remove when Node 25 is fixed upstream: https://github.com/nodejs/node/issues/61971
+  # Formula-specific tracking: https://github.com/marp-team/marp-cli/issues/708
+  depends_on "node@24"
 
   def install
     system "npm", "install", *std_npm_args
