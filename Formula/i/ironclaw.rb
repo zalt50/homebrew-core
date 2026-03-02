@@ -7,12 +7,12 @@ class Ironclaw < Formula
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b9fe80bfcbb1c3cb6cb357ad4f36dc0d1e0035071a6b8e60361b77d24c23fd0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa894ef92305a14e24699485d542f5a6ee92d0cf6b83a0a3eabd37e69ef63307"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56ee18c1a8924c9699b96d3636ab32b43aeefaedc6da57f32c83b509c71eea1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbb56a8bc360be7bc28db1708c9dcac2f6840848c73ea66d52d1394635edca55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32053b0906add469e4bb9d60bb907372096e93e7f79c239752113928b613474d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e23b0057f8625599801a6fdf253b4419c97b2c8ce7e70751d86457f092f1c7b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f58bf5a240f67ff5d98b30ef29fbd6bc20ffcb9814e3f325b98fd05f0d673dfb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a263eaf7f051c201e2cd723a08e8e81bb371b7a54fc5c15861019b16ad15328"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c911f8f3e523a69149923cea567c1452a9d70a50fa21135cf77bf4deb8a49d3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a67872d4d425c3dddbae66fe147592658abf29ff5cff8016dd1406d0a3ab452c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aadb5d5b9464d08e8e792158912a0fea2c45bc6f2f258eedaa5476e4f7882289"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd9d3543d0463e372de3a43b7d46cd2e15506ca201d1510a8068ea5969cb2606"
   end
 
   depends_on "pkgconf" => :build
