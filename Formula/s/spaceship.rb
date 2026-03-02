@@ -6,6 +6,8 @@ class Spaceship < Formula
   license "MIT"
   head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2421657d8dcbacf2b8b3b6f855b852558f734265d37832713e5f9e1acd1176b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb18330c87bf3386c39397152cdeb50c528c0f5277301437785f34ae25df39df"
