@@ -5,7 +5,10 @@ class FlowTools < Formula
   sha256 "80bbd3791b59198f0d20184761d96ba500386b0a71ea613c214a50aa017a1f67"
   license "BSD-2-Clause"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url "https://storage.googleapis.com/google-code-archive/v2/code.google.com/flow-tools/downloads-page-1.json"
+    regex(/flow-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     rebuild 2
