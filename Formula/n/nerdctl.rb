@@ -19,8 +19,8 @@ class Nerdctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "f56a55ab70d05398e06c6c542b2a03e5d80424c3dcdb1c1263b5101d0c07f0aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c99ebeb05ea37c502feab10d6b1571e380e2f3adbcfe9403ef6b73913da7784"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c81283953a5fc7c7241d99b615ddd6d5bc15ca9c38aa0b7c7f1aca3f9531a88f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "482ba7a0f51fec5cb4ad63f904eeee97bfaf1ceb76e26504321d449478a4cc06"
   end
 
   depends_on "go" => :build
