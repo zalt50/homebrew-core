@@ -1,11 +1,10 @@
 class Ldapvi < Formula
   desc "Update LDAP entries with a text editor"
   homepage "http://www.lichteblau.com/ldapvi/"
-  url "https://deb.debian.org/debian/pool/main/l/ldapvi/ldapvi_1.7.orig.tar.gz"
-  mirror "http://www.lichteblau.com/download/ldapvi-1.7.tar.gz"
-  sha256 "6f62e92d20ff2ac0d06125024a914b8622e5b8a0a0c2d390bf3e7990cbd2e153"
+  url "https://github.com/ldapvi/ldapvi/releases/download/1.8/ldapvi-1.8.tar.gz"
+  mirror "http://www.lichteblau.com/download/ldapvi-1.8.tar.gz"
+  sha256 "359c84d61198c4b4b62930e21670c077c380a41a121f299313330907967949db"
   license "GPL-2.0-or-later"
-  revision 9
 
   livecheck do
     url :homepage
@@ -30,11 +29,11 @@ class Ldapvi < Formula
   depends_on "pkgconf" => :build
 
   depends_on "glib"
+  depends_on "libxcrypt" # for crypt.h
   depends_on "openssl@3"
   depends_on "popt"
   depends_on "readline"
 
-  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "openldap"
 
@@ -42,24 +41,7 @@ class Ldapvi < Formula
     depends_on "gettext"
   end
 
-  # These patches are applied upstream but release process seems to be dead.
-  # http://www.lichteblau.com/git/?p=ldapvi.git;a=commit;h=256ced029c235687bfafdffd07be7d47bf7af39b
-  # http://www.lichteblau.com/git/?p=ldapvi.git;a=commit;h=a2717927f297ff9bc6752f281d4eecab8bd34aad
-  patch do
-    url "https://deb.debian.org/debian/pool/main/l/ldapvi/ldapvi_1.7-10.debian.tar.xz"
-    sha256 "93be20cf717228d01272eab5940337399b344bb262dc8bc9a59428ca604eb6cb"
-    apply "patches/05_getline-conflict",
-          "patches/06_fix-vim-modeline"
-  end
-
   def install
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
-
-    # Fix compilation with clang by changing `return` to `return 0`.
-    inreplace "ldapvi.c", "if (lstat(sasl, &st) == -1) return;",
-                          "if (lstat(sasl, &st) == -1) return 0;"
-
     system "./configure", *std_configure_args
     system "make", "install"
   end
