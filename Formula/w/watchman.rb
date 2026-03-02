@@ -3,10 +3,9 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.01.12.00.tar.gz"
-  sha256 "5b6be267c159356a77511545b0608b0dcbd1dfa4c6277b0a5385fc221e85392a"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.03.02.00.tar.gz"
+  sha256 "c82c42560536d680e81ab25bdbb70a5595521d6086bfed3f39400ffcbd367e2b"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
@@ -20,8 +19,11 @@ class Watchman < Formula
 
   depends_on "cmake" => :build
   depends_on "cpptoml" => :build
+  depends_on "gflags" => :build
   depends_on "googletest" => :build
+  depends_on "libevent" => :build
   depends_on "mvfst" => :build
+  depends_on "openssl@3" => :build
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "rust" => :build
@@ -30,22 +32,17 @@ class Watchman < Formula
   depends_on "fbthrift"
   depends_on "fmt"
   depends_on "folly"
-  depends_on "gflags"
   depends_on "glog"
-  depends_on "libevent"
-  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.14"
 
   on_linux do
     depends_on "boost"
     depends_on "libunwind"
+    depends_on "openssl@3"
   end
 
   def install
-    # Workaround to build with glog >= 0.7 until fixed upstream
-    inreplace "CMakeLists.txt", "find_package(Glog REQUIRED)", "find_package(glog CONFIG REQUIRED)"
-
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
     #       RPATHs configured, so will need to be installed and relocated manually
