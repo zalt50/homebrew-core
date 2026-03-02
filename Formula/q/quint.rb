@@ -4,12 +4,15 @@ class Quint < Formula
   url "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.31.0.tgz"
   sha256 "f1ba3ac13f5fd5c1439cf6b6518a56b871ec6ac4c634b2044de23e7a3cc572a8"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "19a69a901a152ac9fb9e83a48b521548376aaec6c59c4e466c59379d8bdc2870"
   end
 
-  depends_on "node"
+  # Remove when Node 25 is fixed upstream: https://github.com/nodejs/node/issues/61971
+  # Formula-specific tracking: https://github.com/informalsystems/quint/issues/1926
+  depends_on "node@24"
 
   def install
     system "npm", "install", *std_npm_args
