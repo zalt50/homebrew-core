@@ -1,8 +1,8 @@
 class Uftrace < Formula
   desc "Function graph tracer for C/C++/Rust"
   homepage "https://uftrace.github.io/slide/"
-  url "https://github.com/namhyung/uftrace/archive/refs/tags/v0.18.1.tar.gz"
-  sha256 "c089e7f38dab8d17346d41cee0ec69dc60699d5527b54e6765712235577da0db"
+  url "https://github.com/namhyung/uftrace/archive/refs/tags/v0.19.tar.gz"
+  sha256 "c35ef25f279684fc7d79dcc250fb29386890870fd2c9f812e587151419ca01af"
   license "GPL-2.0-only"
   head "https://github.com/namhyung/uftrace.git", branch: "master"
 
