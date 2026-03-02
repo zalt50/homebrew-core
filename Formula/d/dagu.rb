@@ -1,8 +1,8 @@
 class Dagu < Formula
   desc "Lightweight and powerful workflow engine"
   homepage "https://dagu.sh"
-  url "https://github.com/dagu-org/dagu/archive/refs/tags/v2.0.2.tar.gz"
-  sha256 "a8422dc436d47e02e6ce53a2894b826933459a3f4c596f74417bcc96fd9691b5"
+  url "https://github.com/dagu-org/dagu/archive/refs/tags/v2.0.3.tar.gz"
+  sha256 "5eed941f57423c00746e056e946ffd6f9732343efd2e3dfe8d42488507ec33f8"
   license "GPL-3.0-only"
   head "https://github.com/dagu-org/dagu.git", branch: "main"
 
