@@ -20,6 +20,7 @@ class Mesa < Formula
     { "GPL-1.0-or-later" => { with: "Linux-syscall-note" } }, # include/drm-uapi/sync_file.h
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # include/drm-uapi/{d3dkmthk.h,dma-buf.h,etnaviv_drm.h}
   ]
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
@@ -51,7 +52,7 @@ class Mesa < Formula
   depends_on "libxcb"
   depends_on "libxext"
   depends_on "libxfixes"
-  depends_on "llvm@21"
+  depends_on "llvm"
   depends_on "spirv-llvm-translator"
   depends_on "spirv-tools"
   depends_on "xcb-util-keysyms"
