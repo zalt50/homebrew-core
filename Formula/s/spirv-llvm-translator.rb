@@ -1,9 +1,10 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
   homepage "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
-  url "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v21.1.5.tar.gz"
-  sha256 "704fb1d0244a688b97decafbb51deb11774a081d5ef31652245a2527b658e0a7"
+  url "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v22.1.0.tar.gz"
+  sha256 "a5d476404ab88ac0d148211da50428178c89caef8af8042a3ca8e71e58ed9427"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "13fbb287c6deb77ab112b8baadd5d5a53eb86d5ddaa9c60baa3f9bc8c0cf0508"
@@ -17,7 +18,7 @@ class SpirvLlvmTranslator < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "spirv-headers" => :build
-  depends_on "llvm@21"
+  depends_on "llvm"
 
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
