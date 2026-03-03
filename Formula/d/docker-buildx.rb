@@ -1,8 +1,8 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
-  url "https://github.com/docker/buildx/archive/refs/tags/v0.31.1.tar.gz"
-  sha256 "2f2069554305c9659dd4a2b4eb10c7aeab97e52e89cfeeda07f0c0c43d19ee80"
+  url "https://github.com/docker/buildx/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "37066119b8673590dda39a0fd578e1d886b447f4871fa948cb7009045d8eea4b"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
