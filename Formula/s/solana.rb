@@ -12,12 +12,12 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "147c7426b3fe385342475c4a7491441bcec15e9f73557cb26005c9c7505f677d"
-    sha256 cellar: :any,                 arm64_sequoia: "ef22b3b53fdfceef8df23d81709a8ef534d0d38f97e1e2d2455140f4caddd69a"
-    sha256 cellar: :any,                 arm64_sonoma:  "d7e5787e839fd3a7a61b4cebb02ee2e7b19a1be0ab503308aca084d1cad1247a"
-    sha256 cellar: :any,                 sonoma:        "173638d6e7cf4f2869d3bb4f8383909089f39bbaa0df049747861b298326f53d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cb623cac73eae2ece4b4ae422dcf4594978e85402f81049d6cb652c12f2048b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dae4d079886974e4bd81cf42e808ddcdfb4843eaec624b6804d2f29dbc09525c"
+    sha256 cellar: :any,                 arm64_tahoe:   "39bf27dc2595c7810a9c1d6fc46e692f89e4c998ad012c17c1440581c17c2420"
+    sha256 cellar: :any,                 arm64_sequoia: "18824ed0e51219508b2416146cbddc6f0290d4642fde82fdf2238a342b6a48fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "814c06b1f721b4ec8414c3557278f3610d3f2b63d3b8798b5c72b452bcc5cddf"
+    sha256 cellar: :any,                 sonoma:        "96ec435bef33a52c8d9c9776212239cef06cfb4bc47b9604739b8cfa73a802ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73213d63cf965fac72eaf681809ccdba9224a22071921e52ae71aeba001be9bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93d61f9989c4571fc9f81537f03040c00a4ff5fad5f5cbdbdd5f5b82c8812b78"
   end
 
   depends_on "llvm" => :build # for libclang
