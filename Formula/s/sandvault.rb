@@ -1,8 +1,8 @@
 class Sandvault < Formula
   desc "Run AI agents isolated in a sandboxed macOS user account"
   homepage "https://github.com/webcoyote/sandvault"
-  url "https://github.com/webcoyote/sandvault/archive/refs/tags/v1.1.25.tar.gz"
-  sha256 "9e03dd6e06e9f5eab3ca95a6df2756db510de626f276508f37db6f04561d1671"
+  url "https://github.com/webcoyote/sandvault/archive/refs/tags/v1.1.26.tar.gz"
+  sha256 "8fab751b233aa2de0606b240681ea27fcd5481e43d6ee3aacf643ac7ccd6ff9a"
   license "Apache-2.0"
 
   bottle do
@@ -19,6 +19,19 @@ class Sandvault < Formula
   def install
     prefix.install "guest", "sv"
     bin.write_exec_script "#{prefix}/sv"
+    guest_home_user.mkpath
+    ln_sf guest_home_user, prefix/"guest/home/user"
+  end
+
+  def guest_home_user
+    pkgetc/"guest_home_user"
+  end
+
+  def caveats
+    <<~EOS
+      sandvault's guest user home directory is #{guest_home_user}.
+      These files will be copied to the sandvault home directory during setup or rebuild.
+    EOS
   end
 
   test do
