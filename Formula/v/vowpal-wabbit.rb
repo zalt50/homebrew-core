@@ -1,8 +1,8 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.0.tar.gz"
-  sha256 "ccf3810413bcf35314ebfacced3e2186b05d9d8fa6e4dfa9d2ef34ed7d9b50a5"
+  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.1.tar.gz"
+  sha256 "de404fc500fadec3195cd0a38094056571f1c8065c26e64df40b49ac643c8a8b"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
@@ -28,13 +28,6 @@ class VowpalWabbit < Formula
 
   on_arm do
     depends_on "sse2neon" => :build
-  end
-
-  # Fix system RapidJSON packages that export include dirs but no CMake target.
-  # Upstream PR ref: https://github.com/VowpalWabbit/vowpal_wabbit/pull/4902
-  patch do
-    url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/887a1fdf2d3443b615bd8b4d066518eb84fbb693.patch?full_index=1"
-    sha256 "1204402159a276d31f0883dbdb3191ad6e5e084dcf90e7d8cd3d349c89f70ef5"
   end
 
   def install
