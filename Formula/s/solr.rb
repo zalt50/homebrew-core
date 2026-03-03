@@ -1,9 +1,9 @@
 class Solr < Formula
   desc "Enterprise search platform from the Apache Lucene project"
   homepage "https://solr.apache.org/"
-  url "https://dlcdn.apache.org/solr/solr/9.10.1/solr-9.10.1.tgz"
-  mirror "https://archive.apache.org/dist/solr/solr/9.10.1/solr-9.10.1.tgz"
-  sha256 "31dd91aeade540f4d7005cc1a1f7cc583ad77a78d800c9065cac06af1b097454"
+  url "https://dlcdn.apache.org/solr/solr/10.0.0/solr-10.0.0.tgz"
+  mirror "https://archive.apache.org/dist/solr/solr/10.0.0/solr-10.0.0.tgz"
+  sha256 "07c180970f60d13776be13ccb60c707d041e5e1a8b914d197d1358ac25f804b5"
   license "Apache-2.0"
 
   bottle do
@@ -19,7 +19,7 @@ class Solr < Formula
     (var/"log/solr").mkpath
     (var/"run/solr").mkpath
     prefix.install "licenses", "modules", "server"
-    bin.install "bin/solr", "bin/post"
+    bin.install "bin/solr"
 
     env = Language::Java.overridable_java_home_env
     env["SOLR_HOME"] = "${SOLR_HOME:-#{var}/lib/solr}"
