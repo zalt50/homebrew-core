@@ -4,6 +4,7 @@ class ClaudeAgentAcp < Formula
   url "https://registry.npmjs.org/@zed-industries/claude-agent-acp/-/claude-agent-acp-0.20.1.tgz"
   sha256 "6468b59590663f6304fe3e145b20a98b3c309087d5ec944787efc42bb623056c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/zed-industries/claude-agent-acp.git", branch: "main"
 
   bottle do
@@ -20,11 +21,15 @@ class ClaudeAgentAcp < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    ripgrep_path = libexec/"lib/node_modules/@zed-industries/claude-agent-acp" /
-                   "node_modules/@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
-    rm_r ripgrep_path
-    (bin/"claude-agent-acp").write_env_script libexec/"bin/claude-agent-acp",
-                                              USE_BUILTIN_RIPGREP: "1"
+    ripgrep_vendor_dir = libexec/"lib/node_modules/@zed-industries/claude-agent-acp" /
+                         "node_modules/@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
+    rm_r ripgrep_vendor_dir
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    ripgrep_platform = "#{arch}-#{OS.kernel_name.downcase}"
+    platform_dir = ripgrep_vendor_dir/ripgrep_platform
+    platform_dir.mkpath
+    ln_s Formula["ripgrep"].opt_bin/"rg", platform_dir/"rg"
+    bin.install_symlink libexec/"bin/claude-agent-acp"
   end
 
   test do
