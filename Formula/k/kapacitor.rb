@@ -2,8 +2,8 @@ class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
   url "https://github.com/influxdata/kapacitor.git",
-      tag:      "v1.8.2",
-      revision: "10da10eedc8af65e92ae49d6e121359f25cd4d57"
+      tag:      "v1.8.3",
+      revision: "7702d12d3565322d70a8b88273b218e6f11f8ab6"
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
@@ -43,6 +43,8 @@ class Kapacitor < Formula
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"
     # `flux` Workaround for `error: private item shadows public glob re-export`
     ENV.append_to_rustflags "--allow hidden_glob_reexports"
+    # `flux` Workaround for `error: value assigned to `<varname>` is never read`
+    ENV.append_to_rustflags "--allow unused_assignments"
 
     # Workaround to avoid patchelf corruption when cgo is required (for flux)
     if OS.linux? && Hardware::CPU.arch == :arm64
