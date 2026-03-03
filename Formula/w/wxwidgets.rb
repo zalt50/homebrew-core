@@ -1,9 +1,10 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.1/wxWidgets-3.3.1.tar.bz2"
-  sha256 "f936c8d694f9c49a367a376f99c751467150a4ed7cbf8f4723ef19b2d2d9998d"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.2/wxWidgets-3.3.2.tar.bz2"
+  sha256 "50a28cb668de47b0e006cd6ebed8cf4f76c1cac6116fb3c978c44478219103f2"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  compatibility_version 1
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -52,9 +53,6 @@ class Wxwidgets < Formula
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
     %w[catch pcre libwebp].each { |l| rm_r(buildpath/"3rdparty"/l) }
     %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath/"src"/l) }
-
-    # Work around removal of AGL in Tahoe
-    inreplace "configure", "-framework AGL", ""
 
     args = [
       "--enable-clipboard",
