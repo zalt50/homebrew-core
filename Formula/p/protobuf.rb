@@ -12,12 +12,12 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4bff0639995cb00420302c64dda3ae9eed6de24632fb158100e3ea05827ed844"
-    sha256 cellar: :any, arm64_sequoia: "67aa3f9858e52ac658dc3c27091a6be275bb618aa94b3fbcc0e52a8e2b486744"
-    sha256 cellar: :any, arm64_sonoma:  "aa983aa28a537848aef4673b3d184f07ee970f9271cda474c31ab11be487756f"
-    sha256 cellar: :any, sonoma:        "0c4ed6e9a1c0e917d9d29bb0e391123541b2e2e7f1cee8acff7324bbe9ae47e0"
-    sha256               arm64_linux:   "9a71cdbdefb4ac6b2b7cdff448f48df64a8c2b4a41c274227c7e320e10bea0d4"
-    sha256               x86_64_linux:  "38502c5697b730a7643bf04a72d01198ae494d114f11af1f0446595e9440b3a3"
+    sha256 cellar: :any, arm64_tahoe:   "5cc4e2b9f7717730d50bbfd6afb733b100b9982035a299f2b0967c330b9ab72a"
+    sha256 cellar: :any, arm64_sequoia: "8e178b16a3794c2b2058186ab2ea289f9bffb31a89e480d0928324effc95e116"
+    sha256 cellar: :any, arm64_sonoma:  "41e8ee14f2f1223a0a3b08730949142cec56356aa9430cd67a839c753f2c5281"
+    sha256 cellar: :any, sonoma:        "3ff6c9e7b524e6a09d4647fc4618f4075f3b45c9b93f01a49506fc299808d6e5"
+    sha256               arm64_linux:   "d85c8e5c591f6232f552633622e6a0237672627e25db0b676a7f3d4f6923dff6"
+    sha256               x86_64_linux:  "e1c26a0c9ec43bfafa7a6a4212cc24ed9cf5c8128e88e4808394ee432001e84b"
   end
 
   depends_on "cmake" => :build
