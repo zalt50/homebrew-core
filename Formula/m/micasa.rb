@@ -1,17 +1,17 @@
 class Micasa < Formula
   desc "TUI for tracking home projects, maintenance schedules, appliances and quotes"
   homepage "https://micasa.dev"
-  url "https://github.com/cpcloud/micasa/archive/refs/tags/v1.58.1.tar.gz"
-  sha256 "373f6d4ac2f6daf5ecffb1bc3f2d7d899b4e1bf1f6c01d8a2aeb636fafd69bd2"
+  url "https://github.com/cpcloud/micasa/archive/refs/tags/v1.59.0.tar.gz"
+  sha256 "c58ed77c70db1eaacee646af6d22400991cf78be4988dfe5215b2785fef9da8e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aec62721397f6315247876e97b0a9359e70629aec570e760db1883c81b8f8a9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aec62721397f6315247876e97b0a9359e70629aec570e760db1883c81b8f8a9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aec62721397f6315247876e97b0a9359e70629aec570e760db1883c81b8f8a9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "318ceedd90089e9ffdc519f7f04de58b12eeba7fc9b8dc3ae9d4add363115997"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f134155a7f2d8e042fd61f5faf2e011b0e1ea1cfdad2e51cd71bacea9b8a248d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "661eee999a7182745b72e1df7e7e2dd8db65bfd912e6bd631ac59f5e60fb0bff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35639236c0aae79c90936aba183cbce0d94e7c19a0e4a6121220751462ef7595"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35639236c0aae79c90936aba183cbce0d94e7c19a0e4a6121220751462ef7595"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35639236c0aae79c90936aba183cbce0d94e7c19a0e4a6121220751462ef7595"
+    sha256 cellar: :any_skip_relocation, sonoma:        "960d10235dc9f19863a1b480474907fea82fff6cc06927f4f0ea44cda583f167"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61a3b93f28d2e67ba177e3ead2a7e7b3f78f52f8f26ee40eefbf1e537a53f07d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d242c9194bdaded296105ac65bb34c9c9245da7fb63b6531ab03f96ef21345a"
   end
 
   depends_on "go" => :build
