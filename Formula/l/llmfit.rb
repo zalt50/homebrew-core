@@ -1,8 +1,8 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://github.com/AlexsJones/llmfit/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "8e99895e4c96bdf53721912aec4c7e394120b955ae52652934ba410d8e27812e"
+  url "https://github.com/AlexsJones/llmfit/archive/refs/tags/v0.5.7.tar.gz"
+  sha256 "ae6f19e0980dce28fb2dcc3c222881d08ae564a3ece7f58ff19cfb3bbf506ea3"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
