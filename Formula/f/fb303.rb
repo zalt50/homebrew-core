@@ -7,12 +7,12 @@ class Fb303 < Formula
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "a2ca11b554ea9b7110a5a897a78efe7c908e816d7ac7055d683378629239a331"
-    sha256                               arm64_sequoia: "af12a8e70f3c967fcf69ced337f68a5965f1aa22194f0af40e548d2db06a6ca1"
-    sha256                               arm64_sonoma:  "0390e77b75ddbccf590874c04c36e434554aea4a6e7cfde26bf3feadb13e3ae4"
-    sha256 cellar: :any,                 sonoma:        "5b266a720a5708b3676e4789ecc490ce3eea7b455a46fea786168325f67d3628"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a48765f312636e7109a0d8db061767d0805a7ffbd112ec2dddf5e025d6807995"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fc0acecdb8da793d006c74a8b8202282beff9f5d85fb80e2974394350a5d764"
+    sha256                               arm64_tahoe:   "cd3e338c6362d32d5d3c72c9c03feb6a78b418538ca91491d7e7e15aec44d398"
+    sha256                               arm64_sequoia: "cb0104b9d7db2343afe11d1d9081650306fddd35dc2ec81340b93c40c6597bd9"
+    sha256                               arm64_sonoma:  "5ad7f1d83b6ac5c81f4f5b84c61ad861fa1303f1ebf18d9f3da579ee24c13fe9"
+    sha256 cellar: :any,                 sonoma:        "9b3b7f7b3d29f8fd16cf21b328ebb6501f02ea5d69492e484c99f92fcfddaeeb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fb7641331aeab62e009b5be31fabaaac0f41948529aed129a121acbf634d18f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca440f3fc101e8d966857dca4199d0775fd8b07276edd7dab6e204e8434dae63"
   end
 
   depends_on "cmake" => [:build, :test]
