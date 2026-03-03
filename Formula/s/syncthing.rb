@@ -20,12 +20,9 @@ class Syncthing < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4461c4e8895cf94d94798fb3039b8bde2f83efe183f433fe167567fe2625de08"
   end
 
-  # unpin go when the 2.0.15 release is out containing https://github.com/syncthing/syncthing/pull/10570
-  depends_on "go@1.25" => :build
+  depends_on "go" => :build
 
   def install
-    odie "Check if pinning to go@1.25 can be removed" if build.stable? && version > "2.0.15"
-
     build_version = build.head? ? "v0.0.0-#{version}" : "v#{version}"
     system "go", "run", "build.go", "--version", build_version, "--no-upgrade", "tar"
     bin.install "syncthing"
