@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a0fdda1fd03e9ac43b7bf98b5b8b8e3590d717cc4936a69788a2f639427d05cc"
-    sha256 cellar: :any,                 arm64_sequoia: "d0d355c107a9bb790c56533f2c6767e501c74030178a44c294640fd787eaabaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "459fb06e00fa420c3e0f165f9b215970444dd05e231b2afce614a140413d3dc1"
-    sha256 cellar: :any,                 sonoma:        "75d4636396e71368fb941f5a2240157de54d4141baf63d0153aeb7cf85fa3dc4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abc83d16c4f66dd00e3414ffd858d85b4dac733cba2c7aea6b237b8763d12e89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361d534ba0ee52795488bed1f86bf03f42c82e28c946f58f21db443cb89ff6a6"
+    sha256 cellar: :any,                 arm64_tahoe:   "0803e61d1ead0e898d7b434b29c8ebb265bdd4a1d32d666d095f5c2feddefa60"
+    sha256 cellar: :any,                 arm64_sequoia: "7d915c04a1d91281df49034296491ef2700d30872726b164936553829b89e278"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e0de804a3645c25ba9d2ec35817ac06eb744155699111ba6f38b2a678bc9157"
+    sha256 cellar: :any,                 sonoma:        "f592ffdcb9eaccc62441b986fe1a19b4e4e7d7b95739174d172dbdbbae609aef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b0feb60f3daf5a159a7da42329e74ea67d66be346d953e9262723e0e7e4d3d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbde1580d7580c9bc86574f9007eb31a3d66ca7f151b4778bd630aec9b68f267"
   end
 
   depends_on "rust" => :build
