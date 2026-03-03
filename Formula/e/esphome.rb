@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/19/a3/fdc0c0bc33bd7757e8c185c64297dd6f7b4277bd19e8b4344264611c09d0/esphome-2026.2.2.tar.gz"
-  sha256 "6f389a439396498e65265b2273c4ff11ba356363c14fa02973046b0e9b63a1a2"
+  url "https://files.pythonhosted.org/packages/a5/04/deba33333825031543afcf006c30637ca884f4ccbe87298f4d5710162f11/esphome-2026.2.4.tar.gz"
+  sha256 "743e9c8ba5ca6b668e82270845ae95673d587c12d2281acaa3ae53edd23755a2"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -210,8 +210,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
-    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
+    url "https://files.pythonhosted.org/packages/f2/00/04a2ab36b70a52d0356852979e08b44edde0435f2115dc66e25f2100f3ab/protobuf-7.34.0.tar.gz"
+    sha256 "3871a3df67c710aaf7bb8d214cc997342e63ceebd940c8c7fc65c9b3d697591a"
   end
 
   resource "puremagic" do
