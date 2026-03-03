@@ -1,8 +1,8 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://github.com/epinio/epinio/archive/refs/tags/v1.13.8.tar.gz"
-  sha256 "8e9d9ef6a68f01d9db6b5cdea8d8f87e9809c995818580cff87e60fc3a44b4c0"
+  url "https://github.com/epinio/epinio/archive/refs/tags/v1.13.9.tar.gz"
+  sha256 "c87b5c7d04bdee6f24d48b2814ece147240b1edec72331d86c4b669d399a6be4"
   license "Apache-2.0"
 
   # Upstream creates a stable version tag ahead of release but a version isn't
