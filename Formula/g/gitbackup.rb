@@ -1,8 +1,8 @@
 class Gitbackup < Formula
   desc "Tool to backup your Bitbucket, GitHub and GitLab repositories"
   homepage "https://github.com/amitsaha/gitbackup"
-  url "https://github.com/amitsaha/gitbackup/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "aa24a246c47af92116e143c73535951645a7640a0ab97b3710347fc34f43f3d3"
+  url "https://github.com/amitsaha/gitbackup/archive/refs/tags/v1.1.tar.gz"
+  sha256 "b42949c3f4f273651e67e5bf935b6e0393f8553da2ea54a18bca0253960104f0"
   license "MIT"
   head "https://github.com/amitsaha/gitbackup.git", branch: "master"
 
