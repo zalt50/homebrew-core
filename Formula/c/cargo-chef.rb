@@ -6,12 +6,12 @@ class CargoChef < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62e91884f3f64b5eeaec0e99fb9715c696a334f8a1d2ebe430fbd662c03f7135"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d8a2612dff35394d64d1c2e1eaf212aa0e7f1f32574890ece147a3c207c5ac4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c290035620264b4925dded62080abad45f87aa8edaadde8e5c04e8e8952883fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "581bc92319e8a6746e96670a74135f1a5b9811a69531e23a6006f78b2ee91707"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d210ab392a7dd203e8753434a8b3a7b977983f284583f7a6889a10db5a6daf44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a8bae37c94f9914e7901d4c718c872c1bbec9502e8569a376832ab52a1ea864"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c45b8813553271bfbae374c11f760edd224c37411a5c28482f6d34b132631ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d91686db369ac488137f6994c7b5958d4804fc24c1faed6769e8d2fff46380c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5050048a71cba87740e9fc0fa814de334f4fdba524cc9e43bba93543cb7b7cc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b22e97f814149dd99954347b8205352da8bfe9b4ee3ef7232d082a7bde36ebf0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14cee3d7bc3583ee5de07bb6f4dad3958c643a5cca39007a92d360a4f739027c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7fd91806c14098b263c9bea21f199c7a3bcc5b11202f378fffe304d04dee9e8"
   end
 
   depends_on "rust" => :build
