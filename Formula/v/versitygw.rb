@@ -7,12 +7,12 @@ class Versitygw < Formula
   head "https://github.com/versity/versitygw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "599f02083d6463945b263c2428f8088155d8e78acf992fe7878ab4ffb5f9eb20"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17dfb8fee0935060618ad6a00dcd340a9dbecee479993147c42eed461fb5ec4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "170b9a347c574be1ddce878b81d61f0f7dea0db910f09492062ce281f1171bc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d396d8afeb799bac3948e6b8b3332fd880aeb50ce7612358d0e553009b5a759"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49acbb7c506ea9445cf4c05d569d5d2b1ebe47c596b92eed0528abb49cd3e43e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7e2b629e737afe476bba958b1bd2304a2db9d944f471f96a7a889b37e3c26e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f37e0dd51c3c2d0628f2ac32e748a81ea1a132978e6dfd782ac769a644a5919a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aa6de971fdcdc9b21f37f1ead55f80466ce811c6ecb84f774752d42866d05fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76fc125feef9af1a10bf53a8d30c1e12784ff61570adbb142ba8e4c6cfbb7f69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "751102a110a45752b39419d46ad36466995a3fdf6320e365c9f8584f0867d319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be55a808564c07ebe5c8264f3272dfeaa5fc472e83af2bc30d2f766dd5cac9ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baa9962f4b13f88f3142854cc1680d4dbb74a7cbafd94f11325bb302a4569181"
   end
 
   depends_on "go" => :build
