@@ -1,8 +1,8 @@
 class Ppsspp < Formula
   desc "PlayStation Portable emulator"
   homepage "https://ppsspp.org/"
-  url "https://github.com/hrydgard/ppsspp/releases/download/v1.20/ppsspp-1.20.tar.xz"
-  sha256 "f0121610759ba2adb877aafe97d772ce36e510b876f28ec36980b52b6d682d00"
+  url "https://github.com/hrydgard/ppsspp/releases/download/v1.20.1/ppsspp-1.20.1.tar.xz"
+  sha256 "063b224adc25c2b28e01c36033fff9b96e9e2b8d1004c6bb5db3d6f1b83b2e20"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
