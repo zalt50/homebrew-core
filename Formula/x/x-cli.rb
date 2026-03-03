@@ -22,6 +22,8 @@ class XCli < Formula
     depends_on "openssl@3"
   end
 
+  conflicts_with "xorg-server", "x-cmd", because: "both provide an `x` binary"
+
   def install
     # https://github.com/sferik/x-cli/issues/475
     inreplace "Cargo.toml", 'version = "6.0.0"', 'version = "5.0.0"'
