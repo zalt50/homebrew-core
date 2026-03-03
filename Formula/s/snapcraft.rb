@@ -5,8 +5,8 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https://github.com/canonical/snapcraft.git",
-      tag:      "8.14.1",
-      revision: "3fc9abd0b9006afe6c27ee8799644a1bcd04af8d"
+      tag:      "8.14.2",
+      revision: "8dd4ca40cbbe77c2aab3727c969345ec01c83025"
   license "GPL-3.0-only"
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
@@ -331,8 +331,8 @@ class Snapcraft < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/f8/bf/abbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aac/pytz-2025.2.tar.gz"
-    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
+    url "https://files.pythonhosted.org/packages/56/db/b8721d71d945e6a8ac63c0fc900b2067181dbb50805958d4d4661cf7d277/pytz-2026.1.post1.tar.gz"
+    sha256 "3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1"
   end
 
   resource "pyxdg" do
