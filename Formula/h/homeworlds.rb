@@ -4,7 +4,7 @@ class Homeworlds < Formula
   url "https://github.com/Quuxplusone/Homeworlds/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "3ffbad58943127850047ef144a572f6cc84fd1ec2d29dad1f118db75419bf600"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
   version_scheme 1
 
   bottle do
@@ -19,6 +19,13 @@ class Homeworlds < Formula
   end
 
   depends_on "wxwidgets"
+
+  # Fix missing `#include`.
+  # https://github.com/Quuxplusone/Homeworlds/pull/6
+  patch do
+    url "https://github.com/Quuxplusone/Homeworlds/commit/bb1a5d2395df4e097122b311c0009801107f4d3a.patch?full_index=1"
+    sha256 "a133fb4bdeb4a5d2759a7257989089402e0ad84edbaed86780c26d47e58b8d55"
+  end
 
   def install
     system "make", "homeworlds-cli", "homeworlds-wx"
