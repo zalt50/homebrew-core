@@ -13,7 +13,7 @@ class Yalantinglibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "568fa71f67ad66eec83342e688ef18c7b35dd6678d37343236fcafd497e61591"
+    sha256 cellar: :any_skip_relocation, all: "2f7c389133b7d4cdda2635e2285a0b399daaff862bd289c7209c9ef8bb01d61c"
   end
 
   depends_on "cmake" => :build
