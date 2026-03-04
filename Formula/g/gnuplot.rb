@@ -1,9 +1,17 @@
 class Gnuplot < Formula
   desc "Command-driven, interactive function plotting"
   homepage "http://www.gnuplot.info/"
-  url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.4/gnuplot-6.0.4.tar.gz"
-  sha256 "458d94769625e73d5f6232500f49cbadcb2b183380d43d2266a0f9701aeb9c5b"
   license "gnuplot"
+  revision 1
+
+  stable do
+    url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.4/gnuplot-6.0.4.tar.gz"
+    sha256 "458d94769625e73d5f6232500f49cbadcb2b183380d43d2266a0f9701aeb9c5b"
+
+    # Backport fix for Lua 5.5
+    # https://sourceforge.net/p/gnuplot/gnuplot-main/ci/4442080c7152ae6b3a541e6389c053bb9f5306fd/
+    patch :DATA
+  end
 
   livecheck do
     url :stable
@@ -74,3 +82,19 @@ class Gnuplot < Formula
     assert_path_exists testpath/"graph.txt"
   end
 end
+
+__END__
+--- a/term/lua/gnuplot-tikz.lua
++++ b/term/lua/gnuplot-tikz.lua
+@@ -2542,8 +2542,9 @@
+ 
+ term_help = function(helptext)
+   local w
+-  for w in string.gmatch(helptext, "([^\n]*)\n") do
+-    w = string.gsub(w, "\\", "\\\\")
++  local ww
++  for ww in string.gmatch(helptext, "([^\n]*)\n") do
++    w = string.gsub(ww, "\\", "\\\\")
+     w = string.gsub(w, "\"", "\\\"")
+     io.write('"'..w.."\",\n")
+   end
