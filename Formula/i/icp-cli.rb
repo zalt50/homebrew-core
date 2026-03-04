@@ -1,8 +1,8 @@
 class IcpCli < Formula
   desc "Development tool for building and deploying canisters on ICP"
   homepage "https://dfinity.github.io/icp-cli/"
-  url "https://github.com/dfinity/icp-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "98e79229b3b89b77aaa6237a5540ca719586e17501c7886dbfd5faf0a32d2364"
+  url "https://github.com/dfinity/icp-cli/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "4bbe414eff4abe90f625628e2a4a0affcb7440869ba92234cb153ca68f673e97"
   license "Apache-2.0"
 
   bottle do
