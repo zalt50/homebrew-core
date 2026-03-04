@@ -4,7 +4,7 @@ class Wxlua < Formula
   url "https://github.com/pkulchenko/wxlua/archive/refs/tags/v3.2.0.2.tar.gz"
   sha256 "62abe571803a9748e19e86e39cb0e254fd90a5925dc5f0e35669e693cbdb129e"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  revision 2
+  revision 3
   head "https://github.com/pkulchenko/wxlua.git", branch: "master"
 
   bottle do
@@ -19,15 +19,18 @@ class Wxlua < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "lua"
+  depends_on "lua@5.4"
   depends_on "wxwidgets@3.2"
 
   on_linux do
     depends_on "xorg-server" => :test
   end
 
+  def lua
+    Formula["lua@5.4"]
+  end
+
   def install
-    lua = Formula["lua"]
     lua_version = lua.version.major_minor
     wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula
     wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"
@@ -65,7 +68,7 @@ class Wxlua < Formula
       sleep 10
     end
 
-    assert_match "wxLua #{version}", shell_output("lua example.wx.lua")
+    assert_match "wxLua #{version}", shell_output("#{lua.bin}/lua example.wx.lua")
   ensure
     Process.kill("TERM", xvfb_pid) if xvfb_pid
   end
