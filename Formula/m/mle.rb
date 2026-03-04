@@ -4,6 +4,7 @@ class Mle < Formula
   url "https://github.com/adsr/mle/archive/refs/tags/v1.7.2.tar.gz"
   sha256 "5275fcfc58d3d4890d074077d94497db488b2648287b3e48e67b00ea517b02ba"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "f6b25000e7a6c630e4d82f5dbab514057fb7c07a419faea456ac3d732d304b29"
@@ -21,7 +22,7 @@ class Mle < Formula
   end
 
   depends_on "uthash" => :build
-  depends_on "lua"
+  depends_on "lua@5.4"
   depends_on "pcre2"
 
   def install
