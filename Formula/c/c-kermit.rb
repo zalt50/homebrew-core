@@ -31,6 +31,14 @@ class CKermit < Formula
   # Apply patch to fix build failure with glibc 2.28+
   # Apply patch to fix build failure on Sonoma (missing headers)
   # Will be fixed in next release: https://www.kermitproject.org/ckupdates.html
+  # Apply patch to fix memory corruption on macos where -DNOUUCP is used where an unintended codepath was taken.
+  # Patch for this soruced from beta 10.0:
+  # Notes on the bugfixes can be found in C-Kermit 10.0 NOTES.TXT lines 2533-2538 and 3356-3370
+  # Or in the code:
+  # ckucmd.c#L1694-L1696
+  # ckufio.c#L2746-L2748
+  # ckufio.c#L2827
+
   patch :DATA
 
   def install
@@ -186,3 +194,36 @@ index 2f3bb75..71b9080 100644
  #ifdef MAINTYPE
  /*
    If you get complaints about "main: return type is not blah",
+diff --git a/ckucmd.c b/ckucmd.c
+index 274dc2d..5364bfd 100644
+--- a/ckucmd.c
++++ b/ckucmd.c
+@@ -1577,7 +1577,7 @@ o_again:
+     }
+ #endif /* CK_TMPDIR */
+ 
+-    if (strcmp(s,CTTNAM) && (zchko(s) < 0)) { /* OK to write to console */
++    if ((strcmp(s,CTTNAM) == 0) && (zchko(s) < 0)) { /* write to console OK */
+ #ifdef COMMENT
+ #ifdef OS2
+ /*
+diff --git a/ckufio.c b/ckufio.c
+index b5bfaae..b1fb374 100644
+--- a/ckufio.c
++++ b/ckufio.c
+@@ -2596,6 +2596,7 @@ zchko(name) char *name; {
+ 	} else {
+ 	    debug(F101,"zchko open errno","",errno); 
+ 	    x = -1;
++        goto xzchko;
+ 	}
+     }
+ #endif	/* NOUUCP */
+@@ -2667,6 +2668,7 @@ zchko(name) char *name; {
+     debug(F100,"zchko swapped ids restored","",0);
+ #endif /* SW_ACC_ID */
+ 
++xzchko:                               /* Exit point */
+     if (x < 0)
+       debug(F111,"zchko access failed:",s,errno);
+     else
