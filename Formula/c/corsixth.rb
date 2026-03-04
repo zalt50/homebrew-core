@@ -4,6 +4,7 @@ class Corsixth < Formula
   url "https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.69.2.tar.gz"
   sha256 "cbad15f9a16edd4c068ce14fb17f39cdb811dab0135fca80fafffa9a45732aec"
   license "MIT"
+  revision 1
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -28,7 +29,7 @@ class Corsixth < Formula
   depends_on "ffmpeg"
   depends_on "freetype"
   depends_on "lpeg"
-  depends_on "lua"
+  depends_on "lua@5.4"
   depends_on "sdl2"
   depends_on "sdl2_mixer"
 
@@ -43,9 +44,14 @@ class Corsixth < Formula
     sha256 "1142c1876e999b3e28d1c236bf21ffd9b023018e336ac25120fb5373aade1450"
   end
 
+  # Make sure I point to the right version!
+  def lua
+    Formula["lua@5.4"]
+  end
+
   def install
-    # Make sure I point to the right version!
-    lua = Formula["lua"]
+    # https://github.com/orgs/CorsixTH/projects/15
+    odie 'Switch to `depends_on "lua"`' if build.stable? && version >= "0.70.0"
 
     ENV["TARGET_BUILD_DIR"] = "."
     ENV["FULL_PRODUCT_NAME"] = "CorsixTH.app"
@@ -96,7 +102,6 @@ class Corsixth < Formula
   test do
     if OS.mac?
       require "utils/linkage"
-      lua = Formula["lua"]
       app = prefix/"CorsixTH.app/Contents/MacOS/CorsixTH"
       assert Utils.binary_linked_to_library?(app, lua.opt_lib/"liblua.dylib"), "No linkage with lua!"
     end
