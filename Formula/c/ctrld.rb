@@ -1,8 +1,8 @@
 class Ctrld < Formula
   desc "Highly configurable, multi-protocol DNS forwarding proxy"
   homepage "https://github.com/Control-D-Inc/ctrld"
-  url "https://github.com/Control-D-Inc/ctrld/archive/refs/tags/v1.4.9.tar.gz"
-  sha256 "7330daba75b3ebfa819a2017265e05ed08cd0aaf050e98c87ae777483a1d2491"
+  url "https://github.com/Control-D-Inc/ctrld/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "48d7546ac270941be1f3628962201b64b3ab8f654c2e7c4b84d3939b4feb5cff"
   license "MIT"
 
   bottle do
