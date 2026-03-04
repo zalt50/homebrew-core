@@ -1,8 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
-  url "https://github.com/dathere/qsv/archive/refs/tags/16.1.0.tar.gz"
-  sha256 "f2edbf740677f2d80da55b73ee4fa620521702d6bc35a559f93dafa9b1bc58ab"
+  url "https://github.com/dathere/qsv/archive/refs/tags/17.0.0.tar.gz"
+  sha256 "433f0ad953ae04ecbd2bff737b824c2b1aff84c4fdb675c4e8184335c806d36c"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/dathere/qsv.git", branch: "master"
 
