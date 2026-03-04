@@ -4,6 +4,7 @@ class Wxpython < Formula
   url "https://files.pythonhosted.org/packages/22/43/81657a6b126ffc19163500a8184d683cec08eb4e1d06905cd0c371c702d0/wxpython-4.2.5.tar.gz"
   sha256 "44e836d1bccd99c38790bb034b6ecf70d9060f6734320560f7c4b0d006144793"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "748deaf966fa0d91413a15a63122699e8b6143d5afa4cead127b4ebe461b2e0f"
