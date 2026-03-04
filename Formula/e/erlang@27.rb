@@ -6,6 +6,7 @@ class ErlangAT27 < Formula
   url "https://github.com/erlang/otp/releases/download/OTP-27.3.4.8/otp_src_27.3.4.8.tar.gz"
   sha256 "354243af8095a5e567931490b7b0ffe7b22cf12ee49b65c36e9187501ca03e8e"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
