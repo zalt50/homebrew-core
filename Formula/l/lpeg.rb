@@ -5,6 +5,7 @@ class Lpeg < Formula
   mirror "https://github.com/neovim/deps/raw/master/opt/lpeg-1.1.0.tar.gz"
   sha256 "4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a"
   license "MIT"
+  revision 1
 
   livecheck do
     url :homepage
@@ -27,7 +28,7 @@ class Lpeg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e9143038c664866b58c882ed78450fc005c6169d32d9bf2ded09f2af664b3c4"
   end
 
-  depends_on "lua" => [:build, :test]
+  depends_on "lua@5.4" => [:build, :test]
   depends_on "luajit" => [:build, :test]
 
   def make_install_lpeg_so(luadir, dllflags, abi_version)
@@ -37,12 +38,15 @@ class Lpeg < Formula
     system "make", "clean"
   end
 
+  def lua
+    Formula["lua@5.4"]
+  end
+
   def install
     dllflags = %w[-shared -fPIC]
     dllflags << "-Wl,-undefined,dynamic_lookup" if OS.mac?
 
     luajit = Formula["luajit"]
-    lua = Formula["lua"]
 
     make_install_lpeg_so(luajit.opt_include/"luajit-2.1", dllflags, "5.1")
     make_install_lpeg_so(lua.opt_include/"lua", dllflags, lua.version.major_minor)
@@ -54,7 +58,7 @@ class Lpeg < Formula
   end
 
   test do
-    system "lua", pkgshare/"test.lua"
+    system lua.bin/"lua", pkgshare/"test.lua"
     system "luajit", pkgshare/"test.lua"
   end
 end
