@@ -4,6 +4,7 @@ class Imapfilter < Formula
   url "https://github.com/lefcha/imapfilter/archive/refs/tags/v2.8.3.tar.gz"
   sha256 "a28ee90ac20a996e2fc19cbc36a36c152483085011f3b2ec8dfd913b7a6d9804"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "e936161f2b81aadf392a28ce2c0fac7e1df84542ba5e820369078d2520b00398"
