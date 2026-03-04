@@ -1,10 +1,10 @@
 class Logstalgia < Formula
   desc "Web server access log visualizer with retro style"
   homepage "https://logstalgia.io/"
-  url "https://github.com/acaudwell/Logstalgia/releases/download/logstalgia-1.1.4/logstalgia-1.1.4.tar.gz"
-  sha256 "c049eff405e924035222edb26bcc6c7b5f00a08926abdb7b467e2449242790a9"
+  url "https://github.com/acaudwell/Logstalgia/releases/download/logstalgia-1.1.5/logstalgia-1.1.5.tar.gz"
+  sha256 "028936e9f663c877d6969ad25f145c7b420797e9a3e01c6c184815ed8309f481"
   license "GPL-3.0-or-later"
-  revision 10
+  head "https://github.com/acaudwell/Logstalgia.git", branch: "master"
 
   bottle do
     sha256 arm64_tahoe:   "47177045aecd41e2bbe86ac76782ea2eefc84901094501d47320e473ba3ab17b"
@@ -15,15 +15,10 @@ class Logstalgia < Formula
     sha256 x86_64_linux:  "babb61947b8cf02f61630bd8c6634571594a8e194f78fd27e0604c687d42816c"
   end
 
-  head do
-    url "https://github.com/acaudwell/Logstalgia.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "glm" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
 
   depends_on "boost"
@@ -42,17 +37,9 @@ class Logstalgia < Formula
   def install
     ENV.cxx11 # to build with boost>=1.85
 
-    # Workaround for Boost 1.89.0 as upstream commit requires regenerating configure
-    # https://github.com/acaudwell/Logstalgia/commit/823a1a4dbdba8f682e2d31851c11e369e50aa0f7
-    if build.stable?
-      odie "Remove workaround for Boost 1.89.0" if version > "1.1.4"
-      ENV["with_boost_system"] = "no"
-    end
-
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
-                          "--without-x",
                           *std_configure_args
     system "make"
     system "make", "install"
