@@ -1,8 +1,9 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https://cuelang.org/"
-  url "https://github.com/cue-lang/cue/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "c1899ac0fb7e9f95547ce5b94fdb05791a79120abccd8eb81225ea0ac389bb43"
+  url "https://github.com/cue-lang/cue.git",
+      tag:      "v0.16.0",
+      revision: "de47a5efb4a5ee1129a470e73717f59ac03ba535"
   license "Apache-2.0"
   head "https://github.com/cue-lang/cue.git", branch: "master"
 
@@ -18,7 +19,7 @@ class Cue < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X cuelang.org/go/cmd/cue/cmd.version=v#{version}"), "./cmd/cue"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cue"
 
     generate_completions_from_executable(bin/"cue", shell_parameter_format: :cobra)
   end
