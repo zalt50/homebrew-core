@@ -1,8 +1,8 @@
 class Asc < Formula
   desc "Fast, lightweight CLI for App Store Connect"
   homepage "https://asccli.sh"
-  url "https://github.com/rudrankriyam/App-Store-Connect-CLI/archive/refs/tags/0.36.2.tar.gz"
-  sha256 "878eaaa6729e436127d769a754bf0fcc8cedffdc2b292721b953036c0ae6cc9a"
+  url "https://github.com/rudrankriyam/App-Store-Connect-CLI/archive/refs/tags/0.36.3.tar.gz"
+  sha256 "373a6ba221a141b213bfaaca7b343c66432e8caf241d15b62a6e9b84ea5d866c"
   license "MIT"
   head "https://github.com/rudrankriyam/App-Store-Connect-CLI.git", branch: "main"
 
