@@ -5,6 +5,7 @@ class Vim < Formula
   url "https://github.com/vim/vim/archive/refs/tags/v9.2.0100.tar.gz"
   sha256 "0f35dbb9bcebc00d97b06aa229129f1a707960b64f064f65c7bcb8b424fe129b"
   license "Vim"
+  revision 1
   head "https://github.com/vim/vim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
