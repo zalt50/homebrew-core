@@ -1,8 +1,8 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
   homepage "https://docs.cocogitto.io/"
-  url "https://github.com/cocogitto/cocogitto/archive/refs/tags/6.5.0.tar.gz"
-  sha256 "b807f6201dcbebbd97e0e8e34d8f2f14885b1b1c529b465463fe7a4dc8209ff5"
+  url "https://github.com/cocogitto/cocogitto/archive/refs/tags/7.0.0.tar.gz"
+  sha256 "cc00dacf1dd12b63976b0ca3c4ec383f902a95ed148968ccd35d9a174f66966f"
   license "MIT"
 
   bottle do
@@ -23,7 +23,7 @@ class Cocogitto < Formula
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/cocogitto")
     generate_completions_from_executable(bin/"cog", "generate-completions")
 
     system bin/"cog", "generate-manpages", buildpath
