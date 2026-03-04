@@ -6,6 +6,7 @@ class Erlang < Formula
   url "https://github.com/erlang/otp/releases/download/OTP-28.3.3/otp_src_28.3.3.tar.gz"
   sha256 "641f252b12b64c89ea8ae16b6c35d8983378a588490421bf1e69cdc51cea6e65"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21fcc5f04eb1305585e0179f4d96737898418b7f03aba82c6ac1363db7bc7395"
-    sha256 cellar: :any,                 arm64_sequoia: "43d3950362d0c4055ef21e6030e79b7c382bb2800fe2e40aedb31271e0adbbde"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7e35d2a6193cc6e196029332820a7b2d2fc70f6c96e13b5a0342899ded7000a"
-    sha256 cellar: :any,                 sonoma:        "8c8e60ed77cd034023a73e14e4c927abb0544ce40e98684eb0a04fbcec9855df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d04bb9b02899d5e7a60aa4f6d91d57f0e4805586ce3a39f31aa9776e05ddcb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57a2da179830eb047ed77d4c2adac1337670376acf53c3e93b4f883face8e8a7"
+    sha256 cellar: :any,                 arm64_tahoe:   "c65de0ba1af70f19dd49e74925a6499017c2012945650750e7df6979fd351237"
+    sha256 cellar: :any,                 arm64_sequoia: "d58de44d58e983e2109898d580841147beee5e3380610da75535bf4a96ca0a07"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6d5c6ca3fcb39a8bf8ef1bac65ca17af8b7a15dd25698f5fe03147fccc8eaf1"
+    sha256 cellar: :any,                 sonoma:        "5aa658f326e3f9a119c47ed38121960c9b3eeba49e4093ce53e0412fbbb794a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2cd18b16dac0788aa49b4c16003817db3401c4a99169c0ca3a6793b618ef65e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fcd75e0b9bd57337821734b0858178f4cee5f8373a651d77c05c4e63b446b76"
   end
 
   head do
