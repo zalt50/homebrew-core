@@ -1,8 +1,8 @@
 class Gnmic < Formula
   desc "GNMI CLI client and collector"
   homepage "https://gnmic.openconfig.net"
-  url "https://github.com/openconfig/gnmic/archive/refs/tags/v0.44.1.tar.gz"
-  sha256 "35c49ebfa50a6f55514ffca5f73fbdd24015a5c7e2745303f64661860fee50df"
+  url "https://github.com/openconfig/gnmic/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "47caa59c65c03bbb33959998fadc677039c32e268f66664f18a98e8e31f71603"
   license "Apache-2.0"
   head "https://github.com/openconfig/gnmic.git", branch: "main"
 
@@ -20,10 +20,10 @@ class Gnmic < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/openconfig/gnmic/pkg/app.version=#{version}
-      -X github.com/openconfig/gnmic/pkg/app.commit=#{tap.user}
-      -X github.com/openconfig/gnmic/pkg/app.date=#{time.iso8601}
-      -X github.com/openconfig/gnmic/pkg/app.gitURL=https://github.com/openconfig/gnmic
+      -X github.com/openconfig/gnmic/pkg/version.Version=#{version}
+      -X github.com/openconfig/gnmic/pkg/version.Commit=#{tap.user}
+      -X github.com/openconfig/gnmic/pkg/version.Date=#{time.iso8601}
+      -X github.com/openconfig/gnmic/pkg/version.GitURL=https://github.com/openconfig/gnmic
     ]
     system "go", "build", *std_go_args(ldflags:)
 
