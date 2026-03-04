@@ -1,8 +1,8 @@
 class Ghidra < Formula
   desc "Multi-platform software reverse engineering framework"
   homepage "https://github.com/NationalSecurityAgency/ghidra"
-  url "https://github.com/NationalSecurityAgency/ghidra/archive/refs/tags/Ghidra_12.0.3_build.tar.gz"
-  sha256 "39e5d160fafa544c8b1858e2df869728d18aa3c9c5490f47a2d0db776f3b4d4d"
+  url "https://github.com/NationalSecurityAgency/ghidra/archive/refs/tags/Ghidra_12.0.4_build.tar.gz"
+  sha256 "2650b5c5f2615883db347157f88d15f6f06cd14e223156cd6b6034264081f5b4"
   license "Apache-2.0"
 
   livecheck do
