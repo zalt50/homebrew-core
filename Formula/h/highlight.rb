@@ -4,6 +4,7 @@ class Highlight < Formula
   url "https://gitlab.com/saalen/highlight/-/archive/v4.19/highlight-v4.19.tar.gz"
   sha256 "0f243a9fb72da88148db473c9411c92c4988bf940bff32eef939bc1efa0017c8"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://gitlab.com/saalen/highlight.git", branch: "master"
 
   livecheck do
