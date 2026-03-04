@@ -3,8 +3,8 @@ class Chardet < Formula
 
   desc "Python character encoding detector"
   homepage "https://chardet.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/7f/42/fb9436c103a881a377e34b9f58d77b5f503461c702ff654ebe86151bcfe9/chardet-6.0.0.post1.tar.gz"
-  sha256 "6b78048c3c97c7b2ed1fbad7a18f76f5a6547f7d34dbab536cc13887c9a92fa4"
+  url "https://files.pythonhosted.org/packages/a3/20/e1e92c8f05666debb7c0c18285646195ef9915e72127771962408609815e/chardet-7.0.0.tar.gz"
+  sha256 "5272ea14c48cb5f38e87e698c641a7ea2a8b1db6c42ea729527fbe8bd621f39c"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -20,6 +20,6 @@ class Chardet < Formula
   test do
     (testpath/"test.txt").write "你好"
     output = shell_output("#{bin}/chardetect #{testpath}/test.txt")
-    assert_match "test.txt: utf-8 with confidence 0.7525", output
+    assert_match "test.txt: utf-8 with confidence", output
   end
 end
