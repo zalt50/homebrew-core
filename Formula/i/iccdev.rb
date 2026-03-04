@@ -4,6 +4,7 @@ class Iccdev < Formula
   url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.4.tar.gz"
   sha256 "7889fd4544e1d224700aa68659a83847b24a8adaa130db1d64e8577098b8700a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f3a2415a4004ff4b359ecf3f8d02590bc5ff2e2bcab94b0120c9003cc93dce06"
