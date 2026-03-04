@@ -1,8 +1,8 @@
 class Genext2fs < Formula
   desc "Generates an ext2 filesystem as a normal (non-root) user"
   homepage "https://genext2fs.sourceforge.net/"
-  url "https://github.com/bestouff/genext2fs/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "d3861e4fe89131bd21fbd25cf0b683b727b5c030c4c336fadcd738ada830aab0"
+  url "https://github.com/bestouff/genext2fs/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "4d9117d8a8fed0b8c4ad2ee203a236e5ea5a25586c7e6e7851938ba26c08a2c1"
   license "GPL-2.0-or-later"
 
   bottle do
