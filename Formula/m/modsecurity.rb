@@ -7,12 +7,12 @@ class Modsecurity < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9bb41a2f71c67c4e99049408bbe318e1cf2c0b10e4e90fe992b3f79fb7055a69"
-    sha256 cellar: :any,                 arm64_sequoia: "a1755b42fb4b7ec87ce91063516a2ad3556164d298c3929ff7cd2719edd33dcb"
-    sha256 cellar: :any,                 arm64_sonoma:  "3fd03a5329efea1ca34f0a9cd0c4b7dd166dd30bbe8b119aa4399745f04b6c47"
-    sha256 cellar: :any,                 sonoma:        "d4b19335eeb71851802f1de03b6c5348a8211cc0bf0ecd289370dcd160c0330d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c637476b9bbc85fb184b6a4e1f5893d6dcd2aca6f489699b9fe4cc02f82e3e9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ee186488795d3a79d22170d0cf241b9ca2702b2dac511b89287417f9840eb6e"
+    sha256 cellar: :any,                 arm64_tahoe:   "903816449f1b48c8e20a657b978b80f93ee3f721ebb78a6c1216260983c60b67"
+    sha256 cellar: :any,                 arm64_sequoia: "1e5fb4a1da5ca02302211054c1222e58fe142f4e4b9d51a6abcbbd1e6e4f93c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "128cab434340b33ad4ce2d710e02483d56bc7cf6a91e10dfb677f631f0c2b093"
+    sha256 cellar: :any,                 sonoma:        "c6e2865897da1cffe2d77764b905edd4c400af92385ffe32f9348cefea29f023"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90659a4c8e50293d7415e09a0e79e9f25bdca5af7cb54eb1134714ce40cd564f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81c9b619a94eff97ee7e49985eaf493b984130de34f608eda9b283a94b64c538"
   end
 
   depends_on "autoconf" => :build
