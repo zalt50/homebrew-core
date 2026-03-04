@@ -5,6 +5,7 @@ class Rpm < Formula
     "GPL-2.0-only",
     "LGPL-2.0-or-later", # rpm-sequoia
   ]
+  revision 1
   version_scheme 1
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
 
@@ -55,7 +56,6 @@ class Rpm < Formula
   depends_on "xz"
   depends_on "zstd"
 
-  uses_from_macos "llvm" => :build
   uses_from_macos "bzip2"
 
   on_macos do
@@ -64,6 +64,7 @@ class Rpm < Formula
   end
 
   on_linux do
+    depends_on "llvm@21" => :build # LLVM 22 fails for nettle-sys
     depends_on "elfutils"
     depends_on "zlib-ng-compat"
   end
