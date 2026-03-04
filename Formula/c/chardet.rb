@@ -8,7 +8,7 @@ class Chardet < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "69a0c9fff6b040669876b5459d2c45c0cb30fb1e1a72946b17dc78d1eec0812a"
+    sha256 cellar: :any_skip_relocation, all: "8f7e236d1bffd5995b90d4d5d2b12cfe1f83959d62dafbf332f918abcfcbe595"
   end
 
   depends_on "python@3.14"
