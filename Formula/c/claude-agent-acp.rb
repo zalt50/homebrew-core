@@ -8,12 +8,12 @@ class ClaudeAgentAcp < Formula
   head "https://github.com/zed-industries/claude-agent-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "17a316942a6c25519b63ffe2dc6b8d61a20b0f1441c8e3155f2c87dde0b4c499"
-    sha256 cellar: :any,                 arm64_sequoia: "3c32db69037794edc3148cfe639e0575a01446a4c5066a9cc7f9d81d166dc72f"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c32db69037794edc3148cfe639e0575a01446a4c5066a9cc7f9d81d166dc72f"
-    sha256 cellar: :any,                 sonoma:        "5c972364292dd86dcf88fb334d6141994d7e9ffb3eabf70d65aa40b8ebe15e49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c76d7ca17b364742c9594050048bbd0f2a84672007cb64dd541e95c6ae235c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e6661f414c5e3169dbe1fc43562db7c37f8b98dc819fcc6b0a4f147a72718c0"
+    sha256 cellar: :any,                 arm64_tahoe:   "663641be4525f1a479eb189be639481f95c2cfa5fe05cfea0a79930b8ba138bc"
+    sha256 cellar: :any,                 arm64_sequoia: "fd2994d57c2b87853f96aab018d69a665e2cf251b38b0aa263b2e42b2a89a56b"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd2994d57c2b87853f96aab018d69a665e2cf251b38b0aa263b2e42b2a89a56b"
+    sha256 cellar: :any,                 sonoma:        "b9809fed5fb3cda6e9ea29fae23fbbc894a44e802bb3d185b80b58956443e08a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1230f0147dead14172b75ada601bd4e28af514b25fa1166d0e7fda2ccb51936"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d135fcab46f27b307cd8251d19fd77aeca504245cc2c4d1915beb9aab346fe9"
   end
 
   depends_on "node"
