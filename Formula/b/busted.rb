@@ -4,6 +4,7 @@ class Busted < Formula
   url "https://github.com/lunarmodules/busted/archive/refs/tags/v2.3.0.tar.gz"
   sha256 "1669a4f59ff9e08ad4b38d4212ad8cdd4519209101e3af5459a596d5ad9a7d24"
   license "MIT"
+  revision 1
   head "https://github.com/lunarmodules/busted.git", branch: "master"
 
   bottle do
