@@ -1,24 +1,17 @@
 class Genext2fs < Formula
   desc "Generates an ext2 filesystem as a normal (non-root) user"
   homepage "https://genext2fs.sourceforge.net/"
-  url "https://github.com/bestouff/genext2fs/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "d3861e4fe89131bd21fbd25cf0b683b727b5c030c4c336fadcd738ada830aab0"
+  url "https://github.com/bestouff/genext2fs/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "4d9117d8a8fed0b8c4ad2ee203a236e5ea5a25586c7e6e7851938ba26c08a2c1"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "7404279f8152781c963a7d4c49d98b1d03a7e236e03e31c19b1ec2cc241fd2b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cc9fdd7364d47e9a525a63f18f8556678f95c84785aafa586cfd3ccf22ae29cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77fe02e5ebd064e2a70deb8e2a69dbc105f5f7535c7a01cf599575856b02940e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "566e773ad73882df019f3b1963a37837e22db06d6b1f622da0187fbf0b86244d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0800a81e18bda856d6aa1ab72aaa8587d43ea589fbfa41ecc14c6eba40bb8356"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c0956842c6c717a7dd0b96d16a569700005d5863da8a78ce0eb281562fb5a664"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ca8b06dc9e256f6a2f3042639494ef5a2cbbadba6915889f835d1c5a9b9652c"
-    sha256 cellar: :any_skip_relocation, ventura:        "90be8a8a95389ad22ee818490ead1f0373dc66a1e540123fd69a1a5bcc03bad4"
-    sha256 cellar: :any_skip_relocation, monterey:       "253c8839c029932c41351dac2820708133c9574d2825f3974e290f545b40a4b5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "73555ddf605c31d1ab998686f18291bb857bf0194e46b14ee6c42232d74d857c"
-    sha256 cellar: :any_skip_relocation, catalina:       "2223acb79fe730270f9dea81b2835d5fa72c099c91e817fb502d22ecb6b974df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fa03849514f1ad13f20f5f6b97b9db4c4a4cb7929dba82ac08cd28bc4b8bdd37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f5a8f86d48986b97ac6d364d0c2963d2447b9d767f9c3f229080b481e41ce11"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "025fef39421f0444a09c59feb6804620084c9cf9352afd6f4a5ce4491b475508"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e89dd20410777ea21eb5e72c12b1609e203bf6a50488aacb9d7b7ca7a15d4cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12c11cc16a568a0b87b394346b1c952f4b0ff36df26fa569074ebb5139dd6b0e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a149a2e453a8bc00516ad42fd643c0265ab5500a4b8409d80ff8d27f427ab1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d1a9a3f0ed7149c2e170d24085161d79b49baa4a7f8ec5a66b3003edc827d2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "717bc3ad0ae368bd2d275a3a1d833ef78f04209cdb580c7b262e0e338896eb12"
   end
 
   depends_on "autoconf" => :build
