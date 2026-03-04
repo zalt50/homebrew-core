@@ -11,8 +11,8 @@ class Iptables < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "42ee1e98049c3f9c56815a8d4ccfd6b7574376ecfd72d46b0eb47e0dbbbebe24"
-    sha256 x86_64_linux: "653ed309765c60309bc14bce1206408b43f96a5d8efa05647edb2977be16691f"
+    sha256 arm64_linux:  "ce914706722150dc35332ad3f21c0017b45303cf1c970fb8355061a7c740efd6"
+    sha256 x86_64_linux: "c7f4fb3ad89b0de76e81bf7a80ef81c07065d3824457caf7a150490d7f9bbcb9"
   end
 
   depends_on "pkgconf" => :build
