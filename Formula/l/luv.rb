@@ -8,12 +8,12 @@ class Luv < Formula
   head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8a8f77a081d0976eea4b61cc72a9bcec9c913f2d76c5933632e840602cad5f6b"
-    sha256 cellar: :any,                 arm64_sequoia: "f06d42943074e293060d972e368c692d5ac9ce3f0da5de641ad0f148c5fe057a"
-    sha256 cellar: :any,                 arm64_sonoma:  "db52f0890b575e7926f7875c33853691b05e6655022d0b32bdb0866de4ecaaff"
-    sha256 cellar: :any,                 sonoma:        "88d513ccb8ee6b33f4e2420ba9c331fb4bec78e9e181bfc5ca12979ef323db8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d748e16e1eed08fc90b00324a0da9ce3b639946b5d922eabd9c28df3b8be16e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e36a6b3522e93573456d0c5a224dccee69855281bc8d131ed1bf5e18b088a753"
+    sha256 cellar: :any,                 arm64_tahoe:   "f39bd668b051ad916ffb10aea31c37f98f79c7cdc49b04794c69f4c79ecdbbf8"
+    sha256 cellar: :any,                 arm64_sequoia: "8b3742af507bafa9e602ad29c1c6a5b1b5f1d4796808ec10dd32edd1fa4ea96d"
+    sha256 cellar: :any,                 arm64_sonoma:  "a305a73ebfd1d063996877eb657b86bd31be1ecc67fc769ba2585170d830b453"
+    sha256 cellar: :any,                 sonoma:        "620178b0f1d05295fd0495e178ad56ae7598f874d159272f6d0d65e5678f3d94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98cd8bfa1d3ce4b30f6ab88dcd3c318874fa80a5324f50f6973488449b12197f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf8b734095fa3c4a6e6a27654b482aeff434f0d5aace030a08c5df23d1fb4fe1"
   end
 
   depends_on "cmake" => :build
