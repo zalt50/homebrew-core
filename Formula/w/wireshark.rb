@@ -5,6 +5,7 @@ class Wireshark < Formula
   mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.6.4.tar.xz"
   sha256 "fbeab3d85c6c8a5763c8d9b7fe20b5c69ca9f9e7f2b824bedc73135bdca332e2"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
   # Upstream indicates stable releases with an even-numbered minor (see:
@@ -33,7 +34,7 @@ class Wireshark < Formula
   depends_on "libnghttp3"
   depends_on "libsmi"
   depends_on "libssh"
-  depends_on "lua"
+  depends_on "lua@5.4" # Lua 5.5 issue: https://gitlab.com/wireshark/wireshark/-/issues/21060
   depends_on "lz4"
   depends_on "pcre2"
   depends_on "speexdsp"
@@ -57,12 +58,13 @@ class Wireshark < Formula
   conflicts_with cask: "wireshark-app"
 
   def install
+    lua = Formula["lua@5.4"]
     plugindir = lib/"wireshark/plugins/#{version.major}-#{version.minor}"
     args = %W[
       -DENABLE_BROTLI=OFF
       -DENABLE_SNAPPY=OFF
-      -DLUA_INCLUDE_DIR=#{Formula["lua"].opt_include}/lua
-      -DLUA_LIBRARY=#{Formula["lua"].opt_lib/shared_library("liblua")}
+      -DLUA_INCLUDE_DIR=#{lua.opt_include}/lua
+      -DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua")}
       -DCARES_INCLUDE_DIR=#{Formula["c-ares"].opt_include}
       -DGCRYPT_INCLUDE_DIR=#{Formula["libgcrypt"].opt_include}
       -DGNUTLS_INCLUDE_DIR=#{Formula["gnutls"].opt_include}
