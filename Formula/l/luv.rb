@@ -4,6 +4,7 @@ class Luv < Formula
   url "https://github.com/luvit/luv/archive/refs/tags/1.51.0-2.tar.gz"
   sha256 "d70cf20b16ab05ceaa3bb448f3e1b3ef63a5949e34184255c52a3e92efcd39b4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do
@@ -16,13 +17,17 @@ class Luv < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "lua" => [:build, :test]
+  depends_on "lua@5.4" => [:build, :test]
   depends_on "luajit" => [:build, :test]
   depends_on "libuv"
 
   resource "lua-compat-5.3" do
     url "https://github.com/lunarmodules/lua-compat-5.3/archive/refs/tags/v0.14.4.tar.gz"
     sha256 "a9afa2eb812996039a05c5101067e6a31af9a75eded998937a1ce814afe1b150"
+  end
+
+  def lua
+    Formula["lua@5.4"]
   end
 
   def install
@@ -70,6 +75,6 @@ class Luv < Formula
     EOS
 
     assert_equal expected, shell_output("luajit test.lua")
-    assert_equal expected, shell_output("lua test.lua")
+    assert_equal expected, shell_output("#{lua.bin}/lua test.lua")
   end
 end
