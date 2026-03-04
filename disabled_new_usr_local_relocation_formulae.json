@@ -1,6 +1,7 @@
 [
   "colordiff",
   "davmail",
+  "luarocks",
   "meson",
   "phpmyadmin",
   "python-setuptools",
