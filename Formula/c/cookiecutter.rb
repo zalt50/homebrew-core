@@ -3,8 +3,8 @@ class Cookiecutter < Formula
 
   desc "Utility that creates projects from templates"
   homepage "https://github.com/cookiecutter/cookiecutter"
-  url "https://files.pythonhosted.org/packages/12/f6/c576423931c725c30f3c97e1eb5bdb53419c27ff7538751cfa6ad1a07f82/cookiecutter-2.7.0.tar.gz"
-  sha256 "b0bf50141201ebf022c95e3fa02a760b64e600b3675d6dabf97563425a62a707"
+  url "https://files.pythonhosted.org/packages/92/03/f4c96d8fd4f5e8af0210bf896eb63927f35d3014a8e8f3bf9d2c43ad3332/cookiecutter-2.7.1.tar.gz"
+  sha256 "ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138"
   license "BSD-3-Clause"
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "main"
 
@@ -34,8 +34,8 @@ class Cookiecutter < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/7f/42/fb9436c103a881a377e34b9f58d77b5f503461c702ff654ebe86151bcfe9/chardet-6.0.0.post1.tar.gz"
-    sha256 "6b78048c3c97c7b2ed1fbad7a18f76f5a6547f7d34dbab536cc13887c9a92fa4"
+    url "https://files.pythonhosted.org/packages/a3/20/e1e92c8f05666debb7c0c18285646195ef9915e72127771962408609815e/chardet-7.0.0.tar.gz"
+    sha256 "5272ea14c48cb5f38e87e698c641a7ea2a8b1db6c42ea729527fbe8bd621f39c"
   end
 
   resource "charset-normalizer" do
