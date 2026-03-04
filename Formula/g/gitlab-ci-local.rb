@@ -6,7 +6,7 @@ class GitlabCiLocal < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "279ccca0085d1880b77ced85a8e9fd0f58251a616c9ecfb0fe6f757ee7594450"
+    sha256 cellar: :any_skip_relocation, all: "45d1ab132db38e78d5016ef82a30f01df8dec3e647cc870be4a5a0f7bde1b90c"
   end
 
   depends_on "node"
