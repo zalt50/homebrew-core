@@ -57,7 +57,13 @@ class PortableRuby < PortableFormula
   def install
     # Remove almost all bundled gems and replace with our own set.
     rm_r ".bundle"
-    allowed_gems = ["debug", "fiddle"]
+    # Allowed gem dependency tree:
+    # - debug
+    # - fiddle
+    # - irb
+    #   - reline
+    #   - rdoc
+    allowed_gems = %w[debug fiddle irb reline rdoc]
     bundled_gems = File.foreach("gems/bundled_gems").select do |line|
       line.blank? || line.start_with?("#") || allowed_gems.any? { |gem| line.match?(/\A#{Regexp.escape(gem)}\s/) }
     end
@@ -150,11 +156,6 @@ class PortableRuby < PortableFormula
     abi_version = `#{bin}/ruby -rrbconfig -e 'print RbConfig::CONFIG["ruby_version"]'`
     abi_arch = `#{bin}/ruby -rrbconfig -e 'print RbConfig::CONFIG["arch"]'`
 
-    # Update incflags so that yaml.h (and other headers) can be found when building gems.
-    inreplace lib/"ruby/#{abi_version}/#{abi_arch}/rbconfig.rb" do |s|
-      s.sub!(/(CONFIG\["incflags"\] = )""/, "\\1\"-I$(prefix)/include\"")
-    end
-
     if OS.linux?
       # Don't restrict to a specific GCC compiler binary we used (e.g. gcc-5).
       inreplace lib/"ruby/#{abi_version}/#{abi_arch}/rbconfig.rb" do |s|
@@ -169,10 +170,6 @@ class PortableRuby < PortableFormula
       # Ship libcrypt.a so that building native gems doesn't need system libcrypt installed.
       cp libxcrypt.lib/"libcrypt.a", lib/"libcrypt.a"
     end
-
-    # Ship libyaml.a & yaml.h so that building native gems doesn't need system libyaml installed.
-    cp libyaml.lib/"libyaml.a", lib/"libyaml.a"
-    cp libyaml.include/"yaml.h", include/"yaml.h"
 
     libexec.mkpath
     cp openssl.libexec/"etc/openssl/cert.pem", libexec/"cert.pem"
@@ -204,6 +201,7 @@ class PortableRuby < PortableFormula
       require "fiddle"
       require "bootsnap"
     EOS
+    system testpath/"bin/irb", "--version"
     system testpath/"bin/gem", "environment"
     system testpath/"bin/bundle", "init"
     # install gem with native components
