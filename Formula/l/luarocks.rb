@@ -12,7 +12,7 @@ class Luarocks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7bc6365426b00c812417e7449477dd2ac13fd5fae072dfe7be78d5449225b195"
+    sha256 cellar: :any_skip_relocation, all: "8d28fc1a60137d74300af8e829800af27a8f87b1b621b52b2d28d7b9d4a51d15"
   end
 
   depends_on "luajit" => :test
