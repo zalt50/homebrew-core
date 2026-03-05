@@ -6,7 +6,7 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/3d/29/ef75d365917075a72ad88b7b1027bc6f93d6e45f27aec1ee6410607eb5f6/maigret-0.5.0.tar.gz"
   sha256 "d85c7f799cce51b6edf7179dda36019d0081bba528ce77284925499b07a49be7"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
@@ -307,13 +307,13 @@ class Maigret < Formula
   end
 
   resource "pyhanko" do
-    url "https://files.pythonhosted.org/packages/4f/9f/c8baf04b8aaadf099d8f12b26fe57d7b0b6842179160e5e3099c56d06bac/pyhanko-0.33.0.tar.gz"
-    sha256 "68ea123efd6612420fd2f1856c0b7a4bfa70f4af0abc0ddb329416844f5befb6"
+    url "https://files.pythonhosted.org/packages/91/d4/b21ff6c75294b7c329017fc48fa0eeb79ad78196657e0199c23e7a8e7211/pyhanko-0.34.0.tar.gz"
+    sha256 "2811c4c09f6eff01ce51975f03418225b58650c4dc37c33b1f870654d4c12dd0"
   end
 
   resource "pyhanko-certvalidator" do
-    url "https://files.pythonhosted.org/packages/2a/f6/5964e64ccf72f305e56d49014f8fae068c75cbf26e771a39ada64850054e/pyhanko_certvalidator-0.29.1.tar.gz"
-    sha256 "e8a8ad40eb73f4a32a4c4ce4474af6514bf86bc72e0fbb339d2b473f8d57e2a2"
+    url "https://files.pythonhosted.org/packages/e9/94/22ffa1f8d7d94eaebcb39b6135d44ff72bc498a4cbbba7488dca12c69f43/pyhanko_certvalidator-0.30.0.tar.gz"
+    sha256 "1a33b67d83fac56e0868b484e0b05fe79c92e8a6b17b355fc7223fc725daba09"
   end
 
   resource "pyparsing" do
@@ -322,8 +322,8 @@ class Maigret < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/09/dc/f52deef12797ad58b88e4663f097a343f53b9361338aef6573f135ac302f/pypdf-6.7.4.tar.gz"
-    sha256 "9edd1cd47938bb35ec87795f61225fd58a07cfaf0c5699018ae1a47d6f8ab0e3"
+    url "https://files.pythonhosted.org/packages/f6/52/37cc0aa9e9d1bf7729a737a0d83f8b3f851c8eb137373d9f71eafb0a3405/pypdf-6.7.5.tar.gz"
+    sha256 "40bb2e2e872078655f12b9b89e2f900888bb505e88a82150b64f9f34fa25651d"
   end
 
   resource "pypdf2" do
@@ -477,8 +477,8 @@ class Maigret < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
-    sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
+    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
+    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
   end
 
   def install
