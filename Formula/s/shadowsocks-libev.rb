@@ -1,10 +1,11 @@
 class ShadowsocksLibev < Formula
   desc "Libev port of shadowsocks"
   homepage "https://github.com/shadowsocks/shadowsocks-libev"
-  url "https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.5/shadowsocks-libev-3.3.5.tar.gz"
-  sha256 "cfc8eded35360f4b67e18dc447b0c00cddb29cc57a3cec48b135e5fb87433488"
+  url "https://github.com/shadowsocks/shadowsocks-libev.git",
+      tag:      "v3.3.6",
+      revision: "c5e8788013a37afe54ea1c2b7c03395cccc663cf"
   license "GPL-3.0-or-later"
-  revision 5
+  head "https://github.com/shadowsocks/shadowsocks-libev.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "613c265dfbdb7f3686e9b5d533aa4993ec78fd5772c44a8872ed76094b5a8a03"
@@ -19,51 +20,23 @@ class ShadowsocksLibev < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "707c0ff929995f51fd54807d4a569a754173288596df027fd49290021a25a1a0"
   end
 
-  head do
-    url "https://github.com/shadowsocks/shadowsocks-libev.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
-  # From GitHub page:
-  # Bug-fix-only libev port of shadowsocks. Future development moved to shadowsocks-rust
-  #
-  # Unmerged dependency update PRs:
-  # * MbedTLS 3: https://github.com/shadowsocks/shadowsocks-libev/pull/2999
-  # * PCRE2:     https://github.com/shadowsocks/shadowsocks-libev/pull/1792
-  deprecate! date: "2024-12-31", because: "uses deprecated `mbedtls@2`"
-  disable! date: "2025-12-31", because: "uses deprecated `mbedtls@2`"
-
   depends_on "asciidoc" => :build
+  depends_on "cmake" => :build
   depends_on "xmlto" => :build
   depends_on "c-ares"
   depends_on "libev"
   depends_on "libsodium"
-  depends_on "mbedtls@2"
-  depends_on "pcre"
+  depends_on "mbedtls@3"
+  depends_on "pcre2"
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    system "./autogen.sh" if build.head?
 
-    system "./configure", "--prefix=#{prefix}"
-    system "make"
+    system "cmake", "-S", ".", "-B", "build", "-DWITH_STATIC=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-    (buildpath/"shadowsocks-libev.json").write <<~JSON
-      {
-          "server":"localhost",
-          "server_port":8388,
-          "local_port":1080,
-          "password":"barfoo!",
-          "timeout":600,
-          "method":null
-      }
-    JSON
-    etc.install "shadowsocks-libev.json"
-
-    system "make", "install"
+    etc.install "debian/config.json" => "shadowsocks-libev.json"
   end
 
   service do
@@ -86,15 +59,14 @@ class ShadowsocksLibev < Formula
           "method":null
       }
     JSON
-    server = fork { exec bin/"ss-server", "-c", testpath/"shadowsocks-libev.json" }
-    client = fork { exec bin/"ss-local", "-c", testpath/"shadowsocks-libev.json" }
-    sleep 3
+    server = spawn bin/"ss-server", "-c", testpath/"shadowsocks-libev.json"
+    client = spawn bin/"ss-local", "-c", testpath/"shadowsocks-libev.json"
     begin
-      system "curl", "--socks5", "127.0.0.1:#{local_port}", "github.com"
+      system "curl", "--retry", "5", "--retry-connrefused", "--socks5", "127.0.0.1:#{local_port}", "github.com"
     ensure
-      Process.kill 9, server
+      Process.kill "TERM", server
       Process.wait server
-      Process.kill 9, client
+      Process.kill "TERM", client
       Process.wait client
     end
   end
