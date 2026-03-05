@@ -4,6 +4,7 @@ class Luacheck < Formula
   url "https://github.com/lunarmodules/luacheck/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "8efe62a7da4fdb32c0c22ec1f7c9306cbc397d7d40493c29988221a059636e25"
   license "MIT"
+  revision 1
   head "https://github.com/lunarmodules/luacheck.git", branch: "master"
 
   bottle do
@@ -20,12 +21,16 @@ class Luacheck < Formula
   end
 
   depends_on "luarocks" => :build
-  depends_on "lua"
+  # Blockers for Lua 5.5:
+  # https://github.com/lunarmodules/luacheck/pull/136
+  # https://github.com/lunarmodules/luacheck/issues/134
+  # https://github.com/luarocks/argparse/commit/7c71eb8ce6f75b57c35181c39f93738d67a862fe
+  depends_on "lua@5.4"
 
   uses_from_macos "unzip" => :build
 
   def install
-    system "luarocks", "make", "--tree=#{libexec}", "--local", "--lua-dir=#{Formula["lua"].opt_prefix}"
+    system "luarocks", "make", "--tree=#{libexec}", "--local", "--lua-dir=#{Formula["lua@5.4"].opt_prefix}"
     bin.install_symlink libexec.glob("bin/*")
   end
 
