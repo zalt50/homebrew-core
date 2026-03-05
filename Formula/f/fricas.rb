@@ -1,25 +1,10 @@
 class Fricas < Formula
   desc "Advanced computer algebra system"
   homepage "https://fricas.github.io"
+  url "https://github.com/fricas/fricas/archive/refs/tags/1.3.13.tar.gz"
+  sha256 "7ae03c0f566c4b2bbbd6da1b02965e2a5492b1b8e4f8f2f1d1329c72d44e42a2"
   license "BSD-3-Clause"
-  revision 3
   head "https://github.com/fricas/fricas.git", branch: "master"
-
-  stable do
-    url "https://github.com/fricas/fricas/archive/refs/tags/1.3.12.tar.gz"
-    sha256 "f201cf62e3c971e8bafbc64349210fbdc8887fd1af07f09bdcb0190ed5880a90"
-
-    # Build fricas as a SBCL core file instead of standalone executable.
-    # Avoid patchelf issue on Linux and codesign issue on macOS.
-    patch do
-      url "https://github.com/fricas/fricas/commit/4d7624b86b1f4bfff799724f878cf3933459507d.patch?full_index=1"
-      sha256 "dbfbd13da8ca3eabe73c58b716dde91e8a81975ce9cafc626bd96ae6ab893409"
-    end
-    patch do
-      url "https://github.com/fricas/fricas/commit/03e4e83288ea46bb97f23c05816a9521f14734b7.patch?full_index=1"
-      sha256 "3b9dca32f6e7502fea08fb1a139d2929c89fe7f908ef73879456cbdd1f4f0421"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "14cd63e267c22e3b4b137ee90c9cc43b5f8f94e9db99634470b9e2824ed5ac5b"
