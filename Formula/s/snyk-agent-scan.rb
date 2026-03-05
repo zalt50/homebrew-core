@@ -3,8 +3,8 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/dc/08/4ec1ed162dc4e4bbcc05274933002356d61518ad348b2e952915f8cc8a43/snyk_agent_scan-0.4.3.tar.gz"
-  sha256 "5a169ba9cb8c6cca94ecd7dbc69e5ae20e4db57196294019a3583a80ee5a9bb8"
+  url "https://files.pythonhosted.org/packages/fe/10/89f6540af7a3361f96141f67e3c16525afed1d647a0dc984987c9342fa5f/snyk_agent_scan-0.4.4.tar.gz"
+  sha256 "a7c471d00975884394c99f28aa6b43ba541d0a91706c64dcc35ce09037cd7d10"
   license "Apache-2.0"
 
   bottle do
@@ -240,8 +240,9 @@ class SnykAgentScan < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/snyk-agent-scan --opt-out")
+    assert_match version.to_s, shell_output("#{bin}/snyk-agent-scan --opt-out", 1)
 
-    assert_match "file ~/.cursor/mcp.json does not exist", shell_output("#{bin}/snyk-agent-scan scan --opt-out")
+    output = shell_output("#{bin}/snyk-agent-scan scan --opt-out", 1)
+    assert_match "To use Agent Scan, set the SNYK_TOKEN environment variable", output
   end
 end
