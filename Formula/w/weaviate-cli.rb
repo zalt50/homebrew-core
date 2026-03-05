@@ -9,12 +9,12 @@ class WeaviateCli < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e5b474f70793a0e606b92299dd5635001b1f0d93ecbcdc752b04fe0dba7f2e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d095ed993fb02120a3d6b70121c2c3084261b104b84f0d4f7d8cb6f62571cd3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c89aea3cffd456ec24272821b3b7ebf4db2cf33567f20ead7928ec7239750db0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75655acde0b8ad5bc3382e8fc54737411ab67d1d0d5f272cf929c541d3a8044b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f48ada04b3f4dd49324df5e2dee5cfe3fbc9d6a148c472b29b1f9999a73b27c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "507b9c14d73d7027c6da695b54142b9cf9fb75bbd81b70a5e6c79363d4c545ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bdd4d1b902695107f2bf14f36fd32c67e24d646d97f6c59c99c9b1fc6419fec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89d1f94f0ae74dd3850af1351faf643a288b5c2dffe56c3e6ccfed9ce5a80450"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "981ea59f124bc802a7a09a9baa37f3663e10a6eef3d9d3bbec4b79563319baf6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db8608afc3836f5f08a32664b714cf9c41b8b84a8de32ecc8c3d6d37eff3899c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0f01efa77917cd4a5208ab5175355908bda16b47faeb6fbb289a5279cc7f298"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e11a3a9b9a7cc0118e82d0d5f5a5c1b9e1059558e7d7c39b2954f7db9efa3326"
   end
 
   depends_on "cmake" => :build # contourpy
