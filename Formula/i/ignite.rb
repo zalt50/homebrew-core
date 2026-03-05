@@ -1,8 +1,8 @@
 class Ignite < Formula
   desc "Build, launch, and maintain any crypto application with Ignite CLI"
   homepage "https://docs.ignite.com/"
-  url "https://github.com/ignite/cli/archive/refs/tags/v29.8.0.tar.gz"
-  sha256 "c5fd0ce010272e7b1677c99f0e60c75b70f3795c414e6ab4e5a65dfeb6eb5458"
+  url "https://github.com/ignite/cli/archive/refs/tags/v29.9.0.tar.gz"
+  sha256 "0469b7e34a3df49659e9ec8b5d3e311a85b02dd91b5e6180a8084385ce08e734"
   license "Apache-2.0"
   head "https://github.com/ignite/cli.git", branch: "main"
 
