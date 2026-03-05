@@ -3,8 +3,8 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/58/37/3153ba44fe09b59fdeb8469037b5b2f9e3d5819eb161ed8af233adf02e06/ansible_lint-26.2.0.tar.gz"
-  sha256 "cf3fdadae8bbcbd2f8fc077e3c7ebacbcf19cc6ade7b7db48c963e96601535e8"
+  url "https://files.pythonhosted.org/packages/1f/b6/d0df64afdf68393e0c2e9a541ecb8124acf94c8511d824d45e75c8718a37/ansible_lint-26.3.0.tar.gz"
+  sha256 "dbcf3796d715ccef742a89dfcb21263649a2c2be8d3479ea98da104efa406717"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
@@ -61,8 +61,8 @@ class AnsibleLint < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
-    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
+    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
+    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
   end
 
   resource "jinja2" do
