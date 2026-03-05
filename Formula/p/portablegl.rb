@@ -2,8 +2,8 @@ class Portablegl < Formula
   desc "Implementation of OpenGL 3.x-ish in clean C"
   homepage "https://github.com/rswinkle/PortableGL"
   url "https://github.com/rswinkle/PortableGL.git",
-      tag:      "0.99.0",
-      revision: "4af8053b31c71eb074b1f944efe8152351dfbec9"
+      tag:      "0.100.0",
+      revision: "63a55db75ab07619797a93ff9bf3909355d27950"
   license "MIT"
   head "https://github.com/rswinkle/PortableGL.git", branch: "master"
 
@@ -26,7 +26,7 @@ class Portablegl < Formula
     cp_r Dir["#{pkgshare}/tests/*"], testpath
     cd "testing" do
       system "make", "run_tests"
-      assert_match "All tests passed", shell_output("./run_tests")
+      assert_match(/All \d+ tests passed/, shell_output("./run_tests"))
     end
   end
 end
