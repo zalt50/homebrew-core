@@ -1,8 +1,8 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
   homepage "https://github.com/pgpartman/pg_partman"
-  url "https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.4.2.tar.gz"
-  sha256 "499734eb80feb23bed4ece1f8e47985912118b8b2350db1e16eff5f7f7a92109"
+  url "https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.4.3.tar.gz"
+  sha256 "c52e3b8cf80d306468f48fbdb1905e4c2574bf8362240af57aebbbf9e18c6fe2"
   license "PostgreSQL"
 
   livecheck do
