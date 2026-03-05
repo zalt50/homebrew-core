@@ -4,6 +4,7 @@ class Metals < Formula
   url "https://github.com/scalameta/metals/archive/refs/tags/v1.6.6.tar.gz"
   sha256 "ea1a52ab1cc808b116623d4e338427143314bf4e8d1eb7f6b17c02fe41f6fd97"
   license "Apache-2.0"
+  revision 1
 
   # Some version tags don't become a release, so it's necessary to check the
   # GitHub releases instead.
@@ -39,14 +40,17 @@ class Metals < Formula
     end
 
     (libexec/"lib").install buildpath.glob("metals/target/scala-*/metals_*-#{version}.jar")
+    (libexec/"lib").install buildpath.glob("metals-mcp/target/scala-*/metals-mcp_*-#{version}.jar")
     (libexec/"lib").install buildpath.glob("mtags/target/scala-*/mtags_*-#{version}.jar")
     (libexec/"lib").install buildpath.glob("mtags-shared/target/scala-*/mtags-shared_*-#{version}.jar")
     (libexec/"lib").install "mtags-interfaces/target/mtags-interfaces-#{version}.jar"
 
     args = %W[-cp "#{libexec/"lib"}/*" scala.meta.metals.Main]
+    mcp_args = %W[-cp "#{libexec/"lib"}/*" scala.meta.metals.McpMain]
     env = Language::Java.overridable_java_home_env
     env["PATH"] = "$JAVA_HOME/bin:$PATH"
     (bin/"metals").write_env_script "java", args.join(" "), env
+    (bin/"metals-mcp").write_env_script "java", mcp_args.join(" "), env
   end
 
   test do
@@ -68,5 +72,7 @@ class Metals < Formula
       assert_match(/^Content-Length: \d+/i, stdout.readline)
       Process.kill("KILL", w.pid)
     end
+
+    assert_match "Error: --workspace is required", shell_output("#{bin}/metals-mcp 2>&1", 1)
   end
 end
