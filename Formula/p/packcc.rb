@@ -6,6 +6,11 @@ class Packcc < Formula
   license "MIT"
   head "https://github.com/arithy/packcc.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_tahoe:   "5a0b8081546ebc891881680469460587fe18fe82d4944f6308f187b6d672dc8b"
     sha256 arm64_sequoia: "61b42e61dbc2cda04bb7ca832d1f984052a3a82cbf15017bddccb3b28722ce7b"
@@ -18,7 +23,12 @@ class Packcc < Formula
   depends_on "cmake" => :build
 
   def install
-    inreplace "src/packcc.c", "/usr/share/packcc/", "#{prefix}/"
+    import_path = if build.head?
+      pkgshare
+    else
+      prefix
+    end
+    inreplace "src/packcc.c", "/usr/share/packcc/", "#{import_path}/"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
