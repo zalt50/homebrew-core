@@ -17,7 +17,7 @@ class ZLua < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "66504ee0f41ff9a6094a3fe33f1ebaf4bc57be6d7f1b6dfe7340c0b5bf962c57"
+    sha256 cellar: :any_skip_relocation, all: "76b13c19325cf268b89ab38c5d79d36f9d5506f1a5e8dc7c038a491fa593ebfd"
   end
 
   depends_on "lua"
