@@ -5,6 +5,7 @@ class LldAT21 < Formula
   sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
 
   livecheck do
     formula "llvm@21"
@@ -38,6 +39,7 @@ class LldAT21 < Formula
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     "-DLLD_BUILT_STANDALONE=ON",
                     "-DLLD_VENDOR=#{tap&.user}",
+                    "-DLLVM_CMAKE_DIR=#{Formula["llvm@21"].opt_lib}/cmake/llvm",
                     "-DLLVM_ENABLE_LTO=ON",
                     "-DLLVM_INCLUDE_TESTS=OFF",
                     "-DLLVM_USE_SYMLINKS=ON",
@@ -47,6 +49,8 @@ class LldAT21 < Formula
   end
 
   test do
+    assert_match(/LLD 21\./, shell_output("#{bin}/wasm-ld --version"))
+
     (testpath/"bin/lld").write <<~SHELL
       #!/bin/bash
       exit 1
