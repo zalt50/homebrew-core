@@ -13,12 +13,12 @@ class Lpeg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eac4a8e81fe8fe1855702941aa034eb8ea81f681b8db009d9e36a2aaf7bcbf1e"
-    sha256 cellar: :any,                 arm64_sequoia: "8941c78e5300722a52c3a62e6471122a0e4efa4508ec8117ae137616ed8a7abe"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c1eae57e7209af8cd6188b560cd9a9850bb8424418439c48cfd091b70845942"
-    sha256 cellar: :any,                 sonoma:        "d31eb5abcd32e4730e9b26afc41221db254e0042187940a0676d5ba01253c7fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd2e06b940f418826f890869f7cd6d5512365bffd99d50fa78f0c3f13c061c98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d940ee7049f656e7920ec081adb0b3a7237a65801addfebacfe71d5c2bf2f08c"
+    sha256 cellar: :any,                 arm64_tahoe:   "f3ef5600e2a654aea26c48469ab8ffee9fe117c71fe4d617646939b0f74059bd"
+    sha256 cellar: :any,                 arm64_sequoia: "afeb8aa90c0d61871094edc33f8992b478791bb24bbe07ddfe45b3e0da38e118"
+    sha256 cellar: :any,                 arm64_sonoma:  "2465c478129b2ccf00900021b54204d79145e8124d75c55ee3dea9d0a56f41f1"
+    sha256 cellar: :any,                 sonoma:        "973868eaace571f6f1c7764cf02a41f7fdd20b59b01d380f2905e76de06e439e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "658195428657fbe6cbf45c95ab2e69dd416767ddbe6c02593a03984d1efcffdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9087115cb278f1b318ca5334804948f0a44c7983d36acb0b5b171b12bd97df3f"
   end
 
   depends_on "lua" => [:build, :test]
