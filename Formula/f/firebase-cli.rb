@@ -1,8 +1,8 @@
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.8.0.tgz"
-  sha256 "058f10be9fbbdd9a2d237008e6bbd9b71b1f0c26595d383e942aed1a009737a9"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.9.0.tgz"
+  sha256 "29299b0da525754a1e557e8ca8d6e0f5fab1a7c69ffae0143509c3349f60e515"
   license "MIT"
 
   bottle do
@@ -22,6 +22,12 @@ class FirebaseCli < Formula
 
     node_modules = libexec/"lib/node_modules/firebase-tools/node_modules"
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
+
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do
