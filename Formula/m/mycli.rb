@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/00/98/2e5bf5a39f77df4a6f778f06eb6ea1291a4a337f0fb30a366a866bcb3815/mycli-1.59.0.tar.gz"
-  sha256 "e3bc88292d9a306cdd2c032dd8a97b0e351cf7cc390c2b3a951123a5ea6142fa"
+  url "https://files.pythonhosted.org/packages/d9/5e/ce3debe500645127119b9d5b42774920da75ee9981703f826e2d7bfd768b/mycli-1.60.0.tar.gz"
+  sha256 "ffcbfde537f488b4cc48e24c7495ab4e1a222a2f9133abe8c5077ff8c220a91d"
   license "BSD-3-Clause"
 
   bottle do
@@ -34,8 +34,8 @@ class Mycli < Formula
   end
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/74/8d/49dcad9f93ef8d18d25370f041a6f752cbbf7cfa28904b18a1b1c830237c/cli_helpers-2.10.1.tar.gz"
-    sha256 "009e52d35f9ed818daf755608927af37c09848e8b457631b8955ded9e3d5673e"
+    url "https://files.pythonhosted.org/packages/eb/26/ef241dc362e415d43a7eefe816ea836702eb373093dd0f4106674ce084c1/cli_helpers-2.11.0.tar.gz"
+    sha256 "19ffdb580c4bee3053285ad5dd052a39fabed08ce7aadf629aceeff81a87ab78"
   end
 
   resource "click" do
@@ -124,8 +124,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/55/13/17e87641b89b74552ed408a92b231283786523edddc95f3545809fab673c/openai-2.24.0.tar.gz"
-    sha256 "1e5769f540dbd01cb33bc4716a23e67b9d695161a734aff9c5f925e2bf99a673"
+    url "https://files.pythonhosted.org/packages/43/2b/a442b206ed74908dd79e2ad1ef3ffaeae66422b1fb506af981f0ef671ba0/openai-2.25.0.tar.gz"
+    sha256 "c3e1965d83c333dbd341eb2c7c8aceb783c272cd57fc57353404d9a443634e29"
   end
 
   resource "pluggy" do
@@ -239,8 +239,8 @@ class Mycli < Formula
   end
 
   resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
-    sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
+    url "https://files.pythonhosted.org/packages/46/58/8c37dea7bbf769b20d58e7ace7e5edfe65b849442b00ffcdd56be88697c6/tabulate-0.10.0.tar.gz"
+    sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
   end
 
   resource "tqdm" do
