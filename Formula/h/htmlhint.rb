@@ -1,8 +1,8 @@
 class Htmlhint < Formula
   desc "Static code analysis tool you need for your HTML"
   homepage "https://github.com/htmlhint/HTMLHint"
-  url "https://registry.npmjs.org/htmlhint/-/htmlhint-1.9.1.tgz"
-  sha256 "41d36d5414ba305ceeaa757ef61444c6da02a32aa079eaaf7fc1379ae1e7de2a"
+  url "https://registry.npmjs.org/htmlhint/-/htmlhint-1.9.2.tgz"
+  sha256 "c32775c6abf4ed12bbb87c7310ff76802270989f4880a25196d196b7c7fe7c17"
   license "MIT"
 
   bottle do
