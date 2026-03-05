@@ -3,8 +3,8 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/2c/a8/302b734e7d0675e25a7c7b54bafed1259313740f36eb1321445b97c6ca93/streamlink-8.2.0.tar.gz"
-  sha256 "64523e99401ddf4ee7f09f551787dc127111eeb9ac8d8b0e8037966efdd7a1a5"
+  url "https://files.pythonhosted.org/packages/ba/6c/2693892f73a1f27642297929dbb4a6e35a3795314c0d084f3273cc492b71/streamlink-8.2.1.tar.gz"
+  sha256 "afa26582cabf343f49733d79e2bc9a5bbe90aec7dbb246ec5f97796499c637ee"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
@@ -63,8 +63,8 @@ class Streamlink < Formula
   end
 
   resource "pycountry" do
-    url "https://files.pythonhosted.org/packages/76/57/c389fa68c50590881a75b7883eeb3dc15e9e73a0fdc001cdd45c13290c92/pycountry-24.6.1.tar.gz"
-    sha256 "b61b3faccea67f87d10c1f2b0fc0be714409e8fcdcc1315613174f6466c10221"
+    url "https://files.pythonhosted.org/packages/de/1d/061b9e7a48b85cfd69f33c33d2ef784a531c359399ad764243399673c8f5/pycountry-26.2.16.tar.gz"
+    sha256 "5b6027d453fcd6060112b951dd010f01f168b51b4bf8a1f1fc8c95c8d94a0801"
   end
 
   resource "pycryptodome" do
@@ -93,8 +93,8 @@ class Streamlink < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/d8/ce/0041ddd9160aac0031bcf5ab786c7640d795c797e67c438e15cfedf815c8/trio-0.32.0.tar.gz"
-    sha256 "150f29ec923bcd51231e1d4c71c7006e65247d68759dd1c19af4ea815a25806b"
+    url "https://files.pythonhosted.org/packages/52/b6/c744031c6f89b18b3f5f4f7338603ab381d740a7f45938c4607b2302481f/trio-0.33.0.tar.gz"
+    sha256 "a29b92b73f09d4b48ed249acd91073281a7f1063f09caba5dc70465b5c7aa970"
   end
 
   resource "trio-websocket" do
