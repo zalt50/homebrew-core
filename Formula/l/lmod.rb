@@ -4,6 +4,7 @@ class Lmod < Formula
   url "https://github.com/TACC/Lmod/archive/refs/tags/9.1.2.tar.gz"
   sha256 "b7277482677a22c3396b88a1290406ca20bb2564c59632403ca98373f132e65a"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1914de8905be0dc46a4f6f5a616e794084ef83bbc64d1fffa715e09294936449"
@@ -16,7 +17,7 @@ class Lmod < Formula
 
   depends_on "luarocks" => :build
   depends_on "pkgconf" => :build
-  depends_on "lua"
+  depends_on "lua@5.4" # due to luaposix
   depends_on "tcl-tk"
 
   uses_from_macos "bc-gh" => :build
@@ -42,7 +43,8 @@ class Lmod < Formula
   end
 
   def install
-    luaversion = Formula["lua"].version.major_minor
+    lua = Formula["lua@5.4"]
+    luaversion = lua.version.major_minor
     luapath = libexec/"vendor"
     ENV["LUA_PATH"] = "?.lua;" \
                       "#{luapath}/share/lua/#{luaversion}/?.lua;" \
@@ -51,7 +53,7 @@ class Lmod < Formula
 
     resources.each do |r|
       r.stage do
-        system "luarocks", "make", "--tree=#{luapath}"
+        system "luarocks", "make", "--tree=#{luapath}", "--lua-dir=#{lua.opt_prefix}"
       end
     end
 
