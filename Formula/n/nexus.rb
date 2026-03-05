@@ -2,8 +2,8 @@ class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.com/"
   url "https://github.com/sonatype/nexus-public.git",
-      tag:      "release-3.80.0-06",
-      revision: "74aa87dcd43439ef2b69d0a5e49d5522b7944261"
+      tag:      "release-3.89.1-02",
+      revision: "a9c397255e85bac773bd97f00a13d7c9ab3fa99d"
   license "EPL-1.0"
 
   # As of writing, upstream is publishing both v2 and v3 releases. The "latest"
@@ -27,22 +27,23 @@ class Nexus < Formula
   depends_on "maven" => :build
   depends_on "node" => :build
   depends_on "yarn" => :build
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   uses_from_macos "unzip" => :build
 
   # Avoid downloading copies of node and yarn
+  # To avoid non-FIPS provider loads bc-fips classes, use isolated classloader.
   patch :DATA
 
   def install
     # Workaround build error: Couldn't find package "@sonatype/nexus-ui-plugin@workspace:*"
     # Ref: https://github.com/sonatype/nexus-public/issues/417
     # Ref: https://github.com/sonatype/nexus-public/issues/432#issuecomment-2663250153
-    inreplace ["components/nexus-rapture/package.json", "plugins/nexus-coreui-plugin/package.json"],
+    inreplace "public/common/components/nexus-coreui-plugin/package.json",
               '"@sonatype/nexus-ui-plugin": "workspace:*"',
               '"@sonatype/nexus-ui-plugin": "*"'
 
-    java_version = "17"
+    java_version = Formula["openjdk"].version.major.to_s
     ENV["JAVA_HOME"] = Language::Java.java_home(java_version)
     java_env = Language::Java.overridable_java_home_env(java_version)
     java_env.merge!(KARAF_DATA: "${NEXUS_KARAF_DATA:-#{var}/nexus}",
@@ -56,7 +57,7 @@ class Nexus < Formula
 
     system "mvn", "install", "-DskipTests", "-Dpublic"
 
-    assembly = "assemblies/nexus-repository-core/target/assembly"
+    assembly = "public/selfhosted/assemblies/nexus-repository-core/target/assembly"
     rm(Dir["#{assembly}/bin/*.bat"])
     libexec.install Dir["#{assembly}/*"]
     chmod "+x", libexec.glob("bin/*")
@@ -85,34 +86,6 @@ class Nexus < Formula
 end
 
 __END__
-diff --git a/plugins/nexus-coreui-plugin/pom.xml b/plugins/nexus-coreui-plugin/pom.xml
-index 9b8325fd98..2a58a07afe 100644
---- a/plugins/nexus-coreui-plugin/pom.xml
-+++ b/plugins/nexus-coreui-plugin/pom.xml
-@@ -172,7 +172,7 @@
-         <artifactId>karaf-maven-plugin</artifactId>
-       </plugin>
-
--      <plugin>
-+      <!--plugin>
-         <groupId>com.github.eirslett</groupId>
-         <artifactId>frontend-maven-plugin</artifactId>
-
-@@ -212,12 +212,12 @@
-             </goals>
-             <phase>test</phase>
-             <configuration>
--              <arguments>test --reporters=jest-junit --reporters=default</arguments>
-+              <arguments>test -reporters=jest-junit -reporters=default</arguments>
-               <skip>${npm.skipTests}</skip>
-             </configuration>
-           </execution>
-         </executions>
--      </plugin>
-+      </plugin-->
-     </plugins>
-   </build>
-
 diff --git a/pom.xml b/pom.xml
 index 6647497628..d99148b421 100644
 --- a/pom.xml
@@ -135,3 +108,35 @@ index 6647497628..d99148b421 100644
 
          <plugin>
            <groupId>com.mycila</groupId>
+diff --git a/public/common/components/nexus-crypto/src/main/java/org/sonatype/nexus/crypto/internal/CryptoHelperImpl.java b/public/common/components/nexus-crypto/src/main/java/org/sonatype/nexus/crypto/internal/CryptoHelperImpl.java
+index dfeb6f0..38e067c 100644
+--- a/public/common/components/nexus-crypto/src/main/java/org/sonatype/nexus/crypto/internal/CryptoHelperImpl.java
++++ b/public/common/components/nexus-crypto/src/main/java/org/sonatype/nexus/crypto/internal/CryptoHelperImpl.java
+@@ -87,8 +87,25 @@ public class CryptoHelperImpl
+   }
+ 
+   private static void loadNonFipsProvider() {
+-    // BouncyCastleProvider must be set as the last provider
+-    Security.addProvider(new BouncyCastleProvider());
++    try {
++      Class<?> providerClass =
++          getNonFipsClassLoader().loadClass("org.bouncycastle.jce.provider.BouncyCastleProvider");
++      Provider provider = (Provider) providerClass.getConstructor().newInstance();
++      // BouncyCastleProvider must be set as the last provider
++      Security.addProvider(provider);
++    }
++    catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException
++        | InstantiationException | IllegalAccessException e) {
++      throw new RuntimeException("Failed to initialize non-FIPS provider", e);
++    }
++  }
++
++  private static URLClassLoader getNonFipsClassLoader() {
++    // Load bcprov and bcutil in an isolated classloader to prevent bc-fips classes
++    // (which share org.bouncycastle.crypto.* package names) from interfering.
++    URL bcprovUrl = BouncyCastleProvider.class.getProtectionDomain().getCodeSource().getLocation();
++    URL bcutilUrl = org.bouncycastle.util.Arrays.class.getProtectionDomain().getCodeSource().getLocation();
++    return new URLClassLoader(new URL[]{bcprovUrl, bcutilUrl}, null);
+   }
+ 
+   private static void loadFipsProvider() {
