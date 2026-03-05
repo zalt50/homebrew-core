@@ -8,7 +8,7 @@ class Portablegl < Formula
   head "https://github.com/rswinkle/PortableGL.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ee2bac44840d1db63fc11b34aa4814ef75ffb0c71fbecad705e2961b6e9c8e6b"
+    sha256 cellar: :any_skip_relocation, all: "93cc376fab3fc5dbc505e3bce5dea8056a50e37880282a63433498410cac015a"
   end
 
   depends_on "sdl2" => :test
