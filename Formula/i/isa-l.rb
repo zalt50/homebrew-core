@@ -1,8 +1,8 @@
 class IsaL < Formula
   desc "Intelligent Storage Acceleration Library"
   homepage "https://github.com/intel/isa-l"
-  url "https://github.com/intel/isa-l/archive/refs/tags/v2.31.1.tar.gz"
-  sha256 "e1d5573a4019738243b568ab1e1422e6ab7557c5cae33cc8686944d327ad6bb4"
+  url "https://github.com/intel/isa-l/archive/refs/tags/v2.32.0.tar.gz"
+  sha256 "7a194ff80d0f7e20615c497654e8a51b0184d0c79e2e265c7f555f52a26a05a4"
   license "BSD-3-Clause"
 
   bottle do
@@ -21,26 +21,6 @@ class IsaL < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "nasm" => :build
-
-  on_sequoia :or_newer do
-    # Backport commit to cleanly apply last patch. This fixes type mismatch warnings
-    patch do
-      url "https://github.com/intel/isa-l/commit/841f9e34adf81176e6359e27a0fead383ed47bd5.patch?full_index=1"
-      sha256 "6cbc36cfc6a3972725d90750311fa69fe79f6090e6bd2f2c4c588a971ca3e01b"
-    end
-
-    # Backport commit to cleanly apply last patch. This optimizes CRC64 Rocksoft
-    patch do
-      url "https://github.com/intel/isa-l/commit/9a6c32cb057789c7609acadcf8eb8b8818fe324d.patch?full_index=1"
-      sha256 "78aeb37495bb52b5afbee5d7c3b544c7292650fc0be6ab91a3ca6becafdc0939"
-    end
-
-    # Backport commit to fix build on Xcode 16.3+
-    patch do
-      url "https://github.com/intel/isa-l/commit/73c50447fca763943942299c2a2c0c05c39c1238.patch?full_index=1"
-      sha256 "11eb1648b11fcdb03401530e012a8f4d0e7becf941fc049aa2aa2a6d4410cf3c"
-    end
-  end
 
   def install
     system "./autogen.sh"
