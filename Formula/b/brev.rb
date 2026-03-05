@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://developer.nvidia.com/brev"
-  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.316.tar.gz"
-  sha256 "095452684cb08ffc3b94d1415c17ba9ef25f1355d4d3105645bdc6ad498e2278"
+  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.317.tar.gz"
+  sha256 "c1fa2cd924befad87d8942c0cef2a8c8b57283d4ca9518ec050d2df61322e5e6"
   license "MIT"
   head "https://github.com/brevdev/brev-cli.git", branch: "main"
 
