@@ -2,13 +2,17 @@ class GoogleworkspaceCli < Formula
   desc "CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more"
   homepage "https://developers.google.com/workspace"
   # We cannot install from the npm registry because it installs precompiled binaries
-  url "https://github.com/googleworkspace/cli/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "4bac177856b3a644938650624ad180bd8ae718ba9b6b1ce70745b4ba992b4028"
+  url "https://github.com/googleworkspace/cli/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "d0885370074af8db6ac09f64094022c6cc9e818b77d7e25bfd5f706730e4a785"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8496699a870b49c3d06107dc72dfa919343955c5ea79d0c858f86d86e0efda9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d72f2f307778b8eaf634e34cb79aa92cde51ae0867a9a4c4ed56230028971825"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17f6c277e7c3c57a968b2776a2306574afc32dfe6fd64b977643062465cdff49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "298684bd45dddc9a47347c97df5b294eab00a38596a9c30ba197005c3d631b7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa88cf852b9d3114651c0b498dbe570dec8fe66a738ae668a9fbefbfd3caa5a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6febb796001130e09333f98a565c08501c8fe1f3a7c39c714e5927ec5e98dee1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b37ccd87879e8be060c777b665c9f79e1004d983f64549b6f3b75fbb6e6a6752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8a0744ea692e08e14048611c514d77c20d580d2fd4ef8531d965d277d29426e"
   end
 
   depends_on "rust" => :build
