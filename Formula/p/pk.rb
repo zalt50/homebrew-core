@@ -1,8 +1,8 @@
 class Pk < Formula
   desc "Field extractor command-line utility"
   homepage "https://github.com/johnmorrow/pk"
-  url "https://github.com/johnmorrow/pk/releases/download/v1.1.0/pk-1.1.0.tar.gz"
-  sha256 "339dc5e04c828e771cc6fb1c0745b41a7e19aca12f0e3cdcc0d0dc37a5c30c51"
+  url "https://github.com/johnmorrow/pk/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "e1d70b683cbf8d1be505e818d91ef07c6938c82affc914eaf88f25d4f81edd56"
   license "Apache-2.0"
 
   bottle do
@@ -14,17 +14,11 @@ class Pk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "914baaac89170aff43746e5e99c36df336944c25981268e40933148ec7467ce9"
   end
 
-  on_macos do
-    depends_on "argp-standalone"
-  end
+  depends_on "rust" => :build
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-    system "make"
-    system "make", "test"
-    system "make", "install"
+    system "cargo", "install", *std_cargo_args
+    man1.install "doc/pk.1"
   end
 
   test do
