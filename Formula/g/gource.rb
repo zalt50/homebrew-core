@@ -1,10 +1,9 @@
 class Gource < Formula
   desc "Version Control Visualization Tool"
   homepage "https://gource.io/"
-  url "https://github.com/acaudwell/Gource/releases/download/gource-0.55/gource-0.55.tar.gz"
-  sha256 "c8239212d28b07508d9e477619976802681628fc25eb3e04f6671177013c0142"
+  url "https://github.com/acaudwell/Gource/releases/download/gource-0.56/gource-0.56.tar.gz"
+  sha256 "332d89b9a979b17417fbce0edd72b19914f1409fd126a13d11787d0e15dc0d79"
   license "GPL-3.0-or-later"
-  revision 6
 
   bottle do
     sha256 arm64_tahoe:   "a0e923c616b9d7e20dae30ee0a12e270361c1bcad4ffa33acc95cc9106c2b2cd"
@@ -40,14 +39,6 @@ class Gource < Formula
   end
 
   def install
-    # Workaround for Boost 1.89.0 as upstream commit requires regenerating configure
-    # https://github.com/acaudwell/Gource/commit/1b4e37d71506e6ad19f15190907852978507fc6a
-    if build.stable?
-      odie "Remove workaround for Boost 1.89.0" if version > "0.55"
-      ENV["with_boost_system"] = "no"
-    end
-
-    ENV.cxx11
     ENV.append "LDFLAGS", "-pthread" if OS.linux?
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
