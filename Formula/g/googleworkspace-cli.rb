@@ -17,6 +17,8 @@ class GoogleworkspaceCli < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "gws", because: "both install a `gws` binary"
+
   def install
     system "cargo", "install", *std_cargo_args
   end
