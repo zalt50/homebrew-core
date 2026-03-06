@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https://flix.dev/"
-  url "https://github.com/flix/flix/archive/refs/tags/v0.68.0.tar.gz"
-  sha256 "e5cfb63f1d1c180f767e943f1c82c4336f273c6c18a0d63f64149812490c0881"
+  url "https://github.com/flix/flix/archive/refs/tags/v0.69.0.tar.gz"
+  sha256 "ea5a0489d82d7c25c5fc73e52d207b6a78ed5f8313dcbdc00291ed634232ad27"
   license "Apache-2.0"
   head "https://github.com/flix/flix.git", branch: "master"
 
@@ -11,19 +11,16 @@ class Flix < Formula
     regex(/^v?\.?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "bd5ba3230210c39e51f10ed1d22b83651888d94413a3a31eecafa9d551804a71"
-  end
-
-  depends_on "gradle" => :build
+  depends_on "mill" => :build
   depends_on "scala" => :build
   depends_on "openjdk"
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home
-    system "gradle", "--no-daemon", "build", "jar", "-x", "test"
-    prefix.install "build/libs/flix.jar"
-    bin.write_jar_script prefix/"flix.jar", "flix"
+    system "mill", "--no-daemon", "flix.compile"
+    system "mill", "--no-daemon", "flix.assembly"
+    libexec.install "out/flix/assembly.dest/out.jar" => "flix.jar"
+    bin.write_jar_script libexec/"flix.jar", "flix"
   end
 
   test do
