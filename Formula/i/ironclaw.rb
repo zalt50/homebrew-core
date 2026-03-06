@@ -1,8 +1,8 @@
 class Ironclaw < Formula
   desc "Security-first personal AI assistant with WASM sandbox channels"
   homepage "https://github.com/nearai/ironclaw"
-  url "https://github.com/nearai/ironclaw/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "26d0ea9dddb9d75887047c8814d8e96860574677cfa47398e59e926f954820ec"
+  url "https://github.com/nearai/ironclaw/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "d69678e95ad4f447f6ffcdf88175783c77ebb11b8c0c3806e279b41e3aca8e60"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
