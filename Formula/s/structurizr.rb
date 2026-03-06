@@ -1,8 +1,8 @@
 class Structurizr < Formula
   desc "Software architecture models as code"
   homepage "https://structurizr.com/"
-  url "https://github.com/structurizr/structurizr/archive/refs/tags/v6.0.0.tar.gz"
-  sha256 "d4df925f09c646e0b453156f3797b5a80119d699a33b85d792ef20bfd7279308"
+  url "https://github.com/structurizr/structurizr/archive/refs/tags/v2026.03.06.tar.gz"
+  sha256 "5b47d506ff4735bd2d52d5aedb546e1711a50c9042f6bfdc02e3f5dc2d1f91e8"
   license "Apache-2.0"
 
   bottle do
@@ -18,15 +18,18 @@ class Structurizr < Formula
   depends_on "openjdk"
 
   def install
-    system "mvn", "-Dmaven.test.skip=true", "package"
-    libexec.install Dir["structurizr-application/target/structurizr-*.war"].first => "structurizr.war"
-    bin.write_jar_script libexec/"structurizr.war", "structurizr"
+    system "mvn", "-Dapp.revision=#{version}", "-Dmaven.test.skip=true", "package"
+    libexec.install "structurizr-application/target/structurizr-#{version}.war"
+    libexec.install "structurizr-mcp/target/structurizr-mcp-#{version}.war"
+    bin.write_jar_script libexec/"structurizr-#{version}.war", "structurizr"
+    bin.write_jar_script libexec/"structurizr-mcp-#{version}.war", "structurizr-mcp"
+    # NOTE: excluding structurizr-themes due to unknown license for PNG files
   end
 
   test do
     result = shell_output("#{bin}/structurizr validate -w /dev/null", 1)
     assert_match "/dev/null is not a JSON or DSL file", result
 
-    assert_match "structurizr-*: #{version}", shell_output("#{bin}/structurizr version")
+    assert_match "structurizr: #{version}", shell_output("#{bin}/structurizr version")
   end
 end
