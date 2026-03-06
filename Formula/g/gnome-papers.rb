@@ -1,8 +1,8 @@
 class GnomePapers < Formula
   desc "Document viewer for PDF and other document formats aimed at the GNOME desktop"
   homepage "https://apps.gnome.org/Papers/"
-  url "https://download.gnome.org/sources/papers/49/papers-49.4.tar.xz"
-  sha256 "5e30535e73421dcd314240abb20e25793a053a5cd6586ead08c350c7b8e6f871"
+  url "https://download.gnome.org/sources/papers/49/papers-49.5.tar.xz"
+  sha256 "6e2a7a5870f7e10da5804cab4784b2f6bb55f97a4045ce5a64c36796bf2ff4bd"
   license "GPL-2.0-or-later"
 
   bottle do
