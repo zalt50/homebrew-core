@@ -3,8 +3,8 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/ae/76/b5efb3033d8499b17f9386beaf60f64c461798e1ee16d10bc9c0077beba5/huggingface_hub-1.5.0.tar.gz"
-  sha256 "f281838db29265880fb543de7a23b0f81d3504675de82044307ea3c6c62f799d"
+  url "https://files.pythonhosted.org/packages/d5/7a/304cec37112382c4fe29a43bcb0d5891f922785d18745883d2aa4eb74e4b/huggingface_hub-1.6.0.tar.gz"
+  sha256 "d931ddad8ba8dfc1e816bf254810eb6f38e5c32f60d4184b5885662a3b167325"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
@@ -48,8 +48,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
-    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
+    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
+    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
   end
 
   resource "fsspec" do
