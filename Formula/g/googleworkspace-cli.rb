@@ -7,12 +7,12 @@ class GoogleworkspaceCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bea1a3a86e4d49860b36d7461b411ac4f6331c4b055596144be8d1d4d24434b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e572348cce0e39c6d3ea445b06b0fb25bf69001912525ea3a9db3111a6209fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72b5349a10561b8065ec9fb17f8088a27064b310a998e5cddbb2b1a348791df6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96910daf2fa1b807e35af5ca9584d5a79952efe622171f933fb70b583f8d032a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b09c58702a205d4dd5bddf2f4ffb11dfbbd4708baa08d4a2e8d3ac3500d5f9e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "446f6910f1286cdfa74bbc74c7c7aca117bba37bfd53971730a34fe6052cf93e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de5bf13bd334ea2618b98735fcea2b8bb61f608a02c8a764c56161b359596b81"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b1cee5b8aadfd3ef47b75f1bbcf8f141e1a7e1fd2dfcb180db5719d14a54d7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8684c430dca71ae70f7e7d25ee633ac91b04f3773e1c4640c506294325fc595"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c2d8a563a428458fa9ea67735e3941fafe9354da7269b9184c6d2c62599b1a45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83dd91bfbbc63bd8b42470dd709edbc7643dd5cbdf1014b377ae59bc3f538f2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "395ba8a2720983cd852ee04d316df1b3b6e14ee20007ee0497ec87daeb4ea0ea"
   end
 
   depends_on "rust" => :build
