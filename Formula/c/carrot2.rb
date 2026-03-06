@@ -2,8 +2,8 @@ class Carrot2 < Formula
   desc "Search results clustering engine"
   homepage "https://search.carrot2.org/"
   url "https://github.com/carrot2/carrot2.git",
-      tag:      "release/4.8.4",
-      revision: "0f03127e58a6a10a8d0f5f0a0c4807f0f9e5b6cd"
+      tag:      "release/4.8.5",
+      revision: "1d25fb74183ced9070e1d2af2e82cd8842065791"
   license "Apache-2.0"
 
   bottle do
@@ -28,7 +28,7 @@ class Carrot2 < Formula
 
   def install
     # Make possible to build the formula with the latest available in Homebrew gradle
-    inreplace "gradle/wrapper/gradle-wrapper.properties", "gradle-9.2.1", "gradle-#{Formula["gradle"].version}"
+    inreplace "gradle/wrapper/gradle-wrapper.properties", "gradle-9.3.1", "gradle-#{Formula["gradle"].version}"
 
     # Use yarn and node from Homebrew
     inreplace "gradle/node/yarn-projects.gradle", "download = true", "download = false"
