@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://github.com/v8/v8/archive/refs/tags/14.6.202.6.tar.gz"
-  sha256 "5eff8d1bcdbbd562882732afea5ff899dd52b8ba4a084423ce319d0df7b1840c"
+  url "https://github.com/v8/v8/archive/refs/tags/14.6.202.11.tar.gz"
+  sha256 "26ee39a0524cc825b24ffafe77e303b026c27a80c18ac19a8f8f8a6582086125"
   license "BSD-3-Clause"
 
   livecheck do
