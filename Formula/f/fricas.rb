@@ -7,12 +7,12 @@ class Fricas < Formula
   head "https://github.com/fricas/fricas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "14cd63e267c22e3b4b137ee90c9cc43b5f8f94e9db99634470b9e2824ed5ac5b"
-    sha256 cellar: :any,                 arm64_sequoia: "f682a69dc065379f6d23e3df54efa768d0ed1c98504d5ad2979d9b0daa34f88b"
-    sha256 cellar: :any,                 arm64_sonoma:  "a72eb597042e63a3c24cf4685dabdd6f44e048bcce481288fba1ca36771e3163"
-    sha256 cellar: :any,                 sonoma:        "f7adc9ef7e288ffa066325527473bd49fa6bac40ac2868a8cac8b5e7a1250eb0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c695a9ca4ae5f366af1e30b73d9845d3dd1bdcd219399ab929e9bd0a401f382"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff08f7fd803834b72297f25ae6da970f06e512a4314af3188b615479922d7c2"
+    sha256 cellar: :any,                 arm64_tahoe:   "c15b302c244c29f0e21c64585a2853b6f6986fe9e0647f0140cbde85ac14206e"
+    sha256 cellar: :any,                 arm64_sequoia: "15fe335ba8d9905e994da7a2886078b9824848afca7c4259c436dc44b4768e74"
+    sha256 cellar: :any,                 arm64_sonoma:  "433f376667cac07df1f484b26997c6992d3b7f6741f8d5241e4c21d3ec5ee7a1"
+    sha256 cellar: :any,                 sonoma:        "71707c3e44dff85ebba85e391fc62f5684155b8342347daa90cb97e775b767ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c64425203945bb32a826e1606d413c67a36ed3d0492fa8e00aeebc8d2e6595c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "996a712fd6b8adf2e075d4fbb3a3fe9a88f6805e84aa563f4947aac5612e7e6a"
   end
 
   depends_on "gmp"
