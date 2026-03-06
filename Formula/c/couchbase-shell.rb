@@ -7,13 +7,12 @@ class CouchbaseShell < Formula
   head "https://github.com/couchbaselabs/couchbase-shell.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "977f11ee4b592d21b686acc1b1f944ccc489a5880fcea647692ff54c65596ff7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e77f30aea33590c635f0e616d8c1be503015152ebcf627d71e123d7b8e2fc49b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e42479455532b58a4e19a483ce3281a13394d13fb8d9d5cca32a0cc0753082b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f2fb928c3cf68b02d379a4525096bb20a901033ab1f0521256b6ee35d8fbcba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e204136d8f0f757dadf3e5c3856fdedd0c77d5a6367596f171491094b307bc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5dee81dbd8b43cbe658722db7d7b981dbf109759ef30a34a546da8ab2ea085d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f594c38db7ee6a0a853ea4b07df60ff6d11f21550bbd0f3cf7567393789aedb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22fa2e1e8125d8918e945312c9f71abfab417327f36b75885797d452e02bf3c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "176b49699e3d2dc9abc923cd1262eb6080c8ad71e0c93be32fa406561af9d88d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10c55838e8d6cbc2c24c167a2b12bd506f76423d2be2dcc81fca15cd3b913de3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b73249abaa65a897832a3533057d118a70c2cf44801d7d3bf974a7b977458ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "134d0876c3c49d7b5263d167f66dd3fcd5dcbd017f611b303e6774bd46ebc646"
   end
 
   depends_on "pkgconf" => :build
