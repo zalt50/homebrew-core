@@ -15,13 +15,12 @@ class Nexus < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbdb021da2cc6066138e09589e806d1a07ca47626d99c9f4a3ae2f6fb0c778e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c64a1a99d2afc641dde2157e425fe1a1480af05863156d042425e2eb46de3d82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "502879f5c9432a298e842d0b81f38f1f8bb7fadbb6b07f21acac20c5645a0e9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9a7a7083af570c7bc74eb35ecf4685fe113f1bcace468f15e49bac4b51d2593"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d76c559159d879f391d5b7811adebcfab467c93f0f2c43e7a6eef9a50d742d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebbcd5d02c9ace245c37de557a8e814aa5242fd5eefaba4cb1d94c12014e3006"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45a01160ff002116591e8c5150e5d66a4feb71023dc5e0fc0cdc87f97757e5d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d371df29bb319e4ab494af2028b3c58ff0e59784063ec6274bfd51fa0ced8b9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47b043a562d14cdb3784b45a9bd7a6660055fd9766043abb7180bd16734dc039"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25bbcbbfdfcb2fcec058338c0231c5c03c1e1a3818171cd4c49229e42bfd4bf9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f28d3d72c7f6216b784984c106183b4d500a74237c28d8156f562a7df016e888"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "337601441ce2122c9108368e1db16a32983ba5303ccd4a9f2efea58fa1032577"
   end
 
   depends_on "maven" => :build
