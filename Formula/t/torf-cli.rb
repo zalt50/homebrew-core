@@ -7,6 +7,10 @@ class TorfCli < Formula
   sha256 "7fa885a18a3e9fd586c038c8d4a648fac20932f90cd5be1971a24ac84c0f6037"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b7758a90df48547bab1b1e348803e2d94ff4e056db3670f11ef23774f47739f0"
+  end
+
   depends_on "python@3.14"
 
   resource "pyxdg" do
