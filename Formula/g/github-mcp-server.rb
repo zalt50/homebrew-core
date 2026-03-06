@@ -1,8 +1,8 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
   homepage "https://github.com/github/github-mcp-server"
-  url "https://github.com/github/github-mcp-server/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "5bb57ffe7f63ff34f088962ec2b5b82f70ac959bd00553d593ecc6d33587faf1"
+  url "https://github.com/github/github-mcp-server/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "220072144122d6983c2095ac7125a3b316b7ef2416f7a8657ef6ac99a8604d24"
   license "MIT"
   head "https://github.com/github/github-mcp-server.git", branch: "main"
 
@@ -39,7 +39,7 @@ class GithubMcpServer < Formula
       {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
     JSON
 
-    out = pipe_output("#{bin}/github-mcp-server stdio 2>&1", json, 1)
+    out = pipe_output("#{bin}/github-mcp-server stdio 2>&1", json)
     assert_includes out, "GitHub MCP Server running on stdio"
   end
 end
