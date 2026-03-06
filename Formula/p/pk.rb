@@ -1,8 +1,8 @@
 class Pk < Formula
   desc "Field extractor command-line utility"
   homepage "https://github.com/johnmorrow/pk"
-  url "https://github.com/johnmorrow/pk/releases/download/v1.0.2/pk-1.0.2.tar.gz"
-  sha256 "0431fe8fcbdfb3ac8ccfdef3d098d6397556f8905b7dec21bc15942a8fc5f110"
+  url "https://github.com/johnmorrow/pk/releases/download/v1.1.0/pk-1.1.0.tar.gz"
+  sha256 "339dc5e04c828e771cc6fb1c0745b41a7e19aca12f0e3cdcc0d0dc37a5c30c51"
   license "Apache-2.0"
 
   bottle do
