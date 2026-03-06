@@ -1,10 +1,9 @@
 class Memcached < Formula
   desc "High performance, distributed memory object caching system"
   homepage "https://memcached.org/"
-  url "https://www.memcached.org/files/memcached-1.6.40.tar.gz"
-  sha256 "a3d360e9da2221a49bf9aae4e6880f2d44da6b2a2fae39b1911b9ca76488fbfd"
+  url "https://www.memcached.org/files/memcached-1.6.41.tar.gz"
+  sha256 "e097073c156eeff9e12655b054f446d57374cfba5c132dcdbe7fac64e728286a"
   license "BSD-3-Clause"
-  head "https://github.com/memcached/memcached.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -20,11 +19,19 @@ class Memcached < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b206f1adba251a2fa7a7d87884b01517a7b8961a61175f9cef6c8be9094a943"
   end
 
+  head do
+    url "https://github.com/memcached/memcached.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
   depends_on "libevent"
   depends_on "openssl@3"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-coverage", "--enable-tls"
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-coverage", "--enable-tls", *std_configure_args
     system "make", "install"
   end
 
