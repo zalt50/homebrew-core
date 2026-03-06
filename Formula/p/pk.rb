@@ -1,24 +1,17 @@
 class Pk < Formula
   desc "Field extractor command-line utility"
   homepage "https://github.com/johnmorrow/pk"
-  url "https://github.com/johnmorrow/pk/releases/download/v1.0.2/pk-1.0.2.tar.gz"
-  sha256 "0431fe8fcbdfb3ac8ccfdef3d098d6397556f8905b7dec21bc15942a8fc5f110"
+  url "https://github.com/johnmorrow/pk/releases/download/v1.1.0/pk-1.1.0.tar.gz"
+  sha256 "339dc5e04c828e771cc6fb1c0745b41a7e19aca12f0e3cdcc0d0dc37a5c30c51"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1ef1dd86ba0dbedafb386987968dbdf0f22472cb290a7742e80e55efd6976b00"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be0b36f6d80ee6d6191207faa7454eff5a35fac1aaa54cb3df986482bb4129fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df016243a24085cb085bd78cb4e2a0c0a58f0f017a94a09f5b9f7555e6739745"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ca0e954622b756edff41bb508288566a7a950c3a30e83ba0d8013289599afa0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "123a225b6c4a6208cb0b6847bae1cf60ce8934dccbfb1c5c9eb7ed5d055f6c0a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "410e868c6d09c373aba677fe256bea9dd1e3a09d867c009e0afba66c6c671c8e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "827832f8c2cedee3e1c6f4e954a8d601a6da16bdbc6d629f96aa1434a5a0286b"
-    sha256 cellar: :any_skip_relocation, ventura:        "abd231d946e68bfa108184889fd1685c060908ffdfe2c09c203918f340160181"
-    sha256 cellar: :any_skip_relocation, monterey:       "21e1d9edcb574d9c010e7bbb08bb4430eeccac5e89f85029a6e247a586117c1f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "37e03d0ccea4bda2a3616ba39950d8c685e0a49775ed61abfd4b25649e4d2a25"
-    sha256 cellar: :any_skip_relocation, catalina:       "2f9c36e03681f154a24e063e2600d0de8f8afd5f9b114083ef1f34656a7721e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "6c8968e6c98f33f8dc985fa43ad59ced699019c620095f1f7569f73bba19d654"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eebcfa3e63674f0aed1d0e541cfa74edd1efcdb1e1a4a4919ef993c14b4b9b6b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "616cb5899c24239ac26f4765d24a58e7ea972b0ef475ae564dfe4e03fb70dcda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b3b2cb3da19c4d5f505d08f73e0b35644833559a0b3af555b7b3bd416083972"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97c6df1b8ee469c45b63989d6d0c3f81a15426c3c93c6e83730b6ad5128dd37a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0efc7fab0c6d5a602d723f9285b8adad5806708c4da705067bc055f9b8488c7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef558f5abd25fb635a851dc36cced9c6ece1d1ba81456d119ccf3b7c9c94ea79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "914baaac89170aff43746e5e99c36df336944c25981268e40933148ec7467ce9"
   end
 
   on_macos do
