@@ -6,6 +6,13 @@ class GnomePapers < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  bottle do
+    sha256 arm64_tahoe:   "370a47022b8c21f98270b2b449a8c8c08045ed0780c201b372acf8dc287f7a1c"
+    sha256 arm64_sequoia: "d029e50d905768aea97d012150b7b2c457ad20d983e556b8f2187ccb56d1d3db"
+    sha256 arm64_sonoma:  "f5ffc33055e9cafaf632921c61b8a26c0b92eb9404e7aee591dd2510172beff1"
+    sha256 sonoma:        "756689b9e62df2e95f1c4c07a6f7ca4a3d8af5cc3e94d1f02d9c2e6b8a0361a6"
+  end
+
   depends_on "blueprint-compiler" => :build
   depends_on "desktop-file-utils" => :build
   depends_on "gettext" => :build # for msgfmt
