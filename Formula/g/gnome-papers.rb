@@ -4,12 +4,7 @@ class GnomePapers < Formula
   url "https://download.gnome.org/sources/papers/49/papers-49.5.tar.xz"
   sha256 "6e2a7a5870f7e10da5804cab4784b2f6bb55f97a4045ce5a64c36796bf2ff4bd"
   license "GPL-2.0-or-later"
-
-  bottle do
-    sha256 arm64_tahoe:   "2eb3284a4d2c13a97317c4d4ded92a9dc370dea65399b3b724be8bc3918ff495"
-    sha256 arm64_sequoia: "093111b3701bef7f7e5b2f9c48d6a4d531343c6fd6a0923b328f68f3e119a51f"
-    sha256 arm64_sonoma:  "ab352034a6fd45b5dd9173180b6c21804cb8c1c0e5c67893ceea090d255a6839"
-  end
+  revision 1
 
   depends_on "blueprint-compiler" => :build
   depends_on "desktop-file-utils" => :build
