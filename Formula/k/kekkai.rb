@@ -1,8 +1,8 @@
 class Kekkai < Formula
   desc "File integrity monitoring tool"
   homepage "https://github.com/catatsuy/kekkai"
-  url "https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "5d415a85c9aad979e03d713235f5645f6af3c20f6d97977d0a524cdfe5929a76"
+  url "https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "d942c4695c1312c15109db8f14a0677c972d2ab78e28efdc2b8827dbe1306672"
   license "MIT"
   head "https://github.com/catatsuy/kekkai.git", branch: "main"
 
