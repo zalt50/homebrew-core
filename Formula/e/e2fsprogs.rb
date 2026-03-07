@@ -1,8 +1,8 @@
 class E2fsprogs < Formula
   desc "Utilities for the ext2, ext3, and ext4 file systems"
   homepage "https://e2fsprogs.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.gz"
-  sha256 "2f5164e64dd7d91eadd1e0e8a77d92c06dd7837bb19f1d9189ce1939b363d2b4"
+  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.4/e2fsprogs-1.47.4.tar.gz"
+  sha256 "2cec05f39c20ee621f14926195664e66e6017190ac8e4bbdb16d86082e43c5da"
   license all_of: [
     "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # lib/ex2fs
