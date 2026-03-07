@@ -6,12 +6,10 @@ class DirectxHeaders < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "323c8e0d951d3e38e11b2c5c707782638a27a92e3ea79d937132cce8793e5746"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5b9747cbbf42996f3c2290e3c05023da894a4ee20c6c3cca49dd24cd20900a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b711f9c7ee11e603d19272cb1524aa8b4d1210718551c89da605907f73d0948e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "34292497b21cc03f351c04131ef69ed2e4328aaf5c6a5ab753f13b3570476c23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b45612ea58ba1b8be4d74f656818dce40ab935c71d73ecd1e148ba9037ba8cd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56e31b6f9a74a21ee3df6d7330be32ae9c621906a7553833102f563c471cd3e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a605831ddbce7dc030332a6f37b2acaca0cc200a4ea479f561ee3ec54101b428"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81b94674a1e9dd1840dce8419357f7fc1d85767fae59284ded28e2284213f1a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b5199836ae830e1ddc3faf87adfc47e73924af9c46696a9580007a4c940f503"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c18d3cbd758e2177eb9cf24e15bf4f574c1a34e9f73ec25eec672ff168f789d8"
   end
 
   depends_on "meson" => :build
