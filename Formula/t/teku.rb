@@ -7,6 +7,15 @@ class Teku < Formula
   license "Apache-2.0"
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30f6bfe434ba4e9d9c706be8c9fc088f72b5d77901b2667f5d4404bc92a9db3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30f6bfe434ba4e9d9c706be8c9fc088f72b5d77901b2667f5d4404bc92a9db3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30f6bfe434ba4e9d9c706be8c9fc088f72b5d77901b2667f5d4404bc92a9db3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "30f6bfe434ba4e9d9c706be8c9fc088f72b5d77901b2667f5d4404bc92a9db3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48c5f7e2ad3464ee41d1555a2a9f539ed77bb621d21f3e8057db229601de793f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48c5f7e2ad3464ee41d1555a2a9f539ed77bb621d21f3e8057db229601de793f"
+  end
+
   depends_on "gradle@8" => :build
   depends_on "openjdk"
 
