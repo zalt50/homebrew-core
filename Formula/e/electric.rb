@@ -14,6 +14,7 @@ class Electric < Formula
     sha256 cellar: :any, arm64_tahoe:   "85fd132c9430fc45e681273b1a57e720de20987c04746906fd2babf1c90a102c"
     sha256 cellar: :any, arm64_sequoia: "ffcf4e68eea9d1087f0533a144cabe86cb5b42721354ec9836f0248134ab5ef5"
     sha256 cellar: :any, arm64_sonoma:  "044dc3605ad07f2e9143746feebab9a1cabf99549a46b9f411b667b13723be2e"
+    sha256 cellar: :any, sonoma:        "d58b5f8d3ffde921f6b1cb89bf3c1b69c8ce377fc8d18f306bb6d0fa7b27a82c"
     sha256               arm64_linux:   "b108f186e3ee4a571c409ae585c452abe2b60573779eb16ebbb9732911518dbd"
     sha256               x86_64_linux:  "e45e6005b1682867535dfa3bad41de5b5f2d8c4fde5b52161b3c0a1dd06cf1de"
   end
