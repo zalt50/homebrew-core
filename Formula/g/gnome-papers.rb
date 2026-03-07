@@ -11,6 +11,8 @@ class GnomePapers < Formula
     sha256 arm64_sequoia: "d029e50d905768aea97d012150b7b2c457ad20d983e556b8f2187ccb56d1d3db"
     sha256 arm64_sonoma:  "f5ffc33055e9cafaf632921c61b8a26c0b92eb9404e7aee591dd2510172beff1"
     sha256 sonoma:        "756689b9e62df2e95f1c4c07a6f7ca4a3d8af5cc3e94d1f02d9c2e6b8a0361a6"
+    sha256 arm64_linux:   "c43b4e7bcd47f203ba7e2f2c3f8392a2c7a24e7b09cd12577d2ead78d00da4b3"
+    sha256 x86_64_linux:  "d643a29cb56291b1de17639b14c65b3045dc3b46f2aca66bbb20b57e67d2f2d1"
   end
 
   depends_on "blueprint-compiler" => :build
