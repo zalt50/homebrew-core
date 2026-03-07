@@ -25,13 +25,13 @@ class Weechat < Formula
   depends_on "libgcrypt"
   depends_on "lua"
   depends_on "ncurses"
-  depends_on "perl"
   depends_on "python@3.14"
   depends_on "ruby"
   depends_on "tcl-tk"
   depends_on "zstd"
 
   uses_from_macos "curl"
+  uses_from_macos "perl"
 
   on_macos do
     depends_on "gettext"
@@ -45,19 +45,21 @@ class Weechat < Formula
   def install
     tcltk = Formula["tcl-tk"]
     args = %W[
-      -DENABLE_MAN=ON
       -DENABLE_GUILE=OFF
-      -DCA_FILE=#{Formula["gnutls"].pkgetc}/cert.pem
       -DENABLE_JAVASCRIPT=OFF
+      -DENABLE_MAN=ON
       -DENABLE_PHP=OFF
       -DTCL_INCLUDE_PATH=#{tcltk.opt_include}/tcl-tk
       -DTCL_LIBRARY=#{tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")}
       -DTK_INCLUDE_PATH=#{tcltk.opt_include}/tcl-tk
       -DTK_LIBRARY=#{tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major}tk#{tcltk.version.major_minor}")}
     ]
-    if OS.linux?
-      args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib-ng-compat"].opt_include}"
-      args << "-DZLIB_LIBRARY=#{Formula["zlib-ng-compat"].opt_lib/shared_library("libz")}"
+
+    # Help CMake find Perl header on macOS due to non-standard layout
+    if OS.mac?
+      perl = DevelopmentTools.locate("perl")
+      perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
+      args << "-DPERL_INCLUDE_PATH=#{MacOS.sdk_path}/#{perl_archlib}/CORE"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
