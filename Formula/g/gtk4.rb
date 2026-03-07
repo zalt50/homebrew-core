@@ -12,6 +12,15 @@ class Gtk4 < Formula
     regex(/gtk[._-](4\.([0-8]\d*?)?[02468](?:\.\d+)*?)\.t/i)
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "4477e0eacc0c37ebc8a0fc3f8f1e3b1dd578487a47eefcd44d21aa32ac12a1d0"
+    sha256 arm64_sequoia: "7587a125118fa5272812378882b7f9b643213b47b844478b2130760779096206"
+    sha256 arm64_sonoma:  "35c1027cdada0559f61e33690bf527c330c850afa096a8d32af26d600532045c"
+    sha256 sonoma:        "8d796c2d0090b1ce8b88085fd7d59149c2f3c9ef86229598558b66f866708fac"
+    sha256 arm64_linux:   "eb4192d1a5dca511a8758953de6b3aa062a91cd35b0b76e6a227560719f58bf9"
+    sha256 x86_64_linux:  "44702959a8656d9f822bd3639bc59bd52605c55db9200ab9c9904239bad58fa4"
+  end
+
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "docutils" => :build
