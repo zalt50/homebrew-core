@@ -28,7 +28,7 @@ class RattlerIndex < Formula
   end
 
   def install
-    features = ["native-tls", "rattler_config"]
+    features = %w[native-tls rattler_config s3]
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/rattler_index", features:)
   end
 
