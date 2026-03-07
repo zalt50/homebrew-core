@@ -9,12 +9,7 @@ class Black < Formula
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbd1f8cf8d35ee909a3453ef97027c3b8d99e0ac652ada54b581fd8044709f2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4182b03a0e4de5718afc262719a91d559df50e08c4f04a708b4aabdde81aa27b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b06bfacf9218f039b00d4b4636d259042129dd9757226365b43cc8cc90f94ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bfb65f801be6489d37b89a30d3deb0a915495fd34542c7910386464c74a03889"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab4ebeee4c361339c321a5fd97be86f76ae30b3f0f3f88b974e8bb4ca43c2752"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a42c523c52c578661e2e4ceb6cfea5287779c8dd7bae2cf4ea5f70e48e7802"
+    sha256 cellar: :any_skip_relocation, sonoma: "4fa01972d8376c81a0bd39360fd6198d3106b3fbe4769391e7bb6de38149046d"
   end
 
   depends_on "python@3.14"
