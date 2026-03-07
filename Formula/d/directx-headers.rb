@@ -4,13 +4,7 @@ class DirectxHeaders < Formula
   url "https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.1.tar.gz"
   sha256 "6193774904c940eebb9b0c51b816b93dd776cfeb25a951f0f4a58f22387e5008"
   license "MIT"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a605831ddbce7dc030332a6f37b2acaca0cc200a4ea479f561ee3ec54101b428"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81b94674a1e9dd1840dce8419357f7fc1d85767fae59284ded28e2284213f1a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b5199836ae830e1ddc3faf87adfc47e73924af9c46696a9580007a4c940f503"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c18d3cbd758e2177eb9cf24e15bf4f574c1a34e9f73ec25eec672ff168f789d8"
-  end
+  revision 1
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
