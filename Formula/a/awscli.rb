@@ -6,11 +6,8 @@ class Awscli < Formula
   url "https://github.com/aws/aws-cli/archive/refs/tags/2.34.4.tar.gz"
   sha256 "fee26e83416056de9cde704ab106abe1de60adddf62bacc70e37e87ccd62ffb0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
-
-  bottle do
-    sha256 cellar: :any, sonoma: "f73499e4981ac2bdcdf54702b7887ce9cb17b61857855d5c8bed9687e02e321b"
-  end
 
   depends_on "cmake" => :build
   depends_on "openssl@3"
