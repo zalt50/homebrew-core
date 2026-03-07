@@ -1,8 +1,8 @@
 class Jvgrep < Formula
   desc "Grep for Japanese users of Vim"
   homepage "https://github.com/mattn/jvgrep"
-  url "https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.12.tar.gz"
-  sha256 "7e24a6954db1874f226054d1ca2e720945a1c92f9b6aac219e20ed4c3ab6e79c"
+  url "https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.13.tar.gz"
+  sha256 "75a5832e6b504d7f627cce135a60ef486033895d509875cecd01828a4b718efd"
   license "MIT"
   head "https://github.com/mattn/jvgrep.git", branch: "master"
 
