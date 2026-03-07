@@ -5,6 +5,7 @@ class Libopenmpt < Formula
   version "0.8.4"
   sha256 "627f9bf11aacae615a1f2c982c7e88cb21f11b2d6f0267946f7c82c5eae4943b"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://lib.openmpt.org/files/libopenmpt/src/"
@@ -37,7 +38,6 @@ class Libopenmpt < Formula
 
   def install
     system "./configure", "--disable-silent-rules",
-                          "--without-vorbisfile",
                           *std_configure_args
     system "make"
     system "make", "install"
