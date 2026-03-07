@@ -1,8 +1,8 @@
 class Algol68g < Formula
   desc "Algol 68 compiler-interpreter"
   homepage "https://jmvdveer.home.xs4all.nl/algol.html"
-  url "https://jmvdveer.home.xs4all.nl/algol68g-3.10.12.tar.gz"
-  sha256 "4c8412b1928efdff8e9c35f17b37809c77db3326d76122907acbba797beb18a8"
+  url "https://jmvdveer.home.xs4all.nl/algol68g-3.10.13.tar.gz"
+  sha256 "89222a0019c59418432d6a47406c4ee76517deb6fa809bb28fdbd5aca8032d27"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -19,6 +19,7 @@ class Algol68g < Formula
     sha256 x86_64_linux:  "518e0e92889629b8f5d858f1dff4b90f2be5d8ca7efc3cb2fdc3d562ad2f8465"
   end
 
+  uses_from_macos "curl"
   uses_from_macos "ncurses"
 
   on_linux do
