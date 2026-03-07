@@ -9,6 +9,15 @@ class Black < Formula
   revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4ed455847f5364f7fd9dd318a1250d27d72a398e1674bc57375729e22a94b71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5295a2171114654a31ecb70c981c3b328f9caed29ab21df50e97c71af40b4752"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b6cfdd94f6d372648d5964606869ca670b16eb5886303b16e6cf9fc37115d8d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61c2fe3d29f9cc27fcc23c35ed67ed3ecd9d5da9a4109bde77f9a393c8d23196"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "382028dc46694e98dd268f459003fbd1ec16713fe86f2a7d3db56f344a5df6ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d441e5baecf7ab6dbfc98407a742647b589eb187ad64e7745f629b9c2301e237"
+  end
+
   depends_on "python@3.14"
 
   pypi_packages package_name: "black[d]"
