@@ -25,6 +25,7 @@ class Libgig < Formula
 
   on_linux do
     depends_on "e2fsprogs"
+    depends_on "util-linux"
   end
 
   def install
