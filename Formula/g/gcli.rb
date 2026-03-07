@@ -4,6 +4,7 @@ class Gcli < Formula
   url "https://github.com/herrhotzenplotz/gcli/archive/refs/tags/v2.10.0.tar.gz"
   sha256 "500da41d29fa53ab412a81864624b9e2bcd0785be61234f6cfb6b3b031b83280"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/herrhotzenplotz/gcli.git", branch: "trunk"
 
   bottle do
