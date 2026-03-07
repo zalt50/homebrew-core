@@ -1,8 +1,8 @@
 class Hpack < Formula
   desc "Modern format for Haskell packages"
   homepage "https://github.com/sol/hpack"
-  url "https://hackage.haskell.org/package/hpack-0.39.2/hpack-0.39.2.tar.gz"
-  sha256 "a9370e59a57b0bf52d600bb3941161de7e3f96892f70ee140c1f892b5da7c05d"
+  url "https://hackage.haskell.org/package/hpack-0.39.3/hpack-0.39.3.tar.gz"
+  sha256 "75c51500435219f30ef685ef53c91f56c7addeee1eac01c86e96878188f83ab2"
   license "MIT"
   head "https://github.com/sol/hpack.git", branch: "main"
 
@@ -28,10 +28,6 @@ class Hpack < Formula
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
     args = ["--allow-newer=base,containers,template-haskell"]
-
-    # https://github.com/sol/hpack/pull/642
-    odie "Remove constraint!" if build.stable? && version > "0.39.2"
-    args << "--constraint=crypton<1.1"
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args
