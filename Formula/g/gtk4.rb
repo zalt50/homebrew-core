@@ -4,18 +4,12 @@ class Gtk4 < Formula
   url "https://download.gnome.org/sources/gtk/4.22/gtk-4.22.0.tar.xz"
   sha256 "ed3932469d3d891df53451f2cd28380af7673f736aa443bb3dda7adb40994f1e"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://gitlab.gnome.org/GNOME/gtk.git", branch: "main"
 
   livecheck do
     url :stable
     regex(/gtk[._-](4\.([0-8]\d*?)?[02468](?:\.\d+)*?)\.t/i)
-  end
-
-  bottle do
-    sha256 arm64_tahoe:   "efddc2db8b67e644d8033ccbfbe1e40efada45f260a02201088a2366f058e151"
-    sha256 arm64_sequoia: "778bec8fa28b628e57c8d3c5120c397cf751b33f1627a28a5d54a186e53e3404"
-    sha256 arm64_sonoma:  "69526dae4f1fe1c592e35db1403011793be7b484f72f0793ff19e5a29490c6bb"
-    sha256 sonoma:        "eb25dfce38a7f74f9cb877dc0886812e262873beee30d5895d12aa695eab3ff9"
   end
 
   depends_on "docbook" => :build
