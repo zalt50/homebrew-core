@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://developer.nvidia.com/brev"
-  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.317.tar.gz"
-  sha256 "c1fa2cd924befad87d8942c0cef2a8c8b57283d4ca9518ec050d2df61322e5e6"
+  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.318.tar.gz"
+  sha256 "da3c6673da7d84df545c28efa5dee728e6c78769f568a040daefa67e3dcda6ed"
   license "MIT"
   head "https://github.com/brevdev/brev-cli.git", branch: "main"
 
@@ -26,6 +26,8 @@ class Brev < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X github.com/brevdev/brev-cli/pkg/cmd/version.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
