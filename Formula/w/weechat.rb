@@ -1,19 +1,18 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://weechat.org/"
-  url "https://weechat.org/files/src/weechat-4.8.1.tar.xz"
-  sha256 "e7ac1fbcc71458ed647aada8747990905cb5bfb93fd8ccccbc2a969673a4285a"
+  url "https://weechat.org/files/src/weechat-4.8.2.tar.xz"
+  sha256 "7e2f619d4dcd28d9d86864763581a1b453499f8dd0652af863b54045a8964d6c"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://github.com/weechat/weechat.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "ea5902bdc85a2b4459d66b1713b6dba788699d395b0f2e37e0152618463b227b"
-    sha256 arm64_sequoia: "c02ec0f9fe7c1cfbcb765617a5f4def60348ff7f2e81f8cb03ff2d4e24e65021"
-    sha256 arm64_sonoma:  "be4f59101aab8499c5c1b5d4f059a82df4f5dc8d606d06267cba04e00844883f"
-    sha256 sonoma:        "3bf3ac092a21393ecc8671c17eaf552c77cd2ee3bde6ec555ce5699430b154c0"
-    sha256 arm64_linux:   "9d9998316c13265c985ede2f0f3e053bd87960a75231d62dda01e318c1156754"
-    sha256 x86_64_linux:  "18fd015dfc8058368a708d6d825218e45a6b0275d9f35a31059a5840e410ef52"
+    sha256 arm64_tahoe:   "99788b968d8ed34a7e838c581ab007bb4f529823b658ae2066d87e8caf821762"
+    sha256 arm64_sequoia: "594073d5720ca68dc70203b2834416d69eb7d5df832468fcf263fdae5cadd4ad"
+    sha256 arm64_sonoma:  "ac357c9a58fcfd30f6515f9c4e2b0672e206cceedbfd52a787dbf389ab0988c5"
+    sha256 sonoma:        "e25a86e6241ea83314cddd5e8bd10720b5f62223934225610ac4e5c69f7fcd00"
+    sha256 arm64_linux:   "1ac15d724e05ccc01e74e31e6d4ed01232d9cc15d01ac619ba7f4338732325aa"
+    sha256 x86_64_linux:  "5e73c4c6f46f4494509af0cef7cc019b818bc0f582086120a747c7407f84051d"
   end
 
   depends_on "asciidoctor" => :build
@@ -56,6 +55,10 @@ class Weechat < Formula
       -DTK_INCLUDE_PATH=#{tcltk.opt_include}/tcl-tk
       -DTK_LIBRARY=#{tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major}tk#{tcltk.version.major_minor}")}
     ]
+    if OS.linux?
+      args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib-ng-compat"].opt_include}"
+      args << "-DZLIB_LIBRARY=#{Formula["zlib-ng-compat"].opt_lib/shared_library("libz")}"
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
