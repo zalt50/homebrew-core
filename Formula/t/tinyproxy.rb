@@ -1,8 +1,8 @@
 class Tinyproxy < Formula
   desc "HTTP/HTTPS proxy for POSIX systems"
   homepage "https://tinyproxy.github.io/"
-  url "https://github.com/tinyproxy/tinyproxy/releases/download/1.11.2/tinyproxy-1.11.2.tar.xz"
-  sha256 "6a126880706691c987e2957b1c99b522efb1964a75eb767af4b30aac0b88a26a"
+  url "https://github.com/tinyproxy/tinyproxy/releases/download/1.11.3/tinyproxy-1.11.3.tar.xz"
+  sha256 "f05644fdf1211ba13754a354bebed909b5b39371b12cce8563c46929a75bedf6"
   license "GPL-2.0-or-later"
 
   bottle do
