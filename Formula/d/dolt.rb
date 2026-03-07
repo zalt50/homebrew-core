@@ -4,16 +4,13 @@ class Dolt < Formula
   url "https://github.com/dolthub/dolt/archive/refs/tags/v1.83.4.tar.gz"
   sha256 "7a9386c61d8c7e5cf135911786c1c0bd407c7ab63655cb71dd4208a7afb79e0b"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
   head "https://github.com/dolthub/dolt.git", branch: "main"
 
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    sha256 cellar: :any, sonoma: "e28477c2fe0a3cdea126711b2adddf4ce19243be71cc63aed31bcf562bd781af"
   end
 
   depends_on "go" => :build
