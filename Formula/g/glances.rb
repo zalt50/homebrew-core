@@ -3,8 +3,8 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/6d/98/1675b9eaaa4717ece363d69a32976ddb29558578a462559579093ef82fc2/glances-4.5.0.5.tar.gz"
-  sha256 "64b407e725103bb748962975dbbd0b7738b45d5d67d878ce939d6764d79271a5"
+  url "https://files.pythonhosted.org/packages/5a/43/6823f434bb296133553269ee971ff981ad1bf877ee56a9e9b878a7ebdb2e/glances-4.5.1.tar.gz"
+  sha256 "82fc569af1ff59ac198a594104f314a69212838edefb44d84b8f76023fb199e1"
   license "LGPL-3.0-or-later"
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
@@ -38,8 +38,8 @@ class Glances < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do
@@ -63,8 +63,8 @@ class Glances < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/48/47/75f6bea02e797abff1bca968d5997793898032d9923c1935ae2efdece642/fastapi-0.129.0.tar.gz"
-    sha256 "61315cebd2e65df5f97ec298c888f9de30430dd0612d59d6480beafbc10655af"
+    url "https://files.pythonhosted.org/packages/e7/7b/f8e0211e9380f7195ba3f3d40c292594fd81ba8ec4629e3854c353aaca45/fastapi-0.135.1.tar.gz"
+    sha256 "d04115b508d936d254cea545b7312ecaa58a7b3a0f84952535b4c9afae7668cd"
   end
 
   resource "h11" do
