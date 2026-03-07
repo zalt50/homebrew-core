@@ -1,10 +1,9 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://weechat.org/"
-  url "https://weechat.org/files/src/weechat-4.8.1.tar.xz"
-  sha256 "e7ac1fbcc71458ed647aada8747990905cb5bfb93fd8ccccbc2a969673a4285a"
+  url "https://weechat.org/files/src/weechat-4.8.2.tar.xz"
+  sha256 "7e2f619d4dcd28d9d86864763581a1b453499f8dd0652af863b54045a8964d6c"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://github.com/weechat/weechat.git", branch: "main"
 
   bottle do
@@ -56,6 +55,10 @@ class Weechat < Formula
       -DTK_INCLUDE_PATH=#{tcltk.opt_include}/tcl-tk
       -DTK_LIBRARY=#{tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major}tk#{tcltk.version.major_minor}")}
     ]
+    if OS.linux?
+      args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib-ng-compat"].opt_include}"
+      args << "-DZLIB_LIBRARY=#{Formula["zlib-ng-compat"].opt_lib/shared_library("libz")}"
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
