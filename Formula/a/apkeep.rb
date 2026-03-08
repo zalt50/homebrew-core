@@ -11,6 +11,15 @@ class Apkeep < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd7187795c6c4dd436f98a4c58a3128f711053df8c15185c75ca232221ae9f9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f1741e4a1fc3a84ffa1ca7dd123c51fdec72afdcdb5a68d02f7b434be3ea4d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7255a509e2350733e8811febb6dc61ac26825a597129cfbb67e91f555175046"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62cd9e4b38fb8c9ed221c3e2e1ab1d2a50e29ea82a9e029f55e27abcfc330f6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "feff4312a01787dd43c63e1b073f4881296cd9d0a339b0c9c7708b2040caf438"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85dc722f1671de059f697ba93b8eabcaebfdbf89b36b9ce43d4063b1503bfcbb"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
