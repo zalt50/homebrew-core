@@ -7,12 +7,12 @@ class EfmLangserver < Formula
   head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0693ca4e1b15f73eb34c1d3102c260eda6a224a2c1465b507b010e22fd180435"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0693ca4e1b15f73eb34c1d3102c260eda6a224a2c1465b507b010e22fd180435"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0693ca4e1b15f73eb34c1d3102c260eda6a224a2c1465b507b010e22fd180435"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac937f6c7f36311cfab5a1e97dab37b8c0338c1e02c355e0751afbb6fd9033aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f68a3e2e52b57d2b1fe1655277267c139232e69af2c93557b744dfba0f8f889b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76991739d7e07865d25f1e0a11711572e38919a9096095778aaec8d05269b27e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba4fff52f0034987c392a947853d93e874376f575c4abbbac224e0a60ca694f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba4fff52f0034987c392a947853d93e874376f575c4abbbac224e0a60ca694f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba4fff52f0034987c392a947853d93e874376f575c4abbbac224e0a60ca694f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18553b3aabe22c67ca3f5880b51e3072e8c92d5bce83a60267b53b3daee032b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44141d8853b027305d2f7fe25403f841a1df68850375fdb7811c2b48a0b5ff2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4498e74e5258997cef6eca090ee7f75e33f4f8e761c906fda78a407ad871821"
   end
 
   depends_on "go" => :build
