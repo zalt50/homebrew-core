@@ -21,7 +21,7 @@ class Asciiquarium < Formula
   end
 
   depends_on "ncurses"
-  depends_on "perl"
+  uses_from_macos "perl"
 
   resource "Curses" do
     url "https://cpan.metacpan.org/authors/id/G/GI/GIRAFFED/Curses-1.45.tar.gz"
