@@ -1,8 +1,8 @@
 class Imapfilter < Formula
   desc "IMAP message processor/filter"
   homepage "https://github.com/lefcha/imapfilter/"
-  url "https://github.com/lefcha/imapfilter/archive/refs/tags/v2.8.4.tar.gz"
-  sha256 "836cf14a9736d15b251952a84e01d641d7dce78a7be6be94220beee81414dbfb"
+  url "https://github.com/lefcha/imapfilter/archive/refs/tags/v2.8.5.tar.gz"
+  sha256 "81930d83c99a07305554b2fd283422aefb4f069e13cff971377f3f844e601424"
   license "MIT"
 
   bottle do
