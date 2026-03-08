@@ -1,10 +1,9 @@
 class Handbrake < Formula
   desc "Open-source video transcoder available for Linux, Mac, and Windows"
   homepage "https://handbrake.fr/"
-  url "https://github.com/HandBrake/HandBrake/releases/download/1.10.2/HandBrake-1.10.2-source.tar.bz2"
-  sha256 "c65e1cc4f8cfc36c24107b92c28d60e71ef185ec983e9a5841facffafea5f8db"
+  url "https://github.com/HandBrake/HandBrake/releases/download/1.11.0/HandBrake-1.11.0-source.tar.bz2"
+  sha256 "c5de77365b083f519c76b9edcc0685d8bda9ce04fc0ad59c3c38145355ef1b17"
   license "GPL-2.0-only"
-  revision 2
   head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   bottle do
@@ -87,23 +86,6 @@ class Handbrake < Formula
       inreplace ["contrib/x265_10bit/module.defs", "contrib/x265_12bit/module.defs", "contrib/x265_8bit/module.defs"],
                 "-DENABLE_CLI=OFF",
                 "-DENABLE_CLI=OFF -DENABLE_SVE2=OFF"
-
-      # Fix AArch64 assembly for pixel-util.S
-      (buildpath/"contrib/x265/A09-aarch64-fix.patch").write <<~PATCH
-        diff --git a/source/common/aarch64/pixel-util.S b/source/common/aarch64/pixel-util.S
-        index e2b31e4..1bcaf4a 100644
-        --- a/source/common/aarch64/pixel-util.S
-        +++ b/source/common/aarch64/pixel-util.S
-        @@ -860,7 +860,7 @@ function PFX(scanPosLast_neon)
-             lsl             w13, w13, w6
-             lsl             w15, w15, w6
-             extr            w14, w14, w13, #31
-        -    bfc             w15, #31, #1
-        +    bfm             w15, wzr, #31, #31
-             cbnz            w15, .Loop_spl_1
-         .Lpext_end:
-             strh            w14, [x2], #2
-      PATCH
     end
 
     ENV.append "CFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2" if OS.linux?
