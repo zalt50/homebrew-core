@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/d5/a4/c8d85b523a8685361ff263d5e5430cf7b6518e5f65454b73d0bdc6a89f3d/mycli-1.61.0.tar.gz"
-  sha256 "1ba92f0bd4c283297cc9a3a652a889f257d8249b0bbb548519e0bc979bfa42f0"
+  url "https://files.pythonhosted.org/packages/d3/f6/a3459eb4ef1523fbed3824556bd2f8f007237bcaeb5dc7c32516b18432ab/mycli-1.62.0.tar.gz"
+  sha256 "8782396bc856f204a5b963a1744346d24257279fc55849d62d36638715082d56"
   license "BSD-3-Clause"
 
   bottle do
@@ -89,8 +89,8 @@ class Mycli < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
-    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
+    url "https://files.pythonhosted.org/packages/27/7b/c3081ff1af947915503121c649f26a778e1a2101fd525f74aef997d75b7e/jaraco_context-6.1.1.tar.gz"
+    sha256 "bc046b2dc94f1e5532bd02402684414575cc11f565d929b6563125deb0a6e581"
   end
 
   resource "jaraco-functools" do
