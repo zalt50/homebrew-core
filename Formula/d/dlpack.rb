@@ -6,6 +6,10 @@ class Dlpack < Formula
   license "Apache-2.0"
   head "https://github.com/dmlc/dlpack.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "30a717cecea8548dd3d1e77b92ebcd12f915717236ba86937170b75a29afd1c7"
+  end
+
   depends_on "cmake" => :build
   depends_on "numpy" => :test
   depends_on "python@3.14" => :test
