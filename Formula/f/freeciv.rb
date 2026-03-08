@@ -25,12 +25,13 @@ class Freeciv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3cbe6eaa8f40c6e4644eb1bb7d5af97f3425fd1f3378ff7d133c6673780c6e18"
-    sha256 arm64_sequoia: "fd63a5fddf2683709aa2a2303827e79bdc6950744c854fa4d2159cd90bc19815"
-    sha256 arm64_sonoma:  "e447325fce7a9bab451204a62204b8e783417b66ceeac2f3ad3a272789af1974"
-    sha256 sonoma:        "f34c1a025f36b55ac16f1790b6f9e282c299a61bf4fc1f19cad9d55f16a8852f"
-    sha256 arm64_linux:   "f926a11483072bd11599bfe1fead4d63a6a42955b217139f5d48e31b431ac468"
-    sha256 x86_64_linux:  "9a114b68ec923737b713e617b4cc19c5ad25113ca27ccda5beb382dae48a1cae"
+    rebuild 1
+    sha256 arm64_tahoe:   "c248876231c9b02c566a8aa12960e125860bffe314ad6dffba9dba13f4847f26"
+    sha256 arm64_sequoia: "a72bf845ec9fc54b86da486a076f7238825e129bf6c638a6c3e71e1b9365f8c0"
+    sha256 arm64_sonoma:  "ce9074202497b9ebd998f7a35b6c9caeccb0e44faa2cf7cb3d58201d9bb5dac0"
+    sha256 sonoma:        "6a5af5f5be1cd978bc83414d965dbdaa4410f295419bf6c8afd22a268e0b7bb9"
+    sha256 arm64_linux:   "244b61daf923f461713047e950bbb34423d15002cacb0065919f885be1f35471"
+    sha256 x86_64_linux:  "04df5f3ffe30793204c735fcfb2bbe81038628a5c2981cc08fcac8874ac11264"
   end
 
   depends_on "meson" => :build
