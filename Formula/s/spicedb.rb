@@ -6,6 +6,15 @@ class Spicedb < Formula
   license "Apache-2.0"
   head "https://github.com/authzed/spicedb.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b20e83a9057d45f64909c11f2ddbd17670e53a1c3306a2aebf9d24623192463"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e403420bdaeca87fcc3b042af3f544f82baf8261b47d4e322068b28da556c697"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0254f25654f8d641d2e1b6780a3f705810074cd7e1e1c60f23869641771af30f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3434be339a68d83257b1419bb72472e283e7459532f89ff5c296ddfd0916d4df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8db1f47f3a5276bd44ecb93fa046d963e53937257ed1f316340be63c3012aea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "566651576b6c2336d79828131fc2acf8bbefab8e0c96f93a81abe27c046c205e"
+  end
+
   depends_on "go" => :build
 
   def install
