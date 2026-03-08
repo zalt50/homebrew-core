@@ -1,8 +1,8 @@
 class Sqlpage < Formula
   desc "Web app builder using SQL queries to create dynamic webapps quickly"
   homepage "https://sql-page.com/"
-  url "https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.42.0.tar.gz"
-  sha256 "6bb1b40a4bef392c7b6c7d2f480be4ed78cd3474c38d55f61875c38605548ae1"
+  url "https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.43.0.tar.gz"
+  sha256 "ddf3e03d92d4acc90f6e650ba8f500cc5c27b82906b4eea60c7a792bd231c32f"
   license "MIT"
   head "https://github.com/sqlpage/SQLpage.git", branch: "main"
 
