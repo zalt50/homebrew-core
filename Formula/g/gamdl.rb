@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/01/66/91dd53582c1b682aff13a25d4338959726474704765189d93c6fe7d7248f/gamdl-2.9.2.tar.gz"
-  sha256 "9ee2fd1a6f2ee7031aaf67175c6f2914466ee5f1d613852eacaf4615291ddfab"
+  url "https://files.pythonhosted.org/packages/76/62/28429c8edd8667ba9012678d3c467304907e12d793e16e8d454b89c44f3f/gamdl-2.9.3.tar.gz"
+  sha256 "a053d0801103df676af6effd348f068f2bdca51ab85551fc6aa56b684e5ffdd3"
   license "MIT"
 
   bottle do
@@ -34,8 +34,8 @@ class Gamdl < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do
