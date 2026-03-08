@@ -839,6 +839,11 @@ class Dvc < Formula
   end
 
   def install
+    # Workaround for https://github.com/facebookresearch/hydra/issues/3131
+    odie "Check if setuptools workaround can be removed!" if resource("hydra-core").version > "1.3.2"
+    (buildpath/"build-constraints.txt").write "setuptools<82\n"
+    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
+
     # dvc-hdfs uses fsspec.implementations.arrow.HadoopFileSystem which is
     # a wrapper on top of pyarrow.fs.HadoopFileSystem.
     ENV["PYARROW_WITH_HDFS"] = "1"
