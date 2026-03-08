@@ -1,9 +1,10 @@
 class Wumpus < Formula
   desc "Exact clone of the ancient BASIC Hunt the Wumpus game"
   homepage "http://www.catb.org/~esr/wumpus/"
-  url "http://www.catb.org/~esr/wumpus/wumpus-1.10.tar.gz"
-  sha256 "aa059e163b4f516580b83931ae29fbd5796302e854da283b85cc7fc887677d7c"
+  url "https://gitlab.com/esr/wumpus/-/archive/1.11/wumpus-1.11.tar.bz2"
+  sha256 "6b60884df963d785759ecde67382cacae2989f666be7b6269af511a51fde5458"
   license "BSD-2-Clause"
+  head "https://gitlab.com/esr/wumpus.git", branch: "master"
 
   # The homepage links to the `stable` tarball but it can take longer than the
   # ten second livecheck timeout, so we check the Git tags as a workaround.
@@ -23,18 +24,14 @@ class Wumpus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "63f9a87dd8a82fc0bf2969cedfca5dd336e0e3575d6792bf3d8e19e6f3506332"
   end
 
-  head do
-    url "https://gitlab.com/esr/wumpus.git", branch: "master"
-    depends_on "asciidoctor" => :build
-  end
-
-  # checksum got changed and no response from upstream, https://gitlab.com/esr/wumpus/-/issues/2
-  deprecate! date: "2025-09-12", because: :does_not_build
-  disable! date: "2026-09-12", because: :does_not_build
+  depends_on "asciidoctor" => :build
 
   def install
-    system "make"
-    system "make", "prefix=#{prefix}", "install"
+    system "make", "all", "wumpus.6", "CFLAGS=#{ENV.cflags}"
+    # Not using `make install` due to issues with Makefile
+    # https://gitlab.com/esr/wumpus/-/issues/3
+    bin.install "wumpus", "superhack"
+    man6.install "wumpus.6"
   end
 
   test do
