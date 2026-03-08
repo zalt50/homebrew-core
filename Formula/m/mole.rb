@@ -6,6 +6,12 @@ class Mole < Formula
   license "MIT"
   head "https://github.com/tw93/Mole.git", branch: "main"
 
+  # There exists a version like `vx.y.z-windows`
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   no_autobump! because: :bumped_by_upstream
 
   bottle do
