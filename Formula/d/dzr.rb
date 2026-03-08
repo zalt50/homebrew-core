@@ -7,7 +7,7 @@ class Dzr < Formula
   head "https://github.com/yne/dzr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ea20d466f1340cb8d19648ca91dced7f9ebb73f547d4d61dfe5f2709990f88ec"
+    sha256 cellar: :any_skip_relocation, all: "d8ec1e8f5f8fcb935b681abe19505f33722d4924b94e1af4c82fc10e3eacaaa9"
   end
 
   depends_on "dialog"
