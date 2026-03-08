@@ -1,10 +1,11 @@
 class Carl < Formula
   desc "Calendar for the command-line"
-  homepage "https://github.com/b1rger/carl"
-  url "https://github.com/b1rger/carl/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "1399bf0aadc44efb92f76a7eef6158a6a19799fe0aab82946c417b166a95bbfe"
+  homepage "https://codeberg.org/birger/carl"
+  # Missing codeberg tag, use crate url instead
+  url "https://static.crates.io/crates/carl/carl-0.6.0.crate"
+  sha256 "225a66d6b91fc6fe15ff1a7afc9f8c1d461f2885aa9a115e06947d3d81f20da3"
   license "MIT"
-  head "https://github.com/b1rger/carl.git", branch: "main"
+  head "https://codeberg.org/birger/carl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "251335aec10fb79627aab7eb88a912fcf54f427dbaf5b57800da3475e884b07b"
