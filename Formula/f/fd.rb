@@ -1,8 +1,8 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
   homepage "https://github.com/sharkdp/fd"
-  url "https://github.com/sharkdp/fd/archive/refs/tags/v10.4.0.tar.gz"
-  sha256 "9caf8509134fe304ce5ee4667804216d93fe61df11ff941f48a240d40495db16"
+  url "https://github.com/sharkdp/fd/archive/refs/tags/v10.4.1.tar.gz"
+  sha256 "59ab83e56743e28eaa92c5497b3998a35744db6d8d574f389456481f2af1cb00"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
