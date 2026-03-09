@@ -51,6 +51,15 @@ class Docker < Formula
     end
   end
 
+  def caveats
+    on_linux do
+      <<~EOS
+        The daemon component is provided in a separate formula:
+          brew install docker-engine
+      EOS
+    end
+  end
+
   test do
     assert_match "Docker version #{version}", shell_output("#{bin}/docker --version")
 
