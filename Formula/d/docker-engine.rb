@@ -12,6 +12,11 @@ class DockerEngine < Formula
     regex(/^docker-v(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "9bad62c3a0c513eb5d5f5c17456fe989bac3b4ebcce40d890f98ff9158ac7775"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8f72ddcdf973009d50cf9180c1293a84a5a6deb7646ff75e1903314c0f29f75e"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "pkgconf" => :build
