@@ -1,10 +1,10 @@
 class Buildkit < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/buildkit"
-  url "https://github.com/moby/buildkit.git",
-      tag:      "v0.28.0",
-      revision: "5245d869d85d9c98f986b600584c332a3b001986"
+  url "https://github.com/moby/buildkit/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "2307112b30593fb8fc4d479ce4547862fa101fa2ecd50a852330a1117a988bbc"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/buildkit.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -27,7 +27,7 @@ class Buildkit < Formula
   depends_on "go" => :build
 
   def install
-    revision = Utils.git_head
+    revision = build.head? ? Utils.git_short_head : tap.user
     ldflags = %W[
       -s -w
       -X github.com/moby/buildkit/version.Version=#{version}
@@ -38,6 +38,15 @@ class Buildkit < Formula
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:, output: bin/"buildctl"), "./cmd/buildctl"
 
     doc.install Dir["docs/*.md"]
+  end
+
+  def caveats
+    on_linux do
+      <<~EOS
+        The daemon component is provided in a separate formula:
+          brew install buildkitd
+      EOS
+    end
   end
 
   test do
