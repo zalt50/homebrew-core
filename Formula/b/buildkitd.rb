@@ -14,6 +14,11 @@ class Buildkitd < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "aeef826aa5ac6bba845296fd2aeb5fb7c8b32cf455ad85023e65e15b7354758e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fb0f2ad2f794821947ac5c76d7cbd80aa7d9d965e0c3d52f53ba7c5f7df1a005"
+  end
+
   depends_on "go" => :build
 
   depends_on :linux
