@@ -79,7 +79,9 @@ class Ollama < Formula
     log_path var/"log/ollama.log"
     error_log_path var/"log/ollama.log"
     environment_variables OLLAMA_FLASH_ATTENTION: "1",
-                          OLLAMA_KV_CACHE_TYPE:   "q8_0"
+                          OLLAMA_KV_CACHE_TYPE:   "q8_0",
+                          OLLAMA_ORIGINS:         "*",
+                          OLLAMA_CONTEXT_LENGTH:  "32768"
   end
 
   test do
