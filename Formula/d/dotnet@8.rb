@@ -2,8 +2,8 @@ class DotnetAT8 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.125.tar.gz"
-  sha256 "55461fd09921edad587043b935974dcb999974aec6addff95c8918070b03490f"
+  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.127.tar.gz"
+  sha256 "ac0797ae1492db0810f6470f1887e8b24ccdebf993d7f0fc38fe1a6b9c8e6295"
   license "MIT"
   compatibility_version 1
 
@@ -36,12 +36,21 @@ class DotnetAT8 < Formula
 
   on_macos do
     depends_on "grep" => :build # grep: invalid option -- P
+    depends_on "llvm@20" => :build if DevelopmentTools.clang_build_version >= 2100
   end
 
   on_linux do
     depends_on "libunwind"
     depends_on "lttng-ust"
     depends_on "zlib-ng-compat"
+
+    on_intel do
+      depends_on "llvm" => :build
+
+      fails_with :gcc do
+        cause "Fatal error. Internal CLR error"
+      end
+    end
   end
 
   on_intel do
@@ -51,8 +60,8 @@ class DotnetAT8 < Formula
   end
 
   resource "release.json" do
-    url "https://github.com/dotnet/dotnet/releases/download/v8.0.125/release.json"
-    sha256 "8b482195a2a93e73066d7598295ffbd69cff80af2510d603a1c20f8b5a682632"
+    url "https://github.com/dotnet/dotnet/releases/download/v8.0.127/release.json"
+    sha256 "2789e68f1c8f2ce9c1a96c3c80b9faa4c6346c3ffd74e5d7cdb23a3891a227d4"
 
     livecheck do
       formula :parent
@@ -63,13 +72,24 @@ class DotnetAT8 < Formula
     odie "Update release.json resource!" if resource("release.json").version != version
     buildpath.install resource("release.json")
 
+    # .NET built with Apple Clang 2100 (based on LLVM 21) sporadically crashes
+    if DevelopmentTools.clang_build_version >= 2100
+      ENV["CC"] = Formula["llvm@20"].opt_bin/"clang"
+      ENV["CXX"] = Formula["llvm@20"].opt_bin/"clang++"
+      ENV.append_to_cflags "-I#{HOMEBREW_PREFIX}/include"
+    end
+
+    # Make sure CoreCLR builds with our compiler shims
+    ENV["CLR_CC"] = which(ENV.cc)
+    ENV["CLR_CXX"] = which(ENV.cxx)
+
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
       ENV.prepend_path "PATH", Formula["grep"].libexec/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
-      ENV["SDKROOT"] = MacOS.sdk_path
+      ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path
 
       # Deparallelize to reduce chances of missing PDBs
       ENV.deparallelize
@@ -169,12 +189,13 @@ class DotnetAT8 < Formula
 
     # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
     # See https://github.com/Homebrew/homebrew-core/issues/197546
-    resource "sbom-tool" do
-      url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v3.0.1.tar.gz"
-      sha256 "90085ab1f134f83d43767e46d6952be42a62dbb0f5368e293437620a96458867"
+    resource "docfx" do
+      url "https://github.com/dotnet/docfx/archive/refs/tags/v2.78.4.tar.gz"
+      sha256 "255f71f4a6fc7b9ffd0c598d0eba11630dc01262f1fa45ec4f1794508f7033cf"
     end
-    resource("sbom-tool").stage do
-      system bin/"dotnet", "restore", "src/Microsoft.Sbom.Tool", "--disable-build-servers", "--no-cache"
+    resource("docfx").stage do
+      msbuild_args = ["-p:TargetFrameworks=net8.0"]
+      system bin/"dotnet", "restore", "src/docfx", "--disable-build-servers", "--no-cache", *msbuild_args
     end
   end
 end
