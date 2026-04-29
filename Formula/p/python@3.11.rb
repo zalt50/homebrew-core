@@ -404,6 +404,11 @@ class PythonAT311 < Formula
     %W[wheel#{version.major_minor} pip#{version.major_minor}].each do |e|
       (HOMEBREW_PREFIX/"bin").install_symlink bin/e
     end
+
+    # Ensure the template venv activation scripts are writable
+    # to allow reinitializing an existing venv without throwing a permission error.
+    # See: https://github.com/python/cpython/issues/86079
+    chmod "u+w", lib_cellar.glob("venv/scripts/**/*").select(&:file?)
   end
 
   def sitecustomize
