@@ -349,6 +349,13 @@ class PythonFreethreading < Formula
     INI
   end
 
+  def post_install
+    # Ensure the template venv activation scripts are writable
+    # to allow reinitializing an existing venv without throwing a permission error.
+    # See: https://github.com/python/cpython/issues/86079
+    chmod "u+w", lib_cellar.glob("venv/scripts/**/*").select(&:file?)
+  end
+
   def sitecustomize
     <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
