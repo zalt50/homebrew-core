@@ -1,15 +1,10 @@
 class Amtterm < Formula
   desc "Serial-over-LAN (sol) client for Intel AMT"
   homepage "https://www.kraxel.org/blog/linux/amtterm/"
-  url "https://www.kraxel.org/releases/amtterm/amtterm-1.7.tar.gz"
-  sha256 "8c58b76b3237504d751bf3588fef25117248a0569523f0d86deaf696d14294d4"
+  url "https://gitlab.com/kraxel/amtterm/-/archive/amtterm-1.8-1/amtterm-amtterm-1.8-1.tar.bz2"
+  sha256 "d2da2effaa4e8d499a81c9185a3ccde48abffcafaac0d991218dd8974d055719"
   license "GPL-2.0-or-later"
-  head "https://github.com/kraxel/amtterm.git", branch: "master"
-
-  livecheck do
-    url "https://www.kraxel.org/releases/amtterm/"
-    regex(/href=.*?amtterm[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  head "https://gitlab.com/kraxel/amtterm.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -17,9 +12,16 @@ class Amtterm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "18584332d73c1ec0c92903282b8363ec3d459b2bfacd19748f69607652cc40c8"
   end
 
-  depends_on "gtk+3"
-  depends_on :linux
-  depends_on "vte3"
+  depends_on "glib"
+  depends_on "gnutls"
+  depends_on "meson"
+  depends_on "pkgconf"
+
+  on_linux do
+    depends_on "gtk+3"
+    depends_on "pango"
+    depends_on "vte3"
+  end
 
   resource "SOAP::Lite" do
     url "https://cpan.metacpan.org/authors/id/P/PH/PHRED/SOAP-Lite-1.27.tar.gz"
@@ -39,17 +41,16 @@ class Amtterm < Formula
       system "make", "install"
     end
 
-    # @echo -e accidentally prepends "-e" to the beginning of Make.config
-    # which causes the build to fail with an "empty variable" error.
-    inreplace "mk/Autoconf.mk", "@echo -e", "@echo"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
 
-    system "make", "prefix=#{prefix}", "install"
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
-    assert_match "Connection refused", shell_output("#{bin}/amtterm 127.0.0.1 -u brew -p brew 2>&1", 1)
+    assert_match "Connection refused", shell_output("#{bin}/amtterm -u brew -p brew 127.0.0.1 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/amtterm -v 2>&1", 1)
+    assert_match version.major_minor.to_s, shell_output("#{bin}/amtterm -v 2>&1", 1)
   end
 end
