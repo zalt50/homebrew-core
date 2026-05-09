@@ -1,8 +1,8 @@
 class JoplinCli < Formula
   desc "Note taking and to-do application with synchronization capabilities"
   homepage "https://joplinapp.org/"
-  url "https://registry.npmjs.org/joplin/-/joplin-3.5.1.tgz"
-  sha256 "28182c1e0a2cf8ea05af62a3b7bf732a32d4872afb35346356bcd42bae25b3ab"
+  url "https://registry.npmjs.org/joplin/-/joplin-3.6.2.tgz"
+  sha256 "909656e86f66014c47520fa6453deeb13c9f724044a5c7311c83167305e951e5"
   license "MIT"
 
   bottle do
@@ -33,9 +33,10 @@ class JoplinCli < Formula
   end
 
   def install
+    inreplace "command-version.js", "require('../package.json')", "require('./package.json')"
     # Need node-addon-api v7+: https://github.com/lovell/sharp/issues/3920
     system "npm", "add", "node-addon-api@8.0.0"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
     node_notifier_vendor_dir = libexec/"lib/node_modules/joplin/node_modules/node-notifier/vendor"
