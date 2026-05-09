@@ -1,14 +1,14 @@
 class Bigloo < Formula
   desc "Scheme implementation with object system, C, and Java interfaces"
   homepage "https://www-sop.inria.fr/indes/fp/Bigloo/"
-  url "https://www-sop.inria.fr/indes/fp/Bigloo/download/bigloo-4.6a.tar.gz"
-  sha256 "6772f6a17b7f002171d433f1270344a6bbbefb17e2718b0456656aa8c0b0d9c1"
+  url "https://www-sop.inria.fr/indes/fp/Bigloo/download/bigloo-4.7a.tar.gz"
+  sha256 "4425c37f499e2df1a7be3334ae8520fd76214733d9d9fe97b2fba71d1c4cf63b"
   license "GPL-2.0-or-later"
   head "https://github.com/manuel-serrano/bigloo.git", branch: "master"
 
   livecheck do
-    url "https://www-sop.inria.fr/indes/fp/Bigloo/download.html"
-    regex(/bigloo-latest\.t.+?\(([^)]+?)\)/i)
+    url "https://www-sop.inria.fr/indes/fp/Bigloo/download/"
+    regex(/href=.*?bigloo-(\d+(?:\.\d+)*[a-z]?(?:-\d+)?)\.t/i)
   end
 
   bottle do
