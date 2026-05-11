@@ -39,6 +39,7 @@ class PostgresqlAT18 < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "openldap"
@@ -88,6 +89,7 @@ class PostgresqlAT18 < Formula
       --with-lz4
       --with-zstd
       --with-openssl
+      --with-libcurl
       --with-pam
       --with-perl
       --with-uuid=e2fs
@@ -187,5 +189,6 @@ class PostgresqlAT18 < Formula
       assert_equal "#{HOMEBREW_PREFIX}/include/#{name}/server", shell_output("#{pg_config} --includedir-server").chomp
       assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{pg_config} --cppflags") if OS.mac?
     end
+    assert_path_exists lib/"postgresql/#{shared_library("libpq-oauth-18")}"
   end
 end
