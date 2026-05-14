@@ -1,11 +1,22 @@
 class Vapoursynth < Formula
+  include Language::Python::Virtualenv
+
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
-  url "https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R73.tar.gz"
-  sha256 "1bb8ffe31348eaf46d8f541b138f0136d10edaef0c130c1e5a13aa4a4b057280"
   license "LGPL-2.1-or-later"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
+
+  stable do
+    url "https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R76.tar.gz"
+    sha256 "8c51aedc26a5fa2b79b5716bfe1160ffa45c69035c728b7e8740785cf790454b"
+
+    # Backport commit to avoid statically linking dependencies' libraries
+    patch do
+      url "https://github.com/vapoursynth/vapoursynth/commit/d398f465154ef141d447af78b2e65a025de28522.patch?full_index=1"
+      sha256 "3d19b95ed0ba5de76e450ed0dedf7ab7935c0de1e0d08affc3be914c6aefa511"
+    end
+  end
 
   livecheck do
     url :stable
@@ -21,11 +32,7 @@ class Vapoursynth < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a020d5253bc39fbe0f077128478632d24ab5d19e375e94a1d8ed08583558c0df"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "cython" => :build
-  depends_on "libtool" => :build
-  depends_on "nasm" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14"
   depends_on "zimg"
@@ -38,18 +45,27 @@ class Vapoursynth < Formula
     fails_with :clang
   end
 
+  on_linux do
+    depends_on "patchelf" => :build
+  end
+
+  def python3 = "python3.14"
+
   def install
+    ENV.runtime_cpu_detection if Hardware::CPU.intel?
     ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++" if OS.mac? && MacOS.version <= :ventura
 
-    system "./autogen.sh"
-    inreplace "Makefile.in", "pkglibdir = $(libdir)", "pkglibdir = $(exec_prefix)"
-    system "./configure", "--disable-silent-rules",
-                          "--with-cython=#{Formula["cython"].bin}/cython",
-                          "--with-plugindir=#{HOMEBREW_PREFIX}/lib/vapoursynth",
-                          "--with-python_prefix=#{prefix}",
-                          "--with-python_exec_prefix=#{prefix}",
-                          *std_configure_args
-    system "make", "install"
+    # NOTE: Cannot `pip install` into prefix as VapourSynth expects a standard
+    # installation and won't work with Homebrew's symlink directory structure.
+    venv = virtualenv_install_with_resources
+    (prefix/Language::Python.site_packages(python3)/"homebrew-vapoursynth.pth").write venv.site_packages
+
+    # Automatically load plugins installed in separate formulae
+    vapoursynth = venv.site_packages/"vapoursynth"
+    vapoursynth.install_symlink HOMEBREW_PREFIX/Language::Python.site_packages(python3)/"vapoursynth/plugins"
+
+    # Add compatibility symlinks to help dependents find VapourSynth
+    (lib/"pkgconfig").install_symlink vapoursynth/"pkgconfig/vapoursynth.pc" # needed by mpv.pc
   end
 
   def caveats
@@ -63,7 +79,6 @@ class Vapoursynth < Formula
         brew install vapoursynth-imwri
       To use vapoursynth.core.ffms2, execute the following:
         brew install ffms2
-        ln -s "../libffms2.dylib" "#{HOMEBREW_PREFIX}/lib/vapoursynth/#{shared_library("libffms2")}"
       For more information regarding plugins, please visit:
         http://www.vapoursynth.com/doc/plugins.html
     EOS
