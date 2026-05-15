@@ -15,7 +15,7 @@ class Glassfish < Formula
     sha256 cellar: :any_skip_relocation, all: "e5f4627d24cf17dd43c4cf932efed95c3dfa7e6eeab93d1a578c3da24737c1bf"
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@25"
 
   conflicts_with "payara", because: "both install the same scripts"
 
