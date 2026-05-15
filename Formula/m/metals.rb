@@ -22,10 +22,12 @@ class Metals < Formula
   end
 
   depends_on "sbt" => :build
-  depends_on "openjdk"
+  depends_on "openjdk@25"
 
   def install
     ENV["CI"] = "TRUE"
+    ENV["JAVA_HOME"] = Language::Java.java_home("25")
+    ENV.prepend_path "PATH", Formula["openjdk@25"].opt_bin
     inreplace "build.sbt", /version ~=.+?,/m, "version := \"#{version}\","
 
     system "sbt", "package"
@@ -46,7 +48,7 @@ class Metals < Formula
 
     args = %W[-cp "#{libexec/"lib"}/*" scala.meta.metals.Main]
     mcp_args = %W[-cp "#{libexec/"lib"}/*" scala.meta.metals.McpMain]
-    env = Language::Java.overridable_java_home_env
+    env = Language::Java.overridable_java_home_env("25")
     env["PATH"] = "$JAVA_HOME/bin:$PATH"
     (bin/"metals").write_env_script "java", args.join(" "), env
     (bin/"metals-mcp").write_env_script "java", mcp_args.join(" "), env
