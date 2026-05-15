@@ -24,16 +24,16 @@ class Beast < Formula
 
   depends_on "ant" => :build
   depends_on "beagle"
-  depends_on "openjdk"
+  depends_on "openjdk@25"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home
+    ENV["JAVA_HOME"] = Language::Java.java_home("25")
     system "ant", "linux"
     libexec.install Dir["release/Linux/BEAST_X_v*/*"]
     pkgshare.install_symlink libexec/"examples"
     bin.install Dir[libexec/"bin/*"]
 
-    env = Language::Java.overridable_java_home_env
+    env = Language::Java.overridable_java_home_env("25")
     env["PATH"] = "${JAVA_HOME}/bin:${PATH}" if OS.linux?
     bin.env_script_all_files libexec/"bin", env
     inreplace libexec/"bin/beast", "/usr/local", HOMEBREW_PREFIX
