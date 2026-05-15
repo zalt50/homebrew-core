@@ -1,8 +1,9 @@
 class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https://github.com/opensearch-project/OpenSearch"
-  url "https://github.com/opensearch-project/OpenSearch/archive/refs/tags/3.6.0.tar.gz"
-  sha256 "49dc7d3f7f9099d242ac4594d621a011f405a1af12c294dd87ec4fa3a9c460ac"
+  url "https://github.com/opensearch-project/OpenSearch.git",
+      tag:      "3.6.0",
+      revision: "4ca747d8d47f80162db323019357447126732e35"
   license "Apache-2.0"
 
   bottle do
@@ -14,13 +15,13 @@ class Opensearch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "28bbece552585e399068fba5f6bdc2133a974b4f632bdb264dc9749dce0e5326"
   end
 
-  depends_on "gradle@8" => :build
-  depends_on "openjdk"
+  # TODO: Use the vendored Gradle wrapper until its minor version matches Homebrew's `gradle`.
+  depends_on "openjdk@25"
 
   def install
     platform = OS.kernel_name.downcase
     platform += "-arm64" if Hardware::CPU.arm?
-    system "gradle", "-Dbuild.snapshot=false", ":distribution:archives:no-jdk-#{platform}-tar:assemble"
+    system "./gradlew", "-Dbuild.snapshot=false", ":distribution:archives:no-jdk-#{platform}-tar:assemble"
 
     mkdir "tar" do
       # Extract the package to the tar directory
@@ -57,7 +58,7 @@ class Opensearch < Formula
                 libexec/"bin/opensearch-keystore",
                 libexec/"bin/opensearch-plugin",
                 libexec/"bin/opensearch-shard"
-    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Formula["openjdk"].opt_prefix)
+    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Formula["openjdk@25"].opt_prefix)
   end
 
   def post_install
