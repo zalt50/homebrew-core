@@ -16,11 +16,13 @@ class Circumflex < Formula
   end
 
   depends_on "go" => :build
-  depends_on "less"
 
   def install
     system "go", "build", *std_go_args(output: bin/"clx", ldflags: "-s -w"), "./cmd/clx"
     man1.install "share/man/clx.1"
+    bash_completion.install "share/completions/clx.bash" => "clx"
+    zsh_completion.install  "share/completions/_clx"     => "_clx"
+    fish_completion.install "share/completions/clx.fish"
   end
 
   test do
