@@ -1,8 +1,8 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.14.50.tgz"
-  sha256 "6e500379e574c0335364818beae346f99bd06491000c526e957e9349f126c240"
+  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.15.1.tgz"
+  sha256 "d904fc94913bdbeb0d4cd995bd97103cad65d366af60a9bea617d2859b51bc2a"
   license "MIT"
 
   livecheck do
@@ -22,7 +22,7 @@ class Opencode < Formula
   depends_on "ripgrep"
 
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove binaries for other architectures, `-musl`, `-baseline`, and `-baseline-musl`
