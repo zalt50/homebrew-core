@@ -1,8 +1,8 @@
 class BackplaneCli < Formula
   desc "CLI for interacting with the OpenShift Backplane API"
   homepage "https://github.com/openshift/backplane-cli"
-  url "https://github.com/openshift/backplane-cli/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "77a05c4562418dd7f3d45edf7340a7c186a038912b80f4ffd353b2372d4e5f80"
+  url "https://github.com/openshift/backplane-cli/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "b4371e7df535bf6ca73d2eeb2566b41765e789dbb0a19b17a72e9045945a63ee"
   license "Apache-2.0"
   head "https://github.com/openshift/backplane-cli.git", branch: "main"
 
