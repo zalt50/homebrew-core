@@ -1,8 +1,8 @@
 class Jscpd < Formula
   desc "Copy/paste detector for programming source code"
   homepage "https://github.com/kucherenko/jscpd"
-  url "https://registry.npmjs.org/jscpd/-/jscpd-4.2.2.tgz"
-  sha256 "447f6a51e554928d743eb5aca61ec25fd06f79d05e9a61131e25ae0b8077c92c"
+  url "https://registry.npmjs.org/jscpd/-/jscpd-4.2.3.tgz"
+  sha256 "0959ffae9f17fe34d4ee7dcce404b524cadc3eed480d577dd47d4610f0659e69"
   license "MIT"
 
   bottle do
