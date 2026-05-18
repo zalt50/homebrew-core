@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/refs/tags/v9.2.0450.tar.gz"
-  sha256 "6811815aaa2c40d72837f62dce17d1cbc69def741863ae485d52396695453ad6"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.2.0500.tar.gz"
+  sha256 "c4d73c2f16f6a20ecba82f6e1d2586f4aaf66a4dc13f45d686b292be7768cd62"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
@@ -73,8 +73,6 @@ class Vim < Formula
     # the right place (HOMEBREW_PREFIX/share/vim/{vimrc,vimfiles}) for
     # system vimscript files. We specify the normal installation prefix
     # when calling "make install".
-    # Homebrew will use the first suitable Perl & Ruby in your PATH if you
-    # build from source. Please don't attempt to hardcode either.
     system "./configure", "--prefix=#{HOMEBREW_PREFIX}",
                           "--mandir=#{man}",
                           "--enable-multibyte",
@@ -93,10 +91,7 @@ class Vim < Formula
     # Parallel install could miss some symlinks
     # https://github.com/vim/vim/issues/1031
     ENV.deparallelize
-    # If stripping the binaries is enabled, vim will segfault with
-    # statically-linked interpreters like ruby
-    # https://github.com/vim/vim/issues/114
-    system "make", "install", "prefix=#{prefix}", "STRIP=#{which "true"}"
+    system "make", "install", "prefix=#{prefix}"
     bin.install_symlink "vim" => "vi"
   end
 
