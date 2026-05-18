@@ -1,8 +1,8 @@
 class ProtocGenGrpcSwift < Formula
   desc "Protoc plugin for generating gRPC Swift stubs"
   homepage "https://github.com/grpc/grpc-swift-protobuf"
-  url "https://github.com/grpc/grpc-swift-protobuf/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "c7bee7458102e21e6a58302a2946f1bd0a885caa3040556193ed0a49a57c34b1"
+  url "https://github.com/grpc/grpc-swift-protobuf/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "f4f35648d1055319bd6caad1b7894017c9c546727968b8e9f3b4357fcb809d23"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/grpc/grpc-swift-protobuf.git", branch: "main"
