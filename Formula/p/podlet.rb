@@ -1,8 +1,8 @@
 class Podlet < Formula
   desc "Generate podman quadlet files from a podman command or compose file"
   homepage "https://github.com/containers/podlet"
-  url "https://github.com/containers/podlet/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "9dd2ce4a618563f8cb607106eb8082744b228575627bcc5e144c9f076e4be691"
+  url "https://github.com/containers/podlet/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "2dee85888e0f4ad1d8d7f6c7579d00faa69bb8dbcb4708706ef8db92e41f9bef"
   license "MPL-2.0"
   head "https://github.com/containers/podlet.git", branch: "main"
 
@@ -23,7 +23,7 @@ class Podlet < Formula
 
   test do
     expected_output = <<~EOS
-      # hello.container
+      # FileName=hello
       [Container]
       Image=quay.io/podman/hello
     EOS
