@@ -1,8 +1,8 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ryoppippi/ccusage"
-  url "https://registry.npmjs.org/ccusage/-/ccusage-19.0.2.tgz"
-  sha256 "14131dc780c4ca6904efd7f8cd935f6e79bc0b59ee953cfd8bff5ddf1d3b6c84"
+  url "https://registry.npmjs.org/ccusage/-/ccusage-19.0.3.tgz"
+  sha256 "103384865cef17a6e4df5d5f9154994b1c9d44dd0ef5240a0b4aa4a7d38c1e4c"
   license "MIT"
 
   bottle do
@@ -17,6 +17,6 @@ class Ccusage < Formula
   end
 
   test do
-    assert_match "No valid Claude data directories found.", shell_output("#{bin}/ccusage 2>&1", 1)
+    assert_match "No usage data found", shell_output("#{bin}/ccusage 2>&1")
   end
 end
