@@ -1,8 +1,8 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://github.com/varnish/varnish/releases/download/varnish-9.0.2/varnish-9.0.2.tar.gz"
-  sha256 "f3fcee6bd88bcb01a188eada0efe6fe89fb2d399a7b78c467d29c6d3752c4709"
+  url "https://github.com/varnish/varnish/releases/download/varnish-9.0.3/varnish-9.0.3.tar.gz"
+  sha256 "2aac11dd95329b0cea148d478168b3ccc6fe45fab38160c440159386403b69fd"
   license "BSD-2-Clause"
 
   livecheck do
