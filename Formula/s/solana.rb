@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://www.anza.xyz/"
-  url "https://github.com/anza-xyz/agave/archive/refs/tags/v3.1.14.tar.gz"
-  sha256 "b7e84caad554388a04e64c40f535b787fea3d1d24ead1ced4748294e8ed0214d"
+  url "https://github.com/anza-xyz/agave/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "1bd1b7b4eb412d95926ed9490dfbdac787f75a63df13317af7ddec37be0eb6a1"
   license "Apache-2.0"
   version_scheme 1
 
@@ -29,26 +29,11 @@ class Solana < Formula
 
   uses_from_macos "bzip2"
 
-  # Backport fixes for newer Rust
-  patch do
-    url "https://github.com/anza-xyz/agave/commit/8f3944b2159112b8e017b41f9c834344b32a7c59.patch?full_index=1"
-    sha256 "b5c59105fd9fa22f96a5135d3c14a61f63cbd86b31f509a06574965520c11414"
-  end
-
-  # Backport disabling LTO to compile with Apple Clang
-  patch do
-    url "https://github.com/anza-xyz/agave/commit/5e900421520a10933642d5e9a21e191a70f9b125.patch?full_index=1"
-    sha256 "5a03a89dfcb91a3b579e1f67a78580f626c6560e8c6a46c371d7297665b22360"
-  end
-
   # Work around Homebrew-specific issue using Apple Clang 1700 (LLVM 19) by updating cc-rs
   # https://github.com/Homebrew/brew/issues/21112
   patch :DATA
 
   def install
-    # Work around until new release as fixed upstream but commits do not cleanly apply
-    ENV.append_to_rustflags "--allow unused-imports --allow unused_unsafe"
-
     # Work around librocksdb-sys build failure with Apple libclang, "Library not loaded: @rpath/libclang.dylib"
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s if OS.mac?
 
@@ -58,9 +43,6 @@ class Solana < Formula
 
     bins = %w[
       cli
-      faucet
-      genesis
-      gossip
       keygen
       stake-accounts
       tokens
