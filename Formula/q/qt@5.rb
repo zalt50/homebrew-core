@@ -2,16 +2,15 @@ class QtAT5 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   # NOTE: Use *.diff for GitLab/KDE patches to avoid their checksums changing.
-  url "https://download.qt.io/archive/qt/5.15/5.15.18/single/qt-everywhere-opensource-src-5.15.18.tar.xz"
-  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.18/single/qt-everywhere-opensource-src-5.15.18.tar.xz"
-  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.18/single/qt-everywhere-opensource-src-5.15.18.tar.xz"
-  sha256 "cea1fbabf02455f3f0e8eaa839f5d6f45cdb56b62c8a83af5c1d00ac05f912ea"
+  url "https://download.qt.io/archive/qt/5.15/5.15.19/single/qt-everywhere-opensource-src-5.15.19.tar.xz"
+  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.19/single/qt-everywhere-opensource-src-5.15.19.tar.xz"
+  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.19/single/qt-everywhere-opensource-src-5.15.19.tar.xz"
+  sha256 "173c2326dae138bbb0d98921e9d911e55c00163d93a6db29f294b5e19ff306ae"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
   compatibility_version 1
 
   livecheck do
-    url "https://download.qt.io/archive/qt/5.15/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    skip "Qt 5.15.19 is the final release"
   end
 
   bottle do
@@ -39,6 +38,7 @@ class QtAT5 < Formula
   # [^4]: https://bugs.gentoo.org/948836
   # [^5]: https://discourse.ubuntu.com/t/removing-qt-5-from-ubuntu-before-the-release-of-26-04-lts/49296
   deprecate! date: "2026-05-19", because: :unsupported
+  disable! date: "2027-05-19", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on xcode: :build
@@ -119,39 +119,20 @@ class QtAT5 < Formula
     end
   end
 
-  # Below are CVE patches from https://download.qt.io/archive/qt/5.15/
-  # detailed at https://wiki.qt.io/List_of_known_vulnerabilities_in_Qt_products
-
-  # CVE-2025-23050
-  # Remove with Qt 5.15.19
+  # Backport Boost fix for newer Clang
   patch do
-    url "https://download.qt.io/archive/qt/5.15/CVE-2025-23050-qtconnectivity-5.15.diff"
-    sha256 "76e303b6465babb6d0d275792f7f3c41e3df87a6a17992e8b7b8e47272682ce7"
-    directory "qtconnectivity"
+    on_tahoe :or_newer do
+      url "https://github.com/boostorg/mpl/commit/8499ae7e4ff0cf798367ebe6ea9fb991aa43db6c.patch?full_index=1"
+      sha256 "2bac4e4eaabce759c09b86b716149aad8e2bfcc921d7d946a31d24a3b9e25ac3"
+      directory "qtlocation/src/3rdparty/mapbox-gl-native/deps/boost/1.65.1"
+    end
   end
-
-  # CVE-2025-30348
-  # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/archive/qt/5.15/CVE-2025-30348-qtbase-5.15.diff"
-    sha256 "fcd011754040d961fec1b48fe9828b2c8d501f2d9c30f0f475487a590de6d3c8"
-    directory "qtbase"
-  end
-
-  # CVE-2025-4211
-  # Remove with Qt 5.15.19
-  patch do
-    url "https://download.qt.io/archive/qt/5.15/CVE-2025-4211-qtbase-5.15.diff"
-    sha256 "7bc92fb0423f25195fcc59a851570a2f944cfeecbd843540f0e80f09b6b0e822"
-    directory "qtbase"
-  end
-
-  # CVE-2025-5455
-  # Remove with Qt 5.15.19
-  patch do
-    url "https://download.qt.io/archive/qt/5.15/CVE-2025-5455-qtbase-5.15.patch"
-    sha256 "967fe137ee358f60ac3338f658624ae2663ec77552c38bcbd94c6f2eff107506"
-    directory "qtbase"
+    on_tahoe :or_newer do
+      url "https://github.com/boostorg/mpl/commit/fb6b861834e29a93ba71a2e2501a42ecfd3c5655.patch?full_index=1"
+      sha256 "1213dc3e1b8d9cfc9ed42fc1639f10fa350f2a921d378b184c2c0a1d4936f7f3"
+      directory "qtlocation/src/3rdparty/mapbox-gl-native/deps/boost/1.65.1"
+    end
   end
 
   def install
