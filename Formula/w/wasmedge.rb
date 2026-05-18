@@ -1,8 +1,8 @@
 class Wasmedge < Formula
   desc "Lightweight, high-performance, and extensible WebAssembly runtime"
   homepage "https://WasmEdge.org/"
-  url "https://github.com/WasmEdge/WasmEdge/releases/download/0.16.3/WasmEdge-0.16.3-src.tar.gz"
-  sha256 "a9dace1c7552f1ea0b3ce1e16f834fe12bbff1651639fbacc361c25bcdd4204a"
+  url "https://github.com/WasmEdge/WasmEdge/releases/download/0.17.0/WasmEdge-0.17.0-src.tar.gz"
+  sha256 "f4e341e4c8a1f9d8a67579ed91b447d363edecd3f6f592573eaddfcd993fae2e"
   license "Apache-2.0"
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
@@ -20,13 +20,6 @@ class Wasmedge < Formula
   depends_on "lld"
   depends_on "llvm"
   depends_on "spdlog"
-
-  # Fix error: 'is_class' cannot be specialized on macOS 26
-  # PR ref: https://github.com/WasmEdge/WasmEdge/pull/4796
-  patch do
-    url "https://github.com/WasmEdge/WasmEdge/commit/aa0d621c0241af22c34400e5a617f0e0e83c504b.patch?full_index=1"
-    sha256 "1d76615c23e13324c62f1bea009f41c3f2257b261cf3f325556480d414f67a90"
-  end
 
   def install
     # Use CMAKE_BUILD_WITH_INSTALL_RPATH to keep versioned LLVM in RPATH on Linux
