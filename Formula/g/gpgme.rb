@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.1.tar.bz2"
-  sha256 "821ab0695c842eab51752a81980c92b0410c7eadd04103f791d5d2a526784966"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.1.0.tar.bz2"
+  sha256 "841c5ea53fc26259f4fbf0e8bde982dea1b8a1ca0cb77e681c82b050566bf92b"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
