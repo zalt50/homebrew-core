@@ -1,8 +1,8 @@
 class CargoLlvmLines < Formula
   desc "Count lines of LLVM IR per generic function"
   homepage "https://github.com/dtolnay/cargo-llvm-lines"
-  url "https://github.com/dtolnay/cargo-llvm-lines/archive/refs/tags/0.4.45.tar.gz"
-  sha256 "d1e6fb07760239c2f7ee1ee7e7a857ffb4f82df1378bbd0e4d2e8d75e74f13eb"
+  url "https://github.com/dtolnay/cargo-llvm-lines/archive/refs/tags/0.4.46.tar.gz"
+  sha256 "048cc942bae27bc6ad9f7a9ad5931259661d6988041af94465ab13aa2d94d87d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/dtolnay/cargo-llvm-lines.git", branch: "master"
 
