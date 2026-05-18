@@ -2,9 +2,10 @@ class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
   # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.11.6/README.md"
+  url "https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.12.0/README.md"
   sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     formula "dart-sdk"
