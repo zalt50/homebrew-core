@@ -17,13 +17,13 @@ class ArcadeLearningEnvironment < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "b009980ff04c5a5b689483a5fcad22e0a559d29c399e062fac1a19e53f1a3556"
-    sha256 cellar: :any,                 arm64_sequoia: "67db538108663fb4911c74cb33d5ce338fe0840a01bb2c61ce333058e61d80e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "f7a857a6b08ab38794b62b76c3d583bf36b4e359dab1b240e995fd68d8faf6f7"
-    sha256 cellar: :any,                 sonoma:        "a78b791f22db217b1fd7c21dfefe8713d227bd072919c5c27595cfe7bc348bf2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "255d28dc23befe545d9cf3c78e6117d6b20b6b5cdc36b718ca49f8fdfdb46590"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "564c60983aee242bd8f04bfca81e40ac2b1214d2f15897ab2e59106dedf98e4f"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "030f3a605e34e6b60b10839b1495a7b580db1e64359723caef9e0d74e7779628"
+    sha256 cellar: :any,                 arm64_sequoia: "ec092011cc6cc187c51ef2f3f0e1900e26513b803219e565e07dd1d3af81e41a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b2b8f74114e24b713d3916082532bf83d19cf6e5947834c0af5d91720c490fe"
+    sha256 cellar: :any,                 sonoma:        "4be81a1eece247bba32478aca5ceabacf37652e9fe55b75c26835dec5bc937bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68785193e0acb8c0cf72098612143bc40b03ff2dba0628108459d5240f4c00db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f54e86c30ee14e86982e9699b2eac0eba2fae8480d03ce23a65b70fb30395a24"
   end
 
   depends_on "cmake" => :build
