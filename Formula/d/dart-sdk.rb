@@ -1,9 +1,10 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.11.6.tar.gz"
-  sha256 "107d24efcf88be96ceea9045465bc4c6f90a230d09b48511a45447145db01946"
+  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.12.0.tar.gz"
+  sha256 "c5eac0499935b6c13189a03d502a8e6aa0afa8c299a0458258d97f4234ccf512"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa1a7a1fed0fc1e45100cd150f216d628e3b4adaef2e3179489fdfe70830f28b"
@@ -41,12 +42,6 @@ class DartSdk < Formula
 
     system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
-
-    # Workaround for error: 'readdir_r' is deprecated
-    # Issue ref: https://github.com/dart-lang/sdk/issues/63089
-    inreplace "sdk/build/config/compiler/BUILD.gn",
-              "\"-Wno-tautological-constant-compare\",",
-              "\\0\n      \"-Wno-deprecated-declarations\","
 
     # Workaround for dependants audit failure: Libraries were compiled with a flat namespace.
     # Issue ref: https://github.com/dart-lang/sdk/issues/63115
