@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/30182/cdo-2.6.0.tar.gz"
-  sha256 "752d5cda6fa3fdb8a04dcea16af5918e5f9f54657d9a5d2e35ae34f5755c31d8"
+  url "https://code.mpimet.mpg.de/attachments/download/30210/cdo-2.6.1.tar.gz"
+  sha256 "ccf5f3bd5800f703c031bb5b10ae0cd3feac34d8eba7956661ff1ba6deb5985f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -43,6 +43,12 @@ class Cdo < Formula
   end
 
   def install
+    # Upstream switched std::thread → std::jthread in 2.6.1 but doesn't use any jthread-specific feature.
+    # macOS 14/15 SDK libc++ lacks std::jthread, so revert to std::thread.
+    if OS.mac? && MacOS.version <= :sequoia
+      inreplace ["src/workerthread.h", "src/workerthread.cc"], "std::jthread", "std::thread"
+    end
+
     args = %W[
       --disable-openmp
       --with-eccodes=#{Formula["eccodes"].opt_prefix}
