@@ -1,8 +1,8 @@
 class Camlp5 < Formula
   desc "Preprocessor and pretty-printer for OCaml"
   homepage "https://camlp5.github.io/"
-  url "https://github.com/camlp5/camlp5/archive/refs/tags/8.05.00.tar.gz"
-  sha256 "30e6b6faa91a7c448a17dc4ecde0448ae3a7d5ba5b2b057014149d27014a6481"
+  url "https://github.com/camlp5/camlp5/archive/refs/tags/8.05.01.tar.gz"
+  sha256 "7aa71c393cf4f24860051a5aa78da8925d73cb79ba045df442dff2343b1283d7"
   license "BSD-3-Clause"
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
@@ -39,7 +39,7 @@ class Camlp5 < Formula
     system "./configure", "--prefix", prefix, "--mandir", man
     system "opam", "exec", "--", "make", "world.opt"
     system "opam", "exec", "--", "make", "install"
-    (lib/"ocaml/camlp5").install "etc/META"
+    (lib/"camlp5").install "etc/META"
     libexec.install opamroot/"ocaml-system/lib/stublibs/dllpcre2_stubs.so"
     bin.env_script_all_files libexec, CAML_LD_LIBRARY_PATH: libexec
   end
@@ -52,9 +52,9 @@ class Camlp5 < Formula
       # ocaml files are in sync with the camlp5 files.  If camlp5 has been
       # compiled with an older version of the ocaml compiler, then an error
       # "interface mismatch" will occur.
-      shell_output("#{bin}/camlp5 #{lib}/ocaml/camlp5/pa_o.cmo " \
-                   "#{lib}/ocaml/camlp5/o_keywords.cmo " \
-                   "#{lib}/ocaml/camlp5/pr_o.cmo " \
+      shell_output("#{bin}/camlp5 #{lib}/camlp5/pa_o.cmo " \
+                   "#{lib}/camlp5/o_keywords.cmo " \
+                   "#{lib}/camlp5/pr_o.cmo " \
                    "#{ocaml.opt_lib}/ocaml/str/str.cma hi.ml")
   end
 end
