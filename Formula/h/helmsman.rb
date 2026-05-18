@@ -16,7 +16,7 @@ class Helmsman < Formula
   end
 
   depends_on "go" => :build
-  depends_on "helm@3"
+  depends_on "helm"
   depends_on "kubernetes-cli"
 
   def install
@@ -29,8 +29,6 @@ class Helmsman < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["helm@3"].opt_bin
-
     ENV["ORG_PATH"] = "brewtest"
     ENV["VALUE"] = "brewtest"
 
