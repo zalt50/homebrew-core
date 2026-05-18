@@ -12,12 +12,12 @@ class Istioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f38d96bab8c7cacea2d22fe8b478b83fcc36c99b310208082ed5e5f04f8a20a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fa265db8a3283cb9dd0e8ac266fab1ef4c903a753408e74047cf56b7067bfa7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a055ebedf835a847a3c0dc5a4c741fa094a5960811dcb28200e832ad2c503d4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59375744df0ce713d05f80fd4be6ef2881504454eb959fb4c6d757ba41cbaf83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46c7de76aa0c945e65e64b302cd742a0294d7bf9991cedc1c30cacd40d1671be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c197f144541186e071a1560ceb13efb915d9f4b8b835fa74eb29d450d9195cdc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a98affed3368b431b1e3aeeb98a4bcb0a2459ab068d1790859808ac6f7d9b7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ea36890f052b893f56fe7010127d83de4202e3b62ff29f62161c7104ee79360"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ab228467a062278aba96fca26e64d7315d70f7e63e49bb5cf50909d6a8c7a2a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b471aac5226154952d79c2cc523c52766fdc7407bf171fef145897bfcd1b2d18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75b2affa40da3f84bd68b998070d5c468fff8ec931143d9c6564ad0455d3db1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13015d6f0174f37f290b33a484054074f7b9fced51ef6b71401b7355d66667f5"
   end
 
   depends_on "go" => :build
