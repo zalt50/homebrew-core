@@ -4,6 +4,7 @@ class Nano < Formula
   url "https://www.nano-editor.org/dist/v9/nano-9.0.tar.xz"
   sha256 "9f384374b496110a25b73ad5a5febb384783c6e3188b37063f677ac908013fde"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.nano-editor.org/download.php"
@@ -19,6 +20,19 @@ class Nano < Formula
     sha256 x86_64_linux:  "a3f04be362cea9da1cecebc05035784a8c68cd9224951bdfb6da5953bf15b102"
   end
 
+  head do
+    url "https://git.savannah.gnu.org/git/nano.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "groff" => :build
+    depends_on "texinfo" => :build
+
+    on_linux do
+      depends_on "gettext" => :build
+    end
+  end
+
   depends_on "pkgconf" => :build
   depends_on "ncurses"
 
@@ -31,6 +45,13 @@ class Nano < Formula
   end
 
   def install
+    if build.head?
+      # `aclocal --print-ac-dir` returns automake's versioned path
+      # which fails the check for `pkg.m4` since it is not there
+      inreplace "configure.ac", "$(aclocal --print-ac-dir)", HOMEBREW_PREFIX/"share/aclocal"
+      system "./autogen.sh"
+    end
+
     system "./configure", "--enable-color",
                           "--enable-extra",
                           "--enable-multibuffer",
@@ -39,7 +60,27 @@ class Nano < Formula
                           "--sysconfdir=#{etc}",
                           *std_configure_args
     system "make", "install"
+
+    # Replace versioned paths from `sample.nanorc`
+    brew_pkgshare = HOMEBREW_PREFIX/"share"/name
+    inreplace "doc/sample.nanorc", pkgshare, brew_pkgshare
+    # Copy sample so we can install a default configuration in `etc` as well
+    cp "doc/sample.nanorc", "nanorc"
     doc.install "doc/sample.nanorc"
+
+    # Enable syntax highlighting files (including extras) by default
+    pkgshare.install Dir[pkgshare/"extra/*"]
+    inreplace "nanorc", %r{^# (include #{brew_pkgshare}/\*\.nanorc)$}o, "\\1"
+    etc.install "nanorc"
+  end
+
+  def caveats
+    <<~EOS
+      A sample configuration file is available at
+        #{HOMEBREW_PREFIX}/share/doc/#{name}/sample.nanorc
+
+      See `man nanorc` for more information.
+    EOS
   end
 
   test do
