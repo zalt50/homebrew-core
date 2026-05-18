@@ -6,12 +6,12 @@ class Basti < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c93ea7546c6c4ed6f890169f332f28810658e4b68d864f965f2e77214e7b445b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c93ea7546c6c4ed6f890169f332f28810658e4b68d864f965f2e77214e7b445b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c93ea7546c6c4ed6f890169f332f28810658e4b68d864f965f2e77214e7b445b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a5cc4bd8ada263464e590c898b0dd980e35b8d53fa68a5fce9fde2897e5d6ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04d05f5fab473c324a8e001be4b880ba1c129e0e3b15e766c71179787352b784"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebb576e2bda22c4bf10be9e06b9f2d5ba2ddd906cb53580ca2113865f6b6539f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64c30be06e2812a62d8645ac8224ac1bcf8ba84b9f993ddb65c182f4c07dc96c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64c30be06e2812a62d8645ac8224ac1bcf8ba84b9f993ddb65c182f4c07dc96c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64c30be06e2812a62d8645ac8224ac1bcf8ba84b9f993ddb65c182f4c07dc96c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e667fd26c10bbe9d4fb3d5ad0a4042ec29c144b17733d2c2839c1a8e564b61c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c43a4c0269decf3198c9d4611e1dd609ee4e9598ceead3b423b1a2f33f8e100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8059a8823d2037b431bba1721772ca44fcebed1a8b7ad326c093058ec52fedf3"
   end
 
   depends_on "node"
