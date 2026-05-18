@@ -2,9 +2,9 @@ class Blink1 < Formula
   desc "Control blink(1) indicator light"
   homepage "https://blink1.thingm.com/"
   url "https://github.com/todbot/blink1-tool.git",
-      tag:      "v2.4.0",
-      revision: "c0d145b55af30135cfcb161cb63267d591143d69"
-  license "CC-BY-SA-3.0"
+      tag:      "v2.5.0",
+      revision: "600da2c6f14e22fecee0e3871463cdab99a68525"
+  license any_of: ["CC-BY-SA-4.0", "MIT"]
   head "https://github.com/todbot/blink1-tool.git", branch: "main"
 
   bottle do
@@ -22,11 +22,9 @@ class Blink1 < Formula
   end
 
   def install
+    mkdir_p [bin, include, lib/"pkgconfig"]
     system "make"
-    bin.install "blink1-tool"
-    include.install "blink1-lib.h"
-    library = OS.mac? ? "libBlink1.dylib" : "libblink1.so"
-    lib.install library
+    system "make", "install", "install-dev", "PREFIX=#{prefix}"
   end
 
   test do
