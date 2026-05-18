@@ -1,8 +1,8 @@
 class LibusbCompat < Formula
   desc "Library for USB device access"
   homepage "https://libusb.info/"
-  url "https://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.8/libusb-compat-0.1.8.tar.bz2"
-  sha256 "b692dcf674c070c8c0bee3c8230ce4ee5903f926d77dc8b968a4dd1b70f9b05c"
+  url "https://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.9/libusb-compat-0.1.9.tar.bz2"
+  sha256 "179d934676ad3bd172a5a37cf5c6351b8e9d7816feb3029252e79b30a518a3be"
   license all_of: [
     "LGPL-2.1-or-later",
     any_of: ["LGPL-2.1-or-later", "BSD-3-Clause"], # libusb/usb.h
