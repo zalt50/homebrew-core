@@ -26,6 +26,10 @@ class Mfcuk < Formula
   depends_on "libnfc"
   depends_on "libusb"
 
+  on_macos do
+    depends_on "libusb-compat"
+  end
+
   def install
     system "./configure", *std_configure_args
     system "make"
