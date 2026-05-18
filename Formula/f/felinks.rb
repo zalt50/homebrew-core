@@ -21,25 +21,27 @@ class Felinks < Formula
   depends_on "pkgconf" => :build
 
   depends_on "brotli"
+  depends_on "gnutls" # not using OpenSSL due to license compatibility
   depends_on "libcss"
   depends_on "libdom"
+  depends_on "libgcrypt"
   depends_on "libidn2"
   depends_on "libwapcaplet"
-  depends_on "openssl@3"
   depends_on "tre"
-  depends_on "zstd"
 
   uses_from_macos "bison" => :build
-  uses_from_macos "bzip2"
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "expat"
-  uses_from_macos "python"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
   def install
+    # We use GnuTLS rather than OpenSSL as Apache-2.0 is not compatible with GPL-2.0-only
+    # Ref: https://www.gnu.org/licenses/license-list.html#apache2
+    # Ref: https://github.com/rkd77/elinks/blob/master/INSTALL#L95-L110
     args = %w[
       -D256-colors=true
       -D88-colors=true
@@ -49,13 +51,13 @@ class Felinks < Formula
       -Dexmode=true
       -Dfinger=true
       -Dgemini=true
-      -Dgnutls=false
+      -Dgnutls=true
       -Dgopher=true
       -Dgpm=false
       -Dhtml-highlight=true
       -Dnls=false
       -Dnntp=true
-      -Dopenssl=true
+      -Dopenssl=false
       -Dperl=false
       -Dspidermonkey=false
       -Dtre=true
