@@ -17,11 +17,21 @@ class Tenere < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2@1.8"
+  depends_on "libgit2"
   depends_on "oniguruma"
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport dependency updates to use newer libgit2
+  patch do
+    url "https://github.com/pythops/tenere/commit/2cf22cc3b669c1f2be2c5e9e2c495ed8ab1c95fb.patch?full_index=1"
+    sha256 "61759013e19e930e8183df312f5980f5ccfdbd27320dff58c2da943064e1b9d6"
+  end
+  patch do
+    url "https://github.com/pythops/tenere/commit/f6e1ba6734258e3fb0d81778d5ed7d9685ed5bbb.patch?full_index=1"
+    sha256 "fa2fef89c41669dd304366bd3e1a5ea85625a09a12096b83c1bb81deffbdf7e4"
   end
 
   def install
