@@ -16,12 +16,12 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2ffe9a83051679fc88f7beb53ff8a347fd6a00d4d4f23181213c70099ffe415"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2064375c6bb24e9435c166898d511833b3a39166a6f59122d0a5840e47201a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fda1a22ac7cb719ca51f59db7f39e30c8c8c88c32772d4ff8de6c71130877395"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35a8b654083c7d310a12af6a50cb53c3a7a73c9ac57266cd809dab5c3aa8863d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "057a90249d04b8930bab42723f011601821f021cd7ad4b93e42fc7e256e8a50b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d780b09808d3d685d102b3d109822d93189e7be28fc6f8b85521cf7e588f6a80"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6be37f6e517706563ec23215d108ef3c3555c205581e0f9cfc325d0e45a342e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b117719226e92451570f8c5e67f0dea0e48bd63d1fe00cb826c986fe769bc8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78b3c54f78e3f06a000633277f5d606dcb92097b831d6b0aa23593f766a53375"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e34f8cff6210270d1aeb22c17a2e6a93daa867d7aa135ebe8c9024baf02a7e7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87bb3ccdce54d4c94ee8133cfa96adcf70d14b348923bb0357f4275dab906086"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cb10680ee280562cbc5504f7163dc6b1daf8be7c20b0bd8aed06b0c15feea4a"
   end
 
   depends_on "go" => :build
