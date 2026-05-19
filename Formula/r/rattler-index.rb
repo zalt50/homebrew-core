@@ -1,8 +1,8 @@
 class RattlerIndex < Formula
   desc "Index conda channels using rattler"
   homepage "https://github.com/conda/rattler"
-  url "https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.29.0.tar.gz"
-  sha256 "2d0f7f5deea5023debb2db042659c3dd8382e1c982b770433d168081b447e8f7"
+  url "https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.30.1.tar.gz"
+  sha256 "321483f684920d838da9b55ebe7eef38a8e543299ea746a1e60097fa5a0b1c87"
   license "BSD-3-Clause"
   head "https://github.com/conda/rattler.git", branch: "main"
 
@@ -29,7 +29,7 @@ class RattlerIndex < Formula
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
-    features = %w[native-tls rattler_config s3]
+    features = %w[native-tls s3]
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/rattler_index", features:)
   end
 
