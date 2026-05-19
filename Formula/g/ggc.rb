@@ -7,12 +7,12 @@ class Ggc < Formula
   head "https://github.com/bmf-san/ggc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75b6280a67f4f9cc1e24a4291e50488e9029d312992a634f0b4ec7d07d8af029"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75b6280a67f4f9cc1e24a4291e50488e9029d312992a634f0b4ec7d07d8af029"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75b6280a67f4f9cc1e24a4291e50488e9029d312992a634f0b4ec7d07d8af029"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8aa25e283a513b15a8465d24e7e0f427efa25e322f841b4c97a49c0c02653bd5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fc502c78992dccacfb420a5765c5e43e067db82ab54639f903b7484067fec7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a7d4aaed238ff74aeb85e687ca20976911c2b6870612e88619559531d719ea8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f3ff6f615a3a33a0fda30a70b4f773accf0b2c653c74d6025a1ed1539ee458b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f3ff6f615a3a33a0fda30a70b4f773accf0b2c653c74d6025a1ed1539ee458b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f3ff6f615a3a33a0fda30a70b4f773accf0b2c653c74d6025a1ed1539ee458b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2f355a0ce08f023e05eb438d118fca320d125e2021d94201b6006395e5f9df0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de0068d504e8510aa08516e6f248cf53e948a0149663d27d4195c4139f61a58b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7be97c4aae64a166585f54e113d58b60091e56fe94d472ec1cd620e87197abe3"
   end
 
   depends_on "go" => :build
