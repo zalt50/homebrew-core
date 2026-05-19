@@ -18,10 +18,6 @@ class TodoistCliGo < Formula
       This formula was renamed from "todoist-cli" to "todoist-cli-go" to
       free up the "todoist-cli" name for the official Doist CLI
       (https://github.com/Doist/todoist-cli).
-
-      The "todoist-cli" name will be transferred to Doist soon. Please
-      ensure you run `brew upgrade` before then to stay on this
-      (sachaos/todoist) implementation.
     EOS
   end
 
