@@ -4,6 +4,7 @@ class BalenaCli < Formula
   url "https://registry.npmjs.org/balena-cli/-/balena-cli-25.1.6.tgz"
   sha256 "1f526868af152797136a680d76096ad3e48f0dac6e45411b0c5cc426ffcede47"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://registry.npmjs.org/balena-cli/latest"
@@ -21,6 +22,7 @@ class BalenaCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ba992739437f046667a1e0620c1c3ce9e3e609496c2045fd1c86ddc01c7cc7d"
   end
 
+  depends_on "go" => :build
   depends_on "node"
 
   on_linux do
@@ -34,6 +36,13 @@ class BalenaCli < Formula
 
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    # Build dependency @balena/compose-parser from vendored Go source
+    compose_parser = libexec/"lib/node_modules/balena-cli/node_modules/@balena/compose-parser"
+    cd compose_parser do
+      ENV["CGO_ENABLED"] = "0"
+      system "go", "build", "-C", "lib", *std_go_args(output: "../bin/balena-compose-parser")
+    end
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
