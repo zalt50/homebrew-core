@@ -1,10 +1,9 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.21.2/libheif-1.21.2.tar.gz"
-  sha256 "75f530b7154bc93e7ecf846edfc0416bf5f490612de8c45983c36385aa742b42"
+  url "https://github.com/strukturag/libheif/releases/download/v1.22.0/libheif-1.22.0.tar.gz"
+  sha256 "8bd20cfa3201997b8f63266cddfabea2e1481467d7f992e6a2595e0bec691fc2"
   license "LGPL-3.0-or-later"
-  revision 2
   compatibility_version 1
 
   bottle do
