@@ -1,25 +1,9 @@
 class Rrdtool < Formula
   desc "Round Robin Database"
   homepage "https://oss.oetiker.ch/rrdtool/"
+  url "https://github.com/oetiker/rrdtool-1.x/releases/download/v1.10.0/rrdtool-1.10.0.tar.gz"
+  sha256 "ee500a0959c6584bc8dccb1ec7aa205ac09a4fa279465b4b5e2d62724a101bd6"
   license "GPL-2.0-or-later" => { with: "RRDtool-FLOSS-exception-2.0" }
-  revision 1
-
-  stable do
-    url "https://github.com/oetiker/rrdtool-1.x/releases/download/v1.9.0/rrdtool-1.9.0.tar.gz"
-    sha256 "5e65385e51f4a7c4b42aa09566396c20e7e1a0a30c272d569ed029a81656e56b"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-
-    # fix HAVE_DECL checks, upstream pr ref, https://github.com/oetiker/rrdtool-1.x/pull/1262
-    patch do
-      url "https://github.com/oetiker/rrdtool-1.x/commit/98b2944d3b41f6e19b6a378d7959f569fdbaa9cd.patch?full_index=1"
-      sha256 "86b2257fcd71072b712e7079b3fed87635538770a7619539eaa474cbeaa8b7f5"
-    end
-  end
 
   bottle do
     sha256 arm64_tahoe:   "af31da27f499a6c45e9a953ace7433b4426257f79c4662a3e34b3db176d7ec6b"
