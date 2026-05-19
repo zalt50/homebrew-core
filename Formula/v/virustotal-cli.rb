@@ -1,8 +1,8 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
   homepage "https://github.com/VirusTotal/vt-cli"
-  url "https://github.com/VirusTotal/vt-cli/archive/refs/tags/1.3.0.tar.gz"
-  sha256 "10a6edbbb7c81e6978ac55f65544b916906c9400d596beb2fe54f1093a3f7f98"
+  url "https://github.com/VirusTotal/vt-cli/archive/refs/tags/1.3.1.tar.gz"
+  sha256 "3d95ddab1da71ee769ec65e3ed087994fc837d2d234f9c2640c669c8ce8c7d7a"
   license "Apache-2.0"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
