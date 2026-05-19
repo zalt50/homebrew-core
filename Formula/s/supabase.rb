@@ -1,15 +1,9 @@
 class Supabase < Formula
-  desc "Open source Firebase alternative"
+  desc "Postgres development platform"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://github.com/supabase/cli/archive/refs/tags/v2.98.2.tar.gz"
-  sha256 "4b42cabce35e662bffb29dc3b7dd36a3b9c04177fe8ba4800b57c67e05564d5b"
+  url "https://registry.npmjs.org/supabase/-/supabase-2.100.1.tgz"
+  sha256 "5ffebef031379e05caf4961d51e56d3067ad75c19b7bda30ebb393e344f916eb"
   license "MIT"
-  head "https://github.com/supabase/cli.git", branch: "develop"
-
-  livecheck do
-    url :stable
-    strategy :github_releases
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54cd02ecedd9274ca8922272d16d9d69d6294bcceb00c1f7a3b85ba8ae4f4576"
@@ -20,15 +14,11 @@ class Supabase < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "588d2eeb1db8edc4e595290d0a08928548b6cf8e47d771a57f86f831dd6ce633"
   end
 
-  depends_on "go" => :build
+  depends_on "node"
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/supabase/cli/internal/utils.Version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"supabase", shell_parameter_format: :cobra)
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
