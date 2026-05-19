@@ -1,10 +1,9 @@
 class LibheifPlugins < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.21.2/libheif-1.21.2.tar.gz"
-  sha256 "75f530b7154bc93e7ecf846edfc0416bf5f490612de8c45983c36385aa742b42"
+  url "https://github.com/strukturag/libheif/releases/download/v1.22.0/libheif-1.22.0.tar.gz"
+  sha256 "8bd20cfa3201997b8f63266cddfabea2e1481467d7f992e6a2595e0bec691fc2"
   license "LGPL-3.0-or-later"
-  revision 1
 
   livecheck do
     formula "libheif"
@@ -33,14 +32,10 @@ class LibheifPlugins < Formula
   depends_on "svt-av1"
   depends_on "x264"
 
-  # Backport support for svt-av1 >= 4
+  # Fix for missed common_utils.cc in OpenJPEG_DECODER plugin's sources, remove in next release
   patch do
-    url "https://github.com/strukturag/libheif/commit/2a7a383ffe90a5d36d7e0c939e6a7ae953e6ba55.patch?full_index=1"
-    sha256 "bd56a238a476713b91448209a0cbe4d9c2c79aeb1965e1226fc9e915851f956b"
-  end
-  patch do
-    url "https://github.com/strukturag/libheif/commit/fa38577416b743346c315d957becc90b269de2ee.patch?full_index=1"
-    sha256 "f3e9fb2a7e5e430f16f49b520b8dca1eb877ab42060d2294e7ce4793813cc149"
+    url "https://github.com/strukturag/libheif/commit/b5ccea15c1f62d6dc2301bd0551194f433e91217.patch?full_index=1"
+    sha256 "b74848c61f41e076534511d7b42d9c72f9e9e9c7a3bc6dd1c104381681d7f3e9"
   end
 
   def install
@@ -88,7 +83,7 @@ class LibheifPlugins < Formula
       assert_match encoder, encoders
     end
 
-    system libheif_bin/"heif-enc", test_fixtures("test.jpg"), "--output", "test.hej2"
+    system libheif_bin/"heif-enc", test_fixtures("test.jpg"), "--htj2k", "--output", "test.hej2"
     assert_match "MIME type: image/hej2k", shell_output("#{libheif_bin}/heif-info test.hej2")
   end
 end
