@@ -6,7 +6,7 @@ class RedoclyCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "26c1c9c020e6a927a039253f13b43d742e0c24a8629d833950cd5c32f0e5041d"
+    sha256 cellar: :any_skip_relocation, all: "255e55d8d81a9e8576f9d74dd144164f45aa0103c815cbc4c0eab5f1a5cd7ccd"
   end
 
   depends_on "node"
