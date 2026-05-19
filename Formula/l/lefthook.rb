@@ -9,12 +9,12 @@ class Lefthook < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f979581b9f023d29714f2c3aeafd67030bc1dd1f8efcc7b88eb12db8d73dde6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f979581b9f023d29714f2c3aeafd67030bc1dd1f8efcc7b88eb12db8d73dde6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f979581b9f023d29714f2c3aeafd67030bc1dd1f8efcc7b88eb12db8d73dde6c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dff91200de287458e703570f7812871896ef4daa56328d0cabc61e31113248a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c33cb3694207eebdff95740933b5653c785fad86a559444c9795a8dd17aa85a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09235d7780ed49ca253628ed73db526c5f072c3113216826ccf9a55ce6b5198c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ba89c0cf5eb91ee3a8c14c864b6bee2f4cfa34088ef5b80e999247ac62ca8c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ba89c0cf5eb91ee3a8c14c864b6bee2f4cfa34088ef5b80e999247ac62ca8c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ba89c0cf5eb91ee3a8c14c864b6bee2f4cfa34088ef5b80e999247ac62ca8c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b334a69366e59a4d0b97450fad15ca4ecd757d9b65c76f7a9f7abe8700ea5a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "396eb82601e27c94b9b5ae4ed99b7d0462880813695e87d7d9f1e721540d1866"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bda49d4da6c84b580b2aa3c0a6287f337ca7d8141efa4f2e3cb37c3aa0d3ce6f"
   end
 
   depends_on "go" => :build
