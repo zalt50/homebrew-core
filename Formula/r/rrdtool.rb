@@ -1,8 +1,8 @@
 class Rrdtool < Formula
   desc "Round Robin Database"
   homepage "https://oss.oetiker.ch/rrdtool/"
-  url "https://github.com/oetiker/rrdtool-1.x/releases/download/v1.10.1/rrdtool-1.10.1.tar.gz"
-  sha256 "79a0a4caaa278d42b4208048b2c5b28fced0dd8d4498bbcabac42e5641cc1b20"
+  url "https://github.com/oetiker/rrdtool-1.x/releases/download/v1.10.2/rrdtool-1.10.2.tar.gz"
+  sha256 "9787114551ee9b5db7c72722736388dcc54bf00ded51b5dd47feed11fb179fe4"
   license "GPL-2.0-or-later" => { with: "RRDtool-FLOSS-exception-2.0" }
 
   bottle do
