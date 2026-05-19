@@ -6,13 +6,12 @@ class Evince < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "3b7e9c903699d610e7e118ac6268b5f2b0dcbbadd553257be807aaca0b2ff4d9"
-    sha256 arm64_sequoia: "c79bd492a970f0a2faaa173dd9129a9ddee30f3cb67f6700cce4564bdafe0b2a"
-    sha256 arm64_sonoma:  "4146849007042d512b61feeb08fa4db530eeb43a55d4b7718b77ba477a2cd3c0"
-    sha256 sonoma:        "3a2e85b4add1137e10a843ef53563a53ef6bbaf2d92b05223edfee1009880767"
-    sha256 arm64_linux:   "9d5b11ec7436eec5ece2dfd76ddc9b912135f1b5f5c0493fb5aca1fad97a9e33"
-    sha256 x86_64_linux:  "696a73056be75f55f4ebeb0ad5976bf7366cfebc128a13436a1a1d606354cd6d"
+    sha256 arm64_tahoe:   "923f1a8b070907f738b721c5679808fd8edc7e4ce5e71b87513316efcadaf370"
+    sha256 arm64_sequoia: "bcfecd2f93943eebb8aea3ad8b52898c6d3be91d0df4183dd808ec7c4f17944e"
+    sha256 arm64_sonoma:  "4ce89c822d5ad2b119ea61540206ed09891eae79b5fb938d185c35454af86798"
+    sha256 sonoma:        "3d9445cdd69197e11e053425b47b8ab08d98e3e1fed4f54082e2e9c044a5ff88"
+    sha256 arm64_linux:   "455027196a3f4544a628861d242bd21ffed47e77f4915d1972f51883a40340cd"
+    sha256 x86_64_linux:  "e0d069b917e21e53124fc26c1fd4ad4fa7848f2c9ba44a24a9a47422b41e48a2"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
