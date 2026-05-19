@@ -1,8 +1,8 @@
 class CodebookLsp < Formula
   desc "Code-aware spell checker language server"
   homepage "https://github.com/blopker/codebook"
-  url "https://github.com/blopker/codebook/archive/refs/tags/v0.3.39.tar.gz"
-  sha256 "f5c1782f36b860f52465886b66fc6fa9f7973c5ee3f828fe5348998a1b915f27"
+  url "https://github.com/blopker/codebook/archive/refs/tags/v0.3.40.tar.gz"
+  sha256 "45a00a9d34ffd747f5757d1000b769c7b2f72d80ce229a02ff6de455d8ea2111"
   license "MIT"
   head "https://github.com/blopker/codebook.git", branch: "main"
 
