@@ -1,8 +1,8 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
   homepage "https://github.com/Tinder/bazel-diff/"
-  url "https://github.com/Tinder/bazel-diff/archive/refs/tags/v23.0.0.tar.gz"
-  sha256 "8ef2a8674ff96008586e3d840dac793112f2968f664a5cf4a146c596f0ab3617"
+  url "https://github.com/Tinder/bazel-diff/archive/refs/tags/v24.0.0.tar.gz"
+  sha256 "f7e2edfe85127f6f228688c94ce279b5e4b26a188d80b0c4aae55c9097636b0e"
   license "BSD-3-Clause"
 
   bottle do
