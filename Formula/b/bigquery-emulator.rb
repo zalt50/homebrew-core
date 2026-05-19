@@ -1,8 +1,8 @@
 class BigqueryEmulator < Formula
   desc "Emulate a GCP BigQuery server on your local machine"
   homepage "https://github.com/goccy/bigquery-emulator"
-  url "https://github.com/goccy/bigquery-emulator/archive/refs/tags/v0.6.6.tar.gz"
-  sha256 "a4055b66ad28f972b43b3fe0c7d54a08c57bf91bb4163a39204e152055d54440"
+  url "https://github.com/goccy/bigquery-emulator/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "70e3208816ed421c090522dcef3a6122558af77e1954a2e54061235ea9751575"
   license "MIT"
   head "https://github.com/goccy/bigquery-emulator.git", branch: "main"
 
@@ -24,7 +24,7 @@ class BigqueryEmulator < Formula
   fails_with :gcc
 
   def install
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "0"
 
     # Workaround to avoid patchelf corruption when cgo is required (for go-zetasql)
     if OS.linux? && Hardware::CPU.arch == :arm64
@@ -67,7 +67,8 @@ class BigqueryEmulator < Formula
                                          "--data-from-yaml=./data.yaml",
                                          "--port=#{port}",
                                          "--grpc-port=#{grpc_port}"
-    sleep 5
+    sleep 10
+    sleep 10 if OS.mac? && Hardware::CPU.intel?
 
     query = '{"query": "SELECT name FROM dataset1.table_a WHERE id = 2"}'
     query_url = "http://localhost:#{port}/bigquery/v2/projects/test/queries"
