@@ -36,7 +36,7 @@ class Pyside < Formula
   depends_on xcode: :build
   depends_on "pkgconf" => :test
 
-  depends_on "llvm@21"
+  depends_on "llvm"
   depends_on "python@3.14"
   depends_on "qt3d"
   depends_on "qtbase"
@@ -90,16 +90,6 @@ class Pyside < Formula
   end
 
   def install
-    # TODO: Remove following when using unversioned LLVM
-    ENV["CLANG_INSTALL_DIR"] = ENV["LLVM_INSTALL_DIR"] = Formula["llvm@21"].opt_prefix
-    if OS.linux?
-      # Workaround to search versioned LLVM path before HOMEBREW_PREFIX/lib
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: Formula["llvm@21"].opt_lib)}"
-      inreplace "sources/shiboken6/cmake/ShibokenHelpers.cmake",
-                'list(APPEND path_dirs "${libclang_lib_dir}")',
-                'list(PREPEND path_dirs "${libclang_lib_dir}")'
-    end
-
     ENV.append_path "PYTHONPATH", buildpath/"build/sources"
 
     extra_include_dirs = [Formula["qttools"].opt_include]
