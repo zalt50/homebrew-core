@@ -14,12 +14,12 @@ class VirustotalCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f956db59fc8a7ec3172cd02ba5de8f5c178971c60c6feb38d3dee3ba1bdc0742"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f956db59fc8a7ec3172cd02ba5de8f5c178971c60c6feb38d3dee3ba1bdc0742"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f956db59fc8a7ec3172cd02ba5de8f5c178971c60c6feb38d3dee3ba1bdc0742"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb723b9f87be9cd427b2f63f47353da64dea17d8f71c2b75199ad3c215a4de53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6125dfa1c0be784e7505ebc359f6180686b2a1c6e526710af5e6eda1444c70fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0372fc134276136d63cdd731fa3e42467fd3e132834c5e081c30624b13c72851"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10ef27865e7e8562a51b369f9a7c7bfa1dde9378572212fade7521e8c55f1228"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10ef27865e7e8562a51b369f9a7c7bfa1dde9378572212fade7521e8c55f1228"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10ef27865e7e8562a51b369f9a7c7bfa1dde9378572212fade7521e8c55f1228"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59630cb95ca9ecba9b80553e8ce864c0c45fb2d61536539a904c7795b9030be9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bae4d7cac0aabba3f96ae4b89ea0d1f07ddd8c3a0ba6af6d0789042262cf1bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5f8e1d61eae35ef4ccb11098c5cba6c4f93a35a7900af8d66bb7feef00cbb52"
   end
 
   depends_on "go" => :build
