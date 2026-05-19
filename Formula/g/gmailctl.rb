@@ -7,13 +7,12 @@ class Gmailctl < Formula
   head "https://github.com/mbrt/gmailctl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77a704db92814c882fce2b066e26b8fe91545a9a5769047b6d087f5305d78fc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77a704db92814c882fce2b066e26b8fe91545a9a5769047b6d087f5305d78fc3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77a704db92814c882fce2b066e26b8fe91545a9a5769047b6d087f5305d78fc3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73a83c86b05cc2160d9f5ace393e223834eca4246bd8d4e3d3e2c700137f9dff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5702da40d84a0a374fbcdd6232f1c93654938b0ce81cec90bce2fd2adccb50f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec77775a68bc9a7448687bab9cff015b8bed71079474eac17212bb4b54d8c00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c88c7c7ccf993601e3c5017b4431c7260e38f83b4d24e30cac927bd184eb495"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c88c7c7ccf993601e3c5017b4431c7260e38f83b4d24e30cac927bd184eb495"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c88c7c7ccf993601e3c5017b4431c7260e38f83b4d24e30cac927bd184eb495"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ca3bfa896f392fc2d30992b191d9b8ed511e81707c778f8ae15dda052a0d73f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa27e252ea0679f043ad9352007d52f40a90b84dd852062ede0afb99c76c3b47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "310e645f5844956602bcc9b5339e09dd2387a5a373b4b73aa49b82b1991477c7"
   end
 
   depends_on "go" => :build
