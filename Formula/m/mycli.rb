@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/fb/95/20f07b88d45d02588f4073f89c362de24ea656e29b6e37908b569bbe2039/mycli-1.71.0.tar.gz"
-  sha256 "a58fd7099b6d1a150761e4e1050dca85613acb3b353987d7a279f3f48ef6826b"
+  url "https://files.pythonhosted.org/packages/99/6b/1eb91cb05765fa25c9fd11c37e52c515afacaba0f27fd496888197fa2f84/mycli-1.72.1.tar.gz"
+  sha256 "c79f00cdda7d8af22bca609ed0a258236d3062469b34311cde15467dbdc5085a"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69030cb9c3aa5f843f72ac136baee97f6835473c03d76de310a45a07d6482c96"
-    sha256 cellar: :any,                 arm64_sequoia: "e83044bba76a2bb4e0eb89c997ba5aa548068e4659c4d97f90a5a1c38e0165ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebc222c9d310f2a6743267e9ed8afdbaa9be38624f6d3183969fe015ed0aabea"
-    sha256 cellar: :any,                 sonoma:        "8ef241c250fa94546e559ae1e979f1376d9b39d6782d6771ee8e2688bd7dd9eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "471ab162b7c150b1aad4b9022d386aa6883af682bcea8295f524d30fcef98c8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18f0bc31eb69fae48ebd02fa8f741823330166228ce55c64621355d62648421a"
+    sha256 cellar: :any,                 arm64_tahoe:   "21753813ea75baa53aeec46558df6152c6b5d49a494168c9855c102f9c07a8a9"
+    sha256 cellar: :any,                 arm64_sequoia: "a62ea96c58a46ba416a0c6cd94adb771c4d19348347a4a030a2bdc6cec3d916a"
+    sha256 cellar: :any,                 arm64_sonoma:  "588e0f1e3ca24f5854af3e1710659f908b2cc139e662e144771e5196d5596405"
+    sha256 cellar: :any,                 sonoma:        "baf5ce6c449aa71f5b57f9bbe07bcc367d3d1b9d08e082789bb1a6079b293047"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28ca746403f29753b59ae08d576b95324b7897de42c9cd80596f4d6c39a06719"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc11e0168e7bb34aa42df9dadd3efccd6038d30d59eee76efba805bf3cd07d3d"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -85,8 +85,8 @@ class Mycli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "jaraco-classes" do
@@ -130,8 +130,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f0/ee/d056c82f63c05f06baac0cffb4a90952d8274f90c49dfe244f20497b9bbd/openai-2.33.0.tar.gz"
-    sha256 "f850c435e2a4685bba3295bd54912dd26315d9c1b7733068186134d6e0599f9a"
+    url "https://files.pythonhosted.org/packages/f4/a1/4d5e84cf51720fc1526cc49e10ac1961abcccb55b0efb3d970db1e9a2728/openai-2.36.0.tar.gz"
+    sha256 "139dea0edd2f1b30c33d46ae1a6929e03906254140318e4608e98fe8c566f2e7"
   end
 
   resource "pluggy" do
@@ -215,13 +215,13 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/f8/9b/af8fcaca1b0821349ef4f88e2775e059bcd7640900bca6533832f1fb845d/sqlglot-30.4.3.tar.gz"
-    sha256 "3a4e9a1e1dd47f8e536ba822d77cb784681704da5e4a3e1a07d2ef86b6067826"
+    url "https://files.pythonhosted.org/packages/c4/56/56d234bb267009a4b5fbaf56bd11eb5db91e0eaf0235b3ab53759d0cac2f/sqlglot-30.7.0.tar.gz"
+    sha256 "eaf90c7d61978ce98fb52718b7a578054bd0cebcc9ab6f3818ad4391ea9d6b69"
   end
 
   resource "sqlglotc" do
-    url "https://files.pythonhosted.org/packages/c8/46/575285cfdf219bdcfe8f12d485827efc1aa26c06416711d8125cfdff86bb/sqlglotc-30.4.3.tar.gz"
-    sha256 "10187877550509a1a546a5f1f24ea2077fa648b55944a9cbee8d9b569d01f0ff"
+    url "https://files.pythonhosted.org/packages/78/b2/65a8763e7ed65028c7b905108cf8333f1ddf84a138bd6ec553f04af51c07/sqlglotc-30.7.0.tar.gz"
+    sha256 "451bc8851f5a44474341f8ad2eded57d7f2d7a466063658a1c979bcd04755a7f"
   end
 
   resource "sqlite-fts4" do

@@ -1,17 +1,17 @@
 class SnykCli < Formula
   desc "Scans and monitors projects for security vulnerabilities"
   homepage "https://snyk.io"
-  url "https://registry.npmjs.org/snyk/-/snyk-1.1304.1.tgz"
-  sha256 "89c00360124737027e6742fe41b725fa85731810361af40de9d6016528be0108"
+  url "https://registry.npmjs.org/snyk/-/snyk-1.1304.3.tgz"
+  sha256 "8b3ba600c5f891a74d45d8e0945a3d194df9df2df4a327c2076d0be970a3fd9b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01fc44c11e01e9ae50f6233feef0a3a78ce07b77f000497b31c93df39ee74e42"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01fc44c11e01e9ae50f6233feef0a3a78ce07b77f000497b31c93df39ee74e42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01fc44c11e01e9ae50f6233feef0a3a78ce07b77f000497b31c93df39ee74e42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "293a3f1cdf72ba0718d76c259ac37366e163448b81f73bc06f8ad8053f5d71da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18f09492457c84c7a0227ddd860177ae5430495479000f1ed7a01f7338776643"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea344b9fdd353c461bda7c26fd8509e08f173af17a6c510249527c2760ec3858"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01ce57f4904cc03547c3612e919545cb1374eff293f24d9a17ae2b3d00430592"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01ce57f4904cc03547c3612e919545cb1374eff293f24d9a17ae2b3d00430592"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01ce57f4904cc03547c3612e919545cb1374eff293f24d9a17ae2b3d00430592"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13f702dde020cc24fcd6362fc4bee644ad230d90a751a5ec5d53ecd3da48ed69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92b4c6f16140a3f4fbbaf0062ba1e4d1bf9246ac062a59025a3a660452f21223"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "430492bc8a91aa97cb43edd0de5044b1719bae26b729e827aaddc4386083e813"
   end
 
   depends_on "node"

@@ -2,8 +2,8 @@ class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
   # TODO: Switch to npm registry URL when https://github.com/renovatebot/renovate/discussions/42965 is fixed
-  url "https://github.com/renovatebot/renovate/archive/refs/tags/43.165.0.tar.gz"
-  sha256 "b8a3731d14cd5c268b97ff0975c151f58de7f2a7035f7a5439163b43ff198afb"
+  url "https://github.com/renovatebot/renovate/archive/refs/tags/43.185.0.tar.gz"
+  sha256 "7e00de6134d974316eefda28c8e92e9d9db06a5b7e3201c760c8f1c0ac0c0cbd"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
@@ -19,14 +19,19 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "76405126de0af1de8f0a43e8a45a61a5155280511ee4e2c0cbbf4be3c9509e0d"
+    sha256 cellar: :any_skip_relocation, all: "316535ab2f4ae1292dd840424f77514c69c8f7411ef6e9956c4bd7a9cba54917"
   end
 
   depends_on "node@24"
 
-  uses_from_macos "git", since: :monterey
+  uses_from_macos "git", since: :monterey # needs git >= 2.33.0 (Apple Git-136)
 
   def install
+    # Pin Ecosystem union member order to make :all bottle
+    inreplace "lib/modules/platform/github/schema.ts",
+              "export type Ecosystem = z.infer<typeof Ecosystem>;",
+              "export type Ecosystem = (typeof Ecosystem.options)[number];"
+
     # TODO: switch back to `system "npm", "install", *std_npm_args` when using npm registry URL
     system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build"
@@ -36,6 +41,8 @@ class Renovate < Formula
   end
 
   test do
+    # Renovate filters child env vars, so Homebrew's git shim cannot run.
+    ENV.remove "PATH", HOMEBREW_SHIMS_PATH/"shared"
     system bin/"renovate", "--platform=local", "--enabled=false"
   end
 end

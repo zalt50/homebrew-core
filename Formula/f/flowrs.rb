@@ -1,8 +1,8 @@
 class Flowrs < Formula
   desc "TUI application for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  url "https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.12.3.tar.gz"
-  sha256 "94e23af5f246f033d26141743012a47561f14cebaca2734a615fa5f0ef00ede9"
+  url "https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.12.5.tar.gz"
+  sha256 "db5c69746918643745dc7a240fd77547c8cb1157d34b1610042bd9e78c5f5b97"
   license "MIT"
   head "https://github.com/jvanbuel/flowrs.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Flowrs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b35c989a9028c2e0367dfc0c5e6e4b703409f7dbba7ef072f2e0ee05ae546196"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "610c744cb3f5654172d3d1c023867b5b730dfb6dafd83cb53468b877c89bb4b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4418b3121568e8081c5e59762a2c822cdca85148bc96046523b128383c95ec7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78c64b9ce650221108758fbc4977d9f8b86ab7baf84d3791d8bb88741a954e77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7262d686702ef166bd0dc1a6458eaf6c043335bae39eec9066775b996cfd5959"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21c4247220728189292a3af33bfd8013743ebea0e2ddff471f63bc375a1086b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f60b8d92392b3684119eac2af7cfae995d3e341bd097d80b2cb953948042e57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fee6b5ece6c6dfc256916259a7bbf22afbaa5c822143a40f03526420a8648a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5be1d4ce2b760a4a3f6c80c9b4facc964b977866e32b8597703207b49e18fc37"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31b21163185e4c3cad90f27e1ecc2645c57fd643dd46a8daf1e3df88c9db20ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e54159eea40baa81bf569c8d7049243750cadd0d81e0a6d4353d9a1f5326935f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1dd45dceff574ef45902c94c8ec76794779f94d8adb082b9cf55d021a70f562"
   end
 
   depends_on "pkgconf" => :build

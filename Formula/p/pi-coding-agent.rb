@@ -1,17 +1,17 @@
 class PiCodingAgent < Formula
   desc "AI agent toolkit"
   homepage "https://pi.dev/"
-  url "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.73.0.tgz"
-  sha256 "f614d1521f3bb6448e41d296d6af4e7140be7a4c5af38e0eeb9cae69bb1274bb"
+  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.75.1.tgz"
+  sha256 "3ba8013dfd50df696c0f1e67c3caf8ecca31346e58c351b866daff210d514b44"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b9f485f1421ab406273c6bd22cc2ee3f8f9ed2e760be90b47492e518f2e03e45"
-    sha256 cellar: :any,                 arm64_sequoia: "361f8918fd5a16bc65fedf3faff808a2ce55da90fdd7797ce8f25585f2f09a3e"
-    sha256 cellar: :any,                 arm64_sonoma:  "361f8918fd5a16bc65fedf3faff808a2ce55da90fdd7797ce8f25585f2f09a3e"
-    sha256 cellar: :any,                 sonoma:        "c66eb4aa7be911379b1b76f9be1d3383fef3197a27d7f3498b499b985630a158"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b07ae9428a40de693e7a64f53293d1a1dabc3220732754ece3be816c82a825f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e43b6b34e2d4c5d1bb2be513705deaa21ab091e070db38762020fe4255f4eae7"
+    sha256 cellar: :any,                 arm64_tahoe:   "a911c14eb0a1df250c431cc4bcad5b59f3cfc249e84f5cdc16c6eb1f9387cc70"
+    sha256 cellar: :any,                 arm64_sequoia: "a69439816511718f9cdc7ebfd3eb07593b526c295d3f342f0fb903f0462c3b65"
+    sha256 cellar: :any,                 arm64_sonoma:  "a69439816511718f9cdc7ebfd3eb07593b526c295d3f342f0fb903f0462c3b65"
+    sha256 cellar: :any,                 sonoma:        "d854a753acd9d3b610b406456e2e7cf04e10cf21ec87084d241bf7f2e200e0e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83c60c14a904f3319642e4e82bd388c3ed761237ccc06d92d3846713b776a95e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a477d5a5e27a92690fb08e8153878bde238708ff01640b355946adf88bea3f98"
   end
 
   depends_on "node"
@@ -20,7 +20,7 @@ class PiCodingAgent < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
-    node_modules = libexec/"lib/node_modules/@mariozechner/pi-coding-agent/node_modules/"
+    node_modules = libexec/"lib/node_modules/@earendil-works/pi-coding-agent/node_modules/"
     deuniversalize_machos node_modules/"@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
 
     arch = Hardware::CPU.arm? ? "arm64" : "x64"

@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/89/ff/ec7ed2eb43bd7ce8bb2233d109cc235c3e807ffe5e469dc09db261fac05e/huggingface_hub-1.13.0.tar.gz"
-  sha256 "f6df2dac5abe82ce2fe05873d10d5ff47bc677d616a2f521f4ee26db9415d9d0"
+  url "https://files.pythonhosted.org/packages/bb/b6/e22bd20a25299c34b8c5922c1545a6320825b13906eb0f7298edfd034a0b/huggingface_hub-1.15.0.tar.gz"
+  sha256 "28abfdddda3927fd4de6a63cf26ab012498a2c24dae52baf150c5c6edf98a1d5"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98b95be055466f8684ef9d179f10f1805f2a8e5b4a6c42c6707110d16dacb5e6"
-    sha256 cellar: :any,                 arm64_sequoia: "635392fc812205e6fea5065334c32c5c737ef871c91dc0241ac25e60db11c149"
-    sha256 cellar: :any,                 arm64_sonoma:  "60d62c1ebe973c8ff4f9712d0ea11131d96fa3c2f6ffa01a663b801c7a74bdbb"
-    sha256 cellar: :any,                 sonoma:        "86b3e09bae81dff023bfc79cbc8611ce90c18c444f9fab6381e3fd2b7d730345"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec1810e96530da78b49cda73a423997d535039ce4a1ea4078169376d8981debe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc5fc9cd08044b75eaebb2df3a546d9622d681cc052963b07a2b0afc459f380d"
+    sha256 cellar: :any,                 arm64_tahoe:   "5864ff45feb68782ea8d1aef00e47ca60e8575868f5cf22f5eb9bea85a2a139b"
+    sha256 cellar: :any,                 arm64_sequoia: "cb0cac4c210caf6bce2a3fd0fa409a52cc66fddb5fd89b336f54d49fd11765ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "649bcc402176b59ff44c34d24fb145e40d8bc9d0d7a5a8ba3466a585471291d9"
+    sha256 cellar: :any,                 sonoma:        "ba8ce9474f44f37685611ad733a5668973d205ab3bea71f567be90a4fcc06761"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61f8ded45e766f8616f81251786bebafe57ba5368a4a2149852fb2cf6a1b9dfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40cf76a52e9940293131ac82adf57cbe8aec1c127eff9a29c012e84faff4215e"
   end
 
   depends_on "pkgconf" => :build
@@ -63,8 +63,8 @@ class Hf < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/53/92/ec9ad04d0b5728dca387a45af7bc98fbb0d73b2118759f5f6038b61a57e8/hf_xet-1.4.3.tar.gz"
-    sha256 "8ddedb73c8c08928c793df2f3401ec26f95be7f7e516a7bee2fbb546f6676113"
+    url "https://files.pythonhosted.org/packages/74/d8/5c06fc76461418326a7decf8367480c35be11a41fd938633929c60a9ec6b/hf_xet-1.5.0.tar.gz"
+    sha256 "e0fb0a34d9f406eed88233e829a67ec016bec5af19e480eac65a233ea289a948"
   end
 
   resource "httpcore" do
@@ -78,13 +78,13 @@ class Hf < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
@@ -123,8 +123,8 @@ class Hf < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/7b/27/ede8cec7596e0041ba7e7b80b47d132562f56ff454313a16f6084e555c9f/typer-0.25.0.tar.gz"
-    sha256 "123eaf9f19bb40fd268310e12a542c0c6b4fab9c98d9d23342a01ff95e3ce930"
+    url "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz"
+    sha256 "9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"
   end
 
   resource "typing-extensions" do

@@ -3,12 +3,12 @@ class Fobis < Formula
 
   desc "KISS build tool for automatically building modern Fortran projects"
   homepage "https://github.com/szaghi/FoBiS"
-  url "https://files.pythonhosted.org/packages/f2/ac/795e2aec47a969bdad66b34d6d88051e084a0eb06086703e6c6c5af430ea/fobis_py-3.8.6.tar.gz"
-  sha256 "107653fc7ae714ce693160ca643ef5715c76fe621a313273964f8e3751036d26"
+  url "https://files.pythonhosted.org/packages/6d/2d/da153567289dc3fddb242602f4de822b3877cbc9d7865d38801fb0bbac12/fobis_py-3.8.12.tar.gz"
+  sha256 "ac7c3606bd144b8bd6d9c6d7c9695a9d828dfdb311fba7acf97b6321a234f364"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d09abd3e0a9c0cc02e0d47c5e832468d7a7f820d2a488fdd4f04ca6d9ff7f2c1"
+    sha256 cellar: :any_skip_relocation, all: "c4b1bba25ff145d61626d9b4039be88cc4e6e93082ec0242134c2ab07da3486a"
   end
 
   depends_on "gcc" # for gfortran
@@ -26,8 +26,8 @@ class Fobis < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do

@@ -1,9 +1,9 @@
 class Pyside < Formula
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
-  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.11.0-src/pyside-setup-everywhere-src-6.11.0.tar.xz"
-  mirror "https://cdimage.debian.org/mirror/qt.io/qtproject/official_releases/QtForPython/pyside6/PySide6-6.11.0-src/pyside-setup-everywhere-src-6.11.0.tar.xz"
-  sha256 "48d5c44d7c3ed861055d5491486e6a220ef5006573cae01a5fae3fb69d786336"
+  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.11.1-src/pyside-setup-everywhere-src-6.11.1.tar.xz"
+  mirror "https://cdimage.debian.org/mirror/qt.io/qtproject/official_releases/QtForPython/pyside6/PySide6-6.11.1-src/pyside-setup-everywhere-src-6.11.1.tar.xz"
+  sha256 "6ffd9835bb0dd2c56f061d62f1616bb1707cfc0202b80e3165d6be087f3965e2"
   # NOTE: We omit some licenses even though they are in SPDX-License-Identifier or LICENSES/ directory:
   # 1. LicenseRef-Qt-Commercial is removed from "OR" options as non-free
   # 2. GFDL-1.3-no-invariants-only is only used by not installed docs, e.g. sources/{pyside6,shiboken6}/doc
@@ -13,6 +13,7 @@ class Pyside < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
   ]
+  revision 1
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"
@@ -20,12 +21,12 @@ class Pyside < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "03512803455b2775535c47a6945ae7bcf84f6631f1ca5bfc2aaa95b141770a2e"
-    sha256                               arm64_sequoia: "10e77347cf7dfd38f62379dffd98d749b8dcfc7e129841659c6c96248c9ca15d"
-    sha256                               arm64_sonoma:  "884f528ffc724dc2b8556481d36c9eb3d09f6a5c83da5489765a80652991b82b"
-    sha256 cellar: :any,                 sonoma:        "47c83f6c0174a63f0c1e31e7e81ab1ed92a8ba2d04a89a6cad01175e279110c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e12ac78636758b76581e17da03d61f1fa8ec78c02c5977901cc241ec06cba4c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8911cfb4c34770f42717b86b5d16ffaf4fc10fd28b61caacbc2474876de8764"
+    sha256                               arm64_tahoe:   "b0e1b636d17903684aceb9508cf9347aa7165eba4d263b0c39f63885d17ce38e"
+    sha256                               arm64_sequoia: "7b7fc323c4d1fb85975dc71b0b5a39e0674944d72a935c45db815e824684b031"
+    sha256                               arm64_sonoma:  "1a047a182b9c5f0baebde93803375f299b0bf764d43652f66f1423e5b585500a"
+    sha256 cellar: :any,                 sonoma:        "0a0de4839eab48bbe9a4b92f118cd0bb77afd9f942647e141658c45f450b3e3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "865cd385e83292399df6c29c861170fadcef1960d49106df22d628173dd88d31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ce2c03e13297eb0c53c8477a933cdc3ec20fa8f370cc2611449517bffbc501e"
   end
 
   depends_on "cmake" => :build

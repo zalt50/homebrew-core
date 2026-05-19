@@ -3,17 +3,17 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/1c/77/34ebed84736dacbf164617794c15cd9271c18773cf32eeb7086c8b7b6dfd/langgraph_cli-0.4.24.tar.gz"
-  sha256 "8f05f0aec38a5da3cb0e7250123530e83c0179d74be0021050bc5cd36ac0dafb"
+  url "https://files.pythonhosted.org/packages/5d/94/6864c94fcc998d7b72f60a4166222f003483426446a10979c0215220dd65/langgraph_cli-0.4.26.tar.gz"
+  sha256 "d81867e45bc198f4c61a4064e8f347aba9e6ffa256db387d8daae594c59bf0f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "38fbb0baae920cd95a32f8b98bd6777010b9cd0c0aaf7eb0950a65d2ace306d8"
-    sha256 cellar: :any,                 arm64_sequoia: "defbaec567de84e5c1298b287e9a8a8ecbf0c0237cac76bf6a17eac6c4a6a750"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7f6bd69c66d2eaadaa844611eae12dd18bdd5bc74272b4d9ea7d1172bd7b9a5"
-    sha256 cellar: :any,                 sonoma:        "9c5926d4e7883960d1358b5e9f697c14d19514d34be9c9f9d5fe4bef682ad98a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c38a76e22348fedb1d645380960e72f067829683b9ed87581bfa8cfa232f39d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36202e04ee85a6a47157abf95595ab8cae5c868d89effb396623d97d827f8f17"
+    sha256 cellar: :any,                 arm64_tahoe:   "5b4bd9fc5a1976e59e6f30f88b609510bd598e9588475cf45c90aa3349a3c3e9"
+    sha256 cellar: :any,                 arm64_sequoia: "fdfa0655d05b80d6266593ccfd3c38b73dba6bfa1b7cedc35cd9cf32c80c1025"
+    sha256 cellar: :any,                 arm64_sonoma:  "6055993cba9b73b41d32eacf6822409e98dfe61034de4cf02188c0d0e90f3276"
+    sha256 cellar: :any,                 sonoma:        "6bce3ebf9a8889d030a6ac54b5aa94137d61c426361e2cb88cf56eb21e831e57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef975cbcb9af6f0fd49076c40c790c3d5dc14c6954c5ae556a353f811b028db4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0331d5713fc699f0b7e03f8b3c93f0a3e9137dfd043e5f22ac0954050f07ada"
   end
 
   depends_on "rust" => :build # for orjson
@@ -49,26 +49,23 @@ class LanggraphCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "langgraph-sdk" do
-    url "https://files.pythonhosted.org/packages/0e/db/77a45127dddcfea5e4256ba916182903e4c31dc4cfca305b8c386f0a9e53/langgraph_sdk-0.3.13.tar.gz"
-    sha256 "419ca5663eec3cec192ad194ac0647c0c826866b446073eb40f384f950986cd5"
+    url "https://files.pythonhosted.org/packages/02/f1/134046c20bc4a4a15d410d1d21c9e298a3e9923777b4cc867b8669bc636b/langgraph_sdk-0.3.14.tar.gz"
+    sha256 "acd1674c538e97f3cdaa610f6dd7e34bc9bad30167f0ccc482dcd563325e81f5"
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz"
-    sha256 "96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"
-
-    # Remove nightly feature flag, Rust 1.95 is now stable
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
+    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/fa/36/e27608899f9b8d4dff0617b2d9ab17ca5608956ca44461ac14ac48b44015/pathspec-1.0.4.tar.gz"
-    sha256 "0210e2ae8a21a9137c0d470578cb0e595af87edaa6ebf12ff176f14a02e0e645"
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
   end
 
   resource "python-dotenv" do
@@ -112,15 +109,3 @@ class LanggraphCli < Formula
     assert_match "FROM", dockerfile_content, "DOCKERFILE should contain 'FROM'"
   end
 end
-
-__END__
---- a/src/lib.rs
-+++ b/src/lib.rs
-@@ -1,7 +1,6 @@
- // SPDX-License-Identifier: MPL-2.0
- // Copyright ijl (2018-2026)
- 
--#![cfg_attr(feature = "cold_path", feature(cold_path))]
- #![cfg_attr(feature = "generic_simd", feature(portable_simd))]
- #![cfg_attr(feature = "optimize", feature(optimize_attribute))]
- #![allow(unused_features)] // portable_simd on universal2 cross-compile
