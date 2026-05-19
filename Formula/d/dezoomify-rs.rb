@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https://github.com/lovasoa/dezoomify-rs"
-  url "https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "539853288768258caac07a559bb7050000e7e0c6e9770227b390c875c26c8ce5"
+  url "https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "cf896da035dd0e5f59f20f506d343f5fad9fa2102f69ae75ca092d98dfdd7ed5"
   license "GPL-3.0-only"
   head "https://github.com/lovasoa/dezoomify-rs.git", branch: "master"
 
