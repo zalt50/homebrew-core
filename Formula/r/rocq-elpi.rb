@@ -2,11 +2,10 @@ class RocqElpi < Formula
   desc "Elpi extension language for Rocq"
   homepage "https://github.com/LPCIC/coq-elpi"
   # Update resources based on https://github.com/LPCIC/coq-elpi/blob/v#{version}/rocq-elpi.opam#L18-L26
-  url "https://github.com/LPCIC/coq-elpi/releases/download/v3.3.1/rocq-elpi-3.3.1.tar.gz"
-  sha256 "97468eea82299c7276ea5e1047342e8897de5a437a357e595a5728183ea66721"
+  url "https://github.com/LPCIC/coq-elpi/releases/download/v3.4.0/rocq-elpi-3.4.0.tar.gz"
+  sha256 "fe81750ca2e5f5976f16e658979a133cfaa2011ae5591e552a1222ceaacaaf06"
   license "LGPL-2.1-or-later"
-  revision 1
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url :stable
@@ -33,7 +32,7 @@ class RocqElpi < Formula
   # The result is similar to using `--deps-only` in other formulae. We can't
   # run that here as it installs a duplicate copy of `rocq`.
   resource "elpi" do
-    url "https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.6.1/elpi.opam"
+    url "https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.7.1/elpi.opam"
     sha256 "24e253b1cd5afb678f0f1e0d7f340ac3c549cf974a5c029a402c2fab5d582635"
   end
 
@@ -58,7 +57,6 @@ class RocqElpi < Formula
     libexec.install_symlink libexec.glob("ocaml-system/*")
 
     ENV["OCAMLFIND_CONF"] = libexec/"lib/findlib.conf"
-    system "make", "dune-files"
     system "dune", "build", "-p", name, "@install"
     system "dune", "install", name, "--prefix=#{prefix}",
                                     "--libdir=#{lib}/ocaml",
