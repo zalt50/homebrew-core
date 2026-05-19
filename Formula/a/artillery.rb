@@ -1,8 +1,8 @@
 class Artillery < Formula
   desc "Cloud-native performance & reliability testing for developers and SREs"
   homepage "https://www.artillery.io/"
-  url "https://registry.npmjs.org/artillery/-/artillery-2.0.31.tgz"
-  sha256 "afd57456b425deda1543457dce1781a8113285bf07b3d1f14af3d8ab2da38d57"
+  url "https://registry.npmjs.org/artillery/-/artillery-2.0.32.tgz"
+  sha256 "796be4097eda9bd74ceb5164223f71eb046012fe967ffff288dca705531a60cd"
   license "MPL-2.0"
 
   livecheck do
