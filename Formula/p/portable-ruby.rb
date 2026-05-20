@@ -3,8 +3,8 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.4.tar.gz"
-  sha256 "f35f6edfa3dabb3f723f9d0cf1906c6512ae77f4e412ab1e68cc6e91d230fa80"
+  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
+  sha256 "7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
   license "Ruby"
 
   # This regex restricts matching to versions other than X.Y.0.
@@ -43,8 +43,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "bootsnap" do
-    url "https://rubygems.org/downloads/bootsnap-1.24.3.gem"
-    sha256 "f7fa3d20597e2f0aa52b0a1aba83fb54d4f79e9c2e210ec4fa1e8895514dcad8"
+    url "https://rubygems.org/downloads/bootsnap-1.24.4.gem"
+    sha256 "a4d939fc2cc5242a83d3a7cb4fb97743ac58475afe91e0600479a3df6f117541"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/bootsnap.json"
