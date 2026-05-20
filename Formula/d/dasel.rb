@@ -22,6 +22,8 @@ class Dasel < Formula
     system "go", "build", *std_go_args(ldflags:), "./cmd/dasel"
 
     generate_completions_from_executable(bin/"dasel", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+
+    (man1/"dasel.1").write Utils.safe_popen_read(bin/"dasel", "man")
   end
 
   test do
