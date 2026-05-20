@@ -10,12 +10,12 @@ class Glab < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "891cf83941b58bfb274a9ab663de13531a41321489f3d6273716753903912e8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "891cf83941b58bfb274a9ab663de13531a41321489f3d6273716753903912e8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "891cf83941b58bfb274a9ab663de13531a41321489f3d6273716753903912e8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff538cdbe8d31c77dcac9e3e16f4b0fd2ed7996e370ecdc3abd7926ac326b6b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "146c804745832e5a42194c8a86fea2b9a5c679b3f1049b2714a46e5de3a03cf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd01bfbb52a3d2c67170fe70671f44930a0b0d04d65025d85ecc3f00087b1af6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46622a9d51ea7ca2e8e9572bef4007d8b13bd34647674df6ee1089c005de5316"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46622a9d51ea7ca2e8e9572bef4007d8b13bd34647674df6ee1089c005de5316"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46622a9d51ea7ca2e8e9572bef4007d8b13bd34647674df6ee1089c005de5316"
+    sha256 cellar: :any_skip_relocation, sonoma:        "836ad0fb63ab450dc7bdf014e738a896e5fd80250295be4b26d3bac28267aa08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0a1403c3e75a3b285e657c1e4c365de1b65249b0bab67d747015314d96a749a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef334ca9ce5846874983a93f47dc93fff354f871d072f02c4f15545313881a60"
   end
 
   depends_on "go" => :build
