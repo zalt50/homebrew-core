@@ -19,8 +19,8 @@ class Rebar3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "959e9d042c97cb228e137556169daa64f8c8823a8127a0f0123db68f876eabfe"
   end
 
-  depends_on "erlang@26" => [:build, :test]
-  depends_on "erlang"
+  depends_on "erlang@27" => [:build, :test]
+  depends_on "erlang" => :test
 
   def install
     erlang_build_dep = deps.find { |dep| dep.build? && dep.name.match?(/^erlang@\d+$/) }&.to_formula
