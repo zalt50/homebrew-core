@@ -1,8 +1,8 @@
 class Mjml < Formula
   desc "JavaScript framework that makes responsive-email easy"
   homepage "https://mjml.io"
-  url "https://registry.npmjs.org/mjml/-/mjml-5.2.1.tgz"
-  sha256 "46fe1d2acba67453e242c4224cbb2eacac560050ae0a37bdfef23703ceceab9c"
+  url "https://registry.npmjs.org/mjml/-/mjml-5.2.2.tgz"
+  sha256 "f59d63fc921f11bf64941aef67225708162b0012cda36a4273f80ec7d7ad4514"
   license "MIT"
 
   bottle do
