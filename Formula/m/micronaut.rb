@@ -11,12 +11,12 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dd99360705ca1f56f5836c8afcc92abbccb8d79655df23c2b6a41db496f8a3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ce58194118b15142c015586ece8b55e7e797f1bfb0c68a83daefe335f94a16b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32a4eec12c601c647a0b78506995ce72dc2ccb170ccaf20caf56c9791ef9c6bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6502a12f1d7f6e3c739ede6fc72d655bf8b271139968b6e058fa185554ce31c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c78d0652b1d2d82345e3cd30f96f9ddd8472d9869eea75c8e0fccc3f734f2fec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c41627c3c46175dafc0426da23f8ff3f154060d227042e7268b3386b88201cc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71bdb90a53b322921ebd1d5ca2cb8d71756a701c6a2a993262ea697e4a131d59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f3460f85dfa9458e663896e257f568a50f25f0ca4cff96f77fbb6f9e33d6d06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0caf75a590a4f80fc53495e3417127dc2d7d540216c606e5d8acf2975c411da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22a4e3e9c4439071dc94f708a8cea53663afea3fa2b9066aa43317b14b7d00ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ff0cc505f5aca3de4d0ce34bf23cd38b95947e019bb4e07b3f5605c1238b915"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b9fcf4e5c5079056e73e43025055577b23336301288ebd78f440bbd103dc44c"
   end
 
   depends_on "gradle" => :build
