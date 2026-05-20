@@ -11,11 +11,11 @@ class Graalvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "24913577cbc92f27f5594bfc6f816e3e3843179d5b330240fc17ea1561e9a094"
-    sha256 cellar: :any, arm64_sequoia: "35ba49eb4a599e0765571de5f64f5beba3e550829567b41291c978b979bc2fdd"
-    sha256 cellar: :any, arm64_sonoma:  "27e59e86ce7b7941634411792a262ec7873d3086efaeccb49c74ad8954ff9483"
-    sha256               arm64_linux:   "2e8c285bb3d885127838b23c0cc88011e5c90a9ae0b8249dc8f3d946311f4b55"
-    sha256               x86_64_linux:  "28fad873c9b0099708c9a92ecbd0fee6a9ab6606bef36d0c5519e0dda00cbf2d"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "68033cc0c5d778458170cfafd25f461778098b0c159d9429da4c1fa706e56330"
+    sha256 cellar: :any, arm64_sequoia: "6ff9d912cf54e737e465f0522b08420283620e18df6fb1a6e64c2af4d3caffdf"
+    sha256 cellar: :any, arm64_sonoma:  "1971cf58609536cab99baa93db286015730f50937cf01616af73a9b91f7e725a"
+    sha256               x86_64_linux:  "9ea8345595c00a92b82e8d4ca53139522203073e2461fdce67caded0fe1cc185"
   end
 
   keg_only "installs a JDK which shadows openjdk"
