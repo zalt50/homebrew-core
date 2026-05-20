@@ -6,7 +6,7 @@ class Bpython < Formula
   url "https://files.pythonhosted.org/packages/44/29/cd80e9108a6fc6a925ffb915f8f69198a2bb2388e39167a41d743ac2a8f4/bpython-0.26.tar.gz"
   sha256 "f79083e1e3723be9b49c9994ad1dd3a19ccb4d0d4f9a6f5b3a73bef8bc327433"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
@@ -24,8 +24,8 @@ class Bpython < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "blessed" do
-    url "https://files.pythonhosted.org/packages/94/ca/47457ccbfeac62002079ebc47509e1eccd5c8ec764c78975c7afd81c6b4a/blessed-1.39.0.tar.gz"
-    sha256 "b04fc7141a20a3b2ade6cad741051f1e3ac59cc1e7e90915ed1f9e521332bea4"
+    url "https://files.pythonhosted.org/packages/3b/02/603d04e776fca5258b476ae54fe6d73ce9633bc8ce21bb2142abd96c28c4/blessed-1.40.0.tar.gz"
+    sha256 "2f90b531464769f039f6303b9352bed7e004698b5c881bb01abf5b0772dd5160"
   end
 
   resource "charset-normalizer" do
@@ -49,8 +49,13 @@ class Bpython < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+  end
+
+  resource "jinxed" do
+    url "https://files.pythonhosted.org/packages/cb/eb/8821ce6e7386e96355f2c6be83944925b4a0870572896fd33a4e61b8aa5a/jinxed-2.0.0.tar.gz"
+    sha256 "64b960b8f8d9966e1b2e7cb57ea2b1aa0a8d7e68045b96dc7ef58201e43a1209"
   end
 
   resource "pygments" do
@@ -64,8 +69,8 @@ class Bpython < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "urllib3" do
