@@ -4,7 +4,7 @@ class Mosh < Formula
   url "https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 38
+  revision 39
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "c6c29798f55a07c404fcb9e6a8ea09941fda9d547f39852b7588ac319b3da456"
