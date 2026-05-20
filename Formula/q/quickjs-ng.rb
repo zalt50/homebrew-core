@@ -6,6 +6,15 @@ class QuickjsNg < Formula
   license "MIT"
   head "https://github.com/quickjs-ng/quickjs.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "98e26762e04daa7df0bfeefd040bf4a5dc7577b7f0b70ab828a5469933d6f939"
+    sha256 cellar: :any,                 arm64_sequoia: "d5d7d6c5f9d3a8e239ba64dd7407c1eb779f8617026fa597fcb9faf9ca538559"
+    sha256 cellar: :any,                 arm64_sonoma:  "708397c7fee74e6be66139d9a9d58a88fc8ebe11547a5e1b5b63a74875cff022"
+    sha256 cellar: :any,                 sonoma:        "55c8a19c7caf3f8390b1fe28959b742c32c4061c9d3736b26a25c1aba3fe18bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6351c96a16c15bda44009c7fd2b23dee1e7f91f16a29a25bdcd47ab2d1e4507c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d212e7e31078ffb149ec5116d1736a5fd61f20078114a3baddfa36361d5d0e3"
+  end
+
   depends_on "cmake" => :build
 
   def install
