@@ -1,8 +1,8 @@
 class Bagel < Formula
   desc "CLI to audit posture and evaluate compromise blast radius"
   homepage "https://boostsecurityio.github.io/bagel/"
-  url "https://github.com/boostsecurityio/bagel/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "433391790aaf22713a8053d39f6f2fccd39271b49c2d38ddae60e994f075c86f"
+  url "https://github.com/boostsecurityio/bagel/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "fe7d91c2887e32d638fb163975f099fedd32be11d533a00a91024332bd4de26f"
   license "GPL-3.0-or-later"
   head "https://github.com/boostsecurityio/bagel.git", branch: "main"
 
