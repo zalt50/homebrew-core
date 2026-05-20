@@ -12,6 +12,15 @@ class ErlangAT28 < Formula
     regex(/^OTP[._-]v?(28(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f4679159988298abf8b221088c7884e477696c453ba53699539ff3ba65bace30"
+    sha256 cellar: :any,                 arm64_sequoia: "80cfd0e291bba818385c5a4b11c1bc8d495ac2ab1032209ae9b2f3684cd4b575"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7b3e52ac475a60b71bf3a8966614cba750171e0964f08bf27eaf319ad68fb85"
+    sha256 cellar: :any,                 sonoma:        "24647b7638603461088618e9a4f768dcad010507df35ce032c09c33162f3e26b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "943ab530c563e27f599023d53370917a2ec17b57b41993b1d9af08e2564c2375"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56df03856a60ba3a61d0244819852f8ce84fbb308a0de4fe7a9de94edfa7358c"
+  end
+
   keg_only :versioned_formula
 
   depends_on "openssl@3"
