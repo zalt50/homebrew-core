@@ -3,20 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/fe/30/41f9a93c339a52e944f49b59cc9b1663e0403b2feecefcf89834df8dd8b9/ansible-13.6.0.tar.gz"
-  sha256 "5141552c1bd37f56839eb5b11ef0d93e92391295c97947d507b8daf7265b12b8"
+  url "https://files.pythonhosted.org/packages/d8/d0/b083e41b4653ba3ab542c2b58c71afee8a2317a2b23ffe00f574152b53ad/ansible-13.7.0.tar.gz"
+  sha256 "ebca5898346963691915bfea19048f5019b4e46f57e856dc1b790bcde3769224"
   license "GPL-3.0-or-later"
-  revision 2
   compatibility_version 2
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "61ed11f1d6ef6e3159becc1ac213b1af0a8e89967111333ca824ce22d9d841f1"
-    sha256 cellar: :any,                 arm64_sequoia: "d0d03ace21d13a315b4c0491c9503b445bfa79fe783d77112d7bec8c98389465"
-    sha256 cellar: :any,                 arm64_sonoma:  "4e2d725eeeb9a005cefc825763c73ffae1c33117e29ad32994f5d251ff2c463e"
-    sha256 cellar: :any,                 sonoma:        "49ea2d2212d5d8d117a68dc52ade100f36f5dc16ba4c19e2130b69a84758f9c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "539fd604a8811dbff04edefd4b48953e6539640daac7cf823448ec3bf1eef307"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8254d451bf188477226cbd3935d476c424353dfe8649ff322d0055776b86da89"
+    sha256 cellar: :any,                 arm64_tahoe:   "3015e788888017b35794146dbe7ac4a192ff287c81e12f75fb2cb73ed1299c33"
+    sha256 cellar: :any,                 arm64_sequoia: "06914ab3e073e43d3b70ef5db88697efa0cdae3aa03efb378d2d551bae64087f"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ee3ad50a668cd66f29284da2ffc7d4f4d4061edc29497032451506b9586bbb8"
+    sha256 cellar: :any,                 sonoma:        "6fc6b55ad1c90d26e47ca65a0063884c6a8c4a5211eb078864ad1ecc8a7aeb0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63d04655e7c212b0ab2dd8c4758db9bbbcb13c4c20547983bc6c48508ea3cb9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d05172d9e46e4fce6794c66bd77accbe600538055c09151c09d097aaa7521fef"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -68,13 +67,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ff/27/ae1a71e945ce7bde39b0677b252fe7d8a0ad7fa3d6b724d78b81469c08fe/boto3-1.43.10.tar.gz"
-    sha256 "27342e5d5f6170fcc8d1e21cdd939af2448d58ac56b08d494250eaad998e30c7"
+    url "https://files.pythonhosted.org/packages/1e/02/195d56d36b900ba28a75fc4c47c858a16237811acfde8f22f6de08236dae/boto3-1.43.11.tar.gz"
+    sha256 "3567c6a1f31d8e6bf151c95f76a2b1f239cce243a768a31747c2ba141c9a0570"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e2/4e/c127dd0628c551f10cb890e279a9c0e367523b880c4cd3e81a1e76886174/botocore-1.43.10.tar.gz"
-    sha256 "2f4af585b41dbccdfc9f49677d7bd72d713a12ef89a1dc9c8538a927649498bf"
+    url "https://files.pythonhosted.org/packages/e9/fa/4bec16fa5a4cde7b593e549238bfeb8ed1bdba9d427888a18c460a1f2352/botocore-1.43.11.tar.gz"
+    sha256 "d7d479cc2809ec2728f2898521003adfb79bfe6a4615c59dfd222ec52b0cee6b"
   end
 
   resource "charset-normalizer" do
@@ -163,8 +162,8 @@ class Ansible < Formula
   end
 
   resource "junos-eznc" do
-    url "https://files.pythonhosted.org/packages/d4/2e/fbfb53be4adc17dedf7cec47007db898372d5b20d18068ef22b94bbb76e9/junos_eznc-2.7.6.tar.gz"
-    sha256 "c4187fc2879c92939102799d7231c33fd49dfa1c5bc5357683bab7a0bd891194"
+    url "https://files.pythonhosted.org/packages/d1/ab/eb4eb20b6a31a286e07317f8595fc01cc9d4a9f65b2d3ef8001fe2bd844e/junos_eznc-2.8.0.tar.gz"
+    sha256 "be7faf9edf3397f22fdd0ce1a544a77e63d2a8c4bf3cc8b8704ed78786fcb256"
   end
 
   resource "jxmlease" do
