@@ -1,8 +1,8 @@
 class Valgrind < Formula
   desc "Dynamic analysis tools (memory, debug, profiling)"
   homepage "https://www.valgrind.org/"
-  url "https://sourceware.org/pub/valgrind/valgrind-3.27.0.tar.bz2"
-  sha256 "5b5937de8257ee8f51698ea71b9711adce98061aa07daa4a685efc3af9215bef"
+  url "https://sourceware.org/pub/valgrind/valgrind-3.27.1.tar.bz2"
+  sha256 "5d589152eb8071c02feab8ce6ab719e431a1fbc3e2b1700f5432632a8b9264dc"
   license "GPL-2.0-or-later"
 
   livecheck do
