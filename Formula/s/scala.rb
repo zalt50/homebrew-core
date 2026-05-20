@@ -15,7 +15,7 @@ class Scala < Formula
   end
 
   # JDK Compatibility: https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html
-  depends_on "openjdk@17"
+  depends_on "openjdk"
   depends_on "scala-cli"
 
   def install
@@ -30,7 +30,7 @@ class Scala < Formula
               "SCALA_CLI_CMD_BASH=(\"#{Formula["scala-cli"].opt_bin}/scala-cli\")"
 
     bin.install "bin/scala", "bin/scalac", "bin/scaladoc"
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("17")
+    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
 
     # Set up an IntelliJ compatible symlink farm in 'idea'
     idea = prefix/"idea"
