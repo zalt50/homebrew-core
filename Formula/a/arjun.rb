@@ -9,7 +9,7 @@ class Arjun < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "51a518e486900288ecd1d0e2ee4f37c6cee075b11448b17824d837fdcfe5f995"
+    sha256 cellar: :any_skip_relocation, all: "282835520f1b80bc86dfa5dbb7ed8a26689c47515b50d2886d962142dfdf7be2"
   end
 
   depends_on "certifi"
