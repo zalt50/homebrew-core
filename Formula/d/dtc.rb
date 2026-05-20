@@ -22,15 +22,27 @@ class Dtc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73d1c865cba2244acd9bb059eae7fa4377506b64438ce12608f8f87d01e6640"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+
+  depends_on "libyaml"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
   def install
-    inreplace "libfdt/Makefile.libfdt", "libfdt.$(SHAREDLIB_EXT).1", "libfdt.1.$(SHAREDLIB_EXT)" if OS.mac?
-    system "make", "NO_PYTHON=1"
-    system "make", "NO_PYTHON=1", "DESTDIR=#{prefix}", "PREFIX=", "install"
+    args = %w[
+      -Dpython=disabled
+      -Dtests=false
+      -Dvalgrind=disabled
+      -Dwerror=false
+      -Dyaml=enabled
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
