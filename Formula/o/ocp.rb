@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.2.0.tar.xz"
-  sha256 "c2f6fe7edc89a2625ae22f88628f9bc294621cb49efaacb1cd42a4005920098a"
+  url "https://stian.cubic.org/ocp/ocp-3.3.0.tar.xz"
+  sha256 "e3436e2520d6358f3cb9836a78e1da97189ee709f21c714ba8356520dee5265a"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -54,12 +54,6 @@ class Ocp < Formula
     sha256 "9a26aa9adfa8eb1f91b0cd9b83e7f95ea9e14c6e85be71aa3ab0df5cb4e69c35"
   end
 
-  # Fix clang parse failure for declarations after labels, upstream PR ref, https://github.com/mywave82/opencubicplayer/pull/168
-  patch do
-    url "https://github.com/mywave82/opencubicplayer/commit/af5e034a317abbf5e352fd371308fae47d0d1e58.patch?full_index=1"
-    sha256 "1c0d58d4097e1d439718b0eddfdf46c60f53721f3b66c9bf180b566de3f342f0"
-  end
-
   def install
     # Required for SDL3
     resource("unifont").stage do |r|
@@ -83,6 +77,7 @@ class Ocp < Formula
     # We do not use *std_configure_args here since
     # `--prefix` is the only recognized option we pass
     system "./configure", *args
+    ENV.deparallelize
     system "make"
     system "make", "install"
   end
