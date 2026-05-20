@@ -1,8 +1,8 @@
 class Rubyfmt < Formula
   desc "Ruby autoformatter"
   homepage "https://github.com/fables-tales/rubyfmt"
-  url "https://github.com/fables-tales/rubyfmt/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "18964b26fda04549ee1a7b9b6a413775661f7d39595d90bf603f4c373cf373ca"
+  url "https://github.com/fables-tales/rubyfmt/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "9cf70038b8e2773c119dfee342575249b3c1e111cc1947b3388921f2588f064e"
   license "MIT"
   head "https://github.com/fables-tales/rubyfmt.git", branch: "trunk"
 
