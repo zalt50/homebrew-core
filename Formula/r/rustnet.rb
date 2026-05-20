@@ -6,6 +6,15 @@ class Rustnet < Formula
   license "Apache-2.0"
   head "https://github.com/domcyrus/rustnet.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed765cd6481ccc2cd24c4e902272ae075a8d8092dd5fe0a6e58632c764f99504"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8aa8187cff84d15ac84c43c59abca16b85523eff33f3f92ed3164f64fc7f271d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed5fd8a6a29c0f519808468560084f3b9c57eb86a2c79e1886840c50f906f4db"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8299a8b442a7049a44a6772d1a376aaf4b67f0a43e72a78b860f9cfd419f44a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01a2c4e7669e19cdb979d1e8872c31758b429d74ffc7556e2cdf42e319b6aa8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96fae2119f9b26d5700219f58fe4b1829552aa4390be08169725d5ee19ea1bd2"
+  end
+
   depends_on "rust" => :build
 
   uses_from_macos "libpcap"
