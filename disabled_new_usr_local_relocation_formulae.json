@@ -5,6 +5,7 @@
   "goenv",
   "luarocks",
   "meson",
+  "mockserver",
   "opendoor",
   "phpmyadmin",
   "python-setuptools",
