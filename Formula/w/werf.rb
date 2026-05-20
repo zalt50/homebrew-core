@@ -24,30 +24,19 @@ class Werf < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkgconf" => :build
 
   on_linux do
-    depends_on "btrfs-progs"
-    depends_on "device-mapper"
+    depends_on "btrfs-progs" => :build
   end
 
   def install
     ENV["CGO_ENABLED"] = "1"
 
+    ldflags = %W[-s -w -X github.com/werf/werf/v2/pkg/werf.Version=#{version}]
+    tags = %w[dfrunsecurity dfrunnetwork dfrunmount dfssh containers_image_openpgp]
     if OS.linux?
-      ldflags = %W[
-        -linkmode external
-        -extldflags=-static
-        -s -w
-        -X github.com/werf/werf/v2/pkg/werf.Version=#{version}
-      ]
-      tags = %w[
-        dfrunsecurity dfrunnetwork dfrunmount dfssh containers_image_openpgp
-        osusergo exclude_graphdriver_devicemapper netgo no_devmapper static_build
-      ]
-    else
-      ldflags = "-s -w -X github.com/werf/werf/v2/pkg/werf.Version=#{version}"
-      tags = "dfrunsecurity dfrunnetwork dfrunmount dfssh containers_image_openpgp"
+      ldflags += %w[-linkmode external -extldflags=-static]
+      tags += %w[osusergo exclude_graphdriver_devicemapper netgo no_devmapper static_build]
     end
 
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/werf"
