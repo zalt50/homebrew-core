@@ -6,7 +6,7 @@ class CodecovCli < Formula
   url "https://files.pythonhosted.org/packages/5d/a6/7de4ab8ac19a3ab83b1844173c5dc4a819c55f7fa6c2dc7aa7c47ada6075/codecov_cli-11.2.8.tar.gz"
   sha256 "39daded2fe9f618fdd7e249891d5cb1e4fb413c203b8a83d5d0f79c18b674ac4"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "83997a4be8c99688e67565488b0d5fdc34cc7676add3f8362a889758fb5c8150"
@@ -35,8 +35,8 @@ class CodecovCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "ijson" do
@@ -50,13 +50,13 @@ class CodecovCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/65/e0/9bf5e5fc7442b10880f3ec0eff0ef4208b84a099606f343ec4f5445227fb/sentry_sdk-2.59.0.tar.gz"
-    sha256 "cd265808ef8bf3f3edf69b527c0a0b2b6b1322762679e55b8987db2e9584aec1"
+    url "https://files.pythonhosted.org/packages/54/a2/2e6c090db384cc515069f4f85542bd5baf6786852073020ea73d4a76d3ea/sentry_sdk-2.60.0.tar.gz"
+    sha256 "0bd25e54e78ca02d0be512529fa644bbbf9e8470d7b26371294012d4ca93c978"
   end
 
   resource "test-results-parser" do
