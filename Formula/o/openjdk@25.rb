@@ -1,25 +1,28 @@
-class Openjdk < Formula
+class OpenjdkAT25 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://github.com/openjdk/jdk26u/archive/refs/tags/jdk-26.0.1-ga.tar.gz"
-  sha256 "1f9c92513a7b7949e6d01b1935c7b6f77096319b2657e0a4c013bc2da44e2d9d"
+  url "https://github.com/openjdk/jdk25u/archive/refs/tags/jdk-25.0.3-ga.tar.gz"
+  sha256 "24080b39d5bb28c34d1fa738e8704db411c6fc7dac0962cc33305536b0391b9e"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
   compatibility_version 1
 
   livecheck do
     url :stable
-    regex(/^jdk[._-]v?(\d+(?:\.\d+)*)-ga$/i)
+    regex(/^jdk[._-]v?(25(?:\.\d+)*)-ga$/i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e1ece1a2fbc8d87b80943f599ee0fdb06bb1e9348a29ee524c600e5da99fe954"
-    sha256 cellar: :any, arm64_sequoia: "93f3ead33652eafdeb9dd0234fcdcd86548a1826ca5db3d3d394ff54658a9faf"
-    sha256 cellar: :any, arm64_sonoma:  "06f2e1584b858a7899e2fedaa9c42e31c6ef90a0308a01eb3aaefe44ac5b0fed"
-    sha256 cellar: :any, sonoma:        "248bc611327dc4f90f997e3c30ea8c83f57355eeeb952806872e2a01474f1255"
-    sha256               x86_64_linux:  "614eca88358401c50a5a47aa17c411e565e832719df099cb6ffab17e2537529c"
+    sha256 cellar: :any, arm64_tahoe:   "997131a0e1a727695d03bc69168b52edc857d9594e44eac7b2d41d9ba8f0a649"
+    sha256 cellar: :any, arm64_sequoia: "f3fa9b9c83b5cae6afc187bfd909eaf51d0c3456d35b08445eee22e1e77fa961"
+    sha256 cellar: :any, arm64_sonoma:  "2745b135ce440b0008eeee16180abe43379328c74231290f8ccdd61f679d3eb0"
+    sha256 cellar: :any, sonoma:        "75973113fd1ead44163214f34fc606e955a9c198a956469c3225bca624df1bab"
+    sha256               x86_64_linux:  "44b6bbcf9a8a1d7599fd64a59c1cb44de5d0dc4bddecb86e436cac642ea29bdf"
   end
 
-  keg_only :shadowed_by_macos
+  keg_only :versioned_formula
+
+  deprecate! date: "2030-09-30", because: :unmaintained
+  disable! date: "2033-09-30", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "pkgconf" => :build
@@ -52,22 +55,22 @@ class Openjdk < Formula
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://download.java.net/java/GA/jdk26/c3cc523845074aa0af4f5e1e1ed4151d/35/GPL/openjdk-26_macos-aarch64_bin.tar.gz"
-        sha256 "254586bcd1bf6dcd125ad667ac32562cb1e2ab1abf3a61fb117b6fabb571e765"
+        url "https://download.java.net/java/GA/jdk25.0.2/b1e0dfa218384cb9959bdcb897162d4e/10/GPL/openjdk-25.0.2_macos-aarch64_bin.tar.gz"
+        sha256 "7581b0d1752cd5acbf39e286c03f07b6cd6c205b562eb2fe753ff0253cf4c1bf"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk26/c3cc523845074aa0af4f5e1e1ed4151d/35/GPL/openjdk-26_macos-x64_bin.tar.gz"
-        sha256 "8642b89d889c14ede2c446fd5bbe3621c8a3082e3df02013fd1658e39f52929a"
+        url "https://download.java.net/java/GA/jdk25.0.2/b1e0dfa218384cb9959bdcb897162d4e/10/GPL/openjdk-25.0.2_macos-x64_bin.tar.gz"
+        sha256 "4ec2f4bc47b057fdf9cda07af27fae8f3605e90fa963d4240d63baeb46ede460"
       end
     end
     on_linux do
       on_arm do
-        url "https://download.java.net/java/GA/jdk26/c3cc523845074aa0af4f5e1e1ed4151d/35/GPL/openjdk-26_linux-aarch64_bin.tar.gz"
-        sha256 "403ccf451e88d0be9e1dec129fcb9318de9752121e0eb92dfa9a8cf06f249007"
+        url "https://download.java.net/java/GA/jdk25.0.2/b1e0dfa218384cb9959bdcb897162d4e/10/GPL/openjdk-25.0.2_linux-aarch64_bin.tar.gz"
+        sha256 "671208d205e70c9805da45a483f670d49dd64654990a7b7223ccffb2abb070dd"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk26/c3cc523845074aa0af4f5e1e1ed4151d/35/GPL/openjdk-26_linux-x64_bin.tar.gz"
-        sha256 "83c78367f8c81257beef72aca4bbbf8e6dac8ca2b3a4546a85879a09e6e4e128"
+        url "https://download.java.net/java/GA/jdk25.0.2/b1e0dfa218384cb9959bdcb897162d4e/10/GPL/openjdk-25.0.2_linux-x64_bin.tar.gz"
+        sha256 "555ce0821e4fe175ea50d54518cd6fbece9663c1998de529bc6ce429534457df"
       end
     end
   end
@@ -156,7 +159,7 @@ class Openjdk < Formula
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-25.jdk
       EOS
     end
   end
