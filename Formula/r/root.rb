@@ -1,10 +1,9 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
-  url "https://root.cern/download/root_v6.38.04.source.tar.gz"
-  sha256 "1ca561d03b3addae00cb76af57f8c75d3c229e8bd6939bdd408ec33fda9d3487"
+  url "https://root.cern/download/root_v6.40.00.source.tar.gz"
+  sha256 "676f8fde8926ce05902be7f44ce7d492a4a2060022fcab0e3d1c44f6dc0fbde8"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/root-project/root.git", branch: "master"
 
   livecheck do
@@ -55,6 +54,7 @@ class Root < Formula
   depends_on "xz" # for LZMA
   depends_on "zstd"
 
+  uses_from_macos "curl"
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -87,13 +87,8 @@ class Root < Formula
       inreplace "interpreter/cling/lib/Interpreter/CMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
     end
 
-    inreplace "cmake/modules/SearchInstalledSoftware.cmake" do |s|
-      # Enforce secure downloads of vendored dependencies. These are
-      # checksummed in the cmake file with sha256.
-      s.gsub! "http://lcgpackages", "https://lcgpackages"
-      # Patch out check that skips using brewed glew.
-      s.gsub! "CMAKE_VERSION VERSION_GREATER 3.15", "CMAKE_VERSION VERSION_GREATER 99.99"
-    end
+    # Work around upstream overriding CMAKE_OSX_SYSROOT
+    inreplace "CMakeLists.txt", "include(cmake/modules/SetOSX_SDK.cmake)", ""
 
     args = %W[
       -DCLING_CXX_PATH=clang++
@@ -200,11 +195,11 @@ class Root < Formula
     system bin/"root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
 
     # Test ROOT executable
-    assert_equal "\nProcessing test.C...\nHello, world!\n",
+    assert_equal "Processing test.C...\nHello, world!\n",
                  shell_output("#{bin}/root -l -b -n -q test.C")
 
     # Test ACLiC
-    assert_equal "\nProcessing test.C+...\nHello, world!\n",
+    assert_equal "Processing test.C+...\nHello, world!\n",
                  shell_output("#{bin}/root -l -b -n -q test.C+")
 
     # Test linking
