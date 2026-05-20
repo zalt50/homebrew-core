@@ -14,6 +14,10 @@ class Jackett < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5cb3e0391df199d62d66612b461b925d4fea995e6966ca31228d7b67818f16b"
   end
 
+  # Aligned to .NET dependency. Can remove if updated to latest .NET
+  deprecate! date: "2026-11-10", because: "needs end-of-life .NET 9"
+  disable! date: "2027-11-10", because: "needs end-of-life .NET 9"
+
   depends_on "dotnet@9"
 
   def install
