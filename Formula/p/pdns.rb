@@ -1,8 +1,8 @@
 class Pdns < Formula
   desc "Authoritative nameserver"
   homepage "https://www.powerdns.com"
-  url "https://downloads.powerdns.com/releases/pdns-5.0.4.tar.bz2"
-  sha256 "36e96d929999efc88bcb734f94dc45f8e292d1040ced0891e664bd0a8edf9d0e"
+  url "https://downloads.powerdns.com/releases/pdns-5.0.5.tar.bz2"
+  sha256 "c144feb23cfc2cd47ebf335132aea0afab605adb4ff4f30955be3445034e0def"
   license "GPL-2.0-or-later"
 
   # The first-party download page (https://www.powerdns.com/downloads) isn't
