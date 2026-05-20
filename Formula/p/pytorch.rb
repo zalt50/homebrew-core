@@ -7,6 +7,7 @@ class Pytorch < Formula
   url "https://github.com/pytorch/pytorch/releases/download/v2.12.0/pytorch-v2.12.0.tar.gz"
   sha256 "7cc1deb309f402ad67e9f45bbe311a40def4db19d66fddb9b01950f9bfc5ccb1"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 2
 
   livecheck do
