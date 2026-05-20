@@ -7,7 +7,7 @@ class Alot < Formula
       tag:      "v0.12",
       revision: "40a190f4c5f18c1283fdb3186393c4a778f865a5"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/pazz/alot.git", branch: "master"
 
   bottle do
@@ -56,8 +56,8 @@ class Alot < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "incremental" do
