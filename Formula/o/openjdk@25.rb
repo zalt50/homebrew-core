@@ -16,6 +16,7 @@ class OpenjdkAT25 < Formula
     sha256 cellar: :any, arm64_sequoia: "f3fa9b9c83b5cae6afc187bfd909eaf51d0c3456d35b08445eee22e1e77fa961"
     sha256 cellar: :any, arm64_sonoma:  "2745b135ce440b0008eeee16180abe43379328c74231290f8ccdd61f679d3eb0"
     sha256 cellar: :any, sonoma:        "75973113fd1ead44163214f34fc606e955a9c198a956469c3225bca624df1bab"
+    sha256               arm64_linux:   "877bf7fe3d97b9e5c849a9a98a6686805479262e2057b36dd1c0300e41a61ae3"
     sha256               x86_64_linux:  "44b6bbcf9a8a1d7599fd64a59c1cb44de5d0dc4bddecb86e436cac642ea29bdf"
   end
 
