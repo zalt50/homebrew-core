@@ -1,8 +1,8 @@
 class Yazpp < Formula
   desc "C++ API for the Yaz toolkit"
   homepage "https://www.indexdata.com/resources/software/yazpp/"
-  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.1.tar.gz"
-  sha256 "7fe5487d66fafdb0a3c2ceeec2b7ad27d8d8718c57f5d6d7a5598d724ccee5d2"
+  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.2.tar.gz"
+  sha256 "92516d1d889dd6ff617d92b3af0ba28861dbd1fc436cfcadd0fde65ca9f34fe9"
   license "BSD-3-Clause"
 
   livecheck do
@@ -23,12 +23,8 @@ class Yazpp < Formula
   depends_on "yaz"
 
   def install
-    ENV.cxx11 if OS.linux? # due to `icu4c` dependency in `libxml2`
     system "./configure", *std_configure_args
     system "make", "install"
-
-    # Replace `yaz` cellar paths, which break on `yaz` version or revision bumps
-    inreplace bin/"yazpp-config", Formula["yaz"].prefix.realpath, Formula["yaz"].opt_prefix
   end
 
   test do
