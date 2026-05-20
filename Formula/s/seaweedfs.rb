@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://github.com/seaweedfs/seaweedfs"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.26",
-      revision: "01b3e4a71cd5c4a64765f1ebca97a98cf55b571f"
+      tag:      "4.27",
+      revision: "e332b97d5218c136704977394a5778844da8e0a8"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
