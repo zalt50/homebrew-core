@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.10.14.tar.gz"
-  sha256 "18aa3c8bdd6e521b52513ffdb558091ccf2e331a88b4561284ef82e148643d71"
+  url "https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "15cf79688caafa1181b365ee484607b44058792313cce6a1939c24f493b41e04"
   license "Apache-2.0"
 
   livecheck do
@@ -19,19 +19,18 @@ class Micronaut < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c41627c3c46175dafc0426da23f8ff3f154060d227042e7268b3386b88201cc1"
   end
 
-  # Issue ref: https://github.com/micronaut-projects/micronaut-starter/issues/2848
-  depends_on "gradle@8" => :build
-  depends_on "openjdk@21"
+  depends_on "gradle" => :build
+  depends_on "openjdk@25"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home("21")
+    ENV["JAVA_HOME"] = Language::Java.java_home("25")
     system "gradle", "micronaut-cli:assemble", "--exclude-task", "test", "--no-daemon"
 
     libexec.install "starter-cli/build/exploded/lib"
     (libexec/"bin").install "starter-cli/build/exploded/bin/mn"
 
     bash_completion.install "starter-cli/build/exploded/bin/mn_completion" => "mn"
-    (bin/"mn").write_env_script libexec/"bin/mn", Language::Java.overridable_java_home_env("21")
+    (bin/"mn").write_env_script libexec/"bin/mn", Language::Java.overridable_java_home_env("25")
   end
 
   test do
