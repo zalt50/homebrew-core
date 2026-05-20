@@ -16,7 +16,7 @@ class Druid < Formula
   end
 
   depends_on "zookeeper" => :test
-  depends_on "openjdk@17" # JDK 21 issue: https://github.com/apache/druid/issues/17429
+  depends_on "openjdk@21" # JDK 25: https://github.com/apache/druid/commit/77d258c011bbc0c9019bd8c9eaf49359051c9a3a
 
   # check https://github.com/apache/druid/blob/master/docs/development/extensions-core/mysql.md#install-mysql-connectorj
   # for mysql-connector-java version compatibility
@@ -54,7 +54,7 @@ class Druid < Formula
     end
 
     bin.install Dir["#{libexec}/bin/*.sh"]
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("17")
+    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("21")
 
     Pathname.glob("#{bin}/*.sh") do |file|
       mv file, bin/"druid-#{file.basename}"
