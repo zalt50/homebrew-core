@@ -32,12 +32,12 @@ class Gnutls < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6dbbabecf3b693ed30b1f153cf0f98bac12b3e0fa7fe785cde484cd36431d30f"
-    sha256 cellar: :any, arm64_sequoia: "3dcb07236cdc2c242729ba8287b2b216816399006bc01fef1a0c6a8c689e20a5"
-    sha256 cellar: :any, arm64_sonoma:  "4af91041ce4c658abbce2ac612788a7beb9042ade55cdc8011fa4989cf970e50"
-    sha256 cellar: :any, sonoma:        "3d22af738ddc0843b1508ec6af958c96abddef594cf27bbf0f5f1e8d4a179165"
-    sha256               arm64_linux:   "fe6844d8d7f8e1d42cc18b17fc84bf9a7e8eb72acdd5bc0b1821bebc69d6ea65"
-    sha256               x86_64_linux:  "da55d168ee5b312eda15e29da3b40b6476a242cf94c8c5e003c5aa66d117f51b"
+    sha256 cellar: :any, arm64_tahoe:   "734c0efdecbab73827b30af2d46ecb7e4236eb9dbfa55b81b4293d369d434b2a"
+    sha256 cellar: :any, arm64_sequoia: "65c4d021683d2caf362f28a44962ed91d2fc2baf3dfff3e5d1013c2a48528e73"
+    sha256 cellar: :any, arm64_sonoma:  "f0e71d1231213068342c729c70cf8dd5421ec1c87d5b2d21736db4fe4803a301"
+    sha256 cellar: :any, sonoma:        "eb1d17b2a4abf89c34b79dd55b8808c24321ea6fed41da6550f3abbab70ad297"
+    sha256               arm64_linux:   "22abe8b61096729057db1937b2e7d219bac0835e450da4eee0fc9fa9f21f3e23"
+    sha256               x86_64_linux:  "be86239b5f1738315dfb08c0df9a36eee05dc5f2a1db0511efec2bf063c0dac2"
   end
 
   depends_on "pkgconf" => :build
