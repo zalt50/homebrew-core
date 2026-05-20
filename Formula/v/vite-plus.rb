@@ -1,8 +1,8 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.1.21.tar.gz"
-  sha256 "b568736e52a3d89f0809f4b59d8039c227a3c14f5b8b245360a94899a0e83031"
+  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.1.22.tar.gz"
+  sha256 "b1e6951592ae7af2f7a6044e92fc1d1802288bf8c0c4039a982ba3d58a46e797"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
@@ -56,8 +56,6 @@ class VitePlus < Formula
     # fspy requires nightly Cargo's `-Z bindeps`.
     # Use a stable-Rust stub to keep the CLI buildable without nightly.
     ENV["RUSTC_BOOTSTRAP"] = "1"
-
-    inreplace "crates/vite_global_cli/Cargo.toml", 'version = "0.0.0"', "version = \"#{version}\""
 
     system "just", "build"
     system "cargo", "install", *std_cargo_args(path: "crates/vite_global_cli")
