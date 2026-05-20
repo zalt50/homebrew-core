@@ -20,16 +20,22 @@ class Actionlint < Formula
   depends_on "shellcheck"
 
   def install
-    ldflags = "-s -w -X github.com/rhysd/actionlint.version=#{version}"
+    ldflags = %W[
+      -s -w
+      -X "github.com/rhysd/actionlint.version=#{version}"
+      -X "github.com/rhysd/actionlint.installedFrom=installed from Homebrew"
+    ]
     # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
-    ldflags += " -extld #{ENV.cc}" if OS.linux? && Hardware::CPU.arm?
+    ldflags << " -extld #{ENV.cc}" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags:), "./cmd/actionlint"
     system "ronn", "man/actionlint.1.ronn"
     man1.install "man/actionlint.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/actionlint --version 2>&1")
+    output = shell_output("#{bin}/actionlint --version 2>&1")
+    assert_match version.to_s, output
+    assert_match "installed from Homebrew", output
 
     (testpath/"action.yaml").write <<~YAML
       name: Test
