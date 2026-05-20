@@ -15,6 +15,7 @@ class Graalvm < Formula
     sha256 cellar: :any, arm64_tahoe:   "68033cc0c5d778458170cfafd25f461778098b0c159d9429da4c1fa706e56330"
     sha256 cellar: :any, arm64_sequoia: "6ff9d912cf54e737e465f0522b08420283620e18df6fb1a6e64c2af4d3caffdf"
     sha256 cellar: :any, arm64_sonoma:  "1971cf58609536cab99baa93db286015730f50937cf01616af73a9b91f7e725a"
+    sha256               arm64_linux:   "3d265f2ed505cf997f0cdade8c7d43d28b0a631c7596ac20b0d864a6f5caa5ef"
     sha256               x86_64_linux:  "9ea8345595c00a92b82e8d4ca53139522203073e2461fdce67caded0fe1cc185"
   end
 
