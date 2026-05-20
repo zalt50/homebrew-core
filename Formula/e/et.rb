@@ -4,6 +4,7 @@ class Et < Formula
   url "https://github.com/MisterTea/EternalTerminal/archive/refs/tags/et-v6.2.11.tar.gz"
   sha256 "e8e80800babc026be610d50d402a8ecbdfbd39e130d1cfeb51fb102c1ad63b0f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     rebuild 1
