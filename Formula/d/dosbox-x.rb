@@ -4,6 +4,7 @@ class DosboxX < Formula
   url "https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2026.05.02.tar.gz"
   sha256 "5ab3584870bec378b495242f20f03ecbef2cd032a128ee3394a88ff7a53cd914"
   license "GPL-2.0-or-later"
+  revision 1
   version_scheme 1
   head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
 
@@ -37,6 +38,7 @@ class DosboxX < Formula
   depends_on "libpng"
   depends_on "libslirp"
   depends_on "sdl2"
+  depends_on "sdl2_net"
 
   uses_from_macos "ncurses"
 
