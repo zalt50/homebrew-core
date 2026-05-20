@@ -1,8 +1,8 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
-  url "https://ftp.indexdata.com/pub/yaz/yaz-5.37.1.tar.gz"
-  sha256 "0d78e6ef056597712387ff6833ec393e1cd9c5dff6a41a486dd68f97ef83154d"
+  url "https://ftp.indexdata.com/pub/yaz/yaz-5.37.3.tar.gz"
+  sha256 "975d7878b272cc999e5acbd02dc272a46607f95e6ee4f35ac655e8e4d333bf2b"
   license "BSD-3-Clause"
   compatibility_version 1
 
