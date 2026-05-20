@@ -3,8 +3,8 @@ class Barman < Formula
 
   desc "Backup and Recovery Manager for PostgreSQL"
   homepage "https://www.pgbarman.org/"
-  url "https://github.com/EnterpriseDB/barman/releases/download/release%2F3.18.0/barman-3.18.0.tar.gz"
-  sha256 "8e752ac93d2f3a61e86b8374185209cae477a638ece7e6f540070f36d28d6997"
+  url "https://github.com/EnterpriseDB/barman/releases/download/release%2F3.19.0/barman-3.19.0.tar.gz"
+  sha256 "1c3ef54559908c779b0d96fd0d875d90939a809e14b84b1185fd20cfacf7dc20"
   license "GPL-3.0-or-later"
 
   bottle do
