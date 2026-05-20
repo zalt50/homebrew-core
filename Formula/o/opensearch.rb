@@ -12,6 +12,7 @@ class Opensearch < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6485d06559c900bb2e84410fc897998a803c7c62757f152b504bddd1e40e5c1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6622bed240cc4c5cabd443bfbf1a1db97db8abef445310d4842d25237dfba320"
     sha256 cellar: :any_skip_relocation, sonoma:        "8ce4783200e4fc7a550732e3e9bfed8d74d273a5209fef18e2473e7edde439ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4766c1cd628f563b7a97b162ad7673990f55e20bc45284d0d12d848937e46d56"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8f399ee6a63960c551fa3415c060a72d35f5c816656eff6ae27442c99402508"
   end
 
