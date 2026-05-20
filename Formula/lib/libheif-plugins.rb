@@ -10,13 +10,12 @@ class LibheifPlugins < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "0d9bccc7072aaaf77988007f79892ec328223a3c52ce98bd131062396262bd61"
-    sha256 cellar: :any,                 arm64_sequoia: "c804164c3051aea8a9b0a6cda54472c7bb439d29180a6e989fe804c0b1cf326c"
-    sha256 cellar: :any,                 arm64_sonoma:  "a609d2bbc1e0acc31d03a9e03f6d5bded018abd772d1ba2390fb5b50e47f9518"
-    sha256 cellar: :any,                 sonoma:        "98c82781feb7d2714c7c616ae492388491b6bd29408b4e9b78c88b254ff64084"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "195d6ca06f71450c988a50fc85b6a6fccf286cc15b01205d7da3e9e64e489ef0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90030cd3863008c831c21f319597dcca6c8afafa682ffbe1b9b28a5d2cbee794"
+    sha256 cellar: :any,                 arm64_tahoe:   "22e51dde874edf10c40a6d5682d6979babef6e5a22ca1d84092dd374e947c3fe"
+    sha256 cellar: :any,                 arm64_sequoia: "9f6c0cbf2a06f9bfb8200f745955475ad27db72cf9f602508f9f080801d03660"
+    sha256 cellar: :any,                 arm64_sonoma:  "8cffa1f094f887be8e898251141d8207d0f31c1c0f463fb09a5a916e460c366c"
+    sha256 cellar: :any,                 sonoma:        "efbe49a4f1614beaade5da665106144fadb8b4ce8f6a08dca1b8ce295ab34da8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edaf5d52b1e1ae096d2cffb827a6e4fdb47ef4b932665ad37daebe9f8ef88319"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "203d4b37e3c60615d188f05e1cb58a51cfc57727c82c4650f088a3120fa99538"
   end
 
   depends_on "cmake" => :build
