@@ -11,7 +11,7 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5f879a8795284fa18ebb5bd5d79b264d440ce41293d9e2034001761ad0608143"
+    sha256 cellar: :any_skip_relocation, all: "6c53141c15a17228e6d1059ea6a0bfd0abae23f59ad7ce87cc393ada65dc9d7a"
   end
 
   depends_on "openjdk" => [:build, :test]
