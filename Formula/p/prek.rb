@@ -1,8 +1,8 @@
 class Prek < Formula
   desc "Fast Git hook manager written in Rust, drop-in alternative to pre-commit"
   homepage "https://github.com/j178/prek"
-  url "https://github.com/j178/prek/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "1b8260c0781933fb94e86a6b2b576fedcff60662bfee84b87216d38ada5e1cd7"
+  url "https://github.com/j178/prek/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "79aa52eee107e10b2d52baba6e7a52a7c3df2d13a2eb823211111a50927fe7fd"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "master"
 
