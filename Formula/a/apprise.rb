@@ -9,12 +9,12 @@ class Apprise < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dea6321877e99e6b420cda5d0bdaa9daf9d89bf3df1210ed375e4fd7ff4075e8"
-    sha256 cellar: :any,                 arm64_sequoia: "5261b8d1524c694d0d64f86179dce760c7dd1c6421c68971ee0321450df60efa"
-    sha256 cellar: :any,                 arm64_sonoma:  "d603c1c854478db933f7457fb4e5ffafe750baf33c3f4ae4faeaba6ab0c8adc9"
-    sha256 cellar: :any,                 sonoma:        "67accacec594ca324a2d8ea1048ffec1998ca85ffe877a295992c49f403ed6a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58f216fd0e389cdb42b478d02f9fdb81f5a49d4757f70b3f55052ebc59d22f91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e72685f85bf067d7c9932db95d6e2e55674939255257b430ea5c60cde3455dde"
+    sha256 cellar: :any,                 arm64_tahoe:   "65e93747468219e5760a7ce3b5b0bad3d575eb0668a7881f0630f0284b691bd0"
+    sha256 cellar: :any,                 arm64_sequoia: "ff8a7a5fcd60e785cfee7ba85ff8747d252d7a1ecd319cf7528a8d6e65ebf0e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "b36869bccaeeb06ab5f4a6417cb31b7c009e07a080a4499e39484b5b88deb399"
+    sha256 cellar: :any,                 sonoma:        "eab9154602efd4b1403e9daf32212e32001e74084c4cc8f28840b63d0192b410"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94ce990261da4b3384f467587ec7c579391dfe181b0a0ab5483a786e5d159f5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e90fe7f4b6b3f15d5bf95c8b81ffab9e47d0a915f54df745955fd894a34711"
   end
 
   depends_on "certifi"
