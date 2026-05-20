@@ -10,12 +10,12 @@ class Dnsrobocert < Formula
   head "https://github.com/adferrand/dnsrobocert.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "65dfe995595dd7fd16b8508780e5599ff491ed315478ddacf66da76913680b93"
-    sha256 cellar: :any,                 arm64_sequoia: "402db1bf31f6099d1e165c04576b62de2e5742cacd74a4948770b35312b2d0bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6f835709b036e3a0e4d6d1cc7e7ce3b9f232276e93adc7540aa629567ece8b5"
-    sha256 cellar: :any,                 sonoma:        "ad9af426821a3ebab751614017eeed540e79d40e67fcffb7496d380f8d2a590d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bb61c108d6398010750878fa7e37da65d56504f93a8cf4ba9ea4a1468671806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdd45ec5081822b4a7f8a59807efa1af233a1838e32035a95922039529aa5705"
+    sha256 cellar: :any,                 arm64_tahoe:   "01511d2aa9800f3a4accc32d0b44e5629781a2ad869ee6a262030cd83230b042"
+    sha256 cellar: :any,                 arm64_sequoia: "cb079cc4969c168d5abd39d8017b4f350068b605c25508489f17d93e40b10719"
+    sha256 cellar: :any,                 arm64_sonoma:  "39eaa148d28ee7bdb4c5d244895965b686546d973eec3cb4eab2260209ec8b7b"
+    sha256 cellar: :any,                 sonoma:        "2d01865f96b474ed32ae563cee76578ec70fbfd1ff202e477c01be70d791d396"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0df9d089d9ac970dc195d44e5f8a9bd6e4a75b2bfab212f24a33e16478fa0164"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fddeef77c75366e8345dee9de4a01fe19fa9b1383e5e648af66a37932cfb5a7"
   end
 
   depends_on "rust" => :build
