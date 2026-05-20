@@ -17,6 +17,8 @@ class QuickjsNg < Formula
 
   depends_on "cmake" => :build
 
+  conflicts_with "quickjs", because: "both install a `qjs` binary"
+
   def install
     system "cmake", "-S", ".", "-B", "build",
       "-DBUILD_SHARED_LIBS=ON",
