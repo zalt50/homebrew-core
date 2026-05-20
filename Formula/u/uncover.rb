@@ -7,12 +7,12 @@ class Uncover < Formula
   head "https://github.com/projectdiscovery/uncover.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea9ea0ffed86c7e1f3bd9a2215f31a999e1b616c54e78da163b0dba5f8a765a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e4e7345d608181e9a46be28d8bd1806b0b1bd2be76db6ecac24faad56b55c91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50344b743a7fd9671ec288d67b57e255a10a2fa4f66ed7237891e85373c05526"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fbbda4fa9e7915c6d328108ae8b4aef5425edac92fa70fd625e462451216c65d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75a201de1cc4cd972b6c514697b6af509e05d814754c1aedaea3a79a4a983cec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "096d2093ff8fd12661e40f4ed15b79330762f1864dcd170e2a0d1cf319ee0cbd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "937dfb59d308649b9dad605f875d92d97a4262daee495194aab764ecf1c7ca7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e839878fa489ad9b6e31ee48b937ba514f4dd8399794d7bcc38aa2ebc6dab0bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93ed0cad4bca2ad3d72b4dcbeb0d875bda1bb8fb9573e66cdc90460106817fe8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f8a78f3419a921cfefadb7c15dd4c6095fe9dbf06ac4c717f4ee761a0f66fa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ed11df859cbcb41a7f91cb0b71b0eebccdaf17e3d0b1d61911ae2cc308630a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa51740a63065b183d6617a77bd614ff1906b907da814ff3046a3daefa11c3f"
   end
 
   depends_on "go" => :build
