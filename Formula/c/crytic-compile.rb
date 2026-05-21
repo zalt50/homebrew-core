@@ -3,10 +3,9 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https://github.com/crytic/crytic-compile"
-  url "https://files.pythonhosted.org/packages/f4/cb/669ed02fbfe17091998f52a7e3326ac276409117ea10a2c36b2a852a22f9/crytic_compile-0.3.11.tar.gz"
-  sha256 "d4e2253d5d81ec3a75deb3ab9fc2c2d2db56e835001cf07f3703911d74b56716"
+  url "https://files.pythonhosted.org/packages/00/61/2d8ceccc95ec62fbcb4f65b0c2e3e8536f68eae4f73f6a7a0bb0f926de03/crytic_compile-0.4.1.tar.gz"
+  sha256 "4b777728af8d84fbbdf3188dd054443bd97791561043014f906700a8fcc6c945"
   license "AGPL-3.0-only"
-  revision 6
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
