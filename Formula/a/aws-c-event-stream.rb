@@ -7,12 +7,12 @@ class AwsCEventStream < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "650f8d16066cb5429d0dc4f5ffd60fdd63c402c184d2fd9cd9c9592c8f3edbea"
-    sha256 cellar: :any,                 arm64_sequoia: "d85395211ce132b8840e4805479503486f6346cc173712edba721acc90a891ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "1d418d1fe1df20d6b8d7c046da560d561e0f9676773f60654c659559f702d4fc"
-    sha256 cellar: :any,                 sonoma:        "07eebede34f51bac83219ce13f1afb4fbf262460e8a21b4cf2dcf637e9a64e65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bf7e81a5d77851096f96adbe69f216ec3d08aad50093c98071d114d99a7841d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2da13887f8427923c7f22c7e2fa87d380d1a2be1c990cf6ef01ec73605606fda"
+    sha256 cellar: :any,                 arm64_tahoe:   "814308827636ee3eb0e11c8d0a27c8e75ce713be0ded8598e71de9d0324f5993"
+    sha256 cellar: :any,                 arm64_sequoia: "5d4e583cf3c1ada0cac9134fce473defff1ea1bbbb03ae718b8977e14978eb9a"
+    sha256 cellar: :any,                 arm64_sonoma:  "09b75c0386cb914b0b79b60fc9449e0d90d7b5f6ef082d4327ffb087491bf6c7"
+    sha256 cellar: :any,                 sonoma:        "0cb42827075adb020bbfc674ad5b6ba3bda885225204132884ee7962af329ae7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "399b4e3f0b823672c8e2d78dc3d6e03503482965e883fa444f2222b6ab2a2503"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6e83713aad44ec5487a487350a03488e0d5ad3d1302f38d2214ce35d921d919"
   end
 
   depends_on "cmake" => :build
