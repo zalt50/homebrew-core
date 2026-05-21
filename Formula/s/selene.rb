@@ -1,8 +1,8 @@
 class Selene < Formula
   desc "Blazing-fast modern Lua linter"
   homepage "https://kampfkarren.github.io/selene"
-  url "https://github.com/Kampfkarren/selene/archive/refs/tags/0.30.1.tar.gz"
-  sha256 "61c66d7e40d8d00fe8364a2696c7f87bcb976d838bd681fd802d427c7675a872"
+  url "https://github.com/Kampfkarren/selene/archive/refs/tags/0.31.0.tar.gz"
+  sha256 "fa3ef29ce2b698714b7dac6b27ea7b19feaeccf016b0f5e6f328113702be6f04"
   license "MPL-2.0"
   head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
