@@ -1,9 +1,9 @@
 class Picat < Formula
   desc "Simple, and yet powerful, logic-based multi-paradigm programming language"
   homepage "https://picat-lang.org/"
-  url "https://picat-lang.org/download/picat397_src.tar.gz"
-  version "3.9.7"
-  sha256 "517d9c91ad2aa5f4d8052e4daa0bf21fe967278ec054d7eeb0f4f92db9edd250"
+  url "https://picat-lang.org/download/picat398_src.tar.gz"
+  version "3.9.8"
+  sha256 "af29d841b2e10b7685ea47766bf348fbfd5e1cc9ff1839d3d5074f334e5140b2"
   license "MPL-2.0"
 
   livecheck do
