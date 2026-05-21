@@ -7,12 +7,12 @@ class Skip < Formula
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "97a97126b62cb1c8744057adc8de4f4212e23dbd0647609743dc0ef26b05f1f8"
-    sha256                               arm64_sequoia: "256d55595c22802a1b36fc051656b3b69cdedc6a8b5e1254398770125eba20a0"
-    sha256                               arm64_sonoma:  "3cc5738b1d3e1da56b0a94eb21e9795454c725fe14ad8647092b66ce98d3a4a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3bf6ffe97e9a6ec78f4c021ff4555d26dc41aaa94861ee5708bd607445cbb2b"
-    sha256                               arm64_linux:   "084a7b008b8c87ab79ddd65ffd497eb01f94d6a75654d5c376b95261dd3d195d"
-    sha256                               x86_64_linux:  "40adf72d26d19a62c5abaf6acb71135382d1bd82cd47b64a9e234edb1e114943"
+    sha256                               arm64_tahoe:   "bf835f0c85e66f8c30ce123ae925f7669488e64409a432d19e2d9d5af5cfffab"
+    sha256                               arm64_sequoia: "af874c45e5c87456049880e88865d89745d19910b34e46b643e7638db835d704"
+    sha256                               arm64_sonoma:  "111bd46d4bb459fa106b27cb465dc27fdf442d0d2efbeee1f606a9f9266db0e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d988b1fcc9fc57f548fe55b309b0938f4b629f629414078c3990d9de273f3dd2"
+    sha256                               arm64_linux:   "1164c68117b4e24f88310b081fd62d32367d9c441fd41f20a2f268be8c2702f6"
+    sha256                               x86_64_linux:  "de5359dcdcd8c3352c01574eaf8511fd032f898fc4edab72dcb5c5aa08430f6c"
   end
 
   depends_on xcode: :build
