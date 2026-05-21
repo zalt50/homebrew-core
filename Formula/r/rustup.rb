@@ -4,6 +4,7 @@ class Rustup < Formula
   url "https://github.com/rust-lang/rustup/archive/refs/tags/1.29.0.tar.gz"
   sha256 "de73d1a62f4d5409a2f6bdb1c523d8dc08aa6d9d63588db62493c19ca8f8bf55"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   compatibility_version 1
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
@@ -32,9 +33,13 @@ class Rustup < Formula
   def install
     system "cargo", "install", *std_cargo_args(features: "no-self-update")
 
+    # Upstream installs this binary as `rustup-init`, but Homebrew packages
+    # `rustup` directly and should not provide a separate installer entrypoint.
+    mv bin/"rustup-init", bin/"rustup"
+
     %w[cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-analyzer
-       rust-gdb rust-gdbgui rust-lldb rustc rustdoc rustfmt rustup].each do |name|
-      bin.install_symlink bin/"rustup-init" => name
+       rust-gdb rust-gdbgui rust-lldb rustc rustdoc rustfmt].each do |name|
+      bin.install_symlink bin/"rustup" => name
     end
 
     (buildpath/"settings.toml").write <<~TOML
@@ -47,14 +52,20 @@ class Rustup < Formula
   end
 
   def post_install
-    (HOMEBREW_PREFIX/"bin").install_symlink bin/"rustup", bin/"rustup-init"
+    (HOMEBREW_PREFIX/"bin").install_symlink bin/"rustup"
+
+    # Remove the old Homebrew-created symlink during upgrades, but leave any
+    # user-managed `rustup-init` file alone.
+    rustup_init = HOMEBREW_PREFIX/"bin/rustup-init"
+    rustup_init.unlink if rustup_init.symlink? && rustup_init.readlink.to_s.match?(%r{(?:Cellar|opt)/rustup/})
   end
 
   def caveats
     <<~EOS
-      If you have `rust` installed, ensure you have "$(brew --prefix rustup)/bin"
-      before "$(brew --prefix)/bin" in your $PATH:
+      To use rustup, ensure you have "$(brew --prefix rustup)/bin" in your $PATH:
         #{Formatter.url("https://rust-lang.github.io/rustup/installation/already-installed-rust.html")}
+
+      This formula does not provide `rustup-init`; use `rustup default stable`.
     EOS
   end
 
@@ -74,11 +85,7 @@ class Rustup < Formula
       assert_empty shell_output("#{bin}/cargo clippy")
     end
 
-    # Check for stale symlinks
-    system bin/"rustup-init", "-y"
-    bins = bin.glob("*").to_set(&:basename).delete(Pathname("rustup-init"))
-    expected = testpath.glob(".cargo/bin/*").to_set(&:basename)
-    assert (extra = bins - expected).empty?, "Symlinks need to be removed: #{extra.join(",")}"
-    assert (missing = expected - bins).empty?, "Symlinks need to be added: #{missing.join(",")}"
+    # Check that Homebrew only exposes the packaged `rustup` entrypoint.
+    refute_path_exists bin/"rustup-init"
   end
 end
