@@ -10,12 +10,12 @@ class HermesAgent < Formula
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "87d9ba3f810bee32b8cbdd58cf3692e128015b8000684687fe3da8b241dba325"
-    sha256 cellar: :any,                 arm64_sequoia: "55bfa44a6a01409ff8a1a303a29b712706ed34e0db559a99c96bedd9138216db"
-    sha256 cellar: :any,                 arm64_sonoma:  "b6dae239b3a9aa9541f456ba08100eb71f78a8587500c0d06cee1d2fabcff349"
-    sha256 cellar: :any,                 sonoma:        "82604e971071b73ee33be8595b65f53a45b6f62e45e6182b6e0cb051a0de6a27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ccb6e1fb556320de7de5a153dea48c581c49356b1b6b725384f2c9300964859"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39eb5e13b3f0acf3e5b964c4bd1279985b4967fd3c6069c52537ec18a7c78014"
+    sha256 cellar: :any,                 arm64_tahoe:   "21e310927033ba0249585fb13989f11fb04a72bedcf6b03cacd05ca18f36c0d7"
+    sha256 cellar: :any,                 arm64_sequoia: "07d68ba498b771d823ed6142bd89f71b8fe348d66a3c6a5372ac5acfa9ea3d15"
+    sha256 cellar: :any,                 arm64_sonoma:  "3f58223fe0aef9cb1b2d45e40c44148e6bee04fdaa1c7ed6d43ac7a90c0d5782"
+    sha256 cellar: :any,                 sonoma:        "cbc361e834305c9dbd26c5172eb639b9480dc974340ae4eb00193e95a7eef298"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ba6d4e9f607c024b085ed8241d60c43748a8d97787abc42ce44f42dffe5c1cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c810beca50bf2b1225151f526107d109b8ac3f10cc23b932d0622c57e4eecbc0"
   end
 
   depends_on "pkgconf" => :build
