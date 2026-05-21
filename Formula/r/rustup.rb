@@ -65,7 +65,7 @@ class Rustup < Formula
       To use rustup, ensure you have "$(brew --prefix rustup)/bin" in your $PATH:
         #{Formatter.url("https://rust-lang.github.io/rustup/installation/already-installed-rust.html")}
 
-      This formula does not provide `rustup-init`; use `rustup default stable`.
+      This formula does not provide `rustup-init`.
     EOS
   end
 
