@@ -15,12 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6ceaf02daa812fbc69cbb21b7bb0162cc905a6865bfeb90997aea9dbda1869a1"
-    sha256 arm64_sequoia: "e74156291db7fc389bd8b8eedf92407fe4ff03b069cc64c6e62496884d778ebc"
-    sha256 arm64_sonoma:  "902f2c11e84d285ca11200afc614ae59cf94ca330fa1676e6bb30c67f8ef01e5"
-    sha256 sonoma:        "e60596a2ca193e536d6517a88fa4a288f3e1b0bc63b997ea15ad1da325dd8dd2"
-    sha256 arm64_linux:   "535f3dcfdaae5c27d4d9ca501623cf06818552c7f49ca9a160c2e72c1d3e2e67"
-    sha256 x86_64_linux:  "ee690216a88f9f156c180c068346742f32dd07f2cc42f4ce8f197aefe8dc252a"
+    sha256 arm64_tahoe:   "dec77545ef57ed0ae3e0d9550cf99c5a9617589bfb05a4d88ac360d26c498bb2"
+    sha256 arm64_sequoia: "108dfd2aa8b0605ae1b6acf76d628608b14399a6c7ae35811f8189dba84712ae"
+    sha256 arm64_sonoma:  "94c102945a1f01e1c8224d5bc8db752dad3cd758640fce0d8762b78331341aaf"
+    sha256 sonoma:        "c52b519cdeeda90d09dd16c207a4c329880ef3f90502217faa7c3c9675614894"
+    sha256 arm64_linux:   "5eaab54b7bd4c791dc3530adf53ee8246785be44782b84bf9a9501e47c24d064"
+    sha256 x86_64_linux:  "99a56eb5e46a3ce91dd7179c4c0dde9fae1cba04e427430a095031dc6ebc3d13"
   end
 
   depends_on "cmake" => :build
