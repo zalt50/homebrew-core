@@ -10,14 +10,14 @@ class HomeassistantCli < Formula
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6762358727f8a1e08546c3da33d6e8b6e7d97b269946d28e73cb1779c317174c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e36a4355e864ebf3ee169f81b4f7cc966fb65efbfd552bac6701108dda565ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77e405e33478036fcffa5c76a4fed161d9b92599ed0db6622738b346123bc47b"
-    sha256 cellar: :any_skip_relocation, tahoe:         "fc5a5a2c0f554f7e2c3c917a003e9af8ad8ae697a3f1644ab4163c51f58a94cf"
-    sha256 cellar: :any_skip_relocation, sequoia:       "080e94b2b085a57cd196ad53a37786dd69ebaa7e5900e1d7361174e2bc9b4001"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e88c0d20515d3e3f7b29b535886ea9b7d8f83f338407d213128cce097f299435"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d69e332f949efa626ca83e9b1a049ba433c3fc1310c34c929a5124b789534eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4954beb480deae7c180a5280ed2d3ae59a3920131d555de6782ee20be1e5ce96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dafa82d339968cdcf4e9c4712722bf50a6ad58ef3fe82e5a244d32569a10b1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f502ad8bca455f92fb7c157d660635b46d496b631cbf60d730de3a81a0f1d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab6a67ae14702caa1b1f7fede3216fef10d567abab85b9f562ba97055ab7ada2"
+    sha256 cellar: :any_skip_relocation, tahoe:         "8a4a6ebd23a3494281cb75ac5be91d4bbec767865b230c3f98513c54528ee2c6"
+    sha256 cellar: :any_skip_relocation, sequoia:       "1eb7f2b174c7111ebf84efcf985f92fcbe6abc0994c1da8f0c33555cd26c75d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6ec44b0d96478d8558f2efddc95264322b9c4907f9b97dc19cd243c26315b80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dacf83eeefabb98db85e10604934509529d2cebd1a5e9eda3fa8e12d1e77071"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75877ad202aa15c5bd7d80a974e0ef6f492fff8373c4f0ad13a6ae8ad0a23ef4"
   end
 
   depends_on "certifi" => :no_linkage
