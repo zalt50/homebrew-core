@@ -6,6 +6,7 @@ class LanggraphCli < Formula
   url "https://files.pythonhosted.org/packages/5d/94/6864c94fcc998d7b72f60a4166222f003483426446a10979c0215220dd65/langgraph_cli-0.4.26.tar.gz"
   sha256 "d81867e45bc198f4c61a4064e8f347aba9e6ffa256db387d8daae594c59bf0f6"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5b4bd9fc5a1976e59e6f30f88b609510bd598e9588475cf45c90aa3349a3c3e9"
@@ -29,8 +30,8 @@ class LanggraphCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "h11" do
@@ -49,8 +50,8 @@ class LanggraphCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "langgraph-sdk" do
