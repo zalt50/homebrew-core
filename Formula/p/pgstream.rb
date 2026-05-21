@@ -6,12 +6,12 @@ class Pgstream < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44a99755475cfbb0137f25e203dfed538d799481ee3120e54c0fd0850b2ef69f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44a99755475cfbb0137f25e203dfed538d799481ee3120e54c0fd0850b2ef69f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44a99755475cfbb0137f25e203dfed538d799481ee3120e54c0fd0850b2ef69f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "133f74ebf9232f365ca5ca7f6b14c358ed75ce8b50196617e5b1a5c80ac3d9b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed7d6a04c7239c9560e26c61ec832a6b886f2ec99009eaecfaab619a9e92def1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc23c2915077d730a526d62c8856d657c42fc2a3fb6d750e81ceedb426e0182"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2173c709787ea6d70f22aa2a8cbdbc1752922ea71af76e67cb90bab8c976f641"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2173c709787ea6d70f22aa2a8cbdbc1752922ea71af76e67cb90bab8c976f641"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2173c709787ea6d70f22aa2a8cbdbc1752922ea71af76e67cb90bab8c976f641"
+    sha256 cellar: :any_skip_relocation, sonoma:        "354ad7185beaa932a4c761370b61214e3e3a90b7ffd6d1a9af7060e3a4a75c83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11f7796a8217af4e6c477eab7b4319e6ef07d5f5a0495e10c3f97f36fde5f2b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8518c53caff6b25301a1bd5479e4cc0b104c0c26e9e7a84c4e7c56ad730c6e88"
   end
 
   depends_on "go" => :build
