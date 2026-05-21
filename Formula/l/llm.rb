@@ -9,12 +9,12 @@ class Llm < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d86f08f2709bcd826f81c3029673cc5c1ebc3209258035ade8844190c5f84411"
-    sha256 cellar: :any,                 arm64_sequoia: "67e3c308bd04334229056b00f0483c3c6b7ca7bc56c54e2ebbcb921cb99266e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "805f4f03088ad5168f19b7327d793ac8e3b649ca115a426ea24e71868fe61ffe"
-    sha256 cellar: :any,                 sonoma:        "d2a13c347c4a2320d23d9354487b9e3e374828bfbe8f2b201f24c97fcdc52b67"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36dd265a5ba06fec0405be95176ddeb0a4dec175a0dd080a5b8f9e5a54d82852"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2944210af1ec412687cdf6124d4704e242864514dec1670f8f1050229bdf522"
+    sha256 cellar: :any,                 arm64_tahoe:   "7ff5972e10184f94f1f5f738c8326947f39f8aded1977f03f56b408392e1a80f"
+    sha256 cellar: :any,                 arm64_sequoia: "15c3df9769596fefad8416ea647c5ab6e9783f5366df6d6dd156c37866ab5a33"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed896f83057b01f0727f7b0e0de06c1d3c86dcebdc4ab3788a2e483b142af0e8"
+    sha256 cellar: :any,                 sonoma:        "af555bd32a3223000656588873d55e8f8a0973e44f2bd3c06b0d4a91b4667120"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b65b7eeec6cabc0ec699a381e1b7ae473a679b7002b5c2b32b2081b1e4e62515"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b1c9b0320c0bc3b0cb5528a0cc57abc01eb763f4d536afe6f37f20169e801f"
   end
 
   depends_on "rust" => :build # for jiter
