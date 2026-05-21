@@ -26,7 +26,7 @@ class Atuin < Formula
   end
 
   service do
-    run [opt_bin/"atuin", "daemon"]
+    run [opt_bin/"atuin", "daemon", "start"]
     keep_alive true
     log_path var/"log/atuin.log"
     error_log_path var/"log/atuin.log"
