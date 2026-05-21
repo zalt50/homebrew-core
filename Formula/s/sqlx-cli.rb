@@ -1,8 +1,8 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https://github.com/launchbadge/sqlx"
-  url "https://github.com/launchbadge/sqlx/archive/refs/tags/v0.8.6.tar.gz"
-  sha256 "75d0b4d1f3081a877c7b75936f069f9327bb2ceb4dc206f5a7fc89e0cd9bc31e"
+  url "https://github.com/launchbadge/sqlx/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "48eaacc9a800af48c35713d300bc0de0c1e04b84c810b25de1007806fa1d718c"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
@@ -30,10 +30,10 @@ class SqlxCli < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/sqlx --version")
+
     ENV["DATABASE_URL"] = "postgres://postgres@localhost/my_database"
     output = shell_output("#{bin}/sqlx migrate info 2>&1", 1)
-    assert_match "error: while resolving migrations: No such file or directory", output
-
-    assert_match version.to_s, shell_output("#{bin}/sqlx --version")
+    assert_match "error: while resolving migrations: error canonicalizing path migrations", output
   end
 end
