@@ -13,12 +13,12 @@ class Metaproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a7eb460d7ec0ac7fb969b7f5a28fe294e07be6920f744cd3197bb65e82af295f"
-    sha256 cellar: :any,                 arm64_sequoia: "e19f2ba6325e1dfd0a27a4e932dd091af4650c35b754518246dce8e8bfa3bf39"
-    sha256 cellar: :any,                 arm64_sonoma:  "c36838976487a7d4858fab5553deb3fa08a78880768933535401b33254f36a33"
-    sha256 cellar: :any,                 sonoma:        "697ab1129a23df310aa052b7fd07b2c763d920a4c84d82d08b682e7fed9ca101"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "027749a6c0dac836bd413b5dee064ecc3ea1e71ad51b909f3f08e1c1fc7de864"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93ab93973838c8a4537df846e886efb25da6e83adfdf38129ec611f0cb1a4e60"
+    sha256 cellar: :any,                 arm64_tahoe:   "da764a2aa2f4422d55ba7c2317ffe1ba2928620fcbec50111530a2e8530ed598"
+    sha256 cellar: :any,                 arm64_sequoia: "8a085a91ce428ef14bf365e49930137cd1d73e74a9897de8e0b783994205e644"
+    sha256 cellar: :any,                 arm64_sonoma:  "48436f988260b712eddaba6c164c25e0e68971f22a5608374d31b0ccdbfae417"
+    sha256 cellar: :any,                 sonoma:        "a6b6df0f143368c3b93e2a23cea794f7d3f980433ca5e0f95b87e452df8d679d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "357bc2d768f78f0a64d129544782027f66bf5270c40fab0e01fe96c242489416"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85322e26a672f3b6a6f624a7d6d55c33b1e05aa6a01219a29a43967595b4db0c"
   end
 
   depends_on "pkgconf" => :build
