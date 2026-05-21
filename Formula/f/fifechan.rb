@@ -1,8 +1,8 @@
 class Fifechan < Formula
   desc "C++ GUI library designed for games"
   homepage "https://fifengine.github.io/fifechan/"
-  url "https://github.com/fifengine/fifechan/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "df3cba475716346fd27f963b9b027a02a92f697466596a3cc215a2b97d543c76"
+  url "https://github.com/fifengine/fifechan/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "8295ba2f2988f13f7c574cbc53eb1d30bc35ea78c79e53c2728ca23e30635425"
   license "LGPL-2.1-or-later"
 
   livecheck do
