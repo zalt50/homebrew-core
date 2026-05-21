@@ -2,9 +2,9 @@ class GnuWhich < Formula
   desc "GNU implementation of which utility"
   # Previous homepage is dead. Have linked to the GNU Projects page for now.
   homepage "https://savannah.gnu.org/projects/which/"
-  url "https://ftpmirror.gnu.org/gnu/which/which-2.23.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/which/which-2.23.tar.gz"
-  sha256 "a2c558226fc4d9e4ce331bd2fd3c3f17f955115d2c00e447618a4ef9978a2a73"
+  url "https://ftpmirror.gnu.org/gnu/which/which-2.25.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/which/which-2.25.tar.gz"
+  sha256 "1cb83e4f702e60b8211ab5ec4c2afbab1b1dec80209456a7d2faf7584ed225ea"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -19,6 +19,8 @@ class GnuWhich < Formula
   end
 
   def install
+    ENV.append_to_cflags "-std=gnu17"
+
     args = %W[
       --prefix=#{prefix}
       --disable-dependency-tracking
