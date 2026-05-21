@@ -20,8 +20,8 @@ class Electric < Formula
   end
 
   depends_on "elixir" => :build
+  depends_on "erlang@28" => :build # https://github.com/electric-sql/electric/pull/3992
   depends_on "postgresql@18" => :test
-  depends_on "erlang"
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"
@@ -37,16 +37,8 @@ class Electric < Formula
     cd "packages/sync-service" do
       system "mix", "deps.get"
       system "mix", "compile"
-      system "mix", "release"
-      libexec.install Dir["_build/application_prod/rel/electric/*"]
+      system "mix", "release", "--path", libexec
       bin.write_exec_script libexec.glob("bin/*")
-    end
-
-    # Remove non-native libraries
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch
-    libexec.glob("lib/ex_sqlean-0.8.8/priv/*").each do |f|
-      rm_r(f) unless f.basename.to_s.match?("#{os}-#{arch}")
     end
   end
 
