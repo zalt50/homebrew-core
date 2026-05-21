@@ -21,12 +21,12 @@ class PerconaXtrabackupAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "72eee77f7688e5de0bf0e764be5e97dddd3165a4e41c319701c836926f121ec0"
-    sha256 arm64_sequoia: "55d0f8f7db2dd57ead261cb61d2448d16b4fa88b445b6820431171d0f27e9b23"
-    sha256 arm64_sonoma:  "e56df1eb586af4e081c13f61bc18ee8cb7067acedde77da0f9ebd57ef000fd12"
-    sha256 sonoma:        "ca80a4753acd84f1049d323ec265cb0aecfdfb4832d46ae23775727b0d6a6fc7"
-    sha256 arm64_linux:   "7672234c18aeec98280de56e0c4462857c4d22c7cd91a7ad2138fa7a66e1cfc7"
-    sha256 x86_64_linux:  "e602eddd787f87fc0d7e930816cc929f1bd6b86c0e203334a14a4f39d40e9ca0"
+    sha256 arm64_tahoe:   "ad076c0ffbb731137a0111d92dcda4fbe8a99c4cfa51739aa473ae68f66fdfdf"
+    sha256 arm64_sequoia: "7fb80ee6ae53eb0cb5443fc1ce8ad19e7e9f0c548b77b741143085cfc26ef13a"
+    sha256 arm64_sonoma:  "b8ff9a2a7bcf46e8358698cdf04df0e2c5302ca68cf651430b7a13c3efbdaa93"
+    sha256 sonoma:        "cf587e17475dcaa04ef20a15bb265ccb7d9ca0820d9c0a16150967f81504bb7b"
+    sha256 arm64_linux:   "e62fe92abac195d95d310176b0efb4888cfcdc2d9265aff2aaf47685ffd227d7"
+    sha256 x86_64_linux:  "16cc250ead1fa47baffece05249ae76ca31ddda39b91438aa3caa9dc160e68fa"
   end
 
   keg_only :versioned_formula
