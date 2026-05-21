@@ -9,14 +9,14 @@ class EvernoteBackup < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "862ff84c39341ce26524abe222b539e3c1ceaaf2be12773084648536db36accb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d960da6971a49b5d6beffbef50cead2352c3785bbe1c2a50247af82a0c5dd81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ca10e65f71022d40f9efff95f030144d9b4d3c8a17254fec0c4ea99d26ed04e"
-    sha256 cellar: :any_skip_relocation, tahoe:         "937c8bb871d3103ba7dac669bf5f80f3989154dbd8fb4e631d6e97679bdcada0"
-    sha256 cellar: :any_skip_relocation, sequoia:       "2de6095b71e23334e9000c05f6c506481999184cf4b6d8f32f0907818db70f90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b5d47adbfa338866a93c750a278bc9faaafa8b23e35b74ed0ff26937b3fccdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d49037ff66e07cc7808e38644b77ff1b48299ff00d7084bbdf8136ef90a7ed1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5561abc0910f82fb51547837c35c3c4bde129f31245f5d74734f2e067e554a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "563f4f57722164a3f475f1725fa802eea4401aed269c5f87c8d5c44a9c28a170"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9170007a1d3619102cb990995050e7486dbca8f332f242a7d778c6dc0fbef03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "594b44e07a3148b2eb4c4f6a8cb5456eb54a9b2e3b4f038b46f4e9e57303dcf4"
+    sha256 cellar: :any_skip_relocation, tahoe:         "d0f59e9908c2fdb9fb7f431d72afbe87fef13b84e95ec5bbcd86b7ddf73a95c3"
+    sha256 cellar: :any_skip_relocation, sequoia:       "1df4c9f11cfe3c9f75e6740181828cc512dd70d0d40e532dcccdfbb88c2c5d90"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4bbd041222240ea936432e669b03392b4294d4f0c8cce5a67b971c53d51f179b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "581d5c3267368d7dd4260f06f2d90f8c659f72c2cda49c9b6e278ddfb4308878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9ff1e878bb1fcaed87454d12b8f17cf13b039be09d5529172750d44b709e847"
   end
 
   depends_on "certifi" => :no_linkage
