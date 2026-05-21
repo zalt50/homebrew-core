@@ -1,8 +1,8 @@
 class Fontconfig < Formula
   desc "XML-based font configuration API for X Windows"
   homepage "https://wiki.freedesktop.org/www/Software/fontconfig/"
-  url "https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.17.1/fontconfig-2.17.1.tar.gz"
-  sha256 "82e73b26adad651b236e5f5d4b3074daf8ff0910188808496326bd3449e5261d"
+  url "https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.18.0/fontconfig-2.18.0.tar.gz"
+  sha256 "5c94af4828988af6b1a8484ddba13b521162687f9e5129bd8f267b8f4cfbf619"
   license all_of: [
     "HPND-sell-variant",
     "Unicode-3.0",        # fc-case/CaseFolding.txt
@@ -61,7 +61,8 @@ class Fontconfig < Formula
       -Dtests=disabled
       -Dtools=enabled
       -Dcache-build=disabled
-      -Dadditional-fonts-dirs=#{font_dirs}
+      -Ddefault-fonts-dirs=#{font_dirs}
+      -Dadditional-fonts-dirs=no
     ]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
