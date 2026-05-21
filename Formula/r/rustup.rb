@@ -9,13 +9,12 @@ class Rustup < Formula
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19a521c95dbdf554cfbf099448be40f523bfbea161d1736ad192cf89beb28092"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9d847dcbef495560deb088e50dc43dd7bdf81f5c8e631f981250363b3df805d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea9ef9d8a8947364c20a9ecec3cface8c9a4b0d5e7e25308663c6b48f3878cd0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33ff8e2f74daa8ecf16698ede00d659d367a92dbc62357aeaa2f280d9b8f3fdd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44046e67b0a58611beb5fce43a61d522b2e1c13571aab6cfb8e2d1ec34611378"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8f97a2a8630656873cf63e816e083e58cc9623b839e8188c36cd55c8daea767"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "040e2eb689f99acefa1849bd9c5f7591ba100fda29323901859b7a86e68d6bf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94400995ac4847eee9753117cf8833beed89d9154304a5ea58d736e4d297b9c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f977dd0fd72ed019b2c6aef6195e1052e5d09e502a846f1c65b6b49f3e5c501d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6b80251f606dee170ceb341dc13b4f890dcc24b5a7d65eeaa0e14aec1506c21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98763babc2873c4af6a48531c80314659bd8f13ce782d7ed6d427868085f7526"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81179ed5f8f61f32cd181b5f278a60616a345f8b01e39949501674f0ec85e744"
   end
 
   keg_only "it conflicts with rust"
