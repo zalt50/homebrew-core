@@ -1,8 +1,8 @@
 class Jcal < Formula
   desc "UNIX-cal-like tool to display Jalali calendar"
   homepage "https://savannah.nongnu.org/projects/jcal/"
-  url "https://download.savannah.gnu.org/releases/jcal/jcal-0.4.1.tar.gz"
-  sha256 "e8983ecad029b1007edc98458ad13cd9aa263d4d1cf44a97e0a69ff778900caa"
+  url "https://download.savannah.gnu.org/releases/jcal/jcal-0.6.0.tar.gz"
+  sha256 "1ff30b55c2aaa8483ce13674c1ed08c4a6cca31bcaa598bd23889c17dbb2a419"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -26,13 +26,7 @@ class Jcal < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7b67ec668f4880126342f70bb106b66744773ebbe8afc9e11eacf96d5a11108"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-
   def install
-    shell_name = OS.mac? ? "/bin/sh" : "/bin/bash"
-    system shell_name, "autogen.sh"
     system "./configure", "--prefix=#{prefix}",
                           "--disable-debug",
                           "--disable-dependency-tracking"
