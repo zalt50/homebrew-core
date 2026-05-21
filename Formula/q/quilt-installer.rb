@@ -10,6 +10,15 @@ class QuiltInstaller < Formula
     regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db9fd5e9ee37465c3819a1393b69fb55386849f82cf13be2992a5cfa504cf166"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db9fd5e9ee37465c3819a1393b69fb55386849f82cf13be2992a5cfa504cf166"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db9fd5e9ee37465c3819a1393b69fb55386849f82cf13be2992a5cfa504cf166"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db9fd5e9ee37465c3819a1393b69fb55386849f82cf13be2992a5cfa504cf166"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8557446698c164cec78956b5aab9ea74fc0900412f0ad3f113009d15e9acdb5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8557446698c164cec78956b5aab9ea74fc0900412f0ad3f113009d15e9acdb5f"
+  end
+
   depends_on "openjdk"
 
   def install
