@@ -1,8 +1,8 @@
 class MediaInfo < Formula
   desc "Unified display of technical and tag data for audio/video"
   homepage "https://mediaarea.net/"
-  url "https://mediaarea.net/download/binary/mediainfo/26.01/MediaInfo_CLI_26.01_GNU_FromSource.tar.xz"
-  sha256 "3e70f27783521c31d6e852bd1982cb8858b9633982b66967a56d5364fb856de3"
+  url "https://mediaarea.net/download/source/mediainfo/26.05/mediainfo_26.05.tar.xz"
+  sha256 "f852093f9050022d699606eeabb38b24da5523d0212fab64dc4e4d3e46b56de1"
   license "BSD-2-Clause"
   compatibility_version 1
   head "https://github.com/MediaArea/MediaInfo.git", branch: "master"
@@ -22,6 +22,9 @@ class MediaInfo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3621a21d2d98ecdff68cec1e0cd313c001083e3069c20cc63491ef4a4baf6d6f"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "libmediainfo"
   depends_on "libzen"
@@ -31,7 +34,8 @@ class MediaInfo < Formula
   end
 
   def install
-    cd "MediaInfo/Project/GNU/CLI" do
+    cd "Project/GNU/CLI" do
+      system "autoreconf", "--force", "--install", "--verbose"
       system "./configure", *std_configure_args
       system "make", "install"
     end
