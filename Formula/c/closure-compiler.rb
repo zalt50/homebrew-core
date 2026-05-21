@@ -11,7 +11,7 @@ class ClosureCompiler < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a8f401123fa990e5f0f8241716f98ac858cd9f8c9a4acd468e58081820383491"
+    sha256 cellar: :any_skip_relocation, all: "b95198b0922533e476e30970f4dc0634b540e84d6e112152138bd9c77c3961de"
   end
 
   depends_on "openjdk"
