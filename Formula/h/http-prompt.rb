@@ -10,12 +10,12 @@ class HttpPrompt < Formula
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a1443c301fceeb0430c81c5e3d534b79c2c33146c1b3edfeb60a7e6e62589f96"
-    sha256 cellar: :any,                 arm64_sequoia: "ca5a0d60894941af5f720acbbfcf2ae0adaeb3a76a8990eaaa3cd7609da9a10a"
-    sha256 cellar: :any,                 arm64_sonoma:  "eba2c62e2f67b7b9cb9c59fd8201e01f28419561e8f78e895f08a5162469a8ad"
-    sha256 cellar: :any,                 sonoma:        "7345a83068e71f2c2ba68563ee6cf7b99ef398a567dd3a1672a04d71506c4f2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbd2a12dcee695d255103b6f657b0d641880da1e09f3b29b3381932608b10ed8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa556c2a5a1ab88e86dffb66dd46561122bf29bc633c7d9b80bc77f20152089f"
+    sha256 cellar: :any,                 arm64_tahoe:   "5d221ddd746ead7dad46466af26fa3ae0fbc9389d8a1ee2174615a15d34ebe55"
+    sha256 cellar: :any,                 arm64_sequoia: "fd2caed47c69bf2c1983a5e92e3b768655e97e337ecd77a6f1095fc5e74bd928"
+    sha256 cellar: :any,                 arm64_sonoma:  "07a7912b340b97f95c933371505e1e8485a25c977a8beae8a449099c923dc3b3"
+    sha256 cellar: :any,                 sonoma:        "c2924d61e3d14890c02769d63790de52c9704e3c9a71870812ca63ca0737e132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bce57696274f82ac719e17aafd1f54c580fc78c4a3222027ed49fdd62988ce9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "785b3c15df602ab5ca594a966b9c86e5558c3124148fffb89fb6d7f9807488d0"
   end
 
   depends_on "certifi" => :no_linkage
