@@ -6,7 +6,7 @@ class Haraka < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "78b58a9572f41cc7742d74dfa5e06da43eabde97a778cc29cca2a9e1e56a1508"
+    sha256 cellar: :any_skip_relocation, all: "f7742f7fff43df57e2890b0b611e0c275fe9e48d4bd635c628a2c61df5b732fd"
   end
 
   depends_on "node"
