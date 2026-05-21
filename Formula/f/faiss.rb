@@ -1,8 +1,8 @@
 class Faiss < Formula
   desc "Efficient similarity search and clustering of dense vectors"
   homepage "https://github.com/facebookresearch/faiss"
-  url "https://github.com/facebookresearch/faiss/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "fa61ba99973fc3f5cd8f54b112b02d9be162bf29c6cc7c393604cda2d11e0446"
+  url "https://github.com/facebookresearch/faiss/archive/refs/tags/v1.14.2.tar.gz"
+  sha256 "9a81835c98627f2225b55ca85402262b57956878717ec1bf8858033b9f7d1255"
   license "MIT"
 
   livecheck do
@@ -42,7 +42,7 @@ class Faiss < Formula
 
   test do
     cp pkgshare/"demos/demo_imi_flat.cpp", testpath
-    system ENV.cxx, "-std=c++11", "demo_imi_flat.cpp", "-L#{lib}", "-lfaiss", "-o", "test"
+    system ENV.cxx, "-std=c++17", "demo_imi_flat.cpp", "-L#{lib}", "-lfaiss", "-o", "test"
     assert_match "Query results", shell_output("./test")
   end
 end
