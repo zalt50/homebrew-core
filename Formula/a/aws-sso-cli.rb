@@ -7,12 +7,12 @@ class AwsSsoCli < Formula
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94f7d26d2c9c19a3ed17c6a1f1d9f136735e084f00881aba2a33f5496a14e5f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59d439e8889e0fc02f24b567aeb21bd71e8e012f7bc0e5616724ea83fe3f51a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3d4643c86481fd815a2e497a81fc03b484820ecbb942e0d57dd915c6ee60853"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2ab76d3d8a59ffdfc90ca5a2007eccaf70ed5d01fdec5b2ed3425abee6143be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97d003364c2f856ce01faabc8299f996b55f15c7550f83cc8b4e485876c185d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e64bc97589176fd0c2fbcebdb3eb9b6ea65f3101f73a908459c01c972f3ef103"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "214046d701961185450171fbb622077a23fc22c408396b50fb102029eb1f7907"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53cd25b08b41c0aee8e406363fce502486c0c21abe880d9aeef7375f91eca903"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9853df75dfab00191cdbbe55412a0aa1dfbc2172527fdf92f0322200f8ed20e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d61c9ee7cc6e8045a2945dbab3ac485ed9e7b905e324faa19ac3cd1fb6644c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf28ca6a0d5cf543cc81bc82a0289671ff08ade4a9709378ee0b4631892fc3ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e806ede43367e51127afeaaa25fc44dc325e42e032a1aece5ae2448a958cfa5"
   end
 
   depends_on "go" => :build
