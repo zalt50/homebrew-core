@@ -48,6 +48,12 @@ class Rustup < Formula
     bin.env_script_all_files libexec/"bin", RUSTUP_OVERRIDE_UNIX_FALLBACK_SETTINGS: pkgetc/"settings.toml"
 
     generate_completions_from_executable(libexec/"bin/rustup", "completions")
+    [:zsh, :bash].each do |shell|
+      generate_completions_from_executable(
+        libexec/"bin/rustup", "completions", shell.to_s, "cargo", shells: [shell], base_name: "cargo",
+        shell_parameter_format: :none
+      )
+    end
   end
 
   def post_install
