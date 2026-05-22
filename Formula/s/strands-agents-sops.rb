@@ -9,7 +9,7 @@ class StrandsAgentsSops < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0c78b1f43bed10a9c06f0e377773e3c6039e97c7e5f296ea1757c40f279f9d35"
+    sha256 cellar: :any_skip_relocation, all: "3b9bbb58fd6114fa741f4eece1ae66f405de77dd165ae993b736e1fa48546170"
   end
 
   depends_on "certifi" => :no_linkage
