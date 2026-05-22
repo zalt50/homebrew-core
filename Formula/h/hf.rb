@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/bb/b6/e22bd20a25299c34b8c5922c1545a6320825b13906eb0f7298edfd034a0b/huggingface_hub-1.15.0.tar.gz"
-  sha256 "28abfdddda3927fd4de6a63cf26ab012498a2c24dae52baf150c5c6edf98a1d5"
+  url "https://files.pythonhosted.org/packages/68/4a/727bc308b1e4fc5880c6606691d5bdd8ee9c774a0fc3261fb0495c245bfb/huggingface_hub-1.16.0.tar.gz"
+  sha256 "05764336d618062c5fc5a7cf3d6b1477c0f6ef1a29f92122a87df7d6651c1b9b"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5864ff45feb68782ea8d1aef00e47ca60e8575868f5cf22f5eb9bea85a2a139b"
-    sha256 cellar: :any,                 arm64_sequoia: "cb0cac4c210caf6bce2a3fd0fa409a52cc66fddb5fd89b336f54d49fd11765ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "649bcc402176b59ff44c34d24fb145e40d8bc9d0d7a5a8ba3466a585471291d9"
-    sha256 cellar: :any,                 sonoma:        "ba8ce9474f44f37685611ad733a5668973d205ab3bea71f567be90a4fcc06761"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61f8ded45e766f8616f81251786bebafe57ba5368a4a2149852fb2cf6a1b9dfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40cf76a52e9940293131ac82adf57cbe8aec1c127eff9a29c012e84faff4215e"
+    sha256 cellar: :any,                 arm64_tahoe:   "6fa54e8fa681fead28021249eb84b495ac7699000efc568736bfd261bb314216"
+    sha256 cellar: :any,                 arm64_sequoia: "b26ed67e8a263f6e8f5d2200b99a97119b5a53ff68aef6b03d7b37a97d2c7558"
+    sha256 cellar: :any,                 arm64_sonoma:  "95de0a41fd08cc3aabf225e4c55491e05b79798ee92bef8f441f6045aee63f27"
+    sha256 cellar: :any,                 sonoma:        "779e15d46c5f926649c5ac27c0773877b3037e5c9ed99234d95fe7eabdca7b3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e658b4d74e15c24b9b2d0b815fcb60b3dc472e3f09c804c65b13c61091a4c191"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fe09df48576f05d899fd2a0975c13a8f3ee2e969e8ecd2223812531131beabb"
   end
 
   depends_on "pkgconf" => :build
@@ -43,8 +43,8 @@ class Hf < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "filelock" do
