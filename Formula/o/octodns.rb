@@ -10,12 +10,12 @@ class Octodns < Formula
   head "https://github.com/octodns/octodns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ccab52d471bc7fb2602a691608ae0d19a7b259a65d61f41dfa90825bc42c2988"
-    sha256 cellar: :any,                 arm64_sequoia: "17dccfda6ebf10bcd2a8c0cca3aa173e52152a13c1f8d28454942cc4885d87bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad01e802b38f4117c5dd3ff67793ef0022072bb2e80d7dfebb5359e75bd0f0e2"
-    sha256 cellar: :any,                 sonoma:        "330b895361d8ed355c3b91522fd379b6ee7254a229faa46ebe15d7e400014e5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c21bad624544e7131c42970f7ef8b23d91c471a3cb69b4beb4abc8cd69d42bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9d52cd9fdaad360f22d450c75cf4f8d9bfd11a306e2bccd536e0ee358c0ac9"
+    sha256 cellar: :any,                 arm64_tahoe:   "09f339bf0ef1fc4a148274e7a89cfe9eb1657c51751cbc670c9f99b5a5e516e1"
+    sha256 cellar: :any,                 arm64_sequoia: "6253282a3a98994a7daa7189b907f82b989ca5388068e2bd0d91ca67316109b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac6402075d08d85e69f7c9f6e76777571d18e622ee9ab4500c2ab2a6b9556cb1"
+    sha256 cellar: :any,                 sonoma:        "f149db7f7291d5df09b797b7f1d2497a269cd7faaad8ffc7c1fa8e04227b6e92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a40d93c23b1acd64a83769f7f373c841563e0267150870851721509cc67c11a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ea7881ebbcba35cc32abfbd54b615736232c00463eb5c079dac34301828f9aa"
   end
 
   depends_on "libyaml"
