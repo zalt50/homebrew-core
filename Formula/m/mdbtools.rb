@@ -4,6 +4,7 @@ class Mdbtools < Formula
   url "https://github.com/mdbtools/mdbtools/releases/download/v1.0.1/mdbtools-1.0.1.tar.gz"
   sha256 "ff9c425a88bc20bf9318a332eec50b17e77896eef65a0e69415ccb4e396d1812"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5469dde016c654a16a39ccda261395dfc81bd033600fd826250a80f424d9fc8f"
@@ -22,13 +23,18 @@ class Mdbtools < Formula
 
   depends_on "glib"
   depends_on "readline"
+  depends_on "unixodbc"
+
+  uses_from_macos "flex" => :build
 
   on_macos do
     depends_on "gettext"
   end
 
   def install
-    system "./configure", "--enable-man", *std_configure_args
+    system "./configure", "--enable-man",
+                          "--with-unixodbc=#{Formula["unixodbc"].opt_prefix}",
+                          *std_configure_args
     system "make", "install"
   end
 
