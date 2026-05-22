@@ -5,6 +5,11 @@ class Chunkah < Formula
   sha256 "137a35f1f6e65a3fc453e539cc247e80afb46b2f3742f20b16ab1fa94cb071b0"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "114636b1afdb3737b00df839b2d60e85720c32cf52447b0dcd529edbdffc25e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "37c30bfa7e51df8d10ef55ea52f16e2e3f0756af0426ad02feff1dc525ad8e2f"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on :linux
