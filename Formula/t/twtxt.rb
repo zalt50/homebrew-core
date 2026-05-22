@@ -9,14 +9,14 @@ class Twtxt < Formula
   revision 9
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "364e25a8df67aaec1cd8df15d64ef8d188b9fb54e278f661e69db778ccd02270"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa31d3732dc8659fdb9ff344e0ec8386644c0bd90a118e68f7d4d4b7543a963b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bf874e23df826b9a4bbdbd7b07aea82236bfbebb23fd72128d25302082a0e3a"
-    sha256 cellar: :any_skip_relocation, tahoe:         "879788c44f9eae0a0e4b849f2a575b7c7d27a2f655014a13811c62dbf57d534d"
-    sha256 cellar: :any_skip_relocation, sequoia:       "9d1235fdc5ad43c5755eb349cedaab271a39c0c0613bd7832e09335ce2fcc818"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d6be8158f7fe1ad25ed3406c1239bf50e0817bb2e9d42ac5f8b2f55cf37fe5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26d140ebc1070fc659f5eeef9295fa0108c72a5d5b861d7fb0a87fc237453861"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c484d24b9b7a112aa0fe911080799a15bd311d732587559247b4581e3f40456"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4da0d7fa07305dc7dad6b71aed421626102847026bb6818b681a16178b2a2b94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a22e560f054c0cfca6967f7359abc552ab901c764c61b57851f44a18ef90aa9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "185ea415acdd5da86115376df2ad72da890631a282a271e78da2dc0d907473cc"
+    sha256 cellar: :any_skip_relocation, tahoe:         "4936ef19bed04ceeb5c773456c54a3e78e76732a8330e35052f426720adfc4b2"
+    sha256 cellar: :any_skip_relocation, sequoia:       "9077b2a1a678a8b57a1af2f33c1d25d26ab99e7128d4d257aac0866d211b5e0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c82107ecb80dfe23eee937eb1b721cf4163778acef735441161eef66fb99a4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "051b16f53db21e3996651467c79266ed465eae8bde3f53e7b84a25a93f99c100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c618c08ce9c05a98a937afd0d99fdf5fb6f64f5c36508901b00691b69130ac2"
   end
 
   depends_on "python@3.14"
