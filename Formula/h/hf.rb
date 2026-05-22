@@ -3,8 +3,8 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/bb/b6/e22bd20a25299c34b8c5922c1545a6320825b13906eb0f7298edfd034a0b/huggingface_hub-1.15.0.tar.gz"
-  sha256 "28abfdddda3927fd4de6a63cf26ab012498a2c24dae52baf150c5c6edf98a1d5"
+  url "https://files.pythonhosted.org/packages/68/4a/727bc308b1e4fc5880c6606691d5bdd8ee9c774a0fc3261fb0495c245bfb/huggingface_hub-1.16.0.tar.gz"
+  sha256 "05764336d618062c5fc5a7cf3d6b1477c0f6ef1a29f92122a87df7d6651c1b9b"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
@@ -43,8 +43,8 @@ class Hf < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "filelock" do
