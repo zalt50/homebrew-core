@@ -11,12 +11,12 @@ class Faiss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f9f8ae843b91c46fba4ae7ac8f5e863721099aa7db6c84ef9ac5840f69e43a7c"
-    sha256 cellar: :any,                 arm64_sequoia: "7e6f2343b410ba2648a3d8cf5ddb5019906cf335bb98670b585d0f9e2c03b282"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c31b9cc01b4e4f349700bdf89fda46bf08fd1350a2d05f0b43ad80f3b6b9328"
-    sha256 cellar: :any,                 sonoma:        "dc01d70a4338c134bf51277cc3e23e3e721224fe36c8b67e7b4b6f6294edcc0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca531cb4ccab1ce090f96146d862af48057f1110a827230bb0e71d1c7241b2eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a789aa1e023671b4c02894871f5a4c63f7886e8586cdabf60b4f0f792751ec75"
+    sha256 cellar: :any,                 arm64_tahoe:   "98d7793b8db89eaccec26754b9b971cfe3ee15418a8683c98f803042211b3008"
+    sha256 cellar: :any,                 arm64_sequoia: "8a6f9dc760079f6497d435f369a674625cf727c0cd16c39f6b7811b56cfcc8ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "5846bbf3335fdb0a4ccb4347e72c9021b6df06bef21d4f1f299be7864e45b3ec"
+    sha256 cellar: :any,                 sonoma:        "5712c86281af7c291cdca73928fd56a9e90bb234d1555d9ee5d666ef3cbabd4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d068c22e09778275a525025bb4a4b74d35b2ca8b6a159d18523dbcb152e5e32d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f06cee15f495c22ceb60e6fd8d967584a39c8b892cee3a55837ecede754a902e"
   end
 
   depends_on "cmake" => :build
