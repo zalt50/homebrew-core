@@ -9,12 +9,12 @@ class Mycli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21753813ea75baa53aeec46558df6152c6b5d49a494168c9855c102f9c07a8a9"
-    sha256 cellar: :any,                 arm64_sequoia: "a62ea96c58a46ba416a0c6cd94adb771c4d19348347a4a030a2bdc6cec3d916a"
-    sha256 cellar: :any,                 arm64_sonoma:  "588e0f1e3ca24f5854af3e1710659f908b2cc139e662e144771e5196d5596405"
-    sha256 cellar: :any,                 sonoma:        "baf5ce6c449aa71f5b57f9bbe07bcc367d3d1b9d08e082789bb1a6079b293047"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28ca746403f29753b59ae08d576b95324b7897de42c9cd80596f4d6c39a06719"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc11e0168e7bb34aa42df9dadd3efccd6038d30d59eee76efba805bf3cd07d3d"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e618585907a0e792d231f1c0875f41536973eea3e011bdb2dc51c3d8e1501b3"
+    sha256 cellar: :any,                 arm64_sequoia: "8a2f58ebc017141ef3027cee372e314b5cb6417228757d950f498b40c6795a7f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c13d80dbfaf3bb58b21975ed65834b30895b7d6b7f9f2555ebbe713bcc13d5a9"
+    sha256 cellar: :any,                 sonoma:        "4c61cc594e5e0ab00d8a74d09d17a65a8b747010f9c4ca07fd7d1edecaf43096"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae5d2a3f9c14f50cfe0bffd92037aa1b788cc016715d60b20dbb6621f9e574cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e233a6bd78d270833478b24918af8b233145e78898439680263812e0706ee5"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
