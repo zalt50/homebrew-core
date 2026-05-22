@@ -1,8 +1,8 @@
 class Rune < Formula
   desc "Embeddable dynamic programming language for Rust"
   homepage "https://rune-rs.github.io"
-  url "https://github.com/rune-rs/rune/archive/refs/tags/0.14.0.tar.gz"
-  sha256 "96d6d488f57215afbeb12b7b77f89b4463ab209cbfabf03e83e56908ff7ed233"
+  url "https://github.com/rune-rs/rune/archive/refs/tags/0.14.2.tar.gz"
+  sha256 "a858800d066f47e101c9b613d04dbc3f3d6d2bdb932da92f37c1ccdc79077337"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rune-rs/rune.git", branch: "main"
 
@@ -17,16 +17,6 @@ class Rune < Formula
   end
 
   depends_on "rust" => :build
-
-  # Fix build with Rust 1.89
-  patch do
-    url "https://github.com/rune-rs/rune/commit/6594f08038c3474de6e6e3b215a15c3940f71473.patch?full_index=1"
-    sha256 "8fcd1f04856df66883975fcbcf7aa8e36607d258049fd2e57991c27e2542cf9c"
-  end
-  patch do
-    url "https://github.com/rune-rs/rune/commit/f49ba15e62589025eba7fa3e01cccd9842c7acee.patch?full_index=1"
-    sha256 "e8d34a1c4c476c5cc56ecf0f925db23f2c29a9a48fb6fd1b039dd28057ca9fe6"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/rune-cli")
