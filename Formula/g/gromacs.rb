@@ -38,6 +38,8 @@ class Gromacs < Formula
     # Non-executable GMXRC files should be installed in DATADIR
     inreplace "scripts/CMakeLists.txt", "CMAKE_INSTALL_BINDIR",
                                         "CMAKE_INSTALL_DATADIR"
+    # Completion workaround
+    inreplace "scripts/GMXRC.bash.cmakein", "$GMXBIN/gmx-completion", bash_completion/"gmx-completion"
 
     # Avoid superenv shim reference
     cc = DevelopmentTools.locate(ENV.cc)
@@ -78,9 +80,9 @@ class Gromacs < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bash_completion.install "build/scripts/GMXRC" => "gromacs-completion.bash"
     bash_completion.install bin/"gmx-completion-gmx.bash" => "gmx-completion-gmx.bash"
     bash_completion.install bin/"gmx-completion.bash" => "gmx-completion.bash"
+    bash_completion.install "build/scripts/GMXRC.bash" => "gromacs"
     zsh_completion.install "build/scripts/GMXRC.zsh" => "_gromacs"
   end
 
