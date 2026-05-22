@@ -8,12 +8,12 @@ class Gamdl < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0ba270167f99146d5b1b7a8a0ef1f4e5494d268edf96f4abad4f2b55b80a0c7f"
-    sha256 cellar: :any,                 arm64_sequoia: "08e122da1f55bdc3e920ab85ed7a5e457e129dd9763c578beb8b8604e0937bf5"
-    sha256 cellar: :any,                 arm64_sonoma:  "669cf612735e00ed3ffd3b524257bc4b7970e51da7882d715be0fdac4a4d5e95"
-    sha256 cellar: :any,                 sonoma:        "6ad03898e1d4b943d4c2c23d0f773c72250442bbd5ebeea16e3e59952dc2eb02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3f043623344545256f42d09b9881310bf72d578492fa63408092b9cc221190a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db2927573ee0c6e036560762cb1ec4593ca306b353388495694ec8cf69cf8efa"
+    sha256 cellar: :any,                 arm64_tahoe:   "035a0735483946a9b86f7c700177234e91ee97f7c79d4b4ec981a29a733998d2"
+    sha256 cellar: :any,                 arm64_sequoia: "58c0d0e795820e47c8e45292dc274f4113a89147f0624138ce6f0b2a86517d61"
+    sha256 cellar: :any,                 arm64_sonoma:  "73e8dd4a9c25ca58c1acd4fb9b51ed37ed747c621a9e8301a2d55b6f76e05cdf"
+    sha256 cellar: :any,                 sonoma:        "04a0f2aec6bd40bac9b1fc5944fc211eb518a120ca28cd011dae7bbf1214f351"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d79b90dfb8768b5ae2b1a924a47bf46c378514f086915b08d1e0edc80c6b47d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a270bdb6cf73e29f35e719e13357d531a4ac6042abd0d6e9cf9b0050b7e78e6"
   end
 
   depends_on "certifi" => :no_linkage
