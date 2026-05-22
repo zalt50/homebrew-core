@@ -1,10 +1,9 @@
 class Innotop < Formula
   desc "Top clone for MySQL"
   homepage "https://github.com/innotop/innotop/"
-  url "https://github.com/innotop/innotop/archive/refs/tags/v1.15.2.tar.gz"
-  sha256 "cfedf31ba5617a5d53ff0fedc86a8578f805093705a5e96a5571d86f2d8457c0"
+  url "https://github.com/innotop/innotop/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "45645f20e70d54adc5208b5098beb378f5f29fc5e0447237351311418cc9933b"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 1
   head "https://github.com/innotop/innotop.git", branch: "master"
 
   bottle do
