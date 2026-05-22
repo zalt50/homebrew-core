@@ -5,6 +5,15 @@ class Codeburn < Formula
   sha256 "ce8f37bf6144b6dc8b9b35c4bc17024f12b15a2346e499ce77c5dcd2e1553cea"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff0a629196a76138b36cdfd0b122ba6b0d8e7555c23cd521090efa46f55da042"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff0a629196a76138b36cdfd0b122ba6b0d8e7555c23cd521090efa46f55da042"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff0a629196a76138b36cdfd0b122ba6b0d8e7555c23cd521090efa46f55da042"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e412138acd106028ab69d3743d0c58d990dea80d7b3b50cef38ebe08a198066d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e412138acd106028ab69d3743d0c58d990dea80d7b3b50cef38ebe08a198066d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e412138acd106028ab69d3743d0c58d990dea80d7b3b50cef38ebe08a198066d"
+  end
+
   depends_on "node"
 
   def install
