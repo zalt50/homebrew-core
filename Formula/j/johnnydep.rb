@@ -3,17 +3,17 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/b1/91/8b3c1181cc836a342aa3e1ed4dbd4284971a4a2b418aa945af54934f2916/johnnydep-2.0.1.tar.gz"
-  sha256 "4fc2a4ff017c3c4c593ce282814e75cbc79a1533d0fd0144390d05d8bfcdcb8d"
+  url "https://files.pythonhosted.org/packages/2d/f6/f12b82239e1ac6ab9605e231db848574f88f38f25fba9ffa6d12b8024332/johnnydep-2.1.0.tar.gz"
+  sha256 "54f05293767aac2d5496f273299bb8d76529f737ba73a6123a65cb52846061ca"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b76c8b0bd78859a4e1abd53116b4466aa08779453670b389d05279eabac1a513"
-    sha256 cellar: :any,                 arm64_sequoia: "ba872e35727d99245c8985b52339ecaf29e599701ad5e13277ca3db05839bee2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d9cf7e1c4e04cffd5c72b56155d3fd0d9306e72b712ff8e53677cc69c6c375dd"
-    sha256 cellar: :any,                 sonoma:        "89dc153877a61feef4563c3c1767f0e8240d47dfd30daa8c241f4bc235241df2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e4b9a9252d99a96a4a982083f6cce294d6238e095a761bba13eb1928ef10ef4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bcce72612b6c5d65f06bf12793a072e56b3a24c6c694a0c3ddb0a27a165a10b"
+    sha256 cellar: :any,                 arm64_tahoe:   "bc995df060d0de34f2cec41faeaa09faa29779aa9c3733844289eac06ecef681"
+    sha256 cellar: :any,                 arm64_sequoia: "861f4baa1c12aa5140ad6b7698406b0a2347643c29d86f6625aaf24d27bdfa90"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c3914c3d6ce33232a424725ddbc6d736e760eede9c67e604bb8d92d2d9d0ffb"
+    sha256 cellar: :any,                 sonoma:        "9688d6e4e0e3d3a4706e878ceca2fa77f3f44ff3f1d7bdae5493ee38fa5aa131"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9af4b62bc618af3944c552105715883bc3d7dda0240b15dd57471796856107fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "769eca35a2bdce0366ee9b03faf8c84394001ad2db6b4de2c3fb49d4de8c33a7"
   end
 
   depends_on "certifi" => :no_linkage
