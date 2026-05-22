@@ -6,6 +6,7 @@ class Octodns < Formula
   url "https://files.pythonhosted.org/packages/6e/54/ae4ca569227e34102c2ac80bdcf795052cce20dd9407fd66c1b4ed7e07f5/octodns-1.17.0.tar.gz"
   sha256 "76087921c14cab2a31dfb6da3ee3a1a8d741f509a409656fe198afa05095d7d1"
   license "MIT"
+  revision 1
   head "https://github.com/octodns/octodns.git", branch: "main"
 
   bottle do
@@ -31,8 +32,8 @@ class Octodns < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "natsort" do
