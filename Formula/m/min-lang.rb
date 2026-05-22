@@ -1,8 +1,8 @@
 class MinLang < Formula
   desc "Small but practical concatenative programming language and shell"
   homepage "https://min-lang.org"
-  url "https://github.com/h3rald/min/archive/refs/tags/v0.47.0.tar.gz"
-  sha256 "bf5035da045549e4a3fe1aa3a52ecb07f1567750b463b8644a717a9bb5d2d6e1"
+  url "https://github.com/h3rald/min/archive/refs/tags/v0.47.1.tar.gz"
+  sha256 "49dd7c4661e21c3a40fc4ec03a6860dfe7f60efe0a358c5dd917f84029b3959e"
   license "MIT"
 
   bottle do
