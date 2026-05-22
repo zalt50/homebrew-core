@@ -1,8 +1,8 @@
 class Putty < Formula
   desc "Implementation of Telnet and SSH"
   homepage "https://putty.software/"
-  url "https://the.earth.li/~sgtatham/putty/0.83/putty-0.83.tar.gz"
-  sha256 "718777c13d63d0dff91fe03162bc2a05b4dfc8b0827634cd60b51cefdff631c6"
+  url "https://the.earth.li/~sgtatham/putty/0.84/putty-0.84.tar.gz"
+  sha256 "06057862ae198f1dbd219d0c7493080d59f606194bb5056c549e342aa01b69fe"
   license "MIT"
   head "https://git.tartarus.org/simon/putty.git", branch: "main"
 
@@ -31,6 +31,7 @@ class Putty < Formula
 
   on_linux do
     depends_on "libx11"
+    depends_on "libxrender"
   end
 
   conflicts_with "pssh", because: "both install `pscp` binaries"
