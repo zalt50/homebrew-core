@@ -9,12 +9,12 @@ class Posting < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6f1531d0f2dba63b6b5793b7f73ccface81d54df2ed46664373a5ce5193d35c"
-    sha256 cellar: :any,                 arm64_sequoia: "80fcdbf6933ad1e16e6f1575b7208ca7fd6f89d5a4782734a5f3aa6fa279b16e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b8d9a035962bc89be89db130a9da2338718d316cc4feccc2355dd37b27697bc"
-    sha256 cellar: :any,                 sonoma:        "76993d31ee596716ee96385ae4b8b99954d788f56807e9a64b1540e4d0e71985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f096abd53ddf7a3ad63d6c598d958044e4da78dce7980e8d2a586eca8bb893b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d900293ac70d31530853f49743aafb83224e78d324cf587a1c73013c378f039a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ede47906169e5af227a5859326c09bc1a865d301649f9a134c4f333ab9486e8e"
+    sha256 cellar: :any,                 arm64_sequoia: "b0bd4272077714fd93c8dfd52be04f057f63da89b98e1567126f2ae30b83c4a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "4be2a91fb1ac9525efaeda4bf7a6e46c5fed92e601eb91761a05c43728cead93"
+    sha256 cellar: :any,                 sonoma:        "cf65e69c4cdad097450701fc3e67b3f4cf3f8b8d3ea4adc40ee7cb8340921a78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a56f685d5ffe45cdb1ddd6797b42af303b6d04bc85ac3b84c0dd79f3a31e6ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bcb33eccc3646ecef05229b70a7ee92241b46d6217a44b782610e43734e02fd"
   end
 
   depends_on "cmake" => :build
