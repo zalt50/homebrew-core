@@ -1,8 +1,8 @@
 class Tlrc < Formula
   desc "Official tldr client written in Rust"
   homepage "https://tldr.sh/tlrc/"
-  url "https://github.com/tldr-pages/tlrc/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "be72997481480d66560886d2ff7b1e1d8e086169885d85edee663c9091bd32f3"
+  url "https://github.com/tldr-pages/tlrc/archive/refs/tags/v1.13.1.tar.gz"
+  sha256 "4b85b85c0299ae2ae6b78d2d52b2e597e1441da24b579034780663e33ccc85fc"
   license "MIT"
   head "https://github.com/tldr-pages/tlrc.git", branch: "main"
 
