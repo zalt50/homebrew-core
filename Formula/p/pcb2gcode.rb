@@ -20,27 +20,17 @@ class Pcb2gcode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e41931226ba97f4a05603125be2831a1e3d2f987ca88b920d3ebf8ca1adc3b"
   end
 
-  depends_on "cairomm@1.14" => :build
   depends_on "cmake" => :build
-  depends_on "glibmm@2.66" => :build
-  depends_on "gtkmm" => :build
-  depends_on "librsvg" => :build
-  depends_on "libsigc++@2" => :build
-  depends_on "pangomm@2.46" => :build
   depends_on "pkgconf" => :build
-  depends_on "at-spi2-core"
   depends_on "boost"
-  depends_on "cairo"
-  depends_on "gdk-pixbuf"
   depends_on "gerbv"
-  depends_on "gettext"
   depends_on "glib"
-  depends_on "gtk+"
-  depends_on "harfbuzz"
-  depends_on "pango"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = ["-DPCB2GCODE_USE_CCACHE=OFF"]
+    args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
