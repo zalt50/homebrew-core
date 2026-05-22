@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
-  url "https://github.com/denoland/deno/releases/download/v2.7.14/deno_src.tar.gz"
-  sha256 "617bc7247da4c8b031e3f155e10bfcb085ddd8f51625a73318dfd02fa5e939d0"
+  url "https://github.com/denoland/deno/releases/download/v2.8.0/deno_src.tar.gz"
+  sha256 "63873c643e516f10f20d5708e271ed55186a02cef04f5df632c987a91fbd25ac"
   license "MIT"
   compatibility_version 1
   head "https://github.com/denoland/deno.git", branch: "main"
@@ -47,8 +47,7 @@ class Deno < Formula
       s.gsub!(/^lto = true$/, 'lto = "thin"')
 
       # Avoid vendored dependencies.
-      s.gsub!(/^libffi-sys = "(.+)"$/,
-              'libffi-sys = { version = "\\1", features = ["system"] }')
+      s.gsub!(/^libffi = "(.+)"$/, 'libffi = { version = "\\1", features = ["system"] }')
       s.gsub!(/^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled", "session"/,
               'rusqlite = { version = "\\1", features = ["unlock_notify", "session"')
     end
