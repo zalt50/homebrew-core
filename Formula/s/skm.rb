@@ -1,8 +1,8 @@
 class Skm < Formula
   desc "Simple and powerful SSH keys manager"
   homepage "https://timothyye.github.io/skm"
-  url "https://github.com/TimothyYe/skm/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "8cce691afcdf98ad084c9dc6a2460f250ec2b84a1f7baa847181050ed5fbbcbb"
+  url "https://github.com/TimothyYe/skm/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "5ed6c41b5684ddecbd2aa166d470d7355a37dced3f6afcb0537e5acd5cdce6ae"
   license "MIT"
   head "https://github.com/TimothyYe/skm.git", branch: "master"
 
