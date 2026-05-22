@@ -3,18 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/01/8c/938ec7c615b94972fa68f6716aebe94baaa127d31b7e810ef6459cae32cc/snyk_agent_scan-0.5.3.tar.gz"
-  sha256 "13feb75e7cd3c724005618d45f6fb76047a07d350c35a64acb02d8d23e66a3c4"
+  url "https://files.pythonhosted.org/packages/15/27/fecd79eb70b9cabb28139b3030d28783ca4f48c1a985345ec370f0a7c593/snyk_agent_scan-0.5.4.tar.gz"
+  sha256 "9c9c8f6009883d5480f62b2c9e1f86da3ec1752851f9eb8ac3a2d513a95eee5a"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "626fc866398f6d98254834c3cbc6bd019b34def4b0080a0d59b70867a111c8b9"
-    sha256 cellar: :any,                 arm64_sequoia: "aa09838f3d66e389acdb2ba4de1bbb69857a47f480a85a3b739ab9704001ae90"
-    sha256 cellar: :any,                 arm64_sonoma:  "81a3bbf37033c99a0b2dc30e03764ac5b96ead2762889b1beec3f59fd211dd2a"
-    sha256 cellar: :any,                 sonoma:        "3f260ecf6f12beecc4d7c60bafa3b4dd8a6f68c2b6240934d06f14c9e1db92e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbf6f38c70f1f5f7ab472607ab8ce768c7c54168b5b96c1d5b50e88fcf7da3e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d37f720e646d85181dcac98919f0385fd04457ce0555d66e85e11722f6669367"
+    sha256 cellar: :any,                 arm64_tahoe:   "80c3c94b006b8186903539af3fa1e1a81181e20d9bd975fba3fef6dd9a73cf35"
+    sha256 cellar: :any,                 arm64_sequoia: "d380fdb2b0947ad1e8e6fa87400700b3fb5cc901bcd1f4b4726381618b7c30ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae3063b2a81bbf8975dead4b855781192769916f58d438b4e38819572ac3d3cb"
+    sha256 cellar: :any,                 sonoma:        "a9daa369a787dae888fc9e51998f39772c976bb87ce23b34287ad97807635891"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ffa91e78dda39fa8144b771b3c32a68d59bf80da9cc6ee3125289da2d92b636"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdfb3b0b4577915f5c5d922541baa06af0e051841566977dfc92e90f1ad7aeef"
   end
 
   depends_on "certifi" => :no_linkage
