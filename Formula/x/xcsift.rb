@@ -1,8 +1,8 @@
 class Xcsift < Formula
   desc "Swift tool to parse xcodebuild output for coding agents"
   homepage "https://github.com/ldomaradzki/xcsift"
-  url "https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "b5e9540d505f7aa1fd1069bb637884a66b178f801cf5ee8086ec68ab923173c8"
+  url "https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "d251e0912cd0f0b2b4e3c25a9a9f29c032ce7dcd770d8ba583325744229390cf"
   license "MIT"
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
@@ -19,7 +19,7 @@ class Xcsift < Formula
   uses_from_macos "swift" => :build, since: :sonoma
 
   def install
-    inreplace "Sources/main.swift", "VERSION_PLACEHOLDER", version.to_s
+    inreplace "Sources/xcsift/main.swift", "VERSION_PLACEHOLDER", version.to_s
 
     args = if OS.mac?
       ["--disable-sandbox"]
