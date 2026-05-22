@@ -7,12 +7,12 @@ class ThorsAnvil < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a8dd2923cf9c9383ce7c48a4bb1949a253d19cbfc42f1c3ce7c1fff4ff537a2b"
-    sha256 cellar: :any,                 arm64_sequoia: "6f02b9a01484a2a0dd385eec3a7ead54c49601a05b7ef87eabe86de4fca2a252"
-    sha256 cellar: :any,                 arm64_sonoma:  "99baf1e974422f0b5c46acbb7b8e8887619060f2968612da76a6a97239cb7109"
-    sha256 cellar: :any,                 sonoma:        "efa852b19d662d35d36a915af5339299123f3e60d2866e50452a72be5b381147"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71bb0625f35346ae38a1b255bfde1285e9dea5700edfdfd0daae8fcbe5349bd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d52720ebe185700a6d95eda56a1329afb8a290c14a621697474eaa64b6b803c8"
+    sha256 cellar: :any,                 arm64_tahoe:   "96502f8791ae60d8de450ed66e0b5067b511146359c99074429b0a8d3b9a1e0e"
+    sha256 cellar: :any,                 arm64_sequoia: "621ceaf14889b12b1772d1495f545a952e9dae1626942f560d3f76b26a53e0ce"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d979f73da2b1c30a253646f79d972d7b070105b48e0095b5a9b9ccad0b6b2b6"
+    sha256 cellar: :any,                 sonoma:        "0b2e24df98abc0089da7e543f004a44d20c2ffb65d92192afcf9e82e66043c4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4593d08a526821e3d0a025f4fd0b387d70a0fce71dcd2e25e93c547820123ec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f5636c37c864d947424c968f23bf6375d31b5fefb7da61d16d235f62019958c"
   end
 
   depends_on "cmake" => :build
