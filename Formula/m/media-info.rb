@@ -13,13 +13,12 @@ class MediaInfo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5b5d6d84888dccc491ecfda9b9087a1e6fa2ef28bdcec51f04299acf5f6e9784"
-    sha256 cellar: :any,                 arm64_sequoia: "dea2b4bca874c50ca15b8a72b87c64c85547b5fc140dad52a9b4605cdf4423d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "12cb1ce62ccc9f7361ef4679096c8f05a192cc104605d0e4b7d08b59b8a227e3"
-    sha256 cellar: :any,                 sonoma:        "8ab936fe98aa53c1024b18f3ecf04cd2fdeecb1adbcc8c15217a1295e5a15862"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fb621fe32dd159771322e19da045f1a59edf870d5d23b77b3f8ab3e059facdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3621a21d2d98ecdff68cec1e0cd313c001083e3069c20cc63491ef4a4baf6d6f"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c8ff8a05ce2a9f56486abbe3d6a80e6b28e89223a771b11255b124a2fbc59cd"
+    sha256 cellar: :any,                 arm64_sequoia: "7fbe894ef603992a1fa932028573cc719bb34ae95e150a98b663a80bcf1fc809"
+    sha256 cellar: :any,                 arm64_sonoma:  "83c63a7dd5bc9bf71886b1e6871ef7120e391ad1ab40a1b806616e0d7a15d8ca"
+    sha256 cellar: :any,                 sonoma:        "d378495c8e13c2699edf453a6abdbb026959b251c0b9b2832a9bd985c300492b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd5c791bf94ff44f3947837551a802b978781bba9d4859bb121443bbe8f2faf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a052945b587b0264c9598037935b714b4ee8704fb2149e465b328d17b5aed40"
   end
 
   depends_on "autoconf" => :build
