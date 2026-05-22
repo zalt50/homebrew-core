@@ -1,10 +1,10 @@
 class LibpgQuery < Formula
   desc "C library for accessing the PostgreSQL parser outside of the server environment"
   homepage "https://github.com/pganalyze/libpg_query"
-  url "https://github.com/pganalyze/libpg_query/archive/refs/tags/17-6.2.2.tar.gz"
-  version "17-6.2.2"
-  sha256 "e68962c18dbf5890821511be6c5c42261170bf8bfd51a82ea9176069f3d0df8b"
+  url "https://github.com/pganalyze/libpg_query/archive/refs/tags/18.0.0.tar.gz"
+  sha256 "6ad7783f272acfd116455c66a03298a0cac9a9168281df547969219112f0260f"
   license all_of: ["BSD-3-Clause", "PostgreSQL"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e9bdc5200f8cc312f042c1344a0095630089c3dd7b8eabc2d838f04bf0dc42ef"
@@ -16,6 +16,13 @@ class LibpgQuery < Formula
   end
 
   def install
+    # Turn off strlcpy(), it is working only if glibc 2.38+ on Linux.
+    if OS.linux?
+      inreplace "src/postgres/include/pg_config.h",
+                "#define HAVE_DECL_STRLCPY 1",
+                "#define HAVE_DECL_STRLCPY 0"
+    end
+
     system "make"
     system "make", "install", "prefix=#{prefix}"
     include.install "postgres_deparse.h"
