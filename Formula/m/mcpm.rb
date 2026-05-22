@@ -9,12 +9,12 @@ class Mcpm < Formula
   revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19bb53a8572008d9355a17a1a8458d8bbb9ab638d5987603932f5d7422bfe5af"
-    sha256 cellar: :any,                 arm64_sequoia: "d540e3a85f87d45dccdbee400c691656227dd0e8cde933f440e3f92a511a1866"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f509f269e9c9489d4de76c6fcfb00f8fdc5673404421a885b932f039339b03a"
-    sha256 cellar: :any,                 sonoma:        "a8ad2c11b2b3aba873e5d201e884538516be24934416db0fb3fe10e79e313f6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de3bc771be47ce36eb4de1f5dc71d44e5e28aa012a0ffc78f930853b78a3591c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4868524b16e54a68b2bceb86e22de17be589956d9e80bb026bccf5d498113ac"
+    sha256 cellar: :any,                 arm64_tahoe:   "3cab3f32a75838544988aeef05b16f73428d597f6f60b55481db1528d8a2529d"
+    sha256 cellar: :any,                 arm64_sequoia: "d1d168db951e298fb68e00486a5c57f0eff7d42fabe6de4fbe7edc726c27be61"
+    sha256 cellar: :any,                 arm64_sonoma:  "322fb9a26d4845b4bb6516b79c7a488f7688eb0e16af8222ac7b1b123ec247df"
+    sha256 cellar: :any,                 sonoma:        "6d7df855a3e35fc6e76d7f0017aac75b402edbd2b62f034bf7640d596cb0e215"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d335d66855115d15008f907d406630ea1c4c3b9aa52c49804b42f9bb902c65b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15f9ebd814188fe9db98edbea6a9403e6f9603081506411829dab3caf792b5f1"
   end
 
   depends_on "cmake" => :build # for duckdb
