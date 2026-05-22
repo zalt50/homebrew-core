@@ -1,8 +1,8 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
   homepage "https://tsduck.io/"
-  url "https://github.com/tsduck/tsduck/archive/refs/tags/v3.43-4549.tar.gz"
-  sha256 "a3399661d21e0d965dfef3750d4af7da61eb2924e7b48ee3edaae194ffa5203c"
+  url "https://github.com/tsduck/tsduck/archive/refs/tags/v3.44-4676.tar.gz"
+  sha256 "22a6be2fdaa1714200c5ce0640dba551a9be9e2b2b8fb53067224ebf80c7c30e"
   license "BSD-2-Clause"
   head "https://github.com/tsduck/tsduck.git", branch: "master"
 
@@ -53,13 +53,6 @@ class Tsduck < Formula
   fails_with :clang do
     build 1599
     cause "Requires full C++20 support"
-  end
-
-  # Add sys/time.h header
-  # PR ref: https://github.com/tsduck/tsduck/pull/1689
-  patch do
-    url "https://github.com/tsduck/tsduck/commit/c46fd301f31be8c9aa00ce6d6e21c4e4c6bfc1cf.patch?full_index=1"
-    sha256 "c20a1989f2fb528c5326e088beac78cae438c9ea00a93c4b6d04400df7b4ff77"
   end
 
   def install
