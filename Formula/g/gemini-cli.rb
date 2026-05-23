@@ -14,6 +14,9 @@ class GeminiCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f24c9cc13ab892508fc2aefdecb0781ce422df2bb3ae7feae94e3774363d7ddc"
   end
 
+  deprecate! date: "2026-06-18", because: :unsupported, replacement_cask: "antigravity-cli"
+  disable! date: "2026-12-18", because: :unsupported, replacement_cask: "antigravity-cli"
+
   depends_on "node"
 
   on_linux do
