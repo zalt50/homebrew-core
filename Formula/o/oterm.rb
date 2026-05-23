@@ -3,18 +3,17 @@ class Oterm < Formula
 
   desc "Terminal client for Ollama"
   homepage "https://github.com/ggozad/oterm"
-  url "https://files.pythonhosted.org/packages/b3/de/09d761e167f2bd80998dae9ec3cec937a6cc2ec46153b43a79797e1348f7/oterm-0.17.2.tar.gz"
-  sha256 "d4fbb899232581ba1327361417383958ad90a35b8bdc1e80b25dbc6e680188d5"
+  url "https://files.pythonhosted.org/packages/c3/1b/f62cbe2f45c64b9bca7156032a146900c44461defbe90c7adf587d45fca0/oterm-0.18.0.tar.gz"
+  sha256 "3cf7a2517be4190131262d4ba43313b9664c87dc685b1834c8c001cd3bacdd61"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cfca9090592364d3a2ebd745d990bc897cea9cb0bd1abd6b9e79b61c11f2500e"
-    sha256 cellar: :any,                 arm64_sequoia: "468d65084f3036f56f4faf7375dde09bca06a4d943199f932b9e395f2e5da698"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7209bb67b6bfd6509549dbd7d6f458a0e84ee45a8d65368d116db16c6ec71f8"
-    sha256 cellar: :any,                 sonoma:        "8ac3211789042d89ee3b7fbf358f3a872e6195d8391f0da05a867285e337fe62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d265f976a780879f889d5277742e31b83a6b99f0e196dcfd84e52298f1eab09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "210905563b7f80c69f65bed910d8ccee86e7b6502ef7444a6d9eb046154aa2fe"
+    sha256 cellar: :any,                 arm64_tahoe:   "31c98592f92f050c00b41fdba4d9d47c9a2dba6adeca69745bd3df73e9be9ac7"
+    sha256 cellar: :any,                 arm64_sequoia: "d42f41fb18e5f140431057b61681b6e16306cfa8a67420da263bd34dd3c8581e"
+    sha256 cellar: :any,                 arm64_sonoma:  "294e31e442cabae5975862bbb79b9b5fcde9075f3226e6f7f5d6226e36ef5ed8"
+    sha256 cellar: :any,                 sonoma:        "3649a7dd5b1c206bd77c0b019ddcb4a34f256c2b01ae224b29355caff3398b0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0367620f8b05bacb5a72779810b379fb2ae84d4f1e671c5fe65f6c68fdb4d97f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b68df69e83f2d861cbf313f698877b9ff12b83d9ac247c838dfefaac12d9af97"
   end
 
   depends_on "pkgconf" => :build
@@ -115,11 +114,6 @@ class Oterm < Formula
     sha256 "e5ade4423b928b01ff2038980e1b62b2a5bb412c8ab83e30882753b810a5509f"
   end
 
-  resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/bb/fe/da593db56d872f53fd1abfeb0c801310d3b7629a3b50873c2e13c5a3cac4/cyclopts-4.15.0.tar.gz"
-    sha256 "3b5655581bcb759880abf1aeebf6fd370a3a4da8cf1248dd71061e357a525a34"
-  end
-
   resource "distro" do
     url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
     sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
@@ -160,9 +154,9 @@ class Oterm < Formula
     sha256 "3c79502d56cf6b76210032e1c53494ddfbc73c140bccf2ef4092b3f0825323ab"
   end
 
-  resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/9c/13/29544fbc6dfe45ea38046af0067311e0bad7acc7d1f2ad38bb08f2409fe2/fastmcp-3.2.4.tar.gz"
-    sha256 "083ecb75b44a4169e7fc0f632f94b781bdb0ff877c6b35b9877cbb566fd4d4d1"
+  resource "fastmcp-slim" do
+    url "https://files.pythonhosted.org/packages/d1/a0/627103e517e1d0d6f1eec633d5662d13e776f01b45ad188e4f5f7478b438/fastmcp_slim-3.3.1.tar.gz"
+    sha256 "0957835fc59452e143ab2f4b7836d2d2df9b2d9958408edc79ba8b56232b2a88"
   end
 
   resource "filelock" do
@@ -285,19 +279,9 @@ class Oterm < Formula
     sha256 "dded9932b4ec41fb8726e09c83afa4e6be618f938c2db287cc2a81723c639671"
   end
 
-  resource "jsonref" do
-    url "https://files.pythonhosted.org/packages/aa/0d/c1f3277e90ccdb50d33ed5ba1ec5b3f0a242ed8c1b1a85d3afeb68464dca/jsonref-1.1.0.tar.gz"
-    sha256 "32fe8e1d85af0fdefbebce950af85590b22b60f9e95443176adbde4e1ecea552"
-  end
-
   resource "jsonschema" do
     url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
     sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
-  end
-
-  resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/39/79/cd02a4df6d9270efdc7d3feefe6edd730b0820c39eeaa107a2faee8322d5/jsonschema_path-0.5.0.tar.gz"
-    sha256 "493b156ba895c97602655b620a8456caa2ce08c1aa389f5a7addec065e6e855c"
   end
 
   resource "jsonschema-specifications" do
@@ -365,11 +349,6 @@ class Oterm < Formula
     sha256 "798694c6cf74145541fda94325b6f8f72d8e1fd0262cc137c8d728177a6a4ce3"
   end
 
-  resource "openapi-pydantic" do
-    url "https://files.pythonhosted.org/packages/02/2e/58d83848dd1a79cb92ed8e63f6ba901ca282c5f09d04af9423ec26c56fd7/openapi_pydantic-0.5.1.tar.gz"
-    sha256 "ff6835af6bde7a459fb93eb93bb92b8749b754fc6e51b2f1590a19dc3005ee0d"
-  end
-
   resource "opentelemetry-api" do
     url "https://files.pythonhosted.org/packages/97/b9/3161be15bb8e3ad01be8be5a968a9237c3027c5be504362ff800fca3e442/opentelemetry_api-1.39.1.tar.gz"
     sha256 "fbde8c80e1b937a2c61f20347e91c0c18a1940cecf012d62e65a7caf08967c9c"
@@ -420,11 +399,6 @@ class Oterm < Formula
     sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
-  resource "pathable" do
-    url "https://files.pythonhosted.org/packages/66/f3/5a20387de9bcd0607871bfc2198ee0e15836da7baa4592ccd7f24c27c986/pathable-0.6.0.tar.gz"
-    sha256 "6404b8b82aef5ff0fd478934137128b99b12212ba35afdde5525ca4f8388ea58"
-  end
-
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
     sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
@@ -451,13 +425,13 @@ class Oterm < Formula
   end
 
   resource "pydantic-ai-slim" do
-    url "https://files.pythonhosted.org/packages/bb/44/438dd99c7d044094037e767dab969d704232aab73e4fffd9f9a1f69bded9/pydantic_ai_slim-1.93.0.tar.gz"
-    sha256 "977364ecd3b6a2201e25d917f4efe80895210e44e66cb6983e1fc0477c78910b"
+    url "https://files.pythonhosted.org/packages/68/db/3eb296369e3001f82d7552060c3811307809954b7c7ec30499f383d3c87a/pydantic_ai_slim-1.100.0.tar.gz"
+    sha256 "cc755c7970b2e041764b9d2f74d50cbad3cf7989b14cdbf62d356f25eb2a1222"
   end
 
   resource "pydantic-graph" do
-    url "https://files.pythonhosted.org/packages/63/40/4addcd3c9d06fbdf6c0776026d8a5b87e7ebb17c9896ac2452e714bb17c6/pydantic_graph-1.93.0.tar.gz"
-    sha256 "17effd900200aa7b72ec0509a79f36d3e161c2a6ef02dda6285a381e867ab195"
+    url "https://files.pythonhosted.org/packages/90/8b/eee672fa01eec3ea34e7d8962d54aa16d658ad0723466122a7ba2828caa1/pydantic_graph-1.100.0.tar.gz"
+    sha256 "7651fa6ccce9d88a35b1d2cfe79d5d1dbb2415457503009195014bf31f6075bd"
   end
 
   resource "pydantic-settings" do
@@ -473,11 +447,6 @@ class Oterm < Formula
   resource "pyjwt" do
     url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
     sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
-  end
-
-  resource "pyperclip" do
-    url "https://files.pythonhosted.org/packages/e8/52/d87eba7cb129b81563019d1679026e7a112ef76855d6159d24754dbd2a51/pyperclip-1.11.0.tar.gz"
-    sha256 "244035963e4428530d9e3a6101a1ef97209c6825edab1567beac148ccc1db1b6"
   end
 
   resource "python-dateutil" do
@@ -518,11 +487,6 @@ class Oterm < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
-  end
-
-  resource "rich-rst" do
-    url "https://files.pythonhosted.org/packages/57/56/3191bae66b08ccc637ea8120426068bcb361cc323c96404c310886937067/rich_rst-2.0.1.tar.gz"
-    sha256 "cbe236ed0901d1ec8427cc6a50bf0a34353ba28ad014dc24def68bfe7f3b9e68"
   end
 
   resource "s3transfer" do
@@ -620,11 +584,6 @@ class Oterm < Formula
     sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
   end
 
-  resource "uncalled-for" do
-    url "https://files.pythonhosted.org/packages/b5/82/345cc927f7fbdae6065e7768759932fcc827fc20b29b45dfbafa2f1f7da4/uncalled_for-0.3.2.tar.gz"
-    sha256 "89f5dbcd71e2b8f47c030b1fa302e6cce2ec795d1ac565eeb6525c5fe55cb8a2"
-  end
-
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
@@ -633,11 +592,6 @@ class Oterm < Formula
   resource "uvicorn" do
     url "https://files.pythonhosted.org/packages/f6/b1/8e7077a8641086aea449e1b5752a570f1b5906c64e0a33cd6d93b63a066b/uvicorn-0.47.0.tar.gz"
     sha256 "7c9a0ea1a9414106bbab7324609c162d8fa0cdcdcb703060987269d77c7bb533"
-  end
-
-  resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
   end
 
   resource "websockets" do
