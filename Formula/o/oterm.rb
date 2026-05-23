@@ -8,12 +8,12 @@ class Oterm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cfca9090592364d3a2ebd745d990bc897cea9cb0bd1abd6b9e79b61c11f2500e"
-    sha256 cellar: :any,                 arm64_sequoia: "468d65084f3036f56f4faf7375dde09bca06a4d943199f932b9e395f2e5da698"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7209bb67b6bfd6509549dbd7d6f458a0e84ee45a8d65368d116db16c6ec71f8"
-    sha256 cellar: :any,                 sonoma:        "8ac3211789042d89ee3b7fbf358f3a872e6195d8391f0da05a867285e337fe62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d265f976a780879f889d5277742e31b83a6b99f0e196dcfd84e52298f1eab09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "210905563b7f80c69f65bed910d8ccee86e7b6502ef7444a6d9eb046154aa2fe"
+    sha256 cellar: :any,                 arm64_tahoe:   "31c98592f92f050c00b41fdba4d9d47c9a2dba6adeca69745bd3df73e9be9ac7"
+    sha256 cellar: :any,                 arm64_sequoia: "d42f41fb18e5f140431057b61681b6e16306cfa8a67420da263bd34dd3c8581e"
+    sha256 cellar: :any,                 arm64_sonoma:  "294e31e442cabae5975862bbb79b9b5fcde9075f3226e6f7f5d6226e36ef5ed8"
+    sha256 cellar: :any,                 sonoma:        "3649a7dd5b1c206bd77c0b019ddcb4a34f256c2b01ae224b29355caff3398b0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0367620f8b05bacb5a72779810b379fb2ae84d4f1e671c5fe65f6c68fdb4d97f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b68df69e83f2d861cbf313f698877b9ff12b83d9ac247c838dfefaac12d9af97"
   end
 
   depends_on "pkgconf" => :build
