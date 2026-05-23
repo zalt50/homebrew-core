@@ -2,11 +2,10 @@ class Gupnp < Formula
   include Language::Python::Shebang
 
   desc "Framework for creating UPnP devices and control points"
-  homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.9.tar.xz"
-  sha256 "2edb6ee3613558e62f538735368aee27151b7e09d4e2e2c51606833da801869b"
+  homepage "https://gitlab.gnome.org/GNOME/gupnp"
+  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.10.tar.xz"
+  sha256 "a1ee07b7b12673c32d7fc73ca158a50c1a4dc69ab35b65e94d24d38ac875345e"
   license "LGPL-2.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "aab39250b6637df75928cd584b22ac892b3bc88ade13c441c196462147c1e93e"
