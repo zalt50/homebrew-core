@@ -2,14 +2,9 @@ class Statesmith < Formula
   desc "State machine code generation tool suitable for bare metal, embedded and more"
   homepage "https://github.com/StateSmith/StateSmith"
   # Try upgrade to latest `dotnet` on version bump
-  url "https://github.com/StateSmith/StateSmith/archive/refs/tags/cli-v0.20.0.tar.gz"
-  sha256 "be187b4063734694137a95b77928980ad0f61e44e6a4887d07dc7e3387ccfa0f"
+  url "https://github.com/StateSmith/StateSmith/archive/refs/tags/v0.22.2.tar.gz"
+  sha256 "2001391ebd2a9cd9b4ee9a88ba662f736547a0e7d8a9b43f30c8cbec4eac2e36"
   license "Apache-2.0"
-
-  livecheck do
-    url :stable
-    regex(/^cli[._-]v?(\d+(?:\.\d+)+)$/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cf4441be541137a58c29cb73f53c5baee5b8908a5f1e91f9b179597702afbf3"
@@ -18,6 +13,10 @@ class Statesmith < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "d366e58e1954728a52fb5ad6ed2af0d5f185e0677d4d3af3a15f0535cff05067"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c62691a1e4d14ba928be3c68fd6f3b8b4b68753ccf0c7fb5b248b66804c76837"
   end
+
+  # Aligned to .NET dependency. Can remove if updated to latest .NET
+  deprecate! date: "2026-11-10", because: "needs end-of-life .NET 9"
+  disable! date: "2027-11-10", because: "needs end-of-life .NET 9"
 
   depends_on "dotnet@9"
 
