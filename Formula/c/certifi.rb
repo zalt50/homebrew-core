@@ -7,7 +7,7 @@ class Certifi < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a98507c8d0a7a84e85401474cf566c3a0429fd452a051d451c497651e22553e8"
+    sha256 cellar: :any_skip_relocation, all: "8e56ec28f9d3ad11fbf3af0d3616b0d89ae62b9f5dcca6ea861c11c0572d288b"
   end
 
   depends_on "python@3.14" => [:build, :test]
