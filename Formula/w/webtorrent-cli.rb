@@ -1,8 +1,8 @@
 class WebtorrentCli < Formula
   desc "Command-line streaming torrent client"
   homepage "https://webtorrent.io/"
-  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-5.1.3.tgz"
-  sha256 "54a53ecdacbccf0f6855bd4ef18f4f154576f8346e3b7aef3792b66dd5aaaa1b"
+  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-6.0.0.tgz"
+  sha256 "958821f50355ea13cd6f2272c3ca8b023388b14a917e279e0bf63f2547498d72"
   license "MIT"
 
   bottle do
@@ -16,6 +16,7 @@ class WebtorrentCli < Formula
   end
 
   deprecate! date: "2025-10-28", because: "uses deprecated node@20"
+  disable! date: "2026-10-28", because: "uses deprecated node@20"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -24,10 +25,7 @@ class WebtorrentCli < Formula
   depends_on "node@20"
 
   def install
-    # Workaround for CMake 4 until node-datachannel -> libdatachannel -> plog is updated
-    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
-
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
     nm = libexec/"lib/node_modules/webtorrent-cli/node_modules"
@@ -35,9 +33,7 @@ class WebtorrentCli < Formula
     # Remove node-datachannel dev dependencies which were installed via
     # `npm install --ignore-scripts --production=false` to build node-datachannel.node
     # Also remove prebuild-install which was needed at install time due to install script
-    node_domexception = nm/"node-datachannel/node_modules/node-domexception"
-    rm_r(nm.glob("node-datachannel/node_modules/*") - [node_domexception])
-    odie "node-domexception not found! Check if it is still a dependency." unless node_domexception.exist?
+    rm_r(nm.glob("node-datachannel/node_modules/*"))
 
     # Remove node-datachannel CMake build directory other than the final binary
     node_datachannel_release_dir = nm/"node-datachannel/build/Release"
@@ -54,9 +50,6 @@ class WebtorrentCli < Formula
       rm_r(dir) if platforms.exclude?(dir.basename.to_s)
       dir.glob("*.musl.node").map(&:unlink) if OS.linux?
     end
-
-    # Replace universal binaries with native slices
-    deuniversalize_machos
   end
 
   test do
