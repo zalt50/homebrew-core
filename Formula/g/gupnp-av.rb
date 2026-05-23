@@ -1,10 +1,9 @@
 class GupnpAv < Formula
   desc "Library to help implement UPnP A/V profiles"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gupnp-av/0.14/gupnp-av-0.14.4.tar.xz"
-  sha256 "21d974b3275cb5dcf5b8aa1d9a3fc80e7edca706935f6fbd004c79787138f8c7"
+  url "https://download.gnome.org/sources/gupnp-av/0.14/gupnp-av-0.14.5.tar.xz"
+  sha256 "93918fcf5af529fda5b3d2d9fc3b77cd93df88064939b82f249f5577d8de1c02"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "f06e97478af782faa70bedf35dd2413377774f378aaa3ba60acf34546f402473"
