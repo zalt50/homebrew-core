@@ -1,8 +1,8 @@
 class Summarize < Formula
   desc "Multi-modal AI tool to extract and summarize content"
   homepage "https://summarize.sh"
-  url "https://registry.npmjs.org/@steipete/summarize/-/summarize-0.16.1.tgz"
-  sha256 "138a32cbd5b4484ace8fd341554974585fcbc298760968218773924511a090c7"
+  url "https://registry.npmjs.org/@steipete/summarize/-/summarize-0.16.2.tgz"
+  sha256 "bfa0e3a8e42cceb1b9c5dbc56c0aa4f40674d3ab96e5feab0ea22efd3555d990"
   license "MIT"
   head "https://github.com/steipete/summarize.git", branch: "main"
 
