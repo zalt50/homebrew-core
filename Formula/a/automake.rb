@@ -5,6 +5,7 @@ class Automake < Formula
   mirror "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
   sha256 "168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887"
   license "GPL-2.0-or-later"
+  revision 1
   compatibility_version 1
 
   bottle do
@@ -25,18 +26,28 @@ class Automake < Formula
   def install
     ENV["PERL"] = "/usr/bin/perl" if OS.mac?
 
-    system "./configure", "--prefix=#{prefix}"
+    # We specify `HOMEBREW_PREFIX` so that aclocal is compiled with the
+    # correct system value for acdir (`HOMEBREW_PREFIX/share/aclocal`)
+    # We also patch `configure` so that the normal installation prefix
+    # is used when we call `make install`
+    inreplace "configure", "${datadir}", "${datarootdir}"
+    system "./configure", "--sysconfdir=#{etc}",
+                          "--localstatedir=#{var}",
+                          "--datarootdir=#{share}",
+                          "--datadir=#{HOMEBREW_PREFIX}/share",
+                          *std_configure_args
     system "make", "install"
 
-    # Our aclocal must go first. See:
-    # https://github.com/Homebrew/homebrew/issues/10618
+    # Use dirlist to add common search dirs for aclocal
     (share/"aclocal/dirlist").write <<~EOS
-      #{HOMEBREW_PREFIX}/share/aclocal
       /usr/share/aclocal
     EOS
   end
 
   test do
+    # Check that the compiled system value for acdir does not use automake's versioned path
+    assert_equal "#{HOMEBREW_PREFIX}/share/aclocal", shell_output("#{bin}/aclocal --print-ac-dir").chomp
+
     (testpath/"test.c").write <<~C
       int main() { return 0; }
     C
