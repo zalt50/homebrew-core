@@ -12,12 +12,12 @@ class KimiCli < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9221174d4fd92ceb87b3aecdc0a3841d9644eded625a01908229a7839d10ed93"
-    sha256 cellar: :any,                 arm64_sequoia: "ad7c1d6ee36ce9020eb2123caf6b4545cc7d267d0f09975e4f78a73ad102b71e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4f50bbac60b2c7f1fb708a2247cf1845764c2b243662d274cd1da1117b1194e"
-    sha256 cellar: :any,                 sonoma:        "1edde3eaad42b06faf381a2e540b7fb22a11363b0e4620e3c150206593abcf98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fae2402e74ca4b28d1b010ffd5702b773f6650441ab9f565ac93db07ea984598"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "837905d94c0cb8c5e7b852499d64683f87952757b9ca558cc8217dbdb489174a"
+    sha256 cellar: :any,                 arm64_tahoe:   "4b8ec6426680d61127e22c3a6e9eb9cee3e38419b5733b35594a1639984dd15e"
+    sha256 cellar: :any,                 arm64_sequoia: "05e9fcb808973c3cc9cababe6fbbe1c8b10c8b3b1c77f3caa10b20c8697bf025"
+    sha256 cellar: :any,                 arm64_sonoma:  "874b98aa9ca7838e948264abd3ad2b3dec6e4b3cc7a7e263fdd053d845d4a338"
+    sha256 cellar: :any,                 sonoma:        "cd759d5245875b2026edf73468cca659b55cb760f610efbd0aa5f64ba85a23a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "710e2758cf30969909fff2d9e044b0b5063b0ae8804c2b6cb5757933ce06ce81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ebd5fc0d1ccac0c144de40e91991ff38f54995cf93c931ebcf214bfd7466827"
   end
 
   depends_on "pkgconf" => :build
