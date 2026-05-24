@@ -1,18 +1,18 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1916.tar.gz"
-  sha256 "8a7f9c4a8635a2c1d6867c8592bab354a6d8d17d0423a51b4cf43fc45eba7776"
+  url "https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1926.tar.gz"
+  sha256 "77151237ecd23c38de43517dad1763596103f028969df460f32e5928e2f7acf7"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c4666df3f5ef0302563d7e520bb01cfce64bbc1cf6fa49658039aa5ce2fdeb2a"
-    sha256 cellar: :any,                 arm64_sequoia: "821109cf59bfae9de0cc9774bd3a20c70a3bf2c96e1a39023598e4e75bd86613"
-    sha256 cellar: :any,                 arm64_sonoma:  "03f1fb7ec58ea86f2ab4dd1cdf37845c3999f2871cbedcebbccd0e539af3bb3e"
-    sha256 cellar: :any,                 sonoma:        "a7cd363aa22718db93e0db6704f7b3595fa3d2e7251a0c92f932df9550e7dc10"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33a704bcb678cdd99198c946597cbfa4351a718071d17cbea2a39bb31b8d2d24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52dab4bd3e0b3300d96cb84c69b0100b0d5faf2eb6171b26c2348e8621aa21e9"
+    sha256 cellar: :any,                 arm64_tahoe:   "25c2c4d85d9740360a94dee1a90c06c45826a891dba0b1930ccc22b8c3d31410"
+    sha256 cellar: :any,                 arm64_sequoia: "c8090f666b61d895e823552f74b6db7ea1e46cf6c64a835729f4866eb57a24ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "bccebbe235d52399cd4e24f0e6526bf9cc3c1e97f22fe89487cee615d9d3c6b2"
+    sha256 cellar: :any,                 sonoma:        "e2c41580aee9e3dc0f15dc28abd2d7d0512e21fea4e3e704c7f9f87b7a270d6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e4b230528f9d2eec78aa80f38cf1f17119c3060228866c44be879f3fe7f0ae4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2f9047ba12f0c59a492332f037d4470f5cc3a805d8281d752ce400c3dae0e3d"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET
