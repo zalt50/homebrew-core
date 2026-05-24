@@ -1,8 +1,8 @@
 class Cherrytree < Formula
   desc "Hierarchical note taking application featuring rich text and syntax highlighting"
   homepage "https://www.giuspen.com/cherrytree/"
-  url "https://www.giuspen.com/software/cherrytree_1.6.3.tar.xz"
-  sha256 "448cbdf190396f3c59896f4fc7c7fff98e4bb0f6080ea2b7d6e65d0d570e1e4f"
+  url "https://www.giuspen.com/software/cherrytree_1.7.0.tar.xz"
+  sha256 "5a015cb3af54a096a41795e42f9e41288f7189709046f81717f89d40a16f799b"
   license "GPL-3.0-or-later"
   head "https://github.com/giuspen/cherrytree.git", branch: "master"
 
@@ -24,17 +24,21 @@ class Cherrytree < Formula
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "adwaita-icon-theme"
+  depends_on "at-spi2-core"
   depends_on "atkmm@2.28"
   depends_on "cairo"
   depends_on "cairomm@1.14"
+  depends_on "enchant"
   depends_on "fmt"
   depends_on "fribidi"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "glibmm@2.66"
   depends_on "gspell"
   depends_on "gtk+3"
   depends_on "gtkmm3"
   depends_on "gtksourceview4"
+  depends_on "harfbuzz"
   depends_on "libsigc++@2"
   depends_on "libxml++"
   depends_on "pango"
@@ -49,14 +53,14 @@ class Cherrytree < Formula
   uses_from_macos "libxml2"
 
   on_macos do
-    depends_on "at-spi2-core"
-    depends_on "enchant"
-    depends_on "gdk-pixbuf"
     depends_on "gettext"
-    depends_on "harfbuzz"
   end
 
   def install
+    # Link libxml2 directly: cherrytree uses its C API but CMake only links libxml++
+    ENV.append "LDFLAGS", "-Wl,--no-as-needed" if OS.linux?
+    ENV.append "LDFLAGS", "-lxml2"
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
