@@ -1,10 +1,9 @@
 class Youplot < Formula
   desc "Command-line tool that draw plots on the terminal"
   homepage "https://github.com/red-data-tools/YouPlot/"
-  url "https://github.com/red-data-tools/YouPlot/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "126278103f6dbc4e28983b9e90a4e593f17e78b38d925a7df16965b5d3c145a4"
+  url "https://github.com/red-data-tools/YouPlot/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "2d17a58a5faf684d5df1008d373caed796a88f880dab1d36023bacae97096180"
   license "MIT"
-  revision 2
 
   bottle do
     rebuild 1
@@ -19,8 +18,8 @@ class Youplot < Formula
   depends_on "ruby"
 
   resource "enumerable-statistics" do
-    url "https://rubygems.org/downloads/enumerable-statistics-2.0.8.gem"
-    sha256 "1e0d69fcdec1d188dd529e6e5b2c27e8f88029c862f6094663c93806f6d313b3"
+    url "https://rubygems.org/downloads/enumerable-statistics-2.0.9.gem"
+    sha256 "9d92f049489b6ad794789814250e8a40e40e5aa6fc742bc7c6192e1ac52cbe3c"
   end
 
   resource "unicode_plot" do
@@ -53,12 +52,12 @@ class Youplot < Formula
       D,50
     CSV
     expected_output = [
-      "     ┌           ┐ ",
-      "   A ┤■■ 20.0      ",
-      "   B ┤■■■ 30.0     ",
-      "   C ┤■■■■ 40.0    ",
-      "   D ┤■■■■■ 50.0   ",
-      "     └           ┘ ",
+      "     ┌          ┐ ",
+      "   A ┤■■ 20       ",
+      "   B ┤■■■■ 30     ",
+      "   C ┤■■■■■ 40    ",
+      "   D ┤■■■■■■ 50   ",
+      "     └          ┘ ",
       "",
     ].join("\n")
     output_youplot = shell_output("#{bin}/youplot bar -o -w 10 -d, #{testpath}/test.csv")
