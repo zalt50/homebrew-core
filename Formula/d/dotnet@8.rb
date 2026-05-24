@@ -53,12 +53,6 @@ class DotnetAT8 < Formula
     end
   end
 
-  on_intel do
-    # Building on Intel Sonoma or later results in stack overflow on restore.
-    # See https://github.com/Homebrew/homebrew-core/issues/197546
-    depends_on maximum_macos: [:ventura, :build]
-  end
-
   resource "release.json" do
     url "https://github.com/dotnet/dotnet/releases/download/v8.0.127/release.json"
     sha256 "2789e68f1c8f2ce9c1a96c3c80b9faa4c6346c3ffd74e5d7cdb23a3891a227d4"
