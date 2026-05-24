@@ -1,8 +1,8 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
   homepage "https://owasp.org/www-project-noir/"
-  url "https://github.com/owasp-noir/noir/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "d88ec9836e9d314a05bd5aff27759015af8f0897e16171b21fe1390785be64a3"
+  url "https://github.com/owasp-noir/noir/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "509ae0eaa1ef5c44bfa87533e1711963553b2185e1e5160ca02f85674ccc2935"
   license "MIT"
   head "https://github.com/owasp-noir/noir.git", branch: "main"
 
@@ -24,6 +24,8 @@ class Noir < Formula
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "pcre2"
+
+  uses_from_macos "libxml2"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -49,7 +51,7 @@ class Noir < Formula
           return {"Hello": "World"}
     PYTHON
 
-    output = shell_output("#{bin}/noir --no-color --base-path . 2>&1")
+    output = shell_output("#{bin}/noir scan --no-color . 2>&1")
     assert_match "Generating Report.", output
     assert_match "GET /hello", output
   end
