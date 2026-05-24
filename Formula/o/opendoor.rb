@@ -3,8 +3,8 @@ class Opendoor < Formula
 
   desc "CLI for web reconnaissance, directory discovery, and exposure assessment"
   homepage "https://github.com/stanislav-web/OpenDoor"
-  url "https://files.pythonhosted.org/packages/28/53/fa6371de65b11b95a10eb4d4818a661c0600fca09f3d9e50ee2d6a166e08/opendoor-5.16.0.tar.gz"
-  sha256 "101d8205f752d4fa67fcf38cce80fafcce4fa23bfba5c1dd5740324061ef5e12"
+  url "https://files.pythonhosted.org/packages/a7/b9/0e69c2a846226a8a76977a323ee027cbc4b1e8492d4f8bf637e52eb6c61f/opendoor-5.16.1.tar.gz"
+  sha256 "351de45f5696cbb8e9f2f44bce953ad8df2c592003a989b6f2867a85085828d8"
   license "GPL-3.0-only"
 
   bottle do
