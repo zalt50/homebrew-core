@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.16.tar.gz"
-  sha256 "467d76fd8847819d412762df7ec70dbc2fc4f8f0ef4ce6d79bb0349ed3a4ea61"
+  url "https://github.com/libplctag/libplctag/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "2c734305d1a2dba2b270ad4b7f780b1b68dbfcadf3d21ccef834b3e8b5289eac"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -28,6 +28,8 @@ class Libplctag < Formula
   end
 
   def install
+    # Vendored libyafl uses MAP_ANONYMOUS which requires _GNU_SOURCE on Linux
+    ENV.append "CFLAGS", "-D_GNU_SOURCE" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
