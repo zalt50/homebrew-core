@@ -16,6 +16,8 @@ class Terrascan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1da9aea6b543cbb9ffb3716413505ed1ed0ec1ad731a62309b54c39211ab3b51"
   end
 
+  deprecate! date: "2026-05-23", because: :repo_archived
+
   depends_on "go" => :build
 
   def install
