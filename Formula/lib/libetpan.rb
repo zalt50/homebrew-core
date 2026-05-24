@@ -8,13 +8,12 @@ class Libetpan < Formula
   head "https://github.com/dinhvh/libetpan.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "2f2bc6b0e25e04a695cbfb726a3cfcf699098d8bcb3f65341ce73bc7fe5ac2e6"
-    sha256 cellar: :any,                 arm64_sequoia: "0f71f334cab29455274e4c1a1ea4db7d20eb8d3cd6f52a3380343c62f5473359"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba50402af4e428540093a35f7493abfa5061dba3a80063c8356af13278d6b0d9"
-    sha256 cellar: :any,                 sonoma:        "6c780a96c2675aeb1dc3130c91a46f75e673e12ef3cc8a381d6973496a3ba361"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "793b454d15058dc0ba62741b7e094e27f9f311bcd56ec7fed2e197011b54eb6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf8c5f3550de87ef79a8037cba4778e4d148581c4ef4b28353a3eb80cad9aa61"
+    sha256 cellar: :any,                 arm64_tahoe:   "7b751456b516ad4ce3d15e75053ce2c13693f250f84f4cc339fbd6d4d491cd0f"
+    sha256 cellar: :any,                 arm64_sequoia: "bc76e7458e319ac837174b9877b4e17492239a9fc52c475aa9ceb34d99b577d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "12e8e61a77ad429e2e4dc7163dfa1c8380055233d8364711072da63d15212916"
+    sha256 cellar: :any,                 sonoma:        "415116a3745329af0cf70b55c94a899683f62508875c6ab7b974e63ee99e726d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27e0e49c2128bdae30a97860512cf0bcdfdd1299ddc461f44749e68d28b086a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9632a4d8a0e8d5d99b5f6be7b5315109594d2543749e3e89e16b44e314ca132"
   end
 
   depends_on "autoconf" => :build
