@@ -13,12 +13,12 @@ class Cdo < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6ba8a2f9742d13f5aa6a7cff08f8ba6e27df53a3f535762f0fafc432cf72150f"
-    sha256 cellar: :any,                 arm64_sequoia: "3ef898f47d4050e5d68d584494c426990bac21004927e5aa90d79638d464f212"
-    sha256 cellar: :any,                 arm64_sonoma:  "120b0a3bde18f4bff97d86858bebae0eb4d5cbd1af15260c6a2c2dfe64133789"
-    sha256 cellar: :any,                 sonoma:        "fe86c49e27d75e036471845bbbbf26239fabcd7cd52d0f7df0471bcb9b214add"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe3e3ca55382e51cc4d7ffefbe2cd9a073da639aefa05f289c2293a3de88d8e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a73f6c3ce13ff500639aa8905e35415bdc28e5a0161d3518f0f3f33c5e41b04"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c3a15dbad37674f4d3427145641f30222f7e4c4c324d5b5c5539ca417dc2b78"
+    sha256 cellar: :any,                 arm64_sequoia: "12c0a9b67373724ea56b54e5d6cfed58973de6855280d77ad424b8635b0ad08c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d1e82209eaa0f484889e0033738ee842e4f1918ecec6aa784782f5d31b7a5ad"
+    sha256 cellar: :any,                 sonoma:        "f9edfe7acc8bd88f159a1c2c3c656205cefe07cac5400811326ce850ae8f06ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e25846b88f2415efe4fc6cc22945247e720aa761d7b605f5dae30ec872b1b6ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba57f7ace2814e4b2fb744853ac314c4bebe44282f28d98e2f986c4a2e26dac6"
   end
 
   depends_on "eccodes"
