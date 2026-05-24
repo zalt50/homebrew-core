@@ -6,6 +6,11 @@ class Libslirp < Formula
   license "BSD-3-Clause"
   compatibility_version 1
 
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "18d81f7392c77441d299e5ea36b08c85553919f407fb5433fb009c032a099b39"
     sha256 cellar: :any, arm64_sequoia: "12a9e671b10f09a59a51c9eb9010baa5d5a787f8404ff7a3ed709444ccd6c1c6"
