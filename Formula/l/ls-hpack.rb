@@ -1,8 +1,8 @@
 class LsHpack < Formula
   desc "HTTP/2 HPACK header compression library"
   homepage "https://github.com/litespeedtech/ls-hpack"
-  url "https://github.com/litespeedtech/ls-hpack/archive/refs/tags/v2.3.4.tar.gz"
-  sha256 "4abeeb786d6211d0aaf13ef3df7651c765c2ffb58cd226ec5c9e6e8b6d801ca1"
+  url "https://github.com/litespeedtech/ls-hpack/archive/refs/tags/v2.3.5.tar.gz"
+  sha256 "430a1a36029e0ae1c81eaa0b2356920f1e65fde1cdd722351c671ebe513b7a96"
   license "MIT"
 
   bottle do
