@@ -1,8 +1,8 @@
 class TmuxSessionizer < Formula
   desc "Tool for opening git repositories as tmux sessions"
   homepage "https://github.com/jrmoulton/tmux-sessionizer/"
-  url "https://github.com/jrmoulton/tmux-sessionizer/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "c3205764f70c8e7f94a1b32eccbc22e402cd9ab28c54d06b405073cae185bdd8"
+  url "https://github.com/jrmoulton/tmux-sessionizer/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "d33e0e7c544de0798ab9fdfdfd2914ee486a6bdf61f183f8634a7f42a1006ba0"
   license "MIT"
 
   bottle do
