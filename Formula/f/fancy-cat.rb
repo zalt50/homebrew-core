@@ -1,10 +1,9 @@
 class FancyCat < Formula
   desc "PDF reader for terminal emulators using the Kitty image protocol"
   homepage "https://github.com/freref/fancy-cat"
-  url "https://github.com/freref/fancy-cat/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "7191c8b6259f8124d2bef4c38ab0bcb7f13923dd84a6ec5cb5512f729765f5b5"
+  url "https://github.com/freref/fancy-cat/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "c40cd59bef243b3bafa80a33ac97d07c54ab27490d13702abeccbd713f59e37c"
   license "AGPL-3.0-or-later"
-  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "fcc2aba1bcfa939b6714837a17bb06db78a66a0c80f30369fd88b8df3bf49939"
@@ -18,25 +17,6 @@ class FancyCat < Formula
   depends_on "zig@0.15" => :build
   depends_on "mujs"
   depends_on "mupdf"
-
-  # Patches for zig patch prior to that
-  patch do
-    url "https://github.com/freref/fancy-cat/commit/9839e77a0949f44ffa6615517e6b866a8f6e0222.patch?full_index=1"
-    sha256 "0bd4725ee0e3415a1c33816bad5ec713806506c5cce6ccf474f400f0a623aee9"
-  end
-  patch do
-    url "https://github.com/freref/fancy-cat/commit/50b106635f03163e12b7407ba3fe7e5a5563f545.patch?full_index=1"
-    sha256 "e9250d6b033794c84d2af9827233f8f71939d97fbb4b3b834ea3c1328f222637"
-  end
-  patch do
-    url "https://github.com/freref/fancy-cat/commit/033d32d5bb3f11cc194deaa80c7eb8cd4d583c04.patch?full_index=1"
-    sha256 "5818a2845f396371bebc421c882ed190eca544035c818a86a5db15475ce361d9"
-  end
-  # Fix build with Zig 0.15.2
-  patch do
-    url "https://github.com/freref/fancy-cat/commit/f304c5907e52a62f4cf42953e9043d21ad9b47e9.patch?full_index=1"
-    sha256 "9e4400ca09aac07f0641666b9da70f822c04c3c79811c7beddbd0aa0ac075ac2"
-  end
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
