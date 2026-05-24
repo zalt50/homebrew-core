@@ -4,7 +4,7 @@ class ClawsMail < Formula
   url "https://www.claws-mail.org/releases/claws-mail-4.4.0.tar.gz"
   sha256 "642d78309b7b153699c417bcfdf505a735b19c57fd731a0bbb5752ad6adbdb52"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.claws-mail.org/releases.php"
@@ -28,6 +28,7 @@ class ClawsMail < Formula
   depends_on "gtk+3"
   depends_on "libetpan"
   depends_on "nettle"
+  depends_on "openssl@3"
   depends_on "pango"
 
   on_macos do
@@ -43,10 +44,6 @@ class ClawsMail < Formula
   end
 
   def install
-    if OS.mac?
-      ENV["LIBETPAN_CFLAGS"] = "-I#{Formula["libetpan"].opt_include}"
-      ENV["LIBETPAN_LIBS"] = "-F#{Formula["libetpan"].opt_frameworks} -framework libetpan"
-    end
     system "./configure", "--disable-silent-rules",
                           "--disable-archive-plugin",
                           "--disable-dillo-plugin",
