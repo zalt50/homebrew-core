@@ -1,8 +1,8 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.0.tar.gz"
-  sha256 "16f9a10dad4e2166403beba163d5dfe142c1c20eb77301324b59d825fe27218d"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.1.tar.gz"
+  sha256 "d3ce2020167e7e0a185880421abaee2adab5e4378424cb24b5ce11d4a45bf208"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "main"
 
@@ -50,13 +50,13 @@ class Cpm < Formula
   end
 
   resource "Command::Runner" do
-    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Command-Runner-0.201.tar.gz"
-    sha256 "38e3294ae9ffd015625d7746a0803cc329de92fb0f0edae9a29cd8232cf458d3"
+    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Command-Runner-v1.0.0.tar.gz"
+    sha256 "80061e9d5e9d1d7cd61cc47bd0944e69ed8e5bb68e16e159d5caf902e11ebc38"
   end
 
   resource "Darwin::InitObjC" do
-    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Darwin-InitObjC-0.001.tar.gz"
-    sha256 "9a5f2887cb2fd427d64937743ffe3e748eab38b5b64906185fc243861e189f91"
+    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Darwin-InitObjC-v1.0.0.tar.gz"
+    sha256 "c24d311a16e43418403a4533a19775663f75143bbefea46056c2b26c0023f088"
   end
 
   resource "ExtUtils::Config" do
@@ -120,13 +120,13 @@ class Cpm < Formula
   end
 
   resource "Module::cpmfile" do
-    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Module-cpmfile-0.006.tar.gz"
-    sha256 "1bc976e2937724896c9f6eae9e5dca981e27f98430b92de270ee3514fd00ac0f"
+    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Module-cpmfile-v1.0.0.tar.gz"
+    sha256 "bd7fd447382bc34ec0197ece8cee4fcc6fd9b85ae72ecffd3649abe1b26928ad"
   end
 
   resource "Parallel::Pipes" do
-    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Parallel-Pipes-0.201.tar.gz"
-    sha256 "b73cbdd4202b29eab97e0c08dcd59d9273633610e8721cf449078656bd591a7c"
+    url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/Parallel-Pipes-v1.0.0.tar.gz"
+    sha256 "0e5efae6e71cf5255b881f0b7fa964913b741d0d085f85b79fb86edc3ba371f7"
   end
 
   resource "Parse::LocalDistribution" do
