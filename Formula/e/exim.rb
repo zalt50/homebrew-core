@@ -2,6 +2,7 @@ class Exim < Formula
   desc "Complete replacement for sendmail"
   homepage "https://exim.org"
   url "https://ftp.exim.org/pub/exim/exim4/exim-4.99.3.tar.xz"
+  mirror "https://ftp.exim.org/pub/exim/exim4/old/exim-4.99.3.tar.xz"
   sha256 "663e76d2a0d9b8fc5b373d0008e44ae044f10feb22bc9dbae8c7f21345ebfb3b"
   license "GPL-2.0-or-later"
 
@@ -44,14 +45,13 @@ class Exim < Formula
   uses_from_macos "perl"
   uses_from_macos "sqlite"
 
-  resource "File::Next" do
-    url "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/File-Next-1.18.tar.gz"
-    sha256 "f900cb39505eb6e168a9ca51a10b73f1bbde1914b923a09ecd72d9c02e6ec2ef"
-  end
-
   resource "File::FcntlLock" do
     url "https://cpan.metacpan.org/authors/id/J/JT/JTT/File-FcntlLock-0.22.tar.gz"
     sha256 "9a9abb2efff93ab73741a128d3f700e525273546c15d04e7c51c704ab09dbcdf"
+
+    livecheck do
+      url :url
+    end
   end
 
   def install
@@ -73,7 +73,11 @@ class Exim < Formula
 
     cp "src/EDITME", "Local/Makefile"
     inreplace "Local/Makefile" do |s|
-      s.change_make_var! "EXIM_USER", ENV["USER"]
+      # Defer uid lookup on Linux to runtime
+      exim_user = ENV["USER"]
+      exim_user = "ref:#{exim_user}" if build.bottle? && OS.linux?
+
+      s.change_make_var! "EXIM_USER", exim_user
       s.change_make_var! "SYSTEM_ALIASES_FILE", etc/"aliases"
       s.gsub! "/usr/exim/configure", etc/"exim.conf"
       s.gsub! "/usr/exim", prefix
