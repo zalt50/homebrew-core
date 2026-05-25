@@ -1,8 +1,8 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ryoppippi/ccusage"
-  url "https://github.com/ryoppippi/ccusage/archive/refs/tags/v20.0.4.tar.gz"
-  sha256 "d007e8116a03cd19fd74ef39ff9f965b2b269d46cbad9cddf2c583bc22f320bc"
+  url "https://github.com/ryoppippi/ccusage/archive/refs/tags/v20.0.5.tar.gz"
+  sha256 "e9a9cfb98d88e6aead0bfba7ca61370c62c7411fe4c538fd16915078f313a63e"
   license "MIT"
 
   bottle do
@@ -21,6 +21,6 @@ class Ccusage < Formula
   end
 
   test do
-    assert_match "No valid Claude data directories found", shell_output("#{bin}/ccusage 2>&1", 1)
+    assert_match "No usage data found.", shell_output("#{bin}/ccusage 2>&1")
   end
 end
