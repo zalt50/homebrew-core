@@ -4,6 +4,7 @@ class Jose < Formula
   url "https://github.com/latchset/jose/releases/download/v14/jose-14.tar.xz"
   sha256 "cee329ef9fce97c4c025604a8d237092f619aaa9f6d35fdf9d8c9052bc1ff95b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     rebuild 1
@@ -19,7 +20,7 @@ class Jose < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "jansson"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
