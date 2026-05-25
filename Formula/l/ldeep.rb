@@ -3,8 +3,8 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https://github.com/franc-pentest/ldeep"
-  url "https://files.pythonhosted.org/packages/9d/bd/2a6796f34543d006b71b5ac9024c5fad294bea210118c701138211abcca8/ldeep-2.0.2.tar.gz"
-  sha256 "cf776a27616c20818a0a9c0616ceb7170b434903ec9bc35546db29a58d9c9e7c"
+  url "https://files.pythonhosted.org/packages/8e/bf/cadc67e213fecdfc338a722dc51a04ec0e897e3b9738d8025f1a773b263c/ldeep-2.0.3.tar.gz"
+  sha256 "a7a085d495ba12edff9e0186a6d92a4a989aceabebcf79e321059ee124907021"
   license "MIT"
   head "https://github.com/franc-pentest/ldeep.git", branch: "master"
 
@@ -35,8 +35,8 @@ class Ldeep < Formula
   end
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz"
-    sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
+    url "https://files.pythonhosted.org/packages/60/8b/32f9823da46cde7df2087faa08cd98d01b908f8dcab982cdba9c84e85355/decorator-5.3.1.tar.gz"
+    sha256 "4cbcdd55a6efadb9dbea26b858f4fb3264567b52d69ca0d25b721b553f60ea82"
   end
 
   resource "dnspython" do
