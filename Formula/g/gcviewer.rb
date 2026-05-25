@@ -1,10 +1,9 @@
 class Gcviewer < Formula
   desc "Java garbage collection visualization tool"
   homepage "https://github.com/chewiebug/GCViewer"
-  url "https://downloads.sourceforge.net/project/gcviewer/gcviewer-1.36.jar"
-  sha256 "5e6757735903d1d3b8359ae8fabc66cdc2ac6646725e820a18e55b85b3bc00f4"
+  url "https://downloads.sourceforge.net/project/gcviewer/gcviewer-1.37.jar"
+  sha256 "325a5f1a8f67588b6845c71eceb70c8b74c45930fd553ba2fc7b3b4118608e13"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url :stable
