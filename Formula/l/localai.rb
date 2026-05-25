@@ -7,12 +7,12 @@ class Localai < Formula
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c539917a3388172630ac0f86093c6509514d1de8339040823c8b64aa36ab2d17"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19713e28d2a789ca3f02fa78084ed318686295d93f36c7fa6449758cfaa72e4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "415e87e5658a339d37334efd8de71c03998773b8ba0856ab39bed1e83a70dae0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "064754084329974f013f389f44bd2cc88966342442d08ff20702eeef36ddfaf2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c71b1aed0c35eb53bff3878c61d6ca4f78c860b84faa7f61150b71a6e298c8e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7dd299c1f6a6b39366007fad4dc66fbb174bae1e528c2d8561bd559d717d9ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c1f217e4b1396a89e87c33ce6fb1a030bd74cb77d4d023a2a986d844a222094"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bdea520ae901faee9aec32356fb2d726ff69ac408ebeaed35b5429fe77b02e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c6596bc2be3dc65462381730e640b05622cd3b539b5c8b1a63bca4e9cbd368f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb1863490bef1ef485cb0755d9afaef4c2a522e3d82b6d55c242ec878f65963c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65d87df8e3c55d1f205e55e2a28dd831a013f127c27f0131fad0645373b0adbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf901a155de46c78bb0034562c5676bf8a5de6e849d1d7adaf149750cdc006cb"
   end
 
   depends_on "go" => :build
