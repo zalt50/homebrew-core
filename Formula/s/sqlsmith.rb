@@ -1,10 +1,11 @@
 class Sqlsmith < Formula
   desc "Random SQL query generator"
   homepage "https://github.com/anse1/sqlsmith"
-  url "https://github.com/anse1/sqlsmith/releases/download/v1.4/sqlsmith-1.4.tar.gz"
-  sha256 "b0821acbe82782f6037315549f475368be3592cefe2c3c540f9cf52aa70d2f55"
+  # TODO: Switch to the release tarball when the next release is made
+  url "https://github.com/anse1/sqlsmith/archive/refs/tags/v1.5.tar.gz"
+  sha256 "828ee3e816b94848627e8132d32ade6339dbcbba5469437dc9a6a8335d4dab23"
   license "GPL-3.0-only"
-  revision 4
+  head "https://github.com/anse1/sqlsmith.git", branch: "master"
 
   livecheck do
     url :stable
@@ -22,13 +23,9 @@ class Sqlsmith < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0097bee5057fa4d814dfa431ff700cfc87253c243bf1b806f6515b08c05b3b1b"
   end
 
-  head do
-    url "https://github.com/anse1/sqlsmith.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "autoconf-archive" => :build # required for AX_CXX_COMPILE_STDCXX_17
-    depends_on "automake" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "autoconf-archive" => :build # required for AX_CXX_COMPILE_STDCXX_17
+  depends_on "automake" => :build
 
   depends_on "pkgconf" => :build
   depends_on "libpq"
@@ -38,7 +35,7 @@ class Sqlsmith < Formula
 
   def install
     ENV.append_to_cflags "-DNDEBUG"
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
