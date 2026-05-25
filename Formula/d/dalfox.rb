@@ -1,8 +1,8 @@
 class Dalfox < Formula
   desc "XSS scanner and utility focused on automation"
   homepage "https://dalfox.hahwul.com"
-  url "https://github.com/hahwul/dalfox/archive/refs/tags/v2.13.0.tar.gz"
-  sha256 "f26f24c8e4b0833ea6a8a1cd0cff8c958e16b026dfb66510f1a4e40502533507"
+  url "https://github.com/hahwul/dalfox/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "277b98f2d2f75380292d8888d0f3e88d87b0a35dcfb510f3be5a17cb4d3a4186"
   license "MIT"
   head "https://github.com/hahwul/dalfox.git", branch: "main"
 
@@ -15,19 +15,17 @@ class Dalfox < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "20aa7083e59951a0d9dea3ad948856171b19c8d0c90023b88b361b6d3408da94"
   end
 
-  depends_on "go" => :build
+  depends_on "rust" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
-
-    generate_completions_from_executable(bin/"dalfox", shell_parameter_format: :cobra)
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dalfox version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/dalfox -V 2>&1")
 
     url = "https://pentest-ground.com:4280/vulnerabilities/xss_r/"
-    output = shell_output("#{bin}/dalfox url \"#{url}\" 2>&1")
-    assert_match "Finish Scan!", output
+    output = shell_output("#{bin}/dalfox scan \"#{url}\" 2>&1", 1)
+    assert_match "scan completed", output
   end
 end
