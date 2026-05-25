@@ -4,6 +4,7 @@ class GitCrypt < Formula
   url "https://www.agwa.name/projects/git-crypt/downloads/git-crypt-0.8.0.tar.gz"
   sha256 "540d424f87bed7994a4551a8c24b16e50d3248a5b7c3fd8ceffe94bfd4af0ad9"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :homepage
@@ -21,15 +22,13 @@ class GitCrypt < Formula
 
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxslt" => :build
 
   def install
     # fix docbook load issue
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
-
-    ENV.append_to_cflags "-DOPENSSL_API_COMPAT=0x30000000L"
 
     system "make", "ENABLE_MAN=yes", "PREFIX=#{prefix}", "install"
   end
