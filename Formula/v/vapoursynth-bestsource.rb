@@ -2,8 +2,8 @@ class VapoursynthBestsource < Formula
   desc "Audio/video source and FFmpeg wrapper"
   homepage "https://github.com/vapoursynth/bestsource"
   url "https://github.com/vapoursynth/bestsource.git",
-      tag:      "R17",
-      revision: "b026135190bdee175417310fa783e8383077193f"
+      tag:      "R18",
+      revision: "68f857839f0d78f9261edc875b77adc26821fbe1"
   license "MIT"
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
@@ -25,27 +25,28 @@ class VapoursynthBestsource < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
+  depends_on "python@3.14"
   depends_on "vapoursynth"
   depends_on "xxhash"
 
-  def install
-    # Upstream build system wants to install directly into vapoursynth's libdir and does not respect
-    # prefix, but we want it in a Cellar location instead.
-    inreplace "meson.build" do |s|
-      s.gsub!("py.get_install_dir() / 'vapoursynth/plugins'", "get_option('libdir') / 'vapoursynth'")
-      s.gsub!("-march=x86-64-v2", "-msse4.1")
-    end
+  def python3 = "python3.14"
 
-    system "meson", "setup", "build", *std_meson_args
+  def install
+    ENV.runtime_cpu_detection if Hardware::CPU.intel?
+
+    # Work around Homebrew's python prefix patch
+    args = %W[-Dpython.platlibdir=#{prefix/Language::Python.site_packages(python3)}]
+
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
   test do
-    python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
-                                   .to_formula
-                                   .opt_libexec/"bin/python"
-    system python, "-c", "from vapoursynth import core; core.bs"
+    (testpath/"test.py").write <<~PYTHON
+      from vapoursynth import core
+      print(core.bs.TrackInfo("#{test_fixtures("test.mp4")}")["codecstr"])
+    PYTHON
+    assert_equal "h264", shell_output("#{python3} test.py").chomp
   end
 end
