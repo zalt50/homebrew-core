@@ -4,7 +4,7 @@ class DartSass < Formula
   url "https://github.com/sass/dart-sass/archive/refs/tags/1.100.0.tar.gz"
   sha256 "d4f1fa35b6911c4a3fcb9bb8723e4ed6724c2aea71813dfce49ce65aed20b57d"
   license "MIT"
-  revision 1
+  revision 2
 
   # Some tags are used for sass-api/sass-parser
   livecheck do
@@ -28,6 +28,11 @@ class DartSass < Formula
   resource "language" do
     url "https://github.com/sass/sass/archive/refs/tags/embedded-protocol-3.2.0.tar.gz"
     sha256 "4e1f81684bc1666f03e52ddc790d0c2c22d99a5313fa2efe1dde4a5b5733c186"
+
+    livecheck do
+      url :url
+      regex(/embedded-protocol[._-]v?(\d+(?:\.\d+)+)/i)
+    end
   end
 
   def install
