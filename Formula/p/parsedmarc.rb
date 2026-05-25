@@ -9,12 +9,12 @@ class Parsedmarc < Formula
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d7ed72673e5de6fa245574ba05afe3cba5cebd4ef19b9d14c1727db61f06e84e"
-    sha256 cellar: :any,                 arm64_sequoia: "77040d843561de457d236fdb803148ed7f56bb80cf56ed552b2f20877e53a5b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab62335b2d2616b594bec3b666140aa93b1618a5129bd3d8fc2d0da4f191efc4"
-    sha256 cellar: :any,                 sonoma:        "76356f61cc1d4fc174d1cabf48aa9059cc2a97e119d5dcbd15267cd93d7632a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3af32ed4823be33b8e8f3bddf06691acb2af190e53595dc2ff0a2edcd7b24679"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3b86de4f6658f0b89d7a818e9159fd4799b7db5782f735aa2268eb3921bf853"
+    sha256 cellar: :any,                 arm64_tahoe:   "2422813e3d6b5f27cb2fd9c7085488418da8ff4f81f594e7e06e3ca89d3dd1aa"
+    sha256 cellar: :any,                 arm64_sequoia: "a194987dccd7aec5aef5ecdc88312c56055514fd6252a829e6d77b0d532ad34c"
+    sha256 cellar: :any,                 arm64_sonoma:  "43192a285746f205dbd79286b172b13ae448fba9f296d9848e389143751ff1c1"
+    sha256 cellar: :any,                 sonoma:        "ce733f5ae7f885ea8abb1c5a6d7a85a19edd0b74db70008ce70102ab59069a15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4d991a425d864c24ac94859c63d724aee29c59d6d24899d5c613ff2336dc6f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97860f854eb75bb167d48348c11ec6f9194bea722659d65879b47697c60235c7"
   end
 
   depends_on "rust" => :build
