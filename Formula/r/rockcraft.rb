@@ -5,10 +5,9 @@ class Rockcraft < Formula
   homepage "https://documentation.ubuntu.com/rockcraft/"
   # git checkout needed for setuptools-scm
   url "https://github.com/canonical/rockcraft.git",
-      tag:      "1.18.0",
-      revision: "0bd0727378641e04184a0bb4d63d9b014955c824"
+      tag:      "1.19.0",
+      revision: "77be1bab830d1683791c004b3c0df856f294d805"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/canonical/rockcraft.git", branch: "main"
 
   livecheck do
@@ -102,8 +101,8 @@ class Rockcraft < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jeepney" do
@@ -137,8 +136,8 @@ class Rockcraft < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "markupsafe" do
@@ -197,8 +196,8 @@ class Rockcraft < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-toolbelt" do
