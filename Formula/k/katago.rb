@@ -3,8 +3,8 @@ class Katago < Formula
   homepage "https://katagotraining.org/"
   # Occasionally check upstream docs in case recommended model/network is changed.
   # Ref: https://github.com/lightvector/KataGo?tab=readme-ov-file#other-questions
-  url "https://github.com/lightvector/KataGo/archive/refs/tags/v1.16.4.tar.gz"
-  sha256 "51b1a9b48053b0de910f44abf2cc95160de7b6d43bb22300e0b80ea0b3ed0ca8"
+  url "https://github.com/lightvector/KataGo/archive/refs/tags/v1.16.5.tar.gz"
+  sha256 "50d2aa0fb4d5e697dcfa47ddc111c17d3d193dce0604a5592f5fc02501cb49e1"
   license all_of: [
     "MIT",
     "CC0-1.0", # g170 resources
@@ -30,6 +30,12 @@ class Katago < Formula
 
   on_macos do
     depends_on "ninja" => :build
+
+    on_arm do
+      depends_on "pkgconf" => :build
+      depends_on "abseil"
+      depends_on "protobuf"
+    end
 
     on_intel do
       depends_on "eigen" => :build
@@ -77,9 +83,13 @@ class Katago < Formula
   end
 
   def install
+    # `quick_exit` is absent from the macOS 14 SDK; map it to the equivalent `_Exit`.
+    ENV.append_to_cflags "-Dquick_exit=_Exit" if OS.mac? && DevelopmentTools.clang_build_version <= 1600
+
     args = ["-DNO_GIT_REVISION=1"]
     args += if OS.mac? && Hardware::CPU.arm?
-      ["-DUSE_BACKEND=METAL", "-GNinja"]
+      # Reserve header space for relocation (executable is linked by swiftc).
+      ["-DUSE_BACKEND=METAL", "-GNinja", "-DCMAKE_Swift_FLAGS=-Xlinker -headerpad_max_install_names"]
     else
       ["-DUSE_BACKEND=EIGEN", "-DEIGEN3_INCLUDE_DIRS=#{Formula["eigen"].opt_include}/eigen3"]
     end
