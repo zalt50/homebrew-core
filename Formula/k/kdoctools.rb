@@ -35,9 +35,9 @@ class Kdoctools < Formula
   depends_on "karchive"
   depends_on "qtbase"
 
+  uses_from_macos "perl" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  uses_from_macos "perl"
 
   resource "URI::Escape" do
     on_linux do
@@ -48,11 +48,10 @@ class Kdoctools < Formula
 
   def install
     if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-      ENV.prepend_path "PERL5LIB", libexec/"lib"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
 
       resource("URI::Escape").stage do
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
         system "make", "install"
       end
     end
