@@ -4,6 +4,7 @@ class Kore < Formula
   url "https://kore.io/releases/kore-4.2.3.tar.gz"
   sha256 "f9a9727af97441ae87ff9250e374b9fe3a32a3348b25cb50bd2b7de5ec7f5d82"
   license "ISC"
+  revision 1
   head "https://github.com/jorisvink/kore.git", branch: "master"
 
   livecheck do
@@ -28,10 +29,10 @@ class Kore < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
-    openssl = Formula["openssl@3"]
+    openssl = Formula["openssl@4"]
 
     # We modify Makefile variables to save OpenSSL paths which get used at runtime.
     # We don't directly override FEATURES_INC as Makefile uses 'FEATURES_INC+='.
