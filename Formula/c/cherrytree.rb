@@ -12,12 +12,12 @@ class Cherrytree < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "32cc28244cd2c9e8c24ced7c15d4e038e3af003d242af4d70a2c47de8d2ea10d"
-    sha256 arm64_sequoia: "ce43841bbdb70b12e6cfd1900055cc2f82c362a25f529ffe7fdf52b158211287"
-    sha256 arm64_sonoma:  "c78ec49f68fbfdb7312fb9aeb8058a89cfd050e71b256652afda238787c41290"
-    sha256 sonoma:        "f8052e875e197ce58ae2eb967c7bf63507ceb7fbd013bbdff474a1c1cabd9a0e"
-    sha256 arm64_linux:   "9f1406c250a34526ecde1d997418fee615b725dc5c0c0cb4720406316b23d04a"
-    sha256 x86_64_linux:  "d9c28d31786e0c45daf2ede507ee1d616f8da2a411dd7dbadafdb2c34d72f478"
+    sha256 arm64_tahoe:   "7dbc04ed755d02d8724cacd678c924441cdf4c9b2e331d00e429741057219805"
+    sha256 arm64_sequoia: "e68888440aff463a046f5924ea8713c138d7743fe852c93d825ffd7f1d41e056"
+    sha256 arm64_sonoma:  "a2ff02aafe9daffa8fd60201e1e0718d2b8f2332c14fdbf3a3473d7cecf060bf"
+    sha256 sonoma:        "c7ac4467a86d1d0a616b52f0d3ba48bb171cd9b89cfc695b67acfed121565031"
+    sha256 arm64_linux:   "a38b5c830991a85a5cdc62aebac7e44b31c63cc6d6fe4d2c702a7667f45e1492"
+    sha256 x86_64_linux:  "98fcaa71eef71b86a1e478bacbfa4b8cb51546cf2992cdb959645b93640d0866"
   end
 
   depends_on "cmake" => :build
