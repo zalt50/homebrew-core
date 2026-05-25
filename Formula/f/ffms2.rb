@@ -7,7 +7,7 @@ class Ffms2 < Formula
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/FFMS/ffms2.git", branch: "master"
 
   livecheck do
@@ -29,15 +29,22 @@ class Ffms2 < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
+  depends_on "python@3.14" => [:build, :test]
+  depends_on "vapoursynth" => :test
   depends_on "ffmpeg"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
+  def python3 = "python3.14"
+
   def install
     system "./autogen.sh", "--enable-avresample", *std_configure_args
     system "make", "install"
+
+    vapoursynth_plugins = prefix/Language::Python.site_packages(python3)/"vapoursynth/plugins"
+    vapoursynth_plugins.install_symlink lib/shared_library("libffms2")
   end
 
   test do
@@ -51,5 +58,10 @@ class Ffms2 < Formula
       system bin/"ffmsindex", "lm20.avi"
       assert_path_exists Pathname.pwd/"lm20.avi.ffindex"
     end
+
+    # Test VapourSynth support which verifies Python versions are aligned
+    cp test_fixtures("test.mp4"), testpath
+    system python3, "-c", "from vapoursynth import core; core.ffms2.Source('test.mp4')"
+    assert_path_exists "test.mp4.ffindex"
   end
 end
