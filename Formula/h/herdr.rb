@@ -6,6 +6,15 @@ class Herdr < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/ogulcancelik/herdr.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eac906e5a5fbd32d837e367c4afaf5cc5316ee246c8c438c5f3b71621517a5d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04bb22ef92fb6399087daefca31423f92102f2b1077e3433716500b75457ffa5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c8c3d20abeac57e8122a6cd0dd94bbf95e84ff1c4fe1f8779962beba3a28e51"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11654b69d263019071bf6a9402e2efd003f74ef003e8138d6c8c032cedf73a2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "312dfeaadb455b64f84a5a8fd34bde5caf40f31bfc6a92320e2fc2d63d989bd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05194f62d3da8e14f3d2b804cb0bfab0d7dca52ae60d60dde025b82a88fb2ac3"
+  end
+
   depends_on "rust" => :build
   depends_on "zig@0.15" => :build # upstream issue, https://github.com/ogulcancelik/herdr/issues/285
 
