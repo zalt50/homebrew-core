@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/e6/b7/4fcc6437e87e8dea1d4ae8ed9b1c11154134d5093d4f9a81b788b11548bc/gamdl-3.7.tar.gz"
-  sha256 "95d747e987213adb949bfdee57ba46e999b1c258ad7ca7f044870d239df0b1f6"
+  url "https://files.pythonhosted.org/packages/e6/30/7d05161bf4efa7b58b57bd017f13db0b88053fc1743d170ed0a74d57a2da/gamdl-3.7.1.tar.gz"
+  sha256 "a8b6583a1b0694d37d539ac854736b9b698626a1d8727162a3c6124fcdeffa63"
   license "MIT"
 
   bottle do
