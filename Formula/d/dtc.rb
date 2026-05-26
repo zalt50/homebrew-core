@@ -13,13 +13,12 @@ class Dtc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "133ee4841d6cf363f2b7b98e4d201dc1871e06dbee385543b3e3d5f892b4fa98"
-    sha256 cellar: :any, arm64_sequoia: "4779a33b18a4e44c365d9ecd8f2788ec4c3d15e21552c16c53b41aa67dc46846"
-    sha256 cellar: :any, arm64_sonoma:  "e6efb3fd92b69e97e9bbf4688aac3094407f712d37f40b57dca8f2b26131f7b7"
-    sha256 cellar: :any, sonoma:        "9622337a07593353fe43755d48049544279456780bc9f9c2f536e8addbf9c401"
-    sha256               arm64_linux:   "49e1b560741233f808f3b372a78c767b8033db1c57f5a45c2ee3e6c5193f86f6"
-    sha256               x86_64_linux:  "e928d006c6c45bc690e91e6e918384ed2536873135305ee3ab92997bcb3e4491"
+    sha256 cellar: :any, arm64_tahoe:   "c79f2ad44942a6cb4848a1f54a8a9102d84d4ae7d9d1708b492078a609a57edc"
+    sha256 cellar: :any, arm64_sequoia: "1fdf5d3e57d68b4caea46c0ed88d4f0df0ec1832c4d465f663ca96a87bcfacff"
+    sha256 cellar: :any, arm64_sonoma:  "7106d0b0d8f1c696063b0f96e87672e9e30caece6aa7a69897b6b945c84c32d5"
+    sha256 cellar: :any, sonoma:        "2a14eb58e013bb553cd56d336b6f35e8b514155b93606392e069cee6678720fb"
+    sha256               arm64_linux:   "922c0f401b78e666fea4c07a176a8bfb336a2bdd14c532e7aba9b65818037f44"
+    sha256               x86_64_linux:  "ddb4a660c0af9334566d919b1198760ee0becc107b87b35a0b4a20dfb17b026d"
   end
 
   depends_on "meson" => :build
