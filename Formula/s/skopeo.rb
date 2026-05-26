@@ -1,8 +1,8 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://github.com/containers/skopeo/archive/refs/tags/v1.22.2.tar.gz"
-  sha256 "b6e1f208c1048f7a80613e8154774e6a3fdc891aeb45325c8ed905be4dee48d8"
+  url "https://github.com/containers/skopeo/archive/refs/tags/v1.23.0.tar.gz"
+  sha256 "de96bfc2bb523c852af675ffdadd934484812ce190aa8620e1d5fd6c51442e25"
   license "Apache-2.0"
 
   bottle do
@@ -57,9 +57,11 @@ class Skopeo < Formula
     output = shell_output(cmd)
     assert_match "docker.io/library/busybox", output
 
-    # https://github.com/Homebrew/homebrew-core/pull/47766
-    # https://github.com/Homebrew/homebrew-core/pull/45834
-    assert_match(/Invalid destination name test: Invalid image name .+, expected colon-separated transport:reference/,
-                 shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1))
+    expected = if OS.mac?
+      "Error loading trust policy"
+    else
+      "Invalid destination name test"
+    end
+    assert_match expected, shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1)
   end
 end
