@@ -1,8 +1,8 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/njbrake/agent-of-empires"
-  url "https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "b54bb7b8c88f00277e170042fd5c6ee43ab72f6b1df52bcbc3d9b96ba8c9fc24"
+  url "https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "4e9463d068274607d7409b44ee587b09a373166bdf5989ccc46aea27db83dda6"
   license "MIT"
   head "https://github.com/njbrake/agent-of-empires.git", branch: "main"
 
