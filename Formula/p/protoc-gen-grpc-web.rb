@@ -30,8 +30,7 @@ class ProtocGenGrpcWeb < Formula
 
   # Workaround to build with Protobuf 30+. Issue ref: https://github.com/grpc/grpc-web/issues/1522
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/d0b7cf85a11a9acfa1a422305948dff6621bbda9/Patches/protoc-gen-grpc-web/protobuf-30.diff"
-    sha256 "9c7e0ddf5ba68c179e7b8edc2c48de5b9b9d4801a6c8fd93ee199e27291aeebd"
+    file "Patches/protoc-gen-grpc-web/protobuf-30.diff"
   end
 
   def install
