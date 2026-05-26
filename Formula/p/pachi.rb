@@ -37,8 +37,7 @@ class Pachi < Formula
     # Modern-toolchain fixes: drop header-only boost::system, update
     # SetTotalBytesLimit for protobuf 3.6+, replace std::random_shuffle.
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/ea0b351d/Patches/pachi/caffe-modern-toolchain.patch"
-      sha256 "47c872c831ca1bcabe102fd2a68842d2c80086c9f295328e785814fae189d7a4"
+      file "Patches/pachi/caffe-modern-toolchain.patch"
     end
   end
 
