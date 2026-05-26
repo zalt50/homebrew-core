@@ -6,6 +6,7 @@ class ErlangLanguagePlatform < Formula
       tag:      "2026-02-27",
       revision: "3a65019ef3b85a7b0f58c998f5d5a545d7394b15"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/WhatsApp/erlang-language-platform.git", branch: "main"
 
   bottle do
@@ -20,7 +21,7 @@ class ErlangLanguagePlatform < Formula
   depends_on "rust" => :build
   depends_on "sbt" => :build
   depends_on "scala" => :build
-  depends_on "erlang"
+  depends_on "erlang@28"
   depends_on "openjdk"
   depends_on "rebar3"
 
@@ -38,6 +39,7 @@ class ErlangLanguagePlatform < Formula
     system "cargo", *build_args, *std_cargo_args.reject { |arg| arg["--root"] || arg["--path"] }
     bin.install "target/release/elp"
     generate_completions_from_executable(bin/"elp", "generate-completions")
+    bin.env_script_all_files libexec, PATH: "#{Formula["erlang@28"].opt_bin}:${PATH}"
   end
 
   test do
