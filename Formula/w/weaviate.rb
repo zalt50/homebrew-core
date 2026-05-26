@@ -11,12 +11,12 @@ class Weaviate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f7bdf3bc0bd8baabddd69f59724aba7683dd66f35508ca22a64e5f5f431ccf9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f7bdf3bc0bd8baabddd69f59724aba7683dd66f35508ca22a64e5f5f431ccf9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f7bdf3bc0bd8baabddd69f59724aba7683dd66f35508ca22a64e5f5f431ccf9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a1c1b5d1771b17881d8f3233ed1487172ca1a0cc0ed4be7b614c5db6388a054"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34d8ea74f3a32c065f07373ff85f5e9bd9a48ad442be1516196db7ed074c6545"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d05a0e27e052c68ea10c1caf0732b70b562f129d2e7814e5f530ae85c21fb69"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59557c5b75593649331752c42d2920767975ca1c32fd66c51062abca2e46b205"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59557c5b75593649331752c42d2920767975ca1c32fd66c51062abca2e46b205"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59557c5b75593649331752c42d2920767975ca1c32fd66c51062abca2e46b205"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c376fe39be14923f1ef861bb456836cbdb0e9f45daf7772f33051fd67533d8e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f95a49067df4a54aa266ba1aa4fd054741bcec07e7bb8cd4e9498c6a50ee293e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be4c9a882b8eeab404cc82cd1c64098fd6d1b7e277a34f37ef4ca905ff6ffd22"
   end
 
   depends_on "go" => :build
