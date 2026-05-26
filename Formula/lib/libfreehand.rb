@@ -11,13 +11,12 @@ class Libfreehand < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b70e47c7931caefe4bc6b042a589ace7ab5030effc050d9497cb18402aea3283"
-    sha256 cellar: :any,                 arm64_sequoia: "694fa1b16a31cc867224d2816c9cb64729d424c08cd62e60d0d297afaa0ad1c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "33ae6b9ac25647ca21bd483f7621bc89b40bc56ceecbe1016b62ba9efff537ff"
-    sha256 cellar: :any,                 sonoma:        "fa66877154b2d6ce16f342ac50f6426a075700f13a6373f439df66803d7c00a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "952ae31e98ef2f960942b8a53c8655b391992bc4f1427e3068f64286308c5c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d35269b7696910c40ca4ef8d69418ed4eb8983d5c0e0079a0e36ead6cfd5407f"
+    sha256 cellar: :any,                 arm64_tahoe:   "d33bddefbe09049bfefff702e617aa5072b03ab2602af75c3fdc1b7ce3cd0ead"
+    sha256 cellar: :any,                 arm64_sequoia: "4c601bd55e81fef558bf0c681b953d8467250f897d67e7ba764aeeff3b5f24c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "31e4a1c33344398e8ea91f4f324a21589e565f8e3921db4abfafa5a455cc8b98"
+    sha256 cellar: :any,                 sonoma:        "b6249e044b194cd34175495d5c42f8e6ac70a0d2f61e422bffdfbe62b3f4110e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78013df6365bdb51b64b118de7b04dadee3207698dbffe86ee96063b82e1ca63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f7a7c203127d2ce3f773d8fbb2b85fa37923215b303a112f7860eae687da4eb"
   end
 
   depends_on "boost" => :build
