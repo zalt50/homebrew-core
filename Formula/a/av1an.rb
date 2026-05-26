@@ -20,13 +20,12 @@ class Av1an < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "75f1beb607c47cff64d09ffd0eceabeec3e466c34a8e6881ae99982799f4d8b3"
-    sha256 cellar: :any,                 arm64_sequoia: "c3c3a289774f78ef13f8536e0d3b1c321dd43d60069046792e21561aeda2d775"
-    sha256 cellar: :any,                 arm64_sonoma:  "132b521887366ef46ca8198fbb56fceb3621137654a0e89cf6fd8025cb26d65d"
-    sha256 cellar: :any,                 sonoma:        "5f24497cd78557437533160947f715b01ba31fd128e890900e957eca999a25ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66278ee1f9af5a00b9cd90245ce9190ac74897f4d964fa58aa9f20ed1aa35b85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "358e252cb21347a5d92519bcb0eb7ba256a1f22410f8735efff523bc10a6ba05"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e59c6f11824fead9ebdd454be5ededda07cf453f0b68342353a631ced93122f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efd4ff1cf229885f8f242b90d1d6acf94ce42320249daf7ba6b16e8c1c68998f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4da98b6acae00b4c3387e6c09ac1c73bc481258ecee56b44d0ee17199e94cb13"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2becd76d0713bd7583bba85ed8c3ff866aefdf06c8f0e9d4c402d046c3ec5c78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29c62ae87a2f908f2de1e134fa87e08f943d70719a8cdac8e55496982a91659a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55bd69992e240b0dcfc1e9ee91d5658a7d83100c81b4e260bfd22ea0bfa3f5ae"
   end
 
   depends_on "rust" => :build
