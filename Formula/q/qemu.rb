@@ -4,6 +4,7 @@ class Qemu < Formula
   url "https://download.qemu.org/qemu-11.0.0.tar.xz"
   sha256 "c04ca36012653f32d11c674d370cf52a710e7d3f18c2d8b63e4932052a4854d6"
   license "GPL-2.0-only"
+  revision 1
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
 
