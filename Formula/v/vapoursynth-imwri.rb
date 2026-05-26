@@ -9,13 +9,12 @@ class VapoursynthImwri < Formula
   head "https://github.com/vapoursynth/vs-imwri.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7a8829c333c4d82d927f3cfc9c88a5d162b230924f17003b44b86f8b61966ff8"
-    sha256 cellar: :any, arm64_sequoia: "04dc93bb5a1c4a49b90f29800901f4c6cc00f6a024512e3a94f06864724524df"
-    sha256 cellar: :any, arm64_sonoma:  "90d9c3dbeceab3b486f1a73273079fff14e4b70ee85e70a766b672ffa25df7f2"
-    sha256 cellar: :any, sonoma:        "11435523067bbf5c1cfd7c9597b1340afe4f34c94c64f8d0667e3d580c84ebe5"
-    sha256               arm64_linux:   "b72bf4ebcdaade6cb9e1ac993c2334fda6aa69b54dab5c5deb58b804fd193d5d"
-    sha256               x86_64_linux:  "21b4c595a5528b6d61eaba2d223e2f51bdf2b69ff50d623a915fc55a98263513"
+    sha256 cellar: :any, arm64_tahoe:   "741d14cb00892c51017db89d9d6282bc27d819cf515f1d438021329a8c953daa"
+    sha256 cellar: :any, arm64_sequoia: "15772647abe3ac7014dd7c172df5bab501c2fd2d77fea844c1a73cae83e41163"
+    sha256 cellar: :any, arm64_sonoma:  "af27a43d46f0b920914e63a0c0c869e33ccad92ceadd6d163ac7d7fb787d5ede"
+    sha256 cellar: :any, sonoma:        "82a3b82baf9bcef234ff74ce531066bc00822cfb15ae9b2731c10c5acf64cb7f"
+    sha256               arm64_linux:   "a6f007ebff290fde0639f18e84209257904caa71ab3b2c637917afef351077be"
+    sha256               x86_64_linux:  "06b8af0cd92ae0c33c058575712a7f4cc37767962ebf3423a25bf20d2a0db6fd"
   end
 
   # "This repository was archived by the owner on Apr 9, 2026"
