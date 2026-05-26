@@ -8,12 +8,12 @@ class Mvtools < Formula
   head "https://github.com/dubhater/vapoursynth-mvtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "14809c01efd7e53351c96d8d1defba2a9325e547fa0db9036d1b6f16ac650f02"
-    sha256 cellar: :any, arm64_sequoia: "a1b4a4b4db3ce08f36b2232cba673af8588b8c5a32d47b1c092a88040358e539"
-    sha256 cellar: :any, arm64_sonoma:  "f6bfb7057960f5aa77cdbbd89acd1dcb97b22625e9dde04194d613796590d381"
-    sha256 cellar: :any, sonoma:        "1c92246993863db2da8f4d30f40c1030a0431dc47386e26f43f583ebde716adc"
-    sha256               arm64_linux:   "efe41d8791343d134a6951a75274e5714baff052ab75863455991ec5aa17fa0c"
-    sha256               x86_64_linux:  "33c670e57b5f02ee2070c48438aea149d0d5162fd8b987e6fa91ea2e1a99f28a"
+    sha256 cellar: :any, arm64_tahoe:   "922c17ab994c1746bab6cadc6ad3c8bd322b1f095d03209693108f9bf1efbb45"
+    sha256 cellar: :any, arm64_sequoia: "3732b0662adf7e50dc1cba54300f446889acdc3de29c2abfebfa6940fb709696"
+    sha256 cellar: :any, arm64_sonoma:  "96eefb764fde2c1e3ddaae8f94d3423045788607600f55f92bcd03516042bf0e"
+    sha256 cellar: :any, sonoma:        "a4248298ad37f853b77433101d0b21efda25bef404a6d8d48a682089245c0628"
+    sha256               arm64_linux:   "547c0ccfe8af8b15ccfef0ae402c287a072a0c463dd570694b138f319db2cc65"
+    sha256               x86_64_linux:  "89a9a36bb67e42393c38bc8d668265a1a3becff37c1681503386805fdac9f2be"
   end
 
   depends_on "meson" => :build
