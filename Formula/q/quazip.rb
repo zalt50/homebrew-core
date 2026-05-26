@@ -1,8 +1,8 @@
 class Quazip < Formula
   desc "C++ wrapper over Gilles Vollant's ZIP/UNZIP package"
   homepage "https://github.com/stachenov/quazip/"
-  url "https://github.com/stachenov/quazip/archive/refs/tags/v1.5.tar.gz"
-  sha256 "405b72b6e76c8987ff41a762523b8f64876ba406d8a831d268ee0b63f1369582"
+  url "https://github.com/stachenov/quazip/archive/refs/tags/v1.6.tar.gz"
+  sha256 "886126d2b1f803c9699af9d78bc7643e8268f3621f1aaa58e76f7a486161156d"
   license "LGPL-2.1-only"
 
   bottle do
@@ -24,6 +24,13 @@ class Quazip < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Fix package version
+  # https://github.com/stachenov/quazip/pull/251
+  patch do
+    url "https://github.com/stachenov/quazip/commit/67e1c4646862994505326a8cdd84178c6902757d.patch?full_index=1"
+    sha256 "2f0efbc5a04d8f15a8e040309e0b29102247e96465e2f0c46f4c386f11ee7966"
   end
 
   def install
