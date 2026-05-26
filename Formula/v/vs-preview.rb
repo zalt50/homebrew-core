@@ -17,6 +17,10 @@ class VsPreview < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7606801d7145e257743999ae28282c5aaba2ccd6a337b17ef63524f9905ccae8"
   end
 
+  # "This repository was archived by the owner on May 13, 2026"
+  deprecate! date: "2026-05-25", because: :repo_archived
+  disable! date: "2027-05-25", because: :repo_archived
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "jpeg" => :build
@@ -33,6 +37,7 @@ class VsPreview < Formula
   depends_on "vapoursynth"
 
   pypi_packages exclude_packages: %w[certifi matplotlib numpy pillow pyqt6 vapoursynth]
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
     sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
