@@ -1,10 +1,9 @@
 class Ncnn < Formula
   desc "High-performance neural network inference framework"
   homepage "https://github.com/Tencent/ncnn"
-  url "https://github.com/Tencent/ncnn/archive/refs/tags/20260113.tar.gz"
-  sha256 "2fdc5c6e37f8552921a9daad498a1be54a6fa6edd32c1a9e3030b27fab253b47"
+  url "https://github.com/Tencent/ncnn/archive/refs/tags/20260526.tar.gz"
+  sha256 "da1ade826bc22858a9fb87ae052789bbd614d042b3ec2c22e6544ca83db6bc04"
   license "BSD-3-Clause"
-  revision 5
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
   bottle do
@@ -53,6 +52,17 @@ class Ncnn < Formula
         -DVulkan_INCLUDE_DIR=#{Formula["molten-vk"].opt_include}
         -DVulkan_LIBRARY=#{Formula["molten-vk"].opt_lib/shared_library("libMoltenVK")}
       ]
+
+      # Apple Clang 16 crashes compiling AVX-VNNI(-INT8) and AVX-512(BF16/FP16) intrinsics.
+      # No Intel Mac CPU supports these extensions anyway.
+      if Hardware::CPU.intel?
+        args += %w[
+          -DNCNN_AVXVNNI=OFF
+          -DNCNN_AVXNECONVERT=OFF
+          -DNCNN_AVX512BF16=OFF
+          -DNCNN_AVX512FP16=OFF
+        ]
+      end
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
