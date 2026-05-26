@@ -71,21 +71,21 @@ class Vapoursynth < Formula
   def caveats
     <<~EOS
       This formula does not contain optional filters that require extra dependencies.
-      To use vapoursynth.core.sub, execute:
-        brew install vapoursynth-sub
+      To use vapoursynth.core.bs, execute:
+        brew install vapoursynth-bestsource
       To use vapoursynth.core.ocr, execute:
         brew install vapoursynth-ocr
-      To use vapoursynth.core.imwri, execute:
-        brew install vapoursynth-imwri
-      To use vapoursynth.core.ffms2, execute the following:
+      To use vapoursynth.core.sub, execute:
+        brew install vapoursynth-sub
+      To use vapoursynth.core.ffms2, execute:
         brew install ffms2
       For more information regarding plugins, please visit:
-        http://www.vapoursynth.com/doc/plugins.html
+        https://www.vapoursynth.com/doc/installation.html#plugins-and-scripts
     EOS
   end
 
   test do
-    system Formula["python@3.14"].opt_bin/"python3.14", "-c", "import vapoursynth"
+    system python3, "-c", "import vapoursynth"
     system bin/"vspipe", "--version"
   end
 end
