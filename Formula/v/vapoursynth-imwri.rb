@@ -4,7 +4,7 @@ class VapoursynthImwri < Formula
   url "https://github.com/vapoursynth/vs-imwri/archive/refs/tags/R2.tar.gz"
   sha256 "f4d2965d32877005d0709bd8339828f951885a0cb51e0c006d123ede0b74307b"
   license "LGPL-2.1-or-later"
-  revision 3
+  revision 4
   version_scheme 1
   head "https://github.com/vapoursynth/vs-imwri.git", branch: "master"
 
@@ -28,6 +28,7 @@ class VapoursynthImwri < Formula
 
   depends_on "imagemagick"
   depends_on "libheif"
+  depends_on "python@3.14"
   depends_on "vapoursynth"
 
   on_macos do
@@ -35,12 +36,14 @@ class VapoursynthImwri < Formula
     depends_on "libtiff"
   end
 
+  def python3 = "python3.14"
+
   def install
     # Upstream build system wants to install directly into vapoursynth's libdir and does not respect
     # prefix, but we want it in a Cellar location instead.
     inreplace "meson.build",
               "install_dir = vapoursynth_dep.get_variable(pkgconfig: 'libdir') / 'vapoursynth'",
-              "install_dir = '#{lib}/vapoursynth'"
+              "install_dir = '#{prefix/Language::Python.site_packages(python3)}/vapoursynth/plugins'"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -48,10 +51,6 @@ class VapoursynthImwri < Formula
   end
 
   test do
-    python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
-                                   .to_formula
-                                   .opt_libexec/"bin/python"
-    system python, "-c", "from vapoursynth import core; core.imwri"
+    system python3, "-c", "from vapoursynth import core; core.imwri"
   end
 end
