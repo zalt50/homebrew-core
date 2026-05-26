@@ -1,10 +1,9 @@
 class Libfreehand < Formula
   desc "Interpret and import Aldus/Macromedia/Adobe FreeHand documents"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libfreehand"
-  url "https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.2.tar.xz"
-  sha256 "0e422d1564a6dbf22a9af598535425271e583514c0f7ba7d9091676420de34ac"
+  url "https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.3.tar.xz"
+  sha256 "a431d78767e5aa27ade7c6d1b7a11a9f1848cb4b9260bf0a6a44689553ecccfe"
   license "MPL-2.0"
-  revision 5
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -31,12 +30,6 @@ class Libfreehand < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # remove with version >=0.1.3
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libfreehand/0.1.2.patch"
-    sha256 "abfa28461b313ccf3c59ce35d0a89d0d76c60dd2a14028b8fea66e411983160e"
   end
 
   def install
