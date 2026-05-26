@@ -24,12 +24,12 @@ class Vapoursynth < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "badc56f5fb9d2c6c5963df0f619b08c74b098d1835126f8cd9c1b15fcce33aee"
-    sha256 cellar: :any,                 arm64_sequoia: "3af090044e6962bdcc19c4e92dd724d1ec07cb6bc3e958721d2f63dcab766cf3"
-    sha256 cellar: :any,                 arm64_sonoma:  "bdab1c52e43ec390ca27d76f07b1f43967b0f091c09da17e756e81bb879cd350"
-    sha256 cellar: :any,                 sonoma:        "bd2188a75e9cd09589e746facd492c5ff8342fbffc71e7f6aebda2b74bb523a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca5e6a5ecdb6203b2979ab67a27bcc400fe4baffc42459346e5d83c2f187696a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a020d5253bc39fbe0f077128478632d24ab5d19e375e94a1d8ed08583558c0df"
+    sha256 cellar: :any,                 arm64_tahoe:   "f41497f7d9125d46e2a1107703c7ad0b50c525bfe35e91852ae662924bde8530"
+    sha256 cellar: :any,                 arm64_sequoia: "63c23ce0bba6205dc776841f3cd04a32eac7ea5c50c43f750fc95b041536ec57"
+    sha256 cellar: :any,                 arm64_sonoma:  "c560b8e6c2ac6c98311d70d503fea75992c63b77ed1acf873f2a5116c58a0a1f"
+    sha256 cellar: :any,                 sonoma:        "e8f82e6847aa3269a7ca164deb18e2b716a5542b683a63ae9f74c7ac52f39986"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "381d6e92a08cccc4ea948ecc5a17b1dd462a16914856e1db6a8d59ffee7b150f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fccb9b37413710801eaaab943b634c008026748584a50c327362b2810498c13"
   end
 
   depends_on "ninja" => :build
