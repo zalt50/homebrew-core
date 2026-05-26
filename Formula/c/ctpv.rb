@@ -4,6 +4,7 @@ class Ctpv < Formula
   url "https://github.com/NikitaIvanovV/ctpv/archive/refs/tags/v1.1.tar.gz"
   sha256 "29e458fbc822e960f052b47a1550cb149c28768615cc2dddf21facc5c86f7463"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "891ba106991bf7d6a64f1216540cb3332c5eed558e8b7c30733d1d47b766d5dc"
@@ -21,7 +22,7 @@ class Ctpv < Formula
   end
 
   depends_on "libmagic"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   fails_with :clang do
     build 1300
@@ -37,7 +38,7 @@ class Ctpv < Formula
 
   test do
     file = test_fixtures("test.diff")
-    output = shell_output("#{bin}/ctpv #{file}")
+    output = shell_output("#{bin}/ctpv #{file}").gsub(/\e\[[\d;]*m/, "")
     assert_match shell_output("cat #{file}"), output
   end
 end
