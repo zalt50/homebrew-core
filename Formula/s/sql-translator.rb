@@ -1,10 +1,9 @@
 class SqlTranslator < Formula
   desc "Manipulate structured data definitions (SQL and more)"
   homepage "https://github.com/dbsrgits/sql-translator/"
-  url "https://cpan.metacpan.org/authors/id/I/IL/ILMARI/SQL-Translator-1.62.tar.gz"
-  sha256 "0acd4ff9ac3a2f8d5d67199aac02cdc127e03888e479c51c7bbdc21b85c1ce24"
+  url "https://cpan.metacpan.org/authors/id/V/VE/VEESH/SQL-Translator-1.66.tar.gz"
+  sha256 "f7ff7e369d8293a394cb3783b54b745e7faf44422e8a83bfcc359378a6e56145"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 4
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6619655ae2fdbbcc5c2213ab55e2ffd0f45d964cf1f9eb1bef7db81e87e76b4e"
@@ -72,8 +71,8 @@ class SqlTranslator < Formula
   end
 
   resource "File::ShareDir::Install" do
-    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.13.tar.gz"
-    sha256 "45befdf0d95cbefe7c25a1daf293d85f780d6d2576146546e6828aad26e580f9"
+    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.14.tar.gz"
+    sha256 "8f9533b198f2d4a9a5288cbc7d224f7679ad05a7a8573745599789428bc5aea0"
   end
 
   resource "Package::Variant" do
