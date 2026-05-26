@@ -4,6 +4,7 @@ class Mvtools < Formula
   url "https://github.com/dubhater/vapoursynth-mvtools/archive/refs/tags/v27.tar.gz"
   sha256 "b3b93ae7243d91d058a2b101ca725b949350b3edf20c080a8735ab76993c9df8"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/dubhater/vapoursynth-mvtools.git", branch: "master"
 
   bottle do
@@ -20,46 +21,29 @@ class Mvtools < Formula
   depends_on "pkgconf" => :build
 
   depends_on "fftw"
+  depends_on "python@3.14"
   depends_on "vapoursynth"
 
   on_intel do
     depends_on "nasm" => :build
   end
 
-  def install
-    # Replace vendored path to homebrew formula path
-    inreplace "meson.build" do |s|
-      s.gsub!(/^incdir = include_directories\(.*?^\)/m,
-        "incdir = include_directories('#{Formula["vapoursynth"].opt_include}/vapoursynth')")
-      s.gsub! "py.get_install_dir() / 'vapoursynth/plugins'", "'#{lib}'"
-    end
+  def python3 = "python3.14"
 
-    system "meson", "setup", "build", *std_meson_args
+  def install
+    # Work around Homebrew's python prefix patch
+    args = %W[-Dpython.platlibdir=#{prefix/Language::Python.site_packages(python3)}]
+
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-
-    # Create a symlink for the old library name for compatibility
-    ln_sf lib/shared_library("mvtools"), lib/shared_library("libmvtools")
-  end
-
-  def caveats
-    <<~EOS
-      MVTools will not be autoloaded in your VapourSynth scripts. To use it
-      use the following code in your scripts:
-
-        vs.core.std.LoadPlugin(path="#{HOMEBREW_PREFIX}/lib/#{shared_library("libmvtools")}")
-    EOS
   end
 
   test do
     script = <<~PYTHON.split("\n").join(";")
       import vapoursynth as vs
-      vs.core.std.LoadPlugin(path="#{lib/shared_library("libmvtools")}")
+      vs.core.mv.Super(vs.core.std.BlankClip(format=vs.GRAY8))
     PYTHON
-    python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
-                                   .to_formula
-                                   .opt_libexec/"bin/python"
-    system python, "-c", script
+    system python3, "-c", script
   end
 end
