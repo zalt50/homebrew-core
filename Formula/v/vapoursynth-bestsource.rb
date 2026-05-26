@@ -37,6 +37,8 @@ class VapoursynthBestsource < Formula
     # Work around Homebrew's python prefix patch
     args = %W[-Dpython.platlibdir=#{prefix/Language::Python.site_packages(python3)}]
 
+    args << "--force-fallback-for=avisynthplus,libp2p" if build.head?
+
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
