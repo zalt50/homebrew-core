@@ -62,6 +62,8 @@ class LlamaCpp < Formula
     system "cmake", "--build", "build"
     system "./build/test-sampling"
 
+    assert_match "Available commands", shell_output("#{bin}/llama 2>&1")
+
     # The test below is flaky on slower hardware.
     return if OS.mac? && Hardware::CPU.intel? && MacOS.version <= :monterey
 
