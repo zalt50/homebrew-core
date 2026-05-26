@@ -1,8 +1,8 @@
 class Slirp4netns < Formula
   desc "User-mode networking for unprivileged network namespaces"
   homepage "https://github.com/rootless-containers/slirp4netns"
-  url "https://github.com/rootless-containers/slirp4netns/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "8d24539967850bada944d56459eb9e9167357d57b39e864d95ed7d6c0dd0298d"
+  url "https://github.com/rootless-containers/slirp4netns/archive/refs/tags/v1.3.4.tar.gz"
+  sha256 "c8e445deded09c5e777af3c599f808b3d0cbfeab482d9e76746df0926234200d"
   license "GPL-2.0-or-later"
 
   bottle do
