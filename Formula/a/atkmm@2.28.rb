@@ -1,8 +1,8 @@
 class AtkmmAT228 < Formula
   desc "Official C++ interface for the ATK accessibility toolkit library"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.4.tar.xz"
-  sha256 "0a142a8128f83c001efb8014ee463e9a766054ef84686af953135e04d28fdab3"
+  url "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.5.tar.xz"
+  sha256 "ae449192a582a2582a95e0602b15d792bbd639e836339b81ef916aa87540ac5c"
   license "LGPL-2.1-or-later"
 
   livecheck do
