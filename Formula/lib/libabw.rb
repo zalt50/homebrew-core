@@ -1,10 +1,9 @@
 class Libabw < Formula
   desc "Library for parsing AbiWord documents"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libabw"
-  url "https://dev-www.libreoffice.org/src/libabw/libabw-0.1.3.tar.xz"
-  sha256 "e763a9dc21c3d2667402d66e202e3f8ef4db51b34b79ef41f56cacb86dcd6eed"
+  url "https://dev-www.libreoffice.org/src/libabw/libabw-0.1.4.tar.xz"
+  sha256 "fa2685a3440da6e03a66a778480d93cb95f6064e4541e58e37397680760fd6a0"
   license "MPL-2.0"
-  revision 1
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/libabw/"
