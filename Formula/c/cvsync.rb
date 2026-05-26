@@ -4,6 +4,7 @@ class Cvsync < Formula
   url "https://www.cvsync.org/dist/cvsync-0.24.20.tar.bz2"
   sha256 "38fe7ed5e5b8e93858cf59484e0c3e661a52fb82177f73ce29e6170d3069a2a5"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -19,7 +20,7 @@ class Cvsync < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "34a2636df942bc8fabaf8112d319f14b037e04dd3a43c9f8948ca0be77cca8fd"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
