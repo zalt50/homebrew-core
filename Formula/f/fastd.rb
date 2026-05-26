@@ -2,6 +2,7 @@ class Fastd < Formula
   desc "Fast and Secure Tunnelling Daemon"
   homepage "https://github.com/neocturne/fastd"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/neocturne/fastd.git", branch: "main"
 
   stable do
@@ -33,7 +34,7 @@ class Fastd < Formula
   depends_on "json-c"
   depends_on "libsodium"
   depends_on "libuecc"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "libcap"
