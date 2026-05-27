@@ -1,8 +1,8 @@
 class Sherif < Formula
   desc "Opinionated, zero-config linter for JavaScript monorepos"
   homepage "https://github.com/QuiiBz/sherif"
-  url "https://registry.npmjs.org/sherif/-/sherif-1.11.1.tgz"
-  sha256 "7e8d671ab645e426fd57ed759b74af27238d93954c0a34ff7c645b39ed76af22"
+  url "https://github.com/QuiiBz/sherif/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "4069bb60326caf7d50d06d15e85e838707206f061319461867101046e4fe01b8"
   license "MIT"
 
   bottle do
@@ -14,11 +14,10 @@ class Sherif < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8462088add169c0f5395acd404a7a56bdc12393938c7a479d47ce635ef60a914"
   end
 
-  depends_on "node"
+  depends_on "rust" => :build
 
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
