@@ -1,8 +1,8 @@
 class PandocPlot < Formula
   desc "Render and include figures in Pandoc documents using many plotting toolkits"
   homepage "https://github.com/LaurentRDC/pandoc-plot"
-  url "https://hackage.haskell.org/package/pandoc-plot-1.9.1/pandoc-plot-1.9.1.tar.gz"
-  sha256 "a34a08faf483ed7c9c5e7c439ac275077b9262bb3384d1f551e47d6aa59dd434"
+  url "https://hackage.haskell.org/package/pandoc-plot-1.9.2/pandoc-plot-1.9.2.tar.gz"
+  sha256 "3e94528e2fd42029054addaea25ff09ee55b78b4f1b0e610ede6f04eb859aead"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -63,9 +63,7 @@ class PandocPlot < Formula
 
     expected_html_2 = <<~HTML
       <h1 id="repeat-the-same-thing">repeat the same thing</h1>
-      <figure>
       <img src="#{filename}" />
-      </figure>
     HTML
 
     assert_equal expected_html_2, output_html_2
