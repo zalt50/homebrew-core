@@ -1,17 +1,17 @@
 class Quazip < Formula
   desc "C++ wrapper over Gilles Vollant's ZIP/UNZIP package"
   homepage "https://github.com/stachenov/quazip/"
-  url "https://github.com/stachenov/quazip/archive/refs/tags/v1.6.tar.gz"
-  sha256 "886126d2b1f803c9699af9d78bc7643e8268f3621f1aaa58e76f7a486161156d"
+  url "https://github.com/stachenov/quazip/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "61c73926d4e98bf4c38becc15ba10437ab2af9e746a3982b86f7d720bd5823b4"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "411fb083fb7b751dfbe6fc4bb99cf1602e1625340cdb444f22099e406253b74a"
-    sha256 cellar: :any,                 arm64_sequoia: "2ec34cc23169507cb23f4a5750228b5a3f556e1e2f869dbfb3ab29b40dc3ad0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4bd7cb4a5a1403dbf30859bdb35dd1e445e6a2e83497097789dab5e4fc14e7e"
-    sha256 cellar: :any,                 sonoma:        "26a446cc2cc8cb39f200e126c20f4087e02cfb7e8c35e18a933507395694ab58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25555530fbe50636f82c9b248c50ce4c582a602cfb76bd5c3f5f991d0fab39e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0afa1b2854a6e96b3bcdf24cc1603511c480e9a7e428029889d0affecc490926"
+    sha256 cellar: :any,                 arm64_tahoe:   "118ae1186d4190a5766348243b7c2656b4b2875c63e3793b9fd52904d0688a82"
+    sha256 cellar: :any,                 arm64_sequoia: "81d3a6092c4c4d6766619abf7ac6ceacdfa64f7e46da720abb8860d890b528d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "41d9ec180841dffccfef13497c12c3cfe4080121d19b4451f7549df935074d31"
+    sha256 cellar: :any,                 sonoma:        "28492619487288526e9dae263354cbea43ed299ca505a5fe817a27bb11b7448c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47759e5395f3d0eca9302885d4039cc6d023e0a79e0497ee1dd93a983b5acb2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fe359ef7e9b9e3f425d64f760302eb43249f87cb557cff595b726e9c1352f41"
   end
 
   depends_on "cmake" => :build
@@ -23,13 +23,6 @@ class Quazip < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix package version
-  # https://github.com/stachenov/quazip/pull/251
-  patch do
-    url "https://github.com/stachenov/quazip/commit/67e1c4646862994505326a8cdd84178c6902757d.patch?full_index=1"
-    sha256 "2f0efbc5a04d8f15a8e040309e0b29102247e96465e2f0c46f4c386f11ee7966"
   end
 
   def install
