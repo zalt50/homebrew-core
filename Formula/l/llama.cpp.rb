@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggml-org/llama.cpp"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b9360",
-      revision: "6b4e4bd582e457a47ee7cd498058495f47fee228"
+      tag:      "b9370",
+      revision: "aa50b2c2ae91326d5aad956ceeb015d1d48e626b"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
@@ -20,12 +20,12 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "477be8a015b846607cb14fb5a82bb59e95f0858fe557c4fbfb825077aee937a0"
-    sha256 cellar: :any,                 arm64_sequoia: "af71a9a787a450aae75d4ef4045d8fb13a9961ec99fd3710e01428fce4aa7557"
-    sha256 cellar: :any,                 arm64_sonoma:  "a8a0e847d3b0d89823fefa216a3f09d714919320f788542e87adf1c9d3ec3f58"
-    sha256 cellar: :any,                 sonoma:        "5eaeb860c28915dcf224010533ac288dd48f6cbd5461618709df0b7462b1faf4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ffdf0bd58344888afc970de5b0550401114031be564f66b39e50a7235e0b90e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7150a565e84ecce5c4a319503c78d6b1522dc2fa37c3e174a094eb9c0823049a"
+    sha256 cellar: :any,                 arm64_tahoe:   "c1b6d0ae96c89192281a59a5bd154a379f1a42087347ebdf5d93e3826a5af27b"
+    sha256 cellar: :any,                 arm64_sequoia: "7af2a497d784e35f992539c7f796a6eb3a645c6888fcbb0d3dcc055baec50943"
+    sha256 cellar: :any,                 arm64_sonoma:  "a56e34173caa7ef4b1a1da9a67771e4fac15802cb7750dea4a6accd00f22066e"
+    sha256 cellar: :any,                 sonoma:        "2548196fcc84c9f55097a0a64d159e856d3113cec83f9e7a4027f41c1802730d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa6eadb49bdb9355ec8713c7cd278c48757715a4299e40e48e6c80ca3e6699b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df56e49d5c5ae48193d03e5ba136dd5629994530c3c20fe3b0d8cb7ddd18e080"
   end
 
   depends_on "cmake" => [:build, :test]
