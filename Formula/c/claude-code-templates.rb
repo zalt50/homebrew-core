@@ -26,12 +26,8 @@ class ClaudeCodeTemplates < Formula
     system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    # Remove incompatible pre-built binaries.
-    libexec.glob("lib/node_modules/claude-code-templates/node_modules/{bufferutil}/prebuilds/*").each do |dir|
-      rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
-    end
+    # Remove pre-built binaries which were source-built via script
+    rm_r libexec/"lib/node_modules/claude-code-templates/node_modules/bufferutil/prebuilds"
   end
 
   test do
