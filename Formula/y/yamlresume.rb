@@ -16,15 +16,21 @@ class Yamlresume < Formula
 
   depends_on "node"
 
+  on_linux do
+    depends_on "fontconfig" # for font-list to run fc-list
+  end
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     return unless OS.mac?
 
-    node_modules = libexec/"lib/node_modules/yamlresume/node_modules"
-    %w[fontlist fontlist2].each do |file|
-      deuniversalize_machos node_modules/"font-list/libs/darwin"/file
+    # Replace prebuilt binary by compiling based on upstream build script:
+    # https://github.com/oldj/node-font-list/blob/master/scripts/build-darwin.sh
+    cd libexec/"lib/node_modules/yamlresume/node_modules/font-list/libs/darwin" do
+      rm("fontlist")
+      system ENV.cc, "fontlist.m", "-framework", "AppKit", "-framework", "Foundation", "-o", "fontlist"
     end
   end
 
