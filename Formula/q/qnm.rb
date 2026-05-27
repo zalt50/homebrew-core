@@ -21,12 +21,15 @@ class Qnm < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    # Build an `:all` bottle
+    inreplace libexec/"lib/node_modules/qnm/dist/xdg-open", "/usr/local", HOMEBREW_PREFIX
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/qnm --version")
 
-    (testpath/"package.json").write <<~EOS
+    (testpath/"package.json").write <<~JSON
       {
         "name": "test",
         "version": "0.0.1",
@@ -34,15 +37,15 @@ class Qnm < Formula
           "lodash": "^4.17.21"
         }
       }
-    EOS
+    JSON
 
     # Simulate a node_modules directory with lodash to avoid `npm install`
-    (testpath/"node_modules/lodash/package.json").write <<~EOS
+    (testpath/"node_modules/lodash/package.json").write <<~JSON
       {
         "name": "lodash",
         "version": "4.17.21"
       }
-    EOS
+    JSON
 
     # Disable remote fetch with `--no-remote`
     output = shell_output("#{bin}/qnm --no-remote lodash")
