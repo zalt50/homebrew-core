@@ -1,8 +1,8 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "3a0563db82a3c574a26c910a7c61617ca3d80864715b6f5572efe09d7e95ec8f"
+  url "https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "4f83fb17d6ce0796bf50b19ee4919806d55cdb66cfc7f7b5b5893d4f8978bfa1"
   license "AGPL-3.0-or-later"
   head "https://github.com/ogulcancelik/herdr.git", branch: "master"
 
@@ -20,15 +20,6 @@ class Herdr < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["zig@0.15"].opt_bin
-
-    # Avoid building the unused macOS xcframework for the vendored terminal library.
-    # upstream pr, https://github.com/ogulcancelik/herdr/pull/286
-    inreplace "build.rs",
-      '.arg(format!("-Dversion-string={version_string}"))',
-      <<~RUST
-        .arg(format!("-Dversion-string={version_string}"))
-        .arg("-Demit-xcframework=false")
-      RUST
 
     system "cargo", "install", *std_cargo_args
   end
