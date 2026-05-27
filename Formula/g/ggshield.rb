@@ -9,12 +9,12 @@ class Ggshield < Formula
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "37ba2a3365be816071a1cedb960b39f83329cadc95858ea263e343fcf9b70446"
-    sha256 cellar: :any,                 arm64_sequoia: "dfe148fb813d80e4fff6c4edc09754ddaed72cf9840a2cebcb2bd54d06bacc36"
-    sha256 cellar: :any,                 arm64_sonoma:  "585819b4cca639400757c1244f08bc4e3f06c3920ac8d6e2f11125cdb6332857"
-    sha256 cellar: :any,                 sonoma:        "30771eb080f1950ca3afc5d0215b29d60e398fc4caca9dedfa1c02d37a00c70d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4081a14d289f6cce1bc56291398fae2a966191d2128d984e0f09339e435c9c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb5ab69cac50e9a8fb21297aac01cf7529c5badfb1b43c41245f7c5685f036c9"
+    sha256 cellar: :any,                 arm64_tahoe:   "f08899e87d30880f2287ff60660dcebd3b2bc7ffea0ed4db0328fca468748722"
+    sha256 cellar: :any,                 arm64_sequoia: "dbcc1c09a98bc911df6f65d43518e86a9714e5d534071f6312cc2c1b3b63b49d"
+    sha256 cellar: :any,                 arm64_sonoma:  "72d7094668824cd9e5d9676cd1edb1eda7470d857f4991a8e7e96917b50855ff"
+    sha256 cellar: :any,                 sonoma:        "3caf6b2ba40c020accd49c97f2cd94e5c4623809056b37623f9210d7f863416b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "143dc26c62541bc06d2da82efdb4298122c5f197734e96660dad7cbd0d1751c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8099c57e2ce4d94c43bdf4f86736cd7aa9983fdd6418b8354c8d4b99cc0b4504"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
