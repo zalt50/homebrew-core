@@ -2,7 +2,7 @@
   "colordiff",
   "cpanminus",
   "davmail",
-  "goenv",
+  "goenv@2",
   "luarocks",
   "meson",
   "mockserver",
