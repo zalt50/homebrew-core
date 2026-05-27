@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://github.com/github/spec-kit/archive/refs/tags/v0.8.14.tar.gz"
-  sha256 "efb1859885c721eec34fca585f7e1af00ad2d9f098e9eca5d163807792856a3a"
+  url "https://github.com/github/spec-kit/archive/refs/tags/v0.8.15.tar.gz"
+  sha256 "716f51c3ffb14bb4aff5c93b125459c48f0ee42bdc1dd3887e8de2a15629408f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7b3949ff23966b6b722ba2b07e14936554c4ef50a7e008310babf4a4c515c192"
-    sha256 cellar: :any,                 arm64_sequoia: "0da6ef3469c10f8ced35c986e7c9ef79c61fdb1b55c40c10ce3e7312f61cd72c"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ed4367e5ebfc0fc4e0bc8a71c760511daeb109b15f105c005955b9f41253445"
-    sha256 cellar: :any,                 sonoma:        "d2effb8c676ff6bdd147f973d74d5559d19ef816d63ce95c7812f67f45edae78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0b6d934559ba273c904ea0164e7290980cd46bdf0691278ad45533eef97a4fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "548d9afb7d45f66ad15e9f8fa97255e2adda98c271841e7997916dc0d2e30e1e"
+    sha256 cellar: :any,                 arm64_tahoe:   "840dcfdcafe68f11179f65b939bb2e42590350f9a4fed84946aa1933c1d4bcc6"
+    sha256 cellar: :any,                 arm64_sequoia: "be4174430e7e758fcbee80950c131cdbd2db57bbd70e0aea25669341543effb4"
+    sha256 cellar: :any,                 arm64_sonoma:  "019fe4c258a1b66fa499cfd04a75d113c0a0a4ee4755db69bb80a3c3a3dd3b98"
+    sha256 cellar: :any,                 sonoma:        "72ced7eb9f4ccebb3824c1a0663265e86d4a2adf3088a3ce56095d7b279dd2e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93479dfe8efc8f3e98badf0ab24e0a2e463761fe57f042b96edc1c9e9342a3b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67c0d073b1b3efe9b2b0eb451476cd962f8d8507163caf348b73fc39422fbd43"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,8 +28,8 @@ class Specify < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "json5" do
@@ -88,8 +88,8 @@ class Specify < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz"
-    sha256 "9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"
+    url "https://files.pythonhosted.org/packages/81/db/25a5e308af68fda1cc49a4423eded2a7cad1381fbc1f7a4d5502d6fe26c6/typer-0.26.0.tar.gz"
+    sha256 "08177aa85fd81ceb6e8f7cb879cf22dbaa81f98c02b7d570acf112513d2aa66f"
   end
 
   def install
