@@ -9,6 +9,7 @@
   "opendoor",
   "phpmyadmin",
   "python-setuptools",
+  "qnm",
   "rabbitmq",
   "ruby-install",
   "sqlite-utils",
