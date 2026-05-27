@@ -10,12 +10,12 @@ class Mesheryctl < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de84a4702e06ed7264fec75dc1123408e196e30cb6fc0073557a63f9d0c602fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4a2363e79879fd3057722364f16f957f6a31cc574192378a4fe6dd475f60dc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5c40715a24cf52bf89bc309603c3ead2202f0ef3e1bed9938372ef05332e9e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "532aed90d8b06da84e1722122346295cdbd2142a5ef1c052dc00a2748c74eb7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7055354d19d629e9a0cec844bab9f808fd21d58485fcc4f0a509405f6430a104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0a0a9f115f9e7bf6c6410067376d342ca3ddbb5ec0a58e6a2f4d9e1b17ad643"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fb9a04fe8ce2115ac914d64b79187c3338cadf8580153eab4b65ee221251d8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a34782dd9657efb07b91af13cfffb358ab98635a07c44cf62c0d4b10abcb8070"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dabbe890528c24fdcca1cacfabe7b868c2914cf8901df4b31e476cb5d93daec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f1ea7374eef7c7a36a6588700eba7f23555edc111e58920f112bd42aba780ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eafe643bc3795c4a0ce2cfca3497f49f88b17954d8fbb61ca73fd1778c91ae0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2775c12b076517a85fc01e8ebb7224207bb9c8e554d5a2611fd924e8fd68682c"
   end
 
   depends_on "go" => :build
