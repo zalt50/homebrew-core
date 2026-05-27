@@ -4,7 +4,7 @@ class Rustup < Formula
   url "https://github.com/rust-lang/rustup/archive/refs/tags/1.29.0.tar.gz"
   sha256 "de73d1a62f4d5409a2f6bdb1c523d8dc08aa6d9d63588db62493c19ca8f8bf55"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
@@ -48,17 +48,21 @@ class Rustup < Formula
     pkgetc.install "settings.toml"
     bin.env_script_all_files libexec/"bin", RUSTUP_OVERRIDE_UNIX_FALLBACK_SETTINGS: pkgetc/"settings.toml"
 
-    generate_completions_from_executable(libexec/"bin/rustup", "completions")
-    [:zsh, :bash].each do |shell|
+    generate_completions_from_executable(libexec/"bin/rustup", "completions", shells: [:bash, :zsh, :fish, :pwsh])
+    [:bash, :zsh].each do |shell|
       generate_completions_from_executable(
-        libexec/"bin/rustup", "completions", shell.to_s, "cargo", shells: [shell], base_name: "cargo",
-        shell_parameter_format: :none
+        libexec/"bin/rustup", "completions", shell.to_s, "cargo",
+        shells: [shell], base_name: "cargo", shell_parameter_format: :none
       )
     end
   end
 
   def post_install
     (HOMEBREW_PREFIX/"bin").install_symlink bin/"rustup"
+    (HOMEBREW_PREFIX/"etc/bash_completion.d").install_symlink bash_completion/"rustup"
+    (HOMEBREW_PREFIX/"share/zsh/site-functions").install_symlink zsh_completion/"_rustup"
+    (HOMEBREW_PREFIX/"share/fish/vendor_completions.d").install_symlink fish_completion/"rustup.fish"
+    (HOMEBREW_PREFIX/"share/pwsh/completions").install_symlink pwsh_completion/"_rustup.ps1"
 
     # Remove the old Homebrew-created symlink during upgrades, but leave any
     # user-managed `rustup-init` file alone.
