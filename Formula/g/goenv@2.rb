@@ -10,6 +10,10 @@ class GoenvAT2 < Formula
     regex(/^v?(2\.\d+\.\d+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "5369ded9060184d95823f3ed663c1bca51d4a1ce5128c9430c96eec7b703256a"
+  end
+
   keg_only :versioned_formula
 
   # Goenv version 3.0.0 was released 2026-05-04
