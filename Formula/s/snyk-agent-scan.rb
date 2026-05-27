@@ -3,10 +3,9 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/15/27/fecd79eb70b9cabb28139b3030d28783ca4f48c1a985345ec370f0a7c593/snyk_agent_scan-0.5.4.tar.gz"
-  sha256 "9c9c8f6009883d5480f62b2c9e1f86da3ec1752851f9eb8ac3a2d513a95eee5a"
+  url "https://files.pythonhosted.org/packages/88/73/fd1a3030e410b1a3220469e4ae1f185e4fef0b6c99deadb5510d2e10e1cb/snyk_agent_scan-0.5.5.tar.gz"
+  sha256 "780e8842720664fefc0b4f1b6dd2378b0d655a97dc0321568a09ab66752816ec"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "df88ab1d952d9d0997fb92d78eda48ea7e33048906234b72ebb2d00f0f85a32f"
@@ -217,8 +216,8 @@ class SnykAgentScan < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
-    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
+    url "https://files.pythonhosted.org/packages/95/66/4d20cdf39a8d6a51e663b7038e3b828ff211d3891a43a713fe7e4643f3a8/starlette-1.1.0.tar.gz"
+    sha256 "e83c7fe0ddecd8719c5b840080325aec0260acec86e9832899e377b91d65e90f"
   end
 
   resource "truststore" do
@@ -237,8 +236,8 @@ class SnykAgentScan < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/f6/b1/8e7077a8641086aea449e1b5752a570f1b5906c64e0a33cd6d93b63a066b/uvicorn-0.47.0.tar.gz"
-    sha256 "7c9a0ea1a9414106bbab7324609c162d8fa0cdcdcb703060987269d77c7bb533"
+    url "https://files.pythonhosted.org/packages/e6/bf/f6544ba992ddb9a6077343a576f9844f7f8f06ab819aefd00206e9255f18/uvicorn-0.48.0.tar.gz"
+    sha256 "a5504207195d08c2511bf9125ede5ac4a4b71725d519e758d01dcf0bc2d31c37"
   end
 
   resource "yarl" do
