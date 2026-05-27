@@ -3,8 +3,8 @@ class ErlangAT26 < Formula
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.20/otp_src_26.2.5.20.tar.gz"
-  sha256 "fcb6fd222fe6abd00aa12e7fc41d15c149c44f3b5ac4c98896ce63abcf128db0"
+  url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.21/otp_src_26.2.5.21.tar.gz"
+  sha256 "e1fde86f4e2874d4c136221a34753b5b785d762b910fb3fb35a23a6a7faf0a64"
   license "Apache-2.0"
 
   livecheck do
@@ -23,6 +23,10 @@ class ErlangAT26 < Formula
 
   keg_only :versioned_formula
 
+  # EOL with OTP-29 release
+  deprecate! date: "2026-05-27", because: :unsupported
+  disable! date: "2027-05-27", because: :unsupported
+
   depends_on "openssl@3"
   depends_on "unixodbc"
   depends_on "wxwidgets@3.2" # for GUI apps like observer
@@ -36,8 +40,8 @@ class ErlangAT26 < Formula
   end
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.20/otp_doc_html_26.2.5.20.tar.gz"
-    sha256 "ee288cec98168e684aa245c4085a50e292522025f6cbd63ce382a9c154e79647"
+    url "https://github.com/erlang/otp/releases/download/OTP-26.2.5.21/otp_doc_html_26.2.5.21.tar.gz"
+    sha256 "f403cb0218bbcbc479878fc75c7c61e914c0c867b6eec41cfb46f2178b9e43b1"
 
     livecheck do
       formula :parent
