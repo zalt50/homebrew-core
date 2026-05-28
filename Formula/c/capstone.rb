@@ -1,8 +1,8 @@
 class Capstone < Formula
   desc "Multi-platform, multi-architecture disassembly framework"
   homepage "https://www.capstone-engine.org/"
-  url "https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.8.tar.gz"
-  sha256 "467e128736227a12a2066c562cfe69a2b7c45353fab3f02a0522d9cd62ccf0f6"
+  url "https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.9.tar.gz"
+  sha256 "0619da31af08152600af95c481527ef6d756c0a8404fca7544a4fdf6dfc2c0f9"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/capstone-engine/capstone.git", branch: "next"
