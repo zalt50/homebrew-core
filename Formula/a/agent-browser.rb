@@ -1,8 +1,8 @@
 class AgentBrowser < Formula
   desc "Browser automation CLI for AI agents"
   homepage "https://agent-browser.dev/"
-  url "https://registry.npmjs.org/agent-browser/-/agent-browser-0.27.0.tgz"
-  sha256 "62ef3bc80c75fc68cd70a45ec4ce981a67a4a95737580b67e8a4709afc28d875"
+  url "https://github.com/vercel-labs/agent-browser/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "d4428ba7af210e5816aa72b8ed83a84396755ba94770da7118f611a30fd9286f"
   license "Apache-2.0"
 
   bottle do
@@ -14,28 +14,13 @@ class AgentBrowser < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a58120651050148698a8ce2934587d0838751fb17a4b4e4daf16190bb1d7450"
   end
 
+  depends_on "rust" => :build
   depends_on "node"
 
   def install
+    system "npm", "run", "build:native"
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
-
-    # Remove non-native platform binaries and make native binary executable
-    node_modules = libexec/"lib/node_modules/agent-browser"
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : "arm64"
-    (node_modules/"bin").glob("agent-browser-*").each do |f|
-      if f.basename.to_s == "agent-browser-#{os}-#{arch}"
-        f.chmod 0755
-      else
-        rm f
-      end
-    end
-
-    # Remove non-native prebuilds from dependencies
-    node_modules.glob("node_modules/*/prebuilds/*").each do |prebuild_dir|
-      rm_r(prebuild_dir) if prebuild_dir.basename.to_s != "#{os}-#{arch}"
-    end
   end
 
   def caveats
