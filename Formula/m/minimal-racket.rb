@@ -1,8 +1,8 @@
 class MinimalRacket < Formula
   desc "Modern programming language in the Lisp/Scheme family"
   homepage "https://racket-lang.org/"
-  url "https://mirror.racket-lang.org/installers/9.1/racket-minimal-9.1-src.tgz"
-  sha256 "d68e7f392cc842cf29daee2a8a9297a52881ba280c6a4c6108c02ae8c77357d5"
+  url "https://mirror.racket-lang.org/installers/9.2/racket-minimal-9.2-src.tgz"
+  sha256 "6292636ee48f8473adc99113fca23419164aa02b30fb482001ab99224cf73074"
   license any_of: ["MIT", "Apache-2.0"]
 
   # File links on the download page are created using JavaScript, so we parse
@@ -119,6 +119,7 @@ class MinimalRacket < Formula
         #{version}
       catalogs:
         https://download.racket-lang.org/releases/#{version}/catalog/
+        https://download.rhombus-lang.org/releases/current/catalog/
         https://pkgs.racket-lang.org
         https://planet-compats.racket-lang.org
       default-scope:
