@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.157.0",
-      revision: "caad1d53f48a40fa55cec9e41bf4820f115889b3"
+      tag:      "v1.164.0",
+      revision: "887f1f48a6f35e692870e68651100db7496036cf"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -14,9 +14,6 @@ class Semgrep < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  # see: https://github.com/Homebrew/homebrew-core/pull/277363
-  no_autobump! because: "tags past 1.157.0 includes breaking build changes that is incompatible w/semgrep.rb"
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "a8f7a274d5361dff6d168963aad5f275c40094cb161e03cafcf3e3013894d75f"
