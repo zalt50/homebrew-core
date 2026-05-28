@@ -2,8 +2,8 @@ class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
   # TODO: Switch to npm registry URL when https://github.com/renovatebot/renovate/discussions/42965 is fixed
-  url "https://github.com/renovatebot/renovate/archive/refs/tags/43.197.0.tar.gz"
-  sha256 "bafa88586c1f31baca8f0d1516f5981b3a9ff243b04af93ea398367c216b7fa4"
+  url "https://github.com/renovatebot/renovate/archive/refs/tags/43.198.0.tar.gz"
+  sha256 "89f8699fd7e6ab00d78c370b1cdf89856fc0703494b5da487f3ce0c4634e7ed6"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
