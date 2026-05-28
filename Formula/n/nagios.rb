@@ -1,10 +1,9 @@
 class Nagios < Formula
   desc "Network monitoring and management system"
   homepage "https://www.nagios.org/"
-  url "https://github.com/NagiosEnterprises/nagioscore/releases/download/nagios-4.5.12/nagios-4.5.12.tar.gz"
-  sha256 "9a9fd281ea6ab3d55611efda036ffb9fe76c98423083440900e28012248d5961"
+  url "https://github.com/NagiosEnterprises/nagioscore/releases/download/nagios-4.5.13/nagios-4.5.13.tar.gz"
+  sha256 "43d533d2bb58a81221741ab2f0c27b478fc0a80fb98f83b748ecc56327c68718"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/NagiosEnterprises/nagioscore.git", branch: "master"
 
   bottle do
