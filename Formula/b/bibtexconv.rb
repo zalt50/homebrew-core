@@ -1,8 +1,8 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
   homepage "https://github.com/dreibh/bibtexconv"
-  url "https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-2.2.1.tar.gz"
-  sha256 "6c311b6e4154c9286e43a47a4691efcceb99ffe11a0d0f63a63a8ebbc2023b96"
+  url "https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-2.2.2.tar.gz"
+  sha256 "352fb9757d25ce4b5f1ef3bebe70e55e27d01b78211aa1ad05efea18415d3d09"
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
@@ -41,8 +41,8 @@ class Bibtexconv < Formula
     cp "#{opt_share}/doc/bibtexconv/examples/ExampleReferences.bib", testpath
 
     system bin/"bibtexconv", testpath/"ExampleReferences.bib",
-                             "-export-to-bibtex=UpdatedReferences.bib",
-                             "-check-urls", "-only-check-new-urls",
-                             "-non-interactive"
+                             "--export-to-bibtex", "UpdatedReferences.bib",
+                             "--check-urls", "--only-check-new-urls",
+                             "--non-interactive"
   end
 end
