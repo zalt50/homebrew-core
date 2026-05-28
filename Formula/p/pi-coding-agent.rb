@@ -1,8 +1,8 @@
 class PiCodingAgent < Formula
   desc "AI agent toolkit"
   homepage "https://pi.dev/"
-  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.75.5.tgz"
-  sha256 "88fff74d1fcc93343e839aa885eacb35e88cdaab97dac2636b11becc3b2499fc"
+  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.76.0.tgz"
+  sha256 "68c0866fa36c24adc5ceb66506bb3f429cbeccc4cf876d529b5128a07572a3e2"
   license "MIT"
 
   bottle do
@@ -28,6 +28,11 @@ class PiCodingAgent < Formula
     node_modules.glob("koffi/build/koffi/*").each do |dir|
       basename = dir.basename.to_s
       rm_r(dir) if basename != "#{os}_#{arch}"
+    end
+
+    node_modules.glob("@earendil-works/pi-tui/native/**/prebuilds/*").each do |dir|
+      basename = dir.basename.to_s
+      rm_r(dir) if basename != "#{os}-#{arch}"
     end
   end
 
