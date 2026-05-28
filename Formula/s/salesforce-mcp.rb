@@ -1,8 +1,8 @@
 class SalesforceMcp < Formula
   desc "MCP Server for interacting with Salesforce instances"
   homepage "https://github.com/salesforcecli/mcp"
-  url "https://registry.npmjs.org/@salesforce/mcp/-/mcp-0.30.9.tgz"
-  sha256 "72346ceb7e66f95ab2d61c33c9fbc688a394f0958a2416cdbd92f4dbc761e727"
+  url "https://registry.npmjs.org/@salesforce/mcp/-/mcp-0.30.13.tgz"
+  sha256 "b97b7dfd850fc374fa8b8e4ed04da812f00b6ef1964b3efe1a0935823a974748"
   license "Apache-2.0"
 
   bottle do
@@ -12,8 +12,15 @@ class SalesforceMcp < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    # @salesforce/mcp → mcp-provider-dx-core → @salesforce/agents
+    #   ⮑ nock  (required: ^13.5.6)
+    # The default `std_npm_args` ignores the nested lockfile and resolves `nock@14`,
+    # which is incompatible with the current version of @salesforce/agents.
+    # `npm ci` keeps the locked `nock@13` and never installs `@mswjs/interceptors`.
+    # TODO: check formula works with nock@14 and then recover npm install.
+    system "npm", "ci", "--omit=dev", "--ignore-scripts"
+    libexec.install Dir["*"]
+    (bin/"sf-mcp-server").write_env_script libexec/"bin/run.js", PATH: "#{Formula["node"].opt_bin}:$PATH"
   end
 
   test do
