@@ -3,10 +3,9 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.50.0.tar.gz"
-  sha256 "72d756cd42f2006f9cca65c302d28ab8d5986755c1eafaedfa6cbae898ededa5"
+  url "https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.51.0.tar.gz"
+  sha256 "b13e6463b59a84950cdfe28a65b26e3fdee7dae16835adb46313ccad25adbf42"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -40,13 +39,13 @@ class C7n < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/48/4f/f13d80d377b54dd2973e243e4eb7ce748706cd53876361cc72506006fd8b/boto3-1.43.16.tar.gz"
+    sha256 "6c337bbe608aacc7d335c79e671f0c893870293b74d652f7a7af22ccd0dfef16"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/a1/74/140451a1fe027cb5e387cc7b1ec56224616ca742c330f1492f71c5cba3fb/botocore-1.43.16.tar.gz"
+    sha256 "813dae233d8b365c19aaf7865b32070e34d7e793654881bf86ecbbef3f4ad5c6"
   end
 
   resource "jmespath" do
@@ -80,8 +79,8 @@ class C7n < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
-    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
+    url "https://files.pythonhosted.org/packages/11/b3/bcdc2f58fa92592db511beda154c2c08d28f21f6c4637f06a42a24b10c21/s3transfer-0.17.1.tar.gz"
+    sha256 "042dd5e3b1b512355e35a23f0223e426b7042e80b97830ea2680ddce327fc45e"
   end
 
   resource "six" do
