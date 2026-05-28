@@ -1,8 +1,8 @@
 class Clifm < Formula
   desc "Command-line Interface File Manager"
   homepage "https://github.com/leo-arch/clifm"
-  url "https://github.com/leo-arch/clifm/archive/refs/tags/v1.27.1.tar.gz"
-  sha256 "a35cd1ccbb83f1261c3c5b14b5b4733cf0555be68579b3cb19fa8b36076a5339"
+  url "https://github.com/leo-arch/clifm/archive/refs/tags/v1.28.tar.gz"
+  sha256 "65ac33825fb55d6388c1044572e464a50ad367b607448774fb396d850b7c4420"
   license "GPL-2.0-or-later"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
