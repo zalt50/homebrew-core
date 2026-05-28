@@ -1,8 +1,8 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.61.1.tar.gz"
-  sha256 "2a550c9b609c5eb0e1c2640e8114ac05b94c671803f77e08a9dcdbd66372e2c4"
+  url "https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.62.1.tar.gz"
+  sha256 "198602c75c0d971b56088d6d364aaf9b2fd52bcadcb0e6a8548df0ed43e4dac2"
   license "MIT"
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
@@ -29,11 +29,16 @@ class Lazygit < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/lazygit -v")
+
     system "git", "init", "--initial-branch=main"
 
-    output = shell_output("#{bin}/lazygit log 2>&1", 1)
-    assert_match "errors.errorString terminal not cursor addressable", output
-
-    assert_match version.to_s, shell_output("#{bin}/lazygit -v")
+    s = testpath/"test.txt"
+    pid = spawn(bin/"lazygit", "-l", out: s.to_s, err: [:child, :out])
+    sleep 2
+    assert_match "Log file does not exist. Run `lazygit --debug` first to create the log file", s.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
