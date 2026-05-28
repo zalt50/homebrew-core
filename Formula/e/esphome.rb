@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/f2/33/2e58efe6242791821d5c8aee8e0d14a638f01f13f9bd43e84898ac72f6c8/esphome-2026.5.0.tar.gz"
-  sha256 "b2a427186033e56ea3b4aa7aa86bab7fc4f0e0654df0138b2eabe12e25fd3aa9"
+  url "https://files.pythonhosted.org/packages/08/80/07a46db883b6ca06ffb551f036c4f1c666cd7af9bb71e2df3d9d883f094f/esphome-2026.5.1.tar.gz"
+  sha256 "2fb524b207c435375205760bf8f4f586a47aad0213322d0e6cdf8267b84d6a4b"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -126,8 +126,8 @@ class Esphome < Formula
   end
 
   resource "dbus-fast" do
-    url "https://files.pythonhosted.org/packages/c4/ca/07308e817dbf95bc4dbe806f25a209d905c590ef8f61f322ead9ef1aceae/dbus_fast-5.0.3.tar.gz"
-    sha256 "fe7ca38beab5dfdde00fa44b364334797a181bfecc91c98601e8285fac18c055"
+    url "https://files.pythonhosted.org/packages/4c/f0/7d26505ee2a53bc0c47aef4182609b6e1e18845be35ce9a0c6ea2c21f232/dbus_fast-5.0.15.tar.gz"
+    sha256 "a992fcbefb609ad2eebb881c18eeb429bfe814ebe51e535a8710386f54dbdb94"
   end
 
   resource "esphome-dashboard" do
@@ -161,8 +161,8 @@ class Esphome < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "ifaddr" do
@@ -376,8 +376,8 @@ class Esphome < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/fe/5c/0288ea991e43dc6c5cdb5071a039eb045ce78deed385fb12de53ef3b8c4e/zeroconf-0.149.12.tar.gz"
-    sha256 "ed3f94c5f7cfaab70ab1f8e6d6268da8e6cba6f6745217e69ee4a210f82b1fdd"
+    url "https://files.pythonhosted.org/packages/83/34/c981e760690f7b7dc91532d4d4ad21e3922887aaa425a0e7bff8067152da/zeroconf-0.149.16.tar.gz"
+    sha256 "5e6b5a3b153c2cc2a8d9e6f6f189ec5638f7d9c86fc3e88a6c53eb6863761a5e"
   end
 
   def install
