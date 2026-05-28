@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://www.mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/refs/tags/mame0287.tar.gz"
-  version "0.287"
-  sha256 "85f5e91b0f31f0c398834b888cd5a83dc2466569250069cb6e3712158d015f44"
+  url "https://github.com/mamedev/mame/archive/refs/tags/mame0288.tar.gz"
+  version "0.288"
+  sha256 "244d916eb3fb8bcd71f2ac51ae71ab6af8cf99869ea7b85d7efc7339ea56c563"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -72,7 +72,6 @@ class RomTools < Formula
       nltool nlwav pngcmp regrep romcmp srcclean testkeys unidasm
     ]
     bin.install "split" => "rom-split"
-    bin.install "aueffectutil" if OS.mac?
     man1.install Dir["docs/man/*.1"]
   end
 
