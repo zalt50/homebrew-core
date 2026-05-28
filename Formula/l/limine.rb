@@ -1,8 +1,8 @@
 class Limine < Formula
   desc "Modern, advanced, portable, multiprotocol bootloader and boot manager"
   homepage "https://github.com/Limine-Bootloader/Limine"
-  url "https://github.com/Limine-Bootloader/Limine/releases/download/v12.3.1/limine-12.3.1.tar.gz"
-  sha256 "a2b928b716eeb15e208a8cc32e4519b8b6401cd4b81999df8fe1178b9b524565"
+  url "https://github.com/Limine-Bootloader/Limine/releases/download/v12.3.2/limine-12.3.2.tar.gz"
+  sha256 "c505283106eaddfa5bbc56d8c1b1cf333d12654dcb37f80e685d3576e8702865"
   license "BSD-2-Clause"
 
   livecheck do
