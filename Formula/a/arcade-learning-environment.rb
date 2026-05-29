@@ -1,20 +1,10 @@
 class ArcadeLearningEnvironment < Formula
   desc "Platform for AI research"
   homepage "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
+  url "https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "021bc469903d7b7ea39e5cc51116baa9068e4d8e3b34bf0516767f49b84fa5c1"
   license "GPL-2.0-only"
-  revision 3
-  head "https://github.com/Farama-Foundation/Arcade-Learning-Environment.git", branch: "master"
-
-  stable do
-    url "https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.11.2.tar.gz"
-    sha256 "d6ac9406690bb3533b37a99253bdfc59bc27779c5e1b6855c763d0b367bcbf96"
-
-    # Backport fix to run without Gymnasium
-    patch do
-      url "https://github.com/Farama-Foundation/Arcade-Learning-Environment/commit/237f9c294d2ef95da28f8b74fa3ade54e89fe0c2.patch?full_index=1"
-      sha256 "49d70dff3264138c344bb5f5fa10bcce0be8ba75d25ef3d981114ef15f9b30be"
-    end
-  end
+  head "https://github.com/Farama-Foundation/Arcade-Learning-Environment.git", branch: "main"
 
   bottle do
     rebuild 3
@@ -84,12 +74,8 @@ class ArcadeLearningEnvironment < Formula
     # We build without XLA and jax has no sdists
     inreplace "pyproject.toml", '"jax >= 0.4.31', "#"
 
-    if build.stable?
-      inreplace "setup.py", /"-D(BUILD_VECTOR_LIB|BUILD_VECTOR_XLA_LIB|SDL_DYNLOAD)=ON"/, '"-D\1=OFF"'
-    else
-      cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath(source: prefix/Language::Python.site_packages(python3)/"ale_py")}"
-      ENV["CMAKE_ARGS"] = cmake_args.join(" ")
-    end
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath(source: prefix/Language::Python.site_packages(python3)/"ale_py")}"
+    ENV["CMAKE_ARGS"] = cmake_args.join(" ")
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
   end
 
