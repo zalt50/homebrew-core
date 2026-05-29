@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://github.com/github/spec-kit/archive/refs/tags/v0.8.16.tar.gz"
-  sha256 "5c3135f3724b047d8c2333186f5f25ceda159a29f16891ee3abee7b6cfb3fcdd"
+  url "https://github.com/github/spec-kit/archive/refs/tags/v0.8.17.tar.gz"
+  sha256 "ae48e8ba0ed0f5009ee8e43ded5112e5ac3ea0012d4fcd4e0037a5aaf50fc76b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cd0ed29fd3f6a4b6195416e40153d13b5f173a334c966ecc31382dc872f38b56"
-    sha256 cellar: :any,                 arm64_sequoia: "fee624f98672753c84c5df7f6496a015100bc6514fc15ded8767cc7c70d0dcee"
-    sha256 cellar: :any,                 arm64_sonoma:  "034a7a85a1137ef27a8fd018e71861ed33db8d0549e9a1afe63cb1b4bd3ee62a"
-    sha256 cellar: :any,                 sonoma:        "fc878aa774bb8e3ec24fe2947c6e486292a55a8a423040bc744e2a07f5eac812"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe221801e3bb6a87b455544e5b3973de494ad837a31840a3fafebaf9a8b5a5e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc9308d8ab8d378b974ed273e5c9fb21cc749fb32f5ce304aa115d396a956d6e"
+    sha256 cellar: :any,                 arm64_tahoe:   "209dcc637e9480a9b5908f144a2c95d335e5d32b219dac9d36f641ffd1272a4c"
+    sha256 cellar: :any,                 arm64_sequoia: "18a6fc09696878ba1183c8b15f916d3a9b4afadee94d84fcb91d7a13dbad6e2d"
+    sha256 cellar: :any,                 arm64_sonoma:  "9927c078b9432cdcb65e81b9664cfab8d959e3182730f50ef334efa0bff3fa99"
+    sha256 cellar: :any,                 sonoma:        "683bd1440d759f434fec6758201557a879c156e64e97ee3bcf5546b2c166274b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77b5baaa16da7859d507f494224a6898c39614f1d54c9d1b7704da243f2cee97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bac6b54d27834301696f1399dc270bf8472698dff75cb0463d7b06b0eec5f217"
   end
 
   depends_on "certifi" => :no_linkage
@@ -88,8 +88,8 @@ class Specify < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/81/db/25a5e308af68fda1cc49a4423eded2a7cad1381fbc1f7a4d5502d6fe26c6/typer-0.26.0.tar.gz"
-    sha256 "08177aa85fd81ceb6e8f7cb879cf22dbaa81f98c02b7d570acf112513d2aa66f"
+    url "https://files.pythonhosted.org/packages/67/a5/756f2e6bc81a7dd79aa3c625dd01b74cabc4516628cace2caaec09ca6ff2/typer-0.26.2.tar.gz"
+    sha256 "9b4f19e08fcc9427a822d1ef467b1fe76737a2f65c7926bdeba2337d73569b68"
   end
 
   def install
