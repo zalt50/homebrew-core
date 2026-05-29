@@ -1,8 +1,8 @@
 class Kubefwd < Formula
   desc "Bulk port forwarding Kubernetes services for local development"
   homepage "https://kubefwd.com"
-  url "https://github.com/txn2/kubefwd/archive/refs/tags/v1.25.14.tar.gz"
-  sha256 "6b44f9e7d0280c5d181130a0e1d2e54b2b60dbc521d468917becbb53deefb869"
+  url "https://github.com/txn2/kubefwd/archive/refs/tags/v1.25.15.tar.gz"
+  sha256 "a4e446ab5f5c9eb3e11d4f682961c194d478c7dfe5c64d4d5162a054b0843043"
   license "Apache-2.0"
   head "https://github.com/txn2/kubefwd.git", branch: "master"
 
