@@ -3,18 +3,18 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.28.tar.gz"
-  sha256 "fecbbf9ca8bcb33abb3f4b847e97d0827b578dfe4187accd44b76575046a822d"
+  url "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.29.tar.gz"
+  sha256 "1ec200dd8a753b9bdf6f3087bb46de1a740b07b455ca1419de22e6c7550c9f77"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "86c9e9c0a68d66bbd07eec13931491302b29179074a357cfd0da34b936b35b6b"
-    sha256 cellar: :any,                 arm64_sequoia: "17c6fc39f58224ed8d9fbc6e0aedb9341bab7633a7ae6e1e1139e430d4fcaeac"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd499b65655666aefbb6f1444d033b4b8f73b089ca61efdf0afc9b2661f7aa9e"
-    sha256 cellar: :any,                 sonoma:        "908b6d2dfdd14751dfa6886d249431b4f5cea925872836eedaace553e27db0e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b58789fb5f2b0a322a97c8495ba25eb5656b3d25ca5f4337f4f4da8d1288d719"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a011b9f4325f1acf0f690ecf7a6092546b9563accbacd0c4f9f6f33af06684f8"
+    sha256 cellar: :any,                 arm64_tahoe:   "079531e165fbfe6753fd5395946dd6c9ca0155f82709827aef194fd2fb785b3d"
+    sha256 cellar: :any,                 arm64_sequoia: "b4b06619ee93e035f263fa471e712520173f86ee3432ebe9980f711741cec627"
+    sha256 cellar: :any,                 arm64_sonoma:  "52ba45b20bbcd681e4907fb98d4d875336022d049bbfc6a054b76c496f365fd3"
+    sha256 cellar: :any,                 sonoma:        "2c5552b8ea289225e0e596a3f2db61ebe7588eee274c05d62d6ed35449022a6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42bb48a5e13f1d883aa4e03bc5796a5b45b810ce9ff00664aec9476c632aecbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f83e790b8fe3532a7e9d0d4fb2b8f694a1cea622a81d34dad0b602ab3d3872f7"
   end
 
   depends_on "pkgconf" => :build
