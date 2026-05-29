@@ -1,8 +1,8 @@
 class OpenclIcdLoader < Formula
   desc "OpenCL Installable Client Driver (ICD) Loader"
   homepage "https://www.khronos.org/registry/OpenCL/"
-  url "https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/refs/tags/v2025.07.22.tar.gz"
-  sha256 "dff7a0b11ad5b63a669358e3476e3dc889a4a361674e5b69b267b944d0794142"
+  url "https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/refs/tags/v2026.05.29.tar.gz"
+  sha256 "48fd0c5181db7cd046f4f731d5955694892e10998d49d09ee0d997e7e04fd939"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git", branch: "main"
 
@@ -50,7 +50,7 @@ class OpenclIcdLoader < Formula
   test do
     cp_r (pkgshare/"loader_test").children, testpath
     system ENV.cc, *testpath.glob("*.c"), "-o", "icd_loader_test",
-                   "-DCL_TARGET_OPENCL_VERSION=300",
+                   "-DCL_TARGET_OPENCL_VERSION=310",
                    "-I#{Formula["opencl-headers"].opt_include}", "-I#{testpath}",
                    "-L#{lib}", "-lOpenCL"
     assert_match "ERROR: App log and stub log differ.", shell_output("#{testpath}/icd_loader_test", 1)
