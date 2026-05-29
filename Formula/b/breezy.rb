@@ -6,7 +6,7 @@ class Breezy < Formula
   url "https://files.pythonhosted.org/packages/59/1d/68956e351c1af8116ec8525c85faf82ed2484f38f6f4fed4755759073500/breezy-3.3.21.tar.gz"
   sha256 "70a5a810690ad8d5def1798a1351e7588be7f89f821eb7a6fae277aacd33d3be"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/breezy-team/breezy.git", branch: "main"
 
   bottle do
@@ -29,8 +29,8 @@ class Breezy < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/72/0f/46df53e30b03cc8fee9d1bbd7ca624b4d1b579ce2e4efeaa1cb712d119b0/dulwich-1.2.1.tar.gz"
-    sha256 "ba43bfb3a7cad40d9607170561e8c3be42e7083b4b57af89a5f54e01577ff791"
+    url "https://files.pythonhosted.org/packages/43/67/db7dfe7bd7a585e39c938f5f79ccb91235df5f8818f9273590ed6d0f9fdf/dulwich-1.2.4.tar.gz"
+    sha256 "72fc77c4e2c7e4358a78c6f71383baceea496ee0cedb13508f52a1a7656e8bb9"
   end
 
   resource "fastbencode" do
