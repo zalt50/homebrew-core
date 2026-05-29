@@ -7,12 +7,12 @@ class Forgecode < Formula
   head "https://github.com/tailcallhq/forgecode.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43b0552f9a759d78f5fcdd49920d25bea3068d50fad71dff11a2025bd43ac7c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b951b06a2e7265338889dc5daf7e755e0519f5a52b9790382ab2e9eef701aa09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d04834833f7b2087b11614f2d0cebd6093acb4f1e35c56a1fa2d5a7779c4d03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83399f288c1d1d6e0ad7c2e1191577232c19dd687782a0d16bfd5d5c958fe783"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b269386ff2e6b9d4f30c59961c68a6dfbac35cfb940053296cd3c14ac65a855d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "171ba589de105d3e74a224a9c4b012c4bd70d749b4c9f71d2ff32b5b1fc4c0a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5eb50be9c556a13c15c8a2e1dca0e883a0000760674d65b9eadd3e02338f858"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e24c3ddfd157e6c6a4aa5e10eba2c6703dbf529d44bb1998679d9f6ca8179a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7dfe9e4a6f4548e84deaa4ced8bb9a156743d7b5fc23ec49f220b203bda52cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f49a9257657a62d501fe43c6020e7fdefd12ffae46be5264e8547891d1f31629"
+    sha256 cellar: :any,                 arm64_linux:   "2244d9014e012ac06375feb827eaa8bf5c87cae826ee565b5d6618f2d393e0f1"
+    sha256 cellar: :any,                 x86_64_linux:  "ca611e1116ded4487b4a371a585adac95928b234380b3297ca302d78cdf6e5ae"
   end
 
   depends_on "protobuf" => :build
