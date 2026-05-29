@@ -2,8 +2,8 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_2.tar.gz"
-  sha256 "9bea418c32b553920dc3491b282bbfc47e10728ad20ea874ca47c38cc1b0818b"
+  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_3.tar.gz"
+  sha256 "21e22e5e6b3a313527256fbde41c757f22d834b19caf2908e3c2dd11061e1fea"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -97,8 +97,6 @@ class Rdkit < Formula
       s.sub!(/^find_package\(PostgreSQL/, "find_package(Cairo REQUIRED)\nfind_package(rdkit REQUIRED)\n\\0")
       s.sub! 'set(pgRDKitLibs "${pgRDKitLibs}${pgRDKitLib}', 'set(pgRDKitLibs "${pgRDKitLibs}RDKit::${pgRDKitLib}'
       s.sub! ";${INCHI_LIBRARIES};", ";"
-      # Add RPATH for PostgreSQL cartridge
-      s.sub! '"-Wl,-dead_strip_dylibs ', "\\0-Wl,-rpath,#{loader_path}/.. "
     end
     ENV["DESTDIR"] = "/" # to force creation of non-standard PostgreSQL directories
 
