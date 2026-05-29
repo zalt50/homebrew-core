@@ -1,10 +1,10 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "https://www.sbcl.org/"
-  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.6.4/sbcl-2.6.4-source.tar.bz2"
-  sha256 "3ba53e654b60feb7c4f50466199d6d5260f2661c711ba22d4b770b655400d57b"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.6.5/sbcl-2.6.5-source.tar.bz2"
+  sha256 "91ec75f647252ed6e6aeae9b1a13f47c7c6cfd9b68488dc69f1a6fea5accb440"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
-  compatibility_version 3
+  compatibility_version 4
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
   livecheck do
@@ -22,6 +22,11 @@ class Sbcl < Formula
 
   depends_on "ecl" => :build
   depends_on "zstd"
+
+  # `ecl` does not support older versions
+  on_macos do
+    depends_on macos: :sequoia
+  end
 
   def install
     # Remove non-ASCII values from environment as they cause build failures
