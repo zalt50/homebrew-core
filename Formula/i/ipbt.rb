@@ -1,15 +1,17 @@
 class Ipbt < Formula
   desc "Program for recording a UNIX terminal session"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/"
-  url "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/ipbt-20260410.a852474.tar.gz"
-  version "20260410"
-  sha256 "0713f515794643d48c88e79429dc392741e2ae15093b8d92bfc189110228406a"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/ipbt-20260527.fdcd2b0.tar.gz"
+  version "20260527"
+  sha256 "5303c8010addf1b2dec5375c8cf32d70e1835545d639ee2183863e09d4e80aa3"
   license "MIT"
 
   livecheck do
     url :homepage
     regex(/href=.*?ipbt[._-]v?(\d+(?:\.\d+)*)(?:[._-][\da-z]+)?\.t/i)
   end
+
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b4c3e90232369f35d47f594aa32973befe1aa273d6e86ab05ba9120db428e26"
