@@ -1,8 +1,8 @@
 class Miniflux < Formula
   desc "Minimalist and opinionated feed reader"
   homepage "https://miniflux.app"
-  url "https://github.com/miniflux/v2/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "19590c117273801f9e87eb163a0486d3d05a5eee31e215026a5ceb32b0328a8c"
+  url "https://github.com/miniflux/v2/archive/refs/tags/2.3.1.tar.gz"
+  sha256 "2cf82b224aba61dd8dddd60d7e850d3fdd06c1eaf4f1572aabb0818ec0a95ff2"
   license "Apache-2.0"
 
   bottle do
