@@ -1,8 +1,8 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
   homepage "https://unikraft.org/docs/cli"
-  url "https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.12.tar.gz"
-  sha256 "46116aefde52c633d6ad5e6f90832b9545c245dc826f9efb8a36b02908450ad7"
+  url "https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.13.tar.gz"
+  sha256 "be13ed7ba3e7d640075c3b8b34c6149209c17d67cdbe07d951612456a70f2bde"
   license "BSD-3-Clause"
   head "https://github.com/unikraft/kraftkit.git", branch: "staging"
 
@@ -12,12 +12,12 @@ class Kraftkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be0a85fbb4c896a2ea94541246cce23b8667d4d464856d6dece973d007068762"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17b57ff8c59b13d06e9c542db7e290f9e7c2c2a8c0d80acd2f3102f07c2423d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8b95c89507c6dd645615e205560645e19075e6a27d345a7348ee37a84af4144"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a96a9c7dcda5a4f695dacd559cf3a532a6f2189287b62b9a2cf032ec666b43b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43b2ee7cad6c2a51b87f222f7a54294a75e671ab2e0337dc17c9390885581319"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a47414711f0a8a5b46d151d3e05535259bad6f7f6aa48d5fd23cdd7873abd199"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5734c5fe0827a7c016beb94f612e7e4b6d98e4c99ea953fd42319c991ba52d19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "884e4a62f40ebd26de51e88052b7aa347f0a2ab17ea639a55849410f0a939500"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25a39d438a2327d4e8065339866c994fb49ec830adae4357daa0bb6e72ecc667"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d7ca1800a455ff60530bd50d8d975c0c0de7868b91479e15c8a33d553874474"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3844345bee2029a4ef07742c69f412e1a35409271cf7f5358fedd34f86712974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "396d3c3fe402989dc2fb43199996113e8bbf5592fd97af24b4c5b70e297f04e4"
   end
 
   depends_on "go" => :build
