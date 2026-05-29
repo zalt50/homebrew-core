@@ -4,8 +4,8 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/ca/0b/2cf6ba01673095c6a291364e3a6e0fc3ac56069cbcca22908921e3923835/meta_package_manager-6.5.0.tar.gz"
-  sha256 "6dc32da9aeed466404ba7ec095ff37acf4c0219d89d631d20285ac63ceac3024"
+  url "https://files.pythonhosted.org/packages/c6/d4/ffa615f34bc00fd374784e309e0de253b4112b9998f883c40f419da4dd1b/meta_package_manager-6.5.1.tar.gz"
+  sha256 "67940e089e5ab29cf3d26bf516c9f7646ffa3aa5f44fe3c49ac3680cbad0783e"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
@@ -71,13 +71,13 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/5e/02/d180104019150d340049dccc41f17d9ba0c3363c44767b01b029716d259b/click_extra-7.16.1.tar.gz"
-    sha256 "a616651275a9673ed4930976a1d6bdd93dc04325cf475ccc38399b0c4396644e"
+    url "https://files.pythonhosted.org/packages/12/9c/4719d921be14f58653a28314c3f7dc2869e621510b608430404a3293ffac/click_extra-7.17.2.tar.gz"
+    sha256 "38509f5bd1facedb7f51b90e71154090690861af45c1ae069eb787641e0530c4"
   end
 
   resource "cloup" do
-    url "https://files.pythonhosted.org/packages/f9/64/7f0a66021ff81d51859c66adc13f3c71f0306c2f8dfb9877a0694cbada05/cloup-3.0.9.tar.gz"
-    sha256 "519f524d3c64040e49a0866b5fc0bfd6af3eac0d3d6a4b2b50b33ab0247db2d7"
+    url "https://files.pythonhosted.org/packages/42/ca/cf02e965cfeb70d65c61fd3abb8022aaf5111a0de71b3c73a6ec2113aa25/cloup-3.1.0.tar.gz"
+    sha256 "637c1e628fe98f3f20a5e44da591a72b42bf54d7d4527190bf39ed5f64af7585"
   end
 
   resource "cyclonedx-python-lib" do
@@ -96,8 +96,8 @@ class MetaPackageManager < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/4c/f6/a20c4586c9bd653f596258455652725405f4b734e6270f7fc07a1a498932/extra_platforms-12.0.3.tar.gz"
-    sha256 "0a3201a05f93f18c840f3e9970d33f756a621eea719cbdfa24a514f96c79de7e"
+    url "https://files.pythonhosted.org/packages/58/47/c761c7dcd279738db4c00a0afae6e0883100365e908ff4b79ddecddbaba1/extra_platforms-13.0.0.tar.gz"
+    sha256 "4f6870be428f6ffb38e880bfb9026c4c3f6432b527b374ac178dbabb1500c34a"
   end
 
   resource "fqdn" do
@@ -106,8 +106,8 @@ class MetaPackageManager < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "isoduration" do
