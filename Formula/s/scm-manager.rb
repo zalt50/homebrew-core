@@ -4,6 +4,7 @@ class ScmManager < Formula
   url "https://packages.scm-manager.org/repository/releases/sonia/scm/packaging/unix/3.11.9/unix-3.11.9.tar.gz"
   sha256 "a082386326f8dfa9d919a2a2e1b2052a0c278903b6383c89c5dee85d4fa112cf"
   license all_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   livecheck do
     url "https://scm-manager.org/download/"
@@ -15,7 +16,7 @@ class ScmManager < Formula
   end
 
   depends_on "jsvc"
-  depends_on "openjdk@21"
+  depends_on "openjdk"
 
   def install
     # Replace pre-built `jsvc` with formula to add Apple Silicon support
@@ -23,7 +24,7 @@ class ScmManager < Formula
     rm Dir["libexec/jsvc-*"]
     libexec.install Dir["*"]
 
-    env = Language::Java.overridable_java_home_env("21")
+    env = Language::Java.overridable_java_home_env
     env["BASEDIR"] = libexec
     env["REPO"] = libexec/"lib"
     (bin/"scm-server").write_env_script libexec/"bin/scm-server", env
