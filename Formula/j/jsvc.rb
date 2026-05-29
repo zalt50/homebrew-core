@@ -1,10 +1,11 @@
 class Jsvc < Formula
   desc "Wrapper to launch Java applications as daemons"
   homepage "https://commons.apache.org/daemon/jsvc.html"
-  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.5.1-src.tar.gz"
-  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.5.1-src.tar.gz"
-  sha256 "48f9c4e63af0d73032eef2331ab8e9d3e0784b008ba2e7cb79fdd751c5202ba6"
+  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.6.0-src.tar.gz"
+  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.6.0-src.tar.gz"
+  sha256 "32da7dd4bbbcbcfa96d0aa7edc99377f7a0c2b9beb40b5516e591af3e11b4231"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f249e20ad4469f4ead87053e4b77bf2dd32a0712bb0e6f0b8885a4a8c89ad522"
@@ -15,7 +16,10 @@ class Jsvc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f72edc6d6177e9f50e67fdb4b3a5ba38fd324137c5c904a5a95f4f14ec3ca232"
   end
 
-  depends_on "openjdk@21"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "openjdk"
 
   def install
     prefix.install %w[NOTICE.txt LICENSE.txt RELEASE-NOTES.txt]
@@ -24,11 +28,12 @@ class Jsvc < Formula
       # https://github.com/Homebrew/homebrew-core/pull/168294#issuecomment-2104388230
       ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-      system "./configure", "--with-java=#{Formula["openjdk@21"].opt_prefix}"
+      system "autoreconf", "--force", "--install", "--verbose"
+      system "./configure", "--with-java=#{Formula["openjdk"].opt_prefix}"
       system "make"
 
       libexec.install "jsvc"
-      (bin/"jsvc").write_env_script libexec/"jsvc", Language::Java.overridable_java_home_env("21")
+      (bin/"jsvc").write_env_script libexec/"jsvc", Language::Java.overridable_java_home_env
     end
   end
 
