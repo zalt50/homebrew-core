@@ -1,9 +1,8 @@
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
-  # TODO: Switch to npm registry URL when https://github.com/renovatebot/renovate/discussions/42965 is fixed
-  url "https://github.com/renovatebot/renovate/archive/refs/tags/43.202.0.tar.gz"
-  sha256 "7beeca298f717f927ca80588ca74abec8b6bea03930f81b53d3d90d6b289ef95"
+  url "https://registry.npmjs.org/renovate/-/renovate-43.203.0.tgz"
+  sha256 "0bad38ec5e8743190aaefbd2ed2102702e325b952fe481b31ca61322aac074fa"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
@@ -27,16 +26,7 @@ class Renovate < Formula
   uses_from_macos "git", since: :monterey # needs git >= 2.33.0 (Apple Git-136)
 
   def install
-    # Pin Ecosystem union member order to make :all bottle
-    inreplace "lib/modules/platform/github/schema.ts",
-              "export type Ecosystem = z.infer<typeof Ecosystem>;",
-              "export type Ecosystem = (typeof Ecosystem.options)[number];"
-
-    # TODO: switch back to `system "npm", "install", *std_npm_args` when using npm registry URL
-    system "npm", "install", *std_npm_args(prefix: false)
-    system "npm", "run", "build"
     system "npm", "install", *std_npm_args
-
     bin.install_symlink libexec.glob("bin/*")
   end
 
