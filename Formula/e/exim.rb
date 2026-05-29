@@ -1,9 +1,9 @@
 class Exim < Formula
   desc "Complete replacement for sendmail"
   homepage "https://exim.org"
-  url "https://ftp.exim.org/pub/exim/exim4/exim-4.99.3.tar.xz"
-  mirror "https://ftp.exim.org/pub/exim/exim4/old/exim-4.99.3.tar.xz"
-  sha256 "663e76d2a0d9b8fc5b373d0008e44ae044f10feb22bc9dbae8c7f21345ebfb3b"
+  url "https://ftp.exim.org/pub/exim/exim4/exim-4.99.4.tar.xz"
+  mirror "https://ftp.exim.org/pub/exim/exim4/old/exim-4.99.4.tar.xz"
+  sha256 "87ff38815700dfb1ee4eb7e8dba7916df7a755905354d2d0faa1ae1790c4fd9d"
   license "GPL-2.0-or-later"
 
   # Maintenance releases are kept in a `fixes` subdirectory, so it's necessary
