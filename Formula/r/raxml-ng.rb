@@ -2,8 +2,8 @@ class RaxmlNg < Formula
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
   homepage "https://cme.h-its.org/exelixis/web/software/raxml/"
   url "https://github.com/amkozlov/raxml-ng.git",
-      tag:      "2.0.1",
-      revision: "a7d61b56d2e0e6e263e4686bcbd0017659b37711"
+      tag:      "2.0.2",
+      revision: "0ee964320a3288c09e3acc6ac92a1b555cc94e2e"
   license "AGPL-3.0-or-later"
 
   bottle do
