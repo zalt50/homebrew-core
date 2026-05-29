@@ -1,19 +1,10 @@
 class Yaws < Formula
   desc "Webserver for dynamic content (written in Erlang)"
   homepage "https://erlyaws.github.io/"
+  url "https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.3.1.tar.gz"
+  sha256 "a65110377b007693c6ddccdb061a57c6bd5b5bad88b976d75d6213aaabc8f5c5"
   license "BSD-3-Clause"
   head "https://github.com/erlyaws/yaws.git", branch: "master"
-
-  stable do
-    url "https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.2.0.tar.gz"
-    sha256 "39318736472c165d4aec769c89ac4edfe3cab7ff7759f32de0a4e699ef6c88e8"
-
-    # Backport support to build with Erlang 29
-    patch do
-      url "https://github.com/erlyaws/yaws/commit/b325caea6cf9df1411b1b1f0c362a1ac28058654.patch?full_index=1"
-      sha256 "f20f083d36ef1b0f9719f8b43084dd6085573119aa14c76b3f1448e375683691"
-    end
-  end
 
   livecheck do
     url :stable
