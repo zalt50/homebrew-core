@@ -6,6 +6,11 @@ class Cozypkg < Formula
   license "Apache-2.0"
   head "https://github.com/cozystack/cozystack.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5badc63774459a2a0bd7add2398fd150f67807e8636206a43f932c80001e95bf"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5b156912150d7dfe96b1bf7fea29b1259db30c2ebd9e495ba1bb00fe34d564c"
