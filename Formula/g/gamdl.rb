@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/e6/30/7d05161bf4efa7b58b57bd017f13db0b88053fc1743d170ed0a74d57a2da/gamdl-3.7.1.tar.gz"
-  sha256 "a8b6583a1b0694d37d539ac854736b9b698626a1d8727162a3c6124fcdeffa63"
+  url "https://files.pythonhosted.org/packages/99/00/5386a460f6faa696c83bb5a242e19e9bc5dc8f0d2b24876baedde1f1b0c8/gamdl-3.7.3.tar.gz"
+  sha256 "1cfac12e2a040821f168ce0999de5fb408a52c64753741ce14846a5222b07f17"
   license "MIT"
 
   bottle do
@@ -79,8 +79,8 @@ class Gamdl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "inquirerpy" do
