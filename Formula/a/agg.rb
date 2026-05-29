@@ -1,8 +1,8 @@
 class Agg < Formula
   desc "Asciicast to GIF converter"
   homepage "https://github.com/asciinema/agg"
-  url "https://github.com/asciinema/agg/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "9a2a7e6ca2748befb6a4c1c3eff437ae6029fde99ec882a951b3671aa30eacdb"
+  url "https://github.com/asciinema/agg/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "8170119502ad2c1c697e5cd4d050d87c425ecee726c5f6c3c2140703bcb31bb3"
   license "GPL-3.0-or-later"
   head "https://github.com/asciinema/agg.git", branch: "main"
 
