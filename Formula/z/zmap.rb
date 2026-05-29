@@ -1,8 +1,8 @@
 class Zmap < Formula
   desc "Network scanner for Internet-wide network studies"
   homepage "https://zmap.io"
-  url "https://github.com/zmap/zmap/archive/refs/tags/v4.3.4.tar.gz"
-  sha256 "b5936bf5b5390fb50203140e81beac28866374371b1c68329cbbe932cc5ee1d3"
+  url "https://github.com/zmap/zmap/archive/refs/tags/v4.4.0.tar.gz"
+  sha256 "be4521fdac10eddc9ba046399149064ca23d4630b7987301abdee9e0044b8d5c"
   license "Apache-2.0"
   head "https://github.com/zmap/zmap.git", branch: "main"
 
