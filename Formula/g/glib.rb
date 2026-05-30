@@ -130,8 +130,8 @@ class Glib < Formula
     end
   end
 
-  def post_install
-    (HOMEBREW_PREFIX/"lib/gio/modules").mkpath
+  post_install_steps do
+    mkdir_p "lib/gio/modules", base: :homebrew_prefix
   end
 
   test do
