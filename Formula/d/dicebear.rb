@@ -1,8 +1,8 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://github.com/dicebear/dicebear"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-9.4.2.tgz"
-  sha256 "97592b469fe922e6978dd39bcf2c962cd8d45810cea8ca7fc491a60073b58d5e"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-10.0.1.tgz"
+  sha256 "cb539b052323ee9bd7b147a63d9d3303b5bec9a00c0b7f0c4faff27291936e40"
   license "MIT"
 
   bottle do
@@ -26,13 +26,13 @@ class Dicebear < Formula
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
   resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.6.0.tgz"
-    sha256 "e3029e9581015874cc794771ec9b970be83b12c456ded15cfba9371bddc42569"
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.8.0.tgz"
+    sha256 "72528f1a8235a8bc19855e21cc5ae28252c276338afa73887dc7e54515bc76c5"
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.2.0.tgz"
-    sha256 "8689bbeb45a3219dfeb5b05a08d000d3b2492e12db02d46c81af0bee5c085fec"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.3.0.tgz"
+    sha256 "d209963f2b21fd5f6fad1f6341897a98fc8fd53025da36b319b92ebd497f6379"
   end
 
   def install
