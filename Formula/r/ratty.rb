@@ -1,8 +1,8 @@
 class Ratty < Formula
   desc "GPU-rendered terminal emulator with inline 3D graphics"
   homepage "https://ratty-term.org/"
-  url "https://github.com/orhun/ratty/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "8d48b5c6adfc8543ed649a53221b61df129da415298c7875557c4fcb56255806"
+  url "https://github.com/orhun/ratty/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "c6fb899b38445e79e0facc2d1a2884443f40296c47220fddd56d6489d3545c18"
   license "MIT"
   head "https://github.com/orhun/ratty.git", branch: "main"
 
