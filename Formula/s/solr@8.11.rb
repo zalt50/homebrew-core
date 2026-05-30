@@ -34,9 +34,9 @@ class SolrAT811 < Formula
     inreplace libexec/"solr", "/usr/local/share/solr", pkgshare
   end
 
-  def post_install
-    (var/"run/solr").mkpath
-    (var/"log/solr").mkpath
+  post_install_steps do
+    mkdir_p "run/solr"
+    mkdir_p "log/solr"
   end
 
   service do
