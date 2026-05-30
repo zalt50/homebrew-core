@@ -6,7 +6,7 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/c0/02/a309e58943f77f1947e4a658a9606933ab4a7b9f040025f4e25daf5fafbb/poetry-2.4.1.tar.gz"
   sha256 "189399b80347ecf908244b2564a7b1d92b648fa1fe2a204888f94a472fec0cac"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
@@ -71,8 +71,8 @@ class Poetry < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/43/67/db7dfe7bd7a585e39c938f5f79ccb91235df5f8818f9273590ed6d0f9fdf/dulwich-1.2.4.tar.gz"
-    sha256 "72fc77c4e2c7e4358a78c6f71383baceea496ee0cedb13508f52a1a7656e8bb9"
+    url "https://files.pythonhosted.org/packages/7f/85/ceb8ecff5cdeee4ceeebb86b599476dee559041dacc6c2c50cc0d4711549/dulwich-1.2.5.tar.gz"
+    sha256 "0395b2c8924c3424bafe2d9c1edd5348cc4b21ce9c1d6655bf01f9a5c47164c8"
   end
 
   resource "fastjsonschema" do
@@ -106,8 +106,8 @@ class Poetry < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "installer" do
