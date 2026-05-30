@@ -11,7 +11,7 @@ class Byobu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4fbd62846ce10e7f115fa95c60582bc3c51cbcb9b4b2d2ee43b959665f0e4f51"
+    sha256 cellar: :any_skip_relocation, all: "990c73e005c10b854009481b3fc610fc6fb9e697bf0f5ec027ca0c34907a40ac"
   end
 
   depends_on "autoconf" => :build
