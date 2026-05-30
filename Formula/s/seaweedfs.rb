@@ -31,8 +31,8 @@ class Seaweedfs < Formula
     system "go", "build", *std_go_args(ldflags:, output: bin/"weed"), "./weed"
   end
 
-  def post_install
-    (var/"seaweedfs").mkpath
+  post_install_steps do
+    mkdir_p "seaweedfs"
   end
 
   service do
