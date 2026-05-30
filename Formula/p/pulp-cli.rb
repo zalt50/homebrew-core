@@ -3,8 +3,8 @@ class PulpCli < Formula
 
   desc "Command-line interface for Pulp 3"
   homepage "https://github.com/pulp/pulp-cli"
-  url "https://files.pythonhosted.org/packages/90/44/8a8b41bc21e4bbc3e13f8c1fb7fc9b5d0ae876be655b1874d01dbd75d12d/pulp_cli-0.39.2.tar.gz"
-  sha256 "2ad96b9570256d5f248cd8c7ac22aa586f4e8bd1e68177bca5fcbd96b4ad1419"
+  url "https://files.pythonhosted.org/packages/4d/6f/3f845b4498b05a5dd966b7b33460e45ba6ee6d8c073b918c164dd17beb72/pulp_cli-0.39.3.tar.gz"
+  sha256 "80e2750fa1723958de09f0a2952b1e92c89760cfb315c930c63521f74f6c2d15"
   license "GPL-2.0-or-later"
   head "https://github.com/pulp/pulp-cli.git", branch: "main"
 
@@ -50,8 +50,8 @@ class PulpCli < Formula
   end
 
   resource "pulp-glue" do
-    url "https://files.pythonhosted.org/packages/25/c3/0c79cff6d10ec4a7ea8089a469a29065b0896329a056d1d3792006ebf53e/pulp_glue-0.39.2.tar.gz"
-    sha256 "64dfe14f102ca44209b68904cd456347a1ebb31c35118d62abf35fa185733ef0"
+    url "https://files.pythonhosted.org/packages/03/aa/107ea8f873c4e7e6fff5224807bda1b98c04e121dc936715a3534f152d8d/pulp_glue-0.39.3.tar.gz"
+    sha256 "8c9f23d785c546f126507d4e14b2fc5abd0001048c280c2fab3ac28da7472400"
   end
 
   resource "pyyaml" do
