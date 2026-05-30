@@ -47,10 +47,10 @@ class Icecast < Formula
     system "make", "install"
   end
 
-  def post_install
-    (var/"log/icecast").mkpath
-    touch var/"log/icecast/access.log"
-    touch var/"log/icecast/error.log"
+  post_install_steps do
+    mkdir_p "log/icecast"
+    touch "log/icecast/access.log"
+    touch "log/icecast/error.log"
   end
 
   test do
