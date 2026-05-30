@@ -73,11 +73,10 @@ class Guile < Formula
     (share/"gdb/auto-load").install Dir["#{lib}/*-gdb.scm"]
   end
 
-  def post_install
-    # Create directories so installed modules can create links inside.
-    (HOMEBREW_PREFIX/"lib/guile/3.0/site-ccache").mkpath
-    (HOMEBREW_PREFIX/"lib/guile/3.0/extensions").mkpath
-    (HOMEBREW_PREFIX/"share/guile/site/3.0").mkpath
+  post_install_steps do
+    mkdir_p "lib/guile/3.0/site-ccache", base: :homebrew_prefix
+    mkdir_p "lib/guile/3.0/extensions", base: :homebrew_prefix
+    mkdir_p "share/guile/site/3.0", base: :homebrew_prefix
   end
 
   def caveats
