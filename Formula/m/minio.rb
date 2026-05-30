@@ -48,9 +48,9 @@ class Minio < Formula
     end
   end
 
-  def post_install
-    (var/"minio").mkpath
-    (etc/"minio").mkpath
+  post_install_steps do
+    mkdir_p "minio"
+    mkdir_p "minio", base: :etc
   end
 
   service do
