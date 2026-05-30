@@ -1,8 +1,8 @@
 class Sshfs < Formula
   desc "File system client based on SSH File Transfer Protocol"
   homepage "https://github.com/libfuse/sshfs"
-  url "https://github.com/libfuse/sshfs/archive/refs/tags/sshfs-3.7.5.tar.gz"
-  sha256 "b975121189cb82ed4c675320155a855adf7632abfd7fbdc385ca448d214b581f"
+  url "https://github.com/libfuse/sshfs/archive/refs/tags/sshfs-3.7.6.tar.gz"
+  sha256 "67a3e166a39b07708497ee0aee308547dba386053cf8d816b4ce8a9b3066a6ce"
   license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
 
   bottle do
