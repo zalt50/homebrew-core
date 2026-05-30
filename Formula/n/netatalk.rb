@@ -1,8 +1,8 @@
 class Netatalk < Formula
   desc "File server for Macs, compliant with Apple Filing Protocol (AFP)"
   homepage "https://netatalk.io"
-  url "https://github.com/Netatalk/netatalk/releases/download/netatalk-4-4-3/netatalk-4.4.3.tar.xz"
-  sha256 "863d640ecc99f4923ead6c58e8d3406ab3a1ca9dd3b0d47ccdf6fdebb6efe3ab"
+  url "https://github.com/Netatalk/netatalk/releases/download/netatalk-4-5-0/netatalk-4.5.0.tar.xz"
+  sha256 "62d77f5a491e69086c1706ff7d9e016912e0e48b43d0c3a7ae60c384b6d625b3"
   license all_of: [
     "GPL-2.0-or-later",
 
@@ -62,7 +62,6 @@ class Netatalk < Formula
     bdb5_rpath = rpath(target: Formula["berkeley-db@5"].opt_lib)
     ENV.append "LDFLAGS", "-Wl,-rpath,#{bdb5_rpath}" if OS.linux?
     args = [
-      "-Dwith-afpstats=false",
       "-Dwith-appletalk=#{OS.linux?}", # macOS doesn't have an AppleTalk stack
       "-Dwith-bdb-path=#{Formula["berkeley-db@5"].opt_prefix}",
       "-Dwith-cups-libdir-path=#{libexec}",
