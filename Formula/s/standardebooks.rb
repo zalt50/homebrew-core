@@ -3,8 +3,8 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://files.pythonhosted.org/packages/87/e3/5ab87cbbe9acaaa2d7cd059636c009aadd053473052e9383c640a5ea91d0/standardebooks-3.0.4.tar.gz"
-  sha256 "47166b17c72bc94685bafb1a54ca94a66f2795771fef5fe7e07461a8a6a0c9e8"
+  url "https://files.pythonhosted.org/packages/34/26/0960192dc35fd9e813a415779833c56d7822e941bdf28a626c8bd7991aaf/standardebooks-3.0.5.tar.gz"
+  sha256 "2cb81707a82ba026a193b82066c86b40b28980a890642677bfeb38e0efc52196"
   license "GPL-3.0-or-later"
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
@@ -101,8 +101,8 @@ class Standardebooks < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "importlib-resources" do
@@ -126,8 +126,8 @@ class Standardebooks < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "natsort" do
@@ -140,6 +140,11 @@ class Standardebooks < Formula
     sha256 "9dcf02e65f2971b80047b377468e72a268e15c0af3cf1238e6ff14f7f91143b8"
   end
 
+  resource "oxipng-pybind" do
+    url "https://files.pythonhosted.org/packages/f7/a1/7b3ba274fafeba75a9c6109d34bcecb3504087f5287c0345f3a9fdf58ac2/oxipng_pybind-10.1.1.post2.tar.gz"
+    sha256 "cf71ed8f447ee1db1d1dad19144f8999917e13df0ac4de3776826c12387bf5b8"
+  end
+
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
     sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
@@ -148,11 +153,6 @@ class Standardebooks < Formula
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
     sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
-  end
-
-  resource "pyoxipng" do
-    url "https://files.pythonhosted.org/packages/ee/cc/25a4e3e3e0dc41103337144aacfccbda34562ef6b3fa6b1afa4975e0cc11/pyoxipng-9.1.1.tar.gz"
-    sha256 "c9c3c087b0c744ba9b709a321c61183668f024c138748a8da565fe89a4bf0fb8"
   end
 
   resource "pyphen" do
