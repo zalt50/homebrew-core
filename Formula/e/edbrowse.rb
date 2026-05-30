@@ -1,8 +1,8 @@
 class Edbrowse < Formula
   desc "Command-line editor and web browser"
   homepage "https://edbrowse.org"
-  url "https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.16.tar.gz"
-  sha256 "7593e7ebd4ab0cff05c8d1a6cfb72c667a62aaffa2d84e0d4d29b8ab68459d0e"
+  url "https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.17.tar.gz"
+  sha256 "676f6d74fc3d7a52f3633318f8220092fd824ae518efeb1996b8f51c533dd2fa"
   license "GPL-2.0-or-later"
   head "https://github.com/edbrowse/edbrowse.git", branch: "master"
 
@@ -23,18 +23,10 @@ class Edbrowse < Formula
   depends_on "readline"
   depends_on "unixodbc"
 
-  # guard JS_GetVersion for Q_NG builds, upstream pr ref, https://github.com/edbrowse/edbrowse/pull/121
-  patch do
-    url "https://github.com/edbrowse/edbrowse/commit/fd684cc8bc25376b97ee5ea688ca733ab5ac3564.patch?full_index=1"
-    sha256 "3fde047573230d924ca6271c89bed6a1aca3071900bbd53e76e5c8df69aeaded"
-  end
-  # make install portability fix, upstream pr ref, https://github.com/edbrowse/edbrowse/pull/122
-  patch do
-    url "https://github.com/edbrowse/edbrowse/commit/e6389a12504d386f97493b91c5f920fafa00c627.patch?full_index=1"
-    sha256 "cc30cfe785f138fcc741c3184cbae17a44a7be564442c28ea6821f34687c41fc"
-  end
-
   def install
+    # :: is a GNU make operator, but BSD make doesn't support it
+    inreplace "src/makefile", "::=", ":="
+
     ENV.append_to_cflags "-DQ_NG=0"
 
     cd "src" do
