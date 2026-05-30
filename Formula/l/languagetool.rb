@@ -48,8 +48,8 @@ class Languagetool < Formula
     pkgetc.install "server.properties"
   end
 
-  def post_install
-    (var/"log/languagetool").mkpath
+  post_install_steps do
+    mkdir_p "log/languagetool"
   end
 
   service do
