@@ -22,6 +22,9 @@ class DockerCompletion < Formula
   link_overwrite "share/fish/vendor_completions.d/docker.fish"
   link_overwrite "share/zsh/site-functions/_docker"
 
+  deprecate! date: "2026-05-31", because: :deprecated_upstream, replacement_formula: "docker"
+  disable! date: "2027-05-31", because: :deprecated_upstream, replacement_formula: "docker"
+  
   def install
     bash_completion.install "contrib/completion/bash/docker"
     fish_completion.install "contrib/completion/fish/docker.fish"
