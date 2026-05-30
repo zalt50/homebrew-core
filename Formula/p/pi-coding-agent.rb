@@ -6,12 +6,12 @@ class PiCodingAgent < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bdb5c47ea5b4819a431d742f3e77a087c9587fb8f63b2ab28d9dad3c29c6f637"
-    sha256 cellar: :any,                 arm64_sequoia: "7016b17704d9c671bd5e88406fa5a975ebf79f969319be5d32797afbc0c6f674"
-    sha256 cellar: :any,                 arm64_sonoma:  "7016b17704d9c671bd5e88406fa5a975ebf79f969319be5d32797afbc0c6f674"
-    sha256 cellar: :any,                 sonoma:        "4b66c44677bc53e5d2d8453fc8b1bf1e1de9e1d57f05f47f0c6251704bcd22e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c6514a2cb9f9076abfacf59101006ec7faaed66fcfc04c71800be6408a25f0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4407584dde491958866074bfabd134f0d8b3c6c66d0f47b02aa4545ff2fb8bb"
+    sha256 cellar: :any,                 arm64_tahoe:   "a92196914d4a9490c5b83d94222d0e6c4e3018431902678fee6dff9b1ea7c3cc"
+    sha256 cellar: :any,                 arm64_sequoia: "8267edae450765262d02f3835da166e896cd1ed09e2419be943a6434fc9ec676"
+    sha256 cellar: :any,                 arm64_sonoma:  "8267edae450765262d02f3835da166e896cd1ed09e2419be943a6434fc9ec676"
+    sha256 cellar: :any,                 sonoma:        "450fb74eb903658dd758407e5d70acb0fdf1a96b606823d43739a11cf696a551"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0531c21b2a145d6aa1546019aa0a2f59ae868262d483077507b9b573906f1ab7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39343932fd0eda4e6ba16c44d581663122c5a7cbebd5319977b4f12179edab8a"
   end
 
   depends_on "node"
