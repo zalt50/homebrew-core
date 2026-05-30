@@ -23,7 +23,6 @@
   ["dart-sdk", "dartaotruntime"],
   ["dbhash", "lemon", "sqldiff", "sqlite", "sqlite-analyzer", "sqlite-rsync"],
   ["dmd", "dtools"],
-  ["docker", "docker-completion"],
   ["etl", "synfig"],
   ["file-formula", "libmagic"],
   ["edencommon", "fb303", "fbthrift", "fizz", "folly", "mvfst", "proxygen", "wangle", "watchman"],
