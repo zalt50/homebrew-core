@@ -15,6 +15,9 @@ class DockerCompletion < Formula
     sha256 cellar: :any_skip_relocation, all: "3b610d95bf47634f39625917d7886bf41c1ddd28e5ca0f1e760d292278a005ef"
   end
 
+  deprecate! date: "2026-05-31", because: :deprecated_upstream, replacement_formula: "docker"
+  disable! date: "2027-05-31", because: :deprecated_upstream, replacement_formula: "docker"
+
   conflicts_with cask: "docker-desktop"
 
   # These used to also be provided by the `docker` formula.
@@ -22,9 +25,6 @@ class DockerCompletion < Formula
   link_overwrite "share/fish/vendor_completions.d/docker.fish"
   link_overwrite "share/zsh/site-functions/_docker"
 
-  deprecate! date: "2026-05-31", because: :deprecated_upstream, replacement_formula: "docker"
-  disable! date: "2027-05-31", because: :deprecated_upstream, replacement_formula: "docker"
-  
   def install
     bash_completion.install "contrib/completion/bash/docker"
     fish_completion.install "contrib/completion/fish/docker.fish"
