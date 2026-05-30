@@ -7,8 +7,7 @@ class OpenclHeaders < Formula
   head "https://github.com/KhronosGroup/OpenCL-Headers.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5ad1a11035085dfb898950f5cf253247c71bc4baa748befda760fc66d093a79f"
+    sha256 cellar: :any_skip_relocation, all: "7f60154c2841c780503e7bef0d6ecc1c64a2fd5d54512a088b8a981eaa235c9d"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"
