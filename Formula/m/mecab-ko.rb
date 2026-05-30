@@ -41,8 +41,8 @@ class MecabKo < Formula
     inreplace [bin/"mecab-config", etc/"mecabrc"], "#{lib}/mecab/dic", "#{HOMEBREW_PREFIX}/lib/mecab/dic"
   end
 
-  def post_install
-    (HOMEBREW_PREFIX/"lib/mecab/dic").mkpath
+  post_install_steps do
+    mkdir_p "lib/mecab/dic", base: :homebrew_prefix
   end
 
   test do
