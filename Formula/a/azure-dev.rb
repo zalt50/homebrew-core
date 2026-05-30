@@ -7,12 +7,12 @@ class AzureDev < Formula
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7628b4fcc315b3dc70a148ad7482ef88900dbfca97487f6c56ad2657386b880"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7628b4fcc315b3dc70a148ad7482ef88900dbfca97487f6c56ad2657386b880"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7628b4fcc315b3dc70a148ad7482ef88900dbfca97487f6c56ad2657386b880"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6df8b92aa1d631971214e9cf1aca14487517640c3ae3ac17f59bc103da51063"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6ff8e1458c59963b2c668f824ed75a4e4925f349fefcb6cf9aea224790de05d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90beb54d3b70c5b66d5e88f2a4e09944aea3599bcf18b3005da79f6c8f18c9dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f89aa742e3fd4e834271e83e7cf015f7dafa484a644ca17d36cc8edc8eae77f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f89aa742e3fd4e834271e83e7cf015f7dafa484a644ca17d36cc8edc8eae77f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f89aa742e3fd4e834271e83e7cf015f7dafa484a644ca17d36cc8edc8eae77f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0903eaf74750f64567b5fdf9bbc756cd13ba574005e55c49855f128e0113c1c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe92638a4b9fe15ebf6d5efaa5fb70631a77df5cde4afcb095b92da52d281e13"
+    sha256 cellar: :any,                 x86_64_linux:  "ef72d04c3819ca46b2223f732fa36e38dcf6e196fbf463298cb705753629fdac"
   end
 
   depends_on "go" => :build
