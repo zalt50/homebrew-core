@@ -41,6 +41,7 @@ class Netatalk < Formula
   depends_on "libgcrypt"
   depends_on "mariadb-connector-c"
   depends_on "openldap" # macOS LDAP.Framework is not fork safe
+  depends_on "talloc"
 
   uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
@@ -74,7 +75,7 @@ class Netatalk < Formula
       "-Dwith-lockfile-path=#{var}/run",
       "-Dwith-pam-config-path=#{etc}/pam.d",
       "-Dwith-pkgconfdir-path=#{pkgetc}",
-      "-Dwith-spotlight=false",
+      "-Dwith-spotlight=true",
       "-Dwith-statedir-path=#{var}",
       "-Dwith-testsuite=true",
     ]
