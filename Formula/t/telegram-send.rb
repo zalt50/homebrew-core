@@ -7,6 +7,10 @@ class TelegramSend < Formula
   sha256 "bb1570fda809a030dfa188ffb30fd92b97de6cde9f1268d57fed6b28c2f4aff5"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "dfa065f3430f0290cbd1699488b25e97d67e592f7ce6d1d844771a8c00f6d5bf"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
