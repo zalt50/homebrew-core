@@ -1,8 +1,8 @@
 class Quazip < Formula
   desc "C++ wrapper over Gilles Vollant's ZIP/UNZIP package"
   homepage "https://github.com/stachenov/quazip/"
-  url "https://github.com/stachenov/quazip/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "61c73926d4e98bf4c38becc15ba10437ab2af9e746a3982b86f7d720bd5823b4"
+  url "https://github.com/stachenov/quazip/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "e3c7220e66d9f8024ef4aa98befb2592fea219a01736a400b07b11aa60964d02"
   license "LGPL-2.1-only"
 
   bottle do
@@ -38,6 +38,7 @@ class Quazip < Formula
   test do
     ENV.delete "CPATH"
     (testpath/"test.pro").write <<~EOS
+      QT             += core5compat
       TEMPLATE        = app
       CONFIG         += console
       CONFIG         -= app_bundle
