@@ -6,12 +6,12 @@ class GitPages < Formula
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6c7b96db3990b4c5a3ceb8e2878db4448dc4e895da3538632704e435f4816de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb031f5c5da010bae4ad0492b98eb9ae034e7956ec8e369f2d8b58b273ac9d68"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cfab1b2783221e96ba474ace4e507998586cf9a381447529b60525ef82c3cc1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82635bf2587e9c09ad86fc6668332cd923e68b3d51475ea8f5afeb0b76cde0af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b00eed1115584a55459bfa1b05b0ff455d7bb4c8718b6da6060b9b2529c8b875"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0ded86e03be092098c91dd4519bd57a9bea5d7dfc843889e5dd148c5e75a261"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01473c20c21dd9ac4c6c185752ddd3f962f1136c492a1a13381aa52f720d5442"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "347009e429b2ed671e00db139d74e55ae9a1eec251681de52f04e150cb2ffda1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd268117cbf1ac435b047e900129e8470f7a7353f841f21ba97ca161b3f35321"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5cb02259e8b6f329be57e1399427369b694a898d8fcffb23f048a16d7ead25e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fe766798c12ec8ff64800f654d42e4651a1383b15fd8bd244acf55f4edafa78"
+    sha256 cellar: :any,                 x86_64_linux:  "1a8a35f67d7d2c7761c30bd49b416717d3a5cfb95d95972eb5fd3bd378a2922e"
   end
 
   depends_on "go" => :build
