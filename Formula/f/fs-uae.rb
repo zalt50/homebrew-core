@@ -1,9 +1,14 @@
 class FsUae < Formula
   desc "Amiga emulator"
   homepage "https://fs-uae.net/"
-  url "https://github.com/FrodeSolheim/fs-uae/releases/download/v3.2.35/fs-uae-3.2.35.tar.xz"
-  sha256 "f3d3cb8d3df34b0b0125c45a5a3e187ff71050be5dc8455cc4505c0380269117"
   license "GPL-2.0-or-later"
+
+  stable do
+    url "https://github.com/FrodeSolheim/fs-uae/releases/download/v3.2.35/fs-uae-3.2.35.tar.xz"
+    sha256 "f3d3cb8d3df34b0b0125c45a5a3e187ff71050be5dc8455cc4505c0380269117"
+
+    depends_on "sdl2"
+  end
 
   livecheck do
     url :stable
@@ -22,20 +27,24 @@ class FsUae < Formula
 
   head do
     url "https://github.com/FrodeSolheim/fs-uae.git", branch: "main"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+    depends_on "flac"
+    depends_on "mpg123"
+    depends_on "python@3.14"
+    depends_on "sdl3"
+    depends_on "sdl3_image"
+    depends_on "sdl3_ttf"
+    depends_on "zstd"
   end
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-
-  depends_on "freetype"
-  depends_on "glew"
   depends_on "glib"
   depends_on "libmpeg2"
   depends_on "libpng"
-  depends_on "sdl2"
 
   uses_from_macos "zip"
 
@@ -51,19 +60,12 @@ class FsUae < Formula
 
   def install
     system "./bootstrap" if build.head?
-
-    # Workaround for newer Clang
-    ENV.append_to_cflags "-Wno-c++11-narrowing" if DevelopmentTools.clang_build_version >= 1400
-
     system "./configure", "--disable-silent-rules", *std_configure_args
-    mkdir "gen"
     system "make"
     system "make", "install"
 
     # Remove unnecessary files
-    rm_r(share/"applications")
-    rm_r(share/"icons")
-    rm_r(share/"mime")
+    rm_r([share/"applications", share/"icons", share/"mime"]) if build.stable? && OS.mac?
   end
 
   test do
