@@ -6,13 +6,12 @@ class Promptfoo < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1243cfa00971fdaa1a9a5d4beaa34e7d19347b9efd90ea3f3ff5a2db842e8e40"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9808b2681b9e4085aa2cbe6f4550a46c6a18578557e78658afd7ab536dcc7656"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d565d62c9fee3e6d174aebb69cd7d1f4f1cecb650d529a97be600293daa0b67a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81c50e4b5bab55b0d7a5be05ffbeafb1f3b93c91ad51e86ac4d7e97ce369de5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6860604e84a13e70b19d9b2852c276e449e98fd8b50248ba60d99358b18873e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05e2f2cd06a650170a0f2f022d74ab7e0892fe1db0170b87364ceb9e48f74038"
+    sha256 cellar: :any, arm64_tahoe:   "db65be9f3eec9d8c02fd217d3f0c5991a4568f0a2af3ab693e86fe1ff098d1b9"
+    sha256 cellar: :any, arm64_sequoia: "897eca48a6b0d383d680911c3767e311b122cf9e4302c4c3368e2c082c496dac"
+    sha256 cellar: :any, arm64_sonoma:  "8690acd68bb02e54baa3fce3f5a0d86fe40032751269ab3bb0dad9fe9db109f8"
+    sha256 cellar: :any, sonoma:        "f30d8823960aa576161953b2289c6a414c203e2f80641eba5a2048c840759b96"
+    sha256 cellar: :any, arm64_linux:   "5fabac6c381cb2ba9a63bdfff9aa2a3ab048fb86b568a7efc2fc04359016c276"
+    sha256 cellar: :any, x86_64_linux:  "f2e34b9c1977a7fe59fb0c14c4d5173c8627b38ff2a5f508af8971a5f88c19f7"
   end
 
   depends_on "cmake" => :build # for `libsql-js` > `libsql-ffi`
