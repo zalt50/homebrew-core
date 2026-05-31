@@ -7,14 +7,12 @@ class OpenclIcdLoader < Formula
   head "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e0d457a1acf0efbcc69f119d0cebad5a3cb5c073690e94349c3bfdcfde5f6c77"
-    sha256 cellar: :any,                 arm64_sequoia: "bf65ff7f27a7877c993902277e68ff4b88e5e49a15fbd9ceb310352dc16a5793"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d863bc7eb594b7a84db8a789772d4e28fa55564c07ec34b8b2ed9e8f0936149"
-    sha256 cellar: :any,                 arm64_ventura: "3d8ba3a3c64ce7cb9f0c9a3185f8a432cd8e8bd08fb57ab8b5446f7f85db9e9a"
-    sha256 cellar: :any,                 sonoma:        "3b29127cbd3ad9bfd0c59cea68ba772ce5c1c4e323b5d566d5249a1528b869b9"
-    sha256 cellar: :any,                 ventura:       "fd9899b082534a219d434469052716a6a9f016b9a9fdc15a355b8e5ee2ee075a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74bad9df1b4a44f9f0675fabf03d7af9225993f5c3144f4104db82cace1d42cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaff23dec7418eeb114b986687c61f1e00aa3262d1a9d0843d06dbfe900fa4d0"
+    sha256 cellar: :any, arm64_tahoe:   "2d2a4ed934a51e67d4493ed4374899cd31364226da96ef2f3536617e3ef02c5e"
+    sha256 cellar: :any, arm64_sequoia: "ea1f4e95d01b5d33fea1cc5f684d0ec5665541b1f4516c9b757f748487bc0747"
+    sha256 cellar: :any, arm64_sonoma:  "2625c3a431893fef61d01e9c257ff948cf6e9e9edf4e29ad848a42f4e50569db"
+    sha256 cellar: :any, sonoma:        "dc181fc89234bff0e83d1c5950311469775509d867af78b510bcebb188a924b2"
+    sha256 cellar: :any, arm64_linux:   "a6433253e785c424eebf9ded1fcb8143ac68e6f8c8fb62de4f65f620ff3b4c08"
+    sha256 cellar: :any, x86_64_linux:  "c5f353a7341bca44b809c415e87a10c3ef4987e9e53841c40b7c8aca87e120c1"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"
