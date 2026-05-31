@@ -28,12 +28,6 @@ class Stella < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # ventura build patch, upstream pr ref, https://github.com/stella-emu/stella/pull/1064
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/stella/7.0c-ventura.patch"
-    sha256 "6295953eced4509376f4deb7b1ab511df5fed10cff4fab40feaa4ca8c53922ad"
-  end
-
   def install
     sdl2 = Formula["sdl2"]
     libpng = Formula["libpng"]
