@@ -1,8 +1,8 @@
 class Hyphy < Formula
   desc "Hypothesis testing using Phylogenies"
   homepage "https://www.hyphy.org"
-  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.99.tar.gz"
-  sha256 "b73c884216ef55b2ad4a9d77c4589d503b0ffeddb64b62fa9658e948bad241b6"
+  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.100.tar.gz"
+  sha256 "49ebc745907b37214da388341772e25df253244e02f3ab204bf0e27be84fcd8f"
   license "MIT"
 
   bottle do
