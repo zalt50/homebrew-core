@@ -3,7 +3,11 @@ class LibatomicOps < Formula
   homepage "https://github.com/bdwgc/libatomic_ops/"
   url "https://github.com/bdwgc/libatomic_ops/releases/download/v7.10.0/libatomic_ops-7.10.0.tar.gz"
   sha256 "0db3ebff755db170f65e74a64ec4511812e9ee3185c232eeffeacd274190dfb0"
-  license all_of: ["GPL-2.0-or-later", "MIT"]
+  license all_of: [
+    "MIT",
+    "Boehm-GC",         # include/atomic_ops/sysdeps/gcc/
+    "GPL-2.0-or-later", # lib/libatomic_ops_gpl.*
+  ]
   head "https://github.com/bdwgc/libatomic_ops.git", branch: "master"
 
   livecheck do
@@ -24,7 +28,7 @@ class LibatomicOps < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DAO_BUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-Dbuild_tests=ON",
                     *std_cmake_args,
