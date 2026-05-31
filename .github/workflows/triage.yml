@@ -357,7 +357,6 @@ jobs:
                 libnghttp2|\
                 libomp|\
                 libpng|\
-                librist|\
                 libtool|\
                 libunistring|\
                 mpfr|\
@@ -380,7 +379,6 @@ jobs:
                 shared-mime-info|\
                 sqlite|\
                 suite-sparse|\
-                unbound|\
                 xz|\
                 zstd\
                 ).rb"
