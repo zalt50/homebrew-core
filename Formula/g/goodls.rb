@@ -7,12 +7,12 @@ class Goodls < Formula
   head "https://github.com/tanaikech/goodls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa0792e8ce3cb67e3654424a59c56ef615ea25f1172477c6602e0ef66eed0c08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa0792e8ce3cb67e3654424a59c56ef615ea25f1172477c6602e0ef66eed0c08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa0792e8ce3cb67e3654424a59c56ef615ea25f1172477c6602e0ef66eed0c08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a6a110eda04b125926d54a2097624cf853094e699cde5dbd10d9a5eed127718"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41783435ba35dd65316d9e0eb9d6a34ba4315b6bc6cb8e31a40b0fc42050ef55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae0628fe15d855a9872c996f51ca941ae0ed239572788ab34fc2bfefdf62014b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dea87403f0d6d536d389bf46f00f979e14f181fe400798e660bb5bd7cf53cd2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dea87403f0d6d536d389bf46f00f979e14f181fe400798e660bb5bd7cf53cd2b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dea87403f0d6d536d389bf46f00f979e14f181fe400798e660bb5bd7cf53cd2b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3cb2f6dc74efe470151053a6ff1d170f2295632926ae9b47d8a10a1f737ef4bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e092f6ee96b7dadd899b339fa82ae65d84bbfc8aacaee25a38043bfb0db521af"
+    sha256 cellar: :any,                 x86_64_linux:  "9fbd14e1e63b5fbc1a526980685b05feb7be3a3ed863ce286a0345072c898a84"
   end
 
   depends_on "go" => :build
