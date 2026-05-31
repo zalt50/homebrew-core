@@ -22,12 +22,12 @@ class Librist < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "595ed1ce8182609029503f55ddb47f6be9778150c5241a49545073c459eac795"
-    sha256 cellar: :any, arm64_sequoia: "e98357da7ded0831f62e7ab8cdee56a3e982b71eba8891cf85c897b506f5dbf4"
-    sha256 cellar: :any, arm64_sonoma:  "0bef8f02970e42d789657f48dfcefee0c412d99e0acf38d7f929153e4a3827f5"
-    sha256 cellar: :any, sonoma:        "ea80c5cdae9207d83233312fb441fa80dbbd2cc3651e44b78fc837f2c54bdb3f"
-    sha256               arm64_linux:   "8a9c190e59ebd3927c14bf8465513992fe93e8d2be7d56238954f850fc10a74a"
-    sha256               x86_64_linux:  "63ddb30fee65c8bb4ce6fe1eeadde01753fcb803f60c056eff0c554a20463be7"
+    sha256 cellar: :any, arm64_tahoe:   "38416f33ef3303bd60dd229a180a1c8960dec27972a5bb8e9d38cd115840e7d6"
+    sha256 cellar: :any, arm64_sequoia: "512ab76d8fbe706ba8b2d4779448ea423be44fc344ca257e43585343eff8eae4"
+    sha256 cellar: :any, arm64_sonoma:  "9a5c22d5466562111176fabbad4d19adcdea3bf08a5833a20d14f136bbc29e74"
+    sha256 cellar: :any, sonoma:        "befc89f2cc8d90f8b9286b5be7f77c032c7d91d93c78cbc38a903074d4a65c18"
+    sha256               arm64_linux:   "c330cde0b091b7f4e656026c3211fb3d2b2754cfd6169a89ad6ba111e3deca6b"
+    sha256               x86_64_linux:  "b363acd98eb0a20fab942f616de80c5bd330f64278ba4d5dcc7b3f606daffb69"
   end
 
   depends_on "meson" => :build
