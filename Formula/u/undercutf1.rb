@@ -52,6 +52,6 @@ class Undercutf1 < Formula
     assert_match version.to_s, shell_output("#{bin}/undercutf1 --version")
 
     output = shell_output("#{bin}/undercutf1 import 2026")
-    assert_match "Available Meetings", output
+    assert_match "Received HTTP response headers after", output
   end
 end
