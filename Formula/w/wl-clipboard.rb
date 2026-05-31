@@ -5,6 +5,11 @@ class WlClipboard < Formula
   sha256 "b4dc560973f0cd74e02f817ffa2fd44ba645a4f1ea94b7b9614dacc9f895f402"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 arm64_linux:  "2ed9df6478788ec465afc01e214fc62780ff19216a9c5427296d8362a79fa2f6"
+    sha256 x86_64_linux: "3c5d5d55a1ccbe9df625a0cd3ca1d64538194afdae28c3d3e36d39a70f3e5cc2"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
