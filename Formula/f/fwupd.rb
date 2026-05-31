@@ -3,8 +3,8 @@ class Fwupd < Formula
 
   desc "Firmware update daemon"
   homepage "https://github.com/fwupd/fwupd"
-  url "https://github.com/fwupd/fwupd/releases/download/2.1.3/fwupd-2.1.3.tar.xz"
-  sha256 "9609b75b0706265f589b9b15e9c1f986832b523b94f994d00f5284d3ff15f503"
+  url "https://github.com/fwupd/fwupd/releases/download/2.1.4-2/fwupd-2.1.4.tar.xz"
+  sha256 "fa7ee00ccf5672bc9b93027fa51172dc8eabd8b93d02972c75396f3af7ca743c"
   license "LGPL-2.1-or-later"
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
@@ -69,17 +69,18 @@ class Fwupd < Formula
     venv.pip_install resources
     ENV.prepend_path "PYTHONPATH", venv.root/Language::Python.site_packages(python3)
 
-    system "meson", "setup", "build",
-                    "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
-                    "-Dpython=#{which(python3)}",
-                    "-Dsupported_build=enabled",
-                    "-Dplugin_flashrom=disabled",
-                    "-Dplugin_modem_manager=disabled",
-                    "-Dplugin_uefi_capsule_splash=false",
-                    "-Dtests=false",
-                    "-Ddocs=disabled",
-                    "-Dvendor_ids_dir=#{Formula["usb.ids"].opt_share}/misc/usb.ids",
-                    *std_meson_args
+    args = [
+      "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
+      "-Dpython=#{which(python3)}",
+      "-Dsupported_build=enabled",
+      "-Dplugin_modem_manager=disabled",
+      "-Dplugin_uefi_capsule_splash=false",
+      "-Dtests=false",
+      "-Ddocs=disabled",
+      "-Dvendor_ids_dir=#{Formula["usb.ids"].opt_share}/misc/usb.ids",
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
