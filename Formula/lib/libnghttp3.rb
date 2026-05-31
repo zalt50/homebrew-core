@@ -9,12 +9,12 @@ class Libnghttp3 < Formula
   head "https://github.com/ngtcp2/nghttp3.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "97ef00ffe4282cd24334ae030b8d9a822bfac20405fe9f31dae8b4f1e80b2133"
-    sha256 cellar: :any,                 arm64_sequoia: "5b1b255e9791d2c78590f1914194765cbb87cb2a46cd2e52db5d741d0e86f070"
-    sha256 cellar: :any,                 arm64_sonoma:  "379f36c4811ca6f8b170a79695480650720502759d34be52b403a99677fa5f07"
-    sha256 cellar: :any,                 sonoma:        "8deca6fa2c6dc3f7ca526a4c5fa82a5d8bb7bc8b3fb49df1fc1ba03511ae57c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1aa2913d174e7defeccaa8ea7399c291f27bef7587092f5198e5ad81a3605cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16f16337f4028ce9c324bd3e9f1379791a1cdfe993e8e0374cfb6c262651d25b"
+    sha256 cellar: :any, arm64_tahoe:   "772d72a87a7e8b71d1f088180059ab96654cd56acd4e121ae4e2925aba0f09d8"
+    sha256 cellar: :any, arm64_sequoia: "884f76eb493310492dbd50f3f331637e6f82904c9cf40244149f8b43e1ad7381"
+    sha256 cellar: :any, arm64_sonoma:  "bc258aa321f040002529543aa980a6b4b5c9fe5c4992ebb5a16ffe251214fe7b"
+    sha256 cellar: :any, sonoma:        "ec58e60d0f633355ad595ff7cee87bc1874b973a54842525ef6cc209cb9b5818"
+    sha256 cellar: :any, arm64_linux:   "20b22937ccd9cb8c6c0ccbd4066b5a9dcc5c43adbd78854133b62b030dfe376a"
+    sha256 cellar: :any, x86_64_linux:  "2db7779c13d68dde7683120d0202a12fb62e15f5c7d5f11190ce56994bdc594b"
   end
 
   depends_on "cmake" => :build
