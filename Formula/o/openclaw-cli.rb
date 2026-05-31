@@ -1,8 +1,8 @@
 class OpenclawCli < Formula
   desc "Your own personal AI assistant"
   homepage "https://openclaw.ai/"
-  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.5.19.tgz"
-  sha256 "fc2e773418c8e909345034d78f04f85290c38f79fb7237e7a00e003c19b60f13"
+  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.5.28.tgz"
+  sha256 "2f67aa242bfdd58fd1bcd3fea46df12531fb34b3c6987d98982b2020d0e4f905"
   license "MIT"
 
   bottle do
@@ -21,7 +21,6 @@ class OpenclawCli < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/openclaw/node_modules/"
-    deuniversalize_machos node_modules/"@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
 
     # sqlite-vec falls back cleanly when the native extension is unavailable.
     # Remove macOS pre-built dylibs that fail Homebrew bottle linkage fixups.
@@ -45,9 +44,14 @@ class OpenclawCli < Formula
       rm_r(dir)
     end
 
-    koffi_target = "#{OS.kernel_name.downcase}_#{arch}"
+    os = OS.kernel_name.downcase
+    node_modules.glob("@earendil-works/pi-tui/native/**/prebuilds/*").each do |dir|
+      basename = dir.basename.to_s
+      rm_r(dir) if basename != "#{os}-#{arch}"
+    end
+
     node_modules.glob("koffi/build/koffi/*").each do |dir|
-      rm_r(dir) if dir.basename.to_s != koffi_target
+      rm_r(dir) if dir.basename.to_s != "#{os}_#{arch}"
     end
   end
 
