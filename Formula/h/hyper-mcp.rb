@@ -1,8 +1,8 @@
 class HyperMcp < Formula
   desc "MCP server that extends its capabilities through WebAssembly plugins"
   homepage "https://github.com/hyper-mcp-rs/hyper-mcp"
-  url "https://github.com/hyper-mcp-rs/hyper-mcp/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "de271bf2a9239ba2aba9dc9d026e9ecfae005001bfec9b428dc121194ef6dfd9"
+  url "https://github.com/hyper-mcp-rs/hyper-mcp/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "d1cf665059aa1029b60764dcd06d10e91ecec05e5f40d478f01d285ee8d263c6"
   license "Apache-2.0"
   head "https://github.com/hyper-mcp-rs/hyper-mcp.git", branch: "main"
 
@@ -12,12 +12,12 @@ class HyperMcp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e21f813748b6b08cec1a408f548a9e4e62571b6fd1c1590c5a01b1d6b420344"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85e1443f9fc8220a3604a192baa0cdb51be5bf7a9750e63c34267087fb8317ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b5c526a1ffc62bcfa792c44f7ac03c4d64b7dea5ec1c6108ac06813ebd31018"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d1eed80368c261161f19a37746216dd71378ce9c9d14667f957713cdac19a30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9344b04c31adfba88a73c1d8ecebd8704fc1c02708332d53b720a1bb22540ba4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43beafd8dd96be1592ea20c4a218428fdc2a9495846cbff9cdb7d686fdc927bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01d8f1cdd4a3264e4e907c69be744d2c5003166a0f39a95587556db9be73910d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c03a744880f5705a2230cc824d9ce592308024f75d58c316fb46ea83326f08a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "942ead17a292b55d14e1e5d6708a7b1a7524bfc62a71a7c00fcfb092d9a432a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3d7dbe12ce736cebd02cf12ddcbf0eed4e705364457259666fb5ba2115310f0"
+    sha256 cellar: :any,                 arm64_linux:   "9d3d4b04d85e3583defcbf3c4219a9fe26350b5a64ff3eb82ca2dea9088ec15d"
+    sha256 cellar: :any,                 x86_64_linux:  "028bdcc862cf2240ef86cc472815a2631e958c7cafde56c41fe53613573c493b"
   end
 
   depends_on "rust" => :build
