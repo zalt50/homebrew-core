@@ -1,20 +1,11 @@
 class Librist < Formula
   desc "Reliable Internet Stream Transport (RIST)"
   homepage "https://code.videolan.org/rist/"
+  url "https://code.videolan.org/rist/librist/-/archive/v0.2.17/librist-v0.2.17.tar.gz"
+  sha256 "2eb2ef89fc746088194dc7591fdabb4d753061b06f7074709edc375bc4d04467"
   license "BSD-2-Clause"
   compatibility_version 1
   head "https://code.videolan.org/rist/librist.git", branch: "master"
-
-  stable do
-    url "https://code.videolan.org/rist/librist/-/archive/v0.2.16/librist-v0.2.16.tar.gz"
-    sha256 "ffcf575f02032ec89dfd6effa2e6f9a505d8dc2902853f10e83ab169ea588e20"
-
-    # fix: remove unused mbedtls/entropy_poll.h include
-    patch do
-      url "https://code.videolan.org/rist/librist/-/commit/df07717cab40fef2fe89c6831179dceb1a659066.patch"
-      sha256 "5391be5b07a21dbcf1b6454888f44c6ebc2a0b34cb14c644c6e20f52917f223c"
-    end
-  end
 
   livecheck do
     url :stable
@@ -35,6 +26,7 @@ class Librist < Formula
   depends_on "pkgconf" => :build
   depends_on "cjson"
   depends_on "libmicrohttpd"
+  depends_on "lz4"
   depends_on "mbedtls@3"
 
   def install
