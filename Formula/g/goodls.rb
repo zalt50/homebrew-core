@@ -1,8 +1,8 @@
 class Goodls < Formula
   desc "CLI tool to download shared files and folders from Google Drive"
   homepage "https://github.com/tanaikech/goodls"
-  url "https://github.com/tanaikech/goodls/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "0d377adb177fbb7220af8bf0379e2e707a9fd3b55a91449ed2a1f235e2a2b172"
+  url "https://github.com/tanaikech/goodls/archive/refs/tags/v3.3.1.tar.gz"
+  sha256 "78f866c19da30d4ade3217673d24e214a86508dd4426dc87fb106d7022f7df15"
   license "MIT"
   head "https://github.com/tanaikech/goodls.git", branch: "master"
 
@@ -18,7 +18,7 @@ class Goodls < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/goodls"
   end
 
   test do
