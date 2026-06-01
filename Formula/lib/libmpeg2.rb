@@ -31,7 +31,6 @@ class Libmpeg2 < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "sdl12-compat"
 
   on_linux do
     depends_on "libx11"
@@ -43,7 +42,8 @@ class Libmpeg2 < Formula
     ENV.append "CFLAGS", "-std=gnu89"
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args
+    # Build without old SDL 1.2 similar to Debian and Arch Linux
+    system "./configure", "--disable-sdl", *std_configure_args
     system "make", "install"
     pkgshare.install "doc/sample1.c"
   end
