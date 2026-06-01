@@ -16,7 +16,6 @@ class Lgeneral < Formula
   end
 
   depends_on "sdl12-compat"
-  depends_on "sdl2"
 
   on_macos do
     depends_on "gettext"
