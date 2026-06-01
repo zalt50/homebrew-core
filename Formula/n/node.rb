@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v26.0.0/node-v26.0.0.tar.xz"
-  sha256 "fcb5e5c06a5c2ec9e669801248657aafaa2291f8760dac7bfb639f878318c592"
+  url "https://nodejs.org/dist/v26.3.0/node-v26.3.0.tar.xz"
+  sha256 "319ad5d7d20cc622e55eb75b9f1a2546b77a08bd462b67030d0c89316c2c2349"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
@@ -28,6 +28,7 @@ class Node < Formula
   depends_on "c-ares"
   depends_on "hdrhistogram_c"
   depends_on "icu4c@78"
+  depends_on "libffi" # System `libffi` is missing some definitions used by node
   depends_on "libnghttp2"
   depends_on "libnghttp3"
   depends_on "libngtcp2"
@@ -70,8 +71,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.12.1.tgz"
-    sha256 "e679850e663b16f5f146ee425d0eb0e3442c1d2bda3d513bbfd7c81f5ee5db38"
+    url "https://registry.npmjs.org/npm/-/npm-11.16.0.tgz"
+    sha256 "30fc15697c771002878665c29f49dddde9aa8667fa5719854b2f52d3cd19230b"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"
@@ -116,6 +117,7 @@ class Node < Formula
       "ada"           => ["ada",             "ada-url"],
       "brotli"        => ["brotli",          "brotli"],
       "cares"         => ["cares",           "c-ares"],
+      "ffi"           => ["libffi",          "libffi"],
       "hdr-histogram" => ["histogram",       "hdrhistogram_c"],
       "http-parser"   => ["llhttp",          "llhttp"],
       "libuv"         => ["uv",              "libuv"],
