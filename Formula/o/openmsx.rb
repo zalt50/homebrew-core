@@ -1,11 +1,20 @@
 class Openmsx < Formula
   desc "MSX emulator"
   homepage "https://openmsx.org/"
-  url "https://github.com/openMSX/openMSX/releases/download/RELEASE_21_0/openmsx-21.0.tar.gz"
-  sha256 "28838bfa974a0b769b04a8820ad7953a7ad0835eb5d1764db173deac75984b6f"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/openMSX/openMSX.git", branch: "master"
+
+  stable do
+    url "https://github.com/openMSX/openMSX/releases/download/RELEASE_21_0/openmsx-21.0.tar.gz"
+    sha256 "28838bfa974a0b769b04a8820ad7953a7ad0835eb5d1764db173deac75984b6f"
+
+    # Backport fix for sdl2-compat
+    patch do
+      url "https://github.com/openMSX/openMSX/commit/bef559e0e2e1413ba8abbef882224a5919214c5a.patch?full_index=1"
+      sha256 "3744a1693d43c86a678c416836f0e2fa900023f0b9176c63116080f009c5bbb9"
+    end
+  end
 
   livecheck do
     url :stable
