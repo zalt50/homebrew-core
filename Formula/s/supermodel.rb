@@ -25,28 +25,16 @@ class Supermodel < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
-    os = OS.mac? ? "OSX" : "UNIX"
-    makefile_dir = "Makefiles/Makefile.#{os}"
+    # Workaround for build environment as sdl2-config uses paths relative to executable.
+    # TODO: Remove after moving to `sdl2-compat` which uses paths set at build-time.
+    ENV.remove "PATH", Formula["sdl2"].opt_bin
+    ENV.append_path "PATH", HOMEBREW_PREFIX/"bin"
 
-    ENV.deparallelize
-    # Set up SDL2 library correctly
-    inreplace makefile_dir, "-framework SDL2", "`sdl2-config --libs`" if OS.mac?
-    inreplace "Src/OSD/SDL/SDLIncludes.h", "SDL_net.h", "SDL2/SDL_net.h" if OS.linux?
-
-    system "make", "-f", makefile_dir
-    bin.install "bin/supermodel"
-
-    (var/"supermodel/Saves").mkpath
-    (var/"supermodel/NVRAM").mkpath
-    (var/"supermodel/Logs").mkpath
-  end
-
-  def caveats
-    <<~EOS
-      Config, Saves, and NVRAM are located in the following directory:
-        #{var}/supermodel/
-    EOS
+    # Not using Makefile.OSX as it uses prebuilt frameworks
+    system "make", "-f", "Makefiles/Makefile.UNIX", "BIN_DIR=#{bin}"
   end
 
   test do
