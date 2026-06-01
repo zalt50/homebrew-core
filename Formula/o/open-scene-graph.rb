@@ -68,7 +68,10 @@ class OpenSceneGraph < Formula
     if OS.mac?
       arch = Hardware::CPU.arm? ? "arm64" : "x86_64"
 
+      # Adding RPATH to hide `brew linkage` failure. Not using CMAKE_INSTALL_RPATH
+      # to preserve upstream RPATH handling and to only add RPATH to plugins
       args += %W[
+        -DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{loader_path}/..
         -DCMAKE_OSX_ARCHITECTURES=#{arch}
         -DOSG_DEFAULT_IMAGE_PLUGIN_FOR_OSX=imageio
         -DOSG_WINDOWING_SYSTEM=Cocoa
