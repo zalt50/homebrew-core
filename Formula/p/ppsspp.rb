@@ -16,11 +16,13 @@ class Ppsspp < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "freetype" => :build
   depends_on "pkgconf" => :build
 
   depends_on "libzip"
   depends_on "miniupnpc"
   depends_on "sdl2"
+  depends_on "sdl2_ttf"
   depends_on "snappy"
   depends_on "zstd"
 
@@ -31,6 +33,7 @@ class Ppsspp < Formula
   end
 
   on_linux do
+    depends_on "fontconfig"
     depends_on "glew"
     depends_on "mesa"
     depends_on "zlib-ng-compat"
@@ -72,6 +75,7 @@ class Ppsspp < Formula
     vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib/"libMoltenVK.dylib"
 
     args = %w[
+      -DUSE_SYSTEM_FREETYPE=ON
       -DUSE_SYSTEM_LIBZIP=ON
       -DUSE_SYSTEM_SNAPPY=ON
       -DUSE_SYSTEM_LIBSDL2=ON
