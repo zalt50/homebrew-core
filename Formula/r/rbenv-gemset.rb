@@ -1,8 +1,8 @@
 class RbenvGemset < Formula
   desc "KISS yet powerful gem / gemset management for rbenv"
   homepage "https://github.com/jf/rbenv-gemset"
-  url "https://github.com/jf/rbenv-gemset/archive/refs/tags/v0.5.100.tar.gz"
-  sha256 "371fc84e35e40c7c25339cb67599a0a768bc7d3d4daafb05e02ab960bde64ce4"
+  url "https://github.com/jf/rbenv-gemset/archive/refs/tags/v0.5.101.tar.gz"
+  sha256 "cc417d3d5cc0e439549beacaccf0cf0a4a62e466131854bb331d0d521666c017"
   license :public_domain
   head "https://github.com/jf/rbenv-gemset.git", branch: "master"
 
@@ -17,6 +17,8 @@ class RbenvGemset < Formula
   end
 
   test do
-    assert_match "gemset.bash", shell_output("rbenv hooks exec")
+    output = shell_output("rbenv hooks exec")
+    assert_match "gem-rehash.bash", output
+    assert_match "exec.bash", output
   end
 end
