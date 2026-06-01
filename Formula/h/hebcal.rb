@@ -1,18 +1,18 @@
 class Hebcal < Formula
   desc "Perpetual Jewish calendar for the command-line"
   homepage "https://github.com/hebcal/hebcal"
-  url "https://github.com/hebcal/hebcal/archive/refs/tags/v5.9.8.tar.gz"
-  sha256 "b1f20d254026ef59110af39c3dcf2d915235a9a1ec52d7bfd21739c66666767b"
+  url "https://github.com/hebcal/hebcal/archive/refs/tags/v5.11.0.tar.gz"
+  sha256 "fd5e4c3d7fe032c04994ac026dadf265aed99046dd0e70080f7cd851d462ad7e"
   license "GPL-2.0-or-later"
   head "https://github.com/hebcal/hebcal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c96c396d7b6e94d012da5721505a62db2b5b066d717716b64115756fb3f117d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c96c396d7b6e94d012da5721505a62db2b5b066d717716b64115756fb3f117d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c96c396d7b6e94d012da5721505a62db2b5b066d717716b64115756fb3f117d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bda367572cfd694ab4667a462a3233ff3c99376003f7d5696074050d564d0d2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3713ae4e8fcb6b9c47ab4f515d51080225b7bee73a6e5a11dc201508ab75feb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed793f31577e0600f039a5cf4afa71469e38d3077d5cd86138d364532e4355f1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e1bae2b02eb3e6cf27e189114d017c17e9d74dbb63d571cd9fa066b0ed6b9ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e1bae2b02eb3e6cf27e189114d017c17e9d74dbb63d571cd9fa066b0ed6b9ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e1bae2b02eb3e6cf27e189114d017c17e9d74dbb63d571cd9fa066b0ed6b9ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e7d1ac7be60c339e9c1f0a8d6848500a52ed6aae8973682a6564724261c7a068"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddc3defd93f2deb0917f7a55e1ef996a09711ee1c613e784c114f870870fb016"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a03b9d534f552029761432a217ebe53285eef5a14f2b36fcf6967e65558d7edd"
   end
 
   depends_on "go" => :build
