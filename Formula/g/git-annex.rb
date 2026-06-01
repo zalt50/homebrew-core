@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20260525/git-annex-10.20260525.tar.gz"
-  sha256 "19a3a4b94b2b39da0a69189a424cc6bb6b9c72053a55fc932b8111513cc1e275"
+  url "https://hackage.haskell.org/package/git-annex-10.20260601/git-annex-10.20260601.tar.gz"
+  sha256 "cce20dbea9f1626e0c680267ffb7e5ef2d95a9e0c34bdc7d153c30cb1f5687f8"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -32,6 +32,9 @@ class GitAnnex < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  # Hide conflicting imports. Probably caused by `--allow-newer` flag
+  patch :DATA
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
@@ -75,3 +78,18 @@ class GitAnnex < Formula
     system "git", "annex", "uninit"
   end
 end
+
+__END__
+diff --git a/Utility/Url.hs b/Utility/Url.hs
+index 40fa483..0c1f973 100644
+--- a/Utility/Url.hs
++++ b/Utility/Url.hs
+@@ -55,7 +55,7 @@ import Utility.Url.Parse
+ import qualified Utility.FileIO as F
+ 
+ import Network.URI
+-import Network.HTTP.Types
++import Network.HTTP.Types hiding (hAcceptEncoding, hContentDisposition, hContentRange)
+ import qualified System.FilePath.Posix as UrlPath
+ import qualified Data.CaseInsensitive as CI
+ import qualified Data.ByteString as B
