@@ -7,6 +7,16 @@ class LizardAnalyzer < Formula
   sha256 "39f6a44fb04b8d5edb9c4b95194fd3f8a7d29b2ec4ef30c6774a68f3561bd362"
   license "MIT"
 
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fca471436191bc804490040f8e38a1def3085a6b11c80861d9db17ee4d8ec85"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "346d212bdd1f3ed423ee8c195ea7983552ed550db18b2134f65d10c740af58c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ab89843fb215652afadc467f9ee2863741e5ba0e596513c49949ba36ca7b29b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bab881807c4c16db0292ec9c608b2c827a7794c61519bdfd5970d5f1c35b4345"
+    sha256 cellar: :any,                 arm64_linux:   "bcde872a9d3e9e2322c7e25776d6e767251dd50691f3b62079df3d218eca22ac"
+    sha256 cellar: :any,                 x86_64_linux:  "e5fb1a165de8c7a6721cdf821743102417a71686860cdbc4b8cdab56f741a472"
+  end
+
   depends_on "python@3.14"
 
   conflicts_with "lizard", because: "both install `lizard` binaries"
