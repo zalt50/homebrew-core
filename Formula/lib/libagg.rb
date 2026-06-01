@@ -36,7 +36,16 @@ class Libagg < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "sdl12-compat"
+
+  # Apply MacPorts patch to allow building without SDL
+  patch :p0 do
+    url "https://raw.githubusercontent.com/macports/macports-ports/2c1525dfa5e9b3d60ec0a02cbbd9a5c21a4e05eb/graphics/antigraingeometry/files/patch-configure.in.diff"
+    sha256 "c3f22ef7d57cf5f88e4a72fd2ff5c5416610ad9953953fb87f4286bdeee96031"
+  end
+  patch :p0 do
+    url "https://raw.githubusercontent.com/macports/macports-ports/2c1525dfa5e9b3d60ec0a02cbbd9a5c21a4e05eb/graphics/antigraingeometry/files/patch-src-platform-Makefile.am.diff"
+    sha256 "be4b7a6a118833722f3aaf378d0bcdf4dc56ed8f003edff5bc73fe2b83a49bee"
+  end
 
   # Fix build with clang; last release was in 2006
   patch :DATA
