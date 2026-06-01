@@ -1,8 +1,8 @@
 class StarlarkRust < Formula
   desc "Rust implementation of the Starlark language"
   homepage "https://github.com/facebook/starlark-rust"
-  url "https://github.com/facebook/starlark-rust/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "c27d974dd242f133184a5fc53a145374f193464e163fa6fbd4cade566e3cfab6"
+  url "https://github.com/facebook/starlark-rust/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "3a0030b4fe1becf62698a6aed0dbbbd68397e7406fa0eca078849622b93d56e4"
   license "Apache-2.0"
   head "https://github.com/facebook/starlark-rust.git", branch: "main"
 
