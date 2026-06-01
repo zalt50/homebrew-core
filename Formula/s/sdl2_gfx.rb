@@ -5,6 +5,7 @@ class Sdl2Gfx < Formula
   mirror "https://sources.voidlinux.org/SDL2_gfx-1.0.4/SDL2_gfx-1.0.4.tar.gz"
   sha256 "63e0e01addedc9df2f85b93a248f06e8a04affa014a835c2ea34bfe34e576262"
   license "Zlib"
+  revision 1
 
   livecheck do
     url :homepage
@@ -34,7 +35,11 @@ class Sdl2Gfx < Formula
     args << "--disable-mmx" if Hardware::CPU.arm?
 
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
+
+    # Workaround to avoid undefined references with `sdl2-compat`.
+    # Not actively maintained with last activity in 2018
+    ENV.append "LIBS", "-lm" if OS.linux?
 
     system "./configure", "--disable-sdltest", *args, *std_configure_args
     system "make", "install"
