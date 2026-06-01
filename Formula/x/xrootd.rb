@@ -1,9 +1,9 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https://xrootd.slac.stanford.edu/"
-  url "https://github.com/xrootd/xrootd/releases/download/v6.0.2/xrootd-6.0.2.tar.gz"
-  mirror "https://xrootd.slac.stanford.edu/download/v6.0.2/xrootd-6.0.2.tar.gz"
-  sha256 "1270d9815ce196bc2a5e84a8723c06ed6721bc1ede255698f00e131c474d2547"
+  url "https://github.com/xrootd/xrootd/releases/download/v6.0.3/xrootd-6.0.3.tar.gz"
+  mirror "https://xrootd.slac.stanford.edu/download/v6.0.3/xrootd-6.0.3.tar.gz"
+  sha256 "4b02d60bdfd67177f55df2252f2463d5304fc22ae1fc33223d36f2a836d0f44e"
   license "LGPL-3.0-or-later"
   compatibility_version 1
   head "https://github.com/xrootd/xrootd.git", branch: "master"
