@@ -1,24 +1,24 @@
 class Goodls < Formula
   desc "CLI tool to download shared files and folders from Google Drive"
   homepage "https://github.com/tanaikech/goodls"
-  url "https://github.com/tanaikech/goodls/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "0d377adb177fbb7220af8bf0379e2e707a9fd3b55a91449ed2a1f235e2a2b172"
+  url "https://github.com/tanaikech/goodls/archive/refs/tags/v3.3.1.tar.gz"
+  sha256 "78f866c19da30d4ade3217673d24e214a86508dd4426dc87fb106d7022f7df15"
   license "MIT"
   head "https://github.com/tanaikech/goodls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dea87403f0d6d536d389bf46f00f979e14f181fe400798e660bb5bd7cf53cd2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dea87403f0d6d536d389bf46f00f979e14f181fe400798e660bb5bd7cf53cd2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dea87403f0d6d536d389bf46f00f979e14f181fe400798e660bb5bd7cf53cd2b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cb2f6dc74efe470151053a6ff1d170f2295632926ae9b47d8a10a1f737ef4bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e092f6ee96b7dadd899b339fa82ae65d84bbfc8aacaee25a38043bfb0db521af"
-    sha256 cellar: :any,                 x86_64_linux:  "9fbd14e1e63b5fbc1a526980685b05feb7be3a3ed863ce286a0345072c898a84"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03ea8da334ab4c08252de8ba618cc62ddfb462e04a0c038c402923d4b2e0c258"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03ea8da334ab4c08252de8ba618cc62ddfb462e04a0c038c402923d4b2e0c258"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03ea8da334ab4c08252de8ba618cc62ddfb462e04a0c038c402923d4b2e0c258"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e03593824cbf3bf4d8039ce3c14f393e9d481ca79f795751cca8918ec1fe283"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82ba5cbf890c88ade56c2de77d1bc673d5aeefed1f069def4758fa8785c38a59"
+    sha256 cellar: :any,                 x86_64_linux:  "330e5c6c8e4566781ccf5e3af4d548db544608518c549022c12903d554046461"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/goodls"
   end
 
   test do
