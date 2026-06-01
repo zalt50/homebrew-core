@@ -25,10 +25,12 @@ class LibvisualPlugins < Formula
 
   depends_on "jack"
   depends_on "libvisual"
-  depends_on "portaudio"
-  depends_on "sdl12-compat"
 
   uses_from_macos "bison" => :build
+
+  on_macos do
+    depends_on "portaudio"
+  end
 
   on_linux do
     depends_on "alsa-lib"
@@ -55,12 +57,13 @@ class LibvisualPlugins < Formula
   test do
     libvisual = Formula["libvisual"]
     lv_tool = libvisual.bin/"lv-tool-#{libvisual.version.major_minor}"
+    audio = OS.mac? ? "portaudio" : "pulseaudio"
 
     # Test that locating key plugins works properly
     plugin_help_output = shell_output("#{lv_tool} --plugin-help 2>&1")
     assert_match " (debug)", plugin_help_output
     assert_match " (lv_gltest)", plugin_help_output
-    assert_match " (portaudio)", plugin_help_output
+    assert_match " (#{audio})", plugin_help_output
 
     # Tests that lv-tool starts up without crashing
     xvfb_pid = fork do
