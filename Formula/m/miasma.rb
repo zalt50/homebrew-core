@@ -1,8 +1,8 @@
 class Miasma < Formula
   desc "Trap AI web scrapers in an endless poison pit"
   homepage "https://github.com/austin-weeks/miasma"
-  url "https://github.com/austin-weeks/miasma/archive/refs/tags/v0.2.5.tar.gz"
-  sha256 "081bdccc2cfe1a9889dbb842006a4ee6fb5764dd5835a42955d46f36d8ba3db2"
+  url "https://github.com/austin-weeks/miasma/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "c257e453154d50e07abf1b98cf8bcbad2ca1e23bf606b1d0d0e3076469f607e6"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -15,6 +15,8 @@ class Miasma < Formula
   end
 
   depends_on "rust" => :build
+
+  uses_from_macos "sqlite"
 
   def install
     system "cargo", "install", *std_cargo_args
