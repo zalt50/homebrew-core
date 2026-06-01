@@ -1,8 +1,8 @@
 class CucumberRuby < Formula
   desc "Cucumber for Ruby"
   homepage "https://cucumber.io"
-  url "https://github.com/cucumber/cucumber-ruby/archive/refs/tags/v11.0.0.tar.gz"
-  sha256 "c139c3d72a7cd23310cf84c1c9abcf51c232aaa0205564c97ff8c0ab93e3d6b6"
+  url "https://github.com/cucumber/cucumber-ruby/archive/refs/tags/v11.1.0.tar.gz"
+  sha256 "ea8a759fcf703a15734a1f83bfe796fa62eb3a71c2df14283b482e670ba3de58"
   license "MIT"
 
   livecheck do
@@ -74,13 +74,13 @@ class CucumberRuby < Formula
   end
 
   resource "bigdecimal" do
-    url "https://rubygems.org/gems/bigdecimal-4.0.1.gem"
-    sha256 "8b07d3d065a9f921c80ceaea7c9d4ae596697295b584c296fe599dd0ad01c4a7"
+    url "https://rubygems.org/gems/bigdecimal-4.1.2.gem"
+    sha256 "53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd"
   end
 
   resource "cucumber-cucumber-expressions" do
-    url "https://rubygems.org/gems/cucumber-cucumber-expressions-19.0.0.gem"
-    sha256 "33208ff204732ac9bed42b46993a0a243054f71ece08579d57e53df6a1c9d93a"
+    url "https://rubygems.org/gems/cucumber-cucumber-expressions-19.0.1.gem"
+    sha256 "648ec09045190d818fb797af46e1648148599fd67a086a34a7f0e647d9e36c8c"
   end
 
   resource "cucumber-tag-expressions" do
@@ -89,8 +89,8 @@ class CucumberRuby < Formula
   end
 
   resource "cucumber-gherkin" do
-    url "https://rubygems.org/gems/cucumber-gherkin-39.0.0.gem"
-    sha256 "46f51d87e910f41c3c5cee3b500028ca2b2e7149a413a8280b9a58cee2593e55"
+    url "https://rubygems.org/gems/cucumber-gherkin-39.1.0.gem"
+    sha256 "aed12a0c955d8563d80a012633c1a72075525f4d64d4cc983001df2181b379ed"
   end
 
   resource "cucumber-core" do
