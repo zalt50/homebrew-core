@@ -1,8 +1,8 @@
 class Goodls < Formula
   desc "CLI tool to download shared files and folders from Google Drive"
   homepage "https://github.com/tanaikech/goodls"
-  url "https://github.com/tanaikech/goodls/archive/refs/tags/v3.3.1.tar.gz"
-  sha256 "78f866c19da30d4ade3217673d24e214a86508dd4426dc87fb106d7022f7df15"
+  url "https://github.com/tanaikech/goodls/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "5acda68a159e8bc7d8dfe164a2bb44a8868240db9394b6c5eff93233260a4b8b"
   license "MIT"
   head "https://github.com/tanaikech/goodls.git", branch: "master"
 
@@ -24,11 +24,7 @@ class Goodls < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/goodls --version")
 
-    expected = if OS.mac?
-      "URL is wrong"
-    else
-      "no URL data"
-    end
-    assert_match expected, shell_output("#{bin}/goodls -u https://drive.google.com/file/d/1dummyURL 2>&1", 1)
+    output = shell_output("#{bin}/goodls -u https://drive.google.com/file/d/1dummyURL 2>&1", 1)
+    assert_match "URL is wrong", output
   end
 end
