@@ -1,8 +1,8 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://github.com/facebook/mvfst/archive/refs/tags/v2026.05.25.00.tar.gz"
-  sha256 "ec88bcabc7f8689348ad7b3a5ee4313f0dd196df16959e16ea62ab6cbd46d337"
+  url "https://github.com/facebook/mvfst/archive/refs/tags/v2026.06.01.00.tar.gz"
+  sha256 "e722629b16cb60639f43c61d220ad8f3e08edb6d38b8e059e07e931061dd087d"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
@@ -54,6 +54,7 @@ class Mvfst < Formula
         quic/samples/echo/main.cpp
         quic/common/test/TestUtils.cpp
         quic/common/test/TestPacketBuilders.cpp
+        quic/common/test/TestTransportUtils.cpp
       )
       target_link_libraries(echo mvfst::mvfst fizz::fizz_test_support GTest::gmock)
       target_include_directories(echo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
