@@ -39,13 +39,6 @@ class Kakoune < Formula
     cause "Requires GCC >= 10.3"
   end
 
-  # Fix to error: no matching function for call to ‘lower_bound`
-  # PR ref: https://github.com/mawww/kakoune/pull/5472
-  patch do
-    url "https://github.com/mawww/kakoune/commit/9d5fb1992e0149130706aa6c9cb3ab474c580597.patch?full_index=1"
-    sha256 "3b777df6d6773daeb23cd5fc59a8732fcfbb62294b37c1108ba7e3d8da9524d1"
-  end
-
   def install
     system "make", "install", "debug=no", "PREFIX=#{prefix}"
   end
