@@ -6,6 +6,15 @@ class Sdl2Compat < Formula
   license "Zlib"
   head "https://github.com/libsdl-org/sdl2-compat.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "747fcdcfc92367c95be9cde4d24847c4b30874c58c47610e433559c9afa8d58a"
+    sha256 cellar: :any, arm64_sequoia: "7e75cc128a53c76c59bdb4ef91e020aaae02f61a93c030b8c4658ebbf1e43e49"
+    sha256 cellar: :any, arm64_sonoma:  "a11078ca31066d4af631ac0718f61c4e473d72b8b3fb32c734484253e424214a"
+    sha256 cellar: :any, sonoma:        "ef4b98d783cc363e282876852cb9b81d0c9407f05a454b6141d9f35531c3423a"
+    sha256 cellar: :any, arm64_linux:   "6064d08bfe80b9ae4439597f97ab58cea1015028f6b8ea83f5f8192d2f5b489a"
+    sha256 cellar: :any, x86_64_linux:  "5f6b1b7ff9e6b6ae868fa17eeb04177e95721144712c7d66a7e91a8aa3a25405"
+  end
+
   depends_on "cmake" => :build
   depends_on "sdl3" => :no_linkage
 
