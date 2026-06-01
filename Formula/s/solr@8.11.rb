@@ -6,6 +6,16 @@ class SolrAT811 < Formula
   sha256 "163fbdf246bbd78910bc36c3257ad50cdf31ccc3329a5ef885c23c9ef69e0ebe"
   license "Apache-2.0"
 
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3002d0e561a683b264425cfee6a6111f8615eeb590c7d3bbd0c591e976e01868"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+  end
+
   keg_only :versioned_formula
 
   # Solr 8 reached end of life (EOL) on 2024-10-25:
