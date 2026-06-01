@@ -1,8 +1,8 @@
 class LibvirtPython < Formula
   desc "Libvirt virtualization API python binding"
   homepage "https://www.libvirt.org/"
-  url "https://download.libvirt.org/python/libvirt_python-12.3.0.tar.gz"
-  sha256 "cc472e54c05a86db26e21358e1e8554bc85fea3cac6fe2b90e60e6a06e496a8d"
+  url "https://download.libvirt.org/python/libvirt_python-12.4.0.tar.gz"
+  sha256 "e24ade7e9b774b56ce3ea6c69ea06b99103391b09c8d9f77a308584b79c9a00d"
   license "LGPL-2.1-or-later"
 
   livecheck do
