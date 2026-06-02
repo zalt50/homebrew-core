@@ -26,7 +26,6 @@ class Rabbitmq < Formula
 
     # Setup the lib files
     (var/"lib/rabbitmq").mkpath
-    (var/"log/rabbitmq").mkpath
 
     # Correct SYS_PREFIX for things like rabbitmq-plugins
     erlang = Formula["erlang@28"]
