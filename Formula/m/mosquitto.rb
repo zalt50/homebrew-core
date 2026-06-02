@@ -47,8 +47,6 @@ class Mosquitto < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    (var/"mosquitto").mkpath
   end
 
   def caveats
