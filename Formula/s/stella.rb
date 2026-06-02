@@ -12,13 +12,12 @@ class Stella < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "8ab71c51931ddfdb6b82d247fff9eb58e9942d32fc8c13c0abed4459a58344d9"
-    sha256 cellar: :any, arm64_sequoia: "24140c78a4102e4848abe711f49760549cfe2f0ad5a6dd322868d37d0c82c12f"
-    sha256 cellar: :any, arm64_sonoma:  "d6de66a30620b32033947bc6ca98b86ccc825526e5d14f3e29cf47a4eadabc4c"
-    sha256 cellar: :any, sonoma:        "c7d9e81150b03eed64cd3a3c2255473b8437429feb2a63b9091569f2e5157fed"
-    sha256 cellar: :any, arm64_linux:   "37c6ee529603c602a8f17d73731109a8a0d041a360ea2e818ac0f9c857240a19"
-    sha256 cellar: :any, x86_64_linux:  "3293d2efacfbe3e6ccd827e518906400430ab70090efcc75558fc0395a60b42c"
+    sha256 cellar: :any, arm64_tahoe:   "703f3018a3b24a427048fbdccfc071351ad394c18de036ecad0d3ad1e315755a"
+    sha256 cellar: :any, arm64_sequoia: "8827c4413e4115e2112db911ea5e1452c6fda6ae7107c1a8978b52a217aff422"
+    sha256 cellar: :any, arm64_sonoma:  "4196ed342ac1beb49afa9a24aebe632edae3428b7609db964304c599730de83e"
+    sha256 cellar: :any, sonoma:        "e8bc2f7983e6ea2f42cafb9a8e2096a4ea9d3299b5680473fbbc4a44f724157d"
+    sha256 cellar: :any, arm64_linux:   "d01cea3aa44e1b08101353e9aaff609b1912648969665b4ab861bb2dbe0bc1c6"
+    sha256 cellar: :any, x86_64_linux:  "b2370389aec764f2df7f6bdbafb6e66008dbb3044fa4a982fd3b61b0d2335242"
   end
 
   head do
