@@ -1,11 +1,15 @@
 class Stella < Formula
   desc "Atari 2600 VCS emulator"
   homepage "https://stella-emu.github.io/"
-  url "https://github.com/stella-emu/stella/archive/refs/tags/7.0c.tar.gz"
-  version "7.0c"
-  sha256 "b9309198aa5746cd568e91caaea10bbeab4ca8155493d0243694b41bdb39d7ca"
   license "GPL-2.0-or-later"
-  head "https://github.com/stella-emu/stella.git", branch: "master"
+  revision 1
+
+  stable do
+    url "https://github.com/stella-emu/stella/archive/refs/tags/7.0c.tar.gz"
+    version "7.0c"
+    sha256 "b9309198aa5746cd568e91caaea10bbeab4ca8155493d0243694b41bdb39d7ca"
+    depends_on "sdl2"
+  end
 
   bottle do
     rebuild 3
@@ -17,10 +21,13 @@ class Stella < Formula
     sha256 cellar: :any, x86_64_linux:  "3293d2efacfbe3e6ccd827e518906400430ab70090efcc75558fc0395a60b42c"
   end
 
+  head do
+    url "https://github.com/stella-emu/stella.git", branch: "master"
+    depends_on "sdl3"
+  end
+
   depends_on "pkgconf" => :build
-  depends_on xcode: :build # for xcodebuild
   depends_on "libpng"
-  depends_on "sdl2"
 
   uses_from_macos "sqlite"
 
@@ -29,40 +36,18 @@ class Stella < Formula
   end
 
   def install
-    sdl2 = Formula["sdl2"]
-    libpng = Formula["libpng"]
-    if OS.mac?
-      cd "src/os/macos" do
-        inreplace "stella.xcodeproj/project.pbxproj" do |s|
-          s.gsub! %r{(\w{24} /\* SDL2\.framework)}, '//\1'
-          s.gsub! %r{(\w{24} /\* png)}, '//\1'
-          s.gsub!(/(HEADER_SEARCH_PATHS) = \(/,
-                  "\\1 = (#{sdl2.opt_include}/SDL2, #{libpng.opt_include},")
-          s.gsub!(/(LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");/,
-                  "\\1 = (#{sdl2.opt_lib}, #{libpng.opt_lib}, \\2);")
-          s.gsub!(/(OTHER_LDFLAGS) = "((-\w+)*)"/, '\1 = "-lSDL2 -lpng \2"')
-        end
-        xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build", "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-        prefix.install "build/Release/Stella.app"
-        bin.write_exec_script "#{prefix}/Stella.app/Contents/MacOS/Stella"
-      end
-    else
-      system "./configure", "--prefix=#{prefix}",
-                            "--bindir=#{bin}",
-                            "--enable-release",
-                            "--with-sdl-prefix=#{sdl2.prefix}",
-                            "--with-libpng-prefix=#{libpng.prefix}",
-                            "--with-zlib-prefix=#{Formula["zlib-ng-compat"].prefix}"
-      system "make", "install"
-    end
+    # Remove bundled libraries
+    inreplace "configure", /^\s*_libsqlite3=no$/, "" if OS.mac?
+    rm_r(["src/lib/libpng", "src/lib/sqlite", "src/lib/zlib"])
+
+    system "./configure", "--enable-release", *std_configure_args
+    system "make", "install"
   end
 
   test do
-    if OS.mac?
-      assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}/Stella -listrominfo").strip
-    else
-      assert_match "failed to initialize: unable to open database file",
-        shell_output("#{bin}/stella -listrominfo").strip
-    end
+    # "ERROR: Couldn't initialize SDL: No available video device"
+    ENV["SDL_VIDEODRIVER"] = "dummy" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}/stella -listrominfo").strip
   end
 end
