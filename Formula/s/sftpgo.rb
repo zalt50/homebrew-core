@@ -41,7 +41,6 @@ class Sftpgo < Formula
 
     pkgetc.install "sftpgo.json"
     pkgshare.install "static", "templates", "openapi"
-    (var/"sftpgo").mkpath
     (var/"sftpgo/env.d").mkpath
   end
 
