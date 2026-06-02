@@ -7,13 +7,12 @@ class Graphite2 < Formula
   head "https://github.com/silnrsi/graphite.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "a5645201ace59a1ee7c24d075adf37ae1965018b41221062e8088b191763334d"
-    sha256 cellar: :any,                 arm64_sequoia: "a805dafe03fc697a0d2157a92d110be687f7136d360a483ca43c8f81cdfe4852"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a57783f066cfb70115517438457ded104ecbb2d908586c58ebe0d6cd6117995"
-    sha256 cellar: :any,                 sonoma:        "1c40aed095158f418a818939a8398afab628147ec2bad529868d3f6fd1990f23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acc9b3af3f19b1246163a990bf74bec6b88f44f5c511ac70f0d73d6103b012ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cdf99ed424bacc35f62e84ff807fef46263a543be38c479a7f4a6bd180ab705"
+    sha256 cellar: :any, arm64_tahoe:   "c05e664c8872f3a9e08ada587a33d71b841673126840fe0cd301300c1f59acea"
+    sha256 cellar: :any, arm64_sequoia: "bcbf8282acc59c6ed6a0c9a7cf076935735c21de1495bb4e22c3d6bf32f31ee0"
+    sha256 cellar: :any, arm64_sonoma:  "f6915c1287d4f867e5ee04d94ae09fef671dcb326b4f19989b85535e34ca87b8"
+    sha256 cellar: :any, sonoma:        "fd55694135675287cd54778988e7ea785246ac5bc0ad49a4434b0fcf25e64e4d"
+    sha256 cellar: :any, arm64_linux:   "abc633c3193fb03e9817c52fa24ff387e09655471c80864ae6023b9a39354f20"
+    sha256 cellar: :any, x86_64_linux:  "2c2803a27eb8365e8c02726d2c2e967496044a9af06e59348b52fef23e8360fd"
   end
 
   depends_on "cmake" => :build
