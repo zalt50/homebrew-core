@@ -6,7 +6,7 @@ class Shadcn < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4cb146a1e182f5bc6277385078c059b6f25d32da0ecfae1f308a04b0e4b9db28"
+    sha256 cellar: :any_skip_relocation, all: "fb9539a51b32ef724222b6567e63cba560dd21af6247affab7241468ced2b9ad"
   end
 
   depends_on "node"
