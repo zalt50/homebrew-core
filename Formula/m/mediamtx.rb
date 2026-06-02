@@ -25,8 +25,6 @@ class Mediamtx < Formula
 
     # Install default config
     pkgetc.install "mediamtx.yml"
-
-    (var/"log/mediamtx").mkpath
   end
 
   service do
