@@ -23,7 +23,6 @@ class SocketVmnet < Formula
     system "make", "install.bin", "install.doc", "VERSION=#{version}", "PREFIX=#{prefix}"
 
     (var/"run").mkpath
-    (var/"log/socket_vmnet").mkpath
   end
 
   def caveats
