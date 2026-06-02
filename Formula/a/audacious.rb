@@ -2,15 +2,14 @@ class Audacious < Formula
   desc "Lightweight and versatile audio player"
   homepage "https://audacious-media-player.org/"
   license "BSD-2-Clause"
-  revision 1
 
   stable do
-    url "https://distfiles.audacious-media-player.org/audacious-4.5.1.tar.bz2"
-    sha256 "7194743a0a41b1d8f582c071488b77f7b917be47ca5e142dd76af5d81d36f9cd"
+    url "https://distfiles.audacious-media-player.org/audacious-4.6.tar.bz2"
+    sha256 "03988a6a114e46f91dabcd4d0dae29fcad19f6029e3c28737938d1bd525979dd"
 
     resource "plugins" do
-      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.5.1.tar.bz2"
-      sha256 "f4feedc32776acfa9d24701d3b794fc97822f76da6991e91e627e70e561fdd3b"
+      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.6.tar.bz2"
+      sha256 "ce708bca0194d3a1b2b8a89a2892e1c7798f374593563fb21c4c64b24ab8d83a"
 
       livecheck do
         formula :parent
@@ -89,12 +88,6 @@ class Audacious < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Remove `libsidplayfp`, which is actually Windows only dependency, remove in next release
-  patch do
-    url "https://github.com/audacious-media-player/audacious/commit/61fae600af7e71c5dc03c74f45dee6edc4889611.patch?full_index=1"
-    sha256 "b5e6fa094fa5db30b1154e30a6372d89006803f4f4069b0f219d8d086007a05d"
-  end
-
   def install
     odie "plugins resource needs to be updated" if build.stable? && version != resource("plugins").version
 
@@ -109,7 +102,6 @@ class Audacious < Formula
     resource("plugins").stage do
       args += %w[
         -Dmpris2=false
-        -Dmac-media-keys=true
       ]
 
       ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
