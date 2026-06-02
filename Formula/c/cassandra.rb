@@ -69,7 +69,6 @@ class Cassandra < Formula
   end
 
   def install
-    (var/"lib/cassandra").mkpath
     (var/"log/cassandra").mkpath
 
     python3 = "python3.11"
