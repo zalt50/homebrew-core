@@ -132,16 +132,11 @@ class NodeAT22 < Formula
 
     system "./configure", *args
     system "make", "install"
-  end
 
-  def post_install
     (lib/"node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
   test do
-    # Make sure Mojave does not have `CC=llvm_clang`.
-    ENV.clang if OS.mac?
-
     path = testpath/"test.js"
     path.write "console.log('hello');"
 
@@ -165,5 +160,7 @@ class NodeAT22 < Formula
     assert_path_exists bin/"npx", "npx must exist"
     assert_predicate bin/"npx", :executable?, "npx must be executable"
     assert_match "< hello >", shell_output("#{bin}/npx --yes cowsay hello")
+
+    assert_equal HOMEBREW_PREFIX.to_s, shell_output("#{bin}/npm config get prefix").chomp
   end
 end
