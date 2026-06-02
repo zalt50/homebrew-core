@@ -8,12 +8,12 @@ class Brpc < Formula
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d1bc8451f5886ddc12870b28f65e4567e0466b31f716f3233d6c8eda1ddc8005"
-    sha256 cellar: :any, arm64_sequoia: "f306f972a67b84cbd3c1ee74351524051367679322ad0bd807a19a384e2ea041"
-    sha256 cellar: :any, arm64_sonoma:  "292b412d1a4767a13566f95dff6ab2e49e09fd95965a4a39587b252270070f52"
-    sha256 cellar: :any, sonoma:        "28063f3693b279bfe391c739c7bdacb72d7cea13950c7a3859792f18a0b0c4d2"
-    sha256               arm64_linux:   "de977ffebfe75e6da99dc89fa1c667755c4638f64a1b5963b396ccd85cd7a576"
-    sha256               x86_64_linux:  "9b30c2043f5900ffb2f94b774106911f1fa86dc4bb5a6456303d6cd7f6834b79"
+    sha256 cellar: :any, arm64_tahoe:   "daca5a0d5b1e3b3ee96394ad5301777b87451677b56c17803009b0bcb5db2cd0"
+    sha256 cellar: :any, arm64_sequoia: "5d9242419a240381ac02894d91e6a03153f929f61e08056a7ae0f8523053b254"
+    sha256 cellar: :any, arm64_sonoma:  "653469081290fca0db0ef3f37000000f6f382d5c02e7d8c9a88cb7452367a7d1"
+    sha256 cellar: :any, sonoma:        "c9c2af8f8336c18d2df385f961a2695262d2d7b7e3332941f98874747e9f246c"
+    sha256               arm64_linux:   "b33cd126ad8db5eb35efbd8fe43ec1db492cd7bc8abc716fa77a997721ffcb5d"
+    sha256               x86_64_linux:  "43287073c0dcc4e94e63f346e2023399fc735d529b8e995e2bda312260651223"
   end
 
   depends_on "cmake" => :build
