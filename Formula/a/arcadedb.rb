@@ -31,7 +31,6 @@ class Arcadedb < Formula
     (var/"arcadedb/databases").mkpath
     (var/"arcadedb/backups").mkpath
     (var/"arcadedb/config").mkpath
-    (var/"log/arcadedb").mkpath
   end
 
   def post_install
