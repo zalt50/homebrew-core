@@ -153,9 +153,7 @@ class NodeAT24 < Formula
 
     system "./configure", *args
     system "make", "install"
-  end
 
-  def post_install
     (lib/"node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
@@ -183,6 +181,8 @@ class NodeAT24 < Formula
     assert_path_exists bin/"npx", "npx must exist"
     assert_predicate bin/"npx", :executable?, "npx must be executable"
     assert_match "< hello >", shell_output("#{bin}/npx --yes cowsay hello")
+
+    assert_equal HOMEBREW_PREFIX.to_s, shell_output("#{bin}/npm config get prefix").chomp
 
     # Test `uvwasi` is linked correctly
     (testpath/"wasi-smoke-test.mjs").write <<~JAVASCRIPT
