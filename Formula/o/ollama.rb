@@ -5,6 +5,7 @@ class Ollama < Formula
       tag:      "v0.30.7",
       revision: "f0078ae4766d0d570e196158f20dde309bd96124"
   license "MIT"
+  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -44,7 +45,42 @@ class Ollama < Formula
 
   conflicts_with cask: "ollama-app"
 
+  # Pinned dependency required by llama-server
+  resource "llama.cpp" do
+    url "https://github.com/ggml-org/llama.cpp.git",
+        tag:      "b9509",
+        revision: "6f3a9f3dee3c27545371044a3a38005721ac8a8e"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
+      regex(/^v?b(\d+)$/i)
+    end
+
+    # fix: don't build AMX by default with Apple clang
+    patch do
+      url "https://github.com/ggml-org/llama.cpp/commit/1f92170dc9d4620b5aadb9bacba502c726e5b587.patch?full_index=1"
+      sha256 "1e51afe4b8cfed5653289270064370d926258b5bbd662a93eac240d7a37f2735"
+    end
+  end
+
   def install
+    # Build llama-server
+    llama_source_dir = buildpath/"llama.cpp"
+    llama_source_dir.install resource("llama.cpp")
+
+    preset = (OS.mac? && Hardware::CPU.arm?) ? "darwin" : "cpu"
+
+    args = %W[
+      --preset #{preset}
+      -DFETCHCONTENT_SOURCE_DIR_LLAMA_CPP=#{llama_source_dir}
+      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
+      -DCMAKE_INSTALL_RPATH=#{loader_path}
+    ]
+
+    system "cmake", "-S", "llama/server", "-B", "llama-server", *args, *std_cmake_args(install_prefix: libexec)
+    system "cmake", "--build", "llama-server"
+    system "cmake", "--install", "llama-server", "--component", "llama-server"
+
     # Remove ui app directory
     rm_r("app")
 
@@ -110,6 +146,31 @@ class Ollama < Formula
       output = shell_output("DYLD_PRINT_LIBRARIES=1 #{bin}/ollama --help 2>&1")
       assert_match "libmlxc.dylib", output
       assert_match "libmlx.dylib", output
+    end
+
+    # Check llama-server binary
+    require "pty"
+
+    output = +""
+    r, _w, pid = PTY.spawn(libexec/"lib/ollama/llama-server")
+    begin
+      timeout = Time.now + 20
+      until output.include?("starting router server")
+        raise "timed out waiting for llama-server to start\n#{output}" if Time.now > timeout
+
+        begin
+          output << r.read_nonblock(1024)
+        rescue IO::WaitReadable
+          sleep 0.1
+        rescue EOFError
+          break
+        end
+      end
+
+      assert_match "starting router server", output
+    ensure
+      Process.kill "TERM", pid
+      Process.wait pid
     end
   end
 end
