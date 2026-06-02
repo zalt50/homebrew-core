@@ -1,8 +1,8 @@
 class OclIcd < Formula
   desc "OpenCL ICD loader"
   homepage "https://github.com/OCL-dev/ocl-icd/"
-  url "https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.4.tar.gz"
-  sha256 "1a302b71b7304cca5a36f69d017b1af2b762cc4c2dd1c0c0e2fc1933db25c9cc"
+  url "https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.5.tar.gz"
+  sha256 "cdd7984425fa92d37273eee4180b5f57b047eda6dd8fd623e58498f844b09b75"
   license "BSD-2-Clause"
   head "https://github.com/OCL-dev/ocl-icd.git", branch: "master"
 
