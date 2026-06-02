@@ -31,8 +31,6 @@ class PocketId < Formula
     cd "backend/cmd" do
       system "go", "build", *std_go_args(output: bin/"pocket-id", ldflags: "-s -w")
     end
-
-    (var/"pocket-id").mkpath
   end
 
   service do
