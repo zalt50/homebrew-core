@@ -39,7 +39,6 @@ class NewrelicInfraAgent < Formula
     bin.install "dist/#{os}-newrelic-infra-service_#{os}_#{goarch}/newrelic-infra-service"
     (var/"db/newrelic-infra").install "assets/licence/LICENSE.macos.txt" if OS.mac?
     (etc/"newrelic-infra").mkpath
-    (var/"log/newrelic-infra").mkpath
   end
 
   service do
