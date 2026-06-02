@@ -45,7 +45,6 @@ class Varnish < Formula
     system "make", "install", "CFLAGS=#{ENV.cflags}"
 
     (etc/"varnish").install "etc/example.vcl" => "default.vcl"
-    (var/"varnish").mkpath
 
     (pkgshare/"tests").install buildpath.glob("bin/vinyltest/tests/*.vtc")
     (pkgshare/"tests/vmod").install buildpath.glob("vmod/tests/*.vtc")
