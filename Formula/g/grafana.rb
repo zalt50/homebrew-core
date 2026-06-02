@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://github.com/grafana/grafana/archive/refs/tags/v13.0.1.tar.gz"
-  sha256 "0bf4d3275c9fe32184ad6c79004928da7436d8a94e0cfb7ded4216080940b54a"
+  url "https://github.com/grafana/grafana/archive/refs/tags/v13.0.2.tar.gz"
+  sha256 "3f6ccffda94137c9679d0993312a83a76815406efd3df7dabbb8f99467e7e8c6"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -36,9 +36,6 @@ class Grafana < Formula
   end
 
   def install
-    # Fix version and should remove in next release
-    inreplace "package.json", "13.0.0-pre", "13.0.1-pre"
-
     ENV["COMMIT_SHA"] = tap.user
     ENV["BUILD_NUMBER"] = revision.to_s
     ENV["NODE_OPTIONS"] = "--max-old-space-size=8000"
