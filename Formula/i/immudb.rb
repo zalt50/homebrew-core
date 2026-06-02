@@ -30,8 +30,6 @@ class Immudb < Formula
       bin.install binary
       generate_completions_from_executable(bin/binary, shell_parameter_format: :cobra)
     end
-
-    (var/"immudb").mkpath
   end
 
   service do
