@@ -29,8 +29,6 @@ class Dolt < Formula
 
     system "go", "build", "-C", "go", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
 
-    (var/"log").mkpath
-    (var/"dolt").mkpath
     (etc/"dolt").mkpath
     touch etc/"dolt/config.yaml"
   end
