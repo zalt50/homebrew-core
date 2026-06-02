@@ -23,7 +23,6 @@ class Questdb < Formula
     inreplace libexec/"questdb.sh", "/usr/local/var/questdb", var/"questdb"
 
     # Make sure the var/questdb directory exists
-    (var/"questdb").mkpath
   end
 
   service do
