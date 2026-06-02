@@ -1,8 +1,8 @@
 class Vsd < Formula
   desc "Download video streams over HTTP, DASH (.mpd), and HLS (.m3u8)"
   homepage "https://github.com/clitic/vsd"
-  url "https://github.com/clitic/vsd/archive/refs/tags/vsd-0.4.3.tar.gz"
-  sha256 "a50a7e749693dc38c48d8ea64178da8c513895f381f6c8a2516925c7442a7bfc"
+  url "https://github.com/clitic/vsd/archive/refs/tags/vsd-0.5.0.tar.gz"
+  sha256 "d47092ce89c22d36d0fd976bd558fa9f895384025cb98e568adbf9793134d7dc"
   license "MIT"
 
   livecheck do
@@ -33,10 +33,7 @@ class Vsd < Formula
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
-    inreplace "vsd/Cargo.toml" do |s|
-      s.gsub! ", path = \"../mp4decrypt\"", ""
-      s.gsub! ", path = \"../vsd-mp4\"", ""
-    end
+    inreplace "vsd/Cargo.toml", ", path = \"../vsd-mp4\"", ""
 
     system "cargo", "install", *std_cargo_args(path: "vsd")
   end
