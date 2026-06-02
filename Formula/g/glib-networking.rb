@@ -44,8 +44,8 @@ class GlibNetworking < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system Formula["glib"].opt_bin/"gio-querymodules", HOMEBREW_PREFIX/"lib/gio/modules"
+  post_install_steps do
+    gio_querymodules
   end
 
   test do
