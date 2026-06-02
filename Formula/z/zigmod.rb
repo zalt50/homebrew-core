@@ -1,8 +1,8 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
-  url "https://github.com/nektro/zigmod/archive/refs/tags/r99.tar.gz"
-  sha256 "b2bb91cfae4cb470c6b5e461f6a8bc33b0d4df8a8b0ddf35505ac9bf42b76072"
+  url "https://github.com/nektro/zigmod/archive/refs/tags/r103.tar.gz"
+  sha256 "965bd1aacbe4fee5c3dbbe0715d40f5b6a6413065bf5dc0385ba1ba1acc6c2e2"
   license "MIT"
 
   livecheck do
@@ -19,14 +19,15 @@ class Zigmod < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "404076d214fae1b64dcc4f17ec37606fc303fa18f475342933cfd93331817323"
   end
 
-  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
-  deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
-  disable! date: "2027-08-19", because: "does not build with Zig >= 0.15"
-
   depends_on "pkgconf" => :build
-  depends_on "zig@0.14" # https://github.com/nektro/zigmod/issues/113
+  depends_on "zig@0.15"
+  uses_from_macos "git" => :test
 
   def install
+    # Avoid zig-nfs mkdirat failure when creating absolute cache paths on macOS x86_64.
+    inreplace "src/common.zig", "try nfs.cwd().makePath(cachepath);",
+                                "try std.fs.cwd().makePath(cachepath);"
+
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -50,6 +51,26 @@ class Zigmod < Formula
   end
 
   test do
+    (testpath/"dependency/src").mkpath
+    (testpath/"dependency/zigmod.yml").write <<~YAML
+      id: 8w9skd2bi3x7vh6z6xcu3taaz1tww2ghbjt5p1e9fyj1pgsu
+      name: zigmod-test-dependency
+      main: src/lib.zig
+      license: MIT
+      description: Test zig.mod dependency
+      min_zig_version: 0.11.0
+      dependencies:
+    YAML
+    (testpath/"dependency/src/lib.zig").write <<~ZIG
+      pub fn message() []const u8 {
+        return "Hello from zigmod dependency!";
+      }
+    ZIG
+    system "git", "-C", testpath/"dependency", "init"
+    system "git", "-C", testpath/"dependency", "add", "."
+    system "git", "-C", testpath/"dependency", "-c", "user.name=Homebrew",
+                  "-c", "user.email=brew@test-bot.local", "commit", "-m", "init"
+
     (testpath/"zigmod.yml").write <<~YAML
       id: 89ujp8gq842x6mzok8feypwze138n2d96zpugw44hcq7406r
       name: zigmod
@@ -58,7 +79,7 @@ class Zigmod < Formula
       description: Test zig.mod
       min_zig_version: 0.11.0
       dependencies:
-        - src: git https://github.com/nektro/zig-yaml
+        - src: git #{testpath}/dependency
     YAML
 
     (testpath/"src/lib.zig").write <<~ZIG
