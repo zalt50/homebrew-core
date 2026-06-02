@@ -9,7 +9,7 @@ class Borgmatic < Formula
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9a6454be199f4da34532e3a0b7ab9aef03308d8c3d99085745d7e756f83298a6"
+    sha256 cellar: :any_skip_relocation, all: "c312444da81d043316febdc6a224da60cc16061b5fda85d65afc0bceba19881c"
   end
 
   depends_on "certifi" => :no_linkage
