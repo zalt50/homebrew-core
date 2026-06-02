@@ -33,7 +33,6 @@ class CcConnect < Formula
     system "go", "build", *std_go_args(ldflags:), "./cmd/cc-connect"
 
     pkgetc.install "config.example.toml" => "config.toml"
-    (var/"cc-connect").mkpath
   end
 
   service do
