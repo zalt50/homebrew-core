@@ -1,8 +1,8 @@
 class Cyme < Formula
   desc "List system USB buses and devices"
   homepage "https://github.com/tuna-f1sh/cyme"
-  url "https://github.com/tuna-f1sh/cyme/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "f4aefd2ac447f6ca6040f9d22376a8fdd96d30f1612fca3cfacf5399aef68db0"
+  url "https://github.com/tuna-f1sh/cyme/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "bd73a4b6f9fe502d140c9d5d3c972d85dccb53f4222afeb8260e97f1f95b96b0"
   license "GPL-3.0-or-later"
   head "https://github.com/tuna-f1sh/cyme.git", branch: "main"
 
@@ -44,9 +44,9 @@ class Cyme < Formula
       umockdev_run = "#{Formula["umockdev"].bin}/umockdev-run --device usbkbd.umockdev"
       assert_equal <<~EOS, shell_output("#{umockdev_run} -- #{bin}/cyme --no-padding --tree")
         ● 1-0 EHCI Host Controller Linux 3.10.0-2-generic ehci_hcd -
-        └──○    1   2 0x8087 0x0020 Integrated Rate Matching Hub - usb
-           └──○    5   4 0x17ef 0x1005 ThinkPad X200 Ultrabase (42X4963 ) - usb
-              └──○    4   7 0x05f3 0x0081 Kinesis Keyboard Hub - usb
+        └──⊛    1   2 0x8087 0x0020 Integrated Rate Matching Hub - usb
+           └──⊛    5   4 0x17ef 0x1005 ThinkPad X200 Ultrabase (42X4963 ) - usb
+              └──⊛    4   7 0x05f3 0x0081 Kinesis Keyboard Hub - usb
                  └──○    2   9 0x05f3 0x0007 Kinesis Advantage PRO MPC/USB Keyboard - usb
       EOS
     else
