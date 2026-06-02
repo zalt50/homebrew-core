@@ -42,7 +42,6 @@ class Neo4j < Formula
     EOS
 
     (var/"log/neo4j").mkpath
-    (var/"neo4j").mkpath
   end
 
   service do
