@@ -15,12 +15,12 @@ class JfrogCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "424ad85a84cebf766c2cee2725fcae63f46be97cb645a1e06a070a5421fc1352"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "424ad85a84cebf766c2cee2725fcae63f46be97cb645a1e06a070a5421fc1352"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "424ad85a84cebf766c2cee2725fcae63f46be97cb645a1e06a070a5421fc1352"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c0237e99edabdf4cc45215e4459c5fcdc155a0b807a1542306eb5f67372fd94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da93db11287be072e320da83d962617f4c01cffdbb362e35d9bd256f7a36eb4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "133800c98c023ced16ca62485c499f20a9492f9df5dbd00b6aa6565c681f2a79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a72010d60515758e01aba8f05c2af996740c2b480ed566c9b1328d39587d9d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a72010d60515758e01aba8f05c2af996740c2b480ed566c9b1328d39587d9d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a72010d60515758e01aba8f05c2af996740c2b480ed566c9b1328d39587d9d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40bc8c43a6b1c1413a083846b30b4e59cb682de3eb29e1fa7e65f4e4b6d0a7b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b6171003341e6661ae133971606b4d9451f4679ab9fc83f79dc18f8bf09225"
+    sha256 cellar: :any,                 x86_64_linux:  "e5b3a9bc4a2acc1db467c16a8b225af5186da638d97df7f7c287a6dd403015b7"
   end
 
   depends_on "go" => :build
