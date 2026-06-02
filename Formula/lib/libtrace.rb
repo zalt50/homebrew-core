@@ -1,9 +1,9 @@
 class Libtrace < Formula
   desc "Library for trace processing supporting multiple inputs"
   homepage "https://github.com/LibtraceTeam/libtrace"
-  url "https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.31-1.tar.gz"
-  version "4.0.31"
-  sha256 "a84209ea928d113a2c26078eb833fc0c973c53216bbef8cb0333972d5ba95a2d"
+  url "https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.32-1.tar.gz"
+  version "4.0.32"
+  sha256 "97ae2ae44c3603957f75f41ce1124698057ebc24ee0fa36f5c902bbb23d9ec2e"
   license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
