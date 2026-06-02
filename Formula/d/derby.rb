@@ -25,7 +25,6 @@ class Derby < Formula
                        KEYS docs javadoc demo]
     bin.install Dir["bin/*"]
     bin.env_script_all_files libexec/"bin", env
-    (var/"derby").mkpath
   end
 
   service do
