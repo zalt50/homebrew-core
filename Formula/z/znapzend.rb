@@ -32,7 +32,6 @@ class Znapzend < Formula
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     (var/"log/znapzend").mkpath
-    (var/"run/znapzend").mkpath
   end
 
   service do
