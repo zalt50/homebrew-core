@@ -49,10 +49,6 @@ class Languagetool < Formula
     pkgetc.install "server.properties"
   end
 
-  post_install_steps do
-    mkdir_p "log/languagetool"
-  end
-
   service do
     run [opt_bin/"languagetool-server", "--config", etc/"languagetool/server.properties", "--port", "8081",
          "--allow-origin"]
