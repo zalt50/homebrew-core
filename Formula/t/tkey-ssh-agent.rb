@@ -35,7 +35,6 @@ class TkeySshAgent < Formula
     man1.install "system/tkey-ssh-agent.1"
 
     (var/"run").mkpath
-    (var/"log").mkpath
   end
 
   def caveats
