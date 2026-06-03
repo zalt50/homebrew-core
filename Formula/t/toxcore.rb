@@ -3,20 +3,10 @@ class Toxcore < Formula
   homepage "https://tox.chat/"
   # This repo is a fork, but it is the source used by Debian, Fedora, and Arch,
   # and is the repo linked in the homepage.
+  url "https://github.com/TokTok/c-toxcore/releases/download/v0.2.23/c-toxcore-v0.2.23.tar.xz"
+  sha256 "a6c3d559ac06eb6b9d48b3edc72f64a97df823c9f64f7dd97c3999ffdc05381b"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/TokTok/c-toxcore.git", branch: "master"
-
-  stable do
-    url "https://github.com/TokTok/c-toxcore/releases/download/v0.2.22/c-toxcore-v0.2.22.tar.xz"
-    sha256 "b2599d62181d8c0d5f5f86012ed7bc4be9eb540f2d7a399ec96308eb9870f58e"
-
-    # Backport fix for size_t usage
-    patch do
-      url "https://github.com/TokTok/c-toxcore/commit/40ce0bce665e5589838db8444437957f8e3b83a3.patch?full_index=1"
-      sha256 "65200822334addcbcca431910e5c5076cd0d01622a019044f9399f95be67edeb"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "cbbb31e412bfd8ce19e4bed4468c763c4a30553df87af6daaca7890b60863fc8"
