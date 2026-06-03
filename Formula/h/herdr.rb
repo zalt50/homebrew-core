@@ -6,6 +6,11 @@ class Herdr < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/ogulcancelik/herdr.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0594da30f0beebca4b183e9e09cadc3de4d165b1eb029dc6ba16a94dbd75fd25"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ab3559b816470a47181815cb736981a34ee7d9c2762d8ecad0a85189e31a748"
