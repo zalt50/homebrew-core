@@ -1,8 +1,8 @@
 class CargoFlamegraph < Formula
   desc "Easy flamegraphs for Rust projects and everything else"
   homepage "https://github.com/flamegraph-rs/flamegraph"
-  url "https://github.com/flamegraph-rs/flamegraph/archive/refs/tags/v0.6.12.tar.gz"
-  sha256 "3b1158d30a5dd3496b271d5f55da47558cd84dd5ff7e11dbd67c2f6c51a3499e"
+  url "https://github.com/flamegraph-rs/flamegraph/archive/refs/tags/v0.6.13.tar.gz"
+  sha256 "d8591f79c8abd46899fddfa692e4ab9da219672e0e203cd9482d77411d07bda1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/flamegraph-rs/flamegraph.git", branch: "main"
 
