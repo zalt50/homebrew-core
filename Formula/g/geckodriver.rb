@@ -8,24 +8,24 @@ class Geckodriver < Formula
     # Get the hg_revision for stable releases from
     # https://searchfox.org/mozilla-central/source/testing/geckodriver/CHANGES.md
     # Get long hash via `https://hg.mozilla.org/mozilla-central/rev/<commit-short-hash>`
-    hg_revision = "a3d508507022919429308d9c2d9cace99ff2be56"
+    hg_revision = "253b8523586577438a3ddf86d67436719feaf6d8"
     url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/geckodriver/"
-    version "0.36.0"
-    sha256 "26e6ed2233d88172b30728c21f84a2019c01617bb25c6235f852003835416d99"
+    version "0.37.0"
+    sha256 "54e8cd0fa383d5d57e41fd33cc44031bc56e68f2ca0b1b710cf69d8335068214"
 
     resource "webdriver" do
       url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/webdriver/"
-      sha256 "3a1096be515b962162bbce9ea6b827392b05f46eab5fcbf76fbb168312e80010"
+      sha256 "05adf7e23832a37b11163d0b3c2571f6416cec07a779effaf86472a8a5885c06"
     end
 
     resource "mozbase" do
       url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/mozbase/rust/"
-      sha256 "d2f5dc10c4a31178180fe8b23b89beedaab104d2c43cde648e3bb14059df57a1"
+      sha256 "6a51d3c7369d0bbe885377ead295893465a467df8080b0aed7fc51cc84612623"
     end
 
     resource "Cargo.lock" do
       url "https://hg.mozilla.org/mozilla-central/raw-file/#{hg_revision}/Cargo.lock"
-      sha256 "8d382f3cba00193eb32d7ef90e8b57003ca4fa9d254864253682c90cf0e53ad0"
+      sha256 "5036623e293ad9ec87af50e07ab6d1946da225be2709198c48bf6636cb2c1145"
     end
   end
 
@@ -33,6 +33,8 @@ class Geckodriver < Formula
     url :homepage
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
+
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef35a96f86a562d2e4ce13a0bc898e5ae48512877091f31a1dc54b3c3da3d9e5"
