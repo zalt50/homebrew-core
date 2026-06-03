@@ -1,8 +1,8 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "578fb553a064f4343297462408e0841ccb00e3c90003ec1201c1ff27651d3d48"
+  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "52fb402422dfc8cbf42826309f0836bd255916b9caab1eb8990424d1ca603147"
   license "MPL-2.0"
 
   bottle do
@@ -19,7 +19,7 @@ class Sonic < Formula
   uses_from_macos "llvm" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "server")
     inreplace "config.cfg", "./", var/"sonic/"
     etc.install "config.cfg" => "sonic.cfg"
   end
