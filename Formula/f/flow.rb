@@ -1,8 +1,8 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
   homepage "https://flow.org/"
-  url "https://github.com/facebook/flow/archive/refs/tags/v0.316.0.tar.gz"
-  sha256 "99b98e55bb1ac63a1a4c36701d0ac9339aa9a0f97524554988756768bd0e6146"
+  url "https://github.com/facebook/flow/archive/refs/tags/v0.317.0.tar.gz"
+  sha256 "c83e5d6d4f02eb06ec5a2a0e9d3abdce347fda2cd9562041c53d5466e40089ba"
   license "MIT"
   head "https://github.com/facebook/flow.git", branch: "main"
 
