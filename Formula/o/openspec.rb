@@ -1,8 +1,8 @@
 class Openspec < Formula
   desc "Spec-driven development (SDD) for AI coding assistants"
   homepage "https://openspec.dev/"
-  url "https://registry.npmjs.org/@fission-ai/openspec/-/openspec-1.3.1.tgz"
-  sha256 "381fd3513983bd9f6b2be05218a70d38bbc33598c9816f2dd5ac8e8f13a20eb0"
+  url "https://registry.npmjs.org/@fission-ai/openspec/-/openspec-1.4.0.tgz"
+  sha256 "b0ed5b14e3ff20ed45e1f7b5f1a37c847db437386b5fa2c98097fff8a0537f78"
   license "MIT"
 
   bottle do
