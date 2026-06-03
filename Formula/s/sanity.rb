@@ -1,8 +1,8 @@
 class Sanity < Formula
   desc "Command-line interface for Sanity"
   homepage "https://www.sanity.io/"
-  url "https://registry.npmjs.org/sanity/-/sanity-5.29.0.tgz"
-  sha256 "3f76e74ea9ce46960f5a40984c2a2846449ca771257217d3f12cf11d6ec057b2"
+  url "https://registry.npmjs.org/@sanity/cli/-/cli-6.7.1.tgz"
+  sha256 "b6a59e4c248f80b3ed8f4e922a4150d89695a33754d314d20b1f67c7895ec6ac"
   license "MIT"
 
   bottle do
@@ -20,7 +20,7 @@ class Sanity < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
-    node_modules = libexec/"lib/node_modules/sanity/node_modules"
+    node_modules = libexec/"lib/node_modules/@sanity/cli/node_modules"
     # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
