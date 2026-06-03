@@ -3,11 +3,10 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.1.0.tar.gz"
-  sha256 "8810fcf950c891ed4541e3fa1153f58cd8390a459a87e5fee509cd5ffe64e974"
+  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.2.0.tar.gz"
+  sha256 "886818c55f887ecc62893c900f259a39ec6c09555ce4dd3d379653ae5b0d6e62"
   license "Apache-2.0"
-  revision 1
-  compatibility_version 2
+  compatibility_version 3
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -27,6 +26,7 @@ class Openvino < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "flatbuffers" => :build
   depends_on "pkgconf" => [:build, :test]
+  depends_on "pybind11" => :build
   depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "nlohmann-json"
@@ -42,12 +42,13 @@ class Openvino < Formula
     depends_on "automake" => :build
     depends_on "opencl-clhpp-headers" => :build
     depends_on "opencl-headers" => :build
+    depends_on "openssl@3" => :build
     depends_on "rapidjson" => :build
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https://github.com/uxlfoundation/oneDNN/archive/470e87eb07bdc805937a9f6d45d5c3a0fe4d27e7.tar.gz"
-      sha256 "4181ad0fd5ddfe63084fce39a1cd4e0f3656f75e84f32e688e902b2d3a79b537"
+      url "https://github.com/uxlfoundation/oneDNN/archive/20db47e2d3c4df1b66e93bed2e97d30da175512d.tar.gz"
+      sha256 "175fe1fd5b4fb53c5250b7e7c1bc815498365c6fb3ca198002cd045fee57747b"
     end
   end
 
@@ -55,8 +56,8 @@ class Openvino < Formula
     depends_on "scons" => :build
 
     resource "arm_compute" do
-      url "https://github.com/ARM-software/ComputeLibrary/archive/cffb5d67ad74e6ed924c708d4981ba15b644bc05.tar.gz"
-      sha256 "f44127ef2cb2ecaa863921d96801c27a59331c3a4617a3acdf453c76d5424a72"
+      url "https://github.com/ARM-software/ComputeLibrary/archive/refs/tags/v53.0.0.tar.gz"
+      sha256 "370c480385493c5be9c639dfcfabaa4bc8eac74fe21332905b1630a4c0cb3a87"
     end
     resource "arm_kleidiai" do
       url "https://github.com/ARM-software/kleidiai/archive/7d82645ca2f3c3d58a5c0b1a96905e53916c8ff8.tar.gz"
@@ -64,25 +65,13 @@ class Openvino < Formula
     end
   end
 
-  # FIXME: depends_on "pybind11" => :build
-  #
-  # error: static assertion failed due to requirement '0 == detail::constexpr_sum(
-  # detail::is_instantiation<pybind11::call_guard, pybind11::is_method>::value, ...)':
-  # def_property family does not currently support call_guard. Use a py::cpp_function instead
-  resource "pybind11" do
-    url "https://github.com/pybind/pybind11/archive/refs/tags/v3.0.1.tar.gz"
-    sha256 "741633da746b7c738bb71f1854f957b9da660bcd2dce68d71949037f0969d0ca"
-  end
-
-  # FIXME: depends_on "xbyak" => :build
-  #
-  # compute_hash.cpp:418:53: error: use of overloaded operator '+' is ambiguous
-  # (with operand types 'RegistersPool::Reg<Xbyak::Reg64>' and 'const uint64_t'
-  # after https://github.com/herumi/xbyak/commit/689767da682edab65b55e9607535c28902370b08
+  # Header only library, keep in sync with corresponded submodule version on release tag, i.e.
+  # https://github.com/openvinotoolkit/openvino/tree/2026.2.0/thirdparty
+  # currently there is no possibility to use latest xbyak from homebrew
   resource "xbyak" do
     on_intel do
-      url "https://github.com/herumi/xbyak/archive/refs/tags/v7.28.tar.gz"
-      sha256 "c8da3d85fa322303cb312d6315592547952d7bb81f58bf98bc0a26ecd88be495"
+      url "https://github.com/herumi/xbyak/archive/refs/tags/v7.23.1.tar.gz"
+      sha256 "17678579963314463cf51bd0f9070f33dfe47667754d9b6239de1000e67fe259"
     end
   end
 
@@ -92,8 +81,8 @@ class Openvino < Formula
   end
 
   resource "onednn_cpu" do
-    url "https://github.com/openvinotoolkit/oneDNN/archive/6b6492b1ea9ef5ca9ff3c5c59ed71dcca683a446.tar.gz"
-    sha256 "c12ff448213e873b0096d62a103447cf2686402d41a507d8cd4fcdac754ca5d1"
+    url "https://github.com/openvinotoolkit/oneDNN/archive/87f65fdd1927b1d0cbdf0ea37728146abfbffb52.tar.gz"
+    sha256 "2843f9d4e92a83d16d37a92dcc29b87732415f9cd9fd87769651aa67da197521"
   end
 
   resource "openvino-telemetry" do
@@ -105,15 +94,14 @@ class Openvino < Formula
     "python3.14"
   end
 
-  # Fix to add Level-Zero to compilation only when it's needed
-  # Remove patch when available in 2026.2.0 release.
+  # Newer OpenCL-CLHPP dropped CL_HPP_PARAM_NAME_INFO_1_1_DEPRECATED_IN_2_0_;
+  # declare the trait it provided (CL_DEVICE_HOST_UNIFIED_MEMORY) directly.
   patch do
-    url "https://github.com/openvinotoolkit/openvino/commit/b90c26de0ccab964c55fac8519827ecc1b79f473.patch?full_index=1"
-    sha256 "d9110eb566e7404dfebd6d4eb68f87818b392f8391151c543d7b4d2c85089303"
+    url "https://github.com/openvinotoolkit/openvino/commit/dc4633aadac8e644dfab6d8aced84ebe33e09b6e.patch?full_index=1"
+    sha256 "1d1c91de8ead006c3a6ce28124578ab5d52a3b6f1a8bb4a03076d18f2bede32a"
   end
 
   def install
-    odie "Remove Level-Zero patch" if build.stable? && version >= "2026.2.0"
     # Work around for Protobuf C++ 6.x until OpenVINO adds support
     inreplace "thirdparty/dependencies.cmake", "find_package(Protobuf 5.26.0 ",
                                                "find_package(Protobuf 7.34.0 "
@@ -134,7 +122,6 @@ class Openvino < Formula
     resource("mlas").stage buildpath/"src/plugins/intel_cpu/thirdparty/mlas"
     resource("onednn_cpu").stage buildpath/"src/plugins/intel_cpu/thirdparty/onednn"
     resource("onednn_gpu").stage buildpath/"src/plugins/intel_gpu/thirdparty/onednn_gpu" if OS.linux?
-    resource("pybind11").stage buildpath/"src/bindings/python/thirdparty/pybind11"
 
     if Hardware::CPU.arm?
       resource("arm_compute").stage buildpath/"src/plugins/intel_cpu/thirdparty/ComputeLibrary"
@@ -187,8 +174,13 @@ class Openvino < Formula
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: libexec/site_packages/"openvino")}"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: libexec/site_packages/"openvino/frontend/onnx")}"
 
-    # Allow our newer `numpy`
-    inreplace "pyproject.toml", "numpy>=1.16.6,<2.5.0", "numpy>=1.16.6"
+    inreplace "pyproject.toml" do |s|
+      # Allow our newer `numpy`
+      s.gsub! "numpy>=1.16.6,<2.5.0", "numpy>=1.16.6"
+      # use our `cmake` instead of the PyPI cmake wheel
+      s.gsub!(/^\s*"cmake[^"\n]*",?\s*\n/, "")
+    end
+
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources.select { |r| r.url.start_with?("https://files.pythonhosted.org/") }
     venv.pip_install_and_link "."
