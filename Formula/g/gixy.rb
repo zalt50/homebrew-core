@@ -7,6 +7,15 @@ class Gixy < Formula
   sha256 "6729f4ae6b24ce554925bce51cbbca9e51785c31a2f85b923834c40c8d200dd1"
   license "MPL-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a30384b8f9bc80569038c265d514b768e08b10c79a2511562fef0bd13d7b82de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50f868e601223a4aef9e540147a945eccd3448b4ea003bb35969117ff1165f6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9a83f796cfa79fbbddee70b7c3de5cffbf250da1a31d03f439ae74f3ebc6e51"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc7a9b71c8623cbc513ff208c56d78441d2b9c0741203b800ad1c643405ab1e5"
+    sha256 cellar: :any,                 arm64_linux:   "d6b5b0e35eea7245d48ecd0fcd4aba3bd31f7c5755d299d2db3daa142b2a71b6"
+    sha256 cellar: :any,                 x86_64_linux:  "a3a605c5c9202e4413d2c8387a51884ea06cb18a26e35ab9b88c74876c552581"
+  end
+
   depends_on "python@3.14"
 
   resource "configargparse" do
