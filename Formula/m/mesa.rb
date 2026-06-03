@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-26.0.6.tar.xz"
-  sha256 "1d3c3b8a8363b8cc354175bb4a684ad8b035211cc1d6fa17aeb9b9623c513f89"
+  url "https://archive.mesa3d.org/mesa-26.1.2.tar.xz"
+  sha256 "bac2bca9121897a2b8162e79636b50ac998fca799c8e6cf914edd85962babdf0"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -63,6 +63,13 @@ class Mesa < Formula
 
   on_macos do
     depends_on "molten-vk"
+
+    # Apply MacPorts patch to revert change causing avoid infinite loop on macOS
+    # Issue ref: https://gitlab.freedesktop.org/mesa/mesa/-/work_items/15528
+    patch :p0 do
+      url "https://raw.githubusercontent.com/macports/macports-ports/1db035904139d7a3d0e0575f63ccd2371384956c/x11/mesa/files/patch-src-meson.diff"
+      sha256 "7390de495a94749eb3070d579aae5db79a75887d8aaa4d547b053559c1eb9aeb"
+    end
   end
 
   on_linux do
