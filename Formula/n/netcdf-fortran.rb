@@ -1,8 +1,8 @@
 class NetcdfFortran < Formula
   desc "Fortran libraries and utilities for NetCDF"
   homepage "https://www.unidata.ucar.edu/software/netcdf/"
-  url "https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.2.tar.gz"
-  sha256 "44cc7b5626b0b054a8503b8fe7c1b0ac4e0a79a69dad792c212454906a9224ca"
+  url "https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.3.tar.gz"
+  sha256 "b9de820c4823faa5b4e1cd9ee82dd7c57acad105ebd8f6ae36b0244105518655"
   license "NetCDF"
 
   bottle do
