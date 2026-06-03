@@ -1,8 +1,8 @@
 class Vtcode < Formula
   desc "CLI Semantic Coding Agent"
   homepage "https://github.com/vinhnx/vtcode"
-  url "https://static.crates.io/crates/vtcode/vtcode-0.117.5.crate"
-  sha256 "994895c0b59dc794d8ec3153cfc4c0d53bd3a726740261023b01a5f3ac2763a0"
+  url "https://static.crates.io/crates/vtcode/vtcode-0.119.0.crate"
+  sha256 "ba07ddad9acc02174f12c6691a141bafa50f425f19f70600ec24589ffe5c2175"
   license "MIT"
   head "https://github.com/vinhnx/vtcode.git", branch: "main"
 
@@ -37,6 +37,6 @@ class Vtcode < Formula
 
     ENV["OPENAI_API_KEY"] = "test"
     output = shell_output("#{bin}/vtcode models list --provider openai")
-    assert_match "gpt-5", output
+    assert_match "OPENAI", output
   end
 end
