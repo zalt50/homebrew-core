@@ -7,12 +7,13 @@ class Vacuum < Formula
   head "https://github.com/daveshanley/vacuum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09b4dbcd13cccd8454615d12713384236b2d453f673ae8185f37b7e4b71ea9cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b4d70625fb56e29df33815fa08ec63b88bb12333014e1a69ab65581808c6574"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e9ef182f463295132ce75c61f3c5822b5e3431044e5e0b05c2d649562d862d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c37e28b13d01817ecbda85aa1128d29424c932cc975c970d82c5d9d1e590b50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb31062a3f3933f0f52c8f7e336f73210e8857fe70c4b60270b12222ce2a2115"
-    sha256 cellar: :any,                 x86_64_linux:  "c07a87bffe884f103f097f4654864156d053060f9136c413317f2df4772684c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52a80dda270c522ac0b91ca25641cf3a9602050251150bc17ab535d8aaee6dc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89cae55b1e7e37c965177ae63dde45400f1c54da83b5d102e98202de5bc9c9dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e46bdc4f909a0f5c06223cb65198080e07e12de59feb13e9459fcca0878edfd1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af3f1cbdb5f41e20d895677b6513a60415c30505045a9960fbd0a4882edae81f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4fcf77e240930105c3e8252bfc229853fb670cb0b95f3928e7f9e7d5b5d0ade"
+    sha256 cellar: :any,                 x86_64_linux:  "b1396c9258e5c33498f228d1707941da4448ceaef6932d86edcbf48298f8a43f"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Vacuum < Formula
     end
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags:, tags: "html_report_ui")
 
     generate_completions_from_executable(bin/"vacuum", shell_parameter_format: :cobra)
   end
@@ -49,5 +50,10 @@ class Vacuum < Formula
 
     output = shell_output("#{bin}/vacuum lint #{testpath}/test-openapi.yml 2>&1", 1)
     assert_match "Failed with 2 errors, 3 warnings and 0 informs.", output
+
+    output = shell_output("#{bin}/vacuum html-report 2>&1", 2)
+    assert_match "please supply an OpenAPI", output
+    assert_match "generate an HTML Report", output
+    refute_match "html-report support is not included in this build", output
   end
 end
