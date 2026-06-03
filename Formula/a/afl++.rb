@@ -1,9 +1,9 @@
 class Aflxx < Formula
   desc "American Fuzzy Lop++"
   homepage "https://aflplus.plus/"
-  url "https://github.com/AFLplusplus/AFLplusplus/archive/refs/tags/v4.40c.tar.gz"
-  version "4.40c"
-  sha256 "3343796f0b69b0bec07e44033608280c360e0e90b4ddb6bdda263d598fc3e472"
+  url "https://github.com/AFLplusplus/AFLplusplus/archive/refs/tags/v5.00c.tar.gz"
+  version "5.00c"
+  sha256 "b0c005a1d28883ad1cad17ac01837d5c6b0cc7a72d19db700823e42ce3848534"
   license "Apache-2.0"
 
   livecheck do
@@ -32,27 +32,6 @@ class Aflxx < Formula
   # The Makefile will insist on compiling with LLVM clang even without this.
   fails_with :clang
   fails_with :gcc
-
-  # Backport macOS weak ASan runtime linking fix.
-  # https://github.com/AFLplusplus/AFLplusplus/commit/13b3c271a64a20718efb7900251c9669058a90ef
-  patch do
-    url "https://github.com/AFLplusplus/AFLplusplus/commit/13b3c271a64a20718efb7900251c9669058a90ef.patch?full_index=1"
-    sha256 "6586d49352bdf137d6152c9b86207c8e3c31cf0d05386adf45f554fd68e7e89b"
-  end
-
-  # Backport macOS aflpp_driver ASan poisoning fix.
-  # https://github.com/AFLplusplus/AFLplusplus/commit/f14ed081dd4eca99de1cecf74b45bbffc6dc4587
-  patch do
-    url "https://github.com/AFLplusplus/AFLplusplus/commit/f14ed081dd4eca99de1cecf74b45bbffc6dc4587.patch?full_index=1"
-    sha256 "fccf1d1e58c081c801905a24de44804c6fed3376caa0806eced620ca2086dec7"
-  end
-
-  # Backport macOS syscall deprecation warning fix.
-  # https://github.com/AFLplusplus/AFLplusplus/commit/1d5d7f0dd790e761dccd25efd8680b19ba2f3f7a
-  patch do
-    url "https://github.com/AFLplusplus/AFLplusplus/commit/1d5d7f0dd790e761dccd25efd8680b19ba2f3f7a.patch?full_index=1"
-    sha256 "aa995d4989e7ae3e2892a51e2539f393a209d17ae2f32bb8b7fce37ddefb5b06"
-  end
 
   def install
     ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
