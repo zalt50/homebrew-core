@@ -1,8 +1,8 @@
 class MemtierBenchmark < Formula
   desc "Redis and Memcache traffic generation and benchmarking tool"
   homepage "https://github.com/RedisLabs/memtier_benchmark"
-  url "https://github.com/RedisLabs/memtier_benchmark/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "6fc96177d194bfe393b9522b127df30f6d5ce4a2a403ba63eff0387278126957"
+  url "https://github.com/RedisLabs/memtier_benchmark/archive/refs/tags/2.4.1.tar.gz"
+  sha256 "ef6f64a96385aa215702a0544db2e77711c93440fad73787d7bb6396fc97c0e5"
   # https://github.com/redis/memtier_benchmark/blob/master/debian/copyright
   license all_of: [
     "GPL-2.0-or-later" => { with: "cryptsetup-OpenSSL-exception" },
@@ -10,12 +10,12 @@ class MemtierBenchmark < Formula
   ]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cbbb5007f86886a61ee4d3af71b15ec31b9c0c10288d76151f73fe59530db5cc"
-    sha256 cellar: :any, arm64_sequoia: "41cff78298f1fa52ab4f39f7e91b94d43b4c3c18dffe9364adb7a0648c008106"
-    sha256 cellar: :any, arm64_sonoma:  "a7f8717adf1e19cce628ad0d5b5d9f95fc4d97764080a49e2f88faf4423ed688"
-    sha256 cellar: :any, sonoma:        "b0753af88a70466f5f4f9636c53ef391c4caf78ac2a975a7f5798453c27a33d1"
-    sha256 cellar: :any, arm64_linux:   "cd01ba32906b0bf5eeffe70a7aff115eb88981994bfb5d42e2aaa64edf931629"
-    sha256 cellar: :any, x86_64_linux:  "5dac96238f3d553a15170f9beecee62dec167311a6cb10e1d86aababc2a3db49"
+    sha256 cellar: :any, arm64_tahoe:   "910510dea3e8893390580f540dd172e8342cfcc1cb87b60cad1b73b6d924ea6f"
+    sha256 cellar: :any, arm64_sequoia: "a8bb7be204410fcfac69653f8b4015a97bfa6c3f1949b4a8c77e48decfa987cb"
+    sha256 cellar: :any, arm64_sonoma:  "721994305fdceeabdb563ea3fe3611b57055d9516af20e0b67d6554ac19d0000"
+    sha256 cellar: :any, sonoma:        "c860fe8747cbbc63378235067cd4cc2932d56877e32900d6fd4b544982130c1f"
+    sha256 cellar: :any, arm64_linux:   "6cb5e33d429fca2ac8d9ad47bf09b7a5597f82a91759cdd61b3fc75f4918ee58"
+    sha256 cellar: :any, x86_64_linux:  "e63ca29fed05e7ff539630529407a9f39cd847607a2eab2b06c57e737c843f59"
   end
 
   depends_on "autoconf" => :build
