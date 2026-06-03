@@ -25,6 +25,15 @@ class Bun < Formula
     regex(/^bun[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256                               arm64_tahoe:   "d2dec7e845cbfb74c96e0f7b8a06a85d555fb36275744036df71cbe81c4b3e35"
+    sha256                               arm64_sequoia: "ef73f22cd191639a8a951421c823a59aa648e0c01c75eec83089fa8b788ac4a5"
+    sha256                               arm64_sonoma:  "b25c23f3ab10fe268dc705cebaea79e803fe7cf53abd0ea123178b88730715d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "830c03414478f7edea283d58a32783385a6462aa4c5ef29ef7877b30ce458c9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a1bae01b22520515d132f3b5b208e7666ec9251bb2848f8a84452a0ae69c6bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7f23ed0cc52b0ddc553a9d95af48bc030146f965639d9c03ed811c96757dc28"
+  end
+
   depends_on "cmake" => :build
   depends_on "llvm@21" => :build
   depends_on "ninja" => :build
