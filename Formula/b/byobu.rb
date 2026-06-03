@@ -1,8 +1,8 @@
 class Byobu < Formula
   desc "Text-based window manager and terminal multiplexer"
   homepage "https://github.com/dustinkirkland/byobu"
-  url "https://github.com/dustinkirkland/byobu/archive/refs/tags/7.4.tar.gz"
-  sha256 "8e93d1e39278d9fdd5068b32229e367115f5f42b2213fe7c7209927dd1c75237"
+  url "https://github.com/dustinkirkland/byobu/archive/refs/tags/7.6.tar.gz"
+  sha256 "2cb144fba2a5b835bde571537c31129b259e507613d86e127863e1f2f2797c5c"
   license "GPL-3.0-only"
 
   livecheck do
@@ -43,7 +43,7 @@ class Byobu < Formula
       byobu_script = "byobu-#{script.basename(".py")}"
 
       libexec.install(bin/byobu_script)
-      (bin/byobu_script).write_env_script(libexec/byobu_script, BYOBU_PYTHON: byobu_python)
+      (bin/byobu_script).write_env_script(libexec/byobu_script, BYOBU_PYTHON: byobu_python.to_s)
     end
   end
 
