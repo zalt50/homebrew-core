@@ -1,18 +1,18 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://github.com/railwayapp/cli/archive/refs/tags/v4.66.1.tar.gz"
-  sha256 "99a7995e095425c99155e74825b3637177db556f7b9083faaafc34dd7a4182f3"
+  url "https://github.com/railwayapp/cli/archive/refs/tags/v4.66.2.tar.gz"
+  sha256 "bfa1895092e7747b1b3492677020e26f1aaa6b2154cffc7f8824d6096b498a59"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af17de3f802dccc2647a38e19ff43fcc2516e55ca86956a2c9ee9ffc14c1c921"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32fe80563b06ae51bbc507ff09dfa98579c7eae33e5d19dfc564397cb7557253"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01d6a96948cc7cc58f536c863f5fcc8989036ff10fdd9e459042781db679210e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80e4fef53d247b096608f8fa530b001e43619200faacad487e027b7200d500fc"
-    sha256 cellar: :any,                 arm64_linux:   "08f0c570146d71bdb2620c35cb67377d88201d042e32dff537e734045354ead2"
-    sha256 cellar: :any,                 x86_64_linux:  "62ccf5a80dc51a1431a53ea228d62f651d96a2cfc0c617c99fc08aa5a46cba13"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b37a271cf6280c9adbc6d45a0483bbd03447ff8662306cc1d3e4d26961fd2a6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64582131ea3c1d30f42ad7b768a15b191663cb7ec4d0c98149ea71f24cc076e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "090b2954ae9036fc2c6d9def3f442eb2c1111813708d29e2a2fb28ec540f6adf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96c7c8a1206bbbfea5ed996294cee44228eb235800992fab042b87a0613bc233"
+    sha256 cellar: :any,                 arm64_linux:   "b382d67c6e53542c36876fb885cd141a66b605a25d120151ebf159766d5885d1"
+    sha256 cellar: :any,                 x86_64_linux:  "e00273e1622f7a6cde3c8533095039cdb3a89b1c749e016c4e7d634057d74465"
   end
 
   depends_on "rust" => :build
