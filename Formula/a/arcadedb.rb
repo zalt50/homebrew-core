@@ -11,7 +11,7 @@ class Arcadedb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dd26fcd60eab3a800e1bae51e106d083c2bbb7182a735302bcc0e6609a270731"
+    sha256 cellar: :any_skip_relocation, all: "33bf668fd2340f7fb67359961778225762b4a921622729cb4c9816669a2dabd4"
   end
 
   depends_on "openjdk"
