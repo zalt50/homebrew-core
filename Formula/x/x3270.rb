@@ -21,22 +21,32 @@ class X3270 < Formula
 
   depends_on "openssl@3"
   depends_on "readline"
-  depends_on "tcl-tk@8"
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
   uses_from_macos "ncurses"
 
-  def install
-    ENV.append "CPPFLAGS", "-I#{Formula["tcl-tk@8"].opt_include}/tcl-tk"
+  on_linux do
+    depends_on "bdftopcf" => :build
+    depends_on "mkfontscale" => :build
+    depends_on "libx11"
+    depends_on "libxaw"
+    depends_on "libxmu"
+    depends_on "libxt"
+  end
 
+  def install
     args = %w[
-      --disable-x3270
       --enable-c3270
       --enable-pr3287
       --enable-s3270
-      --enable-tcl3270
     ]
+    args += if OS.mac?
+      %w[--disable-x3270 --enable-tcl3270]
+    else
+      %w[--enable-x3270 --disable-tcl3270]
+    end
+
     system "./configure", *args, *std_configure_args
     system "make", "install"
     system "make", "install.man"
