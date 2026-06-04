@@ -7,7 +7,7 @@ class RbenvGemset < Formula
   head "https://github.com/jf/rbenv-gemset.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6e7da5682a3291f19254153dccc3e654efc3ff798b317a5768e7f4e1032b1bb9"
+    sha256 cellar: :any_skip_relocation, all: "73ada56ebe65aba98d7479f24cbab0c58808c09c97c76d7e32796087f2a324ae"
   end
 
   depends_on "rbenv"
