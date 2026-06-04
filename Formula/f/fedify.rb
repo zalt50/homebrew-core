@@ -1,8 +1,8 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
   homepage "https://fedify.dev/cli"
-  url "https://github.com/fedify-dev/fedify/archive/refs/tags/2.2.3.tar.gz"
-  sha256 "7711c3f92ca5e6712e78dc5062bf35a9079227370d40fbfdc2130411416ea691"
+  url "https://github.com/fedify-dev/fedify/archive/refs/tags/2.2.4.tar.gz"
+  sha256 "47b7c0059906430313dc41ac9c956b5416070b09f82bbdba966eaecbc49b1379"
   license "MIT"
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
@@ -21,6 +21,13 @@ class Fedify < Formula
     # We use a workaround to prevent modification of the `fedify` binary
     # but this means brew cannot rewrite paths for non-default prefix
     pour_bottle? only_if: :default_prefix
+  end
+
+  # Fix type error with Deno 2.8+ where setTimeout returns Timeout, not number
+  # https://github.com/fedify-dev/fedify/pull/789
+  patch do
+    url "https://github.com/chenrui333/fedify/commit/fc77c0003620bed0ea20a002fcdf52f56864798e.patch?full_index=1"
+    sha256 "8fb3d89a946924573020391e39f5497d178283848bf4a18daa4b9fa2b33bff77"
   end
 
   def install
