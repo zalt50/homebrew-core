@@ -6,6 +6,15 @@ class Hookdeck < Formula
   license "Apache-2.0"
   head "https://github.com/hookdeck/hookdeck-cli.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82842652d46c2aa163d214dd0eef4c89979d81467dfd88ec9ee27333f00ba964"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82842652d46c2aa163d214dd0eef4c89979d81467dfd88ec9ee27333f00ba964"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82842652d46c2aa163d214dd0eef4c89979d81467dfd88ec9ee27333f00ba964"
+    sha256 cellar: :any_skip_relocation, sonoma:        "927d3b9258f0bdd43ca5d72e44bf6edb5a057ca96e037dde4370438be7889bb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d625c0c4e6415a973eb5eb8fbf38c3a4b3edabdc9bd8ce5eacf65853ba3c59fa"
+    sha256 cellar: :any,                 x86_64_linux:  "3b431cb4472e2b08289199d194e95138d0217ac4454c379b1680c3729c1e0f74"
+  end
+
   depends_on "go" => :build
 
   def install
