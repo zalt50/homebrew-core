@@ -24,11 +24,17 @@ class Ecl < Formula
 
   uses_from_macos "libffi"
 
-  on_macos do
-    depends_on macos: :sequoia
-  end
-
   # does not build on macOS 14
+  on_macos do
+    on_intel do
+      depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
+
+      fails_with :clang do
+        build 1600
+        cause "Unhandled lisp initialization error"
+      end
+    end
+  end
 
   def install
     ENV.deparallelize
