@@ -8,7 +8,7 @@ class Pipdeptree < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "edf7cfbc5c4563160980d3837faaaee78639f315821ec8449f3efee75ed0028f"
+    sha256 cellar: :any_skip_relocation, all: "fa72d29d9ebace1136673afe6fb87f69cd4db67a9bcc79d3f0b21a11334a2c75"
   end
 
   depends_on "python@3.14"
