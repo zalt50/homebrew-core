@@ -19,15 +19,17 @@ class GmpEcm < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "gmp"
+  depends_on "primesieve"
 
   uses_from_macos "m4" => :build
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   def install
     system "autoreconf", "--force", "--install"
-    system "./configure", "--with-gmp=#{Formula["gmp"].prefix}",
-                          "--enable-shared",
-                          *std_configure_args
-    system "make"
+    system "./configure", "--enable-openmp", "--enable-shared", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -66,7 +68,8 @@ class GmpEcm < Formula
     C
     system ENV.cc, "test.c", "-o", "test",
            "-I#{include}", "-L#{lib}", "-L#{Formula["gmp"].lib}",
-           "-lecm", "-lgmp"
+           "-L#{Formula["primesieve"].lib}",
+           "-lecm", "-lgmp", "-lprimesieve"
     system "./test"
   end
 end
