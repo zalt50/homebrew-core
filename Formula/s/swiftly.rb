@@ -2,8 +2,8 @@ class Swiftly < Formula
   desc "Swift toolchain installer and manager"
   homepage "https://github.com/swiftlang/swiftly"
   url "https://github.com/swiftlang/swiftly.git",
-      tag:      "1.1.1",
-      revision: "714cc4e057e214132ee892b5a1bc66c3de590a97"
+      tag:      "1.1.2",
+      revision: "02c43bc590d6631411e3ada25faa20b1bd528bd8"
   license "Apache-2.0"
   head "https://github.com/swiftlang/swiftly.git", branch: "main"
 
