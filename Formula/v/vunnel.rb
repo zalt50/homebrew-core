@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/69/b6/10d463f7a48c0cba5f3bec1aca47c7f7ccc66af87ee1b011c97f986b6a61/vunnel-0.59.0.tar.gz"
-  sha256 "e488b68841e5418895c7f80d6b3aea9324ef7b5b1513e5b97af2d249a8b26b54"
+  url "https://files.pythonhosted.org/packages/a9/da/ebc522ddf6486b7a4427c370939f72a6c15842c969068af07ca5263d1cca/vunnel-0.60.0.tar.gz"
+  sha256 "c827f502928191c1ada666af156917011847fc51407f47a084cbe8ee8381a06b"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -64,8 +64,8 @@ class Vunnel < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "ijson" do
