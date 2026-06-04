@@ -34,13 +34,14 @@ class Skopeo < Formula
       Utils.safe_popen_read("hack/libsubid_tag.sh").chomp,
     ].uniq
 
-    ldflag_prefix = "go.podman.io/image/v5"
+    ldflag_image_prefix = "go.podman.io/image/v5"
+    ldflag_storage_prefix = "go.podman.io/storage"
     ldflags = %W[
       -X main.gitCommit=
-      -X #{ldflag_prefix}/docker.systemRegistriesDirPath=#{etc}/containers/registries.d
-      -X #{ldflag_prefix}/internal/tmpdir.unixTempDirForBigFiles=/var/tmp
-      -X #{ldflag_prefix}/signature.systemDefaultPolicyPath=#{etc}/containers/policy.json
-      -X #{ldflag_prefix}/pkg/sysregistriesv2.systemRegistriesConfPath=#{etc}/containers/registries.conf
+      -X #{ldflag_image_prefix}/docker.systemRegistriesDirPath=#{etc}/containers/registries.d
+      -X #{ldflag_image_prefix}/internal/tmpdir.unixTempDirForBigFiles=/var/tmp
+      -X #{ldflag_storage_prefix}/pkg/configfile.systemConfigPath=#{etc}/containers
+      -X #{ldflag_image_prefix}/pkg/sysregistriesv2.systemRegistriesConfPath=#{etc}/containers/registries.conf
     ]
 
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/skopeo"
@@ -57,11 +58,9 @@ class Skopeo < Formula
     output = shell_output(cmd)
     assert_match "docker.io/library/busybox", output
 
-    expected = if OS.mac?
-      "Error loading trust policy"
-    else
-      "Invalid destination name test"
-    end
-    assert_match expected, shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1)
+    # https://github.com/Homebrew/homebrew-core/pull/47766
+    # https://github.com/Homebrew/homebrew-core/pull/45834
+    assert_match(/Invalid destination name test: Invalid image name .+, expected colon-separated transport:reference/,
+                 shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1))
   end
 end
