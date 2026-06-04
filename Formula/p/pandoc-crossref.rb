@@ -5,6 +5,7 @@ class PandocCrossref < Formula
   version "0.3.24a"
   sha256 "5b478c94b67d5b972c7b3d867a345be982d3af12475e2261dd9b37fc17e225d1"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "56885d16e051a5355f5fa2168e3198444406008b28bfbc6dd7425cc6a2b61e33"
@@ -25,6 +26,13 @@ class PandocCrossref < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Workaround for pandoc 3.10.
+  # PR ref: https://github.com/lierdakil/pandoc-crossref/pull/510
+  patch do
+    url "https://github.com/lierdakil/pandoc-crossref/commit/d786c849c54841c809f2f13bda841c038a865e03.patch?full_index=1"
+    sha256 "df60d96e2e20f7d7d13582ebdbf690daff2cb1a05f130311cf6ef92459ca1691"
   end
 
   def install
