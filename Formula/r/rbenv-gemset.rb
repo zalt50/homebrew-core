@@ -1,8 +1,8 @@
 class RbenvGemset < Formula
   desc "KISS yet powerful gem/set management for curious engineers and Ruby hackers"
   homepage "https://github.com/jf/rbenv-gemset"
-  url "https://github.com/jf/rbenv-gemset/archive/refs/tags/v0.5.101.tar.gz"
-  sha256 "cc417d3d5cc0e439549beacaccf0cf0a4a62e466131854bb331d0d521666c017"
+  url "https://github.com/jf/rbenv-gemset/archive/refs/tags/v0.5.102.tar.gz"
+  sha256 "193f560fe169b338a63d0bc38cc56ec05bf8639f47073ba487352b1058668e5a"
   license :public_domain
   head "https://github.com/jf/rbenv-gemset.git", branch: "master"
 
