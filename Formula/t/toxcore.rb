@@ -9,12 +9,12 @@ class Toxcore < Formula
   head "https://github.com/TokTok/c-toxcore.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cbbb31e412bfd8ce19e4bed4468c763c4a30553df87af6daaca7890b60863fc8"
-    sha256 cellar: :any,                 arm64_sequoia: "22e925fce4d035689ba871e1f04ea5254f2239b7ba660e23a21decb7d172c575"
-    sha256 cellar: :any,                 arm64_sonoma:  "590fe74f3e30221b3eef2f02e322da73d547531635ee9749a5c69dac41fd8b08"
-    sha256 cellar: :any,                 sonoma:        "02d2a7718ed5dc375c0b69c5a4406ab3bb48465f3f1e447dfa821af05d72c044"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "310a1c7117ef774e06419060a7e836f80927052bbf1022831dccaf264ace5e9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffb493b9bb0c9aeea6a33d9450f6497d4e27c9d4e06b3b2621a033269c09e78c"
+    sha256 cellar: :any, arm64_tahoe:   "be61c36f2d75c7a8ddfd426cca426d5d5415c7a2231912bd5d0f9b03bfffde7c"
+    sha256 cellar: :any, arm64_sequoia: "18629a3bd9859806b30f36a1ecca6732ca8d39eea03bee3b9e5d8d61c70d2f34"
+    sha256 cellar: :any, arm64_sonoma:  "17ad87fbbc239a376f2a3515650f2830b1ad2b574e8f23911d3dcd3dbbf79a8a"
+    sha256 cellar: :any, sonoma:        "fc60d49a955a51bdba2e5c1d1966bc5d0f341bcfaa8703842afe9733ebd2abaf"
+    sha256 cellar: :any, arm64_linux:   "2087f424bb492e8d937dbe211ddc52b4e91f30e223c7f08ae43645b71fcb3baf"
+    sha256 cellar: :any, x86_64_linux:  "96ecbb342f92bb35f2f97d4f305a1ec446605f6c6f7f1f978f20e27fc74e58e8"
   end
 
   depends_on "cmake" => :build
