@@ -8,12 +8,12 @@ class Rust < Formula
   head "https://github.com/rust-lang/rust.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a737b434cf0308a7d5b8fe96a84f0f080d6fc7254e99694d7bf2761120baf90"
-    sha256 cellar: :any,                 arm64_sequoia: "95b1bdf39a2d43f2dd8ce87882af6b7db5554fe5510e3abd61fa215752092168"
-    sha256 cellar: :any,                 arm64_sonoma:  "f67006422b732a7221d95f21f7c91e1cbff22286476865e3391ecd8450236845"
-    sha256 cellar: :any,                 sonoma:        "2949815437bd707921d9cf7f7d5343697933a0e1f1f81a54bd6d03168195d9dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aec45ed59c862c29641ce18338ceb3e37100b8afc40271778e7eb848af267470"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5760cd41400a3f5b9e0b5e96d1e7f81165be8ee78ad03ac6ecd5161c0477e58"
+    sha256 cellar: :any, arm64_tahoe:   "92dd1f7a34118bce4eef60bde537b18771b6ee930d1adc31c0bc4f26ed6291a1"
+    sha256 cellar: :any, arm64_sequoia: "38840eb562520652d1745bf06dba27edad100bf3de86fb755397dd18acefa917"
+    sha256 cellar: :any, arm64_sonoma:  "f7543c66283aa8c43eb34ecc4110a9f40e3987989381927e1fd1591a012c7ab4"
+    sha256 cellar: :any, sonoma:        "5a4fd24a0280747c348a4b556924a6bacdda0fc1e38c28afec6c210bcb10c8ae"
+    sha256 cellar: :any, arm64_linux:   "1805aef1f1c4a52ec68ac4a765372a35f68e45e84adfd749e5b1b556b196052a"
+    sha256 cellar: :any, x86_64_linux:  "1e0c924dae3d9336220dbaba4cb0ff39aa85cb5da5cf9cbefa5ad1fc252fe3b7"
   end
 
   depends_on "libgit2"
