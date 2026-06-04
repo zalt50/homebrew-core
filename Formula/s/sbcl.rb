@@ -21,11 +21,6 @@ class Sbcl < Formula
   depends_on "ecl" => :build
   depends_on "zstd"
 
-  # `ecl` does not support older versions
-  on_macos do
-    depends_on macos: :sequoia
-  end
-
   def install
     # Remove non-ASCII values from environment as they cause build failures
     # More information: https://bugs.gentoo.org/show_bug.cgi?id=174702
