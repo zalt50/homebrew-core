@@ -1,8 +1,8 @@
 class Nessie < Formula
   desc "Transactional Catalog for Data Lakes with Git-like semantics"
   homepage "https://projectnessie.org"
-  url "https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.107.6.tar.gz"
-  sha256 "b7c8333ca1f58f3506b2d44f885d9c20ede525a655f97ec496f9861437f853f4"
+  url "https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.107.8.tar.gz"
+  sha256 "689a0162b3961e3246e7e0491748fec24c9cdfe6983be059b00c15a76e9246ec"
   license "Apache-2.0"
 
   bottle do
