@@ -10,12 +10,12 @@ class Scoutsuite < Formula
   head "https://github.com/nccgroup/ScoutSuite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "241b8ec5d3af61931beb51fcf5082346f9b0767807ac98241fe6a0d28cf3806c"
-    sha256 cellar: :any,                 arm64_sequoia: "23bfcc554155c6c7c02ff390141cd18138a7143af995b19dd5bcd42232855bf4"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd8c183593c79b4eedc7a72cef9e94c9db0fa563529069d2372c352bbf3fb81c"
-    sha256 cellar: :any,                 sonoma:        "66a20fcb514758b79775e1c817f2f45e85be4be1494e2047e4f43a78e9e9c7b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5d37a0e8427880063156df7c9d0a0ba8527099a4c2f2395672c11a3fa497cbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6067102ca928766a9a65fd4fb945b62abdfe27a5a1ffe0a65f421c0746db40fc"
+    sha256 cellar: :any, arm64_tahoe:   "5cc0bbf582786ce9fccf0afc3f823a8097b719414e269a661a71ab2a9bc26b6c"
+    sha256 cellar: :any, arm64_sequoia: "3193221f405c32442448a95fa3cb07b0ef88c4d5d6fc11aca28e826e2ed42441"
+    sha256 cellar: :any, arm64_sonoma:  "e4a490979555da9745a890c8a4542fd9a26659d1c36bb65df6eb5938b07d76be"
+    sha256 cellar: :any, sonoma:        "e0585233c4ab8db1c067df71a89d48d12cf8b74b0db9e4848e6e36895f675c0f"
+    sha256 cellar: :any, arm64_linux:   "3c3cd6eee8bd5f3d0ce65008d8fb4654fb0569c23a5b732013c171a2ca3ef74f"
+    sha256 cellar: :any, x86_64_linux:  "f61ad6d6d1359cea984b01de8c27bd155b1ae024b722d9c76ba7787d80c24072"
   end
 
   depends_on "certifi" => :no_linkage
