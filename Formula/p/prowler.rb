@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/4f/66/3a1c879dac694193d50b0f082483821d8254905bd759d6f5607ac1a6e597/prowler-5.29.0.tar.gz"
-  sha256 "2bb3a18105135b16ba5f2049407446d5066632650af3f92c72168e6816db7d2a"
+  url "https://files.pythonhosted.org/packages/72/43/34b43e207fdbc717b07655e4b8f3b5b623b332d2773caa7fd0c655eef330/prowler-5.29.1.tar.gz"
+  sha256 "67a23956f23abe0f8aa509c11e90ab0e986c44f46bd461c934ba7f8d3cf8c9f3"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
@@ -59,8 +59,8 @@ class Prowler < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/ee/ab/93ce242f899b68c51b0578c027aafa791ab3614cb9345fa5d37b5f5c8e3e/aiohttp-3.14.0.tar.gz"
+    sha256 "2882de819734c715fd1b9c11c97e09fa020d14438203d1d354d8ed1702791c9b"
   end
 
   resource "aiosignal" do
@@ -464,8 +464,8 @@ class Prowler < Formula
   end
 
   resource "darabonba-core" do
-    url "https://files.pythonhosted.org/packages/66/d3/a7daaee544c904548e665829b51a9fa2572acb82c73ad787a8ff90273002/darabonba_core-1.0.5-py3-none-any.whl"
-    sha256 "671ab8dbc4edc2a8f88013da71646839bb8914f1259efc069353243ef52ea27c"
+    url "https://files.pythonhosted.org/packages/a2/2c/3648ddab4b0a16de5da05164f9f54b4f0e26266c1a0fbcae8ffcb7b4285a/darabonba_core-1.0.6.tar.gz"
+    sha256 "0d729306e57c5bbe3957b2361aad1336781fb9617b256348ddd8558f13f6cbca"
   end
 
   resource "dash" do
@@ -604,13 +604,13 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/83/96/635c6e27f1ef5a024e6e46c77c791652cee74deb97fdd5e66d37535105b9/iamdata-0.1.202606011.tar.gz"
-    sha256 "ec4808a6ce1b800a55c9ae97ff9d84937c31e4a14f59bb5163f27738e17c5a55"
+    url "https://files.pythonhosted.org/packages/cb/8d/4fd6fb49aeddac47152bfe4dfe36b572a2fafa100244be55f5e7108ec8f5/iamdata-0.1.202606031.tar.gz"
+    sha256 "a699420b57ce7247c4d0e34a06c84cee93a970c1072a8928e1a2f3528aec5041"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "importlib-metadata" do
