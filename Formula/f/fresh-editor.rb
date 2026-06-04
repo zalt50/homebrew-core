@@ -6,12 +6,12 @@ class FreshEditor < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05e7e355de9e8b02884aa57e3d3308f9c66638affb8768e53f41775c36ee114b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ba94f7dc49cfd0a42f93e91665831a3f35fd19005d7eaf0976682e773e18334"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02008b2c1807e4eadd73442699de8383f92deb8b20e324de9937a6225c31ef74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c745943e748ff422b17ab6aa8765336b141a717c8260fd8bea2547a4323b2539"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa2e27fa802a72ff7b88f5ccf1703170c2dd8831e483f7d31f70c2ea31775588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d094c4cf40bb28b735e2112bbffcb237d19f31b6c7ea4fb675925aaf8dc785a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "970300726d0deca64ae81ccf33f7211b01f7c8548bcd8d98e3231e272a73b7a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5276efff4f8e72b4742fb595f0ddab5e923e14762e52d7d488f5e161ae16e7d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96bd703f02e8bad7577ef31398827af919adcb98a350d8e9b9004d4fd9277638"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3dc26ad9ef5d22ead6a53029868f0b25ed41e55722c5fce0aedf72629e64607f"
+    sha256 cellar: :any,                 arm64_linux:   "0a36bbfdaf08c293e9d02f6cbf39dcbec7993347aad564dd199daa48633a4beb"
+    sha256 cellar: :any,                 x86_64_linux:  "8593ed91ae56b527d051d8c0d9d2244b49bdde22c1fa5ea1d16f44549056578f"
   end
 
   depends_on "rust" => :build
