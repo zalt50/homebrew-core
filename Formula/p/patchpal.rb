@@ -1,8 +1,8 @@
 class Patchpal < Formula
   desc "AI Assisted Patch Backporting Tool Frontend"
   homepage "https://gitlab.com/patchpal-ai/patchpal-gui"
-  url "https://gitlab.com/patchpal-ai/patchpal-gui/-/archive/v0.7.1/patchpal-gui-v0.7.1.tar.bz2"
-  sha256 "cfc7ac868a7ad917aacd362b04b0bda10d5dcf83cf92f1a5171cc30f8e877609"
+  url "https://gitlab.com/patchpal-ai/patchpal-gui/-/archive/v0.8.0/patchpal-gui-v0.8.0.tar.bz2"
+  sha256 "3be3a1ee5d6ed988cb737aa904d70cb10653925bcc21a318b19b52257c30ed36"
   license "Apache-2.0"
 
   bottle do
