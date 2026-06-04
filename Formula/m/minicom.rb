@@ -1,8 +1,8 @@
 class Minicom < Formula
   desc "Menu-driven communications program"
   homepage "https://packages.debian.org/sid/minicom"
-  url "https://deb.debian.org/debian/pool/main/m/minicom/minicom_2.10.orig.tar.bz2"
-  sha256 "90e7ce2856b3eaaa3f452354d17981c49d32c426a255b6f0d3063a227c101538"
+  url "https://deb.debian.org/debian/pool/main/m/minicom/minicom_2.11.1.orig.tar.bz2"
+  sha256 "87cf0da91af0531357cd61b8e1906b907edd2c9ef82f9ae74c277e1893d0f98c"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -26,6 +26,8 @@ class Minicom < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
+
+  depends_on "pkgconf" => :build
 
   uses_from_macos "ncurses"
 
