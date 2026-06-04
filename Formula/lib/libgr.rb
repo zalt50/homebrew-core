@@ -1,8 +1,8 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
   homepage "https://gr-framework.org/"
-  url "https://github.com/sciapp/gr/archive/refs/tags/v0.73.24.tar.gz"
-  sha256 "6cf573ca23cc08e7410355960a36ae9127a4c06241b05341bb974abd2ceb1b32"
+  url "https://github.com/sciapp/gr/archive/refs/tags/v0.73.25.tar.gz"
+  sha256 "972ff8d435a45165c690300527496d5e8866b72e35867cfb3edc1d8ee3081d5a"
   license "MIT"
 
   bottle do
@@ -35,7 +35,7 @@ class Libgr < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DGR_PREFER_XCODEBUILD=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
