@@ -1,9 +1,20 @@
 class SteamguardCli < Formula
   desc "CLI for steamguard"
   homepage "https://github.com/dyc3/steamguard-cli"
-  url "https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "dc02e2a40c5bfc8f28195c99a9575ef10c1fe67f3075d402091e81f53440626d"
   license "GPL-3.0-or-later"
+  head "https://github.com/dyc3/steamguard-cli.git", branch: "master"
+
+  stable do
+    url "https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.18.1.tar.gz"
+    sha256 "884318f97ca184c437940691f8a617ffa7003622ff56a2da4d21e021771fc3a7"
+
+    # Bump dependencies that cause build failure on macOS
+    # https://github.com/dyc3/steamguard-cli/pull/506
+    patch do
+      url "https://github.com/dyc3/steamguard-cli/commit/7c298ae3b9c0c4a3ff77e8c71a03a9c3d55d043b.patch?full_index=1"
+      sha256 "94458a8b9a2baeedf34b8ab9891a713d621049083472f8ead2f628b9c206b9c3"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a075cea4c7595936f22b9454c239a1c915657653242032faa8cdd5afaa1712"
