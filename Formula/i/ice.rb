@@ -1,8 +1,8 @@
 class Ice < Formula
   desc "Comprehensive RPC framework"
   homepage "https://zeroc.com"
-  url "https://github.com/zeroc-ice/ice/archive/refs/tags/v3.8.1.tar.gz"
-  sha256 "87aa0381f2347715467686547bccf253fa208948bf2a462584872d2d0f8b1720"
+  url "https://github.com/zeroc-ice/ice/archive/refs/tags/v3.8.2.tar.gz"
+  sha256 "d350ebbcdd7971fafccebfdf1e99db139dc6d121f5a5dcdc4036256206735078"
   # See https://github.com/zeroc-ice/ice/blob/main/ICE_LICENSE for a special
   # exception to combine Ice with the OpenSSL library and Apache-2.0 libraries
   license "GPL-2.0-only"
