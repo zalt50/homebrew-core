@@ -9,12 +9,12 @@ class Hyfetch < Formula
   head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8e23d042c63d216d9951ae1415f41027de311489de35fdb90b4760787ebc5fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "689a7b9884dcbab33646f59568d8d7817c3ac33b58a4307a1d5047ad728e02a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd5faea5be7465dcf4b25455554c79433fb8e8af0676442095d95b55863d27f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe39c8a8bf21e71bda4a19306b0448f61b0c1f7d67c1094e0e71fc83633b2d5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74be4619e6dd47dc54929697a1fde1ef52419a5b0712fd945161c2017b7448f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "389c8f79c54fafd508d554cb164296392c9e6b3cb9a1577dc2b92b96decae856"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb8481ea6441a5aa39f369b75088de5544067e0bf34ba06f25f594893359348b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "598322420d08901cfa2eb3ea2da014ea9e82e1f25a59253054514bd0900dec23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "341fbab3798b23e6d2de5f100e9e8d6e854b29a577b21ca5eca641fb65d43c4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9366343c6ab96f6fd4335dfad368b9e997c5265eb0204e99a866683509f8a86e"
+    sha256 cellar: :any,                 arm64_linux:   "da7e929d591c164c8c5addf38b0d6cd3c555343dfe55b59a2e9f895f55e58444"
+    sha256 cellar: :any,                 x86_64_linux:  "f68ee68af3617c677e8667c363e64d5877af8095f2d8f65e256aefa6fdbe426a"
   end
 
   depends_on "rust" => :build
