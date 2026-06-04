@@ -1,17 +1,17 @@
 class Sanity < Formula
   desc "Command-line interface for Sanity"
   homepage "https://www.sanity.io/"
-  url "https://registry.npmjs.org/sanity/-/sanity-5.29.0.tgz"
-  sha256 "3f76e74ea9ce46960f5a40984c2a2846449ca771257217d3f12cf11d6ec057b2"
+  url "https://registry.npmjs.org/@sanity/cli/-/cli-6.7.1.tgz"
+  sha256 "b6a59e4c248f80b3ed8f4e922a4150d89695a33754d314d20b1f67c7895ec6ac"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "249ce8126e9a39c9069c2e5448e386abfa98df498c7e845110bbe78a205970a1"
-    sha256 cellar: :any, arm64_sequoia: "d6bae7a5644e064733971e2808fb29433d4a3ab31550d36efa35add16def24ff"
-    sha256 cellar: :any, arm64_sonoma:  "d6bae7a5644e064733971e2808fb29433d4a3ab31550d36efa35add16def24ff"
-    sha256 cellar: :any, sonoma:        "2e46b0f3bc43a558af258f3ab7b1e7f5f21c8f21aad6309339740484134b67ef"
-    sha256 cellar: :any, arm64_linux:   "28df18a502723315874674f3293e1f142325a5550733df48a15c17a6d565306a"
-    sha256 cellar: :any, x86_64_linux:  "ebabe4538264be645b0313ed96f96b56e32f3f1084ce9792db20a616b3eb126d"
+    sha256 cellar: :any, arm64_tahoe:   "ea7512d4cd8a237c053d6c39a2cf597c60d6587f06426a9390934186516bd087"
+    sha256 cellar: :any, arm64_sequoia: "a5299bdc99172dd27d106dabc13c5f5f6f0e882fc376460fec35952217e8af71"
+    sha256 cellar: :any, arm64_sonoma:  "a5299bdc99172dd27d106dabc13c5f5f6f0e882fc376460fec35952217e8af71"
+    sha256 cellar: :any, sonoma:        "5ad164961c4d0c3f9bd787190437976738db8ef28464082316fb86f72ef2a4f7"
+    sha256 cellar: :any, arm64_linux:   "655c88e71328eb970351d37178667db2eff4a2e2dfae6499835b24c7dac0ab79"
+    sha256 cellar: :any, x86_64_linux:  "1577806cc326fb887e259e3972a21753dc29124cd02c49eeb80df4d4af6bbb0b"
   end
 
   depends_on "node"
@@ -20,7 +20,7 @@ class Sanity < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
-    node_modules = libexec/"lib/node_modules/sanity/node_modules"
+    node_modules = libexec/"lib/node_modules/@sanity/cli/node_modules"
     # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
