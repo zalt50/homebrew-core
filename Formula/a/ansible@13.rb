@@ -15,6 +15,15 @@ class AnsibleAT13 < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "aadaecb9455ae64db83dcd538bd62fce906d2c31a3845871859d1c026b9503d8"
+    sha256 cellar: :any, arm64_sequoia: "f04c57efb43167bc6decce61c2e86f9135acd3d84c67e76cfab184116a49b8f3"
+    sha256 cellar: :any, arm64_sonoma:  "c8c8c8c80df4fbbf66f2d07084d12eef0cfe07e7a2b77ec405dc11daaf6cff68"
+    sha256 cellar: :any, sonoma:        "c95635c038d5f2149e76534d0521c9020fd9e42b644a33f8be1050d0f1cb9b35"
+    sha256 cellar: :any, arm64_linux:   "b27d8bbfad93c5fdf7f5a1d776f469869d0f81e24b4aac48e6e012721a0c440c"
+    sha256 cellar: :any, x86_64_linux:  "240468aacefca702e2c49dc5a0a39533393750f98920edc47ff5a8bfd6248065"
+  end
+
   keg_only :versioned_formula
 
   # https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
