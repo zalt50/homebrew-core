@@ -1,18 +1,14 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.5.tar.gz"
-  sha256 "512d884ce8689026f45b54a1c2a242e66f7d570e7d9a1a590d88733cc3e1a108"
+  # NOTE: The last GitHub release no longer builds due to security issues.
+  # For now, we track newer git tags which haven't been marked as releases.
+  # Upstream seems to have stopped responding to issues since deciding to not
+  # accept contributions: https://github.com/microsoft/sbom-tool#contributing
+  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.11.tar.gz"
+  sha256 "2f0c4ad09e7d8cc1faa02dad900683bf3b3d43482de835950a9ce2e697a79107"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
-
-  # There can be a notable gap between when a version is tagged and a
-  # corresponding release is created, so we check the "latest" release instead
-  # of the Git tags.
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
 
   bottle do
     rebuild 1
