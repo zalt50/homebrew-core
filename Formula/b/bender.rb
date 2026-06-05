@@ -1,8 +1,8 @@
 class Bender < Formula
   desc "Dependency management tool for hardware projects"
   homepage "https://github.com/pulp-platform/bender"
-  url "https://github.com/pulp-platform/bender/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "7b03dc86a8dcd43b278f84758af287eeb3194bdb707f30ddf9f879e05ab10b7c"
+  url "https://github.com/pulp-platform/bender/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "adfdf9b77802853a4153b4569cb596a89c493b5dab363f1388ed681c57f8208c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/pulp-platform/bender.git", branch: "master"
 
@@ -15,7 +15,17 @@ class Bender < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9488f4a1f1321757d1ef2e1b4ff00194b00898d40049a5580191f2665aa5c54c"
   end
 
+  depends_on "cmake" => :build # for `bender-slang` crate
   depends_on "rust" => :build
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
+  end
+
+  fails_with :clang do
+    build 1699
+    cause "`bender-slang` crate requires C++20"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
