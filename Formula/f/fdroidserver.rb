@@ -8,12 +8,12 @@ class Fdroidserver < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2176c6d7983bbf26fd5f63d74ad9407bcc813f2442bee230b70b11493b4074ff"
-    sha256 cellar: :any,                 arm64_sequoia: "01f0815f873499dc8d17369086117241b5d6be1f874fe4265e06b128208528ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "31fd10d1efc93d69dabe0ef1b22aef9b67aa8570d2a5c0f73e2cae2ffa222638"
-    sha256 cellar: :any,                 sonoma:        "4a1dfa0343fa67149df52065ccd9f3ea8eec7fb469627575656e07a1d855cd8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ac0b4fcad20363c73023d60ccff7ff39ff38b899d06d5fd89d69202766633d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e8a619afd240fa992688b1d33d7c93d18e1fe4e8fb43664d4704c8329080915"
+    sha256 cellar: :any, arm64_tahoe:   "56a9f861bd95c9e8e70815a7827ed0c89115724a16fcbae8581b52eb9af8b633"
+    sha256 cellar: :any, arm64_sequoia: "43d906f2c46f62db9728af066be9f06d01104b27704e43b71ff22559dd424b04"
+    sha256 cellar: :any, arm64_sonoma:  "23ae0d0525bedc23bfb33c48bbabb5f0e239261d59d755b46660922c0bb3fad2"
+    sha256 cellar: :any, sonoma:        "7f2f8133abd873417d4b27bf5c61135664dcbe55724b6cc4677bdbaa6e97ac3f"
+    sha256 cellar: :any, arm64_linux:   "2c185d1b5ad40482339b541db559a324bb9ae82d38b712e088e201e718c128f6"
+    sha256 cellar: :any, x86_64_linux:  "b3857080bc9a540fd94d0603dd299d0b00883e9529d630472247a21618882788"
   end
 
   # `pkgconf` and `rust` are for bcrypt
