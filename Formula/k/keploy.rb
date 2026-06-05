@@ -1,8 +1,8 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://github.com/keploy/keploy/archive/refs/tags/v3.5.59.tar.gz"
-  sha256 "4ce6c68bf8a1e23fd4fd23a3f7b168ad94115d974d7624fea5c0c5b5c1d85a69"
+  url "https://github.com/keploy/keploy/archive/refs/tags/v3.5.60.tar.gz"
+  sha256 "b1794d1837f17ff11604328695684d323986cb58ea3c9727c88656434b72ccd5"
   license "Apache-2.0"
   head "https://github.com/keploy/keploy.git", branch: "main"
 
