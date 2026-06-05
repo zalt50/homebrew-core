@@ -1,8 +1,8 @@
 class SqlFormatter < Formula
   desc "Whitespace formatter for different query languages"
   homepage "https://sql-formatter-org.github.io/sql-formatter/"
-  url "https://registry.npmjs.org/sql-formatter/-/sql-formatter-15.7.4.tgz"
-  sha256 "c844ac53f813cdb555ca57772c64d4bce643e0175adb6ade2c2ed4cbfb4787ac"
+  url "https://registry.npmjs.org/sql-formatter/-/sql-formatter-15.8.1.tgz"
+  sha256 "10b423ce2f706e6e416903b33a3b27b361f473ec58fe59ca5a2e8c49db1164ba"
   license "MIT"
 
   bottle do
@@ -12,6 +12,7 @@ class SqlFormatter < Formula
   depends_on "node"
 
   def install
+    ENV["NPM_CONFIG_FORCE"] = "1"
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
