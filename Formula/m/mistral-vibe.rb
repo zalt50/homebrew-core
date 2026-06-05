@@ -3,8 +3,8 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/ff/f7/671f45a47c41ce375d47e8acfa3dce331664c460e6f503a65b53febc46ca/mistral_vibe-2.13.0.tar.gz"
-  sha256 "00924ccb671e1faf942c88f4d5f4b032f24fae546571f8b24169afe4a3e0aac1"
+  url "https://files.pythonhosted.org/packages/c1/e8/761d9f07e80cd1d7167b16ce09cf17c2cac709ae6f5df15cc7d9374e5bb2/mistral_vibe-2.14.0.tar.gz"
+  sha256 "cb87996ad256a203b8194bc1d9833df9bad890e76176c937a674447845dbc7a4"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
@@ -28,8 +28,8 @@ class MistralVibe < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "agent-client-protocol" do
-    url "https://files.pythonhosted.org/packages/eb/13/3b893421369767e7043cc115d6ef0df417c298b84563be3a12df0416158d/agent_client_protocol-0.9.0.tar.gz"
-    sha256 "f744c48ab9af0f0b4452e5ab5498d61bcab97c26dbe7d6feec5fd36de49be30b"
+    url "https://files.pythonhosted.org/packages/88/a0/3b96cd8374725c69bc3dae9fcc2082f3f6cafec1be35d24d7af0f8c3265f/agent_client_protocol-0.10.1.tar.gz"
+    sha256 "355c65ca19f0568344aafc2c1552b7066a8fc491df23ab28e7e253c6c9a85a25"
   end
 
   resource "anyio" do
@@ -110,6 +110,11 @@ class MistralVibe < Formula
   resource "httpx-sse" do
     url "https://files.pythonhosted.org/packages/0f/4c/751061ffa58615a32c31b2d82e8482be8dd4a89154f003147acee90f2be9/httpx_sse-0.4.3.tar.gz"
     sha256 "9b1ed0127459a66014aec3c56bebd93da3c1bc8bb6618c8082039a44889a755d"
+  end
+
+  resource "humanize" do
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "idna" do
