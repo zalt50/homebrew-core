@@ -18,12 +18,13 @@ class Mpv < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "3c84e1634ee0debe5bccdf0cb3e6192254992271ae33126259d023b3f1cc3694"
-    sha256               arm64_sequoia: "21640782a669263ecb7a66f1ff314e438751287c19404fdf644ddb2c675354fc"
-    sha256               arm64_sonoma:  "01b85b9b778134021528913b6dad66a2b685f4a8039c59b09b150f9024d6848e"
-    sha256 cellar: :any, sonoma:        "87e0e5719dfb7ca3c51bf64ba46a7a4d21349ca8ba867934b497a70571e1e734"
-    sha256               arm64_linux:   "48fb6f68e500c5cbcf7548f4ba380f2caeb7b54dc8063470537a09cfde048a20"
-    sha256               x86_64_linux:  "d0b4356c5fcf5fc1d51eb9d428dd635edd47ec35255d22dc050af49c4e25d300"
+    rebuild 1
+    sha256               arm64_tahoe:   "41934b670839e3433d9d12325e3f539a99a9b1575ffffb23ed2a021c608ddf4e"
+    sha256               arm64_sequoia: "a0cc65cc453d5ce141714f8f9f67d7ab7ee23226ca6ce3131d3a59fe7e0a0b2e"
+    sha256               arm64_sonoma:  "9a73121b886e4998e256a51051e76e15a00b586bd19430c374d7f6ea3af1c318"
+    sha256 cellar: :any, sonoma:        "8ffd98ccedc02e523e34cce51261900bebec96e44aafdd4b106114640f8cdd85"
+    sha256               arm64_linux:   "ef61430986f3f57f9a7ee70af283ef7b341e5341696759ce2006cd4d7c7bd89e"
+    sha256               x86_64_linux:  "22c8015c799e22a7d758251e3699fb65c72256a03a34cd456c98d16cc9898989"
   end
 
   depends_on "docutils" => :build
