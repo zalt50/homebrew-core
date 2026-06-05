@@ -19,8 +19,6 @@ class AbiDumper < Formula
   deny_network_access!
 
   def install
-    # We pass `--program-prefix=elfutils-` when building `elfutils`.
-    inreplace "abi-dumper.pl", "eu-readelf", "elfutils-readelf"
     system "make", "prefix=#{prefix}", "install"
   end
 
