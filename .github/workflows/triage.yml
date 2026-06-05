@@ -348,7 +348,6 @@ jobs:
                 jasper|\
                 jpeg-turbo|\
                 jpeg-xl|\
-                libcap|\
                 libgcrypt|\
                 libgpg-error|\
                 libidn2|\
@@ -416,6 +415,7 @@ jobs:
                 gettext|\
                 glib|\
                 harfbuzz|\
+                libcap|\
                 openssl@3|\
                 rust|\
                 sqlite|\
@@ -442,7 +442,6 @@ jobs:
             - label: CI-linux-self-hosted-deps
               path: "Formula/.+/(\
                 glib|\
-                libcap|\
                 libva|\
                 libxml2|\
                 mesa|\
