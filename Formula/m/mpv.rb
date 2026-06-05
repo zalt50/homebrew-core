@@ -2,7 +2,7 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 5
+  revision 6
   compatibility_version 1
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
@@ -75,6 +75,7 @@ class Mpv < Formula
 
   def install
     args = %W[
+      --sysconfdir=#{etc}
       -Dbuild-date=false
       -Dhtml-build=enabled
       -Djavascript=enabled
@@ -83,9 +84,6 @@ class Mpv < Formula
       -Dlibarchive=enabled
       -Duchardet=enabled
       -Dvulkan=enabled
-      --sysconfdir=#{pkgetc}
-      --datadir=#{pkgshare}
-      --mandir=#{man}
     ]
     if OS.linux?
       args += %w[
@@ -98,19 +96,24 @@ class Mpv < Formula
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
+    bash_completion.install share/"bash-completion/completions/mpv"
 
-    if OS.mac?
-      # `pkg-config --libs mpv` includes libarchive, but that package is
-      # keg-only so it needs to look for the pkgconfig file in libarchive's opt
-      # path.
-      libarchive = Formula["libarchive"].opt_prefix
-      inreplace lib/"pkgconfig/mpv.pc",
-                /^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
-                "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3"
-    end
+    return unless OS.mac?
 
-    bash_completion.install "etc/mpv.bash-completion" => "mpv"
-    zsh_completion.install "etc/_mpv.zsh" => "_mpv"
+    # `pkg-config --libs mpv` includes libarchive, but that package is
+    # keg-only so it needs to look for the pkgconfig file in libarchive's opt
+    # path.
+    libarchive = Formula["libarchive"].opt_prefix
+    inreplace lib/"pkgconfig/mpv.pc",
+              /^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
+              "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3"
+  end
+
+  def caveats
+    <<~EOS
+      The global configuration directory is now #{pkgetc}/
+      You may need to migrate any data in previous #{pkgetc}/mpv/
+    EOS
   end
 
   test do
