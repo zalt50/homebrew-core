@@ -7,12 +7,12 @@ class Gotpm < Formula
   head "https://github.com/google/go-tpm-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d1a03aff56a0ccc4cd88b51dd98addb93b56bfbb08a2ea78c5f69f1da2dc14f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d1a03aff56a0ccc4cd88b51dd98addb93b56bfbb08a2ea78c5f69f1da2dc14f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d1a03aff56a0ccc4cd88b51dd98addb93b56bfbb08a2ea78c5f69f1da2dc14f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fbbb360dc8e2b14aefecbb317830ad694cc8d7aaac34d9defc660311b038f784"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4868c1cd5540ae182dda21a39baf5245d5172d27562cc755e7db043c43e20c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "235c5a1458fc87042665a765ef4bf66d7e4f4a5cbd9129f37c311b5f485c6efa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67ce1f4f112a053eb9f48a7e69f9e6a8f4bdc01623278c9d22b6718800ee873c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67ce1f4f112a053eb9f48a7e69f9e6a8f4bdc01623278c9d22b6718800ee873c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67ce1f4f112a053eb9f48a7e69f9e6a8f4bdc01623278c9d22b6718800ee873c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bfbbf0aa121c637637d574d21de8026dd59c064e1566332d9478621b0905130f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bb9d36fafbf498e1210f46a970a2de664c3ca7f65dd7b63770be78379e06e76"
+    sha256 cellar: :any,                 x86_64_linux:  "bc081fe93f7e79ac5a6c3795f3b847a3dd3e8b508cb45631206c189dfc75e172"
   end
 
   depends_on "go" => :build
