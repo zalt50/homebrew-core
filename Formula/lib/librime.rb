@@ -2,10 +2,9 @@ class Librime < Formula
   desc "Rime Input Method Engine"
   homepage "https://rime.im"
   url "https://github.com/rime/librime.git",
-      tag:      "1.16.1",
-      revision: "de4700e9f6b75b109910613df907965e3cbe0567"
+      tag:      "1.17.0",
+      revision: "33e78140250125871856cdc5b42ddc6a5fcd3cd4"
   license "BSD-3-Clause"
-  revision 6
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "21737e60726a17d3b1ce4dd8ad4a848f808e6109f9c8c771aff6ec77b4b20557"
@@ -31,8 +30,8 @@ class Librime < Formula
   depends_on "yaml-cpp"
 
   resource "lua" do
-    url "https://github.com/hchunhui/librime-lua/archive/68f9c364a2d25a04c7d4794981d7c796b05ab627.tar.gz"
-    sha256 "3c4a60bacf8dd6389ca1b4b4889207b8f6c0c6a43e7b848cdac570d592a640b5"
+    url "https://github.com/hchunhui/librime-lua/archive/ec52e48ea18f11af37717a01c337f853215cf70b.tar.gz"
+    sha256 "73247eb0b506934f8518459d303fe4a31f681a9c1623867b20889a985c4b6e8e"
   end
 
   resource "octagram" do
