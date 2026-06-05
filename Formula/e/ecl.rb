@@ -12,13 +12,13 @@ class Ecl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "edb63f5914ae4e9825d1f836dc636555a4dd0b80b1e01ffa7bd0ec8209139b58"
-    sha256 arm64_sequoia: "606fd1bdc296fe92a7ae4998159db7a554fef0d7dcd5cf9b719adf30dc7c9a0d"
-    sha256 arm64_sonoma:  "e9e3eb11a37604482848a41ba921deb895ee0b7ebe60e36d3a735f1b7eb411a8"
-    sha256 sonoma:        "831d24ba6b467b341eb24a5242594cf672485094fd1b91645db24e94ad2b5823"
-    sha256 arm64_linux:   "25f1e1e060eeeda2f8b7e51f67114a46d10efe965e186d79523a5ba6a94f0e56"
-    sha256 x86_64_linux:  "a2de5f52b9cd228f9ee0be9d20d0d441697e2f89afa8d1fbd476a6dd1198c960"
+    rebuild 2
+    sha256 arm64_tahoe:   "0f7e05aeec7f7aafd866af99e623694c15a84a3def12477da3f619a4502766b2"
+    sha256 arm64_sequoia: "1865df5c96476b9feb55a61c358e8c52d8fbf41d977eae8b9515893f5a23222f"
+    sha256 arm64_sonoma:  "b816ed156a7176b2c546eba281326dd830090b62143414dc404bf78a18cf4b49"
+    sha256 sonoma:        "10ad3c74b525e7bcfffb2a2463f0e8a7590f638412ae61f79a25fa4a0e5fd572"
+    sha256 arm64_linux:   "722ddbc762366d2a8afb36509b663346bc7b06dec34faa7fb3667ee1e520ffd9"
+    sha256 x86_64_linux:  "c43ff030cb6b7b4ad38f3be3586d9371ec0442980e9e35de2db8ac033048f4d8"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
@@ -41,6 +41,8 @@ class Ecl < Formula
 
   def install
     ENV.deparallelize
+    # avoid saving llvm_clang or gcc-X inside binaries as these may not be available
+    ENV["CC"] = DevelopmentTools.default_compiler.to_s if ENV.compiler != :clang
 
     libffi_prefix = if OS.mac?
       MacOS.sdk_path
