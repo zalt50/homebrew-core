@@ -19,6 +19,7 @@ class Xan < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(features: "parquet")
+    generate_completions_from_executable(bin/"xan", "completions", shells: [:bash, :zsh])
   end
 
   test do
