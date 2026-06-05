@@ -6,12 +6,12 @@ class Rura < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f78694abc69f739ab72ed448c73400a2ebb17876724eeae5ee62c209ee319a98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9d53031e8429506a407889e1a3f28590124184c8504825c1c850fa5c6678409"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1e018612b98799b4fbac76f92636eec7e7174b7f0a84b051bf6fe42de276639"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf819fb22fb8b79a128101bc5cc166269a8a7a9ec493c6d35691dcfa2964bf96"
-    sha256 cellar: :any,                 arm64_linux:   "0b056c6aa982eec17d9b181b3d0674eb8a7d5e204bc6eb7384cccc295802c7f3"
-    sha256 cellar: :any,                 x86_64_linux:  "3548006b0582cede1b42d1eaa2eca375c42232429d94c4792a6b3013683aea4c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1abc866a4e8707e19d11a1147523fa78109df6b333ff474f49e95ecc374404e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b53a9f0c1f98b5d50c64dcbb63484f9f33741c650993400e7f48b464145583b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec78abb6619ad8ac830dedd203ad71d4ecd9850f2da6bcb9796d7484457e5c95"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a653a20b88a68ce2a18d84176db7558d5b237a539da1231e0142d22a3943b62"
+    sha256 cellar: :any,                 arm64_linux:   "47569d7c7b929df031643b7d10a2b4245da113f36255e0fc115e8448d5432f6a"
+    sha256 cellar: :any,                 x86_64_linux:  "31465e3f5d0b5990830e1bdc7d9ad0222f7b4f0421dd68677bf01f0bc1d53158"
   end
 
   depends_on "rust" => :build
