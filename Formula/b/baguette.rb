@@ -6,6 +6,10 @@ class Baguette < Formula
   license "Apache-2.0"
   head "https://github.com/tddworks/baguette.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe: "ced9198077af0993c6ab9be78ee31d33609842e36c678c5216b027d9adcb8656"
+  end
+
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
   depends_on macos: :tahoe
