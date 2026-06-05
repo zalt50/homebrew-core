@@ -1,8 +1,8 @@
 class JwtHack < Formula
   desc "JSON Web Token Hack Toolkit"
   homepage "https://github.com/hahwul/jwt-hack"
-  url "https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "85c6d8ade6f60ccafd12283c82ee1368874bc00af90f11fcad8f252baa197374"
+  url "https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "f510ce2a1fb1bb98844536810659c9e310ee6a2e844af9dc7f0b874222ca7f6d"
   license "MIT"
   head "https://github.com/hahwul/jwt-hack.git", branch: "main"
 
@@ -17,10 +17,7 @@ class JwtHack < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "openssl@3" => :build
-  end
+  depends_on "openssl@4"
 
   def install
     system "cargo", "install", *std_cargo_args
