@@ -1,12 +1,12 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.7.1.tar.gz"
-  sha256 "9ee55642dd4450191a6452a0aa6de6d1c5f717ac64cbca0b9367b7c5808ae142"
+  url "https://www.pgpool.net/source/pgpool-II-4.7.2.tar.gz"
+  sha256 "e72b9d0ff3620f7da7e33a58dda44b77919d056752dc9bd86b2985c4988d1938"
   license all_of: ["HPND", "ISC"] # ISC is only for src/utils/strlcpy.c
 
   livecheck do
-    url "https://www.pgpool.net/mediawiki/index.php/Downloads"
+    url "https://www.pgpool.net/download/source/"
     regex(/href=.*?pgpool-II[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
@@ -25,6 +25,13 @@ class PgpoolIi < Formula
   uses_from_macos "libxcrypt"
 
   def install
+    if OS.mac?
+      # Work around old libtool's macOS 11+ version detection:
+      # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=97865
+      inreplace "configure", "$wl-flat_namespace $wl-undefined ${wl}suppress",
+                "$wl-undefined ${wl}dynamic_lookup"
+    end
+
     # Workaround for use of `strchrnul`, which is not available on macOS
     inreplace "src/utils/pool_process_reporting.c",
               "*(strchrnul(status[i].value, '\\n')) = '\\0';",
