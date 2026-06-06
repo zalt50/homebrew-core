@@ -6,12 +6,12 @@ class Bento < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c8c46c6aca6ffd0f5e012403f6ae93bf4ceeb94b65796122122a84c5dc601ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61857f5265f447a71dfe9e4c4ad5b95ab00f2950ca2814cdda888377c116ec49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b02454780443a0790d3581427d704b5f4557990a8d625738fcead0252cac9f3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5983dc0b61790236ddbffb32f34a96542663d5993e94c68b30d46391f98179f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b11895f7dbd6e7a29731057af440363e95ab03eba740ee034a21f25f4eec8f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "647aa2bb44c242a8b6462c88b9c23a5974d757ff7feedf171011620948c36001"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c41cfc816aa81c46323fafb7e28972f5e6353c894ba658f8db08d23847594cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "526438ce00e2b5ff8c9588c2ef506e455a95b363855f30321b9892ee3cbcaf68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "735b193b056383b1b6cbcc46942cfb6473783746bffa1359dc9fe36e2d8b76b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18d04bb7a9a7334aaad6fad776f28dc8cc1d70f3197945ec56eef16ef401f8f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "461d8bbaa1dfa26228c6bc32a3dcdac32cf8c237f5b463f69af29c2d14b0a864"
+    sha256 cellar: :any,                 x86_64_linux:  "fb0e48eafbde1d041963bd1b1e0341482e7b9cce836c5c3fbd2215bf6099d075"
   end
 
   depends_on "go" => :build
