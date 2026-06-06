@@ -4,33 +4,10 @@ class Redex < Formula
 
   desc "Bytecode optimizer for Android apps"
   homepage "https://fbredex.com/"
+  url "https://github.com/facebook/redex/archive/refs/tags/v2026.04.30.tar.gz"
+  sha256 "60c638403ce608b7d96d76592f4e2bfcb5e541b2eee33f97d06f771f2c147880"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/redex.git", branch: "main"
-
-  stable do
-    url "https://github.com/facebook/redex/archive/refs/tags/v2025.09.18.tar.gz"
-    sha256 "49be286761fb89a223a9609d58faa141e584a0c6866bf083d8408357302ee2f8"
-
-    # Patch to fix build with Python 3.14.
-    # TODO: Remove in the next release.
-    patch do
-      url "https://github.com/facebook/redex/commit/b9c7d5abf922eea7e38bc6031607eb30e8482f38.patch?full_index=1"
-      sha256 "6e644764d2e2b3a7b8e69c8887e738fc6c6099f5f4a3bb6738eae6fd5677da6a"
-    end
-
-    # Patch to remove stub_resource_optimizations
-    patch do
-      url "https://github.com/facebook/redex/commit/f2cc84464a7392fdb266136e9c0b4b37d26a0801.patch?full_index=1"
-      sha256 "043f6b77e91033b64244734d92534de3aaae05b828436cd3cb19af7af1338ec4"
-    end
-
-    # Patch FindZlib.cmake to handle macOS SDK zlib via ZLIB_HOME.
-    patch do
-      url "https://github.com/facebook/redex/commit/a885d52ce6121ed96b78c511d1920116de10ff86.patch?full_index=1"
-      sha256 "ca1321b1fb500203110f5da701106eaab89f61ecbdc62182e94f8747b17cfc65"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "24b6ffd1214ecd6ebf1eaeb04d031e55986e5e253deea222719a3d70d64487b1"
@@ -67,6 +44,13 @@ class Redex < Formula
   patch do
     url "https://github.com/facebook/redex/commit/f1d9211256ac03d92a4176bea36fb97bee581f41.patch?full_index=1"
     sha256 "d3ce5c0b758ae7f61c30ca7ebea115d782abe43af61672454874be9810201ce1"
+  end
+
+  # Backport macOS SDK .tbd zlib detection, missing from the v2026.04.30 release
+  # PR: https://github.com/facebook/redex/pull/980
+  patch do
+    url "https://github.com/facebook/redex/commit/a885d52ce6121ed96b78c511d1920116de10ff86.patch?full_index=1"
+    sha256 "ca1321b1fb500203110f5da701106eaab89f61ecbdc62182e94f8747b17cfc65"
   end
 
   def install
