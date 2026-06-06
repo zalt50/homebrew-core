@@ -4,6 +4,7 @@ class Dynare < Formula
   url "https://www.dynare.org/release/source/dynare-7.1.tar.xz"
   sha256 "fdd294a99c67c81208da8d682bf12e68fdbda75012b218d8702a4de163058a4e"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://git.dynare.org/Dynare/dynare.git", branch: "master"
 
   livecheck do
