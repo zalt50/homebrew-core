@@ -151,7 +151,6 @@ class KnotResolver < Formula
     pkgetc.install "etc/config/config.yaml"
 
     (var/"cache/knot-resolver").mkpath
-    (var/"run/knot-resolver").mkpath
   end
 
   service do
@@ -164,7 +163,6 @@ class KnotResolver < Formula
   end
 
   test do
-    assert_path_exists var/"run/knot-resolver"
     system sbin/"kresd", "--version"
 
     assert_match "Basic validation was successful", shell_output("#{bin}/kresctl validate")
