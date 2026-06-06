@@ -8,12 +8,13 @@ class Opal < Formula
   head "https://github.com/opal/opal.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "d0e1b504e4fd8a90d061deebf3b7d196179cfc538408ec6b70a25634a31a6659"
-    sha256                               arm64_sequoia: "05ae63334332a7cbbfabb7754b46cf02b1611eed1c6759d0452c0e1c723c06f6"
-    sha256                               arm64_sonoma:  "ac6753b6913583f8c9f2b3a32f457ab4baecdf39bacd7ed05b68e99a1a1ab5ff"
-    sha256                               sonoma:        "49c4fab7a77ec600a1234f7a3c4313cb1082e1641b21c764f9c9322b4da55226"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64a42c290b13d6f172e933b2b5433babf4f607dd818d55ce276f9bef95a04d61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64a42c290b13d6f172e933b2b5433babf4f607dd818d55ce276f9bef95a04d61"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "40b8c2cfd5220e86a52258ba5bead37074662a0858fe98befcf418493216a525"
+    sha256 cellar: :any, arm64_sequoia: "6d4ad65707a9a88d762b97d2cdf1da579993e75eb9cfd6e45776ff47042ad695"
+    sha256 cellar: :any, arm64_sonoma:  "8a882605b9340565a631f3f18a9ceea850881ac2a114f3ea97c2a3b3f1ca9d56"
+    sha256 cellar: :any, sonoma:        "d6a1fdb07b465f696848972ddbc9b33e1b902d8a0029730bd70610011381341c"
+    sha256 cellar: :any, arm64_linux:   "dbd7bac3537bbf25849dcb9136d8b94982a94521a6a1a584a152e15a0aeed012"
+    sha256 cellar: :any, x86_64_linux:  "0420aaf659871f8472cd3c44cbde5d7a449c247cda5a2b33064b684c46960ed2"
   end
 
   depends_on "quickjs" => :test
