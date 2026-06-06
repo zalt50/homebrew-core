@@ -7,12 +7,12 @@ class Bender < Formula
   head "https://github.com/pulp-platform/bender.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65085211d2ab9229701cdd216eb917708b6963f98d3301acecb9d51674d257a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f59c1b0625267c5526dd6cb5ae13eb0fa1e05bf5bdcdc8a48d4470ffe4b4f61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9d3d2c7818fea85741ddab32f1b15b2dcca2cb013a0d5200c8c5e77ce707516"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b1d60f88ea984716d828cdb133c94209a9e805526a25b92a3842ba91e4da23b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aeee5275f1ff86d5b488ec25ff0bc1af62573ffc87813ab88429c5d75dd77bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9488f4a1f1321757d1ef2e1b4ff00194b00898d40049a5580191f2665aa5c54c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fb2ebd5db3927c9345576bd175e4c29080c075dc43cc8e03850189ace599155"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15e0307eb1682cbe7a83e2f2c0f28d948bd935769536f4f611e7c2b006c00134"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "460db10e51f3d328a264d65829eb2b01ebeadd0a67e44f680077d725cfb6960f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ae303684e253f95fe70708e9a949a6f9e48fccaba247bbefe0c6ce6d278a724"
+    sha256 cellar: :any,                 arm64_linux:   "4cd1b71d8f8366574c2ccdb970927dc6cac54dcc3b47d41e87260eabce3ebac1"
+    sha256 cellar: :any,                 x86_64_linux:  "1ac164653ebd38857071078569d083d6ed835da4bb58e1427b9a28c732e7505e"
   end
 
   depends_on "cmake" => :build # for `bender-slang` crate
