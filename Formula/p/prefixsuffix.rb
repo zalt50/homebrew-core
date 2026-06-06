@@ -24,6 +24,7 @@ class Prefixsuffix < Formula
   depends_on "pkgconf" => :build
 
   depends_on "atkmm@2.28"
+  depends_on "cairomm@1.14"
   depends_on "glib"
   depends_on "glibmm@2.66"
   depends_on "gtk+3"
@@ -35,7 +36,6 @@ class Prefixsuffix < Formula
   on_macos do
     depends_on "at-spi2-core"
     depends_on "cairo"
-    depends_on "cairomm@1.14"
     depends_on "gdk-pixbuf"
     depends_on "gettext"
     depends_on "harfbuzz"
