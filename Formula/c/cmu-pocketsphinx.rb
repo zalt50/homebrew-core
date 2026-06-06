@@ -1,8 +1,8 @@
 class CmuPocketsphinx < Formula
   desc "Lightweight speech recognition engine for mobile devices"
   homepage "https://cmusphinx.github.io/"
-  url "https://github.com/cmusphinx/pocketsphinx/archive/refs/tags/v5.1.0.tar.gz"
-  sha256 "6ec6c28a84574abc7a74ceaf8fb914cb674a9a5db3e6c679d691a1a152863bbd"
+  url "https://github.com/cmusphinx/pocketsphinx/archive/refs/tags/v5.1.1.tar.gz"
+  sha256 "e2db414eb66618cd0a98de77507db32517a48f6900b06bfb94c0acc4bef5761d"
   license "BSD-2-Clause"
   head "https://github.com/cmusphinx/pocketsphinx.git", branch: "main"
 
