@@ -1,10 +1,10 @@
 class Ctl < Formula
   desc "Programming language for digital color management"
-  homepage "https://github.com/ampas/CTL"
-  url "https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.5.tar.gz"
+  homepage "https://github.com/aces-aswf/CTL"
+  url "https://github.com/aces-aswf/CTL/archive/refs/tags/ctl-1.5.5.tar.gz"
   sha256 "b6a36ac31e0a79224216e4fc41b56982939cec7a1afd4e80165cec3f1c37d265"
   license "AMPAS"
-  head "https://github.com/ampas/CTL.git", branch: "master"
+  head "https://github.com/aces-aswf/CTL.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ca511a0c2b48007131b0582bb71116f5cc0eac17087434738e6f7a6c50397d91"
@@ -16,7 +16,6 @@ class Ctl < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "aces_container"
   depends_on "imath"
   depends_on "libtiff"
   depends_on "openexr"
