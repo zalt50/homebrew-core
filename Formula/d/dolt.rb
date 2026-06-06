@@ -13,12 +13,13 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fc629b4c5fdfd9e94328c50de4aecc124f8158daac35c443f8c3d5cfb833698a"
-    sha256 cellar: :any, arm64_sequoia: "078d37d203b6179ba364bd4170983244f707878c95cd92d8f7c18399fbb0fb5e"
-    sha256 cellar: :any, arm64_sonoma:  "3ea096478a587877d629d12cce3032991f6e045fb6ca49bbffc48bcb4620bb79"
-    sha256 cellar: :any, sonoma:        "685438755498770fa5f6b1b4a48c0c9e9325ca4ec5f5a4469f9aeb8c96b4e5fa"
-    sha256 cellar: :any, arm64_linux:   "22cb4abf024103249cc7bdfc6d43b2b417416517a26417ecabe5212fb85fbb7e"
-    sha256 cellar: :any, x86_64_linux:  "dae0dad3fe3aa879c0d911dccdb074a895d5e743d431c87d2a840e1cab10864b"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "236b54ee3e53df9ab1a96f52de49f9949edea3cedf39058f93ea7849e9bc445d"
+    sha256 cellar: :any, arm64_sequoia: "593d64d7549634b2036b123b6887d96fb5b522630c53ff22f1fed2999313b18f"
+    sha256 cellar: :any, arm64_sonoma:  "51e55d75ad9c02459c4807101019fd79f3da8401dc2e3149196984b8e09f6d45"
+    sha256 cellar: :any, sonoma:        "615504e7776c3b4c8d956ee67ad3ba6c243985a2b13a1f6bd5ea75c087c400f5"
+    sha256 cellar: :any, arm64_linux:   "9f47b3472563e314396aa8609aa6ebc2c9d422532b8eaf605881df2666352dc2"
+    sha256 cellar: :any, x86_64_linux:  "d19d3aff4beaa29b6080429c6526f5e2f04f9f7845e7ccb259be1ff3ce53fcc1"
   end
 
   depends_on "go" => :build
@@ -29,8 +30,6 @@ class Dolt < Formula
 
     system "go", "build", "-C", "go", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
 
-    (var/"log").mkpath
-    (var/"dolt").mkpath
     (etc/"dolt").mkpath
     touch etc/"dolt/config.yaml"
   end
