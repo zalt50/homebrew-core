@@ -1,9 +1,8 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
-  # TODO: Switch to monorepo in 5.5.x
-  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.119/ortp-5.4.119.tar.bz2"
-  sha256 "58c1a0cba0f70ad58d8f3bc62e76646b830e5e8eb4fdcd09faf55681d49f197f"
+  url "https://gitlab.linphone.org/BC/public/linphone-sdk/-/archive/5.5.0/linphone-sdk-5.5.0.tar.bz2"
+  sha256 "94032dbf87ea0437000571c7c96835d916869914b99d1478fa8c847109750e82"
   license all_of: ["AGPL-3.0-or-later", "GPL-3.0-or-later"]
   head "https://gitlab.linphone.org/BC/public/linphone-sdk.git", branch: "master"
 
@@ -18,25 +17,9 @@ class Ortp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@4"
-
-  resource "bctoolbox" do
-    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.119/bctoolbox-5.4.119.tar.bz2"
-    sha256 "10041b583415f2fa1b89cd021a3eeb34e560e9da197f2726de6d650c637f5a17"
-
-    livecheck do
-      formula :parent
-    end
-  end
+  depends_on "openssl@3" # OpenSSL 4 is not supported in monorepo
 
   def install
-    if build.stable?
-      odie "bctoolbox resource needs to be updated" if version != resource("bctoolbox").version
-      (buildpath/"bctoolbox").install resource("bctoolbox")
-    else
-      rm_r("external")
-    end
-
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DENABLE_MBEDTLS=OFF
@@ -56,7 +39,7 @@ class Ortp < Formula
     ]
     args << "-DCMAKE_INSTALL_RPATH=#{frameworks}" if OS.mac?
 
-    system "cmake", "-S", (build.head? ? "ortp" : "."), "-B", "build_ortp", *args, *std_cmake_args
+    system "cmake", "-S", "ortp", "-B", "build_ortp", *args, *std_cmake_args
     system "cmake", "--build", "build_ortp"
     system "cmake", "--install", "build_ortp"
   end
