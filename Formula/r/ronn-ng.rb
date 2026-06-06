@@ -19,16 +19,27 @@ class RonnNg < Formula
   depends_on "ruby"
   depends_on "xz"
 
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
+
   on_linux do
+    depends_on "pkgconf" => :build
     depends_on "zlib-ng-compat"
   end
 
   conflicts_with "ronn", because: "both install `ronn` binaries"
 
   def install
+    ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
+    ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
+    ENV["BUNDLE_WITHOUT"] = "development test"
     ENV["GEM_HOME"] = libexec
-    system "gem", "build", "ronn-ng.gemspec"
-    system "gem", "install", "ronn-ng-#{version}.gem"
+
+    system "bundle", "config", "set", "build.nokogiri", "--use-system-libraries"
+    system "bundle", "install"
+    system "gem", "build", "#{name}.gemspec"
+    system "gem", "install", "--ignore-dependencies", "#{name}-#{version}.gem"
+
     bin.install libexec/"bin/ronn"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
 
