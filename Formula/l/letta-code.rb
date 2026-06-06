@@ -1,8 +1,8 @@
 class LettaCode < Formula
   desc "Memory-first coding agent"
   homepage "https://docs.letta.com/letta-code"
-  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.3.tgz"
-  sha256 "3be674a23c5771b82913c668a9980d9621c75dbae3ee1a9cd13ea40be70f87b5"
+  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.4.tgz"
+  sha256 "fe2b2ad44f2602a0e0d8bd5cb89dadab3445b6bec56fe308370ef1ebdcd6be03"
   license "Apache-2.0"
 
   bottle do
@@ -25,8 +25,8 @@ class LettaCode < Formula
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.3.0.tgz"
-    sha256 "d209963f2b21fd5f6fad1f6341897a98fc8fd53025da36b319b92ebd497f6379"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.4.0.tgz"
+    sha256 "c5651a4fa92942a36cf30e0f043119d4889e26e25f30ae28b8cecc16e705bf29"
 
     livecheck do
       url :url
