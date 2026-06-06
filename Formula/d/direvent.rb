@@ -1,9 +1,9 @@
 class Direvent < Formula
   desc "Monitors events in the file system directories"
   homepage "https://www.gnu.org.ua/software/direvent/direvent.html"
-  url "https://ftpmirror.gnu.org/gnu/direvent/direvent-5.4.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/direvent/direvent-5.4.tar.gz"
-  sha256 "1dbbc6192aab67e345725148603d570c6a2828380c964215762af91524d795ba"
+  url "https://ftpmirror.gnu.org/gnu/direvent/direvent-5.5.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/direvent/direvent-5.5.tar.gz"
+  sha256 "0e16c0b4b3e6f7673e9b4f31d81ab01236ad22f83538512f3b2f58f9f96fdcb7"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -18,6 +18,10 @@ class Direvent < Formula
     sha256                               arm64_linux:    "1c64f0b91a2b262581b83717c051b3cc781ab418ed36315c1e81a27e9b06d630"
     sha256                               x86_64_linux:   "c8fb131f7845cd016244b0f5285c3e2ca52efcb52b5c1d2c9a7ac301f5b7152e"
   end
+
+  # Fix macOS build: clock_nanosleep/TIMER_ABSTIME are unavailable.
+  # Issue ref: https://puszcza.gnu.org.ua/bugs/index.php?678
+  patch :DATA
 
   def install
     # Fix compile with newer Clang
@@ -34,3 +38,50 @@ class Direvent < Formula
     assert_match version.to_s, shell_output("#{bin}/direvent --version")
   end
 end
+
+__END__
+--- a/src/progman.c
++++ b/src/progman.c
+@@ -244,6 +244,32 @@
+ 	}
+ }
+
++/*
++ * Sleep until the absolute DEADLINE (CLOCK_MONOTONIC).  Returns non-zero if
++ * interrupted by a signal (so the caller loops again), zero once the deadline
++ * is reached.  clock_nanosleep with TIMER_ABSTIME is not available everywhere
++ * (e.g. macOS), so fall back to a relative nanosleep there.
++ */
++static int
++drain_wait(struct timespec *deadline)
++{
++#ifdef TIMER_ABSTIME
++	return clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, deadline, NULL);
++#else
++	struct timespec now, rel;
++	clock_gettime(CLOCK_MONOTONIC, &now);
++	rel.tv_sec = deadline->tv_sec - now.tv_sec;
++	rel.tv_nsec = deadline->tv_nsec - now.tv_nsec;
++	if (rel.tv_nsec < 0) {
++		rel.tv_nsec += NANOSEC;
++		--rel.tv_sec;
++	}
++	if (rel.tv_sec < 0)
++		return 0;
++	return nanosleep(&rel, NULL);
++#endif
++}
++
+ void
+ process_drain(void)
+ {
+@@ -263,8 +289,7 @@
+
+ 	do {
+ 		process_cleanup(1);
+-	} while (proc_list &&
+-		 clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &ts, NULL));
++	} while (proc_list && drain_wait(&ts));
+
+
+ 	if (proc_list) {
