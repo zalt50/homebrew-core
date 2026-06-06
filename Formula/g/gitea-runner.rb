@@ -27,7 +27,6 @@ class GiteaRunner < Formula
     (buildpath/"config.yaml").write Utils.safe_popen_read(bin/"gitea-runner", "generate-config")
     pkgetc.install "config.yaml"
     # Create working dir for services
-    (var/"lib/gitea-runner").mkpath
   end
 
   def caveats
