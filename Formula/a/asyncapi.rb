@@ -1,8 +1,8 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.0.0.tgz"
-  sha256 "c5939aca4cb9c64cacb404f78bc1ae242d95a6c07151db1698505ae3ed607327"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.0.1.tgz"
+  sha256 "37af0e73566f2b2c0aed6a7831c980c00ac1156c413d49f7935a6568a5ab08a4"
   license "Apache-2.0"
   version_scheme 1
 
@@ -30,6 +30,12 @@ class Asyncapi < Formula
 
     # Replace universal binaries with their native slices
     deuniversalize_machos node_modules/"fsevents/fsevents.node"
+
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     (var/"log/asyncapi").mkpath
   end
