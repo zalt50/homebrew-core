@@ -1,8 +1,8 @@
 class Fanyi < Formula
   desc "Chinese and English translate tool in your command-line"
   homepage "https://github.com/afc163/fanyi"
-  url "https://registry.npmjs.org/fanyi/-/fanyi-10.0.0.tgz"
-  sha256 "b1f718e4d63d600c42bbb52f7b93e60f92e2973be723119f4a47dbb5f77b110e"
+  url "https://registry.npmjs.org/fanyi/-/fanyi-11.0.0.tgz"
+  sha256 "7893ae87298c3731ea4a846e0c766db698c709d9b13d20f16bb8177e8d1c7100"
   license "MIT"
 
   bottle do
