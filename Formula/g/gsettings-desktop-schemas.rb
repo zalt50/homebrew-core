@@ -29,9 +29,8 @@ class GsettingsDesktopSchemas < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    # manual schema compile step
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do
