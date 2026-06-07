@@ -7,12 +7,12 @@ class Asyncapi < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "966ff0b86f86e32a7e397003765c796806e0a0998e9e473a377f3d46a8d7593c"
-    sha256 cellar: :any,                 arm64_sequoia: "1cf61ab278ae0707914ac18f70ab9ace15bc6d2c279cdcb000d9f0d6a575f84c"
-    sha256 cellar: :any,                 arm64_sonoma:  "1cf61ab278ae0707914ac18f70ab9ace15bc6d2c279cdcb000d9f0d6a575f84c"
-    sha256 cellar: :any,                 sonoma:        "0eb19ea51d5b2bb701dc566186b33b8e6b83aa2bd7226a8b3facb960e5694350"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dfa4934db0c269c77235d553a71580a431feb2689bf02c4557f5c981a279b1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c2714c128d47db98239819bcbac0d3fe738ef170a0eecd2590f95feb4781295"
+    sha256 cellar: :any, arm64_tahoe:   "a115bad3e03498e458e7d28b74dbc810ba8170a185a8c0b37de63c1bf0f1fdf3"
+    sha256 cellar: :any, arm64_sequoia: "5e954a5f2631a5b73e7f17568ac7803ee9fb6df40ef755d2157b35d83c95ea27"
+    sha256 cellar: :any, arm64_sonoma:  "5e954a5f2631a5b73e7f17568ac7803ee9fb6df40ef755d2157b35d83c95ea27"
+    sha256 cellar: :any, sonoma:        "502f8f010aefa31dd53e0a21187b03a3ecb15db2357230e4727fa462d06c7943"
+    sha256 cellar: :any, arm64_linux:   "5abc424bacc89217c4c1e6ec8556db7e4b373d7d6ecafd0fcf7569fcfb8df25d"
+    sha256 cellar: :any, x86_64_linux:  "624fb2b7051106f37f4bb7ffd3d49e861e55ddaa3e8bb6c9a6e8161d1c8a9fcc"
   end
 
   depends_on "node"
