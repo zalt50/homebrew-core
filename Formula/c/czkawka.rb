@@ -44,9 +44,8 @@ class Czkawka < Formula
     end
   end
 
-  def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   def caveats
