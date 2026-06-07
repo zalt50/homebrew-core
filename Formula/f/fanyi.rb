@@ -6,8 +6,7 @@ class Fanyi < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "351b581b6235da82293d624349d95b50a9ce217ad4ac07d5e2dad3493e541c2a"
+    sha256 cellar: :any_skip_relocation, all: "5fe2ffae948f281c5470a09341e19afa59d82eb6e35fc0c91d31dbe2651a9547"
   end
 
   depends_on "node"
