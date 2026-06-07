@@ -5,6 +5,7 @@ class Sqlsmith < Formula
   url "https://github.com/anse1/sqlsmith/archive/refs/tags/v1.5.tar.gz"
   sha256 "828ee3e816b94848627e8132d32ade6339dbcbba5469437dc9a6a8335d4dab23"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/anse1/sqlsmith.git", branch: "master"
 
   livecheck do
