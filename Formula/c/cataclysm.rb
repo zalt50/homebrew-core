@@ -1,9 +1,9 @@
 class Cataclysm < Formula
   desc "Fork/variant of Cataclysm Roguelike"
   homepage "https://github.com/CleverRaven/Cataclysm-DDA"
-  url "https://github.com/CleverRaven/Cataclysm-DDA/archive/refs/tags/0.H-RELEASE.tar.gz"
-  version "0.H"
-  sha256 "9fbd80d13321321d6ed1f5a736ab874e06d335429f2a51a39eefd2fa51feae68"
+  url "https://github.com/CleverRaven/Cataclysm-DDA/archive/refs/tags/0.I.tar.gz"
+  version "0.I"
+  sha256 "1e4a6e1f70d805d01c97c71294eb45aad47f56f1e895fa783127e20298ee3249"
   license "CC-BY-SA-3.0"
 
   livecheck do
@@ -31,6 +31,7 @@ class Cataclysm < Formula
 
   depends_on "gettext" => :build # for msgfmt
   depends_on "pkgconf" => :build
+  depends_on "freetype"
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sdl2"
