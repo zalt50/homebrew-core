@@ -11,12 +11,12 @@ class Abcmidi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fd84fff250c25e5152115fdeaac97426fc0825e88deb79cc5537048dd90b273"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb82ad704bdcf8beb042258317ad60121de6fc84a2df22cc003559253f990ef1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14898746351c37c7c852f6734fb15f94fd39a4f11d0e88423566eb1297df2fc9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "873aed02cfdbbfd216988126a4eaddd91ac89c522fe0fff58eaa09aaf8fb5aab"
-    sha256 cellar: :any,                 arm64_linux:   "e0eb0d57541afd5ca496f5c4ec72d39daec88d77496dbb2c088952172a720af8"
-    sha256 cellar: :any,                 x86_64_linux:  "9a7f2b7ded54f642f6ace343cfe92fdf9566f4f6d25f350d0abd46f857c65d27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77556970e60930fc282492d6712ee22deb9ff27b98ddcbbd548cf6e505c903f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71053439084a390546130076063360b892c17204f03d64823de1ded1bb95d953"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd924797fc078805fd3591bc1dc9d6581a4ca5a241a903d89a0a8d82f86f9606"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e4988460b17fc041f429fb8dfe56d89c9b203b58d04927810d30b552af242cb"
+    sha256 cellar: :any,                 arm64_linux:   "41d0f2ee013f9ca9a4b40becdb3c99f3c35cee6c02efb30205cb969a4fc9c8ae"
+    sha256 cellar: :any,                 x86_64_linux:  "f38c6d974fc6aa227af3b115182bed2639dbcfa3496cc7de8670ca46ade24169"
   end
 
   deny_network_access!
