@@ -1,10 +1,10 @@
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
   homepage "https://pqxx.org/development/libpqxx/"
-  url "https://github.com/jtv/libpqxx/archive/refs/tags/7.10.5.tar.gz"
-  sha256 "a827dc8a02f4b6110bce66a56d8d97e4526a5128e2f36fa698fd2b1dfb1b9044"
+  url "https://github.com/jtv/libpqxx/archive/refs/tags/8.0.1.tar.gz"
+  sha256 "24f878a1b4249035e4b6c07d49351506bf99f88df584d36bf198d58ebf293823"
   license "BSD-3-Clause"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "8c37900dc12a476a4d4c1d6027e28f5bcbd48dd0c13d0d5eef9130365db04f09"
@@ -15,18 +15,25 @@ class Libpqxx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d837edceff2ce790992504d93fc7c46fbb1856ed6ccc747c78a5ccc8261be89"
   end
 
-  depends_on "pkgconf" => :build
-  depends_on "xmlto" => :build
+  depends_on "cmake" => :build
   depends_on "libpq"
 
   uses_from_macos "python" => :build
 
-  def install
-    ENV.append "CXXFLAGS", "-std=c++17"
-    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
+  fails_with :gcc do
+    version "12"
+    cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"
+  end
 
-    system "./configure", "--disable-silent-rules", "--enable-shared", *std_configure_args
-    system "make", "install"
+  def install
+    args = %w[
+      -DBUILD_SHARED_LIBS=ON
+      -DSKIP_BUILD_TEST=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -37,7 +44,7 @@ class Libpqxx < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lpqxx",
+    system ENV.cxx, "-std=c++20", "test.cpp", "-L#{lib}", "-lpqxx",
            "-I#{include}", "-o", "test"
     # Running ./test will fail because there is no running postgresql server
     # system "./test"
