@@ -4,7 +4,7 @@ class Osm2pgrouting < Formula
   url "https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "3d3042aa0dd30930d27801c9833ebfbe16eba0ab0e5d6277636ce17b157f2a0f"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/pgRouting/osm2pgrouting.git", branch: "develop"
 
   bottle do
@@ -37,7 +37,11 @@ class Osm2pgrouting < Formula
   def install
     remove_brew_expat if OS.mac? && MacOS.version < :sequoia
 
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    # Workaround until upstream fix for newer libpqxx
+    # PR ref: https://github.com/pgRouting/osm2pgrouting/pull/328
+    inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 20)"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
