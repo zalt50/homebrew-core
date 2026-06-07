@@ -7,13 +7,12 @@ class Gut < Formula
   head "https://github.com/julien040/gut.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee60c94f64823edc247db7d64fac9c6f35c7f7c4c2e894e67a52f15148c0a0ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af0311402ae80932f3c55e62fffda6b731e0d191e0f0c14e35490e69803e04a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a2443c00f2a9e7bb81b0754add02c083455220aaf3cae06a041a10c3fb15434"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82951d3153c048316f7a5180df7160847b93cd7ca8491638b27ca5e3e7319c30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55cadce09bb5c14fdf9e23ed605df31d4ec14d56503227f3fe098ff748a2d1f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9734fda07357cf7c57786fdb400b2be1363615dee08196472ffb0c1bcbcc3ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b52619b2c245e7a2984a8063f0172d9f9941c368489e4db8d20a09f2f192cfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b49f2b3e6ee4a6f64b4b1d3405840bac9ecbaf3b01fd5c058b993f8ab76370cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43f63edae2ae746b9229aeb9f5edb7c69cfa9efe511a78c7988b9431956def4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa230eb9193455e7565181555fa4309e1e8cef55f2f71ae8eaa2b777b8193137"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "540101f53289c2d1e17128a7aad270dce4690b839bf4434e6315ea783c38e3c7"
+    sha256 cellar: :any,                 x86_64_linux:  "47e60bb427c691d34b2ee0bc629bbba8d33fb07fdeb0cb39f686656aabb67ed3"
   end
 
   depends_on "go" => :build
