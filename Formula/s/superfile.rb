@@ -1,6 +1,6 @@
 class Superfile < Formula
   desc "Modern and pretty fancy file manager for the terminal"
-  homepage "https://superfile.netlify.app/"
+  homepage "https://superfile.dev/"
   url "https://github.com/yorukot/superfile/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "7340ce9e3e7db401164310dd5d2d1dfa3ccf76118ac49d192b0fac2a292c5b0d"
   license "MIT"
