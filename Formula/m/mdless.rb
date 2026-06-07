@@ -6,12 +6,13 @@ class Mdless < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8cf16453b58d21154b5a3715b4f2b7c3627ab7d17b2f9e6cd977a76ca83eee64"
-    sha256 cellar: :any,                 arm64_sequoia: "012c94f712e72a9adfbc0b7b812c6d7e57f8e36f039cc65d63f85e9a3c55bab6"
-    sha256 cellar: :any,                 arm64_sonoma:  "783902b6ce58aaccaf249859483e9eeefcac6e0548653af05cba8cd6108951f8"
-    sha256 cellar: :any,                 sonoma:        "82e566d65f4610b2a4f451675ba00cbd2df7b756bed2be15f9a6bf9a9e4e7493"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e49abff2805c4b46de61434fbd1c4f2647881e5b9dcb97119b9afa5b100dab66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18f8a5c0d2ae98e656ae881c66a8276d5ef014f51070826eb37f0227f75bb7f4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "733694816cac5a4bed49cf91e049f5911ded82131bba7ae4451ea17833734c22"
+    sha256 cellar: :any, arm64_sequoia: "d6f5bf68f38f16e596e13ff0152ee1b15d77184ca98855e968db16848cd4a95e"
+    sha256 cellar: :any, arm64_sonoma:  "c424b2b4f78e499b4c6bf06c4b851da7cb69554348f1c39e3910534de9aedeb5"
+    sha256 cellar: :any, sonoma:        "c7a19e5be31e73a70ab9fe42e366110a5be053d38b0f11350ad973a8ca92108b"
+    sha256 cellar: :any, arm64_linux:   "88332f86c1ced71f3930e33d57c429bd558ba3eb9bf9d40ae09f3f6cd161f929"
+    sha256 cellar: :any, x86_64_linux:  "a80d5d8c840dfd6825a15cafccbe993951c280eab99b2a063ada330e786ddd41"
   end
 
   depends_on "ruby"
