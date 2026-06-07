@@ -1,8 +1,8 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://github.com/Ataraxy-Labs/sem"
-  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "23fd062db52398d13d61a1d4d8a07944487312f71d221497729968f508c4d7ef"
+  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "5384646ee2aa5181bcd3950c322d9cedd59f49a4a72053d31cc484f0bd9d196e"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
@@ -35,13 +35,13 @@ class SemCli < Formula
       def greet():
           print("hello")
     PYTHON
-    system "git", "init", testpath
-    system "git", "-C", testpath, "add", "hello.py"
-    system "git", "-C", testpath, "commit", "-m", "init"
+    system "git", "init"
+    system "git", "add", "hello.py"
+    system "git", "commit", "-m", "init"
 
     inreplace "hello.py", "hello", "hello world"
-    system "git", "-C", testpath, "add", "hello.py"
-    system "git", "-C", testpath, "commit", "-m", "update"
+    system "git", "add", "hello.py"
+    system "git", "commit", "-m", "update"
 
     output = shell_output("#{bin}/sem diff --commit HEAD --format json")
     json = JSON.parse(output)
