@@ -6,12 +6,12 @@ class Aube < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f800fa5bbad07d7367a3a15623b68ae2f7ed47410109e56a8364fe903408ac91"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8b7704da5c03d1296355464bcc7c109560c64e8e2c9f6766d0efd7e8b21afa4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bcad6d9ccbb0fabfc1926321ca1461af6362c98856fe7dff997612db0fe835c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03a74731d94c55689d59ddd9ecb76ff32d76fb468caa9ce3a26648ef4d8b8c5a"
-    sha256 cellar: :any,                 arm64_linux:   "3db7bf0572412856b022bdd2c54bde166d181d66f8643e5544bf1814c95e6fe0"
-    sha256 cellar: :any,                 x86_64_linux:  "8ab3f203345e7db2d23c0a39c5baa0253bd5f4d9b4d7f6ec892c8b0d63b62fc6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8278307655c687af4906ba6d907c65f4e0ce6a20f2af0b441bda7b4ee253f020"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "377f8a9554e1cc4404a5ef44d419cc0c255f4ae35cafc2928d464ca481e3c5d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "047c302e702d7131c26cbaa1fb6aa9eada68f6a284e85bd4d97dcfd866bc7fc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3e9e3a5ccbcba476102b971bf1dbc7a3acd64d91813bd31ac6b68e362edadc1"
+    sha256 cellar: :any,                 arm64_linux:   "8ceb53d029a4ba0e12fc7d62b738a4b59b812c484e668d8f74024c663a36572b"
+    sha256 cellar: :any,                 x86_64_linux:  "d372cb340e2c37dd52d2290e6403826f4fe51f447c47793cfd2b0c99271d21bc"
   end
 
   depends_on "cmake" => :build
