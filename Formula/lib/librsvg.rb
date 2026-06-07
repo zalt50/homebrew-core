@@ -45,8 +45,11 @@ class Librsvg < Formula
   end
 
   def install
+    gdk_pixbuf_moduledir = Formula["gdk-pixbuf"].opt_lib.glob("gdk-pixbuf-*/*/loaders").fetch(0)
+    gdk_pixbuf_moduledir = prefix/gdk_pixbuf_moduledir.relative_path_from(Formula["gdk-pixbuf"].opt_prefix)
+
     # Set `RPATH` since `cargo-c` doesn't seem to.
-    rpath_flags = [rpath, rpath(source: lib/"gdk-pixbuf-2.0/2.10.0/loaders")].map { |rp| "-rpath,#{rp}" }
+    rpath_flags = [rpath, rpath(source: gdk_pixbuf_moduledir)].map { |rp| "-rpath,#{rp}" }
     ENV.append_to_rustflags "--codegen link-args=-Wl,#{rpath_flags.join(",")}" if OS.mac?
 
     # disable updating gdk-pixbuf cache, we will do this manually in post_install
@@ -62,18 +65,14 @@ class Librsvg < Formula
 
     # Workaround until https://gitlab.gnome.org/GNOME/librsvg/-/merge_requests/1049
     if OS.mac?
-      gdk_pixbuf_moduledir = lib.glob("gdk-pixbuf-*/*/loaders").first
       gdk_pixbuf_modules = gdk_pixbuf_moduledir.glob("*.dylib")
       odie "Try removing .so symlink workaround!" if gdk_pixbuf_modules.empty?
-      gdk_pixbuf_moduledir.install_symlink gdk_pixbuf_modules.to_h { |m| [m, m.sub_ext(".so").basename] }
+      gdk_pixbuf_moduledir.install_symlink gdk_pixbuf_modules.to_h { |m| [m, m.sub_ext(".so").basename.to_s] }
     end
   end
 
-  def post_install
-    # librsvg is not aware GDK_PIXBUF_MODULEDIR must be set
-    # set GDK_PIXBUF_MODULEDIR and update loader cache
-    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders"
-    system "#{Formula["gdk-pixbuf"].opt_bin}/gdk-pixbuf-query-loaders", "--update-cache"
+  post_install_steps do
+    gdk_pixbuf_query_loaders
   end
 
   test do
