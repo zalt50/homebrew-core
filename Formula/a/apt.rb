@@ -33,7 +33,6 @@ class Apt < Formula
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "bzip2"
   depends_on "dpkg"
-  depends_on "gcc"
   depends_on :linux
   depends_on "lz4"
   depends_on "openssl@3"
