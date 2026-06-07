@@ -3,10 +3,9 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/a2/fc/a65a29335aa618a90bcde6289e8bc9e87f4c706fd38a37a859a3b2603185/gallery_dl-1.32.1.tar.gz"
-  sha256 "b59f1c3b58783c9c904d38ba24cb64e2004341c84100903564913340fb97767f"
+  url "https://files.pythonhosted.org/packages/8d/36/6962e9993ff73bfa82b2dae6170e2c55d6adfe6da949448c773d99a6c30e/gallery_dl-1.32.2.tar.gz"
+  sha256 "13f9ee145ac054da8f61cabde39549979960de1632ef64445be276e716a2a753"
   license "GPL-2.0-only"
-  revision 2
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
@@ -39,8 +38,8 @@ class GalleryDl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jeepney" do
