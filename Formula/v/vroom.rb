@@ -29,10 +29,6 @@ class Vroom < Formula
     depends_on xcode: ["26.0", :build] if DevelopmentTools.clang_build_version >= 1700
   end
 
-  on_linux do
-    depends_on "gcc" # TODO: remove and rebuild bottle on Ubuntu 24.04
-  end
-
   fails_with :clang do
     build 1699
     cause "needs C++20 std::jthreads"
