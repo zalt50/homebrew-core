@@ -3,8 +3,8 @@ class S3ql < Formula
 
   desc "POSIX-compliant FUSE filesystem using object store as block storage"
   homepage "https://github.com/s3ql/s3ql"
-  url "https://github.com/s3ql/s3ql/releases/download/s3ql-6.2.0/s3ql-6.2.0.tar.gz"
-  sha256 "450e04bc5bcba32becc146858c5625804e406e9352744f788628118c770b5c0e"
+  url "https://github.com/s3ql/s3ql/releases/download/s3ql-6.2.2/s3ql-6.2.2.tar.gz"
+  sha256 "d8ee855f628baa0b175ed37c61851c8020e3e26fd8d494729817992edc23c08f"
   license "GPL-3.0-only"
 
   livecheck do
@@ -21,10 +21,10 @@ class S3ql < Formula
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
-  depends_on "libffi"
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "python@3.14"
+  depends_on "sqlite"
 
   pypi_packages exclude_packages: %w[certifi cryptography]
 
@@ -34,8 +34,8 @@ class S3ql < Formula
   end
 
   resource "apsw" do
-    url "https://files.pythonhosted.org/packages/5a/5f/0fabac91b26d222f5ad1bf8af92f6c80d82af2e50dafb401a250a02b2f53/apsw-3.53.1.0.tar.gz"
-    sha256 "4f8978ae8c7c405d0133a6ea590f3342f839143bdf39e46029cb36e2fa418692"
+    url "https://files.pythonhosted.org/packages/df/8e/6db1f1b21e461bb77b455bc20ff8ab5fb9642ff8370338743dd812483f8d/apsw-3.53.2.0.tar.gz"
+    sha256 "5c59bde36e20a33c0a0399bfe4021f2cd6fc049ac1b15d58f0dc25b48ed1d87f"
   end
 
   resource "attrs" do
@@ -74,8 +74,8 @@ class S3ql < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "more-itertools" do
@@ -139,7 +139,16 @@ class S3ql < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "apsw"
+    resource("apsw").stage do
+      # https://github.com/rogerbinns/apsw/blob/master/doc/install.rst#advice-for-packagers
+      rm("setup.apsw")
+      (buildpath/"setup.apsw").write <<~INI
+        [build_ext]
+        use_system_sqlite_config = True
+      INI
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do
