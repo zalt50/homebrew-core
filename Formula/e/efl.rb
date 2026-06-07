@@ -102,8 +102,8 @@ class Efl < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system Formula["shared-mime-info"].opt_bin/"update-mime-database", "#{HOMEBREW_PREFIX}/share/mime"
+  post_install_steps do
+    update_mime_database
   end
 
   test do
