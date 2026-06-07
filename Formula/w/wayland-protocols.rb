@@ -12,7 +12,7 @@ class WaylandProtocols < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "68739c4ed022227790daf4787fea9ca96ab691586140d28baab07e7ea18cbe4a"
+    sha256 cellar: :any_skip_relocation, all: "c612c303e8ea0af9507289862e749240f43fff49e89ed00bfb2c6a5f666aa5d5"
   end
 
   depends_on "meson" => :build
