@@ -17,10 +17,6 @@ class Ladybug < Formula
   depends_on "cmake" => :build
   uses_from_macos "python" => :build
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with :gcc do
     version "12"
     cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"
