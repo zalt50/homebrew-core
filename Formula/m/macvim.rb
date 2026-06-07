@@ -35,7 +35,7 @@ class Macvim < Formula
   depends_on "libsodium" => :build
   depends_on xcode: :build # for xcodebuild
   depends_on "cscope"
-  depends_on "lua@5.4" # Lua 5.5 doesn't work for now, see https://github.com/vim/vim/issues/19639
+  depends_on "lua"
   depends_on :macos
   depends_on "python@3.14"
   depends_on "ruby"
@@ -45,18 +45,9 @@ class Macvim < Formula
   conflicts_with cask: "macvim-app"
 
   def install
-    # Avoid issues finding Ruby headers
-    ENV.delete("SDKROOT")
-
-    # MacVim doesn't have or require any Python package, so unset PYTHONPATH
-    ENV.delete("PYTHONPATH")
-
     # We don't want the deployment target to include the minor version on Big Sur and newer.
     # https://github.com/Homebrew/homebrew-core/issues/111693
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
-
-    # make sure that CC is set to "clang"
-    ENV.clang
 
     system "./configure", "--with-features=huge",
                           "--enable-multibyte",
@@ -69,7 +60,7 @@ class Macvim < Formula
                           "--with-local-dir=#{HOMEBREW_PREFIX}",
                           "--enable-cscope",
                           "--enable-luainterp",
-                          "--with-lua-prefix=#{Formula["lua@5.4"].opt_prefix}",
+                          "--with-lua-prefix=#{Formula["lua"].opt_prefix}",
                           "--enable-luainterp",
                           "--enable-python3interp",
                           "--disable-sparkle",
