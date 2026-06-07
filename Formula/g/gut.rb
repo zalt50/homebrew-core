@@ -1,8 +1,8 @@
 class Gut < Formula
   desc "Beginner friendly porcelain for git"
   homepage "https://gut-cli.dev/"
-  url "https://github.com/julien040/gut/archive/refs/tags/0.3.2.tar.gz"
-  sha256 "49431ba0d24f9abf4c7cdbdf1956d2b6e70e16f955b5bbb70d8d8f4b8a5a48d1"
+  url "https://github.com/julien040/gut/archive/refs/tags/0.3.3.tar.gz"
+  sha256 "2e5af066ac8bcf46ef15cd9c788e57862c3dcb6119539eac100a71daee148e7d"
   license "MIT"
   head "https://github.com/julien040/gut.git", branch: "main"
 
