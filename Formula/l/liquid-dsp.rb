@@ -1,8 +1,8 @@
 class LiquidDsp < Formula
   desc "Digital signal processing library for software-defined radios"
   homepage "https://liquidsdr.org/"
-  url "https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "33c42ebc2e6088570421e282c6332e899705d42b4f73ebd1212e6a11da714dd4"
+  url "https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "abef8b2ddfd58c0a84ecda4f62158c4824b916144af4a2b07776e1a144d8cda4"
   license "MIT"
 
   bottle do
@@ -19,12 +19,6 @@ class LiquidDsp < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "fftw"
-
-  # Backport fix for ARM64 Linux
-  patch do
-    url "https://github.com/jgaeddert/liquid-dsp/commit/3a5e1f578ad5e73d7665e71781e764765608c2a2.patch?full_index=1"
-    sha256 "8dcece1e5e612b5dad77030dfd453f0f47755fdb41e6201c0c8b6b7123f053b9"
-  end
 
   def install
     system "./bootstrap.sh"
