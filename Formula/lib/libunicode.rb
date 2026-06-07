@@ -22,10 +22,6 @@ class Libunicode < Formula
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
   end
 
-  on_linux do
-    depends_on "gcc" # TODO: remove and rebuild bottle on Ubuntu 24.04
-  end
-
   fails_with :clang do
     build 1500
     cause "Requires C++20"
