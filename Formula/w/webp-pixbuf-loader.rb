@@ -25,31 +25,14 @@ class WebpPixbufLoader < Formula
   depends_on "glib"
   depends_on "webp"
 
-  # Constants for gdk-pixbuf's multiple version numbers, which are the same as
-  # the constants in the gdk-pixbuf formula.
-  def gdk_so_ver
-    Formula["gdk-pixbuf"].gdk_so_ver
-  end
-
-  def gdk_module_ver
-    Formula["gdk-pixbuf"].gdk_module_ver
-  end
-
-  # Subfolder that pixbuf loaders are installed into.
-  def module_subdir
-    "lib/gdk-pixbuf-#{gdk_so_ver}/#{gdk_module_ver}/loaders"
-  end
-
   def install
-    system "meson", "setup", "build", "-Dgdk_pixbuf_moduledir=#{prefix}/#{module_subdir}", *std_meson_args
+    system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
-  # After the loader is linked in, update the global cache of pixbuf loaders
-  def post_install
-    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}/#{module_subdir}"
-    system Formula["gdk-pixbuf"].opt_bin/"gdk-pixbuf-query-loaders", "--update-cache"
+  post_install_steps do
+    gdk_pixbuf_query_loaders
   end
 
   test do
@@ -75,7 +58,8 @@ class WebpPixbufLoader < Formula
       }
     C
 
-    flags = shell_output("pkgconf --cflags --libs gdk-pixbuf-#{gdk_so_ver}").chomp.split
+    gdk_pixbuf_pc = Formula["gdk-pixbuf"].lib.glob("pkgconfig/gdk-pixbuf-*.pc").first.basename(".pc")
+    flags = shell_output("pkgconf --cflags --libs #{gdk_pixbuf_pc}").chomp.split
     system ENV.cc, "test.c", "-o", "test_loader", *flags
     system "./test_loader", "test.webp"
   end
