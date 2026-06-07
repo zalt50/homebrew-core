@@ -4,7 +4,7 @@ class Periphery < Formula
   url "https://github.com/peripheryapp/periphery/archive/refs/tags/3.7.4.tar.gz"
   sha256 "6e3eb93904d4ea3ba346526b3e7dd90d0d258d4eff91977b859b91115f028711"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
