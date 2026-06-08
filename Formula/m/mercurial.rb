@@ -49,23 +49,6 @@ class Mercurial < Formula
     bash_completion.install share/"bash-completion/completions/hg"
   end
 
-  def post_install
-    return unless (opt_bin/"hg").exist?
-    return unless deps.all? { |d| d.build? || d.test? || d.to_formula.any_version_installed? }
-
-    cacerts_configured = `#{opt_bin}/hg config web.cacerts`.strip
-    return if cacerts_configured.empty?
-
-    opoo <<~EOS
-      Homebrew has detected that Mercurial is configured to use a certificate
-      bundle file as its trust store for TLS connections instead of using the
-      default OpenSSL store. If you have trouble connecting to remote
-      repositories, consider unsetting the `web.cacerts` property. You can
-      determine where the property is being set by running:
-        hg config --debug web.cacerts
-    EOS
-  end
-
   test do
     touch "foobar"
     system bin/"hg", "init"
