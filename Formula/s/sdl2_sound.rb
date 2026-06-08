@@ -1,8 +1,8 @@
 class Sdl2Sound < Formula
   desc "Abstract soundfile decoder for SDL"
   homepage "https://icculus.org/SDL_sound/"
-  url "https://github.com/icculus/SDL_sound/releases/download/v2.0.4/SDL2_sound-2.0.4.tar.gz"
-  sha256 "f73f6720dba2e677c0bf70d0c76ca3c96d865d04025e49a8b161711685961931"
+  url "https://github.com/icculus/SDL_sound/releases/download/v2.0.6/SDL2_sound-2.0.6.tar.gz"
+  sha256 "63be57cc80bcd29aeed6c29700759871c44c90251a7508b8d0eacd8d9cece30c"
   license all_of: [
     "Zlib",
     any_of: ["Artistic-1.0-Perl", "LGPL-2.1-or-later"], # timidity
@@ -70,13 +70,6 @@ class Sdl2Sound < Formula
          Written by Torbjörn Andersson <d91tan@Update.UU.SE>.
          https://modplug-xmms.sourceforge.net/
 
-       * MPEG-1 Audio Layer I-III
-         File extension "MP3"
-         File extension "MP2"
-         File extension "MP1"
-         Written by Ryan C. Gordon <icculus@icculus.org>.
-         https://icculus.org/SDL_sound/
-
        * Microsoft WAVE audio format
          File extension "WAV"
          Written by Ryan C. Gordon <icculus@icculus.org>.
@@ -116,6 +109,13 @@ class Sdl2Sound < Formula
        * Free Lossless Audio Codec
          File extension "FLAC"
          File extension "FLA"
+         Written by Ryan C. Gordon <icculus@icculus.org>.
+         https://icculus.org/SDL_sound/
+
+       * MPEG-1 Audio Layer I-III
+         File extension "MP3"
+         File extension "MP2"
+         File extension "MP1"
          Written by Ryan C. Gordon <icculus@icculus.org>.
          https://icculus.org/SDL_sound/
     EOS
