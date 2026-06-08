@@ -6,7 +6,7 @@ class Jscpd < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fb6d6b0afbb9e63ee593cae0786759bcfeb3493c9c1136bd1c346fb39fe3c14f"
+    sha256 cellar: :any_skip_relocation, all: "9a71b53936195bf4251b86dbe33ff8835a3c68ddee990ecb26d4615b31fc45ee"
   end
 
   depends_on "node"
