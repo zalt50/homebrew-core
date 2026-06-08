@@ -78,7 +78,7 @@ class WasmBindgen < Formula
     ENV.delete "CARGO_ENCODED_RUSTFLAGS"
 
     # Explicitly enable reference-types to resolve "failed to find intrinsics" error
-    ENV["RUSTFLAGS"] = "-C target-feature=+reference-types"
+    ENV.append_to_rustflags "-C target-feature=+reference-types"
     system "cargo", "build", "--target", "wasm32-unknown-unknown", "--manifest-path", "Cargo.toml"
     system bin/"wasm-bindgen", "target/wasm32-unknown-unknown/debug/hello_world.wasm",
                               "--out-dir", "pkg", "--reference-types"
