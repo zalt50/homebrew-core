@@ -27,16 +27,15 @@ class Bkmr < Formula
   uses_from_macos "python"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    # https://docs.rs/openssl/latest/openssl/#manual
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+
+    # Add Homebrew lib to rpath so dlopen("libonnxruntime.dylib") finds it at runtime
+    ENV.append_to_rustflags "-C link-args=-Wl,-rpath,#{rpath(target: Formula["onnxruntime"].opt_lib)}"
+
     cd "bkmr" do
-      # Ensure that the `openssl` crate picks up the intended library.
-      # https://docs.rs/openssl/latest/openssl/#manual
-      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-
-      # Add Homebrew lib to rpath so dlopen("libonnxruntime.dylib") finds it at runtime
-      ENV.append "RUSTFLAGS", "-C link-args=-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
-
-      system "cargo", "install", *std_cargo_args(features: "system-ort"),
-             "--no-default-features"
+      system "cargo", "install", "--no-default-features", *std_cargo_args(features: "system-ort")
     end
 
     generate_completions_from_executable(bin/"bkmr", "completion")
