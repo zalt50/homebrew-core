@@ -12,12 +12,12 @@ class C2patool < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6e4d70a410c499600f7ef040bd8ef5d55d6eb773cb727e94c9bdacbe48e6310c"
-    sha256 cellar: :any, arm64_sequoia: "3a2cd918e773b25c0e248488bb51d3819c5f907fc82d628b064de09e41ea185d"
-    sha256 cellar: :any, arm64_sonoma:  "a59c3c4f80b9fd346b6bea3e97819f64eb7cc95d07ca4844157e1ae86e5f45bb"
-    sha256 cellar: :any, sonoma:        "7543bbecd7b92fbc85fb14bf3cb6df3c1864375b160af40d68dc39545abadb95"
-    sha256 cellar: :any, arm64_linux:   "cc813078ed03ddeea5e046793d941a428bfb55b95cb8b1db94ae3ce3caab2138"
-    sha256 cellar: :any, x86_64_linux:  "dfa6680e18ccbf494ff251b81e290f5d1adccc04fc734631df9b7d84c955533e"
+    sha256 cellar: :any, arm64_tahoe:   "6d199678e14b6e7d9b4e2d437794457f7a4e039c788f4571f8510e017cddfab6"
+    sha256 cellar: :any, arm64_sequoia: "677c9706871e9e7b28919c6b84317e9890f2c188df2e1a490642d4010742d3b3"
+    sha256 cellar: :any, arm64_sonoma:  "b5f2c3fd7b63953a46775d512633ca8d7f368c2be75e42d71db123e7e26498b2"
+    sha256 cellar: :any, sonoma:        "b8bd75c253e23b50c137f00714f8f72464f74088ad943fed080472fa5a8e9266"
+    sha256 cellar: :any, arm64_linux:   "723a13335fe6b3cb6788b292f31633b2dc4fd24dd99f58d865cf29001cdb71ab"
+    sha256 cellar: :any, x86_64_linux:  "9e98700a3064d713b3fd270207b736948df9d92e4fc2e53ba4b60d0d35ce3a6a"
   end
 
   depends_on "pkgconf" => :build
