@@ -332,7 +332,9 @@ jobs:
 
       - name: Determine runners to use for test_deps job
         id: determine-dependent-runners
-        run: brew determine-test-runners --dependents --eval-all --dependent-shards="$DEPENDENT_SHARDS" "$TESTING_FORMULAE"
+        run: brew determine-test-runners --dependents --dependent-shards="$DEPENDENT_SHARDS" "$TESTING_FORMULAE"
+        env:
+          HOMEBREW_REQUIRE_TAP_TRUST: 1
 
   test_deps:
     needs:
