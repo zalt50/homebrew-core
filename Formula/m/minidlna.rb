@@ -56,26 +56,8 @@ class Minidlna < Formula
     system "make", "install"
   end
 
-  def post_install
-    conf = <<~EOS
-      friendly_name=Mac DLNA Server
-      media_dir=#{Dir.home}/.config/minidlna/media
-      db_dir=#{Dir.home}/.config/minidlna/cache
-      log_dir=#{Dir.home}/.config/minidlna
-    EOS
-
-    (pkgshare/"minidlna.conf").write conf unless (pkgshare/"minidlna.conf").exist?
-  end
-
   def caveats
-    <<~EOS
-      Simple single-user configuration:
-
-      mkdir -p ~/.config/minidlna
-      cp #{opt_pkgshare}/minidlna.conf ~/.config/minidlna/minidlna.conf
-      ln -s YOUR_MEDIA_DIR ~/.config/minidlna/media
-      minidlnad -f ~/.config/minidlna/minidlna.conf -P ~/.config/minidlna/minidlna.pid
-    EOS
+    "To use `brew services`, put your configuration at ~/.config/minidlna/minidlna.conf"
   end
 
   service do
