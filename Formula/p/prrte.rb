@@ -4,8 +4,8 @@ class Prrte < Formula
   license "BSD-3-Clause-Open-MPI"
 
   stable do
-    url "https://github.com/openpmix/prrte/releases/download/v3.0.14/prrte-3.0.14.tar.bz2"
-    sha256 "c3d8e8f79d7498dd18bb0e3fd5a2b761922c3e1e67b94a23d3ae6c4b6f8e8d0e"
+    url "https://github.com/openpmix/prrte/releases/download/v4.1.0/prrte-4.1.0.tar.bz2"
+    sha256 "285ad62b670075708b9fcfe14c54baa599733bc274d10502a82e8eebba0b7c70"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -47,7 +47,7 @@ class Prrte < Formula
 
   def install
     # Avoid references to the Homebrew shims directory
-    inreplace "src/tools/prte_info/param.c", "PRTE_CC_ABSOLUTE", "\"#{ENV.cc}\""
+    inreplace "src/tools/prte_info/prte_info.c", "PRTE_CC_ABSOLUTE", "\"#{ENV.cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -63,12 +63,6 @@ class Prrte < Formula
     system "./autogen.pl", "--force" if build.head?
     system "./configure", *args, *std_configure_args
     system "make", "install"
-
-    # Avoid conflict with `putty` by renaming pterm to prte-term which matches upstream:
-    # ref: https://github.com/openpmix/prrte/issues/1836#issuecomment-2564882033
-    odie "Update configure for PRRTE or split to separate formula as prte-term exists" if (bin/"prte-term").exist?
-    bin.install bin/"pterm" => "prte-term"
-    man1.install man1/"pterm.1" => "prte-term.1"
   end
 
   test do
@@ -112,6 +106,6 @@ class Prrte < Formula
     system bin/"pcc", "test.c", "-o", "test"
     assert_equal "Hello\nHello\nBye\nBye\n", shell_output("#{bin}/prterun -n 2 ./test 1")
 
-    assert_match "PRTE: #{version}", shell_output("#{bin}/prte_info")
+    assert_match version.to_s, shell_output("#{bin}/prte-info")
   end
 end
