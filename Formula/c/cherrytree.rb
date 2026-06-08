@@ -39,6 +39,7 @@ class Cherrytree < Formula
   depends_on "gtkmm3"
   depends_on "gtksourceview4"
   depends_on "harfbuzz"
+  depends_on "librsvg" => :no_linkage # for SVG icon support
   depends_on "libsigc++@2"
   depends_on "libxml++"
   depends_on "pango"
