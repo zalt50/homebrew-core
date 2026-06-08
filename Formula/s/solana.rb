@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://www.anza.xyz/"
-  url "https://github.com/anza-xyz/agave/archive/refs/tags/v4.0.1.tar.gz"
-  sha256 "39b9e79afbab5949f473ad4bb58ec5341586a4feb9907f2030f3685ff11a154a"
+  url "https://github.com/anza-xyz/agave/archive/refs/tags/v4.0.2.tar.gz"
+  sha256 "5e81209a02428c74621ace776ba36391897e85524fe5cd083b802bf8cff66115"
   license "Apache-2.0"
   version_scheme 1
 
