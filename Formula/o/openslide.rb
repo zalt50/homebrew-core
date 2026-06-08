@@ -1,10 +1,9 @@
 class Openslide < Formula
   desc "C library to read whole-slide images (a.k.a. virtual slides)"
   homepage "https://openslide.org/"
-  url "https://github.com/openslide/openslide/releases/download/v4.0.0/openslide-4.0.0.tar.xz"
-  sha256 "cc227c44316abb65fb28f1c967706eb7254f91dbfab31e9ae6a48db6cf4ae562"
+  url "https://github.com/openslide/openslide/releases/download/v4.0.1/openslide-4.0.1.tar.xz"
+  sha256 "df82f6b264f98d11eeb80d85bbb10c7935fcd69c7abae1d610ce49b9a0437faf"
   license "LGPL-2.1-only"
-  revision 1
   compatibility_version 1
 
   bottle do
@@ -22,7 +21,6 @@ class Openslide < Formula
   depends_on "pkgconf" => :build
 
   depends_on "cairo"
-  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libdicom"
@@ -31,6 +29,7 @@ class Openslide < Formula
   depends_on "libxml2"
   depends_on "openjpeg"
   depends_on "sqlite"
+  depends_on "zstd"
 
   on_macos do
     depends_on "gettext"
