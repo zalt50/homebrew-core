@@ -81,6 +81,8 @@ class Node < Formula
     end
   end
 
+  deny_network_access! [:build, :postinstall]
+
   def install
     # Backport fix for bundled LIEF's bundled spdlog's bundled fmt.
     # Should be fixed when new LIEF version with following commit is released and used by node:
