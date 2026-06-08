@@ -8,12 +8,12 @@ class Folly < Formula
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "507f8c76360a80920d58b559303469a7bd4ae2e4730fb3166d4bd6638986ecc0"
-    sha256 cellar: :any, arm64_sequoia: "dbae5af8719f75eba6ad9232bf4af0ea019e49484a5649ee75dfe65470838878"
-    sha256 cellar: :any, arm64_sonoma:  "c951516369fc674f6c70e6720d952e850081aa1689de13bebf2b2d17abc7c012"
-    sha256 cellar: :any, sonoma:        "5ebca5a2fd5592f3aa3625f657a5a7d127cae56fa5236fcca74a8cec4398a3c5"
-    sha256 cellar: :any, arm64_linux:   "1ee0b90be1c7f2d5575a97c86ea86928dc164b3347923a53d601d40bd640bad6"
-    sha256 cellar: :any, x86_64_linux:  "b13aefc61b34ff788743123c6b4513ba21ed2a8043bbdf8dafa8365d37d4c10d"
+    sha256 cellar: :any, arm64_tahoe:   "f2b3c44ecbf04028879dc94a44aede8d38160a21cbae858acafe1a6a0a36b80a"
+    sha256 cellar: :any, arm64_sequoia: "1dfcada5a8f43d022b4e008786dbbc43815d4d1c015b0aa197f0c7b3918279fa"
+    sha256 cellar: :any, arm64_sonoma:  "7a3b369cd6ee45fc3d620bbc9dbe790cd73c3d37930db74cc617cd966cfec67e"
+    sha256 cellar: :any, sonoma:        "c7b05af00aea72966bd56579c5524804d8734291e4e1478495baa89fb81c4878"
+    sha256 cellar: :any, arm64_linux:   "19915b7f99990b4580fa5679530666321e4f10127f9267e2cab33067b20ff297"
+    sha256 cellar: :any, x86_64_linux:  "7961c763b4bb815956f334fe7844491099ec9806e90629ee9f3b592b4197c45f"
   end
 
   depends_on "cmake" => :build
