@@ -15,12 +15,12 @@ class Livekit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e0578be6a294927a870357db9baf00c9f9cf5fb0e7c3303e4fee2db6ccf4a4c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a8b4e46d7b06e4f45563151799362408f45356444bfb2fe6dfcb288b25a725c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "089c24c63ab8d45505b804cd4bfeaa87ec130f0694714be7474964ec4b3ff9c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9001d3c4e0cc3c18da992d8f192a2095b509b501edc1722d23e9434cbb1e7ea3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63785f5d583838e142854ebca5b13c704868cfeeab96f92f56b388bb67e837af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9feca8f26cae0dd323d9f874d6d8549ccda9de65369302162aef2e153abbb270"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a393c1164b0b4e587f61b7b544a510adb25fc36dc0764075a6387695531da0d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4717d36ff3d5946485c9a338bfe922cf53f6423b11fe6e1f9dcee6f813107794"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37219a13733b76a4c59ce8fe16bbeedbbcd4a74cec20139e07d0bb65bb2cfc11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "889e1e95e7c7fefa0c48012fa67a932919503b0a1c3eb906c1330aaad9cc577e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3afdb80218b51deaecfea9ba4528d576931b0f41844d6371c236174b2cc1092"
+    sha256 cellar: :any,                 x86_64_linux:  "0529e83bfda0ad2e8348f14d1d404caa67e2c7610d4eb6c2478e754e10058ee4"
   end
 
   depends_on "go" => :build
