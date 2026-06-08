@@ -5,8 +5,8 @@ class Pmix < Formula
   compatibility_version 1
 
   stable do
-    url "https://github.com/openpmix/openpmix/releases/download/v5.0.11/pmix-5.0.11.tar.bz2"
-    sha256 "e10baa9821882140ebd134051702d65b1561fe91954d3978f7ea2c4e4cd36e7f"
+    url "https://github.com/openpmix/openpmix/releases/download/v6.1.0/pmix-6.1.0.tar.bz2"
+    sha256 "bb9021c8e100a376f5070ecca727f83a29b5f652dfe381793b88daa79a3b98a2"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -16,7 +16,7 @@ class Pmix < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
   end
 
   bottle do
@@ -51,7 +51,7 @@ class Pmix < Formula
 
   def install
     # Avoid references to the Homebrew shims directory
-    inreplace "src/tools/pmix_info/support.c", "PMIX_CC_ABSOLUTE", "\"#{ENV.cc}\""
+    inreplace "src/runtime/pmix_info_support.c", "PMIX_CC_ABSOLUTE", "\"#{ENV.cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -100,6 +100,6 @@ class Pmix < Formula
     system bin/"pmixcc", "test.c", "-o", "test"
     system "./test"
 
-    assert_match "PMIX: #{version}", shell_output("#{bin}/pmix_info --pretty-print")
+    assert_match version.to_s, shell_output("#{bin}/pmix_info --pretty-print")
   end
 end
