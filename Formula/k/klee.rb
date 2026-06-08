@@ -7,7 +7,7 @@ class Klee < Formula
   url "https://github.com/klee/klee/archive/refs/tags/v3.2.tar.gz"
   sha256 "83d9b9ce0ba187e48c0e55623bf1a68b5eb61376da7ce82551c9d885715a21dd"
   license "NCSA"
-  revision 2
+  revision 3
   head "https://github.com/klee/klee.git", branch: "master"
 
   bottle do
@@ -19,6 +19,7 @@ class Klee < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cryptominisat"
   depends_on "gperftools"
@@ -107,7 +108,7 @@ class Klee < Formula
       -DKLEE_LIBCXXABI_SRC_DIR=#{libcxx_src_dir}/libcxxabi
       -DLLVM_CONFIG_BINARY=#{llvm.opt_bin}/llvm-config
       -DM32_SUPPORTED=OFF
-      -DENABLE_KLEE_ASSERTS=ON
+      -DENABLE_KLEE_ASSERTS=OFF
       -DENABLE_KLEE_LIBCXX=ON
       -DENABLE_SOLVER_STP=ON
       -DENABLE_TCMALLOC=ON
