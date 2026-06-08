@@ -1,8 +1,8 @@
 class Homebank < Formula
   desc "Manage your personal accounts at home"
   homepage "https://www.gethomebank.org/en/index.php"
-  url "https://www.gethomebank.org/public/sources/homebank-5.10.0.tar.gz"
-  sha256 "783fd8bb2ebba09713e5d7c183d454f4a4393e828af5763f768b48afabc54386"
+  url "https://www.gethomebank.org/public/sources/homebank-5.10.1.tar.gz"
+  sha256 "67512d3188ea45f92a6f9326e829c142af5ad509306702f3b0457a1ab611d42a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -27,6 +27,7 @@ class Homebank < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "gdk-pixbuf"
+  depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "hicolor-icon-theme"
@@ -38,7 +39,6 @@ class Homebank < Formula
 
   on_macos do
     depends_on "at-spi2-core"
-    depends_on "gettext"
     depends_on "harfbuzz"
   end
 
