@@ -2,8 +2,8 @@ class Termscp < Formula
   desc "Feature rich terminal file transfer and explorer"
   # https://termscp.veeso.dev is not accessible, upstream bug report, https://github.com/veeso/termscp/issues/420
   homepage "https://github.com/veeso/termscp"
-  url "https://github.com/veeso/termscp/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "c07e2b82cb1cc327d977548e24d27fbbda8ee0cc4f2c3df9fb1b90c6e971e568"
+  url "https://github.com/veeso/termscp/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "cf3570c396ba36987059729f2704a88b87e4f154914062cf390b038694496be9"
   license "MIT"
   head "https://github.com/veeso/termscp.git", branch: "main"
 
