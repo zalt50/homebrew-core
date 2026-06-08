@@ -3,8 +3,8 @@ class Zuban < Formula
   homepage "https://zubanls.com/"
   # pull from git tag to get submodules
   url "https://github.com/zubanls/zuban.git",
-      tag:      "v0.8.0",
-      revision: "c04cbb6a41a46f1b47dd663b4a7e4a6256c04d97"
+      tag:      "v0.8.1",
+      revision: "508a5c9901e29d9425b25af5fb00aed617005fc9"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
