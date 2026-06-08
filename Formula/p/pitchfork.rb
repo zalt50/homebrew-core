@@ -1,10 +1,10 @@
 class Pitchfork < Formula
   desc "CLI for managing daemons with a focus on developer experience"
-  homepage "https://pitchfork.en.dev"
-  url "https://github.com/endevco/pitchfork/archive/refs/tags/v2.12.1.tar.gz"
-  sha256 "3c903458db95d208ad8852b938a272eb9fde005223c5e3867ea10fe9daa2e424"
+  homepage "https://pitchfork.jdx.dev"
+  url "https://github.com/jdx/pitchfork/archive/refs/tags/v2.13.1.tar.gz"
+  sha256 "4896b03f16e54d0bad34b5d80a72572721316f8c8b8d2af5f268bb500ff1426b"
   license "MIT"
-  head "https://github.com/endevco/pitchfork.git", branch: "main"
+  head "https://github.com/jdx/pitchfork.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a75694e98f6c745d9f1642fbec99940316f96a12e9a4c830c462f092756e9f50"
@@ -26,7 +26,7 @@ class Pitchfork < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/pitchfork --version")
 
-    system bin/"pitchfork", "config", "add", "brewtest", "--run", "echo brewed", "--ready-output", "brewed"
+    system bin/"pitchfork", "daemons", "add", "brewtest", "--run", "echo brewed", "--ready-output", "brewed"
     config = (testpath/"pitchfork.toml").read
     assert_match 'run = "echo brewed"', config
     assert_match 'ready_output = "brewed"', config
