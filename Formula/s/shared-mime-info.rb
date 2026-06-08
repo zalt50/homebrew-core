@@ -35,31 +35,19 @@ class SharedMimeInfo < Formula
 
   uses_from_macos "libxml2"
 
+  # This used to be copied rather than symlinked
+  link_overwrite "share/mime/packages/freedesktop.org.xml"
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
-    # Disable the post-install update-mimedb due to crash
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-    pkgshare.install share/"mime/packages"
-    rm_r(share/"mime") if (share/"mime").exist?
   end
 
-  def post_install
-    global_mime = HOMEBREW_PREFIX/"share/mime"
-    cellar_mime = share/"mime"
-
-    # Remove bad links created by old libheif postinstall
-    rm_r(global_mime) if global_mime.symlink?
-
-    rm_r(cellar_mime) if cellar_mime.exist? && !cellar_mime.symlink?
-    ln_sf(global_mime, cellar_mime)
-
-    (global_mime/"packages").mkpath
-    cp (pkgshare/"packages").children, global_mime/"packages"
-
-    system bin/"update-mime-database", global_mime
+  post_install_steps do
+    update_mime_database
   end
 
   test do
