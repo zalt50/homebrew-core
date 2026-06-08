@@ -29,7 +29,7 @@ class AddDeterminism < Formula
   deny_network_access! [:postinstall, :test]
 
   def install
-    ENV["RUSTFLAGS"] = "-C link-arg=-lselinux" if OS.linux?
+    ENV.append_to_rustflags "-C link-arg=-lselinux" if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 
