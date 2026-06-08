@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://github.com/symless/synergy/archive/refs/tags/v1.20.2.tar.gz"
-  sha256 "f80270bcf1dcaaa6e91c39747292428573f99ccf80116a0fee71de145c12b667"
+  url "https://github.com/symless/synergy/archive/refs/tags/v1.20.3.tar.gz"
+  sha256 "a64cbed157160c332f8569c406bfb33b556da282456bf1c7f41738b2e26e398d"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://github.com/symless/synergy.git", branch: "master"
 
@@ -54,19 +54,12 @@ class SynergyCore < Formula
 
   resource "synergy-extra" do
     url "https://github.com/symless/synergy-extra.git",
-        revision: "5056ed0d4a22e00a4c410733cc0129040de84099"
+        revision: "d7195c502ce317924f03d6258d56852fc2575a2c"
 
     # Version.cmake in `synergy-extra` reads .git folder of `synergy`.
     # but it's submodule uses ssh protocol which will be failed in CI
     # and so we use tarball of `synergy` and apply patch to ignore git process
     patch :DATA
-  end
-
-  # Fix VERSION file not updated for 1.20.2 release
-  # Upstream pr ref, https://github.com/symless/synergy/pull/179
-  patch do
-    url "https://github.com/symless/synergy/commit/0953f62ba8a98eaa87eee2857efef5f5ef64a87e.patch?full_index=1"
-    sha256 "5701a3d18b91458b0e44fb420d362f68e7787da2798d46e42bfd913e62bade38"
   end
 
   def install
