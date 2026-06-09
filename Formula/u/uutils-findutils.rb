@@ -1,8 +1,8 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
   homepage "https://uutils.github.io/findutils/"
-  url "https://github.com/uutils/findutils/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "932f153d256f7a4cf40255a948689bf59a10f14c8804151817ab50fa1b46429a"
+  url "https://github.com/uutils/findutils/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "8b3eb813cac9fe519b77ee36705fdcd46b188d8807e98c0bb7126fabd8f64dda"
   license "MIT"
   head "https://github.com/uutils/findutils.git", branch: "main"
 
@@ -69,10 +69,7 @@ class UutilsFindutils < Formula
     assert_match "HOMEBREW", shell_output("#{opt_libexec}/uubin/find .")
 
     expected_linkage = {
-      libexec/"uubin/find"  => [
-        Formula["oniguruma"].opt_lib/shared_library("libonig"),
-      ],
-      libexec/"uubin/xargs" => [
+      libexec/"uubin/find" => [
         Formula["oniguruma"].opt_lib/shared_library("libonig"),
       ],
     }
