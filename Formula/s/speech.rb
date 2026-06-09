@@ -6,6 +6,11 @@ class Speech < Formula
   license "Apache-2.0"
   head "https://github.com/soniqo/speech-swift.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1eaf234bf392704ca19b6ec63d5a3eedc6092b3b32c1e1a66c6481e11a4b508"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a97e93af8b177daabb495cd99b63ab03a20f58c55596f588e0684ba2989a446a"
+  end
+
   depends_on xcode: ["16.0", :build]
   depends_on arch: :arm64
   depends_on macos: :sequoia
