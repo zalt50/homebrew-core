@@ -9,12 +9,12 @@ class Streamrip < Formula
   revision 11
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eda1ddc638610e33338f25a30d975d1c71929aa4ff63162d7ac182dd981e5d72"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d42e4b01330764287281313336b7ddd4cc9a974225b34cdca1c0f79a04ef545"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "172ecc5cf8a32eee55eb82406ca0f9ffa800f1b87026be08dfbe024cc9bd04df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c190b583effa77b3dafbe663f9e0e892903275f4344b0fbd8b4044fe32e6a45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c95d6d1f544c3c17d2b2bad848ac59f818854045add1a82dd2ece61fbbcd61a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "069921977547d7bc71c44e0ab5817ee241a36157de5a7da11860311b61c99007"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "121faea78f2a8a98264424119dacc111bd25b00c304265fb392103fae13348a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1f3b5e05fc69494d2c80de3a9d83c6125bf729c30203c2c424a3d917d3d7a79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae32d4c7ad4df16f27aa2465438b43400081dbf0ec0bba19be7dbd67355368a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f031bf3e872e7bd5b483055fad31403d7a19b86952ea64c26fc6353bfa2f568"
+    sha256 cellar: :any,                 arm64_linux:   "23151f66d71d0ef4fa9d392080f6fecd5ddc2ef12e8c0299571c03f8ab137d24"
+    sha256 cellar: :any,                 x86_64_linux:  "9ee82b95445c02c4021735725d16d0974bd5953f04e5ec75dd2c8f258a00d6f4"
   end
 
   depends_on "certifi" => :no_linkage
