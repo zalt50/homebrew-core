@@ -11,12 +11,12 @@ class MipsLinuxGnuBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "72553adf10ac56e7b1c156a95e9380c1f773ee7663541000b16b022e1b91047a"
-    sha256 arm64_sequoia: "37baeba89172e648c28d3ac8b66a358ecfc4aeb0fd720ef80373b65d6fade6e9"
-    sha256 arm64_sonoma:  "8fbd5036eaca53faa4aa861014150b3de45c94763a70902403b93fb975740754"
-    sha256 sonoma:        "1bf4c7d5473226b95f23213133a08cfc49650c6b125ba34cba72db54ca7348ec"
-    sha256 arm64_linux:   "7752b1c6416cb908aaf4da02a3b5c3119fc6ead163412b0bfa66cdfbafa41421"
-    sha256 x86_64_linux:  "b8f26462bce7297a772b7252f232051a236b9ded74bc92defa3ea3ce3703e9bf"
+    sha256 arm64_tahoe:   "7a65b4a937d9ee9ee6d45ebb99cc14944991aeab9439a7b8e113c2c7be361226"
+    sha256 arm64_sequoia: "bb6a19f7cdb53158f722543d640154f7790e0e390197e7fe824bc4387b2835f6"
+    sha256 arm64_sonoma:  "d79c33763ebd7a87302cd3369363e9134b7649907f52c015befdac212ffa8c2d"
+    sha256 sonoma:        "810cd203ed457db043664104041a357895f768153e984de84ffcab0f87d5ecef"
+    sha256 arm64_linux:   "370a193c60ef4570baaf561af1c1985496759c74786eb36b76e0f534edc4049d"
+    sha256 x86_64_linux:  "0f286dbf7f079e445f5fd23b254aadb3043e1a85e2b0afc2099db83e25178051"
   end
 
   depends_on "pkgconf" => :build
