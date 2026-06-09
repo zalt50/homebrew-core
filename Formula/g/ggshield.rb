@@ -6,6 +6,7 @@ class Ggshield < Formula
   url "https://files.pythonhosted.org/packages/51/d5/54067ee60dee03485ceab3f5f3f998fed550ffb087e63a25635797cb0e77/ggshield-1.51.0.tar.gz"
   sha256 "e7f21d6a2693ab7c546f1be84d218e5cd69357ed5ac2e0bfb92fb93cfa367edb"
   license "MIT"
+  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
@@ -55,8 +56,8 @@ class Ggshield < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jaraco-classes" do
@@ -135,8 +136,8 @@ class Ggshield < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "pyasn1" do
@@ -200,8 +201,8 @@ class Ggshield < Formula
   end
 
   resource "securesystemslib" do
-    url "https://files.pythonhosted.org/packages/c2/dd/d1828dce0db18aa8d34f82aee4dbcf49b0f0303cad123a1c716bb1f3bf83/securesystemslib-1.3.1.tar.gz"
-    sha256 "ca915f4b88209bb5450ac05426b859d74b7cd1421cafcf73b8dd3418a0b17486"
+    url "https://files.pythonhosted.org/packages/b8/11/9623c61604f9b8955248d43fc6a75658bb687c0d3ab65b032b2e43613bd5/securesystemslib-1.4.0.tar.gz"
+    sha256 "faea87be0f9c4b4277a5fa1b54bf9bfd807be9a94ab11be6c557dc8b75c43285"
   end
 
   resource "setuptools" do
@@ -210,8 +211,8 @@ class Ggshield < Formula
   end
 
   resource "sigstore" do
-    url "https://files.pythonhosted.org/packages/98/c3/84ec81173ade0dba5613feea577308cde4e69045cc804d02953e3a40922c/sigstore-4.2.0.tar.gz"
-    sha256 "bdbb49a42fd5f0ea6765919adb42ccee7254c482330764d0842eec4e11ad78d7"
+    url "https://files.pythonhosted.org/packages/d6/63/1e44d9964d4f47617e641bdf6ce1b883b893d95b29ff07f97a8901df6b1c/sigstore-4.3.0.tar.gz"
+    sha256 "3c4b566bddfcc53e73d3adc06acf4311d72be0d907a167133abdc815a472a59b"
   end
 
   resource "sigstore-models" do
@@ -235,8 +236,8 @@ class Ggshield < Formula
   end
 
   resource "tuf" do
-    url "https://files.pythonhosted.org/packages/25/b5/377a566dfa8286b2ca27ddbc792ab1645de0b6c65dd5bf03027b3bf8cc8f/tuf-6.0.0.tar.gz"
-    sha256 "9eed0f7888c5fff45dc62164ff243a05d47fb8a3208035eb268974287e0aee8d"
+    url "https://files.pythonhosted.org/packages/aa/40/25ceaf7f02e18b0d99150d94e200929351a542479c54abb7b92e1fd74b10/tuf-7.0.0.tar.gz"
+    sha256 "9d2e6723538e0d5a3e482b6de805fcfe64481448d5853039ba6b06ba541efd7f"
   end
 
   resource "typing-inspect" do
