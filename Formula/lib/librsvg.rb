@@ -15,12 +15,13 @@ class Librsvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "689a9ba31e5a1be9eed4212ebe6b373c509c65b25a5bd14422fcee6f07927885"
-    sha256 cellar: :any, arm64_sequoia: "89f02ea7f6ace3e6be469dcb31a8f8e68a00968bac9e11300c7e0a516864db50"
-    sha256 cellar: :any, arm64_sonoma:  "09a49f5812b52ce6bb66969a94fe537c260bd9dddb1fcde9bb11b0c2228181dd"
-    sha256 cellar: :any, sonoma:        "890998c76137bb50f2cd5c1861fee60a51b78470c86bebc2efb61842e1b339e3"
-    sha256               arm64_linux:   "eca904b40ce29d810887f19ce25801af0057de6e485a56a905b3a059d164421d"
-    sha256               x86_64_linux:  "3a93861fcdf5d79aac42dceed8109fa7927a34ca6836204fd472b14e21796c72"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b8769a1f5e583a204f5ce8117510aed7983c30e9ba44409ed4808b9a3c0c70a6"
+    sha256 cellar: :any, arm64_sequoia: "101cf33b59bc629301de8539436c0577442904f7bcfdc800b8509638cea7ba17"
+    sha256 cellar: :any, arm64_sonoma:  "dfe5a2c9438be2c376b1ad0ce70c2153f29c889281ecffd9d2f90f685e74b51f"
+    sha256 cellar: :any, sonoma:        "97314d25a6d6e15df1c1e941a0810b16350c331ff3ab94c0226e4e17af91fce4"
+    sha256               arm64_linux:   "d71f9f3fe751631b0862dda045b97910e963e271b6322020486a07893fcfae84"
+    sha256               x86_64_linux:  "db841e68b4e089e86c34d8d4bd8f56a8f3e5189052ebfd3bdead7216bb7ef251"
   end
 
   depends_on "cargo-c" => :build
