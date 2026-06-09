@@ -6,6 +6,11 @@ class Zerolang < Formula
   license "Apache-2.0"
   head "https://github.com/vercel-labs/zero.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6d2d5f995b6bb318a53e6d23aac277b982b7e00114df671ae0aa7672a5e783a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "52841475c560559e4b286c62b6bfb6c0c40847faceec9b455a98397b9b731c65"
