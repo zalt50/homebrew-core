@@ -3,8 +3,8 @@ class PulpCli < Formula
 
   desc "Command-line interface for Pulp 3"
   homepage "https://github.com/pulp/pulp-cli"
-  url "https://files.pythonhosted.org/packages/4d/6f/3f845b4498b05a5dd966b7b33460e45ba6ee6d8c073b918c164dd17beb72/pulp_cli-0.39.3.tar.gz"
-  sha256 "80e2750fa1723958de09f0a2952b1e92c89760cfb315c930c63521f74f6c2d15"
+  url "https://files.pythonhosted.org/packages/0b/e4/44d9a723cf5a50d8843e2f1d2a557004c8487b4d876d2adab9324bcf6cb5/pulp_cli-0.39.4.tar.gz"
+  sha256 "d617e298538698bac4a69b10fcd5d595dfe5ed0c1e2b4c378cc57dbc114351d3"
   license "GPL-2.0-or-later"
   head "https://github.com/pulp/pulp-cli.git", branch: "main"
 
@@ -35,8 +35,8 @@ class PulpCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "multidict" do
@@ -50,8 +50,8 @@ class PulpCli < Formula
   end
 
   resource "pulp-glue" do
-    url "https://files.pythonhosted.org/packages/03/aa/107ea8f873c4e7e6fff5224807bda1b98c04e121dc936715a3534f152d8d/pulp_glue-0.39.3.tar.gz"
-    sha256 "8c9f23d785c546f126507d4e14b2fc5abd0001048c280c2fab3ac28da7472400"
+    url "https://files.pythonhosted.org/packages/2c/8d/af53e28ab580a9897082900f68ef56fb0f5a73143d8d353c4be3d110eb85/pulp_glue-0.39.4.tar.gz"
+    sha256 "086b0f27be465c938416ca035789ea99c839e97ec0ac8b19805c406d1b546939"
   end
 
   resource "pyyaml" do
