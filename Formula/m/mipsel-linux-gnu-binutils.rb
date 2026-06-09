@@ -1,9 +1,9 @@
 class MipselLinuxGnuBinutils < Formula
   desc "GNU Binutils for mipsel-linux-gnu cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.0.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.0.tar.bz2"
-  sha256 "0f3152632a2a9ce066f20963e9bb40af7cf85b9b6c409ed892fd0676e84ecd12"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
+  sha256 "324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -29,6 +29,8 @@ class MipselLinuxGnuBinutils < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  conflicts_with "mips-linux-gnu-binutils", because: "both install `libdep.so` library"
 
   def install
     target = "mipsel-linux-gnu"
