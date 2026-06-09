@@ -12,12 +12,12 @@ class VespaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71de84e26464188afdcc54e2c18baf2660ba73c6d4423352c17e60d383b9f484"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53f222586fa3204bebfd3afde6fae4b0406f02579bf6f908c832f1789f623674"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff41336132a6ce814d51ff18473d00411f6b449315405acf2a416418e375b4bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54546b8dd6460bc00226cee9797873e261d09f6cd966c41b63e7eea0d97c1d0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b58bcd450cd81df5f630e28e546af14dabbda5034326af1791793d7bc4d6443d"
-    sha256 cellar: :any,                 x86_64_linux:  "7ab37550ecafa771cc2b93382e53fdd81954a76956b567015be01a4661830585"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ca1c633baaa2161a40374a415ee408fee585d59414d9e1cfdd571a0586743c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d0bc5a7232d4a62257335786498222f3d1973af90476b920e6671fe95aa61cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f10206dd51ed7837eb29a67709420eaaa7b1d610811af817b87368379fe1d19c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "41262bbdf944f83d03fe686d00696a432a5cb082539de6ec0c509f153b30c132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0460f47bc7b122cb4233fc3c037618561cd75e12d081e7d509b25849a6c5337"
+    sha256 cellar: :any,                 x86_64_linux:  "6a52fb84740a7c645a1d47c6064e14d7fe5b585028d21acea00115d074aeb366"
   end
 
   depends_on "go" => :build
