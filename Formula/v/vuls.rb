@@ -7,12 +7,12 @@ class Vuls < Formula
   head "https://github.com/future-architect/vuls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c7cd1057e1453a84dd84990da5cb77edd8c1d0144abb9b03c27dd7b427ee550"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c7cd1057e1453a84dd84990da5cb77edd8c1d0144abb9b03c27dd7b427ee550"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c7cd1057e1453a84dd84990da5cb77edd8c1d0144abb9b03c27dd7b427ee550"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6bfe76acf54fe6e1daea1cb971b35b64f28747cbdcb9ea4ba2a59943ff412fb9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f7146874c4f4d09d421b79403ef42034b0dd2f95207e3e9a9a95fdf6b8b6620"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8189544dd8634ce03fde70e79e46de5c0c8f7822f4eaaac0d37e8712ac5177cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fde52583cf487624a985987def323d168ab9281db671249ba05ee0e1d7ef6f26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60325c675b301abfbee56d587bd76948d7688fd97f078ecad9aaeb47f366cf66"
+    sha256 cellar: :any,                 x86_64_linux:  "c2604386ec5c70cfabef3e908c4e0d8a4ab5a63d8922d6b5d01f00765927993a"
   end
 
   depends_on "go" => :build
