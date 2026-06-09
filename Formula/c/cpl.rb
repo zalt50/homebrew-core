@@ -1,8 +1,8 @@
 class Cpl < Formula
   desc "ISO-C libraries for developing astronomical data-reduction tasks"
   homepage "https://www.eso.org/sci/software/cpl/"
-  url "https://ftp.eso.org/pub/dfs/pipelines/libraries/cpl/cpl-7.3.4.tar.gz"
-  sha256 "f175a4e7a6935264ef49b39fddf45072c955dfe1c8d11923309f8cc774ba1d24"
+  url "https://ftp.eso.org/pub/dfs/pipelines/libraries/cpl/cpl-7.4.tar.gz"
+  sha256 "63171467e9deab880842f3e5589c02698c4637cf75106c4aa39affd84ecd8bd4"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -21,6 +21,7 @@ class Cpl < Formula
 
   depends_on "cfitsio"
   depends_on "fftw"
+  depends_on "libcext"
   depends_on "wcslib"
 
   conflicts_with "gdal", because: "both install cpl_error.h"
@@ -32,6 +33,7 @@ class Cpl < Formula
                           "--prefix=#{prefix}",
                           "--with-cfitsio=#{Formula["cfitsio"].prefix}",
                           "--with-fftw=#{Formula["fftw"].prefix}",
+                          "--with-libcext=#{Formula["libcext"].prefix}",
                           "--with-wcslib=#{Formula["wcslib"].prefix}"
     system "make", "install"
   end
@@ -46,7 +48,9 @@ class Cpl < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lcplcore", "-lcext", "-o", "test"
+    libcext = Formula["libcext"]
+    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcplcore",
+                             "-I#{libcext.include}", "-L#{libcext.lib}", "-lcext", "-o", "test"
     system "./test"
   end
 end
