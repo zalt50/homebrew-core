@@ -7,12 +7,12 @@ class Oauth2Proxy < Formula
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26d651e47b752ceb4b6411376d6a322a04f10be3bc94701b76f5f2aef5fe338b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfe0548af0ac88a37b9d745aef089f9930302ccd148f295e8efb8b31ae26521d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcce4e3d122777aa3e41e68db110103bbfbe19f029c33fbb484e12eb8671c26f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1f56fac995536a7b3ecb5f3942f5a18da8d4288bbd343a9af55fe7fcd5cd16b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e24e2d572886af4ba6edbd07f78fcc449d62c7214bbb0cb97128138bd336dbcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bba55f0f2d6a2a646968f78673c7417aa03ac2b7ae516246512b6ffa2cc7dfb8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dee50cf5537e1d4b73df7a6244df85d0101cadc1ac1ebe8cd7f73d5a0dede70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d8239aa520df5ce11719d7156f9bc2fb75b19d76865ca15103c96e82c1e9a65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4daa5b9e2a95c8425bc096938e601668e885dff79fd8e9030d71c8996cb62f11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e59d2bb5520dc6785d8751f9d92d59c2e270b38180f714c47b12f5cf3339f9e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "766e911a1c4128d093821ba121fc137a0f3e3a94514f672f6917054adecc343a"
+    sha256 cellar: :any,                 x86_64_linux:  "adceb3ed41724bbee87692cd0888eef3ebc861c285d2c131ce75fcadb6496c66"
   end
 
   depends_on "go" => :build
