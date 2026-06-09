@@ -3,8 +3,8 @@ class OpensearchDashboards < Formula
   homepage "https://docs.opensearch.org/latest/dashboards/"
   # Build fails if not a git repository
   url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
-      tag:      "3.6.0",
-      revision: "47091b2bb937be28e29cde7c3d2c3c9ee6803c27"
+      tag:      "3.7.0",
+      revision: "dd15c5757c758bc51d8992e979e05f975a605434"
   license "Apache-2.0"
 
   livecheck do
@@ -117,25 +117,25 @@ end
 
 __END__
 diff --git a/src/dev/build/build_distributables.ts b/src/dev/build/build_distributables.ts
-index d764c5df28..e37b71e04a 100644
+index 40ade0f..ed8125f 100644
 --- a/src/dev/build/build_distributables.ts
 +++ b/src/dev/build/build_distributables.ts
-@@ -63,8 +63,6 @@ export async function buildDistributables(log: ToolingLog, options: BuildOptions
+@@ -64,8 +64,6 @@ export async function buildDistributables(log: ToolingLog, options: BuildOptions
     */
    await run(Tasks.VerifyEnv);
    await run(Tasks.Clean);
 -  await run(options.downloadFreshNode ? Tasks.DownloadNodeBuilds : Tasks.VerifyExistingNodeBuilds);
 -  await run(Tasks.ExtractNodeBuilds);
-
+ 
    /**
     * run platform-generic build tasks
 diff --git a/src/dev/build/tasks/create_archives_sources_task.ts b/src/dev/build/tasks/create_archives_sources_task.ts
-index 5ba01ad129..b4ecbb0d3d 100644
+index 9c0e085..39e1fc3 100644
 --- a/src/dev/build/tasks/create_archives_sources_task.ts
 +++ b/src/dev/build/tasks/create_archives_sources_task.ts
-@@ -41,20 +41,6 @@ export const CreateArchivesSources: Task = {
-           source: build.resolvePath(),
+@@ -42,21 +42,6 @@ export const CreateArchivesSources: Task = {
            destination: build.resolvePathForPlatform(platform),
+           log,
          });
 -
 -        log.debug(
@@ -148,6 +148,7 @@ index 5ba01ad129..b4ecbb0d3d 100644
 -        await scanCopy({
 -          source: (await getNodeDownloadInfo(config, platform)).extractDir,
 -          destination: build.resolvePathForPlatform(platform, 'node'),
+-          log,
 -        });
 -
 -        log.debug('Node.js copied into', platform.getNodeArch(), 'specific build directory');
@@ -155,13 +156,13 @@ index 5ba01ad129..b4ecbb0d3d 100644
      );
    },
 diff --git a/src/dev/notice/generate_build_notice_text.js b/src/dev/notice/generate_build_notice_text.js
-index b32e200915..2aab53f3ea 100644
+index b32e200..2aab53f 100644
 --- a/src/dev/notice/generate_build_notice_text.js
 +++ b/src/dev/notice/generate_build_notice_text.js
 @@ -48,7 +48,7 @@ export async function generateBuildNoticeText(options = {}) {
-
+ 
    const packageNotices = await Promise.all(packages.map(generatePackageNoticeText));
-
+ 
 -  return [noticeFromSource, ...packageNotices, generateNodeNoticeText(nodeDir, nodeVersion)].join(
 +  return [noticeFromSource, ...packageNotices, ''].join(
      '\n---\n'
