@@ -5,6 +5,10 @@ class EasCli < Formula
   sha256 "658c055798bc225fc08dc9338fa6dc83b6267381a6fe2f8cbf41018607b5d4e5"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "c214a719cb15018a390dcc2baf967736db6f672666e606b20727d565f19d11fe"
+  end
+
   depends_on "node"
 
   def install
