@@ -1,8 +1,8 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https://livekit.io"
-  url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.16.4.tar.gz"
-  sha256 "064070e62e3cd864c2e02f999eb6e000ce9ba5ecf7f7cbeffc2cf8d9685ffa7e"
+  url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.16.6.tar.gz"
+  sha256 "fddbe59b625114d244d65708c350b2fdf2bd1f2dab65e827db6f3abbd42a8823"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
@@ -16,10 +16,13 @@ class LivekitCli < Formula
   end
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
+  depends_on "portaudio"
 
   def install
+    ENV["CGO_ENABLED"] = "1"
     ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"lk"), "./cmd/lk"
+    system "go", "build", *std_go_args(ldflags:, tags: "portaudio_system", output: bin/"lk"), "./cmd/lk"
 
     bin.install_symlink "lk" => "livekit-cli"
 
