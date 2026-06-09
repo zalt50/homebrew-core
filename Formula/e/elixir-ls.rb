@@ -1,10 +1,9 @@
 class ElixirLs < Formula
   desc "Language Server and Debugger for Elixir"
   homepage "https://elixir-lsp.github.io/elixir-ls"
-  url "https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "d8e6c1b7ffc2a122c280ab9790de3cc22b2c12cf98caeabca66e222c8b6a8da1"
+  url "https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "291eeee88e3fb63524832e9a2c7a9fc7d0b0e6ee14d475dc162078052014fb14"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/elixir-lsp/elixir-ls.git", branch: "master"
 
   livecheck do
