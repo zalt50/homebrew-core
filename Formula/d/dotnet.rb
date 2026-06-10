@@ -3,17 +3,17 @@ class Dotnet < Formula
   homepage "https://dotnet.microsoft.com/"
   license "MIT"
   version_scheme 1
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/dotnet/dotnet.git", branch: "main"
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://github.com/dotnet/dotnet/releases/download/v10.0.300/release.json"
-    sha256 "57fae3a7de7853def67c8ac7bf438641b7eaee269f93e3726d1022c74c03c95e"
+    url "https://github.com/dotnet/dotnet/releases/download/v10.0.301/release.json"
+    sha256 "76b3f53564ccc954a410cf39de6b3856033057ed7ed920391d937afec1987d5e"
 
     resource "src" do
-      url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.300.tar.gz"
-      sha256 "545005c26cc3ef53631fb3ff37349f11cb1ee84fea57b11b7ffd186acb760889"
+      url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.301.tar.gz"
+      sha256 "3e11330f5e79fe58410c102f2651a9b6efd8b8859ca28bda070c3b60c1195681"
 
       livecheck do
         formula :parent
@@ -23,8 +23,8 @@ class Dotnet < Formula
     # NOTE: 1xx band resources are only used when on 2xx/3xx/4xx band.
     # Can leave in formula even when unused to simplify version bumps.
     resource "1xx" do
-      url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.108.tar.gz"
-      sha256 "136fada0e8a51972bc3ba8676df2c5cc10e0f75edfbf39ecafa2ddc0c7e9426d"
+      url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.109.tar.gz"
+      sha256 "65f8a8a89741ebe9f5b5d27af7003a6a8e11854e11d2d173a8c08747f4011c2b"
 
       livecheck do
         url "https://github.com/dotnet/dotnet/releases/download/v#{LATEST_VERSION}/release.json"
@@ -41,8 +41,8 @@ class Dotnet < Formula
     end
 
     resource "1xx-manifest" do
-      url "https://github.com/dotnet/dotnet/releases/download/v10.0.108/release.json"
-      sha256 "35bc59a8a2b49bee8ac14ce1be4ee0573c0556592d2fdd915462158c7bb1d73c"
+      url "https://github.com/dotnet/dotnet/releases/download/v10.0.109/release.json"
+      sha256 "dcc488d9b6017ba88c690add96402ae01a22e4ff59ba6eb57b0542d459a5d507"
 
       livecheck do
         url "https://github.com/dotnet/dotnet/releases/download/v#{LATEST_VERSION}/release.json"
