@@ -6,7 +6,7 @@ class Semver < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "22c08d7b285d77f655d690c85f98ba242a8cc670137c73ada2e9fe680bb23eed"
+    sha256 cellar: :any_skip_relocation, all: "2effdb025381257a04c1aa0b1c541a169934dc6a15465171281393741483dcb2"
   end
   depends_on "node"
 
