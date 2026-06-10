@@ -1,8 +1,8 @@
 class LibayatanaAppindicator < Formula
   desc "Ayatana Application Indicators Shared Library"
   homepage "https://github.com/AyatanaIndicators/libayatana-appindicator"
-  url "https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.94.tar.gz"
-  sha256 "884a6bc77994c0b58c961613ca4c4b974dc91aa0f804e70e92f38a542d0d0f90"
+  url "https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "23be92ad8eb9625ce93b23b14f82f3cf88a4970c31d48581945ddfbac0441d06"
   license any_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
