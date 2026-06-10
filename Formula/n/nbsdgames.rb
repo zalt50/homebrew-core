@@ -1,8 +1,8 @@
 class Nbsdgames < Formula
   desc "Text-based modern games"
   homepage "https://github.com/abakh/nbsdgames"
-  url "https://github.com/abakh/nbsdgames/archive/refs/tags/v6.0.1.tar.gz"
-  sha256 "7bbb45c9b65b5f7849582f06feff4d60e31cde13da9db7f344ca2eb69802491f"
+  url "https://github.com/abakh/nbsdgames/archive/refs/tags/v6.0.2.tar.gz"
+  sha256 "9545b099f6edb2be08d8885eaae2e10cf3d114c3a8fa1fc3eefff156053f37ca"
   license :public_domain
   head "https://github.com/abakh/nbsdgames.git", branch: "master"
 
@@ -15,6 +15,8 @@ class Nbsdgames < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd514bf4eda579c1f9dc5e42db6e1d7896ed65428cf4c6fa5ea8ac56419d0f45"
   end
 
+  depends_on "pkgconf" => :build
+
   uses_from_macos "ncurses"
 
   def install
@@ -22,6 +24,7 @@ class Nbsdgames < Formula
     system "make", "install",
            "GAMES_DIR=#{bin}",
            "SCORES_DIR=#{var}/games",
+           "MAN_DIR=#{man}",
            "LIBS_PKG_CONFIG=-lncurses"
 
     man6.mkpath
