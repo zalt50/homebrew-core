@@ -13,8 +13,6 @@ env:
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
-  # TODO: Disable this for `tap_syntax`, `brew audit` and `brew readall`.
-  HOMEBREW_SORBET_RECURSIVE: 1
   HOMEBREW_TEST_BOT_ANALYTICS: 1
   HOMEBREW_ENFORCE_SBOM: 1
   HOMEBREW_NO_BUILD_ERROR_ISSUES: 1
@@ -64,6 +62,8 @@ jobs:
           restore-keys: style-cache-${{ matrix.stable && 'stable-' || 'main-' }}
 
       - run: brew test-bot --only-tap-syntax ${{ matrix.stable && '--stable' || '' }}
+        env:
+          HOMEBREW_SORBET_RECURSIVE: 1
 
   formulae_detect:
     if: github.repository_owner == 'Homebrew' && github.event_name != 'push'
