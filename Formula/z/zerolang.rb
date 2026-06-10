@@ -1,8 +1,8 @@
 class Zerolang < Formula
   desc "Programming language for agents with explicit effects and predictable memory"
   homepage "https://zerolang.ai/"
-  url "https://github.com/vercel-labs/zero/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "235f04df04cf6b85eeac3779d40ca5fbbc8d68e6e34a8cfee8d6eea6760e9320"
+  url "https://github.com/vercel-labs/zero/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "cbf1a2001628cd06595fc5b4fedc98e92916fcd4d345e8dc8c351dc70bde48f4"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/zero.git", branch: "main"
 
