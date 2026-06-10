@@ -13,12 +13,12 @@ class OpensearchDashboards < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61da20fd6b63ac62e4e21e736db18c84738420bdf2259cd6105357e8c1d72056"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61da20fd6b63ac62e4e21e736db18c84738420bdf2259cd6105357e8c1d72056"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61da20fd6b63ac62e4e21e736db18c84738420bdf2259cd6105357e8c1d72056"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bacb22ade5cf561905acd08df802ffef50babee3eb5fc7bab7918cb7739abe55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "211ddd6772665c427aae3ee5c9bbc42560b697d2cebc9a86e9d728db4152850d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c0a2e8d2d05897d590088536a31b792c75ecb5919648dd20f15e4025bf49461"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "516d03721d2a4753447b75251fc73517d8f6eee67ffeafe5309793dc0e5c79ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "516d03721d2a4753447b75251fc73517d8f6eee67ffeafe5309793dc0e5c79ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "516d03721d2a4753447b75251fc73517d8f6eee67ffeafe5309793dc0e5c79ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fdafd106302cd5eab75e17985f5c1c07e04b917edb1b4cfb878c656663824b61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e36abb9886291ad5c2f6f575b164d04e069e574851276ccb7aa727d3779601a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c6d896ea6e457696aa3f4c0826d7d0851599266d4c6146686679fe1f1a452cd"
   end
 
   depends_on "yarn" => :build
