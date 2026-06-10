@@ -1,8 +1,8 @@
 class Osm2pgsql < Formula
   desc "OpenStreetMap data to PostgreSQL converter"
   homepage "https://osm2pgsql.org"
-  url "https://github.com/osm2pgsql-dev/osm2pgsql/archive/refs/tags/2.2.0.tar.gz"
-  sha256 "567dad078f8a66d6d706ac1876b5251b688109d16974909d89ce2056d6e9f258"
+  url "https://github.com/osm2pgsql-dev/osm2pgsql/archive/refs/tags/2.3.0.tar.gz"
+  sha256 "334c19fd58140e48216ec842fd63d7a978c7a2aea034858c2a62f32ad9e94c06"
   license "GPL-2.0-or-later"
   head "https://github.com/osm2pgsql-dev/osm2pgsql.git", branch: "master"
 
@@ -19,6 +19,7 @@ class Osm2pgsql < Formula
   depends_on "boost" => :build
   depends_on "cli11" => :build
   depends_on "cmake" => :build
+  depends_on "fmt" => :build
   depends_on "libosmium" => :build
   depends_on "lua" => :build
   depends_on "nlohmann-json" => :build
@@ -43,12 +44,11 @@ class Osm2pgsql < Formula
                                      "set(LUA_VERSIONS5 #{lua_version})"
 
     # Remove bundled libraries
-    rm_r(Dir["contrib/*"] - ["contrib/fmt"])
+    rm_r(Dir["contrib/*"])
 
-    # TODO: Switch to external fmt when v12+ is supported
     args = %w[
       -DEXTERNAL_CLI11=ON
-      -DEXTERNAL_FMT=OFF
+      -DEXTERNAL_FMT=ON
       -DEXTERNAL_LIBOSMIUM=ON
       -DEXTERNAL_PROTOZERO=ON
       -DWITH_LUAJIT=ON
