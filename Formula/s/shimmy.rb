@@ -1,8 +1,8 @@
 class Shimmy < Formula
   desc "Small local inference server with OpenAI-compatible GGUF endpoints"
   homepage "https://github.com/Michael-A-Kuykendall/shimmy"
-  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "d761c96a497263a19a2d4a78ddfe248e5c8c0b896ff535d15ac31b47032761e4"
+  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "5f53a33fd0204407f334769e76b53e361292251ff87a649f2feba55b16973039"
   license "Apache-2.0"
   head "https://github.com/Michael-A-Kuykendall/shimmy.git", branch: "main"
 
@@ -37,7 +37,14 @@ class Shimmy < Formula
   end
 
   test do
+    resource "test-gguf" do
+      url "https://huggingface.co/ChristianAzinn/gte-small-gguf/resolve/main/gte-small.Q2_K.gguf?download=true"
+      sha256 "71bc9beaecd0a3c5f075b8959f84c4cdf6c27dbc39930b0ab4d7c443b9373bc6"
+    end
+
     assert_match version.to_s, shell_output("#{bin}/shimmy --version")
+
+    resource("test-gguf").stage testpath/"models"
     output = shell_output("#{bin}/shimmy list")
     assert_match "Total available models: 1", output
   end
