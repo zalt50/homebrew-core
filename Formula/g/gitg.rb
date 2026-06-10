@@ -4,7 +4,7 @@ class Gitg < Formula
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
   sha256 "342a31684dab9671cd341bd3e3ce665adcee0460c2a081ddc493cdbc03132530"
   license "GPL-2.0-or-later"
-  revision 8
+  revision 9
 
   livecheck do
     url :stable
@@ -55,6 +55,12 @@ class Gitg < Formula
   def install
     # Work-around for build issue with Xcode 15.3: https://gitlab.gnome.org/GNOME/gitg/-/issues/465
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+    # Drop girepository-1.0 typelib loading (Python loader only, disabled here)
+    # as it conflicts with libpeas 1.38's girepository-2.0.
+    inreplace "gitg/gitg-plugins-engine.vala" do |s|
+      s.gsub!(/\t\tvar repo = Introspection\.Repository.*?\n\t\tcatch \(Error e\)\n\t\t\{.*?return;\n\t\t\}\n/m, "")
+    end
 
     ENV["DESTDIR"] = "/"
     system "meson", "setup", "build", "-Dpython=false", *std_meson_args
