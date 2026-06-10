@@ -5,6 +5,11 @@ class Asccli < Formula
   sha256 "7141fca15206f05d041c1f9bd4bbf6ec245f3217e94199ab48264add1eafc2ac"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0f233dee399d53790f2a3bd7c886111ef9982d94ef53195d3e71cf43b7f4675"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b03abbe9c0a2cc0b87c3a1f36aef2801c8ca40f229db06096d5a9a5d02102dfd"
+  end
+
   depends_on xcode: ["26.0", :build]
   depends_on macos: :sequoia
 
