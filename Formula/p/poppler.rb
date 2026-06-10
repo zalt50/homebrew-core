@@ -13,13 +13,12 @@ class Poppler < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "dc47afa401538297b7afd6914363501443d832031434a2f0d3fde4aa3d75810e"
-    sha256 arm64_sequoia: "17eab9fcc315f760a5092f6856d2385e10cba3787a8d61e36979d2a1c9fcc18b"
-    sha256 arm64_sonoma:  "c0828630e30e1216f7fb59adea4cefdc329ed8692e8aaeb059115cc54ac18f96"
-    sha256 sonoma:        "bbe9dff4184b7d629fdff43b540d8dfc53db559036f988daf752f02bf0714bd7"
-    sha256 arm64_linux:   "3bd08cb0df5ccee7aeed0a7529867c063beaa0fec303c79fd7dd84c1d66971e6"
-    sha256 x86_64_linux:  "e43a4677edf16c8af9f6e2b8fba9fec37ab610339a6d5a76eccac687b288d7b7"
+    sha256 arm64_tahoe:   "595f642965f19f62860b5c9b0267a4e78daa8ada47ae1f5dbaab76ac1f74b10d"
+    sha256 arm64_sequoia: "d7510cb2202c997dd75212d0a45ed17adc6ef67604a59da0f745322687eb1c23"
+    sha256 arm64_sonoma:  "a7f99ac7d30f36e9e00359552f07f87b6ee9eba369ca36a67359a74ce62dabab"
+    sha256 sonoma:        "e07dda384ec18f4644e2f3a6654cfe849dae68638a54dfd4c000073945cceb8b"
+    sha256 arm64_linux:   "71a442b763ece24e2e439ee1a4c287649f15848090cb00c5dcf0f27161027256"
+    sha256 x86_64_linux:  "3b4833a94144e71c2427224d774392f671426214b796c48059fde359f1542f5a"
   end
 
   depends_on "cmake" => :build
