@@ -1,8 +1,8 @@
 class Zerolang < Formula
   desc "Programming language for agents with explicit effects and predictable memory"
   homepage "https://zerolang.ai/"
-  url "https://github.com/vercel-labs/zero/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "cbf1a2001628cd06595fc5b4fedc98e92916fcd4d345e8dc8c351dc70bde48f4"
+  url "https://github.com/vercel-labs/zero/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "d2d6914255b2fd2dc0ef6fa85efa21dad87d8a1d64fddc5d20ebda6198a1ad96"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/zero.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Zerolang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b57d438ef1781814e1a8e2b994700915980445de9119c45194ce0c8643843d72"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76f9f39db9312656b23341e7530649851da6c0abdaccbaaa1fd02a2247e723e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e370d6383a686657761787e28413a791587d09472cc452d2792a8125cbe26d2f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c8ec19bb689ac61cd224173508fa19d437881363039f8202525664d858cd5f8"
-    sha256 cellar: :any,                 arm64_linux:   "efaa328bf06d42275e8e3f9acbc8850826e5af9543a5395fa03e10937c144dcf"
-    sha256 cellar: :any,                 x86_64_linux:  "ac72e2e2aabb87ace3747d1fa4524d3144f3f6ee3456c2cb008ee0d08b2dbc5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c306d6bad0e956fc7d405e3aef1a6c752c7645652119fc4dd7ac86325ded0a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce7ef764aad748f0ea54685ecba911477086bf570fc559c16d1398ee13da48e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f03b704464e4d0e66278c0af484b3f2585f68bdd1890123d2b9235f2053759fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94ef91c3dca408884e997501fcddb54c4c2c1dc4586d68cd20ff3ae698d7351a"
+    sha256 cellar: :any,                 arm64_linux:   "9ce75881d7df994d515ebf0ab650995aa0cdcf2f71458bc3095d7912d1670a73"
+    sha256 cellar: :any,                 x86_64_linux:  "5a1c9e8e30c156d0a0407b4bf4be56d16f9d256cfe06c39d55594cb586c153f8"
   end
 
   def install
