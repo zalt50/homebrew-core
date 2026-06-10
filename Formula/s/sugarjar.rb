@@ -15,6 +15,7 @@ class Sugarjar < Formula
   end
 
   depends_on "gh"
+  depends_on "glab"
   depends_on "ruby"
 
   uses_from_macos "libffi"
