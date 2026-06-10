@@ -1,17 +1,17 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.30.2/step_0.30.2.tar.gz"
-  sha256 "db62a88ebec709de591dd86eec9759e15bdff4c6b96f3d7db6f53b6cf86bd3ec"
+  url "https://github.com/smallstep/cli/releases/download/v0.30.4/step_0.30.4.tar.gz"
+  sha256 "40366122a6575bf221fee93767573abeca8b555b511ca86f35f74e146ce4b5f0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4acf805409a5c6cbf25a89f13c6e412833299cc5dbd3887df689e03891fe2a48"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "508a217f15db5cb07ef40df9fa1dad35076a1f868883bdd0bc08e8139f4ced2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "993500c4546a14b6735ee2cd26a50284d391928ac1dd41998cfaf631e509043a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c07441dec92b33a6056968aa2282c42cb40687cb9bd8e6759f9fd77602a13567"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08f2ada4649549928a9ccd1200c0e0ffcd5b6e674fc84bd20f680f02714e643c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6252dbfa4e539db5e3172a6bf6fba2332842013d299698e91445bd0070c1b6f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00a054b258c1a51e6089f7fbd5e9f2277e270e9b4e96b7989e49ed149788170b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7c2208dcc5c6c98713de35e1812052d4e3d78901e712ba797c224347cbebdab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47d034e251baeb2b0ab2fd2cf39be0cf442bf7c13933252dd3f4d567547d456d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24ff144b2b38a4c6cb45609b432c53ad6b3c3ad1a83fcc765f9dd5f3b16c850e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "062abf72405ee7ce82c403ec8786cb02c4bcf5984785339820ef2ef87ccfa1a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cebde224af74cc393fef0dc75b85fb0c1f1ac240720cf81650d5aac320f8b7d9"
   end
 
   depends_on "go" => :build
