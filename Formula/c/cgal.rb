@@ -12,7 +12,7 @@ class Cgal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "95647d7bbb34bb7cdfe965cfc7d0224faec548a2b044fcf73aa2d815c856cd51"
+    sha256 cellar: :any_skip_relocation, all: "44cd725cbd68d951fff166d2bcca949ae90f2902155ed91b3f0ad8754aabdfc8"
   end
 
   depends_on "cmake" => [:build, :test]
