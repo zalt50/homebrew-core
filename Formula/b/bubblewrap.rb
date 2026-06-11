@@ -21,7 +21,11 @@ class Bubblewrap < Formula
   depends_on :linux
 
   def install
-    args = %w[
+    # Meson modifies RPATHs during install but cannot handle paths injected by
+    # our shim and results in a non-relocatable binary. Instead, we can remove
+    # the shim RPATHs and pass them via the available meson option.
+    args = %W[
+      -Dinstall_rpath=#{ENV.delete("HOMEBREW_RPATH_PATHS")}
       -Dselinux=disabled
     ]
     system "meson", "setup", "build", *args, *std_meson_args
