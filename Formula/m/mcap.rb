@@ -1,8 +1,8 @@
 class Mcap < Formula
   desc "Serialization-agnostic container file format for pub/sub messages"
   homepage "https://mcap.dev"
-  url "https://github.com/foxglove/mcap/archive/refs/tags/releases/mcap-cli/v0.0.62.tar.gz"
-  sha256 "c0fcd10469cdbd30839b05678e2e35bb0cf64f17bc26b54115aa89df632c500e"
+  url "https://github.com/foxglove/mcap/archive/refs/tags/releases/mcap-cli/v0.1.0.tar.gz"
+  sha256 "f5c8debb20a68d136018b1bc7c0a5250fd647440134ed50dd1fc31ec30f43d4b"
   license "MIT"
   head "https://github.com/foxglove/mcap.git", branch: "main"
 
@@ -20,14 +20,11 @@ class Mcap < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f50e7b18012cf9f724e5c337ead3ee11318969c02aed65de3ceb4b8bf8a960bc"
   end
 
-  depends_on "go" => :build
+  depends_on "rust" => :build
 
   def install
-    cd "go/cli/mcap" do
-      system "make", "build", "VERSION=v#{version}"
-      bin.install "bin/mcap"
-    end
-    generate_completions_from_executable(bin/"mcap", shell_parameter_format: :cobra)
+    system "cargo", "install", *std_cargo_args(path: "rust/cli")
+    generate_completions_from_executable(bin/"mcap", "completion")
   end
 
   test do
@@ -46,7 +43,7 @@ class Mcap < Formula
       sha256 "cb779e0296d288ad2290d3c1911a77266a87c0bdfee957049563169f15d6ba8e"
     end
 
-    assert_equal "v#{version}", shell_output("#{bin}/mcap version").strip
+    assert_match(%r{^mcap #{version} \([^)]+\) mcap-rust/}, shell_output("#{bin}/mcap --version").strip)
 
     resource("homebrew-testdata-OneMessage").stage do
       assert_equal "2 example [Example] [1 2 3]",
