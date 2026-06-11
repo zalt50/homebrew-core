@@ -1,8 +1,8 @@
 class Oksh < Formula
   desc "Portable OpenBSD ksh, based on the public domain Korn shell (pdksh)"
   homepage "https://github.com/ibara/oksh"
-  url "https://github.com/ibara/oksh/releases/download/oksh-7.8/oksh-7.8.tar.gz"
-  sha256 "3b30d5a1183b829590cc020d8ab87f22d288e98dc3fdf12feb7159536beaa950"
+  url "https://github.com/ibara/oksh/releases/download/oksh-7.9/oksh-7.9.tar.gz"
+  sha256 "51b2d92515950c959dbf24f6fc33336db8c0526c2a50fee4ca598a18a6114a49"
   license all_of: [:public_domain, "BSD-3-Clause", "ISC"]
   head "https://github.com/ibara/oksh.git", branch: "main"
 
@@ -14,6 +14,8 @@ class Oksh < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "4cb56f25784348e87b2824c946f27e38403cdf1a956e1dd36add9b8305484807"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c873e983dc4fb309264a6da0b94725eee67beab552cff478cd114b26b6fde3e5"
   end
+
+  uses_from_macos "ncurses"
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
