@@ -3,8 +3,8 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://github.com/antoniorodr/cronboard"
-  url "https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "c4802a9bf22b7eff1e5726f91e03ceff7d502ada363ba43a55225682a79f2131"
+  url "https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "fa5b4d907aead206124979681ea38b346c39f9ee6a5b3c7647d3e403455ad8a4"
   license "Apache-2.0"
 
   bottle do
