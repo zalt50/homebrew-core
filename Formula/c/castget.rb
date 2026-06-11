@@ -54,12 +54,13 @@ class Castget < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6260cc2436ada19971dceea5edf959d05602b072b8c9e4fe4e3cd4ba2d1cd414"
-    sha256 cellar: :any,                 arm64_sequoia: "0a168ca1b2f72f15dec7ccc87492f7687daa913751dc92f93e170847d725d415"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee0922a3c5490cca1a84c0d904fdfc85c009e1a78ec97bde96160268d70aa313"
-    sha256 cellar: :any,                 sonoma:        "3646b6392004a2f98d56791883ba1ca786ec99adae13d51ca03f92ad5e7b60d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84883011e5ed23dc9d2fa31362f00893d18f6f8071c736b60e5068a0ed9785ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ad8497c3d8ea308f9e37f9da0fed84e68dc1194d44e9a5f27c89b2b37d0ce44"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "107a3398bb0e141bf22a51e4d3b01e6245fb76135167ff49df224b26db1edf55"
+    sha256 cellar: :any, arm64_sequoia: "9e1f0da319e1dc24196e32a50e69bece2fb6b49ce4b41fe4b7e49925b6f1b85e"
+    sha256 cellar: :any, arm64_sonoma:  "fd56199462a66fafd7a1f3f489181725eb1003dc344bdc7144c202bab128a264"
+    sha256 cellar: :any, sonoma:        "a755deea8dffb02a22f09cd0c192e8b5f68b93dbe30331b6ecc554785ea76552"
+    sha256 cellar: :any, arm64_linux:   "c7497d826ff24bc5a2012d8e43e095c5b8a96eac6b4c653e56b0ac3c82801a7b"
+    sha256 cellar: :any, x86_64_linux:  "95b0963133542dce7db2a148187c168dcbc2c681b0746dbf8f696fe17fd104f2"
   end
 
   head do
