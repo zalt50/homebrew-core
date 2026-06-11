@@ -5,6 +5,14 @@ class Syswatch < Formula
   sha256 "9f79f8748f0e0b4837bb2ceb55a80360cfd29c93d0914619a1cb1ad57c0d5922"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8b8093e1d6a8e0e466e76bb7e4f460dcd9f51c9f049acc1268debb7eaad0516"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "880302f5c1b77e73f7a6d1699c906150ba357ee27b0fb0987c022cd0e3f75106"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71067e51b04c6a51376d8081bca9e34f34bd7c97fef326e94bfa82a89d2303b0"
+    sha256 cellar: :any,                 arm64_linux:   "bcfdc1308ada936915e708020fdfeb8129f9a2a2b485cff3f5db60eccd2b10da"
+    sha256 cellar: :any,                 x86_64_linux:  "35fa554a91e8845af3ada41caf4dcf1cb15378b0498172734901211f9c31bff8"
+  end
+
   depends_on "rust" => :build
 
   on_macos do
