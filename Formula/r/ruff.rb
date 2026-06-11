@@ -7,12 +7,12 @@ class Ruff < Formula
   head "https://github.com/astral-sh/ruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "593568c5cfab81719b639a47a313cfb92033c5abc4067f4994cd395e0a5172ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aaa7566fd0a9eddb16840e8eff52b734387eef1dc16e46df9f488fc08a0f59fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa828d6b311506a07cb2ec0d476031d27124e03cc512e793f06fcf46cce23f94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be4c0ca507137dc055094fbd8768730b5a56c5c49c8d5ce66c989e9a0cd67a4a"
-    sha256 cellar: :any,                 arm64_linux:   "3c4ab8f915d46bc24cd79e77006e53add1792793c6f8123e97c70b0df099ca8e"
-    sha256 cellar: :any,                 x86_64_linux:  "6e1d318c481640272a8e36c29882e89eeb60e28d4dfc7cd07554cff785571f99"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "675f8b286f3f359b3269a21caaceb17238604d43cedfb2668ab39faf976db5fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01addca2a502c08f590388e4a25fe618bd7ba6aaeab9249c7cd34db9e1835219"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96f5eaf32bd1d8bd9dec4ecd2941565fd112a168a545770fe50e68c6a3d9320a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a903bfc24dfff3557c0d584b230919b5613e92a9264578d4aeaaf8684cfbe0d"
+    sha256 cellar: :any,                 arm64_linux:   "9d018d64189c9ea0244259bda9f78e5ba73a00d06ef8298a53298387c8917f5e"
+    sha256 cellar: :any,                 x86_64_linux:  "a500e8623f7794445ec8f4a6ba538cb8e11683f7b2d5f2f329d3a18ecd50b923"
   end
 
   depends_on "rust" => :build
