@@ -1,8 +1,8 @@
 class Syswatch < Formula
   desc "Cross-platform system diagnostics TUI"
   homepage "https://netwatchlabs.com"
-  url "https://github.com/matthart1983/syswatch/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "9f79f8748f0e0b4837bb2ceb55a80360cfd29c93d0914619a1cb1ad57c0d5922"
+  url "https://github.com/matthart1983/syswatch/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "1d2d3dda0f2017474953c6c7bbaea898021ea8aa5d82db9baf1b5462e6279a06"
   license "MIT"
 
   bottle do
