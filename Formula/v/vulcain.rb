@@ -6,6 +6,15 @@ class Vulcain < Formula
   license "AGPL-3.0-only"
   head "https://github.com/dunglas/vulcain.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34108eed78b90ecf9bfb226f00b5575c643b1e200481f26b38261e1e307f6667"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d66ada4cf084c070d807b00d8f50485ec0ea04b1054746e590f51f229dc3bc4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a001532c5aa5af0f63ed71fcef98f27a210d456c5026fc495447a8c9709a6c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c700bddffe1611b308f117e9dffc3c4f6e4c03222a1e35cc06ea9302f5eb371"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e762cba8245ecae0c6aafd13c4ada647ad0be0a1f7f1d42cd90fdeb90c849f4f"
+    sha256 cellar: :any,                 x86_64_linux:  "6ad2b99a1e45a559aaab10d02e6d908ece6850cfea431fe7ec775bd5bfcae206"
+  end
+
   depends_on "go" => :build
 
   def install
