@@ -13,7 +13,7 @@ class ApacheFlinkAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b481652adbfa9cc17f1e988d0dd0ad2b6437ef413922bb27e32b4d55d0c2df10"
+    sha256 cellar: :any_skip_relocation, all: "fd12cd7ee56c5ad2e91726ae5cb9e3d99cdbee37771085ed378e5d6839b7735e"
   end
 
   keg_only :versioned_formula
