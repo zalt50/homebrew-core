@@ -3,18 +3,18 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/remarshal-project/remarshal"
-  url "https://files.pythonhosted.org/packages/e6/02/a059f97a0f6757b85c7ebfb6c12383743a4d9c9847410c96ecd68b0821a5/remarshal-2.0.2.tar.gz"
-  sha256 "9a2d51a4567ea57611be6b4e4231372b548fd4b29995afeca6cf0b4abdec3049"
+  url "https://files.pythonhosted.org/packages/ec/31/a05a5109f3a74f2ffeb67b12617a006e33ca2a2ee511b27884d8751da71e/remarshal-2.1.0.tar.gz"
+  sha256 "69b8ff0fd1ef3621dee28d7fed6fe326850a4a3ff890d8a64d0ae90bdcce6aa9"
   license "MIT"
   head "https://github.com/remarshal-project/remarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a301b546519ebded897a7529123b0a298f6fdec76d0d1866457ba70b20de4ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5de5675c5e44ac078332e1f798785be31a1fc76fff83826ac4602620dfbed2ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f584f3abec6e1ee8d9f4418b0d8160e7b21d5c37121c6fd8ec5105522d2091bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ed46de9b424d4df8d7a774b49ec465c489bace66f296b70cf541c433ba06f5b"
-    sha256 cellar: :any,                 arm64_linux:   "127087f0fea5209e356c1e9bbb9657870852504302feb7c84fd6aff7ec853c88"
-    sha256 cellar: :any,                 x86_64_linux:  "fd39d466906c02acd05f2e8aa5b27b27ba03600baaf084b619e7fabbca509f35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c356cf0f09a84301d5c530caf4dcfc9b1b8e938cc105bde8d1315506fc441c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32c0517fdef91b7940b5c46e858656341ba56c1ca6e05cc01f21fed4f969be7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e425003566d83d60ab4c74c90bb9dd159644f01f9aefabdf1b32cf58b67905ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "442a3946af14dd125be9711b07ecfabbc0ff9090d99389aa65ff01f47f4df41c"
+    sha256 cellar: :any,                 arm64_linux:   "e689100d19ce1abb21c1dbe70e2bccecfda0bd1aa61d6dff4165834b5d46b75a"
+    sha256 cellar: :any,                 x86_64_linux:  "c1b5b35fdbfdf40ab5492ce101552f035faba987b59db5808cbbff0636581483"
   end
 
   depends_on "python@3.14"
