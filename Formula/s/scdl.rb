@@ -9,12 +9,12 @@ class Scdl < Formula
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2933d6b9abf2ab57b2dcf34f2375da404d41671839907cae859a7c35fe5243e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa0f7e8d7b73ba5e09d808559330a6f199455973390624f6cde56e7c3aa26745"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f841cadf3cc1d0008435473cd9f3a6df633027ea60aa08b788f2eb069f69af0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4efced710942d08a7ad853d342ecb5ef60f4608ce217585ddda2d6f8b9e2e494"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c16829e379f62feed329d21de20b43bbbad70dd56f6adcf178d5f4459dfe5f53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe4b2d4ce21d0823ed102f14e39864a70d249c5dcd8cc7c0f37b197fe9a27708"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8945269a1e2a4945cf0591bd47177d5a42ad11086847dc931d9507aa987a020d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9405afe9afe3a04096715c9c3a1560ebf1ebe74d132e4fd345d67949a3f0a6b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c47fe6103d6dbf70a45330e1de543beaa261505cd458a919848d90aae49c05f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d976045d49abc0a2cb20fc4a29e7bdf66b2ba35ab6aecfb3fe6afb486d5fc03b"
+    sha256 cellar: :any,                 arm64_linux:   "e533f109f48a5eac51a9be2c005f6486c67e7f5f5d17e4c48965be59b62f71bc"
+    sha256 cellar: :any,                 x86_64_linux:  "8db6d40cd16e250d111e8d2aef3b7529c1b56e49a06a059b64e09cfc7afa8cc7"
   end
 
   depends_on "certifi" => :no_linkage
