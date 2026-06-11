@@ -8,6 +8,10 @@ class PdfTocgen < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/Krasjet/pdf.tocgen.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "4178fa0d5eae318d730fde9f7114d19ed07d9d819c8c5412de7099d550d5595a"
+  end
+
   depends_on "pymupdf"
   depends_on "python@3.14"
 
