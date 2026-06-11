@@ -1,8 +1,8 @@
 class CargoInsta < Formula
   desc "Snapshot testing CLI for Rust"
   homepage "https://insta.rs"
-  url "https://github.com/mitsuhiko/insta/archive/refs/tags/1.47.2.tar.gz"
-  sha256 "487c7348fc8865fd3218c4252f2603238af1b6ae3501fe51577fb5abd4fe5323"
+  url "https://github.com/mitsuhiko/insta/archive/refs/tags/1.48.0.tar.gz"
+  sha256 "acd7140f00155f3fe50b723296fb828dea9de68297f3e26f8a7e442bcc62fa79"
   license "Apache-2.0"
 
   bottle do
