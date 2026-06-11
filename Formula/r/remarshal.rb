@@ -3,8 +3,8 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/remarshal-project/remarshal"
-  url "https://files.pythonhosted.org/packages/20/e5/e4ccfea50d705b6ca5984634da0ff27c9b4ccf83ed698642d2ee5bdbca94/remarshal-2.0.1.tar.gz"
-  sha256 "0955d26a8596e9b9d1a47c30b823eea13336016b20eea9fca0195ff32c65e193"
+  url "https://files.pythonhosted.org/packages/e6/02/a059f97a0f6757b85c7ebfb6c12383743a4d9c9847410c96ecd68b0821a5/remarshal-2.0.2.tar.gz"
+  sha256 "9a2d51a4567ea57611be6b4e4231372b548fd4b29995afeca6cf0b4abdec3049"
   license "MIT"
   head "https://github.com/remarshal-project/remarshal.git", branch: "master"
 
@@ -64,8 +64,8 @@ class Remarshal < Formula
   end
 
   resource "starlark" do
-    url "https://files.pythonhosted.org/packages/53/eb/6331a20af01bebc7a9894b755c8aa063add289b26c95b22e3fca0ceab8fc/starlark-0.3.0.tar.gz"
-    sha256 "9e775bd6016545e30e4626c0499b7a3bff718fe2fbbe7221a57aaaa520bce282"
+    url "https://files.pythonhosted.org/packages/0c/1c/f7bd41150c9ab4aa4bd02de46a0af88afa8d4da7af73e76aeb209e473ac2/starlark-0.5.0.tar.gz"
+    sha256 "321e1d07dffc8c89eb37945573a59e8e4a965a6f88cb87141010fdf52478eb91"
   end
 
   resource "tomli" do
