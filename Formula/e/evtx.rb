@@ -7,12 +7,12 @@ class Evtx < Formula
   head "https://github.com/omerbenamram/evtx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14b66d509ebd7829d09268b6babc721bb40f43fb462dfa15576fe0677e8e61e9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39270961c9b9c822158a48b3568b193cf0a9258f1aa4fb74786c1c49fee25160"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6183490db0fd4f8093b872b20ccb04621baaf6a1f69ba19042a4537e81413f3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86485fc045f5223fb61430c7a5bcb64681b8f7536e68fbc3f7f7659488509faa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44bee646ed5a476aafb00c3c54b243a3b6abfd05544e2077e935457f96e12ad0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4222f3e515023e356d554780af9067f84f3581a7b87bae63cc2a14dc216d1546"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "253fa779c5af67e5256ccec1b23ffe9332b354ade03aaacb327e3e75ea6552bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e90047464a9607493b0ef3045d458b6469369d9e1b70a9a26ef2048cb615341"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15da29c5b158cda79c4d5c0d89182234c1fc016377d88ce482a5b4e53143e044"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f610bcdfcb210ddda9f975a8ad87edcc18b09bf329450394664016f031b321ed"
+    sha256 cellar: :any,                 arm64_linux:   "dda69a0c96ee33386be125ddb4332063af4e90b1b1cd20cf3cc8f2e89a7fd846"
+    sha256 cellar: :any,                 x86_64_linux:  "947be5ab830edb9eaddb5b2dfd5ca4db66459466ab411401436c7ac4c2305df4"
   end
 
   depends_on "rust" => :build
