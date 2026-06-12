@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://firefox-source-docs.mozilla.org/security/nss/index.html"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_124_RTM/src/nss-3.124.tar.gz"
-  sha256 "80da9f1cbcb267293b2248818d288bc02f874d6a34f1989a2828401d74a0bc9b"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_125_RTM/src/nss-3.125.tar.gz"
+  sha256 "1ad541f10da7c58dec01f540ecc44d28cbbc033f741a57473de5a0893d91606d"
   license "MPL-2.0"
   compatibility_version 1
 
