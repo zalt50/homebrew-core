@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://mise.jdx.dev/"
-  url "https://github.com/jdx/mise/archive/refs/tags/v2026.6.3.tar.gz"
-  sha256 "7672cac7661eff7417a229e2e7d0325a08fbd2730e09b9883b705dd669837af5"
+  url "https://github.com/jdx/mise/archive/refs/tags/v2026.6.4.tar.gz"
+  sha256 "24fb7d0b886e0108f1327df38e533c7ae88aac821385339934e92842857f4130"
   license "MIT"
   head "https://github.com/jdx/mise.git", branch: "main"
 
