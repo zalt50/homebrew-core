@@ -1,10 +1,9 @@
 class Sfcgal < Formula
   desc "C++ wrapper library around CGAL"
   homepage "https://sfcgal.gitlab.io/SFCGAL/"
-  url "https://gitlab.com/sfcgal/SFCGAL/-/archive/v2.2.0/SFCGAL-v2.2.0.tar.gz"
-  sha256 "bb6bb77ddb58523d8c229764de23699f99c1a7011d873419afd2a67df85602a2"
+  url "https://gitlab.com/sfcgal/SFCGAL/-/archive/v2.3.0/SFCGAL-v2.3.0.tar.gz"
+  sha256 "5f6aa1838e5ae31523ebf410cde0240b7a88d7e062b7ffff945e4fae2aaba0fa"
   license "LGPL-2.0-or-later"
-  revision 2
   compatibility_version 1
 
   bottle do
@@ -17,16 +16,13 @@ class Sfcgal < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "boost"
   depends_on "cgal"
   depends_on "gmp"
   depends_on "mpfr"
 
   def install
-    # Workaround for Boost 1.89.0 until fixed upstream
-    # Issue ref: https://gitlab.com/sfcgal/SFCGAL/-/issues/306
-    inreplace "CMakeLists.txt", " SFCGAL_Boost_COMPONENTS thread system ", " SFCGAL_Boost_COMPONENTS thread "
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
