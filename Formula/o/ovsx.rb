@@ -1,8 +1,8 @@
 class Ovsx < Formula
   desc "Command-line interface for Eclipse Open VSX"
   homepage "https://www.npmjs.com/package/ovsx"
-  url "https://registry.npmjs.org/ovsx/-/ovsx-1.0.0.tgz"
-  sha256 "3e844c5ebfdc9ebbd1357a0f8ec78c80464cbe39f6bfe822f11179052afbf568"
+  url "https://registry.npmjs.org/ovsx/-/ovsx-1.0.1.tgz"
+  sha256 "1151c8c77731e5222adad48cf3fc812f20a5086f90f7540821ffe8fa8613bec2"
   license "EPL-2.0"
 
   bottle do
