@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/42/62/333b00dc3b85516e81aec60e87a4bbe18f99f590b4cd09045b7546263abb/snakemake-9.22.0.tar.gz"
-  sha256 "7c276c775a04a85c5a2de3e28f123a1dda6974ce5d6d52de758cd37b5d839cc7"
+  url "https://files.pythonhosted.org/packages/f2/76/a1ee34f3aafe5f0938f3cf6343f880e86cfd4c716b5ccd8a72ad606c4436/snakemake-9.23.0.tar.gz"
+  sha256 "1e764fa8f6bfed79b30ea9ccb5bb17af82163e51cef97e8f7de81a317600babf"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -93,8 +93,8 @@ class Snakemake < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "immutables" do
@@ -233,8 +233,8 @@ class Snakemake < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/1b/22/40f55b26baeab80c2d7b3f1db0682f8954e4617fee7d90ce634022ef05c6/traitlets-5.15.0.tar.gz"
-    sha256 "4fead733f81cf1c4c938e06f8ca4633896833c9d89eff878159457f4d4392971"
+    url "https://files.pythonhosted.org/packages/57/a9/a2584b8313b89f94869ddb3c4074617a691de1812a614d2d50e32ca5a7a6/traitlets-5.15.1.tar.gz"
+    sha256 "7b1c07854fe25acb39e009bae49f11b79ff6cbb2f27999104e9110e7a6b53722"
   end
 
   resource "urllib3" do
