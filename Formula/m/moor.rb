@@ -1,8 +1,8 @@
 class Moor < Formula
   desc "Nice to use pager for humans"
   homepage "https://github.com/walles/moor"
-  url "https://github.com/walles/moor/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "defac420180c46e814be9cb0819b4a8467a78adf0c34d9341909a5867755230e"
+  url "https://github.com/walles/moor/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "7bcb4158373453779574b3de1e7f2689513d446cd9d73f846bfde9d242eb245c"
   license "BSD-2-Clause"
   head "https://github.com/walles/moor.git", branch: "master"
 
