@@ -6,6 +6,15 @@ class SwgpGo < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/database64128/swgp-go.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdfae695127feaa5e26ec03dcbde71f75803c2dab1e4d8c0c297a80dea58ce31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdfae695127feaa5e26ec03dcbde71f75803c2dab1e4d8c0c297a80dea58ce31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdfae695127feaa5e26ec03dcbde71f75803c2dab1e4d8c0c297a80dea58ce31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64fd20ba71db36ab9bf5e3577c797449b8f9c2111f5fd4e5978b6c0911a6b50d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84055bdae48f8444c94d3a63b8c6a0b37487aec3bf0148e8a1eac40c8c590608"
+    sha256 cellar: :any,                 x86_64_linux:  "1e176152d4b820a2aaa2c08e565fea40d8d9050f4fa7a661e3882912a3412f2b"
+  end
+
   depends_on "go" => :build
 
   def install
