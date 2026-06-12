@@ -5,13 +5,13 @@ class Gstreamer < Formula
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.3/gstreamer-1.28.3.tar.bz2"
-    sha256 "a4787d6eea0beacfe63eb607b7ac84bebb3c34fff7c25080a28ffce8cb2169f1"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.4/gstreamer-1.28.4.tar.bz2"
+    sha256 "20d636eba1225a02ab6c13424e2d66504ec4b7fd087804c89b229451defcf165"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.3/gst-plugins-rs-gstreamer-1.28.3.tar.bz2"
-      sha256 "8a476692bd190079fc4b04ac46bce85d6b223558b037eb01d4b2371ae6892811"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.4/gst-plugins-rs-gstreamer-1.28.4.tar.bz2"
+      sha256 "f98d46d712ece665b2f86f72b0bf0283da4a455ba8dab3ef43a9029939647509"
 
       livecheck do
         formula :parent
