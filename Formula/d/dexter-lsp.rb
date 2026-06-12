@@ -7,12 +7,12 @@ class DexterLsp < Formula
   head "https://github.com/remoteoss/dexter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63769777d60c963beb469d2d6316fa684f6e25950ff17b06548668584f17eca2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6494adf1187f6ca90e37834c78d784fc3459886f7116049472a658ba2a486152"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40f13f4fbe6d6735229fa9c3858ebd1804a0e3cd7d50e63c2772b15ea173341d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c7fbc4036c3a2a7ceedd030d8c52510f4fd34b30ae0a6d1a1e2d19510588ad60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac1dc04f0da6b19b27e91237d566631f6ef5c13548af961ebdb796442517c206"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aec2aa6bde3cb262efc12f061473b8f858f1c89b3d17c9aa6a32c22bdd03c89"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "685bfac3dec78bb3ac11799a2c99bdf6bd12bb812a8a816ec3a358c69fabb699"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45f69c3c798bf991b64d7106401b754dfbeeba8f16b950ca7be2efdcd400184f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf74a4ce2474ce61ab717f266e225a918293e3e6e0ac749736144e9aa5f70ea2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3bd00dd576bfefb6ff8755e63987d6622006bf79dd07f1865b8d2aedc54f43c"
+    sha256 cellar: :any,                 arm64_linux:   "267d799f1360158b066053ffde354fd0b46f25a685e94a0843f0d4b3b258dca4"
+    sha256 cellar: :any,                 x86_64_linux:  "dc80bdf389b29eab0c260773aab11f9254ef39f55cdf7b66df4873b3759df9a0"
   end
 
   depends_on "go" => :build
