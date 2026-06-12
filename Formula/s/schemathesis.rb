@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c0/9c/90ef1b14d807c0c78b7df24d319637f0a89281f0741d7b8eac4572b3d1e1/schemathesis-4.21.4.tar.gz"
-  sha256 "320d69dc5d62b626a651fe8b06d7fe6d96d2ada96b733f94e5d35fd947939c3c"
+  url "https://files.pythonhosted.org/packages/4b/a3/f206a0907d66245dcd63ce9bc6da5f09b894cb479d45842dad4b3ab72954/schemathesis-4.21.5.tar.gz"
+  sha256 "ca5e410107df0b42847ad0861bcc5bed13c4583c091b9f1af6cd2370206cb1c0"
   license "MIT"
 
   bottle do
@@ -187,8 +187,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/25/44/ec35f1b6e83094b997da438a02c8c9b0ade2b1e84cfc48bd4656780760a6/starlette-1.2.1.tar.gz"
-    sha256 "9b9b5ebb992e67d6093741e63c2f59e4f6fff986f81163c087867bd7b924b3f6"
+    url "https://files.pythonhosted.org/packages/c1/37/cc24e33974e1439cf5ca62b0735b63026eabb768f472d8775f52d5851ed9/starlette-1.3.0.tar.gz"
+    sha256 "bb58cbb7a699da4ee4be9ed4cdfe4bc5b0390aa6dac1d1ac714ebebe8dc3c8df"
   end
 
   resource "starlette-testclient" do
