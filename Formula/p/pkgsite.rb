@@ -11,6 +11,15 @@ class Pkgsite < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92de73e02ca09a0d3a859a6c3cdaaeba62732dad04fe76eac9f3de690ea7dad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f92de73e02ca09a0d3a859a6c3cdaaeba62732dad04fe76eac9f3de690ea7dad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f92de73e02ca09a0d3a859a6c3cdaaeba62732dad04fe76eac9f3de690ea7dad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "204b1d2578cbe197d524ac32190d3ddc108dadb1b2bdb86698ea097c1a05fc12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e0e4dd2f54190a3d34a76ebec736d89a56c49aa828e93c330fc593bae4c1cb8"
+    sha256 cellar: :any,                 x86_64_linux:  "c1a83ddfd2b0d09df02d15f25817ac95ff5087e6065a15d3fc6bf2c330d64e0f"
+  end
+
   depends_on "go" => [:build, :test]
 
   def install
