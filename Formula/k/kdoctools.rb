@@ -17,13 +17,12 @@ class Kdoctools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e8833cc271c9d6bab73c9bfef8d442454eae7bf1a33077d35157269704886ba2"
-    sha256 cellar: :any,                 arm64_sequoia: "879f16987fff661f7aba032d9c3e12e073ce13a45cd443e63ccb8a5b2b8807ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "f4c1fe796f10c4d37c085e99d409c640d901b28d7b86f50c8c52589a927e80b8"
-    sha256 cellar: :any,                 sonoma:        "b4e32a93fe19a1737910773c18d3a9704fb0378cd77b832afc94a19aeea3091c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36e8cf47214eb6288b97006e2eecf34de737cf3dc0c749aa85f0db0680e11a40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ebf8247240f8d0e9ae459f5d608d30253f2b2d989bbc69a669be4923632c8f3"
+    sha256 cellar: :any, arm64_tahoe:   "1661999ff0bc81cdd65cd4d780b066c1176733ba835034dbd5c17d1ed00def4a"
+    sha256 cellar: :any, arm64_sequoia: "d49cc1ccb498749e0a020f43d57f24e105bf60b8e376acac23939a634300741c"
+    sha256 cellar: :any, arm64_sonoma:  "0dcf02f6b098fd607d091f43e9ddd026d08c585ebb78a421d3eef17c45cbca8d"
+    sha256 cellar: :any, sonoma:        "d1a74d91a4be763e3382044a72fa45bd8931d94fd6cbe81385a410d94d96771d"
+    sha256 cellar: :any, arm64_linux:   "1817b4173d6f05bfe3a7fa79d20ecbcf32e4ccd6ff4f6f7af620b5b83bf061bf"
+    sha256 cellar: :any, x86_64_linux:  "f3d06a2c967dc6b006e622dd86f1ca6580cee09cbcbb52cf98bd10e43a1eb1b0"
   end
 
   depends_on "cmake" => [:build, :test]
