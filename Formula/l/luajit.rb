@@ -10,14 +10,14 @@ class Luajit < Formula
   # Get the latest commit with:
   #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
   # This is a rolling release model so take care not to ignore CI failures that may be regressions.
-  url "https://github.com/LuaJIT/LuaJIT/archive/b925b3e3fc6771171602323b45fbe9fb8fc90369.tar.gz"
+  url "https://github.com/LuaJIT/LuaJIT/archive/194d7f2d635a11193177f0ed820ae419148f0b70.tar.gz"
   # Use the version scheme `2.1.timestamp` where `timestamp` is the Unix timestamp of the
   # latest commit at the time of updating.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.1780076327"
-  sha256 "64093b16de26069824941be6c2537e1d18b360c4b4d7117393e68d3ebeb3c51a"
+  version "2.1.1781341259"
+  sha256 "6a9c168d002f698bd8c76d5bb2e3ee3615297c9c8e4cf00992a04a4e5baaac56"
   license "MIT"
-  compatibility_version 9
+  compatibility_version 10
   head "https://github.com/LuaJIT/LuaJIT.git", branch: "v2.1"
 
   livecheck do
@@ -82,11 +82,11 @@ class Luajit < Formula
   test do
     assert_includes shell_output("#{bin}/luajit -v"), " #{version} "
 
-    system bin/"luajit", "-e", <<~EOS
+    system bin/"luajit", "-e", <<~LUA
       local ffi = require("ffi")
       ffi.cdef("int printf(const char *fmt, ...);")
       ffi.C.printf("Hello %s!\\n", "#{ENV["USER"]}")
-    EOS
+    LUA
 
     # Check that LuaJIT can find its own `jit.*` modules
     touch "empty.lua"
