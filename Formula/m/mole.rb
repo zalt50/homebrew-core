@@ -1,9 +1,9 @@
 class Mole < Formula
   desc "Deep clean and optimize your Mac"
   homepage "https://github.com/tw93/Mole"
-  url "https://github.com/tw93/Mole/archive/refs/tags/V1.42.0.tar.gz"
-  sha256 "3bfe6a59688688502936dcc4afa2f7016f7e11223cf837f4c5e02be8da3dfb57"
-  license "MIT"
+  url "https://github.com/tw93/Mole/archive/refs/tags/V1.43.0.tar.gz"
+  sha256 "22de731d20d6adecdfd5c81fb71a5be3f3a2e3b53ef0bc3c14418fb5307998cc"
+  license "GPL-3.0-or-later"
   head "https://github.com/tw93/Mole.git", branch: "main"
 
   # There exists a version like `vx.y.z-windows`
