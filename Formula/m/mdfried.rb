@@ -1,8 +1,8 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.22.1.tar.gz"
-  sha256 "43c9355980ca3ee275145ba710a4bd4d56c7ef271c5dc1fe4bbb43a00d7306de"
+  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.22.2.tar.gz"
+  sha256 "e49fb7cf7fa5d88b0b1147094c9b1eb541bf7b7bf8f314d1d2efab47755dd092"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
