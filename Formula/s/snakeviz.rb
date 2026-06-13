@@ -6,7 +6,7 @@ class Snakeviz < Formula
   url "https://files.pythonhosted.org/packages/04/06/82f56563b16d33c2586ac2615a3034a83a4ff1969b84c8d79339e5d07d73/snakeviz-2.2.2.tar.gz"
   sha256 "08028c6f8e34a032ff14757a38424770abb8662fb2818985aeea0d9bc13a7d83"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caa2dfd45227bbabbd439daad82e781b673b9a02fb5843d3272bc67f8f11a580"
@@ -20,8 +20,8 @@ class Snakeviz < Formula
   depends_on "python@3.14"
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/f8/f1/3173dfa4a18db4a9b03e5d55325559dab51ee653763bb8745a75af491286/tornado-6.5.5.tar.gz"
-    sha256 "192b8f3ea91bd7f1f50c06955416ed76c6b72f96779b962f07f911b91e8d30e9"
+    url "https://files.pythonhosted.org/packages/64/24/95ec527ad67b76d59299e5465b3935d05e4294b7e0290a3924b7487df30b/tornado-6.5.7.tar.gz"
+    sha256 "66c513a76cda70d53907bc27cf1447557699c2e95aa48ba27a442ff61c3ddfc2"
   end
 
   def install
