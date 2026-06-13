@@ -7,12 +7,12 @@ class Changie < Formula
   head "https://github.com/miniscruff/changie.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b8c7a772d22945664c819188760f965a5eb980dcf9e1b70cbf2cd613ea8d5ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b8c7a772d22945664c819188760f965a5eb980dcf9e1b70cbf2cd613ea8d5ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b8c7a772d22945664c819188760f965a5eb980dcf9e1b70cbf2cd613ea8d5ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d1cb0bc66debb06f873a96910a84face35d8da178ced5b8d4ea5b68daf679cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c96035292ae6111bfab9a5c4ecf9aa684ae3540347a3a059fd2e2df75f9a20ed"
-    sha256 cellar: :any,                 x86_64_linux:  "cd187fb73f02ff1f7dd2ff6f05715e2dda837927375fb6e9fe787e349f8d55ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8501d7618a56655fde8baf855b57fd085a8df481e5252dd45f4997779156a55f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8501d7618a56655fde8baf855b57fd085a8df481e5252dd45f4997779156a55f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8501d7618a56655fde8baf855b57fd085a8df481e5252dd45f4997779156a55f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "081b7d9f6002c817366c768b86e5042a7c2b3fa227e01d2bd0495afff5baa8ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6daf8a737cf8e503180d588bce6fef87fa01e867e69756ed61d8b4e8f95cdc59"
+    sha256 cellar: :any,                 x86_64_linux:  "23cc7e1f660593c8591e3472b528f754055ed2b93d955902900d8a6e611aee4c"
   end
 
   depends_on "go" => :build
