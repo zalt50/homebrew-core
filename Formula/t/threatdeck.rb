@@ -1,8 +1,8 @@
 class Threatdeck < Formula
   desc "TUI threat intelligence monitoring and alerting platform"
   homepage "https://threatdeck.io/"
-  url "https://github.com/gripebomb/ThreatDeck/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "eca039c274ffc0c1f121d2f5f22f68d070011b2754819aa7a6ed58e50c9b5b7e"
+  url "https://github.com/gripebomb/ThreatDeck/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "7fafb2a934a76a3c19b839149d12f12fc5ae9becfd353306f40e3c9234d1f653"
   license "MIT"
   head "https://github.com/gripebomb/ThreatDeck.git", branch: "main"
 
@@ -15,7 +15,9 @@ class Threatdeck < Formula
     sha256 cellar: :any,                 x86_64_linux:  "1c62325d1692ca8c10d7858e7120386be696046a381816fef0f93bc6b9561925"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@4"
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -33,7 +35,9 @@ class Threatdeck < Formula
     sleep 2
     input.close
 
-    screenlog = (testpath/"screenlog.ansi").read
+    # The captured TUI screen contains invalid UTF-8 bytes, which would make
+    # assert_match raise; scrub them before matching.
+    screenlog = (testpath/"screenlog.ansi").read.scrub
     assert_match "Alert retention", screenlog
   ensure
     Process.kill("TERM", wait_thr.pid)
