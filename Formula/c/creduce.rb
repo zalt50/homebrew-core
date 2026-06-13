@@ -76,8 +76,13 @@ class Creduce < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6792f620f4a932cbbb518201e715cf09e9f90208a651e317aad521a6b8cd2a9f"
   end
 
+  # Last release on 2019-05-13 with only LLVM 14 support.
+  # Requires multiple patches to use newer LLVM.
+  deprecate! date: "2026-06-13", because: :unmaintained
+  disable! date: "2027-06-13", because: :unmaintained
+
   depends_on "astyle"
-  depends_on "llvm@20"
+  depends_on "llvm@21"
 
   uses_from_macos "flex" => :build
   uses_from_macos "perl"
@@ -121,6 +126,13 @@ class Creduce < Formula
   patch do
     url "https://github.com/csmith-project/creduce/commit/62bd78d6d621faca246a1b2b659b75bf721aa184.patch?full_index=1"
     sha256 "fe476690a81b3a6d9cda06058515fc49a250f1a0b6d9ecf30a9a9dc68ab7987d"
+  end
+
+  # Apply open PR to support LLVM 21 (via Debian patch to consolidate all commits)
+  # PR ref: https://github.com/csmith-project/creduce/pull/289
+  patch do
+    url "https://salsa.debian.org/toolchain-team/creduce/-/raw/86e45dd83b7e8e88d9e5398ff8556883c1679629/debian/patches/289.diff"
+    sha256 "90a53403a0e1a69227bf46866d8e36f68b218b420695e08c5846bc6f1705fb31"
   end
 
   def install
