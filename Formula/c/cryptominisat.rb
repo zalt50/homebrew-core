@@ -1,8 +1,8 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
   homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.14.5.tar.gz"
-  sha256 "1deb009ffc832382529e72da804480696e9cd8f51117b2202907a13866b96a2a"
+  url "https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.14.6.tar.gz"
+  sha256 "7bd66de0eb9d0e603667ab1d3db8fb54c107cc8ce1537e3400277b76864a0a6c"
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
@@ -33,9 +33,9 @@ class Cryptominisat < Formula
 
   # Currently using revision in flake.lock
   resource "cadical" do
-    url "https://github.com/meelgroup/cadical/archive/ade472d3dba145fd53c19d486f5916b6259449c6.tar.gz"
-    version "ade472d3dba145fd53c19d486f5916b6259449c6"
-    sha256 "fc42be82d65bab670b6e100db18776048e5e506a8a6aa12da64873e3f5bf8d03"
+    url "https://github.com/meelgroup/cadical/archive/394c3f72858c2fe8cd35321f74f11f0f61c91123.tar.gz"
+    version "394c3f72858c2fe8cd35321f74f11f0f61c91123"
+    sha256 "68756da68674bdd689e9ac7735ab98363c9dca8ee0c7369b2083be0daabf7039"
 
     livecheck do
       url "https://raw.githubusercontent.com/msoos/cryptominisat/refs/tags/release/v#{LATEST_VERSION}/flake.lock"
@@ -47,9 +47,9 @@ class Cryptominisat < Formula
 
   # Currently using revision in flake.lock
   resource "cadiback" do
-    url "https://github.com/meelgroup/cadiback/archive/35f027383abf3b4b52bbc8af789c8f1aa3d84ad2.tar.gz"
-    version "35f027383abf3b4b52bbc8af789c8f1aa3d84ad2"
-    sha256 "c0066295ccf209617e18eba89d5fc8b3d4baabf2184441bdaea600add32a2453"
+    url "https://github.com/meelgroup/cadiback/archive/3b6a84062b1304433eb8960a4bff6b9a80de9c54.tar.gz"
+    version "3b6a84062b1304433eb8960a4bff6b9a80de9c54"
+    sha256 "336fcaa8a205fd70230ceabb28795e24e7c91b907cd7d811056368783f0770b5"
 
     livecheck do
       url "https://raw.githubusercontent.com/msoos/cryptominisat/refs/tags/release/v#{LATEST_VERSION}/flake.lock"
