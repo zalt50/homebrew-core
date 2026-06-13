@@ -1,8 +1,8 @@
 class Flawz < Formula
   desc "Terminal UI for browsing security vulnerabilities (CVEs)"
   homepage "https://github.com/orhun/flawz"
-  url "https://github.com/orhun/flawz/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "c5d30dfa1c07f5e5337f88c8a44c4c22307f5ade7ba117ef6370c39eb3e588b0"
+  url "https://github.com/orhun/flawz/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "641264999d2a5d662bc3d9c3994fcc580b92a2e9051c79fbcb8fdb2220924f30"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/orhun/flawz.git", branch: "main"
 
@@ -49,10 +49,12 @@ class Flawz < Formula
     assert_match version.to_s, shell_output("#{bin}/flawz --version")
 
     require "pty"
-    PTY.spawn(bin/"flawz", "--url", "https://nvd.nist.gov/feeds/json/cve/1.1") do |r, _w, _pid|
-      assert_match "Syncing CVE Data", r.read
-    rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
-    end
+    output_log = testpath/"output.log"
+    pid = PTY.spawn(bin/"flawz", [:out, :err] => output_log.to_s).last
+    sleep 2
+    assert_match "Syncing CVE Data", output_log.read
+  ensure
+    Process.kill "TERM", pid
+    Process.wait pid
   end
 end
