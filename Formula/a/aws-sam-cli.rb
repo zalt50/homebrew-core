@@ -3,8 +3,8 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/01/50/577a6b040cfa9cc4c3f62f0c49e11128affbd75bdf4ea1fd55802decdcd5/aws_sam_cli-1.162.0.tar.gz"
-  sha256 "5076ada57721c0a6b801a0b3512ae1b58a738a5e852ba92463d0b480084f844d"
+  url "https://files.pythonhosted.org/packages/47/12/34d86c3f31d0155361f89cee79343c45e0ac96783b6d5acd1428c3fa7629/aws_sam_cli-1.162.1.tar.gz"
+  sha256 "4a916fb481aa9544d4139819c2ca583d114807a804e6ce6c3910b58634af9574"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sam-cli.git", branch: "develop"
 
@@ -73,13 +73,13 @@ class AwsSamCli < Formula
   end
 
   resource "boto3-stubs" do
-    url "https://files.pythonhosted.org/packages/92/2e/29abbf67dc4778203f7b77ed6ad33c6fb524a6742d74af79f3d7534ebd7c/boto3_stubs-1.43.27.tar.gz"
-    sha256 "a756552f1764dbd29e255ab5c45c291246c413fbbe9047b4e085ef0f1010688d"
+    url "https://files.pythonhosted.org/packages/bd/5d/2775423ce41c2c84ce316ee6c10728da8ec9987580da600548322f18f3d8/boto3_stubs-1.43.29.tar.gz"
+    sha256 "4d7829eca11f02a652d72b353fbd81a5192ae55d9f7425b81d102a51f01d8e58"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fa/4e/db50ef135f1d9ffc85e209a124004a5829d8f12f4a7a0afdf380cb19866d/botocore-1.43.27.tar.gz"
-    sha256 "2093c316c24214e50e18640b1869513b759bb8cc48b95b004a8306cb9f0d6703"
+    url "https://files.pythonhosted.org/packages/6f/54/df99c5ca5c9ef275e34b87e177782e3ca054fc35f1f462c40fe180936c81/botocore-1.43.29.tar.gz"
+    sha256 "dce39d33b707aa162aa3820975f99d7f8f746d46576169fb42ce4f2b3b56b261"
   end
 
   resource "botocore-stubs" do
@@ -203,8 +203,8 @@ class AwsSamCli < Formula
   end
 
   resource "mypy-boto3-iam" do
-    url "https://files.pythonhosted.org/packages/8c/51/ac4c987c0e25c1a27430649dcde68b4775e68505cb71987b8d79c5c31ab4/mypy_boto3_iam-1.43.2.tar.gz"
-    sha256 "bb0325ab5e61c5a4627759ffe9fa6fbf4d227146f0b4858555f7a0289622f50a"
+    url "https://files.pythonhosted.org/packages/16/12/ddeb415e0465ebc8bbd439ba11d693eed3a4a894c6c37d662eb1de6333c3/mypy_boto3_iam-1.43.29.tar.gz"
+    sha256 "91c8a7147774409b7710bbd8478c66e28d63e8d67e8737c7034a591e00ef0940"
   end
 
   resource "mypy-boto3-kinesis" do
