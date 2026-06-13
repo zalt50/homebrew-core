@@ -1,10 +1,10 @@
 class Shellshare < Formula
   desc "Live Terminal Broadcast"
   homepage "https://github.com/vitorbaptista/shellshare"
-  url "https://github.com/vitorbaptista/shellshare/archive/refs/tags/v2.0.5.tar.gz"
-  sha256 "68469121e9209eb9b916c2246d06af9f5408db66d9bc8fc916d0f9fed99001a0"
+  url "https://github.com/vitorbaptista/shellshare/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "49ab3ef73c7fb77be482950a0ee36e9d2cb497b06259ade9f7a88f4db672e1bb"
   license "Apache-2.0"
-  head "https://github.com/vitorbaptista/shellshare.git", branch: "master"
+  head "https://github.com/vitorbaptista/shellshare.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a75120585874d126689d8dcc50415013565a05f9799e60841ca7c866562ff767"
@@ -25,11 +25,11 @@ class Shellshare < Formula
     assert_match version.to_s, shell_output("#{bin}/shellshare --version")
 
     port = free_port
-
-    Open3.popen3(bin/"shellshare", "--server", "http://localhost:#{port}") do |_, stdout, _, w|
-      assert_match("Sharing terminal", stdout.readline)
-    ensure
-      Process.kill "TERM", w.pid
-    end
+    pid = spawn(bin/"shellshare", "server", "--port", port.to_s)
+    sleep 2
+    assert_match "shellshare", shell_output("curl --silent --max-time 5 http://localhost:#{port}")
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
