@@ -5,6 +5,15 @@ class DbxCli < Formula
   sha256 "df8a2c6dc213f4e137dc451eb92a825d0c33fb8da22f5b4de6aec54105a159c5"
   license "Apache-2.0"
 
+  bottle do
+    sha256               arm64_tahoe:   "de966e670a51045e03746fb8f9952acd3d67269e112bdc13c140e436be29e688"
+    sha256               arm64_sequoia: "99874b6b2988df664cd77245adc1cb2c8a959254188b62eb5a7790c4addc16f1"
+    sha256               arm64_sonoma:  "11bb165a4314fd824988adf6cbae96ebe2a3364f208788c48d1b9ad0858a49c6"
+    sha256               sonoma:        "aadc72fb43773ea145e0cbf3123f9c02815fb31ffffff9e2579ed715560491a7"
+    sha256 cellar: :any, arm64_linux:   "7bc1142e06a5ede263a2197e419c6e9fc08fec74cc47fc579e0739d06e32ecef"
+    sha256 cellar: :any, x86_64_linux:  "9d38fc531e4b9b9f43489ca6123a3c8618dc1c3cd087428267d5060b4cfc22da"
+  end
+
   depends_on "node"
 
   on_linux do
