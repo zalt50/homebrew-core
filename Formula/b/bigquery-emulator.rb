@@ -7,12 +7,12 @@ class BigqueryEmulator < Formula
   head "https://github.com/goccy/bigquery-emulator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fa7217894d18af35af384f12d60d1542f9f6094c3c367ef948a3f4571077369"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fa7217894d18af35af384f12d60d1542f9f6094c3c367ef948a3f4571077369"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fa7217894d18af35af384f12d60d1542f9f6094c3c367ef948a3f4571077369"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc1ded740f62a2a70c255862dc7df35226f9177798a043d2a3c470ff1917d33b"
-    sha256 cellar: :any,                 arm64_linux:   "1830d1f0792d3aa619244d8c38a992b19feb4120284f62a0fa2cc165b79df2b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d235841aafa163b1479e287d1b5cb6dbd4365af973fe8e0d443f26d29d3dbb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a397c8bc93742701c7799ee2ecddabfec3df714726796fcb4e8e6d61f14d1497"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a397c8bc93742701c7799ee2ecddabfec3df714726796fcb4e8e6d61f14d1497"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a397c8bc93742701c7799ee2ecddabfec3df714726796fcb4e8e6d61f14d1497"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f37f93ed098640539dfe797b8af9f8426ec20a0a8bb4d55cfa1e860bec5633f7"
+    sha256 cellar: :any,                 arm64_linux:   "e471034a6d450e9500fd3042723b98b87e337d2f8fb6c9e5531bb05139002fd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff25d427abf1af93767169775f4259745bebc4ec7a23085dc0a1b3bc49bf407f"
   end
 
   depends_on "go" => :build
