@@ -24,12 +24,13 @@ class Taskopen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88c6ca32bc458061057c90fa56237a7e0d0c7e7325a9b8f18e8750b6bb822b5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5ad079b35dabb3834b719543b3f3ec64373cd538bf9920a8c801543f43c408a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19ab00cba3ecabd049d3852c0dfed545462ccab1bce5072591eb4d27c5758071"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a0350d52c91cd2aa71a76feeb6197551d65a6eb3e9e2cd9150691742e0c6549"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "822855f8d7f1453c212863347f73a256b63f7939a9f32a03f6ff216816557d9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c58603d593ac29b6893b614cdde533fac5c6c3271383303698081e11e9fdc364"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da42ed8caf399acc74ddd682209d6673a47eed66c23172fa9856882554113de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38746ec6070116946d4d63fffceebd884df4db71e8092958d0197356ae693ea8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edf50c36fb82f0096fba1700cf00c68f27a6da173fa49a2c09e7935c7e60ad5b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "078950525ce9f618c1a98b4e552e73417ad094500be2494e4061a3c2d1474bb6"
+    sha256 cellar: :any,                 arm64_linux:   "82fee5c6862258f84333118f2916ad4dee8b3ab4449f8f2f96f101486c71d260"
+    sha256 cellar: :any,                 x86_64_linux:  "f1150a5b56acd30150070169ca2a96ac3f41caf9d5b2cdb39b311d02aa5202a9"
   end
 
   depends_on "nim" => :build
