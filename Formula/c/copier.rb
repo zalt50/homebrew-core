@@ -3,8 +3,8 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/98/77/1b96b1b174e576155a8ce7361ecbf5e3cf8c679cec49acf6f4adf3f68f39/copier-9.15.1.tar.gz"
-  sha256 "0fceec8c27d80a0573809837472f4aaee48b90930f473f9674847a02a2ad7da5"
+  url "https://files.pythonhosted.org/packages/ae/8f/c0e30c11a9c0e0bd6158a1ba33190f3faf2e3659da1295f8817ccab9002b/copier-9.15.2.tar.gz"
+  sha256 "58d07c62a3426c4f5b8c482c8cda59646de53733388536427356a8625116050c"
   license "MIT"
 
   bottle do
@@ -63,13 +63,13 @@ class Copier < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "plumbum" do
-    url "https://files.pythonhosted.org/packages/dc/c8/11a5f792704b70f071a3dbc329105a98e9cc8d25daaf09f733c44eb0ef8e/plumbum-1.10.0.tar.gz"
-    sha256 "f8cbf0ecec0b73ff4e349398b65112a9e3f9300e7dc019001217dcc148d5c97c"
+    url "https://files.pythonhosted.org/packages/0c/6a/1d1b143420fcdfc8902f2db6b7d1d2325211461c5f2a43c849de7afad688/plumbum-2.0.1.tar.gz"
+    sha256 "61623f856dcb09eb20dcd5aa708dfb3cd04b6f4ab10224d39303b163bb1c4c61"
   end
 
   resource "prompt-toolkit" do
@@ -93,8 +93,8 @@ class Copier < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
-    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
+    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
   end
 
   def install
