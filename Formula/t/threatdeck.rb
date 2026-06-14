@@ -7,12 +7,12 @@ class Threatdeck < Formula
   head "https://github.com/gripebomb/ThreatDeck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc7d8bdc2065418c881e0feef2ee4ca4059795c6a981ec793237fe079496431b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a52fdecde90e732c37ad438637cec658b92af0321aea32aa49b4ea1d5f46853"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46f272598ba7d13df7a7735aa2b1536ff304c3ef0e938295c52b0fd400beaa52"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa7dc27ea1ef901b96671c330ca85cefde44ede850bef4962a85f4639705e76e"
-    sha256 cellar: :any,                 arm64_linux:   "0258d2039b8ee7cfc999598f47884fd1ec06f4aaf3bac87c81cd847b01fe1c86"
-    sha256 cellar: :any,                 x86_64_linux:  "1c62325d1692ca8c10d7858e7120386be696046a381816fef0f93bc6b9561925"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1aa44bd0bbb9f8c9bb3d700560c14e146d4c049de878aeb8199c9fa6bf41ebab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "338a548ca952c2bca1a14b535ecd0277479f7e8dc7ec50ffee93f8f5af8f7d5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e181e7e369c964b462da325c17310e46064c63fc89d0a04b7f6e6f138ebd168"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a451b8d1f1f7318fa7044019798035f97d73203bdcf3d14b311d4ccc00090a8"
+    sha256 cellar: :any,                 arm64_linux:   "218ee543e23f78ed2cb7f2ed31f2d0c99877b94c409b2165950202de6187f421"
+    sha256 cellar: :any,                 x86_64_linux:  "30311f7dc707c911e6380c2f060ebe9b959594b333d5efeef5c5ebc98622d675"
   end
 
   depends_on "pkgconf" => :build
