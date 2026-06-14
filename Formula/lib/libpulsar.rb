@@ -1,11 +1,10 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=pulsar/pulsar-client-cpp-4.1.0/apache-pulsar-client-cpp-4.1.0.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-4.1.0/apache-pulsar-client-cpp-4.1.0.tar.gz"
-  sha256 "e06120720dc40dd9daf05ad9c8aa1b27c1cf28f952a2905fed2641e749f33857"
+  url "https://www.apache.org/dyn/closer.lua?path=pulsar/pulsar-client-cpp-4.2.0/apache-pulsar-client-cpp-4.2.0.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-4.2.0/apache-pulsar-client-cpp-4.2.0.tar.gz"
+  sha256 "cc48a168dc44dc2f89122edd692c2919736c794564c8a71c6a7acff86ca2d315"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "30baaab116d686cbc70fc952ede49c83f4c91433b2400d558a6086b53d4a6cb5"
@@ -32,11 +31,6 @@ class Libpulsar < Formula
   end
 
   def install
-    # Fix build for apple, pr ref: https://github.com/apache/pulsar-client-cpp/pull/562
-    inreplace "CMakeLists.txt", "-mpclmul", "" if OS.mac? && Hardware::CPU.arm?
-    # Fix modern boost signature, pr ref: https://github.com/apache/pulsar-client-cpp/pull/561
-    inreplace "lib/AutoClusterFailover.cc", ".cancel(ignored)", ".cancel()"
-
     args = %W[
       -DBUILD_TESTS=OFF
       -DCMAKE_CXX_STANDARD=17
