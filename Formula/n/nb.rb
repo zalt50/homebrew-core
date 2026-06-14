@@ -30,6 +30,7 @@ class Nb < Formula
   test do
     # EDITOR must be set to a non-empty value for ubuntu-latest to pass tests!
     ENV["EDITOR"] = "placeholder"
+    ENV["GIT_CONFIG_GLOBAL"] = "#{testpath}/.gitconfig"
 
     assert_match version.to_s, shell_output("#{bin}/nb version")
 
