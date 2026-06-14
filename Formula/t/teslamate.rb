@@ -44,13 +44,13 @@ class Teslamate < Formula
     bin.install_symlink Dir["#{libexec}/bin/teslamate"]
 
     # Corresponds to https://github.com/teslamate-org/teslamate/blob/main/entrypoint.sh
-    (bin/"teslamate_brew_services").write <<~EOS
+    (bin/"teslamate_brew_services").write <<~BASH
       #!/bin/bash
       set -e
       source #{etc}/teslamate.env
       #{bin}/teslamate eval "TeslaMate.Release.migrate"
       exec #{bin}/teslamate start
-    EOS
+    BASH
   end
 
   service do
