@@ -3,18 +3,18 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https://github.com/okigan/awscurl"
-  url "https://files.pythonhosted.org/packages/f0/df/4db11e9a172ce840d73c37f40ee326d49dac7180792fdbc4d25d1f4706f0/awscurl-0.43.tar.gz"
-  sha256 "f13aef46b7881e34a94ebe389f8c782975ee4bfeb32751eaef334a95c3fec3d2"
+  url "https://files.pythonhosted.org/packages/c8/77/7da6af880d56aed4a4023bb7c725e15c72a3088afd729ffd373eed0f5a18/awscurl-0.44.tar.gz"
+  sha256 "13056e867ac33f556f29d3662102bfc3c40259ea037c6d817c5914dbb2bbd948"
   license "MIT"
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "35dacfee65535d93d208d26475465ab2c752abd7745f88876f981a8749a80ffd"
-    sha256 cellar: :any, arm64_sequoia: "ed876ce64b696f3d6246e6b64e6a40a828dba8a03510fe774701f490e002b532"
-    sha256 cellar: :any, arm64_sonoma:  "3820bc2973e18477a8e93848b66561d63fc9f1c7c929c26bd1a6da15847389d8"
-    sha256 cellar: :any, sonoma:        "5044fdb36ae874bdd6cf1aaae8c588ece0d64dedec4c2d9338659507c44a5bc9"
-    sha256 cellar: :any, arm64_linux:   "2abfd50b5aac7e670ef976811e2b6d2eb9e0bf12344fb5f9d622eafa7f60c07e"
-    sha256 cellar: :any, x86_64_linux:  "7058c1e40757c5a784ba0d0c85526db5ce71f312019ca48038750c6f98814b31"
+    sha256 cellar: :any, arm64_tahoe:   "3a01db02b1d5817a61f748689526453a1e1d2169fc0ccd746076cdef8a92fc4a"
+    sha256 cellar: :any, arm64_sequoia: "6b745b6f5eaebf72915629aa572ccfc3e5d2be8a5a1aaa9a2cf7d4691ad23d01"
+    sha256 cellar: :any, arm64_sonoma:  "f13feb196ff712eceb8622dac1e24833bbe3ff2fca361e9ae487d85da0c6a450"
+    sha256 cellar: :any, sonoma:        "f98b3c1038167358c1b93a16fd6c09e82980f6f7d49dd8be2d0d895987764e8c"
+    sha256 cellar: :any, arm64_linux:   "f2eeabf5498099b8f4c37412bbb4d1e61d2d20c306b500d100e957faa04ce6d4"
+    sha256 cellar: :any, x86_64_linux:  "43500b061cca631609e815b407f8b61e84de340bbb265d26d31ed6a78665fad8"
   end
 
   depends_on "cmake" => :build # for `awscrt`
