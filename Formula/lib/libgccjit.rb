@@ -5,15 +5,15 @@ class Libgccjit < Formula
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
-    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
-    mirror "https://ftp.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
-    sha256 "fa59c1beef8995f27c4d71c1df227587189315d3e6faff1bb4306e61b0c530eb"
+    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz"
+    mirror "https://ftp.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz"
+    sha256 "50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-15-branch
+    # Apple Silicon support, located at https://github.com/iains/gcc-16-branch
     patch do
       on_macos do
-        file "Patches/gcc/gcc-15.3.0.diff"
+        file "Patches/gcc/gcc-16.1.0.diff"
       end
     end
   end
@@ -51,6 +51,7 @@ class Libgccjit < Formula
   end
 
   on_linux do
+    depends_on "binutils"
     depends_on "zlib-ng-compat"
   end
 
@@ -104,6 +105,9 @@ class Libgccjit < Formula
       # https://stackoverflow.com/a/54038769
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
+
+      # Use our own (recent) binutils
+      args << "--with-as=#{Formula["binutils"].opt_bin}/as"
 
       ENV.append_path "CPATH", Formula["zlib-ng-compat"].opt_include
       ENV.append_path "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib
