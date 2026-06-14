@@ -7,7 +7,7 @@ class Summarize < Formula
   head "https://github.com/steipete/summarize.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8226489b3b834c6394171843ce6204c8b4c50e25879f6940079a3ad5b760b474"
+    sha256 cellar: :any_skip_relocation, all: "db4a540c6e57c6486832e1d696fb89c7fcfb9ea3ac2ff008ee434a412ab2cbec"
   end
 
   depends_on "ffmpeg"
