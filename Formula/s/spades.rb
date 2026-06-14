@@ -3,8 +3,8 @@ class Spades < Formula
 
   desc "De novo genome sequence assembly"
   homepage "https://ablab.github.io/spades/"
-  url "https://github.com/ablab/spades/releases/download/v4.2.0/SPAdes-4.2.0.tar.gz"
-  sha256 "043322129f8536411f1172b7d1c9adfcb6d49d152c10066ccc03e86b6f615a6b"
+  url "https://github.com/ablab/spades/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "6ed35f1c9ca7eedab2b1bdb7437b6dccf3cf5a5e8373ff4c28ce2d08d8a82954"
   license "GPL-2.0-only"
   head "https://github.com/ablab/spades.git", branch: "main"
 
