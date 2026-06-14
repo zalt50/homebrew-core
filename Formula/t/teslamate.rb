@@ -1,8 +1,8 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "ff5a69943b922b9ffa716ab8813df89927d5a7c343e712758ecfc36874e13500"
+  url "https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "508dea91bfcd331d3acfbde90b3e7fe4c5755bb4b8080577053cd8f111f4c3d1"
   license "AGPL-3.0-or-later"
 
   bottle do
