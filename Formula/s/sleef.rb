@@ -21,6 +21,11 @@ class Sleef < Formula
   depends_on "cmake" => :build
 
   def install
+    # Allow building SVE support for PyTorch.
+    # TODO: Check in SLEEF 4.0 if SVE is disabled by default:
+    # Ref: https://github.com/shibatch/sleef/discussions/673#discussioncomment-12610711
+    ENV.runtime_cpu_detection if OS.linux? && Hardware::CPU.arm?
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DSLEEF_BUILD_INLINE_HEADERS=TRUE",
                     "-DSLEEF_BUILD_SHARED_LIBS=ON",

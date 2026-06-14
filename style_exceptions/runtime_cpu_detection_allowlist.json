@@ -46,6 +46,7 @@
   "qt",
   "qtbase",
   "qtwebengine",
+  "sleef",
   "spades",
   "spidermonkey",
   "svt-av1",
