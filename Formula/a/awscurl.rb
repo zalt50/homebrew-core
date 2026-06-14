@@ -3,8 +3,8 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https://github.com/okigan/awscurl"
-  url "https://files.pythonhosted.org/packages/f0/df/4db11e9a172ce840d73c37f40ee326d49dac7180792fdbc4d25d1f4706f0/awscurl-0.43.tar.gz"
-  sha256 "f13aef46b7881e34a94ebe389f8c782975ee4bfeb32751eaef334a95c3fec3d2"
+  url "https://files.pythonhosted.org/packages/c8/77/7da6af880d56aed4a4023bb7c725e15c72a3088afd729ffd373eed0f5a18/awscurl-0.44.tar.gz"
+  sha256 "13056e867ac33f556f29d3662102bfc3c40259ea037c6d817c5914dbb2bbd948"
   license "MIT"
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
