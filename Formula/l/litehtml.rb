@@ -7,12 +7,12 @@ class Litehtml < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d07e7a815a2fd6e9a44e8f52233ea5a979d41b9dbb24828b0a53508df0ef6e39"
-    sha256 cellar: :any,                 arm64_sequoia: "8e83b6bb6e9576cfc87e68c3e2af8395ade9410909e69fe6b0e7dd0fa84628e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "f523092d1e8b207643978a8fb84d9c3734c5ff123eaf3c8ef3a5ee5dd040b9ef"
-    sha256 cellar: :any,                 sonoma:        "bd159f548833cb3e58a2ccd7637661121d68b20ac24e2023f15d0361d2876b0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e533110ac64cb56657b385b8b9dca426ef402625b286de737caabf30a3b6bf24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b010dde65bdf09f5d5f5bc991512f64d21ed598532966b212123e643e4e1dcd"
+    sha256 cellar: :any, arm64_tahoe:   "0c80f1c5ae85acca5068625a06a74fd02185a7901ecd1312b47556b91629152e"
+    sha256 cellar: :any, arm64_sequoia: "772d7fb4f152da4df2c9f5ac0bf209811a5692e0a646642e442eaa8399a8984d"
+    sha256 cellar: :any, arm64_sonoma:  "80e01825325c8244ce63c6b0680bc64c2b1b5e6e52d72e700f3906648979080b"
+    sha256 cellar: :any, sonoma:        "5e2d7ac2a3ff0403c43a4b4a9b75b79422c923416793085b011652724063cdb0"
+    sha256 cellar: :any, arm64_linux:   "a272ca38840e02bd0faccb8a6bd0c5d757782adf3d5c3faa9ce84eedeb850877"
+    sha256 cellar: :any, x86_64_linux:  "727fa7f9bec1cdec5baad6e8771e3e6106db31bf2c4cbadbd0779e915387a285"
   end
 
   depends_on "cmake" => :build
