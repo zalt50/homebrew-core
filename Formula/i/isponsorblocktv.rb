@@ -7,6 +7,15 @@ class Isponsorblocktv < Formula
   sha256 "ad62c6e533e5c8ae33fca731334fb6a39613a28bab4d4fa5093c6764760c4296"
   license "GPL-3.0-only"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "892a6c836a26ae8b426838af77edc858ae3fd068dcfbfc586b51e109d820a475"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13262f35df0c08c00a18d3ce814cb1d3678f48115b77c0dea0b5cf79d664ca41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d2341bd4ce674ed740a64b6abb48e95c505cdbe7a4505c3c1fa72413ecf6666"
+    sha256 cellar: :any_skip_relocation, sonoma:        "524a2b2dc98c024a4a5038831faa739ff356655d6504a8cb0374ad8350f09026"
+    sha256 cellar: :any,                 arm64_linux:   "50d6ee343e11d6965bebe8d23bcf19aa2b1eae232c19c7ecf9d9f40db69138d3"
+    sha256 cellar: :any,                 x86_64_linux:  "37e23c3caf43785087d9c5c55dc85986feb9d513215e95b9256ffc53c3e8b71b"
+  end
+
   depends_on "certifi"
   depends_on "python@3.14"
 
