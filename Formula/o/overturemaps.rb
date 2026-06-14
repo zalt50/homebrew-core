@@ -77,6 +77,7 @@ class Overturemaps < Formula
     ENV.prepend "LDFLAGS", "-L#{geos_lib}"
 
     virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"overturemaps", shell_parameter_format: :click)
   end
 
   test do
