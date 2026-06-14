@@ -11,6 +11,15 @@ class PopplerQt6 < Formula
     formula "poppler"
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "35ae2ae4732bdbd57d4e2bd00a651d7cb4de665544f43b54fdce87d1ac95486c"
+    sha256 arm64_sequoia: "8cdf6bea7293d01abf4d4d2002c1aa99f0f940e4d093977a50ce0dcd3966be80"
+    sha256 arm64_sonoma:  "b88b090b61803a2ef280db728e4b2d83bafc97a6f75e8a0067368c74632c697a"
+    sha256 sonoma:        "6c69e67a92263790c5a97bd769170537c03ac4466d591fea5539aee27640ffee"
+    sha256 arm64_linux:   "97ac109921bf340dd1d5f476fcdeb8e1f9d2079492fa54a7d9d509d5a28c7305"
+    sha256 x86_64_linux:  "edd24e56c092fdb7d28dd2d0a1265ce427bf1810d9dacc7f422ae44f9289f5e2"
+  end
+
   keg_only "it conflicts with poppler"
 
   depends_on "cmake" => :build
