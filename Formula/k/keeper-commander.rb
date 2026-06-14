@@ -3,8 +3,8 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/0b/47/fc6693accfae4dc0cb8c11668d8bf15c2d8b5ed76738b34c0ef5cd58bfc8/keepercommander-18.0.7.tar.gz"
-  sha256 "90f422ae3edbd43921ce0e13d6d75aac1efa05229ec1b6636369317b4edab985"
+  url "https://files.pythonhosted.org/packages/2e/56/74bc590f17897075f44f79fa93a2b3f0258daefb42ae0c1d958d8508324b/keepercommander-18.0.8.tar.gz"
+  sha256 "aebb23132a715fb6dd940e546f704d7690eb94b63a858b09e13e1ac91888f699"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
@@ -327,8 +327,8 @@ class KeeperCommander < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/af/44/c833e6b746ffb654e9abacf7ad6c2480a9c8c42e9637c1ae849964fb4dde/wcwidth-0.8.0.tar.gz"
-    sha256 "68a882ff6d14e3d14e0cae590b96a0551be64ce4905408112a8254434a1bdf69"
+    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
+    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
   end
 
   resource "websockets" do
