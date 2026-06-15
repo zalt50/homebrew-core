@@ -2,8 +2,8 @@ class Teku < Formula
   desc "Java Implementation of the Ethereum 2.0 Beacon Chain"
   homepage "https://docs.teku.consensys.net/"
   url "https://github.com/ConsenSys/teku.git",
-      tag:      "26.4.0",
-      revision: "c5add450714feaf941dc666ab7bb35ad544e56fd"
+      tag:      "26.6.0",
+      revision: "44baab9e39f912f0d6c47423e1fdfb1b941ab9de"
   license "Apache-2.0"
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
@@ -16,15 +16,15 @@ class Teku < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f3cd3bfcd0468bccd927dce2310a62544bd22d6785e9e8e3a05149f27363e6d"
   end
 
-  depends_on "gradle@8" => :build
-  depends_on "openjdk"
+  depends_on "gradle" => :build
+  depends_on "openjdk@25"
 
   def install
-    system "gradle", "installDist"
+    ENV["JAVA_HOME"] = Language::Java.java_home("25")
 
+    system "gradle", "installDist", "--no-daemon"
     libexec.install Dir["build/install/teku/*"]
-
-    (bin/"teku").write_env_script libexec/"bin/teku", Language::Java.overridable_java_home_env
+    (bin/"teku").write_env_script libexec/"bin/teku", Language::Java.overridable_java_home_env("25")
   end
 
   test do
