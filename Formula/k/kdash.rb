@@ -1,8 +1,8 @@
 class Kdash < Formula
   desc "Simple and fast dashboard for Kubernetes"
-  homepage "https://kdash.cli.rs/"
-  url "https://github.com/kdash-rs/kdash/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "2f856914fc2612857c880a0f2f76ecf458a845874a11c6d4bf6527155f96b44e"
+  homepage "https://kdash-rs.github.io/"
+  url "https://github.com/kdash-rs/kdash/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "5506e9208f49c0a5f82f11fe63a4da1fc0768c9e5f09b8fd60bf942c95ac7d52"
   license "MIT"
   head "https://github.com/kdash-rs/kdash.git", branch: "main"
 
@@ -24,19 +24,19 @@ class Kdash < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kdash --version")
 
-    # failed with Linux CI, `No such device or address (os error 6)` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"kdash", [:out, :err] => output_log.to_s
-      sleep 1
-      output = output_log.read.gsub(%r{\e\[[\d;?]*[ -/]*[@-~]}, "")
-      assert_match "Active Context", output
-      assert_match "Resources", output
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    require "pty"
+    output_log = (testpath/"output.log")
+    r, w, pid = PTY.spawn("#{bin}/kdash", [:out, :err] => output_log.to_s)
+    r.winsize = [80, 130]
+    w.write "\e[80;130R"
+    sleep 1
+    r.close
+    w.close
+    output = output_log.read.gsub(%r{\e\[[\d;?]*[ -/]*[@-~]}, "")
+    assert_match "Active Context", output
+    assert_match "Resources", output
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
