@@ -10,13 +10,12 @@ class Global < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "b884d740578dfdf370db6be152ac4ff53275510655a410b6c26695fe39a04647"
-    sha256 arm64_sequoia: "5972c7d546969d7d2ee6e0d02577ba94bafbabf2164f1879401253258cff172d"
-    sha256 arm64_sonoma:  "78add68231154b5b542fea243ca477b70f9f463657d8c2160ebc4e2fe6007445"
-    sha256 sonoma:        "27d376cc93ba0f337c9f8d7525e638725e973a6e2cbaaf457429d6fae9534942"
-    sha256 arm64_linux:   "b549bfed30abc349916b71082aed65114fcecb0b29629d8d4791b43290c1162f"
-    sha256 x86_64_linux:  "d88551b141765a2eaa063a2e446036b9530a0b389f02c818669cc0264298a090"
+    sha256 arm64_tahoe:   "d192083b6c0875317da2cba73a6af81cd6e24be02acad180842ea204ea0f3e5a"
+    sha256 arm64_sequoia: "6f7ab338adf043b0c71c00c0b3afafa3894a760db6346456f8e876e35d90d02b"
+    sha256 arm64_sonoma:  "46fd9e06f4da66276f2345ec3c6dbea02a15ad15d84dd26b0c8151baf77127a5"
+    sha256 sonoma:        "d8f92e4aeae48996005d37060ee68a44248e92279fb971a659fbf160253dfd76"
+    sha256 arm64_linux:   "23f94bd65ad80e82795de7a67a8f8c9ab4d8b81ac1b5b42a5b3c5658fddcffd3"
+    sha256 x86_64_linux:  "bf89b742174fc7e608111a0af851f2e1b638138f4ae8372a63852eeb54bade6b"
   end
 
   head do
