@@ -33,6 +33,8 @@ class Opencode < Formula
 
       rm_r d if d.basename.to_s != "opencode-#{os}-#{arch}"
     end
+
+    generate_completions_from_executable(bin/"opencode", "completion", shell_parameter_format: :none, shells: [:zsh])
   end
 
   test do
