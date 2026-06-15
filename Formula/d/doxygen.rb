@@ -24,19 +24,31 @@ class Doxygen < Formula
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
+  depends_on "fmt"
+  depends_on "spdlog"
 
   uses_from_macos "flex" => :build, since: :big_sur
   uses_from_macos "python" => :build
+  uses_from_macos "sqlite"
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPython_EXECUTABLE=#{which("python3")}",
-                    *std_cmake_args
+    # Remove bundled dependencies
+    rm_r(%w[
+      deps/fmt
+      deps/spdlog
+      deps/sqlite3
+    ])
+
+    args = %W[
+      -DPython_EXECUTABLE=#{which("python3")}
+      -Duse_sys_fmt=ON
+      -Duse_sys_spdlog=ON
+      -Duse_sys_sqlite3=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    system "cmake", "-S", ".", "-B", "build", "-Dbuild_doc=1", *std_cmake_args
-    man1.install buildpath.glob("build/man/*.1")
   end
 
   test do
