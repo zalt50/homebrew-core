@@ -5,6 +5,10 @@ class Gnhf < Formula
   sha256 "2eba212fac15dd36e8147ce6cade319d6d32f0813e76f1aa745c77e4072e026f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "8e963f38d271671c95f680e3020821cbff6b9bbe51032c7d963bafe60f556d94"
+  end
+
   depends_on "node"
 
   def install
