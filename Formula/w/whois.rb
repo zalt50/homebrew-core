@@ -23,16 +23,10 @@ class Whois < Formula
   def install
     ENV.append "LDFLAGS", "-L/usr/lib -liconv" if OS.mac?
 
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # Workaround to expose strdup, https://github.com/rfc1036/whois/issues/171#issuecomment-4710871610
+    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
 
-    have_iconv = if OS.mac?
-      "HAVE_ICONV=1"
-    else
-      "HAVE_ICONV=0"
-    end
-
-    system "make", "install-whois", "prefix=#{prefix}", have_iconv
+    system "make", "install-whois", "prefix=#{prefix}", "HAVE_ICONV=1"
   end
 
   test do
