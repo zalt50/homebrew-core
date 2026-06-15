@@ -1,10 +1,9 @@
 class Onnx < Formula
   desc "Open standard for machine learning interoperability"
   homepage "https://onnx.ai/"
-  url "https://github.com/onnx/onnx/archive/refs/tags/v1.21.0.tar.gz"
-  sha256 "42ffedcd8c9b6363694300c6ffec1ada77f9620176465719acb27b13a4d6f2de"
+  url "https://github.com/onnx/onnx/archive/refs/tags/v1.22.0.tar.gz"
+  sha256 "70bb8b25cf31ea9b1d9f94baacfdc8c4fa27a760f9a10f5d93881bc9eede5fbc"
   license "Apache-2.0"
-  revision 2
   compatibility_version 1
 
   bottle do
@@ -33,6 +32,10 @@ class Onnx < Formula
   end
 
   def install
+    # FIXME: From v1.22+, onnx internals are hidden by default, which breaks
+    # onnxruntime's usage of onnx as a dependency. We need to make them visible again.
+    inreplace "CMakeLists.txt", "CXX_VISIBILITY_PRESET hidden", "CXX_VISIBILITY_PRESET default"
+
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
