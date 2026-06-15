@@ -20,7 +20,7 @@ class Pipelight < Formula
   depends_on "rust" => :build
 
   def install
-    # upstream pr ref, https://github.com/pipelight/pipelight/pull/33
+    # upstream pr ref, https://github.com/crocuda/pipelight/pull/33
     system "cargo", "update", "-p", "libc"
 
     inreplace "cli/Cargo.toml", "version = \"0.0.0\"", "version = \"#{version}\"" if build.stable?
