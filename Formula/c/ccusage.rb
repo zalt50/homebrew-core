@@ -1,17 +1,17 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ryoppippi/ccusage"
-  url "https://github.com/ryoppippi/ccusage/archive/refs/tags/v20.0.6.tar.gz"
-  sha256 "166bd8205ab47d41335a6972ac4706dba71a0902f20ad3d7a2e885f002ed0155"
+  url "https://github.com/ryoppippi/ccusage/archive/refs/tags/v20.0.13.tar.gz"
+  sha256 "9e0924af376b97c899863ef0ca2827f9b3fb6c13dba37ec3bcb9e247170a207a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72c1d869ef12638a4b89c56527f0625e0fab18768c0c2ba5d90f8ffec1f1f3ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d46f7e2c4ec0ec5eefe18e201f97dea014a32f9ed8b44dd3de0fafce5480ea04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d4a658edef0f3cc77e9aa6186e804af0d6f713ef0faa4bec4e34e44f665c0f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6cb39d9f53d77d9e72bc3f2dacd7be56382d282ffdb720dccf6d3636b44eb258"
-    sha256 cellar: :any,                 arm64_linux:   "05be2f9e4e6b1783a585d47d9c83be455dacef2bdcdf2562337ade7472d93f5f"
-    sha256 cellar: :any,                 x86_64_linux:  "65d16a7cef98cfa32b270140eba1669678132fc821a7c97476fae91fd9ab9bf0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b9e57b81fdc69346c2e82000b248ac6fb950a791afba0b6e04cafe99b9bb9c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b71a5913cb7a805a6d9021378e554f152ba700293e13c5158d8855c0598fd52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4586302b602e76d3a1b041c340989e64b6ba6becc7225bee8f55e76e58afb081"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14100a519e41ea5823ba017535cd584caaf06694fab60e1a9aa122ceb6c2c2a1"
+    sha256 cellar: :any,                 arm64_linux:   "53c91203bfa74611368b6a42d647d6445c2d3b5bf59473c558a9566435acf14e"
+    sha256 cellar: :any,                 x86_64_linux:  "044863aaac7faf38067bfd7c607b459ca279e61b3ecf301022fe709e46c29b24"
   end
 
   depends_on "rust" => :build
