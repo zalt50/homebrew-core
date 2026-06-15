@@ -16,7 +16,7 @@ class Getmail6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e69c7b852da170af02893228765ab35a68eefd8de2cc7cbba36eb3661e85afe9"
+    sha256 cellar: :any_skip_relocation, all: "8cd5b0c2f2645f5102d69c7231e8acbc3d560160e2c075d90cb36ef151e2dc67"
   end
 
   uses_from_macos "python"
