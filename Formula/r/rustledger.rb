@@ -6,6 +6,11 @@ class Rustledger < Formula
   license "GPL-3.0-only"
   head "https://github.com/rustledger/rustledger.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97c817bb6dee79710a117011c5eee8b4993901168d289e7d06c62b7ec05563d4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "42211b3c259eabd2ee691362da9e626a089720d106cfcc7271366f415aba68aa"
