@@ -7,12 +7,12 @@ class Shellshare < Formula
   head "https://github.com/vitorbaptista/shellshare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07cf8063e892c8e7d5182964bfb69e7f8018ec96860da38d5c2a8e026e2a7faf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8c5b375dc28d83ef52146c9dcdd5924ed32173c5a9063fb7d5eafb17f526012"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01849ff8b7dc458956a429fce49179c3251ede0205cd68230296c4bdf6d4794a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e191e6690c9416867a805f6680c4dfa658f28ae9b2d3d64221e16872239426e"
-    sha256 cellar: :any,                 arm64_linux:   "85ac44fc9b671ab639009758c9f0273f6b057b54c1a2ee014ae6584e7e55983e"
-    sha256 cellar: :any,                 x86_64_linux:  "4c712582c5083e580b031dad3c9d9b947ead124a5d71e39f95bff604b04118e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f571d254dedf4d6799547c6c7af078eab8a8fa32e83ca79850b4d5dae7b1a04d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ee6331fbad401810dc8fed3db04c8ef0000c2892703cb01cb313293506c71af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a419514c47aee493b33118a020330f50fe610ebc4417841e5b679ab0019c1110"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96981f9a138cdd9d42cbefc0a685eb3fe5bb5d249c1ecc25f692489f97ae038a"
+    sha256 cellar: :any,                 arm64_linux:   "80c19e85bcad5cd829d78fa00d5ef36a10c3366cad941b6e0dc7c9d4547b80c8"
+    sha256 cellar: :any,                 x86_64_linux:  "fc3b9d7fd9a00614a017c4fd28db9054d5a73371839aa68ca841d27824b63a60"
   end
 
   depends_on "rust" => :build
