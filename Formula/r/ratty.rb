@@ -7,12 +7,12 @@ class Ratty < Formula
   head "https://github.com/orhun/ratty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1403635c51402c660125ffbf9db95bdb50ab85b6d52e79dfcf63d4976d57a9df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c670896e149a3b5ff6385c7828d0377d6776d20c2ed761efd7a8e7b388e268a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5354db9f9437bea35f345592a5ddcb59f9eb40c11a34678b75ae2d869d1c55e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "064a9f5ad48cf6fb86fe2811f188dc2977402876682d2662f3de4fe46fe442db"
-    sha256 cellar: :any,                 arm64_linux:   "042be503c70c270bee03dc34fa4493ff4145fed99046d3546fed7f98e4099616"
-    sha256 cellar: :any,                 x86_64_linux:  "2c60b5f3c4479df1ea85c67ca002a7098b9a89473b72403d00ab439c8ba7ebe8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc044ef7854948b559bc91170b30b428ca3f9ae334ff775cf857d201b734de23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5eee56e4ce94a7a031f6d176c35e0d0a38c025af918f4ad643e5beb02ed332e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cac112a0a6244f9911956fc00faf79cfe186677a0ec53f4a539f89fa9dd35ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38845c357ae30cf3997510075806e5dc1e404f3bf2c65e1ebbd6ed0d64ad26c9"
+    sha256 cellar: :any,                 arm64_linux:   "92a9629cfcbf3a00237c10c8474a18623f76016d8307947f0a02e45c32d0841c"
+    sha256 cellar: :any,                 x86_64_linux:  "da69f066a2ab0e02473346ebf4324c434b96fb6179e2d813c111cbdb0c95cc03"
   end
 
   depends_on "rust" => :build
