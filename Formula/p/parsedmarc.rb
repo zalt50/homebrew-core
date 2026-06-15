@@ -3,8 +3,8 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/c6/e2/e0a12251044896de5540be69c774ba3be6c70c59bde9e7c85dcc8672af85/parsedmarc-10.1.0.tar.gz"
-  sha256 "778a63babea72f63e59c3c007fa5f0cb354006582ff3f22ad4b18b87676bc50d"
+  url "https://files.pythonhosted.org/packages/fc/58/61d37e9ef3c49f2ea4a06022477a0b8b43321f062b5cc9346b27fb592bbc/parsedmarc-10.1.1.tar.gz"
+  sha256 "25fcacec2b6021d321060562fc2224bc35e4bae3903666765056eef9168bcc3e"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
@@ -239,8 +239,8 @@ class Parsedmarc < Formula
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/6c/f9/657ec0d2af2f4ef80abdf5fa0980914bb7477369928b5802a2010457b8fc/mailsuite-2.2.1.tar.gz"
-    sha256 "66215e6e5f97e3696233083878ced20193df029fb450887a5bbbaca9cc8d903f"
+    url "https://files.pythonhosted.org/packages/9c/8f/e0119c739835bc0c7077e8c2f37a167771efbe65de090dbc8c70009f1bce/mailsuite-2.2.2.tar.gz"
+    sha256 "d1a45d3539e72022a5ee0966e9deb66924363f6121a3041a963d54725773e103"
   end
 
   resource "maxminddb" do
