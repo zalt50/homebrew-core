@@ -2,7 +2,7 @@ class Watchman < Formula
   include Language::Python::Shebang
 
   desc "Watch files and take action when they change"
-  homepage "https://github.com/facebook/watchman"
+  homepage "https://facebook.github.io/watchman/"
   url "https://github.com/facebook/watchman/archive/refs/tags/v2026.06.08.00.tar.gz"
   sha256 "3c5e68a75088bce15e93cac76677239ab8f1a81c81f330390b23b0d161d91a0f"
   license "MIT"

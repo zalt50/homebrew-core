@@ -1,6 +1,6 @@
 class Gabo < Formula
   desc "Generates GitHub Actions boilerplate"
-  homepage "https://github.com/ashishb/gabo"
+  homepage "https://ashishb.net/tech/common-pitfalls-of-github-actions/"
   url "https://github.com/ashishb/gabo/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "c635e162c55e851f4922f7081b9fe092783b74b74c87785c815ad2b3b2d8f8f3"
   license "Apache-2.0"
