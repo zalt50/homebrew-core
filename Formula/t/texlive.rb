@@ -401,12 +401,7 @@ class Texlive < Formula
               "selfautoparent:texmf", "selfautodir:share/texmf"
 
     # icu4c 75+ needs C++17
-    # TODO: Remove in 2025 release
     ENV.append "CXXFLAGS", "-std=gnu++17"
-
-    # Work around build failure on Intel Sonoma after updating to Xcode 16
-    # sh: line 1: 27478 Segmentation fault: 11  luajittex -ini -jobname=luajittex -progname=luajittex luatex.ini ...
-    ENV.O1 if DevelopmentTools.clang_build_version == 1600 && Hardware::CPU.intel?
 
     args = [
       "--disable-dvisvgm", # needs its own formula
