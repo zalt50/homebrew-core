@@ -1,8 +1,8 @@
 class Ratty < Formula
   desc "GPU-rendered terminal emulator with inline 3D graphics"
   homepage "https://ratty-term.org/"
-  url "https://github.com/orhun/ratty/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "c6fb899b38445e79e0facc2d1a2884443f40296c47220fddd56d6489d3545c18"
+  url "https://github.com/orhun/ratty/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "78ac873053d680258dc049ad82f92d20b96ea7f3ba86f9fd45744ecc90befeaa"
   license "MIT"
   head "https://github.com/orhun/ratty.git", branch: "main"
 
@@ -39,10 +39,10 @@ class Ratty < Formula
       pid = spawn bin/"ratty", [:out, :err] => output_log.to_s
       sleep 1
       expected = Hardware::CPU.arm? ? "Apple Paravirtual device" : "Unable to find a GPU"
-      assert_match expected, output_log.read if OS.mac?
+      assert_match expected, output_log.read
     ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
+      Process.kill "TERM", pid
+      Process.wait pid
     end
   end
 end
