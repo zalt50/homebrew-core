@@ -7,12 +7,12 @@ class Gogcli < Formula
   head "https://github.com/steipete/gogcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7ac52f6b97e9e15bff95c3ebd8a0232dc8e384b4b0cef0a3f60270659e4da32"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03ec3738559f9353e7d0aca3821de6b88eb76ce9933267c37de7326c0df1f84f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ddd5c6fc4d35de9d86fb5b0558a91e26756e47141b3213c843237d5552a057c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "997e7e50a1aca534131705184589949dbce65ce0951dd0460c592524576b2db4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00b7e0647184423a71f3d1602a2d2db3ea11c0b459662ce071991582c340482a"
-    sha256 cellar: :any,                 x86_64_linux:  "1d798cff8b60e6492c738efcc59c519fb15936521c7b619543f5d93f16b548ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3dbac191186ce6c6e7e4d1a649e2e438684f13a5878b23a75b5c6fc7f91c80f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ece9a2c681fad38187b0417c904b80d23583879155e260e78f332930281eb54a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee7fd025cde5661b813814e8329303ad3f0b044c49c39adfed6a7f35a08fb98a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfd99084538b1cca89f2b12c99c69a48d25c6b6a45c2f2361d52a68596d6a7a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52de0a939305b55f1f6d25a2cc42f81a8ae9820c4986f6642a3c7d32fa56845b"
+    sha256 cellar: :any,                 x86_64_linux:  "1130c627965e49b0e62c0ce655bbb40d1b725c4758ee575ac72e0734a8d8776b"
   end
 
   depends_on "go" => :build
