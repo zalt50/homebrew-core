@@ -1,5 +1,5 @@
 class Cabin < Formula
-  desc "Package manager and build system for C++"
+  desc "Package manager and build system for C/C++"
   homepage "https://cabinpkg.com"
   url "https://github.com/cabinpkg/cabin/archive/refs/tags/0.15.0.tar.gz"
   sha256 "9f8b4904c1d4072cddb3f8316cde694cb55791bfb817b1f5818f49f1d156ded6"
@@ -25,6 +25,8 @@ class Cabin < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cabin")
+    generate_completions_from_executable bin/"cabin", "compgen"
+    system bin/"cabin", "mangen", "--output-dir", man1
   end
 
   test do
