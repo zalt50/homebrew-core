@@ -24,16 +24,17 @@ class Mecab < Formula
   conflicts_with "mecab-ko", because: "both install mecab binaries"
 
   def install
-    args = []
-    # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-
-    system "./configure", "--sysconfdir=#{etc}", *args, *std_configure_args
-    system "make", "install"
-
     # Put dic files in HOMEBREW_PREFIX/lib instead of lib
-    inreplace bin/"mecab-config", "#{lib}/mecab/dic", "#{HOMEBREW_PREFIX}/lib/mecab/dic"
-    inreplace etc/"mecabrc", "#{lib}/mecab/dic", "#{HOMEBREW_PREFIX}/lib/mecab/dic"
+    inreplace "mecab-config.in", "@libdir@/mecab/dic", HOMEBREW_PREFIX/"lib/mecab/dic"
+    inreplace "mecabrc.in", "@prefix@/lib/mecab/dic", HOMEBREW_PREFIX/"lib/mecab/dic"
+
+    # Help old config scripts identify arm64 linux
+    args = ["--build=aarch64-unknown-linux-gnu"] if OS.linux? && Hardware::CPU.arm64?
+
+    # Manually install etc files to avoid overwriting any existing files
+    system "./configure", "--sysconfdir=#{etc}", *args, *std_configure_args
+    system "make", "install", "sysconfdir=#{prefix}/etc"
+    etc.install (prefix/"etc").children
   end
 
   post_install_steps do
