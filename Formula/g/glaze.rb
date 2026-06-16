@@ -1,8 +1,8 @@
 class Glaze < Formula
   desc "Extremely fast, in-memory JSON and interface library for modern C++"
   homepage "https://stephenberry.github.io/glaze/"
-  url "https://github.com/stephenberry/glaze/archive/refs/tags/v7.8.1.tar.gz"
-  sha256 "eaf6d9920edfa6a3d5005c25a3fdb8334d24b1d73401756f22da8106f84dedd1"
+  url "https://github.com/stephenberry/glaze/archive/refs/tags/v7.8.2.tar.gz"
+  sha256 "a315bdc20bbdf23b0baae6c844818283aaab7c8ff0f88987f248bec51494d259"
   license "MIT"
 
   bottle do
