@@ -3,9 +3,9 @@ class MysqlClient < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/9.3/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-9.6/mysql-9.6.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_9.6.0.orig.tar.gz"
-  sha256 "240061d869d5ae188c9a333845928899e9d963ccbd67865a8a2e4b6fcb67178c"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.7/mysql-9.7.1.tar.gz"
+  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_9.7.1.orig.tar.gz"
+  sha256 "dabff263022be6a09151c21812322873437e0d77aec8c4cc7381882c3ea1aeae"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
   compatibility_version 1
 
@@ -33,6 +33,8 @@ class MysqlClient < Formula
   depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"
 
+  uses_from_macos "curl"
+  uses_from_macos "cyrus-sasl"
   uses_from_macos "libedit"
 
   on_ventura :or_older do
@@ -75,7 +77,23 @@ class MysqlClient < Formula
       -DWITH_SSL=yes
       -DWITH_UNIT_TESTS=OFF
       -DWITHOUT_SERVER=ON
+      -DWITH_MYSQL_CLIENT_TELEMETRY=OFF
     ]
+
+    if OS.linux?
+      args << "-DCURL_LIBRARY=#{formula_opt_lib("curl")}"
+      args << "-DCURL_INCLUDE_DIR=#{formula_opt_include("curl")}"
+    end
+
+    # Replace deprecated `std::is_trivial_v<T>`
+    # https://isocpp.org/files/papers/P3247R2.html
+    # Upstream report: https://bugs.mysql.com/bug.php?id=119246
+    if OS.mac? && MacOS.version == :tahoe
+      inreplace buildpath/"libs/mysql/gtid/tag_plain.h", "static_assert(std::is_trivial_v<Tag_plain>);", <<~CPP
+        static_assert(std::is_trivially_default_constructible_v<Tag_plain>);
+        static_assert(std::is_trivially_copyable_v<Tag_plain>);
+      CPP
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
