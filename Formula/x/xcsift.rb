@@ -1,8 +1,8 @@
 class Xcsift < Formula
   desc "Swift tool to parse xcodebuild output for coding agents"
   homepage "https://ldomaradzki.github.io/xcsift/"
-  url "https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "d251e0912cd0f0b2b4e3c25a9a9f29c032ce7dcd770d8ba583325744229390cf"
+  url "https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "47aa9295c04e53033805c74069c73fe2d6e091f4ccbba5889c74bfe10b138294"
   license "MIT"
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
