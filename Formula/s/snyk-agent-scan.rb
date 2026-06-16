@@ -6,6 +6,7 @@ class SnykAgentScan < Formula
   url "https://files.pythonhosted.org/packages/c1/0f/bda2a23ecf6a1b1723ba2fe479615ec3ce73c093c5e78b5b842614586691/snyk_agent_scan-0.5.10.tar.gz"
   sha256 "7403d78fbbdb53da22ead1c95c4d2aa6ee46ce66e255eecb1fc7986786d9f364"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "89f258327afe65b978308866b7fbd65b0cb890c90f0c673103dd8de4f83f1e91"
@@ -216,8 +217,8 @@ class SnykAgentScan < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/c1/37/cc24e33974e1439cf5ca62b0735b63026eabb768f472d8775f52d5851ed9/starlette-1.3.0.tar.gz"
-    sha256 "bb58cbb7a699da4ee4be9ed4cdfe4bc5b0390aa6dac1d1ac714ebebe8dc3c8df"
+    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
+    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
   end
 
   resource "truststore" do
