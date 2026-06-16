@@ -7,12 +7,12 @@ class Kagent < Formula
   head "https://github.com/kagent-dev/kagent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "928a1bf6600106ece07c4a5343069eb3c966d93e7a99abb65d6beeccd4bc200a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "928a1bf6600106ece07c4a5343069eb3c966d93e7a99abb65d6beeccd4bc200a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "928a1bf6600106ece07c4a5343069eb3c966d93e7a99abb65d6beeccd4bc200a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d38ae6b7e388b5c5b6b07c5ab4bb1cacdd4e601178c7e146461ec08fd092df00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a43ee092fca77b6dafecbc62a9b76c1ceb773a6d2bb4a76a76e34368197cfa63"
-    sha256 cellar: :any,                 x86_64_linux:  "f1505ab6cba7d90f0e7b5cc2785857efa9e0971028626ee31b549bed1371cbe4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a0bf12e2cabd73e7549ce0920bb8f2af62d10991551f783b31ae6f7b665dd4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a0bf12e2cabd73e7549ce0920bb8f2af62d10991551f783b31ae6f7b665dd4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a0bf12e2cabd73e7549ce0920bb8f2af62d10991551f783b31ae6f7b665dd4b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd64aeac54f21de7845232ede0dcbfa1b8488ab67e8d7886924b662d607479b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14cafb50cd963f3e4c745e82efaba2b7765ff46af64da0f2801470c154be3a11"
+    sha256 cellar: :any,                 x86_64_linux:  "0f140a3ab82d445c511b296e094e6e1799bc921cbf2df8be74d133fc99d742e0"
   end
 
   depends_on "go" => :build
