@@ -5,16 +5,15 @@ class Libgccjit < Formula
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
-    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz"
-    mirror "https://ftp.gnu.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz"
-    sha256 "438fd996826b0c82485a29da03a72d71d6e3541a83ec702df4271f6fe025d24e"
+    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
+    mirror "https://ftp.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
+    sha256 "fa59c1beef8995f27c4d71c1df227587189315d3e6faff1bb4306e61b0c530eb"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-14-branch
+    # Apple Silicon support, located at https://github.com/iains/gcc-15-branch
     patch do
       on_macos do
-        url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/gcc/gcc-15.1.0.diff"
-        sha256 "360fba75cd3ab840c2cd3b04207f745c418df44502298ab156db81d41edf3594"
+        file "Patches/gcc/gcc-15.3.0.diff"
       end
     end
   end
