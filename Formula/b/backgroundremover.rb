@@ -18,24 +18,24 @@ class Backgroundremover < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "ffmpeg"
   depends_on "libheif"
   depends_on "llvm@20"
-  depends_on "pillow"
+  depends_on "numpy"
+  depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
-  depends_on "scikit-image"
-  depends_on "scipy"
-  depends_on "torchvision"
+  depends_on "scikit-image" => :no_linkage
+  depends_on "scipy" => :no_linkage
+  depends_on "torchvision" => :no_linkage
 
   on_linux do
     depends_on "patchelf" => :build
     depends_on "openblas"
   end
 
-  # numba 0.63.1 does not support numpy 2.4.x, see https://github.com/numba/numba/issues/10263
   pypi_packages exclude_packages: %w[certifi torch torchvision pillow scipy scikit-image],
-                extra_packages:   %w[imageio numpy]
+                extra_packages:   %w[imageio]
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
@@ -127,14 +127,9 @@ class Backgroundremover < Formula
     sha256 "19357146c32fe9ed25059ab915e8465fb13951cf6b0aace3826b76886373ab23"
   end
 
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d0/ad/fed0499ce6a338d2a03ebae59cd15093910c8875328855781952abf6c2fe/numpy-2.4.6.tar.gz"
-    sha256 "f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda"
-  end
-
   resource "pillow-heif" do
-    url "https://files.pythonhosted.org/packages/cd/58/2df4fc42840633e01c97b75965cb1bc6e14425973b92382391650e97e4b7/pillow_heif-1.3.0.tar.gz"
-    sha256 "af8d2bda85e395677d5bb50d7bda3b5655c946cc95b913b5e7222fabacbb467f"
+    url "https://files.pythonhosted.org/packages/e3/5f/4753689400e657ca5d984f5e897657dab12d91b62f1bb6a1e73487b59a97/pillow_heif-1.4.0.tar.gz"
+    sha256 "55a7c0cb5321538d1ca74037be54b48d147017735a766eb29bcca4761253a1f1"
   end
 
   resource "proglog" do
@@ -168,8 +163,8 @@ class Backgroundremover < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/06/b3/36c8ecf72e8925200671613332db156d84b99b3aee742a41c1938ebb0808/tqdm-4.68.1.tar.gz"
-    sha256 "fc163d96b287bd031e1aa24421ce4411b25559bd0a1be4fe649bdaa4d2c02bf5"
+    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
+    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
   end
 
   resource "urllib3" do
