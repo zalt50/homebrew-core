@@ -6,12 +6,12 @@ class Vcfanno < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d29c909e614e5a767766f43b76608bf766f482905a919c43f69102d03997b0e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d29c909e614e5a767766f43b76608bf766f482905a919c43f69102d03997b0e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d29c909e614e5a767766f43b76608bf766f482905a919c43f69102d03997b0e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5bb2e06c97b02e96b5e850ee7ee89b1d60a874dabb18f9093bed3ffefe7c4c29"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0999dffcc6f95492b65caa0adfa9eb8e91300c080900644d41e58bd02d03e51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23b91271b2887d670d2d71511bca43fcdb90415f2338fece6cfc94b9b87bd21a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92ecbff32912d88fe4b60fac125195702db65a0a439d9851d9345f291216aed5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92ecbff32912d88fe4b60fac125195702db65a0a439d9851d9345f291216aed5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92ecbff32912d88fe4b60fac125195702db65a0a439d9851d9345f291216aed5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3101f95a09f8e9ec483e97c8845e960873c19be0154ea2c2c95dc6608e19d47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68741a8fd0fd105b58eb3622ca6020ec586a46fbe8dccc5e16b2b05d9d0e1439"
+    sha256 cellar: :any,                 x86_64_linux:  "99d5735c73a80171cc9e4763542be0bd5c8724717dce86491d903152e1bf7348"
   end
 
   depends_on "go" => :build
