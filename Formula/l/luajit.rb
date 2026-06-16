@@ -10,14 +10,14 @@ class Luajit < Formula
   # Get the latest commit with:
   #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
   # This is a rolling release model so take care not to ignore CI failures that may be regressions.
-  url "https://github.com/LuaJIT/LuaJIT/archive/194d7f2d635a11193177f0ed820ae419148f0b70.tar.gz"
+  url "https://github.com/LuaJIT/LuaJIT/archive/8e6520a7aecd0517e792b359afbbfd7274791f5f.tar.gz"
   # Use the version scheme `2.1.timestamp` where `timestamp` is the Unix timestamp of the
   # latest commit at the time of updating.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.1781341259"
-  sha256 "6a9c168d002f698bd8c76d5bb2e3ee3615297c9c8e4cf00992a04a4e5baaac56"
+  version "2.1.1781602682"
+  sha256 "9c4c370559352e0622231d5a1f28e95ff56e2dce6308238e6588b0943aac5e63"
   license "MIT"
-  compatibility_version 10
+  compatibility_version 11
   head "https://github.com/LuaJIT/LuaJIT.git", branch: "v2.1"
 
   livecheck do
