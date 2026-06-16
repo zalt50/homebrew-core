@@ -1,8 +1,8 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in C/C++"
   homepage "https://github.com/ggml-org/whisper.cpp"
-  url "https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.6.tar.gz"
-  sha256 "f8e632016ceae556f3132a16c7f704be1e7715595041f474fa81a2b64c1abf7c"
+  url "https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.7.tar.gz"
+  sha256 "0b988ba5053cfa720f6d399f3f21885b01c4222178be435ca2272d6872717554"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/whisper.cpp.git", branch: "master"
