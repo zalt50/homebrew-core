@@ -8,7 +8,7 @@ class GitMachete < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "19e0f184e8f4edcef49b62c5720f628d34bcb7ec5f5acab5b3840090ad1bfa22"
+    sha256 cellar: :any_skip_relocation, all: "456d2d17b8cb28979fece95631c36be7690ad2369c03bc199ae4a8d404060944"
   end
 
   depends_on "python@3.14"
