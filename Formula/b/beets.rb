@@ -7,6 +7,15 @@ class Beets < Formula
   sha256 "f87fda8b3a723bee59c51a64ba30e94ab35d2658b3cb58c595afa29e75ed8d5f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "229219cc70b157b16c054ba740c1cd03ff586756ab95dd1f98f67fbf8f61ca9d"
+    sha256 cellar: :any, arm64_sequoia: "d7d9fc7b368fbaa93d84d02c417f48ce5deb68ed372b452c391c63814a0fb9e6"
+    sha256 cellar: :any, arm64_sonoma:  "37c8a4fec32e8c07a8f3c4a063737ed6711337f42ceca02ce43a924710d3f259"
+    sha256 cellar: :any, sonoma:        "38e3ddffed4a32b5d878fcb14cb6059f8df25d792de2ae71aed7cdd14ca517c4"
+    sha256 cellar: :any, arm64_linux:   "8d26e1db816a2b8fc597b25ebf580438ab0714520ca0e2d22a45c03ff0d89a8a"
+    sha256 cellar: :any, x86_64_linux:  "0da4155e62ccc7b74553f973d43d125ea58fbf183203a069082ffb4dced16b52"
+  end
+
   depends_on "cmake" => :build
   depends_on "cython" => :build
   depends_on "python-setuptools" => :build
