@@ -6,6 +6,7 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/55/77/e64b52827512469700974a09e075af6833832e3cee4c0a43d70a2c5e6864/cycode-3.16.1.tar.gz"
   sha256 "403d6b4e6949f0c60a5c5651bbb5fdfc60f891babcd7ef42a24dd5b82e4e2cfb"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
@@ -207,8 +208,8 @@ class Cycode < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/25/44/ec35f1b6e83094b997da438a02c8c9b0ade2b1e84cfc48bd4656780760a6/starlette-1.2.1.tar.gz"
-    sha256 "9b9b5ebb992e67d6093741e63c2f59e4f6fff986f81163c087867bd7b924b3f6"
+    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
+    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
   end
 
   resource "tenacity" do
