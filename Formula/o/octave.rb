@@ -5,6 +5,7 @@ class Octave < Formula
   mirror "https://ftp.gnu.org/gnu/octave/octave-11.3.0.tar.xz"
   sha256 "2b80f3149b2de6d1f4f2fcb4fe6515a17eb363b52111bf57b90f37bf6f5e12e1"
   license "GPL-3.0-or-later"
+  revision 1
   compatibility_version 2
 
   # New tarballs appear on https://ftp.gnu.org/gnu/octave/ before a release is
