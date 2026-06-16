@@ -8,12 +8,12 @@ class Teku < Formula
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da22ddbb63245dee6748ad3494e0af664656f5a7d69dca304a12b062efb83d46"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da22ddbb63245dee6748ad3494e0af664656f5a7d69dca304a12b062efb83d46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da22ddbb63245dee6748ad3494e0af664656f5a7d69dca304a12b062efb83d46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da22ddbb63245dee6748ad3494e0af664656f5a7d69dca304a12b062efb83d46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f80c198c83b42196637b9984f898dd1e7fd8c41fb55bb674e080ed43e3498958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f80c198c83b42196637b9984f898dd1e7fd8c41fb55bb674e080ed43e3498958"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "744001660edf3f41f8dbe6d3d8c1ca4248954b8c5c36af3be5ae904198432d70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "744001660edf3f41f8dbe6d3d8c1ca4248954b8c5c36af3be5ae904198432d70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "744001660edf3f41f8dbe6d3d8c1ca4248954b8c5c36af3be5ae904198432d70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "744001660edf3f41f8dbe6d3d8c1ca4248954b8c5c36af3be5ae904198432d70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e665b5b7b622f1e173f3e7f276a64ea8cbe16686b3af9c51a7e5e566b7251aa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e665b5b7b622f1e173f3e7f276a64ea8cbe16686b3af9c51a7e5e566b7251aa4"
   end
 
   depends_on "gradle" => :build
