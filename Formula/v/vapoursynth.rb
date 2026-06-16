@@ -3,20 +3,11 @@ class Vapoursynth < Formula
 
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
+  url "https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R77.tar.gz"
+  sha256 "f71653355983fc245ef811a64d2b8f5b0ba131c0bb330b3346d435e1926187e2"
   license "LGPL-2.1-or-later"
   compatibility_version 2
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
-
-  stable do
-    url "https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R76.tar.gz"
-    sha256 "8c51aedc26a5fa2b79b5716bfe1160ffa45c69035c728b7e8740785cf790454b"
-
-    # Backport commit to avoid statically linking dependencies' libraries
-    patch do
-      url "https://github.com/vapoursynth/vapoursynth/commit/d398f465154ef141d447af78b2e65a025de28522.patch?full_index=1"
-      sha256 "3d19b95ed0ba5de76e450ed0dedf7ab7935c0de1e0d08affc3be914c6aefa511"
-    end
-  end
 
   livecheck do
     url :stable
