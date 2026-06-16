@@ -1,8 +1,8 @@
 class Rustnet < Formula
   desc "Cross-platform network monitoring terminal UI with deep packet inspection"
   homepage "https://github.com/domcyrus/rustnet"
-  url "https://github.com/domcyrus/rustnet/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "258ea142f3ca04e45c33761eb28868a8d8afc62a3f9556a1d5b312e805905ce5"
+  url "https://github.com/domcyrus/rustnet/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "846f89a9c6cb5a2de6b9d42cf5a8a435e343906cbe9083776ddcc7fdbbb8857b"
   license "Apache-2.0"
   head "https://github.com/domcyrus/rustnet.git", branch: "main"
 
@@ -24,14 +24,6 @@ class Rustnet < Formula
     depends_on "llvm" => :build
     depends_on "pkgconf" => :build
     depends_on "elfutils"
-  end
-
-  # Skip cross-rs-specific lib search paths on native Linux builds.
-  # Already merged upstream; will no longer apply on the next release.
-  # https://github.com/domcyrus/rustnet/pull/259
-  patch do
-    url "https://github.com/domcyrus/rustnet/commit/9a5208d95904253dbae19fd548f44a91cafbd34f.patch?full_index=1"
-    sha256 "bc677735d7ae9924214df0d4cfc261346eab429bc11f182c09c93fbde474673b"
   end
 
   def install
@@ -59,7 +51,7 @@ class Rustnet < Formula
   end
 
   test do
-    assert_match "rustnet #{version}", shell_output("#{bin}/rustnet --version")
+    assert_match version.to_s, shell_output("#{bin}/rustnet --version")
     assert_match "network monitoring", shell_output("#{bin}/rustnet --help").downcase
 
     output = shell_output("#{bin}/rustnet --log-level not-a-level 2>&1", 1)
