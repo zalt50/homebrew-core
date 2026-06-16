@@ -14,12 +14,12 @@ class Nexttrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddf1481c83e3acf8ecde25cacbd589640871736ec42ad7532603e729f8098244"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d5dd1c150837397ecb1c642fd428aa42e6920a8a5710842d24a352bb4aadd89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97a158ce41c111437559edf3cbaf6835af1ba45d0735da2a10b8dff9ae082f55"
-    sha256 cellar: :any_skip_relocation, sonoma:        "863cf6be05d7b21703380a1ea568435ef43a7072ad98da39a571768190900068"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d9b5108ba9e1a577700bc474ff66a8172e0f1f1a1967c7d93cb8013ca3ac20e"
-    sha256 cellar: :any,                 x86_64_linux:  "fa7ee7d8c3797c46c3b06ce70e908063f8df5088f30135b7f1e6f6f94f52f90f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a6624e5fdec19c2261446ec63a4e3969006402194cf1a06a00bea5b24904e14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79f2aaa70b7556d269f0461112b8eeefab13a1810844180403c25c31420d9652"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cd18ce024f8f018b5e00f259365ec74ef5f7f9902b849a620d8ca22f0ce494d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c0be4907b9b12bd4e2c4280dcdc1138d531c06dc75e2a805953d248a17582e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b524cb4906267c3e52755f4d5754df078183f64f393e3ed8a774550f258261e2"
+    sha256 cellar: :any,                 x86_64_linux:  "4273374f96169a2464942484cabecb8c7317c964873f75518a0babe8cb98c774"
   end
 
   depends_on "go" => :build
