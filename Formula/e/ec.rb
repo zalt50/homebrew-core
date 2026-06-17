@@ -17,12 +17,13 @@ class Ec < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ec"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/ec"
   end
 
   test do
-    system "git", "config", "--global", "init.defaultBranch", "main"
-    system "git", "init"
+    assert_match version.to_s, shell_output("#{bin}/ec --version")
+
+    system "git", "init", "--initial-branch=main"
     system "git", "config", "merge.tool", "ec"
     # force "theirs" merge strategy for non-interactive testing
     system "git", "config", "mergetool.ec.cmd",
