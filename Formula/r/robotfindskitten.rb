@@ -1,10 +1,9 @@
 class Robotfindskitten < Formula
   desc "Zen Simulation of robot finding kitten"
   homepage "https://robotfindskitten.org/"
-  url "https://codeberg.org/robotfindskitten/robotfindskitten/releases/download/2.8284271.702/robotfindskitten-2.8284271.702.tar.gz"
-  sha256 "020172e4f4630f7c4f62c03b6ffe2eeeba5637b60374d3e6952ae5816a9f99af"
+  url "https://codeberg.org/robotfindskitten/robotfindskitten/releases/download/3.0000000.726/robotfindskitten-3.0000000.726.tar.gz"
+  sha256 "290172b0a04c9a80400bc3b668eb844e24b03a377e2a6b349218b56f7106a1b7"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
