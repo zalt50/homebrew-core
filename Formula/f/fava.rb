@@ -3,8 +3,8 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/07/66/cdcafeec2c75f6c94779951f63f4afbb014ccec3ab7ece784d58c05351f2/fava-1.30.13.tar.gz"
-  sha256 "2a38ee0544c3b45f6c052678fd06bd852fdcd74ebfe8a9c1db489202cdcc3f3f"
+  url "https://files.pythonhosted.org/packages/6b/a0/2c16c55c9b011fb6e7f73a40441f7dc533922b24782c57588a036781719f/fava-1.30.14.tar.gz"
+  sha256 "89999c130c80ffaf37d9507a44ed88b376abf94bff4669f5bf8f5e3f710c17ca"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
@@ -36,8 +36,8 @@ class Fava < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "babel" do
