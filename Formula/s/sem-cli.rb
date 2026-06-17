@@ -1,8 +1,8 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://ataraxy-labs.github.io/sem/"
-  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "16a1b77f08251ac32230bf9f1d517cf921b3c397498c26d2ba7cd77749ab9347"
+  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "332c3e992fbf8349bba59575dfaeb4d9dd49b8ecdfe09d8b642792bff87f7f28"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
