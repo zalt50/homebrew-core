@@ -1,8 +1,8 @@
 class GuileGnutls < Formula
   desc "Guile bindings for the GnuTLS library"
   homepage "https://codeberg.org/guile-gnutls/guile-gnutls"
-  url "https://codeberg.org/guile-gnutls/guile-gnutls/releases/download/v5.0.1/guile-gnutls-5.0.1.tar.gz"
-  sha256 "cc0067f3eeb421bc17247140962a49086df5450f0d3e71c55bf541a2d2b9ef2b"
+  url "https://codeberg.org/guile-gnutls/guile-gnutls/releases/download/v5.0.2/guile-gnutls-5.0.2.tar.gz"
+  sha256 "76ba2a0f47edde7fd2f583fc1162ed1ce8339bdaf7e9d9cc39387fcc95fb935b"
   license "LGPL-2.1-or-later"
 
   bottle do
