@@ -12,12 +12,12 @@ class Wartremover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6584a2237810bda94e9f03cceee46b93ed5138059ec38202d6101e0b4cc32dfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6584a2237810bda94e9f03cceee46b93ed5138059ec38202d6101e0b4cc32dfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f247de211ef41f922fc501ad4d986a924ac5bfbc0659c5e90bddea0557537553"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f247de211ef41f922fc501ad4d986a924ac5bfbc0659c5e90bddea0557537553"
   end
 
   depends_on "sbt" => :build
