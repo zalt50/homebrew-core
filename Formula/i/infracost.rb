@@ -1,8 +1,8 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform, Terragrunt, and CloudFormation"
   homepage "https://www.infracost.io/docs/"
-  url "https://github.com/infracost/cli/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "09b96d4f32e19ecbb5c6e97eca3a4af01d67b95c5a9b35ef1ca41cf50b08a5fe"
+  url "https://github.com/infracost/cli/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "e71198a30fea31e21eb744bf9ef14a8fdbc1a06796d14c021d1e6a7fda1b2057"
   license "Apache-2.0"
   head "https://github.com/infracost/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Infracost < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8930c735b6dbcb711b610b3a186373e9f4db00f4d414ee2d246d395c7518c723"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8930c735b6dbcb711b610b3a186373e9f4db00f4d414ee2d246d395c7518c723"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8930c735b6dbcb711b610b3a186373e9f4db00f4d414ee2d246d395c7518c723"
-    sha256 cellar: :any_skip_relocation, sonoma:        "465eb705dee60e5eb44f38c49aec8d8022e91aeb20ffeb32f9ec47e1eb51dbc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "742e69bf32ace8b1d0295200758892e5c8008879b138b030d423861602ec8ed8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9c654309bb422ff918a1f1b13122e84504c985a22b2b974a72f7d526d15bd0f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f3006c1adb15a2f1949b6f1b3be9a7ccd201f3fe75d3e1bd4a88ddd8653a90a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f3006c1adb15a2f1949b6f1b3be9a7ccd201f3fe75d3e1bd4a88ddd8653a90a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f3006c1adb15a2f1949b6f1b3be9a7ccd201f3fe75d3e1bd4a88ddd8653a90a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d5efaf71e18b7abe8125c97c6d394273e02e87ff3f365eaff130f0a3233d047"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc0b42a20b53d1ab25287dfe004eea5cea578c0a6fae6f458e55416cbea81758"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9ef69628fdef859a1362dfb07071966969cf3255e90ea388cb3b3d7e53bf845"
   end
 
   depends_on "go" => :build
