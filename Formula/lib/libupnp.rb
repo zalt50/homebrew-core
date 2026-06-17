@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://github.com/pupnp/pupnp/releases/download/release-1.18.5/libupnp-1.18.5.tar.bz2"
-  sha256 "fe17522c605752f9f522d8cceab2a4601d75c2b701288a3bdbd9926e1bd9a9a1"
+  url "https://github.com/pupnp/pupnp/releases/download/release-2.0.1/libupnp-2.0.1.tar.bz2"
+  sha256 "0887c4d54a12aabf0ffeea04a8ab72202730300ea51828c0ed540ffdedbaaf48"
   license "BSD-3-Clause"
 
   livecheck do
@@ -20,6 +20,12 @@ class Libupnp < Formula
   end
 
   def install
+    # https://github.com/llvm/llvm-project/issues/65557
+    if OS.mac? && DevelopmentTools.clang_build_version < 1700
+      inreplace "upnp/src/genlib/miniserver/miniserver.c", "switch (gMServState)",
+                                                           "switch ((MiniServerState)gMServState)"
+    end
+
     system "./configure", "--enable-ipv6", *std_configure_args
     system "make", "install"
     pkgshare.install "upnp/test/test_init.c"
