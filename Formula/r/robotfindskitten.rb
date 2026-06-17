@@ -6,6 +6,11 @@ class Robotfindskitten < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(/^(\d+(?:\.\d+)+)$/i) # Exclude tags that start with `v`
+  end
+
   bottle do
     sha256 arm64_tahoe:    "f70167f4ada3ff8ec73fe948560bc08e582be51e57806612ed9d269ce0a1ed7e"
     sha256 arm64_sequoia:  "ea748b3acc46a3b17408ae1f7989c8d37389eb92e9d0d325e66b134136b51904"
