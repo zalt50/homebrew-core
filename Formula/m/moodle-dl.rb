@@ -6,7 +6,7 @@ class MoodleDl < Formula
   url "https://files.pythonhosted.org/packages/0b/44/9c283a04b0ede0bcaa2f3595b523cb115c662fe349f215631484035126d1/moodle_dl-2.3.13.tar.gz"
   sha256 "7a6d813b3241497fb79a34a428aa266b2d2d3c175e05d46752e0a8040adaddce"
   license "GPL-3.0-or-later"
-  revision 10
+  revision 11
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9546d75c2c8bb32edee4df36e219cff98112d74c88cc2971f8e5d24cabc38c27"
@@ -113,8 +113,8 @@ class MoodleDl < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/63/3b/4bc6b348bbd331daa14d4babe9f2b99bc854f4da41560eefb9488d78481d/sentry_sdk-2.61.1.tar.gz"
-    sha256 "9c6adccb3feefa9ba032c8d295ca477575c2f11896046a2b0ad686c47c4af555"
+    url "https://files.pythonhosted.org/packages/f6/5d/a343201726150e05f2036eeb6e493e2e2f8bf8a66f5aa70f2f4ac96f9ca3/sentry_sdk-2.62.0.tar.gz"
+    sha256 "3c870b9f50d9fd15b58c817dbde1c7cfaa9fe3f05df0a4c6edd5571cb82f5491"
   end
 
   resource "six" do
@@ -128,8 +128,8 @@ class MoodleDl < Formula
   end
 
   resource "xmpppy" do
-    url "https://files.pythonhosted.org/packages/62/9a/424ef63cdb0af7431495523c396a7deb7db8f17e7a8c18b3f9489f7fccb1/xmpppy-0.7.3.tar.gz"
-    sha256 "c0f4ab504cfecf8b127d857b260e480598ae5522cb7b084c84537503646b3bb6"
+    url "https://files.pythonhosted.org/packages/6e/a6/a53d1ca08c686dd9e1bc18cf0fa3cd67462d43c69087fa55270f6b6d802c/xmpppy-0.7.4.tar.gz"
+    sha256 "f54df50a153c104d33456768936e9e8352e6c57cb3bed2cb93a2a0ee3fffd73c"
   end
 
   resource "yarl" do
@@ -138,8 +138,8 @@ class MoodleDl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/8b/34/7c6b4e3f89cb6416d2cd7ab6dab141a1df97ab0fb22d15816db2c92148c9/yt_dlp-2026.3.17.tar.gz"
-    sha256 "ba7aa31d533f1ffccfe70e421596d7ca8ff0bf1398dc6bb658b7d9dec057d2c9"
+    url "https://files.pythonhosted.org/packages/88/a4/1b0979d28f87774bb67fbbc66bce44f9dd1aa0e547a99e22985fac945c33/yt_dlp-2026.6.9.tar.gz"
+    sha256 "d50fcb95f48d61bedde33e408c1881d4c279e51c31354a599ce09e96ba0f4b86"
   end
 
   def install
