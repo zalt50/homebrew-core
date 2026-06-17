@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9a/87/15cf3b592aee5e70537ce02db986e7f517521ee9fcfc0799f11463ff96e9/schemathesis-4.21.7.tar.gz"
-  sha256 "f2c8855591f2850671723bd7dd5d115430f78c20009d1ecea036e0e91814d240"
+  url "https://files.pythonhosted.org/packages/a0/6b/9faf5eecd4299b0151b0312465e21598e546ed87d63a3ac09ce52aab0caa/schemathesis-4.21.8.tar.gz"
+  sha256 "853f5167b15b4a8b23a9aa66d4fe3ab2ae055609aa0eb75806062ff5b6bc8b00"
   license "MIT"
 
   bottle do
@@ -27,8 +27,8 @@ class Schemathesis < Formula
   pypi_packages exclude_packages: %w[certifi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "attrs" do
@@ -72,8 +72,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/f5/04/64032a1dccd2233615c8a3f701bbb563558575ed017496a24b6d81762c91/hypothesis-6.155.2.tar.gz"
-    sha256 "ae36880287c9c5defe9f199d3d2b67d9947a4da2a46e6c57373cbdf2345b20e1"
+    url "https://files.pythonhosted.org/packages/36/77/13ec9b6390bce44f5badab39837dd6789bbfe6342a2ac611a71537a7756f/hypothesis-6.155.3.tar.gz"
+    sha256 "1e34b17ae9873515384312cb7640abd773eb096c7eef8c0d9c614fa2c306e9bb"
   end
 
   resource "hypothesis-graphql" do
