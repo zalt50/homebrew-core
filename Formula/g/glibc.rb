@@ -310,9 +310,9 @@ class Glibc < Formula
     # Compile locale definition files
     mkdir_p lib/"locale"
 
-    # Get all extra installed locales from the system, except C locales
+    # Get all extra installed locales from the system, except C locale
     locales = ENV.filter_map do |k, v|
-      v if k[/^HOMEBREW_LANG$|^LANG$|^LC_/] && v != "C" && !v.start_with?("C.")
+      v if k[/^HOMEBREW_LANG$|^LANG$|^LC_/] && v != "C"
     end
 
     # en_US.UTF-8 is required by gawk make check
