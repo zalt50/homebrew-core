@@ -1,8 +1,8 @@
 class Wartremover < Formula
   desc "Flexible Scala code linting tool"
   homepage "https://www.wartremover.org/"
-  url "https://github.com/wartremover/wartremover/archive/refs/tags/v3.5.8.tar.gz"
-  sha256 "0af3adfb9511dc239dec0ecf8be87f6ad10a51986a4b65b2a9846698845ddbb2"
+  url "https://github.com/wartremover/wartremover/archive/refs/tags/v3.6.0.tar.gz"
+  sha256 "dbbc912106b47a8400b6513411c1a28288d021438f5a5e3b3c59165ee297ab6c"
   license "Apache-2.0"
   head "https://github.com/wartremover/wartremover.git", branch: "master"
 
@@ -24,7 +24,7 @@ class Wartremover < Formula
   depends_on "openjdk"
 
   def install
-    system "sbt", "assembly"
+    system "sbt", "--server", "assembly"
     libexec.install "wartremover-assembly.jar"
     bin.write_jar_script libexec/"wartremover-assembly.jar", "wartremover"
   end
