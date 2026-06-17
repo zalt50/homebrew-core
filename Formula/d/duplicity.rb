@@ -13,12 +13,12 @@ class Duplicity < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "138a3701109e31ad697f2960768a58ebdb79a231eb8d66f2e6311d6a083fe231"
-    sha256 cellar: :any, arm64_sequoia: "bc0369ebd667ef1fdb8ff280ba1ca1cbff374ff9254b5dd053802bcbd52c2243"
-    sha256 cellar: :any, arm64_sonoma:  "698658ff91a7f82d4c2cd2e0cbc94b70ddb5f47a223fb7b539fb796fd591d779"
-    sha256 cellar: :any, sonoma:        "60f4b652f92b1276b780280502851bccd89a4f421b1f877a9c6e28323b193e2e"
-    sha256 cellar: :any, arm64_linux:   "8218d74df610b964fb36b730bd2be61ec6b3501bed01755cce39e586bc2bb191"
-    sha256 cellar: :any, x86_64_linux:  "dcd5d275f63bb841348c981b61e3c6f277972e1137488a4ba559cb9d7773f87b"
+    sha256 cellar: :any, arm64_tahoe:   "b4c730412e7600a0a788d7af64fa930c70bd7c2486bc8542b59102b78b8dac6f"
+    sha256 cellar: :any, arm64_sequoia: "9ce8ef6e60efaec9eb821c35fa38756a08481806bc0154897269d9bab9ffe730"
+    sha256 cellar: :any, arm64_sonoma:  "01ec0d4c4a8f0f074871a17e4b990d1e54de8fb1b4d762e48c051d696619f759"
+    sha256 cellar: :any, sonoma:        "0f772c2c79ee86910184120ddad29c24c20f56fa219c9e8e30a3a2d993bfe9c0"
+    sha256 cellar: :any, arm64_linux:   "2ff7f8ad45e65204f7ef82a5489b0deb04eaa244fb0e8f63ef05f8fdad4bc8d6"
+    sha256 cellar: :any, x86_64_linux:  "3d207d1ec26d43463620d84779447c0191002001b016ac57a45392a7626e7b9b"
   end
 
   # `pkgconf` and `rust` are for bcrypt
