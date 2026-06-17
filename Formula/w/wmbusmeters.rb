@@ -1,8 +1,8 @@
 class Wmbusmeters < Formula
   desc "Read wired or wireless mbus protocol to acquire utility meter readings"
   homepage "https://github.com/wmbusmeters/wmbusmeters"
-  url "https://github.com/wmbusmeters/wmbusmeters/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "600beb099bc1ac1d4fd7a78dde89bb753b033cfd9de54ed6f25d3fc705c38042"
+  url "https://github.com/wmbusmeters/wmbusmeters/archive/refs/tags/3.0.0.tar.gz"
+  sha256 "d1bfc90db81e0340b806151f6c05337e9a0be3d5418c625e18bb137f45fb6ed7"
   license "GPL-3.0-or-later"
   head "https://github.com/wmbusmeters/wmbusmeters.git", branch: "master"
 
@@ -22,9 +22,6 @@ class Wmbusmeters < Formula
   uses_from_macos "libxml2"
 
   def install
-    # TODO: remove on next version bump; fixed upstream in commit e9ef936d6f18f8
-    # Prevent configure from running `find /` to locate libxml2 headers
-    inreplace "configure", "LIBXML2INC=$(find / -name xpath.h)", "LIBXML2INC="
     system "./configure", *std_configure_args
     system "make", "TAG=#{version}", "BRANCH=", "COMMIT_HASH=", "CHANGES="
     bin.install "build/wmbusmeters"
