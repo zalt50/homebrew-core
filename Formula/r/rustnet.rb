@@ -7,12 +7,12 @@ class Rustnet < Formula
   head "https://github.com/domcyrus/rustnet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed765cd6481ccc2cd24c4e902272ae075a8d8092dd5fe0a6e58632c764f99504"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8aa8187cff84d15ac84c43c59abca16b85523eff33f3f92ed3164f64fc7f271d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed5fd8a6a29c0f519808468560084f3b9c57eb86a2c79e1886840c50f906f4db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8299a8b442a7049a44a6772d1a376aaf4b67f0a43e72a78b860f9cfd419f44a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01a2c4e7669e19cdb979d1e8872c31758b429d74ffc7556e2cdf42e319b6aa8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96fae2119f9b26d5700219f58fe4b1829552aa4390be08169725d5ee19ea1bd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60b390d45e6fecd6435a0b7b4fe7f718e66ea4cef1b9c81a00059dd5d17f9cb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b15eca38ca0b3c1c3cc7800f4cbd039831b0616b6e70fdca01cb3c9ca49a9a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c8324446d3068637c38b9a03526fd58f6b2ffa6b2af7663922d43321e014036"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61613d5a0ccb18b3914ee78aed28f6b46a1b0672f3e33e02a7cd1a6976809e3f"
+    sha256 cellar: :any,                 arm64_linux:   "9408c55b36cc65b45e883f55e4b7639c7e18f3f5f836cbc1988631ccfe5864a0"
+    sha256 cellar: :any,                 x86_64_linux:  "822fcca6989c718a580c3e32b98ca2afd0116604ff1ab2c9e3ceb9199a018e90"
   end
 
   depends_on "rust" => :build
