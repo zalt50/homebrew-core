@@ -5,6 +5,11 @@ class DrawThingsCli < Formula
   sha256 "6f334973fdfe7e500ee9d133d79e425c9d3e0a6087fd54100592aea458340d77"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f78bc2923d686904e2afd1fc03a22ec4c02f56acf10eafb10ff10cc32dda313e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74cc982f3134a1b0d0d8d53a791e876357961a862af9196efaeb1025ed3b63aa"
+  end
+
   depends_on xcode: ["26.3", :build]
   depends_on macos: :ventura # needs CoreML and other Apple frameworks
 
