@@ -4,8 +4,8 @@ class Coin3d < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://github.com/coin3d/coin/releases/download/v4.0.8/coin-4.0.8-src.tar.gz"
-    sha256 "aff6c7edf24cfb935edba46574ec5f83b543c47ff79e40c21fb92dc709b0f2c4"
+    url "https://github.com/coin3d/coin/releases/download/v4.0.9/coin-4.0.9-src.tar.gz"
+    sha256 "599b561a2ea5dacdc77f544b122b0a985c1c7ff29a37ac4919836cd4f55af283"
 
     resource "soqt" do
       url "https://github.com/coin3d/soqt/releases/download/v1.6.4/soqt-1.6.4-src.tar.gz"
