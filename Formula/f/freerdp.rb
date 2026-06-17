@@ -6,12 +6,13 @@ class Freerdp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_tahoe:   "0872672abb141a08dfde78178c094ce31bd4e36faad92c81118ab106dcb1f918"
-    sha256 arm64_sequoia: "49d64118e4f05883715183a4575d6941f8e5ed9ed1a8749625dbd435949e5e02"
-    sha256 arm64_sonoma:  "7f766ea3d54a4474dcc50aa385cca9e474850188a2e36a30bc6191a8ae8f3431"
-    sha256 sonoma:        "72f52b9b3bad4f1bd1a6ad4ba82c048c875987f1d1b002bd4dc34e4a7e695801"
-    sha256 arm64_linux:   "dfb9f740f1b73896c42c7ef720ed2e01b3b6c2cd1ce7dafa9c09d311825b4d6c"
-    sha256 x86_64_linux:  "b24ca0d4d84c54180cb80e9e89858b2241dbf8682665b910ff2ece5a4cd90377"
+    rebuild 1
+    sha256 arm64_tahoe:   "a202f286e39636d655384eb055be0f9f27bc67cfb639cf287185ab4d1e84d02c"
+    sha256 arm64_sequoia: "efb49df2ab5f460614901a0c11a170a44e7a195076d1e4e225cd057c1c5a3506"
+    sha256 arm64_sonoma:  "d43741bd49062e9c4e07b1a3906185f77d838e8dbf91f9ea310dd7326458c361"
+    sha256 sonoma:        "a29d7d6dee88d80eabd6cc942983410ff3c7c6e9f79b522325b451ebc152fd90"
+    sha256 arm64_linux:   "9fe52e5167712864fa727d1e45bfbcd1a412b8735f5d7e1cf741475383d6b786"
+    sha256 x86_64_linux:  "d2b7f1b176007c42ee630d1c3e8780bd18e90bb659f66e81a408061c6ddab1e9"
   end
 
   head do
