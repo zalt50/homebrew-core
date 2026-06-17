@@ -3,10 +3,10 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.2.0.tar.gz"
-  sha256 "886818c55f887ecc62893c900f259a39ec6c09555ce4dd3d379653ae5b0d6e62"
+  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.2.1.tar.gz"
+  sha256 "9255a1cd87ad330242ed5063c2bcb2d04cc6897ab50b9fc95da5ac4a4625ae4d"
   license "Apache-2.0"
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
