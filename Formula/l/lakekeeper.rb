@@ -1,8 +1,8 @@
 class Lakekeeper < Formula
   desc "Apache Iceberg REST Catalog"
   homepage "https://docs.lakekeeper.io"
-  url "https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "557b06f08a045a7332d32b678fe6385797781310fd675a179552044d45fd8aec"
+  url "https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.12.4.tar.gz"
+  sha256 "0ad762505286c5fae7e590fe6c21983e5c77fb6afeae615e7545137df9c3c6d4"
   license "Apache-2.0"
   head "https://github.com/lakekeeper/lakekeeper.git", branch: "main"
 
@@ -36,14 +36,14 @@ class Lakekeeper < Formula
     pg_ctl = postgresql.opt_bin/"pg_ctl"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test", "-o", "-E UTF-8"
+    system pg_ctl, "initdb", "-D", testpath/"test", "-o", "-E UTF-8 -U postgres"
     (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
       port = #{port}
     EOS
     system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
 
     begin
-      ENV["LAKEKEEPER__PG_DATABASE_URL_WRITE"] = "postgres://localhost:#{port}/postgres"
+      ENV["LAKEKEEPER__PG_DATABASE_URL_WRITE"] = "postgres://postgres@localhost:#{port}/postgres"
       output = shell_output("#{bin}/lakekeeper migrate")
       assert_match "Database migration complete", output
     ensure
