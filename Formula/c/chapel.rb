@@ -11,12 +11,12 @@ class Chapel < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 arm64_tahoe:   "a73efe05b4551688355d1ddc3707424ae86573fc91352aec8c0eae6e0c4f6ce4"
-    sha256 arm64_sequoia: "9dcd53c9c5b564dfe18e8adab1fcaa9bace0847b05e9a7e0895c9bc2118d0a72"
-    sha256 arm64_sonoma:  "e1deda3af30cfb9d006072dd0b87bb57f76337d5819abad0076a0281495b5589"
-    sha256 sonoma:        "8cdec547c132c71423804efa6c22c49dd802351b5e4984b8caa21ff09130e785"
-    sha256 arm64_linux:   "2a8974a412dad807f368dc6ec6d0e81be099202c12536a741cd414752b864efb"
-    sha256 x86_64_linux:  "69749327935b602942509d11a242e12641fb5d5c3692592cf7794d18519802ac"
+    sha256 arm64_tahoe:   "61b2d6a954c8b1c07540f271f131dd17ff8562dc981bedcba7b30cc7b3ade3e1"
+    sha256 arm64_sequoia: "02bc89e6380ea4c366f55986cb97c205eae046dbd54b40f0c9b443e9a9424896"
+    sha256 arm64_sonoma:  "79dee51debf63e84d821347f8b0febd96e27d28c9461a1a613a051aafad3b1d0"
+    sha256 sonoma:        "f311f7393814574e4ed8a9d0abb0b7e9fbcb0d6c9e894d69f134d5998c13f859"
+    sha256 arm64_linux:   "aca79e05ce356a5d5a636e363b1e360bdb6de685e94d2e8dcc992469b3659421"
+    sha256 x86_64_linux:  "c8a2e1a0d7c0613b2ccb6732474f7139b813b1328473e11cdd184226dcafff64"
   end
 
   depends_on "cmake"
