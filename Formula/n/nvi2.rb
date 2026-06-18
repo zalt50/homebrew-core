@@ -13,8 +13,7 @@ class Nvi2 < Formula
   end
 
   depends_on "cmake" => :build
-
-  uses_from_macos "libiconv"
+  depends_on :macos
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
