@@ -12,12 +12,12 @@ class Openconnect < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "02beb4be59b0efe19db016198efb1c0889470de85a7bcc8d456fb9e2d5105897"
-    sha256 arm64_sequoia: "9d315e5ff0430cf19b0ad916473773c9244e3d410d1eec526c52664b224ed941"
-    sha256 arm64_sonoma:  "e4023b61d9fa5a710c81db230ba7e81e1821c84622a7fff601260383a7931224"
-    sha256 sonoma:        "d636ccce3b05b014b8e9020564fafffef66d90fc3fd968e8f6703d884eea2417"
-    sha256 arm64_linux:   "f16036645922a933bcaa2eacdc011db910e5a402559fcfc1c1f9b21110fd2b97"
-    sha256 x86_64_linux:  "749eb218c2418c7c1223f79be220ca1bde8c43c649f905cea355d36a2dd69a68"
+    sha256 arm64_tahoe:   "f409aa8b1c88ff33f1b5ce49740814bb932dba4a3877bc6a124a0f16fd39bf9e"
+    sha256 arm64_sequoia: "e435e4d4b91995be58f866b8012adda7dcb7cfbdff02fa7abcbf017f0b389fc3"
+    sha256 arm64_sonoma:  "cc157cf32a317f138140feb5f2fa948135f504805ba5f16a28ac610806fe67b2"
+    sha256 sonoma:        "002d07d8c2aa42c02b8e9fa269b74fbccf0f1c0e1389da06f52e61c8309f4d45"
+    sha256 arm64_linux:   "3296f51486c2af4ac2f005cd309b5aa471594c3c18a8646117932b1d21f205fd"
+    sha256 x86_64_linux:  "34be5e6c7b3bec8f0ee6514998a588745a0cd1cbcec6596699c28aecb256a4fd"
   end
 
   head do
