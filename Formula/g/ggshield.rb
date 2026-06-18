@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/3d/71/2757ce97253ce0ba424fe9482d53b0d9c201949000bedf099d1947903494/ggshield-1.52.1.tar.gz"
-  sha256 "df056abe1f5c0594aaa8b6133d01795dbaedb63bca6651903f7013f1d5850050"
+  url "https://files.pythonhosted.org/packages/9d/f9/3f2b594156cda7ed2afba978daec90fc0fad5023a1896aacf120f259f9a1/ggshield-1.52.2.tar.gz"
+  sha256 "bcb3f485e0ac12adbca44b4e7135bb522e29b2a774842eaf942ffca972f2219a"
   license "MIT"
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
@@ -105,8 +105,8 @@ class Ggshield < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/55/79/de6c16cc902f4fc372236926b0ce2ab7845268dcc30fb2fbb7f71b418631/marshmallow-3.26.2.tar.gz"
-    sha256 "bbe2adb5a03e6e3571b573f42527c6fe926e17467833660bebd11593ab8dfd57"
+    url "https://files.pythonhosted.org/packages/25/7e/1dbd4096eb7c148cd2841841916f78820bb85a4d80a0c25c02d30815a7fb/marshmallow-4.3.0.tar.gz"
+    sha256 "fb43c53b3fe240b8f6af37223d6ef1636f927ad9bea8ab323afad95dff090880"
   end
 
   resource "marshmallow-dataclass" do
