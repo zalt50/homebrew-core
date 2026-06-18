@@ -6,6 +6,15 @@ class Dbxcli < Formula
   license "Apache-2.0"
   head "https://github.com/dropbox/dbxcli.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d12c0f05d7f1599e85b676f3e0820917c5a8e01e47cf3677c5432a253db6c1e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d12c0f05d7f1599e85b676f3e0820917c5a8e01e47cf3677c5432a253db6c1e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d12c0f05d7f1599e85b676f3e0820917c5a8e01e47cf3677c5432a253db6c1e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34366404c801933b7d256ac160f3260e955427c1f8199a7c0bfd579d6fa5cdad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7544a3c7f7f35e8e8fe9b483579d9d60c0f2819af141466f80243a229f24f148"
+    sha256 cellar: :any,                 x86_64_linux:  "1d7c912d0624943941633b6bfad04b2f1f9d28abe1ddc466129421f7e0a0df94"
+  end
+
   depends_on "go" => :build
 
   def install
