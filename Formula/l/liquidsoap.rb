@@ -11,6 +11,15 @@ class Liquidsoap < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "def47e551b5299a3373d24ae533d298e95ce5e2899d8fceeef33276dd4bc39ef"
+    sha256 arm64_sequoia: "421599d8288d01074fcbc45812eba59d941198d17d45bb9cbdced36c57c28b6e"
+    sha256 arm64_sonoma:  "f61168689134eaf8a249cdd183151cd764a3bc71ac134ac493d3ac7646197e5b"
+    sha256 sonoma:        "503abc5ddff29224f39ea29d2c7657e6d94cb63ab2edd2b4898334ac74a43a00"
+    sha256 arm64_linux:   "5976e78257131e2112fd23ff896b9065df84ecb72ac944ce58c3af1308155f3c"
+    sha256 x86_64_linux:  "a43a166718cb5d26ca33cd8f2cf968f6050be5596568ada4616f74cd0d6f9378"
+  end
+
   depends_on "ocaml" => :build
   depends_on "opam" => :build
   depends_on "pkgconf" => :build
