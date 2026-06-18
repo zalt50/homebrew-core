@@ -13,14 +13,14 @@ class VulkanHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc420a7f516094e9fa82981811ade1f547e2955db64d81019ffdeb6d48ee7208"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc420a7f516094e9fa82981811ade1f547e2955db64d81019ffdeb6d48ee7208"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc420a7f516094e9fa82981811ade1f547e2955db64d81019ffdeb6d48ee7208"
-    sha256 cellar: :any_skip_relocation, tahoe:         "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
-    sha256 cellar: :any_skip_relocation, sequoia:       "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b94439ee3fade8cb511fe296e5d2b75c0ed2a5b9943feb4c94fcd5aac6c07a8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b94439ee3fade8cb511fe296e5d2b75c0ed2a5b9943feb4c94fcd5aac6c07a8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b94439ee3fade8cb511fe296e5d2b75c0ed2a5b9943feb4c94fcd5aac6c07a8b"
+    sha256 cellar: :any_skip_relocation, tahoe:         "b482fc6a2e4831ae1b572370791cffb91f44ba08908885ee579d44fdfe1f43d0"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b482fc6a2e4831ae1b572370791cffb91f44ba08908885ee579d44fdfe1f43d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b482fc6a2e4831ae1b572370791cffb91f44ba08908885ee579d44fdfe1f43d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b482fc6a2e4831ae1b572370791cffb91f44ba08908885ee579d44fdfe1f43d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b482fc6a2e4831ae1b572370791cffb91f44ba08908885ee579d44fdfe1f43d0"
   end
 
   depends_on "cmake" => :build
