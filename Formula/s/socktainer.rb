@@ -6,6 +6,10 @@ class Socktainer < Formula
   license "Apache-2.0"
   head "https://github.com/socktainer/socktainer.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "7f2274e48379eea57dfd75cfa99927b6f4806e78bb47334194c5f3a8639f22bf"
+  end
+
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
   depends_on "container"
