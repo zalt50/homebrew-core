@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.50.4.tar.gz"
-  sha256 "302f1e077cd3f4caaa8744df5cab959439f20e6620f7978e092419692526e098"
+  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.50.5.tar.gz"
+  sha256 "66850f5adaf99f1365d8bd9996a45813ebe3b35c535a1144ee937e04dcc8cb08"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -32,7 +32,7 @@ class Oxen < Formula
 
   def install
     ENV["ROCKSDB_LIB_DIR"] = Formula["rocksdb"].opt_lib
-    system "cargo", "install", *std_cargo_args(path: "crates/cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/oxen-cli")
   end
 
   test do
