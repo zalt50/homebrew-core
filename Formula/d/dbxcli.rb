@@ -19,7 +19,8 @@ class Dbxcli < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
-    generate_completions_from_executable bin/"dbxcli", "completion", shells: [:bash, :zsh, :fish]
+
+    generate_completions_from_executable(bin/"dbxcli", "completion")
   end
 
   test do
