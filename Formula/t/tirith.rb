@@ -6,6 +6,11 @@ class Tirith < Formula
   license "AGPL-3.0-only"
   head "https://github.com/sheeki03/tirith.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85d08c684dc6fd1b6578d3aa4b9b90767bf6281b7e3af547e1efc952d3ce33ac"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "73d3f0ed2cd362fad03a922a22672536bc5f539048c49d0c6c5307c46f4ddeca"
