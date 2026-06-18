@@ -1,8 +1,8 @@
 class Libpathrs < Formula
   desc "C-friendly API to make path resolution safer on Linux"
   homepage "https://github.com/cyphar/libpathrs"
-  url "https://github.com/cyphar/libpathrs/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "2bd56d6cfdc6b2394740a329efdaf9eeda315ae947c68adb1f673a3cb76f65a7"
+  url "https://github.com/cyphar/libpathrs/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "81a251cb978665ce74bb4c391cdfe9d5dd0a40cdcf6cf276f6bec6869bde74df"
   license any_of: ["MPL-2.0", "LGPL-3.0-or-later"]
   head "https://github.com/cyphar/libpathrs.git", branch: "main"
 
