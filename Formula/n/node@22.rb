@@ -12,13 +12,12 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "b816f097e858bd782fdabaa7c43cdf6d9b61e40798ddd596413b8368c491cf49"
-    sha256 cellar: :any, arm64_sequoia: "2a6149417ac1727912ae188e597bf00a0629a8e513e3f370c5c0c30c59693af9"
-    sha256 cellar: :any, arm64_sonoma:  "382349bf29b095ab27fdfb85b1b22ddd6750237cdd4080dfd23303aea7ecbbb7"
-    sha256 cellar: :any, sonoma:        "8f871c730de49ba722d15bb6c0b29a9d56b9401bea7fb4927144616acdf18ea8"
-    sha256 cellar: :any, arm64_linux:   "9908fc1f7cc87b3b3ff6709a1761c9604d8103056504fa9d252b7b3b9014920f"
-    sha256 cellar: :any, x86_64_linux:  "5ef46a3ae4c97d48ce205bebaa642088783ed58d93fcba5f3a85ff7a86313a14"
+    sha256 cellar: :any, arm64_tahoe:   "70efb6937730bb750defeba3385b34d76fca9bd4fb3cb15c94ec7762b7843c7b"
+    sha256 cellar: :any, arm64_sequoia: "97c9846101ae74f2d7a8f17ce91acddeab6ebe859535a248acedd79576fdd0de"
+    sha256 cellar: :any, arm64_sonoma:  "234179957bae030209bda9038cd8bf2a3a42477a93f07938f0c38e6bd8bff6ba"
+    sha256 cellar: :any, sonoma:        "fdb7fdd317fa2e3dee65db5dedebe10a9beb77ba531087342fa39962047f781d"
+    sha256 cellar: :any, arm64_linux:   "add8c5ac654bc12116b2e001df9df7a5861ab44a7ef71bc4fc5a8a8bb7715888"
+    sha256 cellar: :any, x86_64_linux:  "de7e4fb1edbc328bc2f8054369ca69360bd44ebaa73660e7926849819b3bb27f"
   end
 
   keg_only :versioned_formula
