@@ -11,6 +11,17 @@ class GccAT15 < Formula
     regex(%r{href=["']?gcc[._-]v?(15(?:\.\d+)+)(?:/?["' >]|\.t)}i)
   end
 
+  bottle do
+    sha256               arm64_tahoe:   "85291c4be12f71cccc0aa9b91caa60adf3427839e3154b93865c4f185b28f209"
+    sha256               arm64_sequoia: "a81cc934a4c1137af62ebf51cc8307b2527920bff41e36f57e166f346f1f6212"
+    sha256               arm64_sonoma:  "ee90b877579753c313b6831473a664474edcd333432e1a12ad8b96e74458a86a"
+    sha256               tahoe:         "b6a4905798c1eaed7a8ffdab8d73c5518c6e29581ae35513aa82a6c5179d0fea"
+    sha256               sequoia:       "00899c6e53c51462b8982b5c70f8844a8a832d4dd0c65a650c8bbad3e0c32c41"
+    sha256               sonoma:        "613be6cf2514f7f84205a7e24b89cd435240e7669399968d8e1395d2edc9fe5d"
+    sha256 cellar: :any, arm64_linux:   "2346e93ac94737aebf25bb753615d0d57d44b67e45838a282e62411e60c724ab"
+    sha256 cellar: :any, x86_64_linux:  "0784305caaaa8674b8c77bb0a335b2e79e6daa374104151762b256ac5849ea81"
+  end
+
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
