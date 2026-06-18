@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/19/4c/78ed9afd0a98682eaae197dd97a4b5f18b3b6735b8022cddd56a5b6d4522/prowler-5.30.1.tar.gz"
-  sha256 "2dacc421c39736a14443ec2c98d314f8e4634cfdab6a148767e82d9d0e7cf4da"
+  url "https://files.pythonhosted.org/packages/dd/33/ec9149a76a5f6f7cac4f3f1c39f661c22cdb8892d6f571408d7e5f471181/prowler-5.30.2.tar.gz"
+  sha256 "5220d790a1bedbd93f9fe93eba8f6a63abeaa69d85e42cf9d6b9059c5fa80235"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
@@ -234,8 +234,8 @@ class Prowler < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "apscheduler" do
@@ -524,8 +524,8 @@ class Prowler < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/91/f5/3557bf28e0f1943e4849154c821533706e6dea010f96fb6aa0b6949037d1/filelock-3.29.3.tar.gz"
-    sha256 "7fc1b3f39cf172fd8203812043c57b8a65aef9969f38b6704f628b881f761a84"
+    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
+    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
   end
 
   resource "flask" do
@@ -549,8 +549,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz"
-    sha256 "e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c"
+    url "https://files.pythonhosted.org/packages/81/1c/70b23fc52b2bb3c70b379f3bd05c4a60ab3a873e30c6bd21c57e0154848a/google_auth-2.55.0.tar.gz"
+    sha256 "fcd3a130f575fa36403d38774af1c64a4fbfbca09215f0589d2372b5119697cb"
   end
 
   resource "google-auth-httplib2" do
@@ -604,8 +604,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/44/c9/b713921c85b93c71eaf7e67607584eedf0b39ec0b3a77fd643e6d0c36212/iamdata-0.1.202606121.tar.gz"
-    sha256 "2f0c877c32453b33e87786ed48590967b621f867a080e1a4e57ecd7ac53dd657"
+    url "https://files.pythonhosted.org/packages/fa/68/a9b6b7953dc7f603ea11552aaca879560720d6c86cca4d22e70be0b58e18/iamdata-0.1.202606171.tar.gz"
+    sha256 "5d777d03466e37d0e109626e22a1ea343170706b3f9ba894f0eb7acc9f2963c4"
   end
 
   resource "idna" do
