@@ -19,7 +19,7 @@ class CcSwitchCli < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "src-tauri")
-    generate_completions_from_executable(bin/"cc-switch", "completions", shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"cc-switch", "completions")
   end
 
   test do
