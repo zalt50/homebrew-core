@@ -130,9 +130,6 @@ class Gcc < Formula
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
-      # Use our own (recent) binutils for as
-      args << "--with-as=#{formula_opt_bin("binutils")}/as"
-
       ENV.append_path "CPATH", formula_opt_include("zlib-ng-compat")
       ENV.append_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
     end
@@ -148,8 +145,8 @@ class Gcc < Formula
       # To make sure GCC does not record cellar paths, we configure it with
       # opt_prefix as the prefix. Then we use DESTDIR to install into a
       # temporary location, then move into the cellar path.
-      system "gmake", install_target, "DESTDIR=#{Pathname.pwd}/../instdir"
-      mv Dir[Pathname.pwd/"../instdir/#{opt_prefix}/*"], prefix
+      system "gmake", install_target, "DESTDIR=#{buildpath}/instdir"
+      prefix.install buildpath.glob("instdir/#{opt_prefix}/*")
     end
 
     bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
@@ -168,10 +165,6 @@ class Gcc < Formula
     man7.glob("*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     rm_r(info)
-
-    # Work around GCC install bug
-    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105664
-    rm_r(bin.glob("*-gcc-tmp"))
   end
 
   def add_suffix(file, suffix)
