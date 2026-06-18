@@ -1,8 +1,8 @@
 class KimiCode < Formula
   desc "AI coding agent for your terminal"
   homepage "https://moonshotai.github.io/kimi-code/"
-  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.16.0.tgz"
-  sha256 "2c8b1dc058364d167fc54aedc38c6700339baae3258afb85dc098ffac25cc071"
+  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.17.1.tgz"
+  sha256 "d7890506d13a3b752824446ccd05d4b2aa1e474795abbc28fcc024deed2c140a"
   license "MIT"
 
   bottle do
@@ -22,13 +22,11 @@ class KimiCode < Formula
 
     node_modules = libexec/"lib/node_modules/@moonshot-ai/kimi-code/node_modules"
 
-    # Remove non-native architecture binaries from `koffi`
+    # Remove non-native architecture binaries from `koffi` and `node-pty`
     if OS.mac?
-      if Hardware::CPU.arm?
-        rm_r node_modules/"koffi/build/koffi/darwin_x64"
-      elsif Hardware::CPU.intel?
-        rm_r node_modules/"koffi/build/koffi/darwin_arm64"
-      end
+      other_arch = Hardware::CPU.arm? ? "x64" : "arm64"
+      rm_r node_modules/"koffi/build/koffi/darwin_#{other_arch}"
+      rm_r node_modules/"node-pty/prebuilds/darwin-#{other_arch}"
     elsif OS.linux?
       # koffi requires libc++ which is not available in Homebrew Linux;
       # remove all prebuilt native binaries to avoid audit/linkage failures
