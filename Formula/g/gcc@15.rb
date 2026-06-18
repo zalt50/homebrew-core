@@ -1,38 +1,25 @@
-class Gcc < Formula
+class GccAT15 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
+  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
+  sha256 "fa59c1beef8995f27c4d71c1df227587189315d3e6faff1bb4306e61b0c530eb"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  compatibility_version 2
-  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
-
-  stable do
-    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz"
-    mirror "https://ftp.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz"
-    sha256 "50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79"
-
-    # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-16-branch
-    patch do
-      on_macos do
-        file "Patches/gcc/gcc-16.1.0.diff"
-      end
-    end
-  end
 
   livecheck do
     url :stable
-    regex(%r{href=["']?gcc[._-]v?(\d+(?:\.\d+)+)(?:/?["' >]|\.t)}i)
+    regex(%r{href=["']?gcc[._-]v?(15(?:\.\d+)+)(?:/?["' >]|\.t)}i)
   end
 
   bottle do
-    sha256 arm64_tahoe:   "144b48c317fe5406a36b57ca30171c78c0eddf91cd236b56246c3cf523f7d202"
-    sha256 arm64_sequoia: "924a3b36fe34a4ac9e2d281ef139cb0d331a0e36c41aac738ef6b4aac9a35421"
-    sha256 arm64_sonoma:  "6a17969b924c2dc491180f5bccf466339b4a7849f86c58bdf13d4d4f02ba4849"
-    sha256 tahoe:         "05c7d066d2bff334d820c221803ae27dd14dd59340e4fd23eccde2f1fd9b13b0"
-    sha256 sequoia:       "01b8293a065c6328517f4243f50c432ebcda7912b5b25e95767d6f6d8e8a4902"
-    sha256 sonoma:        "16a6a69c8c2a390272bb0a751b7e2dac7b11457192db807797f68c867b036166"
-    sha256 arm64_linux:   "a5cbd6e7bd013cb8f81fb79b65c46c3841f1d76b3a962a8b89d0a13417ed84a1"
-    sha256 x86_64_linux:  "a0ea9c0f9d2090ce7d3cce85c2f0c62566837d966d953edae48104613348c418"
+    sha256               arm64_tahoe:   "85291c4be12f71cccc0aa9b91caa60adf3427839e3154b93865c4f185b28f209"
+    sha256               arm64_sequoia: "a81cc934a4c1137af62ebf51cc8307b2527920bff41e36f57e166f346f1f6212"
+    sha256               arm64_sonoma:  "ee90b877579753c313b6831473a664474edcd333432e1a12ad8b96e74458a86a"
+    sha256               tahoe:         "b6a4905798c1eaed7a8ffdab8d73c5518c6e29581ae35513aa82a6c5179d0fea"
+    sha256               sequoia:       "00899c6e53c51462b8982b5c70f8844a8a832d4dd0c65a650c8bbad3e0c32c41"
+    sha256               sonoma:        "613be6cf2514f7f84205a7e24b89cd435240e7669399968d8e1395d2edc9fe5d"
+    sha256 cellar: :any, arm64_linux:   "2346e93ac94737aebf25bb753615d0d57d44b67e45838a282e62411e60c724ab"
+    sha256 cellar: :any, x86_64_linux:  "0784305caaaa8674b8c77bb0a335b2e79e6daa374104151762b256ac5849ea81"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -58,11 +45,11 @@ class Gcc < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def version_suffix
-    if build.head?
-      "HEAD"
-    else
-      version.major.to_s
+  # Branch from the Darwin maintainer of GCC, with a few generic fixes and
+  # Apple Silicon support, located at https://github.com/iains/gcc-15-branch
+  patch do
+    on_macos do
+      file "Patches/gcc/gcc-15.3.0.diff"
     end
   end
 
@@ -83,15 +70,14 @@ class Gcc < Formula
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
 
-    # Use `lib/gcc/current` to provide a path that doesn't change with GCC's version.
     args = %W[
       --prefix=#{opt_prefix}
-      --libdir=#{opt_lib}/gcc/current
+      --libdir=#{opt_lib}/gcc/#{version.major}
       --disable-nls
       --enable-checking=release
       --with-gcc-major-version-only
       --enable-languages=#{languages.join(",")}
-      --program-suffix=-#{version_suffix}
+      --program-suffix=-#{version.major}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-mpfr=#{Formula["mpfr"].opt_prefix}
       --with-mpc=#{Formula["libmpc"].opt_prefix}
@@ -126,9 +112,6 @@ class Gcc < Formula
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
-      # Use our own (recent) binutils for as
-      args << "--with-as=#{Formula["binutils"].opt_bin}/as"
-
       ENV.append_path "CPATH", Formula["zlib-ng-compat"].opt_include
       ENV.append_path "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib
     end
@@ -148,20 +131,10 @@ class Gcc < Formula
       mv Dir[Pathname.pwd/"../instdir/#{opt_prefix}/*"], prefix
     end
 
-    bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
-    bin.install_symlink bin/"gm2-#{version_suffix}" => "gm2"
-
-    # Provide a `lib/gcc/xy` directory to align with the versioned GCC formulae.
-    # We need to create `lib/gcc/xy` as a directory and not a symlink to avoid `brew link` conflicts.
-    (lib/"gcc"/version_suffix).install_symlink (lib/"gcc/current").children
-
-    # Only the newest brewed gcc should install gfortan libs as we can only have one.
-    lib.install_symlink lib.glob("gcc/current/libgfortran.*") if OS.linux?
-
     # Handle conflicts between GCC formulae and avoid interfering
     # with system compilers.
     # Rename man7.
-    man7.glob("*.7") { |file| add_suffix file, version_suffix }
+    man7.glob("*.7") { |file| add_suffix file, version.major }
     # Even when we disable building info pages some are still installed.
     rm_r(info)
 
@@ -179,7 +152,7 @@ class Gcc < Formula
 
   def post_install
     if OS.linux?
-      gcc = bin/"gcc-#{version_suffix}"
+      gcc = bin/"gcc-#{version.major}"
       libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
       raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
 
@@ -238,7 +211,7 @@ class Gcc < Formula
       #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
       #     brew libraries.
       # Note: *link will silently add #{libdir} first to the RPATH
-      libdir = HOMEBREW_PREFIX/"lib/gcc/current"
+      libdir = HOMEBREW_PREFIX/"lib/gcc/#{version.major}"
       specs.write specs_string + <<~EOS
         *cpp_unique_options:
         + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
@@ -266,7 +239,7 @@ class Gcc < Formula
         return 0;
       }
     C
-    system bin/"gcc-#{version_suffix}", "-o", "hello-c", "hello-c.c"
+    system bin/"gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", shell_output("./hello-c")
 
     (testpath/"hello-cc.cc").write <<~CPP
@@ -281,7 +254,7 @@ class Gcc < Formula
         return 0;
       }
     CPP
-    system bin/"g++-#{version_suffix}", "-o", "hello-cc", "hello-cc.cc"
+    system bin/"g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", shell_output("./hello-cc")
 
     (testpath/"test.f90").write <<~FORTRAN
@@ -295,21 +268,21 @@ class Gcc < Formula
       write(*,"(A)") "Done"
       end
     FORTRAN
-    system bin/"gfortran", "-o", "test", "test.f90"
+    system bin/"gfortran-#{version.major}", "-o", "test", "test.f90"
     assert_equal "Done\n", shell_output("./test")
 
     # Modula-2 is temporarily disabled on macOS 15
     return if OS.mac? && MacOS.version >= :sequoia
 
-    (testpath/"hello.mod").write <<~MODULA2
+    (testpath/"hello.mod").write <<~EOS
       MODULE hello;
       FROM InOut IMPORT WriteString, WriteLn;
       BEGIN
            WriteString("Hello, world!");
            WriteLn;
       END hello.
-    MODULA2
-    system bin/"gm2", "-o", "hello-m2", "hello.mod"
+    EOS
+    system bin/"gm2-#{version.major}", "-o", "hello-m2", "hello.mod"
     assert_equal "Hello, world!\n", shell_output("./hello-m2")
   end
 end
