@@ -4,6 +4,7 @@ class Libadwaita < Formula
   url "https://download.gnome.org/sources/libadwaita/1.9/libadwaita-1.9.1.tar.xz"
   sha256 "2ae34dbb3ea56d270925707cefa36050482ec88a741f1810b7619a5377c41a66"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/libadwaita.git", branch: "main"
 
@@ -53,9 +54,12 @@ class Libadwaita < Formula
 
   def install
     # Replace deprecated `sassc` with `sass` in the meson build file
+    # Use `expanded`, not `compressed`: GTK's CSS parser rejects dart-sass
+    # compressed output ("Expected ';' at end of block"). `expanded`
+    # matches upstream's `sassc -t compact`.
     inreplace "src/stylesheet/meson.build" do |s|
       s.gsub! "'sassc'", "'sass'"
-      s.gsub! "'-a', '-M', '-t', 'compact'", "'--style', 'compressed'"
+      s.gsub! "'-a', '-M', '-t', 'compact'", "'--style', 'expanded'"
     end
 
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args
