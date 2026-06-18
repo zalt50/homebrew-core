@@ -1,9 +1,9 @@
 class Aflxx < Formula
   desc "American Fuzzy Lop++"
   homepage "https://aflplus.plus/"
-  url "https://github.com/AFLplusplus/AFLplusplus/archive/refs/tags/v5.00c.tar.gz"
-  version "5.00c"
-  sha256 "b0c005a1d28883ad1cad17ac01837d5c6b0cc7a72d19db700823e42ce3848534"
+  url "https://github.com/AFLplusplus/AFLplusplus/archive/refs/tags/v5.01c.tar.gz"
+  version "5.01c"
+  sha256 "5d33fb1eb59043a0c2b72e4ef38d235cd47bfdced503d4915f74002be6c75fb3"
   license "Apache-2.0"
 
   livecheck do
