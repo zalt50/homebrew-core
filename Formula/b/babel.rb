@@ -6,12 +6,12 @@ class Babel < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51106a43e4adca72cada31f1306d0f05e498eeb5735d2337afa3105ce1586b17"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23a723b1843937e7a170d1fb916b6d99903e174ec8775617334ba2c4a7584cd3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23a723b1843937e7a170d1fb916b6d99903e174ec8775617334ba2c4a7584cd3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c5af2b6bd116a0dfea292f129f8755292667ea7fa074e980deb37cbff6197a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c5509d8fb49d438ebde6b4c0bbe21235a8918a16347c0f3292f61db6fc5b334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c5509d8fb49d438ebde6b4c0bbe21235a8918a16347c0f3292f61db6fc5b334"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf05542675e893c78f9423c578204c3a495716f60654cda63ea5e1be9568b6c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d84136e31faf8aa5b4d9c1572fc5dd23a0f718eeadf8aa00a8c0e4b318db46a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d84136e31faf8aa5b4d9c1572fc5dd23a0f718eeadf8aa00a8c0e4b318db46a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f83b99f1a1c1aa8d57384cada0b857d54e0d12dfe6df5d669cb6c2ee68f6ad9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9023b7be6d8d2047e6b566326e51f702231a875f2a61f5c870d34fb22262b33b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9023b7be6d8d2047e6b566326e51f702231a875f2a61f5c870d34fb22262b33b"
   end
 
   depends_on "node"
