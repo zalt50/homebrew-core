@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-9.4.1.44384.tar.gz"
-  sha256 "cef789cb1900d03b38606eecd8f05e9e2b02cf50d8100680eb74230dd1a3bc60"
+  url "https://dist.duck.sh/duck-src-9.5.0.45237.tar.gz"
+  sha256 "bc0666d4c667dfb7e28957570107b6225be5b47e28ec2666e6403f8dbf759c9e"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
@@ -159,6 +159,7 @@ class Duck < Formula
 
     if OS.mac?
       libexec.install Dir["cli/osx/target/duck.bundle/*"]
+      deuniversalize_machos libdir/"libjansi.jnilib"
 
       # Remove the `*.tbd` files. They're not needed, and they cause codesigning issues.
       buildpath.glob("JavaNativeFoundation.framework/**/JavaNativeFoundation.tbd").map(&:unlink)
