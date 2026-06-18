@@ -6,6 +6,15 @@ class Tirith < Formula
   license "AGPL-3.0-only"
   head "https://github.com/sheeki03/tirith.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85d08c684dc6fd1b6578d3aa4b9b90767bf6281b7e3af547e1efc952d3ce33ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73d3f0ed2cd362fad03a922a22672536bc5f539048c49d0c6c5307c46f4ddeca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d70324f80a4d366484604455999785a3db9876404bf4f72f484d54633e4c267c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d040ffa55bd244e364be96ec712d6b58e3837bc15a6e2e7d330bcb98f14da3f"
+    sha256 cellar: :any,                 arm64_linux:   "d2503d015176cf71d19db06c5c3b5783334c5f8800545c5c14462f0bba5642fb"
+    sha256 cellar: :any,                 x86_64_linux:  "4166b3c68b952f7e980ea8eb7eadb0c835121de985cc3338db04648506107e56"
+  end
+
   depends_on "rust" => :build
 
   def install
