@@ -7,8 +7,7 @@ class Gist < Formula
   head "https://github.com/defunkt/gist.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "8efc350b478d929ecf6de1f41afa0763fccf1efdeed3c16384deb5b4fb8bf66a"
+    sha256 cellar: :any_skip_relocation, all: "d3596bb6c1e1c112cd0276a220a4ff7a6a40d45be3a5c0c6cff8faf9ed69ae6b"
   end
 
   uses_from_macos "ruby"
