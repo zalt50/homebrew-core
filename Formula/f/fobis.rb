@@ -57,6 +57,7 @@ class Fobis < Formula
 
   def install
     virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"fobis", shell_parameter_format: :typer)
   end
 
   test do
