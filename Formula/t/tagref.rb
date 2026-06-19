@@ -1,8 +1,8 @@
 class Tagref < Formula
   desc "Refer to other locations in your codebase"
   homepage "https://github.com/stepchowfun/tagref"
-  url "https://github.com/stepchowfun/tagref/archive/refs/tags/v1.12.1.tar.gz"
-  sha256 "3d0017911afb6d9b887444c6da32f1642ad4046b4098af3d412fae1b58fece8c"
+  url "https://github.com/stepchowfun/tagref/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "18663bc5628a437eb756de72d0f0ecf1a1100806c768895d6c3be85ae92a9d7e"
   license "MIT"
 
   bottle do
@@ -45,7 +45,7 @@ class Tagref < Formula
 
     output = shell_output("#{bin}/tagref 2>&1", 1)
     assert_match(
-      "No tag found for [ref:baz] @ ./file-3.txt:1.",
+      "No tag found for [ref:baz] @ file-3.txt:1.",
       output,
       "Tagref did not complain about a missing tag.",
     )
