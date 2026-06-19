@@ -92,6 +92,7 @@ class Texlive < Formula
   conflicts_with "lcdf-typetools", because: "both install a `cfftot1` executable"
   conflicts_with "ht", because: "both install `ht` binaries"
   conflicts_with "opendetex", because: "both install `detex` binaries"
+  conflicts_with "weave", because: "both install a `weave` binary"
 
   resource "texlive-extra" do
     url "https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2026/texlive-20260301-extra.tar.xz"
