@@ -6,6 +6,11 @@ class Unuran < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/unuran/unuran.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^unuran[._-](\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "cc688fd0bb04c726a41b12d0328533ff271128d42a1b8651950f89e8a1ea0406"
     sha256 cellar: :any, arm64_sequoia: "9e411035f79de2f3dd58892bf08d2a25d28c20addbefd6a222668d0015ba5f29"
