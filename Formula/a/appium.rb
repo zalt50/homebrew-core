@@ -1,8 +1,8 @@
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-3.5.0.tgz"
-  sha256 "2aa143b4de6c76ed2071e316331aae7184916aa2fdcdc4d3647ab3f561d97d3d"
+  url "https://registry.npmjs.org/appium/-/appium-3.5.2.tgz"
+  sha256 "027b0a1acbb8dbfe2612cbcaf0b8ec5ff12d936652f014093cfde148a3258e2a"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
@@ -38,14 +38,24 @@ class Appium < Formula
 
   def install
     ENV["APPIUM_SKIP_CHROMEDRIVER_INSTALL"] = "1"
-    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
+    system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
-    # Remove prebuilts which still get installed as optional dependencies
-    rm_r(libexec.glob("lib/node_modules/appium/node_modules/@img/sharp-*"))
-    rm_r(libexec.glob("lib/node_modules/appium/node_modules/bare-{fs,os,url}/prebuilds/*"))
+    node_modules = libexec/"lib/node_modules/appium/node_modules"
+    rm_r(node_modules.glob("bare-{fs,os,url}/prebuilds/*"))
+
+    # Build `sharp` from source against brewed `vips`
+    rm_r(node_modules.glob("@img/sharp-*"))
+    cd node_modules/"sharp" do
+      ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
+      system "npm", "run", "build"
+      rm_r("src/build/Release/obj.target")
+
+      # `sharp` resolves its native binary from `@img`, so link the source build there.
+      sharp = Pathname.pwd.glob("src/build/Release/sharp-*.node").first
+      (node_modules/"@img"/sharp.basename(".node")).install_symlink sharp => "sharp.node"
+    end
   end
 
   service do
