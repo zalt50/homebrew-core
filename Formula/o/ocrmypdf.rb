@@ -3,8 +3,8 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/51/3c/b5b5db9845b158e9e3dffb5f5dc692804bf6608f18f16e81737d10f27ac7/ocrmypdf-17.6.0.tar.gz"
-  sha256 "2ae7b09363774f0b4ae786520980e168c4dfafd3c43556dc123db0041c68ed43"
+  url "https://files.pythonhosted.org/packages/0e/f4/7d8fcd1f255ce098ecb8daf40ae20eb3fd940ac0f40c5bc22f10711352f6/ocrmypdf-17.7.0.tar.gz"
+  sha256 "c0a351910e8fee09bdbfee6cc7ba0299b9d561bba42afbbf4df29edcc7d58bc6"
   license "MPL-2.0"
 
   bottle do
@@ -116,8 +116,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pypdfium2" do
-    url "https://files.pythonhosted.org/packages/b0/98/6b44bf82ddb3c7a3e0249203772aad8981b4491d6227f182685f310faeff/pypdfium2-5.9.0.tar.gz"
-    sha256 "db1274bd27844db6fda17ef1dbcd0026c47d357437058d838e98060c0da9e92e"
+    url "https://files.pythonhosted.org/packages/1d/78/d9b45abb97a3686643f7c6472a5f7688f2013a373226121dc76b9debbacf/pypdfium2-5.10.1.tar.gz"
+    sha256 "f257d2011eb43c846b7e9f5a802e28646b29732763e4a35dd6ca76f9be580538"
   end
 
   resource "rich" do
