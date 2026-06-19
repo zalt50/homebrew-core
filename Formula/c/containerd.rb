@@ -6,12 +6,12 @@ class Containerd < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c0d3b6acd131b659ec5d3c7a4a3c763abc1c30fc5e177e193329fbe4f61fe6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44a0a09f45622db71e8849109a26470f8699e060675930760b609b4689936904"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6415a8add4ff3bf9383d517ba5ac4c063ebad85465d03c64569ff6d175e20005"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d67004c216ff7a439fc844e19ea68cb7f311bc0147b3791487387d276e362117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dcf2902fe0488b4dc34f0f3dc8050b67b48d7dc2bd0e5cd1bd6e06c5acadc99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45a10042980c48847029ac31fc0522687a2b850dca8834d1893a077c811541db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9669f95bf6b9b618de2da1ef09fb53ffd47bfa769cd912ebc91d53ecdc7bc5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18cfdb04239a96658058e62eab959c3ae006068b9dd409e90db972a4e007a082"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51129c0fd80e4baad595676cd8ec3039e072deb45cec6af58730b9a6174ccc60"
+    sha256 cellar: :any_skip_relocation, sonoma:        "728b7748e7d40116a5383ba3610f7ac91728fecb62a4e3a7b923ebbb550436f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67911af8ca8f6bfff3d52b17717a63bfe76f974ab5e369abcd555d522b9ae2f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2145a82d90ac9678b3f3e9a530de0748e574bc3c9512fa5f0c42a07af86a42b8"
   end
 
   depends_on "go" => :build
