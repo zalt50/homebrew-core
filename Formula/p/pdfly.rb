@@ -6,7 +6,7 @@ class Pdfly < Formula
   url "https://files.pythonhosted.org/packages/48/ae/70f161c80b3f39d8fe4ff784c78045225820d10375c81c2097c0e85ac0fc/pdfly-0.5.1.tar.gz"
   sha256 "636e9736ca3296ed69ad7e14d997813ea5a662ba7a86c77d155e343494dcc3d7"
   license "BSD-3-Clause"
-  revision 21
+  revision 22
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "b648e6c9f945c7e6b898963fb6c2d64cffd3a907801c4b42951405292f36816b"
@@ -120,8 +120,8 @@ class Pdfly < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/99/0a/48fe05c6bb3aa4bb4d2a4079a383d33c0dfec1edf613a642f07d8b8b5c2e/pypdf-6.13.2.tar.gz"
-    sha256 "5a96a17dbdfbf9c2ab24c0a13fa0aba182be22ba6f283098712c16fc242f509f"
+    url "https://files.pythonhosted.org/packages/17/18/9947cc201af9ccf76720fd3347bf4f70eb882ce3fcf4cb05f7443e4cf871/pypdf-6.13.3.tar.gz"
+    sha256 "f3cb822769725f1bac658c406cfc9460399043f3750c2d3e4650e0a85eacabd7"
   end
 
   resource "requests" do
