@@ -3,8 +3,8 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://github.com/github/spec-kit/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "6345116ed4a135fc493463805ea9a5c17aa92ff1389ee8df069e0d7f4631ab73"
+  url "https://github.com/github/spec-kit/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "78b37dbcda69648ab648f82b6af83da4b56e34b2a6c9b2027c0152819d6e0646"
   license "MIT"
 
   bottle do
@@ -33,8 +33,8 @@ class Specify < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/9c/4b/6f8906aaf67d501e259b0adab4d312945bb7211e8b8d4dcc77c92320edaa/json5-0.14.0.tar.gz"
-    sha256 "b3f492fad9f6cdbced8b7d40b28b9b1c9701c5f561bef0d33b81c2ff433fefcb"
+    url "https://files.pythonhosted.org/packages/e4/7d/05c46a96a78147ae3bf99c2f4169ce144a70220b8d6fcd56f6ec368b8ce9/json5-0.15.0.tar.gz"
+    sha256 "7424d1f1eb1d56da6e3d70643f53619862b4ce81440bdb8ecfd6f875e5ba4a71"
   end
 
   resource "markdown-it-py" do
