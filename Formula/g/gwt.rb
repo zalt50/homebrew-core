@@ -11,7 +11,7 @@ class Gwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "61e592697a9d5ce46b49729d46788ef4b4ee119d7c40dcfa094bdbcc0f17f389"
+    sha256 cellar: :any_skip_relocation, all: "d14dc605a4b0a4628bb6b2df67684e850e32f7fa02cf12c1da4559fcaeecc189"
   end
 
   depends_on "openjdk"
