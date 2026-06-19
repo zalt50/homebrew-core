@@ -26,6 +26,7 @@ class McpToolbox < Formula
       -X github.com/googleapis/genai-toolbox/cmd.buildType=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"toolbox")
+    generate_completions_from_executable(bin/"toolbox", shell_parameter_format: :cobra)
   end
 
   test do
