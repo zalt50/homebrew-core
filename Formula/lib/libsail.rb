@@ -1,10 +1,9 @@
 class Libsail < Formula
   desc "Missing small and fast image decoding library for humans (not for machines)"
   homepage "https://sail.software"
-  url "https://github.com/HappySeaFox/sail/archive/refs/tags/v0.9.10.tar.gz"
-  sha256 "dc0d6fa87cb4fa8b514f450a3fb13cee6e3e60f03250f683564fabbec0f722e3"
+  url "https://github.com/HappySeaFox/sail/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "b6f77d6d451b72202c8e11bd5057b697a21f7b6c4ef713f19a96de5a16c08916"
   license "MIT"
-  revision 1
 
   bottle do
     rebuild 1
@@ -18,6 +17,7 @@ class Libsail < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
+  depends_on "ffmpeg" # for `libavutil`
   depends_on "giflib"
   depends_on "imath"
   depends_on "jpeg-turbo"
