@@ -1,8 +1,8 @@
 class Shellshare < Formula
   desc "Live Terminal Broadcast"
   homepage "https://shellshare.net"
-  url "https://github.com/vitorbaptista/shellshare/archive/refs/tags/v3.5.1.tar.gz"
-  sha256 "41f5ff9bc67d9aecebe3159c7541b26096e4186936ecdc051b14ff66cfb40b0e"
+  url "https://github.com/vitorbaptista/shellshare/archive/refs/tags/v3.6.1.tar.gz"
+  sha256 "7a6aeed3c4ebb22476c3319ecb3d825d40fad73dd7166f35c898ea8e2fc28dbd"
   license "Apache-2.0"
   head "https://github.com/vitorbaptista/shellshare.git", branch: "main"
 
