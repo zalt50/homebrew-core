@@ -1,8 +1,8 @@
 class Tirith < Formula
   desc "Detect terminal injection, homograph, and pipe-to-shell attacks"
   homepage "https://tirith.sh/"
-  url "https://github.com/sheeki03/tirith/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "57f74fc7d0d3b508865f9d3d60d14c988c5c1aeb27c5202046388680c230381e"
+  url "https://github.com/sheeki03/tirith/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "f6d4d66d7f151a3ddf4a3a8763e204b2301278cd016e8d496c4eb07cfc8ddc35"
   license "AGPL-3.0-only"
   head "https://github.com/sheeki03/tirith.git", branch: "main"
 
