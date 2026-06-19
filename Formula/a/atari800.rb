@@ -1,13 +1,9 @@
 class Atari800 < Formula
   desc "Atari 8-bit machine emulator"
   homepage "https://atari800.github.io/"
+  url "https://github.com/atari800/atari800/releases/download/ATARI800_6_0_0/atari800-6.0.0-src.tgz"
+  sha256 "5b37cb6cd43b8e4163e093276c1ad82293fea6af00a566c2e32eaf0d372c7723"
   license "GPL-2.0-or-later"
-
-  stable do
-    url "https://github.com/atari800/atari800/releases/download/ATARI800_5_2_0/atari800-5.2.0-src.tgz"
-    sha256 "3874d02b89d83c8089f75391a4c91ecb4e94001da2020c2617be088eba1f461f"
-    depends_on "sdl12-compat"
-  end
 
   livecheck do
     url :stable
@@ -33,10 +29,10 @@ class Atari800 < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
-    depends_on "sdl2-compat"
   end
 
   depends_on "libpng"
+  depends_on "sdl2-compat"
 
   on_linux do
     depends_on "readline"
