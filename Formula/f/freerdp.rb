@@ -68,6 +68,7 @@ class Freerdp < Formula
       -DWITH_CLIENT_SDL=ON
       -DWITH_CLIENT_SDL2=OFF
       -DWITH_CLIENT_SDL3=ON
+      -DCHANNEL_RDPEWA=ON
     ]
 
     # Native macOS client and server implementations are unmaintained and use APIs that are obsolete on Sequoia.
