@@ -157,7 +157,6 @@
   "rtx": "mise",
   "rustfmt": "rust",
   "rustup-init": "rustup",
-  "sdl": "sdl12-compat",
   "selenium-server-standalone": "selenium-server",
   "server-go": "openiothub-server",
   "sheen-bidi": "sheenbidi",
