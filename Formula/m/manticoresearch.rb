@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/25.0.0.tar.gz"
-  sha256 "9ee49b6a876ece2058c848aa5a2e87d2a4db8ebbcc925836fc760962a84fb0fb"
+  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/27.1.5.tar.gz"
+  sha256 "ddfc210ada19b0551b7274411ac9a46cbf7049722955cbf42b545cacf5aa5238"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -10,7 +10,7 @@ class Manticoresearch < Formula
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
   version_scheme 1
-  head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
+  head "https://github.com/manticoresoftware/manticoresearch.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -53,8 +53,12 @@ class Manticoresearch < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Workaround for Boost 1.89.0 until fixed upstream.
-  # Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
+  # Workarounds for building with Boost 1.89+ and GCC, until fixed upstream:
+  # - galera: disable Boost (Boost.System stub removed in 1.89)
+  #   Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
+  # - searchdbuddy: include Boost.Process v1 environment header
+  #   (`<boost/process.hpp>` now pulls Process v2 where `environment` is a namespace)
+  # - sortergroup: drop redundant `using` that GCC rejects as private
   patch :DATA
 
   def install
@@ -130,3 +134,27 @@ index 0ffa9caf1..806c929b4 100644
 -# file configured from cmake/galera-imported.cmake.in
 \ No newline at end of file
 +# file configured from cmake/galera-imported.cmake.in
+diff --git a/src/searchdbuddy.cpp b/src/searchdbuddy.cpp
+index 39985f6..9c83062 100644
+--- a/src/searchdbuddy.cpp
++++ b/src/searchdbuddy.cpp
+@@ -24,6 +24,7 @@
+ #include <boost/process/v1/error.hpp>
+ #include <boost/process/v1/handles.hpp>
+ #include <boost/process/v1/io.hpp>
++#include <boost/process/v1/env.hpp>
+ #else
+ #include <boost/process.hpp>
+ #endif
+diff --git a/src/sortergroup.cpp b/src/sortergroup.cpp
+index 13c4feb..d1f91ad 100644
+--- a/src/sortergroup.cpp
++++ b/src/sortergroup.cpp
+@@ -347,7 +347,6 @@ protected:
+ 	using BaseGroupSorter_c::AggrSetup;
+ 	using BaseGroupSorter_c::AggrUpdate;
+ 	using BaseGroupSorter_c::AggrUngroup;
+-	using BaseGroupSorter_c::AggrDiscard;
+ 
+ 	using CSphMatchQueueTraits::m_iSize;
+ 	using CSphMatchQueueTraits::m_dData;
