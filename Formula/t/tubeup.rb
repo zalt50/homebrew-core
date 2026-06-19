@@ -7,6 +7,15 @@ class Tubeup < Formula
   sha256 "4c75423a429493bddaf78ede0031947938b3eb35435847ee6597b49a4be76ad7"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "371f1105bb52be255f2c1e94dbebac62b851cd8fc232c406832bf23478a24de1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e8dbdf4ab505d9dcf4e931e173f7ec292c3dd92442290ccccb7b07c3ea2dfac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f932f80fc08825a80b422c671b593879f239c0ecd0b19f2a45da495d24fc5c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cb6e1a35276a95acf0eb3e0202977f4c5005ee3d7c0611451df4e9fcdd3f90b"
+    sha256 cellar: :any,                 arm64_linux:   "da3a52600cba0d0ba6ea63e2a6a0937532d63bd3b2403aefde5f39465ee6495a"
+    sha256 cellar: :any,                 x86_64_linux:  "f77ee082f9f01163522454790708a3c4b02b883b1e46e61be762f175fbe37258"
+  end
+
   depends_on "node" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cffi"
