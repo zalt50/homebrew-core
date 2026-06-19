@@ -16,6 +16,7 @@ class Sfcgal < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "eigen" => :build
   depends_on "nlohmann-json" => :build
   depends_on "boost"
   depends_on "cgal"
@@ -23,7 +24,9 @@ class Sfcgal < Formula
   depends_on "mpfr"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # TODO: Drop SFCGAL_WITH_EIGEN=ON once SFCGAL enbles it when Eigen is detected
+    # See: https://gitlab.com/sfcgal/SFCGAL/-/merge_requests/778
+    system "cmake", "-S", ".", "-B", "build", "-DSFCGAL_WITH_EIGEN=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
