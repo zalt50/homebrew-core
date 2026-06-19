@@ -9,7 +9,7 @@ class BumpMyVersion < Formula
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "90d49de6eb8127dfa1860cbfda5551cd48188d11a8d20170f3c15d8919c987ba"
+    sha256 cellar: :any_skip_relocation, all: "efcc383009b02c64659c49a2f73177546e86c849fd22c548165a2e44c66d650d"
   end
 
   depends_on "certifi" => :no_linkage
