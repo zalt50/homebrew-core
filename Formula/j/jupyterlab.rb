@@ -3,8 +3,8 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/e8/52/a8d4895bef501ffeb6af448e8bf7079541c7772978211963aa653518c2d9/jupyterlab-4.5.9.tar.gz"
-  sha256 "dd79a073fecae7a39066ea99e4627ed6c76269ac926e95a810e1e1df6358d865"
+  url "https://files.pythonhosted.org/packages/f8/3c/1ebd737b860cdbe61eed71536d06aab4e1781fbdcf07ecd5a1afe05b8adf/jupyterlab-4.6.0.tar.gz"
+  sha256 "6a8b88f2aae7ed4d012c634fc957c1a27f3aa217c32f0ced0175fac9ee17f9e5"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
@@ -216,6 +216,11 @@ class Jupyterlab < Formula
     sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
   end
 
+  resource "jupyter-builder" do
+    url "https://files.pythonhosted.org/packages/fb/45/d0df8b43c10a61529c0f4a8af5e19ebe108f0c3af8f57e0fc358969907af/jupyter_builder-1.0.2.tar.gz"
+    sha256 "6155d78a5325010532a6419ffcba89eac643fd1aa56ea83115e661924d6f6aab"
+  end
+
   resource "jupyter-client" do
     url "https://files.pythonhosted.org/packages/7d/dc/5512503b088997c2250b8bf18258fba9d9ce5ead641183700960d3c9d342/jupyter_client-8.9.1.tar.gz"
     sha256 "a58f730dd9e728ba16ba1d62ebccf7ffe1ebbdbce4e95cfae941b7321ae1f4fa"
@@ -302,8 +307,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/3e/c4/f71f8716f2903e9e817a47f534b9fd84831e155e2acb32c26691c8e06243/notebook-7.5.7.tar.gz"
-    sha256 "d6d59288a25303b25e1dcb71e9b017ec3a785f7d92f38b9bc288ca1970d5b0a8"
+    url "https://files.pythonhosted.org/packages/0d/44/d5c65783f490298473bb1c05722e05ee2256231389559c2c5ae0a3e5d975/notebook-7.6.0.tar.gz"
+    sha256 "ea13e79e601bf273074895fdfb17dd3f2da916d3c045e0b9c47d18b16ab62481"
   end
 
   resource "notebook-shim" do
@@ -426,11 +431,6 @@ class Jupyterlab < Formula
     sha256 "1c72b39f09457db3c05ce1d19158c2cbef4c32b8bedd02c155e49282b7ea7459"
   end
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
-  end
-
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -526,7 +526,7 @@ class Jupyterlab < Formula
     # These resources require `jupyterlab` to build, causing a build loop
     # with pip's --no-binary. They need `jlpm` in PATH, so we need to add it.
     # https://github.com/jupyterlab/jupyterlab_pygments/issues/23
-    ENV.prepend_path "PATH", bin
+    ENV.prepend_path "PATH", libexec/"bin"
     skipped.each do |r|
       venv.pip_install(resource(r), build_isolation: false)
     end
