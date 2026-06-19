@@ -1,11 +1,10 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
-  url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "2a90eb9a306c1eeb29213f5b165a55008ac5cb7d27e0935c4458c51a49ef091d"
+  url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "b41d09905a3c2f3a25709d1dcce8ef3942a4c2799d1046f74be7b6bbebc45e6a"
   license "MIT"
-  revision 2
-  compatibility_version 3
+  compatibility_version 4
 
   livecheck do
     url :stable
