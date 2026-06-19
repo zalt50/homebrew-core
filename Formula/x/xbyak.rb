@@ -12,7 +12,7 @@ class Xbyak < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d325eaaa3adec04fd03e4aabb9a8ae25736d513b4fa34819a968894c44136438"
+    sha256 cellar: :any_skip_relocation, all: "29510f948c0e4cd70ad5f44eefd53c8c230ea42d90e65e0c8c292a5c346cba26"
   end
 
   depends_on "cmake" => :build
