@@ -8,12 +8,12 @@ class Ocrmypdf < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "785f83992eb4f71472fe99634de7d9d8ca5510d1e92165d1e1ddce875bf50b37"
-    sha256 cellar: :any, arm64_sequoia: "3e958553ed5ed30ad755370e63cb753dd1cfc8c14119b4d113b84608d2592338"
-    sha256 cellar: :any, arm64_sonoma:  "ead4c1c589f6fb64bff5d413a91f7c1f5dc069329cf356fa547a135bd024be2e"
-    sha256 cellar: :any, sonoma:        "8e64fbc5d4358ee72ac8f27d0bc59c29d0c2c9348f615e29755332414c3c2d69"
-    sha256 cellar: :any, arm64_linux:   "714e2c1d9ee53d304cf567128650788e130a9c8accfc0e031d3591887f51ea5b"
-    sha256 cellar: :any, x86_64_linux:  "85b3f087c0cae47c2ba88a0559cba924afce53dd9022aa8b1edc5a59d4f20647"
+    sha256 cellar: :any, arm64_tahoe:   "98c326a983785269d53268e8ec3fa9c1a1567fb55f456becb24b28e699bc56b6"
+    sha256 cellar: :any, arm64_sequoia: "faa6d37ba2e7b03869f5f22d55aa4c8fc8f1a2a0c642fe691e2d25a66ea863cf"
+    sha256 cellar: :any, arm64_sonoma:  "fdf9c31c7b5d25af9ff0b88125eedf8e19071049a90ae832bf16bf02fcb57752"
+    sha256 cellar: :any, sonoma:        "758b73cdeb465467934ecc7d1f2479dc9fbfa29c19199664031f7f9289318466"
+    sha256 cellar: :any, arm64_linux:   "5e5f30f9cf026f6a71e9ed088994983cc091922a8abdb9e5bbaf112f23d461fb"
+    sha256 cellar: :any, x86_64_linux:  "02b4591df9cda6cabfbe4421a44258d2b07721c7bddfc553f1fd0025f46bff24"
   end
 
   depends_on "cmake" => :build # for pikepdf
