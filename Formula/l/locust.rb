@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/29/dc/b6c5c6f23af38e0951de45b0255da8def1959a7710e6bd56b71047e7a4a5/locust-2.44.3.tar.gz"
-  sha256 "bf3c82843dfebf684c968b5778b8132e9c1f1abd400d25a91c63ea65200b7f29"
+  url "https://files.pythonhosted.org/packages/15/58/a9642fa8604ae13d87b408c8c90cac99f3cfd59af59a085ac7435e825f68/locust-2.44.4.tar.gz"
+  sha256 "9115530e33ca9591c02d9f970d92991739d50b775785b954103d5794ce299c3f"
   license "MIT"
 
   bottle do
@@ -80,8 +80,8 @@ class Locust < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/6d/6e/802acd792aebb2256fbbee8cacf2727faaeb6f240ac11008f09eae4414bc/greenlet-3.5.1.tar.gz"
-    sha256 "5a56aeb7d5d9cc4b3a735efb5095bd4b4f6f0e4f93e5ca876d0e2315137b7829"
+    url "https://files.pythonhosted.org/packages/dd/8b/befc3cb36965f397d87e86fb3b00e3ec0dc67c1ecb0986d7f54ee528f018/greenlet-3.5.2.tar.gz"
+    sha256 "c1b906220d83c140361cdd12eef970fb5881a168b98ee58a43786426173da14c"
   end
 
   resource "h11" do
@@ -115,8 +115,8 @@ class Locust < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/92/23/6139781ca7aadf656fa8e384fa84693ffb13f299e6931b6526427fe5e297/msgpack-1.2.0.tar.gz"
-    sha256 "8e17af38197bf58e7e819041678f6178f4491493f5b8c8580414f40f7c2c3c41"
+    url "https://files.pythonhosted.org/packages/31/f9/c0a1c127f9049db9155afc316952ea571720dd01833ff5e4d7e8e6352dbb/msgpack-1.2.1.tar.gz"
+    sha256 "04c721c2c7448767e9e3f2520a475663d8ee0f09c31890f6d2bd70fd636a9647"
   end
 
   resource "packaging" do
@@ -140,8 +140,8 @@ class Locust < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/7d/0d/549bd94f1a0a402dc8cf64563a117c0f3765662e2e668477624baeec44d5/pytest-9.0.3.tar.gz"
-    sha256 "b86ada508af81d19edeb213c681b1d48246c1a91d304c6c81a427674c17eb91c"
+    url "https://files.pythonhosted.org/packages/84/0e/b5858858d74958632c49b72cb25a3976ff9f632397626715be71c89d3971/pytest-9.1.0.tar.gz"
+    sha256 "41dd9148c08072446394cefd3d79701701335a9f4cae69ba92e39f6c7f5c061c"
   end
 
   resource "python-engineio" do
@@ -150,8 +150,8 @@ class Locust < Formula
   end
 
   resource "python-socketio" do
-    url "https://files.pythonhosted.org/packages/07/dd/6fd4112b941f7d39b8171b6ba17902609bd8fa2059c3812a3c29dade13e7/python_socketio-5.16.2.tar.gz"
-    sha256 "ad88c228d921646efa436c0a0df217e364ef30ec072df4041484e54d49c15989"
+    url "https://files.pythonhosted.org/packages/32/2d/ffce71017c106b75099fea569df6518c63fee5d6202ce0cfe7b01e6f22c3/python_socketio-5.16.3.tar.gz"
+    sha256 "89b136f677ae65607a84cecda9b4d6c5377b40a97582c504c25df89af16d520e"
   end
 
   resource "pyzmq" do
