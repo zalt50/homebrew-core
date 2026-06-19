@@ -23,12 +23,12 @@ class Sdl12Compat < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DSDL2_PATH=#{Formula["sdl2"].opt_prefix}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["sdl2"].opt_lib)}",
+                    "-DSDL2_PATH=#{Formula["sdl2-compat"].opt_prefix}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["sdl2-compat"].opt_lib)}",
                     "-DSDL12DEVEL=ON",
                     "-DSDL12TESTS=OFF",
                     *std_cmake_args
