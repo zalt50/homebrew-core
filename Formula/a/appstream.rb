@@ -7,12 +7,12 @@ class Appstream < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "f2c581be46ed6b1247e389b64e1ad6362873ab8c03302cbf0dedc0120ab92299"
-    sha256 arm64_sequoia: "796493bf50d9d0074104f9d531db5743535efd8331ca63e4f70cb1c5d4d37c91"
-    sha256 arm64_sonoma:  "cfa7613cb47ceeb7db8eddddc3a53e390aa765a2b94d8122bbfb4f9cfe7e7e0b"
-    sha256 sonoma:        "92b9ee15d004bc825753ae940b52a5ee6af25ff76baab576d7aacc5314515013"
-    sha256 arm64_linux:   "4570742f348cdfc3f3308550fdd3a87997f7b32a5f1cce32bf514989bcae08b6"
-    sha256 x86_64_linux:  "9739adf95825abbf49377ad78790e4878f40e871ead0f2f38dd547f021b97b9e"
+    sha256 arm64_tahoe:   "1c227883734075643dd7fdaf1b91053aae8483930d9caaf44d7a9fc689d48f2b"
+    sha256 arm64_sequoia: "1651c3dc1734d728f7b56bafea93c4cf12dd8f618f8123bfb59bd64b79513dd6"
+    sha256 arm64_sonoma:  "1b50515a69116e13072de27d7074f007d65e3f89df48967c19b3f6e7f948a234"
+    sha256 sonoma:        "65cbb4836530acd915a18c6f06094d7b8254587815c0730b03f09ee25b24f116"
+    sha256 arm64_linux:   "5d25f9da15e44bb02305d0b17f7ae9abb4b98b40e0df36fab9880610d08b69ca"
+    sha256 x86_64_linux:  "c19be36e6f15f5c6bb62093e86f67af8bde5a4ca7f3ed77da143961ab43a9466"
   end
 
   depends_on "gobject-introspection" => :build
