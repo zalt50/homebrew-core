@@ -6,6 +6,7 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/2c/1a/09bc3986815f899d27f8ce60e9e82527cb81afee3e2b5cdd318dfd810e52/bzt-1.16.51.tar.gz"
   sha256 "f57f7c50302c3c1aa36365b2b3a761b51015522597580730f2447b939147bf8a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
@@ -136,8 +137,8 @@ class Bzt < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/92/23/6139781ca7aadf656fa8e384fa84693ffb13f299e6931b6526427fe5e297/msgpack-1.2.0.tar.gz"
-    sha256 "8e17af38197bf58e7e819041678f6178f4491493f5b8c8580414f40f7c2c3c41"
+    url "https://files.pythonhosted.org/packages/31/f9/c0a1c127f9049db9155afc316952ea571720dd01833ff5e4d7e8e6352dbb/msgpack-1.2.1.tar.gz"
+    sha256 "04c721c2c7448767e9e3f2520a475663d8ee0f09c31890f6d2bd70fd636a9647"
   end
 
   resource "multidict" do
@@ -186,8 +187,8 @@ class Bzt < Formula
   end
 
   resource "python-socketio" do
-    url "https://files.pythonhosted.org/packages/07/dd/6fd4112b941f7d39b8171b6ba17902609bd8fa2059c3812a3c29dade13e7/python_socketio-5.16.2.tar.gz"
-    sha256 "ad88c228d921646efa436c0a0df217e364ef30ec072df4041484e54d49c15989"
+    url "https://files.pythonhosted.org/packages/32/2d/ffce71017c106b75099fea569df6518c63fee5d6202ce0cfe7b01e6f22c3/python_socketio-5.16.3.tar.gz"
+    sha256 "89b136f677ae65607a84cecda9b4d6c5377b40a97582c504c25df89af16d520e"
   end
 
   resource "pytz" do
