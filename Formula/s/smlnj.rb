@@ -24,7 +24,9 @@ class Smlnj < Formula
   depends_on "cmake" => :build
   depends_on "python@3.14" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "bootarchive" do
     on_arm do
