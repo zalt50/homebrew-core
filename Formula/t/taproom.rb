@@ -6,6 +6,15 @@ class Taproom < Formula
   license "MIT"
   head "https://github.com/hzqtc/taproom.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57bdb6268f1817d02feceb42f9c32f4ff03513089f8219d1e1dc0f6de859c22f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b62900cb76de254441da1a112fcf62716aa017f45648b43c3f84ec3f465e5a68"
+    sha256 cellar: :any,                 x86_64_linux:  "cd176204ae635eb6c73943610ef17f5edc46baea70fb74107cc39f3d2697945b"
+  end
+
   depends_on "go" => :build
 
   def install
