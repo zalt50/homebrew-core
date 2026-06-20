@@ -8,12 +8,13 @@ class CyclonedxGomod < Formula
   head "https://github.com/CycloneDX/cyclonedx-gomod.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd7b3ce89ec8361b5c32558c62582a62f21f3574fcfd4d7f39ddfeffaa89ceef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd7b3ce89ec8361b5c32558c62582a62f21f3574fcfd4d7f39ddfeffaa89ceef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd7b3ce89ec8361b5c32558c62582a62f21f3574fcfd4d7f39ddfeffaa89ceef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c59b92233c8beba9f3a9ac8f3ee90d86239eef28e3db002f0c30566d57787c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d20cbef64f5f8167a18d0edd98d5f9780df07032683c1ddf0c6882791f1c367b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0264d8f7838c67048cfebe524bad1caf684ccde316a8140300d15c01d41d696d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8c772c3ecfbe31b2cdce31b6cc1a291d4f15c81a9161b8435446f0a4f475e71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8c772c3ecfbe31b2cdce31b6cc1a291d4f15c81a9161b8435446f0a4f475e71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8c772c3ecfbe31b2cdce31b6cc1a291d4f15c81a9161b8435446f0a4f475e71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25ccaedda49b499c01d12508cbcde51d2fe36eccb484fed41b98bdd0b3cd2cdd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e6c2bcb322ba197f018acb5db58ffe6a27c944a00b3d0ff87cb0d81ff7829be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d82bd5cff3ef13fac8645a62c87d96837c54a863d7e9b9b5efdc15def0335f3"
   end
 
   depends_on "go" => [:build, :test]
