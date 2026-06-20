@@ -6,6 +6,7 @@ class Ratarmount < Formula
   url "https://files.pythonhosted.org/packages/a5/80/f7f628af7652a89b7f400b23fea17395dd6b27949ae8a45b6e81d69bd810/ratarmount-1.3.0.tar.gz"
   sha256 "9e96f0f887db67a3ea68c4ecc625c05a3636cd8f29d80491eb170d934d3caa00"
   license "MIT"
+  revision 1
   head "https://github.com/mxmlnkn/ratarmount.git", branch: "master"
 
   bottle do
@@ -65,8 +66,8 @@ class Ratarmount < Formula
   end
 
   resource "py7zr" do
-    url "https://files.pythonhosted.org/packages/0c/e6/01fb15361ca75ee5d01df6361825a49816a836c99980c5481da0e40c6877/py7zr-1.1.0.tar.gz"
-    sha256 "087b1a94861ad9eb4d21604f6aaa0a8986a7e00580abd79fedd6f82fecf0592c"
+    url "https://files.pythonhosted.org/packages/59/3f/ac248f25f3901d3d6cf80ac99d5bac6fd1e5e6543c1812c79b02b6074c60/py7zr-1.1.3.tar.gz"
+    sha256 "8d51894abb38355bf14881088bb97f01fe4cb5b14ebe22f66d6297668c7e1a74"
   end
 
   resource "pybcj" do
@@ -100,8 +101,8 @@ class Ratarmount < Formula
   end
 
   resource "ratarmountcore" do
-    url "https://files.pythonhosted.org/packages/20/b1/67924bdf4a2a8648261bacf2e71a48f7c1183eb6c901e36859835076ff7e/ratarmountcore-0.11.0.tar.gz"
-    sha256 "adb920ce602ca86d37ba7e44e46cf0ad49422075351e12c5b2ca436d108a1809"
+    url "https://files.pythonhosted.org/packages/ad/c6/372bb4ee86a069bfb39998f6056cdf65f1c79a70c3b91954041b996dfe79/ratarmountcore-0.11.1.tar.gz"
+    sha256 "9b05690c6ac0e561e77c5cdbc1559447233b2fc6bd37ad1e9b29acc99dec509d"
   end
 
   resource "texttable" do
