@@ -4,10 +4,9 @@ class Pytorch < Formula
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
   # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
-  url "https://github.com/pytorch/pytorch/releases/download/v2.12.0/pytorch-v2.12.0.tar.gz"
-  sha256 "7cc1deb309f402ad67e9f45bbe311a40def4db19d66fddb9b01950f9bfc5ccb1"
+  url "https://github.com/pytorch/pytorch/releases/download/v2.12.1/pytorch-v2.12.1.tar.gz"
+  sha256 "757145cfd55c7c8c01f58c959f76230641cc67fdd1d8b6a130f93ad1bc116f5f"
   license "BSD-3-Clause"
-  revision 2
   compatibility_version 2
 
   livecheck do
@@ -46,16 +45,16 @@ class Pytorch < Formula
 
   pypi_packages package_name:     "torch[opt-einsum]",
                 extra_packages:   %w[pyyaml packaging],
-                exclude_packages: "numpy"
+                exclude_packages: %w[cuda-bindings numpy]
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
-    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
+    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
+    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/d5/8d/1c51c094345df128ca4a990d633fe1a0ff28726c9e6b3c41ba65087bba1d/fsspec-2026.4.0.tar.gz"
-    sha256 "301d8ac70ae90ef3ad05dcf94d6c3754a097f9b5fe4667d2787aa359ec7df7e4"
+    url "https://files.pythonhosted.org/packages/10/a1/ae4e3e5003468d6391d2c77b6fa1cd73bd5d13511d81c642d7b28ac90ed4/fsspec-2026.6.0.tar.gz"
+    sha256 "f5bac145310fe30e16e1471bd6840b2d990d609e872251d7e674241822abf01a"
   end
 
   resource "jinja2" do
