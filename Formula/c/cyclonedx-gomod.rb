@@ -1,8 +1,9 @@
 class CyclonedxGomod < Formula
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Go modules"
   homepage "https://cyclonedx.org/"
-  url "https://github.com/CycloneDX/cyclonedx-gomod/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "14d71dcce1164ada13832c6f61b6bb4f804e21966b03ff937b47609752b112f8"
+  url "https://github.com/CycloneDX/cyclonedx-gomod.git",
+      tag:      "v1.10.0",
+      revision: "ba940a6cad4202a4a6d2f9aeef33463c0011ff5f"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-gomod.git", branch: "main"
 
@@ -18,10 +19,13 @@ class CyclonedxGomod < Formula
   depends_on "go" => [:build, :test]
 
   def install
+    ENV["CGO_ENABLED"] = "0"
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cyclonedx-gomod"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/cyclonedx-gomod version")
+
     (testpath/"go.mod").write <<~GOMOD
       module github.com/Homebrew/brew-test
 
