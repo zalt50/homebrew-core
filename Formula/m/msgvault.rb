@@ -6,6 +6,15 @@ class Msgvault < Formula
   license "MIT"
   head "https://github.com/kenn-io/msgvault.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "23918ae520ed53253c1c21012a780f98703c916136a7581f7da783253295e011"
+    sha256 cellar: :any, arm64_sequoia: "8d564f12102405a49fae9d31e78db31f30ef302fe2036909f4c64645501003e0"
+    sha256 cellar: :any, arm64_sonoma:  "79ed81cdfcb27bade7a15f2f5aa78f42c3992117a01e560bcd831be4ad7e3df5"
+    sha256 cellar: :any, sonoma:        "d9b527fab25d4f0a845e055e3b04263344ea303b3830c5a9ca03875db432cbcc"
+    sha256 cellar: :any, arm64_linux:   "4b2e6256d71706d5052f69222362b42b2b626300ad3b5ff0d7431ab1731cf57f"
+    sha256 cellar: :any, x86_64_linux:  "2d9f3d3a1e5c9854c84adf58cdea6e63c2ec1160dec99ee289fa1bb7f620aa2f"
+  end
+
   depends_on "go" => :build
   depends_on "duckdb"
 
