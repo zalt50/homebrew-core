@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.6.1.tar.gz"
-  sha256 "c25274461f61b8fa469c1645a892bb5b52236bb64dc448152c6f485f9ec1cb1d"
+  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.6.2.tar.gz"
+  sha256 "173204e8a1d051d982244899c18da35f55cd9574244c27582281bb74216bccbe"
   license "GPL-3.0-or-later"
   head "https://github.com/topgrade-rs/topgrade.git", branch: "main"
 
