@@ -15,18 +15,18 @@ class Libfyaml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "df9c7be47669e502ab428f136732a9200c344ef8b56d390bafec34fc1151e71d"
   end
 
-  uses_from_macos "m4" => :build
+  depends_on "cmake" => :build
 
-  # TODO: Remove patch when https://github.com/pantoniou/libfyaml/pull/267 is merged
+  # TODO: Remove patch in next release
   patch do
-    url "https://github.com/pantoniou/libfyaml/commit/45faa819b6c3eb54b2d63b46d4c7690fa1e8e8ff.patch?full_index=1"
-    sha256 "22fbbb360b96cf879397f1ab3dadf8876277f8d77708b6252c0908d37e09a4f9"
+    url "https://github.com/pantoniou/libfyaml/commit/1026d76850909dc9b1c5f95b8cd94e865a313fd5.patch?full_index=1"
+    sha256 "05e07134edfae8c4d6b81fd25b013c471a3790736f61d6888035409d570ce636"
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
