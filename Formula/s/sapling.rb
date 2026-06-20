@@ -1,10 +1,19 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https://sapling-scm.com"
-  url "https://github.com/facebook/sapling/archive/refs/tags/0.2.20260522-084851+1e764c94.tar.gz"
-  sha256 "2b2d3023ec10478e3d9d4db3240b71bc4068a63dd11f98f11d399372c62a5f9a"
   license "GPL-2.0-or-later"
   head "https://github.com/facebook/sapling.git", branch: "main"
+
+  stable do
+    url "https://github.com/facebook/sapling/archive/refs/tags/0.2.20260522-084851+1e764c94.tar.gz"
+    sha256 "2b2d3023ec10478e3d9d4db3240b71bc4068a63dd11f98f11d399372c62a5f9a"
+
+    # Backport commit for Python 3.13
+    patch do
+      url "https://github.com/facebook/sapling/commit/3b640b74fe351c80d60954c8ea611d4b354187a4.patch?full_index=1"
+      sha256 "4d85e880b1455ebde41d0419f952572e6a71ddb772f4ea594e9abaf80802b4e6"
+    end
+  end
 
   livecheck do
     url :stable
@@ -32,7 +41,7 @@ class Sapling < Formula
   depends_on "libssh2"
   depends_on "node"
   depends_on "openssl@3"
-  depends_on "python@3.12" # Python 3.13 issue: https://github.com/facebook/sapling/issues/980
+  depends_on "python@3.13"
 
   uses_from_macos "llvm" => :build # for libclang
   uses_from_macos "bzip2"
@@ -92,10 +101,10 @@ class Sapling < Formula
       odie "Inreplace did not modify any branch usage in Cargo.toml manifests!" if no_modification
     end
 
-    python3 = "python3.12"
+    python3 = "python3.13"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["PYTHON_SYS_EXECUTABLE"] = which(python3)
+    ENV["PYTHON_SYS_EXECUTABLE"] = ENV["PYO3_PYTHON"] = which(python3)
     ENV["SAPLING_VERSION"] = if build.stable?
       version
     else
