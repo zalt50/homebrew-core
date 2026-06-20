@@ -1,8 +1,8 @@
 class Boring < Formula
   desc "Simple command-line SSH tunnel manager that just works"
   homepage "https://alebeck.github.io/boring/"
-  url "https://github.com/alebeck/boring/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "13b5a6df9696f545dd4d2bd82a7d18e5ed80c5eaa5c2adb0373bc05ca0eb6bd0"
+  url "https://github.com/alebeck/boring/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "89853728ad3c4c356a6ebb7762b0c54eaf1c78c14d03020c5aff971b3e3e44b8"
   license "MIT"
   head "https://github.com/alebeck/boring.git", branch: "main"
 
