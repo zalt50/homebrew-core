@@ -3,10 +3,9 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/c1/0f/bda2a23ecf6a1b1723ba2fe479615ec3ce73c093c5e78b5b842614586691/snyk_agent_scan-0.5.10.tar.gz"
-  sha256 "7403d78fbbdb53da22ead1c95c4d2aa6ee46ce66e255eecb1fc7986786d9f364"
+  url "https://files.pythonhosted.org/packages/a7/96/32f76a96f947d90f9b8368d78e7d5cfcedb3d706e8fd67224493e5b8c0b5/snyk_agent_scan-0.5.11.tar.gz"
+  sha256 "599073698ef5c538ed377d80316690d752a5136563c8bee3a4986a6b7de63eb6"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "e48fa1c8d3fc80fb448680e0f02a5ee108aa629e73f580783c973ec1da285e56"
@@ -47,8 +46,8 @@ class SnykAgentScan < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "attrs" do
