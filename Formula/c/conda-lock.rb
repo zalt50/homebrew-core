@@ -6,6 +6,7 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/0c/24/a26b28fbff0eee3c10f8153bcfd9b9dfc234e7acf89c07e08852bd23d0f0/conda_lock-4.0.1.tar.gz"
   sha256 "b0dea35c2d10ad9fe07bacfcb79c090e4817aa148aa493a9faff55415899bd30"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "dc08424f059575ba55a1bdd1270476997de0a181ff7af7263de088691c0f0da0"
@@ -37,8 +38,8 @@ class CondaLock < Formula
   end
 
   resource "boltons" do
-    url "https://files.pythonhosted.org/packages/63/54/71a94d8e02da9a865587fb3fff100cb0fc7aa9f4d5ed9ed3a591216ddcc7/boltons-25.0.0.tar.gz"
-    sha256 "e110fbdc30b7b9868cb604e3f71d4722dd8f4dcb4a5ddd06028ba8f1ab0b5ace"
+    url "https://files.pythonhosted.org/packages/7a/1f/60df922ae497d838c58b48caa518251e2c8e228d7fe93792fee69a3858d6/boltons-26.0.0.tar.gz"
+    sha256 "5566d6cfd5a1e873d8e8476496287a9f92979964611ad9a9cecb6b0ef29b1edd"
   end
 
   resource "build" do
@@ -162,8 +163,8 @@ class CondaLock < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/92/23/6139781ca7aadf656fa8e384fa84693ffb13f299e6931b6526427fe5e297/msgpack-1.2.0.tar.gz"
-    sha256 "8e17af38197bf58e7e819041678f6178f4491493f5b8c8580414f40f7c2c3c41"
+    url "https://files.pythonhosted.org/packages/31/f9/c0a1c127f9049db9155afc316952ea571720dd01833ff5e4d7e8e6352dbb/msgpack-1.2.1.tar.gz"
+    sha256 "04c721c2c7448767e9e3f2520a475663d8ee0f09c31890f6d2bd70fd636a9647"
   end
 
   resource "packaging" do
