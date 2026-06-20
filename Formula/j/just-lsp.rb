@@ -6,6 +6,15 @@ class JustLsp < Formula
   license "CC0-1.0"
   head "https://github.com/terror/just-lsp.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddebbe09aa816ada35fa0c93c46b9806807be6dcf4e3c17fcd62e9276f75c2dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22b1fd60f7acfe3532055eb2e3f38d464040f8542c9dca042a24e052592e0e6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7114b478c62624c0d97c148be8f34d435a5fe20d69e0575500e7d88b1cec7d06"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07eda15b8a52e5594734f3e43affbd25fab489ed521b32d52f6225617c07220d"
+    sha256 cellar: :any,                 arm64_linux:   "eba45d9cdf8292232635f5fc4ba21cf35879f95ac0a74e8c44703cab21438932"
+    sha256 cellar: :any,                 x86_64_linux:  "e52c21598deef3e26e38053297ef2568229f0052612393d5fd6e53ec80739da3"
+  end
+
   depends_on "rust" => :build
 
   def install
