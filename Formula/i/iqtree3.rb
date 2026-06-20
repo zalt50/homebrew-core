@@ -18,7 +18,9 @@ class Iqtree3 < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "lsd2" do
     url "https://github.com/tothuhien/lsd2.git",
