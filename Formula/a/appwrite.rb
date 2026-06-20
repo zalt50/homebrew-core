@@ -6,12 +6,12 @@ class Appwrite < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a952e3bf3ae4444be49ac0421cfef6eec946dc4aefac79908f25394bce6e501"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d44c67dab22651d5a9120fe43a9fdcb4fa9ccaffd62473a50dac686f24daf13a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d44c67dab22651d5a9120fe43a9fdcb4fa9ccaffd62473a50dac686f24daf13a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a24c9cdda7c70d8411575017c988e0ee6489d1a883b09e2a9d77c60f2b1a66f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a972adc79b27c91bc89a56c3079393f0d9ecc46598af6e7b3039aa60bcfd696b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a972adc79b27c91bc89a56c3079393f0d9ecc46598af6e7b3039aa60bcfd696b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4759329baf3a0611e7b542f18121bd56f82929d1ed3e7d5e1d24acad7a00bb3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e30fdb4509745e21b040f585036a66676aa24789d38a9e28ebb6173bd16e4c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e30fdb4509745e21b040f585036a66676aa24789d38a9e28ebb6173bd16e4c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0a4161ff62dbb02eb964d29d78411f9b191ccc1fc9925a943e65bfb623cb785"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44613bd259bb8ee973065dfacad7cea0e71d64573f0fc49e92aa0134691b8e9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44613bd259bb8ee973065dfacad7cea0e71d64573f0fc49e92aa0134691b8e9a"
   end
 
   depends_on "node"
