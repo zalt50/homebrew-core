@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/a0/6b/9faf5eecd4299b0151b0312465e21598e546ed87d63a3ac09ce52aab0caa/schemathesis-4.21.8.tar.gz"
-  sha256 "853f5167b15b4a8b23a9aa66d4fe3ab2ae055609aa0eb75806062ff5b6bc8b00"
+  url "https://files.pythonhosted.org/packages/b1/16/ddd74a71c6adc7802fd1e5f6a2151c0fcd6e14d07a15ddbc1e5eb8d9db4c/schemathesis-4.21.9.tar.gz"
+  sha256 "086811c0ab8d717284022f349b696f88579066c1b9f87cd5929e9d8f44dc9e6f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e281f51469569206b98c1b025973a3887a6199d13117cea7fad8e8fa4ca0e95f"
-    sha256 cellar: :any, arm64_sequoia: "c5c8dfa8e3b3350eb5e9bfe57d62ca17c58425b0b8dc45e84b21edcde34f1dd9"
-    sha256 cellar: :any, arm64_sonoma:  "b3c7984319d09718a51125c463a97d77a0300b36bd1221d7eb126984b3377a4d"
-    sha256 cellar: :any, sonoma:        "39d22df4bf239e8af2c83b2fc608e6430797db970f679dfe8a961df518849bda"
-    sha256 cellar: :any, arm64_linux:   "04c4aa11b081fca3178b858404c10bc943e99d49874261ebbbb60c5c7d59043a"
-    sha256 cellar: :any, x86_64_linux:  "25c5efc047df98aa0121ea20b58e3792ca8870fa08d38a4688de021f1e4522cc"
+    sha256 cellar: :any, arm64_tahoe:   "19fa09a936729ebab713e19b172adb752c48a0a7629b561de83e8357f03324b4"
+    sha256 cellar: :any, arm64_sequoia: "33c6ea6eb0108cfe34c680cad1c2350bc204bc00ae362bf644570dee1f3e2ed5"
+    sha256 cellar: :any, arm64_sonoma:  "02ae3c667821ccac70d3c1543677235762c4a5b5d52f982b4f7b1ce4eee9f350"
+    sha256 cellar: :any, sonoma:        "dd746a3d6e294b46066dc462b84c56c8f668ee4cb2b2bd78be6668ed4e715667"
+    sha256 cellar: :any, arm64_linux:   "25bcfa7fd8fb0eeeabbd3631b9e3436e477da462e64fc034de853f7ae1eb6768"
+    sha256 cellar: :any, x86_64_linux:  "437de4bd216a26f0dba3514a971d11e9ec1d1fac8ee313c414fc8cbe4f500636"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -72,8 +72,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/36/77/13ec9b6390bce44f5badab39837dd6789bbfe6342a2ac611a71537a7756f/hypothesis-6.155.3.tar.gz"
-    sha256 "1e34b17ae9873515384312cb7640abd773eb096c7eef8c0d9c614fa2c306e9bb"
+    url "https://files.pythonhosted.org/packages/b6/da/7e6cca4f0ad6b2f3a2380d72993ad3482c8ecb126f0908af26d2427455a1/hypothesis-6.155.5.tar.gz"
+    sha256 "f7f8f803e05a69cd70399b07ed89a89b673c9ff3530977c4a768ed3acb702169"
   end
 
   resource "hypothesis-graphql" do
