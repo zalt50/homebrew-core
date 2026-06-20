@@ -1,8 +1,8 @@
 class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https://synfinatic.github.io/aws-sso-cli/"
-  url "https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.2.5.tar.gz"
-  sha256 "e8999b3db5ee6f90f27f44fc5dd4c19a3365d6a9d57a59ac167537963b07484c"
+  url "https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "51e3679c9807ea510d9f83ca7472b9775c34cb6b6c71d0090e923733370cfcec"
   license "GPL-3.0-only"
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
@@ -18,6 +18,8 @@ class AwsSsoCli < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X main.Version=#{version}
