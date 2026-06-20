@@ -9,12 +9,12 @@ class Boring < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66247cee164ba7522f7ce1a578ca9009764a44690b944ee697483bfee9127f81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66247cee164ba7522f7ce1a578ca9009764a44690b944ee697483bfee9127f81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66247cee164ba7522f7ce1a578ca9009764a44690b944ee697483bfee9127f81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22982707922325ae26fdbdbe5163a6ea3e6907de23d893f4a7a36c5fc2aaee17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb4248ca4eacaac0ecc400fca3fc47d24e12e13a8f7871a0c0e592f99384a094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0655261923746f8a5af097c979950f1853e92cd375b5c83e47e7264f2acb982b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "616f20643a786357d39c17468c593cffa4aef194728ff8eef80dffda3c8fab67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "616f20643a786357d39c17468c593cffa4aef194728ff8eef80dffda3c8fab67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "616f20643a786357d39c17468c593cffa4aef194728ff8eef80dffda3c8fab67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ab572db4b2760579cb30af1f155242b50a23270985800240cec43639dc5b48f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d14cfa7969a1b06ad4aed43ae9c4658eb42db4a58f7d691facc824d34612af73"
+    sha256 cellar: :any,                 x86_64_linux:  "6577291b8eebeff42c6c271da54bc546e9edf3119bb36a2ecf04381a5d2012bf"
   end
 
   depends_on "go" => :build
