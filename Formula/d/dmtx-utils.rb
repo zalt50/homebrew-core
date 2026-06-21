@@ -4,7 +4,7 @@ class DmtxUtils < Formula
   url "https://github.com/dmtx/dmtx-utils/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "0d396ec14f32a8cf9e08369a4122a16aa2e5fa1675e02218f16f1ab777ea2a28"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 8
+  revision 9
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "0d9a9f83919daef68ed7849bb0edeb5b0c99240b8854c4ea0b16aa95b061888a"
@@ -33,6 +33,13 @@ class DmtxUtils < Formula
     depends_on "liblqr"
     depends_on "libomp"
     depends_on "little-cms2"
+  end
+
+  # Workaround buffer overflow
+  # Upstream PR ref: https://github.com/dmtx/dmtx-utils/pull/16
+  patch do
+    url "https://github.com/dmtx/dmtx-utils/commit/f7b97efc3bd6fc2e4403803f46514ae28318743b.patch?full_index=1"
+    sha256 "e9a44b85bce58ed9c4af90f123c2317a9f4a4b9dade114a9014211e22bcc5c4d"
   end
 
   def install
