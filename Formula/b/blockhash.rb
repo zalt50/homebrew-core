@@ -4,7 +4,7 @@ class Blockhash < Formula
   url "https://github.com/commonsmachinery/blockhash/archive/refs/tags/v0.3.3.tar.gz"
   sha256 "3c48af7bdb1f673b2f3c9f8c0bfa9107a7019b54ac3b4e30964bc0707debdd3a"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/commonsmachinery/blockhash.git", branch: "master"
 
   bottle do
@@ -25,9 +25,6 @@ class Blockhash < Formula
 
   def install
     system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    # pkg-config adds -fopenmp flag during configuring
-    # This fails the build on system clang, and OpenMP is not used in blockhash
-    inreplace "build/c4che/_cache.py", "-fopenmp", ""
     system "python3", "./waf"
     system "python3", "./waf", "install"
   end
