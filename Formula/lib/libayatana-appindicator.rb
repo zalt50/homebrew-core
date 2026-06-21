@@ -10,23 +10,14 @@ class LibayatanaAppindicator < Formula
     sha256 cellar: :any, x86_64_linux: "80c2e02be8fe93584887da8f49a0220fc55ef1f8e4bf0f87cd0d6f09580f4c13"
   end
 
-  depends_on "at-spi2-core" => :build
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "intltool" => :build
-  depends_on "libxml2" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
-  depends_on "ayatana-ido"
-  depends_on "cairo"
-  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "harfbuzz"
   depends_on "libayatana-indicator"
   depends_on "libdbusmenu"
-  depends_on :linux # libayatana-indicator requires gio/gdesktopappinfo.h which is not available on macOS
-  depends_on "pango"
 
   def install
     args = %w[
@@ -35,6 +26,7 @@ class LibayatanaAppindicator < Formula
       -DENABLE_GTKDOC=OFF
       -DENABLE_TESTS=OFF
     ]
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
