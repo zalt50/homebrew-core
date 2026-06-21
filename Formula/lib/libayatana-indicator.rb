@@ -11,18 +11,11 @@ class LibayatanaIndicator < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gobject-introspection" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "vala" => :build
-  depends_on "at-spi2-core"
   depends_on "ayatana-ido"
-  depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "harfbuzz"
-  depends_on :linux # PR ref: https://github.com/AyatanaIndicators/libayatana-indicator/pull/77
-  depends_on "pango"
 
   def install
     args = %w[
@@ -31,6 +24,12 @@ class LibayatanaIndicator < Formula
       -DENABLE_TESTS=OFF
       -DFLAVOUR_GTK3=ON
     ]
+    if OS.mac?
+      args += [
+        "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs -Wl,-rpath,#{rpath(source: libexec/name)}",
+        "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
+      ]
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
