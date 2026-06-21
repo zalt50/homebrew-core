@@ -24,12 +24,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a084f3263380788b4dcd204f34bdd595b378c914636a7912bd7f9a9b056873d3"
-    sha256 cellar: :any,                 arm64_sequoia: "b1629af95b7e97a346e76347649cbeea509dc879e972f755338b904870933e62"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ad1dc20a1e5876d3f0c8d3ca6f319d7fdd75431d99ce2802c20b78246ae9972"
-    sha256 cellar: :any,                 sonoma:        "d521b481c2ec7ddef47ff73185d53e950dae59b6d72ef63ce436ed198bb4e825"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dc729b24d23f92f8953f15a0efd478174dee1802bfcae7e1c229b7dc1e54951"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c0a3f071aaaa1867c6654225a23eba9f107723c44d5652ca03717051701a024"
+    sha256 cellar: :any, arm64_tahoe:   "21b96302edb211c315f4c91e101a674de67a61b6640ad78098088a0b9d08f414"
+    sha256 cellar: :any, arm64_sequoia: "c501ef281a02b4aa5c544be6daebbcd39b8aaab41358c56c7870cd89170635cd"
+    sha256 cellar: :any, arm64_sonoma:  "ed165077873ab49bece28cc0258df84ba71353bc4f02574085c58c048d975c9d"
+    sha256 cellar: :any, sonoma:        "e4e85aab8aa50b58e1c8854aec7ef0c5a376d03e7d904a036294011acd4e9dff"
+    sha256 cellar: :any, arm64_linux:   "fa5b80fca4778b99df4b879b5ef6000a999e173bc5b20e664fb28be504b636c6"
+    sha256 cellar: :any, x86_64_linux:  "d9fafceb93f90d4919312e54d9571f87067a22bd0576cb16381f95fe0d0c5c6d"
   end
 
   depends_on "llvm" => :build
