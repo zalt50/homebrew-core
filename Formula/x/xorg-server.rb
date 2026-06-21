@@ -57,7 +57,7 @@ class XorgServer < Formula
     depends_on "libtirpc"
     depends_on "libxcvt"
     depends_on "libxshmfence"
-    depends_on "nettle"
+    depends_on "openssl@3"
     depends_on "systemd"
 
     resource "xvfb-run" do
@@ -83,13 +83,16 @@ class XorgServer < Formula
       -Dbuilder_addr=#{tap.remote}
       -Dbuilder_string=#{tap.name}
     ]
-    # macOS doesn't provide `authdes_cred` so `secure-rpc=false`
-    # glamor needs GLX with `libepoxy` on macOS
-    if OS.mac?
-      meson_args += %w[
+    meson_args += if OS.mac?
+      # macOS doesn't provide `authdes_cred` so `secure-rpc=false`
+      # glamor needs GLX with `libepoxy` on macOS
+      %w[
         -Dsecure-rpc=false
         -Dapple-applications-dir=libexec
       ]
+    else
+      # Linux dependency tree already includes OpenSSL
+      %w[-Dsha1=libcrypto]
     end
 
     # X11.app need startx etc. in the same directory
