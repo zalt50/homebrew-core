@@ -23,19 +23,16 @@ class SpiceGtk < Formula
     sha256 x86_64_linux:  "ca84d516eaae38af2beb7f30ebc30beaa744c6c34e84d7dcb3d9a72417b55918"
   end
 
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "intltool" => :build
-  depends_on "libtool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.14" => :build
   depends_on "vala" => :build
 
-  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gstreamer"
   depends_on "gtk+3"
@@ -48,13 +45,13 @@ class SpiceGtk < Formula
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "opus"
-  depends_on "pango"
   depends_on "phodav"
   depends_on "pixman"
   depends_on "spice-protocol"
   depends_on "usbredir"
 
   on_macos do
+    depends_on "gettext"
     depends_on "gobject-introspection"
     depends_on "harfbuzz"
   end
