@@ -40,7 +40,7 @@ class Libxmlsec1 < Formula
       --disable-mscng
       --without-nss
       --without-nspr
-      --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl=#{formula_opt_prefix("openssl@3")}
     ]
 
     system "./configure", *args, *std_configure_args
