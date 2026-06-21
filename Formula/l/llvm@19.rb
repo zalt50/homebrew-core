@@ -156,7 +156,7 @@ class LlvmAT19 < Formula
       builtins_cmake_args += clt_sdk_support_flags
     else
       args << "-DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_include}"
-      args << "-DFFI_LIBRARY_DIR=#{Formula["libffi"].opt_lib}"
+      args << "-DFFI_LIBRARY_DIR=#{formula_opt_lib("libffi")}"
 
       # Disable `libxml2` which isn't very useful.
       args << "-DLLVM_ENABLE_LIBXML2=OFF"
