@@ -21,7 +21,6 @@ class Aravis < Formula
 
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "gtk-doc" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
@@ -30,19 +29,12 @@ class Aravis < Formula
   depends_on "glib"
   depends_on "gstreamer"
   depends_on "gtk+3"
-  depends_on "intltool"
-  depends_on "libnotify"
   depends_on "libusb"
 
   uses_from_macos "libxml2"
 
   on_macos do
-    depends_on "at-spi2-core"
-    depends_on "cairo"
-    depends_on "gdk-pixbuf"
     depends_on "gettext"
-    depends_on "harfbuzz"
-    depends_on "pango"
   end
 
   on_linux do
