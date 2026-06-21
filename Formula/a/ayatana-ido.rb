@@ -27,13 +27,12 @@ class AyatanaIdo < Formula
   depends_on "pango"
 
   on_macos do
-    depends_on "at-spi2-core"
     depends_on "gettext"
-    depends_on "harfbuzz"
   end
 
   def install
     args = %w[-DENABLE_TESTS=OFF]
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
