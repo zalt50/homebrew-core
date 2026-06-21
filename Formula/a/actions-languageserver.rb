@@ -5,6 +5,15 @@ class ActionsLanguageserver < Formula
   sha256 "83d24888f9b328aaf84a382f1fff718968df4255dca1ec097765131ae993d558"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79cc9b6e4c41112c039af269f4fe1a1378e59a30aaa8059a1b74bf3d953a8361"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79cc9b6e4c41112c039af269f4fe1a1378e59a30aaa8059a1b74bf3d953a8361"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79cc9b6e4c41112c039af269f4fe1a1378e59a30aaa8059a1b74bf3d953a8361"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79cc9b6e4c41112c039af269f4fe1a1378e59a30aaa8059a1b74bf3d953a8361"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "774a8ea3e0de19ce9e66108a83c6856d610df39b2aec9d23c0dd86956b052983"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "774a8ea3e0de19ce9e66108a83c6856d610df39b2aec9d23c0dd86956b052983"
+  end
+
   depends_on "node"
 
   def install
