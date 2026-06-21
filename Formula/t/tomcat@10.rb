@@ -30,7 +30,7 @@ class TomcatAT10 < Formula
     libexec.install_symlink pkgetc => "conf"
 
     libexec.install Dir["*"]
-    (bin/"catalina").write_env_script "#{libexec}/bin/catalina.sh", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"catalina").write_env_script "#{libexec}/bin/catalina.sh", JAVA_HOME: formula_opt_prefix("openjdk")
   end
 
   def caveats
