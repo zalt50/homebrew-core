@@ -27,15 +27,15 @@ class Ntfs3g < Formula
 
   depends_on "pkgconf" => :build
   depends_on "coreutils" => :test
-  depends_on "gettext"
-  depends_on "libfuse@2" # FUSE 3 issue: https://github.com/tuxera/ntfs-3g/issues/54
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
-    args = std_configure_args + %W[
+    # Using upstream-maintained libfuse-lite similar to Debian and Fedora
+    # until FUSE 3 is supported: https://github.com/tuxera/ntfs-3g/issues/54
+    args = %W[
       --exec-prefix=#{prefix}
       --mandir=#{man}
-      --with-fuse=external
+      --with-fuse=internal
       --enable-extras
       --disable-ldconfig
     ]
@@ -43,7 +43,7 @@ class Ntfs3g < Formula
     system "./autogen.sh" if build.head?
     # Workaround for hardcoded /sbin
     inreplace Dir["{ntfsprogs,src}/Makefile.in"], "$(DESTDIR)/sbin/", "$(DESTDIR)#{sbin}/"
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 
