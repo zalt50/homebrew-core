@@ -178,7 +178,7 @@ class WildflyAs < Formula
     build_netty_transport_native
     build_wildfly_openssl_natives
 
-    inreplace "bin/standalone.sh", /JAVA="[^"]*"/, "JAVA='#{Formula["openjdk"].opt_bin}/java'"
+    inreplace "bin/standalone.sh", /JAVA="[^"]*"/, "JAVA='#{formula_opt_bin("openjdk")}/java'"
 
     libexec.install Dir["*"]
     (libexec/"standalone/log").mkpath
