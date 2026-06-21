@@ -6,6 +6,7 @@ class Jiratui < Formula
   url "https://files.pythonhosted.org/packages/e5/5f/3da090f6c33df7170b9d2a4793f5d1c1b42e8400e9c937c0c0ce32faef56/jiratui-1.9.1.tar.gz"
   sha256 "0fb0a303681dd8301ccf737beac974dde43f880035b8fb68eaf41d55c55857f3"
   license "MIT"
+  revision 1
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
@@ -120,8 +121,8 @@ class Jiratui < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do
