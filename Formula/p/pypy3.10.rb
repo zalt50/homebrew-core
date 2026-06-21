@@ -95,7 +95,7 @@ class Pypy310 < Formula
     ENV["PYTHONPATH"] = nil
     ENV["PYPY_USESSION_DIR"] = buildpath
 
-    python = Formula["pypy"].opt_bin/"pypy"
+    python = formula_opt_bin("pypy")/"pypy"
     cd "pypy/goal" do
       system python, buildpath/"rpython/bin/rpython",
              "-Ojit", "--shared", "--cc", ENV.cc, "--verbose",
