@@ -1,8 +1,8 @@
 class Pitchfork < Formula
   desc "CLI for managing daemons with a focus on developer experience"
   homepage "https://pitchfork.jdx.dev"
-  url "https://github.com/jdx/pitchfork/archive/refs/tags/v2.13.1.tar.gz"
-  sha256 "4896b03f16e54d0bad34b5d80a72572721316f8c8b8d2af5f268bb500ff1426b"
+  url "https://github.com/jdx/pitchfork/archive/refs/tags/v2.14.0.tar.gz"
+  sha256 "926307dab53a77052d5b23337d5ee3185ead450783e4f1dc06617704279b87f3"
   license "MIT"
   head "https://github.com/jdx/pitchfork.git", branch: "main"
 
@@ -19,6 +19,8 @@ class Pitchfork < Formula
   depends_on "usage"
 
   def install
+    (buildpath/"ui/dist").mkpath
+
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"pitchfork", "completion")
   end
