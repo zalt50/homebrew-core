@@ -48,7 +48,7 @@ class LibheifPlugins < Formula
     ]
 
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath(source: lib/"libheif", target: Formula["libheif"].opt_lib)}
+      -DCMAKE_INSTALL_RPATH=#{rpath(source: lib/"libheif", target: formula_opt_lib("libheif"))}
       -DPLUGIN_DIRECTORY=#{HOMEBREW_PREFIX}/lib/libheif
       -DPLUGIN_INSTALL_DIRECTORY=#{lib}/libheif
       -DWITH_AOM_DECODER=OFF
