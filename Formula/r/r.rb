@@ -24,10 +24,9 @@ class R < Formula
   depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "gcc" # for gfortran
-  depends_on "gettext"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "libxext"
+  depends_on "libx11"
   depends_on "openblas"
   depends_on "pcre2"
   depends_on "readline"
@@ -37,27 +36,23 @@ class R < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "libffi"
 
   on_macos do
     depends_on "fontconfig"
     depends_on "freetype"
-    depends_on "libx11"
+    depends_on "gettext"
     depends_on "libxau"
     depends_on "libxcb"
     depends_on "libxdmcp"
+    depends_on "libxext"
     depends_on "libxrender"
     depends_on "pixman"
   end
 
   on_linux do
     depends_on "glib"
-    depends_on "harfbuzz"
     depends_on "icu4c@78"
-    depends_on "libice"
-    depends_on "libsm"
     depends_on "libtirpc"
-    depends_on "libx11"
     depends_on "libxt"
     depends_on "pango"
     depends_on "zlib-ng-compat"
