@@ -1,8 +1,8 @@
 class LettaCode < Formula
   desc "Memory-first coding agent"
   homepage "https://docs.letta.com/letta-code"
-  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.13.tgz"
-  sha256 "58b87bfbda0ca53a0924c5657004b6fb4716b0b4a12c10c1f03591617297d4ca"
+  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.14.tgz"
+  sha256 "14375fe1fdcf7e4cab620f9c7a42d811ce6e265c6666e916a09b49077f190233"
   license "Apache-2.0"
 
   bottle do
@@ -69,6 +69,6 @@ class LettaCode < Formula
     assert_match version.to_s, shell_output("#{bin}/letta --version")
 
     output = shell_output("#{bin}/letta --info")
-    assert_match "Locally pinned agents: (none)", output
+    assert_match "Pinned agents: (none)", output
   end
 end
