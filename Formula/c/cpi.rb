@@ -1,10 +1,15 @@
 class Cpi < Formula
   desc "Tiny c++ interpreter"
   homepage "https://treefrogframework.github.io/cpi/"
-  url "https://github.com/treefrogframework/cpi/archive/refs/tags/v2.2.3.tar.gz"
-  sha256 "f56f3e529b6c3bb954a997a4c97f4b5d2d425e7a078428803624784eaed1b499"
+  url "https://github.com/treefrogframework/cpi/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "a8b86198eefcf262e8831e9691eb69d15b9b514aba282f28f471bb0fe7e54c36"
   license "MIT"
   head "https://github.com/treefrogframework/cpi.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1a48e8aed8aa76f0efa7ed70fd9373f4a103d1a33eaa2ddcecc4bb24d42b9327"
