@@ -7,12 +7,12 @@ class LeetcodeCli < Formula
   head "https://github.com/clearloop/leetcode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2714994b45df5976c2f02d57e02a860397738ef3c1b33bae6edb32955636b241"
-    sha256 cellar: :any,                 arm64_sequoia: "5c17215533eadbc515621812fdbce284b89ce60e365dba38672d79a197d40302"
-    sha256 cellar: :any,                 arm64_sonoma:  "391a1860fad787cfcbef1fa1c0dc04335913621944da57999e89957955c67cf6"
-    sha256 cellar: :any,                 sonoma:        "655b0ad5fb1c9a7b7cdc9b09c42193fa11a10dda1008913ccb748bd6d24edf08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6da7b9dd64506d8a577505d4b2716ce342bd0fdfd2b843d92996f35c7299b54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af6826c657dda9c1c44bcfe1f3c8b029168867e994a149cc4353e1fb849aec58"
+    sha256 cellar: :any, arm64_tahoe:   "3691be61d91e166e8c7569e3ca068e2cf1001c0ed7c76bba9c292f0e09023ba5"
+    sha256 cellar: :any, arm64_sequoia: "f22d8a0712e622c86c26f8463f4250c5a831b197c6f22d299a03046b12c1a518"
+    sha256 cellar: :any, arm64_sonoma:  "e98c6ae79e6daf50412b7d81a1d8c5c01221dc86c8a5095a913b4f4badec8f50"
+    sha256 cellar: :any, sonoma:        "53962fe4f7698c3b52cc144b44dcca6f73c92c3b2b282ab289e3d411c80ac5c9"
+    sha256 cellar: :any, arm64_linux:   "d44b82cb982bc6474ff9d3b9751d3d7caa45d54bfbb1bac7e7ed88095d29e823"
+    sha256 cellar: :any, x86_64_linux:  "94183bfd2a3818222bde852001ffe93a17f1c9f90edeb982c652345633d0c1f6"
   end
 
   depends_on "pkgconf" => :build
