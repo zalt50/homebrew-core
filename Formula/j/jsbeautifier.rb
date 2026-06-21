@@ -8,8 +8,7 @@ class Jsbeautifier < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "61e5e7670ad6ea25f829c70fbc441d2bb4602c993ea36cdf1dcc829b344e57df"
+    sha256 cellar: :any_skip_relocation, all: "c66c91e4577ce88244b5937d755fa3b93a99e09c0e6711f7038d6d858ef091b3"
   end
 
   depends_on "python@3.14"
