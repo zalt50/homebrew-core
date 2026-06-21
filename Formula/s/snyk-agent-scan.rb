@@ -6,6 +6,7 @@ class SnykAgentScan < Formula
   url "https://files.pythonhosted.org/packages/a7/96/32f76a96f947d90f9b8368d78e7d5cfcedb3d706e8fd67224493e5b8c0b5/snyk_agent_scan-0.5.11.tar.gz"
   sha256 "599073698ef5c538ed377d80316690d752a5136563c8bee3a4986a6b7de63eb6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "ba0cec7a250dfeddfc01c322de6e0940c1d1d33c2e23fb060cb0664323e98f11"
@@ -146,8 +147,8 @@ class SnykAgentScan < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do
