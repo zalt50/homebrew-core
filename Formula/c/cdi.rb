@@ -34,9 +34,9 @@ class Cdi < Formula
   def install
     args = %W[
       --disable-silent-rules
-      --with-eccodes=#{Formula["eccodes"].opt_prefix}
-      --with-netcdf=#{Formula["netcdf"].opt_prefix}
-      --with-szlib=#{Formula["libaec"].opt_prefix}
+      --with-eccodes=#{formula_opt_prefix("eccodes")}
+      --with-netcdf=#{formula_opt_prefix("netcdf")}
+      --with-szlib=#{formula_opt_prefix("libaec")}
     ]
 
     system "./configure", *args, *std_configure_args
