@@ -6,7 +6,7 @@ class Sysaidmin < Formula
   url "https://files.pythonhosted.org/packages/01/d8/f2b32cc85a544d1487bbdda7ec48d214c0e551d2d0ae6bbbb49d707fe297/sysaidmin-0.2.5.tar.gz"
   sha256 "77c40710cead7bdcc6cb98b38d74dd05e1e1c24dbc450e3b983869a7c06da91f"
   license "AGPL-3.0-or-later"
-  revision 17
+  revision 18
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "6da02a190e73b36163b921a0411d83526b857a34afe1a4fae1474ce7aad39777"
@@ -27,8 +27,8 @@ class Sysaidmin < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "attrs" do
@@ -52,8 +52,8 @@ class Sysaidmin < Formula
   end
 
   resource "griffelib" do
-    url "https://files.pythonhosted.org/packages/9d/82/74f4a3310cdabfbb10da554c3a672847f1ed33c6f61dd472681ce7f1fe67/griffelib-2.0.2.tar.gz"
-    sha256 "3cf20b3bc470e83763ffbf236e0076b1211bac1bc67de13daf494640f2de707e"
+    url "https://files.pythonhosted.org/packages/33/e4/8d187ea29c2e30b3a09505c567513077d6117861bde1fbd997a167f262ec/griffelib-2.1.0.tar.gz"
+    sha256 "762a186d2c6fd6794d4ea20d428d597ffb857cb56b66421651cbba15bdd5e813"
   end
 
   resource "h11" do
@@ -97,23 +97,23 @@ class Sysaidmin < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/27/3c/347cf965d313f5d41764e7d46bea6ffe7d9ef13b983cc429b0340962a082/mcp-1.27.2.tar.gz"
-    sha256 "8e02db104096d1c25b28e64bde29a5c32b31bc241710213e12fd4d84985bdfef"
+    url "https://files.pythonhosted.org/packages/c1/ee/94c6c50ffc5b5cf4737052275d11b57367f32d1a8516e31dcd60591b3916/mcp-1.28.0.tar.gz"
+    sha256 "559d3f9943674cafbe5744c5d3794f3237e8b47f9bbc58e20c0fad680d8487c2"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/40/36/4c926a91554483977608951360c18c2e911592785eb87a6437813f6123f7/openai-2.41.1.tar.gz"
-    sha256 "23d617a0432457ad844973bee8f540be9da90894f7c5686852d2d365da058f57"
+    url "https://files.pythonhosted.org/packages/f3/fa/88d0c58a0c58df7e6758e66b99c5d028d5e0bb49f8812d7203940cd9dbf1/openai-2.43.0.tar.gz"
+    sha256 "e74d238200a26868977002190fb6631613480a93dfe0c9c982e77021ed60a017"
   end
 
   resource "openai-agents" do
-    url "https://files.pythonhosted.org/packages/72/fe/ef185f2a21f2fba1b0b107f72a7646bb51369d4c4025e2ab4d1ec65764f3/openai_agents-0.17.5.tar.gz"
-    sha256 "5dd46943b993e1a68a78acd254fc6a00cf0455fc3dcc802078ea26964b14278c"
+    url "https://files.pythonhosted.org/packages/fb/90/724f368d1f0656dc750a0b6d3ba06ad88efb293be8d43b08e9d32956252b/openai_agents-0.17.6.tar.gz"
+    sha256 "fed94f8cf0eb4c57c63a89ad4b107932d75f2a0b6d9e895c88fa3c217e63c822"
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pyjwt" do
@@ -157,8 +157,8 @@ class Sysaidmin < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
-    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
+    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
+    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
   end
 
   resource "types-requests" do
