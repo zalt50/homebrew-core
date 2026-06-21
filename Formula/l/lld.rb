@@ -13,12 +13,12 @@ class Lld < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "27313c2faf8c535fdf997a27aa9b84bdc3af4855981d4ea5e8efe6b92176ff94"
-    sha256 cellar: :any, arm64_sequoia: "b5597f79d3759e0374daff35d12264a5e51639032f7ec318bfee2014867f29ef"
-    sha256 cellar: :any, arm64_sonoma:  "680b25edaf59c89ce0a934d17db7c1d7d06d40938346399da45de751fead02cb"
-    sha256 cellar: :any, sonoma:        "427562857dd6d2a42a8c7caf60651fa5a32cb8254f3452c856228f4ab70f0c15"
-    sha256 cellar: :any, arm64_linux:   "f7e541100d50aec9da7e6a738adfcb85d575914552fb09453631d073f95668f1"
-    sha256 cellar: :any, x86_64_linux:  "44a6d5f037da5e86c222cb57ca7ff607d3fa9071e78479bc88d5b15958639183"
+    sha256 cellar: :any, arm64_tahoe:   "381a963786ccbb157adc92831a4cf7bbf0b2165832791b9248cfc395d135015d"
+    sha256 cellar: :any, arm64_sequoia: "6ff47141e7a3eb51a806c983a2ac8d002467a85ebab92a3d4a05eea5f5ef887f"
+    sha256 cellar: :any, arm64_sonoma:  "172b4b12ec4634ec932b0f81226fa4c3bec89e59a2f17a3aae1545632af1308a"
+    sha256 cellar: :any, sonoma:        "adf487ab016242753e3584b3b4731d60dad8d7ccab2de04d43534a1a0bd901d1"
+    sha256 cellar: :any, arm64_linux:   "32fc6be36a3205a1f50dfe493caf3605acddb83b41f3beb1a5563e822c99bf63"
+    sha256 cellar: :any, x86_64_linux:  "b37de4b98b81ca8667e8bcb5c23d3ca17b1a5f18a3bc4406074993ac26ae4f14"
   end
 
   depends_on "cmake" => :build
