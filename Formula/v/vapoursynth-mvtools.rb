@@ -1,8 +1,8 @@
 class VapoursynthMvtools < Formula
   desc "Motion estimation and denoising filter for VapourSynth"
   homepage "https://github.com/dubhatervapoursynth/vapoursynth-mvtools"
-  url "https://github.com/dubhatervapoursynth/vapoursynth-mvtools/archive/refs/tags/v28.tar.gz"
-  sha256 "48d59695f953ba51dc31911b062417f6ee8f88bbae21a76ff92a4918800ce092"
+  url "https://github.com/dubhatervapoursynth/vapoursynth-mvtools/archive/refs/tags/v29.tar.gz"
+  sha256 "b1124604f76963e507c537839fd2ef1bee9b89b3c75bbd40c12a0c687aee6775"
   license "GPL-2.0-or-later"
   head "https://github.com/dubhatervapoursynth/vapoursynth-mvtools.git", branch: "master"
 
