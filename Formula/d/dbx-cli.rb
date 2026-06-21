@@ -1,8 +1,8 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://registry.npmjs.org/@dbx-app/cli/-/cli-0.4.11.tgz"
-  sha256 "ef704cda14c2199f4c8b8e44ef4e86217f6784356715ea77bc2de4431b3750fc"
+  url "https://registry.npmjs.org/@dbx-app/cli/-/cli-0.4.12.tgz"
+  sha256 "36a3689617e60c524cfe06036f088fefc60e85da50458eed37c14242496adc9f"
   license "Apache-2.0"
 
   bottle do
