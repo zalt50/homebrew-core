@@ -6,7 +6,7 @@ class LanggraphCli < Formula
   url "https://files.pythonhosted.org/packages/f0/27/4b6a0f00c804f0b0831f741c0607b46a4cbddff14d1eab6bbd4ce5820837/langgraph_cli-0.4.30.tar.gz"
   sha256 "4948fdc77ff45fc5ef3d8330d17bbecfcb26cd9c4d3a4f00da84a41a0226cd72"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "2fbc8c6586f0f79bc5a04f87150a74382699ad81741453993fc7ffc90f28436e"
@@ -86,8 +86,8 @@ class LanggraphCli < Formula
   end
 
   resource "langsmith" do
-    url "https://files.pythonhosted.org/packages/ad/aa/30295e5b27b86a607aaa21390cb1e10c84203916fdcf953ba0ff94a1dfaa/langsmith-0.8.17.tar.gz"
-    sha256 "dfedd6a2558cf8e420fdf8b9ee735537f02d97c329197c9499a5c7ecbe0f18fb"
+    url "https://files.pythonhosted.org/packages/9a/d9/a6681aa9847bbbc5ec21abe20a5e233b94e5edcfe39624db607ac7e8ccb4/langsmith-0.8.18.tar.gz"
+    sha256 "32dde9c0e67e053e0fb738921fc8ced768af7b8fa83d7a0e3fd63597cf8776dd"
   end
 
   resource "orjson" do
