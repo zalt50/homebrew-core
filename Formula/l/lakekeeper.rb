@@ -18,13 +18,13 @@ class Lakekeeper < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "postgresql@18" => :test
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build # for libclang
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "crates/lakekeeper-bin")
   end
