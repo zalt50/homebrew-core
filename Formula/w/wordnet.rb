@@ -5,14 +5,8 @@ class Wordnet < Formula
   # Version 3.1 is version 3.0 with the 3.1 dictionary.
   version "3.1"
   sha256 "6c492d0c7b4a40e7674d088191d3aa11f373bb1da60762e098b8ee2dda96ef22"
-  license :cannot_represent
+  license "WordNet"
   revision 2
-
-  # From homepage: "Princeton WordNet is no longer developed, though the
-  # database and all tools are freely available on the download page."
-  livecheck do
-    skip "No longer developed or maintained"
-  end
 
   bottle do
     sha256                               arm64_tahoe:   "c76614f1a228d94b2470a7b931ae833377ae13d1214cff36d6a93b5fb7da4ae5"
@@ -24,6 +18,13 @@ class Wordnet < Formula
     sha256                               arm64_linux:   "3a67f8e72a2b2c2b3119386adefe9ccf353c45bb05598aef4970be2bbe64da1d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5090e0ee1251e6d13e6c77024a0d1f18e0b6d563a4ced176d3c2cd1fffb52b7"
   end
+
+  # From homepage: "Princeton WordNet is no longer developed, though the
+  # database and all tools are freely available on the download page."
+  #
+  # Also needs unmaintained TCL/Tk 8
+  deprecate! date: "2026-06-22", because: :unmaintained
+  disable! date: "2027-06-22", because: :unmaintained
 
   depends_on "tcl-tk@8"
 
