@@ -1,14 +1,14 @@
 class Cozypkg < Formula
   desc "CLI for managing Cozystack packages"
   homepage "https://cozystack.io"
-  url "https://github.com/cozystack/cozystack/archive/refs/tags/v1.4.4.tar.gz"
-  sha256 "892d2e500ebc5837aaa5a643ad7d2e6f70a82fa7c4988555a320d1e99e331334"
+  url "https://github.com/cozystack/cozystack/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "00d57d95f9e5d522bee0f7bd98553ef96e4457880aa7e9e42f21cb49ab34351e"
   license "Apache-2.0"
   head "https://github.com/cozystack/cozystack.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
