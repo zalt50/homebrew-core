@@ -34,7 +34,7 @@ class SequoiaSq < Formula
   conflicts_with "sq", "squirrel-lang", because: "both install `sq` binaries"
 
   def install
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     ENV["ASSET_OUT_DIR"] = buildpath
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: "crypto-openssl")

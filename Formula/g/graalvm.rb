@@ -68,9 +68,9 @@ class Graalvm < Formula
 
   def install
     boot_jdk = if OS.mac?
-      Formula["openjdk@25"].opt_libexec/"openjdk.jdk/Contents/Home"
+      formula_opt_libexec("openjdk@25")/"openjdk.jdk/Contents/Home"
     else
-      Formula["openjdk@25"].opt_libexec
+      formula_opt_libexec("openjdk@25")
     end
     java_options = ENV.delete("_JAVA_OPTIONS")
 
@@ -122,7 +122,7 @@ class Graalvm < Formula
       args += %W[
         --enable-dtrace
         --with-freetype-include=#{Formula["freetype"].opt_include}
-        --with-freetype-lib=#{Formula["freetype"].opt_lib}
+        --with-freetype-lib=#{formula_opt_lib("freetype")}
         --with-sysroot=#{MacOS.sdk_path}
       ]
     else
@@ -152,7 +152,7 @@ class Graalvm < Formula
 
     odie "Failed to locate built LabsJDK image" if labsjdk_home.empty?
 
-    mx = Formula["mx"].opt_bin/"mx"
+    mx = formula_opt_bin("mx")/"mx"
 
     output = buildpath/"build"
 
@@ -215,7 +215,7 @@ class Graalvm < Formula
     JAVA
 
     if OS.linux?
-      ENV.prepend_path "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib
+      ENV.prepend_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
       ENV.prepend "NATIVE_IMAGE_OPTIONS", "-ELIBRARY_PATH"
     end
 

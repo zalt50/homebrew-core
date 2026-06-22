@@ -19,7 +19,7 @@ class Mockserver < Formula
   def install
     inreplace "bin/run_mockserver.sh", "/usr/local", HOMEBREW_PREFIX
     libexec.install Dir["*"]
-    (bin/"mockserver").write_env_script libexec/"bin/run_mockserver.sh", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"mockserver").write_env_script libexec/"bin/run_mockserver.sh", JAVA_HOME: formula_opt_prefix("openjdk")
 
     lib.install_symlink "#{libexec}/lib" => "mockserver"
 

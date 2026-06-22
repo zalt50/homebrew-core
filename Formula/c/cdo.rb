@@ -49,11 +49,11 @@ class Cdo < Formula
   def install
     args = %W[
       --disable-openmp
-      --with-eccodes=#{Formula["eccodes"].opt_prefix}
-      --with-netcdf=#{Formula["netcdf"].opt_prefix}
-      --with-hdf5=#{Formula["hdf5"].opt_prefix}
-      --with-proj=#{Formula["proj"].opt_prefix}
-      --with-szlib=#{Formula["libaec"].opt_prefix}
+      --with-eccodes=#{formula_opt_prefix("eccodes")}
+      --with-netcdf=#{formula_opt_prefix("netcdf")}
+      --with-hdf5=#{formula_opt_prefix("hdf5")}
+      --with-proj=#{formula_opt_prefix("proj")}
+      --with-szlib=#{formula_opt_prefix("libaec")}
     ]
 
     system "./configure", *args, *std_configure_args

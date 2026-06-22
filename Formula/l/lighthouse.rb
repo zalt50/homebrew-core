@@ -34,7 +34,7 @@ class Lighthouse < Formula
   def install
     ENV["PROTOC_NO_VENDOR"] = "1"
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "lighthouse")
   end

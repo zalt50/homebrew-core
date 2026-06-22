@@ -42,7 +42,7 @@ class Wordnet < Formula
     # Disable calling deprecated fields within the Tcl_Interp during compilation.
     # https://bugzilla.redhat.com/show_bug.cgi?id=902561
     ENV.append_to_cflags "-DUSE_INTERP_RESULT"
-    tcltk_lib = Formula["tcl-tk@8"].opt_lib
+    tcltk_lib = formula_opt_lib("tcl-tk@8")
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",

@@ -92,7 +92,7 @@ class Coin3d < Formula
     opengl_flags = if OS.mac?
       ["-Wl,-framework,OpenGL"]
     else
-      ["-L#{Formula["mesa"].opt_lib}", "-lGL"]
+      ["-L#{formula_opt_lib("mesa")}", "-lGL"]
     end
 
     system ENV.cc, "test.cpp", "-L#{lib}", "-lCoin", *opengl_flags, "-o", "test"
