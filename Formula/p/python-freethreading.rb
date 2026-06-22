@@ -35,7 +35,6 @@ class PythonFreethreading < Formula
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
-  uses_from_macos "unzip"
 
   on_linux do
     depends_on "gdbm"
