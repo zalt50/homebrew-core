@@ -1,18 +1,18 @@
 class Crit < Formula
   desc "Your feedback loop with the agent: review plans and code locally"
   homepage "https://crit.md/"
-  url "https://github.com/tomasz-tomczyk/crit/archive/refs/tags/v0.16.4.tar.gz"
-  sha256 "457329c013a66e350bcac476f8c797e4f737d1dee1c512c284f5d6386c6a23e2"
+  url "https://github.com/tomasz-tomczyk/crit/archive/refs/tags/v0.16.5.tar.gz"
+  sha256 "704d18b542370cb29e358091a0dc04bbfe8e26b717e5ed3f42ad13d9af8475f5"
   license "MIT"
   head "https://github.com/tomasz-tomczyk/crit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6d44c5dce5e5a2bd76206b5fe81aa3c6d03a922b9bd6aa670ad5210a8cc0de7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6d44c5dce5e5a2bd76206b5fe81aa3c6d03a922b9bd6aa670ad5210a8cc0de7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6d44c5dce5e5a2bd76206b5fe81aa3c6d03a922b9bd6aa670ad5210a8cc0de7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3d30e6bee8454782bcf1a73edd7713bb8afc76d57151cd9481fa6c375b2eb72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9417e91b9bb90a7e2d47ee2022bd358e357da4ad739dcf3ce69718a05ce60cd6"
-    sha256 cellar: :any,                 x86_64_linux:  "ea034fb23e3cf03e8820468bc2a57f4e9caff9dc6fbfe1b58953d565ff00b944"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3adf542bdd5c69abe4a0f16cc9efc93c2d1726a881ced42417ac5f3f2af6066"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3adf542bdd5c69abe4a0f16cc9efc93c2d1726a881ced42417ac5f3f2af6066"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3adf542bdd5c69abe4a0f16cc9efc93c2d1726a881ced42417ac5f3f2af6066"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5733f2fe1189046e5c590e009bf4bb04b3f949dada4ba913bfd7499ae27cf498"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "703eaf6b522376e00aca2b4bf89879dc49660029b42e4276be48bde72947dc2c"
+    sha256 cellar: :any,                 x86_64_linux:  "aa2cb204a92daeeba277bdd61cefd50cf501217540b83e38b6b1a42587843484"
   end
 
   depends_on "go" => :build
