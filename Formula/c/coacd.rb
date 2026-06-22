@@ -7,6 +7,15 @@ class Coacd < Formula
 
   head "https://github.com/SarahWeiii/CoACD.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "951caf0b3d97f15ed48d21c5b955a3102178e7ec3ae3be32ebb9e2a4ab21362a"
+    sha256 cellar: :any, arm64_sequoia: "7b552e4db4a07c91fb065ccd115fe9aa70b342aab4aaafb8fbd8372d1f85a223"
+    sha256 cellar: :any, arm64_sonoma:  "45423800e58ce132c6d0f74f999eacfbf1b788200458d5ecf979b9da77336129"
+    sha256 cellar: :any, sonoma:        "8b8592eef25dfb6b8230f52331274fb8aea502a6e8d4b94da481d9d7aabade4e"
+    sha256 cellar: :any, arm64_linux:   "b23433ced3cd62361c95dccf77c267ff81119bb56415bec2ccd1dd3ee3883a2b"
+    sha256 cellar: :any, x86_64_linux:  "e5f8111838643c8fa191a3a0cdd8609f42f8717cc9c91d98023cad4febeecc8c"
+  end
+
   depends_on "cmake" => :build
 
   resource "cdt" do
