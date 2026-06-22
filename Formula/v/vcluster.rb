@@ -1,9 +1,8 @@
 class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https://www.vcluster.com"
-  url "https://github.com/loft-sh/vcluster.git",
-      tag:      "v0.35.0",
-      revision: "5b46b288665a520c2072a77adbe2f94c2e7e4b4e"
+  url "https://github.com/loft-sh/vcluster/archive/refs/tags/v0.35.1.tar.gz"
+  sha256 "3d38fa1967e3d4d5891cd1b35e58b9a6b8672ef780f85d3436e7c7cf40ca042c"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git", branch: "main"
 
@@ -29,7 +28,7 @@ class Vcluster < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ldflags = "-s -w -X main.commitHash=#{Utils.git_head} -X main.buildDate=#{time.iso8601} -X main.version=#{version}"
+    ldflags = "-s -w -X main.version=#{version}"
     system "go", "generate", "./..."
     system "go", "build", "-mod", "vendor", *std_go_args(ldflags:), "./cmd/vclusterctl"
 
