@@ -90,7 +90,7 @@ class GccAT9 < Formula
       args << "--without-build-config" if Hardware::CPU.intel? && DevelopmentTools.clang_build_version >= 1205
 
       # System headers may not be in /usr/include
-      sdk = MacOS.sdk_path_if_needed
+      sdk = MacOS.sdk_path
       if sdk
         args << "--with-native-system-header-dir=/usr/include"
         args << "--with-sysroot=#{sdk}"
