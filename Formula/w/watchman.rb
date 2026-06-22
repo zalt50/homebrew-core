@@ -3,8 +3,8 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https://facebook.github.io/watchman/"
-  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.06.15.00.tar.gz"
-  sha256 "769b1d252f691d9437fb2a2e51289237a781591c80954567d2b0c57e715564ec"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.06.22.00.tar.gz"
+  sha256 "25891d4abc83f053f81457ffd8c290d8c88972d804057b1adc02eef2a815c375"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
@@ -40,6 +40,13 @@ class Watchman < Formula
     depends_on "boost"
     depends_on "libunwind"
     depends_on "openssl@4"
+  end
+
+  # fmt 12.2 dropped fmt::format from <fmt/core.h>; include <fmt/format.h> where used.
+  # PR ref: https://github.com/facebook/watchman/pull/1348
+  patch do
+    url "https://github.com/facebook/watchman/commit/7dbd77e849641ec756fee53a587da56d4502b4d1.patch?full_index=1"
+    sha256 "5855728d86bca5c11d08195db93659da91a813ce7a5c0293366aafe08970364a"
   end
 
   def install
