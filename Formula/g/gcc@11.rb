@@ -83,7 +83,7 @@ class GccAT11 < Formula
       args << "--with-system-zlib"
 
       # System headers may not be in /usr/include
-      sdk = MacOS.sdk_path_if_needed
+      sdk = MacOS.sdk_path
       args << "--with-sysroot=#{sdk}" if sdk
 
       # Work around a bug in Xcode 15's new linker (FB13038083)
