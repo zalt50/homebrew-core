@@ -7,12 +7,12 @@ class Gup < Formula
   head "https://github.com/nao1215/gup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ca10d7a09234d1b49ad4f5337abbbf2e2b2bab71d37502544eb3794435355cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ca10d7a09234d1b49ad4f5337abbbf2e2b2bab71d37502544eb3794435355cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ca10d7a09234d1b49ad4f5337abbbf2e2b2bab71d37502544eb3794435355cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e18337e36a37edcdc1d453a405d3749f9828c07c017fcb9b0f06e3e740b14ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e4cda11aa51be5db1c9802cc586dae258974f4c45340a2153ab0566faecaed1"
-    sha256 cellar: :any,                 x86_64_linux:  "7d0af2e2f75d1cc9380e8c312f4b0b7543ab8cb76ce0804daef81ada1b70016f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ded555263e67edbaeaefeb4367c94f369c0b9b3dd9e44f4413677c108353023"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ded555263e67edbaeaefeb4367c94f369c0b9b3dd9e44f4413677c108353023"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ded555263e67edbaeaefeb4367c94f369c0b9b3dd9e44f4413677c108353023"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f828533a82996b1e9c84a9f8bded887e40cdff0dc106c321e544591cb500a820"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ad29d7665aff23ed32d11193566e0045bd415ed80b9add51b20b72350c39933"
+    sha256 cellar: :any,                 x86_64_linux:  "f04b37236365d889f8bf4c1aca441ff9eb996b86b93300f7fffd63189ce5ca3d"
   end
 
   depends_on "go"
