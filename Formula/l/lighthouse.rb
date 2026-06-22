@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://lighthouse.sigmaprime.io/"
-  url "https://github.com/sigp/lighthouse/archive/refs/tags/v8.1.3.tar.gz"
-  sha256 "d44b7ea698140c7071c489acd20d99229ff3a37292c4caf47afce58948ca9529"
+  url "https://github.com/sigp/lighthouse/archive/refs/tags/v8.2.0.tar.gz"
+  sha256 "f36097bd9f7db9b3d6dda1c987c9ffe43cd05cd2cb17429f7523e9fe66e7f51a"
   license "Apache-2.0"
 
   livecheck do
@@ -36,41 +36,7 @@ class Lighthouse < Formula
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
-    # fixing LLVM 22 builds, which got handled in https://github.com/sigp/xdelta3-rs/commit/fe3906605c87b6c0515bd7c8fc671f47875e3ccc
-    inreplace "Cargo.toml", <<~OLD, <<~NEW
-      xdelta3 = { git = "https://github.com/sigp/xdelta3-rs", rev = "4db64086bb02e9febb584ba93b9d16bb2ae3825a" }
-    OLD
-      xdelta3 = { git = "https://github.com/sigp/xdelta3-rs", rev = "fe3906605c87b6c0515bd7c8fc671f47875e3ccc" }
-    NEW
-    inreplace "Cargo.lock", <<~OLD, <<~NEW
-      name = "xdelta3"
-      version = "0.1.5"
-      source = "git+https://github.com/sigp/xdelta3-rs?rev=4db64086bb02e9febb584ba93b9d16bb2ae3825a#4db64086bb02e9febb584ba93b9d16bb2ae3825a"
-      dependencies = [
-       "bindgen",
-       "cc",
-       "futures-io",
-       "futures-util",
-       "libc",
-       "log",
-       "rand 0.8.5",
-      ]
-    OLD
-      name = "xdelta3"
-      version = "0.1.5"
-      source = "git+https://github.com/sigp/xdelta3-rs?rev=fe3906605c87b6c0515bd7c8fc671f47875e3ccc#fe3906605c87b6c0515bd7c8fc671f47875e3ccc"
-      dependencies = [
-       "bindgen 0.72.1",
-       "cc",
-       "futures-io",
-       "futures-util",
-       "libc",
-       "log",
-       "rand 0.9.2",
-      ]
-    NEW
-
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./lighthouse")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "lighthouse")
   end
 
   test do
@@ -84,7 +50,7 @@ class Lighthouse < Formula
     args = [
       "--execution-endpoint", "http://localhost:8551",
       "--execution-jwt", "jwt.hex",
-      "--allow-insecure-genesis-sync", "--http",
+      "--allow-insecure-genesis-sync", "--ignore-ws-check", "--http",
       "--http-port=#{http_port}", "--port=#{free_port}"
     ]
     spawn bin/"lighthouse", "beacon_node", *args
