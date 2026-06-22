@@ -1,9 +1,10 @@
 class Asn1c < Formula
   desc "Compile ASN.1 specifications into C source code"
   homepage "https://lionet.info/asn1c/blog"
-  url "https://github.com/vlm/asn1c/releases/download/v0.9.28/asn1c-0.9.28.tar.gz"
-  sha256 "8007440b647ef2dd9fb73d931c33ac11764e6afb2437dbe638bb4e5fc82386b9"
+  url "https://github.com/vlm/asn1c/archive/refs/tags/v0.9.29.tar.gz"
+  sha256 "cdcfa0638d9657da3b114ceef3d6c9919e9e1e4da0de49456f8d9e398826d5ab"
   license "BSD-2-Clause"
+  head "https://github.com/vlm/asn1c.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,15 +23,12 @@ class Asn1c < Formula
     sha256 x86_64_linux:   "fe7fa5f68ab94a7d748a2af7451d496192c7bc543bd9dc9c660673cb8026bda4"
   end
 
-  head do
-    url "https://github.com/vlm/asn1c.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose"
 
     args = []
     # Help old config scripts identify arm64 linux
@@ -41,7 +39,7 @@ class Asn1c < Formula
   end
 
   test do
-    (testpath/"test.asn1").write <<~EOS
+    (testpath/"test.asn1").write <<~ASN1
       MyModule DEFINITIONS ::=
       BEGIN
 
@@ -57,7 +55,7 @@ class Asn1c < Formula
       MyInt ::= INTEGER (0..65535)
 
       END
-    EOS
+    ASN1
 
     system bin/"asn1c", "test.asn1"
   end
