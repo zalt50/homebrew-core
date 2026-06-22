@@ -11,12 +11,12 @@ class WildflyAs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6c67d1861063a65f1ab9ef20879e18ba8c94777731a741a3e359393d7daa16b4"
-    sha256 cellar: :any,                 arm64_sequoia: "579965426c87302233a400557885720a1e444ea60ecad112247054f067ebd702"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab4426117b4f66fccb9f791dff5b1b777d10631679da611d09978305fb22c483"
-    sha256 cellar: :any,                 sonoma:        "1eaa7ed390ec3d276515575d17ab8b81f1635e8a2436cdd2d2b74ac16a010c99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a85e794f5f823c7bba7a4e089d73a908c1e2173e5a415843b662bea0ae27998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aa73f9afb99fbdc86904069617fcb1b10d44fc174c999ed473d362942311b86"
+    sha256 cellar: :any, arm64_tahoe:   "ec30148741abcd6b47b84318783eaeee95f22c8a7830febf1e68dc8bc913dc90"
+    sha256 cellar: :any, arm64_sequoia: "be7c007b38d9ad5475f6c990ab6de9eb1a4c95cfc80422e72af0e6adb2ce82a5"
+    sha256 cellar: :any, arm64_sonoma:  "57093d3c7893493e16633a13f8912725b972a72d39a8144f7f4336c11a9718ee"
+    sha256 cellar: :any, sonoma:        "bc2b281ab3e1eb6b4395dd19f2597f43f139f606cdefea35e6e7e0a912ef217c"
+    sha256 cellar: :any, arm64_linux:   "9dc281d406e384bc140204465c939b6deca8472c349e7f32dd80d7646e174a56"
+    sha256 cellar: :any, x86_64_linux:  "1a5c2a601d5bc4e3ed5f78248b88da4958c270e5fffd04d89226680523990b72"
   end
 
   depends_on "autoconf" => :build
