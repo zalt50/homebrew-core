@@ -15,12 +15,12 @@ class Vcluster < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a4dd31842adc8cc045137b94cd36220ae2a13016167fb365b2121758857f2f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c61b153da5b76ba1200d153f3c6915338e0d29629d6852c158384324f822e64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "060b8102a88fb61b7a3c76a50f78a3e32ef4a4cead06c459205225263f5a9ea2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11effa214e0af661378e84ed4734e0ac9479a9937509197dc52780aa20fe9622"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85819901a85d05229d744f05662ba69a92c0e00efee14b09363e244263ffe8b0"
-    sha256 cellar: :any,                 x86_64_linux:  "bc4350efdef3dadf92dddb6f15d8ceabfbec2bb100872d2534a7ffec363b7b4f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35ac87ce7eb5a5473269577f0292b728235d97a94e01dd357de4e18a1c93be86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "620bee2269b23836871d9539464af6a89e14e1b8960f92dcda815c753d04ce56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55f65e321ba52731516e716257fc65030421ea07a7bf8bbbe27621a8acdd2848"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05550960f35e558b450fadeb337904defd60d128d3a9349e79d35a933f20e81a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b82103f1b40f906e78807eab782445449c170ad713d49a5e13abd87317175ac"
+    sha256 cellar: :any,                 x86_64_linux:  "91978308b50faee177efe172073e204b51e1c99c5bafbfb2af73a465d172d074"
   end
 
   depends_on "go" => :build
