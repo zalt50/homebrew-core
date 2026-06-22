@@ -30,11 +30,17 @@ class Pypy < Formula
   uses_from_macos "expat"
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
-  uses_from_macos "unzip"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  link_overwrite "lib/pypy/site-packages/README"
+  link_overwrite "lib/pypy/site-packages/easy-install.pth"
+  link_overwrite "lib/pypy/site-packages/pip*"
+  link_overwrite "lib/pypy/site-packages/setuptools*"
+  link_overwrite "share/pypy/easy_install*"
+  link_overwrite "share/pypy/pip*"
 
   resource "bootstrap" do
     on_macos do
@@ -80,6 +86,12 @@ class Pypy < Formula
     file "Patches/pypy/tcl-tk.diff"
   end
 
+  # Where setuptools will install executable scripts
+  def scripts_folder = HOMEBREW_PREFIX/"share/pypy"
+
+  # The Cellar location of distutils
+  def distutils = libexec/"lib-python/2.7/distutils"
+
   def install
     # Work-around for build issue with Xcode 15.3
     # upstream bug report, https://github.com/pypy/pypy/issues/4931
@@ -103,12 +115,11 @@ class Pypy < Formula
       inreplace "lib-python/2.7/ctypes/macholib/dyld.py" do |f|
         f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
                 "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib',"
-        f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
+        f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [",
+                "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
       end
     end
 
-    # See https://github.com/Homebrew/homebrew/issues/24364
-    ENV["PYTHONPATH"] = ""
     ENV["PYPY_USESSION_DIR"] = buildpath
 
     resource("bootstrap").stage buildpath/"bootstrap"
@@ -130,50 +141,33 @@ class Pypy < Formula
     libexec.mkpath
     system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
 
+    %w[setuptools pip].each do |pkg|
+      resource(pkg).stage do
+        system libexec/"bin/pypy", "-s", "setup.py", "--no-user-cfg", "install", "--force", "--verbose"
+      end
+    end
+
     # The PyPy binary install instructions suggest installing somewhere
     # (like /opt) and symlinking in binaries as needed. Specifically,
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
     bin.install_symlink libexec/"bin/pypy"
     lib.install_symlink libexec/"bin"/shared_library("libpypy-c")
-  end
+    pkgshare.install_symlink (libexec/"bin").children
 
-  def post_install
-    # Post-install, fix up the site-packages and install-scripts folders
-    # so that user-installed Python software survives minor updates, such
-    # as going from 1.7.0 to 1.7.1.
-
-    # Create a site-packages in the prefix.
-    prefix_site_packages.mkpath
+    # Expose easy_install and pip with non-conflicting names
+    bin.install_symlink libexec/"bin/easy_install" => "easy_install_pypy"
+    bin.install_symlink libexec/"bin/pip" => "pip_pypy"
 
     # Symlink the prefix site-packages into the cellar.
-    unless (libexec/"site-packages").symlink?
-      # fix the case where libexec/site-packages/site-packages was installed
-      rm_r(libexec/"site-packages/site-packages") if (libexec/"site-packages/site-packages").exist?
-      mv Dir[libexec/"site-packages/*"], prefix_site_packages
-      rm_r(libexec/"site-packages")
-    end
-    libexec.install_symlink prefix_site_packages
+    (lib/"pypy").install libexec/"site-packages"
+    libexec.install_symlink HOMEBREW_PREFIX/"lib/pypy/site-packages"
 
     # Tell distutils-based installers where to put scripts
-    scripts_folder.mkpath
     (distutils/"distutils.cfg").atomic_write <<~INI
       [install]
       install-scripts=#{scripts_folder}
     INI
-
-    %w[setuptools pip].each do |pkg|
-      resource(pkg).stage do
-        system bin/"pypy", "-s", "setup.py", "--no-user-cfg", "install", "--force", "--verbose"
-      end
-    end
-
-    # Symlinks to easy_install_pypy and pip_pypy
-    bin.install_symlink scripts_folder/"easy_install" => "easy_install_pypy"
-    bin.install_symlink scripts_folder/"pip" => "pip_pypy"
-
-    # post_install happens after linking
-    %w[easy_install_pypy pip_pypy].each { |e| (HOMEBREW_PREFIX/"bin").install_symlink bin/e }
   end
 
   def caveats
@@ -189,27 +183,8 @@ class Pypy < Formula
       so you don't overwrite tools from CPython.
 
       Setuptools and pip have been installed, so you can use easy_install_pypy and
-      pip_pypy.
-      To update setuptools and pip between pypy releases, run:
-          pip_pypy install --upgrade pip setuptools
-
-      See: https://docs.brew.sh/Homebrew-and-Python
+      pip_pypy. These are now managed by the formula and should not be modified.
     EOS
-  end
-
-  # The HOMEBREW_PREFIX location of site-packages
-  def prefix_site_packages
-    HOMEBREW_PREFIX/"lib/pypy/site-packages"
-  end
-
-  # Where setuptools will install executable scripts
-  def scripts_folder
-    HOMEBREW_PREFIX/"share/pypy"
-  end
-
-  # The Cellar location of distutils
-  def distutils
-    libexec/"lib-python/2.7/distutils"
   end
 
   test do
