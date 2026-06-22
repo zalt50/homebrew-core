@@ -87,7 +87,7 @@ class GccAT10 < Formula
       args << "--disable-multilib"
 
       # System headers may not be in /usr/include
-      sdk = MacOS.sdk_path_if_needed
+      sdk = MacOS.sdk_path
       if sdk
         args << "--with-native-system-header-dir=/usr/include"
         args << "--with-sysroot=#{sdk}"
