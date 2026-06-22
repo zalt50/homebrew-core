@@ -1,8 +1,8 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
   homepage "https://www.wildfly.org/"
-  url "https://github.com/wildfly/wildfly/releases/download/40.0.0.Final/wildfly-40.0.0.Final.tar.gz"
-  sha256 "6b75f6de39dcf7e94b96f82006b96ec257b6358fc769a29d9817284c31c1e793"
+  url "https://github.com/wildfly/wildfly/releases/download/40.0.1.Final/wildfly-40.0.1.Final.tar.gz"
+  sha256 "6440391bff126ce4bf5dfbbc81369164721b62c6e604450d791d2d9834f0a8b9"
   license "Apache-2.0"
 
   livecheck do
@@ -43,8 +43,8 @@ class WildflyAs < Formula
   end
 
   resource "netty" do
-    url "https://github.com/netty/netty/archive/refs/tags/netty-4.1.133.Final.tar.gz"
-    sha256 "6335f5255307668c58818629cada4c3ecf11e30771df714c219b9af3a5e7db7d"
+    url "https://github.com/netty/netty/archive/refs/tags/netty-4.1.135.Final.tar.gz"
+    sha256 "8e3a868f5d576bbd906b69318873e0a44799864f33b978ce82e72daabbd995ba"
 
     livecheck do
       url "https://raw.githubusercontent.com/wildfly/wildfly/refs/tags/#{LATEST_VERSION}.Final/pom.xml"
