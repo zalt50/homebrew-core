@@ -8,12 +8,12 @@ class AnsibleCreator < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "27fe01ad3071ef63436825c0740688e6a7096930889ac89791652b72ca6d4bbe"
-    sha256 cellar: :any,                 arm64_sequoia: "cca13bed50f7b6a587273c4a3ba19f2e03502375cae07ff2ebf98bad5a12dcd4"
-    sha256 cellar: :any,                 arm64_sonoma:  "31a37437fac1a014d6b97eb47cf24bfb35dd8272ff617ce1b8ef4d18284915a2"
-    sha256 cellar: :any,                 sonoma:        "11962a0e6e5d6749d356b52c6ca1526df301ee436b5bace99080a803ea3dcfd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9eb26b48f7cd02a6f9faf9b5ce7d4e18eea406d1884a3d6e91febcfaadea3d54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "319779c6d1dca218828a49adef95a06de4d1a229b5d3e7333ec49047f33926f1"
+    sha256 cellar: :any, arm64_tahoe:   "d733b6a1382b8a55dedb3f2b9199b0e538801f2e2aa191efe6f047f6c39ce834"
+    sha256 cellar: :any, arm64_sequoia: "c57a376800b5563d487d30ddbb1f29c0dc42f5b590aa1e2d90bd7176bdd744f6"
+    sha256 cellar: :any, arm64_sonoma:  "a2b1f5c47017d602d03c124e96751caef194e607c2ed985361d40c564b1121b6"
+    sha256 cellar: :any, sonoma:        "eb898f0f9903ab0e2919c00289614270cffccb1b775a98a161f92814e92dafab"
+    sha256 cellar: :any, arm64_linux:   "9a448b82e8123df8b96b051689c0d9d090f35865961bbcdf9487e241b1bc16cc"
+    sha256 cellar: :any, x86_64_linux:  "ad13f917f788abc7b02b0e17a079c5c02f661f37de489191a8548eb422e280c9"
   end
 
   depends_on "libyaml"
