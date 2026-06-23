@@ -1,8 +1,8 @@
 class Radare2 < Formula
   desc "Reverse engineering framework"
   homepage "https://radare.org"
-  url "https://github.com/radareorg/radare2/archive/refs/tags/6.1.6.tar.gz"
-  sha256 "7370c52cb22cba3ab02ee77970fd258a8ecdbf3fd3282f2647ff12393c6ae8ac"
+  url "https://github.com/radareorg/radare2/archive/refs/tags/6.1.8.tar.gz"
+  sha256 "84d0e32af697f720c9f480f6b3e56b08f64251d90cfe2d8f163431c006c0053e"
   license "LGPL-3.0-only"
   head "https://github.com/radareorg/radare2.git", branch: "master"
 
