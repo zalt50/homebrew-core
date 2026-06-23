@@ -10,12 +10,12 @@ class MemtierBenchmark < Formula
   ]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a8281315d42980cc137c256ea3f30e9e2769cd2401ab95d0113507f94d9a0177"
-    sha256 cellar: :any, arm64_sequoia: "e3d26f318408390e3186ced57a507bb4c73a083139638d92835679d4d6bbaadb"
-    sha256 cellar: :any, arm64_sonoma:  "948d8355128c38d26eb8b54ed57987cb7e31f7f9208e69d2f31ebb10366c4d02"
-    sha256 cellar: :any, sonoma:        "cf2120997e57419bf24092b8fa32b4618ecf93e536f6a7a2515e197e950e1954"
-    sha256 cellar: :any, arm64_linux:   "d1afa7553451f3c8ceceb6be1e238c79fd400236327a156ebb6c8df0ce73c0bd"
-    sha256 cellar: :any, x86_64_linux:  "92ce9ffcb0cfc4c5cf03a5d0b0fcf781e8e45eb1a4f4e1233281256ebddfafdc"
+    sha256 cellar: :any, arm64_tahoe:   "2f95b15e045eee10cb822a49a3d84a50ace49f48850189cfebb4c84d70eb5155"
+    sha256 cellar: :any, arm64_sequoia: "ef3c2cca015432d787deeb5578fdba7c2a793929d11c604854dda2e3d2427ff6"
+    sha256 cellar: :any, arm64_sonoma:  "41fdb24f6500bb56ef8c1fab69b14359991fee89e75892d8e058786ea7fab5fa"
+    sha256 cellar: :any, sonoma:        "d24e58e09887e34b01348f070f3bcb521e4baa5b78dde959f80ee0acda50c1c5"
+    sha256 cellar: :any, arm64_linux:   "24bc58c4478961582edf5469d11998464734f7914593d54befade325d2cd9649"
+    sha256 cellar: :any, x86_64_linux:  "af11725691d9405df1229bda8287b81fa51732f067b02911fe80476541ddf580"
   end
 
   depends_on "autoconf" => :build
