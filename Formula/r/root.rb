@@ -51,6 +51,7 @@ class Root < Formula
   depends_on "sqlite"
   depends_on "tbb"
   depends_on "unuran"
+  depends_on "vdt"
   depends_on "xrootd"
   depends_on "xxhash"
   depends_on "xz" # for LZMA
@@ -119,7 +120,7 @@ class Root < Formula
       -Dbuiltin_tbb=OFF
       -Dbuiltin_unuran=OFF
       -Dbuiltin_vc=OFF
-      -Dbuiltin_vdt=ON
+      -Dbuiltin_vdt=OFF
       -Dbuiltin_veccore=OFF
       -Dbuiltin_xrootd=OFF
       -Dbuiltin_xxhash=OFF
