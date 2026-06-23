@@ -1,8 +1,8 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
   homepage "https://mongoose.ws/"
-  url "https://github.com/cesanta/mongoose/archive/refs/tags/7.21.tar.gz"
-  sha256 "d4ddbd12c12f223abefcc0a74417a638ae5c118d7cf10ba546553c6b0e0b5ada"
+  url "https://github.com/cesanta/mongoose/archive/refs/tags/7.22.tar.gz"
+  sha256 "87727cd2c240ff559b16e9710d44b61ba3513dbee50428bd8ee1596d7c58460a"
   license "GPL-2.0-only"
 
   bottle do
@@ -29,6 +29,9 @@ class Mongoose < Formula
     include.install "mongoose.h"
     pkgshare.install "tutorials"
     doc.install Dir["docs/*"]
+
+    # Remove tutorials which have binaries built for a non-native architecture
+    rm_r pkgshare/"tutorials/stm32/nucleo-n657x0-q/" if OS.linux?
   end
 
   test do
