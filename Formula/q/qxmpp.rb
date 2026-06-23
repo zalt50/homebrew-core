@@ -1,8 +1,8 @@
 class Qxmpp < Formula
   desc "Cross-platform C++ XMPP client and server library"
   homepage "https://invent.kde.org/libraries/qxmpp"
-  url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.15.1/qxmpp-v1.15.1.tar.bz2"
-  sha256 "3a492ed1a175f16101f6dae86074ec027b4bc068356a0cf881dd34a0b4130e61"
+  url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.16.0/qxmpp-v1.16.0.tar.bz2"
+  sha256 "e7ad999bf201cb815916d70833889a1faf6c80cc424cbabd3be5ad182ce663a0"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -41,7 +41,7 @@ class Qxmpp < Formula
   def install
     ENV.llvm_clang if OS.linux? && deps.map(&:name).any?("llvm")
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_DOCUMENTATION=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
