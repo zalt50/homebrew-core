@@ -4,6 +4,7 @@ class Lanraragi < Formula
   url "https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.71.tar.gz"
   sha256 "4dab46dddd2c227bd0428eef4318cad673fca1e2a1420eee1fa2110043827408"
   license "MIT"
+  revision 1
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
@@ -21,13 +22,12 @@ class Lanraragi < Formula
   depends_on "ghostscript"
   depends_on "imagemagick"
   depends_on "libarchive"
+  depends_on "libffi" # TODO: uses_from_macos when node supports it
   depends_on "node"
   depends_on "openssl@3"
   depends_on "perl" # perl >= 5.36.0
   depends_on "redis" # TODO: migrate to `valkey`
   depends_on "zstd"
-
-  uses_from_macos "libffi"
 
   resource "Image::Magick" do
     url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.2-3.tar.gz"
