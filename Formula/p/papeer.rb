@@ -6,12 +6,12 @@ class Papeer < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4de89940d174de2a9f2cf0efdf51bee768c9dac92cd87e19b0bb2b2f23a80bd2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4de89940d174de2a9f2cf0efdf51bee768c9dac92cd87e19b0bb2b2f23a80bd2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4de89940d174de2a9f2cf0efdf51bee768c9dac92cd87e19b0bb2b2f23a80bd2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d825a41ef73efeeb45a9eac2fe3f7d9e4a26ca5b960fcaf25e5512ec11929abf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "923d7f328081850271e2adf57dd7677a025fdf85377eedf0fb4c6b5e142f7572"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4c0d596b575ae14c957ab4f06dce35d94aec95fd0d0285116fcfcc0a3dcb23f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "368b648e41961c76013cdd6d37d7ef1828fdc883255db228ed45ae11a93f5dff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "368b648e41961c76013cdd6d37d7ef1828fdc883255db228ed45ae11a93f5dff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "368b648e41961c76013cdd6d37d7ef1828fdc883255db228ed45ae11a93f5dff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dcc81fd87cccb77418e2cbbc70645b1e20f52c88ce72b9a9ef19e4f1bb5afbc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ecace08c32bc5549e4497324406a26771783fbe0111aefb8fca6f75f2d04fff"
+    sha256 cellar: :any,                 x86_64_linux:  "3475bfe96ec8bbda2ecee4396762c4a30f75701368010f41d0f1ffabb62f32d6"
   end
 
   depends_on "go" => :build
