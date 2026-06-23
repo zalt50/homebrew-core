@@ -6,12 +6,12 @@ class Pgrx < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b681c42f6fcc16861e610db5b3668904cd5351d490e30e3679e837eee9f6db1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cae13c78789a51d8937868531698ccf680fc5056f267939e1a1f72bb7c96bb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96136a62114e5d8d78f9922fd2464a06a5a8beb49320192af82aa5f90f3834b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "701de1691023c4228f28e154bffc4b9062c204d614352a2057337c8c8af5d25c"
-    sha256 cellar: :any,                 arm64_linux:   "a79226b07522827f51bdc06376d8e712e6c08e920894484a445d5ffaea334075"
-    sha256 cellar: :any,                 x86_64_linux:  "6464ed21f015d69b01c82809010b05462d8155d35e5a9ef443d1d3bcd18421d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00e512f2014758eabd07b51718eb5b537eb42894b04c002397ae29e87506029b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22ca7919dfc432c78ff823dce1dd680ad1e6dd1d77530b20f1a085090980997b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89daebc551525f7040f4e63daa7ef2c163839ff5c926bf9355417c4da69ad010"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59dc3a43d8b8b53645a1290f6f95c512ddf60c7645d41f4632b923b3bf8f7bb6"
+    sha256 cellar: :any,                 arm64_linux:   "bca136ceb550163157a3d8f9239f134957c9be7629081cb891a402c5a72544af"
+    sha256 cellar: :any,                 x86_64_linux:  "aa7ef20950a7b50f631d54daef0fb01984ce6a177bf01accfdcf01e7c3176c81"
   end
 
   depends_on "pkgconf" => :build
