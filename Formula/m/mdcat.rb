@@ -1,10 +1,10 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
-  homepage "https://github.com/swsnr/mdcat"
-  url "https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.7.1.tar.gz"
-  sha256 "460024d9795eb578be09ec2284af243627721151aa001aae6ffb5589380b2ba1"
+  homepage "https://github.com/BIRSAx2/mdcat"
+  url "https://github.com/BIRSAx2/mdcat/archive/refs/tags/mdcat-2.9.1.tar.gz"
+  sha256 "f0e9b0909a209ffb9f3685b3aa3bb70fb9e71de1770704c4f0daa1c0ed534fb0"
   license "MPL-2.0"
-  head "https://github.com/swsnr/mdcat.git", branch: "main"
+  head "https://github.com/BIRSAx2/mdcat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda4028d4876c70766d9ae577c60741c5604de5673b8acae0e26dc4f5d8df08e"
@@ -15,9 +15,6 @@ class Mdcat < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "85b2d4cdae8247b29aaf22ba0390f2febcf5a9ee2dd9abd60cf7ae5fb9a1c1dd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87635e02c1cf4066926983af95ae4b67647749adaf2020687c3b258e3937fc9e"
   end
-
-  deprecate! date: "2025-01-10", because: :does_not_build # and :repo_archived
-  disable! date: "2026-01-10", because: :does_not_build
 
   depends_on "asciidoctor" => :build
   depends_on "pkgconf" => :build
@@ -32,7 +29,7 @@ class Mdcat < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    # https://github.com/swsnr/mdcat?tab=readme-ov-file#packaging
+    # https://github.com/BIRSAx2/mdcat?tab=readme-ov-file#packaging
     generate_completions_from_executable(bin/"mdcat", "--completions")
     system "asciidoctor", "-b", "manpage", "-a", "reproducible", "-o", "mdcat.1", "mdcat.1.adoc"
     man1.install Utils::Gzip.compress("mdcat.1")
