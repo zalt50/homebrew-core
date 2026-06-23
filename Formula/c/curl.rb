@@ -39,6 +39,7 @@ class Curl < Formula
   depends_on "libnghttp2"
   depends_on "libnghttp3"
   depends_on "libngtcp2"
+  depends_on "libpsl"
   depends_on "libssh2"
   depends_on "openssl@3"
   depends_on "zstd"
@@ -76,7 +77,7 @@ class Curl < Formula
       --with-libssh2
       --with-nghttp3
       --with-ngtcp2
-      --without-libpsl
+      --with-libpsl
       --with-zsh-functions-dir=#{zsh_completion}
       --with-fish-functions-dir=#{fish_completion}
     ]
@@ -120,7 +121,7 @@ class Curl < Formula
 
     # Check dependencies linked correctly
     curl_features = shell_output("#{bin}/curl-config --features").split("\n")
-    %w[brotli GSS-API HTTP2 HTTP3 IDN libz SSL zstd].each do |feature|
+    %w[brotli GSS-API HTTP2 HTTP3 IDN libz PSL SSL zstd].each do |feature|
       assert_includes curl_features, feature
     end
     curl_protocols = shell_output("#{bin}/curl-config --protocols").split("\n")
