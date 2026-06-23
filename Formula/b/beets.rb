@@ -3,8 +3,8 @@ class Beets < Formula
 
   desc "Music library manager and tagger"
   homepage "https://beets.io/"
-  url "https://files.pythonhosted.org/packages/ba/f9/243df2679bc0176a425d417f62126600b011f3b2528c8ae90565ab0dfd5c/beets-2.11.0.tar.gz"
-  sha256 "f87fda8b3a723bee59c51a64ba30e94ab35d2658b3cb58c595afa29e75ed8d5f"
+  url "https://files.pythonhosted.org/packages/1c/40/056537114e0c6df4374371341301c74b8519b571f3e67ec64f5547479a16/beets-2.12.0.tar.gz"
+  sha256 "c5e844c4785a8b2c53a791a2b7bcd5846b4d12b0e8209e8eabfee06cec57edf2"
   license "MIT"
 
   bottle do
@@ -76,13 +76,18 @@ class Beets < Formula
   end
 
   resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
-    sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
+    url "https://files.pythonhosted.org/packages/eb/2e/3e1b17cc655e59faac1008cfdaae2e38f123b9b229f0d1695f9860500d4d/mutagen-1.48.0.tar.gz"
+    sha256 "4933d14b83a2add03c23e04a3c397ffbe44f130403f1256881ee228869aee3bb"
   end
 
   resource "numba" do
     url "https://files.pythonhosted.org/packages/f6/c5/db2ac3685833d626c0dcae6bd2330cd68433e1fd248d15f70998160d3ad7/numba-0.65.1.tar.gz"
     sha256 "19357146c32fe9ed25059ab915e8465fb13951cf6b0aace3826b76886373ab23"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "platformdirs" do
