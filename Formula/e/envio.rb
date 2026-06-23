@@ -1,21 +1,10 @@
 class Envio < Formula
   desc "Modern And Secure CLI Tool For Managing Environment Variables"
   homepage "https://github.com/humblepenguinn/envio"
+  url "https://github.com/humblepenguinn/envio/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "694e68d3434c951f17d778315eb8ed3de9d4934ae834d7368bd700751a385620"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/humblepenguinn/envio.git", branch: "main"
-
-  stable do
-    url "https://github.com/humblepenguinn/envio/archive/refs/tags/v0.7.0.tar.gz"
-    sha256 "729a02ac8a5e129fa5129de6ee62f7e2c408502dafc25924d65d02558caa5a08"
-
-    # Fix missing version
-    # TODO: Remove in the next release
-    patch do
-      url "https://github.com/humblepenguinn/envio/commit/37976a3d0327435d631b6ac6eff1ad114472f148.patch?full_index=1"
-      sha256 "da23f201ac3b20d8c6cff09d95496fb6c4e88ca9c737351804b6a84bf3a9293f"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "9e461ece805b428cc117de9bab60d6b3480e394a1ab4773ce7cbbaf84dcd12fd"
