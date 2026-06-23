@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/43/26/5e475399b6846a4e1178e7794603b6ae92354cbb40791954c67dc9afe2dd/flexget-3.19.24.tar.gz"
-  sha256 "50faa9be33a95ce5e28850a11e013a0b3a851a2ef5c1a66fc005cb45ee566e52"
+  url "https://files.pythonhosted.org/packages/3f/bf/c26d7e5ac11a05e2b1dd3cb41849c3beac32ffe030f46c466582aa81b82f/flexget-3.19.25.tar.gz"
+  sha256 "7eff6a666cbd3a1229a7aec4b8afd327d4930161666317e94bd81c87b3b5393d"
   license "MIT"
 
   bottle do
@@ -23,7 +23,7 @@ class Flexget < Formula
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "flexget[transmission]",
-                exclude_packages: ["certifi", "rpds-py"]
+                exclude_packages: %w[certifi rpds-py]
 
   resource "aniso8601" do
     url "https://files.pythonhosted.org/packages/8b/8d/52179c4e3f1978d3d9a285f98c706642522750ef343e9738286130423730/aniso8601-10.0.1.tar.gz"
