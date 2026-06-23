@@ -11,12 +11,12 @@ class Rsyslog < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ac940ccc2bad665de82d87172ee265bffbbd7830d61982c164a3581692a21520"
-    sha256 arm64_sequoia: "e6119ab21408febc7fd07ed7ef2a4f1498a9a7a9d29a9ea78618f4df4f4f54d1"
-    sha256 arm64_sonoma:  "1b0b99a5514977571d829fdeaae9df573b745a5bd7ff5dd02b09bd7332ecf453"
-    sha256 sonoma:        "d00a64376b1149cbc2190b6756c456036e2bdc1216275cc8cc872de5a0425899"
-    sha256 arm64_linux:   "40c6fc9a9ffd047e4b1a2d931624ca2910c3da52f2fe10088ae29eec6e13e502"
-    sha256 x86_64_linux:  "e1f531545831c8af04a56fc70d4e9b60bbc6ec55c11e27f12a99f9785df8d4a7"
+    sha256 arm64_tahoe:   "9698e1a93005d87dd2e77f3d87e8a23304c998dcc3d59fc3c9cfefd8960ab25a"
+    sha256 arm64_sequoia: "4f12b7120c7e5c12df98a1d7ea27f48567e6b62745dfbd9ef1306b5eb041d4a6"
+    sha256 arm64_sonoma:  "bd8e38d40c822d70d0026abea67926dd18c2f0e8e1148c0459b6fdb74e198f35"
+    sha256 sonoma:        "5a5567dd02218465db90038d610551e702d5e5ff56d86cbc32f01c5c37247ae4"
+    sha256 arm64_linux:   "7d925c77716c6d560f7c69b4a6c17b92979ec232661b6b3a3f4782cbb2695ab6"
+    sha256 x86_64_linux:  "de533a48fcba460aafa051fa0e708c051dbbdc190ea28732594c834ab1dc7ddd"
   end
 
   depends_on "pkgconf" => :build
