@@ -1,8 +1,8 @@
 class Rsyslog < Formula
   desc "Enhanced, multi-threaded syslogd"
   homepage "https://www.rsyslog.com/"
-  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2604.0.tar.gz"
-  sha256 "2a04b1cd6f0a5e2b60eec231acce3cf9927c4ed02bc5fbbe5dc4c35fcf887b64"
+  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2606.0.tar.gz"
+  sha256 "2574b3f3068e6955eb94ef5643e2b6a5b8585cc8eaa77209ff5cbc1e2e5f71e5"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -23,6 +23,7 @@ class Rsyslog < Formula
   depends_on "gnutls"
   depends_on "libestr"
   depends_on "libfastjson"
+  depends_on "libyaml"
   depends_on "protobuf-c"
   depends_on "snappy"
 
