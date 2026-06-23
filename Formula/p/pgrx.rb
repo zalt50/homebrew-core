@@ -1,17 +1,17 @@
 class Pgrx < Formula
   desc "Build Postgres Extensions with Rust"
   homepage "https://github.com/pgcentralfoundation/pgrx"
-  url "https://github.com/pgcentralfoundation/pgrx/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "3176458ddffdddbe6cdc1fecf4cd904a9f14d228d00c670669edf6aff2456c4d"
+  url "https://github.com/pgcentralfoundation/pgrx/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "db105c96543559056ae8026ffa7754445883402aeb85fb62325b7072be4e911a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00e512f2014758eabd07b51718eb5b537eb42894b04c002397ae29e87506029b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22ca7919dfc432c78ff823dce1dd680ad1e6dd1d77530b20f1a085090980997b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89daebc551525f7040f4e63daa7ef2c163839ff5c926bf9355417c4da69ad010"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59dc3a43d8b8b53645a1290f6f95c512ddf60c7645d41f4632b923b3bf8f7bb6"
-    sha256 cellar: :any,                 arm64_linux:   "bca136ceb550163157a3d8f9239f134957c9be7629081cb891a402c5a72544af"
-    sha256 cellar: :any,                 x86_64_linux:  "aa7ef20950a7b50f631d54daef0fb01984ce6a177bf01accfdcf01e7c3176c81"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "274e746c89f85efc62bae5dcb88a10379a14d59ca84ab7873619ee238dca241e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e7d3e4fdfac9b289d8fc00e0ccb6f9c39d2e7be24445a2a28095625d19cf982"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "674a6c0268f9f50a43bc7788a17366bb9c052f53cf44de55b658c76fb2a13bd6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71a214033656e0fcc100f47da0061e702c024b5552af505ec6a0ad191a8eff87"
+    sha256 cellar: :any,                 arm64_linux:   "75b9117e913a48a3c1c9a2899da2a58254468c8c1e2cd75f0b5c6a7b9ba7dacc"
+    sha256 cellar: :any,                 x86_64_linux:  "12078e4b67e737cbd74c98abf828452e6b196cdd5f302e137adbd3b6036bd167"
   end
 
   depends_on "pkgconf" => :build
