@@ -7,15 +7,19 @@ class Openturns < Formula
   head "https://github.com/openturns/openturns.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "73509d76e28350be11a13e1e605293dcebb5eedaf9a9e1374d0c680ae1115d5c"
-    sha256 arm64_sequoia: "ac186f6d821243905b89d963141520ebe032cb52d0f03960c95284612991a20a"
-    sha256 arm64_sonoma:  "0162dbcdbdc22be46e9731f2885f2276acd1c3075a150cb9fe08a776accbf6d8"
-    sha256 sonoma:        "00f28bf023f1edbe73af4115baef3ab1bf9f52aa291b9f89fa91a8c1bd47a4ea"
-    sha256 arm64_linux:   "190c997e30195674fe3c565da537486bfd4e0a3938d0aaf078543dfaa9472421"
-    sha256 x86_64_linux:  "0733e8f951c7d1a5a799bd73ebb4eb5a07bec58ebee3badc623d6dc2b4573173"
+    rebuild 1
+    sha256 arm64_tahoe:   "02e1e0f9a46c9f068ceeacfa1492638c7db616da13b630ab139b04cfa0853b48"
+    sha256 arm64_sequoia: "a50cfa4a30b6a30d04de93572803e24e04611319feec927963546c120d3d42f5"
+    sha256 arm64_sonoma:  "6264b20c5bf6c1380c33843b6ff0191ed277d6102aae3684169b9193a389943a"
+    sha256 sonoma:        "8e1e6ccf1116ca8f325b8cf2b1c3b23b2bd876aad569a6a87a52fd4bffe1de26"
+    sha256 arm64_linux:   "1b195873529073b5ce650eb57602b6fe21e18459461297734c0adce475a90355"
+    sha256 x86_64_linux:  "0281b679f6a396298d7bed41a94983afdcbc3960ee5d514e151058851cdab3eb"
   end
 
   depends_on "cmake" => :build
+  depends_on "nanoflann" => :build
+  depends_on "spectra" => :build
+
   depends_on "boost"
   depends_on "cminpack"
   depends_on "gmp"
@@ -24,12 +28,9 @@ class Openturns < Formula
   depends_on "ipopt"
   depends_on "libmpc"
   depends_on "mpfr"
-  depends_on "muparser"
-  depends_on "nanoflann"
   depends_on "nlopt"
   depends_on "pagmo"
   depends_on "primesieve"
-  depends_on "spectra"
   depends_on "tbb"
 
   uses_from_macos "libxml2"
