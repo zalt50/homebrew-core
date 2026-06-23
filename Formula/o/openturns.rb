@@ -16,6 +16,9 @@ class Openturns < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "nanoflann" => :build
+  depends_on "spectra" => :build
+
   depends_on "boost"
   depends_on "cminpack"
   depends_on "gmp"
@@ -24,12 +27,9 @@ class Openturns < Formula
   depends_on "ipopt"
   depends_on "libmpc"
   depends_on "mpfr"
-  depends_on "muparser"
-  depends_on "nanoflann"
   depends_on "nlopt"
   depends_on "pagmo"
   depends_on "primesieve"
-  depends_on "spectra"
   depends_on "tbb"
 
   uses_from_macos "libxml2"
