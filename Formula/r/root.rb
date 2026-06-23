@@ -49,6 +49,7 @@ class Root < Formula
   depends_on "python@3.14"
   depends_on "sqlite"
   depends_on "tbb"
+  depends_on "unuran"
   depends_on "xrootd"
   depends_on "xxhash"
   depends_on "xz" # for LZMA
@@ -146,6 +147,7 @@ class Root < Formula
       -Droofit=ON
       -Dssl=ON
       -Dtmva=ON
+      -Dunuran=ON
       -Dvdt=ON
       -Dxrootd=ON
       -GNinja
