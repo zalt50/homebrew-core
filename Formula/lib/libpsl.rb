@@ -2,6 +2,7 @@ class Libpsl < Formula
   desc "C library for the Public Suffix List"
   homepage "https://rockdaboot.github.io/libpsl"
   url "https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz"
+  mirror "http://distfiles.macports.org/libpsl/libpsl-0.21.5.tar.gz"
   sha256 "1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208"
   license "MIT"
   revision 2
@@ -18,16 +19,23 @@ class Libpsl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dc10f9acd16c27df7a1ac79ccbd4b16dae4582ab2715266bac49c59fb08923a"
   end
 
-  depends_on "meson" => :build
-  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "libidn2"
   depends_on "libunistring"
 
+  uses_from_macos "python" => :build
+
   def install
-    system "meson", "setup", "build", "-Druntime=libidn2", "-Dbuiltin=true", *std_meson_args
-    system "meson", "compile", "-C", "build"
-    system "meson", "install", "-C", "build"
+    # Reduce overlinking similar to Meson build
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
+
+    args = %w[
+      --disable-silent-rules
+      --enable-builtin
+      --enable-runtime=libidn2
+    ]
+    system "./configure", *args, *std_configure_args
+    system "make", "install"
   end
 
   test do
@@ -53,8 +61,7 @@ class Libpsl < Formula
           return 0;
       }
     C
-    system ENV.cc, "-o", "test", "test.c", "-I#{include}",
-                   "-L#{lib}", "-lpsl"
+    system ENV.cc, "-o", "test", "test.c", "-I#{include}", "-L#{lib}", "-lpsl"
     system "./test"
   end
 end
