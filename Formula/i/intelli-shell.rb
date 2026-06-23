@@ -1,8 +1,8 @@
 class IntelliShell < Formula
   desc "Like IntelliSense, but for shells"
   homepage "https://lasantosr.github.io/intelli-shell/"
-  url "https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.3.tar.gz"
-  sha256 "de3846628332a19740f372f9e6cd3ce84d1d079de75dbbdfa1e92715a08d0f9a"
+  url "https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.4.tar.gz"
+  sha256 "480e5b5cfca9af5365f327867db375100b595c44aded05dc419fd11d5110c93a"
   license "Apache-2.0"
   head "https://github.com/lasantosr/intelli-shell.git", branch: "main"
 
