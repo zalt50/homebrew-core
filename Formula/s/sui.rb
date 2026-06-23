@@ -1,16 +1,14 @@
 class Sui < Formula
   desc "Next-generation smart contract platform powered by the Move programming language"
   homepage "https://sui.io"
-  url "https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.73.1.tar.gz"
-  sha256 "4ec0d82ee1464eb9486b314bfd3481b603e135584d2c7e085d8b6941d0ce64da"
+  url "https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.74.0.tar.gz"
+  sha256 "a67f6dad86bfae9d9736dc54799de9afc63b30397af7075f0c666cc958bb5901"
   license "Apache-2.0"
 
   livecheck do
     url :stable
     regex(/^testnet[._-]v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :bumped_by_upstream
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc4830f0efd2c2d27667c407f23b65e95ff209b19493aa7535e5186b6ec9612d"
