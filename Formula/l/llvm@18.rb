@@ -274,8 +274,8 @@ class LlvmAT18 < Formula
 
     # These tests should ignore the usual SDK includes
     with_env(CPATH: nil) do
-      # Testing Command Line Tools
-      if OS.mac? && MacOS::CLT.installed?
+      # Testing Command Line Tools; skipped on CLT 26.4+ due to __builtin_clzg added in LLVM 19+
+      if OS.mac? && MacOS::CLT.installed? && MacOS::CLT.version < "26.4"
         toolchain_path = "/Library/Developer/CommandLineTools"
         cpp_base = (MacOS.version >= :big_sur) ? MacOS::CLT.sdk_path : toolchain_path
         system bin/"clang++", "-v",
@@ -290,8 +290,8 @@ class LlvmAT18 < Formula
         assert_equal "Hello World!", shell_output("./testCLT").chomp
       end
 
-      # Testing Xcode
-      if OS.mac? && MacOS::Xcode.installed?
+      # Testing Xcode; skipped on Xcode 26.4+ due to __builtin_clzg added in LLVM 19+
+      if OS.mac? && MacOS::Xcode.installed? && MacOS::Xcode.version < "26.4"
         cpp_base = (MacOS::Xcode.version >= "12.5") ? MacOS::Xcode.sdk_path : MacOS::Xcode.toolchain_path
         system bin/"clang++", "-v",
                "-isysroot", MacOS::Xcode.sdk_path,
