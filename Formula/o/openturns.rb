@@ -7,12 +7,12 @@ class Openturns < Formula
   head "https://github.com/openturns/openturns.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "514290aa010de74a1d37399c96ac1dedd0b454f908703a2e6ac4d2a52e459ca5"
-    sha256 arm64_sequoia: "ae9d55444d0943d38a2a3042e190eb01f3bc31a542268b8d38931627170ed772"
-    sha256 arm64_sonoma:  "3fd5beea88a176ca6adbc932a0404493d326adde45aa8b8e9cf1bee873555f17"
-    sha256 sonoma:        "8bafa88f02605a59cea5a842c84dfccbe90d78e85bd82f01dcd90eca267f6bae"
-    sha256 arm64_linux:   "7c528051d44e738eff1f2e139cda7229ada842baf45a57d493c7e0673716be8d"
-    sha256 x86_64_linux:  "4123a31093a55a07f41d155cb350d3fb8ab3fc72c66e708491800b6b84d05916"
+    sha256 arm64_tahoe:   "73509d76e28350be11a13e1e605293dcebb5eedaf9a9e1374d0c680ae1115d5c"
+    sha256 arm64_sequoia: "ac186f6d821243905b89d963141520ebe032cb52d0f03960c95284612991a20a"
+    sha256 arm64_sonoma:  "0162dbcdbdc22be46e9731f2885f2276acd1c3075a150cb9fe08a776accbf6d8"
+    sha256 sonoma:        "00f28bf023f1edbe73af4115baef3ab1bf9f52aa291b9f89fa91a8c1bd47a4ea"
+    sha256 arm64_linux:   "190c997e30195674fe3c565da537486bfd4e0a3938d0aaf078543dfaa9472421"
+    sha256 x86_64_linux:  "0733e8f951c7d1a5a799bd73ebb4eb5a07bec58ebee3badc623d6dc2b4573173"
   end
 
   depends_on "cmake" => :build
