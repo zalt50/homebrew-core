@@ -26,6 +26,7 @@ class Wget < Formula
 
   depends_on "pkgconf" => :build
   depends_on "libidn2"
+  depends_on "libpsl"
   depends_on "openssl@3"
 
   on_macos do
@@ -46,12 +47,15 @@ class Wget < Formula
                           "--with-libssl-prefix=#{formula_opt_prefix("openssl@3")}",
                           "--disable-pcre",
                           "--disable-pcre2",
-                          "--without-libpsl",
+                          "--with-libpsl",
                           "--without-included-regex"
     system "make", "install"
   end
 
   test do
     system bin/"wget", "-O", File::NULL, "https://google.com"
+
+    # Verify PSL support is built in via libpsl
+    assert_match "+psl", shell_output("#{bin}/wget --version")
   end
 end
