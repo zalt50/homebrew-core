@@ -6,6 +6,15 @@ class Civetweb < Formula
   license "MIT"
   head "https://github.com/civetweb/civetweb.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "84500077ecbf937f27bd340255df08f85c611bb6e279aabdf0494b8f403d1705"
+    sha256 cellar: :any, arm64_sequoia: "599e77fc8ecf92a209361e3e7b8e4cf77acd9407ccc19f4b27ee1ab59c898e9e"
+    sha256 cellar: :any, arm64_sonoma:  "584ae3c376e86eec69b69db14c7de84c0484ad08d600a5b15e607fb7e86b97cf"
+    sha256 cellar: :any, sonoma:        "e147e0b2f0b2e6830a6d7adc40ee9c72d84383c9ab17a9fbf35583d1130c2044"
+    sha256 cellar: :any, arm64_linux:   "10d8f136bc162fb5df313079862e0b5613927fb9a5e3c492596178513dc0d122"
+    sha256 cellar: :any, x86_64_linux:  "e1c23209f912eab140488c04eaf3f4cb575727cc7f7eae5f32b3cdcc85a69c93"
+  end
+
   depends_on "cmake" => :build
   depends_on "openssl@3"
 
