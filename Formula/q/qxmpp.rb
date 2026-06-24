@@ -6,12 +6,12 @@ class Qxmpp < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d6148bf2a7b06b7a383220e7441159828140ca7f9080f87a232b25a2b3e0564"
-    sha256 cellar: :any,                 arm64_sequoia: "6f79da5128f78bcab6bfbf55236e0f53e50a6bad2de56b7fcd9f5a5c9e6c2a84"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc2dc9a32f2177e4962d2393e5f411634efd2b1630a02d07925943874991afe4"
-    sha256 cellar: :any,                 sonoma:        "98996a0437486736cea5ec75aa93a4021dc4ebf117649c869554d5fbe0ff0850"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddbef993a997e0c6abb5d28d59323a73974d14fb275c54cb53c8bc009f6c64ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fe50d190bd252a30f6ab3ce737043ec4a609a76d934203aa8e376d38ce5e39d"
+    sha256 cellar: :any, arm64_tahoe:   "d0b54004e494f4349289d974106ce7cc02e4a2b60288307ccbe07dafa422fd5f"
+    sha256 cellar: :any, arm64_sequoia: "a82a232aed883e3484f1469f464cef23748b3e905e3e6c3eae47295a57384e27"
+    sha256 cellar: :any, arm64_sonoma:  "b3bb46bb82773bc5cafef624b727b06819cd435ddfa1e7fbd155ee7ea6106fbb"
+    sha256 cellar: :any, sonoma:        "4524fa333983692f96c6b67e57d03b64d6390a68248523815c56a5ad4ba5cf3f"
+    sha256 cellar: :any, arm64_linux:   "07d33e15be3b690cb89db0080fa3ecf82e705b7c9866b2ef51afe1247e6d5979"
+    sha256 cellar: :any, x86_64_linux:  "5bad4bf1d35794f6132a3890d5c6c71faefacfa856ecf8837fbfff56ff2d7075"
   end
 
   depends_on "cmake" => :build
