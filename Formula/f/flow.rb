@@ -1,12 +1,10 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
   homepage "https://flow.org/"
-  url "https://github.com/facebook/flow/archive/refs/tags/v0.319.0.tar.gz"
-  sha256 "2d58d0c94a957c5f404baf551b344a3bcd96229550e95be2730e9c00cc17b275"
+  url "https://github.com/facebook/flow/archive/refs/tags/v0.321.0.tar.gz"
+  sha256 "baaa858b07f50e88b476d5cb4aad249ce5535de5e255296a8ec2798cbca852a1"
   license "MIT"
   head "https://github.com/facebook/flow.git", branch: "main"
-
-  no_autobump! because: :bumped_by_upstream
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82a0a66550e28e7c1b86a2f0c60b90fa0871afa06805028822daec37afa70941"
@@ -17,19 +15,17 @@ class Flow < Formula
     sha256 cellar: :any,                 x86_64_linux:  "ebbf3aae66a7aa2a23ca5dc32a127362b6924d6c9f9026b2ed3580e4f14b026f"
   end
 
-  depends_on "ocaml" => :build
-  depends_on "opam" => :build
-
-  uses_from_macos "m4" => :build
-  uses_from_macos "rsync" => :build
-  uses_from_macos "unzip" => :build
+  depends_on "rust" => :build
 
   conflicts_with "flow-cli", because: "both install `flow` binaries"
 
   def install
-    system "make", "all-homebrew"
+    ENV["RUSTC_BOOTSTRAP"] = "1"
+    system "cargo", "install", *std_cargo_args(path: "rust_port/crates/flow_cli")
 
-    bin.install "bin/flow"
+    # Resulting binary name is `flow_cli` but in the release artifacts it is renamed to `flow`
+    # https://github.com/facebook/flow/blob/main/.github/workflows/build_and_test.yml
+    mv bin/"flow_cli", bin/"flow"
 
     bash_completion.install "resources/shell/bash-completion" => "flow-completion.bash"
     zsh_completion.install_symlink bash_completion/"flow-completion.bash" => "_flow"
