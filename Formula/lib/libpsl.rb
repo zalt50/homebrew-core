@@ -17,19 +17,18 @@ class Libpsl < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "libidn2"
-  depends_on "libunistring"
 
-  uses_from_macos "python" => :build
+  on_system :linux, macos: :monterey_or_older do
+    depends_on "libidn2"
+    depends_on "libunistring"
+  end
 
   def install
-    # Reduce overlinking similar to Meson build
-    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
-
-    args = %w[
+    runtime = (OS.linux? || MacOS.version <= :monterey) ? "libidn2" : "libicucore"
+    args = %W[
       --disable-silent-rules
       --enable-builtin
-      --enable-runtime=libidn2
+      --enable-runtime=#{runtime}
     ]
     system "./configure", *args, *std_configure_args
     system "make", "install"
