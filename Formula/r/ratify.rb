@@ -6,6 +6,13 @@ class Ratify < Formula
   license "Apache-2.0"
   head "https://github.com/notaryproject/ratify.git", branch: "main"
 
+  # Upstream moves the tag until a release is finally made and marked as latest,
+  # so we have to use the `GithubLatest` strategy to avoid picking up a pre-release.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92c3e1f594c70dc816abf7b24e91a73e2feccad35adf5673b1e4022431bd97a7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1c65d827c53793e1a8bd0078ffe99c6b55fe023abc3daafba83782481c6d26f"
