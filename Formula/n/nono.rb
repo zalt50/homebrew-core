@@ -5,7 +5,10 @@ class Nono < Formula
   sha256 "e6403085414a386be1cbc461b9f21ec0cdbb8364a7a6be91a15ca2a831202cf7"
   license "Apache-2.0"
 
-  no_autobump! because: :bumped_by_upstream
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f574f7ae980355e475ada8785b824bbb604af101af73b7021368196f0eca8c5"
