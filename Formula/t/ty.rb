@@ -1,8 +1,8 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/7e/ce/352fcdba5c72ea20e5d2e46e28809cdb617575b71209d971eff2ace8e6c4/ty-0.0.51.tar.gz"
-  sha256 "b90172d46365bb9d51a7011cbb5c60cc4f514f42c86635df6c092b717f85e1ac"
+  url "https://files.pythonhosted.org/packages/5d/84/4417eb08328dcc547bf407d20af5e45ec8c64a85470f388fc2d590c9200a/ty-0.0.52.tar.gz"
+  sha256 "f1191175429fea917f96f79a57773eb6e57b861ee97e9ad2d77cc7538f0f284b"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
