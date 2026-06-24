@@ -1,8 +1,8 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.1.tar.gz"
-  sha256 "d3ce2020167e7e0a185880421abaee2adab5e4378424cb24b5ce11d4a45bf208"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.2.tar.gz"
+  sha256 "982545c45fc59499f6eed70b27be62ff63160a6d417ded2716b9592e9da53136"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "main"
 
