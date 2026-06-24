@@ -28,6 +28,7 @@ class Root < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "cfitsio"
+  depends_on "civetweb"
   depends_on "davix"
   depends_on "fftw"
   depends_on "freetype"
@@ -96,6 +97,7 @@ class Root < Formula
       -DPYTHON_EXECUTABLE=#{which(python3)}
       -DXROOTD_ROOT_DIR=#{formula_opt_prefix("xrootd")}
       -Dbuiltin_cfitsio=OFF
+      -Dbuiltin_civetweb=OFF
       -Dbuiltin_clang=ON
       -Dbuiltin_cling=ON
       -Dbuiltin_cppzmq=OFF
