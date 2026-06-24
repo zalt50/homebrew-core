@@ -1,8 +1,8 @@
 class CloudProviderKind < Formula
   desc "Cloud provider for KIND clusters"
   homepage "https://kubernetes-sigs.github.io/cloud-provider-kind/"
-  url "https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "447ce982e8103934c92a466438cad961a7ca3f817534c3b53c80b12929679b95"
+  url "https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "e9448dd3460106fd4752fedc9abf550c5680dfbe3735fc2217750efe34c81fbe"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cloud-provider-kind.git", branch: "main"
 
@@ -18,6 +18,13 @@ class CloudProviderKind < Formula
 
   depends_on "go" => :build
 
+  # Error out instead of looping forever when no container runtime is found, remove in next release
+  # PR ref: https://github.com/kubernetes-sigs/cloud-provider-kind/pull/431
+  patch do
+    url "https://github.com/kubernetes-sigs/cloud-provider-kind/commit/f8b7f65c43c1d6095429186d2135c6e4905a2a42.patch?full_index=1"
+    sha256 "2c809f5a5da87c61ad061f2b94586d9ab55943c9e9ced064179c872327b1e587"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
@@ -32,7 +39,7 @@ class CloudProviderKind < Formula
       assert_match "Error: please run this again with `sudo`", status_output
     elsif OS.linux?
       # Should error out because without docker or podman
-      assert_match "failed to detect any supported node provider", status_output
+      assert_match "no supported container runtime found", status_output
     end
   end
 end
