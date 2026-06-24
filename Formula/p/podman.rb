@@ -1,8 +1,8 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
-  url "https://github.com/containers/podman/archive/refs/tags/v5.8.3.tar.gz"
-  sha256 "c54a2ec4b4fb5577288992aaa78684397ec3552fb2d1234d910ec50097d05c0f"
+  url "https://github.com/containers/podman/archive/refs/tags/v6.0.0.tar.gz"
+  sha256 "f35ac7c40f0fd01bfedfe627c23ff7a577b071d50f2b0726e4734d51810f5a7d"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   compatibility_version 1
   head "https://github.com/containers/podman.git", branch: "main"
@@ -33,6 +33,7 @@ class Podman < Formula
 
   on_macos do
     depends_on "make" => :build
+    depends_on arch: :arm64
     depends_on macos: :ventura # see discussions in https://github.com/containers/podman/issues/22121
   end
 
