@@ -12,12 +12,12 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f11bf62d4281d5ec3c5fd3f7cb7aafe1e977c674a890152da142c051c613d44c"
-    sha256 cellar: :any, arm64_sequoia: "7f1ea69eabdc93c9dbc55a8f0657242eab1744413a58880e60767cf015cb00ff"
-    sha256 cellar: :any, arm64_sonoma:  "d233925f55e6fb99a4a08d8a668bcea02616c19c007e79874738bc1eeab9b0d2"
-    sha256 cellar: :any, sonoma:        "b194e4543de8eb7a81fa038b976f7c015faa7f5449412aaddeb8be6c0c2ff05c"
-    sha256 cellar: :any, arm64_linux:   "02a91ba4941a562e7f9f05fbeee4b8f185e57b4f35dc4a16bfb69cb1ae5a2c41"
-    sha256 cellar: :any, x86_64_linux:  "ab1ecb60f170cb239bd68553b39f6390846a7237bb8617bf4860a8b16696740a"
+    sha256 cellar: :any, arm64_tahoe:   "2c22bf362c7668bb35531e8aa5de2e2283e024537eb2fdcaeb9b39096bcab476"
+    sha256 cellar: :any, arm64_sequoia: "231b6e4db55a55a632e1016cabe35001ffe07ac09a3b7c028b36a2dde3e5c27b"
+    sha256 cellar: :any, arm64_sonoma:  "699c9dc85105985239beaafe9732e0ff9113045d0031ec3385f134a52f0030a7"
+    sha256 cellar: :any, sonoma:        "35708eb13ade200fef25016952b87637133e6cb682e56e48a0d0b39c141a14c0"
+    sha256 cellar: :any, arm64_linux:   "db8fcb2524dc251b9e6380ff2b4a685362f76dfa1bcefc39294b57d416718dcf"
+    sha256 cellar: :any, x86_64_linux:  "339237aa1732d3ec1be846365cf4875619113ddc8e03b2140db0c2fed92fa450"
   end
 
   depends_on "bison" => :build
