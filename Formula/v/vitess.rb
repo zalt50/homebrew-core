@@ -1,9 +1,10 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
   homepage "https://vitess.io"
-  url "https://github.com/vitessio/vitess/archive/refs/tags/v24.0.1.tar.gz"
-  sha256 "272ea5406c50265cc88d5ff1b36da1869bb914cb1bc482a70df1c51389ea65dc"
+  url "https://github.com/vitessio/vitess/archive/refs/tags/v24.0.2.tar.gz"
+  sha256 "5172351863c6a0bf034024cbd7d5d443f41606787e37a567c8e8f680c22af4d2"
   license "Apache-2.0"
+  head "https://github.com/vitessio/vitess.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c43113dce825328b95b2039c605a3631108ecf150ace6453f39da23702fefbab"
@@ -18,13 +19,20 @@ class Vitess < Formula
   depends_on "etcd"
 
   def install
-    # -buildvcs=false needed for build to succeed on Go 1.18.
-    # It can be removed when this is no longer the case.
-    system "make", "install-local", "PREFIX=#{prefix}", "VTROOT=#{buildpath}", "VT_EXTRA_BUILD_FLAGS=-buildvcs=false"
+    ENV["CGO_ENABLED"] = "0"
+    bin.mkpath
+    ldflags = %W[
+      -s -w
+      -X vitess.io/vitess/go/vt/servenv.buildUser=#{tap.user}
+      -X "vitess.io/vitess/go/vt/servenv.buildTime=#{time.strftime("%a %b %e %H:%M:%S %Z %Y")}"
+    ]
+    system "go", "build", *std_go_args(ldflags:), "-o", bin, "./go/cmd/..."
     pkgshare.install "examples"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/vtctl --version")
+
     ENV["ETCDCTL_API"] = "3"
     etcd_server = "localhost:#{free_port}"
     peer_port = free_port
