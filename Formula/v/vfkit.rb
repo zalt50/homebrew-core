@@ -1,9 +1,8 @@
 class Vfkit < Formula
   desc "Command-line hypervisor using Apple's Virtualization Framework"
   homepage "https://github.com/crc-org/vfkit"
-  url "https://github.com/crc-org/vfkit.git",
-      tag:      "v0.6.3",
-      revision: "c8f5851f0ec131f04030925ea7ad15cd4e43876b"
+  url "https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "bb2a7f9d1bf41d2f823412ca20912bade606ae30b41afcd1366d32e3d100a09e"
   license "Apache-2.0"
   head "https://github.com/crc-org/vfkit.git", branch: "main"
 
@@ -19,7 +18,8 @@ class Vfkit < Formula
 
   def install
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    system "make", "out/vfkit-#{arch}"
+    version_ldflags = "-X github.com/crc-org/vfkit/pkg/cmdline.gitVersion=#{version}"
+    system "make", "out/vfkit-#{arch}", "VERSION_LDFLAGS=#{version_ldflags}"
     bin.install "out/vfkit-#{arch}" => "vfkit"
   end
 
