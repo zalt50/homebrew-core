@@ -49,7 +49,6 @@ class Podman < Formula
     depends_on "gpgme"
     depends_on "libseccomp"
     depends_on "passt"
-    depends_on "slirp4netns"
     depends_on "sqlite"
     depends_on "systemd"
   end
@@ -81,15 +80,15 @@ class Podman < Formula
 
   resource "netavark" do
     on_linux do
-      url "https://github.com/containers/netavark/archive/refs/tags/v1.17.2.tar.gz"
-      sha256 "284faa7cc525b869cbac4053e0a4127ac743ca7da1457c49fffb35558ea9c78d"
+      url "https://github.com/containers/netavark/archive/refs/tags/v2.0.0.tar.gz"
+      sha256 "031aeeacc930382e8635d40a885798eff1da164dfcf9024b698f822e5995d9c8"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.17.0.tar.gz"
-      sha256 "42556bf547c435a8f0ccb586b4f5000da3106a58c26f82e22d9db81ee5bd7eb2"
+      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v2.0.0.tar.gz"
+      sha256 "d3f5d6b3be3c2d80e8257fb9467e34ff104f299474427979454034dca6dc88cc"
     end
   end
 
