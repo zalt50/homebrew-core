@@ -6,12 +6,12 @@ class Mongoose < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d9e73fd7170840d627053d5e92474219e36168faed700471b6e2514e1a35a74f"
-    sha256 cellar: :any,                 arm64_sequoia: "5081c1f0b966c15abc612a788bf718eb253a5a4eb643652a966c37db7e2e3f0f"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce5776cff5b9ee6423dfc88d3171341a7635d13814bcd1ad64734852fb0b7150"
-    sha256 cellar: :any,                 sonoma:        "214013de2533be9ad3a210551617d328d8086198b666597f0d2219f0afa13655"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8378b416431c43d5486fc6ccfaa85168a8c7ddf0a541603bf0ed01dbea5281b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f33c503bd19499b37d942517704bdb19d05b1a5ad1628bc2e7502f217f22066d"
+    sha256 cellar: :any, arm64_tahoe:   "2103fa5a20ba29c0b5d063a876ce4a800c0c46d1ef27a7900f48183d72fa6857"
+    sha256 cellar: :any, arm64_sequoia: "31d672a392399bd62409c4fb3358c5b4d9147693769901602c231ab607193bf9"
+    sha256 cellar: :any, arm64_sonoma:  "d62b1d5a109daa22556ad5f0c9970f41651f2f84933ecdc985ea2651edee0103"
+    sha256 cellar: :any, sonoma:        "76d3c9339f6e6b83a74d4c13d28584436c4ab32f08dda7248290627775fc91d6"
+    sha256 cellar: :any, arm64_linux:   "c7e740d499c38f3051c7d89fb54072d781966c42b3118e48d5f205b39e54531f"
+    sha256 cellar: :any, x86_64_linux:  "281b9257a1547eaa2ccb651e904ec2298951a5c4495f6eda640fa961a590cfb5"
   end
 
   def install
