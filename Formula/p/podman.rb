@@ -18,11 +18,12 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3934cd3e8fea9c796dcb3e6bbee98125ff79b03b0ccd5b0058b44e98ff514979"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "893597ab7fb3777c886ab660ff68c2a8f3ad3f2afcb7b53cf58daef3f7c83572"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "585dec4f33c366bee36a28c32b07601c5051972c8b355575046a2aee7571cfef"
-    sha256                               arm64_linux:   "d5bbe91bfc547fdb06c88b298aac265b02581588b1cbe82dce4a1e44448e76a9"
-    sha256                               x86_64_linux:  "8271c4eb6a176b5ed05d02ade095450e5d4226eebf60d6f6c88a3c73d5155002"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0125b9f31046dc1b4661f7933d770e3646e3677dbf25dbc08b8b0fd443028caf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b700919d39666f177591c28b75fbcc48cfa3f56bb0135a56048b95aaef2da15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad0b1d8c0004d42c22586f36a0f6dfdee4daca4b582ca825a2203446d0330dcc"
+    sha256                               arm64_linux:   "82935aba27fc3d026e4d484b9d7822e86c67c0201244f6f776d4ca07a39780c7"
+    sha256                               x86_64_linux:  "13664a5b74b154aae84c560ce412be86486a9df2cf220ce661a237c58424549e"
   end
 
   depends_on "go" => :build
