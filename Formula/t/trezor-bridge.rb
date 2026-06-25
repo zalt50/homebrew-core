@@ -1,9 +1,8 @@
 class TrezorBridge < Formula
   desc "Trezor Communication Daemon"
   homepage "https://github.com/trezor/trezord-go"
-  url "https://github.com/trezor/trezord-go.git",
-      tag:      "v2.0.33",
-      revision: "2680d5e6f7b02f06aefac1c2a9fef2c6052685de"
+  url "https://github.com/trezor/trezord-go/archive/refs/tags/v2.0.33.tar.gz"
+  sha256 "c80e0ba0e727ae2f7bd7a8b0f7082681296d478d1034c64a8bba64ce29239ffa"
   license "LGPL-3.0-only"
   revision 1
 
@@ -22,6 +21,19 @@ class TrezorBridge < Formula
 
   depends_on "go" => :build
 
+  resource "hidapi" do
+    url "https://github.com/libusb/hidapi/archive/76108294092c023a4ece99eb3219559cea0d5066.tar.gz"
+    version "76108294092c023a4ece99eb3219559cea0d5066"
+    sha256 "b47c0a3463984fdc330c7cb42c5bff258ef6a0a718ea68b986c95dbaa505252b"
+
+    livecheck do
+      url "https://api.github.com/repos/trezor/trezord-go/contents/usb/lowlevel/hidapi/c?ref=v#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
+  end
+
   # upstream patch ref, https://github.com/trezor/trezord-go/pull/300
   patch do
     url "https://github.com/trezor/trezord-go/commit/318b01237604256b1a561b2fa57826aa0ebb218d.patch?full_index=1"
@@ -35,6 +47,9 @@ class TrezorBridge < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
+    (buildpath/"usb/lowlevel/hidapi/c").install resource("hidapi")
     system "go", "build", *std_go_args(output: bin/"trezord-go", ldflags: "-s -w")
   end
 
