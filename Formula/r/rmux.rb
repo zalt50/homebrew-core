@@ -1,8 +1,8 @@
 class Rmux < Formula
   desc "Terminal multiplexer with a tmux-style CLI and daemon runtime"
   homepage "https://rmux.io"
-  url "https://static.crates.io/crates/rmux/rmux-0.6.1.crate"
-  sha256 "0dbcc917c881d1ceed1bd93caa218b59d192a48248aafc7fd9bf87fbc541a19f"
+  url "https://static.crates.io/crates/rmux/rmux-0.7.0.crate"
+  sha256 "a1058a8525f1c7e758fb59999a64f8d82e2111c56f52fa7a5fb8bce46567780a"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
@@ -18,7 +18,7 @@ class Rmux < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "rmux.1"
+    man1.install "docs/man/rmux.1"
   end
 
   test do
