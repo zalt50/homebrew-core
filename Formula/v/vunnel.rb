@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/79/33/40c521c1269184dc283cc5102ec71882cc8afd4078b0b3b1ce623db227fc/vunnel-0.61.0.tar.gz"
-  sha256 "f2e02d71facd1ed6ec8e00d1c53b10659320a6b68cda55261d3550fb15c900b3"
+  url "https://files.pythonhosted.org/packages/70/00/95650f3d105b8bf97c9456da809868bfc8ac90a8a178a0c0bbe791dfa562/vunnel-0.61.1.tar.gz"
+  sha256 "7bd34945faf092de6788ce98a4565d43f5de399ccc1b54b0de26a37046547621"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -39,8 +39,8 @@ class Vunnel < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "colorlog" do
