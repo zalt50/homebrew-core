@@ -1,10 +1,19 @@
 class Binwalk < Formula
   desc "Searches a binary image for embedded files and executable code"
   homepage "https://github.com/ReFirmLabs/binwalk"
-  url "https://github.com/ReFirmLabs/binwalk/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "06f595719417b70a592580258ed980237892eadc198e02363201abe6ca59e49a"
   license "MIT"
   head "https://github.com/ReFirmLabs/binwalk.git", branch: "master"
+
+  stable do
+    url "https://github.com/ReFirmLabs/binwalk/archive/refs/tags/v3.1.0.tar.gz"
+    sha256 "06f595719417b70a592580258ed980237892eadc198e02363201abe6ca59e49a"
+
+    # Backport switch to 7zip
+    patch do
+      url "https://github.com/ReFirmLabs/binwalk/commit/b83242ffbd54997d11c7f7e304c17bf9582e38fe.patch?full_index=1"
+      sha256 "3a9e9f43ee552d6c3ab3d8069524a786b95f1256969f30400c679b1cc19e026c"
+    end
+  end
 
   livecheck do
     url :stable
@@ -24,10 +33,10 @@ class Binwalk < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "p7zip"
-  depends_on "xz"
+  depends_on "sevenzip" # for 7zz
 
   uses_from_macos "bzip2"
+  uses_from_macos "xz"
 
   on_linux do
     depends_on "fontconfig"
