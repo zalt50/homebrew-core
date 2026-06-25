@@ -39,6 +39,12 @@ class Ecl < Formula
     end
   end
 
+  patch do
+    url "https://gitlab.com/embeddable-common-lisp/ecl/-/commit/59de50b52380132d44bfa05f573544cba0a8c65f.diff"
+    sha256 "553982804178fbcc3111474e8ca5319c689141e74c151f3feb6fec78f93ae640"
+    type :backport
+  end
+
   def install
     ENV.deparallelize
 
@@ -53,7 +59,9 @@ class Ecl < Formula
                           "--with-gmp-prefix=#{formula_opt_prefix("gmp")}",
                           "--with-libffi-prefix=#{libffi_prefix}",
                           "--with-libgc-prefix=#{formula_opt_prefix("bdw-gc")}",
+                          "--with-extra-files=#{buildpath}/src/util/side-modules.lsp",
                           *std_configure_args
+    ENV["ECL_SIDE_MODULES_PATH"] = "#{HOMEBREW_PREFIX}/lib/ecl-#{version}"
     system "make"
     system "make", "install"
   end
