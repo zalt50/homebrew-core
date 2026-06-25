@@ -1,8 +1,8 @@
 class Lavinmq < Formula
   desc "Message broker implementing the AMQP 0-9-1 and MQTT protocols"
   homepage "https://lavinmq.com"
-  url "https://github.com/cloudamqp/lavinmq/archive/refs/tags/v2.8.2.tar.gz"
-  sha256 "f9241ee9e45b65db9923e85d80de705c1873fac41ad02795d440fcc629c3ed60"
+  url "https://github.com/cloudamqp/lavinmq/archive/refs/tags/v2.9.0.tar.gz"
+  sha256 "2d7e4edc22f6acda2a77c66fca8179a5c2aacfd9d454063e30314ea8efb24c15"
   license "Apache-2.0"
   head "https://github.com/cloudamqp/lavinmq.git", branch: "main"
 
