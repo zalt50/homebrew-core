@@ -3,8 +3,8 @@ class YleDl < Formula
 
   desc "Download Yle videos from the command-line"
   homepage "https://aajanki.github.io/yle-dl/index-en.html"
-  url "https://files.pythonhosted.org/packages/22/94/91f447961f6f240ecff12856ddba80615ce9249cf59e2f750ceed9b99258/yle_dl-20260520.tar.gz"
-  sha256 "5ae1d7d1cf1ea1d8f473254f2388956042041b7ff201f65e67d61e45a27d83fa"
+  url "https://files.pythonhosted.org/packages/d1/d7/3702ab9c244aa3eb07bebd5abf3af31fd720b55c346324b4b9b25251f1ec/yle_dl-20260624.tar.gz"
+  sha256 "df7f5e985d15b0770068f729c29be30232358d4ea136ab395e63eb9aa77abfc7"
   license "GPL-3.0-or-later"
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
@@ -38,8 +38,8 @@ class YleDl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "lxml" do
