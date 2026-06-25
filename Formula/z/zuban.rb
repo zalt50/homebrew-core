@@ -1,10 +1,8 @@
 class Zuban < Formula
   desc "Python language server and type checker, written in Rust"
   homepage "https://zubanls.com/"
-  # pull from git tag to get submodules
-  url "https://github.com/zubanls/zuban.git",
-      tag:      "v0.9.0",
-      revision: "392ea3ccc490071706d6736e2d5b2c07e6522386"
+  url "https://github.com/zubanls/zuban/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "78e8a25edf35412ac995580d91253d7f9308457ee17c02a4a8039ca3d044d130"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
@@ -19,7 +17,22 @@ class Zuban < Formula
 
   depends_on "rust" => :build
 
+  resource "typeshed" do
+    url "https://github.com/python/typeshed/archive/aaefc85a95431045b0726b297d0ad1f4786ba1e2.tar.gz"
+    version "aaefc85a95431045b0726b297d0ad1f4786ba1e2"
+    sha256 "46980e94b26f9653d50ac6d1fc3d5a5f58fc90bb3f1b6517d9ca51ec381a71ae"
+
+    livecheck do
+      url "https://api.github.com/repos/zubanls/zuban/contents/third_party/typeshed?ref=v#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
+  end
+
   def install
+    (buildpath/"third_party/typeshed").install resource("typeshed")
+
     system "cargo", "install", *std_cargo_args(path: "crates/zuban")
     libexec.install (buildpath/"third_party/typeshed").children
     bin.env_script_all_files libexec/"bin", ZUBAN_TYPESHED: libexec
