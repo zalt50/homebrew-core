@@ -89,9 +89,6 @@ class Root < Formula
       inreplace "interpreter/cling/lib/Interpreter/CMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
     end
 
-    # Work around upstream overriding CMAKE_OSX_SYSROOT
-    inreplace "CMakeLists.txt", "include(cmake/modules/SetOSX_SDK.cmake)", ""
-
     args = %W[
       -DCLING_CXX_PATH=clang++
       -DCMAKE_CXX_STANDARD=17
