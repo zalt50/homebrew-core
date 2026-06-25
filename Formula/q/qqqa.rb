@@ -1,8 +1,8 @@
 class Qqqa < Formula
   desc "Fast, stateless LLM for your shell: qq answers; qa runs commands"
   homepage "https://github.com/iagooar/qqqa"
-  url "https://github.com/iagooar/qqqa/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "a1274ad02b74ccab7be9dbe2034cdcc817096ad8067c1d42b639a40c94abf864"
+  url "https://github.com/iagooar/qqqa/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "1a47852ade8175570c3b0f6358a2850be4281ffa9511e14cc4240420e4d02a75"
   license "MIT"
   head "https://github.com/iagooar/qqqa.git", branch: "master"
 
