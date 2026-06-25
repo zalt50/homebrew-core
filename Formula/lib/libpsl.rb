@@ -8,12 +8,13 @@ class Libpsl < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3c4819817efda046038fe4dcf4d82c218c5ef48a9a147f2ed6e24a30703d8c1c"
-    sha256 cellar: :any, arm64_sequoia: "247ca6f370f62e262875a552da94d16623ec8d099ef18a4c32a7de738b17a875"
-    sha256 cellar: :any, arm64_sonoma:  "c4bd88dfa97f5f1bc9c42a9f14e11cd5ed5255c353474902d4dd877b8d5c522b"
-    sha256 cellar: :any, sonoma:        "84565757d4d0c734752c7fd48b22717b116918637fa5a0a491995edb6dff2bd6"
-    sha256 cellar: :any, arm64_linux:   "8a6259680220230609b6a8893662778becb3a4823f4002de273a518f8dcc2145"
-    sha256 cellar: :any, x86_64_linux:  "7e2a10eff5f58dd812693f98ad804b4ff3992966e9d64d01d0637fc95a43e9e0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b9c0535f986ef73fc909a54ce8e3570e2bec530476d30fad5cecd6ae47205018"
+    sha256 cellar: :any, arm64_sequoia: "e4bb0f02103334a3107985f0fe23618472874ad6b1ee4b414a20acf65bfbdc76"
+    sha256 cellar: :any, arm64_sonoma:  "2fa11192a21d8b4e0931eeaaf0c50d45acbd5b23045af4b04c25d3bb00dc2540"
+    sha256 cellar: :any, sonoma:        "9402eadd70dce0b9016917af3fa7335a334d272cae64b2806af7d180fcfd9061"
+    sha256 cellar: :any, arm64_linux:   "ae00eeff50059921329ea872abb32b1e9ee9038ebce23cd6a3d903a3f3f8dcde"
+    sha256 cellar: :any, x86_64_linux:  "4ef63f1349d8797f688d5552d911c4aaf55d6a0a640e92b25011132e1ffbadec"
   end
 
   depends_on "pkgconf" => :build
