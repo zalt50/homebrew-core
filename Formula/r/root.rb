@@ -35,7 +35,6 @@ class Root < Formula
   depends_on "gcc" # for gfortran
   depends_on "giflib"
   depends_on "gl2ps"
-  depends_on "glew"
   depends_on "graphviz"
   depends_on "gsl"
   depends_on "jpeg-turbo"
@@ -108,7 +107,6 @@ class Root < Formula
       -Dbuiltin_freetype=OFF
       -Dbuiltin_ftgl=OFF
       -Dbuiltin_gl2ps=OFF
-      -Dbuiltin_glew=OFF
       -Dbuiltin_gsl=OFF
       -Dbuiltin_llvm=ON
       -Dbuiltin_lz4=OFF
@@ -121,10 +119,8 @@ class Root < Formula
       -Dbuiltin_unuran=OFF
       -Dbuiltin_vc=OFF
       -Dbuiltin_vdt=OFF
-      -Dbuiltin_veccore=OFF
       -Dbuiltin_xrootd=OFF
       -Dbuiltin_xxhash=OFF
-      -Dbuiltin_zeromq=OFF
       -Dbuiltin_zlib=OFF
       -Dbuiltin_zstd=OFF
       -Dcfitsio=ON
@@ -136,15 +132,10 @@ class Root < Formula
       -Dfortran=ON
       -Dfreetype=ON
       -Dgdml=ON
-      -Dgfal=OFF
       -Dgnuinstall=ON
       -Dimt=ON
       -Dmathmore=ON
-      -Docaml=OFF
-      -Doracle=OFF
-      -Dpgsql=OFF
       -Dpyroot=ON
-      -Dpythia6=OFF
       -Dpythia8=OFF
       -Droofit=ON
       -Dssl=ON
