@@ -15,13 +15,13 @@ class Root < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "baf5c2489446cfd422debefa85e931675f79f6fd6af365f71416e99ed3b73896"
-    sha256 arm64_sequoia: "758274e9daa80d15ec20b70eb3bec38998d7060d69f007d714c3bf3971022f54"
-    sha256 arm64_sonoma:  "d87b063df7ccbccb2c0b1c92ceaaa4851a661c78e8f5e8ffd6f332b8df05cd62"
-    sha256 sonoma:        "8122ae9e8a8b8454cd4bdc84207eb75364a7ed892318f1bbfe74b9231baf279b"
-    sha256 arm64_linux:   "9711ce84f7e37065adee698cedfb3aff3280d9dc3daf875e7d9ac3c472a58f32"
-    sha256 x86_64_linux:  "866aa3ddb48ea0dc97a2ba200ae4b8aa2fb96fb2993c7fb11608fe24e7d322dd"
+    rebuild 3
+    sha256 arm64_tahoe:   "c6db71868ef21f8ebc5250c1386c599208688b11a64c93c29635ed419bb92521"
+    sha256 arm64_sequoia: "bc69736bf6bab05b86f55476801b99224070b58ca42b238b377fa67d4ae7eeb5"
+    sha256 arm64_sonoma:  "b3569afc4e11e59c6b9de09613080ef595fb7d18d12f59debd226ff802f86236"
+    sha256 sonoma:        "1911240187041c81508fe8dc9010aa23ad724cae43bbafbb31e9aa995267d4d1"
+    sha256 arm64_linux:   "f7be5490fe59be8fb533af685d2dc8fc731f47a25dbf824fe1aef83e48b28565"
+    sha256 x86_64_linux:  "b551196483fcde803789ea63bac66c670b36a4ec901acf79a6a548b69c516e87"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,6 @@ class Root < Formula
   depends_on "gcc" # for gfortran
   depends_on "giflib"
   depends_on "gl2ps"
-  depends_on "glew"
   depends_on "graphviz"
   depends_on "gsl"
   depends_on "jpeg-turbo"
@@ -108,7 +107,6 @@ class Root < Formula
       -Dbuiltin_freetype=OFF
       -Dbuiltin_ftgl=OFF
       -Dbuiltin_gl2ps=OFF
-      -Dbuiltin_glew=OFF
       -Dbuiltin_gsl=OFF
       -Dbuiltin_llvm=ON
       -Dbuiltin_lz4=OFF
@@ -121,10 +119,8 @@ class Root < Formula
       -Dbuiltin_unuran=OFF
       -Dbuiltin_vc=OFF
       -Dbuiltin_vdt=OFF
-      -Dbuiltin_veccore=OFF
       -Dbuiltin_xrootd=OFF
       -Dbuiltin_xxhash=OFF
-      -Dbuiltin_zeromq=OFF
       -Dbuiltin_zlib=OFF
       -Dbuiltin_zstd=OFF
       -Dcfitsio=ON
@@ -136,15 +132,10 @@ class Root < Formula
       -Dfortran=ON
       -Dfreetype=ON
       -Dgdml=ON
-      -Dgfal=OFF
       -Dgnuinstall=ON
       -Dimt=ON
       -Dmathmore=ON
-      -Docaml=OFF
-      -Doracle=OFF
-      -Dpgsql=OFF
       -Dpyroot=ON
-      -Dpythia6=OFF
       -Dpythia8=OFF
       -Droofit=ON
       -Dssl=ON
