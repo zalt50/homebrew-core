@@ -1,8 +1,8 @@
 class Anchor < Formula
   desc "Solana Program Framework"
   homepage "https://anchor-lang.com"
-  url "https://github.com/solana-foundation/anchor/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "e07f8e8aa27f732d9609b250a7ec0111237acadd2fa0cf3c1fc9ae7e36046b3b"
+  url "https://github.com/solana-foundation/anchor/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "79eface5a45e0c5e35ae2f8f1c38c4656d717d839180991a4ff63fdf127bfa67"
   license "Apache-2.0"
 
   bottle do
@@ -15,9 +15,9 @@ class Anchor < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build
   depends_on "node" => :test
   depends_on "yarn" => :test
+  depends_on "rust"
 
   on_linux do
     depends_on "systemd" # for `libudev`
