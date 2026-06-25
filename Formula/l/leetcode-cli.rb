@@ -1,8 +1,8 @@
 class LeetcodeCli < Formula
   desc "May the code be with you"
   homepage "https://github.com/clearloop/leetcode-cli"
-  url "https://github.com/clearloop/leetcode-cli/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "af8993b4f2d9988638223e9884b397c32c14bdf45a1ae3fd869e247e8900704f"
+  url "https://github.com/clearloop/leetcode-cli/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "9b5943a26b50031400f762dd3a86e12c4dd1254b51aa12d311a0e1c320cf3c89"
   license "MIT"
   head "https://github.com/clearloop/leetcode-cli.git", branch: "main"
 
@@ -32,6 +32,6 @@ class LeetcodeCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/leetcode --version")
-    assert_match "[INFO  leetcode_cli::config] Generate root dir", shell_output("#{bin}/leetcode list 2>&1", 101)
+    assert_match "[INFO  leetcode_cli::config] Generate root dir", shell_output("#{bin}/leetcode list 2>&1")
   end
 end
