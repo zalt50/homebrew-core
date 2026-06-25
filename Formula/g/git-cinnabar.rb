@@ -1,8 +1,8 @@
 class GitCinnabar < Formula
   desc "Git remote helper to interact with mercurial repositories"
   homepage "https://github.com/glandium/git-cinnabar"
-  url "https://static.crates.io/crates/git-cinnabar/git-cinnabar-0.7.3.crate"
-  sha256 "18adcda45eeb4a1e82f28f404f788ed9051125c6fd760e468fd2763f17dd6cfe"
+  url "https://static.crates.io/crates/git-cinnabar/git-cinnabar-0.7.4.crate"
+  sha256 "e2ab2733835fdc77f978814ed919f539bbd785b2c0d8e5bbb3ca5a35ef642d49"
   license all_of: ["MPL-2.0", "GPL-2.0-only"]
   head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
