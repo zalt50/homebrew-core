@@ -15,13 +15,13 @@ class Root < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "c6db71868ef21f8ebc5250c1386c599208688b11a64c93c29635ed419bb92521"
-    sha256 arm64_sequoia: "bc69736bf6bab05b86f55476801b99224070b58ca42b238b377fa67d4ae7eeb5"
-    sha256 arm64_sonoma:  "b3569afc4e11e59c6b9de09613080ef595fb7d18d12f59debd226ff802f86236"
-    sha256 sonoma:        "1911240187041c81508fe8dc9010aa23ad724cae43bbafbb31e9aa995267d4d1"
-    sha256 arm64_linux:   "f7be5490fe59be8fb533af685d2dc8fc731f47a25dbf824fe1aef83e48b28565"
-    sha256 x86_64_linux:  "b551196483fcde803789ea63bac66c670b36a4ec901acf79a6a548b69c516e87"
+    rebuild 4
+    sha256 arm64_tahoe:   "bc4673ca571a912f88d256cbe5d9eb40963d3a19d553108601c7265239fb13b7"
+    sha256 arm64_sequoia: "8f094a7fd01cbabaaf04fa3ba47c00073074462c4e4b33a3023bad279e3b72a0"
+    sha256 arm64_sonoma:  "128d8590e0532d0a021c427b55f3336fef022558ad3d08b683c7492e71798cf9"
+    sha256 sonoma:        "afc0060df3f56914795cbd9458bc204325ce1059518d4738066ee14b3a97ad81"
+    sha256 arm64_linux:   "c9e2811af704e0a480cee7b1d8a5ddf03a9cad66334dc88e4e8a8033eb6a56c9"
+    sha256 x86_64_linux:  "d704b885391763e47c7170ca883a9d91a045aec5c078db259973e299c7f549e4"
   end
 
   depends_on "cmake" => :build
@@ -88,9 +88,6 @@ class Root < Formula
     if OS.mac? && MacOS.version > :ventura
       inreplace "interpreter/cling/lib/Interpreter/CMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
     end
-
-    # Work around upstream overriding CMAKE_OSX_SYSROOT
-    inreplace "CMakeLists.txt", "include(cmake/modules/SetOSX_SDK.cmake)", ""
 
     args = %W[
       -DCLING_CXX_PATH=clang++
