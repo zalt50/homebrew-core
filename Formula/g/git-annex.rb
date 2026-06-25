@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20260601/git-annex-10.20260601.tar.gz"
-  sha256 "cce20dbea9f1626e0c680267ffb7e5ef2d95a9e0c34bdc7d153c30cb1f5687f8"
+  url "https://hackage.haskell.org/package/git-annex-10.20260624/git-annex-10.20260624.tar.gz"
+  sha256 "d55d42720e64a2c22734c6c7ba7aef1f26000124c647534d693d5531298e9b31"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -28,20 +28,26 @@ class GitAnnex < Formula
   depends_on "libmagic"
 
   uses_from_macos "libffi"
+  uses_from_macos "sqlite"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
-  # Hide conflicting imports. Probably caused by `--allow-newer` flag
-  patch :DATA
-
   def install
-    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
-    args = ["--allow-newer=base,containers,template-haskell"]
+    args = [
+      # Workaround to build with GHC 9.14
+      "--allow-newer=base,template-haskell",
+      # Workaround for https://github.com/yesodweb/yesod/issues/1917
+      "--constraint=ram<0",
+      # Workaround for API breaking release of magic
+      "--constraint=magic<2",
+      # Unbundle sqlite
+      "--constraint=persistent-sqlite +systemlib +use-pkgconfig",
+    ]
 
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *args, *std_cabal_v2_args, "--flags=+S3 +Servant"
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
     bin.install_symlink "git-annex" => "git-annex-shell"
     bin.install_symlink "git-annex" => "git-remote-annex"
     bin.install_symlink "git-annex" => "git-remote-tor-annex"
@@ -78,18 +84,3 @@ class GitAnnex < Formula
     system "git", "annex", "uninit"
   end
 end
-
-__END__
-diff --git a/Utility/Url.hs b/Utility/Url.hs
-index 40fa483..0c1f973 100644
---- a/Utility/Url.hs
-+++ b/Utility/Url.hs
-@@ -55,7 +55,7 @@ import Utility.Url.Parse
- import qualified Utility.FileIO as F
- 
- import Network.URI
--import Network.HTTP.Types
-+import Network.HTTP.Types hiding (hAcceptEncoding, hContentDisposition, hContentRange)
- import qualified System.FilePath.Posix as UrlPath
- import qualified Data.CaseInsensitive as CI
- import qualified Data.ByteString as B
