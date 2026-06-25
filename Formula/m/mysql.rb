@@ -14,12 +14,12 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ac165c7d5e3ef98b0077bba9b1fbf81a17746e18757d6545e645403694a1103d"
-    sha256 arm64_sequoia: "39183b9f410cb134e6c95f006577ddce1271beacff4ad93a8a8d96b59e24deac"
-    sha256 arm64_sonoma:  "b4b17068c0a5c035760ac2db0fe06322fe0bf8827ea99c02a776f818a63f2efb"
-    sha256 sonoma:        "ab8f6ced41aacda5cd0524d1318bc1f2effc5f0fe30c119d6c9b2166c3e20946"
-    sha256 arm64_linux:   "55042a30d4f98a42a449f3ed1f67a973d4c3cdcf236f071922ada5c40fcad3e6"
-    sha256 x86_64_linux:  "9060ba62f4965925d3503839e6ee95b0bdc85d46ab4043e87c510715926f9925"
+    sha256 arm64_tahoe:   "d3b11f8cea4608f52a98588610197bd31bafd7b83b51d4efcb564098e3c5dd6b"
+    sha256 arm64_sequoia: "4607c6ab438f7f90c5ecd6a7fcfb5fce05385d91c3cab91edb56837f47983280"
+    sha256 arm64_sonoma:  "4a6f31ff90ee3d66eaf498b27875db5a247cea792c857599e93d9e0def543adc"
+    sha256 sonoma:        "661dbccdde78078c4f13d045ef1ac83418e8136b0160a922b48ba0c0489e9444"
+    sha256 arm64_linux:   "796d1ae183d4195a59f86eb8cec94bd79d869eb6c27901c5edd79afd785cf34b"
+    sha256 x86_64_linux:  "9e060ca44f6e08653ad4f21106631a21b56f7394b8e3de05341d4493aadba173"
   end
 
   depends_on "bison" => :build
