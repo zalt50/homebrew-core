@@ -12,12 +12,12 @@ class Incus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f10373bdc8d7bc8a76082218f44d9ebc0ec4379a61d21353d029b88e02ab9ff9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f10373bdc8d7bc8a76082218f44d9ebc0ec4379a61d21353d029b88e02ab9ff9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f10373bdc8d7bc8a76082218f44d9ebc0ec4379a61d21353d029b88e02ab9ff9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "158c02bd0c3f24b46ff33549a679dfda069199fc9b0b25fe1c68cddd0746daac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b64eb71170e51e1b18140d04991575b724102cdfa6e653e322a02e95525678f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "305a15634d1f806251ebefad559dba082cd6cac9e88f67a994f7f575c1064b72"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddbba3d5f6ff8af3575406b0d79015af54bc2c9b10e21ce3f331629122958a8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddbba3d5f6ff8af3575406b0d79015af54bc2c9b10e21ce3f331629122958a8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddbba3d5f6ff8af3575406b0d79015af54bc2c9b10e21ce3f331629122958a8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abd1873b2a1dea7d6e9ab72155e20331702fa3baa7c456ebfb4955dd0a8cd8d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f7a5b02828a444f20ae7b7c658549485d43acde96b8dcaed3033f8c193231d5"
+    sha256 cellar: :any,                 x86_64_linux:  "cf8304b5d61f549b13a53d70686dc9c4310703e09b199ac3d29e670818cb54c1"
   end
 
   depends_on "go" => :build
