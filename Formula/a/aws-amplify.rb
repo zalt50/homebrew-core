@@ -6,12 +6,12 @@ class AwsAmplify < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6306010324300d260a7e96094214b793f4287203c6e60f95020774faf913dcef"
-    sha256 cellar: :any,                 arm64_sequoia: "e4368c0eb954c02fab060b2fb05fef98a35a21557c51688412472e286d686962"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4368c0eb954c02fab060b2fb05fef98a35a21557c51688412472e286d686962"
-    sha256 cellar: :any,                 sonoma:        "8346c84c26cdf1ce652c1bf6e97fda05110c903453d9dcda35c6cb00d34ae91e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "919570a74cc2824c8ab3aabd90eb5e2c13405edb43ae26d4d785668144f8bb3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb5cd451b33efd5da644333c04d9b9f1c12f8fc146d95459e8cf1110091200d7"
+    sha256 cellar: :any, arm64_tahoe:   "e6967a50fc0cacd18f887d8b8d2404280eeb48c82bfb19a120fdbb7d0fdf0bab"
+    sha256 cellar: :any, arm64_sequoia: "8a21d262463ddfbeb76e39a84a34d196867a94b7731a450d14c05e01af8ed83c"
+    sha256 cellar: :any, arm64_sonoma:  "8a21d262463ddfbeb76e39a84a34d196867a94b7731a450d14c05e01af8ed83c"
+    sha256 cellar: :any, sonoma:        "9d450340eb2ffbe8f04d25fee2b58ffff82de23f1e9ed64e71477d4a2cdd13e7"
+    sha256 cellar: :any, arm64_linux:   "4a14458c4857ad03d948488b3fdfaad12a58198a3ca388c3c7643890428aea8c"
+    sha256 cellar: :any, x86_64_linux:  "f4988ff45b85a930071f9fdb3805b75d4c56e3580f68315f208b275df9b76a7b"
   end
 
   depends_on "node"
