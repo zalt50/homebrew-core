@@ -7,12 +7,12 @@ class Fastly < Formula
   head "https://github.com/fastly/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a81386fb20fb11900b24b242645f5807b7100cd4c4336f64fe024961d4d55289"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a81386fb20fb11900b24b242645f5807b7100cd4c4336f64fe024961d4d55289"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a81386fb20fb11900b24b242645f5807b7100cd4c4336f64fe024961d4d55289"
-    sha256 cellar: :any_skip_relocation, sonoma:        "407408efa7bf7b2dc8a87c6a9884ea1a2aaec9ddd6209b616f02ea224f95c0b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6599d6a831710d8af8f8781817e165cb2912cce60fbab44314ea49e97fc216a3"
-    sha256 cellar: :any,                 x86_64_linux:  "97e1a15924a3d42e5504b4c5702f81d8b75fe14a5b9a6d05c7a7f3af11dc8814"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32c31f6a7f02fdf6dc215df2bc0f445972b5088d54843af0317c823b85b6d849"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32c31f6a7f02fdf6dc215df2bc0f445972b5088d54843af0317c823b85b6d849"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c31f6a7f02fdf6dc215df2bc0f445972b5088d54843af0317c823b85b6d849"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5739a0f0860c34258dff903e3a5119dd60b6d7f9295ed11c9ff58619c2a28dd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f62715ee374e6778f612d2de061554777f08f5ed4757eaa3b7bd887ead096e7e"
+    sha256 cellar: :any,                 x86_64_linux:  "9549fc7e333ad0a7a8c1697227cd1f97b400478ccd160fe6fedccd8a431d557b"
   end
 
   depends_on "go" => :build
