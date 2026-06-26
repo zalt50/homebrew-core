@@ -3,8 +3,8 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://files.pythonhosted.org/packages/19/42/c70ebd2a4e2eb392d58b0ce5c2b9ab111d3b1be7a1b543853901f18d6834/standardebooks-3.1.0.tar.gz"
-  sha256 "b29760026d90d58658d0eef23939e67d3c2c3f748423a7103910befcfedd8b39"
+  url "https://files.pythonhosted.org/packages/4e/ef/92f6e2f4b5cbe52b54d7e2479097febd7285bbd63e12d0cd4932ad670ce8/standardebooks-3.2.0.tar.gz"
+  sha256 "a2a685a3616276b130e82b9c45d9208d41ff04b8383e5653b9b132d310703e2e"
   license "GPL-3.0-or-later"
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
@@ -276,6 +276,9 @@ class Standardebooks < Formula
   end
 
   def install
+    # Remove vendored prebuilt binary
+    rm "se/vendor/calibre_azw3/upstream/html5_parser/html_parser.cpython-312-x86_64-linux-gnu.so"
+
     virtualenv_install_with_resources
 
     bash_completion.install "se/completions/bash/se"
