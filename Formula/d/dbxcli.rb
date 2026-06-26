@@ -1,8 +1,8 @@
 class Dbxcli < Formula
   desc "Command-line tool for Dropbox users and team admins"
   homepage "https://github.com/dropbox/dbxcli"
-  url "https://github.com/dropbox/dbxcli/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "6c80185757f2d80d11a83e03ee265c841f2e98244f92cf670da059ffbc7dd37b"
+  url "https://github.com/dropbox/dbxcli/archive/refs/tags/v3.5.0.tar.gz"
+  sha256 "f74f71ab68068ce53147119194b81ea5ece1ea8310e0181d161e77452f2a2138"
   license "Apache-2.0"
   head "https://github.com/dropbox/dbxcli.git", branch: "master"
 
