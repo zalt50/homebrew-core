@@ -7,12 +7,12 @@ class LeetcodeCli < Formula
   head "https://github.com/clearloop/leetcode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51edbeb76f293c0534cbce79182facb000dc916d0b12bdef14cb6d55de226c7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7663844efcf9b2a3cff7f03266aec4bafdc57ce3a2317724779d47e4b800b0bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bed877ceb29394fdd6f90f54100eb4dda9f31f78d1c712a4dce50c8d17174844"
-    sha256 cellar: :any_skip_relocation, sonoma:        "051d713afeb0e42bc4a050ab5702c2c7955171c589eb4466819752b860a536c9"
-    sha256 cellar: :any,                 arm64_linux:   "fcad68c9a458808f6e9aee87b0997ce8a1ca11ccce136c460baf6dcd1034b17f"
-    sha256 cellar: :any,                 x86_64_linux:  "d5db3ea89bdb74584bbcfee66c5a831a112d8972af7820e47df14d40bf3e4818"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6401aa88a7189d79856dc2741c1986698a89e28fcc96a2ab01c7b0bcf3984bcb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f30e017dadc6f7c9e98478c6ded678c890b9b3e0b9cdd58720fc865b7f0ecc55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26b6678ddd69cc2122183de81d12631f285f873cca2a7c33423b2c4e61dad7d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e86bd729e541afdc5b0fc3cfae4c152282ace6a5e52421091c932bc39dc1301f"
+    sha256 cellar: :any,                 arm64_linux:   "1da452fa3a0ab69f51ace5e41b4dee9d635eefbda1843d60753742ad68657f0e"
+    sha256 cellar: :any,                 x86_64_linux:  "11c9c8dd4c41d693aafab7900bff14cdd662dd580abd7bfc29be28aee94267e8"
   end
 
   depends_on "pkgconf" => :build
