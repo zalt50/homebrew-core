@@ -13,12 +13,12 @@ class Socat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac0c47bcebd304502db55e0a67b3fbca2af8b882c331f6f238f00f543c997ea6"
-    sha256 cellar: :any,                 arm64_sequoia: "34e3d8eabea5928b3f37d589b32d118c5aa47e3aef264da0d8b2470e3eb81787"
-    sha256 cellar: :any,                 arm64_sonoma:  "97441f063428c38f4313079e8bafc4ea2835b9c93a9f757ed3d7d022acd46f2d"
-    sha256 cellar: :any,                 sonoma:        "00617f292b2d5e3887321fead711ee7a7de79b773829027f872f66e898ce4bb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8516bb17bc2e9ff8382a3038ec2ad58c2d2198224cbc1601e0086adeb5bed764"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f5785c495d7e676ca4b2c34d16ad61363fb3c7efd5f2f7e2cc5e7bb1e413fa5"
+    sha256 cellar: :any, arm64_tahoe:   "12d001b7ebd38e11f543fdeaca6e871db281c06504c162d4649e91a54347ce07"
+    sha256 cellar: :any, arm64_sequoia: "de871e7e5581ff27cd78c214acbf5a700f54b2e812f1aad87eff6f095c3ddb68"
+    sha256 cellar: :any, arm64_sonoma:  "b350e679ea7090afdfba695efcd6755e9bedc8847c7bc971429d28f7752e1dff"
+    sha256 cellar: :any, sonoma:        "a1d88e0d64fb89e78a069a18778b9ab892637296243f43118ebb1c445d7b24df"
+    sha256 cellar: :any, arm64_linux:   "929da32103078345a0b8c9cfbe3a53491be953d7656e93db4699641964724071"
+    sha256 cellar: :any, x86_64_linux:  "b3c375fabafc8fd9f816c1976fdcee456f67ad75b6244074f09ef13b91ab269e"
   end
 
   depends_on "openssl@3"
