@@ -1,8 +1,8 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
   homepage "https://github.com/kiliankoe/swift-outdated"
-  url "https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.12.0.tar.gz"
-  sha256 "8072d0a0ff3e35ef5a52038e22ad4bbac2f4083bb17c129b4444587d15887991"
+  url "https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.13.0.tar.gz"
+  sha256 "11f9d7f0fe15cd1e53fe812b4ed5075e61dee8adc1d87224c1f1c89e3b316728"
   license "MIT"
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
@@ -16,6 +16,7 @@ class SwiftOutdated < Formula
   end
 
   uses_from_macos "swift" => :build, since: :tahoe # swift 6.2+
+  uses_from_macos "curl"
 
   def install
     inreplace "Sources/SwiftOutdated/SwiftOutdated.swift", "dev", version.to_s
@@ -23,7 +24,7 @@ class SwiftOutdated < Formula
     args = if OS.mac?
       ["--disable-sandbox"]
     else
-      ["--static-swift-stdlib"]
+      ["--static-swift-stdlib", "-Xlinker", "-L#{formula_opt_lib("curl")}"]
     end
     system "swift", "build", *args, "-c", "release"
     bin.install ".build/release/swift-outdated"
