@@ -3,8 +3,8 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/27/eb/45a9314ddd78527108aa4e0574ead5daaf93b77dd804b0e1b992c2fb0ef4/bittensor_cli-9.22.3.tar.gz"
-  sha256 "100d79311e5222fa028a5fc7c3e6879183536b9d032490744647785d0c9b4d8e"
+  url "https://files.pythonhosted.org/packages/25/03/067a11e27faceef0f236a76e554fbeeee21d5d8fdc92523649c6684203d5/bittensor_cli-9.23.1.tar.gz"
+  sha256 "3e2b51435695c05b0b7c0df144c1e5c5d426dcd1cc6f508d1749f90078e7812f"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
@@ -65,8 +65,8 @@ class Btcli < Formula
   end
 
   resource "bittensor-drand" do
-    url "https://files.pythonhosted.org/packages/36/13/36a587abc84cfa5a855879e247c3a763fe05cae02ff007f71f895ec933e2/bittensor_drand-1.3.0.tar.gz"
-    sha256 "ec3694c2226d66e2637168c8b31082d5cbbf991e350c254e340e1eb0255142fd"
+    url "https://files.pythonhosted.org/packages/70/c8/f1fdee0f0f5088585d6804a0099554f66834fd6d7347b921a0fedfc18e73/bittensor_drand-2.0.0.tar.gz"
+    sha256 "517cd8cabb4634a980e26aaf85ac0a8481f62fefadc0499ddbadb6467ae030c7"
   end
 
   resource "bittensor-wallet" do
@@ -75,8 +75,8 @@ class Btcli < Formula
   end
 
   resource "cyscale" do
-    url "https://files.pythonhosted.org/packages/41/71/8d6682ce88a8b1f02ebdfc658fc16d36dabfebe17eb0d7a743fbf0f2cb2b/cyscale-0.4.0.tar.gz"
-    sha256 "0ca5ad331a99e86b944876ef2c45962d0a4ae7e915374fd8d8f6b7c0a3779028"
+    url "https://files.pythonhosted.org/packages/8e/02/b77c019e7d697ede8bd7bcd9472569a45e3ff7df6aaa8eb90abde5ac190f/cyscale-0.5.0.tar.gz"
+    sha256 "57bf8fb401c71d5d8c7dbadd948c1fbb239b014ad58eb2f43722beb39ebc50e9"
   end
 
   resource "frozenlist" do
@@ -189,14 +189,9 @@ class Btcli < Formula
     sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
   end
 
-  resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
-  end
-
   resource "xxhash" do
-    url "https://files.pythonhosted.org/packages/24/2f/e183a1b407002f5af81822bee18b61cdb94b8670208ef34734d8d2b8ebe9/xxhash-3.7.0.tar.gz"
-    sha256 "6cc4eefbb542a5d6ffd6d70ea9c502957c925e800f998c5630ecc809d6702bae"
+    url "https://files.pythonhosted.org/packages/c8/d4/640915f28a551050e299a2ba6194875de7bfe7e0ecd1be79eb429fcb8a74/xxhash-3.7.1.tar.gz"
+    sha256 "9de50caa75baeca63bcb3b0eb753508a5cddc7757682444d650684bc4ebe1095"
   end
 
   resource "yarl" do
