@@ -3,18 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/79/33/40c521c1269184dc283cc5102ec71882cc8afd4078b0b3b1ce623db227fc/vunnel-0.61.0.tar.gz"
-  sha256 "f2e02d71facd1ed6ec8e00d1c53b10659320a6b68cda55261d3550fb15c900b3"
+  url "https://files.pythonhosted.org/packages/70/00/95650f3d105b8bf97c9456da809868bfc8ac90a8a178a0c0bbe791dfa562/vunnel-0.61.1.tar.gz"
+  sha256 "7bd34945faf092de6788ce98a4565d43f5de399ccc1b54b0de26a37046547621"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "19444c2779dde64c1a27a911dcb6f7c1d8b01caa382068a79b0bd7d29fb5774d"
-    sha256 cellar: :any, arm64_sequoia: "be124fa6c1adf6339ab8e4df380f56dda71dd1bfc1b953d603172d1ef15ebf7b"
-    sha256 cellar: :any, arm64_sonoma:  "988b024f0bd6d123e93787ceebd49dd5fcce487f3f865e0e6aaf5071e3f4a8ec"
-    sha256 cellar: :any, sonoma:        "500bcd68f27891a58a29a10efe4f908849dd99921d2d46b7e46434d30b12f7cb"
-    sha256 cellar: :any, arm64_linux:   "4a12b188056e95f79c56391dd2380993afa50f6c1121cc2418f9f7704fb672c9"
-    sha256 cellar: :any, x86_64_linux:  "f0f833cd8019c779d827488bdefed8d8d1a8db5234b8f13e60c9785f767cd1ec"
+    sha256 cellar: :any, arm64_tahoe:   "41c64a63cc76ea4f2c131ebf597c600f575c449110e6fba71ee145da0167cdb2"
+    sha256 cellar: :any, arm64_sequoia: "c687353243675d9a319f3d4ae5e329eb9e7995a8171f30d9d8ae73534e652b2f"
+    sha256 cellar: :any, arm64_sonoma:  "0cea73dd2b21ef35f6acbf1dd1f60319b8199cd86d2722b1db5ba7754a30054e"
+    sha256 cellar: :any, sonoma:        "ae563d0c1bc899673c18d3dd4e4d3731b11401029c0b67a5e785809d6ac9567f"
+    sha256 cellar: :any, arm64_linux:   "27e5874c61d5b1762e24613c1256dc14e4da03eea5fbebce677bae36f882c5e6"
+    sha256 cellar: :any, x86_64_linux:  "02c5927a8f2fa4c1c92cb373c6f5325d8cce4256871dbb9ce172afafb688c0a2"
   end
 
   depends_on "rust" => :build
@@ -39,8 +39,8 @@ class Vunnel < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "colorlog" do
