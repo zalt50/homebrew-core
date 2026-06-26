@@ -7,12 +7,12 @@ class Aiken < Formula
   head "https://github.com/aiken-lang/aiken.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1880676384c217aebfa1835c94df19fa25a9f30049c1259a037d68d0e532c82e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd5de1d90c2b519dc31172a78c2561b0ff231089d2c6059ff5cb4cb1ac149fc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b094e38d7c67bde13386ad4b32f2242dd15cf1f611d5867fc39881ba80b36631"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8bfc0c056f9d7d513c0df13b2ef087130a5d931cfad9ac39fc82489ed996bb45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca34ae5907f8efe7affd7e3170ea1a4cf8d926cb010c216d217e217175396946"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee3811ce4cac5efefda4a264ffe65fbf7631bac3ef59aa4cb25aef84525daee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f65184e76c5db347ce422eed5f1bf92ed85a5d3ed330fdb563a620da5e4e8e69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "725814eeb6b54a36794a17f75e56e93056be91171c7eed4a65a583adfbbd98d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fd508b880d89c9dbc999b11969ccb06e55fb02950cd69ae0d7da1cb62445391"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7cc179f1156417c3cbd28713acc08fe26851cb01f303d2df874ad62ada871986"
+    sha256 cellar: :any,                 arm64_linux:   "85c3601261ad455b427fef0bc15b18b4d2041f4cd55d1e02f3ae040e0630ab0d"
+    sha256 cellar: :any,                 x86_64_linux:  "8d980c15ae590b1ce8b75f1674ae029ff2ac9b5ad7bc17995700ced021cc667f"
   end
 
   depends_on "pkgconf" => :build
