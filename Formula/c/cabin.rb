@@ -1,8 +1,8 @@
 class Cabin < Formula
   desc "Package manager and build system for C/C++"
   homepage "https://cabinpkg.com"
-  url "https://github.com/cabinpkg/cabin/archive/refs/tags/0.15.0.tar.gz"
-  sha256 "9f8b4904c1d4072cddb3f8316cde694cb55791bfb817b1f5818f49f1d156ded6"
+  url "https://github.com/cabinpkg/cabin/archive/refs/tags/0.16.0.tar.gz"
+  sha256 "c6590ea64f228cecd47606518f50bbeb8e96a28a8aa55b4b3f7dd699b57b51fe"
   license "Apache-2.0"
   head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
