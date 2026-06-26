@@ -12,12 +12,12 @@ class SentryCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f60287143eec553d760d77100052910cdfc0764b4d36603bf9c9b8b2fbcac9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff064dae8b35cda9845bc5c73a8752a22a917b008c69cb51d4c43e7bec2e6e9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6feefb9a5c6020dcb7b71d0a7194198cd8ea14475a8013b294b727d75c9d4cac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22dba6d0df8733f06f99393badae213ff5cfe8455905dca2507232f581514c16"
-    sha256 cellar: :any,                 arm64_linux:   "f07fa79a74a46446cc5e6a13f9399774d333aabe5c4fc35ac75054d657fe1f61"
-    sha256 cellar: :any,                 x86_64_linux:  "c3e9eda5f1b7e11e63a90efeea2ad1e5a7e67092f1ef53c29779296c3620c88d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85980cd84a774805daa1255b79dd1e9d8bc67579a594bef3dba677f6c07f35c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37716b194f9911919c85b2f8abf2218dcd9a60904d3dafe0354890a32ecdfbb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5074533988866738983ed218d9fba10122dc4247c5f36c9b920e30268a64f749"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68962dfebf3ad47cfa781321a57ef71c3f5faa74a104c9e80de41ec463456f71"
+    sha256 cellar: :any,                 arm64_linux:   "0f5d1829cfe385f296168f606169b795d53c034882962275d3e5ed6023b2cb47"
+    sha256 cellar: :any,                 x86_64_linux:  "f3320652e82130916ebca42aea424e653d925176053b0d48debe5bf574d039ec"
   end
 
   depends_on "pkgconf" => :build
