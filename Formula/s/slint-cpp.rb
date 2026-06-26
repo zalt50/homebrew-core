@@ -6,6 +6,15 @@ class SlintCpp < Formula
   license "GPL-3.0-only"
   head "https://github.com/slint-ui/slint.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "c4e17a18456a32758490a60614df2df42c2cf4d4f95312fd1a88888478bf3d3d"
+    sha256 cellar: :any, arm64_sequoia: "6f62ccbe7992f45d0e7ec5a74bbfdba4244d98c53a54dfcaf53f3f14c4fba910"
+    sha256 cellar: :any, arm64_sonoma:  "750924c1568a726565091cb57da31f70c1012090a96882d1ac5aad2804595786"
+    sha256 cellar: :any, sonoma:        "2965eba242ab94ce7e625f7b5dcda3e5662d83de26ebe07776f93c27e9074ae0"
+    sha256 cellar: :any, arm64_linux:   "164c67fd94bb302ae52bdb260438b2830f2fa6bd608da7542229834e970d9e9f"
+    sha256 cellar: :any, x86_64_linux:  "f1cbeedaa58cacff75cf0b128b26d3a8511c6ada574e2cf2bef9d5df2d96d0a8"
+  end
+
   depends_on "cmake" => :build
   depends_on "corrosion" => :build
   depends_on "rust" => :build
