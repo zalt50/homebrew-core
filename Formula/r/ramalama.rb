@@ -3,8 +3,8 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https://ramalama.ai"
-  url "https://files.pythonhosted.org/packages/a7/b4/f35697d69a8f0ed26da2f8cb2da8c42cffd19959ea449de3e9fa3cfe291d/ramalama-0.22.0.tar.gz"
-  sha256 "90733e64a8d83a1b96d8fc614d0191794e64aba002007a100f4244febb417f3c"
+  url "https://files.pythonhosted.org/packages/75/3b/840e5bd99acfbb5bf6e7072e2faf2e161fbbebb9e2218b4abb34ab16ace1/ramalama-0.23.0.tar.gz"
+  sha256 "dc02b82e46ddd682cb1019c5d474c1caf48a38ca13798d6e92aa3b779e04ef04"
   license "MIT"
 
   bottle do
