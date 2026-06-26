@@ -1,10 +1,9 @@
 class GupnpTools < Formula
   desc "Free replacements of Intel's UPnP tools"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gupnp-tools/0.12/gupnp-tools-0.12.2.tar.xz"
-  sha256 "4c92f2d1a3d454ec1f5fb05ef08ca34df9c743af64c8b5965c35884d46cb005c"
+  url "https://download.gnome.org/sources/gupnp-tools/0.12/gupnp-tools-0.12.3.tar.xz"
+  sha256 "ada36ba52068606ee97b157ba18d2cda21464c785ce2b5cbec4563aa9d2ffdc1"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
-  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "2085bbc212516df9466cfb8c53c5bd9faf9864c8dc021ed238d6ea6b1510283c"
@@ -31,6 +30,10 @@ class GupnpTools < Formula
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "gettext" => :build
   end
 
   def install
