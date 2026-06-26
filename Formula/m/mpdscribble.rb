@@ -1,8 +1,8 @@
 class Mpdscribble < Formula
   desc "Last.fm reporting client for mpd"
   homepage "https://www.musicpd.org/clients/mpdscribble/"
-  url "https://www.musicpd.org/download/mpdscribble/0.25/mpdscribble-0.25.tar.xz"
-  sha256 "20f89d945bf517c4d68bf77a77a359fdb13842ab1295e8d21eda79be2b5b35ce"
+  url "https://www.musicpd.org/download/mpdscribble/0.26/mpdscribble-0.26.tar.xz"
+  sha256 "b9d5829b89c465707256c140000e1a04b1d9d3afe50db46a843cf5ee54bf6309"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -26,6 +26,7 @@ class Mpdscribble < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "fmt"
   depends_on "libgcrypt"
   depends_on "libmpdclient"
 
