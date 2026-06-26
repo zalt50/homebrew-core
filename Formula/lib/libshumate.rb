@@ -14,12 +14,12 @@ class Libshumate < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "41b75f06c0baba11bc89de3df2fd5f30474849a892090b8947b26495631ab733"
-    sha256 cellar: :any, arm64_sequoia: "ef1bed2b45e2d5968a4af7ce2df08b92d66232fa079b441cd5696ff253b53fa0"
-    sha256 cellar: :any, arm64_sonoma:  "bc8db69503ea14e9b9cb9ec5269bf9bd2ea2bb0dfe179ff05aa678fa048850d0"
-    sha256 cellar: :any, sonoma:        "a427c7125bdec112cdd639474011f9b1d12af0d6e6d01ba30b07b46ef97156e7"
-    sha256               arm64_linux:   "b9ba5581b064ca447ba99a1332c8bb428951acab834ada600ef48d7678fd4adf"
-    sha256               x86_64_linux:  "64afa454bdb3778aabab6e99f54508089abec49503be15b6d6def8bf30c89434"
+    sha256 cellar: :any, arm64_tahoe:   "d19b44983768202e58cbe6e5cbbd66fcdfb39ae1b7137bd6ccbc598bf87c4274"
+    sha256 cellar: :any, arm64_sequoia: "5a9cac51fa086677ac3bd82e923f1bcdcf94e98897a4efb8b88bd29056b1aabd"
+    sha256 cellar: :any, arm64_sonoma:  "070f4474ffabcba26eb1e5166a59dd05ddb9547f2fbe6129b81b561d59a6961b"
+    sha256 cellar: :any, sonoma:        "2a81c52b6787447e5b6b2f8ee0adb9aaf499e639e4fd5668d60cb2550ff52dbe"
+    sha256               arm64_linux:   "9886745d17bc8ad6b83bfce5982fd2bc5eb88f214188497c23aebd59ad3f29fd"
+    sha256               x86_64_linux:  "24b3d0ffeba2942e6b74fd395bff40b2abd3a6875f5a3f55b069d267067b2d13"
   end
 
   depends_on "gettext" => :build
