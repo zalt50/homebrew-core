@@ -1,8 +1,8 @@
 class CloudProviderKind < Formula
   desc "Cloud provider for KIND clusters"
   homepage "https://kubernetes-sigs.github.io/cloud-provider-kind/"
-  url "https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "e9448dd3460106fd4752fedc9abf550c5680dfbe3735fc2217750efe34c81fbe"
+  url "https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "87a8c713be6b0635f7cd32832c40a929afd93ddffc57a03076a7574bd7dfc43c"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cloud-provider-kind.git", branch: "main"
 
@@ -16,13 +16,6 @@ class CloudProviderKind < Formula
   end
 
   depends_on "go" => :build
-
-  # Error out instead of looping forever when no container runtime is found, remove in next release
-  # PR ref: https://github.com/kubernetes-sigs/cloud-provider-kind/pull/431
-  patch do
-    url "https://github.com/kubernetes-sigs/cloud-provider-kind/commit/f8b7f65c43c1d6095429186d2135c6e4905a2a42.patch?full_index=1"
-    sha256 "2c809f5a5da87c61ad061f2b94586d9ab55943c9e9ced064179c872327b1e587"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
