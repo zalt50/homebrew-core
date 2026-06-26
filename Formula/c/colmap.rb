@@ -1,10 +1,9 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://github.com/colmap/colmap/archive/refs/tags/4.0.4.tar.gz"
-  sha256 "200309abca2a3ee05970b1f8a48d545fc71f435dffe6764a8040f9f6f364da32"
+  url "https://github.com/colmap/colmap/archive/refs/tags/4.1.0.tar.gz"
+  sha256 "fc944df46ee9c213d4256cec30c085a6baa67256e7e6e0be63b13ea43ce9fcf7"
   license "BSD-3-Clause"
-  revision 3
 
   bottle do
     sha256               arm64_tahoe:   "ce1c248c6e6d7cb6d1eeba1938826d8bbcc1ab2ee712fe623d76a610f2e809b3"
@@ -28,12 +27,14 @@ class Colmap < Formula
   depends_on "gmp"
   depends_on "lz4"
   depends_on "metis"
+  depends_on "mpfr"
   depends_on "onnx"
   depends_on "onnxruntime"
   depends_on "openimageio"
   depends_on "openssl@3"
   depends_on "poselib"
   depends_on "qtbase"
+  depends_on "qtsvg"
   depends_on "suite-sparse"
 
   uses_from_macos "curl"
@@ -41,7 +42,6 @@ class Colmap < Formula
 
   on_macos do
     depends_on "libomp"
-    depends_on "mpfr"
     depends_on "sqlite"
   end
 
