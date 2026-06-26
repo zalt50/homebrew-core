@@ -1,23 +1,23 @@
 class Anchor < Formula
   desc "Solana Program Framework"
   homepage "https://anchor-lang.com"
-  url "https://github.com/solana-foundation/anchor/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "e07f8e8aa27f732d9609b250a7ec0111237acadd2fa0cf3c1fc9ae7e36046b3b"
+  url "https://github.com/solana-foundation/anchor/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "79eface5a45e0c5e35ae2f8f1c38c4656d717d839180991a4ff63fdf127bfa67"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f184694cd6aad2d8758e9d923fbd1262cfbc9e2be807fad05666d3b09f8742d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b35fcd799d7572de0a77e84b4bec572189d31ccb14880629ff3b5bcb2b44e455"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43c36988c81f0d4501b66fc0dee97a17ca8c01f426ab63bcadf16f40ff76b1bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33231afe19d51339af4538bbc90f9a7760bd80b487f69d5fbfaf278a82cd688c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7422510a335c89d2464cffc48c5e6ec4f01ac9991ae5dd84ff03685c382e565b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e95aa0429fe630cce43209f9c597945d4a3b48a9516c773407882d9c81fee420"
+    sha256 arm64_tahoe:   "060fcfb276e22536dd8490640d4227bf34c646877c44341f66fdf38ebe3f601c"
+    sha256 arm64_sequoia: "5875651ee8881228605148bddc5eb60f3facaf1200c7b1c8278219771abe9f53"
+    sha256 arm64_sonoma:  "cad194952244f35e85781bfe2a7c3bf140d11a8ca3f97dd48df4ba7abef5e4f5"
+    sha256 sonoma:        "bd2dc6d13ae69105542521a496841b3c9a28fc880005e783c37e53049c916f67"
+    sha256 arm64_linux:   "4cf60eb6aeff8dd14fb6bf4e63ed3b2b6c3dfe44374d4d5e165cb37b83b6add1"
+    sha256 x86_64_linux:  "48e9487549d500279ccd53f4950ef135d1497c1b19e70e6fc3fda2cb47cd31ea"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build
   depends_on "node" => :test
   depends_on "yarn" => :test
+  depends_on "rust"
 
   on_linux do
     depends_on "systemd" # for `libudev`
