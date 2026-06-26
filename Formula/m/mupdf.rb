@@ -1,10 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.27.2-source.tar.gz"
-  sha256 "553867b135303dc4c25ab67c5f234d8e900a0e36e66e8484d99adc05fe1e8737"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.0-source.tar.gz"
+  sha256 "21c7f064903154f1c3a7458bee81f130fc36f9b5147ea13328f9980e02d2dea2"
   license "AGPL-3.0-or-later"
-  compatibility_version 2
+  compatibility_version 3
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -21,7 +21,7 @@ class Mupdf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "22d86c746fddcc6e410442ce198defcd205663c6a1b660c5308dda0ee2124cb3"
   end
 
-  depends_on "llvm" => :build
+  depends_on "llvm@21" => :build
   depends_on "pkgconf" => :build
   depends_on "swig" => :build
   depends_on "brotli"
@@ -62,8 +62,9 @@ class Mupdf < Formula
   end
 
   def install
-    # Remove bundled libraries excluding `extract` and "strongly preferred" `lcms2mt` (lcms2 fork)
-    keep = %w[extract lcms2]
+    # Remove bundled libraries excluding `extract`, "strongly preferred" `lcms2mt` (lcms2 fork)
+    # and `cmark-gfm` (mupdf builds against its private headers, so no system-lib option)
+    keep = %w[cmark-gfm extract lcms2]
     (buildpath/"thirdparty").each_child { |path| rm_r(path) if keep.exclude? path.basename.to_s }
 
     # Install mujs from resource
@@ -71,7 +72,7 @@ class Mupdf < Formula
 
     # For python bindings needed by `pymupdf`: https://pymupdf.readthedocs.io/en/latest/packaging.html
     site_packages = Language::Python.site_packages("python3.14")
-    ENV.prepend_path "PYTHONPATH", formula_opt_prefix("llvm")/site_packages
+    ENV.prepend_path "PYTHONPATH", formula_opt_prefix("llvm@21")/site_packages
 
     args = %W[
       build=release
