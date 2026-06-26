@@ -1,9 +1,9 @@
 class Socat < Formula
   desc "SOcket CAT: netcat on steroids"
   homepage "http://www.dest-unreach.org/socat/"
-  url "https://distfiles.alpinelinux.org/distfiles/edge/socat-1.8.1.1.tar.gz"
-  mirror "http://www.dest-unreach.org/socat/download/socat-1.8.1.1.tar.gz"
-  sha256 "f68b602c80e94b4b7498d74ec408785536fe33534b39467977a82ab2f7f01ddb"
+  url "https://distfiles.alpinelinux.org/distfiles/edge/socat-1.8.1.2.tar.gz"
+  mirror "http://www.dest-unreach.org/socat/download/socat-1.8.1.2.tar.gz"
+  sha256 "daeb9eed37a99424cd14877208706e93745c91cb86fb917a355635f4df5c8499"
   license "GPL-2.0-only"
   compatibility_version 1
 
