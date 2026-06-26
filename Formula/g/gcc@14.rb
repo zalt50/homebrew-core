@@ -1,9 +1,9 @@
 class GccAT14 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
-  sha256 "e0dc77297625631ac8e50fa92fffefe899a4eb702592da5c32ef04e2293aca3a"
+  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-14.4.0/gcc-14.4.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-14.4.0/gcc-14.4.0.tar.xz"
+  sha256 "752b6f567beac83159c77a7680b1316bdd784738bff9a9d070112c09da90f6d9"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -50,7 +50,7 @@ class GccAT14 < Formula
   # Apple Silicon support, located at https://github.com/iains/gcc-14-branch
   patch do
     on_macos do
-      file "Patches/gcc/gcc-14.3.0.diff"
+      file "Patches/gcc/gcc-14.4.0.diff"
     end
   end
 
