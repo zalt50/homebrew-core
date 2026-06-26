@@ -1,8 +1,8 @@
 class Otf2 < Formula
   desc "Open Trace Format 2 file handling library"
   homepage "https://www.vi-hps.org/projects/score-p/overview/overview.html"
-  url "https://perftools.pages.jsc.fz-juelich.de/cicd/otf2/tags/otf2-3.1.1/otf2-3.1.1.tar.gz"
-  sha256 "5a4e013a51ac4ed794fe35c55b700cd720346fda7f33ec84c76b86a5fb880a6e"
+  url "https://perftools.pages.jsc.fz-juelich.de/cicd/otf2/tags/otf2-3.2/otf2-3.2.tar.gz"
+  sha256 "82b3a88a550cb8c3cec8fd45eca82cdcbaf945209977482471b4b5e430d64a8d"
   license "BSD-3-Clause"
 
   livecheck do
