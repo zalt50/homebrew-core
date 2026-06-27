@@ -1,8 +1,8 @@
 class Localai < Formula
   desc "OpenAI alternative"
   homepage "https://localai.io"
-  url "https://github.com/mudler/LocalAI/archive/refs/tags/v4.5.4.tar.gz"
-  sha256 "4d8b7a5b551ce9c3f27b60eeb599e1501d3a5e210da50f2d8fe1f1a06caf272d"
+  url "https://github.com/mudler/LocalAI/archive/refs/tags/v4.5.5.tar.gz"
+  sha256 "709c5bfc6096c677a02d2ae5db6f0016d91a5f236b0f811fbbcb169ed8f54c53"
   license "MIT"
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
