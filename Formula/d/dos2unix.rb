@@ -1,13 +1,12 @@
 class Dos2unix < Formula
   desc "Convert text between DOS, UNIX, and Mac formats"
-  homepage "https://waterlan.home.xs4all.nl/dos2unix.html"
-  url "https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.5.5.tar.gz"
-  mirror "https://fossies.org/linux/misc/dos2unix-7.5.5.tar.gz"
-  sha256 "75f692b8484c8c24579a2ffd87df16b9c9428ed95497e3393a21d1ba0697ac33"
+  homepage "https://waterlander.net/dos2unix/"
+  url "https://waterlander.net/dos2unix/files/dos2unix-7.5.6.tar.gz"
+  sha256 "63650acbd0c7fa8623429bcbf93a888e3351a1cad0f556cf41876f5673dd7d0b"
   license "BSD-2-Clause"
 
   livecheck do
-    url "https://waterlan.home.xs4all.nl/dos2unix/"
+    url :homepage
     regex(/href=.*?dos2unix[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
