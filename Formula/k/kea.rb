@@ -14,12 +14,12 @@ class Kea < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e2616fdac3a762ea31b5aad89dc8ffc37d1a07213f997a06640e74ffe88206c2"
-    sha256 arm64_sequoia: "27a1747ac088eaeb7f7e68e9e6d086d8a98e027ebffc8b0e24c8f9d86ea5229a"
-    sha256 arm64_sonoma:  "5f5750c0f2dd70ac2bd59a89ccb356f74a4586c57706c9a6509c84a527c8a48b"
-    sha256 sonoma:        "954f32a83cd8a74c1b5acc96440189515d09b3239c5c9ae191359d8113d42dee"
-    sha256 arm64_linux:   "a42d71cf3f752ad26fc092a88625dbc24ee5f18c71acb90cd18c740d074a1871"
-    sha256 x86_64_linux:  "29fd5531b507e07fdf3b4fb63229b64aa5eda4983a5dafd0ef34d6f71bdf0424"
+    sha256 arm64_tahoe:   "b1db4f18e45523a6a76c70dfa149eb654128268024083569d66297065b8cf452"
+    sha256 arm64_sequoia: "907c57a685d9ccc33a3956b0ac9f766feffdc2171336e73ca6e63db3e81597d4"
+    sha256 arm64_sonoma:  "dbf1d8bd8e09f619da04baed80f6d0617502e92d9d8b32e3e564ee7aa745ea0d"
+    sha256 sonoma:        "4c291c977366043b78c091a98c0128937f1f19d0535fc31a33c60bbac65e008a"
+    sha256 arm64_linux:   "f852801894440b238f479f42244da71469a3306df83626efd8c7a7db0b45866e"
+    sha256 x86_64_linux:  "0078f9fa3b61b569fb260c7ecbcdc870c4c3efd5924b7d5a0fe38350d6bb2b01"
   end
 
   depends_on "bison" => :build
