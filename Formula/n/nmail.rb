@@ -1,8 +1,8 @@
 class Nmail < Formula
   desc "Terminal-based email client for Linux and macOS"
   homepage "https://github.com/d99kris/nmail"
-  url "https://github.com/d99kris/nmail/archive/refs/tags/v5.12.6.tar.gz"
-  sha256 "d68dc58ad6eacaeb4e357021ef84365101436bc2f77af50b620a75f5aa02ce2f"
+  url "https://github.com/d99kris/nmail/archive/refs/tags/v5.13.7.tar.gz"
+  sha256 "c0e0f30275252237959d63a59c0b5920a9514e8ea7abf05c693b8dc43fad0563"
   license "MIT"
   head "https://github.com/d99kris/nmail.git", branch: "master"
 
