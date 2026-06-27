@@ -11,12 +11,12 @@ class Geeqie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c35062a09b9d2b4075b6f5a6ce3c52ce62ff8cda3c9aa2841684f91d052e7499"
-    sha256 cellar: :any, arm64_sequoia: "0232a4c87ded56160728d151d4e145b84937fb43062d48bd5ac5c251389415a3"
-    sha256 cellar: :any, arm64_sonoma:  "a473b168952332b4814ea1695087bad47282fd1ffde8d03d29174d2a3edf2154"
-    sha256 cellar: :any, sonoma:        "7aff53ee3af3f5f24353e7b899e08a2310e4f8c59038d80ff8029618be2e9c8f"
-    sha256               arm64_linux:   "1c281bb22959998ead44499efbd8a893ebfead5c140d5694f0d87b72521453e8"
-    sha256               x86_64_linux:  "03bacb20c6587046ab2b005cfc0ad7dde0dbe26d6b5d4384fef09fbf67cca73b"
+    sha256 cellar: :any, arm64_tahoe:   "587eb292c7e58acc54871c03ebca1b4c0c2c8af04b23f6509739c2adf7575b47"
+    sha256 cellar: :any, arm64_sequoia: "ea36a8040f397bf8cc0735af55f4fe6ac433de4e02798d3bf04ed29f94b9b69f"
+    sha256 cellar: :any, arm64_sonoma:  "a95296472687a0b1f5c57f9811c61b8f268e6a9e9d776c5888ab1b2d8f60ed07"
+    sha256 cellar: :any, sonoma:        "1c3cd26b926672d53dd068eebd210d72751b8c6f0a6d148774bcd8b93e57a959"
+    sha256               arm64_linux:   "9e611884f28d6ab9c7ec3a9c8570096008af7aed1744bb457041950fcaf8e1e2"
+    sha256               x86_64_linux:  "f986db2448ede575a3d8b55cbf973442892a9b2b772258307598cff283c078f5"
   end
 
   depends_on "gettext" => :build
