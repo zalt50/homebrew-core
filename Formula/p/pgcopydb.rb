@@ -1,8 +1,8 @@
 class Pgcopydb < Formula
   desc "Copy a Postgres database to a target Postgres server"
   homepage "https://github.com/dimitri/pgcopydb"
-  url "https://github.com/dimitri/pgcopydb/archive/refs/tags/v0.17.tar.gz"
-  sha256 "7ed96f7bbc0a5250f3b73252c3a88d665df9c8101a89109cde774c3505882fdf"
+  url "https://github.com/dimitri/pgcopydb/archive/refs/tags/v0.18.tar.gz"
+  sha256 "d1fbc729b3d6aabbebd64f515a956130adf42a0e9104886084d76d5702fb99d0"
   license "PostgreSQL"
   head "https://github.com/dimitri/pgcopydb.git", branch: "main"
 
