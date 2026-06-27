@@ -10,7 +10,7 @@ class PdfTocgen < Formula
   head "https://github.com/Krasjet/pdf.tocgen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4178fa0d5eae318d730fde9f7114d19ed07d9d819c8c5412de7099d550d5595a"
+    sha256 cellar: :any_skip_relocation, all: "77401cde1dc1611e338ce7e1c86a1aeb8879e2f7753eb4916ac5630a22d71e76"
   end
 
   depends_on "pymupdf"
