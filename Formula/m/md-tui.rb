@@ -1,8 +1,8 @@
 class MdTui < Formula
   desc "Markdown renderer in the terminal written in rust"
   homepage "https://github.com/henriklovhaug/md-tui"
-  url "https://github.com/henriklovhaug/md-tui/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "b62a6fab02bb00dce764bc4453b1248e2cbe3edd71ad28b45cb054bd896b1bfb"
+  url "https://github.com/henriklovhaug/md-tui/archive/refs/tags/v0.10.3.tar.gz"
+  sha256 "7da5abe698227bb1b0accaa9a9586586966dc9faefda179daa36ebb25163caaa"
   license "AGPL-3.0-or-later"
 
   bottle do
