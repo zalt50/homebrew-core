@@ -1,8 +1,8 @@
 class Mpop < Formula
   desc "POP3 client"
   homepage "https://marlam.de/mpop/"
-  url "https://marlam.de/mpop/releases/mpop-1.4.21.tar.xz"
-  sha256 "4ca0d1e0d01366fe3e0cf490d88d154df511278fb595638713be3ca675665855"
+  url "https://marlam.de/mpop/releases/mpop-1.4.22.tar.xz"
+  sha256 "2cd64a9c29a5ade3429230c70610ca4b6ea305fbc264f6961b5d85a7a8cecd4b"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -30,6 +30,10 @@ class Mpop < Formula
   end
 
   def install
+    # gnulib's base64.h (vendored in 1.4.22) uses `bool` without including
+    # <stdbool.h>, assuming C23. Force the include for pre-C23 compilers.
+    ENV.append "CFLAGS", "-include stdbool.h"
+
     system "./configure", *std_configure_args
     system "make", "install"
   end
