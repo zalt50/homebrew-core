@@ -1,9 +1,10 @@
 class Dbcsr < Formula
   desc "Distributed Block Compressed Sparse Row matrix library"
   homepage "https://cp2k.github.io/dbcsr/"
-  url "https://github.com/cp2k/dbcsr/releases/download/v2.9.1/dbcsr-2.9.1.tar.gz"
-  sha256 "fa5a4aeba0a07761511af2c26c779bd811b5ea0ef06a5d94535b6dd7b2e0ce59"
+  url "https://github.com/cp2k/dbcsr/releases/download/v2.10.0/dbcsr-2.10.0.tar.gz"
+  sha256 "3d897220fbb4498215331efad6905eb7744881b4cf04eb5c5fb4db7c48a56ef9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2baae452ccf21e43a44b6ce2ad134398d68472651d9d27a4b8e95b4a56a9e269"
