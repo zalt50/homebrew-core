@@ -19,6 +19,7 @@ class Tpack < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/tpack"
+    generate_completions_from_executable(bin/"tpack", shell_parameter_format: :cobra)
   end
 
   test do
