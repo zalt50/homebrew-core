@@ -105,7 +105,7 @@ jobs:
         run: brew check-bottle-modification "${PR}"
 
       - name: Post comment
-        if: failure() && steps.bottle-block.conclusion == 'failure'
+        if: failure() && steps.bottle-block.outputs.bottle_modified == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BODY: |-
