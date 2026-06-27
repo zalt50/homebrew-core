@@ -6,13 +6,12 @@ class Sftpgo < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "bafd105714d30c78a25a772e704b93975443fdf6844fdd53c7a67036693f3a71"
-    sha256 arm64_sequoia: "ce33f44bfe6cf79d146b3bb20ad2f874e4fb5fde7b68ac599b69c190279de524"
-    sha256 arm64_sonoma:  "38cbdd353fa2e70b103c970db7aac708fdc8bff44fea83a0dae864816b372509"
-    sha256 sonoma:        "796b7e65bf5912d1b619a7158765de36997099f796f49a1d4805eb1f56b10425"
-    sha256 arm64_linux:   "f9d1356cc8fdf4f770706fe431419d5022bc366f0feeab34297ee6e1401117dd"
-    sha256 x86_64_linux:  "d6802a8b86a83e2f5ecef23dc6704ed4ee7fcdeff82c21fb7b5c72cc190357b9"
+    sha256 arm64_tahoe:   "87032c45406ccc1791508ef3377280d75d058f4e0d5bdd4e7ad5effeb73422cb"
+    sha256 arm64_sequoia: "153fc96ebbf15d70351ab186bcff6ee31289859c3703a8b46a5dda5d96d9d699"
+    sha256 arm64_sonoma:  "dbce9f67452ed486406c3d27ae75ec39ceba4f635c7625d03ee51999f1b7c932"
+    sha256 sonoma:        "850e11178d5741a004be42f3a6a4920731ae11460fadea49bc0ce98f5871f0ee"
+    sha256 arm64_linux:   "56abeba6fc6f611aae0352535081a9f1e7fec67b2be7b457441a3b981704b6d4"
+    sha256 x86_64_linux:  "54d7dfb44741c8425d271ed7507bed809df01806e027596180ae90613616156d"
   end
 
   depends_on "go" => :build
