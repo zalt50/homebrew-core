@@ -1,18 +1,15 @@
 class JsonC < Formula
   desc "JSON parser for C"
   homepage "https://github.com/json-c/json-c/wiki"
-  url "https://github.com/json-c/json-c/archive/refs/tags/json-c-0.18-20240915.tar.gz"
-  version "0.18"
-  sha256 "3112c1f25d39eca661fe3fc663431e130cc6e2f900c081738317fba49d29e298"
+  url "https://s3.amazonaws.com/json-c_releases/releases/json-c-0.19.tar.gz"
+  sha256 "37ad0249902e301bd9052bf712e511fcc6acff4ecaad4b5900aad9ce564e26de"
   license "MIT"
   head "https://github.com/json-c/json-c.git", branch: "master"
 
   livecheck do
-    url :stable
+    url :head
     regex(/^json-c[._-](\d+(?:\.\d+)+)(?:[._-]\d{6,8})?$/i)
   end
-
-  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "bb064fc1c259000bed8cc895e41a429a1afec18235e37fc32e9d0711d4d30b80"
