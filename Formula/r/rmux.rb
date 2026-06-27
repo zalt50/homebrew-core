@@ -1,8 +1,8 @@
 class Rmux < Formula
   desc "Terminal multiplexer with a tmux-style CLI and daemon runtime"
   homepage "https://rmux.io"
-  url "https://static.crates.io/crates/rmux/rmux-0.7.0.crate"
-  sha256 "a1058a8525f1c7e758fb59999a64f8d82e2111c56f52fa7a5fb8bce46567780a"
+  url "https://static.crates.io/crates/rmux/rmux-0.7.1.crate"
+  sha256 "84cd80513f308ee3f6fc47f81b6239797c32750d016e9321e43222d7c2c1754d"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
