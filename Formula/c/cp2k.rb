@@ -4,7 +4,7 @@ class Cp2k < Formula
   url "https://github.com/cp2k/cp2k/releases/download/v2026.1/cp2k-2026.1.tar.bz2"
   sha256 "4364c74bcffaa474bc234e11686b09550e4d06932acf2147a341e4f7679dd88e"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
