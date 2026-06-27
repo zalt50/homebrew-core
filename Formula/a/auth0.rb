@@ -6,6 +6,15 @@ class Auth0 < Formula
   license "MIT"
   head "https://github.com/auth0/auth0-cli.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "541888e73eb1ca643101373cac8e973316bd7d5cb883adab75b7ff2de2c04cd0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "541888e73eb1ca643101373cac8e973316bd7d5cb883adab75b7ff2de2c04cd0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "541888e73eb1ca643101373cac8e973316bd7d5cb883adab75b7ff2de2c04cd0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a7baf8a8f518cacc79307f8942c506ba22500b7bcb0e741aaaf6a841ac2e5f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49ba104a4fb3ac6fbefad3e13d70e2d83379948df0df84abfd0f99996f4b47ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e57cc4bea454f1a1903cc01273429b50c404e14d2f473861f58d4e14d11fabda"
+  end
+
   depends_on "go" => :build
 
   def install
