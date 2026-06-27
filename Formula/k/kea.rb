@@ -3,14 +3,13 @@ class Kea < Formula
   homepage "https://www.isc.org/kea/"
   # NOTE: the livecheck block is a best guess at excluding development versions.
   #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
-  url "https://ftp.isc.org/isc/kea/3.0.3/kea-3.0.3.tar.xz"
-  mirror "https://dl.cloudsmith.io/public/isc/kea-3-0/raw/versions/3.0.3/kea-3.0.3.tar.xz"
-  sha256 "09702ddb078b637e85de9236cbedd3fb9d7af7c6e797026c538b45748ad4d631"
+  url "https://downloads.isc.org/isc/kea/3.2.0/kea-3.2.0.tar.xz"
+  sha256 "14bf695d37b65b9b1bf550fea5d0adaf9806c50e5419ef2a176a4b8e9aade3df"
   license "MPL-2.0"
   head "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
 
   livecheck do
-    url "https://ftp.isc.org/isc/kea/"
+    url "https://downloads.isc.org/isc/kea/"
     regex(%r{href=["']?v?(\d+\.\d*[02468](?:\.\d+)*)/?["' >]}i)
   end
 
@@ -32,77 +31,25 @@ class Kea < Formula
   depends_on "log4cplus"
   depends_on "openssl@3"
 
-  # Workaround for boost >= 1.89
-  # https://gitlab.isc.org/isc-projects/kea/-/issues/4085
-  patch :DATA
-
   def install
-    # TODO: We probably also need to `inreplace` the following so they don't install in the prefix:
-    #   - LOCALSTATEDIR_INSTALLED
-    #   - RUNSTATEDIR_INSTALLED
-    #   - SYSCONFDIR_INSTALLED
-    # Report this upstream so they're not forced to be inside the `prefix`.
-    inreplace "meson.build" do |s|
-      # the build system looks for `sudo` to run some commands, but we don't want to use it
-      s.gsub! "SUDO = find_program('sudo', required: false)",
+    # the build system looks for `sudo` to run some commands, but we don't want to use it
+    inreplace "meson.build",
+              "SUDO = find_program('sudo', required: false)",
               "SUDO = find_program('', required: false)"
-    end
 
-    system "meson", "setup", "build", "-Dcpp_std=c++20", *std_meson_args
+    # Some scripts expect var and etc to be relative paths
+    args = %W[
+      -Dcpp_std=c++20
+      -Dlocalstatedir=#{var.relative_path_from(prefix)}
+      -Dsysconfdir=#{etc.relative_path_from(prefix)}
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-
-    # Remove the meson-info directory as it contains shim references
-    rm_r(pkgshare/"meson-info")
   end
 
   test do
     system sbin/"keactrl", "status"
   end
 end
-
-__END__
-diff --git a/meson.build b/meson.build
-index cedc949773..aed020ebb2 100644
---- a/meson.build
-+++ b/meson.build
-@@ -189,7 +189,10 @@ message(f'Detected system "@SYSTEM@".')
- 
- #### Dependencies
- 
--boost_dep = dependency('boost', version: '>=1.66', modules: ['system'])
-+boost_dep = dependency('boost', version: '>=1.69', required: false)
-+if not boost_dep.found()
-+    boost_dep = dependency('boost', version: '>=1.66', modules: ['system'])
-+endif
- dl_dep = dependency('dl')
- threads_dep = dependency('threads')
- add_project_dependencies(boost_dep, dl_dep, threads_dep, language: ['cpp'])
-diff --git a/src/lib/asiolink/asio_wrapper.h b/src/lib/asiolink/asio_wrapper.h
-index a33c56f2d4..e1ae6e06f6 100644
---- a/src/lib/asiolink/asio_wrapper.h
-+++ b/src/lib/asiolink/asio_wrapper.h
-@@ -74,9 +74,11 @@
- #pragma GCC push_options
- #pragma GCC optimize ("O0")
- #include <boost/asio.hpp>
-+#include <boost/asio/deadline_timer.hpp>
- #pragma GCC pop_options
- #else
- #include <boost/asio.hpp>
-+#include <boost/asio/deadline_timer.hpp>
- #endif
- 
- #endif // ASIO_WRAPPER_H
-diff --git a/src/lib/log/logger_level_impl.cc b/src/lib/log/logger_level_impl.cc
-index a4aba73..c2e4ee5 100644
---- a/src/lib/log/logger_level_impl.cc
-+++ b/src/lib/log/logger_level_impl.cc
-@@ -10,6 +10,7 @@
- #include <string.h>
- #include <iostream>
- #include <boost/lexical_cast.hpp>
-+#include <boost/static_assert.hpp>
- 
- #include <log4cplus/logger.h>
- 
