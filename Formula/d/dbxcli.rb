@@ -1,8 +1,8 @@
 class Dbxcli < Formula
   desc "Command-line tool for Dropbox users and team admins"
   homepage "https://github.com/dropbox/dbxcli"
-  url "https://github.com/dropbox/dbxcli/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "f74f71ab68068ce53147119194b81ea5ece1ea8310e0181d161e77452f2a2138"
+  url "https://github.com/dropbox/dbxcli/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "04e9dc214c481a0cdbf39deaadf6ec247188c9c207b3c440cb6b139a17020e80"
   license "Apache-2.0"
   head "https://github.com/dropbox/dbxcli.git", branch: "master"
 
@@ -25,7 +25,7 @@ class Dbxcli < Formula
 
   test do
     ENV["DBXCLI_AUTH_FILE"] = testpath/"missing-auth.json"
-    output = shell_output("#{bin}/dbxcli ls 2>&1", 1)
+    output = shell_output("#{bin}/dbxcli ls 2>&1", 2)
     assert_match "no saved Dropbox credentials", output
   end
 end
