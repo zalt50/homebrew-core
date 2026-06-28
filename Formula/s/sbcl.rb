@@ -1,10 +1,10 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "https://www.sbcl.org/"
-  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.6.5/sbcl-2.6.5-source.tar.bz2"
-  sha256 "91ec75f647252ed6e6aeae9b1a13f47c7c6cfd9b68488dc69f1a6fea5accb440"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.6.6/sbcl-2.6.6-source.tar.bz2"
+  sha256 "a65a7a30812aaf54925d1192b9b9e810f527c79911c6000b7548105aef7da34b"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
-  compatibility_version 4
+  compatibility_version 5
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
   livecheck do
@@ -23,6 +23,13 @@ class Sbcl < Formula
 
   depends_on "ecl" => :build
   depends_on "zstd"
+
+  # Revert an arm64 UTF-8 c-string SIMD change that miscompiles string reads and
+  # deadlocks multi-process dependents (e.g. fricas); fixed differently after 2.6.6.
+  patch do
+    file "Patches/sbcl/revert-utf8-c-string-simd-regression.patch"
+    type :unofficial
+  end
 
   def install
     # Remove non-ASCII values from environment as they cause build failures
