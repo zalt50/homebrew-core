@@ -11,7 +11,7 @@ class Checkstyle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ee7db38b2d1c600ec3c708cf1acdb6e6f60866327999f5a30bfad704be03e636"
+    sha256 cellar: :any_skip_relocation, all: "742d00859d9ddf3aced2e4983c5a98444b120f80d7a3fd262783e2ca0850c445"
   end
 
   depends_on "openjdk"
