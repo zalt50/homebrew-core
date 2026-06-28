@@ -15,13 +15,12 @@ class Purescript < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "6816c04335a5db15f75e148c2c5a32bda26768b80d0b5ff76162a50c568adf6d"
-    sha256 cellar: :any,                 arm64_sequoia: "035715c84e56262a479fb1ea36540aad9a5eabf6c7df5f8492c22d1bb060d50c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c632a186c55a5a4031ab0c935965987506489b165e4b497d55bb1898cd102ffa"
-    sha256 cellar: :any,                 sonoma:        "307a30f58a38fe6991b6362d5f36d8b22094d595aefce3b4630566ee0e03180f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71a6893562316ed81a0b374eb74754435d0f512b727d3430952232d24e8ba397"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ab1488698c461b43eb948dc0dcd752ea4cdad6216ce45ef809b5d49209bf0c7"
+    sha256 cellar: :any, arm64_tahoe:   "e856a32edcdaa55ef9afabd4b6501b84c23e5ec0c2a1956aa0a4f8a3814543b1"
+    sha256 cellar: :any, arm64_sequoia: "a27ecd0a2d2433f7687402e1ec2f2769df37a55a7dacde5d835fd72c61e3194f"
+    sha256 cellar: :any, arm64_sonoma:  "0c443b1a58e29d35021e9e93da312a28d50f9b94f1bd67d9f1532459d2ca9a34"
+    sha256 cellar: :any, sonoma:        "4b53f55f99f4a4df9f1e1c625c00691ee467aadb07a79a575191151ea6bf1dc0"
+    sha256 cellar: :any, arm64_linux:   "5bd9b83b53df4fd41498d98d3e0ad7c081af2b46216b27e849069599fbb27f4a"
+    sha256 cellar: :any, x86_64_linux:  "93caeafe00b03d257834289be6e260de5d7b15e05f59d53381d55f2f0aae53f5"
   end
 
   depends_on "cabal-install" => :build
