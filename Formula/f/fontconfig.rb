@@ -42,14 +42,6 @@ class Fontconfig < Formula
   end
 
   def install
-    font_dirs = %w[
-      /System/Library/Fonts
-      /Library/Fonts
-      ~/Library/Fonts
-    ]
-
-    font_dirs << Dir["/System/Library/Assets{,V2}/com_apple_MobileAsset_Font*"].max if OS.mac?
-
     args = %W[
       --default-library=both
       --localstatedir=#{var}
@@ -58,9 +50,22 @@ class Fontconfig < Formula
       -Dtests=disabled
       -Dtools=enabled
       -Dcache-build=disabled
-      -Ddefault-fonts-dirs=#{font_dirs}
       -Dadditional-fonts-dirs=no
     ]
+
+    # Cannot use default dirs on macOS due to fc-cache recursing unnecessary directories
+    # Issue ref: https://gitlab.freedesktop.org/fontconfig/fontconfig/-/work_items/547
+    if OS.mac?
+      font_dirs = %w[
+        /System/Library/Fonts
+        /Library/Fonts
+        ~/Library/Fonts
+      ]
+      font_dirs << Dir["/System/Library/Assets{,V2}/com_apple_MobileAsset_Font*"].max
+
+      args << "-Ddefault-fonts-dirs=#{font_dirs}"
+    end
+
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
