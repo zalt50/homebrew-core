@@ -1,13 +1,11 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://github.com/openziti/zrok/releases/download/v1.1.11/source-v1.1.11.tar.gz"
-  sha256 "374da7b0cea19c2fa284d8dec5145e3b2374976d23d0f432e1dbcf07c0285073"
+  url "https://github.com/openziti/zrok/releases/download/v2.0.4/source-v2.0.4.tar.gz"
+  sha256 "4da44266316277b4f4b219dd22098534d273f52b08950fca1b22914aebf6f393"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https://github.com/openziti/zrok.git", branch: "main"
-
-  no_autobump! because: :bumped_by_upstream
 
   bottle do
     rebuild 1
@@ -39,10 +37,10 @@ class Zrok < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/openziti/zrok/build.Version=v#{version}
-      -X github.com/openziti/zrok/build.Hash=#{tap.user}
+      -X github.com/openziti/zrok/v2/build.Version=v#{version}
+      -X github.com/openziti/zrok/v2/build.Hash=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:), "./cmd/zrok"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/zrok2"
 
     generate_completions_from_executable(bin/"zrok", shell_parameter_format: :cobra)
   end
@@ -66,6 +64,6 @@ class Zrok < Formula
     assert_match(/[[a-f0-9]{40}]/, version_output)
 
     status_output = shell_output("#{bin}/zrok controller validate #{testpath}/ctrl.yml 2>&1")
-    assert_match("expiration_timeout = 24h0m0s", status_output)
+    assert_match(/expiration_timeout\s+:\s+24h0m0s/, status_output)
   end
 end
