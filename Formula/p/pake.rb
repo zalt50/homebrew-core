@@ -1,8 +1,8 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.12.1.tgz"
-  sha256 "19b24005c5f8465ddc30e1c31c3d623244b33f866b90e29b4a4e5b62e8857ff8"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.13.0.tgz"
+  sha256 "12f9316eb0cd57342904cd33135ba9e64c81fd82aee2849273e827b2efa52f4e"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -22,8 +22,8 @@ class Pake < Formula
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
   resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.8.0.tgz"
-    sha256 "72528f1a8235a8bc19855e21cc5ae28252c276338afa73887dc7e54515bc76c5"
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.0.tgz"
+    sha256 "19b87e2ce3a77fec0121ac97d7db088aae28aacfff481adab50d5f61b70e68f4"
   end
 
   resource "node-gyp" do
