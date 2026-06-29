@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://seaweedfs.com"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.36",
-      revision: "d0b90d29eb6c3cfad1f9c0f80d671c72c4ec1d27"
+      tag:      "4.37",
+      revision: "c06a2dca879cdbe742246d812431fbe2de01357b"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -55,8 +55,9 @@ class Seaweedfs < Formula
           "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
     sleep 30
 
-    # Upload a test file
-    fid = JSON.parse(shell_output("curl http://localhost:#{master_port}/dir/assign"))["fid"]
+    # Upload a test file. Volumes are created lazily, so grow one first.
+    system "curl", "-s", "http://localhost:#{master_port}/vol/grow?count=1&replication=000"
+    fid = JSON.parse(shell_output("curl -s http://localhost:#{master_port}/dir/assign"))["fid"]
     system "curl", "-F", "file=@#{test_fixtures("test.png")}", "http://localhost:#{volume_port}/#{fid}"
 
     # Download and validate uploaded test file against the original
