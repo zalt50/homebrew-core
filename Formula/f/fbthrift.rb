@@ -1,8 +1,8 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2026.06.22.00.tar.gz"
-  sha256 "9214807e0e84bf0ce89184b4d1e6f40394eae2783a87f9b9ce6ddf3358d63061"
+  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2026.06.29.00.tar.gz"
+  sha256 "e6a1d865752c434acd35b7170bd478f4f8eb2a18239f409f7c102baecca05778"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
@@ -36,13 +36,6 @@ class Fbthrift < Formula
   on_linux do
     depends_on "boost"
     depends_on "zlib-ng-compat"
-  end
-
-  # GCC 13 libstdc++ no longer pulls in <cstring> for std::memcpy etc.
-  # PR ref: https://github.com/facebook/fbthrift/pull/703
-  patch do
-    url "https://github.com/facebook/fbthrift/commit/988aa3612c254e528d20024b2faf02d854927900.patch?full_index=1"
-    sha256 "a57ceff413e1ee2a9b72870aba85107a168ddaf40171a94982b94b566226f598"
   end
 
   def install
