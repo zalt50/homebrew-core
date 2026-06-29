@@ -14,12 +14,12 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d4adaa090532a10bb29ce8b65baa06b566573a25ec99a6c52eccf2d01f023db3"
-    sha256 cellar: :any, arm64_sequoia: "a93fa82ef767827903f94c9e48851cdba65f25f2bd9b2d83c304759cfa405661"
-    sha256 cellar: :any, arm64_sonoma:  "ab85b90305ae95a99ac77e698915b203386f12ece2589f3a3df4277b43472bb9"
-    sha256 cellar: :any, sonoma:        "c96132fb0f995ee4721f905ab9dd2a304acc686125c90dcb4be26d2ded4b2d98"
-    sha256 cellar: :any, arm64_linux:   "fb2767f05a879c00f45b812848483c78f71715cd71480ab65fab8c090969dd15"
-    sha256 cellar: :any, x86_64_linux:  "8d906c69a2459222bf6abb469f803ff0bbde16613ce5a5ce96201f56b9736f79"
+    sha256 cellar: :any, arm64_tahoe:   "32ebffcca9f656f37501c84b6785b79a4f74f0a96cbce36ff7a3ed0b57f0b7b5"
+    sha256 cellar: :any, arm64_sequoia: "71d246f6f5502efcbed618b17961caf4521166bd9c44cb358851f9c743b04fa0"
+    sha256 cellar: :any, arm64_sonoma:  "435d1acc07dfd620e6b9284ae6aa21dc3675bc6e6b450a73aad2136b66e98cf6"
+    sha256 cellar: :any, sonoma:        "368529cdfb504acbaf62ab59f19d2159beb7ecf1da5ebbe50b5e312d8476bc92"
+    sha256 cellar: :any, arm64_linux:   "d990d7d6e8e8a4f311c64f6977c050574f0b56e1b4036fc4bc8a0fdf6442647b"
+    sha256 cellar: :any, x86_64_linux:  "340b996e6b32e04e327b77eb62b40f8f98befea82c4bbb9200186158a1913178"
   end
 
   depends_on "openssl@3"
