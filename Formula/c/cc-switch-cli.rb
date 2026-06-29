@@ -1,8 +1,8 @@
 class CcSwitchCli < Formula
   desc "All-in-one assistant tool for Claude Code, Codex, Gemini, OpenCode and OpenClaw"
   homepage "https://github.com/SaladDay/cc-switch-cli"
-  url "https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.8.5.tar.gz"
-  sha256 "6aca4a27b203d59b3ff2243455e6f552e2c67be8da871a22bedf2b211d350fcc"
+  url "https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.8.6.tar.gz"
+  sha256 "196f78656755450e29d19557bd2b7a9d0de76ebb5e9c0e7c0868023152a25cf9"
   license "MIT"
   head "https://github.com/SaladDay/cc-switch-cli.git", branch: "main"
 
