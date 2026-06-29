@@ -1,8 +1,8 @@
 class Rizin < Formula
   desc "UNIX-like reverse engineering framework and command-line toolset"
   homepage "https://rizin.re"
-  url "https://github.com/rizinorg/rizin/releases/download/v0.8.2/rizin-src-v0.8.2.tar.xz"
-  sha256 "1630ca52bae86f2ff37eb220699fc82f951b5b18080edfa3f50dd36a526c2d95"
+  url "https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-src-v0.9.1.tar.xz"
+  sha256 "7ac1cd7daca7afdda742e15478b1f747fc1f813e496fee71839d1e109e543dca"
   license "LGPL-3.0-only"
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
@@ -20,6 +20,7 @@ class Rizin < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "blake3"
   depends_on "capstone"
   depends_on "libmagic"
   depends_on "libzip"
@@ -30,6 +31,7 @@ class Rizin < Formula
   depends_on "xxhash"
   depends_on "xz" # for lzma
   depends_on "zstd"
+  depends_on "zydis"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -39,6 +41,7 @@ class Rizin < Formula
     args = %W[
       -Dpackager=#{tap.user}
       -Dpackager_version=#{pkg_version}
+      -Duse_sys_blake3=enabled
       -Duse_sys_capstone=enabled
       -Duse_sys_libzip_openssl=true
       -Duse_sys_libzip=enabled
@@ -48,16 +51,17 @@ class Rizin < Formula
       -Duse_sys_magic=enabled
       -Duse_sys_openssl=enabled
       -Duse_sys_pcre2=enabled
+      -Duse_sys_tree_sitter=enabled
       -Duse_sys_xxhash=enabled
       -Duse_sys_zlib=enabled
-      -Duse_sys_tree_sitter=enabled
+      -Duse_sys_zydis=enabled
       -Dextra_prefix=#{HOMEBREW_PREFIX}
       -Denable_tests=false
       -Denable_rz_test=false
       --wrap-mode=nodownload
     ]
 
-    fallback = %w[rzgdb rzwinkd rzar rzqnx tree-sitter-c rzspp rizin-shell-parser rzheap]
+    fallback = %w[blake2 rzgdb rzwinkd rzar rzqnx rzspp rizin-shell-parser rzheap]
     fallback << "ptrace-wrap" unless OS.mac?
     args << "--force-fallback-for=#{fallback.join(",")}"
 
