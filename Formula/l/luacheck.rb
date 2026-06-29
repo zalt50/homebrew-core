@@ -1,11 +1,20 @@
 class Luacheck < Formula
   desc "Tool for linting and static analysis of Lua code"
   homepage "https://luacheck.readthedocs.io/"
-  url "https://github.com/lunarmodules/luacheck/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "8efe62a7da4fdb32c0c22ec1f7c9306cbc397d7d40493c29988221a059636e25"
   license "MIT"
   revision 1
   head "https://github.com/lunarmodules/luacheck.git", branch: "master"
+
+  stable do
+    url "https://github.com/lunarmodules/luacheck/archive/refs/tags/v1.2.0.tar.gz"
+    sha256 "8efe62a7da4fdb32c0c22ec1f7c9306cbc397d7d40493c29988221a059636e25"
+
+    # Backport fix for Lua 5.5
+    patch do
+      url "https://github.com/lunarmodules/luacheck/commit/eea104d82fa66f27df2a7d900b3c271a6ca122ac.patch?full_index=1"
+      sha256 "94428b33a30a6695b6fed1aee7d065c7a5219165ea645a68d106e3dd375274af"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e93fc65e7bb98c16badb77b3522aed6a606f0f125b7f2099c0c584560e14404"
@@ -17,16 +26,12 @@ class Luacheck < Formula
   end
 
   depends_on "luarocks" => :build
-  # Blockers for Lua 5.5:
-  # https://github.com/lunarmodules/luacheck/pull/136
-  # https://github.com/lunarmodules/luacheck/issues/134
-  # https://github.com/luarocks/argparse/commit/7c71eb8ce6f75b57c35181c39f93738d67a862fe
-  depends_on "lua@5.4"
+  depends_on "lua"
 
   uses_from_macos "unzip" => :build
 
   def install
-    system "luarocks", "make", "--tree=#{libexec}", "--local", "--lua-dir=#{formula_opt_prefix("lua@5.4")}"
+    system "luarocks", "make", "--tree=#{libexec}", "--local", "--lua-dir=#{formula_opt_prefix("lua")}"
     bin.install_symlink libexec.glob("bin/*")
   end
 
