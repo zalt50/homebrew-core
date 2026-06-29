@@ -4,6 +4,7 @@ class Msolve < Formula
   url "https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "213caf0d0e19447d0adbc3bc946c03ba5054da79495c207b9cd8577fddf86a4c"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/algebraic-solving/msolve.git", branch: "master"
 
   bottle do
