@@ -7,12 +7,12 @@ class SwiftOutdated < Formula
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e79fdbd93ad0f2f736710607c9f57618de0a6390da333714206e79e71940bef"
-    sha256 cellar: :any,                 arm64_sequoia: "a686f8d67f6b0046e0179ab6329dd73c25ec0f07cb09e01b1d69b55b207f270b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3680aca5f2ccd0980e6c60c06f48ff6a362b54ce315ca260843d4524f6e5d8aa"
-    sha256 cellar: :any,                 sonoma:        "d6d2318fcd51c3d34e07b9c2691ea111c68bf59ef634be15b9a122219c3bda10"
-    sha256 cellar: :any,                 arm64_linux:   "63eaa3e9f9f55902d397c499e6ddf5c92d2ab1a0c524ab1d0a9325b23feff08a"
-    sha256 cellar: :any,                 x86_64_linux:  "69d5f2fb54bfa6b06f773deb74d78778ac17dda76ea81f506af8d4f81c37568d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4889e30ba65d0d7573b4477d90c19723e56a8ea66e9467db31b7e998093fa507"
+    sha256 cellar: :any,                 arm64_sequoia: "41ed161108a604415f4782ce433533e754010a2fb590aab88ac611510151143e"
+    sha256 cellar: :any,                 arm64_sonoma:  "64bd227bec9819a11171b77e8600e5e88e08beca082bc23da1fe0ed2048d06e8"
+    sha256 cellar: :any,                 sonoma:        "8e369dc7bb807fbe1430a0e2986c6068e88b3e2269cc1db64ebb297f3e308f16"
+    sha256 cellar: :any,                 arm64_linux:   "2c4ec04032b6ceb904514b61a5788fa84ad02a1d2f1e79f2cc32cd100456971c"
+    sha256 cellar: :any,                 x86_64_linux:  "20d50831842f8b4cbf8a58ad3af1b527891abe02181a964468c7a3f8b64623f9"
   end
 
   uses_from_macos "swift" => :build, since: :tahoe # swift 6.2+
