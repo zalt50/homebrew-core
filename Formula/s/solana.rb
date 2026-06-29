@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://www.anza.xyz/"
-  url "https://github.com/anza-xyz/agave/archive/refs/tags/v4.0.3.tar.gz"
-  sha256 "b0698f0c43e1299bf4d80df6d0153e99d1c5964065b7a8623d987f0cad3b7a30"
+  url "https://github.com/anza-xyz/agave/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "0078be7b61bcd38956f4bdbae0ec16eba92ef0db99c5ae502cf2f2a3897938cc"
   license "Apache-2.0"
   version_scheme 1
 
@@ -28,10 +28,6 @@ class Solana < Formula
   depends_on "rocksdb"
 
   uses_from_macos "bzip2"
-
-  # Work around Homebrew-specific issue using Apple Clang 1700 (LLVM 19) by updating cc-rs
-  # https://github.com/Homebrew/brew/issues/21112
-  patch :DATA
 
   def install
     # Work around librocksdb-sys build failure with Apple libclang, "Library not loaded: @rpath/libclang.dylib"
@@ -69,21 +65,3 @@ class Solana < Formula
     assert_match version.to_s, shell_output("#{bin}/solana-keygen --version")
   end
 end
-
-__END__
-diff --git a/Cargo.lock b/Cargo.lock
-index 045adc06b4..5ffbb89f1c 100644
---- a/Cargo.lock
-+++ b/Cargo.lock
-@@ -1720,9 +1720,9 @@ checksum = "37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5"
- 
- [[package]]
- name = "cc"
--version = "1.2.16"
-+version = "1.2.21"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "be714c154be609ec7f5dad223a33bf1482fff90472de28f7362806e6d4832b8c"
-+checksum = "8691782945451c1c383942c4874dbe63814f61cb57ef773cda2972682b7bb3c0"
- dependencies = [
-  "jobserver",
-  "libc",
