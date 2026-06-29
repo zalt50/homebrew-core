@@ -1,10 +1,10 @@
 class Coal < Formula
   desc "Extension of the Flexible Collision Library"
   homepage "https://github.com/coal-library/coal"
-  url "https://github.com/coal-library/coal/releases/download/v3.0.3/coal-3.0.3.tar.gz"
-  sha256 "d1afcc0c22477a61e93e070a01cc8ed1d256a96ec65d308844d24b9caf771d36"
+  url "https://github.com/coal-library/coal/releases/download/v3.0.4/coal-3.0.4.tar.gz"
+  sha256 "0a9091aa281f51b9513f11aae39758a6188bca63010524f36b3bdc566381ca4a"
   license "BSD-2-Clause"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/coal-library/coal.git", branch: "devel"
 
   livecheck do
