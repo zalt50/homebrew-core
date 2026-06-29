@@ -7,12 +7,12 @@ class Flecs < Formula
   head "https://github.com/SanderMertens/flecs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "322987e6f93be696986ec646a8ee045269e761ba024337ba0bbc19dde55f41e1"
-    sha256 cellar: :any,                 arm64_sequoia: "2bfadf9de51d17b7415e8ee5f33f6a6219346783ce580829977b0cd5174cc65b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9150de85591ea2b235a7ab7946f3e70699dab3c47c8b8cd33183f7605185b07"
-    sha256 cellar: :any,                 sonoma:        "c3ba051542dd8e78b9baaba0fcf8bb00923c0fa48980e527990053775cca644c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94245debe43b8ebd697c465405ba1a3c98ad20c0cad0e97024af4cf1834c002c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1975d8f3cc46c3030bc9c0b9e754da541e66433c069f06bcceaedd47a6382129"
+    sha256 cellar: :any, arm64_tahoe:   "ff3072358d9b3dd138b664c538ef4e9ba0079a46a48cf701bccb7d43222b2dcc"
+    sha256 cellar: :any, arm64_sequoia: "69ab4a56cd892d2741b1522f1208a14808bcd350424a994dce38bc60f916349d"
+    sha256 cellar: :any, arm64_sonoma:  "a86f72a1a82c9a6bc9f09abc8d6d95d4da8437bc4282d9cbe507437cfafe3c4f"
+    sha256 cellar: :any, sonoma:        "7c1a948ae4396736a9ec9dbc12d1807a6e4b71d4596b9f47c66cae70dfe7969e"
+    sha256 cellar: :any, arm64_linux:   "7a36d4e90582f7ed5106ddd56f2662cfd3bd158ad3f03647cc3492df4334f3a8"
+    sha256 cellar: :any, x86_64_linux:  "50ba973b76ba09922735c6ed903f5f93326dae73c2112dd62cce5d0543b84a23"
   end
 
   depends_on "cmake" => [:build, :test]
