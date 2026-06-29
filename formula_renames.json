@@ -180,6 +180,7 @@
   "trust-dns": "hickory-dns",
   "twine-pypi": "twine",
   "usbmuxd": "libusbmuxd",
+  "vultr": "vultr-cli",
   "wcurl": "curl",
   "weboob": "woob",
   "wires": "geckodriver",
