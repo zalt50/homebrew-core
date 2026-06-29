@@ -15,6 +15,15 @@ class VultrCli < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05de5162411d2b6962f55e3b874cf31758bbf4ccf932163b0c8a09c308a0db1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05de5162411d2b6962f55e3b874cf31758bbf4ccf932163b0c8a09c308a0db1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05de5162411d2b6962f55e3b874cf31758bbf4ccf932163b0c8a09c308a0db1b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bfbceb9b146d864cae633b2fa16bf019e23d3210f972e25585937374e6ea7cfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d228108ed539a91757a8e0eca8841adf15b1a09e47c3c278439c4e06c44e9a9d"
+    sha256 cellar: :any,                 x86_64_linux:  "2eedb95f977caa54cc72a1c0b558cce2e97af544bd870b9e6993a82417f63116"
+  end
+
   depends_on "go" => :build
 
   def install
