@@ -51,6 +51,7 @@ class FfmpegFull < Formula
   depends_on "opencore-amr"
   depends_on "openjpeg"
   depends_on "opus"
+  depends_on "qrencode"
   depends_on "rav1e"
   depends_on "rubberband"
   depends_on "sdl2-compat"
@@ -113,6 +114,7 @@ class FfmpegFull < Formula
       --enable-libmp3lame
       --enable-libopus
       --enable-libplacebo
+      --enable-libqrencode
       --enable-librav1e
       --enable-librist
       --enable-librubberband
