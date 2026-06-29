@@ -1,8 +1,8 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/refs/tags/v2026.06.22.00.tar.gz"
-  sha256 "3bcfd5a4ba0065d24632f38e2286c73173f0b5a5bdfd1a21e278ef8e9ebe8363"
+  url "https://github.com/facebook/folly/archive/refs/tags/v2026.06.29.00.tar.gz"
+  sha256 "75520ee4a0e6aae4aa0c59ff61c908398ded8394ede95d038d20ce5994947567"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
@@ -39,11 +39,6 @@ class Folly < Formula
   end
 
   # Fix fmt 12.2 compat: https://github.com/facebook/folly/pull/2661
-  patch do
-    url "https://github.com/facebook/folly/commit/4091b8d53a07512d9f8ab2b42d2dd0fddef34e35.patch?full_index=1"
-    sha256 "52a2ed7475ba76e54cd902ae035cbc457af565ff0c2cc70453a58fc01b3bc7e9"
-  end
-
   patch do
     url "https://github.com/facebook/folly/commit/dd2a73e8a3b7a9e044918507d52a780cb181f63d.patch?full_index=1"
     sha256 "3b6138a50d31d785817058df5009343b35d52a8386d494e8e5f62202efcc419e"
