@@ -2,8 +2,8 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.64.0",
-      revision: "f5fddde63d8af22d0b39c4b3d417f34d3f7594ef"
+      tag:      "0.66.0",
+      revision: "e7d0d0bcea543f8978ea7ad7987d63f03908de50"
   license "BSD-2-Clause"
 
   bottle do
@@ -21,6 +21,12 @@ class Ponyc < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport to fix shadowing system headers
+  patch do
+    url "https://github.com/ponylang/ponyc/commit/bae6fbbf9e6e8c55ef7614999e4160f553359de6.patch?full_index=1"
+    sha256 "dbe4bc81eb02958da8d5a500a5c28c0bf9ec923186bc557a230fdeadc2139914"
   end
 
   def install
