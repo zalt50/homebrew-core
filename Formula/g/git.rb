@@ -1,8 +1,8 @@
 class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.54.0.tar.xz"
-  sha256 "f689162364c10de79ef89aa8dbf48731eb057e34edbbd20aca510ce0154681a3"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.55.0.tar.xz"
+  sha256 "457fdb04dc8728e007d4688695e6912e6f680727920f2a40bf11eacc17505357"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later",  # imap-send.c; trace.c; ...
@@ -53,8 +53,8 @@ class Git < Formula
   end
 
   resource "html" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.54.0.tar.xz"
-    sha256 "7ff72bfdfed4f20563f34416cf27614fb9c35bfad590db0062f2a0a9636514e4"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.55.0.tar.xz"
+    sha256 "d1142c4e28b469d297d6df6519653e92a76c952f55202fde17a72a3b03d49437"
 
     livecheck do
       formula :parent
@@ -62,8 +62,8 @@ class Git < Formula
   end
 
   resource "man" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.54.0.tar.xz"
-    sha256 "292062d18f3a215213ea8317ed22b94f02ad9572520b9293164d7db3eb888953"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.55.0.tar.xz"
+    sha256 "a32d432f80df46a14a05d1104c72d5a13fe27e9feba9aa0f017e54131db6b982"
 
     livecheck do
       formula :parent
@@ -114,6 +114,7 @@ class Git < Formula
       CFLAGS=#{ENV.cflags}
       LDFLAGS=#{ENV.ldflags}
       NO_TCLTK=1
+      NO_RUST=1
     ]
 
     args += if OS.mac?
@@ -136,9 +137,7 @@ class Git < Formula
     # Install the macOS keychain credential helper
     if OS.mac?
       cd "contrib/credential/osxkeychain" do
-        system "make", "CC=#{ENV.cc}",
-                       "CFLAGS=#{ENV.cflags}",
-                       "LDFLAGS=#{ENV.ldflags}"
+        system "make", *args
         git_core.install "git-credential-osxkeychain"
         system "make", "clean"
       end
