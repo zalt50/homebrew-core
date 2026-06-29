@@ -1,8 +1,8 @@
 class Waffle < Formula
   desc "C library for selecting an OpenGL API and window system at runtime"
   homepage "https://waffle.freedesktop.org/"
-  url "https://waffle.freedesktop.org/files/release/waffle-1.8.2/waffle-1.8.2.tar.xz"
-  sha256 "1254afcddc7e2971fd1f8a543c7d0882d254a09d154fab00fe9fb5f4037b9f1c"
+  url "https://waffle.freedesktop.org/files/release/waffle-1.8.3/waffle-1.8.3.tar.xz"
+  sha256 "333751a6684370717d4d6327061834f2fbdfe687478d7d3c6b1ab27f57c90877"
   license "BSD-2-Clause"
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
 
@@ -15,6 +15,7 @@ class Waffle < Formula
     sha256               x86_64_linux:  "5222c94e098d3c6bcc26145aab343651db5bdb78d3436f7b7e3e898659acc48c"
   end
 
+  depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
