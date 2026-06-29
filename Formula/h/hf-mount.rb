@@ -1,8 +1,8 @@
 class HfMount < Formula
   desc "Mount Hugging Face Buckets and repos as local filesystems"
   homepage "https://github.com/huggingface/hf-mount"
-  url "https://github.com/huggingface/hf-mount/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "38e1e367eddaf1ee0fbba44ed0b449a233704cf00f594076f298907e75ebb281"
+  url "https://github.com/huggingface/hf-mount/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "c97ff8de88bbf810fe41155728c715773d00076775b43196771da2c9d30dd556"
   license "Apache-2.0"
   head "https://github.com/huggingface/hf-mount.git", branch: "main"
 
