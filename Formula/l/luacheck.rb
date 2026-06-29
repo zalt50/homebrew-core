@@ -17,12 +17,13 @@ class Luacheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e93fc65e7bb98c16badb77b3522aed6a606f0f125b7f2099c0c584560e14404"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "545ef824db8e8864f4ba49156123f66db29b9ec37db0c95c5b2424b099259587"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2d271724f596f98e71be5bd4c9d311117d2082fe5eae3ba2f9f7e20e2a29721"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b76cf3029832d0264fd142ac4abaf34db5138f7e06ac3f43f00a16a0f6c78967"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62ef7a9c5ca645b8a28717296653c402520acb73ef9fbd3af40d84dbb7bc2d63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b3ca9857d49e8b51863bc47d95e58b6ed801e46880375c539160e0bfb2af2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47abd7b613466d911acb17b8e58f503620b85ede27555aa5dd7961e98d7d3bdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1307faab569321d52282f0d80841f030c52f097545489d3e538229a5cc605883"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dea250ce1ef474d4d52aef628332f449a53eb0d10aeb1b171796ef545143573"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5710f2c553d6237cc5607e1c2780c285467ffc7ed9c2fc990db12e8d96b32abc"
+    sha256 cellar: :any,                 arm64_linux:   "80288fccea7a08ee549c0a332a049b92de291440b905dea4a7d1251abd730b2e"
+    sha256 cellar: :any,                 x86_64_linux:  "de5fe88d34b1e15e80798657677acc59e22f2d39a6a4a263c60fe8a215cffa8e"
   end
 
   depends_on "luarocks" => :build
