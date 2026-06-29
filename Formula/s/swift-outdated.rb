@@ -1,8 +1,8 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
   homepage "https://github.com/kiliankoe/swift-outdated"
-  url "https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.13.1.tar.gz"
-  sha256 "4913dd634f93a1918c30a75aa2c07e4487f9c53e306a720a08df4208dc8abd4c"
+  url "https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.14.0.tar.gz"
+  sha256 "15551cf280b6262a573f4818d641aa8c526a1558efb2b40f4fc20e7805481a90"
   license "MIT"
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
