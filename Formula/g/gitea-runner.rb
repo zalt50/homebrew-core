@@ -2,8 +2,8 @@ class GiteaRunner < Formula
   desc "Official Actions runner for Gitea"
   homepage "https://gitea.com/gitea/runner"
   url "https://gitea.com/gitea/runner.git",
-      tag:      "v1.0.8",
-      revision: "c749e52bb712bf8029bc8d9193297e32740305c6"
+      tag:      "v2.0.0",
+      revision: "b7f6b6d90a181d3f78db88c6a44e77bc39786993"
   license "MIT"
 
   bottle do
