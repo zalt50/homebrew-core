@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/49/e4/29bf98d3b92dca7e6a0650a4b82d73eaba1bbb20eefa1ad0c53b41faf7d1/esphome-2026.6.2.tar.gz"
-  sha256 "9f8df255a9ad4e0953ef12dcce0a4d21fc6825ac8a351988ce6b56a7c7325d4a"
+  url "https://files.pythonhosted.org/packages/44/3d/10a5e49d85c354e765653e1647fd68f37d1d34b5c4d32e70e6372d1a3a69/esphome-2026.6.3.tar.gz"
+  sha256 "c4e1cbfa55968093a1446cb22cd33dc86db310cc32eda1f70d6d12df3b2a6a63"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -56,8 +56,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "argcomplete" do
@@ -421,8 +421,8 @@ class Esphome < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/83/34/c981e760690f7b7dc91532d4d4ad21e3922887aaa425a0e7bff8067152da/zeroconf-0.149.16.tar.gz"
-    sha256 "5e6b5a3b153c2cc2a8d9e6f6f189ec5638f7d9c86fc3e88a6c53eb6863761a5e"
+    url "https://files.pythonhosted.org/packages/09/ea/34bb185645ecaa18d34e5883bffea71aa9bffbbb994634884e8b2f3ad0c4/zeroconf-0.150.0.tar.gz"
+    sha256 "a5fe7feab1de6ef5e541e0a3d07e534fd91629b813fc27281593584100f63164"
   end
 
   def install
