@@ -1,8 +1,8 @@
 class MermaidCli < Formula
   desc "CLI for Mermaid library"
   homepage "https://github.com/mermaid-js/mermaid-cli"
-  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-11.15.0.tgz"
-  sha256 "f6fd0879dbf500e453784bbd9db92ae951097e0e9e8a90ec613f2bd3ca8fa06c"
+  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-11.16.0.tgz"
+  sha256 "65d795191bf9ca6ca90a40a1ea30354a6a491e206674cafd4d9de62fe9075439"
   license "MIT"
 
   bottle do
@@ -27,8 +27,6 @@ class MermaidCli < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
-
-    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
@@ -43,6 +41,6 @@ class MermaidCli < Formula
     EOS
 
     output = shell_output("#{bin}/mmdc -i diagram.mmd -o diagram.svg 2>&1", 1)
-    assert_match "Could not find Chrome", output
+    assert_match "Could not find chrome-headless-shell", output
   end
 end
