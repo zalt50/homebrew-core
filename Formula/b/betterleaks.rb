@@ -7,12 +7,12 @@ class Betterleaks < Formula
   head "https://github.com/betterleaks/betterleaks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0f8c674818a2be1a43212b6f420b4f1506e77d8773f2cc1d18b742e9727993f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0f8c674818a2be1a43212b6f420b4f1506e77d8773f2cc1d18b742e9727993f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0f8c674818a2be1a43212b6f420b4f1506e77d8773f2cc1d18b742e9727993f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c10ffd43034474e9c04420003ebdb8affb8a91eddecc4b700063c54bf0167aa7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c76e694d625df3f6b9cfaa835df443f56a83c236adf7375b5a98cf2c62aab34a"
-    sha256 cellar: :any,                 x86_64_linux:  "e556b9c6bb7864af3c4c5053e5e4733135533a8489b6661aa7526ae187e7da30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c079473c3b46f43ee112e106e1c4ae495946931f8ab5bff8ce6d503bb363495f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c079473c3b46f43ee112e106e1c4ae495946931f8ab5bff8ce6d503bb363495f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c079473c3b46f43ee112e106e1c4ae495946931f8ab5bff8ce6d503bb363495f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5cf0ab77501fcdf0e43b5ee3fb1a41c57b1f67032fd1038d1b8094a787e1307b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03499f85a8be347043cd9c95a35a41a2116bf8cf3870b962db43fa91e2ab38fb"
+    sha256 cellar: :any,                 x86_64_linux:  "7734fad833f79b83902d41c36f1288dbe8f38f94f8655e37b6b10c544e571b68"
   end
 
   depends_on "go" => :build
