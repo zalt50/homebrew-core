@@ -1,17 +1,17 @@
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-54.18.2.tgz"
-  sha256 "6ae86b648df1cb0a3a2331cb3a5bc813731e11dba5aebf1487950c0874bff847"
+  url "https://registry.npmjs.org/vercel/-/vercel-54.18.3.tgz"
+  sha256 "3fe5c3a64b0f2c369009c87f74bab463eb21d9e88cc87c14a7f7b50ae790907a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "46e5668bb381732c2ada39c15c02b021ac5f45179ac4dea8f1ea2d6f0a582ab3"
-    sha256 cellar: :any,                 arm64_sequoia: "a0f98aaaafa93ffc99a56392feea44e344015ba690c3a491be5137bc995969f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0f98aaaafa93ffc99a56392feea44e344015ba690c3a491be5137bc995969f7"
-    sha256 cellar: :any,                 sonoma:        "fa2e94982179e62a781997f689dae355e9abffc2a3823ef7167c41d9cce41984"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4388e3c05f313f4ed58360445c0f964f1f601300b499eb8bcd9c83baceafaff3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17f4afd6a5c762563724301fa58e1f55e44e37ec38e0309f695fd9f1af105f3b"
+    sha256 cellar: :any,                 arm64_tahoe:   "416ef39467c90eb20bdf9fe1fbc8a972a5f02ebd12858f6a7e4e1ef8a65948f5"
+    sha256 cellar: :any,                 arm64_sequoia: "4af8dd1656ff60b0804b39cd0d572cfa8e1d9403ff1f6e2bd71e6f7402ddd99e"
+    sha256 cellar: :any,                 arm64_sonoma:  "4af8dd1656ff60b0804b39cd0d572cfa8e1d9403ff1f6e2bd71e6f7402ddd99e"
+    sha256 cellar: :any,                 sonoma:        "20b154a68d83be653df8efbbd8f6597adba1aaea3c5a4801c1b57881fc149521"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1762f4859547cc7c7c71e2fae7afc890d86ed372bb38124f358cfbbaef7af4a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b52ab6fcdc58e19cb7e5397b9006d3caca8225e294c5aa6f9f12f12fde6adec"
   end
 
   depends_on "node"
