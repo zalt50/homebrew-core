@@ -1,8 +1,8 @@
 class Adapterremoval < Formula
   desc "Rapid adapter trimming, identification, and read merging"
   homepage "https://github.com/MikkelSchubert/adapterremoval"
-  url "https://github.com/MikkelSchubert/adapterremoval/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "08145e38f27bfd94e9c95864365726bc63e9325a8b39b973b9ab6c87bd8c93aa"
+  url "https://github.com/MikkelSchubert/adapterremoval/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "52bef5e9ad5de76a6bd0a1522ad621e95efec0cc23602900bd65a154f96a1f6e"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -30,6 +30,11 @@ class Adapterremoval < Formula
   deny_network_access!
 
   def install
+    # macOS SDK < 15 lacks quick_exit
+    if OS.mac? && DevelopmentTools.clang_build_version < 1700
+      inreplace "src/main.cpp", "std::quick_exit(1);", "std::_Exit(1);"
+    end
+
     args = %w[
       -Db_coverage=false
       -Db_lto=false
