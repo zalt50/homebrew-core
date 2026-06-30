@@ -5,6 +5,7 @@ class Termscp < Formula
   url "https://github.com/veeso/termscp/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "cf3570c396ba36987059729f2704a88b87e4f154914062cf390b038694496be9"
   license "MIT"
+  revision 1
   head "https://github.com/veeso/termscp.git", branch: "main"
 
   bottle do
