@@ -6,12 +6,12 @@ class MimoCode < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "225b286fba1f81f3ebc0a1590eba0a182120bd358d6be7df727917f5713d12b5"
-    sha256                               arm64_sequoia: "225b286fba1f81f3ebc0a1590eba0a182120bd358d6be7df727917f5713d12b5"
-    sha256                               arm64_sonoma:  "225b286fba1f81f3ebc0a1590eba0a182120bd358d6be7df727917f5713d12b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "06b14a44896650afc70ae877b15d53a9b3b0c39220a873f9d7584efc3037c0ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71670b7a2dd7c2f5c235f00d25a0928c33936b4c04dcf0671c476c6f41670ca1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ac395a09617ad7dbd67bf0230e7edb3ef0207dafd879f29ebdad65e3f1bd240"
+    sha256                               arm64_tahoe:   "cf1010b13b18247f35c574fcd36a21c093bdcbb634bce1ac65297f4d74f8a624"
+    sha256                               arm64_sequoia: "cf1010b13b18247f35c574fcd36a21c093bdcbb634bce1ac65297f4d74f8a624"
+    sha256                               arm64_sonoma:  "cf1010b13b18247f35c574fcd36a21c093bdcbb634bce1ac65297f4d74f8a624"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a88447476465764fd3ea0980623d362a91926edf584197686b9f88a59f5ecce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dbd7612bb8d8fb6bc2f99aa1e574164b0f8d4c612c5f1939cfd22ae1f7423a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ca1f2fc88a52596bb2fb7b61f2cb67213b30507e92993df3b9441817869ab50"
   end
 
   depends_on "node"
