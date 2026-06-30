@@ -1,8 +1,8 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "fcd790936fe83650f6579c741fe79ce295604bbcab905fa389fdc778da83377f"
+  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "7915ac88442d9e3a73cf22199a25688b41281e6e0afbccf979fb94d48b143938"
   license "MIT"
 
   bottle do
@@ -16,7 +16,18 @@ class Ladybug < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "openssl@4"
+
   uses_from_macos "python" => :build
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
+  end
+
+  fails_with :clang do
+    build 1600
+    cause "Requires C+++20 support for `std::atomic_ref`"
+  end
 
   fails_with :gcc do
     version "12"
