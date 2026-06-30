@@ -1,9 +1,9 @@
 class Libextractor < Formula
   desc "Library to extract meta data from files"
   homepage "https://www.gnu.org/software/libextractor/"
-  url "https://ftpmirror.gnu.org/gnu/libextractor/libextractor-1.13.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libextractor/libextractor-1.13.tar.gz"
-  sha256 "bb8f312c51d202572243f113c6b62d8210301ab30cbaee604f9837d878cdf755"
+  url "https://ftpmirror.gnu.org/gnu/libextractor/libextractor-1.15.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libextractor/libextractor-1.15.tar.gz"
+  sha256 "189c1ad67574144f55578adc031f09138ddad6bf15aec0bd76cbf37b6e9e0205"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -27,6 +27,11 @@ class Libextractor < Formula
 
   def install
     ENV.deparallelize
+
+    # macOS defines ntohll as a macro, clashing with the local definition
+    inreplace "src/plugins/qt_extractor.c",
+              "static uint64_t\nntohll (uint64_t n)",
+              "#undef ntohll\n\\0"
 
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
