@@ -1,8 +1,8 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
   homepage "https://github.com/kimono-koans/httm"
-  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.50.1.tar.gz"
-  sha256 "06686bb2894fcd6e10ec32ba07d61040ecde3e79a7b9c891a56788bce3a42677"
+  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.50.2.tar.gz"
+  sha256 "5fbe0c376c2fa3d8cd32cebfb4bde1e4980b50892c52b3be242894bc11213614"
   license "MPL-2.0"
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
@@ -34,9 +34,11 @@ class Httm < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/httm --version")
+
     touch testpath/"foo"
-    assert_equal "ERROR: httm could not find any valid datasets on the system.",
-      shell_output("#{bin}/httm #{testpath}/foo 2>&1", 1).strip
-    assert_equal "httm #{version}", shell_output("#{bin}/httm --version").strip
+    output = shell_output("#{bin}/httm #{testpath}/foo 2>&1", 1)
+    assert_match "WARN: httm could not identify any proximate dataset", output
+    assert_match "ERROR: Requested paths do not currently exist", output
   end
 end
