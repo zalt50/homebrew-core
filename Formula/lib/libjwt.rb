@@ -22,12 +22,15 @@ class Libjwt < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "gnutls"
   depends_on "jansson"
   depends_on "openssl@3"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DWITH_TESTS=OFF", *std_cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DWITH_TESTS=OFF
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
