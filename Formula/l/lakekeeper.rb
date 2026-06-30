@@ -7,13 +7,12 @@ class Lakekeeper < Formula
   head "https://github.com/lakekeeper/lakekeeper.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "450f595b56689aee7e7802243b6e36ea9901500433400af2ed7d72fd19ec2ef6"
-    sha256 cellar: :any, arm64_sequoia: "1b501b0b516cc0c29a44ffcfc5cfcbd12dcb51169dcd068e554c93a9734068d7"
-    sha256 cellar: :any, arm64_sonoma:  "89fa374b3a94c07e60a6765dfa627f93bd9e98cf2f9bb041a852f1c17e84e8d9"
-    sha256 cellar: :any, sonoma:        "d4d56fce4bdf54014d042ef495d9caad3845d4ac8661dd924d6c9f2d51d8a7d1"
-    sha256 cellar: :any, arm64_linux:   "1e136fbcf15836c099e618e5c43aa789b7aa35537b50344a1901120daa4a127a"
-    sha256 cellar: :any, x86_64_linux:  "9405b94e255f5f310f380b73a967ce9f2511821941ba888f8a09749e2364ba84"
+    sha256 cellar: :any, arm64_tahoe:   "6ee4c834af397eb58a2442613f644af70239b147d1a9a9c8ede50d58cb8e5837"
+    sha256 cellar: :any, arm64_sequoia: "cd48d0b650b7a42410dc874050ae9f38ab60d0420b653d1106b9e7fff16ca96d"
+    sha256 cellar: :any, arm64_sonoma:  "37a17d8dd3361a7314fd93ea56130c93c436720a4a97a162c920cf519e5492b6"
+    sha256 cellar: :any, sonoma:        "06d5e07c022487ca67bc6eefd9265430ddb56df757e9471228c38a8b5e722f7f"
+    sha256 cellar: :any, arm64_linux:   "ed8aacf9362c0267ee1cb1d99246ae87f656cd82304bf19a5ac1aa56efad5068"
+    sha256 cellar: :any, x86_64_linux:  "1c109407f4e89cffe5d3ded30cde7494a29d27c367a7e8d46fc3150ff2ef2855"
   end
 
   depends_on "cmake" => :build
