@@ -22,13 +22,15 @@ class DatadogStaticAnalyzer < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     system "cargo", "install", "--bin", "datadog-static-analyzer",
                                "--bin", "datadog-static-analyzer-git-hook",
                                *std_cargo_args(path: "crates/bins")
