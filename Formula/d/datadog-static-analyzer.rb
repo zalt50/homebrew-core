@@ -12,12 +12,13 @@ class DatadogStaticAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5a2f484ffab77d59be8701cb5f1648979793cc4c455e891bbf25a8f7cc8a9884"
-    sha256 cellar: :any, arm64_sequoia: "60f0ef43c11bf07fcf31e9d352a6f0f572df51a0f19ae36f06a1dba359f468b9"
-    sha256 cellar: :any, arm64_sonoma:  "7e2e18c0c521823715db82343b9a356c87a51779eb902bb0b2ed7302e29a78e9"
-    sha256 cellar: :any, sonoma:        "a2fcc614b86221c92c48e4bc3848f1f842b80838cb33a0582b0d0e64a8d1cb03"
-    sha256 cellar: :any, arm64_linux:   "9f95fbf89fbdf1a5e92ddad9920ace5aa12259bcea2d724acab8e6625eed6a89"
-    sha256 cellar: :any, x86_64_linux:  "228acaf1b1d26cb1d90d319d967b8df4e547b6b07ae0000e673d6f517277bbe5"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "15c56732e5a8a1be3dd253aa5124d5e0c785e338a7a6114b7bf902a7f08d87de"
+    sha256 cellar: :any, arm64_sequoia: "775341fc12c021061acfd2006ed6396cf11c6a841c32dd422d1e474f399f5fa6"
+    sha256 cellar: :any, arm64_sonoma:  "59df9c4d122091df382c8a22f6dbb17080ce9dfc49fe438180e59f061aa92858"
+    sha256 cellar: :any, sonoma:        "3bdb62b4be3f0aa740287956d30439b5d262d12be22fa3575c9bc6a5759d7ab8"
+    sha256 cellar: :any, arm64_linux:   "35c9af00d5e5f251a8a8aa4e10ed6a710ca07cb4dbfee0467d535a9dd6b37cc7"
+    sha256 cellar: :any, x86_64_linux:  "8d921f49884ab4ea8f9870d0fdc506e3decfbe76c31e544aea70c3b5c90aea4a"
   end
 
   depends_on "pkgconf" => :build
