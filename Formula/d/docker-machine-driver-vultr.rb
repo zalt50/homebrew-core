@@ -16,7 +16,7 @@ class DockerMachineDriverVultr < Formula
   end
 
   depends_on "go" => :build
-  depends_on "docker-machine"
+  depends_on "rancher-machine"
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./machine"
@@ -24,6 +24,6 @@ class DockerMachineDriverVultr < Formula
 
   test do
     assert_match "--vultr-api-key",
-      shell_output("#{Formula["docker-machine"].bin}/docker-machine create --driver vultr -h")
+      shell_output("#{Formula["rancher-machine"].bin}/rancher-machine create --driver vultr -h")
   end
 end
