@@ -23,7 +23,7 @@ class Civetweb < Formula
   end
 
   def install
-    args = %w[
+    args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCIVETWEB_BUILD_TESTING=FALSE
       -DCIVETWEB_ENABLE_ASAN=OFF
@@ -36,6 +36,7 @@ class Civetweb < Formula
       -DCIVETWEB_SSL_OPENSSL_API_3_0=ON
       -DCIVETWEB_SSL_OPENSSL_API_1_1=OFF
       -DCIVETWEB_SSL_OPENSSL_API_1_0=OFF
+      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=TRUE
     ]
     odie "Remove CMake 4 workaround and -DUSE_X_DOM_SOCKET!" if version > "1.16"
