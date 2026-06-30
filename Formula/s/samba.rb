@@ -4,10 +4,10 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.24.3.tar.gz"
-  sha256 "4a5e0ed1ea192b798c873d9957c50a5767c10c2767cccb00d56ecc427e94f8e9"
+  url "https://download.samba.org/pub/samba/stable/samba-4.24.4.tar.gz"
+  sha256 "df2c51ab4361ec626ab9988e5946efcca8465bc7afae834291d5558468265ff8"
   license "GPL-3.0-or-later"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url "https://www.samba.org/samba/download/"
@@ -117,6 +117,7 @@ class Samba < Formula
            "--with-shared-modules=!vfs_snapper",
            "--with-system-mitkrb5",
            "--prefix=#{prefix}",
+           "--libdir=#{lib}",
            "--sysconfdir=#{etc}",
            "--localstatedir=#{var}"
     system "make"
