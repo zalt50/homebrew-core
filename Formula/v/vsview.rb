@@ -10,6 +10,15 @@ class Vsview < Formula
     all_of: ["MIT", "Apache-2.0", "ISC", "OFL-1.1"], # src/vsview/assets/
   ]
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "e6068e8a8cef35dfab481ad0cccf1af046c1f33d0c7ea9df902a8f18cd9f44c2"
+    sha256 cellar: :any, arm64_sequoia: "f399d08eb983fdec937667c8a29c7689bc12fc29f9e2119443399ff6c8833cee"
+    sha256 cellar: :any, arm64_sonoma:  "6214917084596464820a1ea3f13c161bcc96d04b40104601048215ed21d497b5"
+    sha256 cellar: :any, sonoma:        "7fb48e8aef91fb3d6b0b53868269403ec850e2427f058ea8d6352bcdc4a6be79"
+    sha256 cellar: :any, arm64_linux:   "f442fcf40883fd99bb79a28972a2c29504c2fb5b2712b2a9768122ae0292ba4f"
+    sha256 cellar: :any, x86_64_linux:  "cae5ea0dab4b5893f5279ecfbe9ceb60905a6821c84b3316f85a917663bc4420"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
