@@ -11,8 +11,8 @@ class Libselinux < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7c6593d704ae69111347086fc1737b3b951bcf6d262356c76e7867a5a1be5e2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c169a95f3fd4e549145c18114f4c0c4f3c9c51886d41b4ae66b6041cf486a156"
+    sha256 cellar: :any, arm64_linux:  "c997ac2e0dde0159775d383a9a40aa9dea9449d1076963b7a046263ed09bcad7"
+    sha256 cellar: :any, x86_64_linux: "1249c10e7d9e630a71a252d7988d2f5bffa0144174e5c80ff705b89470ec0968"
   end
 
   depends_on "pkgconf" => :build
