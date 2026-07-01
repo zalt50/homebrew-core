@@ -17,6 +17,14 @@ class DockerMachine < Formula
     sha256 cellar: :any,                 x86_64_linux:  "3f01b0ef020ee62c2d6b0517e7868a3e32074cac944bdb60a3f9431bbba3a5c0"
   end
 
+  # After Docker ended support for original docker-machine[^1], we have used
+  # GitLab-maintained fork. However, the fork is now officially deprecated[^2]
+  # and scheduled for removal in GitLab 20.0 (May 2027)
+  #
+  # [^1]: https://docs.docker.com/retired/#docker-machine
+  # [^2]: https://docs.gitlab.com/runner/executors/docker_machine/
+  disable! date: "2027-06-30", because: :deprecated_upstream
+
   depends_on "go" => :build
 
   def install
