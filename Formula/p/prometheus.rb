@@ -1,8 +1,8 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
   homepage "https://prometheus.io/"
-  url "https://github.com/prometheus/prometheus/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "ca7a8dd2c57048bb952a493a2957811c6f380089c2b158c2def484b874c3b6d7"
+  url "https://github.com/prometheus/prometheus/archive/refs/tags/v3.13.0.tar.gz"
+  sha256 "fd0bfdc1390e71c3eeb05532293f9e2a1279e75d3546aa86dc4881627c9e143d"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -25,7 +25,7 @@ class Prometheus < Formula
   depends_on "gnu-tar" => :build
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
+  depends_on "pnpm" => :build
 
   def install
     ENV.deparallelize
@@ -38,10 +38,10 @@ class Prometheus < Formula
     system "make", "build"
     bin.install %w[promtool prometheus]
 
-    (bin/"prometheus_brew_services").write <<~EOS
+    (bin/"prometheus_brew_services").write <<~BASH
       #!/bin/bash
       exec #{bin}/prometheus $(<#{etc}/prometheus.args)
-    EOS
+    BASH
 
     (buildpath/"prometheus.args").write <<~EOS
       --config.file #{etc}/prometheus.yml
