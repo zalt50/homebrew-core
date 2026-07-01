@@ -2,8 +2,8 @@ class Teku < Formula
   desc "Java Implementation of the Ethereum 2.0 Beacon Chain"
   homepage "https://docs.teku.consensys.net/"
   url "https://github.com/ConsenSys/teku.git",
-      tag:      "26.6.1",
-      revision: "6c8bd1265548e13f0e3cf1767bab152c10f6714b"
+      tag:      "26.7.0",
+      revision: "3255b626084d36147a4867ff7cde4467382d512d"
   license "Apache-2.0"
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
