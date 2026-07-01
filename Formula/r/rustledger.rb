@@ -1,8 +1,8 @@
 class Rustledger < Formula
   desc "Fast, pure Rust implementation of Beancount double-entry accounting"
   homepage "https://rustledger.github.io"
-  url "https://github.com/rustledger/rustledger/archive/refs/tags/v0.17.3.tar.gz"
-  sha256 "0bcbed0027ea28b60a03ba1762ed29db9cc7a146333031a47f8a3a09f4eeb227"
+  url "https://github.com/rustledger/rustledger/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "58760d7263ddfd40115500feb550951926ce7ba3bf02a28ceff89332d2745d79"
   license "GPL-3.0-only"
   head "https://github.com/rustledger/rustledger.git", branch: "main"
 
