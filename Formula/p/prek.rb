@@ -1,8 +1,8 @@
 class Prek < Formula
   desc "Fast Git hook manager written in Rust, drop-in alternative to pre-commit"
   homepage "https://prek.j178.dev/"
-  url "https://github.com/j178/prek/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "16126573633d4b1f1034a2a96ac7d628784e85ce3a82dc08bbd7301718259fd8"
+  url "https://github.com/j178/prek/archive/refs/tags/v0.4.6.tar.gz"
+  sha256 "7bfb877c1474df5c362a6d0ee5c0d32d072307b0927c64c8a600e8a24c80b66b"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "master"
 
@@ -28,6 +28,6 @@ class Prek < Formula
     assert_match version.to_s, shell_output("#{bin}/prek --version")
 
     output = shell_output("#{bin}/prek sample-config")
-    assert_match "See https://pre-commit.com for more information", output
+    assert_match "See https://prek.j178.dev for more information", output
   end
 end
