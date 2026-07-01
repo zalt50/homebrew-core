@@ -3,8 +3,8 @@ class Fobis < Formula
 
   desc "KISS build tool for automatically building modern Fortran projects"
   homepage "https://github.com/szaghi/FoBiS"
-  url "https://files.pythonhosted.org/packages/61/d4/d5917ba10b7f8f2127d9d49019435a21ded46338f8ed37e77b85e8fa5978/fobis_py-3.8.17.tar.gz"
-  sha256 "ca42960b58a863a3df164474294a6d3b20533f7043210e78ad28bc41d3b85e3f"
+  url "https://files.pythonhosted.org/packages/15/ea/45b9e7d3567c94a5616ad6a797ef5a2fcd07d784ee35b9c72a425fc61036/fobis_py-3.8.20.tar.gz"
+  sha256 "b75abd9482fe9b599852200dc8cd0411eb5ea61fa2f1fff425b40f9f63e3769f"
   license "GPL-3.0-or-later"
 
   bottle do
