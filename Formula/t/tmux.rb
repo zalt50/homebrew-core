@@ -1,8 +1,8 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https://tmux.github.io/"
-  url "https://github.com/tmux/tmux/releases/download/3.7a/tmux-3.7a.tar.gz"
-  sha256 "8ee44ce951182845fd57ad12dd6f27fb677b1afb900e2e84df4798112ed0dbf0"
+  url "https://github.com/tmux/tmux/releases/download/3.7b/tmux-3.7b.tar.gz"
+  sha256 "87f2e99e3b685973f2ca002ffd6ed7e51a5744f7009daae5a15670b6d532db96"
   license "ISC"
   compatibility_version 1
 
@@ -13,12 +13,12 @@ class Tmux < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "208a851696b7c89f3732be6f181827f1fc643412cfda47febc328715b30ecfc7"
-    sha256 cellar: :any, arm64_sequoia: "653de3a14143f6c70022715f182205686eae480529090dcd281ee5be985db514"
-    sha256 cellar: :any, arm64_sonoma:  "85da7ff24fe3879145396dd52b7ad075af9614d00d3d6b3045b31bfc300d6880"
-    sha256 cellar: :any, sonoma:        "2b5dc6fc996fbff37e79f2211ccd8fd50e154d60fc71e172588a32ba73d5f68a"
-    sha256 cellar: :any, arm64_linux:   "1365d28084623a41dab4d6df698a091b87233d9d7bc3b8a97dfb05de05f95e89"
-    sha256 cellar: :any, x86_64_linux:  "5ef22e6c491aa40e24c8e16512bdca64f5ee5fca2546ff635635c2bac83c94f9"
+    sha256 cellar: :any, arm64_tahoe:   "7fb61b4783521c34eabb64521de582bfe7c4c302a31a8d7fc8a130ae453d520e"
+    sha256 cellar: :any, arm64_sequoia: "6fb9422c77c1cdc6fa518249322880c0880e2da1237ed1e3660341f19cc3efa2"
+    sha256 cellar: :any, arm64_sonoma:  "8907e0911a938bdd25b14ab26fc3cb1f1993a44729cc9dcfa7fbcf51e042e44e"
+    sha256 cellar: :any, sonoma:        "5ee0baf64e0ff4c2dc503abb87c4bca807a59a9da9ab3fcd54e65dbc06335c25"
+    sha256 cellar: :any, arm64_linux:   "84ae807fef2aae78341be98498cc92aaf6cac13b38d683384a02be3d37eb3549"
+    sha256 cellar: :any, x86_64_linux:  "0158cfce6a3c153853ceb325317e72defaec3970030ec05fe83a77edaf8b99d3"
   end
 
   head do
