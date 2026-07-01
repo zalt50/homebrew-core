@@ -6,6 +6,15 @@ class SbomUtility < Formula
   license "Apache-2.0"
   head "https://github.com/CycloneDX/sbom-utility.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f007f8c7f74412af69ca172963772a13d642e1781f8952374236cab1e7d727e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f007f8c7f74412af69ca172963772a13d642e1781f8952374236cab1e7d727e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f007f8c7f74412af69ca172963772a13d642e1781f8952374236cab1e7d727e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5043e026f2fa13387e65c0cb95395558dd8c401e2b6407767862939ac40b50b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fa869c09216f41a2f034933ec94ad9dac9fe4283a44792b127670810ec70a90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dffa5b515f5f05d9001f3a5111148cb41f4816c5412abee43c9da1cb0fa356a"
+  end
+
   depends_on "go" => :build
 
   def install
