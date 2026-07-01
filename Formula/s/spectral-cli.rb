@@ -6,7 +6,7 @@ class SpectralCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fe0de1191ffcd935d7621651f379251f0be2bdfe0c5aa6d061657ccfe734db53"
+    sha256 cellar: :any_skip_relocation, all: "f1952bb89980697e930fe6f8ea446b42ad8026a385307aff83871f1dbd26dcac"
   end
 
   depends_on "node"
