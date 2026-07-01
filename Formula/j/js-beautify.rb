@@ -6,8 +6,7 @@ class JsBeautify < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "4226569ea54d12e2b8bfb9ed3b84917ec00f31a5081e3790591e1c2854807f00"
+    sha256 cellar: :any_skip_relocation, all: "8adba2fdcfb98d4216b4d052f5dc6a76e86a0ef64f4cf685a09f10bb577a26e9"
   end
 
   depends_on "node"
