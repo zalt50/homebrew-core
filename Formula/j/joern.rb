@@ -1,8 +1,8 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
-  url "https://github.com/joernio/joern/archive/refs/tags/v4.0.550.tar.gz"
-  sha256 "4257908f3b2225398b407788385bf04a1aff1cf676bb84a983841ec637cba590"
+  url "https://github.com/joernio/joern/archive/refs/tags/v4.0.570.tar.gz"
+  sha256 "50b438bf0e7bcde19b3c5fdef6e8062a6655711bfaed6dcdaed1469ac236caa0"
   license "Apache-2.0"
 
   livecheck do
@@ -23,7 +23,7 @@ class Joern < Formula
   depends_on "sbt" => :build
   depends_on "astgen"
   depends_on "coreutils"
-  depends_on "openjdk"
+  depends_on "openjdk@25"
   depends_on "php"
 
   on_linux do
@@ -47,7 +47,7 @@ class Joern < Formula
     end
 
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
-      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env
+      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env("25")
     end
   end
 
