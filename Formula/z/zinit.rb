@@ -7,8 +7,7 @@ class Zinit < Formula
   head "https://github.com/zdharma-continuum/zinit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "9f9174dded2850c1d15edeca007e47336e44cff977a7aeb62470ffa29598914a"
+    sha256 cellar: :any_skip_relocation, all: "2fdcbc2caf61741e9ee9282077d37aeb209c5b24c2249ad617a2381bb88d07fe"
   end
 
   uses_from_macos "zsh"
