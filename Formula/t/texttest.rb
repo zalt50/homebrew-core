@@ -3,8 +3,8 @@ class Texttest < Formula
 
   desc "Tool for text-based Approval Testing"
   homepage "https://www.texttest.org/"
-  url "https://files.pythonhosted.org/packages/59/56/76dde8ff62bd8cf7025d3bd9dd2a021391b4aa8e449496c2aa2c5e0a75e7/texttest-4.4.6.tar.gz"
-  sha256 "ddf2210f9b774f43702d1f3204e69ec908db642d10412a55cf5f6c3f72de1f8b"
+  url "https://files.pythonhosted.org/packages/30/11/5b6c9ce24c1b23effa0db201babf7610f15a98ecf6a7c3a00fa68db7a1fe/texttest-4.4.7.tar.gz"
+  sha256 "448d7f2d5c2883841df421d84b325b90067c0d385c4d6a700a6fd1cbe0972318"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -22,8 +22,8 @@ class Texttest < Formula
   depends_on "python@3.14"
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   def install
