@@ -6,6 +6,15 @@ class EpicsBase < Formula
      revision: "bf11a0c31c919ba85ba2e23b72bcf0b5f9f62e77"
   license "EPICS"
 
+  bottle do
+    sha256 arm64_tahoe:   "1d968b86ccf1e6f0ac9719f1c9d1d0d655640c291e46fd770c486f3426494a0c"
+    sha256 arm64_sequoia: "93575bed27b485d2d5b79091a0ce7cf7ef6093017d8c8aa73ab8f5c80deb48e2"
+    sha256 arm64_sonoma:  "140d4597e79db78ecc9153713d4eef31f3373db673c0db7c45b0ce3d8f0a83fa"
+    sha256 sonoma:        "1ed2e59b9059ca2fe5ff9fc4d8eced70a98f6e4b9d8af978e6f81ca179dd3aad"
+    sha256 arm64_linux:   "8927a347d1a0d42ac3ee19e805ae9909928f066323049ac255e2b296b1b3d360"
+    sha256 x86_64_linux:  "b4e7ccfa3d3540c0d181724d4f0068d3735be05eee93b94a0ff52784161e01ff"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "perl"
   depends_on "readline"
