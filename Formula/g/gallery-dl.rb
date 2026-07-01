@@ -3,8 +3,8 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/0f/68/19f4f5996f22ef68b975bd34c2845829e692bdf25aacf9d654755e326056/gallery_dl-1.32.4.tar.gz"
-  sha256 "9804e0584efa3fe41a4ab4f8d34132b6d4fa0dd1c57be324730461b6eb39a81d"
+  url "https://files.pythonhosted.org/packages/b5/d3/1183e8994b48af8850c7eadc3881490d8671a7fb7d044bb839f9b6d028d7/gallery_dl-1.32.5.tar.gz"
+  sha256 "fd49fdefe9573dd04a2fd5bbe72a54325cdbd29f4a7cad760bdf2b9ff7e0e203"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
@@ -58,8 +58,8 @@ class GalleryDl < Formula
   end
 
   resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
-    sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
+    url "https://files.pythonhosted.org/packages/df/70/1675da133ea92227da41bf5b24e1c66be597ff736a1533ade41da986852f/mutagen-1.48.1.tar.gz"
+    sha256 "8f95637ab9f6f305cec6bd1294e197debe207998e3e068596563c74f86b0a173"
   end
 
   resource "pycryptodomex" do
