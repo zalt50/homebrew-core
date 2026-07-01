@@ -1,8 +1,8 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https://tmux.github.io/"
-  url "https://github.com/tmux/tmux/releases/download/3.7a/tmux-3.7a.tar.gz"
-  sha256 "8ee44ce951182845fd57ad12dd6f27fb677b1afb900e2e84df4798112ed0dbf0"
+  url "https://github.com/tmux/tmux/releases/download/3.7b/tmux-3.7b.tar.gz"
+  sha256 "87f2e99e3b685973f2ca002ffd6ed7e51a5744f7009daae5a15670b6d532db96"
   license "ISC"
   compatibility_version 1
 
