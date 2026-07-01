@@ -1,9 +1,9 @@
 class Pinot < Formula
   desc "Realtime distributed OLAP datastore"
   homepage "https://pinot.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=pinot/apache-pinot-1.5.0/apache-pinot-1.5.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/pinot/apache-pinot-1.5.0/apache-pinot-1.5.0-bin.tar.gz"
-  sha256 "8d35fd8596ee490aff0a1d09d884bedb74f883d0a81c86ff1c3d7536636fff3f"
+  url "https://www.apache.org/dyn/closer.lua?path=pinot/apache-pinot-1.5.1/apache-pinot-1.5.1-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/pinot/apache-pinot-1.5.1/apache-pinot-1.5.1-bin.tar.gz"
+  sha256 "805b7525c1c87019211f416c0201e662da8e2c0a57549d624eaf7dcfdc8b14f3"
   license "Apache-2.0"
   head "https://github.com/apache/pinot.git", branch: "master"
 
