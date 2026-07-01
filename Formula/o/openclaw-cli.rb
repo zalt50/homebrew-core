@@ -6,12 +6,12 @@ class OpenclawCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cf238ba2a9e162b0850dd88e054988c75d955498c7d0e687cf6777a3b075e1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cf238ba2a9e162b0850dd88e054988c75d955498c7d0e687cf6777a3b075e1d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cf238ba2a9e162b0850dd88e054988c75d955498c7d0e687cf6777a3b075e1d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "069fdc5901d89f91d5111eca07275ff702439c694fbd6247a008322b495f40d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "966539fdd330240ce23cb1cb432fe430252987e8b2e89a0bb19ddee7106723fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08fc83687541fa9e5225c2b7b5ae4751eb03354e2c7fddcc90ed561aebb8ca86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bee1393b57eb703a0773554514890c585e088174e3aa92bfa13bb5c22e1da425"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bee1393b57eb703a0773554514890c585e088174e3aa92bfa13bb5c22e1da425"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bee1393b57eb703a0773554514890c585e088174e3aa92bfa13bb5c22e1da425"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7affd5aa8d3e8ad9f75c3154bc4d31e88b030ef3e40b575a901d795f11627902"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df95e770b9c00616c69b2cc7c9fc582b39dfde884d5dc3450a64c8e4a4ad5e36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2075fd2441fc795854a96db0f422dc647428b6e663901771c71e75afa74267e"
   end
 
   depends_on "node"
