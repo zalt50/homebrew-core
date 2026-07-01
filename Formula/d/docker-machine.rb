@@ -8,6 +8,11 @@ class DockerMachine < Formula
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
 
+  # Allow autobump to update formula until end-of-life
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "885e5b9d3c4a31fdbb97f2c84496a5eb16945ef9b2ac5b826cecba67f7a749ac"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "885e5b9d3c4a31fdbb97f2c84496a5eb16945ef9b2ac5b826cecba67f7a749ac"
