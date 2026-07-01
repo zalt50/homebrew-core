@@ -12,12 +12,12 @@ class Rustledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dd22954f3ab79d99f6d7e68c026cd488e89e77268ae27903cdf83739891f36c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62a5ed97a57874a17dab62d91463887458e1617457c9a87d7e54568bfcccdffd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f76df2fb9dabdb555ad490c101a728340c599aef6becd3748b08c0b718933d0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "205ac9e1e737aaeb380b4d0fc8f15f705c41bd413bcef6e7dbaa7cf94decbce9"
-    sha256 cellar: :any,                 arm64_linux:   "477d28c31290feb35b1195c3c56192dd15f85521b5cd129c20b0d69897067641"
-    sha256 cellar: :any,                 x86_64_linux:  "e9d3bbc6af074b93c826a423f7139fc267b8133f1657992208cf65827e6c87ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47e8c1093b044c6c3b41bcbd0dc034ab03176fe6dc5b35cd4ca00f9d2efa6540"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a7260caf5c1167c83b4fefd5781638d9558e4bfc8678af36a96466f5f32811f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e49ede7ae504439808c81eb5dca60db6050dd12e53beb077fa4e1075d4337c9d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c8c6d82b4e2907f1d5a679f7586a21fecd13048a231dd0d7502856a6d71e285"
+    sha256 cellar: :any,                 arm64_linux:   "cd2c42f231f3ee43d0713952d8409df7118e37f36e80fbef450c55dfe594d6fb"
+    sha256 cellar: :any,                 x86_64_linux:  "418c4be55c0c45772dbf59e21bfe2b0602dadb7a96d4297e175499984137b305"
   end
 
   depends_on "rust" => :build
