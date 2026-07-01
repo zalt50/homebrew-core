@@ -3,8 +3,8 @@ class Cfripper < Formula
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
   homepage "https://cfripper.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/8e/aa/1a2617f851d5ebd8f77c64b8f51eaa73d1877d73ca9cc14621d1bd66d319/cfripper-1.20.2.tar.gz"
-  sha256 "cf688ef4906843e4ba51c4ecde05e004bc0043043b812b5e4b45ed1fb5c04b96"
+  url "https://files.pythonhosted.org/packages/0c/6b/ae7ef7f1984222dd5a93cf53cdda8f802cf9c3e0855f671dcb15b3a2a89a/cfripper-1.21.0.tar.gz"
+  sha256 "20e9c1b1cb7b2f656ad43fbc1253d80e50b77dc303b873d7520c8be4f6a55a8c"
   license "Apache-2.0"
 
   bottle do
