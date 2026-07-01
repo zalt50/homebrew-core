@@ -3,8 +3,8 @@ class Overturemaps < Formula
 
   desc "Python tools for interacting with Overture Maps data"
   homepage "https://overturemaps.org"
-  url "https://files.pythonhosted.org/packages/d0/65/8327d6961f9e5f526e899d1db376c277094c36f20f23d1a278b66e6939a6/overturemaps-1.0.0.tar.gz"
-  sha256 "2fb9f5d37e2a215259cc1994ddcdf3f312f54f0491aee5457ce48aa9c0514240"
+  url "https://files.pythonhosted.org/packages/36/fc/5b779bf6df4b3b868c26a0ca2d54af2700e630ebdd89d224bd51f3684455/overturemaps-1.0.1.tar.gz"
+  sha256 "c8a975dd8f64442187ce8a9e64840469cfcfac1c930ad09015acfcb1481e548b"
   license "MIT"
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
@@ -33,8 +33,8 @@ class Overturemaps < Formula
   pypi_packages exclude_packages: "numpy"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "colorama" do
@@ -63,8 +63,8 @@ class Overturemaps < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
-    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
+    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
+    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
   end
 
   def install
