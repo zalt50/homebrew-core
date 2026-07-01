@@ -12,6 +12,15 @@ class RancherMachine < Formula
     regex(/^v?(\d+(?:\.\d+)+-rancher\d+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f76435c3175d95ee4eed404bba73573efcb09122763b97798504d47f2be007b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f76435c3175d95ee4eed404bba73573efcb09122763b97798504d47f2be007b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f76435c3175d95ee4eed404bba73573efcb09122763b97798504d47f2be007b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b0b818dbf72e003f90662cb1efae84f0321cfb13298ef2edab61b812ab4095e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "337753acf3898437de9c42ef83126aeb3e665efe1a4caffe9a9e7f160eb50885"
+    sha256 cellar: :any,                 x86_64_linux:  "9ae2d72bdfd7988b492ad848604410786d03c882912b0385aea951d27c522f1c"
+  end
+
   depends_on "go" => :build
 
   def install
