@@ -1,10 +1,9 @@
 class Gitg < Formula
   desc "GNOME GUI client to view git repositories"
   homepage "https://wiki.gnome.org/Apps/Gitg"
-  url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
-  sha256 "342a31684dab9671cd341bd3e3ce665adcee0460c2a081ddc493cdbc03132530"
+  url "https://download.gnome.org/sources/gitg/50/gitg-50.tar.xz"
+  sha256 "331216a86920cd4e8ab9b0036e63cecb3e1a1d1162c61aa31bd6924e985a8154"
   license "GPL-2.0-or-later"
-  revision 9
 
   livecheck do
     url :stable
@@ -50,6 +49,13 @@ class Gitg < Formula
 
   on_macos do
     depends_on "gettext"
+  end
+
+  # Fix build with newer GCC rejecting an invalid ESC universal character name
+  # PR ref: https://gitlab.gnome.org/GNOME/gitg/-/merge_requests/410
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gitg/-/commit/22db29e9069042b4e5c07ee496c62c8c63e9b7d5.diff"
+    sha256 "570f15ebcf61ff7779ad638120a6542b0f045272c77a5b185a27d2c50f2d3a18"
   end
 
   def install
