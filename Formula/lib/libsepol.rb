@@ -1,8 +1,8 @@
 class Libsepol < Formula
   desc "SELinux binary policy manipulation library"
   homepage "https://github.com/SELinuxProject/selinux"
-  url "https://github.com/SELinuxProject/selinux/releases/download/3.10/libsepol-3.10.tar.gz"
-  sha256 "d555586797fa9f38344496d2a7ec1147b6caaf3fcc44c42d8d5173edd7a79a71"
+  url "https://github.com/SELinuxProject/selinux/releases/download/3.11/libsepol-3.11.tar.gz"
+  sha256 "79f3d2c88f44b7eb5cf54d9792e03232297e17f97a179163f2750099a00f164d"
   license "LGPL-2.1-or-later"
 
   livecheck do
