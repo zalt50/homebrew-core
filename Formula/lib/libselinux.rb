@@ -1,8 +1,8 @@
 class Libselinux < Formula
   desc "SELinux library and simple utilities"
   homepage "https://github.com/SELinuxProject/selinux"
-  url "https://github.com/SELinuxProject/selinux/releases/download/3.10/libselinux-3.10.tar.gz"
-  sha256 "1ef216c5b56fb7e0a51cd2909787a175a17ee391e0467894807873539ebe766b"
+  url "https://github.com/SELinuxProject/selinux/releases/download/3.11/libselinux-3.11.tar.gz"
+  sha256 "73d419c6e20e874adaa4019372cbd097eecf4d276e13f27ec5e67d35c0bd203c"
   license :public_domain
 
   livecheck do
