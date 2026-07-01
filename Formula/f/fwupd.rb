@@ -9,12 +9,12 @@ class Fwupd < Formula
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "22b19fc94b22a8301651e006744d24be16b840a1a17afb97a96b7c89fc7d70b3"
-    sha256 arm64_sequoia: "d324179c0ff617be09a88d4ba7fc8fb89449a91dedd234c162a08500a8bc9f46"
-    sha256 arm64_sonoma:  "99a2926bd803ea79fed54d5e388a4623ea82bd5a3d46ff355d3f6eda32a9629f"
-    sha256 sonoma:        "9ceeead750b48b2318382223bdba915b2dd66837673eb889f1329b8196350bb3"
-    sha256 arm64_linux:   "879672ec4e8cb8d86c65522c84e87523dfe6d9bc15a43d7911f8080839725b87"
-    sha256 x86_64_linux:  "532502ebdf1b6643a8b661478748b380f9f3334679cfb76a82b5702c0d4536ce"
+    sha256 arm64_tahoe:   "91da20081a19bd1f2fa0ca19373d667d82a9fd409962695df591a67638252531"
+    sha256 arm64_sequoia: "e08de4b29ab2c9449b778bc3eb9d7991ea4a8e9686e8aa8045826c0b21f22468"
+    sha256 arm64_sonoma:  "f71cf7165dd4b9d3fb77dce77cb73e17daf8d3e83c428d1bd7e1cb52f9c43d0b"
+    sha256 sonoma:        "5a38be9f5f228486eba86a63986ba002823d8670bd75e28f2f524b7144dadc5f"
+    sha256 arm64_linux:   "bcdebb92e4cb502f975f8099c161cfedb3a0bc2d75784652a3d97ef2e1498c39"
+    sha256 x86_64_linux:  "dbb4f4be7f8c295c275870f630119f4c718e2d45eb1b2a00713da3d91730fab4"
   end
 
   depends_on "gettext" => :build # for msgfmt
