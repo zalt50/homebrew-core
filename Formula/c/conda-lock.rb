@@ -3,10 +3,9 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://conda.github.io/conda-lock/"
-  url "https://files.pythonhosted.org/packages/0c/24/a26b28fbff0eee3c10f8153bcfd9b9dfc234e7acf89c07e08852bd23d0f0/conda_lock-4.0.1.tar.gz"
-  sha256 "b0dea35c2d10ad9fe07bacfcb79c090e4817aa148aa493a9faff55415899bd30"
+  url "https://files.pythonhosted.org/packages/06/44/52deb5012f8ef85c224cb3b1638c09c3b3d70b2f9e101e893bb61b9ee9ba/conda_lock-4.0.2.tar.gz"
+  sha256 "c4ebc4404ea760b1dd0035d6403fa27e291050269a5fd1b629b89fcbc75ef32a"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "59fe04005e50dc91247ee17941ef02dfe1f434aedb0dac1fd792f6c4208e4166"
@@ -58,8 +57,8 @@ class CondaLock < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "click-default-group" do
