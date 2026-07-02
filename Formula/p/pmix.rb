@@ -1,7 +1,7 @@
 class Pmix < Formula
   desc "Process Management Interface for HPC environments"
-  homepage "https://openpmix.github.io/"
-  license "BSD-3-Clause"
+  homepage "https://openpmix.org/"
+  license "BSD-3-Clause-Open-MPI"
   compatibility_version 1
 
   stable do
@@ -34,12 +34,15 @@ class Pmix < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+
+    uses_from_macos "flex" => :build
+    uses_from_macos "python" => :build
   end
 
   depends_on "hwloc"
   depends_on "libevent"
 
-  uses_from_macos "python" => :build
+  uses_from_macos "perl" => :build
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -47,8 +50,7 @@ class Pmix < Formula
 
   def install
     # Avoid references to the Homebrew shims directory
-    cc = OS.linux? ? "gcc" : ENV.cc
-    inreplace "src/tools/pmix_info/support.c", "PMIX_CC_ABSOLUTE", "\"#{cc}\""
+    inreplace "src/tools/pmix_info/support.c", "PMIX_CC_ABSOLUTE", "\"#{ENV.cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -65,20 +67,36 @@ class Pmix < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~C
+    # Based on https://github.com/openpmix/openpmix/blob/master/examples/simple.c
+    (testpath/"test.c").write <<~'C'
       #include <stdio.h>
+      #include <stdlib.h>
       #include <pmix.h>
 
-      int main(int argc, char **argv) {
-        pmix_value_t *val;
-        pmix_proc_t myproc;
+      static pmix_proc_t myproc;
+
+      int main(void) {
         pmix_status_t rc;
 
-        return 0;
+        if (PMIX_SUCCESS != (rc = PMIx_Init(&myproc, NULL, 0))) {
+          if (PMIX_ERR_UNREACH != rc) {
+            fprintf(stderr, "Client ns %s rank %d: PMIx_Init failed: %s\n", myproc.nspace, myproc.rank,
+                    PMIx_Error_string(rc));
+            return 1;
+          }
+        }
+
+        rc = PMIx_Finalize(NULL, 0);
+        if (PMIX_SUCCESS != rc) {
+          fprintf(stderr, "Finalize failed: %s\n", PMIx_Error_string(rc));
+        }
+
+        fflush(stderr);
+        return rc;
       }
     C
 
-    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpmix", "-o", "test"
+    system bin/"pmixcc", "test.c", "-o", "test"
     system "./test"
 
     assert_match "PMIX: #{version}", shell_output("#{bin}/pmix_info --pretty-print")
