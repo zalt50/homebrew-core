@@ -1,8 +1,8 @@
 class Graalvm < Formula
   desc "JDK distribution with Graal compiler and Native Image"
   homepage "https://www.graalvm.org/"
-  url "https://github.com/oracle/graal/archive/refs/tags/graal-25.0.2.tar.gz"
-  sha256 "c191206404d4cc706a9b1e2242f0f4b90df7c776a748bcfd8fa1da47d8314839"
+  url "https://github.com/oracle/graal/archive/refs/tags/graal-25.1.3.tar.gz"
+  sha256 "59fcbb0cc886200bb7df6eb95b7fb1ec05d026db452efbfeeb37f278978265d2"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -56,13 +56,14 @@ class Graalvm < Formula
   end
 
   resource "labs-openjdk" do
-    url "https://github.com/graalvm/labs-openjdk/archive/refs/tags/25.0.2+10-jvmci-b01.tar.gz"
-    version "25.0.2+10-jvmci-b01"
-    sha256 "94c47dfdb6e0e658426e0837678d1599aaa8dd919d8754d73ce4d8004e7c667f"
+    url "https://github.com/graalvm/labs-openjdk/archive/refs/tags/jvmci-25.1-b19.tar.gz"
+    version "25.0.3+9-jvmci-25.1-b19"
+    sha256 "cacd7d625adf655a3bfa8b58788b1f67aac5caa312d5e6cf6d880105f2fe8fb6"
 
     livecheck do
+      # FIXME: This regex is not correct
+      # Issue ref: https://github.com/graalvm/labs-openjdk/issues/40
       regex(/(\d+(?:\.\d+)+\+\d+-jvmci-b\d+)/i)
-      strategy :github_releases
     end
   end
 
@@ -100,7 +101,7 @@ class Graalvm < Formula
     ]
 
     labsjdk_version = resource("labs-openjdk").version.to_s
-    match = labsjdk_version.match(/(?<java>\d+(?:\.\d+)+)\+(?<build>\d+)-(?<opt>jvmci-b\d+)/)
+    match = labsjdk_version.match(/(?<java>\d+(?:\.\d+)*)\+(?<build>\d+)-(?<opt>jvmci(?:-\d+(?:\.\d+)*)?-b\d+)/)
     odie "Failed to parse LabsJDK version: #{labsjdk_version}" if match.nil?
 
     args += [
