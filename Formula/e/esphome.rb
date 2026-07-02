@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/44/3d/10a5e49d85c354e765653e1647fd68f37d1d34b5c4d32e70e6372d1a3a69/esphome-2026.6.3.tar.gz"
-  sha256 "c4e1cbfa55968093a1446cb22cd33dc86db310cc32eda1f70d6d12df3b2a6a63"
+  url "https://files.pythonhosted.org/packages/1d/e2/d10f9b8e68374ecb2cc9175e7e1f024aafd0e6a44b146f0af4e8f79dec4d/esphome-2026.6.4.tar.gz"
+  sha256 "c355e50c258d0db37037cf7c928746d67da03efc7856a83f021366cc7bc4fc6f"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -61,8 +61,8 @@ class Esphome < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
-    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
+    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
+    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
   end
 
   resource "async-interrupt" do
