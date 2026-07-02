@@ -1,8 +1,8 @@
 class Libmodbus < Formula
   desc "Portable modbus library"
   homepage "https://libmodbus.org/"
-  url "https://github.com/stephane/libmodbus/archive/refs/tags/v3.1.12.tar.gz"
-  sha256 "4151177f5223625c6be94230affb096aa8b1cdb0df00fe1f74ce53878a25d15d"
+  url "https://github.com/stephane/libmodbus/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "0c61007b2815daf452618f8b877d15cdcd376b71ad5dbd06b330d70f53b2ccaa"
   license "LGPL-2.1-or-later"
   head "https://github.com/stephane/libmodbus.git", branch: "master"
 
