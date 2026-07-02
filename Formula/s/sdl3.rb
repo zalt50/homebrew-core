@@ -26,28 +26,34 @@ class Sdl3 < Formula
   depends_on "pkgconf" => :build
 
   on_linux do
-    depends_on "libice"
-    depends_on "libxcursor"
-    depends_on "libxscrnsaver"
-    depends_on "libxxf86vm"
-    depends_on "pulseaudio"
-    depends_on "xinput"
+    # Features are built into library if dependency is found at build-time.
+    # These are then enabled at runtime if library can be dynamically loaded,
+    # so we can provide extra features via build-only dependencies. This includes
+    # PipeWire and Wayland used on modern Linux which have large dependency trees.
+    depends_on "libxkbcommon" => :build
+    depends_on "mesa" => :build
+    depends_on "pipewire" => :build
+    depends_on "wayland" => :build
+
+    # Runtime dependencies are for older PulseAudio and X11. These are used if
+    # running a Linux container on macOS and should have higher compatibility
+    depends_on "libx11" => :no_linkage
+    depends_on "libxcursor" => :no_linkage
+    depends_on "libxext" => :no_linkage
+    depends_on "libxfixes" => :no_linkage
+    depends_on "libxi" => :no_linkage
+    depends_on "libxrandr" => :no_linkage
+    depends_on "libxscrnsaver" => :no_linkage
+    depends_on "pulseaudio" => :no_linkage
   end
 
   def install
     inreplace "cmake/sdl3.pc.in", "@SDL_PKGCONFIG_PREFIX@", HOMEBREW_PREFIX
 
     args = %w[
-      -DSDL_HIDAPI=ON
-      -DSDL_WAYLAND=OFF
+      -DSDL_TESTS=OFF
       -DSDL_X11_XTEST=OFF
     ]
-
-    args += if OS.mac?
-      ["-DSDL_X11=OFF"]
-    else
-      ["-DSDL_X11=ON", "-DSDL_PULSEAUDIO=ON"]
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
