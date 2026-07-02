@@ -3,18 +3,18 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https://djlint.com"
-  url "https://files.pythonhosted.org/packages/8f/8e/f7cf340f8bb7e2db90853ffbd37ecfd1d6aac5be173f4312c120650a5e95/djlint-1.39.6.tar.gz"
-  sha256 "2afd218644f4f88daef8e0d0a491cc46dfe7096676469f66eb0f00fe6bbcbcd8"
+  url "https://files.pythonhosted.org/packages/b2/e8/4b5093068bdba76f705fc76e990ab3c57c3f3315b303cf9e1bcc3704c862/djlint-1.39.7.tar.gz"
+  sha256 "00178d4a40450e54fb211b137e720ad4e5fd3de913ca1c812eb70c601ac8e50c"
   license "GPL-3.0-or-later"
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a95c2ed3b3f3fee3e97d56502cdd715d8b13671318daab3f083c758e9df8cf09"
-    sha256 cellar: :any, arm64_sequoia: "f16722f1716796f790eda39e67383b955aa1c1056f1b00e1090a42088c54ae32"
-    sha256 cellar: :any, arm64_sonoma:  "2b48196f81dedde5c900385139c38f98098f3ba5c1a5f0f23df3f14dcbba3de0"
-    sha256 cellar: :any, sonoma:        "ddc38395e3f91ef0fe2dd5503ebd4b1cb58c519f767de4f0a428149aebae485b"
-    sha256 cellar: :any, arm64_linux:   "5fb67c5f4a6d5a9bd2db54f7c77f9c2c776d39b3a1c42bcc017435c1c04de363"
-    sha256 cellar: :any, x86_64_linux:  "5fc310f49c0897433754e1d01164b997f2378b248546c60dc45431647f0c04c8"
+    sha256 cellar: :any, arm64_tahoe:   "559c67a8f8541cc0ede68bc609891a4c925de5478dc0d904a1a43297cf8526f4"
+    sha256 cellar: :any, arm64_sequoia: "36ffe7fe6727b9fd444f56c48ded6411c93145cf523b205e7241d584963c1d59"
+    sha256 cellar: :any, arm64_sonoma:  "cbddd0a0ae9d5bf99cdf6acdad04e185e6a0b962ea6711638184bbf5692951d9"
+    sha256 cellar: :any, sonoma:        "8cf1b6d692cf84144abeb14643beb1263151aedcc94107986f8d3860da241a1f"
+    sha256 cellar: :any, arm64_linux:   "2b864e371fdf8757e7d2c52718bc383e4b62094794ed8fa7adf7b738a21472f6"
+    sha256 cellar: :any, x86_64_linux:  "9259d40705407a2a0344a17de479423a15ef41021583b8d1342805ea460b6b8e"
   end
 
   depends_on "libyaml"
@@ -26,8 +26,8 @@ class Djlint < Formula
   end
 
   resource "cssbeautifier" do
-    url "https://files.pythonhosted.org/packages/7b/dc/05e09a3cdacaeb73350442dfef37b9e22f764a076636df70e6d4c779c2a9/cssbeautifier-2.0.1.tar.gz"
-    sha256 "f6102c0589c85be3c1a016cee76ee3661ee4bd5da88d48a5f8708bfaf663ae26"
+    url "https://files.pythonhosted.org/packages/8f/b2/ed2890f0862fea7b79bb5224e22b2393376fdcd8f4b4e24dbbf1e9256d23/cssbeautifier-2.0.3.tar.gz"
+    sha256 "2c2fd129342561029de86b1744efa231c9fafe26023dbc988a1deb0ca0f5c845"
   end
 
   resource "editorconfig" do
@@ -36,8 +36,8 @@ class Djlint < Formula
   end
 
   resource "jsbeautifier" do
-    url "https://files.pythonhosted.org/packages/48/a4/6283089b46c2bd895f5c4b223456167ea859ce54fed01f4c1ee4e8a8ed20/jsbeautifier-2.0.1.tar.gz"
-    sha256 "45603b2097410feee8d3a6ef8ad5a8e0a0e89f347331888a97e46f332ce8d953"
+    url "https://files.pythonhosted.org/packages/2e/81/e0e11e305caa89831a0c8e555638d588c28b426d1105e734e113b00efd5d/jsbeautifier-2.0.3.tar.gz"
+    sha256 "9579d4e9dbaa00383f3efdff4c98c8140bb85ba319398e8b97cdaba27abd6ba3"
   end
 
   resource "json5" do
