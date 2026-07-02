@@ -1,12 +1,12 @@
 class Goredo < Formula
   desc "Go implementation of djb's redo, a Makefile replacement that sucks less"
-  homepage "https://goredo.dabase.com/"
-  url "https://goredo.dabase.com/download/goredo-2.9.1.tar.zst"
+  homepage "http://www.goredo.stargrave.org/"
+  url "http://www.goredo.stargrave.org/download/goredo-2.9.1.tar.zst"
   sha256 "dc668707f17b80a62e963e14c05b266f9445e6c88ed137d4108fa8b3833557ad"
   license "GPL-3.0-only"
 
   livecheck do
-    url "https://goredo.dabase.com/NEWS.html"
+    url "http://www.goredo.stargrave.org/NEWS.html"
     regex(/v?(\d+(?:\.\d+)+)/i)
   end
 
@@ -18,6 +18,8 @@ class Goredo < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "0951d98cb61b0d9da7152f5209c06100b17a9d6677b8647444ecdd15ff481f2b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaed3d7c4a251b26f67767ba92951a43ed1f89f5414fb25b9ba781d5c96cb5bb"
   end
+
+  deprecate! date: "2026-07-02", because: "is not available via HTTPS"
 
   depends_on "go" => :build
 
