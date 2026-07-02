@@ -12,12 +12,12 @@ class Duck < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3be9fbc2d3192a94f8ecc5ce6946cf0fae126e43b1949ccb311696aefe20a5af"
-    sha256 cellar: :any, arm64_sequoia: "06c809e1694ca58b6048f550dfb678d4e6b585daedb2d4679788b92a6c9da080"
-    sha256 cellar: :any, arm64_sonoma:  "8549eccf8c6eb29377721587ce376dd14384ebf92caab88ad5804071310254a0"
-    sha256 cellar: :any, sonoma:        "c3b84c06b0ef438f73a08c92fceda7708337d592195a2c019b7360b133ada22b"
-    sha256 cellar: :any, arm64_linux:   "d7690966230b6db3696e7ee97a373c685e7f8d256c8f6f8aa24c17e208bac666"
-    sha256 cellar: :any, x86_64_linux:  "4ffce598a7a392a53f5918b159586550ea3d2b763ab6888590f222a2e615a5a3"
+    sha256 cellar: :any, arm64_tahoe:   "6fdadbe0d26e5c5098d608e4dd00966966088a9211d17eb72dda12ee73795bb7"
+    sha256 cellar: :any, arm64_sequoia: "eb4f90d0c1ae25ec1472debefb49a190479956fd194e3256097c24bc90765e54"
+    sha256 cellar: :any, arm64_sonoma:  "e1e2d35e37025f190517aca78bd4ba12195913c3992ca3509cca4f7b9d49e519"
+    sha256 cellar: :any, sonoma:        "eb71da6127fb363b7631b3e419038561743cc9f1b87550ab8e1201b2927c59a6"
+    sha256 cellar: :any, arm64_linux:   "6e81ded767f715a43a916f56b804e2538ed8d6d916c21a0ad7bf5b3fcd4f1e11"
+    sha256 cellar: :any, x86_64_linux:  "08411f5741d8d3c597a18e33c82e7b3c90aa056ec71b66cb2f998f944f24f95b"
   end
 
   depends_on "ant" => :build
