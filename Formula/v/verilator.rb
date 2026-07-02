@@ -7,12 +7,12 @@ class Verilator < Formula
   head "https://github.com/verilator/verilator.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "9fb61111d7b9ae66d961f1875c6983a0f38ff7619f19ad1f16f7f198ad5705c6"
-    sha256 arm64_sequoia: "cb23cc4947b47422a4614b81c70fbb01a86d011196836ac2cb48309ef0feb8f2"
-    sha256 arm64_sonoma:  "1f8051b293aedb848fbc54fb8ae793eed860d4d40d7b599db32253fa557bc81c"
-    sha256 sonoma:        "2429db724212e771a2a617f824813b298e5a8a121dbeb19d4a3673f4da62e225"
-    sha256 arm64_linux:   "cd5ca5996375aea4b76d6694ce976f0e6e8219163d7e546988f6aa778ca2f2fe"
-    sha256 x86_64_linux:  "4428bc9242a2b9a0356b1b93a6693d8610e952bf5440c261112b582340a4bc10"
+    sha256 arm64_tahoe:   "161b3a7a2574d1f48d129b17962aba0844a857c7dab504f803194daa96ec5d51"
+    sha256 arm64_sequoia: "bf89e54c27bb084960b549e334b7bf0b9e38726701dbfce0fe94642451ea9a98"
+    sha256 arm64_sonoma:  "deeb1c3acfca928f4c07d17fba8d7199347a0965fd306aff4a9b61360e7fa78d"
+    sha256 sonoma:        "9218b8f3b45df21c2bd5ef58312aa1f62374f70e07550de737e01634361ea41e"
+    sha256 arm64_linux:   "a2fb57b8b5364b4a170b8492c2abb25b9365fdb71cd98e57a8e621675624b5eb"
+    sha256 x86_64_linux:  "e055f56393be5bb6163e7af67dad53f6a1846bbcc285bb1aff1348d70bc4c686"
   end
 
   depends_on "autoconf" => :build
