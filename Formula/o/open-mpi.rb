@@ -3,7 +3,10 @@ class OpenMpi < Formula
   homepage "https://www.open-mpi.org/"
   url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.9.tar.bz2"
   sha256 "dfb72762531170847af3e4a0f21d77d7b23cf36f67ce7ce9033659273677d80b"
-  license "BSD-3-Clause"
+  license all_of: [
+    "BSD-3-Clause-Open-MPI",
+    "mpich2", # opal/datatype/opal_datatype_pack_unpack_predefined.h
+  ]
   compatibility_version 1
 
   livecheck do
@@ -27,12 +30,16 @@ class OpenMpi < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+
+    uses_from_macos "flex" => :build
+    uses_from_macos "python" => :build
   end
 
   depends_on "gcc" # for gfortran
   depends_on "hwloc"
   depends_on "libevent"
   depends_on "pmix"
+  depends_on "prrte"
 
   conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
@@ -43,7 +50,7 @@ class OpenMpi < Formula
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version if OS.mac?
 
     # Remove bundled copies of libraries that shouldn't be used
-    unbundled_packages = %w[hwloc libevent openpmix].join(",")
+    unbundled_packages = %w[hwloc libevent openpmix prrte].join(",")
     rm_r Dir["3rd-party/{#{unbundled_packages}}*"]
 
     # Avoid references to the Homebrew shims directory
@@ -51,11 +58,8 @@ class OpenMpi < Formula
       ompi/tools/ompi_info/param.c
       oshmem/tools/oshmem_info/param.c
     ]
-    cxx = OS.linux? ? "g++" : ENV.cxx
-    cc = OS.linux? ? "gcc" : ENV.cc
-    inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{cxx}\""
-    inreplace inreplace_files, "OPAL_CC_ABSOLUTE", "\"#{cc}\""
-    inreplace "3rd-party/prrte/src/tools/prte_info/param.c", "PRTE_CC_ABSOLUTE", "\"#{cc}\""
+    inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{ENV.cxx}\""
+    inreplace inreplace_files, "OPAL_CC_ABSOLUTE", "\"#{ENV.cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -65,6 +69,7 @@ class OpenMpi < Formula
       --with-hwloc=#{formula_opt_prefix("hwloc")}
       --with-libevent=#{formula_opt_prefix("libevent")}
       --with-pmix=#{formula_opt_prefix("pmix")}
+      --with-prrte=#{formula_opt_prefix("prrte")}
       --with-sge
     ]
 
@@ -84,16 +89,6 @@ class OpenMpi < Formula
 
     # Avoid references to cellar paths.
     inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix, audit_result: false
-
-    # Avoid conflict with `putty` by renaming pterm to prte-term which matches
-    # upstream change[^1]. In future release, we may want to split out `prrte`
-    # to a separate formula and pass `--without-legacy-names`[^2].
-    #
-    # [^1]: https://github.com/openpmix/prrte/issues/1836#issuecomment-2564882033
-    # [^2]: https://github.com/openpmix/prrte/blob/master/config/prte_configure_options.m4#L390-L393
-    odie "Update configure for PRRTE or split to separate formula as prte-term exists" if (bin/"prte-term").exist?
-    bin.install bin/"pterm" => "prte-term"
-    man1.install man1/"pterm.1" => "prte-term.1"
   end
 
   test do
