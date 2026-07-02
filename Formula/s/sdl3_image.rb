@@ -4,6 +4,7 @@ class Sdl3Image < Formula
   url "https://github.com/libsdl-org/SDL_image/releases/download/release-3.4.4/SDL3_image-3.4.4.tar.gz"
   sha256 "29751304a13d25ac513f24305fa25b06a6edd9607718c90129b8350d35fc5573"
   license "Zlib"
+  revision 1
   head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
   livecheck do
