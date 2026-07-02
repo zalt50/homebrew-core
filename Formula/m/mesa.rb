@@ -63,13 +63,6 @@ class Mesa < Formula
 
   on_macos do
     depends_on "molten-vk"
-
-    # Apply MacPorts patch to revert change causing avoid infinite loop on macOS
-    # Issue ref: https://gitlab.freedesktop.org/mesa/mesa/-/work_items/15528
-    patch :p0 do
-      url "https://raw.githubusercontent.com/macports/macports-ports/1db035904139d7a3d0e0575f63ccd2371384956c/x11/mesa/files/patch-src-meson.diff"
-      sha256 "7390de495a94749eb3070d579aae5db79a75887d8aaa4d547b053559c1eb9aeb"
-    end
   end
 
   on_linux do
@@ -198,7 +191,7 @@ class Mesa < Formula
       s.change_make_var! "dridriverdir", HOMEBREW_PREFIX/"lib/dri"
     end
 
-    # https://gitlab.freedesktop.org/mesa/mesa/-/issues/13119
+    # https://gitlab.freedesktop.org/mesa/mesa/-/work_items/13119
     if OS.mac?
       inreplace %W[
         #{prefix}/etc/OpenCL/vendors/rusticl.icd
