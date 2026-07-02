@@ -3,8 +3,8 @@ class Dnsdist < Formula
 
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-2.0.7.tar.xz"
-  sha256 "58680f780517b787e64fee4cd4dcc57f439be607084f89ee4699789d7d626875"
+  url "https://downloads.powerdns.com/releases/dnsdist-2.1.0.tar.xz"
+  sha256 "8714b7ca065b2d7ae5da980bc81a94d2baaa725a9b3c2c23b3a0fadb7c6a8335"
   license "GPL-2.0-only" # with OpenSSL Exception (non-SPDX)
 
   livecheck do
@@ -65,6 +65,6 @@ class Dnsdist < Formula
   test do
     (testpath/"dnsdist.conf").write "setLocal('127.0.0.1')"
     output = shell_output("#{bin}/dnsdist -C dnsdist.conf --check-config 2>&1")
-    assert_equal "Configuration 'dnsdist.conf' OK!", output.chomp
+    assert_match "Configuration OK", output
   end
 end
