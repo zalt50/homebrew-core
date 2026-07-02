@@ -1,8 +1,8 @@
 class Pnetcdf < Formula
   desc "Parallel netCDF library for scientific data using the OpenMPI library"
   homepage "https://parallel-netcdf.github.io/index.html"
-  url "https://parallel-netcdf.github.io/Release/pnetcdf-1.14.1.tar.gz"
-  sha256 "6f0f7221006c211fce9ddd2c008796b8c69dd717b2ad1be0b4027fc328fd3220"
+  url "https://parallel-netcdf.github.io/Release/pnetcdf-1.15.0.tar.gz"
+  sha256 "39813fe91ec901c7cfca3212731edbb5201029ebf55caeaaaa08d9e33c6bad65"
   license "NetCDF"
 
   livecheck do
@@ -29,6 +29,10 @@ class Pnetcdf < Formula
     system "./configure", "--disable-silent-rules",
                           "--enable-shared",
                           *std_configure_args
+
+    # Avoid references to Homebrew shims in the pnetcdf_version binary.
+    inreplace "src/utils/pnetcdf_version/Makefile", "#{Superenv.shims_path}/", ""
+
     system "make", "install"
   end
 
