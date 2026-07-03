@@ -1,8 +1,8 @@
 class Anyquery < Formula
   desc "Query anything with SQL"
   homepage "https://anyquery.dev"
-  url "https://github.com/julien040/anyquery/archive/refs/tags/0.4.5.tar.gz"
-  sha256 "8387a2e9d7c69a0430b330c93c5e0076f882340b8e3f15d0f0e6b5db5d5766d4"
+  url "https://github.com/julien040/anyquery/archive/refs/tags/0.4.6.tar.gz"
+  sha256 "791b4be32ae031ad6321116009e7ddc13464273f09a7afbea0501e0d33df58f6"
   license "AGPL-3.0-only"
   head "https://github.com/julien040/anyquery.git", branch: "main"
 
@@ -20,14 +20,6 @@ class Anyquery < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-
-    # TODO: remove when vitess has https://github.com/vitessio/vitess/pull/19367
-    # https://github.com/julien040/anyquery/issues/79
-    vitess_version = (buildpath/"go.mod").read.match(%r{vitess.io/vitess v(.*)})[1]
-    odie "Remove inreplace workaround!" if Version.new(vitess_version) > "0.23.2"
-    system "go", "mod", "vendor"
-    inreplace "vendor/vitess.io/vitess/go/hack/ensure_swiss_map.go", "!goexperiment.swissmap",
-                                                                     "!goexperiment.swissmap && !go1.26"
 
     tags = %w[
       vtable
