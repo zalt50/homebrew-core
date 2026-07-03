@@ -18,7 +18,8 @@ class Oauth2Proxy < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}", output: bin/"oauth2-proxy")
+    ldflags = "-s -w -X github.com/oauth2-proxy/oauth2-proxy/v7/pkg/version.VERSION=#{version}"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"oauth2-proxy")
     (etc/"oauth2-proxy").install "contrib/oauth2-proxy.cfg.example"
     bash_completion.install "contrib/oauth2-proxy_autocomplete.sh" => "oauth2-proxy"
   end
@@ -34,6 +35,8 @@ class Oauth2Proxy < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/oauth2-proxy --version")
+
     port = free_port
     pid = spawn "#{bin}/oauth2-proxy",
                 "--client-id=testing",
