@@ -7,12 +7,12 @@ class Vacuum < Formula
   head "https://github.com/daveshanley/vacuum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88e8a5503308b978da01ea30030eb60bd356cf040a7c1160a2b8066b47cde6d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d94414d18a42fa28661ac1e30e580203a3c073c892b378b56127b3dbf7e845a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9781b243a777fb36ecde458aba4aaa1e64bae37d34dda0fa4990823f3e5f21af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9640f97abce0de101f4d0e93521ded3cf59e819cdd1bfa162770122824328ecf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68d8c6811f114ea767e27352d35e78e8985cef22e261278cf1fb781bba046acc"
-    sha256 cellar: :any,                 x86_64_linux:  "f90dcd62dfb8bb7d20a5f411eccc46a2d140828161096d737e1cde8e5be53c9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62f8f75e5f7624967d2de409d3f600ec2fc75be0f5dd11eda0cc58441594235b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "076b2d9fac28d9d7bd307463e6f6395402de01b49c46b40a93b1c71d5ac5c64b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a318e00627b22c90dda354ad50889f56c2918335428596b6f4c35b0287a8b22f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e000d28460edb8a16396127bcfc5275eb450fa7782e50682c0d929b97acdb4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "091f69c6ee2b9f15f2c2fb5dd1cb52244468187a1d6cee5726af1acbc7b9ca1c"
+    sha256 cellar: :any,                 x86_64_linux:  "c49fc9f8ad46c856d2f29c103b7e3430922bdb9797b288850972f66a51092ea3"
   end
 
   depends_on "go" => :build
