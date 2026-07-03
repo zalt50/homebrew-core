@@ -1,8 +1,8 @@
 class Objfw < Formula
   desc "Portable, lightweight framework for the Objective-C language"
   homepage "https://objfw.nil.im/"
-  url "https://objfw.nil.im/downloads/objfw-1.5.6.tar.gz"
-  sha256 "6b133e77e904bb012d7735dc2af51b589e903717d458532be9acc8f08a6cd45b"
+  url "https://objfw.nil.im/downloads/objfw-1.5.7.tar.gz"
+  sha256 "e637c32731dc07396b812c4019f34d1417a3f7aa39d450b7f27c9bcdc23b3e12"
   license "LGPL-3.0-only"
   head "https://git.nil.im/ObjFW/ObjFW.git", branch: "main"
 
