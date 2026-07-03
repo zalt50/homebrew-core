@@ -1,17 +1,17 @@
 class KimiCode < Formula
   desc "AI coding agent for your terminal"
   homepage "https://moonshotai.github.io/kimi-code/"
-  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.21.1.tgz"
-  sha256 "568419c6ca064e3007311826ef8884a933212c07e39d43cccdaebf26f8fa6809"
+  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.22.0.tgz"
+  sha256 "eaaf944f24373be9eedb6fe79157c6fb5aedee593eb1dd1fc66c3e8b1ba7595b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bbc0296e32a921bafc6a3c84af5ccc5118e3cd65ca4908adc60dbbdc1060c4fd"
-    sha256 cellar: :any,                 arm64_sequoia: "d4600b7c5e2f13bb36ddb44c0d4ea0d712f67b02d12ef70dc3857925500fed6d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4600b7c5e2f13bb36ddb44c0d4ea0d712f67b02d12ef70dc3857925500fed6d"
-    sha256 cellar: :any,                 sonoma:        "f6873f6334e3a20bc00356695deebe289f46b336b6d638b6b3d796c6939b6b81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "808c40e1788682517870c313a8058cf1e97d000de6d3af40366a080fdf41dbbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd604552e78bc9ffb051794d3036bc61a305848d53f05a4e494a950b4cd30844"
+    sha256 cellar: :any,                 arm64_tahoe:   "7aecf4c8db79b935a44ee227be9b88f1b6a3c36b5baa1108d062a243b675444c"
+    sha256 cellar: :any,                 arm64_sequoia: "4d619bab9bb05f963a85c9decc7fc3ee1b471664794cd57795061a2835258af1"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d619bab9bb05f963a85c9decc7fc3ee1b471664794cd57795061a2835258af1"
+    sha256 cellar: :any,                 sonoma:        "4747d8d9fd25977cfb347198fe7fa8d9a00819281c5e11632641da83f87876e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7d81773573a1d3c656bc8a693a3ff9b8e9188060733d31f6bd76f1e2e64e887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4581d5f3e650e7f8556ea99bfd4a61160fc2e5f636712e248a575a1eb93313f9"
   end
 
   depends_on "node"
@@ -20,21 +20,16 @@ class KimiCode < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir[libexec/"bin/*"]
 
-    node_modules = libexec/"lib/node_modules/@moonshot-ai/kimi-code/node_modules"
-
-    # Remove non-native architecture binaries from `koffi` and `node-pty`
     if OS.mac?
+      kimi_code_prefix = libexec/"lib/node_modules/@moonshot-ai/kimi-code"
+      node_modules = kimi_code_prefix/"node_modules"
+
+      # Remove non-native architecture binaries from `node-pty` and `native`
       other_arch = Hardware::CPU.arm? ? "x64" : "arm64"
-      rm_r node_modules/"koffi/build/koffi/darwin_#{other_arch}"
       rm_r node_modules/"node-pty/prebuilds/darwin-#{other_arch}"
-    elsif OS.linux?
-      # koffi requires libc++ which is not available in Homebrew Linux;
-      # remove all prebuilt native binaries to avoid audit/linkage failures
-      rm_r node_modules/"koffi/build"
-    end
+      rm_r kimi_code_prefix/"native/darwin/prebuilds/darwin-#{other_arch}"
 
-    # Strip universal binary to native architecture for `clipboard`
-    if OS.mac?
+      # Strip universal binary to native architecture for `clipboard`
       deuniversalize_machos "#{node_modules}/@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
     end
   end
