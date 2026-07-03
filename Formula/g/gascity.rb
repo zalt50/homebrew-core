@@ -7,12 +7,12 @@ class Gascity < Formula
   head "https://github.com/gastownhall/gascity.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "bd3c973a1bd6d367310b18f4e246057a405d8eed2665c813888e1cdd89b4b66b"
-    sha256                               arm64_sequoia: "7bd9ce0d444ff404a048ee470891b74831d42180280c537397aaa66320b53030"
-    sha256                               arm64_sonoma:  "26dc35b92549c9e9e8af9e67e6c6a28aec0ff9fa8e1090c01fa6a0ac4bee8440"
-    sha256 cellar: :any,                 sonoma:        "f2cbec725c1a9e3b5c9131e273d301f76b246132f16854811b93e5be2f8ee111"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b2c2b28c46161be78427cf0a871bed1f845d309a0f3d48383a3bb79b42d0cd3"
-    sha256 cellar: :any,                 x86_64_linux:  "7d5b7ec63fe4e476a945b1d2890f4d53bb8fd1f52f7692fb986a2421c4e0d7f2"
+    sha256                               arm64_tahoe:   "92305b4ced2948b86c086bf2527a35429d4dbcc973de361695e4e07ba2e38f1a"
+    sha256                               arm64_sequoia: "9da3f82e74cd3ab44fa349efee58b105a41c6a105c8951c3766dc8b7c7f9e832"
+    sha256                               arm64_sonoma:  "731dbd90c5f019a0cf10ec92e001fa9a8ddee59c25355d855c46dca90cdea969"
+    sha256 cellar: :any,                 sonoma:        "ff5bc94ebbf8b34dd1d61713760df4dc48e12facc069fe320c60b46a22253567"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b96ded50b79dbf94b962e03bdfc5c2a74f307ab9212b34d8a2ee62f6c3603e33"
+    sha256 cellar: :any,                 x86_64_linux:  "a48754cc26be5104fe905d2bf8c3682030f713abe5b0603db26475cd240f6daf"
   end
 
   depends_on "go" => :build
