@@ -20,8 +20,10 @@ class Gettext < Formula
     sha256 x86_64_linux:  "ed30be09f5f328a974e51e34966a502496e0623c7ecde0faf7559143cbd02255"
   end
 
+  depends_on "json-c" # for spit
   depends_on "libunistring"
 
+  uses_from_macos "curl" # for spit
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
 
@@ -70,5 +72,6 @@ class Gettext < Formula
 
   test do
     system bin/"gettext", "test"
+    assert_match "spit: missing --model option\n", shell_output("#{bin}/spit 2>&1", 1)
   end
 end
