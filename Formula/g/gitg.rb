@@ -11,12 +11,12 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "41fe2e32ec7285168a5ddc42e5ea5d1c2f8e754e96e2ed14b23b4bc535dcbf33"
-    sha256 arm64_sequoia: "3d5c60e8a49d2a0af425ea4927666d587cd923305625eb31ab762d60dc8f40a3"
-    sha256 arm64_sonoma:  "6e17e52112c02ea6a3e398cd175840a7c684837c6fef392b4e08a1c4a3d99f70"
-    sha256 sonoma:        "00214501c8d98397ac9e1dbe67a2c72c4a697e1016a44557d9485cb28267306c"
-    sha256 arm64_linux:   "edd407c606f84337f4b3a980232199c2b13c80fede622f43035c864c1c5efe9e"
-    sha256 x86_64_linux:  "6f55ce2297cbc4c5a3234586eadf7cd349599fb8ad8053a9550688a3a1f85351"
+    sha256 arm64_tahoe:   "1d6e346c60f21ef3a1e9cac8f6b902da286947fe51c17e8b4473fce5b3ad6fd4"
+    sha256 arm64_sequoia: "5018fa08d2fbd9051221130ad40c0dbb7e0340f8773de20574cb676ca7a5609d"
+    sha256 arm64_sonoma:  "4b9c661fb0f61f35336844ec9df8806038df76d427ac907debbe24793ca4c215"
+    sha256 sonoma:        "2a151de72249aa16326e58253ebb50ca8f9c90f372ab5ec0a4e7b0d21b5b7925"
+    sha256 arm64_linux:   "af16cd4ac7f5772d18cbaa220a0293104e278199ed007c3d5e4a50dee9cb4b15"
+    sha256 x86_64_linux:  "45ab392996afcd7e3d6d3a147182ea07b3421317ba6279c12f4166273638d46a"
   end
 
   depends_on "gettext" => :build # for `msgfmt`
