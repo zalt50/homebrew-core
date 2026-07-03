@@ -4,14 +4,14 @@ class Picotool < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://github.com/raspberrypi/picotool/archive/refs/tags/2.2.0.tar.gz"
-    sha256 "aab3d82fb1e576d97156ddcb962ae7cf290518a5f20d9002ac27e628dc657620"
+    url "https://github.com/raspberrypi/picotool/archive/refs/tags/2.3.0.tar.gz"
+    sha256 "97aaf36800d2317683528cba5762e3d4e7a5de0cba729d28011a6ee94b3b7538"
 
     resource "pico-sdk" do
       # Use git checkout to allow fetching mbedtls submodule
       url "https://github.com/raspberrypi/pico-sdk.git",
-          tag:      "2.2.0",
-          revision: "a1438dff1d38bd9c65dbd693f0e5db4b9ae91779"
+          tag:      "2.3.0",
+          revision: "98a542c1a62fb549ffb5d66a3e5892b06276b670"
 
       livecheck do
         formula :parent
@@ -56,23 +56,22 @@ class Picotool < Formula
 
   test do
     # from https://github.com/raspberrypi/pico-examples?tab=readme-ov-file#first-examples
-    resource "homebrew-picow_blink" do
+    resource "homebrew-blink_universal" do
       url "https://rptl.io/pico-w-blink"
-      sha256 "ba6506638166c309525b4cb9cd2a9e7c48ba4e19ecf5fcfd7a915dc540692099"
+      sha256 "e8f8e578129ebded860ae019288b282b0a620f5ac2dfc49adedc565c73e6ad22"
     end
 
-    resource("homebrew-picow_blink").stage do
+    resource("homebrew-blink_universal").stage do
       result = <<~EOS
-        File blink_picow.uf2 family ID 'rp2040':
+        File blink_universal.uf2 family ID 'rp2040':
 
         Program Information
-         name:          picow_blink
-         web site:      https://github.com/raspberrypi/pico-examples/tree/HEAD/pico_w/blink
-         features:      UART stdin / stdout
+         name:          blink_universal
+         web site:      https://github.com/raspberrypi/pico-examples/tree/HEAD/universal/blink_universal
          binary start:  0x10000000
-         binary end:    0x1003feac
+         binary end:    0x100407bc
       EOS
-      assert_equal result, shell_output("#{bin}/picotool info blink_picow.uf2")
+      assert_equal result, shell_output("#{bin}/picotool info blink_universal.uf2")
     end
   end
 end
