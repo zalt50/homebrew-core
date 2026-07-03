@@ -6,12 +6,12 @@ class Rtorrent < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c8c1b11d4e74c183d6de891e0cb2f2a2378b59466f24fa5d89c9d2fe218281f9"
-    sha256 cellar: :any, arm64_sequoia: "4709ebf33982018a92e99bc20d3d9151697e90c2821a7ceea96c19d722766c65"
-    sha256 cellar: :any, arm64_sonoma:  "fa0c30ed0320e4fa4f078f74896e062de7faebd4fcf4dc9165879f1e626a21c7"
-    sha256 cellar: :any, sonoma:        "ce2c86e2fe225a4898d6950d6a810d633733bb134e8db2adf1871df5b8abbb19"
-    sha256 cellar: :any, arm64_linux:   "b4e2f006281ac447175016e172e2e624188de475900e8b0518afa8c14e4cb95f"
-    sha256 cellar: :any, x86_64_linux:  "f0e5a3c715a40d6b9e30eeb41a75c12ec72e886a189812f4e6bed6161dee9fca"
+    sha256 cellar: :any, arm64_tahoe:   "8cb162f411e393168f04eb5118236ff34dd0ee95657d823c9137def59b48884e"
+    sha256 cellar: :any, arm64_sequoia: "8796170b6bbce70bbd83832daa7c376b05f58ecf9e6194c12abc4a5c2db10b7f"
+    sha256 cellar: :any, arm64_sonoma:  "7c10dffe0437fa57742024867ada8bbcd40fc67247973a1766442b04abbe4559"
+    sha256 cellar: :any, sonoma:        "b1a927730ee6f60dd85502b5ef5bbb183e57bf68402204ece216f84ae0c66317"
+    sha256 cellar: :any, arm64_linux:   "ba52029a8dcd73f2dc4e442ecd952d35dbbcdc706fa051356fad29c7b36d764e"
+    sha256 cellar: :any, x86_64_linux:  "3290e483b1e2c2a52de776ac504b3682a97d86abb2a9b887402861caab0260ac"
   end
 
   depends_on "autoconf" => :build
