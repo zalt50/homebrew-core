@@ -6,12 +6,12 @@ class Codeburn < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05d85eb05ad9867bd0f7bd12d9c7d06996ec5f2799566e65710565eeacc5c85d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05d85eb05ad9867bd0f7bd12d9c7d06996ec5f2799566e65710565eeacc5c85d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05d85eb05ad9867bd0f7bd12d9c7d06996ec5f2799566e65710565eeacc5c85d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc879ae8e634fb17d29fdd4967891f62e87888ffc9f7f62a004afd93385c361c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc879ae8e634fb17d29fdd4967891f62e87888ffc9f7f62a004afd93385c361c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc879ae8e634fb17d29fdd4967891f62e87888ffc9f7f62a004afd93385c361c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7af104d664becc302884ecf42722d85f82c1c9cd584764befa06c067a918e7d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7af104d664becc302884ecf42722d85f82c1c9cd584764befa06c067a918e7d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7af104d664becc302884ecf42722d85f82c1c9cd584764befa06c067a918e7d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49eca6dbc5f5b164269a4e0e0b8a26b31731cc1db7c12c6e726b3616f8ed3a58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49eca6dbc5f5b164269a4e0e0b8a26b31731cc1db7c12c6e726b3616f8ed3a58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49eca6dbc5f5b164269a4e0e0b8a26b31731cc1db7c12c6e726b3616f8ed3a58"
   end
 
   depends_on "node"
