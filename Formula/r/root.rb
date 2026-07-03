@@ -4,6 +4,7 @@ class Root < Formula
   url "https://root.cern/download/root_v6.40.02.source.tar.gz"
   sha256 "f631eebee3dbea128f1415f4b784f5e83637a2b431193bce75f10385f71efc56"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/root-project/root.git", branch: "master"
 
   livecheck do
@@ -144,6 +145,9 @@ class Root < Formula
       -Dxrootd=ON
       -GNinja
     ]
+
+    # SetUpMacOS.cmake runs `lipo` on the make program, which fails on Homebrew's ninja shim.
+    args << "-DCMAKE_MAKE_PROGRAM=#{formula_opt_bin("ninja")}/ninja"
 
     # Workaround the shim directory being embedded into the output
     inreplace "cmake/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
