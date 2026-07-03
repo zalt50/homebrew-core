@@ -1,9 +1,10 @@
 class Unuran < Formula
   desc "UNU.RAN - Universal Non-Uniform RANdom number generator"
   homepage "https://statmath.wu.ac.at/unuran/"
-  url "https://github.com/unuran/unuran/archive/refs/tags/unuran-1.11.0.tar.gz"
-  sha256 "e46c15eff050150966988ec56969526b60ce0b97120a7821aa96703d0f175623"
+  url "https://github.com/unuran/unuran/archive/refs/tags/unuran-1.12.0.tar.gz"
+  sha256 "9c8f6c5229615dc4871af11bca92fab9083f45ab66871d98031e05578e0567f9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/unuran/unuran.git", branch: "main"
 
   livecheck do
