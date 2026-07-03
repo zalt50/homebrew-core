@@ -7,12 +7,7 @@ class Neonctl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cac783259d1e498a3aa6b124153713d4f68b77b023bcb783cc98d0a3aa5f7c4c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cac783259d1e498a3aa6b124153713d4f68b77b023bcb783cc98d0a3aa5f7c4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cac783259d1e498a3aa6b124153713d4f68b77b023bcb783cc98d0a3aa5f7c4c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b49acb8fb717eb7dabb76bdd91d0ec61b52f33228dc28222f24842048bc5d7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c1b65b8542940bebb4a651c18e7d3e05dd814cee2babb709c9d87fa849a6efd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55663cf10e522379573524763b5076a9163961bb564f192e88263c24fb973177"
+    sha256 cellar: :any_skip_relocation, all: "0794d1dc4428f18c86da36b71365eefdece31f289cafcc2ab32db4d1765a8f10"
   end
 
   depends_on "esbuild" # replaces the bundled copy
