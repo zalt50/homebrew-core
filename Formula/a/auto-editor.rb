@@ -4,6 +4,7 @@ class AutoEditor < Formula
   url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.1.2.tar.gz"
   sha256 "155b594c15c4c0f6ccb822ae2c70089541fb7c516924610ef8fd9c8748416bd1"
   license "Unlicense"
+  revision 1
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
@@ -18,6 +19,8 @@ class AutoEditor < Formula
   depends_on "nim" => :build
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
+  depends_on "ggml"
+  depends_on "whisper-cpp"
 
   def install
     system "nimble", "brewmake"
@@ -31,5 +34,9 @@ class AutoEditor < Formula
     system "ffmpeg", "-filter_complex", "testsrc=rate=1:duration=5", mp4in
     system bin/"auto-editor", mp4in, "--edit", "none"
     assert_match(/Duration: 00:00:05\.00,.*Video: h264/m, shell_output("ffprobe -hide_banner #{mp4out} 2>&1"))
+
+    whisper = Formula["whisper-cpp"]
+    system bin/"auto-editor", "whisper", whisper.pkgshare/"jfk.wav",
+      whisper.pkgshare/"for-tests-ggml-tiny.bin"
   end
 end
