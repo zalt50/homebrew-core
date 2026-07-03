@@ -15,12 +15,12 @@ class Prrte < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0f71161c5123695aa84865e17062bb6b9b86d53e4995b315bc4bd8b221d0dc27"
-    sha256 arm64_sequoia: "6a59e04555bb0c6a290cae7cbe9c16492a800daebe02514eed7b104f32ab0267"
-    sha256 arm64_sonoma:  "daae27ddb909f19f41fcb0bc555f24fea1a3b809847cc54951d6b3308315df1e"
-    sha256 sonoma:        "93480f0e4ab72b3d3079cbb0adb1ecd78c73fdbb62800a7cdedc7eb9319177bd"
-    sha256 arm64_linux:   "f47049dbf771197b833d0461f16dd33f4b61dc05f8c0cc976d73e3dfaaef3dc1"
-    sha256 x86_64_linux:  "12e343ddb549456626718523d6680a72ee23b46b6979d55d10d0ce057ca432bb"
+    sha256 arm64_tahoe:   "ca006ceeac61685818b8f929d0548588823297986f4bc43fca65d880cbf2be7c"
+    sha256 arm64_sequoia: "63adf8949031851e179c61d1b697cb5e70640d1fd016000e4e12921f3baadf7f"
+    sha256 arm64_sonoma:  "adb1534b9e9c29ad7144d6d5703fd4b82808587e1619d07a30aa1306ebdf28d4"
+    sha256 sonoma:        "b11939075e44503c72f242023990b1134f688d76a3ada46107eb6b1d7eb4ecff"
+    sha256 arm64_linux:   "c6737baea29f0f48c4eb4b49078297aaaf4e8dd3aedfd88e3584d0725f2f4e8a"
+    sha256 x86_64_linux:  "877320cde71cca7d2fbf8b71cdb67746b3c90a0655b5d9dfc25f140ecede509e"
   end
 
   head do
