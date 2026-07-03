@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/7e/af/1a0bf2b9c1ebb87989423e001484cb385e91f385880d45e96646c12007fc/schemathesis-4.22.2.tar.gz"
-  sha256 "98981a5d858d2a454393ccd85af1fa35c392e048ed91b0faaf9e63992f66693b"
+  url "https://files.pythonhosted.org/packages/c5/50/4ca419862719dde14130595a3654aa16780d225be9074e42d6b90fe3ec7b/schemathesis-4.22.3.tar.gz"
+  sha256 "10c0fb27ed1940030133cf61ba32d1e85f71b85d3570d7ee54d1768b14d64f77"
   license "MIT"
 
   bottle do
@@ -172,8 +172,8 @@ class Schemathesis < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do
