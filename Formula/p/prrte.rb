@@ -14,6 +14,15 @@ class Prrte < Formula
     end
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "0f71161c5123695aa84865e17062bb6b9b86d53e4995b315bc4bd8b221d0dc27"
+    sha256 arm64_sequoia: "6a59e04555bb0c6a290cae7cbe9c16492a800daebe02514eed7b104f32ab0267"
+    sha256 arm64_sonoma:  "daae27ddb909f19f41fcb0bc555f24fea1a3b809847cc54951d6b3308315df1e"
+    sha256 sonoma:        "93480f0e4ab72b3d3079cbb0adb1ecd78c73fdbb62800a7cdedc7eb9319177bd"
+    sha256 arm64_linux:   "f47049dbf771197b833d0461f16dd33f4b61dc05f8c0cc976d73e3dfaaef3dc1"
+    sha256 x86_64_linux:  "12e343ddb549456626718523d6680a72ee23b46b6979d55d10d0ce057ca432bb"
+  end
+
   head do
     url "https://github.com/openpmix/prrte.git", branch: "master"
 
