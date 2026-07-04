@@ -1,8 +1,8 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://github.com/schollz/croc/archive/refs/tags/v10.4.5.tar.gz"
-  sha256 "e313d92ac881c8bcdb926ebb26e353a804e47cf0099a0670ab9bd31cef8fc680"
+  url "https://github.com/schollz/croc/archive/refs/tags/v10.4.7.tar.gz"
+  sha256 "fda871fe2f0ed5fdf2248f1ab4d6d88aea08d3582a3a1d2e3e38e916662c7f22"
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "main"
 
@@ -31,11 +31,11 @@ class Croc < Formula
     pid = PTY.spawn(bin/"croc", "relay", "--ports", ports.join(",")).last
     sleep 3
 
-    pid_send = PTY.spawn(bin/"croc", "--relay=localhost:#{ports.last}", "send", "--code=homebrew-test",
-                                     "--text=mytext", "--port=#{ports.last}", "--transfers=1").last
+    pid_send = PTY.spawn(bin/"croc", "--relay=localhost:#{ports.first}", "send",
+                                     "--no-local", "--text=mytext", "--transfers=1").last
     sleep 3
 
-    output = shell_output("#{bin}/croc --relay localhost:#{ports.last} --overwrite --yes homebrew-test")
+    output = shell_output("#{bin}/croc --relay localhost:#{ports.first} --overwrite --yes")
     assert_match "mytext", output
   ensure
     Process.kill("TERM", pid_send)
