@@ -101,11 +101,9 @@ class VirtManager < Formula
     rewrite_shebang python_shebang_rewrite_info(venv.root/"bin/python"), *bin.children
   end
 
-  def post_install
-    # manual schema compile step
-    system formula_opt_bin("glib")/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas"
-    # manual icon cache update step
-    system formula_opt_bin("gtk+3")/"gtk3-update-icon-cache", HOMEBREW_PREFIX/"share/icons/hicolor"
+  post_install_steps do
+    compile_gsettings_schemas
+    gtk_update_icon_cache
   end
 
   test do
