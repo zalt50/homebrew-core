@@ -1,8 +1,8 @@
 class Fakeroot < Formula
   desc "Provide a fake root environment"
   homepage "https://tracker.debian.org/pkg/fakeroot"
-  url "https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.38.1.orig.tar.gz"
-  sha256 "37c5063942efe2e2aeefd6e71ae2690bcb9b7d512c53bc6409b54d0730cbdac1"
+  url "https://ftp.debian.org/debian/pool/main/f/fakeroot/fakeroot_2.1.4.orig.tar.xz"
+  sha256 "0822bd5a9f0cf19d2ba0546b88b0432d4d3d9917db62c57b74044ccadba06e49"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -19,11 +19,17 @@ class Fakeroot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3b9b3e36b9b9ffdffc724d47cda22e5f419639b6bf236ecb12fb5cbf8c843eb"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+
   on_linux do
     depends_on "libcap" => :build
   end
 
   def install
+    system "autoreconf", "--force", "--install", "--verbose"
+
     args = ["--disable-silent-rules"]
     args << "--disable-static" if OS.mac?
 
