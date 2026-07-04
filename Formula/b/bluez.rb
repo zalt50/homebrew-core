@@ -1,10 +1,9 @@
 class Bluez < Formula
   desc "Bluetooth protocol stack for Linux"
   homepage "https://www.bluez.org"
-  url "https://mirrors.edge.kernel.org/pub/linux/bluetooth/bluez-5.86.tar.xz"
-  sha256 "99f144540c6070591e4c53bcb977eb42664c62b7b36cb35a29cf72ded339621d"
+  url "https://mirrors.edge.kernel.org/pub/linux/bluetooth/bluez-5.87.tar.xz"
+  sha256 "26bdcf2cebd7310c6f598850606b037ef0c515fe6608ebc54d22c50c4c32b35f"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://mirrors.edge.kernel.org/pub/linux/bluetooth/"
@@ -37,7 +36,14 @@ class Bluez < Formula
     ENV.append "LIBS", "-licalvcal"
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", "--disable-testing", "--disable-manpages", "--enable-library", *std_configure_args
+    # D-Bus and systemd unit dirs default to the read-only dep kegs; use our own prefix
+    system "./configure", "--disable-testing", "--disable-manpages", "--enable-library",
+           "--with-dbusconfdir=#{share}",
+           "--with-dbussystembusdir=#{share}/dbus-1/system-services",
+           "--with-dbussessionbusdir=#{share}/dbus-1/services",
+           "--with-systemdsystemunitdir=#{lib}/systemd/system",
+           "--with-systemduserunitdir=#{lib}/systemd/user",
+           *std_configure_args
     system "make"
     system "make", "install"
   end
