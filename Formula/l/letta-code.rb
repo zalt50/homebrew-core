@@ -1,17 +1,17 @@
 class LettaCode < Formula
   desc "Memory-first coding agent"
   homepage "https://docs.letta.com/letta-code"
-  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.20.tgz"
-  sha256 "38999aa7ab1228b574fadf2f1339382abe7261218343df1fe041ccc89ac71352"
+  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.21.tgz"
+  sha256 "f20471650cfa4c818fd68394ffbd4af5811b087bfba6a3422f094e65ff1e0d0f"
   license "Apache-2.0"
 
   bottle do
-    sha256               arm64_tahoe:   "7d902a04cdae905f34743d25b1038f5585b73e08bda72d481a048217490f4284"
-    sha256               arm64_sequoia: "4ae4e49c2f5f47118ce9778cdb622abac9e4b6d9990f8765827c0c41c0002eaa"
-    sha256               arm64_sonoma:  "baec60bef27a3ed9e0d1b6b5405bf3b2c7c9e83e6a64036d5b5b5a269d5ec542"
-    sha256               sonoma:        "677c168423ad7107a6b277c8a0a21c1d7d7afd598ccd12b6e347c991a1a67a9e"
-    sha256 cellar: :any, arm64_linux:   "aee829e0c4b3b51773db2a3ad3f8d42e36590018ef964ce70e15a61760fa9557"
-    sha256 cellar: :any, x86_64_linux:  "3fb2c9b34f27cdbab77e64bcc61ce6d4f5e1d67720389c17167470d17e015345"
+    sha256               arm64_tahoe:   "ea1789eca9a63448eaf5ff35bf44b55dd7c321372621b87c77a30edfd8843e8e"
+    sha256               arm64_sequoia: "cc36d94466d09ad4b6ec54ebe8ad355d41f5cd888f133d6b77050b0d4a771a8d"
+    sha256               arm64_sonoma:  "3d57b89630c3bc4b3b70bdd9bb13b1483951c38900ad00c1e7175a95aa880526"
+    sha256               sonoma:        "759bbe953b4cb7cb3871a4adf433386767c4c5104b9fe79d3fbb591906ca77e4"
+    sha256 cellar: :any, arm64_linux:   "2af0d654c20e961f139c960818e423cf7ced13ed91a384174ddaa9e9fffec28f"
+    sha256 cellar: :any, x86_64_linux:  "3d8d376d8bf676748370a954eb81c9b398c6f37a097f7477c0372fc032e13fb5"
   end
 
   depends_on "pkgconf" => :build
@@ -25,8 +25,8 @@ class LettaCode < Formula
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.0.tgz"
-    sha256 "10e45f33997680c9ea6ebfb8c575aba66bfbe8ad9c782a7426a37440b28b62a6"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.1.tgz"
+    sha256 "455327cde805c299d5a16603419e106853db5b9257dfb85e44eb7f4ec4d99de5"
 
     livecheck do
       url :url
