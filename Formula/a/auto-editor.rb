@@ -8,12 +8,12 @@ class AutoEditor < Formula
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "be3873cf3d572a3098732636e3d40db1f11937bb6f7de1aca920e1c253aeb91f"
-    sha256 cellar: :any, arm64_sequoia: "58482b8ed78e53fae96a1204edd4bf44105db68ac22415d7ba83b6c9968d84a7"
-    sha256 cellar: :any, arm64_sonoma:  "2f8cda0cb62484bd0e21e2670d8266ff281e5fa7c27f1dd7272d47ae7d2ea794"
-    sha256 cellar: :any, sonoma:        "addb9575ec43d8aa9bb82e1e271ba633ecdd1e1d7c28b04931524732a022eae6"
-    sha256 cellar: :any, arm64_linux:   "2345460b218d43c1b847cd347ad0a3827c1ac2f84799a01131a9f1c5f8f04944"
-    sha256 cellar: :any, x86_64_linux:  "4885e982367ef0c16e74da1eabba8c4695ce0d6eea395a4bb099efc66b72db2b"
+    sha256 cellar: :any, arm64_tahoe:   "958c8e14f0f72660553d9f49472b4ea3b7133b3b053c15071d87e1ab95798e70"
+    sha256 cellar: :any, arm64_sequoia: "507568c03b15a5d601f94205da6ab9c7e38fcf8001ec744b5f10a977ea3f57d5"
+    sha256 cellar: :any, arm64_sonoma:  "f2d22a3b077034be11c177db6293f6aef6d3d2340d9ee370afed19aea97b891b"
+    sha256 cellar: :any, sonoma:        "2c3ba1e2ef60151991601ab8ebb93217266d21e3f78f2a85058e8e7961852786"
+    sha256 cellar: :any, arm64_linux:   "63fe1559ebfcb6e5be359dce9dd7c440adfd7de38ad1e2d6bff7a095bfd52d53"
+    sha256 cellar: :any, x86_64_linux:  "1abee32c564e15b89a3295803e135579c76f319dea5b7b8df9d53bb3db24f2e3"
   end
 
   depends_on "nim" => :build
