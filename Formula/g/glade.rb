@@ -56,8 +56,8 @@ class Glade < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{formula_opt_bin("gtk+3")}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+  post_install_steps do
+    gtk_update_icon_cache
   end
 
   test do
