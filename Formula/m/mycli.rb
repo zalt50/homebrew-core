@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/76/ae/abac2617d6504b803cab5c882040f7300426831fc677713765a2049b066f/mycli-1.76.0.tar.gz"
-  sha256 "3fd6424e60b7ed54029a51c128d625a31c2a99bc449db2979918490c5b644a73"
+  url "https://files.pythonhosted.org/packages/a0/12/51a3f9e14bf6ed514153de115aabb3a629e5fae3ba8b27eb808ee5c0e430/mycli-2.0.0.tar.gz"
+  sha256 "dd5c9aee441e60d4fc955b12ea0eb4f5d6ff2f0d65d0121a71ad0c339ff477a1"
   license "BSD-3-Clause"
 
   bottle do
@@ -30,8 +30,8 @@ class Mycli < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "cli-helpers" do
@@ -110,8 +110,8 @@ class Mycli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/66/b5/55f06bb281d92fb3cc86d14e1def2bd908bb77693183e7cb1f5a3c388b0c/jiter-0.15.0.tar.gz"
-    sha256 "4251acc80e2b7c9b7b8823456ea0fceeb0734dac2df7636d3c711b38476b5a76"
+    url "https://files.pythonhosted.org/packages/1d/1f/10936e16d8860c70698a1aa939a46aa0224813b782bce4e000e637da0b2d/jiter-0.16.0.tar.gz"
+    sha256 "7b24c3492c5f4f84a37946ad9cf504910cf6a782d6a4e0689b6673c5894b4a1c"
   end
 
   resource "keyring" do
@@ -130,8 +130,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f3/fa/88d0c58a0c58df7e6758e66b99c5d028d5e0bb49f8812d7203940cd9dbf1/openai-2.43.0.tar.gz"
-    sha256 "e74d238200a26868977002190fb6631613480a93dfe0c9c982e77021ed60a017"
+    url "https://files.pythonhosted.org/packages/49/f5/7c7cb955305cb41f7f3c5fd7e0e38bf6bbf2658468863d4b7b868a5cb8df/openai-2.44.0.tar.gz"
+    sha256 "68a5a5ffad82b8ff7d451c437529fb64f7c3b8123aaf0c021966a882d9e3947d"
   end
 
   resource "pluggy" do
