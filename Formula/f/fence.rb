@@ -1,10 +1,10 @@
 class Fence < Formula
   desc "Lightweight sandbox for commands with network and filesystem restrictions"
-  homepage "https://github.com/Use-Tusk/fence"
-  url "https://github.com/Use-Tusk/fence/archive/refs/tags/v0.1.61.tar.gz"
+  homepage "https://github.com/fencesandbox/fence"
+  url "https://github.com/fencesandbox/fence/archive/refs/tags/v0.1.61.tar.gz"
   sha256 "4df2107171de9c420252c5fc9876887238b49d46fa474fdc1e15522b4036a949"
   license "Apache-2.0"
-  head "https://github.com/Use-Tusk/fence.git", branch: "main"
+  head "https://github.com/fencesandbox/fence.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4e75b67d9f1a9a06fe4ca2d4694aed800f495c7337a5b1b6f06922721fa883f"
