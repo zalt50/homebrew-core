@@ -105,13 +105,6 @@ module.exports = async ({github, context, core}, formulae_detect, dependent_test
       console.log('No CI-build-dependents-from-source label found. Not passing --build-dependents-from-source to brew test-bot.')
     }
 
-    if (label_names.includes('CI-skip-recursive-dependents')) {
-      console.log('CI-skip-recursive-dependents label found. Passing --skip-recursive-dependents to brew test-bot.')
-      test_bot_dependents_args.push('--skip-recursive-dependents')
-    } else {
-      console.log('No CI-skip-recursive-dependents label found. Not passing --skip-recursive-dependents to brew test-bot.')
-    }
-
     if (label_names.includes('CI-skip-livecheck')) {
       console.log('CI-skip-livecheck label found. Passing --skip-livecheck to brew test-bot.')
       test_bot_formulae_args.push('--skip-livecheck')

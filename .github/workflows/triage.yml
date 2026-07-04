@@ -410,26 +410,6 @@ jobs:
               keep_if_no_match: true
               allow_any_match: true
 
-            - label: CI-skip-recursive-dependents
-              path: "Formula/.+/(\
-                alsa-lib|\
-                ca-certificates|\
-                certifi|\
-                cmake|\
-                curl|\
-                gettext|\
-                glib|\
-                harfbuzz|\
-                libcap|\
-                openssl@3|\
-                rust|\
-                sqlite|\
-                systemd|\
-                wayland-protocols\
-                ).rb"
-              keep_if_no_match: true
-              allow_any_match: true
-
             - label: CI-linux-self-hosted
               path: "Formula/.+/(\
                 dart-sdk|\
