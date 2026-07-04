@@ -7,12 +7,12 @@ class LeafMd < Formula
   head "https://github.com/RivoLink/leaf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cfaf6ee97b96a475b70569d2e474d512acc4bd4e8cf32cae37e4d3a642a5236"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cf96b2bf1ed8a6876327eca45c63e17ba78475230f34919d080b36af92568b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e98591dcdd9276c29a6fb7bf51b710977cb1a4d4bb4d2cddac92bcd8d157bab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a464ed99e6950ca7e2efd6aee12d77eced7eaa2aeb985579c9960b9715e3d303"
-    sha256 cellar: :any,                 arm64_linux:   "fa8fb10d1243c48176222e63c2559ed90c2d8ce0f34a0963e3f4fd55e8f940e1"
-    sha256 cellar: :any,                 x86_64_linux:  "db5c8f9876425df7606724faa9132c2cbf9e309f211faf28a0677fb02455b55c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70cc550d506372e6e3ead0bd729eabc6cd33a456d32675375e44c710e382fe8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cafbd6cdfa236c18a04496376fea81e9bcb87b95db3401bd8e7fad52ed82bf0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f496f4ace206db9a6959c185856900f625e0768aefa27346f8b5aea630ee060"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14f14771e9097057fbddfacfaacac2f8568153540cd7807085b940aa45bb8949"
+    sha256 cellar: :any,                 arm64_linux:   "28d8fd16f8d25a7a5a02fca655cab3198f72ff9d57a2f794b425c0186e5359d2"
+    sha256 cellar: :any,                 x86_64_linux:  "26c3b15899dd41b04275728ade759af774fbae0fa27d1e296a876b9d38ba6374"
   end
 
   depends_on "rust" => :build
