@@ -1,8 +1,8 @@
 class Enkits < Formula
   desc "C and C++ Task Scheduler for creating parallel programs"
   homepage "https://github.com/dougbinks/enkiTS"
-  url "https://github.com/dougbinks/enkiTS/archive/refs/tags/v1.11.tar.gz"
-  sha256 "b57a782a6a68146169d29d180d3553bfecb9f1a0e87a5159082331920e7d297e"
+  url "https://github.com/dougbinks/enkiTS/archive/refs/tags/v1.12.tar.gz"
+  sha256 "8373b6199d56816bd3ba58432eae74e2ebd5afcfdffb723073cc34730b189fd5"
   license "Zlib"
 
   bottle do
@@ -29,12 +29,9 @@ class Enkits < Formula
       -DENKITS_INSTALL=ON
       -DENKITS_BUILD_SHARED=ON
     ]
-    # Workaround to build with CMake 4
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    lib.install_symlink "#{lib}/enkiTS/#{shared_library("libenkiTS")}"
     pkgshare.install "example"
   end
 
