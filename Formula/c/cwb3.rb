@@ -68,19 +68,13 @@ class Cwb3 < Formula
     end
   end
 
-  def default_registry
-    HOMEBREW_PREFIX/"share/cwb/registry"
-  end
-
-  def post_install
+  post_install_steps do
     # make sure default registry exists
-    default_registry.mkpath
+    mkdir_p "share/cwb/registry", base: :homebrew_prefix
   end
 
   def caveats
-    <<~STOP
-      CWB default registry directory: #{default_registry}
-    STOP
+    "CWB default registry directory: #{HOMEBREW_PREFIX}/share/cwb/registry"
   end
 
   test do
