@@ -2,7 +2,7 @@ class Augeas < Formula
   desc "Configuration editing tool and API"
   homepage "https://augeas.net/"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/hercules-team/augeas/releases/download/release-1.14.1/augeas-1.14.1.tar.gz"
@@ -13,6 +13,12 @@ class Augeas < Formula
     patch do
       url "https://github.com/hercules-team/augeas/commit/26d297825000dd2cdc45d0fa6bf68dcc14b08d7d.patch?full_index=1"
       sha256 "6bed3c3201eabb1849cbc729d42e33a3692069a06d298ce3f4a8bce7cdbf9f0e"
+    end
+
+    # Backport fix for CVE-2025-2588
+    patch do
+      url "https://github.com/hercules-team/augeas/commit/af2aa88ab37fc48167d8c5e43b1770a4ba2ff403.patch?full_index=1"
+      sha256 "74edfe9248644c88eb0ed78d4f7f677ff00284ed4cef563779238caf3a7aa139"
     end
   end
 
