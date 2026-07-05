@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20260619.tar.gz"
-  sha256 "d93b0d6db72bc682ae983513c8e7d6574d53b5c76a09b487b35a391c8aaebb5a"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20260704.tar.gz"
+  sha256 "1ad2620cb58addcfbd25d80d21bad9139e3a672b8f08c5f7e57f84119ecef3e3"
   license "BSD-3-Clause"
 
   livecheck do
@@ -26,8 +26,6 @@ class Bmake < Formula
     # shell-ksh test segfaults since macOS 11.
     args = ["--prefix=#{prefix}", "-DWITHOUT_PROG_LINK", "--install", "BROKEN_TESTS=shell-ksh"]
     system "sh", "boot-strap", *args
-
-    man1.install "bmake.1"
   end
 
   test do
