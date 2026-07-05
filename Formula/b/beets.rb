@@ -22,7 +22,7 @@ class Beets < Formula
   depends_on "rust" => :build # for jellyfish
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "llvm@20"
+  depends_on "llvm"
   depends_on "numpy"
   depends_on "python-packaging"
   depends_on "python@3.14"
@@ -66,8 +66,8 @@ class Beets < Formula
   end
 
   resource "llvmlite" do
-    url "https://files.pythonhosted.org/packages/01/88/a8952b6d5c21e74cbf158515b779666f692846502623e9e3c39d8e8ba25f/llvmlite-0.47.0.tar.gz"
-    sha256 "62031ce968ec74e95092184d4b0e857e444f8fdff0b8f9213707699570c33ccc"
+    url "https://files.pythonhosted.org/packages/dc/a0/acc8ffcd5bdc63df0097e22c719bfcd61b604358343089313a8aebbb24ab/llvmlite-0.48.0.tar.gz"
+    sha256 "543b19f9ef8f3c7c60d1468191e4ee1b1537bf9f8a3d56f64c0ddd98de92edd2"
   end
 
   resource "mediafile" do
@@ -76,13 +76,13 @@ class Beets < Formula
   end
 
   resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/eb/2e/3e1b17cc655e59faac1008cfdaae2e38f123b9b229f0d1695f9860500d4d/mutagen-1.48.0.tar.gz"
-    sha256 "4933d14b83a2add03c23e04a3c397ffbe44f130403f1256881ee228869aee3bb"
+    url "https://files.pythonhosted.org/packages/df/70/1675da133ea92227da41bf5b24e1c66be597ff736a1533ade41da986852f/mutagen-1.48.1.tar.gz"
+    sha256 "8f95637ab9f6f305cec6bd1294e197debe207998e3e068596563c74f86b0a173"
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/f6/c5/db2ac3685833d626c0dcae6bd2330cd68433e1fd248d15f70998160d3ad7/numba-0.65.1.tar.gz"
-    sha256 "19357146c32fe9ed25059ab915e8465fb13951cf6b0aace3826b76886373ab23"
+    url "https://files.pythonhosted.org/packages/ae/a0/570e3dc53e5602b49108f62a13e529f1eec8bfc7ef37d49c825924dcf546/numba-0.66.0.tar.gz"
+    sha256 "b900e63a0e26c05ea9a6d5a3a5a0a177cb64c5011887bf43edb8c3ed2c38d363"
   end
 
   resource "packaging" do
@@ -116,8 +116,8 @@ class Beets < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "unidecode" do
