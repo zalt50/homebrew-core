@@ -7,12 +7,12 @@ class Mdcat < Formula
   head "https://github.com/BIRSAx2/mdcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31038c2576707cd5a67dfec6bc60a2000845ef5012112dfed4411df62b86f0d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b47bf826728953c54976803ebb0156d95c82f3f890ff635b16f1aec65a59f982"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67a4e259c02c58e5ef83080da87c84b3e2a00617f0ed3f0c82658f1be9117a3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "00f985c1d3feda29ed8026419335778dbcd5100fb758b854c3dd3af297a6defa"
-    sha256 cellar: :any,                 arm64_linux:   "1fe1c93384be598533bd423fc6151454798d6cd0a41e77cd37c86b35ce9bcba1"
-    sha256 cellar: :any,                 x86_64_linux:  "f3de4442884da1c95f92656bf8de95a68214b46911a45089426c4fd039ffd6c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "567dd251be0081a305d71f1b662e3ce973e3b4eb52430266cb4157cd1beafb1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8347fc6ae3268cd6cc9d9531149fe96f27601338b1b0b1adf278706ba0d5a85f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a238e0f1c24b9afa85624b1b1671913c29bfce9a49885eaf3f2dd1b480513266"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1f935ea302e0a17b9da5c0fc9bea8000ec19d73ce70b1009d3908e366ab9ec2"
+    sha256 cellar: :any,                 arm64_linux:   "e479dd54c7166074cac9d7ebaa3b76a2d2437a3cf3432c4a3a1f4bd0539271c9"
+    sha256 cellar: :any,                 x86_64_linux:  "87bee9c6f2bbdef4d3627193e79e2f82b37cc5681a313f2be0778484ab9e700f"
   end
 
   depends_on "asciidoctor" => :build
