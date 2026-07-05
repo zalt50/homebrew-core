@@ -7,12 +7,12 @@ class Ipatool < Formula
   head "https://github.com/majd/ipatool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ad348cdaaaa987f5e3865ebe510a871f9436daaadb20ff0466909dc1a1f9fcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd6e052558cd4fcd1f14acdc0c6f8cc439804ce49c0c10fa533fcb7176b8e3f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f88e49bc09a1a88b30e740a7ae32a7dacc5e1e9d13a964d086b59dbaccae0dc1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02cfbd05935f66f7410be475ebd6172c70aaa129b98f555477dd2d13e1adbd3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6576f22a1a1c0ab725ca2dd65c9dc0cffb264b2b67a7fce2e5acc5866567a027"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "880c488679fcb1d9e0ca4bc6cb4105c4c74c468eb2c8ec8d50fbba6153c9ccac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfb2caea11dbc2ea5574126e34ef8c4519bdf0f89e9f3e70b08fd616299c74d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9d6173e33f7d076b8bc3c4f49fb876fa9bcfe5d9bde2cd9c2b1c182174d968d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "286bc78f6b3ae9db1b6b4695ba9e430d9b465a2130bb6248335fac1eede0f42a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9954dd39e7bac548e40b4df57f5d2f16afb2e41e6b148143eea81fda9f40f467"
+    sha256 cellar: :any,                 arm64_linux:   "e2024617f5c29f465aa2b2809dabbf7f7ada2bf608a3640e07435c0c38fc91a1"
+    sha256 cellar: :any,                 x86_64_linux:  "e1e4cbede7a49a7256be6dd329a654a7d94e50604cd82601a642e33b0bb6b043"
   end
 
   depends_on "go" => :build
