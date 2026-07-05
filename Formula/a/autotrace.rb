@@ -4,7 +4,7 @@ class Autotrace < Formula
   url "https://github.com/autotrace/autotrace/archive/refs/tags/0.31.10.tar.gz"
   sha256 "14627f93bb02fe14eeda0163434a7cb9b1f316c0f1727f0bdf6323a831ffe80d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 1
+  revision 2
   head "https://github.com/autotrace/autotrace.git", branch: "master"
 
   livecheck do
