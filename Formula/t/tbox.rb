@@ -1,8 +1,8 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
   homepage "https://tboox.top"
-  url "https://github.com/tboox/tbox/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "3b919f61055b75fe9cb3796477468f6fe7524801d429e6ac48933ddde9caafbd"
+  url "https://github.com/tboox/tbox/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "48284c1f1f6e4e74ce1b4d2447c3141fdfdd3a20ef1cb30fc2f1021149227fdb"
   license "Apache-2.0"
   head "https://github.com/tboox/tbox.git", branch: "dev"
 
@@ -21,13 +21,6 @@ class Tbox < Formula
   end
 
   depends_on "xmake" => :build
-
-  # Fix an error for misleading indentation in wcscat.c
-  # PR ref: https://github.com/tboox/tbox/pull/309
-  patch do
-    url "https://github.com/tboox/tbox/commit/057b9247239ec930bb3b742b2c0ec96aec95fdc8.patch?full_index=1"
-    sha256 "d1384e7a285751777a73a24f1ca8de09bd1ff77f5e39049db6e6103220b3ae35"
-  end
 
   def install
     system "xmake", "config", "--charset=y", "--demo=n", "--small=y", "--xml=y"
