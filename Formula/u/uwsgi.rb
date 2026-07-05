@@ -17,11 +17,11 @@ class Uwsgi < Formula
   end
 
   depends_on "pkgconf" => :build
+  depends_on "jansson"
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.14"
   depends_on "sqlite"
-  depends_on "yajl"
 
   uses_from_macos "curl"
   uses_from_macos "libxcrypt"
@@ -45,7 +45,7 @@ class Uwsgi < Formula
     (buildpath/"buildconf/brew.ini").write <<~INI
       [uwsgi]
       ssl = true
-      json = yajl
+      json = jansson
       xml = libxml2
       yaml = embedded
       inherit = base
