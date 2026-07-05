@@ -1,8 +1,8 @@
 class Pop < Formula
   desc "Send emails from your terminal"
   homepage "https://github.com/charmbracelet/pop"
-  url "https://github.com/charmbracelet/pop/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "7f95a631ad84af09c9ba076348db92f4af5428087c3d03f6fc828b4c1c0084c7"
+  url "https://github.com/charmbracelet/pop/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "b7f68883e55004fd538faa78227afd474e4222e567c5cdd9d6c15f52c2befe45"
   license "MIT"
 
   bottle do
@@ -25,8 +25,8 @@ class Pop < Formula
   end
 
   test do
-    assert_match "environment variable is required",
-      shell_output("#{bin}/pop --body 'hi' --subject 'Hello'", 1).chomp
+    assert_match " Charm Pop  Hello!",
+      shell_output("#{bin}/pop --body 'hi' --subject 'Hello' 2>&1", 1).chomp
 
     assert_match version.to_s, shell_output("#{bin}/pop --version")
   end
