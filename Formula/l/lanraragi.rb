@@ -4,6 +4,7 @@ class Lanraragi < Formula
   url "https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.80.tar.gz"
   sha256 "25c36e844054cf750d13de7f67d0124b225da540b877b88becb657db0aeff287"
   license "MIT"
+  revision 1
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
