@@ -87,27 +87,6 @@ class Dmd < Formula
     etc.install "dmd.conf"
   end
 
-  # Previous versions of this formula may have left in place an incorrect
-  # dmd.conf.  If it differs from the newly generated one, move it out of place
-  # and warn the user.
-  def install_new_dmd_conf
-    conf = etc/"dmd.conf"
-
-    # If the new file differs from conf, etc.install drops it here:
-    new_conf = etc/"dmd.conf.default"
-    # Else, we're already using the latest version:
-    return unless new_conf.exist?
-
-    backup = etc/"dmd.conf.old"
-    opoo "An old dmd.conf was found and will be moved to #{backup}."
-    mv conf, backup
-    mv new_conf, conf
-  end
-
-  def post_install
-    install_new_dmd_conf
-  end
-
   def caveats
     <<~EOS
       Ancillary tools (e.g. ddemangle, dustmite, rdmd) are now in the `dtools` formula.
