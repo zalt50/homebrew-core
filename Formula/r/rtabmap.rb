@@ -1,10 +1,9 @@
 class Rtabmap < Formula
   desc "Visual and LiDAR SLAM library and standalone application"
   homepage "https://introlab.github.io/rtabmap"
-  url "https://github.com/introlab/rtabmap/archive/refs/tags/0.23.1.tar.gz"
-  sha256 "8f0463d0b46418921da0503d5f991c7d0b8308b4926a069d9fe4ec811113502f"
+  url "https://github.com/introlab/rtabmap/archive/refs/tags/0.23.8.tar.gz"
+  sha256 "990029f1021e3c124c3accc7baf25b6c762c49537b9ae326965ff50b395afb11"
   license "BSD-3-Clause"
-  revision 7
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
