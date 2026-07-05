@@ -4,7 +4,7 @@ class Pqiv < Formula
   url "https://github.com/phillipberndt/pqiv/archive/refs/tags/2.13.3.tar.gz"
   sha256 "f0ffaa33e93299b38058c507da2945976a4b350c92cf1c4b3649586444395dfd"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/phillipberndt/pqiv.git", branch: "master"
 
   bottle do
