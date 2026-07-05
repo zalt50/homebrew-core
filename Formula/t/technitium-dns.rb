@@ -6,12 +6,12 @@ class TechnitiumDns < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfd22e86094c1f55fa0edbd719bae8cefb7faa29e447ff1f1e5836af4a6dabb6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c3178955056ccf75f745a9b66c3f4a9ef9f42dad613d6abbcd29a1407b35017"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64f8d5ede9fa6cd5cfd6a049ffa02f96bb5e508b365fe2ba7f7227eb9e68ff0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "703600b68f7becd81a473f9f5a076ba109ac2011c13d2a5ab62b9907adec1689"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40c15ba74c3a852d580e233d67c741b93fba5fc704ece85d64022e95dbf4b9e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a6ba13b569ff7e40f3c0b59281b4ce69178a2b1b2c27da4f4b83f433181e732"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8f2969c7ed1ef2c35952b101fad882519d7de48ee35aaa8fc92138f1271661f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f6c441512f53265da5cf6a319b59a7733f7fd6c630811ffa21f2dbc62806096"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d76f7314fd3bc61efa350e2a7b4e9314731f98fd1dd3ffdb2763f60b3f06b71c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1d01d8cab90d4b0724cbf8e06e0836dffb74dbd220a9ab036fa87f3ee4f5092"
+    sha256 cellar: :any,                 arm64_linux:   "aa22e484b35fdb6d95a326b8ecef7308df050fb6d2872ad104110d4a777ea150"
+    sha256 cellar: :any,                 x86_64_linux:  "09c5567358d47950ed16e930561752b48af99e9e16ef4df908202a29e737ed6c"
   end
 
   depends_on "dotnet"
