@@ -6,6 +6,15 @@ class Bbrew < Formula
   license "MIT"
   head "https://github.com/Valkyrie00/bold-brew.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51687e72efa1e34857d074f63c46c2acd77cf3343ea8ec3a7e5b721b3f96d183"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51687e72efa1e34857d074f63c46c2acd77cf3343ea8ec3a7e5b721b3f96d183"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51687e72efa1e34857d074f63c46c2acd77cf3343ea8ec3a7e5b721b3f96d183"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49fae21e7e2347e62bd5cf627fe134f36e80642fd95f823b5eeac33a534da7e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfda2386161a27d17235c359279aa6ac5349221cacf18a781638a555548bbb54"
+    sha256 cellar: :any,                 x86_64_linux:  "bc3cf853eefedb10a357db3314b9610ae964c127eebb7c6ac9e2d3326b2b416f"
+  end
+
   depends_on "go" => :build
 
   def install
