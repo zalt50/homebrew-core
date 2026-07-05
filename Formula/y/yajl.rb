@@ -4,6 +4,7 @@ class Yajl < Formula
   url "https://github.com/lloyd/yajl/archive/refs/tags/2.1.0.tar.gz"
   sha256 "3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a"
   license "ISC"
+  revision 1
 
   bottle do
     rebuild 4
@@ -24,10 +25,16 @@ class Yajl < Formula
 
   depends_on "cmake" => :build
 
-  # Workaround to build with CMake 4
+  # Upstream is unmaintained so we use Debian patches to fix CVEs and other
+  # issues while formula is still used by non-deprecated dependents.
   patch do
-    url "https://github.com/lloyd/yajl/commit/6fe59ca50dfd65bdb3d1c87a27245b2dd1a072f9.patch?full_index=1"
-    sha256 "b059e4181aca7c50c71924632b5e1dc263ea05a2e7fc6def095c0cc65398282c"
+    url "https://deb.debian.org/debian/pool/main/y/yajl/yajl_2.1.0-6.debian.tar.xz"
+    sha256 "462fb384bef46c7252001c609dabc126624a1b71e9597cc16827d25a0226453f"
+    apply "patches/dynamically-link-tools.patch",
+          "patches/CVE-2017-16516.patch",
+          "patches/CVE-2022-24795.patch",
+          "patches/CVE-2023-33460.patch",
+          "patches/6fe59ca50dfd65bdb3d1c87a27245b2dd1a072f9.patch" # cmake 4
   end
 
   def install
