@@ -62,6 +62,8 @@ class Siril < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       --force-fallback-for=kplot
