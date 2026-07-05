@@ -59,6 +59,7 @@ class R < Formula
 
   # needed to preserve executable permissions on files without shebangs
   skip_clean "lib/R/bin", "lib/R/doc"
+  skip_clean "lib/R/site-library"
 
   def install
     # `configure` doesn't like curl 8+, but convince it that everything is ok.
@@ -131,16 +132,14 @@ class R < Formula
     inreplace lib/"R/etc/Makeconf", Formula["gcc"].prefix.realpath,
                                     formula_opt_prefix("gcc"),
                                     audit_result: OS.mac?
-  end
 
-  def post_install
+    # `lib/R` is a :mkpath link directory
     short_version = Utils.safe_popen_read(bin/"Rscript", "-e", "cat(as.character(getRversion()[1,1:2]))")
-    site_library = HOMEBREW_PREFIX/"lib/R"/short_version/"site-library"
+    site_library = lib/"R"/short_version/"site-library"
     site_library.mkpath
     touch site_library/".keepme"
     site_library_cellar = lib/"R/site-library"
-    site_library_cellar.unlink if site_library_cellar.exist?
-    site_library_cellar.parent.install_symlink site_library
+    site_library_cellar.parent.install_symlink HOMEBREW_PREFIX/"lib/R"/short_version/"site-library"
   end
 
   test do
