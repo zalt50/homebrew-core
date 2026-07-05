@@ -9,12 +9,12 @@ class Uvicorn < Formula
   head "https://github.com/encode/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cdd84ddd51ec75d0f09c7d5d0ff12a3618014bc4d8706aa9a447c14ba99ae0ca"
-    sha256 cellar: :any, arm64_sequoia: "caa7105cff383b74e066a550129f96255218cbe79e4b3e3eb5fbfd601144bd40"
-    sha256 cellar: :any, arm64_sonoma:  "b2c4627a3556ade055e1deb7b8ca5158c0f536940786c36bd5c6c02f7d8a0d9b"
-    sha256 cellar: :any, sonoma:        "330db1cc870d299f57e30f66b576e15339e50911aa34e195ff3d68e053e98cc5"
-    sha256 cellar: :any, arm64_linux:   "87cbb241ac21443f2787bfd68f5eebf0151acf91fa9c7602c225ec92a93f84c9"
-    sha256 cellar: :any, x86_64_linux:  "ce91e79e352ac7fc76464d83be4e678154d68ce26417d36438b36fa48d7954e1"
+    sha256 cellar: :any, arm64_tahoe:   "8535cb79cc23a4b340c0eec84edde37d02bc2f62031b88fecd83773306db0a0e"
+    sha256 cellar: :any, arm64_sequoia: "c1ac94e0b05c5d7f99a28a03ad634c2e646896566ebd5498fcc5b7661863e275"
+    sha256 cellar: :any, arm64_sonoma:  "c4d7939d678d7043c5479badd52f26e423fc72e0db6e2ab0d80cae90485b4ed1"
+    sha256 cellar: :any, sonoma:        "e530fa9ecbcfd4524296161a8665e5be3d1e6ffe782edad61cef0e34dbec9b34"
+    sha256 cellar: :any, arm64_linux:   "64756ab3b5247e9444adb3cdb7c8b0b333c6bd1acd196ce77c1dbc0c701aa5fb"
+    sha256 cellar: :any, x86_64_linux:  "fcd2e82d1bafb5a4cb7dbeb554da2efffe5e084e9b10a7bc7236bcc050d8b1fa"
   end
 
   depends_on "rust" => :build
