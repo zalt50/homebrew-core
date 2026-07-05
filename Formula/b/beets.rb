@@ -8,12 +8,13 @@ class Beets < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b97ac8e7a750b703ca7a1c31fab76e02074a9e15e7a9bdf4755a7fda1f562b11"
-    sha256 cellar: :any, arm64_sequoia: "da6a023b8a21ccda554715d460e0bdd807410571f56d7f61559cad8fb8ffd990"
-    sha256 cellar: :any, arm64_sonoma:  "b0e8f1cba6a92e99a9793e3338abc7ba3441089daed267494e5defbc6519a6c0"
-    sha256 cellar: :any, sonoma:        "cf0713c87e8d71f68d5ceaa7122c52fd726425f1b1951e051ecdca9f126345d2"
-    sha256 cellar: :any, arm64_linux:   "bc44362cdf1ec2a06f4ef420add528718d560c24a894e19f4b5cf563d7c8d75e"
-    sha256 cellar: :any, x86_64_linux:  "8790000e3600ebeccf1aae06ca041af393862426f76262e67fbaaf67073bb67a"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "2746fcfde157662663e1370e566af7c5841a4e5de38e1f76d60ccdb7c3a5bee7"
+    sha256 cellar: :any, arm64_sequoia: "684ce8364bee9670ffb584cadfd0f8fcf9625ce1cd4500e80eee8e765b1f04a3"
+    sha256 cellar: :any, arm64_sonoma:  "8f31a581742f1f6eb802e2dc1c69332bbab525af5d137e81c62c30813895c57f"
+    sha256 cellar: :any, sonoma:        "f600fe1e1d0692efa2e2908643ee7753eb1fa1e9a06ceac6cf2851eee8497f04"
+    sha256 cellar: :any, arm64_linux:   "1997779c62213180e6f261a4eaaf133fea7e895e42d41562f3cb43073c2da430"
+    sha256 cellar: :any, x86_64_linux:  "c8cd98d29f6374b978ad10813e40a2585e6ad2ed60d5ade0a3fc5ac3406e36ab"
   end
 
   depends_on "cmake" => :build
