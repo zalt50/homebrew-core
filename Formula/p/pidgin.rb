@@ -151,8 +151,8 @@ class Pidgin < Formula
     end
   end
 
-  def post_install
-    system formula_opt_bin("glib")/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas" if build.head?
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do
