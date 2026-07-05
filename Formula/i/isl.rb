@@ -7,8 +7,8 @@ class Isl < Formula
   # package detection.
   desc "Integer Set Library for the polyhedral model"
   homepage "https://libisl.sourceforge.io/"
-  url "https://libisl.sourceforge.io/isl-0.27.tar.xz"
-  sha256 "6d8babb59e7b672e8cb7870e874f3f7b813b6e00e6af3f8b04f7579965643d5c"
+  url "https://libisl.sourceforge.io/isl-0.28.tar.xz"
+  sha256 "3dc31b8e1b18329e42d5dfbf84dd55e15c59b61569a2ab246f61497d9592f727"
   license "MIT"
 
   livecheck do
