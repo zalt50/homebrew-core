@@ -1,8 +1,8 @@
 class Librevenge < Formula
   desc "Base library for writing document import filters"
   homepage "https://sourceforge.net/p/libwpd/wiki/librevenge/"
-  url "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.5/librevenge-0.0.5.tar.xz"
-  sha256 "106d0c44bb6408b1348b9e0465666fa83b816177665a22cd017e886c1aaeeb34"
+  url "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.6/librevenge-0.0.6.tar.xz"
+  sha256 "19eacf5ce55d7fe6a990a45142589cdf7da0c7b68701797f133482cb44f189fa"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
   compatibility_version 1
 
