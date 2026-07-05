@@ -1,8 +1,8 @@
 class Ipatool < Formula
   desc "CLI tool for searching and downloading app packages from the iOS App Store"
   homepage "https://github.com/majd/ipatool"
-  url "https://github.com/majd/ipatool/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "36c589ad88cea989b3a5bc3cd35223e12907c609789802b59d3cfb07596a07e7"
+  url "https://github.com/majd/ipatool/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "2fe03975acd6eb184c3cc6e0bb5d49f973c39aa518d36279685f442c23e87956"
   license "MIT"
   head "https://github.com/majd/ipatool.git", branch: "main"
 
@@ -18,6 +18,7 @@ class Ipatool < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/majd/ipatool/v2/cmd.version=#{version}")
 
     generate_completions_from_executable(bin/"ipatool", shell_parameter_format: :cobra)
