@@ -81,8 +81,7 @@ class Octave < Formula
   end
 
   on_linux do
-    depends_on "autoconf"
-    depends_on "automake"
+    depends_on "libx11"
     depends_on "mesa"
     depends_on "mesa-glu"
     depends_on "wayland"
@@ -98,26 +97,11 @@ class Octave < Formula
       "--with-hdf5-includedir=#{formula_opt_include("hdf5")}",
       "--with-hdf5-libdir=#{formula_opt_lib("hdf5")}",
       "--with-java-homedir=#{formula_opt_prefix("openjdk")}",
-      "--with-x=no",
       "--with-blas=-L#{formula_opt_lib("openblas")} -lopenblas",
       "--with-portaudio",
       "--with-sndfile",
     ]
-
-    if OS.linux?
-      # Explicitly specify aclocal and automake without versions
-      args << "ACLOCAL=aclocal"
-      args << "AUTOMAKE=automake"
-
-      # Mesa OpenGL location must be supplied by LDFLAGS on Linux
-      args << "LDFLAGS=-L#{formula_opt_lib("mesa")} -L#{formula_opt_lib("mesa-glu")}"
-
-      # Docs building is broken on Linux
-      args << "--disable-docs"
-
-      # Need to regenerate aclocal.m4 so that it will work with brewed automake
-      system "aclocal"
-    end
+    args << "--with-x=no" if OS.mac?
 
     system "./configure", *args, *std_configure_args
     # https://github.com/Homebrew/homebrew-core/pull/170959#issuecomment-2351023470
@@ -126,9 +110,11 @@ class Octave < Formula
     end
 
     # Avoid revision bumps whenever fftw's, gcc's or OpenBLAS' Cellar paths change
+    fftw_prefix = formula_opt_prefix("fftw")
+    gcc_prefix = formula_opt_prefix("gcc")
     inreplace "src/mkoctfile.cc" do |s|
-      s.gsub! Formula["fftw"].prefix.realpath, formula_opt_prefix("fftw")
-      s.gsub! Formula["gcc"].prefix.realpath, formula_opt_prefix("gcc")
+      s.gsub! fftw_prefix.realpath, fftw_prefix
+      s.gsub! gcc_prefix.realpath, gcc_prefix
     end
 
     # Make sure that Octave uses the modern texinfo at run time
@@ -165,12 +151,12 @@ class Octave < Formula
       assert(oct_demo, 42)
     MATLAB
 
-    if OS.linux?
-      ENV["QT_QPA_PLATFORM"] = "minimal"
-      system bin/"octave", "--gui"
-    else
-      pid = spawn(bin/"octave", "--gui")
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    pid = spawn(bin/"octave", "--gui")
+    begin
       sleep 5
+    ensure
       system "pkill", "-KILL", "octave-gui"
       Process.wait(pid)
     end
