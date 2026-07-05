@@ -31,6 +31,7 @@ class Gegl < Formula
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "json-glib"
+  depends_on "libnsgif"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
@@ -49,7 +50,7 @@ class Gegl < Formula
       -Djasper=disabled
       -Dumfpack=disabled
       -Dlibspiro=disabled
-      --force-fallback-for=libnsgif,poly2tri-c
+      --force-fallback-for=poly2tri-c
     ]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
