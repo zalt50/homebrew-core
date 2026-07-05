@@ -48,9 +48,11 @@ class Libressl < Formula
     system "make", "install"
   end
 
-  def post_install
-    rm(pkgetc/"cert.pem") if (pkgetc/"cert.pem").exist?
-    pkgetc.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+  post_install_steps do
+    ln_sf "cert.pem", "cert.pem",
+          source_formula: "ca-certificates",
+          source_base:    :formula_pkgetc,
+          target_base:    :pkgetc
   end
 
   def caveats
