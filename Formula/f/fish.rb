@@ -39,12 +39,6 @@ class Fish < Formula
     system "cmake", "--install", "build"
   end
 
-  def post_install
-    (pkgshare/"vendor_functions.d").mkpath
-    (pkgshare/"vendor_completions.d").mkpath
-    (pkgshare/"vendor_conf.d").mkpath
-  end
-
   test do
     system bin/"fish", "-c", "echo"
     output = shell_output("#{bin}/fish -c 'set --show fish_function_path'")
