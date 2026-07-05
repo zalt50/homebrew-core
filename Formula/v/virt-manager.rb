@@ -33,8 +33,8 @@ class VirtManager < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "8d07cb463ff7898b94f6d6345907088f178ba21054c5e5b7e19fd416e605b7da"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f5439f62537fb88802e3f818875c83e78ba51d24049b038b35c02a8a68eef9da"
   end
 
   depends_on "docutils" => :build
