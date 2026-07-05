@@ -8,12 +8,12 @@ class Apprise < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e83eaf381d97317610cee20482b7298fe7ed1c752a8f5ad538a31806803e54ef"
-    sha256 cellar: :any, arm64_sequoia: "a18d28aa001fa6754914d30b2b72f67b400c6b6555c8e3c792de276aaa2ac3ff"
-    sha256 cellar: :any, arm64_sonoma:  "2e2acf535628eef8a746b80753df70680e88707827c3dcc7c2ad6d8c9e602065"
-    sha256 cellar: :any, sonoma:        "69580d263a44cf450ca4c2a89824a28017d75a004d5aea28afefd8f93ddcd4a3"
-    sha256 cellar: :any, arm64_linux:   "8374d8c21c5ab599643ba2e6937a3296ae618514eb255e12ba54c4f17396eaa2"
-    sha256 cellar: :any, x86_64_linux:  "d5c183c47ed152dc58225520ba14eb252c95db378001b5cb0c3d4a786561737f"
+    sha256 cellar: :any, arm64_tahoe:   "2383af0ddfd09c409f34cc8d242192b3b2095a64cd5fbd2a58e6a8c85870e453"
+    sha256 cellar: :any, arm64_sequoia: "81cdbd1135497080cfc07f0938f26e89f26b78f9fd39b8b8c75fb4555c95a1ba"
+    sha256 cellar: :any, arm64_sonoma:  "a1117c7f55845e603de3e5e1686d02cff25af459580186320069972ca4a02f8b"
+    sha256 cellar: :any, sonoma:        "e816b4e5706536f11db0c3428cf67d28ffd8f4e496046fa1047d45beb0704b46"
+    sha256 cellar: :any, arm64_linux:   "0c7fdb761c2d18328ff85fbf7cef3f062926668631b63d47c33009d94b243cdd"
+    sha256 cellar: :any, x86_64_linux:  "54bffddb23849eb4ec79c2bf412193c32cae754ceec92247df9b04c3209d34e2"
   end
 
   depends_on "certifi"
