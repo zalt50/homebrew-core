@@ -7,12 +7,12 @@ class Oj < Formula
   head "https://github.com/ohler55/ojg.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2646c08f3725d3002c63ecb5b0840d84a4758e2c90d3b93743f9277d8f63f566"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2646c08f3725d3002c63ecb5b0840d84a4758e2c90d3b93743f9277d8f63f566"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2646c08f3725d3002c63ecb5b0840d84a4758e2c90d3b93743f9277d8f63f566"
-    sha256 cellar: :any_skip_relocation, sonoma:        "671141d6f3d5ba9adfeb29df5731a4b6e071992518ced24a8791057adf27ba3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52b109bc176c0afc9081752f1f1e2197b74ec7e3fd5494155797e112520c5b4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4242ec4389c3d0a287b87028adcc8713abab8b46e720a9cea64995371fee59d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbbb9d894e20d489ba5948f952b3925011a0ce794cb59036e3f3781f39f03e4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8bd8befae482fd6c4a4dabf9638355cb6ae93b7057824d4815a3f84fb6f7814"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "626ab103ce6ee8e3a49ba91e164810fded698644f4f74b2db7e82e022d07c603"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25f1f6e98c939eb157643a97591969592d48d79d993d37cc91932407bcab2cd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "404f8c8855b870535e8a06b903de2b48bcc6bb2c6c82d414e7efece76afef50d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5041c61bbed869d5d9425c59b5ff16e5a9cc99e176eb84cd5374a5f2df3c6ec6"
   end
 
   depends_on "go" => :build
