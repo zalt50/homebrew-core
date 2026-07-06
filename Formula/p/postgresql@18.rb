@@ -119,6 +119,7 @@ class PostgresqlAT18 < Formula
 
   post_install_steps do
     mkdir_p "log"
+    ln_sf "share/postgresql", "share/postgresql@18", source_base: :prefix, target_base: :homebrew_prefix
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     init_data_dir "postgresql@18", using: :postgresql_initdb
   end
