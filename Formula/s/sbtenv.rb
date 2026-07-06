@@ -16,20 +16,14 @@ class Sbtenv < Formula
     prefix.install "bin", "completions", "libexec"
     prefix.install "plugins" => "default-plugins"
 
-    %w[sbtenv-install].each do |cmd|
-      bin.install_symlink "#{prefix}/default-plugins/sbt-install/bin/#{cmd}"
-    end
+    bin.install_symlink prefix/"default-plugins/sbt-install/bin/sbtenv-install"
+    prefix.install_symlink (var/"lib/sbtenv/plugins").mkpath
+    prefix.install_symlink (var/"lib/sbtenv/versions").mkpath
   end
 
-  def post_install
-    var_lib = HOMEBREW_PREFIX/"var/lib/sbtenv"
-    %w[plugins versions].each do |dir|
-      var_dir = "#{var_lib}/#{dir}"
-      mkdir_p var_dir
-      ln_sf var_dir, "#{prefix}/#{dir}"
-    end
-
-    (var_lib/"plugins").install_symlink "#{prefix}/default-plugins/sbt-install"
+  # Var symlinks must be done in post install as bottling converts symlinks to real files
+  post_install_steps do
+    ln_sf "default-plugins/sbt-install", "lib/sbtenv/plugins/sbt-install", target_base: :var
   end
 
   test do
