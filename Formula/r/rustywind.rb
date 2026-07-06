@@ -1,8 +1,8 @@
 class Rustywind < Formula
   desc "CLI for organizing Tailwind CSS classes"
   homepage "https://github.com/avencera/rustywind"
-  url "https://github.com/avencera/rustywind/archive/refs/tags/v0.24.3.tar.gz"
-  sha256 "50706558f411722631db2449f5f05463703ebeffdea41f6e5f28f383992d06cb"
+  url "https://github.com/avencera/rustywind/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "32d3bff8de2b08a17fca485994e69e33619a78b1e397d4059dc445f62d19603b"
   license "Apache-2.0"
   head "https://github.com/avencera/rustywind.git", branch: "master"
 
@@ -35,7 +35,7 @@ class Rustywind < Formula
     system bin/"rustywind", "--write", "test.html"
 
     expected_content = <<~HTML
-      <div class="p-4 text-center text-white bg-red-500">
+      <div class="bg-red-500 p-4 text-center text-white">
         <p class="text-lg font-bold">Hello, World!</p>
       </div>
     HTML
