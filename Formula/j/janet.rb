@@ -16,8 +16,8 @@ class Janet < Formula
   end
 
   resource "jpm" do
-    url "https://github.com/janet-lang/jpm/archive/refs/tags/v1.1.0.tar.gz"
-    sha256 "337c40d9b8c087b920202287b375c2962447218e8e127ce3a5a12e6e47ac6f16"
+    url "https://github.com/janet-lang/jpm/archive/refs/tags/v1.2.0.tar.gz"
+    sha256 "4282b36b44a9b35367d128982f2cfaa67370e4e5a305b3999d86a64fadd308d2"
   end
 
   def syspath
