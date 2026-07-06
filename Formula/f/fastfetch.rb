@@ -24,10 +24,10 @@ class Fastfetch < Formula
   depends_on "cmake" => :build
   depends_on "glib" => :build
   depends_on "imagemagick" => :build
+  depends_on "lua" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "vulkan-loader" => :build
-  depends_on "lua"
   depends_on "yyjson"
 
   uses_from_macos "sqlite" => :build
