@@ -36,27 +36,19 @@ class I2pd < Formula
     system "make", "install", *args
 
     # preinstall to prevent overwriting changed by user configs
-    confdir = etc/"i2pd"
     rm_r(prefix/"etc")
-    confdir.install doc/"i2pd.conf", doc/"subscriptions.txt", doc/"tunnels.conf"
+    pkgetc.install doc/"i2pd.conf", doc/"subscriptions.txt", doc/"tunnels.conf"
+
+    (var/"lib/i2pd").mkpath
+    (var/"log/i2pd").mkpath
   end
 
-  def post_install
-    # i2pd uses datadir from variable below. If that path doesn't exist,
-    # create the directory and create symlinks to certificates and configs.
-    # Certificates can be updated between releases, so we must recreate symlinks
-    # to the latest version on upgrade.
-    datadir = var/"lib/i2pd"
-    if datadir.exist?
-      rm datadir/"certificates"
-      datadir.install_symlink pkgshare/"certificates"
-    else
-      datadir.dirname.mkpath
-      datadir.install_symlink pkgshare/"certificates", etc/"i2pd/i2pd.conf",
-                              etc/"i2pd/subscriptions.txt", etc/"i2pd/tunnels.conf"
-    end
-
-    (var/"log/i2pd").mkpath
+  post_install_steps do
+    # Create symlinks to certificates and configs
+    ln_sf "certificates", "lib/i2pd/certificates", source_base: :opt_pkgshare, target_base: :var
+    ln_sf "i2pd.conf", "lib/i2pd/i2pd.conf", source_base: :pkgetc, target_base: :var
+    ln_sf "subscriptions.txt", "lib/i2pd/subscriptions.txt", source_base: :pkgetc, target_base: :var
+    ln_sf "tunnels.conf", "lib/i2pd/tunnels.conf", source_base: :pkgetc, target_base: :var
   end
 
   service do
