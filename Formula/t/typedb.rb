@@ -1,8 +1,8 @@
 class Typedb < Formula
   desc "Strongly-typed database with a rich and logical type system"
   homepage "https://typedb.com/"
-  url "https://github.com/typedb/typedb/archive/refs/tags/3.11.5.tar.gz"
-  sha256 "adfd2f8c2aeb92cd58352761b87c3c8eff1f7b0c042270e63856ffcd5c1322d6"
+  url "https://github.com/typedb/typedb/archive/refs/tags/3.12.0.tar.gz"
+  sha256 "c414a4d5f79fdd176648f0a9ef458d93670a75da02fefe124df1fc1a7e85dbf9"
   license "MPL-2.0"
 
   bottle do
@@ -65,7 +65,7 @@ class Typedb < Formula
 
     output = log_path.read
     assert_match "Running TypeDB", output
-    assert_match "Serving:\n  gRPC:  0.0.0.0:#{server_port}", output
+    assert_match(/Serving:\n\s+gRPC:\s+0.0.0.0:#{server_port}/i, output)
     assert_match "TLS: disabled", output
   ensure
     Process.kill("TERM", pid)
