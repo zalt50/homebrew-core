@@ -1,10 +1,9 @@
 class ClangUml < Formula
   desc "Customizable automatic UML diagram generator for C++ based on Clang"
   homepage "https://github.com/bkryza/clang-uml"
-  url "https://github.com/bkryza/clang-uml/archive/refs/tags/0.6.2.tar.gz"
-  sha256 "004540c328699f81abebceb33a4661b548ab3a5f74096da2c025b9971b2b17ff"
+  url "https://github.com/bkryza/clang-uml/archive/refs/tags/0.6.3.tar.gz"
+  sha256 "6bd077062761e18881b5d4a300993243c09730f0cda449a9920333db6e1fccdd"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/bkryza/clang-uml.git", branch: "master"
 
   bottle do
@@ -18,7 +17,7 @@ class ClangUml < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => :build
-  depends_on "llvm@21"
+  depends_on "llvm"
   depends_on "yaml-cpp"
 
   def llvm
