@@ -2,9 +2,9 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2026-06",
-      revision: "285f6d87bc86b17329fb23416fd512da4393885b"
-  version "2026-06"
+      tag:      "dev-2027-07",
+      revision: "301c287de90393608fb7c5b260210e1e67caf0fd"
+  version "2027-07"
   license "Zlib"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
@@ -51,58 +51,55 @@ class Odin < Formula
       system "make", "unix"
     end
 
-    raylib_installpath = if OS.linux?
-      "vendor/raylib/linux"
-    else
-      "vendor/raylib/macos"
-    end
-
-    raygui_installpath = if OS.linux?
-      "vendor/raylib/linux"
-    elsif Hardware::CPU.intel?
-      "vendor/raylib/macos"
-    else
-      "vendor/raylib/macos-arm64"
-    end
-
     glfw_installpath = if OS.linux?
       "vendor/glfw/lib"
     else
       "vendor/glfw/lib/darwin"
     end
-
     ln_s Formula["glfw"].lib/"libglfw3.a", buildpath/glfw_installpath/"libglfw3.a"
 
-    ln_s Formula["raylib"].lib/"libraylib.a", buildpath/raylib_installpath/"libraylib.a"
-    # In order to match the version 500 used in odin
-    ln_s Formula["raylib"].lib/shared_library("libraylib", "5.5.0"),
-      buildpath/raylib_installpath/shared_library("libraylib", "550")
+    raylib = Formula["raylib"]
+    vendor = buildpath/"vendor/raylib"
+
+    # Odin's `vendor:raylib` bindings link raylib from fixed per-OS/arch dirs
+    static_dir, shared_dir = if OS.mac?
+      ["macos", "macos"]
+    elsif Hardware::CPU.arm?
+      ["linux-arm", "linux-arm64"]
+    else
+      ["linux", "linux"]
+    end
+
+    (vendor/static_dir).mkpath # linux-arm is not shipped in the checkout
+    ln_s raylib.lib/"libraylib.a", vendor/static_dir/"libraylib.a"
+    ln_s raylib.lib/shared_library("libraylib", "6.0.0"),
+         vendor/shared_dir/shared_library("libraylib", "600")
+
+    raygui_dir = vendor/(OS.mac? ? "macos" : "linux")
+    raygui_name = (OS.mac? && Hardware::CPU.arm?) ? "libraygui-arm64" : "libraygui"
 
     resource("raygui").stage do
       cp "src/raygui.h", "src/raygui.c"
 
-      # build static library
       system ENV.cc, "-c", "-o", "raygui.o", "src/raygui.c",
-        "-fpic", "-DRAYGUI_IMPLEMENTATION", "-I#{Formula["raylib"].include}"
-      system "ar", "-rcs", "libraygui.a", "raygui.o"
-      cp "libraygui.a", buildpath/raygui_installpath
+        "-fpic", "-DRAYGUI_IMPLEMENTATION", "-I#{raylib.include}"
+      system "ar", "-rcs", "#{raygui_name}.a", "raygui.o"
+      cp "#{raygui_name}.a", raygui_dir
 
-      # build shared library
       args = [
-        "-o", shared_library("libraygui"),
+        "-o", shared_library(raygui_name),
         "src/raygui.c",
         "-shared",
         "-fpic",
         "-DRAYGUI_IMPLEMENTATION",
         "-lm", "-lpthread", "-ldl",
-        "-I#{Formula["raylib"].include}",
-        "-L#{Formula["raylib"].lib}",
+        "-I#{raylib.include}",
+        "-L#{raylib.lib}",
         "-lraylib"
       ]
-
       args += ["-framework", "OpenGL"] if OS.mac?
       system ENV.cc, *args
-      cp shared_library("libraygui"), buildpath/raygui_installpath
+      cp shared_library(raygui_name), raygui_dir
     end
 
     # By default the build runs an example program, we don't want to run it during install.
@@ -164,6 +161,8 @@ class Odin < Formula
         assert(42 <= num && num <= 1337)
       }
     ODIN
+    # raylib's bindings link libX11 on Linux; make it loadable at runtime.
+    ENV.prepend_path "LD_LIBRARY_PATH", Formula["libx11"].lib if OS.linux?
     system bin/"odin", "run", "raylib.odin", "-file"
 
     if OS.mac?
