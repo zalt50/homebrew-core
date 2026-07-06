@@ -24,7 +24,7 @@ class OpensslAT30 < Formula
   # See: https://www.openssl.org/policies/releasestrat.html
   deprecate! date: "2026-09-07", because: :unsupported
 
-  depends_on "ca-certificates"
+  depends_on "ca-certificates" => :no_linkage
 
   on_linux do
     resource "Test::Harness" do
@@ -81,9 +81,6 @@ class OpensslAT30 < Formula
       end
     end
 
-    # This could interfere with how we expect OpenSSL to build.
-    ENV.delete("OPENSSL_LOCAL_CONFIG_DIR")
-
     # This ensures where Homebrew's Perl is needed the Cellar path isn't
     # hardcoded into OpenSSL's scripts, causing them to break every Perl update.
     # Whilst our env points to opt_bin, by default OpenSSL resolves the symlink.
@@ -108,13 +105,13 @@ class OpensslAT30 < Formula
     touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }
   end
 
-  def openssldir
-    etc/"openssl@3.0"
-  end
+  def openssldir = pkgetc
 
-  def post_install
-    rm(openssldir/"cert.pem") if (openssldir/"cert.pem").exist?
-    openssldir.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+  post_install_steps do
+    ln_sf "cert.pem", "cert.pem",
+          source_formula: "ca-certificates",
+          source_base:    :formula_pkgetc,
+          target_base:    :pkgetc
   end
 
   def caveats
