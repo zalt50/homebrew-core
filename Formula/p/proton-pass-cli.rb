@@ -16,7 +16,7 @@ class ProtonPassCli < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "pass-cli")
@@ -28,6 +28,15 @@ class ProtonPassCli < Formula
     assert_match "Successful", shell_output("#{bin}/pass-cli logout --force")
 
     # Most operations require an authenticated session or keyring access.
-    assert_match "Error", shell_output("#{bin}/pass-cli login 2>&1", 1)
+    ENV["PROTON_PASS_KEY_PROVIDER"] = "fs"
+    output_log = testpath/"output.log"
+    pid = spawn bin/"pass-cli", "login", [:out, :err] => output_log.to_s
+    sleep 5
+    assert_match "Waiting for authentication to complete", output_log.read
+  ensure
+    if pid
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end
