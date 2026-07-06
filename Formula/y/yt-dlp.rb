@@ -9,12 +9,12 @@ class YtDlp < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a61840f7b549d76900d11f0ce84a975e01c27b45047707f87b6d6cd2bea5a077"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12148bf83356488aa9c2d08ab1ba3e2ba5b4a27d11abd8266c1d7f953509fdb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ca24e103de163e4ec7b1b9fc1e2979105ce808ec4094c3e1bac2c12222ba234"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54a8088eccb81c5a11837fa913cfc2bb2b6cbf599f6c548533a1799c75ec76d1"
-    sha256 cellar: :any,                 arm64_linux:   "8027adab2132a20b866a79165da22c3e941a0dcc2986dd9d7699159114a1a889"
-    sha256 cellar: :any,                 x86_64_linux:  "9903535132c2ff481c4d3e260b59bdf1aa45c4e0b5e61288ef33ef52855f4809"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad651b881a46884cf03b4f0ac50d6f0b68bacb5d53399b044836b1977c5c3d09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5b0a32b475768167a1d418a2efab3460460fb94a5d02e68b51a5f4654a8c4d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "574000450b3c4110caef19b9437c06086a33d8ffc1da4042a95776c4bfd80ec5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f26aef35b7917210285c684f43709c8cd65810fda21982b1c8f8f03a9c2d98cd"
+    sha256 cellar: :any,                 arm64_linux:   "e9db309b2f9b21404bfb4d3ce946bc14865644c110a05a0a7bb2c7bf4efa4e13"
+    sha256 cellar: :any,                 x86_64_linux:  "ff38e3f015e366a1dfd8371abeec683d8016f5553a765ed7f8e22528e5354a9f"
   end
 
   head do
