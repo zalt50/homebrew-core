@@ -1,8 +1,8 @@
 class Kiota < Formula
   desc "OpenAPI based HTTP Client code generator"
   homepage "https://aka.ms/kiota/docs"
-  url "https://github.com/microsoft/kiota/archive/refs/tags/v1.32.5.tar.gz"
-  sha256 "ab1ffec21c9abae686c0bd0d78177834b539752eb454f9d7c67291dc2f8c1d5d"
+  url "https://github.com/microsoft/kiota/archive/refs/tags/v1.33.0.tar.gz"
+  sha256 "e01bfe6f270aefded29f7e56906f4c964957fe49bacf0df4cf29a1eaf1ea5d29"
   license "MIT"
   head "https://github.com/microsoft/kiota.git", branch: "main"
 
