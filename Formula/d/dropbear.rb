@@ -1,8 +1,8 @@
 class Dropbear < Formula
   desc "Small SSH server/client for POSIX-based system"
   homepage "https://matt.ucc.asn.au/dropbear/dropbear.html"
-  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2026.91.tar.bz2"
-  sha256 "defa924475abf6bc1e74abc00173e46bfdc804bd47caafa14f5a4ef0cc76da34"
+  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2026.92.tar.bz2"
+  sha256 "91dcb5234de8dea68dd82c55411c9fc986b457ab58372a780ee8a870419c2f7e"
   license "MIT"
 
   livecheck do
@@ -20,7 +20,7 @@ class Dropbear < Formula
   end
 
   head do
-    url "https://github.com/mkj/dropbear.git", branch: "master"
+    url "https://github.com/mkj/dropbear.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
