@@ -424,10 +424,9 @@ jobs:
               keep_if_no_match: true
               allow_any_match: true
 
-            - label: CI-linux-self-hosted-deps
+            - label: CI-no-fail-fast-deps
               path: "Formula/.+/(\
                 glib|\
-                libva|\
                 libxml2|\
                 mesa|\
                 openssl@3|\
