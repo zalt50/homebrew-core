@@ -7,12 +7,12 @@ class Reposurgeon < Formula
   head "https://gitlab.com/esr/reposurgeon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b66e384d20675f69c9d473e6c030a9232cfe8d8c327b7bfd21bf227f7b90a761"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b709ec1a84895f07c70a41afe1cfb7d4e40a06c6399073155a16ffade11fe8b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf63784ae1a28e800feb2349a0901bae8208ae5ba1f65a7325e0d7669a5cf452"
-    sha256 cellar: :any_skip_relocation, sonoma:        "908ff53638bd99e6a8226a4ef11b3d61debd4ba657b44fd43f230eba1fcd11ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67b5e1d7fead416624377d20e5c5148f326e7c10da4ac06776d273f965a8337f"
-    sha256 cellar: :any,                 x86_64_linux:  "3d42f3534c2f7a5f8012ab95b8b78a94c7b05193aed5735116dab7be77694aab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06375c486d9a0a8a6e227b96104c02c2f461d6275664436fa8b91e37402ef206"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e42887e6dc400e5b2d381188e520fac92cba80cd99377bdb04e95ac24b5c403f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e181830306d8e99c3501ebbe88236a93a261b7c8955c79e244c6bf104381f03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2d58a92e266dc822e0cec5841a586edd12df9f34900179fbd37f3c9aef70664"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8337000ace833c5a4f90924a1c38cdbff706a706a537f41fd161159539186d13"
+    sha256 cellar: :any,                 x86_64_linux:  "33d152d7c5a9cac220f4c5053c10ef4142081871c7c1f232c28c592e2909c5f6"
   end
 
   depends_on "asciidoctor" => :build
