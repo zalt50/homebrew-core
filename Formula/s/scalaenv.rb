@@ -19,17 +19,13 @@ class Scalaenv < Formula
     %w[scalaenv-install scalaenv-uninstall scala-build].each do |cmd|
       bin.install_symlink "#{prefix}/default-plugins/scala-install/bin/#{cmd}"
     end
+
+    prefix.install_symlink (var/"lib/scalaenv/plugins").mkpath
+    prefix.install_symlink (var/"lib/scalaenv/versions").mkpath
   end
 
-  def post_install
-    var_lib = HOMEBREW_PREFIX/"var/lib/scalaenv"
-    %w[plugins versions].each do |dir|
-      var_dir = "#{var_lib}/#{dir}"
-      mkdir_p var_dir
-      ln_sf var_dir, "#{prefix}/#{dir}"
-    end
-
-    (var_lib/"plugins").install_symlink "#{prefix}/default-plugins/scala-install"
+  post_install_steps do
+    ln_sf "default-plugins/scala-install", "lib/scalaenv/plugins/scala-install", target_base: :var
   end
 
   test do
