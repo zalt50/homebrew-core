@@ -1,8 +1,8 @@
 class Ucloud < Formula
   desc "Official tool for managing UCloud services"
   homepage "https://www.ucloud.cn"
-  url "https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "446d28bfca346d27509b9917c6de75db254e38119171432bb7ad15f105d19316"
+  url "https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.5.tar.gz"
+  sha256 "06d1c76ae0523fbd94ad5b87ea1f20fbc16379e1716aa8dea837eaf571e72cf5"
   license "Apache-2.0"
 
   bottle do
@@ -17,7 +17,8 @@ class Ucloud < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=vendor"
+    ldflags = "-s -w -X github.com/ucloud/ucloud-cli/base.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
