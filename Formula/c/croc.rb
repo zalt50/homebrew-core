@@ -1,18 +1,18 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://github.com/schollz/croc/archive/refs/tags/v10.4.8.tar.gz"
-  sha256 "60f8a15a6fde7bea34730374b66bf8b3162770cf047fbf52cdd574f4807c6a7b"
+  url "https://github.com/schollz/croc/archive/refs/tags/v10.4.11.tar.gz"
+  sha256 "4e45794c8ecb67a595a9d60958a80806bc50b9eca04796dc24d3295e0cc9be46"
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b84d855bd06830eeb8b9c8d44053c68200c43e44d2181e38fdc6a19ccf8a8f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b84d855bd06830eeb8b9c8d44053c68200c43e44d2181e38fdc6a19ccf8a8f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b84d855bd06830eeb8b9c8d44053c68200c43e44d2181e38fdc6a19ccf8a8f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1a34807b99b0f1990cbc9696f14af675c20f7b953574c11c946b5ef6201dcd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bd32f16421724056d74363b9efa3c1f7e7945d451e848c0c8e826c62924341d"
-    sha256 cellar: :any,                 x86_64_linux:  "5ee18edb1fa0ef5e270beef2f6f04adf000628db60233a44add21e6bb3cc6fbd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89ea26b94cef0e6b590df5c39a40f49039cfffbd717c36287eb9308bdd033a20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89ea26b94cef0e6b590df5c39a40f49039cfffbd717c36287eb9308bdd033a20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89ea26b94cef0e6b590df5c39a40f49039cfffbd717c36287eb9308bdd033a20"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d33d18b261bb99d2912936238f94439f4447bdca49840793034e3941acc7a11e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "952ba7f0e4598715d83e7c6d9e14b12d35013dd5bcc962cc6ff09253bd1e0f8f"
+    sha256 cellar: :any,                 x86_64_linux:  "7341f31d623495a223360a553fbec62e88c0d5a516a7c2e5d284ea7cd30ba79a"
   end
 
   depends_on "go" => :build
