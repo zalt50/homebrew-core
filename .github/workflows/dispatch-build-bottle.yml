@@ -72,15 +72,16 @@ jobs:
         with:
           script: |
             const macOSRegex = /^(\d+(?:\.\d+)?)(?:-(arm64|x86_64))?$/;
-            const linuxRegex = /^(?:ubuntu-|linux-self-hosted-)/;
+            const linuxGitHubRegex = /^ubuntu-/;
+            const linuxSelfHostedRegex = /^linux-(?:arm64|x86_64)$/;
             return context.payload.inputs.runner.split(",")
                                                 .map(s => s.trim())
                                                 .filter(Boolean)
                                                 .map(s => {
               const macOSMatch = macOSRegex.exec(s);
-              if (macOSMatch && s != "11-arm64") // Ephemeral runners
+              if (macOSMatch)
                 return {runner: `${macOSMatch[1]}-${macOSMatch[2] ?? "x86_64"}-${context.runId}-dispatch`, cleanup: false};
-              else if (linuxRegex.test(s))
+              else if (linuxGitHubRegex.test(s))
                 return {
                   runner:    s,
                   container: {
@@ -90,6 +91,8 @@ jobs:
                   workdir:   "/github/home",
                   cleanup:   false
                 };
+              else if (linuxSelfHostedRegex.test(s))
+                return {runner: `${s}-${context.runId}-dispatch`, cleanup: false};
               else
                 return {runner: s, cleanup: true};
             });
