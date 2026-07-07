@@ -1,10 +1,9 @@
 class Lcov < Formula
   desc "Graphical front-end for GCC's coverage testing tool (gcov)"
   homepage "https://github.com/linux-test-project/lcov"
-  url "https://github.com/linux-test-project/lcov/releases/download/v2.4/lcov-2.4.tar.gz"
-  sha256 "3457825c6b2fe4ef77c782b82a23875c84a3c955243823f05d8f2dec0d455820"
+  url "https://github.com/linux-test-project/lcov/releases/download/v2.5/lcov-2.5.tar.gz"
+  sha256 "7e5e5a154bd5f3557659c328cab376764e7abd238bb403c424472c296b175126"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
@@ -18,6 +17,8 @@ class Lcov < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "d79b0f67be549e9cc3bcff583fc5502c4384f5b3bb071035049cbb328ad20e23"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "07128bf10fbe19a6fd27aab9739d6a5e55eccfaaa4c2d2c842961944fc70750f"
   end
+
+  depends_on "sphinx-doc" => :build
 
   uses_from_macos "perl"
 
@@ -50,8 +51,8 @@ class Lcov < Formula
     end
 
     resource "DateTime::TimeZone" do
-      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.66.tar.gz"
-      sha256 "6fbd61b2d5d7563a8e738341c3790e0d4302dffd4a879b9c268812fe44b54dc1"
+      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.68.tar.gz"
+      sha256 "1c1285d911027d276f235b32a888ee7425c9ab356ee62cd126c4b3ee3ea659b3"
     end
 
     resource "namespace::autoclean" do
@@ -125,8 +126,8 @@ class Lcov < Formula
     end
 
     resource "Role::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002004.tar.gz"
-      sha256 "d7bdee9e138a4f83aa52d0a981625644bda87ff16642dfa845dcb44d9a242b45"
+      url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002005.tar.gz"
+      sha256 "4618ec524618c104dc28a8cc86af129a00cad282aea7f4c75060ba05d4c8f4d7"
     end
 
     resource "Eval::Closure" do
@@ -165,8 +166,8 @@ class Lcov < Formula
     end
 
     resource "Clone" do
-      url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.47.tar.gz"
-      sha256 "4c2c0cb9a483efbf970cb1a75b2ca75b0e18cb84bcb5c09624f86e26b09c211d"
+      url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.50.tar.gz"
+      sha256 "f9732a4a857974db30905233589113003301b585b0cecda29a21cfba5bb014f9"
     end
 
     resource "Clone::PP" do
@@ -176,8 +177,8 @@ class Lcov < Formula
   end
 
   resource "JSON" do
-    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.10.tar.gz"
-    sha256 "df8b5143d9a7de99c47b55f1a170bd1f69f711935c186a6dc0ab56dd05758e35"
+    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.11.tar.gz"
+    sha256 "713bdbe724dbb915ed50265ffe47e079a511980cb2427aa19076788bb64c3182"
   end
 
   resource "PerlIO::gzip" do
@@ -202,7 +203,9 @@ class Lcov < Formula
       end
     end
 
-    system "make", "PREFIX=#{prefix}", "install"
+    # Build only the man pages; the HTML docs need the unpackaged sphinx_rtd_theme.
+    system "make", "RELEASE=#{version}", "-C", "docs", "man"
+    system "make", "PREFIX=#{prefix}", "--old-file=doc", "install"
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
