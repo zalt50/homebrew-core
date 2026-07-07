@@ -1,8 +1,8 @@
 class SlintCompiler < Formula
   desc "Compiler for the Slint UI markup language"
   homepage "https://slint.dev/"
-  url "https://github.com/slint-ui/slint/archive/refs/tags/v1.17.0.tar.gz"
-  sha256 "1cce5cc1e32a140e35366fe819fcf17a7b278338f67073d7bc97d4fa7a2a4d4e"
+  url "https://github.com/slint-ui/slint/archive/refs/tags/v1.17.1.tar.gz"
+  sha256 "68222567f8c70ff677cd4a98cd94fb4765ac0f797eb8f8608a646911c908dc2a"
   license "GPL-3.0-only"
   head "https://github.com/slint-ui/slint.git", branch: "master"
 
