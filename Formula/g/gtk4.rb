@@ -102,10 +102,9 @@ class Gtk4 < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{formula_opt_bin("glib")}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    system bin/"gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
-    system "#{formula_opt_bin("glib")}/gio-querymodules", "#{HOMEBREW_PREFIX}/lib/gtk-4.0/4.0.0/printbackends"
+  post_install_steps do
+    compile_gsettings_schemas
+    gtk_update_icon_cache
   end
 
   test do
