@@ -3,18 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/70/00/95650f3d105b8bf97c9456da809868bfc8ac90a8a178a0c0bbe791dfa562/vunnel-0.61.1.tar.gz"
-  sha256 "7bd34945faf092de6788ce98a4565d43f5de399ccc1b54b0de26a37046547621"
+  url "https://files.pythonhosted.org/packages/bd/a7/4afdb87cdfe63d81a54aa916b64e6c6436d613edbe51baa67dd830cde014/vunnel-0.62.0.tar.gz"
+  sha256 "0af4eab0fa585abfff2df4693af9c3f81a1461400705a9d5f29f25d958e0f2fa"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "41c64a63cc76ea4f2c131ebf597c600f575c449110e6fba71ee145da0167cdb2"
-    sha256 cellar: :any, arm64_sequoia: "c687353243675d9a319f3d4ae5e329eb9e7995a8171f30d9d8ae73534e652b2f"
-    sha256 cellar: :any, arm64_sonoma:  "0cea73dd2b21ef35f6acbf1dd1f60319b8199cd86d2722b1db5ba7754a30054e"
-    sha256 cellar: :any, sonoma:        "ae563d0c1bc899673c18d3dd4e4d3731b11401029c0b67a5e785809d6ac9567f"
-    sha256 cellar: :any, arm64_linux:   "27e5874c61d5b1762e24613c1256dc14e4da03eea5fbebce677bae36f882c5e6"
-    sha256 cellar: :any, x86_64_linux:  "02c5927a8f2fa4c1c92cb373c6f5325d8cce4256871dbb9ce172afafb688c0a2"
+    sha256 cellar: :any, arm64_tahoe:   "272985285924bb67b8ae06d21bc442d30cfb453f908b09e9e3ddba5f64ee585c"
+    sha256 cellar: :any, arm64_sequoia: "1d1c247830fb6d864909f9688d175dff18a705e21486670f8dbdc3ebd44fff7b"
+    sha256 cellar: :any, arm64_sonoma:  "c5bce767d9904b5c8c3e001a4cc4f278eb392711e773c1ec94db2b664a728424"
+    sha256 cellar: :any, sonoma:        "7cc73a7e8a854337803caa5113a5e20d79643f53418706115e4e272e380b06ae"
+    sha256 cellar: :any, arm64_linux:   "d995fe391e8f23707d4d512cc919de74722d86f390f39077e99c58c8b5d137ab"
+    sha256 cellar: :any, x86_64_linux:  "85515d1cc14dff0c0898f0cee4fa8c57ca725618836794e4815d330226fe358c"
   end
 
   depends_on "rust" => :build
@@ -59,8 +59,8 @@ class Vunnel < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/dd/8b/befc3cb36965f397d87e86fb3b00e3ec0dc67c1ecb0986d7f54ee528f018/greenlet-3.5.2.tar.gz"
-    sha256 "c1b906220d83c140361cdd12eef970fb5881a168b98ee58a43786426173da14c"
+    url "https://files.pythonhosted.org/packages/e2/f1/fbbfef6af0bad0548f09bc28948ea3c275b4edb19e17fc5ca9900a6a634d/greenlet-3.5.3.tar.gz"
+    sha256 "a61efc018fd3eb317eeca31aba90ee9e7f26f22884a79b6c6ec715bf71bb62f1"
   end
 
   resource "idna" do
@@ -184,8 +184,8 @@ class Vunnel < Formula
   end
 
   resource "ruff" do
-    url "https://files.pythonhosted.org/packages/d5/e6/15800dfde183a1a106594016c912b4c12d050a301989d1aca6cb63759fe8/ruff-0.15.19.tar.gz"
-    sha256 "edc27f7172a93b32b102687009d6a588508815072141543ae603a8b9b0823063"
+    url "https://files.pythonhosted.org/packages/43/dc/35b341fc554ba02f217fc10da57d1a75168cfbcf75b0ef2202176d4c4f2d/ruff-0.15.20.tar.gz"
+    sha256 "1416eb04349192646b54de98f146c4f59afe37d0decfc02c3cbbf396f3a28566"
   end
 
   resource "six" do
@@ -204,8 +204,8 @@ class Vunnel < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do
@@ -219,8 +219,8 @@ class Vunnel < Formula
   end
 
   resource "xxhash" do
-    url "https://files.pythonhosted.org/packages/c8/d4/640915f28a551050e299a2ba6194875de7bfe7e0ecd1be79eb429fcb8a74/xxhash-3.7.1.tar.gz"
-    sha256 "9de50caa75baeca63bcb3b0eb753508a5cddc7757682444d650684bc4ebe1095"
+    url "https://files.pythonhosted.org/packages/8e/63/71aa56b151a1b28770037a61bd4e461c2619cfc8866a4fcaf1548605e325/xxhash-3.8.1.tar.gz"
+    sha256 "b0de4bf3aa66363552d52c6a89003c479911f12098cd48a53d44a0f7a25f7c46"
   end
 
   resource "zipp" do
