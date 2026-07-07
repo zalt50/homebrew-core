@@ -1,19 +1,10 @@
 class ZxingCpp < Formula
   desc "Multi-format barcode image processing library written in C++"
   homepage "https://github.com/zxing-cpp/zxing-cpp"
+  url "https://github.com/zxing-cpp/zxing-cpp/releases/download/v3.1.0/zxing-cpp-3.1.0.tar.gz"
+  sha256 "a3eb825154f05242283e7d94d8ebdcf95beb3a534eba393cce504e91c9b215bd"
   license "Apache-2.0"
   head "https://github.com/zxing-cpp/zxing-cpp.git", branch: "master"
-
-  stable do
-    url "https://github.com/zxing-cpp/zxing-cpp/releases/download/v3.0.2/zxing-cpp-3.0.2.tar.gz"
-    sha256 "e957f13e2ad4e31badb3d9af3f6ba8999a3ca3c9cc4d6bafc98032f9cce1a090"
-
-    # add support for homebrew specific STB_IMAGE_INCLUDE_DIR config option
-    patch do
-      url "https://github.com/zxing-cpp/zxing-cpp/commit/764f7ac3438f0e7638da27ad00cc2147312a2ea6.patch?full_index=1"
-      sha256 "2174f23e784b8fd68a5f0b3fdf467f9c22c448b73ca40133be711486dfe8d82b"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1957bd2c1cd602a47a0e9458252fb997013ed247a40122dd3bb6f88574cf3977"
