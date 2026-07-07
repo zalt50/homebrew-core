@@ -138,7 +138,7 @@ jobs:
     needs: formulae_detect
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
-      linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
+      linux-self-hosted: ${{ steps.check-labels.outputs.linux-self-hosted }}
       fail-fast: ${{ steps.check-labels.outputs.fail-fast }}
       test-dependents: ${{ steps.check-labels.outputs.test-dependents }}
       long-timeout: ${{ steps.check-labels.outputs.long-timeout }}
@@ -188,7 +188,7 @@ jobs:
       runners: ${{steps.determine-runners.outputs.runners}}
       runners_present: ${{steps.determine-runners.outputs.runners_present}}
     env:
-      HOMEBREW_LINUX_RUNNER: ${{needs.setup_tests.outputs.linux-runner}}
+      HOMEBREW_LINUX_SELF_HOSTED: ${{needs.setup_tests.outputs.linux-self-hosted}}
       HOMEBREW_MACOS_LONG_TIMEOUT: ${{needs.setup_tests.outputs.long-timeout}}
       TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
       DELETED_FORMULAE: ${{needs.formulae_detect.outputs.deleted_formulae}}
@@ -266,7 +266,7 @@ jobs:
     needs: [setup_tests, formulae_detect]
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
-      linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
+      linux-self-hosted: ${{ steps.check-labels.outputs.linux-self-hosted }}
       fail-fast: ${{ steps.check-labels.outputs.fail-fast }}
       test-dependents: ${{ steps.check-labels.outputs.test-dependents }}
       long-timeout: ${{ steps.check-labels.outputs.long-timeout }}
@@ -318,7 +318,7 @@ jobs:
       runners: ${{steps.determine-dependent-runners.outputs.runners}}
       runners_present: ${{steps.determine-dependent-runners.outputs.runners_present}}
     env:
-      HOMEBREW_LINUX_RUNNER: ${{needs.setup_dep_tests.outputs.linux-runner}}
+      HOMEBREW_LINUX_SELF_HOSTED: ${{needs.setup_dep_tests.outputs.linux-self-hosted}}
       HOMEBREW_MACOS_LONG_TIMEOUT: ${{needs.setup_dep_tests.outputs.long-timeout}}
       DEPENDENT_SHARDS: ${{needs.setup_dep_tests.outputs.dependent-shards}}
       TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
