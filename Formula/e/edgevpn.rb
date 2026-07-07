@@ -7,12 +7,12 @@ class Edgevpn < Formula
   head "https://github.com/mudler/edgevpn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "631037e02c05af4c059381430031b778718a9ed26bd61285da5cb8e232825754"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "631037e02c05af4c059381430031b778718a9ed26bd61285da5cb8e232825754"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "631037e02c05af4c059381430031b778718a9ed26bd61285da5cb8e232825754"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81ee6548be40edff124dd587eca0f4ebc1cfa6364f5c9402ea9cc11a695fa552"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44ad9803b894902fd0f5807e7342191b5a0b46a23e70d1845d845fd46279f8a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a91fcc4faccc05aa7ae5d0f601138d84317e49c1230ffb5a7cc7b7a0d40e107"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45bcf0058e96d64ed05497ad79e6afac738a7842c3b8bc1cc46d61377bdcee51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45bcf0058e96d64ed05497ad79e6afac738a7842c3b8bc1cc46d61377bdcee51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45bcf0058e96d64ed05497ad79e6afac738a7842c3b8bc1cc46d61377bdcee51"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87c440164485cf3214746869d080c16929ee773d7e7af143bdf1f3b10901ceca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e07eccc626e0f8aadc64282371500856fc6b7f52ea14a830b6cd9f05fd05026a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "559c667051a94e44e174180f2d24c5feb5cebe5ea86fcdd61caef95585233b25"
   end
 
   depends_on "go" => :build
