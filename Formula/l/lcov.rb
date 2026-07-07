@@ -7,15 +7,12 @@ class Lcov < Formula
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31751d5ba63f010f5ba85d996f2a487d8f66210650a95c2bd125af69cb949fc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2f081ff0b4cf0a8e8a41476760f10518a66790a623fb8dc627beff0758eca06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d1de024109c448c5537e2c33d6a30a63b80a77ae195e2cbabc50f94f36152bf"
-    sha256 cellar: :any_skip_relocation, tahoe:         "bdcbbe5a978af3066860282aa095d8a2b983f965cb9a86600d29080ffdd18ea3"
-    sha256 cellar: :any_skip_relocation, sequoia:       "e502c2fdbc44d07e6873634afb31a5c76d499b7a1c39020906a82669ce2b2040"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0dc40bdeba6332fb11f88a4230ca213c9dba83f397fe0da67ca7aba08cf3f0ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d79b0f67be549e9cc3bcff583fc5502c4384f5b3bb071035049cbb328ad20e23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07128bf10fbe19a6fd27aab9739d6a5e55eccfaaa4c2d2c842961944fc70750f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e011a49bdaaa3f14a2196cb58f83862c3809b1451dc996568ed294e016f09d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e4ea06ac77f732dfb36537d548c6c459f0cd6c3e03d9ee6f22aa9e894cdda32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "324b7d488025074e74bcd90db782d1ab7402a9a7372bf98e71d832aa88005be4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c424d1e056ab869bff7c9ccdf5c43f0594921a4499de26a2e464cd7274e7fcb"
+    sha256 cellar: :any,                 arm64_linux:   "eb39a13a9ac8c53b9f1e2bc1af7f24a9443645907bd1bec1de7bb939aec07222"
+    sha256 cellar: :any,                 x86_64_linux:  "54d4f1466283ba1e19f1993e983371efd850dcf683599891c4532c254f4b266c"
   end
 
   depends_on "sphinx-doc" => :build
