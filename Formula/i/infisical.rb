@@ -7,12 +7,12 @@ class Infisical < Formula
   head "https://github.com/Infisical/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d252b2e1d4403a959935832ed83fe4ec2c93bd3f2427161234b684d3336539a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d252b2e1d4403a959935832ed83fe4ec2c93bd3f2427161234b684d3336539a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d252b2e1d4403a959935832ed83fe4ec2c93bd3f2427161234b684d3336539a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a18a708eeeea327c2c690e6cfca0342c5f792086a9c136deb6def098e7a5f98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc05feb7bfabd5205e60a5bf9e77768b90e57a8cf277795582b4cd62fe918d06"
-    sha256 cellar: :any,                 x86_64_linux:  "dfa02948c3320826892d354b3809c98cfe46641b5636d2cc4197fc142a894a91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "904e6f0397d76d6b570b03f47086fc5bffca08d6d70203aa5e5a7e3e4bbc9874"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "904e6f0397d76d6b570b03f47086fc5bffca08d6d70203aa5e5a7e3e4bbc9874"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "904e6f0397d76d6b570b03f47086fc5bffca08d6d70203aa5e5a7e3e4bbc9874"
+    sha256 cellar: :any_skip_relocation, sonoma:        "433c8dc273f7cdc7f518386a65fcc00902391049cdd24a7de35fd7e63cd43515"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9c973f6b259e0ac0df2dde02c33367803793b883863455e20c15876df901755"
+    sha256 cellar: :any,                 x86_64_linux:  "70751c3c98d7acf1bf184b5b73cb6c01e5a326e922d278f055bd2a20d6b001f6"
   end
 
   depends_on "go" => :build
