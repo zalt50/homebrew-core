@@ -84,13 +84,6 @@ class Node < Formula
   deny_network_access! [:build, :postinstall]
 
   def install
-    # Backport fix for bundled LIEF's bundled spdlog's bundled fmt.
-    # Should be fixed when new LIEF version with following commit is released and used by node:
-    # https://github.com/lief-project/LIEF/commit/710637216b1f6f19569002d62e43fca201b9d91c
-    inreplace "deps/LIEF/third-party/spdlog/include/spdlog/fmt/bundled/format.h",
-              "#ifndef FMT_MODULE\n#  include <cmath>",
-              "#ifndef FMT_MODULE\n#  include <stdlib.h>\n#  include <cmath>"
-
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.14")
 
@@ -99,12 +92,14 @@ class Node < Formula
 
     # Never install the bundled "npm", always prefer our
     # installation from tarball for better packaging control.
+    # Disable SEA as incompatible with --shared, https://github.com/nodejs/node/issues/63126
     args = %W[
       --prefix=#{prefix}
       --without-npm
       --with-intl=system-icu
       --shared
       --openssl-use-def-ca-store
+      --disable-single-executable-application
     ]
     args << "--tag=head" if build.head?
 
@@ -144,7 +139,7 @@ class Node < Formula
     # - `--shared-gtest` is only used for building the test suite, which we don't run here.
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
-    # - `--shared-lief` is not available as dependency in Homebrew.
+    # - `--shared-lief` is only used for disabled SEA feature
     ignored_shared_flags = %w[
       gtest
       simdutf
@@ -230,6 +225,15 @@ class Node < Formula
     end
 
     (node_modules/"npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
+  end
+
+  # Explain why some features enabled in upstream binaries are disabled in Homebrew.
+  # These require fixes upstream for Homebrew to consider enabling them. Do not open issues.
+  def caveats
+    <<~EOS
+      Single Executable Application is disabled as it doesn't work with shared libnode.
+      Temporal support is disabled as it doesn't work with shared ICU library.
+    EOS
   end
 
   test do
