@@ -23,7 +23,6 @@ class Backgroundremover < Formula
   depends_on "ffmpeg"
   depends_on "libheif"
   depends_on "llvm"
-  depends_on "numpy"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
   depends_on "scikit-image" => :no_linkage
@@ -36,7 +35,7 @@ class Backgroundremover < Formula
   end
 
   pypi_packages exclude_packages: %w[certifi torch torchvision pillow scipy scikit-image],
-                extra_packages:   %w[imageio]
+                extra_packages:   %w[imageio numpy] # numba needs numpy < 2.5, so vendor it as a resource
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
@@ -128,6 +127,11 @@ class Backgroundremover < Formula
     sha256 "b900e63a0e26c05ea9a6d5a3a5a0a177cb64c5011887bf43edb8c3ed2c38d363"
   end
 
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/d0/ad/fed0499ce6a338d2a03ebae59cd15093910c8875328855781952abf6c2fe/numpy-2.4.6.tar.gz"
+    sha256 "f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda"
+  end
+
   resource "pillow-heif" do
     url "https://files.pythonhosted.org/packages/e3/5f/4753689400e657ca5d984f5e897657dab12d91b62f1bb6a1e73487b59a97/pillow_heif-1.4.0.tar.gz"
     sha256 "55a7c0cb5321538d1ca74037be54b48d147017735a766eb29bcca4761253a1f1"
@@ -185,7 +189,7 @@ class Backgroundremover < Formula
 
   def install
     ENV["LLVMLITE_SHARED"] = "1"
-    venv = virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "numba"
 
     # We depend on the formula below, but they are separate formula, so install a `.pth` file to link them.
     # NOTE: This is an exception to our usual policy as building them is complicated
@@ -195,6 +199,9 @@ class Backgroundremover < Formula
 
     skimage_pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("scikit-image")/site_packages}')\n"
     (venv.site_packages/"homebrew-scikit-image.pth").write skimage_pth_contents
+
+    # We install `numba` separately without build isolation to avoid building another `numpy`
+    venv.pip_install(resource("numba"), build_isolation: false)
   end
 
   test do
