@@ -76,21 +76,8 @@ class Ejabberd < Formula
     system "make", "install"
 
     (etc/"ejabberd").mkpath
-  end
-
-  def post_install
     (var/"lib/ejabberd").mkpath
     (var/"spool/ejabberd").mkpath
-
-    # Create the vm.args file, if it does not exist. Put a random cookie in it to secure the instance.
-    vm_args_file = etc/"ejabberd/vm.args"
-    unless vm_args_file.exist?
-      require "securerandom"
-      cookie = SecureRandom.hex
-      vm_args_file.write <<~EOS
-        -setcookie #{cookie}
-      EOS
-    end
   end
 
   def caveats
@@ -102,7 +89,7 @@ class Ejabberd < Formula
   end
 
   service do
-    run [opt_sbin/"ejabberdctl", "start"]
+    run [opt_sbin/"ejabberdctl", "foreground"]
     environment_variables HOME: var/"lib/ejabberd"
     working_dir var/"lib/ejabberd"
   end
