@@ -3,13 +3,13 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https://ml-explore.github.io/mlx/build/html/index.html"
-  url "https://github.com/ml-explore/mlx/archive/refs/tags/v0.31.2.tar.gz"
-  sha256 "bdb9b619f80962dd00c0bffb65e59c53f565c2b550f189a1467f8bc6089401ab"
+  url "https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "8e74a0eb613861ce50c09402dd99dbc42b65a762e7fdd291caa39f611db978ec"
   license all_of: [
     "MIT", # main license
     "Apache-2.0", # metal-cpp resource
   ]
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/ml-explore/mlx.git", branch: "main"
 
   livecheck do
