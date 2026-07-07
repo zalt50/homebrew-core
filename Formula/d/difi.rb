@@ -7,12 +7,12 @@ class Difi < Formula
   head "https://github.com/xguot/difi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be7cb2c7167aa603f279ac92298f27ae30412790ff04cf960abda0d356e1442c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be7cb2c7167aa603f279ac92298f27ae30412790ff04cf960abda0d356e1442c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be7cb2c7167aa603f279ac92298f27ae30412790ff04cf960abda0d356e1442c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4da255b70705e0746ee24d236dcd3441a1741406ce0401b1d9591a713bc6d3be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4694dbe43138ffaaa36f240c61cd880975be8502c6a9ec765279a826d0bfb71d"
-    sha256 cellar: :any,                 x86_64_linux:  "cbb2168d8a33dad8bf9e53c47407932915975ca73d3dc43f0f57b309c8e8584e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3a5068598ff16cf5dee5809b1a1fa172d163fc3b247b288d2375fa8d96b0356"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3a5068598ff16cf5dee5809b1a1fa172d163fc3b247b288d2375fa8d96b0356"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3a5068598ff16cf5dee5809b1a1fa172d163fc3b247b288d2375fa8d96b0356"
+    sha256 cellar: :any_skip_relocation, sonoma:        "97ae577103d1654433f885b527fedb8dca0cf1777c4de43070678c3e2089ef1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24464aa1c1b8a21a3167537126beb7fa9db01dfc55347267aa50a18929614cf8"
+    sha256 cellar: :any,                 x86_64_linux:  "6c82bc293c700a9a4bb765712ab903e339cab9b09fd1add91558f636d8b5c41c"
   end
 
   depends_on "go" => :build
