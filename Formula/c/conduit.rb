@@ -12,12 +12,12 @@ class Conduit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "111565ce1113abcca6611280b4f23d6a06c046bbac62dbf93b6be9ec36eaff3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd141fc8aa37951e3a0020a07e9a42705badad793f4ff1db8bd78dea812b20cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9b995f04f9c5d9c08a70fde55907fb767ff4e6a758fced1b0fa169e69f1fa54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a5642be694d2b8ebe80ec664b9e6f46314e950c35850d54304fc0c89767d728"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1b7eb3bc131117a30bd3984f370edd43d0ddac15749dd97994e161e3865c957"
-    sha256 cellar: :any,                 x86_64_linux:  "d34a6c97058aa6a491c118603ba8e0dd453a300873acb25a5d23c2da8bbc0e6b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "497c57c26209a1f962067f55cacfa8712d4546acbd2f84de1bb530bd5ecd25c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "036be0c36f9adbcd5d527e653b46844cc945f795721f539470eb56c1b231bc55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37e1c06d28036031f0c265360f73823ef293208ffeeb53e1397a92a0bce19700"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f93edffe863456e611b633350c6aefc5ec9f1f891c7879eedc7ecab0db77326"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2394f2e60cc7732189e2badc69190e7be31995b614de109310f572305121e3d5"
+    sha256 cellar: :any,                 x86_64_linux:  "371d14b18ddee04c0c1c85847cc1385554a185007205cd70ab1c79b5a5b437c8"
   end
 
   depends_on "go" => :build
