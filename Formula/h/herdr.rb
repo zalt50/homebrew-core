@@ -12,12 +12,12 @@ class Herdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54e4f104a657d13903ce1ce96eaa10388d780fb4d866e82b608a667ba977fd0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e89fbbe8d009f13cf2420e3dd140c3423ec9a0454659c6adb1347a78846ac264"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "489fbd85371c173f1d88fbd27dd75d410c240cf76ebfa9b0bf5be84b40a0971d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3c3765eaa38cebe8cf1a5ad1bd95213e99872ecc918422508dc38dc10e42114"
-    sha256 cellar: :any,                 arm64_linux:   "6a92e66f5231ec7474cc6305904c064721810ae9f3fcb919afc510d8e3b3d1b8"
-    sha256 cellar: :any,                 x86_64_linux:  "aaaa9299ccde281d1951115f93da02b88e7fa6d699048e3b891a6dd07056d9aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7d94052b25e30c0175f40cbbd7fe30aae9e68ae1a519d116f8fadeaac3905b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cef9d69af7276c704329114793035388498d19ca4e0995ececa2c0eb9b212a2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e47f812143e7318724c04241f10bd8080b4ec48ccefa0aff4b4af6e410b6c0a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42a55285fb6fb7efd6da4b6f9b6b84f26e5f706d55cf1f05ce45bf58609f80cb"
+    sha256 cellar: :any,                 arm64_linux:   "e7345ee9bf8d24f7a137a32f9f15ab84b66d05d4dc0c5e27304a137ca3badae1"
+    sha256 cellar: :any,                 x86_64_linux:  "3904f8dcb0e0d342277510a4947a1c3f30d3a79146d404dc5c7f0b8e1f017d05"
   end
 
   depends_on "rust" => :build
