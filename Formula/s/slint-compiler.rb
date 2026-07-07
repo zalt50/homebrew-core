@@ -7,12 +7,12 @@ class SlintCompiler < Formula
   head "https://github.com/slint-ui/slint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de5bf8c987e697f953e00212978468e1b9cb514c38a74cfcf0df4850b6578e9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c66de9b05bfe64a048edb0877a5a78c0c200be522671912fdab4de74f837ecac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12c78e0b98cd515b51a0bfbf7027f65da38f343d8595c51b49702936d3600c53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fd881a1c6b81e15e45ac9326870bcff12f16f9cd74e56751986918f454a9500"
-    sha256 cellar: :any,                 arm64_linux:   "2e3d208f6c63141af5c9196cad98c7e277cbb396a999aef1df85667b416cfe24"
-    sha256 cellar: :any,                 x86_64_linux:  "3f74ce9c082c3106cd086b797337ea5db137228a3864c8f7bc653d916e7efed3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afd63a837ea6f0e7fcf0ce7ff03e1b097e5bdbac2b8b5b1e41dd647850f63ae7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "371503c0334cfc487fc9b5b84c527ca69ef606e6a556a6ad4526c679802ea367"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8f41b00edc47778e0c9d6db52c9936c799767ab3b3283ddd56db288da0bdd15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c459f5ba08d010d970189d9a73be84b59b62856789cf1905bd0edb8c8ea25ff5"
+    sha256 cellar: :any,                 arm64_linux:   "2d5715db959e9a4e1c88d0c4f46d96650c3295119294eae274e5a9901f95129a"
+    sha256 cellar: :any,                 x86_64_linux:  "bd2fead8dd3d72cb647253028a660e73df67ff6df7783deb01004355e0f23373"
   end
 
   depends_on "rust" => :build
