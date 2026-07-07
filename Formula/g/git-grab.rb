@@ -6,12 +6,13 @@ class GitGrab < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "075c51d96c664c13d360040e6603257e37181c629a195d990258d25e06fd9540"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "020529f0d1e5b083b40119ecc60f67749740fc419c4c042cf4744c004c3fbb33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35acf35a413f16f22a9c3df4925f4e8c8e1a816b431aa20ea2f39c5c60e768b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e6eab11a1005cf3bc5caec03844638fa863fdea647b7ee374bbf1b8c4ed727d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d8a40549cc942135ea8db73a4154263078b1b803fe269e436dad35756463bcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46bceb04f6dcdfb898f6af02f4c285e29a2ed50f7694ca5dc8aef88d64d2592d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ade08cdebf7cc28c45de74e9e06f568a396dbee11c522a9c784c5d8995d8cd7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23aef87925b49840bfa24eb5abaa8d4395239629476e1c3b236488f35996af5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6f92126552067ad40bee28b4077cbf4c3d835b682672e9487a2a7e2e456a9ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "140e815b79aa86d406da070ab5534689d62bf77af1c81e24e7375404bbbb6343"
+    sha256 cellar: :any,                 arm64_linux:   "bf01fec43d9b385bbba009258b9851b5b40aa68511290d16feacd857e1877d6a"
+    sha256 cellar: :any,                 x86_64_linux:  "ece1be4936c3e4b7c3db70ceb4950de919b0f5448bf2b030a320d13d9d1f39f6"
   end
 
   depends_on "rust" => :build
