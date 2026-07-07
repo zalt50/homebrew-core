@@ -1,8 +1,8 @@
 class Zsign < Formula
   desc "Cross-platform codesigning tool for iOS apps"
   homepage "https://github.com/zhlynn/zsign"
-  url "https://github.com/zhlynn/zsign/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "177bc8ba1524a4970f89ad3cc14585bd322c1bc4ee7a2ac85e1be8f9f2dec2d1"
+  url "https://github.com/zhlynn/zsign/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "84cc3458da2366f88cb87da87ddeed9c0a903c716d2a891aa09cc14e0a74b7ac"
   license "MIT"
   head "https://github.com/zhlynn/zsign.git", branch: "master"
 
@@ -17,7 +17,14 @@ class Zsign < Formula
 
   depends_on "pkgconf" => :build
   depends_on "minizip-ng"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  # Build against OpenSSL 4's const-correct X509/ASN1 accessors.
+  # PR ref: https://github.com/zhlynn/zsign/pull/400
+  patch do
+    url "https://github.com/zhlynn/zsign/commit/c39607e4231bceffc0e4d7c1dc257ef67dd3c5b7.patch?full_index=1"
+    sha256 "dda8e0a6308cbeb8190f349ffb8009e887c9c1053b2a30d1bcb78ee3d6e57d8c"
+  end
 
   def install
     build_dir = OS.mac? ? "build/macos" : "build/linux"
