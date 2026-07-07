@@ -2,8 +2,8 @@ class ThorsAnvil < Formula
   desc "Set of modern C++20 libraries for writing interactive Web-Services"
   homepage "https://github.com/Loki-Astari/ThorsAnvil"
   url "https://github.com/Loki-Astari/ThorsAnvil.git",
-      tag:      "11.0.5",
-      revision: "5468351d60b22875191b517c7b37b7ddbb859cf4"
+      tag:      "11.1.0",
+      revision: "679f2c1136293f0275a87f7a718c161aa085ee20"
   license "MIT"
 
   bottle do
@@ -34,7 +34,6 @@ class ThorsAnvil < Formula
     # src/Serialize/./StringInput.h:104:27: error: call to deleted function 'from_chars'
     ENV.append_to_cflags "-DNO_STD_SUPPORT_FROM_CHAR_DOUBLE=1" if DevelopmentTools.clang_build_version == 1700
 
-    system "./brew/init"
     system "./configure", "--disable-vera",
                           "--disable-test-with-integration",
                           "--disable-test-with-mongo-query",
