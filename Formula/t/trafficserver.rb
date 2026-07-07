@@ -65,21 +65,21 @@ class Trafficserver < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXPERIMENTAL_PLUGINS=ON",
+                    "-DCMAKE_INSTALL_LOCALSTATEDIR=#{var}",
+                    "-DCMAKE_INSTALL_RUNSTATEDIR=#{var}/run/trafficserver",
                     "-DEXTERNAL_YAML_CPP=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
+    # CMAKE_INSTALL_SYSCONFDIR doesn't work as install_configs.cmake prepends the prefix
+    configs = (prefix/"etc/trafficserver").children.select(&:file?)
+    pkgetc.install configs
+    (prefix/"etc/trafficserver").install_symlink configs.map { |config| pkgetc/config.basename }
+
     (var/"log/trafficserver").mkpath
+    (var/"run/trafficserver").mkpath
     (var/"trafficserver").mkpath
-
-    config = etc/"trafficserver/records.config"
-    return unless File.exist?(config)
-    return if File.read(config).include?("proxy.config.admin.user_id STRING #{ENV["USER"]}")
-
-    config.append_lines "CONFIG proxy.config.admin.user_id STRING #{ENV["USER"]}"
   end
 
   test do
