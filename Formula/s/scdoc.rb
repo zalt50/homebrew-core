@@ -1,8 +1,8 @@
 class Scdoc < Formula
   desc "Small man page generator"
   homepage "https://sr.ht/~sircmpwn/scdoc/"
-  url "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.4.tar.gz"
-  sha256 "e1a9c2000f855123a1a50c8f897073e0ee95fc41787431efe3864c2f1c2e7092"
+  url "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.5.tar.gz"
+  sha256 "98780bbdf16c1bce89ef3a8c0f537ac6e4ea77087b609e7698857614488a2a62"
   license "MIT"
 
   bottle do
