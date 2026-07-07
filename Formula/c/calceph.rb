@@ -1,8 +1,8 @@
 class Calceph < Formula
   desc "C library to access the binary planetary ephemeris files"
-  homepage "https://www.imcce.fr/inpop/calceph"
-  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-4.0.5.tar.gz"
-  sha256 "3460d8a3e10a86e7fe0228d5d9abcda589713b8ed3ee007ce061ae01f8c2e1ea"
+  homepage "https://calceph.imcce.fr"
+  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-5.0.0.tar.gz"
+  sha256 "aea5120af73f0a492cea2fdc9c63078ee5b625a181cc4f0622ffa68160a2d20b"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -25,10 +25,13 @@ class Calceph < Formula
   depends_on "gcc" # for gfortran
 
   def install
+    # Fall back to gfortran's mangling if Fortran/C interface detection fails.
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DENABLE_FORTRAN=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DFortranCInterface_GLOBAL_CASE=LOWER
+      -DFortranCInterface_GLOBAL__SUFFIX=_
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
