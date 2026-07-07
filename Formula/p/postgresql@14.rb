@@ -98,21 +98,6 @@ class PostgresqlAT14 < Formula
     init_data_dir "postgresql@14", using: :postgresql_initdb
   end
 
-  def post_install
-    old_postgres_data_dir = var/"postgres"
-    if old_postgres_data_dir.exist?
-      opoo "The old PostgreSQL data directory (#{old_postgres_data_dir}) still exists!"
-      puts <<~EOS
-        Previous versions of postgresql shared the same data directory.
-
-        You can migrate to a versioned data directory by running:
-          mv -v "#{old_postgres_data_dir}" "#{postgresql_datadir}"
-
-        (Make sure PostgreSQL is stopped before executing this command)
-      EOS
-    end
-  end
-
   def postgresql_datadir
     var/name
   end
@@ -122,7 +107,14 @@ class PostgresqlAT14 < Formula
   end
 
   def caveats
+    old_postgres_data_dir = var/"postgres"
     <<~EOS
+      If an old PostgreSQL data directory (#{old_postgres_data_dir}) still exists,
+      you can migrate to a versioned data directory by running:
+        mv -v "#{old_postgres_data_dir}" "#{postgresql_datadir}"
+
+      (Make sure PostgreSQL is stopped before executing this command)
+
       This formula has created a default database cluster with:
         initdb --locale=en_US.UTF-8 -E UTF-8 #{postgresql_datadir}
     EOS
