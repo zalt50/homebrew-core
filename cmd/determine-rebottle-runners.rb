@@ -33,7 +33,7 @@ module Homebrew
           runner:    linux_runner,
           container: {
             image:   "ghcr.io/homebrew/brew:main",
-            options: "--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED",
+            options: "--user=linuxbrew --privileged",
           },
           workdir:   "/github/home",
         }
