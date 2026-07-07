@@ -5,6 +5,10 @@ class Webfont < Formula
   sha256 "cc22a60186c0ec0d7367945bff513318ad736bb39b3705d4b00b70c18584eb28"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "44510bb76e1f5bb276f70c0749afe263feb88bdad4ae7a9656ce189dde9faa5b"
+  end
+
   depends_on "node"
 
   def install
