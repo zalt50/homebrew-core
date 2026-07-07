@@ -7,12 +7,13 @@ class LtexLsPlus < Formula
   head "https://github.com/ltex-plus/ltex-ls-plus.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8013959507853e3325864ad022c71a31055252ffd18bdb53c86d9e364515ecb1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8013959507853e3325864ad022c71a31055252ffd18bdb53c86d9e364515ecb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8013959507853e3325864ad022c71a31055252ffd18bdb53c86d9e364515ecb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8013959507853e3325864ad022c71a31055252ffd18bdb53c86d9e364515ecb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60970829e51e227dc23161582b0b72b383fddcf96e3f3bce5480cbdf837029b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60970829e51e227dc23161582b0b72b383fddcf96e3f3bce5480cbdf837029b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f6e0cc5c8fdbe2e3ad62603939883135b3356548a30269854552e79e2aa3f92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6e0cc5c8fdbe2e3ad62603939883135b3356548a30269854552e79e2aa3f92"
   end
 
   depends_on "maven" => :build
