@@ -7,12 +7,12 @@ class Wasmedge < Formula
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "615c0eef948c3bbf105c00276b1c50665f7ed9f757cf33883aa0445dce5a87fa"
-    sha256 cellar: :any,                 arm64_sequoia: "2fe9bb85bb23325a7a69a37cd776634ec515eb97974adaa88d37be695ea2d8b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "162b6429735bf72c0213cf86eb7f2a7f351656b58c2c643b07a772f36c9d139b"
-    sha256 cellar: :any,                 sonoma:        "a560be9e7d341e57684c7528ccde414b31ed568ff7dca1c17331362f027459d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc04f608509ed16364241d67303c654b1dcd0e7b3a5221e6013dae110ce58165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba4935916021264e93d4e33a58fcb884fa505bd2e72de8731dc18e75a483e904"
+    sha256 cellar: :any, arm64_tahoe:   "bdcf3dfe45787e3b26fff39e6904749235a5405f43b9ae9aa89de5541b45aeaa"
+    sha256 cellar: :any, arm64_sequoia: "07fdf1d688038e092367145e7c595382575f82b8ba7f88476745912daac5c4bd"
+    sha256 cellar: :any, arm64_sonoma:  "04137e8e1a6fca57ae512f30d864bbea37e65fc4ec8eb97c3c5c00d02f655a0a"
+    sha256 cellar: :any, sonoma:        "96680ea11a613cc7a9b63dbd4d483f8692dc737d322c799c5bfb2dad82ef1ec4"
+    sha256 cellar: :any, arm64_linux:   "476837e2f7dd04a1e1a0ef87ca38d39317d76301e33f1857f28b679008cce10d"
+    sha256 cellar: :any, x86_64_linux:  "7d5a375e9b4b4823aa289ca9030b036621ddfe8e5483476506928897f74bc524"
   end
 
   depends_on "cmake" => :build
