@@ -1,10 +1,10 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.2/wxWidgets-3.3.2.tar.bz2"
-  sha256 "50a28cb668de47b0e006cd6ebed8cf4f76c1cac6116fb3c978c44478219103f2"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.3/wxWidgets-3.3.3.tar.bz2"
+  sha256 "0d55c1b9dadb31536c922b846194072aaf608641cd7e314a3b983996d1a30ccd"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
