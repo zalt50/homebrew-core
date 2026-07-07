@@ -138,17 +138,11 @@ class MysqlAT80 < Formula
     init_data_dir "mysql", using: :mysql_initialize
   end
 
-  def post_install
-    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
-      opoo <<~EOS
-        A "#{my_cnf}" from another install may interfere with a Homebrew-built
-        server starting up correctly.
-      EOS
-    end
-  end
-
   def caveats
     <<~EOS
+      A "/etc/my.cnf" or "/etc/mysql/my.cnf" from another install may interfere
+      with a Homebrew-built server starting up correctly.
+
       We've installed your MySQL database without a root password. To secure it run:
           mysql_secure_installation
 
