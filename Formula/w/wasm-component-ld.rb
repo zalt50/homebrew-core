@@ -1,8 +1,8 @@
 class WasmComponentLd < Formula
   desc "Linker for creating WebAssembly components"
   homepage "https://wasi.dev"
-  url "https://github.com/bytecodealliance/wasm-component-ld/archive/refs/tags/v0.5.25.tar.gz"
-  sha256 "852f2b7a91c92b3f7442e2b839fce21ca235798e4e9fe4cfffa70c2f7dc5c511"
+  url "https://github.com/bytecodealliance/wasm-component-ld/archive/refs/tags/v0.5.26.tar.gz"
+  sha256 "1bdcf5a3391ba26b1858349363643be4826bd5475805d90c3b4be84dae6604d7"
   license "Apache-2.0"
   head "https://github.com/bytecodealliance/wasm-component-ld.git", branch: "main"
 
