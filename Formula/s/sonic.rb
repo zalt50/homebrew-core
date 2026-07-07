@@ -1,8 +1,8 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.7.2.tar.gz"
-  sha256 "9f97975db0e9c53cd96bb37c1d24ac9e8dc16f09a25d4042fc73ea3285391967"
+  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.7.3.tar.gz"
+  sha256 "494bfa464d410bda4591e07bec5d8b9ffaa9381d6c2b3570b5653c1ec5b36ccf"
   license "MPL-2.0"
 
   bottle do
