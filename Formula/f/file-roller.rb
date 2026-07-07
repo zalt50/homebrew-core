@@ -45,15 +45,26 @@ class FileRoller < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system formula_opt_bin("glib")/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas"
-    system formula_opt_bin("gtk4")/"gtk4-update-icon-cache", "-f", "-t", HOMEBREW_PREFIX/"share/icons/hicolor"
-    system formula_opt_bin("desktop-file-utils")/"update-desktop-database", HOMEBREW_PREFIX/"share/applications"
+  post_install_steps do
+    compile_gsettings_schemas
+    gtk_update_icon_cache
+    update_desktop_database
   end
 
   test do
-    cmd = "#{bin}/file-roller --help"
-    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
-    assert_match "Create and modify an archive", shell_output(cmd)
+    pids = []
+    if OS.linux?
+      IO.pipe do |read_io, write_io|
+        pids << spawn(Formula["xorg-server"].bin/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+        write_io.close
+        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      end
+    end
+    assert_match "Create and modify an archive", shell_output("#{bin}/file-roller --help")
+  ensure
+    pids.reverse_each do |pid|
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end
