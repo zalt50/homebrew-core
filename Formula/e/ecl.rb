@@ -12,13 +12,13 @@ class Ecl < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "0f7e05aeec7f7aafd866af99e623694c15a84a3def12477da3f619a4502766b2"
-    sha256 arm64_sequoia: "1865df5c96476b9feb55a61c358e8c52d8fbf41d977eae8b9515893f5a23222f"
-    sha256 arm64_sonoma:  "b816ed156a7176b2c546eba281326dd830090b62143414dc404bf78a18cf4b49"
-    sha256 sonoma:        "10ad3c74b525e7bcfffb2a2463f0e8a7590f638412ae61f79a25fa4a0e5fd572"
-    sha256 arm64_linux:   "722ddbc762366d2a8afb36509b663346bc7b06dec34faa7fb3667ee1e520ffd9"
-    sha256 x86_64_linux:  "c43ff030cb6b7b4ad38f3be3586d9371ec0442980e9e35de2db8ac033048f4d8"
+    rebuild 3
+    sha256 arm64_tahoe:   "79f4778027f26a5ed162a672840d50acd347aeaa73ebb94d66cbd072f048e060"
+    sha256 arm64_sequoia: "dbc7411cb1d7d85e211fbfcb1ac245fb077312b194394ef5b7879a389a3a4d3b"
+    sha256 arm64_sonoma:  "29b32f9bf4fc09206f8e3b08ded8b0bdb08167963a80ff3330077db4a8a2d952"
+    sha256 sonoma:        "b8f6d1d2b0eedb0cb27e8adc1847bcd0e27c32e59e22a0e5b1807b205bdd4c9d"
+    sha256 arm64_linux:   "583cab74ee2c1a7b85a1c10b67228e39d66447cc160c6d8c38867ba31f5608b5"
+    sha256 x86_64_linux:  "6ffe0230d65fc695a539c69fc98d11edd4e71425bba8f9db50ff3aa64f530fff"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
