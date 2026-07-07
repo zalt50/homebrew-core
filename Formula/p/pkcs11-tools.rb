@@ -1,8 +1,8 @@
 class Pkcs11Tools < Formula
   desc "Tools to manage objects on PKCS#11 crypotographic tokens"
   homepage "https://github.com/Mastercard/pkcs11-tools"
-  url "https://github.com/Mastercard/pkcs11-tools/releases/download/v2.6.0/pkcs11-tools-2.6.0.tar.gz"
-  sha256 "5fcda842ed009dacef5d935f5d46bda81bdc26795737af525aa904655a640ba0"
+  url "https://github.com/Mastercard/pkcs11-tools/releases/download/v3.0.0/pkcs11-tools-3.0.0.tar.gz"
+  sha256 "da87f7371be0c94e6ae11cb65c033fbdc9be5549430b7c6f7a90abca200dcfcf"
   license "Apache-2.0"
 
   bottle do
@@ -26,6 +26,10 @@ class Pkcs11Tools < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+
+  # Add `x` permissions to `with_pkcs11_common` script
+  # https://github.com/Mastercard/pkcs11-tools/issues/85
+  patch :DATA
 
   # Fix Linux build error using gnulib upstream commit.
   # ../gl/string.h:965:1: error: expected ',' or ';' before '_GL_ATTRIBUTE_MALLOC'
@@ -67,3 +71,16 @@ class Pkcs11Tools < Formula
     system bin/"p11ls"
   end
 end
+
+__END__
+diff --git a/with_pkcs11_common b/with_pkcs11_common
+old mode 100644
+new mode 100755
+index f4e7fbf..5aeba5a
+--- a/with_pkcs11_common
++++ b/with_pkcs11_common
+@@ -1,3 +1,4 @@
++#!/bin/sh
+ # Copyright (c) 2020 Mastercard
+ 
+ # Licensed under the Apache License, Version 2.0 (the "License");
