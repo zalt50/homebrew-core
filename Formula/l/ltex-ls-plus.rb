@@ -1,8 +1,8 @@
 class LtexLsPlus < Formula
   desc "LTeX+ Language Server: maintained fork of LTeX Language Server"
   homepage "https://ltex-plus.github.io/ltex-plus/"
-  url "https://github.com/ltex-plus/ltex-ls-plus/archive/refs/tags/18.7.0.tar.gz"
-  sha256 "9a0592782a4a1509cab20764eac893461b438e9f857799db3eafbdd66812d7a3"
+  url    "https://github.com/ltex-plus/ltex-ls-plus/releases/download/18.7.0/ltex-ls-plus-18.7.0-src.tar.gz"
+  sha256 "8c5ad69fdbf38061bc511439473b081f2b2db35b0f4788f3516c632345788d2f"
   license "MPL-2.0"
   head "https://github.com/ltex-plus/ltex-ls-plus.git", branch: "develop"
 
@@ -20,10 +20,6 @@ class LtexLsPlus < Formula
   depends_on "openjdk"
 
   def install
-    # Fix build with `openjdk` 20.
-    # Reported upstream at https://github.com/valentjn/ltex-ls/issues/244.
-    inreplace "pom.xml", "<arg>-Werror</arg>", ""
-
     ENV.prepend_path "PATH", formula_opt_libexec("python@3.14")/"bin"
     ENV["JAVA_HOME"] = Language::Java.java_home
     ENV["TMPDIR"] = buildpath
