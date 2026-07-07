@@ -1,20 +1,11 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.org/"
+  url "https://github.com/c-ares/c-ares/releases/download/v1.34.8/c-ares-1.34.8.tar.gz"
+  sha256 "c222b6d681096f9444d2c4863d2c1174019e27cacca0a4a5c114d36dd7d7bf78"
   license "MIT"
   compatibility_version 1
   head "https://github.com/c-ares/c-ares.git", branch: "main"
-
-  stable do
-    url "https://github.com/c-ares/c-ares/releases/download/v1.34.7/c-ares-1.34.7.tar.gz"
-    sha256 "556f781dd188ad932dc8263fee0ad3aaba675b4cd8e54d86908681b43ce3e327"
-
-    # Backport commit to revert API/ABI break
-    patch do
-      url "https://github.com/c-ares/c-ares/commit/636f85326908a521f232c7e7acb6c3484582391d.patch?full_index=1"
-      sha256 "edc660df5ef02a47b4b8e0f14dad5f24faceeaf2e387cfa6a50336ebc28febe9"
-    end
-  end
 
   livecheck do
     url :homepage
