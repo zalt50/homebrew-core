@@ -4,7 +4,7 @@ class Siril < Formula
   url "https://free-astro.org/download/siril-1.4.4.tar.bz2"
   sha256 "b1682f2129d2e06b034445ed225766a06e38cfaa7451b92d606a3ee36eb077a4"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   livecheck do
@@ -61,6 +61,13 @@ class Siril < Formula
   on_macos do
     depends_on "gettext"
     depends_on "libomp"
+  end
+
+  # Build against opencv 5.
+  # MR ref: https://gitlab.com/free-astro/siril/-/merge_requests/1073
+  patch do
+    url "https://gitlab.com/daeho-ro/siril/-/commit/743956900c65129ab12421951781c12b94c6e996.diff"
+    sha256 "c07b0e62efea0c9622808992bbee77a9e707fb5aaeebf4cd44d9c9a6e680a7c0"
   end
 
   deny_network_access!
