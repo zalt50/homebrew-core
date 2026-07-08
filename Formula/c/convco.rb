@@ -1,8 +1,8 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https://convco.github.io"
-  url "https://github.com/convco/convco/archive/refs/tags/v0.6.4.tar.gz"
-  sha256 "907a7db94f0f49c2ee547c0aebfff50500a9d886a7e575bc0288d6937101972b"
+  url "https://github.com/convco/convco/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "3a9b33e41561f80eaa9252673a1ee1b4857743e2ff7b33079d0b616c772fa981"
   license "MIT"
   head "https://github.com/convco/convco.git", branch: "main"
 
@@ -15,14 +15,10 @@ class Convco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "685ab707d227454b95c081fa542636997400a46160af144019e411fafc15cc36"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
 
   def install
-    ENV["LIBGIT2_NO_VENDOR"] = "1"
-
-    system "cargo", "install", "--no-default-features", *std_cargo_args
+    system "cargo", "install", "--no-default-features", *std_cargo_args(features: "gix")
 
     bash_completion.install "target/completions/convco.bash" => "convco"
     zsh_completion.install  "target/completions/_convco" => "_convco"
@@ -34,11 +30,5 @@ class Convco < Formula
     system "git", "commit", "--allow-empty", "-m", "invalid"
     assert_match(/FAIL  \w+  first line doesn't match `<type>\[optional scope\]: <description>`  invalid\n/,
       shell_output("#{bin}/convco check", 1).lines.first)
-
-    # Verify that we are using the libgit2 library
-    require "utils/linkage"
-    library = formula_opt_lib("libgit2")/shared_library("libgit2")
-    assert Utils.binary_linked_to_library?(bin/"convco", library),
-           "No linkage with #{library.basename}! Cargo is likely using a vendored version."
   end
 end
