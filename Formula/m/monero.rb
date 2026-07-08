@@ -11,12 +11,12 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "caba4f09effaf65c90467fe16aed16c715a04ad225fbbde8d61aea2ac016a650"
-    sha256 cellar: :any,                 arm64_sequoia: "d31f245376a00edb5a0219e291070309011a895f9afdd411fd43be612fbfd5ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f116c78c557317868cf2d24b1ae20151c6a5c5ef9a8ce312e5d6bd7bfb129c7"
-    sha256 cellar: :any,                 sonoma:        "fba05fbc9c1d79da9d154d4611707f6561e6396915b341a67ac0743f0494a19a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd22a130d792e134d65729337f062f811a204099f3ac6d9c1ac02d6ca3c67b93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd72e81d741d07bb6ca33a1c5953584533995e7eb95d9efae0d21ad8ed78c7e9"
+    sha256 cellar: :any, arm64_tahoe:   "8e2a6c980c7ffb0df8387d6da5f3b5c825b24716f0ed5a9fc3c719ed04e10fd5"
+    sha256 cellar: :any, arm64_sequoia: "24e446d719743ebb67e953937b5c692326fe9c893055e866a577dc00ba753915"
+    sha256 cellar: :any, arm64_sonoma:  "f6ac488e91461fc56f78b22bbbbc767efa8bf0ce20cdc054449b0667140cd6ab"
+    sha256 cellar: :any, sonoma:        "099f5345fa9c6134a96193de1adcd4aac2fca87f43ffb81d369033e93385bbdb"
+    sha256 cellar: :any, arm64_linux:   "ee069aa7acd888bb2f0b66d58b93a763a6c303bc995ce951c619a45ccceb5a7d"
+    sha256 cellar: :any, x86_64_linux:  "b0ad68b875452d2d06272f8dde7cf15b4bd7a23ca212601e678ecccb87f88aef"
   end
 
   head do
