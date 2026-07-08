@@ -1,8 +1,8 @@
 class Sanity < Formula
   desc "Command-line interface for Sanity"
   homepage "https://www.sanity.io/"
-  url "https://registry.npmjs.org/@sanity/cli/-/cli-7.5.0.tgz"
-  sha256 "25a0202694287f7d99ba6539da9b8b310d0163cdbe784b21ab759916e738e674"
+  url "https://registry.npmjs.org/@sanity/cli/-/cli-7.7.0.tgz"
+  sha256 "d775775292aa6f85dbeb4f519cb8dbb43e236d22306371d6e55d3d4bd6b52750"
   license "MIT"
 
   bottle do
@@ -21,10 +21,10 @@ class Sanity < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/@sanity/cli/node_modules"
-    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    # Remove incompatible pre-built `bare-fs`/`bare-path`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-path,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
