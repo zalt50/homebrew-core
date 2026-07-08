@@ -7,12 +7,12 @@ class Fjira < Formula
   head "https://github.com/mk-5/fjira.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3576e114d0446d150fb857da28143d2b349c3a1693d0053399e25a9e571d6b22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3576e114d0446d150fb857da28143d2b349c3a1693d0053399e25a9e571d6b22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3576e114d0446d150fb857da28143d2b349c3a1693d0053399e25a9e571d6b22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4614265019bf889d2c53dfa165e360edba9dff2de5eceb13a3fb99974a242ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8e18c9ca9cba748c58f4de0b98cd4f7b682a4516436fdd64e7f890cf8c1e0b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f3d4257822cce2b03dfbefe4126ec3ee8672a1d2e657d3dc7051a3b2588347f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5b12f169a54c1ff9d45081cc020f3cea87ac1657341ce667114e2d991d9c46d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5b12f169a54c1ff9d45081cc020f3cea87ac1657341ce667114e2d991d9c46d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5b12f169a54c1ff9d45081cc020f3cea87ac1657341ce667114e2d991d9c46d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b64f13e76f06a159eb6c5db4589a17489ffccb9ec3f3e8555c6d4592826f1f37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b60fc25b5137b28fc2087a8da4074c1c1cd4d647f3da84c54240ef49663dcbcd"
+    sha256 cellar: :any,                 x86_64_linux:  "f3d9e71004c9cf52109cd6ab22bb673c0ae9af112563c1e407dd4ce59a2953db"
   end
 
   depends_on "go" => :build
