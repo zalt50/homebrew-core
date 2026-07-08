@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.7.1.tar.gz"
-  sha256 "ec8a380629cc2f3f2102dd92cad50c4ded706fe59c0e359a05681166a0ae2991"
+  url "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.7.7.tar.gz"
+  sha256 "505a1debcaf641423e872fb11440a771c0db9b79f765d0bff858ff4b68babbdf"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
