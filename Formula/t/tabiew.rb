@@ -1,8 +1,8 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
   homepage "https://github.com/shshemi/tabiew"
-  url "https://github.com/shshemi/tabiew/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "ceae42a8ee138ee8742f173ae127f783c6d28c836f07e7ad2e859033e45224b9"
+  url "https://github.com/shshemi/tabiew/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "88876174a3a008618e5b2a55df5dffa26cc0593ce2dcf6b057900ffc303732a8"
   license "MIT"
 
   bottle do
@@ -31,22 +31,34 @@ class Tabiew < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/tw --version")
+
     (testpath/"test.csv").write <<~CSV
       time,tide,wait
       1,42,"no man"
       7,11,"you think?"
     CSV
-    input, = Open3.popen2 "script -q output.txt"
-    input.puts "stty rows 80 cols 130"
-    input.puts bin/"tw test.csv"
-    input.puts ":F tide < 40"
-    input.puts ":goto 1"
-    sleep 1
-    input.puts ":q"
-    sleep 1
-    input.close
-    sleep 2
 
-    assert_match "you think?", (testpath/"output.txt").read
+    require "pty"
+    require "expect"
+    require "io/console"
+
+    PTY.spawn(bin/"tw", testpath/"test.csv") do |r, w, pid|
+      r.winsize = [80, 130]
+      r.set_encoding("UTF-8")
+      refute_nil r.expect(/\e\[6n/, 10), "expected cursor position query"
+      w.write "\e[1;1R\r"
+      refute_nil r.expect("you think?", 30), "expected the CSV to render"
+      w.write ":Query\r"
+      w.write "select wait from test where tide < 40\r"
+      refute_nil r.expect("you think?", 10), "expected the query result"
+      sleep 1
+      w.write ":Quit\r"
+      w.close
+      r.close
+    ensure
+      Process.kill "KILL", pid
+      Process.wait pid
+    end
   end
 end
