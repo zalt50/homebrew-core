@@ -11,8 +11,8 @@ class Xcodes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6467748dccf0c75cfaf3a1b98998c09e1b28728ae8830366f47215c13b5a901"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aceb8d50ffb6fe3982b8d6c5a86fca489a8cc91e58150f79f10a1de7378c7df9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b24c153e54448a55cfed1f1e2d547cc714abf15faefc187d72443306c4cfc054"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1adf300abc73b959d49ac48a92424fed029a4dc63d044dac05a589e97915b2b"
   end
 
   depends_on xcode: ["16.4", :build]
