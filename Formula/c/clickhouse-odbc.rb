@@ -2,13 +2,12 @@ class ClickhouseOdbc < Formula
   desc "Official ODBC driver implementation for accessing ClickHouse as a data source"
   homepage "https://clickhouse.com"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"
 
   stable do
     # Git modules are all for bundled libraries so can use tarball without them
-    url "https://github.com/ClickHouse/clickhouse-odbc/archive/refs/tags/v1.5.3.20260311.tar.gz"
-    sha256 "bb9311b48ddcd499ed2222a72a07f168f3d4909bd77ec69a78c665784b81c1c1"
+    url "https://github.com/ClickHouse/clickhouse-odbc/archive/refs/tags/v1.5.4.20260708.tar.gz"
+    sha256 "1316973b7b9fffa15d63d81f063c3d9e5f7ce015649320976edc7685f3acfd4d"
 
     # TODO: Consider adding formula for https://github.com/nanodbc/nanodbc
     resource "nanodbc" do
