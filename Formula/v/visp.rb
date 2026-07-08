@@ -4,7 +4,7 @@ class Visp < Formula
   url "https://visp-doc.inria.fr/download/releases/visp-3.7.0.tar.gz"
   sha256 "997f247f3702c83f0a8a6dc2f72ff98cfe3a5dcbd82f7c9f01d37ccd3b8ea97a"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
 
   livecheck do
     url "https://visp.inria.fr/download/"
@@ -53,8 +53,38 @@ class Visp < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Link OpenCV 5's relocated geometry/features modules.
+  # PR ref: https://github.com/lagadic/visp/pull/1975
+  patch do
+    url "https://github.com/lagadic/visp/commit/d57def89b50849ca191355a5d2f624e61f5d4e00.patch?full_index=1"
+    sha256 "93b53b9d44f239bc92f448b212ff14d9301773ca6acfa78dee038c1398f8a207"
+  end
+
+  # Include OpenCV 5's relocated method headers.
+  # PR ref: https://github.com/lagadic/visp/pull/1962
+  patch do
+    url "https://github.com/lagadic/visp/commit/0c170eaeefcf5a49c631f8298997cddfd6f28fd7.patch?full_index=1"
+    sha256 "ca0893a0af556127fd18d630847b606a348ee53d21d6173b2fe4621952eef6de"
+  end
+
   def install
     ENV.cxx11
+
+    # OpenCV 5.0.0 renamed the `3d` module to `geometry`.
+    # PR ref: https://github.com/lagadic/visp/pull/1962
+    inreplace %w[
+      modules/core/include/visp3/core/vpMeterPixelConversion.h
+      modules/core/include/visp3/core/vpPixelMeterConversion.h
+      modules/core/src/camera/vpMeterPixelConversion.cpp
+      modules/core/src/camera/vpPixelMeterConversion.cpp
+      modules/vision/include/visp3/vision/vpKeyPoint.h
+      modules/vision/src/key-point/vpKeyPoint.cpp
+    ], "HAVE_OPENCV_3D", "HAVE_OPENCV_GEOMETRY"
+    inreplace %w[
+      modules/core/src/camera/vpMeterPixelConversion.cpp
+      modules/core/src/camera/vpPixelMeterConversion.cpp
+      modules/vision/src/key-point/vpKeyPoint.cpp
+    ], "<opencv2/3d.hpp>", "<opencv2/geometry.hpp>"
 
     # Avoid superenv shim references
     inreplace "CMakeLists.txt" do |s|
@@ -66,7 +96,8 @@ class Visp < Formula
              "C Compiler:                  #{ENV.cc}\"")
     end
 
-    system "cmake", ".", "-DBUILD_DEMOS=OFF",
+    system "cmake", ".", "-DBUILD_APPS=OFF",
+                         "-DBUILD_DEMOS=OFF",
                          "-DBUILD_EXAMPLES=OFF",
                          "-DBUILD_TESTS=OFF",
                          "-DBUILD_TUTORIALS=OFF",
