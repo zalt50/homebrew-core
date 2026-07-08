@@ -1,10 +1,9 @@
 class Librcsc < Formula
   desc "RoboCup Soccer Simulator library"
   homepage "https://github.com/helios-base/librcsc"
-  url "https://github.com/helios-base/librcsc/archive/refs/tags/rc2024.tar.gz"
-  sha256 "81a3f86c9727420178dd936deb2994d764c7cd4888a2150627812ab1b813531b"
+  url "https://github.com/helios-base/librcsc/archive/refs/tags/rc2026.tar.gz"
+  sha256 "876d2903eace3f46be3a91b184ccce96a7885c73903c0e73d52cf0df3d79b9d5"
   license "LGPL-3.0-or-later"
-  revision 6
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "58bba310c7abcb9a65a3193bc1b9b2cf93ec27c7b5291dcfa17f1d8b4d0e3a46"
@@ -24,13 +23,6 @@ class Librcsc < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Add missing header to fix build on Monterey
-  # Issue ref: https://github.com/helios-base/librcsc/issues/88
-  patch do
-    url "https://github.com/helios-base/librcsc/commit/3361f89cf9bb99239a7483783b86de1648d5f359.patch?full_index=1"
-    sha256 "cd9df87f8f8dd0c7e3dd0a0bf325b9dd66f8ba9e42cb0e6fab230872dc5ce243"
   end
 
   # Unbundle simdjson
