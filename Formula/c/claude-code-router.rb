@@ -1,8 +1,8 @@
 class ClaudeCodeRouter < Formula
   desc "Tool to route Claude Code requests to different models and customize any request"
   homepage "https://musistudio.github.io/claude-code-router/"
-  url "https://registry.npmjs.org/@musistudio/claude-code-router/-/claude-code-router-2.0.0.tgz"
-  sha256 "c09fd569577d13e5fd15da40623df8d561f8816eb0f0a045839f4302a9862737"
+  url "https://registry.npmjs.org/@musistudio/claude-code-router/-/claude-code-router-3.0.1.tgz"
+  sha256 "e54b364e6b8ae498f4ca8d57a4214de4646c2d21d1805842988b5b53ab93f8b4"
   license "MIT"
 
   bottle do
@@ -13,11 +13,39 @@ class ClaudeCodeRouter < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    # better-sqlite3's prebuilt binary is skipped by the sandbox, so build it via node-gyp.
+    cd libexec/"lib/node_modules/@musistudio/claude-code-router/node_modules/better-sqlite3" do
+      system "npm", "run", "build-release"
+    end
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ccr version")
-    assert_match "Status: Not Running", shell_output("#{bin}/ccr status")
+    (testpath/".claude-code-router/config.json").write <<~JSON
+      {
+        "Providers": [
+          {
+            "name": "test",
+            "api_base_url": "https://api.test.local/v1/chat/completions",
+            "api_key": "sk-test",
+            "models": ["test-model"]
+          }
+        ],
+        "Router": { "default": "test,test-model" }
+      }
+    JSON
+
+    output_log = testpath/"output.log"
+    spawn bin/"ccr", "start", "--port", free_port.to_s, "--no-gateway", [:out, :err] => output_log.to_s
+
+    30.times do
+      break if output_log.exist? && output_log.read.include?("CCR service started")
+
+      sleep 1
+    end
+
+    assert_match "CCR service stopped", shell_output("#{bin}/ccr stop")
   end
 end
