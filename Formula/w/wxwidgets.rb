@@ -13,12 +13,12 @@ class Wxwidgets < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57fc5a8e36c0f9879f9b6608634e05f0f77ef55c603c68d6903ee12cd21c0e94"
-    sha256 cellar: :any,                 arm64_sequoia: "f0b376c029fd8adc673a4a5f12d4f1f1b5e9ac4bf5b5407de28e8c1747da3b50"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ec0180edded719bc653245ba3d6194bc23ad9abe19027b63e26b501d218f8dc"
-    sha256 cellar: :any,                 sonoma:        "4d0a457ec48b7a690b6f17b6a2801e057f0bd2bd8972aa72cab5f2086f947dd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18e76da797b260a9609c6a9198e7ba0738f8f56cc355b07f747ecbd9b4fea483"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3185f508424b321f99d8c003c9f9971d4a8519e4617267f537a3316c85bf80e"
+    sha256 cellar: :any, arm64_tahoe:   "5ddfe1fc453bda4bd65f9bbb028a733e6cb75fe57acb2cb2239d49f1c588031f"
+    sha256 cellar: :any, arm64_sequoia: "2acf596951ac6165e4289125ac0c36ecc084929c405e6e3ca4b6e76d96cbad35"
+    sha256 cellar: :any, arm64_sonoma:  "98de1755bff45bcd1558ab6978e3e292d405da89e2c0044835dca7e6c1b54323"
+    sha256 cellar: :any, sonoma:        "baf4c2220cc478236a4d683b6648100cc9ef0907e5a9f5b54d216bef065549b5"
+    sha256 cellar: :any, arm64_linux:   "9f2e05b0cad6b305d65ca845c9f11ffe733bf72b491460ae27aaa145ab54eeed"
+    sha256 cellar: :any, x86_64_linux:  "5001a50bcca05750cb776e6732afb68e303d38785f50eeeec6121f982685f8ad"
   end
 
   depends_on "pkgconf" => :build
