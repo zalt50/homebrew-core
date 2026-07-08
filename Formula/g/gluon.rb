@@ -1,19 +1,10 @@
 class Gluon < Formula
   desc "Static, type inferred and embeddable language written in Rust"
   homepage "https://gluon-lang.org"
+  url "https://github.com/gluon-lang/gluon/archive/refs/tags/v0.18.3.tar.gz"
+  sha256 "3fe104db4e5879fde335aeec9cd2b444f3323c1b834d61d806862e66edfb3e4d"
   license "MIT"
   head "https://github.com/gluon-lang/gluon.git", branch: "master"
-
-  stable do
-    url "https://github.com/gluon-lang/gluon/archive/refs/tags/v0.18.2.tar.gz"
-    sha256 "b5f82fecdf56b8b25ed516a023d31bcaf576b2bb3b2aee3e53d6f50ea8f281a3"
-
-    # Backport fix for newer Rust
-    patch do
-      url "https://github.com/gluon-lang/gluon/commit/6085b002e67fb473ab69fbd210433b0e8f7e7750.patch?full_index=1"
-      sha256 "5d3bb7f8ff8c2d9be6aaea9f5e4542804b2aa250100993c33ec2daee220a8d07"
-    end
-  end
 
   # There's a lot of false tags here.
   # Those prefixed with 'v' seem to be ok.
