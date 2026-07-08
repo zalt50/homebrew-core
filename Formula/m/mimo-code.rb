@@ -1,8 +1,8 @@
 class MimoCode < Formula
   desc "AI coding agent with cross-session memory"
   homepage "https://github.com/XiaomiMiMo/MiMo-Code"
-  url "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.4.tgz"
-  sha256 "0eb88c0969a71fd9d7eca1d3b4427f90358a4c6bb36ca426c6ce6c3e16ed14d4"
+  url "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.5.tgz"
+  sha256 "1c3df4851a4ae2ae9ed96c0780f49002df71daf9744c8d47bb100990261b4d83"
   license "MIT"
 
   bottle do
