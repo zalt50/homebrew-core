@@ -60,13 +60,8 @@ class Daemontools < Formula
     end
   end
 
-  def post_install
-    (etc/"service").mkpath
-
-    Pathname.glob("/service/*") do |original|
-      target = "#{etc}/service/#{original.basename}"
-      ln_s original, target unless File.exist?(target)
-    end
+  post_install_steps do
+    mkdir_p "service", base: :etc
   end
 
   def caveats
