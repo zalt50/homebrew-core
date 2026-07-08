@@ -1,8 +1,8 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https://www.getmonero.org/downloads/#cli"
-  url "https://downloads.getmonero.org/cli/monero-source-v0.18.5.0.tar.bz2"
-  sha256 "c764dfdf6d710c8dea913e77f31d0c75a8c6a3710a448341d28c3688ad2384e5"
+  url "https://downloads.getmonero.org/cli/monero-source-v0.18.5.1.tar.bz2"
+  sha256 "9ec6ed0fd37db9d81cf7738a5f0536cf9aec6ed8ef8fd48649a59a6aaf20de3d"
   license "BSD-3-Clause"
 
   livecheck do
