@@ -6,12 +6,12 @@ class Libxfont2 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6923bb0f5f8d3af8c1165951de8d6132aa1de17c9882fc0fc2ed051f7b63ca7a"
-    sha256 cellar: :any,                 arm64_sequoia: "ad1d313f2572ce8515429bc8dd9dab2ac9a4cc7e0b9f0510c7d4647968fc2b49"
-    sha256 cellar: :any,                 arm64_sonoma:  "ffd1d65361a267305f7c2b0fc21f4e53cc0b1dd7cf6f5553d2ea9c9c52533436"
-    sha256 cellar: :any,                 sonoma:        "41518f66f53d9ac2efc2c7fde9e919b9ed92b1eb91b0c4631fbec59022a966d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fce39009ed7ef80c230e3663b17fb82b70faeb4796e8a058cc3a0cfdebae5ab4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33b750be1b1a0603cff595ed46908b6ce9cf7daa3ce8170ba8da567551b554a2"
+    sha256 cellar: :any, arm64_tahoe:   "190cb605ee09f84a9632c26d17706c6893a18df375330869075da978d7947c3d"
+    sha256 cellar: :any, arm64_sequoia: "7be38e82d7ed64498732ca445afddb877c24f1725be0c4edb9cc76869f8dfa48"
+    sha256 cellar: :any, arm64_sonoma:  "04c52f143c9c9b5ac9532297320c988a1763d877ca3775db693f2abb7dcb83f0"
+    sha256 cellar: :any, sonoma:        "98f14fd036d09a063fbc6f6f078f2df115d92a9591cb650cb620b9683878ee4f"
+    sha256 cellar: :any, arm64_linux:   "b721287d822f7f4184416cc818074e7ecd4eedaddb286401c1120f99ec3c7382"
+    sha256 cellar: :any, x86_64_linux:  "54c78cb64cca263303ecebc776d124e63d6d10b66e129020c151c6f5723790a6"
   end
 
   depends_on "pkgconf" => :build
