@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://github.com/pingcap/tidb/archive/refs/tags/v26.3.4.tar.gz"
-  sha256 "373e8f8b55e99734e60655d2289fb4214a0f686d09eb38f100f5b0c5e401ae75"
+  url "https://github.com/pingcap/tidb/archive/refs/tags/v26.3.5.tar.gz"
+  sha256 "9f6d771c55d0842c0832fefc75b5e4c5563051f88f01203bad2197591ba9233d"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6ce05122b7233590ee9fd45a408fa9a1c22d5e3a363ba30580a1a6d3a7bc14a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20ca88a01f70fa8730fcc9645c69e2c0cebf1fd4e7158adffd5e8e41fdadee2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c100b7a130e852b1b1305dbd7d9c1148eed008cf4c85820b017ba7dce977ea8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f2fb7cb43c4ff86ce0c77c5259eaeddf5e3c19fb58c519bf16a1b605b013d9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba6ef82428b56bf570ffef965939860e6e461069f027bf995aedfdc8006b0988"
-    sha256 cellar: :any,                 x86_64_linux:  "2cc5af786e4eaf3a9407b65bac791d0620f9e36ab54c4692d53dde7f2cc5d885"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "492efe80fdba29044ac026f061fd34908f6a2466e6725b1e4bbff7e7adb74f57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be27eaa4c5bd2409a2fb39924ffd45cb1e54c7eb446e364d3690736bd2b0ecd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "002b1f4bf31bacb7b7cb187a7217889751c4187d56df4b428adcdb1ef7bebee0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3d96011a0103053c76069ef8cf9a9993c291c062c8f9875acec854c33e20a5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec49e8b1806f617a20572e48f963e6e8d1b2f261b02a45f3752ec8b8e9466d0b"
+    sha256 cellar: :any,                 x86_64_linux:  "c8eeb0527f6a41ba06c5a12bf2d6ddac58768d45257e5cd5f68efe915088f3d0"
   end
 
   depends_on "go" => :build
