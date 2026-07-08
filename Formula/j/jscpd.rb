@@ -6,12 +6,12 @@ class Jscpd < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1e4ae12a82ed496d0ad77e44b4934115621ba046aed6302296dd36a6bca49c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b4e6e806237c22dc62ebfc45432fb9524427cd59199900cda1ccf889ceb7e93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df72623ed922d94ce8d259de3456a00819e4971f268ebe88fa54d20b656fa6c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e385934375bcef142a03040f37ae8121a89a837f9b498bee750e463a2352ea2"
-    sha256 cellar: :any,                 arm64_linux:   "b97272095b8a9863e1be2063c95b3918b33498933a131c50a8d2747b5d74c46c"
-    sha256 cellar: :any,                 x86_64_linux:  "b46df1b46850726397f9acb22d9ac8412b96f4edef75c25040c491d455dca72b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56039f3474f9c256069c324157017235759bba1bab1d8ae2d128d1195597c9cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83c3548859692d49967863f525788dfceb4ab8e9523d2d0eb8755819452d0708"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "193ee314b7acf02f79f10f5ec41dcea5657503b12350f55b8277562003ed7a16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab4e1dc2ca70a01c31b8d4c6b425db30074f801d9d2e07a5647ca13326908a7d"
+    sha256 cellar: :any,                 arm64_linux:   "944fb7c16abb872110e42c243c294905690de548b51f83ca6c913be99e71c60c"
+    sha256 cellar: :any,                 x86_64_linux:  "20158352612384f77833ee630c60e7878f1f9e7f13f320d984eda6df8709b68e"
   end
 
   depends_on "rust" => :build
