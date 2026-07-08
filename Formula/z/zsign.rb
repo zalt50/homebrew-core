@@ -7,12 +7,12 @@ class Zsign < Formula
   head "https://github.com/zhlynn/zsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6eaf659241a2a0f56398f68db82ffd856897f1acb9bf7cf09171c51b45b9ec25"
-    sha256 cellar: :any, arm64_sequoia: "a4d296b7442a976a83e798a08611bdc3e8879dcbf02141c6583920ed1fa7a511"
-    sha256 cellar: :any, arm64_sonoma:  "4f5f564cdf08f2a6844da216ad5fc25a908f740e2c3f746b15edec41b63153c8"
-    sha256 cellar: :any, sonoma:        "849db49f21a50fe77f5a0173f7acde25c39b750a7639816a7e149b05bd98eb65"
-    sha256 cellar: :any, arm64_linux:   "dd14f2972b65c373632721fb07c3f28e1b1b69e5a0007b4f00025b3d6fc9f897"
-    sha256 cellar: :any, x86_64_linux:  "c1ba504d892b70bd48bf67b86f89b813361785e209e5fa4870fafd3367801e07"
+    sha256 cellar: :any, arm64_tahoe:   "00c80077eb2bcbdbf91412c3eaa0c019a6d293f65a4eb62b025dc3e84850a6c1"
+    sha256 cellar: :any, arm64_sequoia: "f8029400a71952ff80da2b0b7e14a70b0c358be2309d6d94bbe5351bb3ca07d0"
+    sha256 cellar: :any, arm64_sonoma:  "71b77283f2fa25241b29ed68c8d0efcf48f97ef0e7b194e5ff8aa3091f02cea0"
+    sha256 cellar: :any, sonoma:        "5b828ce52185582c53bd8633bae88666240ab939862cee349315572a4b65b314"
+    sha256 cellar: :any, arm64_linux:   "335fc3c72c8a06c93a1158888dc75bb5ccc76635f8385efb351633abe487b054"
+    sha256 cellar: :any, x86_64_linux:  "bf58bfee32de6440ddde2470617779977e308c3e33ed9a4fd7a7938cd11d1d5f"
   end
 
   depends_on "pkgconf" => :build
