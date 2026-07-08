@@ -4,6 +4,7 @@ class Rtabmap < Formula
   url "https://github.com/introlab/rtabmap/archive/refs/tags/0.23.8.tar.gz"
   sha256 "990029f1021e3c124c3accc7baf25b6c762c49537b9ae326965ff50b395afb11"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -22,11 +23,14 @@ class Rtabmap < Formula
     sha256 cellar: :any, x86_64_linux:  "a5a33aaf65ba8a0acc4ac538a8943ca0140030d4c5f5756aee44559303665af0"
   end
 
+  deprecate! date: "2026-10-09", because: :unsupported
+  disable! date: "2027-07-09", because: :unsupported
+
   depends_on "cmake" => [:build, :test]
   depends_on "g2o"
   depends_on "librealsense"
   depends_on "octomap"
-  depends_on "opencv"
+  depends_on "opencv@4"
   depends_on "pcl"
   depends_on "pdal"
   depends_on "qtbase"
@@ -60,8 +64,13 @@ class Rtabmap < Formula
     system "cmake", "--install", "build"
 
     # Replace reference to OpenCV's Cellar path
-    opencv = Formula["opencv"]
+    opencv = Formula["opencv@4"]
     inreplace lib.glob("rtabmap-*/RTABMap_coreTargets.cmake"), opencv.prefix.realpath, opencv.opt_prefix
+
+    # opencv@4 is keg-only, so pin its CMake dir for RTABMapConfig consumers
+    inreplace lib.glob("rtabmap-*/RTABMapConfig.cmake"),
+              "find_dependency(OpenCV ",
+              "set(OpenCV_DIR \"#{formula_opt_lib("opencv@4")}/cmake/opencv4\")\nfind_dependency(OpenCV "
 
     return unless OS.mac?
 
