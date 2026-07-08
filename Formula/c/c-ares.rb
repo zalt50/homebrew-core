@@ -1,20 +1,11 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.org/"
+  url "https://github.com/c-ares/c-ares/releases/download/v1.34.8/c-ares-1.34.8.tar.gz"
+  sha256 "c222b6d681096f9444d2c4863d2c1174019e27cacca0a4a5c114d36dd7d7bf78"
   license "MIT"
   compatibility_version 1
   head "https://github.com/c-ares/c-ares.git", branch: "main"
-
-  stable do
-    url "https://github.com/c-ares/c-ares/releases/download/v1.34.7/c-ares-1.34.7.tar.gz"
-    sha256 "556f781dd188ad932dc8263fee0ad3aaba675b4cd8e54d86908681b43ce3e327"
-
-    # Backport commit to revert API/ABI break
-    patch do
-      url "https://github.com/c-ares/c-ares/commit/636f85326908a521f232c7e7acb6c3484582391d.patch?full_index=1"
-      sha256 "edc660df5ef02a47b4b8e0f14dad5f24faceeaf2e387cfa6a50336ebc28febe9"
-    end
-  end
 
   livecheck do
     url :homepage
@@ -22,13 +13,12 @@ class CAres < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "31d95f39faa99ae238ac17ba33076318c51ff3153bc1f43f8d5c4c4de0e7bc6c"
-    sha256 cellar: :any, arm64_sequoia: "a16212e728de407ad8a6f24e2a2e77e08b2f48226fb4e8dfeb2128063f73726d"
-    sha256 cellar: :any, arm64_sonoma:  "10c36b85a92ba1008bacf09cf4bdb00567043d7f5ef5be466b656a582c6cd2e4"
-    sha256 cellar: :any, sonoma:        "6b6404874116de97753bb8b26754f6c315813ca6df8bd41a0561f1897d9843ef"
-    sha256 cellar: :any, arm64_linux:   "59e40c36c93af012ea29a8598438a91178f8a291f1e637f8758b6e74a5709d2b"
-    sha256 cellar: :any, x86_64_linux:  "47796f02038044993a377c04fb2a5081cbe612e20a59963c6b4da07d9f056127"
+    sha256 cellar: :any, arm64_tahoe:   "44bcc2e67b97daa265e168281875129161ddbbc964ab16ec0db1846c289cc376"
+    sha256 cellar: :any, arm64_sequoia: "cf56a78a008c16b5b430f5183178b644904fad00a55e6e57a20a835ecc45d33a"
+    sha256 cellar: :any, arm64_sonoma:  "df0ce513f28c6a9b16077b89e8d5468603c9683b29bed4f1df7f76ad0af14930"
+    sha256 cellar: :any, sonoma:        "38a79d86a4eeab5d3f1fdc017a6d4a1fc19c01d09c34f795f3bde6811eb5c1a5"
+    sha256 cellar: :any, arm64_linux:   "475c140e774855ea0582294aef43ed073f1f09956d4919419dd2c01a8d2ed78d"
+    sha256 cellar: :any, x86_64_linux:  "9225a94f66cf37b91f224c3e456d60fc59adfcfc9d28dd3c86966d1be3633687"
   end
 
   depends_on "cmake" => :build
