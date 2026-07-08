@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.5.src.tar.xz"
-  sha256 "dfdb7aec5ac9681f25e3c186a5b356d5ec86cda87cdcb034d38e838f875cc3f1"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.6.src.tar.xz"
+  sha256 "916e1e7bfbb321ec11c6fb54d6d2582b35d07950a2c7ba15dad34ee722016e65"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -32,6 +32,11 @@ class Biosig < Formula
 
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
+    # `string_isutf8.o` is missing from the libgdf link target
+    inreplace "biosig4c++/Makefile.in",
+              "gdf.o gdftime.o physicalunits.o getlogin.o",
+              "gdf.o gdftime.o physicalunits.o getlogin.o string_isutf8.o"
 
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
