@@ -30,12 +30,12 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c97d914f7dec597dcdc98f8fca691a6a5fd45b7639f6c2052ebc5101cfc280a"
-    sha256 cellar: :any,                 arm64_sequoia: "381cbeee270d479cf83255afdae026d49a503ac98d0c20b5f743a20d168a7a9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ec7a2df31a12c2becb948084e6db70d843851d8cacc207117f65717c3ecfe97"
-    sha256 cellar: :any,                 sonoma:        "e84c353f0b15d4012ff1f74cf1c8eb65262ce0c27b43840b20bb72d364b38ba4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5af5714166fcf1120595e24b9edad5d977e568eb90fd8a294edba308cf2cc53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f69c1bb7df0de2b00c3441eb253dd2310a6d4a01f56b313a9c111bcc70062acf"
+    sha256 cellar: :any, arm64_tahoe:   "494799ee8b9a0a9999cdcca99c2d0571079916a6581c0187eedf9bb61ab4c2ef"
+    sha256 cellar: :any, arm64_sequoia: "fb049d893aa2231443c605b6dfdffb14a63087c906cfddddbfd96a0a69c0616c"
+    sha256 cellar: :any, arm64_sonoma:  "d08b45557ee08f165403a908e420691c1e43e5b64a4f7db7fd2c66a15bfe1d5e"
+    sha256 cellar: :any, sonoma:        "cc626552be49c8796da5de3965b62fac95b77ecf4c48ecc7c25f3c0b9171ba1f"
+    sha256 cellar: :any, arm64_linux:   "14d6ce68d91229d348f9ac924453d8dbfa2d9f444bf8c4720898d234007419c0"
+    sha256 cellar: :any, x86_64_linux:  "d880d32215c025b18f47e781df1fd3e09b5e3705c4c1c4f4df5c4ea918a23cab"
   end
 
   depends_on "cmake" => :build
