@@ -6,12 +6,12 @@ class Pocketbase < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d11cd8d2720446103b3d53a8cc322dffa148a891eafaefae563eb4cd05dbd825"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d11cd8d2720446103b3d53a8cc322dffa148a891eafaefae563eb4cd05dbd825"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d11cd8d2720446103b3d53a8cc322dffa148a891eafaefae563eb4cd05dbd825"
-    sha256 cellar: :any_skip_relocation, sonoma:        "29043ba91db9d55a1d2b83df33bc7266895e1eb58b8578f61d6a701c1541d4f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "910ffc8c39eaafc0f677fe276b0a6b5159bb356c449397639170dad88dec1f70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "389a11c08a74bd3b8f02e5d9009a96aea13c8edd3b19700edecbe4122b79f9b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7107a35474ac173f91e5468b662d0d2b3f5580949ef8a093ffce31a41345e59b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7107a35474ac173f91e5468b662d0d2b3f5580949ef8a093ffce31a41345e59b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7107a35474ac173f91e5468b662d0d2b3f5580949ef8a093ffce31a41345e59b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "defa928107b68ac48179b9bc2486199adea58d66b291a9511f5b6ffb39d19b78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b354d763b490b9e23eed96e28ca824c25e5512999288c4a19077c3a98c8ccc4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c46c77c261dc47c2c33394ac6f0a41cb3440839d756bbc16c5bc72e0d7878f1a"
   end
 
   depends_on "go" => :build
