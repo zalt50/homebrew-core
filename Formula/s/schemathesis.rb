@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c5/50/4ca419862719dde14130595a3654aa16780d225be9074e42d6b90fe3ec7b/schemathesis-4.22.3.tar.gz"
-  sha256 "10c0fb27ed1940030133cf61ba32d1e85f71b85d3570d7ee54d1768b14d64f77"
+  url "https://files.pythonhosted.org/packages/b4/73/ea51c58748d2326a66957b11c116902a77114be25a6bd2cd86880cf9477c/schemathesis-4.22.4.tar.gz"
+  sha256 "1ddaf39e8062a6dc8fc9e14e6e48eac67b879655dc4f5aed725f484c36588437"
   license "MIT"
 
   bottle do
@@ -37,8 +37,8 @@ class Schemathesis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -57,8 +57,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/f2/55/983b6bc1b6b343a5ff6020388f9d0680ab477be59a731517e6c4a0387100/hypothesis-6.155.7.tar.gz"
-    sha256 "d8d6091753d0669db3c90c5e5b346cb37c72f3dd9378c8413acb1fd5da63f7ea"
+    url "https://files.pythonhosted.org/packages/57/4b/d376c0382fc716878790177deb88cc8b73d3a0218ae74de6e14493f7dc74/hypothesis-6.156.3.tar.gz"
+    sha256 "0c68209d611a17d9092a74d4a7c945256b8c7288e4e2b8a8a3c3be716a284365"
   end
 
   resource "hypothesis-graphql" do
@@ -87,8 +87,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/ef/e3/83527637a19069e3a44c9f82e738f7de6b0ce96eba3e8eb5745f67d91ca7/jsonschema_rs-0.46.8.tar.gz"
-    sha256 "a761fa82353fc0f0e08a046ceba2c8defdb023a8a6b44f557d34f11c973282a2"
+    url "https://files.pythonhosted.org/packages/c3/4a/eaf2d0710c2690c3382c2014465adb7e36e9dcb07c499285b4bf015235a2/jsonschema_rs-0.47.0.tar.gz"
+    sha256 "e18a569bc8249404ad32cadce8b3435b1c4d2909b7f8cda67b5725b16f660c9e"
   end
 
   resource "jsonschema-specifications" do
