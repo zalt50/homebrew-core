@@ -1,8 +1,8 @@
 class McpServerKubernetes < Formula
   desc "MCP Server for kubernetes management commands"
   homepage "https://github.com/Flux159/mcp-server-kubernetes"
-  url "https://registry.npmjs.org/mcp-server-kubernetes/-/mcp-server-kubernetes-3.9.3.tgz"
-  sha256 "473d551fca0d1f6c6d24a640fad5c5d1ced0af70389f667e61440c1444b3c297"
+  url "https://registry.npmjs.org/mcp-server-kubernetes/-/mcp-server-kubernetes-4.0.1.tgz"
+  sha256 "5c8c338a3020a8c4fca5e803aa9b84e9b03951a9a6420b8da45037aa263a9c51"
   license "MIT"
 
   bottle do
@@ -24,7 +24,7 @@ class McpServerKubernetes < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/mcp-server-kubernetes/node_modules"
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-path,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
