@@ -27,6 +27,8 @@ class Herdr < Formula
     ENV.prepend_path "PATH", formula_opt_bin("zig@0.15")
 
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"herdr", "completion")
   end
 
   service do
