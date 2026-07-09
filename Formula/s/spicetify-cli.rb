@@ -4,6 +4,7 @@ class SpicetifyCli < Formula
   url "https://github.com/spicetify/cli/archive/refs/tags/v2.44.0/v2.44.0.tar.gz"
   sha256 "aafdfceeae5ff926ffe27bf3808cd4228e3a2725f7f3539531f4f5c0ac98962d"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/spicetify/cli.git", branch: "main"
 
   bottle do
@@ -16,6 +17,8 @@ class SpicetifyCli < Formula
   end
 
   depends_on "go" => :build
+  depends_on "node" => :build
+  depends_on "pnpm" => :build
 
   def install
     ldflags = %W[
@@ -23,17 +26,19 @@ class SpicetifyCli < Formula
       -X main.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:, output: libexec/"spicetify")
-    cd buildpath do
-      libexec.install [
-        "css-map.json",
-        "CustomApps",
-        "Extensions",
-        "globals.d.ts",
-        "jsHelper",
-        "Themes",
-      ]
-      bin.install_symlink libexec/"spicetify"
-    end
+
+    system "pnpm", "install", "--frozen-lockfile"
+    system "pnpm", "run", "build:wrapper"
+
+    libexec.install [
+      "css-map.json",
+      "CustomApps",
+      "Extensions",
+      "globals.d.ts",
+      "jsHelper",
+      "Themes",
+    ]
+    bin.install_symlink libexec/"spicetify"
   end
 
   test do
