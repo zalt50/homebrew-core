@@ -27,6 +27,7 @@ class Libvirt < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
+  depends_on "cyrus-sasl"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-c"
@@ -45,7 +46,6 @@ class Libvirt < Formula
 
   on_linux do
     depends_on "acl"
-    depends_on "cyrus-sasl"
     depends_on "libnl"
     depends_on "libtirpc"
     depends_on "util-linux"
@@ -62,6 +62,7 @@ class Libvirt < Formula
       -Dinit_script=none
       -Dqemu_datadir=#{Formula["qemu"].opt_pkgshare}
       -Drunstatedir=#{var}/run
+      -Dsasl=enabled
     ]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
