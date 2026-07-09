@@ -11,12 +11,12 @@ class Nextflow < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c959d30dd55f435d157d71e11eaeb039c0220fb97fc44300583169178201320"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebed4ace175fb9eac2d885dd400a813fe3c93499138676a50650c0f8f995a09e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2a42c43f85c2296df3010c4ac2325b390c774f1153d254eb17590ad1bc1d0b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "577a05bbfb2cad36071a3c6c71ed00bab23e83cfa2c50e090d3eef528405721c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "100ee07c925bb4f3ca52867fa62ab198629e32a4edccad0ab28605052f869f6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ba2584deee6bd146c534ebef99f14ec0d363be630acb38f84f38ee6e7d7157"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82f5d3a06ea5c674dd9afa594bafde09cd832807da715430d95643110fb821fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "294d6942b9ea29776823da1eca9f71bbc6296759c763568ff843a73b0fd43571"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0d07024ad217ec59054028a7d5a9b4d371e25fae6cd2cd7da8b88a8ef7e9fee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ecedc6431926b42cb837c99db06104e4bdd952135fa8aac447d1cf602ea1c25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90b1d577b6b0df1615888ccad53bfb6dac808459a9ebd0de7075210c061cace0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99bf9c80530b1d572a48363f895c74b949b5c982c95e097ad3034f05371df693"
   end
 
   depends_on "gradle" => :build
