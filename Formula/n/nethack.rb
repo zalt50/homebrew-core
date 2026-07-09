@@ -4,6 +4,7 @@ class Nethack < Formula
   desc "Single-player roguelike video game"
   homepage "https://www.nethack.org/"
   license "NGPL"
+  revision 1
   head "https://github.com/NetHack/NetHack.git", branch: "NetHack-5.0"
 
   stable do
@@ -47,6 +48,14 @@ class Nethack < Formula
 
   depends_on "groff" => :build
   depends_on "ncurses"
+
+  # Fix save (de)compression path when the playground differs from HACKDIR.
+  patch do
+    url "https://github.com/NetHack/NetHack/commit/4a04a897a76d5d9ea79cb777832ce2057f4edd48.patch?full_index=1"
+    sha256 "b353538d07b044307dcd7f0b569ba66a9bc715d5b40e35a7bf33cf69500f42fd"
+    type :unofficial
+    resolves "https://github.com/NetHack/NetHack/pull/1629"
+  end
 
   def install
     # Build everything in-order; no multi builds.
