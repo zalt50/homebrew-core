@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/a0/12/51a3f9e14bf6ed514153de115aabb3a629e5fae3ba8b27eb808ee5c0e430/mycli-2.0.0.tar.gz"
-  sha256 "dd5c9aee441e60d4fc955b12ea0eb4f5d6ff2f0d65d0121a71ad0c339ff477a1"
+  url "https://files.pythonhosted.org/packages/43/c9/fb993344e04c07f464acce494c79af95fbce81a244ce2372b532e52fd283/mycli-2.1.1.tar.gz"
+  sha256 "e26e0b67e05d8aca1e42c0f94bd4fc8522b48a8a1d6652da804f59ea62ed12f3"
   license "BSD-3-Clause"
 
   bottle do
@@ -230,13 +230,13 @@ class Mycli < Formula
   end
 
   resource "sqlite-migrate" do
-    url "https://files.pythonhosted.org/packages/13/86/1463a00d3c4bdb707c0ed4077d17687465a0aa9444593f66f6c4b49e39b5/sqlite-migrate-0.1b0.tar.gz"
-    sha256 "8d502b3ca4b9c45e56012bd35c03d23235f0823c976d4ce940cbb40e33087ded"
+    url "https://files.pythonhosted.org/packages/2c/be/cb7cfb197a864c1676cb5e7721169de4923f26fb4c25351e492cbdde8c22/sqlite_migrate-0.2.tar.gz"
+    sha256 "c6b78b5bb486b541a5c484c93a22079ad7fab8c142a26793830748586457b3c8"
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/b3/e3/6b1106349e2576c18409b27bd3b16f193b1cf38220d98ad22aa454c5e075/sqlite_utils-3.39.tar.gz"
-    sha256 "bfa2eac29b3e3eb5c9647283797527febcf4efd4a9bbb31d979a14a11ef9dbcd"
+    url "https://files.pythonhosted.org/packages/7d/8e/0e2fa87b197b3d0f8dd57856c07da77fa0c7130aaa894ee9d330c715f37c/sqlite_utils-4.0.tar.gz"
+    sha256 "cea711807c2bbc18829ed642ae19a23a80e853f4136c4d2a28078a6117ad9426"
   end
 
   resource "sqlparse" do
@@ -255,8 +255,8 @@ class Mycli < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
-    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
+    url "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz"
+    sha256 "19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520"
   end
 
   resource "wcwidth" do
