@@ -12,12 +12,12 @@ class Kitex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f238af142c3494e560def4808196be3f80ba1831126243bb680af54b263d459"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f238af142c3494e560def4808196be3f80ba1831126243bb680af54b263d459"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f238af142c3494e560def4808196be3f80ba1831126243bb680af54b263d459"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a32d3bafbaae26e40b050fefee8c47164ab765173ad1fa27e61f3dd4e839d4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86883041d650d45b7cea432cb339d8e05268fba84f2f1d115006877ce5c796b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1149dfbbbe8fff9e7d6bf64bea24789b58d91e3068de2ef80844c4d217a706f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be43c1e06d59d842f383f33b47936081dfa7b77135cb9da4b038fc57f15378cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be43c1e06d59d842f383f33b47936081dfa7b77135cb9da4b038fc57f15378cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be43c1e06d59d842f383f33b47936081dfa7b77135cb9da4b038fc57f15378cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f0ba4c22202fc0250924a741a6714f0065301b6d041e2a2db3f7473789493292"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b0bc54797bac50553f1698389b1e1bfba1925ae2bed74ae3d2c032ce477274c"
+    sha256 cellar: :any,                 x86_64_linux:  "5f7c68f560204daa51ae253db75092409469068ae00c5bae751d9e9ab8bde6d4"
   end
 
   depends_on "go" => [:build, :test]
