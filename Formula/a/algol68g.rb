@@ -1,12 +1,12 @@
 class Algol68g < Formula
   desc "Algol 68 compiler-interpreter"
-  homepage "https://jmvdveer.home.xs4all.nl/algol.html"
-  url "https://jmvdveer.home.xs4all.nl/algol68g-3.11.3.tar.gz"
-  sha256 "3fc84a9b99451b73fcf8e8a05f69853f32f56cddf46db940be28da8c9cd37310"
+  homepage "https://algol68genie.nl/en/algol-68-genie/"
+  url "https://algol68genie.nl/algol68g-3.12.2.tar.gz"
+  sha256 "e1f8ae6eaa60a07dd83a50a0d5b24743790e6b228dba55b70986ce2b56b013b9"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https://jmvdveer.home.xs4all.nl/en.download.algol-68-genie-current.html"
+    url :homepage
     regex(/href=.*?algol68g[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
