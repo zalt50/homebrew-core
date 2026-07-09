@@ -1,8 +1,8 @@
 class Expert < Formula
   desc "Official Elixir Language Server Protocol implementation"
   homepage "https://expert-lsp.org"
-  url "https://github.com/expert-lsp/expert/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "cbe134490b7bf52953807c82503bf109131f5e90d5c883cee3210c0a5e4f636b"
+  url "https://github.com/expert-lsp/expert/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "029d662b679af3f87f3f6e72ca9da4929134b8fa1056c4157374ce81c3f4a3a4"
   license "Apache-2.0"
   head "https://github.com/expert-lsp/expert.git", branch: "main"
 
@@ -29,6 +29,10 @@ class Expert < Formula
   def install
     system "mix", "local.hex", "--force", "--if-missing"
     system "mix", "local.rebar", "--force", "--if-missing"
+
+    # Drop wx/observer to avoid pulling wxwidgets/mesa/llvm; see https://github.com/expert-lsp/expert/issues/786
+    inreplace "apps/expert/mix.exs", ", :wx, :observer,", ","
+
     system "just", "install", "--prefix=#{prefix}"
   end
 
