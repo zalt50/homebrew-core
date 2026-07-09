@@ -6,12 +6,12 @@ class Tabiew < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7e08204952d5664bd02c981bc5d6d1a4c21d6ee69d986a1baa53b00ef781f4a5"
-    sha256 cellar: :any, arm64_sequoia: "08725701e4ee397bf84428103f31d44064a88f2f30378f61085d75bff82c8edc"
-    sha256 cellar: :any, arm64_sonoma:  "aea1502321a209adab0c8d385d65bc9feb61002b245694d64003e7369d45c930"
-    sha256 cellar: :any, sonoma:        "025c63768b0c88f7c76e0d5d6c3d29bc02db00a4ddd1f274334ce7005170aa15"
-    sha256 cellar: :any, arm64_linux:   "7bb4aa6ea6572a05296d0d809ef938654101f4897e284a35c18b83627bc31a4f"
-    sha256 cellar: :any, x86_64_linux:  "0228d3bb2cb0ea2aa6633b797a07b26f6a286226d05e2675b655edd9e23bdabb"
+    sha256 cellar: :any, arm64_tahoe:   "cb87a123a11233d70c9aa7e14782882a8100d2182e630c2deb65a99c1d03fd5f"
+    sha256 cellar: :any, arm64_sequoia: "af95a38dd261b57bc99bce39b3b9334df498c9f3b125debf62449719af82e476"
+    sha256 cellar: :any, arm64_sonoma:  "b27719475764134ad5530898d4592287303077c4a9cf041330f69a931512f42f"
+    sha256 cellar: :any, sonoma:        "55bb40a1701f9dd99f5fdd11c0b935acde0b2e71f334d46742db26cacb6bb5cd"
+    sha256 cellar: :any, arm64_linux:   "4b8e97dffba63a2444a3dc380f0f9198cad6d2aa0b10790bf9905a9cd181ebd4"
+    sha256 cellar: :any, x86_64_linux:  "2d0bc86b6ecf2011a1fc251aa5e796b3fa5921242fe37e352a6b17c76aeebc31"
   end
 
   depends_on "pkgconf" => :build
