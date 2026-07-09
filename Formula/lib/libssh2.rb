@@ -6,7 +6,7 @@ class Libssh2 < Formula
   mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.11.1.tar.gz"
   sha256 "d9ec76cbe34db98eec3539fe2c899d26b0c837cb3eb466a56b0f109cabf658f7"
   license "BSD-3-Clause"
-  revision 1
+  revision 3
   compatibility_version 1
 
   livecheck do
@@ -37,6 +37,58 @@ class Libssh2 < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/2dae3024897e1898d389835151f4e9606227721d
+  # with a call to `LIBSSH2_UNCONST` removed which doesn't exist in 1.11.1.
+  # This modification has been vetted and approved at https://github.com/libssh2/libssh2/issues/2125.
+  # Patch can be removed with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2025-15661.patch"
+    type :backport
+    resolves "CVE-2025-15661"
+  end
+
+  # Remove with the next release.
+  patch do
+    url "https://github.com/libssh2/libssh2/commit/256d04b60d80bf1190e96b0ad1e91b2174d744b1.patch?full_index=1"
+    sha256 "7c5fe26b0b58fb3ee3770c8a7648eddec09845fe016eff22b9074451d1a60c34"
+    type :backport
+    resolves "CVE-2026-7598"
+  end
+
+  # Remove with the next release.
+  patch do
+    url "https://github.com/libssh2/libssh2/commit/17626857d20b3c9a1addfa45979dadcee1cd84a4.patch?full_index=1"
+    sha256 "a236d5cfe1995a85c3b036ab16cc2672aa316fd3e1d6299100bcc4c07a539fd7"
+    type :backport
+    resolves "CVE-2026-55199"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/97acf3dfda80c91c3a8c9f2372546301d4a1a7a8
+  # with a simple conflict fixed.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-55200.patch"
+    type :backport
+    resolves "CVE-2026-55200"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/34497525929b9a47f03dfb81887ac896202b7e12
+  # with ssh2_err changed to the 1.11's _libssh2_error.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-58050.patch"
+    type :backport
+    resolves "CVE-2026-58050"
+  end
+
+  # Remove with the next release.
+  patch do
+    url "https://github.com/libssh2/libssh2/commit/a9758da45a52bc8c630ec9493804d0c6ea30b24a.patch?full_index=1"
+    sha256 "46cc7c5184d333e93c80a9cac1c86469c17340e6fc0418aecb2d0d8f6eaa5f41"
+    type :backport
+    resolves "CVE-2026-58051"
   end
 
   def install
