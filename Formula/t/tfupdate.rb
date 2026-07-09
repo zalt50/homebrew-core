@@ -7,12 +7,12 @@ class Tfupdate < Formula
   head "https://github.com/minamijoyo/tfupdate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "272a3ea75cbbcb0eb2bf07db01e2c252fa0d882f53fd1177da9d051e4d42dfe7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "272a3ea75cbbcb0eb2bf07db01e2c252fa0d882f53fd1177da9d051e4d42dfe7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "272a3ea75cbbcb0eb2bf07db01e2c252fa0d882f53fd1177da9d051e4d42dfe7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f656e6eb88b5cc7addcbc0f0860161040ce6b822eb743abcd32b1960b60d3655"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ced5adf6d96a9db07d2c1b99eff7847356d6f60e5162fcf3c9cfc92e0df517c"
-    sha256 cellar: :any,                 x86_64_linux:  "1799ee47013e5027b1858d49a746ee39264cb53fa5c40643584876adf4173031"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd83eb352ed04de769f5936f6535deeb4042cc2d5151b878c17dfa9953312cf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd83eb352ed04de769f5936f6535deeb4042cc2d5151b878c17dfa9953312cf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd83eb352ed04de769f5936f6535deeb4042cc2d5151b878c17dfa9953312cf0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47451115b6f6973756fd9b91a74979ba09807f30b5e306e9068f68d882d00445"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb674e38f011661c02063f0da7166debb012b7423b35e3d242e33b3ebabcdb1f"
+    sha256 cellar: :any,                 x86_64_linux:  "60451c7175a9758256187d47f26b48bd9b8afa500412a98437b13f704f3fb64a"
   end
 
   depends_on "go" => :build
