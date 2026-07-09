@@ -10,12 +10,12 @@ class Gptline < Formula
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b6ea7cc630afd1c1f83af02ffacbdc3cde2d66f2f5eb56a78f8a0e6cd59063e7"
-    sha256 cellar: :any,                 arm64_sequoia: "ab1e0857d810c970fb2f8edd1e4e0440a2ec3e4b078a4b32fca04814d81b5627"
-    sha256 cellar: :any,                 arm64_sonoma:  "d08e27eaee7350b35f5299b5076128857cb15f2ee834f70771459a1814bb9aab"
-    sha256 cellar: :any,                 sonoma:        "0e30c80c0426f4e25f543e8c393e2fdf7fad5bfca5ad847921d2b69d59f4199a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d141c5e0fa0582d6c0ffbf35cfb4f555c6273ce793222f523be3cbf83b0aef0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a24cb052edf7a67da547bbee8ceb58a48ffe707ad0dd938130b5a2bc5eddb53"
+    sha256 cellar: :any, arm64_tahoe:   "c9a88646eae76506e99b69b155135bce5dfce8610055e2e0be8f0489ff05487c"
+    sha256 cellar: :any, arm64_sequoia: "27dc5374bb4ca81dfce5ff4faedd041f7e1f1dee6c7043cd75da6591cf335db2"
+    sha256 cellar: :any, arm64_sonoma:  "f5dc78a68e2b92815dc9b97eb2ab274d0e047d9817b120a8c4419a794d8d5005"
+    sha256 cellar: :any, sonoma:        "155e5e26369ee6f15ea2abf03e5738981d4f807111e6358d54c2390fab41bd80"
+    sha256 cellar: :any, arm64_linux:   "51d37df35b24ca3c269d607b440a291930b5313c3b0d893904df295dfb6b288e"
+    sha256 cellar: :any, x86_64_linux:  "bdb2ba7a6f994b4ec2548829e75d1e4cefeb90b9a6aa322575c058a721798564"
   end
 
   depends_on "pkgconf" => :build
