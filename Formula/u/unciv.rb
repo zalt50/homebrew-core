@@ -1,8 +1,8 @@
 class Unciv < Formula
   desc "Open-source Android/Desktop remake of Civ V"
   homepage "https://github.com/yairm210/Unciv"
-  url "https://github.com/yairm210/Unciv/releases/download/4.20.18/Unciv.jar"
-  sha256 "4792fd777ced2c764c40abd364b28634786004aa8b2d92f46e5b55773343afae"
+  url "https://github.com/yairm210/Unciv/releases/download/4.20.19/Unciv.jar"
+  sha256 "1e68280d35a93eac4186b4dd7bb8ec53956e7c633339dcf619e4eb208786ff0b"
   license "MPL-2.0"
 
   livecheck do
