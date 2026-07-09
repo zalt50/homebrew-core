@@ -7,12 +7,12 @@ class Pscale < Formula
   head "https://github.com/planetscale/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77ca3418951425898f4c0e75264d46c2d7add0066cc90cdd2937b941cce664c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f07efd514bf023de9cf9a22ea8cbdf8080a23f1d55fb2754f3923e11338cf6f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7baf3d39c98b9315ccb2f809408a7822ac97d5f37f236d321be2ca072bd63713"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5ee533f29705d2762679f79d97893ef296228ceb46c1e60e4de8dffff5b40892"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ca97f02dd19567cdf32d39fb22c457294e652a9d96bec1893b2966f2a9d2b38"
-    sha256 cellar: :any,                 x86_64_linux:  "806555b25ee5e74b33f56d985cc2b4e2b841fa1cfb5d964863bc90adb0030f31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a2dcd9485aeb2ccb6834aef722bde76a89a09557ed5f00b121b16dcfdb284a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "920df3cf00a9fbb4253259cb93e9fc4d77171e9d6fdf01f32742d2cc25cc45e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cda737af950c839e0bb38aa11d481288b847ab7a5b546cdf88f4c60b8e7050dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1efc7b3ce3cfcd3b00d7ea1daf9293433cb8b2821fb876e4c0c54c2e88ba02ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7929f0c278034a6d73da988fa1ca115e66c81ae48601aa457bc748d63ae450c4"
+    sha256 cellar: :any,                 x86_64_linux:  "5c50ca2fa5cf96a24da0d99ae86e34ccfc3e5ff196fe106ff915db38baf23476"
   end
 
   depends_on "go" => :build
