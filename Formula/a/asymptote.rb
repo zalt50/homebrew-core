@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/3.11/asymptote-3.11.src.tgz"
-  sha256 "537e9f22621bf84f09ee0d44dc455c4ea91ba193830f1d7624a07d4710d7e7d1"
+  url "https://downloads.sourceforge.net/project/asymptote/3.13/asymptote-3.13.src.tgz"
+  sha256 "24b2d2fdfa1e25382c0fe84e5d79466f5ae369d7d9f8d99ee2b9b64fa11dc00c"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -23,15 +23,24 @@ class Asymptote < Formula
   depends_on "cmake" => :build
   depends_on "glm" => :build
   depends_on "pkgconf" => :build
+  depends_on "vulkan-headers" => :build
   depends_on "bdw-gc"
   depends_on "fftw"
   depends_on "ghostscript"
+  depends_on "glfw"
+  depends_on "glslang"
   depends_on "gsl"
   depends_on "readline"
+  depends_on "spirv-tools"
+  depends_on "vulkan-loader"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "molten-vk"
+  end
 
   on_linux do
     depends_on "libtool" => :build
@@ -42,8 +51,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/3.11/asymptote.pdf"
-    sha256 "edfc31f9a54900dcc92fd29535aecccf5e83a38c5843742d7418aaa3baee3802"
+    url "https://downloads.sourceforge.net/project/asymptote/3.13/asymptote.pdf"
+    sha256 "19f55817da70ee2925f4c166c9936b9cabafff24399f9075d3bd48edacb9d178"
 
     livecheck do
       formula :parent
@@ -52,6 +61,9 @@ class Asymptote < Formula
 
   def install
     odie "manual resource needs to be updated" if version != resource("manual").version
+
+    # Homebrew glslang is a unified shared lib; these split component libs don't exist
+    inreplace "configure", 'VULKAN_LIBS="-lMachineIndependent -lOSDependent -lGenericCodeGen "', 'VULKAN_LIBS=""'
 
     system "./configure", *std_configure_args
 
