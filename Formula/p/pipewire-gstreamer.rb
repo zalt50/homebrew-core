@@ -1,8 +1,8 @@
 class PipewireGstreamer < Formula
   desc "GStreamer Plugin for PipeWire"
   homepage "https://pipewire.org"
-  url "https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.6.7/pipewire-1.6.7.tar.gz"
-  sha256 "a618c0a159055e2443f638c5c9f4b904e6902b655c09a7ff84546fa2447aedf8"
+  url "https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.6.8/pipewire-1.6.8.tar.gz"
+  sha256 "8181172a1d95131f6af8bbc0b98f90b2a33349b042b84c3ce57dd5d11348cc58"
   license "MIT"
   head "https://gitlab.freedesktop.org/pipewire/pipewire.git", branch: "master"
 
