@@ -12,8 +12,6 @@ class NodeBuild < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :bumped_by_upstream
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1f1c05721c9862da6175651b927e504fe73bebc75aef4747a784b0f3edcf94eb"
   end
