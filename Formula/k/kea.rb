@@ -6,6 +6,7 @@ class Kea < Formula
   url "https://downloads.isc.org/isc/kea/3.2.0/kea-3.2.0.tar.xz"
   sha256 "14bf695d37b65b9b1bf550fea5d0adaf9806c50e5419ef2a176a4b8e9aade3df"
   license "MPL-2.0"
+  revision 1
   head "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
 
   livecheck do
