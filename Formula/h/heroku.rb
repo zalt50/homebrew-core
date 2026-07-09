@@ -1,8 +1,8 @@
 class Heroku < Formula
   desc "CLI for Heroku"
   homepage "https://www.npmjs.com/package/heroku/"
-  url "https://registry.npmjs.org/heroku/-/heroku-11.8.0.tgz"
-  sha256 "4ff3e8c16937f29c12ba150575854623b7e59050f7d0a0406839eeb6285eae55"
+  url "https://registry.npmjs.org/heroku/-/heroku-11.8.1.tgz"
+  sha256 "46cb1f258ca87941c91456e1bb98e3cbc5aa2658a5acacdbe69752bbe3fe0bfd"
   license "ISC"
 
   bottle do
@@ -31,7 +31,7 @@ class Heroku < Formula
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-path,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     if OS.mac?
