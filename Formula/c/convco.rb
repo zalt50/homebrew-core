@@ -7,12 +7,12 @@ class Convco < Formula
   head "https://github.com/convco/convco.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f4a0969e3b60c01c5fcc1dceefa0b7544f80d73c2374bba526b5953e7360069c"
-    sha256 cellar: :any,                 arm64_sequoia: "08a739ef2b32e8dd522246aa3ecd6b293cbde33cc82ddded91262c9a9670560f"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb8eb3d9475713310a35b1602ae42a89021e11c6f0bf6e77334887d08c13cfe2"
-    sha256 cellar: :any,                 sonoma:        "6ff6540112f11725e5607b1dedeb254ead9001bbf43708468ee87c75edb995e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e8aeb9afaeee368d3dd271b6e60abd205568586f6d134d9f0a9f5c75f70fd61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "685ab707d227454b95c081fa542636997400a46160af144019e411fafc15cc36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42bc610b05790d515b8a43e2c3f27ac9b31aa101f33dcf87b5f424970c692ecf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "359cd15d689c6de88766baf7a390b5fe47c13d605bb9d0e3cf2c76fa84b41492"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26e6dbda7b0cf1dd22ca0968088c6319c498f991a78a55ad0eeea5960309e716"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8567191973fe7ccf6f1a05a981580708e5b7f0cbac2c234c54c04eb57a437ff8"
+    sha256 cellar: :any,                 arm64_linux:   "f8ceba225df3a02e271eb6e9745144c899973d979dad5fbc325fdcfbe0617cb0"
+    sha256 cellar: :any,                 x86_64_linux:  "d824e0b16080c900acb3836f6ea3a7c15d8f8a67a4e90811a4071386dd3cc937"
   end
 
   depends_on "rust" => :build
