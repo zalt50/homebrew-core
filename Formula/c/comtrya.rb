@@ -7,14 +7,13 @@ class Comtrya < Formula
   head "https://github.com/comtrya/comtrya-dotfiles.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d47418f399155160faedb236b13d882ae55200aa9cc211e4f5ad4c77013aec29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46bf7dfc1bc293ec74fc38268c4ea93141cc02e9da597659c9b7211e31b1d7ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a8832ef28773fb65085509c65d978081f9d1fd773ddbcb4b56449cbeb94a87f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b68a181a0d187ff39d38f05615a38fb5c238130c609deb71f382e0a7c790a77"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2beda410c50174b01333927b00eece60fc67fb8d88af2306497f6771b7327155"
-    sha256 cellar: :any_skip_relocation, ventura:       "91d872c1955cdba479855aa1a57cd647e91d3ccd19585eab397221619e6d17e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "feefd9e00ca885fbb8b67fa3ad298ff77d90beb29f458780ed4f2e50e7882795"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e52d28d153e028d22f1e74375a63f0bd43281bd6370f65cbe0d35305e79c4c2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f1149da737d749c1ce81c8d9e386dbf7c9a2fe02b94be4e4a1c8204a222e8c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c24cb87343e6ab216141ed61cf1d7ab9865e92254b5c49090a90d322c8ce198e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aeab3fb6b90a68791ac4fc53f29806d44567f192e6a2057db47a0931c033ff9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f8a7b164d73236ca434f4c8c8ba873abe1514d5b8ea2d038bb304cb9ae89df6"
+    sha256 cellar: :any,                 arm64_linux:   "213fed84dbffc53e71e18d992e7db6571c6c6f330c7d33c0d84b6f8757e3db2c"
+    sha256 cellar: :any,                 x86_64_linux:  "be75b9e7b4108f3fd88b07c2f69a94635945c844000b0f2ddc5d0691467b1fdc"
   end
 
   deprecate! date: "2026-07-09", because: :repo_archived
