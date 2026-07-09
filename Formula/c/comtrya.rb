@@ -1,10 +1,10 @@
 class Comtrya < Formula
   desc "Configuration and dotfile management tool"
   homepage "https://comtrya.dev"
-  url "https://github.com/comtrya/comtrya/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "7bbd6ac04314e2dd541d8104908a2e8991a7489daab5563d01d28a3e48c08350"
+  url "https://github.com/comtrya/comtrya-dotfiles/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "13b7b08f484ec4e0c4a0a10bc36bb281bd74b066283847a9d89f4bc83c5c7ea6"
   license "MIT"
-  head "https://github.com/comtrya/comtrya.git", branch: "main"
+  head "https://github.com/comtrya/comtrya-dotfiles.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d47418f399155160faedb236b13d882ae55200aa9cc211e4f5ad4c77013aec29"
@@ -16,6 +16,9 @@ class Comtrya < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "feefd9e00ca885fbb8b67fa3ad298ff77d90beb29f458780ed4f2e50e7882795"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e52d28d153e028d22f1e74375a63f0bd43281bd6370f65cbe0d35305e79c4c2"
   end
+
+  deprecate! date: "2026-07-09", because: :repo_archived
+  disable! date: "2027-07-09", because: :repo_archived
 
   depends_on "rust" => :build
 
@@ -29,7 +32,7 @@ class Comtrya < Formula
     assert_match "comtrya #{version}", shell_output("#{bin}/comtrya --version")
 
     resource "testmanifest" do
-      url "https://raw.githubusercontent.com/comtrya/comtrya/refs/heads/main/examples/onlyvariants/main.yaml"
+      url "https://raw.githubusercontent.com/comtrya/comtrya-dotfiles/refs/heads/main/examples/onlyvariants/main.yaml"
       sha256 "0715e12cbbb95c8d6c36bb02ae4b49f9fa479e2f28356b8c1f3b5adfb000b93f"
     end
 
