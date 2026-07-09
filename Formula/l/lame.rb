@@ -1,8 +1,8 @@
 class Lame < Formula
   desc "High quality MPEG Audio Layer III (MP3) encoder"
   homepage "https://lame.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz"
-  sha256 "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
+  url "https://downloads.sourceforge.net/project/lame/lame/3.101/lame-3.101.tar.gz"
+  sha256 "7578af6eebd578b2bd64e468fac4ae1f03670a7e028166e67f855674b9b6aeac"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -26,12 +26,14 @@ class Lame < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee8318f10b1b986d57826f0f59800c43f62d58e8d52cf9c94b8924e28739e656"
   end
 
+  depends_on "pkgconf" => :build
+  depends_on "mpg123"
+
   uses_from_macos "ncurses"
 
   def install
-    # Fix undefined symbol error _lame_init_old
-    # https://sourceforge.net/p/lame/mailman/message/36081038/
-    inreplace "include/libmp3lame.sym", "lame_init_old\n", ""
+    # lame.h leaves id3tag ucs2 helpers parse.c calls undeclared, but they are still exported
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
 
     system "./configure", "--disable-dependency-tracking",
                           "--disable-debug",
