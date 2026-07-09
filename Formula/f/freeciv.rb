@@ -5,8 +5,8 @@ class Freeciv < Formula
   head "https://github.com/freeciv/freeciv.git", branch: "main"
 
   stable do
-    url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.2/3.2.4/freeciv-3.2.4.tar.xz"
-    sha256 "e0a19508bf69dc4fb7c251d391253794d772bfcce2dbd30fa453521244edd32c"
+    url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.2/3.2.5/freeciv-3.2.5.tar.xz"
+    sha256 "d32808f02a9b9f49ef159bcbf266b16ce2a3ce6ea8f71115d80f952c3cc609e8"
 
     # Backport support for Lua 5.5
     patch do
