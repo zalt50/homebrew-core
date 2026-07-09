@@ -1,17 +1,17 @@
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://www.contentful.com/developers/docs/tutorials/cli/"
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-4.0.3.tgz"
-  sha256 "931b64ad065d5adb4134d4878748b0e86510ee37877a57897269ccbf2dc7c1c9"
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-4.0.4.tgz"
+  sha256 "59de298bd3f6722f3a4f025e2374d49f5431a9234f40ff3c2fdfe6bef718c360"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68f7b1f17e0246204f14f2c1a68e621b2c5a46c07caa1f8c2443739b59b2d162"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68f7b1f17e0246204f14f2c1a68e621b2c5a46c07caa1f8c2443739b59b2d162"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68f7b1f17e0246204f14f2c1a68e621b2c5a46c07caa1f8c2443739b59b2d162"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68f7b1f17e0246204f14f2c1a68e621b2c5a46c07caa1f8c2443739b59b2d162"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68f7b1f17e0246204f14f2c1a68e621b2c5a46c07caa1f8c2443739b59b2d162"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c863fc57d737708238e18edc1fe60094f92b2a52b6c1ea075cfa41b5539be75d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6669fc6efb9d2811bfb454243ffec6f2bbeee3ce63f489a1d1081c4287f77fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6669fc6efb9d2811bfb454243ffec6f2bbeee3ce63f489a1d1081c4287f77fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6669fc6efb9d2811bfb454243ffec6f2bbeee3ce63f489a1d1081c4287f77fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6669fc6efb9d2811bfb454243ffec6f2bbeee3ce63f489a1d1081c4287f77fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6669fc6efb9d2811bfb454243ffec6f2bbeee3ce63f489a1d1081c4287f77fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3469b5245657322e55b198493f6d8f34667c50b5d0778b53fbb9295147c37f77"
   end
 
   depends_on "node"
