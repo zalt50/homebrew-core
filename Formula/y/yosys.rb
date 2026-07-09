@@ -1,8 +1,8 @@
 class Yosys < Formula
   desc "Framework for Verilog RTL synthesis"
   homepage "https://yosyshq.net/yosys/"
-  url "https://github.com/YosysHQ/yosys/releases/download/v0.66/yosys-src.tar.gz"
-  sha256 "ba567ea7fbb1287e996aef8f20fe902f6fd408593aa50cfaea8ae0c9015ab872"
+  url "https://github.com/YosysHQ/yosys/releases/download/v0.67/yosys.tar.gz"
+  sha256 "608d758a6efc73c9f866b0a822aa2f788c2889fcb70dcdcc0e758009465049f6"
   license "ISC"
   head "https://github.com/YosysHQ/yosys.git", branch: "main"
 
@@ -16,11 +16,14 @@ class Yosys < Formula
   end
 
   depends_on "bison" => :build
+  depends_on "cmake" => :build
   depends_on "flex" => :build
   depends_on "pkgconf" => :build
+  depends_on "fmt"
   depends_on "libtommath"
   depends_on "readline"
   depends_on "tcl-tk"
+  depends_on "tomlplusplus"
 
   uses_from_macos "libffi"
   uses_from_macos "python"
@@ -29,9 +32,26 @@ class Yosys < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Let bundled fmt/tomlplusplus/boost_regex use system libraries when available
+  patch do
+    url "https://github.com/YosysHQ/yosys/commit/cf773aaa13364edc53a14aed1fee9a22112e9fec.patch?full_index=1"
+    sha256 "345977646fcffe3cccad0a70fd07b45982053fec3f256f2d6e181b40ae13dbc7"
+    type :unofficial
+    resolves "https://github.com/YosysHQ/yosys/pull/6031"
+  end
+
   def install
-    ENV.append "LINKFLAGS", "-L#{formula_opt_lib("readline")}"
-    system "make", "install", "PREFIX=#{prefix}", "PRETTY=0"
+    # Avoid shim reference
+    inreplace ["cmake/YosysVersion.cmake", "cmake/YosysConfigScript.cmake"],
+              "${CMAKE_CXX_COMPILER}", ENV.cxx
+
+    args = %w[
+      -DYOSYS_WITHOUT_EDITLINE=ON
+      -DYOSYS_WITHOUT_SLANG=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
