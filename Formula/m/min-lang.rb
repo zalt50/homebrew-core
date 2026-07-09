@@ -1,9 +1,14 @@
 class MinLang < Formula
   desc "Small but practical concatenative programming language and shell"
   homepage "https://min-lang.org"
-  url "https://github.com/h3rald/min/archive/refs/tags/v0.48.0.tar.gz"
-  sha256 "20b836d87a99a801859b99e5f08ef39fe1b787d642f053926db5e39955ddf4d4"
+  url "https://git.sr.ht/~h3rald/min/archive/v0.48.1.tar.gz"
+  sha256 "baec4d176ff138fcf39784ad97a6a9125454a8d3ccb4db3e6ea59aa2d6716a45"
   license "MIT"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "ea94a2c1f41db54447f306f26bba8bcfea7e163083cf8f68ce29818a36efb54f"
