@@ -6,7 +6,12 @@ class ClaudeCodeRouter < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "945809d609dde32f124e127be19d58734dbd9f01c7d2caed0fcaee08236da477"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1039700a02c7a6e8ec8f0bb589a2e2cbfcef3592bf23a7178456d7b6241802de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe2b6b625e767e1e21196e7d5dc5f9725da8ebc2517808a1edc0927546bca256"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa4fa93e83028b41d499ca8fef603509ca57c218fb70518057b2c14dddf0fa28"
+    sha256 cellar: :any_skip_relocation, sonoma:        "212917c9f26c1a31ea9467b1cfbcaaeb613d57e2ba6497d566c903b6af642eba"
+    sha256 cellar: :any,                 arm64_linux:   "64511827a66fc4447e6907b842a3d99b4c27db2ee38bf11653c7a7079b73aad6"
+    sha256 cellar: :any,                 x86_64_linux:  "4ac9842f3c396989b23ebfc0750d98e28c5f51c64a5362490490b8bee7529c0f"
   end
 
   depends_on "node"
