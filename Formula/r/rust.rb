@@ -1,8 +1,8 @@
 class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
-  url "https://static.rust-lang.org/dist/rustc-1.96.1-src.tar.gz"
-  sha256 "d0a9b5198c41868538ae12af28064163551d06dcceab11ef0b1bc9aa6e98b7a7"
+  url "https://static.rust-lang.org/dist/rustc-1.97.0-src.tar.gz"
+  sha256 "1c0855d8982a0fb1d0321b6054b55b732d3b1d17c846841eb7fd0ab37bf276f8"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/rust-lang/rust.git", branch: "main"
@@ -37,23 +37,23 @@ class Rust < Formula
   resource "rustc-bootstrap" do
     on_macos do
       on_arm do
-        url "https://static.rust-lang.org/dist/2026-04-16/rustc-1.95.0-aarch64-apple-darwin.tar.xz", using: :nounzip
-        sha256 "149e85a285b6eba58eb6c8bdf7deb1b93763890598e62cb635a712e3a8454f04"
+        url "https://static.rust-lang.org/dist/2026-05-28/rustc-1.96.0-aarch64-apple-darwin.tar.xz", using: :nounzip
+        sha256 "1bb7b0bad1d2a42fc4173ede6dd460de2774fc1858a8369329d3e081e4e3426c"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2026-04-16/rustc-1.95.0-x86_64-apple-darwin.tar.xz", using: :nounzip
-        sha256 "33db457715446a69ed6f69f78f5fbb9ca8e17a16585d1d7a0060479bfe4c7afc"
+        url "https://static.rust-lang.org/dist/2026-05-28/rustc-1.96.0-x86_64-apple-darwin.tar.xz", using: :nounzip
+        sha256 "f503815fe9e8cf6d654f751532932b6a9b13b8615a40fc6dfb9760a18cf595a1"
       end
     end
 
     on_linux do
       on_arm do
-        url "https://static.rust-lang.org/dist/2026-04-16/rustc-1.95.0-aarch64-unknown-linux-gnu.tar.xz", using: :nounzip
-        sha256 "0fe3689eeaed603e5ef24572d11597d3edadaefd2cb181674ad621260f2501d2"
+        url "https://static.rust-lang.org/dist/2026-05-28/rustc-1.96.0-aarch64-unknown-linux-gnu.tar.xz", using: :nounzip
+        sha256 "76b1a6e8dd1636e364d4bbba685485ff44eee5ff6434add089bab4c703c7e19d"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2026-04-16/rustc-1.95.0-x86_64-unknown-linux-gnu.tar.xz", using: :nounzip
-        sha256 "8426a3d170a5879f5682f5fbdd024a1779b3951e7baba685af2d6dc32a6dfc15"
+        url "https://static.rust-lang.org/dist/2026-05-28/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz", using: :nounzip
+        sha256 "7d7fa1d0cfb0fab71a956bb78f41107202c17f30ab56c45288e869a37fd9633d"
       end
     end
   end
@@ -62,23 +62,23 @@ class Rust < Formula
   resource "cargo-bootstrap" do
     on_macos do
       on_arm do
-        url "https://static.rust-lang.org/dist/2026-04-16/cargo-1.95.0-aarch64-apple-darwin.tar.xz", using: :nounzip
-        sha256 "6c2ffed8e1ac9cf4dc9e80f282a869a6b237a153e7c55cca039d33de29d80aaf"
+        url "https://static.rust-lang.org/dist/2026-05-28/cargo-1.96.0-aarch64-apple-darwin.tar.xz", using: :nounzip
+        sha256 "c042858192b7b6d66fe59b3bbbbd0f6e3cac6e8a478dc4cc091cde9eddea3c8b"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2026-04-16/cargo-1.95.0-x86_64-apple-darwin.tar.xz", using: :nounzip
-        sha256 "e2e1131ade2dddc0d779e0ab3a6a990085c7a654951235742823c3a1ce0f190f"
+        url "https://static.rust-lang.org/dist/2026-05-28/cargo-1.96.0-x86_64-apple-darwin.tar.xz", using: :nounzip
+        sha256 "23390ad69f74f3464774f17058f803e19cf45a9a11ee725b7a37e96c549f1243"
       end
     end
 
     on_linux do
       on_arm do
-        url "https://static.rust-lang.org/dist/2026-04-16/cargo-1.95.0-aarch64-unknown-linux-gnu.tar.xz", using: :nounzip
-        sha256 "7c070aeba9bbf12073646995a03f36c346bb5f541d0078ba6d9dc2a7adaaf6af"
+        url "https://static.rust-lang.org/dist/2026-05-28/cargo-1.96.0-aarch64-unknown-linux-gnu.tar.xz", using: :nounzip
+        sha256 "09ea03e74aa94e07db7bc00bd2ec1ad86d90a7348c89fde3909a8922543b949f"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2026-04-16/cargo-1.95.0-x86_64-unknown-linux-gnu.tar.xz", using: :nounzip
-        sha256 "e74edd2cf7d0f1f1383b4f00eb90c843750bc489e2ccf7214e6476678a907425"
+        url "https://static.rust-lang.org/dist/2026-05-28/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz", using: :nounzip
+        sha256 "dee75c3c8f9f600ad75bc0c93249e767d3047845a4dd668327ce43ab039ba266"
       end
     end
   end
@@ -87,23 +87,23 @@ class Rust < Formula
   resource "rust-std-bootstrap" do
     on_macos do
       on_arm do
-        url "https://static.rust-lang.org/dist/2026-04-16/rust-std-1.95.0-aarch64-apple-darwin.tar.xz", using: :nounzip
-        sha256 "9b30089b0f767cb91b2190ffec55a9beeb2a21a1405d8da0f664d7e09d08e6d8"
+        url "https://static.rust-lang.org/dist/2026-05-28/rust-std-1.96.0-aarch64-apple-darwin.tar.xz", using: :nounzip
+        sha256 "439c4f71060b913e00db3a2e01340b2da0aa49978b843e36871f3250267c63f8"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2026-04-16/rust-std-1.95.0-x86_64-apple-darwin.tar.xz", using: :nounzip
-        sha256 "2be13c14122b8d4d09b7f7c434fca9ae7215ec72049944189c88c4d9128ce504"
+        url "https://static.rust-lang.org/dist/2026-05-28/rust-std-1.96.0-x86_64-apple-darwin.tar.xz", using: :nounzip
+        sha256 "afabf23aff5bf6d27dba9608a7c7bec349bf9fda9c3e37983dd5cc44c9afbcca"
       end
     end
 
     on_linux do
       on_arm do
-        url "https://static.rust-lang.org/dist/2026-04-16/rust-std-1.95.0-aarch64-unknown-linux-gnu.tar.xz", using: :nounzip
-        sha256 "3a21b271b1ff973b94d69b25e7a39992f9fbcae1ab6d9475844a23e6ad3908ac"
+        url "https://static.rust-lang.org/dist/2026-05-28/rust-std-1.96.0-aarch64-unknown-linux-gnu.tar.xz", using: :nounzip
+        sha256 "538e85452709687797d990579a491ff9b02f8bffba4a5d54cfa945e28868053e"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2026-04-16/rust-std-1.95.0-x86_64-unknown-linux-gnu.tar.xz", using: :nounzip
-        sha256 "047ea7098803d3500fa1072e9cee5392697e21525559e4458128a2bf874aa382"
+        url "https://static.rust-lang.org/dist/2026-05-28/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz", using: :nounzip
+        sha256 "c09c7c646248f14f473f5f7a029af15ee57c3a9f9bc93dfa72d9621938586b82"
       end
     end
   end
