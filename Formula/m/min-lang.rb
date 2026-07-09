@@ -11,12 +11,12 @@ class MinLang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ea94a2c1f41db54447f306f26bba8bcfea7e163083cf8f68ce29818a36efb54f"
-    sha256 cellar: :any, arm64_sequoia: "f9bc539aa6b39e96d6d796c5011922ad488556370190d2c333561fdc305168a8"
-    sha256 cellar: :any, arm64_sonoma:  "6bc01f2fafa372cd6f80600e639cdea1b5952eee18a51ab286c4339879b59736"
-    sha256 cellar: :any, sonoma:        "f8163ffea30e28d48bf203dd80da5711b30f338cc9626340fd4a3cc5d6303245"
-    sha256 cellar: :any, arm64_linux:   "6378198c85520572b86c5dba8d33696cb143e11730f1f5e9bc16cce0cdbf3a99"
-    sha256 cellar: :any, x86_64_linux:  "95f14a18f33b0921984b0104232f015d67ed5a5069ca814bf1677ac47554dab1"
+    sha256 cellar: :any, arm64_tahoe:   "fa6272ef9e4977c79ef598c4b06b3a1e22211f79a8862b40b3a6a093f7014251"
+    sha256 cellar: :any, arm64_sequoia: "86a190e4e9e51fc1c8ce39826a0f5431ac86e6c0dede686e0a14721edb4892f0"
+    sha256 cellar: :any, arm64_sonoma:  "06700e980f16bd6e26ddd174b67c5fba9217aa392f118c01d1577884c94efea9"
+    sha256 cellar: :any, sonoma:        "5fac5e0d8b7c806a5a229eeb83c80f1449f3f2f7da789d9ff1d1363940848a5b"
+    sha256 cellar: :any, arm64_linux:   "3669a9f51363b901f54ae34da65ed0b834f02f77ebfdb9809d7641ee0babe11c"
+    sha256 cellar: :any, x86_64_linux:  "e6d07ca9b67335e210dbdd07bf7c2e1fe91e6d3da5a6f2b827147687ece0ecc3"
   end
 
   depends_on "nim"
