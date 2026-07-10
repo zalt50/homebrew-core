@@ -1,8 +1,8 @@
 class Bbrew < Formula
   desc "TUI for managing Homebrew, Flatpak, and Mac App Store packages"
   homepage "https://bold-brew.com"
-  url "https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "c07595b9915355e05aeb4453935ca28b2ba9705912f1dd045b93967001dafc90"
+  url "https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "2e22f351e9726128746a3f2f8591e9d1a2f525cbe1aca6b0af6a20f6f909faec"
   license "MIT"
   head "https://github.com/Valkyrie00/bold-brew.git", branch: "main"
 
