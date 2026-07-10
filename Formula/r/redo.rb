@@ -9,8 +9,7 @@ class Redo < Formula
   revision 3
 
   bottle do
-    rebuild 7
-    sha256 cellar: :any_skip_relocation, all: "fb1815e2abd0a29b23eb4fe2111213fa1942ec1e48bb53d40601a5a06e7ccb26"
+    sha256 cellar: :any_skip_relocation, all: "14dfa35e1537c7decfa87f8f39414c6c08e4e031be133aa69739984f33a74923"
   end
 
   depends_on "python@3.14"
