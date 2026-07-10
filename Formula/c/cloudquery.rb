@@ -1,8 +1,8 @@
 class Cloudquery < Formula
   desc "Data movement tool to sync data from any source to any destination"
   homepage "https://www.cloudquery.io"
-  url "https://github.com/cloudquery/cloudquery/archive/refs/tags/cli-v6.40.0.tar.gz"
-  sha256 "392b6978fd122a64140a10b4c95ff02a965e0673bd547f30d7b32f7c796d0a96"
+  url "https://github.com/cloudquery/cloudquery/archive/refs/tags/cli-v6.40.1.tar.gz"
+  sha256 "7294610d30a84ed4801d20e584c86bb37f291e78affb9b1da9879992aec5cbac"
   license "MPL-2.0"
   head "https://github.com/cloudquery/cloudquery.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cloudquery < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eab92898c0e006197638081638a46f16d3b29c8cc99d5b9eeff66ce42b6a1863"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eab92898c0e006197638081638a46f16d3b29c8cc99d5b9eeff66ce42b6a1863"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eab92898c0e006197638081638a46f16d3b29c8cc99d5b9eeff66ce42b6a1863"
-    sha256 cellar: :any_skip_relocation, sonoma:        "29da5d4ca5fcc34fa80f074a82198c55bcb315b6fd33b5bacc911333bfff3fe2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8e49601de241be99d67d5177148e6d3a4f3d9035dbecc638eb64242a90a9bd5"
-    sha256 cellar: :any,                 x86_64_linux:  "61c74d1d72559fc428f594550c91bf345fc7ec89ab0712adb1426fbbce58eb8c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98f03a379235a173ceb311f4242de413b29886b66d28f2362b89ec5de230c72a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98f03a379235a173ceb311f4242de413b29886b66d28f2362b89ec5de230c72a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98f03a379235a173ceb311f4242de413b29886b66d28f2362b89ec5de230c72a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42846ffb5e6bead4edfe388cdbedc592e57cc5cd688354c2240ebb48c478e72b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05e4ae4b1813d551889d71543589bea3cc622259d3bc4eb494b4c299e1a4d531"
+    sha256 cellar: :any,                 x86_64_linux:  "9049e2e20e665585afdce1b108bd32c0b039454fc9eecbfa0219bbca91db1ebd"
   end
 
   depends_on "go" => :build
