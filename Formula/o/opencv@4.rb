@@ -11,6 +11,15 @@ class OpencvAT4 < Formula
     regex(/^v?(4(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "a38ce2db78983fbeb2da26880be9ebbf739e0fb075561a8f83e634e8e7af64c7"
+    sha256 arm64_sequoia: "4e732a182fddc6dc4da1162e5001fb8b44173f23ee63e4742cc77a9d6bf3c32e"
+    sha256 arm64_sonoma:  "5553cc377250dd4b25123d6681049ce40f3b95c44615376ea9b9aa6a2a6bcc21"
+    sha256 sonoma:        "60862aa65c198a3dfa99bcf7d1a0200defadfdf8463ffe60f6390dd516dbbf6d"
+    sha256 arm64_linux:   "2b34294999291054f21fbded6269137c1d7d66049e21770045d1759a3dd35920"
+    sha256 x86_64_linux:  "fae038dee1a39dfc1d8566e6499462c58d916735c090856b12d38278203aa6c2"
+  end
+
   keg_only :versioned_formula
 
   deprecate! date: "2026-10-09", because: :unsupported
