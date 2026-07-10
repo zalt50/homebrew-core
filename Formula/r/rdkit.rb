@@ -2,8 +2,8 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_3.tar.gz"
-  sha256 "21e22e5e6b3a313527256fbde41c757f22d834b19caf2908e3c2dd11061e1fea"
+  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_4.tar.gz"
+  sha256 "a8bff65bdf13dd47a01f707f7759dd59124a8742f8c50952c2ceae9523b4fd2b"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -40,6 +40,15 @@ class Rdkit < Formula
   depends_on "numpy"
   depends_on "py3cairo" => :no_linkage
   depends_on "python@3.14"
+
+  uses_from_macos "expat", since: :sequoia # minimum macOS due to python
+
+  # Workaround for https://github.com/Homebrew/brew/issues/19315
+  on_sequoia :or_newer do
+    on_intel do
+      depends_on "expat"
+    end
+  end
 
   resource "better_enums" do
     url "https://github.com/aantron/better-enums/archive/refs/tags/0.11.3.tar.gz"
@@ -113,8 +122,6 @@ class Rdkit < Formula
       system "cmake", "--build", "#{builddir}/Code/PgSQL/rdkit"
       system "cmake", "--install", builddir, "--component", "pgsql"
     end
-
-    rm lib/"libexpat.a" # conflicts with `expat` formula
   end
 
   def caveats
