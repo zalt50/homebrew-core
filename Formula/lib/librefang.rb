@@ -7,12 +7,12 @@ class Librefang < Formula
   head "https://github.com/librefang/librefang.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f69350832f4c13083cf120e60e1386cbd1d22d14ec3f734f0184588998032aab"
-    sha256 cellar: :any, arm64_sequoia: "93db17e9cae4a48e811e22126b65687af2ba5f098b0b6c5079239b2004218b4b"
-    sha256 cellar: :any, arm64_sonoma:  "cb3f5b5417aaf9b37db3561e14b68e5a13303d3790b80533abbef57650a8ff85"
-    sha256 cellar: :any, sonoma:        "c870dc7d68d66d1afa59fc95bf6d569117a454364991e92efa7c1347f13a1ca8"
-    sha256 cellar: :any, arm64_linux:   "f39875a8a7c58a04a16ce86950c4f5b79dff8e63afe8ed56db6170f1e4c88d18"
-    sha256 cellar: :any, x86_64_linux:  "79fcbd25c2c98063e4488d6cc12c6010c7c128d53a7164fee96db5953ecc7df8"
+    sha256 cellar: :any, arm64_tahoe:   "98bf67eb3dbf1bf660399cf486736cdf681069faa6c13411ecd0abcfa6430c64"
+    sha256 cellar: :any, arm64_sequoia: "ac7fe78e4647cb890829af87d0d1caf03064df309cab999be4e07e278b3812ea"
+    sha256 cellar: :any, arm64_sonoma:  "bba68efd462fa6a9b252e6587fe3e37cb34f1dabd570ce743337842e1363ce60"
+    sha256 cellar: :any, sonoma:        "2cb6c2a62bf72437528f77e9d10c29a5d64bbb8a6b41712e898ab2054b6b58d6"
+    sha256 cellar: :any, arm64_linux:   "286a5318c98375403866562a571deedf1de97ec032d7a2b0f02c892d2d2da301"
+    sha256 cellar: :any, x86_64_linux:  "b85eade8ca4084f87ed0bbcf806199c791979ca3cb6027d7af13ee47e00f122c"
   end
 
   depends_on "pkgconf" => :build
