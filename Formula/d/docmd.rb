@@ -1,8 +1,8 @@
 class Docmd < Formula
   desc "Minimal Markdown documentation generator"
   homepage "https://docmd.io"
-  url "https://registry.npmjs.org/@docmd/core/-/core-0.8.9.tgz"
-  sha256 "bc9c40e525e6558a8081eabfddfbea0916cb1c9d2e805f66fe2d73d56ec555cf"
+  url "https://registry.npmjs.org/@docmd/core/-/core-0.8.10.tgz"
+  sha256 "eb4f8cc54cefbbcf3455980aa58610c25ce7f5ccff3d6029b37b959cdec3b7c1"
   license "MIT"
 
   bottle do
@@ -29,6 +29,6 @@ class Docmd < Formula
 
     system bin/"docmd", "init"
     assert_path_exists testpath/"docmd.config.json"
-    assert_match 'title: "Welcome"', (testpath/"docs/index.md").read
+    assert_match 'title: "Quick Start"', (testpath/"docs/index.md").read
   end
 end
