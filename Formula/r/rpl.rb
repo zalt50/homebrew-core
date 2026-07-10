@@ -1,8 +1,8 @@
 class Rpl < Formula
   desc "Text replacement utility"
   homepage "https://github.com/rrthomas/rpl"
-  url "https://github.com/rrthomas/rpl/releases/download/v2.0.4/rpl-2.0.4.tar.gz"
-  sha256 "cb48bf6712cd4e7aa70b2225dcab0cb081582181d7e9766ada196b3ab5b2ec61"
+  url "https://github.com/rrthomas/rpl/releases/download/v2.1.0/rpl-2.1.0.tar.gz"
+  sha256 "478d3c4c0a3b8ce3b7a1f7c6e576adb4a6a6e9d898ef6673994aac6d61ca7988"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,7 +16,6 @@ class Rpl < Formula
 
   depends_on "help2man" => :build
   depends_on "pkgconf" => :build
-  depends_on "vala" => :build
   depends_on "glib"
   depends_on "pcre2"
   depends_on "uchardet"
@@ -25,22 +24,7 @@ class Rpl < Formula
     depends_on "gettext"
   end
 
-  # TODO: Remove next release
-  resource "vala-extra-vapis" do
-    url "https://gitlab.gnome.org/GNOME/vala-extra-vapis/-/archive/6b8a3e4faaabc462f90ffcb0cf0f91991ee58077/vala-extra-vapis-6b8a3e4faaabc462f90ffcb0cf0f91991ee58077.tar.bz2"
-    sha256 "161fbc1e2ac51886ec52c0ee8db69d6afe408279ec79a8bea2b472a23fef9e99"
-  end
-
-  # Backport fix for newer PCRE2.
-  # TODO: Remove patch and `vala` dependency in next release
-  patch do
-    url "https://github.com/rrthomas/rpl/commit/6e452376e32c230819078d92248433e800878bb0.patch?full_index=1"
-    sha256 "3b3634aaeff9e0eac0f3ec22a1a0346c1c56c8fd30a38aa12d90b3e5b71ce0fa"
-  end
-
   def install
-    (buildpath/"vala-extra-vapis").install resource("vala-extra-vapis")
-
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
