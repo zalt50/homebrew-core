@@ -165,6 +165,8 @@ class Bilix < Formula
   patch do
     url "https://github.com/HFrost0/bilix/commit/72c259d88b2fffb6cd530fce01b8c3d35fb79335.patch?full_index=1"
     sha256 "6f241455c6f1940626ed660d97abbcf3eecd3931cca3b6db6acd1f961649b6cb"
+    type :unofficial
+    resolves "https://github.com/HFrost0/bilix/pull/244"
   end
 
   def install
