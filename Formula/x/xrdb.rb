@@ -1,8 +1,8 @@
 class Xrdb < Formula
   desc "X resource database utility"
   homepage "https://gitlab.freedesktop.org/xorg/app/xrdb"
-  url "https://www.x.org/releases/individual/app/xrdb-1.2.2.tar.xz"
-  sha256 "31f5fcab231b38f255b00b066cf7ea3b496df712c9eb2d0d50c670b63e5033f4"
+  url "https://www.x.org/releases/individual/app/xrdb-1.2.3.tar.xz"
+  sha256 "c88f560243278c896ce4fc92ae5a45a2b505a316ffa427fe55b02e5d5914c4e4"
   license all_of: ["MIT-open-group", "HPND-DEC"]
 
   bottle do
@@ -32,9 +32,16 @@ class Xrdb < Formula
   end
 
   test do
-    spawn Formula["xorg-server"].bin/"Xvfb", ":1"
-    ENV["DISPLAY"] = ":1"
-    sleep 10
-    system bin/"xrdb", "-query"
+    IO.pipe do |read_io, write_io|
+      pid = spawn(Formula["xorg-server"].bin/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      system bin/"xrdb", "-query"
+    ensure
+      if pid
+        Process.kill "TERM", pid
+        Process.wait pid
+      end
+    end
   end
 end
