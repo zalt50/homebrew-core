@@ -1,8 +1,8 @@
 class Memcached < Formula
   desc "High performance, distributed memory object caching system"
   homepage "https://memcached.org/"
-  url "https://www.memcached.org/files/memcached-1.6.44.tar.gz"
-  sha256 "c41a9d2713dfc56b5f4fa0075b2751973ea840c1f1ab8d6bfed08a1848938368"
+  url "https://www.memcached.org/files/memcached-1.6.45.tar.gz"
+  sha256 "d362c64e6d8d5287153501eabf7c85b4a761432fbf53f5d7b085d0bb1653c1dd"
   license "BSD-3-Clause"
 
   livecheck do
