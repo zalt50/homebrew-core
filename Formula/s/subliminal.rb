@@ -10,12 +10,12 @@ class Subliminal < Formula
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a6c8dd8e0dab5eaa350451a9abd6618539af46a2a93575804fc0a3fdfcb4f8bf"
-    sha256 cellar: :any,                 arm64_sequoia: "4c61e30405f9587dfe86a99f990e89618d73a83b3b96131bbc405bb0acb3034b"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a803063d35688be2cbbf016cdf514e6a627cf781451f607c60a9cda7172160b"
-    sha256 cellar: :any,                 sonoma:        "5e6b6ae2471985618c70a608d2afc36b2da37a2b138690c1df3e3ad3751fa2da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca55e4f878cb43cc0a87922acc912e8f03384899a18494c742e563ffd01a978a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a006382028ff7c304f99c52b7bceafef128387d5f082153b2f4121dd354c549"
+    sha256 cellar: :any, arm64_tahoe:   "76e164a0f5e691c5693567b00f00752be0fa9912498b55e202a5857dd8180674"
+    sha256 cellar: :any, arm64_sequoia: "a8141f32e1126ce83fc27f9e52ffca51044c15a68d9fba0f328740ec8bf4cb14"
+    sha256 cellar: :any, arm64_sonoma:  "005ab160d9ff5585851dabeac7c12ecb316ae5963ad888526463183fb59ebd60"
+    sha256 cellar: :any, sonoma:        "50a2643363ebdef7724d0339f4fbdec6a1ed8f7012a317e6e1a9c0db7389d4f4"
+    sha256 cellar: :any, arm64_linux:   "ee9e7a38310949bdb35d90cca65147de9829bd78c425c97edbed8c920d03e896"
+    sha256 cellar: :any, x86_64_linux:  "6ee5b8a37f559883a4e727aa81bbe3fcbb81c36092d789d8827135c9a8ae34b3"
   end
 
   depends_on "certifi" => :no_linkage
