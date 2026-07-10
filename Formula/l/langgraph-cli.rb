@@ -22,6 +22,8 @@ class LanggraphCli < Formula
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
+  depends_on "xxhash"
+  depends_on "zstd"
 
   pypi_packages exclude_packages: %w[certifi pydantic]
 
@@ -156,7 +158,14 @@ class LanggraphCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    ENV["XXHASH_LINK_SO"] = "1"
+    venv = virtualenv_install_with_resources without: "zstandard"
+
+    resource("zstandard").stage do
+      args = std_pip_args(prefix: false, build_isolation: true)
+      args << "--config-settings=--build-option=--system-zstd"
+      system venv.root/"bin/python", "-m", "pip", "install", *args, "."
+    end
 
     generate_completions_from_executable(bin/"langgraph", shell_parameter_format: :click)
   end
