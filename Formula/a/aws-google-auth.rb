@@ -10,12 +10,13 @@ class AwsGoogleAuth < Formula
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e6aaade65bbfd32d7b5c24a50c4aed7527b033bcf2d90233fcbe58285391d80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66e42edc90ab759d262e30f66b85f6421928b3a3cbc04b60e2e5649859c3d234"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb06722a6b50bb6e976f02b28e4cf3b65c1976ddcc5daaed1dcbf7405e4706e9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "76b03a6171cfc272513d28598cbe761c6acb575a8911514b2c2b7143a84e8d21"
-    sha256 cellar: :any,                 arm64_linux:   "417eed2271bdf6ea87a86c4fa2e81a15e2da43fde52bd51aaf59a7715f06605f"
-    sha256 cellar: :any,                 x86_64_linux:  "83566211b65bd0dd8c920f1c2ad3b97a0a4038b0511fa2533323647cf55be99a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd2368d36300ac56924bde9751f0fa38dd32758b0a838118ff18c57e2454325c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "005e101ff08a9c3d9af87b1330902aaec9d679b3c84c5dce9add9f4de419bd32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8aba159f8146b62aabc15c03915c7ee7382a79c70fc9d51fc5b6ad776f90906"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf2f71295c0d77a93dd8ef4821e1bbdbde5b5b7a9f746f3d5b5ae23fc938b22d"
+    sha256 cellar: :any,                 arm64_linux:   "6f4e27de17f9c1f369cb794dc79b50073f35950a6790c147fb9daaac9556986a"
+    sha256 cellar: :any,                 x86_64_linux:  "7cf080a4bfb8184d1005c59d55dcb8142425fa44826ddff8380629abe0588b19"
   end
 
   depends_on "certifi" => :no_linkage
@@ -162,10 +163,12 @@ class AwsGoogleAuth < Formula
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
-  # Drop distutils for 3.13: https://github.com/cevoaustralia/aws-google-auth/pull/277
+  # Drop distutils for 3.13
   patch do
     url "https://github.com/cevoaustralia/aws-google-auth/commit/43720916af88d485a914c9d35288b23817e2ae3f.patch?full_index=1"
     sha256 "1ba699bbddb2e696282c4ccca693f99501b3e4b648252c890aab4ef98e668d85"
+    type :unofficial
+    resolves "https://github.com/cevoaustralia/aws-google-auth/pull/277"
   end
 
   def install
