@@ -2,6 +2,7 @@ class Prrte < Formula
   desc "PMIx Reference RunTime Environment"
   homepage "https://pmix.org/"
   license "BSD-3-Clause-Open-MPI"
+  revision 1
 
   stable do
     url "https://github.com/openpmix/prrte/releases/download/v4.1.0/prrte-4.1.0.tar.bz2"
@@ -9,8 +10,16 @@ class Prrte < Formula
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+      file "Patches/libtool/configure-big_sur.diff"
+      type :unofficial
+    end
+
+    # Fix segmentation fault for some Apple Silicon
+    patch do
+      url "https://github.com/openpmix/prrte/commit/378c61c1d8eff9858a7774c869fbd332c48711a8.patch?full_index=1"
+      sha256 "64faa1acb89eddea096307a2658b11ccdaf85dc8c870fed4b3f8670329706a4f"
+      type :backport
+      resolves "https://github.com/openpmix/prrte/issues/2416"
     end
   end
 
