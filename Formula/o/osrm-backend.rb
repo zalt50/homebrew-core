@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.7.2.tar.gz"
-  sha256 "9aabb8fa256cf23f182d4439e142f1f8e8bbf3fccda336f6691f4e395199f2ef"
+  url "https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.7.3.tar.gz"
+  sha256 "b4ab1375f569eefd2aa8015c1e3890d10633234bfb5a9167faccfc91833d05e9"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
