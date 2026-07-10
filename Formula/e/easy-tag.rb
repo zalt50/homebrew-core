@@ -74,6 +74,9 @@ class EasyTag < Formula
     ENV["LIBTOOLIZE"] = "glibtoolize"
     system "autoreconf", "--force", "--install", "--verbose"
     ENV.append "LIBS", "-lz"
+    # id3lib's headers break under C23; taglib 2.x requires C++11
+    ENV.append "CFLAGS", "-std=gnu17"
+    ENV.append "CXXFLAGS", "-std=c++11"
     ENV["DESTDIR"] = "/"
 
     system "./configure", "--disable-schemas-compile", "--disable-silent-rules", *std_configure_args
@@ -87,7 +90,21 @@ class EasyTag < Formula
 
   test do
     cmd = "#{bin}/easytag --version"
-    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+
+    pid = nil
+    if OS.linux?
+      IO.pipe do |read_io, write_io|
+        pid = spawn(Formula["xorg-server"].bin/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+        write_io.close
+        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      end
+    end
+
     assert_match version.to_s, shell_output(cmd)
+  ensure
+    if pid
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end
