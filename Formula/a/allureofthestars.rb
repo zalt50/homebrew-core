@@ -30,24 +30,7 @@ class Allureofthestars < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # TODO: Remove resource once sdl2 >= 2.5.5.1
-  resource "sdl2" do
-    url "https://hackage.haskell.org/package/sdl2-2.5.5.1/sdl2-2.5.5.1.tar.gz"
-    sha256 "25b3e2410129c16c2cea56137319206fa1b792dec6634f07a7ea4d9031ffc0cc"
-
-    # Backport fix
-    patch do
-      url "https://github.com/haskell-game/sdl2/commit/73db004e1ffefe5767edb62271c51ee3e8b6af48.patch?full_index=1"
-      sha256 "22daee1181c49f218592085912ff8b0ba1dc2487948759d11ab42bfc054faed5"
-    end
-  end
-
   def install
-    # Workaround to use newer GHC
-    odie "Check if workaround can be removed!" if build.stable? && version > "0.11.0.0"
-    (buildpath/"cabal.project.local").write "packages: . sdl2/"
-    (buildpath/"sdl2").install resource("sdl2")
-
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
   end
