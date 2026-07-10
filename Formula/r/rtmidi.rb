@@ -4,6 +4,7 @@ class Rtmidi < Formula
   url "https://github.com/thestk/rtmidi/archive/refs/tags/6.0.0.tar.gz"
   sha256 "ef7bcda27fee6936b651c29ebe9544c74959d0b1583b716ce80a1c6fea7617f0"
   license "MIT"
+  revision 1
   head "https://github.com/thestk/rtmidi.git", branch: "master"
 
   bottle do
@@ -16,9 +17,8 @@ class Rtmidi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1eee4ca1fa59c90126083c01a574ef14c0e5b86f61a473a6bc1109c619f6d14f"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
     depends_on "alsa-lib"
@@ -26,10 +26,9 @@ class Rtmidi < Formula
   end
 
   def install
-    ENV.cxx11
-    system "./autogen.sh", "--no-configure"
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DRTMIDI_BUILD_TESTING=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
