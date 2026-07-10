@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/27.1.5.tar.gz"
-  sha256 "ddfc210ada19b0551b7274411ac9a46cbf7049722955cbf42b545cacf5aa5238"
+  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/28.4.4.tar.gz"
+  sha256 "10368c731db378edf75b00f291e763ac8e2c7404e12e1256b00b2d1c1c88fbce"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -53,6 +53,19 @@ class Manticoresearch < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "mcl" do
+    url "https://github.com/manticoresoftware/columnar/archive/dd160f109e59c3566e0208fdd6ed8e9f654e2573.tar.gz"
+    version "dd160f109e59c3566e0208fdd6ed8e9f654e2573"
+    sha256 "a1b34be74f787e19d97d74b7171babba99b35784eb3e2975ff94e767e70e6268"
+
+    livecheck do
+      url "https://api.github.com/repos/manticoresoftware/manticoresearch/contents/mcl?ref=#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
+  end
+
   # Workarounds for building with Boost 1.89+ and GCC, until fixed upstream:
   # - galera: disable Boost (Boost.System stub removed in 1.89)
   #   Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
@@ -62,6 +75,8 @@ class Manticoresearch < Formula
   patch :DATA
 
   def install
+    resource("mcl").stage buildpath/"mcl"
+
     # Avoid statically linking to boost
     inreplace "src/CMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
 
