@@ -96,6 +96,8 @@ class Buku < Formula
     patch do
       url "https://github.com/html5lib/html5lib-python/commit/b90dafff1bf342d34d539098013d0b9f318c7641.patch?full_index=1"
       sha256 "779f8bab52308792b7ac2f01c3cd61335587640f98812c88cb074dce9fe8162d"
+      type :unofficial
+      resolves "https://github.com/html5lib/html5lib-python/issues/588"
     end
   end
 
@@ -189,14 +191,12 @@ class Buku < Formula
     sha256 "7b00c73f8670f35d4edb0293dcd81b980528bee72fd662b182aaba27ae570b93"
   end
 
-  # Fix type error and missing apidocs: https://github.com/jarun/buku/pull/883
+  # Fix type error and missing apidocs
   patch do
-    url "https://github.com/jarun/buku/commit/291fa9a0e4cafe9ca2261940394de12c2d5403a9.patch?full_index=1"
-    sha256 "ba678c0814589954817da53907399736c1d2e989a875a0957fc8ef8bad706164"
-  end
-  patch do
-    url "https://github.com/jarun/buku/commit/ea0a44a1c20821bd925a3557efabb8905db4337b.patch?full_index=1"
-    sha256 "76fea0fcbaec25376722f598a8dd12012245a650c37f867e27f19dcfa8e43963"
+    url "https://github.com/jarun/buku/commit/8ea88ad2685c57700861c65c16f200324a7f09b0.patch?full_index=1"
+    sha256 "0fb66c7b239e787c57d9a374769d3339c002609404c3ddd192e26cb982cdafe0"
+    type :backport
+    resolves "https://github.com/jarun/buku/pull/883"
   end
 
   def install
