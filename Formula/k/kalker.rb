@@ -1,8 +1,8 @@
 class Kalker < Formula
   desc "Full-featured calculator with math syntax"
   homepage "https://kalker.strct.net"
-  url "https://github.com/PaddiM8/kalker/archive/refs/tags/v2.2.2.tar.gz"
-  sha256 "4f35555e19c8a1a05ceba6a7043088a00fea3fbf780bbd4af90696172ce9f7c3"
+  url "https://github.com/PaddiM8/kalker/archive/refs/tags/v2.2.3.tar.gz"
+  sha256 "91749c767e345094a2c2057cfcf722d9aed24583381c175bdbd838a5ec00d1ec"
   license "MIT"
 
   bottle do
@@ -19,12 +19,6 @@ class Kalker < Formula
   depends_on "rust" => :build
 
   uses_from_macos "m4" => :build
-
-  # Fix to version bump, should be removed with next release
-  patch do
-    url "https://github.com/PaddiM8/kalker/commit/bff6f279634aec9a60ec866c1e3f137b9ba1a007.patch?full_index=1"
-    sha256 "e74ab1f67fc678e4b6d8bf04dee5893ceba0378b2f079459c397027496cfe5b1"
-  end
 
   def install
     cd "cli" do
