@@ -1,8 +1,8 @@
 class CargoUpdate < Formula
   desc "Cargo subcommand for checking and applying updates to installed executables"
   homepage "https://github.com/nabijaczleweli/cargo-update"
-  url "https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v21.0.1.tar.gz"
-  sha256 "6c970612463ce4acf2f40a4ca4769facc4ccf22548c46b6fcbc0124c71a5e93e"
+  url "https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v21.0.2.tar.gz"
+  sha256 "e67c56e727c85fbf2c51f0fda687ea153008ac4b9f9b501d2bee8c9e7f981c5e"
   license "MIT"
   head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
