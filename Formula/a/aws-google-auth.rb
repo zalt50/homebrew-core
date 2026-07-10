@@ -162,10 +162,12 @@ class AwsGoogleAuth < Formula
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
-  # Drop distutils for 3.13: https://github.com/cevoaustralia/aws-google-auth/pull/277
+  # Drop distutils for 3.13
   patch do
     url "https://github.com/cevoaustralia/aws-google-auth/commit/43720916af88d485a914c9d35288b23817e2ae3f.patch?full_index=1"
     sha256 "1ba699bbddb2e696282c4ccca693f99501b3e4b648252c890aab4ef98e668d85"
+    type :unofficial
+    resolves "https://github.com/cevoaustralia/aws-google-auth/pull/277"
   end
 
   def install
