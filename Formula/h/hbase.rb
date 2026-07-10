@@ -4,8 +4,7 @@ class Hbase < Formula
   url "https://www.apache.org/dyn/closer.lua?path=hbase/2.6.6/hbase-2.6.6-bin.tar.gz"
   mirror "https://archive.apache.org/dist/hbase/2.6.6/hbase-2.6.6-bin.tar.gz"
   sha256 "cbcfbfed6411cf898961133c228dcdb4beeb155a611e503ccb212e6f08abec00"
-  # We bundle hadoop-lzo which is GPL-3.0-or-later
-  license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
+  license "Apache-2.0"
 
   bottle do
     sha256 arm64_tahoe:   "8fe2578bdd1fb4288530b15721d72679a44c1f535a2ceaf7d85a8a5dd25aa0d0"
@@ -17,30 +16,12 @@ class Hbase < Formula
   end
 
   depends_on "ant" => :build
-  depends_on "lzo"
   depends_on "openjdk@17"
 
   on_linux do
     on_arm do
       # Added automake as a build dependency to update config files for ARM support.
       depends_on "automake" => :build
-    end
-  end
-
-  resource "hadoop-lzo" do
-    url "https://github.com/cloudera/hadoop-lzo/archive/refs/tags/0.4.14.tar.gz"
-    sha256 "aa8ddbb8b3f9e1c4b8cc3523486acdb7841cd97c002a9f2959c5b320c7bb0e6c"
-
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/hbase/build.xml.patch"
-      sha256 "d1d65330a4367db3e17ee4f4045641b335ed42449d9e6e42cc687e2a2e3fa5bc"
-    end
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
-      sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-      directory "src/native"
     end
   end
 
@@ -53,32 +34,6 @@ class Hbase < Formula
     # too special-purpose to be permanently available via PATH.
     %w[hbase start-hbase.sh stop-hbase.sh].each do |script|
       (bin/script).write_env_script libexec/"bin"/script, Language::Java.overridable_java_home_env("17")
-    end
-
-    resource("hadoop-lzo").stage do
-      if OS.linux? && Hardware::CPU.arm?
-        # Workaround for ancient config files not recognizing aarch64 macos.
-        automake_dir = Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"
-        %w[config.guess config.sub].each { |fn| cp automake_dir/fn, "src/native/config/#{fn}" }
-      end
-
-      # Help configure to find liblzo on Linux.
-      unless OS.mac?
-        inreplace "src/native/configure",
-        "#define HADOOP_LZO_LIBRARY ${ac_cv_libname_lzo2}",
-        "#define HADOOP_LZO_LIBRARY \"#{formula_opt_lib("lzo")/shared_library("liblzo2")}\""
-      end
-
-      # Fixed upstream: https://github.com/cloudera/hadoop-lzo/blob/HEAD/build.xml#L235
-      ENV["CLASSPATH"] = Dir["#{libexec}/lib/hadoop-common-*.jar"].first
-      # Workaround for Xcode 14.3.
-      ENV.append_to_cflags "-m64" if Hardware::CPU.intel?
-      ENV.append_to_cflags "-Wno-implicit-function-declaration"
-      ENV["CPPFLAGS"] = "-I#{Formula["openjdk@17"].include}"
-
-      system "ant", "compile-native", "tar"
-      (libexec/"lib").install Dir["build/hadoop-lzo-*/hadoop-lzo-*.jar"]
-      (libexec/"lib/native").install Dir["build/hadoop-lzo-*/lib/native/*"]
     end
 
     inreplace libexec/"conf/hbase-env.sh" do |s|
