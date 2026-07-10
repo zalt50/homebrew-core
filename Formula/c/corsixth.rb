@@ -15,12 +15,12 @@ class Corsixth < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b4f772b1be3d58659f0f2a8edf319f3d75a5cabce381c00a24249936ccb4c6f1"
-    sha256 arm64_sequoia: "259ef9b4fc61dd9ff3056679d97bfc5f63a2312a671e7432e6f99337f32a486a"
-    sha256 arm64_sonoma:  "37df3671019913aa6856fa54ef77b104b7050c1302e69af55f35744171ed53d7"
-    sha256 sonoma:        "b2fe6522ea0a6678c8ccd1d04c685d5eda18ce288aa9d52f283cab0ab38034d5"
-    sha256 arm64_linux:   "1abb0a5d9fce89718f14d908306a2bcd904cbfa6b9276309f3c7c2455daadc15"
-    sha256 x86_64_linux:  "6590db90107ccdd804ee592950f8f70719d0215feabc76e22bdb2f3525437770"
+    sha256 arm64_tahoe:   "c2f44746fccfed23663c8b1c5cc41ab0a0c264a71860c0a2b843ed7348dc1339"
+    sha256 arm64_sequoia: "50133c3874f56ac6c2dc0126b98ed7daed0b0410efcac73db947af9ca97743ee"
+    sha256 arm64_sonoma:  "6312add17f21b3133b7bd430219afd1a72e1aca567cc7a16bfea87b8a245c4ab"
+    sha256 sonoma:        "f695a84aa4a1c991ff1d5d1ee47a97a38d035fe65147ca9a228a87082f852bf0"
+    sha256 arm64_linux:   "b0f5c368c5ca1195cf28c92a919ca4260c267f81daf92a82e8844e247bbe9693"
+    sha256 x86_64_linux:  "be31e89507ee3aa2a8f3cc6b2254a175a0b1eb1843acc0a03aea62a6c88622a6"
   end
 
   depends_on "cmake" => :build
