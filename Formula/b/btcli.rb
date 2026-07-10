@@ -24,6 +24,7 @@ class Btcli < Formula
   depends_on "numpy"
   depends_on "openssl@3"
   depends_on "python@3.14"
+  depends_on "xxhash"
 
   conflicts_with "btpd", because: "both install `btcli` binaries"
 
@@ -202,6 +203,7 @@ class Btcli < Formula
   def install
     ENV.O0
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["XXHASH_LINK_SO"] = "1"
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"btcli", shell_parameter_format: :typer)
