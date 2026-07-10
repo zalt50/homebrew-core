@@ -34,6 +34,7 @@
   "openblas",
   "openblas64",
   "opencv",
+  "opencv@4",
   "open-mpi",
   "postgresql@12",
   "postgresql@13",

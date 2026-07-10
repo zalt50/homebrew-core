@@ -1,44 +1,29 @@
-class Opencv < Formula
+class OpencvAT4 < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
+  url "https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
+  sha256 "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d"
   license "Apache-2.0"
-  compatibility_version 2
-
-  stable do
-    url "https://github.com/opencv/opencv/archive/refs/tags/5.0.0.tar.gz"
-    sha256 "b0528f5a1d379d59d4701cb28c36e22214cc51cf64594e5b56f2d3e6c0233095"
-
-    resource "contrib" do
-      url "https://github.com/opencv/opencv_contrib/archive/refs/tags/5.0.0.tar.gz"
-      sha256 "c58f6344170c39abf187c56f3843b59cab1fd3e89cf19ba2ce25dc061659b27f"
-
-      livecheck do
-        formula :parent
-      end
-    end
-  end
+  compatibility_version 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(4(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 arm64_tahoe:   "90e5217ca292326e784e9dc42062dc54df826f6a8a09ecd5ab9b04fbe852f709"
-    sha256 arm64_sequoia: "9aaf0a55d2d763d8aad2fbb6f3e9e147a8c27e9942b3d0e0e0e64828fcc3471c"
-    sha256 arm64_sonoma:  "bbde1c791379f990bfb42d93b50a6b453ea194850c20c241f4caecdd63fc060f"
-    sha256 sonoma:        "1909794615690cc6a440f2f185831c00d1e55b5f3bb222417011013d12b4c651"
-    sha256 arm64_linux:   "0fc2e7f32a8923cb734bece084ecb628f1db473599c3ef2b4f19ef28b8f361a2"
-    sha256 x86_64_linux:  "0a7a82a58ebba4c7230666dce39a391840d101ce6f969b9352e1bee07c9bb2b7"
+    sha256 arm64_tahoe:   "a38ce2db78983fbeb2da26880be9ebbf739e0fb075561a8f83e634e8e7af64c7"
+    sha256 arm64_sequoia: "4e732a182fddc6dc4da1162e5001fb8b44173f23ee63e4742cc77a9d6bf3c32e"
+    sha256 arm64_sonoma:  "5553cc377250dd4b25123d6681049ce40f3b95c44615376ea9b9aa6a2a6bcc21"
+    sha256 sonoma:        "60862aa65c198a3dfa99bcf7d1a0200defadfdf8463ffe60f6390dd516dbbf6d"
+    sha256 arm64_linux:   "2b34294999291054f21fbded6269137c1d7d66049e21770045d1759a3dd35920"
+    sha256 x86_64_linux:  "fae038dee1a39dfc1d8566e6499462c58d916735c090856b12d38278203aa6c2"
   end
 
-  head do
-    url "https://github.com/opencv/opencv.git", branch: "5.x"
+  keg_only :versioned_formula
 
-    resource "contrib" do
-      url "https://github.com/opencv/opencv_contrib.git", branch: "5.x"
-    end
-  end
+  deprecate! date: "2026-10-09", because: :unsupported
+  disable! date: "2027-07-09", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
@@ -81,32 +66,33 @@ class Opencv < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    "python3.14"
+  resource "contrib" do
+    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.13.0.tar.gz"
+    sha256 "1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b"
+
+    livecheck do
+      formula :parent
+    end
   end
 
-  # Drop the Caffe protobuf leftovers so DNN builds against external protobuf.
-  # PR ref: https://github.com/opencv/opencv/pull/29425
-  patch do
-    url "https://github.com/opencv/opencv/commit/f7ad23157f1b99b59bc9a706e9c7e4c8394947ac.patch?full_index=1"
-    sha256 "3813186a3e0c7f8c366b11c64f112d31a4f8c9709de333a2532e85142bea25bf"
+  def python3
+    "python3.14"
   end
 
   def install
     resource("contrib").stage buildpath/"opencv_contrib"
 
-    # Finish PR #29425's file renames that `patch` leaves undone, then drop the emptied Caffe sources.
-    { "modules/dnn/src/caffe/caffe_io.hpp"      => "modules/dnn/src/protobuf_io.hpp",
-      "modules/dnn/src/caffe/glog_emulator.hpp" => "modules/dnn/src/glog_emulator.hpp" }
-      .each { |from, to| mv from, to if File.exist?(from) && !File.exist?(to) }
-    rm_r Dir["modules/dnn/src/caffe", "modules/dnn/misc/caffe"]
-
     # Avoid Accelerate.framework
     ENV["OpenBLAS_HOME"] = formula_opt_prefix("openblas")
 
     # Remove bundled libraries to make sure formula dependencies are used
-    libdirs = %w[ffmpeg libjasper libjpeg-turbo libpng libtiff libwebp openjpeg protobuf tbb zlib]
+    libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg protobuf tbb zlib]
     libdirs.each { |l| rm_r(buildpath/"3rdparty"/l) }
+
+    # Fix OpenVINO 2026 Tensor::data() constness mismatch, upstream bug report, https://github.com/opencv/opencv/issues/28586
+    inreplace "modules/dnn/src/op_inf_engine.cpp",
+              "return Mat(size, type, blob.data());",
+              "return Mat(size, type, const_cast<void*>(blob.data()));"
 
     # VTK 9.6 stopped transitively including <iostream>;
     # viz uses std::cout/endl directly.
@@ -219,13 +205,14 @@ class Opencv < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}/opencv#{version.major}", "-o", "test",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}/opencv4", "-o", "test",
                     "-L#{lib}", "-lopencv_core", "-lopencv_imgcodecs"
     assert_equal version.to_s, shell_output("./test").strip
 
     # The test below seems to time out on Intel macOS.
     return if OS.mac? && Hardware::CPU.intel?
 
+    ENV.prepend_path "PYTHONPATH", prefix/Language::Python.site_packages(python3)
     output = shell_output("#{python3} -c 'import cv2; print(cv2.__version__)'")
     assert_equal version.to_s, output.chomp
   end
