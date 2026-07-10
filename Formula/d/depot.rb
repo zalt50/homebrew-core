@@ -1,8 +1,8 @@
 class Depot < Formula
   desc "Build your Docker images in the cloud"
   homepage "https://depot.dev/"
-  url "https://github.com/depot/cli/archive/refs/tags/v2.101.69.tar.gz"
-  sha256 "e39ce4aea211fcbe329283c12e3fbb79f2a5dd477fe791fe8e5582797c874bb0"
+  url "https://github.com/depot/cli/archive/refs/tags/v2.101.70.tar.gz"
+  sha256 "9e5bb232409486412176003f17d5fd35e8af71d1a3ca85c66bdc3ba8306be52a"
   license "MIT"
   head "https://github.com/depot/cli.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Depot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b12c1d67a9252dd799c8a95dc7944542529a758186550d37db09d7cdfc886d84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b12c1d67a9252dd799c8a95dc7944542529a758186550d37db09d7cdfc886d84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b12c1d67a9252dd799c8a95dc7944542529a758186550d37db09d7cdfc886d84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "728decb6a8060b1702dead3c61d0e3afc5f2b23316ce16258e4dfd4a4d1a944f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5aef81e726fef8bfd54494e0ebf9cf3ef4f932e6886dba19df14357b22d8b99"
-    sha256 cellar: :any,                 x86_64_linux:  "65a317e1885a1bf3a716f078882cea68e4fff7bd4cf9116176cc08fda021a56e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba9acd62c0adbfe5b7806b76acfe6b7dc0805ed397ba29c187b550416b622dd6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba9acd62c0adbfe5b7806b76acfe6b7dc0805ed397ba29c187b550416b622dd6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba9acd62c0adbfe5b7806b76acfe6b7dc0805ed397ba29c187b550416b622dd6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14752866b3a1fddd20a4b9f8f6af8f3d70174ce7ea3701f7d2fffc62ef6bd540"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c416c67cebf512d4f5575da2228a16bfb598ab4f92f1ec46018806c847145439"
+    sha256 cellar: :any,                 x86_64_linux:  "c7ace6d5efd6c4c48cb43e873eb327497061a228d74e78d19fde56136053dd4c"
   end
 
   depends_on "go" => :build
@@ -40,6 +40,6 @@ class Depot < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/depot --version")
     output = shell_output("#{bin}/depot list builds 2>&1", 1)
-    assert_match "Error: unknown project ID", output
+    assert_match "unknown project ID", output
   end
 end
