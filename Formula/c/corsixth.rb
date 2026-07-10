@@ -1,10 +1,9 @@
 class Corsixth < Formula
   desc "Open source clone of Theme Hospital"
   homepage "https://github.com/CorsixTH/CorsixTH"
-  url "https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.69.2.tar.gz"
-  sha256 "cbad15f9a16edd4c068ce14fb17f39cdb811dab0135fca80fafffa9a45732aec"
+  url "https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.70.0.tar.gz"
+  sha256 "e8f9803f6f64d23f057506202fbf275fe136c3245bab4bc19ff4c63691459cb7"
   license "MIT"
-  revision 1
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -28,8 +27,10 @@ class Corsixth < Formula
   depends_on "luarocks" => :build
   depends_on "ffmpeg"
   depends_on "freetype"
+  depends_on "libpng"
   depends_on "lpeg" => :no_linkage
-  depends_on "lua@5.4"
+  depends_on "lua"
+  depends_on "rtmidi"
   depends_on "sdl2-compat"
   depends_on "sdl2_mixer"
 
@@ -37,6 +38,7 @@ class Corsixth < Formula
 
   on_linux do
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   resource "luafilesystem" do
@@ -46,13 +48,10 @@ class Corsixth < Formula
 
   # Make sure I point to the right version!
   def lua
-    Formula["lua@5.4"]
+    Formula["lua"]
   end
 
   def install
-    # https://github.com/orgs/CorsixTH/projects/15
-    odie 'Switch to `depends_on "lua"`' if build.stable? && version >= "0.70.0"
-
     ENV["TARGET_BUILD_DIR"] = "."
     ENV["FULL_PRODUCT_NAME"] = "CorsixTH.app"
 
