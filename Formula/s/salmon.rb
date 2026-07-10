@@ -1,8 +1,8 @@
 class Salmon < Formula
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://github.com/COMBINE-lab/salmon/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "4a5dfa5040d6e0578003623a6123743b49a2976614a7b24391ade081868a18d0"
+  url "https://github.com/COMBINE-lab/salmon/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "56137a15c1666ab18e488f0eda55e4a00f1f2eb7d0216bda8cfb74061c6f3a15"
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
 
