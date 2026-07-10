@@ -1,12 +1,11 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-24.0.0/apache-arrow-24.0.0.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-24.0.0/apache-arrow-24.0.0.tar.gz"
-  sha256 "9a8094d24fa33b90c672ab77fdda253f29300c8b0dd3f0b8e55a29dbd98b82c9"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-25.0.0/apache-arrow-25.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-25.0.0/apache-arrow-25.0.0.tar.gz"
+  sha256 "12afc2dc8137bdd4a68876cec939f664c9d55cfc7b75f55b45163ebb4e344d81"
   license "Apache-2.0"
-  revision 6
-  compatibility_version 2
+  compatibility_version 3
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
@@ -81,12 +80,8 @@ class ApacheArrow < Formula
     ]
     args << "-DARROW_MIMALLOC=ON" unless Hardware::CPU.arm?
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac? # Reduce overlinking
-    # ARROW_SIMD_LEVEL sets the minimum required SIMD. Since this defaults to
-    # SSE4.2 on x86_64, we need to reduce level to match oldest supported CPU.
-    # Ref: https://arrow.apache.org/docs/cpp/env_vars.html#envvar-ARROW_USER_SIMD_LEVEL
-    if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
-      args << "-DARROW_SIMD_LEVEL=NONE"
-    end
+    # SVE bpacking kernel fails a static_assert; disable SVE runtime dispatch
+    args << "-DARROW_RUNTIME_SIMD_LEVEL=NONE" if OS.linux? && Hardware::CPU.arm?
 
     system "cmake", "-S", "cpp", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
