@@ -2,10 +2,9 @@ class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https://hackage.haskell.org/package/hopenpgp-tools"
   # TODO: Check if `ixset-typed` resource can be dropped
-  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.11/hopenpgp-tools-0.23.11.tar.gz"
-  sha256 "2a056bd320caafe0f7ac3c95d56819f9fef02ddafe11b59802ea5a678d88a54f"
+  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.11.1/hopenpgp-tools-0.23.11.1.tar.gz"
+  sha256 "d79adea3ce0d399409d40571e149a17f895e88d79cb50c37cfed94f903815031"
   license "AGPL-3.0-or-later"
-  revision 1
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
 
   bottle do
