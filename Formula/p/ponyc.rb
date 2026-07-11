@@ -2,8 +2,8 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.66.0",
-      revision: "e7d0d0bcea543f8978ea7ad7987d63f03908de50"
+      tag:      "0.67.0",
+      revision: "f849700abc56859745b10be897244d0200fdf4dc"
   license "BSD-2-Clause"
 
   bottle do
@@ -23,33 +23,35 @@ class Ponyc < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Backport to fix shadowing system headers
+  # Fix install of self-hosted tools on case-sensitive filesystems
   patch do
-    url "https://github.com/ponylang/ponyc/commit/bae6fbbf9e6e8c55ef7614999e4160f553359de6.patch?full_index=1"
-    sha256 "dbe4bc81eb02958da8d5a500a5c28c0bf9ec923186bc557a230fdeadc2139914"
+    url "https://github.com/ponylang/ponyc/commit/fd1db495cfb333754434fe141fedc32c975577a7.patch?full_index=1"
+    sha256 "accd264a743c220c681439118c1df88d8da427a3931329e237f21cb5c3549f7e"
     type :backport
-    resolves "https://github.com/ponylang/ponyc/issues/5613"
+    resolves "https://github.com/ponylang/ponyc/pull/5752"
   end
 
   def install
+    pic_args = []
     if OS.linux?
       inreplace "CMakeLists.txt", "PONY_COMPILER=\"${CMAKE_C_COMPILER}\"", "PONY_COMPILER=\"#{ENV.cc}\""
       inreplace "lib/CMakeLists.txt", "-DBENCHMARK_ENABLE_WERROR=OFF ", "\\0-DHAVE_CXX_FLAG_WTHREAD_SAFETY=OFF "
-      ENV["pic_flag"] = "-fPIC"
+      # aarch64's small-model GOT overflows with the default -fpic
+      pic_args << "-DPONY_PIC_FLAG=-fPIC"
     end
 
-    ENV["CMAKE_FLAGS"] = "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
-    ENV["MAKEFLAGS"] = "build_flags=-j#{ENV.make_jobs}"
+    # Build the vendored LLVM that the main configure step links against
+    system "cmake", "-DJOBS=#{ENV.make_jobs}", *pic_args, "-P", "lib/build-libs.cmake"
 
-    system "make", "libs"
-    system "make", "configure"
-    system "make", "build"
-    system "make", "install", "DESTDIR=#{prefix}"
+    # ponyc requires a lowercase build type (it doubles as the output dir name)
+    cmake_args = std_cmake_args.map { |arg| arg.sub("-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_BUILD_TYPE=release") }
+    system "cmake", "-S", ".", "-B", "build/build_release", *pic_args, *cmake_args
+    system "cmake", "--build", "build/build_release"
+    system "cmake", "--install", "build/build_release"
   end
 
   test do
-    # test ponyc
-    system bin/"ponyc", "-rexpr", prefix/"packages/stdlib"
+    system bin/"ponyc", "-rexpr", "stdlib"
     (testpath/"test/main.pony").write <<~PONY
       actor Main
         new create(env: Env) =>
