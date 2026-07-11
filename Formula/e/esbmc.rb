@@ -6,6 +6,15 @@ class Esbmc < Formula
   license "Apache-2.0"
   head "https://github.com/esbmc/esbmc.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "3af4c03ff17f500a60eea1f8d5da1c30faa0f6e6f0c38f0371b3c7652a1fed4a"
+    sha256 cellar: :any, arm64_sequoia: "32cde20694a0a616eb2d56f406e0d591f04450e2e761a72281ce3067110a2c4a"
+    sha256 cellar: :any, arm64_sonoma:  "7546099124315984f71bd91f1ec806c9df29e496e577a99197930b056081b6ea"
+    sha256 cellar: :any, sonoma:        "fe9b699426ce6f7412dea4ca508e6aa4fdd66780559928b27c29a6220a81c09a"
+    sha256 cellar: :any, arm64_linux:   "856d81d31adc463a32286f5dd4142a679926c5f6bb2bfc0c64c9cb8b4afbbef3"
+    sha256 cellar: :any, x86_64_linux:  "8b138269e4f82ba2df1b4b89c7e21cb6a7ebbc07e8d69eae394590cfda09954a"
+  end
+
   depends_on "bison" => :build # macOS ships 2.3; esbmc requires >= 2.6.1
   depends_on "cmake" => :build
   depends_on "immer" => :build
