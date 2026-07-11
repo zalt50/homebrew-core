@@ -1,8 +1,8 @@
 class Nethogs < Formula
   desc "Net top tool grouping bandwidth per process"
   homepage "https://raboof.github.io/nethogs/"
-  url "https://github.com/raboof/nethogs/archive/refs/tags/v0.8.8.tar.gz"
-  sha256 "111ade20cc545e8dfd7ce4e293bd6b31cd1678a989b6a730bd2fa2acc6254818"
+  url "https://github.com/raboof/nethogs/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "5961bef2155c05695d2fe7e79aa11194981b5afd1cad9bf1f259c7f30d5487c3"
   license "GPL-2.0-or-later"
 
   bottle do
