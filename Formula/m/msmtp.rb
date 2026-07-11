@@ -1,8 +1,8 @@
 class Msmtp < Formula
   desc "SMTP client that can be used as an SMTP plugin for Mutt"
   homepage "https://marlam.de/msmtp/"
-  url "https://marlam.de/msmtp/releases/msmtp-1.8.32.tar.xz"
-  sha256 "20cd58b58dd007acf7b937fa1a1e21f3afb3e9ef5bbcfb8b4f5650deadc64db4"
+  url "https://marlam.de/msmtp/releases/msmtp-1.8.33.tar.xz"
+  sha256 "41c163ce2c4c8c3c326cda8d0abd9391a7323788f0a893f49bfbe7aff3d4f276"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -28,6 +28,10 @@ class Msmtp < Formula
   end
 
   def install
+    # gnulib's base64.h uses `bool` without including
+    # <stdbool.h>, assuming C23. Force the include for pre-C23 compilers.
+    ENV.append_to_cflags "-include stdbool.h"
+
     system "./configure", "--disable-silent-rules", "--with-macosx-keyring", *std_configure_args
     system "make", "install"
     (pkgshare/"scripts").install "scripts/msmtpq"
