@@ -1,10 +1,20 @@
 class Parca < Formula
   desc "Continuous profiling for analysis of CPU and memory usage"
   homepage "https://www.parca.dev/"
-  url "https://github.com/parca-dev/parca/archive/refs/tags/v0.27.1.tar.gz"
-  sha256 "8db291778d7ef1eed8d69fad6c640970cd5a2b901ecdbd8041f3dc0817d6991e"
   license "Apache-2.0"
   head "https://github.com/parca-dev/parca.git", branch: "main"
+
+  stable do
+    url "https://github.com/parca-dev/parca/archive/refs/tags/v0.28.0.tar.gz"
+    sha256 "1b19d722b88db0e6a31aeef1b8846156a3f38568cf1af059a287ffbb608599c8"
+
+    # Backport migration to pnpm 11
+    patch do
+      url "https://github.com/parca-dev/parca/commit/cce673deb34ae93cdeeba37f5391c077e1a6e53c.patch?full_index=1"
+      sha256 "b8b3392ea97bcffa4ec2d178acc9eee24092eae0638d1b8b6391867c1b654a46"
+      type :backport
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "444ca30f5001ba44cde28eee198e4a8caffb61b8d436756b15ca94e29cf7853b"
@@ -20,8 +30,8 @@ class Parca < Formula
   depends_on "pnpm" => :build
 
   def install
-    system "pnpm", "--dir", "ui", "install"
-    system "pnpm", "--dir", "ui", "run", "build"
+    system "pnpm", "with", "current", "--dir", "ui", "install", "--frozen-lockfile"
+    system "pnpm", "with", "current", "--dir", "ui", "run", "build"
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/parca"
