@@ -5,6 +5,7 @@ class Stanc3 < Formula
       tag:      "v2.39.0",
       revision: "739471362446086911f1d6472c19ae0749c366ea"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02b4e25206b4be239bcad0c3837ff720b16a376d3bc5b24531ab72c3da42adae"
@@ -21,10 +22,10 @@ class Stanc3 < Formula
   uses_from_macos "unzip" => :build
 
   def install
-    # Workaround to build with OCaml 5.4.0
+    # Workaround to build with OCaml 5.5.0
     inreplace "stanc.opam" do |s|
       s.gsub! '"ocaml" {= "4.14.1"}', '"ocaml" {>= "4.14.1"}'
-      s.gsub! '"core" {= "v0.16.1"}', '"core" {= "v0.17.1"}'
+      s.gsub! '"core" {= "v0.16.1"}', '"core" {= "v0.17.2"}'
       s.gsub! '"ppx_deriving" {= "5.2.1"}', '"ppx_deriving" {= "6.1.1"}'
     end
 
