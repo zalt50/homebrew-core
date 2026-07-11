@@ -1,8 +1,8 @@
 class SteamguardCli < Formula
   desc "CLI for steamguard"
   homepage "https://github.com/dyc3/steamguard-cli"
-  url "https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.18.2.tar.gz"
-  sha256 "d5560592f088f5dcb3c94b283cf97f8e88ecd0a873e8fa44bf7eff10ac7488e5"
+  url "https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.18.3.tar.gz"
+  sha256 "ed6f3ddce2cf7f377cbe1463ea051e2091bb185536c8849b346fd258137ac093"
   license "GPL-3.0-or-later"
   head "https://github.com/dyc3/steamguard-cli.git", branch: "master"
 
