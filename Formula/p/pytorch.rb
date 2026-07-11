@@ -4,10 +4,10 @@ class Pytorch < Formula
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
   # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
-  url "https://github.com/pytorch/pytorch/releases/download/v2.12.1/pytorch-v2.12.1.tar.gz"
-  sha256 "757145cfd55c7c8c01f58c959f76230641cc67fdd1d8b6a130f93ad1bc116f5f"
+  url "https://github.com/pytorch/pytorch/releases/download/v2.13.0/pytorch-v2.13.0.tar.gz"
+  sha256 "66614a19060f69cfd63cd0295f65a1241bd15df2fa65c60ae51066c11c2ce812"
   license "BSD-3-Clause"
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url :stable
@@ -45,11 +45,11 @@ class Pytorch < Formula
 
   pypi_packages package_name:     "torch[opt-einsum]",
                 extra_packages:   %w[pyyaml packaging],
-                exclude_packages: %w[cuda-bindings numpy]
+                exclude_packages: %w[cuda-bindings numpy nvidia-cublas]
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
-    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
+    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
+    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
   end
 
   resource "fsspec" do
@@ -93,8 +93,8 @@ class Pytorch < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
-    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "sympy" do
@@ -103,8 +103,8 @@ class Pytorch < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install
@@ -114,7 +114,15 @@ class Pytorch < Formula
     inreplace "cmake/Modules/FindAVX.cmake", /^CHECK_SSE\(CXX "AVX512"/, "#\\0"
 
     # Avoid bundling libomp
-    inreplace "setup.py", /^(\s*)self\._embed_libomp\(\)$/, "\\1pass"
+    inreplace "cmake/PostBuildSteps.cmake", "if(APPLE AND BUILD_PYTHON AND USE_OPENMP AND OpenMP_FOUND)", "if(FALSE)"
+
+    # MPS `.mm` (ObjC++) sources miss the CPU feature defines that DispatchStub's ABI needs
+    # Only takes effect on Intel macOS, where the AVX defines and MPS backend coexist
+    %w[AVX512 AVX2].each do |isa|
+      inreplace "cmake/Codegen.cmake",
+                "set(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} -DHAVE_#{isa}_CPU_DEFINITION\")",
+                "\\0\n    set(CMAKE_OBJCXX_FLAGS \"${CMAKE_OBJCXX_FLAGS} -DHAVE_#{isa}_CPU_DEFINITION\")"
+    end
 
     ENV["ATEN_NO_TEST"] = "ON"
     ENV["BLAS"] = "OpenBLAS"
