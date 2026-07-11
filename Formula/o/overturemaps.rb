@@ -6,6 +6,7 @@ class Overturemaps < Formula
   url "https://files.pythonhosted.org/packages/36/fc/5b779bf6df4b3b868c26a0ca2d54af2700e630ebdd89d224bd51f3684455/overturemaps-1.0.1.tar.gz"
   sha256 "c8a975dd8f64442187ce8a9e64840469cfcfac1c930ad09015acfcb1481e548b"
   license "MIT"
+  revision 1
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
