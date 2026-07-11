@@ -4,6 +4,7 @@ class Ott < Formula
   url "https://github.com/ott-lang/ott/archive/refs/tags/0.34.tar.gz"
   sha256 "c14899fb9f9627f96fcde784829b53c014f4cd2e7633a697ac485ecb9ab8abd6"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/ott-lang/ott.git", branch: "master"
 
   livecheck do
@@ -28,14 +29,12 @@ class Ott < Formula
   depends_on "pkgconf" => :build
 
   def install
-    ENV["OPAMROOT"] = opamroot = buildpath/".opam"
+    ENV["OPAMROOT"] = buildpath/".opam"
     ENV["OPAMYES"] = "1"
 
-    # Work around https://github.com/ocaml/ocamlfind/issues/107 when `coq` is installed in build environment
-    ENV.prepend_path "OCAMLPATH", opamroot/"ocaml-system/lib" if formula_any_version_installed?("coq")
-
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
-    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
+    # Only build the `ott` binary; skip `coq-ott.opam` which pulls in coq/rocq
+    system "opam", "install", "./ott.opam", "--deps-only", "--yes", "--no-depexts"
     system "opam", "exec", "--", "make", "world"
 
     bin.install "bin/ott"
