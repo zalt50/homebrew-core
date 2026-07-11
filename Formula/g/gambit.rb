@@ -11,12 +11,12 @@ class Gambit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b18fff02fbf4346df57aaf20a158acf9c3c5ad7c88c15f467387faf95f312490"
-    sha256 cellar: :any, arm64_sequoia: "b9817518732cfb5121715625eee81ef4aa51b03b8ad2f9a68f036bb460692519"
-    sha256 cellar: :any, arm64_sonoma:  "822c07e3d9266d1227018452064d552e86c465639291c052d1bdc1431b706c70"
-    sha256 cellar: :any, sonoma:        "498d1f98945326f9718e40da295d5a7f2797219a29539cac0a9b0a450859479d"
-    sha256 cellar: :any, arm64_linux:   "e4429446170769d07bc4438ccd9a0d48041b68748cea76bee84338a8028e1b7d"
-    sha256 cellar: :any, x86_64_linux:  "7c176f5cf12f389fef4123e6fe3bcca3224bb83bfd9179178af3e4715df6ccea"
+    sha256 cellar: :any, arm64_tahoe:   "0727eb839f30f8bc978b7deed309c23c7bff1be758f5acaa17c3ea79c76e9ca7"
+    sha256 cellar: :any, arm64_sequoia: "c309326124d22ee43aef98998f01a8804c1a2c1ee5372bbee66d93c17dc9dd62"
+    sha256 cellar: :any, arm64_sonoma:  "1e7fe6989b942d49e6cedffcede4e32eb982bf5f6eb01264ca832c7037e4e8f4"
+    sha256 cellar: :any, sonoma:        "ffd11bbd944404a6a9f3a2d2f06df897ea72ae30c46f1b856012a0fbd2532b87"
+    sha256 cellar: :any, arm64_linux:   "53f7dfdff2e9bdc1d53d30b03f00e822bc3995900f53530bdcd73130c16ed858"
+    sha256 cellar: :any, x86_64_linux:  "695ba8a45f1c897a7c3c913e7c26cbad9e254c1ad88a76915c4d5db845dd19de"
   end
 
   depends_on "autoconf" => :build
