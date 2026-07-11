@@ -1,8 +1,8 @@
 class Lame < Formula
   desc "High quality MPEG Audio Layer III (MP3) encoder"
   homepage "https://lame.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/lame/lame/3.101/lame-3.101.tar.gz"
-  sha256 "7578af6eebd578b2bd64e468fac4ae1f03670a7e028166e67f855674b9b6aeac"
+  url "https://downloads.sourceforge.net/project/lame/lame/4.0/lame-4.0.tar.gz"
+  sha256 "3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -25,7 +25,9 @@ class Lame < Formula
   uses_from_macos "ncurses"
 
   def install
-    # lame.h leaves id3tag ucs2 helpers parse.c calls undeclared, but they are still exported
+    # LAME still calls undeclared legacy ID3 APIs, which do not compile as C23.
+    # https://sourceforge.net/p/lame/bugs/517/
+    ENV["ac_cv_prog_cc_c23"] = "no"
     ENV.append_to_cflags "-Wno-implicit-function-declaration"
 
     system "./configure", "--disable-dependency-tracking",
