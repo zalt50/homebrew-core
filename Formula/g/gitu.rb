@@ -1,8 +1,8 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
   homepage "https://github.com/altsem/gitu"
-  url "https://github.com/altsem/gitu/archive/refs/tags/v0.42.0.tar.gz"
-  sha256 "f7071a88344262df5642a62188e332a703f28b746224578962914e874cc84778"
+  url "https://github.com/altsem/gitu/archive/refs/tags/v0.43.0.tar.gz"
+  sha256 "4cc89732b2fa4fee07b2db5ce4cf325577fd195995e70e11c86b9bc1a6a2e114"
   license "MIT"
   head "https://github.com/altsem/gitu.git", branch: "master"
 
@@ -28,11 +28,6 @@ class Gitu < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/gitu --version")
 
-    output = shell_output("#{bin}/gitu 2>&1", 1)
-    if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-      assert_match "No such device or address", output
-    else
-      assert_match "could not find repository at '.'", output
-    end
+    assert_match "could not find repository at '.'", shell_output("#{bin}/gitu 2>&1", 1)
   end
 end
