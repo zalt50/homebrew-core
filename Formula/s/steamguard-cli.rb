@@ -1,28 +1,18 @@
 class SteamguardCli < Formula
   desc "CLI for steamguard"
   homepage "https://github.com/dyc3/steamguard-cli"
+  url "https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.18.2.tar.gz"
+  sha256 "d5560592f088f5dcb3c94b283cf97f8e88ecd0a873e8fa44bf7eff10ac7488e5"
   license "GPL-3.0-or-later"
   head "https://github.com/dyc3/steamguard-cli.git", branch: "master"
 
-  stable do
-    url "https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.18.1.tar.gz"
-    sha256 "884318f97ca184c437940691f8a617ffa7003622ff56a2da4d21e021771fc3a7"
-
-    # Bump dependencies that cause build failure on macOS
-    # https://github.com/dyc3/steamguard-cli/pull/506
-    patch do
-      url "https://github.com/dyc3/steamguard-cli/commit/7c298ae3b9c0c4a3ff77e8c71a03a9c3d55d043b.patch?full_index=1"
-      sha256 "94458a8b9a2baeedf34b8ab9891a713d621049083472f8ead2f628b9c206b9c3"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4526635beb511d5b9fa68881b71474dd15c1dc2f997780a61d1fb9e9c2f5499d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "303db37038a5c91e838f8b3066b05993a5f3c0fe4461bdf7705ed75ba07034ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d58652499f6e3cdb843ec03e8221d35728f9e8d137266c22a2cf22cc78cdeee4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8568a81c6af1bbe8b9c5e20d4e5d33f418e8c4a1f95bf6b5017e3a2b9b6f8f27"
-    sha256 cellar: :any,                 arm64_linux:   "745dc2af0a8c0f1bad9a8639cf9439a7fb29493b70693c2debcc3fd2652ca267"
-    sha256 cellar: :any,                 x86_64_linux:  "aea21c57b4c878b0f42ae62dcab4a1b6738f9356daf982fb5ba06469dac4a836"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3051b5915ad5d2eeadd416e10d845fa8d0afb9888e90e88dbc6a5c2c07b16bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "283a860a41c2678b489b929b39a53a50a6685ffde51ae5cdec479d0cb5bebe9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78f666b5117aa58c6b6022abde9a89d3c01fb3bff78fb05dfa5e9761962d7763"
+    sha256 cellar: :any_skip_relocation, sonoma:        "312fe142210e875c62813885cde814427deec87603bc478ab8a5403b20d0a249"
+    sha256 cellar: :any,                 arm64_linux:   "cd5bbd9459185a9cbb7149ce8335df26fb726af3c9a222a784ef8cd1b732f6fe"
+    sha256 cellar: :any,                 x86_64_linux:  "1f3f82041feece9dff813ca14ee73da512d507e2e8723f655bfd822e0337b401"
   end
 
   depends_on "rust" => :build
