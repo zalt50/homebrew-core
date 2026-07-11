@@ -1,10 +1,15 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https://oras.land"
-  url "https://github.com/oras-project/oras/archive/refs/tags/v1.3.2.tar.gz"
-  sha256 "33a44023666e00b6e32b5bd022a77f0813a488bdeab90c7d728b811d5f97df48"
+  url "https://github.com/oras-project/oras/archive/refs/tags/v1.3.3.tar.gz"
+  sha256 "77170b1c2af19c4d9e0125c98b0709764534b9080de60b94fb3a2952bdce3ebf"
   license "Apache-2.0"
   head "https://github.com/oras-project/oras.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7854879fac23c228f80368e88f0836825a5969c028d06d3550f2912fa51ac6a8"
