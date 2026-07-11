@@ -42,6 +42,7 @@ class Bic < Formula
       on_intel do
         url "https://github.com/hexagonal-sun/bic/commit/77f2993cd5b41bfa21fb21636588e459c6aaf45c.patch?full_index=1"
         sha256 "c7037e4f3b05be997744ccdea0f51786e5eafaddebc131763d5f45745e90cf00"
+        type :backport
       end
     end
   end
