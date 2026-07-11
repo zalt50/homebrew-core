@@ -1,8 +1,8 @@
 class Netcode < Formula
   desc "Secure client/server protocol for multiplayer games built on top of UDP"
   homepage "https://github.com/mas-bandwidth/netcode"
-  url "https://github.com/mas-bandwidth/netcode/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "b21995f192fcc0252cccfa2a584dfab3509172741e9a1eeb58baf514b9747c92"
+  url "https://github.com/mas-bandwidth/netcode/archive/refs/tags/v1.3.4.tar.gz"
+  sha256 "284871471677018cc218d5e2f4f201f37462ac91d05fb76940eff10a57ebbc6d"
   license "BSD-3-Clause"
 
   bottle do
