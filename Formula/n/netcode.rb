@@ -27,7 +27,7 @@ class Netcode < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <netcode.h>
 
       int main(void) {
@@ -45,7 +45,7 @@ class Netcode < Formula
         netcode_term();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lnetcode", "-o", "test"
     system "./test"
   end
