@@ -13,12 +13,12 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7c6c7c569e3914d7aaf3611421c97701603b451996352c117dcdbb8dae6843a4"
-    sha256 cellar: :any, arm64_sequoia: "0a20e0b67256205a28e3fba069cf0baf4a357f5702636b48e75e2aeb6240c6f9"
-    sha256 cellar: :any, arm64_sonoma:  "7657759880002e58a07d247525f028efd6b3c9737827e60591db4ab336d6168a"
-    sha256 cellar: :any, sonoma:        "434a92b20015be9d5cff7553c425ebce2f5cef880e95239334805ec6c49d14fc"
-    sha256 cellar: :any, arm64_linux:   "93a72e3ea40c7734ca3f35dd26dbdfcb544fab8a7ceef0919e4e6c098037dcf2"
-    sha256 cellar: :any, x86_64_linux:  "781c5608acb4267c8e57c50a82fc02913cc01d5b942f877fe5609c5b679f084d"
+    sha256 cellar: :any, arm64_tahoe:   "7fbb29f537b809e16a8ae071b74a11a1c56e8fa41473884c9e8943bc6c2c70ee"
+    sha256 cellar: :any, arm64_sequoia: "5e2f9bfc4d672fd299fe9a524a587981a4af5964305e87981d4e84b823ea3de5"
+    sha256 cellar: :any, arm64_sonoma:  "814db8ca72d272c6d4a4a4c77f31d6b940d679d0aeeb8ea382112398fe97eefe"
+    sha256 cellar: :any, sonoma:        "c5e3b5bcc88738aecef476568a9cce0f563174f01830921a3df083ba3514898b"
+    sha256 cellar: :any, arm64_linux:   "27b773abb158cede5a929cfac531cc9938a365fdd81bf0c3b5adc00bd358911c"
+    sha256 cellar: :any, x86_64_linux:  "759a94b936ba4521be53290d26030cbd7eb843c371b2e6ce862f69203e9aeabd"
   end
 
   depends_on "cmake" => :build
