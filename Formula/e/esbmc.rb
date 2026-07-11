@@ -6,6 +6,11 @@ class Esbmc < Formula
   license "Apache-2.0"
   head "https://github.com/esbmc/esbmc.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "3af4c03ff17f500a60eea1f8d5da1c30faa0f6e6f0c38f0371b3c7652a1fed4a"
     sha256 cellar: :any, arm64_sequoia: "32cde20694a0a616eb2d56f406e0d591f04450e2e761a72281ce3067110a2c4a"
