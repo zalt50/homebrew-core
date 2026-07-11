@@ -5,6 +5,10 @@ class Perlnavigator < Formula
   sha256 "2e50dead7e169f865902ef6e447761705f9ef07b89df0bc5b754ff3d484112db"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "e34b1d6b98969c6760f25f6978609183c2bba021c46e44fee2c70b003df94f7b"
+  end
+
   depends_on "node"
 
   def install
