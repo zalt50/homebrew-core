@@ -1,8 +1,8 @@
 class Navidrome < Formula
   desc "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
   homepage "https://www.navidrome.org"
-  url "https://github.com/navidrome/navidrome/archive/refs/tags/v0.63.1.tar.gz"
-  sha256 "92499506f2da5bcdf88fed22c6018778391c18e839e66930e34bb5f9fff9d9dd"
+  url "https://github.com/navidrome/navidrome/archive/refs/tags/v0.63.2.tar.gz"
+  sha256 "a2602f00b429325f37efedba5e67918269f5ad2687266629dad23b740135cd4c"
   license "GPL-3.0-only"
   head "https://github.com/navidrome/navidrome.git", branch: "master"
 
