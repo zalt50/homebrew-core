@@ -20,8 +20,7 @@ class Diffoscope < Formula
   depends_on "libmagic" => :no_linkage
   depends_on "python@3.14"
 
-  # pypi_packages package_name: "diffoscope[cmdline]"
-  pypi_packages extra_packages: %w[argcomplete progressbar]
+  pypi_packages package_name: "diffoscope[cmdline]"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
