@@ -1,8 +1,9 @@
 class OpenBabel < Formula
   desc "Chemical toolbox"
   homepage "https://github.com/openbabel/openbabel"
-  url "https://github.com/openbabel/openbabel/archive/refs/tags/openbabel-3-2-0.tar.gz"
-  sha256 "9aadf9f01b3d0ff15d49fcd28d7d76b923218d70bf10f99ea4cc466607f4c7e2"
+  url "https://github.com/openbabel/openbabel/archive/refs/tags/openbabel-3-2-1.tar.gz"
+  version "3.2.1"
+  sha256 "e140c25480fe1678d00b9a52462368fa4e7805fba67b12ee496784437f3e239e"
   license "GPL-2.0-only"
   head "https://github.com/openbabel/openbabel.git", branch: "master"
 
