@@ -6,7 +6,7 @@ class Harlequin < Formula
   url "https://files.pythonhosted.org/packages/93/ce/cae8ff256fc7f4c67a89cadcefb09c230600cdea92306d4ac9354f0a1a77/harlequin-2.5.2.tar.gz"
   sha256 "7e02cb25f893ab72f486de79bee109b866762a69f5be28d495581ce93d16f870"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
