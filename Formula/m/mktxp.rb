@@ -7,6 +7,15 @@ class Mktxp < Formula
   sha256 "e840c4e0a7a7894c56a20e4fea73d44020f93344f61339b197f20a669cc89b8e"
   license "GPL-2.0-or-later"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "e95996c589987de900957f9a3a5a0fa12c011695a904a9d20a1d317d22ed4bed"
+    sha256 cellar: :any, arm64_sequoia: "eabbd504e3153efafd55cdd4024c765cf7167d44137abf89d3f8ecbfb6002905"
+    sha256 cellar: :any, arm64_sonoma:  "644c81e61193ffca06eb7b6ebd550d83f712bbd29dda4c030ef904fc06336ca6"
+    sha256 cellar: :any, sonoma:        "ca04406ec4bef0b79f4a8a9262837b17fb271520b411ff0d034f54959e78a9d9"
+    sha256 cellar: :any, arm64_linux:   "597a9b7d18f7ea6f37bb78aec1dfd10daf3a561309253afb626e5e85568e8eff"
+    sha256 cellar: :any, x86_64_linux:  "429de3d36f7c6247b03b1b493cae5e8ebcb722b2c403b81526993f87bb5f2bd4"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.14"
 
