@@ -1,8 +1,8 @@
 class SwiftSection < Formula
   desc "CLI tool for parsing mach-o files to obtain Swift information"
   homepage "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection"
-  url "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection/archive/refs/tags/0.11.0.tar.gz"
-  sha256 "807c62867a65334aa12c7d30fbede6fd93243bc78f5557622e61a14f81a0b22d"
+  url "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection/archive/refs/tags/0.12.0.tar.gz"
+  sha256 "480b47a6863782dbb8eaa65fc6cbcfed36e4ec0f1a94ffe4f003a917c364e8c3"
   license "MIT"
   head "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection.git", branch: "main"
 
@@ -24,7 +24,7 @@ class SwiftSection < Formula
   uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "swift-section"
     bin.install ".build/release/swift-section"
     generate_completions_from_executable(bin/"swift-section", "--generate-completion-script")
   end
