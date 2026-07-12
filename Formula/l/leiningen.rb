@@ -34,7 +34,14 @@ class Leiningen < Formula
 
     (libexec/"bin").install "bin/lein-pkg" => "lein"
     (libexec/"bin/lein").chmod 0755
-    (bin/"lein").write_env_script libexec/"bin/lein", Language::Java.overridable_java_home_env
+
+    # Leiningen resolves the JVM from JAVA_CMD, not JAVA_HOME; derive it so JAVA_HOME is respected
+    # Issue ref: https://codeberg.org/leiningen/leiningen/issues/112
+    java_home = Language::Java.java_home
+    (bin/"lein").write_env_script libexec/"bin/lein",
+      JAVA_HOME: "${JAVA_HOME:-#{java_home}}",
+      JAVA_CMD:  "${JAVA_CMD:-${JAVA_HOME:-#{java_home}}/bin/java}"
+
     bash_completion.install "bash_completion.bash" => "lein"
     zsh_completion.install "zsh_completion.zsh" => "_lein"
   end
