@@ -1,21 +1,21 @@
 class PerconaServerAT80 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.45-36/source/tarball/percona-server-8.0.45-36.tar.gz"
-  sha256 "137cdb24a1f5b8afbd1fef38457b98ead8d73e3cc73c22a3c6facc94ab3871de"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.46-37/source/tarball/percona-server-8.0.46-37.tar.gz"
+  sha256 "cedff3c191ff160dfc0ce1c574440165f3f2bfe7a621699170adf4d1dc556617"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
-      version: "Percona-Server-#{version.major_minor}",
+    url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
+      action:     "percona_downloads",
+      product_id: "Percona-Server-#{version.major_minor}",
     }
-    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
+    regex(/^Percona-Server-v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.dig("data", "versions")&.filter_map do |version|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub(/(-\d+)\.0$/, '\1')
+        version[regex, 1]&.sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
