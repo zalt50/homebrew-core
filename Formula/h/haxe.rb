@@ -6,7 +6,7 @@ class Haxe < Formula
       tag:      "4.3.7",
       revision: "e0b355c6be312c1b17382603f018cf52522ec651"
   license all_of: ["GPL-2.0-or-later", "MIT"]
-  revision 2
+  revision 3
   head "https://github.com/HaxeFoundation/haxe.git", branch: "development"
 
   livecheck do
@@ -41,12 +41,17 @@ class Haxe < Formula
     # https://github.com/HaxeFoundation/haxe/commit/034178b97ba0d7a97e0230ecf76b5872c4b3c197
     inreplace "haxe.opam", '"dune" {>= "1.11" & < "3.16"}', '"dune" {>= "1.11"}' if build.stable?
 
-    ENV["OPAMROOT"] = buildpath/".opam"
+    ENV["OPAMROOT"] = opamroot = buildpath/".opam"
     ENV["OPAMYES"] = "1"
     ENV["ADD_REVISION"] = "1" if build.head?
 
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
     system "opam", "pin", "add", "ctypes", "0.22.0"
+
+    # OCaml 5.5.0 no longer exposes opam's C stubs (e.g. dllpcre2_stubs.so) for linking.
+    # https://github.com/ocaml/opam-repository/issues/16406
+    ENV.prepend_path "CAML_LD_LIBRARY_PATH", opamroot/"ocaml-system/lib/stublibs"
+
     system "opam", "install", ".", "--deps-only", "--no-depexts"
 
     # Build requires targets to be built in specific order
