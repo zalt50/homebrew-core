@@ -3,8 +3,8 @@ class LiterateGit < Formula
 
   desc "Render hierarchical git repositories into HTML"
   homepage "https://github.com/bennorth/literate-git"
-  url "https://files.pythonhosted.org/packages/61/ef/443d7a7db6d72b4f905fe43ea34b3f7f6ca5b2edc0ad241290671ef6c454/literategit-0.5.3.tar.gz"
-  sha256 "bd634cb4305d1e99f9f994c07aac2d68492f939598f776e9abb7376488378b47"
+  url "https://files.pythonhosted.org/packages/67/36/c0d78cde182822b1df78b3f4b1db3a5d21bc80663557d0373d7e61a75747/literategit-0.5.5.tar.gz"
+  sha256 "8dbe0930f0b915caedd53411aec063961ff6999fac812e5d80976e65a89661cc"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -25,8 +25,8 @@ class LiterateGit < Formula
   pypi_packages exclude_packages: "pygit2"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "jinja2" do
