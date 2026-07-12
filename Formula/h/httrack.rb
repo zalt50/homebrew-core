@@ -1,17 +1,9 @@
 class Httrack < Formula
   desc "Website copier/offline browser"
   homepage "https://www.httrack.com/"
-  # Always use mirror.httrack.com when you link to a new version of HTTrack, as
-  # link to download.httrack.com will break on next HTTrack update.
-  url "https://mirror.httrack.com/historical/httrack-3.49.2.tar.gz"
-  sha256 "3477a0e5568e241c63c9899accbfcdb6aadef2812fcce0173688567b4c7d4025"
+  url "https://github.com/xroche/httrack/releases/download/3.49.12/httrack-3.49.12.tar.gz"
+  sha256 "2f4362802e2b42a0f6caf5db37a53decf962e2dc876ef2c2507d1a53db270bc4"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
-  revision 2
-
-  livecheck do
-    url "https://mirror.httrack.com/historical/"
-    regex(/href=.*?httrack[._-]v?(\d+(?:\.\d+)+)\./i)
-  end
 
   bottle do
     sha256 arm64_tahoe:   "b32f52b8a3d7c29bc4ef8786a5d7442b989d007c92ed205bd8e2fce3d7d9e7c3"
@@ -26,11 +18,6 @@ class Httrack < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
   end
 
   def install
