@@ -12,12 +12,12 @@ class DoviTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81c1c94dd315789c85def55bb8fcb7f297be401239e9132f2f4c22baf7009532"
-    sha256 cellar: :any,                 arm64_sequoia: "4fd138789438a2e488019d70154c52c9e41f31261baa99db926bd0b0ae65ab1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "e08172d3ba5dbb923ba92b064377338c4d4be1ed9ad8503e5d9da1487281d432"
-    sha256 cellar: :any,                 sonoma:        "39f780763832297e81d97b3d729e4b8505876f10c2892974fc7e45ba2c26eff7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c986986476ecea0de572803691294ef2607bd8a963000f088f23ebf7a173fb05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97d80749c54d45aa4d0ec45a54ecdb421dd3005b106f86a4412ac23ec9c47bb4"
+    sha256 cellar: :any, arm64_tahoe:   "18c18c60d697c0b91ee94f587b63e805a5931262d2255a066948d91c13cbd8fa"
+    sha256 cellar: :any, arm64_sequoia: "4ee5260084bcee0eec15184c9dd2eea80f40a03fdd1ffeb043199260d00ee0ba"
+    sha256 cellar: :any, arm64_sonoma:  "a702f99d16cc4f2cce1ded9bfb07c4b4a558aa2ce77bd046704ae388c7240efe"
+    sha256 cellar: :any, sonoma:        "e8bb9064f9e06855a57c649541d47528f2725d3b6327a6b3b7b8f89492284837"
+    sha256 cellar: :any, arm64_linux:   "c7006f03437e3c6e8eaccb44513c53039a20badcf012c42766c24d3d811ec1d3"
+    sha256 cellar: :any, x86_64_linux:  "ed443de19096f6132e87dc1ce0f2608ea7e2f883d0967ccbec4ccea742bba250"
   end
 
   depends_on "cargo-c" => :build
