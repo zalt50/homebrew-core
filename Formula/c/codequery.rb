@@ -6,13 +6,12 @@ class Codequery < Formula
   license "MPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ec9b55288deede50bb5a39e76846aa3a0c7179be2a1ceb1f682b6de5291abdc3"
-    sha256 cellar: :any,                 arm64_sequoia: "683318cd26452dda4e8b6f103fcf5c0bacb6d886da49b3492e87dc8bab7ef35e"
-    sha256 cellar: :any,                 arm64_sonoma:  "1078139feee794760c6e6c42f33c49d308d4f308098e9913636d8054fe1da150"
-    sha256 cellar: :any,                 sonoma:        "57c3b03bff1a8f7a3311aff6a89c0fb2c530f2f361857af15a9b158ced25476b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9ef3ff7ab094e9ed1e668874c8dd629a2bceee86fc78f7ad08a90ab72491170"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18b9c0955396a9cd0b50d7b05d4e4b7edc97f8a7a32e693c64f5cfe7f16bbd1b"
+    sha256 cellar: :any, arm64_tahoe:   "699c385165820cc6959a2f2d03a1a9c813e83ed9e8004b5dc81cefff1b3ff49c"
+    sha256 cellar: :any, arm64_sequoia: "671cfc9d735b78eb01a803a48ef43f300dd3196e2d1dfaa0cee793ec270b9baa"
+    sha256 cellar: :any, arm64_sonoma:  "f5bc20f078e1ddec21f9103503edf8fc87bc8203f960a6beb017a27e63fe916d"
+    sha256 cellar: :any, sonoma:        "d2a15d26e0624b2c24a1c76f1dda86ad8e17413e6cd696a3ec97bb892bf3f032"
+    sha256 cellar: :any, arm64_linux:   "35c4bf6ee5bb8b19098a394d7c02e0d7941467d7c042f2014a8b6b3bc9d00744"
+    sha256 cellar: :any, x86_64_linux:  "cdb198b5255ce27f58b0fe87546cd648a0c48cdde1ecbf677ff4118b3d7d9131"
   end
 
   depends_on "cmake" => :build
