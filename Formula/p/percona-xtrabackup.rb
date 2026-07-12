@@ -1,21 +1,21 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-5/source/tarball/percona-xtrabackup-8.4.0-5.tar.gz"
-  sha256 "fadcf27efd2a2596f689388659e2ff5c36debcc051a55974ac8bb4a83c015f57"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-6/source/tarball/percona-xtrabackup-8.4.0-6.tar.gz"
+  sha256 "e0e886b78d18b34122bd15b2d80f52fc5df2422260edaa3074820902beecd351"
   license "GPL-2.0-only"
-  revision 6
 
   livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
-      version: "Percona-XtraBackup-#{version.major_minor}",
+    url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
+      action:     "percona_downloads",
+      product_id: "Percona-XtraBackup-#{version.major_minor}",
     }
-    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
+    regex(/^Percona-XtraBackup-v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.dig("data", "versions")&.filter_map do |version|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub(/(-\d+)\.0$/, '\1')
+        version[regex, 1]&.sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
