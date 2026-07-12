@@ -2,7 +2,7 @@ class Noti < Formula
   desc "Trigger notifications when a process completes"
   homepage "https://codeberg.org/roble/noti"
   url "https://codeberg.org/roble/noti/archive/3.8.0.tar.gz"
-  sha256 "40939b83ee80f84ea2516ff205a961ddc0c4ec66af4f29319cdc41fce87eb332"
+  sha256 "107b9169c63c623556f554d54d82118da72f871ad8eddda3a49a613ff7deaf30"
   license "MIT"
   head "https://codeberg.org/roble/noti.git", branch: "main"
 
