@@ -417,7 +417,6 @@ jobs:
                 envoy|\
                 qt@5|\
                 qtwebengine|\
-                teleport|\
                 texlive\
                 ).rb"
               keep_if_no_match: true
