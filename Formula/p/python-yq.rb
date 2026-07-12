@@ -6,6 +6,7 @@ class PythonYq < Formula
   url "https://files.pythonhosted.org/packages/58/24/1e43bea1cb58532658a6d5b51a5f1d45d21df50eb1d14d977eb6d3064dbb/yq-4.1.2.tar.gz"
   sha256 "a8f148930f8beb3170f451d67f29cbe0b3ac713cd2fc91ecf51d43b4879e6b4c"
   license "Apache-2.0"
+  head "https://github.com/kislyuk/yq.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "e9016d2edb8a0d702385cdda32ed29643e7a076f6473eb74abe81cff2cafbd6f"
