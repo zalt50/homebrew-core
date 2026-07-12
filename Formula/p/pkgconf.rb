@@ -1,12 +1,12 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz"
-  mirror "https://fossies.org/linux/misc/pkgconf-2.5.1.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-2.5.1.tar.xz"
-  sha256 "cd05c9589b9f86ecf044c10a2269822bc9eb001eced2582cfffd658b0a50c243"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.1.tar.xz"
+  mirror "https://fossies.org/linux/misc/pkgconf-3.0.1.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.1.tar.xz"
+  sha256 "640b0d03a6d9e385d8bdcdac071a5cdf5fbd3f45942d454b711ae46271489b30"
   license "ISC"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url "https://distfiles.ariadne.space/pkgconf/"
@@ -27,7 +27,7 @@ class Pkgconf < Formula
   end
 
   head do
-    url "https://github.com/pkgconf/pkgconf.git", branch: "master"
+    url "https://github.com/pkgconf/pkgconf.git", branch: "main"
 
     # Using a resource to avoiding dependency tree from brew `meson` or `muon`.
     # The version should align to available HTTP mirror rather than latest.
