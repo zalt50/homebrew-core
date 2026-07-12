@@ -9,12 +9,12 @@ class Gptme < Formula
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b3298befee9dfd8f3dabed7c065414aa2dc0229df1964a189218fcbdc347ccc7"
-    sha256 cellar: :any, arm64_sequoia: "9e31d181c96cc003537abbdcaed9a12bb864843a3c32becd8a5ac2993f9d2710"
-    sha256 cellar: :any, arm64_sonoma:  "5e7fc7917df5e552597f51e75e728dd45f1568f1dc727d6c54ecefd59c4d47b5"
-    sha256 cellar: :any, sonoma:        "5e742076e5180a9b2a3002c5afd970a07c70dcc40b7770a28ff8d5f6f9c5c4ec"
-    sha256 cellar: :any, arm64_linux:   "02d3df1af828f0a5ba5d09ab2ca101c285185d1a4dc1905ad6d794903663a6ec"
-    sha256 cellar: :any, x86_64_linux:  "5d24c771de77222e3ab2cd01573594e7699b426deb064359071cc03f0799d456"
+    sha256 cellar: :any, arm64_tahoe:   "2d4bd0bbc0b3f8147638218804ae0af08acf29e78d00d4413f9c14ce9709f641"
+    sha256 cellar: :any, arm64_sequoia: "05e2f03c5fee3539ad1b457011b963816f790f3739aaad007ac04a1e2c2d401c"
+    sha256 cellar: :any, arm64_sonoma:  "85eadfcd9e4fc03bc04b1b85c49cd2c4a14d42334f6d0a2ac687e44664130910"
+    sha256 cellar: :any, sonoma:        "ebf9ff5c2f01abf3dbbd42b5fcfda267eb46137a65e03def627ab0da7706d1a0"
+    sha256 cellar: :any, arm64_linux:   "4e54fe4e293daf420339cda870d126c97324a1aee3bbf23d964db370c8e25158"
+    sha256 cellar: :any, x86_64_linux:  "721984b583a165da2745ebf555460644b2077157d4b049db2eaf13e58a68f1df"
   end
 
   depends_on "rust" => :build # for jitter
