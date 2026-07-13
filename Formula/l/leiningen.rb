@@ -7,7 +7,8 @@ class Leiningen < Formula
   head "https://github.com/technomancy/leiningen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e6eb47ee48cf7217ee2b8b7d3a77359a0581d18cb0a6e27e46fb98e24bc14da5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2dd30cf30c1f139181469c5773596cb27eae48f667a7e2ff2710042800f889b6"
   end
 
   depends_on "openjdk"
