@@ -7,7 +7,7 @@ class Baguette < Formula
   head "https://github.com/tddworks/baguette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe: "6405d563c19dcebb6ec65f38a4710e2e5e08addcb7838d46635c095bad8a75ef"
+    sha256 cellar: :any, arm64_tahoe: "86311dbcafabdfb0aaf00093d8f1d7fab8f157e31a4e0cb912ddca2e77f59021"
   end
 
   depends_on xcode: ["26.0", :build]
