@@ -3,8 +3,8 @@ class SqliteUtils < Formula
 
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/7d/8e/0e2fa87b197b3d0f8dd57856c07da77fa0c7130aaa894ee9d330c715f37c/sqlite_utils-4.0.tar.gz"
-  sha256 "cea711807c2bbc18829ed642ae19a23a80e853f4136c4d2a28078a6117ad9426"
+  url "https://files.pythonhosted.org/packages/aa/97/101ae34f13ba2878ed9bb53848b248f8d34473bc821cc809858929e9ba68/sqlite_utils-4.1.tar.gz"
+  sha256 "70893f5bba2330bf83d6a84bdf9cd6164a566ece377d0447f162e76e4b9ae74b"
   license "Apache-2.0"
 
   bottle do
