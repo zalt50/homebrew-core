@@ -3,13 +3,13 @@ class SqliteUtils < Formula
 
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/aa/97/101ae34f13ba2878ed9bb53848b248f8d34473bc821cc809858929e9ba68/sqlite_utils-4.1.tar.gz"
-  sha256 "70893f5bba2330bf83d6a84bdf9cd6164a566ece377d0447f162e76e4b9ae74b"
+  url "https://files.pythonhosted.org/packages/83/c1/fa8563039ec30b5cc6a532271e8cf90da37e4c649a3ad80b49fb6a39023e/sqlite_utils-4.1.1.tar.gz"
+  sha256 "cf97e620b3940cd541cae9117cc24af961a6da426189fdb662f20f1950ba1f49"
   license "Apache-2.0"
   head "https://github.com/simonw/sqlite-utils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1060497d1509b3fd864583a821170d21d58b94a2ad6c460d3514737cc82a18f8"
+    sha256 cellar: :any_skip_relocation, all: "0588c46da4e3c57b3cf21f6a67f440d00eb5fb5d995f2b43e346c3919c057fdf"
   end
 
   depends_on "python@3.14"
