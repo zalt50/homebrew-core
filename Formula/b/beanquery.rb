@@ -6,6 +6,7 @@ class Beanquery < Formula
   url "https://files.pythonhosted.org/packages/7c/90/801eec23a07072dcf8df061cb6f27be6045e08c12a90b287e872ce0a12d3/beanquery-0.2.0.tar.gz"
   sha256 "2d72b50a39003435c7fed183666572b8ea878b9860499d0f196b38469384cd2c"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
     rebuild 2
@@ -29,13 +30,13 @@ class Beanquery < Formula
   end
 
   resource "beancount" do
-    url "https://files.pythonhosted.org/packages/57/e3/951015ad2e72917611e1a45c5fe9a33b4e2e202923d91455a9727aff441b/beancount-3.2.0.tar.gz"
-    sha256 "9f374bdcbae63328d8a0cf6d539490f81caa647f2d1cc92c9fa6117a9eb092ca"
+    url "https://files.pythonhosted.org/packages/eb/21/ed48e671a5e474c620762a7ea9c6b7f402f847d74dd2b73ceb5d2dec79a3/beancount-3.2.3.tar.gz"
+    sha256 "f52c4d237bcb092cbf02a29373d3e59d95349c2828a91491818ae437ee220f74"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "python-dateutil" do
@@ -44,8 +45,8 @@ class Beanquery < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/7b/37/451aaddbf50922f34d744ad5ca919ae1fcfac112123885d9728f52a484b3/regex-2026.7.10.tar.gz"
+    sha256 "1050fedf0a8a92e843971120c2f57c3a99bea86c0dfa1d63a9fac053fe54b135"
   end
 
   resource "six" do
@@ -54,12 +55,17 @@ class Beanquery < Formula
   end
 
   resource "tatsu-lts" do
-    url "https://files.pythonhosted.org/packages/62/55/8123c70881c58d0f01f48d869378717a101149491dd8e13cd908eb06a5a4/tatsu_lts-5.13.2.tar.gz"
-    sha256 "7204dbc3075fabecedd1ec1cbe04c5f20b159d7344f63280e580a21f3c14bf9f"
+    url "https://files.pythonhosted.org/packages/d3/81/9ab714191017d23a0e73921e7d869890e5bf6a5eca89dee57d2b76c6c536/tatsu_lts-5.16.0.tar.gz"
+    sha256 "40ad376b4ed4e139a8d00d00bd6659d44c3b7546933fb3314132f776bfa1f44f"
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "beancount")
+
+    resource("beancount").stage do
+      inreplace "pyproject.toml", /^\s*'(flex|bison)-bin.*\n/, ""
+      venv.pip_install Pathname.pwd
+    end
 
     generate_completions_from_executable(bin/"bean-query", shell_parameter_format: :click)
   end
