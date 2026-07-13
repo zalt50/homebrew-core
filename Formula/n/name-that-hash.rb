@@ -10,7 +10,7 @@ class NameThatHash < Formula
   head "https://github.com/bee-san/Name-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1faeb200cbf30f8d864631b94005f26196d59323b34676c368b275ad846eda56"
+    sha256 cellar: :any_skip_relocation, all: "fee4b9e576876614066970e952f90febe3c1d0228132a16a21612f195dc4f9f2"
   end
 
   depends_on "python@3.14"
