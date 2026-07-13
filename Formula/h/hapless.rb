@@ -10,12 +10,12 @@ class Hapless < Formula
   head "https://github.com/bmwant/hapless.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f169b0818ad25ef07114e116e4e9334c44bb4ff0e5eccc13aae728e3a17e53e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e57876a959e0ac43420f19167686995a7c451141ab243639d6828c84d0f89ba5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81d714d9e2ca4ccc878aec973c7b60e32676e9c28ad87b82ef334367de09a399"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab3e595aee0267253ee8d84c95cb0795b74b7519ac5ceb037b5aa2c58c470d89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba7b3f19bfa985154140df5a871ff98be1ff56db3d410a6a03fcb49462758984"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d45c8d4794f6121888e0c65e1e3c53ebc8137de42368ac378e297fec15ad965e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da08ce56df28a0ba4aa5961303408a30758de532b674167a91f6d50680b6d42e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16845ee1b8f397956dfce79cbbfd516b58fa61e2ca8f55be7dc0e0d1dffcd213"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85328d7dceb3952ba09e22c44aef001be74ff872bd9093fcba2073a59a781ac6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd43290de50a062a326d1d7a9611b925e55de3801ce4321aa02cf9f3ab9343ff"
+    sha256 cellar: :any,                 arm64_linux:   "5f4e5702112637ee2a46ceda8afaab4668b95aaad8142abe944a8f03e0992fec"
+    sha256 cellar: :any,                 x86_64_linux:  "e4b3986d718dbdec80fbf1a128d2862b6fe44fae40f12f17c561afd238261251"
   end
 
   depends_on "python@3.14"
