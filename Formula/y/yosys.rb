@@ -7,12 +7,12 @@ class Yosys < Formula
   head "https://github.com/YosysHQ/yosys.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "1f455673f860c91a7fe654d49fbd4162a3d4c268974871ae1ae328bf2aefb406"
-    sha256 arm64_sequoia: "17485339f20a083a8779c683a7504c69e2fd2a124b862221cea3ddf6499fa85e"
-    sha256 arm64_sonoma:  "bbd41f58cedfe9b1088b368526f9c17a58d470fbb33c3a588c45b331ed57d16b"
-    sha256 sonoma:        "1830ad3f3aad743221bd70e63a582c106b81fc8d79d4749683d35264118d3280"
-    sha256 arm64_linux:   "08d4cc5dd4a7bb5c972b6f5fbc0deec1781cffffa102b81409f248ac388caaaf"
-    sha256 x86_64_linux:  "3cd1dbb658d4716b3372d3b5c8374e7a88f88c799a24ba236a8285dec12913c1"
+    sha256 cellar: :any, arm64_tahoe:   "d7a0710f79770e9c08e0387f5853860da0031c65528ed95df8e2c30e91fb456a"
+    sha256 cellar: :any, arm64_sequoia: "0d50954d12cb5376fefe75c6e58e40829d77eba4219d2d2f8f7d3c4294c5ac6b"
+    sha256 cellar: :any, arm64_sonoma:  "b1b35adb346d3d04f5ffe4ef1582f83705a1d532323278cc4bf388b101345118"
+    sha256 cellar: :any, sonoma:        "cba22afdd873a4a4950622bf72dd7c8f82f90bd3f22e7e7e05877553c2958d28"
+    sha256 cellar: :any, arm64_linux:   "4d0182cdf0e971b8cceca5b1e49f4f0a768e539e8715db2e36f400d69aa412c8"
+    sha256 cellar: :any, x86_64_linux:  "a5951127d5c9b2aa97b7cbdd3f02a351851ba70ebf19762171b4c50705fbeb10"
   end
 
   depends_on "bison" => :build
