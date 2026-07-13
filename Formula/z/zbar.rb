@@ -50,6 +50,14 @@ class Zbar < Formula
     depends_on "dbus"
   end
 
+  # Fix pointer wrap-around UB that SIGSEGVs zbarimg on images taller than 1px with newer Clang.
+  patch do
+    url "https://github.com/mchehab/zbar/commit/3fa414aa82375648635281924904557cbe4d2d83.patch?full_index=1"
+    sha256 "580ba483ea402dfbd9c5ea5f7459e6f531f4b61a644eddb74196d31552e2926c"
+    type :unofficial
+    resolves "https://github.com/mchehab/zbar/pull/299"
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
@@ -67,9 +75,14 @@ class Zbar < Formula
                           "--without-x",
                           *std_configure_args
     system "make", "install"
+
+    pkgshare.install "examples/qr-code.png"
   end
 
   test do
-    system bin/"zbarimg", "-h"
+    assert_match version.to_s, shell_output("#{bin}/zbarimg --version")
+
+    output = shell_output("#{bin}/zbarimg -1 #{pkgshare}/qr-code.png 2>/dev/null")
+    assert_match "QR-Code:https://github.com/mchehab/zbar", output
   end
 end
