@@ -6,6 +6,7 @@ class SqliteUtils < Formula
   url "https://files.pythonhosted.org/packages/aa/97/101ae34f13ba2878ed9bb53848b248f8d34473bc821cc809858929e9ba68/sqlite_utils-4.1.tar.gz"
   sha256 "70893f5bba2330bf83d6a84bdf9cd6164a566ece377d0447f162e76e4b9ae74b"
   license "Apache-2.0"
+  head "https://github.com/simonw/sqlite-utils.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1060497d1509b3fd864583a821170d21d58b94a2ad6c460d3514737cc82a18f8"
@@ -49,13 +50,12 @@ class SqliteUtils < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
 
     # Ensure uniform bottles: upstream hardcodes both /opt/homebrew (ARM)
     # and /usr/local (Intel) in SPATIALITE_PATHS; normalise to HOMEBREW_PREFIX
     # so all platforms produce identical output after relocation.
-    site_packages = libexec/Language::Python.site_packages("python3")
-    inreplace site_packages/"sqlite_utils/utils.py" do |s|
+    inreplace venv.site_packages/"sqlite_utils/utils.py" do |s|
       s.gsub!("/opt/homebrew", HOMEBREW_PREFIX)
       s.gsub!("/usr/local", HOMEBREW_PREFIX)
     end
