@@ -5,6 +5,10 @@ class CyclonedxNpm < Formula
   sha256 "ef9a69a08252641166e8f4b5a0d743b337fe519350c18d2907da76e63c1da2fd"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "640f9ee7f16ec724a87965672d76cf8897a13775db405d382f1a101f8931a87c"
+  end
+
   depends_on "node"
 
   def install
