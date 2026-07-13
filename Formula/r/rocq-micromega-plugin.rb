@@ -10,6 +10,15 @@ class RocqMicromegaPlugin < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "e2e32190357d65fbbf5d83be1e179d75c34aa91c0f8880a365010bf6ef36277e"
+    sha256 cellar: :any, arm64_sequoia: "0a19d604be6e148f6f9827e70c8859e19627523aab189a3dc8d5ae210fa39c6c"
+    sha256 cellar: :any, arm64_sonoma:  "ba553c7a91ec476f65e1b78da3ed178f23c5d16f2bd639780a030a1ac2fe6592"
+    sha256 cellar: :any, sonoma:        "b28cc65d8093ff84bc46ab295a26919433d73676c34b8003731ca25f3318180b"
+    sha256 cellar: :any, arm64_linux:   "7fe20718dbc38c2c958706d9c3ff0aeac8c5e790011c6faf08ad9479370c9fcf"
+    sha256 cellar: :any, x86_64_linux:  "44d1dcec1c04f4ead2b9f425c4e91d7673234c7339a9fe1debfce64889e4e80f"
+  end
+
   depends_on "dune" => :build
   depends_on "ocaml" => :build
   depends_on "opam" => :build
