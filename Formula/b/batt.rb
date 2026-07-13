@@ -2,8 +2,8 @@ class Batt < Formula
   desc "Control and limit battery charging on Apple Silicon MacBooks"
   homepage "https://github.com/charlie0129/batt"
   url "https://github.com/charlie0129/batt.git",
-      tag:      "v0.7.3",
-      revision: "569ec86b0a201fe0403db131f6eb13f495b62f37"
+      tag:      "v0.7.5",
+      revision: "8148dfc57114f01db7af11bc4ce6ed99b72ea9d8"
   license "GPL-2.0-only"
   head "https://github.com/charlie0129/batt.git", branch: "master"
 
@@ -23,40 +23,32 @@ class Batt < Formula
   depends_on :macos
 
   def install
-    # Point to the correct path for the binary
-    inreplace "hack/cc.chlc.batt.plist", "/path/to/batt", opt_bin/"batt"
-    # Limit config path to Homebrew prefix.
-    system "plutil", "-insert", "ProgramArguments",
-           "-string", "--config=#{etc}/batt.json", "-append",
-           "--", "hack/cc.chlc.batt.plist"
-    # Allow non-root access to the battery controller.
-    system "plutil", "-insert", "ProgramArguments",
-           "-string", "--always-allow-non-root-access", "-append",
-           "--", "hack/cc.chlc.batt.plist"
-    # Due to local changes version tag would show vx.x.x-dirty, override VERSION.
     # GOTAGS is set to disable built-in install/uninstall commands when building for Homebrew.
     system "make", "GOTAGS=brew", "VERSION=v#{version}"
     bin.install "bin/batt"
-    prefix.install "hack/cc.chlc.batt.plist"
 
     generate_completions_from_executable(bin/"batt", shell_parameter_format: :cobra)
   end
 
   def caveats
     <<~EOS
-      The batt service must be running before most of batt's commands will work.
+      The batt service must be running as root before most of batt's commands will work.
     EOS
   end
 
   service do
-    name macos: "cc.chlc.batt"
+    run [opt_bin/"batt", "daemon", "--log-level=debug", "--always-allow-non-root-access", "--config=#{etc}/batt.json"]
+    keep_alive true
     require_root true
+    process_type :interactive
+    log_path var/"log/batt.log"
+    error_log_path var/"log/batt.log"
   end
 
   test do
     # batt is only meaningful on Mac laptops. There is not much we can test
     # in a VM.
-    assert_match "operation not permitted", # Non-root daemon cannot listen in /var/run
+    assert_match "version=v#{version}", # Shows version
       shell_output("#{bin}/batt daemon --config=#{etc}/batt.json 2>&1", 1) # Non-root daemon exits with 1
     assert_match "batt daemon is not running",
       shell_output("#{bin}/batt status 2>&1", 1) # Cannot connect to daemon
