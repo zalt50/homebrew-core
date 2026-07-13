@@ -7,12 +7,12 @@ class Dblab < Formula
   head "https://github.com/danvergara/dblab.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39133b99ab9ae2bfb4c95fc1ccb51ad0981859bcdbd13afdc6ea5a353ef97545"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5711d4ac5c419fffa58a74a737b5f5ee5255136e5c655545928ead09056ef79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4e6332ccc4e1939e5c222db01e7f05c0483ba17b702ed1e80751c4d0a35c0c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b14034a6393f3e3a7b7b835295c83622ccf79be38166393b5ea83eb92ec530ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d8620d740d867100016e2f3bb2b9653bcb896ad0bb3a4e855a2ec191bd8a889"
-    sha256 cellar: :any,                 x86_64_linux:  "ded01bcea2bb2eeb0e2a4c0b6c8653b917cb1dc9b4880067dd97f9b99fba907d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6803adc8128a69b48b6849b2a3c8a1de74978752e1871e194627bffa89835ccc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd55f899fb44382ed280191680c4c217afab54d71a744d4a022220449d7b4bd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf0fb1f2ffbd235aa1656b7009aa868415d5d07c55dc92da88985460bb09a4be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b0d5ed3601c4a4a920a9a7c21b498a97246d0ec42f293b4c74e6e6be4e51757"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6504499802f4558af9b1f67c0fc0be8e2c7a30c74506c28edc83afbcd0a715e1"
+    sha256 cellar: :any,                 x86_64_linux:  "b868806e77251645269155af785243a5a9376d2dc15ff3551b7204295461efd5"
   end
 
   depends_on "go" => :build
