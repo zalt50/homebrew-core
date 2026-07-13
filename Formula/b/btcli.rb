@@ -3,10 +3,10 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.learnbittensor.org/btcli"
-  url "https://files.pythonhosted.org/packages/25/03/067a11e27faceef0f236a76e554fbeeee21d5d8fdc92523649c6684203d5/bittensor_cli-9.23.1.tar.gz"
-  sha256 "3e2b51435695c05b0b7c0df144c1e5c5d426dcd1cc6f508d1749f90078e7812f"
+  # TODO: move to bittensor when it release v11 and deprecate this
+  url "https://files.pythonhosted.org/packages/58/5f/fd9ede99e419ec618d5b6e6136b62a94840bd45be3af8bb0ded5f45cfbb4/bittensor_cli-9.23.2.tar.gz"
+  sha256 "0770e70cd756328093f32556561faa548a8ea357ddc5726918b9422068d2a25d"
   license "MIT"
-  head "https://github.com/RaoFoundation/btcli.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -32,8 +32,8 @@ class Btcli < Formula
   pypi_packages exclude_packages: %w[certifi numpy]
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
-    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
+    url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
+    sha256 "065665c041c42a5938ed220bdcd7230f22527fbec085e1853d2402c8a3615d9d"
   end
 
   resource "aiohttp" do
@@ -57,8 +57,8 @@ class Btcli < Formula
   end
 
   resource "async-substrate-interface" do
-    url "https://files.pythonhosted.org/packages/31/8f/92662fd190154cd62e8af6f12d2f324796e5f61fc68ca31c926222d850fd/async_substrate_interface-2.2.0.tar.gz"
-    sha256 "9bab52bc1c2deab29038ad410119162dcbef394c387c46cb7c5ca15795c962ec"
+    url "https://files.pythonhosted.org/packages/69/9b/29b1d609ed59bb768f913853e664dbac9d6490207a0ada154cbd5a1c7883/async_substrate_interface-2.2.1.tar.gz"
+    sha256 "bd5ca091dfbbbb27d0bba6fc0e24aea3ca5a00c7439e23d0bacd0c8270c85ffd"
   end
 
   resource "attrs" do
@@ -92,8 +92,8 @@ class Btcli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
-    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
+    url "https://files.pythonhosted.org/packages/59/30/a8a0c15f9480dc91b5b7f11ebd26105e5f80898d7ff02da197fef35d8395/gitpython-3.1.51.tar.gz"
+    sha256 "22c9c94bb6b0b9f3c7157c684fece45a414cea204586b600beae6cd4570dcd6d"
   end
 
   resource "idna" do
@@ -127,8 +127,8 @@ class Btcli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/62/3c/c4ef2164a71c1a63d7f1ae411c4082c5fa872405106db60a4b7114989ad7/narwhals-2.22.1.tar.gz"
-    sha256 "d62920805a0a43b7ff8b54b0c0d3142d796f8a9301836ada37e573d6a33cbcd9"
+    url "https://files.pythonhosted.org/packages/e8/ac/66ed1fc6e38a0c0f330627ec5c5d597990d6159b6712b82af0ad2c65f06c/narwhals-2.23.0.tar.gz"
+    sha256 "13e7ff5b4bb4a2f77b907c2e4d8a76e273dfc1323a3c997440a2f9fd26aed408"
   end
 
   resource "netaddr" do
@@ -147,8 +147,8 @@ class Btcli < Formula
   end
 
   resource "plotly" do
-    url "https://files.pythonhosted.org/packages/94/fd/d72c292d78aadb93d1a9bcd76bf3c678271040c7cf10abe5788b33040a39/plotly-6.8.0.tar.gz"
-    sha256 "e088e7ddc68d4f70e3d66659224727a45296d71d2b8284181862d3d8f1f0d88f"
+    url "https://files.pythonhosted.org/packages/96/07/795c79dbce40c39bece88e69d049babbd23ffa95b5d117f248db8ea03abb/plotly-6.9.0.tar.gz"
+    sha256 "967ad33e8c704fed051800d11d985eb206a9c795c14206b30a6f463ed9c67d0d"
   end
 
   resource "propcache" do
@@ -182,18 +182,18 @@ class Btcli < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/5e/ed/ef06584ccdd5c410df0837951ecd7e15d9a6144ea1bd4c73cecab1a89891/typer-0.26.7.tar.gz"
-    sha256 "e314a34c617e419c091b2830dda3ea1f257134ff593061a8f5b9717ab8dddb3a"
+    url "https://files.pythonhosted.org/packages/7c/f7/68adc395201b20b872d68e975386832e8005ffeacedd43a1d837a32815be/typer-0.26.8.tar.gz"
+    sha256 "c244a6bd558886fe3f8780efb6bdd28bb9aff005a94eedebaa5cb32926fe2f7e"
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
-    sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
+    url "https://files.pythonhosted.org/packages/8c/02/b9a097e1e16fee4e2fd1ec8c39f6a9c5d6257bae8fa12640caf869f54436/websockets-16.1.tar.gz"
+    sha256 "299468cbe42e2b9981134c7c51d99387d8a7bf562b00183b3eec53f882846dad"
   end
 
   resource "xxhash" do
-    url "https://files.pythonhosted.org/packages/c8/d4/640915f28a551050e299a2ba6194875de7bfe7e0ecd1be79eb429fcb8a74/xxhash-3.7.1.tar.gz"
-    sha256 "9de50caa75baeca63bcb3b0eb753508a5cddc7757682444d650684bc4ebe1095"
+    url "https://files.pythonhosted.org/packages/8e/63/71aa56b151a1b28770037a61bd4e461c2619cfc8866a4fcaf1548605e325/xxhash-3.8.1.tar.gz"
+    sha256 "b0de4bf3aa66363552d52c6a89003c479911f12098cd48a53d44a0f7a25f7c46"
   end
 
   resource "yarl" do
