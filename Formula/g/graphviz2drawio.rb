@@ -8,13 +8,12 @@ class Graphviz2drawio < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "954e1640d40392d3125956c08981e7899624b6e24b114bfc704b8fc4a5e0191a"
-    sha256 cellar: :any,                 arm64_sequoia: "499ba9aeb4254b8717dfbbb9fd64517cba80755f448e013e18311d55b636f683"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf32769540b693e9d425c30c065b88b30d3e1169d18c6270a7fd17e1ba6169d0"
-    sha256 cellar: :any,                 sonoma:        "50ffcd094a34c8ed5b05038c3bc068f0b14c01e7d2c82e28fc7f48bacf04bf9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff8bbabc5e86b17bf857aaa590244513757a9888a65da4186a29e7b00d74b4c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "680c4fc4b3f8c9ee6fa2fcb74236d86a4bff8d69098bd68fa34d41c7bf9c5704"
+    sha256 cellar: :any, arm64_tahoe:   "fe47e62410931ff639ee09b7217977faf5881f6f3839ed0a698e4b0fc3fda32e"
+    sha256 cellar: :any, arm64_sequoia: "05a4299f0717bab0a538793f0f9dceff150244943649d5400ef84a24e09b809c"
+    sha256 cellar: :any, arm64_sonoma:  "b477129a226b94a0c9fd04a261593c0d269b86b4c384290121214a99a35eab25"
+    sha256 cellar: :any, sonoma:        "3df7a2684d5d7e10ad11a9a1a83ecae879844b2493aaa5a35f92d5070e718a65"
+    sha256 cellar: :any, arm64_linux:   "4b0869d6fb0d504dd997b4f231515019b1e09a4d2cee83728b08d798e06b23c4"
+    sha256 cellar: :any, x86_64_linux:  "613681b5b56f2a81bd780c540822edcc43ead926b7e1bffe9277b41d29bcefb7"
   end
 
   depends_on "rust" => :build
