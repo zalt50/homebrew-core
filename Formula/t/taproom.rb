@@ -1,10 +1,20 @@
 class Taproom < Formula
   desc "Interactive TUI for Homebrew"
   homepage "https://github.com/hzqtc/taproom"
-  url "https://github.com/hzqtc/taproom/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "80609d839488c34c8bf870b70430955fa600266fda16298c79a6c48c529404f0"
   license "MIT"
   head "https://github.com/hzqtc/taproom.git", branch: "main"
+
+  stable do
+    url "https://github.com/hzqtc/taproom/archive/refs/tags/v0.6.2.tar.gz"
+    sha256 "85ee7660bb76ed9277573d2c856bcfebd3181b919edf3862e7f9e15d32097088"
+
+    # Fix version number
+    patch do
+      url "https://github.com/hzqtc/taproom/commit/a26afac788a5122356bf9c07c3c3d04fabae76d3.patch?full_index=1"
+      sha256 "c9c5684f557ba7b3a5db9aee5b7c4a53bc41ac98f713aecd96afebd19ce1066f"
+      type :backport
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
