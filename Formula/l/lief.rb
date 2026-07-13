@@ -6,13 +6,12 @@ class Lief < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b6f221f471b26cf8f34d1ae95cae33fa8ef6d28ef4d6859acab22d452b3b1a1b"
-    sha256 cellar: :any,                 arm64_sequoia: "5c50472f27105fba066b9acf694e57de0905dee0a8be898baa501136d47e08c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "aa688088af9449e251af641056cd24de225fefbbf1cd99c439a86c1265d76a6c"
-    sha256 cellar: :any,                 sonoma:        "b5981714089ac3c5c9351daf530a56b5824fb204d002968b3f2e9cba5b62cfa6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1293a3e476728b496a7cbb3c2053f11251e0f69b9b10a4b1974dc888642acf3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7b066a970ed4ed3ec174e6a5dafb462b3bab06b6dfdce5ce19445a9b350e25e"
+    sha256 cellar: :any, arm64_tahoe:   "37dd7ba619d556306d52fc484e8ef11a5f46b4113c14f9c4fa2fcad40026ae01"
+    sha256 cellar: :any, arm64_sequoia: "3a42557032d6be58c5fab7efd6b5efc4c42b32efd3f7dda9d5215b994c6fbfdb"
+    sha256 cellar: :any, arm64_sonoma:  "b6d758fd8dff1874b6e2a29fa8778fdcac7d57b9c5d0f1930a1d0b4be880683c"
+    sha256 cellar: :any, sonoma:        "ed01fe2547b8d6bc6a90d9794bcddb607b86026aad5101a1243091fce2a70c41"
+    sha256 cellar: :any, arm64_linux:   "d16dcc9d9a7e6e64be829dd35604a68becdb8975e2b7c545749073f849ee9f31"
+    sha256 cellar: :any, x86_64_linux:  "70f43b09dadb74d5a2154798bbc142f7128c6774fbfacb366156c960af368ea8"
   end
 
   depends_on "cmake" => :build
