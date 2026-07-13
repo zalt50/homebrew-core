@@ -9,8 +9,7 @@ class Gitlint < Formula
   revision 1
 
   bottle do
-    rebuild 7
-    sha256 cellar: :any_skip_relocation, all: "9bdd4315c315138d33b927f220ba855762f9d46e87e264b7665fa3cb3407fa72"
+    sha256 cellar: :any_skip_relocation, all: "8cbeb2456ffb352cfa251831fbcc7e15bcf75017c4c82e0b7eb50aafe0d3ebc1"
   end
 
   depends_on "python@3.14"
