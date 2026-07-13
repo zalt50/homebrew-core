@@ -8,7 +8,7 @@ class SqliteUtils < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "eacfb869a601becd17c6f07e7e14a3f0ab5bace5bd57da192b2ed3ee4e7bc052"
+    sha256 cellar: :any_skip_relocation, all: "1060497d1509b3fd864583a821170d21d58b94a2ad6c460d3514737cc82a18f8"
   end
 
   depends_on "python@3.14"
