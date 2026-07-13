@@ -10,7 +10,7 @@ class Pipgrip < Formula
   head "https://github.com/ddelange/pipgrip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "aed6724ce03888fa70a34aac483962d7314edbdf3bb2c6a992e967f2496dddbe"
+    sha256 cellar: :any_skip_relocation, all: "040ba4544197000cf602afc8fc3f4d1356841395652b0b0df2d0aca01d934d68"
   end
 
   depends_on "python@3.14"
