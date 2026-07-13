@@ -4,20 +4,21 @@ class Mp4ff < Formula
   url "https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.53.0.tar.gz"
   sha256 "b6ec3f2267f4cd201c8c68ce8ce865ca2535a84bc37440dcec0b65e8fd92b648"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a55162c6fbe4aeccc77c7225910c7f590a81338ec3ca2ac4a8750cbdbc816e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a55162c6fbe4aeccc77c7225910c7f590a81338ec3ca2ac4a8750cbdbc816e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a55162c6fbe4aeccc77c7225910c7f590a81338ec3ca2ac4a8750cbdbc816e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1cdaaecc23b64e0993e0fdaa88391cc9496e63b54af17b47342cea79a5aa0aae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a30ab0420700a50c60b22d5724dee80518af8bd7262b934d0c3a27aa33e2241"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef60292a003179c12891dd37a275939c4d1583c9751eb7b684533b71f9ef02fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5b4f99e9783da90939bffa8cb2243b40008fd76dc9013cf1829dbbf9d7446c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5b4f99e9783da90939bffa8cb2243b40008fd76dc9013cf1829dbbf9d7446c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5b4f99e9783da90939bffa8cb2243b40008fd76dc9013cf1829dbbf9d7446c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3e8fb2be36e0c0e098297c0222e1a6451bbdb147c268269b8890cab6ba4ee4d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffcae50b0138117450368566862db1c69d8c47aa0d62db21d18a1765dab6811d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43f70ee730b3644c320ef33ac87fe19fb343cecc5856224432ce4ccca706282e"
   end
 
   depends_on "go" => :build
 
   def tools
-    %w[mp4ff-crop mp4ff-decrypt mp4ff-encrypt mp4ff-info mp4ff-nallister mp4ff-pslister mp4ff-subslister]
+    %w[mp4ff-crop mp4ff-decrypt mp4ff-encrypt mp4ff-info mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister]
   end
 
   def install
@@ -45,6 +46,11 @@ class Mp4ff < Formula
     resource "homebrew-subs" do
       url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
       sha256 "1518ba79c86f28414f9285910f8118e00d3b70aa07c6a48ebb1f80b476b1192a"
+    end
+
+    resource "homebrew-mvhevc" do
+      url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.53.0/cmd/mp4ff-mvhevc/testdata/stereo_spatial.mp4"
+      sha256 "caa53ab7cf493d5a59d98b0eb8788a6add5faac6b5adcba58e89fd533174f90e"
     end
 
     # Build a combined fragmented MP4 from init segment + media segment
@@ -77,6 +83,9 @@ class Mp4ff < Formula
     assert_match "[sinf]", output
 
     system bin/"mp4ff-decrypt", "-key", key, testpath/"enc.mp4", testpath/"dec.mp4"
+    dec_info = shell_output("#{bin}/mp4ff-info #{testpath}/dec.mp4")
+    assert_match "[avc1]", dec_info
+    refute_match "[encv]", dec_info
 
     # mp4ff-crop: progressive H.264
     testpath.install resource("homebrew-prog")
@@ -91,6 +100,13 @@ class Mp4ff < Formula
     testpath.install resource("homebrew-subs")
     output = shell_output("#{bin}/mp4ff-subslister #{testpath}/multi_vttc.mp4")
     assert_match '- cueText: "<c.white.bg_black>Ouais ! Belle gosse ! Voici 2 M !</c>"', output
+
+    # mp4ff-mvhevc: inspect a stereo MV-HEVC (multi-view) track
+    testpath.install resource("homebrew-mvhevc")
+    output = shell_output("#{bin}/mp4ff-mvhevc info #{testpath}/stereo_spatial.mp4")
+    assert_match "hvc1", output
+    assert_match "lhvC", output
+    assert_match "views=2", output
 
     # Version check for all tools
     tools.each do |tool|
