@@ -1,17 +1,17 @@
 class OhMyAgent < Formula
   desc "Portable multi-agent harness for .agents-based skills and workflows"
   homepage "https://firstfluke.com/oh-my-agent/"
-  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-10.14.0.tgz"
-  sha256 "37ae2ff95371e69a60a3e30f61c2ed9f03bc8be198de76e23c6feeccdea2452f"
+  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-10.15.0.tgz"
+  sha256 "29fba8f57ba674c7e1ea882a0bdd27b605f14c8fc94312509fa4a228cd709687"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "76ae0e431755530030d4118d6e5343b257b617f68b091c6cfa24be1fbf29842c"
-    sha256 cellar: :any, arm64_sequoia: "0938309ac7957da0a8c71f650b2df234ad7ee7cbd086cd8f130d029fa87ca233"
-    sha256 cellar: :any, arm64_sonoma:  "0938309ac7957da0a8c71f650b2df234ad7ee7cbd086cd8f130d029fa87ca233"
-    sha256 cellar: :any, sonoma:        "520ad2b1b4d6803f69a9407123051173fd35e5550cab67866b7edeae4dd1ab52"
-    sha256 cellar: :any, arm64_linux:   "bc9273ba5ba1c2330ea8bd09d117401f7180090654b48e9dc0e847a581f28588"
-    sha256 cellar: :any, x86_64_linux:  "47b9ed6ad28fb04207880be1f683b0f6542058bb323c6df4c6039800ba616726"
+    sha256 cellar: :any, arm64_tahoe:   "9dadff809fd83304af4745192595e680c70afec38ac9160f742502d8a6f7c205"
+    sha256 cellar: :any, arm64_sequoia: "16e0412ccb4fd02ecc93add0f5a1fbcec50f3f90c91e5c0a52f9c89b27ba3634"
+    sha256 cellar: :any, arm64_sonoma:  "16e0412ccb4fd02ecc93add0f5a1fbcec50f3f90c91e5c0a52f9c89b27ba3634"
+    sha256 cellar: :any, sonoma:        "d473419ee984c26a8261e0d642c7831bbb3533052c573c58c2f570dbfb7ff8f2"
+    sha256 cellar: :any, arm64_linux:   "e2fdb78aab94856f2f70a6d6bd9906a716fbf07acb44c4bc9c56f82817fc6e4a"
+    sha256 cellar: :any, x86_64_linux:  "8c4674cf14629e47ec0009ed40a8de417f7a614e83e6bf505c3a21f0b61c24f1"
   end
 
   depends_on "node"
@@ -34,7 +34,7 @@ class OhMyAgent < Formula
 
     output = JSON.parse(shell_output("#{bin}/oh-my-agent memory:init --json"))
     assert_empty output["updated"]
-    assert_path_exists testpath/".serena/memories/orchestrator-session.md"
-    assert_path_exists testpath/".serena/memories/task-board.md"
+    assert_path_exists testpath/".agents/state/memories/orchestrator-session.md"
+    assert_path_exists testpath/".agents/state/memories/task-board.md"
   end
 end
