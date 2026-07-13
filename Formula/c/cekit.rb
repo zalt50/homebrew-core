@@ -9,12 +9,12 @@ class Cekit < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "87c37dcbed05db79ec5b50b9276dcf59b919651359aaa4f6dc32d288752eaafe"
-    sha256 cellar: :any,                 arm64_sequoia: "c835d727e0ba9e7433e09aa85f49dffc90a4d55e68c39f643b5c584ce98799e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "c41f78aaf385b0bcae1fd86833ce720883c1f8f93a277e2022c6cbd372065029"
-    sha256 cellar: :any,                 sonoma:        "edb62835bb61b5103635737185c0b0d05f03c6dbcc46d8eea531c9be08bf7e3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c51f4773091b2ebd1eaf8150882fbf92e26354ce249d35d056418b57c4b0a1c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "298b831ac276a17cc40a389484be26ea952a061d83cf7aeb78ce3c97cdc0fe39"
+    sha256 cellar: :any, arm64_tahoe:   "74ce0199659386d80485f4d3feb3dd7132bcc6cacd3f13637ee178baced8c1e0"
+    sha256 cellar: :any, arm64_sequoia: "ad863ef06f0d94a24f9b8c4a4489bc19fc0000e92aa435c01e78ad27bfbe031b"
+    sha256 cellar: :any, arm64_sonoma:  "098eb2d627d42b5751e702abced54047c677e619a963ec5e38ba9e4cb674ffc3"
+    sha256 cellar: :any, sonoma:        "1d80ac1f3f4b65636d6288413f01dbe3682cbc412889292a39d1710745324070"
+    sha256 cellar: :any, arm64_linux:   "fa7b2c6dfc51fbea72009c8d139f1252bd580ae2e2939fe1eb36d8bb00ada78a"
+    sha256 cellar: :any, x86_64_linux:  "28831baa81f3a2d2d1701c9f18aaf95c15351eb3664e387fcf2aa52348ee088a"
   end
 
   depends_on "libyaml"
