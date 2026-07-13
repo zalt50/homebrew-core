@@ -9,7 +9,7 @@ class SqliteUtils < Formula
   head "https://github.com/simonw/sqlite-utils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1060497d1509b3fd864583a821170d21d58b94a2ad6c460d3514737cc82a18f8"
+    sha256 cellar: :any_skip_relocation, all: "0588c46da4e3c57b3cf21f6a67f440d00eb5fb5d995f2b43e346c3919c057fdf"
   end
 
   depends_on "python@3.14"
