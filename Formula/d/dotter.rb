@@ -1,8 +1,8 @@
 class Dotter < Formula
   desc "Dotfile manager and templater written in rust"
   homepage "https://github.com/SuperCuber/dotter"
-  url "https://github.com/SuperCuber/dotter/archive/refs/tags/v0.13.4.tar.gz"
-  sha256 "46135bcae1940cb22284308bd2cf75d78bb06a748136d835f29db978521fd45a"
+  url "https://github.com/SuperCuber/dotter/archive/refs/tags/v0.13.5.tar.gz"
+  sha256 "4ce8550c53db13ddebd683828ee954bf71caed010b3337b291bc5a536aeddc18"
   license "Unlicense"
 
   bottle do
