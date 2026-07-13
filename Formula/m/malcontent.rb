@@ -7,12 +7,12 @@ class Malcontent < Formula
   head "https://github.com/chainguard-dev/malcontent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "eb538abd47884032a24df871d8bc11535afc0af6b48cfe7523995ebb2d809a1c"
-    sha256 cellar: :any, arm64_sequoia: "26aa4734b12b55bdde89c31c76c9cc4d50c897e0962114a00d30d117340eb004"
-    sha256 cellar: :any, arm64_sonoma:  "1b24e7af55557677207390f152760c41d493fdb4e5d6cf1276f5eaa24f3885ee"
-    sha256 cellar: :any, sonoma:        "9a339a11fb9626af66e89cc553b20601a2dd729cddcba0e3e70c4870ddafec57"
-    sha256 cellar: :any, arm64_linux:   "ce77cff4dfb8282fc6ef40d441fff7a90450774a5343abc00ff358ea9b8954f7"
-    sha256 cellar: :any, x86_64_linux:  "2da9eb0388fe8da60f37f699332ae7e803e3c8cfc28efa39d3c3abc4cbd34d94"
+    sha256 cellar: :any, arm64_tahoe:   "b7ae00df26c7092d5d230d694d2ff6ef59e7b1f880f735b9a21e4032cc6ef1cd"
+    sha256 cellar: :any, arm64_sequoia: "889918236a18c1f3e635cabc2503dd299264a49f9ae7c81a44aea49d3fe11d7e"
+    sha256 cellar: :any, arm64_sonoma:  "7ddd0698ba9509227bc199c6e46a60fe2ef74e7ec6008c8c845a53422c0adbd7"
+    sha256 cellar: :any, sonoma:        "e6f0dddee0e53227e05c756c543d80faea5d7880cb86b53291c3407088fd7265"
+    sha256 cellar: :any, arm64_linux:   "dc363617c842bf4f4b6ecb1939de9ef7ef8f86b749ee2c0da71f4a2ee9eb6e49"
+    sha256 cellar: :any, x86_64_linux:  "a1545b5de4e7d2431578515ee72f618ad4e1aef08addfda0c18b2cb60bbcf6d8"
   end
 
   depends_on "go" => :build
