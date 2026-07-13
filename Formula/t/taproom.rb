@@ -17,12 +17,12 @@ class Taproom < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57bdb6268f1817d02feceb42f9c32f4ff03513089f8219d1e1dc0f6de859c22f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b62900cb76de254441da1a112fcf62716aa017f45648b43c3f84ec3f465e5a68"
-    sha256 cellar: :any,                 x86_64_linux:  "cd176204ae635eb6c73943610ef17f5edc46baea70fb74107cc39f3d2697945b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a73070fe3f2815fd0e32ac46190f259fd3820c6da4fdab7d39d757b7e47793"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78a73070fe3f2815fd0e32ac46190f259fd3820c6da4fdab7d39d757b7e47793"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78a73070fe3f2815fd0e32ac46190f259fd3820c6da4fdab7d39d757b7e47793"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aceb12e9b3656527606e8cef30da476be4770a96c6d9db135938fbd6657c0882"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9c5c7a64b894f51329af881309d1d4df87d01288350677c3a340e30b8cb9a41"
+    sha256 cellar: :any,                 x86_64_linux:  "d7a4da4465783d5db774eae5af6b74c6f8d7abb63a7d93f0f966df950f5351a6"
   end
 
   depends_on "go" => :build
