@@ -4,6 +4,7 @@ class Mp4ff < Formula
   url "https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.53.0.tar.gz"
   sha256 "b6ec3f2267f4cd201c8c68ce8ce865ca2535a84bc37440dcec0b65e8fd92b648"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a55162c6fbe4aeccc77c7225910c7f590a81338ec3ca2ac4a8750cbdbc816e8"
@@ -17,7 +18,7 @@ class Mp4ff < Formula
   depends_on "go" => :build
 
   def tools
-    %w[mp4ff-crop mp4ff-decrypt mp4ff-encrypt mp4ff-info mp4ff-nallister mp4ff-pslister mp4ff-subslister]
+    %w[mp4ff-crop mp4ff-decrypt mp4ff-encrypt mp4ff-info mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister]
   end
 
   def install
@@ -45,6 +46,11 @@ class Mp4ff < Formula
     resource "homebrew-subs" do
       url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
       sha256 "1518ba79c86f28414f9285910f8118e00d3b70aa07c6a48ebb1f80b476b1192a"
+    end
+
+    resource "homebrew-mvhevc" do
+      url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.53.0/cmd/mp4ff-mvhevc/testdata/stereo_spatial.mp4"
+      sha256 "caa53ab7cf493d5a59d98b0eb8788a6add5faac6b5adcba58e89fd533174f90e"
     end
 
     # Build a combined fragmented MP4 from init segment + media segment
@@ -77,6 +83,9 @@ class Mp4ff < Formula
     assert_match "[sinf]", output
 
     system bin/"mp4ff-decrypt", "-key", key, testpath/"enc.mp4", testpath/"dec.mp4"
+    dec_info = shell_output("#{bin}/mp4ff-info #{testpath}/dec.mp4")
+    assert_match "[avc1]", dec_info
+    refute_match "[encv]", dec_info
 
     # mp4ff-crop: progressive H.264
     testpath.install resource("homebrew-prog")
@@ -91,6 +100,13 @@ class Mp4ff < Formula
     testpath.install resource("homebrew-subs")
     output = shell_output("#{bin}/mp4ff-subslister #{testpath}/multi_vttc.mp4")
     assert_match '- cueText: "<c.white.bg_black>Ouais ! Belle gosse ! Voici 2 M !</c>"', output
+
+    # mp4ff-mvhevc: inspect a stereo MV-HEVC (multi-view) track
+    testpath.install resource("homebrew-mvhevc")
+    output = shell_output("#{bin}/mp4ff-mvhevc info #{testpath}/stereo_spatial.mp4")
+    assert_match "hvc1", output
+    assert_match "lhvC", output
+    assert_match "views=2", output
 
     # Version check for all tools
     tools.each do |tool|
