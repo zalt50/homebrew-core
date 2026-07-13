@@ -27,9 +27,8 @@ class Xinit < Formula
   depends_on "xterm"
 
   on_macos do
-    depends_on "lndir" => :build
-    depends_on "mkfontscale" => :build
-
+    depends_on "lndir"
+    depends_on "mkfontscale"
     depends_on "quartz-wm"
 
     resource "xquartz" do
@@ -87,7 +86,8 @@ class Xinit < Formula
     ]
 
     system "./configure", *configure_args, *std_configure_args
-    system "make", "RAWCPP=tradcpp"
+    system "make", "RAWCPP=tradcpp",
+                   "libexecdir=#{opt_libexec}"
     system "make", "XINITDIR=#{prefix}/etc/X11/xinit",
                    "sysconfdir=#{prefix}/etc",
                    "bindir=#{bin}", "install"
