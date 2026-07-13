@@ -26,6 +26,13 @@ class Cgal < Formula
     depends_on "openssl@3"
   end
 
+  # Backport fix for .debug_gdb_scripts section to avoid errors on some linkers
+  patch :p2 do
+    url "https://github.com/CGAL/cgal/commit/eb2257df4da4c52c75fe384e803d9a6376057b8a.patch?full_index=1"
+    sha256 "2686aea78dc3a58180eb1744dea44f27bd4d692ae8cfc9a4fab2a616fd6b7535"
+    type :backport
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
