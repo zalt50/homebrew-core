@@ -9,13 +9,12 @@ class Mkdocs < Formula
   revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "01be89d0831a80d0923aae6b61e491c35c157d58799fc1322f08cbd49eddf4b7"
-    sha256 cellar: :any,                 arm64_sequoia: "fbbd85bbe0bc9e00b24a110d7c63694f7345b5521b4ca3f6315a88d1301ffb81"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f3a4f3c5d027bdd1348f2223ef378d922749e6b013740f72be731e344618a95"
-    sha256 cellar: :any,                 sonoma:        "73ad3704aa4cdf2ac6773e0ec17d31866eaac7d39734b2bf37f1d78f879c8bcf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72100f5ccf0b634b67e10aa25f7bd35d1d51001b78c10ccb449aaadd642e6592"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2040d82febb29aed1488dc7dc1a8c5550287e8bb51f54546e26e322b46ea656e"
+    sha256 cellar: :any, arm64_tahoe:   "0076411cb8be48c77b98587c1b9b5150a3ac6f2a5ad0e3369b06a76db990f196"
+    sha256 cellar: :any, arm64_sequoia: "c1574a9c537c3296ee92b4f61372821cfd9c380c142d1c3411f7e2c06eca3155"
+    sha256 cellar: :any, arm64_sonoma:  "e1d9f105030abf9be129f221b522cd9798d77c7ca2be1e18e7eeaf79655ac643"
+    sha256 cellar: :any, sonoma:        "f9ac93cc9757a00609a1bb29170a992c1b6dc7619cf824306805df1c03d0c73b"
+    sha256 cellar: :any, arm64_linux:   "7b443a93a680bd1996dc62136aea57c53c07b75fec7cabe11b21729a28de7a90"
+    sha256 cellar: :any, x86_64_linux:  "ef400923cf8275f08b947f051d563e5e5c2b4bd361689039429c29d7938fdbac"
   end
 
   depends_on "libyaml"
