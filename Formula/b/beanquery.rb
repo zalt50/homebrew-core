@@ -9,13 +9,12 @@ class Beanquery < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0ea637446c2d7eb8930e746b3be679eeae47b1076caf5058db7663c8a58af38"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ca536f7312cd6167419431e34d58244102d1cdc5baa9423932b3d32bc54b60f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45ef625aee5f37785cebbaa263bfe2dd164bdea24048c0b18692f4dedc3e8fc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40dd1c6d699b8e9ec7ffe963810b8dfe632d6ec400ff2a194f6f2e757af73ce5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39e9789b913f6c9cab4d48316faa39cf02c2f4ac679516039dde84136c7d66e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed19884643dbf00f34a7ed9765324a7d04d84adf58432bce9281b27629e57290"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddd8c2ad4ba947cc614faf96f7374b610f96e54c0fabf4774a597806c0d82dc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b639bc6f221f33c0a82b416a1590f52cfc1bf7eb63fb98969682a572566c8c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43b7bfa0114e5a85269aa7830667ee01adc0dc4c93e0fb5f6dbd20b287663019"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6da6f5a89a4d8c6fc09c9196439ff5f525195c711202594abce9575fe7148c55"
+    sha256 cellar: :any,                 arm64_linux:   "3d35a98ed624a6d99c065cd4d3ad131e00d5327f8d296060cb66df31f7978689"
+    sha256 cellar: :any,                 x86_64_linux:  "1f1a8d07367f8be58e0fe7b1d5cf556e24196d2dac0db8032b6ec35fa17c3164"
   end
 
   depends_on "bison" => :build # for beancount
