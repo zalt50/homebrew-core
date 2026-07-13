@@ -7,12 +7,12 @@ class Tbb < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "00e4867e969892148347ae14b779209cac8de44c69227b86749ff4840f6184e8"
-    sha256 cellar: :any,                 arm64_sequoia: "939acac1ca4fad1bdee9ef1d03a15833c865f261025dfaf1628b9c70745ad0f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "35e95645a813d1d889347ecbfc7b27e79ca5bb0fba3dc339d527068217f70410"
-    sha256 cellar: :any,                 sonoma:        "ae17b9ec825d97023639168e5cd62ab5074063b54b089a169ce5e02fc771a7c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6dd633794722403f96b0e41d16310d4099844902509ef7db431e016dd23343b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "519c5cc0a84ff581b4fa78684d4a15ba6d87daa5f381e3a1b8930dc6eca8daef"
+    sha256 cellar: :any, arm64_tahoe:   "a22d949f7716fb25f1bf7a35a7357206ef36a581f63b27a1025c690913736cb5"
+    sha256 cellar: :any, arm64_sequoia: "d70b4cecfb5f3803554856437de3713380a13b81eb19bfe02569d2bdc03a486e"
+    sha256 cellar: :any, arm64_sonoma:  "716d0f6b514266c1927263ba37f5bdc9bafccde459d257d2def6683631dc98ee"
+    sha256 cellar: :any, sonoma:        "eb65a529712d2fc817da657279ca634d949ff2e25a222324c394bef788c7946c"
+    sha256 cellar: :any, arm64_linux:   "c4e171925dca51b9e1dd4b8c13cda476825df2e5ecd74586d5899efbec2218c2"
+    sha256 cellar: :any, x86_64_linux:  "d07e15ec5922544419b1ee6bc05020f52d41144e79fcf01b6bd3b7b40c0cb8b1"
   end
 
   depends_on "cmake" => :build
