@@ -20,12 +20,12 @@ class Rocq < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "115c48fed35576b8543ee131ce2e7d76aacbaf41bf26ba748da6e91318ac47e6"
-    sha256 arm64_sequoia: "6189d339f699d4741e897e3dd72b5e1b3166882cb5f8daaa0ee1e51577a98c95"
-    sha256 arm64_sonoma:  "00d13e12440801af1ca6c5511d1d25ed42aced5b2bb42156ad115add4abfb76e"
-    sha256 sonoma:        "d8cc0cb44561d73766ce10cdc1bdf105d07f98d0ba1cc478ea97d199500e4da3"
-    sha256 arm64_linux:   "0444ebaece6e0db5bff8c49dccdff11aeda920b641f5bef478ee54a667f7f59b"
-    sha256 x86_64_linux:  "d260c686d4408133e018b5035683bd963f4b0844af66f9890307929965f908b1"
+    sha256 arm64_tahoe:   "2e2a4c16e90c21d3baa45352ff39df6bc934d643c5e9fecdddf9f4ee3483aecd"
+    sha256 arm64_sequoia: "4e5910bd59bf71c5b891591d1f7b039029cbef5415e73dc0bb4448923c403a8b"
+    sha256 arm64_sonoma:  "cab7ab2eff645985a0cfe97c53d99c17dac6bcc192d58f7ad5b38d2de5fee619"
+    sha256 sonoma:        "c1bd10138d7aa10292f4337e33cfc2721b045572738e8f69d77ac6a90e152f82"
+    sha256 arm64_linux:   "f9e9c8d1fef13ded0918f8ba02a9a04e319356bf19a88e50ff69c9e781d2455b"
+    sha256 x86_64_linux:  "61bfbed04999eaabaf499bf0c0f884bd16298300ddd0d692bc819d947f6a1fb3"
   end
 
   head do
