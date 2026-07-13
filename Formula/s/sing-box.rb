@@ -27,8 +27,7 @@ class SingBox < Formula
     ldflags_shared = File.read("release/LDFLAGS").strip
 
     if OS.linux?
-      ENV["CC"] = formula_opt_bin("llvm")/"clang"
-      ENV["CXX"] = formula_opt_bin("llvm")/"clang++"
+      ENV.llvm_clang
       ENV["CGO_ENABLED"] = "1"
       ENV["CGO_LDFLAGS"] = "-fuse-ld=#{formula_opt_bin("lld")}/ld.lld"
     end
