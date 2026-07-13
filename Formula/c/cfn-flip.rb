@@ -9,13 +9,12 @@ class CfnFlip < Formula
   revision 3
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "91cf666b7be505945d1297f00adaae08f845a5949371a5575a3b6f05877bdd47"
-    sha256 cellar: :any,                 arm64_sequoia: "beb6acb08ffbc695cd400c5fce04973519ba0cf0521562134de52d76c2a6a8d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1c4ca4f9eb9015da077c27998e7b4e4406607566eb1a366327cb4d65b9700f5"
-    sha256 cellar: :any,                 sonoma:        "50abc0dcca0ad672acefca8f38926dbe775070472bb28b96f4d899755399256f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fc33742bd230258121b4e247daea5aec24567465769ab928f4fcb270630cd7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aa60a3fda02c52177a0b6497ba0c7e35a00972d0126a9f78bd2ac179893d22c"
+    sha256 cellar: :any, arm64_tahoe:   "d1306b16bb259f471bb5b2e80b4707c3bc04cba757306d353363e24a004c858a"
+    sha256 cellar: :any, arm64_sequoia: "ab5f9212ee1b15e48f2ea3326c8d6e1297f804f216994277a6bc7c93fff12111"
+    sha256 cellar: :any, arm64_sonoma:  "d45ad504e83289265b246cafa40c3d1e8f69c7f79c172603851f87319bd958a4"
+    sha256 cellar: :any, sonoma:        "35b3551a30a2ecf7793cb5a7ab58558142b7196b01d4446f4a31e3c039f6afd6"
+    sha256 cellar: :any, arm64_linux:   "87c95cb7cc5b1fd91015a2bc099e90557f690abafdc1a4a4a7589fbd6ca6b4d7"
+    sha256 cellar: :any, x86_64_linux:  "a790d632f4cc2eb04499499df83fe4b804b4a4187e7cfbc20df5e80e262ec69b"
   end
 
   depends_on "libyaml"
