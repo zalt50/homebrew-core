@@ -9,12 +9,12 @@ class Rasterio < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d424a331368a65194ddf4fa72e6f7484d288573d59718f33aa6a2d0f03c6ad40"
-    sha256 cellar: :any, arm64_sequoia: "e147443566277f730a8b88716205183965d5a5f8ca48b8f27429f3548c0b21bd"
-    sha256 cellar: :any, arm64_sonoma:  "25b3381b428466d0022ca3f6b6f25c5bec26b810d3ce1ae8be684e2aa5368bd8"
-    sha256 cellar: :any, sonoma:        "f0452a5b46826dd7606272d1f2a8ebc6229b4c95dced5d49ea906c4e4e496379"
-    sha256               arm64_linux:   "3a9016230592994c65a5622d4c5b6c0d5ec83a1cd2f399fabf226508c75c70c7"
-    sha256               x86_64_linux:  "ed8332d9541a921c8bbc3301a9c26680ddc083eab6e704e9036a4e7e1e10903b"
+    sha256 cellar: :any, arm64_tahoe:   "68c8d0911cebaa1aaccaa1ccb87ee6cf3ec6d56e9f8ee60199c64236e6d8fba3"
+    sha256 cellar: :any, arm64_sequoia: "591f590ecce0687073023584b7e9c4d520f2d280fd9bdffcd7df963d3e601569"
+    sha256 cellar: :any, arm64_sonoma:  "b5cbcf3621423be28f76a6755a1d4c29a8a8d9c92c449d238a4d270181bc6797"
+    sha256 cellar: :any, sonoma:        "b8fa2416362276c7c05656b16281d369ccd714a514091a68a2a9e864715a5c3a"
+    sha256               arm64_linux:   "17e25267d496e1b3e514aa536c0a00d06a4cb1ce618f85b22ca233627dcd3d63"
+    sha256               x86_64_linux:  "b875a035b670a9fe16c135649b8e46f58cfc41907bc211d5747898a6b0ef0ed2"
   end
 
   depends_on "cmake" => :build
