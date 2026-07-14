@@ -7,12 +7,12 @@ class FoxgloveCli < Formula
   head "https://github.com/foxglove/foxglove-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbecdaa31a416270a4352110b4e432570dbce113053889791a8b2aa115d8ee44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e08df2a52faad8db844e5172f41d1ed7c73550e52abbec88083fa1bf4b7d1ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16ed66cdbff59115706e390dcc0aabca6e25d7aa8e77df27fb6ac94952bbf558"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e856beaefef6f0e557ee0fa19ac3e396fd8e34682d4adb9e324ec18c78801ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "115a2034a4c16aa7285f22f3b66383a8a82fc4824a42278d300ecfe229089bff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccd8d2a1f61d8d8116e475a55f8fe350114b18dfa73989ccea90d7775f97d905"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d27595ea78ce880eb52768ca86d560df877d615206f50c97b119fb5522a9ca13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bf7f1bf23f216a5bb4e6dbb9f2c876ec1f866c4798d1bf7e5b7d0cfb73f97f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10829281d54c977cf7e002fe6de9238b90553d5abc15a51409a07304c3a7f5ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5dd0a6ca0a7d689fbb1fdf96f6c634b1943e5958ff4294a7286afad2440a59da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fa92b6f350d865a9d627c1e5b50404186d5805d66a9557cfcee894bb988cab8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d22d8c169b489f5e4670e3ef115b77ef8efabef025479d9b5af3845b8f211eae"
   end
 
   depends_on "go" => :build
