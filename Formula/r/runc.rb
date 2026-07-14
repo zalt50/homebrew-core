@@ -12,8 +12,8 @@ class Runc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "0e73a2c47dc91563d76d57372a774bd9b8ffa46f428b72ac1e416dce1cf36d64"
-    sha256 cellar: :any, x86_64_linux: "aa378bd3b68e139355dabd79f98366fbfa3effbe5097fd2d1a1438869507662a"
+    sha256 cellar: :any, arm64_linux:  "ccd6721a4423a730165676eaebe6a398ceca37d182728dbbbeebdad8bda309d9"
+    sha256 cellar: :any, x86_64_linux: "e400d154e3cff5ed439860ae797a30c85c0f5e45b2b499c0ff20801b85203f2b"
   end
 
   depends_on "go" => :build
