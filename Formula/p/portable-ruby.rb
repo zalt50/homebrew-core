@@ -3,10 +3,9 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
-  sha256 "7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
+  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.6.tar.gz"
+  sha256 "837d299e8f7ddf2be31a229a7a7e019d354979825117989acb3b32b1a9be262a"
   license "Ruby"
-  revision 1
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -32,8 +31,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "msgpack" do
-    url "https://rubygems.org/downloads/msgpack-1.8.0.gem"
-    sha256 "e64ce0212000d016809f5048b48eb3a65ffb169db22238fb4b72472fecb2d732"
+    url "https://rubygems.org/downloads/msgpack-1.8.3.gem"
+    sha256 "8bda4a6428d3244e50d6bd55854d354edbada88a4e1f4f5731a39a0f86bee6a1"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/msgpack.json"
@@ -44,8 +43,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "bootsnap" do
-    url "https://rubygems.org/downloads/bootsnap-1.24.5.gem"
-    sha256 "36b677448524d279b470469aabd5dff4a980e3fa4931a0df68da4a500eb1b6c4"
+    url "https://rubygems.org/downloads/bootsnap-1.24.6.gem"
+    sha256 "c60bab88c70332290f0a2636a288f675299eb4f804a02a3c085b42eca9da164a"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/bootsnap.json"
