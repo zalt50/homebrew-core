@@ -8,12 +8,12 @@ class Isponsorblocktv < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "892a6c836a26ae8b426838af77edc858ae3fd068dcfbfc586b51e109d820a475"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13262f35df0c08c00a18d3ce814cb1d3678f48115b77c0dea0b5cf79d664ca41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d2341bd4ce674ed740a64b6abb48e95c505cdbe7a4505c3c1fa72413ecf6666"
-    sha256 cellar: :any_skip_relocation, sonoma:        "524a2b2dc98c024a4a5038831faa739ff356655d6504a8cb0374ad8350f09026"
-    sha256 cellar: :any,                 arm64_linux:   "50d6ee343e11d6965bebe8d23bcf19aa2b1eae232c19c7ecf9d9f40db69138d3"
-    sha256 cellar: :any,                 x86_64_linux:  "37e23c3caf43785087d9c5c55dc85986feb9d513215e95b9256ffc53c3e8b71b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "401a368805976b7ab5753611be35076d033c63a8e2ad49357f7ee737ae162e50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec582573d3a7635c897260266adea3c6f59eb2efe0df24b0eb9d78c170a5556e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af2aaeafb85a2a4c9d1f9cde8615b75e55926f780c26d9c82db7cc3d2ae11aa6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9bf9402a5c46c168a8743c440590f244ff207e3f631b070fae7ddee167ff0b75"
+    sha256 cellar: :any,                 arm64_linux:   "2204b861943866767c25c2ad3c28181f336ae65eb6a37d507ff5d406acf72183"
+    sha256 cellar: :any,                 x86_64_linux:  "c837fa54b773712c04630f01d13416d74fec21f34645b9da95b8824d60a918f5"
   end
 
   depends_on "certifi"
