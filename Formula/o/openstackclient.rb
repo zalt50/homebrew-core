@@ -8,12 +8,12 @@ class Openstackclient < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d07c4f9b0b711168ec9bf0d4975ee062026bfe321b6a79b66235e134b7b92e06"
-    sha256 cellar: :any, arm64_sequoia: "389c5dbb1bcda0bbbc17b6843749ed4f60ad9bec4ca656e7507efd73c8844641"
-    sha256 cellar: :any, arm64_sonoma:  "9cac3dc9b24703edf1d8f9d29f714db52e5d5b1eff4c25ddd51918cb43c57448"
-    sha256 cellar: :any, sonoma:        "3a5b29594e60aae0355ed9c4b0cb4d9d55827df9d5bdc69ec4992db6ff799154"
-    sha256 cellar: :any, arm64_linux:   "ad535e4048cfbefad598c80f580d35ee561aa90526ae9654ddabab1f1886780e"
-    sha256 cellar: :any, x86_64_linux:  "3097b88e6822e224cc40902f7a163cfc0e2dfcc14d7d7591a9d2370ce9f511ce"
+    sha256 cellar: :any, arm64_tahoe:   "eba8b7f5ae447efec01b463c28bdfbc7c978212d39cd466d4b88acb409c05221"
+    sha256 cellar: :any, arm64_sequoia: "6dd6edfd660758884a835cd584664411d32d71bd50df1825b1c5e110a96db9c6"
+    sha256 cellar: :any, arm64_sonoma:  "578fed2e245408407b9bed825fec21d189a72ea8d2fb250b3d280d29bda72a67"
+    sha256 cellar: :any, sonoma:        "40a34616e18b053b1b4775076f95e7c6ce247d8ae9d398227a74af140afbfff1"
+    sha256 cellar: :any, arm64_linux:   "20b75e5a64da329dd96b8a976235d33f85e651d03c628c0d06b68c96d440534f"
+    sha256 cellar: :any, x86_64_linux:  "666884c21336faef310ccc89224199ea1f0ceecf0bcc317cf949dcd28b1d2645"
   end
 
   depends_on "certifi" => :no_linkage
