@@ -1,10 +1,9 @@
 class Skalibs < Formula
   desc "Skarnet's library collection"
   homepage "https://skarnet.org/software/skalibs/"
-  url "https://skarnet.org/software/skalibs/skalibs-2.14.5.1.tar.gz"
-  sha256 "fa359c70439b480400a0a2ef68026a2736b315025a9d95df69d34601fb938f0f"
+  url "https://skarnet.org/software/skalibs/skalibs-2.15.1.0.tar.gz"
+  sha256 "f9c905e74935c6fe911c7e344e3e89d5fbd2014c1a04650b524b15ce9b5635d1"
   license "ISC"
-  compatibility_version 1
   head "git://git.skarnet.org/skalibs.git", branch: "main"
 
   bottle do
