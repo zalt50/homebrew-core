@@ -1,8 +1,8 @@
 class Speech < Formula
   desc "On-device speech toolkit for Apple Silicon: ASR, TTS, VAD, diarization"
   homepage "https://soniqo.audio"
-  url "https://github.com/soniqo/speech-swift/archive/refs/tags/v0.0.21.tar.gz"
-  sha256 "c276f02ecc707c49f099c3ef4d2dd0239b90928ffc9e015be10b1a94f908ef97"
+  url "https://github.com/soniqo/speech-swift/archive/refs/tags/v0.0.22.tar.gz"
+  sha256 "62bf1eccdf9c54254dc32c84e8260202c88c1440fd863b605b30299bfd9f9427"
   license "Apache-2.0"
   head "https://github.com/soniqo/speech-swift.git", branch: "main"
 
