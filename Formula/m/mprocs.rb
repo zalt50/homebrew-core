@@ -2,7 +2,7 @@ class Mprocs < Formula
   desc "Run multiple commands in parallel"
   homepage "https://github.com/pvolok/dekit"
   url "https://github.com/pvolok/dekit/archive/refs/tags/v0.9.6.tar.gz"
-  sha256 "62488726fc5539772a41863428026f51b4c03d5ac27c56191775e5a721ae90c2"
+  sha256 "294fa02bfec7c73bc29448c55497ac46deda8b82bec259e492c51cfb67330c2d"
   license "MIT"
   head "https://github.com/pvolok/dekit.git", branch: "master"
 
