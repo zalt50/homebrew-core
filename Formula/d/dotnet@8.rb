@@ -2,8 +2,8 @@ class DotnetAT8 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.128.tar.gz"
-  sha256 "42b2a05ed2758fdc4e18498fac6ec4d888c3643d3c8aa7199ca6c4a3e0059c79"
+  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.129.tar.gz"
+  sha256 "5141b7551a98f742543c21af3ffe32e3ff83d1f55754de024f23bb2f9e7a277f"
   license "MIT"
   compatibility_version 1
 
@@ -55,8 +55,8 @@ class DotnetAT8 < Formula
   end
 
   resource "release.json" do
-    url "https://github.com/dotnet/dotnet/releases/download/v8.0.128/release.json"
-    sha256 "228deb86b56420fee64fe820ebbe607634e860bedbcca1c495ff713f00e22e6f"
+    url "https://github.com/dotnet/dotnet/releases/download/v8.0.129/release.json"
+    sha256 "bc2dce6de85e09174848b2f786b62e909f30b2ce0d56d2e89e61aa28a61b5f2b"
 
     livecheck do
       formula :parent
