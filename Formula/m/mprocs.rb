@@ -7,12 +7,13 @@ class Mprocs < Formula
   head "https://github.com/pvolok/dekit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f394b0b592afda66436defbe72b0995a7471ad92bb8839d34158f1d2fa570854"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "526b3adb479f79436d72e7ad163fb596124e4d57d7ef528b55241b43003ca6fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f59490acf88577eb898b54d1eb234f8da47d04e53ef3cfe031b1ad593613cf2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23c84d9dac182c973b49e4021347ecf3272930b098aac8d0ed79d6dd2b2852b7"
-    sha256 cellar: :any,                 arm64_linux:   "f8c9637453f3b78582dca1d2d580a71ea247b99e282539581cce5524de6a36a1"
-    sha256 cellar: :any,                 x86_64_linux:  "35aff5529f3a2c7e5263a59046edd602cdaa77648eac82cea5d8c2ba22009936"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e2ee1311391c3237cf1566c56de41d128f0e493bb190e4ef9fc99588f88986b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24838ae6104b6c567d67de62b5c251c7a1f087d9d3949d245f49b8d3aa26dfc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a394ba6f897d91c7d0781481461bb652b88430a44deec1b13b96ffbf6b6b18c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42271d967e074dfbfc6815c4003abedec74f7b43f98be40687718992036fd65d"
+    sha256 cellar: :any,                 arm64_linux:   "63568281004346602e185ebfb80fcd7cba9c33cbf01c4e4b2648551e23fdb22b"
+    sha256 cellar: :any,                 x86_64_linux:  "5255678add044d7886321bfb2fe6ecb02997c32bbbfd3e6cf38cf8471c9b4982"
   end
 
   depends_on "rust" => :build
