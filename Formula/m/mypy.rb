@@ -9,12 +9,12 @@ class Mypy < Formula
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "024cf6da21c2fa01e5aad27aa75d7520bf4bfa275d5578f662e81bae97bdb096"
-    sha256 cellar: :any, arm64_sequoia: "18040ece0dfc0b536febe3bd6478301acdf7d3bd4caa8c18d546bfe179edf493"
-    sha256 cellar: :any, arm64_sonoma:  "686552a6b04dd8314105bc42ec808ee111c9d755ae4dcdb3287b41f18a2124e6"
-    sha256 cellar: :any, sonoma:        "dbc81439d6c7fc81095a419434ef5352448e9f9eae7c68d62efd24e004d77613"
-    sha256 cellar: :any, arm64_linux:   "d0db525ca0fb43dc2023630abbaa1a35906493214b5b8386f19045d62ddb5adb"
-    sha256 cellar: :any, x86_64_linux:  "574e0b88c639ce09e9f49bf69225a45261e6beab17c4c4e0df31bf7e747d0dc4"
+    sha256 cellar: :any, arm64_tahoe:   "8fb4bd2736ed9c4dd6d056b68bedb3b2c90477ca931cb4dbfd94effdede8cda8"
+    sha256 cellar: :any, arm64_sequoia: "ff66fc3e241c10739a348db466e40e0047f2eb0c8a7911265d990d80558accf5"
+    sha256 cellar: :any, arm64_sonoma:  "b96c9d43d1e71b959cd2a8cbbcbba16ce72395bb9e11c72dbeb2d31f5a414233"
+    sha256 cellar: :any, sonoma:        "5a23623476a29244fd816a73b664b39db600c13733b0bc32eb94e2591e8bd8f4"
+    sha256 cellar: :any, arm64_linux:   "c601a2a7ea82d5fd309b5c26dd7a8c126e84b2a850443f2c0f01041f5d766962"
+    sha256 cellar: :any, x86_64_linux:  "6d2c66e65f898d0dcc55e3160a251ee93069cc49aceb7b2956ed1e12b4d5dc20"
   end
 
   depends_on "rust" => :build # `ast-serialize`
