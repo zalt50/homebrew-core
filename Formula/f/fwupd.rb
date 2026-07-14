@@ -60,14 +60,11 @@ class Fwupd < Formula
     sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
+    python3 = "python3.14"
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
-    ENV.prepend_path "PYTHONPATH", venv.root/Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", venv.site_packages
 
     args = [
       "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
@@ -79,6 +76,8 @@ class Fwupd < Formula
       "-Ddocs=disabled",
       "-Dvendor_ids_dir=#{Formula["usb.ids"].opt_share}/misc/usb.ids",
     ]
+    # avoid installing into systemd's read-only Cellar
+    args << "-Dsystemd=disabled" if OS.linux?
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
