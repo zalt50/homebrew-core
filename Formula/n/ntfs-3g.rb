@@ -13,9 +13,8 @@ class Ntfs3g < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_linux:  "f00027c5b8c2f28b4f0ee76d9768a538c200cd72b9ecd60d48e03780f1723778"
-    sha256 cellar: :any, x86_64_linux: "e87f05d13c124ec310adc37e2a3f48984ab26a446b8474ffe86e8b2bd0133b5e"
+    sha256 cellar: :any, arm64_linux:  "2250e32fd80e8f93821608aac9c319a5ef4acf4120baa540778a7c16e7719d7a"
+    sha256 cellar: :any, x86_64_linux: "6697249707794af972c247fa4352a7d996ef9c0be1da11a6a2d8d5e8950e57d0"
   end
 
   head do
