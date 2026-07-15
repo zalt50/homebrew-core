@@ -1,8 +1,8 @@
 class ActionsLanguageserver < Formula
   desc "Language server for GitHub Actions YAML files"
   homepage "https://github.com/actions/languageservices/tree/main/languageserver"
-  url "https://github.com/actions/languageservices/archive/refs/tags/release-v0.3.59.tar.gz"
-  sha256 "fc212c5d43a153920328708fff7cee18a849f4c5220f4150878796224c664938"
+  url "https://github.com/actions/languageservices/archive/refs/tags/release-v0.3.60.tar.gz"
+  sha256 "1fa7f2383c5370a541e86b444e4e82a9a5a8e237d5c59b05bb6be48a1f501259"
   license "MIT"
 
   bottle do
