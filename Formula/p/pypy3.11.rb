@@ -4,6 +4,7 @@ class Pypy311 < Formula
   url "https://downloads.python.org/pypy/pypy3.11-v7.3.23-src.tar.bz2"
   sha256 "f15c9c41e03f3f7ecc25228c6c67427b8918f21ef2d694215994b1fade20f69b"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://downloads.python.org/pypy/"
@@ -58,8 +59,8 @@ class Pypy311 < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "wheel" do
