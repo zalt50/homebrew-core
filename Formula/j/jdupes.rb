@@ -2,7 +2,7 @@ class Jdupes < Formula
   desc "Duplicate file finder and an enhanced fork of 'fdupes'"
   homepage "https://codeberg.org/jbruchon/jdupes"
   url "https://codeberg.org/jbruchon/jdupes/archive/v1.31.1.tar.gz"
-  sha256 "c80d4c1deb03cc891a7e938f886952cfc480b8a0bc48baf21b312d350b62d8e3"
+  sha256 "9e318ea3440e5dcd33533aaebf85f8307757bb34ea1d12548ceef8d5d75c4bd9"
   license "MIT"
 
   livecheck do
