@@ -12,12 +12,12 @@ class Eccodes < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4b82842b6f8d35429c40cb7e6c5ea115cc4f1015f689bba3a3fcb2c89884f2a5"
-    sha256 arm64_sequoia: "bd91ad07992ee78024234cf8b5642135df1b46b53c7289a2c693fad8fe345989"
-    sha256 arm64_sonoma:  "3c52fc89659a643249d110fc4d4acb555519990b65a4933d4175d095f8269dd0"
-    sha256 sonoma:        "5402c9a00e26b14edc9382679c57626c923bb5369125de1c309cdbb477712c72"
-    sha256 arm64_linux:   "41196f8f832b211cac40c99a2023102fc0a0e01abe5585bc81ee0eefe53a1746"
-    sha256 x86_64_linux:  "5be92c82849fe6a5453352b24b2dc3374c840a0732fcb76d94e4dc5a1325abc1"
+    sha256 arm64_tahoe:   "e786e80c6ed8a9ca496f9abf841fc02d1a086855c508ca02a0fb056386f22ce2"
+    sha256 arm64_sequoia: "4fa85c5d33e38c8e667c4d16d875f809ccbb3af0f808c1ebdc4a4bc690b3bbee"
+    sha256 arm64_sonoma:  "6c99bf984310295024d1ef5f6c012a4fe56c7c68775650fe83462cbaa28d8a78"
+    sha256 sonoma:        "bbf561b45aab1b39c485479824f53700a45cdf9f478a6fff9d7906ff232f935f"
+    sha256 arm64_linux:   "50c47a5cbffa1448cbc0fa703d6b615c9af58ffe59b0eb1962e013bfdbbef39b"
+    sha256 x86_64_linux:  "d9200d5dd37fbe1332ba9d3708fbb847774a8beb83ac8d2b731b6c1a526c308b"
   end
 
   depends_on "cmake" => :build
