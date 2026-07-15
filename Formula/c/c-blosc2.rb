@@ -8,12 +8,12 @@ class CBlosc2 < Formula
   head "https://github.com/Blosc/c-blosc2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d005884a2044d63a254928acf2632326e2fc0275762f2886d2b3d632bf311364"
-    sha256 cellar: :any, arm64_sequoia: "f933d68925463fdb3f5a6b46b70895091a9dc3589ac6f29067e3a73788de99e6"
-    sha256 cellar: :any, arm64_sonoma:  "5c656c47df7fb66be1a4ac45e63aa831638d3fe09f525f1e613935be8a16f41b"
-    sha256 cellar: :any, sonoma:        "8516bd3acc3592d62a7e9473311e984c1fa8b64334fbb1bbd25a632bdcd2848d"
-    sha256 cellar: :any, arm64_linux:   "ee3f3bf9034f182ba737a2d202a135e8850be357df361373a49be34add2c85a4"
-    sha256 cellar: :any, x86_64_linux:  "6892bbc295557d86da950ae750f7e4b9e87778053c24628eddbd92e8502e802f"
+    sha256 cellar: :any, arm64_tahoe:   "85210364bba7838ec118a6ddc388085ace35ee21802bad8589541829f0d29124"
+    sha256 cellar: :any, arm64_sequoia: "56d5cb2d55ffb8b2e637f94a95aaec17b9e7dc76eb54ff62fe3ec7eb7c6f40c9"
+    sha256 cellar: :any, arm64_sonoma:  "ec13015179d7a07883b90dea2e63abac0f32b6e0e3a06d312b9dd5e3e3fb8f70"
+    sha256 cellar: :any, sonoma:        "07da2661ec9ac523f72c13eb6b0a550c8a2c8fa0edb89cd63953fefa5886f4ea"
+    sha256 cellar: :any, arm64_linux:   "438938427027713f85f6584c1c76d78fda120c9217fd81069d0bb34fadd9de32"
+    sha256 cellar: :any, x86_64_linux:  "966bbee6a8b4a55a8a7f6ce0bd4a028317c25c9695d853397921a3336633060d"
   end
 
   depends_on "cmake" => :build
