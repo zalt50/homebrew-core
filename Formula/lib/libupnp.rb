@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://github.com/pupnp/pupnp/releases/download/release-2.0.2/libupnp-2.0.2.tar.bz2"
-  sha256 "4a79edb812397e38b85bb95344a7fda4a17f54fbf53fdb828cc23ddb7e695f77"
+  url "https://github.com/pupnp/pupnp/releases/download/release-22.0.4/libupnp-22.0.4.tar.bz2"
+  sha256 "32d4c6bc7d305a551e596d5014098b70949c4954f64333d1d07771a38627bf37"
   license "BSD-3-Clause"
 
   livecheck do
@@ -19,6 +19,8 @@ class Libupnp < Formula
     sha256 cellar: :any, x86_64_linux:  "ad43292c09cd1335de976363ea15498691096a28080232a43b74ba1393a270de"
   end
 
+  depends_on "cmake" => :build
+
   def install
     # https://github.com/llvm/llvm-project/issues/65557
     if OS.mac? && DevelopmentTools.clang_build_version < 1700
@@ -26,13 +28,31 @@ class Libupnp < Formula
                                                            "switch ((MiniServerState)gMServState)"
     end
 
-    system "./configure", "--enable-ipv6", *std_configure_args
-    system "make", "install"
-    pkgshare.install "upnp/test/test_init.c"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DUPNP_BUILD_SAMPLES=OFF",
+                    "-DUPNP_ENABLE_TESTING=OFF",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    system ENV.cc, pkgshare/"test_init.c", "-o", "test", "-I#{include}/upnp", "-L#{lib}", "-lupnp"
+    (testpath/"test.c").write <<~C
+      #include <upnp.h>
+      #include <upnpconfig.h>
+      #include <stdio.h>
+      int main(void) {
+        printf("UPNP_VERSION_STRING = \\"%s\\"\\n", UPNP_VERSION_STRING);
+        int rc = UpnpInit2(NULL, 0);
+        if (rc == UPNP_E_SUCCESS) {
+          printf("UPnP Initialized OK\\n");
+          UpnpFinish();
+        }
+        return rc;
+      }
+    C
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}/upnp", "-L#{lib}", "-lupnp"
     output = shell_output("./test")
     assert_match "UPNP_VERSION_STRING = \"#{version}\"", output
     assert_match "UPnP Initialized OK", output
