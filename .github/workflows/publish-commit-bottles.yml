@@ -615,7 +615,7 @@ jobs:
       github.repository_owner == 'Homebrew' &&
       needs.upload.result == 'success' &&
       needs.upload.outputs.portable_ruby == 'true'
-    runs-on: ubuntu-latest
+    runs-on: macos-26
     permissions:
       contents: read
     steps:
@@ -720,7 +720,7 @@ jobs:
           BRANCH: ${{ steps.resolve.outputs.branch }}
         run: |
           cat <<MESSAGE > body.txt
-          Bumps the vendored \`portable-ruby\` to ${PKG_VERSION}.
+          Bumps \`portable-ruby\` to ${PKG_VERSION}.
 
           Source: Homebrew/homebrew-core#${PR}
 
@@ -731,5 +731,5 @@ jobs:
             --repo Homebrew/brew \
             --base main \
             --head "${BRANCH}" \
-            --title "Bump vendored portable-ruby to ${PKG_VERSION}" \
+            --title "Bump portable-ruby to ${PKG_VERSION}" \
             --body-file body.txt
