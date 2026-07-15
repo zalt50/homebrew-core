@@ -3,20 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/fe/97/3aeeb9d199fd0f931452adebcf5336c01c739b1de2d4bada0744ff5d18e1/ansible-14.1.0.tar.gz"
-  sha256 "1ae7918469ed897ff716857ed98d1f5d5fce1710f6a42f601f0715548b67bf00"
+  url "https://files.pythonhosted.org/packages/0d/8a/2800da95cacaabeda411db5bf54b97d1d953a03b5befc03a8a9486659ccb/ansible-14.2.0.tar.gz"
+  sha256 "1c8f18399027d26b0175270cb63bad99f9be16efe79600242c914eaa49941025"
   license "GPL-3.0-or-later"
-  revision 1
   compatibility_version 4
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2c1068d2606515fcad27453aebc31f06fbe273e05fa26a2189c2f9be77e94581"
-    sha256 cellar: :any, arm64_sequoia: "5eaf852b011ec87b9c0279b8dbf8d1c8f81f4cb8440c29ef745efbaeeb1c3527"
-    sha256 cellar: :any, arm64_sonoma:  "86737ecb8ee99075b75c031b512935cc7b03560ca133f10c79553cf7cd88d783"
-    sha256 cellar: :any, sonoma:        "a8ca72ea5324a4488692b869e94d49961d7d4077d1792ab03556da55695f9523"
-    sha256 cellar: :any, arm64_linux:   "faa5dd62493aa44844ecf9b6cdd2464c9e5e6a8a5d4b80e31b69aa3df3edec4f"
-    sha256 cellar: :any, x86_64_linux:  "3c8851cedf61b3e8f291b7e4f157bc2e74cac71ea85b06af820a8bbd0f4d5b5e"
+    sha256 cellar: :any, arm64_tahoe:   "792ce5fe62450c46dfde6653788eb697f4e9bdf0d8a0578c91b3375c6898cdf7"
+    sha256 cellar: :any, arm64_sequoia: "f8fb1c92cfb2532007182ef45d5ea7f5f551bdd4bc022704a72546c477f3dc33"
+    sha256 cellar: :any, arm64_sonoma:  "f19fd4c791b31016fb6bdf83abf90c4c89baa03425bd03dc372c807df5ba3f23"
+    sha256 cellar: :any, sonoma:        "687ea8b576b1a02d0d0ff16255cfd56f157232bfb68d5b109042eb2d6a563fe2"
+    sha256 cellar: :any, arm64_linux:   "58f7f3e979d3c40ee7fc7b50396197c17fa175ff40ef9a6d6c0f179ab34eae35"
+    sha256 cellar: :any, x86_64_linux:  "8a9e9fb56248ba89d1bd7df24bb5550079635ccc020aa39c8491e0e571638d0d"
   end
 
   # `pkgconf` and `rust` are for bcrypt
