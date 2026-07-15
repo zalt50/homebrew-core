@@ -1,8 +1,8 @@
 class Sanity < Formula
   desc "Command-line interface for Sanity"
   homepage "https://www.sanity.io/"
-  url "https://registry.npmjs.org/@sanity/cli/-/cli-7.7.1.tgz"
-  sha256 "ed13a60e0a75edd5a3406885fba1cffed9b3b4c5ca644bf7c6504633ea6b08e2"
+  url "https://registry.npmjs.org/@sanity/cli/-/cli-7.8.0.tgz"
+  sha256 "5f0f4dbc17baeab8123557c44d5254da2ffa5c400245fc30b8330673b476cc46"
   license "MIT"
 
   bottle do
