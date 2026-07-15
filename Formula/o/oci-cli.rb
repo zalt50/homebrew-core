@@ -3,8 +3,8 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/96/3b/6555e2fcb3072fff2b2cf6b626e400c43a163b662dc4e67655dda365fe5a/oci_cli-3.89.1.tar.gz"
-  sha256 "205237a1ce91ab3dcb6778d726bb28a57fd685afe5a3faaa6c5ea3b95a8190b3"
+  url "https://files.pythonhosted.org/packages/98/c1/397c009e5c46c830a3774aadd28736263508e9446e0f15ae952bba3774f0/oci_cli-3.89.2.tar.gz"
+  sha256 "9f3f214a61ef9d999051a3c4cb7f453db4d47245bd34b42011ad28446d26d4c4"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
@@ -40,8 +40,8 @@ class OciCli < Formula
   end
 
   resource "crc32c" do
-    url "https://files.pythonhosted.org/packages/7f/4c/4e40cc26347ac8254d3f25b9f94710b8e8df24ee4dddc1ba41907a88a94d/crc32c-2.7.1.tar.gz"
-    sha256 "f91b144a21eef834d64178e01982bb9179c354b3e9e5f4c803b0e5096384968c"
+    url "https://files.pythonhosted.org/packages/e3/66/7e97aa77af7cf6afbff26e3651b564fe41932599bc2d3dce0b2f73d4829a/crc32c-2.8.tar.gz"
+    sha256 "578728964e59c47c356aeeedee6220e021e124b9d3e8631d95d9a5e5f06e261c"
   end
 
   resource "jmespath" do
@@ -50,8 +50,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/12/b3/4f80ae248dc9872bcc2b0e677548f86c2a3fa4df0082bbe00e17058bc988/oci-2.181.1.tar.gz"
-    sha256 "05587d120014238c6d5459328517eb02862f20f10e085a14f2ed48e5ca082672"
+    url "https://files.pythonhosted.org/packages/a6/20/769e5fef5006ca00b0917fc7a60d143af856ace4320af567fe83ab47f72b/oci-2.182.0.tar.gz"
+    sha256 "effdd24f808179cfa15ba1084181cadda8e09332699cdbcd2f78ebbd0a2d072e"
   end
 
   resource "prompt-toolkit" do
@@ -65,8 +65,8 @@ class OciCli < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/1a/51/27a5ad5f939d08f690a326ef9582cda7140555180db71695f6fb747d6a36/pyopenssl-26.2.0.tar.gz"
-    sha256 "8c6fcecd1183a7fc897548dfe388b0cdb7f37e018200d8409cf33959dbe35387"
+    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
+    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
   end
 
   resource "python-dateutil" do
@@ -100,8 +100,8 @@ class OciCli < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/ba/19/1b9b0e29f30c6d35cb345486df41110984ea67ae69dddbc0e8a100999493/tzdata-2026.2.tar.gz"
-    sha256 "9173fde7d80d9018e02a662e168e5a2d04f87c41ea174b139fbef642eda62d10"
+    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
+    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
   end
 
   resource "urllib3" do
