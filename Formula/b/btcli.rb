@@ -9,13 +9,12 @@ class Btcli < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "4ef2920ba6d07037ad52bf2940b582dfa905358f05e8ee6b609b2edf85dfdbd4"
-    sha256 cellar: :any, arm64_sequoia: "6be41d910f090d80f4202b3067b8831d14149b1c4678361ffcec71da19ce7aa6"
-    sha256 cellar: :any, arm64_sonoma:  "fea018a037b1e4057b122477d02dd04372500c7195fc5e01898c244475ee879f"
-    sha256 cellar: :any, sonoma:        "da0bfee34d762b9c64ece46194ed5941b89e9c130ad34d10386b9a488b0e0a59"
-    sha256 cellar: :any, arm64_linux:   "c6188dee06c749eee755b094162de868ae6d793449f01b279291900981050c5a"
-    sha256 cellar: :any, x86_64_linux:  "1c1baf6112576f16bc54a6a0e4992f20fb612d3be4f9510cd0b598aea7d67423"
+    sha256 cellar: :any, arm64_tahoe:   "cd66ced85caa927fc232ba3a42fd3207823b194a89d7cc467941b41e8c242040"
+    sha256 cellar: :any, arm64_sequoia: "27f15b2b825b3b2fa9439421752904b283d6ce1bb7c77bf300a5f3706a3740e9"
+    sha256 cellar: :any, arm64_sonoma:  "e36967d257272c1354b845eaf51254cc924a679c960101086ecf4a10cb1d9de9"
+    sha256 cellar: :any, sonoma:        "610ad3d89f8c20fcd311ac6a602d34ab3001f4061d8b82d148d965dbbde01b35"
+    sha256 cellar: :any, arm64_linux:   "2103af4d0efd7fef4a1eabf429a2018a683d840eaa0db906516ef5dda07769e6"
+    sha256 cellar: :any, x86_64_linux:  "ce5a5e1273092385254bbdd077740282045952647236287c01676028af77d6e8"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
