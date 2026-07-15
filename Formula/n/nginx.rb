@@ -126,7 +126,7 @@ class Nginx < Formula
       dst.mkpath
     else
       dst.dirname.mkpath
-      html.rename(dst)
+      mv(html, dst)
     end
 
     prefix.install_symlink dst => "html"
