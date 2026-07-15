@@ -2,7 +2,7 @@ class Lspmux < Formula
   desc "Share one language instance between multiple LSP clients to save resources"
   homepage "https://codeberg.org/p2502/lspmux"
   url "https://codeberg.org/p2502/lspmux/archive/v0.3.0.tar.gz"
-  sha256 "92410dfcda4429e0463db91b67712da00fda5fa9fb5316174126e702eb988440"
+  sha256 "28caab4a2f74dc4b8117ac5eed3af2b30258eab1affb47f47363afece0982243"
   license "EUPL-1.2"
   head "https://codeberg.org/p2502/lspmux.git", branch: "main"
 
