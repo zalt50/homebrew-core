@@ -12,12 +12,12 @@ class Kops < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4cde6061a12b1b85661929028d28eda6840b81ac9f3b75acf731dd369537c1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b28db349355b5ade7fcb0cac9c9968f6e1cade722827dd665106e7e77451f08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba37495e3c27ad4df6b7970e0e61b8093354963057eefa4592daea04aa7993cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48c206af02843445227a2bb8753a7f4340bb3aa84458f97ff487e6c6efa363ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d981a3f90f9fd396fd969afbff881bf7d449bdb1a3c52c5c6088bddf5760491f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80ff10f3bd9df541929cb5a428e3b62d290bfb98e1d49906b3667683e5d81494"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbdda10847046641edb68dc942443f4ca1f9cfabd3783b12eda0d30651b9ce87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76799720f6980f21d5c17de971eab4bd038993241a47941b4f02287cdef3d431"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a55110c00f2c81ca4ca44be6d22511d9ee69d7da1407de89339394116753fb62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16feea6167f6b7af6f6031e2de0d3b1216e566d9e3c27d28edc6c40a6f32faa6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b963f86d75a2bf67c15a21bce175ef697a9e32dd391f50d4991409c854d3601"
+    sha256 cellar: :any,                 x86_64_linux:  "86ac0698e2a45061ed22bba9e9f1676b241a3624f7c531b2929606a62b95dd18"
   end
 
   depends_on "go" => :build
