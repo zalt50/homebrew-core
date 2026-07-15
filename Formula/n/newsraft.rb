@@ -2,7 +2,7 @@ class Newsraft < Formula
   desc "Terminal feed reader"
   homepage "https://codeberg.org/newsraft/newsraft"
   url "https://codeberg.org/newsraft/newsraft/archive/newsraft-0.36.tar.gz"
-  sha256 "769dce748a4de741f1888eb199f71aeb41068b8527e0d5779fe0eb51fbbd72e3"
+  sha256 "d6aeebd3f1b2c897c8c9b29e1f5ed91751969681d1deafc31a9d85d139793ad5"
   license "ISC"
 
   bottle do
