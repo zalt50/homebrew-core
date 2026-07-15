@@ -2,7 +2,7 @@ class Hevi < Formula
   desc "Hex viewer"
   homepage "https://codeberg.org/arnauc/hevi"
   url "https://codeberg.org/arnauc/hevi/archive/v1.1.0.tar.gz"
-  sha256 "8ad6a056cd7ae5e3ba52abeffc7e1c45f591266cf5896d8decb7e487a7596db9"
+  sha256 "e236bb43c5eb66a183c0ee6f6d14efbb89f9e9427e23a652a7e3916f8b774aa5"
   license "GPL-3.0-or-later"
 
   bottle do
