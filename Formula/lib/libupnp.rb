@@ -11,12 +11,12 @@ class Libupnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "87b39b9c80a49ae61e8176ccea3d588a5190cb6c32cc7607b3a01812ecdaa50a"
-    sha256 cellar: :any, arm64_sequoia: "2410c851735b65c032baf1874624a58bab632582fd75d7ea73ac7562e82219de"
-    sha256 cellar: :any, arm64_sonoma:  "d573ee0380c0b6d801da2831db8d660e26f2886ff227e7e0764c27fc71188dfe"
-    sha256 cellar: :any, sonoma:        "b8241aedaca02f45e6ee2e8e7937ea4694ae99d6aa8bbba9c7303d8336b688c1"
-    sha256 cellar: :any, arm64_linux:   "a83866dcb0cbea7253a313f8c70bc0115fc7c0d0ed31e25ec826a94f3ed28011"
-    sha256 cellar: :any, x86_64_linux:  "ad43292c09cd1335de976363ea15498691096a28080232a43b74ba1393a270de"
+    sha256 cellar: :any, arm64_tahoe:   "70bef418cdcdd7aaad44c25cbbf214ac3111ab7a83b877a41d79dbe3771932a4"
+    sha256 cellar: :any, arm64_sequoia: "5e1928c23e2161327f9370510231c39d714c194267143807dbdc86b506758598"
+    sha256 cellar: :any, arm64_sonoma:  "6b55f0744b670b19569570891d2fed55b4fed35946f12aeb531e2cd0be4fc69a"
+    sha256 cellar: :any, sonoma:        "c7436824b80b9fbbee0b2a92470291883dbf5f3bda38abb0a74b19560089e912"
+    sha256 cellar: :any, arm64_linux:   "e0c2e5f4fd5359f049d5889f6772f7a44afc41b742f363b43f6904838755a90b"
+    sha256 cellar: :any, x86_64_linux:  "58d2d5719291804ec94c012af852dbe7b89eebd54fb2e204d21f3bed0e01a52b"
   end
 
   depends_on "cmake" => :build
