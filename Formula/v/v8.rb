@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://github.com/v8/v8/archive/refs/tags/15.0.245.19.tar.gz"
-  sha256 "9a3415a6fc6e89f801884bbb6cc308312855121c9dafc0ce7e412667bfaced7b"
+  url "https://github.com/v8/v8/archive/refs/tags/15.1.206.8.tar.gz"
+  sha256 "6205e27933f1608d517e6bed9c019101681648614d7fa133ab39651992f54f3a"
   license "BSD-3-Clause"
 
   livecheck do
@@ -56,8 +56,8 @@ class V8 < Formula
   # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#99
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "3357c4f51b1a9e676378c695dd9c7e9911c35ee6"
-    version "3357c4f51b1a9e676378c695dd9c7e9911c35ee6"
+        revision: "e331ddb6e93389abfc75c611690bb82f5274029e"
+    version "e331ddb6e93389abfc75c611690bb82f5274029e"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -67,8 +67,8 @@ class V8 < Formula
 
   resource "build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "b787aa6672fcf87221cdb63da9c2523878a6d267"
-    version "b787aa6672fcf87221cdb63da9c2523878a6d267"
+        revision: "6bb98d0865c859a763b390c583fe7670516ce08d"
+    version "6bb98d0865c859a763b390c583fe7670516ce08d"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -78,8 +78,8 @@ class V8 < Formula
 
   resource "buildtools" do
     url "https://chromium.googlesource.com/chromium/src/buildtools.git",
-        revision: "17495e454aae81b581e8b3caccbb53054509b280"
-    version "17495e454aae81b581e8b3caccbb53054509b280"
+        revision: "0d39be5a3f129cf1f35e7812108a2184e2193315"
+    version "0d39be5a3f129cf1f35e7812108a2184e2193315"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -89,8 +89,8 @@ class V8 < Formula
 
   resource "third_party/abseil-cpp" do
     url "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git",
-        revision: "d16e32215c3ab90ba57c2e904a5344d85c7353e4"
-    version "d16e32215c3ab90ba57c2e904a5344d85c7353e4"
+        revision: "d8e483edd8b44da1845874ee84b42489589bb90f"
+    version "d8e483edd8b44da1845874ee84b42489589bb90f"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -111,8 +111,8 @@ class V8 < Formula
 
   resource "third_party/fast_float/src" do
     url "https://chromium.googlesource.com/external/github.com/fastfloat/fast_float.git",
-        revision: "05087a303dad9c98768b33c829d398223a649bc6"
-    version "05087a303dad9c98768b33c829d398223a649bc6"
+        revision: "34164f547b7df3f5d794ff67e9f885c36819ebfc"
+    version "34164f547b7df3f5d794ff67e9f885c36819ebfc"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -122,8 +122,8 @@ class V8 < Formula
 
   resource "third_party/fp16/src" do
     url "https://chromium.googlesource.com/external/github.com/Maratyszcza/FP16.git",
-        revision: "3d2de1816307bac63c16a297e8c4dc501b4076df"
-    version "3d2de1816307bac63c16a297e8c4dc501b4076df"
+        revision: "782eea126dc5c755827be751a099eb01826175cf"
+    version "782eea126dc5c755827be751a099eb01826175cf"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -155,8 +155,8 @@ class V8 < Formula
 
   resource "third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "ee5f27adc28bd3f15b2c293f726d14d2e336cbd5"
-    version "ee5f27adc28bd3f15b2c293f726d14d2e336cbd5"
+        revision: "d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738"
+    version "d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -177,8 +177,8 @@ class V8 < Formula
 
   resource "third_party/llvm-libc/src" do
     url "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc.git",
-        revision: "9309c117ebae84dd2f9df1ef99de4782162527d5"
-    version "9309c117ebae84dd2f9df1ef99de4782162527d5"
+        revision: "265cc6a83652bac5cb8ceb59741bc288ebe6b312"
+    version "265cc6a83652bac5cb8ceb59741bc288ebe6b312"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -199,8 +199,8 @@ class V8 < Formula
 
   resource "third_party/partition_alloc" do
     url "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git",
-        revision: "ff3b8b885b8374cbd3902642d94dc737bda93d5d"
-    version "ff3b8b885b8374cbd3902642d94dc737bda93d5d"
+        revision: "009c3b60a1c149c0f4f241150c993b2032487829"
+    version "009c3b60a1c149c0f4f241150c993b2032487829"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -221,8 +221,8 @@ class V8 < Formula
 
   resource "third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "3246f1b60849cc505e231c5d19d0cbf358093555"
-    version "3246f1b60849cc505e231c5d19d0cbf358093555"
+        revision: "8b3aa8a1cd7585c0c4c67351481227b046a662a0"
+    version "8b3aa8a1cd7585c0c4c67351481227b046a662a0"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
