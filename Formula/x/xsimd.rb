@@ -7,7 +7,7 @@ class Xsimd < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2bc310b5c4877504470689b912f1deb2d0a1a3611ed06ce54106faa517ed1b75"
+    sha256 cellar: :any_skip_relocation, all: "1db952e59aeed56f07062c92e757d480b0809dde1939d66fcea0abc33e4013e5"
   end
 
   depends_on "cmake" => :build
