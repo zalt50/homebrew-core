@@ -3,10 +3,9 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/fe/97/3aeeb9d199fd0f931452adebcf5336c01c739b1de2d4bada0744ff5d18e1/ansible-14.1.0.tar.gz"
-  sha256 "1ae7918469ed897ff716857ed98d1f5d5fce1710f6a42f601f0715548b67bf00"
+  url "https://files.pythonhosted.org/packages/0d/8a/2800da95cacaabeda411db5bf54b97d1d953a03b5befc03a8a9486659ccb/ansible-14.2.0.tar.gz"
+  sha256 "1c8f18399027d26b0175270cb63bad99f9be16efe79600242c914eaa49941025"
   license "GPL-3.0-or-later"
-  revision 1
   compatibility_version 4
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
