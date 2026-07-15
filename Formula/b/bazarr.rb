@@ -6,6 +6,7 @@ class Bazarr < Formula
   url "https://github.com/morpheus65535/bazarr/releases/download/v1.6.0/bazarr.zip"
   sha256 "9c7523258bde58528d53acc91239774215e44e4f31d28cb2fb1c620ecdaef7b3"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
@@ -40,8 +41,8 @@ class Bazarr < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "webrtcvad-wheels" do
