@@ -6,6 +6,7 @@ class CoreLightning < Formula
   url "https://github.com/ElementsProject/lightning/releases/download/v26.06.2/clightning-v26.06.2.zip"
   sha256 "301d528446abea91a0d7748fe69cf3fad1bf88dfb133febf64caf7ca7de87102"
   license "MIT"
+  revision 1
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
   livecheck do
@@ -62,8 +63,8 @@ class CoreLightning < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   def install
