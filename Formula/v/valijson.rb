@@ -1,8 +1,8 @@
 class Valijson < Formula
   desc "Header-only C++ library for JSON Schema validation"
   homepage "https://github.com/tristanpenman/valijson"
-  url "https://github.com/tristanpenman/valijson/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "90208a2073757d70c89105ecb5920b314f41edcb27689ac609f5b14fd86b7d49"
+  url "https://github.com/tristanpenman/valijson/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "8e3cb09aead72f6f8653c966669cab52ff921ac52cc9d7498cd9387a35acce93"
   license "BSD-2-Clause"
 
   bottle do
@@ -11,14 +11,6 @@ class Valijson < Formula
 
   depends_on "cmake" => :build
   depends_on "jsoncpp" => :test
-
-  # Workaround for missing `std::from_chars` in macOS < 26 sdk, remove in next release
-  patch do
-    url "https://github.com/tristanpenman/valijson/commit/940843d4f954330265b2c961a675cee4ff72fadb.patch?full_index=1"
-    sha256 "b1498cc4683091eb1a7bb6ae25eac47366027dbc3699f5aa0b16a97a455dfc4b"
-    type :backport
-    resolves "https://github.com/tristanpenman/valijson/pull/241"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
