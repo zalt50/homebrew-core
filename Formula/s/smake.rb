@@ -2,7 +2,7 @@ class Smake < Formula
   desc "Portable make program with automake features"
   homepage "https://codeberg.org/schilytools/schilytools"
   url "https://codeberg.org/schilytools/schilytools/archive/2024-03-21.tar.gz"
-  sha256 "4d66bf35a5bc2927248fac82266b56514fde07c1acda66f25b9c42ccff560a02"
+  sha256 "fd3db00278caecd94b3802e1f903bf235a7137511ac0a450b31d855e3a52917b"
   license "CDDL-1.0"
 
   bottle do
