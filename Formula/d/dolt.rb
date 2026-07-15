@@ -13,12 +13,12 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "47593d08b7154abf8c96d956028a1bee80f9b0794f9c61e6ab6a347ab35642c2"
-    sha256 cellar: :any, arm64_sequoia: "f361ee33812470d64542e96cb79b81abab52b717e6e4504e49ea744f80c54d68"
-    sha256 cellar: :any, arm64_sonoma:  "307adb34bc044f738d66a59412500a0c26965d7bc06589e97ba21167327d57e0"
-    sha256 cellar: :any, sonoma:        "fd15ad7422213ccfd1c8cbbf74650d6ee400906e0e505885ace7f811b1ca390d"
-    sha256 cellar: :any, arm64_linux:   "7babfe7c8fb38138d203625abf8409b502051d1c3a848aa88eeaa63ab6c31a1a"
-    sha256 cellar: :any, x86_64_linux:  "d00b32077e099a414358c5e45dd40c6176eff3428b2b38fe64a3ae67c2d495e6"
+    sha256 cellar: :any, arm64_tahoe:   "1a39b9d90e27fe352090f36a47403201838a72bab91428a6274155b58a7669d4"
+    sha256 cellar: :any, arm64_sequoia: "a0aced06244951b4b0cabf4ae841b2b05d7d6347867213f79d072070f8e3a69a"
+    sha256 cellar: :any, arm64_sonoma:  "49b2d9a5d0ce444a662b0d876b99fd86d439cb844676621e4f37c2220e080101"
+    sha256 cellar: :any, sonoma:        "49eefdf7abb16a7aadf1e2c2a23d8cbb00bc48b5e6f99cd0459477fddea74aae"
+    sha256 cellar: :any, arm64_linux:   "f97b4102f4c31b3c1569e3c2b15174c3aefc26b8ce8e21a58f901910f3f15989"
+    sha256 cellar: :any, x86_64_linux:  "c2f13b6460eeb501872d6b84879259978f5047081176881011d0062be8eb40cf"
   end
 
   depends_on "go" => :build
