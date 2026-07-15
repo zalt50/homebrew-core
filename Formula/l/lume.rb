@@ -12,8 +12,8 @@ class Lume < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86d5ae740527d4d54fcde3b5f006242eb92b7b5c650e6b0f7dc17e2dbbec202b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e88936a84b792fb5138ad3e85fb8ce9f12170d84b562082f5751e6b5675f284"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35e55814be44fbbfea4d1c5298c0012e229bf4841fb206b1521b8c2bd6143b26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70ca3fbf0420c34623ca72da156cfabf6e7d3a2169fdecb52082840857e3481c"
   end
 
   depends_on xcode: ["16.0", :build]
