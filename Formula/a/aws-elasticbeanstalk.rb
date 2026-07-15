@@ -9,12 +9,12 @@ class AwsElasticbeanstalk < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de5de283e554c0823fb767c6c33054e5779d9cc73dc8bf24c99736fec055b153"
-    sha256 cellar: :any, arm64_sequoia: "4078b8fc3f8b2e7754f197d6dfe6e5804fef71c4ae74391883380d6f0549ee9c"
-    sha256 cellar: :any, arm64_sonoma:  "4230d0fa5dc55bdd6e468aff14a55b5f16514f8e2eabdc1b3c7b8911244c5405"
-    sha256 cellar: :any, sonoma:        "e74d9e419a135d0ca5d94fb671661f2bdccc5dddd473b6fbdbad41b61b734ac5"
-    sha256 cellar: :any, arm64_linux:   "78f8ead67d17b88011eddb279c009dab26a7ffee3ae5f11cefcdcadfe9a1a521"
-    sha256 cellar: :any, x86_64_linux:  "0f4106f84b403e1e1479471452a05c7458e04a48bd9bb4814fcbaaaeeeb54cd9"
+    sha256 cellar: :any, arm64_tahoe:   "a19e93fcd528e21b38b560d825381015e985b459824e35e87a84fad1d806ff38"
+    sha256 cellar: :any, arm64_sequoia: "80aa72100d9d0ef72333230684242056827b6c804108c856dad657a402bec4c1"
+    sha256 cellar: :any, arm64_sonoma:  "421baedbe20fad7da23c0d11ba51f55043bb119b8d16a3080676482e09ef6b65"
+    sha256 cellar: :any, sonoma:        "384dc862f0956dd2fb7dc599d7604b7fd13323a48c9df3fbc9f9b9caf9c4af21"
+    sha256 cellar: :any, arm64_linux:   "92c7299bfe1b158bb694e4185605ebfcdeb2d627f3fd58e1f82f6dfaf0d32f5a"
+    sha256 cellar: :any, x86_64_linux:  "9c2baa8dfee3c6b960a75778380f05bfe8ab91ff74a0f361f8eead2ece983d52"
   end
 
   # `pkgconf` and `rust` are for bcrypt
