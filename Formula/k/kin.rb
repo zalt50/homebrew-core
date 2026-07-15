@@ -9,8 +9,7 @@ class Kin < Formula
   head "https://github.com/Serchinastico/Kin.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "a8a5be63c8cd244537431fb248dafd7d566aca1ab83dfd7d65e7ce6c62b76675"
+    sha256 cellar: :any_skip_relocation, all: "0d975a6222908aa7084ad1d7851125589d37acb9c4f35032f36f38f66105d9dc"
   end
 
   depends_on "python@3.14"
