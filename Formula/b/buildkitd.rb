@@ -15,8 +15,8 @@ class Buildkitd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "2e718bcb7701bd3da6f98422f01cf0f58f04c9449701da6f2f14b55be7e75888"
-    sha256 cellar: :any,                 x86_64_linux: "5c11189ecf3689e6178eaad4af93637e78b972f176b66b0cd95c132a6729b7cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "515c600ce8a07c9ccb0a10bde99a3f9b203fac06487dd2703d7e53e2f91cbeca"
+    sha256 cellar: :any,                 x86_64_linux: "cf4fd46abb4635ea21fbe79ef2b60b7f59adc0ce6f7012c5e65d2e2e28b5961f"
   end
 
   depends_on "go" => :build
