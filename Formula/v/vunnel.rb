@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/db/92/1d0e2c0dfb8c484b5ebf08ffa36328e120e4329d711143c2791607c83298/vunnel-0.62.1.tar.gz"
-  sha256 "9b2ffd8977bac16498bb4fdf1a118e2fccc3442ed18c98a1462c84f35a77ed1e"
+  url "https://files.pythonhosted.org/packages/dd/02/edd0b1f9dff17c401aaf6333cab4c1970b6dcdc0e4c6475527adcb410648/vunnel-0.63.0.tar.gz"
+  sha256 "5630b5ff838058355511746b8f8b0d29eae3837adf9aa76e7077af2d55a504b4"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -37,8 +37,8 @@ class Vunnel < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -187,8 +187,8 @@ class Vunnel < Formula
   end
 
   resource "ruff" do
-    url "https://files.pythonhosted.org/packages/43/dc/35b341fc554ba02f217fc10da57d1a75168cfbcf75b0ef2202176d4c4f2d/ruff-0.15.20.tar.gz"
-    sha256 "1416eb04349192646b54de98f146c4f59afe37d0decfc02c3cbbf396f3a28566"
+    url "https://files.pythonhosted.org/packages/0f/36/6f65aa9989acdec45d417192d8f4e7921931d8a6cf87ac74bce3eed98a8e/ruff-0.15.21.tar.gz"
+    sha256 "d0cfc841c572283c36548f82664a54ce6565567f1b0d5b4cf2caac693d8b7500"
   end
 
   resource "six" do
