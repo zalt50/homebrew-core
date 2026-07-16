@@ -26,6 +26,8 @@ class Bittensor < Formula
   depends_on "python@3.14"
   depends_on "xxhash"
 
+  conflicts_with "btcli", "btpd", because: "both install `btcli` binaries"
+
   pypi_packages package_name: "bittensor[cli]", exclude_packages: %w[certifi numpy pydantic]
 
   resource "aiohappyeyeballs" do
