@@ -6,12 +6,12 @@ class Thanos < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3874ebabff386a958268a38c9554e68303651a31c46a3e2b33ce338bfbc6bcb3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00e3f2937c396ea87e8fd2eecdfaa0147325bf12286538017a9e542fe20c5049"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "879afd1faee0c42feb6dd4cd24d4c9d1755bd4a353158e37ed7b168d74e0fff3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d8a2cb8c0ee2ec869ab7b00c9aff935ac37475c411546f00bfba3fa5db1625e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2472d662ac843698348025470d0ae9a853b85d30e79d17abdfd626e8ad84c85"
-    sha256 cellar: :any,                 x86_64_linux:  "dbcf40575e98b4fe624f9d39cb7003cca99aedf01cfbfc9dae0b111247d4f69c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91875ab3b482781ccf98be0d05674382f5773f6d704faa349b3a36b1d3122907"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7678b09f51dfde7811ab36919d4cdc7e287d81637875498180e797ce4c4c9b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b57d4ebf82afc017d6b6458a79b4a4681ec3b58a6f39ad58f21b2bb54f414312"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f2a12ee51c07e300993d3d4ae58c8ac73563b555dbcec3d6b774b381b2bfb951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58b5a671a97649acfa3bca6ec02ab7b1de2fe4e3b2d16a55c9eb3b885bb786c6"
+    sha256 cellar: :any,                 x86_64_linux:  "663c0f3385bbd8f2b2fdb4b7bbf06424621d7af00b01ff8782f99172a358b246"
   end
 
   depends_on "go" => :build
