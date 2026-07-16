@@ -3,8 +3,8 @@ class Openstackclient < Formula
 
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
-  url "https://files.pythonhosted.org/packages/1b/58/bca5ca580a1d098453eb3a51a986770d9da0a67277ecc96efab000c0931a/python_openstackclient-10.2.0.tar.gz"
-  sha256 "ef3f1e1e9406c8f2fa09f47b394ac0584351671aacb00476c598cf3c8da6c1ab"
+  url "https://files.pythonhosted.org/packages/e6/5f/580c9de363137bfc8bea6099b5fd70fff2d8b49b3614e3bd5a3abb86299b/python_openstackclient-10.2.1.tar.gz"
+  sha256 "aa9f969f072f24afb2e3a188495c840f6f6722429d39f45b468461272c097014"
   license "Apache-2.0"
 
   bottle do
