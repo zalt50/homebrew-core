@@ -5,8 +5,8 @@ class Crystal < Formula
   compatibility_version 1
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/refs/tags/1.20.3.tar.gz"
-    sha256 "b0b5ff4a9ec499ff648f724e9d6c6efd2b2f672bf83ae9ac3f251911254ba9fc"
+    url "https://github.com/crystal-lang/crystal/archive/refs/tags/1.21.0.tar.gz"
+    sha256 "5e2d69f565553aa7287e76570d4540a231bfdf1a37f3be179f497ef1df8a0d9a"
 
     resource "shards" do
       url "https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
@@ -36,6 +36,7 @@ class Crystal < Formula
     end
   end
 
+  depends_on "asciidoctor" => :build
   depends_on "bdw-gc"
   depends_on "gmp" => :no_linkage # std uses it but it's not linked
   depends_on "libyaml"
@@ -126,6 +127,7 @@ class Crystal < Formula
     (buildpath/".build").mkpath
     system "make", "deps"
     system "make", "crystal", *crystal_build_opts
+    system "make", "man/crystal.1"
 
     # Build shards (with recently built crystal)
     resource("shards").stage do
