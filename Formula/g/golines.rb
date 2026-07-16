@@ -1,10 +1,10 @@
 class Golines < Formula
   desc "Golang formatter that fixes long lines"
-  homepage "https://github.com/segmentio/golines"
-  url "https://github.com/segmentio/golines/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "ec1933e0fb73cf0517fd007d325603007aa65ce430267a70fc78cfea43d9716e"
+  homepage "https://github.com/golangci/golines"
+  url "https://github.com/golangci/golines/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "0dc245339b1508d6489950315d46ac1643a70dce40d172e85b6bd9e6bd6cf6d3"
   license "MIT"
-  head "https://github.com/segmentio/golines.git", branch: "master"
+  head "https://github.com/golangci/golines.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a9cd3736e5ea0b6729260f8248667baec0c80eea786497407b7fa78d60c8879"
