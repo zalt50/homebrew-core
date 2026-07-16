@@ -1,9 +1,9 @@
 class TclTk < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.3/tcl9.0.3-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/tcl9.0.3-src.tar.gz"
-  sha256 "2537ba0c86112c8c953f7c09d33f134dd45c0fb3a71f2d7f7691fd301d2c33a6"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.4/tcl9.0.4-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl9.0.4-src.tar.gz"
+  sha256 "d0aed49230bc02a65c1e0229e65f34590a4b037ec40d546f32573b467f7551ea"
   license "TCL"
   compatibility_version 1
 
@@ -67,9 +67,9 @@ class TclTk < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.3/tk9.0.3-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk9.0.3-src.tar.gz"
-    sha256 "bf344efadb618babb7933f69275620f72454d1c8220130da93e3f7feb0efbf9b"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.4/tk9.0.4-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk9.0.4-src.tar.gz"
+    sha256 "d7a146d2917eb8b5cc95276dbf0e3d03c7464d2b19c1675357857c989301dbb4"
 
     livecheck do
       formula :parent
@@ -116,7 +116,8 @@ class TclTk < Formula
     ENV["TCL_PACKAGE_PATH"] = "#{HOMEBREW_PREFIX}/lib"
     cd "unix" do
       system "./configure", *args, "--with-system-libtommath"
-      system "make"
+      # Install the core first so the bundled packages' configure can run tclsh
+      system "make", "install-binaries"
       system "make", "install"
       system "make", "install-private-headers"
       bin.install_symlink "tclsh#{version.to_f}" => "tclsh"
