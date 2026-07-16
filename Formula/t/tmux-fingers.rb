@@ -5,6 +5,15 @@ class TmuxFingers < Formula
   sha256 "5e62f8550787842fc712203df31f7eaa723f7023ab19bc97d28b3b85e2d7c420"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "2d2e30632b6a39accee83f12addaae4c40970084b5cd3155a3789152762e4a0f"
+    sha256 cellar: :any, arm64_sequoia: "bd8a0bb8472953e836581a9199d52cb37df881997d2499f0ca4873f8481e3342"
+    sha256 cellar: :any, arm64_sonoma:  "5c6a364d0d1e6e9dd9d4f604e9d9176e8ae8f397a26368c5af5bac6a33408535"
+    sha256 cellar: :any, sonoma:        "ecc99a0aa7b7bbc96cca470b52085b6547b825b6f7a2ef2bcfca8cb6826f083e"
+    sha256 cellar: :any, arm64_linux:   "af704b9aee86835ba1aaeb0ed82d8aa29f0e6471819fcbf57202188c4eecb520"
+    sha256 cellar: :any, x86_64_linux:  "058d5f5ddd816d7a41f6074f51220ef51365aaf9c46bab3e712926970f94263f"
+  end
+
   depends_on "crystal" => :build
   depends_on "bdw-gc"
   depends_on "pcre2"
