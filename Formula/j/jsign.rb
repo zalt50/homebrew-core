@@ -7,7 +7,12 @@ class Jsign < Formula
   head "https://github.com/ebourg/jsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e5df607c24b1098474afbe5125077cc62817ff16e0e3898e370977b93ca8d871"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bec35e77a156af2ae9399e7fe32b833b47a0f42145a20dbe657bb870f1234f70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bec35e77a156af2ae9399e7fe32b833b47a0f42145a20dbe657bb870f1234f70"
   end
 
   depends_on "maven" => :build
