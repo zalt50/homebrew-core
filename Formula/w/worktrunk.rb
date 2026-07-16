@@ -7,12 +7,12 @@ class Worktrunk < Formula
   head "https://github.com/max-sixty/worktrunk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df298942bc1f12366b8b1924c0523c666369bb499b36222bff87dffde8d476f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7cee30742523bdd43820b06a2e85e9c7b668440df9ebddac9683ac26695d8ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f265d0dda3d3e3ada5b8da2c09fee02e2424fc14b798151b79b6e007643fe248"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80bae56a239262e476b476c23c0cb2d46e3b57317cd9614bb642392573347b7f"
-    sha256 cellar: :any,                 arm64_linux:   "099d29938502496a2c87461a5218d930b2fe9efc55ac999bd65885002544eb34"
-    sha256 cellar: :any,                 x86_64_linux:  "14b35efa20a6544bd6256b1d494c9a2d30f662e2b57848f96c26f6745fbe20fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c84db110e82a1af605c53e1c980c198a2ae134d04763165706f5b23dab8b3703"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e332981be77ef0fa02d18d0962e5e392051bfb8f4ff42be0ba91196f574e6b2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "deef8d0939e5b936761082a707e2e218a58e8d8aa49c1df10090bb48f256336f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac4ebe852a22ed7b7e3f6211615db68b0e3f9597ed93891678fae0b36459ca97"
+    sha256 cellar: :any,                 arm64_linux:   "b7a738f8431e6dc1cfc78511cff9ce36cf2fa4396461c083e5a50d8d543604d8"
+    sha256 cellar: :any,                 x86_64_linux:  "9e9025524a3378010e7c74ca9cde226d54cba6991360a5d7ddf419a32f99244a"
   end
 
   depends_on "rust" => :build
