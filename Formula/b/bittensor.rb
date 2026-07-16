@@ -7,6 +7,15 @@ class Bittensor < Formula
   sha256 "ee2d7f98a8ce9dda07e8110571de8cc12c86cb18151aeb6dfe06aa35c25ec37f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "a6de052f1ad5095eb6718f944b0d45754bb2bc91c34c2480c313f7c56958c87a"
+    sha256 cellar: :any, arm64_sequoia: "1e7433ea58fb11e1ea0b01a93bb7010ede7dc05f434c360418f6cc1405102d75"
+    sha256 cellar: :any, arm64_sonoma:  "a70007a3a015d6aedea18b454335dbdce39ff3185516908ba530cc0e680c3151"
+    sha256 cellar: :any, sonoma:        "0b6cdc226941c6ba4a8d9d3851a3bb6d5b8bb51c94cbccef5e5ef528db579301"
+    sha256 cellar: :any, arm64_linux:   "017639fc2a852252114ebc72fdf184bde2224d1a1671303c99f0aa51de39e352"
+    sha256 cellar: :any, x86_64_linux:  "189cea98f6764441567f97aaac2bf5c86cc5a0d74ef668abd8680b8d5dae1327"
+  end
+
   depends_on "rust" => :build # for bittensor-wallet, plotly
 
   depends_on "certifi" => :no_linkage
