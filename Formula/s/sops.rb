@@ -17,9 +17,18 @@ class Sops < Formula
 
   depends_on "go" => :build
 
+  # Fix completion script
+  patch do
+    url "https://github.com/getsops/sops/commit/fedcba3c01bbd6897a4700993dfd6475241ee10a.patch?full_index=1"
+    sha256 "ff086e2c17c7de93211c70fbea744dc67006625a2961b649bc504aa095c0c18e"
+    type :unofficial
+    resolves "https://github.com/getsops/sops/issues/2252"
+  end
+
   def install
     ldflags = "-s -w -X github.com/getsops/sops/v3/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/sops"
+
     pkgshare.install "example.yaml"
 
     generate_completions_from_executable(bin/"sops", shell_parameter_format: :cobra, shells: [:bash, :zsh])
@@ -28,7 +37,7 @@ class Sops < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/sops --version")
 
-    assert_match "Recovery failed because no master key was able to decrypt the file.",
-      shell_output("#{bin}/sops #{pkgshare}/example.yaml 2>&1", 128)
+    expected = "Recovery failed because no master key was able to decrypt the file."
+    assert_match expected, shell_output("#{bin}/sops #{pkgshare}/example.yaml 2>&1", 128)
   end
 end
