@@ -1,8 +1,8 @@
 class Docmd < Formula
   desc "Minimal Markdown documentation generator"
   homepage "https://docmd.io"
-  url "https://registry.npmjs.org/@docmd/core/-/core-0.8.14.tgz"
-  sha256 "cc168df36a177ffc8a9d74795b9273275d9e1209efac68656803c69656aa3681"
+  url "https://registry.npmjs.org/@docmd/core/-/core-0.8.15.tgz"
+  sha256 "ac6ebe276a380454227dbec447018e6bd90ec03d88d41ae286ed98d236df6829"
   license "MIT"
 
   bottle do
