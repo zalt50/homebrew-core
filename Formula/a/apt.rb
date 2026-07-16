@@ -2,8 +2,8 @@ class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
   # Using git tarball as Debian does not retain old versions at deb.debian.org
-  url "https://salsa.debian.org/apt-team/apt/-/archive/3.2.0/apt-3.2.0.tar.bz2"
-  sha256 "5ee51677f2240b6d40b39233407fd8d00c7a86e92cd3d0c2e57c9c752ed1d164"
+  url "https://salsa.debian.org/apt-team/apt/-/archive/3.3.1/apt-3.3.1.tar.bz2"
+  sha256 "0891dd9f0b89d87479993cb608df62b1e676d42c0846cc34cbca58d1e4135e63"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -60,6 +60,13 @@ class Apt < Formula
     end
   end
 
+  # Backport upstream fix: hashes.cc uses std::span without including <span>,
+  # which fails to build with newer libstdc++ that no longer pulls it in transitively
+  patch do
+    url "https://salsa.debian.org/apt-team/apt/-/commit/a13b5091addd4f065b426297686c861bffc7527a.patch"
+    sha256 "231f7aef8f3f559f7289370746b16c798851c9adb0f245305bd0d19a235ab33e"
+  end
+
   def install
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
@@ -83,7 +90,7 @@ class Apt < Formula
   end
 
   test do
-    assert_match "apt does not have a stable CLI interface. Use with caution in scripts",
-                 shell_output("#{bin}/apt list 2>&1")
+    assert_match "Listing", shell_output("#{bin}/apt list 2>&1")
+    assert_match "Dir \"/\"", shell_output("#{bin}/apt-config dump")
   end
 end
