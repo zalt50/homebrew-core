@@ -1,8 +1,8 @@
 class Zsign < Formula
   desc "Cross-platform codesigning tool for iOS apps"
   homepage "https://github.com/zhlynn/zsign"
-  url "https://github.com/zhlynn/zsign/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "cf6763be9bbce3a64d34d6bce8a36232af6353b02640ef0ae12b7b8dfd6c54fa"
+  url "https://github.com/zhlynn/zsign/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "5e1a24116ca6875d6786703a7fb129d6afde06822f6a859de47d44eff4ad7c05"
   license "MIT"
   head "https://github.com/zhlynn/zsign.git", branch: "master"
 
@@ -21,14 +21,6 @@ class Zsign < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Link zlib: metadata.cpp uses it directly but the SYSTEM_MINIZIP path omits -lz.
-  patch do
-    url "https://github.com/zhlynn/zsign/commit/3372a54c813a50341d725425df55bef1880c566a.patch?full_index=1"
-    sha256 "ea76695035284633cfd6906f55669c501318b5b3bb973d1798324f32f90f204c"
-    type :unofficial
-    resolves "https://github.com/zhlynn/zsign/pull/405"
   end
 
   def install
