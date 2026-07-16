@@ -3,8 +3,8 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/73/db/86c6e2f244f6844be07da308f3f2e6d055df5dbb30844d0f5c6a69d8c615/mistral_vibe-2.19.1.tar.gz"
-  sha256 "08bc3e123a772ae4b6f201ca1184f9122e545c5255d04162183db6b436169b7a"
+  url "https://files.pythonhosted.org/packages/0d/ef/e880f8c996385ca177c3eff9916078ba469be470087939cdfde53775733f/mistral_vibe-2.20.0.tar.gz"
+  sha256 "75ab68afdd4ee87a287f1469048ec73102d5d6a0cc9ae254a9015b86cb0187b2"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
@@ -28,8 +28,8 @@ class MistralVibe < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "agent-client-protocol" do
-    url "https://files.pythonhosted.org/packages/88/a0/3b96cd8374725c69bc3dae9fcc2082f3f6cafec1be35d24d7af0f8c3265f/agent_client_protocol-0.10.1.tar.gz"
-    sha256 "355c65ca19f0568344aafc2c1552b7066a8fc491df23ab28e7e253c6c9a85a25"
+    url "https://files.pythonhosted.org/packages/6c/93/396d02c91b387b2678f23081869ca47bd495fc6c78789022c683180cf5f1/agent_client_protocol-0.11.0.tar.gz"
+    sha256 "8920a3b27bdcc852fd7c73066f47ab53257dbfbe57b505e20a40c69f80a5391c"
   end
 
   resource "anyio" do
@@ -188,8 +188,8 @@ class MistralVibe < Formula
   end
 
   resource "markdownify" do
-    url "https://files.pythonhosted.org/packages/3f/bc/c8c8eea5335341306b0fa7e1cb33c5e1c8d24ef70ddd684da65f41c49c92/markdownify-1.2.2.tar.gz"
-    sha256 "b274f1b5943180b031b699b199cbaeb1e2ac938b75851849a31fd0c3d6603d09"
+    url "https://files.pythonhosted.org/packages/92/ab/d1297139c0e2ceb151ae564c8c4f57ac0155d8f1f8b4cbd5d6523c82ea36/markdownify-1.2.3.tar.gz"
+    sha256 "1a176f05522c8a2cb1dd3ab9d307dcdadbed5c26ae717855bfc42b3b6d38d937"
   end
 
   resource "mcp" do
@@ -208,8 +208,8 @@ class MistralVibe < Formula
   end
 
   resource "mistralai" do
-    url "https://files.pythonhosted.org/packages/81/85/86762a5d0a6933fec178d65f042973514b803e9db69bda86378eb7abe6e2/mistralai-2.5.2.tar.gz"
-    sha256 "7a217090124312fbd501141f189d985e2edeff179ee15a6af73aa15e0b5965ed"
+    url "https://files.pythonhosted.org/packages/39/c1/c6452c81a3d7fc0423b4cfcd84840cf7141c93a0c50755abc27a7619a988/mistralai-2.6.0.tar.gz"
+    sha256 "531a86292ad498fc0fcd6dfcd480a3f4db9e92f558e14ffb22172824831e3a6e"
   end
 
   resource "more-itertools" do
