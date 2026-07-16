@@ -4,6 +4,7 @@ class Libtomcrypt < Formula
   url "https://github.com/libtom/libtomcrypt/archive/refs/tags/v1.18.2.tar.gz"
   sha256 "d870fad1e31cb787c85161a8894abb9d7283c2a654a9d3d4c6d45a1eba59952c"
   license "Unlicense"
+  revision 1
 
   bottle do
     rebuild 2
@@ -24,6 +25,13 @@ class Libtomcrypt < Formula
   depends_on "libtool" => :build
   depends_on "gmp"
   depends_on "libtommath"
+
+  patch do
+    url "https://github.com/libtom/libtomcrypt/commit/64d1153e5a515740ab56f39c46baf4cf6991a9d3.patch?full_index=1"
+    sha256 "74a7abbe90dd5faf82a139810e13f2978f3a974f57adc463191a0ba1b4378412"
+    type :backport
+    resolves "CVE-2019-17362"
+  end
 
   def install
     ENV.append_to_cflags "-DUSE_GMP -DGMP_DESC -DUSE_LTM -DLTM_DESC"
