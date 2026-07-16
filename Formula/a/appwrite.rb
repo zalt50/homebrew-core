@@ -23,6 +23,8 @@ class Appwrite < Formula
     node_modules = libexec/"lib/node_modules/appwrite-cli/node_modules"
     machos = %w[fsevents/fsevents.node app-path/main]
     machos.each { |macho| deuniversalize_machos node_modules/macho } if OS.mac?
+
+    generate_completions_from_executable(bin/"appwrite", "completion")
   end
 
   test do
