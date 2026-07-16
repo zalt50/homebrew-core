@@ -1,8 +1,8 @@
 class Pomerium < Formula
   desc "Identity and context-aware access proxy"
   homepage "https://www.pomerium.com"
-  url "https://github.com/pomerium/pomerium/archive/refs/tags/v0.32.9.tar.gz"
-  sha256 "ca69ae564e584be021dd2af85b8ccda0f791842dff9488f1e463cb26916f1d7c"
+  url "https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "71dedba9b1a06e55bab46cb0ab7ad6f81235a3ab6967f576e4429743ccf2e97a"
   license "Apache-2.0"
 
   head "https://github.com/pomerium/pomerium.git", branch: "main"
@@ -18,6 +18,12 @@ class Pomerium < Formula
 
   depends_on "go" => :build
   depends_on "node" => :build
+
+  # Upstream dropped darwin x86_64 support in 0.33.0
+  # https://github.com/pomerium/pomerium/pull/6141
+  on_macos do
+    depends_on arch: :arm64
+  end
 
   def install
     system "make", "get-envoy"
