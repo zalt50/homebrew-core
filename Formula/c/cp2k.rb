@@ -1,10 +1,9 @@
 class Cp2k < Formula
   desc "Quantum chemistry and solid state physics software package"
   homepage "https://www.cp2k.org/"
-  url "https://github.com/cp2k/cp2k/releases/download/v2026.1/cp2k-2026.1.tar.bz2"
-  sha256 "4364c74bcffaa474bc234e11686b09550e4d06932acf2147a341e4f7679dd88e"
+  url "https://github.com/cp2k/cp2k/releases/download/v2026.2/cp2k-2026.2.tar.bz2"
+  sha256 "f9bd86f580f57a53a0768c0045d1417f9f9a1d66d851ed7f662f496200043373"
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url :stable
@@ -50,6 +49,7 @@ class Cp2k < Formula
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_LIBDIR=#{lib}
       -DCP2K_BLAS_VENDOR=OpenBLAS
       -DCP2K_USE_FFTW3=ON
       -DCP2K_USE_LIBINT2=ON
@@ -64,7 +64,7 @@ class Cp2k < Formula
       ]
     end
 
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args.reject { |s| s["CMAKE_INSTALL_LIBDIR"] }
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     (pkgshare/"tests").install "tests/Fist/water.inp"
