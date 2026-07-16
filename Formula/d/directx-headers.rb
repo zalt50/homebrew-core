@@ -1,8 +1,8 @@
 class DirectxHeaders < Formula
   desc "Official DirectX headers available under an open source license"
   homepage "https://devblogs.microsoft.com/directx/"
-  url "https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.721.2.tar.gz"
-  sha256 "b736c311057f2b426eb465d4e7867da4eb4e76d69be27f45bfa359189f97c0b0"
+  url "https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.4.tar.gz"
+  sha256 "427c4c20bdeb06022d706ba24cb14838b62cca4456a6072e826d7ffa706a4b1a"
   license "MIT"
 
   bottle do
@@ -34,8 +34,6 @@ class DirectxHeaders < Formula
 
     ENV.remove_macosxsdk if OS.mac?
 
-    # State object database helper needs MSVC ATL and HRESULTs unavailable in mingw-w64
-    system Formula["mingw-w64"].bin/"x86_64-w64-mingw32-g++", "-I#{include}",
-           "-DD3DX12_NO_STATE_OBJECT_DATABASE_HELPERS", "-c", "test.cpp"
+    system Formula["mingw-w64"].bin/"x86_64-w64-mingw32-g++", "-I#{include}", "-c", "test.cpp"
   end
 end
