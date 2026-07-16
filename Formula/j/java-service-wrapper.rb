@@ -1,8 +1,8 @@
 class JavaServiceWrapper < Formula
   desc "Simplify the deployment, launch and monitoring of Java applications"
   homepage "https://wrapper.tanukisoftware.com/"
-  url "https://download.tanukisoftware.com/wrapper/3.6.5/wrapper_3.6.5_src.tar.gz"
-  sha256 "e1368eff719f7e1e358d5a3cb4749759cbdbdc455515eebf45ade646be1f82c0"
+  url "https://download.tanukisoftware.com/wrapper/3.7.0/wrapper_3.7.0_src.tar.gz"
+  sha256 "b14bbba6e5375817b20bb9d09eb9cf8f23f699d0be560a95a7d733fba8f500a2"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -29,18 +29,14 @@ class JavaServiceWrapper < Formula
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home
 
-    # Default javac target version is 1.4, use 1.8 which is the minimum available on newer openjdk
-    system "ant", "-Dbits=64", "-Djavac.target.version=1.8"
+    # Default javac target version is 1.4, use 8 which is the minimum available on newer openjdk.
+    # Build only the targets we install without test modules
+    system "ant", "jar", "compile-c", "bin", "conf", "-Dbits=64", "-Djavac.target.version=8"
 
     libexec.install "lib", "bin", "src/bin" => "scripts"
 
-    if OS.mac?
-      if Hardware::CPU.arm?
-        ln_s "libwrapper.dylib", libexec/"lib/libwrapper.jnilib"
-      else
-        ln_s "libwrapper.jnilib", libexec/"lib/libwrapper.dylib"
-      end
-    end
+    # Both arches now build libwrapper.dylib; provide the .jnilib name Java expects on macOS
+    ln_s "libwrapper.dylib", libexec/"lib/libwrapper.jnilib" if OS.mac?
   end
 
   test do
