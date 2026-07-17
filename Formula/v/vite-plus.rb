@@ -1,8 +1,8 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "a7ecb52e83feb0f181f068df41196d48fd30fd363d2faf550d280ca4abfe5185"
+  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "120f0fa6383eabd63a9d6f8dd578d393259d2efb81a4318c8222b1ed0ee03c87"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
@@ -23,8 +23,8 @@ class VitePlus < Formula
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
-        revision: "6cbd2330dc5ca973b90444973ee04c2dc7ee2f2d"
-    version "6cbd2330dc5ca973b90444973ee04c2dc7ee2f2d"
+        revision: "f09947ab017d6df74299f691853dcfc4f4f0f86e"
+    version "f09947ab017d6df74299f691853dcfc4f4f0f86e"
 
     livecheck do
       url "https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -36,8 +36,8 @@ class VitePlus < Formula
 
   resource "vite" do
     url "https://github.com/vitejs/vite.git",
-        revision: "578ffb80d46940f3b99cd96ed609f8b3a0ac5ede"
-    version "578ffb80d46940f3b99cd96ed609f8b3a0ac5ede"
+        revision: "a477454442eff649b430f9e3c6caf2500fcb7183"
+    version "a477454442eff649b430f9e3c6caf2500fcb7183"
 
     livecheck do
       url "https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
