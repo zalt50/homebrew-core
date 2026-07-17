@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/0f/68/9f9fae0c0cd4ee4498d5e3e8141160d81fe8fca48119ab02050e67ace620/gamdl-3.8.3.tar.gz"
-  sha256 "620ca15c4edf7fa2f2f4dc051275c3aa0ffbec43455b315f54d15f99b48ee5ce"
+  url "https://files.pythonhosted.org/packages/ab/83/005bdeb037dc68bf7b0a79c2b4e6c16958ba66b52f51d8dd6fb81e3d82e5/gamdl-3.8.4.tar.gz"
+  sha256 "c0fd711aa6bae8f0ff3ff413c14af92812b5a7bbcd67a2fd0f9600d24994c091"
   license "MIT"
 
   bottle do
@@ -162,14 +162,6 @@ class Gamdl < Formula
   resource "yt-dlp" do
     url "https://files.pythonhosted.org/packages/47/c5/9972af4b472b0d55badf841ebafd2f98944cb0ae0f46e11d01f363ea5b91/yt_dlp-2026.7.4.tar.gz"
     sha256 "b094813404f87a9dd2186f00815231df32e5fd8a5403be0f807b3bb2d21a4432"
-  end
-
-  # Building from the sdist (no .gitignore) makes maturin pack the crate's target/ into the wheel and fail.
-  patch do
-    url "https://github.com/glomatico/gamdl/commit/b16d16fcb39e199db1bf1a3ce04c136f604291e7.patch?full_index=1"
-    sha256 "fbc8cd7d6bdbd8be41c434f427165ddfad8ed951a7332ebe2a904f1105198363"
-    type :unofficial
-    resolves "https://github.com/glomatico/gamdl/pull/334"
   end
 
   def install
