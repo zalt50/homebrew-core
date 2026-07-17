@@ -113,6 +113,7 @@
     "qtwebview"
   ],
   ["qwt", "qwt-qt5"],
+  ["rust", "rust-wasm"],
   [
     "spirv-headers",
     "spirv-tools",
