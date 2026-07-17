@@ -9,6 +9,15 @@ class RustWasm < Formula
     formula "rust"
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72014660a3027140caf15d15e91c010100544696a37749bfe46cb4388f75b378"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72014660a3027140caf15d15e91c010100544696a37749bfe46cb4388f75b378"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72014660a3027140caf15d15e91c010100544696a37749bfe46cb4388f75b378"
+    sha256 cellar: :any_skip_relocation, sonoma:        "671f3662e0b85193940c829c182b2f52ef90fbac26aaec564a3e3ced861119ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e377edbce1435fc933c0fa82985f81bb6af75dcad43b8970172fa0a80b3ea416"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b5bb3ba49b94d616a2dc61d33cc6a51c2ef35ccc2ecdc66959270bee941a01e"
+  end
+
   depends_on "wasmtime" => :test
   depends_on "lld"
   depends_on "rust"
