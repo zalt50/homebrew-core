@@ -1,8 +1,8 @@
 class Rdap < Formula
   desc "Command-line client for the Registration Data Access Protocol"
   homepage "https://www.openrdap.org"
-  url "https://github.com/openrdap/rdap/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "19a6b1fe6c3335fa8bb48fb4c33ce56082e0ffdd24dd649745793613ab6c85cb"
+  url "https://github.com/openrdap/rdap/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "e2a41901fb1497412e0391338af5b7673fac24127fe5080c0e60c8bb5cae961e"
   license "MIT"
   head "https://github.com/openrdap/rdap.git", branch: "main"
 
@@ -22,7 +22,7 @@ class Rdap < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/openrdap/rdap.version=#{version}
+      -X github.com/openrdap/rdap.releaseVersion=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/rdap"
   end
