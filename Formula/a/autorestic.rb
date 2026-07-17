@@ -21,6 +21,7 @@ class Autorestic < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
     generate_completions_from_executable(bin/"autorestic", shell_parameter_format: :cobra)
   end
 
@@ -39,7 +40,12 @@ class Autorestic < Formula
 
     system bin/"autorestic", "check"
     system bin/"autorestic", "backup", "-a"
-    system bin/"autorestic", "restore", "-l", "foo", "--to", "restore"
-    assert compare_file testpath/"repo/test.txt", testpath/"restore"/testpath/"repo/test.txt"
+
+    # `autorestic restore` recreates the absolute source path; on Linux CI restic then fails to
+    # chown the root-owned parents (/var, /var/tmp). Read the file back with `restic dump` instead.
+    ENV["RESTIC_PASSWORD"] = "secret"
+    output = shell_output("#{formula_opt_bin("restic")}/restic -r #{testpath}/data " \
+                          "dump latest #{testpath}/repo/test.txt")
+    assert_equal "This is a testfile", output.chomp
   end
 end
