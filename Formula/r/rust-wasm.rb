@@ -1,8 +1,8 @@
 class RustWasm < Formula
   desc "Rust standard library and sysroot for WebAssembly targets"
   homepage "https://www.rust-lang.org/"
-  url "https://static.rust-lang.org/dist/rustc-1.97.0-src.tar.gz"
-  sha256 "1c0855d8982a0fb1d0321b6054b55b732d3b1d17c846841eb7fd0ab37bf276f8"
+  url "https://static.rust-lang.org/dist/rustc-1.97.1-src.tar.gz"
+  sha256 "622c2b429c53cbfdc0dd3a51d03554e91cd63ebec1912c1f5709640cdfef1a9d"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
