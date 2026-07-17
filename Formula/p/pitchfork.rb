@@ -1,8 +1,8 @@
 class Pitchfork < Formula
   desc "CLI for managing daemons with a focus on developer experience"
   homepage "https://pitchfork.jdx.dev"
-  url "https://github.com/jdx/pitchfork/archive/refs/tags/v2.16.0.tar.gz"
-  sha256 "6a65a644c8e3ad416296b4cfc2ea77b793e95ac64ee7c682c947e3cc283056f8"
+  url "https://github.com/jdx/pitchfork/archive/refs/tags/v2.17.0.tar.gz"
+  sha256 "f50289c0898bf1bda57a625bab89c2ec3964d6c34e6445c19113cf9e9c09f21c"
   license "MIT"
   head "https://github.com/jdx/pitchfork.git", branch: "main"
 
