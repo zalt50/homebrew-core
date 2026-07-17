@@ -6,6 +6,11 @@ class GssNtlmssp < Formula
   license "ISC"
   head "https://github.com/gssapi/gss-ntlmssp.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_linux:  "e86ca4dcbe5d70c868f9c7b8739ef8a2e0944825dd6e66972a74f74a3d03a030"
+    sha256 cellar: :any, x86_64_linux: "d68f43184a27e73931f39e7843df728ba6d6663c2b6d43c4278deecf08b9a78d"
+  end
+
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
 
