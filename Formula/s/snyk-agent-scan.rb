@@ -3,8 +3,8 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/be/b5/ec307c81d2aa14dd0a1fd0f6947fd61e57d75c4e02c73d359ef30d68b8f7/snyk_agent_scan-0.5.14.tar.gz"
-  sha256 "b4dec1fc800c2a80c3d74528acb503c59012d642e26b22df8cff599aefc54b04"
+  url "https://files.pythonhosted.org/packages/a3/51/27ef1f809249107da45f6f3f4f190af7da51293257d3c84b2da1261edc9f/snyk_agent_scan-0.5.15.tar.gz"
+  sha256 "ac7ee5dcba81d2bf17e797b5042a8be3ccae6bd100008e35e0ed7de0be88bc8b"
   license "Apache-2.0"
 
   bottle do
@@ -226,8 +226,8 @@ class SnykAgentScan < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/7c/f7/68adc395201b20b872d68e975386832e8005ffeacedd43a1d837a32815be/typer-0.26.8.tar.gz"
-    sha256 "c244a6bd558886fe3f8780efb6bdd28bb9aff005a94eedebaa5cb32926fe2f7e"
+    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
+    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
   end
 
   resource "urllib3" do
