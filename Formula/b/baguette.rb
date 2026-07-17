@@ -1,8 +1,8 @@
 class Baguette < Formula
   desc "Headless iOS Simulator manager and host-side input injection for iOS 26"
   homepage "https://tddworks.github.io/baguette/"
-  url "https://github.com/tddworks/baguette/archive/refs/tags/v0.1.80.tar.gz"
-  sha256 "e74322173f65d1b4621191c437910f3c2504311773143a8ac430f52d67480885"
+  url "https://github.com/tddworks/baguette/archive/refs/tags/v0.1.81.tar.gz"
+  sha256 "f06bede63e8243531421a9f2218921b2a1023f029a49eb90076af47f72701fa6"
   license "Apache-2.0"
   head "https://github.com/tddworks/baguette.git", branch: "main"
 
@@ -38,14 +38,16 @@ class Baguette < Formula
            "-target", "#{arch}-apple-ios17.0-simulator", "-dynamiclib",
            "-framework", "Foundation", "-framework", "UIKit",
            "-framework", "QuartzCore", "-framework", "CoreGraphics",
-           "-framework", "AVFoundation", "-framework", "ImageIO",
+           "-framework", "AVFoundation", "-framework", "CoreMedia",
+           "-framework", "CoreVideo", "-framework", "ImageIO",
            "-framework", "CoreServices", "-fobjc-arc", "-ldl",
            "-install_name", "@rpath/VirtualCamera.dylib", "-Wl,-adhoc_codesign",
            "-I", "VirtualCamera/Sources", "-o", "#{vc}/VirtualCamera.dylib",
            "VirtualCamera/Sources/SimCamInject.m",
            "VirtualCamera/Sources/SimCamPreviewLayerDriver.m",
            "VirtualCamera/Sources/SimCamFakePhoto.m",
-           "VirtualCamera/Sources/SimCamSharedFrameReader.m"
+           "VirtualCamera/Sources/SimCamSharedFrameReader.m",
+           "VirtualCamera/Sources/SimCamVirtualCamera.m"
 
     system "swift", "build", "--disable-sandbox", "-c", "release"
 
