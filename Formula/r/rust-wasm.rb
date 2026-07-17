@@ -45,11 +45,13 @@ class RustWasm < Formula
     # metadata info: `std` out of `rust`'s keg and the crates.io deps out of
     # `buildpath`. Remap both to the virtual `/rustc/<commit>` prefix upstream
     # rustc uses, so the bottled rlibs carry no builder-specific paths.
+    # `-Cembed-bitcode=yes` matches rustup's std so dependents can enable LTO.
     sysroot = Utils.safe_popen_read("rustc", "--print", "sysroot").chomp
     commit = Utils.safe_popen_read("rustc", "--version", "--verbose")[/^commit-hash:\s*(\S+)$/, 1]
     rustflags = %W[
       --remap-path-prefix=#{sysroot}/lib/rustlib/src/rust=/rustc/#{commit}
       --remap-path-prefix=#{buildpath}=/rustc/#{commit}
+      -Cembed-bitcode=yes
     ]
     ENV.append_to_rustflags rustflags.join(" ")
 
