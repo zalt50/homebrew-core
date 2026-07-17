@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/d3/af/a5f50ccfa659ec1802cb4ca842c23f06d906a8cc9aef6016a2caeea3d4ed/fastapi-0.139.0.tar.gz"
-  sha256 "99ab7b2d92223c76d6cf10757ab3f89d45b38267fc20b2a136cf02f6beac3145"
+  url "https://files.pythonhosted.org/packages/d0/71/f4cfcd72fd94af40d1c76141b69c3d27acaa3641e8fd64872929ff6998b9/fastapi-0.139.1.tar.gz"
+  sha256 "99461bde7ac3fc34c78443da1f4dad3ca8f3182580029a2827692db216a8d7ae"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8a7d2f958647e541ea4356edfedb8ad5f7cd4d656b56acf515e21fff0b1d004f"
-    sha256 cellar: :any, arm64_sequoia: "f862ed5b300ce0ff36cab7ed952b48e1c1acf2bc1d94627955f9e8eee0af2912"
-    sha256 cellar: :any, arm64_sonoma:  "153254bf91ba0196945530b78ab5b47df44e04b55fe305003571431ed24fdb2c"
-    sha256 cellar: :any, sonoma:        "9231b57dc3166a425051d9b2c88170c1144d0e5be304b7a94d454a4f84b6ae2f"
-    sha256 cellar: :any, arm64_linux:   "bf8c6a82ac90287fc317156a4760932a5e47bd758ddd9d31e1075ed084c409d9"
-    sha256 cellar: :any, x86_64_linux:  "4b163fce8ac4547e81c6ce3329e2a8bbedffb1539ff229b33935abef38fe929e"
+    sha256 cellar: :any, arm64_tahoe:   "72b0d82d86f350e9b059e053bd5f1d5de5963b8746ad78f88124b50148cbd381"
+    sha256 cellar: :any, arm64_sequoia: "6563e5fcf1782cb5dd7751dac45c18760b9a6f43f4e36a66da32cb738bc0d1b1"
+    sha256 cellar: :any, arm64_sonoma:  "da338868d598938ed602938bd5c9a6ecdb63dc56e1b3371f087e38f26750fb0b"
+    sha256 cellar: :any, sonoma:        "b9bb652a2e554ce4ec8271b13386e259876688c3f9268e2a2b8557edba21f20f"
+    sha256 cellar: :any, arm64_linux:   "cdabe22a7c8158e1ed1286f7fe79225caf1f63a94c5c0fc7d8c9e38192647dc7"
+    sha256 cellar: :any, x86_64_linux:  "079c66bcca9ff6d57fc98915b9b45563f652a547131e03b5dc1b0bbdf9ca2bb5"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -31,8 +31,8 @@ class Fastapi < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "click" do
@@ -56,13 +56,13 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cli" do
-    url "https://files.pythonhosted.org/packages/37/d0/ee5678346811967b8d096d5d5604e71b50d6bf5a2abfbdb331157e2bbaa9/fastapi_cli-0.0.27.tar.gz"
-    sha256 "1dffb1e40c0c88f2e0171a8a252a2b615c1e63ff8c05626649e4badd6a84336a"
+    url "https://files.pythonhosted.org/packages/5e/0f/aca33be17ad81a182d330e792fa2a947840c7e2b18843f826ef58765b0b3/fastapi_cli-0.0.31.tar.gz"
+    sha256 "b9f4ca1783cb8b6bc5c263e7b45083aafe696416801fb7569c75b2d41890d231"
   end
 
   resource "fastapi-cloud-cli" do
-    url "https://files.pythonhosted.org/packages/6d/85/f1bba93afc0c3d6457e2e455fd627796f71035771e7e25c0fb255afb31e1/fastapi_cloud_cli-0.22.0.tar.gz"
-    sha256 "cde14470227fc9275075ff537977d2991e8ce1baf947055d7a4149726de27e08"
+    url "https://files.pythonhosted.org/packages/25/f2/36bfe990baa656de89a2b98a77a15dcd018474f7245c8e4a10cada0553c5/fastapi_cloud_cli-0.22.2.tar.gz"
+    sha256 "7ec78c1fed58f578af5eb1fb54ec4b456eba4dc1eaca1c3a93cf499a7cbc7ab3"
   end
 
   resource "fastar" do
@@ -151,8 +151,8 @@ class Fastapi < Formula
   end
 
   resource "rich-toolkit" do
-    url "https://files.pythonhosted.org/packages/29/63/3e427c62f1992945c997d4ec31e2fcb37d26aadbe5aa44ae5b29f7f64d26/rich_toolkit-0.20.1.tar.gz"
-    sha256 "c7336ae281f435c785acecaedc4b71d4b663dc73d9c8079fea96372527e822a4"
+    url "https://files.pythonhosted.org/packages/e4/3a/a258c2fbc6c6bdf428611388f5698ba5d57ffdf0755e1cab474d9cc47813/rich_toolkit-0.20.3.tar.gz"
+    sha256 "223dd2cfba325ed55e94933b9e53f3aca13e9fdf76622bd564c18109a2273c1b"
   end
 
   resource "rignore" do
@@ -161,8 +161,8 @@ class Fastapi < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/60/31/b7341f156a5f6f36f0b4845d6f1c28a2ae4799171dba7007f3a1e9b234b4/sentry_sdk-2.64.0.tar.gz"
-    sha256 "68be2c29e14ae310f8a39e1a79916b6d85c6cb41dcce789d14ff05fe293e4c55"
+    url "https://files.pythonhosted.org/packages/f1/1f/ed17a390348156ca99fe622b97cd7d2f1969b5f49df89084b0f28e7953e9/sentry_sdk-2.65.0.tar.gz"
+    sha256 "c94dc945d54bad49d4f20448b1e6b217ca2f92f46d05c3e83d41764af685c3d1"
   end
 
   resource "shellingham" do
@@ -176,8 +176,8 @@ class Fastapi < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/7c/f7/68adc395201b20b872d68e975386832e8005ffeacedd43a1d837a32815be/typer-0.26.8.tar.gz"
-    sha256 "c244a6bd558886fe3f8780efb6bdd28bb9aff005a94eedebaa5cb32926fe2f7e"
+    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
+    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
   end
 
   resource "urllib3" do
@@ -186,8 +186,8 @@ class Fastapi < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
-    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
+    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
+    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
   end
 
   resource "uvloop" do
@@ -201,8 +201,8 @@ class Fastapi < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
-    sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
+    url "https://files.pythonhosted.org/packages/8c/02/b9a097e1e16fee4e2fd1ec8c39f6a9c5d6257bae8fa12640caf869f54436/websockets-16.1.tar.gz"
+    sha256 "299468cbe42e2b9981134c7c51d99387d8a7bf562b00183b3eec53f882846dad"
   end
 
   def install
