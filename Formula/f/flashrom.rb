@@ -25,6 +25,7 @@ class Flashrom < Formula
   depends_on "pkgconf" => :build
 
   depends_on "libftdi"
+  depends_on "libjaylink"
   depends_on "libusb"
   depends_on "openssl@3"
 
