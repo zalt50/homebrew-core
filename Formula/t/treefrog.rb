@@ -1,10 +1,9 @@
 class Treefrog < Formula
   desc "High-speed C++ MVC Framework for Web Application"
   homepage "https://www.treefrogframework.org/"
-  url "https://github.com/treefrogframework/treefrog-framework/archive/refs/tags/v2.11.2.tar.gz"
-  sha256 "2c878603e8dd609ddabb02ee0e3a74fe306ccdf93ea65f9999f9a60ad68249be"
+  url "https://github.com/treefrogframework/treefrog-framework/archive/refs/tags/v2.12.0.tar.gz"
+  sha256 "f56700ead61bc33d0ac34833577179d4e75736c0b14f8ab2c4baf3e7cc1fd101"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/treefrogframework/treefrog-framework.git", branch: "master"
 
   livecheck do
@@ -27,6 +26,10 @@ class Treefrog < Formula
   depends_on "mongo-c-driver"
   depends_on "qtbase"
   depends_on "qtdeclarative"
+
+  on_linux do
+    depends_on "liburing"
+  end
 
   def install
     rm_r("3rdparty")
