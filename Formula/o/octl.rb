@@ -7,12 +7,12 @@ class Octl < Formula
   head "https://github.com/outscale/octl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c869789eeb5be2c731585eb97eb599ff145811cdde8e812e82838e6902528a7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d4c6b550e06328450ec4b0ade576e4553aa591d6c07ba5fad87b494ec8beaf4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ec90be6dbdf92d4bc67333500f282c117b9b2e16db9aa72ab7881f5225b7b52"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07cd59fe7abea5ca293f9427a970a3c464b3406bdfb68d1e77654de7e582ab2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cfde7cd45c2ad574a1267fee28608c4e64f3ba25f20b853d29761a53668af57"
-    sha256 cellar: :any,                 x86_64_linux:  "24f79ac04ea9ebab464cc5a46f90eb5b152b9f48b41f805a91d6578edabba3f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89fb0ce0e095a9d089813dfac941f32db975281c2346ebc0bc07e857b9482e51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e281b0fb5cba093b1a739473280a8ae9556440733ce5ef4f4f8ff415caf6642c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3350631a83d663731aa70d8bfe8ba84c4aab8260b1d73d3a6c0d83eb13e526b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f308c396923465f22e48dcc87e370d6f9b7ff7f2b38d3936c0c7481cd5ab240"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fada54a38d7a84bea02a8f13dfd522c198c55a0d95638c399c98569b61f3fe9"
+    sha256 cellar: :any,                 x86_64_linux:  "c5b87b4a74533d55da0de4cd2f2c122af2f8f25ac18d9dc24e55bd9ac5ea8924"
   end
 
   depends_on "go" => :build
