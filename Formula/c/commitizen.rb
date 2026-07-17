@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/50/8a/4fccfa29c95536ac6dc98dc09a676cc2bce60d72f68b8e280278c6674669/commitizen-4.16.4.tar.gz"
-  sha256 "bb2fda50da381979e308d4a443d349598de2487d9e40d2e4f55a1f115ca38a8c"
+  url "https://files.pythonhosted.org/packages/8e/de/b7ad6b48415760b3bb2e702218b9fc89ea376509ec88d04a281c33196f42/commitizen-4.16.5.tar.gz"
+  sha256 "a953394a8625ab6e3619d7e97ffc032cac8a13c5854a12010d0a9d415cdb80ca"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
@@ -23,13 +23,13 @@ class Commitizen < Formula
   depends_on "python@3.14"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
-    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
+    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
+    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "colorama" do
@@ -88,8 +88,8 @@ class Commitizen < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "wrapt" do
