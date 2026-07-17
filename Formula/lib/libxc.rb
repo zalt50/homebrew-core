@@ -1,8 +1,8 @@
 class Libxc < Formula
   desc "Library of exchange and correlation functionals for codes"
   homepage "https://libxc.gitlab.io/"
-  url "https://gitlab.com/libxc/libxc/-/archive/7.0.0/libxc-7.0.0.tar.bz2"
-  sha256 "e9ae69f8966d8de6b7585abd9fab588794ada1fab8f689337959a35abbf9527d"
+  url "https://gitlab.com/libxc/libxc/-/archive/7.1.0/libxc-7.1.0.tar.bz2"
+  sha256 "30f742fc4ec917d386ae199688ad1b02381d1494d03196dffcf1e03b3c026a68"
   license "MPL-2.0"
   compatibility_version 1
 
