@@ -10,12 +10,13 @@ class RustWasm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72014660a3027140caf15d15e91c010100544696a37749bfe46cb4388f75b378"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72014660a3027140caf15d15e91c010100544696a37749bfe46cb4388f75b378"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72014660a3027140caf15d15e91c010100544696a37749bfe46cb4388f75b378"
-    sha256 cellar: :any_skip_relocation, sonoma:        "671f3662e0b85193940c829c182b2f52ef90fbac26aaec564a3e3ced861119ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e377edbce1435fc933c0fa82985f81bb6af75dcad43b8970172fa0a80b3ea416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b5bb3ba49b94d616a2dc61d33cc6a51c2ef35ccc2ecdc66959270bee941a01e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6fa739a059b5f9d9be3be0b0ef7c9c452bebfb6cf0ee4e3f12198a1f8f8ce25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6fa739a059b5f9d9be3be0b0ef7c9c452bebfb6cf0ee4e3f12198a1f8f8ce25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6fa739a059b5f9d9be3be0b0ef7c9c452bebfb6cf0ee4e3f12198a1f8f8ce25"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24d281bf73221c0e0e143a0c488eb3a46b9504dfcefb1e71bb279f9de589fcd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "476ebfcdbe21b306e721b666e903ae8611d5524ffa5fd0eee1fb537e95e648c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fd05edad34b7d45e8b9f0de61da8d903b1a984a88f75fdca970821dab22a09b"
   end
 
   depends_on "wasmtime" => :test
@@ -45,11 +46,13 @@ class RustWasm < Formula
     # metadata info: `std` out of `rust`'s keg and the crates.io deps out of
     # `buildpath`. Remap both to the virtual `/rustc/<commit>` prefix upstream
     # rustc uses, so the bottled rlibs carry no builder-specific paths.
+    # `-Cembed-bitcode=yes` matches rustup's std so dependents can enable LTO.
     sysroot = Utils.safe_popen_read("rustc", "--print", "sysroot").chomp
     commit = Utils.safe_popen_read("rustc", "--version", "--verbose")[/^commit-hash:\s*(\S+)$/, 1]
     rustflags = %W[
       --remap-path-prefix=#{sysroot}/lib/rustlib/src/rust=/rustc/#{commit}
       --remap-path-prefix=#{buildpath}=/rustc/#{commit}
+      -Cembed-bitcode=yes
     ]
     ENV.append_to_rustflags rustflags.join(" ")
 
