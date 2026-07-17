@@ -11,12 +11,12 @@ class JavaServiceWrapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02d66dd4cb0b7c091065fe9a4ca074a9f1cde335a118fd78649ab83f2ef6b8a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5e79a5972a4e23d6a78762f16f5542044a507ff6bfae7f64b82a68ee9b8913b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6706caef4cbceeb709a644463443c0d30d7648b2bf13205864a3bed6d71ccc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78dfa3dd0a4ddfa5a47e120eb72ba8b7fb3f64d7f5fe466aecf1237d60e39eac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fa2df42bef313633426f63cf7967f4871d9b18f1cf5ed5c4428b7206ba6618a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1884526297eddb52a7b9b445049fb5d58cdadb03fe6890690893a39011d011a"
+    sha256 cellar: :any, arm64_tahoe:   "03e1aa31aa3e9473edb493fc674c0d5f9c8b0ea393574c07953e4186a699b3fb"
+    sha256 cellar: :any, arm64_sequoia: "188f30a785aa919efcbd8b104f63f98a57ed444eb657ad8dae5fc35a7dac774b"
+    sha256 cellar: :any, arm64_sonoma:  "c308d4f9bf7e0fcb5f4a2952d9ecd9d9478343672a9bb0a7b1a0d94a0700d6fc"
+    sha256 cellar: :any, sonoma:        "93a815165b051a74d8f5638791f33411bcb32396da135cb0fa3bcd2c45ad4990"
+    sha256 cellar: :any, arm64_linux:   "07b6e91268a4323eb6f51abe6cec49dc90ce5019127fb4b4a79fed8782ce279d"
+    sha256 cellar: :any, x86_64_linux:  "db2775ef748afbfe3a07127d352a2dcee36578ece8da988fb39c9d7a55259f29"
   end
 
   depends_on "ant" => :build
