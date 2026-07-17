@@ -1,17 +1,17 @@
 class Officecli < Formula
   desc "Read, edit, and automate Office documents (.docx, .xlsx, .pptx)"
   homepage "https://github.com/iOfficeAI/OfficeCLI"
-  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.136.tar.gz"
-  sha256 "3adcd8ddf20f3af362a00105936d0537bddd1da87e72fc18a1cee40f1b14b689"
+  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.137.tar.gz"
+  sha256 "0df02b18f7392a679b9938d0665e72def63d06c93cd19f1d3aaa04915818bf09"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ef0672de008fffb17ffa2bcd238d8f4ca28844543403291c50a555f46a76d02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e70c9dccc6b68296585983f08cb6d5f1344fb5fd3dd38b6ce890ef2a600c1b4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c281b478d6510226fc3e43b33e602387507e7972b44f31caea7f9aee1fad7b1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac2e863c9696a9f9908e81efad8d53a783f6ce00a1029d5eea3d8b7f9a8d4755"
-    sha256 cellar: :any,                 arm64_linux:   "9743abe4d5e2b2188be5844b21d57444d3cdf682f795558468f8a74ec4541353"
-    sha256 cellar: :any,                 x86_64_linux:  "24f74c87271af28101ce55519016491c5a8dc6e280cc53825a847a040b1e2eba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "930ec7d83ded0ada7030abd21919baeb214784fe5da600d19878e531053874fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d37851fe7b0f0203124653cd3362d91227eab3927e42900503fd777ddb67da8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9596eb279aa99333279e4c59be4879a2a47e2ba709b63a56c0747e2e191c0693"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f81da9c43904113f2b8d037243ee5f51ff7ee9aa5861670936fa82f510606a2"
+    sha256 cellar: :any,                 arm64_linux:   "cac5e5a1307f5151b1a45e8f76fbbc29cd4f898f32d1edc4b71b022dca405f89"
+    sha256 cellar: :any,                 x86_64_linux:  "12c4319ac09923e60fc4fbb9e45e420e2932f66451cb928df00dbca850de4c59"
   end
 
   depends_on "dotnet"
