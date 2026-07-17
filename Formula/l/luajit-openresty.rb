@@ -19,12 +19,12 @@ class LuajitOpenresty < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "51f599bded22039f236e23589ea4e3686e494ec8b7b4763280c8ade2f8b11662"
-    sha256 cellar: :any, arm64_sequoia: "d8d209a9a48c4e8d60caa14acbaf1efb7c33d91ea5f0716a9657eecb04fc3959"
-    sha256 cellar: :any, arm64_sonoma:  "d5bdde31ac374ccd826db01bc146cc1b6066af4d1938833746c1f4de7ab16190"
-    sha256 cellar: :any, sonoma:        "966998298a47cafb2d5e5e15b1fde2624c7fb71195c2a518eccf5388dc4c3a25"
-    sha256 cellar: :any, arm64_linux:   "51663db493e3970d27eeba08ec60bf6393aba41e9e9b92359d23ac5c47f8c20d"
-    sha256 cellar: :any, x86_64_linux:  "4b7b893495be2def9f674ba4c9de27477813c2297534e098f8c27b85a0629c60"
+    sha256 cellar: :any, arm64_tahoe:   "6bc08d183208541ebd0df82b8eaa05964795054115c6d5b0d8062312cf403bf6"
+    sha256 cellar: :any, arm64_sequoia: "b0fe277c1209f366a7fae2abd3f59dae387947e028ed011c0201755cc58b1929"
+    sha256 cellar: :any, arm64_sonoma:  "257df577283104280578f03d864fc0ef29736a605f279e41ce280d4c6a2c9136"
+    sha256 cellar: :any, sonoma:        "efaac737c5ec39874e81273175106a0a8e35cf5dbdbf9fd993d2c4ea3acc1804"
+    sha256 cellar: :any, arm64_linux:   "3cd46d32459cac6810dbf6505db9c428b84c8d37b8727a8a3249e20c45712194"
+    sha256 cellar: :any, x86_64_linux:  "a285eb7d9c7601871925a68cb5b27ef06f168001a8bd2bfda85532f706845d40"
   end
 
   keg_only "it conflicts with the LuaJIT formula"
