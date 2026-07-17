@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/ce/0e/4bc554c840bdd9480c8374b750c3d09438bd6083e990613937cdb1be5b18/mycli-2.2.0.tar.gz"
-  sha256 "076c96c0f2a4594fe6040a2ad82c8911ff19ec2a81bdb171e286abd226bae81f"
+  url "https://files.pythonhosted.org/packages/94/d1/771a503cc9cc7bb2e3c4cefc5a3213ed913a97b16c17334aa5c1634ba94e/mycli-2.3.0.tar.gz"
+  sha256 "cee9df0781a75e86d4af160d0f86a0493848c29cd3a048b450126658958158be"
   license "BSD-3-Clause"
 
   bottle do
@@ -30,8 +30,8 @@ class Mycli < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "cli-helpers" do
@@ -100,8 +100,8 @@ class Mycli < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
-    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
   resource "jeepney" do
@@ -235,8 +235,8 @@ class Mycli < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/7d/8e/0e2fa87b197b3d0f8dd57856c07da77fa0c7130aaa894ee9d330c715f37c/sqlite_utils-4.0.tar.gz"
-    sha256 "cea711807c2bbc18829ed642ae19a23a80e853f4136c4d2a28078a6117ad9426"
+    url "https://files.pythonhosted.org/packages/83/c1/fa8563039ec30b5cc6a532271e8cf90da37e4c649a3ad80b49fb6a39023e/sqlite_utils-4.1.1.tar.gz"
+    sha256 "cf97e620b3940cd541cae9117cc24af961a6da426189fdb662f20f1950ba1f49"
   end
 
   resource "sqlparse" do
