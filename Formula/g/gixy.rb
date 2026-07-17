@@ -8,12 +8,12 @@ class Gixy < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8059a897d2551baa9dac231c1f29cba430eda2b1ee1519ff49448944a5ec0f40"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1089e64bdcb18fdc7853b71179e88b04ffcc139114315a1e7f99e9a5dea72d6e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2dd1930853134510788924114db37cdf9d0d37b4ff0263e72b478bb435e0461b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "981175b200633ebd540a88f519fd2470ef116557ff2158a30aecf8b69b41e298"
-    sha256 cellar: :any,                 arm64_linux:   "56c6d677cccd770b8430fd506b31e71ce635ea6f6c982f67d0a1e2922673d458"
-    sha256 cellar: :any,                 x86_64_linux:  "cc9282903361529d67cbec7c311518677b5c35cfb057ea9148f07b8daeb85cdf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8972b3e920ed49bf9d8b071695b786aa1590fff86f615485716ff6e728a3220"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "185b38ccd4cf44cbfebb25ac315c5d72e1efb8e2cd9e113af8b250d99189ae05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a5e4b3baef4a5be635daf01df02efb9f4fad1c7d77e617880c2506f07d0027c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95d9bebf5bf5ae905c85ee385a2916fae788e006c059830051a0aae03dfc73c8"
+    sha256 cellar: :any,                 arm64_linux:   "69148b042a0f979580ba1ae0c3039b713c646e8d54d9eb5467fd68a0037222d1"
+    sha256 cellar: :any,                 x86_64_linux:  "eb68fd966e51a8cb97db3f86cc89de447a2fa7e556f1c55b58241303b9976d85"
   end
 
   depends_on "python@3.14"
