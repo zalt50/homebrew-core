@@ -1,8 +1,8 @@
 class AutoEditor < Formula
   desc "Effort free video editing!"
   homepage "https://auto-editor.com"
-  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.2.0.tar.gz"
-  sha256 "7e08462a82300256799b57f296cff1a0bb9ec4ebdf50de6e7a35b2fdac318ec5"
+  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.3.0.tar.gz"
+  sha256 "4fd25b59b1c93585da8bd9a296159f46fdde6f9e2d23d7c12fc27d7a4fc6e873"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
@@ -20,6 +20,14 @@ class AutoEditor < Formula
   depends_on "ffmpeg"
   depends_on "ggml"
   depends_on "whisper-cpp"
+
+  # Link parakeet in the dynamic pkg-config build.
+  patch do
+    url "https://github.com/WyattBlue/auto-editor/commit/ab693319c6ad61a4af5ca744c99a275b482c4e54.patch?full_index=1"
+    sha256 "968362c286e5e99493eaf466ee296107cba43ac3ca53a46dcbd700220ac7ee18"
+    type :backport
+    resolves "https://github.com/WyattBlue/auto-editor/pull/1284"
+  end
 
   def install
     system "nimble", "brewmake"
