@@ -19,6 +19,10 @@ class KimiCli < Formula
     sha256 cellar: :any, x86_64_linux:  "7021d98dca45e1efb96ab2a23e178d76a5b399520db862b383d1ba5c160ab63f"
   end
 
+  # Deprecated upstream: https://github.com/MoonshotAI/kimi-cli#readme
+  deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "kimi-code"
+  disable! date: "2027-01-17", because: :deprecated_upstream, replacement_formula: "kimi-code"
+
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build # for `google-re2`
   depends_on "rust" => :build # for jiter
