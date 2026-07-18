@@ -7,10 +7,10 @@ class Xcresultparser < Formula
   head "https://github.com/a7ex/xcresultparser.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1114f7ff74791d9d9695dadd5edc80bc200f1bd4b88d01b6d7df7dfb5f56f97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7daba68fc5581a285cc58537b7677ce2aaa5e8300e56e8e915833792f694177e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85b0814f00ee3b4f6f6b04020728c3d824a3dac6df63f8a21de3359fc2d7ef74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e79f5144e2ec62e20b521b941444384720c3fa5bc88d0d38a58006e03064e9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c89ca6259f4cc9fe6e767f93303afd8e2a34fc094e9c8d65885cbf62c6f4b7aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a57176cf99fc6fc28a0cb47e7fa9c3f1ab4a7e9ffe9a2db0029e58fc0cd47cc8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21dd804f523e44f606b15b83548fa38bc9a070b467f951d4606f628e21e0036c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "533bcf0644b239b3524ea1c98281411ee0d29f32277bf0ee7120cf2b2cfbebd6"
   end
 
   depends_on xcode: ["15.0", :build]
