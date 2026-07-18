@@ -7,16 +7,12 @@ class Direvent < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "7b48ad09b22f7ce1fc4f6be31312cae2acb2fcb33a52b862e6c442e0bb874f89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f63f471b456241dcf62d3e76ba38a6a32424220eee43665a17eed552ec817fb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afb68e0c1394f2dc09e35f47cae0d7c57b337b4d92766fe3edb018b956628bef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ed0f6f45d7c79bab9b43a70c66a9f42c50c98914d387c7ab88bfb52e043af20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9044f997c251b9d8d188f576b5fc71e8f3e1306f4b2bb86e131eec6d106877ea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "93e741a317f67a70c7ec7a51ee68b16b9af06e0038eea6477332543c657246cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "55d5411f9552456a39cb6bee0fd86cc40f88a19f6e3deb1fbc52dbe0a63fac5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa9149e69d6ed55b6a4de7cb345c9202dfb8136197ec40d99d3d9f4d805b3678"
-    sha256                               arm64_linux:    "1c64f0b91a2b262581b83717c051b3cc781ab418ed36315c1e81a27e9b06d630"
-    sha256                               x86_64_linux:   "c8fb131f7845cd016244b0f5285c3e2ca52efcb52b5c1d2c9a7ac301f5b7152e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e8fb05e4952c404bca7747763e5b89306e2d5798c34ebc0d529839b8d8c84f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bd9c561ab944e4e65c9038a8633e10fb565c7142a4eda3b2ffbf80f2e428ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cbf030c671bac1317b108fd1f1f2c129f2d4f14e45a1617f863c1961ff40d8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e852aae83bb1ea9c260a98780c04e5b3374b953de7a3ac43c397f8b34458b1d"
+    sha256                               arm64_linux:   "f655eb398b490fe9a373fecbbebec19b828093af0436b4d815ec820ce4e6d15c"
+    sha256                               x86_64_linux:  "8a840cfc3743fa20d287a10da4b552b5c445f5d52152972c3a32a600dbc53378"
   end
 
   # Fix macOS build: clock_nanosleep/TIMER_ABSTIME are unavailable.
