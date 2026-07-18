@@ -1,8 +1,8 @@
 class Serialize < Formula
   desc "Single-header bitpacking serializer for C++ aimed at game networking"
   homepage "https://github.com/mas-bandwidth/serialize"
-  url "https://github.com/mas-bandwidth/serialize/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "4be561172300962ccb340ae7f7904882700ee79a20a698979cce5097310eeaae"
+  url "https://github.com/mas-bandwidth/serialize/archive/refs/tags/v1.4.4.tar.gz"
+  sha256 "635c7d0b04bdee3256ca7ac5fc91ae5dea14f08368496dd6cc28f7bd49905e70"
   license "BSD-3-Clause"
 
   bottle do
