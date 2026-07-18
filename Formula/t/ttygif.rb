@@ -22,7 +22,7 @@ class Ttygif < Formula
   end
 
   depends_on "imagemagick"
-  depends_on "ttyrec"
+  depends_on "ovh-ttyrec"
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
