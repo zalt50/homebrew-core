@@ -1,10 +1,10 @@
 class OpencvAT4 < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
-  sha256 "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d"
+  url "https://github.com/opencv/opencv/archive/refs/tags/4.14.0.tar.gz"
+  sha256 "ee8fb9b30eb60850431b4656447080e3737b56e45719c92b67f245950609f86e"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url :stable
@@ -67,8 +67,8 @@ class OpencvAT4 < Formula
   end
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.13.0.tar.gz"
-    sha256 "1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b"
+    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.14.0.tar.gz"
+    sha256 "4f17abd1bc7f88e19c3380c8de7cbf2d863aced5b5ee8d8934cc7902b67d42c9"
 
     livecheck do
       formula :parent
@@ -88,11 +88,6 @@ class OpencvAT4 < Formula
     # Remove bundled libraries to make sure formula dependencies are used
     libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg protobuf tbb zlib]
     libdirs.each { |l| rm_r(buildpath/"3rdparty"/l) }
-
-    # Fix OpenVINO 2026 Tensor::data() constness mismatch, upstream bug report, https://github.com/opencv/opencv/issues/28586
-    inreplace "modules/dnn/src/op_inf_engine.cpp",
-              "return Mat(size, type, blob.data());",
-              "return Mat(size, type, const_cast<void*>(blob.data()));"
 
     # VTK 9.6 stopped transitively including <iostream>;
     # viz uses std::cout/endl directly.
