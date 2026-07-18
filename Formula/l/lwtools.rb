@@ -1,8 +1,8 @@
 class Lwtools < Formula
   desc "Cross-development tools for Motorola 6809 and Hitachi 6309"
   homepage "https://www.lwtools.ca/"
-  url "https://www.lwtools.ca/releases/lwtools/lwtools-4.24.tar.gz"
-  sha256 "b38a2baad15c017bb7cd8144218e7af61abccf21fd25f7b1a35e6529acd7b3dd"
+  url "https://www.lwtools.ca/releases/lwtools/lwtools-4.25.tar.gz"
+  sha256 "a61fb716ed054951f8cd8f1cbad58363eb2115f5ce18af97d5f188e01fb5fcda"
   license "GPL-3.0-only"
 
   livecheck do
