@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://github.com/erebe/wstunnel/archive/refs/tags/v10.6.1.tar.gz"
-  sha256 "6064a5b94af4c75a193a914d4d57ec367f904bb7ee1581824c9cced7e06d1aea"
+  url "https://github.com/erebe/wstunnel/archive/refs/tags/v10.6.2.tar.gz"
+  sha256 "3e4bb4169599ce83bdd64bc071b0435c58d9cf13b15d03693d0c962dbb5e8018"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -30,10 +30,8 @@ class Wstunnel < Formula
   end
 
   test do
-    ENV["NO_COLOR"] = "1"
-
     port = free_port
-    pid = spawn bin/"wstunnel", "server", "ws://[::]:#{port}"
+    pid = spawn bin/"wstunnel", "server", "ws://[::]:#{port}", "--no-color"
     sleep 2
 
     output = shell_output("curl -sI http://localhost:#{port}")
