@@ -1,8 +1,8 @@
 class Unitycatalog < Formula
   desc "Open, Multi-modal Catalog for Data & AI"
   homepage "https://unitycatalog.io/"
-  url "https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "d6ea45b16cd8747cdc1179c3fd07c85706e2f2d17bae87fd90041e8d22b794f5"
+  url "https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "3626e1ae4e658cd297b044ad2d9602d10c5e6eda0fe706ef1a7369c49e1bbce2"
   license "Apache-2.0"
 
   livecheck do
