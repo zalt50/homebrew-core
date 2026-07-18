@@ -14,6 +14,9 @@ class GitlabCiLocal < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    generate_completions_from_executable(bin/"gitlab-ci-local", "--completion", shell_parameter_format: :none,
+                                                                                shells:                 [:bash, :zsh])
   end
 
   test do
