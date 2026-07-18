@@ -1,10 +1,10 @@
 class Lowdown < Formula
   desc "Simple markdown translator"
   homepage "https://kristaps.bsd.lv/lowdown"
-  url "https://kristaps.bsd.lv/lowdown/snapshots/lowdown-3.0.1.tar.gz"
-  sha256 "ac9ea2b51c8bd59350c7bf8db5e2067e9d961b1f48d362cd8a56b022850e965c"
+  url "https://kristaps.bsd.lv/lowdown/snapshots/lowdown-3.1.0.tar.gz"
+  sha256 "1bf17678b8813fa12defa731e61c15145558b9f7f1296b0a6fdcfdda0caba468"
   license "ISC"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/kristapsdz/lowdown.git", branch: "master"
 
   livecheck do
@@ -22,6 +22,13 @@ class Lowdown < Formula
   end
 
   depends_on "bmake" => :build
+
+  patch do
+    url "https://github.com/kristapsdz/lowdown/commit/5c44b2cf36e56a44bfdb3f974d11c3f96fc1b563.patch?full_index=1"
+    sha256 "e5dc1625fc7b8b5d9c9fa70b0f2589cfa4ee4786be874d40104a7b82e08d0857"
+    type :backport
+    resolves "https://github.com/kristapsdz/lowdown/issues/185"
+  end
 
   def install
     configure_args = %W[MANDIR=#{man} PREFIX=#{prefix}]
