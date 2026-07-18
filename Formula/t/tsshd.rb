@@ -6,12 +6,12 @@ class Tsshd < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f5be597f86f01b03876a95c9a3fb96225bfff5d3bee624b4e0d2ecda4df79a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f5be597f86f01b03876a95c9a3fb96225bfff5d3bee624b4e0d2ecda4df79a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f5be597f86f01b03876a95c9a3fb96225bfff5d3bee624b4e0d2ecda4df79a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca646b2423f59e9288f9218286c941f14462f2af80a11a8a25d7572a398040c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a5ebc66805178c28e62c2dd2fcf45c6b8c13d55d7cb09052d92d18b0b3e1964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0b89897053dac6610ad70656272742242c88d1851db6e5a69310ddba404f316"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f77c287527df5f703cb15528a108d187302250e72ca4b91f97f9ef32c1d7ba9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f77c287527df5f703cb15528a108d187302250e72ca4b91f97f9ef32c1d7ba9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f77c287527df5f703cb15528a108d187302250e72ca4b91f97f9ef32c1d7ba9e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8878152451bb39054a6bb6ebdca95e518991b4c54c40f27a078c4406058f24c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bcbefe58e929be3fea5385cea1d06b8ee0c03a41452ab1afd9f53de0265ae7f"
+    sha256 cellar: :any,                 x86_64_linux:  "183495229596f2905fcc1adcb1a9cda90edbcb05074d832298a2cf3c1a2fcded"
   end
 
   depends_on "go" => :build
