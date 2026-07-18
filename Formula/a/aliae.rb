@@ -1,18 +1,18 @@
 class Aliae < Formula
   desc "Cross shell and platform alias management"
   homepage "https://aliae.dev"
-  url "https://github.com/jandedobbeleer/aliae/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "2213e0d03636bf1f011138cff8f18bc1c6babb928634961ca973bc7cbc530be4"
+  url "https://github.com/jandedobbeleer/aliae/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "34737a2956eb0c5d6db1b9e71470682a4e9ea8998486b7faafa257a5f4a5a2ba"
   license "MIT"
   head "https://github.com/jandedobbeleer/aliae.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b6a65d4e25283adf96d1a9503f2326c51cb0a4df3e4636a52609c9a57bc47e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9772a9d97e12e5dd0930ef611b3acefd4f442bb7a4f06c06efb9fe8f5c5f3ec1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07be71060c0766ecca237188443db099b19ea948f7de9eb41fd2a76773d4cb8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e92bd0d6eaa078802ab14eaea2f84afdacc37eeefcee5883713f6ebffdcc55d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65d633d0df4785e1b0189a614a0c5d5e408b352632c5230b5078e53df2e86842"
-    sha256 cellar: :any,                 x86_64_linux:  "9470436dcb8686a83b446f540b9e9390a37fab699a60c9da3bb4070139671b6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33a6c0da581d13aff0a2f4199a0470269870735cf05383d084e46a921947469f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b387f2569c6ad8dfa5008e06bf800ab8aa6b3300ba5af4a7c338ec6330832ced"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3282d85ed0cca8f1cba9c114b014f3ad86179294342a922c9d521663ded58930"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52d44547080bebe279f7338259ad0ba9c648bb28bc7e3e9caf78507962f903f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aab80a1c2526cc998c9c5c683048672a60dab712629697b4c1f22991ac72b58e"
+    sha256 cellar: :any,                 x86_64_linux:  "d466bd791fddd127c804b4feef6356b4864c4a2fa197fe21866e16fcb0d562ae"
   end
 
   depends_on "go" => :build
