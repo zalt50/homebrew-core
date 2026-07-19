@@ -8,12 +8,12 @@ class Bittensor < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a6de052f1ad5095eb6718f944b0d45754bb2bc91c34c2480c313f7c56958c87a"
-    sha256 cellar: :any, arm64_sequoia: "1e7433ea58fb11e1ea0b01a93bb7010ede7dc05f434c360418f6cc1405102d75"
-    sha256 cellar: :any, arm64_sonoma:  "a70007a3a015d6aedea18b454335dbdce39ff3185516908ba530cc0e680c3151"
-    sha256 cellar: :any, sonoma:        "0b6cdc226941c6ba4a8d9d3851a3bb6d5b8bb51c94cbccef5e5ef528db579301"
-    sha256 cellar: :any, arm64_linux:   "017639fc2a852252114ebc72fdf184bde2224d1a1671303c99f0aa51de39e352"
-    sha256 cellar: :any, x86_64_linux:  "189cea98f6764441567f97aaac2bf5c86cc5a0d74ef668abd8680b8d5dae1327"
+    sha256 cellar: :any, arm64_tahoe:   "4c5a66fe6ca1f0151fe04d1c82a5b364f0c7a7f613a9403218ce7bfecfb97556"
+    sha256 cellar: :any, arm64_sequoia: "a15a4ffdc279b019aed6f965034c6e7786fe158d7d148f989fd42f2d73466ba7"
+    sha256 cellar: :any, arm64_sonoma:  "1639ad309dba5716818db48d54c75159960d5892382890535c042a3aaa80a60e"
+    sha256 cellar: :any, sonoma:        "2e2fbbfef8e4a31ac9b17abc207614523a2accf1c2e4978f9fc0fc868d0eedc3"
+    sha256 cellar: :any, arm64_linux:   "d9076b615d9df8c94ab05bb62dcb8110dd661e9938a5c9b60ed689dbeb2f7f55"
+    sha256 cellar: :any, x86_64_linux:  "fcccef711ab62e272d4ccc4d576f24b04911af2c682f173a1f0251f9d6547ddb"
   end
 
   depends_on "rust" => :build # for bittensor-core
