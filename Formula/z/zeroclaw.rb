@@ -4,6 +4,7 @@ class Zeroclaw < Formula
   url "https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "9dd537164012bd122cdc4837b09a20146ea3311aa493cd642a870778871f0d27"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/zeroclaw-labs/zeroclaw.git", branch: "master"
 
   bottle do
@@ -19,6 +20,7 @@ class Zeroclaw < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "apps/zerocode")
   end
 
   service do
@@ -30,6 +32,7 @@ class Zeroclaw < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zeroclaw --version")
+    assert_match version.to_s, shell_output("#{bin}/zerocode --version")
 
     ENV["ZEROCLAW_WORKSPACE"] = testpath.to_s
     assert_match "ZeroClaw Status", shell_output("#{bin}/zeroclaw status")
