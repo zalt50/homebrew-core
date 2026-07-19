@@ -1,18 +1,18 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
-  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.286.tar.gz"
-  sha256 "eb4ce40083e7cfefc6a43d39d6636d8fc1a5f787d14048c47c0634de988acd94"
+  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.287.tar.gz"
+  sha256 "0a863860050b1477bc4870deba977c7c03810da4472c3e4f8415cd8aeac2ae4f"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9dda6029983b9f837d5be1d5ed51c6908bbf2f605be0fed4ad7ac2ea589ab5be"
-    sha256 cellar: :any, arm64_sequoia: "2a0067ac09b94945817f486afcfbdfdd80bd29d759a56f097e81df43261a2dc0"
-    sha256 cellar: :any, arm64_sonoma:  "260f6925ff666630f97f00286c493d5a7c1c1b7e39a9bd9bd8608b3bf82ddfa6"
-    sha256 cellar: :any, sonoma:        "247f542c467693b4bd03c67eb6d412e3a4fbcc904833ae2e6f0d70afcb06bb8d"
-    sha256 cellar: :any, arm64_linux:   "d82fd5d311224dd9cf740e879083c94091f62d299e4eb88d286dfe6a2d9272db"
-    sha256 cellar: :any, x86_64_linux:  "ea5a0879f34f799f19dd18adf6314ea629d1cb09dbcfdb57f90a7c54801756ac"
+    sha256 cellar: :any, arm64_tahoe:   "c708fd70379bc928c8ec00f3c7f810bedba53031c8e4ea3f6cbac2edd9cd55db"
+    sha256 cellar: :any, arm64_sequoia: "50f8b0b1ae10ca3ca78bc00f079408815284e8b97e825f21e41f9f59cc27ef10"
+    sha256 cellar: :any, arm64_sonoma:  "917c545d65ad653ab5f52b36fc5b42579f492a9ecf8143f581b2da0724918ebc"
+    sha256 cellar: :any, sonoma:        "639cf8a9b432e3c6dabdf8f7a39dfc8875187646dd75b50419eb5ff431ea88fe"
+    sha256 cellar: :any, arm64_linux:   "95bed2a0ba64555f5d13aea31a9d027004fe56101d64b526262782613cd0d183"
+    sha256 cellar: :any, x86_64_linux:  "4f3126ec43815b48bee263e8b4bbdc690690eefeaa01724db62a8179ad812a64"
   end
 
   depends_on "cmake" => :build
