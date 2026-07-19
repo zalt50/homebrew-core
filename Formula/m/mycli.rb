@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/94/d1/771a503cc9cc7bb2e3c4cefc5a3213ed913a97b16c17334aa5c1634ba94e/mycli-2.3.0.tar.gz"
-  sha256 "cee9df0781a75e86d4af160d0f86a0493848c29cd3a048b450126658958158be"
+  url "https://files.pythonhosted.org/packages/5e/6a/7e6dafabdea25d6e70d8f927bd7f2e8952f5de69805092032214c3ea9485/mycli-2.4.0.tar.gz"
+  sha256 "0008c89c03a67748c6aa72ac1731453fb51e4719c71d7389170cd458fccd7290"
   license "BSD-3-Clause"
 
   bottle do
@@ -130,8 +130,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/78/60/d4219875289b11d2c2f7da93c36283da224a2e55865ed865ab64e0ce9217/openai-2.45.0.tar.gz"
-    sha256 "10d34ca9c5643bce775852fddbfc172505cb1d4de1ccd101696c3ecff358765d"
+    url "https://files.pythonhosted.org/packages/af/ac/f725c4efbda8657d02be684607e5a2e5ce362e4790fdbcbdfb7c15018647/openai-2.46.0.tar.gz"
+    sha256 "0421e0735ac41451cad894af4cddf0435bfbf8cbc538ac0e15b3c062f2ddc06a"
   end
 
   resource "pluggy" do
@@ -180,8 +180,8 @@ class Mycli < Formula
   end
 
   resource "python-ulid" do
-    url "https://files.pythonhosted.org/packages/40/7e/0d6c82b5ccc71e7c833aed43d9e8468e1f2ff0be1b3f657a6fcafbb8433d/python_ulid-3.1.0.tar.gz"
-    sha256 "ff0410a598bc5f6b01b602851a3296ede6f91389f913a5d5f8c496003836f636"
+    url "https://files.pythonhosted.org/packages/c1/7e/b912a91fe0800585ec29ff695a6a5c4098a32c89732cba550c6fc9343380/python_ulid-3.2.0-py3-none-any.whl"
+    sha256 "7adfc206cbee3124e176b02b73e0fd19d1c9759e119fd8af7ba264d7d29c6fc0"
   end
 
   resource "pyyaml" do
@@ -255,8 +255,8 @@ class Mycli < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz"
-    sha256 "19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520"
+    url "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz"
+    sha256 "700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b"
   end
 
   resource "wcwidth" do
