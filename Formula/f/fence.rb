@@ -1,8 +1,8 @@
 class Fence < Formula
   desc "Lightweight sandbox for commands with network and filesystem restrictions"
   homepage "https://github.com/fencesandbox/fence"
-  url "https://github.com/fencesandbox/fence/archive/refs/tags/v0.1.62.tar.gz"
-  sha256 "fa018f71bb8361780e9c9d17e82352e2503926a7b501ef0e8c6ab4c844dd82b9"
+  url "https://github.com/fencesandbox/fence/archive/refs/tags/v0.1.63.tar.gz"
+  sha256 "72e7b544b74da03bb43aefbc1511792245a053f3d01b18b315c3a74f682fc37e"
   license "Apache-2.0"
   head "https://github.com/fencesandbox/fence.git", branch: "main"
 
