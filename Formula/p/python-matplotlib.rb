@@ -8,12 +8,12 @@ class PythonMatplotlib < Formula
   license "PSF-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ccc5ec3f9cb1c1b954186d4681d38c56cbed95875917aec873a40baece49b8cf"
-    sha256 cellar: :any, arm64_sequoia: "f63a9b8edc3c03181ad49394b4a4b1793082c2c2a2a9a14ee87ba334df53f0ad"
-    sha256 cellar: :any, arm64_sonoma:  "6e8c1939349bed048a5cf2d73d28626204982699c91a8d3505fc82172c86d893"
-    sha256 cellar: :any, sonoma:        "0ffc2c746fe9cb26c8409c0e985f98620bf321fac2626a45ead420ab35acc286"
-    sha256 cellar: :any, arm64_linux:   "4db050de50074233c84673f0e51cfc558da3fb9c76a2090d443a2aab67637a52"
-    sha256 cellar: :any, x86_64_linux:  "07a516975d1f7be7c38ab6c74abef8f17e7e44573a6346fdcc75153b53323b11"
+    sha256 cellar: :any, arm64_tahoe:   "c5e9bd293aa2e7d4484aec924925db10025f371eea34ee0fc8840292218d124f"
+    sha256 cellar: :any, arm64_sequoia: "f1915ea710b6778b4844fd67261af9297330706a015a280f1bfd8136f48ea94b"
+    sha256 cellar: :any, arm64_sonoma:  "b350fc37e822606245f99bd8ec33764dde0b2e960c882198614dec4b69147c78"
+    sha256 cellar: :any, sonoma:        "ca2b5806a421e0daee3e63283a6e800a020b954cc486b2c377220fce205bf8f4"
+    sha256 cellar: :any, arm64_linux:   "3009a0d8d45d579f79b518fd74c2384ba0cadad315ebe4e8216d25db1754674b"
+    sha256 cellar: :any, x86_64_linux:  "d8d38646475cdba6007eaccb34dfefb627754f2d1065c77786c49f1e64378821"
   end
 
   depends_on "cmake" => :build # for contourpy
