@@ -1,9 +1,14 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://registry.npmjs.org/@dbx-app/cli/-/cli-0.4.34.tgz"
-  sha256 "0a7260f9f880bac95cba476da9e79e08efac10728536059bd6253c9692a8baa6"
+  url "https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.38.tar.gz"
+  sha256 "75e1100e3f6308dc5934f37d4a0f45cee0b7d2bdb97e88f9ae606fbb639da0f3"
   license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    regex(/^packages-v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256               arm64_tahoe:   "58070b0f57511d444262d478895dde9cd44eab06d984a4cb4a43b852e4665559"
@@ -14,34 +19,20 @@ class DbxCli < Formula
     sha256 cellar: :any, x86_64_linux:  "d95b6eb6b46fb84649e15c66e594f795edd341b05a25f7a1b8a4eae675fe4c1c"
   end
 
-  depends_on "node"
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
-    depends_on "glib"
-    depends_on "libsecret"
+    depends_on "fontconfig"
   end
 
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
-
-    # Rebuild better-sqlite3 and keytar native bindings for the current platform.
-    # prebuild-install is blocked by the Homebrew sandbox during npm install,
-    # so we must rebuild them explicitly via node-gyp.
-    node_modules = libexec/"lib/node_modules/@dbx-app/cli/node_modules"
-
-    cd node_modules/"better-sqlite3" do
-      system "npm", "run", "build-release"
-    end
-
-    cd node_modules/"keytar" do
-      rm_r "prebuilds" if File.directory?("prebuilds")
-      system "npm", "run", "build"
-    end
+    system "cargo", "install", *std_cargo_args(path: "crates/dbx-cli")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/dbx --version")
+
     output = shell_output("#{bin}/dbx capabilities --json")
     capabilities = JSON.parse(output)
     assert capabilities.key?("directQueryTypes"), "Missing directQueryTypes"
