@@ -1,8 +1,8 @@
 class Xmodmap < Formula
   desc "Modify keymaps and pointer button mappings in X"
   homepage "https://gitlab.freedesktop.org/xorg/app/xmodmap"
-  url "https://www.x.org/releases/individual/app/xmodmap-1.0.11.tar.xz"
-  sha256 "9a2f8168f7b0bc382828847403902cb6bf175e17658b36189eac87edda877e81"
+  url "https://www.x.org/releases/individual/app/xmodmap-1.0.12.tar.xz"
+  sha256 "fc54b9b5bbf2ae58ba8f9d42bd051c41c7438377400c42c17d7496d19e1bb3ce"
   license "MIT-open-group"
 
   bottle do
