@@ -6,12 +6,12 @@ class DbxCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256               arm64_tahoe:   "9224dbf931dfeb233319f6ef01bc2e555dbbb7b17a571cb2969a7a3d78a2bb06"
-    sha256               arm64_sequoia: "bdc8a7996a46e88bfb201052bdd150f72875c182f0f09fe7797a0b294ad59c8c"
-    sha256               arm64_sonoma:  "25a77336a67834e9610ae33e7731e13b0d292ac554f414ddea8acd9951c4636c"
-    sha256               sonoma:        "89994b8887f67091cd7920df0deded3d69c962f2f239df2588dc56201783aeab"
-    sha256 cellar: :any, arm64_linux:   "6075273a33ec875a0cf061ec839f0a4587035847236d21142072be36593f6b10"
-    sha256 cellar: :any, x86_64_linux:  "9701437f6d6b800eca15542d5ef8401a0cfa577f0dfae6bdd8328a4e73c5b623"
+    sha256               arm64_tahoe:   "072bbff3bc8585a5e9d7b4fabff6cf16cdc0e6ea1c99eb618be4cde8cf669647"
+    sha256               arm64_sequoia: "3c4c896e2966a1e220e9d9e6d347a9c5609e4d08a2fbe0db55dec816d01f3165"
+    sha256               arm64_sonoma:  "1888fff5a38ad61524ba062a60698e9babd37c3870f97157aa383c7e181917a6"
+    sha256               sonoma:        "56cb1df7d1c1413878ae52bd1fec38e894923f5f0af956e42f4bd6f04be4b285"
+    sha256 cellar: :any, arm64_linux:   "dba0fe606b891e2ac501faa6a036422e684d8e499984eac66479bc771f25ad08"
+    sha256 cellar: :any, x86_64_linux:  "ad82e2dadfc73d7a17b77870d0202971bedbc07dc2c3e74acdc38c3842213c7c"
   end
 
   depends_on "node"
