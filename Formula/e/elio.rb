@@ -1,8 +1,8 @@
 class Elio < Formula
   desc "Batteries-included terminal file manager with rich previews"
   homepage "https://elio-fm.github.io/"
-  url "https://github.com/elio-fm/elio/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "0c22cbbaf2d79edef3ee8bfd17e44a6273164d2090c30e05004fed259a3d689e"
+  url "https://github.com/elio-fm/elio/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "e99d3b8403a3aa77eda5ab75d88f47a5b39468a82df530059af73485c149b7ca"
   license "MIT"
 
   bottle do
