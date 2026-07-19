@@ -1,8 +1,8 @@
 class Miasma < Formula
   desc "Trap AI web scrapers in an endless poison pit"
   homepage "https://github.com/austin-weeks/miasma"
-  url "https://github.com/austin-weeks/miasma/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "e45695ee6bc4675673bd9aa94923b18908f425b22ea0da59a4d070932253032f"
+  url "https://github.com/austin-weeks/miasma/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "512620fa84d4d95efa73bdc3223928eec8b200dcd6ebf91fd1a9ae62cfbc7ec5"
   license "GPL-3.0-or-later"
 
   bottle do
