@@ -2,10 +2,9 @@ class Powershell < Formula
   desc "Command-line shell and scripting language"
   homepage "https://github.com/PowerShell/PowerShell"
   url "https://github.com/PowerShell/PowerShell.git",
-      tag:      "v7.6.3",
-      revision: "a1994c19a0badf524d714cacffe7986c5c8613c6"
+      tag:      "v7.6.4",
+      revision: "abeb8444d065feeccf80bda83eed5675a37719c1"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
