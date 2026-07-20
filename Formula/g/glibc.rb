@@ -216,6 +216,11 @@ class Glibc < Formula
         "--with-headers=#{Formula["linux-headers@6.8"].include}",
         "--with-bugurl=#{tap.issues_url}",
         "--with-pkgversion=Homebrew glibc (#{pkg_version})",
+
+        # Security hardening options used by Arch Linux, Debian, Fedora and Gentoo
+        "--enable-bind-now",
+        "--enable-fortify-source",
+        "--enable-stack-protector=strong",
       ]
 
       cflags = "-O2 #{ENV["HOMEBREW_OPTFLAGS"]}"
