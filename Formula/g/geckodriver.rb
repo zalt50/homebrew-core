@@ -1,8 +1,8 @@
 class Geckodriver < Formula
   desc "WebDriver <-> Marionette proxy"
   homepage "https://firefox-source-docs.mozilla.org/testing/geckodriver/"
-  url "https://github.com/mozilla/geckodriver/archive/refs/tags/v0.37.0.tar.gz"
-  sha256 "713f2b3029b6b7af485450528164c6571df273d72de6009352c5c3c0c3211d8c"
+  url "https://github.com/mozilla/geckodriver/archive/refs/tags/v0.37.1.tar.gz"
+  sha256 "57ee05afde1696bb094481150eebd93bf08af180292ab8368165cfb5f003788b"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central/", using: :hg
 
