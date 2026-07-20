@@ -1,8 +1,8 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https://github.com/skim-rs/skim"
-  url "https://github.com/skim-rs/skim/archive/refs/tags/v5.3.0.tar.gz"
-  sha256 "390f4da74553e9a44e84754f08489ecb343a28e5ac5e65398c5324d686288e9f"
+  url "https://github.com/skim-rs/skim/archive/refs/tags/v5.3.1.tar.gz"
+  sha256 "bd8298d8e232840b71e66c88249b91bf0b2e6d1aa320ad3fc405a002c521885c"
   license "MIT"
   head "https://github.com/skim-rs/skim.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Sk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddece9476b138f9f909607d8013df6aa90a6f95c6c5fe8a6f6ee8ce420bee4c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e2d6f7f42dda1ae1a97de0e00e5d567e6e479d726d5b2f65a262eee13ca916d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0ff1fbd96d687fd583101f3376549114146b5789a8069f4a8d81895d45f93c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "008663c85a792f4621855c6c4bfbfb9872a3d704147890bb9683534b64c20807"
-    sha256 cellar: :any,                 arm64_linux:   "800bde1cdebfe3b950f4d3e39cd7476028d3f24f221999f1cd15370db904af32"
-    sha256 cellar: :any,                 x86_64_linux:  "cb688e521e553db5e97cdc7edb7e61d9f72f1ee1ec0d1d0e747b18febcb7d771"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b6e6dc586dde849c2c512c6ab6ff770ea737783da3a700f0e2c6ca1d098ec12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5aab8a2503201ac21503c8de9b0faf58013eb0383aa69754f1d883ec8aae7c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78592340faa5761145cacc6090cd1d44d4de6b6cfcb9aaac2510efb7ed2ffee2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abd6b838f22ec15160a441339051f828d5703c2f7dd4ff25095087d0bc91ef24"
+    sha256 cellar: :any,                 arm64_linux:   "1b1bb109a4c89ccf7dc4c52f26a71bcb128bebb74bdceec45e92cfee552c30d9"
+    sha256 cellar: :any,                 x86_64_linux:  "65a1eed84307120c3a1d887efb6de3d23b4395bf07f18ff2f81b2e26412a4157"
   end
 
   depends_on "rust" => :build
