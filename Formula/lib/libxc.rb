@@ -7,12 +7,12 @@ class Libxc < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bda72696a6eda5f242f54ee7c75d1e6830077c698ec823f90fe2c3c93a3c424a"
-    sha256 cellar: :any, arm64_sequoia: "70362836c1e7529240f1cce19b5d7a24956991f9e135236e3e7c0713f6936d27"
-    sha256 cellar: :any, arm64_sonoma:  "50e87883d16f5d71fd1f9ef152a19e364b82334fd2d590c4e798806c3c0cd17e"
-    sha256 cellar: :any, sonoma:        "8bb9921f7e1eba36f47ea2d29144866e2e83efb2ceaf426dbfe9a198b74df055"
-    sha256 cellar: :any, arm64_linux:   "ce28f78673e13bf0b4d394deb2e0446730910f6b1cf6bcb5bbde5bb82b9b80fb"
-    sha256 cellar: :any, x86_64_linux:  "45b0c8db283510fd66a12271a2efa017a7d3f02e9622d92cc20c9efa9cdc8020"
+    sha256 cellar: :any, arm64_tahoe:   "625e98f665c2edb5899737159331b1dd3fd265d4ee9d1ed1c318591515be4a42"
+    sha256 cellar: :any, arm64_sequoia: "c7e7b8077fa3ca4dad77ccd1e32764644a13894b2bbd37dd93ac441d7ff4e9b9"
+    sha256 cellar: :any, arm64_sonoma:  "7b155b606995e268a26951406ce560a39d9ed2452411e73753ac33fe0fa95b84"
+    sha256 cellar: :any, sonoma:        "d073c4ef524d8791a8931aa75cdb0b4e15dee149189ad3fdb4aaebb94122f749"
+    sha256 cellar: :any, arm64_linux:   "36adf43849fc68b0d151d8a2f246edeb5adce26ab1e9d239a38a2c5861e1345b"
+    sha256 cellar: :any, x86_64_linux:  "305810e2ec329690f0cdf65f7842249059827e2f306a5ee6722e2aa1c061b7b3"
   end
 
   depends_on "cmake" => [:build, :test]
