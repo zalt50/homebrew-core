@@ -155,6 +155,14 @@ class Gstreamer < Formula
   link_overwrite "share/gir-1.0/Gst*.gir", "share/gir-1.0/GES-1.0.gir", "share/gstreamer-1.0/*"
   link_overwrite "share/locale/*/LC_MESSAGES/gst-*.mo", "share/man/man1/g*"
 
+  # Support faac 2.0 API
+  patch do
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/49b4b4129e3b488f246493d3a57dc70652ec9dcf.diff"
+    sha256 "25ef9fc417878e0aac46ffb0f16c5a5d1a44341cd3364c97111980fb5bfd64b8"
+    type :unofficial
+    resolves "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/12148"
+  end
+
   # Avoid overlinking of `gst-python` python extension module.
   # https://gitlab.freedesktop.org/gstreamer/gst-python/-/merge_requests/41
   # TODO: Migrate patch to gstreamer monorepo.
