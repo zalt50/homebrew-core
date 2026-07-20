@@ -2,7 +2,7 @@ class Lft < Formula
   desc "Layer Four Traceroute (LFT), an advanced traceroute tool"
   homepage "https://pwhois.org/lft/"
   url "https://pwhois.org/dl/index.who?file=lft-3.99.tar.gz"
-  sha256 "ede57f7782f3034267db654c56a95c43d342f4c00fe34ec234505a04e13b1291"
+  sha256 "f34707b543391eb887ba8479f7d2c2670bfefc3afb244dc5d34a2a41d7b317eb"
   license "VOSTROM"
 
   livecheck do
@@ -22,12 +22,6 @@ class Lft < Formula
   uses_from_macos "libpcap"
 
   def install
-    # FIXME: Drop pathwatch build references as its still testing and no usage in source files
-    inreplace "Makefile.in" do |s|
-      s.gsub! " lft_pathwatch.o", ""
-      s.gsub! " lft_pathwatch.h", ""
-    end
-
     args = %w[
       --disable-async-dns
       --disable-ncurses
