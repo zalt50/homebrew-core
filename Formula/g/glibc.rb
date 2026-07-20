@@ -249,11 +249,17 @@ class Glibc < Formula
 
         # Avoid Intel CI runner timeout on tst-malloc-too-large-malloc-hugetlb2
         ENV["TIMEOUTFACTOR"] = "4" if Hardware::CPU.intel?
+
+        # Workaround to skip test failures seen when running in bubblewrap
+        xfail_tests = [
+          "test-xfail-tst-nss-files-hosts-long=yes", # error: tst-nss-files-hosts-long.c:36: ahostsv4 failed
+          "test-xfail-tst-setuid3=yes",              # runs setuid(0) expecting EPERM
+        ]
       end
 
       system "../configure", *args, "CFLAGS=#{cflags}"
       system "make", "all"
-      system "make", "check" if build.bottle?
+      system "make", "check", *xfail_tests if build.bottle?
       system "make", "install", "localedir=#{share}/locale"
       prefix.install_symlink "lib" => "lib64"
     end
