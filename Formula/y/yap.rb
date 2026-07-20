@@ -7,7 +7,7 @@ class Yap < Formula
   head "https://github.com/finnvoor/yap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "2f3886f0ad5dd5f823b83dd6447a0899caf5f47b5c5a95085b610edd9630f2f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "b8d6f115bdf9d2b8dbec1319cc03fd4b173408bd3014fb36be16f0ccd7194e29"
   end
 
   depends_on xcode: ["26.0", :build]
