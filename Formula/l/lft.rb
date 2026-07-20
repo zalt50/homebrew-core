@@ -1,8 +1,8 @@
 class Lft < Formula
   desc "Layer Four Traceroute (LFT), an advanced traceroute tool"
   homepage "https://pwhois.org/lft/"
-  url "https://pwhois.org/dl/index.who?file=lft-3.98.tar.gz"
-  sha256 "395ced8d95ee2bcc588a837f187e23bb25ce97999a0bb8481b2b3e0c1c633455"
+  url "https://pwhois.org/dl/index.who?file=lft-3.99.tar.gz"
+  sha256 "ede57f7782f3034267db654c56a95c43d342f4c00fe34ec234505a04e13b1291"
   license "VOSTROM"
 
   livecheck do
@@ -11,17 +11,23 @@ class Lft < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f89494bec6e8351e0ce8d648954f8a46bcd966b35113518df85b0b97438a1c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "419eda32f35554778ee34e24d65104e50fca5bd934de9fc2c5264fe040828f3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e0f89ea402cb4c6598e3890b25bb03c46a7f1532ec759c127eb68910497e077"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78c94f8f33339c225c2354822384f955ff614916f55629e65f6dae7cda03779a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fac6c8bc94198d5a1a8638fe527c54506b9368891a87e66a1eb6c2b416398101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f5f45aab33f889b46dba96f3b077f47b5d49638d9439bc1981c299eae110615"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1ba17be6362157133e65a17b1f2d0216f2e5502e48af943b324583ea696b8a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "362b211ae4a1a8fec0bb127667355871fe6ee2f9b669cfe3672f9a040f4af2cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "172e828c28d5ff5b7b0058c86ecd5009fa090170737eabf0b716555c1daf8dd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5de7a22f2afa631c3f46b47252eeb80753f5b70348c80bca8ba85d43c87e5a00"
+    sha256 cellar: :any,                 arm64_linux:   "ef6f383d4689cf6f2ef05c3eeb4c30e3dba3744ecf570b6dcd61db84911163f5"
+    sha256 cellar: :any,                 x86_64_linux:  "81fe8bb11d1638551327990c7e51d8248ba6c18e665c95a2ee043208f0c5b4d0"
   end
 
   uses_from_macos "libpcap"
 
   def install
+    # FIXME: Drop pathwatch build references as its still testing and no usage in source files
+    inreplace "Makefile.in" do |s|
+      s.gsub! " lft_pathwatch.o", ""
+      s.gsub! " lft_pathwatch.h", ""
+    end
+
     args = %w[
       --disable-async-dns
       --disable-ncurses
