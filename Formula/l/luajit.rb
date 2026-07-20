@@ -10,14 +10,14 @@ class Luajit < Formula
   # Get the latest commit with:
   #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
   # This is a rolling release model so take care not to ignore CI failures that may be regressions.
-  url "https://github.com/LuaJIT/LuaJIT/archive/14d8a7a27dc8c626ab9e7c7e9e50b6df6def4f03.tar.gz"
+  url "https://github.com/LuaJIT/LuaJIT/archive/5f627e4114d9b2247cff1e530766312e979d7bdd.tar.gz"
   # Use the version scheme `2.1.timestamp` where `timestamp` is the Unix timestamp of the
   # latest commit at the time of updating.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.1784360928"
-  sha256 "daf57ed14e863e70ca202909a4ec4c2fda8e271e6c9dd00c502242ebc4ccbe79"
+  version "2.1.1784535789"
+  sha256 "ba36a0340abebb0d8127d52280fbf4086379879fe59fa1dca2c684d3247106a1"
   license "MIT"
-  compatibility_version 18
+  compatibility_version 19
   head "https://github.com/LuaJIT/LuaJIT.git", branch: "v2.1"
 
   livecheck do
@@ -31,12 +31,12 @@ class Luajit < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c55d7f696ae234db61421b433318962b5e949abc89051e46bf131d5cc43705f0"
-    sha256 cellar: :any, arm64_sequoia: "7fae425e78d3e0153fc5cfddf115913b7ae8076f7be94e89d06399506fdd4588"
-    sha256 cellar: :any, arm64_sonoma:  "4ed1f1b4432530778ff86b97c3c85c1e11e7d22c0311013b4cc5731e2fbbd472"
-    sha256 cellar: :any, sonoma:        "5c5162d6a11fa08c48954378e7c94f4a7f13c9f7ec3a2520d1a2a0c1554d0236"
-    sha256 cellar: :any, arm64_linux:   "f1390e0f0b263cba63872f11086e8eac845f47ae799487df0a04d1defd840552"
-    sha256 cellar: :any, x86_64_linux:  "98e584fedc1c2dcab58c9aeaf5d4cdc06ac796b7484b0089e341d42d191b7da1"
+    sha256 cellar: :any, arm64_tahoe:   "48b0d3572cdba26ec78798432169f6c46da68885247acb9b905b5a9bc9476c4e"
+    sha256 cellar: :any, arm64_sequoia: "95ed47248505ac8101ddc4022691e88e02057791b1f8e745cbf47b495cc02fe6"
+    sha256 cellar: :any, arm64_sonoma:  "6024e330310f8dcf9b9a3e5737a9d408af540a8cd44b2404da35d8fb54a59d36"
+    sha256 cellar: :any, sonoma:        "834a07ee459fda888109cf025f60ffcedeb2d449568f49485de30b6ad61da189"
+    sha256 cellar: :any, arm64_linux:   "366952293fada42c98c95b3912c2d36f20e744ae1d151cec3bc21a6d6ee37979"
+    sha256 cellar: :any, x86_64_linux:  "dfbf1c37cd0f55fe4c13eea8f6a8c216068c49cead85f187a57a15e623d35484"
   end
 
   def install
