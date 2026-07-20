@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https://dnscontrol.org/"
-  url "https://github.com/DNSControl/dnscontrol/archive/refs/tags/v4.43.0.tar.gz"
-  sha256 "0b66327fe85509866393db08297aa320bf6e81e364c38738f96bdd06391049b7"
+  url "https://github.com/DNSControl/dnscontrol/archive/refs/tags/v4.43.2.tar.gz"
+  sha256 "ce30e8245cb072d456c26486231ebf6ba723bb88dfa1b2a664c456b49067d959"
   license "MIT"
   version_scheme 1
   head "https://github.com/DNSControl/dnscontrol.git", branch: "main"
@@ -16,12 +16,12 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdd9ca2d1287f1cf4b9184b64294c86f7a366fd714ea99aecdfc96e0ae90ed9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26bf927ce5f4b096c4458ac506d5cfb27fd9fc9617a0915376d079a991258790"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "536e4eb355f44b15bce9c9fbbdac2f67f632b5e0633b990f68987c7015bf36ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41be0627c28d77c900f7243a39eef6bba5e31e9769d2cd376a5985f8f5210e84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9865a2c0f72df97a2b6f8fb640363723af792abdbc9c28a56452e410caf45f4"
-    sha256 cellar: :any,                 x86_64_linux:  "985b06b6721c91387576f1751d90119bcf3a5f766c4781319a52262cf5866a4d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c7886f0ddef035095648f37e75cd89b693f4590e855b73b207e38f931f76914"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7174a84fd33eb9a93f87db7f10bc5b285728357fb64945a424953e203bc29137"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "867194eda16af87908d03d1de98ad00c89ad60bb0051dc87edaf9d84a1d95ef9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59a4f6639a08d58339d451a9784498d5600319750aa10bbbe4ba00f5bfee2ed9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f509524f9d97b3e952c75b17b4c5b366fbc39c7ed08acf1db8cc77bde739559"
+    sha256 cellar: :any,                 x86_64_linux:  "e88ad2329b570c507735c07a9ead11e88995ec04fe723bd40d0ead35519c68ec"
   end
 
   depends_on "go" => :build
