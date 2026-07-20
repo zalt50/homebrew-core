@@ -1,8 +1,8 @@
 class Pgbackrest < Formula
   desc "Reliable PostgreSQL Backup & Restore"
   homepage "https://pgbackrest.org"
-  url "https://github.com/pgbackrest/pgbackrest/archive/refs/tags/release/2.58.0.tar.gz"
-  sha256 "2517ec0a7f66be0f1bc77795c3a19cd41c4b106699321d3ac511bc539dd2bfca"
+  url "https://github.com/pgbackrest/pgbackrest/releases/download/release/2.59.0/pgbackrest-2.59.0.tar.gz"
+  sha256 "faaf8faa14a6392279654ee216a493fcd07b0c513af4b55fe34faec062cb8875"
   license "MIT"
 
   bottle do
@@ -21,7 +21,6 @@ class Pgbackrest < Formula
   depends_on "pkgconf" => :build
   depends_on "libpq"
   depends_on "libssh2"
-  depends_on "libyaml"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "zstd"
