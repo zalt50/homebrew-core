@@ -1,8 +1,8 @@
 class QobineWeb < Formula
   desc "Server and web based player for Qobuz"
   homepage "https://github.com/SofusA/qobine"
-  url "https://github.com/sofusA/qobine/archive/refs/tags/v2026-07-15.tar.gz"
-  sha256 "1e2f5c0353dc51609f3a4ff0feb1fc02c9da17646b1f5357e5ea6c05fd39180f"
+  url "https://github.com/sofusA/qobine/archive/refs/tags/v2026-07-21.tar.gz"
+  sha256 "8beda8cf9a78ef02f97f8ed2c3649cdc04bc551dc2d8db5552f9bba89c52fe7e"
   license "GPL-3.0-only"
   head "https://github.com/sofusa/qobine.git", branch: "main"
 
