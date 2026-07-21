@@ -1,4 +1,4 @@
-class VercelCli < Formula
+class Vercel < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
   url "https://registry.npmjs.org/vercel/-/vercel-56.3.2.tgz"
@@ -6,19 +6,19 @@ class VercelCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "359e12f3f85307ce53738e826e9eee89ee53db572a0c6799755d4c24b30d2b0e"
-    sha256 cellar: :any,                 arm64_sequoia: "359e12f3f85307ce53738e826e9eee89ee53db572a0c6799755d4c24b30d2b0e"
-    sha256 cellar: :any,                 arm64_sonoma:  "359e12f3f85307ce53738e826e9eee89ee53db572a0c6799755d4c24b30d2b0e"
-    sha256 cellar: :any,                 sonoma:        "8b162c9f3fc5f13c7cf5fbd237f1ce00540304545b67199ae7d698d2b1e0515c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e774db0e052ec8fb1ff1eb150141e3a49be2d16776e49c026c7a4f2d53c579c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "360bc56b7bc4df22ea9c0158253a9dddcdd989e521bc26164aa3f7d0913651c5"
+    sha256 cellar: :any,                 arm64_tahoe:   "4b9cbd63093428102d1955b0ec2fbd07d32a183dc03b940b305bb7aad7f96f96"
+    sha256 cellar: :any,                 arm64_sequoia: "4b9cbd63093428102d1955b0ec2fbd07d32a183dc03b940b305bb7aad7f96f96"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b9cbd63093428102d1955b0ec2fbd07d32a183dc03b940b305bb7aad7f96f96"
+    sha256 cellar: :any,                 sonoma:        "befe99fe5d9327ba1c461645c8c33ab74194b28a1d7e67266de572efefd0c33d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "556f24a3f426cef67a127bcb792cb411bd69fd20dd2d93aa035220025fa278e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a8bdfd91a9af1256445264b97a18cf51cb9839539e8d9ae08cc10da98154088"
   end
 
   depends_on "node"
 
   def install
     inreplace "dist/index.js", "await getUpdateCommand()",
-                               '"brew upgrade vercel-cli"'
+                               '"brew upgrade vercel"'
 
     system "npm", "install", *std_npm_args
     node_modules = libexec/"lib/node_modules/vercel/node_modules"
