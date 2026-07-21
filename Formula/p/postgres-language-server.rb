@@ -1,8 +1,8 @@
 class PostgresLanguageServer < Formula
   desc "Language Server for Postgres"
   homepage "https://pg-language-server.com/"
-  url "https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.25.5.tar.gz"
-  sha256 "b2647e9f917efb04d7df39748e48c521fd55e169bae36ee08fbfe074c223293f"
+  url "https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.25.6.tar.gz"
+  sha256 "c54f556a194a9d82dabc95d032e36e87a40d99c2a0ce37dad8eb5069ab366adb"
   license "MIT"
   head "https://github.com/supabase-community/postgres-language-server.git", branch: "main"
 
