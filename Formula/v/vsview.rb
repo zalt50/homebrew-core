@@ -3,8 +3,8 @@ class Vsview < Formula
 
   desc "Next-generation VapourSynth previewer"
   homepage "https://jaded-encoding-thaumaturgy.github.io/vs-view/"
-  url "https://files.pythonhosted.org/packages/5d/0d/cf9002dd2939d64b2da3d180a965780729aa8b446218490b9366d56c1208/vsview-0.8.1.tar.gz"
-  sha256 "57cf95168383321a5288431e64a2cae3a6a9adc3af341df7be900fd503fbd4b3"
+  url "https://files.pythonhosted.org/packages/b4/a7/fa3c8b1cca5e307960c5266bfee27237c2e98d82f3e130f9dc7e0cc87159/vsview-0.9.0.tar.gz"
+  sha256 "03746bdb2adb201ecb688c52ccc99b6f2a6ad185235cbddc72da48f40d46bd56"
   license all_of: [
     "EUPL-1.2",
     all_of: ["MIT", "Apache-2.0", "ISC", "OFL-1.1"], # src/vsview/assets/
@@ -122,8 +122,8 @@ class Vsview < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
+    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
   end
 
   resource "pluggy" do
@@ -157,8 +157,8 @@ class Vsview < Formula
   end
 
   resource "urllib3-future" do
-    url "https://files.pythonhosted.org/packages/c4/81/10f2b68f02f3fcfcd476c8839bee0a8121f0f6740326233755869236e2b6/urllib3_future-2.22.901.tar.gz"
-    sha256 "fbece0ff51299a213c926897ffbed61d820ab5ef2ba81cece361c049fe2f51a9"
+    url "https://files.pythonhosted.org/packages/43/e0/b8d8e0a919fe2a0674a3193b42de9c56816341b85d69b5ef6af58a72710b/urllib3_future-2.23.900.tar.gz"
+    sha256 "f488f22983f96cd8c733640b47e6a32def462d33c59bcc4bea6d97a8568b70c8"
   end
 
   resource "vapoursynth-fftspectrum-rs" do
@@ -187,8 +187,8 @@ class Vsview < Formula
   end
 
   resource "vsview-comp" do
-    url "https://files.pythonhosted.org/packages/4e/ee/0f7422981f495eab1cacb8ab04105f3fd800329ab3594078f4edc94b362f/vsview_comp-0.11.0.tar.gz"
-    sha256 "7084f7f7dce8efbbd62f3d4709ea5662b011a1b49266dd2b8f3ad359f7c4ce34"
+    url "https://files.pythonhosted.org/packages/7c/09/eac47b76df526c9e823153597963b7df81a808215cbcf0f100880a6392d7/vsview_comp-0.12.0.tar.gz"
+    sha256 "fe1756959965af87f5720ae65e0a00b2bc838db1d40f37a6f4af16048064395d"
   end
 
   resource "vsview-fftspectrum" do
