@@ -8,12 +8,12 @@ class Fizz < Formula
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5695b2b87102bf80e5ae03a5aff9b713b67c90f2922b7c9a2446d86cd9aaaaf7"
-    sha256 cellar: :any, arm64_sequoia: "bd24c0559a63a40a18c3ef450086f453c1cd61a982b978e6d9653be3d6ff1643"
-    sha256 cellar: :any, arm64_sonoma:  "fb97d1ab60c48f11817874d940eedd65e857253a16460e76f91078eef23bd5c8"
-    sha256 cellar: :any, sonoma:        "720badaa83425fa46e7dd8279f0fc0ed41a18181f19d296c5db9ea0ef85a0c84"
-    sha256 cellar: :any, arm64_linux:   "66138cd609fbce3b293b807e422f68d7d136968b4e3fdf7bf439105d1698ea09"
-    sha256 cellar: :any, x86_64_linux:  "77e02a8483ed4e9d925d419d80ac2ca09de2c11c3d4f6fc15ffcca7527b1b6e7"
+    sha256 cellar: :any, arm64_tahoe:   "c03f88d7b55165ce27e79063a592836fd5630bde192ad5d2cfa4b4e247bb253c"
+    sha256 cellar: :any, arm64_sequoia: "edaf0aef573daa69ffd37d0070a65d706ad7c6c4a34c78773f4348382a59b5e1"
+    sha256 cellar: :any, arm64_sonoma:  "3de452724887ff80722b6e6f008f23271544adfa7172c421dedb54330cf5d208"
+    sha256 cellar: :any, sonoma:        "13d899cfd52d02f4ae55859db92e9ff273c67f3bac89f6ccb0fbc3ac80e03846"
+    sha256 cellar: :any, arm64_linux:   "f2c23c00ea388e901d0aaccdb91de7ac3b0229893b15bb24c3363577cb56ef18"
+    sha256 cellar: :any, x86_64_linux:  "81cb5135f9c13ac280c516fa0110ebdbc820656c33fc75746fa1f5db74fd45f0"
   end
 
   depends_on "cmake" => [:build, :test]
