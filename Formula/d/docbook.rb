@@ -14,7 +14,7 @@ class Docbook < Formula
   no_autobump! because: "new version should be added as a new resource"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ba985d5405421cb25cffc5d94a824817b6a78b8387a20857e7bab0316bb61c6b"
+    sha256 cellar: :any_skip_relocation, all: "c07919d078443c2253603da2689816bdbdefd8c27a3a0ea0eb0fc583d5435b01"
   end
 
   uses_from_macos "libxml2"
