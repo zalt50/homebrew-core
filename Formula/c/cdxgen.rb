@@ -72,6 +72,10 @@ class Cdxgen < Formula
       rm_r("bundle")
       system "./setup.sh"
     end
+
+    chmod 0555, bin/"cdxgen"
+    generate_completions_from_executable(bin/"cdxgen", "completion", shell_parameter_format: :none,
+                                                                     shells:                 [:bash, :zsh])
   end
 
   test do
