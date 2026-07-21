@@ -33,22 +33,31 @@ class Binutils < Formula
 
   def install
     args = %W[
+      --disable-default-execstack
+      --disable-nls
+      --disable-werror
+      --enable-64-bit-bfd
+      --enable-default-hash-style=gnu
       --enable-deterministic-archives
+      --enable-multilib
+      --enable-plugins
+      --enable-relro
+      --enable-shared
+      --enable-targets=all
       --infodir=#{info}
       --mandir=#{man}
-      --disable-werror
-      --enable-interwork
-      --enable-multilib
-      --enable-64-bit-bfd
-      --enable-plugins
-      --enable-targets=all
+      --with-bugurl=#{tap.issues_url}
       --with-system-zlib
       --with-zstd
-      --disable-nls
     ]
+
     system "./configure", *args, *std_configure_args
-    system "make"
-    system "make", "install"
+    system "make", "tooldir=#{prefix}"
+    system "make", "tooldir=#{prefix}", "install"
+
+    # libbfd and libopcodes shouldn't be dynamically linked by external binaries.
+    # This modification is similar to the decision made by Arch Linux and Fedora.
+    rm([lib/shared_library("libbfd"), lib/shared_library("libopcodes")])
 
     if OS.mac?
       bin.each_child do |f|
