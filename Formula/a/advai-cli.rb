@@ -8,12 +8,12 @@ class AdvaiCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f175083c56d4d999e7c72cecf4f316c761ac5166822de0569a9a655ff5b9b018"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38a57a4241f7cce12ab71a117a245fefa938999085b8f5130f4f4a7aeec06b0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d7b9eeebfdf0caea36fc2469a3d2a1aed1b0c7747e5dc20371006b8827e05f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "486f4e5206d020c69c85e9cc81b2a7e1e47fd7ef82a8cf78f4b27daa84228080"
-    sha256 cellar: :any,                 arm64_linux:   "1859ff04bd34a8be7a0b47828bc85d8e6bce602c718722af8ce0b08dcb47bfa9"
-    sha256 cellar: :any,                 x86_64_linux:  "35c177f7a91fb53d3fda0e7cddf72afaf448504431343ab7223bcaf40ce3058a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c476e0d353143e3a3f6d6b3a65d7c6bacf72f5ab7e52c331b92cf0ecfe76c4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89b087e00e636718cce121a42ff4694504b7ae09f023a48deb9992b0d6b2ffc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f97d6d9ca929b9869a8f5d48ea9521326a7c1228f47c13933aa13fbae6938fd7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3154a898e7fd76cba8a1afb6e9e846fecf93fedd84857e7eb139fd1528d76a0b"
+    sha256 cellar: :any,                 arm64_linux:   "e27ad395a7f0327778788cfcbd1e7dd81e566b9447e406c0feaba577607e6253"
+    sha256 cellar: :any,                 x86_64_linux:  "7040752e4410049d032bbf1052ecae815d5f6159666acbe95bd8a4cbb2a76701"
   end
 
   depends_on "python@3.14"
