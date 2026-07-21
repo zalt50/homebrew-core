@@ -16,12 +16,12 @@ class Wasmtime < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9d37c0c86fe05302931bd04af6a6ef45619d61c8ac88b369a030a73ff9504ef3"
-    sha256 cellar: :any, arm64_sequoia: "1500fd6c6c559db2b3ca9e80d2b2b95a77803c432ffb3e3d1526d86552828796"
-    sha256 cellar: :any, arm64_sonoma:  "04a4bfa1ded541e09576e51dd3082c4bad26f72491bf47267ba54004bd39ecad"
-    sha256 cellar: :any, sonoma:        "55651a9cb4e4aba6c2851bf6068ef7ce9acbe150fb86cf4e95aff29058e17b66"
-    sha256 cellar: :any, arm64_linux:   "b0bf3a996de64d900154f5468459b494ab23af6f21cf2056c844a4c5ce211513"
-    sha256 cellar: :any, x86_64_linux:  "e2263b163c45a975d1c8330ac35a329bcf49860dfbc1a8b788ec76635d02ed98"
+    sha256 cellar: :any, arm64_tahoe:   "b402d94081cb522e3934bf0dc8d201fc8808c175cb44781298164a5ab61fdafd"
+    sha256 cellar: :any, arm64_sequoia: "bdf861fde0f8e8c3087bd1e2f271b31e88a06ca3c3ee6549f7c239c8bb23233d"
+    sha256 cellar: :any, arm64_sonoma:  "436dc14b2349e4e8c0e647a701ad417d881308f7f52ba455f370dc6c960b24ce"
+    sha256 cellar: :any, sonoma:        "6d515a730c16f85f246e7570a503656c57b54785f3b76b1183d938266cd34a0e"
+    sha256 cellar: :any, arm64_linux:   "898f0f8ffe7ef376a717bc2384f19ece297a4396bd2def0e960b8cb78791c9ca"
+    sha256 cellar: :any, x86_64_linux:  "5289036120121d319be6df9eaa309a3e18220021ee7c0f60f2de7b1b1c4eb005"
   end
 
   depends_on "cmake" => :build
