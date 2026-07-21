@@ -14,7 +14,7 @@ class Metabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "17ff9fc90fb22e96450682359574633353754e371c214f594950a85a1c7e9b60"
+    sha256 cellar: :any_skip_relocation, all: "b74cd0b8f266a3964a38fb54a503d6495524015be13e77bc89ee5ba6b9a0e5bb"
   end
 
   depends_on "openjdk"
