@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https://dezoomify-rs.ophir.dev"
-  url "https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.17.0.tar.gz"
-  sha256 "4ccc7ed37f02fe91fddeb8fe58c92707adc7227314e25e2fd17d37fef8605592"
+  url "https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.18.0.tar.gz"
+  sha256 "af3cde2aa9ae5c806c66afd85d077a7b7a4dbca862f18ac3a2c799add874c82e"
   license "GPL-3.0-only"
   head "https://github.com/lovasoa/dezoomify-rs.git", branch: "master"
 
@@ -49,7 +49,7 @@ class DezoomifyRs < Formula
     (testpath/"testtiles_shasum.txt").write <<~EOS
       d0544af94eac6b418af6824554cb6bbbca8b3772261a1eb5fe9d1afb1eab458b  testtile.png
     EOS
-    dezoom_out = shell_output("#{bin}/dezoomify-rs tiles.yaml 2>&1")
+    dezoom_out = shell_output("#{bin}/dezoomify-rs tiles.yaml testtile.png 2>&1")
     assert_match "Image successfully saved", dezoom_out
     image_dimensions = shell_output("identify -format \"%w×%h\\n\" testtile.png").strip
     assert_equal "512×512", image_dimensions
