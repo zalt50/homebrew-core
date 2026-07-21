@@ -6,6 +6,15 @@ class Lunarr < Formula
   license "Apache-2.0"
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "960105105f94063e90ad24c2498f4155b93e1cb704422d900e2bcda860e1ec4b"
+    sha256 cellar: :any,                 arm64_sequoia: "4f6af3be75b7455311ab6485b091ea09975422d4ea2b9e9a68aa052b98b95d4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "15e28e1c5a1c2b9ab31ad04a78c2ead137b11950950353c8f70722431a6bd938"
+    sha256 cellar: :any,                 sonoma:        "fad54ec43ade89d1d2fb4675779bd8657558b2bc0dc8c488afde0c8205dda653"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c0c69069ef23198d17cceb496a7b8f9cc7d52289f48390d0122a9f0fecff9cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a66b175dafc086d0ab903c1207cab49e827f2f02437b312f522ccb5b61d8d98d"
+  end
+
   depends_on "ffmpeg"
   depends_on "node"
 
