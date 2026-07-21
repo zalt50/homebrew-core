@@ -233,7 +233,7 @@ class WasiRuntimes < Formula
     wasi_sdk_targets.each do |target|
       system clang, "--target=#{target}", "-v", "test.c", "-o", "test-#{target}"
       wasmtime_flags = if target.end_with?("-threads")
-        "-W threads=y -W shared-memory=y -S threads=y"
+        "-W threads=y -W shared-memory=y"
       else
         ""
       end
