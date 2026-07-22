@@ -1,8 +1,8 @@
 class ApachePolaris < Formula
   desc "Interoperable, open source catalog for Apache Iceberg"
   homepage "https://polaris.apache.org/"
-  url "https://github.com/apache/polaris/archive/refs/tags/apache-polaris-1.3.0-incubating.tar.gz"
-  sha256 "4a502ceb521c09a179d8a4e0f6b75ff0b76b60b707179df9535b2553a9585032"
+  url "https://github.com/apache/polaris/archive/refs/tags/apache-polaris-1.6.0.tar.gz"
+  sha256 "9c265e559eb9a82bee2c684f11cf3be8cc1e907f6a2955a280401c4876020840"
   license "Apache-2.0"
 
   livecheck do
@@ -28,7 +28,7 @@ class ApachePolaris < Formula
     system "gradle", "assemble", "--no-daemon"
 
     mkdir "build" do
-      system "tar", "xzf", "../runtime/distribution/build/distributions/polaris-bin-#{version}-incubating.tgz", "--strip-components", "1"
+      system "tar", "xzf", "../runtime/distribution/build/distributions/polaris-bin-#{version}.tgz", "--strip-components", "1"
       libexec.install "admin", "bin", "server"
     end
 
