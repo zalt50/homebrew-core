@@ -3,8 +3,8 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/23/98/fccd0f7f770fec52f0ae1e951d14c6725bb43d336928e21a4ecab628deba/mistral_vibe-2.21.0.tar.gz"
-  sha256 "f30774eeaef7faf4f13512255e1cef3af3381ab9a58d6cb22b467abe77cf037a"
+  url "https://files.pythonhosted.org/packages/84/02/777f10ab4bdf9e19393c343ba7fa04af8e0859553df6e1f5d1bded84868e/mistral_vibe-2.22.0.tar.gz"
+  sha256 "81554fbb39ddc92120c7735aabe47dcd8691b6467b449d6331455b6461fa2e3d"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
@@ -363,8 +363,8 @@ class MistralVibe < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
-    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
+    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
+    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
   end
 
   resource "sse-starlette" do
