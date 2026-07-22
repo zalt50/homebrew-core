@@ -1,10 +1,21 @@
 class Hindent < Formula
   desc "Haskell pretty printer"
   homepage "https://github.com/mihaimaruseac/hindent"
-  url "https://github.com/mihaimaruseac/hindent/archive/refs/tags/v6.3.0.tar.gz"
-  sha256 "2726bdbf137691624997f181c29392f22f8566ebc87c5f82e420adfb0068ef07"
   license "BSD-3-Clause"
   head "https://github.com/mihaimaruseac/hindent.git", branch: "master"
+
+  stable do
+    url "https://github.com/mihaimaruseac/hindent/archive/refs/tags/v6.3.0.tar.gz"
+    sha256 "2726bdbf137691624997f181c29392f22f8566ebc87c5f82e420adfb0068ef07"
+
+    # GHC 9.14 support
+    patch do
+      url "https://github.com/mihaimaruseac/hindent/commit/38e5fff0a224dd2137bb6ee4cace6ae792b6a527.patch?full_index=1"
+      sha256 "14d79ab840c44d8a1991f38d0d3d34bcd246f3148fa7cfaec1e3c28e1445e91e"
+      type :backport
+      resolves "https://github.com/mihaimaruseac/hindent/issues/1155"
+    end
+  end
 
   bottle do
     rebuild 1
@@ -17,7 +28,7 @@ class Hindent < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.12" => :build # GHC 9.14 issue: https://github.com/mihaimaruseac/hindent/issues/1155
+  depends_on "ghc" => :build
   depends_on "gmp"
 
   uses_from_macos "libffi"
