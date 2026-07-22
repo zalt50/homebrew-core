@@ -1,8 +1,8 @@
 class PiCodingAgent < Formula
   desc "AI agent toolkit"
   homepage "https://pi.dev/"
-  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.80.6.tgz"
-  sha256 "2a77634640b2d86d90d24087bb67559ecf2366e0fb52a42c55eed416147da411"
+  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.81.1.tgz"
+  sha256 "420113c0282160e6181656fd16cf18742f76bf9040ee3dfb9cb67e3e6ad5641c"
   license "MIT"
 
   bottle do
@@ -16,13 +16,20 @@ class PiCodingAgent < Formula
 
   depends_on "node"
 
+  on_macos do
+    depends_on "rust" => :build
+
+    resource "clipboard" do
+      url "https://registry.npmjs.org/@mariozechner/clipboard/-/clipboard-0.3.9.tgz"
+      sha256 "25986ebeecaffadf3d1dd5f9199869057e4b64c37d7069c7f31c231dd86b5639"
+    end
+  end
+
   def install
     system "npm", "install", *std_npm_args
     (bin/"pi").write_env_script libexec/"bin/pi", PI_SKIP_VERSION_CHECK: 1
 
     node_modules = libexec/"lib/node_modules/@earendil-works/pi-coding-agent/node_modules/"
-    deuniversalize_machos node_modules/"@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
-
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     os = OS.linux? ? "linux" : "darwin"
     node_modules.glob("koffi/build/koffi/*").each do |dir|
@@ -33,6 +40,15 @@ class PiCodingAgent < Formula
     node_modules.glob("@earendil-works/pi-tui/native/**/prebuilds/*").each do |dir|
       basename = dir.basename.to_s
       rm_r(dir) if basename != "#{os}-#{arch}"
+    end
+
+    return unless OS.mac?
+
+    # Rebuild as the npm prebuilt lacks Mach-O header space to relocate install names for bottling
+    resource("clipboard").stage do
+      system "cargo", "build", "--lib", "--release"
+      cp "target/release/libcrosscopy_clipboard.dylib",
+         node_modules/"@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
     end
   end
 
