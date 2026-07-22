@@ -1,8 +1,8 @@
 class ProtocGenGrpcJava < Formula
   desc "Protoc plugin for gRPC Java"
   homepage "https://grpc.io/docs/languages/java/"
-  url "https://github.com/grpc/grpc-java/archive/refs/tags/v1.82.2.tar.gz"
-  sha256 "a8aa94f9df771ff5428f5cf8a5dc0fcd2ebb8fda85b29db84a4c7d8ca2153d5a"
+  url "https://github.com/grpc/grpc-java/archive/refs/tags/v1.83.0.tar.gz"
+  sha256 "7cc0adf315e5b91bd5a148725ef7c61c9271077b715d19ec62b416de35a82adf"
   license "Apache-2.0"
 
   bottle do
