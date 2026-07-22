@@ -7,6 +7,13 @@ class Pipdeptree < Formula
   sha256 "2012876c6853ad6cccf4537dd5c07d19ac144c7fceb7ab1ef9e234fa6671c3b9"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "e7abeb1b7c1a48a399ce93633515b4e309e78481d493c6b05698ff4af533038e"
+    sha256 cellar: :any, arm64_sequoia: "803273cc6cb7ae1dad1199a07675ab58226d2582620e74cf8e5247d4341973f7"
+    sha256 cellar: :any, arm64_sonoma:  "985928534a36a63785682a2cbcbf2351c4e7c758435a5ed3b40e655baf7abbbd"
+    sha256 cellar: :any, sonoma:        "93371b33976faaaccfcbecee30f4155212817fbd444b585c5fd6994c75bcf3cb"
+  end
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
