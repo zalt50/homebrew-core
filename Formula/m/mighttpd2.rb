@@ -25,6 +25,13 @@ class Mighttpd2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Fix build with relaxed upper bounds of dependencies
+  patch do
+    url "https://github.com/kazu-yamamoto/mighttpd2/commit/68cdb3a2a98f66deff1ce85e8f8bc691d83c029e.patch?full_index=1"
+    sha256 "e1a330e9842fb977ed4a7a4a7fb265526febe7b0f5b2f03726bfb6d7257d6818"
+    type :backport
+  end
+
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
     args = ["--allow-newer=base,containers,template-haskell"]
