@@ -1,10 +1,9 @@
 class Gearman < Formula
   desc "Application framework to farm out work to other machines or processes"
   homepage "https://gearman.org/"
-  url "https://github.com/gearman/gearmand/releases/download/1.1.22/gearmand-1.1.22.tar.gz"
-  sha256 "c5d18f6a13625ebdd7e514596aed39e31203358eee688dfedcedd989a2f02d7a"
+  url "https://github.com/gearman/gearmand/releases/download/2.0.0/gearmand-2.0.0.tar.gz"
+  sha256 "690cb9c7a58c03d6be18031dc4a1a93778f6fa713590b4ce527ceb8b43ea0688"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5d3c72680496377b84301a11829ce50486c4303b36e6fced1fded664a3e9e884"
@@ -29,13 +28,6 @@ class Gearman < Formula
   end
 
   def install
-    # https://bugs.launchpad.net/gearmand/+bug/1368926
-    Dir["tests/**/*.cc", "libtest/main.cc"].each do |test_file|
-      next unless File.read(test_file).include?("std::unique_ptr")
-
-      inreplace test_file, "std::unique_ptr", "std::auto_ptr"
-    end
-
     args = %W[
       --prefix=#{prefix}
       --localstatedir=#{var}
