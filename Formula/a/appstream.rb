@@ -1,8 +1,8 @@
 class Appstream < Formula
   desc "Tools and libraries to work with AppStream metadata"
   homepage "https://www.freedesktop.org/wiki/Distributions/AppStream/"
-  url "https://github.com/ximion/appstream/archive/refs/tags/v1.1.3.tar.gz"
-  sha256 "437c0564facc63f36b7b7907293182446a9c535619a09ec93840147f685c2f64"
+  url "https://github.com/ximion/appstream/archive/refs/tags/v1.1.4.tar.gz"
+  sha256 "0cba35762201ab9e367d5b8da4d0a6c3bd456103ac78b852585995318d6f109a"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -41,6 +41,7 @@ class Appstream < Formula
     depends_on "gettext" => :build
     depends_on "gperf" => :build
     depends_on "systemd"
+    depends_on "wayland"
   end
 
   def install
@@ -58,7 +59,7 @@ class Appstream < Formula
       -Dbash-completion=false
     ]
 
-    args << "-Dsystemd=false" if OS.mac?
+    args += %w[-Dsystemd=false -Dwayland=false] if OS.mac?
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
