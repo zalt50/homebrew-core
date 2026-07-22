@@ -1,8 +1,8 @@
 class Landrun < Formula
   desc "Lightweight, secure sandbox for running Linux processes using Landlock LSM"
   homepage "https://github.com/Zouuup/landrun"
-  url "https://github.com/Zouuup/landrun/archive/refs/tags/v0.1.15.tar.gz"
-  sha256 "61bc92e1b808e1d4443b69a62498b74d5730a997703a70e6879486d95ea53aad"
+  url "https://github.com/Zouuup/landrun/archive/refs/tags/v0.1.17.tar.gz"
+  sha256 "c6b2579ba5e30b77ca83dac2b4ba912edb31afe558d7933cedd43dc917df5e7d"
   license "MIT"
 
   bottle do
