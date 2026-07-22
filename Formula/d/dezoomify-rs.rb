@@ -15,12 +15,12 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef560398ec91cf8ca8dd0f79ef9cd6d4ffb0006c8df6e51e69c0d19f09829e82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebdcc365bd91b42e310b766742db6ea430e25831cbdea6520f866b4c9a79fece"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d403a000c2115d84ebb84924f5f7f304db8eb663c9e14acd62e11db5e33b1ba5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f508b30c26c8f3f8c437da6a61486ad44d8ed2f22ffd0ed8c591f246af1b6aa5"
-    sha256 cellar: :any,                 arm64_linux:   "588d18900d0f56ca60c8476086fcd95f8d15b8e87913666b1fabed9207a47893"
-    sha256 cellar: :any,                 x86_64_linux:  "95aba5ec69e8c9b637daef7628316e212c84b3349dd8e1abe9beb5eab75a81cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd825ea26fbfae1e5ebc7507bc43297124c9e88f1a1766e1ae07e15ab624e9b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db37997d0c97362141ac804b8661134c365ef45859de7e520636f7bc68eac66d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98a4b9e57fd2155b389f9aa95aa055d2608a137f7987614cbab5fdf39bd33800"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5998b9241ae4e786762689ec60637e9b56a0b09614d4d68818510edb08c99ceb"
+    sha256 cellar: :any,                 arm64_linux:   "d7e3866c2d00893a5b4ebb541dd1d5f61fe5e42808029a59133dd93e4f93417c"
+    sha256 cellar: :any,                 x86_64_linux:  "9146a2aa7f9dec5335d9c516ec2196f9b116fbcc6932175e69625a534d00c357"
   end
 
   depends_on "pkgconf" => :build
