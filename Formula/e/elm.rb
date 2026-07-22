@@ -26,15 +26,11 @@ class Elm < Formula
   end
 
   def install
-    args = %W[
-      --jobs=#{ENV.make_jobs}
-    ]
-
     # Following the process from the Dockerfile for building elm binaries here:
     #  https://github.com/elm/compiler/blob/main/installers/linux/Dockerfile
     # This process does not use `cabal install`
     system "cabal", "update"
-    system "cabal", "build", "elm", *args
+    system "cabal", "v2-build", "elm", *std_cabal_v2_args.reject { it["install"] }
     bin.install Utils.safe_popen_read("cabal", "list-bin", "elm").chomp
   end
 
