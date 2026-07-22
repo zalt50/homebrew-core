@@ -1,8 +1,8 @@
 class Dskditto < Formula
   desc "Ultra-fast duplicate file finder TUI/GUI"
   homepage "https://github.com/jdefrancesco/dskDitto"
-  url "https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "32df44adf16990f7773a9f498e4bdfae16e414e8a8a6189c10d508dfa0f00026"
+  url "https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.5.9.tar.gz"
+  sha256 "66732c8727a514d69ef6290df8a78ce249ce54dcabdcc43439ede902c4e1b0c9"
   license "Apache-2.0"
 
   bottle do
@@ -16,28 +16,14 @@ class Dskditto < Formula
 
   depends_on "go" => :build
 
-  # Linux GUI libraries are only needed to compile the vendored GLFW in
-  # raylib-go; the binary loads them at runtime via dlopen when `--gui` is used
-  on_linux do
-    depends_on "libx11" => :build
-    depends_on "libxcursor" => :build
-    depends_on "libxi" => :build
-    depends_on "libxinerama" => :build
-    depends_on "libxkbcommon" => :build
-    depends_on "libxrandr" => :build
-    depends_on "mesa" => :build
-    depends_on "wayland" => :build
-  end
-
   def install
-    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = "-s -w -X github.com/jdefrancesco/dskDitto/internal/buildinfo.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/dskDitto"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/dskditto --version")
+    assert_match "GUI support was not built", shell_output("#{bin}/dskditto --gui #{testpath} 2>&1", 1)
 
     (testpath/"a.txt").write "This is a test"
     (testpath/"b.txt").write "This is another test"
