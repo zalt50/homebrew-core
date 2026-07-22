@@ -1,19 +1,18 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
   homepage "https://github.com/octobuild/octobuild"
-  url "https://github.com/octobuild/octobuild/archive/refs/tags/1.8.1.tar.gz"
-  sha256 "5638c8759899bfc7a5658d44d8cfcf091f0afc001fdcaa5d305a03f6aa668475"
+  url "https://github.com/octobuild/octobuild/archive/refs/tags/1.9.1.tar.gz"
+  sha256 "73e92477f02d02cd9b739e17895824f0ec42d7442163a0395d3bf0cc016c9033"
   license "MIT"
   head "https://github.com/octobuild/octobuild.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d207da7d9e3694d849795a4674d6580b8aacb80cec69302f5d8d5ea851f6e3b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0883d37e4681202fcd7dadd9f5d7444058b237d0dab41769cfb189e934d32e3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f36198c12bcaa9f5f69db74c84ec064ba81595572981487b7c90c88d7ee3ae5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cc3926e677c29785105ac4d314f16195d251a5e807682630ac783c956335de3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b5a05a42cb6dec1acb7f35ae87cd419731a45fe323e52e146a59be4d3a6ea72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d5e33ca23813c81b8c5d913de72e78c1dda0c4af11e82091e95b5f7809e971a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "327faab1ed7a77c2af1abecdd10bbca5519f26b1d69ffb11323b7ae71fca29bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "746746cd071b800c6ab2c5de1e845aea3eb12707bf4b1e1c7a43f9cff843c895"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37de07ee81d246e7dcd2205e54a40d95c066fedebbfa935fe57396b93bbbc826"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db11e3f1a190942b949333c52d2379738a23e40acffadb49b77e7e9f78e6e021"
+    sha256 cellar: :any,                 arm64_linux:   "d58d10d2b9e3934843ef2d673e98c0ff232cd72dfbffec06e0bbf86ddf050230"
+    sha256 cellar: :any,                 x86_64_linux:  "3d9bd572745c7bb2382a2c3dfbf10ca3959f49a03692b25ebc4f1a9d294040fc"
   end
 
   depends_on "pkgconf" => :build
