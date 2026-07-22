@@ -5,7 +5,7 @@ class PandocCrossref < Formula
   version "0.3.24a"
   sha256 "5b478c94b67d5b972c7b3d867a345be982d3af12475e2261dd9b37fc17e225d1"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 1
