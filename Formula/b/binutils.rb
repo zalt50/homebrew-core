@@ -41,6 +41,7 @@ class Binutils < Formula
       --enable-default-hash-style=gnu
       --enable-deterministic-archives
       --enable-multilib
+      --enable-new-dtags
       --enable-plugins
       --enable-relro
       --enable-shared
