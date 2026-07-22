@@ -9,7 +9,7 @@ class Nbdime < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "48b1c4da70f008379215d391d4b846147a9254bc403e139d7cc92eb22065a2b1"
+    sha256 cellar: :any_skip_relocation, all: "7d95caf2958702897e0cd544d49c093176203e5d4d79e76b635e937b7fc1a435"
   end
 
   depends_on "certifi"
