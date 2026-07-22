@@ -149,6 +149,10 @@ class Ghc < Formula
       --docs=no-sphinx-html
       --docs=no-sphinx-pdfs
     ]
+    # Build PIC so static libraries can be used to build PIE in dependents. This is the default on ARM:
+    # https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.14.1-release/compiler/GHC/Driver/DynFlags.hs#L1275-1300
+    hadrian_args << "*.*.ghc.*.opts += -fPIC -fexternal-dynamic-refs" if OS.linux? && !Hardware::CPU.arm?
+
     # Let hadrian handle its own parallelization
     ENV.deparallelize { system "hadrian/build", "install", *hadrian_args }
 
