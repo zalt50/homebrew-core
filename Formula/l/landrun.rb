@@ -6,8 +6,8 @@ class Landrun < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "bd1fe9ee50db6b17e5b6d698951ca85eeb7e635d7aaa9de60e3ca6bf03a5e051"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c390166baa601f71d8dc11c07ec0b3e1780ed5573b9fe35ebaed59046fcfc259"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2de8d23a677f0f85561215d691275b772fdf57910f3a51ef846634e72161b44f"
+    sha256 cellar: :any,                 x86_64_linux: "cfc357624fdfa2dd7def03fece2741e61b538f1509a11fbb2400902dfa523064"
   end
 
   depends_on "go" => :build
