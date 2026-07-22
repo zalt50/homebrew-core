@@ -7,12 +7,12 @@ class Mq < Formula
   head "https://github.com/harehare/mq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f67063f6fd0c973f19a37d0460b53c8d39c0d1ecb49b3ad24b26c4627bd0fbd1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef5a2557fcad4ffc56a148c491ebe35012259b031bf31c1e54648a48925dadbe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6b6f84d3e3cffc1a3bb1a25e286211dae2d247d51c4ab449c6e7a6a477c3980"
-    sha256 cellar: :any_skip_relocation, sonoma:        "353f87024b534b44c4d11d89a6c51a483699ec357b6389463691028de7121603"
-    sha256 cellar: :any,                 arm64_linux:   "cedf9c4135925e85cf5091bc3a3a174d04fa1c7da0e32064d6279aa3148bb7a2"
-    sha256 cellar: :any,                 x86_64_linux:  "41c470b86dcba0fd17faccad4caffbf44869af67ff08563a1e2348190bad317c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1c18fa4e15eb74cfab122fc1221862fbf8140eb312e14c899d04305cd7f5fee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "798f06428c0a2c48d939b883bbddb159dbe7485c314beada9802c47773db8d86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b34b0977b7d021f31ad772509d46a920c7a2f876892c83eb44e5b528cdfe0d1f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d004baf6ce72280b1515b49029b0238a0986768e44e0e3b46393ccde748bd94"
+    sha256 cellar: :any,                 arm64_linux:   "1308e7740d94eafcb108f27001454632c6ed63128cef60adafa3cf5a53c6c1e5"
+    sha256 cellar: :any,                 x86_64_linux:  "32d4341daf7960d22f851c023e90859ed392c8db417c280cfa6409df908a61ce"
   end
 
   depends_on "rust" => :build
