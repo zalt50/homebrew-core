@@ -1,17 +1,13 @@
 class Orientdb < Formula
   desc "Graph database"
   homepage "https://orientdb.dev"
-  url "https://search.maven.org/remotecontent?filepath=com/orientechnologies/orientdb-community/3.2.53/orientdb-community-3.2.53.zip"
-  sha256 "d6c9f225849b738fa2f10df78fd82887676717a6692e87e5391821018e060503"
+  url "https://search.maven.org/remotecontent?filepath=com/orientechnologies/orientdb-community/3.2.55/orientdb-community-3.2.55.zip"
+  sha256 "3486b70d5013d961e272e0c0d681cf85dd8df6b23c028e0e671c246097fdf3f1"
   license "Apache-2.0"
 
-  # The GitHub release description contains links to files on Maven.
   livecheck do
-    url :homepage
-    regex(/orientdb-community[._-]v?(\d+(?:\.\d+)+)\.zip/i)
-    strategy :github_latest do |json, regex|
-      json["body"]&.scan(regex)&.map { |match| match[0] }
-    end
+    url "https://orientdb.dev/downloads/"
+    regex(/href=.*?orientdb-community[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
   bottle do
