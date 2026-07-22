@@ -22,31 +22,7 @@ class Octobuild < Formula
     depends_on "openssl@4"
   end
 
-  resource "ipc-rs" do
-    on_linux do
-      on_arm do
-        url "https://github.com/octobuild/ipc-rs/archive/e8d76ee36146d4548d18ba8480bf5b5a2f116eac.tar.gz"
-        sha256 "aaa5418086f55df5bea924848671df365e85aa57102abd0751366e1237abcff5"
-
-        # Apply commit from open PR
-        patch do
-          url "https://github.com/octobuild/ipc-rs/commit/1eabde12d785ceda197588490abeb15615a00dad.patch?full_index=1"
-          sha256 "521d8161be9695480f5b578034166c8e7e15b078733d3571cd5db2a00951cdd8"
-          type :unofficial
-          resolves "https://github.com/octobuild/ipc-rs/pull/12"
-        end
-      end
-    end
-  end
-
   def install
-    if OS.linux? && Hardware::CPU.arm?
-      (buildpath/"ipc-rs").install resource("ipc-rs")
-      (buildpath/"Cargo.toml").append_lines <<~TOML
-        [patch."https://github.com/octobuild/ipc-rs"]
-        ipc = { path = "./ipc-rs" }
-      TOML
-    end
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
