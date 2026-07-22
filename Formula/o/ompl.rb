@@ -11,7 +11,7 @@ class Ompl < Formula
   # isn't a reliable indicator of the latest version on this repository.
   livecheck do
     url "https://ompl.kavrakilab.org/download.html"
-    regex(%r{href=.*?/ompl/ompl/archive/v?(\d+(?:\.\d+)+)\.t}i)
+    regex(/href=.*?ompl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
