@@ -2,8 +2,8 @@ class Influxdb < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v3.10.0",
-      revision: "a1e8994464c3fe0b44ee85e95c0714ad557ed7fc"
+      tag:      "v3.10.5",
+      revision: "df21654049f722778ada5a12525254dd60e9b291"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/influxdata/influxdb.git", branch: "main"
 
