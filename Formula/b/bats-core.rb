@@ -11,8 +11,7 @@ class BatsCore < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b1d947f6f436990be319ec03d9b147c58dd385d1c77c1f541410c1f0aa776fad"
+    sha256 cellar: :any_skip_relocation, all: "3ba6d697b92936bcf8730f783b6c49c13666e2d286ec7e7300d58c0dc35ac502"
   end
 
   def install
