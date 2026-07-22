@@ -6,12 +6,12 @@ class Gearman < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d3c72680496377b84301a11829ce50486c4303b36e6fced1fded664a3e9e884"
-    sha256 cellar: :any,                 arm64_sequoia: "9e6adef3fb88b33c1dafc83b2836780d15ec5dbca6e85426252910d74fb1328d"
-    sha256 cellar: :any,                 arm64_sonoma:  "20e8012a0a1163aec0122be7ede14c1b67d8a9f2029c48fe4b0fd31bf6a7033f"
-    sha256 cellar: :any,                 sonoma:        "34281099e7a338e50184e5297726d0fde308c108f8324cd4c8a807c2079b8525"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c334d173303374e69d753ac458fbb7499c3bf5b7730bf9a98c9b77f061569531"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3248cb1b494fc13da4014574ae3be3a88f592862de39ef275ed6a7824a996baf"
+    sha256 cellar: :any, arm64_tahoe:   "e213e001e9c272e0a92fb91ba0b7e67bf7b2ac7eb4653c429a802c0e5ce3b9d3"
+    sha256 cellar: :any, arm64_sequoia: "ee474ffaba4e54d9f51ac80bfcd996d9c89aa1d4ecaf4f189ca883dcd7937ede"
+    sha256 cellar: :any, arm64_sonoma:  "a7773053c52c0a1bbe15b9c0156ff43777c3aeca4407bdf123b815e41d3b1317"
+    sha256 cellar: :any, sonoma:        "423b51292404952fd8582bf4ee97c3ef1cf0fffc49bf7942ce9be4210b8e9b77"
+    sha256 cellar: :any, arm64_linux:   "09181ac2b149b5151d354d945a97e7bbbeab3cc0909ae7a41c350b25c4c4f5a1"
+    sha256 cellar: :any, x86_64_linux:  "6e6ed98d4401abfc68bc315e20b8eba17d979568f3e33a820fc676dc94b090da"
   end
 
   depends_on "pkgconf" => :build
