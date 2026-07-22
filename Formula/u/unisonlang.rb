@@ -62,6 +62,9 @@ class Unisonlang < Formula
     resource("local-ui").stage do
       ENV["npm_config_ignore_scripts"] = "elm,elm-format"
 
+      # Loosen the elm-version range to compatible versions as we are not using npm installed copy.
+      inreplace "elm.json", /"elm-version": "[0-9.]+"/, "\"elm-version\": \"#{Formula["elm"].version}\""
+
       system "npm", "install", *std_npm_args(prefix: false)
       # Install missing peer dependencies
       system "npm", "install", *std_npm_args(prefix: false), "favicons"
@@ -83,12 +86,13 @@ class Unisonlang < Formula
 
     stack_args = %W[
       -v
-      --system-ghc
-      --no-install-ghc
-      --skip-ghc-check
       --copy-bins
       --local-bin-path=#{buildpath}
+      --no-install-ghc
+      --skip-ghc-check
+      --system-ghc
     ]
+    stack_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
 
     system "stack", "-j#{jobs}", "build", *stack_args
 
