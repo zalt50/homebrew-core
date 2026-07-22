@@ -13,13 +13,12 @@ class Valkey < Formula
   head "https://github.com/valkey-io/valkey.git", branch: "unstable"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "065a69890faf06afd40894712127dd111a2246d07beb719a0ae135b7903ce804"
-    sha256 cellar: :any, arm64_sequoia: "56d7f776d0d9bc82265d415234018cc20a90f19e65b76d58c5059355a2205b6f"
-    sha256 cellar: :any, arm64_sonoma:  "a58f51ca54dcb90b5ed0469c47cf05a366357b6f1c5eab3b50f51a8721b9d520"
-    sha256 cellar: :any, sonoma:        "1da6e1528f6cb9aa0787951cd5a895f6a6b241461663f1ce679b6f08ba39a435"
-    sha256 cellar: :any, arm64_linux:   "769b0942ae3f446c28e6d970e580728c96316c5bfd4f32e8bda698d9bb2e6850"
-    sha256 cellar: :any, x86_64_linux:  "78e448416a123f80e3f583f2b3d2580452715f922c3996cc283317bbe52bacf9"
+    sha256 cellar: :any, arm64_tahoe:   "8bef52c4e766fd508af5006eab8df8ae828333006abbd64ec4dbcd05aeb7e35f"
+    sha256 cellar: :any, arm64_sequoia: "9daebe4f106b9f2d2e31c91a971c7622a17f3691a1a3002cb0af3aed5b0bcf1f"
+    sha256 cellar: :any, arm64_sonoma:  "e095b15ff5e6ac9825a5fa2b4f141349d88e95745d5e228829d2fa626f01d6cd"
+    sha256 cellar: :any, sonoma:        "c362cd074ce219adcf25b58395bc15bbb49c1e43037aa6f22a8ae116716920b7"
+    sha256 cellar: :any, arm64_linux:   "70b43be43258df6d7bd5e6924d625644c586a0697623010249a3da520a5d6b2d"
+    sha256 cellar: :any, x86_64_linux:  "f6afc11b1f9e6833e3462a1513dbbb292f7faf8e668c6e5639154497c7830a4b"
   end
 
   depends_on "openssl@3"
