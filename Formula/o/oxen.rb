@@ -17,12 +17,12 @@ class Oxen < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "35e7346fb97d5b9916ca6290a6946b39318e7bb47d52f6bbe81e527f4296bc02"
-    sha256 cellar: :any, arm64_sequoia: "91a2f0bb20db2d85cbf22f2f8aa9964c1455cc4fc855372770228e2f15cd18ad"
-    sha256 cellar: :any, arm64_sonoma:  "90627863df0b4c2894c27ff3864092a2248867052a4b9b406199561af82e8bc8"
-    sha256 cellar: :any, sonoma:        "4e9221470c650710030143bea86e03b794fb865b0a91e06bcf40aab8d8893164"
-    sha256 cellar: :any, arm64_linux:   "63269464ad5481c2e9f27e1a223d3256c6c44d575b24843a0f9b83e5b75426bc"
-    sha256 cellar: :any, x86_64_linux:  "1bfe327cddc4d54a540869f58d4a2e55829544885edfc3c4e235378d8c2d3c5a"
+    sha256 cellar: :any, arm64_tahoe:   "095f3af12194e4ed24e060a8c481ca08c779cf888a5cfe8e594a8616ea938f9e"
+    sha256 cellar: :any, arm64_sequoia: "3ead7de44393bd278a54622a23a867500248eb3af8f470da31800ca560ac9749"
+    sha256 cellar: :any, arm64_sonoma:  "d2913cb175a684dc2897c73269686c0878d6b592a4730df2ec12fe45f9ddd25e"
+    sha256 cellar: :any, sonoma:        "07a45883464689aadb04ac3ba884be1bf3a2409d8e16d3e943f664c0b6541297"
+    sha256 cellar: :any, arm64_linux:   "aadd4e1f3e8ad219b0f8f02d49fc10758ab89bf30148f90bfa6a1399ec26c314"
+    sha256 cellar: :any, x86_64_linux:  "29db06f487b816a9952eaeb70a7045198f3e6cd7799ecec231b6b473a2136c89"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
