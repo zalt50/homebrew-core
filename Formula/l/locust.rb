@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/f1/8f/54b1dce68ba31c86e6d4b3e0e43580ea4729d2b2de80a76eeea8232fcce5/locust-2.46.0.tar.gz"
-  sha256 "59629035d26cc70a1d8a94085cf71f115bb80785a1577931b44ed9999305713f"
+  url "https://files.pythonhosted.org/packages/43/9a/477d75bb2f19e92b4996493519af3e36eaeb1248e1e94637817cf60b6201/locust-2.46.1.tar.gz"
+  sha256 "ed26148522522d13fb453c5e4e281a82650a3b2ec5ad5f00a738ff22a0944808"
   license "MIT"
 
   bottle do
@@ -70,8 +70,8 @@ class Locust < Formula
   end
 
   resource "gevent" do
-    url "https://files.pythonhosted.org/packages/9e/48/b3ef2673ffb940f980966694e40d6d32560f3ffa284ecaeb5ea3a90a6d3f/gevent-25.9.1.tar.gz"
-    sha256 "adf9cd552de44a4e6754c51ff2e78d9193b7fa6eab123db9578a210e657235dd"
+    url "https://files.pythonhosted.org/packages/c4/cb/98aa3a299e2fc4a2372b5d124863e02965b64579ffc29fe54d0641e65b2f/gevent-26.5.0.tar.gz"
+    sha256 "1655eb04c1e20d71b2aa4a3c7528162dd58ff6cc46a037af1f01f534c80fefba"
   end
 
   resource "geventhttpclient" do
