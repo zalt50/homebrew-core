@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https://dezoomify-rs.ophir.dev"
-  url "https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.18.0.tar.gz"
-  sha256 "af3cde2aa9ae5c806c66afd85d077a7b7a4dbca862f18ac3a2c799add874c82e"
+  url "https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.18.1.tar.gz"
+  sha256 "35c9006d408418f453e90194db4dc005e279612814760e837d6ee0940936dd75"
   license "GPL-3.0-only"
   head "https://github.com/lovasoa/dezoomify-rs.git", branch: "master"
 
@@ -15,12 +15,12 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd825ea26fbfae1e5ebc7507bc43297124c9e88f1a1766e1ae07e15ab624e9b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db37997d0c97362141ac804b8661134c365ef45859de7e520636f7bc68eac66d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98a4b9e57fd2155b389f9aa95aa055d2608a137f7987614cbab5fdf39bd33800"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5998b9241ae4e786762689ec60637e9b56a0b09614d4d68818510edb08c99ceb"
-    sha256 cellar: :any,                 arm64_linux:   "d7e3866c2d00893a5b4ebb541dd1d5f61fe5e42808029a59133dd93e4f93417c"
-    sha256 cellar: :any,                 x86_64_linux:  "9146a2aa7f9dec5335d9c516ec2196f9b116fbcc6932175e69625a534d00c357"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b41d654f07a5bc5ee9f20f01e25835f0f76caaf8c58662695c404fd6565d86d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0aea37bffd3d25471c46dfdf81c30023e751b88500db7e7019b9a154eae9162"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2342caa95e630623f295c71dfe030360f852818a071b06af812ac9bd96561b63"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6471c476cfb8d5888a71f888d2bc6646d8d3816b7d4c31579b04847806c6961"
+    sha256 cellar: :any,                 arm64_linux:   "196d2d0a8cf3eb4b5f4f467542fad2390f3a51acec168fdef432e15b11f9e0fd"
+    sha256 cellar: :any,                 x86_64_linux:  "a0ef62c5a0a1419a6b1fa7dabdfc560c120c63c93e6f3d6c563b9549bf771a05"
   end
 
   depends_on "pkgconf" => :build
