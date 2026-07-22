@@ -44,17 +44,17 @@ class Echidna < Formula
     ENV.deparallelize
 
     ghc_args = [
-      "--system-ghc",
-      "--no-install-ghc",
-      "--skip-ghc-check",
       "--extra-include-dirs=#{Formula["libff"].include}",
       "--extra-lib-dirs=#{Formula["libff"].lib}",
       "--extra-include-dirs=#{Formula["secp256k1"].include}",
       "--extra-lib-dirs=#{Formula["secp256k1"].lib}",
       "--flag=echidna:-static",
+      "--no-install-ghc",
+      "--skip-ghc-check",
+      "--system-ghc",
     ]
+    ghc_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
 
-    system "stack", "-j#{jobs}", "build", *ghc_args
     system "stack", "-j#{jobs}", "--local-bin-path=#{bin}", "install", *ghc_args
   end
 
