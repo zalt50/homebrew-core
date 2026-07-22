@@ -9,12 +9,12 @@ class Charmcraft < Formula
   head "https://github.com/canonical/charmcraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d80428c955428b9fe339ba926b886edce5de06474c9999b656f9b9399a784e9b"
-    sha256 cellar: :any, arm64_sequoia: "6c0870df9c321145e31669455cf4080ed3013d5a9d261a86c21b5ea98a6ec673"
-    sha256 cellar: :any, arm64_sonoma:  "9bbff901db0777ca15cbadaf9cfe2d99c6594d9da3348d5558019c181df3f321"
-    sha256 cellar: :any, sonoma:        "568c25c2cab689fa341e875dacd508ebc928d4e4c0079fe38671b305ae73f2fc"
-    sha256 cellar: :any, arm64_linux:   "9c70a11e1d776395be4060414a9bb25111461f862148113455e52611c55a5806"
-    sha256 cellar: :any, x86_64_linux:  "4ffbc8fd62df6e42d4549cecbce262e23c22bcf99c0d288fbafd850e81431e82"
+    sha256 cellar: :any, arm64_tahoe:   "d029c423085eaaa3c4ae1d02ce7f67dd18067aaf372be548b4a6936d0eaea5ce"
+    sha256 cellar: :any, arm64_sequoia: "ff9ea97ddfc07b532bb02283d8c72961869d34d643baf1f02af62477c21561e1"
+    sha256 cellar: :any, arm64_sonoma:  "00ef972e87e65f6b59b2ea2e661ae094c4938399986c9bfbc36fe1d1122086bc"
+    sha256 cellar: :any, sonoma:        "deae710c91672cc0ff1096f2e2c41a317087a774a17068167199be040311b1d7"
+    sha256 cellar: :any, arm64_linux:   "9ef819505cc60022838a180a542af2c43f6e3a25cb630687ab0ac47cef6dca40"
+    sha256 cellar: :any, x86_64_linux:  "21e9c712a96cab904a9193831fb0b52990cb91ce55be78b47cd88e781c3274ff"
   end
 
   depends_on "certifi" => :no_linkage
