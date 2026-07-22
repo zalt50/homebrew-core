@@ -7,7 +7,7 @@ class Prettier < Formula
   head "https://github.com/prettier/prettier.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b7ffd979e012638a866442b99c7c8dcbb3bbc69f9665ad33d6314a44ff87e1f8"
+    sha256 cellar: :any_skip_relocation, all: "11ced1e32dd67a59c5601a88999cf0721878fe2d142ffbf73d994ff2237bb398"
   end
 
   depends_on "node"
