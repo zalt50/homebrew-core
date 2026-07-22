@@ -1,8 +1,8 @@
 class Mado < Formula
   desc "Fast Markdown linter written in Rust"
   homepage "https://github.com/akiomik/mado"
-  url "https://github.com/akiomik/mado/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "e3de74feaea103e8348896f8e730cc9f6387fd18164e4ee9dffd32577f3d252c"
+  url "https://github.com/akiomik/mado/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "4105c55801a160563603f22362ea787aa6db316ab7d8dcc19f11ad3242d6283f"
   license "Apache-2.0"
   head "https://github.com/akiomik/mado.git", branch: "main"
 
