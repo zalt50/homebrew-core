@@ -1,8 +1,8 @@
 class Dump1090Fa < Formula
   desc "FlightAware ADS-B Ground Station System for SDRs"
   homepage "https://github.com/flightaware/dump1090"
-  url "https://github.com/flightaware/dump1090/archive/refs/tags/v11.0.tar.gz"
-  sha256 "e6fbee5ddf61ca80ccea69efaba277d135b8a1a4c7bb684616d3bd3b00655551"
+  url "https://github.com/flightaware/dump1090/archive/refs/tags/v11.1.tar.gz"
+  sha256 "21fe1164d9b189274f6837bfffad7a1fe1b3471187ade4b5dc0409c1e640143f"
   license "GPL-2.0-or-later"
 
   livecheck do
