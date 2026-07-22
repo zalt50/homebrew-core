@@ -6,12 +6,12 @@ class CloudflareWrangler < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "202053b0a907bdea9ea89f00466a909d8ded51c28672224121fd998cdfb5fda3"
-    sha256 cellar: :any, arm64_sequoia: "202053b0a907bdea9ea89f00466a909d8ded51c28672224121fd998cdfb5fda3"
-    sha256 cellar: :any, arm64_sonoma:  "202053b0a907bdea9ea89f00466a909d8ded51c28672224121fd998cdfb5fda3"
-    sha256 cellar: :any, sonoma:        "9e9f194ff41aba19ff14198d89c76136db8b418602bae2d119add5f681d2bb7b"
-    sha256 cellar: :any, arm64_linux:   "b3b33cc923de7834645a1dac56214d298d84d596ed4c5365081b02d7c0c64572"
-    sha256 cellar: :any, x86_64_linux:  "54bec138f9e6e87e11f730fc40ba79458a4685c77d5d5d9fa8b705d8c556fa55"
+    sha256 cellar: :any, arm64_tahoe:   "f9927673955bdfac6fd440e1af541d6d1e99e4a5934ca68892906a7616460737"
+    sha256 cellar: :any, arm64_sequoia: "f9927673955bdfac6fd440e1af541d6d1e99e4a5934ca68892906a7616460737"
+    sha256 cellar: :any, arm64_sonoma:  "f9927673955bdfac6fd440e1af541d6d1e99e4a5934ca68892906a7616460737"
+    sha256 cellar: :any, sonoma:        "dffb3b201d5a75f52b9b0cdd3fde880000a4491b6fbe91a6b07880b368b76d91"
+    sha256 cellar: :any, arm64_linux:   "c242923f53c299710ba3cdc373a4e4ed4cbdef7485426e21d14e4cef4e3713e8"
+    sha256 cellar: :any, x86_64_linux:  "2531b904a4b961f3c587b48d8aefeefabc8774e0784e64c17e05a3e25af3f4ce"
   end
 
   depends_on "node"
