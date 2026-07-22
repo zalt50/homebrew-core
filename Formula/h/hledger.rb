@@ -35,8 +35,19 @@ class Hledger < Formula
   end
 
   def install
-    system "stack", "update"
-    system "stack", "install", "--system-ghc", "--no-install-ghc", "--skip-ghc-check", "--local-bin-path=#{bin}"
+    # Let `stack` handle its own parallelization
+    jobs = ENV.make_jobs
+    ENV.deparallelize
+
+    args = %W[
+      --local-bin-path=#{bin}
+      --no-install-ghc
+      --skip-ghc-check
+      --system-ghc
+    ]
+    args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
+
+    system "stack", "-j#{jobs}", "install", *args
     man1.install Dir["hledger*/*.1"]
     info.install Dir["hledger*/*.info"]
     bash_completion.install "hledger/shell-completion/hledger-completion.bash" => "hledger"
