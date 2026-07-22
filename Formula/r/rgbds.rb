@@ -1,8 +1,8 @@
 class Rgbds < Formula
   desc "Rednex GameBoy Development System"
   homepage "https://rgbds.gbdev.io"
-  url "https://github.com/gbdev/rgbds/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "193469d38229a653bb33a25ebb73fd0ae33da4be80191d83bce8d427d23b7704"
+  url "https://github.com/gbdev/rgbds/archive/refs/tags/v1.0.2+hotfix.tar.gz"
+  sha256 "e58d5b74a371f7c2aee9dbe621b44c5fa5f49cda85a44fd974efd8ee059a057b"
   license "MIT"
   head "https://github.com/gbdev/rgbds.git", branch: "master"
 
@@ -26,13 +26,22 @@ class Rgbds < Formula
   depends_on "rust" => :build
   depends_on "libpng"
 
+  on_linux do
+    depends_on "zlib-ng-compat" => :build
+  end
+
   resource "rgbobj" do
     url "https://github.com/gbdev/rgbobj/archive/refs/tags/v1.0.0.tar.gz"
     sha256 "9078bfff174b112efa55fa628cbbddaa2aea740f6b2f75a1debe2f35534f424e"
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = %w[
+      -DHOMEBREW_ALLOW_FETCHCONTENT=ON
+      -DFETCHCONTENT_FULLY_DISCONNECTED=ON
+      -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     resource("rgbobj").stage do
