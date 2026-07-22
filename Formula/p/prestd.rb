@@ -12,13 +12,12 @@ class Prestd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc80ad9969b5f3e06708a857518e2573403e0eb44ee729025678ae4ed66531b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c83d6db4e738a71ba93dca32430f409c4cf1fa5f5ba766dc074dd4bba5dfa735"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "378162c3b6d551e8c8972df858fc7452c5bbc95257c08a13dda82ab9d4598a4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7bbe476358617f77298805d7432cd4c9e6765251b949e1ac9465343fe61aedf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "053fed5b1a250757c68913d399d7add9e194158bf0e872fbe7f6fc7c5180137c"
-    sha256 cellar: :any,                 x86_64_linux:  "7357a218b66b1506aed7c30653ba15bc921ebdab82e3abd31dc3327e4ee56e80"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dcc70833cae00bc6807f80c90915d1350793159d182a69212fb5e43072db06c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55d141ba0d6d6ef3814b1f32d9de530ff798b5e522c73fad5a18b12ed5b8d54b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60845ed1c92ed80aac91c7dd1e617d1e32ec1ae2e48ae3a77e6e152a70300675"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a32d4aa0f1c9fe51334c53ae290dd8b23d6e6a7a6154e29dedb4e566054071c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf64f3c167caa90c72dde7727b86a86c5190c4727196aba758d43ebc461d0ab9"
+    sha256 cellar: :any,                 x86_64_linux:  "74862a34a7df2047bafd6658da321a4e770577764552cd710e1ea59981264a55"
   end
 
   depends_on "go" => :build
