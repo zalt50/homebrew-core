@@ -7,12 +7,12 @@ class Frpc < Formula
   head "https://github.com/fatedier/frp.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afe64cbc07076a14d87202f0b2d76a2c47992f5fa28bcb0d5bc77669233279db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afe64cbc07076a14d87202f0b2d76a2c47992f5fa28bcb0d5bc77669233279db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afe64cbc07076a14d87202f0b2d76a2c47992f5fa28bcb0d5bc77669233279db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2eaa62cac39e4dd5ef43d93e76b15b0b9194c209a85996604f1bffd59c31c61c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a040e6969d558ed18d2fa96db7aa75ec810ff6f44d1d61f819e4c2fb412deacc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e629a48ff9e943bd52951558a5e4f22fce29b4c031ac3596ad7bc7cf231c9cb3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d256de44d43c63f30fca47636a05df5f915af1a00dad36cfb18a202532034d90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d256de44d43c63f30fca47636a05df5f915af1a00dad36cfb18a202532034d90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d256de44d43c63f30fca47636a05df5f915af1a00dad36cfb18a202532034d90"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8547ee12d1468a2f6ea454e6602759daf531534eaf044bbdcf92c73da4606edc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb9a17b32139cad6d64aa264aeb9e578fcc9b751f63bcbf0353ecc456e4cd698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44c8d48beb8fcad7a598673cee67ff6242bad782bd5a0f8eff51d9996289e066"
   end
 
   depends_on "go" => :build
