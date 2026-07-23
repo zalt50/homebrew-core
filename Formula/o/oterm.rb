@@ -6,7 +6,7 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/1d/19/23455c1d66786bca4d4c35fec11dfd92cd1b7eaad53d04ef4465b39950ca/oterm-0.20.0.tar.gz"
   sha256 "0974b01d228124426dd9178ff5e2682d4317f3814d927e385ae3389e7ad46e3d"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "f7a07744f9c438189db1d305726dd112ca258e6d6516a795c35a4eb25f55f4b3"
@@ -111,8 +111,8 @@ class Oterm < Formula
   end
 
   resource "cohere" do
-    url "https://files.pythonhosted.org/packages/32/03/66c95f6e8e2249e72510c8843095dc0c0c83fe432de9f3ef6e3eb22575f7/cohere-7.0.6.tar.gz"
-    sha256 "0b83763b6d8fd0151ab0f46d66e12b00e60a11fbe504d5c908fb3e355dff5f1b"
+    url "https://files.pythonhosted.org/packages/23/d7/3706b69660b24f82e530b31d74956a2e717de09cebce3a538429fef17698/cohere-7.0.7.tar.gz"
+    sha256 "a4be903dbe5800ed27430d08896dbd92f854f35ca288764b6459bd5874c50730"
   end
 
   resource "distro" do
