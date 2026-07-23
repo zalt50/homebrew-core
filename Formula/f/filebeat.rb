@@ -10,12 +10,12 @@ class Filebeat < Formula
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "120e600ed88f8d8daabfee9f95d34880c4e99ae340143049314bcade0ad3e8e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0155a605aff2c6565897d6723770b4bf4c885fc84547aa24c9c403f1982a57f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc7a9c7b9b438ba8f4a465278ff9a1149da18b172f483ed327540654255c76b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3175228f8a02d8022cfd698a72b402842e2d7a45a18bd6f6287f097ea6adfffe"
-    sha256 cellar: :any,                 arm64_linux:   "b074cf79c9f443a5947ab304f3bff7d8fb0dc5d77595ceae42c1fda8ca0ce5d8"
-    sha256 cellar: :any,                 x86_64_linux:  "5ebb93e8ec2236fb7beba32dc96440f0b244d5d4395e58855c46ceabfc775e26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30db2e43e62a984ee65125c37a527e9d75d1037deecca7d10a79136a14de69cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1e71e94ffe724f0b1379c828137553b9d266465129a345682d373126c37f6c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db2f120aa3bca8807bdff2f05c253e405c16881e4aad2888dd2a89b423c22542"
+    sha256 cellar: :any_skip_relocation, sonoma:        "841be69e3e39df86b2036c1b2181406979120c8b5399b7ca188688496a6dcb88"
+    sha256 cellar: :any,                 arm64_linux:   "a7e40d0c6c1f65f4ed96bd7378cc65e4102f08619bf2184518c036d1690c8db1"
+    sha256 cellar: :any,                 x86_64_linux:  "14a4b2a7dc30e3962ddc8c4cb8cb719c03411898cdd352b035c3a565d051a9dd"
   end
 
   depends_on "go" => :build
