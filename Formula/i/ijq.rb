@@ -1,8 +1,8 @@
 class Ijq < Formula
   desc "Interactive jq"
   homepage "https://codeberg.org/gpanders/ijq"
-  url "https://codeberg.org/gpanders/ijq/archive/v1.3.0.tar.gz"
-  sha256 "904391d8cf6c803fe7abbdacccac13a9e477c7b7768cc956ed1b61de9bc125f4"
+  url "https://codeberg.org/gpanders/ijq/archive/v1.4.0.tar.gz"
+  sha256 "3bc925a05755f621926ac21051a257220f924bb7fa6dd85dc1367cd508b391cb"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/gpanders/ijq.git", branch: "master"
 
@@ -26,13 +26,17 @@ class Ijq < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/ijq -V")
+
     ENV["TERM"] = "xterm"
 
     (testpath/"filterfile.jq").write '["foo", "bar", "baz"] | sort | add'
+    output_log = testpath/"output.log"
 
     require "expect"
     require "pty"
-    PTY.spawn("#{bin}/ijq -H '' -M -n -f filterfile.jq > result") do |r, w, pid|
+    PTY.spawn(bin/"ijq", "-H", "", "-M", "-n", "-f", "filterfile.jq",
+              [:out, :err] => output_log.to_s) do |r, w, pid|
       refute_nil r.expect("barbazfoo", 5), "Expected barbazfoo"
       w.write "\r"
       r.read
@@ -43,6 +47,6 @@ class Ijq < Formula
       w.close
       Process.wait(pid)
     end
-    assert_equal "\"barbazfoo\"\n", (testpath/"result").read
+    assert_match "\"barbazfoo\"", output_log.read
   end
 end
