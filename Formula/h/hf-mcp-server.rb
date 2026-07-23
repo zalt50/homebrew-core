@@ -6,12 +6,12 @@ class HfMcpServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a006230c7eb032e49279b679f6c0c64169ec63165c21a36e8974fdae445e97c"
-    sha256 cellar: :any,                 arm64_sequoia: "e4a60613a437aafea1ef8d9bcf07169da90b3a385a95442709705566fcbda5de"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4a60613a437aafea1ef8d9bcf07169da90b3a385a95442709705566fcbda5de"
-    sha256 cellar: :any,                 sonoma:        "c6fee5d93307a635a7358747993bbab299e92e9173d2d428262634220b5e7057"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a1bf926f6e7ab3bbfbf56b8ef399074ed008fa00ec9da591dc04e4138b106ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ff86c5fa699ba53200f2aa8669acbb7124fbdff2e63d830678ae63bab61a1f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afee925abb1aafa56f0b836f5207d2528477277cf537e2624d67a68b0b814c8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afee925abb1aafa56f0b836f5207d2528477277cf537e2624d67a68b0b814c8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afee925abb1aafa56f0b836f5207d2528477277cf537e2624d67a68b0b814c8a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f23228b4a87f086cb575314e4a2167a669d6a654ddf340fcfe57ea54b4a2292e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94df73478981b0f3f60b2b783ac747c4d8122b67c399a95e505b2bb5a1fd005f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94df73478981b0f3f60b2b783ac747c4d8122b67c399a95e505b2bb5a1fd005f"
   end
 
   depends_on "node"
