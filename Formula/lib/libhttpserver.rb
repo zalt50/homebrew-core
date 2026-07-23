@@ -1,10 +1,9 @@
 class Libhttpserver < Formula
   desc "C++ library of embedded Rest HTTP server"
   homepage "https://github.com/etr/libhttpserver"
-  url "https://github.com/etr/libhttpserver/archive/refs/tags/0.19.0.tar.gz"
-  sha256 "b108769ed68d72c58961c517ab16c3a64e4efdc4c45687723bb45bb9e04c5193"
+  url "https://github.com/etr/libhttpserver/releases/download/2.0.0/libhttpserver-2.0.0.tar.gz"
+  sha256 "d6cb4169605826514ccb1a4ed83e1e9a879a9156c463b6f7950ec7878a223214"
   license "LGPL-2.1-or-later"
-  head "https://github.com/etr/libhttpserver.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "3c6d43ba60b58af6cbb736fcef51bc8378c8616ba1bc9be95699d19f588cfa4a"
@@ -21,16 +20,22 @@ class Libhttpserver < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d0e06fdd786113649df4bb86729c6fd53c94b77cb6985a0aa43831cdbbb43bc"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https://github.com/etr/libhttpserver.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkgconf" => :build
+  depends_on "gnutls"
   depends_on "libmicrohttpd"
 
   uses_from_macos "curl" => :test
 
   def install
-    system "./bootstrap"
+    system "./bootstrap" if build.head?
     mkdir "build" do
       system "../configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
@@ -41,15 +46,15 @@ class Libhttpserver < Formula
   test do
     port = free_port
 
-    cp pkgshare/"examples/minimal_hello_world.cpp", testpath
-    inreplace "minimal_hello_world.cpp", "create_webserver(8080)",
-                                         "create_webserver(#{port})"
+    cp pkgshare/"examples/hello_world.cpp", testpath
+    inreplace "hello_world.cpp", "create_webserver(8080)", "create_webserver(#{port})"
 
-    system ENV.cxx, "minimal_hello_world.cpp",
-      "-std=c++17", "-o", "minimal_hello_world", "-L#{lib}", "-lhttpserver", "-lcurl"
+    system ENV.cxx, "hello_world.cpp",
+      "-std=c++20", "-o", "hello_world", "-L#{lib}", "-lhttpserver", "-lcurl"
 
-    spawn "./minimal_hello_world"
-    sleep 3 # grace time for server start
+    spawn "./hello_world"
+    sleep 3
+    sleep 5 if OS.mac? && Hardware::CPU.intel?
 
     assert_match "Hello, World!", shell_output("curl http://127.0.0.1:#{port}/hello")
   end
