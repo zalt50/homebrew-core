@@ -14,12 +14,12 @@ class Ompl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9db8d1a17411555b340f9bce884fe93aa94a38e8bd009ae6b15e0fcc74407030"
-    sha256 cellar: :any,                 arm64_sequoia: "487f8b2e49e8cc4877a1842ffb50e8e5a738a045bde37baf4ce4719191095718"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ce07476679e81cf83e4ab902c9cb7ffe3cac20bb3a572d14a83b0405173c3a9"
-    sha256 cellar: :any,                 sonoma:        "183762369e5bc2543905d58a0158bebc8cd6c5b56f912345db7d46d72989d3ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7975058b695b73d56c8dabfd35031ba8979d0ffc72e77c76e5ddd0aacb1630"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e4f7207a2f37310c638a8c09624177d5a9cf154e6379b677acca62426976a1c"
+    sha256 cellar: :any, arm64_tahoe:   "8e000a77945fbd5bd95799ef5d5fa961bfa94def6eeaca5b27f445cb3cc8abfa"
+    sha256 cellar: :any, arm64_sequoia: "e8a19a344fddff584c95b7b72915de586c517f6a8c27a87a3350916971c234bd"
+    sha256 cellar: :any, arm64_sonoma:  "ec2c1bd99389b032b8b482f9a78be798d89984c8d4847c93cac0b0ddc6bd430a"
+    sha256 cellar: :any, sonoma:        "6ad7a9c1a99f1ea17d5b2639f18daad64fadd66921885ac5636829912e17ccde"
+    sha256 cellar: :any, arm64_linux:   "adda85d7b46f075d4db02ee76e88ee3aacb3fa0dde58837e9a3ea46d244172a5"
+    sha256 cellar: :any, x86_64_linux:  "a24bd68455b6a4cfd091627b23f214b5db000530def25f84d09a53ef0099c4cd"
   end
 
   depends_on "cmake" => :build
