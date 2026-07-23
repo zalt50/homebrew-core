@@ -4,6 +4,7 @@ class Backupninja < Formula
   url "https://0xacab.org/liberate/backupninja/-/archive/backupninja_upstream/1.2.2/backupninja-backupninja_upstream-1.2.2.tar.gz"
   sha256 "93ddc72f085d46145b289d35dac1d72e998c15bec1833db78e474b53c9768774"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
