@@ -2,11 +2,10 @@ class RocqElpi < Formula
   desc "Elpi extension language for Rocq"
   homepage "https://github.com/LPCIC/coq-elpi"
   # Update resources based on https://github.com/LPCIC/coq-elpi/blob/v#{version}/rocq-elpi.opam#L18-L26
-  url "https://github.com/LPCIC/coq-elpi/releases/download/v3.4.0/rocq-elpi-3.4.0.tar.gz"
-  sha256 "fe81750ca2e5f5976f16e658979a133cfaa2011ae5591e552a1222ceaacaaf06"
+  url "https://github.com/LPCIC/coq-elpi/releases/download/v3.5.0/rocq-elpi-3.5.0.tar.gz"
+  sha256 "fd052f6389ba0b648b63388b7e60a99e7832564b09ce1551c82e2d69250d9068"
   license "LGPL-2.1-or-later"
-  revision 1
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url :stable
@@ -33,7 +32,7 @@ class RocqElpi < Formula
   # The result is similar to using `--deps-only` in other formulae. We can't
   # run that here as it installs a duplicate copy of `rocq`.
   resource "elpi" do
-    url "https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.7.1/elpi.opam"
+    url "https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.7.2/elpi.opam"
     sha256 "24e253b1cd5afb678f0f1e0d7f340ac3c549cf974a5c029a402c2fab5d582635"
   end
 
