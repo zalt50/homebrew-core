@@ -1,8 +1,8 @@
 class RocqMicromegaPlugin < Formula
   desc "Micromega decision procedures plugin for the Rocq prover"
   homepage "https://github.com/rocq-community/micromega-plugin"
-  url "https://github.com/rocq-community/micromega-plugin/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "4402d9bfce88661569f3acbfff3bf4afbc6b5c8c54282b365888bac8a959f652"
+  url "https://github.com/rocq-community/micromega-plugin/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "5ed46c62dfb7c06ad1df2f744bca5a39282ac9787c57433478a87a706e6e4391"
   license "LGPL-2.1-only"
 
   livecheck do
