@@ -38,7 +38,7 @@ module Homebrew
           runner:    linux_runner,
           container: {
             image:   "ghcr.io/homebrew/brew:main",
-            options: "--user=linuxbrew --privileged",
+            options: "--user=linuxbrew --env=HOMEBREW_SANDBOX_LINUX_LANDLOCK=1",
           },
           workdir:   "/github/home",
         }
