@@ -1,18 +1,18 @@
 class Zot < Formula
   desc "Lightweight coding agent harness written in Go"
   homepage "https://www.zot.sh/"
-  url "https://github.com/patriceckhart/zot/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "626cee4ff3ebe6dbd3076746ca5f5eba6e1739568f669ec9603ab39b8f16d873"
+  url "https://github.com/patriceckhart/zot/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "9b64a0124e3498c88376c8f01878fe64c441b4ec77c7ce1041118ab532cb5f02"
   license "MIT"
   head "https://github.com/patriceckhart/zot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f31ea5606eebebde27952c95e95384b41b29840c69d9eb17f8edd3d7925d3c68"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f31ea5606eebebde27952c95e95384b41b29840c69d9eb17f8edd3d7925d3c68"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f31ea5606eebebde27952c95e95384b41b29840c69d9eb17f8edd3d7925d3c68"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff977f47a0101312445e29d905db574c4c276177d47867648735acbfb71cec3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eff36b93dae6c4ff675919d1d252b4323cf90ff2f6ab16e875a1ac934f5e8910"
-    sha256 cellar: :any,                 x86_64_linux:  "7ff209f3c638884ff6a1863acbc2f5abfe36c3a4ac884e5bce188d96bc4a5732"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7bbf2baf725184670dea03c32f46e01bbbddcb0cbbc2f23826a9b7301d6eda7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7bbf2baf725184670dea03c32f46e01bbbddcb0cbbc2f23826a9b7301d6eda7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7bbf2baf725184670dea03c32f46e01bbbddcb0cbbc2f23826a9b7301d6eda7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be9e71c6a7464b097fbe5b40c1ee6f001052965d633727e69a4fa457c8f6be06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d6ba420099fdf042736db9703b5285298b2acb8503e2fb4c5ab8f9629ae156"
+    sha256 cellar: :any,                 x86_64_linux:  "684a770243278e9a9476ec1b2d79497497ccdcbb19a4f0905148706aec8b2020"
   end
 
   depends_on "go" => :build
