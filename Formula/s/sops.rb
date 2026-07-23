@@ -1,8 +1,8 @@
 class Sops < Formula
   desc "Editor of encrypted files"
   homepage "https://getsops.io/"
-  url "https://github.com/getsops/sops/archive/refs/tags/v3.13.2.tar.gz"
-  sha256 "79560b53814e20031d094a293d6c169314eaaf97efd6e95a6d765e61e881db2c"
+  url "https://github.com/getsops/sops/archive/refs/tags/v3.13.3.tar.gz"
+  sha256 "49811c5ed80f6b4d4e98cef98e3f7378406aa692fd773dfb72ad1b4dfb940448"
   license "MPL-2.0"
   head "https://github.com/getsops/sops.git", branch: "main"
 
@@ -17,14 +17,6 @@ class Sops < Formula
   end
 
   depends_on "go" => :build
-
-  # Fix completion script
-  patch do
-    url "https://github.com/getsops/sops/commit/fedcba3c01bbd6897a4700993dfd6475241ee10a.patch?full_index=1"
-    sha256 "ff086e2c17c7de93211c70fbea744dc67006625a2961b649bc504aa095c0c18e"
-    type :unofficial
-    resolves "https://github.com/getsops/sops/issues/2252"
-  end
 
   def install
     ldflags = "-s -w -X github.com/getsops/sops/v3/version.Version=#{version}"
