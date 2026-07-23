@@ -8,6 +8,15 @@ class Apm < Formula
   license "MIT"
   head "https://github.com/microsoft/apm.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "83b31e47ebbcc31796d2fee8f0ba1e5242ae38105ad048d61be72d724002efa4"
+    sha256 cellar: :any, arm64_sequoia: "448fa402c97a64448748d64d0603454739f88b3dc3949c41e685a5a68f0b2887"
+    sha256 cellar: :any, arm64_sonoma:  "3d0c391d788acc60cfeef984f3706e09f8f624e763e0095a6e1d1367d565940a"
+    sha256 cellar: :any, sonoma:        "6ee4b839404e0ab7344f9295b9a59af9fdaedea6fdd05b40fb4c52504006a189"
+    sha256 cellar: :any, arm64_linux:   "770092ec9a4bf668b43d040a5bd22223d69f14d99a66cc99bf572604a5ea3951"
+    sha256 cellar: :any, x86_64_linux:  "c80c3b2bcfdc250e777060369cd881250693d0307120c573a9a393b49010a6d1"
+  end
+
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
