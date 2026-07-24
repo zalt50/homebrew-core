@@ -3,8 +3,8 @@ class Bittensor < Formula
 
   desc "SDK and command-line tool for the Bittensor network"
   homepage "https://subtensor.vercel.app/"
-  url "https://files.pythonhosted.org/packages/00/14/51265fd57e4d6ca662cf8ad28c7b92bcd5ca50ce171e544fe2ab537dfbbe/bittensor-11.0.0.tar.gz"
-  sha256 "b53c5030d88fac9888f7acbca8069985d7f609021ce634c11f5db14af4e788d5"
+  url "https://files.pythonhosted.org/packages/b7/97/56d2f9f2a50f4a55d342707e56b281d5f2cc4634c8f18f9b147198e41d16/bittensor-11.0.1.tar.gz"
+  sha256 "810164fb5fe2c3530ffdf67c0d188e5a61883841cf9874d9cb41b9aa1ecfe69b"
   license "Apache-2.0"
 
   bottle do
@@ -33,13 +33,13 @@ class Bittensor < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/04/eb/e97abd6b7c2245e19be529f6fd70c7dda04c449f4a11b6ddb30079d71ea6/bitarray-3.9.0.tar.gz"
-    sha256 "af5f91e61d868c8f457f66cd726ef31d69264f71edbaccd70fdbb13548c1d652"
+    url "https://files.pythonhosted.org/packages/1e/01/59a0fbb89c2204ba07099a6e4b87768d25d6aa689df07547412218e03145/bitarray-3.9.1.tar.gz"
+    sha256 "796f2b4f0e4d84df50bd23ddfacb37d74eec2b2366813cb8f18bdae6b25e3d36"
   end
 
   resource "bittensor-core" do
-    url "https://files.pythonhosted.org/packages/89/32/6da6e44aa3ec7283fd75376f0f5cbc0601dc007c5d91b07d167df92b9861/bittensor_core-0.1.0.tar.gz"
-    sha256 "dd7cd31b0ca7cb3d236bb6bb66827f81be054d502e223ff8a440cffd3f03db29"
+    url "https://files.pythonhosted.org/packages/1a/99/d37584bd0e88f7d166d58881c099fdb5c322ac1ec0fbb08da32c558466d1/bittensor_core-0.1.1.tar.gz"
+    sha256 "c40c34b99863734ba887fe9bcc5169e08beac95eef73a70f9eb8e430b22f8cb5"
   end
 
   resource "ckzg" do
@@ -122,9 +122,14 @@ class Bittensor < Formula
     sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
+  resource "qrcode" do
+    url "https://files.pythonhosted.org/packages/8f/b2/7fc2931bfae0af02d5f53b174e9cf701adbb35f39d69c2af63d4a39f81a9/qrcode-8.2.tar.gz"
+    sha256 "35c3f2a4172b33136ab9f6b3ef1c00260dd2f66f858f24d88418a015f446506c"
+  end
+
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/7b/37/451aaddbf50922f34d744ad5ca919ae1fcfac112123885d9728f52a484b3/regex-2026.7.10.tar.gz"
-    sha256 "1050fedf0a8a92e843971120c2f57c3a99bea86c0dfa1d63a9fac053fe54b135"
+    url "https://files.pythonhosted.org/packages/20/98/04b13f1ddfb63158025291c02e03eb42fbb7acb51d091d541050eb4e35e8/regex-2026.7.19.tar.gz"
+    sha256 "7e77b324909c1617cbb4c668677e2c6ae13f44d7c1de0d4f15f2e3c10f3315b5"
   end
 
   resource "rich" do
