@@ -7,12 +7,12 @@ class Rasusa < Formula
   head "https://github.com/mbhall88/rasusa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb7d3e0d40233239d3b069f98d8b4f58d739c44b133085f126ff8ad0a74a99ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11542c3d90884aa9af0c06af8c2a0b53e660d6b925d9c89c3e381699cab43a4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2a5b6a98d9638e2263470a6a505ca5b5be0848d9976a86308424ed2863b480b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c900cc1df660ef00e9aa12cdfa2bb8028065dc6a517a4aeb94ede80d3a49aa7b"
-    sha256 cellar: :any,                 arm64_linux:   "9115d3a6bd66d7122c068248c11835c94a6bf2dc4a9e15024bf0d2e0a52d59e0"
-    sha256 cellar: :any,                 x86_64_linux:  "1951e2a4b4ba65379af75098606b525f2075f8ab236ca32884491e366e266db2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cada0897b4e5f3699020ee64b59e67b5396e911491973d97b74ed81c1e892400"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9aa259d0decd2338c78d7d8230d1b470c423a4444643412a057bade980ac8378"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "240de793b33f6fbc772a1119e7e44b064fc7c259a7a43288f2ecb5b042ede799"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b38371044492bc93a1fa1be6339ecaad3e7dc293ae655e6f25cccd64d0a0609"
+    sha256 cellar: :any,                 arm64_linux:   "28927596abcb72b4d8801085f289643a119685fe44b60bb9eabf1fd1865c65cb"
+    sha256 cellar: :any,                 x86_64_linux:  "05a23600307e8ce85557a1ff0cdc3ecff961898fc300d41132258372256e7c74"
   end
 
   depends_on "rust" => :build
