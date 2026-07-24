@@ -22,10 +22,10 @@ class Hk < Formula
     sha256 cellar: :any,                 x86_64_linux:  "1e1cc6685d397135a48c447ef1ad1ccca9d00cd18d13852ccad5fa493044f7ad"
   end
 
+  depends_on "pkl" => :build
   depends_on "rust" => [:build, :test]
 
   depends_on "openssl@3"
-  depends_on "pkl"
   depends_on "usage"
 
   uses_from_macos "python" => :build
