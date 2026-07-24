@@ -3,8 +3,8 @@ class Faker < Formula
 
   desc "Python-based fake data generator"
   homepage "https://faker.readthedocs.io"
-  url "https://github.com/joke2k/faker/archive/refs/tags/v40.35.0.tar.gz"
-  sha256 "85089feaefe38d3600f8a80f491199b5ec861b6b6a77f61a8645e89e66a9a8e2"
+  url "https://github.com/joke2k/faker/archive/refs/tags/v40.36.0.tar.gz"
+  sha256 "528514892b756bf0f28cfc83794fc29f13dc6293a5a2a4933cc89270b9831e78"
   license "MIT"
 
   bottle do
