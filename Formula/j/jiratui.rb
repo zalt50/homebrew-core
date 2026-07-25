@@ -3,8 +3,8 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/4f/f8/ea36bb23521b220512b9daec9cee52c6fb53d2cd131b95b2a0453a9acbe4/jiratui-1.11.0.tar.gz"
-  sha256 "7192c58ceed7ee2cb68461ac15a9534f2b9cfa5a0a9e439dff8fb1b94b4bdcbd"
+  url "https://files.pythonhosted.org/packages/60/3a/ce15630faee7776f0eede83c838fd64fed6c45ae38a6ea92d534e2fd2cc4/jiratui-1.11.1.tar.gz"
+  sha256 "853cbeab5abe2a081fff5910d664e3b196bd3fe5f071f308b6f999b83ec71b03"
   license "MIT"
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
