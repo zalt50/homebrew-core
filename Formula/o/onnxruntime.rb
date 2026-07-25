@@ -1,10 +1,10 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
-  url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.27.1.tar.gz"
-  sha256 "e53b06ccd454f56088fde374d1af6660ef111ca7ce7a98d62b274ff9094d3005"
+  url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.28.0.tar.gz"
+  sha256 "9616cbdbbfcb1420b3261cd280a047d74ab0a249825e577b0e2dd310e22f6b83"
   license "MIT"
-  compatibility_version 5
+  compatibility_version 6
 
   livecheck do
     url :stable
@@ -35,9 +35,9 @@ class Onnxruntime < Formula
   depends_on "re2"
 
   resource "pytorch_cpuinfo" do
-    url "https://github.com/pytorch/cpuinfo/archive/403d652dca4c1046e8145950b1c0997a9f748b57.tar.gz"
-    version "403d652dca4c1046e8145950b1c0997a9f748b57"
-    sha256 "c33bcad94ccbdd4966cc21291f0dcacd40d1dd04eb4c2a6ef1c8da669c01e024"
+    url "https://github.com/pytorch/cpuinfo/archive/4628dc060ce4e82345dc166bbac875609db4ff69.tar.gz"
+    version "4628dc060ce4e82345dc166bbac875609db4ff69"
+    sha256 "a550205e891f9f1982044a306cb54556347645cba129af34cd907160f83bd0f1"
 
     livecheck do
       url "https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
