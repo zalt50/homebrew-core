@@ -1,8 +1,8 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for various command runners including make"
   homepage "https://github.com/kyu08/fzf-make"
-  url "https://github.com/kyu08/fzf-make/archive/refs/tags/v0.70.0.tar.gz"
-  sha256 "beff0a4094cdd146d5f7ea5821a1e2c1732b58243f2f5042dde31f6e8fd8e54e"
+  url "https://github.com/kyu08/fzf-make/archive/refs/tags/v0.72.0.tar.gz"
+  sha256 "c6294d55035bea91b19aa0e87dfdceded9da43f45e6d83f07c2d03092ff6b699"
   license "MIT"
   head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
