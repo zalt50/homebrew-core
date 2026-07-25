@@ -1,18 +1,18 @@
 class Filebrowser < Formula
   desc "Web File Browser"
   homepage "https://filebrowser.org/"
-  url "https://github.com/filebrowser/filebrowser/archive/refs/tags/v2.63.19.tar.gz"
-  sha256 "6fe2c43c3f9aebb3df5473a10b807ea6fc857233b4888ce99b5e46a74a17ff1e"
+  url "https://github.com/filebrowser/filebrowser/archive/refs/tags/v2.63.20.tar.gz"
+  sha256 "c1a5b647395be0a7b719b16b89047ab4e280def9b328c1b377656f139d031717"
   license "Apache-2.0"
   head "https://github.com/filebrowser/filebrowser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c17bf00e1859c7178a46e3b76fdcacee678ef2e1dd112da1d097673d7d84638"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "111ae05968ebd07e65cdc3ff05e56e2e73cc43d35b39a53aa336e4803dee0edd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b402594eba02372cacf353d7878274eb9ec2df4c0bf5ca7588b58a61b80507a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51e795220bd7386c011ad5e31cc6749d85c49206b9d3767d129d375bc868522e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4971ada6fd62321b38c3ccd7afbb39660beb025b567f280e6ebdc9087e26220"
-    sha256 cellar: :any,                 x86_64_linux:  "1bf94f5717b418ffdc95e170590f80709ccbe24c44fe4dbc716d8f75aaf03b17"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd9acfde1576a01139a698ee7b2b529689c7a0a24d5432c5214192a8bf5e24e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd414670faa59476142c386ec85ae9baa4af7e7087caae98340eae48ab8ca64b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0689ae03adb7a3e3fe9b9a647b2684d3dc606d838fc025a608b05e9a38c2cf9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c120f230a488cfc097d443565d2d57a8782afad01c429e5759ec74808626c57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d010d6daf191dfbf0dd57fd7da2208d723330384461d1273c4ce06c2bc4207f"
+    sha256 cellar: :any,                 x86_64_linux:  "c9e2cff8eed07ba254d2de4bcd9c6b34c52ed4c114df78e4b7e30e6fab2e2f06"
   end
 
   depends_on "go" => :build
