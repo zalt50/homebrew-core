@@ -1,8 +1,8 @@
 class Reliable < Formula
   desc "Simple packet acknowledgement system for UDP-based protocols"
   homepage "https://github.com/mas-bandwidth/reliable"
-  url "https://github.com/mas-bandwidth/reliable/archive/refs/tags/v1.3.5.tar.gz"
-  sha256 "e4b6f1c4955fb8a26e4d5a051c3f37559c8c86ca925b2519dfcbfa1ed554aa17"
+  url "https://github.com/mas-bandwidth/reliable/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "bcd4e55fc9ea3108d68a30a1a7ecdcf02d0cfe7e6144e4f1a10b06a6e37529b6"
   license "BSD-3-Clause"
 
   bottle do
