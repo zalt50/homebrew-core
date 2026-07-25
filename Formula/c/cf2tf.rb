@@ -6,7 +6,7 @@ class Cf2tf < Formula
   url "https://files.pythonhosted.org/packages/7f/c3/a6dfdc4848cfd4fb50e15e9449c439791a009638c2bd06b6fe6982d9afc1/cf2tf-0.9.2.tar.gz"
   sha256 "3fcae8f42f2d1aeb14deb7ef70215cc76c1f1f5cac9b465081e87729498e3ac9"
   license "GPL-3.0-only"
-  revision 5
+  revision 6
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
@@ -51,8 +51,8 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "idna" do
