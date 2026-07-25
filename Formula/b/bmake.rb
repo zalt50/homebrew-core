@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20260704.tar.gz"
-  sha256 "1ad2620cb58addcfbd25d80d21bad9139e3a672b8f08c5f7e57f84119ecef3e3"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20260714.tar.gz"
+  sha256 "0810781d24ad6efe010a8ce91c5c529dc8dd95a561d6c93b30e56b8d679cce65"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,7 +24,15 @@ class Bmake < Formula
   def install
     # -DWITHOUT_PROG_LINK means "don't symlink as bmake-VERSION."
     # shell-ksh test segfaults since macOS 11.
-    args = ["--prefix=#{prefix}", "-DWITHOUT_PROG_LINK", "--install", "BROKEN_TESTS=shell-ksh"]
+    broken_tests = %w[shell-ksh]
+    if OS.linux?
+      # The sandbox denies reading "/", which these unit tests and "bmake -r -m /" need
+      ENV["MK_AUTO_OBJ"] = "no"
+      broken_tests += %w[dir opt-chdir opt-where-am-i varname-dot-curdir varname-dot-path]
+    end
+    ENV["BROKEN_TESTS"] = broken_tests.join(" ")
+
+    args = ["--prefix=#{prefix}", "-DWITHOUT_PROG_LINK", "--install"]
     system "sh", "boot-strap", *args
   end
 
