@@ -9,12 +9,12 @@ class Tubeup < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "371f1105bb52be255f2c1e94dbebac62b851cd8fc232c406832bf23478a24de1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e8dbdf4ab505d9dcf4e931e173f7ec292c3dd92442290ccccb7b07c3ea2dfac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f932f80fc08825a80b422c671b593879f239c0ecd0b19f2a45da495d24fc5c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1cb6e1a35276a95acf0eb3e0202977f4c5005ee3d7c0611451df4e9fcdd3f90b"
-    sha256 cellar: :any,                 arm64_linux:   "da3a52600cba0d0ba6ea63e2a6a0937532d63bd3b2403aefde5f39465ee6495a"
-    sha256 cellar: :any,                 x86_64_linux:  "f77ee082f9f01163522454790708a3c4b02b883b1e46e61be762f175fbe37258"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4563c6b274c601d9ad92a874bb5295c366926215bc79259e1a820953da0ad60f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1f7433fb5777f12721a1d4d0e9e01fadc9dbef6c7992b043fd578f147344643"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9be4206946ed4b6e8a924c26716f645de003b7fbf4c4a3cf93332e0d0bb50ec8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48dfdb2820f7984492d9fc9fd91e0475b5febd7ddc8c5839038a661c06441528"
+    sha256 cellar: :any,                 arm64_linux:   "4d5ed3ceb0df3230e626886ec8f9d9552ce190d534777cf6f921e0412286eb5c"
+    sha256 cellar: :any,                 x86_64_linux:  "5b0148bfa5f0edc719d9b5165453e752d577b308d2888a28e5eaaceb05012c65"
   end
 
   depends_on "node" => :build
