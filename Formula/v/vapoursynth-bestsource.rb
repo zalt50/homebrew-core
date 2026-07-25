@@ -1,8 +1,8 @@
 class VapoursynthBestsource < Formula
   desc "Audio/video source and FFmpeg wrapper"
   homepage "https://github.com/vapoursynth/bestsource"
-  url "https://github.com/vapoursynth/bestsource/archive/refs/tags/R19.tar.gz"
-  sha256 "bbd391dd2725ae68994e0627f4a57b484d37b6e8d150276f07122e89fb6cda5d"
+  url "https://github.com/vapoursynth/bestsource/archive/refs/tags/R20.tar.gz"
+  sha256 "e44d84ce80be44f5e65a8daf007fa082af00a2aa81a2f19448acfa6abb49048a"
   license "MIT"
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
