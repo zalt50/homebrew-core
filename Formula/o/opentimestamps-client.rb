@@ -9,12 +9,12 @@ class OpentimestampsClient < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f996d2e17204e7cb60484a60009311270e3d14f32ddf60f0c52cb990df5bb86"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c96b52ac8f60fb12e18b2f49d34f8ef4c86260e3ea07aaa0c7eec41c4333dc40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc01f2c48d7dffc9ab21bb83fd103f8b9fd6f2ed1e88c68b4bc77650f629f364"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3393528b3f8ce0ce5906ce23d329afdd4865f7b8c008dc273cdbc1395ef0169d"
-    sha256 cellar: :any,                 arm64_linux:   "918c544b6bcd9dea84707a6346872216dd7aa1d238b97bad843fb8de22faf0ca"
-    sha256 cellar: :any,                 x86_64_linux:  "0da1315dc8582d9d3c7f2e9a21f49adc25f1f56c1e17d37c293ca0e66546606a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82084f91a8cafd4e05ecb308d2bd30fdc8ac4db83b8c75fae1888392675cf218"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fedeed9b25fe04db5bf7c002d32726f7133f942b47a4a30a9edabe3f84347442"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb16ff06d5badba05e67eb0406cdce7dae7ae651b9d869839f24b52bc6e0277d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f6fac69e397e84663b24f13d8a7a54ab6945b50ed1cf6e271438aaf1b2def61"
+    sha256 cellar: :any,                 arm64_linux:   "28a453538ba4cc90e358122ad2e8e4414495114a07addf43083ee538191eff54"
+    sha256 cellar: :any,                 x86_64_linux:  "897540a7b1c0f13735db7cb7d33a58943c5289f27bc8d68afd46b7e675c2cd4b"
   end
 
   depends_on "certifi" => :no_linkage
