@@ -1,8 +1,8 @@
 class Rawtoaces < Formula
   desc "Utility for converting camera RAW image files to ACES"
   homepage "https://github.com/AcademySoftwareFoundation/rawtoaces"
-  url "https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "69e846978935ee2fb9751f3604f71d212b8db4aed40d64660a9d68cd3c8e7ac1"
+  url "https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "dd4b53d83aaceb4a4ff97914b5bf1b820c929bd1a480d62c263d1849a8aa56dd"
   license "Apache-2.0"
 
   livecheck do
@@ -30,8 +30,8 @@ class Rawtoaces < Formula
   depends_on "openimageio"
 
   resource "rawtoaces-data" do
-    url "https://github.com/AcademySoftwareFoundation/rawtoaces-data/archive/refs/tags/v1.0.0.tar.gz"
-    sha256 "ae9acdef82573ec5e059c94e58320d7415be3bd8543bfa1fcca77b5942d641f3"
+    url "https://github.com/AcademySoftwareFoundation/rawtoaces-data/archive/refs/tags/v1.1.0.tar.gz"
+    sha256 "d84051305009e5a154062f837f62d432bc69f7ad9e220f3a57a056ddc9b8911f"
   end
 
   def install
