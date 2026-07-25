@@ -6,12 +6,12 @@ class Reliable < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dadd6c3661e948a17dc196ef256a4dd9678bc1f7954253384c21246d643d7f09"
-    sha256 cellar: :any, arm64_sequoia: "fea86c1258c66a54c5577e5979ede934a12b80878f142500dee1ad5db82c2824"
-    sha256 cellar: :any, arm64_sonoma:  "3df53fec8bbabc8b6963b8c2b8f644ed6d1a4b47fbbfad57e3f008eef9882780"
-    sha256 cellar: :any, sonoma:        "d131c5745ffbcc902def36e79c66be175638f94e74c381d7a54b2a9b288f42bc"
-    sha256 cellar: :any, arm64_linux:   "a49fef7273157b5255b890ed641f39f3ae72d688ffed5a80b4a261bd8179f99c"
-    sha256 cellar: :any, x86_64_linux:  "4aa129c545dc04fc59e68e024d1926bebb995ecb22a70197179b68166fffb015"
+    sha256 cellar: :any, arm64_tahoe:   "33de1a495c70b39003b955c6736577bd0cc194307b130d125b66d7493d659f89"
+    sha256 cellar: :any, arm64_sequoia: "1496ae27dd1b12b80c35d8593e6378e04aa4013c7ac37138bc40ff3f685b2245"
+    sha256 cellar: :any, arm64_sonoma:  "23ffd07d79ad3591f5d523ba71178f070cedc31813f864ea5e6f48ead972cc55"
+    sha256 cellar: :any, sonoma:        "2f9b8d336656e7602a41912c4abd3fe43a031f4d928f415c72bc7642b9a1ff8e"
+    sha256 cellar: :any, arm64_linux:   "72d6c9480ee84402eba3e14e8f8715f544c3d81680828d9a884cbb5d4062aed5"
+    sha256 cellar: :any, x86_64_linux:  "a37865bfeb7f7720d46e2b2ecc499b00edfb957fd95838304360a966a8db7add"
   end
 
   depends_on "cmake" => :build
