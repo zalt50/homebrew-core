@@ -10,7 +10,7 @@ class Gitup < Formula
   head "https://github.com/earwig/git-repo-updater.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f25dc92e97c97fc62f200bb7e8a1b167ba4f3c1f194db652e912648010480f2f"
+    sha256 cellar: :any_skip_relocation, all: "3d8cfd2a79939a516cbfd44431455f88310257f4622535ccf5a1d52ccff64c4d"
   end
 
   depends_on "python@3.14"
