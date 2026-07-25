@@ -6,16 +6,16 @@ class Jiratui < Formula
   url "https://files.pythonhosted.org/packages/69/d8/e7f5afe6e0a5876ac54faa55ffe0cd1f6d3ca9d8cbecbdda02e4c5f96677/jiratui-1.10.1.tar.gz"
   sha256 "1feca449c390ba8cb7f073bf24cd24f0b6e78717a5edf5b82756cba6caff101f"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f359b63e3e9fe1e070c43e74ddf6d81ee848a9c081bb7cb3a9abff64524ba406"
-    sha256 cellar: :any, arm64_sequoia: "f9e3f8dad8993862d4c4e27d3d215dc2bf28e7d7f1c750f3feab0eb755a5ee57"
-    sha256 cellar: :any, arm64_sonoma:  "569490cb5060f2df7dfb66b58d02e4d9f9e774f9230955919524cd0590c93d5e"
-    sha256 cellar: :any, sonoma:        "94c09201f429f2adb2226ce4b0c422a8f8a290e837403506ac039bdf5d492f5e"
-    sha256 cellar: :any, arm64_linux:   "7cc7e6e1b6b3da7830d106075fd6ec7d7428ad156689e7a9c7e189dec7de8ca5"
-    sha256 cellar: :any, x86_64_linux:  "29907c2de84d7c31982855c100d62368a0411917d1650d11fea69b19020a32be"
+    sha256 cellar: :any, arm64_tahoe:   "546df52a207b2332805ef88fff710e72ba8ac61bcfc3f3611ca3b60a122cc39f"
+    sha256 cellar: :any, arm64_sequoia: "26d128c7cfcada8db243680baff1d83c05013f088865c6e9233e5f2cc7ca7b1e"
+    sha256 cellar: :any, arm64_sonoma:  "995e97e30949f89f2d8507f636c3dcd718542a63ee7f6f030f26ee332b3b7116"
+    sha256 cellar: :any, sonoma:        "1389fd9272fd4fc310fdeac6cbfddfb2616b451a1ca338d3bcd91e0c86521dad"
+    sha256 cellar: :any, arm64_linux:   "6f01fbc1b2529b6470a0447112ed792a2ea4f3f6c45a7056bdd2225282181e7a"
+    sha256 cellar: :any, x86_64_linux:  "0e4f6608d5469a02d89d0c5d0bdd661b72701e6fe012de30721ca628a95b7904"
   end
 
   depends_on "rust" => :build
@@ -56,8 +56,8 @@ class Jiratui < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "h11" do
@@ -106,13 +106,13 @@ class Jiratui < Formula
   end
 
   resource "mistune" do
-    url "https://files.pythonhosted.org/packages/7b/a5/2dab368d6950e6808904dec98f54c7e726ee7be4a0c6afe00e6e011bd52d/mistune-3.3.3.tar.gz"
-    sha256 "c4c6c0c840b8637a2e9b8b6d607eb7c8f00888bf14c754409bcd339e848c2477"
+    url "https://files.pythonhosted.org/packages/7b/92/328a294a6de83bacb95bed01f04e0eaff4e3616ee359fc821a5dfc539b02/mistune-3.3.4.tar.gz"
+    sha256 "58b5c96d6fcb61190dfe5fae498d2b2065f99cf61e9649418fd54cf1ada86dfe"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
-    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "puremagic" do
