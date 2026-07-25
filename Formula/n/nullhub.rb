@@ -5,6 +5,15 @@ class Nullhub < Formula
   sha256 "e0751611af90b6f63c8a1020a4e951b18d3bb22b86fbf38a0267183a9325556b"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8827e0e560b6d7bc76cdf3ba0b21b8244508ae056a7b3149e92809db1e9410d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69213fb5068b44644b456d2f3bf483289a708d0b9d327bfb289d02b8ae45f25d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe466e3f72c5c168815c9fa76ec15b166a2f21523223fba3ce25e1d217547ff3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e79fcc57fa64aae0fd1d99ae9a2c05eb6bd6bc3ac252c022ec8dab5a3b866a71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17352f8b32b6325c032c08a52b60135616ab769a218fcdf1ffad27e5442f99c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a69037bc75f5dbbf2984c34f83b7518aeb5cad267249e2d665bdd26c0c7fdcf"
+  end
+
   head do
     url "https://github.com/nullclaw/nullhub.git", branch: "main"
 
