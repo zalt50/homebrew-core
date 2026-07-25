@@ -3,19 +3,18 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/69/d8/e7f5afe6e0a5876ac54faa55ffe0cd1f6d3ca9d8cbecbdda02e4c5f96677/jiratui-1.10.1.tar.gz"
-  sha256 "1feca449c390ba8cb7f073bf24cd24f0b6e78717a5edf5b82756cba6caff101f"
+  url "https://files.pythonhosted.org/packages/4f/f8/ea36bb23521b220512b9daec9cee52c6fb53d2cd131b95b2a0453a9acbe4/jiratui-1.11.0.tar.gz"
+  sha256 "7192c58ceed7ee2cb68461ac15a9534f2b9cfa5a0a9e439dff8fb1b94b4bdcbd"
   license "MIT"
-  revision 2
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "546df52a207b2332805ef88fff710e72ba8ac61bcfc3f3611ca3b60a122cc39f"
-    sha256 cellar: :any, arm64_sequoia: "26d128c7cfcada8db243680baff1d83c05013f088865c6e9233e5f2cc7ca7b1e"
-    sha256 cellar: :any, arm64_sonoma:  "995e97e30949f89f2d8507f636c3dcd718542a63ee7f6f030f26ee332b3b7116"
-    sha256 cellar: :any, sonoma:        "1389fd9272fd4fc310fdeac6cbfddfb2616b451a1ca338d3bcd91e0c86521dad"
-    sha256 cellar: :any, arm64_linux:   "6f01fbc1b2529b6470a0447112ed792a2ea4f3f6c45a7056bdd2225282181e7a"
-    sha256 cellar: :any, x86_64_linux:  "0e4f6608d5469a02d89d0c5d0bdd661b72701e6fe012de30721ca628a95b7904"
+    sha256 cellar: :any, arm64_tahoe:   "91b3aeef660231b56b98c2deb3136fe95d444c9e4ea3b26b2bf3445379b781e5"
+    sha256 cellar: :any, arm64_sequoia: "af30c42906e9fc5e17f79921943f0ec43950f47455031983cf4a6f266756f4d4"
+    sha256 cellar: :any, arm64_sonoma:  "413758d842c8386039b897060a79b66150ef601f579897a3617f73bbee15f186"
+    sha256 cellar: :any, sonoma:        "ed98ddb12411c7be5a0f4bea752206bae1addc7e903404066c3c1a6f704e5ab3"
+    sha256 cellar: :any, arm64_linux:   "769e041e8aeefb1ee00190aa77a6b82383ed618bb5afe2d0488d1032e7452521"
+    sha256 cellar: :any, x86_64_linux:  "a486785edecaa0f58ef1ff49a13bfda26586c6a8049b3f9264c91e2bd5dafe27"
   end
 
   depends_on "rust" => :build
@@ -91,8 +90,8 @@ class Jiratui < Formula
   end
 
   resource "marklas" do
-    url "https://files.pythonhosted.org/packages/8b/92/b2352fa3fe9810d59dd747a713b05a3841d64cc4a256ae6dc5f9cadde7ee/marklas-0.8.2.tar.gz"
-    sha256 "1d6baa8688ea1bb56d1c9e0eac19979a78d496d408814dffb1b90a318334eec2"
+    url "https://files.pythonhosted.org/packages/47/20/d0b4cd62958301c1c542da5a89bff347931b9f6dc1e3f347099f1b4fbe32/marklas-0.8.6.tar.gz"
+    sha256 "9b2ef133e466986d5fea3997c7f7590c4faf10283e74f7b62173918f96e1eee5"
   end
 
   resource "mdit-py-plugins" do
