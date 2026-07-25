@@ -27,7 +27,7 @@ class Chiko < Formula
 
     PTY.spawn(bin/"chiko") do |r, w, _pid|
       w.write "q"
-      assert_match "The Ultimate Beauty GRPC Client", r.read
+      assert_match "Chiko dev", r.read
     rescue Errno::EIO
       # GNU/Linux raises EIO when read is done on closed pty
     end
