@@ -7,12 +7,12 @@ class Filebrowser < Formula
   head "https://github.com/filebrowser/filebrowser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f99bf1ec275394954bffe8dd18835f5639b8456610486fbe3575b8052fab2836"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "527976a743a527f46309abf412674c67a6463c25f5b5658bcd784d9af9dc07ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00152a568ce28ffa0723e35c71b62819ab000779206155b654ab97420148a1a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd47392a37187b7a368b0b11b6fc85c458c8e082571e18d4d4e8f4d4c26cecce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dafb4af6f3bf4dd922da9124e36ca21e1206860dc0c7d2f6ec74663e3e1db254"
-    sha256 cellar: :any,                 x86_64_linux:  "c40e2361bb72a5516567650840ec96d8bcc4a29d5577da8c0a351539a0cf3ff9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c17bf00e1859c7178a46e3b76fdcacee678ef2e1dd112da1d097673d7d84638"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "111ae05968ebd07e65cdc3ff05e56e2e73cc43d35b39a53aa336e4803dee0edd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b402594eba02372cacf353d7878274eb9ec2df4c0bf5ca7588b58a61b80507a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51e795220bd7386c011ad5e31cc6749d85c49206b9d3767d129d375bc868522e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4971ada6fd62321b38c3ccd7afbb39660beb025b567f280e6ebdc9087e26220"
+    sha256 cellar: :any,                 x86_64_linux:  "1bf94f5717b418ffdc95e170590f80709ccbe24c44fe4dbc716d8f75aaf03b17"
   end
 
   depends_on "go" => :build
