@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/8f/91/ded709387465fc5b45d8ecd058af555421a97555a2da9e8fc8f31208f36b/rapid_mlx-0.10.17.tar.gz"
-  sha256 "ad10486414f245cb7eb69b94ffeb4b65b02f785e77d139f0e1cd35604fc24b14"
+  url "https://files.pythonhosted.org/packages/6f/14/863070b4f8087540aa29219fa75dd74ac27ec484701ecb3a9c7d68fd1e8e/rapid_mlx-0.10.18.tar.gz"
+  sha256 "902b0ea9dced1f768ede48cd0017bacdb41f3b222bd70cce52206f54d4a36115"
   license "Apache-2.0"
 
   bottle do
