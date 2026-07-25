@@ -10,7 +10,7 @@ class ShallowBackup < Formula
   head "https://github.com/alichtman/shallow-backup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2af6dbd083a583440a8f2f618bc780193b8852198cf09f35fe8fb74e4cf75f59"
+    sha256 cellar: :any_skip_relocation, all: "dcecf953af712e87d592204ed6fe2ce6a2af1f7b9b5481d3697d2c59b2e0bc44"
   end
 
   depends_on "maturin" => :build # for `editor`
