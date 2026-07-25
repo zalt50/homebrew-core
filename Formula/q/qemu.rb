@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-11.0.2.tar.xz"
-  sha256 "3745f6ea88e2e87fe0dc838b2b1d4e0a770bf48e01a1d5a186842a1fff76ccf5"
+  url "https://download.qemu.org/qemu-11.0.3.tar.xz"
+  sha256 "da5fcffc32762820568b828ed430a728864d34d50b6d2f30358597760cbb0523"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
@@ -110,13 +110,6 @@ class Qemu < Formula
   end
 
   test do
-    # 820KB floppy disk image file of FreeDOS 1.2, used to test QEMU
-    # NOTE: Keep outside test block so that `brew fetch` is able to handle slow download/retries
-    resource "homebrew-test-image" do
-      url "https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/official/FD12FLOPPY.zip"
-      sha256 "81237c7b42dc0ffc8b32a2f5734e3480a3f9a470c50c14a9c4576a2561a35807"
-    end
-
     archs = %w[
       aarch64 alpha arm avr hppa i386 loongarch64 m68k microblaze mips
       mips64 mips64el mipsel or1k ppc ppc64 riscv32 riscv64 rx
@@ -126,8 +119,11 @@ class Qemu < Formula
       assert_match version.to_s, shell_output("#{bin}/qemu-system-#{guest_arch} --version")
     end
 
-    resource("homebrew-test-image").stage testpath
-    assert_match "file format: raw", shell_output("#{bin}/qemu-img info FLOPPY.img")
+    system bin/"qemu-img", "create", "-f", "qcow2", "test.qcow2", "1440k"
+    assert_match "file format: qcow2", shell_output("#{bin}/qemu-img info test.qcow2")
+
+    system bin/"qemu-img", "convert", "-O", "raw", "test.qcow2", "test.img"
+    assert_match "file format: raw", shell_output("#{bin}/qemu-img info test.img")
 
     # On macOS, verify that we haven't clobbered the signature on the qemu-system-x86_64 binary
     if OS.mac?
