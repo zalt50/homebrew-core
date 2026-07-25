@@ -1,8 +1,8 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-26.2.0.tgz"
-  sha256 "741d46f0f18df96a8d3ee27614f51bfa529d2f9937a1122976358e54e40f6747"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.0.0.tgz"
+  sha256 "c2103cd6981785310eb7d4bde31e8655751d0c1b82fcc278d3d530b5e14544ec"
   license "MIT"
 
   bottle do
@@ -28,11 +28,16 @@ class NetlifyCli < Formula
     depends_on "xsel"
   end
 
-  # Resource needed to build sharp from source to avoid bundled vips
+  # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
+  resource "node-addon-api" do
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.0.tgz"
+    sha256 "19b87e2ce3a77fec0121ac97d7db088aae28aacfff481adab50d5f61b70e68f4"
+  end
+
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.3.0.tgz"
-    sha256 "d209963f2b21fd5f6fad1f6341897a98fc8fd53025da36b319b92ebd497f6379"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.1.tgz"
+    sha256 "455327cde805c299d5a16603419e106853db5b9257dfb85e44eb7f4ec4d99de5"
   end
 
   def install
@@ -57,7 +62,7 @@ class NetlifyCli < Formula
     # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
