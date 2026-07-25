@@ -6,7 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/9c/0a/03002542731935763af6bb5eb7473cc1e99818c818608d5fd54240c590e2/checkov-3.3.0.tar.gz"
   sha256 "1d241480d402bc1e4d5e0eaec5fef159f4c0cd4da73c4d8253cdb897cd0f2c7d"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -211,8 +211,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "idna" do
@@ -296,8 +296,8 @@ class Checkov < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
-    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "ply" do
@@ -406,8 +406,8 @@ class Checkov < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/80/f1/93422647dd7e461f23d254e6b2bfa687a85b53aeb4903fcdbb74474d4584/soupsieve-2.9.tar.gz"
-    sha256 "acee8417325c5653e1377dc31eccad59eb82cbc65942afe6174c53b3aaad63fc"
+    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
+    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
   end
 
   resource "spdx-tools" do
@@ -436,8 +436,8 @@ class Checkov < Formula
   end
 
   resource "uritools" do
-    url "https://files.pythonhosted.org/packages/d7/75/b1f0e26e0c080c2febdd3a98a752c9fbcf078778f60fe90ea489dc8226ed/uritools-6.1.2.tar.gz"
-    sha256 "fa60028843a8be651699a1ee2b399066eeaef349224b32a177efa4aeba463f00"
+    url "https://files.pythonhosted.org/packages/a3/0d/20d02264b6682f07e92cbf7ee43e5e803670d101a03ef204ba18368c321f/uritools-6.1.3.tar.gz"
+    sha256 "3a498e7e85ef3249343d5710618d641a414da0fbae6d23053ada7976ee83ea5f"
   end
 
   resource "urllib3" do
