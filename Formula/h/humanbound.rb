@@ -7,6 +7,15 @@ class Humanbound < Formula
   sha256 "7876689210a9772eca0be3519d79cf99c1109bbf255b4d13dd9a3e54192ddacc"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "d1fea0cc9e95534453684b35a7aeeccd802df24ac5d4669fadb0347c043ab774"
+    sha256 cellar: :any, arm64_sequoia: "dcb5b5a2488e0afec6e92577926ba04eed4a8f59df7e147a9d8a7e8c0a366c94"
+    sha256 cellar: :any, arm64_sonoma:  "05fe18751b6f9c05c1724d7c0b9abfa52b6f905afe13d95dc1180cc5f6c04e73"
+    sha256 cellar: :any, sonoma:        "b4c3016be0c92b665be9b790051b5b7bdb9d08c1ff4e0085adccec809dc3e164"
+    sha256 cellar: :any, arm64_linux:   "9d69dcc4a8c4d1d259eb2c2ac246bdcf5ecb276f624e7a317105ed2e8831d1fa"
+    sha256 cellar: :any, x86_64_linux:  "36fc1b0f72765e3f195111f069f2bdd44bd8154af0c8e121837d48eea6907e4f"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
