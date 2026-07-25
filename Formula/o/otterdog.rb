@@ -6,16 +6,16 @@ class Otterdog < Formula
   url "https://files.pythonhosted.org/packages/d3/31/f62e55c75c0efe2d9d5127f2ad2efcc6876e2ca3a0003c13ddbabd4ac11e/otterdog-1.3.4.tar.gz"
   sha256 "0fab4cb270d890f110190e87ad04781e969fff79b19fa93426915e9097255997"
   license "EPL-2.0"
-  revision 1
+  revision 2
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b12033fc14e9c6054230f8660b309faa027013c46cf53cf75f1783047bb985c2"
-    sha256 cellar: :any, arm64_sequoia: "195cdd2f321a8cea8a5a454c3a63be9d3002ab2241ca020b79ba2ec886d6fad8"
-    sha256 cellar: :any, arm64_sonoma:  "ff89f073cf77993fb9dacc85836c74014783cdc1cb1252191a56285e6e0e73ab"
-    sha256 cellar: :any, sonoma:        "8e5067db9a98cea7946a34ccb00b0bbcc64f325ad56132de96176d9a2af6c90e"
-    sha256 cellar: :any, arm64_linux:   "5f8412e936b89da26055da81fa5b3536a6043cd0667ec9397faf5bfa32fb6777"
-    sha256 cellar: :any, x86_64_linux:  "d384584f7ee47fdff03c8d306a73ec1011bd9674a3cb8576870b61e471092a28"
+    sha256 cellar: :any, arm64_tahoe:   "fa9237386af34b67541c77b364967e12063ca4c506c63157a33e5e0c6bb228d0"
+    sha256 cellar: :any, arm64_sequoia: "1a85572cccfd787fba74cf5b8942613d7fc5a67c7bb7c7b7032fb12d122ba93b"
+    sha256 cellar: :any, arm64_sonoma:  "62ab46f6c2741f5fec6d8e26d734278f1bc5477ef4598eed4720fbac52e705c8"
+    sha256 cellar: :any, sonoma:        "a4568720682b8b3a689087fdec41666cb703a6464a65baa1f47d7c8aca326602"
+    sha256 cellar: :any, arm64_linux:   "7a3edb85a7d91988272e60feea29981d7c0b6cd1af29bd3038e7c0cdc528a5aa"
+    sha256 cellar: :any, x86_64_linux:  "83b9bc19446594af7da701d1c949baa8565a8fdf651b53858b41b5c7399bcf23"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -59,8 +59,8 @@ class Otterdog < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1d/cc/58f26f118d8099f84e009ce560b9148a3f803e63fa8473b57feb67241875/aiohttp-3.14.2.tar.gz"
-    sha256 "f96821eb2ae2f12b0dfa799eafbf221f5621a9220b457b4744a269a63a5f3a6c"
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
   end
 
   resource "aiohttp-client-cache" do
@@ -129,13 +129,13 @@ class Otterdog < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/e2/f1/fbbfef6af0bad0548f09bc28948ea3c275b4edb19e17fc5ca9900a6a634d/greenlet-3.5.3.tar.gz"
-    sha256 "a61efc018fd3eb317eeca31aba90ee9e7f26f22884a79b6c6ec715bf71bb62f1"
+    url "https://files.pythonhosted.org/packages/a3/74/b13368064b09053253555d3f2839cc2684d22d5aed0d2ccffbf7a6736558/greenlet-3.5.4.tar.gz"
+    sha256 "0232ae1de90a8e07867bb127d7a6ba2301e859145489f25cda8a6096dabe1d20"
   end
 
   resource "hvac" do
