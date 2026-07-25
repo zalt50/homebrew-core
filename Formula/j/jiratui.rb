@@ -3,10 +3,9 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/69/d8/e7f5afe6e0a5876ac54faa55ffe0cd1f6d3ca9d8cbecbdda02e4c5f96677/jiratui-1.10.1.tar.gz"
-  sha256 "1feca449c390ba8cb7f073bf24cd24f0b6e78717a5edf5b82756cba6caff101f"
+  url "https://files.pythonhosted.org/packages/4f/f8/ea36bb23521b220512b9daec9cee52c6fb53d2cd131b95b2a0453a9acbe4/jiratui-1.11.0.tar.gz"
+  sha256 "7192c58ceed7ee2cb68461ac15a9534f2b9cfa5a0a9e439dff8fb1b94b4bdcbd"
   license "MIT"
-  revision 2
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
@@ -91,8 +90,8 @@ class Jiratui < Formula
   end
 
   resource "marklas" do
-    url "https://files.pythonhosted.org/packages/8b/92/b2352fa3fe9810d59dd747a713b05a3841d64cc4a256ae6dc5f9cadde7ee/marklas-0.8.2.tar.gz"
-    sha256 "1d6baa8688ea1bb56d1c9e0eac19979a78d496d408814dffb1b90a318334eec2"
+    url "https://files.pythonhosted.org/packages/47/20/d0b4cd62958301c1c542da5a89bff347931b9f6dc1e3f347099f1b4fbe32/marklas-0.8.6.tar.gz"
+    sha256 "9b2ef133e466986d5fea3997c7f7590c4faf10283e74f7b62173918f96e1eee5"
   end
 
   resource "mdit-py-plugins" do
