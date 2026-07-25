@@ -3,19 +3,18 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/d3/31/f62e55c75c0efe2d9d5127f2ad2efcc6876e2ca3a0003c13ddbabd4ac11e/otterdog-1.3.4.tar.gz"
-  sha256 "0fab4cb270d890f110190e87ad04781e969fff79b19fa93426915e9097255997"
+  url "https://files.pythonhosted.org/packages/19/88/fffe8ad66be0149d1f34ec12bdd8abb3dde467b4780746cede544d83b26c/otterdog-1.4.0.tar.gz"
+  sha256 "ea3f07622c212526869e1755b124531585343bd0646ee3e72f0ba1c57c3fc87c"
   license "EPL-2.0"
-  revision 2
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fa9237386af34b67541c77b364967e12063ca4c506c63157a33e5e0c6bb228d0"
-    sha256 cellar: :any, arm64_sequoia: "1a85572cccfd787fba74cf5b8942613d7fc5a67c7bb7c7b7032fb12d122ba93b"
-    sha256 cellar: :any, arm64_sonoma:  "62ab46f6c2741f5fec6d8e26d734278f1bc5477ef4598eed4720fbac52e705c8"
-    sha256 cellar: :any, sonoma:        "a4568720682b8b3a689087fdec41666cb703a6464a65baa1f47d7c8aca326602"
-    sha256 cellar: :any, arm64_linux:   "7a3edb85a7d91988272e60feea29981d7c0b6cd1af29bd3038e7c0cdc528a5aa"
-    sha256 cellar: :any, x86_64_linux:  "83b9bc19446594af7da701d1c949baa8565a8fdf651b53858b41b5c7399bcf23"
+    sha256 cellar: :any, arm64_tahoe:   "4f96432dceca57f10d4940788b83a794ffc0a983962e43a8b61d53c508d504f9"
+    sha256 cellar: :any, arm64_sequoia: "d04dc55cac3e61c288d1f8884f1bfd51140aca921ffbac8d0fd5213d4ea63071"
+    sha256 cellar: :any, arm64_sonoma:  "5b693113d90310554c86dc0009db6fb1b54e2269093bd41bcf19a79a467fe0c9"
+    sha256 cellar: :any, sonoma:        "1e87ba157d38c142631ed7d9b9937126ddbf3eea2c846d350e03421b5cf68edb"
+    sha256 cellar: :any, arm64_linux:   "c63fcc9c2533e56242c82f57b38d1cb4f5012fbe88b1f10cfaaabbd2e8c7fb0a"
+    sha256 cellar: :any, x86_64_linux:  "98fdfe9c1d71b39e2575e0f12257439cb7788fc244220cd5fa1e2f50d0505ee3"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -221,6 +220,11 @@ class Otterdog < Formula
   resource "pynacl" do
     url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
     sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
+  end
+
+  resource "python-dotenv" do
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "referencing" do
