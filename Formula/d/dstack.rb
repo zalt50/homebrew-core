@@ -3,18 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/0a/31/6a82ec66d360e08e1b877e48ea84abac1f335986d49b5fb3bdf8b3afa1c9/dstack-0.20.28.tar.gz"
-  sha256 "78c1afb2a5118ee593be2f85658e37986b14454c27215e8faf381c3b5e2e9c2d"
+  url "https://files.pythonhosted.org/packages/83/a4/a647cf3c252ae7421c60b5e386f9e00b1bfea4c5474c376cc734a13a9fd6/dstack-0.20.29.tar.gz"
+  sha256 "c0b51aa66f2a491ac56e3d38c7beae093276ddbec22467d4a9011d5926d3f41c"
   license "MPL-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0ecf4f62b55c84ac5a868d41efd96c5520c1b2ab424e3286a7c457188f359d68"
-    sha256 cellar: :any, arm64_sequoia: "146607ddb68ed918704fe8668528f7d0f0518836363042ab0e3539e1abb9a574"
-    sha256 cellar: :any, arm64_sonoma:  "d7712d0ea21925bbd7b9a5d7afd6b4d8d64cb47d3dae79647337a56a79958e89"
-    sha256 cellar: :any, sonoma:        "a671148d80d972dbd482db6bc942981da0fee157b69f5c798171058d09473897"
-    sha256 cellar: :any, arm64_linux:   "f3d43f9b3b1569686c765ebce5455beb4aa47fa0469e7fbee2ad716c4fbd2a03"
-    sha256 cellar: :any, x86_64_linux:  "c1721ee42079cc5342c7d775e9c8f2b02851d4b19b469ed2555df3f8703bd7e8"
+    sha256 cellar: :any, arm64_tahoe:   "343ee3066c9e8042110385e4af5cd8b84bad7fcf4947b04f2de3910df99fef2d"
+    sha256 cellar: :any, arm64_sequoia: "be1278179dec4668d883d3e208615eb76ee84282ea66ff91da4579d7e5b0f9fc"
+    sha256 cellar: :any, arm64_sonoma:  "d54343bd9f8c1f2454abdb88e191ced107bc42674cbcf21ab2f9ae725927b596"
+    sha256 cellar: :any, sonoma:        "8ef6df9aebd83d80668e78807e864b192d78d88c61ae9bc501efe343aadbbe37"
+    sha256 cellar: :any, arm64_linux:   "bb0aefb81fb16fbfc7b608fce0291330b556a4e670e94416e8d8d7b02d02531f"
+    sha256 cellar: :any, x86_64_linux:  "0cf918139b1cdf35f936fed0161212280caa5c1f16f57ab18b5d1a908a59221a"
   end
 
   # `pkgconf` and `rust` are for bcrypt
