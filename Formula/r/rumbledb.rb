@@ -10,6 +10,10 @@ class Rumbledb < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "c3461f8f7ecc1a25a2d3c4036be2f21613dce95f08c8111a15618395e7ee4e42"
+  end
+
   depends_on "apache-spark"
   depends_on "openjdk@21"
 
