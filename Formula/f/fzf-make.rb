@@ -9,12 +9,12 @@ class FzfMake < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41d53588438b3c8b04d24909b897e55feee1084612306e8b34d94467ba8c9fcd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33ce31c55c162939d99883b31c1591d394111474c23a885c239af215fc32b418"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68c367b1a22862b53a6e37e0d0bfc2fe63ece9ffc221c9c9b4f94a50d1e11e1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4fcfe021becbde708de5b3742f1e7fcdcdbdb73e924c470839958f71fa1ec41"
-    sha256 cellar: :any,                 arm64_linux:   "743ce56b4d9b44973034df422674f43f274686cea728c7869eb0f925e0f779e0"
-    sha256 cellar: :any,                 x86_64_linux:  "77bafb2a5eab45f8cc51942f10d9adf12a073046ae57bf65b95902e6d52b1429"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7b7d3e26dc52240a5218e9c164839b161314ee4e111955261e5ad01717e312b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "464e72f4335afe4b9fbf142767d0d7cfb6949cb1cd9b280d615284d39d757331"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b87b7f121f80c8fe353af3273b41f829aae3cf694116f0593f75c633c86a433"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68c98a34fb01dcb208d5e618f7bdd9252436dfa04c2a39c191c1bb6800d322f2"
+    sha256 cellar: :any,                 arm64_linux:   "5bb0d6e2ea013a5368558d075926f466d7cc522ac25ab2e1a8bb4c3dd105ef8b"
+    sha256 cellar: :any,                 x86_64_linux:  "6450dcc0b7e963ed9d6cd6b40ae4a4b6d3860191e50453574460c97589fc06ac"
   end
 
   depends_on "rust" => :build
