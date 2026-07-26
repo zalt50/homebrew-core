@@ -6,6 +6,15 @@ class Godns < Formula
   license "Apache-2.0"
   head "https://github.com/TimothyYe/godns.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b77ad19d7b06bb12f23a78245a074dad59e73da58ef253eddec37bab400ff98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b77ad19d7b06bb12f23a78245a074dad59e73da58ef253eddec37bab400ff98"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b77ad19d7b06bb12f23a78245a074dad59e73da58ef253eddec37bab400ff98"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8015dc51129c482688544b2754605198ee84f2af5a3ee928abd134006a30fa51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe873e5df7f587c223ff3413adaaae3aa900f39947cb2c01bed5d8acf6f83eab"
+    sha256 cellar: :any,                 x86_64_linux:  "26f9435c6b832d930c62daf7a2e2835f0fdf0b2b9d73b6838e76d5f8591552a6"
+  end
+
   depends_on "go" => :build
 
   resource "web" do
