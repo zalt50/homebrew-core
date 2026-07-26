@@ -6,12 +6,12 @@ class Diskwatch < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e6d1bf9ec8031c4e088f8146878f32efb54f4c524448972202f4c2b3dcddef9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e692b892b4ff810664ffe74ce366ab0c686199432e4a84151afaea38c04b89b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b43467c33f1f515d2d40d94ddde5570bc87069e38fc614c9128295fb216b35d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1b2ef972dbbb5916a90d70a5390b0b73952c3d87f73fcbe59ed9378908cf8c9"
-    sha256 cellar: :any,                 arm64_linux:   "421e9200f12b51cbe16d6037822cbb2dd5f636c37e6d43847975e9696b0930b6"
-    sha256 cellar: :any,                 x86_64_linux:  "8c7dd9e92cf0fef088323f06991848877bc3874771c9db0bb6b24b3bbcd3f6e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e12a237d0996d499e66c1c2ed44c902405e63670e7c6945dbf76e09007c4e3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "554a344e5118dadc92556c86304df297b7a76809f6867f0a8186ba143af2f22d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "972dcda4c424933b65cd2cc135c6959f513f3a0c013d63a59643cc72c852e80d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2be25d62465887ef7b302b4513c1f0d6fef6659d659ad49c36946f990b77b09"
+    sha256 cellar: :any,                 arm64_linux:   "9bf491086a8ab8bb38c4014b78677f41f2736cced16d3c623d83d760a94a8477"
+    sha256 cellar: :any,                 x86_64_linux:  "8690ca050b08d524b508e792f5d48c639444d08be14ee203e3b2e5d9659de93d"
   end
 
   depends_on "rust" => :build
