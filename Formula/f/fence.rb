@@ -7,12 +7,12 @@ class Fence < Formula
   head "https://github.com/fencesandbox/fence.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bca479250b040f746351f6b050130700820e02aee6c2b1f67d54e4c2ddf48960"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca479250b040f746351f6b050130700820e02aee6c2b1f67d54e4c2ddf48960"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bca479250b040f746351f6b050130700820e02aee6c2b1f67d54e4c2ddf48960"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0e6bb918c2fa1bcf30abf83ee7a6b3a42da1e70b03a81ae642b62d250d2b6d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cfd8fd3cc668a62215d162165c905d20a7ab2e6156b7fcfdd671d04f0f59d04"
-    sha256 cellar: :any,                 x86_64_linux:  "532cf3a37685d495ca1d5e4127949ad74204e4c85d0c8b8c2fec74a86fae5343"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a3cf49e92e76187105ddff048ae69b40d3365ce376eac134ebaf3127b00059b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a3cf49e92e76187105ddff048ae69b40d3365ce376eac134ebaf3127b00059b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a3cf49e92e76187105ddff048ae69b40d3365ce376eac134ebaf3127b00059b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b5dc0e6fda51364a83ab09a485933f76dd3db585228306dfcc837285ff61289f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e3b4e1e628586a993101ae2fa64c2cb9c0a461ca07b1afca1b9ca1890f80740"
+    sha256 cellar: :any,                 x86_64_linux:  "27fd2ce218e36229595a5c51ce4b4a3b0d8420094ffade97347ff80a677e66fa"
   end
 
   depends_on "go" => :build
