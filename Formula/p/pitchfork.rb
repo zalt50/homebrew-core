@@ -1,18 +1,18 @@
 class Pitchfork < Formula
   desc "CLI for managing daemons with a focus on developer experience"
   homepage "https://pitchfork.jdx.dev"
-  url "https://github.com/jdx/pitchfork/archive/refs/tags/v2.18.0.tar.gz"
-  sha256 "733fb535e25a053e022e8a2ec2a4de1cda2a47dd918fdc368c4782d6fee3e83f"
+  url "https://github.com/jdx/pitchfork/archive/refs/tags/v2.19.0.tar.gz"
+  sha256 "6016c8464884e592e34c5aed59c6b31a56d96f76121637d8bcdb5bba1a52fa70"
   license "MIT"
   head "https://github.com/jdx/pitchfork.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4291655704a76f1788344c0dd5b30d9faade9524802d3d3680085edce7f74d18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6754cd3c161e819b155136c652d00f2f0f50622e35304aea557f57bf8c05acbc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93089c675e126f010aeb93ba38fc141df5ef83b913912a5aada33f5d9857d498"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2fecf965539a81d3630fe4aaf67b5df4bc71ab3e923627327e537a173c89830c"
-    sha256 cellar: :any,                 arm64_linux:   "e6856c2e153713988349795fc97471065204d641ac93b01ecead9fb75c8f0ae3"
-    sha256 cellar: :any,                 x86_64_linux:  "69d4c45c984a8d5fb12abba5d9c5486c7993ed679080d410b247dc4b4e5067b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30f05941835c34dd6e40b9f5dae32312857c6d6746a2dd3f94387f49b63748fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78bd07ef065c3cf43fdd6b8e90aa0e009878ba80a47c939fdf4fd5d71f359a71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27df78f0f71dfbec3c2387d2a9342e0b5a4fd8f62505c315b1cfebdab3a125b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "580a60a43f0cf5b1b0bcf5069c1efbbb5b4be1b913f26b21d69e52854a8465fb"
+    sha256 cellar: :any,                 arm64_linux:   "9983987cb18b3b686da019ee2c41d0732f9fa4026de49d675113f1d30813cc87"
+    sha256 cellar: :any,                 x86_64_linux:  "567da1438b58119c4cf936b42d661bff415d9f21ed2c8442626d714ce2902b61"
   end
 
   depends_on "rust" => :build
