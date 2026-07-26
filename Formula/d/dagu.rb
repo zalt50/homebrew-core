@@ -1,8 +1,8 @@
 class Dagu < Formula
   desc "Lightweight and powerful workflow engine"
   homepage "https://dagu.sh"
-  url "https://github.com/dagucloud/dagu/archive/refs/tags/v2.10.7.tar.gz"
-  sha256 "30d53c1c10e7a4cae7c4390bc7c843d6fe258e114ece11eafb8050fea62c763b"
+  url "https://github.com/dagucloud/dagu/archive/refs/tags/v2.11.0.tar.gz"
+  sha256 "802bfebaf9b95217f266851bb135b98e8547db997a93a6a0d0c11c6cc3698624"
   license "GPL-3.0-only"
   head "https://github.com/dagucloud/dagu.git", branch: "main"
 
@@ -24,8 +24,7 @@ class Dagu < Formula
     system "pnpm", "with", "current", "--dir", "ui", "run", "build"
     (buildpath/"internal/service/frontend/assets").install (buildpath/"ui/dist").children
 
-    ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd"
     generate_completions_from_executable(bin/"dagu", shell_parameter_format: :cobra)
   end
 
