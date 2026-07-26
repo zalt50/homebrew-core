@@ -7,12 +7,12 @@ class Tfmcp < Formula
   head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c355d5a7c24463797e76ac30c24c69e7326c0eee9ee05e5ad79d3f427bd240f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8221c52c9bf701b7ec72b1aeb8ee6052e71a9759a48d7a3d1d5bb5a62b63e8d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d0bfc57276cd538a3c5bd48d9ee6d618d1f627b15e19f77425decdb6c418fe1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8d7d25f30b45530a7beb347017df18da2a55b982e1e20dea20bfae71ce0c717"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4bded53e2fa834ac80ded8d4d5d88fc85f8b0db811b23c7cac93fafcca342cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07654955edaf0f36cf25df4548dc3330c13e21293dc732ec87e311b94c7ba4cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4176f609defffd9b99a7b8db387a7b4ee4f5c28c4d55944d99bc9ed6a3860fae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d92f51ea86951fc42263a1c1628386adfe97e414ab638626fa0e73a6b438c9da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39cdc5a10a7c553ce264b6bb603dff67491e4fe13cfdace82a0fd5efdc248e89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "633567c5c00f8df40905e0cb09608a5ce4a0acdeb7fa25aa818cd5cdb88ffc40"
+    sha256 cellar: :any,                 arm64_linux:   "e56ec090fa111c74f116b8526cec09def34d976b59f3452baf58e3b6ce172280"
+    sha256 cellar: :any,                 x86_64_linux:  "24e7523e232e2717c496efd6e6bf46e2d1bdd7e42bbdc304401595d2bee4cd38"
   end
 
   depends_on "rust" => :build
