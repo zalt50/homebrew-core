@@ -1,8 +1,8 @@
 class LiquidDsp < Formula
   desc "Digital signal processing library for software-defined radios"
   homepage "https://liquidsdr.org/"
-  url "https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "abef8b2ddfd58c0a84ecda4f62158c4824b916144af4a2b07776e1a144d8cda4"
+  url "https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "d02fcd21f75c1b834133a12b1522f92cbf456be4e9cdabdef7cb8ce378ff2e79"
   license "MIT"
 
   bottle do
