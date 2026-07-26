@@ -19,7 +19,6 @@ class Filebrowser < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/filebrowser/filebrowser/v2/version.Version=#{version}
       -X github.com/filebrowser/filebrowser/v2/version.CommitSHA=#{tap.user}
     ]
