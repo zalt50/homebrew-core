@@ -14,12 +14,12 @@ class Atari800 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0b7f9342ba2870c4173d6d9a7a84a8ac1472a467c7f42bcc0c2204d555b0a6a8"
-    sha256 cellar: :any, arm64_sequoia: "54027c3161ae2f09b6f4e27b9bf970dcfb902118ffa2d2a70cb05059495ff536"
-    sha256 cellar: :any, arm64_sonoma:  "5bb851cf8e02f40c858987c5416a3a8ca2f66bbc35fc4d4218faa5e502a8233a"
-    sha256 cellar: :any, sonoma:        "6a0c1b2ea53c565ecc33b48bd582259636c1ca982dbd5996285ef569d037de28"
-    sha256 cellar: :any, arm64_linux:   "8865bf50cd8bb64455f3dff830b632ea1039c6fa36d186c850c956b5ae5330e3"
-    sha256 cellar: :any, x86_64_linux:  "ff764a55b77265850d1798bf1765a382dcd3fa3f915f7cbc9d3b371f4566358c"
+    sha256 cellar: :any, arm64_tahoe:   "ead342a44a99702268f6ac063affae6865e23dbb958c5816bbd36d74bd7a5b76"
+    sha256 cellar: :any, arm64_sequoia: "b4b5a4e801826dd486726a8ad2475115c3ebfdda8aad73bbb04fc2dd68c92a4b"
+    sha256 cellar: :any, arm64_sonoma:  "8a729644bf33cb139b3ba9b5402e9f7501784ffc3e6b9bba9f5a2c71700b1abc"
+    sha256 cellar: :any, sonoma:        "01da96e221060afbb1f74ce602208bc83a73653f287044b3cd1674028f3b24ff"
+    sha256 cellar: :any, arm64_linux:   "3ee1fbff7fa7788a73771565abf5e56632817bf0b9be2312ecd0183b94a656f8"
+    sha256 cellar: :any, x86_64_linux:  "36fa5a1669964012f938dbad4b4e4172376b38139ea2e74d9b428042f7fa125c"
   end
 
   head do
