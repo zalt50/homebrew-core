@@ -1,18 +1,18 @@
 class Zot < Formula
   desc "Lightweight coding agent harness written in Go"
   homepage "https://www.zot.sh/"
-  url "https://github.com/patriceckhart/zot/archive/refs/tags/v0.3.11.tar.gz"
-  sha256 "635047b0103874934c840184d42b27b5a5076550ba3f26f55f2cb71a1cec485a"
+  url "https://github.com/patriceckhart/zot/archive/refs/tags/v0.3.13.tar.gz"
+  sha256 "2ab6a13284d1bcde46e0eb1d9cda8b5d78b8c52ce944a2f5f2199b3eb54f7efe"
   license "MIT"
   head "https://github.com/patriceckhart/zot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f7dad3fd7273d97e5117b005dc39738eb0c6c89c4df66bddcb8a240d90965b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f7dad3fd7273d97e5117b005dc39738eb0c6c89c4df66bddcb8a240d90965b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f7dad3fd7273d97e5117b005dc39738eb0c6c89c4df66bddcb8a240d90965b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd2c2262277f320ca3cd99b8bba6358c34629023a65997d68e4c41bf760374b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6308310ea015f7b82255b716ef088043529e4441eaf208bbe11a170d33733f14"
-    sha256 cellar: :any,                 x86_64_linux:  "fcfc048971d2de2c694657986df1be4c118edea6a3f05a0815f0eab38745bdee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5caca3fc54c867f27f6fd2bae6b0492d365a6ff4fadcea7bee31b03b2cd4ae0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5caca3fc54c867f27f6fd2bae6b0492d365a6ff4fadcea7bee31b03b2cd4ae0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5caca3fc54c867f27f6fd2bae6b0492d365a6ff4fadcea7bee31b03b2cd4ae0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11a11a00390d55f50cd32d04e6fa41ab3359a297af79153be52676da779f2049"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "312904d6189733cd1a8996ecf65890dee2b34e40d0d123b484b0d04dcf24ee05"
+    sha256 cellar: :any,                 x86_64_linux:  "57dc20b63d453825a4d22223fc0043017ba2cb781320213f2c3f07f2126b9266"
   end
 
   depends_on "go" => :build
