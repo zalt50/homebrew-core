@@ -39,8 +39,23 @@ class Tailscale < Formula
     generate_completions_from_executable(bin/"tailscale", shell_parameter_format: :cobra)
   end
 
+  def caveats
+    on_linux do
+      <<~EOS
+        tailscaled needs root privileges to configure iptables/nftables and DNS.
+        Start the root service with:
+          sudo --preserve-env=HOME brew services start tailscale
+
+        To run without root, use userspace-networking mode:
+          tailscaled --tun=userspace-networking
+      EOS
+    end
+  end
+
   service do
     run opt_bin/"tailscaled"
+    # See the caveats for userspace/non-root mode
+    require_root true
     keep_alive true
     log_path var/"log/tailscaled.log"
     error_log_path var/"log/tailscaled.log"
