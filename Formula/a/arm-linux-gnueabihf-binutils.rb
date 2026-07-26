@@ -1,9 +1,9 @@
 class ArmLinuxGnueabihfBinutils < Formula
   desc "FSF/GNU binutils for cross-compiling to arm-linux"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  sha256 "324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -44,7 +44,6 @@ class ArmLinuxGnueabihfBinutils < Formula
 
     target = "arm-linux-gnueabihf"
     system "./configure", "--enable-deterministic-archives",
-                          "--libdir=#{lib}/#{target}",
                           "--infodir=#{info}/#{target}",
                           "--disable-werror",
                           "--target=#{target}",
@@ -54,7 +53,7 @@ class ArmLinuxGnueabihfBinutils < Formula
                           "--with-system-zlib",
                           "--with-zstd",
                           "--disable-nls",
-                          *std_configure_args
+                          *std_configure_args(libdir: lib/target)
     system "make"
     system "make", "install"
   end
