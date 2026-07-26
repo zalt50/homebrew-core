@@ -7,12 +7,12 @@ class Libxmp < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f2bb8ea11b88256c4f5be9424ebc882da174646bf1b4416d981b7d4be1a683d4"
-    sha256 cellar: :any, arm64_sequoia: "278eed736852ea947174f5c28a4692b81e1655a12b14456c5a26ba3b4a1ad9f6"
-    sha256 cellar: :any, arm64_sonoma:  "bb3cdb21b877bff195f7c9065196f696e0a626369e19d216406aa09e4110abc7"
-    sha256 cellar: :any, sonoma:        "9668a8b6261f158709cbc8dc7659a2d233ef329bece3cda7d15b84eb5a636632"
-    sha256 cellar: :any, arm64_linux:   "33bb678771344516f62f4a61e51fd1d968862468588a4b317bd9f4049a99b6e5"
-    sha256 cellar: :any, x86_64_linux:  "723e786b81e72a799764f23f01caedbacd74ed4e386d4fbf0012a454782562bf"
+    sha256 cellar: :any, arm64_tahoe:   "7cb3fb487400b980835dc20acb69779ef9cdcbbf89008e252d56329dda3610b0"
+    sha256 cellar: :any, arm64_sequoia: "06ae96e14958654c243dffbeb09863b097e705cfe89eff732ce194573a0d0788"
+    sha256 cellar: :any, arm64_sonoma:  "beaddbcd68c5260efd6dca97b6c8cc311e322fcef22e4c39714b4c80d3b68568"
+    sha256 cellar: :any, sonoma:        "5900fd3ab0fd2b7d852cfc472128cab3c71b274f6d71408a9d9cd482a272634a"
+    sha256 cellar: :any, arm64_linux:   "e8753a783bb56fe6fbda76d3912af25f9f79930da4f7c95b71a1319b53f04a3f"
+    sha256 cellar: :any, x86_64_linux:  "3b672eda22d9aec83153bebf9aa82909462cc17f6293565ce74e6db0ecdade07"
   end
 
   head do
