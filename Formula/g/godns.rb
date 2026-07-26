@@ -7,12 +7,12 @@ class Godns < Formula
   head "https://github.com/TimothyYe/godns.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b77ad19d7b06bb12f23a78245a074dad59e73da58ef253eddec37bab400ff98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b77ad19d7b06bb12f23a78245a074dad59e73da58ef253eddec37bab400ff98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b77ad19d7b06bb12f23a78245a074dad59e73da58ef253eddec37bab400ff98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8015dc51129c482688544b2754605198ee84f2af5a3ee928abd134006a30fa51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe873e5df7f587c223ff3413adaaae3aa900f39947cb2c01bed5d8acf6f83eab"
-    sha256 cellar: :any,                 x86_64_linux:  "26f9435c6b832d930c62daf7a2e2835f0fdf0b2b9d73b6838e76d5f8591552a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a96eb3f4ba53abfe06213c7393f67cce73114aa8d7a01679db49ff07a1fb1068"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a96eb3f4ba53abfe06213c7393f67cce73114aa8d7a01679db49ff07a1fb1068"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96eb3f4ba53abfe06213c7393f67cce73114aa8d7a01679db49ff07a1fb1068"
+    sha256 cellar: :any_skip_relocation, sonoma:        "adb38660cad7d491e2b6923dc27a1443bea36a8cd46a9c43c4a71f678614979b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d58e3919a788ab173dea659d142c2d33d5dca3f0a5dfaa1a4cce89cc687643a0"
+    sha256 cellar: :any,                 x86_64_linux:  "ee6bd27283c1db163028a8eec9c4fd2071ee82402da54d5ce1685c5e692ee9c3"
   end
 
   depends_on "go" => :build
