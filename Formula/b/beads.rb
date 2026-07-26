@@ -28,7 +28,6 @@ class Beads < Formula
     end
 
     ldflags = %W[
-      -s -w
       -X main.Version=#{version}
       -X main.Build=#{tap.user}
       -X main.Branch=#{build.head? ? "HEAD" : "v#{version}"}
