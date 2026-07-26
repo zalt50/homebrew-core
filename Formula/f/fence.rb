@@ -24,7 +24,6 @@ class Fence < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.version=#{version}
       -X main.buildTime=#{time.iso8601}
       -X main.gitCommit=#{tap.user}
