@@ -33,8 +33,7 @@ class DockerMachine < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/docker-machine"
+    system "go", "build", *std_go_args, "./cmd/docker-machine"
 
     bash_completion.install Dir["contrib/completion/bash/*.bash"]
     zsh_completion.install "contrib/completion/zsh/_docker-machine"
