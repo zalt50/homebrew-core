@@ -20,7 +20,7 @@ class Juju < Formula
 
   def install
     system "go", "build", *std_go_args, "./cmd/juju"
-    system "go", "build", *std_go_args(output: bin/"juju-metadata", ldflags: "-s -w"), "./cmd/plugins/juju-metadata"
+    system "go", "build", *std_go_args(output: bin/"juju-metadata"), "./cmd/plugins/juju-metadata"
     bash_completion.install "etc/bash_completion.d/juju"
   end
 
