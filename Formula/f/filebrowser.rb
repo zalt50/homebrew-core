@@ -1,8 +1,8 @@
 class Filebrowser < Formula
   desc "Web File Browser"
   homepage "https://filebrowser.org/"
-  url "https://github.com/filebrowser/filebrowser/archive/refs/tags/v2.63.20.tar.gz"
-  sha256 "c1a5b647395be0a7b719b16b89047ab4e280def9b328c1b377656f139d031717"
+  url "https://github.com/filebrowser/filebrowser/archive/refs/tags/v2.63.21.tar.gz"
+  sha256 "d936b7da78f0aaf987ff195a2dd4159a1f4ffaf85df83876d5243336e1790081"
   license "Apache-2.0"
   head "https://github.com/filebrowser/filebrowser.git", branch: "master"
 
