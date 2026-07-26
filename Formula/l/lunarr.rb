@@ -1,8 +1,8 @@
 class Lunarr < Formula
   desc "Self-hosted media streaming server and Plex alternative for movies and TV"
   homepage "https://github.com/lunarr-app/lunarr-go"
-  url "https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "55adf894ac3cfdbba3dd40791949488654cbbfe75f949cb644ff6ee6ec7ea102"
+  url "https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "e1b265fd02c88725e22e5b49eaaddae3e1e4d28f12f40b99ab5231c70f13d1c9"
   license "Apache-2.0"
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
