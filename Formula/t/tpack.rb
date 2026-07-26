@@ -1,8 +1,8 @@
 class Tpack < Formula
   desc "Drop-in replacement for tmux-plugin-manager (tpm) with a TUI"
   homepage "https://github.com/tmuxpack/tpack"
-  url "https://github.com/tmuxpack/tpack/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "390037134af0ce6861310ddecb912565228499efa49c2c1b352ea24786434e41"
+  url "https://github.com/tmuxpack/tpack/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "e8783d5e4d6b3745bed716ebc57104adc3512f40510158d46ff80d98063a1d67"
   license "MIT"
 
   bottle do
@@ -24,7 +24,10 @@ class Tpack < Formula
 
   test do
     socket = testpath/"tmux.sock"
-    system "tmux", "-f", File::NULL, "-S", socket, "new-session", "-d", "-s", "tpack-test"
+    config = testpath/"tmux.conf"
+    touch config
+
+    system "tmux", "-f", config, "-S", socket, "new-session", "-d", "-s", "tpack-test"
     system "tmux", "-S", socket, "set-environment", "-g", "TMUX_PLUGIN_MANAGER_PATH", "#{testpath}/plugins"
     system "tmux", "-S", socket, "set-option", "-g", "@tpm_plugins", "tmux-plugins/tmux-sensible"
     system "tmux", "-S", socket, "run-shell", "#{bin}/tpack source"
