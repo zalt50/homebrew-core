@@ -1,8 +1,8 @@
 class Atari800 < Formula
   desc "Atari 8-bit machine emulator"
   homepage "https://atari800.github.io/"
-  url "https://github.com/atari800/atari800/releases/download/ATARI800_7_1_1/atari800-7.1.1-src.tgz"
-  sha256 "9a7d1435649982af0022ad77f565d408a18caaee40613cdcd1b8f96c3f646320"
+  url "https://github.com/atari800/atari800/releases/download/ATARI800_7_1_2/atari800-7.1.2-src.tgz"
+  sha256 "9602badfd7c45551cb5c4cc77f862af377c43a07caaa0bfc77ac87f9179673e3"
   license "GPL-2.0-or-later"
 
   livecheck do
