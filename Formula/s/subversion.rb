@@ -55,6 +55,7 @@ class Subversion < Formula
   end
 
   on_linux do
+    depends_on "cyrus-sasl"
     depends_on "zlib-ng-compat"
   end
 
