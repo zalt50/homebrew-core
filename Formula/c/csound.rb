@@ -2,7 +2,7 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https://csound.com"
   license "LGPL-2.1-or-later"
-  revision 14
+  revision 15
   head "https://github.com/csound/csound.git", branch: "develop"
 
   # Remove `stable` block when patches are no longer needed
@@ -78,6 +78,7 @@ class Csound < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "libx11"
+    depends_on "pulseaudio"
     depends_on "zlib-ng-compat"
   end
 
