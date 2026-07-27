@@ -1,8 +1,8 @@
 class Detox < Formula
   desc "Utility to replace problematic characters in filenames"
   homepage "https://detox.sourceforge.net/"
-  url "https://github.com/dharple/detox/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "15dc32ca5856a3edc2fff237c8cbcb29979a25292aac738a272181d2152699ea"
+  url "https://github.com/dharple/detox/releases/download/v3.0.1/detox-3.0.1.zip"
+  sha256 "425a02fda04103b86abe7f83bdd4c73de5c9c9f69041fb16e9e2e602dd78495b"
   license "BSD-3-Clause"
 
   bottle do
@@ -16,12 +16,9 @@ class Detox < Formula
     sha256 x86_64_linux:  "648e5e31695aa59ab1f7bff5524363e84a513c0f07d65050487dd6366002178c"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "pkgconf" => :build
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
