@@ -17,9 +17,6 @@ class LeafMd < Formula
 
   depends_on "rust" => :build
 
-  conflicts_with "leaf", because: "both install `leaf` binaries"
-  conflicts_with "leaf-proxy", because: "both install `leaf` binaries"
-
   def install
     system "cargo", "install", *std_cargo_args
   end
