@@ -4,6 +4,7 @@ class Nikto < Formula
   url "https://github.com/sullo/nikto/archive/refs/tags/2.6.1.tar.gz"
   sha256 "d1ca1acb05d81a5a6f374c0afdd76b33afa0089278631a20673c0210a71d992f"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
