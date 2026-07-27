@@ -26,7 +26,6 @@ class Ratify < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/ratify-project/ratify/internal/version.GitTag=#{version}
       -X github.com/ratify-project/ratify/internal/version.GitCommitHash=#{tap.user}
     ]
