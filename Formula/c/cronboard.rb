@@ -3,8 +3,8 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://cronboard.dev/"
-  url "https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "304de09999002159e9adb142c34b95959e682261beb39b4f0f0453054f7581f4"
+  url "https://github.com/antoniorodr/cronboard/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "d80464aa29d6fba1093a0bbfa54eebb881a1b29be20011f5f74aa9e1aa0c3a78"
   license "Apache-2.0"
 
   bottle do
@@ -71,8 +71,8 @@ class Cronboard < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
-    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "pygments" do
