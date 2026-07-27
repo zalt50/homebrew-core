@@ -8,6 +8,15 @@ class Fanficfare < Formula
   license "Apache-2.0"
   head "https://github.com/JimmXinu/FanFicFare.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "7f6ac94396a9e1c6f39b53d40d9131a4f753e52f671eeed5c93eb0002542a0ef"
+    sha256 cellar: :any, arm64_sequoia: "4aabe2d4cdb1308dde76ec341c15916af11129350eaabaf31355c5c78063f84a"
+    sha256 cellar: :any, arm64_sonoma:  "ec0c6bce812077399af45ee10c2f8e955581ffd6ab03862042c9e5689b3e7fd1"
+    sha256 cellar: :any, sonoma:        "6c081c22bed80062241c6ff13cca248c99ec7c885a1ad1435ad848a448436ee1"
+    sha256 cellar: :any, arm64_linux:   "9a68550c7ad60e0abb6e46bc0f1e629ddaef8d5e7831ed863bf713a26a91aac3"
+    sha256 cellar: :any, x86_64_linux:  "65c408703aaf3168f510a802314408b7226cdbd6f87f31012387e28714c9e9ef"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
