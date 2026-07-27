@@ -4,6 +4,7 @@ class VimClassic < Formula
   url "https://git.sr.ht/~sircmpwn/vim-classic/archive/v8.3.0.tar.gz"
   sha256 "6e1c97c8269e9354bbc474f0efa7e1e0b23fcdb6075067474d731a9bfac6e8ef"
   license "Vim"
+  revision 1
 
   bottle do
     sha256               arm64_tahoe:   "7bce18cd76b55002dddd04c9eb9ac47fdfc1a9c92147854455165959bb15ab53"
