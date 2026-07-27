@@ -114,6 +114,7 @@ class GetIplayer < Formula
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["NO_NETWORK_TESTING"] = "1"
+    ENV["PERL_MM_USE_DEFAULT"] = "1"
 
     resources.each do |r|
       r.stage do
