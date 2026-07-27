@@ -6,7 +6,7 @@ class Libssh2 < Formula
   mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.11.1.tar.gz"
   sha256 "d9ec76cbe34db98eec3539fe2c899d26b0c837cb3eb466a56b0f109cabf658f7"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   compatibility_version 1
 
   livecheck do
@@ -89,6 +89,41 @@ class Libssh2 < Formula
     sha256 "46cc7c5184d333e93c80a9cac1c86469c17340e6fc0418aecb2d0d8f6eaa5f41"
     type :backport
     resolves "CVE-2026-58051"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/5e4776146552d898b9c0e1b313cd093fa8dc92d0
+  # with a simple conflict fixed.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-66032.patch"
+    type :backport
+    resolves "CVE-2026-66032"
+  end
+
+  # Remove with the next release.
+  patch do
+    url "https://github.com/libssh2/libssh2/commit/a2ed82d40964bbc0d64cd717aa0a5a892117d2e6.patch?full_index=1"
+    sha256 "378b5f95f1a410afb790c57ceb67f2d4bd15cc42fc1db58d19fe26fd6f8acbed"
+    type :backport
+    resolves "CVE-2026-66033"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/a13bb6c773f0d55ad1628cede57e99803cd898d9
+  # with ssh2_err changed to the 1.11's _libssh2_error.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-66034.patch"
+    type :backport
+    resolves "CVE-2026-66034"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/42e33d81577ed4b95d4b4f6f845e5ee8efe5eeb4
+  # with simple conflicts fixed and SSH2_SAFEFREE changed to the 1.11's LIBSSH2_FREE + `ptr = NULL`.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-66035.patch"
+    type :backport
+    resolves "CVE-2026-66035"
   end
 
   def install
