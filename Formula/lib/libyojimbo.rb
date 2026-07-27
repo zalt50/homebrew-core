@@ -6,12 +6,12 @@ class Libyojimbo < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f92e9d12841cd900e16ea04142d1aa67d55aebcff4caf597ced1d61918c92478"
-    sha256 cellar: :any, arm64_sequoia: "0f9f05d19ce538f094d8aa23e84f82019eead98f37f7a187db64fa8d0ba48167"
-    sha256 cellar: :any, arm64_sonoma:  "c3a59b34a3e77e213c5945109bc58c422d51f5d86d337651fdd2663e9edeacdf"
-    sha256 cellar: :any, sonoma:        "c06fe65a9c1f3e3f1e73bc16c7035a9736208faa3e16cf15e4c8086e26caa38a"
-    sha256 cellar: :any, arm64_linux:   "1ffde9b910c3ee3dfa26ead04ee0590500069c713d538cdd85c2e98d2595efe3"
-    sha256 cellar: :any, x86_64_linux:  "b393c304b8f809feb6ae0ce6471e819383bfa4ca2f1da7eb012e00ab2de00e9c"
+    sha256 cellar: :any, arm64_tahoe:   "10e70b03633291e16267ad8cc2b79c2bf1d840b20081e1ba739c4b06226a2961"
+    sha256 cellar: :any, arm64_sequoia: "2c53f875ccc3f6c26fbf5ce1503f5d6d1de709356bb649e81eb8a4619ee21a15"
+    sha256 cellar: :any, arm64_sonoma:  "93fe44052b0a0d4b7ea72bb7e0f4c00243e581fb055a464d638f34fb0537b3d0"
+    sha256 cellar: :any, sonoma:        "406369360ec0199265c7aef0820d5c08f2260f975e865a0889d45eaf55a2d0d8"
+    sha256 cellar: :any, arm64_linux:   "32a4c74a8fffbcde35e6f20064a30563245bfc1b4b47f1042760d6949cad5029"
+    sha256 cellar: :any, x86_64_linux:  "178675a61d529ae9a93a1d59981d25f49427ecd30ff2629e60850ae3d1e7413e"
   end
 
   depends_on "cmake" => :build
