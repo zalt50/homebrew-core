@@ -19,6 +19,13 @@ class EpicsBase < Formula
   depends_on "perl"
   depends_on "readline"
 
+  patch do
+    url "https://github.com/epics-base/epics-base/commit/2c4d4714acbfd4ec6a26dcf0d7b9823475251d16.patch?full_index=1"
+    sha256 "d71ff147064b3d305365b2e05a7810d3d4beed10692a343b955a76ba13d440eb"
+    type :backport
+    resolves "https://github.com/epics-base/epics-base/issues/895"
+  end
+
   def install
     hostarch = Utils.safe_popen_read("./startup/EpicsHostArch").strip
     ENV["EPICS_HOST_ARCH"] = hostarch
@@ -28,9 +35,6 @@ class EpicsBase < Formula
       INSTALL_LOCATION = #{libexec}
       SHRLIB_LDFLAGS = -dynamiclib
     EOS
-
-    # avoid errors from linker, see: https://github.com/epics-base/epics-base/issues/895
-    inreplace "configure/os/CONFIG.darwinCommon.darwinCommon", /-flat_namespace/, ""
 
     system "make"
     # only these files are copied over to bin
