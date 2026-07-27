@@ -6,6 +6,15 @@ class Mcpsnoop < Formula
   license "MIT"
   head "https://github.com/kerlenton/mcpsnoop.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e72eaa37abc6a68e278e04f74790b29d741a11193f68effe471498fe0532138"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e72eaa37abc6a68e278e04f74790b29d741a11193f68effe471498fe0532138"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e72eaa37abc6a68e278e04f74790b29d741a11193f68effe471498fe0532138"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a28885e1e3d39ba74c6640d6958b5d6cf4006972900ca5f375be5652c97977a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72efc4afca657c1cd93763a09799a8e0ebf532bb42f605facc39fde98ad9fb08"
+    sha256 cellar: :any,                 x86_64_linux:  "494c6e6a1a884666a54b9a286afd2a846f7a83a3fe89739a7c1c743b6825efa4"
+  end
+
   depends_on "go" => :build
 
   def install
