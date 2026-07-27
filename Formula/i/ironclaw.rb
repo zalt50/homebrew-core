@@ -1,8 +1,8 @@
 class Ironclaw < Formula
   desc "Security-first personal AI assistant with WASM sandbox channels"
   homepage "https://www.ironclaw.com"
-  url "https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v0.29.1.tar.gz"
-  sha256 "6ba95fd3b4718648b5be271056baa2e48fa77de35dc491f22b2cb0445b6b5a42"
+  url "https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v1.0.0.tar.gz"
+  sha256 "34e4ac8f83a6368acdc795f8fd0643729b941686c002b7facd6128214843ebe7"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
@@ -20,6 +20,8 @@ class Ironclaw < Formula
     sha256 cellar: :any,                 x86_64_linux:  "fc4e030ef4ee2598088babf34f837813c38ff8e8ecae1e86d33fcbd28cad27b9"
   end
 
+  depends_on "corepack" => :build
+  depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
@@ -27,16 +29,20 @@ class Ironclaw < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
+
+    system "cargo", "install", *std_cargo_args(path: "crates/ironclaw_reborn_cli")
   end
 
   service do
-    run [opt_bin/"ironclaw", "run"]
+    run [opt_bin/"ironclaw", "serve"]
     keep_alive true
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ironclaw --version")
-    assert_match "Missing required configuration: DATABASE_URL", shell_output("#{bin}/ironclaw config list 2>&1", 1)
+
+    ENV["IRONCLAW_REBORN_HOME"] = testpath/"home"
+    assert_match "IronClaw Reborn config", shell_output("#{bin}/ironclaw config list")
   end
 end
