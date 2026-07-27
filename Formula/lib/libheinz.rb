@@ -1,8 +1,8 @@
 class Libheinz < Formula
   desc "C++ base library of Heinz Maier-Leibnitz Zentrum"
-  homepage "https://jugit.fz-juelich.de/mlz/libheinz"
-  url "https://jugit.fz-juelich.de/mlz/libheinz/-/archive/v4.1.0/libheinz-v4.1.0.tar.bz2"
-  sha256 "c22ae3d26e6fa34bce14424ad335cf4189df15a0419650e60b4138a914245e4f"
+  homepage "https://jugit.fz-juelich.de/mlz/lib/heinz"
+  url "https://jugit.fz-juelich.de/mlz/lib/heinz/-/archive/v4.1.0/heinz-v4.1.0.tar.bz2"
+  sha256 "86daa9a501270bc0d1b8dfa1e83ed2dc1b598b0bd129cc73abca70018138a3ff"
   license "0BSD"
 
   bottle do
