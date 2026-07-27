@@ -1,8 +1,8 @@
 class Librefang < Formula
   desc "Self-hostable operating system for autonomous AI agents"
   homepage "https://librefang.ai"
-  url "https://github.com/librefang/librefang/archive/refs/tags/v2026.7.21.tar.gz"
-  sha256 "2a8633a5d23b72af11338adbbd88d8e5a7593422e537a1b20b895c0cc8a18168"
+  url "https://github.com/librefang/librefang/archive/refs/tags/v2026.7.27.tar.gz"
+  sha256 "88213bb8a5ab48d91c74daf560dca004524851c83ef67bbdff69ec5d6abd2455"
   license "MIT"
   head "https://github.com/librefang/librefang.git", branch: "main"
 
