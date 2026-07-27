@@ -22,7 +22,7 @@ class PocketId < Formula
   def install
     system "pnpm", "with", "current", "--dir", "frontend", "install", "--frozen-lockfile", "--ignore-scripts"
     system "pnpm", "with", "current", "--dir", "frontend", "run", "build"
-    system "go", "build", "-C", "backend/cmd", *std_go_args(output: bin/"pocket-id", ldflags: "-s -w")
+    system "go", "build", "-C", "backend/cmd", *std_go_args(output: bin/"pocket-id")
   end
 
   service do
