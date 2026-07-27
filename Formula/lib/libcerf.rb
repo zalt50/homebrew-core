@@ -1,12 +1,12 @@
 class Libcerf < Formula
   desc "Numeric library for complex error functions"
-  homepage "https://jugit.fz-juelich.de/mlz/libcerf"
-  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v3.3/libcerf-v3.3.tar.gz"
-  sha256 "ea2910085448e269b5f0f0fabe51ffd846ac68881904be99669d94dc0cc09765"
+  homepage "https://jugit.fz-juelich.de/mlz/lib/cerf"
+  url "https://jugit.fz-juelich.de/mlz/lib/cerf/-/archive/v3.3/cerf-v3.3.tar.bz2"
+  sha256 "ea9ec1e114227d7d90dbf7985c8801d8ac00e2b696a45dd1058b40e80f283882"
   license "MIT"
   version_scheme 1
   compatibility_version 1
-  head "https://jugit.fz-juelich.de/mlz/libcerf.git", branch: "main"
+  head "https://jugit.fz-juelich.de/mlz/lib/cerf.git", branch: "main"
 
   livecheck do
     url "https://jugit.fz-juelich.de/api/v4/projects/269/releases"
