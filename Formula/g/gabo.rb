@@ -19,7 +19,7 @@ class Gabo < Formula
 
   def install
     cd "src/gabo" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gabo"
+      system "go", "build", *std_go_args, "./cmd/gabo"
     end
   end
 
