@@ -21,7 +21,6 @@ class K0sctl < Formula
     inreplace "version/version.go", "Version = versioninfo.Version", "Version = \"v#{version}\"" if build.stable?
 
     ldflags = %W[
-      -s -w
       -X github.com/k0sproject/k0sctl/version.Environment=production
       -X github.com/carlmjohnson/versioninfo.Revision=#{tap.user}
       -X github.com/carlmjohnson/versioninfo.Version=v#{version}
