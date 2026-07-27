@@ -7,13 +7,12 @@ class Ormolu < Formula
   head "https://github.com/tweag/ormolu.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "91b289a3ec2074f9ed6c0768ffc7ffc1ff93eb4719f4ded7d1b31b7d0fff583b"
-    sha256 cellar: :any, arm64_sequoia: "2a505c97847820d395bb2ade699376df672a65560e649051e2cb329bc12fbad0"
-    sha256 cellar: :any, arm64_sonoma:  "aa5bdfbf1bd742b63dfc401dbd68eaf73ea735802e0334ad3e121d1648740f81"
-    sha256 cellar: :any, sonoma:        "a4b3eb580fccad915da8972b223184877869409f5d31a4288a5d2679c34747bb"
-    sha256 cellar: :any, arm64_linux:   "4d16757eba28b37a9220890af7928100ee794f8cd5072f93abf08948f733b330"
-    sha256 cellar: :any, x86_64_linux:  "c7f1494263ad7fbbc2d951d248ade77b22903c6306b1e38b95105f83a99f4f02"
+    sha256 cellar: :any, arm64_tahoe:   "d48137c3a02dc12cbb6d0fa2b1d71a3cea22d172ab0e252048537fd2ca7f1962"
+    sha256 cellar: :any, arm64_sequoia: "12bd05ddf34abb28f63949f16ae03fcbf903d05c3631b414672d914f925adca8"
+    sha256 cellar: :any, arm64_sonoma:  "ebce97d0261971e53cb4a3e1b4d0c7f6e23274b80a4435d866c0e9210ae68141"
+    sha256 cellar: :any, sonoma:        "e7401217b13512fabfb3025dfbd0190da972147dc833a342f04cbdaea914395a"
+    sha256 cellar: :any, arm64_linux:   "d1098eca95a2ea3a7c2d471bb1ed1a6547eebb507b9fd182ce0167cf2cd1a609"
+    sha256 cellar: :any, x86_64_linux:  "22d992fc32b484eeaae4a3c6c99d937b37469e285fc934c96d326ff3ef3fa668"
   end
 
   depends_on "cabal-install" => :build
