@@ -1,8 +1,8 @@
 class GitPagesCli < Formula
   desc "Tool for publishing a site to a git-pages server"
   homepage "https://codeberg.org/git-pages/git-pages-cli"
-  url "https://codeberg.org/git-pages/git-pages-cli/archive/v1.10.0.tar.gz"
-  sha256 "ce6cc4b0e6d131d5df9b66a6b6ae59577b29d450e75d6876db78ab9d1425fa10"
+  url "https://codeberg.org/git-pages/git-pages-cli/releases/download/v1.10.1/git-pages-cli-src.zip"
+  sha256 "a4b23a4ef54111b160e9dc749d288ba96645282f78f355bbf28d2b48a1c6a664"
   license "0BSD"
   head "https://codeberg.org/git-pages/git-pages-cli.git", branch: "main"
 
@@ -19,11 +19,7 @@ class GitPagesCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.versionOverride=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.versionOverride=#{version}")
   end
 
   test do
