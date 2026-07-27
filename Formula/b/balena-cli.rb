@@ -1,8 +1,8 @@
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://docs.balena.io/reference/balena-cli/latest/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-25.1.10.tgz"
-  sha256 "e570613bc13c3f826e98ba2d6357dc342c16b21bfebbfd0b42a9d14b0865f1e8"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-25.2.0.tgz"
+  sha256 "d90c531dd60671b6ca547844fd2a8ca74a6b6789f510d2917f5a7c066e39a0a2"
   license "Apache-2.0"
 
   livecheck do
@@ -48,6 +48,7 @@ class BalenaCli < Formula
     modules = %w[
       bare-fs
       bare-os
+      bare-path
       bare-url
       bcrypt
       lzma-native
