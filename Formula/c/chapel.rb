@@ -48,6 +48,11 @@ class Chapel < Formula
     # in our find-python.sh script.
     inreplace "util/config/find-python.sh", /^(for cmd in )(python3 )/, "\\1#{python} \\2"
 
+    # We link jemalloc dynamically, so its `Libs.private` only adds a duplicate C++ runtime
+    inreplace "util/chplenv/chpl_jemalloc.py",
+              'pkgconfig_get_system_link_args("jemalloc")',
+              'pkgconfig_get_system_link_args("jemalloc", static=False)'
+
     # a lot of scripts have a python3 or python shebang, which does not point to python3.12 anymore
     Pathname.glob("**/*.py") do |pyfile|
       rewrite_shebang detected_python_shebang, pyfile
@@ -195,6 +200,7 @@ class Chapel < Formula
     ENV["CHPL_LIB_PATH"] = HOMEBREW_PREFIX/"lib"
     ENV["CHPL_IGNORE_GASNET_LD"] = "1"
     ENV["CHPL_RT_SILENCE_UNUSED_CORES"] = "1"
+    ENV["CHPL_START_TEST_ARGS"] = "--test-root #{testpath}"
 
     cd libexec do
       system "util/test/checkChplInstall"
