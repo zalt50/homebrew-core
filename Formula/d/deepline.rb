@@ -1,17 +1,17 @@
 class Deepline < Formula
   desc "CLI for Deepline data enrichment and durable plays"
   homepage "https://code.deepline.com"
-  url "https://registry.npmjs.org/deepline/-/deepline-0.1.278.tgz"
-  sha256 "6ffbe25db3c3056868dcaec77088f5702c015ff838c9dec9ba26b00e0833f775"
+  url "https://registry.npmjs.org/deepline/-/deepline-0.1.279.tgz"
+  sha256 "511b5bb5b4c9781e884377f8931a1eacd210ccc1c6c467a0f15323831cbdd325"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01f6d01c5f1581063a8bd63cafd39e5158aaa5b71e3fd81ee816d18cb40a7503"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01f6d01c5f1581063a8bd63cafd39e5158aaa5b71e3fd81ee816d18cb40a7503"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01f6d01c5f1581063a8bd63cafd39e5158aaa5b71e3fd81ee816d18cb40a7503"
-    sha256 cellar: :any_skip_relocation, sonoma:        "511cacc48cba82b510e13f8790dbd17cd4bbe25909a436f47014553664d84f92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f1fb2d131206212c51055e0d52d8b33d95fd84db0dc4afff120093f1266a61a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63262776c54c3f7929960b949d690bf4c694f18697f9ae2c50be0d837323cb11"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fc92833f15dece84fd51d085e7c647e1cce982ed1524b273c75429b56e1c63d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fc92833f15dece84fd51d085e7c647e1cce982ed1524b273c75429b56e1c63d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fc92833f15dece84fd51d085e7c647e1cce982ed1524b273c75429b56e1c63d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c45683a7009ff386ffd56f8ce1d960cf37a1bd6ebb4d4ca49a7062d5934d435"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a53b67de293176b6673f1f756c3b21bef6c62a311f4f860c92ad4b5afc194f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3445400c709c4a877b31b1b9d94db278d104d8015fe814c61a6de8cadb07ea37"
   end
 
   depends_on "node"
