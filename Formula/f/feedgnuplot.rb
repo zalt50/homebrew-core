@@ -4,6 +4,7 @@ class Feedgnuplot < Formula
   url "https://github.com/dkogan/feedgnuplot/archive/refs/tags/v1.64.tar.gz"
   sha256 "30c3952600b694a98a0e0ee20ecbbc02d0c70ca96194e3719e9177409af6c5c9"
   license any_of: ["GPL-1.0-or-later", "Artistic-1.0"]
+  revision 1
 
   # Ignore `debian/<version>` tags
   livecheck do
