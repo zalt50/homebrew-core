@@ -166,6 +166,7 @@ class Imapsync < Formula
 
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    ENV["PERL_MM_USE_DEFAULT"] = "1"
 
     build_pl = ["Module::Build", "JSON::WebToken", "Module::Build::Tiny", "Readonly", "IO::Socket::IP"]
 
