@@ -19,7 +19,6 @@ class GitPkgs < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/git-pkgs/git-pkgs/cmd.version=#{version}
       -X github.com/git-pkgs/git-pkgs/cmd.commit=HEAD
       -X github.com/git-pkgs/git-pkgs/cmd.date=#{time.iso8601}
