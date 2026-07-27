@@ -12,12 +12,12 @@ class Cproto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84ce33c221055ccd792d10a188bc64dda96d8e014e6801d76ad80cd8e1687dd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92840143bd7192644d77d2426af1f49b25306c60fe4b1996c71ed71450a63304"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f09794f06dadb594c23b1a348cdda0426e9103d9f28ad95782ea319ca34f75a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2cbed2496dde17c6c9a19a5fe2f078a107a4bb471890d0682a20b36b9edfd4b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6666e4b8d52da721885cc6284763218469146336e80d2dfe6ad5b92b625c7ee7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b2ae2f9ba840140deca9036409f24699c5cebff60d8645b50d28a71900902ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ba9c248c0887cccb3f81057bfcef8a05862b5627574f31f545d0a27c8dd7160"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8ffd686ae41ff4ef3cb88d648f6a59c6a92243912632efa2827b1fdb9651fe5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "456abbd2e8d94552d991bff61a63b393b791b2126d6922626fd7c5a522467330"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35be189aefe776a96712046ef54fc40a363882e37be99f9941af850f26dcbc8e"
+    sha256 cellar: :any,                 arm64_linux:   "c7f372dc2d217837cfe6c634387cb289e7c5c317be55928fd72c9237260230d8"
+    sha256 cellar: :any,                 x86_64_linux:  "046a3ba0b1788b53bd5a00fca53c305333a22dfbef862702350dad749d3014b1"
   end
 
   uses_from_macos "bison" => :build
