@@ -1,11 +1,22 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
-  url "https://root.cern/download/root_v6.40.02.source.tar.gz"
-  sha256 "f631eebee3dbea128f1415f4b784f5e83637a2b431193bce75f10385f71efc56"
   license "LGPL-2.1-or-later"
   revision 1
   head "https://github.com/root-project/root.git", branch: "master"
+
+  stable do
+    url "https://root.cern/download/root_v6.40.02.source.tar.gz"
+    sha256 "f631eebee3dbea128f1415f4b784f5e83637a2b431193bce75f10385f71efc56"
+
+    # Fix variable quoting for CMake>v4.4
+    # Will be unnecessary as of root v6.40.04
+    patch do
+      url "https://github.com/root-project/root/commit/1cc376e3bf06ea54880fc4c14f0d3de6af82fdd3.patch?full_index=1"
+      sha256 "a3651e7de6c6de2f75e7f2f26c8120763fca74b194c7e5ec43255f7242b507c2"
+      type :backport
+    end
+  end
 
   livecheck do
     url "https://root.cern/install/all_releases/"
@@ -92,7 +103,7 @@ class Root < Formula
 
     args = %W[
       -DCLING_CXX_PATH=clang++
-      -DCMAKE_CXX_STANDARD=17
+      -DCMAKE_CXX_STANDARD=20
       -DCMAKE_INSTALL_ELISPDIR=#{elisp}
       -DPYTHON_EXECUTABLE=#{which(python3)}
       -DXROOTD_ROOT_DIR=#{formula_opt_prefix("xrootd")}
