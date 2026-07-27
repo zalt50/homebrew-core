@@ -5,6 +5,7 @@ class PerconaToolkit < Formula
   version "3.7.1-4"
   sha256 "c4a2502bba0118c0e4a72faa58a3174d793431e65d9aee6c260eae49216ead14"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
+  revision 1
   head "https://github.com/percona/percona-toolkit.git", branch: "3.x"
 
   livecheck do
