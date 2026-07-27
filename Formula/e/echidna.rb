@@ -1,8 +1,8 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://secure-contracts.com/program-analysis/echidna/index.html"
-  url "https://github.com/crytic/echidna/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "c35a6f65c8758743253e91d5ce25017d0d69864f3fad58c41269e9ef4089c1a1"
+  url "https://github.com/crytic/echidna/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "fab7817640a613856365766031518a8bde5471a9fb14618dfb0b77e3820a7cba"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
 
@@ -64,6 +64,9 @@ class Echidna < Formula
           "$everything": -split-sections -fPIC -fexternal-dynamic-refs
       YAML
     end
+
+    # Old version doesn't support base >=4.20 which comes with GHC 9.10+
+    inreplace "stack.yaml", "allow-newer-deps:", "allow-newer-deps:\n- aeson-optics"
 
     # Let `stack` handle its own parallelization
     ENV.deparallelize { system "stack", "install", *args }
