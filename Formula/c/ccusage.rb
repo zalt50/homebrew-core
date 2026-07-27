@@ -1,8 +1,8 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ccusage/ccusage"
-  url "https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.18.tar.gz"
-  sha256 "464b060118cfae0d4b96e0a6979d306389ebf9d84ceef5967deaf9b3b142f653"
+  url "https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.19.tar.gz"
+  sha256 "581d3e1d061b21b85ec3ca70eefb777b79b09af526ce1ac83b51a217042ebe5b"
   license "MIT"
 
   bottle do
@@ -17,7 +17,7 @@ class Ccusage < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "rust/crates/ccusage")
+    system "cargo", "install", *std_cargo_args(path: "rust/crates/ccusage", features: "fetch-litellm-pricing")
   end
 
   test do
