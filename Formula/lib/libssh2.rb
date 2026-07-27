@@ -15,14 +15,14 @@ class Libssh2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e10b1bc79f0720529e8983a138aa3353412b8e940bd56c8527170203a03b1aea"
-    sha256 cellar: :any, arm64_sequoia: "8beb89dc76b533c69c308ad71db7180aa8f40bd633bfeb6834fed150a8d0e715"
-    sha256 cellar: :any, arm64_sonoma:  "a701f61b8096ab73b96d82c3eaf33b64fda56a23611c8fa694dcd230b5a5f60a"
-    sha256 cellar: :any, tahoe:         "8b76b00ed029089cc9905bf11b55274824b0768f7f1fad43a7a1295c308d9910"
-    sha256 cellar: :any, sequoia:       "2af1a7d99abd147791f94075d30a4182db7a4442dd801738c05babf8a16be06d"
-    sha256 cellar: :any, sonoma:        "6942ef3edeb8d89c581ebf30a394d2812f822543628c9aa6a483a527df69d2a7"
-    sha256 cellar: :any, arm64_linux:   "1c23b077200cd8636807901c200e9fca7ed8cd98000097ae46858d8fddd2ba48"
-    sha256 cellar: :any, x86_64_linux:  "23700032540130dda5b9fed053a9544d628c2137e41fa05338968784970f4838"
+    sha256 cellar: :any, arm64_tahoe:   "2700fe402d514ccc6de4d21bf893fea1f346c97ff1668a448a1db1aa2e67c900"
+    sha256 cellar: :any, arm64_sequoia: "cb769ecbc0bbe4c71dd2c1dfd95b5b44433824065cce6e9a7ba639b835f54263"
+    sha256 cellar: :any, arm64_sonoma:  "09fc033c60259a35c9e485134ad1244b130eaee32881a42d0220c6dae70585ae"
+    sha256 cellar: :any, tahoe:         "d53208e08777656d275e00f505a50cf1ed2980e0613c5802036002db95c175e9"
+    sha256 cellar: :any, sequoia:       "77458987f6ef9dc1a0c888f0ae98705e6e8c2b1073dbf6b314042e814d18e68d"
+    sha256 cellar: :any, sonoma:        "75fe7a276a6749ac0b5d41e6887bb520f616c3fb68288913b92699de61844793"
+    sha256 cellar: :any, arm64_linux:   "a88a923e03603ee53c0486e6e17f43df283bb10faee8c42ca9c262fdfc12e6e6"
+    sha256 cellar: :any, x86_64_linux:  "97de8d2b3b5ba7320aa04d16f11f98e86b79b70906ac8009fe5e4249b2d3c0b0"
   end
 
   head do
