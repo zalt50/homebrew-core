@@ -3,8 +3,8 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/de/08/d648488b34a576f4f8b0bff398055451d00b835fa22b0a578a39dd925d63/parsedmarc-10.3.0.tar.gz"
-  sha256 "24f04bf3564e9cd5a9274e266b3b066c9b361b6570b488b55c1f2834bebb8d0f"
+  url "https://files.pythonhosted.org/packages/65/41/7cbecf709a05b504062781908e40ab3b4f92bbcdb3a2f6822fe5f134de10/parsedmarc-10.4.0.tar.gz"
+  sha256 "bab4f2a891f596196b3b30dd9527b9e5d6f7f418a6eb2ff4a829ab9bcfa11037"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
@@ -359,8 +359,8 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/64/04/b347e32ee17ad3013d34a96e471b81ca1cf2efc6afb0e669b7d0c51f57c8/publicsuffixlist-1.0.2.20260725.tar.gz"
-    sha256 "de5d7ea689f3a77065957fdbfbd7aaeea49c00813401c00656d859dc2bfd29d1"
+    url "https://files.pythonhosted.org/packages/b1/2c/ba07f8c6fde9954c050797a9de4b93b209f94ba93001bb236c1b2c4129da/publicsuffixlist-1.0.2.20260726.tar.gz"
+    sha256 "6abd9eace2fa7a8734fdae9c8b32403a8c6b22c5872dad59367f19bc83d990ea"
   end
 
   resource "pyasn1" do
