@@ -1,17 +1,17 @@
 class Tpack < Formula
   desc "Drop-in replacement for tmux-plugin-manager (tpm) with a TUI"
   homepage "https://github.com/tmuxpack/tpack"
-  url "https://github.com/tmuxpack/tpack/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "e8783d5e4d6b3745bed716ebc57104adc3512f40510158d46ff80d98063a1d67"
+  url "https://github.com/tmuxpack/tpack/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "53b346742e66987cce034991bd62f2e324222d5eda1f8408be7ac6070f3f0a2d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6694ac3b1847c525588bf8cc7f5412cbb858c3a5d2b1f0fcda8954146b4c6930"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6694ac3b1847c525588bf8cc7f5412cbb858c3a5d2b1f0fcda8954146b4c6930"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6694ac3b1847c525588bf8cc7f5412cbb858c3a5d2b1f0fcda8954146b4c6930"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e0356d5f8c149101d7767ee571ab651017c91a3eff838ecf6632fcdd9279dbd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80789219ad13da5dc2eb2aadcbbfc53c945670c9a06313a99d97fba256d5d075"
-    sha256 cellar: :any,                 x86_64_linux:  "9aa340a718c3ae369f83c0bb163d6c913b5d04b26cf8d64c6eca9a5af8a36333"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e3a235c8314b8c21b2c129dd97c26771c216895041f8fdcbfa8e6381995dde6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e3a235c8314b8c21b2c129dd97c26771c216895041f8fdcbfa8e6381995dde6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e3a235c8314b8c21b2c129dd97c26771c216895041f8fdcbfa8e6381995dde6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8fcf75fe5607c4a8accc94e25bb5b7c08fdb3a04e150a9ba0ef4b48c3374580b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f085a8f3e44f662db28153eaef678ca150b0b0562a043b8832dd8d9b038571c2"
+    sha256 cellar: :any,                 x86_64_linux:  "49b5bb088e596081ba6147a2a45330273f5b49b2cd077922cd2fd14b15656762"
   end
 
   depends_on "go" => :build
