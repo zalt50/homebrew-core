@@ -1,15 +1,14 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://gdal.org/en/stable/"
-  url "https://github.com/OSGeo/gdal/releases/download/v3.13.1/gdal-3.13.1.tar.gz"
-  sha256 "e04e9813bd215b56753d5554330c53be25f3df2d7ed7e6413a19e6b66751c675"
+  url "https://github.com/OSGeo/gdal/releases/download/v3.13.2/gdal-3.13.2.tar.gz"
+  sha256 "1051c33db1d9e6a05907ac07cd06f5ce8ac0658f317c3229774cc2198a6c1252"
   license "MIT"
-  revision 4
   compatibility_version 2
 
   livecheck do
-    url "https://download.osgeo.org/gdal/CURRENT/"
-    regex(/href=.*?gdal[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
@@ -26,6 +25,7 @@ class Gdal < Formula
     depends_on "doxygen" => :build
   end
 
+  depends_on "ant" => :build
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
