@@ -6,12 +6,12 @@ class MercuryCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c71d71b7f7120599e2c2a45f224ec991b5c5994eada8fae4e46b745626cde50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c71d71b7f7120599e2c2a45f224ec991b5c5994eada8fae4e46b745626cde50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c71d71b7f7120599e2c2a45f224ec991b5c5994eada8fae4e46b745626cde50"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5069b647b77d9bc6cfd954a067ce2fa6153216c92605714ba051c2f4c54f1aef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e192df59ab87163ff09c2ebbda53a9624002df4a4778f12a400dafb747171292"
-    sha256 cellar: :any,                 x86_64_linux:  "496c2aa1ab977d88dfc95ada07e137aa416adbf60bc1e96dd2517ab3f1cc8cfb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e8d3b4cd26a37913bcb4a1bd2a54010ba735fef8b5907a8637820f3b51febe9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e8d3b4cd26a37913bcb4a1bd2a54010ba735fef8b5907a8637820f3b51febe9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e8d3b4cd26a37913bcb4a1bd2a54010ba735fef8b5907a8637820f3b51febe9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a5b87676f9dc581c53af6516af99c0baf8a3e5b398274f25ef9801760e2dded"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36b312f1aabbb48a0be59b66fb61714234dd2bfb87a14a20bce7e11653ffa9a5"
+    sha256 cellar: :any,                 x86_64_linux:  "70f7cb2cf7c7fb280c193b8123344db21097c9281094e1616c5943a5e4c94ae3"
   end
 
   depends_on "go" => :build
