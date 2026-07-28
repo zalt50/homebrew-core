@@ -3,8 +3,8 @@ class Cppman < Formula
 
   desc "C++ 98/11/14/17/20 manual pages from cplusplus.com and cppreference.com"
   homepage "https://github.com/aitjcize/cppman"
-  url "https://files.pythonhosted.org/packages/bd/f7/3fe2da627877a1b091d9f00fa494bc62a2eea1cad27a4fd64c23bd29a4fd/cppman-0.6.0.tar.gz"
-  sha256 "4426d6128356eb28ed3371066d17fa02d250fa5b1f666b09d2ee8f0c8900a790"
+  url "https://files.pythonhosted.org/packages/a2/97/b0c1de5b35cc4e66eb32accffd261c22d511aba964a7aed3b210a85851b7/cppman-0.6.3.tar.gz"
+  sha256 "16a782b87b0848c5202b61965402258f8fc8260cbf0867cb876992eb3d046eb0"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -44,11 +44,19 @@ class Cppman < Formula
       url "https://github.com/html5lib/html5lib-python/commit/379f9476c2a5ee370cd7ec856ee9092cace88499.patch?full_index=1"
       sha256 "97ae2474704eedf72dc5d5c46ad86e2144c10022ea950cb1c42a9ad894705014"
     end
+
+    # Python 3.14 with setuptools 81+ compatibility (`pkg_resources` removal)
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/1dbc19cd6db72cb919885827bc4883423e0cb647.patch?full_index=1"
+      sha256 "5951b823f353dd70806ad6e163ab8f46899496c1e8bb53970c99abe8d1df1a78"
+      type :unofficial
+      resolves "https://github.com/html5lib/html5lib-python/pull/592"
+    end
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/80/61/d3dc048cd6c7be6fe45b80cedcbdd4326ba4d550375f266d9f4246d0f4bc/lxml-5.3.2.tar.gz"
-    sha256 "773947d0ed809ddad824b7b14467e1a481b8976e87278ac4a730c2f7c7fcddc1"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "six" do
@@ -79,6 +87,7 @@ class Cppman < Formula
   end
 
   test do
+    system bin/"cppman", "-s", "cplusplus.com"
     assert_match "std::extent", shell_output("#{bin}/cppman -n 1 -f :extent")
   end
 end
