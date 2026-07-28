@@ -1,17 +1,17 @@
 class Netwatch < Formula
   desc "Cross-platform realtime network diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/netwatch"
-  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "fd2f094a06e13aea0e79c28da1c5dd9386859a2988e13aa783e2fe4e7a32489f"
+  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "052f36b5941fceb05575bf6fea4f12e3f49dec84de5049974f5bd6284e91601c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "405630e51244f50d3d9dcc36a50d8416195b05f1f1c2d07b022ef81bce95805f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98eae466a064afd64f047df5133382cd9517824bc4bc850d6a986248b0bf6387"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41f806b630aff7d8f51df081d321b96c2af1a65aa40810b2ed466b898066779e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d89f2b3aa405364cbc1ef34b6d8c691d24f91227812eac29fac4a87e902312d9"
-    sha256 cellar: :any,                 arm64_linux:   "ca9dfcfd6bc081305d22ae879e0b23e96a424f01dedc642ef169c44eb60884bb"
-    sha256 cellar: :any,                 x86_64_linux:  "16674dfd439a163de7dae016b7fdb35772ed7b3ad00ec5b4f816b46261de6c51"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e4e6ad57554491a940b90010b8641fcdbfdcdc1e2d7eaec9cb10d4767f74442"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fa49581887b1e6a9a92d1bcaf7f35069a72b1f0098c27c6a891e2a60c401ab5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5adcde313d4d5a6a9423ef6291ad24b47d613bd4d2035d48f4481d17b7d06261"
+    sha256 cellar: :any_skip_relocation, sonoma:        "485d950ff9c10a509e58dce016d7a245a0ce185202e4427a0d4e069fc18847a3"
+    sha256 cellar: :any,                 arm64_linux:   "655fd75c2e201b42dbcb9adcbf593daf50265fb01c360401c955fdce40299318"
+    sha256 cellar: :any,                 x86_64_linux:  "6ae2609fa8d2a126e3067b3b16f8b24a78f2df05818878daeb6fa9374cd9196a"
   end
 
   depends_on "rust" => :build
@@ -30,6 +30,7 @@ class Netwatch < Formula
       # bring up help dialog
       input.puts "?"
       sleep 1
+      sleep 2 if OS.mac? && Hardware::CPU.intel?
       input.close
     ensure
       Process.kill("TERM", wait_thr.pid)
