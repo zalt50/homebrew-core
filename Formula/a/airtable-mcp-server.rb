@@ -6,7 +6,7 @@ class AirtableMcpServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a40b6ad1159c478c26c093c48263ab9ac088d34fb875d39b99173953646498df"
+    sha256 cellar: :any_skip_relocation, all: "c1db26dfbfadb77d7c0f9ee9b8ac765c2711e7f9c2f9eff2b1c4959dee0548ed"
   end
 
   depends_on "node"
