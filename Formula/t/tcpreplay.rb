@@ -6,12 +6,12 @@ class Tcpreplay < Formula
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5ab07902d826a54e7b02dafa310abc84739b1bab8ec0fb999551d02b38938097"
-    sha256 cellar: :any, arm64_sequoia: "cddb61bae519490cc6a92bc54dffb98dd7d734d3af092611efd7f999b9685d02"
-    sha256 cellar: :any, arm64_sonoma:  "e49c15c7398e1e2f0464103c2aaca8ecfa3e44c7c70fd254b55fbe335d1823ea"
-    sha256 cellar: :any, sonoma:        "1860f849f42face97618c1af03316925c7475860bf3643dac8610e8b62f0f7c9"
-    sha256 cellar: :any, arm64_linux:   "ba833972a7fa8cefda6373b1d4b93460a07ea781254e09659813c95a037dbc13"
-    sha256 cellar: :any, x86_64_linux:  "f2f131c5bada7f52c9e6b7c9791117d9988ffdfac3800c698d36d6df7e9e7610"
+    sha256 cellar: :any, arm64_tahoe:   "80a6c8a77f1050deaf21d4db78b016d07b9489fe45bfdb93a9ad6b97c73963f0"
+    sha256 cellar: :any, arm64_sequoia: "264c0b92bf7438cc3a79e2e3a6fcb933f61a30fc79c0908bbf0eb32eca40293b"
+    sha256 cellar: :any, arm64_sonoma:  "7bb2ffb6bd1df14490238187893217af35679c83f4a1869f75cdc4c7720f92fd"
+    sha256 cellar: :any, sonoma:        "b9578dba4e2bfeb0c3150c05693f09f88e10d22409bb3a01f4a11633732d6c7a"
+    sha256 cellar: :any, arm64_linux:   "499f089725023d55db3109b8dffeb2443c85a25a3e14b1cf0231c8235404d131"
+    sha256 cellar: :any, x86_64_linux:  "166c1ce3c182c9783942178a600f8a4c377ed15857bfd357d73d04d12957c592"
   end
 
   depends_on "cmake" => :build
