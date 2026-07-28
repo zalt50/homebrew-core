@@ -1,18 +1,18 @@
 class Mark < Formula
   desc "Sync your markdown files with Confluence pages"
   homepage "https://samizdat.dev"
-  url "https://github.com/kovetskiy/mark/archive/refs/tags/v16.8.8.tar.gz"
-  sha256 "225f152d880bbc2ed1971c8f9bdd2186e12a9d51a5b5997eccf53104b6f5248b"
+  url "https://github.com/kovetskiy/mark/archive/refs/tags/v16.8.9.tar.gz"
+  sha256 "701893d85fb6165bfa4cebfbd796f3594f77d6ca3a2cf305e153a3d22465e154"
   license "Apache-2.0"
   head "https://github.com/kovetskiy/mark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca804a7806a46b29c3f4d750f029cb7f5f824790fb9f5beff6c51b6f8fc9b84f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca804a7806a46b29c3f4d750f029cb7f5f824790fb9f5beff6c51b6f8fc9b84f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca804a7806a46b29c3f4d750f029cb7f5f824790fb9f5beff6c51b6f8fc9b84f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e881212968be37cd7f72dbfc90b62f52228ea33ac78787c90eecb6b637f04493"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76eda28baf3c7cd0a2a9c8e0c55197ed21a490a563d2914822ebebd52a881ba1"
-    sha256 cellar: :any,                 x86_64_linux:  "c7e3936ffe07de2d3a6120dca5a2033a51824c3e90f5740fc052902ae1f595ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d8b90702431f189f1bc71fa612f9d609cdbbf513971d69aeda728804f90532e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d8b90702431f189f1bc71fa612f9d609cdbbf513971d69aeda728804f90532e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d8b90702431f189f1bc71fa612f9d609cdbbf513971d69aeda728804f90532e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1824d9cfa2877caa22550839462b8f680ebf2f792d6465b5815026f583e0069a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "101b7397f13b2fc0648eb6fee25c2706357a6218c260882ff2fbb7c1e79249b2"
+    sha256 cellar: :any,                 x86_64_linux:  "a9d965dfc865e16ddbed39f214e18f6a699650762fb38e248a17cf7171a12868"
   end
 
   depends_on "go" => :build
