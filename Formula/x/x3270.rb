@@ -1,8 +1,8 @@
 class X3270 < Formula
   desc "IBM 3270 terminal emulator for the X Window System and Windows"
   homepage "https://x3270.bgp.nu/"
-  url "https://downloads.sourceforge.net/project/x3270/x3270/4.5ga5/suite3270-4.5ga5-src.tgz"
-  sha256 "01576fa58598ccdd3d366febfaef61e3d1de93eb60a93f9ac6ba5faf84144c6f"
+  url "https://downloads.sourceforge.net/project/x3270/x3270/4.5ga6/suite3270-4.5ga6-src.tgz"
+  sha256 "06faf5ce883852258cc6a2a4da9fe5ce023e97d01e50625ff36f4a01ea703468"
   license "BSD-3-Clause"
 
   livecheck do
