@@ -1,11 +1,9 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https://lierdakil.github.io/pandoc-crossref/"
-  url "https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.24a.tar.gz"
-  version "0.3.24a"
-  sha256 "5b478c94b67d5b972c7b3d867a345be982d3af12475e2261dd9b37fc17e225d1"
+  url "https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.25.tar.gz"
+  sha256 "cb42b8319a59f258fea191e4660b62bdd9a90a9099322ae0f17203bc5986498a"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "ad790a96e2e516323595c1ec40f98af37c25bc1e03869de142df4906cab08f38"
@@ -26,14 +24,6 @@ class PandocCrossref < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Workaround for pandoc 3.10.
-  patch do
-    url "https://github.com/lierdakil/pandoc-crossref/commit/d786c849c54841c809f2f13bda841c038a865e03.patch?full_index=1"
-    sha256 "df60d96e2e20f7d7d13582ebdbf690daff2cb1a05f130311cf6ef92459ca1691"
-    type :unofficial
-    resolves "https://github.com/lierdakil/pandoc-crossref/pull/510"
   end
 
   def install
