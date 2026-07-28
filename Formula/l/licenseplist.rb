@@ -1,8 +1,8 @@
 class Licenseplist < Formula
   desc "License list generator of all your dependencies for iOS applications"
   homepage "https://www.slideshare.net/mono0926/licenseplist-a-license-list-generator-of-all-your-dependencies-for-ios-applications"
-  url "https://github.com/mono0926/LicensePlist/archive/refs/tags/3.27.9.tar.gz"
-  sha256 "bcdd7f7f81b75458b377b3ed65b7fc972b417960bfe4e0e0b388fa7b91011230"
+  url "https://github.com/mono0926/LicensePlist/archive/refs/tags/3.28.0.tar.gz"
+  sha256 "57d53eea12e792213824c56eae2fc763577f97f043945f288c0389ab5363bfcd"
   license "MIT"
 
   bottle do
