@@ -1,9 +1,9 @@
 class Libextractor < Formula
   desc "Library to extract meta data from files"
   homepage "https://www.gnu.org/software/libextractor/"
-  url "https://ftpmirror.gnu.org/gnu/libextractor/libextractor-1.17.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libextractor/libextractor-1.17.tar.gz"
-  sha256 "215c7d8dc10e0d7644509da2b47a6fa1ba5ebad8ce02904864e54abfb4c3059a"
+  url "https://ftpmirror.gnu.org/gnu/libextractor/libextractor-1.18.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libextractor/libextractor-1.18.tar.gz"
+  sha256 "726cf3474dd9e809910ee8b5aba64bfccc1a4fb111dcbea2e24276a618562760"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -31,11 +31,6 @@ class Libextractor < Formula
     inreplace "src/plugins/qt_extractor.c",
               "static uint64_t\nntohll (uint64_t n)",
               "#undef ntohll\n\\0"
-
-    # 1.17 uses glibc-only `secure_getenv` guarded by `#if _GNU_SOURCE`, which
-    # autoconf also defines on macOS; use `getenv` there instead.
-    inreplace "src/main/extractor_plugpath.c",
-              "#if _GNU_SOURCE", "#if _GNU_SOURCE && !defined(__APPLE__)"
 
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
