@@ -4,6 +4,7 @@ class Node < Formula
   url "https://nodejs.org/dist/v26.5.0/node-v26.5.0.tar.xz"
   sha256 "0e179470097e247a0c0769b77cc1359fc3e1baf0686df89bafe1fb48cb1887f4"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
