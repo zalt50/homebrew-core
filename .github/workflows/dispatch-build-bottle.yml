@@ -215,6 +215,14 @@ jobs:
       BOTTLE_BRANCH: ${{github.actor}}/dispatch/${{inputs.formula}}/${{github.run_id}}
       BOTTLES_DIR: ${{ github.workspace }}/bottles
     steps:
+      - name: Check that we're not uploading macOS 27 bottles
+        run: |
+          if [[ "${DISPATCH_BUILD_BOTTLE_RUNNER}" =~ (^|,)[[:space:]]*27-arm64[[:space:]]*($|,) ]]
+          then
+            echo "::error ::Please don't upload macOS 27 bottles until RC."
+            exit 1
+          fi
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@df4b09108a1de9d6f995fe68f302b3f68bd6d2ef # 2026.07.20.1
