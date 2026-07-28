@@ -18,6 +18,8 @@ class Solod < Formula
 
   depends_on "go" => [:build, :test]
 
+  conflicts_with "so", because: "both install `so` binaries"
+
   def install
     system "go", "build", *std_go_args(output: bin/"so"), "./cmd/so"
   end
