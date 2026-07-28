@@ -7,6 +7,15 @@ class Solod < Formula
   license "BSD-3-Clause"
   head "https://github.com/solod-dev/solod.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fad6c9011a1a002966203a8401e232c5161784d413315647da2a6513783a243"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fad6c9011a1a002966203a8401e232c5161784d413315647da2a6513783a243"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fad6c9011a1a002966203a8401e232c5161784d413315647da2a6513783a243"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e9463386f770f8346bbc93505e512e7be478047e2e51797e10d4d720967c18d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4f16b7b3377cba9bfa604f3f9bae26f946f8c997bebb596a559e6343c522114"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dafbbd92149d5608787592c39fcb22d96b2a1086df8212f1b6d77ed5adb50d44"
+  end
+
   depends_on "go" => [:build, :test]
 
   def install
