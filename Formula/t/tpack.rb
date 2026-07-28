@@ -1,8 +1,8 @@
 class Tpack < Formula
   desc "Drop-in replacement for tmux-plugin-manager (tpm) with a TUI"
   homepage "https://github.com/tmuxpack/tpack"
-  url "https://github.com/tmuxpack/tpack/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "53b346742e66987cce034991bd62f2e324222d5eda1f8408be7ac6070f3f0a2d"
+  url "https://github.com/tmuxpack/tpack/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "15dd0770fead4034320434816ecf315918effbcbe66d38b0e5e03530fe250bff"
   license "MIT"
 
   bottle do
