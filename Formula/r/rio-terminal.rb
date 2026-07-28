@@ -13,10 +13,10 @@ class RioTerminal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8056e8636408ddee196b5af62ee1cee7df8a04797e08777a94173e8da16ae112"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d325bfe5cec842516fb812bca80d9843f7b13383075432dfda487b5970e38e23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc26d65b6caad17db7121a78e99a4735da10c375acfb5ebf82c4b48bc1802753"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d614fae4f6dcbe45e8b586fbd74f0e436f21fb13ea796eda46b28bb5319629eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a30c34f35e2fbe635dae739f9e04ef23a7a9a5f8191f93986d6d71c3b20fe8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6948a2ba1175bc2e6fc083d845c8153ac494dd0e42b4e7d6aa8fbf6bb14c8e69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22de3173fce773a1cfae51767a96edeb91b1588a9de836bf81446b3bf89bb8c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2195b207729163cf17fccabebde79311cc903d65222f0f42c414fdf620d88b8c"
   end
 
   depends_on "rust" => :build
