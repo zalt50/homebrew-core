@@ -1,8 +1,8 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
   homepage "https://docs.kosli.com"
-  url "https://github.com/kosli-dev/cli/archive/refs/tags/v2.34.0.tar.gz"
-  sha256 "67972cd6f6a2eb88f3b173372595fba4f01055b87e9971d1976190355a3d1450"
+  url "https://github.com/kosli-dev/cli/archive/refs/tags/v2.35.0.tar.gz"
+  sha256 "3f092ea3e5983baa83b4ad1185338f02e726ff17fd2fbc21dd305f3a32a8465f"
   license "MIT"
   head "https://github.com/kosli-dev/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class KosliCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "499600a60e5455833d5b8b82dfa0ee045b09b95a37ecea9f46623c1e8a100f84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d427747a7ec2f4694b68b28a060ad8b8d4897d5b6cf1a65c0855ce815b0c99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57a390c79e451048f4e0786f04ae7b57fcfa1dce0910eab1a91cbd4367f83b14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3502a3825628dc31b57de6108a039e058c4a272a4a8fad9ee2e0df14d2244557"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f40df188a268378ba94d41f6252d3380e463d09b02b772b49c558430ee2467e4"
-    sha256 cellar: :any,                 x86_64_linux:  "cff1cebe9219d941f7cb36d5fda20a8d025e52e938155ecd9f6195abe69d795c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87a205cbc417052a848542ede9a6a6391c4f1c3ed167096970b4a1bb40cd72a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c74344d5adc97573cfba100a19712637f8aa8d12d8191d06487ccd389a2af8ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4da7833866553a14356a4454173c38e56e77798686c4c91b047f6585346cc0c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e947c397fa34074886859ee90bd16dd075658995e219f6cf4baf1a33d45eb40f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "121adb06ec7a6cb89ce3ccabc0dc46dc2de8dd220a08f2a154c752f02592d3e8"
+    sha256 cellar: :any,                 x86_64_linux:  "acd00950ae444a034a4fe4c0b1195238f20a08183c591632788627298defb77f"
   end
 
   depends_on "go" => :build
