@@ -18,7 +18,7 @@ class Kekkai < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/catatsuy/kekkai/internal/cli.Version=#{version}"
+    ldflags = "-X github.com/catatsuy/kekkai/internal/cli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kekkai"
   end
 
