@@ -64,6 +64,10 @@ class Resty < Formula
   end
 
   test do
+    # `resty` uses `XDG_DATA_HOME` whenever `XDG_CONFIG_HOME` is set, but only creates the latter.
+    ENV["XDG_DATA_HOME"] = testpath/"share"
+    (testpath/"share/resty").mkpath
+
     cmd = "bash -c '. #{pkgshare}/resty && resty https://api.github.com' 2>&1"
     assert_equal "https://api.github.com*", shell_output(cmd).chomp
     json_pretty_pypp=<<~EOS
