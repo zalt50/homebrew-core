@@ -1,8 +1,8 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
   homepage "https://tcpreplay.appneta.com/"
-  url "https://github.com/appneta/tcpreplay/releases/download/v4.5.5/tcpreplay-4.5.5.tar.gz"
-  sha256 "ba37b6c9270fcebe86b83f68c4ec3d5ac8981f8c6087b582af0205a35ec4b11d"
+  url "https://github.com/appneta/tcpreplay/releases/download/v4.6.0/tcpreplay-4.6.0.tar.gz"
+  sha256 "30f73b901e74b6ffc36c0f82afccc9d5740e70ba214a15763631a59dd2cc3564"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
   bottle do
@@ -14,34 +14,18 @@ class Tcpreplay < Formula
     sha256 cellar: :any, x86_64_linux:  "f2f131c5bada7f52c9e6b7c9791117d9988ffdfac3800c698d36d6df7e9e7610"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
   depends_on "libdnet"
 
   uses_from_macos "libpcap"
 
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --prefix=#{prefix}
-      --enable-dynamic-link
-      --with-libdnet=#{formula_opt_prefix("libdnet")}
-    ]
+    args = %W[-DWITH_LIBDNET=#{formula_opt_prefix("libdnet")}]
+    args << "-DWITH_LIBPCAP=#{formula_opt_prefix("libpcap")}" if OS.linux?
 
-    args << if OS.mac?
-      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
-
-      "--with-macosx-sdk=#{MacOS.version}"
-    else
-      "--with-libpcap=#{formula_opt_prefix("libpcap")}"
-    end
-
-    system "./configure", *args
-
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
