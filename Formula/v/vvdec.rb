@@ -1,8 +1,8 @@
 class Vvdec < Formula
   desc "Fraunhofer Versatile Video Decoder"
   homepage "https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/h266-vvc.html"
-  url "https://github.com/fraunhoferhhi/vvdec/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "e3e5093acfdcbfd2159f3d0166d451d7ccabd293ed30f3762b481c9c6c0a7512"
+  url "https://github.com/fraunhoferhhi/vvdec/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "fb722da3c4d0a562969fd9540c67239e6265ae1e664ce563ad586e78ef4adb3b"
   license "BSD-3-Clause-Clear"
   head "https://github.com/fraunhoferhhi/vvdec.git", branch: "master"
 
@@ -18,6 +18,9 @@ class Vvdec < Formula
   depends_on "cmake" => :build
 
   def install
+    # SIMD implementations behind the per-source `-march` flags are chosen at runtime.
+    ENV.runtime_cpu_detection
+
     system "cmake", "-S", ".", "-B", "build",
            "-DBUILD_SHARED_LIBS=1",
            "-DVVDEC_INSTALL_VVDECAPP=1",
