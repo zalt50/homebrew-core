@@ -7,12 +7,12 @@ class Tea < Formula
   head "https://gitea.com/gitea/tea.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "631c12e1cd0d3a577ac725b6628047c891f9f96ff8c9c211537735b403577efa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "631c12e1cd0d3a577ac725b6628047c891f9f96ff8c9c211537735b403577efa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "631c12e1cd0d3a577ac725b6628047c891f9f96ff8c9c211537735b403577efa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5deee6bf39583020b446b2aa4b5bf228a077faefaddc6d661b84126a01b7037f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d379327eba2318746591d87221ab14b9373b845d6fec1346517af068989f58c"
-    sha256 cellar: :any,                 x86_64_linux:  "8cbfce4fd2342c7caac36823126dbdaf2ddda34b049b649c10b60ef5346c298f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e5e15e83f11594090d8de83745bfa0fecfa9681352ff5b3d8879147b290be45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e5e15e83f11594090d8de83745bfa0fecfa9681352ff5b3d8879147b290be45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e5e15e83f11594090d8de83745bfa0fecfa9681352ff5b3d8879147b290be45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc93405a375d26bb56fbd93ffc819a54c1811b324514c6744afaf8cd40307579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "838c8e1c2254390e9e21e4664777a650d53cae76b9690a61385ca0275bed4cab"
+    sha256 cellar: :any,                 x86_64_linux:  "0cfe9b3c6909e77ecb5b067b9eaa327c5119aeae46cfd73b8ae5a358db245a0e"
   end
 
   depends_on "go" => :build
