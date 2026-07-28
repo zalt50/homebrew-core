@@ -1,8 +1,8 @@
 class Deepline < Formula
   desc "CLI for Deepline data enrichment and durable plays"
   homepage "https://code.deepline.com"
-  url "https://registry.npmjs.org/deepline/-/deepline-0.1.287.tgz"
-  sha256 "023c3ca8d5340fc9c12ef51a52abbf8e26e104fe09878a4e7571624c813735b3"
+  url "https://registry.npmjs.org/deepline/-/deepline-0.1.288.tgz"
+  sha256 "7b4bf99651b150833c40ffb85466180e7c5ee4ed9948a0e46e675316a6579a38"
   license "MIT"
 
   bottle do
