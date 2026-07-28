@@ -16,6 +16,8 @@ class Detox < Formula
     sha256 x86_64_linux:  "648e5e31695aa59ab1f7bff5524363e84a513c0f07d65050487dd6366002178c"
   end
 
+  deprecate! date: "2026-07-28", because: :unmaintained
+
   depends_on "pkgconf" => :build
 
   def install
