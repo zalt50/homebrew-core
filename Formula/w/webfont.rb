@@ -6,7 +6,7 @@ class Webfont < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cbb5864676ee483b199762724623788491cd885ad3a38fe478edb7d04728f4e9"
+    sha256 cellar: :any_skip_relocation, all: "f2ad6347d1fb6ada09b636f93050ee1c2772b9313e362112a92c834945b27a8f"
   end
 
   depends_on "node"
