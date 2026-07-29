@@ -5,6 +5,15 @@ class Openlore < Formula
   sha256 "c2974eaebbae573d1c4c814b9a383f5fbcd80d05d41311e9f3fc82da52a4f4bc"
   license "MIT"
 
+  bottle do
+    sha256               arm64_tahoe:   "ac5da2dd37060fc8fed6cf40a9708f6c68a9346ad0e88eb713b8200ef0780479"
+    sha256               arm64_sequoia: "5cffe04e9452df34b76333916e619a392833276adc80f6045bd6ffa18e03667a"
+    sha256               arm64_sonoma:  "b0858342eb662de285dcaa583ab06ba899b4907f58f6099a23eff16dc4c6c19d"
+    sha256               sonoma:        "f5b331c4373324449da57f9d8873307f567d5cf76f3e60ffbd92cb6a4cf766f1"
+    sha256 cellar: :any, arm64_linux:   "c9c02de4a23f6cca48ce86c3fa12ab8f839a0fa6e9fcca0440325df77cdbeac2"
+    sha256 cellar: :any, x86_64_linux:  "b3bc0bf3b231b3d9ccb3867d3473582a73ed214ecdb64604b9df4be557ed4fe8"
+  end
+
   depends_on "c-ares"
   depends_on "ca-certificates"
   depends_on "hdrhistogram_c"
