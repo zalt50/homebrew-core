@@ -22,7 +22,7 @@ class Moor < Formula
   conflicts_with "moarvm", "rakudo-star", because: "both install `moar` binaries"
 
   def install
-    ldflags = "-s -w -X main.versionString=v#{version}"
+    ldflags = "-X main.versionString=v#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/moor"
 
     # Hint for moar users to start typing "moor" instead
