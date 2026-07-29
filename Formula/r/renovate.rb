@@ -18,7 +18,7 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "934c2d203fdb5a7da17657d0cb66169dbeee3e66b8f5e479f6e899a5f2abc8d6"
+    sha256 cellar: :any_skip_relocation, all: "f5c219f63f3c1acb934e8c8b976c0a25eacf81b365d2c1d0891a98fe70a24a62"
   end
 
   depends_on "node@24"
