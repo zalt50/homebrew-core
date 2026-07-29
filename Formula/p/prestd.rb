@@ -23,7 +23,7 @@ class Prestd < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/prest/prest/v#{version.major}/helpers.PrestVersionNumber=#{version}"
+    ldflags = "-X github.com/prest/prest/v#{version.major}/helpers.PrestVersionNumber=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/prestd"
 
     generate_completions_from_executable(bin/"prestd", shell_parameter_format: :cobra)
