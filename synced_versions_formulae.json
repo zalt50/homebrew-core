@@ -13,6 +13,7 @@
     "x86_64-linux-gnu-binutils"
   ],
   ["apache-arrow", "apache-arrow-glib"],
+  ["apache-arrow-adbc", "apache-arrow-adbc-glib"],
   ["avro-c", "avro-cpp", "avro-tools"],
   ["b3sum", "blake3"],
   ["baresip", "libre"],
