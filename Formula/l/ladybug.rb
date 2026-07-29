@@ -1,8 +1,8 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.18.3.tar.gz"
-  sha256 "296af5505a35c0cdb488e05314ad1e2824907c10a239841042e42a1279c0f739"
+  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "04b3ca8b826c41cbc103c8523a6bc0734c79003104f51c8df5230c9f551c1212"
   license "MIT"
 
   bottle do
