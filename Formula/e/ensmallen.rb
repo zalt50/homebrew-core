@@ -7,7 +7,7 @@ class Ensmallen < Formula
   head "https://github.com/mlpack/ensmallen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "56ae6b67c79ced73d05763cde6136c5def299d32d928fdf416ef9f9228542dc2"
+    sha256 cellar: :any_skip_relocation, all: "dfbc63e10c28823a61a7e8f92e1c47a6cbf67ace968b4eeb976853fab9ce6c13"
   end
 
   depends_on "cmake" => :build
