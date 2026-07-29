@@ -1,8 +1,8 @@
 class Noti < Formula
   desc "Trigger notifications when a process completes"
   homepage "https://codeberg.org/roble/noti"
-  url "https://codeberg.org/roble/noti/releases/download/3.8.0/noti3.8.0.tar.gz"
-  sha256 "f25d005a877cbb401766da8d00791984ac44f9e0062bd52a0ee4fb0a5ca44109"
+  url "https://codeberg.org/roble/noti/releases/download/3.9.0/noti3.9.0.tar.gz"
+  sha256 "02b18016f6a78a1adf3cdcc5b20d884437edd0cf21588415e022d637372619b8"
   license "MIT"
   head "https://codeberg.org/roble/noti.git", branch: "main"
 
@@ -19,7 +19,7 @@ class Noti < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[-X github.com/variadico/noti/internal/command.Version=#{version}]
+    ldflags = %W[-X codeberg.org/roble/noti/internal/command.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "cmd/noti/main.go"
     man1.install "docs/man/dist/noti.1"
     man5.install "docs/man/dist/noti.yaml.5"
