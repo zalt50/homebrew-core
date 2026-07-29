@@ -1,8 +1,8 @@
 class Graalvm < Formula
   desc "JDK distribution with Graal compiler and Native Image"
   homepage "https://www.graalvm.org/"
-  url "https://github.com/oracle/graal/archive/refs/tags/graal-25.1.3.tar.gz"
-  sha256 "59fcbb0cc886200bb7df6eb95b7fb1ec05d026db452efbfeeb37f278978265d2"
+  url "https://github.com/oracle/graal/archive/refs/tags/graal-25.2.4.tar.gz"
+  sha256 "0b3232208ec4ef74654abb694c32895d3035b5c31340b826994ed71aa273e1b5"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -55,9 +55,9 @@ class Graalvm < Formula
   end
 
   resource "labs-openjdk" do
-    url "https://github.com/graalvm/labs-openjdk/archive/refs/tags/jvmci-25.1-b19.tar.gz"
-    version "25.0.3+9-jvmci-25.1-b19"
-    sha256 "cacd7d625adf655a3bfa8b58788b1f67aac5caa312d5e6cf6d880105f2fe8fb6"
+    url "https://github.com/graalvm/labs-openjdk/archive/refs/tags/jvmci-25.2-b20.tar.gz"
+    version "25.0.4+7-jvmci-25.2-b20"
+    sha256 "629f342e7640501858fa24f24cf43600cbe13d3afce25b9e407afa14372d84cb"
 
     livecheck do
       # FIXME: This regex is not correct
