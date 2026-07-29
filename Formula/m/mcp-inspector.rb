@@ -1,8 +1,8 @@
 class McpInspector < Formula
   desc "Visual testing tool for MCP servers"
   homepage "https://modelcontextprotocol.io/docs/tools/inspector"
-  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-1.0.1.tgz"
-  sha256 "9cb7f91d41779bc784126b7aae5a8e2d7ac5a391b863d945d8b613e2e98cdaf7"
+  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-2.0.0.tgz"
+  sha256 "10583f3dd01cfe4e050b2581e50902adae33fe6bec32074182cb47287799d9d3"
   license "MIT"
 
   bottle do
@@ -16,13 +16,57 @@ class McpInspector < Formula
 
   depends_on "node"
 
+  on_macos do
+    depends_on "cmake" => :build
+    depends_on "rust" => :build
+  end
+
+  resource "rolldown" do
+    url "https://github.com/rolldown/rolldown/archive/refs/tags/v1.1.5.tar.gz"
+    sha256 "2042204fda63956408dc102dd5cf5577368077ed70f9bce68474ed983c779879"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/modelcontextprotocol/inspector/#{LATEST_VERSION}/package-lock.json"
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+      strategy :json do |json, regex|
+        json.dig("packages", "node_modules/rolldown", "version")&.[](regex, 1)
+      end
+    end
+  end
+
+  resource "keyring" do
+    url "https://github.com/Brooooooklyn/keyring-node/archive/refs/tags/v1.3.0.tar.gz"
+    sha256 "349be987e7582e6aa26763b2de96c4cbbd0d3cfba2417d9733524589fdbc275f"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/modelcontextprotocol/inspector/#{LATEST_VERSION}/package-lock.json"
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+      strategy :json do |json, regex|
+        json.dig("packages", "node_modules/@napi-rs/keyring", "version")&.[](regex, 1)
+      end
+    end
+  end
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    return unless OS.mac?
+
     node_modules = libexec/"lib/node_modules/@modelcontextprotocol/inspector/node_modules"
-    # Remove incompatible and unneeded prebuilt binaries.
-    rm_r(node_modules.glob("@oven/bun-*"))
-    rm_r(node_modules.glob("@rollup/rollup-*"))
+    resource("rolldown").stage do
+      system "cargo", "build", "--lib", "--release", "--locked", "--package", "rolldown_binding"
+      dylib = Pathname.pwd/"target/release/librolldown_binding.dylib"
+      node_modules.glob("@rolldown/binding-darwin-*/*.node").each { |prebuilt| cp dylib, prebuilt }
+    end
+
+    resource("keyring").stage do
+      system "cargo", "build", "--lib", "--release"
+      dylib = Pathname.pwd/"target/release/libnapi_keyring.dylib"
+      node_modules.glob("@napi-rs/keyring-darwin-*/*.node").each { |prebuilt| cp dylib, prebuilt }
+    end
+
+    deuniversalize_machos node_modules/"fsevents/fsevents.node"
   end
 
   test do
