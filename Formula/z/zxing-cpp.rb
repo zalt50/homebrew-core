@@ -1,8 +1,8 @@
 class ZxingCpp < Formula
   desc "Multi-format barcode image processing library written in C++"
   homepage "https://github.com/zxing-cpp/zxing-cpp"
-  url "https://github.com/zxing-cpp/zxing-cpp/releases/download/v3.1.0/zxing-cpp-3.1.0.tar.gz"
-  sha256 "a3eb825154f05242283e7d94d8ebdcf95beb3a534eba393cce504e91c9b215bd"
+  url "https://github.com/zxing-cpp/zxing-cpp/releases/download/v3.1.1/zxing-cpp-3.1.1.tar.gz"
+  sha256 "c3c02c29c0b519de7bd4e25b376e606e87f0761befd1282815642a2246613d14"
   license "Apache-2.0"
   head "https://github.com/zxing-cpp/zxing-cpp.git", branch: "master"
 
