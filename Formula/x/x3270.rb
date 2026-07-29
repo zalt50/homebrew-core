@@ -11,13 +11,12 @@ class X3270 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "40bacb8fca3aaec8c2c541906da72f5901e48fc9c32e08df7d9e8955ddba3177"
-    sha256 arm64_sequoia: "619e4f821224699da21abbbf4ce8c5038bdb22bec06734be199045a4c5504a40"
-    sha256 arm64_sonoma:  "a3fa3dfdcb1b8a3c10922c1f930b049d88b050330b982d96ada2e54bed2391c5"
-    sha256 sonoma:        "38a014060680924480e757610fe29aeff72f5bd0fce56032c76d3044fe71b2fd"
-    sha256 arm64_linux:   "5fa38afa032d8c01d4ba0340d6bd429636fa63d2266a7ce4ca2428e6dd1f0276"
-    sha256 x86_64_linux:  "cfc79e9762353f5b22bbf0bf4a5066e3d4df54cb7e0bec61d31944bfcf426512"
+    sha256 arm64_tahoe:   "d98a21ae48675fa3bf1901e468c2a09245206a000ec31b8b58ea56b3d9bd6ab8"
+    sha256 arm64_sequoia: "58e3b3d5401b4db0e63539d122eda5de386bed1b6973ef88dc04789599b4b118"
+    sha256 arm64_sonoma:  "9c27bf91ab48b87570a8a437cec920939c714563fd66d5d5ebe01791d069c8d2"
+    sha256 sonoma:        "f0473cfa720f226dcf71ff593ad988ee127627afff065fa3a612d138553d6727"
+    sha256 arm64_linux:   "85c3f9d9454286b88aee99f3fd8edc351d5b0a8920072abc855894c42a16dd02"
+    sha256 x86_64_linux:  "4914534421e8d1394c8a6feb0a2f5dbf0b6c98f9e9807b59990e103e9ab326db"
   end
 
   depends_on "openssl@3"
