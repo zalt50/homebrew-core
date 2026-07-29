@@ -1,10 +1,12 @@
 class Libsixel < Formula
   desc "SIXEL encoder/decoder implementation"
-  homepage "https://github.com/saitoha/sixel"
-  url "https://github.com/libsixel/libsixel/archive/refs/tags/v1.10.5.tar.gz"
-  sha256 "b6654928bd423f92e6da39eb1f40f10000ae2cc6247247fc1882dcff6acbdfc8"
+  homepage "https://github.com/saitoha/libsixel"
+  url "https://github.com/saitoha/libsixel/releases/download/v1.8.7-r2/sixel-1.8.7-r2.tar.gz"
+  version "1.8.7-r2"
+  sha256 "9088475e5a1332f84b92ad46fd3c199ac56500c67f8a4054efccbc0db644bdba"
   license "MIT"
-  head "https://github.com/libsixel/libsixel.git", branch: "master"
+  version_scheme 1
+  head "https://github.com/saitoha/libsixel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "6de5ac481b343617fb5a42b78ca935b32758394e101ac8bfe6bf5f2828a991a3"
@@ -17,15 +19,17 @@ class Libsixel < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "afac541b74c1f46fea3c1e2b2c2443e93d769d221d3e512ef9af2a5ce2b292e4"
   end
 
-  depends_on "meson" => :build
-  depends_on "ninja" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
   def install
-    system "meson", "setup", "build", "-Dgdk-pixbuf2=disabled", "-Dtests=disabled", *std_meson_args
-    system "meson", "compile", "-C", "build", "--verbose"
-    system "meson", "install", "-C", "build"
+    system "./configure", "--disable-python",
+                          "--without-libcurl",
+                          "--with-jpeg",
+                          "--with-png",
+                          *std_configure_args
+    system "make", "install"
   end
 
   test do
