@@ -1,8 +1,8 @@
 class Breseq < Formula
   desc "Computational pipeline for finding mutations in short-read DNA resequencing data"
   homepage "https://barricklab.org/breseq"
-  url "https://github.com/barricklab/breseq/releases/download/v0.40.1/breseq-0.40.1-Source.tar.gz"
-  sha256 "b3f98fb5b8b9c20170a38e0f234ef6c7ead58bbf2058b1383120137b076a53dc"
+  url "https://github.com/barricklab/breseq/releases/download/v0.40.2/breseq-0.40.2-Source.tar.gz"
+  sha256 "48983208a12b094022203ffcebb83f247fdebf13e82eacce072d271e227a41e5"
   license all_of: ["GPL-2.0-or-later", "MIT", "BSD-3-Clause"]
 
   bottle do
