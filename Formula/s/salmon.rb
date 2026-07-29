@@ -7,12 +7,12 @@ class Salmon < Formula
   head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "803e7128d97f90c79ba8911fba8427524e649c083eba7f1249f0b2cae3ab5825"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a51bd5053a830b1f3a381b0d49e24d3922fd93b061cec206e46a0614111e7bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a6e9dc98fc710c1ec5ba8bc55f55f0845ceb2c7a32e5261aa931a8ff1cc4395"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94fa7083205e7d045f7e8db65375c09537f1f3776f83dafd043302cf79cabc0b"
-    sha256 cellar: :any,                 arm64_linux:   "cb40a492e7bb978ed493c3068146f80b35ef7e926455c4861a39e027a8b75675"
-    sha256 cellar: :any,                 x86_64_linux:  "5683ae1e4148fb66e8696ee724a464cdf17fcf348bcce831966173ffac053ea2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4d8a24976c9d3a1f34b3f73dc7dd826ec49671d50a99ff71998e9871089cd28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da7e80aa9c4848acd8a7b740283823ccdd8f3dd69c54cf41e0f7e5ad9928e8e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf575a6b81a3bf6d37a9a7d4ae1b83211ae5eb811aed7a091c37b714d85a4226"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea13a8a5371fce887afca2de4c4fac490e2df7624961bd24194d6cf53502a68e"
+    sha256 cellar: :any,                 arm64_linux:   "47355d434b00a1c8edbd6eaad6e998a6902ec5fa9509ed2436ec002ad82be3db"
+    sha256 cellar: :any,                 x86_64_linux:  "19cb9c4d025dab5ded66ac97583a6ac715c5551c4bffca6b50ad87408cfb7474"
   end
 
   depends_on "rust" => :build
