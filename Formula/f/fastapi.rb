@@ -3,8 +3,8 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/50/8e/38f68681027334d7d841190b38f3635874114f1f337c950878969970524c/fastapi-0.140.8.tar.gz"
-  sha256 "c166580b6a1f96d0feda536830dbaef56962f66e9a3a87054c34906b6339390b"
+  url "https://files.pythonhosted.org/packages/58/cd/2e1a597c9dccccf791b0d73726084e257d66587b11874e9b18408fbdcf59/fastapi-0.140.11.tar.gz"
+  sha256 "ecf00d920b01ff7f0be4ab4a4a4bc6259327b009dca7fb45766568eba6aa8e1c"
   license "MIT"
 
   bottle do
@@ -26,8 +26,8 @@ class Fastapi < Formula
                 exclude_packages: ["certifi", "pydantic"]
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "anyio" do
@@ -61,8 +61,8 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cloud-cli" do
-    url "https://files.pythonhosted.org/packages/25/f2/36bfe990baa656de89a2b98a77a15dcd018474f7245c8e4a10cada0553c5/fastapi_cloud_cli-0.22.2.tar.gz"
-    sha256 "7ec78c1fed58f578af5eb1fb54ec4b456eba4dc1eaca1c3a93cf499a7cbc7ab3"
+    url "https://files.pythonhosted.org/packages/00/dc/63aaf9913f455e39a7027c27140edd887a87d47d65ac43532d77a51718e5/fastapi_cloud_cli-0.23.0.tar.gz"
+    sha256 "840895bb8d14309aeffc905e0dcd1334d18c6f5da54b735413a8f1cb385e581e"
   end
 
   resource "fastar" do
