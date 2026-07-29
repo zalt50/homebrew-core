@@ -1,8 +1,8 @@
 class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://github.com/nghttp2/nghttp2/releases/download/v1.69.0/nghttp2-1.69.0.tar.gz"
-  sha256 "c866b7477cbb7512ab6863a685027adbb1bb8da8fc3bab7429ed43d3281d5aa9"
+  url "https://github.com/nghttp2/nghttp2/releases/download/v1.70.0/nghttp2-1.70.0.tar.gz"
+  sha256 "aa317e2cf9dca6afa0aed68f8fad6ff303ec6982e25a78c75c0b65e2b9b3ded5"
   license "MIT"
 
   bottle do
@@ -41,12 +41,12 @@ class Nghttp2 < Formula
 
   fails_with :clang do
     build 1500
-    cause "Requires C++20 support"
+    cause "Requires C++23 <print> header"
   end
 
   fails_with :gcc do
-    version "11"
-    cause "Requires C++20 support"
+    version "13"
+    cause "Requires C++23 <print> header"
   end
 
   def install
