@@ -1,8 +1,8 @@
 class Pixtuoid < Formula
   desc "Terminal pixel-art office for AI coding agents"
   homepage "https://github.com/IvanWng97/pixtuoid"
-  url "https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "0785360dfd4133b910df0e6dab4d2e35df9c6c975cd925ce2bd2bd414ed7505d"
+  url "https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "3ea09fca426234ec7a311bacb683320b74442474413ebab81a7c1134abd80ab5"
   license "MIT"
   head "https://github.com/IvanWng97/pixtuoid.git", branch: "main"
 
@@ -15,7 +15,12 @@ class Pixtuoid < Formula
     sha256 cellar: :any,                 x86_64_linux:  "86bd764227ee420cb396a548992717c130c78ae3fa62dbd909e4a1a536ed2dc7"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   def install
     # Drop upstream's x86_64 Linux lld linker pin
