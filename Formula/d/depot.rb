@@ -26,7 +26,6 @@ class Depot < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/depot/cli/internal/build.Version=#{version}
       -X github.com/depot/cli/internal/build.Date=#{time.iso8601}
       -X github.com/depot/cli/internal/build.SentryEnvironment=release

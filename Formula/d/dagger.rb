@@ -26,7 +26,6 @@ class Dagger < Formula
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
-      -s -w
       -X github.com/dagger/dagger/engine.Version=v#{version}
       -X github.com/dagger/dagger/engine.Tag=v#{version}
     ]

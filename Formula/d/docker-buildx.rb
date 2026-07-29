@@ -20,7 +20,6 @@ class DockerBuildx < Formula
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
-      -s -w
       -X github.com/docker/buildx/version.Version=v#{version}
       -X github.com/docker/buildx/version.Revision=#{tap.user}
     ]
