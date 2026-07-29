@@ -6,7 +6,7 @@ class WikibaseCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1fcdfaba3c3c1c1b27601c2b309f074e0c97f4fbeaa5e1261a30aa93ead9ee13"
+    sha256 cellar: :any_skip_relocation, all: "88d057630bf32d8151c2618c3b438e19fedf8b0722291744a2553fcb2028900b"
   end
 
   depends_on "node"
