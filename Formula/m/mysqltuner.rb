@@ -12,7 +12,7 @@ class Mysqltuner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a0bf2afd7f381920d5dc2e5c88fb82c3cf9fdfc673848e8381e0ac24bdb52fa4"
+    sha256 cellar: :any_skip_relocation, all: "a552fdc948b014683ad6fa099d6681e2c573b38b0ffb01efed09be9b830dfd2f"
   end
 
   def install
