@@ -4,7 +4,7 @@ class Acl2 < Formula
   url "https://github.com/acl2/acl2/archive/refs/tags/8.7.tar.gz"
   sha256 "d6013c22e190cbd702870d296b5370a068c14625bf7f9d305d2d87292b594d52"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -20,6 +20,11 @@ class Acl2 < Formula
   end
 
   depends_on "sbcl"
+
+  on_linux do
+    # ACL2 rejects a Lisp that doesn't error on floating-point overflow
+    depends_on arch: :x86_64
+  end
 
   def install
     # Remove prebuilt binaries
