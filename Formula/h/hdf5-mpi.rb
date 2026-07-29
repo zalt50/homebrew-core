@@ -1,8 +1,8 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/solutions/hdf5/"
-  url "https://github.com/HDFGroup/hdf5/releases/download/2.1.1/hdf5-2.1.1.tar.gz"
-  sha256 "efff93b5a904d66e8f626d7da60b5eedc9faf544be27dbabbaa87967b8ad798b"
+  url "https://github.com/HDFGroup/hdf5/releases/download/2.2.0/hdf5-2.2.0.tar.gz"
+  sha256 "1a1ab8209b35586fbc1aa279ba76d102130b95badcb20ca329587219112d8c16"
   license "BSD-3-Clause"
   version_scheme 1
   compatibility_version 1
@@ -103,6 +103,6 @@ class Hdf5Mpi < Formula
 
     # Make sure that it was built with SZIP/libaec
     config = shell_output("#{bin}/h5cc -showconfig")
-    assert_match %r{I/O filters.*DECODE}, config
+    assert_match %r{I/O filters.*LIBAEC}, config
   end
 end
