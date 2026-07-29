@@ -7,7 +7,7 @@ class Asimov < Formula
   head "https://github.com/AsimovMac/asimov.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "47fc305de665d921a6199c86262b4dc6cfb561474a08b34ac5f60179b1b84b62"
+    sha256 cellar: :any_skip_relocation, all: "844e1015e05c3a47a7f7dcd1a9255369c0854c1c0416fdeef44eb99e0f507834"
   end
 
   def install
