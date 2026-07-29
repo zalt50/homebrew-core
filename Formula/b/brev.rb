@@ -15,12 +15,12 @@ class Brev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73590113e203d51a36cc330c273c304bef8686fe2fc0cd6541909708748abe01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73590113e203d51a36cc330c273c304bef8686fe2fc0cd6541909708748abe01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73590113e203d51a36cc330c273c304bef8686fe2fc0cd6541909708748abe01"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33d5d46d25b2fc51e1b9c0c840d3be4cd6a8119f77b14b2843f63157a12f8c98"
-    sha256 cellar: :any,                 arm64_linux:   "7004f6268659008aaf2f8f96caf198fcb4680606db8c143ca0daaf2b71071d02"
-    sha256 cellar: :any,                 x86_64_linux:  "e8d590a6ccc34e9aab002a320ac5f929644dbebcf646cf4e379c20e5b1bc00a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "760342844dc2080f8a04d506c5ec3617423d2c6e57096e2bdd5509096f9e1a33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "760342844dc2080f8a04d506c5ec3617423d2c6e57096e2bdd5509096f9e1a33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "760342844dc2080f8a04d506c5ec3617423d2c6e57096e2bdd5509096f9e1a33"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc26fa3a5d03d101659cf3bfe1899d8a59dea8398d991427c3509c4b92900ec6"
+    sha256 cellar: :any,                 arm64_linux:   "365806aece2696f5d2609acdaf211afad8741e340272ca290bab70f137524caa"
+    sha256 cellar: :any,                 x86_64_linux:  "d0427159d4d4328b453804e37f1f01d290c9055f42f25dfd5d493aa22700c879"
   end
 
   depends_on "go" => :build
