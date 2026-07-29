@@ -14,7 +14,14 @@ class Docbook < Formula
   no_autobump! because: "new version should be added as a new resource"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c07919d078443c2253603da2689816bdbdefd8c27a3a0ea0eb0fc583d5435b01"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
+    sha256 cellar: :any_skip_relocation, tahoe:         "ac4ff3d18c84371164a238200653bdc0356016701b58c6e1b6ed2da4cf01ee36"
+    sha256 cellar: :any_skip_relocation, sequoia:       "ac4ff3d18c84371164a238200653bdc0356016701b58c6e1b6ed2da4cf01ee36"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac4ff3d18c84371164a238200653bdc0356016701b58c6e1b6ed2da4cf01ee36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
   end
 
   uses_from_macos "libxml2"
