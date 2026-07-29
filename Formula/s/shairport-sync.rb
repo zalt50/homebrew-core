@@ -12,12 +12,12 @@ class ShairportSync < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3bc4615446b89989e386d7e1c992e23ae0adb243ea5810902a50001d1d4a9282"
-    sha256 arm64_sequoia: "d597b94f2322e1a5396490a07e293ba655112c3431a7112e7f772661c1c235b3"
-    sha256 arm64_sonoma:  "5cdcbfdf01c7a20a9eb0da57a2c911ea0522b529ee882d9d1aa17b649f20939e"
-    sha256 sonoma:        "8e04d74af097f135cf8d5388be909cd94ad0fb841ff7801449515e26a5880ca1"
-    sha256 arm64_linux:   "16333b50bc0e8558ec5810f6427eb01a0fc72589913503fb77c248cff8eb103c"
-    sha256 x86_64_linux:  "e54b5e6c7d9ce3b71d4b27d3736b5038d7138cc4dd430f0cf023cbb53e44e0c5"
+    sha256 arm64_tahoe:   "ea50f2c3f9a5e37de4ec63824e71a082df0c20daf0b993bf8c8700d5467352aa"
+    sha256 arm64_sequoia: "b462b63cc65ab26e5e47cf0008e21fa273e67f2072750ac145579d709111b7b4"
+    sha256 arm64_sonoma:  "6c83631cbc8dba807be9af87065bb9b20704ccfc78ba083f2524dd1135ce345d"
+    sha256 sonoma:        "592ab641a4e2cb6e8f1ea325cf19bfe22a8170ec9090c8714ab473625872838b"
+    sha256 arm64_linux:   "0ef782cf0de898c3723a0c8b2f7924bbedb22f5f5cfe8cfb61dc84b454e9f21b"
+    sha256 x86_64_linux:  "d298bde914d1875442fdf8aff8637c3a0f1439ee9266fdb51c539f93a417650f"
   end
 
   depends_on "autoconf" => :build
