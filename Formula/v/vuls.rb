@@ -12,12 +12,12 @@ class Vuls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fde52583cf487624a985987def323d168ab9281db671249ba05ee0e1d7ef6f26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60325c675b301abfbee56d587bd76948d7688fd97f078ecad9aaeb47f366cf66"
-    sha256 cellar: :any,                 x86_64_linux:  "c2604386ec5c70cfabef3e908c4e0d8a4ab5a63d8922d6b5d01f00765927993a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "288b2fdd583b429604539a0a0fe54e460a1e388ee8895eec329994853ca6ec7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "288b2fdd583b429604539a0a0fe54e460a1e388ee8895eec329994853ca6ec7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "288b2fdd583b429604539a0a0fe54e460a1e388ee8895eec329994853ca6ec7a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "65b3d1fdddc4a2156c9f549ff0a85c623cc1c63d2672ba9393b2c8ce2d81144b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15075240cce58136758fdfc9682c696b84626d4f4902d98a3679fff7e6a55352"
+    sha256 cellar: :any,                 x86_64_linux:  "bfc81776e8cbaf72f3b5035e44947d66469b11b1f1b68467165c6b00fba52aa9"
   end
 
   depends_on "go" => :build
