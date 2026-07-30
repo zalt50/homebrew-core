@@ -15,12 +15,12 @@ class Virtctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad7b6dfd0af8fd435eaf0a65e41ea236dea496c6ba68940d6caa840c26964a0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9aed86129edd71aa5ccb2ee8fdfdaf19d1dff36fdbc43f21ca01907e3dd8bb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87729350436c0b40d41bc81d551bbe10ec91ff7f9b191e5ff9502e9ec136b0a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5faa68f59f7e6084c7011df10acd302ec7da431f0ec2fdc7139fc4ebea4d098"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6bbf5f5a6dc8fb743a88c3be74fc22030bca0020d00f4c0e2ec780a5b6e1c94"
-    sha256 cellar: :any,                 x86_64_linux:  "86f7338ccb31e2e6d62eb313f8d388f253786464ce68a14b9f1787ac25641958"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca4128b601a6641b1db2ea4775d99d43c694e7abf6380619ddf99e5b0d048a94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55558b1368d86f1cdaa7464f5e3e01fc52c7ea95c218e39aa9182435086713d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9c02df8e40f8ef7a670cd3731c368eaf9e2a4f0503576a78a13497610cf0631"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38946b3b212780ff1144f5254c6408d5d95319404aab23fdc7d790eb0ad0d643"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "172826a9372bd9e8f4f5eb198b0c92f308161930080e913e9573bd2ab89d9f88"
+    sha256 cellar: :any,                 x86_64_linux:  "e34725c0d1bea19b86ad47b80aaadbec906bbfdf0c80a93d3d8a68a97c133128"
   end
 
   depends_on "go" => :build
