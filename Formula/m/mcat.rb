@@ -1,8 +1,8 @@
 class Mcat < Formula
   desc "Terminal image, video, directory, and Markdown viewer"
   homepage "https://github.com/Skardyy/mcat"
-  url "https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "505e84c3fe034921f81a224490206f3e329773d4264286a1ea0d53f95a6a248d"
+  url "https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "148a37048e6aeaf3cb3e13aa107a5a8544d6bac24e24b9744dc16d075aab7ff5"
   license "MIT"
   head "https://github.com/Skardyy/mcat.git", branch: "main"
 
