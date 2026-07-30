@@ -3,8 +3,8 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/02/61/bb9cb8753c0cde98c6e5ab7307324ba414ccd5bd874206192e570bd9fd7f/humanbound-2.7.0.tar.gz"
-  sha256 "7876689210a9772eca0be3519d79cf99c1109bbf255b4d13dd9a3e54192ddacc"
+  url "https://files.pythonhosted.org/packages/e2/b3/3abb213424f962e4c31cc50e11a8d235a56bcc1c4b39c6b7fbd448f032a7/humanbound-2.8.0.tar.gz"
+  sha256 "2e7ed1c2ecbceff77eec48b478e39ae40326df81d4409985c1518251dbb74f2d"
   license "Apache-2.0"
 
   bottle do
@@ -79,8 +79,8 @@ class Humanbound < Formula
   end
 
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/36/f0/3af875ac3fd5863ed4874c9618d85eab3f7fd24b395827d99da0ef90aca6/posthog-7.28.0.tar.gz"
-    sha256 "9e048dee58f27373db622c0744be30c1a2b7f1df31049956d6341c9646fb3833"
+    url "https://files.pythonhosted.org/packages/4b/8e/d664a1f9d51871412853702e39ddb23806807b14cb21d7744b1b95f4e2af/posthog-7.33.0.tar.gz"
+    sha256 "963b18cee5315eae51830f7cb2a0bba217d1131ca636a19c45d7c34e69e9ae0e"
   end
 
   resource "pygments" do
