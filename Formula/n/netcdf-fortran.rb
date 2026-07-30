@@ -6,12 +6,12 @@ class NetcdfFortran < Formula
   license "NetCDF"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5f1b8277d206e779d924f92d2637954146c7e045e147a3a086ae9a669e3c8c4d"
-    sha256 cellar: :any, arm64_sequoia: "f0c35337e9ab38465da2b975b3a615a8c4b56b784f1c7a754d0a9ca5b2ee1136"
-    sha256 cellar: :any, arm64_sonoma:  "ddff329a9a4c829f3bf8cfc2273c593474d6f7da6f443b37ea6bd637b1619e1e"
-    sha256 cellar: :any, sonoma:        "b60f6e3a9ef7c6c66ba7f521f7a2d9e78b18ce88caa1ee4d805992b64ceee16d"
-    sha256 cellar: :any, arm64_linux:   "1a4b712718fdf312416e72be967f4fc8b07c0bb3423bd95bff70c8864d96f47c"
-    sha256 cellar: :any, x86_64_linux:  "731da1407870a2d94ae1855349daed9c07895463831a44ba6ebbd426957237b0"
+    sha256 cellar: :any, arm64_tahoe:   "5d43404b23bc2cfd071e16c0663c0203312f22ecfa17ee4314ea859a4e5b4895"
+    sha256 cellar: :any, arm64_sequoia: "7504b5caa759813adc88e9eb160d66667148ac018c5be906cd129c90f03d8356"
+    sha256 cellar: :any, arm64_sonoma:  "d734140af31aecbbdfaba8c798ace1da18169a6029a29570174526ffbf81cc9f"
+    sha256 cellar: :any, sonoma:        "eec55d2d27409b52787bf138030251b8feaf6b1318ce35e0b68b8b583747e2af"
+    sha256 cellar: :any, arm64_linux:   "6ac40e2f3b7bcb35355b203af4fdd1b39e4c14ee52c8c8834acb86e8c078ccc2"
+    sha256 cellar: :any, x86_64_linux:  "5ca271eb57c4a3a238e7fe75fed003bf4873db6ee3a7189a358a32c11ce2cb96"
   end
 
   depends_on "cmake" => :build
