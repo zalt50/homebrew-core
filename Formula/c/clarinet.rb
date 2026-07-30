@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https://stackslabs.com/"
-  url "https://github.com/stx-labs/clarinet/archive/refs/tags/v3.22.0.tar.gz"
-  sha256 "d2e5273a5b3f198998413dc1744665167732f83040451a0f8ef58224eaf52bf9"
+  url "https://github.com/stx-labs/clarinet/archive/refs/tags/v3.23.0.tar.gz"
+  sha256 "355806adbd7a10af91753041a069fb1b741e8c594e7deda0cd250555353deede"
   license "GPL-3.0-only"
   version_scheme 1
   head "https://github.com/stx-labs/clarinet.git", branch: "main"
