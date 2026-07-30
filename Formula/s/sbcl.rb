@@ -12,12 +12,12 @@ class Sbcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "551f51af287333c4f3934cd18ef2d47da452d600a25865f31520a7483e5d15fe"
-    sha256 cellar: :any, arm64_sequoia: "d422064396d2ed2e6fa42c3c9360285046046ee7199904ceb8d008797968b175"
-    sha256 cellar: :any, arm64_sonoma:  "ecb689a56000227dc8a7dbf1b0635ce4299504a07dcee1f3599f17faeaabba20"
-    sha256 cellar: :any, sonoma:        "0ebc3331059a82719bbcc07f38ea3582f4c983e31917ef00602938b70a3d8c6f"
-    sha256 cellar: :any, arm64_linux:   "f15a968e03ff12935326db442b1002c6d279c0cf1638556198d60c75eb8f9835"
-    sha256 cellar: :any, x86_64_linux:  "ce78a4ededea0f49ba8ef68ef4f718d191e774301027f59b20d405c258cb1be7"
+    sha256 cellar: :any, arm64_tahoe:   "39d14fd0375b38c571b533536f08656a396ba41750469984ed6843bfb510a421"
+    sha256 cellar: :any, arm64_sequoia: "4ff675badc761a7e0fcf63428effa551abe1e954f28f79d857c77292a2b6d4a7"
+    sha256 cellar: :any, arm64_sonoma:  "121f869e45c6a5b25cde2eecba2c42c0767b6f587d81d77aa0c160f79f4e1f8b"
+    sha256 cellar: :any, sonoma:        "6154781f8af03a1668f95c102f4023cc6ce47b04a39d7b827e85fd563775306b"
+    sha256 cellar: :any, arm64_linux:   "f4f78a00d7166a66d839a88816d0f065c4168fc72cfdb96ed0e7eb5e54127d34"
+    sha256 cellar: :any, x86_64_linux:  "cc777d06dbab4cd0f07daf83740049fed9e433c29c81be6b0cb02f92bd1f6ce7"
   end
 
   depends_on "ecl" => :build
