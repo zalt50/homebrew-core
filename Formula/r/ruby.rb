@@ -156,27 +156,6 @@ class Ruby < Formula
     # instead of in the Cellar, making gems last across reinstalls
     config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
     config_file.write rubygems_config
-
-    (libexec/"post-install.rb").write <<~RUBY
-      # Repair Ruby's versioned opt dylib ID after Homebrew has fixed install names.
-      exit unless RUBY_PLATFORM.include?("darwin")
-
-      require "macho"
-
-      dylib = File.realpath("#{opt_lib}/libruby.dylib")
-      old_dylib_id = IO.popen(["/usr/bin/otool", "-D", dylib], &:read).lines[1].to_s.strip
-      new_dylib_id = old_dylib_id.sub("#{opt_prefix}/", "#{versioned_opt_prefix}/")
-      exit if old_dylib_id == new_dylib_id || !File.exist?(new_dylib_id)
-
-      dylib_mode = File.stat(dylib).mode
-      begin
-        File.chmod(0664, dylib)
-        MachO::Tools.change_dylib_id(dylib, new_dylib_id)
-        MachO.codesign!(dylib) if RbConfig::CONFIG["host_cpu"] == "arm64"
-      ensure
-        File.chmod(dylib_mode, dylib)
-      end
-    RUBY
   end
 
   # Since Gem ships Bundle we want to provide that full/expected installation
@@ -187,8 +166,13 @@ class Ruby < Formula
     remove ["bin/bundle", "bin/bundler", "lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*"],
            base: :homebrew_prefix, recursive: true
     on_macos do
-      run "{{HOMEBREW_BREW_FILE}}", args: ["ruby", "--", "{{libexec}}/post-install.rb"],
-                                    env:  { "HOMEBREW_DEVELOPER" => "1" }
+      if_path_exists "opt/ruby@{{version.major_minor}}/lib/libruby.{{version.major_minor}}.dylib",
+                     base: :homebrew_prefix do
+        change_dylib_id "lib/libruby.dylib",
+                        "{{HOMEBREW_PREFIX}}/opt/ruby@{{version.major_minor}}/" \
+                        "lib/libruby.{{version.major_minor}}.dylib",
+                        resolve_source: true
+      end
     end
   end
 
