@@ -1,8 +1,8 @@
 class Minibwa < Formula
   desc "Successor of BWA-MEM for short-read alignment"
   homepage "https://github.com/lh3/minibwa"
-  url "https://github.com/lh3/minibwa/archive/refs/tags/v0.5.tar.gz"
-  sha256 "994db9f7ee86781545a974f81938f962acbf5605a1a85255bf65dff59e3bae16"
+  url "https://github.com/lh3/minibwa/archive/refs/tags/v0.6.tar.gz"
+  sha256 "5a5123b85c21220492518802dc8527585a006689de2440ac4a9f4063e41fd0d2"
   license all_of: ["MIT", "Apache-2.0"]
 
   bottle do
