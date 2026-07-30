@@ -163,7 +163,7 @@ class Visp < Formula
                   "#{opt_lib}/cmake/visp/VISPModules.cmake" \
                   "#{opt_lib}/pkgconfig/visp.pc"; do
         sed -E -i.bak \
-          's|/(Applications/Xcode[^[:space:];]*/SDKs|Library/Developer/CommandLineTools/SDKs)/MacOSX[^[:space:];]*\\.sdk|'"$sdk_path"'|g' \
+          's#/(Applications/Xcode[^[:space:];]*/SDKs|Library/Developer/CommandLineTools/SDKs)/MacOSX[^[:space:];]*\\.sdk#'"$sdk_path"'#g' \
           "$file"
         rm -f "$file.bak"
       done
