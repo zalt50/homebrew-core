@@ -1,8 +1,8 @@
 class Asimov < Formula
   desc "Automatically exclude development dependencies from Time Machine backups"
   homepage "https://github.com/AsimovMac/asimov"
-  url "https://github.com/AsimovMac/asimov/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "9fa0b1551cd3e741288701f589c1b1f42d16cb655f60283dce3a1bc7c5b9af67"
+  url "https://github.com/AsimovMac/asimov/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "1bd90fbf33d5e72bf578be3959c3a9e3cfb36951e364572d5f9f607889da86db"
   license "MIT"
   head "https://github.com/AsimovMac/asimov.git", branch: "main"
 
@@ -11,7 +11,9 @@ class Asimov < Formula
   end
 
   def install
-    bin.install buildpath/"asimov"
+    bin.install "bin/asimov"
+    libexec.install "lib/asimov"
+    pkgshare.install Dir["data/*"]
   end
 
   # Asimov will run in the background on a daily basis
