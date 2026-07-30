@@ -1,8 +1,8 @@
 class RustypasteCli < Formula
   desc "CLI tool for rustypaste"
   homepage "https://blog.orhun.dev/blazingly-fast-file-sharing"
-  url "https://github.com/orhun/rustypaste-cli/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "409245145c94ba5f0555577e9e3e723d8e10585bb826e5c8b2f88b1b533b0783"
+  url "https://github.com/orhun/rustypaste-cli/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "cfa4fa94d950c59eb0474e2387e0171d77fba3abfbecef4ffbf520dbb897de44"
   license "MIT"
   head "https://github.com/orhun/rustypaste-cli.git", branch: "master"
 
