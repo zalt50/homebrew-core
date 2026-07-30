@@ -1,11 +1,10 @@
 class Gmt < Formula
   desc "Tools for manipulating and plotting geographic and Cartesian data"
   homepage "https://www.generic-mapping-tools.org/"
-  url "https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-src.tar.xz"
-  mirror "https://mirrors.ustc.edu.cn/gmt/gmt-6.6.0-src.tar.xz"
-  sha256 "18ac98b11b8fc924463ce5138385c02e9426780fba9ff63a991e2e8ecdbd1082"
+  url "https://github.com/GenericMappingTools/gmt/archive/refs/tags/6.7.0.tar.gz"
+  mirror "https://mirrors.ustc.edu.cn/gmt/gmt-6.7.0-src.tar.xz"
+  sha256 "1a0c2ce2d1d8d19eecbff806876c37f986f442435031da56ea57d31de6579126"
   license "LGPL-3.0-or-later"
-  revision 2
   head "https://github.com/GenericMappingTools/gmt.git", branch: "master"
 
   livecheck do
