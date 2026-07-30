@@ -158,10 +158,7 @@ class Ruby < Formula
     config_file.write rubygems_config
 
     (libexec/"post-install.rb").write <<~RUBY
-      require "fileutils"
-
-      FileUtils.rm_f ["#{rubygems_bindir}/bundle", "#{rubygems_bindir}/bundler"]
-      FileUtils.rm_rf Dir["#{HOMEBREW_PREFIX}/lib/ruby/gems/#{api_version}/gems/bundler-*"]
+      # Repair Ruby's versioned opt dylib ID after Homebrew has fixed install names.
       exit unless RUBY_PLATFORM.include?("darwin")
 
       require "macho"
@@ -182,8 +179,17 @@ class Ruby < Formula
     RUBY
   end
 
+  # Since Gem ships Bundle we want to provide that full/expected installation
+  # but to do so we need to handle the case where someone has previously
+  # installed bundle manually via `gem install`.
+  # TODO: remove when enabling default_user_install
   post_install_steps do
-    run "{{HOMEBREW_BREW_FILE}}", args: ["ruby", "--", "{{libexec}}/post-install.rb"]
+    remove ["bin/bundle", "bin/bundler", "lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*"],
+           base: :homebrew_prefix, recursive: true
+    on_macos do
+      run "{{HOMEBREW_BREW_FILE}}", args: ["ruby", "--", "{{libexec}}/post-install.rb"],
+                                    env:  { "HOMEBREW_DEVELOPER" => "1" }
+    end
   end
 
   def rubygems_config
