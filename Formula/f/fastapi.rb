@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/2f/cb/7a4d2c2eb5a5d8a91763c05b7383d72917862e32f780daa0e27ffbb34cc6/fastapi-0.140.13.tar.gz"
-  sha256 "500172a08cf1459901f90b05c37d93060dada3b573fec8f0862445db52ba6b4b"
+  url "https://files.pythonhosted.org/packages/ac/7e/26bdd4f5a81891adf233354b6f4e7977563cc16e0f94b3f33405873c9278/fastapi-0.141.0.tar.gz"
+  sha256 "cae32222bdc8b2805c4d3deb4e024b381ea2a6f2de7febfe3a9a73a9c29c2e5e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ff968deb36c66a69196f1e4819ee522769661c4e4c79e829bc8e0d358e6bb780"
-    sha256 cellar: :any, arm64_sequoia: "532f9df80354353604d7a131740ae48d9ece2f5d5e5bd3b1af7ce4a4c95aecbe"
-    sha256 cellar: :any, arm64_sonoma:  "b26b42fbe70cbf84fc59f9614e1c5036c01e5d9391c0384703a2df7f0fe92609"
-    sha256 cellar: :any, sonoma:        "e8fcbc68e1b381115bbb46a939e211fec7e7213247feeda5aaa3abb1c8be6395"
-    sha256 cellar: :any, arm64_linux:   "7cc5b3887daa44266bc4bc12b45f180946c2202a750518b82d8aea73caa61b5d"
-    sha256 cellar: :any, x86_64_linux:  "eebe8a695c3ea838298eb64573e105cdc6707d12c20ca1b4fc550738e8a7291a"
+    sha256 cellar: :any, arm64_tahoe:   "595417430b4dd0f925d9c6b798e1380c4635a1dac550403a17c98de9825f4cfe"
+    sha256 cellar: :any, arm64_sequoia: "73c5e579bc2a7c226823070ab9043d1b8d22c306797ded0a380a5e060f4d5a22"
+    sha256 cellar: :any, arm64_sonoma:  "5fefe8e8c85b53ead5baa3ba8c257113966aab1e2f90fe2eb2ed28046f578d70"
+    sha256 cellar: :any, sonoma:        "3e271b527ee7ae5f5724a4b47c24a1dace8259ce739d4b8040233dd7ac2b1c68"
+    sha256 cellar: :any, arm64_linux:   "2f2b7e3fc1463404829ece0578a2070f7fcd6b90a7fabdff934595d6bb4d6806"
+    sha256 cellar: :any, x86_64_linux:  "1b6a2f9592ba161f0b43ad0f24fd764d709a116ee2a4c4643beb9a74542dcde6"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -186,8 +186,8 @@ class Fastapi < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/05/c8/2d307868453a4bca6e64fa3581d122ae0748a0869c53f159339def179c7c/uvicorn-0.52.0.tar.gz"
+    sha256 "ca8876ad6c1983f394157c168b39d52f6dd56dabf5602fa0982751cffc2293ae"
   end
 
   resource "uvloop" do
