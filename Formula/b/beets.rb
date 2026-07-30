@@ -3,8 +3,8 @@ class Beets < Formula
 
   desc "Music library manager and tagger"
   homepage "https://beets.io/"
-  url "https://files.pythonhosted.org/packages/9a/69/adb2f8d6e672f330a259d68a0602efe4a9d207d539b3e1362ad9c5548c18/beets-2.13.0.tar.gz"
-  sha256 "e9bca2bd2427345a83e0670ae4f09cf9b297861032963447c796823cee1b16e2"
+  url "https://files.pythonhosted.org/packages/9b/01/a8fe84c3df610e63569f51ee846d442ea7d89ef4dfc834378cebd46bfd5a/beets-2.13.1.tar.gz"
+  sha256 "ea11e0963299c1c0f728884b2896cc554747696c3ddd73d98a70cc6196ae845b"
   license "MIT"
   head "https://github.com/beetbox/beets.git", branch: "master"
 
