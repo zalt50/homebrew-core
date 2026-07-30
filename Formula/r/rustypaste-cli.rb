@@ -7,12 +7,12 @@ class RustypasteCli < Formula
   head "https://github.com/orhun/rustypaste-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16c8833e77ed63d0abbcfbb9b0c34fb21224f6a91e2c286fa2cf0f7fb47042ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94c4993dd5c74b391ca579a4f16b735ad4447f4033092f688f2c9488e2b8f9f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82d3e750e1439f0de5a657ce2b59dc0ceebb0bb31ee59baf2ed93dac238bfaee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "974595d6b614813f280c4350970ca054abfd73892c919220786f2f455389570e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95e51e8b975739bac321b1eaf2fac42d52281ec806b689660fe5bcc76e0f151f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e188ca87c16a76fdc518d9fcaa997f24770ef72c5689dcc171fa89f44dfd362"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c439aedd2a1b304aa65c67e268a720a0e927bf21052b74839b8a2ed99c7b0041"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5820b5ec3076f8de2890df7df221a7aea838298ef505a275bce60b0603ba601a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a0cb0fe7bde5aaadc7951eb1830537c693193d91777e333f4ce795025a1fe58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a3d71dbc3fa8e87c8a4b145d74be90af18fe14f04419c17675ef9bb07c49137"
+    sha256 cellar: :any,                 arm64_linux:   "021f157cc5b6aabe8300940f79e47ea2d9765a62d6976a3f4d94b140bd3064c3"
+    sha256 cellar: :any,                 x86_64_linux:  "b1575145ba1b84e9df8cda0e1a5cb58b5bc9db713a461871af56a75928f4da63"
   end
 
   depends_on "rust" => :build
