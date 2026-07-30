@@ -33,12 +33,15 @@ class Gh < Formula
     end
 
     ldflags = %w[-s -w]
+    ENV.prepend_path "PATH", buildpath/"bin"
 
     with_env(
       "GH_VERSION"   => gh_version,
+      "GOBIN"        => buildpath/"bin",
       "GO_LDFLAGS"   => ldflags.join(" "),
       "GO_BUILDTAGS" => "updateable",
     ) do
+      system "make", "licenses"
       system "make", "bin/gh", "manpages"
     end
     bin.install "bin/gh"
@@ -50,5 +53,6 @@ class Gh < Formula
     assert_match "gh version #{version}", shell_output("#{bin}/gh --version")
     assert_match "Work with GitHub issues", shell_output("#{bin}/gh issue 2>&1")
     assert_match "Work with GitHub pull requests", shell_output("#{bin}/gh pr 2>&1")
+    assert_match "GitHub CLI third-party dependencies", shell_output("#{bin}/gh licenses")
   end
 end
