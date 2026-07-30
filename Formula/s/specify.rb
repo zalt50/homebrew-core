@@ -3,8 +3,8 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://github.com/github/spec-kit/archive/refs/tags/v0.14.4.tar.gz"
-  sha256 "d95fc7157cc0c5b7da4e6e5dff7db2c4c2db843372ecf458d32ac1d5bb1900ad"
+  url "https://github.com/github/spec-kit/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "09eb2598cacb887a3855efbcebe7536ad90e36078c33980d29676010120cdb05"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class Specify < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "click" do
