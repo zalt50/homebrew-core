@@ -1,22 +1,11 @@
 class Stp < Formula
   desc "Simple Theorem Prover, an efficient SMT solver for bitvectors"
   homepage "https://stp.github.io/"
+  url "https://github.com/stp/stp/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "1816d2aec1596aa7e9f5a75f00b6b1a4e8e364efbf2893e0ae78e66bcf2ebabf"
   license "MIT"
-  revision 9
+  compatibility_version 1
   head "https://github.com/stp/stp.git", branch: "master"
-
-  stable do
-    url "https://github.com/stp/stp/archive/refs/tags/2.3.4.tar.gz"
-    sha256 "dc197e337c058dc048451b712169a610f7040b31d0078b6602b831fbdcbec990"
-
-    # Replace distutils for python 3.12+
-    patch do
-      url "https://github.com/stp/stp/commit/fb185479e760b6ff163512cb6c30ac9561aadc0e.patch?full_index=1"
-      sha256 "7e50f26901e31de4f84ceddc1a1d389ab86066a8dcbc5d88e9ec1f0809fa0909"
-      type :backport
-      resolves "https://github.com/stp/stp/pull/450"
-    end
-  end
 
   livecheck do
     url :stable
@@ -44,25 +33,35 @@ class Stp < Formula
 
   uses_from_macos "perl"
 
-  # Use relative import for library_path
-  patch do
-    url "https://github.com/stp/stp/commit/f81d16c4f15863dd742d220d31db646b5d1c824d.patch?full_index=1"
-    sha256 "c0c38f39371cfc9959df522957f45677f423a6b2d861f4ad87097c9201e00ff4"
-    type :unofficial
-    resolves "https://github.com/stp/stp/pull/455"
-    resolves "https://github.com/stp/stp/issues/454"
+  # Must match the `lib/extlib-abc` submodule as stp builds only the ABC sources that revision needs
+  resource "extlib-abc" do
+    url "https://github.com/berkeley-abc/abc.git",
+      revision: "95393064368b7c05da4d6f0264fc3419c175c7cb"
+    version "95393064368b7c05da4d6f0264fc3419c175c7cb"
+
+    livecheck do
+      url "https://api.github.com/repos/stp/stp/contents/lib/extlib-abc?ref=#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
   end
 
   def install
+    resource("extlib-abc").stage buildpath/"lib/extlib-abc"
+
     python = "python3.14"
     site_packages = prefix/Language::Python.site_packages(python)
     site_packages.mkpath
     inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{which(python)}",
-                    "-DPYTHON_LIB_INSTALL_DIR=#{site_packages}",
-                    *std_cmake_args
+    args = %W[
+      -DPYTHON_EXECUTABLE=#{which(python)}
+      -DPYTHON_LIB_INSTALL_DIR=#{site_packages}
+      -DSTP_ALLOCATOR=system
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
