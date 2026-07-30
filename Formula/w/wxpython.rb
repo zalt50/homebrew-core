@@ -1,10 +1,9 @@
 class Wxpython < Formula
   desc "Python bindings for wxWidgets"
   homepage "https://www.wxpython.org/"
-  url "https://files.pythonhosted.org/packages/22/43/81657a6b126ffc19163500a8184d683cec08eb4e1d06905cd0c371c702d0/wxpython-4.2.5.tar.gz"
-  sha256 "44e836d1bccd99c38790bb034b6ecf70d9060f6734320560f7c4b0d006144793"
+  url "https://files.pythonhosted.org/packages/5f/59/8da2f898b3e1772ba501e5108d7d7824175485731c9b5f79381cb1e682d0/wxpython-4.3.0.tar.gz"
+  sha256 "33d17964ba7392a7d08d4cdfe6573ab331fe61b3ba2e281f202fd8b4e0ef7810"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "f386143a6e4461fde98aaa60c28f8dc1c87270ad53aaef1fc3b059753ca7d04b"
@@ -22,7 +21,7 @@ class Wxpython < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python@3.14"
-  depends_on "wxwidgets@3.2" # issue ref: https://github.com/wxWidgets/Phoenix/issues/2764
+  depends_on "wxwidgets"
 
   on_linux do
     depends_on "pkgconf" => :build
@@ -30,6 +29,10 @@ class Wxpython < Formula
   end
 
   pypi_packages exclude_packages: %w[numpy pillow]
+
+  # Upstream pins Doxygen 1.9.1, which keeps `constexpr` in the XML type; ours is newer
+  # and reports it as an attribute, so `constexpr` members get a setter and fail to build.
+  patch :DATA
 
   def python
     "python3.14"
@@ -58,3 +61,18 @@ class Wxpython < Formula
     assert_match version.to_s, output
   end
 end
+
+__END__
+diff --git a/etgtools/extractors.py b/etgtools/extractors.py
+index 5c3b1d4..b6e9b2d 100644
+--- a/etgtools/extractors.py
++++ b/etgtools/extractors.py
+@@ -222,6 +222,8 @@ class VariableDef(BaseDef):
+     def extract(self, element):
+         super(VariableDef, self).extract(element)
+         self.type = flattenNode(element.find('type'))
++        if element.get('constexpr') == 'yes' and not self.type.startswith('const'):
++            self.type = 'const ' + self.type
+         self.definition = element.find('definition').text
+         self.argsString = element.find('argsstring').text
+ 
