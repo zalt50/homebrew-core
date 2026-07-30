@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.171.0",
-      revision: "6e47ff626670a8bded8b527f61d709e2e332ec4b"
+      tag:      "v1.172.0",
+      revision: "651f37efa397bf066e1cf627414eeabe40b07e27"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
