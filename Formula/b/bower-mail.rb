@@ -1,10 +1,9 @@
 class BowerMail < Formula
   desc "Curses terminal client for the Notmuch email system"
   homepage "https://github.com/wangp/bower"
-  url "https://github.com/wangp/bower/archive/refs/tags/1.1.1.tar.gz"
-  sha256 "4c041681332d355710aa2f2a935ea56fbb2ba8d614be81dee594c431a1d493d9"
+  url "https://github.com/wangp/bower/archive/refs/tags/1.2.tar.gz"
+  sha256 "2b175a91b78483ee7648c39f64e09405885a88ee9144c6891c3e30de570a4c45"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/wangp/bower.git", branch: "master"
 
   bottle do
