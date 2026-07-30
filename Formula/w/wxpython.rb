@@ -6,12 +6,12 @@ class Wxpython < Formula
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f386143a6e4461fde98aaa60c28f8dc1c87270ad53aaef1fc3b059753ca7d04b"
-    sha256 cellar: :any, arm64_sequoia: "101056218733233f473e26ed0836b3c385fc55a8cb6653ab4840241df62c444e"
-    sha256 cellar: :any, arm64_sonoma:  "1d8b4b5e2a4548a25fd602ceca03f1d217a508f6160b528c88cabd5da92379ac"
-    sha256 cellar: :any, sonoma:        "fb2da74fde2f55b27d36418a776ed1a3a3f884319d406618d022f8e409450ba6"
-    sha256               arm64_linux:   "4321aecdd3168f3f2bb0ae102d2f93da7449c0f4968f5c746f18e2e25feabf39"
-    sha256               x86_64_linux:  "8b3b5bea2efe6ccac67b575e3d308d9d5688120e9da07693be91c47ff5f6f0c5"
+    sha256 cellar: :any, arm64_tahoe:   "e383f480538a6d28df4cc3a3f3d1d7d20753f14cc0d59ba95e72817fb4bac9b5"
+    sha256 cellar: :any, arm64_sequoia: "bd79f38481aef45a07a1ab4464b693dacb5ef4a2380ae20088760010b38e7fca"
+    sha256 cellar: :any, arm64_sonoma:  "5bb509c4c1bfb570e5babe08efed64c7d532b47e3b9345f33de7ac92ef360283"
+    sha256 cellar: :any, sonoma:        "a3a402895a6a7adc64ed361b6dda8257f087432970d549a808fd87cbc9affb49"
+    sha256               arm64_linux:   "02bae02e9a492d540b56c06fef876617ea69f6929034c9d08d9972866de1e264"
+    sha256               x86_64_linux:  "75db43f2dca37ce35820e47ed1152bfc257bd99e6271e7ac6168c47dbef9d278"
   end
 
   depends_on "cython" => :build
