@@ -1,8 +1,8 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https://rattler.build"
-  url "https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.72.0.tar.gz"
-  sha256 "67b5655865778960a72fe59c2a98742a1e6f9231c452cbf4559f39fe6f5d020c"
+  url "https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.72.1.tar.gz"
+  sha256 "69285be0501e2a4fb9aa733914083a682c2f8ad65d793d23ee59e0b553bf52e5"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
