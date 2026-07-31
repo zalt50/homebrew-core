@@ -1,8 +1,8 @@
 class AutoEditor < Formula
   desc "Effort free video editing!"
   homepage "https://auto-editor.com"
-  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.4.0.tar.gz"
-  sha256 "eb1f6e56543998acfa9a17b350d058e03df5138764959da88df5139dd589c87a"
+  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.4.2.tar.gz"
+  sha256 "c12b00ad1fcad4d62bdc863c41c42a245410f8c74e3bdd6d1b5d4916786e3ce0"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
