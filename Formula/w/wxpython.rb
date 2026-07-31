@@ -1,8 +1,8 @@
 class Wxpython < Formula
   desc "Python bindings for wxWidgets"
   homepage "https://www.wxpython.org/"
-  url "https://files.pythonhosted.org/packages/5f/59/8da2f898b3e1772ba501e5108d7d7824175485731c9b5f79381cb1e682d0/wxpython-4.3.0.tar.gz"
-  sha256 "33d17964ba7392a7d08d4cdfe6573ab331fe61b3ba2e281f202fd8b4e0ef7810"
+  url "https://files.pythonhosted.org/packages/3d/dd/026f6286f8beefcdd9551ad2e05b4e3edb45e638cdc067db211c53c950ce/wxpython-4.3.1.tar.gz"
+  sha256 "4e3a95b63175be8e10f0662de506a36d8cc6cb86ecc5b30ae880c8dafb34a0cd"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
 
   bottle do
