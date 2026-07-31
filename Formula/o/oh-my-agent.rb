@@ -1,17 +1,17 @@
 class OhMyAgent < Formula
   desc "Portable multi-agent harness for .agents-based skills and workflows"
   homepage "https://firstfluke.com/oh-my-agent/"
-  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-11.2.4.tgz"
-  sha256 "e41a5bbcd59cefd4c5cbe9ddcc14841e07cc8cfb6e4085adb626ffd16fc3f1c9"
+  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-11.3.0.tgz"
+  sha256 "fd843092789de689cb8eaf798f0b61319c93f39c8508ba18f094e5c3d5b8e1bb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ca63c61b5694ebd5a0dcdbc53b45fd9dcb1205e3431c14c593db4a9f96c472a3"
-    sha256 cellar: :any, arm64_sequoia: "ca63c61b5694ebd5a0dcdbc53b45fd9dcb1205e3431c14c593db4a9f96c472a3"
-    sha256 cellar: :any, arm64_sonoma:  "ca63c61b5694ebd5a0dcdbc53b45fd9dcb1205e3431c14c593db4a9f96c472a3"
-    sha256 cellar: :any, sonoma:        "b54af6dbdd592bcaf3a5b093714255f009acd4728cbedd501973c2da9a20493a"
-    sha256 cellar: :any, arm64_linux:   "32c92fce015ba9c438aa7e1c695e27ab42742ec37e5bbd077e5dfb003ce40d5c"
-    sha256 cellar: :any, x86_64_linux:  "54955ce0a799d5a8189216063b78fcd94935b13d133a9657446baf80bd753179"
+    sha256 cellar: :any, arm64_tahoe:   "24724fd6fa778f38497cc8a3d6151281a8e3dea72df3df651124cb6656919747"
+    sha256 cellar: :any, arm64_sequoia: "5f4f51504588c291e7dc677b18296e23af0dcde1131a0b38ae0180d32850b7a9"
+    sha256 cellar: :any, arm64_sonoma:  "3c2af410bcbcfc6c24259a584a1f736a285fc0a292c7abc496a32878fd658b33"
+    sha256 cellar: :any, sonoma:        "ed096efc20e3faec60840f3d68c615cd8ce6da8bf40e52e202548372116c48c1"
+    sha256 cellar: :any, arm64_linux:   "fc21f12655edfa8cfd9f6b3f02b830376816b5d8f15d71b48f3ae88ad1d8513a"
+    sha256 cellar: :any, x86_64_linux:  "2587b07f8e656adec83bded7aa575c7fa849c7b841b0e172e5b94db07daeee43"
   end
 
   depends_on "node"
@@ -25,6 +25,9 @@ class OhMyAgent < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
+    rm_r(node_modules.glob("better-sqlite3/prebuilds/*"))
+    cd(node_modules/"better-sqlite3") { system "npm", "run", "build-release" }
 
     bin.install_symlink Dir[libexec/"bin/*"]
   end
