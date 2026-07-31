@@ -1,9 +1,9 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/refs/tags/mame0288.tar.gz"
-  version "0.288"
-  sha256 "244d916eb3fb8bcd71f2ac51ae71ab6af8cf99869ea7b85d7efc7339ea56c563"
+  url "https://github.com/mamedev/mame/archive/refs/tags/mame0289.tar.gz"
+  version "0.289"
+  sha256 "0929cc749afabcef892900e10dd90bd8b05f94a7dde8f367ac6a5d2082589f84"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -57,6 +57,11 @@ class Mame < Formula
     depends_on "qtbase"
     depends_on "sdl3_ttf"
     depends_on "zlib-ng-compat"
+
+    on_arm do
+      # System `ld` fails to insert range-extension stubs: R_AARCH64_CALL26 relocation truncated to fit
+      depends_on "binutils" => :build
+    end
   end
 
   def install
