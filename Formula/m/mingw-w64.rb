@@ -11,7 +11,7 @@ class MingwW64 < Formula
     # gcc
     "GPL-3.0-or-later" => { with: "GCC-exception-3.1" },
   ]
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -43,9 +43,12 @@ class MingwW64 < Formula
   end
 
   resource "binutils" do
-    url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-    sha256 "324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439"
+    url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+    sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
+    livecheck do
+      formula "binutils"
+    end
   end
 
   resource "gcc" do
