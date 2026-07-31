@@ -3,8 +3,8 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/8f/32/1de77b674281c398f2af6f45f5833b40ff593f4dd7bd32f3f7c393c3bbfd/tmt-1.76.0.tar.gz"
-  sha256 "7edd8d1cb36318034f7668236c9bb45c1190ed6a42f206978bdc2a9aa8281267"
+  url "https://files.pythonhosted.org/packages/93/a5/21b0d0cb820b44ee81964eeb75c53e50c436063b01b34f467217e96366aa/tmt-1.77.0.tar.gz"
+  sha256 "41412101942fbb6cd29536443ad159f0c51e7f464bce2419584040b3d94e4f60"
   license "MIT"
 
   bottle do
@@ -30,8 +30,8 @@ class Tmt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -45,8 +45,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
-    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "flexcache" do
@@ -100,8 +100,8 @@ class Tmt < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "pygments" do
@@ -141,9 +141,14 @@ class Tmt < Formula
   end
 
   test do
-    output = shell_output("#{bin}/tmt init --template mini")
+    # fmf searches for a tree root up to `/`, which the sandbox cannot read
+    (testpath/".fmf").mkpath
+    (testpath/".fmf/version").write "1\n"
+
+    output = shell_output("#{bin}/tmt init --force --template mini project")
+    assert_match "Initialized the fmf tree root", output
     assert_match "Applying template 'mini'", output
-    assert_match <<~YAML, (testpath/"plans/example.fmf").read
+    assert_match <<~YAML, (testpath/"project/plans/example.fmf").read
       execute:
         how: tmt
         script: tmt --help
