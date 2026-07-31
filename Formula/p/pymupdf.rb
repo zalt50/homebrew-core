@@ -4,6 +4,7 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/8e/e9/6d6c5d6c0a3551bffd47681a6240caf941727f195b45593cf20ab36f018f/pymupdf-1.28.0.tar.gz"
   sha256 "e53f3567403a92da15caa9e7ae0164327fff48817e9f40175367fb9de524258d"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "ad979d2bb83f0a55ab4356cbc52c70524047c75593d061e5ef8f9494e68c0166"
@@ -19,6 +20,22 @@ class Pymupdf < Formula
   depends_on "swig" => :build
   depends_on "mupdf"
   depends_on "python@3.14"
+
+  # Pass the options argument added to `fz_find_table_within_bounds` in mupdf 1.28.1
+  patch do
+    url "https://github.com/pymupdf/PyMuPDF/commit/b54b70f2410df7d11f9e68c58fe4e0dcb582756a.patch?full_index=1"
+    sha256 "7ce5d2b9f8b38fa9c54b78bdf8aabac758c79056bd4a389bf93fa25f5b110eaa"
+    type :backport
+    resolves "https://github.com/pymupdf/PyMuPDF/commit/b54b70f2410df7d11f9e68c58fe4e0dcb582756a"
+  end
+
+  # Skip the transform now that `pdf_clip_rect` takes fitz coords in mupdf 1.28.1
+  patch do
+    url "https://github.com/pymupdf/PyMuPDF/commit/87745b21b512440c7fc02e49037c3ad1c173d414.patch?full_index=1"
+    sha256 "db40ae037da6c3f427342478912b1baa2cc10c58d2f9211143e9d26fe14bd2ef"
+    type :backport
+    resolves "https://github.com/pymupdf/PyMuPDF/commit/87745b21b512440c7fc02e49037c3ad1c173d414"
+  end
 
   def python3
     "python3.14"
