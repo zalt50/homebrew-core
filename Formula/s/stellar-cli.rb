@@ -1,8 +1,8 @@
 class StellarCli < Formula
   desc "Stellar command-line tool for interacting with the Stellar network"
   homepage "https://developers.stellar.org"
-  url "https://static.crates.io/crates/stellar-cli/stellar-cli-27.0.0.crate"
-  sha256 "423ca5c5317270e299719988463e2c3b9296ade8b9da06e3b5ddad09c64b5c72"
+  url "https://static.crates.io/crates/stellar-cli/stellar-cli-27.1.0.crate"
+  sha256 "23f108265af26274fe004d199cc438777ca49b6dbf02157d4cd280e492bb1a9c"
   license "Apache-2.0"
   head "https://github.com/stellar/stellar-cli.git", branch: "main"
 
