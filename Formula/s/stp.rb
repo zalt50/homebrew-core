@@ -13,12 +13,12 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a116d5592fa317bbda40cb6b5b8704b95adea1f89322d6183a20ec695a3a609e"
-    sha256 cellar: :any,                 arm64_sequoia: "5b49ea62bc28988aee733b93243f04fe061dd9ce89275caf430391f6262f95fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "b677368cd71d24a6477f011838407cb2814e3efd66e35749e27824017ebac958"
-    sha256 cellar: :any,                 sonoma:        "22ab44a28ba6d44ff38f6850eaa040b58ff5139ee5e7519061bb8eb6212807f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39f08ceaa72d2762cc56c642af6bd9f943bd3b8ca6ac82a57a1a53883d640d26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a8f6222a9dcb368f00e9abfd4025b772354644b99ae3e34209690c9ac09bd86"
+    sha256 cellar: :any, arm64_tahoe:   "f16a48d92b271804263b99d7e946176d14b49cba48239a86270de67702ee0494"
+    sha256 cellar: :any, arm64_sequoia: "cd1b294c020713cceedbcacde57b9d8a25d93b05027562ddc4449edd7ac1f6ff"
+    sha256 cellar: :any, arm64_sonoma:  "f54ac8228ab51496c4540c081a4456b22864e102bb5a8697b69d93fcd139920e"
+    sha256 cellar: :any, sonoma:        "8a60a2152b341546bc1d393fc658e7d2e114e60ae514a569006bccdf921aa725"
+    sha256 cellar: :any, arm64_linux:   "c4879797e4ee0865cf0d06fc2c73ba7e308b91c65975d47772759a14f0fa49ae"
+    sha256 cellar: :any, x86_64_linux:  "71ae74f7d0484f244c55aa4b441965dedeef91f3a4331aafe1cce7421d3f9d30"
   end
 
   # stp refuses to build with system bison and flex
