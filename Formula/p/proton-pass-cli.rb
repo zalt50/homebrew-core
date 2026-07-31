@@ -1,8 +1,8 @@
 class ProtonPassCli < Formula
   desc "Command-line interface for Proton Pass"
   homepage "https://protonpass.github.io/pass-cli/"
-  url "https://github.com/protonpass/pass-cli/archive/refs/tags/2.2.3.tar.gz"
-  sha256 "b822b230b687ca600b599fa635e004180cade43c0b17767c281738f0571efb3c"
+  url "https://github.com/protonpass/pass-cli/archive/refs/tags/2.2.4.tar.gz"
+  sha256 "088ffbbc1ef244847a40c9e547517ed80b26c47a0095e3f076c1387dedf43a68"
   license "GPL-3.0-or-later"
 
   bottle do
