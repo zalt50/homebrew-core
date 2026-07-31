@@ -6,6 +6,7 @@ class Odin < Formula
       revision: "819fdc7a80667498b8b365999f1475a66c358640"
   version "2026-07a"
   license "Zlib"
+  revision 1
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
@@ -57,6 +58,12 @@ class Odin < Formula
       "vendor/glfw/lib/darwin"
     end
     ln_s Formula["glfw"].lib/"libglfw3.a", buildpath/glfw_installpath/"libglfw3.a"
+
+    # glfw 3.5 references `CAMetalLayer` directly, so static links need QuartzCore
+    if OS.mac?
+      inreplace "vendor/glfw/bindings/bindings.odin", "\"../lib/darwin/libglfw3.a\",",
+                "\\0\n\t\t\t\"system:QuartzCore.framework\","
+    end
 
     raylib = Formula["raylib"]
     vendor = buildpath/"vendor/raylib"
