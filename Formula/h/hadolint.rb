@@ -1,8 +1,8 @@
 class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
   homepage "https://github.com/hadolint/hadolint"
-  url "https://github.com/hadolint/hadolint/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "8088f55cf6959770a9885ab8632ea306e26a02fd88981c37c32e9422cdc3ff9e"
+  url "https://hackage.haskell.org/package/hadolint-2.15.1/hadolint-2.15.1.tar.gz"
+  sha256 "53a210184be82bd273fb298c0887a84e7d6c1d08fcdfc376373235c0c786bb27"
   license "GPL-3.0-only"
 
   bottle do
@@ -27,7 +27,7 @@ class Hadolint < Formula
 
   def install
     # Workaround for GHC 9.14 until hadolint allows parallel >= 3.3
-    args = ["--allow-newer=base"]
+    args = ["--allow-newer=base,time"]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args
