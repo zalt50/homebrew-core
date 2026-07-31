@@ -37,7 +37,7 @@ class Libgccjit < Formula
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
-  depends_on "gcc" => :test
+  depends_on "gcc" => [:build, :test]
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
@@ -58,6 +58,11 @@ class Libgccjit < Formula
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
+
+    # We can skip bootstrap process by using our already built GCC formula.
+    gcc_version = Formula["gcc"].version.major
+    ENV["CC"] = formula_opt_bin("gcc")/"gcc-#{gcc_version}"
+    ENV["CXX"] = formula_opt_bin("gcc")/"g++-#{gcc_version}"
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
 
@@ -106,18 +111,17 @@ class Libgccjit < Formula
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
-      # Use our own (recent) binutils
-      args << "--with-as=#{formula_opt_bin("binutils")}/as"
-
       ENV.append_path "CPATH", formula_opt_include("zlib-ng-compat")
       ENV.append_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
     end
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
     mkdir "build-jit" do
-      system "../configure", *args, "--enable-languages=jit", "--enable-host-shared"
+      install_target = OS.mac? ? "install" : "install-strip"
+
+      system "../configure", *args, "--enable-languages=jit", "--enable-host-shared", "--disable-bootstrap"
       system "make", *make_args
-      system "make", "install"
+      system "make", install_target
     end
 
     # We only install the relevant libgccjit files from libexec and delete the rest.
@@ -189,11 +193,9 @@ class Libgccjit < Formula
     system gcc.to_s, *test_flags
     assert_equal "hello world", shell_output("./test")
 
-    # The test below fails with the host compiler on Linux.
-    return if OS.linux?
-
     # Also test with the host compiler, which many users use with libgccjit
     (testpath/"test").unlink
+    test_flags << "-Wl,-rpath,#{libs}" if OS.linux?
     system ENV.cc, *test_flags
     assert_equal "hello world", shell_output("./test")
   end
