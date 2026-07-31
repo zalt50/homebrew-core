@@ -1,8 +1,8 @@
 class DirectxHeaders < Formula
   desc "Official DirectX headers available under an open source license"
   homepage "https://devblogs.microsoft.com/directx/"
-  url "https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.4.tar.gz"
-  sha256 "427c4c20bdeb06022d706ba24cb14838b62cca4456a6072e826d7ffa706a4b1a"
+  url "https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.5.tar.gz"
+  sha256 "24a0b7d8079a2dbbc90753c0d8bc812040d052acce2302e69a97c5d873b313b8"
   license "MIT"
 
   bottle do
