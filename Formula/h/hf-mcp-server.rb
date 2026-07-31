@@ -1,8 +1,8 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.3.tgz"
-  sha256 "33ab20f2d3101a2d53f05c45d4547e072adaca154fc224db40bed0bdd5b97c1d"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.4.tgz"
+  sha256 "5140b7e3ae6d96be6cddb2450bd37e1e45ca285a1f9936f94873b0569463aadc"
   license "MIT"
 
   bottle do
@@ -43,7 +43,7 @@ class HfMcpServer < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"hf-mcp-server", [:out, :err] => output_log.to_s
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
+    sleep 15 if OS.mac? && Hardware::CPU.intel?
     assert_match "Failed to authenticate with Hugging Face API", output_log.read
   ensure
     Process.kill("TERM", pid)
