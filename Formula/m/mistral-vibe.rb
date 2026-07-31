@@ -3,8 +3,8 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/39/69/f61321f7d86a680789481c5f023b2292f7274c9615a7770ab107dba7d058/mistral_vibe-2.23.1.tar.gz"
-  sha256 "48fc2690b14cd45e82f383fd9a5c2f2416fb2f8c90d4f095ebe6fa4e8ad69b68"
+  url "https://files.pythonhosted.org/packages/e3/a6/fd5103713ef96ba0a35032073b599a8beff825ee4269863964bca501683b/mistral_vibe-2.23.2.tar.gz"
+  sha256 "9938ef615a7d36c7c547de70d2d35f2ef4e1740ba819058e7b244e3b92cfd16c"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
