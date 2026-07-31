@@ -1,8 +1,8 @@
 class OhMyAgent < Formula
   desc "Portable multi-agent harness for .agents-based skills and workflows"
   homepage "https://firstfluke.com/oh-my-agent/"
-  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-11.2.4.tgz"
-  sha256 "e41a5bbcd59cefd4c5cbe9ddcc14841e07cc8cfb6e4085adb626ffd16fc3f1c9"
+  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-11.3.0.tgz"
+  sha256 "fd843092789de689cb8eaf798f0b61319c93f39c8508ba18f094e5c3d5b8e1bb"
   license "MIT"
 
   bottle do
@@ -25,6 +25,9 @@ class OhMyAgent < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
+    rm_r(node_modules.glob("better-sqlite3/prebuilds/*"))
+    cd(node_modules/"better-sqlite3") { system "npm", "run", "build-release" }
 
     bin.install_symlink Dir[libexec/"bin/*"]
   end
