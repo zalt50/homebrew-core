@@ -71,7 +71,7 @@ class Espeak < Formula
       lib.install "libespeak.so.1.#{version.major_minor}" => libespeak
       lib.install_symlink libespeak => shared_library("libespeak", 1)
       lib.install_symlink libespeak => shared_library("libespeak")
-      MachO::Tools.change_dylib_id("#{lib}/libespeak.dylib", "#{lib}/libespeak.dylib") if OS.mac?
+      change_dylib_id lib/"libespeak.dylib", lib/"libespeak.dylib", resolve_source: true if OS.mac?
     end
   end
 
