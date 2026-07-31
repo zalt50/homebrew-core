@@ -12,7 +12,7 @@ class DockerCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a4b9d9a4785a18a3cab7386b1e0865106770f9519daac745519f8de213dc6390"
+    sha256 cellar: :any_skip_relocation, all: "736e3a26662e188c681005455daea8b026425a1c81d9869c6936a32e0d8a9cfe"
   end
 
   deprecate! date: "2026-05-31", because: :deprecated_upstream, replacement_formula: "docker"
