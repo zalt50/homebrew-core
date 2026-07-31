@@ -1,8 +1,8 @@
 class Rmw < Formula
   desc "Trashcan/recycle bin utility for the command-line"
   homepage "https://theimpossibleastronaut.github.io/rmw-website/"
-  url "https://github.com/theimpossibleastronaut/rmw/releases/download/v0.9.5/rmw-0.9.5.tar.xz"
-  sha256 "5fa336da39228d4ef6d1314fd86b5dfb0622e80485ebf7b78152198278090050"
+  url "https://github.com/theimpossibleastronaut/rmw/releases/download/v0.10.0/rmw-0.10.0.tar.xz"
+  sha256 "8f96fd96831b69bffc8019cb000483ffe92a7764765484df57f63a6515d26fd9"
   license "GPL-3.0-or-later"
   head "https://github.com/theimpossibleastronaut/rmw.git", branch: "master"
 
@@ -25,6 +25,7 @@ class Rmw < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "canfigger"
+  depends_on "glib"
   # Slightly buggy with system ncurses
   # https://github.com/theimpossibleastronaut/rmw/issues/205
   depends_on "ncurses"
@@ -46,7 +47,7 @@ class Rmw < Formula
     refute_path_exists file
     system bin/"rmw", "-u"
     assert_path_exists file
-    assert_match "/.local/share/Waste", shell_output("#{bin}/rmw -l")
+    assert_match "/.local/share/Trash", shell_output("#{bin}/rmw -l")
     assert_match "purging is disabled", shell_output("#{bin}/rmw -vvg")
   end
 end
