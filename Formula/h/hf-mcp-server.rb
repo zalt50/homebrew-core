@@ -1,8 +1,8 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.2.tgz"
-  sha256 "924ae692701f282935487857445b2fdae32dfbd445c17caab24c877d808a93a4"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.3.tgz"
+  sha256 "33ab20f2d3101a2d53f05c45d4547e072adaca154fc224db40bed0bdd5b97c1d"
   license "MIT"
 
   bottle do
@@ -24,7 +24,14 @@ class HfMcpServer < Formula
     # Remove incompatible and unneeded Bun binaries.
     rm_r(node_modules.glob("@oven/bun-*"))
     # Remove dev-mode-only bundler and CSS-toolchain prebuilts.
-    rm_r(node_modules.glob("{@rollup/rollup,@rolldown/binding,@tailwindcss/oxide,lightningcss}-*"))
+    prebuilts = %w[
+      @rollup/rollup
+      @rolldown/binding
+      @tailwindcss/oxide
+      lightningcss
+      vite/node_modules/lightningcss
+    ]
+    rm_r(node_modules.glob("{#{prebuilts.join(",")}}-*"))
 
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
