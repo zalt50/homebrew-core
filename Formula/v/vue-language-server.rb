@@ -6,12 +6,12 @@ class VueLanguageServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1e5dd447b0c77e33b415ad1a33e1200526833f80dd161390ca7c0936c464658"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1e5dd447b0c77e33b415ad1a33e1200526833f80dd161390ca7c0936c464658"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1e5dd447b0c77e33b415ad1a33e1200526833f80dd161390ca7c0936c464658"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e90d77f116d1b50e960af2ac22b76898f485f7ed7efe574daf81cea38657a35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00083c99514b7c5fad95a69488c72b443f011f10cdf98110de22ffa72242776b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1235f91814c56c6a60938d2a532d4ec4711015d902925583ef32d76e28fe3a58"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0db502cef5c178d79a10ebf9d2a0c351500c5a27eb6a481dbdb19ebc78f3775"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0db502cef5c178d79a10ebf9d2a0c351500c5a27eb6a481dbdb19ebc78f3775"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0db502cef5c178d79a10ebf9d2a0c351500c5a27eb6a481dbdb19ebc78f3775"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11ca8afb3604ff23ee993acccdddda240013333adb09f34b389234cb9662caff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd413867d0f8d67f4e097f7333ebd7ca73edf209455ca3e9998283bf7406d2bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffee8a334ae9e8821b3cac60c3c9f04d8dad5a461a5462cdc922fbeb90a47206"
   end
 
   depends_on "node"
