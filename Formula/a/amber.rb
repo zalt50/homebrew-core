@@ -1,10 +1,9 @@
 class Amber < Formula
   desc "Crystal web framework. Bare metal performance, productivity and happiness"
   homepage "https://amberframework.org/"
-  url "https://github.com/amberframework/amber/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "92664a859fb27699855dfa5d87dc9bf2e4a614d3e54844a8344196d2807e775c"
+  url "https://github.com/amberframework/amber/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "12c7b576a5f2e0dba53962ca23d18435526a2b685924783d57cb0d507bd93a03"
   license "MIT"
-  revision 2
 
   bottle do
     rebuild 1
@@ -26,14 +25,6 @@ class Amber < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # patch granite to fix db dependency resolution issue
-  patch do
-    url "https://github.com/amberframework/amber/commit/54b1de90cd3e395cd09326b1d43074e267c79695.patch?full_index=1"
-    sha256 "be0e30f08b8f7fcb71604eb01136d82d48b7e34afac9a1c846c74a7a7d2f8bd6"
-    type :backport
-    resolves "https://github.com/amberframework/amber/pull/1339"
   end
 
   def install
