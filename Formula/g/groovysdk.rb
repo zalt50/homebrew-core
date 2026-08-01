@@ -11,7 +11,7 @@ class Groovysdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f26cfbffa0e19784817862e258cbfe948384166b5a917b76a0fd76d5519905ad"
+    sha256 cellar: :any_skip_relocation, all: "d1525312c355bc0788ce78ef23218e052fc516e3577daae4006a8828f68bd3bf"
   end
 
   depends_on "openjdk"
