@@ -6,12 +6,12 @@ class Seal < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7ce91ba1309e490534718ab89e1084c745c508e91cd788a8a79c42431f301829"
-    sha256 cellar: :any, arm64_sequoia: "651aa7cdd6d7051ccc94255516f712d42383dac1f0708da61e6fb8a8ad5ad704"
-    sha256 cellar: :any, arm64_sonoma:  "0101e1dc32f13f7db69132f51aa403f99a246bc24b7ef0c400e4007dbe048528"
-    sha256 cellar: :any, sonoma:        "ca7b504f2c0ffd137c54b1acc84e06d4332f3cb806c0a67c806595256942a5b2"
-    sha256 cellar: :any, arm64_linux:   "97ac1554acfa95b46565156996035775cdaaa16e87fc6eb31dadf93b63d8caf2"
-    sha256 cellar: :any, x86_64_linux:  "d5f91c1d76cb63b7f812faab78a1be52e74111924edaeda403ce067f70e7ac0d"
+    sha256 cellar: :any, arm64_tahoe:   "3838a9f93202e65ff8e73c89bb5653b1961755fed5782d3f29a6759d0651fa34"
+    sha256 cellar: :any, arm64_sequoia: "17e6f584888a1d0643f9e1b9fc0d2ab922ca3cc9959aac8341e2675c530db3c6"
+    sha256 cellar: :any, arm64_sonoma:  "884403e3caa64f530dd20362c58964f2881bfe8171c2111768a42111e601548a"
+    sha256 cellar: :any, sonoma:        "2c4af3fa933f611115cfd42f9cec96105eb2628798ba3c040b04a12399e0db5e"
+    sha256 cellar: :any, arm64_linux:   "427b6eec21e9516d4df07937f1247edec8415b0c1352e8bf101f68faa73a26c9"
+    sha256 cellar: :any, x86_64_linux:  "5680521c55a754f1bb36f553e74d5e3d2dad8afce9bcc2c1645d4bb1bd519b56"
   end
 
   depends_on "cmake" => [:build, :test]
