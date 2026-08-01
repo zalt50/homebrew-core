@@ -1,8 +1,8 @@
 class GitFlowNext < Formula
   desc "Modern implementation of the Git-flow branching model"
   homepage "https://git-flow.sh/"
-  url "https://github.com/gittower/git-flow-next/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "cb91dcf6b5901d9c65800a971fbacb556a9a90971d5b4883b968770e2383130f"
+  url "https://github.com/gittower/git-flow-next/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "ff6cfd247cf9cba51c695ea95a061522b537cd3b3ba10219e85e07a567273420"
   license "BSD-2-Clause"
   head "https://github.com/gittower/git-flow-next.git", branch: "main"
 
@@ -30,6 +30,8 @@ class GitFlowNext < Formula
 
   test do
     system "git", "init"
+    system "git", "config", "user.name", "BrewTestBot"
+    system "git", "config", "user.email", "BrewTestBot@test.com"
     system "git", "flow", "init", "--defaults"
     system "git", "flow", "config"
     assert_equal "develop", shell_output("git symbolic-ref --short HEAD").chomp
