@@ -23,14 +23,15 @@ class Libgccjit < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "97505cedf1e502c3b948e69cd48b9a3b78e4f61011cf275c4c963f76e34e933d"
-    sha256 arm64_sequoia: "a444a8d15c975b6bacc110928b80be9f9649547e325e71abbaeae64dcf03ce4f"
-    sha256 arm64_sonoma:  "f9a76ab97d22ad3c17d7d6cafa4566c18ab7009ccecec65c724098548e4e1fa3"
-    sha256 tahoe:         "45beaae24bfc185cf533177261ce568aafe975f4b3a5710d21fec94a987d56e5"
-    sha256 sequoia:       "bee819aabaf0c215d85ac6e3b14bab37ee9d61e9f888391aba2fbed1e94dcb27"
-    sha256 sonoma:        "326bd8002f8468200000f0081f2627c5cf5acb7b2013ff96dd9b993320de07cd"
-    sha256 arm64_linux:   "94c7d6b0162d06915340e852a51c43c7406427f4d323fc8a1908a78b1d62c7a4"
-    sha256 x86_64_linux:  "ce69005d6f81130017f8a503a1dda2dd1c07a433988741c0bf774ce409ae6629"
+    rebuild 1
+    sha256 arm64_tahoe:   "7f118c7d7c168c02ab79ced71d7f26f44cc0e89a045065aa80f48864123f2fb2"
+    sha256 arm64_sequoia: "20ac6b1e3bca525843d0c756b0810429c825d4c36833c6eb615c3c56a4f2de45"
+    sha256 arm64_sonoma:  "52cb55f46e15b9f213fdab33ea2f1fc81219094b164cf111c0ba8bef7334ef25"
+    sha256 tahoe:         "e7cdd96da95bb04a98b3c3372941a5843338d5b164d3a3d73a0893e5331b5c5c"
+    sha256 sequoia:       "3e58fd961848ea09ecd76f1e26274e9c43d0addb81e057449014f60bd3cfd2f3"
+    sha256 sonoma:        "8d3289f9bd7b540f5423270dd75f25e030ad9d62c2181c0efc90d88ebb92aa01"
+    sha256 arm64_linux:   "f9310c48056dd968a4275b777c3e17a341683dd3ba9a4e05492df901d5d25051"
+    sha256 x86_64_linux:  "cf29e7977bef28d309d9d16de4ca688e035c803a2deff58a41449b65c52836d4"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
