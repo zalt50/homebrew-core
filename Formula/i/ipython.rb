@@ -9,12 +9,12 @@ class Ipython < Formula
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecf262b34ddf6a4587dfbad083089a594dbf037ffd77559f33a2223d31e5a6cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6128982dbe75e74e95053b94fa66f07ec547dfc14e4544587a25647422e5516f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2477987e13adaeed2835546fe40d7db72b2fe43a3acee82d81545694f94205a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07d1b1cb2f96d87a05ee433cbe175242b0d4d840673ecd3830389874b4678100"
-    sha256 cellar: :any,                 arm64_linux:   "e5d6f2fe67ef737abe711cdbd31ffc8ee660ba832785498abfbd73e497665eee"
-    sha256 cellar: :any,                 x86_64_linux:  "09e1645156d51700866fe70d9638e4c311442ab14c3a9cda8dec08bf107c34cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da16d0e46982b18be0a215537fb73000c709c3a222fb347f5ddf80280696bdbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50d008dd99de85276112359ab6270150d76ddea5bf31b038b34948c0dd212d1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "380395ee80dea10c56963bac7517a6aed876837a36bb397702ff393986622bcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d80ba92c42b25e86b37491f59a0cd32543a1bd1149cec60942ac67c88256c429"
+    sha256 cellar: :any,                 arm64_linux:   "99a5c3ea027eebb3d8cc554a33d6b9fc725a26273764108e4fedfbd33cec80b0"
+    sha256 cellar: :any,                 x86_64_linux:  "4038059e96d026513d1596982d57786d254bf8b94748163503da9a8b135330a5"
   end
 
   depends_on "python@3.14"
