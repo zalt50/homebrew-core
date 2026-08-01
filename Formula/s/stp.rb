@@ -1,8 +1,8 @@
 class Stp < Formula
   desc "Simple Theorem Prover, an efficient SMT solver for bitvectors"
   homepage "https://stp.github.io/"
-  url "https://github.com/stp/stp/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "1816d2aec1596aa7e9f5a75f00b6b1a4e8e364efbf2893e0ae78e66bcf2ebabf"
+  url "https://github.com/stp/stp/archive/refs/tags/2.4.1.tar.gz"
+  sha256 "6f8bca3612e3d61868450dbf7771897b2a909f446e8de460bdf31f13a6cd0318"
   license "MIT"
   compatibility_version 1
   head "https://github.com/stp/stp.git", branch: "master"
