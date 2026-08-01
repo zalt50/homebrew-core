@@ -1,8 +1,8 @@
 class Kotofetch < Formula
   desc "Small, configurable CLI that displays Japanese quotes in the terminal"
   homepage "https://github.com/hxpe-dev/kotofetch"
-  url "https://github.com/hxpe-dev/kotofetch/archive/refs/tags/v0.2.22.tar.gz"
-  sha256 "0e04bedde86fcdd05b41e15211aa8459d24d347b3e45cf030383f5b650c01bf4"
+  url "https://github.com/hxpe-dev/kotofetch/archive/refs/tags/v0.2.23.tar.gz"
+  sha256 "19afeff83d166bb31410b2fd7c69b12468f918534f22a435ce2e6e3b620d5594"
   license "MIT"
 
   bottle do
