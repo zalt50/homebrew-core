@@ -1,8 +1,8 @@
 class Concord < Formula
   desc "Terminal user interface client for Discord"
   homepage "https://github.com/chojs23/concord"
-  url "https://github.com/chojs23/concord/archive/refs/tags/v2.4.8.tar.gz"
-  sha256 "3810ac49ac4a1f6a6f5da83b955bff950c1966329623e4c075915c4c4559b1e4"
+  url "https://github.com/chojs23/concord/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "06d2a843029703178fb808bd1e7a6070bcaab2b7d9bedfdd0acc786ca3da4e0b"
   license "GPL-3.0-only"
 
   bottle do
@@ -18,8 +18,11 @@ class Concord < Formula
   depends_on "rust" => :build
   depends_on "opus"
 
+  uses_from_macos "llvm" => :build # for libclang
+
   on_linux do
     depends_on "alsa-lib"
+    depends_on "pipewire"
   end
 
   def install
