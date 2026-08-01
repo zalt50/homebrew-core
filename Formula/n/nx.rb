@@ -7,12 +7,12 @@ class Nx < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6d8caf07512781aba38993bccd69f42e26e5864612c4b22b8c4c9b7f8876b1c0"
-    sha256 cellar: :any,                 arm64_sequoia: "6d8caf07512781aba38993bccd69f42e26e5864612c4b22b8c4c9b7f8876b1c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d8caf07512781aba38993bccd69f42e26e5864612c4b22b8c4c9b7f8876b1c0"
-    sha256 cellar: :any,                 sonoma:        "bb3a85d6a8abbd4b4f96b05939f2d72475cfd8056631c8719ac9b90d1b95d0eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b201ef76ac9feef7b83fbc49409cfc65a8d0553d4d05e6312c3ed32e0610a01d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcdb8f217b6564a58076f465fcb5f6c5dc2f4c357d274f6ee1579e426ea7152a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ebd3290363724ae799f852ae0646083a06a75f2200b8dd216f3e9a917f595ed2"
+    sha256 cellar: :any,                 arm64_sequoia: "ebd3290363724ae799f852ae0646083a06a75f2200b8dd216f3e9a917f595ed2"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebd3290363724ae799f852ae0646083a06a75f2200b8dd216f3e9a917f595ed2"
+    sha256 cellar: :any,                 sonoma:        "0a81a9b7c9f3b3d41dbdf5afb07bb6142791eda18d8e65de1c60f37fdffd5ede"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e6221fbf577eaddd21264746e13784d72d9f7bbe1f2f10e77bba119718660f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4944a9f638b3a306b334aa0ed64ac29fd4d083594cf6dcc054b68dd4c2244344"
   end
 
   depends_on "node"
