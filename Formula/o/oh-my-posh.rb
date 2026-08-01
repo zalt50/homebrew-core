@@ -15,12 +15,12 @@ class OhMyPosh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1b4445f08a21c1da22181ffd6877e12ae827221d0aa81942fe270af0c4f5912"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f00e5e83cce7bde3c6d7ec3a1995ebbc6e4359394616c2e2e6268951581ef51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e7e2425a688163a77fa67a4cf68c83fe15affddd8311902da568b6df3b2ca5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d319d92feed947527b0f05e10cda86184c299e30316c1e699225f96dcce84c6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "090cbb194c0190a969b951ceae056fc6539435bf6eba4fe692e3eeee8a5cb531"
-    sha256 cellar: :any,                 x86_64_linux:  "dacfe5e7b54f8119fbb1c1d3585652f912372da45d5cc48bc5e601204361e404"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9af867849a30054be7d8ffaf1213c5974c580abb1dbc89cdc04d2f5c5359dff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f49b2e2c09cd5bdd46eb81ba687eef169f676ee4f15ae8f5149890f3fb0b54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b881e87605f7aea0c301f5ba2e7985bccbe1c4178b16851b72ecbe1f0bc2a2f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f239acff297f8d2a5b244a81951c23105daf8ef8a26ab502468c1820d7eee0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cdd75821aeadf02ff8efe2a24288452cc022735381ef647cdfc18b88635ad31"
+    sha256 cellar: :any,                 x86_64_linux:  "2f67254049fcca1bfb994d4b2023866d8e47e9dd6452c1bcac0ef61c81aee0b6"
   end
 
   depends_on "go" => :build
