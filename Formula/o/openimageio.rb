@@ -1,10 +1,9 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.readthedocs.io/en/stable/"
-  url "https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.15.0.tar.gz"
-  sha256 "7837a2058638dd9caa352d6936677dba7883105c6db6caf6fb58ba40fa2c12c8"
+  url "https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.16.0.tar.gz"
+  sha256 "5af7221be05bbe69d7ec4eb74b5656c6d15b8d1a332410d6af937b1df48647c0"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
   livecheck do
