@@ -2,8 +2,8 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.67.0",
-      revision: "f849700abc56859745b10be897244d0200fdf4dc"
+      tag:      "0.68.0",
+      revision: "1d66f613d8a13de2f3b12ff45abfaa263ff185c3"
   license "BSD-2-Clause"
 
   bottle do
@@ -21,14 +21,6 @@ class Ponyc < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix install of self-hosted tools on case-sensitive filesystems
-  patch do
-    url "https://github.com/ponylang/ponyc/commit/fd1db495cfb333754434fe141fedc32c975577a7.patch?full_index=1"
-    sha256 "accd264a743c220c681439118c1df88d8da427a3931329e237f21cb5c3549f7e"
-    type :backport
-    resolves "https://github.com/ponylang/ponyc/pull/5752"
   end
 
   def install
