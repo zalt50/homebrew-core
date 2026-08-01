@@ -13,12 +13,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4803a08097f1341b77222ddc764347357fd07ea6364b2ac314ca7933e086367d"
-    sha256 cellar: :any, arm64_sequoia: "d862bdf602ee414ece5ccad27033e55aa158f14bf615fd2d419498bee0d5c07a"
-    sha256 cellar: :any, arm64_sonoma:  "66b6deff16aaf03185e67d11f1abed4a80754b7cb2d5d98af94a01e1b6688caa"
-    sha256 cellar: :any, sonoma:        "d6bdc55e596dcb04cb651a52266e679bcfe56e9927369b0a720bef76454d2281"
-    sha256 cellar: :any, arm64_linux:   "0d6fbb4ad996b54cb8f3341fd66a469d4fa04221a1459643b1e1bf23acbf8008"
-    sha256 cellar: :any, x86_64_linux:  "b644d54a9a0eb4195ee99873113cf4fa423e5a6aa89de56fbdb9f54f55470499"
+    sha256 cellar: :any, arm64_tahoe:   "4c190da88c078eb4990da6810be52a3eb303561a069fbeca645c94a357e211bf"
+    sha256 cellar: :any, arm64_sequoia: "e1cc6e36c4ab0fc5128cff82c4810a1017b64ae8d74faab5eb536fb8f2649598"
+    sha256 cellar: :any, arm64_sonoma:  "4af702260a9dd86f4f5a64eaab501abe9fcf7c24b563e34904671808f9a769e2"
+    sha256 cellar: :any, sonoma:        "97306235fc201805c3d457f74d3e3775b613be952c0f4e915d12eb721a8c0c30"
+    sha256 cellar: :any, arm64_linux:   "fa96df06671f39651187ed8b8028ed686c5a5b0623580f58aa4b75cc8012947b"
+    sha256 cellar: :any, x86_64_linux:  "52030abe22e0b8b153ea3eb29750566f27803f70f2d8168a9c8b39da4d533439"
   end
 
   depends_on "cmake" => :build
