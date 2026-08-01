@@ -1,18 +1,18 @@
 class Asc < Formula
   desc "Fast, lightweight CLI for App Store Connect"
   homepage "https://asccli.sh"
-  url "https://github.com/rorkai/App-Store-Connect-CLI/archive/refs/tags/3.4.0.tar.gz"
-  sha256 "44e826a41d711c587d1f9c0f347f3c075c9a2597d677df05a6417d85e35273c5"
+  url "https://github.com/rorkai/App-Store-Connect-CLI/archive/refs/tags/3.4.1.tar.gz"
+  sha256 "8bd6e617e0615a6e019ff919dd66ca731f8a9dbc7b91691eae9c656d53bc255c"
   license "MIT"
   head "https://github.com/rorkai/App-Store-Connect-CLI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d03871efdaaa75c0938153af6b8c38fec52a34a6ecfbacf1bba15eb4172d2ec9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a5bba9bcf204a760e4b577f3050498bebe95d6500fdae52082a5ff260b3a01a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9627d367fe1c1172349030e4f700d1b944dcd78324cc9eb96690dc7889dff24e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "108bae91daffd92dbd8b170105c13e1e45b59f9ae238bb2ac6880f3796f6fa39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "001cf34f645135fde02a7c17fb58bfad8f05c79617c6b03752309c2dc6691de1"
-    sha256 cellar: :any,                 x86_64_linux:  "b9e8fb94dff48b32a12c56d943df68833acb2080ba06ae85eaed6dc82b79c748"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "768d7c5f72777be060552b3a008d737123c574d1a7378fef56364dff7c6480b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f20fbbe522854388605d162b55142fd2c56c352180f98827dbcecfc217d3e9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19c168b6b2ed497817436ffbaa902795c328134ea9a54a886d900d35c135e56e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1e692b6d27af847082e554d2bba6126058b47481da5840c59e7fd5f55889b6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1806a18bac93dafcbe70d4c3eb2c2254f43689e863c07f474026675fece8fe22"
+    sha256 cellar: :any,                 x86_64_linux:  "cf7044574ba134dde9d7f757c9a59dde35ad3d620d0f98c3a92d3ca44c288db6"
   end
 
   depends_on "go" => :build
