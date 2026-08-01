@@ -6,12 +6,12 @@ class Concord < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a70e67ad165ae20d14db7b5dff728fd4e84daf0fd6954b6a8d88bc725e7dc097"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35aaf6d0af95394344a8a9c9cfcda4f9adb9b181ccee0eab9d053175f2aa4061"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aab0f313495629bab3f52df5d1d95abfd880fa05db5239434f3ef00d7f0f3c90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "807de7a883000f8740044ba5bd63276049f36a71c877834e0c20fc673edec1b1"
-    sha256 cellar: :any,                 arm64_linux:   "6d6b0e3e14be944e923b592ab7d031f7413b35a37d4fe4e7a08b12e1b3112d52"
-    sha256 cellar: :any,                 x86_64_linux:  "e87d0b2d54ce6ddcc5361b413802fadfc5b1425f3ee7cf6e845233094fbea725"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdbeba7b22fee19d90119b06473c787c2a9cc53c32221caca3a82681cc29ca97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7c94acc5f5724807650762eb34f5b7765139a5ea88214fd1a6c7af7cc702a38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "716c4ddb0416f2f1fc34b31c6a57ba18f8ee35ef35b50cc3a83ec5de81bab348"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8ad288eb0fcfe1def82ce9bda1de074497bfb43505a48c2922f5fe30c1567ef"
+    sha256 cellar: :any,                 arm64_linux:   "3cc93f2f3b2a946e45d0573aefb428d10386bce30a0ac03faaccb437b08a9711"
+    sha256 cellar: :any,                 x86_64_linux:  "f13afc3fc89c597f6174d8a7ba104dc23e07224effe6b9930d6bb2ea4503c167"
   end
 
   depends_on "pkgconf" => :build
