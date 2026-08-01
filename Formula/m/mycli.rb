@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/61/46/ac8141299a5159c8cba698cbdc030779cdbfa30c39b70321b98714cbfbda/mycli-2.7.0.tar.gz"
-  sha256 "158eadf522208d471c82159c9ccd5dd90e76b660f7520e0ee91f99fa2f187b0f"
+  url "https://files.pythonhosted.org/packages/f0/02/fc2ae067323b9a453e4bc36c03f8fba8dfeda2c00d9d5947b7d54e23092f/mycli-2.8.0.tar.gz"
+  sha256 "2094021e0370699e17ae6683c05629d0b35041a8626fddcfb6e9657de9f1677c"
   license "BSD-3-Clause"
 
   bottle do
@@ -130,8 +130,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/2a/ae/d4d1835488c0350424009dac5095b9a3e173bee12fd2e421ee27e2142c42/openai-2.48.0.tar.gz"
-    sha256 "231b1e7661dda14574986c2f71451e9d584b7fe69e0ee6480e12ed090b48fc16"
+    url "https://files.pythonhosted.org/packages/75/d8/06fda9685e47d9a8fc177ef57f8af75207938fad49a45ce23bfa7b6a2a5c/openai-2.51.0.tar.gz"
+    sha256 "4d61287c42eba54086d09346e709cbf7f8cec51822efce9cc399450b9385fba5"
   end
 
   resource "pluggy" do
@@ -140,8 +140,8 @@ class Mycli < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "puremagic" do
@@ -255,8 +255,8 @@ class Mycli < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/dd/84/da0e5038228fa34dfd77c5026b173ed035d2a3ba31f1077590c013de2bff/tqdm-4.69.1.tar.gz"
-    sha256 "2be21080a0ce17e902c2f1baeb6a74bf551b67bbdfa4bc0109fad471d0b4cb0d"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   resource "wcwidth" do
