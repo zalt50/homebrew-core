@@ -1,8 +1,8 @@
 class Supabase < Formula
   desc "Postgres development platform"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://registry.npmjs.org/supabase/-/supabase-2.110.0.tgz"
-  sha256 "01a7c827c2e28a7754558626408f62e38b23179fa35d708be19f59be7d262b79"
+  url "https://registry.npmjs.org/supabase/-/supabase-2.111.0.tgz"
+  sha256 "17df2a4c8c59bd6bbbb1ae03bfd6eefc31bef3ef47cf48ad927be7fff12f490b"
   license "MIT"
 
   bottle do
