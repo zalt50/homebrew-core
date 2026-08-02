@@ -1,8 +1,8 @@
 class Nanomsg < Formula
   desc "Socket library in C"
   homepage "https://nanomsg.org/"
-  url "https://github.com/nanomsg/nanomsg/archive/refs/tags/1.2.2.tar.gz"
-  sha256 "3ffeafa9335245a23a99827e8d389bfce5100610f44ebbe4bfaf47e8192d5939"
+  url "https://github.com/nanomsg/nanomsg/archive/refs/tags/1.2.3.tar.gz"
+  sha256 "aa3f501a58435fde639755f9f26c87ba720b386235f32ea795dc9d4dd90bc155"
   license "MIT"
   head "https://github.com/nanomsg/nanomsg.git", branch: "master"
 
