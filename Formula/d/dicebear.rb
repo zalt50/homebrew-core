@@ -1,8 +1,8 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://www.dicebear.com"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-10.3.2.tgz"
-  sha256 "00530170b5031ef73fb3a43658d7121adb7c7616bdfa2666dc2b9fda73f27cdd"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-10.4.0.tgz"
+  sha256 "e26cfb08cf4aa183d3701f3a04400a2deef68a9f483d088273beb498f97e0574"
   license "MIT"
 
   bottle do
