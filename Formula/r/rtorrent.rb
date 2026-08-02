@@ -1,8 +1,8 @@
 class Rtorrent < Formula
   desc "Ncurses BitTorrent client based on libtorrent-rakshasa"
   homepage "https://github.com/rakshasa/rtorrent"
-  url "https://github.com/rakshasa/rtorrent/releases/download/v0.16.18/rtorrent-0.16.18.tar.gz"
-  sha256 "0c7d4902cc914fabe984284330333c7b82aec9951c55915712cdd10acaae65cb"
+  url "https://github.com/rakshasa/rtorrent/releases/download/v0.16.19/rtorrent-0.16.19.tar.gz"
+  sha256 "e082e625fffd62aa746352e268b1aa06bac732af23a0f8b7cff2b88306b6de8c"
   license "GPL-2.0-or-later"
 
   bottle do
