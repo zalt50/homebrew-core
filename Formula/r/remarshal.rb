@@ -9,12 +9,12 @@ class Remarshal < Formula
   head "https://github.com/remarshal-project/remarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f403683ce638ad7949b0f44a1d3fa78856ff6eb6cd6176d23122a3e67cb3323"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6d0f3f7820299a8fb6e99912ee865038cace452e9a3f2c7db394070b7c91cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f352ffd872e8483add252d9fa042a84ce0017f77a373c7a0e46be41edd12b69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac33501cc071769472b91bad73d2b123f472656d068ed4ca6f91b456758f796d"
-    sha256 cellar: :any,                 arm64_linux:   "8921cfb65a62d382d3086c9298c79197eba1e076a0576629a63107b85f046435"
-    sha256 cellar: :any,                 x86_64_linux:  "b257d06ad54e9e6d4191af0f3020ecd281ef850836c84d5eb5930a7950657289"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7c84287f2315b534728121437eee283e2af1a04e49e2fb959320bb920d395de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c0ba21996cb4d714193dca86c9f73316f5c39451f4aca90ca877830d0704364"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78a6b00c4ed321b4238560371fc574ebc1915f27b7c8b168d044255d6ac723d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed395fa36d5f5ea3ed7bd4193b6b7ac8aee25063eb58170e5f717e0a10302811"
+    sha256 cellar: :any,                 arm64_linux:   "cb238cae65a309c17c65d24a20bd86fef8a1d74b1d8825004e212efa51d4db4a"
+    sha256 cellar: :any,                 x86_64_linux:  "e2ec990791f0aecc0b6f0774b64fc91f5d1f669fa10425feba271ccb441ef9c6"
   end
 
   depends_on "python@3.14"
