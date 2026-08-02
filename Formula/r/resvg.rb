@@ -1,19 +1,19 @@
 class Resvg < Formula
   desc "SVG rendering tool and library"
   homepage "https://github.com/linebender/resvg"
-  url "https://github.com/linebender/resvg/archive/refs/tags/v0.48.0.tar.gz"
-  sha256 "f94424d043f8e13e7e1d987810e4fdc42e88fd72916daca8bebcdedc4cc586db"
+  url "https://github.com/linebender/resvg/archive/refs/tags/v0.48.1.tar.gz"
+  sha256 "40dafea6b4b9d01e9d28b6d49f1e912daf3e9055676ad9179a5a2db6e7386945"
   license "MPL-2.0"
   compatibility_version 1
   head "https://github.com/linebender/resvg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e2c02e78cf6ee3f5671f624b6e3c63e327a34804f3b7d22d42f05a6f1639f6fe"
-    sha256 cellar: :any, arm64_sequoia: "8fa6155415714e2bd6548504f813ca102e82977269a8e2a49542e7b734eb247f"
-    sha256 cellar: :any, arm64_sonoma:  "8227b370b52bdd99f6c4bb8f27605dfe8e293414c391e50fa3733f8aae190b3e"
-    sha256 cellar: :any, sonoma:        "ad8ea81b287bb5625d22bdc6873147b1078e45921a733443c3b677eb52e50834"
-    sha256 cellar: :any, arm64_linux:   "7771286fed4fd43d7127805ae8e990a9d8bbf761a14120b1a5243b5f9a8da14e"
-    sha256 cellar: :any, x86_64_linux:  "193eb64afd3efca3c188d3cb50899db7651ad88fecbdae498be69e8f45e47162"
+    sha256 cellar: :any, arm64_tahoe:   "449716d5a7f828b57202b65c37fb27d946bc77a2ab416a41e6fc3520c962a7e3"
+    sha256 cellar: :any, arm64_sequoia: "58c2ab3142ad4b2a3000c06c2f660579deb4b39a3bcf5a310a27d71d8623ca9b"
+    sha256 cellar: :any, arm64_sonoma:  "208e78e1f8c07a4f6772a9865ef1adcfdd39e867b5cd6974a96be57606d6ab21"
+    sha256 cellar: :any, sonoma:        "7c76b84eea40473a25dfa1402103736f2b180c95b379b0509c3fb8cff6981772"
+    sha256 cellar: :any, arm64_linux:   "dcf43aaa57996d454fb087c660a18515b90b122c49b43071d463232df975fb02"
+    sha256 cellar: :any, x86_64_linux:  "7b9945b64cabc2a23d70a6bf65f3b1c3a71adb79c6f988c4a841aad9d6f6fcae"
   end
 
   depends_on "cargo-c" => :build
