@@ -9,12 +9,13 @@ class Glances < Formula
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7eb8bc81724f15675f39b1f241ee7eaf7ba0bda7d11952a291549005ee9850b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6278bc7ce7e74a1f64046acd2a687858e7b483138c9f48a859f62b8bc114f9f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2681d6b8b502bf4fe50ffbd414bebc971514a4bbb17e0e4fd1f58d8ffb11b96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2579354a95f4e3a786ce593058857fc9e49923e82ff02e17ed670d64934fc86e"
-    sha256 cellar: :any,                 arm64_linux:   "0646018af948b238a4b398e25c8af8a68d08d0e67a95c1bd5002bb04f894ab72"
-    sha256 cellar: :any,                 x86_64_linux:  "4856f95edafc604cf821297c6b6a65bb35b7eee3bee7607313403233c0fa3519"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4885831f9cf3e53500d545b86da06a8f71f90ef331082b8a857fa7b68afa420e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33ed0af3eee8a6617465ab4bdaea387e8f5633c35b9bf50fe5ed56c91c68de64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "343982f63020f04af3f4b9bba1e24298209934d92a9e935559c5b89ab3bc3626"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93a3902df57a08b444f38e37cb45875e180a6616e559966da430a2fbd71205b5"
+    sha256 cellar: :any,                 arm64_linux:   "feac43b0f9e390fc8f8e367c70d1043985c7ba03a11d81524c855ec6e79b67e1"
+    sha256 cellar: :any,                 x86_64_linux:  "9e8296aa0c6a35374bf65ce60ca440b83f7591d36b18b6cfa9df37dd772692f0"
   end
 
   depends_on "rust" => :build # for annotated-docs
@@ -175,9 +176,6 @@ class Glances < Formula
   def install
     virtualenv_install_with_resources
     generate_completions_from_executable(bin/"glances", "--print-completion", shells: [:bash, :zsh])
-    # Workaround limited netifaces2 functionality on macOS
-    # https://github.com/nicolargo/glances/issues/3219
-    inreplace libexec/"share/doc/glances/glances.conf", /(port_default_gateway)=True/, "\\1=False" if OS.mac?
   end
 
   test do
