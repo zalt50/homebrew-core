@@ -3,8 +3,8 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/remarshal-project/remarshal"
-  url "https://files.pythonhosted.org/packages/61/91/31dc16d4e47135b870835a60d342977d50f315440f4109521bc6ef28a42b/remarshal-2.1.3.tar.gz"
-  sha256 "0f569eeebf7b4ec8a821385cb82dd3120607c4ef75766762f4771cf2720b8c8d"
+  url "https://files.pythonhosted.org/packages/26/6b/9817fbf9cabb8914313c546b5d55653148a7dbe612a8dbaa992d05a6dff7/remarshal-2.1.4.tar.gz"
+  sha256 "510caa7f2aa48437e8fa6a316782bbec5235f3fad09f20ae246e4e372a53902d"
   license "MIT"
   head "https://github.com/remarshal-project/remarshal.git", branch: "master"
 
@@ -54,8 +54,8 @@ class Remarshal < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
-    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "u-msgpack-python" do
