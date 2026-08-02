@@ -1,8 +1,8 @@
 class Mlkit < Formula
   desc "Compiler for the Standard ML programming language"
   homepage "https://melsman.github.io/mlkit"
-  url "https://github.com/melsman/mlkit/archive/refs/tags/v4.7.14.tar.gz"
-  sha256 "2fdffd543c9d8337e8a20d9270f5b1738873b78b631daa46735d5fd2a6b80ece"
+  url "https://github.com/melsman/mlkit/archive/refs/tags/v4.7.22.tar.gz"
+  sha256 "b8dcf6047595da0bd1a5a18168d7f430eb74e9927c092d20bfeacecea9b8a397"
   license "GPL-2.0-or-later"
   head "https://github.com/melsman/mlkit.git", branch: "master"
 
@@ -29,6 +29,10 @@ class Mlkit < Formula
   end
 
   def install
+    # AArch64 inline asm is gated on the compiler rather than the target arch, breaking x86_64 clang
+    # https://github.com/melsman/mlkit/commit/f1811c7c8da109f4ef1a9d6314edb20f65d84cc6
+    inreplace "src/Runtime/Region.c", "#ifdef __clang__", "#if defined(__aarch64__)"
+
     system "sh", "./autobuild"
     system "./configure", "--prefix=#{prefix}"
 
