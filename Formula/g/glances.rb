@@ -175,9 +175,6 @@ class Glances < Formula
   def install
     virtualenv_install_with_resources
     generate_completions_from_executable(bin/"glances", "--print-completion", shells: [:bash, :zsh])
-    # Workaround limited netifaces2 functionality on macOS
-    # https://github.com/nicolargo/glances/issues/3219
-    inreplace libexec/"share/doc/glances/glances.conf", /(port_default_gateway)=True/, "\\1=False" if OS.mac?
   end
 
   test do
