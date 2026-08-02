@@ -1,8 +1,8 @@
 class Jags < Formula
   desc "Just Another Gibbs Sampler for Bayesian MCMC simulation"
   homepage "https://mcmc-jags.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/mcmc-jags/JAGS/4.x/Source/JAGS-4.3.2.tar.gz"
-  sha256 "871f556af403a7c2ce6a0f02f15cf85a572763e093d26658ebac55c4ab472fc8"
+  url "https://downloads.sourceforge.net/project/mcmc-jags/JAGS/5.x/Source/JAGS-5.0.0.tar.gz"
+  sha256 "64fcd4883b8a8ee907722f49366cc9f277477a0647ada61356f17568f84ffff8"
   license "GPL-2.0-only"
 
   livecheck do
@@ -22,7 +22,8 @@ class Jags < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7357faec7f40014256713e322f796e39c5600cfe872753b2fc15b9f3dfefd2"
   end
 
-  depends_on "gcc" => :build # for gfortran
+  depends_on "pkgconf" => :build
+  depends_on "gcc"
   depends_on "openblas"
 
   def install
