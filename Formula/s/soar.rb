@@ -11,8 +11,8 @@ class Soar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "c4109cefcb788a75ba90a78ad2555820d070a69fdb98a270d1c92a64f75ae6bf"
-    sha256 cellar: :any, x86_64_linux: "5e9bae96ceb078391a4b143b8451e2382ae851aae41a4464fe43d373c2d75f57"
+    sha256 cellar: :any, arm64_linux:  "2ea838b4d80fedff52271a5b32d511b6f42772b61c3b66c78131f35c7e0c958b"
+    sha256 cellar: :any, x86_64_linux: "d418e150ff0efdd2d2d397ee4b621ec8bca801aba5651e902960cb05a60a8f47"
   end
 
   depends_on "rust" => :build
