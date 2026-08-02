@@ -3,8 +3,8 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://codeberg.org/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/7e/78/17e075f6faf06a36ed01030989005ad0f4a4a33902eda0be179719014495/gallery_dl-1.32.8.tar.gz"
-  sha256 "a1358f90a08f179aa531afe43c538c7cb1827bebe296741285d610ad22849884"
+  url "https://files.pythonhosted.org/packages/b1/60/5131cd00162b86dbf3f4528d348eba2f97bc22e2b452855b23c51d5fe340/gallery_dl-1.32.9.tar.gz"
+  sha256 "6847cf1b8fcb231b3a214965470ac64bfbe4f63e92f1d7dbda2d533c3930f07d"
   license "GPL-2.0-only"
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
@@ -98,8 +98,8 @@ class GalleryDl < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/f7/bc3a25c5ec26ce62ce487690becc2f3710bbc7b33338f005ad390db0b986/websockets-16.1.1.tar.gz"
-    sha256 "db234eda965dcce15df96bb9709f587cd87d4d52aaf0e80e2f34ec04c7670c57"
+    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
+    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
   end
 
   resource "yt-dlp-ejs" do
