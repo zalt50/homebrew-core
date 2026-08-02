@@ -1,8 +1,8 @@
 class Vpcs < Formula
   desc "Virtual PC simulator for testing IP routing"
   homepage "https://vpcs.sourceforge.net/"
-  url "https://github.com/GNS3/vpcs/archive/refs/tags/v0.8.3.tar.gz"
-  sha256 "73018c923fdb8bbd7d76ddf4877bb7b3babbabed014f409f6b78a2e2b0a33da7"
+  url "https://github.com/GNS3/vpcs/archive/refs/tags/v0.8.4.tar.gz"
+  sha256 "2b816f8943cddc83f450812d3969da22e97314208221a23df9658887aea5a587"
   license "BSD-2-Clause"
 
   bottle do
