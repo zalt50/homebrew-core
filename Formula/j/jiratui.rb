@@ -3,8 +3,8 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/c2/27/490d922dc5a8c1501d4917371c59e667c35cf7f456ac4954a24cdf283fc6/jiratui-1.11.2.tar.gz"
-  sha256 "662e61f861f3f807a7012d56666ceae0ca98dca442f1e51989f458c77ac77f7d"
+  url "https://files.pythonhosted.org/packages/79/eb/288a867b43b1f1ce167601fc3c231bd20978b6426b00f72f4377c2cf91f9/jiratui-1.12.0.tar.gz"
+  sha256 "9c5ea350be556f97bc1b31c2f66a21df7e7f19937c44013c9c534ab259c49ebb"
   license "MIT"
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
@@ -55,8 +55,8 @@ class Jiratui < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/81/45/d45f94fa38b199862959cd7b5461a31f03746d75ef59363339fc0c394345/gitpython-3.1.56.tar.gz"
-    sha256 "127adf5c73f1a822e368301c4d5ffa5d305ce611eccab76f3336f9380a78ad0b"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "h11" do
