@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/00/0b/98a381e4bbc766433af5c98ca9d56ae14949d20e2059eb4f3cc0d76c288d/locust-2.46.2.tar.gz"
-  sha256 "8792329639c5b4491c1d29458280daf80eee68e0acd5847b60f529bf092e8f08"
+  url "https://files.pythonhosted.org/packages/bc/f7/dfdbc33ad48daaeb3046688df0a461749db730282cc6b3558b7495ac36d6/locust-2.46.3.tar.gz"
+  sha256 "b1d313db9df0a4036d4d905b1dc8585d020a7299239a1bb2e2885b71389253c0"
   license "MIT"
 
   bottle do
@@ -145,8 +145,8 @@ class Locust < Formula
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/fb/a0/f75491f942184d9960b15e763270f765fe9f239745ca5f9e16289011aed4/python_engineio-4.13.3.tar.gz"
-    sha256 "572b7783e341fed21edbc7cea297ccd378dad79265fdde96aa4664420a7c06c9"
+    url "https://files.pythonhosted.org/packages/cf/56/10a529f5396df653181f747997f970dba31f8f2eac3b9a88c1f9d7bb25c3/python_engineio-4.13.4.tar.gz"
+    sha256 "413cb98d56c62f0f5ef29931592a360d437b82b3fa7ab415da3f6c7d3ebc0cb7"
   end
 
   resource "python-socketio" do
