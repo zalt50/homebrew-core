@@ -1,8 +1,8 @@
 class Aqua < Formula
   desc "Declarative CLI Version manager"
   homepage "https://aquaproj.github.io/"
-  url "https://github.com/aquaproj/aqua/archive/refs/tags/v2.62.2.tar.gz"
-  sha256 "9c533de56b097ce4f0a31fb72183db2cf98715eb7320c4786d502a9281fce24f"
+  url "https://github.com/aquaproj/aqua/archive/refs/tags/v2.62.3.tar.gz"
+  sha256 "fceb5a55a9e8dc7996ed8b6cafbb463997c82ba44e07c39ffc5f0b8fa3f67417"
   license "MIT"
   head "https://github.com/aquaproj/aqua.git", branch: "main"
 
