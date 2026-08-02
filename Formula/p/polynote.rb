@@ -3,9 +3,8 @@ class Polynote < Formula
 
   desc "Polyglot notebook with first-class Scala support"
   homepage "https://polynote.org/"
-  # TODO: consider switching back to dist when available: https://github.com/polynote/polynote/issues/1486
-  url "https://github.com/polynote/polynote/archive/refs/tags/0.7.2.tar.gz"
-  sha256 "6802606b38c34b7e0e3717675f6d92cae5419d5927314c51b238bbd15f1d73e4"
+  url "https://github.com/polynote/polynote/releases/download/0.7.2/polynote-dist.tar.gz"
+  sha256 "a43afd3a19343b93ec2d323731f18c296ed0af33b7a56420af2ade40dd14c17b"
   license "Apache-2.0"
 
   # Upstream marks all releases as "pre-release", so we have to use
@@ -35,9 +34,7 @@ class Polynote < Formula
     sha256               x86_64_linux:  "27764487ba7979d2f67f53d6828aef8d2d5a56a9aea1972c0e9c4a5e6b1fe542"
   end
 
-  depends_on "node" => :build
   depends_on "python-setuptools" => :build # to detect numpy (and avoid building numpy when we use jep >= 4.3)
-  depends_on "sbt" => :build
   depends_on "numpy" # used by `jep` for Java primitive arrays
   depends_on "openjdk"
   depends_on "python@3.14"
@@ -60,15 +57,7 @@ class Polynote < Formula
     java_version = Formula["openjdk"].version.major.to_s
     ENV["JAVA_HOME"] = java_home = Language::Java.java_home(java_version)
 
-    # https://github.com/polynote/polynote/blob/master/DEVELOPING.md#building-the-distribution
-    cd "polynote-frontend" do
-      system "npm", "install", *std_npm_args(prefix: false)
-      system "npm", "run", "dist"
-    end
-    system "sbt", "dist"
-
-    libexec.mkpath
-    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "target/polynote-dist.tar.gz"
+    libexec.install Dir["*"]
     rewrite_shebang detected_python_shebang, libexec/"polynote.py"
 
     resource("jep").stage do
