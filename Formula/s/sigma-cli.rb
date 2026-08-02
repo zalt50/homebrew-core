@@ -6,6 +6,7 @@ class SigmaCli < Formula
   url "https://files.pythonhosted.org/packages/13/63/f6bae3c67004d3f0f496805d25cf8d7e355c59341b58ae534778e33c17be/sigma_cli-3.1.0.tar.gz"
   sha256 "e87e4f241b309e84f67fb38aa768ddd6d911f90e061c885c0aa16a6dcb7fbad7"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
@@ -23,9 +24,8 @@ class SigmaCli < Formula
 
   conflicts_with "open-simh", because: "both install `sigma` binaries"
 
-  # TODO: Add back `pysigma-backend-sqlite` when compatabible with sigma_cli>=2
-  # https://github.com/SigmaHQ/pySigma-backend-sqlite/blob/main/pyproject.toml#L18
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: "certifi",
+                extra_packages:   "pysigma-backend-sqlite"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
@@ -90,6 +90,11 @@ class SigmaCli < Formula
   resource "pysigma" do
     url "https://files.pythonhosted.org/packages/92/e6/1b200cea322b987cc1e7150acec33158c51fedc60bc2ad5363e3e96d3f51/pysigma-1.4.0.tar.gz"
     sha256 "0a9cc76f76470e8097543b653aecf91e59f7de1199c67e36fc57f2831b35eed7"
+  end
+
+  resource "pysigma-backend-sqlite" do
+    url "https://files.pythonhosted.org/packages/45/49/4589f6b9d87133bfdaab39a8b49ed05a84c07ea4946e8b1e7b8551c02476/pysigma_backend_sqlite-1.2.2.tar.gz"
+    sha256 "3970518045192d5aeb93f444221dce4661388e7b5b1aab289568930dacbfd247"
   end
 
   resource "pyyaml" do
