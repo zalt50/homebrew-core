@@ -1,8 +1,8 @@
 class Dhcpdump < Formula
   desc "Monitor DHCP traffic for debugging purposes"
   homepage "https://github.com/dhcpdump-org/dhcpdump"
-  url "https://github.com/dhcpdump-org/dhcpdump/releases/download/v1.10/dhcpdump-1.10.tar.xz"
-  sha256 "939bbf429cf46425cdd912486d0c2e25041ca4e7b6bd5bcf0f839e61a43a8604"
+  url "https://github.com/dhcpdump-org/dhcpdump/releases/download/v2.00/dhcpdump-2.00.tar.xz"
+  sha256 "41c79aa975662f33b1b7acaa0ab4c071b654cc78166c6475e82e3f0cfbe4b009"
   license "BSD-2-Clause"
 
   livecheck do
@@ -23,13 +23,14 @@ class Dhcpdump < Formula
   uses_from_macos "libpcap"
 
   def install
-    inreplace "Makefile", "-Wl,-z,relro -Wl,-z,now", "" if OS.mac?
-    system "make", "CFLAGS=-DHAVE_STRSEP"
+    # the interactive TUI (-t) needs yascreen, which isn't packaged
+    system "make", "NO_TUI=1"
     bin.install "dhcpdump"
     man8.install "dhcpdump.8"
   end
 
   test do
-    system bin/"dhcpdump", "-h"
+    # live capture needs root; this capture holds no DHCP traffic, so nothing is printed
+    assert_empty shell_output("#{bin}/dhcpdump -r #{test_fixtures("test.pcap")} 2>&1")
   end
 end
