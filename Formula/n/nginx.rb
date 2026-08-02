@@ -15,12 +15,13 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e0773ed80b56bf9c51c0022faa28dee9ebc329e1637e4d620edf5c54dc621928"
-    sha256 arm64_sequoia: "56d837f739f2f8f7bb3184f25ff9cc5d2bb77e9d0bca03606287871a943a843e"
-    sha256 arm64_sonoma:  "7fde7eda4f038ef3001e97f1c4937c36bb3091c299787d1358703c84bdb824d8"
-    sha256 sonoma:        "5eba9b21bfd0bab7ab89341b5b85a8ca0051d3d3b50639ffc45f4aac18061e57"
-    sha256 arm64_linux:   "c130638817fe45b3986dbdce98fa991faa81d560a939091a9e6ea337606d07b7"
-    sha256 x86_64_linux:  "32e55bde0724ffac242a88765d9436c553abcd43ca1499bb6a4d2d24fef620a5"
+    rebuild 1
+    sha256 arm64_tahoe:   "c43bb6190e50282b4d63710a3cdeee7ddba11c4791305d06eeb58182cd70dd19"
+    sha256 arm64_sequoia: "d40751783d21f723fd931d65f8fbf5da8ff1d350d653ff0857d3c1288daf4e3b"
+    sha256 arm64_sonoma:  "0b2ae8178c6fc14e8cf869de2e0a7ea5b131fafcdddd79018229ca79578d50fc"
+    sha256 sonoma:        "cc16dd0eded86e701a8da80dcce7d8e8c5baa7f58f91cd29c7597b97d141f193"
+    sha256 arm64_linux:   "475264fb6dbac5c2c925238a6ec235883159001accd3b8904775c6565f1afe57"
+    sha256 x86_64_linux:  "0696880723841d787a3f1ee617ca249df307e16b33ccc1a24874e1a7c73d9929"
   end
 
   depends_on "openssl@3"
