@@ -1,8 +1,8 @@
 class PvMigrate < Formula
   desc "CLI tool to migrate or backup/restore Kubernetes persistent volumes"
   homepage "https://github.com/utkuozdemir/pv-migrate"
-  url "https://github.com/utkuozdemir/pv-migrate/archive/refs/tags/v3.6.0.tar.gz"
-  sha256 "4ee65ebf3d2d2aaabcb1b684dce78e631692513963e6ce749c3a5bba57f76edf"
+  url "https://github.com/utkuozdemir/pv-migrate/archive/refs/tags/v3.6.1.tar.gz"
+  sha256 "23c6811740ccb3135151e3083bd5500f336161d0a70e76c68d8b9f87d85d071a"
   license "Apache-2.0"
   head "https://github.com/utkuozdemir/pv-migrate.git", branch: "main"
 
@@ -12,12 +12,12 @@ class PvMigrate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7aee03994dbfd423291743c311f1221fd487e3cac58fae4d0974773ecf598a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e40dcf449eda9466eeeb23cad0a15152dc12313928b77a40491ac6798f11ba35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "698c6f46cf7bbdddcc8c6a1384792f31f3b82945e2b0abbd1a287357edecdbf3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee6dc14f04241daf4a8b1ec0fb552b6a20f4489dd57b7843c5efb195068f5ff1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c594a875618486488fce75fbcb9b2ef6f201240119dc512aaed8ea86d2d1dce9"
-    sha256 cellar: :any,                 x86_64_linux:  "d6a8e387ba5ec4c96d45fadf694378bb1670a58fa952c13c175f9b83a40688d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55c3d79c5a9509500a026881fa7831b504a76e4e86dc8d63af15357255a3b18a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d01a496c826654a60c5f36010a6158a5f25d23044a45d0f1d13aaeb08eec6b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cab18802024f8e1c3d712a3fbd604e36f2a163bfdff6fd471bcc0d85575f3a80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5457806424819d2917c9184d0c8ed4d5dbb2fa9e058caa554f58fa5648e42044"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3230c226e6cc274dc8ab5454c4ee5c38eb219f7755ee29d7fd78157a6bfa9204"
+    sha256 cellar: :any,                 x86_64_linux:  "d50dbc844a427cb87406f578461376fb803ccfa1c6ffdb2512fcb073693e236d"
   end
 
   depends_on "go" => :build
