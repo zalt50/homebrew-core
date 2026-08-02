@@ -130,12 +130,6 @@ class Nginx < Formula
     end
 
     prefix.install_symlink dst => "html"
-
-    # for most of this formula's life the binary has been placed in sbin
-    # and Homebrew used to suggest the user copy the plist for nginx to their
-    # ~/Library/LaunchAgents directory. So we need to have a symlink there
-    # for such cases
-    sbin.install_symlink bin/"nginx" if rack.subdirs.any? { |d| d.join("sbin").directory? }
   end
 
   def caveats
