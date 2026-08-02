@@ -3,8 +3,8 @@ class Fanficfare < Formula
 
   desc "Download fanfiction and original stories as e-books"
   homepage "https://github.com/JimmXinu/FanFicFare"
-  url "https://files.pythonhosted.org/packages/1b/84/339dfd4957851942ec2599bc476c23b5115ac72af83a3658feabb293cee6/fanficfare-4.59.0.tar.gz"
-  sha256 "3bf35e9a2d6ca768913341136943ebb29350acf7f5bed5e7c5fb97343c415253"
+  url "https://files.pythonhosted.org/packages/f8/76/947d29633dbf681f1ad41432fb7d6c213ce84b50540b41aa7a675649bd64/fanficfare-4.60.0.tar.gz"
+  sha256 "c32a7f242a52e72926d530d2649ca1985019afae6332a1a53795a6d8085abaf5"
   license "Apache-2.0"
   head "https://github.com/JimmXinu/FanFicFare.git", branch: "main"
 
@@ -26,8 +26,8 @@ class Fanficfare < Formula
                 exclude_packages: "certifi"
 
   resource "apsw" do
-    url "https://files.pythonhosted.org/packages/9a/2a/ec1dfda955cda4b8d77b076553b87d428315bd3a17ea4286aa9dc40901fe/apsw-3.53.3.1.tar.gz"
-    sha256 "7684d24e77dc9e3b301ee5374a8a9501ad8a85b821ce85391260a2448dd02323"
+    url "https://files.pythonhosted.org/packages/3b/a3/404d93429ad78385158b277ddd4929137eb279b047d892c24b8d75237119/apsw-3.53.4.0.tar.gz"
+    sha256 "4250fab667cc41c55170028ab095a9d4a4ae66363f4bc0720771c20519702625"
   end
 
   resource "beautifulsoup4" do
