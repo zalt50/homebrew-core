@@ -47,7 +47,7 @@ class Opensearch < Formula
       touch "config/jvm.options.d/.keepme"
 
       # Move config files into etc
-      (etc/"opensearch").install Dir["config/*"]
+      pkgetc.install Dir["config/*"]
     end
 
     inreplace libexec/"bin/opensearch-env",
@@ -59,22 +59,17 @@ class Opensearch < Formula
                 libexec/"bin/opensearch-plugin",
                 libexec/"bin/opensearch-shard"
     bin.env_script_all_files(libexec/"bin", JAVA_HOME: formula_opt_prefix("openjdk@25"))
+
+    (var/"lib/opensearch").mkpath
+    (var/"log/opensearch").mkpath
+    (var/"opensearch/plugins").mkpath
+    (var/"opensearch/extensions").mkpath
+    libexec.install_symlink pkgetc => "config"
+    libexec.install_symlink var/"opensearch/plugins"
+    libexec.install_symlink var/"opensearch/extensions"
   end
 
   post_install_steps do
-    mkdir_p "lib/opensearch", base: :var
-    mkdir_p "log/opensearch", base: :var
-    unless_path_exists "{{libexec}}/config" do
-      symlink "{{etc}}/opensearch", "config", target_base: :libexec
-    end
-    mkdir_p "opensearch/plugins", base: :var
-    unless_path_exists "{{libexec}}/plugins" do
-      symlink "{{var}}/opensearch/plugins", "plugins", target_base: :libexec
-    end
-    mkdir_p "opensearch/extensions", base: :var
-    unless_path_exists "{{libexec}}/extensions" do
-      symlink "{{var}}/opensearch/extensions", "extensions", target_base: :libexec
-    end
     unless_path_exists "{{etc}}/opensearch/opensearch.keystore" do
       run "opensearch-keystore", args: ["create"], base: :bin
     end
