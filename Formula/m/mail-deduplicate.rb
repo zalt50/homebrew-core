@@ -3,8 +3,8 @@ class MailDeduplicate < Formula
 
   desc "CLI to deduplicate mails from mail boxes"
   homepage "https://kdeldycke.github.io/mail-deduplicate/"
-  url "https://files.pythonhosted.org/packages/eb/55/7c0403d149046cbdfcaebe2299454d0bc4d33e6ac41f8651a8cc9fbe48d5/mail_deduplicate-9.0.0.tar.gz"
-  sha256 "86d6d116b0d07a0308c03f74b4f138df2db221c72ca8bb9e9922010570bea5a0"
+  url "https://files.pythonhosted.org/packages/97/76/ad61fa37b65047cffbf8196ebf6379e41afbf09304ffa760eda2b6ebda97/mail_deduplicate-9.1.0.tar.gz"
+  sha256 "ea3f91b5576cdea67c40d6842dd1f2ff01beda2430d34b871ff55db73c3ff6c6"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
@@ -40,8 +40,8 @@ class MailDeduplicate < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/60/2f/27d20ac136d08bc95a759fb7c503a2d4cb3391461b9fb33ff32f1ddd014a/click_extra-8.6.0.tar.gz"
-    sha256 "63f739447522a6aa2d64d656aeb0f967826f2dfba774fc76e117b84717853733"
+    url "https://files.pythonhosted.org/packages/65/b4/f373ae3338a2364411ec78d2c891d528958acd9c45cb3165099adf864fc5/click_extra-8.8.0.tar.gz"
+    sha256 "e65ffaf55b93cc5b984d01b1e200918c44b93f0c810f27114ac9ea62eda9d871"
   end
 
   resource "cloup" do
@@ -55,13 +55,18 @@ class MailDeduplicate < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/be/e3/b04ca89a5b48424fc7df7dc4131ea4ffd8efa8788590163c2f777a02b959/extra_platforms-13.4.0.tar.gz"
-    sha256 "d3d07e1afeaa9cdd9c6c4b716e81c2b18c7af1b6d68c157c1b339b31f6597903"
+    url "https://files.pythonhosted.org/packages/ea/85/fca1871c5a7662b54ae07798e4d4890825640ee158d87df5bcfb487c5e07/extra_platforms-13.5.2.tar.gz"
+    sha256 "435510ff55885caa4199fb7f698b3a74ca00e47c0e9e3352c6b9855b790efabd"
   end
 
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/46/58/8c37dea7bbf769b20d58e7ace7e5edfe65b849442b00ffcdd56be88697c6/tabulate-0.10.0.tar.gz"
     sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "wcmatch" do
@@ -72,11 +77,6 @@ class MailDeduplicate < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
     sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
-  end
-
-  resource "whenever" do
-    url "https://files.pythonhosted.org/packages/6d/40/94856fe2439c4b8162d1a23b4cf3a48bb00bed0ed7b8d10add40988fa555/whenever-0.10.3.tar.gz"
-    sha256 "af8958c870bd178742f0089c3552d5702241cab1f4b6bdfd3b03111db4bc2150"
   end
 
   def install
