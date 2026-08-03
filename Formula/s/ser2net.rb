@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.6.7.tar.gz"
-  sha256 "6b921bc7efb1b9a8a78268d63332701902cc1c8dbac51842d46ede6ffb5fa2a4"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.6.8.tar.gz"
+  sha256 "e651adcc4cc0d0ceaa36e5997dab9ea7f8aea732b4c87ba6018d2dcc88fbe8e3"
   license "GPL-2.0-only"
 
   livecheck do
@@ -20,6 +20,7 @@ class Ser2net < Formula
   end
 
   depends_on "gensio"
+  depends_on "libxcrypt" # for `crypt_r`
   depends_on "libyaml"
 
   on_linux do
