@@ -6,12 +6,11 @@ class Openlore < Formula
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "83e152c669038230d0d49106361e85b587edb494b95f9c2d02fa555697364dd1"
-    sha256               arm64_sequoia: "3974fa853a57f1ec310c8d118aad98a48e9298518ce821fb350880cc15f0de95"
-    sha256               arm64_sonoma:  "f21059aaba7bb09e0675a65a496318a286b6ef4733955864cae7e48694ccd6aa"
-    sha256               sonoma:        "f9e65965f50bbfefe3dcd358ae736a56375ae39999a44d6f1c907b162873e8b1"
-    sha256 cellar: :any, arm64_linux:   "a9fb99225f8bd96c4fd1ee36e62ed7b6c5e4206609469f98e5a7b435bdd81a57"
-    sha256 cellar: :any, x86_64_linux:  "e33333087d016b471632fbdcfd643a611987ecc5774f589b9cbeb6f17960da66"
+    sha256               arm64_tahoe:   "1d8fa585cbcf3c04eff5df9eb0ff6bd4d9f453f17a1c353be34fca423dc279db"
+    sha256               arm64_sequoia: "f4e9fb2d54cb94e5cad164a41595d1c13e6ddb42f205651c575ad5db5f3854e0"
+    sha256               arm64_sonoma:  "516e8374479c6408c39efcf0aadc522d9d6c52e43f5f45e4e8d8d002a51d1d0f"
+    sha256 cellar: :any, arm64_linux:   "9f7ebb51ad9b00e1d6482584ca47cc3bb4171ba1c7e420ad6909ca7069fcac5e"
+    sha256 cellar: :any, x86_64_linux:  "f72a13b511f56e1cc75633121ad52c981ed386397a6916a6b9836544cf345f52"
   end
 
   depends_on "c-ares"
