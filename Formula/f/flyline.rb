@@ -1,8 +1,8 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "42893aed49f5172cc61a6c7d1dbdca11eacbe8c1a9a783a993ae841b45d78e42"
+  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "f0e2dbd1d094f946b91a0015bbf3c9f6a05edf8161df8c35317e35cba47f1c12"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
@@ -30,6 +30,8 @@ class Flyline < Formula
       input.puts "stty rows 80 cols 130"
       input.puts "export LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm"
       input.puts "enable flyline"
+      # The terminal backend blocks on a cursor position report for each capability it probes
+      input.write "\e[1;1R" * 10
       sleep 2
       input.puts "flyline changelog | grep -F 1.3.0"
       sleep 2
