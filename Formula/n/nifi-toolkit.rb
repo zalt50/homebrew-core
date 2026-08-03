@@ -7,7 +7,7 @@ class NifiToolkit < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1ad300d43fe3948bf203ae735fa209d1a0eeeb3f68be7fb735c40e2f8719cc02"
+    sha256 cellar: :any_skip_relocation, all: "017fbc2b448cda876c98fd14422cba80a1a4c053845724a7cc194607e512a340"
   end
 
   depends_on "openjdk@21"
