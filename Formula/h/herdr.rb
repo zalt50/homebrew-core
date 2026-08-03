@@ -1,9 +1,9 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://github.com/herdrdev/herdr/archive/refs/tags/v0.7.5.tar.gz"
-  sha256 "5ea0f1003af1801a6a85d201b6fa7e1de46686fccb7df1d3fa3a03c4ec2be68c"
-  license "AGPL-3.0-or-later"
+  url "https://github.com/herdrdev/herdr/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "47bdb0753beb8a6b157cf2fec26fbe6b787f85ffea0dde579b0001d6cd663572"
+  license "Apache-2.0"
   head "https://github.com/herdrdev/herdr.git", branch: "master"
 
   livecheck do
