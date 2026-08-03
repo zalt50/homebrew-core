@@ -1,18 +1,18 @@
 class Fallow < Formula
   desc "Codebase intelligence for TypeScript and JavaScript"
   homepage "https://docs.fallow.tools"
-  url "https://github.com/fallow-rs/fallow/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "d7db963a0de992498e591fb6698163d559c796565f1c3d0044df68f2941f6fe8"
+  url "https://github.com/fallow-rs/fallow/archive/refs/tags/v3.13.0.tar.gz"
+  sha256 "9b630ed0e5a99c60a11174b5bba51d2c62e038e338fabf52f4bd6e5986b29d27"
   license "MIT"
   head "https://github.com/fallow-rs/fallow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51377abd5ee6506127acc95cd17afeb79b5dc90d4d45d0431a55b3833a27a0c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5887b1f6d2dbdbdfda7d8b6fbe245309ef4b7e9d4b14307bd332faf8d01cd58e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d25c56bddf6425792ef13efcacdb3913b9381923a783099b7aba6e1a84736c93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eec1bc8bb4c2ac5ea920b7ad5156618cc2f40dfb4a87b3bc8e906380517443dc"
-    sha256 cellar: :any,                 arm64_linux:   "63e2bc204bb00ba408309a3b8d79d773d0009103832b99bfdedc3b143729cbf8"
-    sha256 cellar: :any,                 x86_64_linux:  "1e36d5554768b39d51a4175ed8e0061c80041407dd6b4b3d0d52f53be968d209"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8bd5b42c487e51a1563f67170d49a6399ebbea6d5ee3031f7b3eeb291621ae3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54f0e7f616c1b2bcc823eeef1e05e8795a429f92c040015326077c7ab65ea467"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c6e0270334dba0ebc747d72d79e3a9a3515930a94ff811fc32f64117b5220ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4ac032a14016332bd35f8530dd4f720e598e70e27951f69caae9d35656c464a"
+    sha256 cellar: :any,                 arm64_linux:   "c144d58cfab6aa77f0d7310f7c1a295a206597776768950e589c7c4cdf4f069f"
+    sha256 cellar: :any,                 x86_64_linux:  "eed4ed9193c6f0d950fc60ab3d07b994d63cc51985bde18423fb526ef69f2e8b"
   end
 
   depends_on "rust" => :build
