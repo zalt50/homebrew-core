@@ -6,7 +6,7 @@ class Glaze < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7aaf55ee83c42dbf04650c9cd96ae714918c5067bbfdb5f849a14fb1d058573b"
+    sha256 cellar: :any_skip_relocation, all: "b2b027d6ca63c9a3f922ce81d5d3afa9e319913a457e8bbb1de70be0d04eb41e"
   end
 
   depends_on "cmake" => [:build, :test]
