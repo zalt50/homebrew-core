@@ -1,8 +1,8 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
   homepage "https://tboox.top"
-  url "https://github.com/tboox/tbox/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "48284c1f1f6e4e74ce1b4d2447c3141fdfdd3a20ef1cb30fc2f1021149227fdb"
+  url "https://github.com/tboox/tbox/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "8601bd1443ad3e3eb998406a71c3896f8563ed1aeb94a9ccf8c17543742d508e"
   license "Apache-2.0"
   head "https://github.com/tboox/tbox.git", branch: "dev"
 
@@ -23,7 +23,8 @@ class Tbox < Formula
   depends_on "xmake" => :build
 
   def install
-    system "xmake", "config", "--charset=y", "--demo=n", "--small=y", "--xml=y"
+    system "xmake", "config", "--charset=y", "--demo=n", "--small=y", "--xml=y",
+           "--cflags=-Wno-error=misleading-indentation"
     system "xmake"
     system "xmake", "install", "-o", prefix
   end
