@@ -12,12 +12,12 @@ class Bbtools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f1f1380064363f972b795a0fd6617d58bf0fdc254cec448277585931eac5f674"
-    sha256 cellar: :any, arm64_sequoia: "897831242776dec1d929cf2a3bef91629a7aa0b8642ad5ac9f7dbb9209c9aeab"
-    sha256 cellar: :any, arm64_sonoma:  "04ec1835376f3d67e3b0fc66fa6a7eb36d65d3c8f4314134e8cb898d0ddd103f"
-    sha256 cellar: :any, sonoma:        "c8c42f0d13e433bc8dcf2daccf4389adbcb2b0e918b963837d749fed62b9c4f3"
-    sha256 cellar: :any, arm64_linux:   "d5a822d6d92026f2145a76da72d03941326d647495d19f5d2b42b9084c609e63"
-    sha256 cellar: :any, x86_64_linux:  "700c5ca9a14094a567c4f6723259bc82409cdd0f7d1c24f72ac51f24fa172286"
+    sha256 cellar: :any, arm64_tahoe:   "08c96e1ea7535ec156a9e2bd5b34edfabed12b999edf0c784bcf707de520fecc"
+    sha256 cellar: :any, arm64_sequoia: "d2214ce126af1fe6819f74a82f424c9837384fec15f7052b0c3d93e26f4bf400"
+    sha256 cellar: :any, arm64_sonoma:  "42e46ee403ef08fefe73dbbfd3db0fc26a0b0d5f3a707fb4e3b508dd479f478c"
+    sha256 cellar: :any, sonoma:        "2f6961e3cf7a76323e30b4c9c014d43cbe941ee925c81b8c8b3b4eb4df5a5b1f"
+    sha256 cellar: :any, arm64_linux:   "5eafed789741fcb849853f439cc6cc58c60d1493f1a4740f23813e84864f2aba"
+    sha256 cellar: :any, x86_64_linux:  "3d3f4396dd03039a47589e3612f2ed2119222d37b130f136626c2bf53d19a739"
   end
 
   depends_on "openjdk"
