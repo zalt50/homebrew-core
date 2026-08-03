@@ -16,6 +16,13 @@ class Root < Formula
       sha256 "a3651e7de6c6de2f75e7f2f26c8120763fca74b194c7e5ec43255f7242b507c2"
       type :backport
     end
+
+    # Backport fix for PyROOT to use macOS libffi
+    patch do
+      url "https://github.com/root-project/root/commit/b2212ae8abdeb01eaed633b7ed243a72763f939d.patch?full_index=1"
+      sha256 "9839dd1bc50635643fb4c8d69a52b60f7f8e2ae6721a8c57388eb860f3d48d91"
+      type :backport
+    end
   end
 
   livecheck do
