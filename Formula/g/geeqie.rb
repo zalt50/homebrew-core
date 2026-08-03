@@ -1,10 +1,9 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
   homepage "https://www.geeqie.org/"
-  url "https://github.com/BestImageViewer/geeqie/releases/download/v2.9/geeqie-2.9.tar.xz"
-  sha256 "5f0214778112da6daf3736a6ea04c10b093ea339dcc54676435a097ef8dfcd2d"
+  url "https://github.com/BestImageViewer/geeqie/releases/download/v3.1/geeqie-3.1.tar.xz"
+  sha256 "ca550826e30fee9d6ccfc621ddd0e4c430d440f51cdfcbebe623cedfe64fd805"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -32,8 +31,9 @@ class Geeqie < Formula
   depends_on "ffmpegthumbnailer"
   depends_on "gdk-pixbuf"
   depends_on "glib"
+  depends_on "graphene"
   depends_on "gspell" # for spell checks support
-  depends_on "gtk+3"
+  depends_on "gtk4"
   depends_on "imagemagick"
   depends_on "imath"
   depends_on "jpeg-turbo"
