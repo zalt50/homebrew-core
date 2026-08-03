@@ -1,8 +1,8 @@
 class Shimmy < Formula
   desc "Small local inference server with OpenAI-compatible GGUF endpoints"
   homepage "https://github.com/Michael-A-Kuykendall/shimmy"
-  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.3.3.tar.gz"
-  sha256 "e50a56eb696d5f3f472958fa4f8296be5d847faa5d12e6f88dc43b6226141601"
+  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.4.2.tar.gz"
+  sha256 "0bb4f19f3d7a3fa6349b3334000539fb6dc52a90bd14106f4e91c39209028fbb"
   license "Apache-2.0"
   head "https://github.com/Michael-A-Kuykendall/shimmy.git", branch: "main"
 
