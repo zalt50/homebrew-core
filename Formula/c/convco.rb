@@ -1,8 +1,8 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https://convco.github.io"
-  url "https://github.com/convco/convco/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "3a9b33e41561f80eaa9252673a1ee1b4857743e2ff7b33079d0b616c772fa981"
+  url "https://github.com/convco/convco/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "62cdc7f5797d33ed42c0919789ed49d00816985fff414d1490dcc705d8a7fead"
   license "MIT"
   head "https://github.com/convco/convco.git", branch: "main"
 
