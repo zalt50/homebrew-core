@@ -12,12 +12,12 @@ class Nanomsg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "93c1ee4687a5f170b4bbf47be2ce23c752ab3c37c5709b79c09a02e8b211b9ca"
-    sha256 cellar: :any, arm64_sequoia: "7b9dca502014364a157d1317aad2cd9a78274687a0c048e02252d2c573dcb1a1"
-    sha256 cellar: :any, arm64_sonoma:  "07a9dbcb11e6a688b40e5fbbc7206572b7dc60c66eb7fbda3918c4dd679ba97d"
-    sha256 cellar: :any, sonoma:        "e9e3eefb66c9b9e8cc1ea2a31e7ebc1065c44d289e84e370956a6d76deb9eb74"
-    sha256 cellar: :any, arm64_linux:   "76805bc190d05b44396e1bdd98b582a971f59a4d64f522bf7ebd5d8ae5497834"
-    sha256 cellar: :any, x86_64_linux:  "58a74d2c4ce140514a6fe32b76cbb7737e1cb03c78fd7dab421b058ae61b0e79"
+    sha256 cellar: :any, arm64_tahoe:   "50c6516a86030cbd91d73602d7d0d6f6128fda0402350e726dd7325e72ea1360"
+    sha256 cellar: :any, arm64_sequoia: "de0df18a43425a6207735394523dd5db76786c8be145b4b94a2c13eea7292e91"
+    sha256 cellar: :any, arm64_sonoma:  "ea96ba83b9e1f442fe84c397b20e1135c80fd2d79b50073af2c6f2ca161cbe50"
+    sha256 cellar: :any, sonoma:        "f979caeeda756a5555f7d490214026c675ef9f630d99a7fc48484252f9c64db4"
+    sha256 cellar: :any, arm64_linux:   "7b3139cada267ee03c2b867d9f9f11213275fec0f399ade09a88ca0dd271e178"
+    sha256 cellar: :any, x86_64_linux:  "7470de366576351a9d17e99df46cbba2bdd4d1a042203486debf44b4c9431505"
   end
 
   depends_on "cmake" => :build
