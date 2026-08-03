@@ -1,10 +1,9 @@
 class Simutrans < Formula
   desc "Transport simulator"
   homepage "https://www.simutrans.com/"
-  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "11671"
-  version "124.3.1"
+  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "11993"
+  version "124.5"
   license "Artistic-1.0"
-  revision 1
   head "https://github.com/simutrans/simutrans.git", branch: "master"
 
   livecheck do
@@ -46,8 +45,8 @@ class Simutrans < Formula
   end
 
   resource "pak64" do
-    url "https://downloads.sourceforge.net/project/simutrans/pak64/124-3/simupak64-124-3.zip"
-    sha256 "ecde0e15301320549e92a9113fcdd1ada3b7f9aa1fce3d59a5dc98d56d648756"
+    url "https://downloads.sourceforge.net/project/simutrans/pak64/124-4/simupak64-124-4.zip"
+    sha256 "edc6f9ca8d94af7bfcc9628ce1e7ddf468b07118cde0a50a8b5d0d30c22218ee"
   end
   resource "soundfont" do
     url "https://src.fedoraproject.org/repo/pkgs/PersonalCopy-Lite-soundfont/PCLite.sf2/629732b7552c12a8fae5b046d306273a/PCLite.sf2"
@@ -55,9 +54,6 @@ class Simutrans < Formula
   end
 
   def install
-    # fixed in 9aa819, remove in next release
-    inreplace "cmake/MacBundle.cmake", "SOURCE_DIR}src", "SOURCE_DIR}/src"
-
     # These translations are dynamically generated.
     system "./tools/get_lang_files.sh"
 
