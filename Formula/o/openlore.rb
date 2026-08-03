@@ -1,8 +1,8 @@
 class Openlore < Formula
   desc "Persistent architectural memory and structural cognition for AI coding agents"
   homepage "https://github.com/clay-good/OpenLore"
-  url "https://registry.npmjs.org/openlore/-/openlore-2.1.7.tgz"
-  sha256 "86e36f8cfd66f3594d2825d31a5954b565312dd5e1210840a74ca6109f8f0c8c"
+  url "https://registry.npmjs.org/openlore/-/openlore-2.1.8.tgz"
+  sha256 "e8c3fd1daabca7eda10419e2ec20d1c05357bdf70d483a954414cd2d2c691a65"
   license "MIT"
 
   bottle do
@@ -21,6 +21,10 @@ class Openlore < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libffi"
+
+  on_macos do
+    depends_on arch: :arm64 # missing `onnxruntime` prebuilt binaries
+  end
 
   on_linux do
     depends_on "python@3.14" => :build # for `node-gyp`
