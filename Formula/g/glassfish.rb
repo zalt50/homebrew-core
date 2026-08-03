@@ -1,9 +1,9 @@
 class Glassfish < Formula
   desc "Java EE application server"
   homepage "https://glassfish.org/"
-  url "https://download.eclipse.org/ee4j/glassfish/glassfish-8.0.3.zip"
-  mirror "https://github.com/eclipse-ee4j/glassfish/releases/download/8.0.3/glassfish-8.0.3.zip"
-  sha256 "52e7101c48c17d41883d49e3328ca1fa3d208b408781ac1f798b81caeef7b4ca"
+  url "https://download.eclipse.org/ee4j/glassfish/glassfish-8.0.4.zip"
+  mirror "https://github.com/eclipse-ee4j/glassfish/releases/download/8.0.4/glassfish-8.0.4.zip"
+  sha256 "2412176ccb3e773a95472318cbd519b67c093bc1a75d4f374238b0e54397d364"
   license "EPL-2.0"
 
   livecheck do
@@ -46,6 +46,7 @@ class Glassfish < Formula
     port = free_port
     # `asadmin` needs this to talk to a custom port when running `asadmin version`
     ENV["AS_ADMIN_PORT"] = port.to_s
+    ENV["AS_HOSTNAME"] = "localhost"
 
     cp_r libexec/"glassfish/domains", testpath
     inreplace testpath/"domains/domain1/config/domain.xml", "port=\"4848\"", "port=\"#{port}\""
