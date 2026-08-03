@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.51.2.tar.gz"
-  sha256 "7316dd294af15b9c92ba7db09fb274aacec919d18e45a594305c8d8b020bcb50"
+  url "https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.52.0.tar.gz"
+  sha256 "b44f615b17bf627505b329a935568a5864a0d0cc071a5d7a71369da6f232f800"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -23,18 +23,33 @@ class V2ray < Formula
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https://github.com/v2fly/geoip/releases/download/202607050337/geoip.dat"
+    url "https://github.com/v2fly/geoip/releases/download/202607171233/geoip.dat"
+    version "202607171233"
     sha256 "b71d1999439dde2de2d2b6844a2befa50c50211ff739785c005ca7c230a17d6a"
+
+    livecheck do
+      url :url
+    end
   end
 
   resource "geoip-only-cn-private" do
-    url "https://github.com/v2fly/geoip/releases/download/202607050337/geoip-only-cn-private.dat"
+    url "https://github.com/v2fly/geoip/releases/download/202607171233/geoip-only-cn-private.dat"
+    version "202607171233"
     sha256 "dff2733e43dbbdae88b2a59f908572eb5d9267d4afdb4c456a17f4a49d36747f"
+
+    livecheck do
+      url :url
+    end
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20260706034657/dlc.dat"
-    sha256 "79259090bb43e906a74fcb59b7e4b4afc83e8238a0d75f15f55f5f71e62671e9"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20260801163240/dlc.dat"
+    version "20260801163240"
+    sha256 "d0288dd63ac15195655766da1b49925d05f001aaa30783a5d51c805c4b989fbe"
+
+    livecheck do
+      url :url
+    end
   end
 
   def install
