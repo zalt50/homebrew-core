@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "High-performance linter for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.76.0.tar.gz"
-  sha256 "7db154e9242c561603a2fe8dd00831993de2afc156927be7c5cd311840cb5069"
+  url "https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.77.0.tar.gz"
+  sha256 "10e2ea33722812451ae129a7a6e77c781439412843555144e2ce1c91c17a045f"
   license "MIT"
   head "https://github.com/oxc-project/oxc.git", branch: "main"
 
@@ -29,7 +29,7 @@ class Oxlint < Formula
   test do
     (testpath/"test.js").write "const x = 1;"
     output = shell_output("#{bin}/oxlint test.js 2>&1")
-    assert_match "eslint(no-unused-vars)::Variable 'x' is declared but never used", output
+    assert_match "Variable 'x' is declared but never used", output
 
     assert_match version.to_s, shell_output("#{bin}/oxlint --version")
   end
