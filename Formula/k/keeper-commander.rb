@@ -3,8 +3,8 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/16/15/724514108f873e149402cceef7c2268fe52fcdaa15d660589572880efb4a/keepercommander-18.0.14.tar.gz"
-  sha256 "9e7c2723bbfc79b8c022c93d3ed7186731ddcb5d5431123b62fffc7c23b98721"
+  url "https://files.pythonhosted.org/packages/29/26/2e6dfa90265ee10924a093e43a897bbd8cb4736f50b5a6ad5e464ba72ef4/keepercommander-18.0.15.tar.gz"
+  sha256 "9bd012e2ec82f96411a878e38ece432903f765134b2a76cec6d093f52b8fd924"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
@@ -67,8 +67,8 @@ class KeeperCommander < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/3a/6f/07b4af8da8bd27f640362b1ac8271d80895407f2ede0c2bcc9433c06e1ca/cbor2-6.1.3.tar.gz"
-    sha256 "8d70680acb55c04ea5b5ad86da094f9612b53d5a8a65d0f5b3aafc3ce917ecbb"
+    url "https://files.pythonhosted.org/packages/c6/14/b02446bacfe44351b1689c04937ade007588f44570431880a6937e525e6c/cbor2-6.1.4.tar.gz"
+    sha256 "01ecc79a28f33d17331943ce508fc1e21f4b06553c73f874f4c77120d72b2ef9"
   end
 
   resource "charset-normalizer" do
@@ -332,8 +332,8 @@ class KeeperCommander < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/da/ea/c0f7924f7ccf005d6ad1f829971762ae751727497d6db1977ba5a635314f/websockets-17.0.tar.gz"
-    sha256 "6bbe83c4ef52a7533d2d8c6a3512b93722fd0db6bc6bc638d45edd49ef201444"
+    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
+    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
   end
 
   resource "werkzeug" do
