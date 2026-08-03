@@ -1,20 +1,10 @@
 class Hashlink < Formula
   desc "Virtual machine for Haxe"
   homepage "https://hashlink.haxe.org/"
+  url "https://github.com/HaxeFoundation/hashlink/archive/refs/tags/1.16.tar.gz"
+  sha256 "c392ce6e1d3670bcb60c85d83a161591707de9cdb6b00b48e79f9ea7807fc5a9"
   license "MIT"
-  revision 1
   head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
-
-  stable do
-    url "https://github.com/HaxeFoundation/hashlink/archive/refs/tags/1.15.tar.gz"
-    sha256 "3c3e3d47ed05139163310cbe49200de8fb220cd343a979cd1f39afd91e176973"
-
-    # Backport fix for arm64 linux, https://github.com/HaxeFoundation/hashlink/pull/765
-    patch do
-      url "https://github.com/HaxeFoundation/hashlink/commit/6794cdbe4407d26f405e5978890de67d4d42a96d.patch?full_index=1"
-      sha256 "fe885f32e89831a3269cb0da738316843af8ee80f55dc859c97a9cfb1725e7d8"
-    end
-  end
 
   bottle do
     rebuild 2
@@ -26,6 +16,7 @@ class Hashlink < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d7d71f666e42bc1e991d8376470e7755653ec6b1629b4d080e2a5d3bb541b4d"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "haxe" => :test
   depends_on "jpeg-turbo"
   depends_on "libogg"
@@ -34,7 +25,7 @@ class Hashlink < Formula
   depends_on "libvorbis"
   depends_on "mbedtls@3"
   depends_on "openal-soft"
-  depends_on "sdl2-compat"
+  depends_on "sdl3"
 
   uses_from_macos "sqlite"
 
@@ -48,12 +39,7 @@ class Hashlink < Formula
     # NOTE: This installs lib/*.hdll files which would be audited by `--new`.
     # These appear to be renamed shared libraries specifically used by HashLink.
     args = ["PREFIX=#{prefix}"]
-
-    if OS.linux?
-      args << "ARCH=arm64" if Hardware::CPU.arm?
-      # On Linux, also set RPATH in LIBFLAGS, so that the linker will also add the RPATH to .hdll files.
-      inreplace "Makefile", "LIBFLAGS =", "LIBFLAGS = -Wl,-rpath,${INSTALL_LIB_DIR}"
-    end
+    args << "ARCH=arm64" if OS.linux? && Hardware::CPU.arm?
 
     system "make", *args
     system "make", "install", *args
