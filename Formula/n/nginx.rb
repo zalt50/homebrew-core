@@ -15,13 +15,13 @@ class Nginx < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c43bb6190e50282b4d63710a3cdeee7ddba11c4791305d06eeb58182cd70dd19"
-    sha256 arm64_sequoia: "d40751783d21f723fd931d65f8fbf5da8ff1d350d653ff0857d3c1288daf4e3b"
-    sha256 arm64_sonoma:  "0b2ae8178c6fc14e8cf869de2e0a7ea5b131fafcdddd79018229ca79578d50fc"
-    sha256 sonoma:        "cc16dd0eded86e701a8da80dcce7d8e8c5baa7f58f91cd29c7597b97d141f193"
-    sha256 arm64_linux:   "475264fb6dbac5c2c925238a6ec235883159001accd3b8904775c6565f1afe57"
-    sha256 x86_64_linux:  "0696880723841d787a3f1ee617ca249df307e16b33ccc1a24874e1a7c73d9929"
+    rebuild 2
+    sha256 arm64_tahoe:   "e38a9e6aaeea0002e67698427b89ff1f89485da331991eb9cd2a0b0844cf100c"
+    sha256 arm64_sequoia: "ea69ac14a0f68af9922a77fd217ece47a951bb513d1ea1cf938be04924e64a3f"
+    sha256 arm64_sonoma:  "bbeed7fbafa85a8d70bc0271f6394291dfafb2f6858a03200fe99d030336e71b"
+    sha256 sonoma:        "200f04c3d861a3d3825cf8cbe08750a147fe08961873a08c38f609484b45afd9"
+    sha256 arm64_linux:   "7e46bd9db5aa03cd97cf9427058adc419f0b21ce96913703fba8ae2a0ae553f8"
+    sha256 x86_64_linux:  "5ba2bc50a144574f641ddce7cfad67f33ccee024a7314c031aac442a27d9c683"
   end
 
   depends_on "openssl@3"
@@ -34,6 +34,9 @@ class Nginx < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Allow broken symlink to be created by post install
+  skip_clean "html"
+
   def install
     # keep clean copy of source for compiling dynamic modules e.g. passenger
     (pkgshare/"src").mkpath
@@ -45,11 +48,8 @@ class Nginx < Formula
       s.gsub! "    #}\n\n}", "    #}\n    include servers/*;\n}"
     end
 
-    openssl = Formula["openssl@3"]
-    pcre = Formula["pcre2"]
-
-    cc_opt = "-I#{pcre.opt_include} -I#{openssl.opt_include}"
-    ld_opt = "-L#{pcre.opt_lib} -L#{openssl.opt_lib}"
+    cc_opt = "-I#{formula_opt_include("pcre2")} -I#{formula_opt_include("openssl@3")}"
+    ld_opt = "-L#{formula_opt_lib("pcre2")} -L#{formula_opt_lib("openssl@3")}"
 
     args = %W[
       --prefix=#{prefix}
@@ -110,27 +110,21 @@ class Nginx < Formula
     else
       man8.install "man/nginx.8"
     end
-  end
 
-  def post_install
-    (etc/"nginx/servers").mkpath
+    touch (etc/"nginx/servers").mkpath/".keepme"
     (var/"run/nginx").mkpath
 
     # nginx's docroot is #{prefix}/html, this isn't useful, so we symlink it
     # to #{HOMEBREW_PREFIX}/var/www. The reason we symlink instead of patching
     # is so the user can redirect it easily to something else if they choose.
-    html = prefix/"html"
-    dst = var/"www"
+    libexec.install prefix/"html"
+    prefix.install_symlink var/"www" => "html"
+  end
 
-    if dst.exist?
-      rm_r(html)
-      dst.mkpath
-    else
-      dst.dirname.mkpath
-      mv(html, dst)
+  post_install_steps do
+    unless_path_exists "{{var}}/www" do
+      move "{{libexec}}/html", "{{var}}/www"
     end
-
-    prefix.install_symlink dst => "html"
   end
 
   def caveats
