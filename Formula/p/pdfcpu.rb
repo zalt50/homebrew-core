@@ -1,8 +1,8 @@
 class Pdfcpu < Formula
   desc "PDF processor written in Go"
   homepage "https://pdfcpu.io"
-  url "https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "d7e657051aef697d39da63a5366850d476485b33d5ad100b829b86153df8c094"
+  url "https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "9e824957d847af70585e9b5c94070e3b78377c876adadc0b90e37afcf706ba69"
   license "Apache-2.0"
 
   livecheck do
@@ -57,6 +57,6 @@ class Pdfcpu < Formula
                 Page sizes: 500.00 x 800.00 points
     EOS
 
-    assert_match "validation ok", shell_output("#{bin}/pdfcpu validate #{test_fixtures("test.pdf")}")
+    assert_match "validation ok", shell_output("#{bin}/pdfcpu validate #{test_fixtures("test.pdf")} 2>&1")
   end
 end
