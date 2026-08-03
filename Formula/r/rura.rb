@@ -6,12 +6,12 @@ class Rura < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6510ea8045ed70a7049fff7f798913fe021e3b523a2c4a00f87f197c305926d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9b717382a70f2404dcbc68f4db073baff1a2c5841e99665c123a4d79124b4b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c601b3d4feda59fd934f0acaed3e4f7f0676f323b71555ad2e36d565459cb751"
-    sha256 cellar: :any_skip_relocation, sonoma:        "929d0216b65fe504b15f758d83eba27dce86dcd90a041fca47b46f276afe21ab"
-    sha256 cellar: :any,                 arm64_linux:   "0216291fb5984183b332e48fa86d66f71143c920dfb88819ef93c4d19dcb6234"
-    sha256 cellar: :any,                 x86_64_linux:  "6582d51c7fbcfc9bca0faad4c0c130982a1a3531285c53b032a32d1285ffa830"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad6b0699e6c893e871cfdfc899e8fd58f3a6e11aa104b36dc362722dd787d94b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "994a7f96e8c8d5ef688d6693a95f71aaf8e4256b4f1b56235be6fd041b496e0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "580737ea1fbede91c6f5623bb333aaa3158f5429a9d659bda720705b529febec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec89e9d7ed7e93bcaa43b40d990fb98d61cfa5e95ed73f8a3ce9630a1c259917"
+    sha256 cellar: :any,                 arm64_linux:   "c431e71d9159824c455591cf07725741f8e2427379434fcf6ac2268b90317760"
+    sha256 cellar: :any,                 x86_64_linux:  "bc65b59b8a083a5e06f3ffd3d16079193a46eadb37001b26fe335de79645db0a"
   end
 
   depends_on "rust" => :build
