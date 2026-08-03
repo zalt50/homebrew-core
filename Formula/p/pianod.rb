@@ -1,8 +1,8 @@
 class Pianod < Formula
   desc "Pandora client with multiple control interfaces"
   homepage "https://deviousfish.com/pianod/"
-  url "https://deviousfish.com/Downloads/pianod2/pianod2-420.tar.gz"
-  sha256 "9fa739cf28d5f554d982acecb94857b9fe0d0fd839d238dfca90f143c9fab216"
+  url "https://deviousfish.com/Downloads/pianod2/pianod2-421.tar.gz"
+  sha256 "760d2f013f6a8bf10993813f61a7929119470861351ba74d7add754e35c57d28"
   license "MIT"
 
   livecheck do
