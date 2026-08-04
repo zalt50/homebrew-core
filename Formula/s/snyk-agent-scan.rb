@@ -6,14 +6,15 @@ class SnykAgentScan < Formula
   url "https://files.pythonhosted.org/packages/a3/51/27ef1f809249107da45f6f3f4f190af7da51293257d3c84b2da1261edc9f/snyk_agent_scan-0.5.15.tar.gz"
   sha256 "ac7ee5dcba81d2bf17e797b5042a8be3ccae6bd100008e35e0ed7de0be88bc8b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4d78eed6f7958e9093f2ab7b96648a642a307a137f47851e9214c98ae9b383fb"
-    sha256 cellar: :any, arm64_sequoia: "26a33570c194b80060ade95f8f3537e527117838bc0adac8894b1b81267b7b98"
-    sha256 cellar: :any, arm64_sonoma:  "710f3b7eb05ece96bb35a77ff63fc642b6a60794971363dc252a5039f277e47e"
-    sha256 cellar: :any, sonoma:        "d7b81249c78e61a0e58635d241247fc28cdb92c111a1509da4c8a68712567632"
-    sha256 cellar: :any, arm64_linux:   "a81244ab401a7dcd3479596a7575165efb9c7d677fcc8e314491f8565e137c01"
-    sha256 cellar: :any, x86_64_linux:  "0c585f171c52dc269927500e2b607b451b04cee0834e089a9f67ae8da315843a"
+    sha256 cellar: :any, arm64_tahoe:   "92e64043ac2b1d1542f0b79868fb00d1873d7de72d1f88b4d13731a5fd6649ac"
+    sha256 cellar: :any, arm64_sequoia: "9274bddf65a7ec1b35e547cd16b59996362b7933689855cfd401117fb144c7f7"
+    sha256 cellar: :any, arm64_sonoma:  "dbe2a50a5b4642cdae29d1c315b80a6a341172b989a0509003a80b5584b35038"
+    sha256 cellar: :any, sonoma:        "6b85e8982efa33b54b03ed3f971cfbae89b41faf308515d948aa0a1ac605db37"
+    sha256 cellar: :any, arm64_linux:   "4500ac024fd13bcebf8057feeb64d200511d446176ddc94d2f796c95881f0bed"
+    sha256 cellar: :any, x86_64_linux:  "673917e3d137309c309ee8527dddfe367cc77f98f7a3e780bbfb85c451da7d29"
   end
 
   depends_on "certifi" => :no_linkage
@@ -31,8 +32,8 @@ class SnykAgentScan < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
-    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
   end
 
   resource "aiosignal" do
@@ -41,8 +42,8 @@ class SnykAgentScan < Formula
   end
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "anyio" do
@@ -191,8 +192,8 @@ class SnykAgentScan < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/7b/37/451aaddbf50922f34d744ad5ca919ae1fcfac112123885d9728f52a484b3/regex-2026.7.10.tar.gz"
-    sha256 "1050fedf0a8a92e843971120c2f57c3a99bea86c0dfa1d63a9fac053fe54b135"
+    url "https://files.pythonhosted.org/packages/20/98/04b13f1ddfb63158025291c02e03eb42fbb7acb51d091d541050eb4e35e8/regex-2026.7.19.tar.gz"
+    sha256 "7e77b324909c1617cbb4c668677e2c6ae13f44d7c1de0d4f15f2e3c10f3315b5"
   end
 
   resource "requests" do
@@ -211,8 +212,8 @@ class SnykAgentScan < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
-    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
+    url "https://files.pythonhosted.org/packages/6c/10/a34c656829ffc1c4b22ef36d70d9ebb6b99c020e2aeb17cee5485099f028/sse_starlette-3.4.6.tar.gz"
+    sha256 "725f8a1bd6d26ae1b2c9610c0ef5065dfdd496f3988d28adcf8c4b49dc25c627"
   end
 
   resource "starlette" do
@@ -236,13 +237,13 @@ class SnykAgentScan < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
-    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
+    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
+    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
 
   def install
