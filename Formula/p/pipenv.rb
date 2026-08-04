@@ -9,7 +9,7 @@ class Pipenv < Formula
   head "https://github.com/pypa/pipenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fe8e1e72d3ebb34e339923f6b3f8e1b14dd6b4c4dd8e3dd9d23e83b38ae67830"
+    sha256 cellar: :any_skip_relocation, all: "6328a6fa3ba6c0f6e2c29e697e2eae9ec145bb8d0f72043916d7cee4be0142d2"
   end
 
   depends_on "certifi" => :no_linkage
