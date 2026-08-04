@@ -7,13 +7,12 @@ class Hashlink < Formula
   head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "63eb38d4dbc69ab9f8c71ecfd3c8b1f81673ddf015454e0141289747c0ac4269"
-    sha256 cellar: :any,                 arm64_sequoia: "f81bd39b0a2962b274cad50e95190e5c86d4f9da5cbd27b8b5a7a3c807e3af00"
-    sha256 cellar: :any,                 arm64_sonoma:  "454fec90a208dd51f0a65bb848be96e8f343c2c1b038c7f26a7805cae6c74dbb"
-    sha256 cellar: :any,                 sonoma:        "8e5ebb95cd5752506bef4698f51e476d7de12aa64ed962a0664a48ffc63d60d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48372fc177336412549a92467756268d1da1ca27718ef3b68b2b4824bee10a8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d7d71f666e42bc1e991d8376470e7755653ec6b1629b4d080e2a5d3bb541b4d"
+    sha256 cellar: :any, arm64_tahoe:   "a7f1b7bd2d084befd08ccc1a7b5f05fb982497e37c2b58f0ab4375a114f36fe8"
+    sha256 cellar: :any, arm64_sequoia: "eda46e0a3237e12be3e314a0740236802febe02b5ea0211f2d04c1b570473f5e"
+    sha256 cellar: :any, arm64_sonoma:  "bb29479f1a69924cbeeef56223aba8308f62a1777c7daa1161fe4c147c86badb"
+    sha256 cellar: :any, sonoma:        "dd0624dab469e02d214f598339b9881c9ad0dad59a11140d7bb9210f33363f35"
+    sha256 cellar: :any, arm64_linux:   "e8af66f5bf10c4186694e2d12f059d4f4e946313953705022896e679bf2bf2e3"
+    sha256 cellar: :any, x86_64_linux:  "d4983f2cbe53b940c32c193ed345d1f07d226746a0f43db3ea4cd719769d7763"
   end
 
   depends_on "pkgconf" => :build
