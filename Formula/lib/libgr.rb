@@ -35,7 +35,9 @@ class Libgr < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DGR_PREFER_XCODEBUILD=OFF", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DGR_PREFER_XCODEBUILD=OFF",
+                                              "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                                              *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
