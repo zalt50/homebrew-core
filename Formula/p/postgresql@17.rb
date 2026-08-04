@@ -119,11 +119,11 @@ class PostgresqlAT17 < Formula
     mkdir_p "log", base: :var
     # Manually link files from keg to non-conflicting versioned directories in HOMEBREW_PREFIX.
     # Retain existing real directories for extensions if directory structure matches
-    link_dir "include/postgresql", "include/#{name}"
-    link_dir "lib/postgresql", "lib/#{name}"
-    link_dir "share/postgresql", "share/#{name}"
+    link_dir "include/postgresql", "include/{{name}}"
+    link_dir "lib/postgresql", "lib/{{name}}"
+    link_dir "share/postgresql", "share/{{name}}"
     # Also link versioned executables
-    link_children "bin", suffix: "-#{version.major}"
+    link_children "bin", suffix: "-{{version.major}}"
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     init_data_dir name, using: :postgresql_initdb, base: :var
   end
