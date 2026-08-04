@@ -6,7 +6,7 @@ class CoboCli < Formula
   url "https://files.pythonhosted.org/packages/31/5a/b46f07b2cb2e0e7583e83873f65ca0f177e1b56d5f5a5f253ba83ab4c9f7/cobo_cli-0.1.8.tar.gz"
   sha256 "bee5155dd3b4f16aa72b3ad1e02d5505cfa66d374856db0067ef1812986b218a"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
@@ -60,8 +60,8 @@ class CoboCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "idna" do
