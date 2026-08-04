@@ -80,6 +80,21 @@ class OpencvAT4 < Formula
     "python3.14"
   end
 
+  # Fix builds with FFmpeg 9.
+  patch do
+    url "https://github.com/opencv/opencv/commit/7551012b4e1c854c1dc36483c893f90b1c236977.patch?full_index=1"
+    sha256 "0e662fbfd9949c4588138fcdb49bff124bf5e092ecfaa4db07938f50bb3ee1de"
+    type :backport
+    resolves "https://github.com/opencv/opencv/pull/29533"
+  end
+
+  patch do
+    url "https://github.com/opencv/opencv/commit/a6f17e1f6a53f8bb016acfbcd55b61cbe220f5c8.patch?full_index=1"
+    sha256 "f9fc79e1783debed6530600044c73f9a7d816c3b3095c260e1769bd04a62eb7d"
+    type :backport
+    resolves "https://github.com/opencv/opencv/pull/29662"
+  end
+
   def install
     resource("contrib").stage buildpath/"opencv_contrib"
 
