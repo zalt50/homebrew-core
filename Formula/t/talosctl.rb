@@ -7,12 +7,12 @@ class Talosctl < Formula
   head "https://github.com/siderolabs/talos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14cfa40f4d87d28dc0ef9659abc1c06cc18136906f478b05065302b5e81966d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38f1e664e8c6a9f3571625004c667eeb16cd9f74ac627d5b486bf1d754a94dcf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b857f9ce22b7d57e1766d963c746c452d4876b58fb19ec2c87ba1fcc95fbe5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d5c37c8d6962090f87a565887d834d4404946faca9140c97ca622cda0be5dc52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10a68c254e5080a9bf8cb41b7f811e5c348ce6d9879fd6674f11e07859c474f8"
-    sha256 cellar: :any,                 x86_64_linux:  "631c3f185a6360b395c278882c07627e00b17a0ae0401839e45864e35fca1892"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fb1840d6dfe0cea843da83a75767c8fc8ab6df3dd02b3ddc925b82b4a3267e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35e5c56d422f372f97b824b5b3b93672dbd481247c6f8b13189184f1491b0377"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c80f0bc9d032436872fae2ee9944f96a7f0facb18feda6a716b464219036dc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2fd8a6cdeab5e824fefcec607da4a10acd3af44caf690f04b5e6ec59b5a8da58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1594a2a85054e7f31e70933a62cf2a331a7f94b63d8950271ef77b2f980613f0"
+    sha256 cellar: :any,                 x86_64_linux:  "93b6f8e3aa0124f745b18367e96814b2ae5fdaab4b502cc57cbe988bcd31d70f"
   end
 
   depends_on "go" => :build
