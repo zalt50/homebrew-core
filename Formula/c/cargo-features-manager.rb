@@ -7,12 +7,12 @@ class CargoFeaturesManager < Formula
   head "https://tangled.org/tobinio.dev/cargo-features-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94ce47b67a56b1faa492c358ac28983b61ddbadb4ad0d6dd43271ff2a47c2c66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e1846ea47e4dd663b7cc0265376036d919fcabe84af45c232a62a81a5391664"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9827f2046ce1e5020c57e36fc760718b1f0c7f4e2719d8eed672dd454b0fdb37"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b329a740b87964ff97724159cc0ba7c3a3fea0decdfd493bedf7f02a7c9c64c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8b51411bdcdd331629eda6404f0e3d0befce1402940636168e5bddeccf0fc03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40e2a29fa648d6c5c128e572134933dee66a4353709ff799757b81bf875b2a07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8159619cb9d57546837377328b34f49d80144cb6d897885aa93ce405741ce182"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e04dd0616f9de191578403a1eeeab8ec1f4b7675572422f468d8756f10f109fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e13fd59d484963c92821e518293e5964674b9c61fb17b04c02cc71bb27f0cd2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73c14ac82ced26b9561709d10cdd35cd8ee9280155c4fda212a9824fb434f6a2"
+    sha256 cellar: :any,                 arm64_linux:   "090421d6a956ba8c44a7752ffd89f3a429e0d83e8fa8011eae3d3dbb43d18799"
+    sha256 cellar: :any,                 x86_64_linux:  "91b99769481b321156764e94ccf5c48c49537a1adda5248dcc4886db0e94693c"
   end
 
   depends_on "rust" => :build
