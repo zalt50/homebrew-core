@@ -1,8 +1,8 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://docs.solo.io/gloo-edge/main/reference/cli/glooctl/"
-  url "https://github.com/solo-io/gloo/archive/refs/tags/v1.21.12.tar.gz"
-  sha256 "94ce6f7d015c421ff8b923a46d6c5224547206fdc7d8a1190edb13268fd15515"
+  url "https://github.com/solo-io/gloo/archive/refs/tags/v1.22.0.tar.gz"
+  sha256 "22249bc9b0caa7316f899eb8ced5723b38c2028cdf833d5152348641100c7581"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Glooctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2822aecff0cd2c38f791c9f005d1a434067839e772e9a2deebeab94f2a741e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12ff6ea5db4ca3193ef0c68f793d38c569633e53375715a70e43fd809edf37e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2a1221bf9b9fd537fb88bf86d9137d496ecb8f4647972a90ce2ad3908d4a8a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d33045867755ca22693747d24b92e5e230b8a368828c6fda35362f3a34d04bfa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c762db33b7e1d4603a7573ef2180c4150fe8222745fc37f8fbfbd0bd180783c4"
-    sha256 cellar: :any,                 x86_64_linux:  "c984cc210f1070ccba0cffd121e43f63e91af724586b1a32db8e9c6b47205866"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3aaa3f710e73fbd0feada78f58d2d46b5926a17ac4cf2608f86566de90d60f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ab8e5cf539118273985bea863f523567895110ddabf225e35f4d5bd3d321e52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c77c555df3cca776dbdae5d19335f293b0dce5b53ecdf0e2703f7f76fd96d81"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab0980a68a7298720a8f0643436ffdd21684072da2509853d14e917f02307bd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "defbeb00c6993422e0fa2e4ea0c160a2535fbda73e1fe0e38ef3594b3ad71dc1"
+    sha256 cellar: :any,                 x86_64_linux:  "f80386c7f1337c0a56bc4dcb92e7b3d7128ddc9a547d6f730c1c4952e9f7510c"
   end
 
   deprecate! date: "2026-12-31", because: :deprecated_upstream
