@@ -7,12 +7,12 @@ class Hookdeck < Formula
   head "https://github.com/hookdeck/hookdeck-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74281ebc8346974f0653b272ca3dc37ad4ccd7c832831732c757516045dbbcaa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74281ebc8346974f0653b272ca3dc37ad4ccd7c832831732c757516045dbbcaa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74281ebc8346974f0653b272ca3dc37ad4ccd7c832831732c757516045dbbcaa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09ff8d92c9facf1a6a7a6d7296f15c5fc717b5ffd34f981aa2fe4665b96ad18b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e12b07def539042f19b417f05c32920af6fc33188aa39b2d846ff9a90a8b0bf"
-    sha256 cellar: :any,                 x86_64_linux:  "ed704e0c72fb6b94dd6d99d53497cf8c8f8dd8069fe6d933f7f2c072e1787041"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d96f2d973a195c272a54acccf0384463b3027ae436a6c117299510472231faf2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d96f2d973a195c272a54acccf0384463b3027ae436a6c117299510472231faf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d96f2d973a195c272a54acccf0384463b3027ae436a6c117299510472231faf2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54fffdf2c90f518189e9a30f45780c45ac1397fadcbe8fcb069b0869227dbd8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "312db78d7397ebb0f60eacc6660666aa84c8f83f1aaac05f65f7e22303731cd0"
+    sha256 cellar: :any,                 x86_64_linux:  "9c578471ed56263580dcd517c25b72058a73924af296ae9118827761cdecf057"
   end
 
   depends_on "go" => :build
