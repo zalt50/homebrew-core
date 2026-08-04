@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://github.com/GrokImageCompression/grok/releases/download/v20.3.8/source-full.tar.gz"
-  sha256 "1435c445e8e7efcbbf9781c4a6116408d8a6aece52959d9da10abcf913f23a5d"
+  url "https://github.com/GrokImageCompression/grok/releases/download/v20.3.9/source-full.tar.gz"
+  sha256 "2476410333caf06d07fcebbccd9ae923bf1b6efcccbc5b0d23abd562fea0d44a"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
