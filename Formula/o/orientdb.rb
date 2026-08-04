@@ -55,14 +55,15 @@ class Orientdb < Formula
       cleanup
     SH
     chmod 0755, libexec/"post-install"
+
+    (var/"db/orientdb").mkpath
+    (var/"run/orientdb").mkpath
+    (var/"log/orientdb").mkpath
   end
 
   post_install_steps do
-    mkdir_p "db/orientdb", base: :var
-    mkdir_p "run/orientdb", base: :var
-    mkdir_p "log/orientdb", base: :var
-    touch "log/orientdb/orientdb.err", base: :var
-    touch "log/orientdb/orientdb.log", base: :var
+    touch "{{var}}/log/orientdb/orientdb.err"
+    touch "{{var}}/log/orientdb/orientdb.log"
     run "post-install", base: :libexec
   end
 
