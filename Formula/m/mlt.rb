@@ -4,7 +4,7 @@ class Mlt < Formula
   url "https://github.com/mltframework/mlt/releases/download/v7.40.0/mlt-7.40.0.tar.gz"
   sha256 "f11c30e21670f62a3dfc56a31306ac02f3feea00908a2821a4a0bf3e989d3d6a"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
   head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
@@ -51,6 +51,14 @@ class Mlt < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "pulseaudio"
+  end
+
+  # Fix builds with FFmpeg 9. Remove with the next release.
+  patch do
+    url "https://github.com/mltframework/mlt/commit/68bceba12a3c3278ce69033c3e7dadaa13d45811.patch?full_index=1"
+    sha256 "a2e7acbb2c3b585a36ae5fcddada634220c8bb30ebb75922958b5b7b30d49f96"
+    type :backport
+    resolves "https://github.com/mltframework/mlt/pull/1281"
   end
 
   def install
