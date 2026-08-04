@@ -10,12 +10,12 @@ class MetaPackageManager < Formula
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a90109a46eb233fd2cdea55608c291e1e0df4b560885615239f34a930ca6932b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a90109a46eb233fd2cdea55608c291e1e0df4b560885615239f34a930ca6932b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a90109a46eb233fd2cdea55608c291e1e0df4b560885615239f34a930ca6932b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aaa281067aa14b85126ea7d03aa1a7c59e00dee0525bda7ee32b347a2a0063ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15407488b0ba61ca03a3288f2e033bf97a41a6eced493653f0b14a3edd594de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15407488b0ba61ca03a3288f2e033bf97a41a6eced493653f0b14a3edd594de0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1da611491d5580a2d13962fdd3646bb9295648ec73b3f0e790b52d814a16593"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1da611491d5580a2d13962fdd3646bb9295648ec73b3f0e790b52d814a16593"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1da611491d5580a2d13962fdd3646bb9295648ec73b3f0e790b52d814a16593"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b2818fee40b00943b029c2aa8dd1f597779cf084cde94e2009f40f53ee61c9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26654ee86c3e464c54f70bca0add28a3de35153ee3e7c187dd4ad40b6267531d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26654ee86c3e464c54f70bca0add28a3de35153ee3e7c187dd4ad40b6267531d"
   end
 
   depends_on "rust" => :build
