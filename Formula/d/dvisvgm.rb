@@ -6,13 +6,12 @@ class Dvisvgm < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "4e4e50ff08bb77348f99e721bbc28da6b979642cf35b02a4ad3c77670dbb9206"
-    sha256 cellar: :any,                 arm64_sequoia: "cd3025efcf127977c45a40c97f427a419ec71c8111914afdf9f61b20d7ebb255"
-    sha256 cellar: :any,                 arm64_sonoma:  "32e7561006749b0e2c109b61007c7a487b6b0bdc5f1e58f40eb519117fca05f0"
-    sha256 cellar: :any,                 sonoma:        "9c5c57dd7f7c9d78ce7364898fdc654f69ef139e1808ef3dbac83627fb33871e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4109e7ac608cb01d54f5cc3cd407f7b9808592deedd2276d95d642a7bed5574"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e5bf36eeba83828c796f3c32ec68ecb32a7fc81c9635e5ef4cc3d2788a7e1d4"
+    sha256 cellar: :any, arm64_tahoe:   "68a3c913dfe9c0839a8bf0b8b9a3b378c181140dedb6757832e2199399c70807"
+    sha256 cellar: :any, arm64_sequoia: "67f2920fabdc08dae36259699b836970f305df17c08973cfc07d750e934dbfd7"
+    sha256 cellar: :any, arm64_sonoma:  "8cd97f355014ef3f8465b3d159b17bef6aa8fa19b45cb890a49476e6b5526dc5"
+    sha256 cellar: :any, sonoma:        "be3d2bc8190f13109f98dc5026d823f489548e8e9ec7080bb5e2bcb2ddec34d1"
+    sha256 cellar: :any, arm64_linux:   "c84d92242c5ef2ac0a11e34d6ecaacffecb8291398d9afff84a0edf3c8a1ccc9"
+    sha256 cellar: :any, x86_64_linux:  "88f1a3f0a39d7b4e1da50d7beb57b2c0bdc1135220b6dbd79df22bf55642a0c6"
   end
 
   depends_on "autoconf" => :build
