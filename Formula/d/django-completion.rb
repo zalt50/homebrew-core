@@ -12,7 +12,7 @@ class DjangoCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cad1bd9ea5acb5cd2418ab72ee6532ae4df0aed32b364deb16fefc8b0297bfc0"
+    sha256 cellar: :any_skip_relocation, all: "4af1685d7c005e80524d21f3059d43d4280020a718c35a6075456b2c0497f4e4"
   end
 
   def install
