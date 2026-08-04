@@ -1,8 +1,8 @@
 class Wild < Formula
   desc "Very fast linker for Linux"
   homepage "https://github.com/wild-linker/wild"
-  url "https://github.com/wild-linker/wild/archive/refs/tags/0.9.0.tar.gz"
-  sha256 "f70ac025d158fd2c41be8f895a90a8f39b8b89fefbbb8ad5f45441f57b80156a"
+  url "https://github.com/wild-linker/wild/archive/refs/tags/0.10.0.tar.gz"
+  sha256 "99ec83404558d4d0cbde9dd44b8c6fa2a511a2f8bb04a31f54c0929ec4491990"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
