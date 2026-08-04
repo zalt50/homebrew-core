@@ -1,8 +1,8 @@
 class CouchbaseShell < Formula
   desc "Modern and fun shell for Couchbase Server and Capella"
   homepage "https://couchbase.sh"
-  url "https://github.com/couchbaselabs/couchbase-shell/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "7a68af72f0275626f163ac8e200551f73cbd13ac1b91ae0b11e30821857062ad"
+  url "https://github.com/couchbaselabs/couchbase-shell/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "9300027b9d9d20904ed0306e5a7fe745f3bba8519d17e0f743cab52f3c574fa9"
   license "Apache-2.0"
   head "https://github.com/couchbaselabs/couchbase-shell.git", branch: "main"
 
