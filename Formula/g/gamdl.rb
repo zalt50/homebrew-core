@@ -3,8 +3,8 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/ab/83/005bdeb037dc68bf7b0a79c2b4e6c16958ba66b52f51d8dd6fb81e3d82e5/gamdl-3.8.4.tar.gz"
-  sha256 "c0fd711aa6bae8f0ff3ff413c14af92812b5a7bbcd67a2fd0f9600d24994c091"
+  url "https://files.pythonhosted.org/packages/fe/a5/11a6af5a4b2a850c5864e0f51a7d438b0dc5852684c4823eae3d7888be46/gamdl-3.8.5.tar.gz"
+  sha256 "d683139518b61603f7a2da62a2f79b09bfbf5a12948b3f43ad52824dd85f7a73"
   license "MIT"
 
   bottle do
@@ -105,8 +105,8 @@ class Gamdl < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "protobuf" do
