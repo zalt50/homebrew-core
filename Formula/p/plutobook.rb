@@ -1,8 +1,8 @@
 class Plutobook < Formula
   desc "Paged HTML Rendering Library"
   homepage "https://github.com/plutoprint/plutobook"
-  url "https://github.com/plutoprint/plutobook/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "3d6106ff2890fc605881a4034c87da2ae8f79108b67228ab5c3fe9c7d96d78a2"
+  url "https://github.com/plutoprint/plutobook/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "8f344b446d62a1aa43855e0b0b142aaa192f85ed16b07f9791715da5e3343c3e"
   license "MPL-2.0"
 
   bottle do
