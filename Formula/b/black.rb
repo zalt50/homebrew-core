@@ -10,12 +10,12 @@ class Black < Formula
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "968c1d8e32ad0d8f538ef7298ee505345ed298ce423a5f58c5e47b454b96ca44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0aab0f93b5427d88423015117d4e7096b5d135056dcf467e079f3c3a05119c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "606d40477fafc2837f0f9df4537604fde77564de4a62f04f7d1465cd96b5bd3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10aff771af1464d63a84fb96439b3933193d093981dc0d9701451ce3cc339c72"
-    sha256 cellar: :any,                 arm64_linux:   "17aeff03e1655035ef1ba23efed534c7912d69eff64cef3f9215b0e89702ad4b"
-    sha256 cellar: :any,                 x86_64_linux:  "ece508a303f4f023e73b968904163f044ca38ee7ed0710da7159ecadef2ab3ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cfffd0e41170294f78919095e564e1a1fe9308b2cec82c06127269012411e37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07d85c845874950af90f9c51b80966c4344fad13d53496d489febe4a21749805"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b22e06ce3875c47003d81f81fce7ae5d4a88b95e2d10efbafbc6562c3cd37c38"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6239631f6e9abf8cd1c579613d24f66d5603ce7b97c7c039d53758596ce33af0"
+    sha256 cellar: :any,                 arm64_linux:   "697769a51011b2690422e28a8de0547c534933ff031602515e4ab097392d363c"
+    sha256 cellar: :any,                 x86_64_linux:  "ba4c501693d9048a57663e6c83115727cb0b27994209abaa3cef80a2f0b1d47e"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize
