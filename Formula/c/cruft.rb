@@ -6,7 +6,7 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 12
+  revision 13
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
@@ -25,8 +25,8 @@ class Cruft < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "arrow" do
@@ -60,8 +60,8 @@ class Cruft < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "idna" do
