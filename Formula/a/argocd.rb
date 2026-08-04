@@ -2,8 +2,8 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https://argoproj.github.io/cd/"
   url "https://github.com/argoproj/argo-cd.git",
-      tag:      "v3.4.6",
-      revision: "e1becb74c728a992804d39c3ceb2e9e6ae58f0ae"
+      tag:      "v3.5.0",
+      revision: "e95e1be88a2da6c06bff5c2fe1791e4d233ed810"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -26,9 +26,9 @@ class Argocd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c5dc18bef00aa7f00d7aa4088598ed7976ac2c9f03727859717f65cb4afccbc"
   end
 
+  depends_on "corepack" => :build # requires newer `yarn`
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
 
   def install
     system "make", "dep-ui-local"
@@ -45,7 +45,7 @@ class Argocd < Formula
   end
 
   test do
-    assert_match "argocd controls a Argo CD server",
+    assert_match "argocd controls an Argo CD server",
       shell_output("#{bin}/argocd --help")
 
     # Providing argocd with an empty config file returns the contexts table header
