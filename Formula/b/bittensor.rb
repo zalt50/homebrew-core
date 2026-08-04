@@ -3,8 +3,8 @@ class Bittensor < Formula
 
   desc "SDK and command-line tool for the Bittensor network"
   homepage "https://subtensor.vercel.app/"
-  url "https://files.pythonhosted.org/packages/b7/97/56d2f9f2a50f4a55d342707e56b281d5f2cc4634c8f18f9b147198e41d16/bittensor-11.0.1.tar.gz"
-  sha256 "810164fb5fe2c3530ffdf67c0d188e5a61883841cf9874d9cb41b9aa1ecfe69b"
+  url "https://files.pythonhosted.org/packages/3d/9b/28146b1d34bc4fcae886e8e9c448e58a6ca5060393e40a279c4c1be25bf4/bittensor-11.0.2.tar.gz"
+  sha256 "90d790d50cb51d12bba65cd18892fb5d6e7addf56fb5706675ec3bcb5bce9e61"
   license "Apache-2.0"
 
   bottle do
@@ -28,18 +28,18 @@ class Bittensor < Formula
                 extra_packages:   %w[eth-abi<6] # FIXME: eth-abi 6.0.0b1 is a pre-release
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/1e/01/59a0fbb89c2204ba07099a6e4b87768d25d6aa689df07547412218e03145/bitarray-3.9.1.tar.gz"
-    sha256 "796f2b4f0e4d84df50bd23ddfacb37d74eec2b2366813cb8f18bdae6b25e3d36"
+    url "https://files.pythonhosted.org/packages/5f/c9/df9a5450b54e6dcbb6e8f3fd95631ab849ba1ed8e7899844c0d71bab576c/bitarray-3.10.0.tar.gz"
+    sha256 "d8f8dbcda062ea59b3a6d5233b5a9b67f6bf58c1418ad8f418c5138361f9f068"
   end
 
   resource "bittensor-core" do
-    url "https://files.pythonhosted.org/packages/1a/99/d37584bd0e88f7d166d58881c099fdb5c322ac1ec0fbb08da32c558466d1/bittensor_core-0.1.1.tar.gz"
-    sha256 "c40c34b99863734ba887fe9bcc5169e08beac95eef73a70f9eb8e430b22f8cb5"
+    url "https://files.pythonhosted.org/packages/e8/23/cf3400688f7cd49fb6b8df7f16eef2f420a038c3fb7a351f1d980b88fd19/bittensor_core-0.1.2.tar.gz"
+    sha256 "3ec9cd001ebd8a8bb82e098fb6c2f076b088d268f281ce061fcab2b26d48ec34"
   end
 
   resource "ckzg" do
@@ -153,8 +153,8 @@ class Bittensor < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
-    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
+    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
+    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
   end
 
   resource "websockets" do
