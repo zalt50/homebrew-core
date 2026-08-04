@@ -1,8 +1,8 @@
 class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https://xgboost.ai/"
-  url "https://github.com/dmlc/xgboost/releases/download/v3.3.0/xgboost-src-3.3.0.tar.gz"
-  sha256 "22d4fba822fba5cd02299bf0c63ec68ff72606bc1b1bd910423d4b83c2f108ff"
+  url "https://github.com/dmlc/xgboost/releases/download/v3.4.0/xgboost-src-3.4.0.tar.gz"
+  sha256 "af4588b34c7fa1bfde258006beebbe181454f1fb74266f81883b23059af3b9fb"
   license "Apache-2.0"
 
   livecheck do
@@ -41,9 +41,10 @@ class Xgboost < Formula
 
       int main() {
         std::string train_data = "#{testpath}/demo/data/agaricus.txt.train?format=libsvm";
+        std::string config = "{\\"uri\\": \\"" + train_data + "\\", \\"silent\\": 0}";
 
         DMatrixHandle dtrain;
-        if (XGDMatrixCreateFromFile(train_data.c_str(), 0, &dtrain) != 0) {
+        if (XGDMatrixCreateFromURI(config.c_str(), &dtrain) != 0) {
           std::cerr << "Failed to load training data: " << train_data << std::endl;
           std::cerr << "Last error message: " << XGBGetLastError() << std::endl;
           return 1;
