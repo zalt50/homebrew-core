@@ -3,8 +3,8 @@ class Gexiv2 < Formula
   homepage "https://wiki.gnome.org/Projects/gexiv2"
   # release info on the website might lag behind, refer to gitlab tags for latest release info
   # see discussions in https://gitlab.gnome.org/GNOME/gexiv2/-/issues/77
-  url "https://download.gnome.org/sources/gexiv2/0.16/gexiv2-0.16.1.tar.xz"
-  sha256 "18e9a05c637a77e800b001d87f70e4d02a7ba41b7745400a314a1072a1ddc943"
+  url "https://download.gnome.org/sources/gexiv2/0.16/gexiv2-0.16.2.tar.xz"
+  sha256 "aad9e240fdffbe85e390f46ee0a567e251baea5c29c3d8690260388683dc8d0a"
   license "GPL-2.0-or-later"
 
   bottle do
