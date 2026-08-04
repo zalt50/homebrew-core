@@ -1,8 +1,8 @@
 class Dvisvgm < Formula
   desc "Fast DVI to SVG converter"
   homepage "https://dvisvgm.de"
-  url "https://github.com/mgieseki/dvisvgm/releases/download/3.6/dvisvgm-3.6.tar.gz"
-  sha256 "26446bb3b10739ff0925c9e416b76d2d222075c9d5dcfafe6e214609d072ed1a"
+  url "https://github.com/mgieseki/dvisvgm/releases/download/3.6.1/dvisvgm-3.6.1.tar.gz"
+  sha256 "d6aab13136de758e91530a009ace194c84d909dbdb8efa8fa5721de71ff298d8"
   license "GPL-3.0-or-later"
 
   bottle do
