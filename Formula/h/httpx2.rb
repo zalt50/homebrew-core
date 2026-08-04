@@ -7,6 +7,10 @@ class Httpx2 < Formula
   sha256 "1932a768737e3666291582833da748cc4e563c337cf96706fccc04fa6e58764a"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "ca682f9c75e3e91101d620c9da4287e2b0feec0c58790e716159c66add87a17d"
+  end
+
   depends_on "python@3.14"
 
   pypi_packages package_name: "httpx2[cli,http2]"
