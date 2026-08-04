@@ -6,7 +6,7 @@ class Neonctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c7fa758c64dc0107aaa28d770db5cd5f2483e3be8097dbcd73729ce87469f410"
+    sha256 cellar: :any_skip_relocation, all: "e5f32250847c207b907f82fb54028fee0cc3d754ef2813098c99acd057854741"
   end
 
   depends_on "esbuild" # replaces the bundled copy
