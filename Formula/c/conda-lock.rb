@@ -6,7 +6,7 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/06/44/52deb5012f8ef85c224cb3b1638c09c3b3d70b2f9e101e893bb61b9ee9ba/conda_lock-4.0.2.tar.gz"
   sha256 "c4ebc4404ea760b1dd0035d6403fa27e291050269a5fd1b629b89fcbc75ef32a"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "3e993e544bd9bc714c816d97c3a0a78dce2e1a34882587674a4fe9aa49ecbf08"
@@ -93,13 +93,13 @@ class CondaLock < Formula
   end
 
   resource "fastjsonschema" do
-    url "https://files.pythonhosted.org/packages/20/b5/23b216d9d985a956623b6bd12d4086b60f0059b27799f23016af04a74ea1/fastjsonschema-2.21.2.tar.gz"
-    sha256 "b1eb43748041c880796cd077f1a07c3d94e93ae84bba5ed36800a33554ae05de"
+    url "https://files.pythonhosted.org/packages/e4/98/474719c58eddaf77fa443b063693e76d49db32bbe851bcbaf58d2700119f/fastjsonschema-2.22.1.tar.gz"
+    sha256 "0b83d1ce8d7845b959dcb20e1a5c3c8883b6541d9c52ab02cce5166b75ec805f"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c0/80/8232b582c4b318b817cf1274ba74976b07b34d35ef439b3eb948f98645a1/filelock-3.32.0.tar.gz"
-    sha256 "7be2ad23a14607ccc71808e68fe30848aeace7058ace17852f68e2a68e310402"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "gitdb" do
@@ -108,8 +108,8 @@ class CondaLock < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "idna" do
