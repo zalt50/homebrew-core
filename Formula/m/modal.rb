@@ -7,6 +7,15 @@ class Modal < Formula
   sha256 "0551c6fa2386ce78619f1a058eb4dd3ca527a54048952ea870e26704557c76c4"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "33ae71591efb2a6d620b65d5eea1cd9963e4a5b4ea76f6cbf2b160a580d5a748"
+    sha256 cellar: :any, arm64_sequoia: "62ff8a8b401c5692300d783cfaf25afd65e1f0ec1c2ceb969669e930d3e5917d"
+    sha256 cellar: :any, arm64_sonoma:  "1e1af094ccfab4e781a3ba3b7e0323b26af7930baa0ffff5b6c28126456f72dc"
+    sha256 cellar: :any, sonoma:        "59330e86571b6a1597337a42f8ce7ebb245730ed5220374a540f119ad04f98b9"
+    sha256 cellar: :any, arm64_linux:   "017b9ffea2b25a55847b8dd59d901a44afa97f8a0ad28122b048e0a8d246e1d3"
+    sha256 cellar: :any, x86_64_linux:  "99524f8d4992c30281a5f83563d595f68acfd56709a97418aadeb9383a326d07"
+  end
+
   depends_on "rust" => :build # for `cbor2`
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
