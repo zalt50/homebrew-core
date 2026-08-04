@@ -14,7 +14,7 @@ class Umple < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "605bdcf836313a9aa0f6d83e78f49ddd1cb0d1cb74d6ee0f74f074edd37d2f57"
+    sha256 cellar: :any_skip_relocation, all: "aa3bbf7d3cd9ee08f291e2e6452e6314194c192c82d588a677acb37332b74e07"
   end
 
   depends_on "openjdk"
