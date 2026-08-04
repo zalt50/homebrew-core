@@ -1,8 +1,8 @@
 class MupdfTools < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.1-source.tar.gz"
-  sha256 "dc94c60b2537e2ac9a2d379dd3801545f84a3a302d15c9da358362a1270707c3"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.2-source.tar.gz"
+  sha256 "44075a84e329db55b9bef5f342a70fd26d69e48ad1d33cb89d9664581c641156"
   license "AGPL-3.0-or-later"
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
