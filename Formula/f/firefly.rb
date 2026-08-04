@@ -1,8 +1,8 @@
 class Firefly < Formula
   desc "Create and manage the Hyperledger FireFly stack for blockchain interaction"
   homepage "https://hyperledger-firefly.github.io/firefly/latest/"
-  url "https://github.com/hyperledger-firefly/cli/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "905c6a950447082d99989acbe1aa4670b816d90564c5494919e197ace1208967"
+  url "https://github.com/hyperledger-firefly/cli/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "f9c73ca146af0e9e5ed5ef68d45c5733375f211233e5093ca060c9ddf8587f0b"
   license "Apache-2.0"
   head "https://github.com/hyperledger-firefly/cli.git", branch: "main"
 
@@ -25,9 +25,9 @@ class Firefly < Formula
 
   def install
     ldflags = %W[
-      -X github.com/hyperledger/firefly-cli/cmd.BuildDate=#{time.iso8601}
-      -X github.com/hyperledger/firefly-cli/cmd.BuildCommit=#{tap.user}
-      -X github.com/hyperledger/firefly-cli/cmd.BuildVersionOverride=v#{version}
+      -X github.com/hyperledger-firefly/cli/cmd.BuildDate=#{time.iso8601}
+      -X github.com/hyperledger-firefly/cli/cmd.BuildCommit=#{tap.user}
+      -X github.com/hyperledger-firefly/cli/cmd.BuildVersionOverride=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./ff"
 
