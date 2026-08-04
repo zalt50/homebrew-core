@@ -1,18 +1,18 @@
 class Infisical < Formula
   desc "CLI for Infisical"
   homepage "https://infisical.com/docs/cli/overview"
-  url "https://github.com/Infisical/cli/archive/refs/tags/v0.43.117.tar.gz"
-  sha256 "997ca47342b1f5c0290ef449b0a5d3760565381a968a362a08985eb7cf6a8fd8"
+  url "https://github.com/Infisical/cli/archive/refs/tags/v0.43.118.tar.gz"
+  sha256 "a02006908db9629b0622df8012925861a83c02082457cf57b450d3a06b2582b6"
   license "MIT"
   head "https://github.com/Infisical/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baf3b2fb7c1c30a84808023263722adabd564ab7914ec1b28a1e92daa190508a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baf3b2fb7c1c30a84808023263722adabd564ab7914ec1b28a1e92daa190508a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baf3b2fb7c1c30a84808023263722adabd564ab7914ec1b28a1e92daa190508a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38a68371e85535c0f9cc819a1da16ee8083451327d96fcf3ea405f2b744ba97b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "008cb6b6340b2bc222fdccdd9929f4509a513c7ec656ff994420e6e185d292f0"
-    sha256 cellar: :any,                 x86_64_linux:  "52e5dfa94ebe20a969de8a6e8048d2a6a552548c7bb4069e83ff31adc204dc7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c78aa44e56d783e5b4b94f1425ec90165da5c8df0793cbfd56403a3fad30634"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c78aa44e56d783e5b4b94f1425ec90165da5c8df0793cbfd56403a3fad30634"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c78aa44e56d783e5b4b94f1425ec90165da5c8df0793cbfd56403a3fad30634"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45fd94b58827db01f8428b2cb80cd82a62d8b5515ba51537889ef84851df11c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c7a43e3d0e6659c2b4529fd5c7d00527ed9cbd2c5f24be25f3ae1cd161d2d7b"
+    sha256 cellar: :any,                 x86_64_linux:  "3f5c32a23da430bc6834dd0e0ee1cc76a3fd3c0d33122bdc98e458affdb03421"
   end
 
   depends_on "go" => :build
