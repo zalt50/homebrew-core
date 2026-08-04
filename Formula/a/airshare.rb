@@ -9,12 +9,12 @@ class Airshare < Formula
   revision 25
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfd05970249774ee4c51cb1a89194ce85cafdeaaf705dc1a6419bdc55e2cfe97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7caaf1a5a20501643a444462d6e038e6463d06a8745149ebf8fdbefb31c87e17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c2f305165587ea2dd2bd4d1e27b66bff5a9c67697603e04941229096a595533"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d62c8b8792d4bb3d418a965b147549331aeed3db75cd73d886c6fbfd74534c7"
-    sha256 cellar: :any,                 arm64_linux:   "fcb3686f67c89b742f17aa261f72560e8ddeef933204f5671256359d2cd4eb6e"
-    sha256 cellar: :any,                 x86_64_linux:  "fe3f758d85783410ff2e7dcac3d2cd2394ba8c17770ac4403b7a26ddd3bcbc6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4dffe6c05eb902f8fa60e686ccd6c97b9db5e4057dd6eeef49cdc73d53b1efb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79ea751647197fa43b05d98b3846280dc30d80ccd4aaaa237c5f6c1c58b237cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5350fcd3dc79a15d08feffead828e9eb27eeb6923698729b131741b4d71a24c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e52f2892960228f20f535a559f1b9d04a1ba2f67f660c42045aba941553ddec2"
+    sha256 cellar: :any,                 arm64_linux:   "3f1daf5b5bde34e34bb5cfa75e65377d30ef8074e13c29c503349b6d68c402fb"
+    sha256 cellar: :any,                 x86_64_linux:  "4eaff3e3ee6839036d576bba823a202ffee1e785f060516b9ae4efaa7c1d3a33"
   end
 
   depends_on "certifi" => :no_linkage
