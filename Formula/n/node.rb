@@ -131,8 +131,8 @@ class Node < Formula
       rm_r(buildpath/"deps"/subdir)
       args << "--shared-#{flag}"
       if formula
-        args << "--shared-#{flag}-includes=#{Formula[formula].include}"
-        args << "--shared-#{flag}-libpath=#{Formula[formula].lib}"
+        args << "--shared-#{flag}-includes=#{formula_opt_include(formula)}"
+        args << "--shared-#{flag}-libpath=#{formula_opt_lib(formula)}"
       end
     end
 
@@ -163,12 +163,11 @@ class Node < Formula
       end
     end
 
-    # Enabling LTO errors on Linux with:
-    # terminate called after throwing an instance of 'std::out_of_range'
+    # Enabling LTO causes brew to error on Linux with a vague message:
+    # Error: Process completed with exit code 123.
     # macOS also can't build with LTO when using LLVM Clang
     # LTO is unpleasant if you have to build from source.
-    # FIXME: re-enable me, currently crashes sequoia runner after 6 hours
-    # args << "--enable-lto" if OS.mac? && DevelopmentTools.clang_build_version > 1699 && build.bottle?
+    args << "--enable-lto" if OS.mac? && ENV.compiler == :clang && build.bottle?
 
     system "./configure", *args
     system "make", "install"
@@ -179,14 +178,14 @@ class Node < Formula
     bootstrap = buildpath/"npm_bootstrap"
     bootstrap.install resource("npm")
     # These dirs must exists before npm install.
-    mkdir_p libexec/"lib"
-    system "node", bootstrap/"bin/npm-cli.js", "install", "-ddd", "--global",
+    (libexec/"lib").mkpath
+    system "node", bootstrap/"bin/npm-cli.js", "install", "--loglevel=silly", "--global",
             "--prefix=#{libexec}", resource("npm").cached_download
 
     # The `package.json` stores integrity information about the above passed
     # in `cached_download` npm resource, which breaks `npm -g outdated npm`.
     # This copies back over the vanilla `package.json` to fix this issue.
-    cp bootstrap/"package.json", libexec/"lib/node_modules/npm"
+    (libexec/"lib/node_modules/npm").install bootstrap/"package.json"
 
     # These symlinks are never used & they've caused issues in the past.
     rm_r libexec/"share" if (libexec/"share").exist?
@@ -198,7 +197,7 @@ class Node < Formula
     # Use the _npm completion included in Zsh rather than generating broken completion
     generate_completions_from_executable(bin/"npm", "completion", shells: [:bash], shell_parameter_format: :none)
 
-    (libexec/"lib/node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
+    (libexec/"lib/node_modules/npm/npmrc").write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
   # Replace npm but preserve all other modules across node updates/upgrades.
