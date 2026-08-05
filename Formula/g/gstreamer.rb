@@ -17,6 +17,12 @@ class Gstreamer < Formula
         formula :parent
       end
     end
+
+    # Backport FFmpeg 9 compatibility.
+    patch do
+      url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/be9bdb67f4fc868977f1f74e95b6ebe19ef792ec.diff"
+      sha256 "129e712f2f25fb68b309ad2a015e3a6b25e4a34659baa67f53d3d26ef0474fba"
+    end
   end
 
   livecheck do
