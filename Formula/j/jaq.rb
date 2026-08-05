@@ -1,8 +1,8 @@
 class Jaq < Formula
   desc "JQ clone focussed on correctness, speed, and simplicity"
   homepage "https://github.com/01mf02/jaq"
-  url "https://github.com/01mf02/jaq/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "8ad074d7e90e07ad7e77048dcf0d0e7ad434b8e3e38044260b9457d4551e644d"
+  url "https://github.com/01mf02/jaq/archive/refs/tags/v3.1.1.tar.gz"
+  sha256 "9b8587436be48b5791c8276573321a3d4f404e0dc77ea6503d05725a55edd266"
   license "MIT"
   head "https://github.com/01mf02/jaq.git", branch: "main"
 
