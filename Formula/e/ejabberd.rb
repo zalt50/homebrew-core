@@ -4,6 +4,7 @@ class Ejabberd < Formula
   url "https://github.com/processone/ejabberd/archive/refs/tags/26.07.tar.gz"
   sha256 "7b2e4efe2d5c867d2ced9cb1391731c5e6b9accd6f166ec71e734a3ae97813d7"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
