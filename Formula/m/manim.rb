@@ -12,12 +12,13 @@ class Manim < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1146698c3f5898d4f39f6e6ccbe86f934d6098d4a38340457bdbf6530dbb99eb"
-    sha256 cellar: :any,                 arm64_sequoia: "6932594897fec81b58a4b4656ffa25670a63007a2f737bec0e83506dd69e4042"
-    sha256 cellar: :any,                 arm64_sonoma:  "97296a0f2ed9a52bc0e568c6c3d1d8d0fb0431ad1b4a350922a17c0a145d8476"
-    sha256 cellar: :any,                 sonoma:        "ca8e1507b9e599a1fe30689f0acc4433297487dcdd81cbf420311bf343b9b16b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40347e0a6f413b4a0b5ddb9c2f4bed311e885e66cbfcb57199fea25ecbd375ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eebc67284d7012862e7d5d896bbcaa2b1edef42092477ae74a3a917afa208638"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "13acd509cdff96f5bbc8cca01745e1953d583c050f3aadd9b31c6aab62554e42"
+    sha256 cellar: :any, arm64_sequoia: "4de7cfdb7c236d8a1c44d27a4937d7c111fa7e2b4f2a40cc33c974d11b8516bb"
+    sha256 cellar: :any, arm64_sonoma:  "77d64398017bd99d1f5af121d55b4f785f13e247c2cc0bcfafc310d2cf33f071"
+    sha256 cellar: :any, sonoma:        "15f70366503c6469ccc2e782e767a9b7fa6d8d798f1de97f42b32930f49c646f"
+    sha256 cellar: :any, arm64_linux:   "d7f48ec24e10c85e650e1751137d2566613182da54a4e10876ae94457cfcda9e"
+    sha256 cellar: :any, x86_64_linux:  "a2b33f6012b3169ff2994cfdacf71031b7ce9ce12e3e2e08b2ffe2d841a54eb3"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut
