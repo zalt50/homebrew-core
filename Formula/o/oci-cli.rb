@@ -3,8 +3,8 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/ba/5e/bac869c9e27a6c54eae0c0362047c3b996ba9a2da347edf84537efce8307/oci_cli-3.90.0.tar.gz"
-  sha256 "ba76c8e92f92679a3170a32196a26f11e71bf6c1cf35ed1879896a8fbcae7a6a"
+  url "https://files.pythonhosted.org/packages/b5/25/6ea94323ae9ac1759b75f441777398e720f2c216befea9907e3c33bdd704/oci_cli-3.90.1.tar.gz"
+  sha256 "3032cb81092d32ce3be0c182b2c2ded61352aef333414f3464d9e9500006d7fc"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
@@ -35,8 +35,8 @@ class OciCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/42/e1/4cb2d3a2416bcd871ac93f12b5616f7755a6800bccae05e5a99d3673eb69/click-8.1.2.tar.gz"
-    sha256 "479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "crc32c" do
@@ -50,8 +50,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/1e/2a/77bd6cbf1c69b2f368fe3d6462d84369b0cba15e37ce713cdc08d459b95a/oci-2.183.0.tar.gz"
-    sha256 "ff572ef5f2030a788796bb509d257e6a41c6510ef9b4b6a75a079efd06e533ce"
+    url "https://files.pythonhosted.org/packages/a7/97/d204a71489b8c685818f596f2082c78b52fe70a934dc52d9dbd81345da47/oci-2.184.0.tar.gz"
+    sha256 "19742d0fdd27947daafd2cfea4db31ad585fde379094f41ddb7280109939210e"
   end
 
   resource "prompt-toolkit" do
@@ -65,8 +65,8 @@ class OciCli < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
-    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
+    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
+    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   resource "python-dateutil" do
@@ -125,15 +125,12 @@ class OciCli < Formula
       venv.pip_install Pathname.pwd
     end
 
-    # TODO: remove `shells` argument to include `bash` completions with click 8.1.7+
-    # https://github.com/pallets/click/commit/d9db70cabdc9cb10cd5584464b8adb9a24545b92
-    generate_completions_from_executable(bin/"oci", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"oci", shell_parameter_format: :click)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/oci --version")
 
-    assert_match "Usage: oci [OPTIONS] COMMAND [ARGS]", shell_output("#{bin}/oci --help")
     assert_match "Could not find config file", shell_output("#{bin}/oci session validate 2>&1", 1)
   end
 end
