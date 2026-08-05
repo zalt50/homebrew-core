@@ -7,12 +7,12 @@ class Katana < Formula
   head "https://github.com/projectdiscovery/katana.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bfc078d79780ccac057959f0558f5ddeb24c8a17a86872a2ff9ec581391175c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bfc078d79780ccac057959f0558f5ddeb24c8a17a86872a2ff9ec581391175c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bfc078d79780ccac057959f0558f5ddeb24c8a17a86872a2ff9ec581391175c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09717b46491071ddc0cccc5181c497df3af7819003490fdc66dacaa9332d137c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bacfb589d573b6287c94dac6bd10e9b76916ea2fbdba38f75e2327ece83b0f90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db408c751c35b942a42d54203495eb1cd348e53a0618e181a248afea1add8660"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3987951ad50ff7dccda0c9ca1cb33070e288a491b83c06204459e5f847df18d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3987951ad50ff7dccda0c9ca1cb33070e288a491b83c06204459e5f847df18d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3987951ad50ff7dccda0c9ca1cb33070e288a491b83c06204459e5f847df18d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c1f22ee6ba3170ddaa4282dfb1365da5c88d0314f16794900faa326e59d115b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03c5c6bb8f2986110343989ba12118807f186d0b1bd187bdc6b56472ace0f535"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1947661e2533c9dc13a648be10fe0c898eb522f4a1a1435810014cfa152a1f15"
   end
 
   depends_on "go" => :build
