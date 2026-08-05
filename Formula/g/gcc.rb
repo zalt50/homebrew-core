@@ -117,6 +117,7 @@ class Gcc < Formula
       ]
     else
       args << "--disable-multilib"
+      args << "--with-linker-hash-style=gnu"
 
       # Enable to PIE by default to match what the host GCC uses
       args << "--enable-default-pie"
