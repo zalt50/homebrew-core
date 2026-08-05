@@ -1,17 +1,17 @@
 class MercuryCli < Formula
   desc "CLI interface for Mercury banking"
   homepage "https://github.com/MercuryTechnologies/mercury-cli"
-  url "https://github.com/MercuryTechnologies/mercury-cli/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "e9141414e44977b99442d14932e1ea9b08c10aa6adf820cd168a460c45415187"
+  url "https://github.com/MercuryTechnologies/mercury-cli/archive/refs/tags/v0.11.4.tar.gz"
+  sha256 "7545ee98100a49de749d20c9e47a4dfb8988a286077ebc4e8c014526b64d03c3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e78fbba3b09133f90e80d3ed27ef648bc4f70df88d0414b0a2674d7d72eb42f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e78fbba3b09133f90e80d3ed27ef648bc4f70df88d0414b0a2674d7d72eb42f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e78fbba3b09133f90e80d3ed27ef648bc4f70df88d0414b0a2674d7d72eb42f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "241210b628c169e56eb4a694fe713222cc4a2c7b090a199cfe0d60cd3f4e2dcf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8058fc73bb2b913f3385574f3f2cad7634387c64e8542404df05bb5ec9edac2"
-    sha256 cellar: :any,                 x86_64_linux:  "3e8ecefdf499305399d8b1054400358b9082395e626da08a467ec95950cc8de6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9af581ac2799fd2e5232f7fed0daa893e5f70504b293491c33e6d024d077cfc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9af581ac2799fd2e5232f7fed0daa893e5f70504b293491c33e6d024d077cfc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9af581ac2799fd2e5232f7fed0daa893e5f70504b293491c33e6d024d077cfc2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b74a3cbe9e2ed3d058c82025763a5d4c1d692fdd09132cc8901837bfd0f4e3c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83e6780446cbddcbdce8877c827fbedf5e8244d2284a5d40ab7826de2c5255a7"
+    sha256 cellar: :any,                 x86_64_linux:  "e95ddebba0dc6fd9bafbd6900b923e7c518a43fc88ddcdb89eaec002df5ee81d"
   end
 
   depends_on "go" => :build
