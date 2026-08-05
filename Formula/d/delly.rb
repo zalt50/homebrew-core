@@ -1,8 +1,8 @@
 class Delly < Formula
   desc "Structural variant discovery by paired-end and split-read analysis"
   homepage "https://github.com/dellytools/delly"
-  url "https://github.com/dellytools/delly/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "4e2568b16039d40399f58e7cffc851bfdb17ae5eccbc0c2e1768502c0895e42e"
+  url "https://github.com/dellytools/delly/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "84abfb79bfbb8489758b76cab6908e6d5de586752892a07dd7d1c887027962cf"
   license "BSD-3-Clause"
   head "https://github.com/dellytools/delly.git", branch: "main"
 
