@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v26.6.0/node-v26.6.0.tar.xz"
-  sha256 "ecb6eec812505c9292529087a2436ec6c891ffe0e3a897833416e5d7436d659f"
+  url "https://nodejs.org/dist/v26.7.0/node-v26.7.0.tar.xz"
+  sha256 "e6b182cbeeab032d1082ca4ac4fe15e3a57de691d3bde78ecf8a761fd56ee356"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
@@ -71,8 +71,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.18.0.tgz"
-    sha256 "73f6155215ebabf4ed96dca1f567c2372cc713c33af2e5b9b62fde4e92373e2e"
+    url "https://registry.npmjs.org/npm/-/npm-11.19.0.tgz"
+    sha256 "31e9770f7dc71119a58509353b27917557aaf0ac9b5ef1a0465ee7d8ec67ae75"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"
