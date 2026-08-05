@@ -15,11 +15,16 @@ class Pitchfork < Formula
     sha256 cellar: :any,                 x86_64_linux:  "7e2e450f11ce36ae272db528b2e901c0a9e33ac38c606b51516e1e84fe6a10d0"
   end
 
+  depends_on "node" => :build
+  depends_on "pnpm" => :build
   depends_on "rust" => :build
   depends_on "usage"
 
   def install
-    (buildpath/"ui/dist").mkpath
+    cd "ui" do
+      system "pnpm", "install", "--frozen-lockfile"
+      system "pnpm", "build"
+    end
 
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"pitchfork", "completion")
@@ -32,5 +37,12 @@ class Pitchfork < Formula
     config = (testpath/"pitchfork.toml").read
     assert_match 'run = "echo brewed"', config
     assert_match 'ready_output = "brewed"', config
+
+    port = free_port
+    pid = spawn bin/"pitchfork", "supervisor", "run", "--web-port", port.to_s
+    sleep 1
+    assert_match "<title>Pitchfork</title>", shell_output("curl -s http://127.0.0.1:#{port}")
+  ensure
+    Process.kill("TERM", pid) if pid
   end
 end
