@@ -78,9 +78,29 @@ class Macvim < Formula
     executables = %w[mvimdiff mview mvimex gvim gvimdiff gview gvimex]
     executables += %w[vi vim vimdiff view vimex]
     executables.each { |e| bin.install_symlink "mvim" => e }
+
+    # Reuse the upstream signing script and entitlements to re-sign the app
+    # after install. Homebrew's bottle relocation re-signs the nested `Vim`
+    # binary, which invalidates the bundle's code signature and breaks
+    # launching `vim` on Intel
+    # (https://github.com/Homebrew/homebrew-core/issues/296804).
+    pkgshare.install "src/MacVim/MacVim.entitlements"
+    libexec.install "src/MacVim/scripts/sign-developer-id"
+    chmod 0755, libexec/"sign-developer-id"
+  end
+
+  post_install_steps do
+    run "sign-developer-id",
+        args: ["--adhoc", "{{prefix}}/MacVim.app", "{{pkgshare}}/MacVim.entitlements"],
+        base: :libexec
   end
 
   test do
+    # The app bundle must keep a valid code signature after Homebrew
+    # relocates and re-signs nested binaries on install.
+    assert_match "valid on disk",
+                 shell_output("codesign --verify --deep --strict --verbose=2 #{prefix}/MacVim.app 2>&1")
+
     output = shell_output("#{bin}/mvim --version")
     assert_match "+ruby", output
     assert_match "+gettext", output
