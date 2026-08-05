@@ -5,23 +5,17 @@ class Gstreamer < Formula
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.5/gstreamer-1.28.5.tar.bz2"
-    sha256 "c53f71b93aefda6864ea09bc845295d89c57afd4d9335f9f8c9a98c969b7693f"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.6/gstreamer-1.28.6.tar.bz2"
+    sha256 "fd51f0e32fded3f78ed31eab94a7e41b1cd56763abc853f6fd03d740d8bc4b90"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.5/gst-plugins-rs-gstreamer-1.28.5.tar.bz2"
-      sha256 "58203137e5075bfcafcb79b514750795996fc765a299964cf9f88961dd8a5002"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.6/gst-plugins-rs-gstreamer-1.28.6.tar.bz2"
+      sha256 "2e565b9add015d054cc2d1b9e553f75f366f8e13127a74e9366b7d577491492e"
 
       livecheck do
         formula :parent
       end
-    end
-
-    # Backport FFmpeg 9 compatibility.
-    patch do
-      url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/be9bdb67f4fc868977f1f74e95b6ebe19ef792ec.diff"
-      sha256 "129e712f2f25fb68b309ad2a015e3a6b25e4a34659baa67f53d3d26ef0474fba"
     end
   end
 
