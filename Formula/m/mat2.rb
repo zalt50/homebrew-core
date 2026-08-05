@@ -11,7 +11,7 @@ class Mat2 < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "17024db2dbe23577339a098b09c29f5a6675af803530aed35a85d156bac2f22e"
+    sha256 cellar: :any_skip_relocation, all: "3994d3c3034d60f2d69cbc9c1da795a49742bcac3d36869d75f028245f267354"
   end
 
   depends_on "exiftool"
