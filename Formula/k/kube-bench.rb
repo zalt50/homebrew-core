@@ -7,12 +7,12 @@ class KubeBench < Formula
   head "https://github.com/aquasecurity/kube-bench.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d04c3b4caefbfbdff154a9998b980f9d14173bf717c74e1c9816ba05a9293ecb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d04c3b4caefbfbdff154a9998b980f9d14173bf717c74e1c9816ba05a9293ecb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d04c3b4caefbfbdff154a9998b980f9d14173bf717c74e1c9816ba05a9293ecb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "552a570347c21ee188ea9ec43ec959e42db72f1530cfd59475860a49afbf2936"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3beefe01bb3e3a7975d3bff563b69646630f142563a06951f6e5a4eae5ee6263"
-    sha256 cellar: :any,                 x86_64_linux:  "10a05abe9b0ecad14f5b78e1e80f876882a06f123f8a3b9fea3fca909f5e7cd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54137041c8f63712c87feaf9419da2676babe0c4adbe26be272685166dd992c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54137041c8f63712c87feaf9419da2676babe0c4adbe26be272685166dd992c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54137041c8f63712c87feaf9419da2676babe0c4adbe26be272685166dd992c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3704dd31bb67c43ca5efe1beace4e37301698e32a42d0c3a827f8bcaf850a16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4676363ac4624e562dc7194f0b083d173dddb8dfd0209834e8b8afa6e7e6dc90"
+    sha256 cellar: :any,                 x86_64_linux:  "529e7bc8af2cc5cea42e0096e70a15ddf9dca4da10ebe7110f2af504e1e85a40"
   end
 
   depends_on "go" => :build
