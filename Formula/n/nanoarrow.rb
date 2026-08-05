@@ -16,9 +16,25 @@ class Nanoarrow < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "flatcc"
+
+  # Allow linking against a shared flatccrt
+  patch do
+    url "https://github.com/apache/arrow-nanoarrow/commit/4c8bedd1db791914068cb19e17a98c5e6ef70582.patch?full_index=1"
+    sha256 "e77804be9bd97b638e4aa22f490c2bcb1646d8b6d5fa11b4e1a33ab82aca598f"
+    type :unofficial
+    resolves "https://github.com/apache/arrow-nanoarrow/pull/949"
+  end
+
+  deny_network_access!
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DNANOARROW_FLATCC_ROOT_DIR=#{formula_opt_prefix("flatcc")}
+      -DNANOARROW_IPC=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -34,5 +50,19 @@ class Nanoarrow < Formula
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lnanoarrow_shared", "-o", "test"
     system "./test"
+
+    # Test IPC functionality
+    (testpath/"test_ipc.c").write <<~C
+      #include <nanoarrow/nanoarrow.h>
+      #include <nanoarrow/nanoarrow_ipc.h>
+
+      int main() {
+        struct ArrowIpcInputStream input;
+        input.release = NULL;
+        return 0;
+      }
+    C
+    system ENV.cc, "test_ipc.c", "-L#{lib}", "-lnanoarrow_shared", "-lnanoarrow_ipc_shared", "-o", "test_ipc"
+    system "./test_ipc"
   end
 end
