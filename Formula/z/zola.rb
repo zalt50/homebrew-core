@@ -1,8 +1,8 @@
 class Zola < Formula
   desc "Fast static site generator in a single binary with everything built-in"
   homepage "https://www.getzola.org/"
-  url "https://github.com/getzola/zola/archive/refs/tags/v0.22.1.tar.gz"
-  sha256 "0f59479e05bce79e8d5860dc7e807ea818986094469ed8bf0bb46588ade95982"
+  url "https://github.com/getzola/zola/archive/refs/tags/v0.23.1.tar.gz"
+  sha256 "331240b037bbef0a15e6c1db5a2eb572097f12a362deb075a331dbb849928f83"
   license "EUPL-1.2"
 
   bottle do
@@ -24,7 +24,7 @@ class Zola < Formula
 
   def install
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
-    system "cargo", "install", *std_cargo_args(features: "native-tls")
+    system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"zola", "completion")
   end
