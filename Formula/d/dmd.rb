@@ -4,12 +4,12 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    url "https://github.com/dlang/dmd/archive/refs/tags/v2.112.0.tar.gz"
-    sha256 "33592dc18855bd113914ca065d9e88018745afaa5fbf85b971fbc1a6663c9ec5"
+    url "https://github.com/dlang/dmd/archive/refs/tags/v2.112.1.tar.gz"
+    sha256 "07806b674d387e188020622f3e76529c3f05e9836136258fef294ed2f928f775"
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/refs/tags/v2.112.0.tar.gz"
-      sha256 "99e046c1107bc3f365910f5cb52937483c9a5528f2d4ef543b8690ad66723f16"
+      url "https://github.com/dlang/phobos/archive/refs/tags/v2.112.1.tar.gz"
+      sha256 "635524dbceb39cdb4b0ece0b7f654fbc51a53525114851908a8ae841ed5e4b63"
 
       livecheck do
         formula :parent
