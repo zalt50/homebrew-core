@@ -1,8 +1,8 @@
 class Cozypkg < Formula
   desc "CLI for managing Cozystack packages"
   homepage "https://cozystack.io"
-  url "https://github.com/cozystack/cozystack/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "19837d90f37bde953bd80d3737be1d82379cc1f2d7aaa5d5a05c551ed7a70ccc"
+  url "https://github.com/cozystack/cozystack/archive/refs/tags/v1.6.1.tar.gz"
+  sha256 "3420af09f783e589b5851dc925e6ef405b9dd0a83b086b8d6a3b9e0082e76eba"
   license "Apache-2.0"
   head "https://github.com/cozystack/cozystack.git", branch: "main"
 
