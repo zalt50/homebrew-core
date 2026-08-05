@@ -3,8 +3,8 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://files.pythonhosted.org/packages/51/13/6d474d36412375a067ce84c19855d799cbb90f9f94ecb8be5471356354a9/standardebooks-4.0.2.tar.gz"
-  sha256 "f7840ab42c6643485b3b75c22f9e41942bfd644b950de59aebf33b3f7962a799"
+  url "https://files.pythonhosted.org/packages/7c/ca/eae22e8de1890edd7f05ffa6141452530b68c9666be6306f0bef5e743833/standardebooks-4.0.3.tar.gz"
+  sha256 "e1e5a35b6281106406cb12ff31317a2034e3d44c3a5b53064bd83ec2fac7353b"
   license "GPL-3.0-or-later"
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
