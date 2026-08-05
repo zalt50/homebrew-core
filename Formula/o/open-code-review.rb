@@ -6,6 +6,15 @@ class OpenCodeReview < Formula
   license "Apache-2.0"
   head "https://github.com/alibaba/open-code-review.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "785214bb0bb3e12ff54b5ec96c66da27fa195176532f6a890cf3dcfb5267c82b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "785214bb0bb3e12ff54b5ec96c66da27fa195176532f6a890cf3dcfb5267c82b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "785214bb0bb3e12ff54b5ec96c66da27fa195176532f6a890cf3dcfb5267c82b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4a4d7a2abbf32cc7667352cd07bd44d9016bee51e045af2dfcfddc65f2a23b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c395b04fd22ec48ca86df97f322af10f487da514eb25a604a4b96c31e34d0203"
+    sha256 cellar: :any,                 x86_64_linux:  "bbe602c73a9cbd28cf74cbfc256af18d65517ae1448049525420842af6907770"
+  end
+
   depends_on "go" => :build
 
   def install
