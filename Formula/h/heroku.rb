@@ -1,8 +1,8 @@
 class Heroku < Formula
   desc "CLI for Heroku"
   homepage "https://www.npmjs.com/package/heroku/"
-  url "https://registry.npmjs.org/heroku/-/heroku-11.8.1.tgz"
-  sha256 "46cb1f258ca87941c91456e1bb98e3cbc5aa2658a5acacdbe69752bbe3fe0bfd"
+  url "https://registry.npmjs.org/heroku/-/heroku-11.9.0.tgz"
+  sha256 "8ad9a383562eb0cb56fc8882db4507eef5aae8475299f2a198d4b1bf7e7cb4a5"
   license "ISC"
 
   bottle do
@@ -25,23 +25,11 @@ class Heroku < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/heroku/node_modules"
-    # Remove vendored pre-built binary `terminal-notifier`
-    node_notifier_vendor_dir = node_modules/"node-notifier/vendor"
-    rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules.glob("{bare-fs,bare-path,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
-
-    if OS.mac?
-      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
-      terminal_notifier_dir.mkpath
-
-      # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = formula_opt_prefix("terminal-notifier")/"terminal-notifier.app"
-      ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
-    end
 
     # Replace universal binaries with their native slices.
     deuniversalize_machos
