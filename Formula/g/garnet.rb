@@ -1,8 +1,8 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://github.com/microsoft/garnet/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "ed79090f3b4754f869159f8ef709e99b0de43bf8b0893b6e0d3b74b84568fc31"
+  url "https://github.com/microsoft/garnet/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "c9fd5a00bdc36c0494189677c1220ef13f8db478a789609281725cca33ae7b70"
   license "MIT"
 
   livecheck do
@@ -36,6 +36,11 @@ class Garnet < Formula
     # Drop the prebuilt BfTree binaries; msbuild rebuilds the library with cargo and prefers its copy
     rm_r Dir["libs/native/bftree-garnet/runtimes/*"]
 
+    # The device csproj ships every prebuilt runtime it finds, so drop the ones we can't use
+    native_rid = ("linux-#{Hardware::CPU.arm? ? "arm64" : "x64"}" if OS.linux?)
+    device_runtimes = buildpath/"libs/storage/Tsavorite/cs/src/core/Device/runtimes"
+    device_runtimes.each_child { |rid| rm_r(rid) if rid.basename.to_s != native_rid }
+
     if OS.linux?
       cd "libs/storage/Tsavorite/cc" do
         args = %w[
@@ -43,9 +48,9 @@ class Garnet < Formula
         ]
         system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
         system "cmake", "--build", "build"
-        rm "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device.so"
-        cp "build/libnative_device.so", "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device.so"
-        cp "build/libnative_device.so", "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device_libaio.so"
+        native_dir = device_runtimes/native_rid/"native"
+        cp "build/libnative_device.so", native_dir/"libnative_device.so"
+        cp "build/libnative_device.so", native_dir/"libnative_device_libaio.so"
       end
     end
 
