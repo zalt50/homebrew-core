@@ -11,12 +11,12 @@ class Garnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2309183116540bf81009b88d93114cd4e117dc7b70e2c332188ef5ec3ed43c62"
-    sha256 cellar: :any, arm64_sequoia: "f58f6b201d17ec9ab01a7bbe4b322f21fd4217d5c60885f8b0177cee2d5ff18a"
-    sha256 cellar: :any, arm64_sonoma:  "3a7913a3cfd27b398c5787122393eb432220a12330472bb119d279eb49917d63"
-    sha256 cellar: :any, sonoma:        "766be0249379e79608953108d5dade1f10e17ab307e0ed994e497d80e72b585b"
-    sha256 cellar: :any, arm64_linux:   "724403b2872405fca1b0c557e1b51c76ff136ad4cfe4c72f21a3ce8b732c64ea"
-    sha256 cellar: :any, x86_64_linux:  "ddbfa2fe0502a9fb82cc2c8360afa8b2ace3052c7507d085d45b7c0e4e2f5da9"
+    sha256 cellar: :any, arm64_tahoe:   "c6c76cab271195e74aed7c12a78f8036fb45dabb3313ff59a5b5d214048e111c"
+    sha256 cellar: :any, arm64_sequoia: "dd62e69da5e9584aaf021bdd60eecdb023442f5c679e64a7398e8d27bf208e7c"
+    sha256 cellar: :any, arm64_sonoma:  "386911e4978beb6707e9adb930ed906a1ad873b6a055d3fc1b3b4160e58a7eb5"
+    sha256 cellar: :any, sonoma:        "4c690e36849ca288d76576faddcea432de1ec162bc3c257a0c8ef836f86d3ff2"
+    sha256 cellar: :any, arm64_linux:   "5e1ab4b107fdbb209b2bd846ed212f7539bbd90e27fae79bfbfa77166a6d2157"
+    sha256 cellar: :any, x86_64_linux:  "05cbdfd4bf55e6ba8cdf029bf49531bb9210177dd6a4f99a9771ea53c63a45f3"
   end
 
   depends_on "rust" => :build
