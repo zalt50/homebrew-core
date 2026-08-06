@@ -1,8 +1,8 @@
 class Swig < Formula
   desc "Generate scripting interfaces to C/C++ code"
   homepage "https://www.swig.org/"
-  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.4.1/swig-4.4.1.tar.gz"
-  sha256 "40162a706c56f7592d08fd52ef5511cb7ac191f3593cf07306a0a554c6281fcf"
+  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.5.0/swig-4.5.0.tar.gz"
+  sha256 "22ae0e887f8cca8031a325c67d005207653200b40e71edb3f88780e28e47d0ff"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
@@ -76,7 +76,8 @@ class Swig < Formula
     ENV.remove_from_cflags(/-march=\S*/)
     system bin/"swig", "-python", "test.i"
     system "python3", "-m", "venv", ".venv"
-    system testpath/".venv/bin/pip", "install", *std_pip_args(prefix: false, build_isolation: true), "."
+    # Avoid `std_pip_args`: the macOS system pip is too old for its cooldown flag
+    system testpath/".venv/bin/pip", "install", "--verbose", "--no-deps", "."
     assert_equal "2", shell_output("#{testpath}/.venv/bin/python3 ./run.py").strip
   end
 end
