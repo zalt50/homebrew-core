@@ -1,8 +1,8 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.78.tar.gz"
-  sha256 "1ced91fe756beb7b09764bd3c8864014f07bd04b5471e0f2aa82c29996744570"
+  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.79.tar.gz"
+  sha256 "5d76428b4894f44d07c5f11a66261be3d374d00e6ee37245d128cfd7bf845c41"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
@@ -28,6 +28,7 @@ class Opencrabs < Formula
 
   def install
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 
     system "cargo", "install", *std_cargo_args
   end
