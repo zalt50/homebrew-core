@@ -13,8 +13,8 @@ class DockerEngine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "af4857d8357b7f80a69ff6777e566743307db8b6c7397df7b1a5c2a6da2df579"
-    sha256 cellar: :any,                 x86_64_linux: "546ba89d82f93ac702b2b22a05d13ca9a835d06a81906c54c3ee225cb70ed132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2bd700421dff71a1821569dff0ebe826f19438a448a5a35500da77d8f3191843"
+    sha256 cellar: :any,                 x86_64_linux: "524318efca2f663d6399311c7746719edc03621e4b3994055615d833da9dd635"
   end
 
   depends_on "go" => :build
