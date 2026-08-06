@@ -22,11 +22,6 @@ class HermesAgent < Formula
     sha256 cellar: :any, x86_64_linux:  "62dad23f60f0a785378ef2ea188255a724633e437cd5305ff667643a10a036f2"
   end
 
-  # Support for brew was removed in https://github.com/NousResearch/hermes-agent/pull/68217
-  # Formula can not be updated
-  deprecate! date: "2026-08-03", because: "Upstream does not suppoort brew anymore"
-  disable! date: "2027-02-03", because: :unmaintained
-
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
@@ -296,7 +291,13 @@ class HermesAgent < Formula
     # Allow to build with Python 3.14
     inreplace "pyproject.toml", "requires-python = \">=3.11,<3.14\"", "requires-python = \">=3.11,<3.15\""
 
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "socksio")
+    resource("socksio").stage do
+      # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
+      # pyproject table is no longer supported since flit-core 4
+      inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do
