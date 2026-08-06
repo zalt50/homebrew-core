@@ -12,12 +12,12 @@ class Ironclaw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e47c357f94b7c0144079fbab1bb688dacb2ea9a2fdec82cf078a66d1e115126"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad81b23bfa770f924b042b6c7691094dfc8915c336b8d5c2195da3a7dd404c43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "447a285eed877466209b73c9467dfa1b4a35a211485a8bf6653e17cc0d4d5211"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e98b26c34c71bdcded97ba6ee5538e60bdeed7d5726d0e9fe46814f416206ab"
-    sha256 cellar: :any,                 arm64_linux:   "52d47422a8210f2b4c7e1a33a49d9d81baa1c6c2b53f37af109fbc7e23e8f7c4"
-    sha256 cellar: :any,                 x86_64_linux:  "2ba101e015957dc03913cec2c8e6d1a39fead9d6f10b97113bf6e733c94981e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "583de1da633396cebee33b34f2dd026e730a096d42a40480bf34b6895b91a3b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4afc3ff552d91f35c9983983eae79e890519b514f7526e1eb8aa6ce496d13e9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "562d5ab0629cef3554dcef0c85df6563a30e07cd90f59b14da8151a1399fa398"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e264b23690ee6bb26ffc155ce3414591053ef2165ec0228ca90f4bf721c758f"
+    sha256 cellar: :any,                 arm64_linux:   "e93cb3a2c9e9c7a18385289328e244ae04b06b7c4e6ae60048b0a264f43049fe"
+    sha256 cellar: :any,                 x86_64_linux:  "9ef058013c8820e8053cbb4572f2f8a2d907b13c02b26e771a1cf1babb67125a"
   end
 
   depends_on "corepack" => :build
