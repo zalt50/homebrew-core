@@ -6,6 +6,7 @@ class HermesAgent < Formula
   url "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.3.tar.gz"
   sha256 "370542c7219faba6300905c3b419e14e6508a31ac698a1a5174e0386990834be"
   license "MIT"
+  revision 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   livecheck do
@@ -28,9 +29,12 @@ class HermesAgent < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
+  depends_on "node"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
+  depends_on "ripgrep"
+  depends_on "tirith"
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic]
 
@@ -296,9 +300,50 @@ class HermesAgent < Formula
     resource("socksio").stage do
       # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
       # pyproject table is no longer supported since flit-core 4
+      # Ref: https://github.com/sethmlarson/socksio/pull/66
       inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
       venv.pip_install Pathname.pwd
     end
+
+    # Build the dashboard and TUI bundles the same way upstream's Nix
+    # packaging does (nix/web.nix, nix/tui.nix)
+    system "npm", "install", *std_npm_args(prefix: false)
+    cd "web" do
+      system "npm", "run", "build"
+    end
+    pkgshare.install "hermes_cli/web_dist"
+    system "node", "ui-tui/scripts/build.mjs"
+    (pkgshare/"ui-tui").install "ui-tui/dist", "ui-tui/package.json"
+
+    # Ship the runtime data the wheel deliberately excludes. The env vars
+    # below mirror upstream's nix/hermes-agent.nix wrapper, the supported
+    # interface for packaged installs.
+    rm_r buildpath.glob("{skills,optional-skills}/index-cache")
+    rm_r buildpath.glob("{skills,optional-skills,plugins,locales,optional-mcps}/**/__pycache__")
+    pkgshare.install %w[skills optional-skills plugins locales optional-mcps]
+
+    %w[hermes hermes-agent hermes-acp].each do |cmd|
+      rm bin/cmd
+      (bin/cmd).write_env_script libexec/"bin/#{cmd}", {
+        HERMES_BUNDLED_SKILLS:  pkgshare/"skills",
+        HERMES_OPTIONAL_SKILLS: pkgshare/"optional-skills",
+        HERMES_BUNDLED_PLUGINS: pkgshare/"plugins",
+        HERMES_BUNDLED_LOCALES: pkgshare/"locales",
+        HERMES_OPTIONAL_MCPS:   pkgshare/"optional-mcps",
+        HERMES_WEB_DIST:        pkgshare/"web_dist",
+        HERMES_TUI_DIR:         pkgshare/"ui-tui",
+        HERMES_PYTHON:          libexec/"bin/python3",
+        HERMES_NODE:            formula_opt_bin("node")/"node",
+        HERMES_REVISION:        "v#{version}",
+      }
+    end
+  end
+
+  def caveats
+    <<~EOS
+      Voice and TTS audio format conversion optionally uses ffmpeg:
+        brew install ffmpeg
+    EOS
   end
 
   test do
@@ -307,5 +352,9 @@ class HermesAgent < Formula
     assert_match "No sessions found", shell_output("#{bin}/hermes sessions list")
     system bin/"hermes", "status"
     system bin/"hermes", "doctor"
+
+    assert_match "bundled", shell_output("#{bin}/hermes plugins list")
+    assert_path_exists pkgshare/"web_dist/index.html"
+    assert_path_exists pkgshare/"ui-tui/dist/entry.js"
   end
 end
