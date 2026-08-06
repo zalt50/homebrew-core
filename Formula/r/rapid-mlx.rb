@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/92/90/d37121c632642d9601d80ae80794cf50de4df9aa684f6fecf2544ee4683e/rapid_mlx-0.12.3.tar.gz"
-  sha256 "221eaa0bbdfcf04596cfd42eb34a02eb4503d5284753c00797ca952ebaa64ec1"
+  url "https://files.pythonhosted.org/packages/ae/fa/d6f122ae9876627195b2c7b0d0a370dff35be4ae2bf2118364f9b511a239/rapid_mlx-0.12.4.tar.gz"
+  sha256 "d630e73814ce586ad9a80cf132db32491c61a9ace5fe5cbe4b83081dd35daafa"
   license "Apache-2.0"
 
   bottle do
@@ -40,8 +40,8 @@ class RapidMlx < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
-    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
+    url "https://files.pythonhosted.org/packages/d1/40/8a867253c9b8afa296ac22e426a157eebbe41dcac66f7f50bbbef931afed/argcomplete-3.7.1.tar.gz"
+    sha256 "6926a3a70ae70dce1f3dfb5cf1fc984278cd163e78ec18ad2ed7fa4fabd8f281"
   end
 
   resource "attrs" do
@@ -175,8 +175,8 @@ class RapidMlx < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "protobuf" do
