@@ -1,8 +1,8 @@
 class Radicle < Formula
   desc "Sovereign code forge built on Git"
   homepage "https://radicle.xyz"
-  url "https://files.radicle.xyz/releases/latest/heartwood-1.9.1.tar.gz"
-  sha256 "e444d2a5e5850490e00e4b13433e474898517c87e5151ec72610d657ac7c9e7c"
+  url "https://files.radicle.xyz/releases/latest/heartwood-1.10.0.tar.gz"
+  sha256 "2f91ff00d9a2cb333145daf2264e2e266be3322d31836b780d13dcbd29ea1568"
   license all_of: ["MIT", "Apache-2.0"]
 
   livecheck do
