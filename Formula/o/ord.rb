@@ -7,12 +7,12 @@ class Ord < Formula
   head "https://github.com/ordinals/ord.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bc12ac8fde84eaa44e8534ab55e39bfdec6776d276875a9e9ad26cecc54f220"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf2c68d05899836b06a4300ce607f12ff52a6df96db4b808d60b71ee1652c3ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d359ea05935261295b0f4540cce1721119f6bb71017d50ff3de3d2cc825e1eb0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64af4252b16a3f5a2526af9fb365478e2042b0ed2414b74d0b808b88a7cec4a0"
-    sha256 cellar: :any,                 arm64_linux:   "935cb29f7cb6955109a9168cfa56565ba0cb39162736db75ef7639511d0e14c7"
-    sha256 cellar: :any,                 x86_64_linux:  "c2a3731d8628bf4a4c560c77ecd422624bade5ef5501319457c76c1950f1929a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d35339233d919601b1d7abe6ea2455f2a9201ce092cd8e0e2225d56b9c28e505"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba148605d7bf20f3f861278b5f806e11f5b94e003cd04c705016c22ef4e7ffec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "824e2496fd8cec22959cb9ae9d24365b4e0865c801196ae1c54de608af343b06"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c2ed1be55e863d71d4e94e1c98727986f6c90ba96393fdca3ee6d62bca8c8c3"
+    sha256 cellar: :any,                 arm64_linux:   "16c524b9d649a999fd0c70482495772275eb9bf095d995f9ea8c44574b3e4722"
+    sha256 cellar: :any,                 x86_64_linux:  "a3b38a01ac412c3a6dfc354ff54dc85da094871324189f981736504afbe855ec"
   end
 
   depends_on "pkgconf" => :build
