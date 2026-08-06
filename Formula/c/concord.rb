@@ -1,8 +1,8 @@
 class Concord < Formula
   desc "Terminal user interface client for Discord"
   homepage "https://github.com/chojs23/concord"
-  url "https://github.com/chojs23/concord/archive/refs/tags/v2.5.3.tar.gz"
-  sha256 "1e5df2950a1af9fdf88e29f8159b885ba36e51a63a2a8b3685f284b777824838"
+  url "https://github.com/chojs23/concord/archive/refs/tags/v2.5.5.tar.gz"
+  sha256 "2cffd325eb934c07fa186f78544c2ffab312f0f15fdaa0586fb8eae9a88388b1"
   license "GPL-3.0-only"
 
   bottle do
@@ -22,10 +22,14 @@ class Concord < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "libva"
     depends_on "pipewire"
   end
 
   def install
+    # opusic-c bundles libopus and builds it with CMake by default
+    inreplace "Cargo.toml", 'package = "opusic-c" }', 'package = "opusic-c", default-features = false }'
+
     system "cargo", "install", *std_cargo_args
   end
 
