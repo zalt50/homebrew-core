@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.66.0.tar.gz"
-  sha256 "547883c2f0dbc85a4545d4533f5b812fbc4c8ffe1271056de18b51994acbf474"
+  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.67.0.tar.gz"
+  sha256 "d962730d14454cc24a31b796f02459274741034b4b774888b1426be0854b615e"
   license "MIT"
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
@@ -32,6 +32,10 @@ class Fastfetch < Formula
 
   uses_from_macos "sqlite" => :build
 
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1700
+  end
+
   on_linux do
     depends_on "dbus" => :build
     depends_on "ddcutil" => :build
@@ -46,6 +50,11 @@ class Fastfetch < Formula
     depends_on "rpm" => :build
     depends_on "wayland" => :build
     depends_on "zlib-ng-compat" => :build
+  end
+
+  fails_with :clang do
+    build 1700
+    cause "Requires C23 auto type inference"
   end
 
   def install
