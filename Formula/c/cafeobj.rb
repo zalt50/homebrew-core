@@ -25,40 +25,14 @@ class Cafeobj < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fefc0da02032b0c3f03aee866a9e6db0fbc3b9bcee757a71f5a682703e12ff0b"
   end
 
-  depends_on "sbcl" => :build
-  depends_on "zstd"
-
-  # Does not build with SBCL 2.5: https://github.com/CafeOBJ/cafeobj/issues/8
-  resource "sbcl" do
-    url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.4.11/sbcl-2.4.11-source.tar.bz2"
-    sha256 "4f03e5846f35834c10700bbe232da41ba4bdbf81bdccacb1d4de24297657a415"
-  end
+  depends_on "clisp"
 
   def install
-    resource("sbcl").stage do
-      ENV["SBCL_MACOSX_VERSION_MIN"] = MacOS.version.to_s if OS.mac?
-      system "sh", "make.sh", "--prefix=#{buildpath}/sbcl", "--with-sb-core-compression", "--with-sb-thread"
-      system "sh", "install.sh"
-      ENV.prepend_path "PATH", buildpath/"sbcl/bin"
-    end
-
     # Exclude unrecognized options
     args = std_configure_args.reject { |s| s["--disable-debug"] || s["--disable-dependency-tracking"] }
 
-    system "./configure", "--with-lisp=sbcl", "--with-lispdir=#{elisp}", *args
+    system "./configure", "--with-lisp=clisp", "--with-lispdir=#{elisp}", *args
     system "make", "install"
-
-    # Work around patchelf corrupting the SBCL core which is appended to binary
-    # TODO: Find a better way to handle this in brew, either automatically or via DSL
-    if OS.linux? && build.bottle? && build.stable?
-      cp lib/"cafeobj-#{version.major_minor}/sbcl/cafeobj.sbcl", prefix
-      Utils::Gzip.compress(prefix/"cafeobj.sbcl")
-    end
-  end
-
-  post_install_steps do
-    install_gzipped_executable "cafeobj.sbcl.gz", "cafeobj-#{version.major_minor}/sbcl/cafeobj.sbcl",
-                                  target_base: :lib
   end
 
   test do
