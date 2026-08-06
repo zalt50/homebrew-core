@@ -21,6 +21,8 @@ class Flatcc < Formula
     args = %W[
       -DFLATCC_INSTALL=ON
       -DFLATCC_INSTALL_LIB=#{lib}
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
     # Workaround to build with CMake 4
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
