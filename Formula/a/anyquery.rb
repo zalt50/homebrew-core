@@ -7,12 +7,12 @@ class Anyquery < Formula
   head "https://github.com/julien040/anyquery.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a648d9e0106b1e8776e8a44b462f3ffa06a11e3bf8100fc24b178dc34a05c03c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fe0aef738aeec5c88dbdcc54c36cbf86df7483e38ff6855c86df1d50b8cf109"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eaab7fd289b1b6872175dca16894ae19f305d019645c11e86ce7ede86c069f47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f314427b14b68046d1e09e4946952176bf931b916f4d4f55713c1f5dff69c39a"
-    sha256 cellar: :any,                 arm64_linux:   "25ce3b87b297593cda9ca39c1bbaef43f1973f707f329ba85a768ca69082abd9"
-    sha256 cellar: :any,                 x86_64_linux:  "c2de4decfc85f9436dd5b64f82bc8e68edbb6050159d4ef970969a3b9acbbc87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fce2013172c302466960dd0e00a1771a847f61b332d94c1f6bf7ba2f95e42f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cff58e5c8b25397464c13cf853375450b83d088433c0983cbd59ce34c8aa59c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6be0926405ef1ae54d05a9e3535c32d244ff84b4c264dbb5b27f8a65fb48bb32"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3a363c0339df4d31a761e2755407e9a562bb953c807256ba916e580994bc3e8"
+    sha256 cellar: :any,                 arm64_linux:   "61694bc8ce079a0789d0da0e69fb787ec4b047f19fae4d6c9b7e27aa16c6ae9f"
+    sha256 cellar: :any,                 x86_64_linux:  "0d6f1036bf6d5a994c7723b407497e24a606c72497aae3b703a825c33aa4c305"
   end
 
   depends_on "go" => :build
