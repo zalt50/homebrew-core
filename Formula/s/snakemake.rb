@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3c/4b/6ca3ef78b8b6b2f76079a2dc260cb48aa58e7b6eeeb1278e6d200128ba1b/snakemake-9.24.0.tar.gz"
-  sha256 "0561a41594c4955f705d1811ebed5e23020a5f26c4724e6cf102c5bd31804acd"
+  url "https://files.pythonhosted.org/packages/dc/c6/38cd19d10460d5a556f412b64c4e8975e7b56cc17240d044ce909e5c2d27/snakemake-9.25.1.tar.gz"
+  sha256 "5a0486d397370a19b636fd1f734765520fa744bc5071c309e3393b62f5d87aa5"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -78,8 +78,8 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "greenlet" do
@@ -233,8 +233,8 @@ class Snakemake < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/57/a9/a2584b8313b89f94869ddb3c4074617a691de1812a614d2d50e32ca5a7a6/traitlets-5.15.1.tar.gz"
-    sha256 "7b1c07854fe25acb39e009bae49f11b79ff6cbb2f27999104e9110e7a6b53722"
+    url "https://files.pythonhosted.org/packages/2c/2e/a7fbfe268c8a3b32546930c0297c101d65a4a14c304ad5790a9f478f0e4e/traitlets-5.16.1.tar.gz"
+    sha256 "ed900c2b631aa3a112811139fa97b8d2c3bad5e989656bba4b7e52c7852c18c1"
   end
 
   resource "urllib3" do
