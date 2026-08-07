@@ -3,10 +3,9 @@ class Datasette < Formula
 
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/80/26/80b5480921d71891b8ff880fed6d44150b9164903d683efe2eb7405b61d8/datasette-0.65.2.tar.gz"
-  sha256 "be956fb2633b8380d7f818b5ddab40d5c7346d5e9d4d24e81c43b1fb60267432"
+  url "https://files.pythonhosted.org/packages/6b/02/d9cbfc8750f490450c0b493fd3790c633dc44587f8b049163913748b1031/datasette-0.65.3.tar.gz"
+  sha256 "ad283ea3c7f80423cb8ea5741fb9072878b40aedae3e3b63ab9856d92191582d"
   license "Apache-2.0"
-  revision 6
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
@@ -40,8 +39,8 @@ class Datasette < Formula
   end
 
   resource "asgiref" do
-    url "https://files.pythonhosted.org/packages/73/9b/e1cda73c1b8050ec258f94b426f769f7f1b0835bd9644cb6d561e2e320ca/asgiref-3.12.0.tar.gz"
-    sha256 "37ef86a30c3549f1a469c78c4521a63b8c31c17ee42cf792a2b054af81e23c79"
+    url "https://files.pythonhosted.org/packages/e6/26/3b59f2bdae5f640389becb1f673cded775287f5fc4f816309d9ca9a3f93d/asgiref-3.12.1.tar.gz"
+    sha256 "59dcb51c272ad209d59bed5708a64a333083e86017d7fcdd67498eeab7784340"
   end
 
   resource "click" do
@@ -115,8 +114,8 @@ class Datasette < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "pluggy" do
@@ -145,8 +144,8 @@ class Datasette < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   end
 
   def install
