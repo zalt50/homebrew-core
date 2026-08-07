@@ -1,25 +1,27 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https://d2lang.com/"
-  url "https://github.com/d2lang/d2/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "b784d6472d53fdaaa7ecc9bdbe23456e2b4a90e18736828028b3f951537e56a1"
+  url "https://github.com/d2lang/d2/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "157240836e816f5c3ef37db7efa367f3cd6fc44be56f83f00e0412ee3ba196b9"
   license "MPL-2.0"
   head "https://github.com/d2lang/d2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61a38ce31638ad307378e0031fce216fbf8e5082132ac4866ab5ca81e7337010"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a82ceeada44a2e61646f59f749286ee4347ca364fe568007235089844fe473f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a82ceeada44a2e61646f59f749286ee4347ca364fe568007235089844fe473f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a82ceeada44a2e61646f59f749286ee4347ca364fe568007235089844fe473f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfca943125fe7319b8bd9a09256b9e62a6185d378b2394c307273a488567616e"
-    sha256 cellar: :any_skip_relocation, ventura:       "cfca943125fe7319b8bd9a09256b9e62a6185d378b2394c307273a488567616e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06d2bb3e6e93b2734ef66111772aefb0120938dabfb2697dad37e119e09f0157"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74e100511019db1329966018c384c0be60853e9e2bb5de50e8d4b092da92552a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd0f0a83c8e007573dfe1a6e788fcac0b8c8dea81e9f5f77830cfc564f9fd024"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd0f0a83c8e007573dfe1a6e788fcac0b8c8dea81e9f5f77830cfc564f9fd024"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd0f0a83c8e007573dfe1a6e788fcac0b8c8dea81e9f5f77830cfc564f9fd024"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87365ba257d80c5c45ca447a6c2e4f99a52de40fa86cb3b3de7c4a22306d590e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "387869048198a50f1ce08f58cf6ebf1e3a7e024643eb07aad9eb27f2bb674cda"
+    sha256 cellar: :any,                 x86_64_linux:  "fe0912f4930296c489ba59f3b0be08571f2a86ce488d63f8d340eb19757d3acc"
   end
 
   depends_on "go" => :build
 
   def install
+    # FIXME: remove for version 0.8.1
+    # https://github.com/d2lang/d2/commit/17c77af9705266648ffbd8a4542ff15546fd8c0a
+    inreplace "lib/version/version.go", "v0.7.1-HEAD", "v0.8.0-HEAD"
+
     ldflags = "-X oss.terrastruct.com/d2/lib/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
     man1.install "ci/release/template/man/d2.1"
