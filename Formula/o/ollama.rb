@@ -16,12 +16,12 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0dee51b4bc0238cd1bdcad10be834f324fc36e6d83cc97ca9b2afcbc79226d6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d7a1d0b869173e68d94dcaf6463589fa515b6a74702ef63e2923234f8d68438"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b3f513908cc357a55f862277e0a7ee4791c6258e9ebdbced67d882b5f470251"
-    sha256 cellar: :any,                 sonoma:        "de8be739b907317b4f8c484d75129f3fb764e3b05a733c2a8619f7bd1d1c34dc"
-    sha256 cellar: :any,                 arm64_linux:   "28d97f1fe84d64fbe9c09fc286a181604108f986720b69860b0389035b05b375"
-    sha256 cellar: :any,                 x86_64_linux:  "6f4bde2bb63ffec270bb6cd64d7bed0d648031e718441a8742c75daa85d89704"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa61dc89f7f61edc379a546c9a987f7add95922481b0488e085c1eb3c2235a6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0f4b964f3979a24eacb675d6205190136c6d696290dc62f22d0e7d127ee62b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1021ac92e149c998c0f3ebecdb023496baaea318963e676c5200274906d4e9ca"
+    sha256 cellar: :any,                 sonoma:        "cf8373a5f4ef0007c1c26178c2fd02ee68450823721e3807946f4ebc299183d9"
+    sha256 cellar: :any,                 arm64_linux:   "65db620cd78191e9e04df323284b8c2f8ec6b42dab75fac8211b84e3d4976b16"
+    sha256 cellar: :any,                 x86_64_linux:  "16d283c9de03b1fbd51718cea979feb8d322513b1bcd797024a6bfef7656e347"
   end
 
   depends_on "ccache" => :build
