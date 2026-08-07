@@ -6,14 +6,16 @@ class Dstack < Formula
   url "https://files.pythonhosted.org/packages/c0/06/71bd9bb1db09fdf44966f57bb888e31df5391731606ee8d5fe958320b663/dstack-0.21.0.tar.gz"
   sha256 "5de71de6ef2fb4742347256a503a9e883200ee1bba9f6bd258a52be80400ca7c"
   license "MPL-2.0"
+  head "https://github.com/dstackai/dstack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "521e1415fbdfcf2a18497f9143b71a08db9e1d02c31c96b72dd4d439c5fe4f5d"
-    sha256 cellar: :any, arm64_sequoia: "c117457d5d45a97d1d189c65a9627c98d3ef8deb4d7a5366b667931bfb677c9e"
-    sha256 cellar: :any, arm64_sonoma:  "0395f9ab2dbc8696fa5678151292d45ab51681af5426c3907ec85bd50a440d2b"
-    sha256 cellar: :any, sonoma:        "7c754899575ae65b8589fb657667d5dae5f39020346ae6966d7044ca32350cad"
-    sha256 cellar: :any, arm64_linux:   "6e4e32c14a40a4985c2539ff25fe8ae34ff54379a44c8276b74f040c366a0c44"
-    sha256 cellar: :any, x86_64_linux:  "5cb44c343121200fa5c9fa53670a7850825d3a0fc701cf8f2b1ae37e3aa5622e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "de921453082fccf27a9da736f2e71dedb5f76ad34f9c1299395847f78234c34b"
+    sha256 cellar: :any, arm64_sequoia: "02fc5a4751f24d454ae1471cbdbdf9c33970a228eb4438e9a77be2c1cb2492de"
+    sha256 cellar: :any, arm64_sonoma:  "7aaabbc12ca83da6e08307723012878ce7d61ef2241d7b53bac4cc45ddbe8188"
+    sha256 cellar: :any, sonoma:        "75a92287248841400102eabebaefd202fad54a1517f2a97ee877dbc051328e7d"
+    sha256 cellar: :any, arm64_linux:   "f789ea19aadd82ed3600663c0633f7ddbedf2a2bc05b5e0605078dc78969d836"
+    sha256 cellar: :any, x86_64_linux:  "de26ef4772f1ac358659383c7037a8a48be41aa8712accb4723d85cc5961d479"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -23,11 +25,12 @@ class Dstack < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
-  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, upstream issue, https://github.com/dstackai/dstack/issues/1844
+  depends_on "pydantic" => :no_linkage
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "dstack[aws,azure,gcp,lambda]",
-                exclude_packages: ["certifi", "cryptography", "rpds-py"]
+                exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "aiocache" do
     url "https://files.pythonhosted.org/packages/7a/64/b945b8025a9d1e6e2138845f4022165d3b337f55f50984fbc6a4c0a1e355/aiocache-0.12.3.tar.gz"
@@ -57,11 +60,6 @@ class Dstack < Formula
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
     sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
-  end
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz"
-    sha256 "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
   end
 
   resource "anyio" do
@@ -454,16 +452,6 @@ class Dstack < Formula
     sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/18/a5/b60d21ac674192f8ab0ba4e9fd860690f9b4a6e51ca5df118733b487d8d6/pydantic-2.13.4.tar.gz"
-    sha256 "c40756b57adaa8b1efeeced5c196f3f3b7c435f90e84ea7f443901bec8099ef6"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/9d/56/921726b776ace8d8f5db44c4ef961006580d91dc52b803c489fafd1aa249/pydantic_core-2.46.4.tar.gz"
-    sha256 "62f875393d7f270851f20523dd2e29f082bcc82292d66db2b64ea71f64b6e1c1"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
     sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
@@ -592,16 +580,6 @@ class Dstack < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
     sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
-    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "tzlocal" do
