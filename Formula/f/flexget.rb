@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/0e/f9/e7b44358d5dbf1a2f43027ee11fe8630075487fb60ba853086806b111f94/flexget-3.20.0.tar.gz"
-  sha256 "e6a95c2ab0bcd84d750b02a7174c86297f33d1b913d3bb29b31dedae6030eb61"
+  url "https://files.pythonhosted.org/packages/7a/ca/0a50bdf9549cdf25b3c83f5df466aabec1e5cb85558eb86e8b0599da170b/flexget-3.20.1.tar.gz"
+  sha256 "fb9a3660302905cad7d2b931953603a4b48f51000d014f4f315685a2d95ea695"
   license "MIT"
 
   bottle do
@@ -227,8 +227,8 @@ class Flexget < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pendulum" do
