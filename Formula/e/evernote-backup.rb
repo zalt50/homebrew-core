@@ -9,12 +9,12 @@ class EvernoteBackup < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7326b62685079aad0ff26d3948eaf5156e270b8ccd009d401e3383e217861fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c4f905232abaf89c103ec1ed1f8568fc94902519540612ec23143c83f47f6e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28da7747ae9016d6dc930aa5eb543724bf9ac28fa66dc518d03ab37de5f41634"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c01fb5b0c8106b7d075a77f3530ad4c9f5c7653e5be020afe43d02e99afb5402"
-    sha256 cellar: :any,                 arm64_linux:   "c19ee6111f77b5e1a08477e97331b27b1357ef65d9234e4a0d68fde2ce67f13b"
-    sha256 cellar: :any,                 x86_64_linux:  "4125146a4a961fadd51fbc73a9e629537fb0ac3ecbb0220c4a79cd69fe7c8332"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "717b1e25a39c57c663a448b9e68dde21c87c0d00796ffa10f84c7a801be4a72d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c992da3c269d8a6b2db6b31c136adc0d952dd9d7e5bdebb16c2d348e8547190"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4383d62c091dfb2c459ac4d30853afccf7342833ee593bed8f0aef27618b59a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61432071820483f114acfadcc3dd8614ce1955533fd6de1335532a69902ba16b"
+    sha256 cellar: :any,                 arm64_linux:   "a1274c653e507e1d967e5040acf4d03fce729092bae8dfc026d9b9eae9324db8"
+    sha256 cellar: :any,                 x86_64_linux:  "85513daf62f92c6e795863e04ea334107e9f2e4c7180b0eccfb58dcff0f694ad"
   end
 
   depends_on "rust" => :build
