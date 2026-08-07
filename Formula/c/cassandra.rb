@@ -6,9 +6,9 @@ class Cassandra < Formula
   homepage "https://cassandra.apache.org"
   # TODO: Switch to `python@3.13` after https://github.com/apache/cassandra/pull/4628
   # TODO: Switch to `openjdk@21` in 6.0, https://issues.apache.org/jira/browse/CASSANDRA-18831
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/5.0.8/apache-cassandra-5.0.8-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/5.0.8/apache-cassandra-5.0.8-bin.tar.gz"
-  sha256 "1579d7d3f2d812741a28cd2c2cbe29e83541bb4d25fb21ec2c00c1e4fb3b9a8f"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/5.0.9/apache-cassandra-5.0.9-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/5.0.9/apache-cassandra-5.0.9-bin.tar.gz"
+  sha256 "eee1460b47ebe188a29521207230617f22aad7f9e1674f5ea454f10c8f344d61"
   license "Apache-2.0"
 
   bottle do
@@ -56,8 +56,8 @@ class Cassandra < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
-    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
+    url "https://files.pythonhosted.org/packages/2b/b0/c1f5a970721f06b85c0cd5142e0ff8fe067708abd779b0c4f4be7d61d09f/wrapt-2.3.0.tar.gz"
+    sha256 "681a2d0eefd721998f90642762b8e75c2159ec531b20ad5e437245ea7b06a107"
   end
 
   def install
