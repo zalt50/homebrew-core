@@ -7,12 +7,12 @@ class D2 < Formula
   head "https://github.com/d2lang/d2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd0f0a83c8e007573dfe1a6e788fcac0b8c8dea81e9f5f77830cfc564f9fd024"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd0f0a83c8e007573dfe1a6e788fcac0b8c8dea81e9f5f77830cfc564f9fd024"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd0f0a83c8e007573dfe1a6e788fcac0b8c8dea81e9f5f77830cfc564f9fd024"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87365ba257d80c5c45ca447a6c2e4f99a52de40fa86cb3b3de7c4a22306d590e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "387869048198a50f1ce08f58cf6ebf1e3a7e024643eb07aad9eb27f2bb674cda"
-    sha256 cellar: :any,                 x86_64_linux:  "fe0912f4930296c489ba59f3b0be08571f2a86ce488d63f8d340eb19757d3acc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57d3100ef95b35b2f4ee2fe2705f018fb5adaf69760ba13a06c696b7eb4cebdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57d3100ef95b35b2f4ee2fe2705f018fb5adaf69760ba13a06c696b7eb4cebdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57d3100ef95b35b2f4ee2fe2705f018fb5adaf69760ba13a06c696b7eb4cebdf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "871119c77baa85990ab8b8973f547fa8c5ca0ff9989423df5e41b761f22865c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3b084a98f93f3273da808d68bb1ab20c3bae5b936e7c1541b4a4da2e6db6aeb"
+    sha256 cellar: :any,                 x86_64_linux:  "a7203f69bcd53f2dba5c14e004a80e1cb1ed85c1b1e25666bfd480aeaec435e9"
   end
 
   depends_on "go" => :build
