@@ -6,6 +6,7 @@ class Modal < Formula
   url "https://files.pythonhosted.org/packages/09/13/c54908743129b75f9761ebcc767f8de5e5b16e2a0303e171f7ae38d90d4d/modal-1.5.3.tar.gz"
   sha256 "0551c6fa2386ce78619f1a058eb4dd3ca527a54048952ea870e26704557c76c4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "33ae71591efb2a6d620b65d5eea1cd9963e4a5b4ea76f6cbf2b160a580d5a748"
@@ -68,8 +69,8 @@ class Modal < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/30/d4/a7d6fb3f58be99d65cbf2d3f766896217a2921d0f3ab10711c45dc1519ee/h2-4.4.0.tar.gz"
-    sha256 "46b551bdcdc7e83cf5c04d0bf93badb8a939bd2287d9fee1abb23a445b9e0580"
+    url "https://files.pythonhosted.org/packages/e7/85/7c366e69d84c17bb778fe41419e1fbcce3033d5b7ce29bbffff0a98b859f/h2-4.4.1.tar.gz"
+    sha256 "4e866ffb1a869ae14dd9b5e6beb5c24a13da0495ad72b65925ded182521c1516"
   end
 
   resource "hpack" do
