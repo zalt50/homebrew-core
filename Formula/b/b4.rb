@@ -8,12 +8,12 @@ class B4 < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e35e9bcf7da47891d673e85c6c425c5ae67a4cede872e99be1309fac93336225"
-    sha256 cellar: :any,                 arm64_sequoia: "5ae1f5564a87b9eac662bca7687e108b61a5f329ec293b22304424b00c059525"
-    sha256 cellar: :any,                 arm64_sonoma:  "4acd5fa15095f7efd74b0c160338c9453ab652c19f9563f068176e295418060f"
-    sha256 cellar: :any,                 sonoma:        "615edc0412ac2da021633f2d6b9257ef67adc23913118cb8c4a7dd36bcd6f5b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c061b27b458e12faf4a5507e711e9d9e8fe8296912de58f9d4b8fdc6ba2fe8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5932989bb4539a3037735929a897d1fe4d8b631bc462a5c28b684df3c949c54"
+    sha256 cellar: :any, arm64_tahoe:   "9c99ebc9e8c3cc07cc9ab7c57115b1c4c572adaad772408fd54d2d8c511b1a6d"
+    sha256 cellar: :any, arm64_sequoia: "afd8552c95c1f88103d20f549627aac0d6051f0cf7deaf535ec005987695ad2d"
+    sha256 cellar: :any, arm64_sonoma:  "10b3ce2c3dda1f14b868d3dac290a20a042e036df6f08a995ebd24cdd38ab848"
+    sha256 cellar: :any, sonoma:        "eb3fda162a22598be3154f03e46c892bf12e35b3bcc3860481f547763f244e7b"
+    sha256 cellar: :any, arm64_linux:   "a01c335753eb1c64f0f0a1383964bd580e11862691169f817050d94e6a70f738"
+    sha256 cellar: :any, x86_64_linux:  "c32838bb2e3745c92fddb0afa6051d003ed16e9ba0cf20040fca5a9837853cdc"
   end
 
   depends_on "certifi" => :no_linkage
