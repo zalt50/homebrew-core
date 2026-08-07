@@ -9,12 +9,12 @@ class ErlangLanguagePlatform < Formula
   head "https://github.com/WhatsApp/erlang-language-platform.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8576d3b5737facfdf4eb2337763f3e161a5ed02d5072fb80d674697f3d301b3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "951b548a94eddf55a00d497154356f0dd536bd5f6c743982b0b8171cf4cf9f77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf6944548b7f14fbfb4e420f593e3279e2b89496dc2273859f5ce04c39afcc75"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89e23670e8fd9e570690e6b893f6240b76ec74c5a7487470a6c3e029786a59b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efc14ca44ba1e1fd97f240e33f5b143589d97d8a19a11be57049008cbb5cba99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d73ccda29804be2a0d64c887a20a7e6210a2320efe97a158ba13dda52ce61474"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45cd23f64f98e0daa5bb22a99f1c7e2d3dfcb86948446214d7f55a7ae590d147"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1f01588da6bbef868b2153f94efff76b03b705d9b3f6a2312d13b4751454bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13d3d7a741d53d245a296dc1b80db1e270785c9745699d7856705b45df4aa21d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33baf923e942af94535f3abd01534e4901e4b5d23bc0b93fa1bc61c0c4e61640"
+    sha256 cellar: :any,                 arm64_linux:   "767a35a1330f82b44b1d8a01f81d05370762b1e6a8e611ff457964a87714fae6"
+    sha256 cellar: :any,                 x86_64_linux:  "406528c3c3bdb7e06f4d4506d7ab4a090c570226099343b26376cdb03d22f42e"
   end
 
   depends_on "rust" => :build
