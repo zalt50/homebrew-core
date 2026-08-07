@@ -1,8 +1,8 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https://d2lang.com/"
-  url "https://github.com/d2lang/d2/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "b784d6472d53fdaaa7ecc9bdbe23456e2b4a90e18736828028b3f951537e56a1"
+  url "https://github.com/d2lang/d2/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "157240836e816f5c3ef37db7efa367f3cd6fc44be56f83f00e0412ee3ba196b9"
   license "MPL-2.0"
   head "https://github.com/d2lang/d2.git", branch: "master"
 
@@ -20,6 +20,10 @@ class D2 < Formula
   depends_on "go" => :build
 
   def install
+    # FIXME: remove for version 0.8.1
+    # https://github.com/d2lang/d2/commit/17c77af9705266648ffbd8a4542ff15546fd8c0a
+    inreplace "lib/version/version.go", "v0.7.1-HEAD", "v0.8.0-HEAD"
+
     ldflags = "-X oss.terrastruct.com/d2/lib/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
     man1.install "ci/release/template/man/d2.1"
