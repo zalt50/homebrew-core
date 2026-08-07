@@ -1,21 +1,10 @@
 class VultrCli < Formula
   desc "Command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
+  url "https://github.com/vultr/vultr-cli/archive/refs/tags/v3.11.0.tar.gz"
+  sha256 "e29be650393530c424ea301b6d39092d2daceaa8059a4096bcfa3bbd54828fe2"
   license "Apache-2.0"
   head "https://github.com/vultr/vultr-cli.git", branch: "master"
-
-  stable do
-    url "https://github.com/vultr/vultr-cli/archive/refs/tags/v3.10.0.tar.gz"
-    sha256 "cc5caa50168e2dd94600e7cbb7449d1435fa6a656a641be98da483b3de871958"
-
-    # Backport better handling when config file is missing
-    patch do
-      url "https://github.com/vultr/vultr-cli/commit/6959db75adc8250eb6426f18b1a816a6dc1fd019.patch?full_index=1"
-      sha256 "fd94f9ad45d727b7ecf121f60261c3ba0a4dd0b2e4b4d78000a11d6b62e52ac6"
-      type :backport
-      resolves "https://github.com/vultr/vultr-cli/pull/595"
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05de5162411d2b6962f55e3b874cf31758bbf4ccf932163b0c8a09c308a0db1b"
