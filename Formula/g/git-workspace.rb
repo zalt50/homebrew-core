@@ -9,12 +9,12 @@ class GitWorkspace < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c6ac5f815523a23ed6bd0612293d2221f87d929d94d7789cc3da6d504e47fbcf"
-    sha256 cellar: :any,                 arm64_sequoia: "6bf616927a82d2d116caf1650507e88be477c9d1d8548c4ebcae2adea6e294ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "bbecaf7262599228c1c15472b78d72be552516800ac1a09d89dff83400ba588b"
-    sha256 cellar: :any,                 sonoma:        "8212ca5c8a97fa76305697d8a107dc0c173e07473fa562d6dc810cb570689da9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9fd69840b3ef28bb3aa567819a5e81f06e5a49364a43ec03ceef8b73dd5d54a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3d0bcdf8d607acdee86c6dbf299e84d6991ad6439b372ea2490eb1509f92c85"
+    sha256 cellar: :any, arm64_tahoe:   "287d4176521300d2316c3d8269415953438589b4f4f182e51f487944a7975e8f"
+    sha256 cellar: :any, arm64_sequoia: "693010f83b8e50c1a21b087b869270ea226eb6eb56008c8f5ef046376390bd54"
+    sha256 cellar: :any, arm64_sonoma:  "29485192ce75698d704ab8aeaf8c2292a88e3e84ac48c2a6e3a9a0695b577b24"
+    sha256 cellar: :any, sonoma:        "d64d2fa80bca96b4921bf2dcb6ddb60997ce4da31db997e40ca58e8cedaf1800"
+    sha256 cellar: :any, arm64_linux:   "26cddc8156b0ccdbd1930a02e6fb35fee795d8cc8a8846e3c607b91b2870fab4"
+    sha256 cellar: :any, x86_64_linux:  "87918f692138b00ac615e3892f7ddbe7b9298ff300a3a0c247d8791c138c9c23"
   end
 
   depends_on "pkgconf" => :build
