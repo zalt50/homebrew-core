@@ -6,21 +6,23 @@ class EvernoteBackup < Formula
   url "https://files.pythonhosted.org/packages/fe/fb/77e7a39fda8f28b795b91959b963afbbb137221b1d25408514ae0848bbb1/evernote_backup-1.14.0.tar.gz"
   sha256 "d62240730c6444072b2011aa5e63fbd15e2246959324fec3e58f86a3e313a962"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7326b62685079aad0ff26d3948eaf5156e270b8ccd009d401e3383e217861fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c4f905232abaf89c103ec1ed1f8568fc94902519540612ec23143c83f47f6e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28da7747ae9016d6dc930aa5eb543724bf9ac28fa66dc518d03ab37de5f41634"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c01fb5b0c8106b7d075a77f3530ad4c9f5c7653e5be020afe43d02e99afb5402"
-    sha256 cellar: :any,                 arm64_linux:   "c19ee6111f77b5e1a08477e97331b27b1357ef65d9234e4a0d68fde2ce67f13b"
-    sha256 cellar: :any,                 x86_64_linux:  "4125146a4a961fadd51fbc73a9e629537fb0ac3ecbb0220c4a79cd69fe7c8332"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "717b1e25a39c57c663a448b9e68dde21c87c0d00796ffa10f84c7a801be4a72d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c992da3c269d8a6b2db6b31c136adc0d952dd9d7e5bdebb16c2d348e8547190"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4383d62c091dfb2c459ac4d30853afccf7342833ee593bed8f0aef27618b59a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61432071820483f114acfadcc3dd8614ce1955533fd6de1335532a69902ba16b"
+    sha256 cellar: :any,                 arm64_linux:   "a1274c653e507e1d967e5040acf4d03fce729092bae8dfc026d9b9eae9324db8"
+    sha256 cellar: :any,                 x86_64_linux:  "85513daf62f92c6e795863e04ea334107e9f2e4c7180b0eccfb58dcff0f694ad"
   end
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: "certifi",
+                extra_packages:   %w[pycryptodome keyring]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
@@ -47,9 +49,39 @@ class EvernoteBackup < Formula
     sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
+  resource "jaraco-classes" do
+    url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
+    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
+  end
+
+  resource "jaraco-context" do
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
+  end
+
+  resource "jaraco-functools" do
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
+  end
+
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
+  end
+
+  resource "more-itertools" do
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
+  end
+
   resource "oauthlib" do
     url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
     sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
+  end
+
+  resource "pycryptodome" do
+    url "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz"
+    sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
   resource "pyjwt" do
@@ -93,7 +125,8 @@ class EvernoteBackup < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[pycryptodome keyring] unless OS.mac?
+    virtualenv_install_with_resources(without:)
 
     generate_completions_from_executable(bin/"evernote-backup", shell_parameter_format: :click)
   end
