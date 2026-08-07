@@ -1,8 +1,8 @@
 class McpInspector < Formula
   desc "Visual testing tool for MCP servers"
   homepage "https://modelcontextprotocol.io/docs/tools/inspector"
-  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-2.0.0.tgz"
-  sha256 "10583f3dd01cfe4e050b2581e50902adae33fe6bec32074182cb47287799d9d3"
+  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-2.1.0.tgz"
+  sha256 "a2b62c9c28a90702d54a2e0ed0778d9633beec8f15e38aad41a4bf2ec8c42a96"
   license "MIT"
 
   bottle do
@@ -22,8 +22,8 @@ class McpInspector < Formula
   end
 
   resource "rolldown" do
-    url "https://github.com/rolldown/rolldown/archive/refs/tags/v1.1.5.tar.gz"
-    sha256 "2042204fda63956408dc102dd5cf5577368077ed70f9bce68474ed983c779879"
+    url "https://github.com/rolldown/rolldown/archive/refs/tags/v1.2.1.tar.gz"
+    sha256 "05615e3dd0991fe24070626ed80e18bb95a253faa865d45e5b86e65057672d73"
 
     livecheck do
       url "https://raw.githubusercontent.com/modelcontextprotocol/inspector/#{LATEST_VERSION}/package-lock.json"
