@@ -8,7 +8,7 @@ class Chardet < Formula
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9c6f44bb8e467e4d03845426a9e5534c34c0dc45eb72bca3b56eaee09a0cdaa6"
+    sha256 cellar: :any_skip_relocation, all: "8139ff6b12810567c4d91d04e84fb9e15f9bebe089bc1b259fe706321caae4c6"
   end
 
   depends_on "python@3.14"
