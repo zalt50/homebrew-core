@@ -6,8 +6,8 @@ class Crun < Formula
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "c4aed16a8d7dfb6e97913e59d5d854577361b354163525a24d6b14e4d938e63f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "014f76726ebdf60eea4df36ef9c40c49d615382b6333f92068524ed4c896f761"
+    sha256 cellar: :any, arm64_linux:  "f12a89eea3e3a99fd6ae63f9e00251c8988fa75235312aafbe5861296ceebd12"
+    sha256 cellar: :any, x86_64_linux: "a961e30e56074e998b9a311057a47af15e8168d9705c66445dc50b63324e557a"
   end
 
   head do
