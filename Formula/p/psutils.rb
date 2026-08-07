@@ -9,7 +9,7 @@ class Psutils < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f7750f019359055538bc20c12dd750da3c5739120cc268a2b5cbfb9a2c774507"
+    sha256 cellar: :any_skip_relocation, all: "5ccaefbbfb389044d8fb9b1e27f29e26193b72fe2bb0080aa138cdf27b46bafa"
   end
 
   depends_on "libpaper"
