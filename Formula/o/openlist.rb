@@ -5,6 +5,11 @@ class Openlist < Formula
   sha256 "4ed48156664ad046dd18e1da994354ecd2791508655a9b12c493142784b46511"
   license "AGPL-3.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "773ba1e1ae7065540baab9126eca73d1d5d6c5a0426eaee448c8e7106d104be4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "756d2bbd3700b85de4f486b36dc648146930962f2006efa7ca65cd8b73573d3f"
