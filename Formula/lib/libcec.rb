@@ -1,17 +1,17 @@
 class Libcec < Formula
   desc "Control devices with TV remote control and HDMI cabling"
   homepage "https://libcec.pulse-eight.com/"
-  url "https://github.com/Pulse-Eight/libcec/archive/refs/tags/libcec-8.1.4.tar.gz"
-  sha256 "61302836cc21c610b6fe0c751e4f130296828f191ee2650f80f73a376fe8c90d"
+  url "https://github.com/Pulse-Eight/libcec/archive/refs/tags/libcec-8.1.5.tar.gz"
+  sha256 "f00a033052e2503093961bb5d96d09f35f42f552a0ac0710358982bc9d5e0399"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2efa2dcfc05e646bb612fe329db9c9625b5fd78e7f7f7914282134a208018f2d"
-    sha256 cellar: :any, arm64_sequoia: "2db5fd4983232bb47a1ebc196a9b9abb7c6a417dfc33118855286a47dc693437"
-    sha256 cellar: :any, arm64_sonoma:  "d51d2cb226db339b65fc8f9fbdbdbc25d72134c21e1feafc3260fab36f7c14ee"
-    sha256 cellar: :any, sonoma:        "b202b2c600b67c2d92488c6665e6553978075f60be8eb9ddfa08d0fde5976912"
-    sha256 cellar: :any, arm64_linux:   "cdd6b93f58ec672e7ead9909c822aa0b1e99226b0be582f66d36a5ef9dbea230"
-    sha256 cellar: :any, x86_64_linux:  "1a5905a48a662790043b8b1a90eb9ad2e650650d76e812768fabbca3356ed3c5"
+    sha256 cellar: :any, arm64_tahoe:   "958abd97dc9e2f1df35d8f2caf656be43e0c12c94901569f3a547f526e08e179"
+    sha256 cellar: :any, arm64_sequoia: "db5e4f6cf19bbec4f18aeac4d18865891235e17a41f0eaa9f15f20bb4ee66110"
+    sha256 cellar: :any, arm64_sonoma:  "c7f9bc544aecfb6f352d493b053e1cc12892ce959d71a1cfb798fa00ac1a3cfb"
+    sha256 cellar: :any, sonoma:        "93c13b618d2ecd5af1cd5c0cd2678cb6678888a088c3266a94ff03c529df4e53"
+    sha256 cellar: :any, arm64_linux:   "dd754b3dae3b23fe883a568e5c6e6f319415a029869e7f93f55a5b90de0aec5f"
+    sha256 cellar: :any, x86_64_linux:  "1f357f08f8258888f32f15af3c7353c617e9ccce148d5a35c62868eb7405d509"
   end
 
   depends_on "cmake" => :build
