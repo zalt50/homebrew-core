@@ -3,8 +3,8 @@ class SnowflakeCli < Formula
 
   desc "CLI for snowflake"
   homepage "https://docs.snowflake.com/developer-guide/snowflake-cli/index"
-  url "https://files.pythonhosted.org/packages/c8/10/75ed43bd4133c1b69e76d0b8b05670057249be70e22d4c5f49eae5a3b20b/snowflake_cli-3.24.0.tar.gz"
-  sha256 "fd8370d8e1c741e57907bebbdadb158d1facabfc0db9f8a800f573a60bc56352"
+  url "https://files.pythonhosted.org/packages/fb/21/ccf6df6ece351de7e5df8f004d2e4bd6f1dddbf609e369fa6dc7b8f3bd4c/snowflake_cli-3.24.1.tar.gz"
+  sha256 "1293372f5c3ed8404669d1091d963c5650566a45b7bc9e6adb66b9e3bacc1c1b"
   license "Apache-2.0"
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
@@ -35,13 +35,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/51/da/d5ca15f34a567f2d027df23395315983bd7ee35011e93c1cca12b7f89823/boto3-1.43.64.tar.gz"
-    sha256 "fc7522c3ed97d38176e0b1366406bca0fc8c888ae8d416bf953477b3f015a7b2"
+    url "https://files.pythonhosted.org/packages/51/87/d61a5a76088240012800f303d3b910c259f6c630e395a013fa1a1216fdae/boto3-1.43.65.tar.gz"
+    sha256 "f2331154aee1ae97ece48077d77f41d3bd5ea39eb4e3037030448b58695a3a79"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/3b/67/0e39203c5c67f750874478cf89124486044580ec5cb391eec8eb13cf25b8/botocore-1.43.64.tar.gz"
-    sha256 "a2bb131f48111094fae0a2c896b42593797e935d9c22abb2ebae4290c6dbb5ea"
+    url "https://files.pythonhosted.org/packages/fa/86/65c298732919b84a3ecf331caeb47b8efcc1ce0537e8fdecad2cfee39174/botocore-1.43.65.tar.gz"
+    sha256 "eea5440cf4b850d0f4de4f7eda418c325c87de6d8980873f8b636bb482b31d0f"
   end
 
   resource "charset-normalizer" do
