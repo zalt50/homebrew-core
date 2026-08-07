@@ -7,12 +7,8 @@ class Fedify < Formula
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5153411632ac1909737eb81c2007ac71845088cbcd194b7016960f54f8fe706a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4f284e3ffb20d12a196dabe61b41babd8a8ceaec1ec7ee830ed5c10499621f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3660f20b01fcc09649e2bd05ed02284938f4e99f0519a20a19cae18da88ca49b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6edd4c6eaec44ebc44d92bdfa81a4030c625fdc8cae52a0c3bc35bb09d80e08b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dbd24f3b2ff54e3c2695e7452448ebd75ff5aab7dba84c82877aa0f3dff7f41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9946cd382132c46a710c99cf430943c910780b818b78691f303bcbbd054cbc9a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "47d053a9e367793401de533b7728ffd86f15a1b687da241c7760ac37ea23f6fa"
   end
 
   depends_on "node"
