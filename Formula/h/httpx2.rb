@@ -9,7 +9,7 @@ class Httpx2 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ca682f9c75e3e91101d620c9da4287e2b0feec0c58790e716159c66add87a17d"
+    sha256 cellar: :any_skip_relocation, all: "3a2f8dfa253e9bc5226dd15f392185b5037c5eab1078f8b6c722c6d60fe912c5"
   end
 
   depends_on "python@3.14"
