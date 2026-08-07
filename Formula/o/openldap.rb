@@ -1,10 +1,10 @@
 class Openldap < Formula
   desc "Open source suite of directory software"
   homepage "https://www.openldap.org/software/"
-  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.13.tgz"
-  mirror "http://fresh-center.net/linux/misc/openldap-2.6.13.tgz"
-  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.13.tgz"
-  sha256 "d693b49517a42efb85a1a364a310aed16a53d428d1b46c0d31ef3fba78fcb656"
+  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.0.tgz"
+  mirror "http://fresh-center.net/linux/misc/openldap-2.7.0.tgz"
+  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.7.0.tgz"
+  sha256 "9e86f37da375aa948a1b478dd76fe87b02090e47c21facae19223588e3407922"
   license "OLDAP-2.8"
   compatibility_version 1
 
@@ -24,6 +24,7 @@ class Openldap < Formula
 
   keg_only :provided_by_macos
 
+  depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
   depends_on "openssl@3"
 
   uses_from_macos "mandoc" => :build
@@ -31,6 +32,11 @@ class Openldap < Formula
 
   on_linux do
     depends_on "util-linux"
+  end
+
+  fails_with :clang do
+    build 1600
+    cause "needs C23 label-before-declaration support, completed in clang 18"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
