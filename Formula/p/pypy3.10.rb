@@ -1,10 +1,9 @@
 class Pypy310 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.10-v7.3.17-src.tar.bz2"
-  sha256 "6ad74bc578e9c6d3a8a1c51503313058e3c58c35df86f7485453c4be6ab24bf7"
+  url "https://github.com/pypy/pypy/archive/refs/tags/release-pypy3.10-v7.3.19.tar.gz"
+  sha256 "48648aa0a63f4e5fa30315e06b27999ea7157da68a8d4503ebc4a7ee308b5f66"
   license "MIT"
-  revision 1
   head "https://github.com/pypy/pypy.git", branch: "main"
 
   bottle do
@@ -19,8 +18,8 @@ class Pypy310 < Formula
   end
 
   # PyPy 3.10 was dropped in 7.3.20 and source tarballs have been removed
-  deprecate! date: "2026-06-22", because: :does_not_build
-  disable! date: "2026-09-22", because: :does_not_build
+  deprecate! date: "2026-06-22", because: :deprecated_upstream
+  disable! date: "2026-09-22", because: :deprecated_upstream
 
   depends_on "pkgconf" => :build
   depends_on "pypy" => :build
@@ -35,7 +34,10 @@ class Pypy310 < Formula
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # setuptools >= 60 required sysconfig patch
   # See https://github.com/Homebrew/homebrew-core/pull/99892#issuecomment-1108492321
@@ -50,15 +52,6 @@ class Pypy310 < Formula
     sha256 "7fd9972f96db22c8077a1ee2691b172c8089b17a5652a44494a9ecb0d78f9149"
   end
 
-  # Build fixes:
-  # - Disable Linux tcl-tk detection since the build script only searches system paths.
-  #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
-  patch do
-    file "Patches/pypy/tcl-tk.diff"
-    type :unofficial
-    resolves "https://github.com/pypy/pypy/issues/3538"
-  end
-
   def abi_version
     stable.url[/pypy(\d+\.\d+)/, 1]
   end
@@ -68,9 +61,16 @@ class Pypy310 < Formula
   end
 
   def install
+    # Avoid statically linking to libffi
+    inreplace "rpython/rlib/clibffi.py", '"libffi.a"', "\"#{shared_library("libffi")}\""
+
     # The `tcl-tk` library paths are hardcoded and need to be modified for non-/usr/local prefix
     tcltk = Formula["tcl-tk@8"]
     inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
+      # Work around https://github.com/pypy/pypy/issues/3538.
+      s.gsub! "elif sys.platform == 'darwin':", "else:"
+      s.gsub! "else:\n    # On some Linux distributions",
+              "if False: # disable Linux system tcl-tk detection\n    # On some Linux distributions"
       s.gsub! "['/usr/local/opt/tcl-tk/include']", "[]"
       # We moved `tcl-tk` headers to `include/tcl-tk` and versioned TCL 8
       # TODO: upstream this.
@@ -124,6 +124,10 @@ class Pypy310 < Formula
     if newest_abi_version?
       bin.install_symlink "pypy#{abi_version}" => "pypy3"
       lib.install_symlink shared_library("libpypy#{abi_version}-c") => shared_library("libpypy3-c")
+    end
+
+    %w[setuptools pip].each do |package|
+      (libexec/"post-install-resources").install resource(package).cached_download => "#{package}.tar.gz"
     end
 
     return unless OS.linux?
