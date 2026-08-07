@@ -3,10 +3,9 @@ class Oterm < Formula
 
   desc "Terminal client for Ollama"
   homepage "https://github.com/ggozad/oterm"
-  url "https://files.pythonhosted.org/packages/52/8a/81eeb2ae5f72e92a2415b861b6b94f0fc365c6a26fe35769a090c06fe0fd/oterm-0.23.0.tar.gz"
-  sha256 "3ee4066a70f87576be0bca8d50752ffe61c5ceb7fda4bbb12ab0bab0075f5104"
+  url "https://files.pythonhosted.org/packages/8b/9e/ad36f0b1d2a7b2850da70d357551d307ea4d4ede20abe5ce0832fc32a50a/oterm-0.23.1.tar.gz"
+  sha256 "ccda82a0614fa9c926bec59d21e3a4f7e6e9164c773e2ea274f982083ca14b6b"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "cdd33b13fc42418b6a2f0425ed2d6863222ca08d956810b901c3629ce884bdcd"
