@@ -417,9 +417,6 @@ jobs:
 
             - label: CI-linux-self-hosted
               path: "Formula/.+/(\
-                dart-sdk|\
-                dotnet|\
-                envoy|\
                 qt@5|\
                 qtwebengine|\
                 texlive\
