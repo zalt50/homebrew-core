@@ -148,13 +148,6 @@ class Qtwebengine < Formula
   end
 
   def install
-    # Kill run early to avoid timing out and skipping dependent tests for Qt version bumps
-    # FIXME: Remove when we add a self-hosted runner and automatically handle via labels
-    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
-                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
-                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
-    odie "Unable to build on GitHub-hosted arm64 Linux runner!" if github_arm64_linux
-
     python3 = "python3.14"
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
