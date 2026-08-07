@@ -1,8 +1,8 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https://github.com/orf/git-workspace"
-  url "https://github.com/orf/git-workspace/archive/refs/tags/v1.10.1.tar.gz"
-  sha256 "b962a879594d916c6b5bd5402ef323cb8a7e0d2112ea4d46998409e485ed48d0"
+  url "https://github.com/orf/git-workspace/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "e2cf64219d6235a587448bef093224ceccc144697e2e3ebad2380236f2373404"
   license "MIT"
   head "https://github.com/orf/git-workspace.git", branch: "master"
 
@@ -20,14 +20,9 @@ class GitWorkspace < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
-  depends_on "libssh2"
-  depends_on "openssl@3"
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
-    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
-    # Ensure the correct `openssl` will be picked up.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
 
     system "cargo", "install", *std_cargo_args
     ENV["GIT_WORKSPACE"] = buildpath
@@ -46,10 +41,7 @@ class GitWorkspace < Formula
 
     linked_libraries = [
       formula_opt_lib("libgit2")/shared_library("libgit2"),
-      formula_opt_lib("libssh2")/shared_library("libssh2"),
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
     ]
-    linked_libraries << (formula_opt_lib("openssl@3")/shared_library("libcrypto")) if OS.mac?
     linked_libraries.each do |library|
       assert Utils.binary_linked_to_library?(bin/"git-workspace", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
