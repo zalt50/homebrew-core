@@ -9,12 +9,12 @@ class Odin < Formula
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "a1a0603e35977cca316e09152080c2a5e02a37be76652ed0b93d9ea2a54a5193"
-    sha256               arm64_sequoia: "74ed86b54d38ac46c65ec1a272137408204611091b0d394c593b797888272ac3"
-    sha256               arm64_sonoma:  "061e23e29a9e94470bf8b6d5847f1e1ad64fd4f9789a0363c8645172c9a0c631"
-    sha256 cellar: :any, sonoma:        "d93e507101b7052c10de27ee035ddb81e3120ec99ecb76941a59876f5cb80636"
-    sha256 cellar: :any, arm64_linux:   "d1b67e284501b0fce321c3b41723b8c7922bddf6002bff137c9a2a64e0bd4880"
-    sha256 cellar: :any, x86_64_linux:  "1b01318280242daf1815d22a6311835f1a82675916f7a9b4dcfef12cef276af8"
+    sha256               arm64_tahoe:   "2c15f8b7db927422fec7a0c1242273c14fa5fbb17928d71d1bbe2bd0cc726a47"
+    sha256               arm64_sequoia: "79e0ea34a5a74d56715e8ce6adf536cf897a4d1befd0e14f7b9df3ff94a9acf6"
+    sha256               arm64_sonoma:  "137a971ff71cc285020ba1354747323f6f38f039b6dadd2611796cf470650aae"
+    sha256 cellar: :any, sonoma:        "a71a1972cca1e5456b46e17ff0cf888bdadc95c1b0ad464bfdeb9c9595ee7251"
+    sha256 cellar: :any, arm64_linux:   "bac492598a4a2061e46ceba2b492d114bedaadfb428fa7b75def12ec1d640edc"
+    sha256 cellar: :any, x86_64_linux:  "0fd9b91309ffd940cb8693d1ecd533d6f0e7088315f59bf905c96da7b0eb8e40"
   end
 
   depends_on "glfw" => :no_linkage
