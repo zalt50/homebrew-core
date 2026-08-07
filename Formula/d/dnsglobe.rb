@@ -1,8 +1,8 @@
 class Dnsglobe < Formula
   desc "Global DNS propagation checker TUI"
   homepage "https://github.com/514-labs/dnsglobe"
-  url "https://github.com/514-labs/dnsglobe/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "7e63f170acc2af62923de0c368b3c7d95ef9851b81f5b53c82bd529595def523"
+  url "https://github.com/514-labs/dnsglobe/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "6bbcf1204abeb556bc502956f37c4b43ae0e1400ae1ce4550fabd215eca05b69"
   license "MIT"
   head "https://github.com/514-labs/dnsglobe.git", branch: "main"
 
