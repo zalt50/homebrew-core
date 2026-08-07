@@ -2,11 +2,10 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2026-07a",
-      revision: "819fdc7a80667498b8b365999f1475a66c358640"
-  version "2026-07a"
+      tag:      "dev-2026-08",
+      revision: "8412dc37aa91def0c2fa90f89eade29056b4e608"
+  version "2026-08"
   license "Zlib"
-  revision 1
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
@@ -28,8 +27,8 @@ class Odin < Formula
   end
 
   resource "raygui" do
-    url "https://github.com/raysan5/raygui/archive/refs/tags/4.0.tar.gz"
-    sha256 "299c8fcabda68309a60dc858741b76c32d7d0fc533cdc2539a55988cee236812"
+    url "https://github.com/raysan5/raygui/archive/refs/tags/5.0.tar.gz"
+    sha256 "0f194c4a5e837c0930aca0b6315db45d00f76fa0052d841eea94598d390c39d6"
   end
 
   def install
@@ -40,16 +39,10 @@ class Odin < Formula
     # Delete pre-compiled binaries which brew does not allow.
     buildpath.glob("vendor/**/*.{lib,dll,a,dylib,so,so.*}").map(&:unlink)
 
-    cd buildpath/"vendor/miniaudio/src" do
-      system "make"
-    end
-
-    cd buildpath/"vendor/stb/src" do
-      system "make", "unix"
-    end
-
-    cd buildpath/"vendor/cgltf/src" do
-      system "make", "unix"
+    %w[cgltf miniaudio stb].each do |vendored_dep|
+      cd buildpath/"vendor"/vendored_dep/"src" do
+        system "./build_#{vendored_dep}.sh"
+      end
     end
 
     glfw_installpath = if OS.linux?
@@ -69,18 +62,17 @@ class Odin < Formula
     vendor = buildpath/"vendor/raylib"
 
     # Odin's `vendor:raylib` bindings link raylib from fixed per-OS/arch dirs
-    static_dir, shared_dir = if OS.mac?
-      ["macos", "macos"]
+    raylib_dir = if OS.mac?
+      "macos"
     elsif Hardware::CPU.arm?
-      ["linux-arm", "linux-arm64"]
+      "linux-arm64"
     else
-      ["linux", "linux"]
+      "linux"
     end
 
-    (vendor/static_dir).mkpath # linux-arm is not shipped in the checkout
-    ln_s raylib.lib/"libraylib.a", vendor/static_dir/"libraylib.a"
+    ln_s raylib.lib/"libraylib.a", vendor/raylib_dir/"libraylib.a"
     ln_s raylib.lib/shared_library("libraylib", "6.0.0"),
-         vendor/shared_dir/shared_library("libraylib", "600")
+         vendor/raylib_dir/shared_library("libraylib", "600")
 
     raygui_dir = vendor/(OS.mac? ? "macos" : "linux")
     raygui_name = (OS.mac? && Hardware::CPU.arm?) ? "libraygui-arm64" : "libraygui"
