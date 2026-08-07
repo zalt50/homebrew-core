@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
-  url "https://github.com/denoland/deno/releases/download/v2.9.4/deno_src.tar.gz"
-  sha256 "95f9d8361809f2d2f3ee2d8a6955951dcf96c2f4bbeb540c2d6fdd9363e6dc94"
+  url "https://github.com/denoland/deno/releases/download/v2.9.5/deno_src.tar.gz"
+  sha256 "b3d1d66e47d74f5bda84d5a80282135b7d8f2e336fbcf98c75be32f18130864a"
   license "MIT"
   compatibility_version 1
   head "https://github.com/denoland/deno.git", branch: "main"
@@ -63,7 +63,9 @@ class Deno < Formula
     # supports features from newer clang versions (>=20)
     ENV["GN_ARGS"] = "clang_version=#{llvm.version.major} use_lld=#{OS.linux?}"
 
-    system "cargo", "install", "--no-default-features", "-vv", *std_cargo_args(path: "cli")
+    # Enable V8 without `__runtime_defaults`, which brings the `upgrade` subcommand and vendored zlib-ng
+    system "cargo", "install", "--no-default-features", "--features", "deno_core/v8,v8/v8",
+                    "-vv", *std_cargo_args(path: "cli")
     bin.install_symlink bin/"deno" => "dx"
     generate_completions_from_executable(bin/"deno", "completions")
   end
