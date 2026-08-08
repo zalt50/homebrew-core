@@ -3,8 +3,8 @@ class Deheader < Formula
 
   desc "Analyze C/C++ files for unnecessary headers"
   homepage "http://www.catb.org/~esr/deheader/"
-  url "https://gitlab.com/esr/deheader/-/archive/1.12/deheader-1.12.tar.bz2"
-  sha256 "08ca718429db0d3fbe4388d62239d6604a08f979a5421fc4f1a1b55cb688a4d3"
+  url "https://gitlab.com/esr/deheader/-/archive/1.13/deheader-1.13.tar.bz2"
+  sha256 "9d048b84c6459b44ecc8cd56d1bc407dc30419eb4c7263311f887a4587eb9f4b"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/deheader.git", branch: "master"
 
