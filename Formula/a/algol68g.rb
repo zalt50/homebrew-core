@@ -1,8 +1,8 @@
 class Algol68g < Formula
   desc "Algol 68 compiler-interpreter"
   homepage "https://algol68genie.nl/en/algol-68-genie/"
-  url "https://algol68genie.nl/algol68g-3.12.3.tar.gz"
-  sha256 "4d2e66f81ca2fb98f88e23ae41b475e7d40445f349b1088636782da320bd22b1"
+  url "https://algol68genie.nl/algol68g-3.13.0.tar.gz"
+  sha256 "ad05fee71566a1432132d53e0a6b0a2abfd993be73927cfa088b21b3a2d4be56"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -19,6 +19,8 @@ class Algol68g < Formula
     sha256 x86_64_linux:  "3413a6d92a9cb21659cb8af64b4cb5abe43d3b7f4ac50bfd3c85bf60c7098702"
   end
 
+  depends_on "readline"
+
   uses_from_macos "curl"
   uses_from_macos "ncurses"
 
@@ -26,8 +28,11 @@ class Algol68g < Formula
     depends_on "libpq"
   end
 
+  # Use `__BYTE_ORDER__` macro instead of `__BYTE_ORDER`
+  patch :DATA
+
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
@@ -40,3 +45,22 @@ class Algol68g < Formula
     assert_equal "Hello World", shell_output("#{bin}/a68g #{path}").strip
   end
 end
+
+__END__
+diff --git a/src/a68g/rts-sounds.c b/src/a68g/rts-sounds.c
+index d23509b..b5fef13 100644
+--- a/src/a68g/rts-sounds.c
++++ b/src/a68g/rts-sounds.c
+@@ -34,10 +34,10 @@
+ #undef A68G_LITTLE_ENDIAN
+ #undef A68G_BIG_ENDIAN
+ #if defined (__BYTE_ORDER__)
+-  #if (__BYTE_ORDER == __ORDER_LITTLE_ENDIAN__)
++  #if (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
+     #define A68G_LITTLE_ENDIAN A68G_TRUE
+     #define A68G_BIG_ENDIAN A68G_FALSE
+-  #elif (__BYTE_ORDER == __ORDER_BIG_ENDIAN__)
++  #elif (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+     #define A68G_LITTLE_ENDIAN A68G_FALSE
+     #define A68G_BIG_ENDIAN A68G_TRUE
+   #else
