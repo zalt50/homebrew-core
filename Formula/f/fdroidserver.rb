@@ -9,12 +9,12 @@ class Fdroidserver < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8c814b90b27b4a1466a411a357be0f34da2c3209873cb01547cfb11cf187b5dd"
-    sha256 cellar: :any, arm64_sequoia: "e73ba730da3b091fc1e9705683ba4f4b5fa236c894b2e0e3b290a5ee4cbc8f82"
-    sha256 cellar: :any, arm64_sonoma:  "4003847d2112bd8a761bc93d7350d48be4ac64e8e9f919868d00c51aed62d148"
-    sha256 cellar: :any, sonoma:        "088758a04b9438d4a51d09067c56a40461829471d02e284c5b4e49fe46197573"
-    sha256 cellar: :any, arm64_linux:   "4115e6598adfdb8b438b361488e6c6165e2ce49702940d5cef75515d47e662ec"
-    sha256 cellar: :any, x86_64_linux:  "c2facb269d9f7b09ca33c20c629a5c7320f501cb4bafeb226c8dc87e95f9ea88"
+    sha256 cellar: :any, arm64_tahoe:   "f2c1500c78e6e45b537b4cea24bcef30539813623180def4872c724c9fe9ce74"
+    sha256 cellar: :any, arm64_sequoia: "86c1b38f236226b36ef48c3648e87626f8ffcaddf1740cad65fbf7e944c480b4"
+    sha256 cellar: :any, arm64_sonoma:  "c54f82b33827f8d228c76cf4304e616a12f34eefbe01452dee1c177aaa379153"
+    sha256 cellar: :any, sonoma:        "31b3471a4e5f4c3b498c1b21cb8e95facf756299ff1cea4ac84f5769b7ec00bc"
+    sha256 cellar: :any, arm64_linux:   "a086b55d588559cd3a4fa12aa454e995cf172340bb785747844f0da19f4755db"
+    sha256 cellar: :any, x86_64_linux:  "03b981e0c4d7220f7e1efe9479a4eb7a6822fe7522b93a74f5924bc95eac9f0b"
   end
 
   # `pkgconf` and `rust` are for bcrypt
