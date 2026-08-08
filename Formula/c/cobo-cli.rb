@@ -6,7 +6,7 @@ class CoboCli < Formula
   url "https://files.pythonhosted.org/packages/31/5a/b46f07b2cb2e0e7583e83873f65ca0f177e1b56d5f5a5f253ba83ab4c9f7/cobo_cli-0.1.8.tar.gz"
   sha256 "bee5155dd3b4f16aa72b3ad1e02d5505cfa66d374856db0067ef1812986b218a"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
@@ -60,8 +60,8 @@ class CoboCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "idna" do
@@ -80,8 +80,8 @@ class CoboCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pydantic-settings" do
