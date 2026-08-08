@@ -16,7 +16,7 @@ class Deheader < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a50361d052ca4a600d876ef7f12a4286551f3bbe2fe72645d8c856e98aa3c230"
+    sha256 cellar: :any_skip_relocation, all: "6f8f29cb6ec6a901c6beb182a2d98a1e4dc767339f0110e05d995ac8367a443e"
   end
 
   depends_on "asciidoctor" => :build
