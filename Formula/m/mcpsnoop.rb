@@ -7,12 +7,12 @@ class Mcpsnoop < Formula
   head "https://github.com/kerlenton/mcpsnoop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8b94b7d6cbee9c0cdf9f38175a6634addc773626ffffba656470ef43cc82308"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8b94b7d6cbee9c0cdf9f38175a6634addc773626ffffba656470ef43cc82308"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8b94b7d6cbee9c0cdf9f38175a6634addc773626ffffba656470ef43cc82308"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fde1bbf6d0d6218fb91ff81e7f635c75f79cfb1ee71cd7d20fecf8601e572fc6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc66a35113db0bf394bf93713cbc65e9572e67906bc169ad72952987910d0ebb"
-    sha256 cellar: :any,                 x86_64_linux:  "6adf2654e48c667e8a6b7295c32e130f5b6305f034f067c4bf221f0bc6166b41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0b7ac6ed3dc2361b2b319e50635c48ca327b5780d212d85e5697cf57154f67b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0b7ac6ed3dc2361b2b319e50635c48ca327b5780d212d85e5697cf57154f67b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0b7ac6ed3dc2361b2b319e50635c48ca327b5780d212d85e5697cf57154f67b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3142da9da0bba855c4fe099a0011be46d9b816da5f72099b2d25205941d157b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d36c37e9646ce596981d114461953da20d16f3503435b3a5cb7dc670d48d8ef"
+    sha256 cellar: :any,                 x86_64_linux:  "7105089149e34bdd3245559d73562761dcf5433a3175a750fbbf8de2fe1b84d0"
   end
 
   depends_on "go" => :build
