@@ -7,13 +7,10 @@ class Xctesthtmlreport < Formula
   head "https://github.com/XCTestHTMLReport/XCTestHTMLReport.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e248b63e1d364801b27aea0d7a709b36d36f56567de68797d21e18c2b072042"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6befa1b9ad7d3002a8f90f25c0387d6fd95b03f923891d29a759d3ae0119a81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3580d4f15dd4fa8865db0f53ed950dfcab35f55070a3888fce5563d2d1a3e139"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9137f28799e7c82a8f3f6662dd1196c7ceadd780ab6acf2223cddf99de3b6d2b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79a84112939771f88b58c8f7ef61c7689716ae29bde3bc07061d458b6974b322"
-    sha256 cellar: :any_skip_relocation, ventura:       "03127ae2494f3dcbf1af0c87578aeb1e4fe4a0d04df39262db4b868dbf5754c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b207d2e506364eab5f53021fb1b2ad02bdf85415607a5387a20f5198ffd35fde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2b21db01870e28851b191d7575931acd9a7a2725085dc428484aafd95a048bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b1cb87b9a07ebb30ac9a7319f61c92009580ff09aa1c7048770a4ab9d1191c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f1553c24536f6f0244ed7b166d671d9fd8db8472465a71b5b0d1334bf5f949e"
   end
 
   depends_on :macos
