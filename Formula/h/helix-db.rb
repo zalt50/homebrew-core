@@ -1,8 +1,8 @@
 class HelixDb < Formula
   desc "Open-source graph-vector database built from scratch in Rust"
   homepage "https://helix-db.com"
-  url "https://github.com/HelixDB/helix-db/archive/refs/tags/v3.0.8.tar.gz"
-  sha256 "05fd2888856c4238b05eb50e76f529b3da2cc8b4fbecdcbcd0a9d9b294cdb71f"
+  url "https://github.com/HelixDB/helix-db/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "8365d8dc9e842bb87ddb796261fe9916bd304c81cc9adcdc1273fd0f2785b2b8"
   license "Apache-2.0"
 
   bottle do
@@ -21,7 +21,7 @@ class HelixDb < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "helix-cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/cli")
   end
 
   test do
