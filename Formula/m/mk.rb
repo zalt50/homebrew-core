@@ -10,12 +10,12 @@ class Mk < Formula
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "25e9916cfb4309238481292f7d78494caf66af10ebb8e8c9d84ffc633f55974b"
-    sha256 cellar: :any, arm64_sequoia: "9c888f23c53c763c04db5716d95f7b2a599807bdc3309dd6ecd509bfe5af2b5e"
-    sha256 cellar: :any, arm64_sonoma:  "c77d6356b108e49f727e6736c08ffe4ac4c15a9daf35effdf9d7127d0ded0590"
-    sha256 cellar: :any, sonoma:        "62a722eaa6a92ee8cc0be95a603245464aa1ba1824f5232b2d5d22578a032f8f"
-    sha256 cellar: :any, arm64_linux:   "b769fa18f0fbddeb3a05d2e71229f447d844f914cd3d5e920c9cc901c6201ec7"
-    sha256 cellar: :any, x86_64_linux:  "7289b79692c85db525c4fb184ea9afc8a885808aeb615936ad0b339ed06f26cb"
+    sha256 cellar: :any, arm64_tahoe:   "7464ad9801fc750f991de32ab4a4c867e67247646a1e322af6cef2c2f102d3c1"
+    sha256 cellar: :any, arm64_sequoia: "cc25715248a86941efeeaf9acc280a1cbf7b14e3967d3fbe3478d84844016462"
+    sha256 cellar: :any, arm64_sonoma:  "7cf5f9dd08ee76ed9c50a112b66b7eaed061d832e34ba4bda97003f7ea977b85"
+    sha256 cellar: :any, sonoma:        "12f37f5e3d7376b3111a33bc055ae9593d4183d8d18a53540772f6e37dae539c"
+    sha256 cellar: :any, arm64_linux:   "0836b5aee5752284201d6750ee9d23b38363cf30da9cafe76bdb24019b42aa9c"
+    sha256 cellar: :any, x86_64_linux:  "ca633646fb7255b429de25b49516f0c268ec6fbdb3c15c5d89f22fd6d9084497"
   end
 
   depends_on "rust" => :build
