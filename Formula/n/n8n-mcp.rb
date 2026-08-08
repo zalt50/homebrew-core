@@ -6,7 +6,12 @@ class N8nMcp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6bf56c46b418ed3422241b324f2b375f412b549ad5d91d0985e4ddae6dd9332b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98359afdb9ce4f42210db1f72f17b33950b46f6f9a7c8598d2fb24baae431914"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98359afdb9ce4f42210db1f72f17b33950b46f6f9a7c8598d2fb24baae431914"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98359afdb9ce4f42210db1f72f17b33950b46f6f9a7c8598d2fb24baae431914"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8e5b96276d53f6ec94cf8b20095407205e624ead91c6379c8139f20ca4f8ef5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98359afdb9ce4f42210db1f72f17b33950b46f6f9a7c8598d2fb24baae431914"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98359afdb9ce4f42210db1f72f17b33950b46f6f9a7c8598d2fb24baae431914"
   end
 
   depends_on "node"
