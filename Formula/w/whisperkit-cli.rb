@@ -8,9 +8,9 @@ class WhisperkitCli < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b386964fdcdd778c00afc62a747e2a639724b372895498a6fee73d57330bd15"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6bc04656e3941084f5b58b007db3f7a582483a6905433dba55d07350c2b43a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03beac1ba3b6d13c4d821358f7d7ad1e84ebb06dd0c93beac4e04daf0494716a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54cf5a0ae768aafe4dcbe9dad276801b67cfd5549dcde6cdf2f9435106104168"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2f475013fb70c56284c8d0b4c1f3f840073e41c54f8239208fc5c4e9b600472"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55c51c1bb7d99d6ad72cdd6a6283478c38934ffd15eca7fbe2db76f8401f2114"
   end
 
   depends_on xcode: ["16.0", :build]
