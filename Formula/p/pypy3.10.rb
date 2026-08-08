@@ -7,14 +7,12 @@ class Pypy310 < Formula
   head "https://github.com/pypy/pypy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de425a276a64d92a0e2d69d589753d119733d0e3cc18aa985ae329aaf1bfa910"
-    sha256 cellar: :any,                 arm64_sequoia: "311b947a1528ae90983edc2176864a00865fb678c13c2286efe24075463a1796"
-    sha256 cellar: :any,                 arm64_sonoma:  "8276c86a74591aec5dcd72722caeaa9c5a950f922b77c5ac20fc1147e21698b5"
-    sha256 cellar: :any,                 arm64_ventura: "9e80dff6aaa3e465055533fe201daa041baf2e24af5ea96dca4951b56a171589"
-    sha256 cellar: :any,                 sonoma:        "cbac71c93a07a6e926836763d9d67662b157a12525ce5c333504a4e10eff14f6"
-    sha256 cellar: :any,                 ventura:       "f8216079a9bc035470ac314f3dacaab40839ea20edc53b8fea250af4128612e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c838f8f2bde36ec834a8d390cd441e75aec83b1cc21126e8e974e05024a5d09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4032a756625270ffb7945d97b0116ac7e9acb1e5731eab7590241874f2fb12d"
+    sha256 cellar: :any, arm64_tahoe:   "b80a1002fd362e89ae2e3353ce566cd4d0e71a1f2c9fa29c1320a28d925dc630"
+    sha256 cellar: :any, arm64_sequoia: "13d02f7c456b3561f313153df622cb3c8291104669bfa10c2c9b99a39c7a701d"
+    sha256 cellar: :any, arm64_sonoma:  "8c19c7d138dabdb6e6caca03d190132722ede28c816b02e607cb4f1a89d9bb68"
+    sha256 cellar: :any, sonoma:        "d825e5ab5629a4da05ca828ca78288653e5235dca4eaddbd003078a7d11a35d1"
+    sha256 cellar: :any, arm64_linux:   "f90b17c54b31bc396034479dadef0461ba7882b109c2c85c55e5dbcd04a6cff1"
+    sha256 cellar: :any, x86_64_linux:  "6bb389560952b0632d23c74ee4cc871bb658e30960fbfed02cea97ed4d677a5b"
   end
 
   # PyPy 3.10 was dropped in 7.3.20 and source tarballs have been removed
