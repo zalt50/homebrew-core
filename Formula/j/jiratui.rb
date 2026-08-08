@@ -6,6 +6,7 @@ class Jiratui < Formula
   url "https://files.pythonhosted.org/packages/79/eb/288a867b43b1f1ce167601fc3c231bd20978b6426b00f72f4377c2cf91f9/jiratui-1.12.0.tar.gz"
   sha256 "9c5ea350be556f97bc1b31c2f66a21df7e7f19937c44013c9c534ab259c49ebb"
   license "MIT"
+  revision 1
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
@@ -55,8 +56,8 @@ class Jiratui < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "h11" do
