@@ -1,8 +1,8 @@
 class EditorconfigChecker < Formula
   desc "Tool to verify that your files are in harmony with your .editorconfig"
   homepage "https://editorconfig-checker.github.io/"
-  url "https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v3.10.0.tar.gz"
-  sha256 "971e1f02fcf921b74933d72a8c99d7f5cf3527806151dd9ad0278495156d966c"
+  url "https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v3.11.1.tar.gz"
+  sha256 "44d630c12d712cd132764582edb45a2e0db1600a47a87307ee747b4195d06278"
   license "MIT"
   head "https://github.com/editorconfig-checker/editorconfig-checker.git", branch: "main"
 
@@ -12,12 +12,12 @@ class EditorconfigChecker < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "195df7e25c63384b9a194b845242d5f6a2e3e83e6662acf99840aaf560598dea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "195df7e25c63384b9a194b845242d5f6a2e3e83e6662acf99840aaf560598dea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "195df7e25c63384b9a194b845242d5f6a2e3e83e6662acf99840aaf560598dea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dda8ab108f63d55004108fe8806b4f9e7408c61d8ea2ba6aced161a099a84ed9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e081faa1d185fd3dd5852f08a9a27b500ead5eb7309cdd81c81c1ce4e463ede9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e02bf8198cdca6d86089ef3df4db13862f83cd101526630bf14cf0e3abe07c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e216d46a6caae25115862e6663247c11118bf4aace7036571e9025fd53337e72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e216d46a6caae25115862e6663247c11118bf4aace7036571e9025fd53337e72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e216d46a6caae25115862e6663247c11118bf4aace7036571e9025fd53337e72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba4c15f2b09b098034ebf896c231f89cdab3934bb1f26202f8ed5142d74ac90b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3686469e814cacb3014a15bf86c148c3164d87eaba160404d09766abe2a463d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3998e1057b707788c0cfb7017d97ac266a2a7af38880eaca050609485a4d4365"
   end
 
   depends_on "go" => :build
