@@ -33,11 +33,15 @@ class Opencascade < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "tbb"
-  depends_on "tcl-tk@8" # TCL 9 issue: https://tracker.dev.opencascade.org/view.php?id=33725
+
+  on_macos do
+    depends_on "tcl-tk@8" # FIXME: TCL 9 causes segfaults in `f3d`
+  end
 
   on_linux do
     depends_on "libx11"
     depends_on "mesa" # For OpenGL
+    depends_on "tcl-tk"
   end
 
   def install
@@ -45,9 +49,14 @@ class Opencascade < Formula
     # Ref: https://archlinux.org/todo/drop-freeimage/
     odie "FreeImage should not be a dependency!" if deps.map(&:name).include?("freeimage")
 
-    tcltk = Formula["tcl-tk@8"]
+    if OS.mac?
+      tcltk = Formula["tcl-tk@8"]
+      libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
+    else
+      tcltk = Formula["tcl-tk"]
+      libtk = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major}tk#{tcltk.version.major_minor}")
+    end
     libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
-    libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DUSE_FREEIMAGE=OFF",
@@ -112,7 +121,7 @@ class Opencascade < Formula
 
     # Make sure hardcoded library name references in our CMake config files are valid.
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 4.0)
       set(CMAKE_CXX_STANDARD 11)
       project(test LANGUAGES CXX)
       find_package(OpenCASCADE REQUIRED)
