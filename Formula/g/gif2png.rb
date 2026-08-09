@@ -7,18 +7,12 @@ class Gif2png < Formula
   head "https://gitlab.com/esr/gif2png.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9ffa76192c9c581c3fd4aa8d8f56da708f1799dc9122379b34d1ad9240d937ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ba18868f7931d35e5ea59235cd76fdda07273197bd933f070b5f569691cbad2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6e8176b235912541139f6cc30de30486df4685e4cda1510a13ccd46e5de1467"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad9c25896465c88ac69a9842d32a4bfe0c27610231cccb44edec51849c626bbd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59ac954d69ee7aaced44921cea98f2127a6c7e3c07b4b5137547e5bd0821ffb0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ee7f033d2587da8ef2bea8b06ae06490e883b2d940f5c4c384785dc6cc2cd08"
-    sha256 cellar: :any_skip_relocation, sonoma:         "04f52349c694e66c677fead8de900d73b1085f7e39bf93dc6fe3cb6740ae43ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f4ba17bffa9f388b4121f66eb11ae7d615a8634f0f9ddf823daebdb15e3e1a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "81ed68b6098478c4bd432fa2282ae2bf918363c6886fca15da570dece203d492"
-    sha256 cellar: :any_skip_relocation, big_sur:        "647072adee889c3a129dc904532132340e5cee323dc657997879fe8331d5d1b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "931ff3541cbae346953c4469ba2f229f1f1e3b2e08d9cf7b3499b94675472de5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edb1fd446d42cc045ece44370a4e99d62f18862a66a6e95d4ff2718cdeeffb5e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9072daea5a28d0eba5c9a9a257d3b6c4db506850664c984c99b00ec9a3468261"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6eb0df92c042ea7374914ce882ec21d65472a09f5013630b36a241078d60b72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc0ce2b2d0addfdc44382ebceee4e6d52f7918aefd122df5f87f9a71baa21f7e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "714585f82948199d3472d006df236b34a414a7b619e063d4b1a777a4d3d60e78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51af9f96e11fc6491de11c5cae014166ef7f09d7a27262b23bfdd55245f52c2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d61538f849b6acd24ee452098e64e9f293587237b032d0466a8d37f3315981c6"
   end
 
   depends_on "asciidoctor" => :build
