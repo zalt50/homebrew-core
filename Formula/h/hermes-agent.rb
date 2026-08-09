@@ -353,7 +353,10 @@ class HermesAgent < Formula
     system bin/"hermes", "status"
     system bin/"hermes", "doctor"
 
-    assert_match "bundled", shell_output("#{bin}/hermes plugins list")
+    plugins_list = shell_output("#{bin}/hermes plugins list")
+    assert_match "bundled", plugins_list
+    assert_match "telegram-platform", plugins_list
+    assert_path_exists pkgshare/"plugins/platforms/telegram/plugin.yaml"
     assert_path_exists pkgshare/"web_dist/index.html"
     assert_path_exists pkgshare/"ui-tui/dist/entry.js"
   end
