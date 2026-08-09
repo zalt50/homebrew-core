@@ -68,19 +68,13 @@ class Qt < Formula
   depends_on "qtwebchannel"
   depends_on "qtwebsockets"
 
-  on_sonoma :or_newer do
+  on_system :linux, macos: :sonoma_or_newer do
     depends_on "qtwebengine"
     depends_on "qtwebview"
   end
 
   on_linux do
     depends_on "qtwayland"
-
-    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
-    on_intel do
-      depends_on "qtwebengine"
-      depends_on "qtwebview"
-    end
   end
 
   def webengine_supported?
@@ -88,9 +82,7 @@ class Qt < Formula
       return true
     end
     on_linux do
-      on_intel do
-        return true
-      end
+      return true
     end
     false
   end
