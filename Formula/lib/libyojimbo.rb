@@ -1,8 +1,8 @@
 class Libyojimbo < Formula
   desc "Secure client/server network protocol library for multiplayer games"
   homepage "https://github.com/mas-bandwidth/yojimbo"
-  url "https://github.com/mas-bandwidth/yojimbo/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "9ab6292a277a4af7882221337cc24e5c5802076b0f1886b85eff5b15a4cc872b"
+  url "https://github.com/mas-bandwidth/yojimbo/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "4717ae7deeecd2d595faa9b48d932c1f6fe8171b0301de631518e019e7f1eddd"
   license "BSD-3-Clause"
 
   bottle do
