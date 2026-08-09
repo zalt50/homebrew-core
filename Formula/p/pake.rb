@@ -1,8 +1,8 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.5.tgz"
-  sha256 "a248e756b65cc9e1ec982f326761a548018483aeb6698aa4e7028433f52e19bd"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.6.tgz"
+  sha256 "3cfd9681aa737c07b7444910c3b4d88a81af7a4ac8c7d3b116a987b47bbd6483"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -14,10 +14,16 @@ class Pake < Formula
     sha256 cellar: :any, x86_64_linux:  "861812b6ce9c583edfe05f567e83aa4e3b0d60c003a09d5d3ac10e8b7372fd5c"
   end
 
+  depends_on "pkgconf" => :build
+  depends_on "glib"
   depends_on "node"
   depends_on "pnpm"
   depends_on "rust"
   depends_on "vips"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
@@ -32,16 +38,30 @@ class Pake < Formula
   end
 
   def install
-    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
-
     system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/pake-cli/node_modules"
-    rm_r(libexec.glob("#{node_modules}/icon-gen/node_modules/@img/sharp-*"))
-
     libexec.glob("#{node_modules}/.pnpm/fsevents@*/node_modules/fsevents/fsevents.node").each do |f|
       deuniversalize_machos f
+    end
+
+    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
+
+    # `node-addon-api` 8 needs C++17, which the older `sharp` predates
+    inreplace node_modules/"icon-gen/node_modules/sharp/src/binding.gyp" do |s|
+      s.gsub! "'-std=c++0x'", "'-std=c++17'"
+      s.gsub! "'c++11'", "'c++17'"
+    end
+
+    # `icon-gen` pins an older `sharp` whose bundled `vips` shares the brewed soname
+    { node_modules => "build", node_modules/"icon-gen/node_modules" => "install" }.each do |dir, script|
+      rm_r(dir.glob("@img/sharp-*/lib/*.node"))
+      rm_r(dir.glob("@img/sharp-libvips-*/lib/libvips-cpp.*"))
+      cd dir/"sharp" do
+        system "npm", "run", script
+        rm_r("src/build/Release/obj.target")
+      end
     end
   end
 
