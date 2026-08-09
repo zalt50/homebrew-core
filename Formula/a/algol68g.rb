@@ -11,12 +11,12 @@ class Algol68g < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b5c1fe9e347008bc3fb73743001835c575c8521cffa9521130520f4cf30a4e25"
-    sha256 arm64_sequoia: "3d93f8cccc2f9a4c4fc91c7bad9ad75ea4da5545ebc7a897c74cacfb83121e3d"
-    sha256 arm64_sonoma:  "052a6d91d2cc10023d59cf7959097e9e05b4eb21286c8fd7d271f74d1e247dd0"
-    sha256 sonoma:        "9b711769b98b9e83686f7c528b55daf1b9b6620c7cc0b0a311db80f2eb5c784d"
-    sha256 arm64_linux:   "9a3f52c6ead6712e53967979dcd46b8541ebc28c338eb33d48b553cafa97bc86"
-    sha256 x86_64_linux:  "12293ce7b511be4d9343502b323004c9778f80c56e8d941e82fa3b9b372ab974"
+    sha256 arm64_tahoe:   "32b914e4e25014f2bbe6f440893e7b43f52f1aafa5186e2e1b9b5ef3c7ca1a9c"
+    sha256 arm64_sequoia: "3715683c968fb4c4a12613623f532f86cbdc8ef013584c2a2308f3fc52dcbca8"
+    sha256 arm64_sonoma:  "96c04884ccf0d6ba330bb6a6b200d9f544047834aacbaade3e52fce1ded6cf7e"
+    sha256 sonoma:        "bbe90050b3c96ecd200a21323d499ae9228a7ab85dc5cda94cd2626102ef1607"
+    sha256 arm64_linux:   "53c5eb8da81f330fb08493445d03dc4c37168b3b85e3ec85e5447cb6a421494e"
+    sha256 x86_64_linux:  "d46033b4eaabd0a91441a8f02d38e4fc67940dc4998325a071f271abe66b5b3e"
   end
 
   depends_on "readline"
