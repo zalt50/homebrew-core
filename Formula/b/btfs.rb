@@ -1,10 +1,9 @@
 class Btfs < Formula
   desc "BitTorrent filesystem based on FUSE"
   homepage "https://github.com/johang/btfs"
-  url "https://github.com/johang/btfs/archive/refs/tags/v3.1.tar.gz"
-  sha256 "c363f04149f97baf1c5e10ac90677b8309724f2042ab045a45041cfb7b44649b"
+  url "https://github.com/johang/btfs/archive/refs/tags/v3.2.tar.gz"
+  sha256 "f41094e7433b36708bd79e4e2a9431731cbd203c0615aa28a1ac71058126dba1"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/johang/btfs.git", branch: "master"
 
   bottle do
@@ -20,14 +19,6 @@ class Btfs < Formula
   depends_on "libtorrent-rasterbar"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "openssl@3"
-
-  # Build against libtorrent-rasterbar 2.1 (ABI 2)
-  patch do
-    url "https://github.com/johang/btfs/commit/9502625df2d1c0a7e70da2e75de81078de95318b.patch?full_index=1"
-    sha256 "7f5c6974d4902b7cda3876e22e24c44a0a9ac933b16ff4b97fdbd39adbbbe7f8"
-    type :unofficial
-    resolves "https://github.com/johang/btfs/pull/109"
-  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
