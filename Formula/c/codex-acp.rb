@@ -7,12 +7,12 @@ class CodexAcp < Formula
   head "https://github.com/agentclientprotocol/codex-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df2b45deb6d78341b196a8ee4085d85c33f47e18adde859ba17d142584ff8b18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07298359e6b33af582e3d464db5a23a01928a25b66215ee25ece19c85019a1bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fde82fd314bdeea7110005ddf864668948b1ce9adb93645053b84483c8cfe3b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8554790778f55fff91b2297d772d337da2f6f0e7fc66f6870401602b85164fd9"
-    sha256 cellar: :any,                 arm64_linux:   "33048793ab006d7ca43f12dae3ac306380d50392ffc2c4cbff8c23c243f2e451"
-    sha256 cellar: :any,                 x86_64_linux:  "ea5f8f4915a88f34b11f2c286eaa6267d0a23d0e1354dbb42450a4ee110b9442"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a81df678da52eaa988a9403e49e621b0c0376bd1400c43bf15ceb165386e638"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a81df678da52eaa988a9403e49e621b0c0376bd1400c43bf15ceb165386e638"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a81df678da52eaa988a9403e49e621b0c0376bd1400c43bf15ceb165386e638"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e0ac817f02d7d75d96c554de27d68816f05a40e01bd96a731823f5ef149b352e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f644481be8a990d0576eb35edc734b472b505c5c3acaeb29f161692a0020df4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbdf7226852f6a145122131555f2ffa2632bdcb842502fd92c1a0f7f4b321e79"
   end
 
   depends_on "node"
