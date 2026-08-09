@@ -1,17 +1,17 @@
 class NetworkDoctor < Formula
   desc "Network troubleshooting TUI"
   homepage "https://github.com/heymaikol/network-doctor/"
-  url "https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.10.7.tar.gz"
-  sha256 "4488e38a6cc5874c689f6f06d0de74b4a91a192b025fd96e3bfcb82db27fee6b"
+  url "https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.10.8.tar.gz"
+  sha256 "c27702e384b88042b4f23d578cf2f9b46ebc6e7c927ae2e73d8fbcb4ef32ac91"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c123f89de13d4d538aba9b679fba3131aa56061ca6e0ae5c49b53f7f99114897"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c123f89de13d4d538aba9b679fba3131aa56061ca6e0ae5c49b53f7f99114897"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c123f89de13d4d538aba9b679fba3131aa56061ca6e0ae5c49b53f7f99114897"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cb85d556b88e0e7c9406fa03c9fa0f27f08f922ada494dc5181f6bcda84ebc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3153b29185aea7c5b461fdb4bfb0cf94779aad51747173c165b7ead3a9d2065a"
-    sha256 cellar: :any,                 x86_64_linux:  "2a736304e5ac1f3c44a026ae928c6d8b68c897ac9684d47b3019da03c3b41d2c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e2df43da50277aff73c6cef651660da2730765084014e8215d131730c92232d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e2df43da50277aff73c6cef651660da2730765084014e8215d131730c92232d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e2df43da50277aff73c6cef651660da2730765084014e8215d131730c92232d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6e35e04547eaebfc7f6e2f0a0f6939d958192a773eb20e055c4ca073e24dc8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e24addaca5086a8e35c6f2c1120fceeab91a3929d2d2b0a6fd79ccf6e3536c8f"
+    sha256 cellar: :any,                 x86_64_linux:  "e8a8b3624bbc16cc8760fd5084e1c13021df1c712152289fcc584a524819f044"
   end
 
   depends_on "go" => :build
