@@ -20,7 +20,7 @@ class Tern < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "89d5aaf7868a4a9149f232f8bb253252dad574563fb983b98343527ac4fd9762"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
 
@@ -94,8 +94,8 @@ class Tern < Formula
   end
 
   resource "pbr" do
-    url "https://files.pythonhosted.org/packages/ad/8d/23253ab92d4731eb34383a69b39568ca63a1685bec1e9946e91a32fc87ad/pbr-7.0.1.tar.gz"
-    sha256 "3ecbcb11d2b8551588ec816b3756b1eb4394186c3b689b17e04850dfc20f7e57"
+    url "https://files.pythonhosted.org/packages/5e/ab/1de9a4f730edde1bdbbc2b8d19f8fa326f036b4f18b2f72cfbea7dc53c26/pbr-7.0.3.tar.gz"
+    sha256 "b46004ec30a5324672683ec848aed9e8fc500b0d261d40a3229c2d2bbfcedc29"
   end
 
   resource "prettytable" do
@@ -148,6 +148,14 @@ class Tern < Formula
     sha256 "3239df9f44da632f96012472805d40a23281a991027ce11d2f45a6f24ac4c3da"
   end
 
+  # `pkg_resources` is gone from setuptools 81, so use `importlib.resources`
+  patch do
+    url "https://github.com/tern-tools/tern/commit/f2546fa2d39468ed8c1fd3e7438955547b35182a.patch?full_index=1"
+    sha256 "f4940c919c07ab00fbebe9d6145cba4d6a69bc902ee512c2b21f0bc9726c1288"
+    type :unofficial
+    resolves "https://github.com/tern-tools/tern/pull/1261"
+  end
+
   def install
     virtualenv_install_with_resources
   end
@@ -160,11 +168,7 @@ class Tern < Formula
   end
 
   test do
-    output = if OS.mac?
-      shell_output("#{bin}/tern report --image alpine:3.13.5 2>&1", 1)
-    else
-      shell_output("#{bin}/tern report --image alpine:3.13.5 2>&1")
-    end
+    output = shell_output("#{bin}/tern report --image alpine:3.13.5 2>&1", 1)
     assert_match "rootfs - Running command", output
     assert_path_exists testpath/"tern.log"
 
