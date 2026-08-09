@@ -7,12 +7,12 @@ class Lunarr < Formula
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16c6f8ca6abbb7f9625d5635560bfc727e369f331228efe7ae29b8a4297b074a"
-    sha256 cellar: :any,                 arm64_sequoia: "a7f0060fb14642b172ba669c4b2e5327193a6b5801355161f5eda00f53d4ded3"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e7220f2ba18c5f687f6fa13da8a5633f7f933744f4b2be4691ecaa5dddbeb60"
-    sha256 cellar: :any,                 sonoma:        "f9b029d86e77c98755429375b357c0a1e32b4264718fc26669c58475edaf7e36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aaa8e641dfb4e84136122d1035f1e1f44280d5942889f891e2b97256d87718f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0718562e716556ced713d31acc3095b0a2c9453dc7b27885830d8a45aa01bba"
+    sha256 cellar: :any, arm64_tahoe:   "6d6a333637856f9a7acdc0e3de943170477acc9a1d6a238565d373696044d010"
+    sha256 cellar: :any, arm64_sequoia: "dde7075afb283d9edb0dde568d33b39b57df63b0ceada9196a0bf0990f84bbc5"
+    sha256 cellar: :any, arm64_sonoma:  "9b2148cacb3fd35261b431e52c5fe143413c1cf277583ab88bf2ed1bf5b01b15"
+    sha256 cellar: :any, sonoma:        "fb1d8ee5a32f3db62aaa9a52cdf609ab6b858578ca7a9a30a9c7b3022649b105"
+    sha256 cellar: :any, arm64_linux:   "3280392e53d1b8c60a6c163c9470022ff5cca8982f72835ff4cfd8370c1596a7"
+    sha256 cellar: :any, x86_64_linux:  "c381359385f44be76c4363b083fe0c7e3fe97ab871792061b14c08725da64d07"
   end
 
   depends_on "ffmpeg"
