@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/67/b4/87d1720184b2af962a24455ec0916486841092e2fe5498a6dae031ad8505/mycli-2.11.0.tar.gz"
-  sha256 "7880834751fb1110657def44e66dc03909b86e9ef0abf745924f73120595e432"
+  url "https://files.pythonhosted.org/packages/5e/eb/e6a3ee090bfeac1fec7dfcbf248b52f60f528480d1d5e2281ddc365f124d/mycli-2.12.0.tar.gz"
+  sha256 "9375d32b7fa4709bd2b59e4e3ba28de0c0aa24ff36745626a0678c2e05bcfbb4"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b4e8d2b40b91d9d9a3b0fb43b76e5ec8477c0e914d86d88b5e60ed0dc9a45368"
-    sha256 cellar: :any, arm64_sequoia: "0b5c83663a329d826732689a9e54b70985413532c3425cdb4de4206fbd5280fb"
-    sha256 cellar: :any, arm64_sonoma:  "1ccf7bbe2b5e74ebd473e6248b7cac1eb0acdf680e2c0f77f1eadf23d2fd1292"
-    sha256 cellar: :any, sonoma:        "f6cb921ee4e4f84ced4518e6eeae101438ad3891209cd2fc3918691f3ae7ad06"
-    sha256 cellar: :any, arm64_linux:   "dfc002ccb64d2a26bcc1a21117e6f37f4973594fc7d30994e33bfb3f5140ab6c"
-    sha256 cellar: :any, x86_64_linux:  "4f66610ed52dfa666f57e08167c79213442621da77d2714a62cd5b839cf6ce68"
+    sha256 cellar: :any, arm64_tahoe:   "51251e5f1b15e76d22c7df369d4525b8a731e1aa0f715a720c58d1711b9baa60"
+    sha256 cellar: :any, arm64_sequoia: "7d0673233431ea8e68d8bbd8a0dd1325b2998465a5ac4d0f268537521a52ff50"
+    sha256 cellar: :any, arm64_sonoma:  "1cdbcffc04a4d4df812977a32bd154026f3e2c5354cc4e1e3be1b8df2ca46d7b"
+    sha256 cellar: :any, sonoma:        "be01b9caefe7ac0b2294ebc860adf030eeb926d90c9aa05b5f0a84c459ed1aee"
+    sha256 cellar: :any, arm64_linux:   "8f19926dbc1be2aa4e2e0e7aec233bd232fd93a7fa316e05e5ab51b71a742692"
+    sha256 cellar: :any, x86_64_linux:  "186994989042cccbda10edb7dd9b88e39f036bc1309d11c487050b786b4d69c0"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -55,8 +55,8 @@ class Mycli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "click-default-group" do
