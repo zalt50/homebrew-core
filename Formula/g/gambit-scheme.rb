@@ -1,8 +1,8 @@
 class GambitScheme < Formula
   desc "Implementation of the Scheme Language"
   homepage "https://gambitscheme.org/"
-  url "https://github.com/gambit/gambit/archive/refs/tags/v4.9.7.tar.gz"
-  sha256 "0da7c9772a2186dab1fba6bf6c777afe7424f40beacadf1b117d5cc825fe2db3"
+  url "https://github.com/gambit/gambit/archive/refs/tags/v4.9.8.tar.gz"
+  sha256 "0ec19b755dbda6c540e9e60b7235d801f26f40c2f211ddfb729b756218bcc873"
   license "Apache-2.0"
 
   livecheck do
