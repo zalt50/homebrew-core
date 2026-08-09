@@ -1,8 +1,8 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "f0e2dbd1d094f946b91a0015bbf3c9f6a05edf8161df8c35317e35cba47f1c12"
+  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "26b78ead85fd772d92396301e535b2557a97a0a469f41362bd673528bd73508b"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
