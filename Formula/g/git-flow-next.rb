@@ -1,8 +1,8 @@
 class GitFlowNext < Formula
   desc "Modern implementation of the Git-flow branching model"
   homepage "https://git-flow.sh/"
-  url "https://github.com/gittower/git-flow-next/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "ff6cfd247cf9cba51c695ea95a061522b537cd3b3ba10219e85e07a567273420"
+  url "https://github.com/gittower/git-flow-next/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "4f6078d5e3fb0b95d48dfb0327cbe48f04a96a9556eb5eb1e1d6b6879281af9b"
   license "BSD-2-Clause"
   head "https://github.com/gittower/git-flow-next.git", branch: "main"
 
