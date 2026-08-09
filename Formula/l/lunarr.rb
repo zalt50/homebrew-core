@@ -1,8 +1,8 @@
 class Lunarr < Formula
   desc "Self-hosted media streaming server and Plex alternative for movies and TV"
   homepage "https://github.com/lunarr-app/lunarr-go"
-  url "https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "dfd57c54d031c03a9396266b57d87bfcf9210220692432f0f3a34739b545c485"
+  url "https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "984eceb73963d516cd0e57ca6fcf31caa0e58f658bd616a9adc380671e359398"
   license "Apache-2.0"
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
@@ -26,11 +26,14 @@ class Lunarr < Formula
     # strip the foreign slice of the universal binary to satisfy `brew audit`
     deuniversalize_machos "node_modules/fsevents/fsevents.node" if OS.mac?
 
-    # keep only the prebuilt native libraries matching this platform
+    # keep only the prebuilt native libraries matching this platform;
+    # @libsql suffixes the libc (`darwin-arm64`, `linux-arm64-gnu`) while
+    # @seydx/node-av prefixes the package name (`node-av-darwin-arm64`)
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
-    keep = OS.mac? ? "darwin-#{arch}" : "linux-#{arch}-gnu"
+    os_arch = OS.mac? ? "darwin-#{arch}" : "linux-#{arch}"
     Dir["node_modules/@{libsql,seydx}/*"].each do |dir|
-      rm_r(dir) unless File.basename(dir).start_with?(keep)
+      base = File.basename(dir)
+      rm_r(dir) unless base.end_with?(os_arch, "#{os_arch}-gnu")
     end
 
     libexec.install Dir["*"]
