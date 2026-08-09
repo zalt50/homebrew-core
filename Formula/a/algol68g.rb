@@ -1,8 +1,8 @@
 class Algol68g < Formula
   desc "Algol 68 compiler-interpreter"
   homepage "https://algol68genie.nl/en/algol-68-genie/"
-  url "https://algol68genie.nl/algol68g-3.13.0.tar.gz"
-  sha256 "ad05fee71566a1432132d53e0a6b0a2abfd993be73927cfa088b21b3a2d4be56"
+  url "https://algol68genie.nl/algol68g-3.13.1.tar.gz"
+  sha256 "45c57989a576c733ccbf9ba0057978563a7d2a485324eddab3ad2a5e1fca3ba2"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -28,9 +28,6 @@ class Algol68g < Formula
     depends_on "libpq"
   end
 
-  # Use `__BYTE_ORDER__` macro instead of `__BYTE_ORDER`
-  patch :DATA
-
   def install
     system "./configure", *std_configure_args
     system "make", "install"
@@ -45,22 +42,3 @@ class Algol68g < Formula
     assert_equal "Hello World", shell_output("#{bin}/a68g #{path}").strip
   end
 end
-
-__END__
-diff --git a/src/a68g/rts-sounds.c b/src/a68g/rts-sounds.c
-index d23509b..b5fef13 100644
---- a/src/a68g/rts-sounds.c
-+++ b/src/a68g/rts-sounds.c
-@@ -34,10 +34,10 @@
- #undef A68G_LITTLE_ENDIAN
- #undef A68G_BIG_ENDIAN
- #if defined (__BYTE_ORDER__)
--  #if (__BYTE_ORDER == __ORDER_LITTLE_ENDIAN__)
-+  #if (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
-     #define A68G_LITTLE_ENDIAN A68G_TRUE
-     #define A68G_BIG_ENDIAN A68G_FALSE
--  #elif (__BYTE_ORDER == __ORDER_BIG_ENDIAN__)
-+  #elif (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
-     #define A68G_LITTLE_ENDIAN A68G_FALSE
-     #define A68G_BIG_ENDIAN A68G_TRUE
-   #else
