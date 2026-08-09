@@ -11,12 +11,12 @@ class KeeperCommander < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "91ca9289b254c6bb7e8748bcca13340382b115869473d576ddebccea7e16ef7f"
-    sha256 cellar: :any, arm64_sequoia: "0746c90e11f6d9917b895961eac63b0aa4b45bba0e6f5b8011eb6a6b0121bc12"
-    sha256 cellar: :any, arm64_sonoma:  "15969ec930965f3fb0d3809ca3c605e7e121d1848e4ac011d184fa06c9522f7c"
-    sha256 cellar: :any, sonoma:        "84e58efbdb3a127e13728ce69c060e8907e0d2cebaeb02e282e591a9242b73a4"
-    sha256 cellar: :any, arm64_linux:   "d1d4711a7479e41fe3e1844e1b3fb0cdd31aff636b0a510b930cae440c950269"
-    sha256 cellar: :any, x86_64_linux:  "afde3824f3a0f4b4d1ee876ab83ec165f281626fe4e999b6db582429901f18d8"
+    sha256 cellar: :any, arm64_tahoe:   "250b9774814808b7bc95f2a812550d5d17b543f131655a87271b637a997299cd"
+    sha256 cellar: :any, arm64_sequoia: "da390e6b3ede915769fc4672591719a3d91ce6826f8409b3cf94916ae8357640"
+    sha256 cellar: :any, arm64_sonoma:  "708c28898872a22150f298832eb0631614b99e5d069383bc30b4695a1fa0bcfa"
+    sha256 cellar: :any, sonoma:        "778fcb16ee77c587c74b2baee9bead51a15664b8f30da4d0e650052bfdbc1999"
+    sha256 cellar: :any, arm64_linux:   "1c0dbde6ea63b61b5ff89a1fc120a56d4801dd510adfb476aa8748500bd840cd"
+    sha256 cellar: :any, x86_64_linux:  "dbee9dc15547305dfb07f5f09f07947f98c0edad7fcf0206fddc07e3cace24de"
   end
 
   # `pkgconf` and `rust` are for bcrypt
