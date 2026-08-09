@@ -11,12 +11,13 @@ class Pcapplusplus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca63a424da114c48509c281096c3d55332408522212e913dc04aff80cc0c78d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5e89217cebfc6753a970f3826f5e263965cca19317e1ac9be10b69f70ed37d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9a3d9c988178977030dd70e67406d186143353068a745cc0962a8bebd5ced6e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9114d89c7d1c85f545ddbc156a93e4570892490300a322b030f19b823d9c4cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3568319906dcd096477aa77b784ebd9d79591dd79d8812d9da15acc3aea40e36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d517a01bc603f976353a91216c286fa3bdcc68bdcc6e7c85bb1cdd9a7f6e2ca6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb27621beef3098b108098ecb75b8791145e9b7e5d7635485bf552e507ad3313"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3db414b69aba3e6fe3e8d4d46b14d50d197a0f49e7e896b7287c6761b4e0d87c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "033603f2a01e495254da5383ba6ee135be97ff00f9e2c4cc7fa2508ba9a59fdc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "850241bc4492ca198453957f1361efd8c60b9e46660426ffb3526f1125b40613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a60a638a671532ec69cbc90557a85c61c375b3ef9de3fe10311159d9e48985f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d6fed04ad0ab4723d54bfb039c64434703ef377fb7e19e7ae0d463ec2c39183"
   end
 
   depends_on "cmake" => [:build, :test]
