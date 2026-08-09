@@ -22,7 +22,6 @@ class Standardebooks < Formula
   depends_on "cffi" => :no_linkage
   depends_on "openjdk"
   depends_on "pillow" => :no_linkage
-  depends_on "py3cairo" => :no_linkage
   depends_on "pycparser" => :no_linkage
   depends_on "python@3.14"
 
@@ -33,7 +32,8 @@ class Standardebooks < Formula
     depends_on "zlib-ng-compat"
   end
 
-  pypi_packages exclude_packages: %w[certifi cffi pillow pycairo]
+  pypi_packages exclude_packages: %w[certifi cffi pillow],
+                extra_packages:   "pyxdg" # Linux only
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
@@ -289,7 +289,8 @@ class Standardebooks < Formula
     # Remove vendored prebuilt binary
     rm "se/vendor/calibre_azw3/upstream/html5_parser/html_parser.cpython-312-x86_64-linux-gnu.so"
 
-    virtualenv_install_with_resources
+    without = "pyxdg" unless OS.linux?
+    virtualenv_install_with_resources(without:)
 
     bash_completion.install "se/completions/bash/se"
     fish_completion.install "se/completions/fish/se.fish"
