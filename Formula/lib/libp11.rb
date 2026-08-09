@@ -11,12 +11,12 @@ class Libp11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "97e58b3f8dbe3ec5427939e2e04dc4a2c8634fc5149e4d4f05b5f17e6430a7c2"
-    sha256 cellar: :any, arm64_sequoia: "028157d1edea451f6a386c5266c18f1792203792c903d1ccfac452c6bd250950"
-    sha256 cellar: :any, arm64_sonoma:  "6a8779d49170b3e092ef1a8156bda249f4aa5a74ed82cdeea9a25bb17564409f"
-    sha256 cellar: :any, sonoma:        "dc621d302ee73159730d28fc7bc12f00de381aa095238748e579890c8fe84701"
-    sha256 cellar: :any, arm64_linux:   "18f39b1aef751fd100d49a07600c2fc3ad0f22bae686206fb0bb4947dd967cea"
-    sha256 cellar: :any, x86_64_linux:  "8fd4ff7067a37019406df915e9b55354f1ad8f1b11bc379ab7dcd9ba34a2c48c"
+    sha256 cellar: :any, arm64_tahoe:   "10175d4baeb75330bee16b8903ec5e88d5b991b9da43f2fbaec1be4077a0fad4"
+    sha256 cellar: :any, arm64_sequoia: "3bc52a04b32df16febc63738a8fa2e5552bf6f74afe5eec2159b6d91d419a957"
+    sha256 cellar: :any, arm64_sonoma:  "301a340e8e298abbd358ced80923695b5f1a0c8a0ab7d9148d339a51e456db07"
+    sha256 cellar: :any, sonoma:        "c0df4bc1a6103b39338862eae2b7b1dade6f949abcb4bc3716f676c1f528b0e8"
+    sha256 cellar: :any, arm64_linux:   "fcf6e88dcc5b19a454442954c1f9138d449e5584575ebd88cae705f356dfe900"
+    sha256 cellar: :any, x86_64_linux:  "d27b58ba98f3ffd7876c6a32e4003588202c389d9ec8d616e213b58b6d7ab44e"
   end
 
   head do
