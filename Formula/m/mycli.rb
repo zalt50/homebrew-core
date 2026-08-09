@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/de/27/4eded0c0cac2790d6d6f253ee189bd1b8c96dd89cc186640ef9d0e5f6abf/mycli-2.9.0.tar.gz"
-  sha256 "a7c06041e7f381e31379104e801112d47da6683e05767cd59cedf10cac8841a6"
+  url "https://files.pythonhosted.org/packages/67/b4/87d1720184b2af962a24455ec0916486841092e2fe5498a6dae031ad8505/mycli-2.11.0.tar.gz"
+  sha256 "7880834751fb1110657def44e66dc03909b86e9ef0abf745924f73120595e432"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "664e3388e2293f4522ecbd5b3924761f2d79c16a2e9f417aa5feb4fcfc949ab0"
-    sha256 cellar: :any, arm64_sequoia: "a520fdbb34046bfab0f071e2ab27ba653c0fc346f9d74be12efee891dea9e68c"
-    sha256 cellar: :any, arm64_sonoma:  "dcb3615a078b9b81efe827a71e1831ca839062cb24621284da56ceb76ceee1b9"
-    sha256 cellar: :any, sonoma:        "bca0d7efdb8bf53f3eb3ee62d400183d6a887d5c70994045df0b424a20d14523"
-    sha256 cellar: :any, arm64_linux:   "8eee2e8debbdbd515ba6beb97bd603740061900c088a6ec2a94e04f01f0f5b54"
-    sha256 cellar: :any, x86_64_linux:  "7dca1b49feedbeebbaa0d042054f8ce12864abeba30f4c03aa500662e5bfa0e5"
+    sha256 cellar: :any, arm64_tahoe:   "b4e8d2b40b91d9d9a3b0fb43b76e5ec8477c0e914d86d88b5e60ed0dc9a45368"
+    sha256 cellar: :any, arm64_sequoia: "0b5c83663a329d826732689a9e54b70985413532c3425cdb4de4206fbd5280fb"
+    sha256 cellar: :any, arm64_sonoma:  "1ccf7bbe2b5e74ebd473e6248b7cac1eb0acdf680e2c0f77f1eadf23d2fd1292"
+    sha256 cellar: :any, sonoma:        "f6cb921ee4e4f84ced4518e6eeae101438ad3891209cd2fc3918691f3ae7ad06"
+    sha256 cellar: :any, arm64_linux:   "dfc002ccb64d2a26bcc1a21117e6f37f4973594fc7d30994e33bfb3f5140ab6c"
+    sha256 cellar: :any, x86_64_linux:  "4f66610ed52dfa666f57e08167c79213442621da77d2714a62cd5b839cf6ce68"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -70,8 +70,8 @@ class Mycli < Formula
   end
 
   resource "condense-json" do
-    url "https://files.pythonhosted.org/packages/94/b3/d784cbc05556192ea1e798cae96363835d649fe7420ff030190789645be1/condense_json-0.1.3.tar.gz"
-    sha256 "25fe8d434fdafd849e8d98f21a3e18f96ae2d6dbc2c17565f29e4843d039d2bc"
+    url "https://files.pythonhosted.org/packages/d1/a5/7158b674fa5b890d80faaf42dd438d1a765661cd22430ddf499759cf44e1/condense_json-1.1.tar.gz"
+    sha256 "c455b54bbbab89a69f598b09f2003a89b738df20d30e6aa341c495401ec5b349"
   end
 
   resource "configobj" do
@@ -170,13 +170,13 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/75/d8/06fda9685e47d9a8fc177ef57f8af75207938fad49a45ce23bfa7b6a2a5c/openai-2.51.0.tar.gz"
-    sha256 "4d61287c42eba54086d09346e709cbf7f8cec51822efce9cc399450b9385fba5"
+    url "https://files.pythonhosted.org/packages/ef/cf/36e3e7235fdf6d125c052acc0970924611b17a20a4fe580596faf4566a65/openai-2.53.0.tar.gz"
+    sha256 "baf5802ad08980e1d9d561e1b996e800c8bcd14af5847c6d0e7a5cc59e4d4116"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pluggy" do
@@ -187,6 +187,11 @@ class Mycli < Formula
   resource "polars" do
     url "https://files.pythonhosted.org/packages/27/99/fe77f10a13a778705ef05b499fc708c9a0b0a3680d9eb6bc6e1b6a6b9914/polars-1.42.1.tar.gz"
     sha256 "2fe94f3059334650bd850ae19a9c165dcd5d9cb12cd95ea04de2201662e70e8a"
+  end
+
+  resource "polars-runtime-32" do
+    url "https://files.pythonhosted.org/packages/1f/59/15bcc4dac380c6d63efa5446d8317f22671cbd6c9dadd576bd17a334c45a/polars_runtime_32-1.42.1.tar.gz"
+    sha256 "4d4809e1c1b9a6611f6944f27b24abea902b5159e6b6fa262fd716e947af5afd"
   end
 
   resource "prompt-toolkit" do
@@ -319,14 +324,14 @@ class Mycli < Formula
     sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
-  resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
-  end
-
   resource "vl-convert-python" do
     url "https://files.pythonhosted.org/packages/93/89/36722344d1758ec2106f4e8eca980f173cfe8f8d0358c1b77cc5d2e035a4/vl_convert_python-1.9.0.post1.tar.gz"
     sha256 "a5b06b3128037519001166f5341ec7831e19fbd7f3a5f78f73d557ac2d5859ef"
+  end
+
+  resource "wcwidth" do
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "yaspin" do
@@ -335,8 +340,21 @@ class Mycli < Formula
   end
 
   def install
-    without = %w[jeepney secretstorage] unless OS.linux?
-    virtualenv_install_with_resources(without:)
+    # sqlglotc compiles whichever sqlglot its isolated build env resolves, so pin it to our resource
+    (buildpath/"constraints.txt").write "sqlglot==#{resource("sqlglot").version}\n"
+    ENV["PIP_CONSTRAINT"] = (buildpath/"constraints.txt").to_s
+
+    without = ["polars-runtime-32"]
+    without += %w[jeepney secretstorage] unless OS.linux?
+    venv = virtualenv_install_with_resources(without:)
+
+    # polars enables its `nightly` feature by default, which needs a nightly compiler.
+    # Disable LTO and debug info to reduce peak memory usage when linking the large extension.
+    with_env(CARGO_PROFILE_RELEASE_DEBUG: "false",
+             CARGO_PROFILE_RELEASE_LTO:   "false",
+             MATURIN_PEP517_ARGS:         "--no-default-features --features full") do
+      venv.pip_install resource("polars-runtime-32")
+    end
 
     bash_completion.install "mycli/resources/completions/bash/mycli"
     fish_completion.install "mycli/resources/completions/fish/mycli.fish"
