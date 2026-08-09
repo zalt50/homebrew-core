@@ -1,13 +1,15 @@
 class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
-  url "https://files.freeswitch.org/releases/freeswitch/freeswitch-1.11.1.-release.tar.gz"
-  version "1.11.1"
-  sha256 "c0ce4cb91f9d8c9c7c8e45e0f5064104a1f710863775364a227cfdc305fec98e"
+  url "https://files.freeswitch.org/releases/freeswitch/freeswitch-1.11.2.-release.tar.gz"
+  version "1.11.2"
+  sha256 "c362690b3bd8e7878ba7a46f5ba88bcdb1dad3eefae33d9e82c5378e6dbe7ba1"
   license all_of: [
     "MPL-1.1",
     "LGPL-2.1-only", # spandsp
   ]
+
+  head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   livecheck do
     url :head
@@ -23,14 +25,9 @@ class Freeswitch < Formula
     sha256 x86_64_linux:  "19bd3f2560cdf2f7596ea91f2e6d66bdea2cf922786d8ef36d83023251f99ba8"
   end
 
-  head do
-    url "https://github.com/signalwire/freeswitch.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "autoconf" => :build # for `spandsp`
+  depends_on "automake" => :build # for `spandsp`
+  depends_on "libtool" => :build # for `spandsp`
   depends_on "pkgconf" => :build
 
   depends_on "freetype"
@@ -156,27 +153,16 @@ class Freeswitch < Formula
 
   #------------------------ End sound file resources --------------------------
 
-  # There's no tags for now https://github.com/freeswitch/spandsp/issues/13
   # Using same source tarball as upstream's `signalwire/signalwire/spandsp` formula:
   # https://github.com/signalwire/homebrew-signalwire/blob/master/Formula/spandsp.rb
   resource "spandsp" do
-    url "https://files.freeswitch.org/downloads/libs/spandsp-3.0.0-0d2e6ac65e.tar.gz"
-    version "3.0.0-0d2e6ac65e"
-    sha256 "29c728fab504eb83aa01eb4172315c2795c8be6ef9094005f21bd1e3463f5f2f"
-
-    livecheck do
-      url "https://raw.githubusercontent.com/signalwire/homebrew-signalwire/refs/heads/master/Formula/spandsp.rb"
-      regex(/url ".*?spandsp[._-]v?(\d+(?:\.\d+)+-\h+)\.t/i)
-    end
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      file "Patches/libtool/configure-big_sur.diff"
-    end
+    url "https://github.com/freeswitch/spandsp/archive/refs/tags/v3.1.1.tar.gz"
+    sha256 "71b3f1492cd5ca3dacdaa7eb6b54f5d14e0e2267ae0a1df09a87ca93cfeb1401"
   end
 
   def install
     resource("spandsp").stage do
+      system "autoreconf", "--force", "--install", "--verbose"
       system "./configure", "--disable-silent-rules", *std_configure_args(prefix: libexec)
       system "make", "install"
       ENV.append_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
