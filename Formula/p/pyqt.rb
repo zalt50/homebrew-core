@@ -41,15 +41,8 @@ class Pyqt < Formula
     depends_on "qtshadertools"
   end
 
-  on_sonoma :or_newer do
+  on_system :linux, macos: :sonoma_or_newer do
     depends_on "qtwebengine"
-  end
-
-  on_linux do
-    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
-    on_intel do
-      depends_on "qtwebengine"
-    end
   end
 
   pypi_packages exclude_packages: %w[pyqt6-3d-qt6 pyqt6-charts-qt6
@@ -89,18 +82,14 @@ class Pyqt < Formula
     sha256 "15cf49efbbbd4c6bc87653b2c4ae80d6049f800e31620b336734ae2e37cbedae"
   end
 
-  def python3
-    "python3.14"
-  end
+  def python3 = "python3.14"
 
   def webengine_supported?
     on_sonoma :or_newer do
       return true
     end
     on_linux do
-      on_intel do
-        return true
-      end
+      return true
     end
     false
   end
