@@ -3,8 +3,8 @@ class MailDeduplicate < Formula
 
   desc "CLI to deduplicate mails from mail boxes"
   homepage "https://kdeldycke.github.io/mail-deduplicate/"
-  url "https://files.pythonhosted.org/packages/5c/22/620c52216470fc116b21ee892c0fc8faf9822b65eb9e6dff11acd08c6fdd/mail_deduplicate-9.2.0.tar.gz"
-  sha256 "71d3a1c3d27e438795e034d894704b5341e37dad9ddee9a3985d7a78ce7c24e8"
+  url "https://files.pythonhosted.org/packages/f9/c9/a80d901668896b00d20aab80c91c02cafdd203134245acc8c74099b4a1c7/mail_deduplicate-9.3.0.tar.gz"
+  sha256 "91da1ef5da2d22f125afaeea36a59aa8301707a3843361cce63081e416ef486e"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
@@ -57,6 +57,11 @@ class MailDeduplicate < Formula
   resource "extra-platforms" do
     url "https://files.pythonhosted.org/packages/d0/20/3d7ba1bd9cd9235eda78a143adcb2a710c6117f5b3f500237bc2f240808c/extra_platforms-13.6.0.tar.gz"
     sha256 "92b5800c0ca9767820ae2cf3d48b7037432c1360055ed1804bc43a8269a2a090"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/36/0a/062135c9a98dac804265073cc3afdbec5ae1aa37980bb354f461bafe81b4/platformdirs-4.11.1.tar.gz"
+    sha256 "bb1af68078f25e2f3e111e2d43b8d536df41b73c8a684b40bb018223b66fae27"
   end
 
   resource "tabulate" do
