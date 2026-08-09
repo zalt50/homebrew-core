@@ -58,6 +58,9 @@ class StylishHaskell < Formula
       import           Data.Map            (Map, keys, (!))
       import qualified Data.Map            as M
     HASKELL
-    assert_equal expected, shell_output("#{bin}/stylish-haskell test.hs")
+    # Pass the config explicitly; searching for one walks up to `/`, which the sandbox denies
+    (testpath/"config.yaml").write shell_output("#{bin}/stylish-haskell --defaults")
+
+    assert_equal expected, shell_output("#{bin}/stylish-haskell --config config.yaml test.hs")
   end
 end
