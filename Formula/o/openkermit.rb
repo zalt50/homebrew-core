@@ -1,8 +1,8 @@
 class Openkermit < Formula
   desc "Scriptable network and serial communication for UNIX and VMS"
   homepage "https://www.openkermit.org/"
-  url "https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.505.tar.gz"
-  sha256 "c4cbbae6fd83e3aad318afdae72a993af9c5e73221e18d18f9b7a6937f3735c2"
+  url "https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.507.tar.gz"
+  sha256 "45070b3fb0f9eda87e8a3b9126b110aed8fe4f561bf803e4fd856dbc367d9b0a"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Openkermit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bb49244a3197278ad616a1db7bc66d6265b83df118069eac598db528e8cf0ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dfeaf19da1b723218fcb3755388148defd26f5d75de504eab8daae70a37d1f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e23842bab8d10800310dd946ecf9647cc02d13ec40527eaea46241e08731b8fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b22b75855c0f19b7d532f7e010cf355cbea2e99bc58b2139d30416c7e785d7ad"
-    sha256 cellar: :any,                 arm64_linux:   "b41d0c8ec805ecdb8e4a884157c3b2a40c7f8b1444d0a75e9c6d8359458757ae"
-    sha256 cellar: :any,                 x86_64_linux:  "1263fff09db1be9d264a60e4cbcbd329896362f08c274016964b291bcc0d78bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f48e712b68a2219a9eba05e315794e6b18edd820ebfe35a23545d7edf3683514"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "beec8350f4960e99ced38824f7ccdcb402474d4b30099ecd84582172602e33e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f4d490727fad30f1072d6174014afcd495b758d1d3b9049e139eb8283d708f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b477a9348fda209c4f17c0a59e0045f5ee38486e36549c5ecd32b0b9c4479b7"
+    sha256 cellar: :any,                 arm64_linux:   "527505ea70b6864ad964c484099dc3293ee2ceae5a3f029fadac1516d6f8a08a"
+    sha256 cellar: :any,                 x86_64_linux:  "75d2c3bea63f3354ab93b8c40bd9ad302f9f8b441e0ea43fe900522ec8120952"
   end
 
   uses_from_macos "libxcrypt"
@@ -35,7 +35,9 @@ class Openkermit < Formula
   end
 
   test do
-    system "#{bin}/kermit", "-C", "set host /network-type:pseudoterminal \"kermit -x\", get /bin/sh, bye, quit"
+    # /confirm:off keeps this headless.
+    system "#{bin}/kermit", "-C",
+           "set host /network-type:pseudoterminal \"kermit -x\", get /confirm:off /bin/sh, bye, quit"
     assert_path_exists "sh"
   end
 end
