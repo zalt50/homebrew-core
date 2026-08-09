@@ -6,8 +6,8 @@ class GoHassAgent < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "44f54c1094ab634f250dc95382f7ecbad46eb1584e28530c5ca30e1981c02f9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4e3c6bdb1841c27528564a3cb3b63230e755433389d492a7e58a12d04827774e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "f5ec5938ca5c61d48f6a0735b448b5da781df96b62055ad3fd6c7a367344ddfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d761aa9249f474f6f45df1c41c1e447f153b20c9c495f12064d74469b5e26e9e"
   end
 
   depends_on "go" => :build
