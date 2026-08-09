@@ -1,8 +1,8 @@
 class NextpnrIce40 < Formula
   desc "Portable FPGA place and route tool for Lattice iCE40"
   homepage "https://github.com/YosysHQ/nextpnr"
-  url "https://github.com/YosysHQ/nextpnr/archive/refs/tags/nextpnr-0.10.tar.gz"
-  sha256 "374393094cdf7b2aae415cebf0994840b4a355bb95e89c683ef19f95f0b14dc2"
+  url "https://github.com/YosysHQ/nextpnr/archive/refs/tags/nextpnr-0.11.tar.gz"
+  sha256 "feb39c421cd432b3ecca004a6fdf0b7578375a7f12401906dd27c25eb948cdc3"
   license "ISC"
   head "https://github.com/YosysHQ/nextpnr.git", branch: "main"
 
