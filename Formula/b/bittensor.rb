@@ -20,7 +20,7 @@ class Bittensor < Formula
 
   depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13" # upstream requires-python is `>=3.10,<3.14`, issue ref: https://github.com/RaoFoundation/subtensor/issues/2950
+  depends_on "python@3.14"
 
   conflicts_with "btcli", "btpd", because: "both install `btcli` binaries"
 
