@@ -1,8 +1,8 @@
 class PodcastDl < Formula
   desc "CLI for downloading and archiving podcasts"
   homepage "https://github.com/lightpohl/podcast-dl"
-  url "https://registry.npmjs.org/podcast-dl/-/podcast-dl-12.0.0.tgz"
-  sha256 "fadcddbdc465d7df5d8b4537e2bf307ff61ebc44916959ac5536110bff525d5b"
+  url "https://registry.npmjs.org/podcast-dl/-/podcast-dl-12.0.1.tgz"
+  sha256 "27f750ed3949eb4d1aaae59c05000af7ad93fbd8d3d3c9d7e5711818c59197cd"
   license "MIT"
   head "https://github.com/lightpohl/podcast-dl.git", branch: "main"
 
