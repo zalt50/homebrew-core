@@ -24,7 +24,7 @@ class SwiftSection < Formula
   uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "swift-section"
+    system "swift", "build", "--product", "swift-section", *std_swift_args
     bin.install ".build/release/swift-section"
     generate_completions_from_executable(bin/"swift-section", "--generate-completion-script")
   end
