@@ -7,7 +7,7 @@ class PodcastDl < Formula
   head "https://github.com/lightpohl/podcast-dl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "85b92f065226d4653459fd250dd82060321ab8172b7aab9e5c8de84c43ca967b"
+    sha256 cellar: :any_skip_relocation, all: "33b41bb1177deeaeae42b2a56ffd13640cd3ab869c6b5dbfc3e2e3cba8c416ec"
   end
 
   depends_on "node"
