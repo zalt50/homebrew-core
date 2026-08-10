@@ -20,15 +20,16 @@ class Oclgrind < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@19" # FIXME: LLVM 20+ segfaults. Also seen upstream where CI using Homebrew LLVM was disabled
   depends_on "readline"
 
   on_macos do
+    depends_on "llvm@19" # FIXME: LLVM 20+ segfaults. Also seen upstream where CI using Homebrew LLVM was disabled
     depends_on "zstd"
   end
 
   on_linux do
     depends_on "opencl-headers" => :test
+    depends_on "llvm"
   end
 
   def install
