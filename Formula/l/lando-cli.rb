@@ -12,12 +12,12 @@ class LandoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53b56f3558f2ab48a8097c34685012febae00cfcd106ff56145588c70c5d9a34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53b56f3558f2ab48a8097c34685012febae00cfcd106ff56145588c70c5d9a34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53b56f3558f2ab48a8097c34685012febae00cfcd106ff56145588c70c5d9a34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53b56f3558f2ab48a8097c34685012febae00cfcd106ff56145588c70c5d9a34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e295528985b558646bf9853b9d9e8f3a9b2c23f7f883d9f55a50d4f93a5d9d4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e295528985b558646bf9853b9d9e8f3a9b2c23f7f883d9f55a50d4f93a5d9d4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9b8ae302fcdd533b6b980f14cc7dc37342d17a919428fba5702bf5a3adda16b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9b8ae302fcdd533b6b980f14cc7dc37342d17a919428fba5702bf5a3adda16b"
   end
 
   depends_on "node"
