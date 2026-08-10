@@ -26,12 +26,7 @@ class CreateApi < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-    system "swift", "build", *args, "--configuration", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/create-api"
     pkgshare.install "Tests/Support/Specs/cookpad.json" => "test-spec.json"
     generate_completions_from_executable(bin/"create-api", "--generate-completion-script")
