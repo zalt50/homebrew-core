@@ -16,9 +16,8 @@ class Dockutil < Formula
     sha256 cellar: :any_skip_relocation, ventura:       "4436030a66f240ccfea5317023281dc817ce4bdf0784d52f0c90b536321be629"
   end
 
-  depends_on xcode: ["13.0", :build]
   depends_on :macos
-  uses_from_macos "swift"
+  uses_from_macos "swift" => :build, since: :big_sur # swift 5.5+
 
   def install
     system "swift", "build", *std_swift_args
