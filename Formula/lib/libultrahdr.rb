@@ -1,8 +1,8 @@
 class Libultrahdr < Formula
   desc "Reference codec for the Ultra HDR format"
   homepage "https://developer.android.com/media/platform/hdr-image-format"
-  url "https://github.com/google/libultrahdr/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "5e422540271b64473d069623136e207d0516999aac2f819fb6176a01a3f9f915"
+  url "https://github.com/google/libultrahdr/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "588232d2c9adcd01541d48dc2e76f8448c52fea7fc2543e700a281b995ab50d2"
   license "Apache-2.0"
   compatibility_version 2
 
