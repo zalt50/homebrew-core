@@ -42,7 +42,7 @@ class Dicebear < Formula
 
     # Remove prebuilts which still get installed as optional dependencies
     node_modules = libexec/"lib/node_modules/dicebear/node_modules"
-    rm_r(node_modules.glob("@img/shar-*"))
+    rm_r(node_modules.glob("@img/sharp-*"))
     cd(node_modules/"sharp") { system "npm", "run", "build" }
   end
 
