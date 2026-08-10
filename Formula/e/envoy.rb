@@ -1,10 +1,20 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.39.0.tar.gz"
-  sha256 "a6c5b2af8387f7e9eb953d5ea66d61a57ecb1c2bef698ef154631092195b84b7"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
+
+  stable do
+    url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.39.0.tar.gz"
+    sha256 "a6c5b2af8387f7e9eb953d5ea66d61a57ecb1c2bef698ef154631092195b84b7"
+
+    # Allow using host-installed toolchains
+    patch do
+      url "https://github.com/envoyproxy/envoy/commit/be513213e888c443f4e00b1343cc05149f4f92a7.patch?full_index=1"
+      sha256 "363bf44a752c44b3532b7ce6ebc541e8a85b528ae7c79a6f7e621c881358a106"
+      type :backport
+    end
+  end
 
   livecheck do
     url :stable
@@ -33,10 +43,6 @@ class Envoy < Formula
     depends_on xcode: :build
   end
 
-  def llvm_formula
-    Formula["llvm@18"]
-  end
-
   def install
     # Drop hickory DNS: its rust SDK pulls in mockall (incompatible with macOS)
     # and references `@llvm_toolchain_llvm` labels that aren't registered when
@@ -46,6 +52,22 @@ class Envoy < Formula
 
     # Build with brew Bazel rather than Bazelisk downloading it
     rm ".bazelversion"
+
+    # Build with brew CMake, Go, Ninja and Python rather than Bazel downloading them
+    # https://github.com/envoyproxy/envoy/blob/main/bazel/README.md#building-with-host-provided-toolchains
+    inreplace "WORKSPACE" do |s|
+      s.gsub! "envoy_dependency_imports()", "envoy_dependency_imports(use_host_tools = True)"
+      s.gsub! "envoy_dependencies_extra()", "envoy_dependencies_extra(use_host_tools = True)"
+    end
+
+    # Stage a local toolchain root to match official LLVM layout needed by upstream
+    ENV["BAZEL_LLVM_PATH"] = llvm_path = buildpath/"llvm-toolchain"
+    ENV["BAZEL_USE_HOST_SYSROOT"] = "True"
+    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
+    llvm_path.install_symlink(llvm.opt_prefix.children.select(&:directory?) - [llvm.opt_bin])
+    (llvm_path/"bin").install_symlink llvm.opt_bin.children
+    # TODO: (llvm_path/"bin").install_symlink formula_opt_bin(llvm.name.sub(/^llvm/, "lld")).children
+    (llvm_path/"bin").install_symlink which("libtool") if OS.mac? # rules_foreign_cc expects Apple libtool for AR
 
     # Bazel cannot run in superenv. Also drop binutils as rules_foreign_cc CMake try-compile
     # can pick GNU ld from PATH and fail to link against Envoy's configured sysroot/toolchain
@@ -59,6 +81,7 @@ class Envoy < Formula
       --curses=no
       --noincompatible_strict_action_env
       --verbose_failures
+      --action_env=CMAKE_POLICY_VERSION_MINIMUM=3.5
       --action_env=PATH=#{env_path}
       --host_action_env=PATH=#{env_path}
       --define=wasm=wamr
@@ -66,45 +89,20 @@ class Envoy < Formula
       --jobs=#{ENV.make_jobs}
     ]
 
-    if OS.linux?
-      args.push(
+    args += if OS.linux?
+      [
         "--config=clang-local",
         "--repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1",
         "--strategy=BootstrapGNUMake=standalone",
         "--strategy=BootstrapPkgConfig=standalone",
-      )
+        # lld needs help finding libc++.a and libc++abi.a in a non-standard path
+        "--linkopt=-L#{llvm_path}/lib",
+        "--host_linkopt=-L#{llvm_path}/lib",
+        # TODO: Remove in next release as handled by .bazelrc
+        "--copt=-Wno-nullability-completeness",
+      ]
     else
-      args << "--config=macos"
-    end
-
-    # Workaround to build with Xcode 16.3 / Clang 19.
-    args << "--copt=-Wno-nullability-completeness" if OS.linux? || DevelopmentTools.clang_build_version >= 1700
-
-    # Envoy v1.37.0 expects a specific LLVM layout and tools, but Homebrew paths differ.
-    # Stage a local toolchain root matching upstream expectations.
-    llvm_path = buildpath/"llvm-toolchain"
-    llvm = llvm_formula.opt_prefix
-    (llvm_path/"bin").mkpath
-    (llvm_path/"lib").mkpath
-    (llvm/"bin").children.each { |path| ln_sf path, llvm_path/"bin"/path.basename }
-    (llvm/"lib").children.each { |path| ln_sf path, llvm_path/"lib"/path.basename }
-    ln_sf llvm/"include", llvm_path/"include"
-    ln_sf llvm/"libexec", llvm_path/"libexec"
-    ln_sf llvm/"share", llvm_path/"share"
-
-    # rules_foreign_cc expects "libtool" for AR on Darwin.
-    ln_sf which("libtool"), llvm_path/"bin/libtool" if OS.mac?
-    ENV["BAZEL_LLVM_PATH"] = llvm_path
-    ENV["BAZEL_USE_HOST_SYSROOT"] = "True"
-
-    # clang-common links these archives in foreign_cc bootstrap; provide them from brewed llvm.
-    if OS.linux?
-      libdir = llvm_formula.opt_lib
-      ln_sf libdir/"libc++.a", llvm_path/"lib/libc++.a" if (libdir/"libc++.a").exist?
-      ln_sf libdir/"libc++abi.a", llvm_path/"lib/libc++abi.a" if (libdir/"libc++abi.a").exist?
-
-      args << "--linkopt=-L#{llvm_path}/lib"
-      args << "--host_linkopt=-L#{llvm_path}/lib"
+      ["--config=macos"]
     end
 
     # Write the current version SOURCE_VERSION.
