@@ -6,7 +6,7 @@ class Fceux < Formula
     "LGPL-2.1-or-later", # src/drivers/common/{hq2x.cpp,nes_ntsc*}
     "MIT", # src/emufile*, src/drivers/Qt/TasEditor/, src/lua/
   ]
-  revision 10
+  revision 11
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   stable do
@@ -17,6 +17,13 @@ class Fceux < Formula
     # patch for `New timeStamp.cpp file renders fceux x86-only` issue
     patch do
       file "Patches/fceux/2.6.6-arm.patch"
+    end
+
+    # Fix builds with FFmpeg 9.
+    patch do
+      file "Patches/fceux/2.6.6-ffmpeg9.patch"
+      type :unofficial
+      resolves "https://github.com/TASEmulators/fceux/pull/850"
     end
   end
 
