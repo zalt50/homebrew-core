@@ -1,8 +1,8 @@
 class AlevinFry < Formula
   desc "Efficient and flexible tool for processing single-cell sequencing data"
   homepage "https://github.com/COMBINE-lab/alevin-fry"
-  url "https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.16.2.tar.gz"
-  sha256 "fa1786133b95b7f011a6d4d743c07b3aea7c4f5633bc0d1d51a1758bbbc11157"
+  url "https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "081bff186c2f9002fef2ba13ab2751dc8e063e1c4585e7d3bbcbee6e2331a9da"
   license "BSD-3-Clause"
 
   bottle do
