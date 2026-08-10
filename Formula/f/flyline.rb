@@ -1,8 +1,8 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "291981585cc7cee0372ec93242bebd3a70b1fc0e9475e1adfafa3932cdf20e31"
+  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "9bcacde196d9b46550c1b87605e8ef30c6bdf907d4a0816bf6f9348b57645cc6"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
@@ -24,26 +24,28 @@ class Flyline < Formula
   end
 
   test do
-    Open3.popen2("script", "-q", "screenlog.txt") do |input, _, thr|
-      input.puts "#{formula_opt_bin("bash")}/bash -il"
-      sleep 5
-      input.puts "stty rows 80 cols 130"
-      input.puts "export LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm"
-      input.puts "enable flyline"
-      # The terminal backend blocks on a cursor position report for each capability it probes
-      input.write "\e[1;1R" * 10
-      sleep 2
-      input.puts "flyline changelog | grep -F 1.3.0"
-      sleep 2
-      input.puts "exit"
-      sleep 5
-      input.close
+    require "io/console"
+    require "pty"
+
+    output_log = testpath/"output.log"
+    PTY.spawn(formula_opt_bin("bash")/"bash", "--noprofile", "--norc", "-i",
+              [:out, :err] => output_log.to_s) do |r, w, pid|
+      r.winsize = [80, 130]
+      w.puts "enable flyline"
+      w.puts "flyline version"
+      w.puts "flyline changelog"
+      w.puts "exit"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
     ensure
-      Process.kill("TERM", thr.pid)
+      r.close
+      w.close
+      Process.wait(pid)
     end
 
-    screenlog = (testpath/"screenlog.txt").binread
-    # Match the tooltip that should be displayed for the last input line
-    assert_match "Display the changelog", screenlog
+    output = output_log.read
+    assert_match "# Changelog", output
+    assert_match version.to_s, output
   end
 end
