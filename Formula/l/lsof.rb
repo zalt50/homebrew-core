@@ -4,6 +4,7 @@ class Lsof < Formula
   url "https://github.com/lsof-org/lsof/archive/refs/tags/4.99.7.tar.gz"
   sha256 "bac1b0acbc50aede42fc97dffaa0b0475e97973e36a6351de5f349c6155afc68"
   license "lsof"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d70c25198d50a584362bcf3fa262950f3688a7e1a38f5661c33597438cda2aa"
@@ -17,17 +18,28 @@ class Lsof < Formula
   keg_only :provided_by_macos
 
   on_linux do
+    depends_on "groff" => :build
     depends_on "libtirpc"
+  end
+
+  # Fix segfault when epoll fdinfo is unavailable, e.g. inside a container
+  patch do
+    url "https://github.com/lsof-org/lsof/commit/e1f8076051c1adb02fd7c1a4c824e8f373a1ab7a.patch?full_index=1"
+    sha256 "dfa5eac284b77ebb932f1b7defaf9d6852e0f97a021dbe2d4e8ae6983f27031d"
+    type :backport
+    resolves "https://github.com/lsof-org/lsof/pull/368"
   end
 
   def install
     if OS.mac?
       ENV["LSOF_INCLUDE"] = MacOS.sdk_path/"usr/include"
+      soelim = "mandoc_soelim"
 
       # Source hardcodes full header paths at /usr/include
       inreplace "lib/dialects/darwin/machine.h", "/usr/include", MacOS.sdk_path/"usr/include"
     else
       ENV["LSOF_INCLUDE"] = HOMEBREW_PREFIX/"include"
+      soelim = "soelim"
     end
 
     ENV["LSOF_CC"] = ENV.cc
@@ -38,7 +50,7 @@ class Lsof < Formula
 
     system "make"
     bin.install "lsof"
-    man8.install "Lsof.8"
+    (man8/"lsof.8").write Utils.safe_popen_read(soelim, "Lsof.8")
   end
 
   test do
