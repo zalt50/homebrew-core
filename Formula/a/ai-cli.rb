@@ -6,7 +6,7 @@ class AiCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "eda295807aafeba48ac65a30afa500eabe3c82f018f56d72d72cd7fbb97244c4"
+    sha256 cellar: :any_skip_relocation, all: "b993fa1a436c1f3f9170698aa4acf9fc9dbe768ef42424aed4b5437cc79d715f"
   end
 
   depends_on "node"
