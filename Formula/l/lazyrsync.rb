@@ -1,8 +1,8 @@
 class Lazyrsync < Formula
   desc "Terminal UI for rsync, written in Rust"
   homepage "https://lazyrsync.westpoint.io/"
-  url "https://github.com/westpoint-io/lazyrsync/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "4ce106e10a258ccb4fdf8958b49746f7a1f9386592ede441f620a7f41ffb7d75"
+  url "https://github.com/westpoint-io/lazyrsync/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "7ddb32c20688c1e56032207a5ed8edd5db09f9aaaad43741de13bef715bc1a4d"
   license "MIT"
   head "https://github.com/westpoint-io/lazyrsync.git", branch: "main"
 
