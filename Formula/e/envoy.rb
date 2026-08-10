@@ -20,29 +20,17 @@ class Envoy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "505878e18779ea5426065598359368f2aca6ce572ef2b79609f8539a3efdd9eb"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "bazel@8" => :build
   depends_on "cmake" => :build
   depends_on "go" => :build
-  depends_on "libtool" => :build
   depends_on "llvm@18" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "wget" => :build
-  depends_on xcode: :build
 
-  uses_from_macos "ncurses" => :build
   uses_from_macos "python" => :build
 
   on_macos do
-    depends_on "aspell" => :build
-    depends_on "clang-format" => :build
-  end
-
-  on_linux do
-    depends_on "libxml2" => :build
-    depends_on "lld" => :build
+    depends_on xcode: :build
   end
 
   def llvm_formula
@@ -104,12 +92,10 @@ class Envoy < Formula
     ln_sf llvm/"libexec", llvm_path/"libexec"
     ln_sf llvm/"share", llvm_path/"share"
 
-    if OS.mac?
-      # rules_foreign_cc expects "libtool" for AR on Darwin.
-      ln_sf which("libtool"), llvm_path/"bin/libtool"
-    end
-    ln_sf formula_opt_bin("libtool")/"glibtool", llvm_path/"bin/glibtool"
+    # rules_foreign_cc expects "libtool" for AR on Darwin.
+    ln_sf which("libtool"), llvm_path/"bin/libtool" if OS.mac?
     ENV["BAZEL_LLVM_PATH"] = llvm_path
+    ENV["BAZEL_USE_HOST_SYSROOT"] = "True"
 
     # clang-common links these archives in foreign_cc bootstrap; provide them from brewed llvm.
     if OS.linux?
