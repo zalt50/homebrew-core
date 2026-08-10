@@ -7,12 +7,12 @@ class Wails < Formula
   head "https://github.com/wailsapp/wails.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac32e48ca74bcefb89230f3423c76289dbd053f40bd161177b1b4e1424c7a77e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac32e48ca74bcefb89230f3423c76289dbd053f40bd161177b1b4e1424c7a77e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac32e48ca74bcefb89230f3423c76289dbd053f40bd161177b1b4e1424c7a77e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9d8ae05b7227ef1ae13a7ee2ea28efe7bfc87600a09b4f6158d9e3747729cf7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "006b94b43f8535d475c386db733ea8738080cd91e58687b88e055cfddcc00e9a"
-    sha256 cellar: :any,                 x86_64_linux:  "d47193757b819f58ef6b1a88a05154f181c05e147ec1412beb524f4fbf08f249"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00c9eaa273abe24a0972c0284768170a4d33b95c3137db30a34d38fc104f376e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c9eaa273abe24a0972c0284768170a4d33b95c3137db30a34d38fc104f376e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00c9eaa273abe24a0972c0284768170a4d33b95c3137db30a34d38fc104f376e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4069d1b28ed1089aca6ae1131f9c3b2d432e5204f5264690037e1e95d5bd4bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dfe8f85f9bc1fdaf022672bcb998d980ed7b4e8d78e358522622eaef0d03e09"
+    sha256 cellar: :any,                 x86_64_linux:  "8e739126a3bcf02df0fe84fb500389cca3a2914e2a2aa43813784d2e2318e8a6"
   end
 
   depends_on "go"
