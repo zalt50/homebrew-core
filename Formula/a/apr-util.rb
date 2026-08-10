@@ -1,9 +1,9 @@
 class AprUtil < Formula
   desc "Companion library to apr, the Apache Portable Runtime library"
   homepage "https://apr.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=apr/apr-util-1.6.4.tar.bz2"
-  mirror "https://archive.apache.org/dist/apr/apr-util-1.6.4.tar.bz2"
-  sha256 "3e2ae08f40efa0c3701e54a954cefa08242de22a69f91a8ae44fc1e624ba309b"
+  url "https://www.apache.org/dyn/closer.lua?path=apr/apr-util-1.6.5.tar.bz2"
+  mirror "https://archive.apache.org/dist/apr/apr-util-1.6.5.tar.bz2"
+  sha256 "96de1dd6f6a0476d2d2e7964926d8c1ddc3bb0e210e1b1812d3ba5a454a392e2"
   license "Apache-2.0"
 
   bottle do
