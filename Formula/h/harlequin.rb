@@ -3,8 +3,8 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/3d/65/9fd3c136a149f8d16f7d63a3d946ddd51ac6d1126903d7e1b808132bf221/harlequin-2.8.0.tar.gz"
-  sha256 "6283cdf2394fe063ebcd663a4de6400e83807029d17720be9fbf08831cc0dd97"
+  url "https://files.pythonhosted.org/packages/1b/f4/57f891b274f67ce48ce433646bf21beb5a0feee181fc2cf8f4a687cffee0/harlequin-2.8.1.tar.gz"
+  sha256 "acc71b0588df2ecc4fd7de82d05c50b92d7725d50afb3253e1bc18132fe6bd76"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
@@ -103,8 +103,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/36/0a/062135c9a98dac804265073cc3afdbec5ae1aa37980bb354f461bafe81b4/platformdirs-4.11.1.tar.gz"
+    sha256 "bb1af68078f25e2f3e111e2d43b8d536df41b73c8a684b40bb018223b66fae27"
   end
 
   resource "prompt-toolkit" do
@@ -183,8 +183,8 @@ class Harlequin < Formula
   end
 
   resource "textual-fastdatatable" do
-    url "https://files.pythonhosted.org/packages/c4/78/f03f3a2ef4f47b1e2d1143b5ab04964bb08619854bc1fab793db8623aa71/textual_fastdatatable-0.16.0.tar.gz"
-    sha256 "9d91f6d257bde25e244379d03b3fbcc92edafcfae983d8270ad34b0f344f1d97"
+    url "https://files.pythonhosted.org/packages/82/2a/f5844539d1ab139a220ee29ca81552cdd3e794048456a4b23a714f868e11/textual_fastdatatable-0.17.0.tar.gz"
+    sha256 "3b1ea1f78aa7aa7ab41df9fb2b3b926fb274bbe8cb2e4f622b16a500eeb2157c"
   end
 
   resource "textual-textarea" do
