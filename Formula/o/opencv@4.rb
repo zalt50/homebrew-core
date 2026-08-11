@@ -13,12 +13,12 @@ class OpencvAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b30c38fc4cf8c5df8826b4ce9b1858fbc2f446af1a6c2c6379e41a44532913c2"
-    sha256 arm64_sequoia: "0bc64fb6f6d714ae450cd6c136017dcc9a4155447d748cc2acf65152afd96c47"
-    sha256 arm64_sonoma:  "c5ab555ea7fd9b1f2c562b3b6677338082ef794134cd3d02acc4b2e2d5fbac2f"
-    sha256 sonoma:        "6d6eb879d893c1bca708f64ad477b24fc785e8eba055757b0069bdd0b9f3e603"
-    sha256 arm64_linux:   "7883e621f028f448d174ae9b1f4bd58425359687d8eb2f2b62f1172dbacd2487"
-    sha256 x86_64_linux:  "9107e6c4ddd538e8a9fca99100df75444359b4356c13b688130c4f251530be41"
+    rebuild 1
+    sha256 arm64_tahoe:   "6fe7c29f13749fbc1420d01782cf3884cb0e052be1e8abcbd457ba94a1dd44a6"
+    sha256 arm64_sequoia: "4b328f4bde825ded586486ca2f45f8ff3e67e36dc53c610741d18eef50a7913e"
+    sha256 arm64_sonoma:  "3affe7661db794d06b03ff4d9b645ff2c156f0e6f856b3861e7976437f0d1aa1"
+    sha256 sonoma:        "fde205bc662741e8ea0249639483bbd611dcaab22064d86ec4a1b78892885690"
+    sha256 arm64_linux:   "22441095097587f0c8d32163eb4cd32bf1cbac817b5aa3b452eb4c885500e5fc"
   end
 
   keg_only :versioned_formula
