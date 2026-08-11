@@ -15,19 +15,21 @@ class Gecode < Formula
     sha256 cellar: :any, x86_64_linux:  "5750be52017bc170d54237ac24e426a5dbb9c23159572d08ec691611474efaec"
   end
 
-  depends_on "uv" => :build
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :test
   depends_on "qtbase"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --disable-examples
-      --disable-mpfr
-      --enable-qt
+    args = %w[
+      -DGECODE_ENABLE_EXAMPLES=OFF
+      -DGECODE_ENABLE_GIST=ON
+      -DGECODE_ENABLE_MPFR=OFF
+      -DGECODE_ENABLE_QT=ON
     ]
-    system "./configure", *args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
