@@ -7,12 +7,12 @@ class Croc < Formula
   head "https://github.com/schollz/croc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fad0e698a5d6afddc1a350633cdd69349eaf843cacafc71d63420dbd445eadd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fad0e698a5d6afddc1a350633cdd69349eaf843cacafc71d63420dbd445eadd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fad0e698a5d6afddc1a350633cdd69349eaf843cacafc71d63420dbd445eadd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1562ea98fdeda16d47d05dfebe7c4e5d37c655142666533cbfec29ca02ce13dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "122118d4093e92caa094a80de79719af0e9faecad5d61a22ceea584a2cef1661"
-    sha256 cellar: :any,                 x86_64_linux:  "660a1c4030037bb601545d20bf3baedef9bc0c705f2223575fd81590e9b13a15"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a5ca0ceee6a3df814600b346f3f357b3456fad583bb016e602c87adf0048329"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a5ca0ceee6a3df814600b346f3f357b3456fad583bb016e602c87adf0048329"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a5ca0ceee6a3df814600b346f3f357b3456fad583bb016e602c87adf0048329"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62030bde59fedaea0290b45491e7b2d1f7ea80b52507523cddd39265dd1b2810"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8de3a355eb7f1396a15d03d9275387781c7c7bd3af95ecc4d30776cc85b31090"
+    sha256 cellar: :any,                 x86_64_linux:  "59973e27b1cfba1258b259438a114a4f6f2cc5504377e75e2c18788d7d61920a"
   end
 
   depends_on "go" => :build
