@@ -8,7 +8,7 @@ class Mhonarc < Formula
   head "https://github.com/sympa-community/mhonarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d648abb0708b23fccab9dc49db5ced470814ee385962ab662f7209b657fe05e3"
+    sha256 cellar: :any_skip_relocation, all: "b2c159025091e4f1295a217f11f50ec17c9de97c008803cb7de410c963c08db6"
   end
 
   depends_on "perl"
