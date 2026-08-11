@@ -1,15 +1,12 @@
 class SentryCli < Formula
   desc "Command-line utility to interact with Sentry"
   homepage "https://docs.sentry.io/cli/"
-  url "https://github.com/getsentry/sentry-cli/archive/refs/tags/3.6.2.tar.gz"
-  sha256 "f2b2471393efe7df74d980829df6bb2af3bd0036f5f8bf3204717d96393e6205"
+  url "https://github.com/getsentry/sentry-cli/archive/refs/tags/2.58.2.tar.gz"
+  sha256 "f548e09d13f8bbaab9f65d552699c939c2d2674d8f119f857bcfb61e52f6f266"
   license "BSD-3-Clause"
+  revision 1
+  version_scheme 1
   head "https://github.com/getsentry/sentry-cli.git", branch: "master"
-
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caf02d9e2688dee8b0c3b1cea59d14819981aea0897dc97e6c7802dcfc4881b8"
@@ -19,6 +16,9 @@ class SentryCli < Formula
     sha256 cellar: :any,                 arm64_linux:   "1106fbfeba96bf46f27b17a331126720425d0825e8c28ea9e7db39476c2a4eaa"
     sha256 cellar: :any,                 x86_64_linux:  "947b1b1591baecbfb43a8c9eacc37d489edffab3b8c6174f1404cfe0c4cb5314"
   end
+
+  deprecate! date: "2026-08-11", because: "changed its license to FSL-1.1-MIT in 2.58.3"
+  disable! date: "2026-11-11", because: "changed its license to FSL-1.1-MIT in 2.58.3"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
