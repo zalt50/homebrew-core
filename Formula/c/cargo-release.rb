@@ -1,8 +1,8 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https://github.com/crate-ci/cargo-release"
-  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "0000ac4540ad506d5d3ff4e1b1b3e487d644e21e3a3a571995fc78bad863cc32"
+  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.5.tar.gz"
+  sha256 "6d02028b9b1525ad6890a792854ad6e74c2a7cd791f118c442293538ae6bbf8d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
