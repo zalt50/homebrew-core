@@ -5,6 +5,15 @@ class Kata < Formula
   sha256 "d85107793192147cc069e1bb5213a852ad0892fc3387127d073e46c6967b3592"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dddc58466b35dab13cfc74d3e178467ee994ba4a3ec4a5e4057bab23f2b5238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dddc58466b35dab13cfc74d3e178467ee994ba4a3ec4a5e4057bab23f2b5238"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dddc58466b35dab13cfc74d3e178467ee994ba4a3ec4a5e4057bab23f2b5238"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd761c425a511e035c06c3cd94a13b4a21546010f0f1e03c5b11accd888381f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f291ee8113f48661d9e4b0e0aab2d7f7177e309f311710393dc8a47c230d5242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5b1fc5fdd08fce1c2d67223a345fee2605212216f6d8e7d7680cc4558274eae"
+  end
+
   depends_on "go" => :build
 
   def install
