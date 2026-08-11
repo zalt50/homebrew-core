@@ -161,6 +161,7 @@ jobs:
               missing_content:
                 - '\n    sha256.* (x86_64|arm64)_linux: +"[a-fA-F0-9]+"\n'
                 - '\n    sha256.* all: +"[a-fA-F0-9]+"\n'
+                - '\n  depends_on macos:'
                 - depends_on :macos
 
             - label: formula deprecated
@@ -235,7 +236,7 @@ jobs:
 
             - label: macos-only
               path: Formula/.+
-              content: depends_on :macos
+              content: 'depends_on :macos|\n  depends_on macos:'
 
             - label: meson
               path: Formula/.+
