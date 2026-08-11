@@ -21,10 +21,6 @@ class CreateApi < Formula
 
   uses_from_macos "swift"
 
-  on_macos do
-    depends_on xcode: "13.0"
-  end
-
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/create-api"
