@@ -7,12 +7,12 @@ class ParquetCli < Formula
   head "https://github.com/apache/parquet-java.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d6f93054a0d02382f1481ea9b86e42d9d2c969b7241ce45654475f4edbab604"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d6f93054a0d02382f1481ea9b86e42d9d2c969b7241ce45654475f4edbab604"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca813e2df90bc4794cd113ca41691d57025a6b663b60c21ce785d072bba01503"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca813e2df90bc4794cd113ca41691d57025a6b663b60c21ce785d072bba01503"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca813e2df90bc4794cd113ca41691d57025a6b663b60c21ce785d072bba01503"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ca813e2df90bc4794cd113ca41691d57025a6b663b60c21ce785d072bba01503"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef2d1724811e0051ad4d302b7802d058f1f2d3f172c490bd3d90739c1ecc8dc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef2d1724811e0051ad4d302b7802d058f1f2d3f172c490bd3d90739c1ecc8dc9"
   end
 
   depends_on "maven" => :build
