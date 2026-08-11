@@ -6,7 +6,7 @@ class Shiki < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f7ee64f239db51f77a8699dbafb12fd17924bdae9dac2ee1a0adc1f838c2ab87"
+    sha256 cellar: :any_skip_relocation, all: "f0db45cfd857b97bc523101753b2d111f6c83ad748ac9914d5c4fb52ebae9d8f"
   end
 
   depends_on "node"
