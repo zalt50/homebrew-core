@@ -4,6 +4,7 @@ class Lanraragi < Formula
   url "https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.81.tar.gz"
   sha256 "d4ded2cde7d30b5d565da8a0f85014a245cefe9a8f969a45aa0eec57854beadc"
   license "MIT"
+  revision 1
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
@@ -38,6 +39,13 @@ class Lanraragi < Formula
     end
   end
 
+  # The last stable release does not build with perl 5.44's stricter `xsubpp`
+  # TODO: Remove this when the next release of this resource is out.
+  resource "Sys::CpuAffinity" do
+    url "https://cpan.metacpan.org/authors/id/M/MO/MOB/Sys-CpuAffinity-1.13_05.tar.gz"
+    sha256 "cd5ac2f3e2dfd60c4eb8a6f8df04646337611caf24fdcfce5e026e01b492125f"
+  end
+
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
@@ -56,6 +64,8 @@ class Lanraragi < Formula
     end
 
     system "cpanm", "Config::AutoConf", "--notest", "-l", libexec
+    resource("Sys::CpuAffinity").stage { system "cpanm", ".", "--notest", "-l", libexec }
+
     system "npm", "install", *std_npm_args(prefix: false)
     system "perl", "./tools/install.pl", "install-full"
 
