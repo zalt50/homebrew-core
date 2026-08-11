@@ -1,8 +1,8 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https://xrootd.org/"
-  url "https://github.com/xrootd/xrootd/releases/download/v6.1.0/xrootd-6.1.0.tar.gz"
-  sha256 "f50a835def0c5b2ff65d377ebbeed42cf1efe243ecd599218ff441a67854859e"
+  url "https://github.com/xrootd/xrootd/releases/download/v6.1.1/xrootd-6.1.1.tar.gz"
+  sha256 "2853c9fcf476c924f3605b1b1629562badcce631ad156c700735e681a7aa4f04"
   license "LGPL-3.0-or-later"
   compatibility_version 1
   head "https://github.com/xrootd/xrootd.git", branch: "master"
