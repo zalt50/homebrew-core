@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/06/8b/b67c4f8f204d51ceb0ff826abeb6e73ff0d568b3904f50d7620effa08f76/rapid_mlx-0.12.7.tar.gz"
-  sha256 "fc26d978fbba3193e181c2d653c4944b327e46a4d7e5166c46adb45ba5fa5058"
+  url "https://files.pythonhosted.org/packages/d2/8a/ec140061a6da624263b0bfd4c43d934ee631abacc7a225d3804da85e3a7d/rapid_mlx-0.12.8.tar.gz"
+  sha256 "63dc957b18082809c229dddf00ace2ae11c5e8d228cfff0bf60e56d199b82231"
   license "Apache-2.0"
 
   bottle do
@@ -90,8 +90,8 @@ class RapidMlx < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/39/a8/20ed1ed79cbc2ecdf5301c0968ab7c85547212e2a7bd126ddd2d986e206e/httpcore2-2.9.1.tar.gz"
-    sha256 "4d8acbf8b306f48c9d6046591fd5ba4037d1b1b1000d140fc2c3eab1e9a0c0e2"
+    url "https://files.pythonhosted.org/packages/a9/83/a896fc59940fc5a6e2aff3a4be1d92fa890112936803b331cae75a993c34/httpcore2-2.10.0.tar.gz"
+    sha256 "13c0cc3d1919d4f28457f60cd2c2abe04113a8af184ccf1142811beba936f9dc"
   end
 
   resource "httpx" do
@@ -100,8 +100,8 @@ class RapidMlx < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/21/14/38128fbafd7e0ed41d874df6c9a653d47c2d111cfe59e2b4ac95161b4abd/httpx2-2.9.1.tar.gz"
-    sha256 "1932a768737e3666291582833da748cc4e563c337cf96706fccc04fa6e58764a"
+    url "https://files.pythonhosted.org/packages/bd/3d/f9a8c07a3884f3e5b26205e8436a18b3af61c5d53192c3bea235574dbbec/httpx2-2.10.0.tar.gz"
+    sha256 "8741d7329fe2c7885fc9ceb61c8217acfb87a85f75723714b89ebf7ad7196338"
   end
 
   resource "huggingface-hub" do
@@ -250,8 +250,8 @@ class RapidMlx < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/0f/3c/76d2fd1f1357ed0f0108d8a5aa233dcf16e2946a8559c84912fe08e01ac7/starlette-1.4.1.tar.gz"
-    sha256 "b7332de6e9375593a29ba9eee1e6ecfeb3eb2043e2e19a13b4b71da73ff35540"
+    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
+    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
   end
 
   resource "tabulate" do
