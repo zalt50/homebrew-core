@@ -7,13 +7,12 @@ class Gifski < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e3c7358ae7bcc904cc67d92016abbe8f9861d2cec19f6cbf35110b36880bae7a"
-    sha256 cellar: :any,                 arm64_sequoia: "4f666d7abb9833ab9fcbef4da60f84861e9e12a61eeaffbc2e78c63f601163b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "61d4c40ddadd5df8c3e98c26abd374d83d1a17a5c330072715c6127a290e6068"
-    sha256 cellar: :any,                 sonoma:        "afc5d261245a11a2000c342c158eb948896a557028aa055bb078a46df3c4828f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "584afb5e1a1577e97688b89858c21d80d0e38822b373af5296473a870b58104f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8919e828c957d9b3d7e9c589c0398f49ddb8c84b057df791cb44e6499befcf05"
+    sha256 cellar: :any, arm64_tahoe:   "bc0bc2dede2d44b3bede26fd615733f25ef2faf753df1bd584b1a8e4f993319c"
+    sha256 cellar: :any, arm64_sequoia: "720ae663ede6ce14847b83b39b78c46b032690f2c0901b9e5a400b6fd6bb5b99"
+    sha256 cellar: :any, arm64_sonoma:  "bfbd908781264d7c636aa8dc28266e121a959cfda846cda0236df8cf0767d971"
+    sha256 cellar: :any, sonoma:        "582305eb69a2c23ee259a7d0577ffbabf1106f64c08c8d5070847391784e83a5"
+    sha256 cellar: :any, arm64_linux:   "bda5317bbe2e7b9954cb42ca69323a87b88b5075b500c0ec1a321cec10ba13b2"
+    sha256 cellar: :any, x86_64_linux:  "2627c4d25359ac5fb50bd5dc2cbc1bc7e8865059d97cd400a4072cd6f149b8ac"
   end
 
   depends_on "pkgconf" => :build
