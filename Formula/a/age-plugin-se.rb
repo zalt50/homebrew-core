@@ -1,8 +1,8 @@
 class AgePluginSe < Formula
   desc "Age plugin for Apple Secure Enclave"
   homepage "https://github.com/remko/age-plugin-se"
-  url "https://github.com/remko/age-plugin-se/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "52d9b9583783988fbe5e94bbe72089a870d128a2eba197fc09a95c13926fb27a"
+  url "https://github.com/remko/age-plugin-se/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "a22ba4de99a6463b044894e0d7d26a2c9859be6577e2085b4082481e1ae6e6bc"
   license "MIT"
   head "https://github.com/remko/age-plugin-se.git", branch: "main"
 
@@ -16,15 +16,20 @@ class AgePluginSe < Formula
   end
 
   depends_on "scdoc" => :build
-  depends_on xcode: ["14.0", :build]
   depends_on "age" => :test
-  depends_on macos: :ventura
+
+  uses_from_macos "swift" => :build
+
+  on_macos do
+    depends_on macos: :tahoe # cannot build on Sequoia with Swift 6.2
+  end
 
   deny_network_access! [:postinstall, :test]
 
   def install
-    system "make", "PREFIX=#{prefix}", "RELEASE=1", "all"
-    system "make", "PREFIX=#{prefix}", "RELEASE=1", "install"
+    args = ["PREFIX=#{prefix}", "RELEASE=1", "SWIFT_BUILD_FLAGS=#{std_swift_args.join(" ")}"]
+    system "make", *args, "all"
+    system "make", *args, "install"
   end
 
   test do
