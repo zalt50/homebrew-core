@@ -49,7 +49,6 @@ class Mpv < Formula
   depends_on "zimg"
 
   on_macos do
-    depends_on xcode: :build
     depends_on "molten-vk"
   end
 
