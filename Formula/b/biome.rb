@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.7.tar.gz"
-  sha256 "ffc27932058a51f3e357721990e5a348f4a6bcff5293862a24227568f91cce44"
+  url "https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.8.tar.gz"
+  sha256 "f380dead10231f4c2a26c16ad519553c3a4ae6a24e43faaab2cefafe41074577"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -23,6 +23,11 @@ class Biome < Formula
   depends_on "rust" => :build
 
   def install
+    # Work around SIGKILL on arm64 linux runner from fat LTO
+    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
+                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+    ENV["CARGO_PROFILE_RELEASE_LTO"] = "thin" if github_arm64_linux
     ENV["BIOME_VERSION"] = version.to_s
     system "cargo", "install", *std_cargo_args(path: "crates/biome_cli")
   end
