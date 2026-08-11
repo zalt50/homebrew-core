@@ -6,12 +6,12 @@ class Flyline < Formula
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4a87e114643af1da1ac043d84270977076f197a1f87c00d7c41aacba09f03e48"
-    sha256 cellar: :any, arm64_sequoia: "1a1db080233e3ea073f815d8a707aa8e1a6cc36beb13a570919821b5a0235621"
-    sha256 cellar: :any, arm64_sonoma:  "3a23c43d30175ee1b546f5b5b05b9c8e4764bef6d05423f4df8c107b7d1e9bcf"
-    sha256 cellar: :any, sonoma:        "e2d0284040ef8a2d29d91e0ba81532f34e7b78822acf339892e763f4c4b0aa70"
-    sha256 cellar: :any, arm64_linux:   "3f19b28fe81cea21d3c97e56c200e1775f854572428f58859734fdd6d5768187"
-    sha256 cellar: :any, x86_64_linux:  "399cd21cdfe05c075f3ca415da644f48e2c46f541078097d0bf1f9f38b9fa36c"
+    sha256 cellar: :any, arm64_tahoe:   "f1b7d1976a96a59813b34265bd06ede1780c0733456bede22796c3690f52d9b3"
+    sha256 cellar: :any, arm64_sequoia: "f5e4dccd5d2e907235e04e5fc833eb0c6a85644a527ef8fee2fa3095dc0dc294"
+    sha256 cellar: :any, arm64_sonoma:  "a0aa20bb22b5513872b51d7af7201650e067252b37751caf7021f691194ff417"
+    sha256 cellar: :any, sonoma:        "5098891ea963742e09900b8d486cdebc5266769353902116bbb361b294cfa1e5"
+    sha256 cellar: :any, arm64_linux:   "c33748194a5dd81b984bb535b738e65ef6fd13d00d349b21063d1c867c6da20a"
+    sha256 cellar: :any, x86_64_linux:  "099fc2f460ba33f48b31e7455aba824b07b017a8ee8e389e7fbca89016f5d568"
   end
 
   depends_on "rust" => :build
