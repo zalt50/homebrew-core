@@ -1,8 +1,8 @@
 class Zvbi < Formula
   desc "Vertical Blanking Interval (VBI) decoding library"
   homepage "https://github.com/zapping-vbi/zvbi"
-  url "https://github.com/zapping-vbi/zvbi/archive/refs/tags/v0.2.44.tar.gz"
-  sha256 "bca620ab670328ad732d161e4ce8d9d9fc832533cb7440e98c50e112b805ac5e"
+  url "https://github.com/zapping-vbi/zvbi/archive/refs/tags/v0.2.45.tar.gz"
+  sha256 "e6c954fde2a5a635187f19e1ab870a88c1a982012c5f1b33b8f2513e0ab7a50e"
   license "GPL-2.0-or-later"
   head "https://github.com/zapping-vbi/zvbi.git", branch: "main"
 
