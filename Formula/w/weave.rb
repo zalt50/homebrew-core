@@ -29,6 +29,7 @@ class Weave < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/weave-cli")
     system "cargo", "install", *std_cargo_args(path: "crates/weave-driver")
+    system "cargo", "install", *std_cargo_args(path: "crates/weave-mcp")
   end
 
   test do
