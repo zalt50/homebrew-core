@@ -1,17 +1,17 @@
 class ViSql < Formula
   desc "Terminal UI for SQL databases"
   homepage "https://vi-sql.com"
-  url "https://github.com/kopecmaciej/vi-sql/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "99321f8db75ab0f6932e59b5a5ffd871a99b654649ea56f8246986cf31e9c62e"
+  url "https://github.com/kopecmaciej/vi-sql/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "0fc9445c6c0bbadcd20c6033d417338910c550847f5f067e654ea4179390116f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e80279f457a615e09512754fe1ababc6ffbd09a28c4cc0aecb49e945938b85c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e80279f457a615e09512754fe1ababc6ffbd09a28c4cc0aecb49e945938b85c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e80279f457a615e09512754fe1ababc6ffbd09a28c4cc0aecb49e945938b85c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07a4e2fa244382f040bdc59e9971ea0ab382bbca1fc6bc2ec9dc72400afb0513"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "116f6f54d83a48bf00ff90449d55a9d3022516c17d985553ddff194ee88716b9"
-    sha256 cellar: :any,                 x86_64_linux:  "9970f7fdd18ef426edc387b2e51df4123104498a913ae495e83b58b73969752d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "440173414cffff94f06b7d01072fdbdb633098b24208e7f3e2ea897553647382"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "440173414cffff94f06b7d01072fdbdb633098b24208e7f3e2ea897553647382"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "440173414cffff94f06b7d01072fdbdb633098b24208e7f3e2ea897553647382"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c690b59974f9149ef08f2362d2ed523cbea4ab7b0ba9c1db2e6892f1ac66edf6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c478d3102f2522921e0c378098cb49a068dc50aa277155446331f7d146499fe"
+    sha256 cellar: :any,                 x86_64_linux:  "e76ed71d7f1d94a7a15b4d862be17938643089dfd5f8c8117f1f17014d86cba3"
   end
 
   depends_on "go" => :build
