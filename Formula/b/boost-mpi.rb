@@ -1,8 +1,8 @@
 class BoostMpi < Formula
   desc "C++ library for C++/MPI interoperability"
   homepage "https://www.boost.org/"
-  url "https://github.com/boostorg/boost/releases/download/boost-1.90.0/boost-1.90.0-b2-nodocs.tar.xz"
-  sha256 "9e6bee9ab529fb2b0733049692d57d10a72202af085e553539a05b4204211a6f"
+  url "https://github.com/boostorg/boost/releases/download/boost-1.92.0/boost-1.92.0-b2-nodocs.tar.xz"
+  sha256 "ea7b982002cc9dfbe59b0b217b206f470dc75f3de0bb2973d844118934d82411"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -37,23 +37,18 @@ class BoostMpi < Formula
       link=shared,static
     ]
 
-    # Trunk starts using "clang++ -x c" to select C compiler which breaks C++11
-    # handling using ENV.cxx11. Using "cxxflags" and "linkflags" still works.
-    args << "cxxflags=-std=c++11"
+    # Keep cxxflags aligned with `boost`
+    args << "cxxflags=-std=c++17"
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
     # Avoid linkage to boost container and graph modules
     # Issue ref: https://github.com/boostorg/boost/issues/985
     args << "linkflags=-Wl,-dead_strip_dylibs" if OS.mac?
 
-    open("user-config.jam", "a") do |file|
-      if OS.mac?
-        file.write "using darwin : : #{ENV.cxx} ;\n"
-      else
-        file.write "using gcc : : #{ENV.cxx} ;\n"
-      end
-      file.write "using mpi ;\n"
-    end
+    (buildpath/"user-config.jam").write <<~JAM
+      using #{OS.mac? ? "darwin" : "gcc"} : : #{ENV.cxx} ;
+      using mpi ;
+    JAM
 
     system "./bootstrap.sh", "--prefix=#{prefix}", "--libdir=#{lib}", "--with-libraries=mpi"
 
@@ -67,10 +62,9 @@ class BoostMpi < Formula
 
     if OS.mac?
       # libboost_mpi links to libboost_serialization, which comes from the main boost formula
-      boost = Formula["boost"]
       MachO::Tools.change_install_name("#{lib}/libboost_mpi.dylib",
                                        "libboost_serialization.dylib",
-                                       "#{boost.lib}/libboost_serialization.dylib")
+                                       "#{formula_opt_lib("boost")}/libboost_serialization.dylib")
     end
   end
 
@@ -108,7 +102,7 @@ class BoostMpi < Formula
             "-L#{boost.lib}",
             "-lboost_mpi",
             "-lboost_serialization",
-            "-std=c++14"]
+            "-std=c++17"]
 
     if OS.linux?
       args << "-Wl,-rpath,#{lib}"
