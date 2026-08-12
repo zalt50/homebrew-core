@@ -9,11 +9,12 @@ class Cyan < Formula
   head "https://github.com/asdfzxcvbn/pyzule-rw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3aaa04dcb1c17fb7c594bf66255d9657bad473ad3192f2f953a459a6ef117555"
-    sha256 cellar: :any,                 arm64_sequoia: "2afe45a12098c644a1783fde362b37338ef093eae02f027c69594827cc988df2"
-    sha256 cellar: :any,                 arm64_sonoma:  "8704c006c8abc7cb5f92f02a6fc45ffae48b99098de33cbfc0cf3d0c5aa7d955"
-    sha256 cellar: :any,                 sonoma:        "eb51d22bf9f8d1ca28278c1873893b47b1f50ebca6c9cab061561beda3cc6f08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "739a405a26eaad070e1b0fc5094a8140db6d947492d8772f901ad45a90ab9114"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
+    sha256 cellar: :any,                 arm64_sequoia: "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
+    sha256 cellar: :any,                 sonoma:        "5384185dc20d570688aba0840637a715c3e5a97d2f8cc8686ec4442b6bddaa01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec4d32880cba6eb8e91bdbdfcb0c8c05ab8ab937d85c68fbe3d482960d6bd792"
   end
 
   depends_on "ldid-procursus"
