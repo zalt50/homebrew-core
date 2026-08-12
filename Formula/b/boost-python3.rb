@@ -1,10 +1,10 @@
 class BoostPython3 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
-  url "https://github.com/boostorg/boost/releases/download/boost-1.90.0/boost-1.90.0-b2-nodocs.tar.xz"
-  sha256 "9e6bee9ab529fb2b0733049692d57d10a72202af085e553539a05b4204211a6f"
+  url "https://github.com/boostorg/boost/releases/download/boost-1.92.0/boost-1.92.0-b2-nodocs.tar.xz"
+  sha256 "ea7b982002cc9dfbe59b0b217b206f470dc75f3de0bb2973d844118934d82411"
   license "BSL-1.0"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -40,9 +40,8 @@ class BoostPython3 < Formula
       link=shared,static
     ]
 
-    # Boost is using "clang++ -x c" to select C compiler which breaks C++14
-    # handling using ENV.cxx14. Using "cxxflags" and "linkflags" still works.
-    args << "cxxflags=-std=c++14"
+    # Keep cxxflags aligned with `boost`
+    args << "cxxflags=-std=c++17"
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
     # Avoid linkage to boost container and graph modules
@@ -108,7 +107,7 @@ class BoostPython3 < Formula
     pylib = shell_output("#{python3}-config --ldflags --embed").chomp.split
     pyver = Language::Python.major_minor_version(python3).to_s.delete(".")
 
-    system ENV.cxx, "-shared", "-fPIC", "-std=c++14", "hello.cpp", "-L#{lib}", "-lboost_python#{pyver}",
+    system ENV.cxx, "-shared", "-fPIC", "-std=c++17", "hello.cpp", "-L#{lib}", "-lboost_python#{pyver}",
                     "-o", "hello.so", *pyincludes, *pylib
 
     output = <<~PYTHON
