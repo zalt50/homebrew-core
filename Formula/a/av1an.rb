@@ -2,7 +2,7 @@ class Av1an < Formula
   desc "Cross-platform command-line encoding framework"
   homepage "https://github.com/rust-av/Av1an"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
   head "https://github.com/rust-av/Av1an.git", branch: "master"
 
   stable do
@@ -35,6 +35,12 @@ class Av1an < Formula
 
   on_intel do
     depends_on "nasm" => :build
+  end
+
+  # Fix compatibility with FFmpeg 9.
+  patch do
+    url "https://github.com/rust-av/Av1an/commit/9bbd829c480e58625842d43b7c8f54962914e9a6.patch?full_index=1"
+    sha256 "78a74c9f236141bbc35e1a7e039b5f3b45d730ad7bb7bda62b337b95daf50e55"
   end
 
   def install
