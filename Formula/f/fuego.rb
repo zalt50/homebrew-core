@@ -4,7 +4,7 @@ class Fuego < Formula
   url "https://svn.code.sf.net/p/fuego/code/trunk", revision: "1981"
   version "1.1"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only"]
-  revision 16
+  revision 17
   version_scheme 1
   head "https://svn.code.sf.net/p/fuego/code/trunk"
 
@@ -36,6 +36,7 @@ class Fuego < Formula
     inreplace "fuegomain/FuegoMain.cpp", ".branch_path()", ".parent_path()"
     inreplace "smartgame/SgStringUtil.cpp", /^(\s*)(normalizedFile)\.normalize\(\);$/,
                                             "\\1\\2 = \\2.lexically_normal();"
+    ENV.cxx11 # for Boost 1.92.0+
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules",
