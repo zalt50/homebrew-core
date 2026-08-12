@@ -3,10 +3,9 @@ class Maigret < Formula
 
   desc "Collect a dossier on a person by username from thousands of sites"
   homepage "https://github.com/soxoj/maigret"
-  url "https://files.pythonhosted.org/packages/b8/18/78400780e8b5a12dc52d42ffa2ee37b66ddffa452b81bd80886c5554ab18/maigret-0.6.3.tar.gz"
-  sha256 "064e50c09548aae426d2ba79731e4f33e40691cc8514555de3ca444db9647f51"
+  url "https://files.pythonhosted.org/packages/82/4a/04438d079ebec6489bc46a79109a732752b94f14f9254d93511e5caba620/maigret-0.6.4.tar.gz"
+  sha256 "cb1bae3ae4a1f6e49198512bb02897afd8e4a7b0e41fb88d3252e87afb975efd"
   license "MIT"
-  revision 1
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
@@ -95,8 +94,8 @@ class Maigret < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/57/5f/ff100cae70ebe9d8df1c01a00e510e45d9adb5c1fdda84791b199141de97/cffi-2.1.0.tar.gz"
-    sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
+    url "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz"
+    sha256 "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
   end
 
   resource "charset-normalizer" do
@@ -231,8 +230,8 @@ class Maigret < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/e5/98/0bf930c4f97d0266b58a89e36c015f56232c52b5d2f207215d48cca9e8f7/platformdirs-4.11.2.tar.gz"
+    sha256 "3a2ae5fca3520a01ab1be8b45613537f52ddf5b5f6f53d88233892dfbf0cd82d"
   end
 
   resource "prompt-toolkit" do
@@ -325,8 +324,8 @@ class Maigret < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
-    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "stack-data" do
