@@ -4,7 +4,6 @@ class Dotnet < Formula
   license "MIT"
   version_scheme 1
   compatibility_version 6
-  head "https://github.com/dotnet/dotnet.git", branch: "main"
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
@@ -74,6 +73,17 @@ class Dotnet < Formula
     sha256 cellar: :any, sonoma:        "a16cf13cff871cc4b471115fbc801241a7482f6c3adec181f946a528612bdc76"
     sha256 cellar: :any, arm64_linux:   "7a7f969e9973c18e064856b60f07373b91f8cbe371d1d0e1f34eec93936cd5bc"
     sha256               x86_64_linux:  "d52c2b07dcb40c627442b7a9e553cb5e05977799aefd43f468eba99c2989f27a"
+  end
+
+  head do
+    url "https://github.com/dotnet/dotnet.git", branch: "main"
+
+    depends_on "ninja" => :build
+    depends_on "zstd"
+
+    on_macos do
+      depends_on xcode: :build # for xcodebuild
+    end
   end
 
   depends_on "cmake" => :build
