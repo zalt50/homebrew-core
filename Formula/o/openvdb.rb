@@ -1,11 +1,21 @@
 class Openvdb < Formula
   desc "Sparse volumetric data processing toolkit"
   homepage "https://www.openvdb.org/"
-  url "https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v13.0.0.tar.gz"
-  sha256 "4d6a91df5f347017496fe8d22c3dbb7c4b5d7289499d4eb4d53dd2c75bb454e1"
   license "MPL-2.0"
-  revision 1
+  revision 2
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
+
+  stable do
+    url "https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v13.0.0.tar.gz"
+    sha256 "4d6a91df5f347017496fe8d22c3dbb7c4b5d7289499d4eb4d53dd2c75bb454e1"
+
+    # Backport fix for TBB 2023+
+    patch do
+      url "https://github.com/AcademySoftwareFoundation/openvdb/commit/d68d0914fc6ed41cadd363bd4330c39a7fb5b1f1.patch?full_index=1"
+      sha256 "f94c85535bf3d9d78bebde35d357407e12465cbda300cd6b1552092dd98fba0f"
+      type :backport
+    end
+  end
 
   bottle do
     rebuild 1
@@ -18,7 +28,6 @@ class Openvdb < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
 
   depends_on "boost"
   depends_on "c-blosc"
@@ -33,7 +42,6 @@ class Openvdb < Formula
   def install
     args = [
       "-DDISABLE_DEPENDENCY_VERSION_CHECKS=ON",
-      "-DOPENVDB_BUILD_DOCS=ON",
       "-DUSE_NANOVDB=ON",
       "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}",
     ]
