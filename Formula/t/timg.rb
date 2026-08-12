@@ -13,6 +13,7 @@ class Timg < Formula
     sha256 cellar: :any, arm64_sonoma:  "8e499f724ace59217c4f8f6915710f5b07f68b64aab5e4249ac18e4f2ef7d8fe"
     sha256 cellar: :any, sonoma:        "d38851084b2c94bfd4e68dbb8c5a77aacda5bf5c0d83ea8301144f90b9a3f4d4"
     sha256 cellar: :any, arm64_linux:   "f9c3b81e2601b71b40c1a991e41a78fda4db36d8d559374e36f1e1a147f0a1db"
+    sha256 cellar: :any, x86_64_linux:  "13dce32e5a416b027a52c2a88d8f79b4481671e2a89b0f7eec5ce47919b4e631"
   end
 
   depends_on "cmake" => :build
