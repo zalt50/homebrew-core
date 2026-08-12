@@ -1,18 +1,18 @@
 class Secretspec < Formula
   desc "Declarative secrets management tool"
   homepage "https://secretspec.dev"
-  url "https://github.com/cachix/secretspec/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "762cf61e5ba1c2dd3b91e76d860f965fb1d0122bdcd6ba30c00c2cc115035cdc"
+  url "https://github.com/cachix/secretspec/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "2593e2322b8ee253fd42ffbec57eaa0612a8a78861ee856f6cd8b7252054bb9d"
   license "Apache-2.0"
   head "https://github.com/cachix/secretspec.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b7e9d1fdc93d888d6711fde08d515a1a6a35885513e3b8e1aba6a49b9e89b89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47b6fd002d009bd5fcb40f030f82f65a58a860315fefe34dd621a4159b639dd5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c577a7b79595aeb8edc49fddceb1ba8d75b14d3b41f600591fb1c6cac4773c5d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f93b8d6e761fbb3c15a0504f394cbde7533b921f70c0753163ebd2b272f5d4a1"
-    sha256 cellar: :any,                 arm64_linux:   "cf778ccf8739173f47df63acb92759404bcd48273297fe8daf8fe0eed767cb18"
-    sha256 cellar: :any,                 x86_64_linux:  "e319ae26b4d4b42d056896affd6f91d1fcbf3682138749d3690ce647e41cb1e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b7c720099462208a9a035ec5a4c349fe6cc45fe1cdbcb32272aa351346ac029"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "672d237e539690a37246d97a7b3d70be7d35ad3821d537a94ff4a93525df19af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe3db73cac6e93bfe87be40c363afd8a3d39402335f7c4696fbe6033aff69250"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f48974e7ca1656d567ad887181ee4c3233fffd027c18a0275ab86b733a3170c1"
+    sha256 cellar: :any,                 arm64_linux:   "44dd88246de1ac0d9ca8a1d8b6568948d0837ab799b5fe0bf6d307a23cb38ca4"
+    sha256 cellar: :any,                 x86_64_linux:  "cbd46b8f082cec85bb293d7743c758e00d3da4abb829aebce779a70868350473"
   end
 
   depends_on "pkgconf" => :build
