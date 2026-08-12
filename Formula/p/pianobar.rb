@@ -18,6 +18,7 @@ class Pianobar < Formula
     sha256 cellar: :any, arm64_sonoma:  "32c9084f2530fb219fafc611446114ac01aae44b8017e6946eed06e130ee7bdc"
     sha256 cellar: :any, sonoma:        "96928b379daef40b553ca121a8b24ba318ea46ef0f4cd250e57cd68424acb626"
     sha256 cellar: :any, arm64_linux:   "c89e6573dc346c6cff24d6774f28be820baca79c66db9d4c270ddd6e54d76f3c"
+    sha256 cellar: :any, x86_64_linux:  "721f7c74b50b6f0b2531c9bf180749602d038dcdd11a1154919149dadf1a36f4"
   end
 
   depends_on "pkgconf" => :build
