@@ -5,7 +5,7 @@ class Pc6001vx < Formula
   url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.3.0_src.tar.gz"
   sha256 "a5536f7bd4931b2efcbdcd85707a9c6fa82a6b169773e6d13d74cea8107ee9cc"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   bottle do
@@ -30,6 +30,14 @@ class Pc6001vx < Formula
 
   on_linux do
     depends_on "libx11"
+  end
+
+  # Fix builds with FFmpeg 9.
+  patch do
+    url "https://github.com/eighttails/PC6001VX/commit/5c7079d05cd67b312d324ad09f1e371765b699e4.patch?full_index=1"
+    sha256 "cb50d8227ea39602f280b817ddab99aa093a49840f1101713e4e3a3e29e7e6c7"
+    type :unofficial
+    resolves "https://github.com/eighttails/PC6001VX/pull/29"
   end
 
   def install
