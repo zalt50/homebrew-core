@@ -3,10 +3,9 @@ class Manim < Formula
 
   desc "Animation engine for explanatory math videos"
   homepage "https://www.manim.community"
-  url "https://files.pythonhosted.org/packages/dc/3b/ad54ce02f3e95d17d016cb1254708ae3795b60d5661f3b2085655940a565/manim-0.20.1.tar.gz"
-  sha256 "1e9747fb2fc1bde58ad09bcbd77d141793ce4b61811726a7fce537193d92e16b"
+  url "https://files.pythonhosted.org/packages/b1/2e/08d46ab1eb765f054cc9e4f64e95896d6fc53642c8f0e29c6c5c29028fe7/manim-0.21.0.tar.gz"
+  sha256 "2f3d719e726c9abf49b1bea503fb17510ee2063dab53915ab44a2c47c32f9a13"
   license "MIT"
-  revision 1
   head "https://github.com/manimCommunity/manim.git", branch: "main"
 
   # FIXME: Fails trying to resolve pycairo as pip tries compiling it but cannot find cairo
@@ -24,6 +23,7 @@ class Manim < Formula
   depends_on "cmake" => :build # for mapbox_earcut
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "cairo" # for cairo.h
   depends_on "ffmpeg"
   depends_on "fontconfig"
@@ -180,8 +180,8 @@ class Manim < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
-    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "srt" do
