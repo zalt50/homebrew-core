@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://www.netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v2.10.4/netdata-v2.10.4.tar.gz"
-  sha256 "d1ae949863925d626b1d42a53000bcca2c239718e0b0ddc6a3f3f5029b21cdfe"
+  url "https://github.com/netdata/netdata/releases/download/v2.11.0/netdata-v2.11.0.tar.gz"
+  sha256 "3e21070e084045757df8281a8de4213458a59a2d35a295c7d692370071797c86"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -54,6 +53,9 @@ class Netdata < Formula
   end
 
   def install
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
+
     # Fix to error: no member named 'tcps_sc_zonefail' in 'struct tcpstat'
     # Issue ref: https://github.com/netdata/netdata/issues/20985
     if OS.mac? && MacOS.version >= :tahoe
