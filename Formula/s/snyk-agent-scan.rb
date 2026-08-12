@@ -8,12 +8,12 @@ class SnykAgentScan < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "79869c7fc4112ae5ad6444b487d079dc75058193f6e1137d7ee244d937f0adc2"
-    sha256 cellar: :any, arm64_sequoia: "3e64955fb385170232941f05a38b9eef4d36c3d718ccc9692bc9ee56cb1c203c"
-    sha256 cellar: :any, arm64_sonoma:  "dfe9b6a621dbfdbfc1453120b115088e4965805c6d3e49d8ffff225ec996e296"
-    sha256 cellar: :any, sonoma:        "2a338b8fab9c4c101490ab0b20542738918a0c6566c188f7438f56e63c3cf799"
-    sha256 cellar: :any, arm64_linux:   "48842dbb2374feaf5ba2a77885ef0404a914eaf6faf30828b58a735b5ec73b6d"
-    sha256 cellar: :any, x86_64_linux:  "303ba54859f0cd6042554485c9f599520b0ddca9f0ac335b5853691551149f43"
+    sha256 cellar: :any, arm64_tahoe:   "a3f595426c2c94d7cc4ee6c7c77f7cae8fe47c149e2df4a9a82f4d5477f3005d"
+    sha256 cellar: :any, arm64_sequoia: "2bddef71ce00bf490857728f62ec4fb8d6fce8f2e933dd10dd39bd6733057369"
+    sha256 cellar: :any, arm64_sonoma:  "f9e6b440609a46602fc9a58c43e29775cb24f8b7ec943add716ce5935920024d"
+    sha256 cellar: :any, sonoma:        "4253136b311fccd5d8081fb205111ad60e6f38aa5ed0a9cc26abd951693a3eaa"
+    sha256 cellar: :any, arm64_linux:   "5a6768403a8bf64dc249fccc60a596a82dd226ed5ef2a34722a0f09afa9cdb01"
+    sha256 cellar: :any, x86_64_linux:  "6532b8ed105eef76d94901d5c53ce0b6b3e6b02f843d3b4e138b67c8a04da728"
   end
 
   depends_on "certifi" => :no_linkage
