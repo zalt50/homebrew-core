@@ -1,9 +1,9 @@
 class AvroCpp < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.12.1/cpp/avro-cpp-1.12.1.tar.gz"
-  mirror "https://archive.apache.org/dist/avro/avro-1.12.1/cpp/avro-cpp-1.12.1.tar.gz"
-  sha256 "18a0d155905a4dab0c2bfd66c742358a7d969bcff58cf6f655bcf602879f4fe7"
+  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.12.2/cpp/avro-cpp-1.12.2.tar.gz"
+  mirror "https://archive.apache.org/dist/avro/avro-1.12.2/cpp/avro-cpp-1.12.2.tar.gz"
+  sha256 "5e4cea5d9dc59bbc0e3e1967fd8f8a86b4cb7c1452c4b252561b8137e949f6fd"
   license "Apache-2.0"
 
   bottle do
@@ -28,8 +28,12 @@ class AvroCpp < Formula
 
   # Add missing cmake file from git
   resource "avro-cpp-config.cmake.in" do
-    url "https://github.com/apache/avro/raw/refs/tags/release-1.12.1/lang/c++/cmake/avro-cpp-config.cmake.in"
-    sha256 "2f100bed5a5ec300bc16e618ef17c64056c165a3dba8dde590a3ef65352440fa"
+    url "https://github.com/apache/avro/raw/refs/tags/release-1.12.2/lang/c++/cmake/avro-cpp-config.cmake.in"
+    sha256 "0edd19477321eea574be10972f65fc958bd7ae907de1a3974d9bffec238a01e6"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install
