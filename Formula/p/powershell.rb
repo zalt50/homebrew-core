@@ -5,6 +5,7 @@ class Powershell < Formula
       tag:      "v7.6.4",
       revision: "abeb8444d065feeccf80bda83eed5675a37719c1"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
