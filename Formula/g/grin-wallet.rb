@@ -1,8 +1,8 @@
 class GrinWallet < Formula
   desc "Official wallet for the cryptocurrency Grin"
   homepage "https://grin.mw"
-  url "https://github.com/mimblewimble/grin-wallet/archive/refs/tags/v5.4.1.tar.gz"
-  sha256 "648948d74a001fbdb377184ec650941056f723aad12ea6fca2efe4b7b4b6006c"
+  url "https://github.com/mimblewimble/grin-wallet/archive/refs/tags/v5.5.0.tar.gz"
+  sha256 "faa8deebb693cd43d62f4c4c5c598294f7a136929d8dcea1c187656342cae01d"
   license "Apache-2.0"
 
   bottle do
@@ -16,13 +16,20 @@ class GrinWallet < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
   uses_from_macos "llvm" => :build
 
   on_linux do
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 
+  resource "grin" do
+    url "https://github.com/mimblewimble/grin/archive/refs/tags/v5.5.1.tar.gz"
+    sha256 "841a698986ff05768c6d7cdf2e59d44571533522fbcffdab0a0de01c8de1d4a3"
+  end
+
   def install
+    resource("grin").stage buildpath/"grin"
     system "cargo", "install", *std_cargo_args
   end
 
