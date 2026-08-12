@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/c1/a6/8811a049fe82cee09254790c74184c80cd341f2865063be9148f19dcdabd/rapid_mlx-0.12.9.tar.gz"
-  sha256 "67c5c7c8c61b28268322ebc0b60c16ebd75d03af862f22c7a699902662fd65de"
+  url "https://files.pythonhosted.org/packages/e0/3f/0435d5a062220ab24e9f0b8dbc4fec5160f57de82977d5bab342d4233606/rapid_mlx-0.12.10.tar.gz"
+  sha256 "ad4a07a316f50819b9185c7fdae0b2d9841b666dd7a1692136439151d869f0f1"
   license "Apache-2.0"
 
   bottle do
@@ -130,8 +130,8 @@ class RapidMlx < Formula
   end
 
   resource "llguidance" do
-    url "https://files.pythonhosted.org/packages/da/91/6bc8bb503dc259e46d253b5424385a54fe06c38a4c7a12befe69a3c2455a/llguidance-1.7.6.tar.gz"
-    sha256 "db7febbe412ed2015501904646750071d7e00e6df7f85c4b956ad4f206fd2df7"
+    url "https://files.pythonhosted.org/packages/20/27/972de1ba4c93072fce816b967972e1d18bc48b04b145b5c77b5bd1dc9662/llguidance-1.8.0.tar.gz"
+    sha256 "18d1579eabb040e65c870d50c6df19a7bef140c5260d12ad35b7f0dc446312e0"
   end
 
   resource "markdown-it-py" do
