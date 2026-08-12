@@ -45,6 +45,7 @@
   "pytorch",
   "qt",
   "qtbase",
+  "qtmultimedia",
   "qtwebengine",
   "sleef",
   "spades",

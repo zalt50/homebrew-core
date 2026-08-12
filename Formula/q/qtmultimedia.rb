@@ -13,7 +13,7 @@ class Qtmultimedia < Formula
     "GPL-3.0-only", # Qt6MultimediaTestLib
     "MIT",          # bundled signalsmith-stretch (Linux)
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://code.qt.io/qt/qtmultimedia.git", branch: "dev"
 
@@ -61,6 +61,11 @@ class Qtmultimedia < Formula
   conflicts_with "qt@5", because: "both link conflicting binaries"
 
   def install
+    # Allow -march options to be passed through, as Qt builds
+    # arch-specific code with runtime detection of capabilities:
+    # https://bugreports.qt.io/browse/QTBUG-113391
+    ENV.runtime_cpu_detection
+
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
     if OS.mac?
       args << "-DQT_FEATURE_ffmpeg=OFF"
