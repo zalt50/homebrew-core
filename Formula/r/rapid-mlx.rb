@@ -8,9 +8,9 @@ class RapidMlx < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1f91cf677a7116e894c86cd27c9d80a9ec5813cf3dcf4158ae0ca6bd19f7aede"
-    sha256 cellar: :any, arm64_sequoia: "4bb1a36f818b69e01dba892cf3d47df7ea5b18096017f5135d0ea4e82e93a4fb"
-    sha256 cellar: :any, arm64_sonoma:  "ed08980a4c60edf83b29ea51b9036c7027c5ed66f3faa39aa424ac437140c58a"
+    sha256 cellar: :any, arm64_tahoe:   "bf2f47736da36bf71f3c7db6303f5536b17a89085f6e2661c13c6844ca2d8bc7"
+    sha256 cellar: :any, arm64_sequoia: "7bea183a44c4d52522d2201b45e63ee93e1a5dfd2cb12fb886057a19f49f81e2"
+    sha256 cellar: :any, arm64_sonoma:  "bba160dfe1e7799608652c5dc20d85be1f7f8e3d43015262cf8bf71be0609a3f"
   end
 
   depends_on "cmake" => :build
