@@ -18,6 +18,7 @@ class VapoursynthBestsource < Formula
     sha256 cellar: :any, arm64_sonoma:  "3a158397750869fe8a5f53ad4a42f6c79a0cde3fe6e5b213d39fdb6d6256d18e"
     sha256 cellar: :any, sonoma:        "754c4f93d6abda14acabd4b19331ac7c08508e3c4e4f2b4fc3777a7360940738"
     sha256               arm64_linux:   "43ca97373669e63342b5e7574a16d270310a621a213fba17cab6c5ed89a6b2d4"
+    sha256               x86_64_linux:  "ae5eaa2550915c163fd48ec9e9ee466caee463ea13046bc075cb20b9dcc7e102"
   end
 
   depends_on "avisynthplus" => :build
