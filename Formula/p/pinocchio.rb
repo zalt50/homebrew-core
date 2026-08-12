@@ -4,6 +4,7 @@ class Pinocchio < Formula
   url "https://github.com/stack-of-tasks/pinocchio/releases/download/v4.1.0/pinocchio-4.1.0.tar.gz"
   sha256 "b2ac9575bd4f38e0584e0d61586a95de1aeaa17c6877e31e99f1d4b913d602d8"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "devel"
 
   livecheck do
@@ -37,6 +38,10 @@ class Pinocchio < Formula
     depends_on "octomap"
   end
 
+  # Allow building with Boost 1.92.0. Can be dropped once upstream replaces Boost.Python with nanobind
+  # Ref: https://github.com/stack-of-tasks/pinocchio/pull/2873
+  patch :DATA
+
   def python3
     "python3.14"
   end
@@ -68,3 +73,83 @@ class Pinocchio < Formula
     PYTHON
   end
 end
+
+__END__
+diff --git a/include/pinocchio/src/parsers/graph/geometries.hxx b/include/pinocchio/src/parsers/graph/geometries.hxx
+index ade2ba270..1577f9143 100644
+--- a/include/pinocchio/src/parsers/graph/geometries.hxx
++++ b/include/pinocchio/src/parsers/graph/geometries.hxx
+@@ -32,6 +32,11 @@ namespace pinocchio
+       : path(name_path)
+       {
+       }
++
++      bool operator==(const Mesh & other) const
++      {
++        return path == other.path;
++      }
+     };
+ 
+     struct Box
+@@ -43,6 +48,11 @@ namespace pinocchio
+       : size(size)
+       {
+       }
++
++      bool operator==(const Box & other) const
++      {
++        return size == other.size;
++      }
+     };
+ 
+     struct Cylinder
+@@ -54,6 +64,11 @@ namespace pinocchio
+       : size(size)
+       {
+       }
++
++      bool operator==(const Cylinder & other) const
++      {
++        return size == other.size;
++      }
+     };
+ 
+     struct Capsule
+@@ -65,6 +80,11 @@ namespace pinocchio
+       : size(size)
+       {
+       }
++
++      bool operator==(const Capsule & other) const
++      {
++        return size == other.size;
++      }
+     };
+ 
+     struct Sphere
+@@ -76,6 +96,11 @@ namespace pinocchio
+       : radius(r)
+       {
+       }
++
++      bool operator==(const Sphere & other) const
++      {
++        return radius == other.radius;
++      }
+     };
+ 
+     typedef boost::variant<Mesh, Box, Cylinder, Capsule, Sphere> GeomVariant;
+@@ -111,6 +136,13 @@ namespace pinocchio
+       , geometry(geom)
+       {
+       }
++
++      bool operator==(const Geometry & other) const
++      {
++        return name == other.name && type == other.type && scale == other.scale
++               && color == other.color && placement == other.placement
++               && geometry == other.geometry;
++      }
+     };
+   } // namespace graph
+ } // namespace pinocchio
