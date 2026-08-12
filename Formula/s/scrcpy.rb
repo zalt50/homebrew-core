@@ -18,6 +18,7 @@ class Scrcpy < Formula
     sha256 arm64_sonoma:  "3138af17805ee58bf974e234863402c5f4e829004f6113b80e52ee39c011ae32"
     sha256 sonoma:        "d0f1333995560049557f0258839bda2cb4895964f7b9579a79af267033f24dff"
     sha256 arm64_linux:   "cbc29f4775bccc612a2a6a1758348770c8b7d9b783b5485f7716d3ffac997b60"
+    sha256 x86_64_linux:  "6fc8bd0bcfb4b15d52997791f58cbca8cde6536f95ffed1156c6394fbe269bce"
   end
 
   depends_on "meson" => :build
