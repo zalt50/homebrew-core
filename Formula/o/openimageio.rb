@@ -19,6 +19,7 @@ class Openimageio < Formula
     sha256 cellar: :any, arm64_sonoma:  "a1c00278f2df3d8f4eb35134448be2b9ec51252ec6ef509dc6e71f66c4ab0921"
     sha256 cellar: :any, sonoma:        "9c9e99c82b70a59851448870b827ef6e62dedbe47e34c9891e5797766b43bc17"
     sha256 cellar: :any, arm64_linux:   "7b5b4ea3bd8be4e5c2803bdf5149ec325dde02bdc969ae20692e7a2e35beafc6"
+    sha256 cellar: :any, x86_64_linux:  "50dbb8ebe49fa27875f65b79db92512024db1f1aef7b74c8e27768d85432a6f4"
   end
 
   depends_on "cmake" => :build
