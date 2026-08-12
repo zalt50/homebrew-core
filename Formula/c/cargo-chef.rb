@@ -1,8 +1,8 @@
 class CargoChef < Formula
   desc "Cargo subcommand to speed up Rust Docker builds using Docker layer caching"
   homepage "https://github.com/LukeMathWalker/cargo-chef"
-  url "https://github.com/LukeMathWalker/cargo-chef/archive/refs/tags/v0.1.77.tar.gz"
-  sha256 "829376cedccde0d6dcf242ca22234d8996e64f51c8033cc1dae4819e6b0a27fb"
+  url "https://github.com/LukeMathWalker/cargo-chef/archive/refs/tags/v0.1.78.tar.gz"
+  sha256 "994607ada64cd0f03881996d4d07b93077ac181a7751599748ac6a0af703d869"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
