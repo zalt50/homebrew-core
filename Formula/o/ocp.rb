@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.4.1.tar.xz"
-  sha256 "dfa4f63eb67536373c7eb1e8cd8b71d78b871d9d41a96e6bb1e4c131144c23f7"
+  url "https://stian.cubic.org/ocp/ocp-3.5.0.tar.xz"
+  sha256 "914e6ed4ae7702fed569c72bac778ddec377150767c5942aa9aa491f08818eec"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -30,6 +30,7 @@ class Ocp < Formula
   depends_on "game-music-emu"
   depends_on "jpeg-turbo"
   depends_on "libdiscid"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"
   depends_on "mad"
@@ -38,13 +39,10 @@ class Ocp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
 
-  on_macos do
-    depends_on "libogg"
-  end
-
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
     depends_on "alsa-lib"
+    depends_on "opus"
     depends_on "zlib-ng-compat"
   end
 
