@@ -14,6 +14,7 @@ class VapoursynthSub < Formula
     sha256 cellar: :any, arm64_sonoma:  "6a8c5478e72add6ca4c8b7450820d1e73ead6f91354b5000a2fa5f6f8880442e"
     sha256 cellar: :any, sonoma:        "5f75a967dca0985a69441ff1be78350f69ebbf9480d52a6c3c7255454eb9474b"
     sha256               arm64_linux:   "7a60dac36d34316d9b2d6105cf7c76b918a8f133236ac2e876024ba135b6470e"
+    sha256               x86_64_linux:  "b4af8d5b051d336e07eefddacea443225381f3e6ea80803c079709ee13425b43"
   end
 
   depends_on "meson" => :build
