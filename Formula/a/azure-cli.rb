@@ -3,8 +3,8 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.89.0.tar.gz"
-  sha256 "9486b17fb65c6c93412f2f34a60e9bb9a779dababac008d22fb6ddf97115678f"
+  url "https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.89.1.tar.gz"
+  sha256 "9d511a5f501464537e6aeec22d0b638edc81f1dd8ce0e6c6a22381c57ad70ba0"
   license "MIT"
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
@@ -676,8 +676,8 @@ class AzureCli < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/01/91/47e7d486260f618783899587af63ccf7980fb60245c3e63dd4571c6b57ad/pip-26.1.2.tar.gz"
-    sha256 "f49cd134c61cf2fd75e0ce2676db03e4054504a5a4986d00f8299ae632dc4605"
+    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
+    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
   end
 
   resource "py-deviceid" do
@@ -726,8 +726,8 @@ class AzureCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "six" do
