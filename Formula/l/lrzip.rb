@@ -1,9 +1,16 @@
 class Lrzip < Formula
   desc "Compression program with a very high compression ratio"
-  homepage "http://lrzip.kolivas.org"
-  url "http://ck.kolivas.org/apps/lrzip/lrzip-0.641.tar.xz"
-  sha256 "2c6389a513a05cba3bcc18ca10ca820d617518f5ac6171e960cda476b5553e7e"
+  homepage "https://github.com/ckolivas/lrzip"
+  url "https://github.com/ckolivas/lrzip/releases/download/v0.7.2/lrzip-0.7.2.tar.xz"
+  sha256 "2954d650633cbb3134ca023f50990cd460c891e1d0518824850213a84c9ce1a3"
   license "GPL-2.0-or-later"
+  version_scheme 1
+  head "https://github.com/ckolivas/lrzip.git", branch: "master"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     rebuild 1
@@ -15,13 +22,6 @@ class Lrzip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a051eea9d0b7d80d0f6f42d8be47e98c88aa51edf17a3fad1d87e875ae4f3b6"
   end
 
-  # Newer versions also don't build
-  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
-
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "pkgconf" => :build
   depends_on "lz4"
   depends_on "lzo"
 
@@ -31,32 +31,10 @@ class Lrzip < Formula
     depends_on "zlib-ng-compat"
   end
 
-  on_intel do
-    depends_on "nasm" => :build
-  end
-
   conflicts_with "lrzsz", because: "both install `lrz` binaries"
 
-  # Set nasm output format correctly on macOS
-  patch do
-    url "https://github.com/ckolivas/lrzip/commit/2ee94bc1614b3ccf3d6848a8eb3026d5c0d8ffde.patch?full_index=1"
-    sha256 "725d71acbde68c88895554a888141ffe8da5c66aad2566bb29ab46714ba678a4"
-    type :unofficial
-    resolves "https://github.com/ckolivas/lrzip/pull/211"
-  end
-
   def install
-    # Attempting to build the ASM/x86 folder as a compilation unit fails (even on Intel). Removing this compilation
-    # unit doesn't disable ASM usage though, since ASM is still included in the C build process.
-    # See https://github.com/ckolivas/lrzip/issues/193
-    inreplace "lzma/Makefile.am", "SUBDIRS = C ASM/x86", "SUBDIRS = C"
-
-    system "autoreconf", "--force", "--install", "--verbose"
-
-    args = []
-    args << "--disable-asm" unless Hardware::CPU.intel?
-
-    system "./configure", *args, *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "SHELL=bash"
     system "make", "install"
   end
