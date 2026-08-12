@@ -12,6 +12,7 @@ class Spek < Formula
     sha256 cellar: :any, arm64_sonoma:  "96d28527640336b7d2ca39687b9b66d56807565f33808c9d3f6eea0085ca9e33"
     sha256 cellar: :any, sonoma:        "6b27bbda4bebbb1b271b5a4541388c0ff7342af863316f07f7f909cb8f736462"
     sha256 cellar: :any, arm64_linux:   "894e5ac513494420ba3a96fdfb187365589d20cb9becb13f4628aeef8cea2cf8"
+    sha256 cellar: :any, x86_64_linux:  "703fb5b95180d12fce814c61e079c903eddfb5bdc92970d12d06fc0fc86ce6f6"
   end
 
   depends_on "gettext" => :build
