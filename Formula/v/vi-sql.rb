@@ -1,8 +1,8 @@
 class ViSql < Formula
   desc "Terminal UI for SQL databases"
   homepage "https://vi-sql.com"
-  url "https://github.com/kopecmaciej/vi-sql/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "99321f8db75ab0f6932e59b5a5ffd871a99b654649ea56f8246986cf31e9c62e"
+  url "https://github.com/kopecmaciej/vi-sql/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "0fc9445c6c0bbadcd20c6033d417338910c550847f5f067e654ea4179390116f"
   license "Apache-2.0"
 
   bottle do
