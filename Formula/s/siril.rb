@@ -18,6 +18,7 @@ class Siril < Formula
     sha256 arm64_sonoma:  "9875c99864be912d6ff46ca851041095c9c1e775c56637e282704ff61a8d1656"
     sha256 sonoma:        "4e48ab315e239eb2c48286e5ae2161f644938f61c15a80b0f86517555c59cc6d"
     sha256 arm64_linux:   "4c825693969a87f660ba20308cb4df2e0c1cfcd3a746a9d827e923f38beda642"
+    sha256 x86_64_linux:  "4ecb1ff88405db5f59aec103935f1faa37b83f7386cf26d17edffdee8c17012f"
   end
 
   depends_on "cmake" => :build
