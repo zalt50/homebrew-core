@@ -1,8 +1,8 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
   homepage "https://mongodb.github.io/kingfisher/"
-  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v1.112.0.tar.gz"
-  sha256 "e4cba31aa92e8de1dbabc470224582cc617ece5238db69ec1c544f05072429a0"
+  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v1.113.0.tar.gz"
+  sha256 "5434e513fab1729dd34b1cf478f3e4fd1004d567b8c0d09d6e5f2d7d8e662c0a"
   license "Apache-2.0"
 
   bottle do
