@@ -12,6 +12,7 @@ class VideoCompare < Formula
     sha256 cellar: :any, arm64_sonoma:  "d31b97afa9203bd5e81eb681235765f6dda6a9fee48d11e726b0c07b529f69dd"
     sha256 cellar: :any, sonoma:        "67daccdca15d312f44a41fe17f1854968afc311d69a8eb6c6ef4f32c7b299356"
     sha256 cellar: :any, arm64_linux:   "390975cdd2e9a62ad280bea2230cea9b0c1bfc8b99022bf85d55d0d16c6988e7"
+    sha256 cellar: :any, x86_64_linux:  "aa230f2ef34316172a760a4ee200b138358e26aaeae67fc1eee69114fbd5464d"
   end
 
   depends_on "ffmpeg"
