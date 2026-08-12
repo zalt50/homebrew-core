@@ -7,12 +7,12 @@ class Autocycler < Formula
   head "https://github.com/rrwick/Autocycler.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "234f892dbd736451423a7f231fbe50c9dba62ea1f8d4d3ba24f2e9abd4f49fe7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d90a36f630e12e96d6eb672d8e80f0d2e9cde1d41c73db75e529bed5cf87f2ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dc91872538e599731434a37c7d8d8f80b2f4f842d698af87de2c93a342e5320"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cc591914240e00439cf1595c175e606f8423c058d5cb970ca82d09cdb89c60e"
-    sha256 cellar: :any,                 arm64_linux:   "c1f63f8af82e524801ca200897345afc0c173cc5f83a2a9039ed1f549160c8a5"
-    sha256 cellar: :any,                 x86_64_linux:  "adf15fda7e95e64498e56b2e48483a4cc033415959d60d38fc8ccaafd1cb686f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ede7e242dfbba625b3bde0450dc87aacc2f459475293dfe12ece8bca7169613b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b2edcb09b305ea8e80759eb98d353ceacc37ff9d2f2d3b5cb24916319dcac87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2de6a1cf2213fd09d4850e2dff852199e97b85f50520e36dc8674facc2daf01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42b508cb94d40267b3a2be22846f79f132c2aaa34e9a217f6ef78a5f73155fd2"
+    sha256 cellar: :any,                 arm64_linux:   "abd8e3fe9c38a98ebee037bee2208448121b2aa770003466715a75803e5cd58d"
+    sha256 cellar: :any,                 x86_64_linux:  "27fb2901b4a9b9378a3e741974ef89a823a201d37af4c3f850584d706b9604d8"
   end
 
   depends_on "rust" => :build
