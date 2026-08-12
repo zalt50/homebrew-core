@@ -19,6 +19,7 @@ class OpencvAT4 < Formula
     sha256 arm64_sonoma:  "3affe7661db794d06b03ff4d9b645ff2c156f0e6f856b3861e7976437f0d1aa1"
     sha256 sonoma:        "fde205bc662741e8ea0249639483bbd611dcaab22064d86ec4a1b78892885690"
     sha256 arm64_linux:   "22441095097587f0c8d32163eb4cd32bf1cbac817b5aa3b452eb4c885500e5fc"
+    sha256 x86_64_linux:  "7eb35a9cc3f748b31d3833a4c8ffda160438cd6d3892bd39e1a075631d1b6d3f"
   end
 
   keg_only :versioned_formula
