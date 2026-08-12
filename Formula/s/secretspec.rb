@@ -1,8 +1,8 @@
 class Secretspec < Formula
   desc "Declarative secrets management tool"
   homepage "https://secretspec.dev"
-  url "https://github.com/cachix/secretspec/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "762cf61e5ba1c2dd3b91e76d860f965fb1d0122bdcd6ba30c00c2cc115035cdc"
+  url "https://github.com/cachix/secretspec/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "2593e2322b8ee253fd42ffbec57eaa0612a8a78861ee856f6cd8b7252054bb9d"
   license "Apache-2.0"
   head "https://github.com/cachix/secretspec.git", branch: "main"
 
