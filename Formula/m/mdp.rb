@@ -4,6 +4,7 @@ class Mdp < Formula
   url "https://github.com/visit1985/mdp/archive/refs/tags/1.0.18.tar.gz"
   sha256 "36861161513c508c0589014510cdafd940a6e661e517022a3bea48ecf8d5fac4"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/visit1985/mdp.git", branch: "master"
 
   bottle do
