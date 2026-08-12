@@ -6,7 +6,7 @@ class Uhd < Formula
   url "https://github.com/EttusResearch/uhd/archive/refs/tags/v4.10.0.0.tar.gz"
   sha256 "a9c66b52abcd586b513999f3a52345807b7551d01efac8c98eed813838be0297"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
@@ -25,7 +25,6 @@ class Uhd < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "libusb"
@@ -61,6 +60,8 @@ class Uhd < Formula
     ENV.prepend_path "PYTHONPATH", venv.site_packages
 
     args = %W[
+      -DENABLE_DOXYGEN=OFF
+      -DENABLE_MANUAL=OFF
       -DENABLE_TESTS=OFF
       -DUHD_VERSION=#{version}
     ]
