@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-11.0.3.tar.xz"
-  sha256 "da5fcffc32762820568b828ed430a728864d34d50b6d2f30358597760cbb0523"
+  url "https://download.qemu.org/qemu-11.1.0.tar.xz"
+  sha256 "6ee1d1a61f68212476b27108c26da5f449dc09b626d42f8279ba0dc2e08fa858"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
@@ -21,6 +21,7 @@ class Qemu < Formula
     sha256 x86_64_linux:  "d4066d891b708a60cdf91a853dc67b9bc7162efd1db74a6099f20db71bfb5621"
   end
 
+  depends_on "bison" => :build # >= 3.0
   depends_on "libtool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -45,7 +46,6 @@ class Qemu < Formula
   depends_on "vde"
   depends_on "zstd"
 
-  uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "bzip2"
 
@@ -98,6 +98,9 @@ class Qemu < Formula
     # obtain sensible runtime errors. This will also be compatible with
     # Samba installations from external taps.
     args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
+
+    # The arm64 HVF backend needs the macOS 15 SDK for its EL2 sysregs and vGIC
+    args << "--disable-hvf" if OS.mac? && Hardware::CPU.arm? && MacOS.version <= :sonoma
 
     args += if OS.mac?
       ["--disable-gtk", "--enable-cocoa"]
