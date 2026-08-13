@@ -1,8 +1,8 @@
 class Vampire < Formula
   desc "High-performance theorem prover"
   homepage "https://vprover.github.io/"
-  url "https://github.com/vprover/vampire/releases/download/v5.0.1/vampire.tar.gz"
-  sha256 "3d991c914e9f400641d8b2e4362065c218c0ecb08079b96b0da1714aa6842520"
+  url "https://github.com/vprover/vampire/releases/download/v5.1.0/vampire.tar.gz"
+  sha256 "80a4c52237618d451a344d1fbb42c932992b4eb1633049a9516a37501819ce25"
   license "BSD-3-Clause"
 
   livecheck do
