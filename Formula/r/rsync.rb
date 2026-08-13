@@ -7,12 +7,12 @@ class Rsync < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "47a6219946891014eeaa93105f1c2716e1260f068f7d9b9dab43d47e13b04ad2"
-    sha256 cellar: :any, arm64_sequoia: "327275b831b2117cfbffa6d73a37daefe26f04e443489f2200b3996ebf680b29"
-    sha256 cellar: :any, arm64_sonoma:  "889ce36094a0ed9272c15adb1ae1a9149c608d7450b1bcb25d8e80579864fe80"
-    sha256 cellar: :any, sonoma:        "8334f68dbe60dc8bd73e54366164c01e89b32cf3a2c10648f1b328fd778e26f3"
-    sha256 cellar: :any, arm64_linux:   "62fd03ffedabb0d878d8324779a5d748a5cd8b4d6797cbca595889b05136ef18"
-    sha256 cellar: :any, x86_64_linux:  "b7fdfd50dd31bc48d1b590b5df638e66f26a2f850c4eabdb1c6be099df2d80b9"
+    sha256 cellar: :any, arm64_tahoe:   "267a8d2a1869759a804c85fbbb952cc6e928abf84f8d7bba15310212d9926eb1"
+    sha256 cellar: :any, arm64_sequoia: "58ecba02ba9759f536d3e0a2ac410b8b1a63f0752452fd6a71b57db98cf06c36"
+    sha256 cellar: :any, arm64_sonoma:  "abc49c88d924db85ebc70ccf41ae5f0d978e6a5a85fa7ef9b334a280e08825bb"
+    sha256 cellar: :any, sonoma:        "833347d4aadf2b3f1d2d5f104a7344170f481c6e957ee95cbda1bc41a05d736f"
+    sha256 cellar: :any, arm64_linux:   "afae3006ae0d7daf2e68345cd2273987937bc6702c679145bd71108b816817c2"
+    sha256 cellar: :any, x86_64_linux:  "b2f066bc10fc9ce26805f9792f12ea78c651cfbf8c0364d480610ee3d90c5ccb"
   end
 
   depends_on "lz4"
