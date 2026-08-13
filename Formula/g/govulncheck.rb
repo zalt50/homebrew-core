@@ -1,19 +1,18 @@
 class Govulncheck < Formula
   desc "Database client and tools for the Go vulnerability database"
   homepage "https://github.com/golang/vuln"
-  url "https://github.com/golang/vuln/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "70f82d70f3a6757babbeb4e6834536e572d1c822180619ac74b649e3e4f247fb"
+  url "https://github.com/golang/vuln/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "4fb7f0204b7e039f550d8938b714c5218d870694895585e0e19b2c0c4700e4c7"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/golang/vuln.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f08f4021ab39b533ece496205407f8118deb58adc9d5d46d5c67b838f8ec64c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f08f4021ab39b533ece496205407f8118deb58adc9d5d46d5c67b838f8ec64c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f08f4021ab39b533ece496205407f8118deb58adc9d5d46d5c67b838f8ec64c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cc6d3c13f3893573331d7af9a44bdb60f11304f01f836881fdedfe81601af92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbc633e205e606f9db04158589d782f9d063edb4375f4418c739c1faf9694e9a"
-    sha256 cellar: :any,                 x86_64_linux:  "c9a39379bf916135bc3852a7d52458a95266a0562bbb5f30f2c6dc04231f2d31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e62eb046e1114e5c2f468b08e5abedabd46a8cac1fbbc37ac78839caacdc825"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e62eb046e1114e5c2f468b08e5abedabd46a8cac1fbbc37ac78839caacdc825"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e62eb046e1114e5c2f468b08e5abedabd46a8cac1fbbc37ac78839caacdc825"
+    sha256 cellar: :any_skip_relocation, sonoma:        "585cc24d6eee122b3606f73baf0b5f277449d9bf1f7a4e405b560ead7c501488"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "069408f46c164da7cd5ec752efceda32b824de244dad7a63ba0141e5771c9f78"
+    sha256 cellar: :any,                 x86_64_linux:  "f24b98bac8d774c0722bbfa5068db08ae0f01b96f824557f03294b808bab893d"
   end
 
   depends_on "go" => [:build, :test]
