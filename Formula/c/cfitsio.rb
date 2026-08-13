@@ -1,8 +1,8 @@
 class Cfitsio < Formula
   desc "C access to FITS data files with optional Fortran wrappers"
   homepage "https://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html"
-  url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.6.4.tar.gz"
-  sha256 "227b637b91c9820ea96f39a65eb087f053de567d82f4338e2884f123f8183c55"
+  url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.7.0.tar.gz"
+  sha256 "ce573bbea8e75b429f8c3d3e86498741ba3dc9628a1530d2f65268397ad059e8"
   license "CFITSIO"
   compatibility_version 1
 
