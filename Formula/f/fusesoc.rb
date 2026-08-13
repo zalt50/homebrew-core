@@ -7,6 +7,15 @@ class Fusesoc < Formula
   sha256 "774e0316d57bd4292bbd7e75c75f5c9742929f6c8e08c99858646fdc0103f17c"
   license "BSD-2-Clause"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "e7ae7e668a289b8dc7b0a12171c7db8ca75946dd77c82413b66781006b2b0621"
+    sha256 cellar: :any, arm64_sequoia: "c34505bf8ab23dc657d1b3e8f7c403266c11419f9d186e0892a363ed09c79a07"
+    sha256 cellar: :any, arm64_sonoma:  "117421990a89999f4269eee2c437262f4095206f12cab83cdf16c4a0c34e7acf"
+    sha256 cellar: :any, sonoma:        "e9fb7a5f3ded316d90706d33750c61bc00cb1d3d4a90e3ec1a12f0446c97ce60"
+    sha256 cellar: :any, arm64_linux:   "f89ad12b7be5561c557719526a25f0e4b7a059378a44817fd22cf63fea4830c7"
+    sha256 cellar: :any, x86_64_linux:  "87b77b7c876cdbb67128af78d3df2755f3f9b95e7e7709ec05e9f8a904a87ac7"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.14"
 
