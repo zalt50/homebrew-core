@@ -1,8 +1,8 @@
 class Ironclaw < Formula
   desc "Security-first personal AI assistant with WASM sandbox channels"
   homepage "https://www.ironclaw.com"
-  url "https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v1.1.0.tar.gz"
-  sha256 "07117026742b1e95fea03d2ce209bef31d3f871aa7ec3a5a4ce9eee8d801000f"
+  url "https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v1.2.0.tar.gz"
+  sha256 "4d64c4fce52fadf47b7d793d24d4e3085f68fe3fb7395a9d6fc1e5ddc9fbf8bb"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
@@ -31,7 +31,7 @@ class Ironclaw < Formula
   def install
     ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
 
-    system "cargo", "install", *std_cargo_args(path: "crates/ironclaw_reborn_cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/app/ironclaw_cli")
   end
 
   service do
