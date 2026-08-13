@@ -8,12 +8,12 @@ class Cfripper < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "813008f3ae0dae59afb16c0418afaa35c39d9961ab0653a43009bc75790b465c"
-    sha256 cellar: :any, arm64_sequoia: "3278a06efc9a52192dbf0a426dbf0140ba7179759632d4161bd3c56ef685fd3a"
-    sha256 cellar: :any, arm64_sonoma:  "f7c98d094ba05d4f91cf7d9d25ca1cdf54e1a54ba27a7ad94a47544ccd9f9486"
-    sha256 cellar: :any, sonoma:        "04295ad5d3e601988d866a15ae323e248e4c39991ef1a0ce461468e653def75f"
-    sha256 cellar: :any, arm64_linux:   "892f0835eaeed4eb8326c977d25448d082df14399b253224950d758d8fbe737b"
-    sha256 cellar: :any, x86_64_linux:  "9f7864c3a3ddc8a9e63b382416398056020d1f484d24c6ff7390f2d1661257a7"
+    sha256 cellar: :any, arm64_tahoe:   "4bb0162dee5f1a5376fd6d189cee47768be22df1ee406d14611540d3632c1ff6"
+    sha256 cellar: :any, arm64_sequoia: "d11f0a815152fe384d6f301da7862e5719577169a1d25c80cc16a0aa6d71e5d2"
+    sha256 cellar: :any, arm64_sonoma:  "337aa41f97fda097554ec2cab1dcc863c6a20b86a26b666ec2908ff471cf7fc7"
+    sha256 cellar: :any, sonoma:        "2663879891cd4e11f1f60ee6b35994e6fa874eb4d9e932bb7417360a205f0dbf"
+    sha256 cellar: :any, arm64_linux:   "bdab79eb12e9397533a9a1a2cd90c2448a7646b0993627f645ad43f10259163b"
+    sha256 cellar: :any, x86_64_linux:  "27bfe3dacc9279128f2b405fd017657f0b82b21e83dba4a68dbcf539edad5b00"
   end
 
   depends_on "libyaml"
