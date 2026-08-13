@@ -15,13 +15,12 @@ class Openturns < Formula
     sha256 x86_64_linux:  "385da5290a0c8e5557d4f5f982d509b3c2ad0bfa912438495dd3868e95d4ad98"
   end
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "nanoflann" => :build
   depends_on "spectra" => :build
 
-  depends_on "boost"
   depends_on "cminpack"
-  depends_on "gmp"
   depends_on "hdf5"
   depends_on "highs"
   depends_on "ipopt"
@@ -50,6 +49,7 @@ class Openturns < Formula
     ]
 
     args << "-DBLA_VENDOR=#{OS.mac? ? "Apple" : "OpenBLAS"}"
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
