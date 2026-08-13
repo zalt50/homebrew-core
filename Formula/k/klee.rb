@@ -5,7 +5,7 @@ class Klee < Formula
   desc "Symbolic Execution Engine"
   homepage "https://klee-se.org"
   license "NCSA"
-  revision 4
+  revision 5
 
   stable do
     url "https://github.com/klee/klee/archive/refs/tags/v3.2.tar.gz"
