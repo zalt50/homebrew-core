@@ -14,13 +14,12 @@ class Doxygen < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f7300b3bdd8a8220e964932b08cef4fe5e4e689ec4c2a80dd865e986bfeb8683"
-    sha256 cellar: :any, arm64_sequoia: "615adfdacb9b083f90f0a9ed91cbf11296b1f538f69aafb528423b194e3a5fdd"
-    sha256 cellar: :any, arm64_sonoma:  "98a9385f0827df88a9009d371784610cfd1e64fb8c2ea8b3c85de71d76155add"
-    sha256 cellar: :any, sonoma:        "973d4bc27b8a9626279d3e66ebf0fb4d322440e3eabac90c885388cc673bdebe"
-    sha256 cellar: :any, arm64_linux:   "aa3908c04fe32fc6f72130f455c64d94f640ed4047a15b22db049636b0f57329"
-    sha256 cellar: :any, x86_64_linux:  "a21382ddddf927450b1729fe595a133d2490f177615fa87b037aa3a021970c1b"
+    sha256 cellar: :any, arm64_tahoe:   "554075817e7d357ddb233496a332a6d8d7c9414e7fe21e514c40507fe7428a93"
+    sha256 cellar: :any, arm64_sequoia: "2334f389368fdc1055a87d69bd3c25b7eb8be4936d30bff13fded74c6262f5ce"
+    sha256 cellar: :any, arm64_sonoma:  "71a03795e6e710354915c27f25c69a5be73dd63d98ad3734546dd58be84fe0b6"
+    sha256 cellar: :any, sonoma:        "41f4b0f571e7e28b465d941883758806c2b593065fea28f622a0743c3d347737"
+    sha256 cellar: :any, arm64_linux:   "019cac1efd6b25ee86a02ce47e42181593f8a252caa6afbee05336c226a1fe23"
+    sha256 cellar: :any, x86_64_linux:  "54c060859ce305bf6feb217ae367eeb82a607de0bf9a901f13f71feccb5a49e0"
   end
 
   depends_on "bison" => :build
