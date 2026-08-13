@@ -13,12 +13,12 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6417ee43e5f0015b1f95265add02ab314e2bda011b6691ade352f4709e46b482"
-    sha256 cellar: :any, arm64_sequoia: "6417ee43e5f0015b1f95265add02ab314e2bda011b6691ade352f4709e46b482"
-    sha256 cellar: :any, arm64_sonoma:  "6417ee43e5f0015b1f95265add02ab314e2bda011b6691ade352f4709e46b482"
-    sha256 cellar: :any, sonoma:        "b4fdfe43dbdedec6fedc9fd00973ee69369be999da196677ccc2e39be6092551"
-    sha256 cellar: :any, arm64_linux:   "1bb21bae8f5ae06dad9299dd612badb61ca31db52eb67d8eec3b9170a343e8a3"
-    sha256 cellar: :any, x86_64_linux:  "5db408ed52d73451db964f34b156419a3d01e3b2ff1488d8ca2f39bf0343e90f"
+    sha256 cellar: :any, arm64_tahoe:   "b41bb0595eb19fc9bdb220c881c14c4f26ae61e227d73d502c9618d7dd9e7eff"
+    sha256 cellar: :any, arm64_sequoia: "b41bb0595eb19fc9bdb220c881c14c4f26ae61e227d73d502c9618d7dd9e7eff"
+    sha256 cellar: :any, arm64_sonoma:  "b41bb0595eb19fc9bdb220c881c14c4f26ae61e227d73d502c9618d7dd9e7eff"
+    sha256 cellar: :any, sonoma:        "904a7323d89f32864edf6caef6eb4f447b7ffca8fc43d6b0d107b89486990d41"
+    sha256 cellar: :any, arm64_linux:   "2114f3f715b970c4efd38def99a31533627fe26fd0d6ae2f25bc5b7bf203225b"
+    sha256 cellar: :any, x86_64_linux:  "b7298e5df90c4e5bac5e88118543df79ece3be38357b2f1eb2a3df4e25aedf49"
   end
 
   depends_on "go" => :build
