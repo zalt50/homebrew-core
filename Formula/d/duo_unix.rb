@@ -6,12 +6,12 @@ class DuoUnix < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256               arm64_tahoe:   "76285c5a46ff71f3d834c49b7c4ecc96daa7141c03a272c62b56e8be8de28e18"
-    sha256               arm64_sequoia: "4d4ad2acc77052130723256349822836d7046ade8c8759753ce5c6ce12aa4d81"
-    sha256               arm64_sonoma:  "ed3201349e3aa724d05e121ea58643c7a272eb5705ac3c68802b05f784e82e9d"
-    sha256 cellar: :any, sonoma:        "dc2def25dde741ed3a88deb37d6b864079f21e0c59a94d56a248e754c5336cb6"
-    sha256               arm64_linux:   "dde0bca5fbf5c159f16571f85545240787e67b156eab72b148c9d89a076e28e8"
-    sha256               x86_64_linux:  "e6b732ccd3f10ab695925616ef0b031454eec757e5b9fe7c2d854254f30db884"
+    sha256               arm64_tahoe:   "86169dd876ceaecbc9cb6a5ac9129d1017d4f4deae25a201ab9079644a927241"
+    sha256               arm64_sequoia: "c7a6bfaaf569b5f61b2a175dccf75b0648d1acba0abd7bbcdd4dafc718c032c5"
+    sha256               arm64_sonoma:  "49d5e1bb8dc291e0715a70720f414c8960328e4fbe5c09392e3b053ffcfb8724"
+    sha256 cellar: :any, sonoma:        "f67e032b567f5adf158d6de0679b6b7fa379ed16a53400cdf3e0c43d7b5f650a"
+    sha256               arm64_linux:   "9f1355e86e849a120c9c674569b33ea9b2a85fcbd104acbc139f6ed9270a703a"
+    sha256               x86_64_linux:  "6d90ecc722c702a3b19a78fc7e80cc06803322cf8ab46878132609bce644c185"
   end
 
   depends_on "autoconf" => :build
