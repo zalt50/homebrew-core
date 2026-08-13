@@ -8,12 +8,12 @@ class Govulncheck < Formula
   head "https://github.com/golang/vuln.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ce3ef2c7ee9471bf980f13386092cb8654dc18a92ef496a4b09f56f276f152f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ce3ef2c7ee9471bf980f13386092cb8654dc18a92ef496a4b09f56f276f152f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ce3ef2c7ee9471bf980f13386092cb8654dc18a92ef496a4b09f56f276f152f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74716a77803293ddb2ed331dbf010e38882a575d3b2871c34e81081907498389"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8183b30f602d11264f94398633401078cf97a8c85b5db197667b2d54d823282"
-    sha256 cellar: :any,                 x86_64_linux:  "7cd2a3110967c2c555d05862b2e878b6bb16f729baa1a4651b55929a3be57972"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f08f4021ab39b533ece496205407f8118deb58adc9d5d46d5c67b838f8ec64c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f08f4021ab39b533ece496205407f8118deb58adc9d5d46d5c67b838f8ec64c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f08f4021ab39b533ece496205407f8118deb58adc9d5d46d5c67b838f8ec64c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cc6d3c13f3893573331d7af9a44bdb60f11304f01f836881fdedfe81601af92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbc633e205e606f9db04158589d782f9d063edb4375f4418c739c1faf9694e9a"
+    sha256 cellar: :any,                 x86_64_linux:  "c9a39379bf916135bc3852a7d52458a95266a0562bbb5f30f2c6dc04231f2d31"
   end
 
   depends_on "go" => [:build, :test]
