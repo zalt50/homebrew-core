@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/e0/3f/0435d5a062220ab24e9f0b8dbc4fec5160f57de82977d5bab342d4233606/rapid_mlx-0.12.10.tar.gz"
-  sha256 "ad4a07a316f50819b9185c7fdae0b2d9841b666dd7a1692136439151d869f0f1"
+  url "https://files.pythonhosted.org/packages/8c/49/98b3d6d219be206d8ffde3bffe1d8d1038e833a0316fb69152ff29095fb6/rapid_mlx-0.12.11.tar.gz"
+  sha256 "15419c0cca600929f7305b1e45b3494b4faa282cb650703cc46246751722f535"
   license "Apache-2.0"
 
   bottle do
@@ -50,8 +50,8 @@ class RapidMlx < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
+    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
   end
 
   resource "click" do
