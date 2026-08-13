@@ -7,12 +7,13 @@ class Weave < Formula
   head "https://github.com/Ataraxy-Labs/weave.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3a72b4c30cb252d8a6c0a4b21d938fa600e5ef11794a9eccc850d3a035ab359b"
-    sha256 cellar: :any, arm64_sequoia: "bd5453ddafcb455a18944a70e2abd02ba0ece97a90ea287bfa2d09f9c4fee66b"
-    sha256 cellar: :any, arm64_sonoma:  "1a59a2f47a47829576cc3c8b8e266b140777dc4b8a121d79837bed13d999975e"
-    sha256 cellar: :any, sonoma:        "b07bd47a6d3ef5aa0828f9f933917f72062e9ca1aaa84614893df5aab72ed776"
-    sha256 cellar: :any, arm64_linux:   "50e5073d1daebaeb751cf53d2b7ae24008ba067602321304373767c49bce9b98"
-    sha256 cellar: :any, x86_64_linux:  "66a0ba14f9eb300f0b6e69b0e3147e4038109991bbba69203dd3bc533fcdb2f2"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "cfc006b7e3175556b30e627fa903c362e08541d52f27730b86e8f958f6656e47"
+    sha256 cellar: :any, arm64_sequoia: "eb71b7804c7dfa9dbbb72ca177c5c54531450f19691c9e81b3d26aa4e1280653"
+    sha256 cellar: :any, arm64_sonoma:  "47e88a872e9bd2603245db1e6ebb507bfbb57c7793abef840086d9847a772436"
+    sha256 cellar: :any, sonoma:        "4effa450f25fc20246dded69cedf0430168111be1323d049f69e5d76f3649d42"
+    sha256 cellar: :any, arm64_linux:   "0656a8cd58e3b21bed13d73dc68a9953cb9a7d6c0774054d5ba624b2bc814309"
+    sha256 cellar: :any, x86_64_linux:  "24bb65bfe995f034cdf281382fcae55d7ce60a8af20cb9b5ece246856c2b2512"
   end
 
   depends_on "pkgconf" => :build
@@ -29,6 +30,7 @@ class Weave < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/weave-cli")
     system "cargo", "install", *std_cargo_args(path: "crates/weave-driver")
+    system "cargo", "install", *std_cargo_args(path: "crates/weave-mcp")
   end
 
   test do
