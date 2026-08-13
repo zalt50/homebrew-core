@@ -3,10 +3,9 @@ class Modal < Formula
 
   desc "Client library and CLI for Modal"
   homepage "https://modal.com/"
-  url "https://files.pythonhosted.org/packages/09/13/c54908743129b75f9761ebcc767f8de5e5b16e2a0303e171f7ae38d90d4d/modal-1.5.3.tar.gz"
-  sha256 "0551c6fa2386ce78619f1a058eb4dd3ca527a54048952ea870e26704557c76c4"
+  url "https://files.pythonhosted.org/packages/8d/0d/1a6e710ab64f0c7b7bec9472203dbf6c7c75556dd2d7632da98c96a4e0b0/modal-1.5.4.tar.gz"
+  sha256 "d611bb47fc07117f5d194f7f9a9c0aba4537573a136349bbe45c5694e64bca92"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "74d2930636c902c8de66a12e14a48a8655df5b96ba27d65e51b97f24d9e64a88"
