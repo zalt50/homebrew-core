@@ -12,29 +12,16 @@ class Mdds < Formula
   head do
     url "https://gitlab.com/mdds/mdds.git", branch: "master"
 
+    depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
 
-  depends_on "autoconf" => :build
-  depends_on "boost"
+  depends_on "boost" => :no_linkage
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --disable-openmp
-    ]
-
-    # Gets it to work when the CLT is installed
-    inreplace "configure.ac", "$CPPFLAGS -I/usr/include -I/usr/local/include",
-                              "$CPPFLAGS -I/usr/local/include"
-
-    if build.head?
-      system "./autogen.sh", *args
-    else
-      system "autoconf"
-      system "./configure", *args
-    end
-
+    args = ["--disable-openmp"] if OS.mac?
+    configure = build.head? ? "./autogen.sh" : "./configure"
+    system configure, *args, *std_configure_args
     system "make", "install"
   end
 
