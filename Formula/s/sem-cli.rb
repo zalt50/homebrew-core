@@ -1,8 +1,8 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://ataraxy-labs.github.io/sem/"
-  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "57844f8ec07b648bad0d58b16cf05ef4074e55bab1707797498acc69aa21c894"
+  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.21.1.tar.gz"
+  sha256 "2d8d090e19ad9ddd12b4686ad301509a15dfa8678b62e9b1f319e9b86bc0a211"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
@@ -22,6 +22,12 @@ class SemCli < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Bump crate versions the v0.21.1 tag missed so `sem --version` is correct, upstream PR ref, https://github.com/Ataraxy-Labs/sem/pull/480
+  patch do
+    url "https://github.com/Ataraxy-Labs/sem/commit/0a9b9e25b87c1899b4f845bf53d460077a8bea3a.patch?full_index=1"
+    sha256 "bd1d92be66831a60e5c426c18f57f776ccd8ea9105c3d4006b29753630b0d2d8"
   end
 
   def install
