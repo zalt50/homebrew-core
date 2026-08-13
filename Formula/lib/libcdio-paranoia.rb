@@ -6,6 +6,7 @@ class LibcdioParanoia < Formula
   version "10.2-2.0.2"
   sha256 "99488b8b678f497cb2e2f4a1a9ab4a6329c7e2537a366d5e4fef47df52907ff6"
   license "GPL-3.0-only"
+  revision 1
 
   no_autobump! because: :incompatible_version_format
 
