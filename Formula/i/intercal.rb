@@ -1,8 +1,8 @@
 class Intercal < Formula
   desc "Esoteric, parody programming language"
   homepage "http://catb.org/~esr/intercal/"
-  url "http://catb.org/~esr/intercal/intercal-0.34.tar.gz"
-  sha256 "7ef6148c351df668466e2dcbd79517722f91c33caa3915957137f383371f8d55"
+  url "http://catb.org/~esr/intercal/intercal-0.35.tar.gz"
+  sha256 "b55e8edc68e2517a067a902766e2f57b97b502553fdcbae2b5ab2463ba58f0e1"
   license "GPL-2.0-or-later"
 
   # The latest version tags in the Git repository are `0.31` (2019-06-12) and
