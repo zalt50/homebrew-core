@@ -18,9 +18,9 @@ class Intercal < Formula
   end
 
   bottle do
-    sha256 sonoma:       "6ae9e10b4ae86c8b1cd011b7762aefad1fc610999dc43174ac2789a471f682e3"
-    sha256 arm64_linux:  "a3fff58fc3e959f8734522f969880199394b1ab2c384cf03ba57cbd3f1232ca1"
-    sha256 x86_64_linux: "ff300582cea9c994562655e7afa1a6ad8a785dff09afeee5a26ca460cfd5340c"
+    sha256 sonoma:       "89bd47009d0b3badca873c9a90da5c598e37c3b8d321a5b193e7c7a2fb471bad"
+    sha256 arm64_linux:  "0ba5bbd64a3a282d3f4e6d399d2db42e064a5377305db6ceaf3e0f32bf6b9185"
+    sha256 x86_64_linux: "19b7f6bc3117e3fcd0bf5f3e707d2e96307cb2adc07179a19a4ce301d5edae8c"
   end
 
   head do
