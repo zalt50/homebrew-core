@@ -7,12 +7,12 @@ class Autobrr < Formula
   head "https://github.com/autobrr/autobrr.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8a927446b837e0663489e0fbcd0b541da1badabc3722cbbabc0ad688f759647"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e31b856d5c2ab15f78475ce2d8b62dbb19265c882be085d3a2062e48923cd4ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38d807a1b69a10e9d27398ec0ac7fd51fb2a9ada93385f48bf018b16d783dc66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a33b6d53461ed3fd896a251a4a086b740f8878fef65686f2e16f12247d3a52b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "135ed45a65416cf01b14536b9b4ea4784418b8c333c0700b95b7faa9f7259bf9"
-    sha256 cellar: :any,                 x86_64_linux:  "bcf32956d9871a93d59a2bd3ab225876bc8b9e1788ccdb4043a1fc2680155e1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05f51cd77574e2eb5cd46a3ae90249085974164f0d099c733e49edf862fc36d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61a8a3af1f4ebbcb58a34e029f3e85ce86ade96277fda312241acec24e1c8b27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a289c92b0e66d07f660f80bc5ba100b0c3f9851e6e656e047a860a93dc76673b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1dde37384d95f05ff29ee0804bd0f7872a5b9c5c65a86e368de40f4e88d882a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea1e4393e8e7cecae8386f1df58c0af920bc41feb995009fabeb5990d6ff00c8"
+    sha256 cellar: :any,                 x86_64_linux:  "cb37906f3fdc501b9fdf87f0c65f9166da5101b6dbc44de88d279ac4d57f4efe"
   end
 
   depends_on "go" => :build
