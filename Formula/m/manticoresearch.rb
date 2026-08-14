@@ -1,15 +1,14 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/28.6.6.tar.gz"
-  sha256 "35cb3d49fcfa4c97af1f1d5ba166b687a3e2d092347e6a3bc59c8f869460e108"
+  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/29.0.2.tar.gz"
+  sha256 "e2d0184acd2583c69ffab76a1b854146cc47f9980afb60679e171c3ebf132e5b"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
-  revision 1
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "main"
 
@@ -22,12 +21,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0b1f7f89410aad22196d7d9a19a15d53320d801f42629b0cf21a4b1b98e554ef"
-    sha256 arm64_sequoia: "ca3cbc138260c91c1e2c2860f924bf35d77ab500a88bea74fd8b464ae32a5750"
-    sha256 arm64_sonoma:  "1df3563963ca485005c259e44dc18e05730680fcfc55152d36e7259b15ce4ecb"
-    sha256 sonoma:        "862982ed9d3a09f7c9277e553146073978016b4fde80acdd55ebd20eca6e0fad"
-    sha256 arm64_linux:   "b7345b19603ebe651896f9ab6c6c19f15a769f3fb0864ce19e0e9fc04531e40c"
-    sha256 x86_64_linux:  "7967bd471876228349374c2aaec45dbd18cce69470a87704a8d2d70caa5eac83"
+    sha256 arm64_tahoe:   "b96d843a5023ed1c3c92d4794b2f21a37f6849549dc1843c7b1cf3c4ea4267fe"
+    sha256 arm64_sequoia: "38dfadcf951b18de50f0de234c1fda400e448037602cb3f830005c3f587fadf2"
+    sha256 arm64_sonoma:  "f699654fd343925286515b3318fb8fabf2983fe9b7031587af8cd236daa3eaec"
+    sha256 sonoma:        "b76b8e6ca791c87cafc355b0386faacea5aea670dda8fc78a80d210821d7a374"
+    sha256 arm64_linux:   "a9f86e38bcdda37fc37949eee1cc2ec7873eb12553a6694bb8f9141102ef3661"
+    sha256 x86_64_linux:  "a746694fdf5b25540b2d62e9536dc07f299c0ac9ddf862a6f580cae7d4e5ec32"
   end
 
   depends_on "cmake" => :build
@@ -55,9 +54,9 @@ class Manticoresearch < Formula
   end
 
   resource "mcl" do
-    url "https://github.com/manticoresoftware/columnar/archive/7925d71c2892dfc84081cdbf18592667cccd78bc.tar.gz"
-    version "7925d71c2892dfc84081cdbf18592667cccd78bc"
-    sha256 "87e8864c2af592a270bd52d1780b3f1d1fcf7774aedca389b2d15975bccc77cb"
+    url "https://github.com/manticoresoftware/columnar/archive/dbc40aa7a6955ddb33be3b1f777f74576f65a6a6.tar.gz"
+    version "dbc40aa7a6955ddb33be3b1f777f74576f65a6a6"
+    sha256 "8b3edb801951f1e7d1dc4ee7c0b9c3728dbc4626e927b91a745750db60791759"
 
     livecheck do
       url "https://api.github.com/repos/manticoresoftware/manticoresearch/contents/mcl?ref=#{LATEST_VERSION}"
