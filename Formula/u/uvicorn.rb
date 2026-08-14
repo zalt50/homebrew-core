@@ -3,18 +3,18 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://uvicorn.dev/"
-  url "https://files.pythonhosted.org/packages/c3/53/be79eff13cc289570b4c6875fa4641a91a1dc51ece7f6213f364b0a58c4c/uvicorn-0.52.2.tar.gz"
-  sha256 "4294500b9c8f7a3ef3e975d9e4be08c3eb76441af449a9e6e10146c6a182ffec"
+  url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
+  sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
   license "BSD-3-Clause"
   head "https://github.com/Kludex/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3e8bc84e02cfdfddddd35ab0994c5547851bf306afb5dbabf6971fbdfd77b78d"
-    sha256 cellar: :any, arm64_sequoia: "140ae524cf757021ff173ddf2eb079cdf950346b82536540d25c1663e4f28954"
-    sha256 cellar: :any, arm64_sonoma:  "0e1945cbf6968a159e43ed640dba0a88c646044194dbffb415429c73a2028131"
-    sha256 cellar: :any, sonoma:        "d163ec1279a0e6490168e022844a9a9f3d7a441cfa0ec177d06d909275481fd8"
-    sha256 cellar: :any, arm64_linux:   "2c0a5efc8d1d63b1c7147fd7d6dc88bfc4a686a6665e6b49b9cd9b34addf94f5"
-    sha256 cellar: :any, x86_64_linux:  "b1e4c7c3b920a8f9746deb4ee25a8a6fb4ba983110e9193cd6644d38ed319a19"
+    sha256 cellar: :any, arm64_tahoe:   "e8681059776088b3051741215c6b8400f6a2aaa4da55c94c59a8a03465b723ce"
+    sha256 cellar: :any, arm64_sequoia: "a92bb81e3da87376ccf97edbf8659a849cd9b673b7d7c3e9ce0288aa7fd802df"
+    sha256 cellar: :any, arm64_sonoma:  "fb3900bbb3657c6b1873c727ec6a50e6756dc30bb02982ad6cb98cb7d688ad6a"
+    sha256 cellar: :any, sonoma:        "f82042e2e5be4b63595e63c70e92bb3161e17898e20d53f544e9e592edc3732a"
+    sha256 cellar: :any, arm64_linux:   "28cca3b563a8b192a86a0cef635153c472f82c4d2441f300c343358a7609aa36"
+    sha256 cellar: :any, x86_64_linux:  "3938216f57536df765f78c1b21488c67b532ce114e9c33deeadaed9f3c9835bf"
   end
 
   depends_on "rust" => :build
