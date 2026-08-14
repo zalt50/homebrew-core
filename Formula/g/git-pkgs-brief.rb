@@ -1,8 +1,8 @@
 class GitPkgsBrief < Formula
   desc "Tool that detects and reports a project's toolchain, configuration, and more"
   homepage "https://github.com/git-pkgs/brief"
-  url "https://github.com/git-pkgs/brief/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "aa4aa70297764b6d2befedb9e147fc530efa62eb81dc90b84b739922ac0889d3"
+  url "https://github.com/git-pkgs/brief/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "481175bba6e76e7993ff47178ab8923c05323adde79442673d61c2d5d5f5fc86"
   license "MIT"
   head "https://github.com/git-pkgs/brief.git", branch: "main"
 
