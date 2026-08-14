@@ -4,6 +4,7 @@ class Ompl < Formula
   url "https://github.com/ompl/ompl/archive/refs/tags/2.0.1.tar.gz"
   sha256 "365f052d5fb4419ed016394ddb26ab83dee6514b90565ad30af044a09b122aef"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/ompl/ompl.git", branch: "main"
 
   # We check the first-party download page because the "latest" GitHub release
@@ -14,12 +15,12 @@ class Ompl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8e000a77945fbd5bd95799ef5d5fa961bfa94def6eeaca5b27f445cb3cc8abfa"
-    sha256 cellar: :any, arm64_sequoia: "e8a19a344fddff584c95b7b72915de586c517f6a8c27a87a3350916971c234bd"
-    sha256 cellar: :any, arm64_sonoma:  "ec2c1bd99389b032b8b482f9a78be798d89984c8d4847c93cac0b0ddc6bd430a"
-    sha256 cellar: :any, sonoma:        "6ad7a9c1a99f1ea17d5b2639f18daad64fadd66921885ac5636829912e17ccde"
-    sha256 cellar: :any, arm64_linux:   "adda85d7b46f075d4db02ee76e88ee3aacb3fa0dde58837e9a3ea46d244172a5"
-    sha256 cellar: :any, x86_64_linux:  "a24bd68455b6a4cfd091627b23f214b5db000530def25f84d09a53ef0099c4cd"
+    sha256 cellar: :any, arm64_tahoe:   "a4900cd087705050cf4365995825a5e3d74a141fb832528527e84f44429e4afd"
+    sha256 cellar: :any, arm64_sequoia: "260e09a4daa5ecff1e929a12363894ad159918ec74b2e955b985159fff47db11"
+    sha256 cellar: :any, arm64_sonoma:  "b4f4437ab76e1a21d4d5c66b75e5b9e9997ea0be969c6f5ed8ed661deece26a1"
+    sha256 cellar: :any, sonoma:        "38708b26b46a5fb649a8fbd0ea048aa08af065fb6aad9fcc00c8b24128e6e0f7"
+    sha256 cellar: :any, arm64_linux:   "02df1d8624f5911f9a85bd1452b6fec857983f5eae37dce0f41185981e689e07"
+    sha256 cellar: :any, x86_64_linux:  "bb093a7c3abad0dd973acd8f01191a0768a6ce6ba8fae768d9a8aa7b6b6f2a00"
   end
 
   depends_on "cmake" => :build
