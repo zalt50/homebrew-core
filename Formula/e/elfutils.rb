@@ -1,8 +1,8 @@
 class Elfutils < Formula
   desc "Libraries and utilities for handling ELF objects"
   homepage "https://fedorahosted.org/elfutils/"
-  url "https://sourceware.org/elfutils/ftp/0.195/elfutils-0.195.tar.bz2"
-  sha256 "37629fdf7f1f3dc2818e138fca2b8094177d6c2d0f701d3bb650a561218dc026"
+  url "https://sourceware.org/elfutils/ftp/0.196/elfutils-0.196.tar.bz2"
+  sha256 "fd5cc6b77ad6773cac93cb3f415f9318ac3b3455eecf801f6b4a742c4f6c7209"
   license all_of: [
     "GPL-3.0-or-later", # programs
     { any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"] }, # libraries
@@ -30,6 +30,10 @@ class Elfutils < Formula
   depends_on "zstd"
 
   def install
+    # Kernel UAPI header redefines `struct iovec` as `lib/system.h` now includes <fcntl.h>
+    # TODO: Fix is reported to upstream through email, check this is required or not in future releases.
+    inreplace %w[backends/aarch64_initreg.c backends/arm_initreg.c], "<linux/uio.h>", "<sys/uio.h>"
+
     args = %w[
       --disable-silent-rules
       --disable-libdebuginfod
