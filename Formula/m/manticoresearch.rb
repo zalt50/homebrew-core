@@ -1,15 +1,14 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/28.6.6.tar.gz"
-  sha256 "35cb3d49fcfa4c97af1f1d5ba166b687a3e2d092347e6a3bc59c8f869460e108"
+  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/29.0.2.tar.gz"
+  sha256 "e2d0184acd2583c69ffab76a1b854146cc47f9980afb60679e171c3ebf132e5b"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
-  revision 1
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "main"
 
@@ -55,9 +54,9 @@ class Manticoresearch < Formula
   end
 
   resource "mcl" do
-    url "https://github.com/manticoresoftware/columnar/archive/7925d71c2892dfc84081cdbf18592667cccd78bc.tar.gz"
-    version "7925d71c2892dfc84081cdbf18592667cccd78bc"
-    sha256 "87e8864c2af592a270bd52d1780b3f1d1fcf7774aedca389b2d15975bccc77cb"
+    url "https://github.com/manticoresoftware/columnar/archive/dbc40aa7a6955ddb33be3b1f777f74576f65a6a6.tar.gz"
+    version "dbc40aa7a6955ddb33be3b1f777f74576f65a6a6"
+    sha256 "8b3edb801951f1e7d1dc4ee7c0b9c3728dbc4626e927b91a745750db60791759"
 
     livecheck do
       url "https://api.github.com/repos/manticoresoftware/manticoresearch/contents/mcl?ref=#{LATEST_VERSION}"
