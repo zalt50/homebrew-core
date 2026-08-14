@@ -41,7 +41,7 @@ jobs:
       pull-requests: read
       actions: read
     steps:
-      - uses: Homebrew/actions/find-related-workflow-run-id@fd832223f9f99ebf0244dd20658680e5d4aca049 # 2026.08.03.2
+      - uses: Homebrew/actions/find-related-workflow-run-id@b35a29a0f83ee8b8ca07b219fc8db3d7bb88ab49 # 2026.08.10.2
         with:
           run-id: ${{ github.event.workflow_run.id }}
           workflow-name: Triage tasks
@@ -188,7 +188,7 @@ jobs:
       actions: write # to dispatch publish workflow
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@fd832223f9f99ebf0244dd20658680e5d4aca049 # 2026.08.03.2
+        uses: Homebrew/actions/setup-homebrew@b35a29a0f83ee8b8ca07b219fc8db3d7bb88ab49 # 2026.08.10.2
         with:
           core: false
           cask: false
