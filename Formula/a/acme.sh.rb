@@ -20,6 +20,7 @@ class AcmeSh < Formula
     ]
 
     bin.install_symlink libexec/"acme.sh"
+    bash_completion.install "acme.sh.completion" => "acme.sh"
   end
 
   test do
