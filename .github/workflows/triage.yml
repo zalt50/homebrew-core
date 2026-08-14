@@ -335,59 +335,33 @@ jobs:
 
             - label: long dependent tests
               path: "Formula/.+/(\
-                aom|\
-                at-spi2-core|\
                 boost|\
-                brotli|\
-                c-ares|\
                 cabal-install|\
                 cmake|\
-                cryptography|\
-                dav1d|\
                 freetype|\
                 gcc|\
                 gettext|\
                 ghc|\
                 glib|\
-                gsettings-desktop-schemas|\
                 gtk\\+3|\
                 harfbuzz|\
-                highway|\
-                hwloc|\
-                icu4c|\
-                imath|\
-                jasper|\
                 jpeg-turbo|\
                 jpeg-xl|\
-                libgcrypt|\
-                libgpg-error|\
-                libidn2|\
-                libmicrohttpd|\
-                libnghttp2|\
                 libomp|\
                 libpng|\
-                libtool|\
-                libunistring|\
                 mpfr|\
-                mpg123|\
                 node|\
                 numpy|\
                 openblas|\
                 openjdk|\
                 openjpeg|\
                 openssl@3|\
-                p11-kit|\
                 pango|\
                 pcre2|\
                 python@3.14|\
                 qtbase|\
-                rav1e|\
                 readline|\
                 rust|\
-                sdl2|\
-                shared-mime-info|\
-                sqlite|\
-                suite-sparse|\
                 xz|\
                 zstd\
                 ).rb"
