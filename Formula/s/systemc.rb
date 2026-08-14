@@ -19,17 +19,12 @@ class Systemc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b646135f7f9d2940ab5b0c4c6eafc5fcf0c2632933664964d5747cf9e1c87ac"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "autoconf-archive" => :build
-  depends_on "automake" => :build
-  depends_on "doxygen" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
 
   def install
-    ENV.append "CXXFLAGS", "-std=gnu++17"
-    system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--with-unix-layout", *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
