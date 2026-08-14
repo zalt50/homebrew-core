@@ -2,8 +2,8 @@ class CyclonedxGomod < Formula
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Go modules"
   homepage "https://cyclonedx.org/"
   url "https://github.com/CycloneDX/cyclonedx-gomod.git",
-      tag:      "v1.10.0",
-      revision: "ba940a6cad4202a4a6d2f9aeef33463c0011ff5f"
+      tag:      "v1.11.0",
+      revision: "016a6750ec5b892ed27c3030f635ea15d479ec26"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-gomod.git", branch: "main"
 
