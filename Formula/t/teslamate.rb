@@ -1,8 +1,8 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.0.1.tar.gz"
-  sha256 "508dea91bfcd331d3acfbde90b3e7fe4c5755bb4b8080577053cd8f111f4c3d1"
+  url "https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.1.1.tar.gz"
+  sha256 "8eea8a4e06bca8deea40cb129647db179b544f6749f39ea22f85ba537892bc6f"
   license "AGPL-3.0-or-later"
 
   bottle do
@@ -87,16 +87,18 @@ class Teslamate < Formula
       ENV["DATABASE_HOST"] = "127.0.0.1"
       ENV["DATABASE_PORT"] = pg_port.to_s
       ENV["DISABLE_MQTT"] = "true"
+
       log_file = testpath/"teslamate_test.log"
+      endpoint_message = "Access TeslaMateWeb.Endpoint at http://localhost"
+
       File.open(log_file, "w") do |file|
         pid = spawn(opt_bin/"teslamate_brew_services", out: file, err: file)
-        sleep 20
+        sleep 1 until log_file.read.include?(endpoint_message)
         system opt_bin/"teslamate", "stop"
         Process.kill("KILL", pid)
         Process.wait(pid)
       end
-      output = log_file.read
-      assert_match "Access TeslaMateWeb.Endpoint at http://localhost", output
+      assert_match endpoint_message, log_file.read
     ensure
       system pg_ctl, "stop", "-D", datadir
     end
