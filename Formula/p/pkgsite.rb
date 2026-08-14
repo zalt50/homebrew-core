@@ -1,8 +1,8 @@
 class Pkgsite < Formula
   desc "Documentation server for Go packages"
   homepage "https://pkg.go.dev/golang.org/x/pkgsite"
-  url "https://github.com/golang/pkgsite/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "3a7dcb16a6e21ae8cb8f07c48bf6cfd501e9414fb2048bb79c5a0845b1c31d99"
+  url "https://github.com/golang/pkgsite/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "7cc5627428e42bf5a8f99608d704a98cd888fbff2bb2bf292f14f0af15b5692a"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/pkgsite.git", branch: "master"
 
