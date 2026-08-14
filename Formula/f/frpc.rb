@@ -1,8 +1,8 @@
 class Frpc < Formula
   desc "Client app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
-  url "https://github.com/fatedier/frp/archive/refs/tags/v0.70.1.tar.gz"
-  sha256 "67246606f504cb15df72193f1a83911259e92b6a87838cff8850031efd406dc8"
+  url "https://github.com/fatedier/frp/archive/refs/tags/v0.71.0.tar.gz"
+  sha256 "1dd367d6d822a7fce1d3012fce0a6e778bc90c454e2c7baa0eb1e6de6054c61b"
   license "Apache-2.0"
   head "https://github.com/fatedier/frp.git", branch: "dev"
 
@@ -21,7 +21,7 @@ class Frpc < Formula
   def install
     cd "web/frpc" do
       system "npm", "install", *std_npm_args(prefix: false)
-      system "npm", "run", "build"
+      system "npm", "run", "build-only"
     end
 
     ENV["CGO_ENABLED"] = "0"
