@@ -9,12 +9,13 @@ class AvroCpp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "343c94a7d5a32e0b30742e9d775351e3ce51662d833bfca085fcac25b42e19b3"
-    sha256 cellar: :any, arm64_sequoia: "edb049813644cdef22c0f1a94d9c27121630760ed939b836f770d41b4e18207f"
-    sha256 cellar: :any, arm64_sonoma:  "8d5179f11cf31c7b4dacb5b59378a68e5c68412edf95dbc052a49f3fecccae20"
-    sha256 cellar: :any, sonoma:        "73e67a5ac48130fb59827861a2865144a36358890d368ae30114f467a3980f45"
-    sha256 cellar: :any, arm64_linux:   "e7a314d79d8557e10a35fe3cb743bd24d86a6c9b9fba1f7b17d2afbe045809ec"
-    sha256 cellar: :any, x86_64_linux:  "d42cf3ab2efbc34b80056802d3b702886da89bfe871c0db15026d21058c416f4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d3f9da71b7a04552306ec72c454aab24080d3be40b0d207f1ca1dabd1d98b830"
+    sha256 cellar: :any, arm64_sequoia: "fb3bcc0a37022f4aaf52dbf6293a07b637e2e336c9d3302c202b9638be97e132"
+    sha256 cellar: :any, arm64_sonoma:  "98df183ed33d28bcea389729ab3c98db6373870b3226f77e6500551060b322e1"
+    sha256 cellar: :any, sonoma:        "a91303d45f45aa816eee305e8a93dc24098eb98e97cdc03ff6e148d6bf6d575c"
+    sha256 cellar: :any, arm64_linux:   "9efb3fe4f8fd6ce010daf86042f45c191d8aa1040f4011df89fa9620fcb37d77"
+    sha256 cellar: :any, x86_64_linux:  "b7528636985c4d1c8ec42f4f7c75d8082dd173d5e89eb407674f5d2b9e1802ca"
   end
 
   depends_on "cmake" => :build
