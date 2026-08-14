@@ -1,24 +1,10 @@
 class CabalInstall < Formula
   desc "Command-line interface for Cabal and Hackage"
   homepage "https://www.haskell.org/cabal/"
+  url "https://hackage.haskell.org/package/cabal-install-3.18.1.0/cabal-install-3.18.1.0.tar.gz"
+  sha256 "7e5c3f5e53f7c91f9ff8f0fb075574e772562d0eeb400c402c7d9277558f0821"
   license "BSD-3-Clause"
   head "https://github.com/haskell/cabal.git", branch: "master"
-
-  stable do
-    url "https://hackage.haskell.org/package/cabal-install-3.16.1.0/cabal-install-3.16.1.0.tar.gz"
-    sha256 "9d27bc22989f3933486a7bba6ac0a2d8fef16891bf46a973f4d80f429ae95120"
-
-    # Backport HTTP dependency update
-    patch :p2 do
-      url "https://github.com/haskell/cabal/commit/b49da958030b20554fedfacd612144e836ab3d52.patch?full_index=1"
-      sha256 "877b60af7dac4f5a0b5fd96bbdb8bab9407db3f5850264c336b193a42ee092a5"
-      type :cherry_pick
-      resolves "https://github.com/haskell/cabal/pull/11347"
-    end
-
-    # Backport https://github.com/haskell/cabal/commit/3a6a26f826f3a67d9f452418c8cd0daa0ca12d7c
-    patch :DATA
-  end
 
   bottle do
     rebuild 2
@@ -78,16 +64,3 @@ class CabalInstall < Formula
     system bin/"cabal", "--config-file=#{testpath}/config", "info", "Cabal"
   end
 end
-
-__END__
---- a/cabal-install.cabal
-+++ b/cabal-install.cabal
-@@ -66,7 +66,7 @@ common warnings
- 
- common base-dep
-     build-depends:
--      , base >=4.13 && <4.22
-+      , base >=4.13 && <4.23
- 
- common cabal-dep
-     build-depends:
