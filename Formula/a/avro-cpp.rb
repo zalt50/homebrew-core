@@ -1,6 +1,8 @@
 class AvroCpp < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
+  # TODO: Remove fmt in the next release
+  # https://github.com/apache/avro/commit/d77446e5d05cd68c28d09c1af800a428dea34e03
   url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.12.2/cpp/avro-cpp-1.12.2.tar.gz"
   mirror "https://archive.apache.org/dist/avro/avro-1.12.2/cpp/avro-cpp-1.12.2.tar.gz"
   sha256 "5e4cea5d9dc59bbc0e3e1967fd8f8a86b4cb7c1452c4b252561b8137e949f6fd"
@@ -18,7 +20,6 @@ class AvroCpp < Formula
   depends_on "cmake" => :build
   depends_on "fmt" => [:build, :test] # needed for headers
   depends_on "pkgconf" => :build
-  depends_on "boost"
   depends_on "zstd"
 
   on_linux do
@@ -38,16 +39,7 @@ class AvroCpp < Formula
   def install
     (buildpath/"cmake").install resource("avro-cpp-config.cmake.in")
 
-    # Boost 1.89+ no longer requires the 'system' component
-    boost_replacements = /Boost\s1.70\sREQUIRED\s(CONFIG\s)?COMPONENTS\s?system/
-    inreplace "CMakeLists.txt" do |s|
-      s.gsub! boost_replacements, "Boost REQUIRED"
-      s.gsub! "$<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::system>>", ""
-      s.gsub! "Boost::system ZLIB::ZLIB", "$<TARGET_NAME_IF_EXISTS:Boost::system> ZLIB::ZLIB"
-    end
-    inreplace "cmake/avro-cpp-config.cmake.in", boost_replacements, "Boost REQUIRED"
-
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DAVRO_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
