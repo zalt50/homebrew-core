@@ -1,8 +1,8 @@
 class Coacd < Formula
   desc "Approximate convex decomposition for 3D meshes with collision-aware concavity"
   homepage "https://github.com/SarahWeiii/CoACD"
-  url "https://github.com/SarahWeiii/CoACD/archive/refs/tags/1.0.11.tar.gz"
-  sha256 "6c57131f3c572afc52b6057a97f4e8b81b010b6bdffb610ca2dd3d418cf6de6d"
+  url "https://github.com/SarahWeiii/CoACD/archive/refs/tags/1.0.12.tar.gz"
+  sha256 "9357bd6da525127ce538f6f0a3996e33573089848449bd70a2ae0c9bb82966c6"
   license "MIT"
 
   head "https://github.com/SarahWeiii/CoACD.git", branch: "main"
