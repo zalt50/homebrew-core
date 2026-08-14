@@ -1,8 +1,8 @@
 class Smlnj < Formula
   desc "Compiler and programming system for Standard ML"
   homepage "https://www.smlnj.org/"
-  url "https://smlnj.org/dist/working/2026.1/smlnj-arm64-unix-2026.1.tgz"
-  sha256 "2549a8332a28c126313d8f170391fe500a232a5854dd3b05af3277c7b57a6859"
+  url "https://smlnj.org/dist/working/2026.2/smlnj-arm64-unix-2026.2.tgz"
+  sha256 "504119bc2cf8fab6f469e33126cdc16769777584822e89ff7e9866c06021cda4"
   license "BSD-3-Clause"
   head "https://github.com/smlnj/smlnj.git", branch: "main"
 
@@ -31,13 +31,21 @@ class Smlnj < Formula
 
   resource "bootarchive" do
     on_arm do
-      url "https://smlnj.org/dist/working/2026.1/boot.arm64-unix.tgz", using: :nounzip
-      sha256 "ab2807d27d7ade38b09b80ac96d3de082a47aa707108728fe4edb4199caad7fd"
+      url "https://smlnj.org/dist/working/2026.2/boot.arm64-unix.tgz", using: :nounzip
+      sha256 "510f06c5a69b809dd0a07ea1967582352b31c91ef71f655d2ac6ec82ddfbea4d"
     end
     on_intel do
-      url "https://smlnj.org/dist/working/2026.1/boot.amd64-unix.tgz", using: :nounzip
-      sha256 "71a160b8a92114e8e0243b5c39c17a6006f3165da74185dbb560a3bda0632faa"
+      url "https://smlnj.org/dist/working/2026.2/boot.amd64-unix.tgz", using: :nounzip
+      sha256 "ba0d81bac93a6987aa10687ddb7646f1cdf1c350a399cb76171bfb2b8e1c8ceb"
     end
+  end
+
+  # Make `build.sh` script more portable
+  patch do
+    url "https://github.com/smlnj/smlnj/commit/a50972b5a16baf6bd3b41d48c577b28b7d406d9d.patch?full_index=1"
+    sha256 "157101e2b57857ef69b261e8fd092b6eaacec06b4bdfcabdb14789af6ff9ddb3"
+    type :unofficial
+    resolves "https://github.com/smlnj/smlnj/pull/361"
   end
 
   def install
@@ -48,15 +56,12 @@ class Smlnj < Formula
     ENV.deparallelize
 
     libexec.mkpath
-    cd buildpath do
-      ENV["INSTALLDIR"] = libexec.realpath.to_s
-      system "./build.sh"
+    system "./build.sh", "-install", libexec.realpath.to_s
 
-      %w[
-        sml asdlgen heap2exec ml-antlr ml-build ml-burg ml-makedepend ml-ulex ml-yacc
-      ].each do |cmd|
-        bin.write_exec_script libexec/"bin/#{cmd}"
-      end
+    %w[
+      sml asdlgen heap2exec ml-antlr ml-build ml-burg ml-makedepend ml-ulex ml-yacc
+    ].each do |cmd|
+      bin.write_exec_script libexec/"bin/#{cmd}"
     end
   end
 
