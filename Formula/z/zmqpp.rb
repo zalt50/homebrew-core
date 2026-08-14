@@ -21,17 +21,11 @@ class Zmqpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "18d5c7351051f713c13173e058151ea828788e3851c761d04c4c1d1a1d384f08"
   end
 
-  depends_on "doxygen" => :build
   depends_on "zeromq"
 
   def install
-    ENV.cxx11
-
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
-
-    system "doxygen"
-    (doc/"html").install Dir["docs/html/*.html"]
   end
 
   test do
