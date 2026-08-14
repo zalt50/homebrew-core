@@ -2,10 +2,9 @@ class Pc6001vx < Formula
   desc "PC-6001 emulator"
   # http://eighttails.seesaa.net/ gives 405 error
   homepage "https://github.com/eighttails/PC6001VX"
-  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.3.0_src.tar.gz"
-  sha256 "a5536f7bd4931b2efcbdcd85707a9c6fa82a6b169773e6d13d74cea8107ee9cc"
+  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.4.0_src.tar.gz"
+  sha256 "d31716ba9d2d96de9c664ed5006391e834dae54dcda574f1cf0bf7d074866333"
   license "LGPL-2.1-or-later"
-  revision 2
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   bottle do
@@ -17,6 +16,7 @@ class Pc6001vx < Formula
     sha256 cellar: :any, x86_64_linux:  "b45bbd5c4c6ac348440551061c1fc71fb243d04b852b8f6d0e9c0a90ebe28598"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "qttools" => :build
   depends_on "ffmpeg"
@@ -32,29 +32,20 @@ class Pc6001vx < Formula
     depends_on "libx11"
   end
 
-  # Fix builds with FFmpeg 9.
-  patch do
-    url "https://github.com/eighttails/PC6001VX/commit/5c7079d05cd67b312d324ad09f1e371765b699e4.patch?full_index=1"
-    sha256 "cb50d8227ea39602f280b817ddab99aa093a49840f1101713e4e3a3e29e7e6c7"
-    type :unofficial
-    resolves "https://github.com/eighttails/PC6001VX/pull/29"
-  end
-
   def install
-    mkdir "build" do
-      system "qmake", "PREFIX=#{prefix}",
-                      "QMAKE_CXXFLAGS=#{ENV.cxxflags}",
-                      "CONFIG+=no_include_pwd",
-                      ".."
-      system "make"
+    # Upstream only guards the X11 probe against Android, but Qt exposes no
+    # `QX11Application` on macOS, where the screensaver code is a no-op anyway
+    inreplace "CMakeLists.txt", "if(X11_FOUND)", "if(X11_FOUND AND NOT APPLE)"
 
-      if OS.mac?
-        prefix.install "PC6001VX.app"
-        bin.write_exec_script prefix/"PC6001VX.app/Contents/MacOS/PC6001VX"
-      else
-        bin.install "PC6001VX"
-      end
-    end
+    # The CMake port only links `intl` for Windows, but the old qmake build
+    # linked it on macOS too, where `gettext` is not part of libc
+    ENV.append "LDFLAGS", "-lintl" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+
+    # Upstream ships no `install` rules and names the binary after the version
+    bin.install "build/PC6001VX-#{version}" => "PC6001VX"
   end
 
   test do
@@ -64,17 +55,20 @@ class Pc6001vx < Formula
     # locales aren't set correctly within the testing environment
     ENV["LC_ALL"] = "en_US.UTF-8"
 
+    assert_match version.to_s, shell_output("#{bin}/PC6001VX --version")
+
     user_config_dir = testpath/".pc6001vx4"
     user_config_dir.mkpath
     pid = spawn bin/"PC6001VX"
-    sleep 30
-    sleep 45 if OS.mac? && Hardware::CPU.intel?
+    # the config tree is written on startup; Intel Macs need well over a minute,
+    # so allow plenty of time but stop waiting as soon as it appears
+    120.times do
+      break if (user_config_dir/"rom").exist?
+
+      sleep 1
+    end
     assert_path_exists user_config_dir/"rom", "User config directory should exist"
   ensure
-    # the first SIGTERM signal closes a window which spawns another immediately
-    # after 5 seconds, send a second SIGTERM signal to ensure the process is fully stopped
-    Process.kill("TERM", pid)
-    sleep 5
     Process.kill("TERM", pid)
     Process.wait(pid)
   end
