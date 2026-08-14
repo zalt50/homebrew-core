@@ -8,12 +8,12 @@ class Modal < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "74d2930636c902c8de66a12e14a48a8655df5b96ba27d65e51b97f24d9e64a88"
-    sha256 cellar: :any, arm64_sequoia: "9f9b3625c526a627673c1057eeb18394821239732fa7d6d898d5c61fbcd9230d"
-    sha256 cellar: :any, arm64_sonoma:  "2a7f72d08d149b32e4ca34be2adcec4867f385852a5c6024904031067232e264"
-    sha256 cellar: :any, sonoma:        "255eb53bb1b7d934114571b91dfd0eefa4332f5c8b46c4f0ec32c2045b482db0"
-    sha256 cellar: :any, arm64_linux:   "fb9c3fb4e19e23b577dcf44d49603076c4df123be8205ab147b3491e54eed26c"
-    sha256 cellar: :any, x86_64_linux:  "6670b2265df217dec6615c64d6ba5c223ef6fd0cbaa1bf51b5382c9077dd767d"
+    sha256 cellar: :any, arm64_tahoe:   "4a77a48b4cfc2bef905dc66bfaead67c7258f6236b1c3e9b491b86dd0f8d584b"
+    sha256 cellar: :any, arm64_sequoia: "88330079c42490d22619efbdd8534bdddb56a4d3fd384899ff55358793fe36e1"
+    sha256 cellar: :any, arm64_sonoma:  "02652f83adc4010c891247fa76ec3652805d58c7388cbaa9c3509506db01539e"
+    sha256 cellar: :any, sonoma:        "353be12fa2d2ccb527ecce147589ac40af9bdea52fd19399c43488320effbf93"
+    sha256 cellar: :any, arm64_linux:   "544321ed8456c87df06f95af158c151c8ad4d119ae40226eb94315cbd7e5c80f"
+    sha256 cellar: :any, x86_64_linux:  "6f48d3e5e8d44aa2379fd9c64c1b77ccf7cabca2564869a9c983d92791c37598"
   end
 
   depends_on "rust" => :build # for `cbor2`
