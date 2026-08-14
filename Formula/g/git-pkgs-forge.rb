@@ -1,8 +1,8 @@
 class GitPkgsForge < Formula
   desc "Go library and CLI for working with git forges"
   homepage "https://github.com/git-pkgs/forge"
-  url "https://github.com/git-pkgs/forge/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "dfbe5b6ffe24d93d37f3a3aab8eddf6081eb2b44fdd37aad293201a316e1574d"
+  url "https://github.com/git-pkgs/forge/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "25faad2e6d25e4b30639272a8116f957afc38b8c1e6e97cd55410fe8b76f9055"
   license "MIT"
   head "https://github.com/git-pkgs/forge.git", branch: "main"
 
