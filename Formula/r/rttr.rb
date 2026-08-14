@@ -23,10 +23,10 @@ class Rttr < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
 
   def install
     args = %w[
+      -DBUILD_DOCUMENTATION=OFF
       -DBUILD_UNIT_TESTS=OFF
       -DCMAKE_CXX_FLAGS=-Wno-deprecated-declarations
     ]
