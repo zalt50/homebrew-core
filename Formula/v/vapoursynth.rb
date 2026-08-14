@@ -3,16 +3,11 @@ class Vapoursynth < Formula
 
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
-  url "https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R79.tar.gz"
-  sha256 "cb7ea3c75431176f8ce1f466e1c1fff7ffdacdd2d397be8fabc2d467194ab5a6"
+  url "https://files.pythonhosted.org/packages/2d/4d/bb7fcc7f304e7248cf6c83ec0c3c97ee4b4fa2e05bfbbe2a578a9b41fab9/vapoursynth-79.tar.gz"
+  sha256 "01311b79ef22334115f79a78a6d7548bd29f35cc903ee0cea12443d49e142eb1"
   license "LGPL-2.1-or-later"
   compatibility_version 2
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
-
-  livecheck do
-    url :stable
-    regex(/^R(\d+(?:\.\d+)*?)$/i)
-  end
 
   bottle do
     rebuild 1
