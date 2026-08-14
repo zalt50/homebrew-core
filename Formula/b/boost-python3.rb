@@ -12,12 +12,12 @@ class BoostPython3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "77000c87c322c35f47f19ba70d2ee7e96454858afcd319e40a3779752bf358a5"
-    sha256 cellar: :any,                 arm64_sequoia: "e38c32230702a701b9925647b7e60d1bdb4898f4f28edc385616677d12ae4248"
-    sha256 cellar: :any,                 arm64_sonoma:  "73034591865ce9f6f06788722f803643e3bb46c3f476efb9bca0a53326bde841"
-    sha256 cellar: :any,                 sonoma:        "4a0b132affb3cd982ee303ca1935260a3bd2f9cba79b08e50cb3c3ece1d47a80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc66b1167e63982f9b637a72b9f3aec2dfedd97796ee6cce51e8de491963f878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d63c94b12444cb43b121226bd0e0c8d02e2a89f91ca18040601a2a83ea2292"
+    sha256 cellar: :any, arm64_tahoe:   "ba993fc843a2e0491bafb23fa3e66e83e75eb7491a5ca68e816ea448cf12be2a"
+    sha256 cellar: :any, arm64_sequoia: "a3b8c0c72e47aa910606620c2dc8ff6f4bf1de2402e10e0318a832d6a93e113f"
+    sha256 cellar: :any, arm64_sonoma:  "b19c18377989359c04eac34969c077d73e71a082cfae0cef4a3939dc08b4030a"
+    sha256 cellar: :any, sonoma:        "6fee4f21a171aeab2bd4d329f0a7d97a360328c919708e4b8ccc084968598ba9"
+    sha256 cellar: :any, arm64_linux:   "200d378d1813f12a20f49e398d7ea5f13d310dfdec560c81af02a277c0608075"
+    sha256 cellar: :any, x86_64_linux:  "1d7a782ce31e27693e78b3178202ec5acf948d5e7e47c57a772dbf9f5119e046"
   end
 
   depends_on "numpy" => :build
