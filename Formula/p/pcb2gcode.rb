@@ -28,13 +28,12 @@ class Pcb2gcode < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a0ee0759888cdc1df63db194da77d2d1964e3ca80149364809117b388090cdbb"
-    sha256 cellar: :any,                 arm64_sequoia: "1cb1185825413d823d5c5db4886a69942d932a909627a4136df485c8375c883d"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c6d3d7d32f25c17bdaf908eff61bd3ff2660fde46d03baf3336f422f488723d"
-    sha256 cellar: :any,                 sonoma:        "67c13b9634a892c495204267d66b00635dbeb7ffe24ee088bffc61c18528f058"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccf34a378edf5529f4a112acbc65ce4ddf2ff209eb5651221615ea014009ba44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0788506858ed2a230f70518f05581ea109f6425593e7a74f78667067272a3215"
+    sha256 cellar: :any, arm64_tahoe:   "a61d6217c2ce4a4f285e6a293e9360a37cc5d599176fb8cbf4d73320d92b10a6"
+    sha256 cellar: :any, arm64_sequoia: "d2cd1b79a3ef53f44dcc6925326322a1d832e856a912952d0d32bd978d239b56"
+    sha256 cellar: :any, arm64_sonoma:  "e327672859159b513ec7bd2f252ab634ff1c2c21a56c69c640d17307eb5c2744"
+    sha256 cellar: :any, sonoma:        "bb07d4a6fa70965965d3a0c7033df9873df5c602e1e0e41483fc7241c109a3ed"
+    sha256 cellar: :any, arm64_linux:   "5036973bc301e7f18d2a938188a1af76553efe3f15a37e7ff18c8837c4525213"
+    sha256 cellar: :any, x86_64_linux:  "616bea02b2e11a5266a152db3d104de5c714be791bb081769c63050e768e7004"
   end
 
   depends_on "cmake" => :build
