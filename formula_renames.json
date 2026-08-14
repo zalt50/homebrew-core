@@ -180,6 +180,7 @@
   "trust-dns": "hickory-dns",
   "twine-pypi": "twine",
   "usbmuxd": "libusbmuxd",
+  "vapoursynth-sub": "vapoursynth-subtext",
   "vercel-cli": "vercel",
   "vultr": "vultr-cli",
   "wcurl": "curl",
