@@ -10,8 +10,8 @@ class Cryfs < Formula
   head "https://github.com/cryfs/cryfs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "aad3465262b4d592cf14d87253fca6f7543c8f1f1b6a5ab177d36befda519fd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d391a757720609a5f34600e573d517e8f061afddb31ff743d4f18737e2cf399"
+    sha256 cellar: :any, arm64_linux:  "f37d5f9737038bc459af168ff87848d3c6385189cb4939c19b6b4136db4e547b"
+    sha256 cellar: :any, x86_64_linux: "f1527479be0986f7cea6a71eb7e95522a9eb133a8dc7e2b697f7d689deb7fcf0"
   end
 
   # Can be undeprecated if v2 is released or FUSE 3 support is added to v1
