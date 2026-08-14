@@ -43,7 +43,7 @@ class Vapoursynth < Formula
   def python3 = "python3.14"
 
   def install
-    ENV.runtime_cpu_detection if Hardware::CPU.intel?
+    ENV.runtime_cpu_detection
     ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("llvm")}/c++" if OS.mac? && MacOS.version <= :ventura
 
     # NOTE: Cannot `pip install` into prefix as VapourSynth expects a standard
