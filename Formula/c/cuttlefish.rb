@@ -6,6 +6,15 @@ class Cuttlefish < Formula
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/cuttlefish.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a93b89acab8fbd217448566870e441543a2196f2a21587da14f98aa4e76bd84a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bef53c8395475decf053cef4ca93e7312635b6ca382f724449abf7bc3935428"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6b0689c2e1c1a146be3c1c6b5fc04a03e197d2210609559ea90c460536c0247"
+    sha256 cellar: :any_skip_relocation, sonoma:        "004965e418d46e0812453bf920e536140b300284dfc5cac983ec70abee2b2625"
+    sha256 cellar: :any,                 arm64_linux:   "ae23e8f7c68e830a032dc97f4a7d5b34816a13493e9a99117a93e10620b5d339"
+    sha256 cellar: :any,                 x86_64_linux:  "bb73abcb100bd39d67ee0479ecef6e057c07ab8406aab90e548f7f3bf191db11"
+  end
+
   depends_on "rust" => :build
 
   def install
