@@ -4,7 +4,8 @@ class Qrencode < Formula
   url "https://github.com/fukuchi/libqrencode/archive/refs/tags/v4.1.1.tar.gz"
   sha256 "5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c"
   license "LGPL-2.1-or-later"
-  compatibility_version 1
+  revision 1
+  compatibility_version 2
   head "https://github.com/fukuchi/libqrencode.git", branch: "master"
 
   bottle do
@@ -24,7 +25,11 @@ class Qrencode < Formula
   depends_on "libpng"
 
   def install
-    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    args = %W[
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
