@@ -19,7 +19,6 @@ class Libgnt < Formula
     sha256               x86_64_linux:  "7b441c9f9f4ef6546098899d79a1a28705715d232e16e43cf1050ba96df1b00b"
   end
 
-  depends_on "gtk-doc" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
@@ -34,13 +33,11 @@ class Libgnt < Formula
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-
     # upstream bug report on this workaround, https://issues.imfreedom.org/issue/LIBGNT-15
     inreplace "meson.build", "ncurses_sys_prefix = '/usr'",
                              "ncurses_sys_prefix = '#{formula_opt_prefix("ncurses")}'"
 
-    system "meson", "setup", "build", "-Dpython2=false", *std_meson_args
+    system "meson", "setup", "build", "-Ddoc=false", "-Dpython2=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
