@@ -1,8 +1,8 @@
 class Serve < Formula
   desc "Static http server anywhere you need one"
   homepage "https://github.com/syntaqx/serve"
-  url "https://github.com/syntaqx/serve/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "a557da378ecf66d34585542b365daf6e35e1e926452f4bb96f6ab1b151c66e0b"
+  url "https://github.com/syntaqx/serve/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "636223c5b9d9af83601ad82be5dd8788bd35b58160f4420a899e00fc82e7618d"
   license "MIT"
   head "https://github.com/syntaqx/serve.git", branch: "main"
 
@@ -22,6 +22,7 @@ class Serve < Formula
   end
 
   test do
+    (testpath/"index.html").write("<h1>serve</h1>")
     port = free_port
     pid = spawn bin/"serve", "-port", port.to_s
     sleep 1
