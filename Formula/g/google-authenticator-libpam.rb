@@ -4,6 +4,7 @@ class GoogleAuthenticatorLibpam < Formula
   url "https://github.com/google/google-authenticator-libpam/archive/refs/tags/1.11.tar.gz"
   sha256 "3ee08a6dd46aace7dba1c88cf47e9cd267447ccd1cd8be1d5a05fd0e6816062d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "bd5ef94f8320f6da49f1cfa681d63bb58d9578ced890f6b1c2811b5451755e0f"
