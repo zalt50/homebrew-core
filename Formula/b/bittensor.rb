@@ -3,8 +3,8 @@ class Bittensor < Formula
 
   desc "SDK and command-line tool for the Bittensor network"
   homepage "https://subtensor.vercel.app/"
-  url "https://files.pythonhosted.org/packages/3d/9b/28146b1d34bc4fcae886e8e9c448e58a6ca5060393e40a279c4c1be25bf4/bittensor-11.0.2.tar.gz"
-  sha256 "90d790d50cb51d12bba65cd18892fb5d6e7addf56fb5706675ec3bcb5bce9e61"
+  url "https://files.pythonhosted.org/packages/e5/78/6a67e5814663debefa20d180c6d4df7a581eace2ffc3c196409d46808025/bittensor-11.1.0.tar.gz"
+  sha256 "97be7e9d523ca36d93eddc7b96318b42a7bbd9512b53c757c5807a7dafb4371d"
   license "Apache-2.0"
 
   bottle do
@@ -34,13 +34,13 @@ class Bittensor < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/5f/c9/df9a5450b54e6dcbb6e8f3fd95631ab849ba1ed8e7899844c0d71bab576c/bitarray-3.10.0.tar.gz"
-    sha256 "d8f8dbcda062ea59b3a6d5233b5a9b67f6bf58c1418ad8f418c5138361f9f068"
+    url "https://files.pythonhosted.org/packages/1f/c2/ac331091a307bf9f56b7a0f9a8fb4916158bf8dae3a97edebd91f43c985c/bitarray-3.10.1.tar.gz"
+    sha256 "c33e48906407ab3d0edb96cc5ab2a599bda5dd04704ebcd9b3e0eedce7310e0a"
   end
 
   resource "bittensor-core" do
-    url "https://files.pythonhosted.org/packages/e8/23/cf3400688f7cd49fb6b8df7f16eef2f420a038c3fb7a351f1d980b88fd19/bittensor_core-0.1.2.tar.gz"
-    sha256 "3ec9cd001ebd8a8bb82e098fb6c2f076b088d268f281ce061fcab2b26d48ec34"
+    url "https://files.pythonhosted.org/packages/87/1d/6fdd630e46ae3a84e016415027900b0aa91d9d3265501b8d5fcb1491bb6d/bittensor_core-0.1.3.tar.gz"
+    sha256 "c8a4b3f3c560bb5d9c23c635a4e00122c3ef425b3aa0083200878eb3060d2a47"
   end
 
   resource "ckzg" do
