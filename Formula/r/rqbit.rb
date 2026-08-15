@@ -1,8 +1,8 @@
 class Rqbit < Formula
   desc "Fast command-line bittorrent client and server"
   homepage "https://github.com/ikatson/rqbit"
-  url "https://github.com/ikatson/rqbit/archive/refs/tags/v8.1.1.tar.gz"
-  sha256 "452b8260fabba938567e1819a9edfcf6b69579ecd5f8b87fee4ca1666fa8fede"
+  url "https://github.com/ikatson/rqbit/archive/refs/tags/v9.0.0.tar.gz"
+  sha256 "a5c549c35e5a1e643e67376fd465158421a57e600594b69438f444b804fb6f34"
   license "Apache-2.0"
   head "https://github.com/ikatson/rqbit.git", branch: "main"
 
@@ -59,6 +59,6 @@ class Rqbit < Formula
     EOS
 
     output = shell_output("#{bin}/rqbit download --list --output-folder #{testpath} '#{magnet_uri}'")
-    assert_match " File \"archlinux-2017.02.01-dual.iso\", size 870.0Mi", output
+    assert_match "File archlinux-2017.02.01-dual.iso, size 870.0Mi", output
   end
 end
