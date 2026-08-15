@@ -17,13 +17,14 @@ class Libnotify < Formula
 
   depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "gtk-doc" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "gdk-pixbuf"
   depends_on "glib"
+
+  uses_from_macos "libxslt" => :build # for xsltproc
 
   on_macos do
     depends_on "gettext"
@@ -34,7 +35,7 @@ class Libnotify < Formula
 
     args = %w[
       -Dgtk_doc=false
-      -Dman=false
+      -Dman=true
       -Dtests=false
     ]
 
