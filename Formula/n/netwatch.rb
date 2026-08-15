@@ -6,12 +6,12 @@ class Netwatch < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c857c17f9eaa372f15b192f405996da3840aefd0d6214a4140d963d3d5ff9d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d0c3e2bd53408c3f69441b0235e050840be1d29b908d03f8c82e64ef7d0e136"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eb49d81bb1b42ed3d87e5ec8ea2c253ceb78637d3d5b20d660e30e530c50a5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0199883936ec4377d64fb20c709d96e3c1df630ca8e347d330c9786c7255a0a3"
-    sha256 cellar: :any,                 arm64_linux:   "3f6720078cff601c45d9ab61dd70ba4ff49d4027e601bde3e3c31ff1e87451e2"
-    sha256 cellar: :any,                 x86_64_linux:  "638b53fb2bec0daa7a693fb09e6a7dc25574b8fa6af32a6b315e7dc33dea55c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55b53e54c5b74ff6c45bd5c40e687e7f710da4d43698e1c96c674cb35b6dbe76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b705eb82ca167fe08342cbdea2f8486722b0fd67f99ab9fb398a85fa5deab59a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f0b9b7bd19c422fe8741a2174f315b54c53db60caed24b026287dacadb278dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c833616e6ac9dddbd7090f8bb997d22d21ebf9f6b85e820ea82f214677f9f485"
+    sha256 cellar: :any,                 arm64_linux:   "cf3277bdb203d3699b8e0aa22bb2f6edd13d6331056e27d1a3196b67ed17206e"
+    sha256 cellar: :any,                 x86_64_linux:  "c34448d73a403fd9b0c33bfb94f732d56224a3a0a6d4c751db48403514f4360d"
   end
 
   depends_on "rust" => :build
