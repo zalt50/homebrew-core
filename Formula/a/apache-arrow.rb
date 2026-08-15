@@ -50,7 +50,19 @@ class ApacheArrow < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
+  # Apply commit from Debian maintainer's upstream PR to support CPUs older than SSE4.2.
+  patch do
+    on_intel do
+      url "https://github.com/apache/arrow/commit/fe4ed9e5d3aa9ce921ba6ba98b7f1ea678f833a9.patch?full_index=1"
+      sha256 "568ea5843d499f972e8861758747701e29e17babf183461bd0479746d03e4380"
+      type :unofficial
+      resolves "https://github.com/apache/arrow/pull/50547"
+    end
+  end
+
   def install
+    ENV.runtime_cpu_detection
+
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DLLVM_ROOT=#{formula_opt_prefix("llvm")}
@@ -79,10 +91,14 @@ class ApacheArrow < Formula
       -DARROW_INSTALL_NAME_RPATH=OFF
       -DPARQUET_BUILD_EXECUTABLES=ON
     ]
-    args << "-DARROW_MIMALLOC=ON" unless Hardware::CPU.arm?
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac? # Reduce overlinking
-    # SVE bpacking kernel fails a static_assert; disable SVE runtime dispatch
-    args << "-DARROW_RUNTIME_SIMD_LEVEL=NONE" if OS.linux? && Hardware::CPU.arm?
+
+    # ARROW_SIMD_LEVEL sets the minimum required SIMD. Since this defaults to
+    # SSE4.2 on x86_64, we need to reduce level to match oldest supported CPU.
+    # Ref: https://arrow.apache.org/docs/cpp/env_vars.html#envvar-ARROW_USER_SIMD_LEVEL
+    #
+    # NOTE: Do not remove this while Core 2 is oldest supported CPU
+    args << "-DARROW_SIMD_LEVEL=NONE" if Hardware::CPU.intel?
 
     system "cmake", "-S", "cpp", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

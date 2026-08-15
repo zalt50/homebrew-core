@@ -1,6 +1,7 @@
 [
   "abseil",
   "aom",
+  "apache-arrow",
   "aws-checksums",
   "aws-sam-cli",
   "bitcoin",
