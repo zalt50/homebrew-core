@@ -5,6 +5,11 @@ class DuaCli < Formula
   sha256 "68a37e947aa19d2aeed3f24180e6c52017a7c185677456acabcde38ce10cbb9e"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7edde17d858b27d288d38deab1161a3d6726dab8803b04b77219c0acb5341b05"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "099d8b8ae540e1125f4899ee636dc319e1c1da507074a126cae2da4499adaa75"
