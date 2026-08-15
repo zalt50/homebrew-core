@@ -7,7 +7,7 @@ class Nanobind < Formula
   head "https://github.com/wjakob/nanobind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "583a584a357f739ce06d6766acca8f6cd0195fd50ddbe3089d7ebb848a474cfd"
+    sha256 cellar: :any_skip_relocation, all: "6a7e269f828e7f8d7c9ac1804586b45d4e9cda3294ff145a4a5ddcb0c2bdf40a"
   end
 
   depends_on "cmake" => [:build, :test]
