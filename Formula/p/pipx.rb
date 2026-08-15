@@ -9,7 +9,7 @@ class Pipx < Formula
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "79325419a5a0875d80d6448f53b155a9ad8826c3153b30e00a340c650db0b28d"
+    sha256 cellar: :any_skip_relocation, all: "9098b1786b435593818b35f54b2c3cfcece7f31865fddfb3ef28585a3c99406e"
   end
 
   depends_on "python@3.14"
