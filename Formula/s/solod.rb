@@ -5,6 +5,7 @@ class Solod < Formula
     tag:      "v0.3.0",
     revision: "b4a71c0a7ec37a1657938f262ad8fa9bf55b46d4"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/solod-dev/solod.git", branch: "main"
 
   bottle do
