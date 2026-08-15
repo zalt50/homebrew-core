@@ -18,7 +18,6 @@ class FluidSynth < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "glib"
   depends_on "libsndfile"
   depends_on "readline"
 
@@ -42,7 +41,6 @@ class FluidSynth < Formula
       -Denable-coverage=OFF
       -Denable-coreaudio=#{OS.mac?}
       -Denable-coremidi=#{OS.mac?}
-      -Denable-dart=OFF
       -Denable-dbus=OFF
       -Denable-dsound=OFF
       -Denable-floats=OFF
@@ -51,8 +49,6 @@ class FluidSynth < Formula
       -Denable-ipv6=ON
       -Denable-jack=#{OS.linux?}
       -Denable-ladspa=OFF
-      -Denable-lash=OFF
-      -Denable-libinstpatch=OFF
       -Denable-libsndfile=ON
       -Denable-midishare=OFF
       -Denable-network=ON
@@ -65,7 +61,7 @@ class FluidSynth < Formula
       -Denable-profiling=OFF
       -Denable-pulseaudio=#{OS.linux?}
       -Denable-readline=ON
-      -Denable-sdl2=OFF
+      -Denable-sdl3=OFF
       -Denable-systemd=#{OS.linux?}
       -Denable-trap-on-fpe=OFF
       -Denable-threads=ON
@@ -88,10 +84,6 @@ class FluidSynth < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "sf2"
-
-    system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "static"
-    lib.install "static/src/libfluidsynth.a"
   end
 
   test do
