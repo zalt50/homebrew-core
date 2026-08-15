@@ -12,13 +12,12 @@ class Smlnj < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c7e181578cf2fc684e4894f40ca0537b6e1bf14eea5e6d024bf54e531f2848b5"
-    sha256 arm64_sequoia: "602e9365b6d5395cc83f40be0a26fb456a7d472deeef23a650f0f88cc466cb29"
-    sha256 arm64_sonoma:  "955e5427747a25e5faeddd7ad6fbc67ac15e09aaf5a037c76e8b40f24f5e4ecc"
-    sha256 sonoma:        "292a91c62f8b2d3c71564c27aea673e5a4158f76114cfad31aab3de2c2a6ba2b"
-    sha256 arm64_linux:   "e630cd54b1d783b275fcfca53f70755fd3bf3e7425832c67ed69f9b94c8bb6ff"
-    sha256 x86_64_linux:  "b9fdf377406f5c744d1b9d61909b4d47c427c307c7a1dcb68f0c91520790fc47"
+    sha256 arm64_tahoe:   "4ce9d4e7428d7a198fc2e708bcc0c01972d9579e8543a0def9476f233c458044"
+    sha256 arm64_sequoia: "3d2763be5e5de582ae81b527c88379721716afa4976468e033719fe5e59bc06b"
+    sha256 arm64_sonoma:  "2f5f5684decbd6fe333f95ce3cc6af83b21568be3c946b390d5138eaef5a9ace"
+    sha256 sonoma:        "0962303312f1db8c0d989aeb87a7111a9a16180f07917c26cf738e42361520e9"
+    sha256 arm64_linux:   "6c711d11aef31e1e65599a49a757d5d1a2eff056e00eba644e56728a997bd8f7"
+    sha256 x86_64_linux:  "540523a0a48f9826b00e874bf0ef7f7c3261c66b7e1fb8ee06b5d37fc8e197ed"
   end
 
   depends_on "autoconf" => :build
