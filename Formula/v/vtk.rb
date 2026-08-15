@@ -1,11 +1,10 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
   homepage "https://www.vtk.org/"
-  url "https://www.vtk.org/files/release/9.6/VTK-9.6.2.tar.gz"
-  sha256 "aed12cec12a9609179bf66329070266627ca64244a10856a452b2a17ffb04a1d"
+  url "https://www.vtk.org/files/release/9.7/VTK-9.7.0.tar.gz"
+  sha256 "affdb7a15ec34ee0174407f911ab70b646c7af01161818bbab4e1160b7eff720"
   license "BSD-3-Clause"
-  revision 1
-  compatibility_version 3
+  compatibility_version 4
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   livecheck do
