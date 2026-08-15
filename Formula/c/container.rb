@@ -8,7 +8,7 @@ class Container < Formula
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "3d0839a9ac3e8376bcd8b865fce165160b65d52237a34ce29c773cf814dc7f12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "73abfead9c7f27b216ce4c325117bda5ebfce00ac10c4c7085bb05ba5fee8ab2"
   end
 
   depends_on xcode: ["26.0", :build]
