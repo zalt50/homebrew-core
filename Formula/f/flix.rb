@@ -12,12 +12,12 @@ class Flix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73349d34d38094d9febccac2acfe6f84b7cb047a4ac28f8c539c40fd6927749f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54e2a70d7db4ac24d3f4067fbcfea3b11332c7cf2a3e7c71fb9d7b2eefedd5c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "310256a1cc7a7cc3a98c4e3d26a2561512afa7d4a8025ee8f31d7dfd7bd8b83d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f6eeceaf2ec0326866f308ea57653ee33916a053f7f49d5bf47bf1dbc6a8fda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2e467186704f78b49a0f71bc7ceb802c1a0f66c85c171e9ea50c21209cfdbba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4428020132f5f896c52d51bc136f4a02e87e42c31bf4f3a1e667b39d84b324f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bd414a8b6eb64cbc74e0245ccc1ea5abadd1b97bd074363b496c356934c1b2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d51c947530650dd3f95cc3f903c36b0a20e8bb9592985770b755511664771c78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fda39dab991839aca38eb222e6ccd9ffaf1e94864ef4da58ba6dc53dd3024530"
+    sha256 cellar: :any_skip_relocation, sonoma:        "daba37ea8474679f25ba86dd6f553743f3c70164dc3173e2fc7a556991747952"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "209f9a9f269b58789dcd3bca784decd9de26e30ba124edf979e63807da28c0e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18e839a50eb1134270f0c52a0ede56004e8fe29dceab679912a1bb8d0439bbea"
   end
 
   depends_on "mill" => :build
