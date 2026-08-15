@@ -1,8 +1,8 @@
 class Nnn < Formula
   desc "Tiny, lightning fast, feature-packed file manager"
   homepage "https://github.com/jarun/nnn"
-  url "https://github.com/jarun/nnn/archive/refs/tags/v5.2.tar.gz"
-  sha256 "f166eda5093ac8dcf8cbbc6224123a32c53cf37b82c5c1cb48e2e23352754030"
+  url "https://github.com/jarun/nnn/archive/refs/tags/v5.3.tar.gz"
+  sha256 "79ee69f3ced7c0778d207df76b4d4d680636975ccda002eeb19d0917fcba3d36"
   license "BSD-2-Clause"
   head "https://github.com/jarun/nnn.git", branch: "master"
 
@@ -32,6 +32,9 @@ class Nnn < Formula
   test do
     # Testing this curses app requires a pty
     require "pty"
+
+    # nnn 5.3 aborts if XDG_CONFIG_HOME is set but not an accessible directory
+    ENV["XDG_CONFIG_HOME"] = testpath
 
     (testpath/"testdir").mkdir
     PTY.spawn(bin/"nnn", testpath/"testdir") do |r, w, pid|
