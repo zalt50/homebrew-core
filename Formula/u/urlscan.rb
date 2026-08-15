@@ -9,7 +9,7 @@ class Urlscan < Formula
   head "https://github.com/firecat53/urlscan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f55b54c7f10b4bdb6e968a642e7406561709dd50721772caf42c7eaa162b051d"
+    sha256 cellar: :any_skip_relocation, all: "8c4213d6544477dcc258e656587c5f03807e732c92aa5364695b7cf36e9628f1"
   end
 
   depends_on "python@3.14"
