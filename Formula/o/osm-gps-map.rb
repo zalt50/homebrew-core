@@ -1,35 +1,9 @@
 class OsmGpsMap < Formula
   desc "GTK+ library to embed OpenStreetMap maps"
   homepage "https://github.com/nzjrs/osm-gps-map"
+  url "https://github.com/nzjrs/osm-gps-map/releases/download/1.2.1/osm-gps-map-1.2.1.tar.gz"
+  sha256 "277d6835220a6a2954e09eb304a8cd6ff49b72542c97c4fc36e53e905f2a747c"
   license "GPL-2.0-or-later"
-  revision 2
-
-  stable do
-    # TODO: Make autoconf, automake, gtk-doc and libtool HEAD-only on next release
-    url "https://github.com/nzjrs/osm-gps-map/releases/download/1.2.0/osm-gps-map-1.2.0.tar.gz"
-    sha256 "ddec11449f37b5dffb4bca134d024623897c6140af1f9981a8acc512dbf6a7a5"
-
-    patch do
-      file "Patches/libtool/configure-big_sur.diff"
-      type :unofficial
-    end
-
-    # Apply Void Linux's patch for libsoup 3. Remove in the next release.
-    # This is a rebased copy of upstream commit that applies on stable release
-    patch do
-      url "https://raw.githubusercontent.com/void-linux/void-packages/f6b0cf8ca04678301773327b9a2d5efb043dae3d/srcpkgs/libosmgpsmap/patches/libsoup-3.patch"
-      sha256 "045c8c9a6a317aea89158154818399815525f5b5cb0340332f92b250d73e5bc6"
-      type :backport
-      resolves "https://github.com/nzjrs/osm-gps-map/pull/99"
-    end
-
-    # Backport fix for add_point
-    patch do
-      url "https://github.com/nzjrs/osm-gps-map/commit/639ea5e02d2cb47cbc15554d61b1ba6b0ee073b6.patch?full_index=1"
-      sha256 "7979e6d050e83b2e0f84c3e9671828c59de36d491b497a1b780b62bcc9ea1f69"
-      type :backport
-    end
-  end
 
   bottle do
     rebuild 2
@@ -45,14 +19,15 @@ class OsmGpsMap < Formula
 
   head do
     url "https://github.com/nzjrs/osm-gps-map.git", branch: "master"
+
+    depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
+    depends_on "automake" => :build
+    depends_on "gtk-doc" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "gtk-doc" => :build
-  depends_on "libtool" => :build
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "cairo"
@@ -73,9 +48,6 @@ class OsmGpsMap < Formula
   end
 
   def install
-    # TODO: Remove next release
-    system "autoreconf", "--force", "--install", "--verbose" if build.stable?
-
     configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, "--disable-silent-rules", "--enable-introspection", *std_configure_args
     system "make", "install"
