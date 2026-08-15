@@ -4,6 +4,7 @@ class Profanity < Formula
   url "https://profanity-im.github.io/tarballs/profanity-0.18.2.tar.xz"
   sha256 "46964928742733fffcf8ca65d37ac0874c8ccd6270cbc065cb1013cee94e9e3b"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/profanity-im/profanity.git", branch: "master"
 
   bottle do
