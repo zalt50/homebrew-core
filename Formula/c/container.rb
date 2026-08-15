@@ -4,6 +4,7 @@ class Container < Formula
   url "https://github.com/apple/container/archive/refs/tags/1.2.2.tar.gz"
   sha256 "61841d675a6542179aaa1b48ec00dc2ff8b888a58d9ec0d87fa279b30b9b5ced"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
@@ -39,6 +40,8 @@ class Container < Formula
       "container-runtime-linux" => { source: "RuntimeLinux",     entitlements: true  },
       "machine-apiserver"       => { source: "MachineAPIServer", entitlements: false,
                                      resources: ["init", "create-user.sh"] },
+      "k8s"                     => { source: "K8s",              entitlements: false,
+                                     resources: ["kindnet.yaml"] },
     }
     plugins.each do |bin_name, opts|
       plugin_dir = libexec/"container-plugins/#{bin_name}"
