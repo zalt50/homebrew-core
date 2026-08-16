@@ -3,8 +3,8 @@ class Imgp < Formula
 
   desc "High-performance CLI batch image resizer & rotator"
   homepage "https://github.com/jarun/imgp"
-  url "https://github.com/jarun/imgp/archive/refs/tags/v2.9.tar.gz"
-  sha256 "4cc3dcbe669ff6b97641ce0c6c332e63934d829a0700fd87171d5be5b1b89305"
+  url "https://github.com/jarun/imgp/archive/refs/tags/v3.0.tar.gz"
+  sha256 "8d11fc1969ec908b996e04d2d266137fa167221152d2a9e4197308393b41bf03"
   license "GPL-3.0-or-later"
 
   bottle do
