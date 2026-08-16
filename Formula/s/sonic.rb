@@ -6,12 +6,12 @@ class Sonic < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed574ae9b9dba3214141abbb2e450e7e508fa614d5f6ee09f5905a919efa32dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eac931473fd6bd7252b5bd8edaacba2669db9cfca52f48ad9d2ad2dfeedc48b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fb2809eac2fae71fdd646367be9c9d20e908a3313aa5f70218ce5260ef96f40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "908ba9793d721ae4c7b9b4f1b1cab12e867397c8c4986cbb5a8d065c6d9c052a"
-    sha256 cellar: :any,                 arm64_linux:   "134297e47144d340021413c7181ae398b2a064a81096e298554c5ba48819a836"
-    sha256 cellar: :any,                 x86_64_linux:  "cbc7a47a7eaa1807648a0f5f3fb0439118f4303b98518c089426b2e7d7b39b74"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62f7f84c587f8dcd4b10bb2f6d5d1d90f41d801a48a71e961ce3c0578c366a1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36253e08494b81dda36c123ff2087b5eca859cb40ede9ca24f67880d999d78ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a893cd56f7143dc605d4c16ef6e42476181a15398f9ceaa0bff4a9ebdf69f396"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b836a5514f7f2433f84fdc8a3423ffec0c9a2ce46b37280cb1c9881b016237b"
+    sha256 cellar: :any,                 arm64_linux:   "386ad2610ffa0db0f447b0a275297f698a5a40e99bbea68d1079945d7d285871"
+    sha256 cellar: :any,                 x86_64_linux:  "13a3c03f6e821b12af217c45b65202df0102c90a8d3767120023e9ae893a9eb8"
   end
 
   depends_on "rust" => :build
