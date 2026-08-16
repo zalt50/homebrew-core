@@ -9,14 +9,14 @@ class Pyinstaller < Formula
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d5d1bcb5baf4dca875d36ed50956ceb85acb5f6688cff8bcd4ff09d41169390"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "081bf81eb145e006c589ec30b6a0af09081bc46d69075a546eb3928d2c42766c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1daaadf7a4f8036ee0efd6cf5a35d9c9eb23ee79f95373a505275cbab7fb8fa8"
-    sha256 cellar: :any_skip_relocation, tahoe:         "d9902468232c899e4ea947b8539cc73c5987eba80ede001b6c635502ba7b4753"
-    sha256 cellar: :any_skip_relocation, sequoia:       "941c9bef757ee01d73893a36f36aa6abe4bafbdb81867018f3fe0d4d701b4ace"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4ab5f9d88ab74afbac6f6d9f55fab962337378046bebbe5dfdd7b9f1ac61bb5"
-    sha256 cellar: :any,                 arm64_linux:   "183ca140b5be370f4f3e6b98a81785bd0e3005fe470c684c5798764bcd4a9e4b"
-    sha256 cellar: :any,                 x86_64_linux:  "827d3c11173a696d1bb0cf1f4b1074fe855861ef031d22b6eb26775b6c12636b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3843b85d2f0be024827199bc193146ad5f7aa23a400648a4d901c0d542eb0ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "622c778b2cd8407db8d8f828be607095fc781a5cc076d474c8bd738e43363817"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7f3cdd7c21c376b6aa2e272d5c8bd6ffc18346db4ebe79269f37e7b6d117545"
+    sha256 cellar: :any_skip_relocation, tahoe:         "608e7c592d3dcf7e7e310aa900dfe0c731b0de962ea3e9079c0c703e663864d9"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b3fa19c292fa28941c457ce7e62697ec672aaa581a0b65e1e83de55bb9ad0623"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61b6544e5fb8384dae2df5c982e121f63a33fea9654da56d0d21e796d6c8cf7c"
+    sha256 cellar: :any,                 arm64_linux:   "619b5570ff3ef2f3f20f1ccbe40d9af6ef9db4e4cbee38ba764f27ed1214e4c0"
+    sha256 cellar: :any,                 x86_64_linux:  "e0e6cb49c01a9e92fd9d285941440c0a8a2bf489611a7cded0cc00fd6252e5a1"
   end
 
   depends_on "python@3.14"
