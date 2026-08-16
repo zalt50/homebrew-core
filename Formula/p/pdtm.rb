@@ -1,8 +1,8 @@
 class Pdtm < Formula
   desc "ProjectDiscovery's Open Source Tool Manager"
   homepage "https://projectdiscovery.io"
-  url "https://github.com/projectdiscovery/pdtm/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "ff21f12711f04df6cbe850fd2501029eca880192a8426e7a620de46009d001e9"
+  url "https://github.com/projectdiscovery/pdtm/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "13746a1da82961dcfc9d797206abd6ba75336879f2292228e92a2813000d1654"
   license "MIT"
   head "https://github.com/projectdiscovery/pdtm.git", branch: "main"
 
@@ -22,8 +22,7 @@ class Pdtm < Formula
   end
 
   test do
-    # TODO: recover the version test
-    # assert_match version.to_s, shell_output("#{bin}/pdtm -version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/pdtm -version 2>&1")
     assert_match "#{testpath}/.pdtm/go/bin", shell_output("#{bin}/pdtm -show-path")
   end
 end
