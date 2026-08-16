@@ -172,6 +172,11 @@ jobs:
               path: Formula/.+
               content: \n  disable!.*\n
 
+            - label: homepage
+              path: Formula/.+
+              patch_content: \n  homepage .+\n
+              allow_any_match: true
+
             - label: legacy
               path: Formula/.+@.+
               except:
