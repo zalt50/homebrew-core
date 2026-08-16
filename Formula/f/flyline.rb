@@ -1,8 +1,8 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "9bcacde196d9b46550c1b87605e8ef30c6bdf907d4a0816bf6f9348b57645cc6"
+  url "https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "de8b969ec75af2e22f62f09c28b9951706ad9fed1616bfb45dad64675922a08c"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
@@ -45,7 +45,7 @@ class Flyline < Formula
     end
 
     output = output_log.read
-    assert_match "# Changelog", output
+    assert_match "Changelog", output
     assert_match version.to_s, output
   end
 end
