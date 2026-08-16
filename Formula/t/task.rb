@@ -1,8 +1,8 @@
 class Task < Formula
   desc "Feature-rich console based todo list manager"
   homepage "https://taskwarrior.org/"
-  url "https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v3.4.2/task-3.4.2.tar.gz"
-  sha256 "d302761fcd1268e4a5a545613a2b68c61abd50c0bcaade3b3e68d728dd02e716"
+  url "https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v3.5.0/task-3.5.0.tar.gz"
+  sha256 "9ea64b411f8314414f440ec765dfdf5a86c9f6159df47e2f60cff3db6b31157a"
   license "MIT"
   compatibility_version 1
   head "https://github.com/GothenburgBitFactory/taskwarrior.git", branch: "develop"
@@ -31,14 +31,6 @@ class Task < Formula
   end
 
   conflicts_with "go-task", because: "both install `task` binaries"
-
-  # Fix to not download `corrosion` when `SYSTEM_CORROSION` is turned on
-  patch do
-    url "https://github.com/GothenburgBitFactory/taskwarrior/commit/cd1d184f62ee45fa0030a85ede698b7aed865aa3.patch?full_index=1"
-    sha256 "a5775db70a678f8d666bd69f31aef0bccb98cf252f15d3d28f05233a6bd3b720"
-    type :backport
-    resolves "https://github.com/GothenburgBitFactory/taskwarrior/pull/3976"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DSYSTEM_CORROSION=ON", *std_cmake_args
