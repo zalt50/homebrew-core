@@ -1,8 +1,8 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.6.tgz"
-  sha256 "3cfd9681aa737c07b7444910c3b4d88a81af7a4ac8c7d3b116a987b47bbd6483"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.7.tgz"
+  sha256 "3fea5e929effcddded6ef2fb6fc7bdc49c32f560697b338013733d95b42b0e7d"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -48,20 +48,12 @@ class Pake < Formula
 
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    # `node-addon-api` 8 needs C++17, which the older `sharp` predates
-    inreplace node_modules/"icon-gen/node_modules/sharp/src/binding.gyp" do |s|
-      s.gsub! "'-std=c++0x'", "'-std=c++17'"
-      s.gsub! "'c++11'", "'c++17'"
-    end
-
-    # `icon-gen` pins an older `sharp` whose bundled `vips` shares the brewed soname
-    { node_modules => "build", node_modules/"icon-gen/node_modules" => "install" }.each do |dir, script|
-      rm_r(dir.glob("@img/sharp-*/lib/*.node"))
-      rm_r(dir.glob("@img/sharp-libvips-*/lib/libvips-cpp.*"))
-      cd dir/"sharp" do
-        system "npm", "run", script
-        rm_r("src/build/Release/obj.target")
-      end
+    # `sharp` ships prebuilds whose bundled `vips` shares the brewed soname
+    rm_r(node_modules.glob("@img/sharp-*/lib/*.node"))
+    rm_r(node_modules.glob("@img/sharp-libvips-*/lib/libvips-cpp.*"))
+    cd node_modules/"sharp" do
+      system "npm", "run", "build"
+      rm_r("src/build/Release/obj.target")
     end
   end
 
