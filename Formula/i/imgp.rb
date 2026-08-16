@@ -8,8 +8,7 @@ class Imgp < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1b830407f142350dedaa37c6eb4943fb97d59420c9f37ac79e2c0221ed4350e0"
+    sha256 cellar: :any_skip_relocation, all: "25a228f3fc9be51282ff36029fda1322123215aaa46edede5163a1a31b8156bf"
   end
 
   depends_on "pillow"
