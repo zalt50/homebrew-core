@@ -1,18 +1,18 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://ataraxy-labs.github.io/sem/"
-  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "57844f8ec07b648bad0d58b16cf05ef4074e55bab1707797498acc69aa21c894"
+  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.21.1.tar.gz"
+  sha256 "2d8d090e19ad9ddd12b4686ad301509a15dfa8678b62e9b1f319e9b86bc0a211"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "68d935e7cd5399e4cc656d6be1e48df86b60ccd0550a341bcd6f714771c4a370"
-    sha256 cellar: :any, arm64_sequoia: "8e86418946656ac70dea118b133b335b75e2e3885cb02a285c16d792c9ea1e78"
-    sha256 cellar: :any, arm64_sonoma:  "57559d654b485a3c1b45b6bef41a8afe2b1ddf2efd36bae1a7bfcf0b9801622b"
-    sha256 cellar: :any, sonoma:        "5c60f3f1c7401fefba935196a7bf3a25f97f9854cafaca0a9c5c3a169fde605b"
-    sha256 cellar: :any, arm64_linux:   "dd65417729495820183d67c57970acb15070fc9c1eb0c4a7def6f9804109088b"
-    sha256 cellar: :any, x86_64_linux:  "d13a0f615aab7b3f1f316dae13569b9a5d98f2f74408b3414dff2c583084dc23"
+    sha256 cellar: :any, arm64_tahoe:   "548090461884e2e9aca43bd9c8ade0817770d0a16b521ab23371ea9b5ffe0bda"
+    sha256 cellar: :any, arm64_sequoia: "53231426f4eb8c3a0b7fde3b65158cd8df920e1202b1376a0d2e34eadd00b2a3"
+    sha256 cellar: :any, arm64_sonoma:  "d2750a79deca06dfdeed69e70be0351f127747308350f2492109ff38ae31a1a5"
+    sha256 cellar: :any, sonoma:        "8ab7d57d249c33665c73a09a7228f2697dbe70c72af6fb38151a927f0e6139cb"
+    sha256 cellar: :any, arm64_linux:   "f624cce7d0f1597425531ef460d4ab20d744800017d5dc315b9da1a3ab84b725"
+    sha256 cellar: :any, x86_64_linux:  "c5d63837480e3cababfe560e194fabdc2dfaf357c092307fd97825682c240b4b"
   end
 
   depends_on "pkgconf" => :build
@@ -22,6 +22,12 @@ class SemCli < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Bump crate versions the v0.21.1 tag missed so `sem --version` is correct, upstream PR ref, https://github.com/Ataraxy-Labs/sem/pull/480
+  patch do
+    url "https://github.com/Ataraxy-Labs/sem/commit/0a9b9e25b87c1899b4f845bf53d460077a8bea3a.patch?full_index=1"
+    sha256 "bd1d92be66831a60e5c426c18f57f776ccd8ea9105c3d4006b29753630b0d2d8"
   end
 
   def install
