@@ -4,6 +4,7 @@ class Itk < Formula
   url "https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.4.7/InsightToolkit-5.4.7.tar.gz"
   sha256 "4907033e0e93fb04734df8556b88a670ba630b4f42b52e9f25ed4d084a7ab925"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "main"
 
   livecheck do
