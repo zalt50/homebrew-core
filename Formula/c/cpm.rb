@@ -1,8 +1,8 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.4.tar.gz"
-  sha256 "97b13d3257f72991d2b056dfc0e30806f66c1a5b487ec0236e21f23617b6eabf"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.5.tar.gz"
+  sha256 "bdb75f82f7d4a8a90971c674a980eefc95577196ebde2a2799b9ad37445f9912"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "main"
 
@@ -75,8 +75,8 @@ class Cpm < Formula
   end
 
   resource "ExtUtils::MakeMaker::CPANfile" do
-    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/ExtUtils-MakeMaker-CPANfile-0.09.tar.gz"
-    sha256 "2c077607d4b0a108569074dff76e8168659062ada3a6af78b30cca0d40f8e275"
+    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/ExtUtils-MakeMaker-CPANfile-0.11.tar.gz"
+    sha256 "87467857ca7a624cb64e5dee706eafc6a0bfeed773646c9d6d2f042ed72fb13e"
   end
 
   resource "File::Copy::Recursive" do
