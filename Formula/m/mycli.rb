@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/75/dc/23f477b6716c8d329d527ed1cf8d36fe53e1b47f81c9d962622b44a22213/mycli-2.13.2.tar.gz"
-  sha256 "3f56e719285da6760dfd1f66491cdefdddca44e91a0d236bae2f85901e7bbf37"
+  url "https://files.pythonhosted.org/packages/f7/d1/f87f4cfc8346afa97b1f6891133b9f585ab54752583baadcbf91fa4c2b0c/mycli-2.14.0.tar.gz"
+  sha256 "e019103cd8f1793ba396e77e6c2295f1a7ccee8edc1f5991ccd972efb4b6d22a"
   license "BSD-3-Clause"
 
   bottle do
@@ -300,8 +300,8 @@ class Mycli < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/83/c1/fa8563039ec30b5cc6a532271e8cf90da37e4c649a3ad80b49fb6a39023e/sqlite_utils-4.1.1.tar.gz"
-    sha256 "cf97e620b3940cd541cae9117cc24af961a6da426189fdb662f20f1950ba1f49"
+    url "https://files.pythonhosted.org/packages/7e/6b/4a7b3d20c92e6c7acedc96ef620df8e1ea8f94a26a41ab788c1c08055815/sqlite_utils-4.2.1.tar.gz"
+    sha256 "76114b6a5414714e6c70e5fa5c4781b301b590f6951b5da39c8cc60c21382ba1"
   end
 
   resource "sqlparse" do
@@ -340,13 +340,15 @@ class Mycli < Formula
   end
 
   def install
-    # sqlglotc compiles whichever sqlglot its isolated build env resolves, so pin it to our resource
-    (buildpath/"constraints.txt").write "sqlglot==#{resource("sqlglot").version}\n"
-    ENV["PIP_CONSTRAINT"] = (buildpath/"constraints.txt").to_s
-
-    without = ["polars-runtime-32"]
+    without = %w[polars-runtime-32 sqlglotc]
     without += %w[jeepney secretstorage] unless OS.linux?
     venv = virtualenv_install_with_resources(without:)
+
+    # sqlglotc must compile against our sqlglot, but `PIP_CONSTRAINT` does not reach its build env.
+    resource("sqlglotc").stage do
+      inreplace "pyproject.toml", "\n    \"sqlglot\",", "\n    \"sqlglot==#{resource("sqlglot").version}\","
+      venv.pip_install Pathname.pwd
+    end
 
     # polars enables its `nightly` feature by default, which needs a nightly compiler.
     # Disable LTO and debug info to reduce peak memory usage when linking the large extension.
