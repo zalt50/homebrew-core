@@ -2,7 +2,7 @@ class Pcl < Formula
   desc "Library for 2D/3D image and point cloud processing"
   homepage "https://pointclouds.org/"
   license "BSD-3-Clause"
-  revision 7
+  revision 8
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   stable do
@@ -23,6 +23,14 @@ class Pcl < Formula
       sha256 "f31c11abb6bec8864b7a109472768ba80e87ddf90533890c303294d264f389e1"
       type :backport
       resolves "https://github.com/PointCloudLibrary/pcl/pull/6330"
+    end
+
+    # Backport replacement of `vtkRenderer::RemoveActor2D`, removed in VTK 9.7
+    patch do
+      url "https://github.com/PointCloudLibrary/pcl/commit/4db3dc4f6588b1ba8a807087d8ed6c48d56b1a6d.patch?full_index=1"
+      sha256 "7a148236c69bfbcd1c6fca97d3285f743d800e993ae0f14a956b3bd2bfd469fe"
+      type :backport
+      resolves "https://github.com/PointCloudLibrary/pcl/pull/6394"
     end
   end
 
