@@ -7,12 +7,12 @@ class AbAv1 < Formula
   head "https://github.com/alexheretic/ab-av1.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fd06388570c001b60998543e35f79750281a55896304dc8bde49540b51ec37b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad1cc0a1bc3aea80ea20a0d5a3454b557be337417de8cc0ae0c44dbd2078892d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f13858df7e7065a8583e67fce84c3f626ecc3eb8fe77d9ccdaf0e6b0179567b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e3e8dbec76340cea17b799b15a826d7e76c20833734410e76d61dee862aa3bc"
-    sha256 cellar: :any,                 arm64_linux:   "14572da30eaf1976cce7ad6b2000f5fd6bda24724c950fd213e4c85a1201add9"
-    sha256 cellar: :any,                 x86_64_linux:  "c5565b8e6ad9f2e0f58f3258562a3f774a115d73c2c3afd3f1fc5ae72e189377"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3abc15e807efdc9969212ec944a430b48eb466213f512bc1e4718675b41e80aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f30dd5e749006ba164dbd58bd49beba72998875234863d4c46f4de9daff9a603"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f56b7ba0548b91de0856b9db725f1008b615dd6d9334ea45862f57c8d10285d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "becaf86080b1f1d3e0a1abb7dfa831f374ce80539fc540dcc8f9c58dfdd95fea"
+    sha256 cellar: :any,                 arm64_linux:   "6416d25eea523b806b424006c44d8166b01a074a96e870b35079b515c353bd8c"
+    sha256 cellar: :any,                 x86_64_linux:  "692ff0c7e04f00e2ef737dbfa00c1315e6f20a7da2a7749fbe93ed5d1e98e63d"
   end
 
   depends_on "rust" => :build
