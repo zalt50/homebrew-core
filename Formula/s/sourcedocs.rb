@@ -17,7 +17,8 @@ class Sourcedocs < Formula
     sha256                               x86_64_linux:  "2c97cd8daa81d7c7e546e71cdfdf17db555dee5260d434287266f20edb3a25a6"
   end
 
-  uses_from_macos "swift"
+  uses_from_macos "libxml2"
+  uses_from_macos "swift" # runtime as SourceKitten loads sourcekitdInProc
 
   on_macos do
     depends_on xcode: ["12.0", :build, :test]
@@ -38,7 +39,6 @@ class Sourcedocs < Formula
   end
 
   def install
-    args = ["--disable-sandbox", "--configuration", "release"]
     if DevelopmentTools.clang_build_version >= 1600
       res = resource("SourceKitten")
       (buildpath/"SourceKitten").install res
@@ -49,10 +49,10 @@ class Sourcedocs < Formula
                         .dig("state", "version")
       odie "Check if SourceKitten patch is still needed!" if pin_version != res.version
 
-      system "swift", "package", *args, "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
+      system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
     end
 
-    system "swift", "build", *args
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/sourcedocs"
     generate_completions_from_executable(bin/"sourcedocs", "--generate-completion-script")
   end
