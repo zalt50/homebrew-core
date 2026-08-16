@@ -1,8 +1,8 @@
 class Godap < Formula
   desc "Complete TUI (terminal user interface) for LDAP"
   homepage "https://github.com/Macmod/godap"
-  url "https://github.com/Macmod/godap/archive/refs/tags/v2.11.1.tar.gz"
-  sha256 "d44259fb90b4687284200cbccedf7a55c273ffd162583fdc366f9e77506622ad"
+  url "https://github.com/Macmod/godap/archive/refs/tags/v2.12.0.tar.gz"
+  sha256 "996dbf0f66a681de337b65caee65a55af3d52894049dd61e66eb429c96d24a4a"
   license "MIT"
   head "https://github.com/Macmod/godap.git", branch: "main"
 
@@ -24,7 +24,7 @@ class Godap < Formula
 
   test do
     output = shell_output("#{bin}/godap -T 1 203.0.113.1 2>&1", 1)
-    assert_match "LDAP Result Code 200 \"Network Error\": dial tcp 203.0.113.1:389: i/o timeout", output
+    assert_match "determine target hostname for TLS verification: reverse lookup 203.0.113.1", output
 
     assert_match version.to_s, shell_output("#{bin}/godap version")
   end
