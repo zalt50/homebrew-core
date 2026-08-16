@@ -1,8 +1,8 @@
 class Gpredict < Formula
   desc "Real-time satellite tracking/prediction application"
   homepage "https://oz9aec.dk/gpredict/"
-  url "https://github.com/csete/gpredict/releases/download/v2.5.2/gpredict-2.5.2.tar.bz2"
-  sha256 "186907660a96a95e70df2212d9d783710bcf53079b1508eb55a13dbed60573bc"
+  url "https://github.com/csete/gpredict/releases/download/v2.6/gpredict-2.6.tar.bz2"
+  sha256 "f4e6967cb2eeb6d74b8e8208c90dc8f4b1c00955ae1049753ad8352c927e54a3"
   license "GPL-2.0-or-later"
 
   livecheck do
