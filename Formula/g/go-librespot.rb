@@ -1,8 +1,8 @@
 class GoLibrespot < Formula
   desc "Spotify client"
   homepage "https://github.com/devgianlu/go-librespot"
-  url "https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "444e32986bf61a2b011bb672793d0d2ebcf07ccdcefab8dc8b99c618bd4ad6bc"
+  url "https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "54f5edebeedf32785383b56be0c5f4c93fbbc4189e54812c9da0a0cbde607b7e"
   license "GPL-3.0-only"
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
@@ -20,6 +20,7 @@ class GoLibrespot < Formula
   depends_on "flac"
   depends_on "libogg"
   depends_on "libvorbis"
+  depends_on "mpg123"
 
   on_linux do
     depends_on "alsa-lib"
