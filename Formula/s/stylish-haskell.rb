@@ -22,6 +22,14 @@ class StylishHaskell < Formula
 
   uses_from_macos "libffi"
 
+  # Support Cabal 3.18
+  patch do
+    url "https://github.com/haskell/stylish-haskell/commit/8982d5ebb30fd26afffc6a4bb4c7757891ee8c86.patch?full_index=1"
+    sha256 "6be3185315aeff68f05c2539376f3ab0b1e3ac858913fd1d888f2d3e7d8a50dd"
+    type :unofficial
+    resolves "https://github.com/haskell/stylish-haskell/pull/502"
+  end
+
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
     args = ["--allow-newer=base,containers,template-haskell"]
