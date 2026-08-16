@@ -25,7 +25,7 @@ class RattlerBuild < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "xz"
 
   uses_from_macos "bzip2"
