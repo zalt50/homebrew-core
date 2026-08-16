@@ -15,10 +15,10 @@ class Mole < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41162c2b22b8c8105532633c9bb6484a4562330cf8a4a26c9f448ff709541365"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71b1eb603b3665eddc8eeb2d708623c84a687293e9ae2c3d222a2064e949388b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2cad6ae21a75528683a7eabf9e6e01e1fc3886223598014ec6cb002202bc9c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57b61bead2b0963f5b50f64190d63e6c4bfa23973cf9011782aa04ff4cbf2129"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b54539e05a3a1e9b74cea41ddedcee570b9a56fff2764fc853d98325aa102d0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "572d3331f30733d32f842885717e204dbcfbe71c4b57df9b51682ed4244dbf11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a07632c7963eb4a158d789932c3580625e43b7cc39889a62b47d43d16232be4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d9127c9da62447fdaffc5935b751972b4a7df389a0e0ab81f6104f51491a24b"
   end
 
   depends_on "go" => :build
