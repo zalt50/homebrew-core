@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.32.13",
-      revision: "0f25c31bd53b64dc3fcc8fce0bde954159a67a58"
+      tag:      "v0.32.14",
+      revision: "d67ad83426633195089509347ffd4fe795120198"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -39,8 +39,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10380",
-        revision: "0b1bad14ff204627636aeb1de22ddcd5acb859d4"
+        tag:      "b10434",
+        revision: "7e4c0a96880dae4fc4268ad441f8a6446bd5460a"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
