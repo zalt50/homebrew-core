@@ -1,8 +1,8 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
   homepage "https://github.com/shshemi/tabiew"
-  url "https://github.com/shshemi/tabiew/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "88876174a3a008618e5b2a55df5dffa26cc0593ce2dcf6b057900ffc303732a8"
+  url "https://github.com/shshemi/tabiew/archive/refs/tags/v0.14.2.tar.gz"
+  sha256 "20e1d8c101d8882860f52d3fa5106382544ff1441d57565824dce65c091e8360"
   license "MIT"
 
   bottle do
@@ -47,7 +47,7 @@ class Tabiew < Formula
       r.winsize = [80, 130]
       r.set_encoding("UTF-8")
       refute_nil r.expect(/\e\[6n/, 10), "expected cursor position query"
-      w.write "\e[1;1R\r"
+      w.write "\e[1;1R"
       refute_nil r.expect("you think?", 30), "expected the CSV to render"
       w.write ":Query\r"
       w.write "select wait from test where tide < 40\r"
