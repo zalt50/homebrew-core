@@ -1,8 +1,8 @@
 class Lazycontainer < Formula
   desc "Terminal UI for Apple Containers"
   homepage "https://github.com/andreybleme/lazycontainer"
-  url "https://github.com/andreybleme/lazycontainer/archive/refs/tags/v0.0.1.tar.gz"
-  sha256 "c674297ccb1c3897865e4dd14d64ce7346f04f66430c125ad6c8bdfff0ba4228"
+  url "https://github.com/andreybleme/lazycontainer/archive/refs/tags/v0.0.2.tar.gz"
+  sha256 "b7aa9e050f947c7e99c7059eed75477711e1f558d0b0c90098421bee196e1a64"
   license "MIT"
   head "https://github.com/andreybleme/lazycontainer.git", branch: "main"
 
@@ -16,13 +16,6 @@ class Lazycontainer < Formula
   # limited by Apple Containers support:
   depends_on arch: :arm64
   depends_on macos: :tahoe
-
-  patch do
-    url "https://github.com/andreybleme/lazycontainer/commit/cc9ad42bce4a28d662726c41b55dc28d2cb6eaae.patch?full_index=1"
-    sha256 "7b1703ab7e11a1b655845ad98647fb01feb815db5caa1c42498169ec83f99ddd"
-    type :backport
-    resolves "https://github.com/andreybleme/lazycontainer/pull/11"
-  end
 
   def install
     system "go", "build", *std_go_args, "./cmd"
