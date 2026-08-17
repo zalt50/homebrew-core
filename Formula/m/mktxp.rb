@@ -3,8 +3,8 @@ class Mktxp < Formula
 
   desc "Prometheus Exporter for Mikrotik RouterOS devices"
   homepage "https://github.com/akpw/mktxp"
-  url "https://files.pythonhosted.org/packages/d2/a7/65696f79c7a7d275c7d08d82155b26460ce34d5a08d3014e9666876f4027/mktxp-1.2.19.tar.gz"
-  sha256 "e840c4e0a7a7894c56a20e4fea73d44020f93344f61339b197f20a669cc89b8e"
+  url "https://files.pythonhosted.org/packages/27/c6/cb2ff652ad6610ff29f61cf9f89fc4cae7f6fc48f54aa18ae25ac2b7334a/mktxp-1.2.20.tar.gz"
+  sha256 "6b8c5d77f7a248f89ff4f0de5175e187e8ec9417387a149f302f4cfc10a43299"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -30,13 +30,13 @@ class Mktxp < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/1b/fb/d9aa83ffe43ce1f19e557c0971d04b90561b0cfd50762aafb01968285553/prometheus_client-0.25.0.tar.gz"
-    sha256 "5e373b75c31afb3c86f1a52fa1ad470c9aace18082d39ec0d2f918d11cc9ba28"
+    url "https://files.pythonhosted.org/packages/52/73/f1334c29c2af4cd9dba6c7817e61b611bd0215e2eb5565c6064a4de18802/prometheus_client-0.26.0.tar.gz"
+    sha256 "04a91bcf94e2cf74a44a1a874d651a2e853ed354b6e822f3b7487751465d5c2b"
   end
 
   resource "pyyaml" do
