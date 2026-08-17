@@ -6,12 +6,12 @@ class Dicebear < Formula
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "e7905dc33269afff9a0df5a49af1015053bd9399d2a9090cc87e84a7df101624"
-    sha256               arm64_sequoia: "8fc724a7d03d6528b38474d9d94d39b8da996e2004bae147dc8cee7e867a55c8"
-    sha256               arm64_sonoma:  "dfe44245f53f015029430cd82a5e0c5906b85f4e5e059ee2f402d44f49142ddb"
-    sha256               sonoma:        "71ae16204a7a34433ee6f58d291294b1922055c7697c0d0c961b4d8abba3c5d1"
-    sha256 cellar: :any, arm64_linux:   "183baca81349dc590583630649b13cd6b019bf7d11032d4b19ce07884702fb27"
-    sha256 cellar: :any, x86_64_linux:  "258e5f74c932d1c7dc3ae3ca9531b6a31168ce2eb52d543772d6f9ba4b5f18b4"
+    sha256               arm64_tahoe:   "6b1d13c78fe14a08300dff7b1affadec766622569f3e27dd623ea3d696a5a45c"
+    sha256               arm64_sequoia: "3271ec0560422e851a2a87a268cceecc64b33df0fd16febda6132d4ae34d05be"
+    sha256               arm64_sonoma:  "103e1ccef30fd0ef154b86b3e844ab3a73165a97a2aaee0d1e1cff2060ab2068"
+    sha256               sonoma:        "f4065d4d031e4596e59d8ec036ef6a096c76ca454d7df525382284f0c9fc11d0"
+    sha256 cellar: :any, arm64_linux:   "b8cb13d6d84207759f66c7ec108bfb96059a06f4ef157c4654834048b82eb481"
+    sha256 cellar: :any, x86_64_linux:  "279108f258324fd70c7118d46778188769b26e2365efa5663aa2bc2d752d6500"
   end
 
   depends_on "pkgconf" => :build
