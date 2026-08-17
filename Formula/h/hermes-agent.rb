@@ -6,6 +6,7 @@ class HermesAgent < Formula
   url "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.16.tar.gz"
   sha256 "655639384767611feee5ef5d6871e1a1b2294f7b1fd80fb401e9b888a418f4f9"
   license "MIT"
+  revision 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   livecheck do
@@ -336,6 +337,7 @@ class HermesAgent < Formula
         HERMES_BUNDLED_PLUGINS: pkgshare/"plugins",
         HERMES_BUNDLED_LOCALES: pkgshare/"locales",
         HERMES_OPTIONAL_MCPS:   pkgshare/"optional-mcps",
+        HERMES_BIN:             "${HERMES_BIN:-#{bin}/hermes}",
         HERMES_WEB_DIST:        pkgshare/"web_dist",
         HERMES_TUI_DIR:         pkgshare/"ui-tui",
         HERMES_PYTHON:          libexec/"bin/python3",
