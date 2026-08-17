@@ -3,8 +3,8 @@ class Vsview < Formula
 
   desc "Next-generation VapourSynth previewer"
   homepage "https://jaded-encoding-thaumaturgy.github.io/vs-view/"
-  url "https://files.pythonhosted.org/packages/2b/64/7e3c0f0992ff0dcacc0271d1df67a03577273caf94ffa9012e4b3ee997f1/vsview-0.10.1.tar.gz"
-  sha256 "4e150d436ca61efa0399c01fa7d245346ba34c7b24bb594c72fd7209b1424780"
+  url "https://files.pythonhosted.org/packages/0b/f8/b1b6160674b829f88afb5166bc02e58651875b04168ce893fd60b3b1194d/vsview-0.10.3.tar.gz"
+  sha256 "c1836271957961afd77a1adc97eb14eadbde705ea30fc49408cc61791e21714c"
   license all_of: [
     "EUPL-1.2",
     all_of: ["MIT", "Apache-2.0", "ISC", "OFL-1.1"], # src/vsview/assets/
@@ -43,8 +43,8 @@ class Vsview < Formula
                 extra_packages:   %w[jeepney secretstorage] # Linux-only
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
-    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "h11" do
@@ -143,8 +143,8 @@ class Vsview < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "qh3" do
@@ -163,8 +163,8 @@ class Vsview < Formula
   end
 
   resource "urllib3-future" do
-    url "https://files.pythonhosted.org/packages/ed/9f/590bfa6575e8872829dc65d02c887d0599b3897912479e5ca198660a8c1e/urllib3_future-2.24.900.tar.gz"
-    sha256 "05c2e9d09293ab29a154fed8f5b60644c7cdaffe4ae2587a07b1c7f00f23a7fb"
+    url "https://files.pythonhosted.org/packages/10/f5/b3acd26309eff2c34254ac96f507d44d1f04a00b7f2624c6d038a2cce1f3/urllib3_future-2.24.901.tar.gz"
+    sha256 "4913d3ac1b2ce188360d7a5583d8b4152842bff0db98c2b4fdcb57e810db2e7e"
   end
 
   resource "vapoursynth-fftspectrum-rs" do
@@ -173,8 +173,8 @@ class Vsview < Formula
   end
 
   resource "vsjetengine" do
-    url "https://files.pythonhosted.org/packages/10/7b/b483c48cf174ad8d1ee1e16c18419b0501a32dbee3e8a92bd52e36ddc804/vsjetengine-1.5.1.tar.gz"
-    sha256 "eb703a6f88d589ec9344952b812a82e797650334821de25564d7a191fff17885"
+    url "https://files.pythonhosted.org/packages/56/bb/5ff3436d5e376d6f26a80ba86687e5e820ccb279175643a8c7d6486f9509/vsjetengine-1.6.0.tar.gz"
+    sha256 "0bc97430a44e5ad182296bb19e9af3b16e8095120972bef59fc0c911e9be275a"
   end
 
   resource "vsjetpack" do
@@ -193,8 +193,8 @@ class Vsview < Formula
   end
 
   resource "vsview-comp" do
-    url "https://files.pythonhosted.org/packages/9f/c9/ceaef1873ef5426561601592640f07b9e7ce430bb3a61c69e6c3e82375ee/vsview_comp-0.13.0.tar.gz"
-    sha256 "99aa816eda23f18f10c87181cdd85dfd11643d2b71dfef941a16daed100a7e8d"
+    url "https://files.pythonhosted.org/packages/23/12/b5362535d64acd7ff184816c0e57e3a436b62c01866a47ec9817d59b336b/vsview_comp-0.13.1.tar.gz"
+    sha256 "5f8f06461a08313182896b62ef12047cfdc11d7b0d3187dfd327cd3d372a6cb6"
   end
 
   resource "vsview-fftspectrum" do
@@ -215,14 +215,6 @@ class Vsview < Formula
   resource "wassima" do
     url "https://files.pythonhosted.org/packages/53/a1/714674b53d3a57013730187e027e291c652a25db053e02236798bec49d61/wassima-2.1.3.tar.gz"
     sha256 "fcd6c38be0f909c393da35cb2a993101fcdcff673b8fa8d5da228f73b630d0d0"
-  end
-
-  # Declare Carbon ctypes signatures, without which the truncated `TISInputSourceRef` crashes startup
-  patch do
-    url "https://github.com/Jaded-Encoding-Thaumaturgy/vs-view/commit/af3c04940fbedb0ad3425ef9e1ddd96deb7fea4e.patch?full_index=1"
-    sha256 "eb2c4fb1eea4bd0fb684f450c2e8faa307d1f36b2f7486bfc2797948aa9f7545"
-    type :unofficial
-    resolves "https://github.com/Jaded-Encoding-Thaumaturgy/vs-view/pull/201"
   end
 
   def install
