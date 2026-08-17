@@ -5,6 +5,11 @@ class Awww < Formula
   sha256 "97b3f1c6d65d9d30e51b17092a45244f8c8549607c9207f3c98d82b28ba18fca"
   license "GPL-3.0-only"
 
+  bottle do
+    sha256 cellar: :any, arm64_linux:  "0f7a20bc3a33eb692f2efed463cac9e10d998d61d2a761573578703ae790d66b"
+    sha256 cellar: :any, x86_64_linux: "8bffa733e52162073e1dce735235170c3b7960d93b954f31c439e9d88b83795f"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "scdoc" => :build
