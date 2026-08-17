@@ -1,8 +1,8 @@
 class Edgevpn < Formula
   desc "Immutable, decentralized, statically built p2p VPN"
   homepage "https://mudler.github.io/edgevpn"
-  url "https://github.com/mudler/edgevpn/archive/refs/tags/v0.35.3.tar.gz"
-  sha256 "bb83fb66c78eba14c6b76091f652151458f0ed367d34de3a88f80c273e42ad77"
+  url "https://github.com/mudler/edgevpn/archive/refs/tags/v0.35.4.tar.gz"
+  sha256 "9e792a7e171306eacca7b0d30c0ceb212885fcaf10969020eb0ba5c443e5f99d"
   license "Apache-2.0"
   head "https://github.com/mudler/edgevpn.git", branch: "master"
 
@@ -16,8 +16,14 @@ class Edgevpn < Formula
   end
 
   depends_on "go" => :build
+  depends_on "node" => :build
 
   def install
+    cd "api/react-ui" do
+      system "npm", "ci"
+      system "npm", "run", "build"
+    end
+
     ldflags = %W[-X github.com/mudler/edgevpn/internal.Version=#{version}]
 
     ENV["CGO_ENABLED"] = "0"
