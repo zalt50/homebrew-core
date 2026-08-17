@@ -16,22 +16,100 @@ class SingBox < Formula
   end
 
   depends_on "go" => :build
+  depends_on "llvm" => :build
+  depends_on "ninja" => :build
+  depends_on "python@3.14" => :build # extract_histograms.py fails with macOS python
+
+  on_macos do
+    depends_on xcode: :build # for xcodebuild
+  end
 
   on_linux do
     depends_on "lld" => :build
-    depends_on "llvm" => :build
+  end
+
+  resource "cronet-go" do
+    # Using git checkout for submodules
+    url "https://github.com/sagernet/cronet-go.git",
+        revision: "ec9a39c5ba3b4a8d625ede04deaf3c9020afb916"
+    version "ec9a39c5ba3b4a8d625ede04deaf3c9020afb916"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/SagerNet/sing-box/v#{LATEST_VERSION}/.github/CRONET_GO_VERSION"
+      regex(/^\h+$/i)
+    end
+
+    # Avoid downloading pre-built Clang. Based on Arch Linux patch, which is based on nixpkgs patch
+    # https://gitlab.archlinux.org/archlinux/packaging/packages/sing-box/-/blob/main/0001-build-use-the-system-toolchain.patch
+    # Also disable lld on macOS for similar linking failures as V8 formula.
+    patch do
+      file "Patches/sing-box/cronet-go.diff"
+      type :unofficial
+    end
+  end
+
+  resource "gn" do
+    url "https://gn.googlesource.com/gn.git",
+        revision: "3357c4f51b1a9e676378c695dd9c7e9911c35ee6"
+    version "3357c4f51b1a9e676378c695dd9c7e9911c35ee6"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/SagerNet/sing-box/v#{LATEST_VERSION}/.github/CRONET_GO_VERSION"
+      regex(/["']gn_version["']:\s*["']git_revision:(\h+)["']/i)
+      strategy :page_match do |page, regex|
+        cronet_go_version = page[/^\h+$/i]
+        next if cronet_go_version.blank?
+
+        cronet_go_url = "https://api.github.com/repos/sagernet/cronet-go/contents/naiveproxy?ref=#{cronet_go_version}"
+        naiveproxy_submodule = Homebrew::Livecheck::Strategy.page_content(cronet_go_url)[:content]
+        next if naiveproxy_submodule.blank?
+
+        naiveproxy_commit = JSON.parse(naiveproxy_submodule)["sha"]
+        deps_url = "https://raw.githubusercontent.com/SagerNet/naiveproxy/#{naiveproxy_commit}/src/DEPS"
+        deps_page = Homebrew::Livecheck::Strategy.page_content(deps_url)[:content]
+        next if deps_page.blank?
+
+        deps_page.scan(regex).flatten
+      end
+    end
   end
 
   def install
-    tags = File.read("release/DEFAULT_BUILD_TAGS").strip.split(",")
-    ldflags_shared = File.read("release/LDFLAGS").strip
+    resource("cronet-go").stage("cronet-go")
+    resource("gn").stage("cronet-go/naiveproxy/src/gn")
+
+    # Work around Chromium build system only supporting development Clang
+    # TODO: Remove when LLVM 23 is available
+    inreplace "cronet-go/naiveproxy/src/build/config/compiler/BUILD.gn" do |s|
+      s.gsub! "cflags += [ \"-fno-lifetime-dse\" ]", ""
+      s.gsub! "cflags += [ \"-fdiagnostics-show-inlining-chain\" ]", ""
+    end
+    inreplace "cronet-go/naiveproxy/src/build/config/sanitizers/sanitizers.gni",
+              "\"-fsanitize-ignore-for-ubsan-feature=${invoker.sanitizer}\",", ""
+
+    # Source build libcronet.a and replace cronet-go to use it
+    arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
+    target = "#{OS.kernel_name.downcase}/#{arch}"
+    libdir = "lib/#{target.tr("/", "_")}"
+    cd "cronet-go/naiveproxy/src/gn" do
+      system "python3", "build/gen.py"
+      system "ninja", "-C", "out/", "gn"
+    end
+    cd "cronet-go" do
+      system "go", "run", "./cmd/build-naive", "--target=#{target}", "build"
+      system "go", "run", "./cmd/build-naive", "--target=#{target}", "package"
+    end
+    system "go", "mod", "edit", "-replace", "github.com/sagernet/cronet-go=./cronet-go"
+    system "go", "mod", "edit", "-replace", "github.com/sagernet/cronet-go/#{libdir}=./cronet-go/#{libdir}"
 
     if OS.linux?
-      ENV.llvm_clang
+      # CGO is needed for cronet-go to link libcronet.a
       ENV["CGO_ENABLED"] = "1"
-      ENV["CGO_LDFLAGS"] = "-fuse-ld=#{formula_opt_bin("lld")}/ld.lld"
+      ENV.append "CGO_LDFLAGS", "-fuse-ld=lld"
     end
 
+    tags = File.read("release/DEFAULT_BUILD_TAGS").strip.split(",")
+    ldflags_shared = File.read("release/LDFLAGS").strip
     ldflags = "-X github.com/sagernet/sing-box/constant.Version=#{version} #{ldflags_shared} -buildid="
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/sing-box"
     generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
