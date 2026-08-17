@@ -1,13 +1,26 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
-  sha256 "43d5de0a581f43cf63a2c06b4dcf13b9ff6fcd800f023324596e5781093bc500"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 3
   head "https://github.com/apache/arrow.git", branch: "main"
+
+  stable do
+    url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
+    mirror "https://archive.apache.org/dist/arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
+    sha256 "43d5de0a581f43cf63a2c06b4dcf13b9ff6fcd800f023324596e5781093bc500"
+
+    # Apply commit from Debian maintainer's upstream PR to support CPUs older than SSE4.2.
+    patch do
+      on_intel do
+        url "https://github.com/apache/arrow/commit/d048f71964fe2df5540be2256048eb15f830962b.patch?full_index=1"
+        sha256 "1a6b6924e505f4d1c70a24240e52be90b00aa25b116e7db52fd69f76d2b7e189"
+        type :backport
+        resolves "https://github.com/apache/arrow/pull/50547"
+      end
+    end
+  end
 
   bottle do
     rebuild 1
@@ -29,7 +42,7 @@ class ApacheArrow < Formula
   depends_on "aws-sdk-cpp"
   depends_on "brotli"
   depends_on "grpc"
-  depends_on "llvm"
+  depends_on "llvm@22"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
@@ -51,22 +64,12 @@ class ApacheArrow < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
-  # Apply commit from Debian maintainer's upstream PR to support CPUs older than SSE4.2.
-  patch do
-    on_intel do
-      url "https://github.com/apache/arrow/commit/fe4ed9e5d3aa9ce921ba6ba98b7f1ea678f833a9.patch?full_index=1"
-      sha256 "568ea5843d499f972e8861758747701e29e17babf183461bd0479746d03e4380"
-      type :unofficial
-      resolves "https://github.com/apache/arrow/pull/50547"
-    end
-  end
-
   def install
     ENV.runtime_cpu_detection
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DLLVM_ROOT=#{formula_opt_prefix("llvm")}
+      -DLLVM_ROOT=#{formula_opt_prefix("llvm@22")}
       -DARROW_DEPENDENCY_SOURCE=SYSTEM
       -DARROW_ACERO=ON
       -DARROW_COMPUTE=ON
