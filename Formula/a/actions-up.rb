@@ -6,7 +6,7 @@ class ActionsUp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c160bf966d5624a6f084505d513a8276b812b79c7a56de2c9061f39692f0e951"
+    sha256 cellar: :any_skip_relocation, all: "c8130b0d89ee1154438fc5341eea66f6398b4131196bf39c4635182bd8e97bbb"
   end
 
   depends_on "node"
