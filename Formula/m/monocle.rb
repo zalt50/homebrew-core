@@ -1,8 +1,8 @@
 class Monocle < Formula
   desc "See through all BGP data with a monocle"
   homepage "https://github.com/bgpkit/monocle"
-  url "https://github.com/bgpkit/monocle/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "dcfbc647a13336d725a78138769aaae5056b27205e1fee8f08275f684c78c7f0"
+  url "https://github.com/bgpkit/monocle/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "0c0253533ab4a99cdc0fb825b6390ace9eb7f4fb27e6bc23d151ef98b630422b"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
