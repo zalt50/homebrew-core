@@ -28,11 +28,11 @@ class Gnuradio < Formula
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5. gr-qtgui support will be removed after 2026-11-19"
 
   depends_on "cmake" => :build
+  depends_on "cppzmq" => :build
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
   depends_on "adwaita-icon-theme"
   depends_on "boost"
-  depends_on "cppzmq"
   depends_on "fftw"
   depends_on "fmt"
   depends_on "gmp"
@@ -41,15 +41,14 @@ class Gnuradio < Formula
   depends_on "jack"
   depends_on "libsndfile"
   depends_on "libyaml"
-  depends_on "numpy"
+  depends_on "numpy" => :no_linkage
   depends_on "portaudio"
-  depends_on "pygobject3"
-  depends_on "pyqt@5"
+  depends_on "pygobject3" => :no_linkage
+  depends_on "pyqt@5" => :no_linkage
   depends_on "python@3.14"
   depends_on "qt@5" # Qt6 issue: https://github.com/gnuradio/gnuradio/issues/7708
   depends_on "qwt-qt5"
-  depends_on "rpds-py"
-  depends_on "soapyrtlsdr"
+  depends_on "rpds-py" => :no_linkage
   depends_on "soapysdr"
   depends_on "spdlog"
   depends_on "uhd"
@@ -61,7 +60,7 @@ class Gnuradio < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "llvm"
+    depends_on "libunwind"
   end
 
   pypi_packages package_name:     "",
