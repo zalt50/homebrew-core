@@ -16,12 +16,12 @@ class StellarCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "807bb65b02eecf983a1e70348ac2e02ff8574872a31eeb81d92f41f6b5e10c92"
-    sha256 cellar: :any, arm64_sequoia: "2702f1b6c5ceddf98cc6d3226e3badb38a361054d386c6c7e544ce9a311d25de"
-    sha256 cellar: :any, arm64_sonoma:  "85536e4618df4123571639541567f3ad0116aff015c966a0fb2f7794410438ac"
-    sha256 cellar: :any, sonoma:        "346c20d53c2f0a1415bcc8bf8661621f8eceb78e976291c050386472ea64e0cb"
-    sha256               arm64_linux:   "4297600bfb048bbd102bffe41c1fa41992f34b892f63fd27d91fc517f5c29c52"
-    sha256               x86_64_linux:  "ad2d0493abe173d0f99da5636240934937a3bb221d1a590a4f96094783950db5"
+    sha256 cellar: :any, arm64_tahoe:   "66a64e0898bbc7c3398b1715e4125e27d0f55bb1649e71611b487d7fb57328f1"
+    sha256 cellar: :any, arm64_sequoia: "41aa7f77659eab5ea3467a3842c02db06c8860588c46a6628acd52316829e970"
+    sha256 cellar: :any, arm64_sonoma:  "85f433bbd88abfdb5181cc986ad9bbd15b90899e0929f39055d0d962a7afdb88"
+    sha256 cellar: :any, sonoma:        "8d28b8ee800a45d2f39afe67d0d289e0c511c2151d373fac7eaadeb580f66042"
+    sha256 cellar: :any, arm64_linux:   "c28429e6fe04abd273e58775fbee5f8cbb2887e8a6cc7b3dcaef22fe1da0b040"
+    sha256 cellar: :any, x86_64_linux:  "69814814b136c71b68b2b45273a5728889caef0dc84fa6d6c9ad242e0bb7183d"
   end
 
   depends_on "autoconf" => :build
