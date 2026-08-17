@@ -7,12 +7,12 @@ class Dvisvgm < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "68a3c913dfe9c0839a8bf0b8b9a3b378c181140dedb6757832e2199399c70807"
-    sha256 cellar: :any, arm64_sequoia: "67f2920fabdc08dae36259699b836970f305df17c08973cfc07d750e934dbfd7"
-    sha256 cellar: :any, arm64_sonoma:  "8cd97f355014ef3f8465b3d159b17bef6aa8fa19b45cb890a49476e6b5526dc5"
-    sha256 cellar: :any, sonoma:        "be3d2bc8190f13109f98dc5026d823f489548e8e9ec7080bb5e2bcb2ddec34d1"
-    sha256 cellar: :any, arm64_linux:   "c84d92242c5ef2ac0a11e34d6ecaacffecb8291398d9afff84a0edf3c8a1ccc9"
-    sha256 cellar: :any, x86_64_linux:  "88f1a3f0a39d7b4e1da50d7beb57b2c0bdc1135220b6dbd79df22bf55642a0c6"
+    sha256 cellar: :any, arm64_tahoe:   "3d504c75913809888cf7a8a147d4702ce78f4c358a7345a122124cddb3d2feb3"
+    sha256 cellar: :any, arm64_sequoia: "09d6ca853a0686c642b72786193f020364f9f5084f729eaac086e406506e6a1e"
+    sha256 cellar: :any, arm64_sonoma:  "2db4ad858a6a26f049e1cf72697e7db0c93d0a98258a7786afeef86091131c86"
+    sha256 cellar: :any, sonoma:        "21157de79def66e80a80b7384177640a45a35eb42f27c99715ab0239f3840284"
+    sha256 cellar: :any, arm64_linux:   "6ef5f92cec2ecd544e9f911777571880c1ff720b285f7cf85fdb1f2efa5236a7"
+    sha256 cellar: :any, x86_64_linux:  "38ac2045863a947fa12434694125f03b3c03971a50b3958f388f6ea20e367a53"
   end
 
   depends_on "autoconf" => :build
