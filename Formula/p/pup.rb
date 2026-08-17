@@ -1,8 +1,8 @@
 class Pup < Formula
   desc "CLI companion with 200+ commands across 33+ Datadog products"
   homepage "https://www.datadoghq.com"
-  url "https://github.com/DataDog/pup/releases/download/v1.10.9/pup_1.10.9_source.tar.gz"
-  sha256 "41320c6b785b466c9680da0a8bc82b6a391178a436cf48b3d5aa9ab24c5b612e"
+  url "https://github.com/DataDog/pup/releases/download/v1.11.0/pup_1.11.0_source.tar.gz"
+  sha256 "26bcc6863f528272fec06fa0892537c1918d581d8b027c31c849f2c95ed7df27"
   license "Apache-2.0"
   head "https://github.com/DataDog/pup.git", branch: "main"
 
