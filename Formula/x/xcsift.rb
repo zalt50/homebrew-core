@@ -7,12 +7,12 @@ class Xcsift < Formula
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec142d86fa655ebc0d4024dfef55d255bfa2901b8708abeaef3f29f34338bc05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f62b48cfbc2d4d7384c6f24172b03be3b129ee69268864bba5602541c6d6a1af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21e4bf2f2278704cdfe56c052c04198d20a72f9b0ec28a5338a4ffc35cc89546"
-    sha256 cellar: :any_skip_relocation, sonoma:        "77339974c2a08a80a272ea9b51d69d5f229a6ecc6b971267e13d42c6f2bbcab9"
-    sha256 cellar: :any,                 arm64_linux:   "2de2b2d90ea995cbbf44ca575197a7908b183f169fe77824e780d49c744af42d"
-    sha256 cellar: :any,                 x86_64_linux:  "5be4785031071d0b9821a9f010f33e6121fb01c25e634f6584a951b06abb8c82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "060225624cb0fcedd7e96cbbf5347dbb51649f6485f2ac8934814bc9570d4b7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1853292e531cfa4e74be3975f04875fc5dc074d65b6d638eca79576c85c79096"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3275e8d066bbfd75c62033bd30001912f49c07968fa4d811b415340ddda5f0ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2dc241c56b2558ff7ed02e684e8dc3c8d2762f2483c39fb3018f1bbbec63d113"
+    sha256 cellar: :any,                 arm64_linux:   "d5fd083b69ab076637a17c9777c34c1f30822fe5f6ccd4541e62eaeb3d4ad2da"
+    sha256 cellar: :any,                 x86_64_linux:  "10ef978d91010e4bf857a2fe94f89f7e020193420c74592f84c118b5f1f9458c"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma
