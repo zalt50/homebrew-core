@@ -1,10 +1,10 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via Apache/NGINX"
   homepage "https://www.phusionpassenger.com/"
-  url "https://github.com/phusion/passenger/releases/download/release-6.1.8/passenger-6.1.8.tar.gz"
-  sha256 "86fdafdc0e02da8f4120a3e518e7ce3b2db0199b8c0cdfc46865240e8ebfc32d"
+  url "https://github.com/phusion/passenger/releases/download/release-6.2.0/passenger-6.2.0.tar.gz"
+  sha256 "bd0e14538fa4a9f479a3ce60805a201bf10757d6051d23087759b1abbc811529"
   license "MIT"
-  head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
+  head "https://github.com/phusion/passenger.git", branch: "stable-6.2"
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "6d329f12d3f14ce414c967e11d2d900a1e24edb7860324f77b47b535b88af93b"
