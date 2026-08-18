@@ -7,12 +7,12 @@ class Crit < Formula
   head "https://github.com/tomasz-tomczyk/crit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fae64027b37942086b8f23e2d71d8f69c65604b48ee17a58647d967377a81f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fae64027b37942086b8f23e2d71d8f69c65604b48ee17a58647d967377a81f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fae64027b37942086b8f23e2d71d8f69c65604b48ee17a58647d967377a81f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a623deae535bb15e224e72bf15faf8ab1ddfbbfd8a4b402414b2cbfdda78577"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89014a382f9f1a45b41cc7c94f8e81d81f405e0171bc6ea6b2785fe1f0021e22"
-    sha256 cellar: :any,                 x86_64_linux:  "929a7da0e00800dd34955b22327f96cbe66059e90c64c82e8e80095f3b3923d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79cc69b4fb636990d82bb49aaf576022a7e50a356b069dfff3533daf93900fc8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79cc69b4fb636990d82bb49aaf576022a7e50a356b069dfff3533daf93900fc8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79cc69b4fb636990d82bb49aaf576022a7e50a356b069dfff3533daf93900fc8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "085ca6e46676e54b8af33a48f957abfea863cf809288d0cef7fd0f2163df7ec9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be57080e4ed3d11fab25569a55fdc7862e3acaafb1e07ffd1ddf29b3e24172b0"
+    sha256 cellar: :any,                 x86_64_linux:  "d4fedea1dbc654ec7aa0d68ab317d0373f37c2c355f6044affc260ca94800201"
   end
 
   depends_on "go" => :build
