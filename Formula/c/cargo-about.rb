@@ -1,8 +1,8 @@
 class CargoAbout < Formula
   desc "Cargo plugin to generate list of all licenses for a crate"
   homepage "https://github.com/EmbarkStudios/cargo-about"
-  url "https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.9.1.tar.gz"
-  sha256 "628dd50f8b89078bca6eb7e615f891e0707209c08c94eba1c4326d2a08db53cd"
+  url "https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.9.2.tar.gz"
+  sha256 "bc82b1c4ec112780652f8b8fee043b5826e580a946f8dda68c25eb39bc168a05"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/EmbarkStudios/cargo-about.git", branch: "main"
 
