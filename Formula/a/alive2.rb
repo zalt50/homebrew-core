@@ -17,6 +17,14 @@ class Alive2 < Formula
       type :backport
       resolves "https://github.com/AliveToolkit/alive2/pull/1265"
     end
+
+    # Backport commit for LLVM 23
+    patch do
+      url "https://github.com/AliveToolkit/alive2/commit/155386f37536a8f64d78c0ef7d52f7d3f1926cd1.patch?full_index=1"
+      sha256 "01b319ccbfdb2a8c2a98bd2d5fc2e5b9564511f2738afae1b8d125d014af1678"
+      type :backport
+      resolves "https://github.com/AliveToolkit/alive2/pull/1309"
+    end
   end
 
   bottle do
