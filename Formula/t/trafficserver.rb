@@ -1,20 +1,11 @@
 class Trafficserver < Formula
   desc "HTTP/1.1 and HTTP/2 compliant caching proxy server"
   homepage "https://trafficserver.apache.org/"
+  url "https://www.apache.org/dyn/closer.lua?path=trafficserver/trafficserver-10.2.0.tar.bz2"
+  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.2.0.tar.bz2"
+  sha256 "bef171a7d064794e05ec7559e46d3e07c3ae6487a4647987fcc4f1cc5a82cec6"
   license "Apache-2.0"
-
-  stable do
-    url "https://www.apache.org/dyn/closer.lua?path=trafficserver/trafficserver-10.1.4.tar.bz2"
-    mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.1.4.tar.bz2"
-    sha256 "47f09c65a3de70db38990124834f292081520e3290a7e781898291019b6f9d9f"
-
-    depends_on "pcre" # PCRE2 issue: https://github.com/apache/trafficserver/issues/8780
-  end
-
-  # Allow livechecking for new releases while deprecated.
-  livecheck do
-    url :stable
-  end
+  head "https://github.com/apache/trafficserver.git", branch: "master"
 
   bottle do
     sha256 arm64_tahoe:   "7787222bc5925d56fa17ac3ab2a516ca51d9fb9a7db3d7d08047c558fa8c3735"
@@ -24,16 +15,6 @@ class Trafficserver < Formula
     sha256 arm64_linux:   "8d4707adc332f73926b8c8e478e560fbcb501c0a5b87d326f9c8abec5954eeef"
     sha256 x86_64_linux:  "c235f6f3aed36c2ac590f460f8b4469711c468ea545fd5ce4bef2ec660aa34d4"
   end
-
-  head do
-    url "https://github.com/apache/trafficserver.git", branch: "master"
-
-    depends_on "zstd"
-  end
-
-  # Can be undeprecated with 10.2.0 release.
-  # Backporting PCRE2 support requires 30+ commits and resolving conflicts, so not worth it.
-  deprecate! date: "2026-01-14", because: "needs EOL `pcre`"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -49,6 +30,7 @@ class Trafficserver < Formula
   depends_on "pcre2"
   depends_on "xz"
   depends_on "yaml-cpp"
+  depends_on "zstd"
 
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
@@ -61,8 +43,6 @@ class Trafficserver < Formula
   end
 
   def install
-    odie "Remove `pcre` dependency!" if build.stable? && version >= "10.2.0"
-
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXPERIMENTAL_PLUGINS=ON",
                     "-DCMAKE_INSTALL_LOCALSTATEDIR=#{var}",
