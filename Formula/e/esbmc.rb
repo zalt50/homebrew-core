@@ -13,12 +13,12 @@ class Esbmc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3c80c9521c24bc9c7219ead5c9a3477c455aba2ad144767e2fd201222d3e1d16"
-    sha256 cellar: :any, arm64_sequoia: "e618b6458ca262aff836354d5878b2b7f1dcde1cc259e0ac2295d7af2212132a"
-    sha256 cellar: :any, arm64_sonoma:  "d61eea6354e01bd65c5d80257b5752a47fadfac1a611d9d02b270fc672af59b3"
-    sha256 cellar: :any, sonoma:        "774aa3c7e38f2b90a57e6a98d1db9636602fab30622af33dcf375c73133aa843"
-    sha256 cellar: :any, arm64_linux:   "5fabf12f57b705cb7f16457cafa4cb1d925d6c55225de93977876a4d21632b0b"
-    sha256 cellar: :any, x86_64_linux:  "b5332aa0bb864286152f7aafe4583092aa9583bd29d41383ff120e6c47155844"
+    sha256 cellar: :any, arm64_tahoe:   "5515e8674896e3613b653600ae8b75f932fe1cd95a0194bd1b595d07039ca314"
+    sha256 cellar: :any, arm64_sequoia: "6f333b553fe7d58087106ec124ce31bf06ee9f9bf049ea6ccc7aa26793a71e2d"
+    sha256 cellar: :any, arm64_sonoma:  "ef2656ecd7c1ac7786a31efa569f0e94c2094141f6432851271db95e6ece4632"
+    sha256 cellar: :any, sonoma:        "a348787f11a866c489c10d8f7d9d9f3ae0ca6c78c7a48f30f7dd7278a85614f8"
+    sha256 cellar: :any, arm64_linux:   "533b1fdf752af8bcb8e93b5f7ba299ddb121a7e0bd3583e46e29603a557c5d88"
+    sha256 cellar: :any, x86_64_linux:  "b70b810829bb1c4c2089def051a74889f4c3ab94a32db9b537243c5b0bf42eda"
   end
 
   depends_on "bison" => :build # macOS ships 2.3; esbmc requires >= 2.6.1
