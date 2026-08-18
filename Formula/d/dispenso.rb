@@ -1,8 +1,8 @@
 class Dispenso < Formula
   desc "High-performance C++ library for parallel programming"
   homepage "https://github.com/facebookincubator/dispenso"
-  url "https://github.com/facebookincubator/dispenso/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "1c188b8593411080d653776595a15049f9e7eecd5212b31b3ee7bb094ff63971"
+  url "https://github.com/facebookincubator/dispenso/archive/refs/tags/v1.6.1.tar.gz"
+  sha256 "fefabf77cfda64e42190335693c0a8b4b2201bf07f360b37a098a0396c7737a9"
   license "MIT"
 
   bottle do
