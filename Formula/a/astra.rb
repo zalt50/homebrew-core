@@ -1,8 +1,8 @@
 class Astra < Formula
   desc "Command-Line Interface for DataStax Astra"
   homepage "https://docs.datastax.com/en/astra-cli"
-  url "https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "c6103d7de4abea0c5780dfdfbd19945af5d5662d9ce50c03ff7845cd688aca27"
+  url "https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "c9caeb332381ec2de0723036ee8f3e266b89634fcae13396400590d781a97637"
   license "Apache-2.0"
 
   bottle do
