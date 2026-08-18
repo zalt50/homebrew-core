@@ -88,6 +88,7 @@ class Llvm < Formula
     ]
 
     unless versioned_formula?
+      odie "Remove Z3 solver!" if build.stable? && version >= "24"
       enable_z3 = deps.map(&:name).include?("z3")
       projects << "lldb"
 
@@ -501,6 +502,9 @@ class Llvm < Formula
 
       LLD is now provided in a separate formula:
         brew install lld
+
+      Z3 solver support will be removed in LLVM 24 as it is unsupported upstream,
+      see https://github.com/llvm/llvm-project/pull/205370
     EOS
 
     on_macos do
