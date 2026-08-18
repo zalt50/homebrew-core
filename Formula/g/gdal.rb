@@ -1,10 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://gdal.org/en/stable/"
-  url "https://github.com/OSGeo/gdal/releases/download/v3.13.2/gdal-3.13.2.tar.gz"
-  sha256 "1051c33db1d9e6a05907ac07cd06f5ce8ac0658f317c3229774cc2198a6c1252"
+  url "https://github.com/OSGeo/gdal/releases/download/v3.13.3/gdal-3.13.3.tar.gz"
+  sha256 "5e0c388d83da2d686cc00a40272882432cdb54edff43d4af173e532844a0a0ea"
   license "MIT"
-  revision 1
   compatibility_version 2
 
   livecheck do
@@ -90,6 +89,14 @@ class Gdal < Formula
 
   conflicts_with "avce00", because: "both install a cpl_conv.h header"
   conflicts_with "cpl", because: "both install cpl_error.h"
+
+  # One `extra_compile_args` list is shared by every `Extension`, so `-std=c++11` also hits C-only `_gdalconst`.
+  patch do
+    url "https://github.com/OSGeo/gdal/commit/f68c6ba6551f67dbc6b18e9461b197711283dd87.patch?full_index=1"
+    sha256 "b4b502b4a0988bb438bb7e5bb40d21ac0c148afb1a7c90aaf1a78b92e9e4cb4d"
+    type :unofficial
+    resolves "https://github.com/OSGeo/gdal/pull/15042"
+  end
 
   def python3
     "python3.14"
