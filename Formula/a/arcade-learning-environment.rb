@@ -1,8 +1,8 @@
 class ArcadeLearningEnvironment < Formula
   desc "Platform for AI research"
   homepage "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
-  url "https://files.pythonhosted.org/packages/96/f2/4256e8074df976edd3ba28be9b6a2f4b3fc47632134dabfead41d32b51be/ale_py-0.12.0.tar.gz"
-  sha256 "6030416b6a049d399bf95420ad2fdbf0ea8f83051b502774d27b477a06000dbc"
+  url "https://files.pythonhosted.org/packages/3e/e8/e69da8a5fb5feafa9fffb32ed8c2b306b7571b77faf779f61e4eb53304ec/ale_py-0.12.1.tar.gz"
+  sha256 "c503d574c5983e1063b451201ccb779d935919c0f6bf116fb0f4f8aa4c86d249"
   license "GPL-2.0-only"
   head "https://github.com/Farama-Foundation/Arcade-Learning-Environment.git", branch: "main"
 
@@ -25,6 +25,8 @@ class ArcadeLearningEnvironment < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  pypi_packages exclude_packages: "numpy"
 
   # See https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/master/scripts/download_unpack_roms.sh
   resource "roms" do
