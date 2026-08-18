@@ -1,18 +1,18 @@
 class Pup < Formula
   desc "CLI companion with 200+ commands across 33+ Datadog products"
   homepage "https://www.datadoghq.com"
-  url "https://github.com/DataDog/pup/releases/download/v1.10.9/pup_1.10.9_source.tar.gz"
-  sha256 "41320c6b785b466c9680da0a8bc82b6a391178a436cf48b3d5aa9ab24c5b612e"
+  url "https://github.com/DataDog/pup/releases/download/v1.11.0/pup_1.11.0_source.tar.gz"
+  sha256 "26bcc6863f528272fec06fa0892537c1918d581d8b027c31c849f2c95ed7df27"
   license "Apache-2.0"
   head "https://github.com/DataDog/pup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c85fef305951b9c1eb6cfd196f1363d585416b648fc102918178c3a14de54f0d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c73bb58b0a2b4a48abf179fc1202298e6d1d940b3296b56994b9924342b7472f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba774643c642fe701e13fe0bf604d45f7fc262605622119b0941a720e6edbcd5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b1250f3279f7fd811c3eacb1ebc07d75e2899c3ca598b41d16df597a14d9a563"
-    sha256 cellar: :any,                 arm64_linux:   "de22958a791c9df597ca0453efea0bc30c06e777ba0aaa7521a1c69fb5e010fb"
-    sha256 cellar: :any,                 x86_64_linux:  "c604132c4a766d4206b3290722922e9e3c30e6a708b77c1408a4c4bb136f5a32"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ff8c74afd8a891e2b8b4378f20e50fb09059bb2c7c2579a64af224cae23f4db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b29f16f3da3d3cc5ea1237b4133ba7c6baec75de80c4c321f64fdbc62bbfcdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a3d77502cfbec9ce535ed73c9b7dab96d4bb8285c583112325239841738efd4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a32b3e68a759f4af25a380e1d2bb8cf29024b6be0edd305c3f26c6cab545620b"
+    sha256 cellar: :any,                 arm64_linux:   "2b3fd1adc207daadc2ba63dafddc3a5ee19c2d69111a85f122502a6d4fe4a5c6"
+    sha256 cellar: :any,                 x86_64_linux:  "f9b69404a690444decbdd920afe8dab49f79d650b1583d791e32e95d68d62d76"
   end
 
   depends_on "pkgconf" => :build
