@@ -1,10 +1,9 @@
 class BulkExtractor < Formula
   desc "Stream-based forensics tool"
   homepage "https://github.com/simsong/bulk_extractor/wiki"
-  url "https://github.com/simsong/bulk_extractor/releases/download/v2.1.1/bulk_extractor-2.1.1.tar.gz"
-  sha256 "0cd57c743581a66ea94d49edac2e89210c80a2a7cc90dd254d56940b3d41b7f7"
+  url "https://github.com/simsong/bulk_extractor/releases/download/v2.2.0/bulk_extractor-2.2.0.tar.gz"
+  sha256 "b9e15d40d711aa43590e1bf1a25d30943e3bad8371281d7c80d3803a6f34c268"
   license "MIT"
-  revision 3
 
   livecheck do
     url :stable
@@ -27,10 +26,9 @@ class BulkExtractor < Formula
     depends_on "automake" => :build
   end
 
+  depends_on "abseil" => :build # only needed for `re2.pc`
   depends_on "pkgconf" => :build
-  # Not actually used at runtime, but required at build-time
-  # due to a stray `RE2::` reference.
-  depends_on "re2" => :build
+  depends_on "re2"
 
   uses_from_macos "flex" => :build
   uses_from_macos "expat"
@@ -42,7 +40,7 @@ class BulkExtractor < Formula
   end
 
   def install
-    # Avoid overlinkage with abseil and re2.
+    # Avoid overlinkage with abseil.
     ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
     system "./bootstrap.sh" if build.head?
     # Disable RAR to avoid problematic UnRAR license
@@ -52,8 +50,6 @@ class BulkExtractor < Formula
 
     # Install documentation
     (pkgshare/"doc").install Dir["doc/*.{html,txt,pdf}"]
-
-    (lib/"python2.7/site-packages").install Dir["python/*.py"]
   end
 
   test do
