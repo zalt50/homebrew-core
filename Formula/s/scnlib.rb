@@ -4,7 +4,7 @@ class Scnlib < Formula
   url "https://github.com/eliaskosunen/scnlib/archive/refs/tags/v4.0.1.tar.gz"
   sha256 "ece17b26840894cc57a7127138fe4540929adcb297524dec02c490c233ff46a7"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/eliaskosunen/scnlib.git", branch: "master"
 
   bottle do
