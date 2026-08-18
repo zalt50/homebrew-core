@@ -1,8 +1,8 @@
 class Kfr < Formula
   desc "Fast, modern C++ DSP framework"
   homepage "https://www.kfrlib.com/"
-  url "https://github.com/kfrlib/kfr/archive/refs/tags/7.0.1.tar.gz"
-  sha256 "42b36126f2af8719eff6f26e87e9f155816bc3bb110376e4747ba5de536c2cce"
+  url "https://github.com/kfrlib/kfr/archive/refs/tags/7.1.0.tar.gz"
+  sha256 "9ca43ee8f0d7b166c92f06d20953d2a753774c4237b2721bea366115811dff64"
   license "GPL-2.0-or-later"
 
   bottle do
