@@ -19,12 +19,12 @@ class Netpbm < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "7f70a9ab5163ba2d6e2543d1e2c9f44ff4a18d2aeb51a8c92205110c7f592fdc"
-    sha256 arm64_sequoia: "263119a8da2ccfd403495d180599c01530a34c2914b8e05aaa0c6e8e93a2cd94"
-    sha256 arm64_sonoma:  "dd3190b6ff954ce1cd1fbc092bc482bf4929221644b624574d08ebda75b96331"
-    sha256 sonoma:        "ccb6596d74109cd85f409d3d1ffd5316af685b8e601c4f034c66696eb37f54b5"
-    sha256 arm64_linux:   "70ea50413deb33a0255bbfa3d000cec6afdc5a45784130df1ba33bd49e8f5569"
-    sha256 x86_64_linux:  "68b61591116db84342e4813bb5f82e7785b465b287805e1a39178615e9e86738"
+    sha256 arm64_tahoe:   "685f8abc6a29e098df1d740dd52be56597c8916c4c876808bac33a4feb7a65b5"
+    sha256 arm64_sequoia: "a828a223c356a0c6a941861db422a549fb53e16884b93eb91c10f2b7904f3c11"
+    sha256 arm64_sonoma:  "88755a2e5344480e895198785e58875b2766ca46bfbac3eafe017cbc58a8aa29"
+    sha256 sonoma:        "5c8149a8731b4bc904ae283f268d05d53201fd6508afdad187c0bff2730cfccc"
+    sha256 arm64_linux:   "5a7b3b9d43b9e8f34517bb3308928a64eb3bbaa601d1ec971b6f1186cca6efba"
+    sha256 x86_64_linux:  "69072aa5a6dfa3054066e717a4bd877df200586e530479bedc7a423052385034"
   end
 
   depends_on "pkgconf" => :build
