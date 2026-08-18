@@ -25,14 +25,14 @@ class Nanopb < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "protobuf"
+  depends_on "protobuf" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages package_name: "nanopb"
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/f2/00/04a2ab36b70a52d0356852979e08b44edde0435f2115dc66e25f2100f3ab/protobuf-7.34.0.tar.gz"
-    sha256 "3871a3df67c710aaf7bb8d214cc997342e63ceebd940c8c7fc65c9b3d697591a"
+    url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
+    sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
   end
 
   def install
