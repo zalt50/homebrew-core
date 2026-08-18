@@ -16,12 +16,12 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b5049cab5713ca7f6277d151587d434eb356853a65257c9fe9fbc8842acfc6c7"
-    sha256 cellar: :any, arm64_sequoia: "3ba551ff4c63ad8ce9ae74ab76192f30a536f6150c8bfa3025696350f24ae01b"
-    sha256 cellar: :any, arm64_sonoma:  "ca458d10f58d716ae7de6492965c93a673d04076a0c6daa6b838d02cb5d0e2c8"
-    sha256 cellar: :any, sonoma:        "1a7348c514f94623fc15f62e83a6aa44dbeea0ab892e37eb51a767b53121e58d"
-    sha256 cellar: :any, arm64_linux:   "106359e24c61737494fd7c1310f0a0466d90ea8acf331a85da5efef709da0527"
-    sha256 cellar: :any, x86_64_linux:  "e986cddc3b56644647024d91b6d16cba21af1a26276e9e95064becd530869647"
+    sha256 cellar: :any, arm64_tahoe:   "692f9ab5df5a26a3feb1a8738e044dffbae4fb93a14d803758cf014fb93ca0bd"
+    sha256 cellar: :any, arm64_sequoia: "aac468cf5b610e9ba2b2243afe36705408ddba46ea799a8c1960ce8d7a96cb20"
+    sha256 cellar: :any, arm64_sonoma:  "332f04d30d327cc33daee2c40054980179d8a7809821ba3eb42ab233badb8529"
+    sha256 cellar: :any, sonoma:        "49cbc336acdb87f722a23da9f7c49ed111768d8d38bdabb86b92661d56b83831"
+    sha256 cellar: :any, arm64_linux:   "919792d2c79441e7acf22b47294708dbe79a36a1702205194008686ab0d5e0ea"
+    sha256 cellar: :any, x86_64_linux:  "a665eb2e9184da774e917715993badf6488bf69198098d782b879a026031ef27"
   end
 
   depends_on "cmake" => :build
