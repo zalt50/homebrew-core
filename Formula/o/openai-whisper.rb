@@ -10,13 +10,12 @@ class OpenaiWhisper < Formula
   head "https://github.com/openai/whisper.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "91e13d8a940fb7facd647577d10b665c07729f1d50ea0c5809090c55f7671a09"
-    sha256 cellar: :any, arm64_sequoia: "dc689842c231a462ab3526b8e4771301d6014928f9aefde807320ea1f9b16bfd"
-    sha256 cellar: :any, arm64_sonoma:  "aed7a98a24aaba57c69e23bf078152d819e39c704f79568159bf7d46e3e18192"
-    sha256 cellar: :any, sonoma:        "944ab44d97c66d6429c2b54e864d078039f9c50b42272afa03de4cb0a90a0895"
-    sha256 cellar: :any, arm64_linux:   "fb38f7e0c5d06f5cff859b6125e1e89b4d53af7d115470c437342ec29117e65a"
-    sha256 cellar: :any, x86_64_linux:  "67a3af52645e40c830c2570b2be0da2ece293e370c8dac0392bfa6995ddc657c"
+    sha256 cellar: :any, arm64_tahoe:   "088acd9176ff8ac06a13a7ce76c52441d506cb9d6f01ccbc6997fcce7ed0dd43"
+    sha256 cellar: :any, arm64_sequoia: "6bd940b4edab977ef3c9e9ea2c199904c9766a42b256edb34dbc5bcd5624c90b"
+    sha256 cellar: :any, arm64_sonoma:  "4b55acb76df70a9e24d524c560e66659408a8513477beeb1cd18ae8d9af25c70"
+    sha256 cellar: :any, sonoma:        "ea662c73cced0c65fb7fabaa8d8a89e065f737cc48f58721a9008be557b519e5"
+    sha256 cellar: :any, arm64_linux:   "a2714f9ec18e8f466893774100ee8ec5e2fb053b72f03671b6c8d39f1b37f5e4"
+    sha256 cellar: :any, x86_64_linux:  "bc0bc452664aadc60f6a1efffadab5f63bc16742774e98d0f710951277a41bd1"
   end
 
   depends_on "cmake" => :build
