@@ -1,8 +1,8 @@
 class Wassette < Formula
   desc "Security-oriented runtime that runs WebAssembly Components via MCP"
   homepage "https://microsoft.github.io/wassette/"
-  url "https://github.com/microsoft/wassette/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "949d7a5541c58bf0ebad35213b233a6a9e2f95cf70e89294862ac2f2662d2f33"
+  url "https://github.com/microsoft/wassette/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "a2a95a418a3f9983adabee2ec9d3db427ac460f9f1ca6b93f0970242ac0cba94"
   license "MIT"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
@@ -28,7 +28,7 @@ class Wassette < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/wassette-mcp-server")
   end
 
   test do
