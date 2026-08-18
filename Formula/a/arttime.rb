@@ -7,8 +7,7 @@ class Arttime < Formula
   head "https://github.com/poetaman/arttime.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0a3e584b805c966e2dbfd88d0c14fd624d5cccc7182ada2a3abdf85ff4bd81d9"
+    sha256 cellar: :any_skip_relocation, all: "ef556d2933044dbc7906a0761f63045d1c9f7b0d7e0bddf11d5967034e194aef"
   end
 
   depends_on "fzf"
