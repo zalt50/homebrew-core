@@ -11,12 +11,12 @@ class Rumdl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f56f107edf2cb4ef6dd3894bd3a25e85190fa752ca61040e09ceed3791c28b21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de748ed418ccf0582a937f0c01f463106088089439424cd679bf713e4ca31628"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c22b4ed5ef9f6016fb6033838c51bfeb756e2dd53d1785a363a63a0d94cdbac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "797171185f07c5fbaf67f37860cf601e22ed569084eb3cb9943ae4924e29a3e1"
-    sha256 cellar: :any,                 arm64_linux:   "7319341254f9c2ea25bf8068af2990dfa1085f4099739d94fdf09932588cc9e8"
-    sha256 cellar: :any,                 x86_64_linux:  "c55fa603ab66e8f1d8b76278c16e798cb583499d543c67c2f3694b8ec201a965"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df46bf2f2c75de7f3dbb449db076e789390e484c0ca759fb162a64eb5e025b31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38eea5ab1b42341a732708ab8de96feadfebeb5503937021391114dc390c2e4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4853da14947927e1e79537d2e7b4cd2fcf49e22de74c88613308cdf3604505ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b31773e91d8f68f1661b29582c71783a6766c130923bf523fd20300345eae904"
+    sha256 cellar: :any,                 arm64_linux:   "bec3a1e6d63df0c9dc86e6e27c3c0473fee30fa2bbaca6f8151f6217a69d38ae"
+    sha256 cellar: :any,                 x86_64_linux:  "50db86f2a5a6289ba5619c23034ed707ae83b562f5249a0b49dece0912015424"
   end
 
   depends_on "rust" => :build
