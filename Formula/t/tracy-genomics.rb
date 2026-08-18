@@ -22,6 +22,8 @@ class TracyGenomics < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  conflicts_with "tracy", because: "both install `tracy` binaries"
+
   # Header-only `sdsl-lite`, pulled in as a git submodule upstream.
   resource "sdsl-lite" do
     url "https://github.com/xxsds/sdsl-lite/archive/refs/tags/v3.0.4.tar.gz"
