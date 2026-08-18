@@ -11,13 +11,12 @@ class BulkExtractor < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f91e27eaece667b8f117802801bd09657b709013aa3a1a439f4c9a32d1643317"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d913b32eda61a6ca752bb16bf19411549e5ce26a01fe925e8e96f3257d6be16d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be54a1b33bbace334e2ccbf21090bb134353bed403033533fe0af2082ba368ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d50c440d9d084bff2d9aac53b3cb15fa60926177ae4c218a079b914fc4470e50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1481485958ddd10ca9171c3e339a23ebe27877e57050cb440aa273f86e2845de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fd01a677511ca96405ee937506dccf9ee51966b5658c0be0a24707fdeebaff5"
+    sha256 cellar: :any, arm64_tahoe:   "b24559ddfbf33739ec78e8a3bf7186b3b79c5fff6005410518df98a013e3f1e2"
+    sha256 cellar: :any, arm64_sequoia: "ce0e850624d6db32edc9f7fffdf6ff713fdb7e86cc5489e5166540fdb6566bcb"
+    sha256 cellar: :any, arm64_sonoma:  "1aeef957b72026510d04879bde39d553be64d8eaeca55f42e9f4b894e8ca5064"
+    sha256 cellar: :any, sonoma:        "4f601e0442bef357c5c75f1e780bc9a7ef652965320b532747c98aa7858ced7f"
+    sha256 cellar: :any, arm64_linux:   "e2ad92284668d2422db43f57e88adfa6ccdc4ee07a91da8c46d18a1e9bd3bda0"
+    sha256 cellar: :any, x86_64_linux:  "b1adc306b7efaaecfa6130c975050cec0d5efb06222922e8e8dfefc70bd57ceb"
   end
 
   head do
