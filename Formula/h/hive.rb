@@ -7,7 +7,7 @@ class Hive < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4df3cc15dbc184a6ec62de1da0241f317d259ada4bb0307a5452a2bca69d35d5"
+    sha256 cellar: :any_skip_relocation, all: "c0aa6492035555c2d378c5cf93bc5aab63f8d38b99b49cd2fe2ce8c2fa411c19"
   end
 
   depends_on "hadoop"
