@@ -1,8 +1,8 @@
 class Dtools < Formula
   desc "D programming language tools"
   homepage "https://dlang.org/"
-  url "https://github.com/dlang/tools/archive/refs/tags/v2.112.1.tar.gz"
-  sha256 "fe887bd938ce8add519b27e4a84311ed20db74e6c22bd402a99693753df73d9d"
+  url "https://github.com/dlang/tools/archive/refs/tags/v2.113.0.tar.gz"
+  sha256 "9fae73963d16ab7330120588c0bbbd15919de087858bfcb1d75d7cc06970179e"
   license "BSL-1.0"
   head "https://github.com/dlang/tools.git", branch: "master"
 
