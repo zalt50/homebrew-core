@@ -23,8 +23,8 @@ class Dmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "1d5ecc5d4585bcacef2c7b5710112f50415b45df3d1637a92228fe1b32121011"
-    sha256                               x86_64_linux: "45be21c3069c43340116c9b6b0dbfb03d8f1b2d5ac6882b8a1b6829432646238"
+    sha256 cellar: :any_skip_relocation, sonoma:       "faed91bc46031d13aa176b5b329126f11991fe1b2d3be14af5769959c78a9e99"
+    sha256                               x86_64_linux: "c6b0c28384360b83fa9be4cc523e433eb07abbd70e69da38083a41fc07784b2f"
   end
 
   head do
