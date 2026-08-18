@@ -1,8 +1,8 @@
 class Nift < Formula
   desc "Fast dependency-aware website generator"
   homepage "https://nift.dev/"
-  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.0.1.tar.gz"
-  sha256 "0724c8e6518ea9ace4275e8f96da39680916d157df1afb4bfbb003678bcdfb52"
+  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.0.2.tar.gz"
+  sha256 "fe462915db41574a58236c028c34561596751a8e91e868726a18e57210450b14"
   license "MIT"
 
   bottle do
@@ -20,7 +20,7 @@ class Nift < Formula
   end
 
   test do
-    system bin/"nift", "init", ".html"
+    system bin/"nift", "init", "--ext=.html"
     assert_path_exists testpath/"public/index.html"
   end
 end
