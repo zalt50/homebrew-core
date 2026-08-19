@@ -1,8 +1,8 @@
 class GitMediate < Formula
   desc "Utility to help resolve merge conflicts"
   homepage "https://github.com/Peaker/git-mediate"
-  url "https://github.com/Peaker/git-mediate/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "f8bacc2d041d1bef9288bebdb20ab2ee6fbd7d37d4e23c84f8dda27ff5b8ba59"
+  url "https://github.com/Peaker/git-mediate/archive/refs/tags/1.2.0.tar.gz"
+  sha256 "841f48c18f83f3be05a7227f429310d0ff3fc2275e285b46fc23c38bd7407ac7"
   license "GPL-2.0-only"
 
   bottle do
