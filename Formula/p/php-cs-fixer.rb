@@ -6,7 +6,7 @@ class PhpCsFixer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "421ac52d4352afc624189652d37fa5f9dc867d975e54cae1c0d600d83287842c"
+    sha256 cellar: :any_skip_relocation, all: "c216ffa95ecfefd400f9c89f449334f3e7d7142bd078ecf310be01bb26ec2577"
   end
 
   depends_on "php"
