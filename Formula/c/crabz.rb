@@ -1,8 +1,8 @@
 class Crabz < Formula
   desc "Like pigz, but in Rust"
   homepage "https://github.com/sstadick/crabz"
-  url "https://github.com/sstadick/crabz/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "2bbd8eb669a6570b104a0eb412d2492d5a9296524964cd676440069d27f52e6c"
+  url "https://github.com/sstadick/crabz/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "fb7833a83db958c8abc3b688a8905385cd19e721133ed0aa1d1dd290ef65d8f0"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/sstadick/crabz.git", branch: "main"
 
