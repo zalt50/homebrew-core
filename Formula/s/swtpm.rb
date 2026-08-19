@@ -1,8 +1,8 @@
 class Swtpm < Formula
   desc "Software TPM Emulator based on libtpms"
   homepage "https://github.com/stefanberger/swtpm"
-  url "https://github.com/stefanberger/swtpm/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "f8da11cadfed27e26d26c5f58a7b8f2d14d684e691927348906b5891f525c684"
+  url "https://github.com/stefanberger/swtpm/archive/refs/tags/v0.10.2.tar.gz"
+  sha256 "f61cf6f1e9bbcb4cefb30b70cafaf1c4df54c6961e65cfa63830e8ad0e220134"
   license "BSD-3-Clause"
 
   bottle do
