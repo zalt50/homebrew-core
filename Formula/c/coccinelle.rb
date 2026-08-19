@@ -1,8 +1,8 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
   homepage "https://coccinelle.gitlabpages.inria.fr/website/"
-  url "https://coccinelle.gitlabpages.inria.fr/website/distrib/coccinelle-1.3.1.tar.gz"
-  sha256 "f76ddd4fbe41019af6ed1986121523f0a0498aaf193e19fb2d7ab0b7cdf8eb46"
+  url "https://coccinelle.gitlabpages.inria.fr/website/distrib/coccinelle-1.3.2.tar.gz"
+  sha256 "84c1b62af85e69b8e7100f54d19a21d090300d5e5e790953eb6b1e2c4d6edf0c"
   license "GPL-2.0-only"
   head "https://github.com/coccinelle/coccinelle.git", branch: "master"
 
@@ -26,19 +26,19 @@ class Coccinelle < Formula
   depends_on "ocaml" => :build
   depends_on "ocaml-findlib" => :build
 
-  # Apply Fedora patch to allow stdcompat to build with ocaml 5.4.0.
+  # Apply Fedora patch to allow stdcompat to build with ocaml 5.5.0.
   # When removing patch, also remove autoreconf and make autoconf/automake HEAD-only.
   patch do
-    url "https://src.fedoraproject.org/rpms/ocaml-stdcompat/raw/2f4345ccea8eda0cd2a4cc33c337a9d92d66eb3c/f/ocaml-stdcompat-ocaml5.4.patch"
-    sha256 "f30c8c3d75f9486020c47cf7d1701917e18497c92956b3c11cea79adbbeb7689"
+    url "https://src.fedoraproject.org/rpms/ocaml-stdcompat/raw/03dbbd7cb60f48ac7785d15ed995a90734538a5c/f/ocaml-stdcompat-ocaml5.5.patch"
+    sha256 "ba7970304d73ebe4d1e4c3f6589274c5f604a6124aa312740c8ccf56c7272bd2"
     directory "bundles/stdcompat/stdcompat-current"
     type :unofficial
-    resolves "https://github.com/ocamllibs/stdcompat/issues/62"
+    resolves "https://github.com/ocamllibs/stdcompat/pull/75"
   end
 
   def install
     # Remove unused bundled libraries
-    rm_r(["bundles/menhirLib", "bundles/pcre"])
+    rm_r(["bundles/menhirLib", "bundles/pcre2"])
 
     # Help find built libraries on macOS
     inreplace "bundles/pyml/Makefile", " LD_LIBRARY_PATH=", " DYLD_LIBRARY_PATH=" if OS.mac?
