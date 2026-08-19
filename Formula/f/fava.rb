@@ -3,8 +3,8 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/d2/0c/1e098493e8a61a67d69ccd3ab872136ff9d049c21b4d58c7cc8829046e02/fava-1.30.15.tar.gz"
-  sha256 "fbcec2df1c2ebd35756fb1b8b771f549bd84a019fb0e16bede99f1b4adc91847"
+  url "https://files.pythonhosted.org/packages/3d/06/2c40e01ea4b2e52d7ec7d96aba7c971ce4c32d8fc91a6e781ad069bc4f50/fava-1.30.16.tar.gz"
+  sha256 "447425cca159e34dfb230e5c93d5af9e202f366fc4508dc398b13e126c8f9c37"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
@@ -95,8 +95,8 @@ class Fava < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "itsdangerous" do
