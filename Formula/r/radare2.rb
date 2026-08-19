@@ -2,13 +2,13 @@ class Radare2 < Formula
   desc "Reverse engineering framework"
   homepage "https://radare.org"
   url "https://github.com/radareorg/radare2/archive/refs/tags/6.2.0.tar.gz"
-  sha256 "f6d42d722c589d885dd4b55d6b9f1227cab2e837a2e5c1b0523702d1d71875e4"
+  sha256 "60b31af14772cdcff1703a80f51558dbdf2ee6c114768ca51ca2033fb4bd534b"
   license "LGPL-3.0-only"
   head "https://github.com/radareorg/radare2.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
