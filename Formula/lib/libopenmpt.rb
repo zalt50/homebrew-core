@@ -13,12 +13,12 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "75d2ade1bc5ef183f4809d292797b9b5168cb226b783d0e7e41aab8674dfbab3"
-    sha256 cellar: :any, arm64_sequoia: "c01076f03b5d7d7ca5fc7342c5539431e7764de39ebb3714792b7269f15284a5"
-    sha256 cellar: :any, arm64_sonoma:  "2f40386cb5dc616a55f79199383f49ae98d4395f7b41d988eec4e61751ea4700"
-    sha256 cellar: :any, sonoma:        "cedfd7ee581b7e5654fca24125bf4f51ef10e2cdb583af4f078be9bc87384693"
-    sha256 cellar: :any, arm64_linux:   "e93e8e4a9826907bc1e38b103970ac28229615e687687940e9072523eb17cc2a"
-    sha256 cellar: :any, x86_64_linux:  "1a44606570aeb0da5a3cd1d780600f5acb9aff40c65d35f8c1888810077ef2bb"
+    sha256 cellar: :any, arm64_tahoe:   "7fa95901574c63a2e4863d37577db90f1caa20fd23268bb60a304146152007a7"
+    sha256 cellar: :any, arm64_sequoia: "b35d010368d620a701419a6f3a3c668c8e6c5d937ae8a683652610b5a75e318c"
+    sha256 cellar: :any, arm64_sonoma:  "628cf4d4ececb7dbb49d5a99f39661a7c2a5a00899dff8470d982cabe65c468e"
+    sha256 cellar: :any, sonoma:        "977b0cbf8014f9e371f96272342a004a1358352e2aaed547f18959bbd1a7b4cc"
+    sha256 cellar: :any, arm64_linux:   "82b02cf0fb7452ad246a2a2e682ca52dc90ef80a2ca338d659feb6d182c6b31d"
+    sha256 cellar: :any, x86_64_linux:  "c2173a50782078aff526c0fc51cf1a35599f78dd3239fa322814621251f0ec31"
   end
 
   depends_on "pkgconf" => :build
