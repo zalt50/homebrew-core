@@ -4,7 +4,7 @@ class Garble < Formula
   url "https://github.com/burrowers/garble/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "feab001d7e9ff4ce66011ebd70791de93eb1554d34d3ea44c33d102a25c1be0a"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
