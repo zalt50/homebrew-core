@@ -22,12 +22,13 @@ class Redis < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "87425bbf403b3cfed368c98fdfa1843bc8aac2782cd40866c0f746514c9500c8"
-    sha256 cellar: :any, arm64_sequoia: "1869cab0daecee40f96ba24194ce0fa6750e9117e0e8ce69f60af2caff1f3a78"
-    sha256 cellar: :any, arm64_sonoma:  "7ad8a8b5baec8fe3d16064a80a2e11898c00042c17126952d68c66da9c9c2762"
-    sha256 cellar: :any, sonoma:        "c3211f5ca728fbd8011efd491ddfff147b44de68d1e92fd23b571af6a83bd8fc"
-    sha256 cellar: :any, arm64_linux:   "567a10a2fbe64c98d4256077129153375d27b10368abace2e15530ef3620d7d0"
-    sha256 cellar: :any, x86_64_linux:  "f74de701676dca3682df9aa75bed1121de178ee63101547a3104c0bcf90486a0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "3ae6e90b0680cd33396e97fa6cb0f091598431e8e653bba954adad71101ad790"
+    sha256 cellar: :any, arm64_sequoia: "8dd77c3726f4a9c67cd63c5af0f5c173caf9fdd49238c4ce6ac9729f5cd9c3f4"
+    sha256 cellar: :any, arm64_sonoma:  "0b2737628ab2971b87e8ac4ede74ff33149d1d238023983380355f6181bb2963"
+    sha256 cellar: :any, sonoma:        "5f4f29b6cc2b83a55ced83d6aa7c5e2df9f117631b0a4cb01da93564881eb416"
+    sha256 cellar: :any, arm64_linux:   "e3109d2c1a9b5bc952186c15fd8b7ce4300fcae522df83b182871317c724f2ab"
+    sha256 cellar: :any, x86_64_linux:  "d41ecce1293d0902928f6c77bca5a1a5899febbd4efbfb697b48713678317c96"
   end
 
   depends_on "autoconf" => :build
