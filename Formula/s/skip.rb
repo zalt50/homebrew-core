@@ -1,8 +1,8 @@
 class Skip < Formula
   desc "Tool for building Swift apps for Android"
   homepage "https://skip.dev"
-  url "https://github.com/skiptools/skipstone/archive/refs/tags/1.9.5.tar.gz"
-  sha256 "2cd480cb1372ed585b26b06a59031a38a6d2f54f678c44885eb54f14c9ecdcdb"
+  url "https://github.com/skiptools/skipstone/archive/refs/tags/1.9.6.tar.gz"
+  sha256 "66aaff46969bc8174d7f73280d2775be0c93ba46c9411ef2bf20a8b42f52f677"
   license "AGPL-3.0-only"
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
@@ -33,8 +33,8 @@ class Skip < Formula
   end
 
   resource "skipsubmodule" do
-    url "https://github.com/skiptools/skip/archive/refs/tags/1.9.5.tar.gz"
-    sha256 "2d376159d0651cb18894447abae4c2fc5ac1c36e196b639451579d601539bfd9"
+    url "https://github.com/skiptools/skip/archive/refs/tags/1.9.6.tar.gz"
+    sha256 "473b61a222fc9eddb14a5097742c700137c4c046b9100178cdfd6dca57dc259e"
 
     livecheck do
       formula :parent
