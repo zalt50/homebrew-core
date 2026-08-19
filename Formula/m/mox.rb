@@ -7,12 +7,12 @@ class Mox < Formula
   head "https://github.com/mjl-/mox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9f757dd29b70636462ed56ccc708d6da2a9aa5092d882918c4ea2067336ed38"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9f757dd29b70636462ed56ccc708d6da2a9aa5092d882918c4ea2067336ed38"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9f757dd29b70636462ed56ccc708d6da2a9aa5092d882918c4ea2067336ed38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5b496ac370032595a89df98905dbe3577c8c7e96e589a7b27af44075d7fb92b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4d61e4435cf95a62f7f381eaa7a61911e9fb3b8ed59cdc60632e05f038b22b4"
-    sha256 cellar: :any,                 x86_64_linux:  "58986024b4aa8b5324310a80cf265560690ec5710f908d879aaa28b433a03aee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f62ca254136ed301088842bd441431f0be5468c5249f8833bbb13ae3aaf8492"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f62ca254136ed301088842bd441431f0be5468c5249f8833bbb13ae3aaf8492"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f62ca254136ed301088842bd441431f0be5468c5249f8833bbb13ae3aaf8492"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3a66604f45756b09db380b98f631faaaf17cbecea41b53152ec5c5f9ef2bb12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf52625e34f2ddae1242f9a66285fd68473963a9bacc3ed65637c4de36f2d351"
+    sha256 cellar: :any,                 x86_64_linux:  "515de7fb7748ba442ba86cedca71fb4df66bbb5830961c205203ce33b366288e"
   end
 
   depends_on "go" => :build
