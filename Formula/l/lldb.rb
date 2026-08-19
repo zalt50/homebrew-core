@@ -10,6 +10,15 @@ class Lldb < Formula
     formula "llvm"
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "6064cc1cf64460557845e50c789c37b5695881fda982ca16905288f6f3ae03d9"
+    sha256 cellar: :any, arm64_sequoia: "5ca4bbb30b87957d228713aaad6c4db762b8c7c74dea2e705db0df7350cc73f7"
+    sha256 cellar: :any, arm64_sonoma:  "e8f5aacc178bbcaddc739ef9288bf0254c8484dd4792b008fe876a84d5c7267c"
+    sha256 cellar: :any, sonoma:        "0853ee9d9721c9779d6abce757c237f553b33e415d0329867fd49aaf3df8de33"
+    sha256 cellar: :any, arm64_linux:   "6f55241ebcc61f7964d1d5ebdbed4957b1997bb5d7c09d323924633b7529794b"
+    sha256 cellar: :any, x86_64_linux:  "4ebf5aa7814723780cd37f110c67d2d2681f2d4d016269f4f943aabd4bbfa0e0"
+  end
+
   # TODO: keg_only :provided_by_macos
   keg_only "LLDB is provided by `llvm` until LLVM 23"
 
