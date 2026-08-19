@@ -1,8 +1,8 @@
 class Tuxedo < Formula
   desc "Fast, keyboard-driven terminal UI for todo.txt"
   homepage "https://github.com/webstonehq/tuxedo"
-  url "https://github.com/webstonehq/tuxedo/archive/refs/tags/v2026.7.1.tar.gz"
-  sha256 "259d46840f29141a363248e4e07701265ee75b438e4a7709a96a689da3682934"
+  url "https://github.com/webstonehq/tuxedo/archive/refs/tags/v2026.8.1.tar.gz"
+  sha256 "3135e38b61bdf12f751143b5f704ebd3b1ec6f25dd7625baeb7f7f30e56b13ea"
   license "MIT"
   head "https://github.com/webstonehq/tuxedo.git", branch: "main"
 
