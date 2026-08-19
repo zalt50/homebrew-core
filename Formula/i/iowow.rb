@@ -7,12 +7,12 @@ class Iowow < Formula
   head "https://github.com/Softmotions/iowow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6e8ff924340f81bb5b5ae2d4ab02724f487c54e2ff7ed7d59db59b3d0c8a0bd3"
-    sha256 cellar: :any, arm64_sequoia: "c5ed7b1149f97ecec546c8489547ab678a39064239ef97e7c8d6fe87da6f8779"
-    sha256 cellar: :any, arm64_sonoma:  "ab9aeefdc78b36f223b20f3fbc00e80fad6639bc72ecf1e1daa67540645bbb4e"
-    sha256 cellar: :any, sonoma:        "310b8b583148c0275988620c0e1bf0d8c7e4bc2592aa9d43aa9b37ab2792892d"
-    sha256 cellar: :any, arm64_linux:   "134b02d18ed37d7e8656b70b5d60088fe2ad67b616705a9bd7bead73a1db76e1"
-    sha256 cellar: :any, x86_64_linux:  "6676e2a4d9701567ad35ee7e29f6cf918b19a316ac7472cffc235626a63e4c19"
+    sha256 cellar: :any, arm64_tahoe:   "64c7b7229c2eac8a23114ec5870756f06b3f46067bb8e1ca45c4c4eb44008b5e"
+    sha256 cellar: :any, arm64_sequoia: "ed1890a1691b99cdd2b3ef3fe267d6755d1a5131628ab73bc275794412bcfb86"
+    sha256 cellar: :any, arm64_sonoma:  "baf38d7a4da7b14d04aa82fee364e08d9b5247dadbf038dc51532fc0e1f7baad"
+    sha256 cellar: :any, sonoma:        "4d9f2a9787929dffef6b73cf919ebfc956581dffc80e0f4800b0ef2202d10b33"
+    sha256 cellar: :any, arm64_linux:   "89ecec5de8fcaf41c6827b3466193e65d3c404a1c9f35b8bd9441e6deeea3967"
+    sha256 cellar: :any, x86_64_linux:  "63ef94d475a593f2ea26fa2ff35fd831c3e27a7321f28e96d008a307160cfc9b"
   end
 
   depends_on "pkgconf" => :build
