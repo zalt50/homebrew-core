@@ -7,16 +7,12 @@ class Iowow < Formula
   head "https://github.com/Softmotions/iowow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "b21a214c32770aca0640784c45fdf33489db118e3051c66d8bfa2c9958386a8e"
-    sha256 cellar: :any,                 arm64_sequoia:  "037aeefb4df2c9cc2c239192b51713f918271e48455c48bdebbcf2d688bb212f"
-    sha256 cellar: :any,                 arm64_sonoma:   "2fba078871f285e4275e5335150ef00f6615d5739d7a9280919edf787f9a0b5f"
-    sha256 cellar: :any,                 arm64_ventura:  "653db3534479fa6987b0276850e13ae821507a3eb40131f9170e4ce1158bf56e"
-    sha256 cellar: :any,                 arm64_monterey: "02ac4f8dc19959efbfd5bbac2685c2532e9de9488f3f51a218e15b2767727559"
-    sha256 cellar: :any,                 sonoma:         "bfdd0df35ade257dfc24898f77d0134176f5d3c13a12338c4d0e705451bb269d"
-    sha256 cellar: :any,                 ventura:        "e222abf0c1723ef6439607386f136582ef7384aa2c5df9e989386f3be4c5e5c1"
-    sha256 cellar: :any,                 monterey:       "791aad132a5be42cbde1b97c8f38dc6c63f84f382aa94980b9fc5371778deb20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "4b3ddbc7bd008a380416bef79e794b4ab3e1085309c6b5f22b2fed244dceca09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c50abbc4cf8ac933da6dc4be5dab2ca27db4e653fa7eb7189f00378561c3d7e"
+    sha256 cellar: :any, arm64_tahoe:   "6e8ff924340f81bb5b5ae2d4ab02724f487c54e2ff7ed7d59db59b3d0c8a0bd3"
+    sha256 cellar: :any, arm64_sequoia: "c5ed7b1149f97ecec546c8489547ab678a39064239ef97e7c8d6fe87da6f8779"
+    sha256 cellar: :any, arm64_sonoma:  "ab9aeefdc78b36f223b20f3fbc00e80fad6639bc72ecf1e1daa67540645bbb4e"
+    sha256 cellar: :any, sonoma:        "310b8b583148c0275988620c0e1bf0d8c7e4bc2592aa9d43aa9b37ab2792892d"
+    sha256 cellar: :any, arm64_linux:   "134b02d18ed37d7e8656b70b5d60088fe2ad67b616705a9bd7bead73a1db76e1"
+    sha256 cellar: :any, x86_64_linux:  "6676e2a4d9701567ad35ee7e29f6cf918b19a316ac7472cffc235626a63e4c19"
   end
 
   depends_on "pkgconf" => :build
