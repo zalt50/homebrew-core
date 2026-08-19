@@ -7,12 +7,12 @@ class GitPkgsBrief < Formula
   head "https://github.com/git-pkgs/brief.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49923598ffb40764fd03d2a5167df8bdbe5bb03d92867e801ea322024e72bd95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49923598ffb40764fd03d2a5167df8bdbe5bb03d92867e801ea322024e72bd95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49923598ffb40764fd03d2a5167df8bdbe5bb03d92867e801ea322024e72bd95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9131aa477f365e758610a64f29e6058c6be1a933f73ae4600323ee1e7b4d6cd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9152485aec55b8d6198f4710807b6fe80a691f0a7ce963b97e462071762399d"
-    sha256 cellar: :any,                 x86_64_linux:  "62bc7925bc163612382cfeb1d25d34fef7600c52f37b24b816e325ceee3260dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b74bd13113533d82beb61725bd65b4a66177e75f138715a84b54ccafba819bff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b74bd13113533d82beb61725bd65b4a66177e75f138715a84b54ccafba819bff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b74bd13113533d82beb61725bd65b4a66177e75f138715a84b54ccafba819bff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "937350d8974740704cd4a9af5500b3c83177163db0de500a98d1c231867dff4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b58f4090bbc260761a1d03873a0b935cc6d15c5c2f0c7f3346fac2fdf54629e"
+    sha256 cellar: :any,                 x86_64_linux:  "df6957a809a3db4b15cf06e1d8d7afab976642fff950b728f2c53d9f36478591"
   end
 
   depends_on "go" => :build
