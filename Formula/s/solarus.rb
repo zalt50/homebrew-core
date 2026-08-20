@@ -2,8 +2,8 @@ class Solarus < Formula
   desc "Action-RPG game engine"
   homepage "https://www.solarus-games.org/"
   url "https://gitlab.com/solarus-games/solarus.git",
-      tag:      "v2.1.1",
-      revision: "f411c58a467da28bcea030b420955a26878efb28"
+      tag:      "v2.1.2",
+      revision: "1c7c19a9a22253fa0a87274acb847b2b8be18dae"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
