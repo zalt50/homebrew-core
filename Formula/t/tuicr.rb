@@ -1,8 +1,8 @@
 class Tuicr < Formula
   desc "Code review TUI with vim keybindings"
   homepage "https://tuicr.dev/"
-  url "https://github.com/agavra/tuicr/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "adce72de532ba0743e373b703590a6bc098bf49efbab21257603c19be8161e88"
+  url "https://github.com/agavra/tuicr/archive/refs/tags/v0.23.1.tar.gz"
+  sha256 "2b0f28b6f15f8fae94a6c823c14667dad1828565ccb04d95ad84957cd548a3ac"
   license "MIT"
   head "https://github.com/agavra/tuicr.git", branch: "main"
 
