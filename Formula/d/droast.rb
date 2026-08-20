@@ -1,8 +1,8 @@
 class Droast < Formula
   desc "Opinionated Dockerfile linter"
   homepage "https://ewry.net/droast-dockerfile-linter/"
-  url "https://github.com/immanuwell/dockerfile-roast/archive/refs/tags/1.6.0.tar.gz"
-  sha256 "859b000d04048a30cd61c1e08d75a03690b6d95ffd4dff96af7bf731467253fa"
+  url "https://github.com/immanuwell/dockerfile-roast/archive/refs/tags/1.6.1.tar.gz"
+  sha256 "e542236407d40e5e4ac43c91950836e9829b93c25e3a038ca987d5ac5fa05511"
   license "MIT"
 
   bottle do
