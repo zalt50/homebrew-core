@@ -3,8 +3,8 @@ class PulpCli < Formula
 
   desc "Command-line interface for Pulp 3"
   homepage "https://github.com/pulp/pulp-cli"
-  url "https://files.pythonhosted.org/packages/ec/93/3eeb1e3254247dddac79024dc03cdad700d7d8a635089a4c21aee75d4e66/pulp_cli-0.40.2.tar.gz"
-  sha256 "6b17703601156af3a4d512b985a14ad8444387037d2e96e43ee4a3063418f448"
+  url "https://files.pythonhosted.org/packages/01/98/99659e641d3ceda9543da064f537372b57ecb518767169631f0642903de6/pulp_cli-0.40.3.tar.gz"
+  sha256 "9ebd9fc847f757dc7bd2b5c5db30b4aa74bd452ca18e01b322f87c9a294d38be"
   license "GPL-2.0-or-later"
   head "https://github.com/pulp/pulp-cli.git", branch: "main"
 
@@ -25,8 +25,8 @@ class PulpCli < Formula
   pypi_packages exclude_packages: %w[certifi pydantic]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
@@ -35,8 +35,8 @@ class PulpCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "multidict" do
@@ -50,8 +50,8 @@ class PulpCli < Formula
   end
 
   resource "pulp-glue" do
-    url "https://files.pythonhosted.org/packages/fa/7d/6fd440e9b1e3a41b0388644f85609df38a87c43b07e794f96949737dd830/pulp_glue-0.40.2.tar.gz"
-    sha256 "81de559c0b7e6f9df1fb99c25f197c428664ebbffd395859df7a9df9ce5b697e"
+    url "https://files.pythonhosted.org/packages/7d/43/d8c18db4fe3d1a624901bc4b23c0ff4dfa20f8ef6c3984946255776ebd68/pulp_glue-0.40.3.tar.gz"
+    sha256 "c0dfc6a314bc2b0ad8fae3a2b1943ba17644ae2f67c353845959c469a813fa31"
   end
 
   resource "pyyaml" do
