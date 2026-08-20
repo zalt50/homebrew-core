@@ -9,7 +9,7 @@ class Internetarchive < Formula
   head "https://github.com/jjjake/internetarchive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3a690e7cfbb8ea44e0715fffa5810d4a4bacb89382f783f574412be19f5497ab"
+    sha256 cellar: :any_skip_relocation, all: "1075547625e5f32ec67d4504686e4bee194758139909955ea3aa8d3b3ec0c2eb"
   end
 
   depends_on "certifi"
