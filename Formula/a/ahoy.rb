@@ -1,15 +1,10 @@
 class Ahoy < Formula
   desc "Creates self documenting CLI programs from commands in YAML files"
-  homepage "https://github.com/ahoy-cli/ahoy/"
+  homepage "https://ahoy-cli.github.io/"
   url "https://github.com/ahoy-cli/ahoy/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "3c9758dd49f635af85530a7763248e2f4532757fec0680ae6047d44fa518a45c"
   license "MIT"
   head "https://github.com/ahoy-cli/ahoy.git", branch: "master"
-
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f18d6fdb5b7f570cfb8c9c8c19924baba15285fda5dec40931e8ac2011cc53d"
@@ -25,9 +20,7 @@ class Ahoy < Formula
   deny_network_access! [:postinstall, :test]
 
   def install
-    cd "v2" do
-      system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}-homebrew")
-    end
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}-homebrew")
   end
 
   test do
