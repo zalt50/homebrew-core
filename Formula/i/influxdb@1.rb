@@ -1,8 +1,8 @@
 class InfluxdbAT1 < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
-  url "https://github.com/influxdata/influxdb/archive/refs/tags/v1.12.4.tar.gz"
-  sha256 "72c2d8e49b1e6dc312a4455a8cc1b5d21e3102be2728f02845e65e178e6446ea"
+  url "https://github.com/influxdata/influxdb/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "02cc7b4ec3c46a0aacee44dd7313aa96006bdb7c48dc7bb8f5cf02c5fc1cc0ea"
   # 1.x is using MIT license while 1.x and 3.x is using dual license (Apache-2.0/MIT)
   license "MIT"
 
@@ -30,8 +30,8 @@ class InfluxdbAT1 < Formula
   # If you're upgrading to a newer influxdb version, check to see if this needs
   # to be upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.14.tar.gz"
-    sha256 "465d2fb3fc6dab9aca60e3ee3ca623ea346f3544d53082505645f81a7c4cd6d3"
+    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.3.0.tar.gz"
+    sha256 "769deabe12733224eaebbfff3b5a9d69491b0158bdf58bbbbc7089326d33a9c8"
   end
 
   def install
