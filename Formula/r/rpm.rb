@@ -2,8 +2,8 @@ class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
   # Using GitHub tarball rather than ftp.osuosl.org to support autobump
-  url "https://github.com/rpm-software-management/rpm/releases/download/rpm-6.0.2-release/rpm-6.0.2.tar.bz2"
-  sha256 "66a4998e020d7354a804fde83801a9d7157b20f5e08198f7fde69d3a0ab683fe"
+  url "https://github.com/rpm-software-management/rpm/releases/download/rpm-6.1.0-release/rpm-6.1.0.tar.bz2"
+  sha256 "f520810d27c74bf1c5d8b8885845c61e0c845f62d33e68b02e020633a8b62fe3"
   license all_of: [
     "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # rpm-sequoia
@@ -186,13 +186,13 @@ class Rpm < Formula
     assert_path_exists testpath/"rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm"
 
     info = shell_output("#{bin}/rpm --query --package -i #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
-    assert_match "Name        : test", info
-    assert_match "Version     : 1.0", info
-    assert_match "Release     : 1", info
-    assert_match "Architecture: noarch", info
-    assert_match "Group       : Development/Tools", info
-    assert_match "License     : Public Domain", info
-    assert_match "Source RPM  : test-1.0-1.src.rpm", info
+    assert_match "Name         : test", info
+    assert_match "Version      : 1.0", info
+    assert_match "Release      : 1", info
+    assert_match "Architecture : noarch", info
+    assert_match "Group        : Development/Tools", info
+    assert_match "License      : Public Domain", info
+    assert_match "Source RPM   : test-1.0-1.src.rpm", info
     assert_match "Trivial test package", info
 
     files = shell_output("#{bin}/rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
