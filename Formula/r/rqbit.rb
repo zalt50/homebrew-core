@@ -1,8 +1,8 @@
 class Rqbit < Formula
   desc "Fast command-line bittorrent client and server"
   homepage "https://github.com/ikatson/rqbit"
-  url "https://github.com/ikatson/rqbit/archive/refs/tags/v9.0.0.tar.gz"
-  sha256 "a5c549c35e5a1e643e67376fd465158421a57e600594b69438f444b804fb6f34"
+  url "https://github.com/ikatson/rqbit/archive/refs/tags/v9.0.1.tar.gz"
+  sha256 "62a42c56259b737eea6580b63061589dc9940b145c40991cfff83470aa783291"
   license "Apache-2.0"
   head "https://github.com/ikatson/rqbit.git", branch: "main"
 
