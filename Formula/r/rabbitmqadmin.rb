@@ -1,8 +1,8 @@
 class Rabbitmqadmin < Formula
   desc "Command-line tool for RabbitMQ that uses the HTTP API"
   homepage "https://www.rabbitmq.com/docs/management-cli"
-  url "https://github.com/rabbitmq/rabbitmqadmin-ng/archive/refs/tags/v2.33.0.tar.gz"
-  sha256 "0eea0ef610383d4270a1aed8f2ca39a218d212406fae5ec2df9bf08bb81a00de"
+  url "https://github.com/rabbitmq/rabbitmqadmin-ng/archive/refs/tags/v2.34.0.tar.gz"
+  sha256 "f364a4306be8dc9bddaa01274fc05c44b8d0dec3f03daf2c1f30d56a20752913"
   license "Apache-2.0"
 
   bottle do
