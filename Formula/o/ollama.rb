@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.32.14",
-      revision: "d67ad83426633195089509347ffd4fe795120198"
+      tag:      "v0.32.15",
+      revision: "b7871fc0d1d82fe109536efa3e0e8e411c766c75"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -31,6 +31,10 @@ class Ollama < Formula
   on_macos do
     on_arm do
       depends_on "mlx-c" => :no_linkage
+
+      # Build with the mlx-c bindings for tagged MLX 0.32.1. Upstream targets a later MLX commit:
+      # https://github.com/ollama/ollama/commit/0bb09259203ff8f6d361faae1d40c4f83d2a99f7
+      patch :DATA
     end
   end
 
@@ -39,8 +43,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10434",
-        revision: "7e4c0a96880dae4fc4268ad441f8a6446bd5460a"
+        tag:      "b10488",
+        revision: "9d77fa17254e1dee4b9e92504c91611a60b1359f"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -177,3 +181,12 @@ class Ollama < Formula
     end
   end
 end
+
+__END__
+diff --git a/x/mlxrunner/mlx/fast.go b/x/mlxrunner/mlx/fast.go
+index 27d5724..f38a670 100644
+--- a/x/mlxrunner/mlx/fast.go
++++ b/x/mlxrunner/mlx/fast.go
+@@ -24 +24 @@ func FastScaledDotProductAttention(q, k, v *Array, scale float32, mode string, m
+-	C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, C.bool(false), DefaultStream().ctx)
++	C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, DefaultStream().ctx)
