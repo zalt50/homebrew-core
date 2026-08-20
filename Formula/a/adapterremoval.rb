@@ -1,8 +1,8 @@
 class Adapterremoval < Formula
   desc "Rapid adapter trimming, identification, and read merging"
   homepage "https://github.com/MikkelSchubert/adapterremoval"
-  url "https://github.com/MikkelSchubert/adapterremoval/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "52bef5e9ad5de76a6bd0a1522ad621e95efec0cc23602900bd65a154f96a1f6e"
+  url "https://github.com/MikkelSchubert/adapterremoval/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "905f7c3289f743a90d228226ad6a50aec101343830bfdef5608ec9bb69af0ca7"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -27,14 +27,6 @@ class Adapterremoval < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Use `_Exit` as macOS SDK < 15 lacks `quick_exit`
-  patch do
-    url "https://github.com/MikkelSchubert/adapterremoval/commit/165e5a9c9d5469de7920db52f15038520e9d0714.patch?full_index=1"
-    sha256 "b9f27857f0420579e254364b5d2629966da2a241adaccbe5c7130fcf12c9c157"
-    type :backport
-    resolves "https://github.com/MikkelSchubert/adapterremoval/pull/371"
-  end
-
   deny_network_access!
 
   def install
@@ -47,7 +39,6 @@ class Adapterremoval < Formula
       -Ddocs=disabled
       -Duv=auto
       -Dharden=true
-      -Dmimalloc=disabled
       -Dstatic=false
     ]
     system "meson", "setup", "build", *args, *std_meson_args
