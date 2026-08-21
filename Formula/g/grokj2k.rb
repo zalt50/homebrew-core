@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://github.com/GrokImageCompression/grok/releases/download/v20.3.11/source-full.tar.gz"
-  sha256 "9ec6938ec74a4a6393791d20c27661caa5d0f154ba62c62ae5c15db0eca4f0e6"
+  url "https://github.com/GrokImageCompression/grok/releases/download/v20.3.12/source-full.tar.gz"
+  sha256 "9e241fed4aebaf4662d6495fa357e357887427791512facd19b2d7b6509cc362"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
@@ -21,7 +21,6 @@ class Grokj2k < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "pkgconf" => :build
   depends_on "exiftool" => :test
   depends_on "fmt"
@@ -56,7 +55,7 @@ class Grokj2k < Formula
     %w[liblcms2 libpng libtiff libz].each { |l| rm_r(buildpath/"thirdparty"/l) }
 
     args = %w[
-      -DGRK_BUILD_DOC=ON
+      -DGRK_BUILD_DOC=OFF
       -DGRK_BUILD_JPEG=OFF
       -DGRK_BUILD_LCMS2=OFF
       -DGRK_BUILD_LIBPNG=OFF
