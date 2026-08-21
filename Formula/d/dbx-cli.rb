@@ -1,8 +1,8 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.68.tar.gz"
-  sha256 "f9d7adabf5ff873f3445ac66e292fc67d31017093003f145ea40a68cadd3a429"
+  url "https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.69.tar.gz"
+  sha256 "5a974aa1b9955c21107edff39f497685b6d9abf5d737676ed9fdec856e6656a6"
   license "Apache-2.0"
 
   livecheck do
@@ -21,6 +21,7 @@ class DbxCli < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "fontconfig"
