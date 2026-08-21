@@ -7,12 +7,12 @@ class WhodbCli < Formula
   head "https://github.com/clidey/whodb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa37cffb83faa40bed702b8b8994e8318e28524168c3f959e641405859df8e22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3396c4c06995be091c6dca62dee007e8c374c4ac01a38ad73ea0ecd700b4c42e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bec94326c749b28177623b3fd17fe050efca5ddc418c5b4e606aa8defba36642"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1ceb1aecb50bb8d4ee713773800a915a0c5e3abe23325b7c3dd0fde2b9f4bee"
-    sha256 cellar: :any,                 arm64_linux:   "edffc518a226820d1c28e81a4c751c82c269e95216613895d07a96d1293ff7b8"
-    sha256 cellar: :any,                 x86_64_linux:  "8846eb6a7e04941ed98891d0db837a18f5d4ebe3069e5e7f0e9ee581351981b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b6735d2a0fbc544ae8fe8c9b98c9fa8a433fad5d723117b7203e282660201f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b61441142d843e483837b4c85b0f0c47e3491a2eccd1ed1b57eb8741c6b32a04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4adcc5bced1a59d5004cad7c67b9bef3df256a6d714586ca0a75c24b8304f098"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0da5ae1dcec00c83b0b47c3424b4157d5b33176572e4d08c7865102f3cc73445"
+    sha256 cellar: :any,                 arm64_linux:   "6321edc07407f716a3ce4f62a214422c4375a78cd71adfcaafaaddc02c039945"
+    sha256 cellar: :any,                 x86_64_linux:  "610df2078f71bbaf9675ae7070547aca1edb26d539cd758bd50f88faf04b9b46"
   end
 
   depends_on "go" => :build
