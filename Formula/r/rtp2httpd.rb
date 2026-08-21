@@ -6,6 +6,15 @@ class Rtp2httpd < Formula
   license "GPL-2.0-only"
   head "https://github.com/stackia/rtp2httpd.git", branch: "main"
 
+  bottle do
+    sha256 arm64_tahoe:   "3bbc6a6a9d7e5337b39a6d264a12bf97f3f55eb6a1538c6703c767adabc5f9de"
+    sha256 arm64_sequoia: "b9a65994905f4dcc157c3371b052716bb2a17655d9a334fdeb312cac5bbc7d81"
+    sha256 arm64_sonoma:  "fb393037b61b25b7ff7c8e6eacdfffbc82cb25efcbf874d8a4540a5a0751ea7c"
+    sha256 sonoma:        "182472c1d4806d31f72dac74eed50aabba8bac3e7da44c4816063575dd4c5f15"
+    sha256 arm64_linux:   "4861ad495bfcca93d07dd7bd58759ed235c2b257d2a0f0726f24f80b35dfcd35"
+    sha256 x86_64_linux:  "fcfeb04ebde4b1b67018129625949b5ebdba08c952fe8d6971314e1a19daa253"
+  end
+
   depends_on "cmake" => :build
 
   def install
