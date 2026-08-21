@@ -6,12 +6,12 @@ class Adapterremoval < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d356ce191bce3d4637afe7f018731f5790e4e0331c54c6cbe41198196ad3017a"
-    sha256 cellar: :any, arm64_sequoia: "4aa3febe3500b531e7ab1bbea48a9cf00a3c59168cca2b2dc63a440e76ce2b89"
-    sha256 cellar: :any, arm64_sonoma:  "e54735ba61b7158e27e0f4851e47e9040a7cf34817f476124510217ab3e8a152"
-    sha256 cellar: :any, sonoma:        "4dfcb73fde9c3aa038c879d8a223dfa88bc7f42b2eaf39af6480b5fe5d42bd1e"
-    sha256               arm64_linux:   "dac7c85e227d8a27aeaa348a7cfddf2ca8bdbe0ec9fc9589aba0f75f16655730"
-    sha256               x86_64_linux:  "2f209a14c5e416b0fde6637cb8fe53fd6104d0b689374d1f97399bcccb08a0aa"
+    sha256 cellar: :any, arm64_tahoe:   "ef915d8223ce4dc9d1a2ba7b67fabd01b75fc08cfa0830f48ffb6c757f3204fb"
+    sha256 cellar: :any, arm64_sequoia: "5c00a2d2b507a17d9d569eb247a2dfdef49b5c3ac3b073f920c23abaaf05ea34"
+    sha256 cellar: :any, arm64_sonoma:  "0808fd52d51e7b1ef9664120fbdf203f7910de67279b1c7c45e50c4a49e0aa2d"
+    sha256 cellar: :any, sonoma:        "06ca0d1c4b56b3a8f5ee607926a151e261f0e92bb77265640bb5bf4e8fec5d1b"
+    sha256               arm64_linux:   "c9d06e27db10962db51126eddcd4254d40181564f6cda562cf1196ac4f6a881f"
+    sha256               x86_64_linux:  "9457322cda074f23c4965f72e6f3d51ab42767c47df8fa35d4bdf62b2de955df"
   end
 
   depends_on "meson" => :build
