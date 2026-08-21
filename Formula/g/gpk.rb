@@ -6,6 +6,15 @@ class Gpk < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/neur0map/glazepkg.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83123d0b2b375b854837cd74cc570c0e6a5dab1358dcdb56b9ac330fcb84d47a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83123d0b2b375b854837cd74cc570c0e6a5dab1358dcdb56b9ac330fcb84d47a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83123d0b2b375b854837cd74cc570c0e6a5dab1358dcdb56b9ac330fcb84d47a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3eaebe1f60b4bee89dd544177555ba2d9b74f5260ae949bfe7eed06aaa7c9999"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f5565f75bdff9cd5c21234bc6acb4976320802fdea3a30c4ea2956949fa7ea6"
+    sha256 cellar: :any,                 x86_64_linux:  "88c1dbb2e605ab2314d41b686dcfb649c3928e9dccd24affb479c08d58ea4e8e"
+  end
+
   depends_on "go" => :build
 
   def install
