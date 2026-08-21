@@ -316,9 +316,11 @@ jobs:
                 metashell|\
                 mlkit|\
                 mpich|\
+                mycli|\
                 node|\
                 octave|\
                 opencascade|\
+                opencrabs|\
                 openfast|\
                 openvino|\
                 pcl|\
