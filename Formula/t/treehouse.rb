@@ -6,12 +6,12 @@ class Treehouse < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e57948db6c2c52c784cb79bb010f825b1278bbe6d63d4c234d531daf17816674"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7542564c3a1a600c4d9b7557cbd3f3aa5eac3a6f51fcb0408c646e74207ecdf4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f4da9900b9334e092742ce176fc0b9e248b5af0f83dfee9913ce972289e9285"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc9d3c5a634efdbcf84c24f3be0eb35e0a77026658cabfbe8816f8dfd8b75b98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "359084db3e6bbfdce1721f07dbe0b7a3c4ef55a5a062cce3eaec78f2f81bec56"
-    sha256 cellar: :any,                 x86_64_linux:  "b96dfdc91ea47a83e62aaa8c2d4f15c3cba0fbb772abe83df5cc3cf96555118f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b362851c9cf4ae0d0447ea41b1ba7b4d75b04362ca539a393d0aba64fc15eb75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "192fcb68d3f27b8b24213b8d0665f4f2c81a41fcb01cd69366fc5eb6f0d888a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcc08bd00a68c8e25ad4c6179616c01b4b2d1a8d7c8c66b43ca4616efabb3059"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b92c94b5bd1024c82011c1938bd753d846a1e76cb4bc5b8bb68a1a6fac88d2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f01428541422efa7b152d0afce7a8149dd444d2f055b4dd0fda0e082a5fdac8a"
+    sha256 cellar: :any,                 x86_64_linux:  "44be09073e4667f1e923db83573c7dbcedc7fe859b7b56bd7c25ab68272c0c6f"
   end
 
   depends_on "go" => :build
