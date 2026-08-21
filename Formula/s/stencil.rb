@@ -1,10 +1,10 @@
 class Stencil < Formula
   desc "Modern living-template engine for evolving repositories"
   homepage "https://stencil.rgst.io"
-  url "https://github.com/rgst-io/stencil/archive/refs/tags/v2.18.2.tar.gz"
-  sha256 "de2d799a906f6c0b77373780a3dff242762a96da83469e12b1f06064563f7f46"
+  url "https://git.rgst.io/rgst-io/stencil/archive/v3.0.0.tar.gz"
+  sha256 "b690da33cf271b33e479b9d40f0763bd7dfbfe7dc8dc7fc00fc32d481c329c4a"
   license "Apache-2.0"
-  head "https://github.com/rgst-io/stencil.git", branch: "main"
+  head "https://git.rgst.io/rgst-io/stencil.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d6af811e0e86b4964ad09055270f402fd9e415b4afe24f33203488484151dc0"
@@ -19,8 +19,8 @@ class Stencil < Formula
 
   def install
     ldflags = %W[
-      -X go.rgst.io/stencil/v2/internal/version.version=#{version}
-      -X go.rgst.io/stencil/v2/internal/version.builtBy=#{tap.user}
+      -X go.rgst.io/stencil/v3/internal/version.version=#{version}
+      -X go.rgst.io/stencil/v3/internal/version.builtBy=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/stencil"
