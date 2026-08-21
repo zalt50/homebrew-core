@@ -1,8 +1,8 @@
 class VapoursynthSubtext < Formula
   desc "VapourSynth filters - Subtitling filter"
   homepage "https://www.vapoursynth.com"
-  url "https://github.com/vapoursynth/subtext/archive/refs/tags/R6.tar.gz"
-  sha256 "536e2f056c7b318b0104b8b9050bb17c00d8ca60b0e5fdecf1ee92879c5f9165"
+  url "https://github.com/vapoursynth/subtext/archive/refs/tags/R7.tar.gz"
+  sha256 "5390048844b6bfaa2ef574a52158f5a31f5568790d98e64c99ac5543bf45d38d"
   license "MIT"
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
 
