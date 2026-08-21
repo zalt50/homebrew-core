@@ -26,12 +26,12 @@ class Bun < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "d2dec7e845cbfb74c96e0f7b8a06a85d555fb36275744036df71cbe81c4b3e35"
-    sha256                               arm64_sequoia: "ef73f22cd191639a8a951421c823a59aa648e0c01c75eec83089fa8b788ac4a5"
-    sha256                               arm64_sonoma:  "b25c23f3ab10fe268dc705cebaea79e803fe7cf53abd0ea123178b88730715d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "830c03414478f7edea283d58a32783385a6462aa4c5ef29ef7877b30ce458c9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a1bae01b22520515d132f3b5b208e7666ec9251bb2848f8a84452a0ae69c6bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7f23ed0cc52b0ddc553a9d95af48bc030146f965639d9c03ed811c96757dc28"
+    sha256                               arm64_tahoe:   "e3b0580902ec45450316af3115ebeb532ad7d13a0762d0c1d2ac8c2c138665f5"
+    sha256                               arm64_sequoia: "bba32ee189892fac6a4a87754f97ed2151bd29ec6921f29a7e5f66d57400e155"
+    sha256                               arm64_sonoma:  "4c9a4fbc278636c9a9124593f52205bd951410415ca945437b3e650f08d188e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a4c17c9fb7da44ad94825d7a3bf060f9b1a3596611236cd908a43a9da61a232"
+    sha256                               arm64_linux:   "3d8fbeb5b40a8a3b885d3ef8c0f2c7de65ae353206004ffe21266715cf5fd2c7"
+    sha256                               x86_64_linux:  "a0909fe4fba19d4a6b9abe2b613ea61cab901bd6a320e550284a853ec0a92782"
   end
 
   depends_on "cmake" => :build
