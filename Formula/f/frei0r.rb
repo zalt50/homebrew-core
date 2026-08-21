@@ -7,12 +7,12 @@ class Frei0r < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f3cc376b8e68c8bd8a08709f73aa58d14bc4ff3c67d69acdbdd1b8ac5a6ac76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f4675b5cffbf57b789692cf0a761fdc94b83bd980ff8c3b6695610f8f7fb0b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9f9465e4a3c8235e2cb0a0af3521169486b8a8da315f24df2f1281960a03712"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6397996a0b5ac735d121d42d4e8326b7081792220bfe0437957759e19e98618b"
-    sha256 cellar: :any,                 arm64_linux:   "62b0a958dc27e356bc5a2049bb1391605d89bd2b2be08bef6886d062a267b217"
-    sha256 cellar: :any,                 x86_64_linux:  "1e2d429c064e221767d45ed0a6a72db737f61cb8af6c92beeb913d2121bf9a65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3942ed0ae1c497195e288d4ebb22f3dbc69017097e6e0f9d96306a6ab4a6abf3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a46481adf5f0579edb973ff18ab4b9f7119ba50ee88cb2e7875e3a2015e52f01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a2932f2ba83954a508b735a844972236fc67c3e82844420c73a3a76de6fa9ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4af9a166aaa7fe311b3eb94032dafee054eeb6082c32f578453cbcd7185414bd"
+    sha256 cellar: :any,                 arm64_linux:   "a03523f3edc0983b9d1dca846a369f10cbffa4936fbf59e3361297a6adb762b3"
+    sha256 cellar: :any,                 x86_64_linux:  "5c8fb5e4df8267c7defc46a16423cf61252add1c5086e7be1e2a1c8d4c7fce51"
   end
 
   depends_on "cmake" => :build
