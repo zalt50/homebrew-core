@@ -1,8 +1,8 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https://lusingander.github.io/serie/"
-  url "https://github.com/lusingander/serie/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "7092c844152a0921fb29b2d9084064c632486aa12bb76a9827fe1435623e756b"
+  url "https://github.com/lusingander/serie/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "91d7fcf304a53d7645922bc2304337f54688a219831cc23c2dd9cbf24ee9b753"
   license "MIT"
   head "https://github.com/lusingander/serie.git", branch: "master"
 
