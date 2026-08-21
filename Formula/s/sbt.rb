@@ -1,8 +1,8 @@
 class Sbt < Formula
   desc "Build tool for Scala projects"
   homepage "https://www.scala-sbt.org/"
-  url "https://github.com/sbt/sbt/releases/download/v2.0.6/sbt-2.0.6.tgz"
-  sha256 "60ce78a50b726b5b332a5277e363d67c028f16a3a15157f78a416c0b2949bc6d"
+  url "https://github.com/sbt/sbt/releases/download/v2.0.7/sbt-2.0.7.tgz"
+  sha256 "439451520724253bbf22f3a34b0bad9379f18effb65a11755cd8bf705b7c202f"
   license "Apache-2.0"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
