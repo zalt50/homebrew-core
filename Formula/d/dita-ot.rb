@@ -11,7 +11,7 @@ class DitaOt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b3cc98aec54980cbeecbb3a2054744ec4e15cd61bc8c7585b711d14796439ee2"
+    sha256 cellar: :any_skip_relocation, all: "c8069bab2aa8041f0ddb36c4a1ecc6f57781c706894cfdaadc3cef0c4c44cfa0"
   end
 
   depends_on "openjdk"
