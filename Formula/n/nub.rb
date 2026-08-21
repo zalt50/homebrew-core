@@ -5,6 +5,15 @@ class Nub < Formula
   sha256 "8bc59656c1469103e8a5100558a41d84c357cecd258c312e6f1eb2b4bcb44539"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7475584f265a438b177dba718af03c56ad5dd7ff246fb82f1c75f3b2da58be1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4ac2279d4e6c01c792e6572171448af2a3ffab563d55f9d642c08aa72b34cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8ff972bba64e72af471543daab28e8f2ec0950c1e1f82311bd82f1557ad99b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f755c5464d3260dfaff8379ebd53a4ffef0b7b2183b5f2e64906e793fa16f45"
+    sha256 cellar: :any,                 arm64_linux:   "626f32e1be70347da46454855d46cfcbaf76476b0ea0df6cc93d4b3ba6c91844"
+    sha256 cellar: :any,                 x86_64_linux:  "e1efe8142b25ccb1b1a1220d6dbc7cfe4d24e90f091325a7ff9e2603ebe84ce5"
+  end
+
   depends_on "cmake" => :build
   depends_on "node" => [:build, :test]
   depends_on "rust" => :build
