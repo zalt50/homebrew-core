@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.52.0.tar.gz"
-  sha256 "b44f615b17bf627505b329a935568a5864a0d0cc071a5d7a71369da6f232f800"
+  url "https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.53.0.tar.gz"
+  sha256 "f2a78ff50ce36c4a577a39016485cdfb835a75137d514a0a5e8e9e983f0d38bb"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -23,9 +23,9 @@ class V2ray < Formula
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https://github.com/v2fly/geoip/releases/download/202607171233/geoip.dat"
-    version "202607171233"
-    sha256 "b71d1999439dde2de2d2b6844a2befa50c50211ff739785c005ca7c230a17d6a"
+    url "https://github.com/v2fly/geoip/releases/download/202608050239/geoip.dat"
+    version "202608050239"
+    sha256 "c67bd077eb102cec74fab759b73d17f99275f56af10a87c14d9fd983508f5ce1"
 
     livecheck do
       url :url
@@ -33,9 +33,9 @@ class V2ray < Formula
   end
 
   resource "geoip-only-cn-private" do
-    url "https://github.com/v2fly/geoip/releases/download/202607171233/geoip-only-cn-private.dat"
-    version "202607171233"
-    sha256 "dff2733e43dbbdae88b2a59f908572eb5d9267d4afdb4c456a17f4a49d36747f"
+    url "https://github.com/v2fly/geoip/releases/download/202608050239/geoip-only-cn-private.dat"
+    version "202608050239"
+    sha256 "81f4dda453e16cc2f4609318554eac8f61628f7611c6ee773a996519200a3ca1"
 
     livecheck do
       url :url
@@ -43,9 +43,9 @@ class V2ray < Formula
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20260801163240/dlc.dat"
-    version "20260801163240"
-    sha256 "d0288dd63ac15195655766da1b49925d05f001aaa30783a5d51c805c4b989fbe"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20260819144818/dlc.dat"
+    version "20260819144818"
+    sha256 "f1fad85e66a838669b369f92ed0f02d14d67f8aa035d7d21df932906d50082e9"
 
     livecheck do
       url :url
