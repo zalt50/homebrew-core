@@ -7,12 +7,12 @@ class Railway < Formula
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de291decf27fcdeb20ec95112ee52da3c6c438b74eae3d23f35f926fc3a1e701"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79f19a17605ca047d0bf2541170300a8708db45d6e04b25c19d578003a7dbdd7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1ad4c95c3ef51a168dc330e69ddd31e64b87b4de9b5242a2e28b2ff790aff68"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95ad7e4d00b6466d44887714735bbadfb108f8241e101f7d2bbf1e6de22bbf5f"
-    sha256 cellar: :any,                 arm64_linux:   "e02a0918eec9574a0212a2ab33123d9a689e24d60f4fcab8eebe8a6de02dd24d"
-    sha256 cellar: :any,                 x86_64_linux:  "e62aaa607da25d84c500632c4a2f319e34ca34df1179c591b383be58b2c15344"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22173adff9e9ec22fd0a874ed4a2672bb83e7a3da1ca2ee93fa890aba0d38bf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2ae8c05e7bcde76b23719b36fc049f1b4365a58dfaf601c1fa8fb74abb54f44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bb931e755d829d40d3278489d6485bd9b6d75ba63dccd73fa783129d1973aa7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ed422b7f2ce10f933da07391e88e1246799075182a224321511d3ef6435be91"
+    sha256 cellar: :any,                 arm64_linux:   "c43584b0b59444a05421aebffe7d26262cb2d14425083183fca9cd12bbcc3698"
+    sha256 cellar: :any,                 x86_64_linux:  "d66b95762cb5ad4c5dd3c3aee016ef3606a3356f7742b3c149e59856591d0a0f"
   end
 
   depends_on "rust" => :build
