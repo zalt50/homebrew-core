@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/f7/d1/f87f4cfc8346afa97b1f6891133b9f585ab54752583baadcbf91fa4c2b0c/mycli-2.14.0.tar.gz"
-  sha256 "e019103cd8f1793ba396e77e6c2295f1a7ccee8edc1f5991ccd972efb4b6d22a"
+  url "https://files.pythonhosted.org/packages/43/46/16217d4b09b121a701f622d656e5ca724fa6f154be520f635d72fca17eae/mycli-2.15.0.tar.gz"
+  sha256 "3468002140b35e8eb511374157820a572f3e1427ff78b539691a96469c7ddb27"
   license "BSD-3-Clause"
 
   bottle do
@@ -100,8 +100,8 @@ class Mycli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jaraco-classes" do
