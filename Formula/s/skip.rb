@@ -7,12 +7,12 @@ class Skip < Formula
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "c4046584a7b91877c837beef43046b71d02ce584b04e6b1e5bdaada9be5c436c"
-    sha256                               arm64_sequoia: "d55e6c03586e89aa9530ed21ce9e7afd56f6bcde2b6b2481f70fd737a8997d28"
-    sha256                               arm64_sonoma:  "1f52527859dcdf85443509cc2d5612c8dc5e6e5c626bd8ff6049fd25753faed1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "541d860027fb028238718c4469e51af415137711e1ae6ca98efc302135af291f"
-    sha256                               arm64_linux:   "c75d8fce97af326e78bf9c2158902e760b63c18c838ae4b516bfca60a70b5cd9"
-    sha256                               x86_64_linux:  "e31f04521345ef76f988f1549d0685d8fd7b4bdba952a73089d952659042899f"
+    sha256                               arm64_tahoe:   "d8e978f8884b17e0dab748978bb7f037d2e9370d66a282c231270377b17c810e"
+    sha256                               arm64_sequoia: "1b14040dc6fa39c9816defe29ce1f265e295835774e195eece69aaf88c517263"
+    sha256                               arm64_sonoma:  "197083ee7e51ed7b83cd8202fd4308442f4a6d26a3679c85d45c5b519e97622d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d96707bfd3aec940265a7066682d63e3f313b46f412544d976841c5c2237858c"
+    sha256                               arm64_linux:   "f3c188b7df244ef4742b8b18b0f8067b46158435d71cf4f73b8ac6cea234fecc"
+    sha256                               x86_64_linux:  "b36440f62d27a49dfb59ca472f699ddf0449b3a43e35e7430fa9be36f3a36df7"
   end
 
   depends_on "gradle"
