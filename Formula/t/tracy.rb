@@ -3,8 +3,8 @@ class Tracy < Formula
   homepage "https://tracy.nereid.pl/"
   # NOTE: Do not report issues with dependencies upstream as they only support
   # vendored dependencies, see https://github.com/wolfpld/tracy/issues/1079
-  url "https://github.com/wolfpld/tracy/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "d4efc50ebcb0bfcfdbba148995aeb75044c0d80f5d91223aebfaa8fa9e563d2b"
+  url "https://github.com/wolfpld/tracy/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "bf4af567e9c7524d07f3caa745fad02fb33bd5694f11910750382d1efbb251c1"
   license "BSD-3-Clause"
 
   bottle do
@@ -58,8 +58,8 @@ class Tracy < Formula
 
   resource "usearch" do
     url "https://github.com/unum-cloud/USearch.git",
-        tag:      "v2.23.0",
-        revision: "7306bb446be5f0f0c529ec8acdc57361cef8a8a7"
+        tag:      "v2.26.0",
+        revision: "cc23bbaf21ef52313c5a495adbc40cbd733cdcfb"
   end
 
   def install
@@ -71,6 +71,17 @@ class Tracy < Formula
     # Upstream only allows vendored deps so add some workarounds to use brew formulae instead
     inreplace "cmake/server.cmake", " libzstd ", " zstd::libzstd_shared "
     inreplace "cmake/vendor.cmake", /NAME json$/, "NAME nlohmann_json"
+    inreplace "cmake/vendor.cmake", /NAME nfd$/,
+              "NAME nfd\n            VERSION #{Formula["nativefiledialog-extended"].version}"
+
+    # md4c does not install a CMake package version file, so use pkg-config.
+    (staging_prefix/"Findmd4c.cmake").write <<~CMAKE
+      find_package(PkgConfig REQUIRED)
+      pkg_check_modules(md4c REQUIRED IMPORTED_TARGET md4c)
+      add_library(md4c ALIAS PkgConfig::md4c)
+      include(FindPackageHandleStandardArgs)
+      find_package_handle_standard_args(md4c REQUIRED_VARS md4c_LIBRARIES VERSION_VAR md4c_VERSION)
+    CMAKE
 
     # Workaround to bypass upstream vendoring tidy-html5 by adding a find module
     (staging_prefix/"Findtidy.cmake").write <<~CMAKE
@@ -111,16 +122,20 @@ class Tracy < Formula
       system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: staging_prefix)
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
-      (staging_prefix/"fp16").install "fp16/include"
     end
 
     args = %w[CAPSTONE GLFW FREETYPE LIBCURL PUGIXML].map { |arg| "-DDOWNLOAD_#{arg}=OFF" }
     args << "-DCMAKE_MODULE_PATH=#{staging_prefix}"
+    args << "-DNO_CCACHE=ON"
+
+    # `monitor` uses Linux `perf_event` APIs and is unguarded upstream
+    skip_dirs = %w[python test]
+    skip_dirs << "monitor" if OS.mac?
 
     buildpath.each_child do |child|
       next unless child.directory?
       next unless (child/"CMakeLists.txt").exist?
-      next if %w[python test].include?(child.basename.to_s)
+      next if skip_dirs.include?(child.basename.to_s)
 
       # Workaround to link to shared nativefiledialog-extended. Upstream only supports vendored libs
       extra_args = ["-DCMAKE_EXE_LINKER_FLAGS=-lobjc"] if OS.mac? && child.basename.to_s == "profiler"
@@ -130,20 +145,26 @@ class Tracy < Formula
       bin.install child.glob("build/tracy-*").select(&:executable?)
     end
 
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", "-DTRACY_ENABLE=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     bin.install_symlink "tracy-profiler" => "tracy"
   end
 
   test do
-    assert_match "Tracy Profiler #{version}", shell_output("#{bin}/tracy --help")
+    (testpath/"test.cpp").write <<~CPP
+      #include <tracy/Tracy.hpp>
+      #include <iostream>
+      int main() {
+        ZoneScoped;
+        FrameMark;
+        std::cout << "instrumented client" << std::endl;
+      }
+    CPP
+    system ENV.cxx, "test.cpp", "-std=c++17", "-DTRACY_ENABLE", "-DTRACY_IMPORTS", "-I#{include}/tracy",
+           "-L#{lib}", "-lTracyClient", "-pthread", "-o", "test"
+    assert_equal "instrumented client", shell_output("./test").strip
 
-    port = free_port
-    pid = spawn bin/"tracy", "-p", port.to_s
-    sleep 1
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    assert_match "Tracy Profiler #{version}", shell_output("#{bin}/tracy --help")
   end
 end
