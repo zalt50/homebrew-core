@@ -22,6 +22,9 @@ class Lima < Formula
     depends_on "qemu"
   end
 
+  # cidata/freebsd: propagate proxy settings to pkg
+  patch :DATA
+
   def install
     # make (default):              build everything
     # make native:                 build core + native guest agent
@@ -59,3 +62,54 @@ class Lima < Formula
     assert_includes template_names, "default"
   end
 end
+
+__END__
+diff --git a/pkg/cidata/cidata.TEMPLATE.d/user-data b/pkg/cidata/cidata.TEMPLATE.d/user-data
+--- a/pkg/cidata/cidata.TEMPLATE.d/user-data
++++ b/pkg/cidata/cidata.TEMPLATE.d/user-data
+@@ -83,8 +83,36 @@ users:
+       - {{ printf "%q" $val }}
+     {{- end }}
+
+-{{- if .BootScripts }}
++{{- $ftpProxy := index .Env "ftp_proxy" }}
++{{- $httpProxy := index .Env "http_proxy" }}
++{{- $httpsProxy := index .Env "https_proxy" }}
++{{- $noProxy := index .Env "no_proxy" }}
++{{- $pkgProxy := or $ftpProxy $httpProxy $httpsProxy $noProxy }}
++{{- if or .BootScripts (and (eq .OS "FreeBSD") $pkgProxy) }}
+ write_files:
++{{- if and (eq .OS "FreeBSD") $pkgProxy }}
++ - content: |
++
++      PKG_ENV {
++{{- if $ftpProxy }}
++          FTP_PROXY: {{ printf "%q" $ftpProxy }};
++{{- end }}
++{{- if $httpProxy }}
++          HTTP_PROXY: {{ printf "%q" $httpProxy }};
++{{- end }}
++{{- if $httpsProxy }}
++          HTTPS_PROXY: {{ printf "%q" $httpsProxy }};
++{{- end }}
++{{- if $noProxy }}
++          NO_PROXY: {{ printf "%q" $noProxy }};
++{{- end }}
++      }
++   owner: root:wheel
++   path: /usr/local/etc/pkg.conf
++   permissions: '0644'
++   append: true
++{{- end }}
++{{- if .BootScripts }}
+  - content: |
+       #!/bin/sh
+       set -eux
+@@ -153,6 +181,7 @@ write_files:
+    permissions: '0644'
+ {{- end }}
+ {{- end }}
++{{- end }}
+
+ {{- if .DNSAddresses }}
+ # This has no effect on systems using systemd-resolved, but is used
