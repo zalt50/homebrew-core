@@ -25,6 +25,9 @@ class P11Kit < Formula
 
   uses_from_macos "libffi"
 
+  # meson test runs a server so needs network access
+  allow_network_access! :build
+
   def install
     # https://bugs.freedesktop.org/show_bug.cgi?id=91602#c1
     ENV["FAKED_MODE"] = "1"
