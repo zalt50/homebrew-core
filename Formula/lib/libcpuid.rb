@@ -6,10 +6,8 @@ class Libcpuid < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "c1e23b9deee10397bca4e32933b1ba265ca04a9649d31a934b17ec561fa9b114"
-    sha256 cellar: :any,                 ventura:      "08670c2e18ce4fb2fb021260ec3f5a32fbfc82842777cc52938dbf4914d14f17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "dad70f4216aead591c3a9571f601adb46d251a21139beddce44c85a94a799cb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8bedd7a2bb826cc95ae79026e65ba549cf476e6ce95fa3761e29e80cf6db710"
+    sha256 cellar: :any, arm64_linux:  "af61a19db58ffe3df890fc79f40d8ce6b24261ce3a5bad74bf33b8b2d1425708"
+    sha256 cellar: :any, x86_64_linux: "4475f8da6b5e52c68d2e07b62eb526d491caa8c6a23f2c96d510124acd795b82"
   end
 
   head do
