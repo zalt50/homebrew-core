@@ -32,6 +32,13 @@ class Akku < Formula
   depends_on "pkgconf" => :build
   depends_on "guile"
 
+  # Backport the Guile 3.0.11 workaround for `define-values` temporaries being left unbound
+  patch do
+    file "Patches/akku/1.1.0-guile-3.0.11.patch"
+    type :backport
+    resolves "https://gitlab.com/akkuscm/akku/-/commit/73acf1ff4f3ee77028d954d051a2c852e6b8a620"
+  end
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
