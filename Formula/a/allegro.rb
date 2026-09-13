@@ -74,8 +74,9 @@ class Allegro < Formula
       }
     CPP
 
-    system ENV.cxx, "allegro_test.cpp", "-I#{include}", "-L#{lib}",
-                    "-lallegro", "-lallegro_main", "-o", "allegro_test"
+    # `allegro_main` runs the program from an NSApplication that never finishes launching without a window server
+    system ENV.cxx, "allegro_test.cpp", "-DALLEGRO_NO_MAGIC_MAIN", "-I#{include}", "-L#{lib}",
+                    "-lallegro", "-o", "allegro_test"
     system "./allegro_test"
   end
 end
