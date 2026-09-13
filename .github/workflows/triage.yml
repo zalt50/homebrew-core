@@ -196,10 +196,6 @@ jobs:
                 - Formula/p/python-gdbm@3.14.rb
                 - Formula/p/python-tk@3.14.rb
 
-            - label: review no_autobump stanza
-              path: Formula/.+
-              content: 'no_autobump! because: :requires_manual_review'
-
             - label: boost
               path: Formula/.+
               content: depends_on "boost(@[0-9.]+)?"
