@@ -37,31 +37,34 @@ class Inlyne < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/inlyne --version")
 
-    pids = []
-    if OS.linux?
-      # Not using xvfb-run which can leave behind processes running after test
-      IO.pipe do |read_io, write_io|
-        pids << spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
-        write_io.close
-        ENV["DISPLAY"] = ":#{read_io.read.strip}"
-      end
-      ENV["FONTCONFIG_FILE"] = Formula["fontconfig"].etc/"fonts/fonts.conf"
-    end
-
-    ENV["INLYNE_LOG"] = "cosmic_text::font::system::std=trace,cosmic_text::shape=trace"
-    ENV["NO_COLOR"] = "1"
-
     test_markdown = testpath/"test.md"
     test_markdown.write <<~MARKDOWN
       _lorem_ **ipsum** dolor **sit** _amet_
     MARKDOWN
 
+    # The configuration is parsed before any window is created
+    (testpath/"config.toml").write 'theme = "purple"'
+    output = shell_output("#{bin}/inlyne view --config #{testpath}/config.toml #{test_markdown} 2>&1", 1)
+    assert_match "unknown variant `purple`", output
+
+    # Rendering needs a window server, which the macOS test sandbox does not provide
+    return if OS.mac?
+
+    pids = []
+    # Not using xvfb-run which can leave behind processes running after test
+    IO.pipe do |read_io, write_io|
+      pids << spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
+    end
+    ENV["FONTCONFIG_FILE"] = Formula["fontconfig"].etc/"fonts/fonts.conf"
+    ENV["INLYNE_LOG"] = "cosmic_text::font::system::std=trace,cosmic_text::shape=trace"
+    ENV["NO_COLOR"] = "1"
+
     output_log = testpath/"output.log"
     pids << spawn(bin/"inlyne", test_markdown, [:out, :err] => output_log.to_s)
     sleep 5
-    # macOS Intel CI runner fails with "Error: Failed to find an appropriate adapter"
-    macos_intel_ci = OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-    assert_match(/style: Italic.*\n.*'lorem'/, output_log.read) unless macos_intel_ci
+    assert_match(/style: Italic.*\n.*'lorem'/, output_log.read)
   ensure
     pids&.reverse_each do |pid|
       Process.kill "TERM", pid
