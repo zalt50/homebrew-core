@@ -79,6 +79,9 @@ class DotnetAT9 < Formula
     ENV["CLR_CC"] = which(ENV.cc)
     ENV["CLR_CXX"] = which(ENV.cxx)
 
+    # Avoid a possible race in telemetry data writing/reading/removing during build
+    ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
+
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
       ENV.prepend_path "PATH", formula_opt_libexec("grep")/"gnubin"
@@ -86,17 +89,20 @@ class DotnetAT9 < Formula
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
       ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path
+
+      # Deparallelize to avoid bootstrap Roslyn crashes.
+      ENV.deparallelize
     else
       icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
       ENV.append_path "LD_LIBRARY_PATH", icu4c_dep.to_formula.opt_lib
-
-      # Work around build script getting stuck when running shutdown command on Linux
-      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
-      inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
-      inreplace "repo-projects/Directory.Build.targets",
-                '"$(DotnetTool) build-server shutdown --vbcscompiler"',
-                '"true"'
     end
+
+    # Work around the bootstrap SDK failing when it shuts down build servers
+    # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
+    inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
+    inreplace "repo-projects/Directory.Build.targets",
+              '"$(DotnetTool) build-server shutdown --vbcscompiler"',
+              '"true"'
 
     args = %w[
       --clean-while-building
@@ -106,6 +112,24 @@ class DotnetAT9 < Formula
     ]
 
     system "./prep-source-build.sh"
+    if OS.mac?
+      # MSBuild hardcodes `/tmp` for its sockets, which the build sandbox denies, so prefer a short `TMPDIR`.
+      # Below 38 characters, even its longest socket name (66) fits macOS's 103-byte socket path limit.
+      # https://github.com/Homebrew/brew/issues/23934
+      inreplace "src/msbuild/src/Shared/NamedPipeUtil.cs",
+                'Path.Combine("/tmp", pipeName)',
+                'Path.Combine(Path.GetTempPath().Length < 38 ? Path.GetTempPath() : "/tmp", pipeName)'
+      # Avoid worker nodes, which the unpatched bootstrap MSBuild cannot reach
+      system ".dotnet/dotnet", "build", "src/msbuild/src/MSBuild/MSBuild.csproj", "--configuration", "Release",
+             "-maxcpucount:1"
+      # Replace the bootstrap SDK's MSBuild with the patched one
+      cp Dir["src/msbuild/artifacts/bin/MSBuild/Release/net*/{MSBuild,Microsoft.Build*}.dll"],
+         Dir[".dotnet/sdk/*"].first
+      # `build.sh` builds MSBuild again into the same directory
+      rm_r "src/msbuild/artifacts"
+    end
+    # The sandbox also denies the Roslyn compiler server's `/tmp` socket, so compile without it
+    ENV["UseSharedCompilation"] = "false" if OS.mac?
     # We unset "CI" environment variable to work around aspire build failure
     # error MSB4057: The target "GitInfo" does not exist in the project.
     # Ref: https://github.com/Homebrew/homebrew-core/pull/154584#issuecomment-1815575483
