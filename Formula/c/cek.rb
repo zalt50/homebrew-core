@@ -7,13 +7,11 @@ class Cek < Formula
   head "https://github.com/bschaatsbergen/cek.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8beb65197e295bd4248bddca9983b9ba1939183744f282aff7ae61411d10bfa3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fbdff3f7de472e4566a8b4d5b52d8dad6dab459f38adba09fe29958650738fec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fbdff3f7de472e4566a8b4d5b52d8dad6dab459f38adba09fe29958650738fec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fbdff3f7de472e4566a8b4d5b52d8dad6dab459f38adba09fe29958650738fec"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0b70dbb71e41cfdc5c1850901a8fde575a3fc914f19936afca9399bab054474e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4d99a71a392f0d75ab253671d04b5bbb033466a205c403f84b44cdf122ae5967"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cb5a90842490b3753de41eaccb5cb00989aaf88b4d7545abaf53960c47cc4d7c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ec560a594f53c1039bb8718a61e3ad197d381053ddff378156e10f073cc687a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec560a594f53c1039bb8718a61e3ad197d381053ddff378156e10f073cc687a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ec560a594f53c1039bb8718a61e3ad197d381053ddff378156e10f073cc687a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "348d0f4fce928c9fd1ec0d109fce2ccec191b979125097e679b3a0cd47790da4"
+    sha256 cellar: :any,                 x86_64_linux:      "6823661b656fb14477b8f26b10ff69c9d6e6d2675b600df1d3106dc2e339c91c"
   end
 
   depends_on "go" => :build
