@@ -7,12 +7,13 @@ class Inlyne < Formula
   head "https://github.com/Inlyne-Project/inlyne.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b00ec365f5db144e8a09ca07667d6024905242832219fd64a7200b34fac6125c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc6106f1e65801808dd7f67ff7931284d94a67ec1e8c8d8ae8b3250650e1d163"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9ad410ce577fc199ffd0c2743c8fe0816ba2c55998dd8755d510c77ef2e501e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "400deb0a0094c4b8f1243ba87a1b15826e77318c1be8baffca37a3271b9c0205"
-    sha256 cellar: :any,                 arm64_linux:   "40e55cf5da45ea8cbbfc461b501c68710954d7807b6ffd819a6d044e9bd4d480"
-    sha256 cellar: :any,                 x86_64_linux:  "ecc93ce124a7a093922be8e87fc5989a9005e85c8cf3466ce9c8d56d7ea775df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce498ba06b53df4ef865efab6ef51410dc3a5fc5129f22ad50468c2c40aa75ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b00ec365f5db144e8a09ca07667d6024905242832219fd64a7200b34fac6125c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fc6106f1e65801808dd7f67ff7931284d94a67ec1e8c8d8ae8b3250650e1d163"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d9ad410ce577fc199ffd0c2743c8fe0816ba2c55998dd8755d510c77ef2e501e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "400deb0a0094c4b8f1243ba87a1b15826e77318c1be8baffca37a3271b9c0205"
+    sha256 cellar: :any,                 arm64_linux:       "40e55cf5da45ea8cbbfc461b501c68710954d7807b6ffd819a6d044e9bd4d480"
+    sha256 cellar: :any,                 x86_64_linux:      "ecc93ce124a7a093922be8e87fc5989a9005e85c8cf3466ce9c8d56d7ea775df"
   end
 
   depends_on "pkgconf" => :build
