@@ -6,6 +6,14 @@ class AgentManager < Formula
   license "Apache-2.0"
   head "https://github.com/YoanWai/agent-manager.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47cf6701b93cc927ba9e1ef418c8294af656bcc7402d6017aaff3be36d64e841"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "358424adb2d6c0703767e36f3830aeeaa3b6a12435ec46447238fb6cc5f565b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95b00714351d39e3a09626669d021b9a91f9e70e1f402040bb8bdc8f6ff25916"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "16e5a5e70d141132339aef77421ca3a0fa19b25f658b0df0c9491fbb9108da5d"
+    sha256 cellar: :any,                 x86_64_linux:      "5cd9f1b38b32bf2895f0fd8b2e508f64b317a8a9c920cbe85e48c8a6e62296a0"
+  end
+
   depends_on "go" => :build
   depends_on "tmux"
 
