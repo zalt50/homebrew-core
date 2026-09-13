@@ -1,8 +1,8 @@
 class Ddcutil < Formula
   desc "Control monitor settings using DDC/CI and USB"
   homepage "https://www.ddcutil.com"
-  url "https://www.ddcutil.com/tarballs/ddcutil-2.2.7.tar.gz"
-  sha256 "19ac6604cf1177ba56666f8a682581e71e8973bd06c7c8dcf033674e4aaaa648"
+  url "https://www.ddcutil.com/tarballs/ddcutil-3.0.1.tar.gz"
+  sha256 "1c862dc263aa295f23da8d9a6693487d4cd8c97a91bdeaa4711cab28a33cdd6e"
   license "GPL-2.0-or-later"
 
   livecheck do
