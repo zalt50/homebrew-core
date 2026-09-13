@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/1e/67/086267b68faf5033161f487bfb9fa7f084c5d48f01ad9f144cea4fd0232b/mycli-2.23.0.tar.gz"
-  sha256 "891453488390dc3c1fd8299e74c7bd6f32647c46fae5c2b4000d94ffc59b5263"
+  url "https://files.pythonhosted.org/packages/5c/76/1c37334e977f9dcc2e7cebabaad03b06c1c23a178e5572a72a5034f958c0/mycli-2.24.0.tar.gz"
+  sha256 "641d2ae72ec559121c17cac763e1ac226d16b9b54ec27b2cbbf21c665dbdf818"
   license "BSD-3-Clause"
 
   bottle do
@@ -125,8 +125,8 @@ class Mycli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/1d/1f/10936e16d8860c70698a1aa939a46aa0224813b782bce4e000e637da0b2d/jiter-0.16.0.tar.gz"
-    sha256 "7b24c3492c5f4f84a37946ad9cf504910cf6a782d6a4e0689b6673c5894b4a1c"
+    url "https://files.pythonhosted.org/packages/9c/1f/8176d92e001f86505424b41664032ae26a882bc9ca41a32c803f373f9195/jiter-0.17.0.tar.gz"
+    sha256 "03e432f226a453851079fb84cd17c6da9991eab723e28d716f14ae3d906e0c12"
   end
 
   resource "jsonschema" do
@@ -165,8 +165,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/e5/31/cacdcba6fb96dae7df9b24573b73904464561e17a77b78c5a4e330a6da89/openai-3.11.0.tar.gz"
-    sha256 "1ee0114c218bba9ffdea1927b974b4ddeee5f173000b0930aab53efc7c349989"
+    url "https://files.pythonhosted.org/packages/40/f1/4874c4f7db30121885e6a763e2670b2fe1d76c79ed4732f8acbb51c8d96e/openai-3.13.0.tar.gz"
+    sha256 "a8f87a9b3b9c08eb446d68bd0a80e8ec907c4c35fdea63f4265c7b34b2de3a60"
   end
 
   resource "packaging" do
