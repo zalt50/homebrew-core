@@ -1,10 +1,9 @@
 class Znc < Formula
   desc "Advanced IRC bouncer"
   homepage "https://wiki.znc.in/ZNC"
-  url "https://znc.in/releases/znc-1.10.2.tar.gz"
-  sha256 "5b7561f3b100234d58ae4946eac0262ab305d275c094e64ae723e45d07be08ab"
+  url "https://znc.in/releases/znc-1.10.3.tar.gz"
+  sha256 "68f3f6641b480c041010c5596e1234043e05c9137eda06233845017603095f5b"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://znc.in/releases/"
@@ -31,6 +30,7 @@ class Znc < Formula
   depends_on "python@3.14"
 
   on_linux do
+    depends_on "cyrus-sasl"
     depends_on "zlib-ng-compat"
   end
 
