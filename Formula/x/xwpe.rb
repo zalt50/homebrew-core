@@ -6,6 +6,15 @@ class Xwpe < Formula
   license "GPL-2.0-or-later"
   head "https://codeberg.org/mendezr/xwpe.git", branch: "main"
 
+  bottle do
+    sha256 arm64_tahoe:   "d100465bbff75c3eec82e924c92cc5577083c21ba7b2703975e572c016675e09"
+    sha256 arm64_sequoia: "0357c06072e8587026af848d3c6e8dcc01a485f1d66799bc296ff1dc7436fb79"
+    sha256 arm64_sonoma:  "394c446ce528e68f03a71f172a9b4169d43f7b4b78f1cace60afab8c38471221"
+    sha256 sonoma:        "2c6ea095f6e6e7af4a6384f219aaac5a86bc54c6f39848eb58d5f70018e23556"
+    sha256 arm64_linux:   "22a6d704370a8f2ad1ebdb693714d045dcfdc56ba2ca674876e0c5f6008f21de"
+    sha256 x86_64_linux:  "0ad256c936030155c82339e1d77a3497fd8422ea004ce7ee1a4903adedecc316"
+  end
+
   depends_on "pkgconf" => :build
 
   depends_on "json-c"
