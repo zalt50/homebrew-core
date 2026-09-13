@@ -86,14 +86,6 @@ module.exports = async ({github, context, core}, formulae_detect, dependent_test
       core.setOutput('download-concurrency', 'auto')
     }
 
-    if (label_names.includes(`CI-test-bot-fail-fast${deps_suffix}`)) {
-      console.log(`CI-test-bot-fail-fast${deps_suffix} label found. Passing --fail-fast to brew test-bot.`)
-      test_bot_formulae_args.push('--fail-fast')
-      test_bot_dependents_args.push('--fail-fast')
-    } else {
-      console.log(`No CI-test-bot-fail-fast${deps_suffix} label found. Not passing --fail-fast to brew test-bot.`)
-    }
-
     if (label_names.includes('CI-build-dependents-from-source')) {
       console.log('CI-build-dependents-from-source label found. Passing --build-dependents-from-source to brew test-bot.')
       test_bot_dependents_args.push('--build-dependents-from-source')
