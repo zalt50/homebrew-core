@@ -23,8 +23,8 @@ class Checkmake < Formula
     ENV["BUILDER_NAME"] = "Homebrew"
     ENV["BUILDER_EMAIL"] = "homebrew@brew.sh"
     ENV["PREFIX"] = prefix
-    system "make", "VERSION=#{version}"
-    system "make", "install"
+    # The default target runs an unpinned `golangci-lint@latest`, whose new checks fail on the test files
+    system "make", "install", "VERSION=#{version}"
   end
 
   test do
