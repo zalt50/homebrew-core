@@ -7,9 +7,10 @@ class TerminalNotifier < Formula
   head "https://github.com/julienXX/terminal-notifier.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "124d27b95cd3911a6d417c0f55a065ca9613a34f4ed4d53263b4bbdca2007122"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fbb85742dd622ef9ff8b1ae2f42a7c8b1687a732379f63901ae27d9af26ff9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70f5c03ad1d542ae13cbbb9d7fa589c56601c2eb121f25cc726ba4a3f8442bc5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0c21a84a332707e45558b3a57e0e36a1914fa789bf335aaef0a66eb1d7a8efaf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "124d27b95cd3911a6d417c0f55a065ca9613a34f4ed4d53263b4bbdca2007122"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0fbb85742dd622ef9ff8b1ae2f42a7c8b1687a732379f63901ae27d9af26ff9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "70f5c03ad1d542ae13cbbb9d7fa589c56601c2eb121f25cc726ba4a3f8442bc5"
   end
 
   depends_on xcode: :build
