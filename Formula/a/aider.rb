@@ -576,6 +576,9 @@ class Aider < Formula
   end
 
   def install
+    # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
+    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+
     venv = virtualenv_install_with_resources(without: ["hf-xet", "numpy"])
 
     resource("hf-xet").stage do
