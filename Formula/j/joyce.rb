@@ -34,7 +34,11 @@ class Joyce < Formula
     # use the system's libdsk and we need to remove/not link
     # conflicting files.
     # system "./configure", "--disable-silent-rules", "--with-system-libdsk", *args
-    system "./configure", "--disable-silent-rules", *std_configure_args
+    args = %w[
+      --disable-sdltest
+      --disable-silent-rules
+    ]
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 
@@ -44,14 +48,19 @@ class Joyce < Formula
   end
 
   test do
+    assert_match "PCW / IBM 180k", shell_output("#{bin}/dskconv -formats")
+    return if OS.mac? # unable to run xjoyce within macOS sandbox
+
     assert_match version.to_s, shell_output("#{bin}/xjoyce --version")
 
     output_log = testpath/"output.log"
     pid = spawn bin/"xjoyce", [:out, :err] => output_log.to_s
-    sleep 2
-    assert_match "JOYCE will emulate a PCW 82048 (or 92048)", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    begin
+      sleep 2
+      assert_match "JOYCE will emulate a PCW 82048 (or 92048)", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
