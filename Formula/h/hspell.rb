@@ -41,6 +41,9 @@ class Hspell < Formula
     # The build scripts rely on "." being in @INC which was disabled by default in perl 5.26
     ENV["PERL_USE_UNSAFE_INC"] = "1"
 
+    # C23 rejects the K&R-style function definitions in the bundled tclHash.c
+    ENV.append_to_cflags "-std=gnu17"
+
     # autoconf needs to pick up on the patched configure.in and create a new ./configure
     # script
     system "autoconf"
