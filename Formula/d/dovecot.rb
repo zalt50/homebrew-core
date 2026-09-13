@@ -53,7 +53,7 @@ class Dovecot < Formula
 
   resource "pigeonhole" do
     url "https://pigeonhole.dovecot.org/releases/2.4/dovecot-pigeonhole-2.4.5.tar.gz"
-    sha256 "06259be224aed23e2448fba5f620c2accca1f35694d31ba8ce9b30b2414f71ec"
+    sha256 "ad7c478cb3aaa76c5f81f86727a3e6843645b0a1253f5684fb8a0beec0d22925"
 
     livecheck do
       formula :parent
