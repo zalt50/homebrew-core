@@ -48,7 +48,7 @@ class Cjdns < Formula
   end
 
   test do
-    sample_conf = JSON.parse(shell_output("#{bin}/cjdroute --genconf"))
+    sample_conf = JSON.parse(shell_output("#{bin}/cjdroute --genconf"), allow_comments: true)
     assert_equal "NONE", sample_conf["admin"]["password"]
 
     help_output = shell_output("#{bin}/cjdnstool --help")
