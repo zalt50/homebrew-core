@@ -23,6 +23,14 @@ class Iamb < Formula
     depends_on "openssl@3"
   end
 
+  # Rust 1.94+ overflows the default recursion limit on matrix-sdk futures
+  patch do
+    url "https://github.com/ulyssa/iamb/commit/d69bc64cb9f6ddd150d5a6f1e08119f4cc74740e.patch?full_index=1"
+    sha256 "c7f804a296abe18828d26884098a6755bd633705f4703648b0154bca74c29f4a"
+    type :backport
+    resolves "https://github.com/ulyssa/iamb/pull/599"
+  end
+
   def install
     ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
     ENV["VERGEN_GIT_SHA"] = tap.user
