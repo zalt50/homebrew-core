@@ -1,8 +1,8 @@
 class Ouch < Formula
   desc "Painless compression and decompression for your terminal"
   homepage "https://github.com/ouch-org/ouch"
-  url "https://github.com/ouch-org/ouch/archive/refs/tags/0.8.2.tar.gz"
-  sha256 "803dd9d0bcdb0b4f94336bc1e9fbb5c878bf2867e03f58f266adc679c224698d"
+  url "https://github.com/ouch-org/ouch/archive/refs/tags/0.8.3.tar.gz"
+  sha256 "f695393cbbd89cf5a2095c32235e585a85432ccfb902c78d2a2e9787abbb439c"
   license "MIT"
   head "https://github.com/ouch-org/ouch.git", branch: "main"
 
@@ -32,13 +32,6 @@ class Ouch < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix the reported version, upstream PR ref, https://github.com/ouch-org/ouch/pull/1071
-  patch do
-    url "https://github.com/ouch-org/ouch/commit/887fb81eebb816809971f7b30b8d8e5f65b03fc0.patch?full_index=1"
-    sha256 "d1036aec38d5818f811a5fca849db7ebe5226e2304fec091676399b144f7a38b"
-    type :unofficial
   end
 
   deny_network_access! :test
