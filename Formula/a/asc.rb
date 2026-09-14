@@ -7,11 +7,11 @@ class Asc < Formula
   head "https://github.com/rorkai/App-Store-Connect-CLI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eacb690f105b81247568baea2de1028fb346861f4e8d88d3ef5ece401ae49046"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4cf9b234c663370af5d6f8bca96ab4ced078c54e07e0849109112784c8e80bef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0456c38b47c1fe38e7d364228b29a6f14913990cfd1ef51ab1a8f4729e500917"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2717947a7ee39aa448030b4f0a9471a79d94b21eb7ee8973872a1a6ed3e27092"
-    sha256 cellar: :any,                 x86_64_linux:      "144ca75c3cc6ba9cb43127332913323edb8c4c60840f2e5b686705600f97ff5b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dd989005961584a2a50ece391237de040aec13d5ebb93d8ebac9628785a2c6c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d49db05f7c7558fdb825f6c02b5b12cdd3b19f7bd444dbea55cf2ac2c8d905ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "60d3b2c500ade2dc190e9884fe64841e3e7db5a57f199ebe7b5565a15c340e34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "65682b8410b7d855dbaebfc1b03de05eb95df800c362cda4e2e24f0cb8a48b1f"
+    sha256 cellar: :any,                 x86_64_linux:      "579f3fa833280cf0e5515121c1d15edac9d60da681a761f32cdc1c5f43f5193a"
   end
 
   depends_on "go" => :build
