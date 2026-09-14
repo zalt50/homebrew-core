@@ -14,12 +14,12 @@ class Joyce < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "20c5f21b6b676f4519154d1102c52754dd27dabdc86b315608606df1c3ba37b4"
-    sha256 arm64_sequoia: "ae0fdeaa3809a10e27b240f1f29e70d158f88534129099ec6d99217486def25a"
-    sha256 arm64_sonoma:  "57b24a9e0cffaf5db60282d1c187fc8d0696ea650e0516cc9c56357c6dce623d"
-    sha256 sonoma:        "fb292d0294d469f5581f695956bc4c2ca6126c2fc4f138d7d2397fc4675115b7"
-    sha256 arm64_linux:   "b43b277ef8c1c0cf306e87253cb9857809b5a03823fd511982745c2081b63f28"
-    sha256 x86_64_linux:  "844d5e4d8fa06ff2d18adba05365c9a5378d712cfc867d89ef8087e8ef742395"
+    rebuild 1
+    sha256 arm64_golden_gate: "d19ab6f1ea382072a8b00a2aeff4c25f8b8b2a3150c4af3a6c2f41ff66a90150"
+    sha256 arm64_tahoe:       "e2158169899c44fdff0bf9b3211bb33383817412c2ede428db4606f04650b0eb"
+    sha256 arm64_sequoia:     "dc481968eb3c1cffab85fd94f15c01dac8172ca23b99812088fd9d8626b6d9e7"
+    sha256 arm64_linux:       "020de32fa5e61a0dbf45d07ee93894ac37e657586b57aaa21e53b3bb0dbb7efd"
+    sha256 x86_64_linux:      "2a18b56e9f7a2663c9f6f4dcfccdec42d3d89c303a7aaaf52d696cbe9d9c2a70"
   end
 
   depends_on "libdsk"
