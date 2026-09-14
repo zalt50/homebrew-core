@@ -7,14 +7,11 @@ class GsettingsDesktopSchemas < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b0ae68da37941f2a2aa78799f1834a139780d2009bad63be8c59c18e0fc57b35"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "effe443ddfa766d16152d18b3fd847671928830e5654047786f1885e45e11cb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "effe443ddfa766d16152d18b3fd847671928830e5654047786f1885e45e11cb0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d70b0494de9d764c4f893a22f75a736aa97b8de37b9de51da36a0789f134f1a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d70b0494de9d764c4f893a22f75a736aa97b8de37b9de51da36a0789f134f1a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d70b0494de9d764c4f893a22f75a736aa97b8de37b9de51da36a0789f134f1a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "81a6ecb2ebe3b359bd024462b2d780ea5c346c9cadc10cada13f33de87fe2db3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "81a6ecb2ebe3b359bd024462b2d780ea5c346c9cadc10cada13f33de87fe2db3"
   end
 
   depends_on "gettext" => :build
