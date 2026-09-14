@@ -1,8 +1,8 @@
 class Lrzip < Formula
   desc "Compression program with a very high compression ratio"
   homepage "https://github.com/ckolivas/lrzip"
-  url "https://github.com/ckolivas/lrzip/releases/download/v0.7.2/lrzip-0.7.2.tar.xz"
-  sha256 "2954d650633cbb3134ca023f50990cd460c891e1d0518824850213a84c9ce1a3"
+  url "https://github.com/ckolivas/lrzip/releases/download/v0.7.3/lrzip-0.7.3.tar.xz"
+  sha256 "6928862de7c4bbb3cfbcd12fae9fd0a7d230d5bbf27486e52c4de60717ebfdbb"
   license "GPL-2.0-or-later"
   version_scheme 1
   head "https://github.com/ckolivas/lrzip.git", branch: "master"
