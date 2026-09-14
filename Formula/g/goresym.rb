@@ -1,8 +1,8 @@
 class Goresym < Formula
   desc "Go symbol recovery tool"
   homepage "https://github.com/mandiant/GoReSym"
-  url "https://github.com/mandiant/GoReSym/archive/refs/tags/v3.4.tar.gz"
-  sha256 "1c6b703ca1e5db08b93a6d602c826ea6dc7eee8502a0b2f4ad358113d8f513fc"
+  url "https://github.com/mandiant/GoReSym/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "c8600ad8634aae2166f09af224ac7c257c8ee403acd42d72f6f1276e786a70e8"
   license "MIT"
   head "https://github.com/mandiant/GoReSym.git", branch: "master"
 
