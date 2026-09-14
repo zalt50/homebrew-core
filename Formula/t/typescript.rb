@@ -13,13 +13,11 @@ class Typescript < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "98ddb029b1c72f5cf7fa9463610894919c1ed482bc0550dd6351a85be096d764"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "affa1704c2600fd1b0592c3078f502a5aae315219ad16d2d97cde7ed0f1b9116"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "affa1704c2600fd1b0592c3078f502a5aae315219ad16d2d97cde7ed0f1b9116"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "affa1704c2600fd1b0592c3078f502a5aae315219ad16d2d97cde7ed0f1b9116"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d43d82b4b4666e0efe50f007ad7789cc53caad6398dce78dfed29f339da3d112"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fe288fe43e9e26d0c130431d5bf5f4b279f8e2eb12fdb3ad50c3f65b89ab63ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "05916d95ccabec2eb6703a00e33fb2da3cca33e7cbdac8c665523879a01f117f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "470f605fe17553307fd39545f9966ad8be2a8e34f5f05b0e0262bb9e5a159713"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "470f605fe17553307fd39545f9966ad8be2a8e34f5f05b0e0262bb9e5a159713"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "470f605fe17553307fd39545f9966ad8be2a8e34f5f05b0e0262bb9e5a159713"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8f7a78a6bad897ac04acb2cf520f5743b8c501dae50898a9075f256844238ad7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8b46d60170f22d1a52b565f01509f594f450cd71b94342250e9f930e96fa8da6"
   end
 
   depends_on "go" => :build
