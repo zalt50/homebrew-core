@@ -7,12 +7,11 @@ class Libde265 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "81969bb0b887c9d54c448c2c662565fcde2e81ba22576abd1c49b516f85f2d82"
-    sha256 cellar: :any, arm64_tahoe:       "8f8d8510112ab8b4ddabd02816d262cf9bc3387d0f713348a2ed961f4250547f"
-    sha256 cellar: :any, arm64_sequoia:     "5ce0fa549a0462e69b9254266fb8859a271a991416d72bdcfb80e622beba77be"
-    sha256 cellar: :any, arm64_sonoma:      "2518ecf2bd8479445010ce181f3a66565f760256411ea911f80cea4085687280"
-    sha256 cellar: :any, arm64_linux:       "b59b9b9c60c31374d8ec851e7c8960cb51694801b348af200b7bc1bef24e8257"
-    sha256 cellar: :any, x86_64_linux:      "d31f63ce2a21ac52eb377bcf39e89be3c3204f21a4d04cafb872a3b8e4d28120"
+    sha256 cellar: :any, arm64_golden_gate: "d4a7527bce91d5e261c297435689a9987776c7dcd8cbfe4ab2ee159550594756"
+    sha256 cellar: :any, arm64_tahoe:       "46ae0a2e5d873fb1fe88b2855a67668eb805712073acb5d532fd3081fc2cbfe0"
+    sha256 cellar: :any, arm64_sequoia:     "12810efc8cf343799cc9619ebe99f41248c5a5c07efcfa3c73d7c5488a976cbe"
+    sha256 cellar: :any, arm64_linux:       "8bc7152ed0d8cf619db552002fa0f8a86d9800265727356d33246a5f84585058"
+    sha256 cellar: :any, x86_64_linux:      "275b0272f1e00f83aaeaaf33493de34759c3408911ef8e0f60a6ba7e6698f376"
   end
 
   depends_on "cmake" => :build
