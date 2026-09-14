@@ -20,7 +20,9 @@ class SignalwireClientC < Formula
   depends_on "openssl@3"
 
   def install
-    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
+    # cotire builds a prefix header from the `clang -H` include list, which on macOS 27 also has `SDKSettings.json`
+    system "cmake", "-S", ".", "-B", ".", "-DCOTIRE_ADDITIONAL_PREFIX_HEADER_IGNORE_EXTENSIONS=inc;inl;ipp;json",
+                    *std_cmake_args
     system "cmake", "--build", "."
     system "cmake", "--install", "."
   end
