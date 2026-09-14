@@ -1,8 +1,8 @@
 class Networkit < Formula
   desc "Performance toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
-  url "https://github.com/networkit/networkit/archive/refs/tags/11.2.1.tar.gz"
-  sha256 "969718847465937086728a884b5f143d7f36cfd3f6cdc04ef9ae4f64ba61b60c"
+  url "https://github.com/networkit/networkit/archive/refs/tags/11.2.2.tar.gz"
+  sha256 "04fffd0f801a91524a6dc2643f7d262e79600b086e4688bcb1b7988b2b5448dd"
   license "MIT"
 
   bottle do
@@ -27,6 +27,14 @@ class Networkit < Formula
 
   on_macos do
     depends_on "libomp"
+  end
+
+  # Fix build with Cython 3.3 (duplicate `__pyx_convert_vector_to_py_*` definitions)
+  patch do
+    url "https://github.com/networkit/networkit/commit/11bbe357057f886ef8864565f981c4f86a47b8ce.patch?full_index=1"
+    sha256 "495247630a1a1810c6db057b58c27a82777710e7a9ec77e2c6abdeff18e6919d"
+    type :unofficial
+    resolves "https://github.com/networkit/networkit/pull/1519"
   end
 
   def install
