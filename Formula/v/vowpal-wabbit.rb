@@ -1,22 +1,10 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://vowpalwabbit.org"
+  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.4.tar.gz"
+  sha256 "7b32f93f662435e4e6b3b63ad0a0e4232d6531aba0bd7a51b9421c0c43983ba0"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
-
-  stable do
-    url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.2.tar.gz"
-    sha256 "21352230bf0e4c01fb4da1959a7338e21a3150ca5641eb2328abfc749fd32e77"
-
-    # fmt 12.2 removed fmt::format from <fmt/core.h>.
-    patch do
-      url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/5f3aecba8f6caf252d3b1f5765ef470460638d19.patch?full_index=1"
-      sha256 "56313024992c4a4cd8ebdca09ecd50298bce48eb43aefd8cfe60003b1da4a34d"
-      type :backport
-      resolves "https://github.com/VowpalWabbit/vowpal_wabbit/pull/4922"
-    end
-  end
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "5044866ccd2a37958ae1dcf7e92fd28c8e80a995ebdc4ac220dd0421e4fc0f45"
