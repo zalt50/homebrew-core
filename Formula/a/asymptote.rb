@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/3.14/asymptote-3.14.src.tgz"
-  sha256 "491d5e87299d48976b193beaac2621ee76c9b2058a597b332dc455962d82de97"
+  url "https://downloads.sourceforge.net/project/asymptote/3.15/asymptote-3.15.src.tgz"
+  sha256 "a32764fcfc83eb4eb2981aa9df2c0e6229ffab95929f1030abfc6a6d1abf5e8d"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -51,8 +51,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/3.14/asymptote.pdf"
-    sha256 "1a25e2064899c8fd2582ca9d37198c2817d8b57f635426420ea6b0b8bd753ff3"
+    url "https://downloads.sourceforge.net/project/asymptote/3.15/asymptote.pdf"
+    sha256 "21248c60a2e5bb80c2dce2d28ef08822a0cc7aa25d1967e8030aea76cdcad04c"
 
     livecheck do
       formula :parent
