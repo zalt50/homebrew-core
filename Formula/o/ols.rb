@@ -15,6 +15,14 @@ class Ols < Formula
 
   depends_on "odin" => :build
 
+  # Backport build fix for odin 2026-09, which replaced `ast.Inline_Asm_Expr` with `ast.Asm_Template`
+  patch do
+    url "https://github.com/DanielGavin/ols/commit/5f1b4d773b05d98dc9533521490096cf1a06a6d3.patch?full_index=1"
+    sha256 "e76914e29a26bca835d115111c1017ec0e6f7d51edc93a8c0e1f9a1fbd7c6368"
+    type :backport
+    resolves "https://github.com/DanielGavin/ols/pull/1653"
+  end
+
   def install
     args = %W[
       -out:ols
