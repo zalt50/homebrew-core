@@ -45,6 +45,9 @@ class SpiceServer < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
     ]
+    # Avoid running gst-inspect-1.0 which stalls in macOS sandbox.
+    # GStreamer is still enabled when checks cannot run.
+    args << "ac_cv_path_GST_INSPECT_1_0=" if OS.mac?
 
     system "./configure", *args, *std_configure_args
     system "make"
