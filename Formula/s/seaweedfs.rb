@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://seaweedfs.com"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.46",
-      revision: "d997fba1575583a89cf0cc50dc0150642286c86d"
+      tag:      "4.47",
+      revision: "c5073360007d28385a33426a42ac3e4ec504c5a3"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -37,15 +37,16 @@ class Seaweedfs < Formula
   end
 
   test do
-    # Start SeaweedFS master server/volume server
+    # Start master and volume servers separately as `weed server` links them via `/tmp` sockets the sandbox denies
     master_port = free_port
     volume_port = free_port
     master_grpc_port = free_port
     volume_grpc_port = free_port
 
-    spawn bin/"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
-          "-master.port=#{master_port}", "-volume.port=#{volume_port}",
-          "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
+    spawn bin/"weed", "master", "-ip=127.0.0.1", "-port=#{master_port}", "-port.grpc=#{master_grpc_port}",
+          "-mdir=#{testpath}"
+    spawn bin/"weed", "volume", "-ip=127.0.0.1", "-port=#{volume_port}", "-port.grpc=#{volume_grpc_port}",
+          "-dir=#{testpath}", "-master=127.0.0.1:#{master_port}.#{master_grpc_port}"
     sleep 30
 
     # Upload a test file. Volumes are created lazily, so grow one first.
