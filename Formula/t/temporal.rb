@@ -1,8 +1,8 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
   homepage "https://temporal.io/"
-  url "https://github.com/temporalio/cli/archive/refs/tags/v1.8.3.tar.gz"
-  sha256 "14280dbc5f157373a2b34d7d333dd0c8f1b8506fa9ff5b332edc9048527af6f8"
+  url "https://github.com/temporalio/cli/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "d0310b8f4ef26b8a2240aa2e783c67c099406be01f34cf4edb3ae8aa2d86b7bb"
   license "MIT"
   head "https://github.com/temporalio/cli.git", branch: "main"
 
@@ -45,10 +45,9 @@ class Temporal < Formula
   end
 
   test do
-    run_output = shell_output("#{bin}/temporal --version")
-    assert_match "temporal version #{version}", run_output
+    assert_match version.to_s, shell_output("#{bin}/temporal --version")
 
-    run_output = shell_output("#{bin}/temporal workflow list --address 192.0.2.0:1234 2>&1", 1)
-    assert_match "failed reaching server", run_output
+    assert_match "failed connecting to Temporal server",
+      shell_output("#{bin}/temporal workflow list --address 192.0.2.0:1234 2>&1", 1)
   end
 end
