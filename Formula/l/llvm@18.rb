@@ -12,12 +12,13 @@ class LlvmAT18 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "1e9a19bff9679522f731a5b45d9667a544f505a10f25bb2ec85a3743976e3a27"
-    sha256 cellar: :any,                 arm64_sequoia: "7444fd9adfdec6b4f388f2a321d802115f839aa4c45f565aee25284504e9e225"
-    sha256 cellar: :any,                 arm64_sonoma:  "84f895cfadaeba96a43db53c1bea77b6ab731326719fe6021ef9d30d55695620"
-    sha256 cellar: :any,                 sonoma:        "56bb12c01aa3f619f88d4f06220fa2ddd6e7d4dcc87860e3f3087ec211e1bf41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ec22755167c15a099347cfa71da87ed7855c1a086a59d3524162749045499ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4a95ef131b99b1ceb7fd5b6a16626efee62722f53ebc74fbcfddf50a785f8b4"
+    sha256 cellar: :any,                 arm64_golden_gate: "4264e65320e501cac5f5b08716e2a2a3fa67f0c1a5c4a478a026ae715a6cbaed"
+    sha256 cellar: :any,                 arm64_tahoe:       "1e9a19bff9679522f731a5b45d9667a544f505a10f25bb2ec85a3743976e3a27"
+    sha256 cellar: :any,                 arm64_sequoia:     "7444fd9adfdec6b4f388f2a321d802115f839aa4c45f565aee25284504e9e225"
+    sha256 cellar: :any,                 arm64_sonoma:      "84f895cfadaeba96a43db53c1bea77b6ab731326719fe6021ef9d30d55695620"
+    sha256 cellar: :any,                 sonoma:            "56bb12c01aa3f619f88d4f06220fa2ddd6e7d4dcc87860e3f3087ec211e1bf41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9ec22755167c15a099347cfa71da87ed7855c1a086a59d3524162749045499ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a4a95ef131b99b1ceb7fd5b6a16626efee62722f53ebc74fbcfddf50a785f8b4"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
