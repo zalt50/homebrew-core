@@ -33,6 +33,8 @@ class Logstash < Formula
               'apply from: "${projectDir}/x-pack/distributions/internal/observabilitySRE/build-ext.gradle"',
               ""
     ENV["OSS"] = "true"
+    # Unset superenv's forced `ruby` platform: logstash-core is java-only, so JRuby's Bundler cannot resolve it
+    ENV.delete "BUNDLE_FORCE_RUBY_PLATFORM"
 
     # Ensure Logstash core jars are built for the no-JDK artifact.
     system "gradle", "bootstrap"
