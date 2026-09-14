@@ -7,13 +7,11 @@ class Goresym < Formula
   head "https://github.com/mandiant/GoReSym.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a3db1d085b183d3b6bb780fe8a9f55e33f712fd214372b1a7cbfb77a3cdb9303"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0c3dd1beaa650082bf2464e79304ac8024741122d364d8dd3e7bb58b72b526b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0c3dd1beaa650082bf2464e79304ac8024741122d364d8dd3e7bb58b72b526b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f0c3dd1beaa650082bf2464e79304ac8024741122d364d8dd3e7bb58b72b526b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9404f725543a4c25b8e1940ffeb3b58d77a7be05551420ba51ce2dc2e6833d06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7b146d6338145c53d8bf12592f588fc6a644daf7f26bfd8c4cc73e6aa06d7e28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "63de26c635c15de736ecfba0ea0e97befe73c3ae06c3fee3323772fafa9fa015"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "82d113e4c6cc88af46c2922fa18667fe6e5c2c0472b9e237afb32a92be48dc67"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "82d113e4c6cc88af46c2922fa18667fe6e5c2c0472b9e237afb32a92be48dc67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "82d113e4c6cc88af46c2922fa18667fe6e5c2c0472b9e237afb32a92be48dc67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7aa54468605b100f364aaadd6e6ff66b704f4895fb95a2ac8b737bd6cccc674e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e207f00b56e1857d48d80ae680db6d6b2b1958fc10749de1b61bbc589d008155"
   end
 
   # TODO: unpin go@1.26 when goresym supports go 1.27
