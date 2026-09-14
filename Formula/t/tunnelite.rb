@@ -6,6 +6,14 @@ class Tunnelite < Formula
   license "MIT"
   head "https://github.com/cristipufu/tunnelite.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0df83b7480b309f55b4160a2e0b0c3f770dfd5457e0d5e43511d90b4171e58d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bc371aa798d1bf28d688083ddbbf24dd02f0b9c5c99f77c40b5847cff3873f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f7ffde681f8ca78f0702f118babbc07f5fb955cde3dccc3711cce9cae2480f4"
+    sha256 cellar: :any,                 arm64_linux:   "e0d428d6b66bfb0e6722fec0c2776f16456f6d129686b5d66b0a20e54772858c"
+    sha256 cellar: :any,                 x86_64_linux:  "8a3df67049205c6238ad7a06c574a2cec8c839f3c74092cc7b0b686a4306636e"
+  end
+
   depends_on "dotnet"
 
   def install
