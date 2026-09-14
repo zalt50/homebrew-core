@@ -34,10 +34,8 @@ class Mruby < Formula
 
     cd "build/host/" do
       lib.install Dir["lib/*.a"]
-      prefix.install %w[bin mrbgems mrblib]
+      prefix.install %w[bin include mrbgems mrblib]
     end
-
-    prefix.install "include"
   end
 
   test do
