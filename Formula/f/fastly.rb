@@ -1,8 +1,8 @@
 class Fastly < Formula
   desc "Build, deploy and configure Fastly services"
   homepage "https://www.fastly.com/documentation/reference/cli/"
-  url "https://github.com/fastly/cli/archive/refs/tags/v16.0.0.tar.gz"
-  sha256 "537e2948843eeebfba80cec6f2018ca2bee96c61783ac4f2408fa9602f732f08"
+  url "https://github.com/fastly/cli/archive/refs/tags/v16.1.0.tar.gz"
+  sha256 "24a42847712dab326c77d4ac1942478658392be2059f37bc7af642157092912d"
   license "Apache-2.0"
   head "https://github.com/fastly/cli.git", branch: "main"
 
@@ -18,9 +18,13 @@ class Fastly < Formula
 
   depends_on "go" => :build
 
-  def install
-    mv ".fastly/config.toml", "pkg/config/config.toml"
+  allow_network_access! :test
 
+  def fetch
+    system "go", "mod", "download"
+  end
+
+  def install
     os = Utils.safe_popen_read("go", "env", "GOOS").strip
     arch = Utils.safe_popen_read("go", "env", "GOARCH").strip
 
