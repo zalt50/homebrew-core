@@ -1,8 +1,8 @@
 class Glci < Formula
   desc "Run GitLab CI/CD pipelines locally"
   homepage "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci"
-  url "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci/-/archive/v0.7.0/glci-v0.7.0.tar.gz"
-  sha256 "350367daf09af8da22b0d4376222bc004c43b372151d6206b3ce717857c15d62"
+  url "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci/-/archive/v0.8.0/glci-v0.8.0.tar.gz"
+  sha256 "d5da2c86d3e17d1080f8cc577ae84b15ad9ef08a2fbc63dd9c72fb3f55b64f96"
   license "MIT"
   head "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci.git", branch: "main"
 
