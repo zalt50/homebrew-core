@@ -35,6 +35,10 @@ class Libgr < Formula
   end
 
   def install
+    # FIXME: macOS 27 SDK's `XPC_INLINE` uses `inline`, which the plugin's strict C90 rejects
+    inreplace "CMakeLists.txt", "quartzplugin\n    PROPERTIES C_STANDARD 90",
+                                "quartzplugin\n    PROPERTIES C_STANDARD 99"
+
     system "cmake", "-S", ".", "-B", "build", "-DGR_PREFER_XCODEBUILD=OFF",
                                               "-DCMAKE_INSTALL_RPATH=#{rpath}",
                                               *std_cmake_args
