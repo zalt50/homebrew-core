@@ -2,6 +2,7 @@ class Opendbx < Formula
   desc "Lightweight but extensible database access library in C"
   homepage "https://linuxnetworks.de/doc/index.php/OpenDBX"
   url "https://linuxnetworks.de/opendbx/download/opendbx-1.4.6.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/libo/libopendbx/libopendbx_1.4.6.orig.tar.gz"
   sha256 "2246a03812c7d90f10194ad01c2213a7646e383000a800277c6fb8d2bf81497c"
   license "LGPL-2.0-or-later"
   revision 2
