@@ -1,19 +1,18 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://github.com/astral-sh/uv/archive/refs/tags/0.12.13.tar.gz"
-  sha256 "6fed06d051682d521335fb26cd422bc652e5e15b87ea87ab13353b89d865fe40"
+  url "https://github.com/astral-sh/uv/archive/refs/tags/0.12.14.tar.gz"
+  sha256 "cf886aac4e27257bfb8863694a377fa3781f179e84b1eee55038b0a0f83ab7a9"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d22bb886a7c1d7778d6ce6b066cd6bb72e3c9db4f5e945d4eba65a51a894ad66"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6759c56c621f1a035a7a01bd71dfb316c9c147cf6e96aff64afaf5382c460bcd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e8aa8f69a031448e05a227fe24ca7c2a5e89342046fe12079041dbd143ddc546"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1919592d10fc12fb466401d4a0828a3b6e65747c50e0e691dd992089d5da09d0"
-    sha256 cellar: :any,                 arm64_linux:       "a00b23636cacac2f9a440392d096efdab6ba3789fcda72e3172a508e392156e6"
-    sha256 cellar: :any,                 x86_64_linux:      "41b3b6e493abc0db2832e09dde141abed5414f2f5f7d244d6239282dff567583"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a6205bc4301973213dd205ec73d17d8ee627fbfd747bacdb0e6361a65a6a43f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dae9c42c4838eac60a5f2e3938f83b06214dbec50d8670bf4679717a38e48cdc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0ab934965c381ccdd07024d80494e0429304a082dae48bc4045a207a405cbf0"
+    sha256 cellar: :any,                 arm64_linux:       "0f0f05cc7a8fd872d243d594a86f6ac425ba74799eb1b8c6d793a8a7038438c0"
+    sha256 cellar: :any,                 x86_64_linux:      "b7d3939e4a3e4f14446d90f8ad244fb122b5993f4bfd782c549902404ce241f1"
   end
 
   depends_on "pkgconf" => :build
@@ -22,6 +21,10 @@ class Uv < Formula
   uses_from_macos "python" => :test
   uses_from_macos "bzip2"
   uses_from_macos "xz"
+
+  on_linux do
+    depends_on "jemalloc"
+  end
 
   # downloads wheels in test
   allow_network_access! :test
