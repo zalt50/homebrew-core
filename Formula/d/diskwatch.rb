@@ -1,8 +1,8 @@
 class Diskwatch < Formula
   desc "Cross-platform disk diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/diskwatch"
-  url "https://github.com/matthart1983/diskwatch/archive/refs/tags/v0.5.7.tar.gz"
-  sha256 "a6a3c2f3bb7e5a8597f507bcde1abd898020a53b9b169e8df3b53cc2eed6e60f"
+  url "https://github.com/matthart1983/diskwatch/archive/refs/tags/v0.5.8.tar.gz"
+  sha256 "4768e2d8cd86c470f93e152bb262116c75b6316c4b19fa963a4c19888bf18c73"
   license "MIT"
 
   bottle do
