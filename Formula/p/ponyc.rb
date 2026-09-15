@@ -22,6 +22,14 @@ class Ponyc < Formula
     depends_on "zlib-ng-compat"
   end
 
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/b8007a8e4020b8bca2b12e941660e10bf5bf6716.patch?full_index=1"
+    sha256 "e41e300eb6f5cca9172ab344e572c3fb24f0d05885ae23dd7cb4f9c2528839f7"
+    directory "lib/llvm/src"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/222721"
+  end
+
   def install
     pic_args = []
     if OS.linux?
