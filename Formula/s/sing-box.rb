@@ -1,8 +1,8 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "87baf6852e37941cbe40bdd94bec81c957c88a56751cecd6bbf0e6108bc69398"
+  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.1.tar.gz"
+  sha256 "1ea41f7d06b0017fe3d3ba7ee30959048aa0ddde31cb0165dab9257edf673321"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
@@ -32,8 +32,8 @@ class SingBox < Formula
   resource "cronet-go" do
     # Using git checkout for submodules
     url "https://github.com/sagernet/cronet-go.git",
-        revision: "45832ab074849607406baa3e3a2c4660274602ed"
-    version "45832ab074849607406baa3e3a2c4660274602ed"
+        revision: "0d28acc44093df24b2526dea3d6ffefd6b0a54f0"
+    version "0d28acc44093df24b2526dea3d6ffefd6b0a54f0"
 
     livecheck do
       url "https://raw.githubusercontent.com/SagerNet/sing-box/v#{LATEST_VERSION}/.github/CRONET_GO_VERSION"
