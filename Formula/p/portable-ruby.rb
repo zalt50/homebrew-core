@@ -3,10 +3,9 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.6.tar.gz"
-  sha256 "837d299e8f7ddf2be31a229a7a7e019d354979825117989acb3b32b1a9be262a"
+  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
+  sha256 "911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
   license "Ruby"
-  revision 2
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -32,8 +31,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "msgpack" do
-    url "https://rubygems.org/downloads/msgpack-1.8.4.gem"
-    sha256 "4411c22d350dd1c20250f7eada3cca2695438c2f769cf0782f0cd065d90a3e7b"
+    url "https://rubygems.org/downloads/msgpack-1.8.5.gem"
+    sha256 "97419eaa7b35dfe3e462c0e6c1a3dfdcbfc8756605c09e46e4c6daef127517ba"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/msgpack.json"
