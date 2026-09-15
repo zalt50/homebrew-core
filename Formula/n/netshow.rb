@@ -80,12 +80,18 @@ class Netshow < Formula
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"netshow", [:out, :err] => output_log.to_s
-    sleep 3
-    assert_match "Netshow (lsof)", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    require "expect"
+    require "pty"
+    require "io/console"
+
+    PTY.spawn(bin/"netshow") do |r, w, _pid|
+      r.winsize = [24, 80]
+      r.set_encoding("UTF-8")
+      refute_nil r.expect("Netshow (lsof)", 30), "expected the netshow title"
+      w.write "q"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
   end
 end
