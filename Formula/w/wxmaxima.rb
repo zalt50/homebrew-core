@@ -79,9 +79,22 @@ class Wxmaxima < Formula
   end
 
   test do
-    wxmaxima = "#{bin}/wxmaxima"
-    wxmaxima = "#{formula_opt_bin("xorg-server")}/xvfb-run #{wxmaxima}" if OS.linux? && ENV.exclude?("DISPLAY")
-    assert_match "wxMaxima #{version}", shell_output("#{wxmaxima} --version 2>&1").chomp
-    assert_match "extra Maxima arguments", shell_output("#{wxmaxima} --help 2>&1", 1)
+    # Cannot run any useful test within macOS sandbox
+    wxmaxima = bin/"wxmaxima"
+    assert_path_exists wxmaxima
+    return if OS.mac?
+
+    IO.pipe do |read_io, write_io|
+      pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      assert_match "wxMaxima #{version}", shell_output("#{wxmaxima} --version 2>&1").chomp
+      assert_match "extra Maxima arguments", shell_output("#{wxmaxima} --help 2>&1", 1)
+    ensure
+      if pid
+        Process.kill "TERM", pid
+        Process.wait pid
+      end
+    end
   end
 end
