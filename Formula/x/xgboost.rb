@@ -1,8 +1,8 @@
 class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https://xgboost.ai/"
-  url "https://github.com/dmlc/xgboost/releases/download/v3.4.1/xgboost-src-3.4.1.tar.gz"
-  sha256 "34a5cb99a67bb98b44f204767eeeae642b65a86b2ecfca60082e4d74fd4d169a"
+  url "https://github.com/dmlc/xgboost/releases/download/v3.4.2/xgboost-src-3.4.2.tar.gz"
+  sha256 "d7de76bdaf48e9e0bc84b27c0c42f15f3d831e624d102d6c019bab7027b3cabd"
   license "Apache-2.0"
 
   livecheck do
