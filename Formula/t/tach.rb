@@ -9,12 +9,11 @@ class Tach < Formula
   head "https://github.com/tach-org/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6362673796b2ea867546f01d89fbe3381a807113052ebe578760e9cd7fbc09b1"
-    sha256 cellar: :any, arm64_tahoe:       "d840c56d84b9ef5ada3637921d614c7d880831854faf3e1998e5f779eff6de37"
-    sha256 cellar: :any, arm64_sequoia:     "b23cfd2bc21dea430ea2aa888aae260983c605ccc1cef44c0326f992d2f255fd"
-    sha256 cellar: :any, arm64_sonoma:      "727f5f046051c263892e46dfedbda1aea129b0d3be8e567e15651d80d7cafdf6"
-    sha256 cellar: :any, arm64_linux:       "0a93a0d652da484185ff7d61a8e96d1f957629b245925fbb6a1cf31901444dac"
-    sha256 cellar: :any, x86_64_linux:      "18aeecfcea0f54db0957bf2f2feea6000bb72e25022c44eedd0d7473ac35aae1"
+    sha256 cellar: :any, arm64_golden_gate: "284594b811a629c9bb59f8bb28f06d442229352fc91addbf326673ae3e322d9a"
+    sha256 cellar: :any, arm64_tahoe:       "2af30c6dcfb6bf4e6ef95efbe67481b99a49d0202141531009968259ff83ea32"
+    sha256 cellar: :any, arm64_sequoia:     "ffcde8cba3a207ab42b10de4d0c5f973bcd75d886950f272d7f591a71d06f42f"
+    sha256 cellar: :any, arm64_linux:       "30471a50e96507e6e996d62ddd7fec78eeec07f3aa46e755039f6578396dc9b3"
+    sha256 cellar: :any, x86_64_linux:      "9e09e531017d7dcaa62433530e0062b88e03b060e5f24d47125234924428fd2d"
   end
 
   depends_on "rust" => :build
