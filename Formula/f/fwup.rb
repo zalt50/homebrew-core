@@ -6,11 +6,11 @@ class Fwup < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8adcfe27b8222a051836bfe55c1d85e337a66085dcc344eb577c89d10fe7cf3f"
-    sha256 cellar: :any, arm64_tahoe:       "da9f4b6373e2b51c3d7b88fc01eed5a17dda4fc992952bac085fa52242e6c54c"
-    sha256 cellar: :any, arm64_sequoia:     "9209e1ed4485bb5a84477b3a2522fde6b8b48af804ff5844c184dca39227f784"
-    sha256 cellar: :any, arm64_linux:       "8e4a5d7b855a1a3610d3ab5cf789a5e6d6da639770c5b1d06b977cc2740861d8"
-    sha256 cellar: :any, x86_64_linux:      "70284e632b10f2b8fd6ac103e209999390bfd41c6960b2fd3bbb5f767fa29b60"
+    sha256 cellar: :any, arm64_golden_gate: "8c2bd8bf0f168fcd3cbd4b0f7c2b589a1f6c4f83243384afe7d6c8b3f1e3b007"
+    sha256 cellar: :any, arm64_tahoe:       "da8b276e1925688560961747faf96c8fad7e00c44049a3d3c9bd2349cef511a2"
+    sha256 cellar: :any, arm64_sequoia:     "191c88ec1390c8f6a844b9568b31ca06a1d93eca1ac54daee81d424be70c6b72"
+    sha256 cellar: :any, arm64_linux:       "6c993490673261dc6f71a6c8817b763af67b264b7056fb276d9f4b3b847bf7cf"
+    sha256 cellar: :any, x86_64_linux:      "e36da541298bd05b0675eed95a0cfcae004d9e69da608c87ca945f15b219bef4"
   end
 
   depends_on "pkgconf" => :build
