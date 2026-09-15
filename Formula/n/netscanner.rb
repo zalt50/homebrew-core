@@ -25,14 +25,18 @@ class Netscanner < Formula
     assert_match version.to_s, shell_output("#{bin}/netscanner --version")
 
     # Requires elevated privileges for network access
-    assert_match "Unable to create datalink channel", if OS.mac?
-      shell_output("#{bin}/netscanner 2>&1")
-    else
-      require "pty"
-      r, _w, pid = PTY.spawn("#{bin}/netscanner 2>&1")
+    require "pty"
+    require "io/console"
+
+    output = ""
+    PTY.spawn("#{bin}/netscanner 2>&1") do |r, _w, _pid|
       r.winsize = [80, 43]
-      Process.wait(pid)
-      r.read_nonblock(1024)
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
     end
+    assert_match "Unable to create datalink channel", output
   end
 end
