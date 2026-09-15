@@ -1,11 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.3-source.tar.gz"
-  sha256 "37c3209dc0e06fa4f3781ed44839ad933a9e6143eb4731f99e069204715bcef2"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.4-source.tar.gz"
+  sha256 "2d97e043a616f96b148657c9c3d81ad71c4bd2052c59a2a3315ad842599340f9"
   license "AGPL-3.0-or-later"
-  revision 1
-  compatibility_version 6
+  compatibility_version 7
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -54,8 +53,8 @@ class Mupdf < Formula
   # Currently, some source of mujs is required for building mupdf, so can't use formula
   # Issue ref: https://bugs.ghostscript.com/show_bug.cgi?id=708968
   resource "mujs" do
-    url "https://mujs.com/downloads/mujs-1.3.9.tar.gz"
-    sha256 "956d5a20dd4efe5aa58673558787b9e2539255f9bf62585e90e1921fa040d89d"
+    url "https://mujs.com/downloads/mujs-1.3.10.tar.gz"
+    sha256 "6e36c15dbb84ff859320297c900852f241b131a7b6ddaea669ac9a65bd75571c"
 
     # Resource `livecheck` blocks don't support package references (yet), so we
     # can't use `formula "mujs"` here.
@@ -68,8 +67,8 @@ class Mupdf < Formula
   # Build scripts import `pipcl`, which upstream unbundled in 1.28.1
   # Ref: https://github.com/ArtifexSoftware/mupdf/commit/ecef7b70bc5
   resource "pipcl" do
-    url "https://files.pythonhosted.org/packages/64/1a/9ab2b272def9db9c80bf18fe8282119c2c4c074cc542030a28e4136dd13b/pipcl-12.tar.gz"
-    sha256 "c7545480cfa808500d8b606da73db7f89a872258bcdb293716126e2ccff1a5c6"
+    url "https://files.pythonhosted.org/packages/1c/9d/d797318cf82fff625670bbbf88a722d87299c9d8f3fc8372603713ac0af4/pipcl-13.tar.gz"
+    sha256 "286aba9785463c83659a565210a82a77896195d3303bff0542e825479b56daf2"
   end
 
   def install
