@@ -33,16 +33,30 @@ class Qsoas < Formula
 
   # Can undeprecate if new release with Qt 6 support is available.
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
-  disable! date: "2027-05-19", because: "needs end-of-life Qt 5"
+  disable! date: "2026-11-19", because: "needs end-of-life Qt 5"
 
   depends_on "bison" => :build
   depends_on "gsl"
-  depends_on "mruby"
   depends_on "qt@5"
+  depends_on "readline"
 
   uses_from_macos "ruby"
 
+  resource "mruby" do
+    url "https://github.com/mruby/mruby/archive/refs/tags/3.4.0.tar.gz"
+    sha256 "183711c7a26d932b5342e64860d16953f1cc6518d07b2c30a02937fb362563f8"
+  end
+
   def install
+    resource("mruby").stage do
+      system "make"
+
+      cd "build/host" do
+        libexec.install %w[bin lib mrbgems mrblib]
+      end
+      libexec.install "include"
+    end
+
     # Workaround for MRuby 3.4.0 and to avoid C standard passed to C++ compiler
     # Issue ref: https://github.com/fourmond/QSoas/issues/5
     inreplace "src/mruby.cc", "(OP_LOADI,", "(OP_LOADI8,"
@@ -51,7 +65,7 @@ class Qsoas < Formula
     gsl = formula_opt_prefix("gsl")
     qt5 = formula_opt_prefix("qt@5")
 
-    system "#{qt5}/bin/qmake", "MRUBY_DIR=#{formula_opt_prefix("mruby")}",
+    system "#{qt5}/bin/qmake", "MRUBY_DIR=#{libexec}",
                                "GSL_DIR=#{gsl}/include",
                                "QMAKE_LFLAGS=-L#{libexec}/lib -L#{gsl}/lib"
     system "make"
@@ -66,7 +80,7 @@ class Qsoas < Formula
 
   test do
     # Set QT_QPA_PLATFORM to minimal to avoid error "qt.qpa.xcb: could not connect to display"
-    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["QT_QPA_PLATFORM"] = "minimal"
     assert_match "mfit-linear-kinetic-system",
                  shell_output("#{bin}/QSoas --list-commands")
   end
