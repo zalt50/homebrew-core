@@ -87,22 +87,21 @@ class Xsane < Formula
   end
 
   test do
-    cmd = "#{bin}/xsane --version"
+    # Cannot run any useful test within macOS sandbox
+    xsane = bin/"xsane"
+    assert_path_exists xsane
+    return if OS.mac?
 
-    pid = nil
-    if OS.linux?
-      IO.pipe do |read_io, write_io|
-        pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
-        write_io.close
-        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+    IO.pipe do |read_io, write_io|
+      pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      assert_match version.to_s, shell_output("#{xsane} --version")
+    ensure
+      if pid
+        Process.kill "TERM", pid
+        Process.wait pid
       end
-    end
-
-    assert_match version.to_s, shell_output(cmd)
-  ensure
-    if pid
-      Process.kill "TERM", pid
-      Process.wait pid
     end
   end
 end
