@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.34.0",
-      revision: "d8ab4b4f0ca24b51d3a46b3bf4f462e58ce66b1f"
+      tag:      "v0.34.1",
+      revision: "38fdb5dd58c761f850cddd6ba1e78a7954646b4f"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -34,6 +34,8 @@ class Ollama < Formula
       # https://github.com/ollama/ollama/commit/0bb09259203ff8f6d361faae1d40c4f83d2a99f7
       # `mlx_cumsum_axis` only exists after mlx-c commit for MLX 0.32.2:
       # https://github.com/ml-explore/mlx-c/commit/d4afaec5cc5c9ffbe58f37fdc038b2faaedc6e70
+      # `mlx_gather_qmm` has no `global_scale` in MLX 0.32.1, so always use the wrapper fallback:
+      # https://github.com/ollama/ollama/blob/v0.34.1/mlx/compat/0001-mlx-c-qmm-global-scale.patch
       patch :DATA
     end
   end
@@ -41,8 +43,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10760",
-        revision: "0f3a71be15af836d277c9f918adfafb45732677e"
+        tag:      "b10864",
+        revision: "5d806aa2575e01e126651fd69ab1ab6cefff861d"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -148,6 +150,9 @@ class Ollama < Formula
   end
 
   test do
+    # Avoid compiling Metal shaders during backend discovery and the server test.
+    ENV["GGML_METAL_DEVICES"] = "0" if OS.mac?
+
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
@@ -212,7 +217,7 @@ index 27d5724..f38a670 100644
 diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
 --- a/x/mlxrunner/mlx/ops.go
 +++ b/x/mlxrunner/mlx/ops.go
-@@ -103,8 +103,7 @@
+@@ -103,7 +103,6 @@
  
  func (t *Array) Cumsum(axis int, reverse, inclusive bool) *Array {
  	out := New("CUMSUM")
@@ -221,3 +226,31 @@ diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
 +	mlxCheck(C.mlx_cumsum(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), DefaultStream().ctx))
  	return out
  }
+diff --git a/x/mlxrunner/mlx/ops_extra.go b/x/mlxrunner/mlx/ops_extra.go
+--- a/x/mlxrunner/mlx/ops_extra.go
++++ b/x/mlxrunner/mlx/ops_extra.go
+@@ -122,7 +122,7 @@
+ 	optGroupSize := C.mlx_optional_int{value: C.int(groupSize), has_value: true}
+ 	optBits := C.mlx_optional_int{value: C.int(bits), has_value: true}
+ 
+-	var b, lhs, rhs, gs C.mlx_array
++	var b, lhs, rhs C.mlx_array
+ 	if biases != nil {
+ 		b = biases.ctx
+ 	}
+@@ -134,13 +134,10 @@
+ 	}
+ 	// The wrapper fallback needs rhs indices to map output rows to experts;
+ 	// without them the native path reports the unsupported combination.
+-	applyWrapperScale := globalScale != nil && !MetalIsAvailable() && rhsIndices != nil
+-	if globalScale != nil && !applyWrapperScale {
+-		gs = globalScale.ctx
+-	}
++	applyWrapperScale := globalScale != nil
+ 
+ 	out := New("GATHER_QMM")
+-	mlxCheck(C.mlx_gather_qmm(&out.ctx, x.ctx, w.ctx, scales.ctx, b, lhs, rhs, C.bool(transpose), optGroupSize, optBits, cMode, gs, C.bool(sortedIndices), DefaultStream().ctx))
++	mlxCheck(C.mlx_gather_qmm(&out.ctx, x.ctx, w.ctx, scales.ctx, b, lhs, rhs, C.bool(transpose), optGroupSize, optBits, cMode, C.bool(sortedIndices), DefaultStream().ctx))
+ 	if applyWrapperScale {
+ 		out = mulGatherQMMGlobalScale(out, globalScale, rhsIndices)
+ 	}
