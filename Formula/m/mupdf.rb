@@ -13,12 +13,11 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cb5b1babac2c03d169b3e6bf09d7c4761bbd8302e658087027e70013db421c88"
-    sha256 cellar: :any, arm64_tahoe:       "1cb0c9a42335ad0c0436402f19c51718b9b2aaa1a07b465fb043d55cfda433b0"
-    sha256 cellar: :any, arm64_sequoia:     "c817d009ae5cb0c30c8e7868dff8a9c8d1fdf1afb3b3c60d61cbf2c339fd004a"
-    sha256 cellar: :any, arm64_sonoma:      "92f6cb48a1acef61c2ac0c9311288bf704eaa7a2ffe1ca43093e809efa44fed0"
-    sha256 cellar: :any, arm64_linux:       "44e0cf74dac6dd4b0c2e520dc55326b9ab12597f306ef690b7374b2cd10702a4"
-    sha256 cellar: :any, x86_64_linux:      "40e99341f304271d60d51d1479be5c5601e08b86db831e382a2068093e5a548a"
+    sha256 cellar: :any, arm64_golden_gate: "22e23eb788bc864cc10a8dcebc98ba6f34cc366a8255c8f660f9e7024d65975d"
+    sha256 cellar: :any, arm64_tahoe:       "33be235ebd5a0e3ff626ab3e9c0249f5ef45f71f2f097c97547ffe079b6c66f4"
+    sha256 cellar: :any, arm64_sequoia:     "7f4da1c614664d7de90faf50d35a9b886b9754f054528999f34cc8278e8b5a86"
+    sha256 cellar: :any, arm64_linux:       "63f8f292ae717885ed62312d7092fa5e45d3962a22ed1a57caeb1603fbdc27d8"
+    sha256 cellar: :any, x86_64_linux:      "f0ba4418f56d40268965ada6fdcbd53abaa27b0b187c1031d93025e9965244ff"
   end
 
   depends_on "llvm@21" => :build
