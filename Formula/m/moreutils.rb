@@ -1,8 +1,8 @@
 class Moreutils < Formula
   desc "Collection of tools that nobody wrote when UNIX was young"
   homepage "https://joeyh.name/code/moreutils/"
-  url "https://git.joeyh.name/index.cgi/moreutils.git/snapshot/moreutils-0.70.tar.gz"
-  sha256 "f2bf46d410ba567cc8d01507e94916994e48742722e690dc498fab59f5250132"
+  url "https://deb.debian.org/debian/pool/main/m/moreutils/moreutils_0.70.orig.tar.xz"
+  sha256 "a844c5e3360a73d12c0a5624750ecc1969d64afea2e84925328f137576e2eb55"
   license all_of: [
     "GPL-2.0-or-later",
     { any_of: ["GPL-2.0-only", "Artistic-2.0"] },
