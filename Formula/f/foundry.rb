@@ -4,10 +4,9 @@ class Foundry < Formula
   # `build.rs` in `common` crate requires `.git` repository
   # https://github.com/foundry-rs/foundry/blob/4072e48705af9d93e3c0f6e29e93b5e9a40caed8/crates/common/build.rs#L9-L12
   url "https://github.com/foundry-rs/foundry.git",
-      tag:      "v1.8.1",
-      revision: "982849d3140c01fd3b72905759581a132df7aa98"
+      tag:      "v1.8.3",
+      revision: "cae51ad458f6abb64852b7709eb784352429825d"
   license any_of: ["MIT", "Apache-2.0"]
-  revision 1
   head "https://github.com/foundry-rs/foundry.git", branch: "master"
 
   livecheck do
