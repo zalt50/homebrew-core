@@ -22,7 +22,8 @@ class Ocmtoc < Formula
                "-project", "cctools.xcodeproj",
                "-scheme", "mtoc",
                "-configuration", "Release",
-               "CONFIGURATION_BUILD_DIR=build/Release"
+               "CONFIGURATION_BUILD_DIR=build/Release",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     bin.install "build/Release/mtoc"
     man1.install "man/mtoc.1"
   end
