@@ -22,6 +22,12 @@ class Biome < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     # Work around SIGKILL on arm64 linux runner from fat LTO
     github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
