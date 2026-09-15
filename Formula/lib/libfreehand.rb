@@ -1,8 +1,8 @@
 class Libfreehand < Formula
   desc "Interpret and import Aldus/Macromedia/Adobe FreeHand documents"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libfreehand"
-  url "https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.3.tar.xz"
-  sha256 "a431d78767e5aa27ade7c6d1b7a11a9f1848cb4b9260bf0a6a44689553ecccfe"
+  url "https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.4.tar.xz"
+  sha256 "350b10d24a76d7e8c8ae98b74c2d432a2c8ddec08935d09856d20b695a35e600"
   license "MPL-2.0"
 
   livecheck do
