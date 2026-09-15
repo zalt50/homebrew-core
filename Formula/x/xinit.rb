@@ -118,6 +118,6 @@ class Xinit < Formula
     C
     system ENV.cc, "./test.c", "-o", "test", "-I#{formula_opt_include("libxcb")}", "-L#{formula_opt_lib("libxcb")}",
 "-lxcb"
-    exec bin/"xinit", "./test", "--", formula_opt_bin("xorg-server")/"Xvfb", ":1"
+    exec bin/"xinit", "./test", "--", formula_opt_bin("xorg-server")/"Xvfb", ":1", "-listen", "tcp"
   end
 end
