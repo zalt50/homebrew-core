@@ -1,8 +1,8 @@
 class Kubo < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https://docs.ipfs.tech/how-to/command-line-quick-start/"
-  url "https://github.com/ipfs/kubo/releases/download/v0.43.0/kubo-source.tar.gz"
-  sha256 "bcffc5ed921d395903375e8fa04f0e88f14fff16c2c4046ae84cb2bab03d8456"
+  url "https://github.com/ipfs/kubo/releases/download/v0.43.1/kubo-source.tar.gz"
+  sha256 "470f90d551f34ff65b533299e8f55ed3d2f2d062fd15c998ea53d095bac3ed26"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
