@@ -4,7 +4,7 @@ class Merve < Formula
   url "https://github.com/nodejs/merve/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "8f19c2132447b9113545ffd399cb2bc1e61c6166743921b04883f8e1d778d69e"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "e15982082ec3dbea24d9d18b6d8071f115b4f80ccdd2ed3a8639ed7c69f65b85"
