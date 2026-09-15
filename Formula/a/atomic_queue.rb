@@ -6,13 +6,11 @@ class AtomicQueue < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4cf5d0f856cae45738f68a325729685e8a977d76e3f9bcba14a64da5c76e405d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f15fac605dba4db11eac46892b77f7ece83f6cf789477e74ad4438021b97d638"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f15fac605dba4db11eac46892b77f7ece83f6cf789477e74ad4438021b97d638"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f15fac605dba4db11eac46892b77f7ece83f6cf789477e74ad4438021b97d638"
-    sha256 cellar: :any_skip_relocation, sonoma:            "f15fac605dba4db11eac46892b77f7ece83f6cf789477e74ad4438021b97d638"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "dc852d1260a179f50f475b3955d04fe0556468aea893723317ba93a9d455e466"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dc852d1260a179f50f475b3955d04fe0556468aea893723317ba93a9d455e466"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a4f80416f7dd14c64ecfbcc3f69fe047c5d036f145ad071ef6b0b22e3e683c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9a4f80416f7dd14c64ecfbcc3f69fe047c5d036f145ad071ef6b0b22e3e683c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a4f80416f7dd14c64ecfbcc3f69fe047c5d036f145ad071ef6b0b22e3e683c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "909aa19375ab3cf179685fed3df9d63e665d6f2062078d947c6044d6dbe618cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "909aa19375ab3cf179685fed3df9d63e665d6f2062078d947c6044d6dbe618cb"
   end
 
   depends_on "meson" => :build
