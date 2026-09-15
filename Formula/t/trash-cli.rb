@@ -9,14 +9,11 @@ class TrashCli < Formula
   head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "143b02428d610f1910b2742ae2387e1535faa44e90c3f41e40d560e059570043"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "096c7187b9376eb817001e3ed11ea683e43d81c25c493c9f1036dc3bea281823"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e5cefc22f1ecb8432383170c378630a1b2ab97fbdcd63006cddf43eedd70b41f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ce16cef08f1698139e1e509ff3c42621cdad38fe96634593c0ecc7a10458d218"
-    sha256 cellar: :any_skip_relocation, sonoma:            "a0cc43661442da45b0e393fc69c9a92adf86dec427dcea7b64bc39bfee6ded85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7f6ad80444c0db11ae7faf5bfa3e119eb09603242938e35ef89fe3e3b080a09d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "88aba05ddc72fd1c30e4aa6e69351cd59e4aaf11d043d2eeafa013f0c574c9ba"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "09318b59716e168dcd6f0b6f4ff6fe54c84f535e5abef40df93fb7a3e472fda0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "04b8c55a25837c64348072cb3ce5acb1da34f757c16b3a918544e49401392e8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4e95d7d7ad03ab0076797af0652366b3995459fb4af9705d67a58354bf6b6a39"
+    sha256 cellar: :any,                 arm64_linux:       "27df1b49fa8a2f7d21da52fbc7a1c61edbf7aa0416c141243af42acaea7e7ec5"
+    sha256 cellar: :any,                 x86_64_linux:      "2d57ef4af3c555ee6d60b0916140075e8b3814fc40b55a75197be6f9d35e518f"
   end
 
   keg_only :shadowed_by_macos
