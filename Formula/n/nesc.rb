@@ -37,6 +37,8 @@ class Nesc < Formula
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # autoconf 2.73 selects C23, where `bool` is a keyword that `src/nconfig.h` redefines
+    ENV["ac_cv_prog_cc_c23"] = "no"
 
     ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
     # nesc is unable to build in parallel because multiple emacs instances
