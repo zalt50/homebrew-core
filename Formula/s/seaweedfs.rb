@@ -13,11 +13,11 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c685b89935e28ad1b094b4c5f99a6558716082cbebaeff1b77d428baca65cd82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a546c4e8cd3e9169155c667abc5317bfa11011bb27939b2526a7de019be6d34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5752797a4033e6ff7be2f8036529fd303908716f54375d03d0be4ad9106178a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ffac00e5ecb0ae84919cbd22bd336792b81eca79e9591b559f2d03f9c924dd6"
-    sha256 cellar: :any,                 x86_64_linux:  "6134db0b3d5782a039b57bc4c386662853e4b7a29f83fa85805761960b9724ad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4be8532548d5946bd7491b1529098964c951cc508929300f901f1fe970d829fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f133f8a2cd71590d2c5e20e322c724adc8638c8fe9c669c4ba14fe14d32675de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d728205b2ffeec467cedc25d5304c51f2b75ce936b360dcd8075b8fcf357cf97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f685906bdfe3228aea7ddf3ecf23f7cd5a6188d91a204a382fb827477a22c213"
+    sha256 cellar: :any,                 x86_64_linux:      "0266f1dce86be2c87383a98782f5430de4b1f382bfd1215881cc0a29e18b28ae"
   end
 
   depends_on "go" => :build
