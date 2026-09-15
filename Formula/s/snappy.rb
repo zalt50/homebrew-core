@@ -8,15 +8,11 @@ class Snappy < Formula
   head "https://github.com/google/snappy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "0bd713323e2fd3d8033c1ad2c48d9c1ac9e72723f1003ca09279186054261d70"
-    sha256 cellar: :any,                 arm64_tahoe:       "e735754860a1b086bf31814117dff6eaee6a1d9f26e8de33ee9d75f1decc770b"
-    sha256 cellar: :any,                 arm64_sequoia:     "326d8c9a73e0990a43fefe96d2e29355fcd6f42906710017bd1a3baf4401bb33"
-    sha256 cellar: :any,                 arm64_sonoma:      "28b0702ed678a35c6d03cb4d91f975e17b3b5af7480418f3c82f46365e55533d"
-    sha256 cellar: :any,                 arm64_ventura:     "9e4594baee5654ab46bf4542d4e1867c6a6700cc11948ee7f496a7a681a1fd28"
-    sha256 cellar: :any,                 sonoma:            "47444cd920b4f3232d1d77f51ead8a18e0a77fb5b154bff7c024bf17d700d273"
-    sha256 cellar: :any,                 ventura:           "026d656d0beaf42781437e7fe70012b18eb73f16db024f7e46f35891e2e8a1b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c2d7ecfa6475c2ad07a45025ad99940c75bf03c7b3772850d830a3dd571ff09c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "462767a5fd6f73305aa7fd232bc5119e96491ad17222092d8b532fe2616ca24e"
+    sha256 cellar: :any, arm64_golden_gate: "56a72b07396e784b1baf26bd6d3e17eb4f42d6daaa547d94c2c0c7af46d3ab3c"
+    sha256 cellar: :any, arm64_tahoe:       "ed46206fcb9d94e26c725e32e2628d1b5316afd6b59bc2b5352ca05c462103da"
+    sha256 cellar: :any, arm64_sequoia:     "b494e64dbd96af17defdb6a0ebf60edd284d3df904c867c825c2d5cf9033782b"
+    sha256 cellar: :any, arm64_linux:       "7a621f5fa89c4339bee3cc592331f6d5c1adabc7ff1e7349670cc1039b3c85bb"
+    sha256 cellar: :any, x86_64_linux:      "18aec5843943b24eb10d51af1d42b6a7e32120b46a045bbf0bc5e908fbb5f837"
   end
 
   depends_on "cmake" => :build
