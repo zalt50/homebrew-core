@@ -3,8 +3,8 @@ class Linecast < Formula
 
   desc "Weather, tides, the sun, the moon, and maps, drawn for the terminal"
   homepage "https://github.com/ashuttl/linecast"
-  url "https://files.pythonhosted.org/packages/fd/f4/b3752931409dfb642f7b87e1ff9f04a5b5059455f2d95f30ea34c2664f4d/linecast-2.4.0.tar.gz"
-  sha256 "4c7e1e94d322b7ad7b62cb03ae2571568c0735481cdcf2463babee00fe42613c"
+  url "https://files.pythonhosted.org/packages/f9/6a/291698e78b775df61d44d70719dc3530dc4019263b27319737f41e60514b/linecast-2.5.1.tar.gz"
+  sha256 "704b40e0714d25c62dba7ea2113d928ff513eebbd8845a42afb6ba8c8bcb0fae"
   license "MIT"
 
   bottle do
