@@ -16,7 +16,6 @@ class LibvisualPlugins < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "xorg-server" => :test
 
   depends_on "jack"
   depends_on "libvisual"
@@ -50,30 +49,21 @@ class LibvisualPlugins < Formula
   end
 
   test do
-    libvisual = Formula["libvisual"]
-    lv_tool = libvisual.bin/"lv-tool-#{libvisual.version.major_minor}"
+    # `lv-tool` starts through SDL 1.2's Cocoa `SDLmain`, which never finishes launching in the test sandbox
     audio = OS.mac? ? "portaudio" : "pulseaudio"
+    (testpath/"test.c").write <<~C
+      #include <libvisual/libvisual.h>
 
-    # Test that locating key plugins works properly
-    plugin_help_output = shell_output("#{lv_tool} --plugin-help 2>&1")
-    assert_match " (debug)", plugin_help_output
-    assert_match " (lv_gltest)", plugin_help_output
-    assert_match " (#{audio})", plugin_help_output
-
-    # Tests that lv-tool starts up without crashing
-    xvfb_pid = spawn formula_opt_bin("xorg-server")/"Xvfb", ":1"
-    ENV["DISPLAY"] = ":1"
-
-    # NOTE: The two lines "assertion `video != NULL' failed" in the output
-    #       are to be expected and can be ignored.
-    lv_tool_pid = spawn lv_tool, "--input", "debug"
-
-    sleep 5
-  ensure
-    Process.kill("SIGINT", lv_tool_pid)
-    Process.wait(lv_tool_pid)
-
-    Process.kill("SIGINT", xvfb_pid)
-    Process.wait(xvfb_pid)
+      int main(int argc, char **argv) {
+        visual_init(&argc, &argv);
+        if (!visual_input_valid_by_name("debug")) return 1;
+        if (!visual_actor_valid_by_name("lv_gltest")) return 2;
+        if (!visual_input_valid_by_name("#{audio}")) return 3;
+        return 0;
+      }
+    C
+    system ENV.cc, "test.c", "-o", "test", "-I#{formula_opt_include("libvisual")}/libvisual-0.4",
+                   "-L#{formula_opt_lib("libvisual")}", "-lvisual-0.4"
+    system "./test"
   end
 end
