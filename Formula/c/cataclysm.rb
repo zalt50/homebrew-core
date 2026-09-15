@@ -23,6 +23,7 @@ class Cataclysm < Formula
 
   head do
     url "https://github.com/CleverRaven/Cataclysm-DDA.git", branch: "master"
+
     on_macos do
       depends_on "freetype"
     end
@@ -55,6 +56,7 @@ class Cataclysm < Formula
       TILES=1
       SOUND=1
       RUNTESTS=0
+      TESTS=0
       ASTYLE=0
       LINTJSON=0
     ]
@@ -83,7 +85,7 @@ class Cataclysm < Formula
     user_config_dir.mkpath
 
     # "Error while initializing the interface: SDL_Init failed: No available video device"
-    ENV["SDL_VIDEODRIVER"] = "dummy" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["SDL_VIDEODRIVER"] = "dummy"
 
     # run cataclysm for 50 seconds
     tries = 0
