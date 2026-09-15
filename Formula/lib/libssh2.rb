@@ -6,7 +6,7 @@ class Libssh2 < Formula
   mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.11.1.tar.gz"
   sha256 "d9ec76cbe34db98eec3539fe2c899d26b0c837cb3eb466a56b0f109cabf658f7"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
   compatibility_version 1
 
   livecheck do
@@ -130,6 +130,14 @@ class Libssh2 < Formula
     sha256 "a790ab6c15c8dd6300ca8a651121ecc91e90e0eda1a221ad8108f51de05e1cf3"
     type :backport
     resolves "OSV-2025-90", "OSV-2025-92"
+  end
+
+  # Disable deprecated algorithms; remove with the next release containing this fix.
+  patch do
+    url "https://github.com/libssh2/libssh2/commit/b89858b83d68d7e29e0c5b0bb803f8a68271710c.patch?full_index=1"
+    sha256 "76bdf62172e16e2f74fdde35cd3daa3db27b753c48c4a7bdfd295463444eb936"
+    type :backport
+    resolves "OSV-2022-24", "OSV-2024-847"
   end
 
   def install
