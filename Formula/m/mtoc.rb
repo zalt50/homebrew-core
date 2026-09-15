@@ -30,6 +30,7 @@ class Mtoc < Formula
                "-IDEBuildLocationStyle=Custom",
                "-IDECustomDerivedDataLocation=#{buildpath}",
                "CONFIGURATION_BUILD_DIR=build/Release",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
                "HEADER_SEARCH_PATHS=#{formula_opt_include("llvm")} $(HEADER_SEARCH_PATHS)"
     bin.install "build/Release/mtoc"
     man1.install "man/mtoc.1"
