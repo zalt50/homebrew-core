@@ -1,8 +1,8 @@
 class TextEmbeddingsInference < Formula
   desc "Blazing fast inference solution for text embeddings models"
   homepage "https://huggingface.co/docs/text-embeddings-inference/quick_tour"
-  url "https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "85cbe4b18033cd8e84118841a94122a8d4e4bfeeba128c4b0f77bd30d4f1e4ea"
+  url "https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.9.4.tar.gz"
+  sha256 "9bf7d4f4f149d8bea453a5783803d1db7949d79316f95b1cdf85d1842e8d0380"
   license "Apache-2.0"
 
   bottle do
@@ -17,14 +17,12 @@ class TextEmbeddingsInference < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
-  # Fix lifetime error for `metrics` package
-  patch do
-    url "https://github.com/huggingface/text-embeddings-inference/commit/574132b3ee9ebccb63e223a35ef50e42559f5666.patch?full_index=1"
-    sha256 "10438e9f9428db4fc0be52dba7fabeff7a26fd906763b6a1d182e0cb710dec2c"
-    type :backport
-    resolves "https://github.com/huggingface/text-embeddings-inference/pull/850"
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 
   def install
@@ -36,7 +34,7 @@ class TextEmbeddingsInference < Formula
     port = free_port
     spawn bin/"text-embeddings-router", "-p", port.to_s, "--model-id", "sentence-transformers/all-MiniLM-L6-v2"
 
-    data = "{\"inputs\":\"What is Deep Learning?\"}"
+    data = '{"inputs":"What is Deep Learning?"}'
     header = "Content-Type: application/json"
     retries = "--retry 5 --retry-connrefused"
     assert_match "[[", shell_output("curl 127.0.0.1:#{port}/embed -X POST -d '#{data}' -H '#{header}' #{retries}")
