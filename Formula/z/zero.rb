@@ -1,8 +1,8 @@
 class Zero < Formula
   desc "Terminal coding agent you own"
   homepage "https://zero.gitlawb.com/"
-  url "https://github.com/Gitlawb/zero/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "5ceef2a00c1ba3a50e564f25c079d2cab7ebda4984761122a5e45b7aa45b4342"
+  url "https://github.com/Gitlawb/zero/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "9f8ec37478f13d6e72b90b85f87ae586a8dea1debd94d035e8dce22eb67a1fa1"
   license "MIT"
   head "https://github.com/Gitlawb/zero.git", branch: "main"
 
