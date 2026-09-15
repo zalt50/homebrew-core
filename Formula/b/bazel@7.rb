@@ -51,6 +51,17 @@ class BazelAT7 < Formula
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
     # Force Bazel to use brew OpenJDK
     extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]
+    if OS.mac?
+      # Tools built for the exec configuration only follow `--host_macos_minimum_os`
+      extra_bazel_args << "--macos_minimum_os=#{MacOS.version}.0"
+      extra_bazel_args << "--host_macos_minimum_os=#{MacOS.version}.0"
+      # Apple clang 21 lists `SDKSettings.json` as a dependency, but Bazel 7's toolchain only allows the CLT SDK
+      if MacOS::CLT.installed?
+        %w[action_env host_action_env repo_env].each do |opt|
+          extra_bazel_args << "--#{opt}=SDKROOT=#{MacOS::CLT::PKG_PATH}/SDKs/MacOSX.sdk"
+        end
+      end
+    end
     ENV.merge! java_home_env.transform_keys(&:to_s)
     # Bazel clears environment variables which breaks superenv shims
     ENV.remove "PATH", Superenv.shims_path
@@ -67,6 +78,7 @@ class BazelAT7 < Formula
       system "./compile.sh"
       system "./output/bazel", "--output_user_root=#{buildpath}/output_user_root",
                                "build",
+                               *extra_bazel_args,
                                "scripts:bash_completion",
                                "scripts:fish_completion"
 
