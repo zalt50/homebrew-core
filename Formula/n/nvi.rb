@@ -78,6 +78,9 @@ class Nvi < Formula
   end
 
   def install
+    # autoconf 2.73 selects C23, which rejects nvi's K&R definitions and `()` prototypes
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     cd "dist" do
       # Run autoreconf on macOS to rebuild configure script so that it doesn't try
       # to build with a flat namespace.
