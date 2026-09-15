@@ -27,12 +27,13 @@ class Xsane < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "941fa6509e6e252e468c894c6066dbd46c301b2c3046059e6c4f8215d391294f"
-    sha256 arm64_sequoia: "0d66e34d8305f5d856e9f83e7b5aee1dfea383b0ac21071a064f1d15536f259a"
-    sha256 arm64_sonoma:  "dbe17560abb0219f0b2a71c25b7dc6a439cc05e2adb96eb567d48bd05401ad36"
-    sha256 sonoma:        "42c97c01bb304dbcc2ee1ee6648ca11f61aa373cab7ee3105e627b192f87a1f5"
-    sha256 arm64_linux:   "2e6a96863d3108421a4f8907d76ef8e5d05399fe151af51a9864d04afe895493"
-    sha256 x86_64_linux:  "a37202cd6cbc1a49669b25b6131c30c5c0e555ea8a4d06a2ebbe5ee71b8eded8"
+    sha256 arm64_golden_gate: "b8d5a5f54e7504207fdeae582113f9819c578f67485c638a895ea8dbd44f88ee"
+    sha256 arm64_tahoe:       "941fa6509e6e252e468c894c6066dbd46c301b2c3046059e6c4f8215d391294f"
+    sha256 arm64_sequoia:     "0d66e34d8305f5d856e9f83e7b5aee1dfea383b0ac21071a064f1d15536f259a"
+    sha256 arm64_sonoma:      "dbe17560abb0219f0b2a71c25b7dc6a439cc05e2adb96eb567d48bd05401ad36"
+    sha256 sonoma:            "42c97c01bb304dbcc2ee1ee6648ca11f61aa373cab7ee3105e627b192f87a1f5"
+    sha256 arm64_linux:       "2e6a96863d3108421a4f8907d76ef8e5d05399fe151af51a9864d04afe895493"
+    sha256 x86_64_linux:      "a37202cd6cbc1a49669b25b6131c30c5c0e555ea8a4d06a2ebbe5ee71b8eded8"
   end
 
   head do
