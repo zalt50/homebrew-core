@@ -6,7 +6,7 @@ class Epubcheck < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0299f18ea40b9b12c948221009f646286bb9cfad887ddd4fc10ccf578ae5262e"
+    sha256 cellar: :any_skip_relocation, all: "6740a640702575af8d520803def971d8edc138d9d20d804d7479ec8bd5e420a9"
   end
 
   depends_on "openjdk"
