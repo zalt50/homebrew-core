@@ -1,16 +1,16 @@
 class Neonctl < Formula
   desc "Neon CLI tool"
   homepage "https://neon.tech/docs/reference/neon-cli"
-  url "https://registry.npmjs.org/neonctl/-/neonctl-4.14.3.tgz"
-  sha256 "e23a2f94dfa3e2dbb37ce10647b8bdffc3db1fbe5fae31c47957702349ef04ce"
+  url "https://registry.npmjs.org/neonctl/-/neonctl-4.14.5.tgz"
+  sha256 "381ce511e787a42ae0e9718ab17121f75658d8788098c2ff884764cbcce94d92"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e35c47266e5cd00db71d29977e6f808c2c3d87f3fb04ee6618d632a3c9da2b2d"
-    sha256 cellar: :any,                 arm64_sequoia: "e35c47266e5cd00db71d29977e6f808c2c3d87f3fb04ee6618d632a3c9da2b2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e35c47266e5cd00db71d29977e6f808c2c3d87f3fb04ee6618d632a3c9da2b2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a93bf99a554844202f80450a612bb64b9ab6104f3c7c09adef7838de075ea62b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f831b93f69b88b3dad5c675940603a7d889ef71a7a55c527e765901465a6ceee"
+    sha256 cellar: :any,                 arm64_golden_gate: "49d09c7f99f6e034ef03a40cc78166277c7ed2f24edb0d9f2711ba475a7e5527"
+    sha256 cellar: :any,                 arm64_tahoe:       "49d09c7f99f6e034ef03a40cc78166277c7ed2f24edb0d9f2711ba475a7e5527"
+    sha256 cellar: :any,                 arm64_sequoia:     "49d09c7f99f6e034ef03a40cc78166277c7ed2f24edb0d9f2711ba475a7e5527"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5f7e7a2417d681517eb0aa14c46bf12937449cfb3378a3c7f62a0176b9d9aaa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4a71dceeb924ee3bf5ebf8ed4af325c1e13bce0c78031ac69aef0530c7f57880"
   end
 
   depends_on "esbuild" # replaces the bundled copy
@@ -51,6 +51,8 @@ class Neonctl < Formula
     TS
     port = free_port
     log = testpath/"dev.log"
+    # Poll instead of using FSEvents, which the `brew test` sandbox denies
+    ENV["CHOKIDAR_USEPOLLING"] = "1"
     pid = spawn bin/"neonctl", "dev", "--source", testpath/"neon/index.ts", "--port", port.to_s,
                 "--config-dir", testpath/"config", "--analytics", "false",
                 out: log.to_s, err: log.to_s
