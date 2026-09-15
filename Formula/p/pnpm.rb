@@ -1,8 +1,8 @@
 class Pnpm < Formula
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://github.com/pnpm/pnpm/archive/refs/tags/v12.4.1.tar.gz"
-  sha256 "7388d1fe40ff2862d97645d4f5fca9f4a2459ac534c005d990717298aeacef6b"
+  url "https://github.com/pnpm/pnpm/archive/refs/tags/v12.4.2.tar.gz"
+  sha256 "2fca2c303b978c8177c13550b2d0f8e442cf32b833bea7878421f90c18a7c612"
   license "MIT"
   compatibility_version 1
   head "https://github.com/pnpm/pnpm.git", branch: "main"
@@ -29,6 +29,7 @@ class Pnpm < Formula
   deny_network_access!
 
   def fetch
+    rm ".cargo/config.toml"
     system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 
