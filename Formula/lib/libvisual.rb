@@ -39,8 +39,20 @@ class Libvisual < Formula
   end
 
   test do
-    # NOTE: Without any plug-ins, there is no more that we could test.
-    lv_tool = bin/"lv-tool-#{version.major_minor}"
-    assert_match version.to_s, shell_output("#{lv_tool} --version")
+    # `lv-tool` starts through SDL 1.2's Cocoa `SDLmain`, which never finishes launching in the test sandbox
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include <libvisual/libvisual.h>
+
+      int main(int argc, char **argv) {
+        visual_init(&argc, &argv);
+        puts(visual_get_version());
+        visual_quit();
+        return 0;
+      }
+    C
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}/libvisual-#{version.major_minor}",
+                   "-L#{lib}", "-lvisual-#{version.major_minor}"
+    assert_equal version.to_s, shell_output("./test").strip
   end
 end
