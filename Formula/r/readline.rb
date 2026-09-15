@@ -3,7 +3,7 @@ class Readline < Formula
   homepage "https://tiswww.case.edu/php/chet/readline/rltop.html"
   url "https://ftpmirror.gnu.org/readline/readline-8.3.tar.gz"
   mirror "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz"
-  version "8.3.3"
+  version "8.3.6"
   sha256 "fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc"
   license "GPL-3.0-or-later"
 
@@ -19,6 +19,9 @@ class Readline < Formula
     001 21f0a03106dbe697337cd25c70eb0edbaa2bdb6d595b45f83285cdd35bac84de
     002 e27364396ba9f6debf7cbaaf1a669e2b2854241ae07f7eca74ca8a8ba0c97472
     003 72dee13601ce38f6746eb15239999a7c56f8e1ff5eb1ec8153a1f213e4acdb29
+    004 1f189c4566aa35950964647b9ec3be1a821e42b86048129c63eb7f9d4d2f5a74
+    005 5481adbe161c9f6ba972c74db9e18c7aa351d3df3035cc4a673a1aa06247d1c6
+    006 4ebd261a608287796e171af0ea9af5a1e3122e46672accda2484b6698c47c1a4
   ]
 
   patch_checksum_pairs.each_slice(2) do |p, checksum|
