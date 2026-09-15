@@ -6,12 +6,11 @@ class Networkit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ced2920bc1e6701e30cca2d8fc70cf0f9b785cb5fdced49dcaae63ddb2f77d9b"
-    sha256 cellar: :any, arm64_sequoia: "04f4977d13c5198b836327852a765cd9e9a8d213817f859cbc51b66a7cd324ca"
-    sha256 cellar: :any, arm64_sonoma:  "3dc11cc11c07c71c6d19a9990ecbaa90f0482a0c7d6ef2947ceb3b2550053018"
-    sha256 cellar: :any, sonoma:        "84202ae39b325a754d091cb55f9ea530fd378fc9bf81f3aea896b49f3cf8bcd1"
-    sha256               arm64_linux:   "b0a4297e282a3eece612c67f3ef520ef56df2687e060588bc8fea3d13cec2b36"
-    sha256               x86_64_linux:  "f3490cbbda12ffaeff0028a1353d8763c526d8dd430b01512f4c908cb8619905"
+    sha256 cellar: :any, arm64_golden_gate: "f5648fc41e771dad414a0e5373a68cb6972a72492f95e723c8a4687aaf560253"
+    sha256 cellar: :any, arm64_tahoe:       "5e652ca9e62b405b5433da7a9142150d55789074069d7db242f463c4e851b2fe"
+    sha256 cellar: :any, arm64_sequoia:     "db98c836a5a215c45ff27363e1fb0d3c73452c272317b87440d3271f21275f16"
+    sha256               arm64_linux:       "a4c1348e4668eee24955e129f432b8e8ff314e6e56ad230fa05ed4d7ca469fe0"
+    sha256               x86_64_linux:      "e606cd5834dc59789320cbd57bb73b237fb7ee6e67a43bf309517d53c5eefb7c"
   end
 
   depends_on "cmake" => :build
