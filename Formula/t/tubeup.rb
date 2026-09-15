@@ -134,6 +134,6 @@ class Tubeup < Formula
   test do
     # Verify tubeup attempts to process a URL (expected failure for invalid video)
     output = shell_output("#{bin}/tubeup https://www.youtube.com/watch?v=invalid_video_id --dir #{testpath} 2>&1", 1)
-    assert_match "Video unavailable", output
+    assert_match "ERROR: [youtube] invalid_vid:", output
   end
 end
