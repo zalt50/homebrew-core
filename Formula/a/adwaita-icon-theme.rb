@@ -7,7 +7,7 @@ class AdwaitaIconTheme < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "47172d1fb11dcdac39b27a41921517f3710a3dc0cde41372c3a086c955f77ba8"
+    sha256 cellar: :any_skip_relocation, all: "f40942bda19569a8dfc6b9c89c2fc7b7e1d89231fa2f0e0478166b08a91b23fa"
   end
 
   depends_on "gtk4" => :build # for gtk4-update-icon-cache
