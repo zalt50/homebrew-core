@@ -21,7 +21,7 @@ class Glab < Formula
   depends_on "go" => :build
 
   # `test do` block queries the GitLab API
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"
