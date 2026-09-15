@@ -1,8 +1,8 @@
 class Nift < Formula
   desc "Fast dependency-aware website generator"
   homepage "https://nift.dev/"
-  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.0.13.tar.gz"
-  sha256 "1bb0211fd005376f0cef9a063774e2a90ddc989e789aac06d51d2f9991ee4b26"
+  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "3f168d8e9f780db306a61a30afc55273f2766c31f754f79177b5406b77dd47d9"
   license "MIT"
 
   livecheck do
@@ -18,7 +18,21 @@ class Nift < Formula
     sha256 cellar: :any,                 x86_64_linux:      "c0bb5aed6e2021499c6c9d2a83de30d287d986619aff619572dea2533695c709"
   end
 
+  on_sequoia :or_older do
+    depends_on "llvm"
+
+    fails_with :clang do
+      cause "floating-point `std::from_chars` requires macOS 26 libc++"
+    end
+  end
+
   def install
+    if OS.mac? && MacOS.version <= :sequoia
+      # Link LLVM's libc++ as the system one lacks floating-point `std::from_chars` before macOS 26
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("llvm")/"c++"
+      inreplace "Makefile", /^CXXFLAGS \?= /, "\\0-D_LIBCPP_DISABLE_AVAILABILITY "
+    end
+
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end
