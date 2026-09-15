@@ -7,10 +7,9 @@ class Paneru < Formula
   head "https://github.com/karinushka/paneru.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f6ba1e5ff68dd6697420e537a1d6907820df75bd9aabd31d3ab8473fb807fd74"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "861e0ed47183703b878e646027858036e9e3eedce58e62074acf0678e54f2c6a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "766c5806811cbba89cde33f7f0425d31d9ffa7b5dce605dbd966a5b87a0aa54e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "29ec11d779f6e47143dc2b3869a91e6451b32c96adccc567d5245dbda4dcf192"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e963720c7362a1b60389666e837f5270f43d09f7a31b5b5e84c9e61e245030fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "39d71dd823da8a782ac0f14b3b96268bae8c0835f19ba42fd14f5e4dddc0bd8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87663c29e5eef02cfd9196dc05ef6792ac9223d0d7bd155bcd6e19abd3e885a0"
   end
 
   depends_on "rust" => :build
