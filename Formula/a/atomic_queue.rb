@@ -1,8 +1,8 @@
 class AtomicQueue < Formula
   desc "C++14 lock-free queues"
   homepage "https://max0x7ba.github.io/atomic_queue/html/benchmarks.html"
-  url "https://github.com/max0x7ba/atomic_queue/archive/refs/tags/v1.9.2.tar.gz"
-  sha256 "7c3606f23cea69d39c3872996ffb83587bd4ab08da3c0c4c45aba7aa15eea9f8"
+  url "https://github.com/max0x7ba/atomic_queue/archive/refs/tags/v1.9.3.tar.gz"
+  sha256 "08157c1ffa6dee0ee9c34a102ee1a9da91b822e213a7cce79d6d8aed9c7a7979"
   license "MIT"
 
   bottle do
@@ -18,6 +18,14 @@ class AtomicQueue < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :test
+
+  # Apple clang has no `libatomic`, which the meson build requires since 1.9.3
+  patch do
+    url "https://github.com/max0x7ba/atomic_queue/commit/73647516617e9ddb356f7f24811e4b0ae58672d1.patch?full_index=1"
+    sha256 "5b750112ef279aba5c30770953ebe1b2ebcc2a0fd0e9e2198330c649682cb52c"
+    type :unofficial
+    resolves "https://github.com/max0x7ba/atomic_queue/pull/108"
+  end
 
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args
