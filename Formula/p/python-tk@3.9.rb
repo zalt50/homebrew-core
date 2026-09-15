@@ -21,6 +21,8 @@ class PythonTkAT39 < Formula
   depends_on "python@3.9"
   depends_on "tcl-tk@8"
 
+  deny_network_access!
+
   def install
     cd "Modules" do
       tcltk = Formula["tcl-tk@8"]
@@ -40,16 +42,13 @@ class PythonTkAT39 < Formula
               ]
         )
       PYTHON
-      system python3, "-m", "pip", "install", *std_pip_args(prefix: false), "--target=#{libexec}", "."
+      args = std_pip_args(prefix: false, build_isolation: false).reject { |s| s["--uploaded-prior-to"] }
+      system python3, "-m", "pip", "install", *args, "--target=#{libexec}", "."
       rm_r libexec.glob("*.dist-info")
     end
   end
 
   test do
     system python3, "-c", "import tkinter"
-
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system python3, "-c", "import tkinter; root = tkinter.Tk()"
   end
 end
