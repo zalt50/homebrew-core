@@ -34,7 +34,7 @@ class Smpeg < Formula
 
   # This formula is for usage with old SDL 1.2 with last release from 2013-02-17
   deprecate! date: "2026-06-01", because: :unmaintained
-  disable! date: "2027-06-01", because: :unmaintained
+  disable! date: "2026-12-01", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -71,7 +71,7 @@ class Smpeg < Formula
   end
 
   test do
-    system bin/"plaympeg", "--version"
+    assert_match version.to_s, shell_output("#{bin}/smpeg-config --version")
   end
 end
 
