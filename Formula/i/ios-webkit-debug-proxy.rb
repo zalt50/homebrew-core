@@ -34,16 +34,20 @@ class IosWebkitDebugProxy < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ios_webkit_debug_proxy --version")
 
-    # Fails in Linux CI with "`No device found, is it plugged in?`"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     base_port = free_port
     (testpath/"config.csv").write <<~CSV
       null:#{base_port},:#{base_port + 1}-#{base_port + 101}
     CSV
 
-    spawn "#{bin}/ios_webkit_debug_proxy", "-c", testpath/"config.csv"
+    output_log = testpath/"output.log"
+    pid = spawn "#{bin}/ios_webkit_debug_proxy", "-c", testpath/"config.csv", [:out, :err] => output_log.to_s
     sleep 2
-    assert_match "iOS Devices:", shell_output("curl localhost:#{base_port}")
+    # Setup fails in both macOS sandbox and Linux where we don't have usbmuxd daemon
+    assert_match "No device found, is it plugged in?", output_log.read
+  ensure
+    if pid
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
