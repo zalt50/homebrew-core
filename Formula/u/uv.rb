@@ -22,10 +22,6 @@ class Uv < Formula
   uses_from_macos "bzip2"
   uses_from_macos "xz"
 
-  on_linux do
-    depends_on "jemalloc"
-  end
-
   # downloads wheels in test
   allow_network_access! :test
 
