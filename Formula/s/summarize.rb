@@ -1,13 +1,13 @@
 class Summarize < Formula
   desc "Multi-modal AI tool to extract and summarize content"
   homepage "https://summarize.sh"
-  url "https://registry.npmjs.org/@steipete/summarize/-/summarize-0.21.15.tgz"
-  sha256 "0f493e07b9d6d925850737f9f6145a03c4cd4892a4bda80f906fe7b05778d772"
+  url "https://registry.npmjs.org/@steipete/summarize/-/summarize-0.22.0.tgz"
+  sha256 "f2c5444e6a8f71697afe1c316fe0bd0785ae27ce83e14bf96b7e8ed66b667765"
   license "MIT"
   head "https://github.com/steipete/summarize.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "843737e5cc96649179ccd315e601764ecd67128f7b20fa1e19fce71fc4f33e7a"
+    sha256 cellar: :any_skip_relocation, all: "8283e210708e8bd88e2a108a85b8e94be6211eda061e686f689bde17046d6067"
   end
 
   depends_on "ffmpeg"
