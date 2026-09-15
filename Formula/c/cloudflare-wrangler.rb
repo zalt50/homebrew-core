@@ -1,8 +1,8 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://developers.cloudflare.com/workers/"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-4.131.1.tgz"
-  sha256 "1b0863093d9caa36a8c5937ff35461a3ea13be32c3d1395ea909f363b7db0f19"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-4.131.2.tgz"
+  sha256 "860de8935336155ef7ac5ee91aeec78701edca4adb6987d4af6c41c1ea5c72b0"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
