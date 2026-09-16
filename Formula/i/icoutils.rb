@@ -35,6 +35,9 @@ class Icoutils < Formula
   end
 
   def install
+    # Workaround to avoid C23
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     inreplace "common/Makefile.am", "libcommon_a_LIBADD", "libcommon_la_LIBADD"
 
     # Workaround for Xcode 14 ld.
