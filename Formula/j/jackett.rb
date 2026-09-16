@@ -1,8 +1,8 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.2551.tar.gz"
-  sha256 "2de64032d5d352517fb07477ce3ca51ec0a473faf230900517561f04cc1cefc8"
+  url "https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.2595.tar.gz"
+  sha256 "d8859369001f58421dbc273263decbd33a441a9a5fef712d49f634471cd923a7"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
@@ -57,6 +57,9 @@ class Jackett < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     assert_match(/^Jackett v#{Regexp.escape(version)}$/, shell_output("#{bin}/jackett --version 2>&1; true"))
 
     port = free_port
