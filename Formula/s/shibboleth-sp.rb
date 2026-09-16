@@ -11,13 +11,11 @@ class ShibbolethSp < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "c76d0b4c3bc26938d8ba690c55c8716e5f24a26802b99b331815a16e29035aa3"
-    sha256 arm64_tahoe:       "339c9579747a7ea9f59bcf07d27e54060929ab44549922d266e4e39f1a015f51"
-    sha256 arm64_sequoia:     "27e58347d47a561d0a05981c4c718340656ea783813436fc6fd99d5a421a03e9"
-    sha256 arm64_sonoma:      "6a0f175f759d499075c499c22879f98495e2fcc5d65c7a7bc341be2924505a3c"
-    sha256 sonoma:            "2f8d41cf20b047da3c6a5bc7c0cdf50eebc400d57781a4fb91b9bf2470df0c87"
-    sha256 arm64_linux:       "b7f78e39e8dfb3f8b065dfba2012cc49d103fe314fdd1d987bb891363a19eb8f"
-    sha256 x86_64_linux:      "b1ef8dbde97fc0158660d63a17852d64b24ff246bf4fb59bb880e6a4d35e1837"
+    sha256 arm64_golden_gate: "99f26005e70c6e13a002cdd7f3f01631ba648b2203568899bd720a759b2ccd1a"
+    sha256 arm64_tahoe:       "dfb3d1935dd2197b2bb2ef630c91c989fcee45fd625e93363ea3de0d79432ff8"
+    sha256 arm64_sequoia:     "301f8e1fada41eba38dc88504ac602f5f95fe2d1c99f30f629be136baf12d463"
+    sha256 arm64_linux:       "db162748b883eda3d59c56fe647db3bf12ceb410949f1fdf5d3c56b71d6056f9"
+    sha256 x86_64_linux:      "fb6b6a2aefd86a36d6402a452f2652f36afc7413f5b50ae6cd8f82cc4bd48176"
   end
 
   depends_on "pkgconf" => :build
