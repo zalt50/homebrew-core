@@ -12,11 +12,11 @@ class Herdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9c8778478c3e47edc2f944374fd444fcb736ce6f5884d89e131d74eb41242f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff3b064d1591a07ad16c14c76d89fd4d6f1c21735dd2363f5a26d37f5f9d052d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fda947866b0d96e8a204902338e8c6fc2c5355e7aa04d716c681d8dda7df8a70"
-    sha256 cellar: :any,                 arm64_linux:   "dc2940a96359fab617cf1c18881cd3fd8a6fd156a11f040a85ceef0fea12e0fc"
-    sha256 cellar: :any,                 x86_64_linux:  "93237c69194d2332df2ed8fd38bee203e25c56ba2d76198d192c8301b114660c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b2967a9b054c032e5a1b4362821a431bd5ebe2c3b4a72241da7be7f1ef9fe01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "617e3f79d08d6dba1eb0e85983471c76b7c624ef977c616b36a4953fb2033f06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b818a170527ceeffe0b4a57679a4c85f2b83a314143cede0cd4a6b62dd18158f"
+    sha256 cellar: :any,                 arm64_linux:       "3bd0ed1b9352432e95cc9b0e673c74e531b28ca0412362f4a72287f39740b81e"
+    sha256 cellar: :any,                 x86_64_linux:      "acc8698edacde2b840a5fe62325421fd40e033e3da1037ce72401b278bedd6f8"
   end
 
   depends_on "rust" => :build
