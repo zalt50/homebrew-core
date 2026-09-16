@@ -3,11 +3,10 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.3.1.tar.gz"
-  sha256 "06128c315f2d81a6d9d390e4e505748eb32f58bc8e717e32143d228546668505"
+  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.4.0.tar.gz"
+  sha256 "ff816f55e591ded0b60a748405010a8507291ee2b16ef2caf4c4ff662c4d4b6d"
   license "Apache-2.0"
-  revision 1
-  compatibility_version 6
+  compatibility_version 7
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -48,8 +47,8 @@ class Openvino < Formula
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https://github.com/uxlfoundation/oneDNN/archive/babb7375ff500dd8ad77d26cbd2b044122b7a8b4.tar.gz"
-      sha256 "d21d5e8757f4012c51a2e26ed47e15751217dfcee7327bbfbe909a446f126c4f"
+      url "https://github.com/uxlfoundation/oneDNN/archive/a3d459721b72c3a9d2685b46c03dafee7af0f25c.tar.gz"
+      sha256 "cf6b29b5b41c8f2de1a05c3dd0013c4ee773724b0d20d6fa7dbb9b332e698180"
     end
   end
 
@@ -67,12 +66,12 @@ class Openvino < Formula
   end
 
   # Header only library, keep in sync with corresponded submodule version on release tag, i.e.
-  # https://github.com/openvinotoolkit/openvino/tree/2026.2.0/thirdparty
+  # https://github.com/openvinotoolkit/openvino/tree/2026.4.0/thirdparty
   # currently there is no possibility to use latest xbyak from homebrew
   resource "xbyak" do
     on_intel do
-      url "https://github.com/herumi/xbyak/archive/refs/tags/v7.23.1.tar.gz"
-      sha256 "17678579963314463cf51bd0f9070f33dfe47667754d9b6239de1000e67fe259"
+      url "https://github.com/herumi/xbyak/archive/refs/tags/v7.37.tar.gz"
+      sha256 "eb66c5d23d3983dd855cb230e0dcb02fa24307bdfa826844ec94491a344aacaf"
     end
   end
 
@@ -82,21 +81,13 @@ class Openvino < Formula
   end
 
   resource "onednn_cpu" do
-    url "https://github.com/openvinotoolkit/oneDNN/archive/f82d833de6f13fac4bb1926d521ca8fec4f4ae01.tar.gz"
-    sha256 "119c80210ceec0ea2b2b1908b862ed9c3b4366e65d4e0bdea82142f14b7f6712"
+    url "https://github.com/openvinotoolkit/oneDNN/archive/1289c3b65dd6a119a5ed12a816517d9c3a21d81b.tar.gz"
+    sha256 "726a93992e65152f338fa7bce536fa9ed6c9f395de80d1e55f01ecc3fece7f11"
   end
 
   resource "openvino-telemetry" do
     url "https://files.pythonhosted.org/packages/71/8a/89d82f1a9d913fb266c2e6dc2f6030935db24b7152963a8db6c4f039787f/openvino_telemetry-2025.2.0.tar.gz"
     sha256 "8bf8127218e51e99547bf38b8fb85a8b31c9bf96e6f3a82eb0b3b6a34155977c"
-  end
-
-  # Newer OpenCL-CLHPP dropped the macro used to declare the CL_DEVICE_HOST_UNIFIED_MEMORY trait
-  patch do
-    url "https://github.com/openvinotoolkit/openvino/commit/dc4633aadac8e644dfab6d8aced84ebe33e09b6e.patch?full_index=1"
-    sha256 "1d1c91de8ead006c3a6ce28124578ab5d52a3b6f1a8bb4a03076d18f2bede32a"
-    type :backport
-    resolves "https://github.com/openvinotoolkit/openvino/pull/37096"
   end
 
   def install
@@ -125,7 +116,6 @@ class Openvino < Formula
       resource("arm_compute").stage buildpath/"src/plugins/intel_cpu/thirdparty/ComputeLibrary"
       resource("arm_kleidiai").stage buildpath/"src/plugins/intel_cpu/thirdparty/kleidiai"
     else
-      # TODO: Remove once able to build with xbyak >= 7.29
       resource("xbyak").stage buildpath/"thirdparty/xbyak"
     end
 
