@@ -47,6 +47,8 @@ class Uniutils < Formula
     if DevelopmentTools.clang_build_version >= 1403
       ENV.append "CFLAGS", "-Wno-implicit-function-declaration -Wno-implicit-int"
     end
+    # autoconf 2.73 selects C23, which rejects the implicit declarations in this codebase
+    ENV["ac_cv_prog_cc_c23"] = "no"
 
     # fix `_libintl_bindtextdomain` and `_libintl_textdomain` symbols not found
     gettext = Formula["gettext"]
