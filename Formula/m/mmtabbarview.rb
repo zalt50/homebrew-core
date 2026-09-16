@@ -30,7 +30,8 @@ class Mmtabbarview < Formula
                 "@import Darwin.Availability;", ""
     end
 
-    xcodebuild "-workspace", "default.xcworkspace",
+    # Workspace type detection needs LaunchServices, which the build sandbox denies
+    xcodebuild "-project", "MMTabBarView/MMTabBarView.xcodeproj",
                "-scheme", "MMTabBarView",
                "-configuration", "Release",
                "SYMROOT=build", "ONLY_ACTIVE_ARCH=YES",
