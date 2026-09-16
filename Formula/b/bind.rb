@@ -24,13 +24,11 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "c91ee1b11a58032ede55e1e4c8fa482499a7158c91bb45403bbe0c6418caa2dd"
-    sha256 arm64_tahoe:       "de9604ac21ed28d4d23e261e114eb0e669f3ca0af6d7ef56e0de6ad3d56e63c9"
-    sha256 arm64_sequoia:     "e49e1872ca1d0f649be37f6ece58246d624040f8f1defaa47ee7bf15dd14da71"
-    sha256 arm64_sonoma:      "38ac6287d9eea22ba499706ea4a4a9c1bdb30ce8e580fc5c8f037dc5228041b6"
-    sha256 sonoma:            "bca24548fa6eaa28e6428e0c35c6bd571a75a5f08b76cc6271c3af6d535d9f21"
-    sha256 arm64_linux:       "afe9f95f377fb87ac53c806a9f9ab6a5331653c84679e3065e0c85e5d0fab2cb"
-    sha256 x86_64_linux:      "cfe0a1cd6b944bb62a244d6d2dcefdedb0f3f0476902a62befdf3fc02065d7d0"
+    sha256 arm64_golden_gate: "37bbb39e40c8231e2c67f3954d8cda58433af1fbeffb9c080a200d97359a6ed4"
+    sha256 arm64_tahoe:       "14685eb15cb0da59890bb0a78e60313cd238511d88acb7d8dcd541aaa027546e"
+    sha256 arm64_sequoia:     "1495e8a76ae261963d380d3f13186f66d2fc2e443a8f9dbaf6b2011ddd1c355d"
+    sha256 arm64_linux:       "7e4c8f15083bd9c63eeca96a639657d3e6d276f5e2e6151f27a46c7fd0f10a0f"
+    sha256 x86_64_linux:      "0ed44611a85df314d0ec52a402c5dc22098b10eb2e14faef974fcfd9586328ea"
   end
 
   head do
