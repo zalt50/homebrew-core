@@ -46,7 +46,9 @@ class Swiftplantuml < Formula
       system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
     end
 
-    system "make", "install", "prefix=#{prefix}"
+    system "make", "install-man-files", "prefix=#{prefix}"
+    system "swift", "build", *std_swift_args
+    bin.install ".build/release/swiftplantuml"
   end
 
   test do
