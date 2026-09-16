@@ -9,13 +9,12 @@ class Thefuck < Formula
   head "https://github.com/nvbn/thefuck.git", branch: "master"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8c8342968e5cb7addf06da5c3cb5216f5877d52e90e5a819f2146b999403aad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34112fed6a5db846c5960cd7d185eb164144366e6ecbfefc1680646bee3e3dee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44ab5752da80809b23b1fff941c13a7a6d93f7c10d15e7f891e5a7d114e5fdcc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "059e916f07ed54e66733375ff6ca6c0343dc168f60cf9e0085ebe0e2461bea84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "520de6b7f2774d67b759b1ce0ac86a2af9cafe1884bd540fd19896e69e5dd2b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22117e74d1dda01753469bae6e149044017c175ca03564825a929400a1bc61f5"
+    rebuild 7
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "087a105ef29b07b4e1470d7c412a79f7be311ca6692dba22835e8b2a28ea7397"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b70c9d501ee13654b398e6b1eb386ac26a3513b2352023782f7bad98cc6e83fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "06e2af0755eb040bb98ada50165aee62704808689d97bda10f088c1959e47c92"
+    sha256 cellar: :any,                 arm64_linux:       "02df15efac00a2d46cebcfe45b622ed181c9b7f81f2ba01de704083b5c20bd44"
+    sha256 cellar: :any,                 x86_64_linux:      "1618e26eb097230c0ca1f8fc8003fc16dd1b4bbafc6ded0484466e9e357054ac"
   end
 
   depends_on "python@3.14"
