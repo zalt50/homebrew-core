@@ -31,14 +31,19 @@ class Viennacl < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    args = %w[
+      -DBUILD_EXAMPLES=OFF
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    libexec.install "build/examples/benchmarks/dense_blas-bench-cpu" => "test"
+    pkgshare.install "examples/benchmarks/dense_blas.cpp"
   end
 
   test do
-    system opt_libexec/"test"
+    system ENV.cxx, pkgshare/"dense_blas.cpp", "-o", "test", "-O3", "-DNDEBUG"
+    system "./test"
   end
 end
