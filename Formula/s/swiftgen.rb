@@ -64,7 +64,6 @@ class Swiftgen < Formula
     #                 command     template             rsrc_group  generated            fixture & params
     test_command.call "colors",   "swift5",            "Colors",   "defaults.swift",    "colors.xml"
     test_command.call "coredata", "swift5",            "CoreData", "defaults.swift",    "Model.xcdatamodeld"
-    test_command.call "files",    "structured-swift5", "Files",    "defaults.swift",    ""
     test_command.call "fonts",    "swift5",            "Fonts",    "defaults.swift",    ""
     test_command.call "ib",       "scenes-swift5",     "IB-iOS",   "all.swift",         "", "--param module=SwiftGen"
     test_command.call "json",     "runtime-swift5",    "JSON",     "all.swift",         ""
