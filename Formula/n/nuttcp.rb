@@ -1,7 +1,8 @@
 class Nuttcp < Formula
   desc "Network performance measurement tool"
-  homepage "https://www.nuttcp.net/nuttcp/"
+  homepage "http://www.nuttcp.net/nuttcp/"
   url "https://www.nuttcp.net/nuttcp/nuttcp-8.2.2.tar.bz2"
+  mirror "https://src.fedoraproject.org/repo/pkgs/nuttcp/nuttcp-8.2.2.tar.bz2/sha512/46cc979f034d68f8a4c8a8ad9f3d35ce9e5180b8677b967b182acbc1d98bb3c23dd6fc77e2277922ae0c9b15a50a2e9c84048c694520e99c77492ceed97fda06/nuttcp-8.2.2.tar.bz2"
   sha256 "7ead7a89e7aaa059d20e34042c58a198c2981cad729550d1388ddfc9036d3983"
   license "GPL-2.0-only"
 
@@ -24,6 +25,10 @@ class Nuttcp < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "dcfba3237982e60f9c4605ff141b05308e4bad588891b72cf48df390df84fba2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a45bf649ab4f28ef78699c00d3b71afa3655f26cafaeb01fb7f99fc9f133471"
   end
+
+  # Last release on 2020-05-11 and homepage certificate was invalid on deprecation date
+  deprecate! date: "2026-09-16", because: :unmaintained
+  disable! date: "2027-03-16", because: :unmaintained
 
   def install
     system "make", "APP=nuttcp",
