@@ -32,6 +32,8 @@ class Torsocks < Formula
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # C23 rejects the implicit `gethostbyaddr_r` declaration in `tests/test_dns.c` outright
+    ENV["ac_cv_prog_cc_c23"] = "no"
 
     system "./autogen.sh"
     system "./configure", "--disable-silent-rules", *std_configure_args
