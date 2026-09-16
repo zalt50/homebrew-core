@@ -30,6 +30,9 @@ class Memcached < Formula
   depends_on "openssl@3"
 
   def install
+    # Workaround to disable sandbox feature due to https://github.com/memcached/memcached/issues/1313
+    ENV["ac_cv_header_sandbox_h"] = "no" if OS.mac? && MacOS.version >= :golden_gate
+
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-coverage", "--enable-tls", *std_configure_args
     system "make", "install"
