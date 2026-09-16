@@ -4,6 +4,7 @@ class Nextflow < Formula
   url "https://github.com/nextflow-io/nextflow/archive/refs/tags/v26.04.6.tar.gz"
   sha256 "485c4413948ddffce2bff02d8df63f6d5bbd88f7fd9c1a63d3a65a3cc8301b19"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -21,7 +22,10 @@ class Nextflow < Formula
   end
 
   depends_on "gradle" => :build
-  depends_on "openjdk"
+  # TODO: Switch back to `openjdk` once Nextflow supports JDK 27: 26.04.6 documents
+  # "Java 17 (or later, up to 26)" and fails with "Unsupported class file major version 71".
+  # https://www.nextflow.io/docs/latest/install.html#requirements
+  depends_on "openjdk@25"
 
   def install
     ENV["BUILD_PACK"] = "1"
@@ -29,7 +33,7 @@ class Nextflow < Formula
     system "gradle", "pack", "--no-daemon", "-x", "test"
     libexec.install "build/releases/nextflow-#{version}-dist" => "nextflow"
 
-    (bin/"nextflow").write_env_script libexec/"nextflow", Language::Java.overridable_java_home_env
+    (bin/"nextflow").write_env_script libexec/"nextflow", Language::Java.overridable_java_home_env("25")
   end
 
   test do
