@@ -1,8 +1,8 @@
 class KimiCode < Formula
   desc "AI coding agent for your terminal"
   homepage "https://moonshotai.github.io/kimi-code/"
-  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.41.0.tgz"
-  sha256 "4421e1277bbfa5e46a8e1a863fd9ba4d1a3db8dd890d928f571171ac62a80c1e"
+  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.43.0.tgz"
+  sha256 "225bc17f06243edf6bcf0fc82bbe8838cab1cd426eb8e467e9ebab93d53ace90"
   license "MIT"
 
   bottle do
@@ -35,6 +35,9 @@ class KimiCode < Formula
   end
 
   test do
+    # Chokidar's `fs.watch` crashes without FSEvents access in the macOS sandbox
+    ENV["CHOKIDAR_USEPOLLING"] = "1" if OS.mac?
+
     assert_match version.to_s, shell_output("#{bin}/kimi --version")
     assert_match "No providers configured", shell_output("#{bin}/kimi provider list")
     assert_match "No model configured", shell_output("#{bin}/kimi --prompt hello 2>&1", 1)
