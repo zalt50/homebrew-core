@@ -1,8 +1,8 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://www.asyncapi.com/tools/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.0.2.tgz"
-  sha256 "25ecd3a3c04cf47158bf4572136c3f95aface7c0df63a1c9ab8930c9ee7b7258"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.1.0.tgz"
+  sha256 "ce731fd5c800548b0fbde4997e77008b4f379a5ba3790f398e1373d7eb9e60c8"
   license "Apache-2.0"
   version_scheme 1
 
@@ -24,11 +24,8 @@ class Asyncapi < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
-    # Cleanup .pnpm folder
-    node_modules = libexec/"lib/node_modules/@asyncapi/cli/node_modules"
-    rm_r (node_modules/"@asyncapi/studio/build/standalone/node_modules/.pnpm") if OS.linux?
-
     # Replace universal binaries with their native slices
+    node_modules = libexec/"lib/node_modules/@asyncapi/cli/node_modules"
     deuniversalize_machos node_modules/"fsevents/fsevents.node"
 
     # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-path`/`bare-url` binaries
