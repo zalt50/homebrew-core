@@ -33,6 +33,11 @@ class LeappCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    # Build keytar's native addon explicitly
+    cd libexec/"lib/node_modules/@noovolari/leapp-cli/node_modules/keytar" do
+      system "npm", "run", "build"
+    end
   end
 
   def caveats
