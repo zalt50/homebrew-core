@@ -47,7 +47,8 @@ class Periphery < Formula
 
   test do
     system "swift", "package", "init", "--name", "test", "--type", "executable"
-    system "swift", "build", "--disable-sandbox"
+    # Swift Build, the default since Swift 6.4, only writes an index store when asked
+    system "swift", "build", "--disable-sandbox", "--enable-index-store"
     manifest = shell_output "swift package --disable-sandbox describe --type json"
     File.write "manifest.json", manifest
     system bin/"periphery", "scan", "--strict", "--skip-build", "--json-package-manifest-path", "manifest.json"
