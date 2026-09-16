@@ -28,6 +28,22 @@ class LinkGrammar < Formula
   uses_from_macos "libedit"
   uses_from_macos "sqlite"
 
+  # Fix build when autoconf adds `-std=gnu23` to `CC`
+  patch do
+    url "https://github.com/opencog/link-grammar/commit/b296c8fa844a66c1320b4d04713e615db9d011f0.patch?full_index=1"
+    sha256 "072b663ed547792761786530cf367b49ed526e2a722120b0f8565e1f36a21b36"
+    type :backport
+    resolves "https://github.com/opencog/link-grammar/pull/1540"
+  end
+
+  # Fix build with SWIG 4.5, which dropped the Python 2 `PyInt_*` compatibility macros
+  patch do
+    url "https://github.com/opencog/link-grammar/commit/5611221d83fc6571418e86374bbfa5daf5e5428a.patch?full_index=1"
+    sha256 "f72c7482d73fd21e6b766a147d15ac7f6186a99b632093aa4e6161620e3ac3ff"
+    type :unofficial
+    resolves "https://github.com/opencog/link-grammar/pull/1543"
+  end
+
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
