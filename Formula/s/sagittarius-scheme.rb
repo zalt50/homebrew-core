@@ -11,12 +11,12 @@ class SagittariusScheme < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4b5179ebf49b9a7b9b0ce0b9c88a3b90470875dfdc351c73ce2341b3c701a43b"
-    sha256 cellar: :any, arm64_sequoia: "69fd440a93deb6eb0691814116e8e4c049faf2c85ce4bffa09ab8fbe873f1329"
-    sha256 cellar: :any, arm64_sonoma:  "5aa56c2bf406cab788092245c9311d93e6d2f5a42b4d72b65bdb933a677ef453"
-    sha256 cellar: :any, sonoma:        "57191c461ca4d5e3ecd7676a788dfa0d6c3042e22e632c1930ce5584fefa72d8"
-    sha256 cellar: :any, arm64_linux:   "2ef225fb754ce2915909159c4bc9c0b80fcb547113f698cd5d74abef8e014572"
-    sha256 cellar: :any, x86_64_linux:  "93776c5c3618e967f0ef36cad2f2abf1c3a730b4d32a1dc72ab3475b95bea206"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "7baeaf662a002b37223853b74db5e93d1f94b8e7ceffdc00008e796d7f198ee4"
+    sha256 cellar: :any, arm64_tahoe:       "272d5089d181b13dbf4aeffe4ad3560ecf96cc7184df76c451109d5f393d8676"
+    sha256 cellar: :any, arm64_sequoia:     "412ebad082c2d968dade069d7a40f8048ca397d04373a9a24b3e20b237a1439b"
+    sha256 cellar: :any, arm64_linux:       "3bada512c4187f602c78b79f971c6dc16e5f807bf6cb7562d27a6ce34c16bbe1"
+    sha256 cellar: :any, x86_64_linux:      "a9eec431f1fae56d9c9900fbcf5abef96f044960449b4353b047f2332b36829d"
   end
 
   depends_on "cmake" => :build
