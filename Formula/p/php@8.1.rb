@@ -77,6 +77,9 @@ class PhpAT81 < Formula
     # Can remove if upstream backports support into PHP 8.1
     ENV["ICU_CXXFLAGS"] = "-std=c++17"
 
+    # Avoid C23 due to K&R declarations
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force" if OS.mac?
 
@@ -312,6 +315,7 @@ class PhpAT81 < Formula
       ErrorLog "#{testpath}/httpd-error.log"
       ServerRoot "#{formula_opt_prefix("httpd")}"
       PidFile "#{testpath}/httpd.pid"
+      Mutex file:#{testpath} default
       LoadModule authz_core_module lib/httpd/modules/mod_authz_core.so
       LoadModule unixd_module lib/httpd/modules/mod_unixd.so
       LoadModule dir_module lib/httpd/modules/mod_dir.so
