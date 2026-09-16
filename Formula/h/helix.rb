@@ -24,10 +24,10 @@ class Helix < Formula
   conflicts_with "hex", because: "both install `hx` binaries"
 
   def install
-    ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
     rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
+    bin.env_script_all_files libexec/"bin", HELIX_RUNTIME: "${HELIX_RUNTIME:-#{libexec}/runtime}"
 
     bash_completion.install "contrib/completion/hx.bash" => "hx"
     fish_completion.install "contrib/completion/hx.fish"
