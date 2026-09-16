@@ -23,6 +23,12 @@ class Helix < Formula
   conflicts_with "evil-helix", because: "both install `hx` binaries"
   conflicts_with "hex", because: "both install `hx` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
