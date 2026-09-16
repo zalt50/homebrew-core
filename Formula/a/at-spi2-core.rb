@@ -7,13 +7,11 @@ class AtSpi2Core < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "785c9ab56f76dc31f438716b19201a5c34601a3a2d94c1fba19116e4a21008dc"
-    sha256 arm64_tahoe:       "c65850aef234f7d72e37e1cf9cf7daafb736d664fc739cae63bf4ccbfcfcaa41"
-    sha256 arm64_sequoia:     "9d352a5a9a3438b100dbc3ff5005ec8439b6410d881ab981cc430a16fb0b62aa"
-    sha256 arm64_sonoma:      "270753f5a42f888473b8fac04b25417c86aec1d1f8065eff2fe8b514162c6c7c"
-    sha256 sonoma:            "599324fcb027bc06256e063f0cb2d3dc6b5d6059bc26d5dfef09f0d35483eccd"
-    sha256 arm64_linux:       "35dbe842b9101c0b189e1b8b2edde9efd45da9e0ab99c0d696bad876e23862df"
-    sha256 x86_64_linux:      "82fd9a718fcc1d4edbae46ca95234b76bbbcbe26dd76dbe62099bb86127e11ea"
+    sha256 arm64_golden_gate: "8130a3939d3d7ad67814d890d88868437dfef40509778d228c3d87befdbfcae4"
+    sha256 arm64_tahoe:       "a684f41c458472642e7bd539f25e8605e768029351b3569199fcc7d639d64e29"
+    sha256 arm64_sequoia:     "09e3f59bffc7c7d2e16b98ebacabd3f565391fe2bd8cfef6e193991889ea6785"
+    sha256 arm64_linux:       "694b2e80232b00327b826cf9aa74814f6d567254a26c1db69c18c3638ab5ebe1"
+    sha256 x86_64_linux:      "da06be8b3321ef6ee737b24ece51a44ea922cc5894de4bf5d6aa95583f37280b"
   end
 
   depends_on "gettext" => :build
