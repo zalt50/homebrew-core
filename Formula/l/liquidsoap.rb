@@ -16,6 +16,14 @@ class Liquidsoap < Formula
       type :backport
       resolves "https://github.com/savonet/liquidsoap/pull/5239"
     end
+
+    # Cap camomile below 2.1.0, which changed `Config.Type`
+    patch do
+      url "https://github.com/savonet/liquidsoap/commit/faf9bad3a0f8d94ea119092e94495e3e7b5cddce.patch?full_index=1"
+      sha256 "f89e4ad6ea6a3c3f2b0c931236b4b7213258f695f79621594df80680e2c07dbb"
+      type :cherry_pick
+      resolves "https://github.com/savonet/liquidsoap/commit/faf9bad3a0f8d94ea119092e94495e3e7b5cddce"
+    end
   end
 
   livecheck do
