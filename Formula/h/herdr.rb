@@ -1,8 +1,8 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "1e83bff4b05834ed8281e16f1680e8f3e58375a94b2e3f2b3d021e28e293ef9a"
+  url "https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "03403d3ef80dcf2b954dd5d27eb636e6c4f5279d240b48de272b7f53e4b73093"
   license "Apache-2.0"
   head "https://github.com/herdrdev/herdr.git", branch: "master"
 
@@ -20,11 +20,9 @@ class Herdr < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "zig@0.15" => :build # upstream issue, https://github.com/herdrdev/herdr/issues/285
+  depends_on "zig" => :build
 
   def install
-    ENV.prepend_path "PATH", formula_opt_bin("zig@0.15")
-
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"herdr", "completion")
