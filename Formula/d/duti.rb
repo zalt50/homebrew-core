@@ -75,7 +75,7 @@ class Duti < Formula
   end
 
   test do
-    assert_match "com.apple.TextEdit", shell_output("#{bin}/duti -l public.text"),
-                 "TextEdit not found among the handlers for public.text"
+    # Handlers cannot be found within the sandbox
+    assert_match "no handlers", shell_output("#{bin}/duti -l public.text 2>&1", 1)
   end
 end
