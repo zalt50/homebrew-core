@@ -32,6 +32,14 @@ class Lief < Formula
     sha256 "f3d47ed83507fce94245a9f3cf97bc433cd1116f94d11ac0dca1a6f53bbeb239"
   end
 
+  # Fix build with utf8cpp 4.2
+  patch do
+    url "https://github.com/lief-project/LIEF/commit/029bba8595a6747805e11fde8ed1443eee2349f6.patch?full_index=1"
+    sha256 "11a7827e7c44a0d0dd262af5d5f3f7b4a60083e6cb7afb86f1ee0fcfaa85273e"
+    type :unofficial
+    resolves "https://github.com/lief-project/LIEF/pull/1380"
+  end
+
   def install
     rm_r Dir["third-party/*"]
     resource("mbedtls").stage do
