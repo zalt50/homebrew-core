@@ -33,7 +33,8 @@ class Wayback < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/wayback --version")
 
-    output = shell_output("#{bin}/wayback --ia https://brew.sh 2>&1")
-    assert_match(%r{https://web\.archive\.org/web/\d{14}/https://brew\.sh/}, output)
+    (testpath/"wayback.conf").write "WAYBACK_POOLING_SIZE=9\n"
+    output = shell_output("#{bin}/wayback --print --config #{testpath}/wayback.conf 2>&1")
+    assert_match "poolingSize: (int) 9", output
   end
 end
