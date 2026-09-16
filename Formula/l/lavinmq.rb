@@ -53,9 +53,10 @@ class Lavinmq < Formula
   end
 
   test do
-    pid = spawn bin/"lavinmq", "--data-dir", testpath/"data"
+    ENV["LAVINMQCTL_CONTROL_UNIX_PATH"] = control_unix_path = testpath/"lavinmqctl.sock"
+    pid = spawn bin/"lavinmq", "--data-dir", testpath/"data", "--control-unix-path", control_unix_path
     30.times do
-      break if File.exist?("/tmp/lavinmqctl.sock")
+      break if control_unix_path.exist?
 
       sleep 1
     end
