@@ -23,6 +23,7 @@ class Tgui < Formula
   depends_on "sfml"
 
   def install
+    # `gui-builder` is installed into pkgshare, so it needs its own rpath to lib
     args = %W[
       -DTGUI_MISC_INSTALL_PREFIX=#{pkgshare}
       -DTGUI_BACKEND=SFML_GRAPHICS
@@ -30,7 +31,7 @@ class Tgui < Formula
       -DTGUI_BUILD_EXAMPLES=TRUE
       -DTGUI_BUILD_GUI_BUILDER=TRUE
       -DTGUI_BUILD_TESTS=FALSE
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: pkgshare/"gui-builder")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -39,6 +40,7 @@ class Tgui < Formula
   end
 
   test do
+    # Opening a window crashes in the `brew test` sandbox, so only build the SFML backend example
     (testpath/"test.cpp").write <<~CPP
       #include <TGUI/TGUI.hpp>
       #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -59,10 +61,21 @@ class Tgui < Formula
       "-ltgui", "-lsfml-graphics", "-lsfml-system", "-lsfml-window",
       "-o", "test"
 
-    if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-      assert_match "Failed to open X11 display", shell_output("./test 2>&1", 134)
-    else
-      system "./test"
-    end
+    (testpath/"headless.cpp").write <<~CPP
+      #include <TGUI/Base64.hpp>
+      #include <TGUI/Color.hpp>
+      #include <cstdint>
+      #include <iostream>
+      int main()
+      {
+        const tgui::Color color{"#FF8000"};
+        const std::uint8_t data[] = {'H', 'o', 'm', 'e', 'b', 'r', 'e', 'w'};
+        std::cout << static_cast<int>(color.getGreen()) << " " << tgui::base64Encode(data, sizeof(data)) << std::endl;
+        return 0;
+      }
+    CPP
+
+    system ENV.cxx, "headless.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-ltgui", "-o", "headless"
+    assert_equal "128 SG9tZWJyZXc=", shell_output("./headless").chomp
   end
 end
