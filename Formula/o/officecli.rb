@@ -6,11 +6,11 @@ class Officecli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "99ef64b9b3a7e3df021814e59dc87f0a403ebeb7a5b7b3785c8a980860c356f6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e02e84c8fd7ea3ea54c7d0c95b842444f31db9dfcabefbab82c0aa7f2f138074"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e465a854583e0fdf7051fc14fd0a1b51d3d5d2f1433521bf3318928a09490641"
-    sha256 cellar: :any,                 arm64_linux:       "6f2a197f835b8a36cb5adb4b3394eecbce63f150827cc3ba9ca0256ab9c1634a"
-    sha256 cellar: :any,                 x86_64_linux:      "ce16d17ec4bde2fdad36cec1b7ced9e30592738667a5de904f8545a1d755fe62"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "30c32092d9ead85814fae998924d58cadef45a3d27986cd4e4982c95107f6538"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "37b650e6941f9da0ddff1f0fcf52a58c6f5fddb1e4e4b96fd6c6d469ecc161b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1569a0f60591564c9dda9e9b4a5548bb5bf52c32c01c587c6266c01d145bd998"
+    sha256 cellar: :any,                 arm64_linux:       "9fcce5a394e12eff970eb5850d857b943f99318d59558921ce257ebc667a5200"
+    sha256 cellar: :any,                 x86_64_linux:      "cd7f82e1346fcdcb807379c88d7d0b05a56bdbfd3a4e16184391cf592f018131"
   end
 
   depends_on "dotnet"
