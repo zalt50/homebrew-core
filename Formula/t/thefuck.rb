@@ -59,6 +59,8 @@ class Thefuck < Formula
   end
 
   # Drop imp for 3.12: https://github.com/nvbn/thefuck/commit/0420442e778dd7bc53bdbdb50278eea2c207dc74
+  # Drop the `setup.py` pip version check using `pkg_resources`, removed in setuptools 82
+  # https://github.com/nvbn/thefuck/pull/1555
   patch :DATA
 
   def install
@@ -94,6 +96,29 @@ class Thefuck < Formula
 end
 
 __END__
+diff --git a/setup.py b/setup.py
+--- a/setup.py
++++ b/setup.py
+@@ -1,19 +1,9 @@
+ #!/usr/bin/env python
+ from setuptools import setup, find_packages
+-import pkg_resources
+ import sys
+ import os
+ import fastentrypoints
+ 
+-
+-try:
+-    if int(pkg_resources.get_distribution("pip").version.split('.')[0]) < 6:
+-        print('pip older than 6.0 not supported, please upgrade pip with:\n\n'
+-              '    pip install -U pip')
+-        sys.exit(-1)
+-except pkg_resources.DistributionNotFound:
+-    pass
+-
+ if os.environ.get('CONVERT_README'):
+     import pypandoc
+ 
 diff --git a/thefuck/conf.py b/thefuck/conf.py
 index 27876ef47..611ec84b7 100644
 --- a/thefuck/conf.py
