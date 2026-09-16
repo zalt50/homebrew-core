@@ -1,8 +1,8 @@
 class Webkitgtk < Formula
   desc "GTK interface to WebKit"
   homepage "https://webkitgtk.org"
-  url "https://webkitgtk.org/releases/webkitgtk-2.52.6.tar.xz"
-  sha256 "179a2ea3f8f6edd4be7f31fdc55afc57bd0729f1fba648c61d4181539ac116fc"
+  url "https://webkitgtk.org/releases/webkitgtk-2.54.0.tar.xz"
+  sha256 "846fd19ccedbae1dbfe904f26dbf2d68a800a33a50caf2ad5222c8dcb3f25682"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -19,6 +19,7 @@ class Webkitgtk < Formula
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "gperf" => :build
+  depends_on "ninja" => :build
   depends_on "perl" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.14" => :build
@@ -83,7 +84,7 @@ class Webkitgtk < Formula
       -DPython_EXECUTABLE=#{python3}
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
