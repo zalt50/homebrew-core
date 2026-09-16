@@ -21,6 +21,9 @@ class Uptimed < Formula
   depends_on "libtool" => :build
 
   def install
+    # The bundled `getopt.h` declares `getopt()` without a prototype, which C23 reads as taking no arguments
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
