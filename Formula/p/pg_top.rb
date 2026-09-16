@@ -49,7 +49,8 @@ class PgTop < Formula
     # This file uses "vm_stats" as a symbol name which conflicts with vm_stats()
     # function in the SDK:
     inreplace "machine/m_macosx.c", "vm_stats", "vm_stats_data"
-    system "make", "install"
+    # `configure` hardcodes `CFLAGS`; pre-C23 code redeclares `bool` and uses `()` prototypes
+    system "make", "install", "CFLAGS=-std=gnu17"
   end
 
   test do
