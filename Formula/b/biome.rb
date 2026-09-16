@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.13.tar.gz"
-  sha256 "a84601f38b4a7039cc8d39dc5bb6472a05566b7c680bb66835fab9a1a61703f3"
+  url "https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.14.tar.gz"
+  sha256 "5b87b7df94e8c6b968d44daecf92c46231908012be5f6f41ac33bcabbd53e66e"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/biomejs/biome.git", branch: "main"
 
