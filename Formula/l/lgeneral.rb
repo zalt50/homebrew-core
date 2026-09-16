@@ -47,6 +47,9 @@ class Lgeneral < Formula
   end
 
   test do
+    assert_match "LGeneral reinforcement editor and query tool", shell_output("#{bin}/lged --help", 1)
+    return if OS.mac? # cannot run lgeneral within macOS sandbox
+
     system bin/"lgeneral", "--version"
 
     pid = spawn bin/"lgeneral"
