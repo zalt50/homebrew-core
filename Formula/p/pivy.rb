@@ -22,6 +22,18 @@ class Pivy < Formula
   depends_on "python@3.14"
   depends_on "qtbase"
 
+  # Apply FreeCAD fork's fixes for newer Swig. Part of https://github.com/coin3d/pivy/pull/149
+  patch do
+    url "https://github.com/coin3d/pivy/commit/7040f5b8e2a04a23e2bc3eb07844ee5fb87564a7.patch?full_index=1"
+    sha256 "3e45d484a86dba35b0635259816e7e16b8aebd737130f683eacdadedc92d4b9b"
+    type :unofficial
+  end
+  patch do
+    url "https://github.com/coin3d/pivy/commit/92c11bab021395a589819b3e31c36417128d5f77.patch?full_index=1"
+    sha256 "3c3223ccf98481b6af802aa282c288aa66083080ec7f9989c567c96f1b7ee450"
+    type :unofficial
+  end
+
   def install
     site_packages = prefix/Language::Python.site_packages(python3)
     rpaths = [rpath(source: site_packages/"pivy"), rpath(source: site_packages/"pivy/gui")]
@@ -39,7 +51,7 @@ class Pivy < Formula
   test do
     # Set QT_QPA_PLATFORM to minimal to avoid error:
     # "This application failed to start because no Qt platform plugin could be initialized."
-    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["QT_QPA_PLATFORM"] = "minimal"
 
     system python3, "-c", <<~PYTHON
       import shiboken6
