@@ -45,7 +45,7 @@ class Stella < Formula
 
   test do
     # "ERROR: Couldn't initialize SDL: No available video device"
-    ENV["SDL_VIDEODRIVER"] = "dummy" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["SDL_VIDEODRIVER"] = "dummy"
 
     assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}/stella -listrominfo").strip
   end
