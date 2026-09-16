@@ -1,8 +1,8 @@
 class SagittariusScheme < Formula
   desc "Free Scheme implementation supporting R6RS and R7RS"
   homepage "https://github.com/ktakashi/sagittarius-scheme"
-  url "https://github.com/ktakashi/sagittarius-scheme/releases/download/v0.9.15/sagittarius-0.9.15.zip"
-  sha256 "81044f1dfe567125bf83f18f21d2c31a4c9c6b476a2d8e63d7547fe1bdb8d4e4"
+  url "https://github.com/ktakashi/sagittarius-scheme/releases/download/v0.9.15/sagittarius-0.9.15.tar.gz"
+  sha256 "945f1cf4b4bba4973e996f460e3ade9844314772ce9dc0b29ca51abc5bdaa1b1"
   license "BSD-2-Clause"
 
   livecheck do
