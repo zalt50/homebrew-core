@@ -38,7 +38,7 @@ class IosClassGuard < Formula
   depends_on :macos
 
   def install
-    xcodebuild "-workspace", "ios-class-guard.xcworkspace",
+    xcodebuild "-project", "ios-class-guard.xcodeproj",
                "-scheme", "ios-class-guard",
                "-configuration", "Release",
                "SYMROOT=build", "PREFIX=#{prefix}", "ONLY_ACTIVE_ARCH=YES",
