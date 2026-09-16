@@ -4,6 +4,7 @@ class Skip < Formula
   url "https://github.com/skiptools/skipstone/archive/refs/tags/1.9.9.tar.gz"
   sha256 "d98d9a883f896452a7131268a6c20cbfacaf8a7ae980184b5bf4d0f7923d9be1"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
@@ -15,7 +16,9 @@ class Skip < Formula
   end
 
   depends_on "gradle"
-  depends_on "openjdk"
+  # TODO: Switch back to `openjdk` together with `gradle`, which runs on `openjdk@25`
+  # until Gradle supports JDK 27; mixing both in one dependency tree fails `brew audit`.
+  depends_on "openjdk@25"
   depends_on "swiftly"
 
   uses_from_macos "swift" => [:build, :test]
