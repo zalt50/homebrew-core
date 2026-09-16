@@ -2,10 +2,9 @@ class Stanc3 < Formula
   desc "Stan transpiler"
   homepage "https://github.com/stan-dev/stanc3"
   url "https://github.com/stan-dev/stanc3.git",
-      tag:      "v2.39.0",
-      revision: "739471362446086911f1d6472c19ae0749c366ea"
+      tag:      "v2.40.0",
+      revision: "d58446e631b02cacc5355e373defc6092a684554"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9f27c34095f1f1e91215f4c6b7b56ce26f09e9ddbe0ec23f62851c068f9fd93"
@@ -30,13 +29,6 @@ class Stanc3 < Formula
   deny_network_access!
 
   def fetch
-    # Workaround to build with OCaml 5.5.0
-    inreplace "stanc.opam" do |s|
-      s.gsub! '"ocaml" {= "4.14.1"}', '"ocaml" {>= "4.14.1"}'
-      s.gsub! '"core" {= "v0.16.1"}', '"core" {= "v0.17.2"}'
-      s.gsub! '"ppx_deriving" {= "5.2.1"}', '"ppx_deriving" {= "6.1.1"}'
-    end
-
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
     system "opam", "install", ".", "--deps-only", "--download-only"
   end
@@ -55,6 +47,6 @@ class Stanc3 < Formula
     system bin/"stanc", "algebra_solver_good.stan"
     assert_path_exists testpath/"algebra_solver_good.hpp"
 
-    assert_match "stanc3 v#{version}", shell_output("#{bin}/stanc --version")
+    assert_match version.to_s, shell_output("#{bin}/stanc --version")
   end
 end
