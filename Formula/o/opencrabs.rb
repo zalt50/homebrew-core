@@ -1,8 +1,8 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "90de8e6eb09933296f42af44a0779233e86668391aaba92adcc984777008574b"
+  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "9174e924a3a00406a2a7820299357192e1951ccaa3723f536a7c4a3c00a82dd4"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
