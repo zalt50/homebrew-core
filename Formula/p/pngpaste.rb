@@ -26,9 +26,7 @@ class Pngpaste < Formula
   end
 
   test do
-    png = test_fixtures("test.png")
-    system "osascript", "-e", "set the clipboard to POSIX file (\"#{png}\")"
-    system bin/"pngpaste", "test.png"
-    assert_path_exists testpath/"test.png"
+    # Cannot access clipboard within sandbox
+    assert_match "No image data found on the clipboard", shell_output("#{bin}/pngpaste test.png 2>&1", 1)
   end
 end
