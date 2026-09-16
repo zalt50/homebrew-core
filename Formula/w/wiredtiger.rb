@@ -21,7 +21,6 @@ class Wiredtiger < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "swig" => :build
   depends_on "lz4"
   depends_on "snappy"
   depends_on "zstd"
@@ -43,6 +42,7 @@ class Wiredtiger < Formula
       -DHAVE_BUILTIN_EXTENSION_SNAPPY=1
       -DHAVE_BUILTIN_EXTENSION_ZLIB=1
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DENABLE_PYTHON=OFF
     ]
     args << "-DCMAKE_C_FLAGS=-Wno-maybe-uninitialized" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
