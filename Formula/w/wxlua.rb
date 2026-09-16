@@ -8,12 +8,13 @@ class Wxlua < Formula
   head "https://github.com/pkulchenko/wxlua.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5615d825d18fa290ebb828623ad3276ab34c5943ad08c5cad47191afe7d6e2a8"
-    sha256 cellar: :any,                 arm64_sequoia: "32e47f1afc987ec94238af58e9e269fb9b5fec627251a96c02c482dd6e44ca44"
-    sha256 cellar: :any,                 arm64_sonoma:  "519c48b22ff8db3692f2a24aa0580711d7f58fde5f177459eaf5829bd308c2b6"
-    sha256 cellar: :any,                 sonoma:        "4b4a90537713c21f36a328dc40b3bad2382a15cbf7a4bf67d784f2b351304584"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf0c694a5941b36927f4912323c7346d230d145e92a88df37e6a1c6a63c948e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71f373105d739d9bc0a282e11d6bf117ace64b56cbb60268f4f39141f5631bb"
+    sha256 cellar: :any,                 arm64_golden_gate: "32f85ce2cde8ec9531247321c4893f7b988c86215c43e781e1d08ae8897d9d50"
+    sha256 cellar: :any,                 arm64_tahoe:       "5615d825d18fa290ebb828623ad3276ab34c5943ad08c5cad47191afe7d6e2a8"
+    sha256 cellar: :any,                 arm64_sequoia:     "32e47f1afc987ec94238af58e9e269fb9b5fec627251a96c02c482dd6e44ca44"
+    sha256 cellar: :any,                 arm64_sonoma:      "519c48b22ff8db3692f2a24aa0580711d7f58fde5f177459eaf5829bd308c2b6"
+    sha256 cellar: :any,                 sonoma:            "4b4a90537713c21f36a328dc40b3bad2382a15cbf7a4bf67d784f2b351304584"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cf0c694a5941b36927f4912323c7346d230d145e92a88df37e6a1c6a63c948e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f71f373105d739d9bc0a282e11d6bf117ace64b56cbb60268f4f39141f5631bb"
   end
 
   # Last release on 2022-11-07 and does not support Lua 5.5,
