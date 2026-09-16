@@ -7,12 +7,13 @@ class Pivy < Formula
   head "https://github.com/coin3d/pivy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c3efc4969c94db900ff5a8d2e564792db5b2aa0b17d687f441e29d654e872bf"
-    sha256 cellar: :any,                 arm64_sequoia: "4ad65036fd17e5f291383b618d1d4d0a372a424baf46db6f9d5660350bb2099f"
-    sha256 cellar: :any,                 arm64_sonoma:  "bafa801b126aec60325b9a44060cffa929b2cbb064b2799972868f6b5a0cd51c"
-    sha256 cellar: :any,                 sonoma:        "8d401a42d19e519d79fceb13e776808a6f249b52c054ee464e18fdc20730e872"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9f4842d2e3d7cda6a5576989b3f99c80904831dafc11953ce1091e80b6384db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec926400c3514af60807399894ac76d0a0f1251795b36d512c9aa50ef2240d7"
+    sha256 cellar: :any,                 arm64_golden_gate: "0998906fbd3c0d7dfff2b55efadab40737a8868329c8efbbf2a42a64da87684b"
+    sha256 cellar: :any,                 arm64_tahoe:       "3c3efc4969c94db900ff5a8d2e564792db5b2aa0b17d687f441e29d654e872bf"
+    sha256 cellar: :any,                 arm64_sequoia:     "4ad65036fd17e5f291383b618d1d4d0a372a424baf46db6f9d5660350bb2099f"
+    sha256 cellar: :any,                 arm64_sonoma:      "bafa801b126aec60325b9a44060cffa929b2cbb064b2799972868f6b5a0cd51c"
+    sha256 cellar: :any,                 sonoma:            "8d401a42d19e519d79fceb13e776808a6f249b52c054ee464e18fdc20730e872"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a9f4842d2e3d7cda6a5576989b3f99c80904831dafc11953ce1091e80b6384db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fec926400c3514af60807399894ac76d0a0f1251795b36d512c9aa50ef2240d7"
   end
 
   depends_on "cmake" => :build
