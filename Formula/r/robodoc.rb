@@ -1,13 +1,19 @@
 class Robodoc < Formula
   desc "Source code documentation tool"
-  homepage "https://rfsber.home.xs4all.nl/Robo/index.html"
-  url "https://rfsber.home.xs4all.nl/Robo/archives/robodoc-4.99.44.tar.bz2"
-  sha256 "3721c3be9668a1503454618ed807ae0fba5068b15bc0ea63846787d7e9e78c0f"
+  homepage "https://github.com/gumpu/ROBODoc"
   license "GPL-3.0-or-later"
 
-  livecheck do
-    url "https://rfsber.home.xs4all.nl/Robo/archives/"
-    regex(/href=.*?robodoc[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  stable do
+    url "https://web.archive.org/web/20260506043604/https://rfsber.home.xs4all.nl/Robo/archives/robodoc-4.99.44.tar.bz2"
+    sha256 "3721c3be9668a1503454618ed807ae0fba5068b15bc0ea63846787d7e9e78c0f"
+
+    # Fix macOS build (missing unistd.h include)
+    patch do
+      url "https://github.com/gumpu/ROBODoc/commit/0f8b35c42523810415bec70bb2200d2ecb41c82f.patch?full_index=1"
+      sha256 "5fa0e63deaf9eb0eb82e53047a684159d572c116b96fcf4aa61777b663eb156d"
+      type :backport
+      resolves "https://github.com/gumpu/ROBODoc/issues/22"
+    end
   end
 
   bottle do
@@ -32,13 +38,10 @@ class Robodoc < Formula
     depends_on "libtool" => :build
   end
 
-  # Fix macOS build (missing unistd.h include)
-  patch do
-    url "https://github.com/gumpu/ROBODoc/commit/0f8b35c42523810415bec70bb2200d2ecb41c82f.patch?full_index=1"
-    sha256 "5fa0e63deaf9eb0eb82e53047a684159d572c116b96fcf4aa61777b663eb156d"
-    type :backport
-    resolves "https://github.com/gumpu/ROBODoc/issues/22"
-  end
+  # Last release on 2021-01-28, dead homepage and low installs on deprecation date:
+  # "install: 0 (30 days), 0 (90 days), 9 (365 days)"
+  deprecate! date: "2026-09-16", because: :unmaintained
+  disable! date: "2026-12-16", because: :unmaintained
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
