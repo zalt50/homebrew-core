@@ -102,6 +102,14 @@ class ReconNg < Formula
       type :unofficial
       resolves "https://github.com/html5lib/html5lib-python/pull/589"
     end
+
+    # Python 3.14 with setuptools 81+ compatibility (`pkg_resources` removal)
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/1dbc19cd6db72cb919885827bc4883423e0cb647.patch?full_index=1"
+      sha256 "5951b823f353dd70806ad6e163ab8f46899496c1e8bb53970c99abe8d1df1a78"
+      type :unofficial
+      resolves "https://github.com/html5lib/html5lib-python/pull/592"
+    end
   end
 
   resource "idna" do
