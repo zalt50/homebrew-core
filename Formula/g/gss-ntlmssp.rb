@@ -1,8 +1,8 @@
 class GssNtlmssp < Formula
   desc "NTLM authentication plugin for GSSAPI"
   homepage "https://github.com/gssapi/gss-ntlmssp"
-  url "https://github.com/gssapi/gss-ntlmssp/releases/download/v1.3.1/gssntlmssp-1.3.1.tar.gz"
-  sha256 "eb87b4c2c1137959025b355296fa556b4d5a09c480e75918ee4b13c354eae29d"
+  url "https://github.com/gssapi/gss-ntlmssp/releases/download/v1.3.2/gssntlmssp-1.3.2.tar.gz"
+  sha256 "e5cc8d74e5f88cfe74622b14d1d28e85710dec898b754c2c78969f25147bbb55"
   license "ISC"
   head "https://github.com/gssapi/gss-ntlmssp.git", branch: "main"
 
