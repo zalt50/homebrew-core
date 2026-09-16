@@ -62,6 +62,6 @@ class Pce < Formula
   end
 
   test do
-    system bin/"pce-ibmpc", "-V"
+    assert_match version.to_s, shell_output("#{bin}/pce-img -V")
   end
 end
