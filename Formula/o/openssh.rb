@@ -36,6 +36,17 @@ class Openssh < Formula
   uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
 
+  # Backport for kSBXProfilePureComputation removal
+  on_golden_gate :or_newer do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    patch do
+      url "https://github.com/openssh/openssh-portable/commit/d4b4c304a202f5099f2f60be9af9ba266212bb74.patch?full_index=1"
+      sha256 "55bd3ca5d1f1ba82279572a357c8d0d72c447668a67fe1d6cf2eee40599c3b2d"
+      type :backport
+    end
+  end
+
   on_linux do
     depends_on "linux-pam"
     depends_on "zlib-ng-compat"
@@ -48,6 +59,9 @@ class Openssh < Formula
 
   def install
     ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__" if OS.mac?
+
+    # Regenerate configure due to patch
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac? && MacOS.version >= :golden_gate
 
     args = %W[
       --sysconfdir=#{etc}/ssh
