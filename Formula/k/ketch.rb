@@ -6,6 +6,14 @@ class Ketch < Formula
   license "MIT"
   head "https://github.com/1broseidon/ketch.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc4e5a0dd9227d425fd1ff526de54e31b4ab931e0b2935d4828299c31eefab1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cc4e5a0dd9227d425fd1ff526de54e31b4ab931e0b2935d4828299c31eefab1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cc4e5a0dd9227d425fd1ff526de54e31b4ab931e0b2935d4828299c31eefab1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8412e9669abe2e514b9d5735bebb651fbc8b80436513a99dd298fe9bfd9bcb35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "78c1fae1cd421dc9897b28c7c3b7bb88add5d470b27f691d6f44aa727936562f"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
