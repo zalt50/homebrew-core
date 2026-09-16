@@ -60,16 +60,20 @@ class Wxlua < Formula
   end
 
   test do
+    wx_module = lib/"lua"/lua.version.major_minor/"wx.so"
+    system lua.bin/"lua", "-e", "assert(package.loadlib('#{wx_module}', 'luaopen_wx'))"
+
+    # Initialising wxWidgets needs WindowServer access, which the test sandbox denies
+    return if OS.mac?
+
     (testpath/"example.wx.lua").write <<~LUA
       require('wx')
       print(wxlua.wxLUA_VERSION_STRING)
     LUA
 
-    if OS.linux?
-      xvfb_pid = spawn formula_opt_bin("xorg-server")/"Xvfb", ":1"
-      ENV["DISPLAY"] = ":1"
-      sleep 10
-    end
+    xvfb_pid = spawn formula_opt_bin("xorg-server")/"Xvfb", ":1"
+    ENV["DISPLAY"] = ":1"
+    sleep 10
 
     assert_match "wxLua #{version}", shell_output("#{lua.bin}/lua example.wx.lua")
   ensure
