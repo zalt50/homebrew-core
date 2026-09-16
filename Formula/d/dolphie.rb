@@ -3,16 +3,16 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/3b/16/8caa3c02804e0d9be22942e438221ddfbf8778170b610cb0747b450aa422/dolphie-6.17.0.tar.gz"
-  sha256 "7782b395b48901d3a83f64b08fe02f856047ed1ca872de01201d5ad4b504828b"
+  url "https://files.pythonhosted.org/packages/7d/1f/f23db0f516539221a02aefd50e002bd2f4fff08e4613d6b352eb8130625a/dolphie-6.17.1.tar.gz"
+  sha256 "75eca7d3928a67cabb51c50471ea6776473f2d312e526267301f6bf152bdd239"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "47d0c3eba4983580efda8fcf63bf2772e6e0c98531cdd5d502c2b07d86d2ae37"
-    sha256 cellar: :any, arm64_tahoe:       "820e457ac8cf9e32dc5cf1c42cd3b2a90909e8a14a840862d215b71c4c0fdc14"
-    sha256 cellar: :any, arm64_sequoia:     "433850e72df8576f4c09ce3d1db87281da5071de4b9bd826fb0f486685f14c03"
-    sha256 cellar: :any, arm64_linux:       "7feb5710c923519723c2dfb8d13463d05613a35dbb33fb58440ac15e7965280d"
-    sha256 cellar: :any, x86_64_linux:      "cefdc21a4261cc6a96e6e11b3e013fe14eceaf9f983953fbf2face2d2f8dd0d7"
+    sha256 cellar: :any, arm64_golden_gate: "6b686870c37ad83d53d15ec0cf4e083924e4ad0d543adc0a8a4d9b68453911a7"
+    sha256 cellar: :any, arm64_tahoe:       "4220340c301112f1261212bdf561ab4b41b984a826adf8571f3c6b293b43cb62"
+    sha256 cellar: :any, arm64_sequoia:     "78f25681506e2d1638b07e60482472c0f9ac67f6f780f5951a7f7950724c70a2"
+    sha256 cellar: :any, arm64_linux:       "2056cf86de2944e31ec92cb3df24d34ff7d9cdb1789e90e9db65463662bfa7e9"
+    sha256 cellar: :any, x86_64_linux:      "8bc16f19551cf31698cdb37ce8c4608a9f213e215c2b1026b41242a000b9d4df"
   end
 
   depends_on "rust" => :build # for orjson
