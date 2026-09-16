@@ -39,6 +39,8 @@ class Timidity < Formula
 
   def install
     ENV.append_to_cflags "-DSTDC_HEADERS" if OS.mac?
+    # autoconf 2.73 selects C23, which rejects the K&R declarations in this codebase
+    ENV["ac_cv_prog_cc_c23"] = "no"
     audio_options = %w[
       vorbis
       flac
