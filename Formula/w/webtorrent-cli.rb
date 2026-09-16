@@ -24,10 +24,12 @@ class WebtorrentCli < Formula
   depends_on "node@20"
 
   def install
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
-    bin.install_symlink libexec.glob("bin/*")
+    # Install locally as `npx only-allow pnpm` in `ip-set`'s preinstall script fails in global mode
+    system "npm", "install", "--omit=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"bin/cmd.js" => "webtorrent"
 
-    nm = libexec/"lib/node_modules/webtorrent-cli/node_modules"
+    nm = libexec/"node_modules"
 
     # Remove node-datachannel dev dependencies which were installed via
     # `npm install --ignore-scripts --production=false` to build node-datachannel.node
@@ -44,7 +46,7 @@ class WebtorrentCli < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     platforms = ["#{os}-#{arch}"]
     platforms << "#{os}-x64+arm64" if OS.mac?
-    pb = nm/"{bare-fs,bare-os,bare-url,bufferutil,fs-native-extensions,utp-native,utf-8-validate}"
+    pb = nm/"{bare-fs,bare-os,bare-path,bare-url,bufferutil,fs-native-extensions,utp-native,utf-8-validate}"
     libexec.glob(pb/"prebuilds/*").each do |dir|
       rm_r(dir) if platforms.exclude?(dir.basename.to_s)
       dir.glob("*.musl.node").map(&:unlink) if OS.linux?
