@@ -40,12 +40,16 @@ class Mabel < Formula
     assert_match "Mabel #{version}", vrsn_out
     assert_match "Built by: #{tap.user}", vrsn_out
 
-    trnt_out = shell_output("#{bin}/mabel 'test.torrent' 2>&1", 1)
-    error_message = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-      "open /dev/tty: no such device or address"
-    else
-      "open test.torrent: no such file or directory"
+    output_log = testpath/"output.log"
+    PTY.spawn(bin/"mabel", "test.torrent", [:out, :err] => output_log.to_s) do |r, w, pid|
+      r.read # to flush IO
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
     end
-    assert_match error_message, trnt_out
+    assert_match "open test.torrent: no such file or directory", output_log.read
   end
 end
