@@ -15,13 +15,11 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ecf32c1fae03075040b773b0b0184314c5690f73dfdce309db0c7690029f951f"
-    sha256 cellar: :any, arm64_tahoe:       "474a0d657aba7c5c88654c6807a3be95524076a84e0ebf2be452a0ebcf49da68"
-    sha256 cellar: :any, arm64_sequoia:     "731a13f2c7bafef8d70395def9862381d18dd05ebb39f15b001d2dd0df9e13d7"
-    sha256 cellar: :any, arm64_sonoma:      "d16ff42855af1bcb5ef5a7e26a09f1f51d5f375de75c7cbe890403380a9f45ad"
-    sha256 cellar: :any, sonoma:            "84180833c7589f48763356bffee04ac740f5d89cf78aea0ed715b029fac40bcb"
-    sha256 cellar: :any, arm64_linux:       "9b6b1ccb4d8c6ea3c7737fc9cf4e9120252a44ec6ba6494b8781c1b7cf996b7f"
-    sha256 cellar: :any, x86_64_linux:      "ff754382d7660d33b25ba40c95667aa7cb187c8a78e54fae81411fe6590201cf"
+    sha256 cellar: :any, arm64_golden_gate: "f259ce7757decd86cb787468aeb6fccc344056045cf5b638f380aaf0edcd5c8c"
+    sha256 cellar: :any, arm64_tahoe:       "661b248732371cc50f2e379d2d499d86ae0d270b1fbaa122444071a324c54a4c"
+    sha256 cellar: :any, arm64_sequoia:     "7ee664a100405fdd97023480baa1dd4598a8f1ddebfe1f5fce0f45fc2491bf9d"
+    sha256 cellar: :any, arm64_linux:       "2b4e2bb519a340ec3a21579a9dc9aabe0f0721235fe06f49d53090a46596d3ee"
+    sha256 cellar: :any, x86_64_linux:      "2fc1c3e886bbe7796d6059b8ed46dab556d6927ca299067406c469a0e40ee625"
   end
 
   depends_on "cmake" => :build
