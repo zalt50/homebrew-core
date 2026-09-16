@@ -26,6 +26,21 @@ class Utiluti < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/utiluti --version")
-    assert_match "public.plain-text", shell_output("#{bin}/utiluti get-uti txt")
+
+    # UTI lookups need LaunchServices, which the test sandbox denies
+    (testpath/"Test.app/Contents/Info.plist").write <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+        <key>CFBundleIdentifier</key>
+        <string>sh.brew.test</string>
+        <key>CFBundleShortVersionString</key>
+        <string>4.2</string>
+      </dict>
+      </plist>
+    XML
+    assert_equal "sh.brew.test", shell_output("#{bin}/utiluti app identifier #{testpath}/Test.app").chomp
+    assert_equal "4.2", shell_output("#{bin}/utiluti app version #{testpath}/Test.app").chomp
   end
 end
