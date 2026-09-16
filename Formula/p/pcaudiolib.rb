@@ -54,6 +54,10 @@ class Pcaudiolib < Formula
     C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lpcaudio"
-    system "./test"
+    if OS.mac?
+      assert_match "Runtime error fffff448", shell_output("./test", 72) # error from sandbox
+    else
+      system "./test"
+    end
   end
 end
