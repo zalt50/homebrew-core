@@ -38,22 +38,21 @@ class Spek < Formula
   end
 
   test do
-    cmd = "#{bin}/spek --version"
+    # Cannot run any useful test within macOS sandbox
+    spek = bin/"spek"
+    assert_path_exists spek
+    return if OS.mac?
 
-    pid = nil
-    if OS.linux?
-      IO.pipe do |read_io, write_io|
-        pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
-        write_io.close
-        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+    IO.pipe do |read_io, write_io|
+      pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      assert_match "Spek version #{version}", shell_output("#{spek} --version")
+    ensure
+      if pid
+        Process.kill "TERM", pid
+        Process.wait pid
       end
-    end
-
-    assert_match "Spek version #{version}", shell_output(cmd)
-  ensure
-    if pid
-      Process.kill "TERM", pid
-      Process.wait pid
     end
   end
 end
