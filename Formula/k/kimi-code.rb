@@ -1,8 +1,8 @@
 class KimiCode < Formula
   desc "AI coding agent for your terminal"
   homepage "https://moonshotai.github.io/kimi-code/"
-  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.43.0.tgz"
-  sha256 "225bc17f06243edf6bcf0fc82bbe8838cab1cd426eb8e467e9ebab93d53ace90"
+  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.43.1.tgz"
+  sha256 "2ac671a704bc4f4d6f0cd1ffcec76ab10f185c376aa7edd6b0450f210563603c"
   license "MIT"
 
   bottle do
@@ -15,21 +15,33 @@ class KimiCode < Formula
 
   depends_on "node"
 
+  on_linux do
+    depends_on "patchelf" => :build
+    depends_on "libxcb"
+  end
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir[libexec/"bin/*"]
 
-    if OS.mac?
-      kimi_code_prefix = libexec/"lib/node_modules/@moonshot-ai/kimi-code"
-      node_modules = kimi_code_prefix/"node_modules"
+    kimi_code_prefix = libexec/"lib/node_modules/@moonshot-ai/kimi-code"
+    node_modules = kimi_code_prefix/"node_modules"
 
-      # Remove non-native architecture binaries from `node-pty` and `native`
-      other_arch = Hardware::CPU.arm? ? "x64" : "arm64"
+    # Remove non-native architecture binaries from `native` and `node-pty`
+    other_arch = Hardware::CPU.arm? ? "x64" : "arm64"
+    os = OS.kernel_name.downcase
+    rm_r kimi_code_prefix/"native/#{os}/prebuilds/#{os}-#{other_arch}"
+
+    if OS.mac?
       rm_r node_modules/"node-pty/prebuilds/darwin-#{other_arch}"
-      rm_r kimi_code_prefix/"native/darwin/prebuilds/darwin-#{other_arch}"
 
       # Strip universal binary to native architecture for `clipboard`
       deuniversalize_machos "#{node_modules}/@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
+    else
+      # Help the bundled native module find Homebrew's libxcb.
+      Dir[kimi_code_prefix/"native/linux/prebuilds/*/*.node"].each do |native_module|
+        system "patchelf", "--set-rpath", formula_opt_lib("libxcb"), native_module
+      end
     end
   end
 
