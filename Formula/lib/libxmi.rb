@@ -29,6 +29,9 @@ class Libxmi < Formula
   end
 
   def install
+    # Workaround to avoid C23
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     system "autoreconf", "--force", "--install", "--verbose" if OS.linux? || (OS.mac? && MacOS.version >= :ventura)
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--infodir=#{info}"
