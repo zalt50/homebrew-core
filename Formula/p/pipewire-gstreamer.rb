@@ -11,8 +11,8 @@ class PipewireGstreamer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "a003cc0610a9662543a034fe93a2f933133eb1e35d544528660f124200b2b59e"
-    sha256 cellar: :any, x86_64_linux: "28a4c13208a07b9ee209339f28ca73097b740a53e747d254b8140204475963a7"
+    sha256 cellar: :any, arm64_linux:  "1ad9e7af6306e3484f9f8f520757bbf1c8050cb2e75a16436560f19c3835d26f"
+    sha256 cellar: :any, x86_64_linux: "f64395e2ba984563ffa3631f0dc084e2a731316d574e5b02107f685479e7c068"
   end
 
   depends_on "meson" => :build
