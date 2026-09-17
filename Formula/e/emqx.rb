@@ -49,6 +49,9 @@ class Emqx < Formula
     ENV["PKG_VSN"] = version.to_s
     ENV["BUILD_WITHOUT_QUIC"] = "1"
 
+    # Workaround to avoid C23
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     touch(".prepare")
     system "make", "emqx-rel"
 
