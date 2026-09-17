@@ -1,8 +1,8 @@
 class BashLanguageServer < Formula
   desc "Language Server for Bash"
   homepage "https://github.com/bash-lsp/bash-language-server"
-  url "https://registry.npmjs.org/bash-language-server/-/bash-language-server-5.6.0.tgz"
-  sha256 "56d22481ffd0eed3edd23d1130554da31dc186d935202f08cf7ce3894fe801be"
+  url "https://registry.npmjs.org/bash-language-server/-/bash-language-server-5.7.0.tgz"
+  sha256 "8788244644c31f9c291edf4da9422572636b2a98c3973f15dfd6b44402eb3c30"
   license "MIT"
 
   bottle do
