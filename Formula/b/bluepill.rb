@@ -30,16 +30,15 @@ class Bluepill < Formula
   depends_on :macos
 
   def install
-    pbxprojs = ["bluepill", "bp"].map { |name| "#{name}/#{name}.xcodeproj/project.pbxproj" }
-    inreplace pbxprojs, "x86_64", Hardware::CPU.arch.to_s
-
-    xcodebuild "-workspace", "Bluepill.xcworkspace",
-               "-scheme", "bluepill",
-               "-configuration", "Release",
-               "-IDECustomDerivedDataLocation=#{buildpath}",
-               "SYMROOT=../",
-               "ARCHS=#{Hardware::CPU.arch}"
-    bin.install "Release/bluepill", "Release/bp"
+    %w[bp bluepill].each do |exe|
+      xcodebuild "-project", "#{exe}/#{exe}.xcodeproj",
+                 "-scheme", exe,
+                 "-arch", Hardware::CPU.arch,
+                 "-configuration", "Release",
+                 "-derivedDataPath", "build",
+                 "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
+      bin.install "build/Build/Products/Release/#{exe}"
+    end
   end
 
   test do
