@@ -7,12 +7,12 @@ class Ifopt < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "864f67e4c11108278a44b019f9a10520097c130d228a634a83e23875eb36ed73"
-    sha256 cellar: :any,                 arm64_sequoia: "4d908163e23317019cf4fc7d2a8ea8a1b35f5bdf7ef67d787c6dca0dc3464c71"
-    sha256 cellar: :any,                 arm64_sonoma:  "d590493307a718a9917354c099f0270568b2638c92e5171d39483aab9601d9c9"
-    sha256 cellar: :any,                 sonoma:        "3976d40d74d9048118daf380378bc640c6021de1937ea449d3734a05de924e0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "957a65e9e0bfa0b1cea42e6d6fa0be3d1f362bc8d3070f0a2cdfde313cbec2dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd84637f15ad2aa59f01b9c42186bf9bc76d5a3ffd2a8d1e95af3b4e70ed7f3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d1c4327865bfad7e97da5fb1e19d05719ae0f468d0a931c747c70621af9d4e34"
+    sha256 cellar: :any, arm64_tahoe:       "26fd541ebedd2695690d60bb297ab1c042ce0e1063c877fd046b09d0ee3d97ff"
+    sha256 cellar: :any, arm64_sequoia:     "00681c3ecbdff9f3374a16527fb0d8f21138eb565f6985495ae57c0aaa6e8685"
+    sha256 cellar: :any, arm64_linux:       "2eb31a088cebf2c9374e579d92fe3f5537c24d389378d4cad64c6aa57596359c"
+    sha256 cellar: :any, x86_64_linux:      "066286ce5ecae8791cacab5376aaeac4308014fd8780b6b6500a1134c1789d2a"
   end
 
   depends_on "cmake" => :build
