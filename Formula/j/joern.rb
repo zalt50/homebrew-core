@@ -1,8 +1,8 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
-  url "https://github.com/joernio/joern/archive/refs/tags/v4.0.620.tar.gz"
-  sha256 "397f3825fb5dd286a1f1846e7a1ce350b395724f0d4b9b038a2b30d4bdc24d33"
+  url "https://github.com/joernio/joern/archive/refs/tags/v4.0.630.tar.gz"
+  sha256 "4a4bf47ec0ae362e626ee4fc8147df99858c0872939d31bf2ecb73094e36308c"
   license "Apache-2.0"
 
   livecheck do
@@ -45,6 +45,9 @@ class Joern < Formula
     libexec.glob("frontends/*/bin/astgen/*").each do |f|
       f.unlink unless f.basename.to_s.end_with?(*astgen_suffix)
     end
+
+    # Special case for `SwiftAstGen`
+    deuniversalize_machos libexec/"frontends/swiftsrc2cpg/bin/astgen/SwiftAstGen-mac" if OS.mac?
 
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
       (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env("25")
