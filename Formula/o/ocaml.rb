@@ -11,10 +11,10 @@
 class Ocaml < Formula
   desc "General purpose programming language in the ML family"
   homepage "https://ocaml.org/"
-  url "https://caml.inria.fr/pub/distrib/ocaml-5.5/ocaml-5.5.0.tar.xz"
-  sha256 "fcc6ae665d1ec51d52510eaac7834a86a9806bf5a258bb7cca78733fccf015ba"
+  url "https://caml.inria.fr/pub/distrib/ocaml-5.5/ocaml-5.5.1.tar.xz"
+  sha256 "cd0a97bdbfc99f00f53f4ee48491964c73627afb09ed8e4de230ba4488a3d6b9"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/ocaml/ocaml.git", branch: "trunk"
 
   livecheck do
