@@ -7,6 +7,7 @@ class Nanopb < Formula
   url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.9.2.tar.gz"
   sha256 "98b8cadce538f37230ca0d5d8796894e3067d58dd2fb2618e6712c7362bdd8bb"
   license "Zlib"
+  revision 1
   head "https://github.com/nanopb/nanopb.git", branch: "master"
 
   livecheck do
