@@ -18,6 +18,8 @@ class Lunarr < Formula
   depends_on "node"
 
   def install
+    # FIXME: pin `@better-auth/core` to match `better-auth`; newer versions drop exports it imports
+    system "npm", "pkg", "set", "overrides[@better-auth/core]=1.7.2"
     system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build"
     system "npm", "prune", "--omit=dev"
