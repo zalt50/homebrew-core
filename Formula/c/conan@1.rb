@@ -33,6 +33,10 @@ class ConanAT1 < Formula
   depends_on "libyaml"
   depends_on "python@3.12" # https://github.com/conan-io/conan/issues/17220#issuecomment-2437381133
 
+  on_tahoe :or_newer do
+    depends_on "gcc@14" => :test
+  end
+
   pypi_packages exclude_packages: "certifi",
                 extra_packages:   "distro"
 
@@ -146,6 +150,7 @@ class ConanAT1 < Formula
   test do
     system bin/"conan", "search", "zlib", "--remote", "conancenter"
 
+    ENV.method(:"gcc-14").call if OS.mac? && MacOS.version >= :tahoe
     system bin/"conan", "install", "zlib/1.3.1@", "--build"
     assert_path_exists testpath/".conan/data/zlib/1.3.1"
   end
