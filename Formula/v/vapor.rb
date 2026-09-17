@@ -22,7 +22,7 @@ class Vapor < Formula
   end
 
   def install
-    system "swift", "build", "-Xswiftc", "-cross-module-optimization", *std_swift_args
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/vapor"
   end
 
