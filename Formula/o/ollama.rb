@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.34.1",
-      revision: "38fdb5dd58c761f850cddd6ba1e78a7954646b4f"
+      tag:      "v0.34.2",
+      revision: "dfabde4539e42ba1e1eab50a3a50b88aea7958a0"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -23,6 +23,7 @@ class Ollama < Formula
     sha256 cellar: :any,                 x86_64_linux:      "70948a3026057b797c2241a7132445cf454671c0dcfc5ba06c6b4a8ddf067b7c"
   end
 
+  depends_on "ccache" => :build
   depends_on "cmake" => :build
   depends_on "go" => :build
 
@@ -43,8 +44,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10864",
-        revision: "5d806aa2575e01e126651fd69ab1ab6cefff861d"
+        tag:      "b10969",
+        revision: "391fac16460f15233a7740550d858ac96df3419d"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -110,10 +111,10 @@ class Ollama < Formula
       mlx_args << "-tags=mlx"
 
       # Generate wrappers from our mlx-c; the vendored headers are newer and declare symbols it lacks
-      mlx_headers = buildpath/"x/mlxrunner/mlx/include/mlx"
+      mlx_headers = buildpath/"mlx/include/mlx"
       rm_r(mlx_headers/"c")
       mlx_headers.install_symlink formula_opt_include("mlx-c")/"mlx/c"
-      system "go", "generate", *mlx_args, "./x/mlxrunner/mlx"
+      system "go", "generate", *mlx_args, "./mlx"
     end
 
     # Build into libexec so the mlx runner's required `<exe_dir>/lib/ollama/`
@@ -207,16 +208,16 @@ class Ollama < Formula
 end
 
 __END__
-diff --git a/x/mlxrunner/mlx/fast.go b/x/mlxrunner/mlx/fast.go
+diff --git a/mlx/fast.go b/mlx/fast.go
 index 27d5724..f38a670 100644
---- a/x/mlxrunner/mlx/fast.go
-+++ b/x/mlxrunner/mlx/fast.go
+--- a/mlx/fast.go
++++ b/mlx/fast.go
 @@ -24 +24 @@ func FastScaledDotProductAttention(q, k, v *Array, scale float32, mode string, m
 -	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, C.bool(false), DefaultStream().ctx))
 +	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, DefaultStream().ctx))
-diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
---- a/x/mlxrunner/mlx/ops.go
-+++ b/x/mlxrunner/mlx/ops.go
+diff --git a/mlx/ops.go b/mlx/ops.go
+--- a/mlx/ops.go
++++ b/mlx/ops.go
 @@ -103,7 +103,6 @@
  
  func (t *Array) Cumsum(axis int, reverse, inclusive bool) *Array {
@@ -226,9 +227,9 @@ diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
 +	mlxCheck(C.mlx_cumsum(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), DefaultStream().ctx))
  	return out
  }
-diff --git a/x/mlxrunner/mlx/ops_extra.go b/x/mlxrunner/mlx/ops_extra.go
---- a/x/mlxrunner/mlx/ops_extra.go
-+++ b/x/mlxrunner/mlx/ops_extra.go
+diff --git a/mlx/ops_extra.go b/mlx/ops_extra.go
+--- a/mlx/ops_extra.go
++++ b/mlx/ops_extra.go
 @@ -122,7 +122,7 @@
  	optGroupSize := C.mlx_optional_int{value: C.int(groupSize), has_value: true}
  	optBits := C.mlx_optional_int{value: C.int(bits), has_value: true}
