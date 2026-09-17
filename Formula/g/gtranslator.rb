@@ -1,8 +1,8 @@
 class Gtranslator < Formula
   desc "GNOME gettext PO file editor"
   homepage "https://wiki.gnome.org/Design/Apps/Translator"
-  url "https://download.gnome.org/sources/gtranslator/50/gtranslator-50.0.tar.xz"
-  sha256 "857b51c78f54df42418ff6fa9e62b8554df7f021cb12338c1fc0d85b99c918ef"
+  url "https://download.gnome.org/sources/gtranslator/51/gtranslator-51.0.tar.xz"
+  sha256 "2dc283b4e36624064bdc85e657eb4de1eb01feba62a1b0eb3b2221fc6c02c75a"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -40,6 +40,9 @@ class Gtranslator < Formula
   def install
     # stop meson_post_install.py from doing what needs to be done in the post_install step
     ENV["DESTDIR"] = "/"
+
+    # Fix to ERROR: None of values ['gnu23'] are supported by the C compiler
+    inreplace "meson.build", "c_std=gnu23", "c_std=gnu2x"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
