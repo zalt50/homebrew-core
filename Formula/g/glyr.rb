@@ -47,8 +47,14 @@ class Glyr < Formula
   end
 
   test do
-    search = "--artist Beatles --title 'Eight Days A Week'"
-    cmd = "#{bin}/glyrc lyrics --no-download #{search} -w stdout"
-    assert_match "Love you all the time", pipe_output(cmd, nil, 0)
+    # The online lyrics providers are gone, so look up a local biography instead
+    song = testpath/"Beatles/Help/song.mp3"
+    song.dirname.mkpath
+    touch song
+    (testpath/"Beatles/BIOGRAPHY.txt").write "The Beatles were an English rock band."
+
+    args = %W[artistbio --from musictree --artist Beatles --musictree-path #{song} -w stdout]
+    output = shell_output("#{bin}/glyrc #{args.join(" ")}")
+    assert_match "The Beatles were an English rock band.", output
   end
 end
