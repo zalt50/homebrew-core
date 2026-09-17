@@ -7,11 +7,11 @@ class Cmctl < Formula
   head "https://github.com/cert-manager/cmctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "37bccb5d79163142f729d92a073cd65920a08659eb29da28a11b6313716b61ef"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0557fa96a7705b34f66a4b814d498490ef442fc042c1fd0e2e7b5028ef586804"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "591a726472cf4339f33245104189a4cc230cb12470f452a6812c26799b5e2854"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b0b517d1b162a1e9927757f3464c1f46bd80db31df7e7919eb194daa176d1f52"
-    sha256 cellar: :any,                 x86_64_linux:      "b41c48bf21ddfa916c02ca314988ea5eb52330a62097c0eb80740f5b8dde625f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eadb67d79ee52df9b729545c75dc862f3cafa4998c9cd29c43de168180a37e4f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "886c201764a25ecc7bde87ec9f5af0906774fefc16e49dc6389ce5cbc24f5858"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bfbffbe343313bb19a2d21feacc289bf973c75f8bdf8b7bbeec45bc45264d584"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c756ae42d2799c0c226df646cb1749143d9a70a9ffd74cd73abd61060b62e8dc"
+    sha256 cellar: :any,                 x86_64_linux:      "c5dcb068f1a918636d63f031c8a7ba61301a20ea2669001718faf6b89cc9c419"
   end
 
   depends_on "go" => :build
