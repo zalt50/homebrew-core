@@ -9,7 +9,7 @@ class Flit < Formula
   head "https://github.com/pypa/flit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "717ea21d882415dcc767ef1e084c1a29f96f1820bcba3eb1f24e947434fdf009"
+    sha256 cellar: :any_skip_relocation, all: "89759f9d00c9aa0a8ba7f0c7efc915179b6afaa4ef72586fc8ebe58ec10ff42c"
   end
 
   depends_on "certifi"
