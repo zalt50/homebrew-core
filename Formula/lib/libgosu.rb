@@ -41,7 +41,8 @@ class Libgosu < Formula
 
   test do
     (testpath/"test.cpp").write <<~CPP
-      #include <stdlib.h>
+      #include <iostream>
+      #include <stdexcept>
       #include <Gosu/Gosu.hpp>
 
       class MyWindow : public Gosu::Window
@@ -61,18 +62,37 @@ class Libgosu < Formula
 
       int main()
       {
-          MyWindow window;
-          window.show();
+          try
+          {
+              MyWindow window;
+              window.show();
+          }
+          catch (const std::runtime_error& e)
+          {
+              std::cout << e.what() << std::endl;
+              return 1;
+          }
       }
     CPP
 
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-lgosu", "-I#{include}", "-std=c++17"
-    if OS.linux? && ENV.exclude?("DISPLAY")
+    if OS.linux?
       # SDL3 (via sdl2-compat) fails if no video driver is available and "dummy"
       # workaround doesn't work as libgosu needs OpenGL support in video driver
-      system formula_opt_bin("xorg-server")/"xvfb-run", "./test"
+      IO.pipe do |read_io, write_io|
+        pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+        write_io.close
+        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+        system "./test"
+      ensure
+        if pid
+          Process.kill "TERM", pid
+          Process.wait pid
+        end
+      end
     else
-      system "./test"
+      # Sandbox blocks access to displays
+      assert_match "video driver did not add any displays", shell_output("./test", 1)
     end
   end
 end
