@@ -1,10 +1,19 @@
 class Glibmm < Formula
   desc "C++ interface to glib"
   homepage "https://gtkmm.gnome.org/"
-  url "https://download.gnome.org/sources/glibmm/2.88/glibmm-2.88.1.tar.xz"
-  sha256 "c139f962b1575c8827cd39d1ac21b7a367be3bda1409c0c7e21a29090f371506"
+  url "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz"
+  sha256 "e2efa45643f16b9fea2d6299f2f403d672eaeacddf0ff7f8094e1af9b0f5980b"
   license "LGPL-2.1-or-later"
   compatibility_version 1
+
+  # See `glib` livecheck
+  livecheck do
+    url :stable
+    regex(/glibmm-(\d+(?:\.\d+)*)\.t/i)
+    strategy :gnome do |page, regex|
+      page.scan(regex).select { |match| Version.new(match.first).minor.to_i.even? }.flatten
+    end
+  end
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "8daba049509570bb1bb19282f76d064d6d0539749a9bf78ee6a14a98aaa89fe2"
