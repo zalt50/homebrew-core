@@ -6,6 +6,14 @@ class Bashka < Formula
   license "MIT"
   head "https://github.com/dmtrKovalenko/bashka.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b56298df8adf1fc49041bd2982d0be9a186f24d140b280e9fc742e5e4047b6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec6b6d651a58590ffb9c080b4ba8e39f6ad8bd1a8fda30a79bdec6e1aea175f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9e1ee83b3831412eed550d0ab32887339ba7d4fbb03a9a3683900b30f13f565"
+    sha256 cellar: :any,                 arm64_linux:       "68f1ea3f722f77b9e358e70ccee3c86b5ce369e31b35aafef463befb79fce83d"
+    sha256 cellar: :any,                 x86_64_linux:      "eaf47ee901934a4398b882577d752f2a06f5e8260bf490132ae703d4bd33ae79"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
