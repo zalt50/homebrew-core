@@ -34,6 +34,14 @@ class Bcoin < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    node_modules = libexec/"lib/node_modules/bcoin/node_modules"
+    cd node_modules/"bcrypto" do
+      system "npm", "run", "install"
+    end
+    cd node_modules/"bdb" do
+      system "npm", "run", "install"
+    end
   end
 
   test do
