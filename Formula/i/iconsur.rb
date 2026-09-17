@@ -56,6 +56,8 @@ class Iconsur < Formula
     if MacOS.version >= :monterey
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
+      # `pyobjc-core` needs Apple's `libffi` extensions, so keep `node`'s `libffi` out of the link
+      ENV.remove "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("libffi")
 
       venv = virtualenv_create(libexec/"venv", python3)
       venv.pip_install resources
