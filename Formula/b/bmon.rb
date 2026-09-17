@@ -1,10 +1,10 @@
 class Bmon < Formula
   desc "Interface bandwidth monitor"
   homepage "https://github.com/tgraf/bmon"
-  url "https://github.com/tgraf/bmon/releases/download/v4.0/bmon-4.0.tar.gz"
-  sha256 "02fdc312b8ceeb5786b28bf905f54328f414040ff42f45c83007f24b76cc9f7a"
+  url "https://github.com/Jafaral/bmon/archive/refs/tags/v5.0.tar.gz"
+  sha256 "cd7f5fb366a8c32c0e33c79a5daae78edd273993d0edf1036638f269400cf012"
   license "BSD-2-Clause"
-  revision 2
+  head "https://github.com/tgraf/bmon.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,12 +23,8 @@ class Bmon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "4c35f5e85c98f864cb59ce589b03c05ce6dd37563a731d86c4491e8930449b8d"
   end
 
-  head do
-    url "https://github.com/tgraf/bmon.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkgconf" => :build
   depends_on "confuse"
 
@@ -39,11 +35,7 @@ class Bmon < Formula
   end
 
   def install
-    # Workaround for https://github.com/tgraf/bmon/issues/89 build issue:
-    inreplace "include/bmon/bmon.h", "#define __unused__", "//#define __unused__"
-    inreplace %w[src/in_proc.c src/out_curses.c], "__unused__", ""
-
-    system "./autogen.sh" if build.head?
+    system "./autogen.sh"
     system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
