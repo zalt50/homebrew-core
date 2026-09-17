@@ -64,6 +64,12 @@ class Abcde < Formula
 
     resources.each do |r|
       r.stage do
+        if r.name == "MusicBrainz::DiscID"
+          # https://github.com/njh/perl-musicbrainz-discid/issues/10
+          inreplace "DiscID.xs",
+                    "discid_put( disc, first_track, sectors, offsets ... )",
+                    "discid_put( disc, first_track, sectors, offsets, ... )"
+        end
         system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
         system "make", "install"
       end
