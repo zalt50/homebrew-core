@@ -57,6 +57,7 @@ class Gwyddion < Formula
   depends_on "libxml2"
   depends_on "libzip"
   depends_on "pango"
+  depends_on "webp"
   depends_on "zstd"
 
   uses_from_macos "bzip2"
