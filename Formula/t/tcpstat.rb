@@ -39,6 +39,7 @@ class Tcpstat < Formula
   end
 
   test do
-    assert_match "Resolving", pipe_output(bin/"tcpstat", "q")
+    ENV["TERM"] = "xterm"
+    assert_match "Connections:", pipe_output(bin/"tcpstat", "q")
   end
 end
