@@ -39,9 +39,8 @@ class Matplotplusplus < Formula
   end
 
   test do
-    # Set QT_QTP_PLATFORM to "minimal" on Linux so that it does not fail with this error:
-    # qt.qpa.xcb: could not connect to display
-    ENV["QT_QPA_PLATFORM"] = "minimal" unless OS.mac?
+    # Set QT_QTP_PLATFORM to "minimal" for headless/sandboxed testing
+    ENV["QT_QPA_PLATFORM"] = "minimal"
     cp pkgshare/"examples/exporting/save/save_1.cpp", testpath/"test.cpp"
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lmatplot", "-o", "test"
     system "./test"
