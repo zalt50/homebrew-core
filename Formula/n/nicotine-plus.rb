@@ -11,8 +11,7 @@ class NicotinePlus < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "80edf82b7afa3a964e69c28edab21a4a588144096efaa10f555b567b1c0bfa3e"
+    sha256 cellar: :any_skip_relocation, all: "18ab9747adb86fb6a8ef462df2b7f476be9d47c70292974ea90ea9e4c706aa00"
   end
 
   depends_on "adwaita-icon-theme"
