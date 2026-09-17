@@ -12,7 +12,7 @@ class TinyRemapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5876ea3e7f013a4b16ec3ba4cc44e32edd0fd058291ea33b0658f8336b7790fb"
+    sha256 cellar: :any_skip_relocation, all: "5274513a1151c6a6fd6acb726dbf7f9a7b2bd6ee0c37027847e719dad830f9de"
   end
 
   # TODO: Switch back to `openjdk` once a release bundles an ASM that supports
