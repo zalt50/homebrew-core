@@ -44,6 +44,9 @@ class Qdbm < Formula
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("zlib-ng-compat")}"
     end
 
+    # The hash functions rely on signed integer overflow wrapping, which Clang 21 optimises away
+    ENV.append "CPPFLAGS", "-fwrapv"
+
     # GCC < 13 with -O2 or higher can cause segmentation faults from loop optimisation bug
     if ENV.compiler.to_s.start_with?("gcc") && DevelopmentTools.gcc_version(ENV.compiler) < 13
       ENV.append "CPPFLAGS", "-fno-tree-vrp"
