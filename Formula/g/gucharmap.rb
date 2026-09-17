@@ -6,14 +6,11 @@ class Gucharmap < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "118e6def449b2853740e1e562607fb7004760aecf225794f05382bb9c6d107eb"
-    sha256 arm64_tahoe:       "09cb32a02e2edb50223d4f9ebe8412245e9c83891e5a3fb2a490268a7bcbb8b0"
-    sha256 arm64_sequoia:     "fdcad739389029c24449e013293d83fa598de25b676ce79fb6552482a3eddada"
-    sha256 arm64_sonoma:      "61ff6905c2c143cbfc0db25c2dd130a488acae6fee1f38df06b73cc419e2bb1c"
-    sha256 sonoma:            "7bfd643c6ea7027e1ff9b0fb33f6d70535deed333b55107e3b6278c417b154ed"
-    sha256 arm64_linux:       "28d9ab835720e30da0ca28cb2ca9622f7601c64181589e5d8efb702d0b90c4e2"
-    sha256 x86_64_linux:      "daca552d1c157d3b348489af518a968aa9e3e5122d507db32db78866a1994509"
+    sha256 arm64_golden_gate: "59469221d9d575259b06736923fc90275ab1df0d0ebc8b5a7d087e5d9109da90"
+    sha256 arm64_tahoe:       "768f8db2281a78643978397ac90f65cba1f869e4d13a9f709726c62f53e1efcf"
+    sha256 arm64_sequoia:     "39a493527ba3b0d6ce466726c6444da0dd9e95a82cfc6f710f04200c41d7b236"
+    sha256 arm64_linux:       "5456e835e81ea04bbd349364773cb904b2cd9a036e04f14592d4eef7b4d8ce92"
+    sha256 x86_64_linux:      "f2b8b202b1174996afd75cd28e8ed0cae0e3b22fa3321f807d8c6b115aa5ce28"
   end
 
   depends_on "desktop-file-utils" => :build
