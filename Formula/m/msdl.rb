@@ -42,8 +42,8 @@ class Msdl < Formula
   end
 
   test do
-    system bin/"msdl", "http://example.org/index.html"
-    assert_path_exists "index.html"
+    system bin/"msdl", stable.url.sub("https", "http")
+    assert_equal stable.checksum.to_s, (testpath/File.basename(stable.url)).sha256
   end
 end
 
