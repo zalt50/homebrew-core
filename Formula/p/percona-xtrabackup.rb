@@ -1,10 +1,9 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-6/source/tarball/percona-xtrabackup-8.4.0-6.tar.gz"
-  sha256 "e0e886b78d18b34122bd15b2d80f52fc5df2422260edaa3074820902beecd351"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-7/source/tarball/percona-xtrabackup-8.4.0-7.tar.gz"
+  sha256 "177ee52757d6e702b082b033e4562d680ed8f6dfa24d8cdad13005e48db65e18"
   license "GPL-2.0-only"
-  revision 3
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -151,6 +150,9 @@ class PerconaXtrabackup < Formula
 
     # Disable ABI checking
     inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
+
+    # FIXME: `common.h` stubs `posix_fadvise` as a macro on macOS, which breaks the `::` qualifier
+    inreplace "storage/innobase/xtrabackup/src/xb_io_probe.h", "::posix_fadvise(", "posix_fadvise("
 
     icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
