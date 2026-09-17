@@ -1,8 +1,8 @@
 class Hellwal < Formula
   desc "Fast, extensible color palette generator"
   homepage "https://github.com/danihek/hellwal"
-  url "https://github.com/danihek/hellwal/archive/refs/tags/v1.0.7.tar.gz"
-  sha256 "78cea94425b35a4dc377e498921ddb2927b093ed6b825606554f25b98699310c"
+  url "https://github.com/danihek/hellwal/archive/refs/tags/1.0.8.tar.gz"
+  sha256 "53f629f22bd80c95150fa8510c4c5f4969beec06bfd01ad33a5fdad3d56a357e"
   license "MIT"
 
   bottle do
