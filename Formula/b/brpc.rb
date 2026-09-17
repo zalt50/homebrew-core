@@ -1,11 +1,10 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=brpc/1.17.0/apache-brpc-1.17.0-src.tar.gz"
-  mirror "https://archive.apache.org/dist/brpc/1.17.0/apache-brpc-1.17.0-src.tar.gz"
-  sha256 "30fc544c74ef51419d262d279571c2c1b5db7dda1bc3bad893b1397d676fd02a"
+  url "https://www.apache.org/dyn/closer.lua?path=brpc/1.18.0/apache-brpc-1.18.0-src.tar.gz"
+  mirror "https://archive.apache.org/dist/brpc/1.18.0/apache-brpc-1.18.0-src.tar.gz"
+  sha256 "26497bb50a8e06c8ffe24f37325431b1ca72fffd447de6fa3eb0002db79c978a"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
@@ -27,14 +26,6 @@ class Brpc < Formula
 
   on_linux do
     depends_on "pkgconf" => :test
-  end
-
-  # Guard the Linux-only SO_BINDTODEVICE socket option, which is missing from the macOS 14 SDK
-  patch do
-    url "https://github.com/apache/brpc/commit/d7fb5e33bc3b39a349eef619d7d6cacd623abf4c.patch?full_index=1"
-    sha256 "0d7d064dd77360995c643cc7e10b9bc42b04f5cccf33992160288e654e588098"
-    type :backport
-    resolves "https://github.com/apache/brpc/pull/3320"
   end
 
   def install
