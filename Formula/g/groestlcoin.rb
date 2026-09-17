@@ -18,12 +18,12 @@ class Groestlcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "72c25e729c8a29d2c9a0ef1aafc1ce9b749d8a60bc8860d430c34ab6f638df4a"
-    sha256 cellar: :any, arm64_sequoia: "f4bb5e4c0a4ce081c458929747dffdb2caeaf4bbd0032dc8d2f4cb27391b9f1a"
-    sha256 cellar: :any, arm64_sonoma:  "516a4ea4ba41c9b41f07978521770b87369c6f84149d95357ae3d6e48c7b4911"
-    sha256 cellar: :any, sonoma:        "9a3851ed87772e9c373159bcdd6b7af60ea1cc70b4b43dd36835605eec8e3988"
-    sha256 cellar: :any, arm64_linux:   "93e90580b2930bc8333460a029ffccb27d40d532132462a974b47b8c66470cd7"
-    sha256 cellar: :any, x86_64_linux:  "0c3fba86dcc533a4b7742b9038b703de6a0f4438f58624ec573004e9fa8a18bb"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f842203ed324c75c80f81e5cbe5bae4e0897a50524e8dc3f6506b446362689a3"
+    sha256 cellar: :any, arm64_tahoe:       "5603249caca6b7e2d060f652d92c48af4a9a8cf5d609d28af72069d780ce71e2"
+    sha256 cellar: :any, arm64_sequoia:     "e66e7156c3a7e83f287b038652c93d4c2fc0f9b1757fe1022b7055cb60e8564f"
+    sha256 cellar: :any, arm64_linux:       "5f48f10d3e82eab428618f95b1c337e179d66374c37f720c7dd7c6e419b3975f"
+    sha256 cellar: :any, x86_64_linux:      "b5417c6f7990e0db0b1dad5689862a0dfa5ae08eeb66b058e7b5352b6734dc78"
   end
 
   depends_on "boost" => :build
