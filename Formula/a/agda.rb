@@ -4,6 +4,7 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
+  revision 1
 
   stable do
     url "https://github.com/agda/agda/archive/refs/tags/v2.8.0.2.tar.gz"
@@ -51,8 +52,16 @@ class Agda < Formula
     end
 
     resource "agda-language-server" do
-      url "https://github.com/agda/agda-language-server/archive/refs/tags/v6.tar.gz"
-      sha256 "e2ffa646385585ecd0230f6031ee7cb66d1ea743007b41bc92cc469b2218ebe5"
+      url "https://github.com/agda/agda-language-server/archive/refs/tags/v7.tar.gz"
+      sha256 "294a8d0fe92b80711d221bc50fab5eced2285f6a43123482b27c52073a6e2c5a"
+
+      # Fix the reported ALS version, upstream PR ref, https://github.com/agda/agda-language-server/pull/56
+      patch do
+        url "https://github.com/agda/agda-language-server/commit/a585542a717d4af65a998adaddd87e1020bf9ac1.patch?full_index=1"
+        sha256 "01a09b16be7cf4f1fda548461515559417dedc1a17275cf744a0ceef93655d13"
+        type :unofficial
+        resolves "https://github.com/agda/agda-language-server/pull/56"
+      end
     end
   end
 
@@ -428,7 +437,7 @@ class Agda < Formula
     system bin/"agda2hs", "--out-dir=#{testpath}", agda2hstest
     assert_equal agda2hsexpect, agda2hsout.read
 
-    # check that the installed als binary reports the correct version
-    assert_equal "Agda v2.8.0 Language Server v6", shell_output("#{bin}/als -V").strip
+    assert_equal "Agda v#{version.major_minor_patch} Language Server v#{resource("agda-language-server").version}",
+                 shell_output("#{bin}/als -V").strip
   end
 end
