@@ -1,8 +1,8 @@
 class LivebookCli < Formula
   desc "Code notebooks for Elixir developers"
   homepage "https://livebook.dev"
-  url "https://github.com/livebook-dev/livebook/archive/refs/tags/v0.19.9.tar.gz"
-  sha256 "9be368c4a8c58f780af453e21b52dd17204390a037cddc119230787b2e4de58e"
+  url "https://github.com/livebook-dev/livebook/archive/refs/tags/v0.19.10.tar.gz"
+  sha256 "a4ddd8a73e1c663bdd1ec7b33aaaca5390912c0541a50301c7a8cf652b095538"
   license "Apache-2.0"
   head "https://github.com/livebook-dev/livebook.git", branch: "main"
 
@@ -17,10 +17,13 @@ class LivebookCli < Formula
   end
 
   depends_on "elixir" => :build
+  depends_on "node" => :build
   depends_on "erlang"
 
   def install
     ENV["MIX_ENV"] = "prod"
+    # aws_credentials and its plugins use callbacks and catch syntax deprecated by OTP 29.
+    ENV["ERL_COMPILER_OPTIONS"] = "[nowarn_deprecated_callback, nowarn_deprecated_catch]"
 
     system "mix", "local.hex", "--force"
     system "mix", "local.rebar", "--force"
