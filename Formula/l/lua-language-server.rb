@@ -25,7 +25,7 @@ class LuaLanguageServer < Formula
     inreplace color_h, '#include "format.h"', "\\0\n#include <algorithm>"
 
     # disable all tests by build script (fail in build environment)
-    inreplace buildpath.glob("**/3rd/bee.lua/test/test.lua"),
+    inreplace buildpath.glob("**/bee.lua/test/test.lua"),
       "os.exit(lt.run(), true)",
       "os.exit(true, true)"
 
