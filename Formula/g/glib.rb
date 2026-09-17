@@ -16,14 +16,11 @@ class Glib < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "a18b3abe0fc7be6cf0d3119482de99aab576f9657b88252beaa4f78e17418dab"
-    sha256 arm64_tahoe:       "04cba8ddae9201ed3e950547bfdde97927e4151da37db32c80f5298bf4d6255f"
-    sha256 arm64_sequoia:     "ca168ac34920f6ee13187d8e88af7d55c50b582fa78a5511e15fe9dd875e8b40"
-    sha256 arm64_sonoma:      "360e1e14e0db7d9374a2ebc5e0df52c3765e6f42e3d4c8080ac8df8289e181c8"
-    sha256 sonoma:            "77ecae9f10b03757b47b6c9dc2e8cadcace52a685dccc0f846871037628e1c3e"
-    sha256 arm64_linux:       "9362d75c1ee1db3ebb022d00d20a651e0dcc76293a51ad3182a5293953d14c97"
-    sha256 x86_64_linux:      "6e2840b72dee7594f310838f9b0b0b82894eb12e562894b3f1b43563487b9987"
+    sha256 arm64_golden_gate: "07422c68ee1c3d01ba6ac6296668e82cad2ee21c9466e60e79a70da2c5947207"
+    sha256 arm64_tahoe:       "e2d2d3cff3bb121e8f6c98f9a831e03f78b66e88063fc5d432a68bf0b4951092"
+    sha256 arm64_sequoia:     "91df2202a093cd00b90fa9919f1c1e61e8f78d8ddd9a307009af6d4007072180"
+    sha256 arm64_linux:       "456f327b958864c762c53286469ec4471fd41a57c031ce2d8c3e24f6dedbad0f"
+    sha256 x86_64_linux:      "91d875d68772c609400983913f59695beb053223973791ee32ee33d1edd9df6c"
   end
 
   depends_on "bison" => :build # for gobject-introspection
