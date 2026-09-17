@@ -14,7 +14,7 @@ class Libtensorflow < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c472f1625afba190f4aabdcf329a0d2db793ad7a913a3803c3b45740c8036960"
   end
 
-  depends_on "bazelisk" => :build
+  depends_on "bazel@7" => :build
   depends_on "numpy" => :build
   depends_on "python@3.13" => :build # Python 3.14 support: https://github.com/tensorflow/tensorflow/issues/102890
 
@@ -43,6 +43,9 @@ class Libtensorflow < Formula
     ENV["TF_DOWNLOAD_CLANG"] = "0"
     ENV["TF_SET_ANDROID_WORKSPACE"] = "0"
     ENV["TF_CONFIGURE_IOS"] = "0"
+
+    # Build with brew Bazel rather than Bazelisk downloading it
+    rm ".bazelversion"
 
     # `//xla/tsl/mkl:onednn` alias resolves to dummy on macOS; reference @onednn directly.
     inreplace "third_party/xla/xla/tsl/framework/contraction/BUILD",
@@ -95,7 +98,7 @@ class Libtensorflow < Formula
       //tensorflow/tools/graph_transforms:summarize_graph
       //tensorflow/tools/graph_transforms:transform_graph
     ] + libtensorflow_deps.map { |dep| "//tensorflow/tools/lib_package:#{dep}" }
-    system formula_opt_bin("bazelisk")/"bazelisk", "build", *bazel_args, *targets
+    system "bazel", "build", *bazel_args, *targets
 
     bin.install %w[
       bazel-bin/tensorflow/tools/benchmark/benchmark_model
