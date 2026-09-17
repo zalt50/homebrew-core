@@ -46,8 +46,7 @@ class Lume < Formula
     output = shell_output("#{bin}/lume setup does-not-exist --unattended tahoe 2>&1", 1)
     assert_match "Virtual machine not found", output
 
-    # Test ipsw command
-    assert_match "Found latest IPSW URL", shell_output("#{bin}/lume ipsw")
+    assert_match "No virtual machines found", shell_output("#{bin}/lume ls")
 
     # Test management HTTP server
     port = free_port
