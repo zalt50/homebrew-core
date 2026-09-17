@@ -28,6 +28,14 @@ class Ifopt < Formula
     resolves "https://github.com/ethz-adrl/ifopt/pull/110"
   end
 
+  # Add missing `<iostream>` include for newer libc++
+  patch do
+    url "https://github.com/ethz-adrl/ifopt/commit/ca908c2f5e372b5ba9dad3573be6dd156a39d28a.patch?full_index=1"
+    sha256 "15c9b47faecdfac311d9b5a67ad008c8d5a96cc5b64407a6448c909f7ec6a267"
+    type :unofficial
+    resolves "https://github.com/ethz-adrl/ifopt/pull/112"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
