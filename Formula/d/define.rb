@@ -29,8 +29,8 @@ class Define < Formula
   test do
     assert_match "Free Dictionary API", shell_output("#{bin}/define --list-sources")
 
-    output = shell_output("#{bin}/define -s FreeDictionaryAPI homebrew")
-    assert_match "A beer brewed by enthusiasts rather than commercially", output
+    output = shell_output("#{bin}/define -s FreeDictionaryAPI hello")
+    assert_match '"Hello!" or an equivalent greeting', output
 
     assert_match "define #{version}", shell_output("#{bin}/define --version")
   end
