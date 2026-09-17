@@ -7,11 +7,11 @@ class Bashka < Formula
   head "https://github.com/dmtrKovalenko/bashka.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd3385694a9d5b81c39c0ac426dce5a9b5e3f04d168b38fbfe51234353bd3866"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d521924ea30b6bd01eb5c3ecdef68a4ffe93938f21b0a9f97b4bad3398a92de0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "28f83f91ba8ac936cfdee071c94f2410eceb6fbb3dd22586134d53f6b09f139d"
-    sha256 cellar: :any,                 arm64_linux:       "d5820528afa2b27c1a12fe77ec2258075e5d0c0af07e4998d1b9b2615fe35bd1"
-    sha256 cellar: :any,                 x86_64_linux:      "b1f627a2c16b527c7ded532871b29d1ad3bea46860195f0fd845ffb9f47ab7d8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48be3cabd5244838d0883f2b2001e8b9b9561225682da1d8fa11967a34d90565"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b2f746906f443831d167d208fdb8ea1b72c6a3404a3707d90f3f7b7c2cef8789"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "879d12f1d666102fa653d467f2253f57ea6c7ffd63a8d3f60e78ee7b72668a2f"
+    sha256 cellar: :any,                 arm64_linux:       "2d79cd28ccb42ef0f805652c0cc5c642ec1a6875762ef745b2259369541e0a7b"
+    sha256 cellar: :any,                 x86_64_linux:      "cf26f4ff4b1603a8407e1c011c619f3c751e3e9a0859c8874c04fed9c096d96c"
   end
 
   depends_on "rust" => :build
