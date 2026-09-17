@@ -4,7 +4,7 @@ class Et < Formula
   url "https://github.com/MisterTea/EternalTerminal/archive/refs/tags/et-v7.0.0.tar.gz"
   sha256 "3580962861589c0b69efd6b385ff92ad8fdf688c91d1a0edc1a83278205e28e8"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "eddc21662f8595ebdb71eecd455b1c9ba50ed187851892b2732803bd1b733582"
