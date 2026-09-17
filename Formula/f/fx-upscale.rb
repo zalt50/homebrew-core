@@ -22,7 +22,9 @@ class FxUpscale < Formula
 
   test do
     cp test_fixtures("test.mp4"), testpath
-    system bin/"fx-upscale", "-c", "h264", testpath/"test.mp4"
-    assert_path_exists "#{testpath}/test Upscaled.mp4"
+    # Upscaling needs VideoToolbox services that the test sandbox denies,
+    # so only check that the video track is read before the size validation
+    output = shell_output("#{bin}/fx-upscale --width 20000 #{testpath}/test.mp4 2>&1", 64)
+    assert_match "Maximum supported width/height: 16384", output
   end
 end
