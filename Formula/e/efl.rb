@@ -13,12 +13,13 @@ class Efl < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "d2242b482406cdda474ae53894167b08f0c9e0345fdc50b6ad3b0891fd49d4dc"
-    sha256 arm64_sequoia: "37327b3f19bb2e83606a6181581b525b8b921c458f8338c4a42032096d8665fe"
-    sha256 arm64_sonoma:  "e4bc6b982f812f73f1a72a33d2cd44cb0e2d1e8151e5f4e80fc2f69dffdb5f7e"
-    sha256 sonoma:        "c69495ceac0e9dcf5986ebdd1908da0052fe628a005338e65d392422936f7d41"
-    sha256 arm64_linux:   "602cdcf9532c25b04eb3fe1467e3b3b8a9a4529961ac6c3d631a64fdb702a15b"
-    sha256 x86_64_linux:  "27a691839e076fe9bd8b88aa671e44d4d80c07991205e0cb4bd791eb05b9e4b5"
+    sha256 arm64_golden_gate: "889efed8a97104e156fe8ad7d90fd0a731bbeb4dac72b3fa65069b138474a160"
+    sha256 arm64_tahoe:       "d2242b482406cdda474ae53894167b08f0c9e0345fdc50b6ad3b0891fd49d4dc"
+    sha256 arm64_sequoia:     "37327b3f19bb2e83606a6181581b525b8b921c458f8338c4a42032096d8665fe"
+    sha256 arm64_sonoma:      "e4bc6b982f812f73f1a72a33d2cd44cb0e2d1e8151e5f4e80fc2f69dffdb5f7e"
+    sha256 sonoma:            "c69495ceac0e9dcf5986ebdd1908da0052fe628a005338e65d392422936f7d41"
+    sha256 arm64_linux:       "602cdcf9532c25b04eb3fe1467e3b3b8a9a4529961ac6c3d631a64fdb702a15b"
+    sha256 x86_64_linux:      "27a691839e076fe9bd8b88aa671e44d4d80c07991205e0cb4bd791eb05b9e4b5"
   end
 
   depends_on "meson" => :build
