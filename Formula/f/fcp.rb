@@ -1,8 +1,8 @@
 class Fcp < Formula
   desc "Significantly faster alternative to the classic Unix cp(1) command"
   homepage "https://github.com/Svetlitski/fcp/"
-  url "https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "e835d014849f5a3431a0798bcac02332915084bf4f4070fb1c6914b1865295f2"
+  url "https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "c8c3da588711b1684370009e9a186232fe3c6c0db7ceff00b0ce0dacb98b9403"
   license "BSD-3-Clause"
 
   bottle do
@@ -19,16 +19,7 @@ class Fcp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c4dc5c096786f4581a3799e890ac3c98c86d32a9ef59f57ca525a4a717f4eab"
   end
 
-  # Failed to build against latest Rust, and no commits since 08/22/2022
-  deprecate! date: "2026-01-23", because: :unmaintained
-  disable! date: "2027-01-23", because: :unmaintained
-
   depends_on "rust" => :build
-
-  # rust 1.80 build patch, upstream pr ref, https://github.com/Svetlitski/fcp/pull/42
-  patch do
-    file "Patches/fcp/rust-1.80.patch"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
