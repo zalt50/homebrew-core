@@ -78,10 +78,14 @@ class Teleport < Formula
     # Issue ref: https://github.com/aws/aws-lc-rs/issues/1097
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
 
-    # wasm-bindgen 0.2.100+ needs the ironrdp wasm built with reference-types intrinsics
-    inreplace "Makefile",
-              %q(RUSTFLAGS='--cfg getrandom_backend="wasm_js"'),
+    inreplace "Makefile" do |s|
+      # wasm-bindgen 0.2.100+ needs the ironrdp wasm built with reference-types intrinsics
+      s.gsub! %q(RUSTFLAGS='--cfg getrandom_backend="wasm_js"'),
               %q(RUSTFLAGS='--cfg getrandom_backend="wasm_js" -C target-feature=+reference-types')
+
+      # avoid building another wasm-opt
+      s.gsub!(/^(ensure-wasm-deps: .*) ensure-wasm-opt( .*)?$/, "\\1\\2")
+    end
 
     ENV.deparallelize { system "make", "full", "FIDO2=dynamic" }
     bin.install Dir["build/*"]
