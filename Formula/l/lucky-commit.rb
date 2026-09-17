@@ -24,6 +24,11 @@ class LuckyCommit < Formula
   end
 
   def install
+    if OS.mac? && DevelopmentTools.clang_build_version >= 2100
+      # FIXME: Apple clang 21 crashes assembling `sha1-asm`, whose upstream is archived
+      inreplace "Cargo.toml", /("sha-1" = .*)"asm", /, "\\1"
+    end
+
     system "cargo", "install", *std_cargo_args
   end
 
