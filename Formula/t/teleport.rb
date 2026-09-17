@@ -27,7 +27,9 @@ class Teleport < Formula
   end
 
   depends_on "binaryen" => :build
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when teleport bumps `charlievieth/strcase` to v0.0.6+
+  # ref: https://github.com/gravitational/teleport/pull/6880
+  depends_on "go@1.26" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
