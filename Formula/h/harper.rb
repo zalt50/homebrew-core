@@ -12,12 +12,11 @@ class Harper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9882efe6323d5e7338d51c6969f9d73461678e86adf515c3c5cea0159da022b8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "37523c060e621e47816eebe01d3becc81f8095a5d7abbe44032e7607f64eb69b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "da0e54ca151feb99b267fb3aa0296fa8ae4b8baeb7e6bf88793e0caad0113bc9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "416f23a835b4999b7f4ce569d0299288a168537f4e5e39f5ae088dd72132b8f1"
-    sha256 cellar: :any,                 arm64_linux:       "750f4b02a9abeddf018721ab4db2c1ec681e72146a9d21d4d541c2c0381f5c9b"
-    sha256 cellar: :any,                 x86_64_linux:      "04d773e41e20ac33bc27e28e7a3659472ab14273fd4a47993661f377cf1ecff4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fc87d6438606d894587329a01b9d72f009a20f5182a4ce3ccde150adb0799201"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "86627d6ccf26ac09d018ef22c1133906c12078b6a688aa8e0452331c90fb3364"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c87037ab661581bb2d31f7841d318ae243c9d9886e077dd6a38e73b84e530273"
+    sha256 cellar: :any,                 arm64_linux:       "1af4ffb2e52ae23a0b8fa6d6c8dae6a3cc94becb50667bfb1c64e7fb9333ac80"
+    sha256 cellar: :any,                 x86_64_linux:      "b451549848760716301d3a833d2dddee34750af00d3f33e1b81017dbe8c4689f"
   end
 
   depends_on "rust" => :build
