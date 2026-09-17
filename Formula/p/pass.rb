@@ -1,8 +1,11 @@
 class Pass < Formula
   desc "Password manager"
   homepage "https://www.passwordstore.org/"
-  url "https://git.zx2c4.com/password-store/snapshot/password-store-1.7.4.tar.xz"
-  sha256 "cfa9faf659f2ed6b38e7a7c3fb43e177d00edbacc6265e6e32215ff40e3793c0"
+  # Using git checkout as snapshot archives have previously changed from server updates
+  # https://github.com/Homebrew/homebrew-core/pull/290649#issuecomment-5654421778
+  url "https://git.zx2c4.com/password-store.git",
+      tag:      "1.7.4",
+      revision: "1078f2514d579178d5df7042c6a790e9c9b731ad"
   license "GPL-2.0-or-later"
   head "https://git.zx2c4.com/password-store.git", branch: "master"
 
