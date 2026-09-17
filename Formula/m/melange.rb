@@ -12,11 +12,11 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a70087b766580043fd7d07fa1767093d2e4e1b6bef03abd882b046f27b2dcbd3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3b2cc2a4a99d7fd905434ecf191ea1dc3453b739ba6612edd102c1876212a290"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9e15405afe465170dcb01eaebe8c4f74eb1d8acd98c463ea0942027371a415b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5866fd8ff21c66642d06d7f33b39c0eb5e7ac31b8eefbd0c24e83063c59367c9"
-    sha256 cellar: :any,                 x86_64_linux:      "94b1e583f5308c2f0fa94d0a8a83e9f3444ebce6fe376d034772dd4b23ee20d9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0fe390a40994ceb2391598b39a11b4a7aec0da2c8b6ce1dd4553ed945dd97b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dcf2ffc79c99987392592e3cedba0fec2523d2cf46dbfaa6a4bbc6320bc0c4a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f776c5d04fe77723147ba8a29f91b1451a739073865d8e997eb377e96d46994"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "709787aafd29a6680af483f490efaa8fe87f0d3d088bcbafd19eb98f3b00a50e"
+    sha256 cellar: :any,                 x86_64_linux:      "ac978dcfd2514fd6f29f26c672bb757a87c9f98cd68b7aba3fd151935f5cd5f8"
   end
 
   depends_on "go" => :build
