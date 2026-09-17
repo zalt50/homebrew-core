@@ -34,7 +34,8 @@ class Fsw < Formula
   end
 
   test do
-    io = IO.popen("#{bin}/fsw test")
+    # The FSEvents monitor gets no events in the `brew test` sandbox, so use kqueue on macOS
+    io = IO.popen("#{bin}/fsw #{"-k " if OS.mac?}test")
     (testpath/"test").write("foo")
     sleep 2
     rm testpath/"test"
