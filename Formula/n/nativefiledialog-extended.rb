@@ -1,8 +1,8 @@
 class NativefiledialogExtended < Formula
   desc "Native file dialog library with C and C++ bindings"
   homepage "https://github.com/btzy/nativefiledialog-extended"
-  url "https://github.com/btzy/nativefiledialog-extended/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "2fea19102cf4d5283a80fb87a784792166988e85bb92baa962d34f72b22dcc1a"
+  url "https://github.com/btzy/nativefiledialog-extended/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "38116050495cd7de77a91d6d8d59c1aa0a0848c56daa60029bd5b59f3c897229"
   license "Zlib"
 
   bottle do
@@ -19,11 +19,19 @@ class NativefiledialogExtended < Formula
 
   on_linux do
     depends_on "pkgconf" => :build
+    depends_on "wayland-protocols" => :build
     depends_on "glib"
     depends_on "gtk+3"
+    depends_on "wayland"
   end
 
   def install
+    if OS.linux?
+      # Use our `wayland-protocols` as the tarball lacks the `3ps/wayland-protocols` submodule
+      rmdir "3ps/wayland-protocols"
+      ln_s Formula["wayland-protocols"].opt_pkgshare, "3ps/wayland-protocols"
+    end
+
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DNFD_BUILD_TESTS=OFF
