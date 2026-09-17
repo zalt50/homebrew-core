@@ -19,10 +19,12 @@ class ErlangLs < Formula
   deprecate! date: "2026-02-17", because: :repo_archived
   disable! date: "2027-02-17", because: :repo_archived, replacement_formula: "erlang-language-platform"
 
+  depends_on "erlang@28" => :build
   depends_on "erlang"
   depends_on "rebar3"
 
   def install
+    ENV.prepend_path "PATH", formula_opt_bin("erlang@28")
     system "make", "PREFIX=#{prefix}", "install"
   end
 
