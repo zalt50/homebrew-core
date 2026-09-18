@@ -398,6 +398,10 @@ jobs:
               path: Formula/.+
               patch_content: '\n[-+].*(generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)'
 
+            - label: missing network sandbox
+              path: Formula/.+
+              missing_content: (allow|deny)_network_access!
+
   # Handle this separately since the `workflows` label affects bottle cache usage
   # and hardens us against cache poisoning attacks.
   workflows-label:
