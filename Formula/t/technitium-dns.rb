@@ -58,6 +58,9 @@ class TechnitiumDns < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     dotnet = Formula["dotnet"]
     # Start the DNS server
     require "pty"
