@@ -12,13 +12,11 @@ class Less < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "3853347627b66757f74ef24cdf4c0d790ba2d7e4140813e48313856d8861b40b"
-    sha256 arm64_tahoe:       "5a5d8c53359cd56ec9b0bfdb4da20ec5facd7dc7113da5d31f0ea2b2a330ec7b"
-    sha256 arm64_sequoia:     "236f1d4ef5a764122a5a47207e9b8580d3e93e493a62573025789c51a9cf4b4a"
-    sha256 arm64_sonoma:      "3533b7a2c63352240072e7354828f28099aa703aa77e24671e0764b8df7e974d"
-    sha256 sonoma:            "c833a353ee8cd88ccd5c893f90217c237d036c78d433fbcece2e9394952aaebc"
-    sha256 arm64_linux:       "c1f2b21d1081a2e3b0bf188a02c6c5acdf4672b3d1d76f8b09c1e1c759066a9b"
-    sha256 x86_64_linux:      "35714510248230c1b9b4dd7988a6f9b80aa49ce85277c16ed7913478a7de1507"
+    sha256 arm64_golden_gate: "4424cbf3a1ce87d36b39ab1918bb5d871289f1e6e33a012bd9483f16fb4b82a2"
+    sha256 arm64_tahoe:       "4a25aee751a4c5a12886744cbaedd6d60ab039989f764f2e74591567097ebd55"
+    sha256 arm64_sequoia:     "1059c6f2cab177f99362517f59e249bd9fa33e8c417056c5acde2804f4861870"
+    sha256 arm64_linux:       "c2c82e6f10e8ece95d96a020bfdcb08d87775a1db4ea487a8b57a73867f700ad"
+    sha256 x86_64_linux:      "bbc93622a13a6aeae4640938a4fab6f5298d255c1f352b433ff288db2bb68cc5"
   end
 
   head do
