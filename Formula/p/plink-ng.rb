@@ -27,6 +27,8 @@ class PlinkNg < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     cd "2.0/build_dynamic" do
       # Link against zstd rather than the bundled copy.
