@@ -1,8 +1,8 @@
 class Mrbayes < Formula
   desc "Bayesian inference of phylogenies and evolutionary models"
   homepage "https://nbisweden.github.io/MrBayes/"
-  url "https://github.com/NBISweden/MrBayes/releases/download/v3.2.7a/mrbayes-3.2.7a.tar.gz"
-  sha256 "1a4670be84e6b968d59382328294db4c8ceb73e0c19c702265deec6f2177815c"
+  url "https://github.com/NBISweden/MrBayes/archive/refs/tags/v3.2.8.tar.gz"
+  sha256 "331ceb0af036d07cd8bd7091d39632f6d102d8b98c160409d19df3958db85dc2"
   license "GPL-3.0-or-later"
   head "https://github.com/NBISweden/MrBayes.git", branch: "develop"
 
@@ -24,6 +24,8 @@ class Mrbayes < Formula
   depends_on "pkgconf" => :build
   depends_on "beagle"
   depends_on "open-mpi"
+
+  deny_network_access!
 
   def install
     args = ["--with-mpi=yes"]
