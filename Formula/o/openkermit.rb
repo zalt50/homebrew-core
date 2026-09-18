@@ -1,8 +1,8 @@
 class Openkermit < Formula
   desc "Scriptable network and serial communication for UNIX and VMS"
   homepage "https://www.openkermit.org/"
-  url "https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.509.tar.gz"
-  sha256 "628f756a93dc366dd3f51954e11fe6d6d80c00b6f0aace0efc2487f64abe67bf"
+  url "https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.510.tar.gz"
+  sha256 "8be27f47dd9c303a697190fee847e62f2394248752638acc65c26d8a078a727c"
   license "BSD-3-Clause"
 
   livecheck do
