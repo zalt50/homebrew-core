@@ -1,8 +1,10 @@
 class Bombadillo < Formula
   desc "Non-web browser, designed for a growing list of protocols"
   homepage "https://bombadillo.colorfield.space/"
-  url "https://tildegit.org/sloum/bombadillo/archive/2.4.0.tar.gz"
-  sha256 "e0daed1d9d0fe7cbea52bc3e6ecff327749b54e792774e6b985e0d64b7a36437"
+  # Using git checkout to avoid Gitea upgrades impacting git archive tarballs.
+  url "https://tildegit.org/sloum/bombadillo.git",
+      tag:      "2.4.0",
+      revision: "30e550c183b197300299640bcb51f73d94244a4e"
   license "GPL-3.0-or-later"
   head "https://tildegit.org/sloum/bombadillo.git", branch: "master"
 
@@ -31,21 +33,20 @@ class Bombadillo < Formula
     require "pty"
     require "io/console"
 
-    cmd = "#{bin}/bombadillo gopher://bombadillo.colorfield.space"
-    r, w, pid = PTY.spawn({ "XDG_CONFIG_HOME" => testpath/".config" }, cmd)
-    r.winsize = [80, 43]
+    output_log = testpath/"output.log"
+    r, w, pid = PTY.spawn(bin/"bombadillo", "gopher://bombadillo.colorfield.space", [:out, :err] => output_log.to_s)
+    r.winsize = [43, 80]
     sleep 1
     w.write "q"
-    output = ""
     begin
-      r.each_line { |line| output += line }
+      r.read
     rescue Errno::EIO
       # GNU/Linux raises EIO when read is done on closed pty
     end
-    assert_match "Bombadillo is a non-web browser", output
 
     status = PTY.check(pid)
     refute_nil status
     assert status.success?
+    assert_match "Bombadillo is a non-web browser", output_log.read
   end
 end
