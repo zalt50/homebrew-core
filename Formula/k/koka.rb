@@ -2,8 +2,8 @@ class Koka < Formula
   desc "Compiler for the Koka language"
   homepage "http://koka-lang.org"
   url "https://github.com/koka-lang/koka.git",
-      tag:      "v3.2.3",
-      revision: "49dede749f9eb77c717077c00fe52039b3183b5f"
+      tag:      "v3.2.9",
+      revision: "facb7932ce6871fdb063f762a304bd8238f35fba"
   license "Apache-2.0"
   head "https://github.com/koka-lang/koka.git", branch: "dev"
 
@@ -28,6 +28,7 @@ class Koka < Formula
   depends_on "ghc" => :build
   depends_on "pcre2" => :build
   depends_on "gmp"
+  depends_on "libuv"
 
   uses_from_macos "libffi"
 
