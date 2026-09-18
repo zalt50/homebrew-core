@@ -18,6 +18,12 @@ class GitCliff < Formula
   depends_on "rust" => :build
   depends_on "libgit2"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 
