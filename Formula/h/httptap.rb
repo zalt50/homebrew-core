@@ -8,7 +8,7 @@ class Httptap < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a2c5e4e6098ee57ab67dbc2131e4e13b7c67a80d6fc51a7a44488420479d2cec"
+    sha256 cellar: :any_skip_relocation, all: "dd4c86fe82ce58069a6d398d5b754fbccd8bc0eeb43c5765074d4bc0b6ad8d86"
   end
 
   depends_on "rust" => :build
