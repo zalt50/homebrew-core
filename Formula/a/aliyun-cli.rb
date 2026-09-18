@@ -1,8 +1,8 @@
 class AliyunCli < Formula
   desc "Universal Command-Line Interface for Alibaba Cloud"
   homepage "https://github.com/aliyun/aliyun-cli"
-  url "https://github.com/aliyun/aliyun-cli/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "1593fc4ab238323724bc1a34d7e393f85dc7a7f2e0a900a6e5a48efe3b345179"
+  url "https://github.com/aliyun/aliyun-cli/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "9b4c9e5992c185af4b3260b4a805309e599efbcc74f406536c28f9beffa200e3"
   license "Apache-2.0"
   head "https://github.com/aliyun/aliyun-cli.git", branch: "master"
 
@@ -23,9 +23,9 @@ class AliyunCli < Formula
   depends_on "go" => :build
 
   resource "aliyun-openapi-meta" do
-    url "https://github.com/aliyun/aliyun-openapi-meta/archive/00db11354cc523f310b1bd1bd73bdecc478e8ad2.tar.gz"
-    version "00db11354cc523f310b1bd1bd73bdecc478e8ad2"
-    sha256 "cbd5c1252b351130a1767e98dfb53ce40bd0cfa824301b256e220e5348ae20ea"
+    url "https://github.com/aliyun/aliyun-openapi-meta/archive/ba3c757837b8f60f4890486b8ce0c9672bf37268.tar.gz"
+    version "ba3c757837b8f60f4890486b8ce0c9672bf37268"
+    sha256 "266392c0ec0e71550ff52c636e2c7f5ef3d26292f425b404dd606c4ddafd4b09"
 
     livecheck do
       url "https://api.github.com/repos/aliyun/aliyun-cli/contents/aliyun-openapi-meta?ref=v#{LATEST_VERSION}"
