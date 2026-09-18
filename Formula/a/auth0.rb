@@ -1,8 +1,8 @@
 class Auth0 < Formula
   desc "Build, manage and test your Auth0 integrations from the command-line"
   homepage "https://auth0.github.io/auth0-cli"
-  url "https://github.com/auth0/auth0-cli/archive/refs/tags/v1.35.0.tar.gz"
-  sha256 "ff870848255cbf21928d4888def78cc63a6dc65d9fa0e5286dc276228f8f13af"
+  url "https://github.com/auth0/auth0-cli/archive/refs/tags/v1.36.0.tar.gz"
+  sha256 "c1f4077981e9b25786f817f812d14cebeffd75779e2efa2f56e8dd40b9301904"
   license "MIT"
   head "https://github.com/auth0/auth0-cli.git", branch: "main"
 
@@ -16,6 +16,12 @@ class Auth0 < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "0"
