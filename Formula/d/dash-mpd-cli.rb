@@ -7,13 +7,11 @@ class DashMpdCli < Formula
   head "https://github.com/emarsden/dash-mpd-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "20398dbafd4995f6ee0c5f9936411f0e8b6021e3c3c9f7aef07da84b77f3968a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a4c81e589672cf6c1c2db541060e3355045a105d702f7ba5244f34aab2dd2b67"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e9db6f6a572e9720ab76410d627e2357f918908f9c0518b4ceaa118cc017c9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "36b57f31843e3c49264ad2d8508f4a67cdf6d270fb9ef1d9951eaf7e3a915b20"
-    sha256 cellar: :any_skip_relocation, sonoma:            "03e1b69ce253932da8b563800dc2ec71537163995a87bea1fe936816b0c468ce"
-    sha256 cellar: :any,                 arm64_linux:       "078df1d281ad59cb7d8aaef98c67c26d67ad270d5cb9de7fd1a404fa239c38e1"
-    sha256 cellar: :any,                 x86_64_linux:      "b85bba2a02f5b3c56e7fe7847febfc126669144db21f6d1f6a86f02e851cae06"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eb8437f41e7303b52475188d6111523fcd07b5128fd0713bf892dafc58b319a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f97be0533323e9116a537e2ea2ce8c100c01c4a272558b8de6918e5bfbdfa8be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "af026f7b7140f04d80acedd2cb8d22482f8f404c8990564a3deea8e901e49a86"
+    sha256 cellar: :any,                 arm64_linux:       "21e3988e870a2eef884658569139416993fc5b09ac39bfc4ec1b489ad7d2d54d"
+    sha256 cellar: :any,                 x86_64_linux:      "d186e07b0ccc145ccf38d0f3cf706a9e71124372351b23b56e3660ae7595f4fa"
   end
 
   depends_on "protobuf" => :build
