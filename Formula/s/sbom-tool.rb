@@ -5,8 +5,8 @@ class SbomTool < Formula
   # For now, we track newer git tags which haven't been marked as releases.
   # Upstream seems to have stopped responding to issues since deciding to not
   # accept contributions: https://github.com/microsoft/sbom-tool#contributing
-  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.11.tar.gz"
-  sha256 "2f0c4ad09e7d8cc1faa02dad900683bf3b3d43482de835950a9ce2e697a79107"
+  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.12.tar.gz"
+  sha256 "cb1116622aa38e352b02d7c968c3c50944d970edc52acb55e0a3368b2c465888"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
@@ -53,6 +53,9 @@ class SbomTool < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     args = %W[
       -b #{testpath}
       -bc #{testpath}
