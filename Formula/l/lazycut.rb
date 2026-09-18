@@ -1,8 +1,8 @@
 class Lazycut < Formula
   desc "Terminal-based video trimming TUI"
   homepage "https://github.com/ozemin/lazycut"
-  url "https://github.com/ozemin/lazycut/archive/refs/tags/v0.3.9.tar.gz"
-  sha256 "14c18eeef885c90a1660a85d760b0520d1d2256b38e4f5fe5b750f0d34baadd4"
+  url "https://github.com/ozemin/lazycut/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "ca435f59c1d16e71b9917f36f731887eba001d8a06813f02d1785306e92578c5"
   license "MIT"
 
   bottle do
