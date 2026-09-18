@@ -1,8 +1,8 @@
 class Ipmiutil < Formula
   desc "IPMI server management utility"
   homepage "https://ipmiutil.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-3.2.2.tar.gz"
-  sha256 "37f9bc8e6b18c1155e4d5ea38c87b83908b7acc7a44fbc5e3af493f26ef8b767"
+  url "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-3.2.3.tar.gz"
+  sha256 "d26cae7318f12ab1098ec6c8ef2f017722659dda26eb81ebc6b50edc0453867a"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "GPL-2.0-or-later"]
 
   bottle do
@@ -14,13 +14,13 @@ class Ipmiutil < Formula
     sha256 cellar: :any,                 x86_64_linux:      "c3feb63ed9d9e4e81dc831d01aedf1cf0245ea3320712947fd7934bfbf1a4997"
   end
 
-  on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   conflicts_with "renameutils", because: "both install `icmd` binaries"
+
+  deny_network_access!
 
   def install
     # Workaround for newer Clang
@@ -29,11 +29,9 @@ class Ipmiutil < Formula
     ENV["ac_cv_prog_cc_c23"] = "no"
 
     # Darwin does not exist only on PowerPC
-    if OS.mac?
-      inreplace "configure.ac", "test \"$archp\" = \"powerpc\"", "true"
-      system "autoreconf", "--force", "--install", "--verbose"
-    end
+    inreplace "configure.ac", "test \"$archp\" = \"powerpc\"", "true" if OS.mac?
 
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--disable-lanplus",
