@@ -22,6 +22,12 @@ class UutilsCoreutils < Formula
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     man1.mkpath
 
