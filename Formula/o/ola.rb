@@ -73,6 +73,14 @@ class Ola < Formula
     resolves "https://github.com/OpenLightingProject/ola/pull/1984"
   end
 
+  # Apply open PR to fix issues seen with newer Apple Clang
+  patch do
+    url "https://github.com/OpenLightingProject/ola/commit/e7ab77cc07071e97263a81315c8e554ab4e96e7d.patch?full_index=1"
+    sha256 "55fb61744e57e87c7da954d968712129296f916c0c2e5b0e12e7afecd3c68982"
+    type :unofficial
+    resolves "https://github.com/OpenLightingProject/ola/pull/2077"
+  end
+
   def install
     # Workaround to build with newer Protobuf due to Abseil C++ standard
     # Issue ref: https://github.com/OpenLightingProject/ola/issues/1879
