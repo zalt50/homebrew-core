@@ -90,6 +90,9 @@ class ArgyllCms < Formula
       s.gsub! "/usr/X11R6/include", HOMEBREW_PREFIX/"include"
       s.gsub! "/usr/X11R6/lib", HOMEBREW_PREFIX/"lib"
     end
+    (buildpath/"Jamtop").append_lines <<~JAM
+      CCFLAGS += -fno-strict-aliasing ;
+    JAM
 
     ENV["NUMBER_OF_PROCESSORS"] = ENV.make_jobs.to_s
 
