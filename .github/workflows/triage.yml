@@ -371,6 +371,7 @@ jobs:
             - label: CI-linux-self-hosted
               path: "Formula/.+/(\
                 graph-tool|\
+                libtensorflow|\
                 qt@5|\
                 qtwebengine|\
                 texlive\
