@@ -1,8 +1,8 @@
 class RvR < Formula
   desc "Declarative R package manager"
   homepage "https://a2-ai.github.io/rv-docs/"
-  url "https://github.com/A2-ai/rv/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "1cae38a9e4cc3eed0280f913ff9339d76f471b0d8acd983b8d662bf961c0c477"
+  url "https://github.com/A2-ai/rv/archive/refs/tags/v0.23.1.tar.gz"
+  sha256 "b2ecdbb0b686fe36624979f4dbf030c79409c6efd508fa36125ad192c10e1298"
   license "MIT"
 
   bottle do
