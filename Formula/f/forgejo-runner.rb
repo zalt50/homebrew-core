@@ -1,8 +1,8 @@
 class ForgejoRunner < Formula
   desc "Official Actions runner for Forgejo instances"
   homepage "https://code.forgejo.org/forgejo/runner"
-  url "https://code.forgejo.org/forgejo/runner/archive/v13.1.0.tar.gz"
-  sha256 "bdece01a00354bb29de4e36b6c72afae9ed571ed1fba1905d01bc8961de41819"
+  url "https://code.forgejo.org/forgejo/runner/archive/v13.2.0.tar.gz"
+  sha256 "9a7cc5bce2385feaa124213a7e000090dfac6e6a0177b04ae084e7dcb6ba46d5"
   license "GPL-3.0-or-later"
 
   livecheck do
