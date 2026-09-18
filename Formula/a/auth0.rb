@@ -7,12 +7,11 @@ class Auth0 < Formula
   head "https://github.com/auth0/auth0-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f4834b38955120becbe2dd21b2c551b8681723cd00951789327224f9cecba430"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f4834b38955120becbe2dd21b2c551b8681723cd00951789327224f9cecba430"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f4834b38955120becbe2dd21b2c551b8681723cd00951789327224f9cecba430"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f4834b38955120becbe2dd21b2c551b8681723cd00951789327224f9cecba430"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "99e56d2083c886640f148b19a9da21bc9be89fdfaafdd7b182a91d8b27337d09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1e466423bf95733bd130b9c611a97e1b7e424ec8b2c111d3ea5a83d7d41ffc40"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c47933861224aa88b1539f54b34cf9cb0d8586b0d5dd9675fdee1948baecc9b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c47933861224aa88b1539f54b34cf9cb0d8586b0d5dd9675fdee1948baecc9b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c47933861224aa88b1539f54b34cf9cb0d8586b0d5dd9675fdee1948baecc9b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4898f5f7995636be65835bc8e7870dd1e47e2f7b07521ac4c06922545cda409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6fbf9f641c361f5b9d2336f0ee3eb5ca281435471a090d01f0a01276d13d4738"
   end
 
   depends_on "go" => :build
