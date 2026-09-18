@@ -38,6 +38,9 @@ class Kiota < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     assert_match version.to_s, shell_output("#{bin}/kiota --version")
 
     info_output = shell_output("#{bin}/kiota info")
