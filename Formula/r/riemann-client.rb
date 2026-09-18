@@ -1,8 +1,10 @@
 class RiemannClient < Formula
   desc "C client library for the Riemann monitoring system"
   homepage "https://git.madhouse-project.org/algernon/riemann-c-client"
-  url "https://git.madhouse-project.org/algernon/riemann-c-client/archive/riemann-c-client-2.2.2.tar.gz"
-  sha256 "468c2d6cb4095e581927005a1dab13656f5a9355e4c68a3a25fceb5c6798a72f"
+  # Using git checkout to avoid Forgejo upgrades impacting git archive tarballs.
+  url "https://git.madhouse-project.org/algernon/riemann-c-client.git",
+      tag:      "riemann-c-client-2.2.2",
+      revision: "36cf5cde0648c8ae953f7636bedbf6fab02d58ef"
   license "EUPL-1.2"
   head "https://git.madhouse-project.org/algernon/riemann-c-client.git", branch: "main"
 
