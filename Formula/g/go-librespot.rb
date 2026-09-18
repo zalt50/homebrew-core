@@ -25,6 +25,12 @@ class GoLibrespot < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
