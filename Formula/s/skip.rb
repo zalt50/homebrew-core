@@ -4,6 +4,7 @@ class Skip < Formula
   url "https://github.com/skiptools/skipstone/archive/refs/tags/1.9.10.tar.gz"
   sha256 "440d4a9ac7ce2184001206d0121baebd79987412b59a084561c57158af0ce4c3"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
