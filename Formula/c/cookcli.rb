@@ -1,8 +1,8 @@
 class Cookcli < Formula
   desc "CLI-tool for cooking recipes formated using Cooklang"
   homepage "https://cooklang.org"
-  url "https://github.com/cooklang/cookcli/archive/refs/tags/v0.35.0.tar.gz"
-  sha256 "413aaea997cdc6afe5ff122d5673733aea2ff6314173342235b4e7120ea1c276"
+  url "https://github.com/cooklang/cookcli/archive/refs/tags/v0.36.0.tar.gz"
+  sha256 "868ea0e05be14bce98e4cc89028e3a5d8a3fc6b2131b10376103db8a46b644c6"
   license "MIT"
   head "https://github.com/cooklang/cookcli.git", branch: "main"
 
@@ -18,9 +18,15 @@ class Cookcli < Formula
   depends_on "node" => :build
   depends_on "rust" => :build
 
-  def install
-    # Install npm dependencies and build assets
+  deny_network_access!
+
+  def fetch
     system "npm", "install", *std_npm_args(prefix: false)
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
+  def install
+    # Build assets
     system "npm", "run", "build-css"
     system "npm", "run", "build-js"
 
@@ -49,8 +55,7 @@ class Cookcli < Formula
 
       ## Steps
 
-      1. Crack the eggs into a blender, then add the plain flour, milk and sea salt,
-      and blitz until smooth.
+      1. Crack the eggs into a blender, then add the plain flour, milk and sea salt, and blitz until smooth.
     MARKDOWN
     assert_match (testpath/"expected.md").read,
       shell_output("#{bin}/cook recipe read --format markdown pancakes.cook")
