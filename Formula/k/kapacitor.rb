@@ -20,9 +20,7 @@ class Kapacitor < Formula
     sha256 cellar: :any,                 x86_64_linux:      "88137b53a056ca917784c3d0e550e13e2e73d36666ff39ea5948de4fb0b18217"
   end
 
-  # TODO: unpin go@1.26 when kapacitor supports go 1.27
-  # ref: https://github.com/influxdata/kapacitor/pull/2902
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
   depends_on "pkgconf" => :build # for `pkg-config-wrapper`
   depends_on "rust" => :build
 
