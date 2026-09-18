@@ -54,6 +54,9 @@ class GnomeBuilder < Formula
     cause "https://gitlab.gnome.org/GNOME/gnome-builder/-/issues/2176"
   end
 
+  # FIXME: https://gitlab.gnome.org/GNOME/gnome-builder/-/work_items/2415
+  patch :DATA
+
   def install
     # Prevent Meson post install steps from running
     ENV["DESTDIR"] = "/"
@@ -82,3 +85,31 @@ class GnomeBuilder < Formula
     assert_equal "GNOME Builder #{version}", shell_output("#{bin}/gnome-builder --version").strip
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index 384a2e8de..fcbca4f97 100644
+--- a/meson.build
++++ b/meson.build
+@@ -351,6 +351,8 @@ else
+ endif
+ 
+ check_functions = [
++  ['HAVE_PIPE2', 'pipe2'],
++
+   # pty
+   ['HAVE_GRANTPT', 'grantpt'],
+   ['HAVE_POSIX_OPENPT', 'posix_openpt'],
+diff --git a/src/libide/threading/ide-unix-fd-map.c b/src/libide/threading/ide-unix-fd-map.c
+index 47f604727..0a69094dd 100644
+--- a/src/libide/threading/ide-unix-fd-map.c
++++ b/src/libide/threading/ide-unix-fd-map.c
+@@ -422,7 +422,7 @@ ide_unix_fd_map_steal_from (IdeUnixFDMap  *self,
+   return TRUE;
+ }
+ 
+-#ifdef __APPLE__
++#ifndef HAVE_PIPE2
+ static int
+ pipe2 (int      fd_pair[2],
+        unsigned flags)
