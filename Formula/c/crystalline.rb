@@ -1,10 +1,9 @@
 class Crystalline < Formula
   desc "Language Server Protocol implementation for Crystal"
   homepage "https://github.com/elbywan/crystalline"
-  url "https://github.com/elbywan/crystalline/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "7cab91e23bf2e7d87ab3e63c60a555507a00da709af1fad5fe55de44dadea71a"
+  url "https://github.com/elbywan/crystalline/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "8693e91c0f2afa9afa66885aa2bbdc971e539ff95e3d89b2f5d499d07acad02d"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 arm64_golden_gate: "895bccb231b8082e39eb21d2ebec8e0dab2ed7a4c75dc43116ade17cefde11bd"
@@ -23,8 +22,13 @@ class Crystalline < Formula
   depends_on "llvm@22"
   depends_on "pcre2"
 
+  deny_network_access!
+
+  def fetch
+    system "shards", "install", "--production", "--skip-postinstall"
+  end
+
   def install
-    system "shards", "install"
     system "crystal", "build", "./src/crystalline.cr",
       "--release", "--no-debug",
       "-Dpreview_mt",
