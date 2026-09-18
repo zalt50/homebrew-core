@@ -4,7 +4,7 @@ class CamlpStreams < Formula
   url "https://github.com/ocaml/camlp-streams/archive/refs/tags/v5.0.1.tar.gz"
   sha256 "ad71f62406e9bb4e7fb5d4593ede2af6c68f8b0d96f25574446e142c3eb0d9a4"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  revision 7
+  revision 8
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "266e098b61d0e188a5838a188ab8b762cb58525ac469bb96e707c531a958fd17"
@@ -21,7 +21,8 @@ class CamlpStreams < Formula
   depends_on "ocaml"
 
   def install
-    system "dune", "build", "@install"
+    # Use the release profile like opam so `Stream` matches copies bundled by other formulae
+    system "dune", "build", "-p", name, "@install"
     system "dune", "install", "--prefix=#{prefix}", "--libdir=#{lib}/ocaml", "--docdir=#{doc.parent}"
   end
 
