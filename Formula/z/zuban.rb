@@ -29,6 +29,12 @@ class Zuban < Formula
     end
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     (buildpath/"third_party/typeshed").install resource("typeshed")
 
