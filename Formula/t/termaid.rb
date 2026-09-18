@@ -7,6 +7,10 @@ class Termaid < Formula
   sha256 "0b183f139638015b0a8d52be214050187ea1e944c2c6f86b404c675c9e3c7ad6"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "a3e5c9c59391b234168e8e50aaeda31bb2342c04c073e61f9c7896940515bbee"
+  end
+
   depends_on "python@3.14"
 
   resource "markdown-it-py" do
