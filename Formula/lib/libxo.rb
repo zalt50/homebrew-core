@@ -1,16 +1,16 @@
 class Libxo < Formula
   desc "Allows an application to generate text, XML, JSON, and HTML output"
   homepage "https://juniper.github.io/libxo/libxo-manual.html"
-  url "https://github.com/Juniper/libxo/releases/download/2.1.0/libxo-2.1.0.tar.gz"
-  sha256 "5b4208199e5a785a3b5d7ee07e31788f037cf9acd6951f959d252c1e1b93c50c"
+  url "https://github.com/Juniper/libxo/releases/download/2.2.0/libxo-2.2.0.tar.gz"
+  sha256 "b72832d7c7108703f49750f92ccddbf904872adecc7be4cb67df7214b8d3d479"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 arm64_golden_gate: "b86ca3388c4a3eed5179117c8557edef4448618280d4e47f8e13911928582877"
-    sha256 arm64_tahoe:       "33bda6fc222a38b83f8425e376c25935c53253687d4a479ebcf76dfe99ba9193"
-    sha256 arm64_sequoia:     "eab5f1bf937d3250427ce79c5fe13e599d6b87f37190eb44fb7901a8fbbceb64"
-    sha256 arm64_linux:       "c29d085c614a5f90f9a03ebc6c8999ff04e79cbcd1f820243f68b3bccfe9c933"
-    sha256 x86_64_linux:      "66b6651c968f2264bad41def9222a5c7da9719b65914128c468aa71e9782f12b"
+    sha256 arm64_golden_gate: "04fbcf159682ab31753127e51891efdfc774b479b67845ab6d1e7d092def1079"
+    sha256 arm64_tahoe:       "d2d3c107a346674ff206ba48ae1f116466ed308bff306cd07c7a72ee3d6c57f1"
+    sha256 arm64_sequoia:     "e10688307bda5c4b611458951fb5927f1e65917703c5a29284df57a3ed683179"
+    sha256 arm64_linux:       "fc0f74429a07e841874fbe93339eec7a70d8f51284fa18d3a0cde5d20960740b"
+    sha256 x86_64_linux:      "7a4c0302db9e9f7c995355f7a4c849adda5028db8d6f300dd56c8fdca514e9b3"
   end
 
   depends_on "byacc" => :build # the XPath parser needs byacc, not bison
