@@ -6,12 +6,12 @@ class Libtensorflow < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d66d44689b24f0c21419ebc854ad28dea65b843bed5d1d2eb49376f5f55a7204"
-    sha256 cellar: :any,                 arm64_sequoia: "4646a8c41b89819998e8dd6295059a05ac10aa0b673c49f5538095170690f176"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d83cb061aa737094155f08a9f3d8e45b2500784782f8d44ded1e4d46da0e1c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b761769c0db1fa6602f8598e75e8253712af2920d77233e86e713e9293484444"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c472f1625afba190f4aabdcf329a0d2db793ad7a913a3803c3b45740c8036960"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_golden_gate: "608043ba636c34b13b604c5eaf9fcf3f3ab2ffe6a4dd59e8a5c4f9fe33bcddfc"
+    sha256 cellar: :any,                 arm64_tahoe:       "e30c7e633dd48606523ef247d765af4da4a171bde174dd765b1f9a75d364d253"
+    sha256 cellar: :any,                 arm64_sequoia:     "7eec009c5a3ba94e8e4146d2fb776db98a5187e35242a1d480d0df4bb24076f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2db70d228c438a1c29095f355ef567dfba73d2938381f0494b695e36a6295459"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2a5029ecf30a3694cddd932e66b6d6379ed8d573daecc54535fd082feba6601f"
   end
 
   depends_on "bazel@7" => :build
