@@ -1,8 +1,8 @@
 class AiCli < Formula
   desc "Generate images, video, audio, and text from the terminal"
   homepage "https://ai-cli.dev"
-  url "https://registry.npmjs.org/ai-cli/-/ai-cli-0.5.0.tgz"
-  sha256 "6157a1dfae3262aa93c84605861b674422f4bd025c73c47347ffe20e2868db0f"
+  url "https://registry.npmjs.org/ai-cli/-/ai-cli-0.5.1.tgz"
+  sha256 "07825c23811a1649dd15135a1471339b02ede11d3d98d9e79c0ce77bc1a5773d"
   license "Apache-2.0"
 
   bottle do
