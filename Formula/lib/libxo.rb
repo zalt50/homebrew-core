@@ -25,6 +25,8 @@ class Libxo < Formula
     resolves "https://github.com/Juniper/libxo/pull/119"
   end
 
+  deny_network_access!
+
   def install
     # Nothing uses libcrypto, but finding it adds -lcrypto to every link
     ENV["ac_cv_lib_crypto_MD5_Init"] = "no"

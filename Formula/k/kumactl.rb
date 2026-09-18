@@ -21,6 +21,12 @@ class Kumactl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/kumahq/kuma/v2/pkg/version.version=#{version}

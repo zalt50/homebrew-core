@@ -15,6 +15,12 @@ class Jscpd < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple", "--manifest-path", "rust/Cargo.toml"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "rust/crates/cpd")
   end

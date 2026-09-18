@@ -19,6 +19,8 @@ class Httrack < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     ENV.deparallelize
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}" if OS.mac?
