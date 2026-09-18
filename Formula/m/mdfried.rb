@@ -1,8 +1,8 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.22.5.tar.gz"
-  sha256 "366f904940ff5e4863ab85862cc126d111c16dd83578d2a144d91dac2a09e43b"
+  url "https://github.com/benjajaja/mdfried/archive/refs/tags/v0.22.6.tar.gz"
+  sha256 "143518acf0765e1cc4425b28b9d8059a6097ee08a6690dcf052e906b5a3947bb"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
@@ -28,6 +28,12 @@ class Mdfried < Formula
   on_macos do
     depends_on "gettext"
     depends_on "glib"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 
   def install
