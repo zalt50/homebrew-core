@@ -9,7 +9,7 @@ class Pygitup < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1ddad23f842adc4e720644e07509d5ec93f84285d5241d87aadafe5d80a13338"
+    sha256 cellar: :any_skip_relocation, all: "7567fadda303198bb57afd03cf840766c82f49df7b8c12eff9fd3c2805746165"
   end
 
   depends_on "python@3.14"
