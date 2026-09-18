@@ -1,8 +1,8 @@
 class Bashka < Formula
   desc "Static verification of installation bash scripts"
   homepage "https://github.com/dmtrKovalenko/bashka"
-  url "https://github.com/dmtrKovalenko/bashka/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "d25f80f00132287cd2c32d880848fffa14c648c838f3bd5bbd4b47e06f471200"
+  url "https://github.com/dmtrKovalenko/bashka/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "352436b9932fb98ab5aacf7344ef483220309eccd43886ed51ed06c81eba48d1"
   license "MIT"
   head "https://github.com/dmtrKovalenko/bashka.git", branch: "main"
 
