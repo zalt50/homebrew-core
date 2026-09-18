@@ -93,7 +93,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: setup-homebrew
-        uses: Homebrew/actions/setup-homebrew@f8d4222eb633e65c2a0157383cf80861fc7fae7f # 2026.09.07.1
+        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
           core: true
           cask: false
@@ -126,7 +126,7 @@ jobs:
         if: >
           github.actor != 'BrewTestBot' &&
           !contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
-        uses: Homebrew/actions/check-commit-format@f8d4222eb633e65c2a0157383cf80861fc7fae7f # 2026.09.07.1
+        uses: Homebrew/actions/check-commit-format@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           check_package_commit_format: >-
@@ -136,7 +136,7 @@ jobs:
             }}
 
       - name: Label pull request
-        uses: Homebrew/actions/label-pull-requests@f8d4222eb633e65c2a0157383cf80861fc7fae7f # 2026.09.07.1
+        uses: Homebrew/actions/label-pull-requests@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         if: always()
         with:
           token: ${{secrets.GITHUB_TOKEN}}
@@ -397,6 +397,10 @@ jobs:
             - label: shell-completion
               path: Formula/.+
               patch_content: '\n[-+].*(generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)'
+
+            - label: missing network sandbox
+              path: Formula/.+
+              missing_content: (allow|deny)_network_access!
 
   # Handle this separately since the `workflows` label affects bottle cache usage
   # and hardens us against cache poisoning attacks.

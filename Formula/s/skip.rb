@@ -35,8 +35,8 @@ class Skip < Formula
   end
 
   resource "skipsubmodule" do
-    url "https://github.com/skiptools/skip/archive/refs/tags/1.9.9.tar.gz"
-    sha256 "ee58cf11fdbe6b0791f068a2dd0fe584f019dc06b1c09418815f652bd5d1097d"
+    url "https://github.com/skiptools/skip/archive/refs/tags/1.9.10.tar.gz"
+    sha256 "2f9b0b50038ed5f088e6caca005639bcd35f5a76e78255241d79541ca030dcb2"
 
     livecheck do
       formula :parent

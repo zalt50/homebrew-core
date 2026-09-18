@@ -1,17 +1,16 @@
 class AiCli < Formula
   desc "Generate images, video, audio, and text from the terminal"
   homepage "https://ai-cli.dev"
-  url "https://registry.npmjs.org/ai-cli/-/ai-cli-0.4.4.tgz"
-  sha256 "7f3223514b0a2e9e6d1052c3d8a76522c47da1315953dc126e741e8e07f9c64e"
+  url "https://registry.npmjs.org/ai-cli/-/ai-cli-0.5.0.tgz"
+  sha256 "6157a1dfae3262aa93c84605861b674422f4bd025c73c47347ffe20e2868db0f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cb73a7643c71a4c31c6e411a1c5d42712d2e61728fe53fdee11d4b71f1ba864f"
-    sha256 cellar: :any, arm64_tahoe:       "2cd0f0d11ad0384d9247f967e22886d3c441c24453b158040b676aecc7c49b09"
-    sha256 cellar: :any, arm64_sequoia:     "2cd0f0d11ad0384d9247f967e22886d3c441c24453b158040b676aecc7c49b09"
-    sha256 cellar: :any, arm64_sonoma:      "2cd0f0d11ad0384d9247f967e22886d3c441c24453b158040b676aecc7c49b09"
-    sha256 cellar: :any, arm64_linux:       "3e3e64dfb4b0c2442aadc947ab0baf60a8bcc018df885e8b8dfa3ecd45305779"
-    sha256 cellar: :any, x86_64_linux:      "8fb2a594576e0d944a2d17cac81f3dd8c312bf97b0e1f5b4ee6abf0f507e48b4"
+    sha256 cellar: :any, arm64_golden_gate: "c1b05abd8ee15dfe09dd95e88c72468ca3c2e86d31832e6c4e20009c6548da7f"
+    sha256 cellar: :any, arm64_tahoe:       "c1b05abd8ee15dfe09dd95e88c72468ca3c2e86d31832e6c4e20009c6548da7f"
+    sha256 cellar: :any, arm64_sequoia:     "c1b05abd8ee15dfe09dd95e88c72468ca3c2e86d31832e6c4e20009c6548da7f"
+    sha256 cellar: :any, arm64_linux:       "5123fbfe9a3151efa1440beb3c3a4ceaffc8a47cf9849ae2793276e99d8e680e"
+    sha256 cellar: :any, x86_64_linux:      "f7a791114eb56eba073a3b09a5a7cd728c259b279d0a1dca6ed61f1813dd43e4"
   end
 
   depends_on "node"
