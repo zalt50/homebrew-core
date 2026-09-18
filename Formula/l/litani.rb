@@ -20,7 +20,6 @@ class Litani < Formula
 
   depends_on "coreutils" => :build
   depends_on "mandoc" => :build
-  depends_on "scdoc" => :build
   depends_on "gnuplot"
   depends_on "graphviz"
   depends_on "libyaml"
@@ -45,13 +44,26 @@ class Litani < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
+  # Not compatible with scdoc 1.11.5
+  # TODO: replace with Homebrew formula
+  resource "scdoc" do
+    url "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.4.tar.gz"
+    sha256 "e1a9c2000f855123a1a50c8f897073e0ee95fc41787431efe3864c2f1c2e7092"
+  end
+
   def install
     ENV.prepend_path "PATH", libexec/"vendor/bin"
     venv = virtualenv_create(libexec/"vendor", python3)
-    venv.pip_install resources
+    venv.pip_install resources.reject { |r| r.name == "scdoc" }
 
     libexec.install Dir["*"] - ["test", "examples"]
     (bin/"litani").write_env_script libexec/"litani", PATH: "\"#{libexec}/vendor/bin:${PATH}\""
+
+    resource("scdoc").stage do
+      system "make", "LDFLAGS=#{ENV.ldflags}", "PREFIX=#{buildpath}/scdoc"
+      system "make", "install", "PREFIX=#{buildpath}/scdoc"
+      ENV.append_path "PATH", buildpath/"scdoc/bin"
+    end
 
     cd libexec/"doc" do
       system libexec/"vendor/bin/python3", "configure"
