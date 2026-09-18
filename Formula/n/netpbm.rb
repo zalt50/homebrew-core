@@ -3,8 +3,8 @@ class Netpbm < Formula
   homepage "https://netpbm.sourceforge.net/"
   # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
   # for stable versions and matching revisions.
-  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "5319"
-  version "11.02.29"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "5358"
+  version "11.02.30"
   license "GPL-3.0-or-later"
   version_scheme 1
   compatibility_version 1
@@ -46,8 +46,8 @@ class Netpbm < Formula
   resource "html" do
     # Rolling release, latest revision also documents previous software versions
     # NOTE: Keep "revision" and "version" in sync
-    url "https://svn.code.sf.net/p/netpbm/code/userguide", revision: "5316"
-    version "5316"
+    url "https://svn.code.sf.net/p/netpbm/code/userguide", revision: "5348"
+    version "5348"
 
     livecheck do
       url "https://sourceforge.net/p/netpbm/code/HEAD/log/?path=/userguide"
@@ -55,6 +55,8 @@ class Netpbm < Formula
       strategy :page_match
     end
   end
+
+  deny_network_access!
 
   def install
     cp "config.mk.in", "config.mk"
