@@ -9,7 +9,7 @@ class Katago < Formula
     "MIT",
     "CC0-1.0", # g170 resources
   ]
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
