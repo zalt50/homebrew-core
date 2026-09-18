@@ -1,10 +1,9 @@
 class Papilo < Formula
   desc "Parallel Presolve for Integer and Linear Optimization"
-  homepage "https://www.scipopt.org"
-  url "https://github.com/scipopt/papilo/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "b7c70e754c23f8bef5843ac02b82f9dc1707a653c867474123e635951305af88"
+  homepage "https://www.scipopt.org", browsed: "2026-09-18"
+  url "https://github.com/scipopt/papilo/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "3ab6e4a41667aa1edc87697dfcc0dc7d517d047d4366abafd8858d22e02d4f2f"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
 
   bottle do
@@ -23,6 +22,8 @@ class Papilo < Formula
   depends_on "gmp"
   depends_on "openblas"
   depends_on "tbb"
+
+  deny_network_access!
 
   def install
     cmake_args = %w[
