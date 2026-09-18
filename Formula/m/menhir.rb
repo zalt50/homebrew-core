@@ -4,7 +4,7 @@ class Menhir < Formula
   url "https://gitlab.inria.fr/fpottier/menhir/-/archive/20260209/menhir-20260209.tar.bz2"
   sha256 "06f6e571aadd7d66cc3da808052d9a65f8be96fe27e0ad7e57bbbf8c20f4a832"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "fe973dd70648175dffa0c4486bc6062d3033b42a7a59c3a024095fc8ab0273b0"
@@ -21,7 +21,8 @@ class Menhir < Formula
   depends_on "ocaml"
 
   def install
-    system "dune", "build", "@install"
+    # Use the release profile like opam so `menhirLib` matches copies bundled by other formulae
+    system "dune", "build", "--release", "@install"
     system "dune", "install", "--prefix=#{prefix}", "--mandir=#{man}"
   end
 
