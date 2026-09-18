@@ -169,6 +169,9 @@ class Gnuradio < Formula
     venv.pip_install resources
     ENV.prepend_create_path "PYTHONPATH", venv.root/site_packages
 
+    # Homebrew-specific workaround due to sandbox usage breaking GTK functionality
+    inreplace "grc/CMakeLists.txt", "; gi.require_version('Gtk', '3.0');", "; import sys; sys.exit();" if OS.mac?
+
     # Avoid references to the Homebrew shims directory
     inreplace "CMakeLists.txt" do |s|
       s.gsub! "${CMAKE_C_COMPILER}", ENV.cc
