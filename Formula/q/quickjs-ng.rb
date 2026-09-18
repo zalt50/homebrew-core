@@ -20,6 +20,8 @@ class QuickjsNg < Formula
 
   conflicts_with "quickjs", because: "both install a `qjs` binary"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
       "-DBUILD_SHARED_LIBS=ON",
