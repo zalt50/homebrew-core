@@ -14,6 +14,12 @@ class Lazycut < Formula
   depends_on "ffmpeg"
   depends_on :macos
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end
