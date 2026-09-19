@@ -26,10 +26,12 @@ class Ola < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c1b878ce49a01d1399f48a9702e434ecfe9002f7063e47d2a180a5cea233e07e"
-    sha256 arm64_sequoia: "c203bbea61f1b1138528e241c6d69721f34ea05fa3fb5dfd17fc337977cec805"
-    sha256 arm64_linux:   "c76fc452b73629354c05445b9ee87c1bed19d7344807f30790c122d40026d615"
-    sha256 x86_64_linux:  "12e68e44f1514a99f4b40315bf3a87784bd7cca680deebb4d12c248dfc5fed32"
+    rebuild 1
+    sha256 arm64_golden_gate: "780433d941b21616c4e714356aa0b3eebe1c89664e7324b2e6a0a5b4ef3c8911"
+    sha256 arm64_tahoe:       "cee7cce0bf4c66b9d8c6e75bbf73f86fb984c0f80f5d2752f5b4dcd1a6aa9424"
+    sha256 arm64_sequoia:     "0986e282c4872f092ac572a9ce5982800cbc1e6edb94e0b2b4be5ee4626f505c"
+    sha256 arm64_linux:       "ce644d9db4f7ec3c99a93e8dae1e0be8ef3068af6efd4dbc6c77adf9cf66a173"
+    sha256 x86_64_linux:      "877174abcf99c6bd20c06b67aab0a1fc7d4916bc48528cbc86a6f0842219de71"
   end
 
   depends_on "autoconf" => :build
