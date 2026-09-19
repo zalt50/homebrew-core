@@ -1,10 +1,10 @@
 class Gismo < Formula
   desc "C++ library for isogeometric analysis (IGA)"
   homepage "https://gismo.github.io"
-  url "https://github.com/gismo/gismo/archive/refs/tags/v25.07.0.tar.gz"
-  sha256 "6d20f0b43ed80d3bf34fcabdac10a6bed6afbb314239dcbd0495a362a87aca9a"
+  url "https://github.com/gismo/gismo/archive/refs/tags/v26.09.0.tar.gz"
+  sha256 "1274f62cb448f098cb793a44feb9e0b7f053ef6ef96b4eedb2dd6b4c67c92085"
   license "MPL-2.0"
-  head "https://github.com/gismo/gismo.git", branch: "stable"
+  head "https://github.com/gismo/gismo.git", branch: "dev"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -37,6 +37,8 @@ class Gismo < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[
