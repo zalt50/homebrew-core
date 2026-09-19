@@ -1,8 +1,8 @@
 class AgentManager < Formula
   desc "Terminal UI to manage AI coding-agent tmux sessions"
   homepage "https://github.com/YoanWai/agent-manager"
-  url "https://github.com/YoanWai/agent-manager/archive/refs/tags/v0.37.0.tar.gz"
-  sha256 "be00eb6b9fe7dfcf3c5ccfce0bd0823c7cb460fbcaf725cd148c54e8d213df80"
+  url "https://github.com/YoanWai/agent-manager/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "55b74bfac8507542ed7c6d9d79ee1ca52bb3f7e9eec8ba40cf0cb332e532fb64"
   license "Apache-2.0"
   head "https://github.com/YoanWai/agent-manager.git", branch: "main"
 
