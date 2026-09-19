@@ -1,8 +1,8 @@
 class Zlint < Formula
   desc "X.509 Certificate Linter focused on Web PKI standards and requirements"
   homepage "https://zmap.io/"
-  url "https://github.com/zmap/zlint/archive/refs/tags/v3.7.1.tar.gz"
-  sha256 "90b501bafd7533fc0831643ddd6d595751f8d0a1403d0bf0201a2a18da712eb8"
+  url "https://github.com/zmap/zlint/archive/refs/tags/v3.7.2.tar.gz"
+  sha256 "9fcb6ce1de638ad7a5dcb86b8d7453f7c731895c79957413dcf543c79e7dad65"
   license "Apache-2.0"
   head "https://github.com/zmap/zlint.git", branch: "master"
 
@@ -18,10 +18,14 @@ class Zlint < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "v3"
+  end
+
   def install
-    cd "v3" do
-      system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/zlint"
-    end
+    system "go", "build", "-C", "v3", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/zlint"
   end
 
   test do
