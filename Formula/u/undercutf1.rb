@@ -49,9 +49,24 @@ class Undercutf1 < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     assert_match version.to_s, shell_output("#{bin}/undercutf1 --version")
 
-    output = shell_output("#{bin}/undercutf1 import 2026")
+    # Run in its own PTY, as .NET opens `/dev/tty` and gets stopped by SIGTTOU in the background
+    require "pty"
+    require "io/console"
+
+    output = ""
+    PTY.spawn(bin/"undercutf1", "import", "2026") do |r, _w, _pid|
+      r.winsize = [80, 43]
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty end
+      end
+    end
     assert_match "Received HTTP response headers after", output
   end
 end
