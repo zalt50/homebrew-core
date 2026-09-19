@@ -8,14 +8,11 @@ class FluidSynth < Formula
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "24672386e8d65df739452937d7a7352ec021fbbef738150ffd372d01d232b725"
-    sha256 cellar: :any, arm64_tahoe:       "d8b747a9ff97a161f4070893f4696b0b38d97b4df330cbc65a928310d59db070"
-    sha256 cellar: :any, arm64_sequoia:     "a4e9f7ee53c7686e9754f9cda183fd3c0c67016066fe94d5d95e51dbcf55e347"
-    sha256 cellar: :any, arm64_sonoma:      "2117d00c6144072495f32a990651eb26c6035cb9997d31485e47771208623f79"
-    sha256 cellar: :any, sonoma:            "fde767271878df2ac852e8441e21c4bc6fd50a38ce6498c3be2b90c64d625d48"
-    sha256 cellar: :any, arm64_linux:       "f75a056938d32df69fce52ab30269a10e246c62446563459925c50f72bb719e6"
-    sha256 cellar: :any, x86_64_linux:      "aca3051684229e9c139c1d3f01e685de2931d2ef82029d0fb63747ed84a25616"
+    sha256 cellar: :any, arm64_golden_gate: "094ebbed50819c923aa5844bdf6d54f8d64515bd8230468e48655baa5657ea3c"
+    sha256 cellar: :any, arm64_tahoe:       "81b93ae40985f83b1e7842f7e1df4e4cc9fd7ab2d3552dc87950a22a61e22dd2"
+    sha256 cellar: :any, arm64_sequoia:     "c7ffeb01347c39ce93345130890348220c3e97b54413dc30f8c525cf98e63acc"
+    sha256 cellar: :any, arm64_linux:       "21dffdc0d49a9ba292aa8ba7364c87468bf8ac88061741344012336ae10c2cf6"
+    sha256 cellar: :any, x86_64_linux:      "8eb3a652b6ebc7d13951db7256246d9ff5b9005a3b9c3d9c9dfa112437a3b765"
   end
 
   depends_on "cmake" => :build
