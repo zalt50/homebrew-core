@@ -24,6 +24,12 @@ class Wstunnel < Formula
 
   depends_on "rust" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "wstunnel-cli")
   end
