@@ -23,6 +23,8 @@ class Pnetcdf < Formula
 
   uses_from_macos "m4" => :build
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--enable-shared",
