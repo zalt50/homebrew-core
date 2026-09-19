@@ -16,6 +16,14 @@ class Speech < Formula
   depends_on macos: :sequoia
 
   def install
+    # Workaround to build with newer metal until mlx-swift 0.32.x with
+    # https://github.com/ml-explore/mlx-swift/commit/ab924c82ead3b970caaa1c0ac11171de23f0305a
+    if OS.mac? && MacOS.version >= :golden_gate
+      inreplace "Package.swift",
+                '"https://github.com/ml-explore/mlx-swift", from: "0.30.0")',
+                '"https://github.com/ml-explore/mlx-swift", revision: "ab924c82ead3b970caaa1c0ac11171de23f0305a")'
+    end
+
     system "swift", "build", *std_swift_args
     system "./scripts/build_mlx_metallib.sh", "release"
 
