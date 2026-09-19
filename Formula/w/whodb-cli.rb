@@ -1,8 +1,8 @@
 class WhodbCli < Formula
   desc "Database management CLI with TUI interface, MCP server support, AI, and more"
   homepage "https://whodb.com/"
-  url "https://github.com/clidey/whodb/archive/refs/tags/0.128.0.tar.gz"
-  sha256 "cf295c1d0495898e91c7322567384644abf2bde99d909520222e704aa677f1b8"
+  url "https://github.com/clidey/whodb/archive/refs/tags/0.129.0.tar.gz"
+  sha256 "b2cada31f6c2b324585572b00099c7cee78cd1d57eadc2a04cd67dcf3cd3b046"
   license "Apache-2.0"
   head "https://github.com/clidey/whodb.git", branch: "main"
 
@@ -12,11 +12,11 @@ class WhodbCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "53e150e0b125babd9f399565e5eb448fc8d319f685c7198a43205cf14333b8ba"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6c2861b9937f71f0ed5028445ceff8ec27583f32b564a0f0fa33fe3b78e3421d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d448761b7eb88aff901cb150fa79353e4624944ed6a42944a55d247b2ceff59"
-    sha256 cellar: :any,                 arm64_linux:       "917df24676f2a08037a08b88c4e6276256db0443d9de1ffb8a2d38aa5e3150d9"
-    sha256 cellar: :any,                 x86_64_linux:      "ca6e24894853cccb2c20859ac27f8864c622e5edb5e162589161581a74d82fe7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a6352983afe7cb73a7d5758b596f90ae65e90233353af63f13750bdbedc6297"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bd705ab87cc82f4e0ad33305687f7d1fa9549cb2296c5209767f250c62a37a68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "af419fbf4fc44144d57a825f9ffe56b4ed0a1bb0ee2a2db6c2006da784b86c49"
+    sha256 cellar: :any,                 arm64_linux:       "56b4df808553be1bb983619b4e1c84abc43039ad5a428366a0cc0e157cf14334"
+    sha256 cellar: :any,                 x86_64_linux:      "79e5d7ae4eae5873416ac393e449889a7cd827f24bf3f693a87762a5141fde5b"
   end
 
   depends_on "go" => :build
