@@ -10,7 +10,7 @@ class TelegramSend < Formula
   head "https://github.com/rahiel/telegram-send.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dfa065f3430f0290cbd1699488b25e97d67e592f7ce6d1d844771a8c00f6d5bf"
+    sha256 cellar: :any_skip_relocation, all: "e2c581c3c6626471050fd1191a67711598b200f8618871432013634ccc42b025"
   end
 
   depends_on "certifi" => :no_linkage
