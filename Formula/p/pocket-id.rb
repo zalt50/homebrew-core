@@ -20,8 +20,14 @@ class PocketId < Formula
   depends_on "node" => :build
   depends_on "pnpm" => :build
 
-  def install
+  allow_network_access! :test
+
+  def fetch
     system "pnpm", "with", "current", "--dir", "frontend", "install", "--frozen-lockfile", "--ignore-scripts"
+    system "go", "mod", "download", "-C", "backend/cmd"
+  end
+
+  def install
     system "pnpm", "with", "current", "--dir", "frontend", "run", "build"
     system "go", "build", "-C", "backend/cmd", *std_go_args(output: bin/"pocket-id")
   end
@@ -49,7 +55,7 @@ class PocketId < Formula
 
     system "curl", "-s", "--fail", "http://127.0.0.1:#{port}/health"
   ensure
-    Process.kill("TERM", pid) if pid
-    Process.wait(pid) if pid
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
