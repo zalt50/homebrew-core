@@ -1,10 +1,9 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://www.nickg.me.uk/nvc/"
-  url "https://github.com/nickg/nvc/releases/download/r1.22.1/nvc-1.22.1.tar.gz"
-  sha256 "8cde9a11603dc512e40f12a349a1d3b1bef4a6fdcec9bf0ab0f790899390c56f"
+  url "https://github.com/nickg/nvc/releases/download/r1.23.0/nvc-1.23.0.tar.gz"
+  sha256 "10dab7ea016d8a2f7c4ea74a438b6c999423007aa69c0568fedb59564440b3e2"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 arm64_golden_gate: "ecb7d20decd2c9f716142d8e97136ccac38eac0018a5fc3708844fe3425b12c3"
@@ -47,8 +46,12 @@ class Nvc < Formula
       system "../configure", "--with-llvm=#{formula_opt_bin("llvm")}/llvm-config",
                              "--disable-silent-rules",
                              *std_configure_args
-      system "make", "V=1"
-      system "make", "V=1", "install"
+      args = ["V=1"]
+      # Use a two-level namespace for plugins while retaining runtime symbol lookup.
+      # TODO: Remove this override when https://github.com/nickg/nvc/issues/1663 is fixed upstream.
+      args << "SHLIB_LDFLAGS=-shared -undefined dynamic_lookup -Wl,-no_fixup_chains" if OS.mac?
+      system "make", *args
+      system "make", *args, "install"
     end
 
     (pkgshare/"examples").install "test/regress/wait1.vhd"
