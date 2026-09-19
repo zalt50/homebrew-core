@@ -13,11 +13,11 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6897b4ecc19eaa1aa2cc0152bb3c1100411aa721aab8cf161a8bb865adf60670"
-    sha256 cellar: :any, arm64_tahoe:       "24d1584793a4667979e97947610f4c88fab3d86462d65d927a23cdf4e87cdf27"
-    sha256 cellar: :any, arm64_sequoia:     "8388c767bc5f5bb555d99a478d3b89adc11b89df78172df16e3bd5ecaa46f338"
-    sha256               arm64_linux:       "c54bc815c2018ac117d4402a539eb05657bb991c64f580cc60c11fb58226c8f3"
-    sha256               x86_64_linux:      "13a73dbdb1014babb372dcd0ac9f5be2a237fc3c056161e0e7f7e5edc94a1cf0"
+    sha256 cellar: :any, arm64_golden_gate: "954c1a6c041480f18a6c2bc48f6a397eeda263860d9f83cc5c475b5d1a11675e"
+    sha256 cellar: :any, arm64_tahoe:       "64dfe69bfd2a0e6eb1613aea7b662b650bb5be5b184166e18506fa4f6a8a3a79"
+    sha256 cellar: :any, arm64_sequoia:     "fcf443659b0fb8f952587fc16eb36d9f1799a16db39572ebb7710cf0aab7fd24"
+    sha256               arm64_linux:       "225ef78281ec665813905864b88737c172d99aadeaeac8f5a7850e1662ae45dc"
+    sha256               x86_64_linux:      "9011b061985ca4090a1366f7110ab6679cd6c77e22e2fdc15e07c26c6e83c5f0"
   end
 
   depends_on "cmake" => [:build, :test]
