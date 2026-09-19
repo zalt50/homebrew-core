@@ -10,7 +10,7 @@ class ZabbixCli < Formula
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7c04aae0e80559c00fbe49c32eaa943897806f58bfa29a787223a76aef75f344"
+    sha256 cellar: :any_skip_relocation, all: "248641217d73e09e040b62f7303bae3c5beb6e586fabb2d521ab517b2955d269"
   end
 
   depends_on "certifi" => :no_linkage
