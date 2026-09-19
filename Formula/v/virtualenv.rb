@@ -3,13 +3,13 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/f9/7c/4b6745cc7e3328c0d298320aca914c707ce77224fb8aa486cf8103341f83/virtualenv-21.7.11.tar.gz"
-  sha256 "f830d4ac9806704d86b50fd100aeda2ea45ea505b88c86ba7a97d994b637f496"
+  url "https://files.pythonhosted.org/packages/40/db/2aae91b0237f5f6b1d1229bf4953f3b8bdd2c215312ad2d2b3f57fd831df/virtualenv-21.7.12.tar.gz"
+  sha256 "5b6576455f10637067cc20c3f9f7c677575eecaa8c95fc049db2f650652befd5"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3c369b318f40f7bf4afca9777f876ed06fccb8402672f2e90e0a0de9e19de253"
+    sha256 cellar: :any_skip_relocation, all: "b270a3fd6e2023a1c6ccc372c7102e5ad6921a4bf6d93195d62d11da94347380"
   end
 
   depends_on "python@3.14"
@@ -25,13 +25,13 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
-    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
+    url "https://files.pythonhosted.org/packages/89/24/92d90bebedf197eb15b144367ce6fd4ad2de571927cd09dde190a36db8fc/platformdirs-4.11.10.tar.gz"
+    sha256 "9cd351c078ccf7dda1fdc5f8ccb9d8f5258984c63990e6df3627dde0b70b51d0"
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/91/96/0f93e27c9f60a650838f2118159aa115fd5732c0716247917b7ba7ede665/python_discovery-1.6.0.tar.gz"
-    sha256 "6393b4eae1be8b2182670635e7baff89ac21cb9f8e86fd1ff40c7b1144febb4c"
+    url "https://files.pythonhosted.org/packages/0c/57/250bd238b966cece44328235eb85290045d059265fdaf7527a3a958123db/python_discovery-1.6.1.tar.gz"
+    sha256 "cf87d3627dfb4412437fdd5b13eae402607722998d21567993aedbc59b23c15e"
   end
 
   def install
