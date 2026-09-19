@@ -11,6 +11,10 @@ class Taoup < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "4b77515d2f39a289e75887ad37d90282f02e424c936767c9eafa146bfea836af"
+  end
+
   depends_on "ruby"
 
   resource "ansi" do
