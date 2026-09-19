@@ -26,9 +26,6 @@ class Dict < Formula
   end
 
   def install
-    # Workaround for Xcode 14.3
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
-
     ENV["ac_cv_search_yywrap"] = "yes"
     ENV["LIBTOOL"] = "glibtool"
     system "./configure", "--mandir=#{man}",
@@ -43,6 +40,20 @@ class Dict < Formula
   end
 
   test do
-    assert_match "brewing or making beer.", shell_output("#{bin}/dict brew")
+    pipe_output("#{bin}/dictfmt -j -u local -s Test test", ":homebrew:The missing package manager\n", 0)
+    (testpath/"dictd.conf").write <<~EOS
+      database test { data "#{testpath}/test.dict" index "#{testpath}/test.index" }
+    EOS
+
+    port = free_port
+    pid = spawn sbin/"dictd", "--config", testpath/"dictd.conf", "--port", port.to_s,
+                "--listen-to", "127.0.0.1", "-d", "nodetach"
+    begin
+      sleep 2
+      assert_match "The missing package manager", shell_output("#{bin}/dict -h 127.0.0.1 -p #{port} homebrew")
+    ensure
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end
