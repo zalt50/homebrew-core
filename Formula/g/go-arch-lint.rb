@@ -6,6 +6,14 @@ class GoArchLint < Formula
   license "MIT"
   head "https://github.com/fe3dback/go-arch-lint.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2a72603e4d4a0e8dc009f2c264ed0557c6eb573debca40e598543c42f771488"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d2a72603e4d4a0e8dc009f2c264ed0557c6eb573debca40e598543c42f771488"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d2a72603e4d4a0e8dc009f2c264ed0557c6eb573debca40e598543c42f771488"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "955c8b0290ed8797b9103b98545e4d7fb725b202310e032566bc371f4c57fcaf"
+    sha256 cellar: :any,                 x86_64_linux:      "c86f24f10f8b9df3f218a516d79db11f4fbeb6b020f605a5aaed7e830aa682f0"
+  end
+
   depends_on "go"
 
   deny_network_access!
