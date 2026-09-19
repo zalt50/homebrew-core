@@ -47,6 +47,13 @@ class ZigAT015 < Formula
     type :unofficial
   end
 
+  # Fix `INFINITY` with macOS 27 SDK `math.h`.
+  #   https://github.com/llvm/llvm-project/pull/164348
+  patch do
+    file "Patches/zig/0.15-float-infinity-nan.patch"
+    type :unofficial
+  end
+
   def install
     # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.
     # This will likely be fixed upstream by https://github.com/ziglang/zig/pull/16062.
