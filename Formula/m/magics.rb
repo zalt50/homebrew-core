@@ -37,10 +37,14 @@ class Magics < Formula
     depends_on "harfbuzz"
   end
 
+  deny_network_access!
+
   def install
+    # Use --define-prefix to avoid saving Cellar paths in CMake config
     args = %w[
       -DENABLE_METVIEW=ON
       -DENABLE_TESTS=OFF
+      -DPKG_CONFIG_ARGN=--define-prefix
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
