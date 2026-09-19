@@ -9,12 +9,11 @@ class MailDeduplicate < Formula
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "01ad1da3924fb5a0ec588766c7af58ce1fd75a8ed3f679910f8957fd99b9f100"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "57703fc7c9f2a2f3c7e1eed80bcc955dc229e2175b5693d5d2cbca182addd2c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "57703fc7c9f2a2f3c7e1eed80bcc955dc229e2175b5693d5d2cbca182addd2c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "57703fc7c9f2a2f3c7e1eed80bcc955dc229e2175b5693d5d2cbca182addd2c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5c9cc70f9ed98c3825498e4bfbaf0dfb93c71b6db03df5943c28eb2b88bc3505"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5c9cc70f9ed98c3825498e4bfbaf0dfb93c71b6db03df5943c28eb2b88bc3505"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b759090653796e95645bbac0666584c5e8d90f7bcedbe9f6906a2758ecd25f92"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b759090653796e95645bbac0666584c5e8d90f7bcedbe9f6906a2758ecd25f92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b759090653796e95645bbac0666584c5e8d90f7bcedbe9f6906a2758ecd25f92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "21aa6c36e50dd039ffe68b51cc59f8380cc508386227187563c444462d439d6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "21aa6c36e50dd039ffe68b51cc59f8380cc508386227187563c444462d439d6c"
   end
 
   depends_on "rust" => :build # for click_extra > uv_build
