@@ -1,8 +1,8 @@
-class PerconaServer < Formula
+class PerconaServerAT84 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-9.7/Percona-Server-9.7.1-1/source/tarball/percona-server-9.7.1-1.tar.gz"
-  sha256 "cfa835f66b415a46e64420d515096281f42a7bcf189bda0f6c434ea5a55d63ee"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.11-11/source/tarball/percona-server-8.4.11-11.tar.gz"
+  sha256 "2fb90e235c25183d73c972cba481a32ea2d90cefca0669fe0786defc2acdfa18"
   license "BSD-3-Clause"
 
   livecheck do
@@ -21,12 +21,17 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "0045cca2c2eccf444da4414abc7852aadc45a9f9b5b20cd607bd047fd50a13e2"
-    sha256 arm64_tahoe:       "638e6c6845acc90b31e7469dd07decd8be399e0751e9569e35aae9c80c232796"
-    sha256 arm64_sequoia:     "e7e618e2bb9852646b0236a8cd8b4fbe053033e282e790ccd9b7b68d5fb82cfe"
-    sha256 arm64_linux:       "69a0da2a8f5974d021cd2898736386da347743b1b357cf38c44e632bb6a8f125"
-    sha256 x86_64_linux:      "f8255c610cd49fece67576ecafdeb6562931e4c7ab26984b961a92973c5b116e"
+    sha256 arm64_golden_gate: "a5ad4f76342caa7e6d0e42935bd7c3bf453ebe5fb381083172dee722d7695cfc"
+    sha256 arm64_tahoe:       "9b7fc9786703b525fa0309b9d6fdcd665444811e5abe0374908d9ac55cb9e195"
+    sha256 arm64_sequoia:     "0dd17b8bf40fe999cc8af0a7826bc2d1f5b14f58e859e116b047d588d26ee42f"
+    sha256 arm64_linux:       "b093a5dd063614954d2639d0334ee3dc1188e844e72450cc75f5e281304a1a79"
+    sha256 x86_64_linux:      "ac957f5cd1039665ddb24bd41723836ff1e325b3db0830a62948459d4d4c691e"
   end
+
+  keg_only :versioned_formula
+
+  # https://www.percona.com/services/policies/percona-software-support-lifecycle
+  deprecate! date: "2032-04-30", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
@@ -51,19 +56,10 @@ class PerconaServer < Formula
     depends_on "libtirpc"
   end
 
-  conflicts_with "mariadb", "mysql", because: "percona, mariadb, and mysql install the same binaries"
-
   # https://github.com/percona/percona-server/blob/8.4/cmake/os/Linux.cmake
   fails_with :gcc do
     version "9"
     cause "Requires GCC 10 or newer"
-  end
-
-  # Backport commit from MySQL to fix build on newer Clang
-  patch do
-    url "https://github.com/mysql/mysql-server/commit/b006e3af4b6b1b6f7fdf7b91a00c6293c4f292b1.patch?full_index=1"
-    sha256 "e99e7e63d8581cbfb513a2dd43f36f8da0e3c1bf26e512156847c1036280adf3"
-    type :backport
   end
 
   # Patch out check for Homebrew `boost`.
@@ -87,9 +83,6 @@ class PerconaServer < Formula
 
     # Find Homebrew OpenLDAP instead of the macOS framework
     inreplace "cmake/ldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
-
-    # `pthread_self` is only pulled in by a `HAVE_SCHED_GETCPU`-guarded include
-    inreplace "storage/rocksdb/ib_ut0counter.h", "#include <cstdint>", "#include <cstdint>\n#include <pthread.h>"
 
     # Disable ABI checking
     inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
@@ -120,8 +113,6 @@ class PerconaServer < Formula
       -DWITH_SSL=system
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
-      -DWITH_MYSQL_SERVER_TELEMETRY=OFF
-      -DWITH_MYSQL_CLIENT_TELEMETRY=OFF
       -DWITH_UNIT_TESTS=OFF
       -DROCKSDB_BUILD_ARCH=#{ENV.effective_arch}
       -DALLOW_NO_ARMV81A_CRYPTO=ON
