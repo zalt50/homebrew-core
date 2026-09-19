@@ -20,6 +20,14 @@ class PerconaServerAT84 < Formula
     end
   end
 
+  bottle do
+    sha256 arm64_golden_gate: "a5ad4f76342caa7e6d0e42935bd7c3bf453ebe5fb381083172dee722d7695cfc"
+    sha256 arm64_tahoe:       "9b7fc9786703b525fa0309b9d6fdcd665444811e5abe0374908d9ac55cb9e195"
+    sha256 arm64_sequoia:     "0dd17b8bf40fe999cc8af0a7826bc2d1f5b14f58e859e116b047d588d26ee42f"
+    sha256 arm64_linux:       "b093a5dd063614954d2639d0334ee3dc1188e844e72450cc75f5e281304a1a79"
+    sha256 x86_64_linux:      "ac957f5cd1039665ddb24bd41723836ff1e325b3db0830a62948459d4d4c691e"
+  end
+
   keg_only :versioned_formula
 
   # https://www.percona.com/services/policies/percona-software-support-lifecycle
