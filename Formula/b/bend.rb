@@ -6,6 +6,10 @@ class Bend < Formula
   license "Apache-2.0"
   head "https://github.com/bendlang/bend.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "033c2025b7f1b8634c12fc43f5aa58fd1d8cc08a9bf6365f24513201d5e88561"
+  end
+
   depends_on "bun"
 
   on_linux do
