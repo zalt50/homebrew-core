@@ -1,13 +1,28 @@
 class GnuApl < Formula
   desc "GNU implementation of the programming language APL"
   homepage "https://www.gnu.org/software/apl/"
-  # NOTE: keep url and mirrors even if they don't exist
-  url "https://ftpmirror.gnu.org/apl/apl-1.9.tar.gz"
-  mirror "https://ftpmirror.gnu.org/apl/apl-1.9/apl-1.9.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/apl/apl-1.9.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/apl/apl-1.9/apl-1.9.tar.gz"
-  sha256 "291867f1b1937693abb57be7d9a37618b0376e3e2709574854a7bbe52bb28eb8"
   license "GPL-3.0-or-later"
+
+  stable do
+    # NOTE: keep url and mirrors even if they don't exist
+    url "https://ftpmirror.gnu.org/apl/apl-2.0.tar.gz"
+    mirror "https://ftpmirror.gnu.org/apl/apl-2.0/apl-2.0.tar.gz"
+    mirror "https://ftp.gnu.org/gnu/apl/apl-2.0.tar.gz"
+    mirror "https://ftp.gnu.org/gnu/apl/apl-2.0/apl-2.0.tar.gz"
+    sha256 "24bbb744fce47e62837234a053bdeecee51b9ea61c82c79f7cc191bc6a54c0a1"
+
+    # TODO: Remove with patch
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+
+    # Apply Debian patch to move integral.py
+    patch do
+      url "https://salsa.debian.org/debian/gnu-apl/-/raw/9553c1ebcfa46cdfe3717378ede5f37dcaceaf0f/debian/patches/0008-move-integral.py.patch"
+      sha256 "5895566af3b0c7f69dccbea06dac99cb463ff213c4d1daf4d9a157f36cf795b9"
+      type :backport # changes included upstream
+    end
+  end
 
   bottle do
     sha256 arm64_tahoe:    "ac779118bbc31c8c7d6a804a4cd19cc34d664fad471408988a67ddef9da6b754"
@@ -54,12 +69,12 @@ class GnuApl < Formula
   end
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" # TODO: if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "6 15 24", shell_output("#{bin}/apl --noSV --eval '+/ (3 3⍴1 2 3 4 5 6 7 8 9)' < /dev/null").strip
+    assert_match "6 15 24", shell_output("#{bin}/apl --noSV --eval '+/ (3 3⍴1 2 3 4 5 6 7 8 9)'").strip
   end
 end
