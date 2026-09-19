@@ -1,8 +1,8 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://static.crates.io/crates/llmfit/llmfit-1.1.15.crate"
-  sha256 "7c45bd6d52c7f492b40b68e6bf39c16baf83e2963b2ba7e25075c4e09a580a1f"
+  url "https://static.crates.io/crates/llmfit/llmfit-1.1.16.crate"
+  sha256 "f3d331c1169e6e6cdd1a9d6d807a623690bce8142c1d3bd1ffa72487e01c637a"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
