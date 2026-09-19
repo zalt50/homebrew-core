@@ -6,12 +6,11 @@ class Jhipster < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "5856e22bd2c68421150250215584f9a431102bd5c88bf7923ffd7441986ff381"
-    sha256 cellar: :any,                 arm64_tahoe:       "da539c1fa54eb73f1524e1b16ab3bc993927a42e4cf0593882c8cf966254ba74"
-    sha256 cellar: :any,                 arm64_sequoia:     "da539c1fa54eb73f1524e1b16ab3bc993927a42e4cf0593882c8cf966254ba74"
-    sha256 cellar: :any,                 arm64_sonoma:      "da539c1fa54eb73f1524e1b16ab3bc993927a42e4cf0593882c8cf966254ba74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c232e2a27fd279ac144bd9070670f8d70d2d55bd91402e36e4e7e1bafa5d08ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ef37dbc6cea836c7bcfe14d2cee71d38bf730ca7b13e3dcdd43fde2136ac6a2a"
+    sha256 cellar: :any,                 arm64_golden_gate: "9a63c7efd4f26262656ff10909656bdae9dc41a6175f41f0ab24c38fe4f66ed1"
+    sha256 cellar: :any,                 arm64_tahoe:       "9a63c7efd4f26262656ff10909656bdae9dc41a6175f41f0ab24c38fe4f66ed1"
+    sha256 cellar: :any,                 arm64_sequoia:     "9a63c7efd4f26262656ff10909656bdae9dc41a6175f41f0ab24c38fe4f66ed1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "26507fd52fbb1381c1cdf5fe2edcae15efb7a7476dfa007c77376642e7753c70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0c089d16268813fb6161a6f5e92041d39e52ea940fcc65b0b00daa40e490e32f"
   end
 
   depends_on "node"
