@@ -7,13 +7,11 @@ class Zlint < Formula
   head "https://github.com/zmap/zlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "51aef6029e84eb61ab485489b88cf44b6f7b4f4b02db4aeac2f0bbd5bae1db8b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5dc0f61552d33bac3b5181bdb7d43a04e603bbc84e895fd474a513f730332ffa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5dc0f61552d33bac3b5181bdb7d43a04e603bbc84e895fd474a513f730332ffa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5dc0f61552d33bac3b5181bdb7d43a04e603bbc84e895fd474a513f730332ffa"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ccaaef0a3d695c7c99f6359fb97ec6bafa91e728463ba086a864088d34ae67ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "26bc9975cd6c4fcc5368fd69138aef01a885265a42c4770ed6328c1eb2cea779"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c5a16d321aafcd9ae1aa26ba851c4caf7c74132aa271242e6e3c49ce56f7f322"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0b5f5688d08b8418caaeab1c2bc47d0e20aaf2186dd33c21d4224672e32ac8c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0b5f5688d08b8418caaeab1c2bc47d0e20aaf2186dd33c21d4224672e32ac8c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0b5f5688d08b8418caaeab1c2bc47d0e20aaf2186dd33c21d4224672e32ac8c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "baaa0ed298ca2cfd61683622dc21b2e12633cd494cb7447024fb249304f41b04"
+    sha256 cellar: :any,                 x86_64_linux:      "fc8baf090bc3e934cdb025d40611d7fa2ab72225a79f787efd17d540df538836"
   end
 
   depends_on "go" => :build
