@@ -11,12 +11,11 @@ class Bmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d08f365259cb0cc1688fc5d80079ae2a20e8d93749e08fea298df71fbcd2c9e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0fafa283d79b84abfe98173e057302e6f4265c45f77ff7e98ea8866d89839524"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87d6db90757cc75eb24815824c15e595730c881446f6b82947cffa86f75f416f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "837db970b993aba0a96caf2320be5a8401c7454702c53c9dd50c6532de7a0319"
-    sha256                               arm64_linux:       "4f4fe160a217e09fd77e2ffff23549b21b010e73ab7c214373ae80ce617c2c6b"
-    sha256                               x86_64_linux:      "089abe3ab258dab87a7755637fca50c9c3cc23c2224f55ea2a9bb694a94b1526"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47a0576cf8407e0ddf40c9f4b2451390098d5b1c95fc6c7530990d487b5382cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "93f2a6f6db6d6fa92fa29472294bcf2d8bb358eae85bce25a3c7d80fc3c14956"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aeb5e436cc198a498e1f90442eefa854ac2c46db20fced7bb0e1c9198b2f838d"
+    sha256                               arm64_linux:       "0ff638f07d03a31fe4ad471a955407c33cc4de360d9693e089208d7afd780a71"
+    sha256                               x86_64_linux:      "091dbce9cdb453409cb546dd26ef91771e4b68dea28e5fed5246904b31be3d09"
   end
 
   uses_from_macos "bc-gh" => :build
