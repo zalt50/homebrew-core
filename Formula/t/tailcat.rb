@@ -1,8 +1,8 @@
 class Tailcat < Formula
   desc "Netcat-like tool over Tailscale's data plane, without its control plane"
   homepage "https://github.com/tailscale/tailcat"
-  url "https://github.com/tailscale/tailcat/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "14d0e1a80dd4836053dd3e2cd6bbb1ad40ecf72c181c3f92d319d325bf7f6e6f"
+  url "https://github.com/tailscale/tailcat/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "54a97d9046d0bf2afbf99987ff630fc425ee79272c6c7ccd645a49a076d3cecb"
   license "BSD-3-Clause"
   head "https://github.com/tailscale/tailcat.git", branch: "main"
 
