@@ -11,6 +11,8 @@ class PhpCsFixer < Formula
 
   depends_on "php"
 
+  deny_network_access!
+
   def install
     libexec.install "php-cs-fixer.phar"
 
