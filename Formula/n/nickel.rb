@@ -21,6 +21,12 @@ class Nickel < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     ENV["NICKEL_NIX_BUILD_REV"] = tap.user.to_s
 
