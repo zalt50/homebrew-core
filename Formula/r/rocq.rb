@@ -2,16 +2,15 @@ class Rocq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://rocq-prover.org/"
   license "LGPL-2.1-only"
-  revision 1
-  compatibility_version 2
+  compatibility_version 3
 
   stable do
-    url "https://github.com/rocq-prover/rocq/releases/download/V9.2.0/rocq-9.2.0.tar.gz"
-    sha256 "a45280ab4fbaac7540b136a6b073b4a6db15739ec1e149bded43fa6f4fc25f20"
+    url "https://github.com/rocq-prover/rocq/releases/download/V9.3.0/rocq-9.3.0.tar.gz"
+    sha256 "3f0fc283e8644394aa9c7a6e3995b6d9ebbe1e6dda712bf431f9c372dcef95ad"
 
     resource "stdlib" do
-      url "https://github.com/rocq-prover/stdlib/releases/download/V9.1.0/stdlib-9.1.0.tar.gz"
-      sha256 "2d66421c52ed32719a15cb039c368e063c4d85f670e3d142f5eb7415fb427985"
+      url "https://github.com/rocq-prover/stdlib/releases/download/V9.2.0/stdlib-9.2.0.tar.gz"
+      sha256 "f2ee1cb0b9af3e7b20625f0e9ec4becb7a27bb453d53b9bc0ea3d67bc8b3142c"
     end
   end
 
@@ -54,13 +53,6 @@ class Rocq < Formula
     ENV.prepend_path "OCAMLPATH", formula_opt_lib("ocaml-findlib")/"ocaml"
 
     packages = %w[rocq-runtime coq-core rocq-core coqide-server]
-
-    # dune 3.24 deleted the `coq` language extension. The default (rule_gen)
-    # build doesn't use it (only the unused `dune.disabled` files do) and the
-    # `(coq ...)` env field only sets dev-profile flags, so drop both to keep
-    # building until a release adopts the Rocq build language.
-    inreplace "dune-project", /^\(using coq [\d.]+\)\n/, ""
-    inreplace "dune", /\n\s*\(coq \(flags :standard -w \+default\)\)\)/, ")"
 
     system "./configure", "-prefix", prefix,
                           "-libdir", HOMEBREW_PREFIX/"lib/ocaml/coq",
