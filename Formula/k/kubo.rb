@@ -22,8 +22,7 @@ class Kubo < Formula
     sha256 cellar: :any,                 x86_64_linux:      "b08fc046d2b512e44ae90b29768460d5ced944bee74280cd77fef8c8d4aae47c"
   end
 
-  # TODO: unpin go@1.26 when kubo supports go 1.27
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   deny_network_access!
 
