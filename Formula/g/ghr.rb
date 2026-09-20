@@ -8,13 +8,11 @@ class Ghr < Formula
   head "https://github.com/tcnksm/ghr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5c729b7b5866d20b811a5449726940ccbd6652673d46fbb056eb5256ff746c5f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47ebdfabfeeba56f6c2ca3a9d4c998deba3cef8d28692f9d1ec37e8de4ecf51a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "47ebdfabfeeba56f6c2ca3a9d4c998deba3cef8d28692f9d1ec37e8de4ecf51a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "47ebdfabfeeba56f6c2ca3a9d4c998deba3cef8d28692f9d1ec37e8de4ecf51a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "129a6268818121ee71ad39d941430b27c420678e4ae17d935032f3ad9328abbd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "23f0a9bc9c07caa53b2076a2234e31b2c76a4b117464e83207b30f2ff47c3708"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "276fafa40c5baca7202e3d451f4fe398fc65fcc136b06b02020f82c3499e8580"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6533f8d9e2a629e2d66963783d9307e8f4100687c7c5f6542b701162ad407111"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6533f8d9e2a629e2d66963783d9307e8f4100687c7c5f6542b701162ad407111"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6533f8d9e2a629e2d66963783d9307e8f4100687c7c5f6542b701162ad407111"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0581d1a0ecf05747c553bf32a6a937e82e9f22ac917f0e95a37f18daae80dc43"
+    sha256 cellar: :any,                 x86_64_linux:      "503d91b64c5920578da8333c1aac512a47426f2ab6dbcf513ab8acf95b8c0cd5"
   end
 
   depends_on "go" => :build
