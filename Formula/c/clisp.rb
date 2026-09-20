@@ -23,14 +23,12 @@ class Clisp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "a758616564c4f7db21005006d0becd140d5ed4a5fa8151a2e6ad4c97116a317a"
-    sha256 cellar: :any, arm64_tahoe:       "7c6012970cf0b4c270ea9144deb1aa018a820f333dd0a23c98116a6da81cdccd"
-    sha256 cellar: :any, arm64_sequoia:     "ddfc9a191f0afb4b3763164759e47df9e6eabec853dd60a1575a83d040309003"
-    sha256 cellar: :any, arm64_sonoma:      "82b6891a410f0c7c212fed6e18527102ad9180d0003ccf3e24bb8d8071d37353"
-    sha256 cellar: :any, sonoma:            "a4225bd790a152ba74e307d69ff945b69aa0c04fc43b1c98b67298085300c129"
-    sha256               arm64_linux:       "21dbffbe262f2cd831a5b80be895bb1747d5e58091f28d5067be710cab22d832"
-    sha256               x86_64_linux:      "ac69bd943aac71e7e7d782747b3e3369923e13cb8de3990c3afe6adf90e42ba2"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "3d72c06219102d616fe394651760e449ea6d03341c1e936721d0a746e48175c2"
+    sha256 cellar: :any, arm64_tahoe:       "3af53aa873a0ed7d2e43fac7c09fd80c127e2069d69a814422362dc2e66fc264"
+    sha256 cellar: :any, arm64_sequoia:     "6333c511593cd930393b6b446ec2e60ab6a5acb75ebad2f6a383b0b8f6b6be1a"
+    sha256               arm64_linux:       "5814eb822b3860e8e627393f15784d47fd2ee41ffdd6d87c74455275cd8c504c"
+    sha256               x86_64_linux:      "7360777f3cbc613fd1d35b0947cafda3f0e1b9fd2fccab604207b53447ab91a5"
   end
 
   depends_on "libffcall"
