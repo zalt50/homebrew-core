@@ -1,8 +1,8 @@
 class Openfasttrace < Formula
   desc "Requirement tracing suite"
   homepage "https://github.com/itsallcode/openfasttrace"
-  url "https://github.com/itsallcode/openfasttrace/releases/download/4.9.0/openfasttrace-4.9.0.jar"
-  sha256 "d4ed42503ae066f51d55c3aad7c6e4b16acb80365921951ef5a065a4dc3d94f3"
+  url "https://github.com/itsallcode/openfasttrace/releases/download/4.10.0/openfasttrace-4.10.0.jar"
+  sha256 "8449a1652f140841a89fb053b71130b9c880fe2b7dd06f3490ae9c740a0c5e08"
   license "GPL-3.0-only"
 
   bottle do
