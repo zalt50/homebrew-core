@@ -11,14 +11,11 @@ class Xaric < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_golden_gate: "03f5073bc47f49350ad66c61a7f6072aa93150917006c078a92f15c03066026d"
-    sha256 arm64_tahoe:       "28872c99390c2300d6378440d8e060f769ab078e46c9e94a71890b0889d0a409"
-    sha256 arm64_sequoia:     "97f67bb569cb2956953e6b36fda5652e6102304962f9342bab5328d9e16a73ad"
-    sha256 arm64_sonoma:      "f85f7887576b2b971caab0247fc1e9dd7dc0c8ff3bd9df731564ae9a5cc3f7cf"
-    sha256 sonoma:            "01c3409aaf6f70234eb46227f93011a4304a5d0db483cc93699ed67b8314f1e1"
-    sha256 arm64_linux:       "4e5a4883340539ac88a7ab2fc160d92eaf49af6abef2fca8dd217e65d30afb90"
-    sha256 x86_64_linux:      "79f59d62efb2fe4cccee741c6a50431596985b700547d2ef333545ec087237ef"
+    sha256 arm64_golden_gate: "564cf4cde94b7e34c6d8a966efdcd34df89b9bd0687a64a88b63459f0744c183"
+    sha256 arm64_tahoe:       "e581c7b2ec029eda76b688009874961b5b81e854355f8fb30c4617dc1e1160c4"
+    sha256 arm64_sequoia:     "65349a2ed4d52d08f3aca03ac6c5b186c3bc86a78b79f894202a986b7ee1c7ae"
+    sha256 arm64_linux:       "b0159c15b6a20389c511fe65ee6e9e3e45e2adb6214a18da8d6ffdb2d35a7097"
+    sha256 x86_64_linux:      "03f1958f1f49aac09e320b0c8e022681039d25a3538ccbffc2a88d6e3256a29a"
   end
 
   depends_on "openssl@4"
