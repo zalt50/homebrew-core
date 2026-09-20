@@ -10,14 +10,11 @@ class Vapoursynth < Formula
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "916c19c0f178f4ea6e7058eb1335bf8c6e61d9484afc5ab521fed12ee20a74dd"
-    sha256 cellar: :any, arm64_tahoe:       "c5ff77b3f31024cfbfe24773cf1631ef219cc4de0b359bde85a44a8b882d6bf4"
-    sha256 cellar: :any, arm64_sequoia:     "e20dd4d4f2548c9a5cd4eefdde4625a71b454e465b209165e5c2581d560bec1b"
-    sha256 cellar: :any, arm64_sonoma:      "f65efd43ac1003437bcd5867249b21985d61dbf1aec80c968a730d54e1aa2e17"
-    sha256 cellar: :any, sonoma:            "56d36a07465ace8bfbd6e31d142b4982fa4d072b7b6c01553100d8f34b7252e0"
-    sha256 cellar: :any, arm64_linux:       "93540be19ad3da0bcb075e8a4a531160e8c6f10f9032393d85eba4e826a77d96"
-    sha256 cellar: :any, x86_64_linux:      "a1e856c46192c84396bcd5d403f1b954323d20f30e77627af0af95b67a0289f5"
+    sha256               arm64_golden_gate: "f72abae3e621067617b021b597787916e3511e0f8e3b6ba7f70632e76c8e58cc"
+    sha256               arm64_tahoe:       "7c1ebe0fdcd313876c49a4228f8b8dd201915debdffe928030587c9a245891ce"
+    sha256               arm64_sequoia:     "81c0ce98eb728d987019413997b1288ddf25d2413a23a9993a602045fde0b7e7"
+    sha256 cellar: :any, arm64_linux:       "9acc9542ff2f4058e3c5ebfe014094f14c9365c615d08192d8313369148057d2"
+    sha256 cellar: :any, x86_64_linux:      "4b01172ff71302d10b11316520c77d606bc49f0e16e1def6c3c7704533c95912"
   end
 
   depends_on "ninja" => :build
