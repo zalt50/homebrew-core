@@ -16,9 +16,9 @@ class Ratex < Formula
 
   depends_on "rust" => :build
 
-  deny_network_access!
+  conflicts_with "texlive", because: "both install `lualatex`, `pdflatex`, `xelatex` binaries"
 
-  # TODO: add `conflicts_with "texlive"`
+  deny_network_access!
 
   def fetch
     system "cargo", "fetch", "--locked", "--target", "host-tuple"
