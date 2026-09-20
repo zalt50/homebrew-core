@@ -15,11 +15,11 @@ class Pnpm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b588226918748f8c40e75f146041c692d82d585072cdf480edc010e8f11e544"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2c63a0fc02ffe96b2daed111033bd6a0031946fa63d756635440d58ff41d58f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c0f751553beabd227719a12b6e05e1c9673dabfba16091c5f552b3e73fe8bf85"
-    sha256 cellar: :any,                 arm64_linux:       "3decc717b5170c49b82f7d765d9fae2c2963d9926ae0127bc2697c593eaa0d89"
-    sha256 cellar: :any,                 x86_64_linux:      "3bae211cc035e0bf33b17f3f7c5ac69ba8366c988fe5a8cb8c2f6a3d38e567a6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ab04aff52b0b075d8480cbbe93fb24f7a86b4308fd12a07bf23fcf949b1e282"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e6c27d6a1d2c1f1fb8940cc207bafd426be411adbef5c7c15fef2d05443233e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3df40ed052e9210463d466ae860dd0ada094262f2e39e870280e4ab86a0c6f3b"
+    sha256 cellar: :any,                 arm64_linux:       "b7534a45683607033ff086d2677067cb0ffa9d0081b5ebfbad801904e26d74e4"
+    sha256 cellar: :any,                 x86_64_linux:      "adb1c47bc2362247ac988b98701bd178a1afb51b81bd28cd9ef67aeb6a26029e"
   end
 
   depends_on "rust" => :build
