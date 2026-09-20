@@ -1,8 +1,8 @@
 class Umockdev < Formula
   desc "Mock hardware devices for creating unit tests and bug reporting"
   homepage "https://launchpad.net/umockdev"
-  url "https://github.com/martinpitt/umockdev/releases/download/0.19.8/umockdev-0.19.8.tar.xz"
-  sha256 "9d57c917a32dc696877ab525eb510971a8109899d5b92d986e7bac32573125b0"
+  url "https://github.com/martinpitt/umockdev/releases/download/0.19.9/umockdev-0.19.9.tar.xz"
+  sha256 "666e050f76eb61921e6d79e309c5833cef639de3ec1f9c35c74ebce1681f7c34"
   license "LGPL-2.1-or-later"
   head "https://github.com/martinpitt/umockdev.git", branch: "main"
 
