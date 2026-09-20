@@ -7,15 +7,11 @@ class Gzip < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a8178e53f351a62fbbc3e5dd365893f636b8c24cea7e34fb2544d10bb3fabf5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0806e22497cecc96b52a14fbec21c29df976b5ae40f365a55508c23c2958222f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c82c69f648546f3d0e962e9012a2cb258b454b098ae880880dc88418dc544a41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "595f0a87dd1fe49c90e97911e72335a00cf096adbf84dfb17745dbf351ab9d3b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "d55108d43ddf0f8123694f06882e223023cf4346f9b9640d6c33b657d19260bf"
-    sha256 cellar: :any_skip_relocation, sonoma:            "e590ecd558a1eec60fe790370d3ab2cde6d44fc918fe64ec98a56c31fbffc36c"
-    sha256 cellar: :any_skip_relocation, ventura:           "39d86283bbdd91c6347ce5c7869e5a75db4d0bc6e961c8763fb7e81802cdeb55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf3ee62bd32f32b5288069e02bd54a9b1df35b2ec45dfc1a403aa95c010e0f6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6cdbf878eda84da0ba1cac4bae09d3bf3c91ba1d5666806f9fa1ed19acc1f142"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a4fc6cf11086f1848bd0bc4d9797cafbaa79cf2ab4098bde4aa034837af517d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a2b422221e96dd43b7c7778439f6437073ab1181a6a48796d3b17e1c5ce4cc8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91a7889ad537212365620a25f0596c9b4928ad517e7c37d1282deb32a63c0977"
+    sha256 cellar: :any,                 arm64_linux:       "859bc0e90ca8df3432d76dc17db91fb2ff824a46711ba5a9f96b9c940c16a36e"
+    sha256 cellar: :any,                 x86_64_linux:      "c67934ce7882e720c8deb757203f528e9546c0f90451ae35b93a1e0bf7f8a8eb"
   end
 
   # Fix compile error on aarch64 Linux
