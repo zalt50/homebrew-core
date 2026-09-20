@@ -1,8 +1,8 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "9174e924a3a00406a2a7820299357192e1951ccaa3723f536a7c4a3c00a82dd4"
+  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "1b2ffbf219c4b63108eab557926e116618e34f949dd3ffb39d28d8e3f5190425"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
@@ -22,7 +22,13 @@ class Opencrabs < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
