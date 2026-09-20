@@ -26,6 +26,8 @@ class Tkrzw < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Don't add -lstdc++ to tkrzw_build_util and tkrzw.pc
     ENV["ac_cv_lib_stdcpp_main"] = "no" if ENV.compiler == :clang
