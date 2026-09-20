@@ -11,11 +11,11 @@ class Tkrzw < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "5865ac984d39f4fb153ae44920466fdea6d4ba8a86af561c60a515ae5ac6d825"
-    sha256 arm64_tahoe:       "cb4b48332204e75f562e3c50921dad32ca438d271bcbe5c290457acab6d70613"
-    sha256 arm64_sequoia:     "b7aa8e0461e051c758fcdf515864f06febc33cdf5ff9d6612650e5f8cd99ccfb"
-    sha256 arm64_linux:       "ccf6eb112f27fee8a4c894470d1e5c5c28d29f7363487d01426b9812a6abdec9"
-    sha256 x86_64_linux:      "3935085ecc08d9a4db49ddb135d5f28687b9a00ce5be722cdb80c89983f5875a"
+    sha256 arm64_golden_gate: "b5fd8f8ff3959243226ee5d12be2b6f3b535e3e66856d9873d5e8628fcd59337"
+    sha256 arm64_tahoe:       "4db2a070e0ca33c21217ffb4cce28b1f5b71f3e2849ff83ab0b5cf4a01d1252a"
+    sha256 arm64_sequoia:     "a6611d96c46410a3dde875ad04e6d701c900536ace362b03fd01f7e79877089b"
+    sha256 arm64_linux:       "b34f8d0eb4c8a2f0b4c2c9414156950e4167e229abee378d6a5c05919b66d9b3"
+    sha256 x86_64_linux:      "fab697d85f404064bfd922066084bb78357f93a0574c73413c239944aae82565"
   end
 
   depends_on "lz4"
