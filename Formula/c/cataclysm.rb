@@ -46,6 +46,8 @@ class Cataclysm < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
     args = %W[
