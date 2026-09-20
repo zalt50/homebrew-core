@@ -21,6 +21,8 @@ class Giflib < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "e349e61810df032b3fff5eaac4f0db46dcc66580a070b5640a60482d6779bf64"
   end
 
+  deny_network_access!
+
   def install
     args = ["PREFIX=#{prefix}"]
     # Manually skipping shared libutil due to https://sourceforge.net/p/giflib/bugs/189/.
