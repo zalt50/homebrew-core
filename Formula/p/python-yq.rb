@@ -9,13 +9,11 @@ class PythonYq < Formula
   head "https://github.com/kislyuk/yq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "baa271d0f11db1e1f19f217ad12c756a7fc6172652cf7d376397f633592149b3"
-    sha256 cellar: :any, arm64_tahoe:       "e9016d2edb8a0d702385cdda32ed29643e7a076f6473eb74abe81cff2cafbd6f"
-    sha256 cellar: :any, arm64_sequoia:     "7d68c10b735df0d92efb05581382386e7a2d9754fbcc0ba508846c55a0bb17a0"
-    sha256 cellar: :any, arm64_sonoma:      "6da269e23799b52e2faa751cecc8855abfac606a93b19714671b19909b0eeeaa"
-    sha256 cellar: :any, sonoma:            "502df9372e2f375a1a440bb50345440ba348cfa02b8e986dee4a91dcf9d9ad26"
-    sha256 cellar: :any, arm64_linux:       "816c7466bf03f39a0cc7c269c3b64ac3f10c72bcdc6533cb8fdb7350aedf1c27"
-    sha256 cellar: :any, x86_64_linux:      "cf2f01f310536e287a0b9dee791569b025a1b3fbe0bf839c1cac23ae2e56ea75"
+    sha256 cellar: :any, arm64_golden_gate: "abf41f6822db6cef80a2dfe3ad349d35ac8be3a2c0f7f9732fa6d64993b204e9"
+    sha256 cellar: :any, arm64_tahoe:       "99c9ad7f28498cad641bcbc6f056d24de9228db93081c69aa17356eaef1f87d9"
+    sha256 cellar: :any, arm64_sequoia:     "447e71beeb9789096d46571b0de8782070f38686c4034390670ee5d6779b4d6d"
+    sha256 cellar: :any, arm64_linux:       "a6c97017413c394c44e6c3efd144e9dbbbab9370f780929dfb5b47d39c44c36c"
+    sha256 cellar: :any, x86_64_linux:      "18413d0cd6d600d7dc4df39ce1d7cd288e17f1b55b2d7fa749d0152836c94a73"
   end
 
   depends_on "libyaml"
