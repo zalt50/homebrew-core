@@ -3,8 +3,8 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/cb/8f/d4da8965384182e79d005cf165097c194e15df7b9f13c2dc09d7fa3d4b97/virtualenv-21.7.15.tar.gz"
-  sha256 "072c16d3d1d796cb6a851145d2eae314f8434bd625a55f18b8b72b29890cc366"
+  url "https://files.pythonhosted.org/packages/45/2b/f7ec483cb56fc84cab8676971b171156111cd125d069ca02fdaf0239f3e5/virtualenv-21.7.16.tar.gz"
+  sha256 "d3fcf6954a07121c2b61efcb96419e2f40b3718d558998f13a7314e32cc42723"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
@@ -25,8 +25,8 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/89/24/92d90bebedf197eb15b144367ce6fd4ad2de571927cd09dde190a36db8fc/platformdirs-4.11.10.tar.gz"
-    sha256 "9cd351c078ccf7dda1fdc5f8ccb9d8f5258984c63990e6df3627dde0b70b51d0"
+    url "https://files.pythonhosted.org/packages/f8/13/f870dd0b42690138e4e37a76b5138e5690ed4365a77071bb092d59037da0/platformdirs-4.11.11.tar.gz"
+    sha256 "b0befe8a90759e4a9a8b9820d434ae226a6549063210b596da0038a7a05aede4"
   end
 
   resource "python-discovery" do
