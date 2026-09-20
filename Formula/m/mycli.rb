@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/81/ca/5c7ee3a2927698f99e5b77c7aab082e263fcec0d36ca41d4a62d805dd0c2/mycli-2.25.2.tar.gz"
-  sha256 "343470fae15ee3ec4ef1a0ac6f4ca30dfad69df814c2b681403d7d0ab2a77792"
+  url "https://files.pythonhosted.org/packages/23/af/3b7ca0c2ad0d9914e10ca3f5236c01c72abcec4d6c56bf678d73cc586753/mycli-2.25.3.tar.gz"
+  sha256 "c76ec811af9006461abc77ffe3f041fb32a347fe8f6e3fdccfc2771c8ebf6dec"
   license "BSD-3-Clause"
 
   bottle do
@@ -94,8 +94,8 @@ class Mycli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jaraco-classes" do
@@ -164,8 +164,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/a2/a5/bc3681f645a0d026332047cc19a703315979740a11a5763f46c163abd614/openai-3.14.1.tar.gz"
-    sha256 "2f3423a71af767d9071b059cf6df1e97a721c3a8d19417375ad7993d4df0d346"
+    url "https://files.pythonhosted.org/packages/e2/c6/770171ef28854d8092ee2c3df68ef97d127362b28771e6b423c948894e07/openai-3.16.2.tar.gz"
+    sha256 "e129455fc6a744276cda63a9e2f0759207bc0cf24afc4cf356bf5029e631e955"
   end
 
   resource "packaging" do
@@ -319,8 +319,8 @@ class Mycli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
+    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
   resource "yaspin" do
