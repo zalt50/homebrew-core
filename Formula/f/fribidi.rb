@@ -1,8 +1,8 @@
 class Fribidi < Formula
   desc "Implementation of the Unicode BiDi algorithm"
   homepage "https://github.com/fribidi/fribidi"
-  url "https://github.com/fribidi/fribidi/releases/download/v1.0.16/fribidi-1.0.16.tar.xz"
-  sha256 "1b1cde5b235d40479e91be2f0e88a309e3214c8ab470ec8a2744d82a5a9ea05c"
+  url "https://github.com/fribidi/fribidi/releases/download/v1.0.17/fribidi-1.0.17.tar.xz"
+  sha256 "6949dcde27d41cebad1fd741fcafc36d55a1020d2d872d4a6eb3914caabbada2"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
@@ -16,6 +16,11 @@ class Fribidi < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:       "f77859595dfecda802be39353e61b545c1cf1c67e9630f9441be68010f555d00"
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "da83ac3be7e395ab2444c0968fb3dce389161f10c2b481ddd4b18a9056bc2d60"
   end
+
+  depends_on "help2man" => :build
+  depends_on "pkgconf" => :build
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-debug",
