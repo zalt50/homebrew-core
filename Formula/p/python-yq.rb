@@ -3,8 +3,8 @@ class PythonYq < Formula
 
   desc "Command-line YAML and XML processor that wraps jq"
   homepage "https://kislyuk.github.io/yq/"
-  url "https://files.pythonhosted.org/packages/58/24/1e43bea1cb58532658a6d5b51a5f1d45d21df50eb1d14d977eb6d3064dbb/yq-4.1.2.tar.gz"
-  sha256 "a8f148930f8beb3170f451d67f29cbe0b3ac713cd2fc91ecf51d43b4879e6b4c"
+  url "https://files.pythonhosted.org/packages/e1/5f/212c5a30bb31e9c96bb89455b7c58213ef22f1a24e2497b743ef8092004d/yq-4.2.0.tar.gz"
+  sha256 "53854078bade13fd69eef85d77dcc513125a0bce2f8f1ef8b466e655ce1be9e6"
   license "Apache-2.0"
   head "https://github.com/kislyuk/yq.git", branch: "main"
 
@@ -27,8 +27,8 @@ class PythonYq < Formula
   conflicts_with "xq", because: "both install `xq` binaries"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
-    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
+    url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
+    sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
   end
 
   resource "pyyaml" do
@@ -37,8 +37,8 @@ class PythonYq < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
-    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "xmltodict" do
