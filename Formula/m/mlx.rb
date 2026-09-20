@@ -83,12 +83,15 @@ class Mlx < Formula
 
     ENV["CMAKE_ARGS"] = (args + std_cmake_args).join(" ")
     ENV[build.head? ? "DEV_RELEASE" : "PYPI_RELEASE"] = "1"
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.#{MacOS.version.minor.to_i}"
+    # Keep the minor version as the NAX kernels are only built with a 26.2+ deployment target
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.full_version.major_minor.to_s
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
+    assert_match "steel_gemm_fused_nax", (lib/"mlx.metallib").binread if MacOS.version >= :tahoe
+
     (testpath/"test.cpp").write <<~CPP
       #include <cassert>
 
