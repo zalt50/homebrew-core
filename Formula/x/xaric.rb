@@ -1,8 +1,8 @@
 class Xaric < Formula
   desc "IRC client"
   homepage "https://xaric.org/"
-  url "https://xaric.org/software/xaric/releases/xaric-0.13.9.tar.gz"
-  sha256 "cb6c23fd20b9f54e663fff7cab22e8c11088319c95c90904175accf125d2fc11"
+  url "https://xaric.org/software/xaric/releases/xaric-0.13.10.tar.gz"
+  sha256 "8f270165f3b12cffb5bacf2dcdd507e2939bd4815936cf670a1fb68142b341b0"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -24,13 +24,6 @@ class Xaric < Formula
   depends_on "openssl@4"
 
   uses_from_macos "ncurses"
-
-  # Fix ODR violations
-  patch do
-    url "https://github.com/laeos/xaric/commit/3eae8e45003e416f418218e68a1055a0e0f0ac43.patch?full_index=1"
-    sha256 "5528ec8d2611bf25fa27762f11537e89d2707f10d136d0757a0a0d8778287a66"
-    type :backport
-  end
 
   def install
     # Workaround for newer Clang
