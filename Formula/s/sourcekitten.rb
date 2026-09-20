@@ -5,6 +5,7 @@ class Sourcekitten < Formula
       tag:      "0.38.0",
       revision: "821fc0eaa7c07fc98df1e9d3d43371cace697644"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/jpsim/SourceKitten.git", branch: "main"
 
@@ -22,7 +23,7 @@ class Sourcekitten < Formula
 
   on_macos do
     depends_on xcode: ["14.0", :build]
-    depends_on xcode: "6.0"
+    depends_on xcode: "6.0" # does not support CLT sourcekitd.framework
   end
 
   deny_network_access!
