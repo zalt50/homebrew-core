@@ -6,6 +6,14 @@ class Xgrammar < Formula
   license "Apache-2.0"
   head "https://github.com/mlc-ai/xgrammar.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "40241cdb1349e097bdf2b1f3c2c02ab0cd95068374e2d0c085c6c7ef8cc5638f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7194ffdcd5ba6984e3faea419f8261d35b6362f3a9fe0fa2a0cd8b5e1d36a04c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a3093f22599b3dc3d9d2c7092cc526ac64e491dbb21a80915cba1a4e522d8821"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f6f51c28589c9e5b98f1ba59e20a180a5eb8527aa95479307cd8d001e5add0fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "35f782fc55d7c56f338bf7d5777378a2e25b73396d3621cc33c40cfda9fab5a7"
+  end
+
   depends_on "cmake" => :build
   depends_on "dlpack"
 
