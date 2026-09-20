@@ -39,7 +39,7 @@ jobs:
       matrix:
         stable: [false, true]
     name: tap_syntax${{ matrix.stable && ' (stable)' || '' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     continue-on-error: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'CI-no-fail-fast-syntax') }}
     container:
       image: ghcr.io/homebrew/brew:${{ matrix.stable && 'latest' || 'main'}}
