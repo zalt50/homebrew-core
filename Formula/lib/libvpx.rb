@@ -24,6 +24,8 @@ class Libvpx < Formula
   # Add Golden Gate support. Remove patch when supported in a released version.
   patch :DATA
 
+  deny_network_access!
+
   def install
     ENV.runtime_cpu_detection
     # NOTE: `libvpx` will fail to build on new macOS versions before the
