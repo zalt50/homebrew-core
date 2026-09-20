@@ -1,8 +1,8 @@
 class Seam < Formula
   desc "Command-line interface (CLI) for interacting and developing with the Seam API"
   homepage "https://github.com/seamapi/cli"
-  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.41.0.tgz"
-  sha256 "fc4b1341c80e662b82d1d0eccfd604fbb0fbb9cdd88652ab4f7a1fc159f18fa8"
+  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.42.0.tgz"
+  sha256 "9004cfe0eb089e60c774c5d70ea0621b96d59e824a2e328442c3a6880ed34bcc"
   license "MIT"
 
   bottle do
