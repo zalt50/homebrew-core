@@ -1,17 +1,17 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https://www.kubewarden.io/"
-  url "https://github.com/kubewarden/adm-controller/archive/refs/tags/v1.38.0.tar.gz"
-  sha256 "4623e23fa2c303d85b20b4d191d36df97620b11f5b2438213b270a1e9ccd0b3b"
+  url "https://github.com/kubewarden/adm-controller/archive/refs/tags/v1.38.2.tar.gz"
+  sha256 "01370d25fc29c7e90d827870652a54c697cb465046946b874e2d8d60a3d5ac8f"
   license "Apache-2.0"
   head "https://github.com/kubewarden/adm-controller.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a00b40ab10cfb89f8418ca518f8e8d43566b5d85a6c3db639dc414b2aa1a35db"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fa25c6b09af7d88716c7853f43dc7cf2da6544ca7c6821f12004e77586515671"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2a0ca1fe13ceae22f6c6be0bd7db0a321edceb7d9deb55030aaed1599c07942a"
-    sha256 cellar: :any,                 arm64_linux:       "3749db8663b999b4d299fe04957bac17621dc6323deb38bb21f2f466ba319515"
-    sha256 cellar: :any,                 x86_64_linux:      "097fbe3f4bd5893b4e8b3a97667c0649c31b59fe4b5dba29c2b0f4af5b2021d3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f10ec13208976b2548ae58e1aeeb0c3901870406edbc17cd6b582a4f1f684cc8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a4af6b044b92ea15528e54df3c2123715410648c42df683854d1eaaf9cc97b37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "210a12f1a06b39243f9e3f585ecd0b4e7e7a0f2511ce44b4f3072a77beed0458"
+    sha256 cellar: :any,                 arm64_linux:       "6107c43803897dc775127a760591b090053094b66d9c94900ce6f837989ed826"
+    sha256 cellar: :any,                 x86_64_linux:      "1caeaf9bbb8c499292d43de009fcdd058bdaadd30c76bae17da738db307b69eb"
   end
 
   depends_on "pkgconf" => :build
