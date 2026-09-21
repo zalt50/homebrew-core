@@ -1,8 +1,8 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ccusage/ccusage"
-  url "https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.24.tar.gz"
-  sha256 "04a3d984ffd1d8799124c26197aa82bebf51dc118f31cba1d15a5376bf08db8b"
+  url "https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.25.tar.gz"
+  sha256 "67fb7d06af4d46f31391381a58e3f51cba6480d34b20a561b288cb95093b5478"
   license "MIT"
 
   bottle do
