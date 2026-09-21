@@ -32,7 +32,13 @@ class OpenalSoft < Formula
   end
 
   on_linux do
-    depends_on "binutils" => :build # Ubuntu 22.04 ld has relocation errors
+    # Majority of Linux users do not need runtime dependencies as can use system libraries.
+    # Others would still need to manually set up and configure an audio backend so
+    # requiring any dependencies provides little to no benefit.
+    depends_on "alsa-lib" => :build
+    depends_on "dbus" => :build
+    depends_on "pipewire" => :build
+    depends_on "pulseaudio" => :build
   end
 
   fails_with :clang do
@@ -40,15 +46,28 @@ class OpenalSoft < Formula
     cause "error: no member named 'join' in namespace 'std::ranges::views'"
   end
 
+  deny_network_access!
+
   def install
     # Please don't re-enable example building. See:
     # https://github.com/Homebrew/homebrew/issues/38274
     args = %W[
       -DALSOFT_BACKEND_PORTAUDIO=OFF
-      -DALSOFT_BACKEND_PULSEAUDIO=OFF
       -DALSOFT_EXAMPLES=OFF
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
+    args += if OS.mac?
+      %w[
+        -DALSOFT_BACKEND_PULSEAUDIO=OFF
+      ]
+    else
+      # Make sure support for common audio backends are available
+      %w[
+        -DALSOFT_REQUIRE_ALSA=ON
+        -DALSOFT_REQUIRE_PIPEWIRE=ON
+        -DALSOFT_REQUIRE_PULSEAUDIO=ON
+      ]
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
