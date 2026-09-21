@@ -1,8 +1,8 @@
 class Bigloo < Formula
   desc "Scheme implementation with object system, C, and Java interfaces"
   homepage "https://www-sop.inria.fr/indes/fp/Bigloo/"
-  url "https://www-sop.inria.fr/indes/fp/Bigloo/download/bigloo-4.7a.tar.gz"
-  sha256 "4425c37f499e2df1a7be3334ae8520fd76214733d9d9fe97b2fba71d1c4cf63b"
+  url "https://www-sop.inria.fr/indes/fp/Bigloo/download/bigloo-4.7b.tar.gz"
+  sha256 "06271cc3da5c164d7fb4a5dc29c442f13d4f4b48319e63c40f8bfa12dc39f22c"
   license "GPL-2.0-or-later"
   head "https://github.com/manuel-serrano/bigloo.git", branch: "master"
 
@@ -30,10 +30,14 @@ class Bigloo < Formula
   depends_on "gmp"
   depends_on "libunistring"
   depends_on "libuv"
-  depends_on "openjdk"
+  # configure runs `java -noverify`, which JDK 27 removed
+  # https://github.com/manuel-serrano/bigloo/pull/157
+  depends_on "openjdk@25"
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "sqlite"
+
+  uses_from_macos "zip" => :build
 
   on_linux do
     depends_on "alsa-lib"
@@ -59,6 +63,8 @@ class Bigloo < Formula
       --disable-flac
       --jvm=yes
     ]
+    # Record the keg-only JDK so the JVM backend does not depend on `PATH`
+    args << "--javaprefix=#{formula_opt_bin("openjdk@25")}"
 
     if OS.mac?
       args << "--os-macosx"
@@ -67,7 +73,8 @@ class Bigloo < Formula
       args << "--disable-libbacktrace"
     end
 
-    system "./configure", *args, *std_configure_args
+    # configure reads the Java version from the first line of `javac -version`, which `_JAVA_OPTIONS` pushes down
+    with_env(_JAVA_OPTIONS: nil) { system "./configure", *args, *std_configure_args }
     system "make"
     system "make", "install"
 
