@@ -1,8 +1,8 @@
 class Modules < Formula
   desc "Dynamic modification of a user's environment via modulefiles"
   homepage "https://modules.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.6.2/modules-5.6.2.tar.bz2"
-  sha256 "9c3407ca815004db0ee3782a7d4cba2a8907aff25b1dee108d9ac361c78964e2"
+  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.7.0/modules-5.7.0.tar.bz2"
+  sha256 "3e3cc7582ea34f3cf8353152fae724dea00dc893f021080263f475dcaeb40520"
   license "GPL-2.0-or-later"
 
   livecheck do
