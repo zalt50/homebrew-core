@@ -23,6 +23,8 @@ class TreallaProlog < Formula
   uses_from_macos "libedit"
   uses_from_macos "libffi"
 
+  deny_network_access!
+
   def install
     args = ["PREFIX=#{prefix}", "OPENSSL=openssl@4"]
     # macOS keeps ffi.h in an ffi/ subdirectory, which the build's plain
