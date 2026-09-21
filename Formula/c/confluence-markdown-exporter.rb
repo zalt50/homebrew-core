@@ -7,6 +7,14 @@ class ConfluenceMarkdownExporter < Formula
   sha256 "98a9b5d58a7ba99ac271c1765165eba629c559a8a9e3d4b5188fbc673119b684"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "bceb3be5d00f89ada12e5d651e6e90444e527e0a6c15968926cf1e30d12f50f3"
+    sha256 cellar: :any, arm64_tahoe:       "748afe898c976a7acb0c91de065c84fb0164b728d374b90335f2488e69dbab03"
+    sha256 cellar: :any, arm64_sequoia:     "f9e7fb251f1f65d310aa02f8da8dfa2331e02bf15e6c87d3e6d1f10089d764e9"
+    sha256 cellar: :any, arm64_linux:       "8085d11574cf1e928da42ff96b0b7f72416a6e55fcd225440e10038e95256b61"
+    sha256 cellar: :any, x86_64_linux:      "8ca4973ef3f587f5b370c45397ec8fc5f649d7fc0b5719c0d6d28a80bdd6fbe3"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
