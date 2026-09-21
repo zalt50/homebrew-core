@@ -3,8 +3,8 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://pipx.pypa.io"
-  url "https://files.pythonhosted.org/packages/b7/54/c7571c0d80d9bf2687fa9febbc46033726643a4c5623a6e5ed1ae5d9bcbd/pipx-1.17.4.tar.gz"
-  sha256 "8abfa094d62fd7821e17528f952fd569e0835f093ae06b2a7104d6464efb65e3"
+  url "https://files.pythonhosted.org/packages/78/2c/c615794b6e13f2b25657d5909d39469c1515c8387a2e3489c95ecd15a3c0/pipx-1.17.5.tar.gz"
+  sha256 "b18606c312f50d57d2fb1168e0d8e82cd86d831d83bdd13318f2d07ed1ddc34e"
   license "MIT"
   head "https://github.com/pypa/pipx.git", branch: "main"
 
