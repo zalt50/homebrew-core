@@ -21,6 +21,12 @@ class Pixtuoid < Formula
     depends_on "alsa-lib"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     # Drop upstream's x86_64 Linux lld linker pin
     rm ".cargo/config.toml"
