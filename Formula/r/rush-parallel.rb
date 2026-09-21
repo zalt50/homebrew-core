@@ -1,8 +1,8 @@
 class RushParallel < Formula
   desc "Cross-platform command-line tool for executing jobs in parallel"
   homepage "https://github.com/shenwei356/rush"
-  url "https://github.com/shenwei356/rush/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "5f38d11af5ab8f3a9cc2c2d30f735bf6372276eba30e27530aa2393986f82a26"
+  url "https://github.com/shenwei356/rush/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "5587a187056a3852eb910e3ce24bda7442c1997b0cf67022363b751d8cf4cdfb"
   license "MIT"
 
   bottle do
