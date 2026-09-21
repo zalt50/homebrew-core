@@ -1,8 +1,8 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://github.com/varnish/varnish/releases/download/varnish-9.0.4/varnish-9.0.4.tar.gz"
-  sha256 "766e91abf4d9ca7f00a88e105bc61109f1145983c09116db4228c9067fa2adc3"
+  url "https://github.com/varnish/varnish/releases/download/varnish-9.1.0/varnish-9.1.0.tar.gz"
+  sha256 "fe615fa024c801d12928e7eea0e822ba93ab625a585841143c36ae02d5bcc37a"
   license "BSD-2-Clause"
 
   livecheck do
@@ -90,6 +90,7 @@ class Varnish < Formula
       testpath/"m00027.vtc",
       testpath/"m00048.vtc",
       testpath/"m00049.vtc",
+      testpath/"m00050.vtc",
       testpath/"m00054.vtc",
       testpath/"m00053.vtc",
       testpath/"m00051.vtc",
