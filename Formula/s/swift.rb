@@ -18,12 +18,11 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a2c5d83ddd008ce998d5f2e6589fc6bce3ed0af792436094604ce4574ded86f9"
-    sha256 cellar: :any, arm64_sequoia: "8afd2a1a21b36a4835ef6f0a1f2f3899822672cf8b91afd74db578ddd6734344"
-    sha256 cellar: :any, arm64_sonoma:  "dd586b2892e98b74b68b6607034f02e4f2d75cf4c02690ceed1bd101ec34f5f3"
-    sha256 cellar: :any, sonoma:        "0a80913a4662537ab778cf9a8f770ab608b71d56d58bf23cad2d5278292aa87f"
-    sha256 cellar: :any, arm64_linux:   "4275f2946d80138644aa4e74ee392768581f5070b3d574c7eaef4ecd77724246"
-    sha256 cellar: :any, x86_64_linux:  "3e0b0c6063d8b8bd909a2431924ae7b9870b630dc5a614182c30f49520277315"
+    sha256 arm64_golden_gate: "1ce1a4674a290f87cb8d259e538a12f10ce693f040f3dc1cdc20c642b8d01973"
+    sha256 arm64_tahoe:       "db6131f79f6dd2c54340791cc52397dbc5081d48c288473435a5b790bfca1ab1"
+    sha256 arm64_sequoia:     "ef385bbeeb59f2bf81cc968e2eb708cdddedfe444ea6c3ed7e06bc25dff24403"
+    sha256 arm64_linux:       "49ba54c80a1b011a40109fa9fc39d2306cfaa7e8b1a53a246d1fbed78d894b61"
+    sha256 x86_64_linux:      "5be4feca7e69fccac132d805618ddab2418d2476926b7c59c3fe2d0746469a7d"
   end
 
   keg_only :provided_by_macos
