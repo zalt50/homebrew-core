@@ -1,9 +1,9 @@
 class Rsync < Formula
   desc "Utility that provides fast incremental file transfer"
   homepage "https://rsync.samba.org/"
-  url "https://github.com/RsyncProject/rsync/releases/download/v3.5.0/rsync-3.5.0.tar.gz"
-  mirror "https://rsync.samba.org/ftp/rsync/rsync-3.5.0.tar.gz"
-  sha256 "c7ffd1ef653e99540f661e47cb00b7f9cad1ee6b972399b16f93d672656e0d33"
+  url "https://github.com/RsyncProject/rsync/releases/download/v3.5.1/rsync-3.5.1.tar.gz"
+  mirror "https://rsync.samba.org/ftp/rsync/rsync-3.5.1.tar.gz"
+  sha256 "c55f9c9dc10fb8bec397b399a0fdded53cc9a2d8e30891bb0d63724d25c37bef"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,6 +16,7 @@ class Rsync < Formula
     sha256 cellar: :any, x86_64_linux:      "b2f066bc10fc9ce26805f9792f12ea78c651cfbf8c0364d480610ee3d90c5ccb"
   end
 
+  depends_on "libidn2"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "popt"
@@ -26,13 +27,7 @@ class Rsync < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Fix Linux sandbox compatibility
-  patch do
-    url "https://github.com/RsyncProject/rsync/commit/56e37eae666c7b0a52d29e9d1fb27325aaa8acf0.patch?full_index=1"
-    sha256 "3bb2d6096b7fc2dcf550af022f32c00cf8fa186ad84596c574ddac29c38e23fb"
-    type :unofficial
-    resolves "https://github.com/RsyncProject/rsync/pull/1052"
-  end
+  deny_network_access!
 
   def install
     args = %W[
