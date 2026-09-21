@@ -1,10 +1,9 @@
 class Pypy311 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.11-v7.3.23-src.tar.bz2"
-  sha256 "f15c9c41e03f3f7ecc25228c6c67427b8918f21ef2d694215994b1fade20f69b"
+  url "https://downloads.python.org/pypy/pypy3.11-v8.0.0-src.tar.gz"
+  sha256 "829cef413d84383563488f0234b3cc537a8034e43fda13e0530500dad2d5dc3b"
   license "MIT"
-  revision 2
 
   livecheck do
     url "https://downloads.python.org/pypy/"
@@ -44,8 +43,8 @@ class Pypy311 < Formula
                 extra_packages: %w[flit-core pip setuptools wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do
@@ -146,7 +145,7 @@ class Pypy311 < Formula
                                                    "--no-keep-debug",
                                                    "--no-make-portable"
     libexec.mkpath
-    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy3.tar.bz2"
+    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy3.tar.gz"
 
     # Prepare virtualenv for wheel
     common_pip_args = %w[
