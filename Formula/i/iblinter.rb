@@ -4,7 +4,7 @@ class Iblinter < Formula
   url "https://github.com/IBDecodable/IBLinter/archive/refs/tags/0.5.0.tar.gz"
   sha256 "d1aafdca18bc81205ef30a2ee59f33513061b20184f0f51436531cec4a6f7170"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/IBDecodable/IBLinter.git", branch: "master"
 
   bottle do
@@ -24,25 +24,27 @@ class Iblinter < Formula
   end
 
   # Fetch a copy of SourceKitten in order to fix build with newer Swift.
-  # Issue ref: https://github.com/IBDecodable/IBLinter/issues/189
+  # TODO: remove when fixed: https://github.com/IBDecodable/IBLinter/issues/189
   resource "SourceKitten" do
-    on_system :linux, macos: :sonoma_or_newer do
-      # https://github.com/IBDecodable/IBLinter/blob/0.5.0/Package.resolved#L41-L47
-      url "https://github.com/jpsim/SourceKitten.git",
-          tag:      "0.29.0",
-          revision: "77a4dbbb477a8110eb8765e3c44c70fb4929098f"
+    # https://github.com/IBDecodable/IBLinter/blob/0.5.0/Package.resolved#L41-L47
+    url "https://github.com/jpsim/SourceKitten.git",
+        tag:      "0.29.0",
+        revision: "77a4dbbb477a8110eb8765e3c44c70fb4929098f"
 
-      # Backport of import from HEAD
-      patch :DATA
-    end
+    # Backport of import from HEAD
+    patch :DATA
+  end
+
+  deny_network_access!
+
+  def fetch
+    (buildpath/"SourceKitten").install resource("SourceKitten")
+    system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
+    system "swift", "package", "--disable-sandbox", "resolve"
   end
 
   def install
     args = ["--disable-sandbox", "--configuration", "release"]
-    if !OS.mac? || MacOS.version >= :sonoma
-      (buildpath/"SourceKitten").install resource("SourceKitten")
-      system "swift", "package", *args, "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
-    end
 
     system "swift", "build", *args
     bin.install ".build/release/iblinter"
