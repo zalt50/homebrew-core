@@ -33,12 +33,11 @@ class Llvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256               arm64_golden_gate: "c42a2ea5f0e065b50e2b121f112fb9f736b30d1bf09432f087f55260e6dee445"
-    sha256               arm64_tahoe:       "6542e45742b50f455290cb54dcb6a1a91098bc2234393855569860676f4035ee"
-    sha256               arm64_sequoia:     "d987cff5f1a77fb8c8f2f61f7097fef675c5ab3a26db67e3eeb1f1a0e2d83231"
-    sha256 cellar: :any, arm64_linux:       "309680eb98c68b7c3b4952b07dc3ba9705104b075dce57da3a6440c782064036"
-    sha256 cellar: :any, x86_64_linux:      "2e66ffbfb5734e6f7d29897e6d1f1a44d92fd6a518dbbf526b9890075e252c46"
+    sha256               arm64_golden_gate: "173e8e1b5ca3d92227f1f3d9a3ae1cb25528f6c3c39b78c2a657f5ffa5660afb"
+    sha256               arm64_tahoe:       "53fddc24c7eb19ed180f7bcdf6dd7bebe67ab8a266a2c511c316b3870abb0fe8"
+    sha256               arm64_sequoia:     "4ca75cd24ea8f06f85ad16113dc274bbd2496e3330cb0765e69b142a39749876"
+    sha256 cellar: :any, arm64_linux:       "946215894962b307b054d176683f75ebb5434692c27d8e21ddc77997953e33b9"
+    sha256 cellar: :any, x86_64_linux:      "c62c7ce9ef13163db5ff176f54e97ab937c85221a5e062ccc27185e999657d2e"
   end
 
   keg_only :provided_by_macos
