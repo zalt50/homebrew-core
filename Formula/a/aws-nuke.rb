@@ -1,8 +1,8 @@
 class AwsNuke < Formula
   desc "Nuke a whole AWS account and delete all its resources"
   homepage "https://aws-nuke.ekristen.dev"
-  url "https://github.com/ekristen/aws-nuke/archive/refs/tags/v3.67.0.tar.gz"
-  sha256 "69ef6d51aba9d1b875c2adae35e321e4030bf098c4bedc8c10822a99af8fc95b"
+  url "https://github.com/ekristen/aws-nuke/archive/refs/tags/v3.68.1.tar.gz"
+  sha256 "124179d55b69a7844109fe1ac4a7aa2b3058e4a917dd7975e8e327b588145da5"
   license "MIT"
   head "https://github.com/ekristen/aws-nuke.git", branch: "main"
 
@@ -15,6 +15,12 @@ class AwsNuke < Formula
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X github.com/ekristen/aws-nuke/v#{version.major}/pkg/common.SUMMARY=#{version}]
