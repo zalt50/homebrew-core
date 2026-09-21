@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.23-src.tar.bz2"
-  sha256 "7aa8eaf414d25f916fe426365404759c56aa28aea6190e65967c4a45f64dc899"
+  url "https://downloads.python.org/pypy/pypy2.7-v8.0.0-src.tar.gz"
+  sha256 "e2a56b587014a97a7e6bd14ae99b55247cf2939d67a05a09e62af0afc16125cb"
   license "MIT"
   head "https://github.com/pypy/pypy.git", branch: "main"
 
@@ -131,7 +131,7 @@ class Pypy < Formula
                                                    "--no-keep-debug",
                                                    "--no-make-portable"
     libexec.mkpath
-    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
+    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.gz"
 
     %w[setuptools pip].each do |pkg|
       resource(pkg).stage do
