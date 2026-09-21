@@ -18,7 +18,7 @@ class Jscpd < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple", "--manifest-path", "rust/Cargo.toml"
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "rust/Cargo.toml"
   end
 
   def install
