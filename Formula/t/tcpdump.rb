@@ -1,8 +1,8 @@
 class Tcpdump < Formula
   desc "Command-line packet analyzer"
   homepage "https://www.tcpdump.org/"
-  url "https://www.tcpdump.org/release/tcpdump-4.99.6.tar.gz"
-  sha256 "5839921a0f67d7d8fa3dacd9cd41e44c89ccb867e8a6db216d62628c7fd14b09"
+  url "https://www.tcpdump.org/release/tcpdump-4.99.7.tar.gz"
+  sha256 "8be364e28d3b745ef1459b385cd2f4bc0e1ebad7a5d2ebdf70071d6c9b5b9a54"
   license "BSD-3-Clause"
   head "https://github.com/the-tcpdump-group/tcpdump.git", branch: "master"
 
