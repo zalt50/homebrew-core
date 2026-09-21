@@ -1,8 +1,8 @@
 class Zlog < Formula
   desc "High-performance C logging library"
   homepage "https://github.com/HardySimpson/zlog"
-  url "https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.18.tar.gz"
-  sha256 "3977dc8ea0069139816ec4025b320d9a7fc2035398775ea91429e83cb0d1ce4e"
+  url "https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.19.tar.gz"
+  sha256 "475df1b30be64190fd692de834ad4c45510f996188b5ecd4b6e3da2527c74a32"
   license "Apache-2.0"
 
   bottle do
@@ -19,11 +19,17 @@ class Zlog < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "868ff2416cf589e55963163d173f2b30515350a114b0dc70183f6b0183c62191"
   end
 
+  on_macos do
+    depends_on "make" => :build
+  end
+
   deny_network_access!
 
   def install
-    system "make", "PREFIX=#{prefix}"
-    system "make", "PREFIX=#{prefix}", "install"
+    make = OS.mac? ? "gmake" : "make"
+
+    system make, "PREFIX=#{prefix}"
+    system make, "PREFIX=#{prefix}", "install"
   end
 
   test do
