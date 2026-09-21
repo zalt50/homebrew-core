@@ -1,8 +1,8 @@
 class PiCodingAgent < Formula
   desc "AI agent toolkit"
   homepage "https://pi.dev/"
-  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.85.1.tgz"
-  sha256 "1f498729649bdce647d1160993b4d92bf3c614cc819213bee2f91dd34f2a7af4"
+  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.86.1.tgz"
+  sha256 "8dff93e6fa03e0d498e72a78d2c7bb5f094f5e06ee268e6abd000ba2984a0b6a"
   license "MIT"
 
   bottle do
@@ -16,13 +16,8 @@ class PiCodingAgent < Formula
 
   depends_on "node"
 
-  on_macos do
-    depends_on "rust" => :build
-
-    resource "clipboard" do
-      url "https://registry.npmjs.org/@mariozechner/clipboard/-/clipboard-0.3.9.tgz"
-      sha256 "25986ebeecaffadf3d1dd5f9199869057e4b64c37d7069c7f31c231dd86b5639"
-    end
+  on_linux do
+    depends_on "libxcb"
   end
 
   def install
@@ -32,24 +27,13 @@ class PiCodingAgent < Formula
     node_modules = libexec/"lib/node_modules/@earendil-works/pi-coding-agent/node_modules/"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     os = OS.linux? ? "linux" : "darwin"
-    node_modules.glob("koffi/build/koffi/*").each do |dir|
-      basename = dir.basename.to_s
-      rm_r(dir) if basename != "#{os}_#{arch}"
-    end
-
     node_modules.glob("@earendil-works/pi-tui/native/**/prebuilds/*").each do |dir|
       basename = dir.basename.to_s
       rm_r(dir) if basename != "#{os}-#{arch}"
     end
 
-    return unless OS.mac?
-
-    # Rebuild as the npm prebuilt lacks Mach-O header space to relocate install names for bottling
-    resource("clipboard").stage do
-      system "cargo", "build", "--lib", "--release"
-      cp "target/release/libcrosscopy_clipboard.dylib",
-         node_modules/"@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
-    end
+    # Rebuild the X11 clipboard helper against our `libxcb`
+    system "bash", node_modules/"@earendil-works/pi-tui/native/linux/build.sh" if OS.linux?
   end
 
   test do
