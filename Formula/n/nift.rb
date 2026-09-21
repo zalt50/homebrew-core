@@ -1,8 +1,8 @@
 class Nift < Formula
   desc "Fast dependency-aware website generator"
   homepage "https://nift.dev/"
-  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.3.0.tar.gz"
-  sha256 "b7980c211ac5b15a0ccbfbce9e64d273ccb27104a0517c4ee6a0910f35f70343"
+  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.4.0.tar.gz"
+  sha256 "296650e52053858b49a6817d8b22e4ee3690b283b311eefb7a11532c070cd6fd"
   license "MIT"
 
   livecheck do
