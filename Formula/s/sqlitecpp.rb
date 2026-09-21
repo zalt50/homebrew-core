@@ -1,8 +1,8 @@
 class Sqlitecpp < Formula
   desc "Smart and easy to use C++ SQLite3 wrapper"
   homepage "https://srombauts.github.io/SQLiteCpp/"
-  url "https://github.com/SRombauts/SQLiteCpp/archive/refs/tags/3.3.3.tar.gz"
-  sha256 "33bd4372d83bc43117928ee842be64d05e7807f511b5195f85d30015cad9cac6"
+  url "https://github.com/SRombauts/SQLiteCpp/archive/refs/tags/3.4.0.tar.gz"
+  sha256 "9910ad8bc0a821856bd6d9fa7cb0b457883108f2b803700256b451077ed6dc05"
   license "MIT"
 
   bottle do
