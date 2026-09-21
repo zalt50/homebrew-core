@@ -16,6 +16,12 @@ class AwsNuke < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[-X github.com/ekristen/aws-nuke/v#{version.major}/pkg/common.SUMMARY=#{version}]
     ENV["CGO_ENABLED"] = "0"
