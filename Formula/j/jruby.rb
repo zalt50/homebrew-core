@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.1.1.0/jruby-dist-10.1.1.0-src.zip"
-  sha256 "825d47f43ef288b218b965406ef8a97117c9b080986b3ad9883e1850da312166"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.1.2.0/jruby-dist-10.1.2.0-src.zip"
+  sha256 "28b8c3655e3ed99ea1f067ccee71c747682d519349c424536946996bd71743b1"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -31,8 +31,8 @@ class Jruby < Formula
   uses_from_macos "libffi" # for jffi
 
   resource "jffi" do
-    url "https://github.com/jnr/jffi/archive/refs/tags/1.4.0.tar.gz"
-    sha256 "1cc8174ca1fb86a3400da5838705d455c0be59fd93f2d675512dcb2f727fe45f"
+    url "https://github.com/jnr/jffi/archive/refs/tags/1.4.3.tar.gz"
+    sha256 "81b36310b7c2e2ed590d1d818416a4cb98bc881294fabd304f7aa0c5f81b8416"
 
     livecheck do
       url "https://raw.githubusercontent.com/jruby/jruby/refs/tags/#{LATEST_VERSION}/pom.xml"
