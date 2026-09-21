@@ -3,8 +3,8 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https://facebook.github.io/watchman/"
-  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.09.14.00.tar.gz"
-  sha256 "ba64492b08cd569b4fb7db1d40856ae0e12c279de602840928efa9f4c9c2208a"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.09.21.00.tar.gz"
+  sha256 "f6ea4036e4b292f31a9185d55f023aa875e6201f386c85ae8661976d055fcc85"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
@@ -54,7 +54,7 @@ class Watchman < Formula
     # https://github.com/facebook/watchman/issues/1355
     inreplace "eden/fs/service/eden.thrift" do |s|
       s.gsub! 'cpp_include "eden/fs/utils/GlobPath.h"', ""
-      s.gsub! '@cpp.Type{name = "::facebook::eden::GlobPath"}', ""
+      s.gsub! '@cpp.Adapter{name = "::facebook::eden::GlobPathAdapter"}', ""
     end
     inreplace "watchman/watcher/eden.cpp", "std::move(name).intoFbString()", "std::move(name)"
 
