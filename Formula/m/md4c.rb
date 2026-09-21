@@ -1,9 +1,10 @@
 class Md4c < Formula
   desc "C Markdown parser. Fast. SAX-like interface"
   homepage "https://github.com/mity/md4c"
-  url "https://github.com/mity/md4c/archive/refs/tags/release-0.5.3.tar.gz"
-  sha256 "353c346f376b87c954a13f3415ede2d51264cc61dc5abcd38ff1d2aa0d059b9e"
+  url "https://github.com/mity/md4c/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "4d151298125a81da3b2efa2e0eed8bdb7a9318569804e4fa4d7a2375ab83ef70"
   license "MIT"
+  head "https://github.com/mity/md4c.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "95abb2ae5a106e536a424dd3d4915127b9418532725218f6468d26c4ba30b7db"
@@ -16,6 +17,8 @@ class Md4c < Formula
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
