@@ -13,13 +13,11 @@ class Lowdown < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4d352bf559422b4ad45a32b86195d1dd1c7855d1f710f84a2fa05a0898dc7e4f"
-    sha256 cellar: :any, arm64_tahoe:       "6e979fc15e9673122684946b4236d49614080f043fdbc583dc6915d3d5b851ea"
-    sha256 cellar: :any, arm64_sequoia:     "a89c3145a2149f876d90d5e523f50330c19c7ed623299cd0ce1963507eaa3d25"
-    sha256 cellar: :any, arm64_sonoma:      "e5b4df3fdda7a9c0db7f86d8c152e1d3c97706a9207327a3dc47d409ae169985"
-    sha256 cellar: :any, sonoma:            "4ae9db89997a6c1cc75bd75785c195c3d3e80db2594b801def65c07193ebce74"
-    sha256 cellar: :any, arm64_linux:       "c27253a5683ec9a531639a3e90a7864f8a0c15b712fde033a6ad0b48e52a44ad"
-    sha256 cellar: :any, x86_64_linux:      "3d4099aaece1ca24361ea3cbf3239e595ae8b784921887926885692498424e99"
+    sha256 cellar: :any, arm64_golden_gate: "38a9c03bfb5c39b6d63be0274944d3b5e160a6be420940b3824f5aeea47be83d"
+    sha256 cellar: :any, arm64_tahoe:       "1db06afacaaec6d74c6eab22e02640d6baf377ce2174aa58cd24dbe2610b0c73"
+    sha256 cellar: :any, arm64_sequoia:     "5e8ba6edc11595adff2d93a89c7faeee42403b24a6d8659d5d3a29eba9e70260"
+    sha256 cellar: :any, arm64_linux:       "f218d5b57a9de3ed769afcdd8cead044567f94c8a9eefafd2349a0aa2b10bbfd"
+    sha256 cellar: :any, x86_64_linux:      "bdd9ee43b62835566b8f141d3937924c63b0c1ef565a60c749b35c9fc13551b0"
   end
 
   depends_on "bmake" => :build
