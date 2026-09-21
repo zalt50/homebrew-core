@@ -9,13 +9,11 @@ class Netshow < Formula
   head "https://github.com/taylorwilsdon/netshow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ffaa09f143a6a3fe2e06f5748be72da6d716ea4de9ffa5225c8657c372aa0fe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c19197cfda0a864cc73f3087f4d79051beeb024ebed3900d20ccadb22fc10114"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e56ee6c4dce9911931a31077e3ba125a4788ff6802717ce025badd165fcbf9bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "84e27dac8459026acceedbb031c99f28064d7e648dd253280faa8f0c43f9496e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ad8cf47828851f33b628bb330602f72b575d49cd23511ff38d4daf9ec817e353"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "aaaf002e96270f89bbfdd38cb3ebdf0d27c37e42054b18f332dfb981bc6b94b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "964965e3bd8ca444a2a708839104c98b56f37813cc7c4e0424afe52850a5cc16"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fa0e5a5368cefe90e16c40d4ea3f3d7d3e27675b49743fed5523b8ff2018f9b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f263f859f94b773b607fcce2835e91a41010a7e08b30e331bf38a9b7b2642183"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b40453e1b9694f045b8bdaceba70ac7cb4a7d993a10e2dffe0212d973c6a32b"
+    sha256 cellar: :any,                 arm64_linux:       "294a8b3bdb565bc09f92f16d61b2a2f82d4644b59f7ac2643cc1b12f1883d1e3"
+    sha256 cellar: :any,                 x86_64_linux:      "dea578f1d76356612454476ebff2a7e3f1fe5ed4067fe2e3f15efabac2005a0f"
   end
 
   depends_on "python@3.14"
