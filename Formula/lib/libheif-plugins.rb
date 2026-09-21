@@ -19,6 +19,7 @@ class LibheifPlugins < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "pkgconf" => :build
 
   depends_on "dav1d"
@@ -31,6 +32,7 @@ class LibheifPlugins < Formula
   depends_on "svt-av1"
   depends_on "x264"
 
+  deny_network_access!
   def install
     # Enabling plugins for "popular" formulae
     plugins = %w[
