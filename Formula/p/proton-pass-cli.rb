@@ -21,6 +21,12 @@ class ProtonPassCli < Formula
   # Increase the recursion limit required to compile pass-cli 2.3.3.
   patch :DATA
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "pass-cli")
     generate_completions_from_executable(bin/"pass-cli", "completions")
