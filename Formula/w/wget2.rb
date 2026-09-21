@@ -1,10 +1,9 @@
 class Wget2 < Formula
   desc "Successor of GNU Wget, a file and recursive website downloader"
   homepage "https://gitlab.com/gnuwget/wget2"
-  url "https://ftpmirror.gnu.org/wget/wget2-2.2.1.tar.gz"
-  sha256 "d7544b13e37f18e601244fce5f5f40688ac1d6ab9541e0fbb01a32ee1fb447b4"
+  url "https://ftpmirror.gnu.org/wget/wget2-2.3.0.tar.gz"
+  sha256 "4f1915b2a55a789a15f2f9ada7cc44bca81418e648f76fd88a7f4dd028b2149f"
   license "GPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url :stable
@@ -21,8 +20,11 @@ class Wget2 < Formula
     sha256 x86_64_linux:      "b70d0eee960f3393dc3f6e91012bfec0e244d18aab3e21841c7c8d4a8e7f9f19"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
+  depends_on "libtool" => :build
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :build
   depends_on "texinfo" => :build # Build fails with macOS-provided `texinfo`
@@ -46,8 +48,20 @@ class Wget2 < Formula
   end
 
   on_linux do
+    depends_on "gettext" => :build
     depends_on "zlib-ng-compat"
   end
+
+  # Fix `GNULIB_LIBS` being assigned an empty value by the unquoted `AC_SUBST`
+  # TODO: remove along with `autoreconf` and its build dependencies in the next release
+  patch do
+    url "https://gitlab.com/gnuwget/wget2/-/commit/e80d42ac035c1098f98ca447a418d19ac883160c.diff"
+    sha256 "7b253e3e7173b78711d5df370069132792331fa2f043152255762c88ec74a2ba"
+    type :backport
+    resolves "https://gitlab.com/gnuwget/wget2/-/issues/724"
+  end
+
+  allow_network_access! :test
 
   def install
     # The pattern used in 'docs/wget2_md2man.sh.in' doesn't work with system sed
@@ -63,6 +77,7 @@ class Wget2 < Formula
     ]
     args << "--with-libintl-prefix=#{formula_opt_prefix("gettext")}" if OS.mac?
 
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *args, *std_configure_args
     system "make", "install"
 
