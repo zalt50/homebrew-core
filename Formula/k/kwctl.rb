@@ -7,13 +7,11 @@ class Kwctl < Formula
   head "https://github.com/kubewarden/adm-controller.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c55235de88eca12c2c161c6eaec7c77df2fac56983fba613dc9a7cb92b6830eb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa3b3b9a679328629fb1bd22a877e8e858980da307b7fb7e0f1fc28154f8f6b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cb4ddd2fe66a8f75206f6c3e24bda5ca7865951acea3adc597eaa89e9808924f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b2f628d0d6f3479fad45c9fe276990c4e591e68e32c5b1b8f9cbea32757f5442"
-    sha256 cellar: :any_skip_relocation, sonoma:            "79a877d74bde9758d1f9e2df44b117ce87bf9547b3cceeccde225f212cf730b5"
-    sha256 cellar: :any,                 arm64_linux:       "de877e4f82577420fe015396ab96c88f207a93a94645b26b8977dc9ebc12192e"
-    sha256 cellar: :any,                 x86_64_linux:      "cded51da47522bc1ca44018949500507932e6bdbe6e64d1cd72cc6c449161742"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a00b40ab10cfb89f8418ca518f8e8d43566b5d85a6c3db639dc414b2aa1a35db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fa25c6b09af7d88716c7853f43dc7cf2da6544ca7c6821f12004e77586515671"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2a0ca1fe13ceae22f6c6be0bd7db0a321edceb7d9deb55030aaed1599c07942a"
+    sha256 cellar: :any,                 arm64_linux:       "3749db8663b999b4d299fe04957bac17621dc6323deb38bb21f2f466ba319515"
+    sha256 cellar: :any,                 x86_64_linux:      "097fbe3f4bd5893b4e8b3a97667c0649c31b59fe4b5dba29c2b0f4af5b2021d3"
   end
 
   depends_on "pkgconf" => :build
