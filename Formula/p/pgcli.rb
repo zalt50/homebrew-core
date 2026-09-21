@@ -8,13 +8,11 @@ class Pgcli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23c082d48fb7c78273602d851b830e95f1c18c05e45a0da453561f0e7c095931"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "482b23c78df2b2d9e8162ca4bfbb3faf42edbe03fb9b3cc8a82242f95dab7af2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "93dd4abdbf90168ccba03d291f6c72a9cb2f59537eae9b856574050eccb76a25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "901759856e69c0eab10d7a13a20f4d90ba9d16834291dee684694e4eb35f36b3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "57964a8208659cf15900cd8b0afc66a64b555086695392acb9667666ea444fd3"
-    sha256 cellar: :any,                 arm64_linux:       "330e12582566f3dded4ce5197694a017de7c58e49fbc9cb658ab95bffd416f83"
-    sha256 cellar: :any,                 x86_64_linux:      "628a83a33f7fdf9d8f4bfc8cab765496e0f88fd25cc07ae0ec5222bad8db030c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "077bad072d0eb3b2d374703e2e3d1f23e3fbd4566b6ffc15a9797ac51e54cb9d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e79ae34e6ac22f15dbe552083a419fe88b3c26870a3f1ba04e081f5be044ec57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d001290f9f337c7febb957dcffd3130ac59f14482a4469a15ed9dbf71a6aaa0b"
+    sha256 cellar: :any,                 arm64_linux:       "c4592205e4cf7b2e710dd47038e7e390841f2b49256a40f129f177d0303775ba"
+    sha256 cellar: :any,                 x86_64_linux:      "b3cc63f9d20cdf05df70b68bb9a1c9b12484ec4f9ebd530e0d6a38c3cb9a19e4"
   end
 
   depends_on "libpq"
