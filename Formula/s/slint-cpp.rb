@@ -1,8 +1,8 @@
 class SlintCpp < Formula
   desc "C++ library and headers for the Slint UI toolkit"
   homepage "https://slint.dev/"
-  url "https://github.com/slint-ui/slint/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "399ef10a0bcd8db236f755e68548e2e55e7cac00ee3da7f50e8d9d6881d34c25"
+  url "https://github.com/slint-ui/slint/archive/refs/tags/v1.18.1.tar.gz"
+  sha256 "fe485305ed303215e76c04918ee9aefbffbe229f18f979098ec36c7fa1dab28b"
   license "GPL-3.0-only"
   head "https://github.com/slint-ui/slint.git", branch: "master"
 
