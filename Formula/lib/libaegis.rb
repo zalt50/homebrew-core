@@ -6,11 +6,11 @@ class Libaegis < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9fc5a0c89e5771f308e2183cd9ca86d62f4182c7ff8c650331c9723e99bd0d50"
-    sha256 cellar: :any, arm64_tahoe:       "548d09f069ea11cb837425b78aeee246ebd9faa065d7f34098233b85edd220bb"
-    sha256 cellar: :any, arm64_sequoia:     "94b157b1e8455c1fc905675699e9eeb94fd266027388523b477cb9809b20c3e8"
-    sha256 cellar: :any, arm64_linux:       "6fd263dfd8d05f655eff152ae06c7ae78b4749dbfec813570c423c65fa18c1f5"
-    sha256 cellar: :any, x86_64_linux:      "6c6f0dc21303d85856f4c13a0fc60f941e13eb5cfec7457c1d4da6a4ad5ff5f6"
+    sha256 cellar: :any, arm64_golden_gate: "1cfb0cf66a1203aa98797b47e1039a99eea8748c3b889971af06764654442a20"
+    sha256 cellar: :any, arm64_tahoe:       "6cffa2d6c217571eda0d872c3b4fb9c6aafaed35b71b343c22f66d536fe91d01"
+    sha256 cellar: :any, arm64_sequoia:     "7af51a873d026baf98201eca6a08d9b3d4560011559f403007b24e2410ef1c44"
+    sha256 cellar: :any, arm64_linux:       "ff61724183e2ea37e6701b56654022038705f61fe8f0c02abcf6bb3cbfb2b2c5"
+    sha256 cellar: :any, x86_64_linux:      "127ced10a47aaf2a1ef14067a96584812b54afa82a47b1dfbff23d41b6ed2c2e"
   end
 
   depends_on "cmake" => :build
