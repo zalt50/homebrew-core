@@ -5,8 +5,8 @@ class SbomTool < Formula
   # For now, we track newer git tags which haven't been marked as releases.
   # Upstream seems to have stopped responding to issues since deciding to not
   # accept contributions: https://github.com/microsoft/sbom-tool#contributing
-  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.12.tar.gz"
-  sha256 "cb1116622aa38e352b02d7c968c3c50944d970edc52acb55e0a3368b2c465888"
+  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.13.tar.gz"
+  sha256 "4fba2326473b3cfa40cf6e4ee2dec25d2f7951fdba6a9bcabb217c5ca99d2d0c"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
