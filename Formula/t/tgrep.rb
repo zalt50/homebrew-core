@@ -7,11 +7,11 @@ class Tgrep < Formula
   head "https://github.com/microsoft/tgrep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5394d6b991475cc43e62a8c09caa53c7b94203cfd144a3e3a8f3e9cfc17a0f66"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47e722361c339a94be52da92f9fc49ff3b363058d4fa4d871bfbef47d23a82ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8fa1b9c39c786eac2f0d8aee5f1121bb8edddd100c45ca0aa105d4e5f6ee25a2"
-    sha256 cellar: :any,                 arm64_linux:       "13771c4870abcfcc25c55a07b86cfb382276fabf2ae576c43edee5341afc6a55"
-    sha256 cellar: :any,                 x86_64_linux:      "d8e4b66b67bd38f550de2456ef2aca316f98128f8afa710013ae56706e0fcf93"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ea7421590f2f0321d2bb4c774cec503ac9f4c546e12073f25fce1dc9dcfe606d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d6ad7841fb7256431e409d0af31a01a6beef623ce2c1b717caee1b97ca71d14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d47079204e9b67808c22506c887f3dfcfec6d009d6c7e487ca4b14900fc5ae09"
+    sha256 cellar: :any,                 arm64_linux:       "ed2d159da59b2769c3d90c87a37f60b7df495d031fbcfe2dc3c0c69d78146014"
+    sha256 cellar: :any,                 x86_64_linux:      "25491669de336b9abb6522966afd842b02acc7025c72832ea4d9dc17466b2418"
   end
 
   depends_on "rust" => :build
