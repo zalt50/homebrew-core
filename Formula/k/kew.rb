@@ -1,8 +1,8 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v4.3.4.tar.gz"
-  sha256 "1e40ba55a0f98cfde5dd5c85ff7b2de2569f7595576861eb90505fc7c2c75c15"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v4.3.5.tar.gz"
+  sha256 "1d89ea7391f08d535bb45aafa877cea2efd410f2d1b7e010e85ef70b0de12add"
   license "GPL-2.0-or-later"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
@@ -51,8 +51,18 @@ class Kew < Formula
 
     system bin/"kew", "path", testpath
 
-    output = shell_output("#{bin}/kew song")
-    assert_match "No Music found.\nPlease make sure the path is set correctly", output
+    # `kew` puts the terminal in raw mode, so it needs to own a PTY to avoid `SIGTTOU`
+    output = ""
+    PTY.spawn(bin/"kew", "song") do |r, _w, _pid|
+      r.winsize = [40, 120]
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    end
+    assert_match "No Music found.", output
+    assert_match "Please make sure the path is set correctly", output
 
     assert_match version.to_s, shell_output("#{bin}/kew --version")
   end
