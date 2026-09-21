@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "High-performance linter for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.84.0.tar.gz"
-  sha256 "8b3575460c92014fbe69d64b17b4947839f0a7a316dead0dda7fd3d9826d85d8"
+  url "https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.85.0.tar.gz"
+  sha256 "cd5fe4bb755e4ef23b4be0ebf11ae4f6c84b46add4104ea06b04c32f2e4bf3b2"
   license "MIT"
   head "https://github.com/oxc-project/oxc.git", branch: "main"
 
@@ -20,6 +20,12 @@ class Oxlint < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "apps/oxlint")
