@@ -1,8 +1,8 @@
 class Bend < Formula
   desc "Language that blocks AI mistakes via proof"
   homepage "https://bend-lang.com"
-  url "https://github.com/bendlang/bend/archive/refs/tags/v2.0.22.tar.gz"
-  sha256 "ba76455d1e16b1d7311fbdcaddfb6527798cb47e1d472672c4084f127302765f"
+  url "https://github.com/bendlang/bend/archive/refs/tags/v2.0.23.tar.gz"
+  sha256 "c40becbb8ab54fc353c3c4ead02bfaa4e90a65ab488fd56e4e0de5d3f8b745b4"
   license "Apache-2.0"
   head "https://github.com/bendlang/bend.git", branch: "main"
 
