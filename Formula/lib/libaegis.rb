@@ -1,8 +1,8 @@
 class Libaegis < Formula
   desc "Portable C implementations of the AEGIS family of encryption algorithms"
   homepage "https://github.com/aegis-aead/libaegis"
-  url "https://github.com/aegis-aead/libaegis/archive/refs/tags/0.10.4.tar.gz"
-  sha256 "d416b95ded205cf083c0c630767b522beff18d98a3f8066970e127ef129410a8"
+  url "https://github.com/aegis-aead/libaegis/archive/refs/tags/0.10.5.tar.gz"
+  sha256 "9a162cf4a37a10a5f7c1a2034c391f3c3998d28ad3ed9f823f0b3d24971abfe4"
   license "MIT"
 
   bottle do
