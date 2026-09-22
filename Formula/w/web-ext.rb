@@ -6,7 +6,7 @@ class WebExt < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ca160932c7caac54082402a76e0b593714f47cfa66eb119cfe6e6462a161dae5"
+    sha256 cellar: :any_skip_relocation, all: "4024c05b6b77475fd3a6f8f18d1f2b70df4b59de09e79ef05ba2656a6ee22de2"
   end
 
   depends_on "node"
