@@ -1,17 +1,17 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v4.3.4.tar.gz"
-  sha256 "1e40ba55a0f98cfde5dd5c85ff7b2de2569f7595576861eb90505fc7c2c75c15"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v4.3.5.tar.gz"
+  sha256 "1d89ea7391f08d535bb45aafa877cea2efd410f2d1b7e010e85ef70b0de12add"
   license "GPL-2.0-or-later"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "52f5b9b54bc51ff90f585c77d5b420aa1e5efc763d5bbf68852bd45b83d1085b"
-    sha256 arm64_tahoe:       "5de2641ab52461b3d426c4fa6d14f33efe224489af5373d25a5876c4739bb62a"
-    sha256 arm64_sequoia:     "17855044b5f99a1a446af18947bcb165969df4ba82867a9c3f46ff4442b28732"
-    sha256 arm64_linux:       "78fc680846e9a704232d3c3fa4d3ad4f91ca33593644c20134dba5ed468382e3"
-    sha256 x86_64_linux:      "37749aaf9a33c5cef07def7890350eb80180de17d404654fa42bd3068da973f9"
+    sha256 arm64_golden_gate: "5d429f180fbbc5897336fe9884d06ca42ef7b7e3c41dc55c953dda93e2b7fca1"
+    sha256 arm64_tahoe:       "338fa91af37cff1d9f8bfcd7f95e8ec15534eac32b94e3d85a2064415c1b2079"
+    sha256 arm64_sequoia:     "78c733207a816d72f2137acbad833b73acaa070d766122938f9736b62306f399"
+    sha256 arm64_linux:       "0ec8f789219a63fc26d482ee6a24cafb629a61a592e818e6ae29a51226acafc0"
+    sha256 x86_64_linux:      "f534be169299898d4c97828e7e91331be3a59e012ece8a7fa09ba294755af8b4"
   end
 
   depends_on "pkgconf" => :build
@@ -51,8 +51,18 @@ class Kew < Formula
 
     system bin/"kew", "path", testpath
 
-    output = shell_output("#{bin}/kew song")
-    assert_match "No Music found.\nPlease make sure the path is set correctly", output
+    # `kew` puts the terminal in raw mode, so it needs to own a PTY to avoid `SIGTTOU`
+    output = ""
+    PTY.spawn(bin/"kew", "song") do |r, _w, _pid|
+      r.winsize = [40, 120]
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    end
+    assert_match "No Music found.", output
+    assert_match "Please make sure the path is set correctly", output
 
     assert_match version.to_s, shell_output("#{bin}/kew --version")
   end
