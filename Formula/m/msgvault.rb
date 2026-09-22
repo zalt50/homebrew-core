@@ -4,6 +4,7 @@ class Msgvault < Formula
   url "https://github.com/kenn-io/msgvault/archive/refs/tags/v0.21.0.tar.gz"
   sha256 "25285e2281238e64f5c72c1a1cc54e8a3f0351b76ea6dfb7c6971f4566276e4f"
   license "MIT"
+  revision 1
   head "https://github.com/kenn-io/msgvault.git", branch: "main"
 
   bottle do
@@ -14,7 +15,9 @@ class Msgvault < Formula
     sha256 cellar: :any, x86_64_linux:      "0c0230a82301e3d7f194298cef3175b1e6726c34a1ff3ac4870d0f23154a18e3"
   end
 
+  depends_on "bun" => :build
   depends_on "go" => :build
+  depends_on "node" => :build
   depends_on "duckdb"
 
   uses_from_macos "sqlite" => :build
@@ -23,9 +26,12 @@ class Msgvault < Formula
 
   def fetch
     system "go", "mod", "download"
+    system "make", "web-install"
   end
 
   def install
+    system "make", "web-embed"
+
     ENV["CGO_ENABLED"] = "1"
     # DuckDB is linked dynamically against this formula via the duckdb_use_lib
     # tag, rather than the duckdb-go bindings' vendored static library.
@@ -40,14 +46,22 @@ class Msgvault < Formula
 
   test do
     ENV["MSGVAULT_HOME"] = testpath
+    port = free_port
+    (testpath/"config.toml").write <<~TOML
+      [server]
+      api_port = #{port}
+    TOML
 
     system bin/"msgvault", "init-db"
     assert_path_exists testpath/"msgvault.db"
+    assert_match "<title>msgvault</title>", shell_output("curl --fail --silent http://127.0.0.1:#{port}/")
 
     # Build the analytics cache, which runs DuckDB's Parquet ETL over the (empty)
     # database and so exercises the dynamically linked libduckdb.
     system bin/"msgvault", "build-cache"
 
     assert_match(/Messages:\s+0/, shell_output("#{bin}/msgvault stats"))
+  ensure
+    system bin/"msgvault", "daemon", "stop"
   end
 end
