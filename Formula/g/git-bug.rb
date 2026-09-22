@@ -1,8 +1,8 @@
 class GitBug < Formula
   desc "Distributed, offline-first bug tracker embedded in git, with bridges"
   homepage "https://github.com/git-bug/git-bug"
-  url "https://github.com/git-bug/git-bug/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "1b5cafa3d9918ce18c4674c93b83359e211def83e716d5841fa93c77b457e6c2"
+  url "https://github.com/git-bug/git-bug/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "31ae65e733e31fbf37ecea8f31966fe46cbeb1657a144876c855d5cf09cffb69"
   license "GPL-3.0-or-later"
   head "https://github.com/git-bug/git-bug.git", branch: "trunk"
 
@@ -28,13 +28,8 @@ class GitBug < Formula
 
   def install
     ENV["GOBIN"] = bin
-    ldflags = %W[
-      -X github.com/git-bug/git-bug/commands.GitCommit="v#{tap.user}"
-      -X github.com/git-bug/git-bug/commands.GitLastTag="v#{version}"
-      -X github.com/git-bug/git-bug/commands.GitExactTag="v#{version}"
-    ]
     system "go", "generate"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}")
 
     man1.install Dir["doc/man/*.1"]
     doc.install Dir["doc/md/*.md"]
