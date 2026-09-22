@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https://systemd.io"
-  url "https://github.com/systemd/systemd/archive/refs/tags/v261.3.tar.gz"
-  sha256 "3f8d3d3969af7214bda600930e14c6a24135eb3dce1ba7f1b980b74e6dc15b72"
+  url "https://github.com/systemd/systemd/archive/refs/tags/v262.tar.gz"
+  sha256 "6aa77506c0644aa67f940a48e3d3a7368601f787e4f249139516d353f107bcab"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -86,9 +86,6 @@ class Systemd < Formula
     args = %W[
       --localstatedir=#{var}
       --sysconfdir=#{etc}
-      -Dsysvinit-path=#{etc}/init.d
-      -Dsysvrcnd-path=#{etc}/rc.d
-      -Drc-local=#{etc}/rc.local
       -Dpamconfdir=#{etc}/pam.d
       -Dbashcompletiondir=#{bash_completion}
       -Dmode=release
