@@ -1,8 +1,8 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.20.tgz"
-  sha256 "79c45fe703ab2c5f46b8d80f9f97f8164b6b4b43696aed507ddb7df1ccdc1402"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.21.tgz"
+  sha256 "80e965aa74980743ccf8bae9c0f1873fab16c9ef6518d413a10d2b4a606f121c"
   license "MIT"
 
   bottle do
@@ -41,7 +41,12 @@ class HfMcpServer < Formula
 
     output_log = testpath/"output.log"
     pid = spawn bin/"hf-mcp-server", [:out, :err] => output_log.to_s
-    sleep 10
+    # The first `node` launch on macOS CI VMs can spend 20+ seconds in dyld
+    90.times do
+      break if output_log.read.include?("Failed to authenticate with Hugging Face API")
+
+      sleep 1
+    end
     assert_match "Failed to authenticate with Hugging Face API", output_log.read
   ensure
     Process.kill("TERM", pid)
