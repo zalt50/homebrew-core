@@ -1,8 +1,8 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for various command runners including make"
   homepage "https://github.com/kyu08/fzf-make"
-  url "https://github.com/kyu08/fzf-make/archive/refs/tags/v0.74.0.tar.gz"
-  sha256 "3297dcff19019ff4099bfd271cd8463109bdd590a2ba5213d65ca3cd1b5d9d33"
+  url "https://github.com/kyu08/fzf-make/archive/refs/tags/v0.75.0.tar.gz"
+  sha256 "41587f1340cfa440491704a0edbe945a0fe7f4965c09ea4cad84580ab7f6f937"
   license "MIT"
   head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
@@ -17,6 +17,12 @@ class FzfMake < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
