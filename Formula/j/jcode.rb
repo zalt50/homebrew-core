@@ -1,8 +1,8 @@
 class Jcode < Formula
   desc "AI coding agent harness for the terminal"
   homepage "https://jcode.sh"
-  url "https://github.com/1jehuang/jcode/archive/refs/tags/v0.86.0.tar.gz"
-  sha256 "5d04516cc833e1b7684143a2d92d458766e94d247580b61f96179615d9e90a3d"
+  url "https://github.com/1jehuang/jcode/archive/refs/tags/v0.87.0.tar.gz"
+  sha256 "075eb1335cc2fde18e1027c4a7f7f9fc37cb30df0bb94e60698f5e65ce0e9818"
   license "MIT"
 
   livecheck do
