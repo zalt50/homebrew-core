@@ -1,8 +1,8 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https://github.com/transact-rs/sqlx"
-  url "https://github.com/transact-rs/sqlx/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "48eaacc9a800af48c35713d300bc0de0c1e04b84c810b25de1007806fa1d718c"
+  url "https://static.crates.io/crates/sqlx-cli/sqlx-cli-0.9.0.crate"
+  sha256 "93ef3857a4a0b48fcbf536b77a9122a35c7631686f2ccfbc75e616335771e8d0"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
@@ -19,11 +19,17 @@ class SqlxCli < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "sqlx-cli")
+    system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"sqlx", "completions")
   end
