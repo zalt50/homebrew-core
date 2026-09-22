@@ -1,8 +1,8 @@
 class Tagref < Formula
   desc "Refer to other locations in your codebase"
   homepage "https://github.com/stepchowfun/tagref"
-  url "https://github.com/stepchowfun/tagref/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "18663bc5628a437eb756de72d0f0ecf1a1100806c768895d6c3be85ae92a9d7e"
+  url "https://github.com/stepchowfun/tagref/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "a422ed19499436ed126bd9b53c8744cc4ab81832f90b1b6ae8481ecb5ed4b1d8"
   license "MIT"
 
   bottle do
@@ -35,7 +35,7 @@ class Tagref < Formula
     ENV["NO_COLOR"] = "true"
     output = shell_output("#{bin}/tagref 2>&1")
     assert_match(
-      "2 tags, 2 tag references, 0 file references, and 0 directory references",
+      "2 tags, 0 group members, 2 references, 0 file references, and 0 directory references",
       output,
       "Tagref did not find all the tags.",
     )
@@ -46,7 +46,7 @@ class Tagref < Formula
 
     output = shell_output("#{bin}/tagref 2>&1", 1)
     assert_match(
-      "No tag found for [ref:baz] @ file-3.txt:1.",
+      "No tag or group found for [ref:baz] @ file-3.txt:1.",
       output,
       "Tagref did not complain about a missing tag.",
     )
