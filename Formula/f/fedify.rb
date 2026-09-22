@@ -1,8 +1,8 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
   homepage "https://fedify.dev/cli"
-  url "https://registry.npmjs.org/@fedify/cli/-/cli-2.3.7.tgz"
-  sha256 "f5ed834aa99ae26cf1a9bd4596faa7e1dad011b2ac15401bfb85e25c22491837"
+  url "https://registry.npmjs.org/@fedify/cli/-/cli-2.3.8.tgz"
+  sha256 "1ca8ac418d99d203587c8f645fdc5ba73b8b59d3dc603027c3e02f1008c88007"
   license "MIT"
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
