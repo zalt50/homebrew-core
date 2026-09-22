@@ -4,6 +4,7 @@ class Gmic < Formula
   url "https://gmic.eu/files/source/gmic_4.0.5.tar.gz"
   sha256 "c6771c48693ed615b2e85d1db7a9626358d4606eb2c75dcf009b2924f396da59"
   license "CECILL-2.1"
+  revision 1
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
   livecheck do
