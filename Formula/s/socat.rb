@@ -22,7 +22,15 @@ class Socat < Formula
     sha256 cellar: :any, x86_64_linux:      "70e101e17362a4f49ea45c3bc72ddb05f90b04824b3ae7ce5fec08de758a9e45"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  # Apply Fedora patch to support OpenSSL 4.0. Same change is used by Debian
+  # (10-Use-OpenSSL-ASN1_STRING-accessor-functions-instead-o.patch)
+  patch do
+    url "https://src.fedoraproject.org/rpms/socat/raw/c0b6576097257ad24cd6f72948bada8bca9a588c/f/socat-1.8.1.0-openssl4.patch"
+    sha256 "66258fb1b1f65236ad8da8cbfb689485356423e7f280dc8e524dc012c11a5687"
+    type :unofficial
+  end
 
   # Test connects to a remote host
   allow_network_access! :test
