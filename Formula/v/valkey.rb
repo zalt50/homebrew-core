@@ -21,9 +21,11 @@ class Valkey < Formula
     sha256 cellar: :any, x86_64_linux:      "3f3fb3b5a57b1fd215dc80cfc3d9eab1f5374e833b09e51c0026c5e374857a69"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   conflicts_with "redis", because: "both install `redis-*` binaries"
+
+  deny_network_access!
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
