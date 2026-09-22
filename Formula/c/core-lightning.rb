@@ -7,8 +7,8 @@ class CoreLightning < Formula
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
   stable do
-    url "https://github.com/ElementsProject/lightning/releases/download/v26.06.7/clightning-v26.06.7.zip"
-    sha256 "b313d207e53f1e2dbf9fbac79d5af48c352e874a653390bddb81b52795a153dc"
+    url "https://github.com/ElementsProject/lightning/releases/download/v26.06.8/clightning-v26.06.8.zip"
+    sha256 "2809c4f6aba5e928317d9857fbff5b29232b5e799ed74e1150872a9bf11de025"
 
     patch do
       url "https://github.com/ElementsProject/lightning/commit/d384750883216e7e19e01779d06bc36295380296.patch?full_index=1"
