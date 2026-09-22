@@ -35,7 +35,7 @@ class Sile < Formula
   depends_on "libpng"
   depends_on "luajit"
   depends_on "luarocks"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "jq" => :build, since: :sequoia
   uses_from_macos "unzip" => :build
@@ -174,7 +174,7 @@ class Sile < Formula
     luarocks_args = %W[
       ZLIB_DIR=#{zlib_dir}
       EXPAT_DIR=#{expat_dir}
-      OPENSSL_DIR=#{formula_opt_prefix("openssl@3")}
+      OPENSSL_DIR=#{formula_opt_prefix("openssl@4")}
       --tree=#{luapath}
       --lua-dir=#{lua.opt_prefix}
     ]
