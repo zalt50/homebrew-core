@@ -2,7 +2,7 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 9
+  revision 10
   compatibility_version 1
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
@@ -16,6 +16,14 @@ class Mpv < Formula
       sha256 "3906b98b02071a0d5747a400406494ca69cef7afd8d3eee4a99fdbe40dc90c1f"
       type :backport
       resolves "https://github.com/mpv-player/mpv/pull/17731"
+    end
+
+    # Backport fix for use-after-free crash on audio device change (macOS 26/27)
+    patch do
+      url "https://github.com/mpv-player/mpv/commit/c5d391adba7bd024954d0df1e0405f5749f4d4ca.patch?full_index=1"
+      sha256 "769b218df220738cc1cf9f81cf696c16518c5dfe56a5ef028e33b22536e0e924"
+      type :backport
+      resolves "https://github.com/mpv-player/mpv/issues/18274"
     end
   end
 
