@@ -4,6 +4,7 @@ class Ctl < Formula
   url "https://github.com/aces-aswf/CTL/archive/refs/tags/ctl-1.5.5.tar.gz"
   sha256 "b6a36ac31e0a79224216e4fc41b56982939cec7a1afd4e80165cec3f1c37d265"
   license "AMPAS"
+  revision 1
   head "https://github.com/aces-aswf/CTL.git", branch: "master"
 
   bottle do
