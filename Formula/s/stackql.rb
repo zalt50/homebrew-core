@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https://stackql.io/"
-  url "https://github.com/stackql/stackql/archive/refs/tags/v0.11.669.tar.gz"
-  sha256 "c2d514e25fa0c7813f6905a0cac3d412a28bcc6823db834dbfeb24ad1f845d45"
+  url "https://github.com/stackql/stackql/archive/refs/tags/v0.12.718.tar.gz"
+  sha256 "bad9811684ee9164323c612581774d9163af811f251c6b8367c1b6a442e30ba9"
   license "MIT"
   head "https://github.com/stackql/stackql.git", branch: "main"
 
@@ -29,7 +29,7 @@ class Stackql < Formula
   end
 
   def install
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildMajorVersion=#{version.major}
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildMinorVersion=#{version.minor}
@@ -39,9 +39,7 @@ class Stackql < Formula
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildDate=#{time.iso8601}
       -X stackql/internal/stackql/planbuilder.PlanCacheEnabled=true
     ]
-    tags = %w[json1 sqleanall]
-
-    system "go", "build", *std_go_args(ldflags:, tags:), "./stackql"
+    system "go", "build", *std_go_args(ldflags:), "./stackql"
   end
 
   test do
