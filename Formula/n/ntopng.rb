@@ -1,10 +1,9 @@
 class Ntopng < Formula
   desc "Next generation version of the original ntop"
   homepage "https://www.ntop.org/products/traffic-analysis/ntop/"
-  url "https://github.com/ntop/ntopng/archive/refs/tags/6.6.tar.gz"
-  sha256 "2e97fbd26c2f9ac526214e2a2e22ecb218e38f5e99a688c25ae6cedbbc3a892c"
+  url "https://github.com/ntop/ntopng/archive/refs/tags/7.0.tar.gz"
+  sha256 "fba4607596526d26c15bec3619a9b1ec7c0a482fdd4495cbbf29bb4cb2271521"
   license "GPL-3.0-only"
-  revision 2
   head "https://github.com/ntop/ntopng.git", branch: "dev"
 
   bottle do
@@ -48,20 +47,8 @@ class Ntopng < Formula
   end
 
   resource "clickhouse-cpp" do
-    url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.6.0.tar.gz"
-    sha256 "f694395ab49e7c2380297710761a40718278cefd86f4f692d3f8ce4293e1335f"
-  end
-
-  # Backport nDPI 6.0 compatibility from the upstream 6.6-stable branch.
-  patch do
-    url "https://github.com/ntop/ntopng/commit/896091d7f2ada1a173299fe71b785ce14cbb9b0c.patch?full_index=1"
-    sha256 "97972994d02777d68c6a99975e8fc71ec89a49be9f10c840b4409f27d8b57f7b"
-  end
-
-  # Keep the flow-risk table in sync with nDPI 6.0.
-  patch do
-    url "https://github.com/ntop/ntopng/commit/ad4d75408064e24c728b6ae659e032daa2979695.patch?full_index=1"
-    sha256 "56b906b1dafdd28bbae689afdb4a077ae467398497adbc41f3cc05d8d6e07156"
+    url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.6.2.tar.gz"
+    sha256 "bac497857759e991fa4e1638bccf936cb36d10ad79273695a570272cc4891428"
   end
 
   def install
