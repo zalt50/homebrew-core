@@ -1,10 +1,25 @@
 class Softhsm < Formula
   desc "Cryptographic store accessible through a PKCS#11 interface"
   homepage "https://www.softhsm.org/"
-  url "https://github.com/softhsm/SoftHSMv2/archive/refs/tags/2.7.0.tar.gz"
-  sha256 "be14a5820ec457eac5154462ffae51ba5d8a643f6760514d4b4b83a77be91573"
   license "BSD-2-Clause"
   head "https://github.com/softhsm/SoftHSMv2.git", branch: "main"
+
+  stable do
+    url "https://github.com/softhsm/SoftHSMv2/archive/refs/tags/2.7.0.tar.gz"
+    sha256 "be14a5820ec457eac5154462ffae51ba5d8a643f6760514d4b4b83a77be91573"
+
+    # OpenSSL 4.0 support was added with memory leak fixes
+    patch do
+      url "https://github.com/softhsm/SoftHSMv2/commit/57e10cbbe75069be92c7e9720c180a05833481fc.patch?full_index=1"
+      sha256 "d60af158e0fcbb72458292b86455ec949d4c550cd009274841cbe94b4ded06dd"
+      type :backport
+    end
+    patch do
+      url "https://github.com/softhsm/SoftHSMv2/commit/d23ea09d318c03c033420d065f1c64b019cc94ed.patch?full_index=1"
+      sha256 "b8f13d1d584c39d0c04443d756fdb7dadbfe8ab056dd7d290313afcfd93d96ca"
+      type :backport
+    end
+  end
 
   bottle do
     sha256 arm64_golden_gate: "58fa7501c31030a2f3670573e44eb1ea008ac9144030e3a62050be18347d31cd"
@@ -20,7 +35,9 @@ class Softhsm < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     system "./autogen.sh"
@@ -28,7 +45,7 @@ class Softhsm < Formula
                           "--localstatedir=#{var}",
                           "--sysconfdir=#{pkgetc}",
                           "--with-crypto-backend=openssl",
-                          "--with-openssl=#{formula_opt_prefix("openssl@3")}",
+                          "--with-openssl=#{formula_opt_prefix("openssl@4")}",
                           "--disable-gost",
                           *std_configure_args
     system "make", "install"
