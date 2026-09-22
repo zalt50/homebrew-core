@@ -15,6 +15,8 @@ class Libaegis < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # The library contains multiple implementations, from which the most optimal is
     # selected at runtime, see https://github.com/aegis-aead/libaegis/blob/main/src/common/cpu.c
