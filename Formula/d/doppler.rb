@@ -7,13 +7,11 @@ class Doppler < Formula
   head "https://github.com/DopplerHQ/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "43ac4eabdef2ba965e63be6e5c80131145b055ca993233a72e9cc3dd72aae669"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "711ec548468e998d042ef311c09a77e68b81781019e8b629001320be7533b79d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "711ec548468e998d042ef311c09a77e68b81781019e8b629001320be7533b79d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "711ec548468e998d042ef311c09a77e68b81781019e8b629001320be7533b79d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "aa1e6d7d698ec03c5c901943c7e467ab958e9c3e243107f9b09ab3f359774e17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5a65e099533c5692886415a249d3d864ec9099763790a2b5960fd5b6a79f1952"
-    sha256 cellar: :any,                 x86_64_linux:      "55948e3cf06dfc95c4370a2166b2046c1fd7225102846bb7088a1efe90fb3ae7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1e33cbe803ef4209ceefe1c2fce5a2b28bc6a8bb626be44f41d0d15cb3197076"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e33cbe803ef4209ceefe1c2fce5a2b28bc6a8bb626be44f41d0d15cb3197076"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e33cbe803ef4209ceefe1c2fce5a2b28bc6a8bb626be44f41d0d15cb3197076"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d62f91d6c978157a017e858aaa9854bb4602b4d74b9beefb4d9742a0f769711a"
+    sha256 cellar: :any,                 x86_64_linux:      "3e87547c8c166e36de88968c5caafb7a76e9861c5ac12ae584cd3abab572f320"
   end
 
   depends_on "go" => :build
