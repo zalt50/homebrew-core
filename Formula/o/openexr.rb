@@ -1,11 +1,10 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.15.tar.gz"
-  sha256 "445ed5b0ea4d9cf98be3a4f219e419628b123b61dec65ccb743ab9b07fbebdaa"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.0.tar.gz"
+  sha256 "0dc41a9dd84c868ad89c892382f75f6835a73decbefab9366d6f168bf9322954"
   license "BSD-3-Clause"
-  revision 1
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "323a18f3c7559329d1acf951fde64e45a1eb1f80bd23d9f5fd3a39bb83d96920"
@@ -21,6 +20,7 @@ class Openexr < Formula
   depends_on "imath"
   depends_on "libdeflate"
   depends_on "openjph"
+  depends_on "zstd"
 
   on_linux do
     depends_on "zlib-ng-compat"
