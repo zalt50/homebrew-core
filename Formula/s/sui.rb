@@ -11,11 +11,11 @@ class Sui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "32eb6d38c4bc48c530b990dd3072669c64f946b6351c386ec90b3a41939d2a59"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e61a03389004ee626d9148a0889141b6e4148a0c7d7c506c62ff61217ba3a95b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e583603fb92a77ac680d38d1cf90f675ec4be42eea98b4f8e460ba5fbcbf5f8b"
-    sha256 cellar: :any,                 arm64_linux:       "e56d7453dd00b46057b07a613915874fab873709a127446e805137327461e574"
-    sha256 cellar: :any,                 x86_64_linux:      "f76230cee4846059b5b25f2c4cd4ed86fd801567ff25018f50a1a7377cc03b60"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f8cb4c55a8d27c9ae90b8f2abcd7e9dc66c6a9cf25e43fd1091356f1babb1b05"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c7072109102bc8a05c8cb6ddc0b9213deb7881260a9e3a500377937cc5d523e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a8746f28ae6685b854a4c156b6779aef8a3abb2f110566dba9b86eba87b8fe7c"
+    sha256 cellar: :any,                 arm64_linux:       "72e8dc46d438be34772ca91ba25c0fca68bd081c371a94dc30d08c0c5f87f14b"
+    sha256 cellar: :any,                 x86_64_linux:      "b85f1d98d3c58b94900d3da9dbb5f52eddb5845b441f382ead1eed0c7660f001"
   end
 
   depends_on "cmake" => :build
