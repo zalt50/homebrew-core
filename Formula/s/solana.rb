@@ -12,12 +12,11 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2223f68d96e8a239cb6436b0371c49f7847c5c08d414227a810f6ee563a41a5a"
-    sha256 cellar: :any, arm64_tahoe:       "62244cd2fb837f8f9dbc20ae55060bf62d9694fc12ae76490387199ce687aeb7"
-    sha256 cellar: :any, arm64_sequoia:     "673a46d16b1679fe7614f2bc003baf193720c93c11b3347842ca651ca5008fdd"
-    sha256 cellar: :any, arm64_sonoma:      "02dac8996f475add5a67ca9aef97513410c7514c8d2a8691c52201643a98864d"
-    sha256 cellar: :any, arm64_linux:       "5ed3103058aa54bb67f2c496e26e0cbd7f9cbbf75825075b66b881f6e7d3555c"
-    sha256 cellar: :any, x86_64_linux:      "4f54b3ff35b6def23b49adbc72505a9adfe1f8af18ec74cb303b2b5a264fd122"
+    sha256 cellar: :any, arm64_golden_gate: "387b15bcdeeda4554333aa0d2e292cb49f735c5946ed87d9a80867575a8ebce8"
+    sha256 cellar: :any, arm64_tahoe:       "1dc94776caff8b7fc29ecd5befb1db273dc440e0e694dea0eabe03801057b51d"
+    sha256 cellar: :any, arm64_sequoia:     "3c45be12410fd2e0d15c97b2dbe5fad48a97f0a3db0967749ff1853c1cc9fbe0"
+    sha256 cellar: :any, arm64_linux:       "73cbdb3f87449c2e0c6042abb81c80122657f9bd57799bce6c6d15587455b2ba"
+    sha256 cellar: :any, x86_64_linux:      "8682bab6dc764b126e66566ac0ebfa7164dab54d1fa6e4ab69cf155288328288"
   end
 
   depends_on "llvm" => :build # for libclang
