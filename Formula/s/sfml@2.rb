@@ -4,7 +4,7 @@ class SfmlAT2 < Formula
   url "https://www.sfml-dev.org/files/SFML-2.6.2-sources.zip"
   sha256 "19d6dbd9c901c74441d9888c13cb1399f614fe8993d59062a72cfbceb00fed04"
   license "Zlib"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "f6b257eca5ac15218960bbdaf984efe119f534b96a6564e15e6779025bcef989"
@@ -37,6 +37,16 @@ class SfmlAT2 < Formula
     depends_on "systemd"
   end
 
+  # Define character traits for unsigned strings, upstream PR ref, https://github.com/SFML/SFML/pull/3592
+  patch do
+    url "https://github.com/SFML/SFML/commit/6171cc2a0106b3d1d7aa9ea4e3aff9ca4246f34b.patch?full_index=1"
+    sha256 "686bd41e2f1c4fec9d7ef266b65a50862577297056a12c6d5ee507f62dabf11f"
+    type :backport
+    resolves "https://github.com/SFML/SFML/pull/3592"
+  end
+
+  deny_network_access!
+
   def install
     # Always remove the "extlibs" to avoid install_name_tool failure
     # (https://github.com/Homebrew/homebrew/pull/35279) but leave the
@@ -58,10 +68,13 @@ class SfmlAT2 < Formula
 
   test do
     (testpath/"test.cpp").write <<~CPP
+      #include "SFML/System/String.hpp"
       #include "SFML/System/Time.hpp"
       int main() {
         sf::Time t1 = sf::milliseconds(10);
-        return 0;
+        sf::String text("SFML");
+        const auto utf8 = text.toUtf8();
+        return t1.asMilliseconds() == 10 && utf8.size() == 4 && utf8[0] == 'S' ? 0 : 1;
       }
     CPP
 
