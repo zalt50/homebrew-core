@@ -11,11 +11,11 @@ class Libupnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6baf17bf6948ac0ac9a83f505b102c2af3e756a5fc3ff9ea3963db9e0fbead76"
-    sha256 cellar: :any, arm64_tahoe:       "6c7e0b620645be557180652e91b878e39f32aeff11a29634cef9068f208e91a7"
-    sha256 cellar: :any, arm64_sequoia:     "ab50cab6b010798a2c2b79f05066a8942d944b0bb02309b98ffd5c98ab8cd54d"
-    sha256 cellar: :any, arm64_linux:       "8d6240be036585524e17119abbad5ed93cd06c32b1a236d0672ce31e0f06a3a7"
-    sha256 cellar: :any, x86_64_linux:      "ec29933d5b1a426633d465a74dde504bdd6c474ae86ce54985865a54cb5b5553"
+    sha256 cellar: :any, arm64_golden_gate: "4ed830aff3999e05616b62b76e40a9051fe6203ebd8cc26c784030648af4fa7e"
+    sha256 cellar: :any, arm64_tahoe:       "455645b4090845dcff43c83e343e6b97a072546cef29f128b71384190ed2cee0"
+    sha256 cellar: :any, arm64_sequoia:     "b7bc0c57e90ff3cea8715305337f2e474fffd4fe337d74d9177101a334aaec12"
+    sha256 cellar: :any, arm64_linux:       "a3be6c6b015b84e02c83caa6b7c719528e1bbb509573571e1b18317913c74965"
+    sha256 cellar: :any, x86_64_linux:      "3740cd2e046b6a5709855ef650af7333ff6a560fe9daec02af1f052ac65f9214"
   end
 
   depends_on "cmake" => :build
