@@ -36,6 +36,8 @@ class Kew < Formula
     depends_on "libnotify"
   end
 
+  deny_network_access!
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "LANGDIRPREFIX=#{prefix}"
     man1.install "docs/kew.1"
