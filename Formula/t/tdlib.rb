@@ -19,7 +19,7 @@ class Tdlib < Formula
 
   depends_on "cmake" => :build
   depends_on "gperf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "readline"
 
   on_linux do
