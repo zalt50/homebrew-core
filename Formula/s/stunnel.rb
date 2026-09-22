@@ -18,25 +18,27 @@ class Stunnel < Formula
     sha256 cellar: :any, x86_64_linux:      "b853a3eca4ee7fd41a1ca65b9fd45cde6285fd49d12b3dd0f3ac3d33b3cd523d"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    openssl = "openssl@4"
+    system "./configure", "--disable-libwrap",
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+                          "--disable-systemd",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "--mandir=#{man}",
-                          "--disable-libwrap",
-                          "--disable-systemd",
-                          "--with-ssl=#{formula_opt_prefix("openssl@3")}"
+                          "--with-ssl=#{formula_opt_prefix(openssl)}",
+                          *std_configure_args
     system "make", "install"
 
     # This programmatically recreates pem creation used in the tools Makefile
     # which would usually require interactivity to resolve.
     cd "tools" do
       system "dd", "if=/dev/urandom", "of=stunnel.rnd", "bs=256", "count=1"
-      system "#{formula_opt_bin("openssl@3")}/openssl", "req",
+      system "#{formula_opt_bin(openssl)}/openssl", "req",
         "-new", "-x509",
         "-days", "365",
         "-rand", "stunnel.rnd",
