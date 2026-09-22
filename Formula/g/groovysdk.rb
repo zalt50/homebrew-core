@@ -1,8 +1,8 @@
 class Groovysdk < Formula
   desc "SDK for Groovy: a Java-based scripting language"
   homepage "https://www.groovy-lang.org/"
-  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-sdk-5.1.2.zip"
-  sha256 "632bed81419e45fa237c37aa56087e27e74aee3ffd47b9c3995deb240e805cc5"
+  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-sdk-5.1.3.zip"
+  sha256 "74d318cb631e1410f9f75676238dbaef920c4c5e94318f7b602f7c0791abe5bb"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Groovysdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "de6db7bf82e0ef9267556c58828167f2b43c6494be27cf5f5c7bd6c932faa037"
+    sha256 cellar: :any_skip_relocation, all: "bbada2e6a7d1912aced219de9269a647e3c2cd8b82fe711bfedc58bdc6a9fa3b"
   end
 
   depends_on "openjdk"
