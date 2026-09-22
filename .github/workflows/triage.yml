@@ -373,8 +373,7 @@ jobs:
                 graph-tool|\
                 libtensorflow|\
                 qt@5|\
-                qtwebengine|\
-                texlive\
+                qtwebengine\
                 ).rb"
               keep_if_no_match: true
               allow_any_match: true
