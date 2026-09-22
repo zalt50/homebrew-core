@@ -20,7 +20,7 @@ class X3270 < Formula
     sha256 x86_64_linux:      "4914534421e8d1394c8a6feb0a2f5dbf0b6c98f9e9807b59990e103e9ab326db"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "readline"
 
   uses_from_macos "python" => :build
@@ -35,6 +35,8 @@ class X3270 < Formula
     depends_on "libxmu"
     depends_on "libxt"
   end
+
+  deny_network_access!
 
   def install
     args = %w[
