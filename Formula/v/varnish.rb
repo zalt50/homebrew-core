@@ -11,18 +11,19 @@ class Varnish < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e18f372af78c521f950d5285634518af0bebb6f73892efc812f5d380034edcf8"
-    sha256 arm64_tahoe:       "1acc0316fd557891df55e490bd420fb8fc86427805a79454b1c81ba24a2b3dcb"
-    sha256 arm64_sequoia:     "adc8484475ac3b533c688fc7b5ad556f09959e30eda675905b95d5e324aa2b50"
-    sha256 arm64_linux:       "bfb1cf19db896f3bf0aad26ffbf897c833452385816a57c69ab0976e13278d7e"
-    sha256 x86_64_linux:      "e9d6853821625c8394fd0b8dc23e899b893d166396bdeeda650b85835aa06737"
+    rebuild 1
+    sha256 arm64_golden_gate: "5743f8185faae8bbf62299d043e5fb5735e76829913709f349f2aceefa5c16bc"
+    sha256 arm64_tahoe:       "31f8a6d2501682262e417011f9519a921d8ed0dfcf502629624cd6ee56b582b8"
+    sha256 arm64_sequoia:     "47b0ab43e0452ef95facb1a6826317e80d8b085e62e2175ad83f8c27eda291d7"
+    sha256 arm64_linux:       "e9205c632059750db52fd8829461516c186f324fa6c19aaf54efae79d9a1c098"
+    sha256 x86_64_linux:      "51232ee95d2b758767468df4b56a8f622be95371a9e3c36698ee301c47720c8d"
   end
 
   depends_on "docutils" => :build
   depends_on "graphviz" => :build
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "python" => :build
