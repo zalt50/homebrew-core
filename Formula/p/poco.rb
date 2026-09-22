@@ -1,10 +1,10 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.15.3/poco-1.15.3-all.tar.bz2"
-  sha256 "562a1ba1a6db4665f81091c35e997b73f87e1b45e2ab2854cd720d2349518abc"
+  url "https://pocoproject.org/releases/poco-1.15.4/poco-1.15.4-all.tar.bz2"
+  sha256 "d92e9e6711957a6b4415d4ffe0df5470b229bfa123334865c3b6a065030cd3a8"
   license "BSL-1.0"
-  compatibility_version 4
+  compatibility_version 5
   head "https://github.com/pocoproject/poco.git", branch: "main"
 
   livecheck do
@@ -13,13 +13,11 @@ class Poco < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "92dadff32c0c96ec42e5cecd002240848c95db3ca2a0497863457f8263bede5a"
-    sha256 cellar: :any,                 arm64_tahoe:       "0c81421dc2f3992003c3661a37ab2c1575b59e726fedf787bbf0814cc69eb5a8"
-    sha256 cellar: :any,                 arm64_sequoia:     "58342ece9f3454e5c80bf55aa1a64cf2e4c3c5fd2f6609d3aca0f365906d4911"
-    sha256 cellar: :any,                 arm64_sonoma:      "2bf92a0f689198ad630246df6366c2c47dc2770bd086d332d2e034fdd110c300"
-    sha256 cellar: :any,                 sonoma:            "30d1007827e66319d6519b8aaa8b37130c8428e934df71886bcbfd4e112b2f08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e2803c48feb6871678ffe83f9238d703b325160bf5e1e886c17a4f5041fe8e03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e88bc5b6b7d9d0b1f4d242353261e3ae01f9493afa8f7de58cc0bbaf2b0095b3"
+    sha256 cellar: :any, arm64_golden_gate: "028b3383514029bc42540b1738cb5434c431e28fc98afabfb465d8f3aa54ede6"
+    sha256 cellar: :any, arm64_tahoe:       "b15821014626a97ab5eb9b10e9f94553a112a95f88ab96ea17bbbc3e4da78a9d"
+    sha256 cellar: :any, arm64_sequoia:     "c9d8325f277cc7f673edc9fe0922ebb7bbd24817beae74bae3c6155973e6c679"
+    sha256 cellar: :any, arm64_linux:       "ad0aa5f192aae3b68e8b6a59527e3062e1efeff6ae31184e7ce88a1d875b9420"
+    sha256 cellar: :any, x86_64_linux:      "5bed170bd518d762383f52c0004924782a7c89b4c5590d7eb611dcf5e853d99b"
   end
 
   depends_on "cmake" => :build
