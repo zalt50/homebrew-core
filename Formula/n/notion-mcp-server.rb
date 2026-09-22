@@ -6,7 +6,7 @@ class NotionMcpServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "18e86c17e61199cdb3289766e5a1a22e38cb4278cd1bdb070ab5476651eb1c6a"
+    sha256 cellar: :any_skip_relocation, all: "624ecdca5eae242ace3a69a8b071c5457fcaca528ca8d78230aac6dfe30acfb6"
   end
 
   depends_on "node"
