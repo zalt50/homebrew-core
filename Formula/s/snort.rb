@@ -33,7 +33,7 @@ class Snort < Formula
   depends_on "libdnet"
   depends_on "libpcap" # macOS version segfaults
   depends_on "luajit"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "vectorscan"
   depends_on "xz" # for lzma.h
@@ -42,6 +42,16 @@ class Snort < Formula
     depends_on "libunwind"
     depends_on "zlib-ng-compat"
   end
+
+  # Apply open PR for OpenSSL 4.0 support
+  patch do
+    url "https://github.com/snort3/snort3/commit/286352b0e3f3e0798666d4f78ca35668d8695ab5.patch?full_index=1"
+    sha256 "8707359cf1854a85bf7f48e8e8b5a949739e0965ee55078bfdef033055971fc7"
+    type :unofficial
+    resolves "https://github.com/snort3/snort3/pull/477"
+  end
+
+  deny_network_access!
 
   def install
     # These flags are not needed for LuaJIT 2.1 (Ref: https://luajit.org/install.html).
