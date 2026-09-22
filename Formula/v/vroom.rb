@@ -21,7 +21,7 @@ class Vroom < Formula
   depends_on "cxxopts" => :build
   depends_on "pkgconf" => :build
   depends_on "rapidjson" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
@@ -49,6 +49,8 @@ class Vroom < Formula
     type :backport
     resolves "https://github.com/VROOM-Project/vroom/pull/1333"
   end
+
+  deny_network_access!
 
   def install
     # Use brewed dependencies instead of vendored dependencies
