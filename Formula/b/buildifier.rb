@@ -7,11 +7,11 @@ class Buildifier < Formula
   head "https://github.com/bazelbuild/buildtools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e4e471f61c74d0a8a61117434d5a738d82f83032f0c930da4b5d2d771db39cf1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e4e471f61c74d0a8a61117434d5a738d82f83032f0c930da4b5d2d771db39cf1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e4e471f61c74d0a8a61117434d5a738d82f83032f0c930da4b5d2d771db39cf1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6dfdcbd0a11a667b54c93554b937d6fd30dce26ff27098eff0cadfa6d18e2857"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3a1879d2fe115560db96dd40e87cf017c7cdaf5f8fa1aff35ca69019118d01df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a0383f83fc2ca48bc3ad7c52d3f3d42b55727cb2c3ab43ee7782c2476f8d4825"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0383f83fc2ca48bc3ad7c52d3f3d42b55727cb2c3ab43ee7782c2476f8d4825"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0383f83fc2ca48bc3ad7c52d3f3d42b55727cb2c3ab43ee7782c2476f8d4825"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "34dd3e368e125bbf5a51272c6ec089dd1a75cea6c8b72a96f21087fa78be0539"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b6b7201f11129e565fea5acbf4e670f2dca260405f6f6751d8b3eb6014e86a37"
   end
 
   depends_on "go" => :build
