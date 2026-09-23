@@ -1,9 +1,9 @@
 class Tor < Formula
   desc "Anonymizing overlay network for TCP"
   homepage "https://www.torproject.org/"
-  url "https://dist.torproject.org/tor-0.4.9.12.tar.gz"
-  mirror "https://fossies.org/linux/misc/tor-0.4.9.12.tar.gz"
-  sha256 "c0d307c9dcdaee4848a8ca53e9d6c4ec92823e4f30be12790b0fbddfc6515f5b"
+  url "https://dist.torproject.org/tor-0.4.9.13.tar.gz"
+  mirror "https://fossies.org/linux/misc/tor-0.4.9.13.tar.gz"
+  sha256 "5e748d3272cdf44a7d7741173f371c8def3d96eecb77e93c89c50663ce9cc792"
   # Complete list of licenses:
   # https://gitweb.torproject.org/tor.git/plain/LICENSE
   license all_of: [
