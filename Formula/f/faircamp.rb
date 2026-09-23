@@ -1,8 +1,8 @@
 class Faircamp < Formula
   desc "Static site generator for audio producers"
   homepage "https://codeberg.org/simonrepp/faircamp"
-  url "https://codeberg.org/simonrepp/faircamp/archive/1.7.0.tar.gz"
-  sha256 "599429eeef873fbe68e3f7b0cf15901d08e2819e9034ea5db2e06bc235fa3559"
+  url "https://codeberg.org/simonrepp/faircamp/archive/2.0.0.tar.gz"
+  sha256 "b0601a411fe041baae4da86bab4242fc964df6229ff2335955f1d5df46f2deff"
   license "AGPL-3.0-or-later"
 
   bottle do
@@ -19,46 +19,36 @@ class Faircamp < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
-  depends_on "glib"
   depends_on "opus"
-  depends_on "vips"
-  depends_on "xz"
 
-  on_macos do
-    depends_on "gettext"
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
-    # libvips is a runtime dependency, the brew install location is
-    # not discovered by default by Cargo. Upstream issue:
-    #   https://codeberg.org/simonrepp/faircamp/issues/45
-    ENV.append_to_rustflags Utils.safe_popen_read("pkgconf", "--libs", "opus", "vips").chomp
-    system "cargo", "install", *std_cargo_args(features: "libvips")
+    # `audiopus_sys` links opus statically on macOS by default
+    ENV.append_to_rustflags Utils.safe_popen_read("pkgconf", "--libs", "opus").chomp
+
+    system "cargo", "install", *std_cargo_args(path: "cli")
+
+    # TODO: drop backward compatibility symlink for the pre-2.0 `faircamp` CLI name
+    bin.install_symlink "faircamp-cli" => "faircamp"
   end
 
   test do
-    # Check properly compiled with optional libvips feature
-    output = shell_output("#{bin}/faircamp --version").chomp
-    assert_match version.to_s, output
-    assert_match "compiled with libvips", output
+    assert_match version.to_s, shell_output("#{bin}/faircamp --version")
 
-    # Check site generation
-    catalog_dir = testpath/"Catalog"
-    album_dir = catalog_dir/"Artist/Album"
-    mkdir_p album_dir
-    cp test_fixtures("test.wav"), album_dir/"Track01.wav"
-    cp test_fixtures("test.wav"), album_dir/"Track02.wav"
-    cp test_fixtures("test.jpg"), album_dir/"artwork.jpg"
+    site_dir = testpath/"site"
+    release_dir = site_dir/"release"
+    release_dir.mkpath
+    cp test_fixtures("test.wav"), release_dir/"track.wav"
+    cp test_fixtures("test.jpg"), release_dir/"cover.jpg"
 
-    output_dir = testpath/"html"
-    system bin/"faircamp", "--catalog-dir", catalog_dir, "--build-dir", output_dir
-
-    assert_path_exists output_dir/"favicon.svg"
-    assert_path_exists output_dir/"album/index.html"
-    assert_path_exists output_dir/"album/cover_1.jpg"
-    assert_path_exists output_dir/"album/1/opus-96/8zjo5mMqlmM/01 Track01.opus"
-    assert_path_exists output_dir/"album/2/opus-96/visBSotimzQ/02 Track02.opus"
-    assert_path_exists output_dir/"album/1/mp3-v5/tbscAvvooxg/01 Track01.mp3"
-    assert_path_exists output_dir/"album/2/mp3-v5/d3t6L5fUbXg/02 Track02.mp3"
+    build_dir = testpath/"build"
+    system bin/"faircamp-cli", "build", "--site-dir", site_dir, "--build-dir", build_dir
+    assert_path_exists build_dir/"index.html"
+    assert_path_exists build_dir/"favicon.svg"
   end
 end
