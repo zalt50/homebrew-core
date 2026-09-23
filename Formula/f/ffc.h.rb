@@ -7,7 +7,7 @@ class FfcH < Formula
   head "https://github.com/kolemannix/ffc.h.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "07f956742c150471e016f0a82e8afbc3623628fde60f08d08c69ed4f6b4946cc"
+    sha256 cellar: :any_skip_relocation, all: "1f1690dcf82b6729b44e933db4aeb0b75a119d4726b35965c16c66ac6849cf10"
   end
 
   depends_on "cmake" => [:build, :test]
