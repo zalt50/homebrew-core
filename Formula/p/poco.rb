@@ -4,7 +4,8 @@ class Poco < Formula
   url "https://pocoproject.org/releases/poco-1.15.4/poco-1.15.4-all.tar.bz2"
   sha256 "d92e9e6711957a6b4415d4ffe0df5470b229bfa123334865c3b6a065030cd3a8"
   license "BSL-1.0"
-  compatibility_version 5
+  revision 1
+  compatibility_version 6
   head "https://github.com/pocoproject/poco.git", branch: "main"
 
   livecheck do
@@ -13,15 +14,15 @@ class Poco < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "028b3383514029bc42540b1738cb5434c431e28fc98afabfb465d8f3aa54ede6"
-    sha256 cellar: :any, arm64_tahoe:       "b15821014626a97ab5eb9b10e9f94553a112a95f88ab96ea17bbbc3e4da78a9d"
-    sha256 cellar: :any, arm64_sequoia:     "c9d8325f277cc7f673edc9fe0922ebb7bbd24817beae74bae3c6155973e6c679"
-    sha256 cellar: :any, arm64_linux:       "ad0aa5f192aae3b68e8b6a59527e3062e1efeff6ae31184e7ce88a1d875b9420"
-    sha256 cellar: :any, x86_64_linux:      "5bed170bd518d762383f52c0004924782a7c89b4c5590d7eb611dcf5e853d99b"
+    sha256 cellar: :any, arm64_golden_gate: "4dcfd8016a852af701b225ec12fe5f09058a35a42894c632f1706629eeb7e98a"
+    sha256 cellar: :any, arm64_tahoe:       "44108fc84fd41996338bb43baa0e9a43cc7b6ec37d17fbffcd74bffd45889019"
+    sha256 cellar: :any, arm64_sequoia:     "f2291b64afb1a2552622b7ce340588b71e9d90994c38a8e091f78f0dc0848e91"
+    sha256 cellar: :any, arm64_linux:       "840a622f6fe19e963dd2a670833e70af7ea7ffa6e0f7db2edc48d4c685ab4528"
+    sha256 cellar: :any, x86_64_linux:      "56a0a56930acc6efe217ce37584bde71979c29c240d10ae263cd96ba4c6f28a7"
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "utf8proc"
 

@@ -2,7 +2,7 @@ class ClickhouseOdbc < Formula
   desc "Official ODBC driver implementation for accessing ClickHouse as a data source"
   homepage "https://clickhouse.com"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"
 
   stable do
@@ -31,17 +31,17 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6279d102952c7b909742ec14fa798d4f9a1954dd36317e7a3b618561ea1e9a90"
-    sha256 cellar: :any, arm64_tahoe:       "67716e357d7371f9ee3bce40ccbf8a61d0529128fb641ebe064b1fa7517f1b1e"
-    sha256 cellar: :any, arm64_sequoia:     "a449e227dd6496c5b92cd2c3a98f99094129fab7ba5d175ec702e8f8a021123f"
-    sha256 cellar: :any, arm64_linux:       "d360d5f375b41a4cfd8f55c4ffb8dd73f06a4a86b84163d474c7b1851eb3e34a"
-    sha256 cellar: :any, x86_64_linux:      "38b0b93b366a2c8f5f07099ea76f697398d0bddc1b2f24031126d5fb59649f7b"
+    sha256 cellar: :any, arm64_golden_gate: "2b0508a0c8af676e8e6968694fd1125893027789d47b933cddfb7d39c38264b2"
+    sha256 cellar: :any, arm64_tahoe:       "a2daf7258dd9f94650416baf9f87d97e111a0dd9218674a42bf75f45b5a09f3c"
+    sha256 cellar: :any, arm64_sequoia:     "ab38670fcd910adbd0f2342d03f459a8a937b420c6384184f72655f78298c5d4"
+    sha256 cellar: :any, arm64_linux:       "85e3276f6cd2b4adc5560cc0f4ff890202a8aedf3e8cdc654471cca5ecbe1e77"
+    sha256 cellar: :any, x86_64_linux:      "0a2d5af1d2a5c4625ea10d06faf4fd053de9b75b9c4295ec931ac750c7d43f11"
   end
 
   depends_on "cmake" => :build
   depends_on "folly" => :build
   depends_on "icu4c@78"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "poco"
   depends_on "unixodbc"
 
