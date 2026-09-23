@@ -1,8 +1,8 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
-  url "https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.31.1.tar.gz"
-  sha256 "254de9fe176758e9787347469fb310523782f03c61130508b51b266e374eb6c1"
+  url "https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.32.0.tar.gz"
+  sha256 "0453420dc3d9c3c03952e4e3f52e5b213ce0eae37346cd9a08bbd30c30a23c21"
   license "Apache-2.0"
   head "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
 
@@ -45,6 +45,7 @@ class Freerdp < Formula
     depends_on "icu4c@78"
     depends_on "krb5"
     depends_on "libfuse"
+    depends_on "pulseaudio"
     depends_on "systemd"
     depends_on "wayland"
     depends_on "zlib-ng-compat"
