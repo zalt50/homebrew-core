@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https://geth.ethereum.org/"
-  url "https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.17.5.tar.gz"
-  sha256 "8428049b30e76efcd19507225aa67c67d5d98c10a0f3a4ea339dfbba285bac7d"
+  url "https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.17.6.tar.gz"
+  sha256 "b358cd5abb0f5639cd2409877d73f3d5002d834c3e781734a1010dda1c0914ad"
   license "LGPL-3.0-or-later"
   head "https://github.com/ethereum/go-ethereum.git", branch: "master"
 
@@ -21,8 +21,7 @@ class Ethereum < Formula
     sha256 cellar: :any,                 x86_64_linux:      "99e3debd89b376ab8edeca2ec575fa210f0fb4a07bcbec51ba109a2c5fa40934"
   end
 
-  # TODO: unpin go@1.26 when ethereum supports go 1.27
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   deny_network_access!
 
