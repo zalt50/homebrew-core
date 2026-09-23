@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.57.0.tar.gz"
-  sha256 "c382675e41930d7a8097a55c884a7f08832e9d8c36506432ac8df39dca3eed8c"
+  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.58.0.tar.gz"
+  sha256 "7f02ddd9e813bab42ea7fe84887c9787a3fbd695bf2065ab907f04d2e2c3366c"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -29,6 +29,12 @@ class Oxen < Formula
   depends_on "rocksdb"
 
   uses_from_macos "llvm" => :build # for libclang
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["ROCKSDB_LIB_DIR"] = formula_opt_lib("rocksdb")
