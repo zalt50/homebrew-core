@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://github.com/pupnp/pupnp/releases/download/release-22.1.1/libupnp-22.1.1.tar.bz2"
-  sha256 "7d161e48cd8a33a8e6c08725734add9aa40a86c07c9606ff6c68435226a842a8"
+  url "https://github.com/pupnp/pupnp/releases/download/release-22.1.2/libupnp-22.1.2.tar.bz2"
+  sha256 "9eb5fc1e9a91dfcedf079700ef4a9fdf48dc15d5c6802360c16a6118e0a07b08"
   license "BSD-3-Clause"
 
   livecheck do
@@ -19,6 +19,8 @@ class Libupnp < Formula
   end
 
   depends_on "cmake" => :build
+
+  allow_network_access! :test
 
   def install
     # https://github.com/llvm/llvm-project/issues/65557
