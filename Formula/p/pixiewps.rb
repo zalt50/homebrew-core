@@ -22,7 +22,9 @@ class Pixiewps < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5a93abb2c126230b4c9254243b6fc99b778fb0d4aa220d0296a02940a46865e"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     system "make", "PREFIX=#{prefix}", "OPENSSL=1", "install"
