@@ -1,8 +1,8 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
   homepage "https://github.com/SecureAuthCorp/oauth2c"
-  url "https://github.com/SecureAuthCorp/oauth2c/archive/refs/tags/v1.21.0.tar.gz"
-  sha256 "f03ec7b08fa9612f8196d236658f6aaa3245ddd1cab6aa94a086fe5d938a0bfc"
+  url "https://github.com/SecureAuthCorp/oauth2c/archive/refs/tags/v1.21.1.tar.gz"
+  sha256 "8f033f91e14bddc3ff3ae2c7cdf804f4e794d94dfa0e9ef4751d9b9d9cd212c4"
   license "Apache-2.0"
   head "https://github.com/SecureAuthCorp/oauth2c.git", branch: "master"
 
