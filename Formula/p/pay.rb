@@ -25,12 +25,16 @@ class Pay < Formula
   depends_on "just" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => :build
-  depends_on "pnpm" => :build
+  depends_on "pnpm@11" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
-  uses_from_macos "python"
+  uses_from_macos "python" => :build
+
+  on_linux do
+    depends_on "openssl@4"
+  end
 
   def install
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
     system "just", "install", "pay", *std_cargo_args(path: "rust/crates/cli")
   end
 
