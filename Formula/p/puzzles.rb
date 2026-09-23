@@ -18,11 +18,11 @@ class Puzzles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9ec9b6c87bd437d2690e543e944ab71bbe2206dc48c961791705c87d9f6babaa"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca4cfda8fb7e082bf8e2681dfff8a606ed2132b2b0b4930884448640af4a1617"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "148e77535dd7f648cba507264d14d7251df58c48e31c4b060a73e295611d8e78"
-    sha256                               arm64_linux:       "5f17ff93a09ec823d60d1283871c40e1285e8df285a530cd3cc4578469c2aab0"
-    sha256                               x86_64_linux:      "dd58099fbd370db9cab2f993fb227b65c7822a9795fccc2e18bcf0f01f836965"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d2dde5e14b56e30fe518228a95d073c69103d83966e9bda0a136bd6b627ccd5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f37b6594a62e3229ed97777a339ab9c76dc388c1b2564274545fca7bd669689"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "45b6378ea2b57396d2585ed89fc028dc07a08eed9b752022e7b32b106ad7e888"
+    sha256                               arm64_linux:       "6b537ec6936749be286578a522797822c71a9ee4aa6081c7f60603a65ac98ebc"
+    sha256                               x86_64_linux:      "6c87fd9ee8319d796dead44d88c6647394bb1cf493cf9979839294db3d14c94d"
   end
 
   depends_on "cmake" => :build
