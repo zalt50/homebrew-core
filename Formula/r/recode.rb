@@ -1,8 +1,8 @@
 class Recode < Formula
   desc "Convert character set (charsets)"
   homepage "https://github.com/rrthomas/recode"
-  url "https://github.com/rrthomas/recode/releases/download/v3.7.15/recode-3.7.15.tar.gz"
-  sha256 "f590407fc51badb351973fc1333ee33111f05ec83a8f954fd8cf0c5e30439806"
+  url "https://github.com/rrthomas/recode/releases/download/v3.7.16/recode-3.7.16.tar.gz"
+  sha256 "c3d407f54f74bae76360312096e2ed46622f01c86e50b09ef45b2d93c8fcff2d"
   license "GPL-3.0-or-later"
 
   bottle do
