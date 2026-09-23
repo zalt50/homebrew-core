@@ -23,13 +23,15 @@ class Objfw < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :no_linkage
 
   fails_with :gcc
 
   patch :DATA
+
+  deny_network_access!
 
   def install
     ENV.clang if OS.linux?
