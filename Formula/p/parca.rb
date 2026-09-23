@@ -1,20 +1,10 @@
 class Parca < Formula
   desc "Continuous profiling for analysis of CPU and memory usage"
   homepage "https://www.parca.dev/"
+  url "https://github.com/parca-dev/parca/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "703d518f2ff1c5f583b1ec98944cd02155085784ac051907faed10291d7ab698"
   license "Apache-2.0"
   head "https://github.com/parca-dev/parca.git", branch: "main"
-
-  stable do
-    url "https://github.com/parca-dev/parca/archive/refs/tags/v0.28.0.tar.gz"
-    sha256 "1b19d722b88db0e6a31aeef1b8846156a3f38568cf1af059a287ffbb608599c8"
-
-    # Backport migration to pnpm 11
-    patch do
-      url "https://github.com/parca-dev/parca/commit/cce673deb34ae93cdeeba37f5391c077e1a6e53c.patch?full_index=1"
-      sha256 "b8b3392ea97bcffa4ec2d178acc9eee24092eae0638d1b8b6391867c1b654a46"
-      type :backport
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "adf9b8eea90b615f1482cb59b51881638a9ab3496b66f2f91ba096383244690f"
