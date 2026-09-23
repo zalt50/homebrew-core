@@ -1,18 +1,18 @@
 class Ggml < Formula
   desc "Tensor library for machine learning"
   homepage "https://github.com/ggml-org/ggml"
-  url "https://github.com/ggml-org/ggml/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "04dc8f6b74d2ee37b2d6175458ac0fd7a8a3c03d85d78191ba8ca366768f9acc"
+  url "https://github.com/ggml-org/ggml/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "9ec0856008c30a22026559e36601a88af64b7d5d04e332e0d4542d4285831488"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "31e217a029d28065ffff52cdb09fa975a56717216b663fe95a4ff84dcac15640"
-    sha256 arm64_tahoe:       "35c897757c506e65c29ec6b4a5d340c7cf8183f12252cc203c80dff53177cb09"
-    sha256 arm64_sequoia:     "b604c6179b0e95a7bb7f277e7804d883d792acc60e56f666ae44bbd5645eb257"
-    sha256 arm64_linux:       "d45e46471bb47137bd130b471742294c8d5b80b168394516dafa531fff4a0a90"
-    sha256 x86_64_linux:      "e6f83bde0c7afdb817c9942f30e7c5b2f018adddcd6510e4af439ba307626654"
+    sha256 arm64_golden_gate: "961397982c2e2388aa61e23175f2fe0fa7df2d8f16b298b4df043813964ef710"
+    sha256 arm64_tahoe:       "5eefe5cbbb72ec0dbd9c132dfb95dba81e79eb7e54c51ebd83eb2d9c2f366400"
+    sha256 arm64_sequoia:     "815041bd71f41942a14dcb05a027876cca7eecb670789a63ce1dc884eb1e3632"
+    sha256 arm64_linux:       "e9fd004cbcaab2f227d49e9f72021f1f594dbee28eefdd270c66ef2fe243466c"
+    sha256 x86_64_linux:      "5c8721014b2cf0c1a4d6ab07d4a0e8ae1125b7736c264adb21a46599fe6138fd"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -41,8 +41,8 @@ class Ggml < Formula
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
   resource "test-backend-ops.cpp" do
-    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.24.0/tests/test-backend-ops.cpp"
-    sha256 "9a3210eba3d6ff41fd3ad0333b85c37bb4b95a373cbf4c897e3a9daa38162bfc"
+    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.25.0/tests/test-backend-ops.cpp"
+    sha256 "9be0ce612e88dc76f94e4156ca9ae0047d919ee70ad3974b28c45963b186fa37"
 
     livecheck do
       formula :parent
