@@ -27,7 +27,7 @@ class Nikto < Formula
 
   on_linux do
     depends_on "zlib-ng-compat" => :build
-    depends_on "openssl@3"
+    depends_on "openssl@4"
 
     # Modules loaded in program/nikto.pl and Net::SSLeay for program/plugins/LW2.pm
     resource "JSON" do
@@ -58,13 +58,24 @@ class Nikto < Formula
     resource "Net::SSLeay" do
       url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
       sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+      # Backport support for OpenSSL 4.0
+      patch do
+        url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+        sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+        type :backport
+        resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+      end
     end
   end
+
+  deny_network_access!
 
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       ENV["PERL_MM_USE_DEFAULT"] = "1"
+      ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
 
       resources.each do |r|
         r.stage do
