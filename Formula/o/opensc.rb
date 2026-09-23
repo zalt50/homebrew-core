@@ -1,9 +1,20 @@
 class Opensc < Formula
   desc "Tools and libraries for smart cards"
   homepage "https://github.com/OpenSC/OpenSC/wiki"
-  url "https://github.com/OpenSC/OpenSC/releases/download/0.27.1/opensc-0.27.1.tar.gz"
-  sha256 "976f4a23eaf3397a1a2c3a7aac80bf971a8c3d829c9a79f06145bfaeeae5eca7"
   license "LGPL-2.1-or-later"
+
+  stable do
+    url "https://github.com/OpenSC/OpenSC/releases/download/0.27.1/opensc-0.27.1.tar.gz"
+    sha256 "976f4a23eaf3397a1a2c3a7aac80bf971a8c3d829c9a79f06145bfaeeae5eca7"
+
+    # Backport support for OpenSSL 4.0
+    patch do
+      url "https://github.com/OpenSC/OpenSC/commit/8ad96adc5fea0cef923a2a679600f3a5c4c5bfce.patch?full_index=1"
+      sha256 "0b4c4985150892ce1a0108b1a36f3db4c29e7f4453e86b039bf3b36384db43ee"
+      type :backport
+      resolves "https://github.com/OpenSC/OpenSC/pull/3655"
+    end
+  end
 
   livecheck do
     url :stable
@@ -30,7 +41,7 @@ class Opensc < Formula
 
   depends_on "docbook-xsl" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "pcsc-lite"
@@ -40,6 +51,8 @@ class Opensc < Formula
     depends_on "readline"
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[
