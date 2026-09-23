@@ -22,11 +22,13 @@ class Ngircd < Formula
   end
 
   depends_on "libident"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules",
