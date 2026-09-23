@@ -1,8 +1,8 @@
 class Libmxml < Formula
   desc "Mini-XML library"
   homepage "https://michaelrsweet.github.io/mxml/"
-  url "https://github.com/michaelrsweet/mxml/releases/download/v4.0.5/mxml-4.0.5.tar.gz"
-  sha256 "28ecade70e3481e726907e79f8816b9e77d03cb810bccc8535a7a32bb08740c0"
+  url "https://github.com/michaelrsweet/mxml/releases/download/v4.0.6/mxml-4.0.6.tar.gz"
+  sha256 "ec1af6f7a752f63649ad00cf7355cf36366ccf729658a1a4696270de8bd74854"
   license "Apache-2.0"
   head "https://github.com/michaelrsweet/mxml.git", branch: "master"
 
@@ -17,6 +17,8 @@ class Libmxml < Formula
   end
 
   depends_on "pkgconf" => :test
+
+  deny_network_access!
 
   def install
     system "./configure", "--enable-shared", *std_configure_args
