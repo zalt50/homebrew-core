@@ -1,8 +1,8 @@
 class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
-  url "https://github.com/mapnik/mapnik/releases/download/v4.3.1/mapnik-v4.3.1.tar.bz2"
-  sha256 "aadfe037a8fdf7524bca7d72594ed9783c7047b7a53c6cf2e767f6e802d53edd"
+  url "https://github.com/mapnik/mapnik/releases/download/v4.3.2/mapnik-v4.3.2.tar.bz2"
+  sha256 "1858a9d57f4d2007d717ea84af23bcb32bd984fbc635426b79124fe9f7a682c4"
   license "LGPL-2.1-or-later"
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
@@ -54,6 +54,12 @@ class Mapnik < Formula
       -DCMAKE_INSTALL_RPATH:PATH=#{rpath};#{rpath(source: lib/"mapnik/input")}
       -DUSE_EXTERNAL_MAPBOX_PROTOZERO=ON
     ]
+
+    # TODO: Remove this workaround once either:
+    # a) CMake in mapnik properly handles C language requirements for proj OR
+    # b) The workaround is no longer needed with proj > 9.9.0
+    #    Ref: https://github.com/OSGeo/PROJ/issues/4862
+    inreplace "CMakeLists.txt", "LANGUAGES CXX\n", "LANGUAGES C CXX\n"
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
