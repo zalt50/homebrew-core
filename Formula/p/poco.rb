@@ -4,7 +4,8 @@ class Poco < Formula
   url "https://pocoproject.org/releases/poco-1.15.4/poco-1.15.4-all.tar.bz2"
   sha256 "d92e9e6711957a6b4415d4ffe0df5470b229bfa123334865c3b6a065030cd3a8"
   license "BSL-1.0"
-  compatibility_version 5
+  revision 1
+  compatibility_version 6
   head "https://github.com/pocoproject/poco.git", branch: "main"
 
   livecheck do
@@ -21,7 +22,7 @@ class Poco < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "utf8proc"
 
