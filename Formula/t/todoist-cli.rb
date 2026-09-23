@@ -1,8 +1,8 @@
 class TodoistCli < Formula
   desc "Official command-line interface for Todoist"
   homepage "https://github.com/Doist/todoist-cli"
-  url "https://registry.npmjs.org/@doist/todoist-cli/-/todoist-cli-5.3.10.tgz"
-  sha256 "4bd6930b7b8d11e11ba3faaad802713e72b008567df65f5f4a161900fbf1f3e3"
+  url "https://registry.npmjs.org/@doist/todoist-cli/-/todoist-cli-5.3.11.tgz"
+  sha256 "ef0daaaba8005b5285a22aa6e5f58fe6517f183c8ae196791a897ad9f6ddac6c"
   license "MIT"
 
   bottle do
