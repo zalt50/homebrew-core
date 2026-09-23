@@ -1,8 +1,8 @@
 class HeadscaleCli < Formula
   desc "CLI for headscale, an open-source implementation of the Tailscale control server"
   homepage "https://github.com/juanfont/headscale"
-  url "https://github.com/juanfont/headscale/archive/refs/tags/v0.29.3.tar.gz"
-  sha256 "9c2b6020b51a1d53641fe8e282fd849b4d00eca8945fef93d63454655a90ba0d"
+  url "https://github.com/juanfont/headscale/archive/refs/tags/v0.29.4.tar.gz"
+  sha256 "dae8ad94078c1447f566f1f0843afae48cd11e78d7b0af400d01cb53112dcc3c"
   license "BSD-3-Clause"
 
   livecheck do
