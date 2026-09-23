@@ -19,12 +19,18 @@ class SequoiaSqv < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build # for libclang (bindgen)
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     ENV["ASSET_OUT_DIR"] = buildpath
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: "crypto-openssl")
 
