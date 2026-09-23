@@ -1,8 +1,8 @@
 class Ggml < Formula
   desc "Tensor library for machine learning"
   homepage "https://github.com/ggml-org/ggml"
-  url "https://github.com/ggml-org/ggml/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "9ec0856008c30a22026559e36601a88af64b7d5d04e332e0d4542d4285831488"
+  url "https://github.com/ggml-org/ggml/archive/refs/tags/v0.25.1.tar.gz"
+  sha256 "3d327eb1646d9189f1d945bb183898970783597118e5c6663f8c20f73cb141b0"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/ggml.git", branch: "master"
@@ -41,8 +41,8 @@ class Ggml < Formula
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
   resource "test-backend-ops.cpp" do
-    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.25.0/tests/test-backend-ops.cpp"
-    sha256 "9be0ce612e88dc76f94e4156ca9ae0047d919ee70ad3974b28c45963b186fa37"
+    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.25.1/tests/test-backend-ops.cpp"
+    sha256 "f402395d16a4c5f1959e494aa64a59771027af38572a70c4d126ffbb51fac94e"
 
     livecheck do
       formula :parent
