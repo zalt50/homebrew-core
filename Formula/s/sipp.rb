@@ -2,10 +2,9 @@ class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
   homepage "https://sipp.sourceforge.net/"
   url "https://github.com/SIPp/sipp.git",
-      tag:      "v3.7.7",
-      revision: "369b3c187f0ff96f3ec9795650820e80cf17c776"
+      tag:      "v3.7.8",
+      revision: "741ee230bfda890c8605253b32b449dfef3dd421"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "f3e6f10845d02e69d5a6fb9e80d702899b05224b036f15af5c441adbb62892af"
@@ -18,15 +17,20 @@ class Sipp < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@4"
+  depends_on "pugixml"
 
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     args = %w[
       -DUSE_PCAP=1
       -DUSE_SSL=1
+      -DUSE_SYSTEM_PUGIXML=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
