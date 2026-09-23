@@ -21,13 +21,22 @@ class Rqbit < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+    cd "crates/librqbit/webui" do
+      system "npm", "install", *std_npm_args(prefix: false)
+    end
   end
 
   def install
-    # Ensure the declared `openssl@3` dependency will be picked up.
+    # Ensure the declared `openssl@4` dependency will be picked up.
     # https://docs.rs/openssl/latest/openssl/#manual
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "crates/rqbit")
 
@@ -42,8 +51,8 @@ class Rqbit < Formula
     if OS.linux?
       require "utils/linkage"
       [
-        formula_opt_lib("openssl@3")/shared_library("libssl"),
-        formula_opt_lib("openssl@3")/shared_library("libcrypto"),
+        formula_opt_lib("openssl@4")/shared_library("libssl"),
+        formula_opt_lib("openssl@4")/shared_library("libcrypto"),
       ].each do |library|
         assert Utils.binary_linked_to_library?(bin/"rqbit", library),
                "No linkage with #{library.basename}! Cargo is likely using a vendored version."
