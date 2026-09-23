@@ -39,14 +39,24 @@ class Ncrack < Formula
     sha256 x86_64_linux:      "9e0c60c65ad23af0cfa59dfa65d970850ae9fab8d270c105ffc1b0672af75d60"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
+  # Apply open PR to support OpenSSL 4 which is used by Ubuntu and Fedora
+  patch do
+    url "https://github.com/nmap/ncrack/commit/76a0eabaad402ed935c1294f98663cf58a806a06.patch?full_index=1"
+    sha256 "7eb44ecf8b43fa2d201763bafe411db8606643064bf1cf3e78531c13f5e2138f"
+    type :unofficial
+    resolves "https://github.com/nmap/ncrack/pull/147"
+  end
+
+  deny_network_access!
+
   def install
-    system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@3")}", *std_configure_args
+    system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@4")}", *std_configure_args
     system "make"
     system "make", "install"
   end
