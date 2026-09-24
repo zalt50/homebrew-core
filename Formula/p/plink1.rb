@@ -11,6 +11,14 @@ class Plink1 < Formula
     regex(/^v?(1(?:\.\d+)+-(?:b\.\d+(?:\.\d+)*|rc\d+))$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b043c1d6721a533649b44aba8ad029ccdde066f658b7c1b442b9f878410e28c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6aaade61eafed2c74bdcbaea0a6173df4e2ce0d8096ad17cb64d51c5dca01f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "424709073c0c2788cfffaa2f6b8675bd26214759952ec03b1cd4808ef3ec70f9"
+    sha256 cellar: :any,                 arm64_linux:       "1ad05260d6bd7378d8de35553041633d210e471a7cd40cfb601980095b24e438"
+    sha256 cellar: :any,                 x86_64_linux:      "5fd6576dcb1643c11cd5a7bdbb7d7936f95db4f346598b0080ab004259368e15"
+  end
+
   on_linux do
     depends_on "openblas"
     depends_on "zlib-ng-compat"
