@@ -1,8 +1,8 @@
 class Mlkit < Formula
   desc "Compiler for the Standard ML programming language"
   homepage "https://melsman.github.io/mlkit"
-  url "https://github.com/melsman/mlkit/archive/refs/tags/v4.7.22.tar.gz"
-  sha256 "b8dcf6047595da0bd1a5a18168d7f430eb74e9927c092d20bfeacecea9b8a397"
+  url "https://github.com/melsman/mlkit/archive/refs/tags/v4.7.23.tar.gz"
+  sha256 "6a79ae8d910392827d3405c2acb3bd975f568c76d0da5db0bf5017077de1fb1f"
   license "GPL-2.0-or-later"
   head "https://github.com/melsman/mlkit.git", branch: "master"
 
@@ -17,23 +17,41 @@ class Mlkit < Formula
   end
 
   depends_on "autoconf" => :build
-  depends_on "mlton" => :build
-  depends_on arch: :x86_64 # https://github.com/melsman/mlkit/issues/115
   depends_on "gmp"
 
-  on_macos do
-    # Can be undeprecated if upstream decides to support arm64 macOS
-    deprecate! date: "2025-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
-    disable! date: "2026-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
+  on_linux do
+    depends_on arch: :x86_64 # https://github.com/melsman/mlkit/tree/master#mlkit---native-backends
   end
 
+  on_intel do
+    depends_on "mlton" => :build
+  end
+
+  # Apple Silicon build requires building with mlkit not mlton.
+  # Similar to other bootstraps, can keep on oldest compatible version.
+  resource "bootstrap" do
+    on_arm do
+      url "https://github.com/melsman/mlkit/releases/download/v4.7.23/mlkit-bin-dist-darwin.tgz"
+      sha256 "1872feca49574c2dacc1e508657c6bdec3fdcd38a2fb71b9ab929c1c8735229b"
+    end
+  end
+
+  deny_network_access!
+
   def install
-    # AArch64 inline asm is gated on the compiler rather than the target arch, breaking x86_64 clang
-    # https://github.com/melsman/mlkit/commit/f1811c7c8da109f4ef1a9d6314edb20f65d84cc6
-    inreplace "src/Runtime/Region.c", "#ifdef __clang__", "#if defined(__aarch64__)"
+    # https://github.com/melsman/mlkit/tree/master#native-arm64-on-macos
+    if OS.mac? && Hardware::CPU.arm?
+      resource("bootstrap").stage("bootstrap")
+      ENV["MLKIT_BOOTSTRAP"] = buildpath/"bootstrap/bin/mlkit"
+      ENV["MLKIT_BOOTSTRAP_SML_LIB"] = buildpath/"bootstrap"
+      ENV["MLKIT_BOOTSTRAP_FLAGS"] = "-gc"
+      ENV["SML_LIB"] = buildpath
+      ENV["DARWIN_NATIVE"] = "1"
+      args = ["--with-compiler=mlkit"]
+    end
 
     system "sh", "./autobuild"
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", *args
 
     # The ENV.permit_arch_flags specification is needed on 64-bit
     # machines because the mlkit compiler generates 32-bit machine
