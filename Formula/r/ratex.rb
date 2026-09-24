@@ -7,11 +7,11 @@ class Ratex < Formula
   head "https://github.com/leoliu0/ratex.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b4be39a9fc8b3c8400dd4027d977dfd29da73a319f444cca5696301a19f9ea7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "94a6b62869c558d38c34226ddbf015a415d6c003ed775f978bfe629981408d21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "897416b79b37c7e5386732d3402c68f7a98ee14273a44b489bbc665d34b39f6d"
-    sha256 cellar: :any,                 arm64_linux:       "03ec9c159613f69a4b7d5836a388b7036b89cc94647aae6a5ccc5829580d6c29"
-    sha256 cellar: :any,                 x86_64_linux:      "cf02dc6ca3a725527494c760ddee10866424dd6fb96773ff6f8ae58a93a32fd8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "93cfb646f709ccf95b9665e3f2343d4c1936b61a05c48a61cb6f2bc21b838c5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6fa22588fc1316b50e6a062f4a4d097c87760234713b71dcfa47f7355332498b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "edcfb6fd67241eb211a1a3f2dc6d697dbb3bd85dccbeba75eeda4bf2909b8284"
+    sha256 cellar: :any,                 arm64_linux:       "df23caa0e0c37a757adfeb5033ba9b7af5cec6720bc00e42a683f785ba2e6516"
+    sha256 cellar: :any,                 x86_64_linux:      "2ec1c3d8818a25bc20ab3a963ccf5316bd0eae0328f2e16d35d39007cb8a32b1"
   end
 
   depends_on "rust" => :build
