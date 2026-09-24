@@ -15,7 +15,8 @@ class Jimtcl < Formula
     sha256 x86_64_linux:      "33f1669740e1f0587137e8eb19ffaf3b43522de37d15a6ca160b5f8d57cd7025"
   end
 
-  depends_on "openssl@3"
+  depends_on "pkgconf" => :build
+  depends_on "openssl@4"
   depends_on "readline"
 
   uses_from_macos "sqlite"
