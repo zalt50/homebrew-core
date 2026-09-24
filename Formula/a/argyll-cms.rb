@@ -24,7 +24,7 @@ class ArgyllCms < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "libx11"
@@ -73,17 +73,17 @@ class ArgyllCms < Formula
     %w[jpeg png tiff zlib].each { |l| rm_r(buildpath/l) }
 
     inreplace "Jamtop" do |s|
-      openssl = Formula["openssl@3"]
+      openssl = "openssl@4"
       libname = shared_library("lib$(lcase)")
       usr = "#{MacOS.sdk_path if OS.mac?}/usr"
 
       # These two inreplaces make sure all Homebrew and SDK libraries can be found by the Jamfile
       s.gsub! "[ GLOB /usr/include$(subd) : $(lcase).h $(lcase)lib.h ]",
-              "[ GLOB #{openssl.opt_include}$(subd) : $(lcase).h $(lcase)lib.h ] || " \
+              "[ GLOB #{formula_opt_include(openssl)}$(subd) : $(lcase).h $(lcase)lib.h ] || " \
               "[ GLOB #{HOMEBREW_PREFIX}/include$(subd) : $(lcase).h $(lcase)lib.h ] || " \
               "[ GLOB #{usr}/include$(subd) : $(lcase).h $(lcase)lib.h ]"
       s.gsub! "[ GLOB /usr/lib : lib$(lcase).so ]",
-              "[ GLOB #{openssl.opt_lib} : #{libname} ] || " \
+              "[ GLOB #{formula_opt_lib(openssl)} : #{libname} ] || " \
               "[ GLOB #{HOMEBREW_PREFIX}/lib : #{libname} ] || " \
               "[ GLOB #{usr}/lib : #{libname} lib$(lcase).tbd ]"
 
