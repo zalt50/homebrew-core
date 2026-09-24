@@ -19,11 +19,11 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1ce1a4674a290f87cb8d259e538a12f10ce693f040f3dc1cdc20c642b8d01973"
-    sha256 arm64_tahoe:       "db6131f79f6dd2c54340791cc52397dbc5081d48c288473435a5b790bfca1ab1"
-    sha256 arm64_sequoia:     "ef385bbeeb59f2bf81cc968e2eb708cdddedfe444ea6c3ed7e06bc25dff24403"
-    sha256 arm64_linux:       "49ba54c80a1b011a40109fa9fc39d2306cfaa7e8b1a53a246d1fbed78d894b61"
-    sha256 x86_64_linux:      "5be4feca7e69fccac132d805618ddab2418d2476926b7c59c3fe2d0746469a7d"
+    sha256 arm64_golden_gate: "90b2578046a6ab86e94c91bf0530f184b84bb480152cdaa0eb9f1456017dd270"
+    sha256 arm64_tahoe:       "9416b24a2dee0dd07a365700870a2977a4684bf009c8f9ba5f18fd5d830e5e20"
+    sha256 arm64_sequoia:     "03965366e79b04d8fdd1bc211484fe99b574d0704f1ae3d39575abbef480ec9f"
+    sha256 arm64_linux:       "9444128808d7449741baa6dc5fd152bff7f537eb6b86066af91272049801588c"
+    sha256 x86_64_linux:      "7ca808433a80891a66ea4c2e1325047a0c71bed53a41346c768e9d0dd12598cd"
   end
 
   keg_only :provided_by_macos
