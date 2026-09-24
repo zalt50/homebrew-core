@@ -1,8 +1,8 @@
 class AzureDev < Formula
   desc "Developer CLI that provides commands for working with Azure resources"
   homepage "https://aka.ms/azd"
-  url "https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.34.1.tar.gz"
-  sha256 "ba65e9f2b3d7a1d1e3ea8b1048c717e8f2ec458545870cc7bcd8eaf6f752e741"
+  url "https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.34.2.tar.gz"
+  sha256 "dea91c4b991d64d566e4108887ce5ac9186b6df4e7da97f6ec0a5109aeaf0a3e"
   license "MIT"
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
