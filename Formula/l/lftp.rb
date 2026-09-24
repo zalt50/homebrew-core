@@ -17,7 +17,7 @@ class Lftp < Formula
   end
 
   depends_on "libidn2"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "readline"
 
   uses_from_macos "ncurses"
@@ -30,13 +30,21 @@ class Lftp < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Backport support for OpenSSL 4
+  patch do
+    url "https://github.com/lavv17/lftp/commit/e5d53bcb31b1f3792c6ab321e20d566b9a4ff0a5.patch?full_index=1"
+    sha256 "64df1d1146d83f333d0caf45cb8a82288338761534dd0e0758a71132ca93a00b"
+    type :backport
+    resolves "https://github.com/lavv17/lftp/pull/776"
+  end
+
   def install
     # Fix compile with newer Clang
     # https://github.com/lavv17/lftp/issues/611
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     system "./configure", "--disable-silent-rules",
-                          "--with-openssl=#{formula_opt_prefix("openssl@3")}",
+                          "--with-openssl=#{formula_opt_prefix("openssl@4")}",
                           "--with-readline=#{formula_opt_prefix("readline")}",
                           "--with-libidn2=#{formula_opt_prefix("libidn2")}",
                           *std_configure_args
