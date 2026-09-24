@@ -4,6 +4,7 @@ class Swtpm < Formula
   url "https://github.com/stefanberger/swtpm/archive/refs/tags/v0.10.2.tar.gz"
   sha256 "f61cf6f1e9bbcb4cefb30b70cafaf1c4df54c6961e65cfa63830e8ad0e220134"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 arm64_golden_gate: "2feb4b3fae93b381d53cf29523fcbd76e421b65ecf0b9024dc4754d30501a2dd"
@@ -26,7 +27,7 @@ class Swtpm < Formula
   depends_on "json-glib"
   depends_on "libtasn1"
   depends_on "libtpms"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "gettext"
@@ -48,6 +49,7 @@ class Swtpm < Formula
   allow_network_access! :test
 
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     system "./autogen.sh", "--disable-tests", "--with-openssl", *std_configure_args
     system "make"
     system "make", "install"
