@@ -16,8 +16,18 @@ class Imapfilter < Formula
   end
 
   depends_on "lua"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
+
+  # Apply open PR by Ubuntu maintainer to support OpenSSL 4
+  patch do
+    url "https://github.com/lefcha/imapfilter/commit/d0e1b29ee5ae0e6e91944fd5c04b943fc810e13c.patch?full_index=1"
+    sha256 "b4c52d30ad177546cac2393722184038d974a3b59bdbc14a832c5e3be27f578b"
+    type :unofficial
+    resolves "https://github.com/lefcha/imapfilter/pull/317"
+  end
+
+  deny_network_access!
 
   def install
     # find Homebrew's libpcre and lua
