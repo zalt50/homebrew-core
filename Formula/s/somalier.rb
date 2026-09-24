@@ -6,6 +6,14 @@ class Somalier < Formula
   license "MIT"
   head "https://github.com/brentp/somalier.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "339d9361d8e804b216c069e51e4ac9a4b318ff84b826d899b6bbb8e4a05c80a7"
+    sha256 cellar: :any, arm64_tahoe:       "04bab8218031928411b50449a2e36df85ab0ab13cfcb41d7d31f5bd552fe191e"
+    sha256 cellar: :any, arm64_sequoia:     "d1aeffe146658c15fb904ad87bd7863ac35aeb07af7cd185f905d57116f41eba"
+    sha256 cellar: :any, arm64_linux:       "f9f41f7c9d298c42005ccb11b8c4406173d17c14bd98ef1f4d87368e06ccd08b"
+    sha256 cellar: :any, x86_64_linux:      "58e92f860a2e73d15baecc6a76517a8a41da648712579a5a92283ff10774afa7"
+  end
+
   depends_on "nim" => :build
   depends_on "htslib"
   depends_on "libdeflate"
