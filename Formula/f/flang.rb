@@ -23,12 +23,11 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ce82cbd0199abb7b980b78c4cabb838568bdb4d7cd2d1a5459ecc93728942ee3"
-    sha256 cellar: :any, arm64_tahoe:       "ab6836d3e3f392f664b81b2e5029e043a33fe0f52cdf59849856c0d34d94124a"
-    sha256 cellar: :any, arm64_sequoia:     "7290b6f0cc42988b44043b88d8df5b606cba534ebaf414165cdcd21c16857894"
-    sha256 cellar: :any, arm64_sonoma:      "a3b7b2c36a796a5225bd0970a9cd5df6eb4ddeb413e3c890f21d6c0918c17989"
-    sha256 cellar: :any, arm64_linux:       "5d896dffb61af558584ccf358aad825eb393a7e9ba0a60772bb010c7806b6757"
-    sha256 cellar: :any, x86_64_linux:      "9d586e3b14d2c2782765daa2f9529b906a3daa2523dd7864b3dafcb5b036d80f"
+    sha256 cellar: :any, arm64_golden_gate: "b02762374faceff6acc871d5110fd346796732db579eb1f07e04809c38d7d137"
+    sha256 cellar: :any, arm64_tahoe:       "8053ba692a3382821f086183b10723c802f40d505c0eb852b2154476aaf95a62"
+    sha256 cellar: :any, arm64_sequoia:     "c844e6e18ce9e26239a5851ff074c10e2d8339c5be5d87c61c0a474f6b4bbbcb"
+    sha256 cellar: :any, arm64_linux:       "37ffdee805f9435020f6f4645b411dea33b5be5a00f34852bd7e1771e43c8070"
+    sha256 cellar: :any, x86_64_linux:      "61b5a87807800dc8f3b667df897512483708337ec4548f00ea2902266f57b589"
   end
 
   depends_on "cmake" => :build
