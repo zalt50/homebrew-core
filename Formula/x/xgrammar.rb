@@ -7,11 +7,11 @@ class Xgrammar < Formula
   head "https://github.com/mlc-ai/xgrammar.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "40241cdb1349e097bdf2b1f3c2c02ab0cd95068374e2d0c085c6c7ef8cc5638f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7194ffdcd5ba6984e3faea419f8261d35b6362f3a9fe0fa2a0cd8b5e1d36a04c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a3093f22599b3dc3d9d2c7092cc526ac64e491dbb21a80915cba1a4e522d8821"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f6f51c28589c9e5b98f1ba59e20a180a5eb8527aa95479307cd8d001e5add0fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "35f782fc55d7c56f338bf7d5777378a2e25b73396d3621cc33c40cfda9fab5a7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "921e5a484331059d72fb152ad0c12356c57238b40a36ad9e596acd2daf1b21fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5309800d87a4a4b08070443761f873dd484e20a42774b302f59ece483e1d6a26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9b5bf98c998e84eac0bf7b090c5f988291a10efa780b2d181f502544e58b6ea8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "587161526b68d13c6e9625b30e10e9d64ed634ca477913bc22ef5bb63d04c69c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1790cc96475ae4122e6e65660846c215c0fae90b2ca71979799c7143f1bfecd0"
   end
 
   depends_on "cmake" => :build
