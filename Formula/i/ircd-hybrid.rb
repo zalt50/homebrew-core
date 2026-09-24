@@ -23,7 +23,7 @@ class IrcdHybrid < Formula
   end
 
   depends_on "jansson"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
 
