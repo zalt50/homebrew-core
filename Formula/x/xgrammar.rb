@@ -1,8 +1,8 @@
 class Xgrammar < Formula
   desc "Structured generation and reasoning engine for LLMs"
   homepage "https://xgrammar.mlc.ai/"
-  url "https://github.com/mlc-ai/xgrammar/archive/refs/tags/v0.2.7.tar.gz"
-  sha256 "c336102a5c2d644bfa52ff6881016e002c30bac05143d038f03f841f6d1ddc47"
+  url "https://github.com/mlc-ai/xgrammar/archive/refs/tags/v0.2.8.tar.gz"
+  sha256 "16c06f7cef8f13ae597b007cce515991725603bded6ebce5f1828e6a9c9685be"
   license "Apache-2.0"
   head "https://github.com/mlc-ai/xgrammar.git", branch: "main"
 
