@@ -1,8 +1,8 @@
 class Rpl < Formula
   desc "Text replacement utility"
   homepage "https://github.com/rrthomas/rpl"
-  url "https://github.com/rrthomas/rpl/releases/download/v2.1.1/rpl-2.1.1.tar.gz"
-  sha256 "c3298cac724b82a6f71e8c31ef15627e53dcad9afc40411366d2ac90988a53d0"
+  url "https://github.com/rrthomas/rpl/releases/download/v2.1.2/rpl-2.1.2.tar.gz"
+  sha256 "7994ef8663a51779ab1fb3a730cf2ae6cda81cc905b6db9ae0e858f63cb8b3e1"
   license "GPL-3.0-or-later"
 
   bottle do
