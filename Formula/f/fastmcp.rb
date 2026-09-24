@@ -3,17 +3,17 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/60/4a/1d69a384952d8d3a972dae2c9549a9c0fc572d705021ddad4fb1b8e3670d/fastmcp-4.0.5.tar.gz"
-  sha256 "4234f9dfc396310ed3a04c2b5314f85394cab161023f9de2fa06842be96288cb"
+  url "https://files.pythonhosted.org/packages/23/d6/9bbb9f74f5c0be6fbf70df405429cf34b414079b773bf5b9f21b600fcb7c/fastmcp-4.0.6.tar.gz"
+  sha256 "91ba8db2312851363e5bc4f885470a3ae6ec6d7837a717445743ee3e8c3417df"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b66a06573ee52617f6451c9a90c2ba36bf2a819f74bf73d5f1f6c1b8099a2f4c"
-    sha256 cellar: :any, arm64_tahoe:       "f057228964f508eaabae2f05fe5d15d00aaef38356464e63a361ac8b052b5b8b"
-    sha256 cellar: :any, arm64_sequoia:     "e343c3402ef5265d332b781f71c4b1b5a817a90c3d2451760ab038280bbfcac5"
-    sha256 cellar: :any, arm64_linux:       "d467fd777fb1bed051374ddaecbbc0a0a2e055e565e8a6f557211c2906ff4689"
-    sha256 cellar: :any, x86_64_linux:      "15e3d92e9ab740ad044c3566c41d03d8a51add6b3f3448642afab86a3bff04c4"
+    sha256 cellar: :any, arm64_golden_gate: "b8b7aac65d117cd74b716824becb830f8140fc650cda566ed0feb16994dbc3b6"
+    sha256 cellar: :any, arm64_tahoe:       "a96e55261b8d85b0b3977e9e57be79751a82d73ae1bfd60586fcf79417d116d1"
+    sha256 cellar: :any, arm64_sequoia:     "0d9a1d77c0a7c8e5c240232c41f7715351a5467ba3280557feb25454cf27e362"
+    sha256 cellar: :any, arm64_linux:       "cd4e1b9c4014f245e2da27c9a9be39d0baca0ae6de24406d92f9d2ce384cfafa"
+    sha256 cellar: :any, x86_64_linux:      "c8e0fbae02b7eec260523d091ffaf1f7d6b78a38c60da479fdf6e5ec0e0cd413"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -94,8 +94,8 @@ class Fastmcp < Formula
   end
 
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/7f/78/fa6a58bfc3d2b218f591f8e8c261639dd6fc56e2d6a70be0d1c42244ffa0/fastmcp_slim-4.0.5.tar.gz"
-    sha256 "5dc5395bcacb0eb405787393298891210c821d3f66334c2695e5e435d88fe575"
+    url "https://files.pythonhosted.org/packages/31/d4/d8dcdbdbba321d73b49aaec991cb4550843ccecdf480167c03a745abb652/fastmcp_slim-4.0.6.tar.gz"
+    sha256 "e2261f1da00b02ef25ecc8ba696e5cf55a00511c559e846e5b05b582256a0da0"
   end
 
   resource "griffelib" do
@@ -109,13 +109,13 @@ class Fastmcp < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
-    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
-    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "idna" do
@@ -219,13 +219,13 @@ class Fastmcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
-    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "py-key-value-aio" do
-    url "https://files.pythonhosted.org/packages/fb/e2/d689d922894a7ecde73b6daeaf9b13dab5aae06fe6aaaf7514722644d382/py_key_value_aio-0.4.5.tar.gz"
-    sha256 "c6563a2c6abe5da5e20f4f9e875c2a9b425a2244a54fadbf46cf140a9eea45d7"
+    url "https://files.pythonhosted.org/packages/ca/99/c346e3474853801ec5ecf4c3ee60cfc6060327ebc31424df4e346620dde4/py_key_value_aio-0.4.6.tar.gz"
+    sha256 "267c03c3e24cb99d3097612f8a5cfd8e11785c6a2975e272db0e303ea1850bfd"
   end
 
   resource "pydantic-settings" do
@@ -239,8 +239,8 @@ class Fastmcp < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/af/c3/8a3b59c25070cc61dc517fbdfa5dc0904670c96f605cc69759dc09166b99/pyjwt-2.14.0.tar.gz"
-    sha256 "77283c83fb56ecf566a886c757a714bc83668e38156de2cce8263302f42e0b86"
+    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
+    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
   end
 
   resource "pyperclip" do
@@ -289,8 +289,8 @@ class Fastmcp < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
   end
 
   resource "truststore" do
@@ -309,8 +309,8 @@ class Fastmcp < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
+    url "https://files.pythonhosted.org/packages/b3/68/e6aa0b77d217b31f8f486ec0cdfe5e00e6e38dc0be657e7d85819b9faf0a/watchfiles-1.3.0.tar.gz"
+    sha256 "99aee4a07847c06820765fd7b1b49ceac4f3f711ccb7d104655a33231de1c207"
   end
 
   resource "websockets" do
