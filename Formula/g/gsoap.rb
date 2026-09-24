@@ -29,7 +29,7 @@ class Gsoap < Formula
   end
 
   depends_on "autoconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
