@@ -1,8 +1,8 @@
 class Xlsxio < Formula
   desc "C library for reading values from and writing values to .xlsx files"
   homepage "https://github.com/brechtsanders/xlsxio"
-  url "https://github.com/brechtsanders/xlsxio/archive/refs/tags/0.2.36.tar.gz"
-  sha256 "80d3df95a7a108a41f83f0ce4c6706873fd2afafd92424fcccea475a8acbd044"
+  url "https://github.com/brechtsanders/xlsxio/archive/refs/tags/0.2.37.tar.gz"
+  sha256 "b9fcb22e124d178f30d404e5a22ccac594353d71d845035795321cd53d6c4cee"
   license "MIT"
   head "https://github.com/brechtsanders/xlsxio.git", branch: "master"
 
