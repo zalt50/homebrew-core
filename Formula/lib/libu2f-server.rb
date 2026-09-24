@@ -4,7 +4,7 @@ class Libu2fServer < Formula
   url "https://developers.yubico.com/libu2f-server/Releases/libu2f-server-1.1.0.tar.xz"
   sha256 "8dcd3caeacebef6e36a42462039fd035e45fa85653dcb2013f45e15aad49a277"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
 
   bottle do
     rebuild 1
@@ -32,7 +32,7 @@ class Libu2fServer < Formula
   depends_on "help2man" => :build
   depends_on "pkgconf" => :build
   depends_on "json-c"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   # Compatibility with json-c 0.14. Remove with the next release.
   patch do
@@ -41,6 +41,8 @@ class Libu2fServer < Formula
     type :backport
     resolves "https://github.com/Yubico/libu2f-server/pull/42"
   end
+
+  deny_network_access!
 
   def install
     ENV["LIBSSL_LIBS"] = "-lssl -lcrypto -lz"
