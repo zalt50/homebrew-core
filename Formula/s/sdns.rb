@@ -1,8 +1,8 @@
 class Sdns < Formula
   desc "Privacy important, fast, recursive dns resolver server with dnssec support"
   homepage "https://sdns.dev/"
-  url "https://github.com/semihalev/sdns/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "26885f54c6fc725bbf55a34f9f1b68f105d536029b0d9cb50c997a3758067248"
+  url "https://github.com/semihalev/sdns/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "d7381dfb91a9931ced01dedab6e75ee70e674cc9cd8c353f86c5ab34a98bb417"
   license "MIT"
   head "https://github.com/semihalev/sdns.git", branch: "main"
 
