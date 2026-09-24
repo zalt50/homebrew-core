@@ -28,7 +28,7 @@ class ErlangAT26 < Formula
   deprecate! date: "2026-05-27", because: :unsupported
   disable! date: "2027-05-27", because: :unsupported
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "unixodbc"
   depends_on "wxwidgets@3.2" # for GUI apps like observer
 
@@ -48,6 +48,8 @@ class ErlangAT26 < Formula
       formula :parent
     end
   end
+
+  allow_network_access! :test
 
   def install
     odie "html resource needs to be updated" if version != resource("html").version
@@ -70,7 +72,7 @@ class ErlangAT26 < Formula
       --enable-threads
       --enable-wx
       --with-odbc=#{formula_opt_prefix("unixodbc")}
-      --with-ssl=#{formula_opt_prefix("openssl@3")}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-javac
       --with-wx-config=#{wx_config}
     ]
