@@ -21,7 +21,7 @@ class GerbilScheme < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "sqlite"
 
