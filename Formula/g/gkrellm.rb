@@ -32,7 +32,7 @@ class Gkrellm < Formula
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+" # GTK3 issue: https://git.srcbox.net/gkrellm/gkrellm/issues/1
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pango"
 
   on_macos do
@@ -45,7 +45,11 @@ class Gkrellm < Formula
     depends_on "libx11"
   end
 
+  allow_network_access! :test
+
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
+
     args = []
     args << "-Dx11=disabled" if OS.mac?
     system "meson", "setup", "build", *args, *std_meson_args
