@@ -25,7 +25,7 @@ class Irssi < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "perl"
 
   uses_from_macos "ncurses"
@@ -34,7 +34,11 @@ class Irssi < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
+
     perl_vendorarch = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{vendorarch}")
 
     args = %W[
