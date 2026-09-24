@@ -7,6 +7,7 @@ class Swift < Formula
   url "https://github.com/swiftlang/swift/archive/refs/tags/swift-6.4.0-RELEASE.tar.gz"
   sha256 "8ac51c183d353a5b0f42cf0718f09977bf8723595a99f2218fe7458023cdead7"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   # This uses the `GithubLatest` strategy because a `-RELEASE` tag is often
@@ -51,7 +52,6 @@ class Swift < Formula
 
   on_linux do
     depends_on "lld" => :build
-    depends_on "python-setuptools" => :build # for distutils in lldb build
     depends_on "util-linux"
     depends_on "zlib-ng-compat"
 
@@ -168,6 +168,14 @@ class Swift < Formula
 
     livecheck do
       formula :parent
+    end
+
+    # Backport fix for linking static libs
+    patch do
+      url "https://github.com/swiftlang/swift-build/commit/9766f5f94a3b1e384995ecfe44681240080258c7.patch?full_index=1"
+      sha256 "c499e470c9d4909ebccb6f580a468e0237c4769773620825581019db13a2d24b"
+      type :backport
+      resolves "https://github.com/swiftlang/swift-build/issues/1764"
     end
   end
 
@@ -606,9 +614,9 @@ class Swift < Formula
       ]
       llvm_components = %w[
         llvm-ar llvm-nm llvm-ranlib llvm-cov llvm-profdata
-        llvm-symbolizer IndexStore
+        llvm-objdump llvm-objcopy llvm-symbolizer IndexStore
         clang clang-resource-headers builtins runtimes
-        clangd clang-features-file libclang lld
+        clangd clang-features-file libclang lld LTO
       ]
 
       if OS.mac?
