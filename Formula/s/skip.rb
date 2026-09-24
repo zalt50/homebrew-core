@@ -15,9 +15,7 @@ class Skip < Formula
   end
 
   depends_on "gradle"
-  # TODO: Switch back to `openjdk` together with `gradle`, which runs on `openjdk@25`
-  # until Gradle supports JDK 27; mixing both in one dependency tree fails `brew audit`.
-  depends_on "openjdk@25"
+  depends_on "openjdk"
   depends_on "swiftly"
 
   uses_from_macos "swift" => [:build, :test]
@@ -45,7 +43,13 @@ class Skip < Formula
   def install
     resource("skipsubmodule").stage buildpath/"skip"
 
-    system "swift", "build", "--product", "SkipRunner", *std_swift_args
+    # FIXME: need to update brew as Swift 6.4.0+ doesn't use ld shim anymore
+    if OS.linux?
+      args = ENV["HOMEBREW_LIBRARY_PATHS"].to_s.split(":").flat_map { ["-Xlinker", "-L#{it}"] } +
+             ENV["HOMEBREW_RPATH_PATHS"].to_s.split(":").flat_map { ["-Xlinker", "-rpath", "-Xlinker", it] }
+    end
+
+    system "swift", "build", "--product", "SkipRunner", *args, *std_swift_args
     bin.install ".build/release/SkipRunner" => "skip"
     generate_completions_from_executable(bin/"skip", "--generate-completion-script")
   end
