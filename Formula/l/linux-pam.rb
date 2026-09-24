@@ -1,8 +1,8 @@
 class LinuxPam < Formula
   desc "Pluggable Authentication Modules for Linux"
   homepage "https://github.com/linux-pam/linux-pam"
-  url "https://github.com/linux-pam/linux-pam/releases/download/v1.7.2/Linux-PAM-1.7.2.tar.xz"
-  sha256 "3d86b6383fb5fd9eb9578d2cd47d92801191f4bf3f9bc61419bfefc8aa1e531a"
+  url "https://github.com/linux-pam/linux-pam/releases/download/v1.7.3/Linux-PAM-1.7.3.tar.xz"
+  sha256 "2ce4765fd49df6693771ef2941f81e33d8ee14b94a81a5c7b369aa3b137b85a5"
   license any_of: ["BSD-3-Clause", "GPL-1.0-only"]
   head "https://github.com/linux-pam/linux-pam.git", branch: "master"
 
