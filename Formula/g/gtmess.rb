@@ -31,16 +31,18 @@ class Gtmess < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", "--with-ssl=#{formula_opt_prefix("openssl@3")}", *std_configure_args
+    system "./configure", "--with-ssl=#{formula_opt_prefix("openssl@4")}", *std_configure_args
     system "make", "install"
   end
 
