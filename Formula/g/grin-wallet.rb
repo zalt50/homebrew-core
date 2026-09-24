@@ -21,7 +21,7 @@ class GrinWallet < Formula
   uses_from_macos "llvm" => :build
 
   on_linux do
-    depends_on "openssl@3" # Uses Secure Transport on macOS
+    depends_on "openssl@4" # Uses Secure Transport on macOS
   end
 
   resource "grin" do
@@ -29,8 +29,14 @@ class GrinWallet < Formula
     sha256 "841a698986ff05768c6d7cdf2e59d44571533522fbcffdab0a0de01c8de1d4a3"
   end
 
-  def install
+  deny_network_access!
+
+  def fetch
     resource("grin").stage buildpath/"grin"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", *std_cargo_args
   end
 
