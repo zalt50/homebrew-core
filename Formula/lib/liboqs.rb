@@ -23,14 +23,17 @@ class Liboqs < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "ninja" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   deny_network_access!
 
+  def openssl = "openssl@4"
+
   def install
     args = %W[
+      -DBUILD_SHARED_LIBS=ON
       -DOQS_USE_OPENSSL=ON
-      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix(openssl)}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -43,8 +46,8 @@ class Liboqs < Formula
   test do
     cp pkgshare/"tests/example_kem.c", "test.c"
     system ENV.cc, "test.c",
-                  "-I#{formula_opt_include("openssl@3")}", "-I#{include}",
-                  "-L#{formula_opt_lib("openssl@3")}", "-L#{lib}",
+                  "-I#{formula_opt_include(openssl)}", "-I#{include}",
+                  "-L#{formula_opt_lib(openssl)}", "-L#{lib}",
                   "-loqs", "-lssl", "-lcrypto", "-o", "test"
     assert_match "operations completed", shell_output("./test")
   end
