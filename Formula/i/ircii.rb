@@ -27,10 +27,12 @@ class Ircii < Formula
     sha256 x86_64_linux:      "541eedf1463ed4337afcb37c39f32be57642e9a7cc99777283431be2bdcf0ab3"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     ENV.append "LIBS", "-liconv" if OS.mac?
