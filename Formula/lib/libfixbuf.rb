@@ -25,14 +25,16 @@ class Libfixbuf < Formula
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
-    system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@3")}",
+    system "./configure", "--with-openssl=#{formula_opt_lib("openssl@4")}/pkgconfig",
                           "--mandir=#{man}",
                           *std_configure_args
     system "make", "install"
@@ -56,6 +58,7 @@ class Libfixbuf < Formula
       }
     C
 
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs libfixbuf").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
