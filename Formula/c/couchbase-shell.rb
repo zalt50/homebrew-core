@@ -22,8 +22,14 @@ class CouchbaseShell < Formula
   on_linux do
     depends_on "libx11"
     depends_on "libxcb"
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
