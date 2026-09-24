@@ -1,8 +1,8 @@
 class Pgroonga < Formula
   desc "PostgreSQL plugin to use Groonga as index"
   homepage "https://pgroonga.github.io/"
-  url "https://packages.groonga.org/source/pgroonga/pgroonga-4.0.8.tar.gz"
-  sha256 "09509b7c23f29bcb00d8c769b222156a023ee7ddd896ee875b0a4acdcd657498"
+  url "https://packages.groonga.org/source/pgroonga/pgroonga-4.0.9.tar.gz"
+  sha256 "7d9fd0d8380ef0e807683c30ea25934e0bf5cfdc9553ad17a5907b620e0cbf72"
   license "PostgreSQL"
 
   livecheck do
@@ -28,6 +28,8 @@ class Pgroonga < Formula
   depends_on "groonga"
   depends_on "msgpack"
   depends_on "xxhash"
+
+  deny_network_access!
 
   def postgresqls
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("postgresql@") }
@@ -61,17 +63,16 @@ class Pgroonga < Formula
     postgresqls.each do |postgresql|
       pg_ctl = postgresql.opt_bin/"pg_ctl"
       psql = postgresql.opt_bin/"psql"
-      port = free_port
 
       datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
       (datadir/"postgresql.conf").write <<~CONF, mode: "a+"
-        port = #{port}
+        listen_addresses = ''
         unix_socket_directories = '#{testpath}'
       CONF
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"pgroonga\";", "postgres"
+        system psql, "-h", testpath, "-c", "CREATE EXTENSION \"pgroonga\";", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end
