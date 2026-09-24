@@ -1,8 +1,8 @@
 class Kraken2 < Formula
   desc "Taxonomic sequence classification system"
   homepage "https://github.com/DerrickWood/kraken2"
-  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.17.1.tar.gz"
-  sha256 "4dc64ead045b5ae9180731c260046aa37b6642244be085a9ba9b15db78ab442d"
+  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/2.17.2.tar.gz"
+  sha256 "84ff95cd6d8a4c9e93ab6bf1d9b3892099baaefb0277bcf2edc3eb4948566035"
   license "MIT"
   head "https://github.com/DerrickWood/kraken2.git", branch: "master"
 
@@ -35,6 +35,14 @@ class Kraken2 < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Link `merge` against `omp_hack.o` for builds without OpenMP
+  patch do
+    url "https://github.com/DerrickWood/kraken2/commit/01fb1d90167c720b6ecab3db707587d6406c8df4.patch?full_index=1"
+    sha256 "5a09c4b99b8c656ed4c00c0d40670a63525a99bb3a2abbb60019991da8b17cbd"
+    type :unofficial
+    resolves "https://github.com/DerrickWood/kraken2/pull/1041"
   end
 
   def install
