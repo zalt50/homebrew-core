@@ -12,12 +12,11 @@ class Jupyterlab < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "79d26505625ced5ad7695280b88e3f2c71c2ed072e7dc7a40ac59df71d592536"
-    sha256 cellar: :any, arm64_tahoe:       "27c93d6294c32825874fa1e3a0f4c75d8896a60dc541cf659bb39e884dfe4746"
-    sha256 cellar: :any, arm64_sequoia:     "09fd81779a0e1adad90a14fe34bff2aa5aedcbeba515c46601236f4903572164"
-    sha256 cellar: :any, arm64_linux:       "4b2cea618e4b9318c921baedebfb2e2eeaacdf65e3c68cfd481e5089db9a4bcf"
-    sha256 cellar: :any, x86_64_linux:      "4e58bc08365cbd2d3f52f83d52cadf186dc37034e0bdc97dee1353f0523f353a"
+    sha256 cellar: :any, arm64_golden_gate: "de2e34a3b6a2a3d04a53508783d70d77376caaba043bc5bab2ed1fb01c37caff"
+    sha256 cellar: :any, arm64_tahoe:       "92f871a64804a6eeaf4c8db9cfdba3ee59e3e534852f326fb1be81b00b002ca9"
+    sha256 cellar: :any, arm64_sequoia:     "3a5934c619014a0bcc330be397990bf7ba8d28329c153a52e738e8240c743d0f"
+    sha256 cellar: :any, arm64_linux:       "65ac48f668ac5b71ca34477982fb27977f53653ed2ee78912cefe8ee01280e5b"
+    sha256 cellar: :any, x86_64_linux:      "85026e243e5ab4d17a1061cd0c4a914a765719c94c33964ae3e174934dc9c424"
   end
 
   depends_on "cmake" => :build # for ipykernel
