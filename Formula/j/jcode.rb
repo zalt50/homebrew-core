@@ -11,11 +11,12 @@ class Jcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f581c5a1691d1a8c4d156a4ed915b42a52523486043867e69648dd72488c8d34"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ff0fe3b9c3d36ed45070c292c1b449f0f299ce8b8ae350ea422316d89b6a22d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d44e611bbf057fa5921182515c6228c687f5d934c5de66bda5acd7ade8fad23a"
-    sha256 cellar: :any,                 arm64_linux:       "e234f8a75da512865a4c4a2eeb02ca65cfd71f3c1eedffeb2c1789b373daa408"
-    sha256 cellar: :any,                 x86_64_linux:      "8cae620a8b6fbcbe066590372b8f2318583b3da71fcf738a846391516ca43f7e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "193694aaf3f762740ea0fe648d3984851de5d6d55e0854020e7da195551b3b23"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "305fb1319999d2954b3c0a8d10d63f856ac061a2ad74d2efb28eb58609b725cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c0f0f1b1c32b8fc55b2e0894619ae5c1c324ca4b5e80fcad9772bd2abfc9146"
+    sha256 cellar: :any,                 arm64_linux:       "c5430b1f6ed8a7214bd6d871ca79e25543be6e34040129c7f1b98fba766a8dbf"
+    sha256 cellar: :any,                 x86_64_linux:      "656fad0ee8cf31a302335f60ae648b41a7ba81bfa7c73827c63b9c675a26eb1e"
   end
 
   depends_on "cmake" => :build
@@ -23,13 +24,13 @@ class Jcode < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   deny_network_access! :build
 
   def fetch
-    system "cargo", "fetch", "--locked"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
