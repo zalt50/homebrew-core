@@ -25,7 +25,7 @@ class Fq < Formula
 
   on_linux do
     depends_on "bind" => :test # for `dig`
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "util-linux"
   end
 
