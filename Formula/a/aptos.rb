@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptosfoundation.org/", browsed: "2026-09-05"
-  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v9.5.1.tar.gz"
-  sha256 "b879c442d065801aa086ab60817614c0fb0c469ba70ebd98a5e1c2392f0ef14b"
+  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v9.6.0.tar.gz"
+  sha256 "c3386da89449ca7f453b0f92572730d1f08dedc49fd02a5059ddd934321651ef"
   license "Apache-2.0"
   head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
@@ -38,6 +38,12 @@ class Aptos < Formula
     on_intel do
       depends_on "lld" => :build
     end
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
