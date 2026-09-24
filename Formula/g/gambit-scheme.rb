@@ -20,7 +20,7 @@ class GambitScheme < Formula
     sha256 x86_64_linux:      "562e24e2eb6eb60a92ed469b94dda9974f3f4d0e56f8a47e877344c4013fdee1"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "gcc"
@@ -32,6 +32,8 @@ class GambitScheme < Formula
 
   # Clang is slower both for compiling and for running output binaries
   fails_with :clang
+
+  deny_network_access!
 
   def install
     args = %W[
@@ -47,7 +49,7 @@ class GambitScheme < Formula
 
     # Fixed in gambit HEAD, but they haven't cut a release
     inreplace "config.status" do |s|
-      s.gsub! %r{/usr/local/opt/openssl(@\d(\.\d)?)?}, formula_opt_prefix("openssl@3")
+      s.gsub! %r{/usr/local/opt/openssl(@\d(\.\d)?)?}, formula_opt_prefix("openssl@4")
     end
     system "./config.status"
 
