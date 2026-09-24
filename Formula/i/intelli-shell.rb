@@ -1,10 +1,21 @@
 class IntelliShell < Formula
   desc "Like IntelliSense, but for shells"
   homepage "https://lasantosr.github.io/intelli-shell/"
-  url "https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.5.tar.gz"
-  sha256 "3bb19e59f65e5076c549379cdd8bbe37ab38ddb45187f2333d4356f49e5b1f41"
   license "Apache-2.0"
   head "https://github.com/lasantosr/intelli-shell.git", branch: "main"
+
+  stable do
+    url "https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.5.tar.gz"
+    sha256 "3bb19e59f65e5076c549379cdd8bbe37ab38ddb45187f2333d4356f49e5b1f41"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://github.com/lasantosr/intelli-shell/commit/fecf5c2ba5ecf648e8e582361f4568f937e014ff.patch?full_index=1"
+      sha256 "760c4982138e87ef95a903e87ca60de6f0bf58843d1fa7446f0971eb6dc3f8f9"
+      type :backport
+      resolves "https://github.com/lasantosr/intelli-shell/issues/63"
+    end
+  end
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "87b3b248e099f133ee4d529895ae359ee0a7dc78aef8c1d854a8a0de52f3cfb8"
@@ -18,10 +29,16 @@ class IntelliShell < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
