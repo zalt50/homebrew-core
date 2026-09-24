@@ -13,7 +13,7 @@ class Chunkah < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on :linux
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "zlib-ng-compat"
 
   resource "homebrew-test-rootfs" do
