@@ -1,8 +1,8 @@
 class FxAgent < Formula
   desc "Tiny, open, embeddable, native coding agent"
   homepage "https://fx.sh"
-  url "https://github.com/vercel-labs/fx/archive/refs/tags/v0.0.10.tar.gz"
-  sha256 "59927f50a8fbc7567565e925463fd870682756bbd8983faa67aaff9fdd5d1eb6"
+  url "https://github.com/vercel-labs/fx/archive/refs/tags/v0.0.11.tar.gz"
+  sha256 "9658ef158acdd544325063e4b44528b494a064144c8353690cf0420d8996112a"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/fx.git", branch: "main"
 
