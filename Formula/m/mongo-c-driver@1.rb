@@ -26,10 +26,10 @@ class MongoCDriverAT1 < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "openssl@3"
   depends_on "zstd"
 
   on_linux do
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 
