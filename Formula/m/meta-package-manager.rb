@@ -4,8 +4,8 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/79/ce/1b608ea6ce77d657fd1dc40681cec7dee6deceb5cb83d19be6a0fdd6881e/meta_package_manager-8.0.0.tar.gz"
-  sha256 "b606e6fffe69643a715d826dfbdbcfbdd58e2acfbf9679c1e752d4da039f5f0b"
+  url "https://files.pythonhosted.org/packages/5f/40/edefcc03e705d2e8679ecaee54fb4267311a73454d38cee54994b3584078/meta_package_manager-8.0.1.tar.gz"
+  sha256 "a30a2f27e50b5fbf6b53fa814c5d73ee9203b0745cacc61dda631161bb9f8b67"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
