@@ -1,19 +1,18 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://github.com/facebook/wangle/archive/refs/tags/v2026.07.27.00.tar.gz"
-  sha256 "308f7205e7840eca987d953549336835a3bd7e29f6b5697e44eeaf50d56ca4ca"
+  url "https://github.com/facebook/wangle/archive/refs/tags/v2026.09.21.00.tar.gz"
+  sha256 "5760fcefdbf297c3d189108f8e6ba2999c0523a6868ed840baf0c07c12563317"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6986b7db7544f902675204e5c03d9771abf6fb2a422b2c2ae44b2ffe2ce3f014"
-    sha256 cellar: :any, arm64_sequoia: "9707ee79a12672f2ea69460a5ac8d51d9d2da9dd69ccfbda0604e82701676c88"
-    sha256 cellar: :any, arm64_sonoma:  "8fb5200b73a39e2f5aae9c8a28bfc0af94fb9ab0b27b179153413d62636cbcc3"
-    sha256 cellar: :any, sonoma:        "5b296934e1f83a7a338e0bee70de412d1f9e3950c343ad533c3678ea05a5ecdf"
-    sha256 cellar: :any, arm64_linux:   "3a9c0f847eb6c479111ce27fb0caed5304c2e67455439973bcbebd2e45d73758"
-    sha256 cellar: :any, x86_64_linux:  "9766e9dbe9afb23b931311813633e03b571ffae73fe55459ff5cb7e5850e8982"
+    sha256 cellar: :any, arm64_golden_gate: "6bc394fa761f30ca79be0ebdf5317545224e10956696d3d50c756eab57f1188c"
+    sha256 cellar: :any, arm64_tahoe:       "17b9d46d7731496612ba4be6e45eb8ae9f0beb5e7043a44492a9fd5cc6636c57"
+    sha256 cellar: :any, arm64_sequoia:     "080c78244bfb980433d7ce347f903a9176ead73a17fff66d301ef6d0516064a9"
+    sha256 cellar: :any, arm64_linux:       "e294415791e6b6562b2d1cab3867619a35d04fed6f767362c647a8e1483d8d37"
+    sha256 cellar: :any, x86_64_linux:      "610a8d4175a8558cacf7dcaff9fe5e1f5ad87d1ce0a60c718ce0cc2102540a7e"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -25,6 +24,8 @@ class Wangle < Formula
   depends_on "gflags"
   depends_on "glog"
   depends_on "openssl@3"
+
+  allow_network_access! :test
 
   def install
     args = ["-DBUILD_TESTS=OFF"]

@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://llama.app"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "v0.3.0",
-      revision: "c1d0e7a004015f23bc0233470b747b596f29b264"
+      tag:      "v0.5.0",
+      revision: "7fe450e19305b828c199d602c23a8337aaa1f03b"
   license "MIT"
   version_scheme 1
   compatibility_version 1
@@ -16,17 +16,19 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e6216152cf60a2603cfd58f99d7ec46c402d8c10f67904a560e9bbbe1bda45a0"
-    sha256 cellar: :any, arm64_sequoia: "40bc881be795b7e2af93118c1b73b934f059214ce6a1df981ca4ac045522315b"
-    sha256 cellar: :any, arm64_sonoma:  "9c901d9921e7bdd14bf755ff7349a518812a5acc71970bdbde556dee7248af2d"
-    sha256 cellar: :any, sonoma:        "4384f7c7c44b2835e384a17217be52d330dbcef42f259a4bea73ab3dbf5ed02d"
-    sha256 cellar: :any, arm64_linux:   "a431e37311f6023203f46b15d92118e592663ef0a63f5fa046048c6cd1cc4dfa"
-    sha256 cellar: :any, x86_64_linux:  "21a04f7bf8bf7d34dac764def230e9e82961f331bfe7083d7ab7a12cffba9868"
+    sha256 cellar: :any, arm64_golden_gate: "edf032b5a3a73bc47c94849bde12f877322b98dbe36d6cf149e24ce4db14b234"
+    sha256 cellar: :any, arm64_tahoe:       "1dea72a74612d3fab141d92220c8c4e5746cd25fede74636fdec8b915845d605"
+    sha256 cellar: :any, arm64_sequoia:     "b611092f4ec89b8268e10f360665b98e46f90ed64941594fb658da1674fcbd5b"
+    sha256 cellar: :any, arm64_linux:       "f9c4b954bd49b80bd60a14480504420155308138c8ce9ab7f9d1ffeb7525f523"
+    sha256 cellar: :any, x86_64_linux:      "9557f45d82abec9cbf64b80f1ccfded618cec11fceed42ee1a3684badd6c01b2"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "ggml" # NOTE: reject all PRs that try to bundle ggml
   depends_on "openssl@3"
+
+  # `test do` block downloads a model from Hugging Face
+  allow_network_access! :test
 
   def install
     args = %W[

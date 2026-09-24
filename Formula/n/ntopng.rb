@@ -1,19 +1,17 @@
 class Ntopng < Formula
   desc "Next generation version of the original ntop"
   homepage "https://www.ntop.org/products/traffic-analysis/ntop/"
-  url "https://github.com/ntop/ntopng/archive/refs/tags/6.6.tar.gz"
-  sha256 "2e97fbd26c2f9ac526214e2a2e22ecb218e38f5e99a688c25ae6cedbbc3a892c"
+  url "https://github.com/ntop/ntopng/archive/refs/tags/7.0.tar.gz"
+  sha256 "fba4607596526d26c15bec3619a9b1ec7c0a482fdd4495cbbf29bb4cb2271521"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/ntop/ntopng.git", branch: "dev"
 
   bottle do
-    sha256 arm64_tahoe:   "678240618abb8e6af0bc0c4bf8b6a120b1bb986ca4c88d842ffb97042c6f8a68"
-    sha256 arm64_sequoia: "c1256937da21c4f16c39faefecd81f0511cfc61be90433ae1e91b565d8b9272c"
-    sha256 arm64_sonoma:  "bea740dd573b3e4d9c8b0778a3538f6c8620aafbb723675c5e9b5f9be67e5e9c"
-    sha256 sonoma:        "2c272f207cc31ad8030b1afdf3587ccfded7be50c511825b8fb49007e9fb03f3"
-    sha256 arm64_linux:   "279a28665086ba1f41861b94013e6576d3f1e6481d4afa66fbc0cff422b86033"
-    sha256 x86_64_linux:  "8eb7bc1027a51bdc9444e52a971064029710bb3f0cc601f7454638d18833cf26"
+    sha256 arm64_golden_gate: "d758b7ee36aaac969bc288990ceb30502c6df86f7d575f6d1743182faac36e23"
+    sha256 arm64_tahoe:       "f89e33d74907438809b6a51d0fd1d370308d25cc6e5ff305c50607fda0e909ef"
+    sha256 arm64_sequoia:     "4eec16ee52b70da1ace7fb0b7997546b79ebf199f6295b755bea1c320e7217ca"
+    sha256 arm64_linux:       "efb374b909af2be849dd1e94db7e5a5380301b4f9294618a8f033716e690ae2d"
+    sha256 x86_64_linux:      "588ee8d0ff27dfac936477af1d6a0a488789f7127810787ef467c507afba827c"
   end
 
   depends_on "autoconf" => :build
@@ -48,8 +46,8 @@ class Ntopng < Formula
   end
 
   resource "clickhouse-cpp" do
-    url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.6.0.tar.gz"
-    sha256 "f694395ab49e7c2380297710761a40718278cefd86f4f692d3f8ce4293e1335f"
+    url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.6.2.tar.gz"
+    sha256 "bac497857759e991fa4e1638bccf936cb36d10ad79273695a570272cc4891428"
   end
 
   def install
@@ -70,7 +68,7 @@ class Ntopng < Formula
 
   test do
     valkey_port = free_port
-    valkey_bin = Formula["valkey"].bin
+    valkey_bin = formula_opt_bin("valkey")
     spawn valkey_bin/"valkey-server", "--port", valkey_port.to_s
     sleep 10
 

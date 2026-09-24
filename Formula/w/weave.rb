@@ -1,18 +1,18 @@
 class Weave < Formula
   desc "Entity-level semantic merge driver for Git using tree-sitter"
   homepage "https://ataraxy-labs.github.io/weave/"
-  url "https://github.com/Ataraxy-Labs/weave/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "f28df8d0ef3d3ab3d8d614d27e6cbb930519350b93ebc6af7232a28547698b51"
+  url "https://github.com/Ataraxy-Labs/weave/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "e5a2da626bb329b7ad38cbd206dc9cf67e30be719e84900d45415d448da76af7"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/weave.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ee475dc1f4b49e80f702519f7e4f7e1e4d30727a448a05833dc3a9e4a2328720"
-    sha256 cellar: :any, arm64_sequoia: "de3a0381fc20e4aae743642a5c1f03162dfc05c8921efbfb0a594057c5c072eb"
-    sha256 cellar: :any, arm64_sonoma:  "222c6066333a7999c6bbdeb0931b7cd1d7197c50cf239cf459b12313e38e2ad1"
-    sha256 cellar: :any, sonoma:        "3f4ebfdbe4ea04e88b05cc2181d49aacefb25ed314f28b2ba8fa788fa120d45a"
-    sha256 cellar: :any, arm64_linux:   "81f893f6d8ca41f8dc0ee8c51a260387c6e37031abfadc48729008824988c003"
-    sha256 cellar: :any, x86_64_linux:  "d3cae05f1f8dc153676e8fc76f17f71a420e819344511441de0125a856ecc805"
+    sha256 cellar: :any, arm64_golden_gate: "d763a24fefa8d0c73780806439099cbaafcb1263659d7d3fafaca909b8f1c16f"
+    sha256 cellar: :any, arm64_tahoe:       "7ad89619320fa3faa0783c9bb3cf085f5bce8d9c526ceed1e11d2207763f3654"
+    sha256 cellar: :any, arm64_sequoia:     "64d4c4c5a50ea28d61ea94c8c587cad825580bcafc7854566127d71058cd8512"
+    sha256 cellar: :any, arm64_sonoma:      "bd7c7a78eb87fc5f29cd816ccaad06ee5940c7554c1d8a48384eacbce5724ae9"
+    sha256 cellar: :any, arm64_linux:       "cc97bef0c42d906b1870f7f7a240d55a5466eab9f3697a40ca299dd29ec42187"
+    sha256 cellar: :any, x86_64_linux:      "8f8a177158423d782e8cdf6e156434fbb69a99064efe23dc125c03e9eee2194a"
   end
 
   depends_on "pkgconf" => :build

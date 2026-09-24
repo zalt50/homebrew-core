@@ -1,20 +1,16 @@
 class Lit < Formula
   desc "Portable tool for LLVM- and Clang-style test suites"
   homepage "https://llvm.org"
-  url "https://files.pythonhosted.org/packages/f3/37/be14bf2cabacc40557a03cf4789d9a3335bf515b0ec3a655fdc84cae4779/lit-23.1.0.tar.gz"
-  sha256 "6fd50e0ca6fac61f4a672e9f30154edcab3d17c98aeb8202ac709bc353fe331f"
+  url "https://files.pythonhosted.org/packages/4d/c7/3b3e737fa5d07f2d2f9ecedd354a1999e71d813628a539fcf05f1611c468/lit-23.1.2.tar.gz"
+  sha256 "1a839a3f187ae74ce96d9b29a6b5b69671359e436b674e706f2ea5a343ca3cd6"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "83970a9d30e801723d1ddaa7366c45d0513006687b2957ab55decfb8af6017cc"
+    sha256 cellar: :any_skip_relocation, all: "442a089a6c2df9ddbdef08a43b27e0d185e7e9202bfc14a21baee765a26e0776"
   end
 
   depends_on "llvm" => :test
   depends_on "python@3.14"
-
-  def python3
-    which("python3.14")
-  end
 
   conflicts_with "luvit", because: "both install `lit` binaries"
 

@@ -1,18 +1,17 @@
 class SlintCompiler < Formula
   desc "Compiler for the Slint UI markup language"
   homepage "https://slint.dev/"
-  url "https://github.com/slint-ui/slint/archive/refs/tags/v1.17.1.tar.gz"
-  sha256 "68222567f8c70ff677cd4a98cd94fb4765ac0f797eb8f8608a646911c908dc2a"
+  url "https://github.com/slint-ui/slint/archive/refs/tags/v1.18.1.tar.gz"
+  sha256 "fe485305ed303215e76c04918ee9aefbffbe229f18f979098ec36c7fa1dab28b"
   license "GPL-3.0-only"
   head "https://github.com/slint-ui/slint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afd63a837ea6f0e7fcf0ce7ff03e1b097e5bdbac2b8b5b1e41dd647850f63ae7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "371503c0334cfc487fc9b5b84c527ca69ef606e6a556a6ad4526c679802ea367"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8f41b00edc47778e0c9d6db52c9936c799767ab3b3283ddd56db288da0bdd15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c459f5ba08d010d970189d9a73be84b59b62856789cf1905bd0edb8c8ea25ff5"
-    sha256 cellar: :any,                 arm64_linux:   "2d5715db959e9a4e1c88d0c4f46d96650c3295119294eae274e5a9901f95129a"
-    sha256 cellar: :any,                 x86_64_linux:  "bd2fead8dd3d72cb647253028a660e73df67ff6df7783deb01004355e0f23373"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "040c51eb6d29db5a1cf5fafde6f44072c8c29fa22a25c52b9cd6c62f3285c3fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1f98596ec4af400644a38c9ee6084d5f27ef6864d2cb01be8111f4984dad1d7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17639e5997286763f74457f558da05ee317f7992cbddbc8dd6db0c087b132b91"
+    sha256 cellar: :any,                 arm64_linux:       "0fcf52208be337ad96768e1e15c411b5053e45ccabd67662e7fecdaf2a4bfd03"
+    sha256 cellar: :any,                 x86_64_linux:      "d3d2b0a8efb415ba073b0ec8aa91b0279279e8f85eef012f84d8399410ac4cbf"
   end
 
   depends_on "rust" => :build

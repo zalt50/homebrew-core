@@ -1,19 +1,18 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://github.com/facebook/mvfst/archive/refs/tags/v2026.07.27.00.tar.gz"
-  sha256 "7e3b85c6dcbb96804936883eca2b429bc17ac9a74e5a86dfae5f919701bf12a5"
+  url "https://github.com/facebook/mvfst/archive/refs/tags/v2026.09.21.00.tar.gz"
+  sha256 "27a5e5b1244077af58ba92ead2c3a866fcfcbc46fdb9ca2114e44a68d5c4e2ae"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "62e31ebe6aa72e7361d27b15f11acf51e5c6d8933021ce26d5bc73b402d76b01"
-    sha256 cellar: :any, arm64_sequoia: "b377758a2e1a1d855ac6b43cba00983c4eebf4f78e9ec1a2e815ac89d7dd1eac"
-    sha256 cellar: :any, arm64_sonoma:  "190215cd0304f5abc99ec91ecea28e6fbd6bb71a3b2301f58df30ffe67dd0698"
-    sha256 cellar: :any, sonoma:        "df50c840d961c0f093e5df52cf345c087415023df4e9a9ed6ee877932f69c352"
-    sha256 cellar: :any, arm64_linux:   "c6d61739c645e4f34c580dc064fff7199a473c73b94033c00c8c4ec71ea840c5"
-    sha256 cellar: :any, x86_64_linux:  "21be84a5cc6cc72274266372367be19e6c0b5d1138b55538a21fed551d26f24c"
+    sha256 cellar: :any, arm64_golden_gate: "48b107b065ee060f6f1647210e17afca03df68cccc64231c7d1abe3e8b220eaf"
+    sha256 cellar: :any, arm64_tahoe:       "67cdd2e693d465cb0013aafb637325f7b0625fd92414595243ed511937391cef"
+    sha256 cellar: :any, arm64_sequoia:     "2eca6d501d39824a0bf533c966e6a4647c7811c6b7e8fdcb38d910cbec702103"
+    sha256 cellar: :any, arm64_linux:       "52c3b3c868fb7a081662ca97906ee7102728f7070553bb316df167ac93be3f28"
+    sha256 cellar: :any, x86_64_linux:      "bbd1f951d0405851a282c057d3b6ff6d71335a61f9a9882cd4de52fb452a7c93"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -25,6 +24,8 @@ class Mvfst < Formula
   depends_on "gflags"
   depends_on "glog"
   depends_on "openssl@3"
+
+  allow_network_access! :test
 
   def install
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]

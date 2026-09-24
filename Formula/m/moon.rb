@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://github.com/moonrepo/moon/archive/refs/tags/v2.5.3.tar.gz"
-  sha256 "5cfb2789ea16c3feca01e9706055a098ac1ccdf841e22b65405a46c182b89408"
+  url "https://github.com/moonrepo/moon/archive/refs/tags/v2.5.5.tar.gz"
+  sha256 "7d9fa3040bfa76a54d8d23e73427bd055cc54751a0dfb789179c1e68c0a1612b"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "159b3ccbef7382708449affaafc77485cae813c7f2ffdcffbadc801910411f52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94975229ec0be47a83240d6038d8761866320566329c84b4dff706b5a37772a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08a049ea474c3e1607cd4ab91f9a16caca02c06ee96aa27a10a708730d88bf42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d32c4bfdb79e7859b522257dc0de2ed894dc9a0ff438d691c5c158395e93afa2"
-    sha256 cellar: :any,                 arm64_linux:   "e8ff970d3470e8936efcda7f7336226ce43ddf997f95fffbaa08be949b028cf2"
-    sha256 cellar: :any,                 x86_64_linux:  "d2e3f9e666ef5f01b6ba09fee0e740fe3d7213814a3f6c0ad4c5a635280720cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d06b3b5fa189b0f956363103e261cefe788e20b572748ecea3bdeb235461d1e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "106a55daba98ebade4d0e09619599438b0fc9ba5d04f34b5fc9f8bdaad0cf8bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a54a30bd4524b51403f206dced83805c51a35b5009bd4ecf2fbf49d8e113ce86"
+    sha256 cellar: :any,                 arm64_linux:       "d49b0d96e28ee7a9cdd2bc908bad8bf7de9584d3b17154ce01d37b3c62dbce65"
+    sha256 cellar: :any,                 x86_64_linux:      "07cd16c6647b5659e45889eb0fa500bdcd7fb16a0d6aa0796ee949929d0d2e11"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +27,7 @@ class Moon < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "xz"
   end
 

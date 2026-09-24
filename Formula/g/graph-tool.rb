@@ -3,10 +3,9 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.98.tar.bz2"
-  sha256 "eef1948b937f5f043749eee75fe0c6d7e8f036551d945e9d55e37870b06cc527"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-3.9.tar.bz2"
+  sha256 "812ab3575cae13dd6faad96e4d932797a7a71a84480a1eacbb874f2ebafc7c69"
   license "LGPL-3.0-or-later"
-  revision 5
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -14,22 +13,19 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "846935614fa4f53fd822a78f60a605f721799802661a7532c9980dea956d273c"
-    sha256               arm64_sequoia: "987e29d22d26fb54af1c79c83c63db68c3fe092382bbec66cae2bd6c1b0ae63f"
-    sha256               arm64_sonoma:  "14804f3eb2ef6c0d3532c608d40e1e48e95ab92867dfd486a81d693585d3de2c"
-    sha256               sonoma:        "9164b500375f9bd859f33f1bd83de228f66e0315c6b3e205388034cf8d108583"
-    sha256               arm64_linux:   "27a8ab11d0eca3f7e861d55845824bbd8e9bce4ff81492fa9cbc0b38a2b50007"
-    sha256 cellar: :any, x86_64_linux:  "f28db54631e464f1a52416140cf558204194eabbdf5602ea653e20e0cfbb823f"
+    sha256 arm64_golden_gate: "929b0167b1ca0ce17e9713147c97300e57891be078cd49f14a143e1aab40a628"
+    sha256 arm64_tahoe:       "ce4e1367a0e529191abc8c0395180a685f66953c2e91a5535cf9c3454281a970"
+    sha256 arm64_sequoia:     "18406361796ee2d9c3585b4f572f66311915c2cb7b211f434ebfd799966ecf44"
+    sha256 arm64_linux:       "252df94c68b570da8a2dc0282225c41071df0ba0693beec2bc6d8d29655bfc07"
+    sha256 x86_64_linux:      "d0b3ffde1f7d6d3c82a4e3426fd079813f895183c4862fccee95f38816a99b54"
   end
 
   depends_on "cgal" => :build
-  depends_on "google-sparsehash" => :build # TODO: Remove in 3.x
   depends_on "pkgconf" => :build
   depends_on "py3cairo" => [:build, :test]
   depends_on "python-setuptools" => :build # for zstandard
 
   # only test optional graph drawing feature to reduce required runtime dependencies
-  depends_on "gtk+3" => :test
   depends_on "pygobject3" => :test
   depends_on "python-matplotlib" => :test
 
@@ -42,12 +38,27 @@ class GraphTool < Formula
   depends_on "scipy" => :no_linkage
   depends_on "zstd"
 
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
 
   on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 2100
     depends_on "cairo"
     depends_on "libomp"
     depends_on "libsigc++"
+  end
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with :clang do
+    build 2100
+    cause "needs C++23"
+  end
+
+  fails_with :gcc do
+    version "14"
+    cause "needs C++23"
   end
 
   pypi_packages package_name:   "",
@@ -58,21 +69,7 @@ class GraphTool < Formula
     sha256 "7713e1179d162cf5c7906da876ec2ccb9c3a9dcbdffef0cc7f70c3667a205f0b"
   end
 
-  def python3 = "python3.14"
-
-  # remove obsolete pointer_traits workaround for older libstdc++
-  patch :DATA
-
   def install
-    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-    if OS.mac? && MacOS.version < :sequoia
-      env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-      ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
-    end
-
     venv = virtualenv_create(libexec, python3)
     resource("zstandard").stage do
       args = ["--config-settings=--build-option=--system-zstd"]
@@ -84,20 +81,27 @@ class GraphTool < Formula
       ENV.append_to_cflags "-Xpreprocessor -fopenmp"
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")} -lomp"
       ENV.append "CPPFLAGS", "-I#{formula_opt_include("libomp")}"
-    else
-      # Linux build is not thread-safe.
-      ENV.deparallelize
     end
 
+    # Linux often hits OOM as runners lack swap memory while macOS may thrash
+    # due to some compilation jobs exceeding 20 GB of memory.
+    ENV.deparallelize
+
+    # From https://git.skewed.de/count0/graph-tool/-/blob/release-3.7/configure.ac#L67-69
+    # > Enforce -O3. It makes a substantial difference, e.g. 12x speed improvement over -O2 in benchmarks.
+    ENV.O3
+
     args = %W[
-      PYTHON=#{which(python3)}
+      PYTHON=#{python3}
       --with-python-module-path=#{prefix/Language::Python.site_packages(python3)}
-      --with-boost-python=boost_#{python3.delete(".")}
+      --with-boost-python=boost_#{python3.basename.to_s.delete(".")}
       --with-boost-libdir=#{formula_opt_lib("boost")}
       --with-boost-coroutine=boost_coroutine
       --disable-silent-rules
     ]
     args << "PYTHON_LIBS=-undefined dynamic_lookup" if OS.mac?
+    # LTO moves memory contraints from compilation to linking which helps with build time on Linux
+    args << "MOD_CXXFLAGS=-flto" if OS.linux?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
@@ -115,6 +119,9 @@ class GraphTool < Formula
 
   test do
     (testpath/"test.py").write <<~PYTHON
+      import sys
+      # Importing Gtk initialises GDK, which aborts without a window server, so skip GTK+ drawing
+      sys.modules["gi.repository.Gtk"] = None
       import graph_tool.all as gt
       g = gt.Graph()
       v1 = g.add_vertex()
@@ -123,33 +130,6 @@ class GraphTool < Formula
       assert g.num_edges() == 1
       assert g.num_vertices() == 2
     PYTHON
-    refute_match "drawing will not work", shell_output("#{python3} test.py 2>&1")
+    refute_match(/Error importing (cairo|matplotlib)/, shell_output("#{python3} test.py 2>&1"))
   end
 end
-
-__END__
-diff --git a/src/boost-workaround/boost/container/vector_old.hpp b/src/boost-workaround/boost/container/vector_old.hpp
-index c4152c8..f72e646 100644
---- a/src/boost-workaround/boost/container/vector_old.hpp
-+++ b/src/boost-workaround/boost/container/vector_old.hpp
-@@ -3167,20 +3167,6 @@ struct has_trivial_destructor_after_move<boost::container::vector<T, Allocator,
-
- }
-
--//See comments on vec_iterator::element_type to know why is this needed
--#ifdef BOOST_GNU_STDLIB
--
--BOOST_MOVE_STD_NS_BEG
--
--template <class Pointer, bool IsConst>
--struct pointer_traits< boost::container::vec_iterator<Pointer, IsConst> >
--   : public boost::intrusive::pointer_traits< boost::container::vec_iterator<Pointer, IsConst> >
--{};
--
--BOOST_MOVE_STD_NS_END
--
--#endif   //BOOST_GNU_STDLIB
--
- #endif   //#ifndef BOOST_CONTAINER_DOXYGEN_INVOKED
-
- #include <boost/container/detail/config_end.hpp>

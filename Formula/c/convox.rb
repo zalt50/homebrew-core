@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https://convox.com/"
-  url "https://github.com/convox/convox/archive/refs/tags/3.25.4.tar.gz"
-  sha256 "f0b53fea813cd6c8af8461dde0ebb08858cdcf5d2b5d57ca7dc78eaf89814f8a"
+  url "https://github.com/convox/convox/archive/refs/tags/3.25.8.tar.gz"
+  sha256 "2ff800fc13e1ec899c97deaaf5b1bbc456ad79de86973eb1614177ac606d9cb6"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/convox/convox.git", branch: "master"
@@ -13,12 +13,11 @@ class Convox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd159bb976a247b84f4fc83a6292ad43e5b24dcd4c3e69beae261dc7371249d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b2dbd7708dc977192d98dc9ca7b634b14decfbfc42ae0da99476f7eb10e063e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f7114387835902a1b4ea8d013a530dbe14db226cdecc527c27bbe039aae8733"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe4e16e129bda0f4c7d0ea1dcd6cdeaed95731839ca8cf17fb59a38266ac43b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b21fe345cf1dcfce46077d1e034be95243980b4dd17ecdf32d264677001cc4b5"
-    sha256 cellar: :any,                 x86_64_linux:  "e73f1c98ad64e570ec10ca0eee802d42e707ccea495ccdd4a182f7b19248f142"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c06089bd6dc099126ebb0cbd511bc4053c2a69a6a0e6f3516053d7f63e5ffa4d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "02b1ec68469c78e0aa7787fb1e36d63de3f5846b8f7710a4abcf194e4676a5ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b9ddbc00d7b574bcdb8080292213193556b7fd6d4ab7904e33e1453438ed7984"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a00bfdd2024100028669c14d24394f556d5955fe9d3b3895f2aca39be3bbe71d"
+    sha256 cellar: :any,                 x86_64_linux:      "059882cc23dd85c81e2be081cfd3c335378e4913623a97d9af54cd6baeb96a60"
   end
 
   depends_on "go" => :build
@@ -26,6 +25,12 @@ class Convox < Formula
 
   on_linux do
     depends_on "systemd" # for libudev
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install

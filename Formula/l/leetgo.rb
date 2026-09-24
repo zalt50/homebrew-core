@@ -1,21 +1,26 @@
 class Leetgo < Formula
   desc "CLI tool for LeetCode"
   homepage "https://github.com/j178/leetgo"
-  url "https://github.com/j178/leetgo/archive/refs/tags/v1.4.18.tar.gz"
-  sha256 "6268de85aec3acf4db6fbe76b39a033dcc166d2ce1e8dc5304f603d60a5994eb"
+  url "https://github.com/j178/leetgo/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "74811881a19f44a351030b7b84044bef25ebfb115153cab17495d8a211acfa44"
   license "MIT"
   head "https://github.com/j178/leetgo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a99853980ea02580a158f8168f0470bc3481e8a4250ee7feb048130827cc908"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7fc64ed28c8c787d9cfc2974a59959a5152501a11e41c63ad1ed018c9f272a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c45c4b06f6d6265eb9ecd6a4c6ef46de6e7467f3e33120a2818cc7732f7ac29e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e729850bdf691f56999ba588dfce6cc0742c035b2749701db7581a936fc675e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43ecd167ba7342b5041e8b5be52b35a6b01ee0b182016c0677781fcec00b9afb"
-    sha256 cellar: :any,                 x86_64_linux:  "0093263f77bc9f1890e826bf31748e5751ecb575f58eefb14f8cc5d21c5fa23b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "02f4605e8ce1532641c01abc47a8543638d71e49126f549809a203d8fcb3cb2b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0b8bc42243d251ff124ea60181dd241d2371cbc56603834d56f7da3c18b6d43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f952678ad402b5740620a93cba0d2e2c6045a77eb941c4eaee690ce91a061b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4fe9c6d165c455957b6dbc3356fadd562dd303662c58ac363ba2d70998bcdf74"
+    sha256 cellar: :any,                 x86_64_linux:      "52eace4eed93344bf7676c6169004adc349b7ed5861a1613559043cace9af783"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

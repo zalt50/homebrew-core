@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://watchexec.github.io/"
-  url "https://github.com/watchexec/watchexec/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "b9860e46ed035ba870b309eea4151f29f9eddb6e168712112545bfda11acc594"
+  url "https://github.com/watchexec/watchexec/archive/refs/tags/v2.7.3.tar.gz"
+  sha256 "6f395178a963ffd478f0ee2e13146d375e8bbe4fec6859a56a0086a90e07e6f2"
   license "Apache-2.0"
   head "https://github.com/watchexec/watchexec.git", branch: "main"
 
@@ -12,18 +12,23 @@ class Watchexec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60e619840aa29d5e87004db395ebc67d466654ba9f3c591f6568c4fb0d9cceb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c41aa0dfdfc7fc12ec5d369f8923b345daad69d6d852e8ed227c8da8a5e8c6f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "244472d62fd2244fde0bf5f7e81099aa03c1cec92ee38fc436cecfeb8ee98e1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9d6ec17e3cc734aecb187c83a9f8eb7ca14d982944e706b85473361f680063d"
-    sha256 cellar: :any,                 arm64_linux:   "f10f62cf8a9a37a594303313bb80f6268130f07a2301b03977df5ee3b2cbb060"
-    sha256 cellar: :any,                 x86_64_linux:  "778e33d0d4ba201eaf517e1fea74699ffe7e669ba3a1dc592e3c35aa8ab5511d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "796535e5ddc7b3341f61716f8f811d32c82f06856eeb4e1dff6fa518a3bf844c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ac49fafa5b4538036979dfc4e0965eb6ad1165805ea97fb70745521c42118d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2014c7b3fca00160164812bc7ec30edd37a3c0bb16a2f48886079b5a514b4f5b"
+    sha256 cellar: :any,                 arm64_linux:       "6dc835c27a2f788569337748141a242f9a856f9927c2d50d7ac2a26e7f0aa311"
+    sha256 cellar: :any,                 x86_64_linux:      "f476d8a8a4bc6e6f6ff16a989bf67479953b4c57d39dc6c5d1fad94b1aac8200"
   end
 
   depends_on "rust" => :build
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

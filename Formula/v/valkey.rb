@@ -1,8 +1,8 @@
 class Valkey < Formula
   desc "High-performance data structure server that primarily serves key/value workloads"
   homepage "https://valkey.io"
-  url "https://github.com/valkey-io/valkey/archive/refs/tags/9.1.1.tar.gz"
-  sha256 "7d7232acd1b8a49b4e05d07a00b3ca8c801ae06ab633ca6a3423bc5f385ab7ee"
+  url "https://github.com/valkey-io/valkey/archive/refs/tags/9.1.2.tar.gz"
+  sha256 "19c23908e7d57e8d91ef85b41f5646307582f10f4f0fb999bbf89ed24ec9c983"
   license all_of: [
     "BSD-3-Clause",
     "BSD-2-Clause", # deps/jemalloc, deps/linenoise, src/lzf*
@@ -13,17 +13,19 @@ class Valkey < Formula
   head "https://github.com/valkey-io/valkey.git", branch: "unstable"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8bef52c4e766fd508af5006eab8df8ae828333006abbd64ec4dbcd05aeb7e35f"
-    sha256 cellar: :any, arm64_sequoia: "9daebe4f106b9f2d2e31c91a971c7622a17f3691a1a3002cb0af3aed5b0bcf1f"
-    sha256 cellar: :any, arm64_sonoma:  "e095b15ff5e6ac9825a5fa2b4f141349d88e95745d5e228829d2fa626f01d6cd"
-    sha256 cellar: :any, sonoma:        "c362cd074ce219adcf25b58395bc15bbb49c1e43037aa6f22a8ae116716920b7"
-    sha256 cellar: :any, arm64_linux:   "70b43be43258df6d7bd5e6924d625644c586a0697623010249a3da520a5d6b2d"
-    sha256 cellar: :any, x86_64_linux:  "f6afc11b1f9e6833e3462a1513dbbb292f7faf8e668c6e5639154497c7830a4b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "5b0ec8d457677eab77965c460a27782d7b76b36f99cddb8f5085904e813f024d"
+    sha256 cellar: :any, arm64_tahoe:       "3319ebe198120ab55fa35f31aef84d164837b60cc7afd8dbc6ef43568762a113"
+    sha256 cellar: :any, arm64_sequoia:     "da82708524bc70a3c03b2378b58cad08479ad7116eb0b6e7dfae260949534884"
+    sha256 cellar: :any, arm64_linux:       "657e966d70191d25d7993f7f3214d6d60f0a93993088ce8e3ee71a7f27e335eb"
+    sha256 cellar: :any, x86_64_linux:      "578578ab31dea1b183e1206d3817019466d56f27a94fa93f2e042072844863a0"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   conflicts_with "redis", because: "both install `redis-*` binaries"
+
+  deny_network_access!
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"

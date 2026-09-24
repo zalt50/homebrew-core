@@ -1,10 +1,9 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-6/source/tarball/percona-xtrabackup-8.4.0-6.tar.gz"
-  sha256 "e0e886b78d18b34122bd15b2d80f52fc5df2422260edaa3074820902beecd351"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-7/source/tarball/percona-xtrabackup-8.4.0-7.tar.gz"
+  sha256 "177ee52757d6e702b082b033e4562d680ed8f6dfa24d8cdad13005e48db65e18"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -22,12 +21,11 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0ef0bc76be9fb3f971a3d5d5b450a31a85e210fe01768da1ca3fefdd3cccfce3"
-    sha256 arm64_sequoia: "cd7d32afe465abb0eab24cb0527424cee3fa6588744410d57bad262e83a14703"
-    sha256 arm64_sonoma:  "8f686995ebeb48c00c53fba1ab8d01c0769ecbe662f97b0768d8243247dca0c4"
-    sha256 sonoma:        "d46a2f4e02831dad7874cb7886bd2704d81a9d5d66b71b5da8286550cff767d8"
-    sha256 arm64_linux:   "d141b54e841732275cece37050877d58cba0cf9cac96c09f7fc21534568296ad"
-    sha256 x86_64_linux:  "677fbd3f879a1d801b636278c8a19f958990aada3a18233378edddb5f167fb97"
+    sha256 arm64_golden_gate: "bf5b3230c518c63f6eb26ee36d86dae5cdc5ba79bc2f0470c68222561ec3e872"
+    sha256 arm64_tahoe:       "cf38ee4fa8d4e267863ec3189dee6c6644708da53776acea61cb6eba744355bb"
+    sha256 arm64_sequoia:     "0f7be37b30cc3111cc23b9c4678941850b3d23ca630f8ef8d3618b2ef8be1fa9"
+    sha256 arm64_linux:       "ad76e849a85a0d04dcbfd87e52229a436c4d7d2f95fbefed717bc0fb464637d3"
+    sha256 x86_64_linux:      "d5201f1be5e500f2e94f2f4f18bec7dfe1d5a7d8dc2c8f09715cd6240436abfc"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4
@@ -152,6 +150,9 @@ class PerconaXtrabackup < Formula
 
     # Disable ABI checking
     inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
+
+    # FIXME: `common.h` stubs `posix_fadvise` as a macro on macOS, which breaks the `::` qualifier
+    inreplace "storage/innobase/xtrabackup/src/xb_io_probe.h", "::posix_fadvise(", "posix_fadvise("
 
     icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.

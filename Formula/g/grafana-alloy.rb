@@ -12,12 +12,13 @@ class GrafanaAlloy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "129bd2ac4a2490c75daf16f158b2e20eee190e467b8512361f85afc218c67a74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b930361f022e115483b0a0648a7811e14e1301d97ff7d295a3086a261e708468"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "473289a03a7b5f8e874a262ae7369e81982e980539cfacc628d380562f1f81c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3fd4efacf9cf10fbe6dfc9ef3a1d77fdcb801147aef7b0ff4a632d4e0d7f431b"
-    sha256 cellar: :any,                 arm64_linux:   "da08511ff740cc2742b7c6f37df769840d58173312a103a0071cb4ddd2017009"
-    sha256 cellar: :any,                 x86_64_linux:  "a8324ee08b3e3c0d066c2500bbf91dc66a8b173e124cc1a7cff17127d699ecca"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2d389210537ee450e0608866af1327b6ff757e69d4c290dd9184a51d0836e972"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "129bd2ac4a2490c75daf16f158b2e20eee190e467b8512361f85afc218c67a74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b930361f022e115483b0a0648a7811e14e1301d97ff7d295a3086a261e708468"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "473289a03a7b5f8e874a262ae7369e81982e980539cfacc628d380562f1f81c0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3fd4efacf9cf10fbe6dfc9ef3a1d77fdcb801147aef7b0ff4a632d4e0d7f431b"
+    sha256 cellar: :any,                 arm64_linux:       "da08511ff740cc2742b7c6f37df769840d58173312a103a0071cb4ddd2017009"
+    sha256 cellar: :any,                 x86_64_linux:      "a8324ee08b3e3c0d066c2500bbf91dc66a8b173e124cc1a7cff17127d699ecca"
   end
 
   depends_on "go" => :build
@@ -28,6 +29,16 @@ class GrafanaAlloy < Formula
   end
 
   conflicts_with "alloy-analyzer", because: "both install `alloy` binaries"
+
+  # `test do` block runs a local server
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "collector"
+    cd "internal/web/ui" do
+      system "npm", "install", *std_npm_args(prefix: false)
+    end
+  end
 
   def install
     # Workaround to avoid patchelf corruption when cgo is required (for godror)
@@ -49,8 +60,7 @@ class GrafanaAlloy < Formula
     tags << "promtail_journal_enabled" if OS.linux?
 
     cd "internal/web/ui" do
-      system "npm", "install", *std_npm_args(prefix: false)
-      system "npm", "run", "build"
+      system "npm", "--offline", "run", "build"
     end
 
     system "go", "build", "-C", "collector", *std_go_args(ldflags:, tags:, output: bin/"alloy")

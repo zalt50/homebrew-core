@@ -1,21 +1,26 @@
 class Rtk < Formula
   desc "CLI proxy to minimize LLM token consumption"
   homepage "https://www.rtk-ai.app/"
-  url "https://github.com/rtk-ai/rtk/archive/refs/tags/v0.46.0.tar.gz"
-  sha256 "6f263143f654486252bb8075f7464d82ebc8adfec7f2995d57e488b928fad695"
+  url "https://github.com/rtk-ai/rtk/archive/refs/tags/v0.49.0.tar.gz"
+  sha256 "74b226ab00b8698d5084402893c76d93189493bd332b99d0b1e681d1ef860eb8"
   license "Apache-2.0"
   head "https://github.com/rtk-ai/rtk.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d5c60b9b57f280692a4e99dbb65fe6ebf9ec5edca5e4d01522dcf1dda639899"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "179ac71d882f28d216476ba5553391e69e804223225ef3d79749f984fc794864"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e46e431eac6682b60b1bbf7721dd6f645de238d8e757f3ed13b50d3eee613258"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3140cdd595314c498b64c44b54268a81a513022b3403f02f214ed29fa7574771"
-    sha256 cellar: :any,                 arm64_linux:   "fb711b276ff21a2ea83139e0f31a3eea164955fca249faf685bfda828dddd1cb"
-    sha256 cellar: :any,                 x86_64_linux:  "b8cb6d436314f0ea43f3a4e6b51d860b5c3c9696adc24f12d4a2eef101ce5fae"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b3c21c970af4d008db0b703c8b50e5201b94fe4a08b61aa57b07cd22aae0c123"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d2f3d7a4b24a5c1c4fae1203aff57fb8739354b4a14be8ad4d8ec99d8ae54c1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d46fc58ee7ada121604048285b002093d78aeb9067dfea80d302faf8fe44d894"
+    sha256 cellar: :any,                 arm64_linux:       "ed2ba35f56632a4a8b18022e77bd3b0e3ca358b36a1c0c26d609e3fc7a0a432a"
+    sha256 cellar: :any,                 x86_64_linux:      "fed3cb8536d3017c33e40bd652eadefc77b746b8498d7472a0629910b81ea126"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

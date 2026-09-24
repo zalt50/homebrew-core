@@ -1,21 +1,28 @@
 class McpToolbox < Formula
   desc "MCP server for databases"
   homepage "https://github.com/googleapis/mcp-toolbox"
-  url "https://github.com/googleapis/mcp-toolbox/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "4540261dfc0151a9dcac52ab96886bccdd873e3c6265d7016aa2fa9e01d8b43a"
+  url "https://github.com/googleapis/mcp-toolbox/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "c3665c21ac7671e9fe8582f8fda956e41daa46991f7f1fba1c717a39534e1f1e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "957c10c2adbcc646d5eb6961f0e3a31351f7d384867accb1e7cb49e1b4493f78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85a1e7d917961b457e2d7eb1480675d788e0a0a90c5a94ef622277bcbd7434cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "789b6cc459813a4fddb31afcb167546c0b13a981359cf3acb29d8a013aa978bd"
-    sha256 cellar: :any,                 arm64_linux:   "7170c1dab82dfa8806dd768786e8757e27c489d3037ad983872c21d354b49826"
-    sha256 cellar: :any,                 x86_64_linux:  "921994701fc76289b4a6047c782f1f27b341af835434fe4224ffdbdb69e82df4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ced40cebe0d7f7dff6b73f22622d726287bf2f35a029f78c868ac7f4cf55c27e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a075e2de1007d6e528c629ad842821049644227da2ff828436cd256ddf67e5c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "635f4a4a667bc50e286d3c883e8e17e25419463f6bc7160a28ddc5c8e9393cde"
+    sha256 cellar: :any,                 arm64_linux:       "99e819787f9673422f121df3ad7bacb489da71f285cf17fa8a887dcf40686bcb"
+    sha256 cellar: :any,                 x86_64_linux:      "2536a9376f53b8d1af9763a05cc938c5afffe9e66fbbfc97aae3ba3a6b990dd3"
   end
 
   depends_on "go" => :build
 
   conflicts_with "kahip", because: "both install `toolbox` binaries"
+
+  # `test do` block binds a local port
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?

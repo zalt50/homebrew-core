@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://github.com/influxdata/telegraf/archive/refs/tags/v1.39.3.tar.gz"
-  sha256 "13b4186fac9a9d29858c532b73efc41e0a1ac8ce93a615b59d5a6e589e71ab2f"
+  url "https://github.com/influxdata/telegraf/archive/refs/tags/v1.40.1.tar.gz"
+  sha256 "232d11feaa1bc9abbb4ea0189c6a017efe7807da56cd8f619a975b2ee663d3df"
   license "MIT"
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
@@ -12,15 +12,20 @@ class Telegraf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "671843fb120e3426c119f621b4dc3adb261cf82071ebea36e7934c206c8fdc59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b4ad063600a26f0b643e5b2673e9e111ba9dc77e154ad7c4db032f46cf80f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88b79a1bd4b03f986e3f6b35af0f319c657f9a580eca9df0b06342f4faeca674"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1139a1b3a520fee1c9b41fb5777e3b28f11fe3ed8e31d05f7a6ea9f4a6d903d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d1ff6d2c3fa2e07afb7b4eea567d34781625ad4bccbd3db014ade2ff7950bb"
-    sha256 cellar: :any,                 x86_64_linux:  "6543a2e48d8ae74732450f55622b92dbd06a5f33151dfd0b14a25d45ff7717c7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b3a26a184a6335ab12e1c27838b33dd354fc9341dbea12c2dd9224c36eff2850"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5d99b340c9a2ec66f9cc0a742bbcf72568d467a25fe99936f9e64dcac1aefcc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d6b832c7fdc24b7c2168a9877a7c66dd9a4fcad49f28db725d3701512d04e820"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "77e8143906bf520fa805abcf4de45f190151d9fea2050fd8323e7e6c28859f77"
+    sha256 cellar: :any,                 x86_64_linux:      "39cc420b99c5813c8a07ac7902a73f695a66d9b7afa91a182b151926fb2842c8"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     build_version = build.head? ? "0.0.0-#{version}" : version

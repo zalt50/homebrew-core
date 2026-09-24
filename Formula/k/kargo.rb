@@ -1,21 +1,27 @@
 class Kargo < Formula
   desc "Multi-Stage GitOps Continuous Promotion"
   homepage "https://kargo.io/"
-  url "https://github.com/akuity/kargo/archive/refs/tags/v1.11.2.tar.gz"
-  sha256 "9cdc85accb9e5b9f780b2e526545093fd2f5983acba3577b7287e26c229f7e5a"
+  url "https://github.com/akuity/kargo/archive/refs/tags/v1.11.4.tar.gz"
+  sha256 "06af0413397fbf482b311e11e016dde82626fcc7f35f39b933c20a45b214825c"
   license "Apache-2.0"
   head "https://github.com/akuity/kargo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ad81c16d8a665287f85db8a6b041cc33e5b66bf7cdc1fd2202b9fca6bcd44ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b53310ff510ab8204c09bdf6221159ff7684115b860a69f4dffa355c89df11d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05865b4aac0a4d9f540c295e03e57522daaa635c0a246ca68c761cfed6eaf8d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a0a4e55745310cbba61cc85c1587836b3cad8960959b03d03572939590c1412"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec796cfb663cf470d696f7872f9ea627df6e90e06c95926c3eb476c8e0ded065"
-    sha256 cellar: :any,                 x86_64_linux:  "4ef238de28e9df303a676db22164e87b0d30ccf0b6b0ee5bd14eeaf5cf54223c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f32b105b164385bafedd02f7fbd317d2252f002c09866aec46de25eb9e86734"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30f8f3fbcc253ff74a595c76a4a6619d81f120e3b2d7acb1573f15fc85741034"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f3820e8540106defa5596054ba43c73bf0337174f13a0ba5650cc3023a51648"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4e3d0e7da62be01ba44cb3c341338c6127c078c1ac345db8107722c155c58587"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e602f1fb01f97f13db61e08b03c1a115b4c27007294909d6a291d1e986b232f"
+    sha256 cellar: :any,                 x86_64_linux:      "2ee9d525e22706edaeea6f0eba00a03e66ca408e8f32aaa4feef49749353e223"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

@@ -4,15 +4,15 @@ class Mosh < Formula
   url "https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 41
+  revision 43
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6c2e8f65805c4310480fefc9487254f94b8348983a18c92476a3867d8fc1b137"
-    sha256 cellar: :any, arm64_sequoia: "f3ae0504dd900dac426724d431f50c0602c1c18234abd3585320893bb9eff25d"
-    sha256 cellar: :any, arm64_sonoma:  "ed5ca54f62cb6fe3def029e61a494620d85c0554324010b056b34f97f7315eb7"
-    sha256 cellar: :any, sonoma:        "b29072108c3c5da16840af485cc8d74e583b2d60c533331b352636905cd5e4ba"
-    sha256 cellar: :any, arm64_linux:   "bff4f3c461511c6ecd69b634f4614096cdc65ab48f4e016fc1a25efaf5c16832"
-    sha256 cellar: :any, x86_64_linux:  "887b1ba8d6c36a2f4124a5130ba88292bee5f099138c6ff11f645b97eda1ad44"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2a6fda6cadc30f71c946cdd175d673bac2a3a66da8defd0f59eaf74738e4388c"
+    sha256 cellar: :any, arm64_tahoe:       "bb486005805a4fddce729231b85fad256120c0851313a085d44843f2a6a6d3ec"
+    sha256 cellar: :any, arm64_sequoia:     "b1c2a786c156c761f2073900233edc9ca87b1d246dd7323c882736aa559ff45d"
+    sha256 cellar: :any, arm64_linux:       "fdcf721b9b2f4c67f4fc78d8244f3974e40bd544fe8bd1d672a2b782c64292e9"
+    sha256 cellar: :any, x86_64_linux:      "1341fb3a61915fd3d68bf70cd182f243d74db62d7bd9d94dc4914a8ce686f242"
   end
 
   head do
@@ -32,9 +32,11 @@ class Mosh < Formula
   end
 
   on_linux do
-    depends_on "openssl@3" # Uses CommonCrypto on macOS
+    depends_on "openssl@4" # Uses CommonCrypto on macOS
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     # https://github.com/protocolbuffers/protobuf/issues/9947

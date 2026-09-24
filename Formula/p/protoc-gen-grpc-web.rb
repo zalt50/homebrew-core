@@ -4,6 +4,7 @@ class ProtocGenGrpcWeb < Formula
   url "https://github.com/grpc/grpc-web/archive/refs/tags/2.1.1.tar.gz"
   sha256 "7766763275c6bf99115c9b535aaa3c507566847d47ea72a1f70da7fe427a98d3"
   license "Apache-2.0"
+  revision 2
 
   livecheck do
     url :stable
@@ -11,12 +12,11 @@ class ProtocGenGrpcWeb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "94e254571c386b448fd26a55b842fcdca371b6a6b27925fc3a02bb4f596e0bc5"
-    sha256 cellar: :any, arm64_sequoia: "f0e1e41e2603bb7cf70ea1eb122b7eebd771641b6b9749c530999c66fd9f142c"
-    sha256 cellar: :any, arm64_sonoma:  "96461e3a1c4ec4cdcc1519391f3b51ea4c5649f7288091dcd53641e5dd3b28ae"
-    sha256 cellar: :any, sonoma:        "fb0cd2f44822ad436d9b5035346618f9f2d08cef38428361f21ee2067800a74e"
-    sha256 cellar: :any, arm64_linux:   "ddf19d0c023f55a4e7866a39919af426592c1d6850876af3362dbb450e2d7c2f"
-    sha256 cellar: :any, x86_64_linux:  "192ed9864398c5a40f5936adec821e9a8bd83f827926c46de25087499ca23ee3"
+    sha256 cellar: :any, arm64_golden_gate: "7b480d8c9ac120c8d3ab6dcf16f710e81fa4b115315d4f62a23bc83a450d7134"
+    sha256 cellar: :any, arm64_tahoe:       "c5a5f47de93304b3ff6bc9e2984050d9b77b8dd3b57a95e37829d5ea1f755087"
+    sha256 cellar: :any, arm64_sequoia:     "7634c36aeb6a590b8a15bbd7d470db5536371f2b08e3822588ea17d228ca080a"
+    sha256 cellar: :any, arm64_linux:       "d9f05205809785a209a69a1b26cac5c5ea4ab20f833655dd227b6ec24a9f91b7"
+    sha256 cellar: :any, x86_64_linux:      "f9461b2657bf5e50f18c49ec50ef91a6b32a3a291645fb42e73a73cfbabf8c77"
   end
 
   depends_on "cmake" => :build
@@ -63,7 +63,7 @@ class ProtocGenGrpcWeb < Formula
         rpc RunTest(Test) returns (TestResult);
       }
     PROTO
-    protoc = Formula["protobuf"].bin/"protoc"
+    protoc = formula_opt_bin("protobuf")/"protoc"
     system protoc, "test.proto", "--plugin=#{bin}/protoc-gen-grpc-web",
                    "--js_out=import_style=commonjs:.",
                    "--grpc-web_out=import_style=typescript,mode=grpcwebtext:."

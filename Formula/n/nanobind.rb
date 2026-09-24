@@ -1,13 +1,13 @@
 class Nanobind < Formula
   desc "Tiny and efficient C++/Python bindings"
   homepage "https://github.com/wjakob/nanobind"
-  url "https://github.com/wjakob/nanobind/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "34ded7cf2292f08a92c45490a095e76334a57751bbae03a8c83241803bf19623"
+  url "https://github.com/wjakob/nanobind/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "39659890a112e84e7263e4a263c71dd2621f866f7a4386ce95ef410e6c0e5c2f"
   license "BSD-3-Clause"
   head "https://github.com/wjakob/nanobind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6e66edba3ea32389ec657159fad239f90841ebd2a72b9edd5ad811b29d1c9082"
+    sha256 cellar: :any_skip_relocation, all: "03147cd5289dec0c06e84b13c56d960857d659af33c903a4b969652e7f8b1653"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -34,8 +34,6 @@ class Nanobind < Formula
   end
 
   test do
-    python = "python3.14"
-
     (testpath/"my_ext.cpp").write <<~CPP
       #include <nanobind/nanobind.h>
 
@@ -46,7 +44,7 @@ class Nanobind < Formula
       }
     CPP
 
-    python_version = Language::Python.major_minor_version(python)
+    python_version = Language::Python.major_minor_version(python3)
 
     cmakelists = testpath/"CMakeLists.txt"
     cmakelists.write <<~CMAKE
@@ -68,7 +66,7 @@ class Nanobind < Formula
     system "cmake", "--build", "build"
 
     cd "build" do
-      assert_equal "3", shell_output("#{python} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
+      assert_equal "3", shell_output("#{python3} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
     end
 
     ENV.delete("CMAKE_PREFIX_PATH")
@@ -91,7 +89,7 @@ class Nanobind < Formula
     system "cmake", "--build", "build-python"
 
     cd "build-python" do
-      assert_equal "3", shell_output("#{python} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
+      assert_equal "3", shell_output("#{python3} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
     end
   end
 end

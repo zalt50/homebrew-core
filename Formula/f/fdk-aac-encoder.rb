@@ -14,6 +14,9 @@ class FdkAacEncoder < Formula
     sha256 cellar: :any, x86_64_linux:  "e20859b8cd9a5fc3095f7b63fa0c7b6a1ce0147958ca93a043e6ce84b510532f"
   end
 
+  deprecate! date: "2026-09-13", because: "needs `fdk-aac` which does not meet the license policy"
+  disable! date: "2026-09-13", because: "needs `fdk-aac` which does not meet the license policy"
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

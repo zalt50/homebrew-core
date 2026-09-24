@@ -1,20 +1,28 @@
 class Ols < Formula
   desc "Language server for The Odin Programming Language"
   homepage "https://github.com/DanielGavin/ols"
-  url "https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-06.tar.gz"
-  sha256 "f8055ff723994dc4debc02817c230d0173c43a23df4a9d6a7104fea69bfeeb79"
+  url "https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-08.tar.gz"
+  sha256 "e8d368f35b6833efa7e840753881d01f76607f3c0872c614e536f2b7e939f800"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a49baea6971a77139c64f502528c92a03cad8e372752698adfcac62a71ac6e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7df0ff6be994f67f0d71f3a3d94dbda07f7abfbb7f52e5e4d2108e1e3f4c292c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e52573666caed3630c0d028498e48b69341990b85eae91c2ed99ba7eb0c6a64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6d9609fb41f362866430a73e9471d73c476d38b04b2f62b1d5f724382e983cd"
-    sha256 cellar: :any,                 arm64_linux:   "d56a278faf220adeb6c3a0c246bcbc746c9d7c006da2094ca8eb3f2ac5a56f2b"
-    sha256 cellar: :any,                 x86_64_linux:  "41ac14ccad569877bc735c1e6dc9de3dc6f52cff7cf9cf85b408532cecbd809b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8c2c77dfc19c898fcacf0ce6e4281e17feb25ee43399e126b2922434eabcde1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1bd6653534dc50b6e15eabdf6fe16242ad4cce655c7c7a2fa363d1cf146267ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a5df06f67d0d20f5f0a472f50abe8a6e8384ddd67fae6cea47a9df78afc1c15"
+    sha256 cellar: :any,                 arm64_linux:       "3b2ea7d4c75442ad560218248b1bf718e69366208e187831f83e0e3c4b2ef048"
+    sha256 cellar: :any,                 x86_64_linux:      "12348430da10574489ec6e59cd3a9a44eced5aa67b1297f61434581d802022ad"
   end
 
   depends_on "odin" => :build
+
+  # Backport build fix for odin 2026-09, which replaced `ast.Inline_Asm_Expr` with `ast.Asm_Template`
+  patch do
+    url "https://github.com/DanielGavin/ols/commit/5f1b4d773b05d98dc9533521490096cf1a06a6d3.patch?full_index=1"
+    sha256 "e76914e29a26bca835d115111c1017ec0e6f7d51edc93a8c0e1f9a1fbd7c6368"
+    type :backport
+    resolves "https://github.com/DanielGavin/ols/pull/1653"
+  end
 
   def install
     args = %W[

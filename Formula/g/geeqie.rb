@@ -1,9 +1,10 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
   homepage "https://www.geeqie.org/"
-  url "https://github.com/BestImageViewer/geeqie/releases/download/v3.1/geeqie-3.1.tar.xz"
-  sha256 "ca550826e30fee9d6ccfc621ddd0e4c430d440f51cdfcbebe623cedfe64fd805"
+  url "https://github.com/BestImageViewer/geeqie/releases/download/v3.2/geeqie-3.2.tar.xz"
+  sha256 "ef10cdf72d8ab739286cc26fa3ff0a3535633ceea75c4cbdea39916bf9af2e0f"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,11 @@ class Geeqie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1ac7a7e716b5c1f253ac8ce8c1329fe69e6eca7fba4acc69d515afc135e70c1b"
-    sha256 cellar: :any, arm64_sequoia: "aa1092c0b0859252bd374eaccfa40f6bea4341dcf56f287fd631bb62b3a296e3"
-    sha256 cellar: :any, arm64_sonoma:  "a563501590477fbc2565b62da57f005b9025519954e48c9a1c1019a90b6ddd08"
-    sha256 cellar: :any, sonoma:        "f7942ef6f84f8c7e401306647d926a093f888a4e04ac71d666ddd96edfa25e8f"
-    sha256               arm64_linux:   "db14107c08e880841f29222f9864666461cc6c3b7f35fcf74575061f3db54954"
-    sha256               x86_64_linux:  "fb44ac9dcf9764a5fa85a234176118e9c5bd60bff3ae37ddfbe4770c78d58f66"
+    sha256 cellar: :any, arm64_golden_gate: "a2e1c7c28b3170a9ba93c6d7c6212031b2f1a0100a0b2c704b28a390a4adb1b4"
+    sha256 cellar: :any, arm64_tahoe:       "1e7d05c2162066515efebe3134f8a059c2be50ff1b9800228b68baff48446f09"
+    sha256 cellar: :any, arm64_sequoia:     "037aab304205e9dee173eab604fc4c075bce76d037fb0fc5af3cea134e39b44b"
+    sha256 cellar: :any, arm64_linux:       "be1c211d58bb204520b6fb7399fbf5c9077303ebfd421336d7e6e145e7873491"
+    sha256 cellar: :any, x86_64_linux:      "dc0b602ba90fcfbe41f3264fd5638506c04df2b1f34cbfa740e4c20a43efb177"
   end
 
   depends_on "gettext" => :build
@@ -61,8 +61,10 @@ class Geeqie < Formula
     depends_on "xorg-server" => :test
   end
 
+  deny_network_access!
+
   def install
-    args = %w[-Dlua=disabled -Dyelp-build=disabled]
+    args = %w[-Dlua=disabled]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
@@ -73,7 +75,7 @@ class Geeqie < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     cmd = "#{bin}/geeqie --version"
-    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    cmd = "#{formula_opt_bin("xorg-server")}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
     assert_match version.to_s, shell_output(cmd)
   end
 end

@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://www.anza.xyz/"
-  url "https://github.com/anza-xyz/agave/archive/refs/tags/v4.2.1.tar.gz"
-  sha256 "00740ce34e90d1ca4500e4f8029936f2101d328cd51926312286d049ce1a490b"
+  url "https://github.com/anza-xyz/agave/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "a1ff6f5aee5702c53feac14f7fa82209a61a7a3cbaa977148b06051fad7a72fa"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,20 +12,19 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "49fbe4dcbfd34a434204b200ade816e1c700e91a543fbc28e587fe0eddd9a650"
-    sha256 cellar: :any, arm64_sequoia: "de94f619fd8caf19fbf313e6f1f8b7b1bb020784e81a02dd71bbc465d49ee2d5"
-    sha256 cellar: :any, arm64_sonoma:  "2965904a30f587140d1f1b6419d4a44dd3ea06c001b4f5e00f0d97244f4c5585"
-    sha256 cellar: :any, sonoma:        "8dfbbec823fecc52e8d484c90364ee1ebda9fe55400d9c05079c7522012b8f06"
-    sha256 cellar: :any, arm64_linux:   "88e265680f46e44ae2a6e6e440869cc15a90c58397c6117995a742ca0f5dced1"
-    sha256 cellar: :any, x86_64_linux:  "b34610ef6de57c35f4c590ab587ccb00124427056843c8ffb29bdec313c34a79"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2b48bc9caa17acdd22c5575b08184f474b5dbf24189db8b0051325c18de97e2f"
+    sha256 cellar: :any, arm64_tahoe:       "deec13800a6e8d73656825dba34349dae8e58add925737a619dbef9fe032a3d1"
+    sha256 cellar: :any, arm64_sequoia:     "f7685d7c922bfa69ce48bdd9b7af86e22bd0e617d7e5190a3adc32823354352f"
+    sha256 cellar: :any, arm64_linux:       "772c7a5443f136d6afd641324f069dc5e558d6acfb2383d8c6ad46010ff42b60"
+    sha256 cellar: :any, x86_64_linux:      "362861878c708b1732f901fe26960c9e8d162e7d3cd64bbe325dab810c6c2817"
   end
 
   depends_on "llvm" => :build # for libclang
   depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
-  depends_on "rocksdb"
+  depends_on "openssl@4"
 
   uses_from_macos "bzip2"
 
@@ -35,7 +34,6 @@ class Solana < Formula
 
     # Use brew dependencies
     ENV["PROTOC"] = formula_opt_bin("protobuf")/"protoc"
-    ENV["ROCKSDB_LIB_DIR"] = formula_opt_lib("rocksdb")
 
     bins = %w[
       cli

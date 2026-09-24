@@ -1,18 +1,17 @@
 class Pixtuoid < Formula
   desc "Terminal pixel-art office for AI coding agents"
   homepage "https://github.com/IvanWng97/pixtuoid"
-  url "https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "8af540ebf7eb0c0ea9f835fb9e76879ea186d4e3f2b6627bb9a7b9a44562da82"
+  url "https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "78293abd3691e5b8ce747490f5588ade49f14e31c6b7dda5ea4ffe5a893c29b9"
   license "MIT"
   head "https://github.com/IvanWng97/pixtuoid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bbc2ae8dd2ea49a87cebf34fdc19fc796c30f6125ac8e15c55fad860c266591"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "206eb1cae224b23c368eb2968d5a229153a3a2f62f29edf01b95947e3587a9f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0325bebfe491194647210fffbe9509ff39e5d171c02a145f6cd274e1200b2e98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad43a0806467a7b642f59e4926dbc6dbd12ac176295687b9f20761f8f9103240"
-    sha256 cellar: :any,                 arm64_linux:   "6bbe93bf94f8f3f50105a75b121082daa5b8b4eb99eac18bf76ac60937da6a21"
-    sha256 cellar: :any,                 x86_64_linux:  "5084bb184b4492878f839a62a73d7827eb66be3e46a6c51eb9493d2038b66bba"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ef6b7fabe3d8fedd07f003f6888320f860c31a982d02c14d95e4e9ff4dea53e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f853764bb3f28f5ee1fb927819c8dea4a08595091a522765f54aaa628a989be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d88e3ee2ad45a3a97670561412204a9f9606ca7963ef5c3e851be2e844cb9453"
+    sha256 cellar: :any,                 arm64_linux:       "cda8a7cfef9afa967655b593424923ce84d4f56e44dd2e52c6de028cb60a7b6a"
+    sha256 cellar: :any,                 x86_64_linux:      "cd7b09c3a3779692b78805a579953bde6cefb78d43882aa66fe615a4934ea918"
   end
 
   depends_on "pkgconf" => :build
@@ -20,6 +19,12 @@ class Pixtuoid < Formula
 
   on_linux do
     depends_on "alsa-lib"
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 
   def install

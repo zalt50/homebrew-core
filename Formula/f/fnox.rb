@@ -1,18 +1,17 @@
 class Fnox < Formula
   desc "Fort Knox for your secrets - flexible secret management tool"
   homepage "https://fnox.jdx.dev/"
-  url "https://github.com/jdx/fnox/archive/refs/tags/v1.34.1.tar.gz"
-  sha256 "00e2f72a360dbb5e6ebbc3e469eacf98eb48b7ebb18104bf934cdad45779f751"
+  url "https://github.com/jdx/fnox/archive/refs/tags/v1.35.3.tar.gz"
+  sha256 "5df718dd9d7a071e5112baed1b5ccf9e096554ccf2a118bf1af978206836b722"
   license "MIT"
   head "https://github.com/jdx/fnox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7419e9c741b009748b7394f7e49dcf4324231c445a338d3c3cbb35ed5c152d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cecfb9b84c3c2eff0d9cf484ce0a5f18e58a34ced98f2ed90c6aeca840c7831"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb222c72da83404da0181e41221311e66a6d740682df94a773cd0fc637c3ebef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1699674138cf5432aca251286a63e939320c27eff9bd7a01c95b9120dc17240f"
-    sha256 cellar: :any,                 arm64_linux:   "3964b1a1f88d39b5a7df9a837abd4477872830dbe2c612252fd187020dbab422"
-    sha256 cellar: :any,                 x86_64_linux:  "fa6d863f4ad8b229cbda5b4d3ee8065edf1bd09ac9b77c06a97bb386ac4d719c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "30a801ff9d9b1da17d59458accc9b7557cbe8070ca5ba6d0144d7cdaaf4ce954"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eef540d2173c50f5760743b75ecc601d5e06197a63bc14a41960daf530a14d6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c43b9c21846735eb1fa67d1d630df3897a1dfbe71340d070b748df8b686dbf32"
+    sha256 cellar: :any,                 arm64_linux:       "c874cf8aacd094fcac633e0b8caec686caa53257ec9acb406bbb720204fb15a0"
+    sha256 cellar: :any,                 x86_64_linux:      "4ffb3261c66be485c32968148a45034bd425fec75710196075a7c28d3144a0ca"
   end
 
   depends_on "pkgconf" => :build
@@ -23,6 +22,12 @@ class Fnox < Formula
   on_linux do
     depends_on "openssl@3"
     depends_on "systemd" # libudev
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

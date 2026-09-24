@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https://systemd.io"
-  url "https://github.com/systemd/systemd/archive/refs/tags/v261.2.tar.gz"
-  sha256 "ed1059ff964f5df35b6056434cc17cc83f86dc913f10489948a0b19b6081c5ec"
+  url "https://github.com/systemd/systemd/archive/refs/tags/v262.tar.gz"
+  sha256 "6aa77506c0644aa67f940a48e3d3a7368601f787e4f249139516d353f107bcab"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -31,8 +31,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "2d19968531f892b75098fdbd3180c5464ff717c35f97fe12d1fd4d090503057d"
-    sha256 x86_64_linux: "0b69145eb07e6cea8ba539dc479952e193eb2debe281ad920adac59ae762d04c"
+    sha256 arm64_linux:  "b8781f5f5dd6f7294408065331d564fa7e1d089fa8598e0e02431252801f2a4c"
+    sha256 x86_64_linux: "8992355dbcecf65e0fc4ba2f8929cc1204c46050dd359b7506a59524604c8f1c"
   end
 
   keg_only "it will shadow system systemd if linked"
@@ -48,8 +48,6 @@ class Systemd < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
-  depends_on "glib"
-  depends_on "libcap"
   depends_on "libxcrypt"
   depends_on :linux
   depends_on "lz4"
@@ -67,8 +65,8 @@ class Systemd < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "markupsafe" do
@@ -77,7 +75,7 @@ class Systemd < Formula
   end
 
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.14")
+    venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/systemd"
@@ -86,9 +84,6 @@ class Systemd < Formula
     args = %W[
       --localstatedir=#{var}
       --sysconfdir=#{etc}
-      -Dsysvinit-path=#{etc}/init.d
-      -Dsysvrcnd-path=#{etc}/rc.d
-      -Drc-local=#{etc}/rc.local
       -Dpamconfdir=#{etc}/pam.d
       -Dbashcompletiondir=#{bash_completion}
       -Dmode=release

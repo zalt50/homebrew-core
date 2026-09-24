@@ -6,15 +6,17 @@ class YtDlp < Formula
   url "https://files.pythonhosted.org/packages/1e/e0/832fa4ca334b766a06933a196066edc3dba37cdb6f14cd98d59bcc69a4b4/yt_dlp-2026.8.19.tar.gz"
   sha256 "9e213e48cea35c66b378e4447903f118f6392a5fa380a2b6d7070ec86f4e0af1"
   license "Unlicense"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6781807568f993cb31210958a3dd62bc5c94b14c75884edb7e506f50ed3d1d5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cc7f84c904035caf5367eab08ee6f5aad0786adaf65a07b3aa4ae0529b693d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f529e5ca3f3b4945913dc70c403ac054a73bd308ec0e110651920ceed72d2d0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53a076107d9941d0ae262beeb26406610f157fb7a88369ccfb821ec0720149ec"
-    sha256 cellar: :any,                 arm64_linux:   "c652684bc0b991da48936e4e1c69628dd56ed7acdedfb290acf33700c04a5f40"
-    sha256 cellar: :any,                 x86_64_linux:  "4ee7074c392505f356513ff46b526b4fc8d35f2f8e90a7e3e8d36ecf409bd45e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "67c75075e8b14173e7777d42b1e5686c11532acd26e2aa17f820743a01b23a95"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "925b69a6ad3ab2dddc35a1dffcf5017f514e591403639edae1f9639ab39a0c3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1ba6be272ef25a111f5e6fe4a6be0ca712633d6271e944ba62df1b3ba3469c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "09dd7e5928dedabab23a3ad63eb67484f3edbf059aa5091ea7b7c78da23d3026"
+    sha256 cellar: :any,                 arm64_linux:       "dc658cd4ca6e73d0164374a85259f7301294c13f9b79c0117f73c594ede3f04d"
+    sha256 cellar: :any,                 x86_64_linux:      "75909762213b842de32fe727cdf8e5e531d20989105f039b8cccddf3e909bd84"
   end
 
   head do
@@ -24,11 +26,13 @@ class YtDlp < Formula
   end
 
   depends_on "certifi"
+  depends_on "cffi"
   depends_on "deno"
+  depends_on "pycparser"
   depends_on "python@3.14"
 
-  pypi_packages package_name:     "yt-dlp[default]",
-                exclude_packages: "certifi"
+  pypi_packages package_name:     "yt-dlp[default,curl-cffi]",
+                exclude_packages: %w[certifi cffi pycparser]
 
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
@@ -38,6 +42,11 @@ class YtDlp < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
     sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+  end
+
+  resource "curl-cffi" do
+    url "https://files.pythonhosted.org/packages/d1/f6/347067dfacb19e44a4166d7bdb183e3a2629680beceb5e52f7cb2cc1a3b4/curl_cffi-0.16.2.tar.gz"
+    sha256 "2986a86cdcf514ab73632c2de62a01db3cc97f7ecf17798a1be16180f4474198"
   end
 
   resource "idna" do
@@ -66,14 +75,16 @@ class YtDlp < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
-    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
+    url "https://files.pythonhosted.org/packages/18/72/fba934cb3dff7a85d811820efffcd141ddd52b5a2a01637f64551373ff4d/websockets-17.1.tar.gz"
+    sha256 "acfea4c20bf54384883ea33b1240fc1db4f52e190823a4e2b334bc3e8bfca96a"
   end
 
   resource "yt-dlp-ejs" do
     url "https://files.pythonhosted.org/packages/d3/e6/cceb9530e8f4e5940f6f7822d90e9d94f1b85343329a16baaf47bbbb3de1/yt_dlp_ejs-0.8.0.tar.gz"
     sha256 "d5fa1639f63b5c4af8d932495f60689d5370f1a095782c944f7f62a303eb104e"
   end
+
+  deny_network_access! :postinstall
 
   def install
     system "make", "lazy-extractors", "pypi-files" if build.head?
@@ -84,7 +95,7 @@ class YtDlp < Formula
   end
 
   test do
-    system bin/"yt-dlp", "https://raw.githubusercontent.com/Homebrew/brew/refs/heads/master/Library/Homebrew/test/support/fixtures/test.gif"
+    system bin/"yt-dlp", "https://raw.githubusercontent.com/Homebrew/brew/refs/heads/main/Library/Homebrew/test/support/fixtures/test.gif"
 
     system bin/"yt-dlp", "--simulate", "https://x.com/X/status/1922008207133671652"
   end

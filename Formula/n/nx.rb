@@ -1,17 +1,17 @@
 class Nx < Formula
   desc "Smart, Fast and Extensible Build System"
   homepage "https://nx.dev"
-  url "https://registry.npmjs.org/nx/-/nx-23.1.2.tgz"
-  sha256 "9996208aea8a1536d6574842852aff53cffc69050e70f1632bbc00e1c75d1433"
+  url "https://registry.npmjs.org/nx/-/nx-23.2.1.tgz"
+  sha256 "9da5b6ea573fb377221e13ede170c8a2576bd0819791193a09a55d52c8cfd28d"
   license "MIT"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "59d77580d31a1a487ff726eb976fbcc38477f4bc0105a65df6c5e37beb508a30"
-    sha256 cellar: :any,                 arm64_sequoia: "59d77580d31a1a487ff726eb976fbcc38477f4bc0105a65df6c5e37beb508a30"
-    sha256 cellar: :any,                 arm64_sonoma:  "59d77580d31a1a487ff726eb976fbcc38477f4bc0105a65df6c5e37beb508a30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3737ccb67914acaf6ee8d3503471fbf4fcbd0cb61aec3c07769217daf5251f30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d564815708e5313e10e59a536f42648a914e454fbc1be96d463a56afa620a5a2"
+    sha256 cellar: :any,                 arm64_golden_gate: "4acdadaa3fd1eaf9a3114dec39cf5ccf46670584ed70608f7e872c5b55f726a8"
+    sha256 cellar: :any,                 arm64_tahoe:       "4acdadaa3fd1eaf9a3114dec39cf5ccf46670584ed70608f7e872c5b55f726a8"
+    sha256 cellar: :any,                 arm64_sequoia:     "4acdadaa3fd1eaf9a3114dec39cf5ccf46670584ed70608f7e872c5b55f726a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fefeff6f9f5c15b8c2b36c0f4eea6a3fbaba9f0a707c224f2fd36ef9e3fb23d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0dcc03262fa46dd356e04954e6e57e060258b9b5d3b755e5d0a2b8687a3176e2"
   end
 
   depends_on "node"
@@ -22,6 +22,10 @@ class Nx < Formula
   end
 
   test do
+    # Avoid daemon and plugin worker sockets in the test sandbox.
+    ENV["NX_DAEMON"] = "false"
+    ENV["NX_ISOLATE_PLUGINS"] = "false"
+
     (testpath/"package.json").write <<~JSON
       {
         "name": "@acme/repo",

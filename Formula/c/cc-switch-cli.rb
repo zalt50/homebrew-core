@@ -1,21 +1,26 @@
 class CcSwitchCli < Formula
   desc "All-in-one assistant tool for Claude Code, Codex, Gemini, OpenCode and OpenClaw"
   homepage "https://github.com/SaladDay/cc-switch-cli"
-  url "https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.10.3.tar.gz"
-  sha256 "ad1e9d0295954325d7b348cdcdd9237e494aa4dd042b8f5039ec6ffa5b652147"
+  url "https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.10.5.tar.gz"
+  sha256 "995bb09b38534659301d94ac675b7c7e2e860e3bf0ce41d5fc430c76b7b61c06"
   license "MIT"
   head "https://github.com/SaladDay/cc-switch-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d877bf4be0f457bce0646180532a1fa8144374dbb54660722ad5abef9fc8e79c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e34aa110c297cf46844137beba2eae8c868293d65427ebc188164d698231c5c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9201e743053ff4f2aec8582ae37640cfcf5b3cd1011c7618ffb9482a687ca4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51146a3d62885938796a73886a8ba0da7f130e90d856cefd22fd5423ff00210c"
-    sha256 cellar: :any,                 arm64_linux:   "e3d358533442e89dbad6a71851ead38a3e14b5ad862dbfa656d9c0764a21f3a7"
-    sha256 cellar: :any,                 x86_64_linux:  "3ab1d40bd1cfc55e58559d3ef91b5040189623820f31ac49a42f8a913b586221"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "45979f75d90d7b2fe439a8efa98d614a18d640c7bbd29b7c55eec31999f70d70"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b7f8e7f73d944f44dffcc8ea5270a569795e2cb9ae17d39e88d4535d473685de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ed197b575770e17c7f401bdd8c8f18dfea6a358f5568431c7c78a2a796b4e52e"
+    sha256 cellar: :any,                 arm64_linux:       "d754c27c274775cb072fbc22b87d2da089addbb9700b6e4b951dcd4677b98d00"
+    sha256 cellar: :any,                 x86_64_linux:      "940452a43d25d2960a0539a5a89b25cc2eb4e88bb3fb5cfc6abb57c396d368a9"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "src-tauri/Cargo.toml"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "src-tauri")

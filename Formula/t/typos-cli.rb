@@ -1,8 +1,8 @@
 class TyposCli < Formula
   desc "Source code spell checker"
   homepage "https://github.com/crate-ci/typos"
-  url "https://github.com/crate-ci/typos/archive/refs/tags/v1.50.0.tar.gz"
-  sha256 "00bb5b96e4c7f8a652ab26f2bec3f9babf40efd3260ed3cebac6737e5de5171c"
+  url "https://github.com/crate-ci/typos/archive/refs/tags/v1.50.2.tar.gz"
+  sha256 "412b161d33996e2c3c4a8b076e22183527f3420242975e868ba9968a3ce1727e"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,14 +11,20 @@ class TyposCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aac1b72aeae7eef46cc25f7bb4dc9f70392a402e312edc11ee9fa9c6774901b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5390ef5f70e437c6cd59596884920961dec1b855d4e4f0935706c5385199aee5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7fbe7b672c2568848a499694a10776eb6da4488da9e962f606ac0590f919a2b"
-    sha256 cellar: :any,                 arm64_linux:   "088b172a1adf9705f5d06f8c4c9b223ca6a1e92f12133f1c81814b368d525321"
-    sha256 cellar: :any,                 x86_64_linux:  "3e7ae51e631101373cbb59f7b6bdcec6984159bc1896a3c860a0186d2035be9e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9aa37a6da3929cff2d4c61e778ed9a1bf1d0016fe897c52bf387a2639552eed5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c8e8196b244bfbb2ab48db84757a3e38de179a38d0bd095dea3a24a4ae49814"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fe5344eeb1b3787092e874dbb98e73e4a5bb033d3e0d133f736f4e51bf637ea7"
+    sha256 cellar: :any,                 arm64_linux:       "ffedde767da4c34b432d1995a1b5d33dbf1ee266880bfb47284a4b15de7d2ab6"
+    sha256 cellar: :any,                 x86_64_linux:      "9b52cd497978f0f9bede5cf29d841ae6ca35ede1d00a28c1ffb8b545bcc77ead"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/typos-cli")

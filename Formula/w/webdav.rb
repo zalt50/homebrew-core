@@ -1,20 +1,26 @@
 class Webdav < Formula
   desc "Simple and standalone WebDAV server"
   homepage "https://github.com/hacdias/webdav"
-  url "https://github.com/hacdias/webdav/archive/refs/tags/v5.15.0.tar.gz"
-  sha256 "fae24d7cd606679dc7d09541237bfcad232cc857b18200549daae035a7f751cf"
+  url "https://github.com/hacdias/webdav/archive/refs/tags/v5.16.0.tar.gz"
+  sha256 "77f40c292556092128ef7954788ca1b93228e0dd88d9ce89e179e38e9e564d52"
   license "MIT"
   head "https://github.com/hacdias/webdav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9839262c76d1096fbb1382196cbc12e2edad06dd32e8c8d16e93691fd0053fb9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9839262c76d1096fbb1382196cbc12e2edad06dd32e8c8d16e93691fd0053fb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9839262c76d1096fbb1382196cbc12e2edad06dd32e8c8d16e93691fd0053fb9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55b3b16ec43e647c18b28618a3b3d800aec19a1ff3afc8cb7d599a14bf41aa6b"
-    sha256 cellar: :any,                 x86_64_linux:  "a03808147023f4d7d8d3d353a71f8970057833ec8ccf8b9e741ec4bc0bb2e7dc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "34f38d15cc36a519cbc5f066f39c1fb735b880c5a4b1401f2994f0fe972a4c82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "34f38d15cc36a519cbc5f066f39c1fb735b880c5a4b1401f2994f0fe972a4c82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "34f38d15cc36a519cbc5f066f39c1fb735b880c5a4b1401f2994f0fe972a4c82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "601f5ffc6b5c3a6a83e586af61aaea595240f5edf5caa2bfbc69ec85d2cb42a7"
+    sha256 cellar: :any,                 x86_64_linux:      "e2239a3ff0f393c08ccc4b0689b0da77c10dab4cbfcb7294f57114e14d8ad677"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X github.com/hacdias/webdav/v5/cmd.version=#{version}"

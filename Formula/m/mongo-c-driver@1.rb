@@ -1,8 +1,8 @@
 class MongoCDriverAT1 < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://github.com/mongodb/mongo-c-driver/archive/refs/tags/1.30.8.tar.gz"
-  sha256 "11f87477efe7aa9cacd9fd18872eb7e629adee898af627f670d1c2e2911b4670"
+  url "https://github.com/mongodb/mongo-c-driver/archive/refs/tags/1.30.11.tar.gz"
+  sha256 "de539207f026108cdda053f774c647ef81f3cb65268c0380553a657368febe97"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class MongoCDriverAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "631afe5e9a69bdefc9fc3a7bc6a8594092d95992dc69576911450c1e4e05ead9"
-    sha256 cellar: :any,                 arm64_sequoia: "e63f93a4b2e8a25bdbd8296552f7d2f5068b1c26d2da377bc850e5b6684527b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e37e0f01f42b7bc092f61f666a73d099db68c7befcd055cec1c2d7030cc153b2"
-    sha256 cellar: :any,                 sonoma:        "5fa45af42b827d347807e64531ed1e2670d9496479d9c921813d16dc2e3e766e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "feb745e0367542478306534be0ba3cce7f48bbb259b36ffa5dd597d55a271270"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb8bb4be9623dae26fe356cee0e366cf5e26951e25074b62563bb97ab89a0839"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3a6e061527f71476feb0396550e2bbf83afb77ffc1270de4a2e6a2c82b12fb13"
+    sha256 cellar: :any, arm64_tahoe:       "5a9b76e3d16f85b1cd572c82794f368307fd28df6d01ad8d9dcadc8c2ccab236"
+    sha256 cellar: :any, arm64_sequoia:     "f275342a36dbe035e6a4e137042db3dbf549d4337a5bb3c43b412a45c81d9b3d"
+    sha256 cellar: :any, arm64_linux:       "9a399bb1fa47cf591609d90701f4a2de917942ab5537d151fe82c6084534a831"
+    sha256 cellar: :any, x86_64_linux:      "95d5e1c321c0c40316fcc14d13b170b2ad797cde404ce86056249267dcb714b3"
   end
 
   keg_only :versioned_formula
@@ -27,10 +27,10 @@ class MongoCDriverAT1 < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "openssl@3"
   depends_on "zstd"
 
   on_linux do
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 

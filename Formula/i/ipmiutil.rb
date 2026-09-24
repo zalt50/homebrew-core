@@ -1,37 +1,36 @@
 class Ipmiutil < Formula
   desc "IPMI server management utility"
   homepage "https://ipmiutil.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-3.2.2.tar.gz"
-  sha256 "37f9bc8e6b18c1155e4d5ea38c87b83908b7acc7a44fbc5e3af493f26ef8b767"
+  url "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-3.2.3.tar.gz"
+  sha256 "d26cae7318f12ab1098ec6c8ef2f017722659dda26eb81ebc6b50edc0453867a"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "GPL-2.0-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24816a224f9fa258ad7c86b36f9ee07f2d327c0410d5e251158b763d94f5914c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "597555cd2a88d5c85e4da54dc3159c690e018ce69a28363a5a0dfe2c3825bf1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08735aa99f746d1f6718fcfe2e74db2840fb3d49cda8f7ff08f19bed2442dbdb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "673431272778abfd4ee2d782ab4be47bb47744c820419a6216f73b962f5f9263"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dfc5417038aac6b08f426630e297eef8e3247e0c3e501fa2dc133fdc6a3a2a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b026ef33532c2472981201448f1c65523dce6db4fc6fdc6bbbd5fdfbccba8e3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fda0c56a5e063da36dc5dac65d5177ea71b96a95291983dba841945420d19a4f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a5d4ccf2640a189664e4f20c510ed907fa2e48790cb9ab46cddb39e5b7d30ae0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4abd8e74b57ceaa509a3bcf60e6c47036ba82a84d2ac27e4195f3e319356a6c9"
+    sha256 cellar: :any,                 arm64_linux:       "196301447dfbe6861e9feb19d9ce087d3727ae2a5a347d5c61aa8e3eedf6bd61"
+    sha256 cellar: :any,                 x86_64_linux:      "7be92b64f4654a015e09f28d74e09b362aa0d570cf8c680a65e271aa6610da82"
   end
 
-  on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   conflicts_with "renameutils", because: "both install `icmd` binaries"
+
+  deny_network_access!
 
   def install
     # Workaround for newer Clang
     ENV.append "CC", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # autoconf 2.73 selects C23, which rejects the implicit declarations in this codebase
+    ENV["ac_cv_prog_cc_c23"] = "no"
 
     # Darwin does not exist only on PowerPC
-    if OS.mac?
-      inreplace "configure.ac", "test \"$archp\" = \"powerpc\"", "true"
-      system "autoreconf", "--force", "--install", "--verbose"
-    end
+    inreplace "configure.ac", "test \"$archp\" = \"powerpc\"", "true" if OS.mac?
 
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--disable-lanplus",

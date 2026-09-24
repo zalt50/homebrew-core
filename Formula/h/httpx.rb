@@ -1,21 +1,28 @@
 class Httpx < Formula
   desc "Fast and multi-purpose HTTP toolkit"
   homepage "https://github.com/projectdiscovery/httpx"
-  url "https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "3665354f4b090224c546e9ad0508d72375fb3885950b6aa8b34b8ca80db61ee2"
+  url "https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "b29319c085537047bff8acf72c6cd4ecf17585ede97f4afdde2304431c74e64e"
   license "MIT"
   head "https://github.com/projectdiscovery/httpx.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a809a1c98163a54b220af5e55875ab9bc93a0525f15e3ccc9fc46c959ce48404"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52c22ce8a5115fc99be5c32580e56f8f3a18e2a949c79b3301606200081e9c38"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50763b24b283d2df3b00158c98ec937556f0a9fe8dcc5a5b52165455c480c70d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d9ab800e00f52d91708f67e3919175dd72c4b668ee13c9310f2a58b17353db2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8760e6d918e870e699658c2e2b44a2a342e28bb961ec67cc7421a08b3ec7028"
-    sha256 cellar: :any,                 x86_64_linux:  "a92e9e8ceab28b5af52d97072abee30e228545e807ccd4c596d0f7ca9dcfe1a5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5773193f7ccc8e16c627067b10a831461e61627ce6ad3b9ce82f387f8c86eca2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b39dabe34bac875476fb8d557b39f2fa6f8411e045159068296a7b541626ac5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "deb0167e0b09cc17ee1fc2a443fd30b2b980157a2e7c52538826f74e1b6ad54f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5fd8224c5033a1290e4eba34b0ca98ff6ad02c6dd80908a18579ba70c30efb64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "14e5f188dad360ce8ec3335fe9a545edac0257181496d43793b79894f4b72414"
+    sha256 cellar: :any,                 x86_64_linux:      "646bb27ab03ed619244d8430e9fdc8587d4f419b65486becccf18151ac7a6471"
   end
 
   depends_on "go" => :build
+
+  # `test do` block probes example.org
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/httpx"

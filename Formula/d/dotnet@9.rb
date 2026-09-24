@@ -2,8 +2,8 @@ class DotnetAT9 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.120.tar.gz"
-  sha256 "8275eda8c700ad9faefc06ea30ae9bc01ba48871002a1f4b0e2108c0044a0443"
+  url "https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.121.tar.gz"
+  sha256 "81bb1b6e59922f49c4155fb3b4bd17eed024e8df613ef4b6cff88c027a42edc0"
   license "MIT"
   compatibility_version 1
 
@@ -13,12 +13,12 @@ class DotnetAT9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8c812e21497acd707f6fd9d22fbc63f3c03a3c725f0bf7549621150af22d468d"
-    sha256 cellar: :any, arm64_sequoia: "97631ed7e45e975b7570d80d5b8d71a02a01bf2a931b771d776e408861bff9f7"
-    sha256 cellar: :any, arm64_sonoma:  "5b426feef767c5db6294a42f62b3a9f4ad7713c93da43373422e2d216a0df18b"
-    sha256 cellar: :any, sonoma:        "b1fbfd5907ee05937ba68dbfc8fe2a2bf4c591351d6806f9fa419a4678f60860"
-    sha256 cellar: :any, arm64_linux:   "f113dc7714aa22109fe2a5f1e8f3fc7244214ed317fcad39accd7e2f6d32fd39"
-    sha256               x86_64_linux:  "a6780b3e2e1aab65a0da2b6cba25730846bfdc53bf0e440f52d7b7430c7ae220"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "0168446e4b6ad5aa91958f81b427c009461a2ecbf8f653499118393b0a757b37"
+    sha256 cellar: :any, arm64_tahoe:       "b3cda74d7e57c7785df495740f5aa58885fcc04e0573a863c89430edf71c2f43"
+    sha256 cellar: :any, arm64_sequoia:     "d33d536329e6af75eae6697893b5f2d9e063084a5e8e3efc9c7f3fd3b6bd5720"
+    sha256 cellar: :any, arm64_linux:       "f9ee8df3284fc32b7bac7efcc0e35625f598ecfbfe70b7181eeae7d13a80a97e"
+    sha256               x86_64_linux:      "9d772182909d3a4162efd89a8a76049df89d8f7ab6d7d26e8cf2fa84f7b9fe07"
   end
 
   keg_only :versioned_formula
@@ -57,8 +57,8 @@ class DotnetAT9 < Formula
   end
 
   resource "release.json" do
-    url "https://github.com/dotnet/dotnet/releases/download/v9.0.120/release.json"
-    sha256 "2597bef4676920737b879b1798465af3fd752747aef7d872b20c2d1707e3ce64"
+    url "https://github.com/dotnet/dotnet/releases/download/v9.0.121/release.json"
+    sha256 "24e6a99a2f7401054ff0b9445c4a205bc32481b320a821545312eea7e83a0d22"
 
     livecheck do
       formula :parent
@@ -80,24 +80,30 @@ class DotnetAT9 < Formula
     ENV["CLR_CC"] = which(ENV.cc)
     ENV["CLR_CXX"] = which(ENV.cxx)
 
+    # Avoid a possible race in telemetry data writing/reading/removing during build
+    ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
+
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
-      ENV.prepend_path "PATH", Formula["grep"].libexec/"gnubin"
+      ENV.prepend_path "PATH", formula_opt_libexec("grep")/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
       ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path
+
+      # Deparallelize to avoid bootstrap Roslyn crashes.
+      ENV.deparallelize
     else
       icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
       ENV.append_path "LD_LIBRARY_PATH", icu4c_dep.to_formula.opt_lib
-
-      # Work around build script getting stuck when running shutdown command on Linux
-      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
-      inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
-      inreplace "repo-projects/Directory.Build.targets",
-                '"$(DotnetTool) build-server shutdown --vbcscompiler"',
-                '"true"'
     end
+
+    # Work around the bootstrap SDK failing when it shuts down build servers
+    # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
+    inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
+    inreplace "repo-projects/Directory.Build.targets",
+              '"$(DotnetTool) build-server shutdown --vbcscompiler"',
+              '"true"'
 
     args = %w[
       --clean-while-building
@@ -107,6 +113,24 @@ class DotnetAT9 < Formula
     ]
 
     system "./prep-source-build.sh"
+    if OS.mac?
+      # MSBuild hardcodes `/tmp` for its sockets, which the build sandbox denies, so prefer a short `TMPDIR`.
+      # Below 38 characters, even its longest socket name (66) fits macOS's 103-byte socket path limit.
+      # https://github.com/Homebrew/brew/issues/23934
+      inreplace "src/msbuild/src/Shared/NamedPipeUtil.cs",
+                'Path.Combine("/tmp", pipeName)',
+                'Path.Combine(Path.GetTempPath().Length < 38 ? Path.GetTempPath() : "/tmp", pipeName)'
+      # Avoid worker nodes, which the unpatched bootstrap MSBuild cannot reach
+      system ".dotnet/dotnet", "build", "src/msbuild/src/MSBuild/MSBuild.csproj", "--configuration", "Release",
+             "-maxcpucount:1"
+      # Replace the bootstrap SDK's MSBuild with the patched one
+      cp Dir["src/msbuild/artifacts/bin/MSBuild/Release/net*/{MSBuild,Microsoft.Build*}.dll"],
+         Dir[".dotnet/sdk/*"].first
+      # `build.sh` builds MSBuild again into the same directory
+      rm_r "src/msbuild/artifacts"
+    end
+    # The sandbox also denies the Roslyn compiler server's `/tmp` socket, so compile without it
+    ENV["UseSharedCompilation"] = "false" if OS.mac?
     # We unset "CI" environment variable to work around aspire build failure
     # error MSB4057: The target "GitInfo" does not exist in the project.
     # Ref: https://github.com/Homebrew/homebrew-core/pull/154584#issuecomment-1815575483

@@ -1,8 +1,8 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https://livekit.io"
-  url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.18.4.tar.gz"
-  sha256 "a857230e1e90d44b32468fe18c791e53f1a707e6d958618f96c535ef438f2bf3"
+  url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.18.8.tar.gz"
+  sha256 "db9aa392805ffbdd0ae9372edf1a94b0f17bbaa9646bf2f58d24a914e0d5b737"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
@@ -12,16 +12,22 @@ class LivekitCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b2957ba816574b24bbc0a66a5905474b9769c24f8aef05a5cd6d9becd654e7f5"
-    sha256 cellar: :any, arm64_sequoia: "944ca2aa4e4873616ebc28837f02b5f9ac7bea5da4110c6ea3e8a605742440e3"
-    sha256 cellar: :any, arm64_sonoma:  "6bb61200d527d5c6cf77218cfc155fe8188eccf60fe0df3dbd93971887f384f1"
-    sha256 cellar: :any, arm64_linux:   "bd79192560e05a02f58df7b6dea546e2c0b6ce563df3a591d4e2f0f030c22172"
-    sha256 cellar: :any, x86_64_linux:  "47b0a4286a846b5a1bd1b87802b02ae498884e32c81ff9f1ffc527a363c53f7e"
+    sha256 cellar: :any, arm64_golden_gate: "14fdf8d5fdb7415348f4f42a252dd2771f5f82a9b3a60ce482d06447d416d08f"
+    sha256 cellar: :any, arm64_tahoe:       "0bda274df85e177fccd2dc8e5768cb66d55d684c514ccc6640cfbdfd17f0393d"
+    sha256 cellar: :any, arm64_sequoia:     "9de5d483a190e3efc9b7ef9a97f33b7807a959c44de61200d37329e3519f2561"
+    sha256 cellar: :any, arm64_linux:       "07b50d42e35bf2ca103361cc7d7d1c2a385cb6724f47e56512436c61583f8545"
+    sha256 cellar: :any, x86_64_linux:      "107139323a316eedb3eda5f586fd1cc990681c9b8af876fe8983d0e90a783e34"
   end
 
   depends_on "go" => :build
   depends_on "pkgconf" => :build
   depends_on "portaudio"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "1"

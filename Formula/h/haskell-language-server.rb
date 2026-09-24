@@ -1,9 +1,10 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://github.com/haskell/haskell-language-server/releases/download/2.14.0.0/haskell-language-server-2.14.0.0-src.tar.gz"
-  sha256 "ee8e2007d3ff98bcc0d1c5409092d69c3f176b8419b85b31a4dccd22b45914f6"
+  url "https://github.com/haskell/haskell-language-server/releases/download/2.15.0.0/haskell-language-server-2.15.0.0-src.tar.gz"
+  sha256 "a6ecf9eeac802dfa358f151d4309803ca082671ed18195d1db0d60771a2159e2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -14,12 +15,11 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1336bd0cbf546bf1103a7aa2550ccb8d96de6c1cefe154828f983a86fda2e3c9"
-    sha256 cellar: :any,                 arm64_sequoia: "e4e123f718d98658e20bc5473e20cdbecd3490e64a2eb4d12427c055704b1b88"
-    sha256 cellar: :any,                 arm64_sonoma:  "88808f10e2580c9697db52cb2d71c52cd17a2852056de16794ca10556452c228"
-    sha256 cellar: :any,                 sonoma:        "bf81cb4375ae8f7a5b8cd420c6ad4017aab69c00f33339777d3c0f1ea29ef872"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62e1c78e94855b04c942563137c48b177a3b1e4500f04398dff73f903d26be7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c4b4863cfdb5cc861e61568755645d3000b0318288cadff0ae4cfaa07ede756"
+    sha256 cellar: :any, arm64_golden_gate: "6ba67077e95b10113101ad3a720e8673e3da7a83194cb0e6e4535323f66bb6b9"
+    sha256 cellar: :any, arm64_tahoe:       "6966b807d9f51058b712e8f08e9560e035a5c8ae363ee2d1b2eb8993abb50d05"
+    sha256 cellar: :any, arm64_sequoia:     "fd2453e138366a67a5a7a1f9c3c7f58d0c6af52e13bae91c3c3b07ed39d7243c"
+    sha256 cellar: :any, arm64_linux:       "c905ee532fa1002c3cf1d156e2a64ac519b39bf874bb686d87b34b7d3f2dab83"
+    sha256 cellar: :any, x86_64_linux:      "1887673d1b1a5fce13a2491c20be5c549a08c2ada37e55fcfaeae2fce513f5b1"
   end
 
   depends_on "cabal-install" => [:build, :test]

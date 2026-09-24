@@ -1,8 +1,8 @@
 class Hunk < Formula
   desc "Review-first terminal diff viewer for agent-authored changesets"
   homepage "https://hunk.dev/"
-  url "https://github.com/modem-dev/hunk/archive/refs/tags/v0.20.1.tar.gz"
-  sha256 "a2493e124e1f4b67e5f85ee67e593a5d84e5f5d58c0621d5b4ac019d9c6470db"
+  url "https://github.com/modem-dev/hunk/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "dd591936f924933746b45d0ecdd39c7fda625f45619b467ca577a601b0f67b04"
   license "MIT"
   head "https://github.com/modem-dev/hunk.git", branch: "main"
 
@@ -12,11 +12,12 @@ class Hunk < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e18471769f711a33e006009a2c0cbe680ef55ded798a6e55968e3db78c1a92d8"
-    sha256                               arm64_sequoia: "e18471769f711a33e006009a2c0cbe680ef55ded798a6e55968e3db78c1a92d8"
-    sha256                               arm64_sonoma:  "e18471769f711a33e006009a2c0cbe680ef55ded798a6e55968e3db78c1a92d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72f3707988210371916a50799a25e3f73ae3234890a2a2dda339d66ae318b7d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b081942696923580a53d63c05b3d6cba4abe4399066e2e5d930ddb2bb72c765"
+    sha256                               arm64_golden_gate: "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
+    sha256                               arm64_tahoe:       "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
+    sha256                               arm64_sequoia:     "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
+    sha256                               arm64_sonoma:      "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e81546e66c63b0b2823b0d61308e39c06a3636af5633f98e08dce83c844a9dc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c7c26d05238d1c0ec89df72d9bacf905822b5b0ffc299751a919002b79c24284"
   end
 
   depends_on "bun" => :build
@@ -31,9 +32,10 @@ class Hunk < Formula
     # Build the standalone binary (bun build --compile embeds the Bun runtime)
     system "bun", "run", "build:bin"
 
-    # Install the compiled binary and bundled skills
+    # Install the compiled binary and bundled skills. The repository-root
+    # `skills` holds maintainer-only documents that upstream does not ship.
     libexec.install "dist/hunk" => "hunk"
-    libexec.install "skills"
+    libexec.install "packages/hunk/skills"
     (bin/"hunk").write_env_script libexec/"hunk", HUNK_INSTALL_SOURCE: "homebrew"
   end
 

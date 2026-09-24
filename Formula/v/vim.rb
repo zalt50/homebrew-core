@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1000.tar.gz"
-  sha256 "d5a07f8226d6f145a5bc602d48bea61fb141f7304176d6d4e8633979d67d292d"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1100.tar.gz"
+  sha256 "01f855db1f2f61a626eae09e684ee1e585b7d954431d49b29eb0a06632436d72"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
@@ -26,12 +26,11 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c8f05ab552865a322bc1d7435b87136fba6bfcda1b27cd42f94b14b28ad7368d"
-    sha256 arm64_sequoia: "bde26cc26bc56c7924276a3926b0d35252a46e8510bfd515e6c2a6bb76c5e582"
-    sha256 arm64_sonoma:  "d59548afb86482842a5959d6d7c40e1171a0054b5ee8cbc4939e65958474e9bb"
-    sha256 sonoma:        "5e4c9c9031ef0ac111bcdba9bf17754972a6cfbdcfee31f0d67903e93b76e778"
-    sha256 arm64_linux:   "03992cea74c5c03f1ef5ffb07f4a1b63147a5544ecc1da83defdbe0cee0e2816"
-    sha256 x86_64_linux:  "d9cb930ebf7469f6ca237d70160a48e106b8102d3282ad2f52a4cdc9d27b8c36"
+    sha256 arm64_golden_gate: "3fa9f661baa163b90a1bbc70ade52dc9e60a44b83d03221fafc081c286d6466f"
+    sha256 arm64_tahoe:       "f2397fbcf05c7a390b62668fcc66c4e29eb9a1c38b4382e82fa77aedaa48b295"
+    sha256 arm64_sequoia:     "d5cbc9ca32f3a37032aa5fc8c1fc19a5ba645666b355e1e3acc46bd08e97e2b4"
+    sha256 arm64_linux:       "e9f3b70469bc70ebae785aef97a3c1572b98bbfc68b12bfc6ec47b42b2b9d2c0"
+    sha256 x86_64_linux:      "6416c6f8e4f2f1c4ee6c649c5c616a370d9287eb9165a923eeb13279e4baaa3d"
   end
 
   depends_on "gettext" => :build
@@ -56,6 +55,8 @@ class Vim < Formula
   conflicts_with "vim-classic", because: "vim and vim-classic both install vi* binaries"
 
   def extra_deps = deps.select { |dep| dep.build? && dep.test? }
+
+  deny_network_access!
 
   def install
     ENV.prepend_path "PATH", formula_opt_libexec("python@3.14")/"bin"

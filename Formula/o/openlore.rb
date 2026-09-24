@@ -1,16 +1,16 @@
 class Openlore < Formula
   desc "Persistent architectural memory and structural cognition for AI coding agents"
   homepage "https://github.com/clay-good/OpenLore"
-  url "https://registry.npmjs.org/openlore/-/openlore-3.0.1.tgz"
-  sha256 "7bde77b6e3ff46ef7983ce367a2d9edae1a4729c29cf0062dd5507861fac85b6"
+  url "https://registry.npmjs.org/openlore/-/openlore-3.3.0.tgz"
+  sha256 "db8c822820a169e0c621e8157674872056e63cfb39d5a927c0e973f9abe954e0"
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "a00b87c045ff149e418a308d8c26e6920335d6b98ee2c637a4f9f0efb07f13be"
-    sha256               arm64_sequoia: "e0205918ad0fff4e582c83a352b9e8abba20e7da738f1a1e38aa626c254feebb"
-    sha256               arm64_sonoma:  "28ea1f3dea055de97bf2b93469ffa5b8473bbcb1eabf9559f1a100c84f726fa7"
-    sha256 cellar: :any, arm64_linux:   "1adb41cc2e629475d92b17fd5f2b4ceb70e9175d1fd789aa36741c2ede838428"
-    sha256 cellar: :any, x86_64_linux:  "d94d356a1e8c53384812e52aead41521ef55ecb8026ac59888c948d4cc83a9ac"
+    sha256 cellar: :any, arm64_golden_gate: "e0eebe7431bf694a2e4cf4e597b09c497e7a0e0ba8a26b71bb0257697f8a6afb"
+    sha256 cellar: :any, arm64_tahoe:       "966a45326237d07d510d43ea567e0c42ce1165bbc9a9a67d138f37869cb72782"
+    sha256 cellar: :any, arm64_sequoia:     "5b4bc76e22dc50c1ae7a2f1aff5d8be648a8cbc6410511668aa58520b194ce7e"
+    sha256 cellar: :any, arm64_linux:       "7bc11c40098dc43b8b3ed09f9aee3437d42ef8c7029d0b31083ab039ab207a2f"
+    sha256 cellar: :any, x86_64_linux:      "da877061968006e2d387cd588e798d317410e0c69c31343d41448245bd486545"
   end
 
   depends_on "c-ares"
@@ -46,10 +46,10 @@ class Openlore < Formula
                   .each { |gyp| system "npm", "rebuild", gyp.parent.basename.to_s }
     end
 
-    # Keep only the native `onnxruntime-node` binaries
-    node_modules.glob("onnxruntime-node/bin/*/*")
+    # Keep only the native `onnxruntime-node` binaries, which `@lancedb/lancedb` also nests
+    node_modules.glob("**/onnxruntime-node/bin/*/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != os }
-    node_modules.glob("onnxruntime-node/bin/*/*/*")
+    node_modules.glob("**/onnxruntime-node/bin/*/*/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != arch }
 
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?

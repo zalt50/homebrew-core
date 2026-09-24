@@ -2,17 +2,17 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
+  revision 1
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.6/gstreamer-1.28.6.tar.bz2"
-    sha256 "fd51f0e32fded3f78ed31eab94a7e41b1cd56763abc853f6fd03d740d8bc4b90"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.7/gstreamer-1.28.7.tar.bz2"
+    sha256 "4aabbbf88837a592d425c592c852c577359df65f62c2f58d57db7695d6ebbaa8"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.6/gst-plugins-rs-gstreamer-1.28.6.tar.bz2"
-      sha256 "2e565b9add015d054cc2d1b9e553f75f366f8e13127a74e9366b7d577491492e"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.7/gst-plugins-rs-gstreamer-1.28.7.tar.bz2"
+      sha256 "d5acc3e2cd92f09ccfefa357905758274b205ce9b3521ab1d88dbb4072a25f21"
 
       livecheck do
         formula :parent
@@ -26,12 +26,11 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "34a90fad66faf516a552e1edb8e315a259828f2ee0f47e36fa6855962eeda2f3"
-    sha256 arm64_sequoia: "d730bfdf2237a3b37520376e9c28c9ded378aad87ef9e9fc222399bc6859c4d0"
-    sha256 arm64_sonoma:  "3f685e52aa491faa49868e36b277f6cdd0106a24c439eed82cc6682a299baa15"
-    sha256 sonoma:        "6d8df9bdfeecc82979dea51d275a52bdb06277631229167c4bb217f1d98dfaf1"
-    sha256 arm64_linux:   "31e549289076f2d001571c36b3e833f2fb3a3f9c783a936a44b7dcf9692233a1"
-    sha256 x86_64_linux:  "5b6a20a258a74acf4f8a11271d7cd0d6de6b001aa0fc018c759626dbcad6aedf"
+    sha256 arm64_golden_gate: "f0edc1192f50cc9b876e7e7db0227f87e870f12f53db82ac7fdd575ef491e8a7"
+    sha256 arm64_tahoe:       "628c8c1986f185ae06bb89e8196ef6a5085e7afb04aa1c772579c3970e16e6fe"
+    sha256 arm64_sequoia:     "8f6fa51452d16dc2e4c903502946c4bd959be2650da077e37217b891c3ed7765"
+    sha256 arm64_linux:       "a8b004f12de08bedbbd15ab93ed76f6f4741c220185e0645169b92fdee51fb97"
+    sha256 x86_64_linux:      "8561e46a34337d222d88027efdcd8ad53a2f13f3c26804291b45a50cccb2d695"
   end
 
   head do
@@ -56,7 +55,6 @@ class Gstreamer < Formula
   depends_on "dav1d"
   depends_on "faac"
   depends_on "faad2"
-  depends_on "fdk-aac"
   depends_on "ffmpeg"
   depends_on "flac"
   depends_on "gdk-pixbuf"
@@ -142,10 +140,6 @@ class Gstreamer < Formula
     depends_on "nasm" => :build
   end
 
-  def python3
-    formula_opt_bin("python@3.14")/"python3.14"
-  end
-
   skip_clean "lib/gstreamer-1.0/libgstnice.dylib", "lib/gstreamer-1.0/libgstnice.so"
 
   # These paths used to live in various `gst-*` formulae.
@@ -208,6 +202,7 @@ class Gstreamer < Formula
       -Dgst-editing-services:pygi-overrides-dir=#{site_packages}/gi/overrides
       -Dgst-python:pygi-overrides-dir=#{site_packages}/gi/overrides
       -Dgst-python:python=#{python3}
+      -Dgst-plugins-bad:fdkaac=disabled
       -Dgst-plugins-bad:opencv=disabled
       -Dgst-plugins-bad:sctp=enabled
       -Dgst-plugins-bad:sctp-internal-usrsctp=disabled
@@ -271,38 +266,20 @@ class Gstreamer < Formula
     #   https://github.com/orgs/Homebrew/discussions/3740
     system bin/"gst-validate-launcher", "--usage"
 
+    # The macOS command-line tools start NSApplication even for plugin inspection.
     system python3, "-c", <<~PYTHON
       import gi
       gi.require_version('Gst', '1.0')
-      from gi.repository import Gst
+      gi.require_version('GES', '1.0')
+      from gi.repository import GES, Gst
       print (Gst.Fraction(num=3, denom=5))
+      print (GES.version())
+      Gst.init(None)
+      assert Gst.Registry.get().get_plugin_list()
+      for plugin in ["libav", "dvbsuboverlay", "volume", "cairo", "dvdsub", "x264", "rtspclientsink", "rsfile"]:
+          assert Gst.Plugin.load_by_name(plugin), plugin
+      assert Gst.ElementFactory.make("hlsdemux2", None)
     PYTHON
-
-    # FIXME: The initial plugin load takes a long time without extra permissions on
-    # macOS, which frequently causes the slower Intel macOS runners to time out.
-    # Need to allow a longer timeout or see if CI terminal can be made a developer tool.
-    #
-    # Ref: https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/1119
-    skip_plugins = OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-    ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if skip_plugins
-
-    ENV["LC_ALL"] = "C"
-    ENV["LANG"] = "C"
-    gst_inspect_output = shell_output(bin/"gst-inspect-1.0")
-    assert_match(/Total count: \d+ plugins?/, gst_inspect_output)
-    return if skip_plugins
-
-    system bin/"ges-launch-1.0", "--ges-version"
-    system bin/"gst-inspect-1.0", "libav"
-    system bin/"gst-inspect-1.0", "--plugin", "dvbsuboverlay"
-    system bin/"gst-inspect-1.0", "--plugin", "fdkaac"
-    system bin/"gst-inspect-1.0", "--plugin", "volume"
-    system bin/"gst-inspect-1.0", "--plugin", "cairo"
-    system bin/"gst-inspect-1.0", "--plugin", "dvdsub"
-    system bin/"gst-inspect-1.0", "--plugin", "x264"
-    system bin/"gst-inspect-1.0", "--plugin", "rtspclientsink"
-    system bin/"gst-inspect-1.0", "--plugin", "rsfile"
-    system bin/"gst-inspect-1.0", "hlsdemux2"
   end
 end
 

@@ -2,8 +2,8 @@ class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.com/"
   url "https://github.com/sonatype/nexus-public.git",
-      tag:      "release-3.95.3-02",
-      revision: "3a3a77bf9da05f5b8884d97940fdd0721d743969"
+      tag:      "release-3.96.3-01",
+      revision: "829f297c35984a5fac590a366e949cd9a9a2eb79"
   license "EPL-1.0"
 
   # As of writing, upstream is publishing both v2 and v3 releases. The "latest"
@@ -15,11 +15,11 @@ class Nexus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b64d09c2e58e3b8a58a1b1a592d62a10be6876367cb8c854da5b8a78676cbda7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "070505ae3d7fd527ab3373fc6a580f3f2cb786210d3aaacbdb31c202be3bda06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4ec569f291da6dda8853e9cf8f982fae7c6d7bba143764609fbe63e2ad7600e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bc31bfb02e3c81ffae420af0f9d58ebac141e2a4368d438dc7778df5c29fb20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "928e8c139ff87f4170c9684cf8598a36bd72a9f6ce45605182b0f03a5bd805b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "baed310a4879bf40ef69d0f4671f750b966e17bfca2ffdc2806dc845064efc8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3cca2ec7244bf5e772132c94c293c9a98a59615dacc736347e84d8bbedb2270"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ed4002d791c12596dacf3ec7505c3729c176eb3ba001b95c5ffdb5c9d6cc65fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5435c3d4d3a14499dc0577f71a8a2ee9a22aabfbc13e28be0c02a87342791175"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea1da346b58904d450ea902cfbec2976f07231746f72f185d336eff6e3887b3c"
   end
 
   depends_on "maven" => :build
@@ -84,7 +84,6 @@ class Nexus < Formula
     (testpath/"data/etc/nexus.properties").write "application-port=#{port}"
     pid = spawn({ "NEXUS_KARAF_DATA" => testpath/"data" }, bin/"nexus", "server")
     sleep 50
-    sleep 50 if OS.mac? && Hardware::CPU.intel?
     assert_match "<title>Sonatype Nexus Repository</title>", shell_output("curl --silent --fail http://localhost:#{port}")
   ensure
     Process.kill "TERM", pid

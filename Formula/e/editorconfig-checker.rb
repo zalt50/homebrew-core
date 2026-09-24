@@ -1,8 +1,8 @@
 class EditorconfigChecker < Formula
   desc "Tool to verify that your files are in harmony with your .editorconfig"
   homepage "https://editorconfig-checker.github.io/"
-  url "https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v3.11.2.tar.gz"
-  sha256 "8f067347f75a0d61b3e8ba08e2d7ecefca2255cae7d95e5386a3931d066945c3"
+  url "https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v4.0.2.tar.gz"
+  sha256 "0b84c5090d3f48db1bdfab454b7cde79adb26015d1a2731bba59bc1a636276bb"
   license "MIT"
   head "https://github.com/editorconfig-checker/editorconfig-checker.git", branch: "main"
 
@@ -12,15 +12,20 @@ class EditorconfigChecker < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da9279e347abf628c2d93b3a21fdb719974cff20449c2dfe14654dfb5efa07d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da9279e347abf628c2d93b3a21fdb719974cff20449c2dfe14654dfb5efa07d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da9279e347abf628c2d93b3a21fdb719974cff20449c2dfe14654dfb5efa07d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e727184bedaa71a7f77c43470bd853db1eb1c11b4bb28a96a2a7bf315c721b9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abc940e2b83ddc05da3b7959cdca3b37500ab2ebefb48d59943ded6e14f683df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbddeb29c6af47b941b48ef38e3e120d1199f0d9ffe4b2a24bae3a0828029830"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "096881de3cd292015d02a4d671ec045e51ac1c2247c71e7c4ef758e9cfbe4d73"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "096881de3cd292015d02a4d671ec045e51ac1c2247c71e7c4ef758e9cfbe4d73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "096881de3cd292015d02a4d671ec045e51ac1c2247c71e7c4ef758e9cfbe4d73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4bc2fd4433323399b07107ab722d507a0c8d939599db5f149fb3097ae2182693"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "89d03d96a4481b358d9c72ba7b764ccbb5f5ac650cd589b7d1802834dd0c47a1"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X main.version=#{version}"

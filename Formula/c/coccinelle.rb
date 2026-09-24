@@ -1,9 +1,10 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
   homepage "https://coccinelle.gitlabpages.inria.fr/website/"
-  url "https://coccinelle.gitlabpages.inria.fr/website/distrib/coccinelle-1.3.2.tar.gz"
-  sha256 "84c1b62af85e69b8e7100f54d19a21d090300d5e5e790953eb6b1e2c4d6edf0c"
+  url "https://coccinelle.gitlabpages.inria.fr/website/distrib/coccinelle-1.3.3.tar.gz"
+  sha256 "265dba12a71e5169d49af9a2d8c3c4b8e2cae4c451c918beb2587c33d6128e3d"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/coccinelle/coccinelle.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,11 @@ class Coccinelle < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "edb6f6df18f0c6f10a371faff20f82e05c398a486b54db25ce7043f53a4371a1"
-    sha256 arm64_sequoia: "2bce6497965536ec92c7cda4c3ebfe952bc05801a34507c1383e35266caa2bc6"
-    sha256 arm64_sonoma:  "7c46f64bacc0c8aadaa9d0b292189940d9983e24b59cb25f64c8d08eb4fd3a69"
-    sha256 sonoma:        "e1057a6bb9e80e2bfbb3c4ecc8120fba1ee31bbfa38ddea5ecb82c5d6001ac95"
-    sha256 arm64_linux:   "5728741879689e91268978b6cf7d137cfcf12a13e79110abfbd808d1c7d508db"
-    sha256 x86_64_linux:  "ba4473fb40732f336210c0a9617768b5183a11676729e5f9839565d862b9bcac"
+    sha256 arm64_golden_gate: "02e5cb9f9591f7710b32e41c7fcd41354f5d051df508f8117ddf9cbfed1b3d86"
+    sha256 arm64_tahoe:       "6d937adfd3e8fa099bfa99121f660cd52bd27bbc2636c0e3b353faeac5991be6"
+    sha256 arm64_sequoia:     "80ef68b7214208f4a06e2beaf9940782491527c7be6453417d3f7f9214a354b4"
+    sha256 arm64_linux:       "eaa8903c1a40cd7c5e952c6c6c5186e60f194b7dc1daf542e046da857911fc4a"
+    sha256 x86_64_linux:      "33bb07fc0247f451303222ff04e8cbfa7870d700393d5a8022cb2ca19359543d"
   end
 
   depends_on "autoconf" => :build

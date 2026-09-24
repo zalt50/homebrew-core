@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.2.tar.xz"
-  sha256 "03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.4.tar.xz"
+  sha256 "fbd62a100ab7bb8746ba0661255c3c48185b1e9021507c624da01fbc696330ec"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -25,12 +25,11 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3b2174542f34178348f62bccf804a06d8a1adb3dbd6767ce6b01fd618d63f9db"
-    sha256 arm64_sequoia: "190141242ffdeb5cf236a3b040342097019fce761e655a4c5a12eae18591d628"
-    sha256 arm64_sonoma:  "fbc17b9d39fd79e1da145bca8a5df65b7962d8fb823b7900db2b16f0b4dfb946"
-    sha256 sonoma:        "eeda32110a3b6d30accf88c5f5e3fbe05f180a8d10769aefcabb0df21deaf136"
-    sha256 arm64_linux:   "bc1ad29a5dc203dab6803165abece5a99a99a465e34486b792cd7ad0953bedbf"
-    sha256 x86_64_linux:  "2508e06eafa3451e885cc7bdfd6af035bf1aee5a7af090c22d5f4c6474f3fa50"
+    sha256 arm64_golden_gate: "fbc4e7669248f29d3ec91b3724b4a1fc0383c624d4f6e09ae643703e879f8e0a"
+    sha256 arm64_tahoe:       "aba531ed615bc666cee842fbda966f2aa513e9801c73974f758e4a1b15aea602"
+    sha256 arm64_sequoia:     "46746bd46db509001b062ffe3d13b3428e7bf274884afbadd25e44bb400b4025"
+    sha256 arm64_linux:       "98d4c3f1afb746272ba0b5b134c5717df6e1796b50103f9072abe34083a7d43d"
+    sha256 x86_64_linux:      "a2f2f02b1a397f4bbda2832fc1403c55daff00e3c52c6a8c970d0c98fff95139"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
@@ -55,13 +54,7 @@ class UtilLinux < Formula
     conflicts_with "rename", because: "both install `rename` binaries"
   end
 
-  # Fix macOS builds
-  patch do
-    url "https://github.com/util-linux/util-linux/commit/d22edc2f100eb8dd83d3515758565cb73b0d2eed.patch?full_index=1"
-    sha256 "2fb01154faa3fd8b0fce27eb88049ed9c8f839e706e412399c19c087f7f3b5e1"
-    type :unofficial
-    resolves "https://github.com/util-linux/util-linux/pull/4173"
-  end
+  deny_network_access!
 
   def install
     args = %W[--disable-silent-rules --disable-asciidoc --with-bashcompletiondir=#{bash_completion}]

@@ -4,7 +4,7 @@ class OpencvAT4 < Formula
   url "https://github.com/opencv/opencv/archive/refs/tags/4.14.0.tar.gz"
   sha256 "ee8fb9b30eb60850431b4656447080e3737b56e45719c92b67f245950609f86e"
   license "Apache-2.0"
-  revision 5
+  revision 10
   compatibility_version 2
 
   livecheck do
@@ -13,12 +13,11 @@ class OpencvAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "34e2a219f6b4a3701993a194e4b27a57d9248cd4e2132d2e9fdc3603a60e8eac"
-    sha256 arm64_sequoia: "1dad5c8948328696290e8b286302c0baeadf239da39c6bfd29ae258ae32bd471"
-    sha256 arm64_sonoma:  "bd29017a0d1586ee606a16ab72fc4b3857876f857ec22ad193043af0c1e4b974"
-    sha256 sonoma:        "213e6e729da3bb39e14f40fd7ef75a1f377e62cc4ed2cff262907ef8a7c57354"
-    sha256 arm64_linux:   "b85e89a3ede39e83521bf14fd4f250fc00f215cb773db982720774d1d0b3729b"
-    sha256 x86_64_linux:  "afc009e66455d770153d75582308bdf9986f4a4b2dc0209142e3af7cf26439f5"
+    sha256 arm64_golden_gate: "9fad80d894b1f4448e1638856b1e191e36f6b067f2233242bc67c1cacb65e069"
+    sha256 arm64_tahoe:       "9880d482b5bd105b37f177f5a830058d1ffb682a256569fd1cce991a40fdca55"
+    sha256 arm64_sequoia:     "e9e3cdc4fbc6bd85988896c8db6d9f0b0dac62289dc11db902ccda250cbd2ea2"
+    sha256 arm64_linux:       "4492429b661e78a2add7637cbaec65430630622b922b5e64294b5bd303e9025b"
+    sha256 x86_64_linux:      "421371b09a2ffd1a014ec50a9eec16108125a184b11edb1f35442b914c589557"
   end
 
   keg_only :versioned_formula
@@ -74,10 +73,6 @@ class OpencvAT4 < Formula
     livecheck do
       formula :parent
     end
-  end
-
-  def python3
-    "python3.14"
   end
 
   # Fix builds with FFmpeg 9.
@@ -151,7 +146,7 @@ class OpencvAT4 < Formula
       -DWITH_VTK=ON
       -DBUILD_opencv_python2=OFF
       -DBUILD_opencv_python3=ON
-      -DPYTHON3_EXECUTABLE=#{which(python3)}
+      -DPYTHON3_EXECUTABLE=#{python3}
     ]
 
     args += if OS.mac?
@@ -167,8 +162,8 @@ class OpencvAT4 < Formula
         -DOPENEXR_ILMTHREAD_LIBRARY=#{formula_opt_lib("openexr")}/libIlmThread.so
         -DPNG_LIBRARY=#{formula_opt_lib("libpng")}/libpng.so
         -DPROTOBUF_LIBRARY=#{formula_opt_lib("protobuf")}/libprotobuf.so
-        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].include}
-        -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
+        -DPROTOBUF_INCLUDE_DIR=#{formula_opt_include("protobuf")}
+        -DPROTOBUF_PROTOC_EXECUTABLE=#{formula_opt_bin("protobuf")}/protoc
         -DTIFF_LIBRARY=#{formula_opt_lib("libtiff")}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{formula_opt_lib("zlib-ng-compat")}/libz.so
@@ -177,14 +172,6 @@ class OpencvAT4 < Formula
 
     # Ref: https://github.com/opencv/opencv/wiki/CPU-optimizations-build-options
     ENV.runtime_cpu_detection
-    if Hardware::CPU.intel? && build.bottle?
-      cpu_baseline = if OS.mac? && MacOS.version.requires_sse42?
-        "SSE4_2"
-      else
-        "SSSE3"
-      end
-      args += %W[-DCPU_BASELINE=#{cpu_baseline} -DCPU_BASELINE_REQUIRE=#{cpu_baseline}]
-    end
 
     system "cmake", "-S", ".", "-B", "build_shared", *args, *std_cmake_args
     inreplace "build_shared/modules/core/version_string.inc", "#{Superenv.shims_path}/", ""

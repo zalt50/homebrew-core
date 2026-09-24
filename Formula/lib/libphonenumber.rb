@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://github.com/google/libphonenumber/archive/refs/tags/v9.0.38.tar.gz"
-  sha256 "75e0a15fdc8fab9efc8a101d1d36ba3866c407889faae6c025e6aac58957da77"
+  url "https://github.com/google/libphonenumber/archive/refs/tags/v9.0.40.tar.gz"
+  sha256 "808bda4007365153b6f447a2cdf4602c614119e5ee893af0f67874d87b462043"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cd664e39b1bb4e180b27a9aaecafc69938afdc1ddc08325006e6559e96c6b78e"
-    sha256 cellar: :any, arm64_sequoia: "946824822b2c87dc733d48302f820427e0e6d7e7a299258200c8cccea1a74281"
-    sha256 cellar: :any, arm64_sonoma:  "64c0d560a3db95873a61fba4c61f94aba39494157e5e96a714d4dcb3c9e2df46"
-    sha256 cellar: :any, arm64_linux:   "a0570768d6e8bf6ac1e30d53f3e14dba63c048e536efd8b85bed60a2f81227f8"
-    sha256 cellar: :any, x86_64_linux:  "9ef46e37975721b607932d65344e582ded89804a024a4eb2a8d4ac69d88a1f14"
+    sha256 cellar: :any, arm64_golden_gate: "f49c8abe9e4276439fcadc787815d50c77fabbe7975cedceb5496fbdc949bb4c"
+    sha256 cellar: :any, arm64_tahoe:       "a7a6c10a9dcfcbcfdd2e1b6ab885f99fc09e46a840f8b8f03d074ea8bcca32ea"
+    sha256 cellar: :any, arm64_sequoia:     "d554584480055e9a566420b11c99a0bd16efbfe7529303fceacd97d52b4d228e"
+    sha256 cellar: :any, arm64_linux:       "3a921907894c5bf835e0a0363dcd0723d8f23dc9e5e9a83a4a8c789c8a9a6fa6"
+    sha256 cellar: :any, x86_64_linux:      "8b7ce102fa0fbfc31d8052a38875fedc37d326e5acb2d1000f512592b17ee64d"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -32,6 +32,8 @@ class Libphonenumber < Formula
     type :unofficial
     resolves "https://github.com/google/libphonenumber/pull/3903"
   end
+
+  deny_network_access!
 
   def install
     ENV.append_to_cflags "-Wno-sign-compare" # Avoid build failure on Linux.

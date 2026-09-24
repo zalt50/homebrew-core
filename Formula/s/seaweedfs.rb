@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://seaweedfs.com"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.44",
-      revision: "3563738699f29fd1c9efde6fcbf4ba253439cac8"
+      tag:      "4.47",
+      revision: "c5073360007d28385a33426a42ac3e4ec504c5a3"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -13,15 +13,20 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cee62c46d991cba53697b451e1d0482122e2506e9fc8a874e128a5baa4203c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe9d2563f5416884cddb1dae3a1101d0c22adbdb241c9caac704435eccbdf954"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "409f1fce3fd105bf086c1c84dc4e26cbb6c02c5797e6e07a48dc6f74bda74cf3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9bdd652b460c100b61c594108c5f781c28aecd3433d2353300297a884b9ef774"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9afa9d975c63fcd7125713d2fc5287852d89b596d8d8aef151e520ec788d76d"
-    sha256 cellar: :any,                 x86_64_linux:  "897832a552a3261ac218f524ee1bb9b5cf44707a5ee84dcf8af0ac05095a5c30"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4be8532548d5946bd7491b1529098964c951cc508929300f901f1fe970d829fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f133f8a2cd71590d2c5e20e322c724adc8638c8fe9c669c4ba14fe14d32675de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d728205b2ffeec467cedc25d5304c51f2b75ce936b360dcd8075b8fcf357cf97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f685906bdfe3228aea7ddf3ecf23f7cd5a6188d91a204a382fb827477a22c213"
+    sha256 cellar: :any,                 x86_64_linux:      "0266f1dce86be2c87383a98782f5430de4b1f382bfd1215881cc0a29e18b28ae"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X github.com/seaweedfs/seaweedfs/weed/util.COMMIT=#{Utils.git_head}]
@@ -38,15 +43,16 @@ class Seaweedfs < Formula
   end
 
   test do
-    # Start SeaweedFS master server/volume server
+    # Start master and volume servers separately as `weed server` links them via `/tmp` sockets the sandbox denies
     master_port = free_port
     volume_port = free_port
     master_grpc_port = free_port
     volume_grpc_port = free_port
 
-    spawn bin/"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
-          "-master.port=#{master_port}", "-volume.port=#{volume_port}",
-          "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
+    spawn bin/"weed", "master", "-ip=127.0.0.1", "-port=#{master_port}", "-port.grpc=#{master_grpc_port}",
+          "-mdir=#{testpath}"
+    spawn bin/"weed", "volume", "-ip=127.0.0.1", "-port=#{volume_port}", "-port.grpc=#{volume_grpc_port}",
+          "-dir=#{testpath}", "-master=127.0.0.1:#{master_port}.#{master_grpc_port}"
     sleep 30
 
     # Upload a test file. Volumes are created lazily, so grow one first.

@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https://dnscontrol.org/"
-  url "https://github.com/DNSControl/dnscontrol/archive/refs/tags/v5.0.2.tar.gz"
-  sha256 "0762bb5979dac5584410921d21b750511b6d296c9bb40838e5d3f83e3a964d69"
+  url "https://github.com/DNSControl/dnscontrol/archive/refs/tags/v5.2.0.tar.gz"
+  sha256 "ce287f88e7888832711f1cb5ed955c3d2b5de362b29c9753c9564ed2e897dfd6"
   license "MIT"
   version_scheme 1
   head "https://github.com/DNSControl/dnscontrol.git", branch: "main"
@@ -16,14 +16,20 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c01da977dc9addf3821ac2e328fa1b62e3e09fc2194506331978affe03b891ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12e610ce5d6000f397bd070ca88517205b93140bf6ee29f01d22872bb9586539"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35a087c86616206da17ab06f1900c0b13a4c0895ddf5163b8faa216fe3c0e50d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7559a5ad61e4ce2568069aa46a829aa77bc4cec00daf680710089a1cf190cfa4"
-    sha256 cellar: :any,                 x86_64_linux:  "da68334a6efa81858f53840ca57b7991afef2f2e222e2ed079991c43cef47c85"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "39735eaa5c6baf6f09d9b565ceb7c9f86956c1fb89352a88d4cad3754360c79f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a79c3f120222be634ada21c812e6337f83bab8652c4dc7856d076af221075746"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fcdf2013d104d1e93a39dc0b5307738d07ee7afff4716adcf2d7c5d12dfe2eba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "02f05b64d009265ca2bdb739022535de66e6d1f622ce834b3b491149675162c3"
+    sha256 cellar: :any,                 x86_64_linux:      "e2926ae392881a23e1515297cadc184b35e8759059556400ffe885f222b44dcf"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X github.com/DNSControl/dnscontrol/v#{version.major}/pkg/version.version=#{version}]

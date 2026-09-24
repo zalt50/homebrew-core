@@ -1,8 +1,8 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
-  url "https://github.com/joernio/joern/archive/refs/tags/v4.0.610.tar.gz"
-  sha256 "62316e1fdb85c768174958fb39bbd610a1f3e3ab57e6f0574b30632becd1a1f5"
+  url "https://github.com/joernio/joern/archive/refs/tags/v4.0.630.tar.gz"
+  sha256 "4a4bf47ec0ae362e626ee4fc8147df99858c0872939d31bf2ecb73094e36308c"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,11 @@ class Joern < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12395ba79fcc29a1fe23880ee8e33d3afa64d8d1b1f32a0b2732182009acbeae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e7a57d3a5945b928f4a1c1fbdfc77023e63402ffbb9817b13c55944027b99df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02f020b21788b27b764ee927a7ee42447a021e2e1302b267955ce7c63a178cfb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "369d055f2d5ee65784a33a9a61a8b21dfac17722ed8c02511b04227bcc879474"
-    sha256 cellar: :any,                 arm64_linux:   "5c0655d3ebe516e44166eae915acddd9e5bf91e08643ee7396ef31903b7d7c40"
-    sha256 cellar: :any,                 x86_64_linux:  "2c46f1b233dede6c20d0572dbc724bbb78801b3d05b1d4df7251d652acd8cbe5"
+    sha256               arm64_golden_gate: "9df26cf296e4940df86fa09871fb3c87c5157d3eb0763eb788630f74a65c3ddc"
+    sha256               arm64_tahoe:       "9fcba87b7b7ad333ae1a121e98560143c1031dfcb9d50e15bf8bbb6ba8b475c5"
+    sha256               arm64_sequoia:     "47edf9cc69f85bc57324c4fb9be150976fbd0f2ac5e495c9df5f279141de278f"
+    sha256 cellar: :any, arm64_linux:       "1f42d9fff918426f12ff1d47f9d44f6a89a23823b54308e6b8b905ca4f8f4970"
+    sha256 cellar: :any, x86_64_linux:      "f911ce9935a91e02db6435392f1503c69d8556ec1649920c3365457f1f292f86"
   end
 
   depends_on "sbt" => :build
@@ -45,6 +44,9 @@ class Joern < Formula
     libexec.glob("frontends/*/bin/astgen/*").each do |f|
       f.unlink unless f.basename.to_s.end_with?(*astgen_suffix)
     end
+
+    # Special case for `SwiftAstGen`
+    deuniversalize_machos libexec/"frontends/swiftsrc2cpg/bin/astgen/SwiftAstGen-mac" if OS.mac?
 
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
       (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env("25")

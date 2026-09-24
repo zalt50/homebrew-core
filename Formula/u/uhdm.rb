@@ -9,12 +9,13 @@ class Uhdm < Formula
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fcbce8c33693e89df27c415e5ff8e84c814d0b521514629762ccc2930d2d8edf"
-    sha256 cellar: :any, arm64_sequoia: "2347b003868577a54f2209b3a1e1fd2e04f568ade18197bcb8de8b7fa0732195"
-    sha256 cellar: :any, arm64_sonoma:  "f7625c203f0179593070fb879c6db569ad2ccc8a5fbc935289ffe698736809db"
-    sha256 cellar: :any, sonoma:        "23d836b3f21e4ee4edd378c70326108e6caf9517d2b3f73d1762b472317a4fd5"
-    sha256 cellar: :any, arm64_linux:   "5283c0153383bf25cfed03aa78a3f6fccf415610d17c383644f8dbf2332e778f"
-    sha256 cellar: :any, x86_64_linux:  "9ed54340103454bfba146eeeb9514899c73165e110d9e6a2d3429c468eb0303d"
+    sha256 cellar: :any, arm64_golden_gate: "59920ae5927c253977f720851486d49e4c46c0801f87593bc913a06e6c499f01"
+    sha256 cellar: :any, arm64_tahoe:       "fcbce8c33693e89df27c415e5ff8e84c814d0b521514629762ccc2930d2d8edf"
+    sha256 cellar: :any, arm64_sequoia:     "2347b003868577a54f2209b3a1e1fd2e04f568ade18197bcb8de8b7fa0732195"
+    sha256 cellar: :any, arm64_sonoma:      "f7625c203f0179593070fb879c6db569ad2ccc8a5fbc935289ffe698736809db"
+    sha256 cellar: :any, sonoma:            "23d836b3f21e4ee4edd378c70326108e6caf9517d2b3f73d1762b472317a4fd5"
+    sha256 cellar: :any, arm64_linux:       "5283c0153383bf25cfed03aa78a3f6fccf415610d17c383644f8dbf2332e778f"
+    sha256 cellar: :any, x86_64_linux:      "9ed54340103454bfba146eeeb9514899c73165e110d9e6a2d3429c468eb0303d"
   end
 
   depends_on "cmake" => :build
@@ -33,10 +34,6 @@ class Uhdm < Formula
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
-  end
-
-  def python3
-    which("python3.14")
   end
 
   def install

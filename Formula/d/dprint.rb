@@ -1,23 +1,30 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
   homepage "https://dprint.dev/"
-  url "https://github.com/dprint/dprint/archive/refs/tags/0.56.1.tar.gz"
-  sha256 "f5c102e5dbabae9cf92d8ca519dc4eaaa5f1fd7c66ad74bb791ab0c5d341ccc9"
+  url "https://github.com/dprint/dprint/archive/refs/tags/0.57.4.tar.gz"
+  sha256 "883cec00313e500f51a3a0b828144f5b2b2f8ad41b8baccbc8369b5c86550535"
   license "MIT"
   head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13c368be948b24b2c51c1a746d08f87678b9fedfbba4c3630236fb75f4a77e18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "991c8b71b71cf1b4f5e0053faf55d45832eeb5dcbad0247c294a13996b9dd767"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "380f0c4c2e32c7f7224bc6260ad2d257f954e487964172172250c320bcd4bfcc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "890830850cd55b95af6114d05b254d5f3a700c9ec32d6a35702aed0ae16708a0"
-    sha256 cellar: :any,                 arm64_linux:   "552d200bec31eb1581c5c590a2dd1f0310535631826ec54a59bacae628e0c0c3"
-    sha256 cellar: :any,                 x86_64_linux:  "6c94536b2e9df93aa8bbdc003fe7d36fbd282b5b46bce79f6ff0907bcde9e82d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2d4f0013857de3f17205565ac6a661ad0711ba57cf8fe24a5524463fe5b24570"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e4cf22b794659a2954ff52c0dc0fa076e864d3f928bffc3fc15a6ed5ce6c2393"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a103c02b762c2566aabcd44aa3db069a1e50dbdbfcfb5b1effc2007a145762bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f4d35ccacb3b88c0486d848beeb02e2235f3ec5ae1c58f66d7ea3b949a321be7"
+    sha256 cellar: :any,                 arm64_linux:       "f20869a7d0b3e861adf006b30ff02655b61fea41bf9a1f3921008b87dce6ba3d"
+    sha256 cellar: :any,                 x86_64_linux:      "e382f7c4ad66d23d1f10c690dd6500f9c2f3f9c8ba5830ebbb29472cb0118110"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "xz" # required for lzma support
+
+  # Test downloads dprint formatter plugins
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?

@@ -1,18 +1,17 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://vowpalwabbit.org"
-  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.2.tar.gz"
-  sha256 "21352230bf0e4c01fb4da1959a7338e21a3150ca5641eb2328abfc749fd32e77"
+  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.6.tar.gz"
+  sha256 "dc55e96ee95af7eb35a4dd87c56130ebad0d9735d42bf51911bb5598cb256e02"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b0aa875aad744729cb35b5d07e6d4f114fdfa56d547a671ca89b37f83f2aa2bc"
-    sha256 cellar: :any,                 arm64_sequoia: "b2481c1fc9bff8698b47cd14f04758fd3d692bb910fbf5d04bca98edc1ff3663"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e4910e79afc071a151ae018453987b45aa19ca4b45df8bf68417d010043ab48"
-    sha256 cellar: :any,                 sonoma:        "1860be73a277dd90ac3761230de3c903df37bbcc37e19fc7f4391c56a31dec21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0059589a36a2a7bec959346f8ce478586c06a5d8bf6303fa845d87498cf069ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b464231f8052b9d51d4b3da74de076e5a93981dc60298c13cb2cac0c00ab1fd1"
+    sha256 cellar: :any, arm64_golden_gate: "518ad61e830cc03c6b9884d42e39295ba8ba1ff7165724e39e4f551914b1eac8"
+    sha256 cellar: :any, arm64_tahoe:       "9abd9252af109c46cfed5e64a04318ff0d86457bbda25e4684afd8979679b40a"
+    sha256 cellar: :any, arm64_sequoia:     "29c9ee41960d006b12a2f09311d84a5eba1583c0d1f13f021365a70cb4426680"
+    sha256 cellar: :any, arm64_linux:       "63737a9b81a7d58f981422e4ae926a67ebdff683dc580c2523a57ce1a7acc82e"
+    sha256 cellar: :any, x86_64_linux:      "601e9009c0ef43cdd669a8756e1749a4a1ed2bae9832a6f7816e187c7b5b38da"
   end
 
   depends_on "boost" => :build
@@ -29,6 +28,8 @@ class VowpalWabbit < Formula
   on_arm do
     depends_on "sse2neon" => :build
   end
+
+  deny_network_access!
 
   def install
     args = %w[

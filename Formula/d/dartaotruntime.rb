@@ -2,7 +2,7 @@ class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
   # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.2/README.md"
+  url "https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.4/README.md"
   sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
   license "BSD-3-Clause"
   compatibility_version 3
@@ -12,12 +12,11 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f9a11b5904f2895f1fc88e38e75321310a9632188d34e57b43c7fa377ea0b0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3442db62a853db0532be4795be25e918d5540c6ccccb194185d5034126efaf0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2c3c811d72ccac45cea76318cc6aa99ecce1f5783d8bc8629d34b7f2a5fd1f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ea091ed5f2a6e2bd3a466f327ba445f54aca6bb8b37450ea67f5481e98dfed0"
-    sha256 cellar: :any,                 arm64_linux:   "48a8b69d174e8ff5038966437813d3d2c7776af8a6b1afee786d2e1873afe08a"
-    sha256 cellar: :any,                 x86_64_linux:  "fc4290733c513e269e73c4f181182f55aa65c319b87b23a1a9532cdd885d2a2e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1dbc2c44fd2f5ef146498fadabe1df6251e09af9d61da54fd2e5fd701e26f1ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b7a51731e44edbc21e5bdf3943a6cb5f1b98b663cd25df0533c64f1fea09ad13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a2d1194c1740fa7f59eba8bcd8ab563582909e26a441f950bfe74a37a229a95"
+    sha256 cellar: :any,                 arm64_linux:       "1260f7b5abfba331d7a491b5efa6afe4bbe47ddc963a1d47597f83af081d6bc6"
+    sha256 cellar: :any,                 x86_64_linux:      "4bf626dd111dca58967d828f1a5fbee70fc622b93eaeff4b66c0b9b670f46610"
   end
 
   depends_on "ninja" => :build
@@ -34,8 +33,8 @@ class Dartaotruntime < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "8ff4a322a17ea014561931720c8153904cd0a9c3"
-    version "8ff4a322a17ea014561931720c8153904cd0a9c3"
+        revision: "46afe8bfbb57583700c01d1584e7a49638d586ed"
+    version "46afe8bfbb57583700c01d1584e7a49638d586ed"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"
@@ -48,7 +47,11 @@ class Dartaotruntime < Formula
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", buildpath/"depot-tools"
 
-    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
+    # Roll clang to include lld support for arm64e.x1 targets in the macOS 27 SDK (llvm/llvm-project#222721)
+    # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
+    system "gclient", "config", "--name", "sdk",
+           "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
+           "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
 
     cd "sdk" do
@@ -61,7 +64,7 @@ class Dartaotruntime < Formula
   end
 
   test do
-    dart = Formula["dart-sdk"].bin/"dart"
+    dart = formula_opt_bin("dart-sdk")/"dart"
     system dart, "create", "dart-test"
     cd "dart-test" do
       system dart, "compile", "aot-snapshot", "bin/dart_test.dart"

@@ -1,23 +1,28 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for various command runners including make"
   homepage "https://github.com/kyu08/fzf-make"
-  url "https://github.com/kyu08/fzf-make/archive/refs/tags/v0.73.0.tar.gz"
-  sha256 "2593c94142b263d2894575919ffc4843a032cdab3f109e59853df5de5f342be4"
+  url "https://github.com/kyu08/fzf-make/archive/refs/tags/v0.75.0.tar.gz"
+  sha256 "41587f1340cfa440491704a0edbe945a0fe7f4965c09ea4cad84580ab7f6f937"
   license "MIT"
   head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7b7d3e26dc52240a5218e9c164839b161314ee4e111955261e5ad01717e312b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "464e72f4335afe4b9fbf142767d0d7cfb6949cb1cd9b280d615284d39d757331"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b87b7f121f80c8fe353af3273b41f829aae3cf694116f0593f75c633c86a433"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68c98a34fb01dcb208d5e618f7bdd9252436dfa04c2a39c191c1bb6800d322f2"
-    sha256 cellar: :any,                 arm64_linux:   "5bb0d6e2ea013a5368558d075926f466d7cc522ac25ab2e1a8bb4c3dd105ef8b"
-    sha256 cellar: :any,                 x86_64_linux:  "6450dcc0b7e963ed9d6cd6b40ae4a4b6d3860191e50453574460c97589fc06ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "894357124f3f5ae426e842fde3768b579f7a86f914f90682b3598698ba2dfc43"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2c13b7667840265e01971ee7216b614a5d62593bb5bb3806781ccc59aac002ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3c529f0e31b7aa1c62c7ef4fb12872b9270a895e7721bd31a6849e945a6d6853"
+    sha256 cellar: :any,                 arm64_linux:       "17c3a68e5fc2c3c992c53de8a4b92c2afa8c6d5668899a8a482be274dad07c03"
+    sha256 cellar: :any,                 x86_64_linux:      "3f23f1d70373c58901afdd69edb9d3e01b27cf30f1847747bce08cf44c2bbf3e"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -41,7 +46,6 @@ class FzfMake < Formula
         r.winsize = [80, 130]
       end
       sleep 5
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
       assert_match "make brew", output_log.read
     ensure
       Process.kill("TERM", pid)

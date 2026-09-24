@@ -1,18 +1,17 @@
 class Sqlpage < Formula
   desc "Web app builder using SQL queries to create dynamic webapps quickly"
   homepage "https://sql-page.com/"
-  url "https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.45.0.tar.gz"
-  sha256 "a988315322f8c70a95255b1ddd084e48f13fbfa87ff50854e4446a7ae8ed37c9"
+  url "https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.46.3.tar.gz"
+  sha256 "5c9d394beb5354ee1a7e598876b4f55c5765c170035883e9ea5223cff886d211"
   license "MIT"
   head "https://github.com/sqlpage/SQLpage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "45533d864d4d3fada7cb180cf27eeb60e1510072b74eefe822359cf4a355b391"
-    sha256 cellar: :any, arm64_sequoia: "62ef4ac1f18363028e7017684992ac23f2334a11f298fd4458d2e6bd9831f00a"
-    sha256 cellar: :any, arm64_sonoma:  "39c330cd47c12d85af794033f046c4ee715050b5d8502112fa4daad2500995fe"
-    sha256 cellar: :any, sonoma:        "b24c37efaa24d294f0c192f31c6e375ea530d99ef503f640d21ce017a4210686"
-    sha256 cellar: :any, arm64_linux:   "abc1a85164596e1b9c9fca934dbf44f18b8ee86bb8363a67dfb7e981fd5c93e0"
-    sha256 cellar: :any, x86_64_linux:  "ae5410739c6d37fe9aff8e9964e9857e5be3167c1c845ba25abb5e8ade6fdbcc"
+    sha256 cellar: :any, arm64_golden_gate: "978ab6300adfefb27f19e0d131b81334cebf187a518e00e6f7748cae19786005"
+    sha256 cellar: :any, arm64_tahoe:       "64983493044a8187956fdb807b4c9b2482ac3d622d9c65e5c9fdb8d58c25c7f8"
+    sha256 cellar: :any, arm64_sequoia:     "c898afe342887976fb0992dcf0dac6ee1f8aa8d89a3186efffa20e20322c5552"
+    sha256 cellar: :any, arm64_linux:       "fb5dd95b9079fed72a4aa6c3717c54a6080980011447a8ffae26683b8cf5db76"
+    sha256 cellar: :any, x86_64_linux:      "9e6afebe1ca3471926e3855708efbb3a9028e0e19af016adc59d79ec0fc40165"
   end
 
   depends_on "rust" => :build

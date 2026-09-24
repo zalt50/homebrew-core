@@ -1,13 +1,14 @@
 class Container < Formula
   desc "Create and run Linux containers using lightweight virtual machines"
   homepage "https://apple.github.io/container/documentation/"
-  url "https://github.com/apple/container/archive/refs/tags/1.3.1.tar.gz"
-  sha256 "a0c7c33f694f472ebf6d058ff67623f7dfc261092dd6feffaeb377dcd4a2b6af"
+  url "https://github.com/apple/container/archive/refs/tags/1.4.1.tar.gz"
+  sha256 "6d868bae4409d2043ee334b0c4658d621bd707d932ee147a1e145b0b08c4cade"
   license "Apache-2.0"
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "8f7c374a480a26f6d6113f1c98ccff1c9feee2e4b8d684e602fb87a01a3587e9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d50e56245230d3fe88aeee62b83b08af828acf1fe00c379bf463e579fdfbd666"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cc26e588495f5f68b971d8684f4887f2722d048fc2e80acf10023315fc5e3e41"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -80,9 +81,16 @@ class Container < Formula
     run "ensure-container-stopped.sh", args: ["-a"], base: :libexec
   end
 
+  def caveats
+    <<~EOS
+      When starting container with `brew services`, no kernel is installed
+      automatically. Install the recommended kernel before running containers:
+        container system kernel set --recommended
+    EOS
+  end
+
   service do
-    run [opt_bin/"container", "system", "start"]
-    keep_alive true
+    run [opt_bin/"container", "system", "start", "--disable-kernel-install"]
     working_dir var
     log_path var/"log/container.log"
     error_log_path var/"log/container.log"
@@ -92,7 +100,7 @@ class Container < Formula
     # Cannot fully test, as it needs to write outside testpath
     assert_match version.to_s, shell_output("#{bin}/container --version")
 
-    assert_match(/Error: (?:interrupted: ")?internalError: "failed to list containers"/,
+    assert_match(/Error: (?:(?:interrupted: ")?internalError: ")?failed to list containers/,
                  shell_output("#{bin}/container list 2>&1", 1))
   end
 end

@@ -1,20 +1,27 @@
 class GoParquetTools < Formula
   desc "Utility to deal with Parquet data"
   homepage "https://github.com/hangxie/parquet-tools"
-  url "https://github.com/hangxie/parquet-tools/archive/refs/tags/v1.54.5.tar.gz"
-  sha256 "2bb1899cbecaa2c5e8a6f749af94c14b2874d52c26400c68627864fb836c8140"
+  url "https://github.com/hangxie/parquet-tools/archive/refs/tags/v1.55.2.tar.gz"
+  sha256 "a0e6acbfab09d1923be34403b2c48f43dfa4f56b2c5237a8c877a4e28479bfa4"
   license "BSD-3-Clause"
   head "https://github.com/hangxie/parquet-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e892e7981104756aa3e8240f110e1fdb1c97cd63dd224f370525dc1760aecd0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e892e7981104756aa3e8240f110e1fdb1c97cd63dd224f370525dc1760aecd0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e892e7981104756aa3e8240f110e1fdb1c97cd63dd224f370525dc1760aecd0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f51bb48256a4464053f0fc0f719484d0e6aeabc0b44689871d8cbea67d74581"
-    sha256 cellar: :any,                 x86_64_linux:  "9bd2eb998cc96543b662182cec8783be98d0c659eae4ab405ea65cec253da874"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56162d03e64e914a3d378d000a0f4ce1c4506e657c7fc40822f4fdb78de8516e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56162d03e64e914a3d378d000a0f4ce1c4506e657c7fc40822f4fdb78de8516e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56162d03e64e914a3d378d000a0f4ce1c4506e657c7fc40822f4fdb78de8516e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d84b46398e1865e2fd3ac483ec0a64d116fbd9f87ccf139ba04fa7d3ba6a12fd"
+    sha256 cellar: :any,                 x86_64_linux:      "ee108ae725794f59fe747be75d96d8c9856d21bfbd44b103508afa0935e692c7"
   end
 
   depends_on "go" => :build
+
+  # `test do` block downloads a test fixture resource
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

@@ -1,17 +1,16 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.2.5.tar.gz"
-  sha256 "ca58297af1c60e02a36363f11d161a27f5bd4fed8b172cc56fab65805f37056a"
+  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.2.8.tar.gz"
+  sha256 "a9cc37bd955fa7ed25447278a0b4f97e7036a9abd64f60e6565a56c28219c54c"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1255b9f27c9f87000599ea7ceee4d64fcc9401874ad04297a05d9553bed409fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c8a434d34152fc04089fa4c6aa7fdae15e8d91240c597cbb281560aa8bb33fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a45392c28552ebd05a544548a8eeefb3c810c43d30c9e314cbb82f502091fb2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "344cfb21d113f06ee1e387b110c23bd063ede1991763953aa1d3ee3fc6489e58"
-    sha256 cellar: :any,                 arm64_linux:   "25a7ca6adb1a16788e22735cbf7ad4f334ed9b92a3276fe54d4c3b0e747e6bd1"
-    sha256 cellar: :any,                 x86_64_linux:  "54ea8a2639a3c8be8f0908ec5a2d09ad9b3aeb3b31ac9fc6269fab385f3ddcd7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "104b2f784f12dfd7cf0c700c11db3eb925426d2956c1b35a584fce76aad7b975"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97f7e38b892486ad2e6add06b96d79626bdac717894bd6e4c71bd41a1a43d768"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2907038e5334790aa10c0e327a2ecea0298a8087b8998cabee70c05350e960e1"
+    sha256 cellar: :any,                 arm64_linux:       "b04502c713f0ba7bb37a22ee1d4a9c0264ab043f44d256b026a81a927aaf5fea"
+    sha256 cellar: :any,                 x86_64_linux:      "83bb4c0e18fcd6abbc17f674caa3f3e831a76d6d39ddba4e1a07fc7bf8af9fd5"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +20,8 @@ class Diamond < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

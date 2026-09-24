@@ -1,8 +1,8 @@
 class Soar < Formula
   desc "Fast, modern package manager for Static Binaries, Portable Formats and more"
   homepage "https://soar.qaidvoid.dev"
-  url "https://github.com/pkgforge/soar/archive/refs/tags/v0.13.2.tar.gz"
-  sha256 "70740ce9bb51c4d77eef94e4d24e8e2405ac9af2ccb1b37340018ed0316190c6"
+  url "https://github.com/pkgforge/soar/archive/refs/tags/v0.13.4.tar.gz"
+  sha256 "571b4735fa0c9d612ad4b3a3a34dc80047cb7b4d14f69c49607e3508d6ed5582"
   license "MIT"
 
   livecheck do
@@ -11,8 +11,8 @@ class Soar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "9939346d70200550b7f8da6ffc39202041daa165800d7dcac40b177031c4fd7d"
-    sha256 cellar: :any, x86_64_linux: "a8563b16a10e83df1b8fbd74a981fb49a1f135766c7068e1817915c1e602b784"
+    sha256 cellar: :any, arm64_linux:  "fa42add6529c20f0a9cca71e079074a736c00a11d5b915938a06e8241bbbb9d8"
+    sha256 cellar: :any, x86_64_linux: "6aa0e54afeaf27a996cc116ba4dbe96045d9bc48cdaa6998269a925fc2b6d1c9"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.55.0.tar.gz"
-  sha256 "342b139f0b76d864b867d4ed5bd1d42d2cf6dfeb8c494ff8fa333df84b67ee20"
+  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.58.0.tar.gz"
+  sha256 "7f02ddd9e813bab42ea7fe84887c9787a3fbd695bf2065ab907f04d2e2c3366c"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -17,11 +17,11 @@ class Oxen < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "36b3b7553a2ce8d0461d396fa36a62d2c1339546080f49a4806dd715406c4bfb"
-    sha256 cellar: :any, arm64_sequoia: "9e0914286d456bfd42a860fa3a2d41b52ea022de716305c3f2a3e3998bbb80b0"
-    sha256 cellar: :any, arm64_sonoma:  "1c6b3d832c666410b7ffc1604227894e01a62aabc3c0d77dad4c7f2aeff08a57"
-    sha256 cellar: :any, arm64_linux:   "116c8887d67d58c54e3c4e3f371b75013f5aa5080d410008a419c8c9d3a7aed9"
-    sha256 cellar: :any, x86_64_linux:  "541e52ea455ddb49e98f1f1ac21655ba766bc907a078d6d54a0d0c53eaaeec4a"
+    sha256 cellar: :any, arm64_golden_gate: "101e8613ca7c00e13e4144634f47431584ffccd00f147dd65cb3c417918bcbd7"
+    sha256 cellar: :any, arm64_tahoe:       "4cec028b9346779274d1cb865623f8ad504cc43ab56e79440bab792be1c050a5"
+    sha256 cellar: :any, arm64_sequoia:     "ed4cd45a1d203df568beee581f38a9e33db829e73a8b0a96a5f49cd934b43ae0"
+    sha256 cellar: :any, arm64_linux:       "dd3ea193e225980be5021d0d810bc9ab03491f8374ed56894076bdf05a61f513"
+    sha256 cellar: :any, x86_64_linux:      "0a2a57aef62d43a20c39a37484641df1577b1c7ce88fed47583e22032f7d4857"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
@@ -29,6 +29,12 @@ class Oxen < Formula
   depends_on "rocksdb"
 
   uses_from_macos "llvm" => :build # for libclang
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["ROCKSDB_LIB_DIR"] = formula_opt_lib("rocksdb")

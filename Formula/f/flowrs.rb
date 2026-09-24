@@ -1,8 +1,8 @@
 class Flowrs < Formula
   desc "TUI application for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  url "https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.14.0.tar.gz"
-  sha256 "dc690d7df55190b339e9ac42ff1d4d43b0f9b410088ca5a1a438eda2a1f7c7f0"
+  url "https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.15.2.tar.gz"
+  sha256 "a2aaaac9f2652a23c7cdedfc8e750f225d72161884f8aaac9b91cac19ac487d6"
   license "MIT"
   head "https://github.com/jvanbuel/flowrs.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Flowrs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "937abe64a003e0e310ec3b8d49e2b1281591b9ec452e4d65177c7071c9ee3605"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "045cb005c6eca86f6b522eb66af552ea8ee790f12e761b3d1da00b3c7ee41b2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34f965d553b15fdbbca9f9d667f1a409da4c313162caad7df2ebb383064c36f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13969d087071323903fcfb607a67d976bbd125e0ae7c4f1949c2c53972841d00"
-    sha256 cellar: :any,                 arm64_linux:   "b51a0802a824be8c53d4240dce9ee26ee87f58ef0ea636b2fb8c9cac1b6d2eeb"
-    sha256 cellar: :any,                 x86_64_linux:  "8f25461052a27da65b16f78443ca207a6327c61eaf3b928a7ea1e0738eb20732"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d57dba863eb586c02c0996dc06490a870f13be581137d2f613e8d519857e9ddb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec0df5944b5b00d8d7b451bfb7f1aecbd277257682e3375504f6a5165028672c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "843bb8c561f3da1e27e0ac7f58f4797200d5af1bd4bb610406f59ffee0ca516e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4d86440f284cff7bfef73eb51cd2cc4dedbfd327b41a91ab35dae4dfd6079edf"
+    sha256 cellar: :any,                 arm64_linux:       "80c6b5233df6e740b33422b8ccb88999c70720f9bacaab1e04c031ec2351515f"
+    sha256 cellar: :any,                 x86_64_linux:      "6464a0099e15c867852f878babf3ae3ec5dd89d029e5b999ed07c753bf0e7413"
   end
 
   depends_on "pkgconf" => :build

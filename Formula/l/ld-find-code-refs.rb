@@ -1,18 +1,17 @@
 class LdFindCodeRefs < Formula
   desc "Build tool for sending feature flag code references to LaunchDarkly"
   homepage "https://launchdarkly.com"
-  url "https://github.com/launchdarkly/ld-find-code-refs/archive/refs/tags/v2.17.0.tar.gz"
-  sha256 "27b30c4900c8b56d9646e875fbc7ce80e848f0eb4d48fcaddfcde8a3b8c37b9d"
+  url "https://github.com/launchdarkly/ld-find-code-refs/archive/refs/tags/v2.18.1.tar.gz"
+  sha256 "df46870ab01a85a4872b5204be281477042afcd8377710a04e76eb52fb5fa658"
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ld-find-code-refs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "153c354766a0fd86f382848ecfd3a3b79a6fb2dbbc796f5b5e87fe7ebbcb1738"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "153c354766a0fd86f382848ecfd3a3b79a6fb2dbbc796f5b5e87fe7ebbcb1738"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "153c354766a0fd86f382848ecfd3a3b79a6fb2dbbc796f5b5e87fe7ebbcb1738"
-    sha256 cellar: :any_skip_relocation, sonoma:        "39237943638a5a43521d28dd74aa2a70d70aa8cbfbe25b933d6702ddb5fcc1fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1ca77d19e09b06b6372593076295e56778070d9178b9ec2727664673eae872a"
-    sha256 cellar: :any,                 x86_64_linux:  "a242da99dbf4be66986e481dec806ea2d678ca7571ed8558001de23a8c379be8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "76b58bf375c01c888d4847501fd020c89570e6430f2356476d378e9725649fde"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "76b58bf375c01c888d4847501fd020c89570e6430f2356476d378e9725649fde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76b58bf375c01c888d4847501fd020c89570e6430f2356476d378e9725649fde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a1c26ab7c3efdc8d6fdc799933e501cef1341267edd704f4f6f8622a35a55e7"
+    sha256 cellar: :any,                 x86_64_linux:      "495450f33b2e654c644c105e59a8d4227c91fcd4d5f3a9b9cc1af603cab6d62e"
   end
 
   depends_on "go" => :build

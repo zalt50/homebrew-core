@@ -1,18 +1,17 @@
 class OsmPbf < Formula
   desc "Tools related to PBF (an alternative to XML format)"
   homepage "https://wiki.openstreetmap.org/wiki/PBF_Format"
-  url "https://github.com/openstreetmap/OSM-binary/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "ac7aadc57d218a5186076f55255202ec7d0949c7f334b8b0cec8bdd196cd75d7"
+  url "https://github.com/openstreetmap/OSM-binary/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "18ec63e28a42073db62e8fb59134b8bd410c29e8eb1d8ec1759efc9501fbf41a"
   license "LGPL-3.0-or-later"
-  revision 3
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1ed742c9bb5905f55e116bf5b81074a8b33980f067b5126e402714500fc06d4c"
-    sha256 cellar: :any, arm64_sequoia: "5e6c85852ab5bc97563b4bd8001e10440170c32107e2c427f2cfb23d06c62971"
-    sha256 cellar: :any, arm64_sonoma:  "b23f83ba1a62f1be6576d49215394dc4988bc9bbeb8fff3232233dd971aa567f"
-    sha256 cellar: :any, sonoma:        "15046ffa111a17b122495311b44662cd41ebb18b1e04f83807e11ed6435f2230"
-    sha256               arm64_linux:   "d8f772228565fc9b79fa9f5d7b85d9a2824170209ebb5cb773931367208ec9f2"
-    sha256               x86_64_linux:  "9995bf500802fd752a11879e80f2e1eea7280511f7ff52f3c7f101ca1cefb1c9"
+    sha256 cellar: :any, arm64_golden_gate: "b69f3195192ae4d3d10c1439e2ef019f8c1c841a34be2ea99e52472bf3cf8662"
+    sha256 cellar: :any, arm64_tahoe:       "08ea30c5f32a73bdbcaee060a806769b9176ca0ffffd5716e50b63574df48e86"
+    sha256 cellar: :any, arm64_sequoia:     "526d573447d7f3ec3e5e7f9a513142926eef6011c8ea024f5c574291ffa8834d"
+    sha256               arm64_linux:       "2e73955e2dd0078e77f0950688b347d99fbaab4c4708ca8145154cc0c99a131f"
+    sha256               x86_64_linux:      "045208dee4bcdcb7ab74e45e521e090f60ac37097253efa671dbb3a7d55ccf59"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +21,8 @@ class OsmPbf < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

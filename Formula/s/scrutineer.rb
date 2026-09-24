@@ -1,21 +1,26 @@
 class Scrutineer < Formula
   desc "Security through scrutiny"
   homepage "https://github.com/alpha-omega-security/scrutineer"
-  url "https://github.com/alpha-omega-security/scrutineer/archive/refs/tags/v2026.08.25.1.tar.gz"
-  sha256 "faefec2195d1edaace0b2f81769ace6ba68444472d06c6d2d796e56ec23cdadc"
+  url "https://github.com/alpha-omega-security/scrutineer/archive/refs/tags/v2026.09.12.1.tar.gz"
+  sha256 "801a9c5bf649fde2e8ef8ebeedb1acfbecfb8637842dd99222cf8fe48ab04820"
   license "MIT"
   head "https://github.com/alpha-omega-security/scrutineer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e43ffb2f552d1f1d7e69d4029d3ca2113fc0adf68e7af55bf8cdfd7b44daab3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e43ffb2f552d1f1d7e69d4029d3ca2113fc0adf68e7af55bf8cdfd7b44daab3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e43ffb2f552d1f1d7e69d4029d3ca2113fc0adf68e7af55bf8cdfd7b44daab3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b6e944d359de9aa09f113ed97423ec84d593ed2dccea21daac09b54178fd774"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "597edb685ebed6061836fa3a619fc144974b065db02fd48d9f14a2472f187729"
-    sha256 cellar: :any,                 x86_64_linux:  "fa5197122f8735771c27344b60885dad26714907e0ac6c3e840e87ee3f564f66"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c877d7807d31a0db5b63e6842125c07e27719e52aaeb14d320322f18caea12d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c877d7807d31a0db5b63e6842125c07e27719e52aaeb14d320322f18caea12d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c877d7807d31a0db5b63e6842125c07e27719e52aaeb14d320322f18caea12d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bbd2f31136a96852c5f5714f478cfa17de20d84a2f135563301774c75391b501"
+    sha256 cellar: :any,                 x86_64_linux:      "5dfed42383f939b6b4d3eedcee0494ea214d5a43630f0ea19aa45e9263c803d1"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

@@ -1,22 +1,27 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https://git-cliff.org/"
-  url "https://github.com/orhun/git-cliff/archive/refs/tags/v2.13.1.tar.gz"
-  sha256 "3dd3138a009ade1085dd2f001f836c2bb406462a99512dbcb573bda1f2166274"
+  url "https://github.com/orhun/git-cliff/archive/refs/tags/v2.14.2.tar.gz"
+  sha256 "fbbb1f8ade8e9affeaacd632bedc94ac898fb726516f2f5a86d1bfba947635f4"
   license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "40686a8475370320ad49bc0d7074391eb3d712f01cd7bc983966e067c6f168a8"
-    sha256 cellar: :any,                 arm64_sequoia: "98fc49379e6a22872d3e1d205fd234780cb0b41ac4a66378716640f5d8eaf5a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab7309c8a0b92bda7304bbb34a3b101ad62de767536057b0c3ee425564973bc4"
-    sha256 cellar: :any,                 sonoma:        "598622c959b88c2f79c918317cdacdd59b0f89d3a8c101f147a59ec6d033f3ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b61421e66c706df0df159bb2a081b3f2919173095cf1c4701c89d20102b80ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f1df731ff0442836acb7f7cc8c5ff45a4a9567a8a6d8a9e7a710a97f2b2a474"
+    sha256 cellar: :any, arm64_golden_gate: "69fe771ba746247b913c4ed681cfe1ccba1f5025ddbf22b49832436c0c48f7a3"
+    sha256 cellar: :any, arm64_tahoe:       "87cb3ecf594fcb3d633860459dae6d4ab4951d1cdd2bd2978fdb58099f9022a5"
+    sha256 cellar: :any, arm64_sequoia:     "f02241c6a9253453eaf643ce75f4af6b53f6f3fd7b3483a3643a5520108396d0"
+    sha256 cellar: :any, arm64_linux:       "6baddeabcdac191f5f9f01e8f6c0330ad120be102dff6652ce76b5777af11338"
+    sha256 cellar: :any, x86_64_linux:      "4e9cf54718d4d615e0ad2c4a47a2066aa5b8ed338a72518811279cf9f9a841bb"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

@@ -1,8 +1,8 @@
 class Fio < Formula
   desc "I/O benchmark and stress test"
   homepage "https://github.com/axboe/fio"
-  url "https://github.com/axboe/fio/archive/refs/tags/fio-3.42.tar.gz"
-  sha256 "56b03497a918d07692257890fd759bf73168ad79df5be78a2bcbbdc8ce67895b"
+  url "https://github.com/axboe/fio/archive/refs/tags/fio-3.43.tar.gz"
+  sha256 "efa49b3f36eda9adf29294f27a87d7e457747d676cd0f73996d6365357832cfe"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,11 @@ class Fio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "611c21aa09abf75e1df6e31658b1bf04182e7b7c678a0b29bb978cf15e2cbb9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a4f2a8dab06afd2289586c52856e49777630e387161a3cc791ffe1ecb54dbf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb7a4ffae3b6efc4de0cd489f458448eeacf4a1226711a2443ab48dd0b6accff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "960759c937bf7dc1e54d4605ef912a443ced521e4531062e29c856af476add9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc1623f397fd345e7bcec43a36a9e679a20d108281c1f3581f67b03cfb599a6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8539bfd65ae2df6839534e907f291e50943eab0df04bb9513b868a45ce6e5247"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b7197238360929e9f2b3ba6d2fb8e359061dc07dd23a055405440ae9991fe91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1f4fa60ee65027f3689aa11fe168bde90ffc169c20a92625a18ca6454474b4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f18f3fa32b5893cc37db51000a8c52ca2b01fadea876a3de006c50307e89a77"
+    sha256 cellar: :any,                 arm64_linux:       "38c2bf604b600681233a88c987ed04480bd86ebe85ec3e202ed7d40d4565f3ab"
+    sha256 cellar: :any,                 x86_64_linux:      "0a1b798a44a7027561385f294a36a2710ad163d378ea4caa89442a9978e38e3a"
   end
 
   on_linux do
@@ -26,8 +25,19 @@ class Fio < Formula
   conflicts_with "fiona", because: "both install `fio` binaries"
 
   def install
+    # fio's configure script passes `-march` flags as part of detecting CRC
+    # support on ARM. By default brew's logic removes such flags, resulting
+    # in the prope falsely succeeding (probes compile when they shouldn't)
+    # and `ARCH_HAVE_CRC_CRYPTO` being enabled when it shouldn't, giving a
+    # compile time failure later in the build.
+    # Solve by enabling `runtime_cpu_detection` which configures brew not
+    # to strip those flags, so the configure probe fails correctly when it
+    # should.
     ENV.runtime_cpu_detection
-    system "./configure"
+    # fio's' configure script enables `-march=native` by default. Disable
+    # this to ensure binaries are portable. Ordinarily brew's logic would
+    # remove `-march` flags by default - but we disabled that above.
+    system "./configure", "--disable-native"
     # fio's CFLAGS passes vital stuff around, and crushing it will break the build
     system "make", "prefix=#{prefix}",
                    "mandir=#{man}",

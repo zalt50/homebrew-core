@@ -1,21 +1,23 @@
 class Skip < Formula
   desc "Tool for building Swift apps for Android"
   homepage "https://skip.dev"
-  url "https://github.com/skiptools/skipstone/archive/refs/tags/1.9.8.tar.gz"
-  sha256 "a3d3933148a291784f6e85ff7581f15a4cd6112fd349b08c8335d4c939804edf"
+  url "https://github.com/skiptools/skipstone/archive/refs/tags/1.9.11.tar.gz"
+  sha256 "da5280142a7537ad4424e6b420128d01edc24a0be6e654b60f8f44f56ffb4a85"
   license "AGPL-3.0-only"
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "d63b9b76ebbf37adf9eeb0397440ab405291b73376e8118f238c36ddcff96691"
-    sha256 arm64_sequoia: "b7ec6595f98a2f891676aa9a0b46b3330edd87687dc3a9fe5f720d1a97d5c2e9"
-    sha256 arm64_sonoma:  "7519d0652345209433032d0b3f0185dda9c056f390e0ace2a4821814298ec015"
-    sha256 arm64_linux:   "27e94675a5c6978eaf0c745ef9211d767cbdf9c67a8f2cba63cf15552a53b2c0"
-    sha256 x86_64_linux:  "8fe164e607f9ef8fb26589b7199757e631a34ed3a3afadcf6d72cbd3617c05ad"
+    sha256 arm64_golden_gate: "1d7afd74ad748fb317aa75eedbf63aa3a83f2bc11b33eb3c87ba0e3a8421f4b7"
+    sha256 arm64_tahoe:       "4c75fe32d25c2846b381a60bbcc1290850a800876199ec6c7671678cfc7c5271"
+    sha256 arm64_sequoia:     "6ee0ae35694b0b9960518cd8dfda3f793b3ba5ea1be03a610115f92978f503ed"
+    sha256 arm64_linux:       "65c366f04615d89b827fd769b2ec9f261feac4b495c7b1940953e6a33d998a8b"
+    sha256 x86_64_linux:      "01ee1aa34976e57f6951b98f4603ba66514ea471f415971506e907c0b4cfa490"
   end
 
   depends_on "gradle"
-  depends_on "openjdk"
+  # TODO: Switch back to `openjdk` together with `gradle`, which runs on `openjdk@25`
+  # until Gradle supports JDK 27; mixing both in one dependency tree fails `brew audit`.
+  depends_on "openjdk@25"
   depends_on "swiftly"
 
   uses_from_macos "swift" => [:build, :test]
@@ -32,8 +34,8 @@ class Skip < Formula
   end
 
   resource "skipsubmodule" do
-    url "https://github.com/skiptools/skip/archive/refs/tags/1.9.8.tar.gz"
-    sha256 "774d78513e6e975cd97c89f00aed9e60e795a7dbb4a8232bfc0ccfaa8e96dacf"
+    url "https://github.com/skiptools/skip/archive/refs/tags/1.9.11.tar.gz"
+    sha256 "ac55fb432f02460df5acba18f3ad814be9d2cb970b38ad0917ff7ad010acd8c7"
 
     livecheck do
       formula :parent

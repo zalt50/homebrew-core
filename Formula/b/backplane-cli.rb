@@ -1,21 +1,26 @@
 class BackplaneCli < Formula
   desc "CLI for interacting with the OpenShift Backplane API"
   homepage "https://github.com/openshift/backplane-cli"
-  url "https://github.com/openshift/backplane-cli/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "f07831763f7d0beb4f3522f5af8646a24abc61c392c7f354a5230c4a65637aec"
+  url "https://github.com/openshift/backplane-cli/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "1ec7691ce6cf2432a6233609cee48ca735d62b75946336dac3c1162ef1345a9f"
   license "Apache-2.0"
   head "https://github.com/openshift/backplane-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34e05d3b27748a51f42b1e26cc3a3474bc97b223f6010c4d5b41cc8d8bf8a119"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6da47b16082bcfdc77961c32186b6daa977f163d71adf9aa1d522ca35ba41ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1829553d8ff651a9b4c74d42be16d104d58add147e7ff41aebd111a73016fb33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c495cc4ab998b027379a032299c5ffaea46d620636d52e7838897c6a10fda4c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1550b8bd1e99ecf799f38cde96d4082869198763d9120276e612b963ea791916"
-    sha256 cellar: :any,                 x86_64_linux:  "911261ee8d3bd2e1d9e5815d86a45271dde161780e21757963a1dad8ffda2579"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0afb0c39724fcf2e3f56fde7bbd4c1fddf6c7208f2d20fe2dcf8a762339ef521"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3fa8aa7ddc3fca29c2edc25f65cad119c1adb9935147a7bc2483eec58d98dd27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0aa28afc049c3ef41b0b0672296cbd1451b17916001e3cd3b8ee4f4752d2ab88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e1fcdd77890ee88b999cb2333c12909af50eeb06e4e4d92c1e35aa3c537a5ffc"
+    sha256 cellar: :any,                 x86_64_linux:      "005f7eb80002d57616e41574a3e44a57ec76f2e56213f032200e69f645a9767d"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X github.com/openshift/backplane-cli/pkg/info.Version=#{version}]

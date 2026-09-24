@@ -1,18 +1,18 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://github.com/astral-sh/uv/archive/refs/tags/0.12.7.tar.gz"
-  sha256 "4a0941ef8f8131bf15f1dec50c96a17d94aae732ff8e9cb3a32c9d4f86d360fe"
+  url "https://github.com/astral-sh/uv/archive/refs/tags/0.12.18.tar.gz"
+  sha256 "19ddf8a5a173d24f3a56e9a625f3fafcc5771eb4b549d629bccfca5fc62cfb34"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa95dac85ada28a2605da25f85384cb8935e36e0199f2e1629d5eacb63bb16ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ee131aee93bbe3c4cbc31e6fafd0a6984cb64c1b1b418929705bf9214750bcf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4acee561833a2b910fe32904f6a8e6d4b356f471a2cb798e0d8042089e499f39"
-    sha256 cellar: :any,                 arm64_linux:   "8f44e1ed8a567d51184738598b11482b663b7b00c625191f2c81c55c323349db"
-    sha256 cellar: :any,                 x86_64_linux:  "13292ad43839f3e4ca2c123a339b65176e0ad1addee9a7be1d1f4a8601ccab0b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1bbf1e4b1c2fe0ac5fc368075eb0ebb6062ca81186f69c4ced880344da5cbcf3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6f6fb9c7c8ba0f3a266f2a85ccc993193914d94b09792e0fd744ba773f393101"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca710fb2f6efafd5f575a5058dfca52c08205362455d1dedd75c531e09de3656"
+    sha256 cellar: :any,                 arm64_linux:       "3a4a1960740ce2b43372f778af71ffd63cd5a10903a11612a3c46b9964b11e68"
+    sha256 cellar: :any,                 x86_64_linux:      "b811c1648a1b0caabb7fbbabddb16eaeff7c52fdb469c860f57a4106e1163115"
   end
 
   depends_on "pkgconf" => :build
@@ -22,8 +22,12 @@ class Uv < Formula
   uses_from_macos "bzip2"
   uses_from_macos "xz"
 
-  # downloads crates on install and wheels in test
-  deny_network_access! :postinstall
+  # downloads wheels in test
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["UV_COMMIT_HASH"] = ENV["UV_COMMIT_SHORT_HASH"] = tap.user

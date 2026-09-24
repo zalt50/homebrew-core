@@ -1,22 +1,24 @@
 class Libnfs < Formula
   desc "C client library for NFS"
   homepage "https://github.com/sahlberg/libnfs"
-  url "https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-7.0.1.tar.gz"
-  sha256 "ba62a2705f7100727b8ea37741e6bb6d5e2ff9ec61fee4d77360793eca5eddc2"
+  url "https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-8.0.0.tar.gz"
+  sha256 "bc91216e927a85142b5de611c7f711558e02119a7daad67620ea631634038350"
   license "LGPL-2.1-or-later"
-  compatibility_version 2
+  compatibility_version 5
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f659050963b83166026d6543e11d45ca28926801682b037b1d8206a03c386011"
-    sha256 cellar: :any, arm64_sequoia: "0bb7c6ef70ed90dd251fd9f77f272ae96d866c2da8eca6eba9c54d5aeec01205"
-    sha256 cellar: :any, arm64_sonoma:  "3f885ad22d5f1bb1dc8f6cbdbe09d07d860af37fee65c9b6433e5d258171b8b8"
-    sha256 cellar: :any, arm64_linux:   "9a5bd3b6e56e80168975d4c82b01029e6773162650ab6b90c394bbfc88664bb2"
-    sha256 cellar: :any, x86_64_linux:  "6d786f910b87ea409598ca7666d10f41b5e2f5582f2389c2df6fe0a6a0ceab00"
+    sha256 cellar: :any, arm64_golden_gate: "6c8750421a0d5a06dfa06c97f3a487486d0c121937c21dcfa3fa90037ba3e72e"
+    sha256 cellar: :any, arm64_tahoe:       "dc2e5fdcb607e26d3182d252b3cdb22d7da204820d31c5dc0590c63b79362793"
+    sha256 cellar: :any, arm64_sequoia:     "ed8ec08b9ff5fc20dde4b1684c016b65b5fe08c10bd38a7930f7d5b6dc9e7ab5"
+    sha256 cellar: :any, arm64_linux:       "8641151933e154ac0d4c4b6fed91100ceedcd1151f77b33ecd7c49cf827c2cfb"
+    sha256 cellar: :any, x86_64_linux:      "7803837601cc0de193f9669442d2a18539ee343fafd5bebeff9f9a488ddd98cb"
   end
 
   depends_on "cmake" => :build
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
+
+  deny_network_access!
 
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"

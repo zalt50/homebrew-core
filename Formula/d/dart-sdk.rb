@@ -1,18 +1,17 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.13.2.tar.gz"
-  sha256 "e44d88417ebac2037ec26e06bbda2ba00f2dfb60c4fcf20191a5b1f8a9fdbc03"
+  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.13.4.tar.gz"
+  sha256 "8a6040a7998e157e4ff6ec29141a78478aac000b372a2b065a9c53ba40cf8fa9"
   license "BSD-3-Clause"
   compatibility_version 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d9f1bda855ffc70d29ed75e9ccef9c2b40d296cc8f986897b3bd40f94ee04854"
-    sha256 cellar: :any, arm64_sequoia: "45ca22e65665a459ed0c9952ee7930916bba78cb025fda4b10bdb5859fead141"
-    sha256 cellar: :any, arm64_sonoma:  "e9fa642ddceec513f1de8ff487ec33e214f9bff885a8a057b9baf4b7ef39adb6"
-    sha256 cellar: :any, sonoma:        "fb06ffb3e282b4692f21275135da2682859320fe06f530aa07a5bbdb9dd6a301"
-    sha256 cellar: :any, arm64_linux:   "1c19b600073637453512ad1861a02c77c19d9e25a7bf962c6a5577f0fd19c61b"
-    sha256 cellar: :any, x86_64_linux:  "115158494c0f736cd9a83a52b71b3bffa720b9e0669b8806e4f50a579868000e"
+    sha256 cellar: :any, arm64_golden_gate: "80f9c800af33423f55f208bba4d318bf8582ba14ba1a8178365dfea456839a8f"
+    sha256 cellar: :any, arm64_tahoe:       "1ca0c36832ca0a134ac73586a708d513cf4479b5c1e5abd9fd8dcd4a8fc1fb9b"
+    sha256 cellar: :any, arm64_sequoia:     "75e0be61be5a87cab5e00c270f62662f38e609b7f49d212c35cbde586effed3e"
+    sha256 cellar: :any, arm64_linux:       "ce1743ed20c1f63d34ed33c848082a695c547ccb5b89d80d207f21337291627d"
+    sha256 cellar: :any, x86_64_linux:      "c7cd3d6c63fdf924054e7ff57a130695d0af77cf5efbeda732524cc82eb8dff6"
   end
 
   depends_on "ninja" => :build
@@ -25,8 +24,8 @@ class DartSdk < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "8ff4a322a17ea014561931720c8153904cd0a9c3"
-    version "8ff4a322a17ea014561931720c8153904cd0a9c3"
+        revision: "46afe8bfbb57583700c01d1584e7a49638d586ed"
+    version "46afe8bfbb57583700c01d1584e7a49638d586ed"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"
@@ -40,10 +39,18 @@ class DartSdk < Formula
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", "#{buildpath}/depot-tools"
 
-    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
+    # Roll clang to include lld support for arm64e.x1 targets in the macOS 27 SDK (llvm/llvm-project#222721)
+    # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
+    system "gclient", "config", "--name", "sdk",
+           "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
+           "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
 
     chdir "sdk" do
+      # The newer clang flags an unused variable in binaryen, which is built with -Werror
+      inreplace "third_party/binaryen/BUILD.gn", '"-Wno-unused-private-field",',
+                                                   "\\0\n        \"-Wno-unused-variable\","
+
       arch = Hardware::CPU.arm? ? "arm64" : "x64"
       system "./tools/build.py", "--mode=release", "--arch=#{arch}", "create_sdk"
       out = OS.linux? ? "out" : "xcodebuild"

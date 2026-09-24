@@ -1,21 +1,27 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
   homepage "https://github.com/redpanda-data/benthos"
-  url "https://github.com/redpanda-data/benthos/archive/refs/tags/v4.78.0.tar.gz"
-  sha256 "ccba6fdaf6921cd5f1c6dfc7f8cf082a08d10cbb03aaf7181012acdbfb7a9d55"
+  url "https://github.com/redpanda-data/benthos/archive/refs/tags/v4.80.0.tar.gz"
+  sha256 "7797b9ed34176f836c8facbf9825317d4f1bf37495c2155d892da8189a7e7f1c"
   license "MIT"
   head "https://github.com/redpanda-data/benthos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4ecb41385da506b7885d66e95083f277823bd4789be32fa1d19183800ab09d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4ecb41385da506b7885d66e95083f277823bd4789be32fa1d19183800ab09d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4ecb41385da506b7885d66e95083f277823bd4789be32fa1d19183800ab09d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a032c6d226ede1496fdb5d4e5dcff187c8842785fb288d66a6f0ed43b74a4177"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1637bbe5d0ec654bfb19f6106db9ca801d150060a7c17a55abe4bd6de2163e01"
-    sha256 cellar: :any,                 x86_64_linux:  "042132baee29586a63a3e4e50719c6871bbd2ea37780bdcadaa765395fbbbb45"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d822d795e0fe5cf75bda10e518d9be9bbc2338040260a9b79d5481566370e069"
+    sha256 cellar: :any,                 x86_64_linux:      "f0d688a0bf57bb21cc0bd1d011c941207f4e7ff94d2161929b68b9b994c5d29c"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/benthos"

@@ -3,18 +3,17 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/2b/a5/04a71d44a949ba12e000e1897f68e7d9fc634d18e666c3cd6ecc24241441/oci_cli-3.91.0.tar.gz"
-  sha256 "fe8c8821702cfaee04805822448bbdb8210221cb977a425b2caf05063a4a00e0"
+  url "https://files.pythonhosted.org/packages/3e/5c/349799a885437b16c949fb2f741436bd8e12f7e1c1d1c9afd6fb20b01808/oci_cli-3.94.0.tar.gz"
+  sha256 "e52801274d465968b7d21e90fe0e8e2153f84c7bdfc495d6fb4be31fbb62ace4"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "25a63942d3e0b30a734bc28a566f0720c77341b82ebf546d30f901f4c2046c39"
-    sha256 cellar: :any, arm64_sequoia: "6b6d91814789578699b4fff3a6ffc951f1061882293a5eb1a0df91ed4ad01a30"
-    sha256 cellar: :any, arm64_sonoma:  "51125e5d47dbef3f696169d6d355b3644657dd403b3ad7e2bfeb599fb789fa47"
-    sha256 cellar: :any, sonoma:        "59f4644393e8b8c752a9a17476d710fa6c80ac29181752da77e0fc42e7fab2f4"
-    sha256 cellar: :any, arm64_linux:   "7cdc318e3b9cd19a291bfe55e0a1fee50aba998071edcacdc9e6a0f59037e582"
-    sha256 cellar: :any, x86_64_linux:  "39153f9bc8775bb59acee71dedca3bf942baf4d10f437f3fd08fc6cadd03e7e6"
+    sha256 cellar: :any, arm64_golden_gate: "514338760d1160c5cf84d00b616fc2c64d154c0624d1850fed0d21d773e3980d"
+    sha256 cellar: :any, arm64_tahoe:       "8c09fcc1bb0e92e296bce6cb4d54f2a54e61e908d8b948595b605cee3a8fbc46"
+    sha256 cellar: :any, arm64_sequoia:     "7496333549acaf23bf621a69e71204a96f14a51d33d6094bceadc6dc63adeb3d"
+    sha256 cellar: :any, arm64_linux:       "00b3b4faa711433383988bf8f2c344f4d8e93a701ecf39487700b62ea84099a1"
+    sha256 cellar: :any, x86_64_linux:      "fb07e218ad2c57c7b008c6d0c1fbef08aa029fd2db7ad8c88aa0df581df5863f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -70,8 +69,8 @@ class OciCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jmespath" do
@@ -80,13 +79,13 @@ class OciCli < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/a5/fd/5408374a5c732882fc7b6bc1b6e6a96f06984a325ed2b66d3a1f67cf8b8b/oci-2.185.0.tar.gz"
-    sha256 "375eec7c8568b0066bd5e6ff48cf406a4a1af34437c29abd7981f1ab78fac9c2"
+    url "https://files.pythonhosted.org/packages/42/01/d5f48c25ffb97345688f9474e088c0d06687225b4358b00ec4b3a5743c6f/oci-2.187.0.tar.gz"
+    sha256 "091913c264b98bac02b6caad3e4b005565e4788c3650f02647a3eda7f719df07"
   end
 
   resource "prompt-toolkit" do
@@ -95,13 +94,13 @@ class OciCli < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
-    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
+    url "https://files.pythonhosted.org/packages/af/c3/8a3b59c25070cc61dc517fbdfa5dc0904670c96f605cc69759dc09166b99/pyjwt-2.14.0.tar.gz"
+    sha256 "77283c83fb56ecf566a886c757a714bc83668e38156de2cce8263302f42e0b86"
   end
 
   resource "pyopenssl" do
@@ -140,23 +139,23 @@ class OciCli < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
-    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
+    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
+    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
+    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install

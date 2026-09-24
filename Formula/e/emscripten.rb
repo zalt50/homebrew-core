@@ -1,8 +1,8 @@
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/refs/tags/6.0.8.tar.gz"
-  sha256 "959d29de4d685c4e1f85a304d58be7bb624f824187685e3660629feecffa5556"
+  url "https://github.com/emscripten-core/emscripten/archive/refs/tags/6.0.10.tar.gz"
+  sha256 "182f4b8aa2b649c434da199886c637f32b017259f97907554e7c31385cf401b6"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -16,12 +16,11 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d1277c35185896c4dd31a54e6f807df9365abd092883fb5d1970c65097ed955f"
-    sha256 cellar: :any, arm64_sequoia: "89607b39f8a8ab9bc978e3658c0e6d8c3cb851ff7494d042979e4c7685260fcd"
-    sha256 cellar: :any, arm64_sonoma:  "aa3fbecbc386e45507464257a96609d5dd6119b02aa0cad4d117b777154f3355"
-    sha256 cellar: :any, sonoma:        "ace1724e2bb1c3d60435b1d566a6906a7dda4ab9a1eca3df001f55f768f870f8"
-    sha256 cellar: :any, arm64_linux:   "1bbaf2b27f7ff3806f703d8d75f911c8433efcb5ae51934b2d44c9cf606cfc4c"
-    sha256 cellar: :any, x86_64_linux:  "1d976c9573bfa59053518c714f4957c74d2683632553da567ec14c7b7a82c406"
+    sha256 cellar: :any, arm64_golden_gate: "f8b5b81ea19c14be8b07652d2caf53fc6ed19af6452dd5cfe0cfb6b28d6efa41"
+    sha256 cellar: :any, arm64_tahoe:       "d7ac0c75d062e515c4c69e4c1e5db534435cf9b9f411f8b751033ab0ab03934a"
+    sha256 cellar: :any, arm64_sequoia:     "6875e9a84200a72fab2b77aa9fb57e633cf52880d38b09d6c4d89189007abfde"
+    sha256 cellar: :any, arm64_linux:       "044d1049fd202e6c400dff9931f34f0acfb5ec4817758c17fb76b434e707868f"
+    sha256 cellar: :any, x86_64_linux:      "e886fdd717e1c226d613c68f4c113893067bf859b03baabdc71b8f3de5006868"
   end
 
   depends_on "cmake" => :build
@@ -50,9 +49,9 @@ class Emscripten < Formula
   # https://chromium.googlesource.com/emscripten-releases/+/<commit>/DEPS
   # Then use the listed binaryen_revision for the revision below.
   resource "binaryen" do
-    url "https://github.com/WebAssembly/binaryen/archive/8d546dc4aea1c3e81e77643f1ed0dea1a649d21d.tar.gz"
-    version "8d546dc4aea1c3e81e77643f1ed0dea1a649d21d"
-    sha256 "9fa0ad6d20c08115c861e5cab55d68d6d5abac35cdce95af9e1cb695065e005d"
+    url "https://github.com/WebAssembly/binaryen/archive/21312a03e1d028a9d53f2cf855888a23b4b69862.tar.gz"
+    version "21312a03e1d028a9d53f2cf855888a23b4b69862"
+    sha256 "90e3d2271b1583fafc5f1b5e6aae7b56a993e09c6e879d6b7836004d30d48223"
 
     livecheck do
       url "https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"
@@ -76,9 +75,9 @@ class Emscripten < Formula
   # See binaryen resource above for instructions on how to update this.
   # Then use the listed llvm_project_revision for the tarball below.
   resource "llvm" do
-    url "https://github.com/llvm/llvm-project/archive/c0125a7bf833b6cf0d5b4a085b63094e0893c85a.tar.gz"
-    version "c0125a7bf833b6cf0d5b4a085b63094e0893c85a"
-    sha256 "8c5672c92cd4cf3c0d50a8301ca9066e129ccb9e891e33478fd2acec2484055a"
+    url "https://github.com/llvm/llvm-project/archive/a06d9165905ce89b5ffef2bbb84c886d60a9b8bf.tar.gz"
+    version "a06d9165905ce89b5ffef2bbb84c886d60a9b8bf"
+    sha256 "7ed6c0151868e4c4fbfab24a2fb6e733f4b318c5f69d25d78e66759b32a410f4"
 
     livecheck do
       url "https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"
@@ -160,7 +159,7 @@ class Emscripten < Formula
 
       # Remove unneeded tools. Taken from upstream `src/build.py`.
       unneeded = %w[
-        check cl cpp extef-mapping format func-mapping import-test offload-bundler refactor rename scan-deps
+        check cl cpp extef-mapping format func-mapping import-test offload-bundler refactor rename
       ].map { |suffix| "clang-#{suffix}" }
       unneeded += %w[lld-link ld.lld ld64.lld llvm-lib ld64.lld.darwinnew ld64.lld.darwinold]
       (libexec/"llvm/bin").glob("{#{unneeded.join(",")}}").map(&:unlink)
@@ -218,7 +217,7 @@ class Emscripten < Formula
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: which("python3.14") }
+    emscript_env = { PYTHON: python3 }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|

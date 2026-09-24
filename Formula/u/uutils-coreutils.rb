@@ -1,8 +1,8 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https://uutils.github.io/coreutils/"
-  url "https://github.com/uutils/coreutils/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "f8e68cd0e3629378f047544ead272161a83211c43f4985a9f52944e5db8f1a44"
+  url "https://github.com/uutils/coreutils/archive/refs/tags/0.12.0.tar.gz"
+  sha256 "4fb327655cb4ffcbf2f16550cf9234079ffe839692f7aa1a6eda104af684e122"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
@@ -12,16 +12,21 @@ class UutilsCoreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b179023f2b0571717c60305f800671c21f4e74fa6137d7a367bb1f389ae240a0"
-    sha256 cellar: :any, arm64_sequoia: "d97b9f9b9c47dd9c00f517b6e84395af965b76aadd55c432526ae4edb5296e7a"
-    sha256 cellar: :any, arm64_sonoma:  "8ba7bf5c12fd0dfc809639c249a563a4c1bf2f962afa145f24bfe68b3bbc65ae"
-    sha256 cellar: :any, sonoma:        "6796fb9dfa6fa236205f5968aaf75c4e98c122a2a0d7f53b1b915df34e406604"
-    sha256 cellar: :any, arm64_linux:   "7cb12e953326cd6ce08e74f6773f739c307f8727aa22c447f171018c2a93f83a"
-    sha256 cellar: :any, x86_64_linux:  "01d7e7b84828e70a70b39cd9387c516df5163fb5729565182f44c446d6b128fc"
+    sha256 cellar: :any, arm64_golden_gate: "c6dd3ee75ae24d92be1afaee6243d360e72f3d5282e35816cab707e0edeed825"
+    sha256 cellar: :any, arm64_tahoe:       "1d05013da1b606a9e411c5527f7145480a217cc6662e0d81f866d116b4e8aa3b"
+    sha256 cellar: :any, arm64_sequoia:     "351f88ec6c0251f40877e4a274e5f9643d6b922d6ad372adafc00fd03f99b621"
+    sha256 cellar: :any, arm64_linux:       "87a61889e18c16cacc15858cf7df59e299e77c324e0768d4ec2272f1b7e9fba1"
+    sha256 cellar: :any, x86_64_linux:      "38950d1ada2c3ace4236f32830bc65797a95d2eec8f544b50893ce5e0c32e13b"
   end
 
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     man1.mkpath

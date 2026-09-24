@@ -1,8 +1,8 @@
 class Groovy < Formula
   desc "Java-based scripting language"
   homepage "https://www.groovy-lang.org/"
-  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-5.1.1.zip"
-  sha256 "51a5a86c638abc618273f9f318ad2d906fcd4fecbdc1b9fa3c9f47c8c3cd753b"
+  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-6.0.0.zip"
+  sha256 "54ab1a877f01da2ed16ed43c1ed7a8d6c36b122714c6959712700e89e6efde7c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Groovy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f4ba2108f99146e62141d3f3d412442713357f3cd25b402fa4eabcefacdb7a3d"
+    sha256 cellar: :any_skip_relocation, all: "49ec0a3b2fcc9ec60c9dbcc3e001410cda0348bd9546a43f58a0911e1c595524"
   end
 
   depends_on "openjdk"
@@ -38,7 +38,7 @@ class Groovy < Formula
   end
 
   test do
-    output = shell_output("#{bin}/grape install org.activiti activiti-engine 5.16.4")
+    output = shell_output("#{bin}/grape install org.activiti activiti-engine 5.16.4 2>&1")
     assert_match "found org.activiti#activiti-engine;5.16.4", output
     assert_match "65536", pipe_output("#{bin}/groovysh", "println 64*1024\n:exit\n")
   end

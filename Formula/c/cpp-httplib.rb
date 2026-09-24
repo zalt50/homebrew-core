@@ -1,12 +1,12 @@
 class CppHttplib < Formula
   desc "C++ header-only HTTP/HTTPS server and client library"
   homepage "https://yhirose.github.io/cpp-httplib/"
-  url "https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.54.1.tar.gz"
-  sha256 "7310f5312e1423830d649b38ed028e9db86303a979ccbfdbd1c4b1574f422dfb"
+  url "https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.58.0.tar.gz"
+  sha256 "31932ce8b33f2905472a987dc1984b9d8a7d338083a066021349587cc5f1cfea"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "511b23f77202580816513e9ed2cb705313009815b054cf448189027549284aa1"
+    sha256 cellar: :any_skip_relocation, all: "27bb589505ca7c5b30fab6967c1bff2370f1adbe7033451bd74861a101c62fc2"
   end
 
   depends_on "cmake" => :build
@@ -24,6 +24,8 @@ class CppHttplib < Formula
       ~~~~~~~~~~~~~~~ ^ ~~
     EOS
   end
+
+  allow_network_access! :test
 
   def install
     # Set args for consistent dependencies used in generated CMake config

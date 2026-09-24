@@ -1,8 +1,8 @@
 class Expat < Formula
   desc "XML 1.0 parser"
   homepage "https://libexpat.github.io/"
-  url "https://github.com/libexpat/libexpat/releases/download/R_2_8_3/expat-2.8.3.tar.xz"
-  sha256 "f6256df90c906773d344da084402b7d3e4f22ed41b1a59c989098a83d3ea0c85"
+  url "https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.xz"
+  sha256 "1e727b8933ec51a77a9a9d9afcf8e688bce45d907c13e36ab7393fe36e703182"
   license "MIT"
   compatibility_version 1
 
@@ -15,12 +15,11 @@ class Expat < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2f1a40261e1149a65dde4918aa586f4df3a4315a0fdc05929990841ec77a927f"
-    sha256 cellar: :any, arm64_sequoia: "ddeabd217a8727921f6cfb4372b903c38b5002a2e96340e566c06f368db3533c"
-    sha256 cellar: :any, arm64_sonoma:  "969b76dd1d05766c8a08e82bd0b8b89e26845e51d296b62f535a7f9f79296c6a"
-    sha256 cellar: :any, sonoma:        "f3d074919307bdc8b8dd6b140a1cf90479256055b0beccfe4518cf18ae2c1031"
-    sha256 cellar: :any, arm64_linux:   "95a9ea74ea19a28f1dfe4bdb8dfd8aaffcf0b2db5e606a7ddef20b760e05c3b4"
-    sha256 cellar: :any, x86_64_linux:  "004e4183005330ce9ae561d556019bfd0a39a3b273cc591c46cbd52f694df400"
+    sha256 cellar: :any, arm64_golden_gate: "2f7a9adce701466bdeb42f23864df95ceef8e764b794c85c07df68ba9be56fc2"
+    sha256 cellar: :any, arm64_tahoe:       "f633df54726b7ead09ce36fc26965b3afb702a17a1d540c20962e7e5990353df"
+    sha256 cellar: :any, arm64_sequoia:     "3b753370ff9b266e2d342ec3d1d80ed6e1898be7dab45e1d4a0ab54664510f13"
+    sha256 cellar: :any, arm64_linux:       "c27c08daba1f44b1c2d616b08d10aa2808bd1e790b21ef03a633768cd06c7c02"
+    sha256 cellar: :any, x86_64_linux:      "3d09678bd4ef2f76d91a1381618285d8b581e38298810537260bd9110f2868b0"
   end
 
   head do
@@ -33,6 +32,8 @@ class Expat < Formula
   end
 
   keg_only :provided_by_macos
+
+  deny_network_access!
 
   def install
     if build.head?

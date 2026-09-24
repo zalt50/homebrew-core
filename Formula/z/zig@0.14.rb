@@ -34,7 +34,6 @@ class ZigAT014 < Formula
 
   on_macos do
     depends_on maximum_macos: [:sequoia, :build]
-    depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
     depends_on "zstd"
   end
 
@@ -47,6 +46,8 @@ class ZigAT014 < Formula
     file "Patches/zig/0.14.patch"
     type :unofficial
   end
+
+  deny_network_access!
 
   def install
     # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.

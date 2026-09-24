@@ -1,17 +1,16 @@
 class BeadsViewer < Formula
   desc "Terminal-based UI for the Beads issue tracker"
   homepage "https://github.com/Dicklesworthstone/beads_viewer"
-  url "https://github.com/Dicklesworthstone/beads_viewer/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "8b29a221fcbd1fba8a866d31dc96825947ae988012f7ab4ffbb7f4cae375adfb"
+  url "https://github.com/Dicklesworthstone/beads_viewer/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "0967ce29a23a0b949862578a3a706ee4a0065f0988e0bc02f08e6e4de1500b85"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7d0cbc2d5d37a44b3bf1f62cc751ea7de57ec321dc1052ca8ee0fe08275f421"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7d0cbc2d5d37a44b3bf1f62cc751ea7de57ec321dc1052ca8ee0fe08275f421"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7d0cbc2d5d37a44b3bf1f62cc751ea7de57ec321dc1052ca8ee0fe08275f421"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a1714d54c39047e0827464003e47e83154f99a659eb38ca64063f8b7f2cd792"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48a5af982527628b9641b898684b08bd7b60303184cacba61459cb3c29faa8fc"
-    sha256 cellar: :any,                 x86_64_linux:  "36f5e41849b1cdd011699e32d6a5ae93130b92b81130795710282b37dbb8bee9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "083f89ca6f2f2f8a41f441416b22050306523f46747826450927f394a8674b85"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "083f89ca6f2f2f8a41f441416b22050306523f46747826450927f394a8674b85"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "083f89ca6f2f2f8a41f441416b22050306523f46747826450927f394a8674b85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6b80f044df8155b9376ab69f073e4e329de771676a7f78fa56129c13d1e18f6b"
+    sha256 cellar: :any,                 x86_64_linux:      "4bd154194301e0cdebcaeca3b73f7887c8a688601e1ac9c42cbacf0340552f1c"
   end
 
   depends_on "go" => :build

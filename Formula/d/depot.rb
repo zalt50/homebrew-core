@@ -1,8 +1,8 @@
 class Depot < Formula
   desc "Build your Docker images in the cloud"
   homepage "https://depot.dev/"
-  url "https://github.com/depot/cli/archive/refs/tags/v2.102.7.tar.gz"
-  sha256 "9697ebe4cb50d7e25528ec54ea212a32a7a1da734fdb48a77c7c3a7ec92f3559"
+  url "https://github.com/depot/cli/archive/refs/tags/v2.102.13.tar.gz"
+  sha256 "bd1de42ccdd59047f34e39e3f88e2814859ddef1e95e3bb6766aed83ac6dd325"
   license "MIT"
   head "https://github.com/depot/cli.git", branch: "main"
 
@@ -14,12 +14,11 @@ class Depot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5404ab6cff2858fd8ddf8d543e228e0f8eb6bd8b169d1d5b1cc417c7910f036e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5404ab6cff2858fd8ddf8d543e228e0f8eb6bd8b169d1d5b1cc417c7910f036e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5404ab6cff2858fd8ddf8d543e228e0f8eb6bd8b169d1d5b1cc417c7910f036e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "148c27f0f20056f0eee66d1c1defc54a9190ced17a8dd36fc5ffd7bcd73eff7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbb4c9a1c1be83d2549be685a90180ad99b423586573e05ff3e378390c233ebf"
-    sha256 cellar: :any,                 x86_64_linux:  "8c61cb4e8cde3d5dc02f1932dc90fff4eba8a6c72a4869fb90d27d80232cf2bc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2ad6abc6ea19a626fb9d8f20386c7c41f247f8fdbc16ea4cba75fab9d4ccab5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2ad6abc6ea19a626fb9d8f20386c7c41f247f8fdbc16ea4cba75fab9d4ccab5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ad6abc6ea19a626fb9d8f20386c7c41f247f8fdbc16ea4cba75fab9d4ccab5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2bc65d6e2ae6d6922294a921193f3f9b2befafa14b459a50831be4628e7f4d31"
+    sha256 cellar: :any,                 x86_64_linux:      "4353f5992b5d529c2f6f70d4f4adac80199188b0fae10d7b455f0650af751743"
   end
 
   depends_on "go" => :build
@@ -30,6 +29,12 @@ class Depot < Formula
     sha256 "bffa3eaea34bebeeb3c27fb9ed326137b8824a1ded170eeeb2cdd91c30dd48ac"
     type :unofficial
     resolves "https://github.com/depot/cli/pull/570"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https://kuma.io/"
-  url "https://github.com/kumahq/kuma/archive/refs/tags/v2.14.3.tar.gz"
-  sha256 "289b85e3175b161b5d99b52eb5ae958a17370e8f282fcbfb6f1deccc44d324e9"
+  url "https://github.com/kumahq/kuma/archive/refs/tags/v2.14.5.tar.gz"
+  sha256 "56cdecc20c8c95b53c37656c2bd19dbd807f98fb995360ee271b0bdecd8f2aef"
   license "Apache-2.0"
   head "https://github.com/kumahq/kuma.git", branch: "master"
 
@@ -12,15 +12,20 @@ class Kumactl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6987e7fccbff3c3c4d0f9bfeda04d09370c22875691548b297d2eb34c0e6db25"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d169832491b14450a64aefae444bd71186855adbb658052f199c1f5685535cbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00f8e1c852e5b4ff9537bff304742ff20c862416183ad80287cec90c03a6ce92"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5dcc66fb8c4d1b6e4edc3c365da91a60032db41b2f3a46c9b9810ab17034e214"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "275a70d676b3b7e443cb86b7507b8541f9b31f0a3d4fa7a5b0e5c40bb1fe75a1"
-    sha256 cellar: :any,                 x86_64_linux:  "26ae945656d9e88a00a4641bc2316600b14f3999681613efe0ea4461981202e6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "94df930427857df2e9af883ad8601c8121d055926b44224b8c5b84f665f2d683"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47672a3a38e789b76d59d5a852940b52ca9d8987615e3a98c34deb60929cc68a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "82d5f3438bf255c12d2bd26962d22348465993ebd32077355a80c88654b9379e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "688bdda9672f96d2ace62ac4e85175de1cf8162e9fb0283d7479d82565915fd8"
+    sha256 cellar: :any,                 x86_64_linux:      "5b907d1909f66ebccb05cb90328c043ba57e9ff8441e3a93fbc7a45568cf975e"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

@@ -7,8 +7,8 @@ class CoreLightning < Formula
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
   stable do
-    url "https://github.com/ElementsProject/lightning/releases/download/v26.06.6/clightning-v26.06.6.zip"
-    sha256 "71911fcc35e4ab246ebc7d4531cacf2bc3816069d96798dc8f7a73b403207ced"
+    url "https://github.com/ElementsProject/lightning/releases/download/v26.06.8/clightning-v26.06.8.zip"
+    sha256 "2809c4f6aba5e928317d9857fbff5b29232b5e799ed74e1150872a9bf11de025"
 
     patch do
       url "https://github.com/ElementsProject/lightning/commit/d384750883216e7e19e01779d06bc36295380296.patch?full_index=1"
@@ -18,19 +18,32 @@ class CoreLightning < Formula
     end
   end
 
+  # Upstream releases may have an embargo period between when the release is
+  # published and the source zip is provided, so we have to check multiple
+  # releases to identify the newest one providing a source archive.
   livecheck do
     url :stable
-    regex(/^v(\d+(?:\.\d+)+)$/i)
-    strategy :github_latest
+    regex(%r{/v?(\d+(?:\.\d+)+)/clightning[._-]v?\d+(?:\.\d+)+\.zip}i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        next if release["draft"] || release["prerelease"]
+
+        release["assets"]&.map do |asset|
+          match = asset["browser_download_url"]&.match(regex)
+          next if match.blank?
+
+          match[1]
+        end
+      end.flatten
+    end
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d22919fbf39f56ed10f3e7e0b2bd9875d50cf0478486990a75f795fdfe352565"
-    sha256 arm64_sequoia: "ba5aef17070679e1452d9db51e5a3bd56d5844f787728d6c4529a7be9ceaafb7"
-    sha256 arm64_sonoma:  "32c7d03ba66c1b65e396a3e6e9f6198724f1f9638e6d49921eed3e5b5cc46efc"
-    sha256 sonoma:        "9983aa3cefd7ce398b2beb08b2651e4a81941450d5dc85776852540632fd3d37"
-    sha256 arm64_linux:   "4121c6bf7c338823ad087c9d3020c756449c0d122643bcbc011e9f16f38adaed"
-    sha256 x86_64_linux:  "b3b09fffa069e086ca8e22196631c2281d600c168b6b12935767a6aa2fb6dcf3"
+    sha256 arm64_golden_gate: "d5d2e5fec81d9a5aa0781f6b121547962ba08ec27b0faecc7cf0bd61de61c0ad"
+    sha256 arm64_tahoe:       "0d54031e4ee5e081043555988366afbe47527d3f91fe3c22b29f35e73cf1504e"
+    sha256 arm64_sequoia:     "93ac5a2cdca57000ed6b43258fcb6eb98f3d3c82c7d3dd036a4e5959f405cd38"
+    sha256 arm64_linux:       "83674e03c464f958b75883e733e84fd800fba443a6a32cc159655e150939f58a"
+    sha256 x86_64_linux:      "2ee98b36949b39639037f1428e0983ec7b8695ea78621103db536f0b5b580e6a"
   end
 
   depends_on "autoconf" => :build
@@ -62,8 +75,8 @@ class CoreLightning < Formula
                 extra_packages: ["mako", "setuptools"]
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/00/62/791b31e69ae182791ec67f04850f2f062716bbd205483d63a215f3e062d3/mako-1.3.12.tar.gz"
-    sha256 "9f778e93289bd410bb35daadeb4fc66d95a746f0b75777b942088b7fd7af550a"
+    url "https://files.pythonhosted.org/packages/2a/12/b5fa2353e2754cd67fb9f83793fa48ff42c213a5da7e719869d2301f6ab8/mako-1.4.1.tar.gz"
+    sha256 "d7904710b662996425a21627710c4777c45053146942cf8a7aebf757c92b8c27"
   end
 
   resource "markupsafe" do
@@ -72,15 +85,15 @@ class CoreLightning < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.14")
+    venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin" if OS.mac?
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

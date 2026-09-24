@@ -1,20 +1,25 @@
 class Jscpd < Formula
   desc "Copy/paste detector for programming source code"
   homepage "https://jscpd.dev/"
-  url "https://github.com/kucherenko/jscpd/archive/refs/tags/v5.0.16.tar.gz"
-  sha256 "4421519c60876b203643a80f70d9e36a202a1437fc5687ba8f80ba1f26de165b"
+  url "https://github.com/kucherenko/jscpd/archive/refs/tags/v5.3.2.tar.gz"
+  sha256 "8025dce319a520a8e48906fbbdb8377f297d1fffd9542d27141edf10741d90b3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df69112194fefc65f7f8d7de4b1288be787bc535c164e3735111c8b0b58130fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54b0e899d69cca92e212dc75eafce96b5266726b1495ccee92bcce9838a6c30d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6758cc801776d5d94fd41329e25b8530ef92049e86a0e8ed7790200626207762"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68b57bd71115065fe01b917a5f3c30988d9ccf540d01e1f5efe0870da2c754e4"
-    sha256 cellar: :any,                 arm64_linux:   "e32d1bfd34e4d5273a866c4185036edc5efa0cdc378fb34a354561adefc8b075"
-    sha256 cellar: :any,                 x86_64_linux:  "ead52b7696b408ffe696164de7cfecea14aa07632524ba973325a6b7b95e9114"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "af488f4e0b1f5775e3d72b2f4d61c0f0423d36dd32ce86efae76e3e59971d28b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "016e22c18dd31444e93fad0d5a352e7c5cc0a036175da50d35fa9dc41230fad0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "db07cb28622bb8e7caf9524bea64bdf4737192360632b2ac5095c1a11eebbca2"
+    sha256 cellar: :any,                 arm64_linux:       "463696742f82dbdf1099bb44e362a046f72ebf9d7d273dfab160454153b1c4f1"
+    sha256 cellar: :any,                 x86_64_linux:      "c53c940719a0f7a61b7cb39ef0d2f3fb3236148763294294bc5c7ef3eb4fc997"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "rust/Cargo.toml"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "rust/crates/cpd")

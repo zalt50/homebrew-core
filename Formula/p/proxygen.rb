@@ -1,8 +1,8 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://github.com/facebook/proxygen/releases/download/v2026.07.27.00/proxygen-v2026.07.27.00.tar.gz"
-  sha256 "f9293844b00001549dcba2c10d453ccc2af268a45b52a31c622b543ee0cfe7e9"
+  url "https://github.com/facebook/proxygen/releases/download/v2026.09.21.00/proxygen-v2026.09.21.00.tar.gz"
+  sha256 "7144f76b1a47424d82a432b55522f7391f7fc3b5d46214238b1bc3ba4d529476"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Proxygen < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "969cc065653958e34e6e69e774e5bac9462958bb02d7b33b2f964aa8a2b0ebda"
-    sha256 cellar: :any, arm64_sequoia: "7bbcd2f81d69dea5c5563b36b933faf36398255e7f439f01a1ff95b11d374bf0"
-    sha256 cellar: :any, arm64_sonoma:  "5d52bf0644406a742adefe8aed3d6c00f4b308e6e264c639d05ac8346592305f"
-    sha256 cellar: :any, sonoma:        "6a117d96fb0b944cb5f99a6b43c7d5d9727d33b232cfbb6dd6cc07c749e6a81d"
-    sha256 cellar: :any, arm64_linux:   "69679b7f048fe80b8884d3385a6ac5729c9bc68aa87f6c6efdfec22e844e3db0"
-    sha256 cellar: :any, x86_64_linux:  "02bc3fd314ae4743c21a57c05070b50d26e482b51df93c0346b0793d0e2eb9fd"
+    sha256 cellar: :any, arm64_golden_gate: "7f524b8f0ce18e7cf00a0d4f480c5cae2e969e92c8c7776198ecd75a1351d681"
+    sha256 cellar: :any, arm64_tahoe:       "4b1177dae5a1a001ffa564def269f2f062f44ba3b461caaeb88415e6b332b020"
+    sha256 cellar: :any, arm64_sequoia:     "a8044c2ef145cd65505518b95e11a8d70c3b36c3a74f31ecd3bca91b79f8b761"
+    sha256 cellar: :any, arm64_linux:       "1611b300100c53e3072ab6b40479a1687074c360a4fda2d42b07d56660f6d484"
+    sha256 cellar: :any, x86_64_linux:      "eef748c0d9500ec32d1b1ea63ff11ce69415cfedee942bb4e915ee8330e38033"
   end
 
   depends_on "boost" => :build
@@ -42,6 +41,8 @@ class Proxygen < Formula
 
   conflicts_with "hq", because: "both install `hq` binaries"
 
+  allow_network_access! :test
+
   def install
     # FIXME: shared libraries are currently broken
     # Issue ref: https://github.com/facebook/proxygen/issues/599
@@ -62,7 +63,6 @@ class Proxygen < Formula
     port = free_port
     pid = spawn(bin/"proxygen_echo", "--http_port", port.to_s)
     sleep 30
-    sleep 30 if OS.mac? && Hardware::CPU.intel?
     system "curl", "-v", "http://localhost:#{port}"
   ensure
     Process.kill "TERM", pid

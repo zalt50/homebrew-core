@@ -19,12 +19,13 @@ class Subversion < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "9533cee4407ac04b7490f359f4270eba5d6b93e97f98342a51a4e9dcca5fe48c"
-    sha256 arm64_sequoia: "fd07a1c28bb13c19c7573ab2135e9f21be955939254f5b0da6ee533532b136fa"
-    sha256 arm64_sonoma:  "a823a4f2a62c5f4c09bb47d210be76e6e38dd13a27a62e13e7f6f73e793e4ca5"
-    sha256 sonoma:        "33a262adddf6363b241ca6f0f8d737df49d5747a2e3237e9e928e916a19e4121"
-    sha256 arm64_linux:   "8002da7e341966edb214286526abf10bfe45c184fd7b4228220ce60980476b19"
-    sha256 x86_64_linux:  "2b44fafc593cd1c5d7400f99ea8acfee639e3506a9442538cd361a21c6c84fb4"
+    sha256 arm64_golden_gate: "cc5d59e5a07cde988c12742c6aa97f595dc45742bc0467babd55ef427d8cc62a"
+    sha256 arm64_tahoe:       "9533cee4407ac04b7490f359f4270eba5d6b93e97f98342a51a4e9dcca5fe48c"
+    sha256 arm64_sequoia:     "fd07a1c28bb13c19c7573ab2135e9f21be955939254f5b0da6ee533532b136fa"
+    sha256 arm64_sonoma:      "a823a4f2a62c5f4c09bb47d210be76e6e38dd13a27a62e13e7f6f73e793e4ca5"
+    sha256 sonoma:            "33a262adddf6363b241ca6f0f8d737df49d5747a2e3237e9e928e916a19e4121"
+    sha256 arm64_linux:       "8002da7e341966edb214286526abf10bfe45c184fd7b4228220ce60980476b19"
+    sha256 x86_64_linux:      "2b44fafc593cd1c5d7400f99ea8acfee639e3506a9442538cd361a21c6c84fb4"
   end
 
   head do
@@ -65,10 +66,6 @@ class Subversion < Formula
     sha256 "abc745079ef906148817f4472c3fb4bc41d62a9ea51a746b53e09819494ac006"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     py3c_prefix = buildpath/"py3c"
     resource("py3c").stage(py3c_prefix)
@@ -96,7 +93,7 @@ class Subversion < Formula
       --with-serf=#{formula_opt_prefix("apache-serf")}
       --with-sqlite=#{sqlite}
       --with-swig-perl=#{perl}
-      --with-swig-python=#{which(python3)}
+      --with-swig-python=#{python3}
       --with-swig-ruby=#{ruby}
       --with-zlib=#{zlib}
       --without-apache-libexecdir

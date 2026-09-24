@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.9.0.tar.gz"
-  sha256 "58d86e921cbe25aa4e913ae3a24ff95c3ab7aad46fe0cc5f0c8d9b4bd38a8929"
+  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.12.1.tar.gz"
+  sha256 "12beb81a0405c049920148d58747cdc5d406a68825eb955a95ad9bc989bd38bc"
   license "GPL-3.0-or-later"
   head "https://github.com/topgrade-rs/topgrade.git", branch: "main"
 
@@ -14,15 +14,20 @@ class Topgrade < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "394d3ed4b2da40a96e908b9c35a2ad172a2c25f0c5bdeeabb15d86fa0f18d1bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38d70601ebf9f4f952d58c4f205529ffe336e9fd4c35140d376089d752ece67e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dd1f339a90883bd19a5cfb42bec88090219833925900f0bb6097baa52039bcd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cf2e71fa45c6450cb1aaf66333f6d32b788806fb103a00a124c9ecdbb0f9bf5"
-    sha256 cellar: :any,                 arm64_linux:   "65ba3dc848e6c5a7ddd8fcb8c605080788466eb855d4a85fd0601f9dc87680ad"
-    sha256 cellar: :any,                 x86_64_linux:  "779a44f790059a177b6ce8f4c95ca21be3905d912bfd9699ef9821f1c04fd402"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a16849e663b5b51368c09691006d24347bce0ac2562f05ee436d0a1753c78354"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bca40d75eb42c6f809456f22bc3380ffb38eafc02d1c601813acb8f37d6be5b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1f7d44f1fbe77ab1092c396ad8994e0b45ea7b16e0966f24c42d72788fae1a27"
+    sha256 cellar: :any,                 arm64_linux:       "a29ba839153bb1f8faabfca2ac19bb0b195ba0a7ab9d5102b92ef887334b2ca5"
+    sha256 cellar: :any,                 x86_64_linux:      "813e594269e821d7da36ce2a28dc7e256ae2c993dde1a97c2c466b6f2b3f305f"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

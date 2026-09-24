@@ -1,22 +1,19 @@
 class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
   homepage "https://www.gnu.org/software/coreutils/"
-  url "https://ftpmirror.gnu.org/gnu/coreutils/coreutils-9.11.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/coreutils/coreutils-9.11.tar.xz"
-  sha256 "394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3"
+  url "https://ftpmirror.gnu.org/coreutils/coreutils-9.12.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/coreutils/coreutils-9.12.tar.xz"
+  sha256 "a480198559733e9b3da999e90543ac6f888a2caa544d8d664c5a1f17e528e210"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "1d83338bdaa5e88791ee93827c7c3300e53ebec1f49a7457ea2423c738640f09"
-    sha256 arm64_sequoia: "ca348f4f13dd894e18d144376c089f284ceaa6057ddb3ef619c21854ffe676dd"
-    sha256 arm64_sonoma:  "2e43c4567c18397e01cbc420b9b3517f1e7413eb06a6f8035e2b9e66d533483e"
-    sha256 tahoe:         "977efb0a453a9925357946303a3c65082ebc0730f909fbda4a1cda8fcbbc8ba5"
-    sha256 sequoia:       "dc73c410c602bd1a311d70d3ba5a196d768ff0c89c64dd9db0635b8df52249f2"
-    sha256 sonoma:        "db6408fe1fba42dd98d6bfa1743c3428eacaf86ff8908dc10364c64b2c192490"
-    sha256 arm64_linux:   "687d582969ecd08dcaf9c495aa68322125f3c43492917af8c2f1537afae2a2e1"
-    sha256 x86_64_linux:  "a8b81719a9e729f94c5396e88a943d7cec9ccc5c9abf926e6ff7860948e25aee"
+    sha256 arm64_golden_gate: "47f3076c16c02a734c142e52d16646bb76961353e7f9dc621b6e45215d916cb3"
+    sha256 arm64_tahoe:       "df8e4e3dfb6ee737404df9e8dc78bb54d5eeb3c767241fca617fa5196c5747e2"
+    sha256 arm64_sequoia:     "208a94fb7d6c2ebfb412fc127a6699d8ccb37e8492a940b843d1046db6a1e755"
+    sha256 arm64_linux:       "d379b254313c151324d2220ef1009f5e7572eb7e39fac15ba9cc0a8b3e877687"
+    sha256 x86_64_linux:      "2694642f5877654a15ef2277bdf7197b578368f9d505d45690a9dc06aec27616"
   end
 
   head do
@@ -26,11 +23,11 @@ class Coreutils < Formula
     depends_on "automake" => :build
     depends_on "bison" => :build
     depends_on "gettext" => :build
-    depends_on "texinfo" => :build
     depends_on "wget" => :build
     depends_on "xz" => :build
   end
 
+  depends_on "texinfo" => :build
   depends_on "gmp"
   uses_from_macos "gperf" => :build
 
@@ -50,6 +47,17 @@ class Coreutils < Formula
   # https://github.com/Homebrew/homebrew-core/pull/36494
   def breaks_macos_users
     %w[dir dircolors vdir]
+  end
+
+  # GNU coreutils-9.12 added quoting to 'env' and 'printenv'. This has caused
+  # some unforeseen issues in some invocations. Use a patch from upstream which
+  # only quotes when standard output is not a terminal. See the following
+  # mailing list discussion:
+  # https://lists.gnu.org/archive/html/coreutils/2026-09/msg00061.html
+  patch do
+    url "https://github.com/coreutils/coreutils/commit/782a1e5bc2090212273bb731dceee2cc2a071e54.patch?full_index=1"
+    sha256 "d93cf338341d9418522a637e3c99c4211a25a967d0cffd2f036fd18871f15e35"
+    type :backport
   end
 
   deny_network_access!

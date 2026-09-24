@@ -15,6 +15,8 @@ class OpenclClhppHeaders < Formula
   depends_on "cmake" => :build
   depends_on "opencl-headers"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_DOCS=OFF",
@@ -28,6 +30,6 @@ class OpenclClhppHeaders < Formula
     (testpath/"test.cpp").write <<~CPP
       #include <CL/opencl.hpp>
     CPP
-    system ENV.cxx, "-std=c++11", "test.cpp", "-c", "-I#{include}", "-I#{Formula["opencl-headers"].include}"
+    system ENV.cxx, "-std=c++11", "test.cpp", "-c", "-I#{include}", "-I#{formula_opt_include("opencl-headers")}"
   end
 end

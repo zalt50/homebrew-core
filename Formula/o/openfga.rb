@@ -1,18 +1,17 @@
 class Openfga < Formula
   desc "High performance and flexible authorization/permission engine"
   homepage "https://openfga.dev/"
-  url "https://github.com/openfga/openfga/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "e41ce78e0864acb46862d573e1eef7f12dcf707f9155c17169fa0765a5f69997"
+  url "https://github.com/openfga/openfga/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "0438e84a0d29eb902d50d959213e619f4040c0b59697bb2a2d108386744d67f9"
   license "Apache-2.0"
   head "https://github.com/openfga/openfga.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "530e14d0b75e4ea53af5a7c6d6a80a8a2b4d930a4b218b962e8b5285f317fda9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e963715539e407310db1e0ed982811f3247700bb97425c195d390756e5457f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddd5aa7a681b41d37f95f00a433517f8994cf619f351c0e12c2c6f1fa9ab671a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35e5e63c567ca5b0cfb1bc79faf0da121f070dcde54ae7571c1e3d766bf84aea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e0f47d74c8a9578da90562a435120e37b9a57b9408686f4bba8ec82eea333ba"
-    sha256 cellar: :any,                 x86_64_linux:  "05a824f93e362650dc5c3ae0e4e947e4bfcf06ce4580c869622228bf621f743f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85f82f089f9734cc1e1e5063f6d2788048a56959b8b2de6e77e2fe5a67850aa5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eda1d710832c56bcb724d70a16e6edd9aa3a5441142b815925343e593484daaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bf860b22ee3547fed27dfa1966f4df1d625c36305af3201567926ed087680889"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0bf8ae9433f9178792c52012ab678b6429f2f9c8c0f4c713cc3dee1e4d05462c"
+    sha256 cellar: :any,                 x86_64_linux:      "2c82fd43e7c37bdd5efe2327113a2ee09118ea52e2b5e5c8e1876ab8fb571989"
   end
 
   depends_on "go" => :build

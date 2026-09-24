@@ -1,8 +1,8 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://github.com/microsoft/garnet/archive/refs/tags/v2.1.5.tar.gz"
-  sha256 "b5108754d0c5d4ba48409b662c3cb8958d5a276eb93a51b6635a8828529c0153"
+  url "https://github.com/microsoft/garnet/archive/refs/tags/v2.1.8.tar.gz"
+  sha256 "cc04e913db2d962cea6bf5c1f8ab22a916db3e423ddc6440efcb83a5a39e8df4"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,11 @@ class Garnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "feae010a83a886539e9fcb5b14ab38c99d76010385e680c410b160e5f386ed81"
-    sha256 cellar: :any, arm64_sequoia: "d3b3888b993d0b362c995ebe1b2568e5f0ee4bc08638b47684216776e4b4b2d8"
-    sha256 cellar: :any, arm64_sonoma:  "d15d6a797101ede51dcd1b24cabaaffc491314d3ce9a091f6a11b32e851cbe2a"
-    sha256 cellar: :any, sonoma:        "d2f25273a5f7134b46bfed905a8ec262d430218472b08a6568d4e6e9f9effd98"
-    sha256 cellar: :any, arm64_linux:   "fa98ab6a7e0fad6bbff461cca2773f1c7dfa353b123a0948debe1fec71d85517"
-    sha256 cellar: :any, x86_64_linux:  "66152302e73a49625e7793dccc69f17f158750fcf9ac59f24482875d96151eb6"
+    sha256 cellar: :any, arm64_golden_gate: "37deb0ba8af2076a33b9bb1a78e85a62cd735572bdee7e0ca611a2bb80ea41d4"
+    sha256 cellar: :any, arm64_tahoe:       "a79868e82497e92177bac8e14f39534b47e10190c5c98264ba1e405a1bd884fe"
+    sha256 cellar: :any, arm64_sequoia:     "d7b5435360e2ed70d6e7a6296ee5303c28f9661945247d6c9a1106ec4d860e11"
+    sha256 cellar: :any, arm64_linux:       "3677980e75f781137d35d31b3b91dc3c19ed267b0440cb64accd87c5fd2eab88"
+    sha256 cellar: :any, x86_64_linux:      "b2f13996a9afb59145a869458787aa904bb9c1d0159eead1e183dd6697c62ad6"
   end
 
   depends_on "rust" => :build
@@ -78,6 +77,9 @@ class Garnet < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     port = free_port
     fork do
       exec bin/"GarnetServer", "--port", port.to_s

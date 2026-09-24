@@ -12,10 +12,11 @@ class Acl2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "78143826f951f09570c6322c57a1e050ecab473f06669a29ee454079575a09c2"
-    sha256 arm64_sequoia: "5d6cb354d886b5485c15ee1f846ea047854fbfe92791382f209c8db812fe906a"
-    sha256 arm64_sonoma:  "6415333e59af5e96233aea4ecb4c83192353acae63902ae93d2bb65991dc1272"
-    sha256 x86_64_linux:  "75dcfc87206f0977870b59e285aae2d96a5d52d0cba2c0b525fb70874d3ce72b"
+    sha256 arm64_golden_gate: "876c1191c764794eaa49092618fe04f6aa37c2be7893240da7d389bd095c1a11"
+    sha256 arm64_tahoe:       "78143826f951f09570c6322c57a1e050ecab473f06669a29ee454079575a09c2"
+    sha256 arm64_sequoia:     "5d6cb354d886b5485c15ee1f846ea047854fbfe92791382f209c8db812fe906a"
+    sha256 arm64_sonoma:      "6415333e59af5e96233aea4ecb4c83192353acae63902ae93d2bb65991dc1272"
+    sha256 x86_64_linux:      "75dcfc87206f0977870b59e285aae2d96a5d52d0cba2c0b525fb70874d3ce72b"
   end
 
   depends_on "sbcl"
@@ -24,6 +25,8 @@ class Acl2 < Formula
     # ACL2 rejects a Lisp that doesn't error on floating-point overflow
     depends_on arch: :x86_64
   end
+
+  deny_network_access!
 
   def install
     # Remove prebuilt binaries
@@ -44,8 +47,7 @@ class Acl2 < Formula
   end
 
   test do
-    (testpath/"simple.lisp").write "(+ 2 2)"
-    output = shell_output("#{bin}/acl2 < #{testpath}/simple.lisp | grep 'ACL2 !>'")
-    assert_equal "ACL2 !>4\nACL2 !>Bye.", output.strip
+    output = pipe_output(bin/"acl2", "(+ 2 2)", 0)
+    assert_match "ACL2 !>4\nACL2 !>Bye.", output.strip
   end
 end

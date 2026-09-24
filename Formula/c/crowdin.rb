@@ -1,8 +1,8 @@
 class Crowdin < Formula
   desc "Command-line tool that allows to manage your resources with crowdin.com"
   homepage "https://support.crowdin.com/cli-tool/"
-  url "https://github.com/crowdin/crowdin-cli/archive/refs/tags/5.0.0.tar.gz"
-  sha256 "e7489414d2da9fdb4b0aab6b90479c5cea672fbf515221e9fc24124feef3dedc"
+  url "https://github.com/crowdin/crowdin-cli/archive/refs/tags/5.2.0.tar.gz"
+  sha256 "fdb34c9394b589395a8c7b760640301ab30129d34c1b874f30060614ec490a66"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,11 @@ class Crowdin < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "b7a4fae2d5118110a182e319e270759b93ae860a5d46405a672d81467d118652"
-    sha256 arm64_sequoia: "4f52f1c6e54310dbdf796f5d5b6cedb42516ab2e29dec31b2ed9c399fffa4ca7"
-    sha256 arm64_sonoma:  "8588d1a064fc6133ad01cd82c70cf57fa04abe82f26038a085173713decfd94c"
-    sha256 arm64_linux:   "eecd405fe13ab4e0796adecdfd778ac0fa79dbfb0af94627ef00554c73c39d00"
-    sha256 x86_64_linux:  "e571718c5554642c6e95f8fa6a8b14ff8b80e8841815dc7494ebf13bacf219bb"
+    sha256 arm64_golden_gate: "44edd783c49cb8a7d07d668a45d3494c8d6191dd0dc409beca6bf1bc0d5dae72"
+    sha256 arm64_tahoe:       "36f7fe195bdbc3d4b5691c9895934e7f6f0132a11e4e83479ee1bcb0e3a94348"
+    sha256 arm64_sequoia:     "bc1b1869104f315a27befb890ef264d41587ea28f36326624296aa9bf3e6c1b1"
+    sha256 arm64_linux:       "42932b65e5ab0911cdf09eab805f634b80559c80bf79cfe7c63f00b6361e198c"
+    sha256 x86_64_linux:      "5be7c4fe1efcd4d17c47e2e712b85dade45aaf6f3d494097e3cc55a8a55c2621"
   end
 
   depends_on "bun" => :build
@@ -24,6 +23,8 @@ class Crowdin < Formula
   on_linux do
     depends_on "icu4c@78"
   end
+
+  deny_network_access! :test
 
   def install
     if OS.linux?
@@ -40,6 +41,10 @@ class Crowdin < Formula
   end
 
   test do
+    (testpath/"locale/en.json").write <<~JSON
+      {"greeting": "Hello"}
+    JSON
+
     (testpath/"crowdin.yml").write <<~YAML
       "project_id": "12"
       "api_token": "54e01--your-personal-token--2724a"
@@ -50,13 +55,18 @@ class Crowdin < Formula
 
       "files": [
         {
-          "source" : "/t1/**/*",
+          "source" : "/locale/*.json",
           "translation" : "/%two_letters_code%/%original_file_name%"
         }
       ]
     YAML
 
-    assert "Failed to collect project info",
-      shell_output("#{bin}/crowdin upload sources --config #{testpath}/crowdin.yml 2>&1", 102)
+    assert_match "Your configuration file looks good",
+      shell_output("#{bin}/crowdin config lint --config #{testpath}/crowdin.yml")
+
+    rm testpath/"locale/en.json"
+
+    assert_match "No source files found for '/locale/*.json' pattern",
+      shell_output("#{bin}/crowdin config lint --config #{testpath}/crowdin.yml 2>&1", 2)
   end
 end

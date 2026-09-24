@@ -1,20 +1,18 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2026.07.27.00.tar.gz"
-  sha256 "c7d827b1e85b92794a8b85461cfe08b9bea789a47b2cc850716d3f0eae3c38e7"
+  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2026.09.21.00.tar.gz"
+  sha256 "d3d2539e444f06259273868a26e510a185a1ece836912a385684301ce26a9538"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a5ea604f11999017a07ce77020295af75a0f2a80a7fce66ec5f34d1f334727b8"
-    sha256 cellar: :any, arm64_sequoia: "d47592849312631ae9ace0fc101005b1d69af602252a9b5877bd4e5e1045b3ad"
-    sha256 cellar: :any, arm64_sonoma:  "bf4be46f498cbeee841b04ddce9d4af08d755f65d31e4b07c3e681acdc9227cf"
-    sha256 cellar: :any, sonoma:        "e5f073751dc2aa6c70a6852af04715efa5ba77d690e89da5dd31dfc1de5a572e"
-    sha256 cellar: :any, arm64_linux:   "b4de5fe15842aecf50e968bca15236ef814701dcb5d2ab2a4239ef136b9c534a"
-    sha256 cellar: :any, x86_64_linux:  "d36a2f55d5b4fe32d3ec46b7938f659823bed0e6a2df1a41a1aed923996c287d"
+    sha256 cellar: :any, arm64_golden_gate: "64340bbb91c995efa963d066a380a140de904f98d13a0af1049a30a23ed0bb49"
+    sha256 cellar: :any, arm64_tahoe:       "d846f9b9f3f5b16bab79975a057daa5e65f3904e4320742ac83d880f58fe8964"
+    sha256 cellar: :any, arm64_sequoia:     "389e2bb1bcb42e178d37dd9d5406a2e19eac6a39aa2bdad65bce422b1422301f"
+    sha256 cellar: :any, arm64_linux:       "f8289c8e8481c044c0497369822d91dee989a37b9ea481271d1a2124ff56f9b1"
+    sha256 cellar: :any, x86_64_linux:      "8223e21fa962b22d0b3fcea6fe111489c02e5c010ea68a3d188c9271f3d51324"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+

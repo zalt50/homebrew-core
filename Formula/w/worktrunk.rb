@@ -1,24 +1,29 @@
 class Worktrunk < Formula
   desc "CLI for Git worktree management, designed for parallel AI agent workflows"
   homepage "https://worktrunk.dev"
-  url "https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.75.0.tar.gz"
-  sha256 "e8507f20e0395035532184962c73c1e7e528a11150ba3a99f6d0725e9b066e90"
+  url "https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.79.0.tar.gz"
+  sha256 "598ac74bd4af6640971720ea38a04537f0bc30e4cfd35cf5848e7604d9696558"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/max-sixty/worktrunk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa4949ce376e70bc59c133a92120193b512104c59ef4a4541f175d4ae059be79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfda53b6a0aa46d57882ae14f06d7b89f6fb3fd0c74c2605f49b02648bad7e5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5248668238bd5c8a640498ead05a4a895ae8f6bddb3190c7c7e686bbc136e176"
-    sha256 cellar: :any_skip_relocation, sonoma:        "725609d394af7314751a74030206e9b5e54ebfd48e3f5ac8aca7f6bd412ce26d"
-    sha256 cellar: :any,                 arm64_linux:   "1c442d8bef02403c52570e7ee4f266574992d103d7be00adacd11df3a0a82b3d"
-    sha256 cellar: :any,                 x86_64_linux:  "516fca3e9e40b6231e60ddbf2b6174c19009637452c6e2cb26c5e30f258649a3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c1b15465f6368610dd0d916ef5c5db5790352e47f2620f4634b4c21d61e7fa00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3292444f76010e2d62655225fef99c0e0fe33c08a411a0fdad0b42ee5a495c66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4b27b60ab099992f256745050e3f45c70d9e20b66ad3cf1560d36f02d45982f8"
+    sha256 cellar: :any,                 arm64_linux:       "e26b93b1f92b7e7bd708a21cca224946825330b3e964b19c16eccb1a4554af9f"
+    sha256 cellar: :any,                 x86_64_linux:      "5c2d6041ae72c29dfbb5077318974a24e5264c65963c6c37eccb411f4c338093"
   end
 
   depends_on "rust" => :build
   depends_on "git" => :test # Needs git 2.43+
 
   conflicts_with "wiredtiger", because: "both install `wt` binaries"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["VERGEN_GIT_DESCRIBE"] = "v#{version}"

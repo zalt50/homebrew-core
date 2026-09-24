@@ -1,13 +1,12 @@
 class FfmpegFull < Formula
   desc "Play, record, convert, and stream many audio and video codecs"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-9.0.1.tar.xz"
-  sha256 "cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635"
+  url "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz"
+  sha256 "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   # Passing `--enable-version3` changes the license to GPL v3+.
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -15,12 +14,11 @@ class FfmpegFull < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4e281c5770f8fb5d8354ac82eec967155b95f70a49de85f2c6f63ff8b934ac7d"
-    sha256 arm64_sequoia: "84785c5d016434fdc036a7dea309e0cfef872de4bd7e86e428aa36b3cb280a72"
-    sha256 arm64_sonoma:  "a12d53f94b4e386a94b444ac5116671aed70f9fc732c779368fe1e98311beb42"
-    sha256 sonoma:        "62800379836fe9eaf3c4575bd3182ddcd9b6d5680840ddb4274994c2208d303b"
-    sha256 arm64_linux:   "7983d99392057dfa17f1fb143a3c6a672e0d663b99bc19ab7912a58f5aad3217"
-    sha256 x86_64_linux:  "b9f307fa6fde35433ae7915aea050e0a18c21117c995a447bc2519458055822d"
+    sha256 arm64_golden_gate: "dab1657cbd4c14f7ada5838728f93ac02d45e24e8206cdafd38e55c105085ab3"
+    sha256 arm64_tahoe:       "b32725987244bf52f2da5f5b3104d62f25207b2806d74b06eafd507f6a1f395b"
+    sha256 arm64_sequoia:     "ef9633f1fee8a0039c6b8ac241f6303c2d4768892f2e84a4934564e91e9fff90"
+    sha256 arm64_linux:       "a863fe87f61c6021a0da9d9a6846073caa253c7462818034f9aadb55cc232cbf"
+    sha256 x86_64_linux:      "a64f8dee7f60d0f57c0b0d85e51c970c8c6ac38fb7f686d40246117dea3e40a4"
   end
 
   keg_only :versioned_formula
@@ -63,7 +61,7 @@ class FfmpegFull < Formula
   depends_on "tesseract"
   depends_on "theora"
   depends_on "webp"
-  depends_on "whisper-cpp"
+  depends_on "whisper.cpp"
   depends_on "x264"
   depends_on "x265"
   depends_on "xvid"

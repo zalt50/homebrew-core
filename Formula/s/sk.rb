@@ -1,8 +1,8 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https://github.com/skim-rs/skim"
-  url "https://github.com/skim-rs/skim/archive/refs/tags/v5.6.6.tar.gz"
-  sha256 "4f988bf6da4a5e1f71e296d7f96047db2d24253a06a5597b179206f7ecd034d7"
+  url "https://github.com/skim-rs/skim/archive/refs/tags/v5.7.1.tar.gz"
+  sha256 "dca8c3e56066415b8ba629726de02cbc132a24d7af9ada46d2baecc75e0270a8"
   license "MIT"
   head "https://github.com/skim-rs/skim.git", branch: "master"
 
@@ -12,15 +12,20 @@ class Sk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e251502b810d05888409305772e3e1722b8d74193ffcb853d03b0f9364bcdcf9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8e897d93420b25575b1f477e96e7ba7cf382f9f88da73257af2acb3dc82d85c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0373a6f1a0115f965644dd4e4d5107dd58b970dcb85ada0f9f4b6acc66b2af93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45c22ab44b016f19f5cb940497132e1a4f4724e0d73fe0eed3fc8a0c948a9a70"
-    sha256 cellar: :any,                 arm64_linux:   "02a5dd1accaa89124bf55b348c4256a4fe60fdae2bdd5395f711c55ad8f82e24"
-    sha256 cellar: :any,                 x86_64_linux:  "1f0f9e5ded752bede9054c11c3934d019068990eef2c7566a9be43d62dad075d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e1c4634256bebe012338367bd2e73b78e2a141b5bb4e4896a86f1727877abf35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5d148fdba20f0d69c87ecac9f53f1e0619ab9a31692792d00ec177e86c2696a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aa6981a795d679fb0116c07908ad1458ef15096163643e201bb1db0d69112d46"
+    sha256 cellar: :any,                 arm64_linux:       "a09b2ef43a954bfab562b18dd3ac24a8533fe69470d66554d60b83c4aa171b6b"
+    sha256 cellar: :any,                 x86_64_linux:      "54d040add2fc87259af99acb3cb5bd396b6e0ea10afd1db1325921e376a7b13e"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

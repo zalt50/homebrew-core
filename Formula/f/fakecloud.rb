@@ -1,18 +1,17 @@
 class Fakecloud < Formula
   desc "Free, open-source local AWS cloud emulator for integration testing"
   homepage "https://fakecloud.dev/"
-  url "https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.44.10.tar.gz"
-  sha256 "72376f92ee00602ba8b15035eef3339722f790bfe00c2e9c8299cdddcff0ef1e"
+  url "https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.45.1.tar.gz"
+  sha256 "71939cfe33fecf3b617b4d10650cfcfd0266cf8f64712f54357e06e9aa0d52af"
   license "AGPL-3.0-or-later"
   head "https://github.com/faiscadev/fakecloud.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4441c54edc3f57fcb4ca7a7c1b797416102b7d9b394313dfbfdc4768e882ce0c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f49bd5618921c6df02f8181452b58d612507b82984feb49caa98523293f358"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5a9d6908b1cc8b6abce2dbd85279f9a428c308aa81404006c27b568e473aa42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7904583b80247bf0e16dd81a70fdd8c09eed3ba18d1faa9236d6f9008878aa7c"
-    sha256 cellar: :any,                 arm64_linux:   "68a68cb0dca6c7498427fafeceb5878ee606db1683e8e831bd8bfd929b92bba3"
-    sha256 cellar: :any,                 x86_64_linux:  "8c42310106caed3bf30893716a1771ae718f711afac8bb84813f412cbea28923"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d701ed64faec106642500b47053fb5cfd908fd77b0d2abae688d1dac4417bbb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0659a91320e1534cf433c61acda311fbf5fecb802c0721a52ee7f86524e6c499"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ce0df7e4999435b98f182a0f9c0954ff17024446be49f971743753846a4f655"
+    sha256 cellar: :any,                 arm64_linux:       "8ffd2921bcb8c07a765f6bfb42127627033100ca863626cffdf3367c0745885c"
+    sha256 cellar: :any,                 x86_64_linux:      "68b30057b92c49cd7435a7c1c03ffc35b825d44ee445d1886408ff1f1a27b40f"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +20,13 @@ class Fakecloud < Formula
   on_linux do
     depends_on "openssl@3"
     depends_on "zlib-ng-compat"
+  end
+
+  # Test binds and queries a local fakecloud server
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

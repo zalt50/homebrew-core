@@ -1,18 +1,17 @@
 class Zuban < Formula
   desc "Python language server and type checker, written in Rust"
   homepage "https://zubanls.com/"
-  url "https://github.com/zubanls/zuban/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "3f2241835ea59f3ddef29feb11f8576f6737bc02a92d4c2347078bfe52b7041b"
+  url "https://github.com/zubanls/zuban/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "ef18bed5412da00667862751e16b4cf66039ae39e3618ef891f58d089fabe5c0"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8881d85f8561fb03bbadff7b4d8ffa6f00f2c0fc3813b8770c3e782534d00bcb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2de9af8ed5c5aa331cf8b6aff3d0c41f4de9a5552e1563f5b244de5c072e423a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1e461f306924f94312613c25a339defd93675b2d07ddd498e7a99ae16169de9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f7c21581a284fdaa9eac46c42df4418da956e0a0617b5b2f049d04d092f7430"
-    sha256 cellar: :any,                 arm64_linux:   "109738d18225b3bd4a25cf9898bd1df00a6776ed4566bde620ec84fcca5b178c"
-    sha256 cellar: :any,                 x86_64_linux:  "b04d8c10b6b24558a9f5d3f055f9d9abf50d89f21f2417ef462fe0839b38236e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "44f56bd96874e552a8901e65c7aa6e393abbb7c0c07a91dd2e01405db26bb39a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bedded60441bcd5c80d7a6f8569a1815921edf25ac19bc8be00a66d0f4962b61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76def94832f0ca408ebcfe7d48b156342557bac5d119222c3c61b28344498e0f"
+    sha256 cellar: :any,                 arm64_linux:       "c0eab74c1361f4fa021100605ea625e6466c264e2ca1869ffad47af4edfefcb1"
+    sha256 cellar: :any,                 x86_64_linux:      "e75b29203145732eaa07a5bf90c574b1d4199662a328b6f5138240d95251dfb2"
   end
 
   depends_on "rust" => :build
@@ -28,6 +27,12 @@ class Zuban < Formula
         json["sha"]
       end
     end
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

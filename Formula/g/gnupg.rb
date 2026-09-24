@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Privacy Guard (OpenPGP)"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.21.tar.bz2"
-  sha256 "e3af2c8caa46a66a9329fa7c6880af260451914d819595beabc2c26597b31352"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.24.tar.bz2"
+  sha256 "bf149d01a2b9fcc0e4589b8ae8697d3d5c557ea48ed95a3fa55dd3b1187e6039"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
@@ -18,12 +18,11 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "77a293d5ac76a99d7ca1fca4d57860bd76bb25b3c334b2504fc9b7fc145f1502"
-    sha256 arm64_sequoia: "8583235dd83654392b878f06833405b8bac255fb5f96c942259b1efd206b0ae8"
-    sha256 arm64_sonoma:  "d5148b6ad728f3f6a5660d17cc33d1a47def81f34a738dcd6667b12b520b42c1"
-    sha256 sonoma:        "b8da334b8bc5df2deecededfbcdf725b44a9dddfd344051ad7dcb8c1eb1d2046"
-    sha256 arm64_linux:   "bf5ac44775f2c6f6c67f31cd2bb10a35d780e484f386442b479a80f08257de99"
-    sha256 x86_64_linux:  "2dd827488b6c6b1927cf5be2eb70638e0e59ad34ba9db3e9aaaca866c4ed3c29"
+    sha256 arm64_golden_gate: "6c1d6a8fec9e054a01dfb57856160a37898dd68405c0ae1b4b713cde423d7679"
+    sha256 arm64_tahoe:       "641983de8774502eef7572de8c3cfc7dd8300b3829e6847b7c358ca23faf6334"
+    sha256 arm64_sequoia:     "c6a15fa0be01a9acd2d3a9df7aa3e555678fabcdd05a21530c92766d4ca5de29"
+    sha256 arm64_linux:       "9ba01e836fe6c6512cbf298b2c625ebd4d3d8be777b8829adc652de5202a0d0e"
+    sha256 x86_64_linux:      "51c561be0e77f45960591590f65fdf1b7d9396e73a97e7529193bcee5a0dd2f5"
   end
 
   depends_on "pkgconf" => :build
@@ -49,14 +48,14 @@ class Gnupg < Formula
     depends_on "zlib-ng-compat"
   end
 
-  conflicts_with cask: "gpg-suite"
-  conflicts_with cask: "gpg-suite-no-mail"
-  conflicts_with cask: "gpg-suite-pinentry"
-  conflicts_with cask: "gpg-suite@nightly"
+  deny_network_access!
 
   def install
     libusb = Formula["libusb"]
     ENV.append "CPPFLAGS", "-I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
+
+    # gpgscm otherwise hard-codes /tmp on Unix.
+    inreplace "tests/gpgscm/tests.scm", "(get-temp-path)", '(getenv "TMPDIR")'
 
     mkdir "build" do
       system "../configure", "--disable-silent-rules",

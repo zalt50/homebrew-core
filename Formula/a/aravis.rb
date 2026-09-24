@@ -12,19 +12,20 @@ class Aravis < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "e8d380d1205bfed309d38e061c3b16e3f37158a6b479655e7aa35554f65fb9da"
-    sha256 arm64_sequoia: "400d547af062c952574b486a527d3786426c2eb3b47565127c403ff34398835f"
-    sha256 arm64_sonoma:  "e78f7ca072dc2131c0907a606ff7ada754ebffddb3f6d4ea6ea5598857eb034d"
-    sha256 sonoma:        "2a070b911bdbc1533cfb68d00720a42244e64db5c2b41020766265b3077a55ca"
-    sha256 arm64_linux:   "567ebd2a64d8f9e4510cde9d566d90a3fbe5d2838763f8ae20c2acae4932291e"
-    sha256 x86_64_linux:  "75d4c78de8f32363d240b1d556b2da2c137173cf1ce02f9b99ead801dd352f7d"
+    sha256 arm64_golden_gate: "ffd108fa76426a99652e2aa7dbef9a8fc6886c600ac5394a4fdc906028706c00"
+    sha256 arm64_tahoe:       "e8d380d1205bfed309d38e061c3b16e3f37158a6b479655e7aa35554f65fb9da"
+    sha256 arm64_sequoia:     "400d547af062c952574b486a527d3786426c2eb3b47565127c403ff34398835f"
+    sha256 arm64_sonoma:      "e78f7ca072dc2131c0907a606ff7ada754ebffddb3f6d4ea6ea5598857eb034d"
+    sha256 sonoma:            "2a070b911bdbc1533cfb68d00720a42244e64db5c2b41020766265b3077a55ca"
+    sha256 arm64_linux:       "567ebd2a64d8f9e4510cde9d566d90a3fbe5d2838763f8ae20c2acae4932291e"
+    sha256 x86_64_linux:      "75d4c78de8f32363d240b1d556b2da2c137173cf1ce02f9b99ead801dd352f7d"
   end
 
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "adwaita-icon-theme"
   depends_on "glib"
@@ -62,14 +63,29 @@ class Aravis < Formula
   end
 
   test do
-    # The initial plugin load takes a long time without extra permissions on
-    # macOS, which frequently causes the slower Intel macOS runners to time out.
-    #
-    # Ref: https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/1119
-    ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    (testpath/"test.c").write <<~'C'
+      #include <arv.h>
+      #include <stdlib.h>
+      #include <stdio.h>
 
-    lib_ext = OS.mac? ? "dylib" : "so"
-    output = shell_output("gst-inspect-1.0 #{lib}/gstreamer-1.0/libgstaravis.#{version.major_minor}.#{lib_ext}")
-    assert_match(/Description *Aravis Video Source/, output)
+      int main(void) {
+        ArvCamera *camera;
+        ArvBuffer *buffer;
+        GError *error = NULL;
+        camera = arv_camera_new (NULL, &error);
+        if (ARV_IS_CAMERA (camera)) {
+          printf ("Found camera '%s'\n", arv_camera_get_model_name (camera, NULL));
+          g_clear_object (&camera);
+        }
+        if (error != NULL) {
+          printf ("No camera found: %s\n", error->message);
+        }
+        return 0;
+      }
+    C
+
+    flags = shell_output("pkgconf --cflags --libs aravis-#{version.major_minor}").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
+    system "./test"
   end
 end

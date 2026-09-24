@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https://nexte.st"
-  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.143.tar.gz"
-  sha256 "4ad5dbe9e266fd7303c39413c5610c4ca03f3c1b70f8d59c81266a4452e59361"
+  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.146.tar.gz"
+  sha256 "c82aa0dfea628ff44b1f3ded405aa53ae74615c268bc5f760d32238e1b88f6bd"
   license "Apache-2.0"
 
   livecheck do
@@ -11,16 +11,22 @@ class CargoNextest < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "453a47f752c2b2d28711f5ae88a59dac93b75c451f23e2f1816608b60e011fa5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ded3e40f343b57f4089c2145c7f6fe912c5efb85c8e0f1372ed7d3ca15d44070"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f79999882a20402ec90b58dac26ad01bdf8409a8255006ff125fd13b5a59c342"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b165d6411c93027890d10ddcfd42b31ea063fb86896d37fff536ce22077a69d4"
-    sha256 cellar: :any,                 arm64_linux:   "7c73d794d932b6bb039d671decc0b56945ae54ef692a85f44693ad9f0e88a711"
-    sha256 cellar: :any,                 x86_64_linux:  "6e362427a1793d8d58816c7ae76afb7baf0d7e93c8f1503d87afef5d034fa3e0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4e07139a60f8c86a175eff1c14593ead2c06bd03c79f5fed30a4bb8f52d95e4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8ee3c779578ae330f37be925cfd53256afc3e35d39b00bc02f13ac3a03ec19de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0500536ad9a50279623fd4be70a311c59c48b1382b886eb45fc495bd36a7a463"
+    sha256 cellar: :any,                 arm64_linux:       "e79a8b229aeffda9f485d6a53a2ffa876c2a0987e2e2bac6ade7296f088d1644"
+    sha256 cellar: :any,                 x86_64_linux:      "8ff2db243adca71982814c8fcc45f7ba69e2abd81255ae8125fc721eec8db8cb"
   end
 
   depends_on "rust" => :build
   depends_on "rustup" => :test
+
+  # Test downloads a beta Rust toolchain via rustup
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     features = "default-no-update"
@@ -30,7 +36,7 @@ class CargoNextest < Formula
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

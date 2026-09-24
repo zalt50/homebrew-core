@@ -62,7 +62,7 @@ end
 class GlibcAT217 < Formula
   desc "GNU C Library"
   homepage "https://www.gnu.org/software/libc/"
-  url "https://ftpmirror.gnu.org/gnu/glibc/glibc-2.17.tar.gz"
+  url "https://ftpmirror.gnu.org/glibc/glibc-2.17.tar.gz"
   mirror "https://ftp.gnu.org/gnu/glibc/glibc-2.17.tar.gz"
   sha256 "a3b2086d5414e602b4b3d5a8792213feb3be664ffc1efe783a829818d3fca37a"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
@@ -137,7 +137,7 @@ class GlibcAT217 < Formula
         "--sysconfdir=#{etc}",
         "--without-gd",
         "--without-selinux",
-        "--with-headers=#{Formula["linux-headers@4.4"].include}",
+        "--with-headers=#{formula_opt_include("linux-headers@4.4")}",
       ]
       system "../configure", *args
       system "make", "all"

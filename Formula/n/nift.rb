@@ -1,8 +1,8 @@
 class Nift < Formula
   desc "Fast dependency-aware website generator"
   homepage "https://nift.dev/"
-  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.0.7.tar.gz"
-  sha256 "412be30dfc0666298b32a1a1b980dff10c138cd585c5fa6fdbba7c2ddb1e90a5"
+  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.4.0.tar.gz"
+  sha256 "296650e52053858b49a6817d8b22e4ee3690b283b311eefb7a11532c070cd6fd"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,28 @@ class Nift < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a81e085e59e9923b1a01a4484c8586636fb40ea537a33fcbc9842c19842e040"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f68162853f80c3e5f4e36e223895989b982e4891ca0d284e6cee1311b1dde69e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c542e7b761bbc2605b194b9f7f63b15a99805bebcdc5dd96119d28062be1b45c"
-    sha256 cellar: :any,                 arm64_linux:   "a7dc65f6c02cd57c9d9d5f4ee487b4004bd9cbcd23fb6883222e9a7350f11c4c"
-    sha256 cellar: :any,                 x86_64_linux:  "18b747fd5afa6b3bb7f13d408bbd5ecc865aea6a06396bf54d85442a8b30f88a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "be9bab973e401efba39fba66c522a2b885f66d7cde09945d58da804562a9d074"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "27ad616a4b118c195188de08779ad172aa62146fc00779219bdffb533f15d266"
+    sha256 cellar: :any,                 arm64_sequoia:     "42a855005c1c5508e57ae4df25c206ffe136a1c5eaea1dc85f4a4bb3326c16b5"
+    sha256 cellar: :any,                 arm64_linux:       "81f4d505edcf1082cfa01a57fd4585dc0fae0e7a6a95e1161a04a6250c683609"
+    sha256 cellar: :any,                 x86_64_linux:      "beef657a88ac7dedfa66f04b226c2c31b1a1865b38065a2507e1980020d058b4"
+  end
+
+  on_sequoia :or_older do
+    depends_on "llvm"
+
+    fails_with :clang do
+      cause "floating-point `std::from_chars` requires macOS 26 libc++"
+    end
   end
 
   def install
+    if OS.mac? && MacOS.version <= :sequoia
+      # Link LLVM's libc++ as the system one lacks floating-point `std::from_chars` before macOS 26
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("llvm")/"c++"
+      inreplace "Makefile", /^CXXFLAGS \?= /, "\\0-D_LIBCPP_DISABLE_AVAILABILITY "
+    end
+
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end

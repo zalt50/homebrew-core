@@ -1,18 +1,17 @@
 class Navidrome < Formula
   desc "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
   homepage "https://www.navidrome.org"
-  url "https://github.com/navidrome/navidrome/archive/refs/tags/v0.63.2.tar.gz"
-  sha256 "a2602f00b429325f37efedba5e67918269f5ad2687266629dad23b740135cd4c"
+  url "https://github.com/navidrome/navidrome/archive/refs/tags/v0.64.1.tar.gz"
+  sha256 "aeea3e4570a29105bc09957da47f3d969700352bb846ba9ff8f1ddff69d31afe"
   license "GPL-3.0-only"
   head "https://github.com/navidrome/navidrome.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6a5c34510a05cfc77c69946557413d9fd17a912ae629f280f51a99dba94f17e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "224fd0685025a711555dd52a7aebdff54d0f05bb2e79879b0c41f013132caf41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c471eb99460303cd65f5ee390738c2fea71ddd46dd93b1efd9b53426c962b6df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dc4cab18aa31487a00f147808d4b41f45d17a46c004b7c8936d2ee89a9501e0a"
-    sha256 cellar: :any,                 arm64_linux:   "de010186ef07469d275ddcd9668731b4627b88363c3db39b69ac3a626935e0d0"
-    sha256 cellar: :any,                 x86_64_linux:  "f41af6129a9f714e99b7e17c852ca17f7e23c050b7401a0e920a62deb965c162"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f4e2c3aed555fdda4e21de4903f371ca640873f445636f9d2f5f680ba0bd31b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3cfe0b044c25a0bf1b990b7effeebf3263fa9fae8a687f1802ad57bf161e13f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85e1efdda9210186e0307f261f0c2a62fd2bd8d4be1655cbcde65da317688954"
+    sha256 cellar: :any,                 arm64_linux:       "236728253b0bc9a1e7cef8f39c6c88882ea2942e46f07497ac84fbf04e0a08f6"
+    sha256 cellar: :any,                 x86_64_linux:      "c30199eb0ea9163585fd98624d26b360729084923387a9be1c85b4849fae9491"
   end
 
   depends_on "go" => :build
@@ -46,7 +45,6 @@ class Navidrome < Formula
     port = free_port
     pid = spawn bin/"navidrome", "--port", port.to_s
     sleep 20
-    sleep 100 if OS.mac? && Hardware::CPU.intel?
     assert_equal ".", shell_output("curl http://localhost:#{port}/ping")
   ensure
     Process.kill "KILL", pid

@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/140.14.0esr/source/firefox-140.14.0esr.source.tar.xz"
-  version "140.14.0"
-  sha256 "28006bd454e703932e1ea804918165774a1e21478b18e551cd1b38111d664239"
+  url "https://archive.mozilla.org/pub/firefox/releases/140.16.0esr/source/firefox-140.16.0esr.source.tar.xz"
+  version "140.16.0"
+  sha256 "15d2d359b8571ecd0898faa6e05aa902b0de7cb34aadfc4d94adf6c8428f84df"
   license "MPL-2.0"
   compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
@@ -16,12 +16,11 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5b3f0156e8564dfedaf25600a1c0945a10042b630e49ffb356b1a61449e4da39"
-    sha256 cellar: :any, arm64_sequoia: "fc36fb40f1f5e8000596212e2eec339ee6db1c437be43df0124030274d263e79"
-    sha256 cellar: :any, arm64_sonoma:  "406ba71e15741fec91bcb1557cac857c90d4847377f21f2b84deefbc5bb01b0e"
-    sha256 cellar: :any, sonoma:        "32649d8b184f3223035fe422a7c22b0668a3b0fd4e091311c12d5e9efe17af4d"
-    sha256               arm64_linux:   "b04d4203a60206251772ce1854e1d3407d2f72405bb154d8c04c2435cd2d1997"
-    sha256               x86_64_linux:  "f6ed3e5e9b5794d56eece14bfd2435af07b596ac33519f18fba592caeb78e181"
+    sha256 cellar: :any, arm64_golden_gate: "2e527d8e30e2a731fedfa5bf0111809aa04ff3371e90d80a42c99797b2fa8149"
+    sha256 cellar: :any, arm64_tahoe:       "c29e4e6ab3285d0b8e02f1fce499efd3aa72e172d7be8b15ae42c76745ce8338"
+    sha256 cellar: :any, arm64_sequoia:     "3118624a62adbb386d6da6f87cfdc1af2fefd9e83f5e2d40aeb111f395f4a414"
+    sha256               arm64_linux:       "64f5402fafdd1ec5494ca1e3aae39ceeac155fc94f280d2a99d67309aa15b16d"
+    sha256               x86_64_linux:      "9c878749e1c25f798f0c0009935575d25d03b62382ca3b7800bf07076e6536a8"
   end
 
   depends_on "cbindgen" => :build
@@ -80,6 +79,13 @@ class Spidermonkey < Formula
     type :backport
     resolves "https://bugzilla.mozilla.org/show_bug.cgi?id=1969769"
   end
+
+  # Fix Rust target detection for OpenEmbedded Linux.
+  # TODO: Check resolution in https://bugzilla.mozilla.org/show_bug.cgi?id=2068494
+  # Fixes:
+  # checking for rust host triplet...
+  # ERROR: Don't know how to translate x86_64-pc-linux-gnu for rustc
+  patch :DATA
 
   def install
     ENV.runtime_cpu_detection
@@ -146,3 +152,36 @@ class Spidermonkey < Formula
     assert_equal "hello", shell_output("#{bin}/js #{path}").strip
   end
 end
+
+__END__
+diff --git a/build/moz.configure/rust.configure b/build/moz.configure/rust.configure
+--- a/build/moz.configure/rust.configure
++++ b/build/moz.configure/rust.configure
+@@ -410,7 +410,14 @@ def detect_rustc_target(
+             return narrowed[0].rust_target
+
+-        # Finally, see if the vendor can be used to disambiguate.
+-        narrowed = [c for c in candidates if c.target.vendor == host_or_target.vendor]
++        # Finally, see if the vendor can be used to disambiguate. Autoconf uses
++        # "pc" where Rust uses "unknown" for generic targets.
++        vendor_aliases = {"unknown": ("pc",)}
++        narrowed = [
++            c
++            for c in candidates
++            if c.target.vendor == host_or_target.vendor
++            or host_or_target.vendor in vendor_aliases.get(c.target.vendor, ())
++        ]
+         if len(narrowed) == 1:
+             return narrowed[0].rust_target
+
+diff --git a/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py b/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
+--- a/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
++++ b/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
+@@ -1881,6 +1881,7 @@ def gen_invoke_rustc(version, rustup_wrapper=False):
+                 "x86_64-fortanix-unknown-sgx",
+                 "x86_64-fuchsia",
+                 "x86_64-linux-android",
++                "x86_64-oe-linux-gnu",
+                 "x86_64-pc-nto-qnx710",
+                 "x86_64-pc-solaris",
+                 "x86_64-pc-windows-gnu",

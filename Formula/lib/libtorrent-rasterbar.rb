@@ -14,12 +14,13 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0fc57ac1c7e5282e8ee53d1f7669a43b83895ec5e9e01ec319fdc8588475c6fd"
-    sha256 cellar: :any, arm64_sequoia: "cbd7bcc10d0f39a94ae4e840efb3d20276fed1ce35f712c0337583338ef4cad2"
-    sha256 cellar: :any, arm64_sonoma:  "8d023bf7105bb19804d1687f176bb6d2d222865c23599471aa9e37f93e5b96f1"
-    sha256 cellar: :any, sonoma:        "b743c21dc561aec8a7aba1fa16e22fb00c831801ba5394dabef728a33d5117cb"
-    sha256 cellar: :any, arm64_linux:   "991c9397f2dabaa5165fbd54b497e5c7cc5a915bdfae0b0333a99bbe54490406"
-    sha256 cellar: :any, x86_64_linux:  "e47e247a055d9d0a9fc1029f90ee38f3d7e5391430ab971ccf4ff6d8a83480af"
+    sha256 cellar: :any, arm64_golden_gate: "4bc6415df812cb83ee6d9932699ed5e5f95371d45097b02cf5e71f04ece6e977"
+    sha256 cellar: :any, arm64_tahoe:       "0fc57ac1c7e5282e8ee53d1f7669a43b83895ec5e9e01ec319fdc8588475c6fd"
+    sha256 cellar: :any, arm64_sequoia:     "cbd7bcc10d0f39a94ae4e840efb3d20276fed1ce35f712c0337583338ef4cad2"
+    sha256 cellar: :any, arm64_sonoma:      "8d023bf7105bb19804d1687f176bb6d2d222865c23599471aa9e37f93e5b96f1"
+    sha256 cellar: :any, sonoma:            "b743c21dc561aec8a7aba1fa16e22fb00c831801ba5394dabef728a33d5117cb"
+    sha256 cellar: :any, arm64_linux:       "991c9397f2dabaa5165fbd54b497e5c7cc5a915bdfae0b0333a99bbe54490406"
+    sha256 cellar: :any, x86_64_linux:      "e47e247a055d9d0a9fc1029f90ee38f3d7e5391430ab971ccf4ff6d8a83480af"
   end
 
   depends_on "cmake" => :build
@@ -31,10 +32,12 @@ class LibtorrentRasterbar < Formula
 
   conflicts_with "libtorrent-rakshasa", because: "both use the same libname"
 
+  deny_network_access!
+
   def install
     # Work around Homebrew's prefix scheme, which makes Python's reported
     # site-packages path absolute and outside the keg.
-    site_packages = prefix/Language::Python.site_packages("python3.14")
+    site_packages = prefix/Language::Python.site_packages(python3)
     inreplace "bindings/python/CMakeLists.txt", "${_PYTHON3_SITE_ARCH}", site_packages
 
     args = %W[
@@ -55,8 +58,8 @@ class LibtorrentRasterbar < Formula
 
   test do
     args = [
-      "-I#{Formula["boost"].include}",
-      "-L#{Formula["boost"].lib}",
+      "-I#{formula_opt_include("boost")}",
+      "-L#{formula_opt_lib("boost")}",
       "-I#{include}",
       "-L#{lib}",
       "-DTORRENT_USE_OPENSSL",
@@ -78,6 +81,6 @@ class LibtorrentRasterbar < Formula
     system "./test", test_fixtures("test.mp3"), "-o", "test.torrent"
     assert_path_exists testpath/"test.torrent"
 
-    system "python3.14", "-c", "import libtorrent"
+    system python3, "-c", "import libtorrent"
   end
 end

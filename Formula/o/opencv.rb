@@ -2,7 +2,7 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 5
+  revision 10
   compatibility_version 2
 
   stable do
@@ -25,12 +25,11 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e6fe6f704240c4a9ca918bcd7ac825a0e10afa9718b7f4270b313a26c8da12f5"
-    sha256 arm64_sequoia: "e43dd7aa52d9e773932acf6af70dbb475988e70bffa76095561d3333e08839fb"
-    sha256 arm64_sonoma:  "1d0ac2865a6b50180fbf17b7aa3bdb284cec63baeb4021a059d6abc386cb3d00"
-    sha256 sonoma:        "cefab8cb0e54261f3a6a0ac3e6e76a6c7b12a5e9be6e3692c406beea0fa817d0"
-    sha256 arm64_linux:   "16ad78d6817feb48ed3c22e5af8264048d9ec50276522ae76ad837d8ea928b9d"
-    sha256 x86_64_linux:  "d83fae414fe879a3662603255378a99829bc8dc26c97dfc8356c0dbcdf2b5896"
+    sha256 arm64_golden_gate: "07cfb839d99ad50bd6ee1a45c2d4fbbd13263642e49932748414283e962d1621"
+    sha256 arm64_tahoe:       "a9d2c559a87e85bbdf4ba5f1a4aa858933984e53e04bd5186e802968bca7dcd5"
+    sha256 arm64_sequoia:     "a697d311d0f21cac47be5c20cc850a624fccda567ff638de8caf623c50b23681"
+    sha256 arm64_linux:       "3d94a4927021f5ca7b9b47487431c3664b7c87a156089a56f91570dc39cc1459"
+    sha256 x86_64_linux:      "6a59ec5e320584bb5d5831da7669fe87aad38d7dc6616d78deae5dcec3a5cc7a"
   end
 
   head do
@@ -80,10 +79,6 @@ class Opencv < Formula
     depends_on "glib"
     depends_on "gtk+3"
     depends_on "zlib-ng-compat"
-  end
-
-  def python3
-    "python3.14"
   end
 
   # Drop the Caffe protobuf leftovers so DNN builds against external protobuf.
@@ -171,7 +166,7 @@ class Opencv < Formula
       -DWITH_VTK=ON
       -DBUILD_opencv_python2=OFF
       -DBUILD_opencv_python3=ON
-      -DPYTHON3_EXECUTABLE=#{which(python3)}
+      -DPYTHON3_EXECUTABLE=#{python3}
     ]
 
     args += if OS.mac?
@@ -187,8 +182,8 @@ class Opencv < Formula
         -DOPENEXR_ILMTHREAD_LIBRARY=#{formula_opt_lib("openexr")}/libIlmThread.so
         -DPNG_LIBRARY=#{formula_opt_lib("libpng")}/libpng.so
         -DPROTOBUF_LIBRARY=#{formula_opt_lib("protobuf")}/libprotobuf.so
-        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].include}
-        -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
+        -DPROTOBUF_INCLUDE_DIR=#{formula_opt_include("protobuf")}
+        -DPROTOBUF_PROTOC_EXECUTABLE=#{formula_opt_bin("protobuf")}/protoc
         -DTIFF_LIBRARY=#{formula_opt_lib("libtiff")}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{formula_opt_lib("zlib-ng-compat")}/libz.so
@@ -197,14 +192,6 @@ class Opencv < Formula
 
     # Ref: https://github.com/opencv/opencv/wiki/CPU-optimizations-build-options
     ENV.runtime_cpu_detection
-    if Hardware::CPU.intel? && build.bottle?
-      cpu_baseline = if OS.mac? && MacOS.version.requires_sse42?
-        "SSE4_2"
-      else
-        "SSSE3"
-      end
-      args += %W[-DCPU_BASELINE=#{cpu_baseline} -DCPU_BASELINE_REQUIRE=#{cpu_baseline}]
-    end
 
     system "cmake", "-S", ".", "-B", "build_shared", *args, *std_cmake_args
     inreplace "build_shared/modules/core/version_string.inc", "#{Superenv.shims_path}/", ""

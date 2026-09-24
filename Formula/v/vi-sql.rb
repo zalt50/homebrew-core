@@ -1,22 +1,28 @@
 class ViSql < Formula
   desc "Terminal UI for SQL databases"
   homepage "https://vi-sql.com"
-  url "https://github.com/kopecmaciej/vi-sql/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "e62b4a5beb99eb803d80d434a05e0bd201192b03a0f6859f10806c4ec3b0e21b"
+  url "https://github.com/kopecmaciej/vi-sql/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "1bd04d112fa9a7309dd9a2d9735e770df211d9d8d8d89360bc521bc270ac6b49"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "418fd8a60f5350fb9be4988d99df436b4ff37045f62fb71ba7034474284d2c0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "418fd8a60f5350fb9be4988d99df436b4ff37045f62fb71ba7034474284d2c0f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "418fd8a60f5350fb9be4988d99df436b4ff37045f62fb71ba7034474284d2c0f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68c6d789b2648feb6dd348b91a279b5a6b0007dda7367cf7314075d1a5980791"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "886150016cd8b1e6e410b8173fdeb7b478c3cb5fa4409623a45b4e0d7163ed38"
-    sha256 cellar: :any,                 x86_64_linux:  "298189d66179ee57de651764272a78d96ac87978044bce02ec453b4a9bff1e63"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0a48c86210f9cf3c68b1a7f212dcb34faa90b5c6c24e465929fc8c7d091920b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d0a48c86210f9cf3c68b1a7f212dcb34faa90b5c6c24e465929fc8c7d091920b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0a48c86210f9cf3c68b1a7f212dcb34faa90b5c6c24e465929fc8c7d091920b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d0a48c86210f9cf3c68b1a7f212dcb34faa90b5c6c24e465929fc8c7d091920b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "afa50f26b5f2b700749e9b5482fc17739cf2ce5213d2f7f2beef6dd75c00785c"
+    sha256 cellar: :any,                 x86_64_linux:      "56f4bca80f7e89e9e6dd2722408e3f0afd992fac162e2493c24679f3fb4ce4d1"
   end
 
   depends_on "go" => :build
 
   uses_from_macos "sqlite" => :test
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/kopecmaciej/vi-sql/internal/build.Version=#{version}")

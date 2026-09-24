@@ -1,20 +1,26 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https://docs.astral.sh/ruff/"
-  url "https://github.com/astral-sh/ruff/archive/refs/tags/0.16.5.tar.gz"
-  sha256 "c447968b1e608450c973d441fa87f949f676064aec2db458b557e8222a4eb252"
+  url "https://github.com/astral-sh/ruff/archive/refs/tags/0.16.8.tar.gz"
+  sha256 "42f2b5af083151646886e7eddcf10ebfdfa89d4ba1a8146b82422497688921d3"
   license "MIT"
   head "https://github.com/astral-sh/ruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9347fbb908789c5f2e4a8390989660a1b54ad9e22acdadfda642507f28b6eae1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54f751a405163096521c58dba1937a4e8ff32e0971c28d56450481d5c125f78a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49488c0be3ff035e6918c9fe2ec1cc7a1e8ce5aebf5caeb9bfcdd1431f84be3a"
-    sha256 cellar: :any,                 arm64_linux:   "7d207e6d081aae5eef876376a69ac4c3ee52a185b9d6e387874fba60ea1e2704"
-    sha256 cellar: :any,                 x86_64_linux:  "fcd2b4565b7f9b2fd31796d8d004a01c440cc860a52e6e0d7f31835ad9915d3f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e646826ede864eb33117d19b7793b8866b8f5b4d4e0b5534be1148bf8a405f18"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f90870be939c86249c3c54061a263f7832ee507f124d7f263438f2d56d28db2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "20e85c46870ec754e9f596c27d5e6784818a3ffb893ed71caecea990bcc6afa7"
+    sha256 cellar: :any,                 arm64_linux:       "5554f83593bd75be03d2134941e9c816d09fdb701e294e13079e203ec59890ab"
+    sha256 cellar: :any,                 x86_64_linux:      "d5895dfc8f75a305ae2f1148ffbdcd3872c7b6ed03b52062c537437b199fb5bd"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/ruff")

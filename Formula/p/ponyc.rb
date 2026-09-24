@@ -2,25 +2,34 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.69.1",
-      revision: "38f9f11dac16623aa322c5fb56545c69f97b3517"
+      tag:      "0.72.1",
+      revision: "de5eddd973a48689ceedd12d24bf42358e5694d5"
   license "BSD-2-Clause"
 
   bottle do
-    sha256                               arm64_tahoe:   "76afbb26b05e1b73a9f579e35a217791ebc283af8c930217bac57f7520debd73"
-    sha256                               arm64_sequoia: "df0252865b4ce4a609e79d1835f4753ea6436e2e00c4ceae72978c82948fd6b6"
-    sha256                               arm64_sonoma:  "6f336f8364e65878d63c9ddb10c995333ca5276abf083cda88e6594c194cc324"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4bb8b3351734e82657126ffcc72f759a669906ee67a5e674ec15bdcb02859027"
-    sha256 cellar: :any,                 arm64_linux:   "a21a2854aae8d0413cc1b3cf48221a83f6f24b5a761adbe43d54a613178b8113"
-    sha256 cellar: :any,                 x86_64_linux:  "56ade3d4a0a4d466f849b9a8f9e71f25617daf5fbe92d2487b7df2a7218a6ca7"
+    rebuild 1
+    sha256               arm64_golden_gate: "4374f190c6d81bd63c78385f47207e2f2ba0845337da24c58a9be53610fe4fc4"
+    sha256               arm64_tahoe:       "4dde20673966b91111b10607708219b1a65c5606d30322c683a83c293543a7ab"
+    sha256               arm64_sequoia:     "777bc96467a38dd02ea3cb89f93ab3553834206258ed7624535c4c7c03e3bb1d"
+    sha256 cellar: :any, arm64_linux:       "a7cbfc2f2bef1d6fdbafc0e91d9a48946d103897f4e44658cbfd353784bc5fbd"
+    sha256 cellar: :any, x86_64_linux:      "7ed360ee1c8c14b63ff829e727a76940dfc9a1a64e15c7ddf3ea5e4841212a55"
   end
 
   depends_on "cmake" => :build
+  depends_on "openssl@3"
 
   uses_from_macos "python" => :build
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/b8007a8e4020b8bca2b12e941660e10bf5bf6716.patch?full_index=1"
+    sha256 "e41e300eb6f5cca9172ab344e572c3fb24f0d05885ae23dd7cb4f9c2528839f7"
+    directory "lib/llvm/src"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/222721"
   end
 
   def install

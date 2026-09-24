@@ -1,10 +1,10 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://simdutf.github.io/simdutf/"
-  url "https://github.com/simdutf/simdutf/archive/refs/tags/v9.1.0.tar.gz"
-  sha256 "24e3510a4c95a9e6eb0fb4a27eea650d13773231cbd8b564ed9670aa5484d193"
+  url "https://github.com/simdutf/simdutf/archive/refs/tags/v9.2.1.tar.gz"
+  sha256 "582f9d0dcf578f6d4766fa29ea12a7f2f02bd3c6ad9e0cf35a8e0ec8478eba4b"
   license any_of: ["Apache-2.0", "MIT"]
-  compatibility_version 4
+  compatibility_version 5
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,11 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7d31bc2b54402cb07d30251da17c746843428983a91435fd2681bb44129c669f"
-    sha256 cellar: :any, arm64_sequoia: "42bbc4e60e729a7053916e4c96e5b56a26af0c90b0fe61bc35dc0f66c7942991"
-    sha256 cellar: :any, arm64_sonoma:  "baa9c69e438ce55454f7b51bd8d6df955a8023a80526f64192fcf964d1211795"
-    sha256 cellar: :any, sonoma:        "990852bac0ee0acd3fe2032a7f46b5f320f440ba9422744fd7f57e0561e95647"
-    sha256 cellar: :any, arm64_linux:   "2bc950e345a2a00603977c8486e934e228d6e17d9f632a715adcf9707a92d6a8"
-    sha256 cellar: :any, x86_64_linux:  "21eea6cc5a2fc4e7d09a178a497b031cf981a4d7e3ed85707fe181be827bdaf5"
+    sha256 cellar: :any, arm64_golden_gate: "e5c1ae108e4d53384b38ad0a865bb58140b7c2c8e8528e9d8a7bd7810c03d83f"
+    sha256 cellar: :any, arm64_tahoe:       "c0992a6098ad9b85df9db148ef58ecd82d712adabbb39016fe6b8a7c9bc1459f"
+    sha256 cellar: :any, arm64_sequoia:     "47c8bfe62737cdda001f35e79375248269eacb81b259977aa9c75eaae0be623b"
+    sha256 cellar: :any, arm64_linux:       "ac704b64b9877e89baa13c19c9b1c4997a68ea5b6f3abe1392ee63baed7fa564"
+    sha256 cellar: :any, x86_64_linux:      "4dada8ea727a9f78c007cdcea0b29d33c4f2639804f9dc611f6271d70a0e9346"
   end
 
   depends_on "aklomp-base64" => :build
@@ -26,6 +25,8 @@ class Simdutf < Formula
   depends_on "icu4c@78"
 
   uses_from_macos "python" => :build
+
+  deny_network_access!
 
   def install
     args = %W[

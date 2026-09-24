@@ -1,21 +1,26 @@
 class Splitrail < Formula
   desc "Real-time token usage tracker and cost monitor for CLI coding agents"
   homepage "https://splitrail.dev/"
-  url "https://github.com/Piebald-AI/splitrail/archive/refs/tags/v3.7.2.tar.gz"
-  sha256 "91832298ac6af26d26d6706acb14c8d5e630d3eb80b8fb2e22f34f522275e1fb"
+  url "https://github.com/Piebald-AI/splitrail/archive/refs/tags/v3.10.1.tar.gz"
+  sha256 "a549b8a72863c2ae39679ecf4b852772910d3d7f2a31682c2b79333e426e91f1"
   license "MIT"
   head "https://github.com/Piebald-AI/splitrail.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6569bff97eec320ce5308a6e466737381ae57ebcf0a01c8584b5ca1d2a117a1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c9883587cc373596149ec553ed011d4a9349092a2c5e239afeb91e031f6e8a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09aeae3e0e61e7003e13ab799ac9e18eebf3cefafb41b64f60eb289762509f5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9fdf5cb676d311a70081fe939ddfe89cb65e9a2b5ea8935814deab8c5e13603"
-    sha256 cellar: :any,                 arm64_linux:   "b4237a59264067f5c65200c5c7a0f8511a42facb716a254d122d46e5b477730b"
-    sha256 cellar: :any,                 x86_64_linux:  "0f07e34a90c39850638248996067bc8e1a36bbd379ebaa2cc068ad50328eedc5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "118eceb559421d0affec88563773fd9af8e8ec72efb398b8a830f9c79eab9f21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5d818375243f1b95c5387db24dca7d56a6fde7638774fee511c0edb372e8aee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f8564cd8dbc4b55b3a0422c02c42602e8d498f567de73ba0b08bbd90ef3804c"
+    sha256 cellar: :any,                 arm64_linux:       "fb699e37f21fa9a5ebd9d6bfcb941030012d9214d2b6d8dd751a03164271cf6b"
+    sha256 cellar: :any,                 x86_64_linux:      "9c5d4345e9271daae4b096d382d6af05a564c9b0b552bb4071e17d925712d27c"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

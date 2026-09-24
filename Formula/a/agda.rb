@@ -4,11 +4,11 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
+  revision 1
 
   stable do
-    url "https://github.com/agda/agda/archive/refs/tags/v2.8.0-r3.tar.gz"
-    sha256 "6ccdfbb52046f3372de4a6fc41ee7dfe905f50a8180c6dbeb777cfd71d91ed9e"
-    version "2.8.0-r3"
+    url "https://github.com/agda/agda/archive/refs/tags/v2.8.0.2.tar.gz"
+    sha256 "c29ee2c06a7feb812fcb7f0543a2ddf800a9f806d09cc7813cee9c733a169b6d"
 
     resource "stdlib" do
       url "https://github.com/agda/agda-stdlib/archive/refs/tags/v2.4.tar.gz"
@@ -52,8 +52,16 @@ class Agda < Formula
     end
 
     resource "agda-language-server" do
-      url "https://github.com/agda/agda-language-server/archive/refs/tags/v6.tar.gz"
-      sha256 "e2ffa646385585ecd0230f6031ee7cb66d1ea743007b41bc92cc469b2218ebe5"
+      url "https://github.com/agda/agda-language-server/archive/refs/tags/v7.tar.gz"
+      sha256 "294a8d0fe92b80711d221bc50fab5eced2285f6a43123482b27c52073a6e2c5a"
+
+      # Fix the reported ALS version, upstream PR ref, https://github.com/agda/agda-language-server/pull/56
+      patch do
+        url "https://github.com/agda/agda-language-server/commit/a585542a717d4af65a998adaddd87e1020bf9ac1.patch?full_index=1"
+        sha256 "01a09b16be7cf4f1fda548461515559417dedc1a17275cf744a0ceef93655d13"
+        type :unofficial
+        resolves "https://github.com/agda/agda-language-server/pull/56"
+      end
     end
   end
 
@@ -65,12 +73,11 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e76a4f7a8ba9e8829b0d27e280adaac7ce226472810c1bf448063dba22fea175"
-    sha256 arm64_sequoia: "b5b3d5617652d93b6f02dd6235240f22972cd61b88490dd8a5b1e91e4fe61018"
-    sha256 arm64_sonoma:  "cb828a31dd44533fd5999cbaf4e273e743309e389dc2885963c7157cd285cb12"
-    sha256 sonoma:        "7cb790378cea3375ca67c2f198e256336c74703d34aea1946895ec6581f2fdfc"
-    sha256 arm64_linux:   "b84ad81efd4b48c85c70dedc16a70b37ff6195681326f22536c613650301f478"
-    sha256 x86_64_linux:  "7a52fa9fcd6868a876b1393c71362934330b1a01dae773f63f12eeb2ed1c7058"
+    sha256 arm64_golden_gate: "d546a84adfc9f050d04d3d37f9d5b47cb11f2cb1c0b5fc968421c8b336ee8def"
+    sha256 arm64_tahoe:       "26d87e9af2763c2330a9004b73b7d2be6636813018db23a4f68c6b0a794e382a"
+    sha256 arm64_sequoia:     "e6b09f39a2ad9ba7ae167a10c367e9ea54c227129d68d6c2b7f51eb757e29034"
+    sha256 arm64_linux:       "6d6907cd9f3f86e3ac32518b6a9152028bbd1b713a95cfdb449cea5338287949"
+    sha256 x86_64_linux:      "cdd83b5a8e3561150a41c510a1c8f0a1806875fe7c5c57eccbf69da35a392b5d"
   end
 
   head do
@@ -108,9 +115,7 @@ class Agda < Formula
   depends_on "cabal-install" => :build
   depends_on "emacs" => :build
   depends_on "pkgconf" => :build
-  # TODO: switch to the latest GHC in the next release
-  # https://github.com/agda/agda/pull/8303
-  depends_on "ghc@9.12"
+  depends_on "ghc"
   depends_on "gmp"
   depends_on "icu4c@78"
 
@@ -145,8 +150,21 @@ class Agda < Formula
     mkdir_p agdaprim
     ENV["Agda_datadir"] = agdaprim.to_s
 
-    (buildpath/"cabal.project.local").write <<~HASKELL
-      packages: . #{agda2hs_build} #{als}
+    # Make the language server build tolerate point releases
+    inreplace als/"package.yaml", "Agda == 2.8.0", "Agda >= 2.8.0 && < 2.9.0"
+    inreplace als/"agda-language-server.cabal", "Agda ==2.8.0", "Agda >= 2.8.0 && < 2.9.0"
+
+    # Make agda2hs build compatible with GHC 9.14
+    inreplace agda2hs_build/"agda2hs.cabal",
+      "base                 >= 4.13    && < 4.22",
+      "base                 >= 4.13    && < 4.23"
+
+    # Make the Agda Emacs mode compatible with Emacs >= 31.1
+    inreplace buildpath/"src/data/emacs-mode/agda2-highlight.el", " font-lock-", " 'font-lock-"
+
+    # Relative package paths keep Cabal file monitoring inside the build directory.
+    (buildpath/"cabal.project").write <<~HASKELL
+      packages: . agda2hs agda-language-server
       package Agda
         flags: +optimise-heavily +enable-cluster-counting
       package agda-language-server
@@ -266,7 +284,7 @@ class Agda < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", formula_opt_bin("ghc@9.12")
+    ENV.prepend_path "PATH", formula_opt_bin("ghc")
 
     Pathname("#{Dir.home}/.config/agda").install_symlink opt_pkgshare/"example-libraries" => "libraries"
     Pathname("#{Dir.home}/.config/agda").install_symlink opt_pkgshare/"example-defaults" => "defaults"
@@ -419,7 +437,7 @@ class Agda < Formula
     system bin/"agda2hs", "--out-dir=#{testpath}", agda2hstest
     assert_equal agda2hsexpect, agda2hsout.read
 
-    # check that the installed als binary reports the correct version
-    assert_equal "Agda v2.8.0 Language Server v6", shell_output("#{bin}/als -V").strip
+    assert_equal "Agda v#{version.major_minor_patch} Language Server v#{resource("agda-language-server").version}",
+                 shell_output("#{bin}/als -V").strip
   end
 end

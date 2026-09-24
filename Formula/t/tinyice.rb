@@ -1,21 +1,26 @@
 class Tinyice < Formula
   desc "Modern, all-in-one Icecast-compatible audio/video streaming server"
   homepage "https://datanoisetv.github.io/tinyice/"
-  url "https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "492d1bf7ccfa1f4b63f3a75a25878f8b008c07f17f620f7e378893b560f6aa93"
+  url "https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.10.2.tar.gz"
+  sha256 "d3816726c366f0fbbe68a9a507d1a1053fbdecb8f4d0a1294335e63381692854"
   license "Apache-2.0"
   head "https://github.com/DatanoiseTV/tinyice.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37cabb175b9fed77f78d7125c438d19e293730801212b609a799963c12e54e3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37cabb175b9fed77f78d7125c438d19e293730801212b609a799963c12e54e3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37cabb175b9fed77f78d7125c438d19e293730801212b609a799963c12e54e3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d6cde16e46b122f09117bfec56cc56f0206bd52cf69df6194833031ab57ffc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9202bfd8325aa2217a1b0bf590a968dc9fee8ac84c45b04f83cab99e09bc8f1f"
-    sha256 cellar: :any,                 x86_64_linux:  "2cb54685efffca053953a2b4860a57ff617502e2b6456ee2425d5566ccf8b071"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5cda2e7b7113cbc7c52868c3ef40102e8752a9101de088eaf64aaa2635255152"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5cda2e7b7113cbc7c52868c3ef40102e8752a9101de088eaf64aaa2635255152"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5cda2e7b7113cbc7c52868c3ef40102e8752a9101de088eaf64aaa2635255152"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1de3602f29b6bc0977ba9d8cae1fc4850ffb1ce5570d8a3dae7f1ce5153e9509"
+    sha256 cellar: :any,                 x86_64_linux:      "099bb764d26f09e04274431616a1688db103711e036a3a6120edb48d31dc0e70"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

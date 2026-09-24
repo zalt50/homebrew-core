@@ -1,21 +1,26 @@
 class Gcx < Formula
   desc "CLI for managing Grafana Cloud resources"
   homepage "https://github.com/grafana/gcx"
-  url "https://github.com/grafana/gcx/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "0692bf03944dac8fc70aac183fea0243a9138bc00491f590f0d209a8de314fd8"
+  url "https://github.com/grafana/gcx/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "27c694a8377d6c9bbe59ea15660194991e603709672b3b1d3532c7d5b2cdfaa4"
   license "Apache-2.0"
   head "https://github.com/grafana/gcx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8842082740e99ec9a7367f1069363ae6f2b5eef79f4c332a9fc99ae2c33e1f61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f042e1013bec3495c996667a5d8422151bb0c8e60a1607db4b534ea25d951f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bd9eaba8ae8b5ad4daee9cf17c548c37a492f31f53b3b165baa6436bced9803"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef98e4388b1d73c1ec81ba1c1f3be2895ba8a6eec6e2f491d81024ec228d8c79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82dbf9ba4c4bf07d585ad9b9f39b236a096c891a17867b5771e7179804fdc5df"
-    sha256 cellar: :any,                 x86_64_linux:  "1001f6928bdabe01347e772dc829a1bdb98ba875ab6ff1fb9c85c2597009096c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2a2da896a87c2ff6db722e83755f0cbdf9adebf872ce7371baa3db9439b6aa0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81d63247a17245ca042f70aaa3fc2219de3279516748dc47adfa8567d601d6bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d53fc0863abb29863b7eb3fc3ba1b486b58027cf9d81505204b51ece0730f6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "635f0c65fb3bc8901b8340e27bd75a4d5aff6152daaab89338c50537c75d7df3"
+    sha256 cellar: :any,                 x86_64_linux:      "d247ac718fd3037710d6d9b808707fe1f9687fda090945bbad48f768a5fcb97f"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/gcx"

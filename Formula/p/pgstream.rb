@@ -1,22 +1,28 @@
 class Pgstream < Formula
   desc "PostgreSQL replication with DDL changes"
   homepage "https://github.com/xataio/pgstream"
-  url "https://github.com/xataio/pgstream/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "1212cad5c18a857db4449d4a7d740619c5e74cbc98c6f98aa6eb195aed231dc7"
+  url "https://github.com/xataio/pgstream/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "910256b63eb68266cb734a1f5ef4ec253b51ecfd90d88d7c44daa225d8c361a9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1143ca9e88333ae0aaa9a023f610119a92343abb71ca10daee22aa10b534669"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab210737a475ff60142c9f0edd8468ad9e117685c9f138797202a6950dbebf1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25b03cfab3789be274d8c47224bc1c7cd9ab1be5718a046f87c369516accc4be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fce07e158eef31ca4c6c64a66502b5a8d5bd8854890f4da1b306076b74848de4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4d21f19a45d4762221482dfa1c40af9ec2b86d08a39fcafe6413d7cb64b67df"
-    sha256 cellar: :any,                 x86_64_linux:  "7d1c854872d1c503881df9e851f9ba6f97c445a6be57761ad8e7e50662e55021"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f5ad7a95f97a6a8bc76a1a1290dd1bf38617c0bf008e5db351f57ce39d39b9f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d9feb18bec493991c30b54c6ad53ffbe648db0b8e75fd4e7b3a8b1701b64e0ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c6439dc153da97921a8c910cf8d5195b7aec0a7f94c0cd00fc6ba451a527c380"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "33383e50e514ec5fb9ba285df849683abf177f7dd1b57e3896912afba311cc1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4f655a9bb2dc420a01654b32603d3bd5fedaf2287ea05b3ba063b031875224fb"
+    sha256 cellar: :any,                 x86_64_linux:      "d25873b1cfabb654f45264bddcbe04399edc2edc3f924e8a2cd7968b477b8e5a"
   end
 
   depends_on "go" => :build
   depends_on "postgresql@18" => :test
   depends_on "wal2json" => :test
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X github.com/xataio/pgstream/cmd.Version=#{version}"

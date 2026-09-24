@@ -1,10 +1,9 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.11-11/source/tarball/percona-server-8.4.11-11.tar.gz"
-  sha256 "2fb90e235c25183d73c972cba481a32ea2d90cefca0669fe0786defc2acdfa18"
+  url "https://downloads.percona.com/downloads/Percona-Server-9.7/Percona-Server-9.7.1-1/source/tarball/percona-server-9.7.1-1.tar.gz"
+  sha256 "cfa835f66b415a46e64420d515096281f42a7bcf189bda0f6c434ea5a55d63ee"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -22,12 +21,11 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4f4162c58e792fb8c5517f0e28335f67786979dc59ea6b9f5a6f394d94ad4077"
-    sha256 arm64_sequoia: "8b911e15806f0050ade46f498237365f0892f618f69be19d4010bca79a4e33cd"
-    sha256 arm64_sonoma:  "49d1a8b9dd65f0e383334faede7edcd91fcf5c921efb24a596e73202556ef694"
-    sha256 sonoma:        "b7d3811541b256115369582dfe1dbe0c616b9febab18c211fc9479374dc43cb8"
-    sha256 arm64_linux:   "823f8e5f2c93a7cefe09830811dcb911608b7c335536803b9062b4258784ef1c"
-    sha256 x86_64_linux:  "0c3d343ba114c522011b530d124ac6b3a84e2c3d8a0e29c8034400d2e106b9ae"
+    sha256 arm64_golden_gate: "0045cca2c2eccf444da4414abc7852aadc45a9f9b5b20cd607bd047fd50a13e2"
+    sha256 arm64_tahoe:       "638e6c6845acc90b31e7469dd07decd8be399e0751e9569e35aae9c80c232796"
+    sha256 arm64_sequoia:     "e7e618e2bb9852646b0236a8cd8b4fbe053033e282e790ccd9b7b68d5fb82cfe"
+    sha256 arm64_linux:       "69a0da2a8f5974d021cd2898736386da347743b1b357cf38c44e632bb6a8f125"
+    sha256 x86_64_linux:      "f8255c610cd49fece67576ecafdeb6562931e4c7ab26984b961a92973c5b116e"
   end
 
   depends_on "bison" => :build
@@ -61,6 +59,13 @@ class PerconaServer < Formula
     cause "Requires GCC 10 or newer"
   end
 
+  # Backport commit from MySQL to fix build on newer Clang
+  patch do
+    url "https://github.com/mysql/mysql-server/commit/b006e3af4b6b1b6f7fdf7b91a00c6293c4f292b1.patch?full_index=1"
+    sha256 "e99e7e63d8581cbfb513a2dd43f36f8da0e3c1bf26e512156847c1036280adf3"
+    type :backport
+  end
+
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
@@ -82,6 +87,9 @@ class PerconaServer < Formula
 
     # Find Homebrew OpenLDAP instead of the macOS framework
     inreplace "cmake/ldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
+
+    # `pthread_self` is only pulled in by a `HAVE_SCHED_GETCPU`-guarded include
+    inreplace "storage/rocksdb/ib_ut0counter.h", "#include <cstdint>", "#include <cstdint>\n#include <pthread.h>"
 
     # Disable ABI checking
     inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
@@ -112,6 +120,8 @@ class PerconaServer < Formula
       -DWITH_SSL=system
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
+      -DWITH_MYSQL_SERVER_TELEMETRY=OFF
+      -DWITH_MYSQL_CLIENT_TELEMETRY=OFF
       -DWITH_UNIT_TESTS=OFF
       -DROCKSDB_BUILD_ARCH=#{ENV.effective_arch}
       -DALLOW_NO_ARMV81A_CRYPTO=ON
@@ -119,12 +129,6 @@ class PerconaServer < Formula
     ]
     args << "-DROCKSDB_DISABLE_AVX2=ON" if build.bottle?
     args << "-DWITH_KERBEROS=system" unless OS.mac?
-
-    # Workaround for
-    #  error: a template argument list is expected after a name prefixed by the template keyword
-    #   84 |     return Archive_derived_type::template get_size(std::forward<Type>(arg));
-    #      |                                           ^
-    ENV.append_to_cflags "-Wno-missing-template-arg-list-after-template-kw" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

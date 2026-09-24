@@ -1,8 +1,8 @@
 class Cdncheck < Formula
   desc "Utility to detect various technology for a given IP address"
   homepage "https://projectdiscovery.io"
-  url "https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.2.51.tar.gz"
-  sha256 "a26ed6dbe3b1bc1fc707a8c7d408770a5a9f6fc01e8d244a63c3bef9eb6ea10b"
+  url "https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "ba68bddf7a7ed3b5daa8ace46cb4f57d977c62973a245e02aa8a792a97a80295"
   license "MIT"
   head "https://github.com/projectdiscovery/cdncheck.git", branch: "main"
 
@@ -12,14 +12,20 @@ class Cdncheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78298dfbf481117fe2433607dccea2c663b961cebc91cb720dde139dedf66b83"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b1ed35de7d1a6fc15de923302c5fc900e1a0cd55ae872e9442e155d1da3d152"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac349c39db49dc11ffb7b3de032f2e15a2412413af1e3a3149b55e74470d70ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7f74944019a812a0783336aaf80e7381da0ce4751ed2b2a176d38802bd0e82e"
-    sha256 cellar: :any,                 x86_64_linux:  "62b7cf891d1f27c6af53afbc0c8ee3b490e392d38cf2e716c2ffb8fc8ccce794"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "32a10ae8c6629ae3d27d678d9d78cca8822f78df12d4a74f78252c79576e5e07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf51a20c2b047552c90f2bc4de6699ec5dc7713c1e1d7a4eca46f5d5147ee335"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d42f910985f6f956d1b5444fe278523b21b37ae0e349cfaa04aeaffb45caa75e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5af02e0fc875d168c006812b48ea82ff5abf2b7c7a18b990c1a362a33f231926"
+    sha256 cellar: :any,                 x86_64_linux:      "e67937b7c44192b449cf46ba482dcee98d2144b2485d09a86fdb751b9ac7a1fa"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/cdncheck"

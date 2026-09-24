@@ -1,10 +1,9 @@
 class NodeAT22 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v22.23.2/node-v22.23.2.tar.xz"
-  sha256 "bbe768df8d5815d7fa76124052985332452e0a4742d39f32027550d1aab8f6fb"
+  url "https://nodejs.org/dist/v22.23.3/node-v22.23.3.tar.xz"
+  sha256 "bd97093e1a1e9243338950c174a693a64d4e0926a9c6ce259962bc58d5e96909"
   license "MIT"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,12 +12,11 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ca2b1dca80c2927498b70b624d4bfbc681505d01fc12676c878f6175d39e299d"
-    sha256 cellar: :any, arm64_sequoia: "cabc159506a07f890f26be2f5fec5d90227a82f820662447050de2b769697c8e"
-    sha256 cellar: :any, arm64_sonoma:  "be9465bf1d840b4de70c5f9470d741f3915a8a11c1b5a7536cbfd34cf3cbb039"
-    sha256 cellar: :any, sonoma:        "503e4b9c2e5f4bb43de88fe8c8157d56fd819f3698fa0e91c948b18a5b192f0a"
-    sha256 cellar: :any, arm64_linux:   "8df1014332b7c56ffc293f29b42af0d2ac0f75cf640f8f70ae65ff0dbbe48635"
-    sha256 cellar: :any, x86_64_linux:  "ac9b2c1dd9b79f0e7c380807017108b1bdd492cf5ab23796b7a2d5de16c22e38"
+    sha256 cellar: :any, arm64_golden_gate: "22a13922cd55d6bffd51e55ecf8d2d769011dc74b8c2b1ac6d94cd4d95009555"
+    sha256 cellar: :any, arm64_tahoe:       "cd919950ec629033fdbd32455aa62bcb9a57d4224c09d2231f4bc9be2c4145d7"
+    sha256 cellar: :any, arm64_sequoia:     "4699ff576e5fa6dc2b8334512830155a509760e82bb0253eb256201c7e6989cb"
+    sha256 cellar: :any, arm64_linux:       "34d3553cd08d1906f213b5bb67bad1ba3b9a9854627cbeaa96fff4ded7f71a86"
+    sha256 cellar: :any, x86_64_linux:      "1452bca67b27c21a436e71de83cc5631e1b9118633de5188e2075b025106e2bf"
   end
 
   keg_only :versioned_formula
@@ -51,7 +49,7 @@ class NodeAT22 < Formula
 
   def install
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3.13")
+    ENV["PYTHON"] = python3
 
     args = %W[
       --prefix=#{prefix}
@@ -70,30 +68,30 @@ class NodeAT22 < Formula
       --shared-uvwasi
       --shared-zlib
       --shared-zstd
-      --shared-brotli-includes=#{Formula["brotli"].include}
-      --shared-brotli-libpath=#{Formula["brotli"].lib}
-      --shared-cares-includes=#{Formula["c-ares"].include}
-      --shared-cares-libpath=#{Formula["c-ares"].lib}
-      --shared-libuv-includes=#{Formula["libuv"].include}
-      --shared-libuv-libpath=#{Formula["libuv"].lib}
-      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
-      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
-      --shared-nghttp3-includes=#{Formula["libnghttp3"].include}
-      --shared-nghttp3-libpath=#{Formula["libnghttp3"].lib}
-      --shared-ngtcp2-includes=#{Formula["libngtcp2"].include}
-      --shared-ngtcp2-libpath=#{Formula["libngtcp2"].lib}
-      --shared-openssl-includes=#{Formula["openssl@3"].include}
-      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
-      --shared-simdjson-includes=#{Formula["simdjson"].include}
-      --shared-simdjson-libpath=#{Formula["simdjson"].lib}
-      --shared-simdutf-includes=#{Formula["simdutf"].include}
-      --shared-simdutf-libpath=#{Formula["simdutf"].lib}
-      --shared-sqlite-includes=#{Formula["sqlite"].include}
-      --shared-sqlite-libpath=#{Formula["sqlite"].lib}
-      --shared-uvwasi-includes=#{Formula["uvwasi"].include}/uvwasi
-      --shared-uvwasi-libpath=#{Formula["uvwasi"].lib}
-      --shared-zstd-includes=#{Formula["zstd"].include}
-      --shared-zstd-libpath=#{Formula["zstd"].lib}
+      --shared-brotli-includes=#{formula_opt_include("brotli")}
+      --shared-brotli-libpath=#{formula_opt_lib("brotli")}
+      --shared-cares-includes=#{formula_opt_include("c-ares")}
+      --shared-cares-libpath=#{formula_opt_lib("c-ares")}
+      --shared-libuv-includes=#{formula_opt_include("libuv")}
+      --shared-libuv-libpath=#{formula_opt_lib("libuv")}
+      --shared-nghttp2-includes=#{formula_opt_include("libnghttp2")}
+      --shared-nghttp2-libpath=#{formula_opt_lib("libnghttp2")}
+      --shared-nghttp3-includes=#{formula_opt_include("libnghttp3")}
+      --shared-nghttp3-libpath=#{formula_opt_lib("libnghttp3")}
+      --shared-ngtcp2-includes=#{formula_opt_include("libngtcp2")}
+      --shared-ngtcp2-libpath=#{formula_opt_lib("libngtcp2")}
+      --shared-openssl-includes=#{formula_opt_include("openssl@3")}
+      --shared-openssl-libpath=#{formula_opt_lib("openssl@3")}
+      --shared-simdjson-includes=#{formula_opt_include("simdjson")}
+      --shared-simdjson-libpath=#{formula_opt_lib("simdjson")}
+      --shared-simdutf-includes=#{formula_opt_include("simdutf")}
+      --shared-simdutf-libpath=#{formula_opt_lib("simdutf")}
+      --shared-sqlite-includes=#{formula_opt_include("sqlite")}
+      --shared-sqlite-libpath=#{formula_opt_lib("sqlite")}
+      --shared-uvwasi-includes=#{formula_opt_include("uvwasi")}/uvwasi
+      --shared-uvwasi-libpath=#{formula_opt_lib("uvwasi")}
+      --shared-zstd-includes=#{formula_opt_include("zstd")}
+      --shared-zstd-libpath=#{formula_opt_lib("zstd")}
       --openssl-use-def-ca-store
     ]
 

@@ -1,8 +1,8 @@
 class Pixi < Formula
   desc "Package management made easy"
   homepage "https://pixi.sh"
-  url "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.78.0.tar.gz"
-  sha256 "c30af3388faa0dd8b04510a9c5c47db4b7c6d34ed60ec625230814ceeb3f7ca0"
+  url "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.81.0.tar.gz"
+  sha256 "6de3f263642615b772400140562ca0a79db2ef489df2efd2499611225481ac24"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
@@ -15,11 +15,12 @@ class Pixi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3d7ade9226e5c6628dfd8c18ab3fbd75555d8c6d8cfd62d95a78f7f34b2e46d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1486dcdacf1d52e6914a0059b30488de68ae7c596558729103747b90b6018d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a95d696edfd7c064ea9ef669d09f906147dc5de8dc55f39b81bc5f75063a11c"
-    sha256 cellar: :any,                 arm64_linux:   "e15edb3bef2469a42c991efe60b2900335bd3626d6e10dfa4c39fe27305e97e8"
-    sha256 cellar: :any,                 x86_64_linux:  "e1d4457f9e141014b711010af8a55dcd42af826bd7dd7a348124486aa1bccf1e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7fc9bd2b041f97bd81cb632d5a44d105f2988bd60544893a63d8a610764e9f21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "260119450320fd5a00805faafecf1d90c28826aeeeaf8fc2c42f1829b4e166d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e767b7c79bac55d87a965db688bb11df035880f4b5afa4b47457194d49de2fd4"
+    sha256 cellar: :any,                 arm64_linux:       "67cb9ec079fe989d0dc6e8762c7ae5eef58ec63585f27e6ad6f771d0e347daf3"
+    sha256 cellar: :any,                 x86_64_linux:      "f3e26e64998ebf2c7532f4cbcdf831d17a57871f9a5b79e00423fa304248db0d"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +30,14 @@ class Pixi < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "xz" # for liblzma
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

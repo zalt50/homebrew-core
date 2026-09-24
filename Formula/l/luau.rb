@@ -1,8 +1,8 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
   homepage "https://luau.org"
-  url "https://github.com/luau-lang/luau/archive/refs/tags/0.736.tar.gz"
-  sha256 "e80f61e402500bf155f9fb260fc4a8f6ec8b7fb2e471b115b7e22111e993da86"
+  url "https://github.com/luau-lang/luau/archive/refs/tags/0.739.tar.gz"
+  sha256 "7eca9d2e4362588e9ce95f2fa976e46252231564b29a88fe77f0806a4eae9b40"
   license "MIT"
   version_scheme 1
   head "https://github.com/luau-lang/luau.git", branch: "master"
@@ -13,14 +13,16 @@ class Luau < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06cc890d9d432f5f100f84adb6d8b1355ed98cd3f3cc64d2de40d28aa33df99d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53684a8ef40618b92f36b129412486509fbc1f9e1a5836db2be5d24e91caf582"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca22cedda191bf97379cd54e6802e2649c191237be36505f34b754aad9c1750a"
-    sha256 cellar: :any,                 arm64_linux:   "d3c0917f3b53401c6ac5b3597bf49b3c98ca437d6af6412e93f9823bcbad7a46"
-    sha256 cellar: :any,                 x86_64_linux:  "f3da6f8569ab8ca1b8e026ddcec2a3db233392f27b2d45b1d14c5148fa9a66b9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c8d0368d525040312f6b0eb1ca49d52201f8d0e0313d4c7a99acfccf3f231445"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b71a843a24cb1783c9ee595145f12847f8b67b1fbf51434681e641b16bafecc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcfbbe8404570dcc633a12f805fc0fd5db23f182301fae490208e09a9102b4a4"
+    sha256 cellar: :any,                 arm64_linux:       "bedb6aac99db1894b2b0282177ae8d6df3e75a88e39aba55ba6208c43b6e2ed5"
+    sha256 cellar: :any,                 x86_64_linux:      "62f6a8fec4a4509fde4c967b1a85b23f276e9945349158ad11977e2e494c4051"
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DLUAU_BUILD_TESTS=OFF", *std_cmake_args

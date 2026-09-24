@@ -1,20 +1,26 @@
 class Crit < Formula
   desc "Your feedback loop with the agent: review plans and code locally"
   homepage "https://crit.md/"
-  url "https://github.com/tomasz-tomczyk/crit/archive/refs/tags/v0.19.1.tar.gz"
-  sha256 "716fdf5c1156741401163f1c9bf1f56da933fcfba07f879442ab835695e4794a"
+  url "https://github.com/tomasz-tomczyk/crit/archive/refs/tags/v0.20.2.tar.gz"
+  sha256 "0ccb9657ab15f69b4aa010e4fdd3569c3227e0ed96d46cee3cd6bf274614fa96"
   license "MIT"
   head "https://github.com/tomasz-tomczyk/crit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4275aaf86d99957834d89d4a65ab7f5261d879706050e110c5331e308734df97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4275aaf86d99957834d89d4a65ab7f5261d879706050e110c5331e308734df97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4275aaf86d99957834d89d4a65ab7f5261d879706050e110c5331e308734df97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6143071fd41f1f3463d22cf0f0b2d68dfabaf45443a395df2f5cca755692b8dc"
-    sha256 cellar: :any,                 x86_64_linux:  "71facd1f15dddf19dfa6cf96b1352aa059976ebd2f63f629a801dd4ee2b044da"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48548e6aa439e2f48935e8ba942c3842941c9bc1ff587cb7a2645bb53607e329"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "48548e6aa439e2f48935e8ba942c3842941c9bc1ff587cb7a2645bb53607e329"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "48548e6aa439e2f48935e8ba942c3842941c9bc1ff587cb7a2645bb53607e329"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "59563d542ac68052583ea314103a64244adeb08c3582e309aab4792cfb14512d"
+    sha256 cellar: :any,                 x86_64_linux:      "ce272278eeff252e32ba7f2eebb6d17e3aa82b6b87d662ff5eb97f2cd2c68f98"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

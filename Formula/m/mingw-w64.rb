@@ -19,12 +19,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0d68ab737a8bbc8c63ac6ac7acc0695e2887c1169df9a4423f1180090079b1d5"
-    sha256 arm64_sequoia: "aed828e844d196fc550ca8b2491906d99f279af99663cd5b2d43603a111a4ea0"
-    sha256 arm64_sonoma:  "fad568c214bedae5c7ab82a5ad8cc6f032c98fe78b035a1a69bd39e308ef3c7c"
-    sha256 sonoma:        "623551323695d700a811c0243cba59cfff7d31a9e42f66ae02cf7d84b9cbcb00"
-    sha256 arm64_linux:   "2856cacd926740ff8723ec384e9b4f4d7eb752e2c931910fc6c9126fbb0ae95e"
-    sha256 x86_64_linux:  "605f349c41fe616e1a485415ef4ad873faf4cbec75ebec0a5d2ae9d4f75e0c8a"
+    sha256 arm64_golden_gate: "de39e7069ae35357ab142a1b004c2e4060100ab50d25d9ed500f0ab24b87ee8f"
+    sha256 arm64_tahoe:       "0d68ab737a8bbc8c63ac6ac7acc0695e2887c1169df9a4423f1180090079b1d5"
+    sha256 arm64_sequoia:     "aed828e844d196fc550ca8b2491906d99f279af99663cd5b2d43603a111a4ea0"
+    sha256 arm64_sonoma:      "fad568c214bedae5c7ab82a5ad8cc6f032c98fe78b035a1a69bd39e308ef3c7c"
+    sha256 sonoma:            "623551323695d700a811c0243cba59cfff7d31a9e42f66ae02cf7d84b9cbcb00"
+    sha256 arm64_linux:       "2856cacd926740ff8723ec384e9b4f4d7eb752e2c931910fc6c9126fbb0ae95e"
+    sha256 x86_64_linux:      "605f349c41fe616e1a485415ef4ad873faf4cbec75ebec0a5d2ae9d4f75e0c8a"
   end
 
   # binutils searches for zstd using pkg-config
@@ -43,7 +44,7 @@ class MingwW64 < Formula
   end
 
   resource "binutils" do
-    url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+    url "https://ftpmirror.gnu.org/binutils/binutils-2.47.tar.bz2"
     mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
     sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
     livecheck do
@@ -52,7 +53,7 @@ class MingwW64 < Formula
   end
 
   resource "gcc" do
-    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz"
+    url "https://ftpmirror.gnu.org/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz"
     mirror "https://ftp.gnu.org/gnu/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz"
     sha256 "e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e"
   end

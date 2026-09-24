@@ -2,18 +2,17 @@ class Auditbeat < Formula
   desc "Lightweight Shipper for Audit Data"
   homepage "https://www.elastic.co/beats/auditbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v9.5.2",
-      revision: "8f4fe1e5dec067a139dce33d3af88c24b58c3660"
+      tag:      "v9.5.4",
+      revision: "ccdfcad1de773e22e494089f508162c52b027ee2"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ea05f6e84980ec49e9491d946b944ffc4dd659551d36b865b9c62d3c09c205c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "379e2656159869b0ed5f8b19049e30bd029375f1d497c76488d93231d9753e6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "674f954152d8bf7ea3b13b24eb3cb676ae35ae88185aa7d8d5252a083850eb82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83e15edf47393b824400b6051bb797b48097b8abceaa24b4f09dc00b55f5df41"
-    sha256 cellar: :any,                 arm64_linux:   "40353b74c2bf25ec9d076320adc5fe0b3d0979a05b99b0f6ab46b6bdd9189350"
-    sha256 cellar: :any,                 x86_64_linux:  "e377d9a8937b7ca6b70db07954f6ff65a83fcdf217b739100de9e46b2c034000"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "009704b343c1190e55e7714d6f2c8b133e38c90569cd1b273a8304d291c054d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8bc5deed8404926e27f955c8b57409d7b04b4edf73496eca569c9f94141728f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc3219fde73e058c4a2e24404784a23aac65fb316d525075b3759b316b4333cd"
+    sha256 cellar: :any,                 arm64_linux:       "4069f5647d83b84452866fabbb889f8187578b5355da2c57d2ede308dd721bb5"
+    sha256 cellar: :any,                 x86_64_linux:      "2f29f86628fb64dd4e07987d49423f1b3c1c1d52ffbfcfdefda11c15fbfe00ae"
   end
 
   depends_on "go" => :build
@@ -76,7 +75,6 @@ class Auditbeat < Formula
     sleep 5
     touch testpath/"files/touch"
     sleep 10
-    sleep 20 if OS.mac? && Hardware::CPU.intel?
 
     assert_path_exists testpath/"data/beat.db"
 

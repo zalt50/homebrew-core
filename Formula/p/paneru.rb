@@ -1,16 +1,15 @@
 class Paneru < Formula
   desc "Sliding, tiling window manager for MacOS"
   homepage "https://github.com/karinushka/paneru"
-  url "https://github.com/karinushka/paneru/archive/refs/tags/v0.4.4.tar.gz"
-  sha256 "e087a421a41f50959446f856fa2e70fb3b57942a78c425d83f78d9759a295694"
+  url "https://github.com/karinushka/paneru/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "f72b51ae41d80dd06b06da8474bce44b338c97c11518b5714156ad93abeab5ed"
   license "MIT"
   head "https://github.com/karinushka/paneru.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25c286ab0642c3951d5ce311783d8824d16b0d766e315655187aadef6fe4f952"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e771ddd9414fd7c6cc219b806deeeaaee7f1f8bebf1e567418277d287c1ad1d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7eff02b5d96faa72dd40bc1881e2dd78bfbc64d27ae69ae83af0053b5d53ec41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa97e1356b4b5f3b606d0faf80f29e04837677981f3e9b4007df4ea4fa623aee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e963720c7362a1b60389666e837f5270f43d09f7a31b5b5e84c9e61e245030fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "39d71dd823da8a782ac0f14b3b96268bae8c0835f19ba42fd14f5e4dddc0bd8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87663c29e5eef02cfd9196dc05ef6792ac9223d0d7bd155bcd6e19abd3e885a0"
   end
 
   depends_on "rust" => :build

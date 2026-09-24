@@ -2,8 +2,8 @@ class DotnetAT8 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.130.tar.gz"
-  sha256 "4132551b77ec3179db45338d3e9f7ebe5fd1c647582e44f23d22d7470bc08eff"
+  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.131.tar.gz"
+  sha256 "b1adc9442ba3dd564c74630a402a7d25987619278c7f3d49cce8fb10b4a2c2f5"
   license "MIT"
   compatibility_version 1
 
@@ -13,12 +13,12 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4e6ca87a324412efac058d7176d40b92222a55ff916d0a0e40bd15995d2b68c7"
-    sha256 cellar: :any, arm64_sequoia: "fd8001f1fa77b2cdaadb280de345232f2daed0da607b95575b6f604ed2eab29e"
-    sha256 cellar: :any, arm64_sonoma:  "98072cee7491c2e87fb0e92fc5b979d8aeb152cd9aeb7baf5df2304e1b87b780"
-    sha256 cellar: :any, sonoma:        "e8d0129e4af0e830a9fd2b9ec0a3ec8928cf675c070590e43b4c6f579f888464"
-    sha256 cellar: :any, arm64_linux:   "66bced854f77920e38cc5e7eaa02395c7e402ae4db317389e2a719e921da1579"
-    sha256 cellar: :any, x86_64_linux:  "ee51c5074efa8a11aaddc397ca631f6ef420998c0c05c052e8aefc9d98d216ec"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "1541927a6d3509acafc72ae3735e8d449e2c67835e84296da542a43b1784ecea"
+    sha256 cellar: :any, arm64_tahoe:       "c78fadd8d5546c7cfa7cef7127ae8dc942b41263eed9e9714029dac3601b9315"
+    sha256 cellar: :any, arm64_sequoia:     "c0c2fa17e79aa727bfe40d9ae3b284b9cce10c2f3407457a5587ffcbc978bc0f"
+    sha256 cellar: :any, arm64_linux:       "2dbcb5921af87f3aa8de94c6ef9d798a08efd2396207d393c30be4706c160038"
+    sha256 cellar: :any, x86_64_linux:      "f39876995501a0350b3b6c4e9940167f037267da1b30796f189c2eb345cc20f3"
   end
 
   keg_only :versioned_formula
@@ -55,8 +55,8 @@ class DotnetAT8 < Formula
   end
 
   resource "release.json" do
-    url "https://github.com/dotnet/dotnet/releases/download/v8.0.130/release.json"
-    sha256 "f58f6ffc0ff947ccfd6ce6771fc027ef2265a268d6545116b4b0737fc7d544b3"
+    url "https://github.com/dotnet/dotnet/releases/download/v8.0.131/release.json"
+    sha256 "68f2d6f9c8d1a6856450ada23c3a6f01cc92a58d0b69956b183ff1207d800e95"
 
     livecheck do
       formula :parent
@@ -80,7 +80,7 @@ class DotnetAT8 < Formula
 
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
-      ENV.prepend_path "PATH", Formula["grep"].libexec/"gnubin"
+      ENV.prepend_path "PATH", formula_opt_libexec("grep")/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
@@ -105,16 +105,34 @@ class DotnetAT8 < Formula
       inreplace "src/runtime/eng/SourceBuild.props",
                 "--outputrid $(TargetRid)",
                 "\\0 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=ON"
-
-      # Work around build script getting stuck when running shutdown command on Linux
-      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
-      inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
-      inreplace "repo-projects/Directory.Build.targets",
-                '<Exec Command="$(DotnetToolCommand) build-server shutdown" />',
-                ""
     end
 
+    # Skip shutting down build servers, which gets stuck on Linux and fails in the macOS build sandbox
+    # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
+    inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
+    inreplace "repo-projects/Directory.Build.targets",
+              '<Exec Command="$(DotnetToolCommand) build-server shutdown" />',
+              ""
+
     system "./prep.sh"
+    if OS.mac?
+      # MSBuild hardcodes `/tmp` for its sockets, which the build sandbox denies, so prefer a short `TMPDIR`.
+      # Below 38 characters, even its longest socket name (66) fits macOS's 103-byte socket path limit.
+      # https://github.com/Homebrew/brew/issues/23934
+      inreplace "src/msbuild/src/Shared/NamedPipeUtil.cs",
+                'Path.Combine("/tmp", pipeName)',
+                'Path.Combine(Path.GetTempPath().Length < 38 ? Path.GetTempPath() : "/tmp", pipeName)'
+      # Avoid worker nodes, which the unpatched bootstrap MSBuild cannot reach
+      system ".dotnet/dotnet", "build", "src/msbuild/src/MSBuild/MSBuild.csproj", "--configuration", "Release",
+             "-maxcpucount:1"
+      # Replace the bootstrap SDK's MSBuild with the patched one
+      cp Dir["src/msbuild/artifacts/bin/MSBuild/Release/net*/{MSBuild,Microsoft.Build*}.dll"],
+         Dir[".dotnet/sdk/*"].first
+      # `build.sh` builds MSBuild again into the same directory
+      rm_r "src/msbuild/artifacts"
+    end
+    # The sandbox also denies the Roslyn compiler server's `/tmp` socket, so compile without it
+    ENV["UseSharedCompilation"] = "false" if OS.mac?
     # We unset "CI" environment variable to work around aspire build failure
     # error MSB4057: The target "GitInfo" does not exist in the project.
     # Ref: https://github.com/Homebrew/homebrew-core/pull/154584#issuecomment-1815575483

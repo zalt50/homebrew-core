@@ -36,12 +36,13 @@ class Texlive < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "107a9d90dadaa539a2b81965d616c213b85884e3ac11b664590cd7499d75aa3d"
-    sha256 arm64_sequoia: "f95f28f08b5ad97dabcc0ff674a2ba2628cd28a9cb72e4479028057a63afb82d"
-    sha256 arm64_sonoma:  "d0ec9ff9f399284628612edf2dffd3d962272d380216a5425d16faf28086919d"
-    sha256 sonoma:        "457d840d2e97cea5f8a11e46adc9ade67c3e197b54875889033638b143222508"
-    sha256 arm64_linux:   "f04609a0e06b0385278649da3408e8229296ef12d481d32632f564b20d3f94cc"
-    sha256 x86_64_linux:  "4ab2674e0c636ab1cd8c8428ebcac12509976bd881f83853d08310aaab23cf33"
+    sha256 arm64_golden_gate: "98444a17b950edfaef101879b256acdd844a36952b0cc0e1b1108a8142e2d176"
+    sha256 arm64_tahoe:       "107a9d90dadaa539a2b81965d616c213b85884e3ac11b664590cd7499d75aa3d"
+    sha256 arm64_sequoia:     "f95f28f08b5ad97dabcc0ff674a2ba2628cd28a9cb72e4479028057a63afb82d"
+    sha256 arm64_sonoma:      "d0ec9ff9f399284628612edf2dffd3d962272d380216a5425d16faf28086919d"
+    sha256 sonoma:            "457d840d2e97cea5f8a11e46adc9ade67c3e197b54875889033638b143222508"
+    sha256 arm64_linux:       "f04609a0e06b0385278649da3408e8229296ef12d481d32632f564b20d3f94cc"
+    sha256 x86_64_linux:      "4ab2674e0c636ab1cd8c8428ebcac12509976bd881f83853d08310aaab23cf33"
   end
 
   depends_on "pkgconf" => :build
@@ -92,6 +93,7 @@ class Texlive < Formula
   conflicts_with "lcdf-typetools", because: "both install a `cfftot1` executable"
   conflicts_with "ht", because: "both install `ht` binaries"
   conflicts_with "opendetex", because: "both install `detex` binaries"
+  conflicts_with "ratex", because: "both install `lualatex`, `pdflatex`, `xelatex` binaries"
   conflicts_with "weave", because: "both install a `weave` binary"
 
   resource "texlive-extra" do
@@ -343,7 +345,6 @@ class Texlive < Formula
   end
 
   def install
-    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resource("pygments")
 
@@ -380,20 +381,25 @@ class Texlive < Formula
     end
 
     resource("install-tl").stage do
-      cd "tlpkg" do
-        (share/"tlpkg").install "installer"
-        (share/"tlpkg").install "tltcl"
-      end
+      # Clean unused files
+      rm_r("tlpkg/installer/wget")
+      rm_r("tlpkg/installer/xz")
+
+      (share/"tlpkg").install "tlpkg/installer"
+      (share/"tlpkg").install "tlpkg/tltcl"
     end
 
-    resource("texlive-texmf").stage do
+    # We manually extract the resource to reduce total disk space needed.
+    # Tarball is ~5GB and a full unpack is ~9GB with half being docs we discard.
+    mkdir "texlive-texmf" do
+      system "tar", "--exclude=texmf-dist/doc",
+                    "--extract",
+                    "--file", resource("texlive-texmf").cached_download,
+                    "--strip-components", "1"
       share.install "texmf-dist"
+      # Make sure doc is removed to account for different tar implementations/versions
+      rm_r(share/"texmf-dist/doc") if (share/"texmf-dist/doc").exist?
     end
-
-    # Clean unused files
-    rm_r(share/"texmf-dist/doc")
-    rm_r(share/"tlpkg/installer/wget")
-    rm_r(share/"tlpkg/installer/xz")
 
     # Set up config files to use the correct path for the TeXLive root
     inreplace buildpath/"texk/kpathsea/texmf.cnf",

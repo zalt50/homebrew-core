@@ -4,15 +4,14 @@ class Fastnetmon < Formula
   url "https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.9.tar.gz"
   sha256 "5ecc10791af04fc1fd720a9a113060668426aa798d5b6c3921364213a31a5e9b"
   license "GPL-2.0-only"
-  revision 9
+  revision 12
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d3369f83528aa94cba5a0565da275f952432ce3f94eed10da17793ef05ad5a75"
-    sha256 cellar: :any, arm64_sequoia: "e106b17c6e08f74218f578fa3ef9a595d43ec24a0590e154c2377dbac33de81e"
-    sha256 cellar: :any, arm64_sonoma:  "1c19901df1b9df59982f1249a8258d007d448ccee143836f5b995d891b7d12ea"
-    sha256 cellar: :any, sonoma:        "c7acca176ec5e0486479426cdcdb4256cb354ee219a66892511666236d840562"
-    sha256               arm64_linux:   "8c77ba5bacf9d42465f041d31ef80e6e34e5d896b26ce7caac88cbe3357e9463"
-    sha256               x86_64_linux:  "6e50c2729d3b6c8561da25f16db2ec581b365ac1faa54bde6e6e692710979bfd"
+    sha256 cellar: :any, arm64_golden_gate: "a7f6a9f6f94e0bd14c4406bb489adc9954a10fd467247bf2b5e9b43ab3e95123"
+    sha256 cellar: :any, arm64_tahoe:       "d108384b700cc87fdfa8c14453a909cc1f3cc91b83255370cbc9557a9ff8d461"
+    sha256 cellar: :any, arm64_sequoia:     "79db49800b3b1cf57865f8b23a52aa8bee22b70c63079f1a07747d86692b5b68"
+    sha256               arm64_linux:       "921b5d028d40145265706f61d089551b1dc36807e03a16033015b81d87f9cd98"
+    sha256               x86_64_linux:      "fd8c021073f41a9219036e7222298fb08e197afca6c673385deab25718fa9b58"
   end
 
   depends_on "cmake" => :build
@@ -28,10 +27,6 @@ class Fastnetmon < Formula
 
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
-
-  on_macos do
-    depends_on macos: :big_sur # We need C++ 20 available for build which is available from Big Sur
-  end
 
   on_linux do
     depends_on "elfutils"
@@ -70,7 +65,6 @@ class Fastnetmon < Formula
 
     pid = spawn opt_sbin/"fastnetmon", "--configuration_file", testpath/"fastnetmon.conf", "--log_to_console"
     sleep 60
-    sleep 40 if OS.mac? && Hardware::CPU.intel?
 
     assert_path_exists testpath/"fastnetmon.dat"
     assert_path_exists testpath/"fastnetmon_ipv6.dat"

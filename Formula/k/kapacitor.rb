@@ -2,8 +2,8 @@ class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
   url "https://github.com/influxdata/kapacitor.git",
-      tag:      "v1.8.6",
-      revision: "ab88ca501f0ce0873dd837bee8643ef64f4d518b"
+      tag:      "v1.8.7",
+      revision: "732d0f06a862762529eda2d2743986d6fff5e940"
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
@@ -13,17 +13,15 @@ class Kapacitor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c3bb986375c4e6ad9f6a2ff2f9bd2f4b9498037ce8dcac1386173ddebcd35a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "976a2f80f1773a2f7cf1fb0ba7070e306764deb43b7d2decef53185ed7b8016f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f2baf08a8efad92ac0ba6badf160dd7816a5017f218a6ec97d3f0ee0e1a1210"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49247f7c6d705941c141f864dbc946349d0c3b560b9a41e495e3e4d6386d67fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6d78e06c5a2426d6f9d40e2cccaed1d529d95c0266481d90e107eb07c800b9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6561b70701cb82e1390bf52d2eaf674cdce8c8b529c3358f6cadababce7950e5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1f1a32167d73ea8962a7da2f05e8215742fd70f3b022df475755c3bba4e84114"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fa5787af03c87a93b12513d307ed38efa320b31f75e894e6da8d3a13b388f99b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb65e4f7cbdc07bbd6a9716fc0a917a5cc9e860274acf79c5c354a2fb22ed166"
+    sha256 cellar: :any,                 arm64_linux:       "d3f93b7570977c0aea6a26bbd3365f811c1bcd985cca2dc53efd961110d604df"
+    sha256 cellar: :any,                 x86_64_linux:      "6bd4f4d917ec6d108ff379eef10009d77b9d6b4430fc8d65d37e63a7c5baa18e"
   end
 
-  # TODO: unpin go@1.26 when kapacitor supports go 1.27
-  # ref: https://github.com/influxdata/kapacitor/pull/2902
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
   depends_on "pkgconf" => :build # for `pkg-config-wrapper`
   depends_on "rust" => :build
 

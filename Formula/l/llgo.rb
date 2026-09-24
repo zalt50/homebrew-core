@@ -1,8 +1,8 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https://github.com/xgo-dev/llgo"
-  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "f79aa5da8c7baad55b0a287c0c9c7d073428156a58750204ef0fa9098ea71f5d"
+  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "9479a9baa51d40c062ea77dd256f007b98e1b773c26ef224af5f7a393af845bd"
   license "Apache-2.0"
   head "https://github.com/xgo-dev/llgo.git", branch: "main"
 
@@ -12,30 +12,25 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a1b93a51f8113cf721a4476b4c551671d7d4ada058e877d8536a2f7aa15a4d6f"
-    sha256 cellar: :any, arm64_sequoia: "15443597e404a1c13e89987fcebb0e5809280156adc53d201296918ae287e860"
-    sha256 cellar: :any, arm64_sonoma:  "cf9b9e247503025306e7b8d33c025dfec006a0a294dd264584d1834cf32e3ed8"
-    sha256               arm64_linux:   "de3c42a43fc4ef504c001abdbd5a22d2dec9c026c1b6783b0e6189bbd05ea436"
-    sha256               x86_64_linux:  "26bdb4af0b6d70d1efe9a176ad0e88d782097a5c664f83294a4ca0d3529f8e9a"
+    sha256 cellar: :any, arm64_golden_gate: "ee6bd570bff321dc8aa0b38deb66eee67a30df17ed42da60a6a7261bbf5379a4"
+    sha256 cellar: :any, arm64_tahoe:       "fbeef5372c8b6731f8d46544ce18d7c32c742c4c152e6b79087017b31c359b33"
+    sha256 cellar: :any, arm64_sequoia:     "e0e4ca2ba35cc16fabf7466ca4d7ee80e797f96b8dd82cececab673583283fc1"
+    sha256               arm64_linux:       "c3c65736a38e953cbbd52052c1bb437fcda39e100176791efd46b600a203adad"
+    sha256               x86_64_linux:      "9cd548129b85d6dcd083dec580f7c4149e22f1fd30dbd2f723cfd22aa7faada6"
   end
 
   depends_on "bdw-gc" => :no_linkage
   depends_on "go"
   depends_on "libuv" => :no_linkage
+  depends_on "lld@22"
+  depends_on "llvm@22"
   depends_on "openssl@3"
   depends_on "pkgconf"
 
   uses_from_macos "libffi"
 
-  on_macos do
-    depends_on "lld@21"
-    depends_on "llvm@21"
-  end
-
   on_linux do
     depends_on "libunwind"
-    depends_on "lld@19"
-    depends_on "llvm@19" # Newer LLVM doesn't work with aarch64-linux-unknown triple llgo passes
     depends_on "zlib-ng-compat"
   end
 
@@ -52,7 +47,7 @@ class Llgo < Formula
       -X #{module_path}/internal/env.buildTime=#{time.iso8601}
       -X #{module_path}/xtool/env/llvm.ldLLVMConfigBin=#{llvm.opt_bin}/llvm-config
     ]
-    tags = %W[llvm#{llvm.version.major}]
+    tags = []
     path_deps = %w[lld go pkgconf].map { |name| find_dep(name).opt_bin }
     path_deps << llvm.opt_bin
     script_env = { PATH: "#{path_deps.join(":")}:${PATH}" }

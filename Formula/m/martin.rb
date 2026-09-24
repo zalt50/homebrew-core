@@ -1,22 +1,26 @@
 class Martin < Formula
   desc "Blazing fast tile server, tile generation, and mbtiles tooling"
   homepage "https://martin.maplibre.org"
-  url "https://github.com/maplibre/martin/archive/refs/tags/martin-v1.14.0.tar.gz"
-  sha256 "d75542ee0fa7f0f60975db856de39532035f981f187a6526b61f8b52e53e212b"
+  url "https://github.com/maplibre/martin/archive/refs/tags/martin-v1.16.1.tar.gz"
+  sha256 "e64c4c43af3eb5940c825c70619f6c670e7af4a5853498c39237b6b7e57e42a2"
   license any_of: ["Apache-2.0", "MIT"]
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
   livecheck do
     url :stable
     regex(/^martin[._-]v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee3b4f952f8227d10db721297d32102b64153a33b440afc724d1417cc682f9a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c7d8c103bc4772128041702320212792b1fcb2e61bfecd99f55c83fe6a96eac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c35281bab783b578d9a54ceb5d8361e6b7e3999a866a687095b013198a16b8e2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c29b086f846028fdadaa506048929e8eabb2189ee45d6f343c9b0a7378e9d68"
-    sha256 cellar: :any,                 arm64_linux:   "aa8669d09ad258d13066e5c685a9e595315d4364ce55e2699d337a33cb02c599"
-    sha256 cellar: :any,                 x86_64_linux:  "c0a8d3ab6b7df12570c8d35fb9e8bb21965145a1fd7916de08f2ab552ac61e63"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1799b5a32a4bc064cf36ad982d1804d02cc17db89773a07b706aee6b458c5283"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ce143aad121e6e79eb7906512da140b2f530951895b3a0fe54b489a3158483e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d24d27284df5223493c6e7c51b99a96ccb5c1617034abc0657f8c3df97a1dff2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7b94e1c951b46134b39189689909fe704f4c32a516b91a57c08982381ac2b405"
+    sha256 cellar: :any,                 arm64_linux:       "04c51c13e635dd83fb44a5c2dfb2bfb2637127240d63633c737e439c461d26f5"
+    sha256 cellar: :any,                 x86_64_linux:      "513211b43540ad756186a9dfa168b3a0b3a40bb19cf36079e3fe7616dde242e3"
   end
 
   depends_on "node" => :build

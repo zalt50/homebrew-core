@@ -1,9 +1,10 @@
 class Knot < Formula
   desc "High-performance authoritative-only DNS server"
   homepage "https://www.knot-dns.cz/"
-  url "https://knot-dns.nic.cz/release/knot-3.5.7.tar.xz"
-  sha256 "0e363e9160895e2b83d02b0a7488c3a566b605b92edac85d03be3ebce94b8214"
+  url "https://knot-dns.nic.cz/release/knot-3.6.0.tar.xz"
+  sha256 "922894f04a2835131a24c3b3edcbf761273c1b37d3dc4e46d6923ee3856af130"
   license all_of: ["GPL-3.0-or-later", "0BSD", "BSD-3-Clause", "LGPL-2.0-or-later", "MIT"]
+  compatibility_version 1
 
   livecheck do
     url "https://www.knot-dns.cz/download/"
@@ -11,12 +12,12 @@ class Knot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "47006f331c89314a2628bfddfc940daf7b5994bfac9fa20eaa4e45f44f02e66f"
-    sha256 arm64_sequoia: "00b4885a039c0ce6158b2122abb96ccc4804f154746f2a2a2f2aa01d39d3f99f"
-    sha256 arm64_sonoma:  "96a3242d3f5ea55cb78aae6d5af8ae87dc6c126eec504ef78f3e0c55d95e736b"
-    sha256 sonoma:        "f15b534109c73734ca7a0e0fb836a007e7fcfb6932cdae9495a26b162e9f7997"
-    sha256 arm64_linux:   "0fe8f2db8aa2608dfe51e767b41bead1ab64a6f82ec490772742c7d13b310d06"
-    sha256 x86_64_linux:  "d378e16b2c963160ec999457ad3ad46f85c44b56ded1c12b9f3ad07ee929be5c"
+    sha256 arm64_golden_gate: "2c767a1538418d3c7a00414faad8a4f2955d8202e9a0bc1108b8009ba5408b4e"
+    sha256 arm64_tahoe:       "934edd9ccd1c78167d77ea7e7a77cf8d9d37184c4bb20a121c2f1622e90da4f2"
+    sha256 arm64_sequoia:     "4a7c5d66d0f09dcbb2fb4d6f70d8a08e64a850e9beacd4dc3d5a53a611ce289e"
+    sha256 arm64_sonoma:      "ac99730976e7300587bf58f815b49e7266d3abd9d1c208a017083c9af5e88976"
+    sha256 arm64_linux:       "7cbeab3acff3c761059ee2cd12339c1ef779b8bff4c2fdef1543b82f9f50165a"
+    sha256 x86_64_linux:      "3278bfe8e4ec923f261ea819448ffba25085c08e3fe2f0e1e2e2c04fb44de613"
   end
 
   head do
@@ -38,6 +39,8 @@ class Knot < Formula
   depends_on "userspace-rcu"
 
   uses_from_macos "libedit"
+
+  deny_network_access! :test
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
@@ -89,8 +92,12 @@ class Knot < Formula
   end
 
   test do
-    system bin/"kdig", "@94.140.14.140", "www.knot-dns.cz", "+quic"
-    system bin/"khost", "brew.sh"
+    (testpath/"example.zone").write <<~EOS
+      example.test. 3600 IN SOA ns.example.test. hostmaster.example.test. 1 3600 600 86400 3600
+      example.test. 3600 IN NS ns.example.test.
+      ns.example.test. 3600 IN A 127.0.0.1
+    EOS
+    system bin/"kzonecheck", "-o", "example.test.", testpath/"example.zone"
     system sbin/"knotc", "conf-check"
   end
 end

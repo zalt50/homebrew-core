@@ -1,18 +1,17 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v4.2.7.tar.gz"
-  sha256 "04e505bc7d9f9d13e65f1121556fffb14769f181961712c65732973982195577"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v4.3.6.tar.gz"
+  sha256 "e5986086d508f3c5a4d9d4ad983ec0f95afbc0dfd0797aacb68e731f1102f0df"
   license "GPL-2.0-or-later"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "a873612084526aa9e897100cd2f7ce60aa1f1b882b94bfa7f9748e1ab7e16726"
-    sha256 arm64_sequoia: "e73e0045f46c85a525f3073da45bee47593dc3c2bf734b4efcdab3255d9d7362"
-    sha256 arm64_sonoma:  "4c290189efbd517349c689a82d14759c5b86d78ebf329c9d8dff0446b9792604"
-    sha256 sonoma:        "4187891ce7b2eebd74ee610978cad0dee2cac8a2405b7221def646e235cfd084"
-    sha256 arm64_linux:   "d03e92b4bfcd1b7c6ad457792fd221a98757e42bcba64b1aeb8e4c4d5b4759b2"
-    sha256 x86_64_linux:  "441748fcb009c5976cdbae7dc33bf50f06cd004ceec6a22c9ad8ea2fe210545b"
+    sha256 arm64_golden_gate: "63244c68bfcf3c8d63bebdef35d2e841e0b96a065a8fd2adea783c281f4f6491"
+    sha256 arm64_tahoe:       "4c5d91eddf8519f868c4f6c3b17044d40935489fd7e6f0fc62e47d24f01f26d1"
+    sha256 arm64_sequoia:     "68a7bba92de71f1117c4d00c0669a64245982cbb4c6bcea461208c2de0524f77"
+    sha256 arm64_linux:       "1f9efc0976b163454e03ac2eb87ca230404cff77246ffb05c21d5247ebe2f140"
+    sha256 x86_64_linux:      "246db87beba715af96d889b049102c42b07be63d260e6c408b4e3a165640a7e5"
   end
 
   depends_on "pkgconf" => :build
@@ -37,13 +36,7 @@ class Kew < Formula
     depends_on "libnotify"
   end
 
-  # Fix crash when D-Bus session bus is unavailable
-  patch do
-    url "https://github.com/ravachol/kew/commit/a57240bc8ff60a80ea151e0ce842104ce99496fb.patch?full_index=1"
-    sha256 "98eb8b9217ff2a2c125108128b03160b730f45d33dfb96d967c5b355a81f3c58"
-    type :unofficial
-    resolves "https://github.com/ravachol/kew/pull/564"
-  end
+  deny_network_access!
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "LANGDIRPREFIX=#{prefix}"
@@ -52,14 +45,26 @@ class Kew < Formula
 
   test do
     ENV["XDG_CONFIG_HOME"] = testpath/".config"
+    ENV["XDG_STATE_HOME"] = testpath/".local/state"
 
     (testpath/".config/kew").mkpath
+    (testpath/".local/state").mkpath
     (testpath/".config/kew/kewrc").write ""
 
     system bin/"kew", "path", testpath
 
-    output = shell_output("#{bin}/kew song")
-    assert_match "No Music found.\nPlease make sure the path is set correctly", output
+    # `kew` puts the terminal in raw mode, so it needs to own a PTY to avoid `SIGTTOU`
+    output = ""
+    PTY.spawn(bin/"kew", "song") do |r, _w, _pid|
+      r.winsize = [40, 120]
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    end
+    assert_match "No Music found.", output
+    assert_match "Please make sure the path is set correctly", output
 
     assert_match version.to_s, shell_output("#{bin}/kew --version")
   end

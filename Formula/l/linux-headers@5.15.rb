@@ -1,8 +1,8 @@
 class LinuxHeadersAT515 < Formula
   desc "Header files of the Linux kernel"
   homepage "https://kernel.org/"
-  url "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.219.tar.gz"
-  sha256 "1f80cc61909fb7f331e6518f9749b853de0a41c711006b839ac6f52c7f3b429a"
+  url "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.221.tar.gz"
+  sha256 "966d6d93b6989fedde7dacbf12ed24c8cc5142896a7c4739a76d83a7be1a4787"
   license "GPL-2.0-only" => { with: "Linux-syscall-note" }
   compatibility_version 1
 
@@ -12,8 +12,8 @@ class LinuxHeadersAT515 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "91e5668bdea5230b661571922add6de06f3bf8ebfd81bad9ba06cdc1da38cdd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3b73c6f14c94ad01a7a37bfd6501f160d2bf434421a95b954bd9cf3edb4eef3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "bfda0699ee2a1d9f29122f115cc01829374876a79b7b9217b6154ad9f06391f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e17b8718dd6b03dc429f967fdd8735e361d29ead1d8442049656fbbda9d5e16e"
   end
 
   keg_only :versioned_formula

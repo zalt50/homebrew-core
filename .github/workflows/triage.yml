@@ -93,7 +93,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: setup-homebrew
-        uses: Homebrew/actions/setup-homebrew@a657b8b0cd35d0f65cce41fce9b24cf054b49869 # 2026.08.24.1
+        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
           core: true
           cask: false
@@ -126,7 +126,7 @@ jobs:
         if: >
           github.actor != 'BrewTestBot' &&
           !contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
-        uses: Homebrew/actions/check-commit-format@a657b8b0cd35d0f65cce41fce9b24cf054b49869 # 2026.08.24.1
+        uses: Homebrew/actions/check-commit-format@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           check_package_commit_format: >-
@@ -136,7 +136,7 @@ jobs:
             }}
 
       - name: Label pull request
-        uses: Homebrew/actions/label-pull-requests@a657b8b0cd35d0f65cce41fce9b24cf054b49869 # 2026.08.24.1
+        uses: Homebrew/actions/label-pull-requests@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         if: always()
         with:
           token: ${{secrets.GITHUB_TOKEN}}
@@ -173,8 +173,15 @@ jobs:
               content: \n  disable!.*\n
 
             - label: homepage
+              status: modified
               path: Formula/.+
-              patch_content: \n  homepage .+\n
+              patch_content: \n[-+]  homepage .+\n
+              allow_any_match: true
+
+            - label: license
+              status: modified
+              path: Formula/.+
+              patch_content: \n[-+]  license .+\n
               allow_any_match: true
 
             - label: legacy
@@ -188,18 +195,6 @@ jobs:
                 - Formula/p/python@3.14.rb
                 - Formula/p/python-gdbm@3.14.rb
                 - Formula/p/python-tk@3.14.rb
-
-            - label: missing license
-              path: Formula/.+
-              missing_content: \n  license .+\n
-
-            - label: deprecated license
-              path: Formula/.+
-              content: license .*"(GPL|LGPL|AGPL|GFDL)-[0-9].[0-9][+]?".*
-
-            - label: review no_autobump stanza
-              path: Formula/.+
-              content: 'no_autobump! because: :requires_manual_review'
 
             - label: boost
               path: Formula/.+
@@ -299,6 +294,7 @@ jobs:
                 dotnet|\
                 emscripten|\
                 envoy|\
+                foundry|\
                 flang|\
                 gcc|\
                 gdb|\
@@ -319,9 +315,7 @@ jobs:
                 pytorch|\
                 qtwebengine|\
                 root|\
-                rtabmap|\
                 rust|\
-                souffle|\
                 swift|\
                 texlive|\
                 v8|\
@@ -330,33 +324,24 @@ jobs:
               keep_if_no_match: true
               allow_any_match: true
 
-            - label: long dependent tests
+            - label: CI-parallel-dependents
               path: "Formula/.+/(\
-                boost|\
                 cabal-install|\
-                cmake|\
-                freetype|\
-                gcc|\
+                docbook-xsl|\
+                erlang|\
                 gettext|\
                 ghc|\
                 glib|\
-                gtk\\+3|\
-                jpeg-turbo|\
-                libomp|\
-                libpng|\
-                node|\
-                numpy|\
-                openblas|\
+                go|\
+                libxml2|\
+                ocaml|\
+                ocaml-findlib|\
                 openjdk|\
                 openssl@3|\
-                pango|\
-                pcre2|\
+                pkgconf|\
                 python@3.14|\
-                qtbase|\
-                readline|\
                 rust|\
-                xz|\
-                zstd\
+                zlib-ng-compat\
                 ).rb"
               keep_if_no_match: true
               allow_any_match: true
@@ -367,17 +352,17 @@ jobs:
                     cabal-install|\
                     docbook-xsl|\
                     emscripten|\
-                    erlang|\
                     ocaml|\
                     ocaml-findlib|\
                     ocaml-num|\
-                    openjdk|\
                     pyqt-builder|\
                     rust\
                     )\\.rb"
                 - "Aliases/(\
+                    erlang|\
                     ghc|\
-                    go\
+                    go|\
+                    openjdk\
                     )(@[0-9.]+)?$"
               missing_content: '\n  revision [0-9]+\n'
               keep_if_no_match: true
@@ -385,21 +370,10 @@ jobs:
 
             - label: CI-linux-self-hosted
               path: "Formula/.+/(\
+                graph-tool|\
+                libtensorflow|\
                 qt@5|\
-                qtwebengine|\
-                texlive\
-                ).rb"
-              keep_if_no_match: true
-              allow_any_match: true
-
-            - label: CI-no-fail-fast-deps
-              path: "Formula/.+/(\
-                glib|\
-                libxml2|\
-                mesa|\
-                openssl@3|\
-                python@3.14|\
-                zlib-ng-compat\
+                qtwebengine\
                 ).rb"
               keep_if_no_match: true
               allow_any_match: true
@@ -422,7 +396,11 @@ jobs:
 
             - label: shell-completion
               path: Formula/.+
-              patch_content: (generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)
+              patch_content: '\n[-+].*(generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)'
+
+            - label: missing network sandbox
+              path: Formula/.+
+              missing_content: (allow|deny)_network_access!
 
   # Handle this separately since the `workflows` label affects bottle cache usage
   # and hardens us against cache poisoning attacks.

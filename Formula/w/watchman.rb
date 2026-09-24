@@ -3,19 +3,17 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https://facebook.github.io/watchman/"
-  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.07.27.00.tar.gz"
-  sha256 "4bab0e96e251a477148d5267aa293065f9cc8585b46485da569a729ced654de4"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2026.09.21.00.tar.gz"
+  sha256 "f6ea4036e4b292f31a9185d55f023aa875e6201f386c85ae8661976d055fcc85"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3193c0aa1e93176b01ce8eb6f6956b0a0d7955a5241fd740b819ba4315b3dc53"
-    sha256 cellar: :any, arm64_sequoia: "32baaa0b589719698817ebbbb6d53b53b730beb0924f3d4284988371d50eaac4"
-    sha256 cellar: :any, arm64_sonoma:  "40ac6b1ad9603e8379d532f3401f254903cc9d87c35bd2c5bca02fd31f0c068e"
-    sha256 cellar: :any, sonoma:        "30862f5567aeb77466c0b999eb911d2b744aedd197c44fe47a4044a00d2f3b17"
-    sha256 cellar: :any, arm64_linux:   "4e6b0edd966ed4b4f43a36c0b974e023f18dbf2b7659631debd577b1b26c6436"
-    sha256 cellar: :any, x86_64_linux:  "28c27c5d1401058ae7214deeef3cfbf6c62acd890cd0ae19ddf2d6462cddcd6f"
+    sha256 cellar: :any, arm64_golden_gate: "7936525ddc847375460cbbd34935ce55161bae041336efc4eca50a72ab337890"
+    sha256 cellar: :any, arm64_tahoe:       "b389ac112db24749351f8f8da57bce7a03a5c5826c3c409e3b755a49e330b798"
+    sha256 cellar: :any, arm64_sequoia:     "f27e5dd645aead4277830783b88e60f064488e6879a3c2c08700d38ce9272290"
+    sha256 cellar: :any, arm64_linux:       "fe8ddb337a36189cf1cf657fc3312b980eec022cff6db12296ed12223092d31e"
+    sha256 cellar: :any, x86_64_linux:      "8e0bd4d0764ae960ddd5cff021970233e9b8218140769896e52416ff21e3fdeb"
   end
 
   depends_on "cmake" => :build
@@ -45,13 +43,21 @@ class Watchman < Formula
 
   # fmt 12.2 dropped fmt::format from <fmt/core.h>; include <fmt/format.h> where used.
   patch do
-    url "https://github.com/facebook/watchman/commit/7dbd77e849641ec756fee53a587da56d4502b4d1.patch?full_index=1"
-    sha256 "5855728d86bca5c11d08195db93659da91a813ce7a5c0293366aafe08970364a"
+    url "https://github.com/facebook/watchman/commit/21e10ae9596a81ac95795ee0915f4308a9c34603.patch?full_index=1"
+    sha256 "be595623d5a520de9e1820f1388ebbdf3ef9ff5d665a33c0231fdba36b5d0dbb"
     type :unofficial
     resolves "https://github.com/facebook/watchman/pull/1348"
   end
 
   def install
+    # Drop the `GlobPath` C++ type as its GPL-2.0 header is not mirrored to this repository
+    # https://github.com/facebook/watchman/issues/1355
+    inreplace "eden/fs/service/eden.thrift" do |s|
+      s.gsub! 'cpp_include "eden/fs/utils/GlobPath.h"', ""
+      s.gsub! '@cpp.Adapter{name = "::facebook::eden::GlobPathAdapter"}', ""
+    end
+    inreplace "watchman/watcher/eden.cpp", "std::move(name).intoFbString()", "std::move(name)"
+
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
     #       RPATHs configured, so will need to be installed and relocated manually
@@ -59,7 +65,7 @@ class Watchman < Formula
     #       formulae, so let's link them statically instead. This is done by default.
     args = %W[
       -DENABLE_EDEN_SUPPORT=ON
-      -DPython3_EXECUTABLE=#{which("python3.14")}
+      -DPython3_EXECUTABLE=#{python3}
       -DWATCHMAN_VERSION_OVERRIDE=#{version}
       -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
       -DWATCHMAN_USE_XDG_STATE_HOME=ON

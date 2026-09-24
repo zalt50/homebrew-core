@@ -1,8 +1,8 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.2.tar.gz"
-  sha256 "e73fe91d9b536c6e3548132c1e327843b0bac3c94be9f158ce112eb989d25fc7"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.4.tar.gz"
+  sha256 "af3241e7776964dcb6bb9a811ca7b0d93000b563e2ae2a8df8f80a7cd6e04d56"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
@@ -39,12 +39,11 @@ class GnuGetopt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8686e5c9467fcf792109ed51bdc112a33440a76867813493ab06ec841b6e5670"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf63a74c9a13211492505f5e1ea63518fe3c2610ad3966560d3b0ed29d1bcfed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed46a7f05b0d415f1c5d64d0fd65f1fed773758437e83a5379214ad053f1592b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfe481ad58f986d3346be3a45dd67159d3c9fa198f3f007613b5511abd770da0"
-    sha256 cellar: :any,                 arm64_linux:   "13bf47751b729ca87dfb73c4a0c3be145c678610ab40914238e66a5f546d55d5"
-    sha256 cellar: :any,                 x86_64_linux:  "1f8d71983ef6e65de71b785fadbc1e8d6331fa0232317b279fd710541ee17c74"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0614621d302ea14221955fc85e81812c876ae5439a049ea9815d697b6ba93b2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "442922ec7b2f94f0b0f9e5036f7e17627973f3904116f78b78dffd663ab35c83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a11448e84e277c582599f0b5edc94e1e4961c6c7fc958eb3074ab5c7b4834168"
+    sha256 cellar: :any,                 arm64_linux:       "b3ba5a2df1092d95a48ef3dc5efc2ef68da529b905d969d4e120da3bab20dca8"
+    sha256 cellar: :any,                 x86_64_linux:      "38b1e756f71a8b80f6e6f3c077407830982b88096c2d0347461ede3c25b26f21"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD getopt"
@@ -60,6 +59,8 @@ class GnuGetopt < Formula
     type :unofficial
     resolves "https://github.com/util-linux/util-linux/pull/4173"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules",

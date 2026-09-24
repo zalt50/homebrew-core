@@ -1,11 +1,11 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
-  url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.29.0.tar.gz"
-  sha256 "0f065cfd3816eaa4b709a057ea0e237ebc6463843af44a439e0d81af76d6620e"
+  url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.30.0.tar.gz"
+  sha256 "f6681ecbddf53898adf0cc9e8e9e84657485b84d2eca3c8aa353de6d7dd417ef"
   license "MIT"
-  revision 2
-  compatibility_version 7
+  revision 1
+  compatibility_version 9
 
   livecheck do
     url :stable
@@ -13,17 +13,15 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1b8c832d01a9a462ded8fdfc264e7145c2fa1b5362be4f49db2a509d29d5c9d5"
-    sha256 cellar: :any, arm64_sequoia: "bece78a25a14f27526b1a08f970cdfe33025254151817a9d254587feab3cad4e"
-    sha256 cellar: :any, arm64_sonoma:  "8c7abfa0c742891ae50a8835a09f293e95dfe29c3abd28e408900305aaa34032"
-    sha256 cellar: :any, sonoma:        "6cc9d10df9bf90508440244579a6dd5f500f41b6b53a2b9bdf2404deebdc375b"
-    sha256 cellar: :any, arm64_linux:   "0e5c70652dd957f2cbe3eff471e32eb554652fd9ae6203ea6bc728884a7b857c"
-    sha256 cellar: :any, x86_64_linux:  "6448e9f76906fceb3b3d4a34b31fec4e77ef2efb565a1e1af80299443e408aeb"
+    sha256 cellar: :any, arm64_golden_gate: "6a4c4cd6a597708260e5d5ae8c803c51f38b35823f1f14f2e5de1f42f2106d90"
+    sha256 cellar: :any, arm64_tahoe:       "cf0f6e381b96d4c9b43e570719c1b17a1de8ddd9103c9fecde039ded9a998403"
+    sha256 cellar: :any, arm64_sequoia:     "5fef971df76a944014ec5f8e847e67935b586b1ba77c75759bf8588fe8b15113"
+    sha256 cellar: :any, arm64_linux:       "386b79bfa33b449cbba5eb2ab267855761c83afea5f4e966468dacc3159b4094"
+    sha256 cellar: :any, x86_64_linux:      "858e34ec135406c1b75aae36cdc3a32e97cba58a8de77ad438333c4d0765262b"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "cpp-gsl" => :build
   depends_on "eigen" => :build
   depends_on "flatbuffers" => :build # NOTE: links to static library
   depends_on "howard-hinnant-date" => :build
@@ -35,10 +33,22 @@ class Onnxruntime < Formula
   depends_on "protobuf"
   depends_on "re2"
 
+  # `cpp-gsl` 5.0.0 fails the `find_package(Microsoft.GSL 4.0)` version check
+  # (its config uses `SameMajorVersion`), so vendor the pinned version instead.
+  resource "gsl" do
+    url "https://github.com/microsoft/GSL/archive/refs/tags/v4.2.1.tar.gz"
+    sha256 "d959f1cb8bbb9c94f033ae5db60eaf5f416be1baa744493c32585adca066fe1f"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
+      regex(%r{^microsoft_gsl;.*/v?(\d+(?:\.\d+)+)\.zip}i)
+    end
+  end
+
   resource "pytorch_cpuinfo" do
-    url "https://github.com/pytorch/cpuinfo/archive/4628dc060ce4e82345dc166bbac875609db4ff69.tar.gz"
-    version "4628dc060ce4e82345dc166bbac875609db4ff69"
-    sha256 "a550205e891f9f1982044a306cb54556347645cba129af34cd907160f83bd0f1"
+    url "https://github.com/pytorch/cpuinfo/archive/66ee79c038d70dad9f08705b2c9b3e58f6d8f512.tar.gz"
+    version "66ee79c038d70dad9f08705b2c9b3e58f6d8f512"
+    sha256 "e3d09aa27ec50da6310da45d1ec6b2e903c367a1455d8ee350bda12b9dedf556"
 
     livecheck do
       url "https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
@@ -78,17 +88,7 @@ class Onnxruntime < Formula
     end
   end
 
-  # Apply Fedora's workaround[^1] to allow `onnxruntime` to use `onnx` built without
-  # ONNX_DISABLE_STATIC_REGISTRATION[^2]. We can't use this option as it will
-  # break functionality for any dependents/users expecting the default behavior.
-  # The main alternative is to build a bundled copy of `onnx`.
-  #
-  # [^1]: https://src.fedoraproject.org/rpms/onnxruntime/blob/rawhide/f/0013-onnx-onnxruntime-fix.patch
-  # [^2]: https://github.com/microsoft/onnxruntime/issues/8556#issuecomment-1006091632
-  patch :DATA
-
   def install
-    python3 = which("python3.14")
     ENV.runtime_cpu_detection
 
     resources.each do |r|
@@ -199,32 +199,3 @@ class Onnxruntime < Formula
     assert_equal version.to_s, output_lines.join
   end
 end
-
-__END__
-diff --git a/onnxruntime/core/session/onnxruntime_c_api.cc b/onnxruntime/core/session/onnxruntime_c_api.cc
-index b60d97e38f..6951642edb 100644
---- a/onnxruntime/core/session/onnxruntime_c_api.cc
-+++ b/onnxruntime/core/session/onnxruntime_c_api.cc
-@@ -45,6 +45,8 @@
- #include "core/session/ort_env.h"
- #include "core/session/utils.h"
- 
-+#include "onnx/onnxruntime_fix.h"
-+
- #if defined(USE_CUDA) || defined(USE_CUDA_PROVIDER_INTERFACE)
- #include "core/providers/cuda/cuda_provider_factory.h"
- #include "core/providers/cuda/cuda_execution_provider_info.h"
-@@ -3094,6 +3096,13 @@ ORT_API(const char*, OrtApis::GetBuildInfoString) {
- }
- 
- const OrtApiBase* ORT_API_CALL OrtGetApiBase(void) NO_EXCEPTION {
-+  class RunONNXRuntimeFix {
-+   public:
-+    RunONNXRuntimeFix() {
-+      onnx::ONNXRuntimeFix::disableStaticRegistration();
-+    }
-+  };
-+  static RunONNXRuntimeFix runONNXRuntimeFix;
-   return &ort_api_base;
- }
- 

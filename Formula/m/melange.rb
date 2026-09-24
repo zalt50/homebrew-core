@@ -1,8 +1,8 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https://github.com/chainguard-dev/melange"
-  url "https://github.com/chainguard-dev/melange/archive/refs/tags/v0.59.2.tar.gz"
-  sha256 "d2a0a2a727e9196909ced0d4af22201ded7ec950288e327ae3e449fa10a40241"
+  url "https://github.com/chainguard-dev/melange/archive/refs/tags/v0.61.1.tar.gz"
+  sha256 "298e1a7348e51d7c80dfb6527f8d7871b0d81bb3f9ab686f97c36763145a33a0"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
@@ -12,15 +12,20 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2f9f4aa8566796a8a7d650d9225c02b6db950479348b5500f01364b36f01ce8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8bea669faf46db815edae6045209df502fe03752eb6e40051e0ff42a3be7f0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5f918a8195d6365bb861296ae5aa429785544d97c5e41c643faf86046cac34f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a05a796296bd4e290547726c84706f5b0c0a6361974ac3ced427a3862db7cbc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ffb59b6e74ded588fb7fe8a7ae83e21c3f71d5fb3db2850404d182fef9e1bc0"
-    sha256 cellar: :any,                 x86_64_linux:  "96aec6ceec75c6dacb80fb7bdc1d168f467e07fdb724b3abf2331d0f0416a071"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "10ec040c483c54ac7001638496aa5c8af213cbcb7ef641dc6765994fd7e9a8bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "11b6c1e0d2c6e4d4fce6ca0df44143fbf042b5dd6223edbb27bf71af47fc658f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "394c57c17079b6ec9fcf6139679cd1decc24e7c0b1e80f85e7e6c59b8a3d665e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "18a73d103ee0b5b140691861e691d9a4ac394cc21d6d3d1390b1fc8171384110"
+    sha256 cellar: :any,                 x86_64_linux:      "f94ddb1e15372c765c0bc30bbf3b6eb3dfc856722ee7ae573544cbcaf448fbd7"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

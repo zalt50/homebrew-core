@@ -14,18 +14,33 @@ class Prometheus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87d6ff48eedc9d3f9f87fe4fdc3df9852ee113bb99fe3cf793905ae6b573f745"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1e8b7a8d860aa2f54c5a3d63b02db1f3ad8ad8a8fa513aa0bd9da4067a8e54a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "869c5564471fe3ee5fc50a1323020c876244052a4b184cf9c57c5c70a5bc5c7c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef5739b94eb9a598a188d524d70dee4e00ba131f2b43e7cd4f7b40c7c4d400ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b828dfb7f4400352c40977e6aa8e3d968b5ca583e4a3e3139a9a2c39f57e9148"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a4b8e5c2cd98194824e15365aff7fd8c3a18e687cb03ddab2ace8237ff511f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dc73912cfa6a420990cf6d9e7c94a2191ef258943442aef86d374b43b941d692"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "87d6ff48eedc9d3f9f87fe4fdc3df9852ee113bb99fe3cf793905ae6b573f745"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1e8b7a8d860aa2f54c5a3d63b02db1f3ad8ad8a8fa513aa0bd9da4067a8e54a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "869c5564471fe3ee5fc50a1323020c876244052a4b184cf9c57c5c70a5bc5c7c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ef5739b94eb9a598a188d524d70dee4e00ba131f2b43e7cd4f7b40c7c4d400ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b828dfb7f4400352c40977e6aa8e3d968b5ca583e4a3e3139a9a2c39f57e9148"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1a4b8e5c2cd98194824e15365aff7fd8c3a18e687cb03ddab2ace8237ff511f8"
   end
 
   depends_on "gnu-tar" => :build
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "pnpm" => :build
+
+  deny_network_access!
+
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_libexec("node")/"bin"
+
+    system "go", "mod", "download"
+    # the npm-download half of `make assets`
+    system "make", "ui-install"
+    # `make build` bootstraps promu at build time via a network download;
+    # install the pinned version into GOPATH/bin here instead
+    promu_version = File.read("Makefile.common")[/^PROMU_VERSION \?= (\S+)/, 1]
+    system "go", "install", "github.com/prometheus/promu@v#{promu_version}"
+  end
 
   def install
     ENV.deparallelize
@@ -34,7 +49,7 @@ class Prometheus < Formula
     mkdir_p buildpath/"src/github.com/prometheus"
     ln_sf buildpath, buildpath/"src/github.com/prometheus/prometheus"
 
-    system "make", "assets"
+    system "make", "ui-build"
     system "make", "build"
     bin.install %w[promtool prometheus]
 

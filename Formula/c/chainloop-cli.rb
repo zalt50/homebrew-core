@@ -1,8 +1,8 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https://docs.chainloop.dev"
-  url "https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.107.3.tar.gz"
-  sha256 "0145c7247d6e4edb4e09c142e4ada155ae3363d4021c23030dfad2744da82459"
+  url "https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.110.1.tar.gz"
+  sha256 "e4f6f5cd80b3f6beed1af6370dc01c5787856eaa58827ec0db9209b34ac1333c"
   license "Apache-2.0"
   head "https://github.com/chainloop-dev/chainloop.git", branch: "main"
 
@@ -12,15 +12,20 @@ class ChainloopCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3dd0accfaa4261e3c3a8bc03f74482390605655e21bf40c3d23d4963beaf697b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3dd0accfaa4261e3c3a8bc03f74482390605655e21bf40c3d23d4963beaf697b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3dd0accfaa4261e3c3a8bc03f74482390605655e21bf40c3d23d4963beaf697b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fee05ee1f1c6d0e499b6cacd71fac8045bff710002729a659cf4668ed164da09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46f0b34f3b202db33d6d2df5eca03b3b76d4bcf7afabec411b644cce7ab9bc07"
-    sha256 cellar: :any,                 x86_64_linux:  "5e5df5e11a20aa34a9b66f6b2de9a7dcc14f140d9630a08c7ca6a65f0db967d9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9edb7a8a496b9b7358a869d62d9a1c22c77c4bd72208f726580e5bbf370f9278"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9edb7a8a496b9b7358a869d62d9a1c22c77c4bd72208f726580e5bbf370f9278"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9edb7a8a496b9b7358a869d62d9a1c22c77c4bd72208f726580e5bbf370f9278"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "47aaa82676046c5e17f0877e707e34f355d45773574b63cf1a8eae6c1cb576f0"
+    sha256 cellar: :any,                 x86_64_linux:      "14484d6a3b520fb227207714b861a42c4cef0dfb70b0f43f05d81bf8c8259b5c"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

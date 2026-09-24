@@ -1,21 +1,26 @@
 class Prek < Formula
   desc "Fast Git hook manager written in Rust, drop-in alternative to pre-commit"
   homepage "https://prek.j178.dev/"
-  url "https://github.com/j178/prek/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "3a19e696c7b06942947b8fd737c01a3ff0718a92460e59075828d43f80b6a814"
+  url "https://github.com/j178/prek/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "2de788f26f8f32691c848d6ce3345c7df632813b099a3c0f48f10f3b37866d7a"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83a4c0219d0436fb1cf96097a83d2c2337c5b3d95badb115ba3ab055777bc432"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d59fffbb8e712206f81f285692748ce5f2fe8ef5a3ded92a7f137f73c58dc7b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eefa9d56757f218eaeb1c7df52bd4182c9c16b477beeaf70e58b34130e90f534"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fa1ce8c4dadcc98891d7b63b6910eb7ce778ac251250201813d89f440ae5d9c"
-    sha256 cellar: :any,                 arm64_linux:   "1900b1141894be4a37ca959bd4e5463fc1709bd6c1ee088315a26b44c11571d6"
-    sha256 cellar: :any,                 x86_64_linux:  "45db70d267bcea12ad1f7d734227c57e59521c096b4d94020fd110df9454f72a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6c5cde2b6fe8bfb1c860baa561721967c083254b4a54d177343d468deaf24465"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b9162658fd208a5d9dba668cc868109299c9314ea1395669eae5202552191ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8c052de409aad7938597fa279642c2266439115e0f8755dc0196a9b7a4c1fdf5"
+    sha256 cellar: :any,                 arm64_linux:       "d3c5aca99832365f47ed30eeb087d7304018aaea3247e63a8d9347d6005459a8"
+    sha256 cellar: :any,                 x86_64_linux:      "6fe9efcb1c5d226ad54e1a7fb283113e81743e8867dbcac5a4fa929171d187a6"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["PREK_COMMIT_HASH"] = ENV["PREK_COMMIT_SHORT_HASH"] = tap.user

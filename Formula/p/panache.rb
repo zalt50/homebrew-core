@@ -1,17 +1,17 @@
 class Panache < Formula
   desc "Language server, formatter, and linter for Markdown, Quarto, and R Markdown"
   homepage "https://panache.bz"
-  url "https://github.com/jolars/panache/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "e72be7e60db97513e10cf4afa21008976433f49d4ead9876e15e1c7443285e29"
+  url "https://github.com/jolars/panache/archive/refs/tags/v3.12.0.tar.gz"
+  sha256 "d525de4b609c1b8c0aee60fab31eeda09c10e95d414a56c178b82e5efce3719f"
   license "MIT"
   head "https://github.com/jolars/panache.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10181a0fc8412c70e189813d74bfbd5a5c8199b78c31ec08ccd78d638cfa8966"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6288c634f5ebfb3b4645469a9642f55281386efd57267178ee4eb157ea77364"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "668e6e6db21b2b07a8c32c14ff1fe8ac149e0631cd6499b16fa808f729aaa263"
-    sha256 cellar: :any,                 arm64_linux:   "1f7c6938058395ac08a4e17f5268572b6f1ed077cf32c69877d732a3e39a5bdd"
-    sha256 cellar: :any,                 x86_64_linux:  "7ce29fea22e7da4ceb539282ed47c7bc1d06a5f0b376cd755975f774a5b23f7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2f73080c678cc5cd0ce8030a4fb4fbd75ac334677853172b001a9c0d42bad57e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf3b0d3cd761a297a88b4cf92c69220179e52ba0c17e4e30556b1e1288f2cf45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "260f1c2f1f5bb69c0895895130ef1d9e4a3e2b58d2f227d49f85a53cae0e69a0"
+    sha256 cellar: :any,                 arm64_linux:       "d91e83aeee052e926a36fd08b33a84f70eb41b73605b7c49a10205c7624e024a"
+    sha256 cellar: :any,                 x86_64_linux:      "9893a9b0be7880ff6dcf9e59023c8c4aec26d40342629fe31be87e20dcec54e0"
   end
 
   depends_on "rust" => :build

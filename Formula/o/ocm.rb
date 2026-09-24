@@ -1,21 +1,26 @@
 class Ocm < Formula
   desc "CLI for the Red Hat OpenShift Cluster Manager"
   homepage "https://www.openshift.com/"
-  url "https://github.com/openshift-online/ocm-cli/archive/refs/tags/v1.0.15.tar.gz"
-  sha256 "f8fea3b5ef66825646fb3adfeb8dbf0abb76fee3cc1a27f083d37280296bd31f"
+  url "https://github.com/openshift-online/ocm-cli/archive/refs/tags/v1.0.17.tar.gz"
+  sha256 "32a1cdb04cf69e8a221448866ecd3a3c853059cbac718ac66e85c9cff9d04305"
   license "Apache-2.0"
   head "https://github.com/openshift-online/ocm-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a4fc99c64f3f269d5a192ccfb86ffca68dd0f4b3bd49333f6c036f8eace2736"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72bccd73485ef9343d4aa9ae3e9bebe12f5f44e6f859b443b8284f52391693d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98f383e96cce429cbe762b6b007848e355b141cb04037e93d81efb3b75754d19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10d260c2c12e11a588f87bb420a69e583af2f9318cdaf26938ad84e3eba0c140"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3310941e6ce644c3b4981a5bab1e5353ce333035dae96959229da97f914be62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76e29a051a81a63a7f0831f0d374e9951597f65dc0be217916d38015d703cdea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "41c3b10fb6297a89d126c572e4c7ce10572ca4fc476b9e748c2a2b79914e04e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "82c082b66387172a3f0027fc55b5a8e9ed14ad47d59e6a9b04e5aef340722794"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9007e1d309a1d5dd1b03802dbe6a74dd2bcae559d4ea8b521ab35d52d61e635d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ff4bb846d95928f2411bef6cf479d000cef1608319ff01cec6570cc6e7575c58"
+    sha256 cellar: :any,                 x86_64_linux:      "1d10b043639e3c47fe566c268c79f67ddfcd734d0d7847bd7c1245e0b7e30884"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/ocm"

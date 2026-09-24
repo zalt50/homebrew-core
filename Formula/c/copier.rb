@@ -3,17 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/2e/4c/2e593d85827c49f478ea4925d1008a144bb8ff2189c6e9f405c37bb56edb/copier-9.17.2.tar.gz"
-  sha256 "02e9c0d05281603c06d52f48350e48ffca0b4283d9f025664fbce4befabaa555"
+  url "https://files.pythonhosted.org/packages/f9/60/2fe1777b27f489450ed8ac5c75390caf91a175d647be05b4284bf515b413/copier-9.18.2.tar.gz"
+  sha256 "0f97902fee79374551c9391fb1132f5a038079f3b497f4dad673295489fc032e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ce2c6e7975c4ba3cf45b47282448d1490bd105f87bda36077f207b4fb6d28cdc"
-    sha256 cellar: :any, arm64_sequoia: "a7bed798d7ac590f084dc620553c8d5d46943f15d8585915eef7515bf9aaf924"
-    sha256 cellar: :any, arm64_sonoma:  "22eb5c9504b778c928642de5c5ab9f89df3785eb8d31f0019179f09194f76798"
-    sha256 cellar: :any, sonoma:        "e6f4f34e2431c556de27a9351dd672a57a8519c5e4e8ecd1b5bb7719e2e90845"
-    sha256 cellar: :any, arm64_linux:   "b8f905ea82c3e9293b71b4dd901a3cf0b7fc14758ebf305b8487235c6bff6337"
-    sha256 cellar: :any, x86_64_linux:  "0b24d0c86d7487fc9238b275ab0795d2afafe75b91fde7164080544f3ab47f31"
+    sha256 cellar: :any, arm64_golden_gate: "3f86df4dba27b6e094baafc6a5737e85ee008de7b1d1046b5f46ce4c0b5522c2"
+    sha256 cellar: :any, arm64_tahoe:       "18954a2ef6eb90a0257b0787a2b6805153c26b4965bda87e87af65a075d7dde7"
+    sha256 cellar: :any, arm64_sequoia:     "c6e3c909b5d23590b7460b4a761b52a411a2dcc607964df33864444a2bf1dd70"
+    sha256 cellar: :any, arm64_sonoma:      "0fcc9df3091fc153325dfc5724953088128bf55d66fe9930dbf0a55fe3ed5e89"
+    sha256 cellar: :any, arm64_linux:       "3b3c75ce04738a7416e5bcd6ff1d717090eae03be8f0354efbe21e437b5661e4"
+    sha256 cellar: :any, x86_64_linux:      "a028d35da1cbe57c1e9dd30b55567ef8c859ce740b679b5ddfa32c46212ec78f"
   end
 
   depends_on "libyaml"
@@ -63,8 +63,8 @@ class Copier < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
-    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
+    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
+    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
   end
 
   resource "plumbum" do
@@ -93,8 +93,8 @@ class Copier < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   def install

@@ -1,21 +1,26 @@
 class AzureDev < Formula
   desc "Developer CLI that provides commands for working with Azure resources"
   homepage "https://aka.ms/azd"
-  url "https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.32.0.tar.gz"
-  sha256 "b80d93c5dda26ef24273768ebc12014b7e142814dee4a673e3f3f517b3dac5bb"
+  url "https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.34.2.tar.gz"
+  sha256 "dea91c4b991d64d566e4108887ce5ac9186b6df4e7da97f6ec0a5109aeaf0a3e"
   license "MIT"
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed90bb20cd1adce79f3a410b5576357237aa8d7454fdc832f9e16fc5b048453a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed90bb20cd1adce79f3a410b5576357237aa8d7454fdc832f9e16fc5b048453a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed90bb20cd1adce79f3a410b5576357237aa8d7454fdc832f9e16fc5b048453a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64f45e8775bf30fab8b42261012c61d803ab5882bf0f29c27a0c3be99717d191"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06e66a00fd07417a6ce02738feb2dc82d26e0900b36555e15e16190de2fb67dd"
-    sha256 cellar: :any,                 x86_64_linux:  "a657f6e8ac971982d40fc1d3ad7e7f3a820561098edbce931ef8481d19a5fcb8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5661338389b931d768e52b58270ebbcdb1d4667d031088127f7a51b25c9242a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5661338389b931d768e52b58270ebbcdb1d4667d031088127f7a51b25c9242a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5661338389b931d768e52b58270ebbcdb1d4667d031088127f7a51b25c9242a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b954af43286e223fee4bbe0373930e3d0cfc5b40f032943caf90c48d3283dfcf"
+    sha256 cellar: :any,                 x86_64_linux:      "2a6308ac9dca462698e96c7a5ba18e6da9e7741ca24420184df8dd5dd75dcdf7"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "cli/azd"
+  end
 
   def install
     # install file to be used to determine if azd was installed by brew

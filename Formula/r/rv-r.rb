@@ -1,23 +1,28 @@
 class RvR < Formula
   desc "Declarative R package manager"
   homepage "https://a2-ai.github.io/rv-docs/"
-  url "https://github.com/A2-ai/rv/archive/refs/tags/v0.22.2.tar.gz"
-  sha256 "629fa4851ccae57dbdea86be40049ca14a9e4f3b0062ca2ce8259371976afaeb"
+  url "https://github.com/A2-ai/rv/archive/refs/tags/v0.23.1.tar.gz"
+  sha256 "b2ecdbb0b686fe36624979f4dbf030c79409c6efd508fa36125ad192c10e1298"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57634b457401e437e9826cfeb481b6ade029a34591fa374aa78914f39a8faa50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52966c9324c64ac0e227bfaa9a4ee4eca73ceefdc798b69aa44794bfc30c0975"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f5eb5d76c37a0fd1269a2659b4d21d2d3b15a3f5ea8d27df13b91fa2635a0d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62f1b774c9c1dc8e698acca391eaef20840db2ed75c10601792cafda04003b0f"
-    sha256 cellar: :any,                 arm64_linux:   "a7719223ddded8c9dd9e6c4d059bf4fe6ba77849aa86f7835cf6f8c09ec15ea7"
-    sha256 cellar: :any,                 x86_64_linux:  "a6707dfa15c2a2f877ded4ddd86dbc2c5938798e16eb554313c13dc0ebbe51ee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e2b04f37c7937cb3a0aca44e6ef9b1476b9bb58ccd0182a804cfa71d62c02200"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12d71ffe353d87586923bb39d94bba87dd993c4c1689d681132dcbc732bc0fbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "57d8a2c0ef341737f1c916e3887aa1b7d03a495e176e704b4b77f2354638d2ce"
+    sha256 cellar: :any,                 arm64_linux:       "78c7b366defc3f4f5834648a9bf6ae3d87d134fbd787caab57d49445e60202c3"
+    sha256 cellar: :any,                 x86_64_linux:      "aee0af2d056fb462024fff4ea0c16bc2050fc00252a7e5d7a2f8dcde14a511bf"
   end
 
   depends_on "rust" => :build
   depends_on "r" => :test
 
   conflicts_with "rv", because: "both install `rv` binary"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(features: "cli")

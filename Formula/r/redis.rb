@@ -1,8 +1,8 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-8.10.1.tar.gz"
-  sha256 "60166c95ab7aedaa9dfe516de685be0a4dd87be95ded59ba429df14c13f1b663"
+  url "https://download.redis.io/releases/redis-8.10.2.tar.gz"
+  sha256 "b9ffee226b5eecdba98a679260dad764b2a4ebd90dce4ad5ac9e9f3eef9c02b3"
   license all_of: [
     "AGPL-3.0-only", # modules: VectorSimilarity, LibMR
     "Apache-2.0", # modules: ScalableVectorSearch, cpu_features, friso, cndict
@@ -22,13 +22,11 @@ class Redis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "3ae6e90b0680cd33396e97fa6cb0f091598431e8e653bba954adad71101ad790"
-    sha256 cellar: :any, arm64_sequoia: "8dd77c3726f4a9c67cd63c5af0f5c173caf9fdd49238c4ce6ac9729f5cd9c3f4"
-    sha256 cellar: :any, arm64_sonoma:  "0b2737628ab2971b87e8ac4ede74ff33149d1d238023983380355f6181bb2963"
-    sha256 cellar: :any, sonoma:        "5f4f29b6cc2b83a55ced83d6aa7c5e2df9f117631b0a4cb01da93564881eb416"
-    sha256 cellar: :any, arm64_linux:   "e3109d2c1a9b5bc952186c15fd8b7ce4300fcae522df83b182871317c724f2ab"
-    sha256 cellar: :any, x86_64_linux:  "d41ecce1293d0902928f6c77bca5a1a5899febbd4efbfb697b48713678317c96"
+    sha256 cellar: :any, arm64_golden_gate: "489d0089a6abae61eb48eebe194f73f9150b44247970d9d6aededb5c618bfd13"
+    sha256 cellar: :any, arm64_tahoe:       "9f8335c010e7f79fae99889d6a25a6021c520a12a46686d96d3fce40e837f3dd"
+    sha256 cellar: :any, arm64_sequoia:     "c0fa2190b16dfb2d69b33a97edcd15ddd9418caa66e900b5b4be3610e62e4c3f"
+    sha256 cellar: :any, arm64_linux:       "cdd940422fce3711cc3fbf2086c61783f695a83350397c245b3f3b96e93925ad"
+    sha256 cellar: :any, x86_64_linux:      "e5ec61112cfa9d980a6a1792a7452dd2c89aa8a8da8acbff2b64637720ca3a5f"
   end
 
   depends_on "autoconf" => :build
@@ -54,6 +52,8 @@ class Redis < Formula
     ENV.append "CXXFLAGS", "-std=gnu++20"
     # VectorSimilarity selects its SIMD kernels at runtime via cpu_features.
     ENV.runtime_cpu_detection
+    # FIXME: redisbloom's vendored readies has no `OSX_MIN_SDK_VER` past tahoe, leaving `-mmacosx-version-min=` empty
+    ENV["OSX_MIN_SDK_VER"] = MacOS.version.to_s if OS.mac?
     system "gmake", "deploy", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes",
            "REDISEARCH_GENERATE_HEADERS=0", "IGNORE_MISSING_DEPS=1", "LTO=0"
 

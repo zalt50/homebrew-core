@@ -3,8 +3,8 @@ class Hk < Formula
   homepage "https://hk.jdx.dev"
   # pull from git tag to get submodules
   url "https://github.com/jdx/hk.git",
-      tag:      "v1.56.1",
-      revision: "fdbb35c1cb9d1487e8350a0888877c0d74d4b611"
+      tag:      "v2.1.0",
+      revision: "0a9c95bfe19dc4866d965181f6fd49ac05fe5b2c"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
@@ -14,12 +14,11 @@ class Hk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ebd8140f4f5ea52d0285614931cef0a7cbb71a7bc030e1c9eeeabd3102b7181"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "539baeaeb23ecda168a7ae987fa6ac8012bcee248c4bbb149689c16ff8edc9d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91d7a94499741a138d510610f8098286c04fb53d7ecc713dc214d96209e56100"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60786bf44c2aecd99540389f45efad3e41f8d63ff039190f83b6a626ca68d998"
-    sha256 cellar: :any,                 arm64_linux:   "3c67fa0371ce30ea580ec755ddd007e458087057a2c2963852bb9482f3feb37f"
-    sha256 cellar: :any,                 x86_64_linux:  "05609e491e58b51caece2a3bcbcb77369f8fc4db2ada89e43ca8f0a5a1fb854a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "806ef51da612a0bf61027507238b52d8a51a8f86b4bc8f457dcb36a1ab3ec4ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e8bb23213548cf74fbe5232c11887082289a6f692a8c69e3a191b47e581b310"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c02df9e714b2d7781818887614affebff16c79a36d5784f2d619b3ee62c6ecac"
+    sha256 cellar: :any,                 arm64_linux:       "7db3368dda3ea7eb4ff560ec4b7822f6617612ccfae93c3391b086bc9b9ba972"
+    sha256 cellar: :any,                 x86_64_linux:      "ab843f733296c0d60289b049a7c37b91702842d041af8e747e3f26e54faff1a9"
   end
 
   depends_on "pkl" => :build

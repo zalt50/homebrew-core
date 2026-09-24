@@ -1,8 +1,8 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://docs.jfrog.com/integrations/docs/jfrog-cli"
-  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.122.0.tar.gz"
-  sha256 "a44607e65f344023e18ab3197a4c116c601b5f252a0876dcba8da09b3fb93795"
+  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.124.0.tar.gz"
+  sha256 "05a232abe46627a40df4d509e8ab7da1d8532bd5f50317b9189ae26fa572e23b"
   license "Apache-2.0"
   head "https://github.com/jfrog/jfrog-cli.git", branch: "master"
 
@@ -15,15 +15,21 @@ class JfrogCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf14ba68f27a255cedb32349a107c0391674f46f75d0216abe3fe38e9be5ab9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf14ba68f27a255cedb32349a107c0391674f46f75d0216abe3fe38e9be5ab9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf14ba68f27a255cedb32349a107c0391674f46f75d0216abe3fe38e9be5ab9b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "816c3d3b1b0d78bfd1218cefe259a9662e3e081ca40d367024c05bd68bf6bbb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b206187fa02dec86a71e1786b9b1f8f0405570c3d9c05396e8de06bf8c3c802"
-    sha256 cellar: :any,                 x86_64_linux:  "36eb9273ff95464f6b7c257f11a3a88150046096519275479a8d5cd0faa61a4f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d4390c4930c6e73fee29f27d01706596bdc1caf1bb0d70c9037935562f8d7dda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d4390c4930c6e73fee29f27d01706596bdc1caf1bb0d70c9037935562f8d7dda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d4390c4930c6e73fee29f27d01706596bdc1caf1bb0d70c9037935562f8d7dda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d4390c4930c6e73fee29f27d01706596bdc1caf1bb0d70c9037935562f8d7dda"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e34643c80d5083744d9af6cf5a55b84efb80db9ac319a8f7394a53ac4db55f8"
+    sha256 cellar: :any,                 x86_64_linux:      "50f73b9d37ecc40cd31a705b45c9fbadbc0e45b1814b11fe53e3799dae5e9ae8"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(output: bin/"jf")

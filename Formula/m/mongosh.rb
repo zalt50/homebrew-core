@@ -1,18 +1,17 @@
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
   homepage "https://www.mongodb.com/try/download/shell"
-  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-2.9.2.tgz"
-  sha256 "a87a9e983f8d244de33b547d0b79d10acd1d1f59345a1b5bebbda7784950bce0"
+  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-2.12.0.tgz"
+  sha256 "8547e3c755c2de6352380028b0cf70eda54ac625f6ca06512d407dafb20d0f4b"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05a7062caa7e13726d183ac320213bc52c04630dcba0a4136da102aca3f59918"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05a7062caa7e13726d183ac320213bc52c04630dcba0a4136da102aca3f59918"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05a7062caa7e13726d183ac320213bc52c04630dcba0a4136da102aca3f59918"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56b3e45f1e6d97d6ff19c9459f0dbca1608d13bf300c54117b90ad5909a906ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a082addae23ef77d9a280661989fe8958e267c64ed1235e67bd8188153a2374"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a082addae23ef77d9a280661989fe8958e267c64ed1235e67bd8188153a2374"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc4300feb2e77767d968a1916abdbd3d463ab302082355f8be12210701eacd83"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bc4300feb2e77767d968a1916abdbd3d463ab302082355f8be12210701eacd83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc4300feb2e77767d968a1916abdbd3d463ab302082355f8be12210701eacd83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6ffa901528ae944b31cd18c6a57afdf0035c1ea32eafbd55995ac947c29959bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6ffa901528ae944b31cd18c6a57afdf0035c1ea32eafbd55995ac947c29959bd"
   end
 
   depends_on "node"

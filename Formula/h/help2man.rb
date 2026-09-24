@@ -1,19 +1,20 @@
 class Help2man < Formula
   desc "Automatically generate simple man pages"
   homepage "https://www.gnu.org/software/help2man/"
-  url "https://ftpmirror.gnu.org/gnu/help2man/help2man-1.49.3.tar.xz"
+  url "https://ftpmirror.gnu.org/help2man/help2man-1.49.3.tar.xz"
   mirror "https://ftp.gnu.org/gnu/help2man/help2man-1.49.3.tar.xz"
   sha256 "4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f"
   license "GPL-3.0-or-later"
   revision 5
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e7da765e631d20ed655e5cd3a488288e0922f44b61f2b30d00ba345acfc93999"
-    sha256 cellar: :any, arm64_sequoia: "f3ae41d9332c1117fe072a56d5847877eada2b3fc3aa4e6ba872f0aee159f208"
-    sha256 cellar: :any, arm64_sonoma:  "261c8dd21fcf7febdcd05f7d6df8ff4159b3da0c4a23f0131090ba87eb381e61"
-    sha256 cellar: :any, sonoma:        "2654cbaecdd1429aaa206075492ae392394333143d7b25e4ee1879673dfe5e21"
-    sha256 cellar: :any, arm64_linux:   "d847d6874c494a32d659bd7e4a84766a0a6bb4f54f01c66db24c1d2804a38ad1"
-    sha256 cellar: :any, x86_64_linux:  "eb20fb548e3eabb081167661c9d3406a3984ace247b5eec71a851e9e4a6de7bc"
+    sha256 cellar: :any, arm64_golden_gate: "15f0a87126cbd87f2b88624fa557f9ea7e8b86d2831e13056079f79c80a67e69"
+    sha256 cellar: :any, arm64_tahoe:       "e7da765e631d20ed655e5cd3a488288e0922f44b61f2b30d00ba345acfc93999"
+    sha256 cellar: :any, arm64_sequoia:     "f3ae41d9332c1117fe072a56d5847877eada2b3fc3aa4e6ba872f0aee159f208"
+    sha256 cellar: :any, arm64_sonoma:      "261c8dd21fcf7febdcd05f7d6df8ff4159b3da0c4a23f0131090ba87eb381e61"
+    sha256 cellar: :any, sonoma:            "2654cbaecdd1429aaa206075492ae392394333143d7b25e4ee1879673dfe5e21"
+    sha256 cellar: :any, arm64_linux:       "d847d6874c494a32d659bd7e4a84766a0a6bb4f54f01c66db24c1d2804a38ad1"
+    sha256 cellar: :any, x86_64_linux:      "eb20fb548e3eabb081167661c9d3406a3984ace247b5eec71a851e9e4a6de7bc"
   end
 
   depends_on "gettext"

@@ -1,18 +1,17 @@
 class GopassJsonapi < Formula
   desc "Gopass Browser Bindings"
   homepage "https://github.com/gopasspw/gopass-jsonapi"
-  url "https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.16.1.tar.gz"
-  sha256 "73449a7c359836a995946e54d91e32afe5a54e1519b5a01f78c9923c13c0894f"
+  url "https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.17.3.tar.gz"
+  sha256 "4b2c0fc019b2667af845202059103f70d684d924a5dc0590469f825ca7d251d3"
   license "MIT"
   head "https://github.com/gopasspw/gopass-jsonapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63e40f2563f43b12908bdb89509d8b568ac3e797fe43d1c0bee05f56bcd4aa2a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6cfbfce7315db8f388249ef66abdc19f71d996d69ab699e1bd0a48ac66dc050"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8c19bd6e4f571996fedd915472e0ce7c37d859c856610620f41af8676bc4351"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff59e9b4d90e3bf9d5fe694477827b7b6676f21ba75fc1ca00d63fa4c56a904c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4da1e2900218d466f4e58fa97948b8d19e0dc20078d503b06bf0406415cb176f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "497f201696c8c1e7d5098e55e064f5537c4ace06a40eac22a6ea6f552dfb94c8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "38d166ab9e6865363ebd2027c12d3665d9ad87df2509fb7e10a7763d73cb4526"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eee17fe1410861ea49e29cf62ca6ae75197dcebb95ee475732cf21238cbe15d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3ffec0e354293aca84ea898cdfacfd882c33059cd8887c89735ec6299da9213e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "de745a0eae2f3fa2137d28ddc07a071f6bea513feb9d4e8a771680fd7dcd8103"
+    sha256 cellar: :any,                 x86_64_linux:      "29c3feb200e5ba74ba2841ff516d572bf4303f292f108ec9a1b8f96d02ab8f7a"
   end
 
   depends_on "go" => :build
@@ -20,6 +19,12 @@ class GopassJsonapi < Formula
 
   on_macos do
     depends_on macos: :sonoma # for SCScreenshotManager
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install

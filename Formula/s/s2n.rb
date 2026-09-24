@@ -1,8 +1,8 @@
 class S2n < Formula
   desc "Implementation of the TLS/SSL protocols"
   homepage "https://aws.github.io/s2n-tls/usage-guide/"
-  url "https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.8.tar.gz"
-  sha256 "90ec7934af222b0f58f1143dabe12358489f628956ec25fa1bf752b2a33bfd5a"
+  url "https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.10.tar.gz"
+  sha256 "daf1cef574cdce15fe8be5d2b5632e90bd902ab6bdfc72687c7f574a28df437e"
   license "Apache-2.0"
   head "https://github.com/aws/s2n-tls.git", branch: "main"
 
@@ -12,12 +12,11 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c76a259d77028c97de0da7a273b49c5894adc96dec4f60111b9ffdffa2911e4a"
-    sha256 cellar: :any, arm64_sequoia: "ae667d5858de869ada2f367a47b9812f039e02a62f67c9c50a4835dfbca566b3"
-    sha256 cellar: :any, arm64_sonoma:  "add656efcbe5073eef4b197f524a60831b63bc50a81561270b58f05e0aa4f84e"
-    sha256 cellar: :any, sonoma:        "66e250bfb6f3a880b5909f9d6080686669ab485a5b547d6da59cb58961ae206f"
-    sha256 cellar: :any, arm64_linux:   "fc3c04ea9546968d88507d5a61b83956a95dfd5507cb266f783a78ce0e86e2c8"
-    sha256 cellar: :any, x86_64_linux:  "631ffb711333661e42d43b4e4d89b2bb20ba78c2d00499786fb838364684ce66"
+    sha256 cellar: :any, arm64_golden_gate: "3b643c46cf3fba58b36b34eeadfce084d2747da7d34e973d03bcda97068e58fd"
+    sha256 cellar: :any, arm64_tahoe:       "42a24451e9043beb7a3c661368ec349296cb135374548676c4028eeef15d6c46"
+    sha256 cellar: :any, arm64_sequoia:     "e6b68e200211f4c84bd50612a3acf9366c8952a44efdcf3d5cfb4ae122fe1e3d"
+    sha256 cellar: :any, arm64_linux:       "3de48c4a90cf6c6ca8ed0307747343702fcc94ded5c0ec03a7e9da3b30a6d007"
+    sha256 cellar: :any, x86_64_linux:      "3d86e3640386db5843a1dcf4f3b3e58beea29e41420c9f5e1a1e91603eaf502c"
   end
 
   depends_on "cmake" => :build

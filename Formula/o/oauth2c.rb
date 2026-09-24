@@ -1,21 +1,26 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
   homepage "https://github.com/SecureAuthCorp/oauth2c"
-  url "https://github.com/SecureAuthCorp/oauth2c/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "36606ec1c5eca7c7fff6bb87d4171031ddc5bfb93474eaf97191fe16b9902f24"
+  url "https://github.com/SecureAuthCorp/oauth2c/archive/refs/tags/v1.21.1.tar.gz"
+  sha256 "8f033f91e14bddc3ff3ae2c7cdf804f4e794d94dfa0e9ef4751d9b9d9cd212c4"
   license "Apache-2.0"
   head "https://github.com/SecureAuthCorp/oauth2c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0df25bbe0206dbf3750f5f2761b4d83b4a028333dfe1647c5758e2b0d11c4ea6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "068bc90b3bc0b2386a5ae098c0a2550feb64625fca7ecfd8c871da14bf655dd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e7d1c31e096d50643c1b14ba5d83c1ae457e1870c67abf374e9ff8193fd710e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d75d44a4993f6232df595f26415b5391523d2bf5f81c0f8ec355a8ec731b0be2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d75d44a4993f6232df595f26415b5391523d2bf5f81c0f8ec355a8ec731b0be2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d75d44a4993f6232df595f26415b5391523d2bf5f81c0f8ec355a8ec731b0be2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9c99ff220b799c8fe151c963564b8a657f1d5081d52c2a6e9ca0380e13784999"
+    sha256 cellar: :any,                 x86_64_linux:      "490575b781e17bb1df816f758a177f6d2f9cccf7019524b2dadd0c1e9910f181"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: :goreleaser)

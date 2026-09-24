@@ -4,7 +4,7 @@ class OrTools < Formula
   url "https://github.com/google/or-tools/archive/refs/tags/v9.15.tar.gz"
   sha256 "6395a00a97ff30af878ee8d7fd5ad0ab1c7844f7219182c6d71acbee1b5f3026"
   license "Apache-2.0"
-  revision 12
+  revision 15
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -13,12 +13,11 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "e44ae35ec5dccd826c4bc17e89250f5210faef45ed69681c01db4cb80680a90d"
-    sha256               arm64_sequoia: "a0e591b8182fae4afb9e626b4357f608764f312814f518595bd4ef782eb89567"
-    sha256               arm64_sonoma:  "05c856bd6daa2fc84758b2bda32bab2b60976262fae280bcbf102c4801fbf5b1"
-    sha256 cellar: :any, sonoma:        "d4d1d1c07beb10ea034963f7a4fa4985e0a58e4edb9904e1229613bc86c10e85"
-    sha256               arm64_linux:   "fa6d08b326bbecfd614ede11e3c3ca3b6154d7388785e8934568a4d9729c6512"
-    sha256               x86_64_linux:  "ba1f0c95737cb7654d550ef09cc9cf6f11231474261b59b9be37be676b95ed53"
+    sha256 cellar: :any, arm64_golden_gate: "954c1a6c041480f18a6c2bc48f6a397eeda263860d9f83cc5c475b5d1a11675e"
+    sha256 cellar: :any, arm64_tahoe:       "64dfe69bfd2a0e6eb1613aea7b662b650bb5be5b184166e18506fa4f6a8a3a79"
+    sha256 cellar: :any, arm64_sequoia:     "fcf443659b0fb8f952587fc16eb36d9f1799a16db39572ebb7710cf0aab7fd24"
+    sha256               arm64_linux:       "225ef78281ec665813905864b88737c172d99aadeaeac8f5a7850e1662ae45dc"
+    sha256               x86_64_linux:      "9011b061985ca4090a1366f7110ab6679cd6c77e22e2fdc15e07c26c6e83c5f0"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://github.com/v8/v8/archive/refs/tags/15.3.76.4.tar.gz"
-  sha256 "493a0dfcfa63370595b907928cb300de8f79c8664f1c08c354a67b458974dbe0"
+  url "https://github.com/v8/v8/archive/refs/tags/15.5.35.7.tar.gz"
+  sha256 "276a78b754c91d521b21f3e05f73542ac497d320b2337cfac7be51ee45b1da05"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,12 +24,11 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "69741f5d97f7900022be9203091e369387765d30efd7140d4269db04a36a7b52"
-    sha256 cellar: :any, arm64_sequoia: "ee85d9b3c5b8a010991afdbf8adb1b28b93b31df0ac8ad7219242abda23cf88d"
-    sha256 cellar: :any, arm64_sonoma:  "b9223d3f885999bdf38e73ff1fbe85d0087977bb67134b4ef2d3467605180970"
-    sha256 cellar: :any, sonoma:        "b782af3a53cdd1ea9a8aa5abad5b3d884ad8ce35ed9c74fe240136ae0ff462a3"
-    sha256 cellar: :any, arm64_linux:   "1aef7a96a1e63f71607a1f0f5cf5ff3a3fd27e911e54bfb11b6ada0afecae377"
-    sha256 cellar: :any, x86_64_linux:  "c3ef9695c0cd383dbd9ff0a1f52730a31afed462b820e476e59471e44637f4f6"
+    sha256 cellar: :any, arm64_golden_gate: "d92d51004b19ba3cb5a80626334ba69dc29e32a274c1165f9b254b8078578468"
+    sha256 cellar: :any, arm64_tahoe:       "1ea12790234ad6ab4000c6323d471eeea53c138c188ce737782f110771e30cb6"
+    sha256 cellar: :any, arm64_sequoia:     "5a76a6f1da68f64a60dda2fb52c1e3c88991f4adcb0ce2e52087c908d34d2f06"
+    sha256 cellar: :any, arm64_linux:       "c0464f68d67953665386d8e4b4d00a2e01c153f4e56d4b66850a5d471df9da34"
+    sha256 cellar: :any, x86_64_linux:      "35c0f3bd30fb481d0943ce54240b08d2816c8dd5b1d78fd29032250335e7ac5c"
   end
 
   depends_on "llvm" => :build
@@ -59,8 +58,8 @@ class V8 < Formula
   # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#99
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "7324363900ccab92518649e9693d71a4ae71a747"
-    version "7324363900ccab92518649e9693d71a4ae71a747"
+        revision: "a99d46a9d04c770d6bb87387058e1d7b151758ce"
+    version "a99d46a9d04c770d6bb87387058e1d7b151758ce"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -70,8 +69,8 @@ class V8 < Formula
 
   resource "build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "271143e8fbae4df2ae2c1a187d80b5738635e7c1"
-    version "271143e8fbae4df2ae2c1a187d80b5738635e7c1"
+        revision: "8ca8a372cab9ff143072204053d30fbc2c17bd7a"
+    version "8ca8a372cab9ff143072204053d30fbc2c17bd7a"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -81,8 +80,8 @@ class V8 < Formula
 
   resource "buildtools" do
     url "https://chromium.googlesource.com/chromium/src/buildtools.git",
-        revision: "9e7655f4ee433ef4c6efcffd57e379db8f8c0432"
-    version "9e7655f4ee433ef4c6efcffd57e379db8f8c0432"
+        revision: "6f6a5dbf04b734214f3b1f386567d101ec9d607e"
+    version "6f6a5dbf04b734214f3b1f386567d101ec9d607e"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -92,8 +91,8 @@ class V8 < Formula
 
   resource "third_party/abseil-cpp" do
     url "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git",
-        revision: "df548c50b2cda67158364d3d23c63043881b391d"
-    version "df548c50b2cda67158364d3d23c63043881b391d"
+        revision: "435e7d977fb36fb47854a4c552c0706dad0bd7cf"
+    version "435e7d977fb36fb47854a4c552c0706dad0bd7cf"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -158,8 +157,8 @@ class V8 < Formula
 
   resource "third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "8cc91d9b6ab9991802fd208ee03a69714fd0251c"
-    version "8cc91d9b6ab9991802fd208ee03a69714fd0251c"
+        revision: "6ebb40c594776cc2c21ea14df85a2a89a328b364"
+    version "6ebb40c594776cc2c21ea14df85a2a89a328b364"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -180,8 +179,8 @@ class V8 < Formula
 
   resource "third_party/llvm-libc/src" do
     url "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc.git",
-        revision: "6fd5620cc4fd3c55ee749e9bf71f52038431f76d"
-    version "6fd5620cc4fd3c55ee749e9bf71f52038431f76d"
+        revision: "43a9a99ce4b5a04954090f8a0e74bf2786f59379"
+    version "43a9a99ce4b5a04954090f8a0e74bf2786f59379"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -202,8 +201,8 @@ class V8 < Formula
 
   resource "third_party/partition_alloc" do
     url "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git",
-        revision: "7d6a15841642fa6b02874e3c461e332f17c7c33d"
-    version "7d6a15841642fa6b02874e3c461e332f17c7c33d"
+        revision: "c029851c21b7e1154fa3964e08c97710adc92cc7"
+    version "c029851c21b7e1154fa3964e08c97710adc92cc7"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -224,8 +223,8 @@ class V8 < Formula
 
   resource "third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "c5cc9edf8992ff36dfca3c2c4f6c8327a66b6782"
-    version "c5cc9edf8992ff36dfca3c2c4f6c8327a66b6782"
+        revision: "285e94b8fa95ad3b7d16b80798ec8dce6febb8c8"
+    version "285e94b8fa95ad3b7d16b80798ec8dce6febb8c8"
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -263,19 +262,20 @@ class V8 < Formula
 
     # setup gn args
     gn_args = {
-      is_debug:                     false,
-      is_component_build:           true,
-      v8_use_external_startup_data: false,
-      v8_enable_fuzztest:           false,
-      v8_enable_i18n_support:       true,  # enables i18n support with icu
-      clang_use_chrome_plugins:     false, # disable the usage of Google's custom clang plugins
-      treat_warnings_as_errors:     false, # ignore not yet supported clang argument warnings
+      is_debug:                      false,
+      is_component_build:            true,
+      v8_use_external_startup_data:  false,
+      v8_enable_fuzztest:            false,
+      v8_enable_i18n_support:        true,  # enables i18n support with icu
+      clang_use_chrome_plugins:      false, # disable the usage of Google's custom clang plugins
+      treat_warnings_as_errors:      false, # ignore not yet supported clang argument warnings
       # disable options which require Google's custom libc++
-      use_custom_libcxx:            false,
-      enable_rust:                  false,
-      use_sysroot:                  false,
-      v8_enable_temporal_support:   false,
-      v8_enable_sandbox:            false, # sandbox is not supported by use_custom_libcxx: false
+      use_custom_libcxx:             false,
+      enable_rust:                   false,
+      use_sysroot:                   false,
+      v8_enable_temporal_support:    false,
+      v8_enable_sandbox:             false, # sandbox is not supported by use_custom_libcxx: false
+      v8_use_metagen_instance_types: false, # metagen needs the unvendored `llvm-libclang`
     }
 
     # uses Homebrew clang instead of Google clang
@@ -306,8 +306,8 @@ class V8 < Formula
     # Transform to args string
     gn_args_string = gn_args.map { |k, v| "#{k}=#{v}" }.join(" ")
 
-    # Build with gn + ninja
-    system "gn", "gen", "--args=#{gn_args_string}", "out.gn"
+    # Build with gn + ninja, using system Python instead of the hermetic CPython CIPD package
+    system "gn", "gen", "--args=#{gn_args_string}", "--script-executable=python3", "out.gn"
     system "ninja", "-j", ENV.make_jobs, "-C", "out.gn", "-v", "d8"
 
     # Install libraries and headers into libexec so d8 can find them, and into standard directories
@@ -344,8 +344,8 @@ class V8 < Formula
       }
     CPP
 
-    # link against installed libc++
-    system ENV.cxx, "-std=c++20", "test.cpp",
+    # link against installed libc++; V8 15.4 headers require the CppGC microtask queue define
+    system ENV.cxx, "-std=c++20", "-DV8_CPPGC_MICROTASK_QUEUE", "test.cpp",
                     "-I#{include}", "-L#{lib}",
                     "-Wl,-rpath,#{libexec}",
                     "-lv8", "-lv8_libplatform"

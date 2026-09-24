@@ -1,8 +1,8 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.64.1.tar.gz"
-  sha256 "b1df6ee72f17efc0ef95fc20a64821cd9eda3935b81cb98b1719c8266163bd07"
+  url "https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.65.1.tar.gz"
+  sha256 "df30ec1a5032b3c5672a30090fe787fb32d4122fd996d6d85e1d10135acfbc89"
   license "MIT"
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
@@ -12,15 +12,16 @@ class Lazygit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9beb4bfe03e5924bf06b78e3cd04851d83b90fd78d79bfb88cfa2d6cca4dc1c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9beb4bfe03e5924bf06b78e3cd04851d83b90fd78d79bfb88cfa2d6cca4dc1c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9beb4bfe03e5924bf06b78e3cd04851d83b90fd78d79bfb88cfa2d6cca4dc1c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "715c0ecdfae047aa49b8da4e8f0ebc502d18284a829140af6cb738603e0ddf7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1943344398479dac64ef8cca343076dd8b2a5944c4a15eaeec985b54515baede"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b9749027df69d7c2d88c679b1daf83af81f24fc064e92f581d872c650b58672"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d11be3739cf20672d4fb83938ce3e86e27160f239dea4228148d2254121bf18f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d11be3739cf20672d4fb83938ce3e86e27160f239dea4228148d2254121bf18f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d11be3739cf20672d4fb83938ce3e86e27160f239dea4228148d2254121bf18f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d3557238f14e512d8ed7942e77fd8ad8e944d2f17c0d6cf95808bb4d6c6740ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b3a456cd371d4402d16e088e2967b1dabf2a7038149e0e0b57f0495ff25bc776"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"

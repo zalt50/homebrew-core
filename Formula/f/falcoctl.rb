@@ -1,21 +1,26 @@
 class Falcoctl < Formula
   desc "CLI tool for working with Falco and its ecosystem components"
   homepage "https://github.com/falcosecurity/falcoctl"
-  url "https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "804a37e6372201ee21d3bc99ffea6079484b557ece0aa17719dbc6e8cb2b5fec"
+  url "https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.14.2.tar.gz"
+  sha256 "2ac3bd90913933e7fb6f9a722e1b8999dedaaab158c1ea073405d28c491112c1"
   license "Apache-2.0"
   head "https://github.com/falcosecurity/falcoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "556de5dbacdb8ac6708dd7cf9017e5957df4b983ad7cc97bc3d3aa1b6ca522f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f47f8fe1ee8709d72e272e3374063c106c380b0da60863b66d87bbcac6e30223"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92b2a574ae2bd39ef11432b45d269f235d436c1c60e3e6fbdd0e3f61f5b54f0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0286fbbbdcb0e4fb174ea755ab953f685766d076732011dec22486048c488588"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fc8c72cb28dca01251c12060f1d556f05e88ded378fe53b0f97863a9f9c44ef"
-    sha256 cellar: :any,                 x86_64_linux:  "4752b2c4136105e3be9bf7601b8793bcaa0be19006ca5d53286f50b8376ad870"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "12f12bf7f8d762be10cd901a89f56abad7e6ff1e660e2e16faea814e2d15ed56"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5a871b93c661294256750f84811e8cdb6b892514ffeb048d4a5a843887fdaef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4155396efebc714e73e314e11b5e47d2ccf983bba1bfebd0d68845cd0e77cae3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "16a482c1d2f4a10778c7fd7dfc21299e58d4cc90f4a290ec861a0b5211b32825"
+    sha256 cellar: :any,                 x86_64_linux:      "60ed8e1240a2d4fc21ad09dc6dbdc3a92f01cd5a62ecc85d87ac889d3bc17cc3"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     pkg = "github.com/falcosecurity/falcoctl/cmd/version"

@@ -1,18 +1,18 @@
 class AtuinServer < Formula
   desc "Sync server for atuin - Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh"
-  url "https://github.com/atuinsh/atuin/releases/download/v18.20.1/source.tar.gz"
-  sha256 "c4faccd208fe3b407e83c6943b2d81081a94fe836da9b67f1a7b4d4f4bbb0fab"
+  url "https://github.com/atuinsh/atuin/releases/download/v18.23.0/source.tar.gz"
+  sha256 "64b4b9b0f84ef34bcfa88e992d38cc0b95d3cf1f6d470bb695d3ef0231445b26"
   license "MIT"
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1038bc416c901a63b077c371ae140c0895ffc33759512d3546721aa0e46ec48"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39c39f17b1cd1252d9dab009c8efa83ac078df4a3fa187428b325eda87362668"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e467dc05a6210b61b8eb29404c726c17013f8402c310c4f37bcf372ab75e42f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec2ad623d76d5881519969c5fc1e6290df5986d66103dc5fa331516bd415bacf"
-    sha256 cellar: :any,                 arm64_linux:   "b8bd75f34e6c33d1bd727acd416327d0dba461a92793e1a27ff6255af674e0bd"
-    sha256 cellar: :any,                 x86_64_linux:  "4d965783d1201bf69033ff658ef8529677cc21e2996d119a1d1b09c4025f09cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2fde158fe3c5c944150834572f99ba5dde2d9242a80309dac59c469959411751"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e115f548dd4f0928bc0ad11148a6260cd51e2892575b7f91b74b2d5d283cb82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f04f60e264439225eebf32cb51b0902c73d00633894aecf1241188704748bfa4"
+    sha256 cellar: :any,                 arm64_linux:       "78ec7e09447d56df2e18b0cce34a0b6d2221a1385a0fb56de81c20b31a1d649c"
+    sha256 cellar: :any,                 x86_64_linux:      "f29cdc0be3e639d24395558e31fdd1a2a991e74d123dbd78eea3dd662c28f59b"
   end
 
   depends_on "pkgconf" => :build
@@ -20,7 +20,13 @@ class AtuinServer < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

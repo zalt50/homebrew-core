@@ -1,18 +1,17 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.2.8.tar.gz"
-  sha256 "c07ae8f828039fae32b791abcfc8f1d1b769024a2ae5c04bdc2946e8318615f4"
+  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "5b53d5bf8941b5276434737e9ba0f89508a0ea6ad2871da6ab42459eb48b53c6"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "99716ea8004a3354555d8229338bdf6e63bf716b7394aa1c3362fab38c387dbc"
-    sha256 cellar: :any, arm64_sequoia: "b4bd3f5bd3860f5bf98c37b01d20c119d10675a661fcdd09b0f79388e07dbe61"
-    sha256 cellar: :any, arm64_sonoma:  "f2f6cd7d12453a522af7656e549a82833853faead9496760bd2c84f84e025818"
-    sha256 cellar: :any, sonoma:        "20c758acda38fd8aa79a91177449d38b0e25a6951ea89f9a4ac8fdcf994e6b3a"
-    sha256               arm64_linux:   "471e07626a24417b3ee4c003e7e0e0a1008336882efb7fb8dcbfc0da8069cecb"
-    sha256               x86_64_linux:  "ef78536f37dd64b97b879831c5023ea7507a4e944b453b37a924e9a31df6941e"
+    sha256 cellar: :any, arm64_golden_gate: "be448606e0b405c9a0139d447f41828d513f73dc940ed94e947c677115cb4ec3"
+    sha256 cellar: :any, arm64_tahoe:       "4586341590542ed3465b7b4f575c867f13922c5cf64c3dec77eb987e57c67dc2"
+    sha256 cellar: :any, arm64_sequoia:     "fc3dc655782e5a4dc680df3ca1c3fda9432976fa174e0a423dafc1d29b206d53"
+    sha256               arm64_linux:       "d276b2ffe4d8c62041041bd8722be0ac0ffbfa6926ae785159b9753deb7834d8"
+    sha256               x86_64_linux:      "7cf9a21de6d93eee6940bbe8ccdda6b10b8b6479c6b1db509e9bdcec5ff8af29"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +22,8 @@ class VitePlus < Formula
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
-        revision: "872b98ac7476eb7d5892a2913e4ba010d124c6ac"
-    version "872b98ac7476eb7d5892a2913e4ba010d124c6ac"
+        revision: "5b4746e442989d770c606ce08d2737e6aafbd25d"
+    version "5b4746e442989d770c606ce08d2737e6aafbd25d"
 
     livecheck do
       url "https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -36,8 +35,8 @@ class VitePlus < Formula
 
   resource "vite" do
     url "https://github.com/vitejs/vite.git",
-        revision: "fa79f9ab699f9a22a6f9b50f3d247be6b51f684d"
-    version "fa79f9ab699f9a22a6f9b50f3d247be6b51f684d"
+        revision: "434e8e9495436a60789f2b588a04a6a24a3d1661"
+    version "434e8e9495436a60789f2b588a04a6a24a3d1661"
 
     livecheck do
       url "https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -51,16 +50,28 @@ class VitePlus < Formula
     resource("rolldown").stage buildpath/"rolldown"
     resource("vite").stage buildpath/"vite"
 
-    ENV["NPM_CONFIG_MANAGE_PACKAGE_MANAGER_VERSIONS"] = "false"
+    # Build with Homebrew pnpm. The staged resources pin their own versions too
+    %w[package.json rolldown/package.json vite/package.json].each do |file|
+      package_json = buildpath/file
+      package_json.atomic_write(JSON.pretty_generate(JSON.parse(package_json.read).except("packageManager")))
+    end
+
+    # Vite patches only build-time dependencies, which the production deploy below omits
+    (buildpath/"pnpm-workspace.yaml").append_lines "allowUnusedPatches: true"
 
     system "just", "build"
-    system "cargo", "install", *std_cargo_args(path: "crates/vite_global_cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/vp_global_cli")
 
     system "pnpm", "--filter=vite-plus", "deploy", "--prod", "--legacy", "--no-optional",
            prefix/"node_modules/vite-plus"
     node_modules = prefix/"node_modules/vite-plus/node_modules"
-    rm_r node_modules.glob(".pnpm/*/node_modules/*/prebuilds/{darwin,ios}-x64*")
-    rm_r node_modules.glob(".pnpm/fsevents@*/node_modules/fsevents")
+    # Remove incompatible pre-built `bare-*` binaries. Recurse as `deploy --legacy` writes
+    # both the legacy `<name>@<version>` and the current `@/<name>/<version>/<hash>` layouts
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules.glob(".pnpm/**/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    rm_r node_modules.glob(".pnpm/**/node_modules/fsevents")
 
     # Symlink vp to vpr and vpx. These are detected at runtime by argv[0]
     bin.install_symlink bin/"vp" => "vpr"
@@ -75,11 +86,12 @@ class VitePlus < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/vp --version")
 
-    system bin/"vp", "create", "vite:application", "--no-interactive", "--directory", "test-app"
+    # `vp` calls `tcsetattr` on a tty stdin, which stops it with SIGTTOU on the test PTY
+    system "#{bin}/vp create vite:application --no-interactive --directory test-app < /dev/null"
     assert_path_exists testpath/"test-app/package.json"
 
     cd testpath/"test-app" do
-      output = shell_output("#{bin}/vp fmt")
+      output = shell_output("#{bin}/vp fmt < /dev/null")
       assert_match "Finished", output
     end
   end

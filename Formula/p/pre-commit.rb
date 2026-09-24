@@ -9,12 +9,13 @@ class PreCommit < Formula
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6e19586944da89f126da4303b0a777dd949142ca2fbe50fd8c715773e5fbc9b2"
-    sha256 cellar: :any, arm64_sequoia: "f02188cae037a791e41adf6dc054166b3a74a642865bfe216d6995f1282d5dc5"
-    sha256 cellar: :any, arm64_sonoma:  "7239c28ec92740baf44199dd3cccfc6f2cc56f55e9cb8e156e872cef63879937"
-    sha256 cellar: :any, sonoma:        "1495121c0f63e579e31e33e8c767e93e0fb3a35cd71d4beaf9e3ae47a0b20d0e"
-    sha256 cellar: :any, arm64_linux:   "00e23fe447c972938d588d41932085ab6345bd2936ecc3dc50007382c8f3b903"
-    sha256 cellar: :any, x86_64_linux:  "1c8f6521a7ab71e074d2e0a12921f004505f7157f056259e9c8b190854a9424e"
+    sha256 cellar: :any, arm64_golden_gate: "33f04a83de785463ce9ba5d2f4c3e581ac6cbd306928ccacd576fe2308dfb2fc"
+    sha256 cellar: :any, arm64_tahoe:       "6e19586944da89f126da4303b0a777dd949142ca2fbe50fd8c715773e5fbc9b2"
+    sha256 cellar: :any, arm64_sequoia:     "f02188cae037a791e41adf6dc054166b3a74a642865bfe216d6995f1282d5dc5"
+    sha256 cellar: :any, arm64_sonoma:      "7239c28ec92740baf44199dd3cccfc6f2cc56f55e9cb8e156e872cef63879937"
+    sha256 cellar: :any, sonoma:            "1495121c0f63e579e31e33e8c767e93e0fb3a35cd71d4beaf9e3ae47a0b20d0e"
+    sha256 cellar: :any, arm64_linux:       "00e23fe447c972938d588d41932085ab6345bd2936ecc3dc50007382c8f3b903"
+    sha256 cellar: :any, x86_64_linux:      "1c8f6521a7ab71e074d2e0a12921f004505f7157f056259e9c8b190854a9424e"
   end
 
   depends_on "libyaml"
@@ -65,15 +66,11 @@ class PreCommit < Formula
     sha256 "c9d960c95fa458171e58222a5ccab7465298e4b6559977865e627c4719f1e825"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Avoid Cellar path reference, which is only good for one version.
     inreplace "pre_commit/commands/install_uninstall.py",
               "f'INSTALL_PYTHON={shlex.quote(sys.executable)}\\n'",
-              "f'INSTALL_PYTHON={shlex.quote(\"#{opt_libexec}/bin/#{python3}\")}\\n'"
+              "f'INSTALL_PYTHON={shlex.quote(\"#{opt_libexec}/bin/#{python3.basename}\")}\\n'"
 
     virtualenv_install_with_resources
   end

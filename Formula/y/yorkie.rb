@@ -1,8 +1,8 @@
 class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
-  url "https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.7.17.tar.gz"
-  sha256 "78e9ec30524f4def9aa5b5e50861cbc8c7e9d9f69f0bd3a5690270b4b74606b6"
+  url "https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.7.23.tar.gz"
+  sha256 "c54b7fe00e8844f00703bef1a1c29d4f2e5a141a61f900fcaed1edd6431d2ab5"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
@@ -12,15 +12,20 @@ class Yorkie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dff2fa80a26eb80cfa60a84bc79e593147c9a7e0d63b2419aed931d65c2d9ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aead48dc8cd0d496f2ab73650398c271b7e205d97ed92def3a4cd55fde71cf8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0af1cc244cfff64966dc6afa1a82de7f420acf296e470f0d996c066566fcea5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1b337f51e7f6996044399eef08d90f547fca75594b08e74de8c5a8918ba872b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dee5d3015043c24cd405b72507a9bca986b19796800317e3993415c77e06c351"
-    sha256 cellar: :any,                 x86_64_linux:  "bb7f671d065c1061efa45d6f1fccc0e4025496fdd7c81dbc7d9469a2ffafa4ea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "40c2f63fb0c3cd84ff83b1a4deb0b65d08721e7022dd8508321b363f58784af9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "95b099d82980d7960ac5977ba66960709386e5acfdb9ce3857ba7adfd66d2c67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "88220ffbe7727ba376f849a71e39d6dd078b14849884dd7018fe4fbfe46aaf9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1e4403e2ae2fabaf2ba715a302fc7059a2cb17b8313f2e0087b55f8c34e17bcc"
+    sha256 cellar: :any,                 x86_64_linux:      "ffed8bb0e961b6aabe6a5b3e94f81e0b29a442e836cbb00386d6e6bd92a08c8e"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

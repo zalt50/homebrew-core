@@ -6,15 +6,15 @@ class Libtensorflow < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9319cf36b5b356091ba2492f3ce24dea2835736cfa4f1e20ed3c2d234ac53249"
-    sha256 cellar: :any,                 arm64_sequoia: "17d21c10cc62a192744160319fdd47cd51909354908a7f52982a961fb07db36d"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa39e67c8a94a7f3725ae61a8c26ba8873d06bdff9f7917b9cf2de1b6e173e04"
-    sha256 cellar: :any,                 sonoma:        "c611efeb7382664a25f563222347c8ce0b7d12f2653b3d008b0f58ae2e99ffd7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17f01416301b594d5755a93ceaf14de0e2e478a4fc57a5ade0f2139fe5b2d232"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b6f5d32a87bb01a24683dbf2d20c8c00cc3764633952cc7f11e2e86720f98eb"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_golden_gate: "608043ba636c34b13b604c5eaf9fcf3f3ab2ffe6a4dd59e8a5c4f9fe33bcddfc"
+    sha256 cellar: :any,                 arm64_tahoe:       "e30c7e633dd48606523ef247d765af4da4a171bde174dd765b1f9a75d364d253"
+    sha256 cellar: :any,                 arm64_sequoia:     "7eec009c5a3ba94e8e4146d2fb776db98a5187e35242a1d480d0df4bb24076f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2db70d228c438a1c29095f355ef567dfba73d2938381f0494b695e36a6295459"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2a5029ecf30a3694cddd932e66b6d6379ed8d573daecc54535fd082feba6601f"
   end
 
-  depends_on "bazelisk" => :build
+  depends_on "bazel@7" => :build
   depends_on "numpy" => :build
   depends_on "python@3.13" => :build # Python 3.14 support: https://github.com/tensorflow/tensorflow/issues/102890
 
@@ -27,7 +27,6 @@ class Libtensorflow < Formula
   end
 
   def install
-    python3 = "python3.13"
     optflag = ENV["HOMEBREW_OPTFLAGS"].presence
     optflag ||= if Hardware::CPU.arm? && OS.mac?
       "-mcpu=apple-m1"
@@ -35,7 +34,7 @@ class Libtensorflow < Formula
       "-march=native"
     end
     ENV["CC_OPT_FLAGS"] = optflag
-    ENV["PYTHON_BIN_PATH"] = which(python3)
+    ENV["PYTHON_BIN_PATH"] = python3
     ENV["USE_DEFAULT_PYTHON_LIB_PATH"] = "1"
     ENV["TF_NEED_CUDA"] = "0"
     ENV["TF_NEED_MPI"] = "0"
@@ -44,6 +43,9 @@ class Libtensorflow < Formula
     ENV["TF_DOWNLOAD_CLANG"] = "0"
     ENV["TF_SET_ANDROID_WORKSPACE"] = "0"
     ENV["TF_CONFIGURE_IOS"] = "0"
+
+    # Build with brew Bazel rather than Bazelisk downloading it
+    rm ".bazelversion"
 
     # `//xla/tsl/mkl:onednn` alias resolves to dummy on macOS; reference @onednn directly.
     inreplace "third_party/xla/xla/tsl/framework/contraction/BUILD",
@@ -78,6 +80,10 @@ class Libtensorflow < Formula
       --repo_env=USE_PYWRAP_RULES=
       --repo_env=ML_WHEEL_TYPE=release
     ]
+    # Bazel's Apple toolchain passes an explicit `-target` whose macOS version defaults
+    # to the SDK version, so bottles would carry the builder's SDK as their minimum OS.
+    # Pin it so LC_BUILD_VERSION matches the macOS the bottle is built for.
+    bazel_args << "--macos_minimum_os=#{MacOS.version}" if OS.mac?
     # //tensorflow/tools/lib_package:libtensorflow target was removed in 2.20.0.
     # For now, the deps used by original target still exist so use those to build.
     # https://github.com/tensorflow/tensorflow/commit/724f36e00941ad3abf3c32209adc2ee186602b70
@@ -92,7 +98,7 @@ class Libtensorflow < Formula
       //tensorflow/tools/graph_transforms:summarize_graph
       //tensorflow/tools/graph_transforms:transform_graph
     ] + libtensorflow_deps.map { |dep| "//tensorflow/tools/lib_package:#{dep}" }
-    system formula_opt_bin("bazelisk")/"bazelisk", "build", *bazel_args, *targets
+    system "bazel", "build", *bazel_args, *targets
 
     bin.install %w[
       bazel-bin/tensorflow/tools/benchmark/benchmark_model

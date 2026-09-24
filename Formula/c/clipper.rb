@@ -8,14 +8,17 @@ class Clipper < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a774abbbe9a959f39a478a85b38f06ee5991ffd4eeb2d6314d242da59ed5402"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a774abbbe9a959f39a478a85b38f06ee5991ffd4eeb2d6314d242da59ed5402"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a774abbbe9a959f39a478a85b38f06ee5991ffd4eeb2d6314d242da59ed5402"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82e62e607c9831b635560f0783e52f3d3f1a98bda6a0fc8083f61629b9423b79"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "61e16e321819e0d719a1be84ee35e4c6d0684e8d6963f12b056e385889a73a4c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9a774abbbe9a959f39a478a85b38f06ee5991ffd4eeb2d6314d242da59ed5402"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a774abbbe9a959f39a478a85b38f06ee5991ffd4eeb2d6314d242da59ed5402"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9a774abbbe9a959f39a478a85b38f06ee5991ffd4eeb2d6314d242da59ed5402"
+    sha256 cellar: :any_skip_relocation, sonoma:            "82e62e607c9831b635560f0783e52f3d3f1a98bda6a0fc8083f61629b9423b79"
   end
 
   depends_on "go" => :build
   depends_on :macos
+
+  deny_network_access!
 
   def install
     clipper_version = if build.stable?
@@ -38,7 +41,11 @@ class Clipper < Formula
   test do
     test_data = "a simple string! to test clipper, with söme spéciål characters!! 🐎\n".freeze
 
-    cmd = [opt_bin/"clipper", "-a", testpath/"clipper.sock", "-l", testpath/"clipper.log"].freeze
+    clipboard = testpath/"clipboard.txt"
+
+    # Write to a file instead of `pbcopy` as the sandbox has no pasteboard access
+    cmd = [opt_bin/"clipper", "-a", testpath/"clipper.sock", "-l", testpath/"clipper.log",
+           "-e", "tee", "-f", clipboard].freeze
     ohai cmd.join " "
 
     require "open3"
@@ -49,7 +56,7 @@ class Clipper < Formula
         assert_equal test_data.bytesize, sock.sendmsg(test_data)
         sock.close
         sleep 0.5
-        assert_equal test_data, `LANG=en_US.UTF-8 pbpaste`
+        assert_equal test_data, clipboard.read
       ensure
         Process.kill "TERM", clipper.pid
       end

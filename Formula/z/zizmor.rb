@@ -1,22 +1,28 @@
 class Zizmor < Formula
   desc "Find security issues in GitHub Actions setups"
   homepage "https://docs.zizmor.sh/"
-  url "https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.29.0.tar.gz"
-  sha256 "de3da74599a1e080361e97c0431bdc0f656ea530420fdff953a8e3d679e1153b"
+  url "https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.30.1.tar.gz"
+  sha256 "3224fd5b49b77b2ec1a8a0809587824e3bc346a7583e8272d8ad66f95d0e8cc2"
   license "MIT"
   head "https://github.com/zizmorcore/zizmor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b834d7d8d11e8e3041d7812c04e47c64c0399277cfef9a8efac9d64b79202d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5445a999473b7a72f07369537ea0ea2d1478267db6ea5247199a94ac83799c53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f1419c63116caa52f74e6f47840286927d984bf63745f8c7b288319386dda7c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88ed937fe776f436c2a814adf73e8b64ff8bfaf61a1e1ff7bbb42c3611c8a645"
-    sha256 cellar: :any,                 arm64_linux:   "78294151ed53e241e120c0d7bb4cdb79b072ee68b191ab44ad0c2f3663d63b49"
-    sha256 cellar: :any,                 x86_64_linux:  "405c60019576cc173964992f39d42f50fb39b3290d99b75984e5fcf351ba4f52"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "587f796948baa74b5c12355e2834030227b461458557f04a038f2b9f9875fbb6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bbddb48b35394ae644d7bee148675fb63a01188304affef8dbe1a26ebd524e93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4efe3e78a3d4fdb0bda26a556c02a4c17ebda512f70809506faa180be5a2ac4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fa580c1f57190e7d2c412e6de3b7367f2e64a3306bfffc18faa6150505117dcb"
+    sha256 cellar: :any,                 arm64_linux:       "87dc567490081fd47c0f4ddd6a9e38c736e6d203973ad7c5812954026e5eb9d8"
+    sha256 cellar: :any,                 x86_64_linux:      "cab8a46d72d940972dca032ed9f45e2e2816d8c5a21ae0d8dcd930aed032c072"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/zizmor")

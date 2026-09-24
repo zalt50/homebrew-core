@@ -1,21 +1,26 @@
 class Octl < Formula
   desc "Modern CLI for Outscale"
   homepage "https://github.com/outscale/octl"
-  url "https://github.com/outscale/octl/archive/refs/tags/v0.0.31.tar.gz"
-  sha256 "683ad1acb62889cc9167f39ed76228bdf002fe7fb72cf1882f887228d81acf8b"
+  url "https://github.com/outscale/octl/archive/refs/tags/v0.0.33.tar.gz"
+  sha256 "e643ca3b947f37bae273b2aa3ef08a3ee7ad0408327dfd00fb6363a7e6a0ebbf"
   license "BSD-3-Clause"
   head "https://github.com/outscale/octl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c974c1664d1598d0538332d0754154493f64851f66b9beb3625df95188d2643"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5847ce3c8644f8fe46ae4a80031dda566cee2ea66399ac34553b596b3fdfcdbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "271c319a32acd52d707ace4e15599caf8ada4997a984cde43c63cbd754c21a0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4efec24641e04c3024291c32db089759643fe53e4af9ae5721b6a53dc2cfca45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ac8ea737c08ec7641ecff2bf82a464177f5b68304020ab44120415fa5145ddf"
-    sha256 cellar: :any,                 x86_64_linux:  "681e0ae7660cb66264776be6f316e359c96e219b9b9afaa1f8de319451f714a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "74d4288f966610a658dcf40cd33fc1bcb9019436a3879cd96952b9a1bfdf0cb8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f2d04f1bffa92ff7c26aa42f9a0341b8a1c26a3532d9d174277665431a8b3304"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fc74ecef4c2a27d19217311af1a9cd294784dee1f1ddea63ecd951d71107ef59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c19c3cee7a1e6b86f39572ee6ea1e3f872bec85500d58bd61c3bfc8352f13162"
+    sha256 cellar: :any,                 x86_64_linux:      "b376a4b17f9795067f2d7910c9a5331e0219482a51296f27d5990b7f9a36b9e8"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X github.com/outscale/octl/pkg/version.Version=v#{version}]

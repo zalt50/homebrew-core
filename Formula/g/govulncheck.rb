@@ -3,23 +3,28 @@ class Govulncheck < Formula
   homepage "https://github.com/golang/vuln"
   # git checkout needed for buildInfo support
   url "https://github.com/golang/vuln.git",
-      tag:      "v1.7.0",
-      revision: "617f44b718537dccdea1915395650e0529e3b72e"
+      tag:      "v1.8.0",
+      revision: "709015412431dd2b5b28a53c06c70bc02d49074c"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/golang/vuln.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21dddabe5c6625c4625a5cd00f048df0d846f8e5dfb93861f0d2d60ae9bf0245"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21dddabe5c6625c4625a5cd00f048df0d846f8e5dfb93861f0d2d60ae9bf0245"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21dddabe5c6625c4625a5cd00f048df0d846f8e5dfb93861f0d2d60ae9bf0245"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28076311022c662df27fa88f6331099738b8a22e9fe6d4cd8b4714ab6f5bd6e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6008e722463665fded7470b08f91d29f3a9453e06d08e4f420e65dd0c3208ff"
-    sha256 cellar: :any,                 x86_64_linux:  "ee2fcfd70cdb46c0feddfb0b8d15bdc77ec5e36116ec6c50ef1b07e90c0aa21d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f22cf780a6d50b41748313b401fb54fb518c4c539796f4fde19261e07cd38781"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f22cf780a6d50b41748313b401fb54fb518c4c539796f4fde19261e07cd38781"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f22cf780a6d50b41748313b401fb54fb518c4c539796f4fde19261e07cd38781"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f22cf780a6d50b41748313b401fb54fb518c4c539796f4fde19261e07cd38781"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d69a4073a1e3435a352bfb8963f7be6b0faafd180bfbead0cf61ce0b8a1b8137"
+    sha256 cellar: :any,                 x86_64_linux:      "37b5e860bbf6a38daa20a739a73c56981ed5623bdcafb3b0e7e92272f916ca8d"
   end
 
   depends_on "go" => [:build, :test]
+
+  # `test do` block queries the Go vulnerability database
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/govulncheck"

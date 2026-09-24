@@ -4,10 +4,11 @@ class Nanopb < Formula
 
   desc "C library for encoding and decoding Protocol Buffer messages"
   homepage "https://jpa.kapsi.fi/nanopb/docs/index.html"
-  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.9.1.tar.gz"
-  sha256 "882cd8473ad932b24787e676a808e4fb29c12e086d20bcbfbacc66c183094b5c"
+  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.9.2.tar.gz"
+  sha256 "98b8cadce538f37230ca0d5d8796894e3067d58dd2fb2618e6712c7362bdd8bb"
   license "Zlib"
-  revision 6
+  revision 1
+  head "https://github.com/nanopb/nanopb.git", branch: "master"
 
   livecheck do
     url "https://jpa.kapsi.fi/nanopb/download/"
@@ -15,29 +16,28 @@ class Nanopb < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "b9dc6a78624375cb3a7ebf8e4a6d74b8f007180e4c5f586e4c1c44887f53a440"
-    sha256 cellar: :any, arm64_sequoia: "a7799fdadb39d845e2061dde07c02c19ecc4a984bf58f2eba96e2b5388c41620"
-    sha256 cellar: :any, arm64_sonoma:  "c1bdcb3e4dc5c5a278a36130aa7faa5c4017ba8bf6389a20315be24ca6b6c52a"
-    sha256 cellar: :any, sonoma:        "a60b70973ce8474f00bcf9fdf60b2b11bb81575d87c9eae7adc20e2bc015d78d"
-    sha256 cellar: :any, arm64_linux:   "1d09d93b87e87434ad0cd18adb07fdeca3d15d4fec144f733957c1cc76629cf1"
-    sha256 cellar: :any, x86_64_linux:  "5aad2007371a7ea6410d6ed13dcd7eb417fd0a345aba99be31384b3974b0d5b1"
+    sha256 cellar: :any, arm64_golden_gate: "12ba90acfc82663b0dc130cb72e75de6ea002030276549103d6aff8f5dce3f92"
+    sha256 cellar: :any, arm64_tahoe:       "a563fb6d87fd8787d7500cac76ccd5b7d99a3bb518ba16ecb714d16846af518a"
+    sha256 cellar: :any, arm64_sequoia:     "2c9c2322a8dcf784b2e5b33ddd7f2cb6af7b88d44165f6b4bf20970ef5fb600f"
+    sha256 cellar: :any, arm64_linux:       "97e1716d790bb2150317200a0c4ce82975363ff25cdf4d901e32faf938255bca"
+    sha256 cellar: :any, x86_64_linux:      "d76a02d2497565d76b57d61407430dce2e976919ef830a4e997d59543c599e9a"
   end
 
   depends_on "cmake" => :build
   depends_on "protobuf" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages package_name: "nanopb"
+  # Restore `package_name: "nanopb"` when 0.4.9.2 is on PyPI
+  pypi_packages package_name: "", extra_packages: "protobuf"
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
-    sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
+    url "https://files.pythonhosted.org/packages/d9/89/5b8517baa72f84a67b8a307ba953c91057af618bf40bf676f3c03551f8f0/protobuf-7.36.2.tar.gz"
+    sha256 "497d0463ff3316681da6c0b9e8d06cb465d61abce00b613ab42226175644d1bb"
   end
 
   def install
     ENV.append_to_cflags "-DPB_ENABLE_MALLOC=1"
-    venv = virtualenv_create(libexec, "python3.14")
+    venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
 
     system "cmake", "-S", ".", "-B", "build",
@@ -58,7 +58,7 @@ class Nanopb < Formula
       }
     PROTO
 
-    system Formula["protobuf"].bin/"protoc", "--nanopb_out=.", "test.proto"
+    system formula_opt_bin("protobuf")/"protoc", "--nanopb_out=.", "test.proto"
     assert_match "Test", (testpath/"test.pb.c").read
     assert_match "Test", (testpath/"test.pb.h").read
   end

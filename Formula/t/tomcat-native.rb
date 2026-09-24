@@ -1,30 +1,32 @@
 class TomcatNative < Formula
   desc "Lets Tomcat use some native resources for performance"
   homepage "https://tomcat.apache.org/native-doc/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-connectors/native/2.0.15/source/tomcat-native-2.0.15-src.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-connectors/native/2.0.15/source/tomcat-native-2.0.15-src.tar.gz"
-  sha256 "8dab09f21ad519c9e49e5287f8d8de89bb176a5e3968479f27948c31b2a3b6b4"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-connectors/native/2.0.16/source/tomcat-native-2.0.16-src.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-connectors/native/2.0.16/source/tomcat-native-2.0.16-src.tar.gz"
+  sha256 "785fdd99a202f442b085bc718d2fbeb393b85979aa4a2943302118c4acd68630"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c2103b257bc7f7a4a91ca0c7a7eee3557730e5a93eadb6cd3f9cd625e4f94542"
-    sha256 cellar: :any, arm64_sequoia: "6f5e64731697e06298090762503396bd7049ff06bdd34d53f6878addc4c13216"
-    sha256 cellar: :any, arm64_sonoma:  "20a82bd074d89a7e20a700b7c02ecd8f06b5883f4c8e58809b4c92369bf71b09"
-    sha256 cellar: :any, sonoma:        "b0c80c77a3facb80378c59833e6c8b43934a47ac4c883f0b77e70f11297dd844"
-    sha256 cellar: :any, arm64_linux:   "5be3ad52f02ae557231d0c3f9a73ae5e312a9654e3b193319d6a86e7de4769b3"
-    sha256 cellar: :any, x86_64_linux:  "4699481877c6c81ddf9d8793304ca826ac845cf964708a2a9884973954958009"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "28eba952cb5b7035af70544a661c529af93072c3efa1a6cd0cd3a10542706fec"
+    sha256 cellar: :any, arm64_tahoe:       "9cfb2599e7f56cadf3d413028cabb8aadeedf51ef7e683c78ad52327d98b16e3"
+    sha256 cellar: :any, arm64_sequoia:     "c1cb3af230cc5c1f2031686bd9286f5cbc67bbeaa5f25f7982c187d1e1e6c95a"
+    sha256 cellar: :any, arm64_linux:       "b7b4eb5fe0b4809e81787265c466b79eb94727f3c995f5027cdb2834c7bdedf0"
+    sha256 cellar: :any, x86_64_linux:      "45ddf4ee5eb2732cf29acecd83cbac0eafe47e6e3677ab1a51c89f7aaba5c1b0"
   end
 
   depends_on "tomcat" => :test
   depends_on "apr"
   depends_on "openjdk"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  allow_network_access! :test
 
   def install
     cd "native" do
       system "./configure", "--with-apr=#{formula_opt_prefix("apr")}",
                             "--with-java-home=#{formula_opt_prefix("openjdk")}",
-                            "--with-ssl=#{formula_opt_prefix("openssl@3")}",
+                            "--with-ssl=#{formula_opt_prefix("openssl@4")}",
                             *std_configure_args
       system "make"
       system "make", "install"
@@ -54,7 +56,6 @@ class TomcatNative < Formula
 
     pid = spawn(tomcat.bin/"catalina", "start")
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
     begin
       system tomcat.bin/"catalina", "stop"
     ensure

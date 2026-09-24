@@ -1,17 +1,17 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
   homepage "https://github.com/shshemi/tabiew"
-  url "https://github.com/shshemi/tabiew/archive/refs/tags/v0.14.2.tar.gz"
-  sha256 "20e1d8c101d8882860f52d3fa5106382544ff1441d57565824dce65c091e8360"
+  url "https://github.com/shshemi/tabiew/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "20d2c3e83b0f27fbe48c9ac0be95533361d29897bff1e3c5ce498ff46ae84580"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "778bb2729869b8c824e9f38a6e9d7f7c45e5d216aa0d22e2ee596c89eed845b5"
-    sha256 cellar: :any, arm64_sequoia: "947cbddcd80d4cb8a49efeffdf3c8281838e9f8cff3017b394edbc7e240b4fe2"
-    sha256 cellar: :any, arm64_sonoma:  "25f6db107858ec79ade9185b08d713baa41ab531d74f7bf036844b42cba7ac56"
-    sha256 cellar: :any, sonoma:        "4c1cf6e1d2d015bdeea198c12423af2bd87dc862f12f059e59ffabcbb73ac135"
-    sha256 cellar: :any, arm64_linux:   "76119ed39335e3596ffdd0efdffee9e4a40c0f2ca8776f7e3c41421a5f63f895"
-    sha256 cellar: :any, x86_64_linux:  "a61885ec93d6fea35b441256bacaf402a0024455ac37da36b2ee4bda7ff43a23"
+    sha256 cellar: :any, arm64_golden_gate: "8318867603e95b6d694a2c23f432055c5b37e7d1a9dfb8602d74883ccfda467e"
+    sha256 cellar: :any, arm64_tahoe:       "0b750691f1af2ccb2ddb26d1d5096ce1f80e3c57f0ce18102a2e41e981a5be2d"
+    sha256 cellar: :any, arm64_sequoia:     "9e1121b1b971845d23ed0f2c548d5f7dcd403c21c6f6a6b715a60476d71567a6"
+    sha256 cellar: :any, arm64_sonoma:      "35614cb655ce53f077141407b805d16d4a885d44fb902fcf69a43d368d1911a0"
+    sha256 cellar: :any, arm64_linux:       "73115dbe8153076859769ffa7d8602822273f69d2a67e8c5490d7ffdebf0819d"
+    sha256 cellar: :any, x86_64_linux:      "f44f27c5da942e36f718ef7aa9248abea9e537b8d769c6aed41732feae05a77b"
   end
 
   depends_on "pkgconf" => :build

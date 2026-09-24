@@ -1,21 +1,26 @@
 class Skillshare < Formula
   desc "Sync skills across AI CLI tools"
   homepage "https://skillshare.runkids.cc"
-  url "https://github.com/runkids/skillshare/archive/refs/tags/v0.20.26.tar.gz"
-  sha256 "eabe0f9fe8ba282bcd72e6b43ae6a50060ca25cf517fd3cb821cb96361da85f2"
+  url "https://github.com/runkids/skillshare/archive/refs/tags/v0.21.7.tar.gz"
+  sha256 "c6c7be62c72cf7e4ebe94dec98819cccf35289172f2370ba63ed97438fe74da1"
   license "MIT"
   head "https://github.com/runkids/skillshare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd86c0f913455652cc33902bbbf54f81820bc710a4d6f6450862df1149b4f5dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd86c0f913455652cc33902bbbf54f81820bc710a4d6f6450862df1149b4f5dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd86c0f913455652cc33902bbbf54f81820bc710a4d6f6450862df1149b4f5dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c99df674aebd7e6504e7931bf8d3199958b233cc7b0cec786178072a4d954376"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab1abd6cdb5dc121617bad408236f6b98d36da5f73d6b7696ade2eee914ecc36"
-    sha256 cellar: :any,                 x86_64_linux:  "5c530d953de0d1949ee1b22165edeabb1e3bec42c543f7c7a51ce9cff708ace4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a9fdf55201d5318acca00dbbc5494070df17a807a5631ac20c299e8edfb64fed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9fdf55201d5318acca00dbbc5494070df17a807a5631ac20c299e8edfb64fed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a9fdf55201d5318acca00dbbc5494070df17a807a5631ac20c299e8edfb64fed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0a4a83661f820335fd74fad0cf1f6cb5a73780c5d02b12e44cd582774387a9fd"
+    sha256 cellar: :any,                 x86_64_linux:      "e09ee3ab697c4ee536003f79d7cce8eea5a81f775b23d53ba53566139de98769"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     # Avoid building web UI

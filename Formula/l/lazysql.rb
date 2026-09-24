@@ -1,8 +1,8 @@
 class Lazysql < Formula
   desc "Cross-platform TUI database management tool"
   homepage "https://github.com/jorgerojas26/lazysql"
-  url "https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "ec2cd213f36b4fee1e73f8da528a8e19344d1013d4a1af5005f66bc44f0b93fc"
+  url "https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.5.9.tar.gz"
+  sha256 "f7d6bd4dfc9f7b72d2fbae076dc8d8c05773a970978a4e9ac3458dfb393c3f33"
   license "MIT"
   head "https://github.com/jorgerojas26/lazysql.git", branch: "main"
 
@@ -12,16 +12,21 @@ class Lazysql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95b6fc40e3925055714300088775f3183f9d09d7bee8864dc293c71c809fd59a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95b6fc40e3925055714300088775f3183f9d09d7bee8864dc293c71c809fd59a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95b6fc40e3925055714300088775f3183f9d09d7bee8864dc293c71c809fd59a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a9d80ae2a881cbf722da8667519bc09d0b47871ba42c62db2d35a1246749c56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1181c1224118e18d50f31cb01e27cd05b943209e3d408aeea45527fb8d56c877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67cc5f41f881aa63617deeb753fe9c996b54d6b361cf7e4e1fbe0b8d86122c79"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5da0fc1695e78c0390d639add0f7c794efaa8468467c65efb15110cfc950c14f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5da0fc1695e78c0390d639add0f7c794efaa8468467c65efb15110cfc950c14f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5da0fc1695e78c0390d639add0f7c794efaa8468467c65efb15110cfc950c14f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c6ff988088984c5f2732eaea47b717df438959aac3b219fa67ef8ab46cc34e1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f47900b38e8cb9cee6e308b4256b1f7d0b3dc506a78b44fb286cc1c40b190103"
   end
 
   depends_on "go" => :build
   uses_from_macos "sqlite" => :test
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
@@ -29,8 +34,7 @@ class Lazysql < Formula
   end
 
   test do
-    path = testpath/"school.sql"
-    path.write <<~SQL
+    school = <<~SQL
       create table students (name text, age integer);
       insert into students (name, age) values ('Bob', 14);
       insert into students (name, age) values ('Sue', 12);
@@ -38,7 +42,7 @@ class Lazysql < Formula
       select name from students order by age asc;
     SQL
 
-    names = shell_output("sqlite3 test.db < #{path}").strip.split("\n")
+    names = pipe_output("sqlite3 test.db", school, 0).strip.split("\n")
     assert_equal %w[Sue Tim Bob], names
 
     assert_match "terminal not cursor addressable", shell_output("#{bin}/lazysql test.db 2>&1", 1)

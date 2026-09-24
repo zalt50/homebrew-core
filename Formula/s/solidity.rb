@@ -1,10 +1,9 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://soliditylang.org"
-  url "https://github.com/argotorg/solidity/releases/download/v0.8.36/solidity_0.8.36.tar.gz"
-  sha256 "458c525af3a7bc1b5599e1a125cce960631ab8b3e7110c7ed4c9bbf34157fb86"
+  url "https://github.com/argotorg/solidity/releases/download/v0.8.37/solidity_0.8.37.tar.gz"
+  sha256 "705306af6d6e0f4da04b4de7be22a5d7b87a90af0901170e726d8d97b342fcf8"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3a8870e23c3d7ada3e1e55618d57337e88ebc365e061945ea1c92cd652b27f38"
-    sha256 cellar: :any, arm64_sequoia: "d4bdfdbde9e2f2bdbc3d172e8b659c4fdafb6d570caf8c234e526f7631e1e19a"
-    sha256 cellar: :any, arm64_sonoma:  "9473734f9ceebdb670c5f66cb5db824523442e2fe38e9563288d21c9795a53e3"
-    sha256 cellar: :any, sonoma:        "4cfc61e53d82f08cd45a13852f7f1f87c358aa2e8beea118a107f0a728f34b5c"
-    sha256 cellar: :any, arm64_linux:   "cc4e73430a6ed78c805b953d1520db5996bb5ba51ac01cccc46926bc372a3768"
-    sha256 cellar: :any, x86_64_linux:  "821821ed37dcd107fccd3480a6bb862b4ca81cdeb82c4cc0e448731c2b9330be"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f6670235d9eca969a357efb5d2995e819000c05dde8d0173566a0b9f07596f3c"
+    sha256 cellar: :any, arm64_tahoe:       "545a7a1683aa06d64d0c2a1d86192de77b6f5f414ee61c9f5782968cd6aa0885"
+    sha256 cellar: :any, arm64_sequoia:     "4e0edcec1250896a4bb0b5810905c57a10fce130a28bb5d80e28f7bca663e21f"
+    sha256 cellar: :any, arm64_linux:       "0c85b0e3e7e55c4b8fb527764d24c8ebd3a264082e220418c1c32848a9a521bd"
+    sha256 cellar: :any, x86_64_linux:      "02bb12c5ad3307a601d2624084ef9856964d72ea21f1a0114d097813d0240611"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +28,19 @@ class Solidity < Formula
 
   conflicts_with "solc-select", because: "both install `solc` binaries"
 
+  # Fix build with libc++ 22 (Xcode 27), which rejects the `std::less<YulArity>` specialization
+  patch do
+    url "https://github.com/argotorg/solidity/commit/7543cf45326f58d2597c9464d3d525822b6e28c7.patch?full_index=1"
+    sha256 "d8bb9605e0b472eff8ba98e52d48d913d842d93e29b2348af9979c52901dbc4f"
+    type :unofficial
+    resolves "https://github.com/argotorg/solidity/pull/17027"
+  end
+
   def install
     rm_r("deps")
+
+    # Avoid using an older deployment target than our bottle
+    inreplace "CMakeLists.txt", "set(CMAKE_OSX_DEPLOYMENT_TARGET ", "# \\0"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBoost_USE_STATIC_LIBS=OFF",

@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v19.3.1",
-      revision: "a16f5092084b0373ebc30c6910f8972997e44b70"
+      tag:      "v19.4.1",
+      revision: "3c39fcebf73d01d464db3dee8a5267155273a6c5"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -13,15 +13,20 @@ class GitlabRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d17474e7a3491ad7e956c70327a106ccb0546f26b1bd1ecabbe19dc8ef74871c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6b5a34255ce7cef50c3c686afea6e2d940f06c3e8aec532585a531145fe3284"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a23c754311cd5a21196b80babac8b2ad838ccfc04c20fb705ee47e62fcb29e2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a9f756db897ee37db17f94a14531e43a798622a8160c747313521160457eeb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f93f56b5f35baa0e61516a32b8b671f62581a4c195d17e03e1c57bb9caaca3b8"
-    sha256 cellar: :any,                 x86_64_linux:  "b79bcc9f09439debce38a5c4348ae7dbdaf84c0c47d6e3dd58b1111395b82c61"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2986c8c7c6ad3ba219460e698745c149fd2f1a170aadfe200a014818217a0a50"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b4147120c2fec0afa2572bb0afdbbe846ac03d7ebc1373639a158238a79d556"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79c87c87ecd6cef6b9bff2b5035878e14e8d3f2d99a78cbefc2738012005aa48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7970dafae83effeb255cbfe314201bcddc7d72c6125536671382f08892431448"
+    sha256 cellar: :any,                 x86_64_linux:      "468547dbb65bcb1727c82aa7778dbf9793e3513f3958be49bba0ad70e7d2ecb3"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     proj = "gitlab.com/gitlab-org/gitlab-runner"

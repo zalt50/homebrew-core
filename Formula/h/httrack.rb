@@ -1,16 +1,17 @@
 class Httrack < Formula
   desc "Website copier/offline browser"
   homepage "https://www.httrack.com/"
-  url "https://github.com/xroche/httrack/releases/download/3.49.25/httrack-3.49.25.tar.gz"
-  sha256 "dad5657be5ff39e9b95ceb0a1f2d1495d389f036dc580970e481a4ed3455993a"
+  url "https://github.com/xroche/httrack/releases/download/3.50.3/httrack-3.50.3.tar.gz"
+  sha256 "644d4ec0e48ad596dacd7f8017b68d8a3f1dfc140284b412b53086e7d1664e9d"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_tahoe:   "3f9b735a8f5d059152d35681f844e918e077fcc2497e9af1d2bf2f4a662538fe"
-    sha256 arm64_sequoia: "17ff2c27790400d29ddaa7f5a8778faf42ef2a643fbe823ee799ab2ffd4d92ae"
-    sha256 arm64_sonoma:  "7f8788b5bc114c036fb8d67e26e470b31bdf758fe6409b99d1197d63ea6bbe62"
-    sha256 arm64_linux:   "ec604f4544552630ffd3076e4102966f756d3b6b277ba8c2b3f5b7fc25c43f01"
-    sha256 x86_64_linux:  "89c18bc54ba52199d6ef946c277ee24538708c838a5a0c6b6ab6c48f34675b3b"
+    rebuild 1
+    sha256 arm64_golden_gate: "92ef4b3974644bc66f60818f7de4e62bb99df8461bf4d4cb0a417efe77d59e69"
+    sha256 arm64_tahoe:       "0738bb348f504b2c43361e838c92269163cc1a5050ab45f818b6e49de255cd7b"
+    sha256 arm64_sequoia:     "faa778c34725e17e88a5f7221136000e9e8267a2b76505e8570304386a856ecd"
+    sha256 arm64_linux:       "ef64035f345dbae2c9905546ce48338a098e9814126452547396b3d9ff453da9"
+    sha256 x86_64_linux:      "04c3866abb8d42699d292e8c3b7297afe91183731db04460dfe07f2f13c62549"
   end
 
   depends_on "openssl@4"
@@ -19,12 +20,16 @@ class Httrack < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     ENV.deparallelize
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}" if OS.mac?
+
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
-    # Don't need Gnome integration
-    rm_r(Dir["#{share}/{applications,pixmaps}"])
+    # Gnome integration is inert on macOS, but Linux desktops use it
+    rm_r(Dir["#{share}/{applications,pixmaps,icons,metainfo}"]) if OS.mac?
   end
 
   test do

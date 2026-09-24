@@ -2,18 +2,17 @@ class Aom < Formula
   desc "Codec library for encoding and decoding AV1 video streams"
   homepage "https://aomedia.googlesource.com/aom"
   url "https://aomedia.googlesource.com/aom.git",
-      tag:      "v3.14.1",
-      revision: "03087864cf4bea6abb0d28f95cf7843511413d8f"
+      tag:      "v3.15.1",
+      revision: "44d0a57786f432d933ff64b653347c66f4d0fa1d"
   license "BSD-2-Clause"
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "beaab63a4f1daa53422eff4e1d005b95d2240ddcd3b8bffef91a72a7ed87ade3"
-    sha256 cellar: :any,                 arm64_sequoia: "9f6b4e0c537a11f17c28133df343f1057bc9d403c697400f199955ec6ff96661"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf2c489bfaaa9f3f844f2e2fd6a04de2befb0b98244161eb5a71e21fdac9409d"
-    sha256 cellar: :any,                 sonoma:        "e35fcb414d02b4d117b2937312f42a26994103aa59fc2ab4d4e994fe366c672b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97917c790d2b14f0819ed7a16ad6a724bf62d05f8f119ced1f67f95a03796cae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0161fc263c240948a6075475224a8748a3c359ab7f88d88c4a24cf913c8186fd"
+    sha256 cellar: :any, arm64_golden_gate: "1b8cc8b3704e99e634b6bb3baff07ec508cd7a055fbf51cb4a951d8fb4b2065f"
+    sha256 cellar: :any, arm64_tahoe:       "f78fc63421cf6d79eae934ffb0c0b8e671285cee6e4213c4fd08e5ff84b3d393"
+    sha256 cellar: :any, arm64_sequoia:     "356ad2843b8ab1c11cc83043256cbcfeb659eb031215ecd116dfcbe2ea3f1d11"
+    sha256 cellar: :any, arm64_linux:       "e6b3ee10a86d33cae4d6658a7cbfe3b164fedafe4cf279f80c14f84113cda99a"
+    sha256 cellar: :any, x86_64_linux:      "ed7e7a71a73934b4d5e599fa0f7e61517c8ef6bae02626f438ca2f90fb389370"
   end
 
   depends_on "cmake" => :build
@@ -24,8 +23,16 @@ class Aom < Formula
     depends_on "nasm" => :build
   end
 
+  allow_network_access! :test
+
   def install
     ENV.runtime_cpu_detection
+
+    # TODO: report upstream
+    # `snprintf` gets the whole buffer size as `cur` advances, aborting under `_FORTIFY_SOURCE`
+    inreplace "common/webmenc.cc",
+              "snprintf(cur, total_size,",
+              "snprintf(cur, total_size - (cur - result),"
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

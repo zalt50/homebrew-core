@@ -1,21 +1,26 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "https://www.rqlite.io/"
-  url "https://github.com/rqlite/rqlite/archive/refs/tags/v10.2.7.tar.gz"
-  sha256 "d1014f7e6c924fafda67226dd8df7d144fe71e5b5b7aa87e17eaa1e7f168d7b3"
+  url "https://github.com/rqlite/rqlite/archive/refs/tags/v10.3.6.tar.gz"
+  sha256 "f54b8dc2b84236b298a79ca181267194753c00fcd8cf61601a47e1b463bb467d"
   license "MIT"
   head "https://github.com/rqlite/rqlite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71d94f5663e431315619631831ec78363ffe1c186f1c009a8a80aed9b77346a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "865a63c1e7f179468439ad438d0cc6b775d787ba783ebe70dea6b6bbb5a0fd75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bb5a33f5e53a9a82c2c1dce22492010188a649c8d707671da91a3d2b60050dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b7f5a5040085cd76432a692a221595eaeacede071a65e14fe21e1cc46da8f6a"
-    sha256 cellar: :any,                 arm64_linux:   "bee5c5916b6d8dd92bfc5610f0ec308dbb407e6be064ddeb28c59059eb9012d5"
-    sha256 cellar: :any,                 x86_64_linux:  "2b93e42aa0753bb051f0ecf4b41413698d7ace9cd5aa4a16db514b7f79475c15"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "263a340b65c411679bcef88eb0298f0991070915835fc0911efbdecd79487345"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8611881d56827041bbb4db797bb1584c16de9e43394364e0c533014937ce9d38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5397a0d4d4c0ca49feaf4a49453a7d3cacf2973956c57ef9ad0123e2c356f69f"
+    sha256 cellar: :any,                 arm64_linux:       "b0c0d183db23d8c2a40a27f8f38b6d121a443eb6ff6e92a6c3da17d6f5303c9f"
+    sha256 cellar: :any,                 x86_64_linux:      "b4bfb09fbd44d80af2a921b5348e2f436ec1f9617e38fdb4db35c3b0d1673498"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)

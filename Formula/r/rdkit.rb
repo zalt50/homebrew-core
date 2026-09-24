@@ -16,11 +16,12 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dedcf00d2c5b8b1021f3695eeb8788779886ad60dae6c14ac830f72e38ec5622"
-    sha256 cellar: :any, arm64_sequoia: "80273e89611148b15e117cfe2502494085a3eea88620e201b9c9561e06c9d176"
-    sha256 cellar: :any, arm64_sonoma:  "c9ef0680e9e1ff558ebf8b0b525aa70fc1172c392800311ab2917a4a88adf27f"
-    sha256 cellar: :any, arm64_linux:   "cb9c967c6c923c879fa93718c8c40a4b1203920f854f33f36f5f3665ffbfdf73"
-    sha256 cellar: :any, x86_64_linux:  "a5e9d3892a3c813d4f36f2faddceee1527ba5025118a98dec2a3a25de07081eb"
+    sha256 cellar: :any, arm64_golden_gate: "c4cbaa7f8942d281d4db8827d5c229f57af08dde1903f4bfb16400409b5d6dd6"
+    sha256 cellar: :any, arm64_tahoe:       "dedcf00d2c5b8b1021f3695eeb8788779886ad60dae6c14ac830f72e38ec5622"
+    sha256 cellar: :any, arm64_sequoia:     "80273e89611148b15e117cfe2502494085a3eea88620e201b9c9561e06c9d176"
+    sha256 cellar: :any, arm64_sonoma:      "c9ef0680e9e1ff558ebf8b0b525aa70fc1172c392800311ab2917a4a88adf27f"
+    sha256 cellar: :any, arm64_linux:       "cb9c967c6c923c879fa93718c8c40a4b1203920f854f33f36f5f3665ffbfdf73"
+    sha256 cellar: :any, x86_64_linux:      "a5e9d3892a3c813d4f36f2faddceee1527ba5025118a98dec2a3a25de07081eb"
   end
 
   depends_on "catch2" => :build
@@ -54,10 +55,6 @@ class Rdkit < Formula
     sha256 "1b1597f0aa5452b971a94ab13d8de3b59cce17d9c43c8081aa62f42b3376df96"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def postgresqls
     deps.filter_map { |f| f.to_formula if f.name.start_with?("postgresql@") }
         .sort_by(&:version)
@@ -88,11 +85,8 @@ class Rdkit < Formula
       -DRDK_BUILD_CAIRO_SUPPORT=ON
       -DRDK_BUILD_YAEHMOP_SUPPORT=ON
       -DRDK_BUILD_FREESASA_SUPPORT=ON
-      -DPython3_EXECUTABLE=#{which(python3)}
+      -DPython3_EXECUTABLE=#{python3}
     ]
-    if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
-      args << "-DRDK_OPTIMIZE_POPCNT=OFF"
-    end
     system "cmake", "-S", ".", "-B", "build", "-DRDK_BUILD_PGSQL=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -150,10 +144,11 @@ class Rdkit < Formula
       (datadir/"postgresql.conf").write <<~CONF, mode: "a+"
 
         port = #{port}
+        unix_socket_directories = '#{testpath}'
       CONF
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"rdkit\";", "postgres"
+        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"rdkit\";", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end

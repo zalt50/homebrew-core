@@ -7,7 +7,9 @@ class Socktainer < Formula
   head "https://github.com/socktainer/socktainer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "683723cdbfb182aaba934848a889e2839a4847b4117c14b21ad0bb8187fe01e2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c33cf165f8e4de61aee8968eed0473cecb179d37578b64bd9996d57e82df5ebd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3fa403a38b8f0214044f8333797c5cd35c82091568d2af61adf7c7690182aa8d"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -17,8 +19,16 @@ class Socktainer < Formula
 
   uses_from_macos "swift" => :build
 
+  # Support apple container >1.2
+  patch do
+    url "https://github.com/socktainer/socktainer/commit/f0bb750256fa23648f2f240625f6ef179e80e660.patch?full_index=1"
+    sha256 "395a690867b55e5f8bb262c3444076d67bb836b6303470327040d56c79396c07"
+    type :backport
+    resolves "https://github.com/socktainer/socktainer/issues/181"
+  end
+
   def install
-    with_env(BUILD_VERSION: version) do
+    with_env(BUILD_VERSION: version.to_s) do
       system "swift", "build", *std_swift_args
     end
     bin.install ".build/release/socktainer"

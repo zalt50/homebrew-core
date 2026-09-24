@@ -1,8 +1,8 @@
 class Chezmoi < Formula
   desc "Manage your dotfiles across multiple diverse machines, securely"
   homepage "https://chezmoi.io/"
-  url "https://github.com/twpayne/chezmoi/releases/download/v2.72.0/chezmoi-2.72.0.tar.gz"
-  sha256 "7c7450a69638494b6ff65625a431f867b2038cdab90b3104c6a862967f3bd288"
+  url "https://github.com/twpayne/chezmoi/releases/download/v2.72.2/chezmoi-2.72.2.tar.gz"
+  sha256 "88fcfa493c9b5011f9adb9a0ea04dfccbefb8017659aeed1eec4f728d8cbee9e"
   license "MIT"
   head "https://github.com/twpayne/chezmoi.git", branch: "master"
 
@@ -14,15 +14,20 @@ class Chezmoi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b28d05dd89d441681c454d4b56432563a4e28e8c2ab291864cc266f3c48f8cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "440b01e036be96b6d1e256f843b41671029828d52a973e81754a9819d3c189e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6da56d1e51421b0f7aa59dfbc4c2f7aa4cf9837f977284fac4f3619a8fe5381"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72b2a07bd19fd1b1b56138bf74ea20d4946603f3063fdf99892d59737257f188"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33fbb2f2e6f54a11285e73b7b966b940bffd6b5e96150b09cc2912b1ca62e132"
-    sha256 cellar: :any,                 x86_64_linux:  "044259c7293c4d87e2ea757c37125f3d6f3e445d4a290e7590b5ffe7c704f101"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29a00a66a70003d5473902e59a58067e2e10e57d57cb3165bfafa70a72402f2f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e02742cd33be869a57700ea308d3dd7175f8c33356c8631ac5cec4b648879f33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2c553618e29c978c6993be65d31c26bf19698068b473c9a76e71e4dfb80e585d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "374b1fb89cabcebee42c09f5bc4adeebad6893817138d31a41f8fc900dd64c90"
+    sha256 cellar: :any,                 x86_64_linux:      "5e5278a50cfd03658fe98ee70748a83a09dd9161f8dbec4bccc47732278897bb"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: :goreleaser)

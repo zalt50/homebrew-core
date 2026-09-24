@@ -2,7 +2,7 @@ class Ola < Formula
   desc "Open Lighting Architecture for lighting control information"
   homepage "https://www.openlighting.org/ola/"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 16
+  revision 18
   head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   stable do
@@ -26,12 +26,12 @@ class Ola < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "188012f8a7a721a59a8876e63e451358990f32676e231963457f0a3f6fe69592"
-    sha256 arm64_sequoia: "44905223123684470fede4d317c70d8de84cd222756ee87cd60bd23c2a875cc9"
-    sha256 arm64_sonoma:  "bc923db1a3d91c274feb1a412148aeac7340c5a509e6fbeee54907e478ce52f2"
-    sha256 sonoma:        "1e5377e888231ab33fd2cf8ad9a4501e5b87ee192efd57eb72d6798c30a3e75b"
-    sha256 arm64_linux:   "62452d470f12e11c8501ab3cc1ffff0c3534099229eac5ae3cfe18c88f8b68e3"
-    sha256 x86_64_linux:  "474bfbe439534e48bef1c0fd6e3067d35655f66acf49faa1f2ea7930393a2fe0"
+    rebuild 1
+    sha256 arm64_golden_gate: "780433d941b21616c4e714356aa0b3eebe1c89664e7324b2e6a0a5b4ef3c8911"
+    sha256 arm64_tahoe:       "cee7cce0bf4c66b9d8c6e75bbf73f86fb984c0f80f5d2752f5b4dcd1a6aa9424"
+    sha256 arm64_sequoia:     "0986e282c4872f092ac572a9ce5982800cbc1e6edb94e0b2b4be5ee4626f505c"
+    sha256 arm64_linux:       "ce644d9db4f7ec3c99a93e8dae1e0be8ef3068af6efd4dbc6c77adf9cf66a173"
+    sha256 x86_64_linux:      "877174abcf99c6bd20c06b67aab0a1fc7d4916bc48528cbc86a6f0842219de71"
   end
 
   depends_on "autoconf" => :build
@@ -73,6 +73,14 @@ class Ola < Formula
     sha256 "28cfabd2dca822dc9198c8f81ebac71b57b2984bb5d0894301665e5f7150d31c"
     type :unofficial
     resolves "https://github.com/OpenLightingProject/ola/pull/1984"
+  end
+
+  # Apply open PR to fix issues seen with newer Apple Clang
+  patch do
+    url "https://github.com/OpenLightingProject/ola/commit/e7ab77cc07071e97263a81315c8e554ab4e96e7d.patch?full_index=1"
+    sha256 "55fb61744e57e87c7da954d968712129296f916c0c2e5b0e12e7afecd3c68982"
+    type :unofficial
+    resolves "https://github.com/OpenLightingProject/ola/pull/2077"
   end
 
   def install

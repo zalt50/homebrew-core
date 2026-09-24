@@ -3,17 +3,16 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/9f/d1/59811286b1613253cb208f39a3ae18f903d41ca25d44f68d6e66d8382001/dxpy-0.412.0.tar.gz"
-  sha256 "1d02bcc2b8090f4d38678818aa9e5efcc8d8b0933aee54deb67915326ba9c431"
+  url "https://files.pythonhosted.org/packages/98/98/7f8504aa4b04172fb73e8226696349111a92221db85016e6baf4e258f319/dxpy-0.415.0.tar.gz"
+  sha256 "62ca97b746e673da5428f0ab1cb2517aaed324173c340b1a2039dbdf5e3befd2"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b1ba255668a6934c867e329f3a268871eff4af1c2cd8e67f8087e87cc594630a"
-    sha256 cellar: :any, arm64_sequoia: "229c916b46ffe5a6a01a71bf5ac015360fad81347356e18962af05f437b0b821"
-    sha256 cellar: :any, arm64_sonoma:  "fca4536e3ccd2de894107ab06ec4f86fc9030584950ae62a3b490ee94cd05fc4"
-    sha256 cellar: :any, arm64_linux:   "e2a817f3229e21239f43f81b5cf28df3d721b13d7ee6831f53d73b7c2a865ffa"
-    sha256 cellar: :any, x86_64_linux:  "8eaccf99626414e1445a9af9190c0f97b915516b74ac52db6824b214b32b8fbb"
+    sha256 cellar: :any, arm64_golden_gate: "571dc3d3fa54ce81fc1e7a99875b357da0440f00b70d34ba0940ecead066f995"
+    sha256 cellar: :any, arm64_tahoe:       "1f267584cbafc8dd7d62ed24c1fa6a12804e584d86366286a6fee8bbd3bd737a"
+    sha256 cellar: :any, arm64_sequoia:     "2c55cce96ff232f07ace602d2cf660c51a5555384b613a381189da8f32fd9218"
+    sha256 cellar: :any, arm64_linux:       "fca4096aa4d98afde50329144b46ee42d41672a8eb9282e50f1c667a08adf1da"
+    sha256 cellar: :any, x86_64_linux:      "d656a25521b624ee281c4b5cf532c16969d0a8e5c0767c079d747271d3be8118"
   end
 
   depends_on "aws-c-auth"
@@ -41,18 +40,18 @@ class Dxpy < Formula
   pypi_packages exclude_packages: %w[cryptography certifi websocket-client]
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
-    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
+    url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
+    sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
   end
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/bd/38/c9945730e522610c2ebf1b38483f1575226e998ab27e8c553dd33fc64e4b/awscrt-0.36.1.tar.gz"
-    sha256 "bd1f86b092b57a9ec1f95138224007946eecdf944df1e08fd99f75b64fe2ad20"
+    url "https://files.pythonhosted.org/packages/bb/02/2a724318c05aa0e6e74e2537e3a841097ad2aeb737bdc27c6a74ce72358f/awscrt-0.36.4.tar.gz"
+    sha256 "5b6a53f10e8dd060e7c0c91d063831137239c234877a6d1f03b277dfbac0c507"
   end
 
   resource "crc32c" do
-    url "https://files.pythonhosted.org/packages/e3/66/7e97aa77af7cf6afbff26e3651b564fe41932599bc2d3dce0b2f73d4829a/crc32c-2.8.tar.gz"
-    sha256 "578728964e59c47c356aeeedee6220e021e124b9d3e8631d95d9a5e5f06e261c"
+    url "https://files.pythonhosted.org/packages/f6/07/b5fabe88654f5eded3e4b6d84cde572dd0280a7362a6a5b698bbd77be5df/crc32c-2.9.post0.tar.gz"
+    sha256 "6a089e0340de8438e836a09e613c6b541675d0f3aa92b3fe34295aaba62f014f"
   end
 
   resource "psutil" do

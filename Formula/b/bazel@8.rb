@@ -1,8 +1,8 @@
 class BazelAT8 < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://github.com/bazelbuild/bazel/releases/download/8.7.0/bazel-8.7.0-dist.zip"
-  sha256 "75ed5aa189fd687e6e7c289ad86a3851844965a6c1479b7a5ce9b846a6e461bc"
+  url "https://github.com/bazelbuild/bazel/releases/download/8.8.0/bazel-8.8.0-dist.zip"
+  sha256 "71cea4e6df77d5d85e185db7f238d96db50132bf40c94e4978a35d92eaf42108"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class BazelAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "161a25c3347d96036e45ed77461c0671516b8c876ad5e7fb51ecb234168097a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b94928449b5868698110bf0e3688bfbfd5638aa604f8ef73ffabcd7a4954b80c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4318d4c84c0a0e3085ed628cae08b8a7ef340f1df5859df675ea732a51d3c2b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7062ed5b725780be68ab7fc9edf3fd93f73d9eadcbfcdb01657afb0451db0685"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2c398935faf41892a9c9aba6c79258be26668acbcfdc6b4e37c1ecb351102aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d01ad6ceeb38349179afab16173d6704af630f92d89302560581b31c1c2c057"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c3ea5706d55f5603fb33ed78a8710d9b09197cff2fd10fb535ca1df3b44b09fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "126644ea64dd3a8408bc465df2e699f7b440dda31886290669f27e03172390b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "818adf6c106cd0fddb3f50e80f3f8c9eb28c80f0f6825f980670ce0c6531def5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2968e2f6d4a8bcb7a0674316635f6ac518908ce1c667761c7cd2fe0fdc9f13d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f9c79b77078ecaee02388883820309d7a9a13216b54b9fcafae91c428a19ee7f"
   end
 
   keg_only :versioned_formula
@@ -55,6 +55,11 @@ class BazelAT8 < Formula
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
     # Force Bazel to use brew OpenJDK
     extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]
+    if OS.mac?
+      # Tools built for the exec configuration only follow `--host_macos_minimum_os`
+      extra_bazel_args << "--macos_minimum_os=#{MacOS.version}.0"
+      extra_bazel_args << "--host_macos_minimum_os=#{MacOS.version}.0"
+    end
     ENV.merge! java_home_env.transform_keys(&:to_s)
     # Bazel clears environment variables which breaks superenv shims
     ENV.remove "PATH", Superenv.shims_path
@@ -71,7 +76,7 @@ class BazelAT8 < Formula
       extra_bazel_args << "--linkopt=-Wl,--dynamic-linker=#{ENV["HOMEBREW_DYNAMIC_LINKER"]}"
     end
 
-    if OS.linux? && Hardware::CPU.arch == :arm64
+    if OS.linux? && Hardware::CPU.arm64?
       extra_bazel_args << "--linkopt=-fuse-ld=lld"
       extra_bazel_args << "--host_linkopt=-fuse-ld=lld"
     end

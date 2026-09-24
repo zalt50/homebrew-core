@@ -1,20 +1,25 @@
 class GiteaRunner < Formula
   desc "Official Actions runner for Gitea"
   homepage "https://gitea.com/gitea/runner"
-  url "https://gitea.com/gitea/runner/archive/v3.3.1.tar.gz"
-  sha256 "a0146974eacddbb167e8316350a4b1fc1fa3010730866ec646ea660c008dfc67"
+  url "https://gitea.com/gitea/runner/archive/v3.5.0.tar.gz"
+  sha256 "1ccc15d71fff570beb91d95dbd746824d29899fc247a3f759640c1758c65a928"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2833b420377c208be1c221bbc20ec7e3fdb1a5537fb55692316cc6ebc562bc34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dd9ab49828aae250f4f35994ed46340631d037139862f3e98ffd432d8304b96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c39def51cdef01f8f195644193dbd170ef1f397602e020c375ea81def1792846"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7241272116567093d086a0d00b6e1f119f42bda666d91dc21ebd7ce0d3591d3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e1f822c036a728d78c986e087b669fa57d6fa008197567a19407294508ebfcd"
-    sha256 cellar: :any,                 x86_64_linux:  "d8b68706754f756a55f73e7177beb51b4a8093ae6f2758e2fb21fae7413a1629"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "437ccd550d154ca349c801d75c85dc690f45deb73b9486ff1ffba6e052eb5eb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7a1ea9baa665107d2691cbeaadc0785432ca0daf5cc09112fcdbf1122d1fd337"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b48ea54d8f54e146beb4b66f3266375ed36d938c191609939af455775535ec75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c3f9bdbe53ac07ef81a790ae7e617f3e5a0d74bdbd89debc8bbddd948c54a33"
+    sha256 cellar: :any,                 x86_64_linux:      "6f4055e5204e458f39244fba3441e6d7b30823f771d8663b525b2e2c3ca4fdb0"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X gitea.com/gitea/runner/internal/pkg/ver.version=v#{version}]

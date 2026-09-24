@@ -1,16 +1,16 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.16.tgz"
-  sha256 "0166059fcd06b788901c70c031294867273c34fd1d8f31d819824192c936f0d9"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.20.tgz"
+  sha256 "79c45fe703ab2c5f46b8d80f9f97f8164b6b4b43696aed507ddb7df1ccdc1402"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddc6314967212a19e483dc72b27ae87c6962afd9fc8ae1fe79a72f653824b819"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddc6314967212a19e483dc72b27ae87c6962afd9fc8ae1fe79a72f653824b819"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddc6314967212a19e483dc72b27ae87c6962afd9fc8ae1fe79a72f653824b819"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "526d729e9870bfcbfe79a4a4de521e69b7bab8ba6720c60a55431eba3dc83193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "526d729e9870bfcbfe79a4a4de521e69b7bab8ba6720c60a55431eba3dc83193"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b258aafcccfeec318752e20d874d604807a436f11eb835c4caf0b8d8e7357d9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b258aafcccfeec318752e20d874d604807a436f11eb835c4caf0b8d8e7357d9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b258aafcccfeec318752e20d874d604807a436f11eb835c4caf0b8d8e7357d9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2bffacce9dc995ccbe199e28381a911f98e5b0ca56c31d5d87b5ac0be4ec1fc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2bffacce9dc995ccbe199e28381a911f98e5b0ca56c31d5d87b5ac0be4ec1fc4"
   end
 
   depends_on "node"
@@ -42,7 +42,6 @@ class HfMcpServer < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"hf-mcp-server", [:out, :err] => output_log.to_s
     sleep 10
-    sleep 15 if OS.mac? && Hardware::CPU.intel?
     assert_match "Failed to authenticate with Hugging Face API", output_log.read
   ensure
     Process.kill("TERM", pid)

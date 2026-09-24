@@ -1,21 +1,26 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://github.com/keploy/keploy/archive/refs/tags/v3.6.25.tar.gz"
-  sha256 "d0e63ab8e2dbaf54869e6a9fea2d6556793a8aadc8faa902e5a5bb1654f74f66"
+  url "https://github.com/keploy/keploy/archive/refs/tags/v3.6.71.tar.gz"
+  sha256 "15fa8ee0021f607c97b38fec73a3a210d7f3c37e6060b8b6e12fe1044dcaed01"
   license "Apache-2.0"
   head "https://github.com/keploy/keploy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ba509c1461be7ec314c6d1f6ae3a3a156fe45cfec1f52804b1937d661305b20"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ba509c1461be7ec314c6d1f6ae3a3a156fe45cfec1f52804b1937d661305b20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ba509c1461be7ec314c6d1f6ae3a3a156fe45cfec1f52804b1937d661305b20"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a17cf936587bda2298f3745fd35b5aaeb95fa4cc6ee3fe6e00aff4a21a30f44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06022ca101aa68d89bd8715ac56dc42598512b72f1d7182757a86f59ac506c1c"
-    sha256 cellar: :any,                 x86_64_linux:  "02d3ee02166b9d65a348f933fb7a693313bce4367a4fb5bf2101af3d1641d083"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c62405a14ca39dce979b2aa29c51cf6a76c8d2b99b6a82ab0aa72e853d96aaae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c62405a14ca39dce979b2aa29c51cf6a76c8d2b99b6a82ab0aa72e853d96aaae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c62405a14ca39dce979b2aa29c51cf6a76c8d2b99b6a82ab0aa72e853d96aaae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "46ecabed45859b80b3952da35235d446d9badd55f89bc729992625c462f3129f"
+    sha256 cellar: :any,                 x86_64_linux:      "fec46688826e11643f9ace8fd38f09f21417a031e206c596bacb9b368f69ad26"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")

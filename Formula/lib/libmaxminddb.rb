@@ -1,18 +1,17 @@
 class Libmaxminddb < Formula
   desc "C library for the MaxMind DB file format"
   homepage "https://maxmind.github.io/libmaxminddb/"
-  url "https://github.com/maxmind/libmaxminddb/releases/download/1.13.3/libmaxminddb-1.13.3.tar.gz"
-  sha256 "a66502ea76eadbe17f2cd6fd708946777253972d2ae8157dee1b23a2fb528171"
+  url "https://github.com/maxmind/libmaxminddb/releases/download/1.14.1/libmaxminddb-1.14.1.tar.gz"
+  sha256 "ca5c87d41339f8bc4daabb53e8a9356b3c995f2d2419b85d7bff823b2ecc252d"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5936b3b75b64cab056955f2bb8c0b756fa60c53804dcd7dbde8abad2abceed84"
-    sha256 cellar: :any,                 arm64_sequoia: "490b3efc56371925d11362dd017550824c13573c4b76edb4fa2848c549d46692"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd18810ef2ff421397f0841540e9a8ed078bee4d99943e45fbed763e39ba6a70"
-    sha256 cellar: :any,                 sonoma:        "7aa6d1a05efe76995a324af5ea06acdc8dc5428f2dbd9fad2d7c098af91c1f5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9546178cbb2f9b8d6b585c18d109f5fcc8b7bce72431e97654c5da23cbc94b9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fbff53ca34d511f0c71bb801ef011da1808855abb303957cf783069bd4e35f7"
+    sha256 cellar: :any, arm64_golden_gate: "2f0ae54b073b78c2dc1d526bfbb4882bac43fc9bdde1992aa81bb9a1c7aa7c47"
+    sha256 cellar: :any, arm64_tahoe:       "29fad65e40df8a8665da3b5cd76f1488aec0161ac0da386bd66e01930aa246a1"
+    sha256 cellar: :any, arm64_sequoia:     "a39f2ebe92607371937c715c6a22e1fec6895fb5e5f48682a33ea24be67abb67"
+    sha256 cellar: :any, arm64_linux:       "c2ba2e69b493b3bb0bee3c337eacc662c5b199588ecaad8acb28a7865d2d3c79"
+    sha256 cellar: :any, x86_64_linux:      "572434444abf40217879536e0bafe66b112e261fe09d3d0bf7cd545f45778f72"
   end
 
   head do
@@ -22,6 +21,10 @@ class Libmaxminddb < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
+
+  depends_on "pkgconf" => :build
+
+  deny_network_access!
 
   def install
     system "./bootstrap" if build.head?

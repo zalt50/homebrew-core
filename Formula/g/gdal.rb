@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https://github.com/OSGeo/gdal/releases/download/v3.13.3/gdal-3.13.3.tar.gz"
   sha256 "5e0c388d83da2d686cc00a40272882432cdb54edff43d4af173e532844a0a0ea"
   license "MIT"
+  revision 2
   compatibility_version 2
 
   livecheck do
@@ -12,12 +13,11 @@ class Gdal < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c2e354962725c4d18baa7d28478071c1e06b823db44dccf10f068e3707395c66"
-    sha256 arm64_sequoia: "aca1fdbc33a5d59667433260064e381de294374a66545088493df686756ed567"
-    sha256 arm64_sonoma:  "49f6d8598d5afb0043b3c67f36aa9b10be3a5de97a883672e01d80e42400e9df"
-    sha256 arm64_linux:   "39e82f589a322b9a38a3aa94e22a2ce28507af902d8b039c68d20e07dcbd5971"
-    sha256 x86_64_linux:  "d314ee795e27ff36ec03e2d3061cab02597a7704a6002d0d706d96d495c0761c"
+    sha256 arm64_golden_gate: "ae02dd6e9f09319c09b5777299a3c0135cfbf799f1fa225416f554f081e1f55a"
+    sha256 arm64_tahoe:       "31232e1e3bf45d6e82b1223ccb5e6c43305d8970c880524ab37538e7ee6516c9"
+    sha256 arm64_sequoia:     "e8c6fad94dd1172d4d5b3d9cf0712fe521e219b272ecbe70fac2a26a787ffb4c"
+    sha256 arm64_linux:       "6f5bdacb7b03cbd027caac24abb23ff79e46a105a2edbd5267029e4f4e18eb2c"
+    sha256 x86_64_linux:      "a2615381c1aa4a51c99e7fc26de9b18a5c22bd99f83ad1d292cfab5aa4b6a2e5"
   end
 
   head do
@@ -98,8 +98,6 @@ class Gdal < Formula
     resolves "https://github.com/OSGeo/gdal/pull/15042"
   end
 
-  def python3 = "python3.14"
-
   def install
     site_packages = prefix/Language::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
@@ -116,7 +114,7 @@ class Gdal < Formula
       -DENABLE_PAM=ON
       -DBUILD_PYTHON_BINDINGS=ON
       -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
-      -DPython_EXECUTABLE=#{which(python3)}
+      -DPython_EXECUTABLE=#{python3}
       -DGDAL_PYTHON_INSTALL_LIB=#{site_packages}
       -DCMAKE_CXX_STANDARD=17
       -DGDAL_USE_OPENMP=OFF

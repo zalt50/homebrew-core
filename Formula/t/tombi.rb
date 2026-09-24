@@ -1,8 +1,8 @@
 class Tombi < Formula
   desc "TOML formatter, linter and language server"
   homepage "https://github.com/tombi-toml/tombi"
-  url "https://github.com/tombi-toml/tombi/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "1166ee52d1a2bc8f442524fc0ba11ec0e99bb9f11a1539654b1f9453799721f2"
+  url "https://github.com/tombi-toml/tombi/archive/refs/tags/v1.5.5.tar.gz"
+  sha256 "e5253c2d9a59be9940ec4d9a767395388a9820db839bc1e0ed99a75c07006f83"
   license "MIT"
   head "https://github.com/tombi-toml/tombi.git", branch: "main"
 
@@ -12,14 +12,20 @@ class Tombi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f04efa6c6c35864c4d48be5451db8466959fb148b607708e53a7e368aa201500"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e198477c339c3057ce60a1eb511308c1fa96a6457a83c45129163a84f1be80ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b981c2cae75637a3a73aaa42b59dd1b39ce00a6b230e7065533f1e57c7de7ecd"
-    sha256 cellar: :any,                 arm64_linux:   "bcc5b8422a1c6046b8a01913e93f5268c4bde8d1e82d42047186449a04dcb669"
-    sha256 cellar: :any,                 x86_64_linux:  "28450e9eb9a1686f47043c6d1b32a352b817c340aad5c0b33963ab257f1563a7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "808515a98efb177e69a2d40091a46a07d9087c948068af241410b7db3ca0a96c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "307a9dd2d907bffcafda5fe1985e03af7fa4249e43c0cd8d90cad06132fb0b39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96e691565ad00990b8ff47db3e646572ad9d8985e12fce1b6821a26ff423acda"
+    sha256 cellar: :any,                 arm64_linux:       "5900928c8b8ad5d4898b61e07b4cb12c90072e8dd79b1faaa6258f9429bc77e7"
+    sha256 cellar: :any,                 x86_64_linux:      "9fadc2832ccd7b71d16fd5c172d66f6f9e68b036c0f1670d55bb8e2f19bcdfab"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "rust/tombi-cli/Cargo.toml"
+  end
 
   def install
     ENV["TOMBI_VERSION"] = version.to_s

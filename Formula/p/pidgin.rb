@@ -16,6 +16,7 @@ class Pidgin < Formula
     depends_on "gtk+"
     depends_on "libgcrypt"
     depends_on "libgnt"
+    depends_on "libidn"
     depends_on "libotr"
     depends_on "ncurses" # due to `libgnt`
     depends_on "tcl-tk@8" # ignores TCL 9
@@ -52,12 +53,13 @@ class Pidgin < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "07fabdb8ecdca7fc63c9ed7118991e5ebbc54b23ebc3bc76a6ded44e5252948c"
-    sha256 arm64_sequoia: "f71d36dc27fc785264411d14d3228872361adf6df96630519e0a5d4b2d53d8d5"
-    sha256 arm64_sonoma:  "0a29c46da632237c790463a6212d7a338a0df3917cd61dc1cbd24458db4a7a51"
-    sha256 sonoma:        "17e02b2a71fe1fead33d12be64f57757b65c14874dad2b6a17b054ef4df36f74"
-    sha256 arm64_linux:   "b6351202b70a03c5ff1b1f8747753706415c016b8488a8723ea3f42cb6978e27"
-    sha256 x86_64_linux:  "e2e305b1a67c27a3a59c42f9285b93cb1c410c7ca7e7e0dbc29279561caeb59e"
+    sha256 arm64_golden_gate: "8d95b17a318a3e1e21f5dd301a9bf4acf8f08f7cb4546f0a2e6ee1fd6a31caac"
+    sha256 arm64_tahoe:       "07fabdb8ecdca7fc63c9ed7118991e5ebbc54b23ebc3bc76a6ded44e5252948c"
+    sha256 arm64_sequoia:     "f71d36dc27fc785264411d14d3228872361adf6df96630519e0a5d4b2d53d8d5"
+    sha256 arm64_sonoma:      "0a29c46da632237c790463a6212d7a338a0df3917cd61dc1cbd24458db4a7a51"
+    sha256 sonoma:            "17e02b2a71fe1fead33d12be64f57757b65c14874dad2b6a17b054ef4df36f74"
+    sha256 arm64_linux:       "b6351202b70a03c5ff1b1f8747753706415c016b8488a8723ea3f42cb6978e27"
+    sha256 x86_64_linux:      "e2e305b1a67c27a3a59c42f9285b93cb1c410c7ca7e7e0dbc29279561caeb59e"
   end
 
   head do
@@ -87,7 +89,6 @@ class Pidgin < Formula
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
-  depends_on "libidn"
   depends_on "pango"
 
   uses_from_macos "libxml2"
@@ -96,12 +97,20 @@ class Pidgin < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
+  def subprojects = %w[birb hasl ibis seagull xeme]
+
+  def fetch
+    system "meson", "subprojects", "download", *subprojects if build.head?
+  end
+
   def install
     if build.head?
       # TODO: Patch pidgin to read plugins from HOMEBREW_PREFIX similar to stable build
       ENV["DESTDIR"] = "/"
       ENV["GI_GIR_PATH"] = HOMEBREW_PREFIX/"share/gir-1.0"
-      system "meson", "setup", "build", "--force-fallback-for=birb,hasl,ibis,seagull,xeme", *std_meson_args
+      system "meson", "setup", "build", "--force-fallback-for=#{subprojects.join(",")}", *std_meson_args
       system "meson", "compile", "-C", "build", "--verbose"
       system "meson", "install", "-C", "build"
       return

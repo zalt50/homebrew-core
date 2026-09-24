@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://code.visualstudio.com"
-  url "https://github.com/microsoft/vscode/archive/refs/tags/1.135.0.tar.gz"
-  sha256 "2f8faaa98104e6d2193086c5b769f779712928273a09f05d9cce343be29adba5"
+  url "https://github.com/microsoft/vscode/archive/refs/tags/1.139.0.tar.gz"
+  sha256 "77a9975246228ec09fc01e0026727877a73e88a26876d43517093b451575deb3"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,12 +12,11 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0bcc0632771edefea4e5ddec5f51233d1fab6c3e824ad40049906f335d39c68d"
-    sha256 cellar: :any, arm64_sequoia: "c75a9a0a5b10768adba3f6e01db82bf4ebf79c9962f773f95d4c4c3109f88baf"
-    sha256 cellar: :any, arm64_sonoma:  "1413f134d7fb11016b26a4ecd350b6845ef41d334d801b2fb7de6caae8e444d7"
-    sha256 cellar: :any, sonoma:        "1e19ce2bf9bc30dc2fcd4eb63936bf7cb9ac526ec70544aef7d94bf43a6a0939"
-    sha256 cellar: :any, arm64_linux:   "9d7d5104945f18a0f04dbe7a7c0f08896824967a2d518003108fb2bde0d295f0"
-    sha256 cellar: :any, x86_64_linux:  "5e11a797a127f06bf5d5ced898b1db9c65624f938362a4ef53f619eebfc060c5"
+    sha256 cellar: :any, arm64_golden_gate: "d6dd69feeafc6f0897a63f1b0d97a3d868ebede2572a78a6c8a10522b43dce5f"
+    sha256 cellar: :any, arm64_tahoe:       "58750d85054fb84e4fb6557b828ca4afd4e912b05c3c9307c3f134448cb2fbcc"
+    sha256 cellar: :any, arm64_sequoia:     "5a4634178ba5be08dff6baa001de150794cfb64196f096067656c2ac5232a884"
+    sha256 cellar: :any, arm64_linux:       "ac61a3c28741bc9e42ecb2f9106a03fe6615ffc8d81f7e7d473cc136bb706647"
+    sha256 cellar: :any, x86_64_linux:      "20594212824442c1737e4c1ce066c021904edca42f7258f1e378fcc9aa12a76c"
   end
 
   depends_on "pkgconf" => :build
@@ -27,8 +26,6 @@ class CodeCli < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
-
-  conflicts_with cask: "visual-studio-code"
 
   def openssl = Formula["openssl@4"]
 

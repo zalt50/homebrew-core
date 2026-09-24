@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/cli.git",
-      tag:      "v29.7.2",
-      revision: "a7dcaa6fdb6ed04aacbfdc76357fdae01605609e"
+      tag:      "v29.8.1",
+      revision: "4a63305d74332de5ceba7fcbccbc3cbb7412f5ba"
   license "Apache-2.0"
   head "https://github.com/docker/cli.git", branch: "master"
 
@@ -13,19 +13,15 @@ class Docker < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e94049548c22f62264524c00bd2acd2c695e776b942250deddf0e97fd0188a35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0addeb0d226bb91a8d5410119d181fe8249dc7e3179e3a2ecd245995532c58f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8a3900e7e6ffdfe275d7fb96c67c37ee792ae1156bdc0f86784d0afe59b037c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d46d03905a31314e4757746256c261db8e328c4a894e1f637ceb5b8e800faac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfe7e765e0ccf2d9388837bffaf19a9ffaff929b32b17b017a0c489100b24d3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d66235029b0c303b078b846c96c875715c15ad56a53319899728177292adee6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b763c4941323ca24dd0789958443f5a60a540f1dd2825fc5693a6142576b95e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "40d9396a0e2a2edfea5c69137b0d5722f2049da0a218a3e1b1c94080c5f1b3f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0c0a2c666769a8f29ebe8036f5b39d9a7868f6a76ea3cce1db1ce28bab8cd43b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "82d6667d15fabec856d87b12d4e221b171057528080752863c0656853be6bc45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "de25b96f7c6392e96f6938da24c6813beefce489b2a9bb4e78f2555ad75e4f13"
   end
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
-
-  conflicts_with cask: "docker-desktop"
 
   deny_network_access!
 

@@ -12,12 +12,13 @@ class NodeAT20 < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "ecdcb6357c02e973fe7bed1b85fa142166e743aecde394046a4278e8d7acfa65"
-    sha256 arm64_sequoia: "76829440870e8535079d7b600a15e3c2c66f31499981ac91bd4f6b7a10af91ed"
-    sha256 arm64_sonoma:  "b85e5e17778b5d29753616507b9c54bc1a98f07094f1deecd829b1310098f0f2"
-    sha256 sonoma:        "51df24b083cec403185e1cc43b79e2845600a3c8936340ae6578cac011b6ce81"
-    sha256 arm64_linux:   "220c54e9d8cf434846cd20392f6e73b156e5e67a51f1b24d99fa70585579dbda"
-    sha256 x86_64_linux:  "6f741ad57671a0997c93de0bbfeef6d22769eadd7de4ca6f333aeedbfc901f8f"
+    sha256 arm64_golden_gate: "b4624bbdb59e4e18d60d66c18e37035c37692eae8b8caf55e6b2c5c63378afdd"
+    sha256 arm64_tahoe:       "ecdcb6357c02e973fe7bed1b85fa142166e743aecde394046a4278e8d7acfa65"
+    sha256 arm64_sequoia:     "76829440870e8535079d7b600a15e3c2c66f31499981ac91bd4f6b7a10af91ed"
+    sha256 arm64_sonoma:      "b85e5e17778b5d29753616507b9c54bc1a98f07094f1deecd829b1310098f0f2"
+    sha256 sonoma:            "51df24b083cec403185e1cc43b79e2845600a3c8936340ae6578cac011b6ce81"
+    sha256 arm64_linux:       "220c54e9d8cf434846cd20392f6e73b156e5e67a51f1b24d99fa70585579dbda"
+    sha256 x86_64_linux:      "6f741ad57671a0997c93de0bbfeef6d22769eadd7de4ca6f333aeedbfc901f8f"
   end
 
   keg_only :versioned_formula
@@ -46,7 +47,7 @@ class NodeAT20 < Formula
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3.13")
+    ENV["PYTHON"] = python3
 
     args = %W[
       --prefix=#{prefix}
@@ -57,16 +58,16 @@ class NodeAT20 < Formula
       --shared-zlib
       --shared-brotli
       --shared-cares
-      --shared-libuv-includes=#{Formula["libuv"].include}
-      --shared-libuv-libpath=#{Formula["libuv"].lib}
-      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
-      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
-      --shared-openssl-includes=#{Formula["openssl@3"].include}
-      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
-      --shared-brotli-includes=#{Formula["brotli"].include}
-      --shared-brotli-libpath=#{Formula["brotli"].lib}
-      --shared-cares-includes=#{Formula["c-ares"].include}
-      --shared-cares-libpath=#{Formula["c-ares"].lib}
+      --shared-libuv-includes=#{formula_opt_include("libuv")}
+      --shared-libuv-libpath=#{formula_opt_lib("libuv")}
+      --shared-nghttp2-includes=#{formula_opt_include("libnghttp2")}
+      --shared-nghttp2-libpath=#{formula_opt_lib("libnghttp2")}
+      --shared-openssl-includes=#{formula_opt_include("openssl@3")}
+      --shared-openssl-libpath=#{formula_opt_lib("openssl@3")}
+      --shared-brotli-includes=#{formula_opt_include("brotli")}
+      --shared-brotli-libpath=#{formula_opt_lib("brotli")}
+      --shared-cares-includes=#{formula_opt_include("c-ares")}
+      --shared-cares-libpath=#{formula_opt_lib("c-ares")}
       --openssl-use-def-ca-store
     ]
 

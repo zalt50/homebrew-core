@@ -1,43 +1,55 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.18.20.tgz"
-  sha256 "d7af626824cab417d9c5c12e5c0187e506f1c903ea93bd8e4b1615be16305d2a"
+  url "https://github.com/anomalyco/opencode/archive/refs/tags/v1.18.30.tar.gz"
+  sha256 "d54574de6a2b02d58fe4d403035103a08bdca0f4eafac63d3681cda774e85cd9"
   license "MIT"
+  revision 2
 
   livecheck do
     throttle 5
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "a9dc7628cd613d1a1c94b42256b0b450af438c0f9c9132651b363fbe14a4f730"
-    sha256                               arm64_sequoia: "a9dc7628cd613d1a1c94b42256b0b450af438c0f9c9132651b363fbe14a4f730"
-    sha256                               arm64_sonoma:  "a9dc7628cd613d1a1c94b42256b0b450af438c0f9c9132651b363fbe14a4f730"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1874884dee4b0c59100926a2061596b806cbeeff2f2f2e9c1b27b8b6c258ea6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cdd02b79694885c40f941342c971223076735c4e28887af9a37ec8bd8ba7b23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df13fb71d73abeba66fb514e9f806bda22bbd831c8e66920f16a24d2271c1763"
+    sha256 arm64_golden_gate: "6eca0861d2393d59644241ffd768dec95423a62d72fc8d65af66e1bd22565942"
+    sha256 arm64_tahoe:       "e6b0af7ecb05fd9a033a3f0a2547c1351ec389ec4b10b1de9ad602bc91319f4c"
+    sha256 arm64_sequoia:     "4334a8e50a57fcb38beb8484bc04ccd130cff328aaa414e5a0daea1f6eb6156a"
+    sha256 arm64_linux:       "a7ccff3922000524824e102603273d7bf5bb1a04e47c81cd53af67b6a1e5ce5d"
+    sha256 x86_64_linux:      "81106fe0486c1347f80ee8b3b255da3a9c272ad460efb0425cfbae9305ddff56"
   end
 
-  depends_on "node"
+  depends_on "bun" => :build
+  depends_on "python@3.14" => :build
   depends_on "ripgrep"
 
+  on_linux do
+    depends_on "icu4c@78"
+  end
+
+  deny_network_access! :test
+
   def install
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
-    bin.install_symlink libexec.glob("bin/*")
+    ENV["OPENCODE_VERSION"] = version.to_s
+    ENV["OPENCODE_CHANNEL"] = "prod"
 
-    # Remove binaries for other architectures, `-musl`, `-baseline`, and `-baseline-musl`
-    arch = Hardware::CPU.arm? ? "arm64" : "x64"
-    os = OS.linux? ? "linux" : "darwin"
-    (libexec/"lib/node_modules/opencode-ai/node_modules").children.each do |d|
-      next unless d.directory?
+    # Fix server errors when building with Bun 1.4.2 by disabling splitting
+    # https://github.com/anomalyco/opencode/issues/48645
+    # https://github.com/NixOS/nixpkgs/issues/563241
+    inreplace "packages/opencode/script/build.ts", "splitting: true,", "splitting: false,"
 
-      rm_r d if d.basename.to_s != "opencode-#{os}-#{arch}"
+    system "bun", "install", "--frozen-lockfile"
+
+    cd "packages/opencode" do
+      system "bun", "--bun", "./script/build.ts", "--single", "--skip-install"
+      bin.install Pathname.pwd.glob("dist/opencode-*/bin/opencode").first
     end
 
     generate_completions_from_executable(bin/"opencode", "completion", shell_parameter_format: :none, shells: [:zsh])
   end
 
   test do
+    ENV["OPENCODE_DISABLE_MODELS_FETCH"] = "1"
+
     assert_match version.to_s, shell_output("#{bin}/opencode --version")
     assert_match "opencode", shell_output("#{bin}/opencode models")
   end

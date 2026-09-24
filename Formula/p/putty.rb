@@ -7,11 +7,13 @@ class Putty < Formula
   head "https://git.tartarus.org/simon/putty.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f2b413c1f4d4f3bb5914b87ed9c56a3e3fe70e9586cbc95439b13d5d64d817dd"
-    sha256 cellar: :any, arm64_sequoia: "c70bdac7c9056285ce2f9f72d267f08e65d0882194075e07d89f8e2ca27c7fde"
-    sha256 cellar: :any, arm64_linux:   "2686ef42881e45a49a850c0f6c19b94d191462e1484edc25f895e0a769bd808e"
-    sha256 cellar: :any, x86_64_linux:  "298323eecee897dd5d56a0ed5653742e572987dc2cb2cc742a40d5301f2047f9"
+    sha256 cellar: :any, arm64_golden_gate: "884b067f71a01693f144585ab385120d0d5003ba388db9f93573d54db8af7099"
+    sha256 cellar: :any, arm64_tahoe:       "a4e421f1fa6345d1ac144df17dde9b51ed850ccf2f455f78c425745e18893e24"
+    sha256 cellar: :any, arm64_sequoia:     "9827f9974dab6b05e1cd8afc5b54332a91f2b070b5011452c6358631e21fa3bd"
+    sha256 cellar: :any, arm64_sonoma:      "7926b63799e359c16920b4adc709349d7643f0e3c3d8a5b5593272df227646e7"
+    sha256 cellar: :any, sonoma:            "be46bf5d09cb2255f9c31c8bb223cef56c368007c89ada9697d96bb1bac5b767"
+    sha256 cellar: :any, arm64_linux:       "6efe8b3b257063721dfd653918a6f449bf711d859dbc68abc8151847a4a8e5cc"
+    sha256 cellar: :any, x86_64_linux:      "6f2d73f3c6e67b86e2cab8dbc634c6389267f0ea693802af27f5615e701a4e46"
   end
 
   depends_on "cmake" => :build

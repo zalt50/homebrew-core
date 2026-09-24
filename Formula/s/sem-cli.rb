@@ -1,18 +1,17 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://ataraxy-labs.github.io/sem/"
-  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.23.1.tar.gz"
-  sha256 "5c890d52947d95b73178ead5341eadb585d6fdc2ef9795fbe010d5a7d477f77e"
+  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "0a48605c980c47db3625b8e80ac7ff3f7fda57418370ebbdd846e0b8d3457330"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8ec125de6d81a7c79f4b4b1002fe67802d3c87b9e4a24454267ec63cb7a591a7"
-    sha256 cellar: :any, arm64_sequoia: "b3403910184d75b7b95282e00a57daf09bd210d8528a8435d616117b7fe1faf6"
-    sha256 cellar: :any, arm64_sonoma:  "7983490928e0d1b38f325945a895fe534e42406aa072c75b607ead8a0476d32c"
-    sha256 cellar: :any, sonoma:        "db5e816b028ad42e8982dcd5dd2fdd4245e7537f172a88a30a33e0d1fd084f11"
-    sha256 cellar: :any, arm64_linux:   "d76730efa3ea3978a4782cffaa17e10f7bc8135ab6ae201f2657ebbe5c084a2c"
-    sha256 cellar: :any, x86_64_linux:  "e9cb29406357396354d9a7f875b78449d80585a247f32ea400c33c3133a372e3"
+    sha256 cellar: :any, arm64_golden_gate: "122fe23d3d50b814543bcc88b7f9778b48b8d72544222b17b539a5ac0d7c995f"
+    sha256 cellar: :any, arm64_tahoe:       "a03ee624bdaec01d8b209b329ad66b379751c288b5452e70f6dc5222a16bbfa4"
+    sha256 cellar: :any, arm64_sequoia:     "0566c448b4e88fe0679b5d341b678d221f0d3857ab7baef1286a111425254739"
+    sha256 cellar: :any, arm64_linux:       "1b2d0b2a72d9a6bb6d5bb5bf82022823d06308b79e8aabdfb20ab13b861b2fc3"
+    sha256 cellar: :any, x86_64_linux:      "cf0c45388f3b0a5516afaad968d7c7719afecc3f488f25087596989f9ccc83bb"
   end
 
   depends_on "pkgconf" => :build
@@ -22,6 +21,12 @@ class SemCli < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "crates/sem-cli/Cargo.toml"
   end
 
   def install

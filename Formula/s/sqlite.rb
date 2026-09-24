@@ -19,14 +19,15 @@ class Sqlite < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "d09c4852f75e19c18c3e347ce73c81b0b864792046f079d074205522c735d3fc"
-    sha256 cellar: :any, arm64_sequoia: "4eefe9a700a6de4c31d20a16a2e675b51a24c87638d79fbc2195b952e7cb8d6a"
-    sha256 cellar: :any, arm64_sonoma:  "45049bbdee244bc9d91e22c36629b5ba93b719b52c4d121b86392b3410be630f"
-    sha256 cellar: :any, tahoe:         "58c8931be9f84faf36cd62062f161dcc7c70a104761a4d0753ef4398dd9f627f"
-    sha256 cellar: :any, sequoia:       "f6752e93c0ddf55d10ae3aaea01d280be9632855649caa87daf1371fa6e26eb4"
-    sha256 cellar: :any, sonoma:        "32f6a117203a602fe3e06f524c19e431965ecc0bf9ede4c11ab443551558cfe9"
-    sha256 cellar: :any, arm64_linux:   "70f4fd9c239aa60c3b437d9c2638bd3186d920a19090cb62e2ce9f79f8e0a04c"
-    sha256 cellar: :any, x86_64_linux:  "a7d570ed08f4678d8aee733ab6f12a3193891709b8047042b07b48b90473fad5"
+    sha256 cellar: :any, arm64_golden_gate: "804bef8ca4631bf2cf790c2b0564cee7ace649eb4052f2e16da3ac9142e77f51"
+    sha256 cellar: :any, arm64_tahoe:       "d09c4852f75e19c18c3e347ce73c81b0b864792046f079d074205522c735d3fc"
+    sha256 cellar: :any, arm64_sequoia:     "4eefe9a700a6de4c31d20a16a2e675b51a24c87638d79fbc2195b952e7cb8d6a"
+    sha256 cellar: :any, arm64_sonoma:      "45049bbdee244bc9d91e22c36629b5ba93b719b52c4d121b86392b3410be630f"
+    sha256 cellar: :any, tahoe:             "58c8931be9f84faf36cd62062f161dcc7c70a104761a4d0753ef4398dd9f627f"
+    sha256 cellar: :any, sequoia:           "f6752e93c0ddf55d10ae3aaea01d280be9632855649caa87daf1371fa6e26eb4"
+    sha256 cellar: :any, sonoma:            "32f6a117203a602fe3e06f524c19e431965ecc0bf9ede4c11ab443551558cfe9"
+    sha256 cellar: :any, arm64_linux:       "70f4fd9c239aa60c3b437d9c2638bd3186d920a19090cb62e2ce9f79f8e0a04c"
+    sha256 cellar: :any, x86_64_linux:      "a7d570ed08f4678d8aee733ab6f12a3193891709b8047042b07b48b90473fad5"
   end
 
   keg_only :provided_by_macos
@@ -77,8 +78,7 @@ class Sqlite < Formula
   end
 
   test do
-    path = testpath/"school.sql"
-    path.write <<~SQL
+    school = <<~SQL
       create table students (name text, age integer);
       insert into students (name, age) values ('Bob', 14);
       insert into students (name, age) values ('Sue', 12);
@@ -86,7 +86,7 @@ class Sqlite < Formula
       select name from students order by age asc;
     SQL
 
-    names = shell_output("#{bin}/sqlite3 < #{path}").strip.split("\n")
+    names = pipe_output(bin/"sqlite3", school, 0).strip.split("\n")
     assert_equal %w[Sue Tim Bob], names
   end
 end

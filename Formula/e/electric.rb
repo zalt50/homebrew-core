@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.7.12.tar.gz"
-  sha256 "f44f8ef24b75ad3a9f6b954a7b560ee780f025723938e1a57bb0e7e256fc524a"
+  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.8.1.tar.gz"
+  sha256 "2ba074fb3de684b611d1297fd9ae44b435f1bb9fd0774b3a451a224832f8ed97"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3ebffab409f6804855fe2ea167e4dd19fccd80debaf93ff75185274e2c436b36"
-    sha256 cellar: :any, arm64_sequoia: "24ae477944e8a1c8e7b5210abbd9176f1919b9f31c29174313bff7bd1a639ddb"
-    sha256 cellar: :any, arm64_sonoma:  "6a6723ed8eea6bdb17bd07f8b92e77fb12514c1f7d12f6603f46e8949f498a24"
-    sha256 cellar: :any, sonoma:        "9d765055978d736e5d2bc83b3e4099f49962276f6119dd9bb113bb1e6c32d511"
-    sha256 cellar: :any, arm64_linux:   "c597589c2e43e7a26d038e449149e9691cc48a8b30152b9554fe3fbe5f7f5153"
-    sha256 cellar: :any, x86_64_linux:  "118d43080bf12ee1ddbb03f73856206b498451d8eb1f90ffc61bbe645ea0929b"
+    sha256 cellar: :any, arm64_golden_gate: "e3f00865bfed4d4a121627373a99ee0372fcd211485fb584b5434d0058d95b54"
+    sha256 cellar: :any, arm64_tahoe:       "b5f0c1a82ee44abe2affc7ddddfd8a79866b141be25fa6bc1db7daa705136197"
+    sha256 cellar: :any, arm64_sequoia:     "fbb30d204f706e41a7b534e4471672bc78cdf8740b3b40de70ffe3c2ad2fc124"
+    sha256 cellar: :any, arm64_sonoma:      "665053aa4f0a3153280c77339abfff42ca286d13ccca95ab0354413633f8effb"
+    sha256 cellar: :any, arm64_linux:       "390275db05a16bc8224a55e462a33180db71a269446895c37eec78c3ab0f2384"
+    sha256 cellar: :any, x86_64_linux:      "2adb216f215e3075e8bf20eae7912893b12eeb93169b09e32ba3ca63cc9d7275"
   end
 
   depends_on "elixir" => :build
@@ -62,7 +62,6 @@ class Electric < Formula
       (testpath/"persistent/shapes/single_stack/.meta/backups/shape_status_backups").mkpath
 
       spawn bin/"electric", "start"
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
 
       tries = 0
       begin

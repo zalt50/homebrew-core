@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://github.com/werf/werf/archive/refs/tags/v2.75.3.tar.gz"
-  sha256 "44efae6e7542a7d929fcc222000f633372239ff24e3d079beacd980adb461070"
+  url "https://github.com/werf/werf/archive/refs/tags/v2.77.2.tar.gz"
+  sha256 "558739c98c40bf4fdeae54ad18fe7b5d012908390105dd57465b6928d28fe21a"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -15,18 +15,23 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ccaca4e9dd17613a3436da023cb8f5cf82fbde35060f0f56beaf45bf4691abe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a28b9813a91c9bb002d321651fc4f52536f5082a03b679983ead7b5eae09e3c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eb00da6f89ae458b1b9e82cfb088ba0cb133d18e047694fa6797c47ebc1c5fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba254c94cbd8a0c3b9e078a34756de81c617dc6320fabe61a3b71e169a3d512d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "311b9b44c3db926a5ddb1a285d7c9209ac5b16432d4406d413caad8bfdee2d84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "415197a216ce03dba12ac077c4b7c9018da957007bc14fa758f31ebc12da9507"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fee9c7eb686c5fe9c442b48680e74a42764ce7b140d4b8898ff5b7eb160749ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1727c51fafe498722b2d6ea3b22c6db718f273d94133cabf7ec6846b7d10c585"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76f540ea78d6da014071be1deba3f5628ebe76a3faa48b484fb0f153fe271eb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "82ddc78c53c9fc55f1f897c85ccbe92ecaa48a4ea8a281a4d74cc2bef27aaf7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "17c5e71ed47f71ce02535fc620883c5ab7d4bb903d1cfacc6e94f7df608be6eb"
   end
 
   depends_on "go" => :build
 
   on_linux do
     depends_on "btrfs-progs" => :build
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install

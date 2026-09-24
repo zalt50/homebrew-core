@@ -4,16 +4,15 @@ class MathComp < Formula
   url "https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-2.6.0.tar.gz"
   sha256 "b2e8c5c93fdc9bb5ed9b8a06d1c028aa0096a45b1f3ac6c6509d7a6500c72253"
   license "CECILL-B"
-  revision 1
+  revision 4
   head "https://github.com/math-comp/math-comp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21e9e7480afaa9c098932b5794bd3b487a2570cee29cf478b0e5e23105b1ea5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda55fe838513b5f9b615611b300a461a45eca72f6ff8bf984cf869af6501b95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0de55a7a7a391bcba56a0909794f3e3da851c6b1affb2bbdb5d174e9ad4ebdf4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8716d5848e8bc4062523d0b5cde475202c1727b2bc4696abc4a95ac25904400"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c03ecf5729060372140d6af54f22b41f6d3b9d66ddfaa479c660559f8d9711f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ab0a53f30d164f0d3317e39343a9e948fbcdecbcd380eea1e5e96e57c1df394"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "503de4ee024d97a491445d8342e72833f97d00f5c0f2468a024dfd4fc5fba259"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26f8cd0e402f78528b55a57e2a8b6614e6285fafebb6088ef5e354f0799482c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6d0bcf192c5b19c42e475bd27421a2447efdfea4821a568d970378e5d14a64b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "158de638d733148861f3d3b97f373fedee7b71eb6f8fc8db1a5f212aad576221"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ed398244a1bfcb8087fd44e5e66a87377384a2e4f687c118a1898e685ebb6880"
   end
 
   depends_on "ocaml" => :build
@@ -24,7 +23,7 @@ class MathComp < Formula
   depends_on "rocq-micromega-plugin"
 
   def install
-    ENV["OCAMLFIND_CONF"] = Formula["rocq-elpi"].libexec/"lib/findlib.conf"
+    ENV["OCAMLFIND_CONF"] = formula_opt_libexec("rocq-elpi")/"lib/findlib.conf"
     ENV.prepend_path "OCAMLPATH", formula_opt_lib("rocq-micromega-plugin")/"ocaml"
 
     system "make"
@@ -42,8 +41,8 @@ class MathComp < Formula
       Check test.
     ROCQ
 
-    ENV["OCAMLFIND_CONF"] = Formula["rocq-elpi"].libexec/"lib/findlib.conf"
+    ENV["OCAMLFIND_CONF"] = formula_opt_libexec("rocq-elpi")/"lib/findlib.conf"
     ENV.prepend_path "OCAMLPATH", formula_opt_lib("rocq-micromega-plugin")/"ocaml"
-    assert_match(/\Atest\s+: forall/, shell_output("#{Formula["rocq"].bin}/rocq compile testing.v"))
+    assert_match(/\Atest\s+: forall/, shell_output("#{formula_opt_bin("rocq")}/rocq compile testing.v"))
   end
 end

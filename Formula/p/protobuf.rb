@@ -1,10 +1,10 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protobuf-36.0.tar.gz"
-  sha256 "399931c793f4ac6db81045b00b06dd07c877b48aeecf36c797f65c541fb533e7"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v36.2/protobuf-36.2.tar.gz"
+  sha256 "3d9642a662d10e68ebae5e53f14dcce5105684212d5078f8e0d47d1ab3ae6b64"
   license "BSD-3-Clause"
-  compatibility_version 5
+  compatibility_version 7
 
   livecheck do
     url :stable
@@ -12,23 +12,15 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "b6d41daa3a6c3b85ca57e7bd4d8c59145a39b8acec5e1457934343161d019a22"
-    sha256               arm64_sequoia: "2b349795081ff0fe0c6a850f01dc96766771380a9b3798c604ecdd18ddd92a96"
-    sha256               arm64_sonoma:  "7eb27d1bf8e5791ed4dabd81b60fb15e3f91f910bd48597e60108daa00335b88"
-    sha256 cellar: :any, sonoma:        "1fb99f40afcfee4da81a2f1c49c35606623b201a7968e16bc2b6360b1a5fd7b3"
-    sha256               arm64_linux:   "67b7e8ffa74d2a15cebe883283f7c999f070ab8a0f91582c03101cdcdfc13315"
-    sha256               x86_64_linux:  "61ee855d1c53fba1a3cb4c5f3ac53dd549daf8cf83ef5ed7d6ff565735e7fa48"
+    sha256 cellar: :any, arm64_golden_gate: "35068a9351547528d7ce95e8d4c510e32650813ce585f0441070d1bc54de60c5"
+    sha256 cellar: :any, arm64_tahoe:       "573d5907842eba3930afbac15f7fbab91df421acc610d9c79278062c1c70c33c"
+    sha256 cellar: :any, arm64_sequoia:     "153d9b9b322fc8c54fe66dbaf2c8fe382294ee6a8fba35fd4c090dd61de3d77a"
+    sha256               arm64_linux:       "ea1f621076b35e1caea7dc4c0eb9a70141148018fffa9e10b00ccf530e3b6fb2"
+    sha256               x86_64_linux:      "88021d182eaa0c7a6fd41df1772748b22835f985aa34a9c5c308f5ac09e9ac27"
   end
 
   depends_on "cmake" => :build
   depends_on "abseil"
-
-  on_macos do
-    # TODO: Try restoring tests on Linux in a future release. Currently they
-    # fail to build as Clang causes an ABI difference in Abseil that impacts
-    # a testcase. Also GCC 13 failed to compile UPB tests in Protobuf 34.0
-    depends_on "googletest" => :build
-  end
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -39,6 +31,8 @@ class Protobuf < Formula
     cause "fails handling ABSL_ATTRIBUTE_WARN_UNUSED"
   end
 
+  deny_network_access!
+
   def install
     # Keep `CMAKE_CXX_STANDARD` in sync with the same variable in `abseil.rb`.
     abseil_cxx_standard = 17
@@ -48,7 +42,7 @@ class Protobuf < Formula
       -Dprotobuf_BUILD_LIBPROTOC=ON
       -Dprotobuf_BUILD_SHARED_LIBS=ON
       -Dprotobuf_INSTALL_EXAMPLES=ON
-      -Dprotobuf_BUILD_TESTS=#{OS.mac? ? "ON" : "OFF"}
+      -Dprotobuf_BUILD_TESTS=OFF
       -Dprotobuf_FORCE_FETCH_DEPENDENCIES=OFF
       -Dprotobuf_LOCAL_DEPENDENCIES_ONLY=ON
     ]

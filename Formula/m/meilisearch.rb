@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https://docs.meilisearch.com/"
-  url "https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.53.1.tar.gz"
-  sha256 "b1041d18f18f70b0069689fe46cebfe1d34fe80f48db1177a79a9ca89db5ccdc"
+  url "https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.54.0.tar.gz"
+  sha256 "088fd72985bca4d4dd3de9b1498397c59d7927dc6b5c82286acf9540cb4a0c1a"
   license "MIT"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,12 +14,11 @@ class Meilisearch < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fe0eec48314ff4382c0d9047f08800316667c3189a101140ff392ecfd5eefa2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c1364596162dd2811c6add0d69133461f96a6571d8735157d93dfe3e0372d4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60820cc873b1538fd30fbfe9e553a89b16e1ce45e9c50f518d8bbaac4234def8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d77b2d8c715567c678b6fa94039233c9885bcca239996da39767cf278d1baeb5"
-    sha256 cellar: :any,                 arm64_linux:   "937b0ce58dbb49a74d6846381f9927fb4bea90d3ffa307da490b7fb19570b401"
-    sha256 cellar: :any,                 x86_64_linux:  "f1da77a5131988526f2e217ae6899cb04d35cb045dd11134e55117664d2b2f74"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "705119db3528e718319f083c97ebf3c29f45f57b0fcf549e838e4aea0b1ed056"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d495aedc81d19758e914f4efc1a29c1ada33be030a24faaa0a324f574d1c8b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23d54ed506fddad1dae2dc4944caa8071331c5c12194b134dcf1801e16c7d2b8"
+    sha256 cellar: :any,                 arm64_linux:       "dde0f4246da3585b93055db6068e54465069ef0798f38c876079ffc957fbb773"
+    sha256 cellar: :any,                 x86_64_linux:      "725af9df40c342c612783cf83612a869042a3dcb8b0396e4a57806b0c2f883e8"
   end
 
   depends_on "rust" => :build

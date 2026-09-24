@@ -7,16 +7,15 @@ class Pachi < Formula
     "GPL-2.0-only",
     "BSD-2-Clause", # `caffe`
   ]
-  revision 4
+  revision 6
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "6e8b04be22ef2385719b5d676e371e38f21e5f54b101925394d5aec19b6e36ce"
-    sha256 arm64_sequoia: "07386a3956ef25f08045c6c40bdebce1b22cbb28f93772bde61b2380f91b83eb"
-    sha256 arm64_sonoma:  "a9ac5dbc276a313a7de95998b548543441aab8ac58b6f2b4303e973521739bc2"
-    sha256 sonoma:        "a5ac11748e0cb469dfc91c7fe9aedf8d037c067bd2c20613dda7f33a24b31b48"
-    sha256 arm64_linux:   "e34aedee4472d8dfd954369bf2d85535d441f7e714b795fe93ee6b43c522df6a"
-    sha256 x86_64_linux:  "4972b64868e981524307b40263c42d9ce1acb5267bd5ec3df225ee9b8b077b82"
+    sha256 arm64_golden_gate: "4687f6d2edc32b869f2ba241ba20d432b3a53e3862f8850ea47959dd72f6e4cb"
+    sha256 arm64_tahoe:       "3a8e2d2a3d9d6321c122671b5f379b49a34f458557e23536d68ee735162b376f"
+    sha256 arm64_sequoia:     "933f9e9186fa5bea05faad8bcc54b02ced0085739e0690b4b4e42b07f666b753"
+    sha256 arm64_linux:       "4713f964d611b39a36dcf3844a794292de966982ff45478f608c6f6608d33d02"
+    sha256 x86_64_linux:      "13a75be0c7981baeb9678e3aa318b299c40d09db4f56566e8010e1f5ef834099"
   end
 
   depends_on "cmake" => :build

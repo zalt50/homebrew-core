@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.4.tar.gz"
-  sha256 "6f80750a10d20f1b74252d81d543f0543c8f49ba9ea5804de8a82afedb4e3b8c"
+  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.6.tar.gz"
+  sha256 "17af6749dc6be583e97f0a62040258d8057e6ee220f28d61fb970171d861c222"
   license "MIT"
   version_scheme 1
   compatibility_version 1
@@ -14,14 +14,11 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "be9f8cdb92b3307ca8795cb2ad9614cf37685466fa2baf7d474d1ee474bf4f45"
-    sha256 cellar: :any, arm64_sequoia: "a326b897e45f4695c3f5deef80f27e4aef8a8d625311edd1d77bcc62df953b20"
-    sha256 cellar: :any, arm64_sonoma:  "d2f8a27215735930c10ee74302a5a7ada7655d03c4b0d2b3f30d19e2f523b569"
-    sha256 cellar: :any, tahoe:         "3cc83c295e61f0e86f20e3245c8e62dcd6775b7268e9f6efc9f2582a10f2bfd4"
-    sha256 cellar: :any, sequoia:       "6110642c6260540d2227df69fac557c3e71595ade35dd65bc87fddf023db8abd"
-    sha256 cellar: :any, sonoma:        "ad06b9b01f8a49293e0a086320224b134bcda8aba5214bc31e3f47b8635a4800"
-    sha256 cellar: :any, arm64_linux:   "5e0155891870afaa367a0718b07d812f7b94001ca6bb93804424e2bf22aec2e4"
-    sha256 cellar: :any, x86_64_linux:  "9340a92f709c9969a7486ba58aa91539824a7e28ac23cbd7487128e0a193069d"
+    sha256 cellar: :any, arm64_golden_gate: "8bcd94661e7b6f904a2655212b7dce5956f7a1fe017875ba02fbe4559fec3fbb"
+    sha256 cellar: :any, arm64_tahoe:       "0b6389e9b362a762e97695139425e2c9ae07edd76f015a5c68e7f75a1001ec57"
+    sha256 cellar: :any, arm64_sequoia:     "0de50664d411a14ea22235630f7c3dbdc5d044db3eaf47aac8543eeb4e029646"
+    sha256 cellar: :any, arm64_linux:       "a7d7d47937bc9376b00ded82efbd635d1106c82ce533bc2003e78fa002bc445d"
+    sha256 cellar: :any, x86_64_linux:      "3b09636c180d50fd4ea8cf68a7aedb6dab5651562e5eacb871b94eb28a7b23a1"
   end
 
   depends_on "autoconf"
@@ -38,6 +35,8 @@ class Pyenv < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     inreplace "libexec/pyenv", "/usr/local", HOMEBREW_PREFIX

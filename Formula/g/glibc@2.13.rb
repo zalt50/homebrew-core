@@ -62,7 +62,7 @@ end
 class GlibcAT213 < Formula
   desc "GNU C Library"
   homepage "https://www.gnu.org/software/libc/"
-  url "https://ftpmirror.gnu.org/gnu/glibc/glibc-2.13.tar.gz"
+  url "https://ftpmirror.gnu.org/glibc/glibc-2.13.tar.gz"
   mirror "https://ftp.gnu.org/gnu/glibc/glibc-2.13.tar.gz"
   sha256 "bd90d6119bcc2898befd6e1bbb2cb1ed3bb1c2997d5eaa6fdbca4ee16191a906"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
@@ -131,7 +131,7 @@ class GlibcAT213 < Formula
         "--disable-silent-rules",
         "--prefix=#{prefix}",
         "--without-selinux",
-        "--with-headers=#{Formula["linux-headers@4.4"].include}",
+        "--with-headers=#{formula_opt_include("linux-headers@4.4")}",
       ]
       system "../configure", *args
       system "make", "all"

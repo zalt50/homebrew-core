@@ -1,18 +1,18 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "8aed2b35a3581d2249c4742139817bd8ef2a5a9da14603809f8c2c295ee8955c"
+  url "https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "9d8e73a54ac8fe5b23f938da0a1522e8e057cfdb11f8bc4af7ef0a76558984d5"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c203009b980f8c06426f6978fe9751021cbd089d8d967eef234c9336a3500272"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "030c28b5464966e01e356aeba771aa2b1ac7b9e38dbb86df09b360c7b1e86c1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "247d4e47c6d3a015a610c5a5c5dc5d58b8de9ffb2cf993a9772e877358edb248"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2633615accb3a463e71e6c2ecd57c0d595648b2874b93b372200a16108844d84"
-    sha256 cellar: :any,                 arm64_linux:   "8b824b84cb3db4ff4c70202becc99c3fddbca92cabf2e51efe94af48b8db91eb"
-    sha256 cellar: :any,                 x86_64_linux:  "9842a8eada35cd96f084b5c3e46ff84e6085034d3b6eb77e6d0847d2d4aa9600"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d6e990d4bbdcd0188ced49903ae60a49e18811673c48f2bf398426c4f1d50ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "afdc2c1eb053b84222f0ed8ccb0daa5e7d83f2a1ced840f455dfba9f01f1f2a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "410283dc09dd4c3f4b0056121b65e48b6ce3714f0148d9c3def16acfe0dac061"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f43be9e08b3eb949f4c0dc466d2f440d886e0a3990aa38dda01f9b5b863fefd6"
+    sha256 cellar: :any,                 arm64_linux:       "e6e5782510700bf7245b67891fed8f5d85cae5639508ce74ece11ebfbf026701"
+    sha256 cellar: :any,                 x86_64_linux:      "cc31c5c4eb41fcfc9eebc2dcf832ad2696152c0ab8caef3ed86db9a2d41f36f8"
   end
 
   depends_on "pkgconf" => :build

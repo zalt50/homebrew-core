@@ -6,7 +6,7 @@ class SyslogNg < Formula
   url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.12.0/syslog-ng-4.12.0.tar.gz"
   sha256 "03a03d19ac203dca53c7ec79a7005c8a850665a95ff4cd0f1e7bb4c497c64d46"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 6
+  revision 9
   head "https://github.com/syslog-ng/syslog-ng.git", branch: "develop"
 
   livecheck do
@@ -15,12 +15,11 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a64cb6d1c60ae4cd202d9232bb6d9a1579ab2b3eb72e066ad22769330a4d9918"
-    sha256 arm64_sequoia: "04d3b6fe64eb2d2bd45d834dfe319cce6d77ddefdb3ea6d8e49867d2588de6d1"
-    sha256 arm64_sonoma:  "ca62076ac9ee51ea1d2866f5314c53ae6db7d10bfc8dcbe51d352cdae18dff0d"
-    sha256 sonoma:        "5c9c60721c3f73bfa5913ea18e6a105f1aab2106fa26fd85533036097c5d87ef"
-    sha256 arm64_linux:   "2ec855c1bc9762529ce5f3fc6e73009262ff5fefa32204731d7184186caa5937"
-    sha256 x86_64_linux:  "5455b29821f1b7f1f22435c03626b9c00d66bebf0f1d1b18f74777b6ab31e1af"
+    sha256 arm64_golden_gate: "b05a6377a8a1468fa3cb63f7aad6db4a82d821fac7a82fad2e6e821991fab288"
+    sha256 arm64_tahoe:       "a8065664a8ea88355c41667afc974fe55821b5691ec9f31aa07b67d1c9bd8e39"
+    sha256 arm64_sequoia:     "363e12cef60648439c6b130f16d23e3fef2ac19e34b89d107bb35316e2fad675"
+    sha256 arm64_linux:       "4220b18b1063ca540f97c3956c2770ec387c474c61c4875ed21a002b95816ec9"
+    sha256 x86_64_linux:      "2a23b37eeed6f5389f8ee26dd2fdcbe33f06c4baaf7b7d2644f4873bb1d743f8"
   end
 
   depends_on "pkgconf" => :build
@@ -74,7 +73,6 @@ class SyslogNg < Formula
     # Need to regenerate configure on macOS to avoid undefined symbols, e.g. "_evt_tag_errno"
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
 
-    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
     # FIXME: we should use resource blocks but there is no upstream pip support besides this requirements.txt
     # https://github.com/syslog-ng/syslog-ng/blob/master/requirements.txt

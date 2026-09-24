@@ -1,20 +1,25 @@
 class Dskditto < Formula
   desc "Ultra-fast duplicate file finder TUI/GUI"
   homepage "https://github.com/jdefrancesco/dskDitto"
-  url "https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "22eb67b680df785709d3cdb0343f7db1e9c99c51788fa518ab0da52d1475e737"
+  url "https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "5202c2f0482b0496e272ced4ccd820ff47bbac73ed2237acad501091a79ec259"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77aed6edb4dd72dbd72789c70f133ad1ced9434d14d14113de5aae5744b28609"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72a2e13c6d44e7da7fba371a10317c47409bf22a6d1067ebd1f1d38e2a7797eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6794c196365af15e59e612b836e971016347aeba90aa3948c997004519f166d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ccf4d828605f0eb27f330d9759256641d5eb3db06689ed270c573ea3b93e71e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c2bc6da92134992cf7772f612d8d4088d5aafc0aacd45f2a9c63b899fc23e9a"
-    sha256 cellar: :any,                 x86_64_linux:  "be75aea33d6dfd2e62f326cec7fc75bdd0f3b67d09234ad71e92cde90cc50f15"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e9c483de09e5f0896dbdca6df1a9ca32f2d47e2b89aaed1247733216a3cec523"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ca4a2304114d2f4332d329adab2ec5fec8f9f0ab9b191b01cd4d52a784b932b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5a16e68e55ffca5b18232cc30709c44f4d3ca2f4f5142e9b0c5c4ca835a8c4e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "af033c1d6ad53bb4e469746c09e1d7820453f920149eccd7281be8ddf6e92661"
+    sha256 cellar: :any,                 x86_64_linux:      "7c7f22d12b8fb9e04ca86a2cd9294cb331d94d722f1fb362379674d1a831891d"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X github.com/jdefrancesco/dskDitto/internal/buildinfo.Version=#{version}"

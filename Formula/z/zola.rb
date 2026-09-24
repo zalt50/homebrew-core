@@ -1,25 +1,26 @@
 class Zola < Formula
   desc "Fast static site generator in a single binary with everything built-in"
   homepage "https://www.getzola.org/"
-  url "https://github.com/getzola/zola/archive/refs/tags/v0.23.4.tar.gz"
-  sha256 "b8eb945dbafe1e73f1601c215ef1563b9b0a25097576ba48f646db8d75568e40"
+  url "https://github.com/getzola/zola/archive/refs/tags/v0.23.6.tar.gz"
+  sha256 "193db594222cd9c1097387ce17272cbbe672c3a894c263f6f4c436a7fedb379f"
   license "EUPL-1.2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b107633dcee407e0b88cab7b663f6abf8062448f238e4407918ddae882ba641a"
-    sha256 cellar: :any, arm64_sequoia: "e4179ad07943b7259c087fea1236045443514aae652475c54a1eba9b7a13be6f"
-    sha256 cellar: :any, arm64_sonoma:  "cf6afb21f6dfa11137322899c5017b5b579b95294be71fef816c9c37c816c123"
-    sha256 cellar: :any, sonoma:        "5fc35fbbaf45c462b2c52e5eebe830af6a1c8b498127f276825c47bdc5d6d294"
-    sha256 cellar: :any, arm64_linux:   "f05951a7defe4afe529eeb75ffe9f027907a6f43970b2000786da8a67ac5256d"
-    sha256 cellar: :any, x86_64_linux:  "eaf2128bafeeb4e3fedde18ca57f4c4c884e1b84f297583b1644a969883e40ff"
+    sha256 cellar: :any, arm64_golden_gate: "92e4acf1fa8fc374c2f11ab5a520109caf8c3b10ea2b77a13b4506e71001ba31"
+    sha256 cellar: :any, arm64_tahoe:       "3fa67cf51efc3cf051c748996fd0150b77236bd2894dbf23431e4da21d340667"
+    sha256 cellar: :any, arm64_sequoia:     "f47d002fe11ff674a3f2ec84c01525ee253a567acd7c2e6b6ef2749c7418f455"
+    sha256 cellar: :any, arm64_linux:       "981765219eae043318ba70cd7ec7ecbbd9ff57e648a9c29f7000218a7918d69a"
+    sha256 cellar: :any, x86_64_linux:      "2ed0144800d0c72f51a74c456d8e30e5e5fbc3a7837d932a764e466f9a3f51b2"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "oniguruma" # for onig_sys
 
-  on_linux do
-    depends_on "openssl@3" # Uses Secure Transport on macOS
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

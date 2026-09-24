@@ -1,8 +1,8 @@
 class Modules < Formula
   desc "Dynamic modification of a user's environment via modulefiles"
   homepage "https://modules.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.6.1/modules-5.6.1.tar.bz2"
-  sha256 "5d36fd90b83a06fd3ed0ff951ab1101f22eb310fde3492f9d0455a68569abe5b"
+  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.7.0/modules-5.7.0.tar.bz2"
+  sha256 "3e3cc7582ea34f3cf8353152fae724dea00dc893f021080263f475dcaeb40520"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,11 @@ class Modules < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ad57749f2e5147af68bd14cb793daf5a1248a5066fabf5849bcc61eb81310b3"
-    sha256 cellar: :any,                 arm64_sequoia: "73c1507d3f613e2e8f362e0fa372879c7308ff0a4da5c8c29552de478bda1541"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d6895e9c911eca582b3d8126621b990467b1c15949fd4047f5f06b3c77b2b3c"
-    sha256 cellar: :any,                 sonoma:        "850380e3da9b8041f097dad78915d0e707bc22e926e6213a37923f6fb2203b87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a28e814c89976354ce48751ef27b4c3dc36ca7418e53490f78a8df71b49fd69a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a00c5618052a36dca03fef4a0e2ca0239b98615ea959b928621bef9da92fc2c0"
+    sha256 cellar: :any, arm64_golden_gate: "f576e16b0001fe35da4b63000582a18a0120c91b7154d01397e58354aae40fc2"
+    sha256 cellar: :any, arm64_tahoe:       "15d5c0388d4f43239ef034f5547902395b514c304e1fbd8fcc257287f66bd212"
+    sha256 cellar: :any, arm64_sequoia:     "0aa6131d168592dfac4877a4ded5a1183692f5cad9f3adce13083c6ba99189e7"
+    sha256 cellar: :any, arm64_linux:       "53393cbf8232d697094bc67c0c053356deead6a1aefcb80753b2cb4e217a808c"
+    sha256 cellar: :any, x86_64_linux:      "a9d2cfc5e7a5f40f336328d268b5fdcfd388d76eb7b882086df87549e8e4bd30"
   end
 
   depends_on "tcl-tk"

@@ -1,21 +1,26 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
-  url "https://github.com/docker/buildx/archive/refs/tags/v0.36.1.tar.gz"
-  sha256 "8959987919445ab61564f50decde4dae810137063d84e2d3c969c9a4a68ecdeb"
+  url "https://github.com/docker/buildx/archive/refs/tags/v0.37.1.tar.gz"
+  sha256 "c8eb34392910bf18a858d4099e841deec2f7ea433bb3ed230082f55b69f19118"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df6823aae7eb4f2b9b70e2282f24c5b37f204483b6c2cb2f75c3485b7e4decbb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df6823aae7eb4f2b9b70e2282f24c5b37f204483b6c2cb2f75c3485b7e4decbb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df6823aae7eb4f2b9b70e2282f24c5b37f204483b6c2cb2f75c3485b7e4decbb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df0c110b3832d58d66f7c9d60187f8f269bcaa81f461ab4f719468348bd6ae5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ee75d42106649818625a3457ee2d0b144d041516f07c6cd8bc1f9edfdcb16ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28609e0af08bef6423475f6dac7ef61b5c8601fe3e819c552cc2035042416875"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5bd47c9bf1d207737ebcd770e39defcd7f621133ea110c5ce6a1dfd26dd9171b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5bd47c9bf1d207737ebcd770e39defcd7f621133ea110c5ce6a1dfd26dd9171b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bd47c9bf1d207737ebcd770e39defcd7f621133ea110c5ce6a1dfd26dd9171b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0cad37627e955d0a6c45e16f2d6cfc92826454644a757275115f1904e3c5e5aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "054200d861bbb83c9d3a5dbc280b8c7c77d52fdc9ea18d4417c9d0f8a4968ba7"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"

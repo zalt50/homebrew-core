@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20260714.tar.gz"
-  sha256 "0810781d24ad6efe010a8ce91c5c529dc8dd95a561d6c93b30e56b8d679cce65"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20260912.tar.gz"
+  sha256 "b6bd32964cbe451be2838822c9d200b7c7e76a2a5947c03feb71dc6bd72988bd"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,11 @@ class Bmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14b7b36b35ef6206636e11b5122bd1ff23792617f3559a724715c097cd68d82f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f313a87f0922d80c0db189fa7c9a3a562cd8e0b63d4ce1f18113d8387d7045d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac325000348a6162132c8c8a43cef7a1e82b4fdcfd98de7e7d19c7608c8e4070"
-    sha256                               sonoma:        "cf12142896435675d1618658bd4f4d2858d5992fb287006a56d2546a2f57d842"
-    sha256                               arm64_linux:   "aba2081c9bccc5ec2ecc93debba075e224df6f24deaa7325c2b15dd02fbae8e5"
-    sha256                               x86_64_linux:  "193fef291d0419dbf768bd0b2e97adb4bec9657e0324c85a9227d99bfb570b83"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47a0576cf8407e0ddf40c9f4b2451390098d5b1c95fc6c7530990d487b5382cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "93f2a6f6db6d6fa92fa29472294bcf2d8bb358eae85bce25a3c7d80fc3c14956"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aeb5e436cc198a498e1f90442eefa854ac2c46db20fced7bb0e1c9198b2f838d"
+    sha256                               arm64_linux:       "0ff638f07d03a31fe4ad471a955407c33cc4de360d9693e089208d7afd780a71"
+    sha256                               x86_64_linux:      "091dbce9cdb453409cb546dd26ef91771e4b68dea28e5fed5246904b31be3d09"
   end
 
   uses_from_macos "bc-gh" => :build

@@ -1,8 +1,8 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://github.com/storj/storj/archive/refs/tags/v1.162.4.tar.gz"
-  sha256 "8153a15b677c71de595975f4d2bb031560f33fd5b1bd29252b88d36a7128a67a"
+  url "https://github.com/storj/storj/archive/refs/tags/v1.163.6.tar.gz"
+  sha256 "578757c0e7bb56f487089f3ea2706180560132cdbb0b2c92fb7918a89a43231c"
   license "AGPL-3.0-only"
 
   # Upstream creates stable releases and marks them as "pre-release" before
@@ -18,15 +18,20 @@ class StorjUplink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb4b53a791bf9fed9cd20e14b35266246b0f211aacfbfefecd4978e251120c5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb4b53a791bf9fed9cd20e14b35266246b0f211aacfbfefecd4978e251120c5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb4b53a791bf9fed9cd20e14b35266246b0f211aacfbfefecd4978e251120c5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "757eec8fd5a3e30df11be01593531407ad540771e3ae5782bc63c2fc085eaea6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42bda49364a4b3091956293210efbbbd23e3f04a6cbc15b4b0e1f9f45b3f8a41"
-    sha256 cellar: :any,                 x86_64_linux:  "030893b51b15f8e3737e0b8b864f35e52562c0da69d1647da138cffcf0266df3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ff99e85935e1ab049bc42020a4147349097894885d3bb320ba3b23ec18d8b22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ff99e85935e1ab049bc42020a4147349097894885d3bb320ba3b23ec18d8b22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ff99e85935e1ab049bc42020a4147349097894885d3bb320ba3b23ec18d8b22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a4b00c644cee2c5197a8d552fbcd95e63d472d4035ee4cd1b2e7eb5de390237b"
+    sha256 cellar: :any,                 x86_64_linux:      "fb92c2774096143e3ad3e1ead41e48e3cdadb4870959419b2184273e1e8af443"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(output: bin/"uplink"), "./cmd/uplink"

@@ -1,8 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://github.com/kubeshop/testkube/archive/refs/tags/2.13.1.tar.gz"
-  sha256 "1ce0f02021362eb7b6f046c89c5408828223b6d0ba2240543546ae477f76ad8c"
+  url "https://github.com/kubeshop/testkube/archive/refs/tags/2.13.3.tar.gz"
+  sha256 "45987289672012bb00170d5db9f46facb952f8e2501f14126c3672d1748cff0e"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -12,17 +12,22 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cb1dacd447a3fa6c5379c27793e06692128af4b9df31efaf399ff434117e2ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d8f31a823f2a6df450ba8032f003b4ed68111c8a92f3dcf233995dd6eda5e0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "939910f8a095133af82926a23f0d075ff962578565a67594d53fcac6f9bd933e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6da9f14af722ede5c50f4d4d20acd7b709127b9b64a07662733cb555aa78cc6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dd0d9923e29e06252e7ae4e5944728c97fddf81cfa53bbd6a7d8d957d2719fc"
-    sha256 cellar: :any,                 x86_64_linux:  "bf5048869af63ed873f160c98d841608d8717bb8e7cd5bf4c3b891abcb34a4f2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c5912f05bc0975dec1e9c4f4e6cec27b7e3282f62ddd52c02194527c4445c37"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6c9ce71b65c9d5678b7241123b6b0ad175353d99f218d93485d90b33e463967"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0f46067e1947714cb33a9fe838741e151ea311703a74ec32620299f5773c691"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0901052c7ae1a0d5bf1d42c47b1ce926090364586cf873079708737fc2c4a057"
+    sha256 cellar: :any,                 x86_64_linux:      "01466cae3ff384d3d405503f510017feae935015ac40b4b677d7a29cafe90527"
   end
 
   depends_on "go" => :build
   depends_on "helm"
   depends_on "kubernetes-cli"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X main.version=#{version} -X main.builtBy=#{tap.user}"

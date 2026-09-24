@@ -1,8 +1,8 @@
 class LibheifPlugins < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.23.2/libheif-1.23.2.tar.gz"
-  sha256 "8bd5d41d19dc84536d118b04774709f244df6104ef66d623dad5fa4650143405"
+  url "https://github.com/strukturag/libheif/releases/download/v1.23.5/libheif-1.23.5.tar.gz"
+  sha256 "fd9036064c4432f0550d15072ddf34956a248279ee9aeaff0fba3fa0f77d8f1a"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -10,15 +10,15 @@ class LibheifPlugins < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "37d3115760b16f05b508b728a7688ab3f97ca5b6b36e02107b99f27b4f94917a"
-    sha256 cellar: :any, arm64_sequoia: "91441ea6f33d48fd5eb5b54ea7efedfbad8d1673adcab7f03f16c5c9fc3d9431"
-    sha256 cellar: :any, arm64_sonoma:  "ab8445c36801f3910221927669bf9c52afb33fbe8e17ea6b29e0e3026ad6cc91"
-    sha256 cellar: :any, sonoma:        "43cfb3b8a55467a8c3bb3b2134376597adb980f69d3ddc43e1aaab386d5791e0"
-    sha256 cellar: :any, arm64_linux:   "e1c3475fb669c1c88d2651102707003e1f76a8d524eab01de9e27c6262137ac5"
-    sha256 cellar: :any, x86_64_linux:  "8419149d92c137df607fb704be6a08f99582221431c77759d8f6d778c36f30f5"
+    sha256 cellar: :any, arm64_golden_gate: "7033a7cd8e7b70ab2616c1b262b2e67ab5448629042e187d57f91fbb6e4d71b8"
+    sha256 cellar: :any, arm64_tahoe:       "de97d50796e01a54ad197456c6edec6a26b32e910f6150759b1d8e7f34a64c58"
+    sha256 cellar: :any, arm64_sequoia:     "1170bf4cce7faab622460d055df5de6994e86d670d5929499e6c690f80cd267f"
+    sha256 cellar: :any, arm64_linux:       "e0cba0a83c9bb88f1bcde1ddd8517ae94eca869a73b883aa2378358ff6ddbefe"
+    sha256 cellar: :any, x86_64_linux:      "f5b01ff7577606fd2d5f0ac2275ad6fc04c1b6bdf7c0608bba2aeb9d15a2e390"
   end
 
   depends_on "cmake" => :build
+
   depends_on "pkgconf" => :build
 
   depends_on "dav1d"
@@ -31,6 +31,7 @@ class LibheifPlugins < Formula
   depends_on "svt-av1"
   depends_on "x264"
 
+  deny_network_access!
   def install
     # Enabling plugins for "popular" formulae
     plugins = %w[
@@ -65,7 +66,7 @@ class LibheifPlugins < Formula
   end
 
   test do
-    libheif_bin = Formula["libheif"].bin
+    libheif_bin = formula_opt_bin("libheif")
     decoders = shell_output("#{libheif_bin}/heif-dec --list-decoders")
     encoders = shell_output("#{libheif_bin}/heif-enc --list-encoders")
 

@@ -1,18 +1,17 @@
 class Dalfox < Formula
   desc "XSS scanner and utility focused on automation"
   homepage "https://dalfox.hahwul.com"
-  url "https://github.com/hahwul/dalfox/archive/refs/tags/v3.2.1.tar.gz"
-  sha256 "6b3b09be44dcfa00e15fded2999ccbaf7cae53b8cfa6ea7ce191f27d6c209c9b"
+  url "https://github.com/hahwul/dalfox/archive/refs/tags/v3.2.3.tar.gz"
+  sha256 "05a9d84ba549cc92516f7c3c488d8e60cd34fc47f58f55e734db4091e249079c"
   license "MIT"
   head "https://github.com/hahwul/dalfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "359843b81c510f220dbf694a4785c082802eb74d742fec10e36ff0e3695bbf53"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57a76e8eb3005eea20562d50c14c0a9eb81a4f19a1a78a97014400cab360d377"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6581ee9f8783e656601b13db8332606709c64da77d4ccc6d866f76db9493830"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df2b56f0847777c5cd44556e391e149b02d62e6caefd93e5c19526b53b2f5b45"
-    sha256 cellar: :any,                 arm64_linux:   "843d23490179ac0e4e3a9ade623444923fd3f7e9da0e1c2112fadb51c5894c90"
-    sha256 cellar: :any,                 x86_64_linux:  "1f9dcd5cac15320e1d53bad4f21efcf1efeafc80c8e5fc37a03f70590e7b99b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "247075c9c3516d4375a19406a9c622636f17cb65c984b1d0b6166b4dfc3aa278"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d4fa457572e78d1c63979128fad4dd8f77487e2e8546e31a647eee86d7e76b55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17c7401104195d51b70f5ad2c6e6bd5c979be7d3a7817778bdfc3e03a302ace6"
+    sha256 cellar: :any,                 arm64_linux:       "61d21077ede7feb05d7965c7834fea001c4cbeace3dcdf64b75aed6b1b9c4c29"
+    sha256 cellar: :any,                 x86_64_linux:      "b518bdc083b7fc1debe252db2a1e4dacb38ece5225c181a2277f4d7e8f311304"
   end
 
   depends_on "rust" => :build

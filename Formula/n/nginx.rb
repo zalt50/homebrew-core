@@ -3,10 +3,10 @@ class Nginx < Formula
   homepage "https://nginx.org/"
   # Use "mainline" releases only (odd minor version number), not "stable"
   # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.31.4.tar.gz"
-  sha256 "e6f20b644a17a643f059ae6467a1971fe2811587d025e071068753a1f1e3b3c3"
+  url "https://nginx.org/download/nginx-1.31.6.tar.gz"
+  sha256 "974ed5298a5e398e008704ed5db284e655fc270c596493dbccada452448fc9f1"
   license "BSD-2-Clause"
-  compatibility_version 9
+  compatibility_version 11
   head "https://github.com/nginx/nginx.git", branch: "master"
 
   livecheck do
@@ -15,15 +15,15 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "97e3a9474ed71b1e1a8ddd0ff2fbdfaedf6b2a4a353a3f04c6dc018da1aa137b"
-    sha256 arm64_sequoia: "70bf740e2f91aac264a5feddbf640941419221c098cfbcc7bcc25ba21d5c5d1d"
-    sha256 arm64_sonoma:  "8ca9aa9b64afb2308cf2aa5deacd9216d81faa6416a03917cf90a0b67a799bfe"
-    sha256 sonoma:        "36820c59c57e3475d7223bf45db677364337321814a662fee1e2d82e1886b8df"
-    sha256 arm64_linux:   "2223ee3275c4a7e64aa582836d4ffdc2d5ca7847fc1b5bd65bd833130864f510"
-    sha256 x86_64_linux:  "4e860482c18034ffb40b230bbb10971807e47fbbab4e8e3e000cc5d71e78696f"
+    rebuild 1
+    sha256 arm64_golden_gate: "a0adfa614cd117c10a6944942f6c054b9f80d6cb87bc395eee08bee298c6d320"
+    sha256 arm64_tahoe:       "7d1f7ba9e21db0602bc1eee30fca7562496e3639794316b1a301dd011ee29003"
+    sha256 arm64_sequoia:     "1660d7abde703fd3f02c4019eadd41635843ad72dff68d26a39dfde9da1a69be"
+    sha256 arm64_linux:       "c390da25705b43679fe6302c02252743f03466156d0ca6b2f464ea7da4da5721"
+    sha256 x86_64_linux:      "20ca5e6cf3194cac5f472054e1c3d770d9b9e6b48fd8faff86952df6c9336bff"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "xz" => :build
@@ -36,6 +36,9 @@ class Nginx < Formula
   # Allow broken symlink to be created by post install
   skip_clean "html"
 
+  # Test starts a local nginx server
+  allow_network_access! :test
+
   def install
     # keep clean copy of source for compiling dynamic modules e.g. passenger
     (pkgshare/"src").mkpath
@@ -47,8 +50,8 @@ class Nginx < Formula
       s.gsub! "    #}\n\n}", "    #}\n    include servers/*;\n}"
     end
 
-    cc_opt = "-I#{formula_opt_include("pcre2")} -I#{formula_opt_include("openssl@3")}"
-    ld_opt = "-L#{formula_opt_lib("pcre2")} -L#{formula_opt_lib("openssl@3")}"
+    cc_opt = "-I#{formula_opt_include("pcre2")} -I#{formula_opt_include("openssl@4")}"
+    ld_opt = "-L#{formula_opt_lib("pcre2")} -L#{formula_opt_lib("openssl@4")}"
 
     args = %W[
       --prefix=#{prefix}

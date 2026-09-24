@@ -14,12 +14,13 @@ class LlvmAT20 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "b95ac9e58b54a35797d89b3ac9ec2d56411b47d3942851567a6eb169e5dc9c09"
-    sha256 cellar: :any,                 arm64_sequoia: "f58e2963c383af35064c7aa47790799a0ca0974a471727c7b5f0b278fd4e1247"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fefd983fc606f81c1715af4dbecfa8fbe2967196e06bcac6d63baad878c511d"
-    sha256 cellar: :any,                 sonoma:        "62c1cbffed8c724ef4201147e6bc80830e25456f465b09ec904731256741be09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73197c8ca4e845ec81c221c8f4138fd12b2b0b307e2b75448a75553cb85e1af1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e163127510058e535bb522054238cdf928f676b7c83aa1c4a224726e2225a50c"
+    sha256 cellar: :any,                 arm64_golden_gate: "e0e1b62f176f069b0fa03f7bd987a54258924b3160b27f2412ee5f803a0e9781"
+    sha256 cellar: :any,                 arm64_tahoe:       "b95ac9e58b54a35797d89b3ac9ec2d56411b47d3942851567a6eb169e5dc9c09"
+    sha256 cellar: :any,                 arm64_sequoia:     "f58e2963c383af35064c7aa47790799a0ca0974a471727c7b5f0b278fd4e1247"
+    sha256 cellar: :any,                 arm64_sonoma:      "1fefd983fc606f81c1715af4dbecfa8fbe2967196e06bcac6d63baad878c511d"
+    sha256 cellar: :any,                 sonoma:            "62c1cbffed8c724ef4201147e6bc80830e25456f465b09ec904731256741be09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "73197c8ca4e845ec81c221c8f4138fd12b2b0b307e2b75448a75553cb85e1af1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e163127510058e535bb522054238cdf928f676b7c83aa1c4a224726e2225a50c"
   end
 
   keg_only :versioned_formula
@@ -47,8 +48,30 @@ class LlvmAT20 < Formula
     resolves "https://github.com/llvm/llvm-project/pull/111397"
   end
 
-  def python3
-    "python3.14"
+  # Apply MacPorts backports of upstream commits needed to fix macOS 27
+  patch do
+    url "https://raw.githubusercontent.com/macports/macports-ports/437657215603f3ec4801195efa6b80e47b9faeab/lang/llvm-20/files/0140-llvm-no-cmp-spec.patch"
+    sha256 "65872f978b5c8c06b8821b327f3e998d521a0630bb4333bff44df5d55349b634"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/160804"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/macports/macports-ports/437657215603f3ec4801195efa6b80e47b9faeab/lang/llvm-20/files/0141-infinity_nan.patch"
+    sha256 "79331012c6a2ec6cac4b3c2d572cba5825f7f6559a10329730cf19c19c623c17"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/164348"
+  end
+
+  # Backport commits for macOS 27 SDK
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/477a65a051ce151895193f8dede1262fdc251132.patch?full_index=1"
+    sha256 "4bbdb4ab0eaefce2403fdfa96929026940f153f8e7421feba288cbc3dd8fe6e2"
+    type :backport
+  end
+  patch do
+    file "Patches/llvm/21.x-arm64e.x1-support.patch"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/222721"
   end
 
   def clang_config_file_dir
@@ -95,6 +118,7 @@ class LlvmAT20 < Formula
       -DLLVM_ENABLE_EH=OFF
       -DLLVM_ENABLE_FFI=ON
       -DLLVM_ENABLE_RTTI=ON
+      -DLLVM_INCLUDE_BENCHMARKS=OFF
       -DLLVM_INCLUDE_DOCS=OFF
       -DLLVM_INCLUDE_TESTS=OFF
       -DLLVM_INSTALL_UTILS=ON

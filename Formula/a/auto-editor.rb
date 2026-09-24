@@ -1,25 +1,25 @@
 class AutoEditor < Formula
   desc "Effort free video editing!"
   homepage "https://auto-editor.com"
-  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.5.0.tar.gz"
-  sha256 "c2e2328d38f54428f9efde76e2e3f51716e82b34ffb3d75337e0826fa08d4e1e"
+  url "https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.6.0.tar.gz"
+  sha256 "9cea80d4c58bd454dc760e587cd73a419bd997cdcdfffc84382ea95dd8d72902"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a67fe98e1592de90fb9e5e9df84ffa5309fb2a401530f3ad05f3b5094f636027"
-    sha256 cellar: :any, arm64_sequoia: "92e733bb0e13c189164da633c92e1c8a8a401cbe75e4f28bce3c012fbb1cf0a6"
-    sha256 cellar: :any, arm64_sonoma:  "ed8c96632687ac7bfaefbeddc5b6aba6102c44c7c4961f6a4e601c5906923414"
-    sha256 cellar: :any, sonoma:        "4ccb34a72c7137ae8d7df12cc8393dad9d083fe7faac10581bef3b913f169dec"
-    sha256 cellar: :any, arm64_linux:   "0dbcf5e380bcdab7144da792f838bfd031ccfc52a8a034800cbfc292bd7b7745"
-    sha256 cellar: :any, x86_64_linux:  "96873d7b907125846b130598bc006e89ce6c90a794e1a75a387095d1b3dce9a9"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "97d2aa8abbd483d697d5a32a86e1721fc01776521e17ca3da5173786b60569e9"
+    sha256 cellar: :any, arm64_tahoe:       "cc12aeb050ebce237c8631520ec0ea7da3d6f98fde7e7a9497bef194100d5695"
+    sha256 cellar: :any, arm64_sequoia:     "c41fc98f750291eb3fc649a43a1b30f9f44f22073d6b8df86c3dab9e469ada69"
+    sha256 cellar: :any, arm64_linux:       "332e6c7accdaab5210b6b7f43954ab31a5874229f0fd4c1308265e1b119958e2"
+    sha256 cellar: :any, x86_64_linux:      "3eef83b9cb6ed93dda604be1ee9920dd1a552e693a9100045767ad423f52c35b"
   end
 
   depends_on "nim" => :build
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "ggml"
-  depends_on "whisper-cpp"
+  depends_on "whisper.cpp"
 
   def install
     system "nimble", "brewmake"
@@ -34,7 +34,7 @@ class AutoEditor < Formula
     system bin/"auto-editor", mp4in, "--edit", "none"
     assert_match(/Duration: 00:00:05\.00,.*Video: h264/m, shell_output("ffprobe -hide_banner #{mp4out} 2>&1"))
 
-    whisper = Formula["whisper-cpp"]
+    whisper = Formula["whisper.cpp"]
     system bin/"auto-editor", "whisper", whisper.pkgshare/"jfk.wav",
       whisper.pkgshare/"for-tests-ggml-tiny.bin"
   end

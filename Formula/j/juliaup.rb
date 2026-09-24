@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.22.2.tar.gz"
-  sha256 "4d52a3827091c0e75ac05040fd22fa22e3f34c4ed4370440fcbe717ccb2f09ee"
+  url "https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.22.7.tar.gz"
+  sha256 "220d0d58db0a46d8676cc4972149789899c1e68386a5260b08e135622921d7bf"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "main"
 
@@ -12,21 +12,27 @@ class Juliaup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e518e94b42e5284ed5be6630c983dbc8856a673045784974aa15fd9a740133f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f84edcb9ebbc98656bb200e231994fa9b4a52012b618b0c384b4d02e7d9890bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "293ffdc2ebbda7f758ad2ce54938de296af66ff21653d5eac0646a6752ee7b74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d021c6b88afb82636f4797d3d9cb648a2343c288e98ca8cfacc837e78c0dcc3c"
-    sha256 cellar: :any,                 arm64_linux:   "c30a1daf87fb1acc4f4b4434b36becfaf6c7c8999b4c26b8fff3ce58cff58c37"
-    sha256 cellar: :any,                 x86_64_linux:  "fa91179fb2a2a9f2c51037e599012aeb0930febfcc6c42cf44d105e480307c3c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "28fd7573fa265f1630f999b3be7ad16b4c3de4c4b6858e22616b090eb3ea6efa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5209c50469da2e6e83bd83411528f24984cc95fdd297eb05f4e686233bec6a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "25cd8aefd060f7e6c8ef5b820186b99ed8bdafed389b6b4344f001be86ef6570"
+    sha256 cellar: :any,                 arm64_linux:       "0bbb1af8d6ff35b461608eb349d4958e26950aa9471d596dffdf16f38d974e47"
+    sha256 cellar: :any,                 x86_64_linux:      "d73ccbdbbf3771580840620db5cb9dba0bd39db88652fa91e16dc7f9b03d1256"
   end
 
   depends_on "rust" => :build
 
   conflicts_with "julia", because: "both install `julia` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", "--bin", "juliaup", *std_cargo_args
     system "cargo", "install", "--bin", "julialauncher", *std_cargo_args(features: "binjulialauncher")
+    system "cargo", "install", *std_cargo_args(path: "juliaupgui")
 
     bin.install_symlink "julialauncher" => "julia"
 
@@ -36,5 +42,6 @@ class Juliaup < Formula
   test do
     expected = "Default  Channel  Version  Update"
     assert_equal expected, shell_output("#{bin}/juliaup status").lines.first.strip
+    assert_path_exists bin/"juliaupgui"
   end
 end

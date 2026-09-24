@@ -1,8 +1,8 @@
 class Libblastrampoline < Formula
   desc "Using PLT trampolines to provide a BLAS and LAPACK demuxing library"
   homepage "https://github.com/JuliaLinearAlgebra/libblastrampoline"
-  url "https://github.com/JuliaLinearAlgebra/libblastrampoline/archive/refs/tags/v5.15.0.tar.gz"
-  sha256 "69e0be57ebf037c1997c35edf03565614cd3c6863a695d01348a21bf1f482e74"
+  url "https://github.com/JuliaLinearAlgebra/libblastrampoline/archive/refs/tags/v5.16.0.tar.gz"
+  sha256 "0067b9a0044011ba0a443c9d7677c574d2bfd419fc27dc080b33005cce2ab92d"
   license all_of: [
     "MIT",
     "BSD-2-Clause-Views", # include/common/f77blas.h
@@ -10,12 +10,11 @@ class Libblastrampoline < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "438c7cc5a4b1c5272a7daccb970d49d1e85336e12c0c04861e0ed41fd81f9628"
-    sha256 cellar: :any,                 arm64_sequoia: "16a9fc5256cb99de39f67c06400489615b3545c15c20c20618e0e35de21f544b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b26660fb5231a8e624e159ee93dce94bba7ddeacfc4393498e7cdce2b49190d"
-    sha256 cellar: :any,                 sonoma:        "ef556a70b35c24ddfbac6c3ff5bb5d7dc9ee0d655724f8747d99de4b75b1cb58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e030ff06d4bcdc58f44883a75949da9087a9eb031bd395a0c176686a3f07efd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b5587f9b1d19d6bcd93cc3520ef040288b9ee5ef8558f6efae1da054aae0eb8"
+    sha256 cellar: :any, arm64_golden_gate: "59cbab5b3da6915ee96a4679b2c967609d042509774b610b4aca260460e6dc43"
+    sha256 cellar: :any, arm64_tahoe:       "be4220763373b3e66590e14be7b5481e997bbe8bd54156571210e4f9636126cc"
+    sha256 cellar: :any, arm64_sequoia:     "d402d97b4d342aa444e39bed5e19193659d3120779e6209f3be42294c75c108a"
+    sha256 cellar: :any, arm64_linux:       "52a0072fd9d4b6b84248585dae972baab7dbaddcd39b3b727394a8d05702db14"
+    sha256 cellar: :any, x86_64_linux:      "bd488926e5bf9867a561ca837d22e2373fd106bf049c6dddffc1803828166157"
   end
 
   depends_on "openblas64" => :test
@@ -50,13 +49,9 @@ class Libblastrampoline < Formula
     system ENV.cc, "dgemm_test.c", "-I#{include}", "-L#{lib}", "-lblastrampoline", "-o", "dgemm_test"
     system ENV.cc, "api_test.c", "-I#{include}", "-L#{lib}", "-lblastrampoline", "-o", "api_test"
 
-    test_libs = [shared_library("libopenblas64_")]
-    if OS.mac?
-      test_libs << "/System/Library/Frameworks/Accelerate.framework/Accelerate"
-      ENV["DYLD_LIBRARY_PATH"] = formula_opt_lib("openblas64").to_s
-    else
-      ENV["LD_LIBRARY_PATH"] = formula_opt_lib("openblas64").to_s
-    end
+    # Full path as `shell_output` runs via SIP-protected `/bin/sh` which strips `DYLD_*`
+    test_libs = [(formula_opt_lib("openblas64")/shared_library("libopenblas64_")).to_s]
+    test_libs << "/System/Library/Frameworks/Accelerate.framework/Accelerate" if OS.mac?
 
     test_libs.each do |test_lib|
       with_env(LBT_DEFAULT_LIBS: test_lib) do

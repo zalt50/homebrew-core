@@ -1,8 +1,8 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
   homepage "https://github.com/github/github-mcp-server"
-  url "https://github.com/github/github-mcp-server/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "92ecb1619fb4c1970658be4b44dabd3445071fea70fae6d5b95284c4223062cb"
+  url "https://github.com/github/github-mcp-server/archive/refs/tags/v1.12.2.tar.gz"
+  sha256 "b76d212a88b72048f45d79c2ac4010de46918a4200714f9b9d42ff536bd6308d"
   license "MIT"
   head "https://github.com/github/github-mcp-server.git", branch: "main"
 
@@ -12,15 +12,20 @@ class GithubMcpServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64883cf129da0d6a96aacff6d99d07633845e4b7a108c69737623a5825a22785"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64883cf129da0d6a96aacff6d99d07633845e4b7a108c69737623a5825a22785"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64883cf129da0d6a96aacff6d99d07633845e4b7a108c69737623a5825a22785"
-    sha256 cellar: :any_skip_relocation, sonoma:        "654aaf3ad9fc3a8df11266460d71e0854b4b1d7bc3b97c8d81ac7e0fce93afb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0c3efd1eea6af7c03eb28d5330f6499acad2144f2b96759b4867c9264fc1eed"
-    sha256 cellar: :any,                 x86_64_linux:  "198f189fc46201638b0b9b8e56c1c846e72565decc2420fc2433f83cae8a6966"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e0cac811ce080a911769d09440ca60435e817c6fee4ea9269ee0dc3f9e1f4b33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e0cac811ce080a911769d09440ca60435e817c6fee4ea9269ee0dc3f9e1f4b33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0cac811ce080a911769d09440ca60435e817c6fee4ea9269ee0dc3f9e1f4b33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "383b63e6e9455e480e81461aba47fd37a2eb473c95f1513475c0c4c1063dfe86"
+    sha256 cellar: :any,                 x86_64_linux:      "6daf30ad4ccba21acc5649212125175bdbd8349a49982a81a951d31245b4edd1"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/github-mcp-server"

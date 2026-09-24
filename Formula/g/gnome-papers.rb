@@ -1,18 +1,16 @@
 class GnomePapers < Formula
   desc "Document viewer for PDF and other document formats aimed at the GNOME desktop"
   homepage "https://apps.gnome.org/Papers/"
-  url "https://download.gnome.org/sources/papers/50/papers-50.2.tar.xz"
-  sha256 "ae1bdcf1cd47cb50c9d84765784607f81c72df17dd6e6ad933fea14173d2b9f4"
+  url "https://download.gnome.org/sources/papers/51/papers-51.0.tar.xz"
+  sha256 "4b8caf527d85f7eabc63ebe9d2320e0490653c2e138b88fbf42e6f41dd3e451c"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "3f7bb27f681c69012d108287647ae77c02ad7b56be6d60477aa70f39bc4d0486"
-    sha256 arm64_sequoia: "0a7eb9f5d98d177e80765e227713aea126a80f02864e27e72776dbba9c3fc046"
-    sha256 arm64_sonoma:  "feb32fc65382b39775ee259b439866b6d04715d216a334c4de2a9206b5a87b11"
-    sha256 sonoma:        "b02a90873c3167c99796f386f3db964fc49a214271dc599ed2fe44d2cdde2cff"
-    sha256 arm64_linux:   "24661722391d382acff3ae510a5f18cddff50e849fa97bdd5ee142cf483fae90"
-    sha256 x86_64_linux:  "290f60f324b8222008683b05d02dc55495f0f76f04c3394ffe58b635e4a0a3b8"
+    sha256 arm64_golden_gate: "5f79227a03d73e3ded412a57b451a17dd0dafbd2cee4e2cfcfd06856e932909e"
+    sha256 arm64_tahoe:       "8c417ee882f3a398b327b4f06a37bd3118427a082bb78f60f3c84782ae934f67"
+    sha256 arm64_sequoia:     "6a2c9eda37d82204744dd3ff74b28b2b8a98cdf5798164955514c9f43951d500"
+    sha256 arm64_linux:       "bcaa560f7eba27c0388a6e4f11d26d3b9afd00957143bf17656b49e03d325f41"
+    sha256 x86_64_linux:      "63205c6e810ab0bce2e116ae6ce493f4c9320b878b622447fd6fa4ee6cfc89b3"
   end
 
   depends_on "blueprint-compiler" => :build
@@ -96,35 +94,35 @@ class GnomePapers < Formula
 
     resource("test-pdf").stage testpath
     (testpath/"test.c").write <<~C
+      #include <fcntl.h>
       #include <glib.h>
       #define I_KNOW_THE_PAPERS_LIBS_ARE_UNSTABLE_AND_HAVE_TALKED_WITH_THE_AUTHORS
       #include <papers-document.h>
       #include <papers-view.h>
 
       int main(void) {
-        g_autoptr(GFile) file = NULL;
+        g_autoptr(GError) error = NULL;
         g_autoptr(PpsJob) job = NULL;
         g_autoptr(PpsDocument) document = NULL;
         g_autoptr(PpsPage) page = NULL;
-        g_autofree gchar *uri = NULL;
-        const gchar *file_path = "text.pdf";
+        int fd;
         gint n_pages;
         gboolean has_backend;
 
         has_backend = pps_init();
         g_assert_true(has_backend);
 
-        file = g_file_new_for_path(file_path);
-        g_assert_nonnull(file);
-
-        uri = g_file_get_uri(file);
-        g_assert_nonnull(uri);
+        fd = open("text.pdf", O_RDONLY);
+        g_assert_cmpint(fd, !=, -1);
 
         job = pps_job_load_new();
         g_assert_nonnull(job);
 
-        pps_job_load_set_uri(PPS_JOB_LOAD(job), uri);
+        /* Pass the MIME type explicitly; sniffing it needs a MIME database or LaunchServices */
+        pps_job_load_take_fd(PPS_JOB_LOAD(job), fd, "application/pdf");
         pps_job_run(job);
+        pps_job_is_succeeded(job, &error);
+        g_assert_no_error(error);
 
         document = pps_job_load_get_loaded_document(PPS_JOB_LOAD(job));
         g_assert_nonnull(document);

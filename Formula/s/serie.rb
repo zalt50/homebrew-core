@@ -1,18 +1,17 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https://lusingander.github.io/serie/"
-  url "https://github.com/lusingander/serie/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "91d7fcf304a53d7645922bc2304337f54688a219831cc23c2dd9cbf24ee9b753"
+  url "https://github.com/lusingander/serie/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "560e27fabdd6f45f44fe5f1200c009c0164fcf41eb7e11370788e939c265bb82"
   license "MIT"
   head "https://github.com/lusingander/serie.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5c5f1dd67389f31445ea2be56045df8d35dd85a73a754647a125b594c48860c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eefab2e24b6ff913addb6674696baa67dd51adee9963dc00e9b695ce414ab0f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b1fbdcb1b022a48dc4eff55d88390f97c28c75bef2459097806ef97a83e4beb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9d0aac496f4f08d839210179ac911ddacd3048513536271af1025b186f8af30"
-    sha256 cellar: :any,                 arm64_linux:   "0cf023fd190b76a795f4ba94d9ef92ce007c1ddaaff1ac9618b93cad806a5264"
-    sha256 cellar: :any,                 x86_64_linux:  "cc4986fc357a626784745870932ea049ecbbaba9da629d5987983756becd6a70"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "706f39b21421a7d7cee5d34d1607ce7991074101270e1caf86225f3a491a6924"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c52454dc782733ef4fc03a997e3555ac91fcf60b94b9a6bb68c93a1b1e2d6913"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "46ad33d2e7cec4a99881febc311ec39d9f2dbf5b826d58b9ace4c089fc4a78a4"
+    sha256 cellar: :any,                 arm64_linux:       "1f514665eeba99e0a4984bce34bb5d6578eccb448b9a3f6cc6e2d4b6ffcecd46"
+    sha256 cellar: :any,                 x86_64_linux:      "87614acabacd7c5fff3cad2189d565fe3ed17e3cc472e4a1df4c90b48e5267bd"
   end
 
   depends_on "rust" => :build
@@ -37,7 +36,6 @@ class Serie < Formula
         r.winsize = [80, 130]
       end
       sleep 1
-      sleep 2 if OS.mac? && Hardware::CPU.intel?
       assert_match "Initial commit", output_log.read
     ensure
       Process.kill("TERM", pid)

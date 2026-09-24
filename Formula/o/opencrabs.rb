@@ -1,18 +1,17 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.83.tar.gz"
-  sha256 "8cb6bf692625ef50e2f560eb4460b033ddeacb4855192256fea933735c618776"
+  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "1b2ffbf219c4b63108eab557926e116618e34f949dd3ffb39d28d8e3f5190425"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d53a182e8d86dfe0d8664728a89085d437a5b93af3bf47a3e2f10e5a7b225fd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e8f47ae857ff526d7c985156121f31885f2a773f3ff0804207383d43ce3f6fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0c5c8529547f2ebd2059c08573b8b4714eb3e2be5c637164b836e307081a02d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b76d2d330246cfd685d8ffbda6d77d71714487aee018af44a67000249fbb9776"
-    sha256 cellar: :any,                 arm64_linux:   "2ee3ac74f3bea635e452358c8386fe34f027168bab3c937779eeff3038c78b1c"
-    sha256 cellar: :any,                 x86_64_linux:  "f7030d069e0759b642187ff04ca0aaab82c15cd7408b09bd2a8a45b81ba2200b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "22adbfddcf86c0e64f966cb0a0b71a044c8710506c6e7ddcd156774fb022f5c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1933ee9476c3ecb3a271d37415cc2c469f6f7c23c07b931c8abf5966654bdcc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e278e43bac1ed70190cf64c69273f0388083eabcc11fe53ac94f2fc5ee4760d"
+    sha256 cellar: :any,                 arm64_linux:       "e82fad0a191e400a8476a88eb9447ae37ef266358e4e8b6407d0552b77b4258c"
+    sha256 cellar: :any,                 x86_64_linux:      "248aa0b2c2145603286eea8089791ff12a1c8c32c901a4c6bec1f317364b2186"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +22,13 @@ class Opencrabs < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

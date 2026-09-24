@@ -1,18 +1,22 @@
 class Baguette < Formula
   desc "Headless iOS Simulator manager and host-side input injection for iOS 26"
   homepage "https://tddworks.github.io/baguette/"
-  url "https://github.com/tddworks/baguette/archive/refs/tags/v0.1.96.tar.gz"
-  sha256 "136047a46e2e1c2eae8320ed83352ed8407cf0b832d1f42aad26998def977272"
+  url "https://github.com/tddworks/baguette/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "069dbafb2d3f7fa70faca0e0fcc1611df9a2300c5d5e4e747fbe4f410eab3635"
   license "Apache-2.0"
   head "https://github.com/tddworks/baguette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe: "b2a703e771c4c7f7243ec060aa57ea710fadcfb646c269b56ec28beb9e9cc343"
+    sha256 cellar: :any, arm64_golden_gate: "8896f08a53662a1e31c4ca917fa943c0331508264b4c8facae2cbc346a60e942"
+    sha256 cellar: :any, arm64_tahoe:       "c61e0dfc0fd8c9cb5769de73c32fc04e08153286a780b0b2463c6ff06cb27dbe"
   end
 
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
   depends_on macos: :tahoe
+
+  # `swift build` fetches packages
+  allow_network_access! :build
 
   def install
     # replace version like upstreams release process
@@ -60,6 +64,8 @@ class Baguette < Formula
     libexec.install ".build/release/Baguette" => "baguette"
     libexec.install ".build/release/Baguette_Baguette.bundle"
     bin.install_symlink libexec/"baguette"
+
+    deuniversalize_machos libexec/"Baguette_Baguette.bundle/Contents/Resources/HingeControl/HingeControl"
   end
 
   test do

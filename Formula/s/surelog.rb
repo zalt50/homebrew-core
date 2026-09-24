@@ -7,12 +7,13 @@ class Surelog < Formula
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "547b3f5a886b3dcc10d263a695f2152995c537de2216e8395b4c43e8ad26a35c"
-    sha256 cellar: :any, arm64_sequoia: "de8bb0dc0784c3ef42a0722424bc6adcb82bb05224a2829d8d7191661b1481c1"
-    sha256 cellar: :any, arm64_sonoma:  "6fb741dd920be55b4406225fe0b09be7c5d3ed1b9c0a486ea59d9da5fc7b66ef"
-    sha256 cellar: :any, sonoma:        "f1fd02f85390a41a18e256426a2a413d54835b446120942ec205eb258494714c"
-    sha256 cellar: :any, arm64_linux:   "e1cc82bbb403c7151ae60ccae58bb734938a01c50426756abc23b9b86a9a3b8f"
-    sha256 cellar: :any, x86_64_linux:  "a4a163f552028171132efe8e46165bb09113d615f307d457df4176098b24d5ca"
+    sha256 cellar: :any, arm64_golden_gate: "dd34b0bb4a68164b2b96ce7f785df684bc270f998c67960806d0f2f499197eb7"
+    sha256 cellar: :any, arm64_tahoe:       "547b3f5a886b3dcc10d263a695f2152995c537de2216e8395b4c43e8ad26a35c"
+    sha256 cellar: :any, arm64_sequoia:     "de8bb0dc0784c3ef42a0722424bc6adcb82bb05224a2829d8d7191661b1481c1"
+    sha256 cellar: :any, arm64_sonoma:      "6fb741dd920be55b4406225fe0b09be7c5d3ed1b9c0a486ea59d9da5fc7b66ef"
+    sha256 cellar: :any, sonoma:            "f1fd02f85390a41a18e256426a2a413d54835b446120942ec205eb258494714c"
+    sha256 cellar: :any, arm64_linux:       "e1cc82bbb403c7151ae60ccae58bb734938a01c50426756abc23b9b86a9a3b8f"
+    sha256 cellar: :any, x86_64_linux:      "a4a163f552028171132efe8e46165bb09113d615f307d457df4176098b24d5ca"
   end
 
   depends_on "antlr" => :build
@@ -31,13 +32,15 @@ class Surelog < Formula
 
   conflicts_with "open-babel", because: "both install `roundtrip` binaries"
 
+  deny_network_access!
+
   def install
     antlr = Formula["antlr"]
     system "cmake", "-S", ".", "-B", "build",
                     "-DANTLR_JAR_LOCATION=#{antlr.opt_prefix}/antlr-#{antlr.version}-complete.jar",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DPython3_EXECUTABLE=#{which("python3.14")}",
+                    "-DPython3_EXECUTABLE=#{python3}",
                     "-DSURELOG_BUILD_TESTS=OFF",
                     "-DSURELOG_USE_HOST_ALL=ON",
                     "-DSURELOG_WITH_ZLIB=ON",

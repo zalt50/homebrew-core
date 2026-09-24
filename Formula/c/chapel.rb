@@ -3,6 +3,7 @@ class Chapel < Formula
 
   desc "Programming language for productive parallel computing at scale"
   homepage "https://chapel-lang.org/"
+  # TODO: Try building on macOS 27 in a future release
   url "https://github.com/chapel-lang/chapel/releases/download/2.9.0/chapel-2.9.0.tar.gz"
   sha256 "d91ececfc070f0e94c979dd08cdd3f6da84db4ee48fe06f3187ad259ea9553e7"
   license "Apache-2.0"
@@ -28,6 +29,11 @@ class Chapel < Formula
   depends_on "pkgconf"
   depends_on "python@3.14"
 
+  on_macos do
+    # FIXME: chpl hits an internal error when building mason on macOS 27
+    depends_on maximum_macos: [:tahoe, :build]
+  end
+
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match? "^llvm" }
   end
@@ -44,10 +50,7 @@ class Chapel < Formula
 
   def install
     # Always detect Python used as dependency rather than needing aliased Python formula
-    python = "python3.14"
-    # It should be noted that this will expand to: 'for cmd in python3.14 python3 python python2; do'
-    # in our find-python.sh script.
-    inreplace "util/config/find-python.sh", /^(for cmd in )(python3 )/, "\\1#{python} \\2"
+    inreplace "util/config/find-python.sh", /^(for cmd in )(python3 )/, "\\1#{python3.basename} \\2"
 
     # We link jemalloc dynamically, so its `Libs.private` only adds a duplicate C++ runtime
     inreplace "util/chplenv/chpl_jemalloc.py",
@@ -66,7 +69,7 @@ class Chapel < Formula
 
     # This ENV avoids a problem where cmake cache is invalidated by subsequent make calls
     ENV["CHPL_CMAKE_USE_CC_CXX"] = "1"
-    ENV["CHPL_CMAKE_PYTHON"] = python
+    ENV["CHPL_CMAKE_PYTHON"] = python3
 
     # This ENV avoids issues with GASNet picking up the wrong linker
     ENV["CHPL_IGNORE_GASNET_LD"] = "1"

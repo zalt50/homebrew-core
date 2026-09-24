@@ -1,19 +1,26 @@
 class Labctl < Formula
   desc "CLI tool for interacting with iximiuz labs and playgrounds"
   homepage "https://labs.iximiuz.com/playgrounds"
-  url "https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.109.tar.gz"
-  sha256 "56cf54c4630cda92bd6608ac3648b8fd67aabecab18510aa03773a21137515f6"
+  url "https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.112.tar.gz"
+  sha256 "3579988a92e6d75ca94c4ac4a58b92a791d0dfba87e146f5a32cdd7bb0c2a170"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55b30b3bc7334669b6cde98215921c3f4a178652f792a835af135ba6c49d2110"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55b30b3bc7334669b6cde98215921c3f4a178652f792a835af135ba6c49d2110"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55b30b3bc7334669b6cde98215921c3f4a178652f792a835af135ba6c49d2110"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08b389af3f76585c891400a3ab5f47e5c7b6d82fbfc293efc81cb8067946c14a"
-    sha256 cellar: :any,                 x86_64_linux:  "459b3b280ec267a7c0163466b80ed411455da8329c3bdf3797df45b8bef83de3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "07c8394bc77209baacd5668b227996cb3659d5fdac4bb1f135db5bf8880a93c0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "07c8394bc77209baacd5668b227996cb3659d5fdac4bb1f135db5bf8880a93c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "07c8394bc77209baacd5668b227996cb3659d5fdac4bb1f135db5bf8880a93c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "07c8394bc77209baacd5668b227996cb3659d5fdac4bb1f135db5bf8880a93c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "aa9a18503e9ed0fea6194775e7f0ae5831896bdaacc561a3a14dbc4b6bd51b8d"
+    sha256 cellar: :any,                 x86_64_linux:      "170b7798d20394e344cef99d1cb25ba0ce877885c915f22ecf912291730de61a"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

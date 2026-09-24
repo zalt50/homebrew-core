@@ -1,17 +1,18 @@
 class Atuin < Formula
   desc "Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh/"
-  url "https://github.com/atuinsh/atuin/releases/download/v18.20.1/source.tar.gz"
-  sha256 "c4faccd208fe3b407e83c6943b2d81081a94fe836da9b67f1a7b4d4f4bbb0fab"
+  url "https://github.com/atuinsh/atuin/releases/download/v18.23.0/source.tar.gz"
+  sha256 "64b4b9b0f84ef34bcfa88e992d38cc0b95d3cf1f6d470bb695d3ef0231445b26"
   license "MIT"
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71a1c66c832ad311c1b4cd1deb5fbe255503ccda675c5f3c670f60e51145548e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b857dbf4fe716f7e5664d434e1a8d2809939d1d85014610ab7be3429992bd6d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b5da9547442c2edff838b2fc2076cc11350e522dea3fb465e2944e211ae48e5"
-    sha256 cellar: :any,                 arm64_linux:   "c8427c2bb00496870a15f39d08938907ae9f674f7e10c2612240bd70c9660246"
-    sha256 cellar: :any,                 x86_64_linux:  "a88e6ec3b454b3d0156620867b2dbdd08bef3c06abf3f19067c4a3600c51e144"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "37019d5625e52010e7cce5cfa1c6dbfcdf1148a2b1bdd076efc771bc06030138"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "99ec9f0401ff11313253019ef0c0637245cf436ad7522b9a2a93050d719c59c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ba84ed3cb5eb293b3b8d1c7bd41166e0ae955a7bef86b783227e03517edf5fa"
+    sha256 cellar: :any,                 arm64_linux:       "460253ab261880268c9c88bc24e37fd00a743c5529e9817e3004fddb71881015"
+    sha256 cellar: :any,                 x86_64_linux:      "74ee10928bac474c04474d28ab4d69bef614192d014703d687a5ec467338fb1b"
   end
 
   depends_on "pkgconf" => :build
@@ -19,7 +20,13 @@ class Atuin < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

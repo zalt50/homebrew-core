@@ -1,18 +1,18 @@
 class SpotifyPlayer < Formula
   desc "Command driven spotify player"
   homepage "https://github.com/aome510/spotify-player"
-  url "https://github.com/aome510/spotify-player/archive/refs/tags/v0.24.1.tar.gz"
-  sha256 "211da7f76d412708315ccd36b77424bd53bc4ad19813ed69de44451779812f1f"
+  url "https://github.com/aome510/spotify-player/archive/refs/tags/v0.25.1.tar.gz"
+  sha256 "2f9f28e7ea74e14eb3be91d2655dd4666f2821cc58f74ec5db7640580e6a73bb"
   license "MIT"
   head "https://github.com/aome510/spotify-player.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db22d6b4ba7fff47594a867c7ec81ab50489e16b45190a3209086c9b9fa365a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c9f3c68992746840ffdbca379fe4691c57fc43f425a42e8a976be333b4dba5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab0b47ed58794f384550de3381493950a7354cd8afc8f5821f1e9de8190ac8e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9482fce68c1132819b380aea1795cb2e70f31e9fe9982d1dc407c05f4360694"
-    sha256 cellar: :any,                 arm64_linux:   "cc2e4c5b8bcb035b3d210149592e8d44f1195e38326136250590f25d675105d2"
-    sha256 cellar: :any,                 x86_64_linux:  "ce23435b21baba082dbaa40ab180333bfc3510fb5079d225babc40bef9ce803c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "87de5d8f3d29149224ac39f04c1c1e7988cc1b98ab57e7dc97cc61b695015ae7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "39105f6ba7355064d23f2764dbf6b58f23cb12c2c12faf716600ca47e5404e2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c48e80b40cf6489be7aeb8dae09499114f030604f9eefefe16225d3f41c3eb2b"
+    sha256 cellar: :any,                 arm64_linux:       "0811b62641b633fab090151cfc7ed109b147b8798f6a739edc168222ce39707c"
+    sha256 cellar: :any,                 x86_64_linux:      "f33a5f80811ad9b3a5a404656dc43646deab883e58374826d7da23c675755968"
   end
 
   depends_on "pkgconf" => :build
@@ -21,12 +21,18 @@ class SpotifyPlayer < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "dbus"
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     features = ["image", "notify"]
     system "cargo", "install", *std_cargo_args(path: "spotify_player", features:)
@@ -36,8 +42,10 @@ class SpotifyPlayer < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/spotify_player --version")
 
-    cmd = "#{bin}/spotify_player -C #{testpath}/cache -c #{testpath}/config 2>&1"
-    _, stdout, = Open3.popen2(cmd)
-    assert_match "https://accounts.spotify.com/authorize", stdout.gets("\n")
+    assert_match "complete -F _spotify_player", shell_output("#{bin}/spotify_player generate bash")
+
+    (testpath/"config/app.toml").write "client_id = 123\n"
+    output = shell_output("#{bin}/spotify_player -C #{testpath}/cache -c #{testpath}/config 2>&1", 1)
+    assert_match "invalid type: integer `123`, expected a string", output
   end
 end

@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://github.com/coder/coder/archive/refs/tags/v2.35.6.tar.gz"
-  sha256 "b6757b3e89c686e4b35490a0ef0080be05d8fc1d2f911c36c8516c04a3420a40"
+  url "https://github.com/coder/coder/archive/refs/tags/v2.36.6.tar.gz"
+  sha256 "8608be7d0e14e4d7a38b3cc958a14fca18ec6d4adc509a8562f77fc7a35e7f3e"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
 
@@ -15,16 +15,21 @@ class Coder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d4302e310a7919077188154c37607b8c1c330c5b565750d19195843f278efb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0aff26c13b1aef60b40bd266ea44d22b6e3520e04fb0fb1f55ee63911e5c9b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b21a6923d338bf54d7ce58e364cb89797026baa1d0838dc0d09025e013869c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8d3e35fc284aa29a3bf1f5b69cc4f39a95af8ac558ff2d5b9b7e3cb9b833010"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20564f6ad561b5f97f635e42f032275916aa4d95281b9a219bce02700ac0ba2b"
-    sha256 cellar: :any,                 x86_64_linux:  "cc66130c217f8ab9ed8679c9bd4c6d92e97c31562cfa5750c67901798242c5e9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "41dfadc32f8c5e803bd0fa9ffba6face713c1e99f546ac3b090423f77814b5d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e326fd73d058db39d39137883290068b47b5da43f47c351c8cc6b5be8f30f92d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ca1ce99bbb2d91d3c62b869804c8007708546cf2f6e8bf24475eb7e706c0d27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "727c520f097da9abe0f3665580feeef67355022c81b6ef4671e5bfed51e46eb4"
+    sha256 cellar: :any,                 x86_64_linux:      "ff96053481da758b5db54e16ca3e2ce758642dbad07c48e894b582b14c74b86c"
   end
 
   # TODO: unpin go@1.26 when coder supports go 1.27
   depends_on "go@1.26" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

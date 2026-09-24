@@ -1,19 +1,17 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
-  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.291.tar.gz"
-  sha256 "90b6c050bdb9bf3c7e6a914ba0be26032dfa2e18074b4a9721a3fb75da3b5d83"
+  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.294.tar.gz"
+  sha256 "e427f1cb9368d00f16ce4b106d6cef0b1a371ef21bbb8f5abf72428c7db51e8e"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b4dc47435323010a5535eaace2fbe668cdbefe466850d64412265c24591c5fa7"
-    sha256 cellar: :any, arm64_sequoia: "83339ba5b91527afde0f0f40ab0247ca85533532a15df35a0634423d984aabf5"
-    sha256 cellar: :any, arm64_sonoma:  "ae4169e8c1d6607a7d52a9d4c411b65c9e28d3dd387e33f12dea9eb13f5ce34a"
-    sha256 cellar: :any, sonoma:        "7b8e0b5267c2dc6ce6723c86c7bec2388d5e67a67f15adf97df0c32fe4b0108b"
-    sha256 cellar: :any, arm64_linux:   "bb0653a65d135445e0cb771174894930d2b738aa007e254121b34a6ba331da87"
-    sha256 cellar: :any, x86_64_linux:  "689c56d4a2ee3e690c2e69f0e956407e5dcfa7e5309b78e6a0297500261c9d83"
+    sha256 cellar: :any, arm64_golden_gate: "e2ffddb57822ef4e4d432cd8221a8c675643103f0b3eccace6f3d9d7202e07da"
+    sha256 cellar: :any, arm64_tahoe:       "2950771dd98bd87f6d87e7241848c3ce00b661fc5c815cc3dc4bede42aff46ba"
+    sha256 cellar: :any, arm64_sequoia:     "696ad9b2f7c5ba78d1cadd487a2865c81e1fececf9695b414b9d30122e8c51bc"
+    sha256 cellar: :any, arm64_linux:       "32beb2e8c84fa75d1658838aff179a8cb2121e100dcd13d4d09ea67b3cf8b21f"
+    sha256 cellar: :any, x86_64_linux:      "ee5d2f24b731656dfa16373ba3ed741e390e720f6397af8f77d0fbdc4d670c04"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +20,8 @@ class Enzyme < Formula
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", "enzyme", "-B", "build", "-DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm", *std_cmake_args

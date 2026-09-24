@@ -16,15 +16,34 @@ class FfmpegAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1dc704f1f0afcbc58eb7de210f3d93ba91555e6372f4d04391f5defdc73a43d8"
-    sha256 arm64_sequoia: "8ac5df0df1c550a37563aaae53a25a1278a0f09684de47057801a01e1427eb68"
-    sha256 arm64_sonoma:  "227185fb2caf48864186b9cc8b4a0ed89a6c439cd1f35bbc9a547e7922338e12"
-    sha256 sonoma:        "74dfca5a2aafed4d8c2ce3eb2f714f1454d792a19a289fa53ef1e6a6affc3f3f"
-    sha256 arm64_linux:   "70fbfe8921b129e23672163719c5f53d7922b3d5958abbf0e3ac843633c12118"
-    sha256 x86_64_linux:  "08697a5ab01ddfec41ad7d4a66285e0424327b5fcbaf4f925a044bf52baed129"
+    sha256 arm64_golden_gate: "ebcdd503f8c7ed31c67b6ec1a15b76eaa7998f58485b2bf558570c21fd4e85e4"
+    sha256 arm64_tahoe:       "1dc704f1f0afcbc58eb7de210f3d93ba91555e6372f4d04391f5defdc73a43d8"
+    sha256 arm64_sequoia:     "8ac5df0df1c550a37563aaae53a25a1278a0f09684de47057801a01e1427eb68"
+    sha256 arm64_sonoma:      "227185fb2caf48864186b9cc8b4a0ed89a6c439cd1f35bbc9a547e7922338e12"
+    sha256 sonoma:            "74dfca5a2aafed4d8c2ce3eb2f714f1454d792a19a289fa53ef1e6a6affc3f3f"
+    sha256 arm64_linux:       "70fbfe8921b129e23672163719c5f53d7922b3d5958abbf0e3ac843633c12118"
+    sha256 x86_64_linux:      "08697a5ab01ddfec41ad7d4a66285e0424327b5fcbaf4f925a044bf52baed129"
   end
 
   keg_only :versioned_formula
+
+  # On deprecation date, we had over 7 versions of FFmpeg. `ffmpeg@4` had
+  # 1,168 installs on request in 90 days.
+  # It has 3,512 installs in 90 days, but this is mostly due to the
+  # ffmepg2theora and moc formuale, that are already deprecated.
+  # Final disabled date for reverse dependecies is 2027-04-06.
+  #
+  # This means ffmpeg@4 no longer
+  # satisfies https://docs.brew.sh/Versions#acceptable-versioned-formulae
+  #
+  # > No more than five versions of a formula (including the main one)
+  # > will be supported at any given time, unless they are popular
+  # > (e.g. have over 1000 analytics 90 days installs of usage)
+  #
+  # Deprecate / disable dates for ffmpeg@4 are set in a conservative
+  # approach to ensure users have ample time to transition.
+  deprecate! date: "2027-05-01", because: :versioned_formula
+  disable! date: "2028-05-01", because: :versioned_formula
 
   depends_on "pkgconf" => :build
 

@@ -1,21 +1,26 @@
 class Buildozer < Formula
   desc "Rewrite bazel BUILD files using standard commands"
   homepage "https://github.com/bazelbuild/buildtools"
-  url "https://github.com/bazelbuild/buildtools/archive/refs/tags/v8.5.1.tar.gz"
-  sha256 "f3b800e9f6ca60bdef3709440f393348f7c18a29f30814288a7326285c80aab9"
+  url "https://github.com/bazelbuild/buildtools/archive/refs/tags/v10.1.0.tar.gz"
+  sha256 "fa0b905032d49a621679e7318875736e451895a1417d992fbbebd27f82b83c38"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd9592a02db22ff8243d99081cca1da48e4f4fc4664bffd41b16dce39cb8d465"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd9592a02db22ff8243d99081cca1da48e4f4fc4664bffd41b16dce39cb8d465"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd9592a02db22ff8243d99081cca1da48e4f4fc4664bffd41b16dce39cb8d465"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b4609634a3f90b20b3104e6ed459ae0cadec118b659afff986ad132aa27cb51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8263d5556d0dca20e40d99d0efb1befdc14dbec44683a1b9be36cfd6d701e055"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "625424997cc35a8cf391d02c61788fc1c2b41d32e9a59ac63d24ebdfd33e4a28"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e88dbd94907b34f837078b805d52bec9c40a37b187b85682bdf2b5d652dd80ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e88dbd94907b34f837078b805d52bec9c40a37b187b85682bdf2b5d652dd80ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e88dbd94907b34f837078b805d52bec9c40a37b187b85682bdf2b5d652dd80ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "473e471cf4689022c15f8c41316fdac552a25b3788220e8acc193d9eaeb3faec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c14a0fdb799eb08488f1e42922a9ab82d62828e63acac2026aa92c33716b8a95"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./buildozer"

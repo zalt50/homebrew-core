@@ -3,18 +3,17 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/b0/1e/4918352e4b89ffd7b50cea166c834a28d046af8c7326351f873b2cc8d7b5/commitizen-4.18.0.tar.gz"
-  sha256 "9fab436e99420c97ee020bfeea17fe29903fb320a9cdd6e30c2c63bfbac4cb3b"
+  url "https://files.pythonhosted.org/packages/c0/b7/3bd204cbebc109c56a4ac2ada7ae15e15e9b3328b70891e941e70cbfc173/commitizen-4.19.0.tar.gz"
+  sha256 "9ed44eea06b5886462c30292a30c389330215e8fa79bcf932dbc4126b11009ef"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "00efe5475755e50da32816df82d11ebb435d21de144fd1840b6a0ec57d14b1e9"
-    sha256 cellar: :any, arm64_sequoia: "ea56f70138eb895efa9290ed749b2f9b86a4963803790d0e48fff266fbb59dc0"
-    sha256 cellar: :any, arm64_sonoma:  "9ab109cdc364875b79d333953664c09384b2ba67b5ca83d460049b3bdd1785ec"
-    sha256 cellar: :any, sonoma:        "552180238f5c86a3564f36a67cfbf4f39480a690b0c34bd62f46437aebb913ee"
-    sha256 cellar: :any, arm64_linux:   "c50e819c7b323e73867e9546c2f469cbcbbb550de4529f0a2382913a01d2618f"
-    sha256 cellar: :any, x86_64_linux:  "2a5cb0c4c02f27fcd4a1e4dd6039661b91a201661621b3aa82cf6b244f99a170"
+    sha256 cellar: :any, arm64_golden_gate: "65d4f4e79bc1a155be01ea569cf08759f2ed3ce22750cb1b6fcae29202b8fc71"
+    sha256 cellar: :any, arm64_tahoe:       "ea4899af376fb4552e7c951eeaee21093422dd514172dac8514825dfebb792ab"
+    sha256 cellar: :any, arm64_sequoia:     "891a9496f14179f415d107e6a6c17abb7958f3421e9bd2f06ca07724fbe16cf5"
+    sha256 cellar: :any, arm64_linux:       "036370085a0a7902d92f0cd84353fbdae9f616502b05d1e0072bf4268fab7e02"
+    sha256 cellar: :any, x86_64_linux:      "81953dd7da84929bcae74b5288af5b44616d0afd7272a7132c0c8a3dbc99e342"
   end
 
   depends_on "maturin" => :build
@@ -88,13 +87,13 @@ class Commitizen < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
+    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/2b/b0/c1f5a970721f06b85c0cd5142e0ff8fe067708abd779b0c4f4be7d61d09f/wrapt-2.3.0.tar.gz"
-    sha256 "681a2d0eefd721998f90642762b8e75c2159ec531b20ad5e437245ea7b06a107"
+    url "https://files.pythonhosted.org/packages/42/a6/6375d56c44d590ef24acf0f8f5bf7ed768ff7a510b959306ec412611e90f/wrapt-2.4.1.tar.gz"
+    sha256 "fd6390aab9e8aa40c52eff3c180f098e8d9f5894b1fd4c4fd2c207067b33ed16"
   end
 
   def install
