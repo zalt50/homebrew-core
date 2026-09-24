@@ -22,7 +22,7 @@ class ErlangAT28 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "unixodbc"
   depends_on "wxwidgets@3.2" # for GUI apps like observer
 
@@ -55,6 +55,8 @@ class ErlangAT28 < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     ex_doc_url = (buildpath/"make/ex_doc_link").read.strip
     odie "`ex_doc` resource needs updating!" if ex_doc_url != resource("ex_doc").url
@@ -72,7 +74,7 @@ class ErlangAT28 < Formula
     args = %W[
       --enable-dynamic-ssl-lib
       --with-odbc=#{formula_opt_prefix("unixodbc")}
-      --with-ssl=#{formula_opt_prefix("openssl@3")}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-javac
       --with-wx-config=#{wx_config}
     ]
