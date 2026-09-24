@@ -18,11 +18,13 @@ class I2pd < Formula
 
   depends_on "boost"
   depends_on "miniupnpc"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[
@@ -31,7 +33,7 @@ class I2pd < Formula
       USE_UPNP=yes
       PREFIX=#{prefix}
       BREWROOT=#{HOMEBREW_PREFIX}
-      SSLROOT=#{formula_opt_prefix("openssl@3")}
+      SSLROOT=#{formula_opt_prefix("openssl@4")}
     ]
     args << "USE_AESNI=no" if Hardware::CPU.arm?
 
