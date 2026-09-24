@@ -9,8 +9,7 @@ class Flake8 < Formula
   head "https://github.com/PyCQA/flake8.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "615b6b5c6fba374b684583f57a51c6667a0fcc78ad65ed0e86027b4d93a8c308"
+    sha256 cellar: :any_skip_relocation, all: "30ea98dab5ff24d552dfecceaf698dc688c8739a14c358fa580b89c247b24f56"
   end
 
   depends_on "python@3.14"
