@@ -1,8 +1,8 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://www.asyncapi.com/tools/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.1.0.tgz"
-  sha256 "ce731fd5c800548b0fbde4997e77008b4f379a5ba3790f398e1373d7eb9e60c8"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.2.0.tgz"
+  sha256 "6597de4e7f47006696fa158685a7c2c0d73422e59d267db024fdacad8771b316"
   license "Apache-2.0"
   version_scheme 1
 
@@ -15,6 +15,10 @@ class Asyncapi < Formula
   end
 
   depends_on "node"
+
+  on_macos do
+    depends_on "macos-term-size"
+  end
 
   def install
     # Set the log directory to var/log/asyncapi
@@ -32,6 +36,16 @@ class Asyncapi < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
+    term_size_vendor_dir = node_modules/"term-size/vendor"
+    rm_r(term_size_vendor_dir) # remove pre-built binaries
+
+    if OS.mac?
+      macos_dir = term_size_vendor_dir/"macos"
+      macos_dir.mkpath
+      # Replace the vendored pre-built term-size with one we build ourselves
+      ln_sf (formula_opt_bin("macos-term-size")/"term-size").relative_path_from(macos_dir), macos_dir
+    end
 
     (var/"log/asyncapi").mkpath
   end
