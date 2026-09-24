@@ -4,7 +4,6 @@ class Magika < Formula
   url "https://github.com/google/magika/archive/refs/tags/cli/v1.0.2.tar.gz"
   sha256 "bae42b31c8f419f34043cc2cf26fa42d2ade7f7c91e2fb54919914432f799699"
   license "Apache-2.0"
-
   head "https://github.com/google/magika.git", branch: "main"
 
   livecheck do
@@ -24,7 +23,11 @@ class Magika < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "onnxruntime"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   # Fix x86_64 build compatibility for ort/ndarray, upstream PR ref,
   patch do
@@ -34,8 +37,14 @@ class Magika < Formula
     resolves "https://github.com/google/magika/pull/1312"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "rust/cli/Cargo.toml"
+  end
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3") if OS.linux?
 
     system "cargo", "install", *std_cargo_args(path: "rust/cli")
   end
