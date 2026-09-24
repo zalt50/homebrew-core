@@ -31,7 +31,9 @@ class Libexosip < Formula
   depends_on "pkgconf" => :build
   depends_on "c-ares"
   depends_on "libosip"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  allow_network_access! :test
 
   def install
     # Extra linker flags are needed to build this on macOS. See:
