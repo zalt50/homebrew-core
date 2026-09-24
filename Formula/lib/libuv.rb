@@ -1,8 +1,10 @@
 class Libuv < Formula
+  include Language::Python::Virtualenv
+
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://libuv.org/"
-  url "https://dist.libuv.org/dist/v1.52.1/libuv-v1.52.1.tar.gz"
-  sha256 "66d511b9e6e334c0e62279eb234fbfb2b3110b1479c09b95b44c7afca8cff9e7"
+  url "https://dist.libuv.org/dist/v1.53.0/libuv-v1.53.0.tar.gz"
+  sha256 "cb0d6dd2128d5a95bd242c6cc982a24fe608fa93da57b6b4ec763b0018c53e64"
   license "MIT"
   compatibility_version 1
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
@@ -23,11 +25,25 @@ class Libuv < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build # for sphinx-copybutton
   depends_on "sphinx-doc" => :build
+
+  pypi_packages package_name:     "",
+                exclude_packages: "sphinx",
+                extra_packages:   "sphinx-copybutton"
+
+  resource "sphinx-copybutton" do
+    url "https://files.pythonhosted.org/packages/fc/2b/a964715e7f5295f77509e59309959f4125122d648f86b4fe7d70ca1d882c/sphinx-copybutton-0.5.2.tar.gz"
+    sha256 "4cf17c82fb9646d1bc9ca92ac280813a3b605d8c421225fd9913154103ee1fbd"
+  end
 
   deny_network_access!
 
   def install
+    venv = virtualenv_create(buildpath/"venv", Formula["sphinx-doc"].python3)
+    venv.pip_install resources, build_isolation: false
+    ENV.prepend_path "PYTHONPATH", venv.site_packages
+
     # This isn't yet handled by the make install process sadly.
     system "make", "-C", "docs", "man"
     man1.install "docs/build/man/libuv.1"
