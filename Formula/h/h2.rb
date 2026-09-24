@@ -1,9 +1,9 @@
 class H2 < Formula
   desc "Java SQL database"
   homepage "https://www.h2database.com/"
-  url "https://github.com/h2database/h2database/releases/download/version-2.5.250/h2-2026-08-29.zip"
-  version "2.5.250"
-  sha256 "732af485bc9719a31102a9880d44001241061ae1fcbc4bfd4550055220023280"
+  url "https://github.com/h2database/h2database/releases/download/version-2.5.252/h2-2026-09-23.zip"
+  version "2.5.252"
+  sha256 "e81c3cb2174a3a0aa4d7887dd0c8c5e307960e6f47925d8c40283f9bb960b13b"
   license "MPL-2.0"
 
   no_autobump! because: :incompatible_version_format
@@ -13,6 +13,8 @@ class H2 < Formula
   end
 
   depends_on "openjdk"
+
+  deny_network_access!
 
   def install
     # Remove windows files
