@@ -6,15 +6,11 @@ class Recode < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "d96b138acce5c5a79aeec4a40b49163345047655e0e5037d947462944ea3b43d"
-    sha256 cellar: :any,                 arm64_tahoe:       "405e897606d94d94722132d288750bf0c609f9a545b88dbeee6a80882dfec1cb"
-    sha256 cellar: :any,                 arm64_sequoia:     "ae73bc0697143ac801aa1e31b27be127877d06fa6a366d8fb899a3261bb8de5e"
-    sha256 cellar: :any,                 arm64_sonoma:      "8f613a6ea840f5097d52b38a046db4d0fda412b906a98e215375104e9fdbeb05"
-    sha256 cellar: :any,                 arm64_ventura:     "18e154be855e36d7352b192f4a886cb461bd9580496b90100b2c3d8eb2b14297"
-    sha256 cellar: :any,                 sonoma:            "99fce903fbcf4b521eef4e7f9017f4cd11b772b5ae6eda8b85841a83b4d47436"
-    sha256 cellar: :any,                 ventura:           "ee4a5b927e4e1de464895aadc1a9b6d51bad94ac2617ef91fc49678fee7f6685"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ae507a89cd038723bbc75c818979f9519917eb3ad718ed0debb023130eedc571"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0863f449422de1753db9eec031492961cbbdb64e76b75211ed354b320cb96a0b"
+    sha256 cellar: :any, arm64_golden_gate: "917147916908fdf2d5c0d4ad0731ab7479887754d2bfdedd05e32375aa71d682"
+    sha256 cellar: :any, arm64_tahoe:       "158a41a157d70a8031789fe97d21045777b7e8d72d93294ac57495f95fea3e00"
+    sha256 cellar: :any, arm64_sequoia:     "77d2d3b854009d5748ee91a1c816b924f21a93cd5b77a7e962e38bd76430860c"
+    sha256 cellar: :any, arm64_linux:       "71075130cf54fb270eb5ee316e296dadf7e602d79fe4fe6a935947f7d40b1888"
+    sha256 cellar: :any, x86_64_linux:      "cbab97603dbba02f0c85c443b7581a770666c6ef3c7061926ff98196adca5ffd"
   end
 
   uses_from_macos "python" => :build
