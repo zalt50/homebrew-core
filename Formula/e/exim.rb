@@ -37,7 +37,7 @@ class Exim < Formula
     sha256 x86_64_linux:      "fd671028d9126a09d7b16309162146caf35e455af5f867cdff4e1121e4ee4406"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "libxcrypt"
