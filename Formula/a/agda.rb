@@ -4,7 +4,7 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/agda/agda/archive/refs/tags/v2.8.0.2.tar.gz"
@@ -52,16 +52,8 @@ class Agda < Formula
     end
 
     resource "agda-language-server" do
-      url "https://github.com/agda/agda-language-server/archive/refs/tags/v7.tar.gz"
-      sha256 "294a8d0fe92b80711d221bc50fab5eced2285f6a43123482b27c52073a6e2c5a"
-
-      # Fix the reported ALS version, upstream PR ref, https://github.com/agda/agda-language-server/pull/56
-      patch do
-        url "https://github.com/agda/agda-language-server/commit/a585542a717d4af65a998adaddd87e1020bf9ac1.patch?full_index=1"
-        sha256 "01a09b16be7cf4f1fda548461515559417dedc1a17275cf744a0ceef93655d13"
-        type :unofficial
-        resolves "https://github.com/agda/agda-language-server/pull/56"
-      end
+      url "https://github.com/agda/agda-language-server/archive/refs/tags/v8.tar.gz"
+      sha256 "58c18627786451d43269cde03a062716a05dc9ff1fa74fc82e6f48f449c9e5c9"
     end
   end
 
@@ -114,6 +106,7 @@ class Agda < Formula
 
   depends_on "cabal-install" => :build
   depends_on "emacs" => :build
+  depends_on "hpack" => :build
   depends_on "pkgconf" => :build
   depends_on "ghc"
   depends_on "gmp"
@@ -152,7 +145,6 @@ class Agda < Formula
 
     # Make the language server build tolerate point releases
     inreplace als/"package.yaml", "Agda == 2.8.0", "Agda >= 2.8.0 && < 2.9.0"
-    inreplace als/"agda-language-server.cabal", "Agda ==2.8.0", "Agda >= 2.8.0 && < 2.9.0"
 
     # Make agda2hs build compatible with GHC 9.14
     inreplace agda2hs_build/"agda2hs.cabal",
@@ -161,6 +153,11 @@ class Agda < Formula
 
     # Make the Agda Emacs mode compatible with Emacs >= 31.1
     inreplace buildpath/"src/data/emacs-mode/agda2-highlight.el", " font-lock-", " 'font-lock-"
+
+    # Create the cabal file for the language server build
+    cd als do
+      system "hpack"
+    end
 
     # Relative package paths keep Cabal file monitoring inside the build directory.
     (buildpath/"cabal.project").write <<~HASKELL
