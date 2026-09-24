@@ -12,15 +12,12 @@ class Nikto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ee8428e989403476c6d5449e32e74a715e218005556008bf2209943c9c603d39"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, tahoe:             "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, sequoia:           "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any,                 arm64_linux:       "ccc5b28402631afb9bf000029cec799911e4370be34485e3c5a3a99488015933"
-    sha256 cellar: :any,                 x86_64_linux:      "a0f96a84ce423f9250ce6b879b028728008f2309684c572812e25ec4b0d3c596"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c35f535d8885c015724569ceb2757ecb3b175f2d53f65e38aac053c73984c5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c35f535d8885c015724569ceb2757ecb3b175f2d53f65e38aac053c73984c5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c35f535d8885c015724569ceb2757ecb3b175f2d53f65e38aac053c73984c5b"
+    sha256 cellar: :any,                 arm64_linux:       "9c1746d64ddadf53574d7822e4cddb553cffa71b8ff5989c36dfa1ee8af14a2a"
+    sha256 cellar: :any,                 x86_64_linux:      "aa2f53f705ee66143958a1ae0d3aab24ff94b6734966975d2833797fe1c4dc28"
   end
 
   uses_from_macos "perl"
