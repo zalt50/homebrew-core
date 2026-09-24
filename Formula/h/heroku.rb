@@ -1,8 +1,8 @@
 class Heroku < Formula
   desc "CLI for Heroku"
   homepage "https://www.npmjs.com/package/heroku/"
-  url "https://registry.npmjs.org/heroku/-/heroku-11.10.0.tgz"
-  sha256 "2cd32031bb2dd1963ee3d5c7e6970a038d25823eb58c8df6f6ae1491751d7e04"
+  url "https://registry.npmjs.org/heroku/-/heroku-11.10.1.tgz"
+  sha256 "40d1684b16bb7f4001b781e8f5503cb697151238eb2fa4bb856001cf3bc1a290"
   license "ISC"
 
   bottle do
