@@ -12,13 +12,11 @@ class Lcm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "bd477c415586e7c1e226919955c46b3f8577ee4a81ca29916ceec39b3172803d"
-    sha256 cellar: :any,                 arm64_tahoe:       "67786ac0f37fa1fd51a11d36eac2c7a15e8d9374f3bf402539455cab4a04e3d4"
-    sha256 cellar: :any,                 arm64_sequoia:     "44b5288a4c51bf6c703cdeb518934b993ef424593590b12247cb51da83df8daf"
-    sha256 cellar: :any,                 arm64_sonoma:      "3c098c947859fa7af78056c13507cdb50f6da1fe5a66c3d1ef5e2bac26e5dfbb"
-    sha256 cellar: :any,                 sonoma:            "0538d2bfe93470a2d9faf159a225adf8ec196f79f54af777236996341ad1aec8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f2f6a5cc8b26cc546f7c02c6004f7309dcfeb4d8fbbfacd40fa29b4e766b19bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c7867fc41099802b39b1ffcb7c70733c7d0dd99f22bbd0a719bb26ecde5ebb93"
+    sha256 cellar: :any, arm64_golden_gate: "f252d68ed3ba4e280f83de644253f3daef3897ad6aae5d2207f010439dbfc1f2"
+    sha256 cellar: :any, arm64_tahoe:       "081b13339dca7511d79e77cc3f7e0f27d96870e01b6ebfef22a12e674f417660"
+    sha256 cellar: :any, arm64_sequoia:     "1b7cd49fd99ee488e7870c564d90ebdb4da6f53da539927a05c5c98eadfe6672"
+    sha256 cellar: :any, arm64_linux:       "7d29b026b5a82f7cc10c929aebf892544ee9f11c155df1964d6a076dbe209371"
+    sha256 cellar: :any, x86_64_linux:      "71208d791519e0c36b5e32b82813ea4556399469428ac56fcbfc33dd505a5b30"
   end
 
   depends_on "cmake" => :build
