@@ -11,13 +11,11 @@ class Wget2 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "7a198593e72317dd69a0099c236bbf850c0cd42aa3c648493bf9dba29870cce2"
-    sha256 arm64_tahoe:       "3b785836084f972fba43ca8b82ac44ca5447a3c236572d67713e26c2209ee256"
-    sha256 arm64_sequoia:     "b394a3b18b61da6bab9eac8ccfe2640cc19e8b38ed99cf48d0505ef0cd290def"
-    sha256 arm64_sonoma:      "bde42c49861a7e2447ae1aecba381f89691216546f4170d7c2e2a84d307db887"
-    sha256 sonoma:            "0bfa0d93f335be723eadeb95e1c9a2c363d0f72091c35b54ed91addb4486fd1b"
-    sha256 arm64_linux:       "0590c522205ec4d00168634fb328cd6abd04d67fad862b9ca1b5d76024f41cbb"
-    sha256 x86_64_linux:      "b70d0eee960f3393dc3f6e91012bfec0e244d18aab3e21841c7c8d4a8e7f9f19"
+    sha256 arm64_golden_gate: "14a0909904fba9bed173f92386d697b3003bdeab444c99061466421c762d26aa"
+    sha256 arm64_tahoe:       "acc0faa3223d9a63bacdacf90a53d13dd78210dd7bf9def25848512f119e22ac"
+    sha256 arm64_sequoia:     "687e2efd6d0e1fe9b304ddcf61c679c51c57d142f03afb248f016a69c4626822"
+    sha256 arm64_linux:       "06edc949274df47d8a66cd176c1a1200ee2471088035ed80957ebfab509700cd"
+    sha256 x86_64_linux:      "0cd41a7cd8f612689d11ca23e21e3feb9554ba86e2b9b4a216d44ebc1904744c"
   end
 
   depends_on "autoconf" => :build
