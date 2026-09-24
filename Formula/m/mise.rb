@@ -27,7 +27,7 @@ class Mise < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   # downloads crates during install and binaries in the test
@@ -35,7 +35,7 @@ class Mise < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
 
     system "cargo", "install", *std_cargo_args
     man1.install "man/man1/mise.1"
