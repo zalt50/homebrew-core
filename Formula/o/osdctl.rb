@@ -12,11 +12,11 @@ class Osdctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ac2e8adaf213abafcbf1d56742bb4145897e8b8d82c962f6961d63225f7ed44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd850f295a27b3f3193bfa5f1ca9dc0b733006cf4bb24e0da814ca00b2849cef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2984c5e341acad716455cbcbdc308e8228e400de09e566a51af492c2e842006c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4d08676cc4091147189762132b012dd121a99e90cb7dc7340cae6f21c7951ce0"
   end
 
   # Can be undeprecated on new release or if upstream responds:
