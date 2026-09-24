@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://github.com/symless/synergy/archive/refs/tags/v1.21.2.tar.gz"
-  sha256 "aa1ffae3d1b2333972b42c54f1ae52e75b62e09a597cd0bc32b32b09e4151ae5"
+  url "https://github.com/symless/synergy/archive/refs/tags/v1.21.3.tar.gz"
+  sha256 "363b20ce6e80c737f692e09a07d1325db8cf9361a7918184ed5d0ef49818c7b0"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://github.com/symless/synergy.git", branch: "master"
 
