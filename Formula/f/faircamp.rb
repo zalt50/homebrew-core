@@ -6,14 +6,11 @@ class Faircamp < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "43bc34990dd2c6f0d7f83c038fa84e1b4edf37b62d537f3a4a6a3c2d6f3be674"
-    sha256 cellar: :any, arm64_tahoe:       "66169557403a27f0ba6f4e2ad043108b69dbbd813ae9b523e5bdd70bd4198ed8"
-    sha256 cellar: :any, arm64_sequoia:     "8b4ba92f1a565e98368cda5f60b3c47b778197bbe497913bdd7e90b342cb321a"
-    sha256 cellar: :any, arm64_sonoma:      "c47ae0184f72f2a2a3fc2a99b2ab0a3c3a0759608e6909d190deebdd32b5737e"
-    sha256 cellar: :any, sonoma:            "b62e91623bd651cf0f6a3fe9cc3bd923ade96c471fb7d4de00407ed273ca3446"
-    sha256 cellar: :any, arm64_linux:       "0a8d16c9c10d85bbd9d1eb169236c3e2b59966f23e02da9fd1cf1dd09676ac8f"
-    sha256 cellar: :any, x86_64_linux:      "f7dfe751e1b76008a6af1545cf2ad181bc48c72f26de4242e687e2af90634f32"
+    sha256 cellar: :any, arm64_golden_gate: "f3a66809f93f7232649e0caf47922e1c4e24a9bb09c4050dfffd23af2e118311"
+    sha256 cellar: :any, arm64_tahoe:       "77a3cc18312fc73bc09dae647a64737d47e96c2cf823850518bcf4e155bb3bd2"
+    sha256 cellar: :any, arm64_sequoia:     "bebc6da51576dab1064495824092e0a441f50fe11f129e1e4b19e8617016e43c"
+    sha256 cellar: :any, arm64_linux:       "21b4e5de09f0e1aecb44b1bd811fccc168b9f04fafcc3b2ec30d9ad17423cdd7"
+    sha256 cellar: :any, x86_64_linux:      "f6b47b080ae68b73fbbf1206ddd1aa2817609087f05d0974fbc1d214d4a16356"
   end
 
   depends_on "pkgconf" => :build
