@@ -3,8 +3,8 @@ class Fwupd < Formula
 
   desc "Firmware update daemon"
   homepage "https://github.com/fwupd/fwupd"
-  url "https://github.com/fwupd/fwupd/releases/download/2.1.7/fwupd-2.1.7.tar.xz"
-  sha256 "472e9426f7a1b18fa9d199666c15482d4ee51ea35e916ca53bb3ca25919edb10"
+  url "https://github.com/fwupd/fwupd/releases/download/2.1.8/fwupd-2.1.8.tar.xz"
+  sha256 "8724305a52621ab6586de3290f6a78edb8393a4aa4bcb6c63f9228ae5e00acf8"
   license "LGPL-2.1-or-later"
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
