@@ -12,13 +12,11 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "15354394376999d885ad4613c53e2067949ebe943e84cea05a5bbf923ceef5b2"
-    sha256 cellar: :any, arm64_tahoe:       "b314ee3515fa47020f68d782a51d86c2ea5693ffa321de28ef04c4542f78ea11"
-    sha256 cellar: :any, arm64_sequoia:     "54caafe93e26de2dd56d6b4933f6252d83a2fdf5707181b265e51eb66a60cbc3"
-    sha256 cellar: :any, arm64_sonoma:      "f289845c384e94c6816951b3c2e3e389142e3f4875b7d224d8d5af36ff52915c"
-    sha256 cellar: :any, sonoma:            "6c8cd79db94b7e87b76d4b33566a30c4321eca470b03adbd1338036ee045e57a"
-    sha256 cellar: :any, arm64_linux:       "32f44b6a2ea6c0bd1cf5304e93aa054f6ab1cb60d600200d7671cc82d68be1ce"
-    sha256 cellar: :any, x86_64_linux:      "9f858a4677682b804335b6218db77406c4f7ee97b222da050e8cd6315f08a758"
+    sha256 cellar: :any, arm64_golden_gate: "039a14ae39047740a8b6850f53d88148b722bc071cd37395bb8a44c71cfae1f9"
+    sha256 cellar: :any, arm64_tahoe:       "66736a050176a0b00c1e9e4ce673d27d54bf71de45418a1fdf4237f9802febaa"
+    sha256 cellar: :any, arm64_sequoia:     "c9731c93b32a473bd9068438e8d5d883a20b26c2c5320779af2ada2d291aede8"
+    sha256 cellar: :any, arm64_linux:       "d95073b63b918f63e3539542ddb83ceb1f695df7f2460e1ab2264564e8295ffe"
+    sha256 cellar: :any, x86_64_linux:      "55dd10254d28551c47b417bd90e058dc37ee7389442816de913f4a1a9fa88cb4"
   end
 
   depends_on "cmake" => :build
