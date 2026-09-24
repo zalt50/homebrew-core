@@ -19,7 +19,7 @@ class Haproxy < Formula
     sha256 cellar: :any, x86_64_linux:      "08b9aa1e60dd2212f7fc21eda32d6f3d3c7081fc1ab9021e4db29ebe8381d58a"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "libxcrypt"
@@ -27,6 +27,8 @@ class Haproxy < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %w[
