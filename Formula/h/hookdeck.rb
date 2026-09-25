@@ -1,8 +1,8 @@
 class Hookdeck < Formula
   desc "Forward webhook events from Hookdeck to a local server"
   homepage "https://hookdeck.com"
-  url "https://github.com/hookdeck/hookdeck-cli/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "96f60a3ac4174794db455e205e652394f2787cd9939dde3a05beaf3a5be4ab12"
+  url "https://github.com/hookdeck/hookdeck-cli/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "82cf9385ceea32154341edca503144fc0fc60e45f1e0fd0389cc853edaf68bd5"
   license "Apache-2.0"
   head "https://github.com/hookdeck/hookdeck-cli.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Hookdeck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc77436d993cc68341d492d51e92f72ff3ecc99e7920d68c88b1b776ba335555"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bc77436d993cc68341d492d51e92f72ff3ecc99e7920d68c88b1b776ba335555"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc77436d993cc68341d492d51e92f72ff3ecc99e7920d68c88b1b776ba335555"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8439d2ac944dd6f3c438ca0ab29dad8850125b56cc8bde9d4a1d8bcba98e0f4c"
-    sha256 cellar: :any,                 x86_64_linux:      "eb49befcc32046fecfb720f479ba2caeba12e5a2d58a83557e2d69eed1152258"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a6c7fb6de91a8888de59d5e31d4bfeb2d0512ee6b744781d60604ea15d114b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a6c7fb6de91a8888de59d5e31d4bfeb2d0512ee6b744781d60604ea15d114b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a6c7fb6de91a8888de59d5e31d4bfeb2d0512ee6b744781d60604ea15d114b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "14df1604ddedd3d8d5de6f00c63142d4719daca9c55867d62f14b63fef84d633"
+    sha256 cellar: :any,                 x86_64_linux:      "5a611c666e81dbd9ea59e9dd7f491214d5236edf743570a32621babf19551d10"
   end
 
   depends_on "go" => :build
