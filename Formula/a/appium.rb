@@ -1,8 +1,8 @@
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-3.7.0.tgz"
-  sha256 "a6f99adf70a8815039c8c20d07d359b11e60f062dd04b5171cfc84e429017599"
+  url "https://registry.npmjs.org/appium/-/appium-3.8.0.tgz"
+  sha256 "4c1e263a856b5de3fb382aced3eff2b34782637f5bdd9bc98804dc05cce6c3b6"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
