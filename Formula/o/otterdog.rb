@@ -9,11 +9,11 @@ class Otterdog < Formula
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "be8f275757b1fdaa6959b83180d386e5d261cc8b91e911781eb2c715827df933"
-    sha256 cellar: :any, arm64_tahoe:       "9def83f5617877f9e4dbe399f08656b12408d97b5db49d393c1ab51f5b166b1c"
-    sha256 cellar: :any, arm64_sequoia:     "30f90205ae46a402ca7ea07ce9d8fe4a84d2feb3f6616b1504b97f879a88fd86"
-    sha256 cellar: :any, arm64_linux:       "7fad938f956f29c86356e969dce77765fc7742d2f0fb7083518b39b56ff2151f"
-    sha256 cellar: :any, x86_64_linux:      "69b0112e869741ccf0820ce532717fcaeb2c85aba8ada182c0f84ddfedbfb895"
+    sha256 cellar: :any, arm64_golden_gate: "0efc5adbedf897433c87ead166e3d2815dbf3f7517dacf608824c159b595f0bc"
+    sha256 cellar: :any, arm64_tahoe:       "5ca3f2e95b91f677ac999c3b013fa1525fe1d6acc2128aef7b6fe82fbda3adce"
+    sha256 cellar: :any, arm64_sequoia:     "c321cbd7a855ec48d3cb30c60e10d417231fed98678672340a131de824102c24"
+    sha256 cellar: :any, arm64_linux:       "559b2aa113cce5220e94d3bf247c6689ce4860fcf4aed396e7d6926ffe910c7b"
+    sha256 cellar: :any, x86_64_linux:      "d272ab5b5a6feccbcb33cbda371ef0cb9200e8491777af94a1db462bb4fd826d"
   end
 
   depends_on "rust" => :build # for rjsonnet
