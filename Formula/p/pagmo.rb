@@ -1,10 +1,9 @@
 class Pagmo < Formula
   desc "Scientific library for massively parallel optimization"
   homepage "https://esa.github.io/pagmo2/"
-  url "https://github.com/esa/pagmo2/archive/refs/tags/v2.19.1.tar.gz"
-  sha256 "ecc180e669fa6bbece959429ac7d92439e89e1fd1c523aa72b11b6c82e414a1d"
+  url "https://github.com/esa/pagmo2/archive/refs/tags/v2.20.0.tar.gz"
+  sha256 "8d684e9a3667dcccc844489083906c35aba7610594c5fce0f4eccce9c2264f4d"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
-  revision 8
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "0d9840d73678b552f44a8571e277d55509a7a03055852f2fa8bcf8b55579d84e"
@@ -23,18 +22,6 @@ class Pagmo < Formula
   depends_on "tbb"
 
   # Backport support for eigen 5.0.0
-  patch do
-    url "https://github.com/esa/pagmo2/commit/bdd8559d7663536c3a5f56b013f07da11a35c9b8.patch?full_index=1"
-    sha256 "f8679d6ca0d4bd5d9b44382da35ddc6f80404d389813ce05f050d00f5ce3706c"
-    type :backport
-    resolves "https://github.com/esa/pagmo2/pull/583"
-  end
-  patch do
-    url "https://github.com/esa/pagmo2/commit/d0e70403179769c326f2694673473e1d3ef0bec7.patch?full_index=1"
-    sha256 "6dcf5ac2cbd8e9b0de20845a51ef5d8eeb0ffd0472f32bcc833ce3f314718f0b"
-    type :backport
-    resolves "https://github.com/esa/pagmo2/pull/608"
-  end
 
   deny_network_access!
 
