@@ -1,8 +1,8 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https://github.com/GitoxideLabs/gitoxide"
-  url "https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.58.0.tar.gz"
-  sha256 "af8210e01903e0995aa5899d8c8cd3f4f2b115ec38a924fa7bf3c7d8ba949077"
+  url "https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.59.0.tar.gz"
+  sha256 "a2761fa1a75c696338e9f8511c1eef92ab2540ea26f7e74d446b9cf2f9ae5569"
   license "Apache-2.0"
   head "https://github.com/GitoxideLabs/gitoxide.git", branch: "main"
 
