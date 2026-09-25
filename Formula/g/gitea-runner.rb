@@ -6,11 +6,11 @@ class GiteaRunner < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "437ccd550d154ca349c801d75c85dc690f45deb73b9486ff1ffba6e052eb5eb9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7a1ea9baa665107d2691cbeaadc0785432ca0daf5cc09112fcdbf1122d1fd337"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b48ea54d8f54e146beb4b66f3266375ed36d938c191609939af455775535ec75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c3f9bdbe53ac07ef81a790ae7e617f3e5a0d74bdbd89debc8bbddd948c54a33"
-    sha256 cellar: :any,                 x86_64_linux:      "6f4055e5204e458f39244fba3441e6d7b30823f771d8663b525b2e2c3ca4fdb0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fe962080503c368d3570cf1a8774c41a8e44874d2cf75b051b8cfb9a1669560f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a463efa4d82fe9fa941716772a40dea4e0a387b51f8bdac761583bcc6e7f457d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a27e662259dc48ae3f1e2f274d186c0a93dbdd5f0472d2cbb16e06c5e597bc9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f3be47f5963d4af7d89a7030049316d4d64eb71fdaa57afc0a1f6275e84e3bf5"
+    sha256 cellar: :any,                 x86_64_linux:      "a6eca1fe506447fd009156b7104cefc81f6d7090c9ead012aa5830a1c7549e57"
   end
 
   depends_on "go" => :build
