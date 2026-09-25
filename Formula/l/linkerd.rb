@@ -13,12 +13,12 @@ class Linkerd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "847f21f61f8dc2de26bbbb3348fa2a5299755bbbb0a2bcb5da96f28e653bad06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdb8c194709b78da6eaaa1b51a91e4c04bf22c3b847f6e6d5c12fcfcca529d5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f2e30ccdd41b8d047e50292b1718cdf0450089718f964dcb33174351dbe822e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cbf1e3708c051367135e0369ed18ce703a17fcf91d5f801376b09ea5d7050381"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8e53b12276dbbd09e55ee1e073084bb4558295173de1ad83f2dd98b14933cd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8884bcde37cad52a2b79557c62ca573c2c2b3870166c40de9cc41ce12ad83b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "be2585052db28e5b9762789e694938d42ef5ac168e900e0186e25f84d0645237"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f3f1493693e431d57204f5a426c6237eb7e90daeb4bca2b655f13535efafaf19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7356359d889a89f9b4879faaec0b00b799e927be9cb0b2f96c8456328ded6fa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "357796931b769b422ef97618f21ecd2d8ce6dd317d5a5e7436bcded08bef5358"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bee15b58d9158d85aee80bce0739ff81663525be7d8c09147a25d3405c3ce0a6"
   end
 
   depends_on "go" => :build
