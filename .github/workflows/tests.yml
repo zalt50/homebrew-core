@@ -48,7 +48,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/setup-homebrew@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           core: true
           cask: false
@@ -77,7 +77,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/setup-homebrew@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           core: true
           cask: false
@@ -195,7 +195,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/setup-homebrew@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           core: true
           cask: false
@@ -228,7 +228,7 @@ jobs:
       BOTTLES_DIR: ${{matrix.workdir || github.workspace}}/bottles
     steps:
       - name: Pre-test steps
-        uses: Homebrew/actions/pre-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/pre-build@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
@@ -259,7 +259,7 @@ jobs:
 
       - name: Post-build steps
         if: always()
-        uses: Homebrew/actions/post-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/post-build@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           runner: ${{ matrix.runner }}
           cleanup: ${{ matrix.cleanup }}
@@ -333,7 +333,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/setup-homebrew@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           core: true
           cask: false
@@ -375,7 +375,7 @@ jobs:
       TESTING_FORMULAE: ${{matrix.testing_formulae}}
     steps:
       - name: Pre-test steps
-        uses: Homebrew/actions/pre-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/pre-build@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
@@ -401,7 +401,7 @@ jobs:
 
       - name: Steps summary and cleanup
         if: always()
-        uses: Homebrew/actions/post-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/post-build@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           runner: ${{ runner.os == 'Linux' && format('{0}-deps', matrix.runner) || matrix.runner }}
           cleanup: ${{ matrix.cleanup }}

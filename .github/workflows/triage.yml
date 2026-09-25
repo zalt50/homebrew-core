@@ -93,7 +93,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: setup-homebrew
-        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/setup-homebrew@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           core: true
           cask: false
@@ -126,7 +126,7 @@ jobs:
         if: >
           github.actor != 'BrewTestBot' &&
           !contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
-        uses: Homebrew/actions/check-commit-format@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/check-commit-format@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           check_package_commit_format: >-
@@ -136,7 +136,7 @@ jobs:
             }}
 
       - name: Label pull request
-        uses: Homebrew/actions/label-pull-requests@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        uses: Homebrew/actions/label-pull-requests@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
         if: always()
         with:
           token: ${{secrets.GITHUB_TOKEN}}
