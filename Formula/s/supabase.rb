@@ -1,8 +1,8 @@
 class Supabase < Formula
   desc "Postgres development platform"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://github.com/supabase/cli/archive/refs/tags/v2.117.0.tar.gz"
-  sha256 "630de8f7edba860d85a4ca303731241bf7ae96267c00d99a7f7d0496164cee1c"
+  url "https://github.com/supabase/cli/archive/refs/tags/v2.118.0.tar.gz"
+  sha256 "12067ce52ad06669442103c383e332c06555afea0922f104de334501a874f9ab"
   license "MIT"
   head "https://github.com/supabase/cli.git", branch: "develop"
 
@@ -56,11 +56,11 @@ class Supabase < Formula
 
     cd "apps/cli" do
       system "bun", "scripts/build-binary.ts"
-      libexec.install "dist/supabase-legacy" => "supabase"
+      libexec.install "dist/supabase"
     end
 
     # supabase-go must stay next to the shell binary: it is resolved relative to
-    # process.execPath (apps/cli/src/shared/legacy/go-proxy.layer.ts).
+    # process.execPath (apps/cli/src/command-internal/go-proxy.layer.ts).
     bin.install_symlink libexec/"supabase"
   end
 
