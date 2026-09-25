@@ -3,17 +3,17 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/23/d6/9bbb9f74f5c0be6fbf70df405429cf34b414079b773bf5b9f21b600fcb7c/fastmcp-4.0.6.tar.gz"
-  sha256 "91ba8db2312851363e5bc4f885470a3ae6ec6d7837a717445743ee3e8c3417df"
+  url "https://files.pythonhosted.org/packages/e5/5a/e485ce7194e4b2a856e5a2d9b502cd2d676d8515555a6af47e3178c3a75e/fastmcp-4.0.8.tar.gz"
+  sha256 "770cdd36a0a7f2bcdfcaa7021f19a92c3b1c9d68eb0a9af7eca909e80d60402c"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b8b7aac65d117cd74b716824becb830f8140fc650cda566ed0feb16994dbc3b6"
-    sha256 cellar: :any, arm64_tahoe:       "a96e55261b8d85b0b3977e9e57be79751a82d73ae1bfd60586fcf79417d116d1"
-    sha256 cellar: :any, arm64_sequoia:     "0d9a1d77c0a7c8e5c240232c41f7715351a5467ba3280557feb25454cf27e362"
-    sha256 cellar: :any, arm64_linux:       "cd4e1b9c4014f245e2da27c9a9be39d0baca0ae6de24406d92f9d2ce384cfafa"
-    sha256 cellar: :any, x86_64_linux:      "c8e0fbae02b7eec260523d091ffaf1f7d6b78a38c60da479fdf6e5ec0e0cd413"
+    sha256 cellar: :any, arm64_golden_gate: "974514be91d478167f4c0bcd51ca0dbc0f274704306b98f8b0000e4805debda4"
+    sha256 cellar: :any, arm64_tahoe:       "4d83b518be7c95b8147d9816502dcefe8b3cc4dbb1262c12bc438b298da1ea4b"
+    sha256 cellar: :any, arm64_sequoia:     "ce8e1d237653e432acd4e6063af87a6d72e8c074f6f1cfa72015f6cb63798405"
+    sha256 cellar: :any, arm64_linux:       "8e568da77a83db75ca0605516f36b2f462dc36ef0f088a8e1f167c594d31683d"
+    sha256 cellar: :any, x86_64_linux:      "2022b7af6aa836699cd6cf233e28cbaf7842131f677b33fe8d1243ee9b9aa287"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -94,8 +94,8 @@ class Fastmcp < Formula
   end
 
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/31/d4/d8dcdbdbba321d73b49aaec991cb4550843ccecdf480167c03a745abb652/fastmcp_slim-4.0.6.tar.gz"
-    sha256 "e2261f1da00b02ef25ecc8ba696e5cf55a00511c559e846e5b05b582256a0da0"
+    url "https://files.pythonhosted.org/packages/3f/f9/96c47c0d28ca58e1ce2bc90cbc09051e10318ca5356d2e6ca2decfae0421/fastmcp_slim-4.0.8.tar.gz"
+    sha256 "839cfd4dd8d529be1b48739f5766588657256c20c365bb1ba1ed1d827ce497cb"
   end
 
   resource "griffelib" do
