@@ -1,8 +1,8 @@
 class Aube < Formula
   desc "Fast Node.js package manager"
   homepage "https://aube.en.dev"
-  url "https://github.com/jdx/aube/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "1c1bcb9e4bb93a8db2e7292c44aef8b90c5454f50d3542dffe33c1e1cba9fc26"
+  url "https://github.com/jdx/aube/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "a5db45fd56ff937afec0b0c503eac4d822c39016cf1e004fba684c50709ee2cf"
   license "MIT"
 
   bottle do
@@ -18,6 +18,13 @@ class Aube < Formula
   depends_on "rust" => :build
   depends_on "usage" => :build
   depends_on "node" => :test
+
+  # Test installs a package from the npm registry
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/aube")
