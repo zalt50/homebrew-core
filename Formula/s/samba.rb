@@ -15,12 +15,11 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "339bb05e59779887b6ed2d51bcb838d07d3cee4702b52768b7fed1171ccce10e"
-    sha256 arm64_tahoe:       "c1d8111cf68a38541cff8d8defe4cfc2525c6df2048ca2606476828abdeebde1"
-    sha256 arm64_sequoia:     "89218d852fc9c5bac8ef21939ee2ac0fe3f6ddd6cf810e7049fbda4933c9c37c"
-    sha256 arm64_sonoma:      "e43f4f6d82543f2d3c9651186e73c47975ae9607279d33168643f22fb3e475db"
-    sha256 arm64_linux:       "5fd534aeaac56a0cb4666a164f014fa58b7c97a7ce171e8ed0453cc0991a571a"
-    sha256 x86_64_linux:      "53052e6d5b4598628d883789cafdc12a0cd511f5626fc6739408d0e87568e604"
+    sha256 arm64_golden_gate: "fd521b4639ed9029675e07c2f6e986902e62eb727d6dafcfdcbc61e7c2b0c003"
+    sha256 arm64_tahoe:       "2ade08fb55d5723790bc3ace95d096f032d26b2905c8e9d8be8f30df9b536f3a"
+    sha256 arm64_sequoia:     "0921e42b55ccaa7e694278acaba74405f2a875e2a52cdc14430f2cca181de3e6"
+    sha256 arm64_linux:       "f7e8cd9839cfc320b56eedf128e1e9926cf1a1df4dd2685139b25174289ca720"
+    sha256 x86_64_linux:      "031466c8ad75a6f4e12a250aae7f041a1f8a97018fc3a1fb9d4a9cb272e66fc8"
   end
 
   depends_on "bison" => :build
