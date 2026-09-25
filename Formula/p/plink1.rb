@@ -1,8 +1,8 @@
 class Plink1 < Formula
   desc "Whole-genome association analysis toolset"
   homepage "https://www.cog-genomics.org/plink/1.9/"
-  url "https://github.com/chrchang/plink-ng/archive/refs/tags/v1.9.0-rc1.tar.gz"
-  sha256 "345ee8dcb9064f96a609b69dba4b285f0ae9a5ed6b4799b8a82b91330f11fc3a"
+  url "https://github.com/chrchang/plink-ng/archive/refs/tags/v1.9.0-rc3.tar.gz"
+  sha256 "faa07757dd814ce0692275e6c2247f76ece74f3f49c50e6f3e4cc3539e85fe39"
   license "GPL-3.0-or-later"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
@@ -25,6 +25,8 @@ class Plink1 < Formula
   end
 
   conflicts_with "putty", because: "both install a `plink` binary"
+
+  deny_network_access!
 
   def install
     # PLINK 1.9 lives in the `1.9` subdirectory of the plink-ng repository.
