@@ -6,13 +6,11 @@ class Pagmo < Formula
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0d9840d73678b552f44a8571e277d55509a7a03055852f2fa8bcf8b55579d84e"
-    sha256 cellar: :any, arm64_tahoe:       "d6f878e60698b9628bfe904153829e027b81e6298190e2f2d9854b9c29da92f2"
-    sha256 cellar: :any, arm64_sequoia:     "0368ede6f188f6b192d8bbccd246d59b180d1e13f466db6f14a6e2f7ccb0fe8b"
-    sha256 cellar: :any, arm64_sonoma:      "75da7597ecf58183fe3e3b3524e3aadba8d6793d299377a5942a38aae10f9892"
-    sha256 cellar: :any, sonoma:            "8dc83e9418b2bc2d90a11ade348ee0e801e33e54d878d8e295fd3135db07f5ba"
-    sha256 cellar: :any, arm64_linux:       "dbe99db548100e7a99083bf8279ac9b54bff157c02411e8ef618c51b6677f1ed"
-    sha256 cellar: :any, x86_64_linux:      "9c4dc4a7729b3388229ef412880009cbad4a034b5b8ee661bfed2342abeb9969"
+    sha256 cellar: :any, arm64_golden_gate: "09411ccb768026f9cde2978003397d0ab70917d0b56111a37390584045b3d359"
+    sha256 cellar: :any, arm64_tahoe:       "f5785dbbc6f6b93ee9cc435f8b7f737866e49da979aa332c15773b457180474b"
+    sha256 cellar: :any, arm64_sequoia:     "ff4fe138739435578d77b6c1624fcb93e775977c82505d18741eac6ce98bbad0"
+    sha256 cellar: :any, arm64_linux:       "6595489ac203b33e97d12632e9189aae09d791d6942508f236f7d6495e92bfd5"
+    sha256 cellar: :any, x86_64_linux:      "13e7b286b3646603147045aad598c73cdaaec5d67ff9875f7c7780bc4a010abd"
   end
 
   depends_on "cmake" => :build
