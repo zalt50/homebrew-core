@@ -13,11 +13,11 @@ class Luau < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c8d0368d525040312f6b0eb1ca49d52201f8d0e0313d4c7a99acfccf3f231445"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b71a843a24cb1783c9ee595145f12847f8b67b1fbf51434681e641b16bafecc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcfbbe8404570dcc633a12f805fc0fd5db23f182301fae490208e09a9102b4a4"
-    sha256 cellar: :any,                 arm64_linux:       "bedb6aac99db1894b2b0282177ae8d6df3e75a88e39aba55ba6208c43b6e2ed5"
-    sha256 cellar: :any,                 x86_64_linux:      "62f6a8fec4a4509fde4c967b1a85b23f276e9945349158ad11977e2e494c4051"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2bb133dc0f57fe95a7425867c750ef4ca083c19490f924f99707f653e65986d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "649be3620dc07bb479dc9ef8aecc2c94ef0927af38be0031b2d9e4c1f698150f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "77269f7ae49392b9c589cad87fe4ed0521492f8c39ec9042f70d8f2db3ef15fd"
+    sha256 cellar: :any,                 arm64_linux:       "4ca223a4b53faa736068460a2b8bd84f28c0c9ff3c689b82392682bac40a24c3"
+    sha256 cellar: :any,                 x86_64_linux:      "7865921c9e00c16e908dbf2fa9b07796fbab04dc62e72c01520d16fcc67693d3"
   end
 
   depends_on "cmake" => :build
