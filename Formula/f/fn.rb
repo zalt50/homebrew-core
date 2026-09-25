@@ -1,8 +1,8 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https://fnproject.io"
-  url "https://github.com/fnproject/cli/archive/refs/tags/0.6.67.tar.gz"
-  sha256 "782d20fd52152ecd160f89286ee2e317c2602e3050d0f6d207f1ebe2bc241670"
+  url "https://github.com/fnproject/cli/archive/refs/tags/0.6.69.tar.gz"
+  sha256 "38cfbc34fe95c95ab529e72f57fc0f8b0694a102333d72a7515e0a0c4b0ff465"
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Fn < Formula
     sha256 cellar: :any,                 x86_64_linux:      "25df6c15ab745a246dcbd50651c3306702c6aca598bbd596cc78408b1002ab7c"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
 
   allow_network_access! :test
 
