@@ -1,8 +1,8 @@
 class KimiCode < Formula
   desc "AI coding agent for your terminal"
   homepage "https://moonshotai.github.io/kimi-code/"
-  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-2.1.0.tgz"
-  sha256 "25a081b7783806226434aab6c40462192d3f9e362391cba7b068af02d8b5fd71"
+  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-2.1.1.tgz"
+  sha256 "6690a29d7b5e14812754dd100136b7f4ee2577add8895f00fe27025b4412049f"
   license "MIT"
 
   bottle do
