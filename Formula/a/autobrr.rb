@@ -18,8 +18,15 @@ class Autobrr < Formula
   depends_on "node" => :build
   depends_on "pnpm" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "pnpm", "with", "current", "--dir", "web", "fetch"
+    system "go", "mod", "download"
+  end
+
   def install
-    system "pnpm", "with", "current", "--dir", "web", "install"
+    system "pnpm", "--offline", "with", "current", "--dir", "web", "install", "--frozen-lockfile"
     system "pnpm", "with", "current", "--dir", "web", "run", "build"
 
     system "go", "build", *std_go_args(output: bin/"autobrr", ldflags: :goreleaser), "./cmd/autobrr"
