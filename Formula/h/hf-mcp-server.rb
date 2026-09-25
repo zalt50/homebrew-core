@@ -1,16 +1,16 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.20.tgz"
-  sha256 "79c45fe703ab2c5f46b8d80f9f97f8164b6b4b43696aed507ddb7df1ccdc1402"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.21.tgz"
+  sha256 "80e965aa74980743ccf8bae9c0f1873fab16c9ef6518d413a10d2b4a606f121c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b258aafcccfeec318752e20d874d604807a436f11eb835c4caf0b8d8e7357d9c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b258aafcccfeec318752e20d874d604807a436f11eb835c4caf0b8d8e7357d9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b258aafcccfeec318752e20d874d604807a436f11eb835c4caf0b8d8e7357d9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2bffacce9dc995ccbe199e28381a911f98e5b0ca56c31d5d87b5ac0be4ec1fc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2bffacce9dc995ccbe199e28381a911f98e5b0ca56c31d5d87b5ac0be4ec1fc4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8b4c4aaea2d9cf104a74bf215bc6fb51b10fe46bef1cb08a424b956e7e6158e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b4c4aaea2d9cf104a74bf215bc6fb51b10fe46bef1cb08a424b956e7e6158e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b4c4aaea2d9cf104a74bf215bc6fb51b10fe46bef1cb08a424b956e7e6158e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d082ec36454c731f28e020f88c7ebf8e548a37b4568cc3b0d3c35ab384843be1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d082ec36454c731f28e020f88c7ebf8e548a37b4568cc3b0d3c35ab384843be1"
   end
 
   depends_on "node"
@@ -41,7 +41,12 @@ class HfMcpServer < Formula
 
     output_log = testpath/"output.log"
     pid = spawn bin/"hf-mcp-server", [:out, :err] => output_log.to_s
-    sleep 10
+    # The first `node` launch on macOS CI VMs can spend 20+ seconds in dyld
+    90.times do
+      break if output_log.read.include?("Failed to authenticate with Hugging Face API")
+
+      sleep 1
+    end
     assert_match "Failed to authenticate with Hugging Face API", output_log.read
   ensure
     Process.kill("TERM", pid)
