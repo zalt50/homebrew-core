@@ -1,10 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.4-source.tar.gz"
-  sha256 "2d97e043a616f96b148657c9c3d81ad71c4bd2052c59a2a3315ad842599340f9"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.5-source.tar.gz"
+  sha256 "98a5c10cda20c3992cdf76ff6b2a1149c32bd79cc796d3f703230b1185b7e934"
   license "AGPL-3.0-or-later"
-  compatibility_version 7
+  compatibility_version 8
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -70,6 +70,13 @@ class Mupdf < Formula
     sha256 "286aba9785463c83659a565210a82a77896195d3303bff0542e825479b56daf2"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  deny_network_access!
+
   def install
     # Remove bundled libraries excluding `extract`, "strongly preferred" `lcms2mt` (lcms2 fork)
     # and `cmark-gfm` (mupdf builds against its private headers, so no system-lib option)
@@ -85,6 +92,8 @@ class Mupdf < Formula
 
     (buildpath/"pipcl").install resource("pipcl")
     ENV.prepend_path "PYTHONPATH", buildpath/"pipcl/src"
+    (buildpath/"packaging").install resource("packaging")
+    ENV.prepend_path "PYTHONPATH", buildpath/"packaging/src"
 
     args = %W[
       build=release
