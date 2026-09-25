@@ -1,8 +1,8 @@
 class Pgpdump < Formula
   desc "PGP packet visualizer"
   homepage "https://www.mew.org/~kazu/proj/pgpdump/en/"
-  url "https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.37.tar.gz"
-  sha256 "bc3b6b85f3c95c68010883675283c1c905e6c4070ac5609ced1a87c53b3ee814"
+  url "https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.38.tar.gz"
+  sha256 "6e994c2ee7479ea4f4492d5d94d7177ac493fdb1b1bcf698aa90ae26495fd95b"
   license "BSD-3-Clause"
   head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "main"
 
@@ -24,6 +24,8 @@ class Pgpdump < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
