@@ -12,8 +12,7 @@ class CaCertificates < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "37f5c1413f65c05d86e1279d76699f5d27ad77f8126f5776db13f3d64ee3d010"
+    sha256 cellar: :any_skip_relocation, all: "81804ad8a70a7a8d2a0a964d106765ff88716b310decaeffb4b4895a3252186a"
   end
 
   deny_network_access!
