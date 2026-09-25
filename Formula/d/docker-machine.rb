@@ -1,9 +1,9 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.gitlab.com/runner/executors/docker_machine.html"
-  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.55/docker-machine-v0.16.2-gitlab.55.tar.bz2"
-  version "0.16.2-gitlab.55"
-  sha256 "706a897a1db8a6a6eede7abd465e9c74218d6ae129efc894b5582b6f6a0d6109"
+  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.56/docker-machine-v0.16.2-gitlab.56.tar.bz2"
+  version "0.16.2-gitlab.56"
+  sha256 "a90a2471fc8eab5c2e4d1239c9edd7e25d569f1b58cbfb346e1dd82a984609ec"
   license "Apache-2.0"
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
@@ -30,6 +30,12 @@ class DockerMachine < Formula
   disable! date: "2027-06-30", because: :deprecated_upstream
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/docker-machine"
