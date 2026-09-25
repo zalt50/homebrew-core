@@ -1,8 +1,8 @@
 class Cuttlefish < Formula
   desc "Build compacted de Bruijn graphs from references or reads"
   homepage "https://combine-lab.github.io/cuttlefish/"
-  url "https://github.com/COMBINE-lab/cuttlefish/archive/refs/tags/v3.0.2.tar.gz"
-  sha256 "41551ba8da867e3edcbfd95dbf044701add080fdb64393058e8d17714689145d"
+  url "https://github.com/COMBINE-lab/cuttlefish/archive/refs/tags/v3.0.3.tar.gz"
+  sha256 "dbe3fff5aebf72bfee2fc0f3f81fc2ec4ce9e599f52f3e9f3485cc8931679a7d"
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/cuttlefish.git", branch: "main"
 
