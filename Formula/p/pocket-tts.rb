@@ -9,11 +9,11 @@ class PocketTts < Formula
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a320acfaec8f08e85d00cf359ef3094b9a7ca74dca5f784682617d6701417ec4"
-    sha256 cellar: :any, arm64_tahoe:       "8f1460f0951ce13f230b5d9078b576c7d29061923ec1e72e9de0617fe7dfb9a7"
-    sha256 cellar: :any, arm64_sequoia:     "8b44770cbe924c93f27253acb2e2c01feb3d983dad1076e955c3b7dbb71a10d5"
-    sha256 cellar: :any, arm64_linux:       "5e73ac62c0b2f2685509fb39e2e73daa0fd87b237e72c72fefb408d4ee214bd2"
-    sha256 cellar: :any, x86_64_linux:      "36dafc03ceb927fa73428a09a58bd0815049d843a0da52f91967e38cfd3020c7"
+    sha256 cellar: :any, arm64_golden_gate: "4f2580fa3c141acbf4a2d6179794f3f228654e672ed1c9c185dfa45ebbbb9dac"
+    sha256 cellar: :any, arm64_tahoe:       "5c29cbb62a5c0d93ed87ef77ff9f0791fab7bf80976063ef88b4f1f07d1e8d85"
+    sha256 cellar: :any, arm64_sequoia:     "8ed0dfa02db56d118f5f170b3af446859f53f2b3a3e76cbc1188ecbcdb1bd3f9"
+    sha256 cellar: :any, arm64_linux:       "38bf483a2b45445083e470de826fb9d6b214f32bc3dcfa0982762b413e4e3251"
+    sha256 cellar: :any, x86_64_linux:      "ddacfe76ce10a4c7667c1b6c0b87a51de5414372979b677992648e68c9d3901f"
   end
 
   depends_on "cmake" => :build
