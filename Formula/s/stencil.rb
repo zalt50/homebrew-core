@@ -1,8 +1,8 @@
 class Stencil < Formula
   desc "Modern living-template engine for evolving repositories"
   homepage "https://stencil.rgst.io"
-  url "https://git.rgst.io/rgst-io/stencil/archive/v3.0.0.tar.gz"
-  sha256 "b690da33cf271b33e479b9d40f0763bd7dfbfe7dc8dc7fc00fc32d481c329c4a"
+  url "https://git.rgst.io/rgst-io/stencil/archive/v3.0.1.tar.gz"
+  sha256 "3784cbaccf720ea56218732cd411e169dfc1525651598c83e33aec0d782b1b6d"
   license "Apache-2.0"
   head "https://git.rgst.io/rgst-io/stencil.git", branch: "main"
 
