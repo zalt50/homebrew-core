@@ -25,12 +25,20 @@ class ActivemqCpp < Formula
 
   depends_on "pkgconf" => :build
   depends_on "apr"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     file "Patches/libtool/configure-big_sur.diff"
     type :unofficial
+  end
+
+  # Backport commit which allows us to build with OpenSSL 4:
+  # https://github.com/apache/activemq-cpp/commit/9c4df93026a777a86f9c886b538b454b4c32ba4e
+  # This uses a local patch to drop README.txt and RPM spec diff that don't exist in tarball.
+  patch :p2 do
+    file "Patches/activemq-cpp/9c4df93026a777a86f9c886b538b454b4c32ba4e.diff"
+    type :backport
   end
 
   deny_network_access!
