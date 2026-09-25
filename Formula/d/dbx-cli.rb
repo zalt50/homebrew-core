@@ -1,8 +1,8 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.96.tar.gz"
-  sha256 "869e400487287297cd4efcb672f7d22bf6e333e6e906902a41981b9c1a71f41f"
+  url "https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.97.tar.gz"
+  sha256 "0daa159efa03b689796cb7fe906ed54f025a7a5d32b69f3bede150f511fcff33"
   license "Apache-2.0"
 
   livecheck do
@@ -24,6 +24,12 @@ class DbxCli < Formula
 
   on_linux do
     depends_on "fontconfig"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
