@@ -1,8 +1,8 @@
 class Containerd < Formula
   desc "Open and reliable container runtime"
   homepage "https://containerd.io"
-  url "https://github.com/containerd/containerd/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "01b8974eac869ee146b510af13b56653e4c3da16aa71342dd3ba244c1ac01ab0"
+  url "https://github.com/containerd/containerd/archive/refs/tags/v2.4.1.tar.gz"
+  sha256 "c213c8222ec2b51f88eb541cd75e5905b35ae7d0b82d6d812f0b8121d11131a6"
   license "Apache-2.0"
 
   bottle do
