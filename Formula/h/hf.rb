@@ -3,17 +3,17 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/25/2a/484d112c0d8fc5f665d7b65137ac9cdb2953c982391598c3597968a12ee7/huggingface_hub-1.33.0.tar.gz"
-  sha256 "367be21a201db9523eddf8aeac7048f2602c1b308691c97640d5e72ed188007e"
+  url "https://files.pythonhosted.org/packages/0f/47/44e258e8f710d418bcf7522c966cd70c4b780fb2b65021f7c5f4f5461677/huggingface_hub-2.0.0.tar.gz"
+  sha256 "375e5ad35cb3505efbf19c0cdd7e3fbf1e2304b12cd0e6b7fc8d75c6f5484619"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "202f86f27726c3cfeec5e57ec6d0033c11c68404cd88e34507490c89a55348d5"
-    sha256 cellar: :any, arm64_tahoe:       "b5a2737939cf2bc25ec2eea1aa4a35144f9fa716bd19c603b1329a22d1a0b2f4"
-    sha256 cellar: :any, arm64_sequoia:     "99407e19a6cc4fbf7602e429c405e9b05950cc3e966092ef52fedf345f3c21bf"
-    sha256 cellar: :any, arm64_linux:       "b01e7e54f18d81133182826e8c0a17969d4536778ab02ee7dc75ac844c08f7ba"
-    sha256 cellar: :any, x86_64_linux:      "853eeeb5d4649ae4b132649a5b23a2ee53901ba6d1682162ee78cfd75a5c0161"
+    sha256 cellar: :any, arm64_golden_gate: "a6fe6f0d66be402845f493b3c3821c78cf7f4d7d32e5b1f428178a8128f03f52"
+    sha256 cellar: :any, arm64_tahoe:       "a9e5d82bf01c7dbf83e40a6f73834942c098b0c01f1617af2465f961dcca0ace"
+    sha256 cellar: :any, arm64_sequoia:     "9c94fb38fe918f46c52140cd8f5a145641ea2af81f24212f20751b9f6d5746ec"
+    sha256 cellar: :any, arm64_linux:       "551ac0045d1a7ef80751c2513e83b9bf6077c916e19e4203706a0e04941a45d2"
+    sha256 cellar: :any, x86_64_linux:      "f51224c63cbd7973d3e5914dc2f9a4ac9bf8a033ed631bee35a46432e264190e"
   end
 
   depends_on "pkgconf" => :build
@@ -61,14 +61,14 @@ class Hf < Formula
     sha256 "2e58454a340b3556dfa4972d5451aff4fba8dd42a236600ba1a1d2b1514f0fef"
   end
 
-  resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
-    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  resource "httpcore2" do
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
-  resource "httpx" do
-    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
-    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+  resource "httpx2" do
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "idna" do
@@ -89,6 +89,11 @@ class Hf < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
     sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
+  end
+
+  resource "truststore" do
+    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
+    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
   resource "typing-extensions" do
