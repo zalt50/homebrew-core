@@ -1,8 +1,8 @@
 class Instead < Formula
   desc "Interpreter of simple text adventures"
   homepage "https://instead.hugeping.ru/"
-  url "https://github.com/instead-hub/instead/archive/refs/tags/3.5.2.tar.gz"
-  sha256 "589f80cbac9edf51b29d86e1528b9e72c576129fa5c95f1bac3e5bb25c210cf3"
+  url "https://github.com/instead-hub/instead/releases/download/3.5.2/instead_3.5.2.tar.gz"
+  sha256 "77906fcd9099dcfe422e9b6e0ae2782b17c4a780836ed98864321b183732577a"
   license "MIT"
 
   bottle do
@@ -38,6 +38,8 @@ class Instead < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build",
