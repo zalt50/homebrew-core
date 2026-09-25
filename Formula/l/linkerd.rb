@@ -3,7 +3,7 @@ class Linkerd < Formula
   homepage "https://linkerd.io"
   url "https://github.com/linkerd/linkerd2.git",
       tag:      "version-2.20",
-      revision: "7977d505fc3d9ae7dddddd11779a82f813e405ac"
+      revision: "eadc1acf79ad2e766afbdceadb77f1594296fd77"
   license "Apache-2.0"
   head "https://github.com/linkerd/linkerd2.git", branch: "main"
 
@@ -21,13 +21,13 @@ class Linkerd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8884bcde37cad52a2b79557c62ca573c2c2b3870166c40de9cc41ce12ad83b"
   end
 
-  # TODO: Can be undeprecated on official new release or if upstream confirms change
-  # in upstream issue: https://github.com/linkerd/linkerd2/issues/15664
-  # See: https://docs.brew.sh/Homebrew-homebrew-core-Maintainer-Guide#retagged-formulae
-  deprecate! date: "2026-09-18", because: :checksum_mismatch
-  disable! date: "2027-09-18", because: :checksum_mismatch
-
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CI_FORCE_CLEAN"] = "1"
