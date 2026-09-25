@@ -15,13 +15,11 @@ class Libuv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "aa4102b6c7e4799d8b17c10c917e3c62158934750fcff5aa7be2f81f73a0ef82"
-    sha256 cellar: :any,                 arm64_tahoe:       "6e8478545dc49bd505a4fac61617cd15d8fec4475d2add5ea1cc92f7281818bf"
-    sha256 cellar: :any,                 arm64_sequoia:     "495b7322c4b9d0a2e5ceb96de24f5cc10d781e99179f94ca5e31d350547a235d"
-    sha256 cellar: :any,                 arm64_sonoma:      "6300ab64e5d20aa145fe987c40f65f994a54f571cf113d96100c07feb98e0c10"
-    sha256 cellar: :any,                 sonoma:            "4630cfebfbc75d75a085568e7e6183cc805271871aa8d70f5fa515b05141f641"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "601a1e2db4efec5d8464aba357970310183925c80fe32c7b449fbfc8b8d71b19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ae4d9ac18871f6a4f4250be25da29e904755fb3067c8fb08d48fdc71311c623b"
+    sha256 cellar: :any, arm64_golden_gate: "2fea505cd00bcf4b00c6f39a8a70a7b669b57db9c7ced4195c59221f4647c9b6"
+    sha256 cellar: :any, arm64_tahoe:       "76e5d3743160ff4da9a91f35f1e10614ffef9c4aeafb8f44e8e7b07a9bfa32fe"
+    sha256 cellar: :any, arm64_sequoia:     "fd36aed546040f791778940d56586bbbeaa2f8ed804f1a957b4baf83657d5b1f"
+    sha256 cellar: :any, arm64_linux:       "d0980c41c5fd765f0e2936fccc4ab0e29c147ca464601fca52d2a75621817235"
+    sha256 cellar: :any, x86_64_linux:      "5697a3e2ebf129603045c088824fb7fcf5e99fcf139eeed6239bc50375ad4cae"
   end
 
   depends_on "cmake" => :build
