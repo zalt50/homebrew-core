@@ -6,11 +6,11 @@ class StripeMock < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c65f67b38421103b5f450014cccaf6aecc88a122b5d6e19e204d4a4b01e8446"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c65f67b38421103b5f450014cccaf6aecc88a122b5d6e19e204d4a4b01e8446"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c65f67b38421103b5f450014cccaf6aecc88a122b5d6e19e204d4a4b01e8446"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "33f095b8e72ead56ecf9cebf6ba4c511a8fadf625d1093a7d80f57569e2ef955"
-    sha256 cellar: :any,                 x86_64_linux:      "53c9c8ea1bfe7f915880233390362a8ff65d57af75ae57b6c1f7132a011495f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e9af2b492af30cf41b230e1974f74325d0269340f1e6e115d27978ce2c6cf7ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e9af2b492af30cf41b230e1974f74325d0269340f1e6e115d27978ce2c6cf7ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e9af2b492af30cf41b230e1974f74325d0269340f1e6e115d27978ce2c6cf7ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5f5d65aeb7506e0c51e93f0b097f6717047e0508ce96ee4b4833fb64344846a6"
+    sha256 cellar: :any,                 x86_64_linux:      "ef42197c53fc4598b7b789fd421c6881dd544cd313a700fd7d11033d158afc64"
   end
 
   depends_on "go" => :build
