@@ -22,7 +22,7 @@ class Drogon < Formula
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "jsoncpp"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "sqlite"
 
@@ -48,7 +48,7 @@ class Drogon < Formula
       port = free_port
       inreplace "main.cc", "5555", port.to_s
 
-      system "cmake", "-S", ".", "-B", "build"
+      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=#{formula_opt_prefix("openssl@4")}"
       system "cmake", "--build", "build"
 
       begin
