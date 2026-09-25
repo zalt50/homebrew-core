@@ -1,8 +1,8 @@
 class MupdfTools < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.4-source.tar.gz"
-  sha256 "2d97e043a616f96b148657c9c3d81ad71c4bd2052c59a2a3315ad842599340f9"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.5-source.tar.gz"
+  sha256 "98a5c10cda20c3992cdf76ff6b2a1149c32bd79cc796d3f703230b1185b7e934"
   license "AGPL-3.0-or-later"
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
@@ -19,6 +19,8 @@ class MupdfTools < Formula
   end
 
   conflicts_with "mupdf", because: "mupdf and mupdf-tools install the same binaries"
+
+  deny_network_access!
 
   def install
     system "make", "install",
