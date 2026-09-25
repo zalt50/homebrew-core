@@ -1,8 +1,8 @@
 class Ocicl < Formula
   desc "OCI-based ASDF system distribution and management tool for Common Lisp"
   homepage "https://github.com/ocicl/ocicl"
-  url "https://github.com/ocicl/ocicl/archive/refs/tags/v2.19.1.tar.gz"
-  sha256 "a6d84d52d7565a24cfd80c5f65ad1addd9200b471de9d7cd7c6d5c48ddeddd0c"
+  url "https://github.com/ocicl/ocicl/archive/refs/tags/v2.20.0.tar.gz"
+  sha256 "c93441daeb9772922af5f7b394d60bbe44c67ea061511648943db07d33b5abb0"
   license "MIT"
 
   bottle do
@@ -15,6 +15,8 @@ class Ocicl < Formula
 
   depends_on "sbcl"
   depends_on "zstd"
+
+  allow_network_access! :test
 
   def install
     mkdir_p [libexec, bin]
@@ -45,6 +47,9 @@ class Ocicl < Formula
   end
 
   test do
+    # Parallel ghcr.io downloads get reset on CI runners, and 2.20.0 fails the install on any download error
+    ENV["OCICL_DOWNLOAD_CONCURRENCY"] = "1"
+    ENV["OCICL_HTTP_RETRIES"] = "5"
     system bin/"ocicl", "install", "chat"
     assert_path_exists testpath/"ocicl.csv"
 
