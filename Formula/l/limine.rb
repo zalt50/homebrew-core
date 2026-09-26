@@ -1,8 +1,8 @@
 class Limine < Formula
   desc "Modern, secure, portable, multiprotocol bootloader and boot manager"
   homepage "https://github.com/Limine-Bootloader/Limine"
-  url "https://github.com/Limine-Bootloader/Limine/releases/download/v12.9.0/limine-12.9.0.tar.gz"
-  sha256 "adea922af3b9c8179a4676bcecc8e4df2f3ef72ad36b3f4afab44cbf5f265e36"
+  url "https://github.com/Limine-Bootloader/Limine/releases/download/v12.9.1/limine-12.9.1.tar.gz"
+  sha256 "ee7c498670d0d16c897ecb391cd837cd375081cfd364bd3198db144c92aaccb4"
   license "BSD-2-Clause"
 
   livecheck do
@@ -29,7 +29,14 @@ class Limine < Formula
   depends_on "mtools" => :build
   depends_on "nasm" => :build
 
+  deny_network_access!
+
   def install
+    # Work around configure misreading the space-padded output of macOS `od`
+    # Remove in the next release
+    # Ref: https://github.com/Homebrew/homebrew-core/pull/313773#issuecomment-5851072866
+    inreplace "configure", '-N 1)"', "-N 1 | tr -d ' ')\""
+
     # Homebrew LLVM is not in path by default. Get the path to it, and override the
     # build system's defaults for the target tools.
     llvm_bins = formula_opt_bin("llvm")
