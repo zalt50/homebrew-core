@@ -2,16 +2,23 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https://crystal-lang.org/"
   license "Apache-2.0"
-  revision 1
-  compatibility_version 1
+  compatibility_version 2
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/refs/tags/1.21.0.tar.gz"
-    sha256 "5e2d69f565553aa7287e76570d4540a231bfdf1a37f3be179f497ef1df8a0d9a"
+    url "https://github.com/crystal-lang/crystal/archive/refs/tags/1.21.1.tar.gz"
+    sha256 "174ad41131a155d0407fb9f66fac4e4baabc5b5d7d030fef9c631a43f553e112"
 
     resource "shards" do
       url "https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
       sha256 "8655b87761016409e4411056e350b24e7fe79eae3f227b3354b181a03f14d5da"
+    end
+
+    # Backport support for LLVM 23
+    patch do
+      url "https://github.com/crystal-lang/crystal/commit/92773ed31c59f1a70c3b8ec0643fa4cf57362a9e.patch?full_index=1"
+      sha256 "de507d6eff80c0ef7d2309911aaf11b321d1ec960e3ada4b45c6c1cf3dc4a26a"
+      type :backport
+      resolves "https://github.com/crystal-lang/crystal/pull/17432"
     end
   end
 
@@ -42,7 +49,7 @@ class Crystal < Formula
   depends_on "bdw-gc"
   depends_on "gmp" => :no_linkage # std uses it but it's not linked
   depends_on "libyaml"
-  depends_on "llvm@22"
+  depends_on "llvm"
   depends_on "openssl@3" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkgconf" # @[Link] will use pkg-config if available
