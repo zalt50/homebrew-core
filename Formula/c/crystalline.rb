@@ -4,6 +4,7 @@ class Crystalline < Formula
   url "https://github.com/elbywan/crystalline/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "8693e91c0f2afa9afa66885aa2bbdc971e539ff95e3d89b2f5d499d07acad02d"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_golden_gate: "9dbee58249b91669e31b946cbbbdb5047a749e110c39506f381e1c265d4accef"
@@ -17,7 +18,7 @@ class Crystalline < Formula
   depends_on "crystal"
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm@22"
+  depends_on "llvm"
   depends_on "pcre2"
 
   deny_network_access!
