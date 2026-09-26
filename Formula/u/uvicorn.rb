@@ -9,11 +9,11 @@ class Uvicorn < Formula
   head "https://github.com/Kludex/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "575557c318b5fc62358c1bfa30e5c98b994c905a2f9589339be3f78919d032ed"
-    sha256 cellar: :any, arm64_tahoe:       "5f1a9f8ff90883b595150bd038af41336321f2984a5657f27af8d1506c8408d5"
-    sha256 cellar: :any, arm64_sequoia:     "7a05c0fbc40abf18c34ab77b143d24f055ca9c4d1d86c532d64a708b0f7a87c8"
-    sha256 cellar: :any, arm64_linux:       "013072f0d2f131e6e25d299902e150fd2dc6ce2028de3cb9270ee2757633d2dc"
-    sha256 cellar: :any, x86_64_linux:      "8e007f61488b53c40ae3f0b0f69b4421c0caf59bed80056abd072727f8bf6ec3"
+    sha256 cellar: :any, arm64_golden_gate: "18f5c54b3db0e37e6232e689eb2c6c41d28ba62b0423f3cf1d12984bd0e2c553"
+    sha256 cellar: :any, arm64_tahoe:       "d1821baf86612900513329415615ae47dcc9df098930f9f95c7db5202b0a35d2"
+    sha256 cellar: :any, arm64_sequoia:     "d71e0461cc9abf7c8b15d19b4fac129a742716759a804d33e226c90fc0647ddd"
+    sha256 cellar: :any, arm64_linux:       "2892ff997ffc9df3c67f568245956bb20d2861b87353b3dc80622fd448aadea0"
+    sha256 cellar: :any, x86_64_linux:      "f3cc76dd0bb5cd57b36764f4b72e6cf4248a4b3d1535c649459221442d4f5b65"
   end
 
   depends_on "rust" => :build
