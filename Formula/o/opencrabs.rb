@@ -1,8 +1,8 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "1b2ffbf219c4b63108eab557926e116618e34f949dd3ffb39d28d8e3f5190425"
+  url "https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "84f014d7dd2f17939489168db15ba2600ffb65e72f056474a6c2b39b24dba661"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
@@ -18,6 +18,7 @@ class Opencrabs < Formula
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "opus"
   depends_on "rtk"
 
   on_linux do
@@ -32,6 +33,18 @@ class Opencrabs < Formula
   end
 
   def install
+    # symphonia-adapter-libopus bundles libopus by default
+    inreplace "Cargo.toml", /^symphonia-adapter-libopus = \{/, "\\0 default-features = false, "
+
+    # Work around arm64 linux runner crashing from fat LTO
+    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
+                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+    if github_arm64_linux
+      ENV.deparallelize
+      ENV["CARGO_PROFILE_RELEASE_LTO"] = "thin"
+    end
+
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 
