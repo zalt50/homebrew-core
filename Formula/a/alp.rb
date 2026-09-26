@@ -7,14 +7,11 @@ class Alp < Formula
   head "https://github.com/tkuchiki/alp.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5adfef871b8e04c7386d432ba5bbc9fb762d8782849e8055b07ae1bdf214b576"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91314a180a6e144e0fc2e4d6d047c9f25b06143463961b42acf49dc625fa2660"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91314a180a6e144e0fc2e4d6d047c9f25b06143463961b42acf49dc625fa2660"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "91314a180a6e144e0fc2e4d6d047c9f25b06143463961b42acf49dc625fa2660"
-    sha256 cellar: :any_skip_relocation, sonoma:            "a69566f9d09559ab696fdf61867d6e885a415689684402bad741ff209406c235"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "20a13083c36878ec80447a6a435651f11e3f1a6e135d1ccee55345cf007c16b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea456ac8f3f0e0fe5f469436354ab388e558be059021a5e73acef44fcef04821"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5dd2399b07dc202117fbe7e93a5a6ca80a8527c6d3b75807539e67c6cd225e7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5dd2399b07dc202117fbe7e93a5a6ca80a8527c6d3b75807539e67c6cd225e7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5dd2399b07dc202117fbe7e93a5a6ca80a8527c6d3b75807539e67c6cd225e7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2f7fc9892141caea3d9612bfbff6542a1cf368ffe63c7506247e41b9a295f0b7"
+    sha256 cellar: :any,                 x86_64_linux:      "40fe8cd31f8b8c4a493325769a1518f814b6e4653fcc9bc1badc1fb43b1bd943"
   end
 
   depends_on "go" => :build
