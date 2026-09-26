@@ -3,8 +3,8 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/1a/9d/bc432fcd1d6dcbe2f41a964421724f24f36e3ce168b262fd6e47ff9c13f8/humanbound-2.10.0.tar.gz"
-  sha256 "c3bec75dc75a917b1bb980bcb7e471ef90fd9e85bbb2cc18d7f0773e9e169d07"
+  url "https://files.pythonhosted.org/packages/b5/b3/1aecb216e06a41d234533e262a0835d9a410e552d9d8278ce1e0f257ffd7/humanbound-2.11.0.tar.gz"
+  sha256 "2e66add829ecc11191595ab8ca4abed1e5636d2b6338798f2641373efcad95dd"
   license "Apache-2.0"
 
   bottle do
