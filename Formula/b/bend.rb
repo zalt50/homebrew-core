@@ -7,7 +7,7 @@ class Bend < Formula
   head "https://github.com/bendlang/bend.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "600d42aa5bf8a62a10ef397d4673fa697ad21be6d36cff5b0ab48de1f9030100"
+    sha256 cellar: :any_skip_relocation, all: "b6bc1dae01e2081deb4495847de70e6cd574333eb201699f700fd583b3031bff"
   end
 
   depends_on "bun"
