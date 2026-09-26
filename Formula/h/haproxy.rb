@@ -11,11 +11,12 @@ class Haproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "df7ad24e3c1fd38f93602d2608f8b771be5952b6af51c509f070fae1b4d051a7"
-    sha256 cellar: :any, arm64_tahoe:       "b8b2480caf707e5aebb29d00f8602491af6620a3be42f5a31924fdabeb90db7e"
-    sha256 cellar: :any, arm64_sequoia:     "cb9e8fdf8328525d1830033b2ceaea54522bb07156e7405f28336e05d4eedf33"
-    sha256 cellar: :any, arm64_linux:       "3b20af916c3b6e0f6019b415ff15901cfbfbae565492192cfd618eb71d358f2f"
-    sha256 cellar: :any, x86_64_linux:      "ca8b7f647ba1e8594dbb9fbb31ff200aae2e23f7967669c6c07849cd95ff66a5"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "0166ce3d19b81651d9e2cb89fb3c36fd13619e26e40d83edba93e623eb87576c"
+    sha256 cellar: :any, arm64_tahoe:       "86361587ada777cb2ff3849ccb2fe2e25103aab69adbd15b63a4443b47581d1d"
+    sha256 cellar: :any, arm64_sequoia:     "d7bab1c230485c4277fea6a3e03d5bff91d6366e215b349be3932154bfd2908b"
+    sha256 cellar: :any, arm64_linux:       "2d42d36946772c05aa63f265f72bfeea5a1e8e489671650be193a13a346fcc64"
+    sha256 cellar: :any, x86_64_linux:      "c0bab811d9dc74153567aaa1a3ea495b6fdc7ae3432faa14066dff49c9ce5b5c"
   end
 
   depends_on "openssl@4"
