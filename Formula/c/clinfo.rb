@@ -1,8 +1,8 @@
 class Clinfo < Formula
   desc "Print information about OpenCL platforms and devices"
   homepage "https://github.com/Oblomov/clinfo"
-  url "https://github.com/Oblomov/clinfo/archive/refs/tags/3.0.25.02.14.tar.gz"
-  sha256 "48b77dc33315e6f760791a2984f98ea4bff28504ff37d460d8291585f49fcd3a"
+  url "https://github.com/Oblomov/clinfo/archive/refs/tags/3.1.26.09.26.tar.gz"
+  sha256 "e944132329c6613b686ba0fcd373b15ebb553c367a01a734af8519ddb095c01f"
   license "CC0-1.0"
   head "https://github.com/Oblomov/clinfo.git", branch: "master"
 
