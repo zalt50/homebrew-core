@@ -7,7 +7,7 @@ class FrameworkToolTui < Formula
   head "https://github.com/grouzen/framework-tool-tui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, x86_64_linux: "25d5372742c736b3f219eb2001e104415bc41f9523fff9a5226d0a1bf157cd1c"
+    sha256 cellar: :any, x86_64_linux: "30246b68b4fc8d00bbdff5341b94d8c0ba0f0c679f326cc32e636c3a1567f063"
   end
 
   depends_on "pkgconf" => :build
