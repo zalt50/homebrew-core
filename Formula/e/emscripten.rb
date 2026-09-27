@@ -8,6 +8,7 @@ class Emscripten < Formula
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
     any_of: ["MIT", "NCSA"], # emscripten
   ]
+  revision 1
   head "https://github.com/emscripten-core/emscripten.git", branch: "main"
 
   livecheck do
@@ -217,7 +218,7 @@ class Emscripten < Formula
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: python3 }
+    emscript_env = { EMSDK_PYTHON: python3 }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|
