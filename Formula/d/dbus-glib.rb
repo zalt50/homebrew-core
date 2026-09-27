@@ -1,8 +1,8 @@
 class DbusGlib < Formula
   desc "GLib bindings for the D-Bus message bus system"
   homepage "https://wiki.freedesktop.org/www/Software/DBusBindings/"
-  url "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.114.tar.gz"
-  sha256 "c09c5c085b2a0e391b8ee7d783a1d63fe444e96717cc1814d61b5e8fc2827a7c"
+  url "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.116.tar.gz"
+  sha256 "e3f3d4487e2883800770ed5899ed111bdc4ba7056af34a255c4c46ad8a2486f3"
   license all_of: [
     "GPL-2.0-or-later", # dbus/dbus-bash-completion-helper.c
     any_of: ["AFL-2.1", "GPL-2.0-or-later"],
