@@ -1,8 +1,8 @@
 class Netwatch < Formula
   desc "Cross-platform realtime network diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/netwatch"
-  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.32.3.tar.gz"
-  sha256 "f91dfa39c0cf0dd721d5f8ec82bac46666c3ec2be1eb234b00b7524bc58122ba"
+  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.32.5.tar.gz"
+  sha256 "1529c82484599c349d2936708e0ae74f2175a66736d424cd621187c7d202cca8"
   license "MIT"
 
   bottle do
@@ -16,6 +16,12 @@ class Netwatch < Formula
   depends_on "rust" => :build
 
   uses_from_macos "libpcap"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
