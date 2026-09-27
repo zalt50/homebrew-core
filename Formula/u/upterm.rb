@@ -1,8 +1,8 @@
 class Upterm < Formula
   desc "Instant terminal sharing"
   homepage "https://upterm.dev"
-  url "https://github.com/owenthereal/upterm/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "ec824c90eafb7e1c4d068039004481e0d6ca17e0e35c45d2efb5a471f4177966"
+  url "https://github.com/owenthereal/upterm/archive/refs/tags/v0.32.1.tar.gz"
+  sha256 "a7b24a4dcf1d9067231393cb5c5f9002f3a9657ec34322d4e72531b98b6f0c97"
   license "Apache-2.0"
   head "https://github.com/owenthereal/upterm.git", branch: "master"
 
@@ -15,6 +15,12 @@ class Upterm < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
