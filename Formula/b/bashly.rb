@@ -1,8 +1,8 @@
 class Bashly < Formula
   desc "Bash command-line framework and CLI generator"
   homepage "https://bashly.dev"
-  url "https://github.com/bashly-framework/bashly/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "fc42ce07cb282aca07f000eb0af6b37b5d637a26b96157a105e9d3f7dd138f70"
+  url "https://github.com/bashly-framework/bashly/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "952d4c49e7c55c967a05701075b44d31edbafda23098aabc93d235f3aae92110"
   license "MIT"
 
   bottle do
@@ -28,11 +28,6 @@ class Bashly < Formula
     sha256 "7632a300ace2db877c024ffe413c684954cf37e41264b75ace9f456c9d657b02"
   end
 
-  resource "completely" do
-    url "https://rubygems.org/downloads/completely-0.8.0.gem"
-    sha256 "e493cd5d84805f47917a41f277ecbfe5f35363bed670be5a957d3acaed8c6c5e"
-  end
-
   resource "docopt_ng" do
     url "https://rubygems.org/downloads/docopt_ng-0.7.1.gem"
     sha256 "a024148ee4fa3ab1a8a04411aa4370f39cf2b446e63562097d418b7974a15667"
@@ -43,39 +38,19 @@ class Bashly < Formula
     sha256 "c5ca6dc25b0ef974a44dc8f59fe847577122483b1968a38dec305c60bf91ee92"
   end
 
-  resource "ffi" do
-    url "https://rubygems.org/downloads/ffi-1.17.4.gem"
-    sha256 "bcd1642e06f0d16fc9e09ac6d49c3a7298b9789bcb58127302f934e437d60acf"
-  end
-
   resource "gtx" do
     url "https://rubygems.org/downloads/gtx-0.1.2.gem"
     sha256 "668b14cc9a0a0f4103f2cc5c4e9acdfd05401691bf9fbea9e74f6f5018b6f3ba"
   end
 
   resource "io-console" do
-    url "https://rubygems.org/downloads/io-console-0.9.2.gem"
-    sha256 "efa74f891dd03c0939a931dfc6e74c2813d904763d456ea9762b0525e748db08"
+    url "https://rubygems.org/downloads/io-console-0.9.4.gem"
+    sha256 "a403304f32928ee85e56d457b4612ca43f2703b561a3258844992bd24085fbb1"
   end
 
   resource "kramdown" do
     url "https://rubygems.org/downloads/kramdown-2.5.2.gem"
     sha256 "1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa"
-  end
-
-  resource "listen" do
-    url "https://rubygems.org/downloads/listen-3.10.0.gem"
-    sha256 "c6e182db62143aeccc2e1960033bebe7445309c7272061979bb098d03760c9d2"
-  end
-
-  resource "logger" do
-    url "https://rubygems.org/downloads/logger-1.7.0.gem"
-    sha256 "196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203"
-  end
-
-  resource "lp" do
-    url "https://rubygems.org/downloads/lp-0.2.1.gem"
-    sha256 "d9fb072caf2cb232acd77a6719e6898e62f388d52dbcaa0f4f225931d457415b"
   end
 
   resource "mister_bin" do
@@ -86,16 +61,6 @@ class Bashly < Formula
   resource "pastel" do
     url "https://rubygems.org/downloads/pastel-0.8.0.gem"
     sha256 "481da9fb7d2f6e6b1a08faf11fa10363172dc40fd47848f096ae21209f805a75"
-  end
-
-  resource "rb-fsevent" do
-    url "https://rubygems.org/downloads/rb-fsevent-0.11.2.gem"
-    sha256 "43900b972e7301d6570f64b850a5aa67833ee7d87b458ee92805d56b7318aefe"
-  end
-
-  resource "rb-inotify" do
-    url "https://rubygems.org/downloads/rb-inotify-0.11.1.gem"
-    sha256 "a0a700441239b0ff18eb65e3866236cd78613d6b9f78fea1f9ac47a85e47be6e"
   end
 
   resource "reline" do
@@ -153,6 +118,11 @@ class Bashly < Formula
     sha256 "b922d0cf2313b6b7136ada6645ce7154ffc86418ca07d53b058efe9eb72f2a40"
   end
 
+  resource "watchly" do
+    url "https://rubygems.org/downloads/watchly-0.2.0.gem"
+    sha256 "eb9dd449bc8a703325162f293308b5bd5403741f8c91e7ca14802b0eaaa8d067"
+  end
+
   def install
     ENV["GEM_HOME"] = libexec
 
@@ -166,7 +136,6 @@ class Bashly < Formula
       "--install-dir", libexec, "--no-document"
 
     rm libexec.glob("extensions/*/*/*/mkmf.log")
-    deuniversalize_machos if OS.mac?
 
     (bin/"bashly").write_env_script libexec/"bin/bashly", GEM_HOME: ENV.fetch("GEM_HOME")
     generate_completions_from_executable(
