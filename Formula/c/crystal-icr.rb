@@ -4,7 +4,7 @@ class CrystalIcr < Formula
   url "https://github.com/crystal-community/icr/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "2530293e94b60d69919a79b49e83270f1462058499ad37a762233df8d6e5992c"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
     rebuild 3
@@ -17,9 +17,8 @@ class CrystalIcr < Formula
 
   depends_on "bdw-gc"
   depends_on "crystal"
-  depends_on "libevent"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "readline"
 
