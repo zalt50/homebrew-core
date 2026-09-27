@@ -8,14 +8,11 @@ class Trino < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d0d4904ca0694c9ae7e929ffd189334575b7578f69a486f76eed7c56f75145e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec736f795ac95764efc7be9505aed6c0aec627582e36c5b8e72142b2bacba08d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ec736f795ac95764efc7be9505aed6c0aec627582e36c5b8e72142b2bacba08d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ec736f795ac95764efc7be9505aed6c0aec627582e36c5b8e72142b2bacba08d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5c80298e351182358e20a726d986b05f0f814b5cefc63bd1fea48191d4e7d7a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1ed73d00bd5967d64423e902cf1c4a95a98465f989f0b18e132449c1f596157c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "650f9396b6330b486eff57179aa12fb0db0c43051ee6dda4b48cb58fbe964ee1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "21f595da51f8f78b4677f2e7a6d0603d301fb33bbf723ca95ea8f3d38c623b82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21f595da51f8f78b4677f2e7a6d0603d301fb33bbf723ca95ea8f3d38c623b82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "21f595da51f8f78b4677f2e7a6d0603d301fb33bbf723ca95ea8f3d38c623b82"
+    sha256 cellar: :any,                 arm64_linux:       "a052212f4102b9aef761b6cefc429224fa6ce318458e329839ab2de828f54019"
+    sha256 cellar: :any,                 x86_64_linux:      "dfc19202770e99b7af5a2d334b1b5210e8b1e00f4274ee7fb5bfbd4b60f7d4e7"
   end
 
   depends_on "go" => :build
