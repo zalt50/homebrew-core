@@ -1,8 +1,8 @@
 class Neocmakelsp < Formula
   desc "Another cmake lsp"
   homepage "https://neocmakelsp.github.io/"
-  url "https://github.com/neocmakelsp/neocmakelsp/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "4d562ace6e26ef2c93bb8cec91e85db1241b6e0990d67d76ae87cff2f422e5a4"
+  url "https://github.com/neocmakelsp/neocmakelsp/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "eb88d467816f67c22cfa864f3d3ecc4eb5cfbc1afa018fac61a23915f21745e6"
   license "MIT"
   head "https://github.com/neocmakelsp/neocmakelsp.git", branch: "master"
 
@@ -16,6 +16,12 @@ class Neocmakelsp < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
