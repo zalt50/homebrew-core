@@ -10,6 +10,14 @@ class Tcltls < Formula
     regex(/href=.*?tcltls[._-]?v?(\d+(?:\.\d+)+)(?:[._-]src)?\.t/i)
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "cba54878d7156ebfe2226fc1e7272a3a3687e44f4c05fba779fd5ba827377b3c"
+    sha256 cellar: :any, arm64_tahoe:       "242a551b11f27d1b0d6e880ac71d4e8b75095ad4a154244aec4ee2b1f1b0a71d"
+    sha256 cellar: :any, arm64_sequoia:     "89d1a7abd5f143bd10e8bb0e95b1ecf0448c12d7dc39d85df4da971a6265bd4a"
+    sha256 cellar: :any, arm64_linux:       "8c755242aa20cd516972978a4154ed0174bb913d38a462be40d00a50f8705bf1"
+    sha256 cellar: :any, x86_64_linux:      "3dadfa59d23d3ca9ede06eead4d0d35a417da14e1013c81fcc697e50e61862b7"
+  end
+
   depends_on "openssl@4"
   depends_on "tcl-tk" => :no_linkage
 
