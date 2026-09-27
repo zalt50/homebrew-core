@@ -1,8 +1,8 @@
 class Secretspec < Formula
   desc "Declarative secrets management tool"
   homepage "https://secretspec.dev"
-  url "https://github.com/cachix/secretspec/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "fa24f785bae57f6005b306493d5546002d08d71a42da6daf0cecd7a917e0b004"
+  url "https://github.com/cachix/secretspec/archive/refs/tags/v0.21.1.tar.gz"
+  sha256 "e2bc9cd215f7ddf74d7ef00bbe7cda318354a8223e7c04d7564759c70f3730b0"
   license "Apache-2.0"
   head "https://github.com/cachix/secretspec.git", branch: "main"
 
@@ -19,6 +19,12 @@ class Secretspec < Formula
 
   on_linux do
     depends_on "dbus"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
