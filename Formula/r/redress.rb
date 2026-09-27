@@ -12,11 +12,11 @@ class Redress < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e727e2fdaf26c4bfad09e1a3d8c9aec84ba03f5654f9de58e2759f568abd50d8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1a09db4bc6443632f4f19f395923a5fe179baf8eb72de8050950849496808bfe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9de909cf47977eafcee704c7d04868cbaa1eb4004f80d945e84aa621fc865dec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e31b38a9cc5c02f553de3fb29ecca777c8c71a569932fe9b23213780f2ecb116"
-    sha256 cellar: :any,                 x86_64_linux:      "7e90f57a491237fd405758ac54b1681af93514241c971362b668ea87a4063026"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8212161185bec1952f4895c3d260a4fdd446902350f66e96001d7347024fd1ed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "88c891af67b532d39f3f6bc747492f5c108a6fffbca1e8c1ec80f28ef2a4b686"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "610f1056ab59288e1ed672bbead4ab9972d18d069826cac41820923282c4bcaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6c06c56f7eb6b01fe1c7d52a7d3f532ff96a294327feb2c6452ec4909e906bd4"
+    sha256 cellar: :any,                 x86_64_linux:      "3e44c7e3c181fd1b1767fc1418455230042e998c9107ed656264279b5922eaa2"
   end
 
   depends_on "go" => :build
