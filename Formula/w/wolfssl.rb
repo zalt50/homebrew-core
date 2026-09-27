@@ -17,13 +17,11 @@ class Wolfssl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3d18b775d0d7027af9ac3065f080ec164b343ddaafd859c0e3954461b64b8281"
-    sha256 cellar: :any, arm64_tahoe:       "92851dd6eb8e88140f5749104c1e5264f5af8bf597c8d35d44dd27bb5c327f29"
-    sha256 cellar: :any, arm64_sequoia:     "862ebf92fdf078505b5d88eedc329cc95ddd72072b93dd6ca9944ddc2e26c15b"
-    sha256 cellar: :any, arm64_sonoma:      "4ca7786140c7c3147b7fdd403a8862ea85cd9c40ca5b515c266e104085eb7044"
-    sha256 cellar: :any, sonoma:            "b8f6e4be279f6d7eca0bd5d21a7a4d9ffd5e0d069fc3cd11d75861676b4f719e"
-    sha256 cellar: :any, arm64_linux:       "d2530699eb54a17fb16538600911c76009cae5a0197e99cebcb3961a2ecae995"
-    sha256 cellar: :any, x86_64_linux:      "80946a9f3733d3cbdea19d95b6e64f5b91c8322e0a72b22a24d8dc9282470b4f"
+    sha256 cellar: :any, arm64_golden_gate: "b20e22f4a91be3dc7adc6c4184c849f362e6df84168b1aa199938f78fe1d460b"
+    sha256 cellar: :any, arm64_tahoe:       "2d20992bcf519985e1fc216362f4312deacc7248f72207afa7b18bd20a95c8cf"
+    sha256 cellar: :any, arm64_sequoia:     "bb1007a3549020c942f1205abec2b8d22dc10519c56e939841cd2e5290acc8ef"
+    sha256 cellar: :any, arm64_linux:       "6bafae64a9a2606037b56a086df814ed4d78ce0236c81ffe2b4500f951cf8bc6"
+    sha256 cellar: :any, x86_64_linux:      "0cfd5b000ec77c9b22edaccbe54e665a3eec50857ebcae2cbd3142a24f3069ce"
   end
 
   depends_on "autoconf" => :build
