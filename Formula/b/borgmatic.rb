@@ -9,11 +9,11 @@ class Borgmatic < Formula
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d973a0db4fc5da8f7ce140b2f2107d8659eff2b977024f0aaea4e12cf57ae98"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f613936e27ad1d98dc6e4d8e863244d0ef18000f04d6f4d0c3c1544e07b49664"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "000a76f68804378eb7843a0f6439d7ebc341a4f5faffc555cd972ce0322169ec"
-    sha256 cellar: :any,                 arm64_linux:       "7802bd48f724bdd21e3dd2d99dd53a93ee395b63c46117c559b08afd386503ca"
-    sha256 cellar: :any,                 x86_64_linux:      "bcb408bc104e3bb9807ed15e97d244001804aef8fb4f2f40ea7ecadfe5ee04ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "43ec665d54c96f800f103f73ab80ca6fde7d1c8a065a36e16d6537c29ad9400c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9ed8eea9b96ceebb6362f22b37a63868dd8ff4fac88663bf56afdb5751dc010"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff9950fe61cfe509f4383f27dfff3e19104baa0673f37bc5e86a5004be769235"
+    sha256 cellar: :any,                 arm64_linux:       "b0b5b39401bc90bba8f0160c2af5682a995bd6fd46ee95a7c78780045113f632"
+    sha256 cellar: :any,                 x86_64_linux:      "3abba5862fd191fca877bec5433c32b3afc81040456e26a4eb4b137bc676f487"
   end
 
   depends_on "certifi" => :no_linkage
