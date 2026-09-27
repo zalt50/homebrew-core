@@ -12,13 +12,11 @@ class Wcslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "acb27b68cd3256fb5f5ce409e57a4fa500b785bb75bb990255c811d8a8e15dff"
-    sha256 cellar: :any, arm64_tahoe:       "6c4d405f732b645d6a510a09f818c58cb5c2420d01165cfa9eda29e65fc59baf"
-    sha256 cellar: :any, arm64_sequoia:     "7df83c4265c328c65f82e634ab3eebeb7f4b8f82b6d256c8f307e1b9ec1cb9cc"
-    sha256 cellar: :any, arm64_sonoma:      "0203ae796a2bed7337e97124bb2cd6323de06d98d6bc9d60069facb2b96c3ff3"
-    sha256 cellar: :any, sonoma:            "692d43d16d2f50ee948bb505e26258eca12f344969e34de1f559cf8d9258d728"
-    sha256 cellar: :any, arm64_linux:       "8bce64540ba8e45e079cd7fcc745d00bc91f9c6852db212a148662566481cc93"
-    sha256 cellar: :any, x86_64_linux:      "fb82f332c5340b5927f1c9d3c2dcb32ac74919239d676620113321fe394c03a4"
+    sha256 cellar: :any, arm64_golden_gate: "21a9a9505c067ae549847298646150718819a9a1ac798c77efa418dd980bbbfb"
+    sha256 cellar: :any, arm64_tahoe:       "da68897509ba16a668255155c38c88e4e595420b6845903ab41985bbe4df997a"
+    sha256 cellar: :any, arm64_sequoia:     "71e292d9ee8dafadfeb5a0f8ce0282c5d934541a7b81059f7b9a3673476b6759"
+    sha256 cellar: :any, arm64_linux:       "678d2ba4e5676f437d6f0c7b07e5a67e865c8e31b8ae83fc42338897638f0856"
+    sha256 cellar: :any, x86_64_linux:      "3865deea09614eb167cd626529aec653420a17779f9605aceb6cf09bf27675b4"
   end
 
   depends_on "cfitsio"
