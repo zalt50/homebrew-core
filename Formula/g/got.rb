@@ -1,9 +1,9 @@
 class Got < Formula
   desc "Version control system"
-  homepage "https://gameoftrees.org/"
-  url "https://gameoftrees.org/releases/portable/got-portable-0.128.tar.gz"
-  mirror "https://pkg.freebsd.org/ports-distfiles/got-portable-0.128.tar.gz"
-  sha256 "5d7eb6b29ea151dda1b6f4e1e1a6a9ef9cfd14336cc9f3236edfc30da8615872"
+  homepage "https://gameoftrees.org/", browsed: "2026-09-28"
+  url "https://gameoftrees.org/releases/portable/got-portable-0.129.tar.gz"
+  mirror "https://pkg.freebsd.org/ports-distfiles/got-portable-0.129.tar.gz"
+  sha256 "420f2e9be88b5e7de33b247f6ae21b918c113cceb2cb9a94b37a46d514f30a3e"
   license "ISC"
 
   # Since GitHub runners are not able to access the homepage, our Linux build
@@ -37,6 +37,8 @@ class Got < Formula
     depends_on "util-linux" # for libuuid
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     ENV["LIBTLS_CFLAGS"] = "-I#{formula_opt_include("libretls")}"
