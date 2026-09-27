@@ -36,12 +36,15 @@ class Apib < Formula
 
   depends_on "cmake" => :build
   depends_on "libev"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     # Workaround to build with CMake 4
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    # Workaround to build bundled Abseil
+    inreplace "build/_deps/absl-src/absl/strings/internal/str_format/extension.h",
+              "#include <cstddef>", "\\0\n#include <cstdint>"
     system "cmake", "--build", "build", "--target", "apib", "apibmon"
     bin.install "build/apib/apib", "build/apib/apibmon"
   end
