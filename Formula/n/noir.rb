@@ -19,7 +19,6 @@ class Noir < Formula
   depends_on "crystal" => :build
   depends_on "pkgconf" => :build
   depends_on "bdw-gc"
-  depends_on "libevent"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "pcre2"
