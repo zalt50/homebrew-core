@@ -3,14 +3,9 @@ class Trino < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https://trino.io"
-  url "https://search.maven.org/remotecontent?filepath=io/trino/trino-server/476/trino-server-476.tar.gz"
-  sha256 "cfd5accde17e8ebd251eeeb78aed1f490e77bb3a164d95a0f454bf8a7c1cbd3f"
+  url "https://github.com/trinodb/trino/releases/download/483/trino-server-483.tar.gz"
+  sha256 "4f3978428f26f36398c94b85a3e03b5301394919c8a4271b497b0fcd1698d0cb"
   license "Apache-2.0"
-
-  livecheck do
-    url "https://search.maven.org/remotecontent?filepath=io/trino/trino-server/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)*)/?["' >]}i)
-  end
 
   bottle do
     rebuild 1
@@ -24,11 +19,12 @@ class Trino < Formula
   end
 
   depends_on "go" => :build
-  depends_on "openjdk"
+  # TODO: Try `openjdk` again once the `launcher` resource reaches 321, which adds JDK 27 flags
+  depends_on "openjdk@25"
 
   resource "trino-src" do
-    url "https://github.com/trinodb/trino/archive/refs/tags/476.tar.gz"
-    sha256 "5a288d90f02858131387a93e9c221bed77849073fb107e6cdf0a74945ee33cbe"
+    url "https://github.com/trinodb/trino/archive/refs/tags/483.tar.gz"
+    sha256 "3f0df83eb2621e30e76146cb5be0408a0d02db3e22d718d5d33009ef2e602d39"
 
     livecheck do
       formula :parent
@@ -36,8 +32,8 @@ class Trino < Formula
   end
 
   resource "trino-cli" do
-    url "https://search.maven.org/remotecontent?filepath=io/trino/trino-cli/476/trino-cli-476-executable.jar"
-    sha256 "fe4e9c7fb569cd67673afa1622945f6308e1e59bdb825419352b80887661757b"
+    url "https://github.com/trinodb/trino/releases/download/483/trino-cli-483"
+    sha256 "182a1daca97bd14e7aa9b25cb62c6d0fd96fa80313e5431ac91da3184cebb601"
 
     livecheck do
       formula :parent
@@ -48,8 +44,8 @@ class Trino < Formula
   # getting airbase version at https://github.com/trinodb/trino/blob/#{version}/pom.xml#L8 and then
   # dep.launcher.version at https://github.com/airlift/airbase/blob/<airbase-version>/airbase/pom.xml#L225
   resource "launcher" do
-    url "https://github.com/airlift/launcher/archive/refs/tags/304.tar.gz"
-    sha256 "4afd1ed339c64bccab54421c01317665364a5e71dec20fb6b7b2f60281f1b344"
+    url "https://github.com/airlift/launcher/archive/refs/tags/318.tar.gz"
+    sha256 "b9293b91a04578caa67018dfb8eba6c6fd52f709e3a765e9d74a7e9027c90afd"
 
     livecheck do
       url "https://raw.githubusercontent.com/trinodb/trino/refs/tags/#{LATEST_VERSION}/pom.xml"
@@ -99,8 +95,8 @@ class Trino < Formula
 
     libexec.install Dir["*"]
     libexec.install resource("trino-cli")
-    bin.write_jar_script libexec/"trino-cli-#{version}-executable.jar", "trino"
-    (bin/"trino-server").write_env_script libexec/"bin/launcher", Language::Java.overridable_java_home_env
+    bin.write_jar_script libexec/"trino-cli-#{version}", "trino", java_version: "25"
+    (bin/"trino-server").write_env_script libexec/"bin/launcher", Language::Java.overridable_java_home_env("25")
 
     resource("trino-src").stage do
       (libexec/"etc").install Dir["core/docker/default/etc/*"]
@@ -132,8 +128,11 @@ class Trino < Formula
 
     ENV["CATALOG_MANAGEMENT"] = "static"
     port = free_port
+
     cp libexec/"etc/config.properties", testpath/"config.properties"
     inreplace testpath/"config.properties", "8080", port.to_s
+    (testpath/"config.properties").append_lines "http-server.http.port=#{port}"
+
     server = spawn bin/"trino-server", "run", "--verbose",
                                               "--data-dir", testpath,
                                               "--config", testpath/"config.properties"
