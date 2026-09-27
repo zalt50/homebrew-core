@@ -2,10 +2,9 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.72.1",
-      revision: "de5eddd973a48689ceedd12d24bf42358e5694d5"
+      tag:      "0.73.0",
+      revision: "2fc54b18a4b23fba67682d7e9a77f688d7eecc34"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
     sha256               arm64_golden_gate: "348218fc1d773cfbabde2750e93e7bb5e13ee8d13f9a2fb30e090477268b7747"
@@ -16,7 +15,9 @@ class Ponyc < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "google-benchmark" => :build
+  depends_on "googletest" => :build
+  depends_on "openssl@4"
 
   uses_from_macos "python" => :build
 
@@ -32,21 +33,27 @@ class Ponyc < Formula
     resolves "https://github.com/llvm/llvm-project/pull/222721"
   end
 
+  deny_network_access!
+
   def install
     pic_args = []
     if OS.linux?
       inreplace "CMakeLists.txt", "PONY_COMPILER=\"${CMAKE_C_COMPILER}\"", "PONY_COMPILER=\"#{ENV.cc}\""
-      inreplace "lib/CMakeLists.txt", "-DBENCHMARK_ENABLE_WERROR=OFF ", "\\0-DHAVE_CXX_FLAG_WTHREAD_SAFETY=OFF "
       # aarch64's small-model GOT overflows with the default -fpic
       pic_args << "-DPONY_PIC_FLAG=-fPIC"
     end
+
+    # Use formulae instead of the tarballs `lib/CMakeLists.txt` downloads at build time
+    inreplace "lib/CMakeLists.txt", /^ExternalProject_Add\((?:gbenchmark|googletest)$.*?^\)$/m, ""
 
     # Build the vendored LLVM that the main configure step links against
     system "cmake", "-DJOBS=#{ENV.make_jobs}", *pic_args, "-P", "lib/build-libs.cmake"
 
     # ponyc requires a lowercase build type (it doubles as the output dir name)
     cmake_args = std_cmake_args.map { |arg| arg.sub("-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_BUILD_TYPE=release") }
-    system "cmake", "-S", ".", "-B", "build/build_release", *pic_args, *cmake_args
+    system "cmake", "-S", ".", "-B", "build/build_release", *pic_args, *cmake_args,
+                    "-DGTest_DIR=#{formula_opt_lib("googletest")}/cmake/GTest",
+                    "-Dbenchmark_DIR=#{formula_opt_lib("google-benchmark")}/cmake/benchmark"
     system "cmake", "--build", "build/build_release"
     system "cmake", "--install", "build/build_release"
   end
