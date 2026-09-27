@@ -6,7 +6,7 @@ class UnorderedDense < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "924e37064ca4505e25484bf08569e26448bf588b6d61468aa94fd21a68a28524"
+    sha256 cellar: :any_skip_relocation, all: "67533bac29a748e031cd663c7fc14343d99f77254ef5ccaf1300fbeb66ed9472"
   end
 
   depends_on "cmake" => :build
