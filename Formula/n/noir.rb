@@ -9,12 +9,11 @@ class Noir < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0becb4b738bebff5ea05bfec7243ba81d59aeaca5139d7ccdaa02e7a5177a97a"
-    sha256 cellar: :any, arm64_tahoe:       "b482fc3e28690c78b329c725cdd9d366ff2d2c659384345b67734caec73c6f5a"
-    sha256 cellar: :any, arm64_sequoia:     "e0a4365d097c186addafa20efbe78a2187c10bf6f95b611be5fb5d92685ff810"
-    sha256 cellar: :any, arm64_sonoma:      "73bdf965e689dcaa097aa8be938fc572bda07329257a8daa6fb56d278dbf9974"
-    sha256 cellar: :any, arm64_linux:       "8f9da9a00236c21fdc767f877fd113c3370e4183f8571b85b092c05d291d70d8"
-    sha256 cellar: :any, x86_64_linux:      "f2b0adefa70187c1d1fd5f674289f5de725acb40f7c2ee5896edb9984a3f6ac5"
+    sha256 cellar: :any, arm64_golden_gate: "fab90d78dd14f4b910255e7167f845900387d782fad728c519e7a7d0cd6c26c7"
+    sha256 cellar: :any, arm64_tahoe:       "c60fb23d97b6a09e07dd3e375fbaeaf9592db108d8e090671d8b7c706fceed61"
+    sha256 cellar: :any, arm64_sequoia:     "eac846748aa82f9da57c5cc5bac6eb0cc95227f562ac975d81ff58a5b9233aec"
+    sha256 cellar: :any, arm64_linux:       "1caf94c53efeeea51beb3a411c74b0460621cba2fdff73169f0cabec97d3c839"
+    sha256 cellar: :any, x86_64_linux:      "6a4e1aaae4ee25db5d468af3dbe856d493bd9a5818f9a65884625c6dc30c7ae2"
   end
 
   depends_on "crystal" => :build
