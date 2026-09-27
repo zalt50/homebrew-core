@@ -4,6 +4,7 @@ class Amber < Formula
   url "https://github.com/amberframework/amber/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "12c7b576a5f2e0dba53962ca23d18435526a2b685924783d57cb0d507bd93a03"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_golden_gate: "001ad470f30e4ea89ce0d85887199bbe3835faaf6bbfbb7c63c627e26d6d1600"
@@ -17,9 +18,8 @@ class Amber < Formula
 
   depends_on "bdw-gc"
   depends_on "crystal"
-  depends_on "libevent"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "sqlite"
 
@@ -46,7 +46,7 @@ class Amber < Formula
       assert_match path, output
     end
 
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     cd "test_app" do
       shards = formula_opt_bin("crystal")/"shards"
       assert_match "Building", shell_output("#{shards} --without-development build test_app -Dwithout_mt")
