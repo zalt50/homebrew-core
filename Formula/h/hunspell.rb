@@ -1,8 +1,8 @@
 class Hunspell < Formula
   desc "Spell checker and morphological analyzer"
   homepage "https://hunspell.github.io"
-  url "https://github.com/hunspell/hunspell/releases/download/v1.7.3/hunspell-1.7.3.tar.gz"
-  sha256 "433274dac0619cb00c2e18b43a3dd3a9d50da5b5613fa9b5c21781e35dd76bc1"
+  url "https://github.com/hunspell/hunspell/releases/download/v1.7.4/hunspell-1.7.4.tar.gz"
+  sha256 "66ec82a577395fe9d471504267e6dd04615c76517c61af7c6b9c19e5e34e73c8"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
