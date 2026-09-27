@@ -1,8 +1,8 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://vowpalwabbit.org"
-  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.8.tar.gz"
-  sha256 "02f206a3ab336fa229549def890a3d2ed9143706548c6f1e2fff95a6e17c7002"
+  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.9.tar.gz"
+  sha256 "d45593dd0c2a6fbc39dfe1754ac23c27cb93b972e363fd756c54db05c50f613c"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
