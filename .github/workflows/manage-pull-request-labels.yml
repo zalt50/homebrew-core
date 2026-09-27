@@ -36,21 +36,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LABEL: ${{ github.event.label.name }}
-
-  concurrent-downloads-label:
-    permissions:
-      pull-requests: write # for `gh pr comment`
-    runs-on: ubuntu-latest
-    if: >
-      github.repository_owner == 'Homebrew' &&
-      github.event.action == 'labeled' &&
-      contains(fromJson('["CI-test-bot-no-concurrent-downloads"]'), github.event.label.name)
-    steps:
-      - name: Post comment
-        run: gh pr comment "$PR" --body "$COMMENT" --repo "$GITHUB_REPOSITORY"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT: >-
-            @${{ github.actor }}, please file an issue at Homebrew/brew for all uses of
-            ${{ github.server_url }}/${{ github.repository }}/labels/${{ github.event.label.name }}.
-            Thanks!
