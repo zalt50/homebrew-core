@@ -2,8 +2,8 @@ class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
   homepage "https://cucumber.io"
   url "https://github.com/cucumber/cucumber-cpp.git",
-      tag:      "v0.8.0",
-      revision: "38bd34a3caaeb3fa6ab80d09b323e1a9d6fe24b7"
+      tag:      "v0.9.0",
+      revision: "3a906521e53846b4c5d59b994e4b60655097d5ea"
   license "MIT"
 
   bottle do
