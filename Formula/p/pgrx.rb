@@ -6,14 +6,11 @@ class Pgrx < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a315666e708827e62f44a3730f35343a71dc449bf4a021be288774dc30e727d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "556061ef9dc90c485cff3092c87a6f18227773d8c931f8af65157de9bf7f9fcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "05ce76447bad80ab2b95034d4c643aedf62060e7ed1585da66735ef2aa6655bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6298246d4dab3424d595b109882d3888e9ceb5a7191fdc7ddfa039c81cef1779"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fa1193484a327f86a023ef96589404ca032ba9651c8f3c3440a317845c2821be"
-    sha256 cellar: :any,                 arm64_linux:       "f3c115806a6b6af5268ddf015a3a019db5651778cd597f05076971871c436ddd"
-    sha256 cellar: :any,                 x86_64_linux:      "4729d9b62af60df34b07340e95bfb2e34490afda45a1aeac850ff4e2e6ea34ff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b46a4876a5217c3a265b3837c85667166b9edaf57a0ca636443371d5688bb0f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9b9c37ffb2d49f7a0efd228d9a218debb1b446548847955f049ff046571d225c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9b6795022ab3731347c283f0350f0c52a093c6d56627d2552a05f508025854f8"
+    sha256 cellar: :any,                 arm64_linux:       "96afbf76650c41cfc17a7aa927b1a4aaf97ca48029e8440f7d42cc78fbc93fd9"
+    sha256 cellar: :any,                 x86_64_linux:      "c034102f19d6cec702413df6fcf5ff27961a9b58e648698b946edf506a1a3c42"
   end
 
   depends_on "pkgconf" => :build
