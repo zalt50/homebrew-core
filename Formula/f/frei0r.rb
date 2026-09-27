@@ -1,8 +1,8 @@
 class Frei0r < Formula
   desc "Minimalistic plugin API for video effects"
   homepage "https://frei0r.dyne.org/"
-  url "https://github.com/dyne/frei0r/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "41cc8afa4991f5499cea0973be974469dcee377e67dbfbf6ca76e82b2b9bf22e"
+  url "https://github.com/dyne/frei0r/archive/refs/tags/v3.6.0.tar.gz"
+  sha256 "425ddc9358151c52775a00b14e9dbd4044fc1f3aa931beef2aa3633707ba1eb8"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
@@ -21,6 +21,9 @@ class Frei0r < Formula
   deny_network_access!
 
   def install
+    # Skip the Linux-only `shadert0y` filter, which needs OpenGL/EGL from `mesa`
+    inreplace "src/filter/CMakeLists.txt", "add_subdirectory (shadert0y)", ""
+
     args = %w[
       -DWITHOUT_OPENCV=ON
       -DWITHOUT_GAVL=ON
