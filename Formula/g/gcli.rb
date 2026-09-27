@@ -25,6 +25,8 @@ class Gcli < Formula
   uses_from_macos "curl"
   uses_from_macos "libedit"
 
+  allow_network_access! :test
+
   def install
     # Do not use `*std_configure_args`, `./configure` script throws errors if unknown flag is passed
     system "./configure", "--prefix=#{prefix}", "--release"
