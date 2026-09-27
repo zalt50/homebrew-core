@@ -7,12 +7,11 @@ class CrystalIcr < Formula
   revision 4
 
   bottle do
-    rebuild 3
-    sha256 arm64_golden_gate: "16494c7f2dc00b76f48cfe4eecedf6654b105125cc15aa79ae74215958bf2d5b"
-    sha256 arm64_tahoe:       "f2dcd176ebd262e64584de8180f9c58f3f2e9442014645582ce9bea729eff649"
-    sha256 arm64_sequoia:     "b1b54bf47bdd2cff1696b3a96b48ba922df129e3d2541a11107a1fd040ca4536"
-    sha256 arm64_linux:       "e83bfa5cd9f2669132caa35ce32f4b2da3dc31ffb04f480e66f816ae0295c1af"
-    sha256 x86_64_linux:      "5ab53d6f72128b8c9cfb0e85e7e0859e0f4e1b16c9cd06d2ddf246ffe0088288"
+    sha256 arm64_golden_gate: "c21cafe1f6624e3f664638d863f7f4b4ec2f34bf25bd16362f0dcf116f3e47b3"
+    sha256 arm64_tahoe:       "0eeb299f632e4352bc1de10ab2f57eadd1fa6cfecc457aee62308bac6aac52c2"
+    sha256 arm64_sequoia:     "05b06f5e34378d1371b8679250de08974be0bf4c90040c127a602b79719e18c7"
+    sha256 arm64_linux:       "cf3adb692ca9244a7ea72337c0af1044c55fea5a462a4d3fb7b5365dde76aaef"
+    sha256 x86_64_linux:      "2801f28b1a6d6886ce3ce140914c3da162908c9c04175952c076f8f9435daccf"
   end
 
   depends_on "bdw-gc"
