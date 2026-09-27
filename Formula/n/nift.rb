@@ -1,8 +1,8 @@
 class Nift < Formula
   desc "Fast dependency-aware website generator"
   homepage "https://nift.dev/"
-  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.4.0.tar.gz"
-  sha256 "296650e52053858b49a6817d8b22e4ee3690b283b311eefb7a11532c070cd6fd"
+  url "https://github.com/nift-dev/nift/archive/refs/tags/v4.5.0.tar.gz"
+  sha256 "c430e2b6beb165150cf604faaeb655b45f68be24b9c5460aed677b3205989dd4"
   license "MIT"
 
   livecheck do
@@ -25,6 +25,8 @@ class Nift < Formula
       cause "floating-point `std::from_chars` requires macOS 26 libc++"
     end
   end
+
+  deny_network_access!
 
   def install
     if OS.mac? && MacOS.version <= :sequoia
