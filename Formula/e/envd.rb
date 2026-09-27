@@ -1,8 +1,8 @@
 class Envd < Formula
   desc "Reproducible development environment for AI/ML"
   homepage "https://envd.tensorchord.ai"
-  url "https://github.com/tensorchord/envd/archive/refs/tags/v1.3.4.tar.gz"
-  sha256 "03a30eea6a13b2f7b05f5567b53a7288ef8ce8feeba454306dd3812f25f5019f"
+  url "https://github.com/tensorchord/envd/archive/refs/tags/v1.3.5.tar.gz"
+  sha256 "a356b852f6a3c808666cd9e1afcebcc183c59f1b9f755291005cead411dc53d1"
   license "Apache-2.0"
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
@@ -40,7 +40,7 @@ class Envd < Formula
     assert_match version.to_s, shell_output("#{bin}/envd version --short")
 
     ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
-    expected = /failed to list containers: (Cannot|permission denied while trying to) connect to the Docker daemon/
+    expected = "failed to list containers: failed to connect to the docker API"
     assert_match expected, shell_output("#{bin}/envd env list 2>&1", 1)
   end
 end
