@@ -4,10 +4,10 @@ class Wolfssl < Formula
   # Git checkout automatically enables extra hardening flags
   # Ref: https://github.com/wolfSSL/wolfssl/blob/master/m4/ax_harden_compiler_flags.m4#L71
   url "https://github.com/wolfSSL/wolfssl.git",
-      tag:      "v5.9.2-stable",
-      revision: "ac01707f552c611fbd135cc723b2682b3e7f80f2"
+      tag:      "v5.9.4-stable",
+      revision: "3c5eead44904df64e6a5a1f4ebdce377d35a849a"
   license "GPL-3.0-or-later"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/wolfSSL/wolfssl.git", branch: "master"
 
   livecheck do
@@ -29,6 +29,8 @@ class Wolfssl < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+
+  deny_network_access!
 
   def install
     args = %W[
