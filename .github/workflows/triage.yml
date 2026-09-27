@@ -164,6 +164,11 @@ jobs:
                 - '\n  depends_on macos:'
                 - depends_on :macos
 
+            - label: checksum mismatch
+              path: Formula/.+
+              content: \n  (deprecate|disable)!.*:checksum_mismatch\n
+              keep_if_no_match: true
+
             - label: formula deprecated
               path: Formula/.+
               content: \n  deprecate!.*\n
