@@ -1,8 +1,8 @@
 class Wcslib < Formula
   desc "Library and utilities for the FITS World Coordinate System"
   homepage "https://www.atnf.csiro.au/computing/software/wcs/"
-  url "https://www.atnf.csiro.au/computing/software/wcs/wcslib-releases/wcslib-8.9.tar.bz2"
-  sha256 "82ac09ce5091b0bf06cec8f5cdeec1dabe1d06ba5dfb7ff2bdb0c1680488807b"
+  url "https://www.atnf.csiro.au/computing/software/wcs/wcslib-releases/wcslib-8.10.tar.bz2"
+  sha256 "447ecb7be9b43798f4d7f10855f3f39f826ad550bc9b330ced4736960fc65289"
   license "LGPL-3.0-or-later"
   compatibility_version 1
 
@@ -22,6 +22,8 @@ class Wcslib < Formula
   end
 
   depends_on "cfitsio"
+
+  deny_network_access!
 
   def install
     # Remove all the revision control files which mention prior GPL license
