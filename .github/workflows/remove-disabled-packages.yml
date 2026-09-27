@@ -98,7 +98,8 @@ jobs:
         with:
           title: Disabled package removal failed
           body: Run failed at ${{ env.RUN_URL }}
-          labels: bug,help wanted
+          labels: help wanted
+          type: Bug
           update-existing: ${{ needs.remove-disabled-packages.result == 'failure' }}
           close-existing: ${{ needs.remove-disabled-packages.result == 'success' }}
           close-from-author: github-actions[bot]
