@@ -31,10 +31,10 @@ class Tectonic < Formula
   depends_on "harfbuzz"
   depends_on "icu4c@78"
   depends_on "libpng"
-  depends_on "openssl@3"
 
   on_linux do
     depends_on "fontconfig"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 
@@ -50,7 +50,7 @@ class Tectonic < Formula
 
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
 
     system "cargo", "install", *std_cargo_args(features: "external-harfbuzz")
     bin.install_symlink bin/"tectonic" => "nextonic"
