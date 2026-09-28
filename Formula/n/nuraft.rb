@@ -4,6 +4,7 @@ class Nuraft < Formula
   url "https://github.com/eBay/NuRaft/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "073c3b321efec9ce6b2bc487c283e493a1b2dd41082c5e9ac0b8f00f9b73832d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     rebuild 1
@@ -19,15 +20,19 @@ class Nuraft < Formula
   depends_on "cmake" => :build
 
   depends_on "asio"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
-    # We override OPENSSL_LIBRARY_PATH to avoid statically linking to OpenSSL
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DOPENSSL_LIBRARY_PATH="
+    # Avoid statically linking to OpenSSL
+    inreplace "CMakeLists.txt", "set(OPENSSL_USE_STATIC_LIBS TRUE)", ""
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "examples"
@@ -38,9 +43,9 @@ class Nuraft < Formula
     system ENV.cxx, "-std=c++11", "-o", "test",
                     "quick_start.cxx", "logger.cc", "in_memory_log_store.cxx",
                     "-I#{include}/libnuraft", "-I#{testpath}/echo",
-                    "-I#{formula_opt_include("openssl@3")}",
+                    "-I#{formula_opt_include("openssl@4")}",
                     "-L#{lib}", "-lnuraft",
-                    "-L#{formula_opt_lib("openssl@3")}", "-lcrypto", "-lssl"
+                    "-L#{formula_opt_lib("openssl@4")}", "-lcrypto", "-lssl"
     assert_match "hello world", shell_output("./test")
   end
 end
