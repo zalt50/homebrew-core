@@ -1,8 +1,8 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "5b53d5bf8941b5276434737e9ba0f89508a0ea6ad2871da6ab42459eb48b53c6"
+  url "https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "2ae9ff19a0c514e55ba76f4025cead2faff67c91da7dce152c60b71a040e5192"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
@@ -22,8 +22,8 @@ class VitePlus < Formula
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
-        revision: "5b4746e442989d770c606ce08d2737e6aafbd25d"
-    version "5b4746e442989d770c606ce08d2737e6aafbd25d"
+        revision: "8df421985114ecfaf52cce038d4a5a6ea8c05408"
+    version "8df421985114ecfaf52cce038d4a5a6ea8c05408"
 
     livecheck do
       url "https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -35,8 +35,8 @@ class VitePlus < Formula
 
   resource "vite" do
     url "https://github.com/vitejs/vite.git",
-        revision: "434e8e9495436a60789f2b588a04a6a24a3d1661"
-    version "434e8e9495436a60789f2b588a04a6a24a3d1661"
+        revision: "39ddf7ccf7e7469ff6a3ba37bca38c32ea804d6e"
+    version "39ddf7ccf7e7469ff6a3ba37bca38c32ea804d6e"
 
     livecheck do
       url "https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -55,6 +55,9 @@ class VitePlus < Formula
       package_json = buildpath/file
       package_json.atomic_write(JSON.pretty_generate(JSON.parse(package_json.read).except("packageManager")))
     end
+
+    # Align the staged Vite's Vitest versions with the lockfile, as upstream CI does
+    system "node", "packages/tools/src/vendored-vitest.ts"
 
     # Vite patches only build-time dependencies, which the production deploy below omits
     (buildpath/"pnpm-workspace.yaml").append_lines "allowUnusedPatches: true"
@@ -84,6 +87,9 @@ class VitePlus < Formula
   end
 
   test do
+    # Use Homebrew node and skip the first-run setup prompt, which stops `vp` on the test PTY
+    ENV["VP_NODE_MANAGER"] = "no"
+
     assert_match version.to_s, shell_output("#{bin}/vp --version")
 
     # `vp` calls `tcsetattr` on a tty stdin, which stops it with SIGTTOU on the test PTY
