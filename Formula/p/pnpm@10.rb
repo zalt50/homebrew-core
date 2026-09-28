@@ -13,13 +13,11 @@ class PnpmAT10 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "75d35265bc30933c7d67d066afd0e7a048e9793284e561c0f90b769c10243685"
-    sha256 cellar: :any,                 arm64_tahoe:       "35da6766500f72d05bf91959b63d084a25f27033ddecfb54d46d45820580cee0"
-    sha256 cellar: :any,                 arm64_sequoia:     "024eb99f33594ece6933b896179e28120a61e0112c8eb696e775f066c3c5d90a"
-    sha256 cellar: :any,                 arm64_sonoma:      "024eb99f33594ece6933b896179e28120a61e0112c8eb696e775f066c3c5d90a"
-    sha256 cellar: :any,                 sonoma:            "42120517ebb98f344cda03e06b79bb539f29753f5d789de0abd2cceb1cdd926d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "60cda998763d2d2e30c62f99a3f39b92583e1cbdafe8fd5fc6f7270e8493f541"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "60cda998763d2d2e30c62f99a3f39b92583e1cbdafe8fd5fc6f7270e8493f541"
+    sha256 cellar: :any,                 arm64_golden_gate: "6ae04c1bdbc48b2795cc37b8d12d07fc8911291ed5be555765a937a9a49ebdad"
+    sha256 cellar: :any,                 arm64_tahoe:       "6ae04c1bdbc48b2795cc37b8d12d07fc8911291ed5be555765a937a9a49ebdad"
+    sha256 cellar: :any,                 arm64_sequoia:     "6ae04c1bdbc48b2795cc37b8d12d07fc8911291ed5be555765a937a9a49ebdad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a8857898145a70c235a151a9ebc84fb2f3fc0c9b5ec1625d50bc3daba3003467"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a8857898145a70c235a151a9ebc84fb2f3fc0c9b5ec1625d50bc3daba3003467"
   end
 
   keg_only :versioned_formula
