@@ -6,9 +6,9 @@ class DrawThingsCli < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ee89eb28bd2fb5360397b03852aa47af8e388af293850dda19f1c3431af126e8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "75859cc0b38ccd9fbbc7bd6e8db7f423e9320aa134487ef0cceba0b492722d5e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85ab83ab23c85bd6c2d1121c55b3c83a5035cd51de7089f6c4806f2832bd5bc9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c249de59b792714baf3c6213d850e0258dce7abd1a31bf16433ba7e57ded9b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33aa4a2ecff7fc457e3badf9e8ce6c12a9a7c9fd3b559546d892e8bd3b30a6c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a358b050638b6195d18d8baf6c89acd217625d5ca1b9e01be61f7bf1e73f00d2"
   end
 
   depends_on xcode: ["26.3", :build]
