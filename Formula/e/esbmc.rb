@@ -4,6 +4,7 @@ class Esbmc < Formula
   url "https://github.com/esbmc/esbmc/archive/refs/tags/v8.5.tar.gz"
   sha256 "61a240ca75cccbd037292d4921b7da01bf12fef0ae760401d3284a3a8a17cff3"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/esbmc/esbmc.git", branch: "master"
 
   livecheck do
@@ -59,6 +60,7 @@ class Esbmc < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    bin.env_script_all_files libexec/"bin", PATH: "#{formula_opt_libexec("python@3.14")}/bin:$PATH"
   end
 
   test do
