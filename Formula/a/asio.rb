@@ -27,7 +27,7 @@ class Asio < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "openssl@3"
+  allow_network_access! :test
 
   def install
     if build.head?
@@ -35,20 +35,22 @@ class Asio < Formula
       system "./autogen.sh"
     end
 
+    # NOTE: OpenSSL is only used at build time for examples and tests.
+    # Dependents can still use optional SSL feature with any supported SSL
+    # (e.g. OpenSSL/WolfSSL) without needing to force a dependency.
     system "./configure", "--disable-silent-rules",
                           "--without-boost",
-                          "--with-openssl=#{formula_opt_prefix("openssl@3")}",
                           *std_configure_args
     system "make", "install"
-    pkgshare.install "src/examples"
+    (pkgshare/"example_http_server").install Dir["src/examples/cpp11/http/server/*.{cpp,hpp}"]
   end
 
   test do
-    found = Dir[pkgshare/"examples/cpp{11,03}/http/server/http_server"]
-    raise "no http_server example file found" if found.empty?
+    cp_r (pkgshare/"example_http_server").children, testpath
+    system ENV.cxx, "-std=c++11", "-o", "http_server", *Dir["*.cpp"]
 
     port = free_port
-    pid = spawn found.first, "127.0.0.1", port.to_s, "."
+    pid = spawn "./http_server", "127.0.0.1", port.to_s, "."
     begin
       sleep 5
       assert_match "404 Not Found", shell_output("curl http://127.0.0.1:#{port}")
