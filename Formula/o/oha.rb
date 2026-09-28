@@ -15,9 +15,10 @@ class Oha < Formula
     sha256 cellar: :any,                 x86_64_linux:      "4de4913aabb8a9a54e7867c22ecbde08ffe92e6a921fd0ee5bb1f0cf413f610c"
   end
 
-  depends_on "cmake" => :build # for aws-lc-sys
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "sqlite"
 
   on_linux do
     depends_on "openssl@4" # Uses Secure Transport on macOS
@@ -30,7 +31,8 @@ class Oha < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
+    system "cargo", "install", "--no-default-features", *std_cargo_args(features: "native-tls")
   end
 
   test do
