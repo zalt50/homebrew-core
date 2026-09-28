@@ -34,6 +34,12 @@ class Llgo < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def find_dep(name)
     deps.find { |f| f.name.match?(/^#{name}(@\d+(\.\d+)*)?$/) }
         .to_formula
