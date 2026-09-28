@@ -7,11 +7,11 @@ class Opencrabs < Formula
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "22adbfddcf86c0e64f966cb0a0b71a044c8710506c6e7ddcd156774fb022f5c8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1933ee9476c3ecb3a271d37415cc2c469f6f7c23c07b931c8abf5966654bdcc5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e278e43bac1ed70190cf64c69273f0388083eabcc11fe53ac94f2fc5ee4760d"
-    sha256 cellar: :any,                 arm64_linux:       "e82fad0a191e400a8476a88eb9447ae37ef266358e4e8b6407d0552b77b4258c"
-    sha256 cellar: :any,                 x86_64_linux:      "248aa0b2c2145603286eea8089791ff12a1c8c32c901a4c6bec1f317364b2186"
+    sha256 cellar: :any, arm64_golden_gate: "0dcecb382085efcb2db1b62c249d2c8e1930503eeffe4e5df3fc60837efdc8aa"
+    sha256 cellar: :any, arm64_tahoe:       "c0f8afa8aad8dbbc74fa16ba0336282806f9fc6e868cbc837f3c5199e6392b96"
+    sha256 cellar: :any, arm64_sequoia:     "947e5135985b6986f86e44899d4e3e8a56435af1fc0c0ff6c76f7f62b53b385e"
+    sha256 cellar: :any, arm64_linux:       "61cb8da2264f1ea3ed8eb79e467317e626be8a28515bb7af1958208e68417ddb"
+    sha256 cellar: :any, x86_64_linux:      "7a446e0546236e675079a016b52e7e16aab1f52e7815afe7e93127bfcb978498"
   end
 
   depends_on "cmake" => :build
