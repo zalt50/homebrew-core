@@ -1,8 +1,8 @@
 class Appstream < Formula
   desc "Tools and libraries to work with AppStream metadata"
   homepage "https://www.freedesktop.org/wiki/Distributions/AppStream/"
-  url "https://github.com/ximion/appstream/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "02f723cb1afa372d434896e138503163a44ad49e4a813d0d30713fc38ccb8d0c"
+  url "https://github.com/ximion/appstream/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "2bc53d1d63ae28e7409a15747d4ae23a557409249461aab87a7947640402d1bd"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -46,8 +46,6 @@ class Appstream < Formula
 
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
-
-    inreplace "meson.build", "/usr/include", prefix.to_s
 
     args = %w[
       -Dstemming=false
