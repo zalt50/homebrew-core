@@ -14,11 +14,11 @@ class DockerMachine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d66655f4807b22f00426164c5a913edfac7aaa8ba1b12f2369e011cb669ebbca"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d66655f4807b22f00426164c5a913edfac7aaa8ba1b12f2369e011cb669ebbca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d66655f4807b22f00426164c5a913edfac7aaa8ba1b12f2369e011cb669ebbca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e1004c38c4c3936b13ae2477cb7d685c8f9356d476b666e6563b43b30edf5065"
-    sha256 cellar: :any,                 x86_64_linux:      "0da8e3775fd6b6e54a530a967384e80921832285b566afee2a717f6076e9c88e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "674826c3296e3e12d10a5d8471f3b6ef1ffbfc1200cab8024a98c93a0c428dd4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "674826c3296e3e12d10a5d8471f3b6ef1ffbfc1200cab8024a98c93a0c428dd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "674826c3296e3e12d10a5d8471f3b6ef1ffbfc1200cab8024a98c93a0c428dd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c74ca17e994f4daaf64caae0808d1dfbdbac831968e3657010e0638c9074adf8"
+    sha256 cellar: :any,                 x86_64_linux:      "ccda3328b7da45f6eeb52f72dd2bea18eba52406b9ba4a36ae513333bcb3074a"
   end
 
   # After Docker ended support for original docker-machine[^1], we have used
