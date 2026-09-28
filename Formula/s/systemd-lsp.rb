@@ -1,8 +1,8 @@
 class SystemdLsp < Formula
   desc "Language server for systemd unit files"
   homepage "https://github.com/JFryy/systemd-lsp"
-  url "https://github.com/JFryy/systemd-lsp/archive/refs/tags/v2026.08.03.tar.gz"
-  sha256 "4ad6b6cf282cbf197cd1aedd95123a1f17a2a335855010850ede18d6f465814d"
+  url "https://github.com/JFryy/systemd-lsp/archive/refs/tags/v2026.09.28.tar.gz"
+  sha256 "d9fe3b5b81eb6d9363e2ed324909868810ffd2d7a49eb24233524d292db28de8"
   license "MIT"
 
   bottle do
