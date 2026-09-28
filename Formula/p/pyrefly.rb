@@ -1,8 +1,8 @@
 class Pyrefly < Formula
   desc "Fast type checker and IDE for Python"
   homepage "https://pyrefly.org/"
-  url "https://github.com/facebook/pyrefly/archive/refs/tags/1.3.1.tar.gz"
-  sha256 "00777ca516a4bd6740c2f5b2c70a5ead3349bb565e5f86ba8ae59810b5ea3f45"
+  url "https://github.com/facebook/pyrefly/archive/refs/tags/1.3.2.tar.gz"
+  sha256 "7da05b862497dafa3d34e7b574a9954f4daec71fe8423eb32f3765982d705b10"
   license "MIT"
   head "https://github.com/facebook/pyrefly.git", branch: "main"
 
@@ -15,6 +15,12 @@ class Pyrefly < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     # Currently uses nightly rust features. Allow our stable rust to compile
