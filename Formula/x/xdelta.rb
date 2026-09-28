@@ -1,8 +1,8 @@
 class Xdelta < Formula
   desc "Binary diff, differential compression tools"
   homepage "https://github.com/jmacd/xdelta"
-  url "https://github.com/jmacd/xdelta/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "ba2c9676b325f1958e504a60a20340145b8073d5f8664092de17389e15a93199"
+  url "https://github.com/jmacd/xdelta/archive/refs/tags/v3.2.1.tar.gz"
+  sha256 "dc75f6a9615ac278fe00375d94241f47af4e893f11e4a9f46b4ca4e2e1f99e66"
   license "GPL-2.0-or-later"
 
   bottle do
