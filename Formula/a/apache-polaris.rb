@@ -1,8 +1,8 @@
 class ApachePolaris < Formula
   desc "Interoperable, open source catalog for Apache Iceberg"
   homepage "https://polaris.apache.org/"
-  url "https://github.com/apache/polaris/archive/refs/tags/apache-polaris-1.7.0.tar.gz"
-  sha256 "cd56c1fd62d07a76154ca3805104b7a6fa947a6b6e38b90b7f14164c32f81659"
+  url "https://github.com/apache/polaris/archive/refs/tags/apache-polaris-1.8.0.tar.gz"
+  sha256 "c7addba31ff553a49a1b6b6c77b253a519d37da3eee82b90e5321cdc08b76f2d"
   license "Apache-2.0"
 
   livecheck do
@@ -26,6 +26,14 @@ class ApachePolaris < Formula
   def install
     ENV.delete "CI" # work around Gradle stalling on macOS CI runners
 
+    # TODO: Remove once the distribution includes the conditional Amazon transport dependency.
+    # https://github.com/apache/polaris/issues/5681
+    inreplace "runtime/common/build.gradle.kts",
+              'implementation("io.quarkiverse.amazonservices:quarkus-amazon-rds")',
+              'implementation("io.quarkiverse.amazonservices:quarkus-amazon-rds")' \
+              "\n  " \
+              'implementation("io.quarkiverse.amazonservices:quarkus-amazon-apache-client-internal")'
+
     system "gradle", "assemble", "--no-daemon"
 
     mkdir "build" do
@@ -47,6 +55,7 @@ class ApachePolaris < Formula
   end
 
   test do
+    ENV["QUARKUS_LOG_FILE_PATH"] = (testpath/"polaris.log").to_s
     port = free_port
     ENV["QUARKUS_HTTP_PORT"] = free_port.to_s
     ENV["QUARKUS_MANAGEMENT_PORT"] = port.to_s
