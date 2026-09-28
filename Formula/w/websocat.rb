@@ -24,7 +24,14 @@ class Websocat < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  # Backport support for OpenSSL 4
+  patch do
+    url "https://github.com/vi/websocat/commit/aa8fadaa212c2287067b722d4440b4f4118b39ea.patch?full_index=1"
+    sha256 "5957930d4c4df80305b3ac15412f7be18438025132d1f77208d77499eb0e6f0d"
+    type :backport
   end
 
   deny_network_access!
