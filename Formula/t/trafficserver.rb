@@ -5,6 +5,7 @@ class Trafficserver < Formula
   mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.2.0.tar.bz2"
   sha256 "bef171a7d064794e05ec7559e46d3e07c3ae6487a4647987fcc4f1cc5a82cec6"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/trafficserver.git", branch: "master"
 
   bottle do
@@ -27,14 +28,13 @@ class Trafficserver < Formula
   depends_on "libmaxminddb"
   depends_on "luajit"
   depends_on "nuraft"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "xz"
   depends_on "yaml-cpp"
   depends_on "zstd"
 
   uses_from_macos "flex" => :build
-  uses_from_macos "curl"
   uses_from_macos "ncurses"
 
   on_linux do
