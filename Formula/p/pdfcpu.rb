@@ -1,8 +1,8 @@
 class Pdfcpu < Formula
   desc "PDF processor written in Go"
   homepage "https://pdfcpu.io"
-  url "https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "69924a7363ea19b4f3d4799ebf78bcabfec75a735c9569983a6e2834b5e8c6b3"
+  url "https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "29fd5d6dc46c4cff9e0be556447bf030f38be3ea29fbde0ac0307b109f91c160"
   license "Apache-2.0"
 
   livecheck do
@@ -46,6 +46,7 @@ class Pdfcpu < Formula
     end
     # basic config.yml
     config_file.write <<~YAML
+      schemaVersion: 1
       reader15: true
       validationMode: ValidationRelaxed
       eol: EolLF
