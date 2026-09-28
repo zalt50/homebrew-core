@@ -1,8 +1,8 @@
 class Golines < Formula
   desc "Golang formatter that fixes long lines"
   homepage "https://github.com/golangci/golines"
-  url "https://github.com/golangci/golines/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "0dc245339b1508d6489950315d46ac1643a70dce40d172e85b6bd9e6bd6cf6d3"
+  url "https://github.com/golangci/golines/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "5745f0e490033ae8eb2f9d731cd7a6b5efe2a5b71a830a6cb9900f4140c4d322"
   license "MIT"
   head "https://github.com/golangci/golines.git", branch: "main"
 
