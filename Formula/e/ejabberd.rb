@@ -4,7 +4,7 @@ class Ejabberd < Formula
   url "https://github.com/processone/ejabberd/archive/refs/tags/26.07.tar.gz"
   sha256 "7b2e4efe2d5c867d2ced9cb1391731c5e6b9accd6f166ec71e734a3ae97813d7"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -30,7 +30,7 @@ class Ejabberd < Formula
   depends_on "erlang"
   depends_on "gd"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "expat"
 
@@ -49,6 +49,8 @@ class Ejabberd < Formula
     ENV["TARGET_DIR"] = ENV["DESTDIR"] = "#{lib}/ejabberd/erlang/lib/ejabberd-#{version}"
     ENV["MAN_DIR"] = man
     ENV["SBIN_DIR"] = sbin
+    ENV.append_to_cflags "-I#{formula_opt_include("openssl@4")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("openssl@4")}"
 
     args = %W[
       --prefix=#{prefix}
