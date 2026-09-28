@@ -1,8 +1,8 @@
 class Skate < Formula
   desc "Personal key value store"
   homepage "https://github.com/charmbracelet/skate"
-  url "https://github.com/charmbracelet/skate/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "f844fd980e1337be0f1bc321e58e48680fe3855e17c6c334ed8b22b9059949d2"
+  url "https://github.com/charmbracelet/skate/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "98b60c6d78e89467f37d49aca532ba541201737d8824ad251f4fad274f9556e8"
   license "MIT"
   head "https://github.com/charmbracelet/skate.git", branch: "main"
 
@@ -26,7 +26,9 @@ class Skate < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}")
+    # fang only reads the version from Go module build info, which source builds lack
+    inreplace "main.go", "rootCmd)", "rootCmd, fang.WithVersion(\"#{version}\"))"
+    system "go", "build", *std_go_args
 
     generate_completions_from_executable(bin/"skate", shell_parameter_format: :cobra)
   end
