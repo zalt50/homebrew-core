@@ -18,7 +18,7 @@ class Expert < Formula
   depends_on "elixir" => :build
   depends_on "erlang" => :build
   depends_on "just" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "ncurses"
 
