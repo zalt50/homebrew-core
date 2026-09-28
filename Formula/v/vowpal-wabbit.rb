@@ -7,11 +7,11 @@ class VowpalWabbit < Formula
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "eeb88eaf379d00b785995e97374564d0fedc31f58fd82c626d06b33aaf3bfa7a"
-    sha256 cellar: :any, arm64_tahoe:       "1f136ac5f9d5d125ce1c9c52dd1fe2a2fd8310ae9a06df7b5797640d8ac7c71c"
-    sha256 cellar: :any, arm64_sequoia:     "5284abeefeb90cccb8b932eceaadefe0fcfcd69671e607e38c574229825891b5"
-    sha256 cellar: :any, arm64_linux:       "f610d6d63ff993a7654a832db4071b614be4fc29b8863417c44fcf6c49be8859"
-    sha256 cellar: :any, x86_64_linux:      "7f0b5d1ad5ee1d40a1593845c42780942cdac4790d43d8bf5b2a592c5b24d764"
+    sha256 cellar: :any, arm64_golden_gate: "0127e0c5ac8421b623c0308436697107d674db7d1ca00c1bd22fcd7eae3402af"
+    sha256 cellar: :any, arm64_tahoe:       "b4e38c242072570fc8d401cb9a8b3dfa9662d08df23b0d102b1cf6d45b387442"
+    sha256 cellar: :any, arm64_sequoia:     "b263f2259db973515a37b3aa94c5eb85a00419b1256347783fe10400f6163aa5"
+    sha256 cellar: :any, arm64_linux:       "a459ec24b1a919112303cca4d6fe9f63b39e03e89ea1706ffd6cc08b45b52067"
+    sha256 cellar: :any, x86_64_linux:      "6b674a541f6b41fbb0c29d25d9e2f8477582745db050ed8a9e07b19e9e6e6246"
   end
 
   depends_on "boost" => :build
