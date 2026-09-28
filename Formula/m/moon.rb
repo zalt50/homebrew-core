@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://github.com/moonrepo/moon/archive/refs/tags/v2.5.5.tar.gz"
-  sha256 "7d9fa3040bfa76a54d8d23e73427bd055cc54751a0dfb789179c1e68c0a1612b"
+  url "https://github.com/moonrepo/moon/archive/refs/tags/v2.5.6.tar.gz"
+  sha256 "40468c58e99071ddeb3a1c059dc5640d7afc911e55d1eca89f7846e2315cf33f"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -29,6 +29,12 @@ class Moon < Formula
   on_linux do
     depends_on "openssl@4"
     depends_on "xz"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
