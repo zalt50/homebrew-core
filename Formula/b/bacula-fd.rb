@@ -21,7 +21,7 @@ class BaculaFd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f29b7a47f97ba906ad99a6ca74735719764540697d700495e4545bbf66c1038"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "readline"
 
   on_linux do
@@ -34,6 +34,14 @@ class BaculaFd < Formula
   patch do
     file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
     type :unofficial
+  end
+
+  # Apply Ubuntu patch to support OpenSSL 4. Used by Fedora too.
+  patch do
+    url "https://git.launchpad.net/ubuntu/+source/bacula/plain/debian/patches/ubuntu/openssl-4-ftbfs.patch?id=0ff2f2f11dee0bbdfb5059d35379088fbe7ae5ab"
+    sha256 "841443a121aa2d61c8156a7e9029113ea659cc24d2d610c2d93a498655272ab8"
+    type :unofficial
+    resolves "https://gitlab.bacula.org/bacula-community-edition/bacula-community/-/work_items/2771"
   end
 
   def install
