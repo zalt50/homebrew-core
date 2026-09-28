@@ -1,8 +1,8 @@
 class LeafMarkdownViewer < Formula
   desc "Terminal Markdown previewer with a GUI-like experience"
   homepage "https://leaf.rivolink.mg/"
-  url "https://github.com/RivoLink/leaf/archive/refs/tags/1.28.2.tar.gz"
-  sha256 "838826fe69d90888b9a1e4d62e98565f2ab784054b13e64adba313d21a3df86b"
+  url "https://github.com/RivoLink/leaf/archive/refs/tags/1.28.3.tar.gz"
+  sha256 "96250da66bdfd7dd2eb2879d3404dd3802872f4708e67cae40ad7b2af2b70bc8"
   license "MIT"
   head "https://github.com/RivoLink/leaf.git", branch: "main"
 
