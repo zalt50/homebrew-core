@@ -9,11 +9,11 @@ class Mvfst < Formula
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "48b107b065ee060f6f1647210e17afca03df68cccc64231c7d1abe3e8b220eaf"
-    sha256 cellar: :any, arm64_tahoe:       "67cdd2e693d465cb0013aafb637325f7b0625fd92414595243ed511937391cef"
-    sha256 cellar: :any, arm64_sequoia:     "2eca6d501d39824a0bf533c966e6a4647c7811c6b7e8fdcb38d910cbec702103"
-    sha256 cellar: :any, arm64_linux:       "52c3b3c868fb7a081662ca97906ee7102728f7070553bb316df167ac93be3f28"
-    sha256 cellar: :any, x86_64_linux:      "bbd1f951d0405851a282c057d3b6ff6d71335a61f9a9882cd4de52fb452a7c93"
+    sha256 cellar: :any, arm64_golden_gate: "2dc909b6496a620ac3acb10d97431c4cd141b8aa0656105264559417132a2573"
+    sha256 cellar: :any, arm64_tahoe:       "a8ab660d76cba975cc7c43942ef8c32fa13500cff10529345ff7360e645d1c1e"
+    sha256 cellar: :any, arm64_sequoia:     "1646688d60141b9e98a0f682a61cd63f6f6df03338af29a97d7185692fb1bcee"
+    sha256 cellar: :any, arm64_linux:       "ea6d383e54417ecb4054afe47aaadd8eee86b0b0d454a0352a9883edadaa6ec2"
+    sha256 cellar: :any, x86_64_linux:      "ef0aa0248043240838d026f56c51eeb1c065295c33987c6fb7ccac57f08ef491"
   end
 
   depends_on "cmake" => [:build, :test]
