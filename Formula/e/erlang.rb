@@ -6,6 +6,7 @@ class Erlang < Formula
   url "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
   sha256 "054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
   license "Apache-2.0"
+  revision 1
   compatibility_version 2
 
   livecheck do
@@ -28,7 +29,7 @@ class Erlang < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "unixodbc"
   depends_on "wxwidgets@3.2" # for GUI apps like observer
 
@@ -78,7 +79,7 @@ class Erlang < Formula
     args = %W[
       --enable-dynamic-ssl-lib
       --with-odbc=#{formula_opt_prefix("unixodbc")}
-      --with-ssl=#{formula_opt_prefix("openssl@3")}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-javac
       --with-wx-config=#{wx_config}
     ]
