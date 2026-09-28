@@ -12,15 +12,12 @@ class Sylpheed < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f3279ed70a06c91e141720e4f752ae67066fe7e9f94881cd71e47fbf695faa63"
-    sha256 arm64_tahoe:       "904952d738df66659a845da6b43e2489e4b8c65ac8c6680e999855c5f4460670"
-    sha256 arm64_sequoia:     "486a0c588d0241a2cdbd2bdf9ffba966f207243abfde699f8353ff0c0fadd128"
-    sha256 arm64_sonoma:      "bc084394ebc2781e0336e087aa640b7e7e750089f2ecc93a69c3f7d93b1b231c"
-    sha256 arm64_ventura:     "46d1569258905a84d21de589cf4da12f8fe4a3b959dea2f0f368819e81fc58b9"
-    sha256 sonoma:            "a6994106aad038ce6a2ab01a9618f7d273b0c934bc7951b41025dfc104f4fc7e"
-    sha256 ventura:           "3536a1945677ffa298ce9811bc4d12046b767ca08e2d4420cd5b0d7de986513f"
-    sha256 arm64_linux:       "75272179dc0352d0181a1617efa6cd7f00ee093145f43d15a327f1baab17e3c9"
-    sha256 x86_64_linux:      "822cdb64a23e28873bc5171be5527d324ac69ab52f3c58f423df3ff90b94bc4a"
+    rebuild 1
+    sha256 arm64_golden_gate: "b5fd93618ea6f60cfa7bba85d5fc32f71504b749e5cd8092913ceb4979c8b178"
+    sha256 arm64_tahoe:       "9d162c69a7cab7f0671739a3a53cb0eff7017e9b59a5f651df03b692de28b0c6"
+    sha256 arm64_sequoia:     "c788d42fa072abc19392c0d1aa76d9553fba825653c0143443b85a2a56192b87"
+    sha256 arm64_linux:       "c93f141dab1b0b1a5354d8384f441f9c74886f500bd2e6447f603db821682b32"
+    sha256 x86_64_linux:      "ddb55b5f3393569eb22d28dcfd7b59ab773cba24e896bd1c2ce8e57dca088648"
   end
 
   # Last release on 2018-01-31 with outstanding CVE-2021-37746. Last commit on 2022-09-13.
