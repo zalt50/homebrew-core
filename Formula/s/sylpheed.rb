@@ -39,7 +39,7 @@ class Sylpheed < Formula
   depends_on "glib"
   depends_on "gpgme"
   depends_on "gtk+"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pango"
 
   on_macos do
@@ -56,7 +56,16 @@ class Sylpheed < Formula
     type :unofficial
   end
 
+  # Apply open PR to support OpenSSL 4. Low impact with only const correctness changes.
+  patch do
+    url "https://github.com/sylpheed-mail/sylpheed/commit/fe0fd167153a7e877d44baa7c395c2ee671387fc.patch?full_index=1"
+    sha256 "446733233fc8e7d4e64a18de1874b44bf8f49ca77b20ffbbc5c7701f73e26b7b"
+    type :unofficial
+    resolves "https://github.com/sylpheed-mail/sylpheed/pull/68"
+  end
+
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     system "./configure", "--disable-updatecheck", *std_configure_args
     system "make", "install"
   end
