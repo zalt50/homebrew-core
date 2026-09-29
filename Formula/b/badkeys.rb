@@ -3,8 +3,8 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https://badkeys.info"
-  url "https://files.pythonhosted.org/packages/43/71/e2a8f3e504f3cdaeded9c4726dff0929d38ec4ab447560019c690a4777a3/badkeys-0.0.20.tar.gz"
-  sha256 "b1cbf5722dd3daf34d7dd205b33d0a57650608ce7a3ce6d6be595c6cfa5d27f2"
+  url "https://files.pythonhosted.org/packages/a1/05/6f1939e3fb4b7cdf7799d7a200c0151ca6a1662042a283b658fe98627f9b/badkeys-0.0.21.tar.gz"
+  sha256 "a4323c2a3de67e81786e87271d8c1cb302eed89054b770f85dbf1f95ce4264ad"
   license "MIT"
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
@@ -29,6 +29,11 @@ class Badkeys < Formula
   resource "gmpy2" do
     url "https://files.pythonhosted.org/packages/03/47/5c59682cd4d94291382f447dbe1f6229c8b8a144aa85d32d38ecaf8cfb73/gmpy2-2.3.1.tar.gz"
     sha256 "313f35e9fe6b9ddf72759b14dac25166fe5757c970403e4bbf87a70ab2be07df"
+  end
+
+  resource "pyopenssl" do
+    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
+    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   def install
