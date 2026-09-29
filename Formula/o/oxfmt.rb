@@ -1,8 +1,8 @@
 class Oxfmt < Formula
   desc "High-performance formatting tool for JavaScript and TypeScript"
   homepage "https://oxc.rs/"
-  url "https://registry.npmjs.org/oxfmt/-/oxfmt-0.70.0.tgz"
-  sha256 "cb6b759f6333166533bb7c383f829a8579e7f0e2fb21ff36e6e44d019c8c38b4"
+  url "https://registry.npmjs.org/oxfmt/-/oxfmt-0.71.0.tgz"
+  sha256 "a3e06c3f9895f63476301d10c2f4eb950b3303e569af2b31760829438354f546"
   license "MIT"
 
   bottle do
