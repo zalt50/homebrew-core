@@ -4,6 +4,7 @@ class NodeBuild < Formula
   url "https://github.com/nodenv/node-build/archive/refs/tags/v5.4.56.tar.gz"
   sha256 "23ee5f1fb900437ac14d3f7012de861dc5ba86ccddb45526315a70dea5933f72"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/nodenv/node-build.git", branch: "main"
 
@@ -17,7 +18,7 @@ class NodeBuild < Formula
   end
 
   depends_on "autoconf"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pkgconf"
 
   def install
