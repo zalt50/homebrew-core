@@ -30,7 +30,7 @@ class Libslax < Formula
   depends_on "bison" => :build
   depends_on "libtool" => :build
   depends_on :macos # needs libxslt built --with-debugger
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "curl"
   uses_from_macos "libedit"
