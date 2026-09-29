@@ -16,7 +16,7 @@ class Ortp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3" # OpenSSL 4 is not supported in monorepo
+  depends_on "openssl@4"
 
   def install
     args = %w[
