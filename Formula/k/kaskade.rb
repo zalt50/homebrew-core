@@ -3,8 +3,8 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https://github.com/sauljabin/kaskade"
-  url "https://files.pythonhosted.org/packages/f1/ed/0509ae0633a44853313926c7c9f7a5cc4986d3d6356289831648847df9c8/kaskade-5.0.2.tar.gz"
-  sha256 "516e39fcc84dd850b3031527846577731a7fe0d3599eea4df9962a46ef0d2e80"
+  url "https://files.pythonhosted.org/packages/3f/b7/0b3951bd91f014601090b0866859e4b848a596ad23d43e5aff1c73fdf51c/kaskade-5.1.0.tar.gz"
+  sha256 "cff8cef193aa2a1bc9ee9422a4d7c82adaa63a1496e39fae0e3ee7dcd4f7aa04"
   license "MIT"
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
@@ -168,8 +168,8 @@ class Kaskade < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/4d/e78afe1b449720c481884ca0a2f960f85f9ffdaa34b2d127b5427422c564/platformdirs-4.12.0.tar.gz"
-    sha256 "095be5c143382b1bee917c4f3e9987a0d8d6a582261f1d061ad0c403b7695b5b"
+    url "https://files.pythonhosted.org/packages/c3/8a/84ef03c1c83eacd7cc4540b05428a93b5cd4e42f62fb0b98ac2cb6ed3a6d/platformdirs-4.12.1.tar.gz"
+    sha256 "38da801a4af303033cbffccb39030db22bf0473e6414309b02acebeee7ca8bf1"
   end
 
   resource "protobuf" do
