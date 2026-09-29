@@ -12,11 +12,11 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7537d0df43b2a808db78e64b626e6ea0d1b16559ed6b51d37cd70c0db22bc7f9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7537d0df43b2a808db78e64b626e6ea0d1b16559ed6b51d37cd70c0db22bc7f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7537d0df43b2a808db78e64b626e6ea0d1b16559ed6b51d37cd70c0db22bc7f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e0cef66ee6d5fc308bafadefe66ab0a2ddb2df76a5cb492a64c1c1f50c2bf884"
-    sha256 cellar: :any,                 x86_64_linux:      "460ebf3a594e036e6f5fa1b7e4a0154ceb7079ef854abae6154672259332a8d0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d957e2059647bcbd6251d73a80ab765ccc4c90ed64d1eaed8ea6e35bdf3a750b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d957e2059647bcbd6251d73a80ab765ccc4c90ed64d1eaed8ea6e35bdf3a750b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d957e2059647bcbd6251d73a80ab765ccc4c90ed64d1eaed8ea6e35bdf3a750b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a12e9df879e207ab6b211154fb87280ead8c51a01a5ba1f1ce03f1785abf747"
+    sha256 cellar: :any,                 x86_64_linux:      "e6f87a3177d59fe33ee9191da9dc57cb68057faa08d72468b00d64ffb2f8fc6a"
   end
 
   depends_on "go" => [:build, :test]
