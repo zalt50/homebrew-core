@@ -25,13 +25,12 @@ class Bigloo < Formula
   depends_on "pkgconf" => :build
 
   depends_on "bdw-gc"
-  depends_on "gmp"
   depends_on "libunistring"
   depends_on "libuv"
   # configure runs `java -noverify`, which JDK 27 removed
   # https://github.com/manuel-serrano/bigloo/pull/157
   depends_on "openjdk@25"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "sqlite"
 
@@ -39,17 +38,32 @@ class Bigloo < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "gmp"
   end
+
+  deny_network_access!
 
   def install
     # Force bigloo not to use vendored libraries
-    inreplace "configure", /(^\s+custom\w+)=yes$/, "\\1=no"
+    inreplace "configure", /(^\s+custom\w+)=yes(;?)$/, "\\1=no\\2"
+    rm_r(%w[
+      gc
+      gmp
+      libbacktrace
+      libunistring
+      libuv
+      pcre
+      pcre2
+    ])
 
-    # configure doesn't respect --mandir or MANDIR
-    inreplace "configure", "$prefix/man/man1", "$prefix/share/man/man1"
+    ENV.append_to_cflags "-I#{formula_opt_include("openssl@4")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("openssl@4")}"
 
-    # configure doesn't respect --infodir or INFODIR
-    inreplace "configure", "$prefix/info", "$prefix/share/info"
+    # These need to be passed after --prefix
+    install_args = %W[
+      --infodir=#{info}
+      --mandir=#{man}
+    ]
 
     args = %w[
       --customgc=no
@@ -72,7 +86,8 @@ class Bigloo < Formula
     end
 
     # configure reads the Java version from the first line of `javac -version`, which `_JAVA_OPTIONS` pushes down
-    with_env(_JAVA_OPTIONS: nil) { system "./configure", *args, *std_configure_args }
+    with_env(_JAVA_OPTIONS: nil) { system "./configure", *args, *std_configure_args, *install_args }
+    ENV.deparallelize
     system "make"
     system "make", "install"
 
