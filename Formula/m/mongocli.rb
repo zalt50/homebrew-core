@@ -1,8 +1,8 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
   homepage "https://www.mongodb.com/docs/mongocli/current/"
-  url "https://github.com/mongodb/mongodb-cli/archive/refs/tags/mongocli/v2.0.8.tar.gz"
-  sha256 "3c12529959e459d990b5e1670e471f7137f95b294503b2c620eda17aab4112bb"
+  url "https://github.com/mongodb/mongodb-cli/archive/refs/tags/mongocli/v2.0.9.tar.gz"
+  sha256 "5806ac8ba8bfc6e0527a4c8d389195edcf5f40534d485256338dc155520780f9"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongodb-cli.git", branch: "main"
 
