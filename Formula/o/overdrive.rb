@@ -4,6 +4,7 @@ class Overdrive < Formula
   url "https://github.com/chbrown/overdrive/archive/refs/tags/2.4.1.tar.gz"
   sha256 "accc3ec4dab889f6bc003970be102ca7c85290b6516f71c8394e61946fb28860"
   license "MIT"
+  revision 1
   head "https://github.com/chbrown/overdrive.git", branch: "master"
 
   bottle do
@@ -11,11 +12,13 @@ class Overdrive < Formula
   end
 
   uses_from_macos "libxml2" # for xmllint
+  uses_from_macos "openssl" # for openssl (non keg-only)
 
   on_linux do
-    depends_on "openssl@3" # for openssl (non keg-only)
     depends_on "util-linux" # for uuidgen
   end
+
+  deny_network_access!
 
   def install
     bin.install "overdrive.sh" => "overdrive"
