@@ -32,7 +32,7 @@ class Monkeysphere < Formula
   depends_on "libassuan"
   depends_on "libgcrypt"
   depends_on "libgpg-error"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "perl"
 
@@ -54,6 +54,7 @@ class Monkeysphere < Formula
   end
 
   def install
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
     ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
