@@ -8,7 +8,7 @@ class Overdrive < Formula
   head "https://github.com/chbrown/overdrive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2ea3e686b4157fced49eab3f6bbf5b467140e7d07f130a810902a5bf940aca0e"
+    sha256 cellar: :any_skip_relocation, all: "ab5d25c52a5f1232a16850e14242e3eb762fc026ac72fa4e4687e63ad954e138"
   end
 
   uses_from_macos "libxml2" # for xmllint
