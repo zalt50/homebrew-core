@@ -2,7 +2,7 @@ class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/halide/Halide.git", branch: "main"
 
   stable do
@@ -24,6 +24,14 @@ class Halide < Formula
       type :backport
       resolves "https://github.com/halide/Halide/pull/9016"
     end
+
+    # Backport support for wabt 1.0.42
+    patch do
+      url "https://github.com/halide/Halide/commit/038f2e8a2824ec69db8f7785bf963b0ff110df2f.patch?full_index=1"
+      sha256 "4179d05badd64af26a82fe38d2146bdbb2eb36d54a0fc7c9ccb30364813d69da"
+      type :backport
+      resolves "https://github.com/halide/Halide/pull/9473"
+    end
   end
 
   livecheck do
@@ -41,18 +49,14 @@ class Halide < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "flatbuffers" => :build
   depends_on "pybind11" => :build
-  depends_on "flatbuffers"
-  depends_on "jpeg-turbo"
-  depends_on "libpng"
+  depends_on "python@3.14" => [:build, :test]
   depends_on "lld@21"
   depends_on "llvm@21"
-  depends_on "python@3.14"
-  depends_on "wabt"
+  depends_on "wabt" => :no_linkage
 
-  on_macos do
-    depends_on "openssl@3"
-  end
+  deny_network_access!
 
   def install
     # Disable SVE feature as broken: https://github.com/halide/Halide/issues/8529
@@ -69,6 +73,8 @@ class Halide < Formula
       "-DHalide_USE_FETCHCONTENT=OFF",
       "-DWITH_TESTS=NO",
     ]
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
