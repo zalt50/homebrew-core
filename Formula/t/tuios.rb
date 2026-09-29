@@ -1,8 +1,8 @@
 class Tuios < Formula
   desc "Terminal UI OS (Terminal Multiplexer)"
   homepage "https://tuios.gaurav.zip/"
-  url "https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "8c5d7e09a463b144dfb96fe561c8e936889d3befa2f1da1f3e6b9480628fe390"
+  url "https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "7c3640d22c3c460f843a8deb75c7c85ba1bd568a80390d5879868d79b8222181"
   license "MIT"
   head "https://github.com/Gaurav-Gosain/tuios.git", branch: "main"
 
