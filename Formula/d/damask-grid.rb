@@ -4,6 +4,7 @@ class DamaskGrid < Formula
   url "https://damask-multiphysics.org/download/damask-3.1.0.tar.xz"
   sha256 "d1ba65a167aab221c13f003507aba17f663c53af94fc1cd4a47408008329def1"
   license "AGPL-3.0-only"
+  revision 1
 
   # The first-party website doesn't always reflect the newest version, so we
   # check GitHub releases for now.
@@ -48,6 +49,9 @@ class DamaskGrid < Formula
 
     # Help link to libomp on macOS to avoid mixed OpenMP
     inreplace "cmake/Compiler-GNU.cmake", '"-fopenmp"', '"-Xpreprocessor -fopenmp -lomp"' if OS.mac?
+
+    # Allow PETSc 3.26, remove when upstream raises the supported maximum
+    inreplace "CMakeLists.txt", 'set(PETSC_VERSION_MINOR_MAX "25")', 'set(PETSC_VERSION_MINOR_MAX "26")'
 
     ENV["PETSC_DIR"] = formula_opt_prefix("petsc")
     args = %w[
