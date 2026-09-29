@@ -11,13 +11,11 @@ class GitSvn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c3d06bad2b0080056288d68e1cdd94be119952d7230476a058d4e456fac86d4e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ece82206db67ea749a8ca409f06505f3cfb8295aca11479713422408b656464e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ece82206db67ea749a8ca409f06505f3cfb8295aca11479713422408b656464e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ece82206db67ea749a8ca409f06505f3cfb8295aca11479713422408b656464e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ece82206db67ea749a8ca409f06505f3cfb8295aca11479713422408b656464e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1b448e429a366400879523816e1b91f64caed295ba2df4007dec5e8df5385bc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bb437655e863cf83435ea532c93155f181a676a976f9d295827ba630f2f311a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2873553993805a93f82518d11632eef95992d885b93408da33303d653795bea7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2873553993805a93f82518d11632eef95992d885b93408da33303d653795bea7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2873553993805a93f82518d11632eef95992d885b93408da33303d653795bea7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "78f68cd6e751aefed14c28b7d9f1db1394504f781e0c0a7b5ea814de6f06087a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "797172f1ce13af4e6fd58ee932203267da022992ae710f1c48a516d9569fbae4"
   end
 
   depends_on "git"
