@@ -1,8 +1,8 @@
 class Wassette < Formula
   desc "Security-oriented runtime that runs WebAssembly Components via MCP"
   homepage "https://microsoft.github.io/wassette/"
-  url "https://github.com/microsoft/wassette/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "805dc0e3201694e6589a73dc6705b5b3cada01ef4c0ac7b532e140dda7bff77e"
+  url "https://github.com/microsoft/wassette/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "ed6ae36056fed2dc11f734623ca97f74159f648367b12c2d49c559b126f27ac0"
   license "MIT"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
