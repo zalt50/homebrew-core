@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/140.16.0esr/source/firefox-140.16.0esr.source.tar.xz"
-  version "140.16.0"
-  sha256 "15d2d359b8571ecd0898faa6e05aa902b0de7cb34aadfc4d94adf6c8428f84df"
+  url "https://archive.mozilla.org/pub/firefox/releases/140.17.0esr/source/firefox-140.17.0esr.source.tar.xz"
+  version "140.17.0"
+  sha256 "4d6ed3b18b2069c55bab12d8ba95da6013ac0b036d8a031df8b9f39a25d05c33"
   license "MPL-2.0"
   compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
