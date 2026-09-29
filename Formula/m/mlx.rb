@@ -7,14 +7,15 @@ class Mlx < Formula
     "MIT", # main license
     "Apache-2.0", # metal-cpp resource
   ]
-  compatibility_version 5
+  compatibility_version 6
   head "https://github.com/ml-explore/mlx.git", branch: "main"
 
   stable do
-    url "https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.1.tar.gz"
-    sha256 "34fe1ec0e6baf886eee16c9a1d4c7bd26bbe74fe051225f0eb88a982fc9d2494"
+    url "https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.3.tar.gz"
+    sha256 "4129039ddcb36cb860982b616c975a5b9b8e6d8fa97efa86335b4427c29c4b4b"
 
-    # Backport nanobind 3 compatibility: https://github.com/ml-explore/mlx/pull/4417
+    # TODO: Remove when a release includes the macOS 27 fix in upstream PR #4594.
+    # Adapted for this release's kernel layout: https://github.com/ml-explore/mlx/pull/4594
     patch :DATA
   end
 
@@ -119,71 +120,38 @@ class Mlx < Formula
 end
 
 __END__
-diff --git a/python/src/convert.h b/python/src/convert.h
-index 133f443ed7..7c767a5944 100644
---- a/python/src/convert.h
-+++ b/python/src/convert.h
-@@ -14,24 +14,6 @@ namespace nb = nanobind;
+--- a/mlx/backend/metal/kernels/gated_delta_update_nax.h
++++ b/mlx/backend/metal/kernels/gated_delta_update_nax.h
+@@ -127,8 +127,8 @@
+       gemm_op
+           .template get_right_input_cooperative_tensor<AType, BType, CType>();
+   auto ct_c = gemm_op.template get_destination_cooperative_tensor<
+-      decltype(ct_a),
+-      decltype(ct_b),
++      metal::remove_addrspace_t<decltype(ct_a)>,
++      metal::remove_addrspace_t<decltype(ct_b)>,
+       CType>();
 
- namespace nanobind {
+   STEEL_PRAGMA_UNROLL
+@@ -173,8 +173,8 @@
+       gemm_op
+           .template get_right_input_cooperative_tensor<AType, BType, CType>();
+   auto ct_c = gemm_op.template get_destination_cooperative_tensor<
+-      decltype(ct_a),
+-      decltype(ct_b),
++      metal::remove_addrspace_t<decltype(ct_a)>,
++      metal::remove_addrspace_t<decltype(ct_b)>,
+       CType>();
 
--template <>
--struct ndarray_traits<mx::float16_t> {
--  static constexpr bool is_complex = false;
--  static constexpr bool is_float = true;
--  static constexpr bool is_bool = false;
--  static constexpr bool is_int = false;
--  static constexpr bool is_signed = true;
--};
--
--template <>
--struct ndarray_traits<mx::bfloat16_t> {
--  static constexpr bool is_complex = false;
--  static constexpr bool is_float = true;
--  static constexpr bool is_bool = false;
--  static constexpr bool is_int = false;
--  static constexpr bool is_signed = true;
--};
--
- namespace detail {
+   STEEL_PRAGMA_UNROLL
+@@ -226,8 +226,8 @@
 
- template <>
-diff --git a/python/src/small_vector.h b/python/src/small_vector.h
-index 0b2e6bb2ee..1a07abe1b2 100644
---- a/python/src/small_vector.h
-+++ b/python/src/small_vector.h
-@@ -31,7 +31,7 @@ struct type_caster<::mlx::core::SmallVector<Type, Size, Alloc>> {
+   // Create matmul output in register
+   auto ct_c = gemm_op.template get_destination_cooperative_tensor<
+-      decltype(ct_a),
+-      decltype(ct_b),
++      metal::remove_addrspace_t<decltype(ct_a)>,
++      metal::remove_addrspace_t<decltype(ct_b)>,
+       CType>();
 
-   // Not noexcept: on overflow of a narrow integer element we raise
-   // OverflowError so nanobind surfaces a clean error to the user.
--  bool from_python(handle src, uint8_t flags, cleanup_list* cleanup) {
-+  bool from_python(handle src, uint32_t flags, cleanup_list* cleanup) {
-     size_t size;
-     PyObject* temp;
-
-diff --git a/python/src/transforms.cpp b/python/src/transforms.cpp
-index e6a778eca0..e33cde9bce 100644
---- a/python/src/transforms.cpp
-+++ b/python/src/transforms.cpp
-@@ -814,8 +814,8 @@ class PyCustomFunction {
-       }
-       int array_index = 0;
-       int tangent_index = 0;
--      auto new_tangents =
--          nb::cast<nb::tuple>(tree_map(args, [&](nb::handle element) {
-+      auto new_tangents = nb::cast<nb::tuple>(
-+          tree_map(args, [&](nb::handle element) -> nb::object {
-             if (nb::isinstance<mx::array>(element) &&
-                 have_tangents[array_index++]) {
-               return nb::cast(tangents[tangent_index++]);
-@@ -861,8 +861,8 @@ class PyCustomFunction {
-       }
-
-       int arr_index = 0;
--      auto new_axes =
--          nb::cast<nb::tuple>(tree_map(args, [&](nb::handle element) {
-+      auto new_axes = nb::cast<nb::tuple>(
-+          tree_map(args, [&](nb::handle element) -> nb::object {
-             int axis = axes[arr_index++];
-             if (nb::isinstance<mx::array>(element) && axis >= 0) {
-               return nb::cast(axis);
+   // Load A in to left operand registers
