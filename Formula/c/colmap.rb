@@ -1,10 +1,9 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://github.com/colmap/colmap/archive/refs/tags/4.2.0.tar.gz"
-  sha256 "b61731fb1a4a33609e64fb353fe589d483be6a73878a5965b7d32ae23fb22fc5"
+  url "https://github.com/colmap/colmap/archive/refs/tags/4.2.1.tar.gz"
+  sha256 "15fb9e333541676e4ee9bc5d8ab95a3ed6e549a20eb13fc5aafd04ca06c76c88"
   license "BSD-3-Clause"
-  revision 3
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "42dae71a47e3ad16bad8b39f5146404575ca60d842dc3de5ac844914d9b1fdad"
