@@ -18,7 +18,7 @@ class Mlc < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install
@@ -26,7 +26,7 @@ class Mlc < Formula
     # incorrect or outdated linker (e.g. x86_64-apple-darwin14-clang)
     ENV.append_to_rustflags "-C linker=#{ENV.cc}"
 
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args
   end
