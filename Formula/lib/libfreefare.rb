@@ -24,7 +24,7 @@ class Libfreefare < Formula
 
   depends_on "pkgconf" => :build
   depends_on "libnfc"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "libusb-compat"
@@ -45,6 +45,9 @@ class Libfreefare < Formula
   end
 
   def install
+    ENV.append_to_cflags "-I#{formula_opt_include("openssl@4")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("openssl@4")}"
+
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
