@@ -19,9 +19,9 @@ class Pdfalyzer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "d72d18027947419e896ab1e7e0947d06a314d499acb3652acbef83680528254b"
   end
 
-  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "python@3.14"
+  depends_on "yara"
 
   resource "anytree" do
     url "https://files.pythonhosted.org/packages/bc/a8/eb55fab589c56f9b6be2b3fd6997aa04bb6f3da93b01154ce6fc8e799db2/anytree-2.13.0.tar.gz"
@@ -79,7 +79,12 @@ class Pdfalyzer < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "yara-python"
+
+    resource("yara-python").stage do
+      inreplace "setup.py", "self.dynamic_linking = None", "self.dynamic_linking = True"
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do
