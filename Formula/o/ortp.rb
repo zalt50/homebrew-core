@@ -7,16 +7,17 @@ class Ortp < Formula
   head "https://gitlab.linphone.org/BC/public/linphone-sdk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4938509a94c084dcc0c7fe9f9d05fea38d3a8a40848dacbed052d67c34ba8ef2"
-    sha256 cellar: :any, arm64_tahoe:       "091ab1aab710b0ed44132efae489a9ac5c09eb6728781820db24da55fab9951f"
-    sha256 cellar: :any, arm64_sequoia:     "3305f4ded608fecbe40a21ec7f3a6fa2429a3fbf2759dd867483dc56b03fae53"
-    sha256 cellar: :any, arm64_linux:       "70c761a23164d7fcd3ee7be662d0b32749b5ddad214f8b249edd4fe0ee441ae4"
-    sha256 cellar: :any, x86_64_linux:      "6293536df9987935003816632a339cb508ab053066db6d9163d8e41388642aae"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "08279ee6c0ab2114eceaa794341b5a20b7cbf67937cd1d35f83eba51caf35013"
+    sha256 cellar: :any, arm64_tahoe:       "91d79aa508e851f0cf9b7c8cb7dee37b7ce0d16e256c175f28c9005c0ef13a98"
+    sha256 cellar: :any, arm64_sequoia:     "9fc9343272801633d4eaf3b63787739b54a932f2b89fee31143815b7b3519b51"
+    sha256 cellar: :any, arm64_linux:       "a675840d153c65697b21f5808abbbd9b9f1374dda58b7e18101d9f62ed2b1d98"
+    sha256 cellar: :any, x86_64_linux:      "9ea61eb1cc90302a128951656f143af62f6d2442b4186f62025324fc70a9a6b2"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3" # OpenSSL 4 is not supported in monorepo
+  depends_on "openssl@4"
 
   def install
     args = %w[
