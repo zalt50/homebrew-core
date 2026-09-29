@@ -12,8 +12,8 @@ class SwiftSection < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7092c4af0152d4ae90a5fc35363d2bc307de902d44703694d46056c53bca29fb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3947ecc149155c8775af6572ebbbd2f22390aca2edd2611ff42ae2068233f585"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b74ba03651bcbeb26fd3a9d1e19e9df8d74465e43235cb9030564b190c2e3e8b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "595c3fe53d552ff0b52c17e8ba20e4fda824f0a42f38f7c50000a455fb68fd41"
   end
 
   # The Package.swift file requires Swift 6.2 or later.
