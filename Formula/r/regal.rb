@@ -1,8 +1,8 @@
 class Regal < Formula
   desc "Linter and language server for Rego"
   homepage "https://www.openpolicyagent.org/projects/regal"
-  url "https://github.com/open-policy-agent/regal/archive/refs/tags/v0.42.0.tar.gz"
-  sha256 "804a38ed49279dc1e3b36c75d8e63ec0ee1659e3bd04feecd295eb142773f3dc"
+  url "https://github.com/open-policy-agent/regal/archive/refs/tags/v0.43.0.tar.gz"
+  sha256 "0b1d03ef26a0d4282facaba811362d2784c7bc0aed0a5b4df270b413cc0dc6be"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/regal.git", branch: "main"
 
