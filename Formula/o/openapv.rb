@@ -1,8 +1,8 @@
 class Openapv < Formula
   desc "Open Advanced Professional Video Codec"
   homepage "https://github.com/AcademySoftwareFoundation/openapv"
-  url "https://github.com/AcademySoftwareFoundation/openapv/archive/refs/tags/v1.1.1.0.tar.gz"
-  sha256 "956e6e2cc822c63af4c323bf86464f1186171314e67e9c5153f58bd875538470"
+  url "https://github.com/AcademySoftwareFoundation/openapv/archive/refs/tags/v1.1.2.0.tar.gz"
+  sha256 "970f65255896c906b22d7c9f9850deeee03fecf001415804848a03b6d1bbe41a"
   license "BSD-3-Clause"
 
   livecheck do
