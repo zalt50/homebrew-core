@@ -1,10 +1,20 @@
 class Dcmtk < Formula
   desc "OFFIS DICOM toolkit command-line utilities"
   homepage "https://dcmtk.org/en/dcmtk/", browsed: "2026-08-06"
-  url "https://github.com/DCMTK/dcmtk/archive/refs/tags/DCMTK-3.7.0.tar.gz"
-  sha256 "5bb3ec8317dc465788bed2ca789e76d03ae5848c9381cce3b14c1a3f8b6aca56"
   license "BSD-3-Clause"
   head "https://git.dcmtk.org/dcmtk.git", branch: "master"
+
+  stable do
+    url "https://github.com/DCMTK/dcmtk/archive/refs/tags/DCMTK-3.7.0.tar.gz"
+    sha256 "5bb3ec8317dc465788bed2ca789e76d03ae5848c9381cce3b14c1a3f8b6aca56"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://github.com/DCMTK/dcmtk/commit/2a9060b4b6670ad4db169abeac17728f56b43139.patch?full_index=1"
+      sha256 "f36979e5534ff973812505e15daa1666008219cde47f7a040af08a81a3879a04"
+      type :backport
+    end
+  end
 
   livecheck do
     url :head
@@ -27,7 +37,7 @@ class Dcmtk < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxml2"
 
