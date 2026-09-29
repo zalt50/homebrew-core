@@ -1,8 +1,8 @@
 class Mp4ff < Formula
   desc "Tools for parsing and manipulating MP4/ISOBMFF files"
   homepage "https://github.com/Eyevinn/mp4ff"
-  url "https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.56.0.tar.gz"
-  sha256 "431a057ca003c2fcca81a9495792a833457e06c79fbc73c2aa6400b94d9f5008"
+  url "https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.57.0.tar.gz"
+  sha256 "642b451f674fde115dc41d249fb9e8f0bbbe10ca8b9099a9cd55cb4cf9601efb"
   license "MIT"
 
   bottle do
@@ -18,7 +18,10 @@ class Mp4ff < Formula
   depends_on "go" => :build
 
   def tools
-    %w[mp4ff-crop mp4ff-decrypt mp4ff-encrypt mp4ff-info mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister]
+    %w[
+      mp4ff-crop mp4ff-decrypt mp4ff-defragment mp4ff-encrypt mp4ff-info
+      mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister
+    ]
   end
 
   allow_network_access! :test
@@ -92,6 +95,12 @@ class Mp4ff < Formula
     dec_info = shell_output("#{bin}/mp4ff-info #{testpath}/dec.mp4")
     assert_match "[avc1]", dec_info
     refute_match "[encv]", dec_info
+
+    # mp4ff-defragment: fragmented to progressive
+    system bin/"mp4ff-defragment", testpath/"test.mp4", testpath/"defrag.mp4"
+    defrag_info = shell_output("#{bin}/mp4ff-info #{testpath}/defrag.mp4")
+    assert_match "[stsz] size=260", defrag_info
+    refute_match "[moof]", defrag_info
 
     # mp4ff-crop: progressive H.264
     testpath.install resource("homebrew-prog")
