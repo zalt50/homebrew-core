@@ -3,8 +3,8 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https://github.com/languitar/pass-git-helper"
-  url "https://github.com/languitar/pass-git-helper/archive/refs/tags/v4.3.0.tar.gz"
-  sha256 "955cebd941ecbe4b7cb826c5e9659a78c957fe5b765d0e64d3b01d026e741cc5"
+  url "https://github.com/languitar/pass-git-helper/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "7b3b496f3b4c885f1a4202b773e577bc80497faca875bff38dfc822b0824b11c"
   license "LGPL-3.0-or-later"
 
   bottle do
