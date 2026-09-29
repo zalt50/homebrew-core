@@ -36,14 +36,11 @@ class Opencascade < Formula
   depends_on "freetype"
   depends_on "tbb"
 
-  on_macos do
-    depends_on "tcl-tk@8" # FIXME: TCL 9 causes segfaults in `f3d`
-  end
+  uses_from_macos "tcl-tk" # FIXME: TCL 9 causes segfaults in `f3d`
 
   on_linux do
     depends_on "libx11"
     depends_on "mesa" # For OpenGL
-    depends_on "tcl-tk"
   end
 
   def install
@@ -51,35 +48,36 @@ class Opencascade < Formula
     # Ref: https://archlinux.org/todo/drop-freeimage/
     odie "FreeImage should not be a dependency!" if deps.map(&:name).include?("freeimage")
 
-    if OS.mac?
-      tcltk = Formula["tcl-tk@8"]
-      libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
-    else
+    args = %W[
+      -DUSE_FREEIMAGE=OFF
+      -DUSE_RAPIDJSON=ON
+      -DUSE_TBB=ON
+      -DINSTALL_DOC_Overview=ON
+      -DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF
+      -D3RDPARTY_FREETYPE_DIR=#{formula_opt_prefix("freetype")}
+      -D3RDPARTY_RAPIDJSON_DIR=#{formula_opt_prefix("rapidjson")}
+      -D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{formula_opt_include("rapidjson")}
+      -D3RDPARTY_TBB_DIR=#{formula_opt_prefix("tbb")}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    unless OS.mac?
       tcltk = Formula["tcl-tk"]
       libtk = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major}tk#{tcltk.version.major_minor}")
+      libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
+      args += %W[
+        -D3RDPARTY_TCL_DIR:PATH=#{tcltk.opt_prefix}
+        -D3RDPARTY_TK_DIR:PATH=#{tcltk.opt_prefix}
+        -D3RDPARTY_TCL_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk
+        -D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk
+        -D3RDPARTY_TCL_LIBRARY_DIR:PATH=#{tcltk.opt_lib}
+        -D3RDPARTY_TK_LIBRARY_DIR:PATH=#{tcltk.opt_lib}
+        -D3RDPARTY_TCL_LIBRARY:FILEPATH=#{libtcl}
+        -D3RDPARTY_TK_LIBRARY:FILEPATH=#{libtk}
+      ]
     end
-    libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DUSE_FREEIMAGE=OFF",
-                    "-DUSE_RAPIDJSON=ON",
-                    "-DUSE_TBB=ON",
-                    "-DINSTALL_DOC_Overview=ON",
-                    "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
-                    "-D3RDPARTY_FREETYPE_DIR=#{formula_opt_prefix("freetype")}",
-                    "-D3RDPARTY_RAPIDJSON_DIR=#{formula_opt_prefix("rapidjson")}",
-                    "-D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{formula_opt_include("rapidjson")}",
-                    "-D3RDPARTY_TBB_DIR=#{formula_opt_prefix("tbb")}",
-                    "-D3RDPARTY_TCL_DIR:PATH=#{tcltk.opt_prefix}",
-                    "-D3RDPARTY_TK_DIR:PATH=#{tcltk.opt_prefix}",
-                    "-D3RDPARTY_TCL_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk",
-                    "-D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk",
-                    "-D3RDPARTY_TCL_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
-                    "-D3RDPARTY_TK_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
-                    "-D3RDPARTY_TCL_LIBRARY:FILEPATH=#{libtcl}",
-                    "-D3RDPARTY_TK_LIBRARY:FILEPATH=#{libtk}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
