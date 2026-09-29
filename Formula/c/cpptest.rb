@@ -1,18 +1,9 @@
 class Cpptest < Formula
   desc "Unit testing framework handling automated tests in C++"
   homepage "https://cpptest.sourceforge.io/"
+  url "https://github.com/cpptest/cpptest/releases/download/2.0.1/cpptest-2.0.1.tar.bz2"
+  sha256 "d2f13834dd9a5c4e56fa237e01d154474044687e7cc03f6c11017c5fe6ef0641"
   license "LGPL-2.1-or-later"
-
-  stable do
-    url "https://github.com/cpptest/cpptest/releases/download/2.0.0/cpptest-2.0.0.tar.bz2"
-    sha256 "7c258936a407bcd1635a9b7719fbdcd6c6e044b5d32f53bbf6fbf6f205e5e429"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      file "Patches/libtool/configure-big_sur.diff"
-      type :unofficial
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "ccc4803c27a5c262e2e5e2d5cef1c6182d193fb3f413966cb3123ba0e5e4e064"
