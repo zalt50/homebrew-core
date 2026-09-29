@@ -30,7 +30,7 @@ class Mfterm < Formula
   end
 
   depends_on "libnfc"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -40,8 +40,8 @@ class Mfterm < Formula
   end
 
   def install
-    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("openssl@3")}"
-    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@3")}"
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("openssl@4")}"
+    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@4")}"
 
     if build.head?
       chmod 0755, "./autogen.sh"
