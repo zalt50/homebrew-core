@@ -1,8 +1,8 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
   homepage "https://mongodb.github.io/kingfisher/"
-  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "75a0f278623f7900b9e2e15ad860a1ab110051c27461ba785fa2992235855664"
+  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v2.8.0.tar.gz"
+  sha256 "6e0945db3605c7f4bb74b1bd5a0b1a36052a0118c291dac9139daa3db16e269d"
   license "Apache-2.0"
 
   bottle do
@@ -13,18 +13,24 @@ class Kingfisher < Formula
     sha256 cellar: :any,                 x86_64_linux:      "4f13b7216b032c5bf3c2657b122b64c5f61392d9ec9b74c34d8f9a374cc6bbd4"
   end
 
-  depends_on "boost" => :build
-  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "vectorscan" => :build # kingfisher-vectorscan uses static library
+  depends_on "aws-lc"
 
-  uses_from_macos "bzip2"
+  uses_from_macos "sqlite"
 
-  on_linux do
-    depends_on "openssl@4" => :build
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
+    ENV["AWS_LC_SYS_USE_SYSTEM"] = "1"
+    ENV["HYPERSCAN_ROOT"] = formula_opt_prefix("vectorscan")
+    ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
+
     args = ["--features=system-alloc"] if OS.mac?
     system "cargo", "install", *args, *std_cargo_args
   end
