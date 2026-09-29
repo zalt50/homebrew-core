@@ -6,8 +6,8 @@ class Wireplumber < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_linux:  "3d485817124add0e1a5846238db2c7240b8501bdc67442f0781c45b741864f81"
-    sha256 x86_64_linux: "1017d89becd684b64955ae3567628f199a60b4ccce7ff5405855c8164f77c2d2"
+    sha256 arm64_linux:  "71ec3ba312fca24868b9ae53663e87ceea11b835abcd6dfc368142a49206b3f8"
+    sha256 x86_64_linux: "e48c73c52a4f54cc2a7b495c1ca9103d863c56741489a0d5bde09de5a4fe3b97"
   end
 
   depends_on "meson" => :build
