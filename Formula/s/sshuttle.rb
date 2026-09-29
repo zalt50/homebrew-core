@@ -9,8 +9,7 @@ class Sshuttle < Formula
   head "https://github.com/sshuttle/sshuttle.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d2e5883c37f914d2101e5e1bca23c33181d1950c8ac727c520f17b3e059b61f7"
+    sha256 cellar: :any_skip_relocation, all: "2c0b0765d8502aba4d3dcd340aa458bf03cd111e8f9ea8730c16ffb0e780ae77"
   end
 
   depends_on "python@3.14"
