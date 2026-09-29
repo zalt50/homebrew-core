@@ -1,8 +1,8 @@
 class Svlang < Formula
   desc "SystemVerilog compiler and language services"
   homepage "https://sv-lang.com/"
-  url "https://github.com/MikePopoloski/slang/archive/refs/tags/v11.0.tar.gz"
-  sha256 "50676d5a9adbefb97d266a4b174e6b0513901afd5ac57a6cdfea0a61149c3704"
+  url "https://github.com/MikePopoloski/slang/archive/refs/tags/v12.0.tar.gz"
+  sha256 "64b3eb9d38ee126e009cbb8da0cfa6f68d970334e52ba084ad7c68e4b5fa804c"
   license "MIT"
   head "https://github.com/MikePopoloski/slang.git", branch: "master"
 
@@ -17,8 +17,10 @@ class Svlang < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "boost"
   depends_on "fmt"
   depends_on "mimalloc"
+  depends_on "tomlplusplus"
 
   uses_from_macos "python" => :build
 
@@ -35,15 +37,15 @@ class Svlang < Formula
   deny_network_access!
 
   def install
-    # `fmt/core.h` stopped pulling in `fmt::format` in fmt 12.2, remove in next release
-    ENV.append_to_cflags "-DFMT_DEPRECATED_HEAVY_CORE"
-
     args = %w[
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
       -DSLANG_INCLUDE_TESTS=OFF
       -DSLANG_INCLUDE_TOOLS=ON
+      -DSLANG_USE_SYSTEM_BOOST=ON
+      -DSLANG_USE_SYSTEM_FMT=ON
+      -DSLANG_USE_SYSTEM_TOMLPLUSPLUS=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
