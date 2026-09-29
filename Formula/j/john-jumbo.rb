@@ -25,7 +25,7 @@ class JohnJumbo < Formula
 
   depends_on "pkgconf" => :build
   depends_on "gmp"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
 
@@ -87,8 +87,8 @@ class JohnJumbo < Formula
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_EXEC='\"#{share}/john\"'"
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_HOME='\"#{share}/john\"'"
 
-    ENV["OPENSSL_LIBS"] = "-L#{formula_opt_lib("openssl@3")}"
-    ENV["OPENSSL_CFLAGS"] = "-I#{formula_opt_include("openssl@3")}"
+    ENV["OPENSSL_LIBS"] = "-L#{formula_opt_lib("openssl@4")}"
+    ENV["OPENSSL_CFLAGS"] = "-I#{formula_opt_include("openssl@4")}"
 
     cd "src" do
       system "./configure", "--disable-native-tests"
