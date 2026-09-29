@@ -1,8 +1,8 @@
 class DartSass < Formula
   desc "Reference implementation of Sass, written in Dart"
   homepage "https://sass-lang.com/dart-sass"
-  url "https://github.com/sass/dart-sass/archive/refs/tags/1.105.0.tar.gz"
-  sha256 "cc526648540511381187af2e71d7c831e7ad2ba27d8fb0d0d882e78053a4df79"
+  url "https://github.com/sass/dart-sass/archive/refs/tags/1.105.1.tar.gz"
+  sha256 "0744079d7712afa814ad6a8fb61bd4006a5902cb6746d92b13fb0d38234547c4"
   license "MIT"
 
   # Some tags are used for sass-api/sass-parser
