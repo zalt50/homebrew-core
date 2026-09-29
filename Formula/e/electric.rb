@@ -20,9 +20,9 @@ class Electric < Formula
   end
 
   depends_on "elixir" => :build
-  depends_on "erlang@28" => :build # https://github.com/electric-sql/electric/pull/3992
+  depends_on "erlang" => :build
   depends_on "postgresql@18" => :test
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "ncurses"
 
