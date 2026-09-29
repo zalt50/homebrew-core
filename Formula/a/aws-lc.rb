@@ -12,11 +12,11 @@ class AwsLc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9981b5b620cc64ace30724ddd053a39369b4735e66afcce767e86995aabd457a"
-    sha256 cellar: :any, arm64_tahoe:       "63e58169e5352d447f145e34fde660f5fd0b408ad8f14fcdad9e3b513b1824e1"
-    sha256 cellar: :any, arm64_sequoia:     "a80c6239e4873ecc74e2b30062f07017f21d02f79cf5cb1f1c8107edbcdda815"
-    sha256 cellar: :any, arm64_linux:       "517c83848d97fee0bc0574985688396d7be570bcec68c4519955e44a6dc065db"
-    sha256 cellar: :any, x86_64_linux:      "7614897981128e1e3f4b2d248bb5f9d3df0dbd2988ecd549477a43cee90b4599"
+    sha256 cellar: :any, arm64_golden_gate: "85c9a51943b92003a1ad3467788789ddae3903ac0600a0956d2d6864d3defd4b"
+    sha256 cellar: :any, arm64_tahoe:       "14c37b136e47dc5cd7791dc55f88d6ab9c9f982534763df3250c7023b77600e8"
+    sha256 cellar: :any, arm64_sequoia:     "672471ade66cb9a8b724b8fa156b9e4bb0df9345b20ed9bec2e56cb8048aee64"
+    sha256 cellar: :any, arm64_linux:       "0179677a5a36ae5473d6fabac273f44a6c7ec42f8b27a6d4e4e280dee3e5d041"
+    sha256 cellar: :any, x86_64_linux:      "e3047d1ecfe8d5c8221f7db58124b85ce5da4340ab34edf41d1b95c045615ac9"
   end
 
   depends_on "bindgen" => :build
