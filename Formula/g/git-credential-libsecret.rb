@@ -1,8 +1,8 @@
 class GitCredentialLibsecret < Formula
   desc "Git helper for accessing credentials via libsecret"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.55.0.tar.xz"
-  sha256 "457fdb04dc8728e007d4688695e6912e6f680727920f2a40bf11eacc17505357"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.56.0.tar.xz"
+  sha256 "26c56c296b38c0695b26fa95f475f1d01704d2d38e73465ca30b0b2f5dc789d3"
   license "GPL-2.0-or-later"
   head "https://github.com/git/git.git", branch: "master"
 
