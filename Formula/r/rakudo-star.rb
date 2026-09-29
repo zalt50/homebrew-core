@@ -1,8 +1,8 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://github.com/rakudo/star/releases/download/2026.08/rakudo-star-2026.08.tar.gz"
-  sha256 "a7b6fcfc7b6b7b6bc8bc5d347650736c01ff99de71c06157fc7440677b7a6ab3"
+  url "https://github.com/rakudo/star/releases/download/2026.09/rakudo-star-2026.09.tar.gz"
+  sha256 "feee33e1d9e58ac76d09c3d2fb6790b9881be821924783a62af6c92899fe6365"
   license "Artistic-2.0"
 
   livecheck do
@@ -85,6 +85,11 @@ class RakudoStar < Formula
     rm buildpath.glob("src/rakudo-star-modules/**/*.o")
     # Skip module tests probe for optional DB/client libraries and rely on the test block instead
     system "bin/rstar", "install", "-T", "-p", prefix.to_s
+
+    # TODO: Remove once upstream stops caching build-only environment paths.
+    # https://github.com/rakudo/star/issues/230
+    # The generated module cache embeds the build environment, including Homebrew shims.
+    rm_r share/"perl6/site/precomp"
 
     #  Installed scripts are now in share/perl/{site|vendor}/bin, so we need to symlink it too.
     bin.install_symlink (share/"perl6/vendor/bin").children.select(&:executable?)
