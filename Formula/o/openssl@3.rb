@@ -1,12 +1,11 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://github.com/openssl/openssl/releases/download/openssl-3.6.4/openssl-3.6.4.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-3.6.4.tar.gz"
-  mirror "http://deb.debian.org/debian/pool/main/o/openssl/openssl_3.6.4.orig.tar.gz"
-  sha256 "9bffaa1ad1e07b354c21bd3324ec02fa15579f45a7d0494b3e74bc449b7333ef"
+  url "https://github.com/openssl/openssl/releases/download/openssl-3.6.5/openssl-3.6.5.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-3.6.5.tar.gz"
+  mirror "http://deb.debian.org/debian/pool/main/o/openssl/openssl_3.6.5.orig.tar.gz"
+  sha256 "a2157c2830efdec3788939b00c9b0638306d3f0bbb76dc4832ee503bb397df98"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
 
   livecheck do
