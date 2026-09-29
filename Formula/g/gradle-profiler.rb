@@ -7,7 +7,7 @@ class GradleProfiler < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5e23de27a0f3b3ac708ea970836a0a82cf7aae8fdafba615a9c0c9efcb1c6f48"
+    sha256 cellar: :any_skip_relocation, all: "64753f4f208d98dfc417288c873dff761271e9e9ab1f6179c1241756453163ce"
   end
 
   depends_on "openjdk@21"
