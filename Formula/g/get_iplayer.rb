@@ -25,7 +25,7 @@ class GetIplayer < Formula
   uses_from_macos "perl"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
 
     resource "Try-Tiny" do
       url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz"
@@ -43,8 +43,16 @@ class GetIplayer < Formula
     end
 
     resource "Net::SSLeay" do
-      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.88.tar.gz"
-      sha256 "2000da483c8471a0b61e06959e92a6fca7b9e40586d5c828de977d3d2081cfdd"
+      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+      sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+      # Backport support for OpenSSL 4.0
+      patch do
+        url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+        sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+        type :backport
+        resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+      end
     end
 
     resource "HTML::Entities" do
@@ -117,6 +125,7 @@ class GetIplayer < Formula
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["NO_NETWORK_TESTING"] = "1"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4") if OS.linux?
 
     resources.each do |r|
       r.stage do
