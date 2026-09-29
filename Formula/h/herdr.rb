@@ -1,8 +1,8 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "ff1a8ded511d29f84c3cc97816b4ea3510f10953166a185e669e9e7339100a8d"
+  url "https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "e48f6706440c92362773663131ef5b524c62549523e50a03f2b55d315edca100"
   license "Apache-2.0"
   head "https://github.com/herdrdev/herdr.git", branch: "master"
 
@@ -21,6 +21,15 @@ class Herdr < Formula
 
   depends_on "rust" => :build
   depends_on "zig" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+    cd "vendor/libghostty-vt" do
+      system "zig", "build", "--fetch=all"
+    end
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
