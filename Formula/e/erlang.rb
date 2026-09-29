@@ -6,7 +6,7 @@ class Erlang < Formula
   url "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
   sha256 "054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 2
 
   livecheck do
@@ -76,12 +76,13 @@ class Erlang < Formula
 
     wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula
     wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"
+    # OTP 29 removed `--with-wx-config`; configure now reads WX_CONFIG_NAME.
+    ENV["WX_CONFIG_NAME"] = wx_config
     args = %W[
       --enable-dynamic-ssl-lib
       --with-odbc=#{formula_opt_prefix("unixodbc")}
       --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-javac
-      --with-wx-config=#{wx_config}
     ]
 
     if OS.mac?
@@ -90,7 +91,7 @@ class Erlang < Formula
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
 
-    # The definition of `WX_CC` does not use our configuration of `--with-wx-config`, unfortunately.
+    # The definition of `WX_CC` does not use WX_CONFIG_NAME, unfortunately.
     inreplace "lib/wx/configure", "WX_CC=`wx-config --cc`", "WX_CC=`#{wx_config} --cc`"
 
     system "./configure", *std_configure_args, *args
@@ -118,6 +119,8 @@ class Erlang < Formula
 
   test do
     system bin/"erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
+    system bin/"erl", "-noshell", "-eval",
+           'true = filelib:is_file(filename:join(code:priv_dir(wx), "wxe_driver.so")), halt().'
 
     (testpath/"factorial").write <<~ERLANG
       #!#{bin}/escript
