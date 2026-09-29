@@ -1,11 +1,10 @@
 class OpensslAT4 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://github.com/openssl/openssl/releases/download/openssl-4.0.2/openssl-4.0.2.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-4.0.2.tar.gz"
-  sha256 "736b467530f916737b7031310ccb21d8218c6229e61e8e160cd1d3458cd543a8"
+  url "https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-4.0.3.tar.gz"
+  sha256 "325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://openssl-library.org/source/"
