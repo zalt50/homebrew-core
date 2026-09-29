@@ -22,20 +22,19 @@ class ClawsMail < Formula
   end
 
   depends_on "pkgconf" => :build
+  depends_on "adwaita-icon-theme" => :no_linkage
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gtk+3"
   depends_on "libetpan"
+  depends_on "librsvg"
   depends_on "nettle"
-  depends_on "openssl@3"
   depends_on "pango"
 
   on_macos do
-    depends_on "at-spi2-core"
     depends_on "gettext"
-    depends_on "harfbuzz"
   end
 
   on_linux do
@@ -45,6 +44,9 @@ class ClawsMail < Formula
   end
 
   def install
+    # Reduce overlinking
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
+
     system "./configure", "--disable-silent-rules",
                           "--disable-archive-plugin",
                           "--disable-dillo-plugin",
