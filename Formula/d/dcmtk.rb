@@ -22,14 +22,12 @@ class Dcmtk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "374fefebaa304b22e4df2e07cbf2bc07c73a9acca860e5f107b1009bfe7ac5a5"
-    sha256 arm64_tahoe:       "18fdc9d620a8913c66d703dd279c659cfcdf0a0b599d364e545f4513d6578980"
-    sha256 arm64_sequoia:     "036013db99c711b150a93a7d5f870bf21c6826cb8e4150dd2539954859d397c0"
-    sha256 arm64_sonoma:      "42e407ceb5de1da6bf2b283ff0d540421d9924c0939cbbb585da272dbc5f4162"
-    sha256 sonoma:            "4646deaa5d70c8d92620faad87006086369be8fe614eb71c30e39b5604557b46"
-    sha256 arm64_linux:       "254bb8fa063e79ddcf1800481b89d9dc6c6ee02298981a365cbda4bd144dce32"
-    sha256 x86_64_linux:      "773d92006e42ea21daecb8138174f768d13050ac78cf32b2ba27f7895f396557"
+    rebuild 2
+    sha256 arm64_golden_gate: "35122328b6f7635683bd93f87ec7588d058ba42155170b16ad5a46c1c368ca1d"
+    sha256 arm64_tahoe:       "7b3b6af3c6ce50267c149f7c763ffcc4c9050e12ff4ba79bf8389fa82fc8b958"
+    sha256 arm64_sequoia:     "d7a411774bc4619350b37f93ede1fbfd8fa822c373fbb5549227d32c49aec96f"
+    sha256 arm64_linux:       "701aa3552e3d32f67e26cd36c6bd3a77e9aba7a62104768677ca35e6c860eaf1"
+    sha256 x86_64_linux:      "6ae579320a406131f5603c9860d6340ce5275940dc6a737d22e92585c4f8dcde"
   end
 
   depends_on "cmake" => :build
