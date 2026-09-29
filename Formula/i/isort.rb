@@ -9,7 +9,7 @@ class Isort < Formula
   head "https://github.com/PyCQA/isort.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "aef73cc03118e008ff71a9c6a8553e633b9b613a8d1e12bd301961421674a1cf"
+    sha256 cellar: :any_skip_relocation, all: "a3f8d6c7c699e48f0d2110d6db8031e11ce1b864e911a56d6257d6823d69b44f"
   end
 
   depends_on "rust" => :build
