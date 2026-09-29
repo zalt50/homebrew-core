@@ -6,12 +6,11 @@ class Instead < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 arm64_golden_gate: "1c1e5a933c65864ba48dcead307d97932572d6371bce746d265993eef0d0cf85"
-    sha256 arm64_tahoe:       "9c66bd5025cd98a1d6728895d208cd9f0fe36a4f5a3ac60f76a9a04a125aeb6c"
-    sha256 arm64_sequoia:     "92ce8a6ec45d5ac109f985d8bafb0bd9c6c08563f68e6295013a640bfe1af00b"
-    sha256 arm64_linux:       "22d5f39dd5833ac098f6a9048cc0029deab9dd15ad0f05386d10be9ef0d87933"
-    sha256 x86_64_linux:      "ffd96d25da618026346183328a2b165143ac9a11a482e329080036444d640b3f"
+    sha256 arm64_golden_gate: "86219e7e5aca92b1a1d4b8f639d1946232d2221e527b749f49ba407e533d2452"
+    sha256 arm64_tahoe:       "7d0732d392fc927db7d778ea935d92d2e0c12de4286b8b3bf44f5a93d12a5a7e"
+    sha256 arm64_sequoia:     "cb326b3adb5f8d7f31bc7e7a4cde8924a47cdd0c7e3c7f65420ca73fa2eaca57"
+    sha256 arm64_linux:       "8612458c7ecc9521efeaca057ea01660529bcfe107e9757a957fb05024a282e2"
+    sha256 x86_64_linux:      "899c00dc314cc1d7aa40732c86d50f6e1e1c338fdb901db9ff9b9ed18c388f45"
   end
 
   depends_on "cmake" => :build
