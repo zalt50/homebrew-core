@@ -1,8 +1,8 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
   homepage "https://opentofu.org/"
-  url "https://github.com/opentofu/opentofu/archive/refs/tags/v1.12.6.tar.gz"
-  sha256 "d6b49908a66ad277d7de33e9a218ae11b956cd094e39c82300b9b75cac2479ba"
+  url "https://github.com/opentofu/opentofu/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "ef769284412b20eb30b883be10519242ab0c92ea54d8a509261e62ba28da4663"
   license "MPL-2.0"
   head "https://github.com/opentofu/opentofu.git", branch: "main"
 
@@ -16,9 +16,7 @@ class Opentofu < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "c217fa12380b0aaf4836ec0dd9d53cb124755aa4d7975073a84b5cec85caac24"
   end
 
-  # TODO: unpin go@1.26 when OpenTofu supports Go 1.27
-  # Ref: https://github.com/opentofu/opentofu/pull/4496
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   conflicts_with "tenv", "tofuenv", because: "both install tofu binary"
 
