@@ -17,24 +17,32 @@ class PythonPackaging < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
   end
 
-  depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
 
-  def pythons
-    deps.map(&:to_formula)
-        .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
-  end
+  allow_network_access! :build
 
   def install
-    pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+
+    # Pure python installation can be used on different Python versions
+    # Add symlinks to use on all externally-managed pythons
+    extra_pythons = Keg.for(python3).to_formula.versioned_formulae.select { |f| f.version >= "3.12" }
+    extra_site_packages_list = extra_pythons.map { |f| lib/"python#{f.version.major_minor}/site-packages" }
+    extra_site_packages_list << (lib/"python#{Formula["python-freethreading"].version.major_minor}t/site-packages")
+    site_packages = prefix/Language::Python.site_packages(python3)
+    site_packages.find.select(&:file?).each do |path|
+      extra_site_packages_list.each do |extra_site_packages|
+        (extra_site_packages/path.relative_path_from(site_packages)).dirname.install_symlink path
+      end
     end
   end
 
   test do
-    pythons.each do |python|
-      system python, "-c", "import packaging"
-    end
+    system python3, "-c", <<~PYTHON
+      from packaging.version import Version, parse
+      v1 = parse("1.0a5")
+      v2 = Version("1.0")
+      assert v1 < v2
+    PYTHON
   end
 end
