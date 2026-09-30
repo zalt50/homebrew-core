@@ -13,7 +13,7 @@ class Keychain < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "30eb0c467d8b65999170257d54a8fa045a8f6871cff9977059ee67d92a91401e"
+    sha256 cellar: :any_skip_relocation, all: "71a37f48f76bcd906a3d6610771c0f5792147bb711329a98c8efa0d4a3fbb1f3"
   end
 
   depends_on "python@3.14"
