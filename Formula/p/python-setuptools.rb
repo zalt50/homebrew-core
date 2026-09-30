@@ -10,30 +10,21 @@ class PythonSetuptools < Formula
   end
 
   depends_on "python@3.14" => [:build, :test]
-  depends_on "python@3.12" => :test # keep on oldest python to support (externally managed and not EOL)
 
-  def pythons
-    deps.filter_map { |dep| dep.to_formula if dep.name.start_with?("python@") }
-  end
+  deny_network_access!
 
   def install
-    odie "Need exactly 2 python dependencies!" if pythons.count != 2
-    oldest_python, python = pythons.sort_by(&:version)
-    python_exe = python.opt_libexec/"bin/python"
-    system python_exe, "-m", "pip", "install", *std_pip_args, "."
+    system python3, "-m", "pip", "install", *std_pip_args, "."
 
     # Pure python setuptools installation can be used on different Python versions
-    site_packages = prefix/Language::Python.site_packages(python_exe)
-    python.versioned_formulae.each do |extra_python|
-      next if extra_python.version < oldest_python.version
-
-      # Cannot use Python.site_packages as that requires formula to be installed
-      extra_site_packages = lib/"python#{extra_python.version.major_minor}/site-packages"
-      site_packages.find do |path|
-        next unless path.file?
-
-        target = extra_site_packages/path.relative_path_from(site_packages)
-        target.dirname.install_symlink path
+    # Add symlinks to use on all externally-managed pythons
+    extra_pythons = Keg.for(python3).to_formula.versioned_formulae.select { |f| f.version >= "3.12" }
+    extra_site_packages_list = extra_pythons.map { |f| lib/"python#{f.version.major_minor}/site-packages" }
+    extra_site_packages_list << (lib/"python#{Formula["python-freethreading"].version.major_minor}t/site-packages")
+    site_packages = prefix/Language::Python.site_packages(python3)
+    site_packages.find.select(&:file?).each do |path|
+      extra_site_packages_list.each do |extra_site_packages|
+        (extra_site_packages/path.relative_path_from(site_packages)).dirname.install_symlink path
       end
     end
 
@@ -47,8 +38,6 @@ class PythonSetuptools < Formula
   end
 
   test do
-    pythons.each do |python|
-      system python.opt_libexec/"bin/python", "-c", "import setuptools"
-    end
+    system python3, "-c", "import setuptools"
   end
 end
