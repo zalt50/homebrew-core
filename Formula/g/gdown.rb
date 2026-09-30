@@ -9,7 +9,7 @@ class Gdown < Formula
   head "https://github.com/wkentaro/gdown.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5eb25be51e038bb0e967f2b9633d59420c62d68c92d78dbb0f6dd309b56a8a3f"
+    sha256 cellar: :any_skip_relocation, all: "60904bdc42540c53d846f511d32cbac334c3d2ad9b3a74b95d377cf58a1fdb93"
   end
 
   depends_on "certifi"
