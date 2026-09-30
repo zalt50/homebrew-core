@@ -2,17 +2,17 @@ class Ghq < Formula
   desc "Remote repository management made easy"
   homepage "https://github.com/x-motemen/ghq"
   url "https://github.com/x-motemen/ghq.git",
-      tag:      "v1.11.1",
-      revision: "2755411cf2ad7c7e158fb0b360ed2f9f700359ad"
+      tag:      "v1.11.2",
+      revision: "b9273dd116d09b423073b83e7c0d82ef508d985a"
   license "MIT"
   head "https://github.com/x-motemen/ghq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fd65b16e1555324acc368ea94b7235a38236403fefbaa3f3aa011a8338a8974a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b4a25725860e85ec885b712f3927b27be56ad4ce57b49f4eee5049340752f8bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "97a643d1c039e55b539aef2bfdbe5f0425950f55171b0b8dc21b8ed5b93f7382"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ac628349868568ae88c402970972fc1f2a9d987d539e9f8f9283775bffa039f2"
-    sha256 cellar: :any,                 x86_64_linux:      "3a663e5d1fab43ef30b05939dab140e5dc21d59a1baeb05a189fc16a94fbb0cc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "38acaeebea85bb56897074df03ad9b74a0d7d66d4433025c02aa74f97d06f4f1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2915db5c740619a910fb7020d457d7160d5d1fcd940df4f47fa8da59209241bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "619299634c00101298367b1ba91b78a121f88f7e038d4e154ab7acd0652315b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d9fc113b038a82a329fe6c38c465117f86c3593159cc046f3647a185636f9dae"
+    sha256 cellar: :any,                 x86_64_linux:      "4c787e32e7dc46320bb7ea3102b4e7d522fc09e7693f59a67d98025ff98300b0"
   end
 
   depends_on "go" => :build
