@@ -1,8 +1,8 @@
 class Libsoup < Formula
   desc "HTTP client/server library for GNOME"
   homepage "https://wiki.gnome.org/Projects/libsoup"
-  url "https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.6.tar.xz"
-  sha256 "51ed0ae06f9d5a40f401ff459e2e5f652f9a510b7730e1359ee66d14d4872740"
+  url "https://download.gnome.org/sources/libsoup/3.8/libsoup-3.8.0.tar.xz"
+  sha256 "bbf08fa3e03a88c31a3d27a0d87cb422e9490f2d08e149211103df6d638a2238"
   license "LGPL-2.0-or-later"
   compatibility_version 1
 
@@ -28,6 +28,7 @@ class Libsoup < Formula
   depends_on "libnghttp2"
   depends_on "libpsl"
   depends_on "sqlite"
+  depends_on "zstd"
 
   uses_from_macos "python" => :build
   uses_from_macos "krb5"
@@ -40,6 +41,8 @@ class Libsoup < Formula
     depends_on "brotli"
     depends_on "zlib-ng-compat"
   end
+
+  allow_network_access! :test
 
   def install
     system "meson", "setup", "build", *std_meson_args
