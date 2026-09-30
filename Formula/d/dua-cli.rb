@@ -11,11 +11,11 @@ class DuaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b4cc77fc3c88c9a70f8bea913e2bc6bce1e4ffe1972f7863ce71fceae907fd17"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e976c9690db890de466b1a7aba586000728cb2c5ebe13d549a33839c60e6b60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "098b6c0da83a7d2a845d93eacedfdbdc0197464a7d0985f0736640d691fa4b93"
-    sha256 cellar: :any,                 arm64_linux:       "9c7d90387e344c9411622f5b2d8625f2c280ab8f9c2b604a7e5c889c978911ac"
-    sha256 cellar: :any,                 x86_64_linux:      "02591d4c6e46cd502654e7c7f51afffa1c38451e75a90ebbcb865b2139d693b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1228a5aee384a77ff614879029cbf4864be9d47dd7ef34611348e8a3262a8682"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d019a1762c7aa7a9ab614982dac013b3924d2f81879b1901927f4105e80231a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2763c5136b034e898e9f0436f530ee830c36c71cb443908866d5e717197761d8"
+    sha256 cellar: :any,                 arm64_linux:       "1ee924c5766d98b2e02769f478e0fe9c7d12ed15c1ecbcb6632bc07c0d363786"
+    sha256 cellar: :any,                 x86_64_linux:      "5d1401da6248d8473220cc997b0e8afdc67a88fb6d6cdfd9c3a30c610fe5748c"
   end
 
   depends_on "rust" => :build
