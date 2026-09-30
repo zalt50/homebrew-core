@@ -4,6 +4,7 @@ class IosWebkitDebugProxy < Formula
   url "https://github.com/google/ios-webkit-debug-proxy/archive/refs/tags/v1.9.2.tar.gz"
   sha256 "768f101612bf5d2507957f10a8e34e98675ea8fe3c63b8ed78772f8abd103fbf"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/google/ios-webkit-debug-proxy.git", branch: "master"
 
   bottle do
