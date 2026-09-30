@@ -7,11 +7,11 @@ class Ponyc < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256               arm64_golden_gate: "348218fc1d773cfbabde2750e93e7bb5e13ee8d13f9a2fb30e090477268b7747"
-    sha256               arm64_tahoe:       "fd99303849388424b3d1f6851e06b2f1bb8d15f70bc0f8a677031ddee34ca753"
-    sha256               arm64_sequoia:     "cd4bd1d7aa2bc58d097cdf486f83670681e99f67f7c8f0f984dbdb6adf55385b"
-    sha256 cellar: :any, arm64_linux:       "93f21b5893b5d465106d341105235e1b49270ce42a1c18942fb1c74ba5404079"
-    sha256 cellar: :any, x86_64_linux:      "05dcfed1415f78b413719003fa56fe8d8f15bc6654c309569a230313d600f2f5"
+    sha256               arm64_golden_gate: "4fda1186a7c131be7368e63eb33f390f48ba48ea1857e90369dbb145f17048a1"
+    sha256               arm64_tahoe:       "2d51e80a35441d824bd96e6e6030e93bbf93b33eb1b72a6242e808baba8ba4ab"
+    sha256               arm64_sequoia:     "2b12307edd8d0f6a493e42e9c0345a4e193619703eed26ae5cd910213a99b9e5"
+    sha256 cellar: :any, arm64_linux:       "1b44d804b2ff0e7cdaea40df375566d0d00fe9ff8813e869bf079fe02bf30f60"
+    sha256 cellar: :any, x86_64_linux:      "cd8fa66f666332e0a1bf1f2a48d66d79a74b2dc595b02d7f4d83c477111b49c8"
   end
 
   depends_on "cmake" => :build
