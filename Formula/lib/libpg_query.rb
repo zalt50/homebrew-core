@@ -1,10 +1,10 @@
 class LibpgQuery < Formula
   desc "C library for accessing the PostgreSQL parser outside of the server environment"
   homepage "https://github.com/pganalyze/libpg_query"
-  url "https://github.com/pganalyze/libpg_query/archive/refs/tags/18.0.0.tar.gz"
-  sha256 "6ad7783f272acfd116455c66a03298a0cac9a9168281df547969219112f0260f"
+  url "https://github.com/pganalyze/libpg_query/archive/refs/tags/18.1.0.tar.gz"
+  sha256 "2d3486cf6a9d3955b53e66235db39d62b54216c820cd392ab66dc842c5b1316d"
   license all_of: ["BSD-3-Clause", "PostgreSQL"]
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "177a8b00a48aead436e6e54776d4f77570a145da306cbc55279d35ae64722732"
