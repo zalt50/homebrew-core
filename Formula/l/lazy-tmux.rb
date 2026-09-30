@@ -6,11 +6,11 @@ class LazyTmux < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1f65c01306f71f1131bf97279835e7080bd6d7a5af02c073664455ef723a5e07"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1f65c01306f71f1131bf97279835e7080bd6d7a5af02c073664455ef723a5e07"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1f65c01306f71f1131bf97279835e7080bd6d7a5af02c073664455ef723a5e07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "29af34ffadd6af51e71631fed6fd26f1162d02bc63c1c9268c579d6fddb2b270"
-    sha256 cellar: :any,                 x86_64_linux:      "7975b1533edbbfe4fa146c7803d3cfaaaa261774c2fc809503bf87650872f46b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7684eefc8a72b2fc4e9c2dac6509c3c4b1eb98969146ef0d18c04c029c517326"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7684eefc8a72b2fc4e9c2dac6509c3c4b1eb98969146ef0d18c04c029c517326"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7684eefc8a72b2fc4e9c2dac6509c3c4b1eb98969146ef0d18c04c029c517326"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f48f0a14020ed22862853a647d41c7f5af2bbddd6930d0129c02e5d2a8a6a8f9"
+    sha256 cellar: :any,                 x86_64_linux:      "31acce335d756ea470fd12e184699a1e6b19f619d1fdc27ac3f2ca0ad2d619f5"
   end
 
   depends_on "go" => :build
