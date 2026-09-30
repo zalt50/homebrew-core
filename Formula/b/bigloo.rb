@@ -12,11 +12,12 @@ class Bigloo < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "751e577ca8ec64e2d1a7d9dd107e490b72a8cae551210ed4984908ce6b39a952"
-    sha256 arm64_tahoe:       "3483652e2903ad8d176ef988714de839533331989bc9a46fd264b6eaf5dcbcee"
-    sha256 arm64_sequoia:     "aa651cb6ee7ae955c9b4a1eaa6857f0e2f397802f540e24969b34dcdee9f3d2f"
-    sha256 arm64_linux:       "d7693040966269426692365c78b27246d5a2ef5e0a23afcadc52a583a8dc8b63"
-    sha256 x86_64_linux:      "9177720e3971e598efbbb8c9f0e1360cdc05248ba19606d3f7063f2f7b6ee9d8"
+    rebuild 1
+    sha256 arm64_golden_gate: "d4a98348d2651cdb124603b9032418875b906dfc443f206abbe38dd8c9a40f7e"
+    sha256 arm64_tahoe:       "a75e58d36fd68cac86fc79db90752199ba7cb5726c033441b0242a0635d7e135"
+    sha256 arm64_sequoia:     "b9d60b1a1aafabfc1ade5ff39f9a2a87b6fc1aff1809ad331d92a9938ec9dbf5"
+    sha256 arm64_linux:       "c53fb3352cd374d23be5286bbc00f3b254f8233412fc8a51a60fc22edcaf369d"
+    sha256 x86_64_linux:      "c808ccc3d85e2544761b7723959a76b0e1052d99ae1be40e31a10daf709ac040"
   end
 
   depends_on "autoconf" => :build
