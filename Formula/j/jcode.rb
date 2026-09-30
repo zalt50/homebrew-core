@@ -11,11 +11,11 @@ class Jcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "061a851fcd2b0a26a9e1d92d0777f58aca5ef04fe21dd0cbe1f8bb6876ebca32"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d7667b80bcdf3e9e256291ba8744f3599d0b0e33ff90e61cfd3083dcbe252941"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87a025abeea6452dace859142f26b6db54793d4c36418f5db04bd71e343bce83"
-    sha256 cellar: :any,                 arm64_linux:       "449bab49345942a5b52e3f0e431efa78500f5e88305b28f22b175751092fd7db"
-    sha256 cellar: :any,                 x86_64_linux:      "f581ad45b29da770bf33cc597916bf6c08dce831fa570be351d8d18eb8efe883"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e20dc7e96c652708456b67301b5746f10e0c205b725f3e100c0b718f3decb3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e1dd3750796f6bc3c8c1dc5be7c0e2f22300fe8957df645e0f2a0e979766584c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "43b76be587ad3c8a4a9276cbc5e6de9d8af15d91eaa15438265012e44a0c77c5"
+    sha256 cellar: :any,                 arm64_linux:       "b1b9f192273b625d11547ca0dd875caa56a20e198ca45a968bd73ebd984860c4"
+    sha256 cellar: :any,                 x86_64_linux:      "30e0f54a3f82385cc37adcd70a7dc96f1809a74329063f603efb77863bc82ff1"
   end
 
   depends_on "cmake" => :build
