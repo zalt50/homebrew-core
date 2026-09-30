@@ -2,7 +2,7 @@ class LdidProcursus < Formula
   desc "Put real or fake signatures in a Mach-O binary"
   homepage "https://github.com/ProcursusTeam/ldid"
   license "AGPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/ProcursusTeam/ldid.git", branch: "master"
 
   stable do
