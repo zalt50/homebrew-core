@@ -12,12 +12,11 @@ class Dwarfs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "f39262b31c6a921306a10596365cc41e2edd18fcdf49cbab767cad9787896544"
-    sha256 cellar: :any, arm64_tahoe:       "24f271f3a1129694d38e26d040e4455d3545295a0e4d4a24f2d4702ccfc9dbf9"
-    sha256 cellar: :any, arm64_sequoia:     "87084711b64e35e44867ad4645335d7df806804879620ebc96636a562000d145"
-    sha256 cellar: :any, arm64_linux:       "c511fd605d13564d4dab6e70c4dfbed89c6308c35d67a170fba371636908dd23"
-    sha256 cellar: :any, x86_64_linux:      "e88811e21d3195c707c33b5a275285b66a0581f74afe8c0f57681ebaf633c51a"
+    sha256 cellar: :any, arm64_golden_gate: "0600ba659ff86c1d73c81252f9e43fe056e9642d3badafc93e2437239f498874"
+    sha256 cellar: :any, arm64_tahoe:       "d42e25fab481f4c26e3b3ac82db770935971a3c399402c7de8fb62e3b2768917"
+    sha256 cellar: :any, arm64_sequoia:     "348939f1ad0f5b57cbbe3301a25153344893d620a3a106baefd2df7c6be28266"
+    sha256 cellar: :any, arm64_linux:       "1b31ab9ff68ead5ec381a6e4c639c29f04222622951f6f26212fe8bc31019190"
+    sha256 cellar: :any, x86_64_linux:      "22c1eb5340a72af0321e346ea63fae266cca2bf3b82f596e35d98d712f4350fc"
   end
 
   depends_on "cmake" => :build
