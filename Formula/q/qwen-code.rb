@@ -1,8 +1,8 @@
 class QwenCode < Formula
   desc "AI-powered command-line workflow tool for developers"
   homepage "https://github.com/QwenLM/qwen-code"
-  url "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.24.6.tgz"
-  sha256 "9f0e7ba70009cc0a5133208cf8edc21f26eef211e9d14d0d3f497cd42a9e31f2"
+  url "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.24.7.tgz"
+  sha256 "64430248ab6e996fc0c6b9a0789361f868c3b97f83d16210e0424e51dffc5fa9"
   license "Apache-2.0"
 
   bottle do
@@ -29,6 +29,10 @@ class QwenCode < Formula
     arch = Hardware::CPU.intel? ? "x64" : "arm64"
     (qwen_code/"node_modules/node-pty/prebuilds").glob("*").each do |dir|
       rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
+    end
+
+    qwen_code.glob("vendor/landlock-run/*-linux").each do |dir|
+      rm_r(dir) if dir.basename.to_s != "#{arch}-#{os}"
     end
 
     qwen_code.glob("node_modules/@qwen-code/audio-capture/prebuilds/*").each do |dir|
