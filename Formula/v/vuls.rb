@@ -12,13 +12,11 @@ class Vuls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d34ee7e3601f971cc4f4b34ff2a0a885b3bb79e4f10142f28ca7e0b614894732"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "288b2fdd583b429604539a0a0fe54e460a1e388ee8895eec329994853ca6ec7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "288b2fdd583b429604539a0a0fe54e460a1e388ee8895eec329994853ca6ec7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "288b2fdd583b429604539a0a0fe54e460a1e388ee8895eec329994853ca6ec7a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "65b3d1fdddc4a2156c9f549ff0a85c623cc1c63d2672ba9393b2c8ce2d81144b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "15075240cce58136758fdfc9682c696b84626d4f4902d98a3679fff7e6a55352"
-    sha256 cellar: :any,                 x86_64_linux:      "bfc81776e8cbaf72f3b5035e44947d66469b11b1f1b68467165c6b00fba52aa9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ccb5e486ccd93c5fc8e34a1e686be63f16a5cc5f2a6d54aa0a7279d59448106"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ccb5e486ccd93c5fc8e34a1e686be63f16a5cc5f2a6d54aa0a7279d59448106"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6ccb5e486ccd93c5fc8e34a1e686be63f16a5cc5f2a6d54aa0a7279d59448106"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b08825409c3331c4faa677d8f40c0ec04eef92f9b8241e6eb7340759fbdc0ea5"
+    sha256 cellar: :any,                 x86_64_linux:      "549ddf900e99934b7ae33510bb9a9502100420c4c93c1e34cb4dad1fc3bf6bad"
   end
 
   # TODO: unpin go@1.26 when vuls (and trivy) support go 1.27
