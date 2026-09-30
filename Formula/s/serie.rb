@@ -1,8 +1,8 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https://lusingander.github.io/serie/"
-  url "https://github.com/lusingander/serie/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "560e27fabdd6f45f44fe5f1200c009c0164fcf41eb7e11370788e939c265bb82"
+  url "https://github.com/lusingander/serie/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "0a47aa4f0fac15d6b87f37a3a637c65ccbb6a16a25a3fdd86f679e8a2d43fb4d"
   license "MIT"
   head "https://github.com/lusingander/serie.git", branch: "master"
 
@@ -15,6 +15,12 @@ class Serie < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
