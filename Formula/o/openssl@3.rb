@@ -14,11 +14,11 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "037d39aeb53c636e392fa670fa74c2a94b51b69521a4fb4fce4d0ea7500f5f94"
-    sha256 arm64_tahoe:       "ef13592a20830e81b8a72d958a65dfe671966e0df199c437cbbbe1d9362d72dc"
-    sha256 arm64_sequoia:     "9bcc21f1c395d9126f336f8e6f0a97ba5cdd0e27ff0b60b29bda96f652c8e537"
-    sha256 arm64_linux:       "936519e02a5aae4a48bb54c4b19b583a9ddf1067f26ee49597676df160e22a66"
-    sha256 x86_64_linux:      "5ccc94bb2a9f43b88aae2ebed93687e5a527143899b2479046672037466ed293"
+    sha256 arm64_golden_gate: "fd8ea89de8c9d5390eb17041609842f61986b43932fabdcba9b43bacddc63c84"
+    sha256 arm64_tahoe:       "a1ef3283ad41feaedac5d41dafc4c2a71db6492c3a45a4d1755cfb19d02afc7b"
+    sha256 arm64_sequoia:     "0994a8029175af4578c3b93b3020e58dffa638ca21dc22d862c6bc02fea7e73b"
+    sha256 arm64_linux:       "5074ccc96209b4a63a1aed9eaa226b0c2976dfaa62f4b0c04eb3344c7ea8d005"
+    sha256 x86_64_linux:      "d1059270d1dfaae5e945745c7d5930c76a178b270a964ff450c16a2f2cda5ad2"
   end
 
   keg_only :versioned_formula
