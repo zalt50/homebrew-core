@@ -7,11 +7,11 @@ class Tinyice < Formula
   head "https://github.com/DatanoiseTV/tinyice.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2982428702ea69ec0a018e0f047f47ba6de89de6278c98d624cb41b49f481843"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2982428702ea69ec0a018e0f047f47ba6de89de6278c98d624cb41b49f481843"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2982428702ea69ec0a018e0f047f47ba6de89de6278c98d624cb41b49f481843"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d47375329d5b2cd5a8ab60da0d423164fa7cdc8a0582b80ff1904bc268833a01"
-    sha256 cellar: :any,                 x86_64_linux:      "157cad065344bbad439b4774cd78a7787ebee3cb750ee8ed8a34bbb4854a326a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b48120b24084c5680beb6571316492ae353998a2348ef3384f5460874acb9b00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b48120b24084c5680beb6571316492ae353998a2348ef3384f5460874acb9b00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b48120b24084c5680beb6571316492ae353998a2348ef3384f5460874acb9b00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2799f5b693a7c134bed5059a5538a38a8e782a7aec3638c34271a10f3d6af207"
+    sha256 cellar: :any,                 x86_64_linux:      "29b481f0401a7eeba9e2286e354577e363118f5aa1f00d5cbcc9af190be12069"
   end
 
   depends_on "go" => :build
