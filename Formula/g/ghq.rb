@@ -2,8 +2,8 @@ class Ghq < Formula
   desc "Remote repository management made easy"
   homepage "https://github.com/x-motemen/ghq"
   url "https://github.com/x-motemen/ghq.git",
-      tag:      "v1.11.1",
-      revision: "2755411cf2ad7c7e158fb0b360ed2f9f700359ad"
+      tag:      "v1.11.2",
+      revision: "b9273dd116d09b423073b83e7c0d82ef508d985a"
   license "MIT"
   head "https://github.com/x-motemen/ghq.git", branch: "master"
 
