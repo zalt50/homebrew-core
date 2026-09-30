@@ -34,13 +34,10 @@ class PythonFreethreading < Formula
   uses_from_macos "expat", since: :sequoia
   uses_from_macos "libedit"
   uses_from_macos "libffi"
-  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
 
   on_linux do
     depends_on "gdbm"
-    depends_on "libnsl"
-    depends_on "libtirpc"
     depends_on "zlib-ng-compat"
   end
 
@@ -97,6 +94,8 @@ class PythonFreethreading < Formula
   def python3
     bin/"python#{version.major_minor}t"
   end
+
+  deny_network_access!
 
   def install
     # Unset these so that installing pip and setuptools puts them where we want
@@ -176,7 +175,7 @@ class PythonFreethreading < Formula
 
     # Disabled modules - provided in separate formulae
     args += %w[
-      py_cv_module__tkinter=disabled
+      py_cv_module__tkinter=n/a
     ]
 
     system "./configure", *args
@@ -381,12 +380,6 @@ class PythonFreethreading < Formula
                f'     You should `unset PYTHONPATH` to fix this.')
       # Only do this for a brewed python:
       if os.path.realpath(sys.executable).startswith('#{rack}'):
-          # Shuffle /Library site-packages to the end of sys.path
-          library_site = '/Library/Python/#{version.major_minor}t/site-packages'
-          library_packages = [p for p in sys.path if p.startswith(library_site)]
-          sys.path = [p for p in sys.path if not p.startswith(library_site)]
-          # .pth files have already been processed so don't use addsitedir
-          sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
           long_prefix = re.compile(r'#{rack}/(?:[0-9\\._abrc]+/Frameworks/PythonT\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}t/site-packages')
