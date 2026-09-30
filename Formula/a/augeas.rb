@@ -12,13 +12,11 @@ class Augeas < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "2273d25a4b0318c88c3b8ffd44e40ff0b48550d771165ff21e0543b0aeb7b9a4"
-    sha256 arm64_tahoe:       "2892b23195b7b47069e656f53c2421e7d7a72b2bf52e155e88bb2deebdb5aaeb"
-    sha256 arm64_sequoia:     "bce63494ef71096631916e4dc8c8ba4f38de70df2ab997a448db5143e7b16615"
-    sha256 arm64_sonoma:      "8d377f15f9e15f40c3ca6b3de2afbdeeb808c08dfa9a89903a8b36c0f0bc2b23"
-    sha256 sonoma:            "460c292b7c6a2e2a3f4bb98b468830a491792e82c92f8f688124903674d7f92c"
-    sha256 arm64_linux:       "5ce934dec1d8de104c5347895c95f02c5f0965145474cdef866dd9a512c497ab"
-    sha256 x86_64_linux:      "ba562790d6783f698cb827068f53004f5fa2c72e61217c378b5f83ff7f4cc1d9"
+    sha256 arm64_golden_gate: "0d180f1a93cd2464603c0a730f8fd51376b91c7b7dca6dadb1727192c451c9f4"
+    sha256 arm64_tahoe:       "61dd4691f30717bdd7c167ae9bc8a0cd891abd6d154d02703999d5c81d7d7024"
+    sha256 arm64_sequoia:     "65f7b5c7977745dcda2563cf3a1b9ef4b0caaf38029e07f7dcde94fb65e39e18"
+    sha256 arm64_linux:       "a57543ee977b53fe019057aca40d5cf70002f48d8ab6f0ada3fdf4afbeee2eba"
+    sha256 x86_64_linux:      "ed14d3c8408f27d6da184b662b33c5cdf3c95e82937f1a181f12fd96f8fc4b5b"
   end
 
   head do
