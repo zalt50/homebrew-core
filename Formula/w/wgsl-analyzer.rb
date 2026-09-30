@@ -1,8 +1,8 @@
 class WgslAnalyzer < Formula
   desc "Language server implementation for WGSL and WESL"
   homepage "https://wgsl-analyzer.github.io"
-  url "https://github.com/wgsl-analyzer/wgsl-analyzer/archive/refs/tags/2026-04-26.tar.gz"
-  sha256 "ac422ae9615bef7f41992eedcc0aeffde80cead438c2913ee254bbbefaed0511"
+  url "https://github.com/wgsl-analyzer/wgsl-analyzer/archive/refs/tags/2026-09-30.tar.gz"
+  sha256 "656ca21fc1e37bc8c1bab25c434b315ba910d4f6702ee6905e20e9860e8f482c"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
