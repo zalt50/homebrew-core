@@ -1,8 +1,8 @@
 class Sextractor < Formula
   desc "Extract catalogs of sources from astronomical images"
   homepage "https://www.astromatic.net/software/sextractor/"
-  url "https://github.com/astromatic/sextractor/archive/refs/tags/2.28.2.tar.gz"
-  sha256 "d92c5214ea75b8a70214d7d7f6824207fc53861ec923ceb2cc574f2ec9effa94"
+  url "https://github.com/astromatic/sextractor/archive/refs/tags/2.29.0.tar.gz"
+  sha256 "f260886b1609f3a3dbe82ea14152761ed0434bc37631be4121137fee36025111"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -25,12 +25,6 @@ class Sextractor < Formula
   depends_on "openblas"
 
   # Backport for C23
-  patch do
-    url "https://github.com/astromatic/sextractor/commit/e93bbbd61807ac56e6770d3b5d9e72a3f4ca59e0.patch?full_index=1"
-    sha256 "6df2ac47f72613ece58d04384b2c2f7469f8f7ace90a93a79a40467188bf225a"
-    type :backport
-    resolves "https://github.com/astromatic/sextractor/issues/77"
-  end
 
   def install
     # Allow OpenBLAS header migration to subdirectory. Can remove once done
