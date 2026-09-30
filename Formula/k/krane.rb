@@ -1,8 +1,8 @@
 class Krane < Formula
   desc "Kubernetes deploy tool with rollout verification"
   homepage "https://github.com/Shopify/krane"
-  url "https://rubygems.org/downloads/krane-3.9.1.gem"
-  sha256 "eda88d26175aaf257df71b55b5df9d4868710a28df2b595bebadc1192a65bb8d"
+  url "https://rubygems.org/downloads/krane-3.9.2.gem"
+  sha256 "64da5d6b80b25e401e1b9a9c4966f2045002948ca56b567df3b2ceb7a237d4d1"
   license "MIT"
 
   bottle do
