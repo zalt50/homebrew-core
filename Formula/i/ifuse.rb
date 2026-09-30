@@ -4,6 +4,7 @@ class Ifuse < Formula
   url "https://github.com/libimobiledevice/ifuse/releases/download/1.2.1/ifuse-1.2.1.tar.bz2"
   sha256 "9d490470ba6553f8052b385bb5330462e46fbe82131ebe65be47a1cc1c70e857"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "77cd5f5b3804240d52837a38f7e5f499430aa850c3a7bfe254c368bdc742a718"
