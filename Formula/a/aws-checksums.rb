@@ -1,8 +1,8 @@
 class AwsChecksums < Formula
   desc "Cross-Platform HW accelerated CRC32c and CRC32 with fallback"
   homepage "https://github.com/awslabs/aws-checksums"
-  url "https://github.com/awslabs/aws-checksums/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "6c058812f5b537ce58eac1e529f441ff387a652ea62cbe9b844f9188339221b1"
+  url "https://github.com/awslabs/aws-checksums/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "b24d4896e8406ddff8080037936c86d539929369918265694bedcb887cbe602b"
   license "Apache-2.0"
   compatibility_version 2
 
