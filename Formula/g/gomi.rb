@@ -1,8 +1,8 @@
 class Gomi < Formula
   desc "Functions like rm but with the ability to restore files"
   homepage "https://gomi.dev"
-  url "https://github.com/babarot/gomi/archive/refs/tags/v1.6.4.tar.gz"
-  sha256 "27d4bfca8473a5c01c3ead075f2674b47b586b6de8afc7fb31ade1c01d7e5b8a"
+  url "https://github.com/babarot/gomi/archive/refs/tags/v1.6.5.tar.gz"
+  sha256 "d29a2ae63af5bbdda184e1ee7f513244f70c4111aad68cfd5f6e2edab572c006"
   license "MIT"
   head "https://github.com/babarot/gomi.git", branch: "main"
 
@@ -34,6 +34,8 @@ class Gomi < Formula
   end
 
   test do
+    ENV["TMPDIR"] = testpath
+
     # Create a trash directory
     mkdir ".gomi"
 
