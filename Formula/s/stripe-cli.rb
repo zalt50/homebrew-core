@@ -6,11 +6,11 @@ class StripeCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1e79061c309389231bc41cb0538bfb1964fe46a156b64c954b56c7b485e88506"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e79061c309389231bc41cb0538bfb1964fe46a156b64c954b56c7b485e88506"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e79061c309389231bc41cb0538bfb1964fe46a156b64c954b56c7b485e88506"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "77c04c042811990ce4e528c4a035b5a89ea433b2808d0bf4d3254668e3f45593"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5aea9174afa600055d78252704a04d0edc938c5d5efc7cd0125138a417d20894"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c5d78a9f8abde48daabc263c7645420c25fe9445c1bad0f5ad0ba794f38c8926"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c5d78a9f8abde48daabc263c7645420c25fe9445c1bad0f5ad0ba794f38c8926"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c5d78a9f8abde48daabc263c7645420c25fe9445c1bad0f5ad0ba794f38c8926"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "36260043438b2fcb1995738f5d3c30810b0b9cbbd7445bb2b6e2e82c7282c9e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fe63dd7c1a4ecf39ff45caa82731a84bc6b590f7d0bb6aee2e7a8edb6d2e4ddc"
   end
 
   depends_on "go" => :build
