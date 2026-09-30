@@ -14,7 +14,7 @@ class Coursier < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3e90a3dd8a4c8ac572b350cf5b92a71035a97ab67fcf57c4207025cad73cc863"
+    sha256 cellar: :any_skip_relocation, all: "2d79ecb2ac3ed5641a4dcb36b689e12e8526401213d38e777b5776958cd5ce10"
   end
 
   depends_on "openjdk"
