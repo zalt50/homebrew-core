@@ -7,19 +7,27 @@ class Dagu < Formula
   head "https://github.com/dagucloud/dagu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c79697b9cc01d6c24a30960634eb4be069fdbb95157521ac8aea56b6aad4199"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b4d6787aff5d06797ec2e088b029345ee83c10220b64b4581af451c444c0a9d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0b9c66cc5c6d6f534e11173ded2f98b9151ff8113f64d78a1a5855e6599f1be1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bbc0d456a499a52ab10f83898b3c9998ea75edf01541cab02b0a01b3bf61a7e3"
-    sha256 cellar: :any,                 x86_64_linux:      "cc651ed27535668692fc6b3112fd24ef232e4a08a9d310ca85d9bff6424d012a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54ca4689a0f57e38f28a6b72a089f2633a20d537ba18f4c22bf694d0ae54fd5e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5472625b10e54f08094a70abb8e9d3e2b4e8ec9775a1d300574540b3dbdb188"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c5b66116d6484b1143fd9d03a20421bdb82650a2584a40c84ff7c2eafd5aa3b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3cb115ad8c2c2072be00fa4cd0f75d58461b867ad8d85d67fbb96e171f1a5e65"
+    sha256 cellar: :any,                 x86_64_linux:      "f0abbc7131160918a49b12605d4afbf402195439d00c33c923b55c7e5c3e3b57"
   end
 
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "pnpm" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "pnpm", "with", "current", "--dir", "ui", "fetch", "--ignore-scripts"
+    system "go", "mod", "download"
+  end
+
   def install
-    system "pnpm", "with", "current", "--dir", "ui", "install", "--frozen-lockfile", "--ignore-scripts"
+    system "pnpm", "--offline", "with", "current", "--dir", "ui", "install", "--frozen-lockfile", "--ignore-scripts"
     system "pnpm", "with", "current", "--dir", "ui", "run", "build"
     (buildpath/"internal/service/frontend/assets").install (buildpath/"ui/dist").children
 
