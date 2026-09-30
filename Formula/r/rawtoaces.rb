@@ -1,8 +1,8 @@
 class Rawtoaces < Formula
   desc "Utility for converting camera RAW image files to ACES"
   homepage "https://github.com/AcademySoftwareFoundation/rawtoaces"
-  url "https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "87daffd6036d533da948db63d6ac9f9b908385e4af99fd5ba8d063f3787dc5e2"
+  url "https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "1687f12ce34c3d01d5e3d293dacf14df3d815d51d4595c12321d0262a5adc792"
   license "Apache-2.0"
 
   livecheck do
