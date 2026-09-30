@@ -1,8 +1,8 @@
 class Calc < Formula
   desc "Arbitrary precision calculator"
   homepage "http://www.isthe.com/chongo/tech/comp/calc/"
-  url "https://github.com/lcn2/calc/archive/refs/tags/v2.17.0.1.tar.gz"
-  sha256 "6fa7e541324bf795c5737a840864858ec47bddbe9d985f367905e74da2c3b290"
+  url "https://github.com/lcn2/calc/archive/refs/tags/v2.17.0.2.tar.gz"
+  sha256 "12471c2c23ae6b8a010be7472ef58e877a94022bd2e8c172cb60bede98b6417f"
   license "LGPL-2.1-or-later"
   head "https://github.com/lcn2/calc.git", branch: "master"
 
