@@ -6,6 +6,7 @@ class Cyan < Formula
   url "https://github.com/asdfzxcvbn/pyzule-rw/archive/refs/tags/v1.4.4.tar.gz"
   sha256 "fa2ce2a9a715ef9691f77a293ad58a61a6daf170896aebf32024c0ee797fc4a4"
   license "Unlicense"
+  revision 1
   head "https://github.com/asdfzxcvbn/pyzule-rw.git", branch: "main"
 
   bottle do
@@ -18,16 +19,32 @@ class Cyan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "ec4d32880cba6eb8e91bdbdfcb0c8c05ab8ab937d85c68fbe3d482960d6bd792"
   end
 
+  depends_on "cmake" => :build # for lief
+  depends_on "ninja" => :build # for lief
+  depends_on "rust" => :build # for lief
   depends_on "ldid-procursus"
   depends_on "python@3.14"
 
   on_linux do
-    depends_on arch: :x86_64 # insert_dylib does not support Linux arm64
     depends_on "llvm"
   end
 
+  resource "lief" do
+    url "https://github.com/lief-project/LIEF/archive/refs/tags/1.0.0.tar.gz"
+    sha256 "2cf412695ff739d82e129db441e5c2025f3bb4873a3d3a1d3dd4cf300b682abd"
+
+    livecheck do
+      url :url
+    end
+  end
+
   def install
-    venv = virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "lief"
+
+    # https://lief.re/doc/latest/compilation.html#python-bindings
+    resource("lief").stage do
+      venv.pip_install Pathname.pwd/"api/python"
+    end
 
     # Keep only tool binaries for the current OS/architecture pair.
     tools_arch = (!OS.mac? && Hardware::CPU.arm64?) ? "aarch64" : Hardware::CPU.arch.to_s
@@ -40,9 +57,9 @@ class Cyan < Formula
     # Replace prebuilt binaries
     tools_dir.each_child do |tool|
       cmd = tool.basename.to_s
-      next if cmd == "insert_dylib" # TODO: replace this prebuilt
-
       rm(tool)
+      next if cmd == "insert_dylib" # has no license so fall back to LIEF
+
       replacement = if cmd == "ldid"
         formula_opt_bin("ldid-procursus")/cmd
       elsif OS.linux?
