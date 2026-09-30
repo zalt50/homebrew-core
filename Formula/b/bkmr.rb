@@ -1,8 +1,8 @@
 class Bkmr < Formula
   desc "Unified CLI Tool for Bookmark, Snippet, and Knowledge Management"
   homepage "https://github.com/sysid/bkmr"
-  url "https://github.com/sysid/bkmr/archive/refs/tags/v7.6.8.tar.gz"
-  sha256 "1375b234c1e0616846278ebcd32b20bc83b6747470a4d03307f847f0e193b291"
+  url "https://github.com/sysid/bkmr/archive/refs/tags/v7.6.9.tar.gz"
+  sha256 "e5fd26f1b3c5bda06b70812c46f99288f08d8596cf7af47921508272ec065324"
   license "BSD-3-Clause"
   head "https://github.com/sysid/bkmr.git", branch: "main"
 
@@ -23,6 +23,13 @@ class Bkmr < Formula
   depends_on "onnxruntime"
 
   uses_from_macos "python"
+
+  patch do
+    url "https://github.com/sysid/bkmr/commit/d703f5abec3e4fd939c681c100264105de158510.patch?full_index=1"
+    sha256 "f1343a3920d5ea0d05d55b2a482a4bed184354ef303566c8de8ec05134824ea2"
+    type :unofficial
+    resolves "https://github.com/sysid/bkmr/pull/77"
+  end
 
   deny_network_access!
 
