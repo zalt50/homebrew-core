@@ -7,11 +7,11 @@ class Splitrail < Formula
   head "https://github.com/Piebald-AI/splitrail.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a237cb31a59604ce41ed6452179e603a467cbc3f828e8af8313beab6371113b1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ee9553827d3baacfef36edfa2810ad2a4991eb7f6e2a8e29587c8ed96a9cfbed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a38075cd0547c4f37db7765db7d269e654a44cb67729cf82408da0e971817ebd"
-    sha256 cellar: :any,                 arm64_linux:       "4936ba48b7fe2707437bccb0bb57d8f63eee050d1e29e801abde262aaad27620"
-    sha256 cellar: :any,                 x86_64_linux:      "55286c319c39393ea2866a71a7d5e821143677ca836cab4a2ef9340545eaedd4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ad6669d40daad87d750f3ad3572ccc8da7dd100107c6f26ad8c74ec98bfc093"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "835e8c116e3a627908537799e83f2beb0d65e3d2fae3000d736538391301b5d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca22249870c76fb000741b1486608f2e762a0dff175af32c6cd2fc0a2e19a69d"
+    sha256 cellar: :any,                 arm64_linux:       "da3e7cd1d3277e8d66b253b5b4679278f8083f9b807921274ea1a18b00155e8d"
+    sha256 cellar: :any,                 x86_64_linux:      "d2d321b7c7f2f16dc64df7b0c19fdb8c66c103085b97e8b8170f0700f0dbbdee"
   end
 
   depends_on "rust" => :build
