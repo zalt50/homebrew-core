@@ -1,8 +1,8 @@
 class Jscpd < Formula
   desc "Copy/paste detector for programming source code"
   homepage "https://jscpd.dev/"
-  url "https://github.com/kucherenko/jscpd/archive/refs/tags/v5.3.3.tar.gz"
-  sha256 "79eb83d76b56e5cd2ce21f1cc30d96fb4b7d084981716a124491f3eb09e89bef"
+  url "https://github.com/kucherenko/jscpd/archive/refs/tags/v5.4.0.tar.gz"
+  sha256 "89a9963d2a947e55cd5287e84fd1b211b6b956b8cff9e4d5abad5d913900360d"
   license "MIT"
 
   bottle do
