@@ -10,13 +10,11 @@ class Breezy < Formula
   head "https://github.com/breezy-team/breezy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "de34a6172a3b2bb9c2a3de1fe9f8858a9a180872f9fb4d72f087d64db3aaaf96"
-    sha256 cellar: :any, arm64_tahoe:       "4415490b76c95a8144d4effcfa4bd5155744ed92d0110232d9b38bb2f8821038"
-    sha256 cellar: :any, arm64_sequoia:     "76944202e7daf48d340c56f6961184b6cefa269f121c973c92fe7008ec81ffdd"
-    sha256 cellar: :any, arm64_sonoma:      "d7486b073f4210911914984658fb90acb5691ca86560a576674996c34c458b0e"
-    sha256 cellar: :any, sonoma:            "ffe03ab0855bcbdecd5e99b07ffaea9b84f79ec0829cad715a95a46e54ef0933"
-    sha256 cellar: :any, arm64_linux:       "b430dbd6acbb55b57c612f788134910e892b99aa1d5b94ceb0e559b2776996a3"
-    sha256 cellar: :any, x86_64_linux:      "5feaf5b837b4838092680c96370fb89a611504632c5292b4ba70c15f492c65a8"
+    sha256 cellar: :any, arm64_golden_gate: "8b3305e9eb22eb40221ea150740cfb798f169dc6c435526de9b8b5af6a81136e"
+    sha256 cellar: :any, arm64_tahoe:       "5dc0ba980d5fb51cdfccb47837a1591a063f71d3cab7a4a12f5774e56844b779"
+    sha256 cellar: :any, arm64_sequoia:     "ec8a3b6364c914faad26dcd81d93306fd5d49d1d67d28219791af0f82b8ab3b3"
+    sha256 cellar: :any, arm64_linux:       "78d80be34dda0097657efd41cd54345b966b985c1465f9c3ef58ff60e18644bc"
+    sha256 cellar: :any, x86_64_linux:      "d8dc45733c2bb97922c96e70403559421f9dc65d0f036deb88413e7232509798"
   end
 
   depends_on "gettext" => :build
