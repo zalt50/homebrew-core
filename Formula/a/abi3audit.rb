@@ -9,7 +9,11 @@ class Abi3audit < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1ff6f00150f4e0eee9b24e84bfc51f02b804b26586d22ff5eb0d1d54e22528df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "658e5cb570e0e9ee40f17e3b0918f03a2e6ede8dd2a234ed69db247fcc1571cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "658e5cb570e0e9ee40f17e3b0918f03a2e6ede8dd2a234ed69db247fcc1571cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "658e5cb570e0e9ee40f17e3b0918f03a2e6ede8dd2a234ed69db247fcc1571cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b38e8ea36cfa10c462073593e1e0cf50bc3e76e74495872f704d688a52a34620"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b38e8ea36cfa10c462073593e1e0cf50bc3e76e74495872f704d688a52a34620"
   end
 
   depends_on "cmake" => :build
