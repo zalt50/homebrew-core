@@ -3,8 +3,8 @@ class Aerleon < Formula
 
   desc "Generate firewall configs for multiple firewall platforms"
   homepage "https://aerleon.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/65/db/570b7174e40919b131ec3cef0fc373e39213b39398c8adb032a41c99f249/aerleon-1.17.0.tar.gz"
-  sha256 "debb66a0749c3c24df8ba27a3be09b87a70fdc023eb0da4e8a7f20c036f995ea"
+  url "https://files.pythonhosted.org/packages/32/fb/4c4c1efe07861f45fd6a06e67f9c5756663ff8c72fafda2ebaa7a71d0bd5/aerleon-1.18.0.tar.gz"
+  sha256 "dcfcbefd62b39a6412912760b95360f5bd67239b4077f542c9095f36e419e341"
   license "Apache-2.0"
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
@@ -24,8 +24,8 @@ class Aerleon < Formula
   conflicts_with "cgrep", because: "both install `cgrep` binaries"
 
   resource "absl-py" do
-    url "https://files.pythonhosted.org/packages/64/c7/8de93764ad66968d19329a7e0c147a2bb3c7054c554d4a119111b8f9440f/absl_py-2.4.0.tar.gz"
-    sha256 "8c6af82722b35cf71e0f4d1d47dcaebfff286e27110a99fc359349b247dfb5d4"
+    url "https://files.pythonhosted.org/packages/d0/4f/d79676ab82f2e42fc3611618139f13a9c4c31d0cff4b486982047679a802/absl_py-2.5.0.tar.gz"
+    sha256 "0c996f25c0490700fadabe6351630f6111534fa0ae252cc6d2014ea3b141135f"
   end
 
   resource "pyyaml" do
