@@ -1,9 +1,9 @@
 class Druid < Formula
   desc "High-performance, column-oriented, distributed data store"
   homepage "https://druid.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=druid/37.0.0/apache-druid-37.0.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/druid/37.0.0/apache-druid-37.0.0-bin.tar.gz"
-  sha256 "c5e602be6ef435643bf5f58271353925798c818c23d79aac07766338c9ca0dd0"
+  url "https://www.apache.org/dyn/closer.lua?path=druid/38.0.0/apache-druid-38.0.0-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/druid/38.0.0/apache-druid-38.0.0-bin.tar.gz"
+  sha256 "a1c0ecab53df71b72fabfab4cfb894584da9f645c1c2349547436cb9c3f01f26"
   license "Apache-2.0"
 
   livecheck do
@@ -17,7 +17,7 @@ class Druid < Formula
   end
 
   depends_on "zookeeper" => :test
-  depends_on "openjdk@21" # JDK 25: https://github.com/apache/druid/commit/77d258c011bbc0c9019bd8c9eaf49359051c9a3a
+  depends_on "openjdk"
 
   # check https://github.com/apache/druid/blob/master/docs/development/extensions-core/mysql.md#install-mysql-connectorj
   # for mysql-connector-java version compatibility
@@ -55,7 +55,7 @@ class Druid < Formula
     end
 
     bin.install Dir["#{libexec}/bin/*.sh"]
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("21")
+    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
 
     Pathname.glob("#{bin}/*.sh") do |file|
       mv file, bin/"druid-#{file.basename}"
