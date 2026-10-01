@@ -1,8 +1,8 @@
 class Trivy < Formula
   desc "Vulnerability scanner for container images, file systems, and Git repos"
   homepage "https://trivy.dev/"
-  url "https://github.com/aquasecurity/trivy/archive/refs/tags/v0.74.0.tar.gz"
-  sha256 "04268af574690b84bc3474a5f19e002cd6da3e16899fac9fd39c6e84e7843940"
+  url "https://github.com/aquasecurity/trivy/archive/refs/tags/v0.75.0.tar.gz"
+  sha256 "4ee2010384f90bf23d4059ae49c11129e5041816a3754d890a90ae80f678d765"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aquasecurity/trivy.git", branch: "main"
@@ -17,9 +17,7 @@ class Trivy < Formula
     sha256 cellar: :any,                 x86_64_linux:      "3ff0409831540fa6fdb8208be7bfb2e4d5acd45cdba93849e815bfd8242d9322"
   end
 
-  # TODO: unpin go@1.26 when trivy supports go 1.27
-  # ref: https://github.com/aquasecurity/trivy/pull/11127
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   # `test do` block downloads a container image and the vulnerability DB
   allow_network_access! :test
