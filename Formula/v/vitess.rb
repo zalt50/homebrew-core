@@ -7,12 +7,11 @@ class Vitess < Formula
   head "https://github.com/vitessio/vitess.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7110a8d0188868cde972192fbfa9e430206a29a0970e359c21116a5bf5be5d99"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7110a8d0188868cde972192fbfa9e430206a29a0970e359c21116a5bf5be5d99"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7110a8d0188868cde972192fbfa9e430206a29a0970e359c21116a5bf5be5d99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7110a8d0188868cde972192fbfa9e430206a29a0970e359c21116a5bf5be5d99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f71c00fda71cdeadc2f3d5c7238b06e968eb4d6ffb347a2fbef93a91a464ceb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e62f944d347415bf24c530dc94b38ca0581d6590e7aeb5309e9f359d2933399"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "97ba0c0a694ca53657202c51fd55101fe9ac80919165ff7337e5372822076897"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97ba0c0a694ca53657202c51fd55101fe9ac80919165ff7337e5372822076897"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "60465dda78d675dbcf69d1baa669fc9360ed475a114227b8a7545b9587e050aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "73d5b84baa47fd0ea982c99b614d6ff0b1fe8cc06c872f906565f9d84c2417d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "73bd12eccadf98149b1130e73c0f72e470d8afbbd6f83114ee8c8ba6c0b47e07"
   end
 
   depends_on "go" => :build
