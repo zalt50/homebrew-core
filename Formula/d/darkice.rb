@@ -12,12 +12,11 @@ class Darkice < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "86deaca9d4b02aee9f0f6058ce0956462f12636e821968131b0493cf65df7461"
-    sha256 cellar: :any, arm64_tahoe:       "2297df93e2be390ffab2b1daf0a28641b4361d6c5b7e5915f36f513c382b92d4"
-    sha256 cellar: :any, arm64_sequoia:     "e5ab28d91352dd0b0edf605275dc37cc5802a86184057d0b7f81f7bcccaec18e"
-    sha256 cellar: :any, arm64_sonoma:      "fee50359c0d49db7e2a3fa588d7268d9a73420fc31c6391d5d0fb288e355c990"
-    sha256 cellar: :any, arm64_linux:       "3cdc74436042e42443128873c5bf00cfd6d1c274ffe9b9c598e0e742979d7b4a"
-    sha256 cellar: :any, x86_64_linux:      "d635e61ce10983ab361e14cd35f1452e4263d3ca65879b226251dd17c5089180"
+    sha256 cellar: :any, arm64_golden_gate: "744a5e14a51612494cf8e3d12309793158b230554e63c7d2ac96363232fb7acc"
+    sha256 cellar: :any, arm64_tahoe:       "7faeeeafe0d8fe698edc5d398ec2352a91724df5bc46f8d1161d918202ed4ef9"
+    sha256 cellar: :any, arm64_sequoia:     "e85c04e13db9d2f29031a5f1113cd39f0ba94bbb9ec9a42d74be052ed590b0bb"
+    sha256 cellar: :any, arm64_linux:       "ea51ebe3e6c6a2e17eb028a5c24346e37525f3d04c048b0d40e403064671becd"
+    sha256 cellar: :any, x86_64_linux:      "0c6ace886ee388b3b94dc0d56ddf7681c1562d305f4c17a7af7c8d0ac0b77519"
   end
 
   depends_on "autoconf" => :build
