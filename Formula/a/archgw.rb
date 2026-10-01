@@ -9,13 +9,11 @@ class Archgw < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "de17bec79e401f1c9bf7623876902d7cfd2e4c40978a84ea24e71c5ffd26e5a6"
-    sha256 cellar: :any,                 arm64_tahoe:       "788b4196ec4a3b5f5dad3906682c670db7159d0aa3c494f8094af81d0ff3ffe3"
-    sha256 cellar: :any,                 arm64_sequoia:     "4289a228e5d4d3abe652dd30884e9d41c6284b176e5ae8ba0da9f303cb06fbc5"
-    sha256 cellar: :any,                 arm64_sonoma:      "21b1365b7080b35c4edf63bc6e6e5f34c99334e7a3f75b7afbfbe779b0c4a1c5"
-    sha256 cellar: :any,                 sonoma:            "88a80c4dd1bd14d078d1a33ab81932b865a5f48fc9ef60a82d09a802f6f8ac48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8926ecbef23fb545ec2aa0ef6714754cd11b4cc73a609256510193a0180d9ca7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "874c5c9bebe68573365e167647479fa5df592fe84083d4edc5895ad60a3000a0"
+    sha256 cellar: :any, arm64_golden_gate: "2aa0f4adefdb40e8fbb0054490fcd38def03b0fb1fc25161bad4ca1e19f63a11"
+    sha256 cellar: :any, arm64_tahoe:       "96755184acec4b6765dd0525b57daa336741b77a7a42d22a429be4751b1c3c4e"
+    sha256 cellar: :any, arm64_sequoia:     "80f9ff71063f4c0aba1a82652ced37f9e1433e7b3a3f8748ebf0682b0e13262c"
+    sha256 cellar: :any, arm64_linux:       "d6ed6c82a3c8c921452aeb3bde2f3eb485b0c8ac1ded1fd476cfa975159d488b"
+    sha256 cellar: :any, x86_64_linux:      "2a98481f40b82971c67a03df2d5a7055675fdf7aa6df67468b8119d573b95897"
   end
 
   depends_on "certifi" => :no_linkage
