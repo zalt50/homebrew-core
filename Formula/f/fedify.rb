@@ -7,7 +7,7 @@ class Fedify < Formula
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f53b81a1d4c1cb2d2cc772cdcb7225e220a3b5b5d268b5a011fc5b9f95de5a58"
+    sha256 cellar: :any_skip_relocation, all: "fa933b35333d72a33b51571d6530d01a968d27559e3ec8b6bb14f46a0ab37c41"
   end
 
   depends_on "node"
