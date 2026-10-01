@@ -1,8 +1,8 @@
 class PythonAT310 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.21/Python-3.10.21.tgz"
-  sha256 "f276987f06270ae6c1fb4da620bd105edf78c31368c2f7e85e6c1d51c560b04b"
+  url "https://www.python.org/ftp/python/3.10.22/Python-3.10.22.tgz"
+  sha256 "9448b34d16f8e3db0964ac3ed9fb283197747543c2c021f283ffd2c8b7287357"
   license "Python-2.0"
   compatibility_version 1
 
@@ -55,8 +55,8 @@ class PythonAT310 < Formula
 
   # Always update to latest release
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do
