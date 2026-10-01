@@ -1,8 +1,8 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://atmos.tools"
-  url "https://github.com/cloudposse/atmos/archive/refs/tags/v1.229.0.tar.gz"
-  sha256 "7359eef2ec9d5e04eb9b926e78ae1e14b82de00d2788bf20d224673bf0e332f6"
+  url "https://github.com/cloudposse/atmos/archive/refs/tags/v1.230.1.tar.gz"
+  sha256 "71f6b1a6522c63874d138485b55cfe0444f8b4ed935895e2bb1fd5213067c539"
   license "Apache-2.0"
   head "https://github.com/cloudposse/atmos.git", branch: "main"
 
