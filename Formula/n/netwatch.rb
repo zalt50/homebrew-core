@@ -6,11 +6,11 @@ class Netwatch < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf5a800579b4f95770190a4e1cb34f6a1d91b56226b25acf318a010f1921fde0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "75fe80c0ef01e80197987d7583671b0896ec2bf3f03f4e45d2cb439f171ee4c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b39228c31e30e7be477a7d5a4e7595d0177f9ac96aa9d3566f1bb069b6047e8c"
-    sha256 cellar: :any,                 arm64_linux:       "13d8fbce9e1868146ee2abad171e35d4938d32bf24ba74c50a0c341d0e410f4c"
-    sha256 cellar: :any,                 x86_64_linux:      "cf46621dbdab8113893d7359d025a4efaf7a1e2a5654e53bc986d696df2c5a30"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "81a87f65d224aaae4d0b001006edf39e644317febf49a702646b1cf237d90039"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "adac9a18398836b483575f88af81fb77f7f3ecc54a2355579b2272ce798cdcb9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "435b639213711ddba1e43fcc55712339a257eb8a641ab8a8327e708e37bb0b60"
+    sha256 cellar: :any,                 arm64_linux:       "488cadbc410e24d3e6d36593c17d8c6af44752be00bbae82f16bec7a1f63dc92"
+    sha256 cellar: :any,                 x86_64_linux:      "598b1af33864484649b0efa4cccb773a01a9a44dbcced15a1b91ddf4baf20177"
   end
 
   depends_on "rust" => :build
