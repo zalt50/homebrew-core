@@ -4,6 +4,7 @@ class Rawtoaces < Formula
   url "https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.2.2.tar.gz"
   sha256 "1687f12ce34c3d01d5e3d293dacf14df3d815d51d4595c12321d0262a5adc792"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
