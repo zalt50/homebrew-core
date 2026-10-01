@@ -1,8 +1,8 @@
 class RustWasm < Formula
   desc "Rust standard library and sysroot for WebAssembly targets"
   homepage "https://www.rust-lang.org/"
-  url "https://static.rust-lang.org/dist/rustc-1.98.1-src.tar.gz"
-  sha256 "dc9f8b917b32444d6c7ac43cc1b409013d3a9a633338bb60c14cdae1d15ee65a"
+  url "https://static.rust-lang.org/dist/rustc-1.99.0-src.tar.gz"
+  sha256 "2035e4077b834a42ff8afd07f277ae3f06340098b86b1d2843aa234b4cfcae67"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -19,7 +19,7 @@ class RustWasm < Formula
   end
 
   depends_on "wasmtime" => :test
-  depends_on "lld@22"
+  depends_on "lld"
   depends_on "rust"
   depends_on "wasi-libc"
   depends_on "wasm-component-ld"
@@ -137,7 +137,6 @@ class RustWasm < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", formula_opt_bin("lld@22")
     config = pkgshare/"cargo-config.toml"
 
     # wasm32-unknown-unknown has no OS or runtime, so just confirm we can link a
