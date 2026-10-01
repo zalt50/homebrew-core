@@ -25,9 +25,17 @@ class TailwindcssLanguageServer < Formula
   depends_on "pnpm" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    cd "packages/tailwindcss-language-server" do
+      system "pnpm", "with", "current", "fetch", "--ignore-scripts"
+    end
+  end
+
   def install
     cd "packages/tailwindcss-language-server" do
-      system "pnpm", "with", "current", "install", "--frozen-lockfile", "--ignore-scripts"
+      system "pnpm", "--offline", "with", "current", "install", "--frozen-lockfile", "--ignore-scripts"
       system "pnpm", "with", "current", "run", "build"
       bin.install "bin/tailwindcss-language-server"
     end
