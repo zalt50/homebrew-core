@@ -1,9 +1,9 @@
 class PlinkNg < Formula
   desc "Whole-genome association analysis toolset (PLINK 2.0)"
   homepage "https://www.cog-genomics.org/plink/2.0/"
-  url "https://github.com/chrchang/plink-ng/archive/refs/tags/v2.0.0-a.7.10.tar.gz"
-  version "2.0.0-a.7.10"
-  sha256 "d012e340e6fbdabcc77b57cb2e0d0f20181a759eb268fc51d3418410d819a272"
+  url "https://github.com/chrchang/plink-ng/archive/refs/tags/v2.0.0-a.7.11.tar.gz"
+  version "2.0.0-a.7.11"
+  sha256 "6b83f2ff0a2d59ed9693c7270935d59893729f451831e60fc7b646d91042ddce"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
