@@ -1,8 +1,8 @@
 class IcebergCli < Formula
   desc "Command-line interface for Apache Iceberg"
   homepage "https://go.iceberg.apache.org/cli.html"
-  url "https://github.com/apache/iceberg-go/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "3ecdaa8851b84fa1c109be61b7ae6817aef6f301cee98ce68eac1eb649686050"
+  url "https://github.com/apache/iceberg-go/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "8c6bf515c17bd54127a20670f810f40ec1c4542ade2f862c07c323fa67718241"
   license "Apache-2.0"
 
   bottle do
