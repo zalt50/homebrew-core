@@ -7,12 +7,11 @@ class Faudio < Formula
   head "https://github.com/FNA-XNA/FAudio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "291fdd4d98a89c79aa7c1bd2efdca7eda4207af9b5d4c29beb67d5a4052de40b"
-    sha256 cellar: :any, arm64_tahoe:       "075871cac458afca889436220d3d992698a017b0015f88925b365de895595ade"
-    sha256 cellar: :any, arm64_sequoia:     "8449333647cfb4be4c81066d15cac1d3d63cba91f4b686f8887eb335e7f8bf61"
-    sha256 cellar: :any, arm64_sonoma:      "cc6a84a669e7db5a524b1fd19c27a6031a194142bf8bfcfcc815aebfb5d37f9b"
-    sha256 cellar: :any, arm64_linux:       "8856f17cbf870e34539ac5aa2e422f6cf2256611739e03c48a877466ab85485f"
-    sha256 cellar: :any, x86_64_linux:      "da4a9504501cadd75d8cab9dd5927981b3663d56f701b46ee8a87b8cf87b4e5e"
+    sha256 cellar: :any, arm64_golden_gate: "f08effd033d40866f3df01e75538cca22c1d57d94c57a31e72a30eac61e728fd"
+    sha256 cellar: :any, arm64_tahoe:       "de9d2872d272adfdf3e14777c66286025c2038ea3b401b4a153907110b36d4ed"
+    sha256 cellar: :any, arm64_sequoia:     "d33b06b63c55a4e3f1c56e26f78d9ebd50edbe74e5926c7b83fc19f906c8a4b2"
+    sha256 cellar: :any, arm64_linux:       "1b2757c5864799bda70dc24fb58f6a94a66c93acc6473f65abf29b2ea9bbd077"
+    sha256 cellar: :any, x86_64_linux:      "116c011ebf1558e32791aabaeeb43e118acc16cbb8e600abeaddd273df939fdb"
   end
 
   depends_on "cmake" => :build
