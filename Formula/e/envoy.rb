@@ -4,16 +4,25 @@ class Envoy < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.39.1.tar.gz"
-    sha256 "3fca3330b3c9b632d0039f4da1ece3e177fc12348907ebaa8be7b489a9f9287f"
+    url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.39.2.tar.gz"
+    sha256 "4c897373699a45e848f4abf1892143f693c1d0bfd4414f73da57957697f35d6e"
 
     depends_on "llvm@18" => :build
 
-    # Allow using host-installed toolchains
+    # TODO: remove once 1.39 includes host-toolchain support, upstream PR ref, https://github.com/envoyproxy/envoy/pull/47963
     patch do
-      url "https://github.com/envoyproxy/envoy/commit/be513213e888c443f4e00b1343cc05149f4f92a7.patch?full_index=1"
-      sha256 "363bf44a752c44b3532b7ce6ebc541e8a85b528ae7c79a6f7e621c881358a106"
+      url "https://github.com/envoyproxy/envoy/commit/3806cefa801e337fe0ce182c00019079c03076a7.patch?full_index=1"
+      sha256 "d2e5eea97cc244a3ba8d2dd9e477a02f2e757497213a49ea77c24d3f71aebe3e"
       type :backport
+      resolves "https://github.com/envoyproxy/envoy/pull/47963"
+    end
+
+    # TODO: Remove once 1.39 reuses API CEL protos, upstream PR ref, https://github.com/envoyproxy/envoy/pull/47984
+    patch do
+      url "https://github.com/envoyproxy/envoy/commit/4160c05c1e935678e11fb5b690ce228a919ba8c6.patch?full_index=1"
+      sha256 "cb5ca3f32d7222c7f24c99dafa4fbf542ae686b6c3afb6bbe3c84f4f0d7b08e7"
+      type :unofficial
+      resolves "https://github.com/envoyproxy/envoy/pull/47984"
     end
   end
 
@@ -103,6 +112,23 @@ class Envoy < Formula
         --@envoy//bazel/foreign_cc:parallel_builds
         --define=wasm=wamr
         --copt=-Wno-nullability-completeness
+      ]
+    end
+    if OS.mac?
+      # TODO: Remove once the configured LLVM linker supports Xcode 27 SDK targets.
+      # https://github.com/envoyproxy/envoy/issues/47964
+      # Set the bottle deployment target for LLVM actions and CMake subprocesses.
+      args += %W[
+        --action_env=MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}
+        --host_action_env=MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}
+        --copt=-mmacosx-version-min=#{MacOS.version}
+        --host_copt=-mmacosx-version-min=#{MacOS.version}
+        --linkopt=-mmacosx-version-min=#{MacOS.version}
+        --host_linkopt=-mmacosx-version-min=#{MacOS.version}
+        --linkopt=--ld-path=/usr/bin/ld
+        --host_linkopt=--ld-path=/usr/bin/ld
+        --features=-supports_start_end_lib
+        --host_features=-supports_start_end_lib
       ]
     end
     if OS.linux?
