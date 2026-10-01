@@ -7,6 +7,14 @@ class PgActivity < Formula
   sha256 "82ea53a0eeea1fa8015e5eb9d1d1501431e3308e9ee65a7d898d9bf75ba3620a"
   license "PostgreSQL"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "289f4f1f16282e4ff6f09e350a54d6286d024ac2f2028d06a057885b0820b010"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7646e66ac9dbbd38f7212f3106e7fb7d187c3b61417824d5a19bd8711d60ec6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3f79f652bd6e82e8f88fde8d13461537aba4431ebc41dcc25ac15d94d96a2839"
+    sha256 cellar: :any,                 arm64_linux:       "757175c1ced4195b65181cda57e07399ab8911a21f56d21e3a1dcfb7e7e401d5"
+    sha256 cellar: :any,                 x86_64_linux:      "d1af4cfa54a4d9027b568696df077883439125ae53087d52f18a260267779807"
+  end
+
   depends_on "libpq"
   depends_on "python@3.14"
 
