@@ -1,8 +1,8 @@
 class Faircamp < Formula
   desc "Static site generator for audio producers"
   homepage "https://codeberg.org/simonrepp/faircamp"
-  url "https://codeberg.org/simonrepp/faircamp/archive/2.0.0.tar.gz"
-  sha256 "b0601a411fe041baae4da86bab4242fc964df6229ff2335955f1d5df46f2deff"
+  url "https://codeberg.org/simonrepp/faircamp/archive/2.0.1.tar.gz"
+  sha256 "c3518bb1a54609475ba7452f2e4b0fe82199818700083a0cd69d8997f59a4585"
   license "AGPL-3.0-or-later"
 
   bottle do
