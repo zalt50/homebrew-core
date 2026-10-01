@@ -13,11 +13,11 @@ class Oasdiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1bc133807193bca57c12b3d972bf4430f200a51c0babbaea92aa33e9a6ed3069"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1bc133807193bca57c12b3d972bf4430f200a51c0babbaea92aa33e9a6ed3069"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1bc133807193bca57c12b3d972bf4430f200a51c0babbaea92aa33e9a6ed3069"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ce718b6c1420234693b2a4d35fa4246eae1d3f57db07249355b2f0cda5b6c3bf"
-    sha256 cellar: :any,                 x86_64_linux:      "28cfccdc44a74827aa0b5c357c9445e9901fd53158604559c387c443caab8d83"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "55e8c716518eba94afce26288dc9490c8ea32b6303d15c192407506560ae3daa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "55e8c716518eba94afce26288dc9490c8ea32b6303d15c192407506560ae3daa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "55e8c716518eba94afce26288dc9490c8ea32b6303d15c192407506560ae3daa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d3dacc753bf5c81e17b692859248ecbbe05a0d50c43df864236b633895250468"
+    sha256 cellar: :any,                 x86_64_linux:      "e9060d40e9ccb3728167882443ddc8f1095dd27fa8f39c7098c76bd51ecc0ecb"
   end
 
   depends_on "go" => :build
