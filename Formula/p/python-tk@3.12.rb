@@ -4,6 +4,7 @@ class PythonTkAT312 < Formula
   url "https://www.python.org/ftp/python/3.12.15/Python-3.12.15.tgz"
   sha256 "de1a241a519e0a3374fea98988d0b52c886743f9d953f23be8269cc7b59c5fab"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     formula "python@3.12"
