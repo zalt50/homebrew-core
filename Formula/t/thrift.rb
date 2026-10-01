@@ -1,11 +1,11 @@
 class Thrift < Formula
   desc "Framework for scalable cross-language services development"
   homepage "https://thrift.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=thrift/0.24.0/thrift-0.24.0.tar.gz"
-  mirror "https://archive.apache.org/dist/thrift/0.24.0/thrift-0.24.0.tar.gz"
-  sha256 "e0fa5839a4c5c1d631b0931cf2c554ebbfa4e2fee3a9fb3ffd4f82ce4396c6e4"
+  url "https://www.apache.org/dyn/closer.lua?path=thrift/0.25.0/thrift-0.25.0.tar.gz"
+  mirror "https://archive.apache.org/dist/thrift/0.25.0/thrift-0.25.0.tar.gz"
+  sha256 "66da4707214c54c94bac082103dc67adaf9e08925662700f269170a7b534b214"
   license "Apache-2.0"
-  compatibility_version 3
+  compatibility_version 4
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "9cf20e9b0fc582ac22978fdf11b22c933293d633e06646638cb28fac6846be1c"
