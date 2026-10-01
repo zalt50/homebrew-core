@@ -9,7 +9,7 @@ class Tartufo < Formula
   head "https://github.com/godaddy/tartufo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "90e5b001924b051af1ffba6f5e2906bf8aa0616ae662439dd8d46c94cf3eefc9"
+    sha256 cellar: :any_skip_relocation, all: "f91ef4f32e662aa01bb805c2a64735cbb2dfe6a900cc2fb81f3079c2c6fd5a06"
   end
 
   deprecate! date: "2026-09-30", because: :repo_archived
