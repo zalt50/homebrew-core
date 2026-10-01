@@ -10,13 +10,11 @@ class CryticCompile < Formula
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b84349c7e53ac604e9e1c313c4958a2fe87686c75c5512ba3f8dcdc40a790128"
-    sha256 cellar: :any, arm64_tahoe:       "a7859bee32195b143413e349a006182976b2e8036566ce0b61bbc59bd6f13d41"
-    sha256 cellar: :any, arm64_sequoia:     "b968200aefdcfead937e15b050edbdcc994a69f8bafa31be7e448da80a1fce98"
-    sha256 cellar: :any, arm64_sonoma:      "f937e57d8493b2f07db32eb3c231e571333dfc139b2a32c68be47aa3375153a5"
-    sha256 cellar: :any, sonoma:            "7be5628fb00002fa12f63198cc787826e3a0ff3e5ce76d82c44f5670f6de5144"
-    sha256 cellar: :any, arm64_linux:       "d2c040cd938e01ad7317df3749c13fb7eb938c0d127c8daeb7ede6c080f75735"
-    sha256 cellar: :any, x86_64_linux:      "33cbac6b9602486840c3a770b5837baa8dcbf0eb2877cae746f3c9b5c2577f11"
+    sha256 cellar: :any, arm64_golden_gate: "9fded727d106f47a06410dd3eb5f49f236ddaa19d3cebc71b6a2fcbcf9bb3262"
+    sha256 cellar: :any, arm64_tahoe:       "476d3ca6dea32e86a63eb62a9658da4ffa74367882abea15012bdf72fdb9ae9b"
+    sha256 cellar: :any, arm64_sequoia:     "900b632d6f71a5b9ea075e636873976ee4c22debce245567b97d7a64af2e1485"
+    sha256 cellar: :any, arm64_linux:       "cb4c6f7a1a77040ff09bfb8e048770f13e269092e3709e8b3569b161d95b8a82"
+    sha256 cellar: :any, x86_64_linux:      "9238a4eabb7a759e96afd8d9251bbac83b36ee519db54861a17e2f65d3c03477"
   end
 
   depends_on "rust" => :build # for `cbor2`
