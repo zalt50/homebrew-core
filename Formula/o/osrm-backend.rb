@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.9.0.tar.gz"
-  sha256 "f58b0451452820d92197d393bdd01ee5a9644a0c0ad904f74faeec0d1d2d70fd"
+  url "https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.10.0.tar.gz"
+  sha256 "2cb6f8b382b0eec99ae4a3c221edbba56bad11faa8f50e41a4d7408570df166e"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
@@ -59,15 +59,20 @@ class OsrmBackend < Formula
     CAUSE
   end
 
-  # Add a missing `<ostream>` include, which libc++ 23 no longer provides transitively.
-  patch do
-    url "https://github.com/Project-OSRM/osrm-backend/commit/fb0251f4f91e2eb7e1baea350633d5352ffdb453.patch?full_index=1"
-    sha256 "fa2b62a256a49648e0fc717f5642456c4745b9c06e2b7581294c24b139a23499"
-    type :unofficial
-    resolves "https://github.com/Project-OSRM/osrm-backend/pull/7714"
+  resource "gauche" do
+    url "https://github.com/Project-OSRM/gauche-rs/archive/b1c3af3029975ddbe573bad874c4520db77321d0.tar.gz"
+    sha256 "8b0e810d1b54285bb78a81050e0954ff70f4d6f8a67f84f4c9771c713f80ac08"
   end
 
   def install
+    resource("gauche").stage do
+      system "cmake", "-S", "cpp", "-B", "build", *std_cmake_args(install_prefix: libexec/"gauche"),
+                      "-DBUILD_SHARED_LIBS=OFF", "-DGAUCHE_BUILD_EXAMPLES=OFF"
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+      (libexec/"gauche").install "LICENSE"
+    end
+
     lua = Formula["lua"]
     luaversion = lua.version.major_minor
 
@@ -76,6 +81,8 @@ class OsrmBackend < Formula
                     "-DLUA_INCLUDE_DIR=#{lua.opt_include}/lua#{luaversion}",
                     "-DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua", luaversion.to_s)}",
                     "-DENABLE_GOLD_LINKER=OFF",
+                    "-Dgauche_DIR=#{libexec}/gauche/lib/cmake/gauche",
+                    "-DCMAKE_CXX_FLAGS=-I#{libexec}/gauche/include",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
