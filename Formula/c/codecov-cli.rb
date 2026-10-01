@@ -9,13 +9,11 @@ class CodecovCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f76fa58d2feacbe1acb004dd5617e19a6027829037cf2b4429b4d4fff6a2cb9d"
-    sha256 cellar: :any, arm64_tahoe:       "95d320429fad70ed6f5e0247b26aaf7a363d24dffe0a90f169b170e04c2f40ea"
-    sha256 cellar: :any, arm64_sequoia:     "1b5b70c4ffa1e44ad6f0e86910df40e60141795c877d606a75f93b21648b5fae"
-    sha256 cellar: :any, arm64_sonoma:      "4ad3da9686921f3c6fb0688813f7d69be01da5ed33723df733dc503fed0d760d"
-    sha256 cellar: :any, sonoma:            "dadc1647832a92dfa13f85542b4ea14bfaf2be0172708be86e73e116945b5727"
-    sha256 cellar: :any, arm64_linux:       "a7d8b91c9b81ac8c410d3cbbf916d5f255ba34d392c530268625ed6d201d6652"
-    sha256 cellar: :any, x86_64_linux:      "67356e9a85d1b0656f9ad03b7e2bd4cf4d8abf5fd1611a3543167b8815dad720"
+    sha256 cellar: :any, arm64_golden_gate: "76aad766dfdf79f1469dcae736650a0a838de51428307f335b9cb2375316682a"
+    sha256 cellar: :any, arm64_tahoe:       "cdbb33add5097a4ddd28bb30cb1ca79ceb02fd4afbe4467511a070fc23db2e61"
+    sha256 cellar: :any, arm64_sequoia:     "0d0acb270d5c4d88fec0a95db6fc6eb7030d351314af12f5033de8d3c3a44411"
+    sha256 cellar: :any, arm64_linux:       "8e42212c45cd1a969afbfb26d82f0fbd3d8cff2fa1023a04bb91cf31185562cf"
+    sha256 cellar: :any, x86_64_linux:      "9a8bedcd7b7fff9ac669099bfea1d2ae89aa368fd31672f71a1d7716087eb62c"
   end
 
   depends_on "rust" => :build
