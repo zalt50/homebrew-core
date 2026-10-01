@@ -1,8 +1,8 @@
 class Forgit < Formula
   desc "Interactive git commands in the terminal"
   homepage "https://github.com/wfxr/forgit"
-  url "https://github.com/wfxr/forgit/releases/download/26.09.1/forgit-26.09.1.tar.gz"
-  sha256 "adf05d5478cf637dd186fa94cb46a090a1fdde006c6ba8f67ee00afb4865e72f"
+  url "https://github.com/wfxr/forgit/releases/download/26.10.0/forgit-26.10.0.tar.gz"
+  sha256 "dd967eef52084bb3b4addb40b69296797df673106c3b3a23c6ce340774728384"
   license "MIT"
 
   livecheck do
@@ -15,6 +15,8 @@ class Forgit < Formula
   end
 
   depends_on "fzf"
+
+  deny_network_access!
 
   def install
     bin.install "bin/git-forgit"
