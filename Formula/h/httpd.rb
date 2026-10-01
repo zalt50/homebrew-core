@@ -1,9 +1,9 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.68.tar.bz2"
-  mirror "https://downloads.apache.org/httpd/httpd-2.4.68.tar.bz2"
-  sha256 "68c74d4df38c26bed4dfbdb8f3baf1eb532f3872357becc1bba5d136f6b63c06"
+  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.69.tar.bz2"
+  mirror "https://downloads.apache.org/httpd/httpd-2.4.69.tar.bz2"
+  sha256 "c5e6ebc66e349b87d7fc6916ae7cc2a808ed348003de134cf9e9d89d3e2cc73d"
   license "Apache-2.0"
   compatibility_version 1
 
