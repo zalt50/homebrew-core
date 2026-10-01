@@ -10,12 +10,11 @@ class Dotdrop < Formula
   head "https://github.com/deadc0de6/dotdrop.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "93f91909ac173bde09172105fc6dc3b9380eb6444d053aa2693ae27fbee22db5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0bb82b25fbc48f3defaf89e95fb90629eafc820f709174a6ef588315d974e9a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6504e17bab94d13b2cfd2d4753602020a7111b6be5a06626bca5f42481b5f034"
-    sha256 cellar: :any,                 arm64_linux:       "abc52db35c899cc193a3ac393b22b76b7e9297feeb6b3f567d6fe029304f585d"
-    sha256 cellar: :any,                 x86_64_linux:      "3431ecdcf0851bd3515aab65c818c0237b5315484e1454e52a436a62791b5675"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "34fd269c1331a1fd306d2ae958223a5ccf0fd04ac01abda922377190c5fa9058"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4cf0c2df0bea01e44a0390b6f43d8f5f5a418ddba510b2cc94e35f51a2698da0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8f7eeb0d05d35b1f34a4312418a12397a9e3b6cba179382fa9d6d8ed744e6f32"
+    sha256 cellar: :any,                 arm64_linux:       "3a3a393d8a42cb406cd7dc2e2cdafba604afaaad283423a535d010ce20ea5495"
+    sha256 cellar: :any,                 x86_64_linux:      "473979b0f5a22238ea886a8433d8d525c4c166bc27fbea3442ba9d61265f2f95"
   end
 
   depends_on "certifi" => :no_linkage
