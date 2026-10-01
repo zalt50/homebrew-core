@@ -1,8 +1,8 @@
 class OpenclawCli < Formula
   desc "Your own personal AI assistant"
   homepage "https://openclaw.ai/"
-  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.9.6.tgz"
-  sha256 "1a7355691bc0e605222ba818f1f72c1787253c78dfeb0df6be2086ec73b71e63"
+  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.9.7.tgz"
+  sha256 "1b4746d9dfe1768e73da849e824172140f1a71b6edde3f7625f70477a73f83f7"
   license "MIT"
 
   bottle do
@@ -14,6 +14,10 @@ class OpenclawCli < Formula
   end
 
   depends_on "node"
+
+  on_linux do
+    depends_on "libxcb"
+  end
 
   def install
     system "npm", "install", *std_npm_args
@@ -51,6 +55,9 @@ class OpenclawCli < Formula
       basename = dir.basename.to_s
       rm_r(dir) if basename != "#{os}-#{arch}"
     end
+
+    # Rebuild the X11 clipboard helper against our `libxcb`
+    system "bash", node_modules/"@earendil-works/pi-tui/native/linux/build.sh" if OS.linux?
 
     # koffi binaries moved to `@koromix/koffi-*`, which also ships a musl build
     node_modules.glob("@koromix/koffi-*/*").each do |dir|
