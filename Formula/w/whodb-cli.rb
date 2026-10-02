@@ -12,11 +12,11 @@ class WhodbCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "142ace3d3f523909911b7a9bfa1f58d00721ad22e5c1dba522adf9da1f6ddcab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f8144d181bb82c1512e0634307b1f64accd54c535bf1c8af9f7260008055936"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3b3625296feba06c1f98bc6032bdef49775053dbb589d6f467b6f164a01c167f"
-    sha256 cellar: :any,                 arm64_linux:       "74130a9b84d1641301d251c512b9fd173aabbf8692d9dc17e5f7bea8b565323b"
-    sha256 cellar: :any,                 x86_64_linux:      "8afd9122980666fa80bf7cb8d86a45df21415b79dacfe8c4901b1266a0d5c274"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0837a5f94693db32becfba41b63ce2040e07f2a0d489b2f21b964733ce6b7594"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a8b5b1a29b07ce9b1b1ed2ba65bd7379b7d82f8a230df8812898d70aab1d41ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4ac72a30a186d925eb74bd74a30858dd7e7b9d10c55617534cf347df7852bb77"
+    sha256 cellar: :any,                 arm64_linux:       "af3214061cc266dcf8b4780cbce1389c227762f3975def6934341f956df45fe4"
+    sha256 cellar: :any,                 x86_64_linux:      "f4724eda50b784bef9dc9ebc23f806505d315a60e5c4280140bf6ba386f9447a"
   end
 
   depends_on "go" => :build
