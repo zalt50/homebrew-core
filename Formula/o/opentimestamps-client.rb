@@ -6,7 +6,7 @@ class OpentimestampsClient < Formula
   url "https://files.pythonhosted.org/packages/3d/cb/15156c9bc8ab404e1fc2750a3b5aa4ecafccd632923776d61c875f116702/opentimestamps-client-0.7.2.tar.gz"
   sha256 "083a08f59c3123682d6742cc57d3e229ed7b3397807638836efe3a949517accb"
   license "LGPL-3.0-or-later"
-  revision 7
+  revision 8
   head "https://github.com/opentimestamps/opentimestamps-client.git", branch: "master"
 
   bottle do
@@ -34,8 +34,8 @@ class OpentimestampsClient < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
+    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
   end
 
   resource "opentimestamps" do
