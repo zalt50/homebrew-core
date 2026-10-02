@@ -7,10 +7,9 @@ class Folderify < Formula
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e94c8c76a451c60a585e7d10f6fa289414a5ec6602be00ca487518c4088b0a9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d5f005c6bae4577bef91af480ebf13e9affb7d8de0729c126fb709d43a1cb906"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "550adbb3866da306194a7a90b8fdecfe612263ab4dd909e9941d1f0de2c256d5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f568abdc99247b1f104cc10ae711e9770b14b6dbe5fc7ca4594e4fb12ecf501f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bdb07ccc35e7209d53f814db5399ec83d054edd9e452200c3e7a79903613986d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f55b2f56f04b8eebebe263748a5c64ca5f5c132d025b099b6cc83195c26d84db"
   end
 
   depends_on "rust" => :build
