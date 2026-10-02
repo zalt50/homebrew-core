@@ -1,8 +1,8 @@
 class Kagent < Formula
   desc "Kubernetes native framework for building AI agents"
   homepage "https://kagent.dev"
-  url "https://github.com/kagent-dev/kagent/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "452f6c79a5edf1f310bd80b5f8b893c9a4111cd3ba61e45b2c7feda9daf4695c"
+  url "https://github.com/kagent-dev/kagent/archive/refs/tags/v0.10.3.tar.gz"
+  sha256 "258cd2ffd24221a6c00dab916d07639f164b96400ccbdfb6db2257ea1e655e5f"
   license "Apache-2.0"
   head "https://github.com/kagent-dev/kagent.git", branch: "main"
 
@@ -16,6 +16,12 @@ class Kagent < Formula
 
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "go"
+  end
 
   def install
     cd "go" do
