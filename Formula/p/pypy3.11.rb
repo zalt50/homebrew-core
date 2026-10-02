@@ -4,6 +4,7 @@ class Pypy311 < Formula
   url "https://downloads.python.org/pypy/pypy3.11-v8.0.0-src.tar.gz"
   sha256 "829cef413d84383563488f0234b3cc537a8034e43fda13e0530500dad2d5dc3b"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://downloads.python.org/pypy/"
@@ -17,6 +18,10 @@ class Pypy311 < Formula
     sha256 cellar: :any, arm64_linux:       "d3adf4b494989c208afad97b769953ba3986f9aef7b1f4bedf5cc30c390a100d"
     sha256 cellar: :any, x86_64_linux:      "0e428811901ffa3a04394c7cf2c8c19231ae12d1cb588ce1480431a12fe837b9"
   end
+
+  # https://github.com/pypy/pypy/blob/main/pypy/doc/release-v8.0.1.rst
+  deprecate! date: "2026-10-02", because: "is planned for EOL in next release (8.0.1) and uses EOL Tcl/Tk 8.6"
+  disable! date: "2027-10-02", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "gdbm"
@@ -34,7 +39,6 @@ class Pypy311 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  link_overwrite "bin/pip_pypy3", "bin/pypy3", "lib/libpypy3-c.dylib", "lib/libpypy3-c.so"
   link_overwrite "lib/pypy3.11/site-packages/pip*", "lib/pypy3.11/site-packages/setuptools*"
 
   pypi_packages package_name:   "",
