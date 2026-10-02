@@ -12,11 +12,11 @@ class Hookdeck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c422fe5baf355d0706ec930a2439423547398a27d939aed283cc4f02fe58dd4f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c422fe5baf355d0706ec930a2439423547398a27d939aed283cc4f02fe58dd4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c422fe5baf355d0706ec930a2439423547398a27d939aed283cc4f02fe58dd4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8db61cd3743e8938e6a44d1cf70ae9f0041c2f1170c46bff497a425b512959a2"
-    sha256 cellar: :any,                 x86_64_linux:      "a5139cb55ecbe568222640554f21e817467f16f5d03a7917641a7298c23acf11"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1096e5a95429d857e245c1d30ee4fe1a85bc75bb6db31aec20b0068860e053d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1096e5a95429d857e245c1d30ee4fe1a85bc75bb6db31aec20b0068860e053d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1096e5a95429d857e245c1d30ee4fe1a85bc75bb6db31aec20b0068860e053d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bc96825c4922c11cb154513e165c447f8219f1bdd51ec4eccdd98319a6d25485"
+    sha256 cellar: :any,                 x86_64_linux:      "bea04e366fae593310784900b9a89a60281efdc0717133eaa018287d0cf3d020"
   end
 
   depends_on "go" => :build
