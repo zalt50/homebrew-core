@@ -10,7 +10,7 @@ class Osc < Formula
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c8e7d59efa00e7f369bd5a4e65ab1a2c5af1c49737c8c0fbef78571ca8025f9c"
+    sha256 cellar: :any_skip_relocation, all: "1f143125fbe5b3156227452bc5ca5d05c27cdfbe99e8e1b499bb388a3cf9a906"
   end
 
   depends_on "cryptography" => :no_linkage
