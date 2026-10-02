@@ -16,9 +16,11 @@ class VitePlus < Formula
 
   depends_on "cmake" => :build
   depends_on "just" => :build
+  depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
-  depends_on "rustup" => :build # TODO: try to restore stable rust: https://github.com/voidzero-dev/vite-task/commit/db99ba4d5d33323cc9e7b329f11bdea0610fbc7f
+  depends_on "rust" => :build
   depends_on "node"
+  depends_on "sqlite"
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
@@ -49,6 +51,9 @@ class VitePlus < Formula
   def install
     resource("rolldown").stage buildpath/"rolldown"
     resource("vite").stage buildpath/"vite"
+
+    ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["RUSTC_BOOTSTRAP"] = "1" # workaround to build with stable rust
 
     # Build with Homebrew pnpm. The staged resources pin their own versions too
     %w[package.json rolldown/package.json vite/package.json].each do |file|
