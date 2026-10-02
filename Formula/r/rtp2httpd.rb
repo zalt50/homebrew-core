@@ -1,8 +1,8 @@
 class Rtp2httpd < Formula
   desc "Multicast RTP/RTSP-to-HTTP converter with web player and status dashboard"
   homepage "https://rtp2httpd.com"
-  url "https://github.com/stackia/rtp2httpd/archive/refs/tags/v3.17.1.tar.gz"
-  sha256 "80a79f148f8a6fc412dcfe2d45b4b552869a4a98f21b3128eafe75933580a740"
+  url "https://github.com/stackia/rtp2httpd/archive/refs/tags/v3.17.2.tar.gz"
+  sha256 "ce866091321a0d69dff7e8f7dda5d68be94e901659ed7d2ff4896029c8200ee6"
   license "GPL-2.0-only"
   head "https://github.com/stackia/rtp2httpd.git", branch: "main"
 
