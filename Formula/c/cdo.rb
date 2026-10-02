@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/30242/cdo-2.6.4.tar.gz"
-  sha256 "988d94f80d723506bd061fbdfecdce2412afab37f7b5cf01a379a458a8799234"
+  url "https://code.mpimet.mpg.de/attachments/download/30247/cdo-2.6.5.tar.gz"
+  sha256 "bbb58a519b463aa54477346794754a9936f2f09059a83fa9c82e76f1a13a5caf"
   license "BSD-3-Clause"
 
   livecheck do
@@ -44,6 +44,8 @@ class Cdo < Formula
     build 1699
     cause "needs C++20 std::jthreads"
   end
+
+  deny_network_access!
 
   def install
     args = %W[
