@@ -12,11 +12,11 @@ class Opencode < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "6eca0861d2393d59644241ffd768dec95423a62d72fc8d65af66e1bd22565942"
-    sha256 arm64_tahoe:       "e6b0af7ecb05fd9a033a3f0a2547c1351ec389ec4b10b1de9ad602bc91319f4c"
-    sha256 arm64_sequoia:     "4334a8e50a57fcb38beb8484bc04ccd130cff328aaa414e5a0daea1f6eb6156a"
-    sha256 arm64_linux:       "a7ccff3922000524824e102603273d7bf5bb1a04e47c81cd53af67b6a1e5ce5d"
-    sha256 x86_64_linux:      "81106fe0486c1347f80ee8b3b255da3a9c272ad460efb0425cfbae9305ddff56"
+    sha256 arm64_golden_gate: "6d66cc820d531e41a5a7f524541427a2c40116bfb4937ea142c2125e7a04b6ed"
+    sha256 arm64_tahoe:       "59723e543d08d083e0e42d1412d86725650dd808e08c540cdb4741638ecd0727"
+    sha256 arm64_sequoia:     "1139ccb3a7c4e768c045d3e5fb0b062fc7571d9c093476ae3e8377683ec615c4"
+    sha256 arm64_linux:       "a9ad614b51c3839f6131774d880c198091703e57e891e1860097c5294194f00c"
+    sha256 x86_64_linux:      "2a3334d86545748fc6e56fb5bf9497c97a6be01e44353733f06e51f592a299a8"
   end
 
   depends_on "bun" => :build
