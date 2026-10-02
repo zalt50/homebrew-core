@@ -9,13 +9,11 @@ class Isponsorblocktv < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0a5e5f8fb12f201c5b9d20acedd5b28679ea23079a5a9e737af9e48ccd880fc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "03cb0b456457eab3df82a7c85106c728137f27d303ce1c5364adc754dc42a2bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7e0b14a6d695ee1e55452d378c71c68f9aef0b81f221f2bff1b324244c6267de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f94a129d317c35aa17e7114cf5823130a5d2f4016de190bf9412a47356c34034"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4f5a5b047381889ecbcb507ff4b2c701a33bc10de92cad6a482502df75dcfc2b"
-    sha256 cellar: :any,                 arm64_linux:       "c6ae4265c937f179888498b233bab08925f2eb136a376e3c3e9cb83e55f3c521"
-    sha256 cellar: :any,                 x86_64_linux:      "b9856d6a2d05672295f6519a586ada624737267b57b79809c52d3ceac092b843"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d430baac080e0d05a8731b18e3ce29902a224f7fe0d1b9fad9913fd7b7a9a002"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dfd17cf35f6af60931394a25978282f06c0432449c002423a0192c15076c6945"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a52d3a57dd6dca7266cf4e6b77fcf72279abfe01a7d11c9d4f26178f37fcdf77"
+    sha256 cellar: :any,                 arm64_linux:       "cf370ef7460cca8cd34ed528a3d35fe7f74c6c2736b88ff7595da0124277ccf7"
+    sha256 cellar: :any,                 x86_64_linux:      "06d45febde4fb5dcf254e5bcf4fc6ed1ad5830c6a926a6cbb8203b5dc7b00dd3"
   end
 
   depends_on "certifi"
