@@ -8,12 +8,11 @@ class Pandoc < Formula
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "20c52fd64aa4b548acc1caced548e964a3d3190236901c7c9d6012657900d58b"
-    sha256 cellar: :any, arm64_tahoe:       "26978ae1ec954c9ff6c7b60af84db3800e9bf783a4ce23954d26293100bd88a6"
-    sha256 cellar: :any, arm64_sequoia:     "674dd89435c289dd72fd87b33245bd99d4795adf2496d703944d6dc88438072e"
-    sha256 cellar: :any, arm64_linux:       "9d839a9cc045da5a199b5756f53a2a7a608442f16fdf35f17d90eb4272a98783"
-    sha256 cellar: :any, x86_64_linux:      "2d012922fb4f9ab04a6bdc7dd4a0516b7c8cc97bdf192ef0fdc860b237605d9a"
+    sha256 cellar: :any, arm64_golden_gate: "a6cfac00424ecad63a151fa4dcee6bd4c63eb136a5993ba18e925f286aa8542c"
+    sha256 cellar: :any, arm64_tahoe:       "df18396b3e554b62a141a69b13e02d63ced830f7284bf0271d53a5b4e2ad55e1"
+    sha256 cellar: :any, arm64_sequoia:     "54c17fb8d8e20c182ff74c3d4d6857b2ba77e1114fe4d68f3252659867f1caf5"
+    sha256 cellar: :any, arm64_linux:       "7e14f9f22ce792997281a2d3807649a4a23eff820305d29b4cea23328c5b8ec5"
+    sha256 cellar: :any, x86_64_linux:      "90fc8154b015eddbc76b306ddc74c9cb20926942b9911bac51a3279cfa1eb8fc"
   end
 
   depends_on "cabal-install" => :build
