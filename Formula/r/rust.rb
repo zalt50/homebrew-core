@@ -84,13 +84,11 @@ class Rust < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "4f7a53e41a47784a74dd84acb836e33c425c3f7fb6715aed602c188800da603f"
-    sha256 cellar: :any, arm64_tahoe:       "409411d3aacd29a2528ca290f5fbbaca4acb2f1db8fa44c3d30480c30e79231b"
-    sha256 cellar: :any, arm64_sequoia:     "4a1bbbb08569ac2f1837bed5ce931e707f6c4666118d933f6372cb9438d7794a"
-    sha256 cellar: :any, arm64_sonoma:      "5928033c1a2b6639206995f9adf81d82d1d29fa4c7364628fb3e68b031b6d61e"
-    sha256 cellar: :any, arm64_linux:       "3f53535b1c1bc548a7282e6c23beaca99def881a5786354aba04d0cb3f572166"
-    sha256 cellar: :any, x86_64_linux:      "b42a09b9ba34ccbce8b84e0e8bce44680360c1ff261a3bd952fc586e6c7bd04c"
+    sha256 cellar: :any, arm64_golden_gate: "7525422d522cb4fafca1441ab42ace810b590edc540f93ad14a81bdee157de99"
+    sha256 cellar: :any, arm64_tahoe:       "9fd7f9b81fa70767432e1cd6cab9b945ab7a4297529b5e3f95fc2663e512b2f5"
+    sha256 cellar: :any, arm64_sequoia:     "ab2aad7448f020d2ceb660ef75ba79d06761f91d8afc29071b8e9a1bf99af8ca"
+    sha256 cellar: :any, arm64_linux:       "7587563b8bd5a17d0846cba46d41ccac9d45cdbf6554eeaf95f8504db79b4e36"
+    sha256 cellar: :any, x86_64_linux:      "06952c11381a7519c1e10b9b455942f0965c0f44dd6246cd4e4e29b3b85dee42"
   end
 
   depends_on "libgit2"
