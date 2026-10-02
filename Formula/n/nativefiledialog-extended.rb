@@ -1,8 +1,8 @@
 class NativefiledialogExtended < Formula
   desc "Native file dialog library with C and C++ bindings"
   homepage "https://github.com/btzy/nativefiledialog-extended"
-  url "https://github.com/btzy/nativefiledialog-extended/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "38116050495cd7de77a91d6d8d59c1aa0a0848c56daa60029bd5b59f3c897229"
+  url "https://github.com/btzy/nativefiledialog-extended/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "4a01eafa921169f009f3e83bea8e287d9e5d0b94ca9064cf7f0a546652d7c884"
   license "Zlib"
 
   bottle do
