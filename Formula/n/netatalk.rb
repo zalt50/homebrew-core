@@ -20,11 +20,11 @@ class Netatalk < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_golden_gate: "ccc4b4ff5d52adf6cf5b731d76c927c29343e9a2fac46a591b60e16856f006b0"
-    sha256 arm64_tahoe:       "c16fe5741ff99a7136e4d996f78f27fa9d5331c8883ec1b7f61aa64fd01c249c"
-    sha256 arm64_sequoia:     "5cbf739bcf811b8adfc94bf9fe02ac6d19eb22318d59d412b8b35ebc4e2b5eeb"
-    sha256 arm64_linux:       "7483021a70d0db7cd7315ea0eb501cc95863f3d2e9ceedbe0a2782fc9d57fbc5"
-    sha256 x86_64_linux:      "0a437c35f02e9408f323161ea46bd7ec1607f66d83dcbbc2b4bce7672ecbb3ec"
+    sha256 arm64_golden_gate: "08c2caee748401e936f474aef60e3bd0d4dbc59bd6a5112e5ed3ddd533f99c0e"
+    sha256 arm64_tahoe:       "8fbac1d7eb89c27713d3c95128842b857a8f209e03f0277d33a7a67967239813"
+    sha256 arm64_sequoia:     "5822fc3d52d64a08cdbef179387a9e45203d03f506fffbc6f2169c74996c4093"
+    sha256 arm64_linux:       "b04267cff2eff9341fceffa498b376a3ba8ec85eb062e13d9256f1aeade2ff06"
+    sha256 x86_64_linux:      "e98684955f95fdb87d7ce789df595437557bc0a7a0d53a15200fb17f476957dd"
   end
 
   depends_on "cmark-gfm" => :build
