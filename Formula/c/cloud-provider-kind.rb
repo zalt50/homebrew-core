@@ -1,8 +1,8 @@
 class CloudProviderKind < Formula
   desc "Cloud provider for KIND clusters"
   homepage "https://kubernetes-sigs.github.io/cloud-provider-kind/"
-  url "https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "87a8c713be6b0635f7cd32832c40a929afd93ddffc57a03076a7574bd7dfc43c"
+  url "https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "9a9dd366bfe121245cbc456f2b68b5261214299ffc911795bb67a386c5131145"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cloud-provider-kind.git", branch: "main"
 
@@ -33,12 +33,6 @@ class CloudProviderKind < Formula
   test do
     ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
     status_output = shell_output("#{bin}/cloud-provider-kind 2>&1", 1)
-    if OS.mac?
-      # Should error out as requires root on Mac
-      assert_match "Error: please run this again with `sudo`", status_output
-    elsif OS.linux?
-      # Should error out because without docker or podman
-      assert_match "no supported container runtime found", status_output
-    end
+    assert_match "no supported container runtime found", status_output
   end
 end
