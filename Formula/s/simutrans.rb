@@ -1,8 +1,8 @@
 class Simutrans < Formula
   desc "Transport simulator"
   homepage "https://www.simutrans.com/"
-  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "11993"
-  version "124.5"
+  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "12321"
+  version "125.0"
   license "Artistic-1.0"
   head "https://github.com/simutrans/simutrans.git", branch: "master"
 
@@ -52,6 +52,9 @@ class Simutrans < Formula
     url "https://src.fedoraproject.org/repo/pkgs/PersonalCopy-Lite-soundfont/PCLite.sf2/629732b7552c12a8fae5b046d306273a/PCLite.sf2"
     sha256 "ba3304ec0980e07f5a9de2cfad3e45763630cbc15c7e958c32ce06aa9aefd375"
   end
+
+  # Translations are downloaded during `build` phase
+  allow_network_access! :build
 
   def install
     # These translations are dynamically generated.
