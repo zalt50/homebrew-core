@@ -1,9 +1,9 @@
 class Mac < Formula
   desc "Monkey's Audio lossless codec"
   homepage "https://www.monkeysaudio.com"
-  url "https://monkeysaudio.com/files/MAC_1326_SDK.zip"
-  version "13.26"
-  sha256 "3fdb516db15cc754eb2db1d255e405a8142fbb115eccdf51b0fa07b84305b6ac"
+  url "https://monkeysaudio.com/files/MAC_1327_SDK.zip"
+  version "13.27"
+  sha256 "c47c6b36f6a7bd50d990f2eb36a70915c0074a7b9634be396c94464905e76686"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,6 +24,8 @@ class Mac < Formula
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
