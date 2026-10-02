@@ -7,11 +7,11 @@ class Osdctl < Formula
   head "https://github.com/openshift/osdctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2984c5e341acad716455cbcbdc308e8228e400de09e566a51af492c2e842006c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4d08676cc4091147189762132b012dd121a99e90cb7dc7340cae6f21c7951ce0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1565b272e73be82cf19c7e35109a8a8d9e06a726584c02abcd8ef21d52411c62"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1565b272e73be82cf19c7e35109a8a8d9e06a726584c02abcd8ef21d52411c62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1565b272e73be82cf19c7e35109a8a8d9e06a726584c02abcd8ef21d52411c62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c58996f605f2f238e8fa4ee17aace4434c18e368b6363d896d76a2b055ba3ca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c6d927fbe3ccf5b73db4493dcae0f9f6f8990cf35f171419eaf0ee18df4c9a54"
   end
 
   depends_on "go" => :build
