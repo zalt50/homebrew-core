@@ -24,11 +24,11 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "348097ee8a0dac2b8bd05ab5b504956fba72c470f63c0c9d47b242f3b148ee72"
-    sha256 arm64_tahoe:       "a844a02d02920664696f70557f4b25219fdcd61803acc87821c56927a2e7d41b"
-    sha256 arm64_sequoia:     "a9a970b52daa86073f791a57bfe0ac35ddf9c009234e524fa2cd791067713e1a"
-    sha256 arm64_linux:       "fcacab5b5a16acabfb7e7f88e47792339659d649c35dbac5ed442fe962168730"
-    sha256 x86_64_linux:      "869a6670604a2d0629c36f9505d6df66e2eaa2225646c216ab7b6f6129d97d8a"
+    sha256 arm64_golden_gate: "a0b56573cf9b7662010f20160b880c6037175c37ac16e9b351d5108e1385eb7f"
+    sha256 arm64_tahoe:       "c59ffcf11d785d47cf25a14727fe96aa1781085953a4f96fd20b1992e74be433"
+    sha256 arm64_sequoia:     "4aa88fda165257c6e98efa8ed5d88e0e2eb15015c73edafee6f0b034403b65d1"
+    sha256 arm64_linux:       "4878343b91730d9c76aab1af0120e975b852f0fcb0268f1ab06931c72e574162"
+    sha256 x86_64_linux:      "6c0a5f7ce5e206f74cd9299f69f329202ce3d32b48a3f791d1a2475dfa871980"
   end
 
   depends_on "bindgen" => :build
