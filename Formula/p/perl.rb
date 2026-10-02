@@ -31,6 +31,8 @@ class Perl < Formula
   # Prevent site_perl directories from being removed
   skip_clean "lib/perl5/site_perl"
 
+  deny_network_access!
+
   def install
     args = %W[
       -des
@@ -46,6 +48,7 @@ class Perl < Formula
       -Dstartperl=#!#{opt_bin}/perl
       -Dman1dir=#{opt_share}/man/man1
       -Dman3dir=#{opt_share}/man/man3
+      -Dman3ext=3pm
       -Duseshrplib
       -Duselargefiles
       -Dusethreads
