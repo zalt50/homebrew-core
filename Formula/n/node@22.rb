@@ -4,6 +4,7 @@ class NodeAT22 < Formula
   url "https://nodejs.org/dist/v22.23.3/node-v22.23.3.tar.xz"
   sha256 "bd97093e1a1e9243338950c174a693a64d4e0926a9c6ce259962bc58d5e96909"
   license "MIT"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -50,6 +51,8 @@ class NodeAT22 < Formula
   def install
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = python3
+    # simdjson 5 `key_selector` uses `throw` in consteval, which clang <= 20 rejects with -fno-exceptions
+    ENV.append "CXXFLAGS", "-DSIMDJSON_CONCEPT_DISABLED"
 
     args = %W[
       --prefix=#{prefix}
