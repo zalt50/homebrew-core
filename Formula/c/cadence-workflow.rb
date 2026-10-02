@@ -2,8 +2,8 @@ class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
   homepage "https://cadenceworkflow.io/"
   url "https://github.com/cadence-workflow/cadence.git",
-      tag:      "v1.4.1",
-      revision: "3410187d214d4b6bc19fd74e34b8cb11d112f93c"
+      tag:      "v1.4.2",
+      revision: "c98e64e010409fbaae94cdc19c2e70ee662634b7"
   license "Apache-2.0"
   head "https://github.com/cadence-workflow/cadence.git", branch: "master"
 
@@ -28,6 +28,13 @@ class CadenceWorkflow < Formula
   depends_on "go" => :build
 
   conflicts_with "cadence", because: "both install an `cadence` executable"
+
+  # `test do` block binds a local port
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "make", ".just-build"
