@@ -10,11 +10,11 @@ class Papis < Formula
   head "https://github.com/papis/papis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3b6600209fdea851bbae45944d880a5dace00e09e440d68268cf30dbf14329d0"
-    sha256 cellar: :any, arm64_tahoe:       "7cdc5e1070facdddcf1c2ab96e1d7ec98887e36ac94ddd4456e6af723fdeafae"
-    sha256 cellar: :any, arm64_sequoia:     "3bff356c2cf8bff7f5b5e31b176855aa564f78d6911b5044650e4c9a8090a5b7"
-    sha256 cellar: :any, arm64_linux:       "bd94a85be0bb5e8b24c93375c4d3fd86cdfaf280a6448a775f8f20c63f507c0f"
-    sha256 cellar: :any, x86_64_linux:      "7d6db4bf4d7cc3094172c61383879c73882b3b91d4f1a1be433081add6acfe5f"
+    sha256 cellar: :any, arm64_golden_gate: "58fa7b7776552d96df5ed2b464b5965d93683fa546d626218876eaa79a10f9be"
+    sha256 cellar: :any, arm64_tahoe:       "1e342e215c15534016e49a05faf2f0f8377e75cb9be9f1a608b9f47ab75c5c11"
+    sha256 cellar: :any, arm64_sequoia:     "27fd33f03f2e7178ba7dbf0fc12a56474a9501141113e7b02ee8c2f91c8c33b3"
+    sha256 cellar: :any, arm64_linux:       "66a77a508b3ccf9cb343ce3666c9c8694ed97331dc95ea92064e49b478bb2747"
+    sha256 cellar: :any, x86_64_linux:      "2b19e5804b1d876eebfefd3dc61abdfc4d2577b5749960d6d661f6dd0d276a82"
   end
 
   depends_on "certifi" => :no_linkage
