@@ -36,25 +36,32 @@ class Asuka < Formula
     depends_on "openssl@3"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    input, _, wait_thr = Open3.popen2 "script -q screenlog.txt"
-    input.puts "stty rows 80 cols 43"
-    input.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}/asuka"
-    sleep 1
-    input.putc "g"
-    sleep 1
-    input.puts "gemini://gemini.circumlunar.space"
-    sleep 10
-    input.putc "q"
-    input.puts "exit"
+    Open3.popen2("script -q screenlog.txt") do |input, _, wait_thr|
+      input.puts "stty rows 80 cols 43"
+      input.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}/asuka"
+      sleep 1
+      input.putc "g"
+      sleep 1
+      input.puts "gemini://gemini.circumlunar.space"
+      sleep 10
+      input.putc "q"
+      input.puts "exit"
 
-    screenlog = File.open(testpath/"screenlog.txt", "r:ASCII-8BIT", &:read)
-    assert_match "# Project Gemini", screenlog
-  ensure
-    Process.kill("TERM", wait_thr.pid)
+      screenlog = File.open(testpath/"screenlog.txt", "r:ASCII-8BIT", &:read)
+      assert_match "# Project Gemini", screenlog
+    ensure
+      Process.kill("TERM", wait_thr.pid)
+    end
   end
 end
