@@ -1,10 +1,10 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.readthedocs.io/en/stable/"
-  url "https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.17.0.tar.gz"
-  sha256 "92a26c0af4ffc6676d72d9dfe0e991eb45fdf3192abee3d0855a24d6c721b013"
+  url "https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.2.1.1.tar.gz"
+  sha256 "3a959f90e80b866580e77c1c8577d12e54c8988264941eb5bbb1f3a7221020f0"
   license "Apache-2.0"
-  revision 2
+  compatibility_version 1
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
   livecheck do
@@ -14,16 +14,17 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2a082427a66a9acac2d06c7803681d1726b0a0fce948dc1ec694c8ef75fea779"
-    sha256 cellar: :any, arm64_tahoe:       "6a1e1fbd14a2e369768c9a3308f9e19004d7ba3f599f4c5b531a4c297d4e322b"
-    sha256 cellar: :any, arm64_sequoia:     "d011e4246b58ca12acb25f39610fa089290ae8d38f42823b416073146ce14ba7"
-    sha256 cellar: :any, arm64_linux:       "4f6d86343f3cdc20462cfbb0f0c6bd115493fc5cfb8c4a81958c61c036f10369"
-    sha256 cellar: :any, x86_64_linux:      "0c53622768d412cf0706fa902561d36b1d7f4c5234f638050a0356dc19cfaf10"
+    sha256 cellar: :any, arm64_golden_gate: "c7f7f1756205baf9dcc96f919c08a389674b850b506d5b80eb52015033431f14"
+    sha256 cellar: :any, arm64_tahoe:       "deca7e165179625cd539d1bba3bd200b2690befe6f1957cee714886f5e8fe194"
+    sha256 cellar: :any, arm64_sequoia:     "99b3143b0652733360f68f3978580de2c0fa1eb7c4a02db68800458fce69177c"
+    sha256 cellar: :any, arm64_linux:       "7b450b1d03d3fc13cfaffc822faddfb8780c33be0c10948e06ae3fc505c9aea2"
+    sha256 cellar: :any, x86_64_linux:      "3538a0f4b60338ce36128a9d4497eb0d75c5210343f4292da4bb82a8d76df288"
   end
 
   depends_on "cmake" => :build
+  depends_on "nanobind" => :build
   depends_on "pkgconf" => :build
-  depends_on "pybind11" => :build
+  depends_on "robin-map" => :build
   depends_on "ffmpeg"
   depends_on "fmt" # needed for headers
   depends_on "freetype"
@@ -48,6 +49,8 @@ class Openimageio < Formula
     version "8"
     cause "Requires GCC 9.3 or later"
   end
+
+  deny_network_access!
 
   def install
     py3ver = Language::Python.major_minor_version python3
