@@ -7,6 +7,10 @@ class Ctcache < Formula
   sha256 "8a5423bf81599f4613c771b144dbbad1125af86eac622fc0d500f8dc1105a16b"
   license "BSL-1.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "1095ce39da59838eafcbc6c6613d557c6e2bd9fe17e3e3c1213cb4585c6e6c04"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
