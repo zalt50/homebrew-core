@@ -5,6 +5,7 @@ class Ollama < Formula
       tag:      "v0.35.1",
       revision: "b0c1ca4f7549d7acdfa52a7dcffc934bc63a43ce"
   license "MIT"
+  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -31,13 +32,11 @@ class Ollama < Formula
     on_arm do
       depends_on "mlx-c" => :no_linkage
 
-      # Build with the mlx-c bindings for tagged MLX 0.32.1. Upstream targets a later MLX commit:
+      # Build with the mlx-c 0.7.0 bindings for tagged MLX 0.32.3. Upstream targets a later MLX commit:
       # https://github.com/ollama/ollama/commit/0bb09259203ff8f6d361faae1d40c4f83d2a99f7
-      # `mlx_cumsum_axis` only exists after mlx-c commit for MLX 0.32.2:
-      # https://github.com/ml-explore/mlx-c/commit/d4afaec5cc5c9ffbe58f37fdc038b2faaedc6e70
-      # `mlx_gather_qmm` has no `global_scale` in MLX 0.32.1, so always use the wrapper fallback:
+      # `mlx_gather_qmm` has no `global_scale` in mlx-c 0.7.0, so always use the wrapper fallback:
       # https://github.com/ollama/ollama/blob/v0.34.1/mlx/compat/0001-mlx-c-qmm-global-scale.patch
-      # `mlx_fast_gated_delta_update` needs MLX newer than 0.32.1, so always use Ollama's own kernel:
+      # `mlx_fast_gated_delta_update` is not in mlx-c 0.7.0, so always use Ollama's own kernel:
       # https://github.com/ollama/ollama/blob/v0.34.4/mlx/compat/mlx-c/0002-fast-gated-delta-update.patch
       patch :DATA
     end
@@ -205,15 +204,6 @@ __END__
 diff --git a/mlx/fast.go b/mlx/fast.go
 --- a/mlx/fast.go
 +++ b/mlx/fast.go
-@@ -21,7 +21,7 @@
- 	}
- 
- 	out := New("FAST_SDPA")
--	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, C.bool(false), DefaultStream().ctx))
-+	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, DefaultStream().ctx))
- 	return out
- }
- 
 @@ -30,38 +30,6 @@
  	Bias   *Array `weight:"bias"`
  }
@@ -253,18 +243,6 @@ diff --git a/mlx/fast.go b/mlx/fast.go
  func (r *LayerNorm) Forward(x *Array, eps float32) *Array {
  	out := New("FAST_LAYERNORM")
  	mlxCheck(C.mlx_fast_layer_norm(&out.ctx, x.ctx, r.Weight.ctx, r.Bias.ctx, C.float(eps), DefaultStream().ctx))
-diff --git a/mlx/ops.go b/mlx/ops.go
---- a/mlx/ops.go
-+++ b/mlx/ops.go
-@@ -103,7 +103,6 @@
- 
- func (t *Array) Cumsum(axis int, reverse, inclusive bool) *Array {
- 	out := New("CUMSUM")
--	optDtype := C.mlx_optional_dtype{has_value: false}
--	mlxCheck(C.mlx_cumsum_axis(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), optDtype, DefaultStream().ctx))
-+	mlxCheck(C.mlx_cumsum(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), DefaultStream().ctx))
- 	return out
- }
 diff --git a/mlx/ops_extra.go b/mlx/ops_extra.go
 --- a/mlx/ops_extra.go
 +++ b/mlx/ops_extra.go
