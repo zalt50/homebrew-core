@@ -1,10 +1,9 @@
 class Lcov < Formula
   desc "Graphical front-end for GCC's coverage testing tool (gcov)"
   homepage "https://github.com/linux-test-project/lcov"
-  url "https://github.com/linux-test-project/lcov/releases/download/v2.5/lcov-2.5.tar.gz"
-  sha256 "7e5e5a154bd5f3557659c328cab376764e7abd238bb403c424472c296b175126"
+  url "https://github.com/linux-test-project/lcov/releases/download/v2.6/lcov-2.6.tar.gz"
+  sha256 "67a45db99b8ef0260c3fac9a2e3749fd8fa350a15e235dd3c29b356d97755c75"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
@@ -183,6 +182,14 @@ class Lcov < Formula
   resource "PerlIO::gzip" do
     url "https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz"
     sha256 "4848679a3f201e3f3b0c5f6f9526e602af52923ffa471a2a3657db786bd3bdc5"
+  end
+
+  # Fix macOS XS build and install, upstream PR ref, https://github.com/linux-test-project/lcov/pull/549
+  patch do
+    url "https://github.com/linux-test-project/lcov/commit/761a5a42479f2c347caa2e9ec9447fcfad498309.patch?full_index=1"
+    sha256 "b1e89199ef09bfc8330d7d6c8226b54e9ab7821f4fdeb60e1b257a5c638f4051"
+    type :unofficial
+    resolves "https://github.com/linux-test-project/lcov/pull/549"
   end
 
   deny_network_access!
