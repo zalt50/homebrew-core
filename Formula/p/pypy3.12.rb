@@ -10,6 +10,14 @@ class Pypy312 < Formula
     regex(/href=.*?pypy3\.12[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "9e8012cff98b27eb6c23cf13d491591d29789f4c8291eba2a613babedd81c85a"
+    sha256 cellar: :any, arm64_tahoe:       "6b5becfadd80286f8f041e56e5c06de9cec9d695c0e236734838280e042b141e"
+    sha256 cellar: :any, arm64_sequoia:     "a3af115730dda79ab7767fa36a15bc25da7db6f1596f96d8fa09ae0ee231efbf"
+    sha256 cellar: :any, arm64_linux:       "80754b0620756cca02468cf119b03455e942c9fa1b7fdc22423650c1c34612a7"
+    sha256 cellar: :any, x86_64_linux:      "f50920558e9d5b855f263f2b1892b7dbe55fc26841b6959bc0ef931227406bf2"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "gdbm"
   depends_on "openssl@3"
