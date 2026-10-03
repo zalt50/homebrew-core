@@ -1,8 +1,8 @@
 class Nerdlog < Formula
   desc "TUI log viewer with timeline histogram and no central server"
   homepage "https://dmitryfrank.com/projects/nerdlog/article"
-  url "https://github.com/dimonomid/nerdlog/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "67cb9bcac2ae8c5fdd0b43232b1ef48c9d3966ba6b1b246fddd3154b31aa1f86"
+  url "https://github.com/dimonomid/nerdlog/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "425acc1b3461de136645040ba07153ee8157c58792c4983aec79240bcec2ccbd"
   license "BSD-2-Clause"
   head "https://github.com/dimonomid/nerdlog.git", branch: "master"
 
