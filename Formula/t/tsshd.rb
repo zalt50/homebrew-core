@@ -1,8 +1,8 @@
 class Tsshd < Formula
   desc "UDP-based SSH server with roaming support"
   homepage "https://trzsz.github.io/tsshd"
-  url "https://github.com/trzsz/tsshd/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "fdf05a2323c8cc4ecef30e5258714d1651d80206f1bc0a5a88a45d716e82bb18"
+  url "https://github.com/trzsz/tsshd/archive/refs/tags/v0.1.10.tar.gz"
+  sha256 "32b4026724acb076514fe00ab380ab8f3167af6ab3568787a6c4db57be0fced0"
   license "MIT"
 
   bottle do
@@ -16,6 +16,13 @@ class Tsshd < Formula
   end
 
   depends_on "go" => :build
+
+  # `test do` block binds a local port
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/tsshd"
