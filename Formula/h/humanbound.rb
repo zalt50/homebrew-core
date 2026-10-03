@@ -3,8 +3,8 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/ec/b1/157839a688c2202fc430f811ba9f979aa980710ef00d44e29f14f6559761/humanbound-2.12.0.tar.gz"
-  sha256 "01eca196c59fcd1893ae7229f28f4ebd1e873516e247d8368d5a2639e8dccc6f"
+  url "https://files.pythonhosted.org/packages/5d/36/bafb9ce772cfc374540305d3993360798380f81d4da56e5808bc86cc031a/humanbound-2.13.0.tar.gz"
+  sha256 "873393659445b22d9c1b7c7c6d9ec165689e84375046f83cde2d92d512fceca1"
   license "Apache-2.0"
 
   bottle do
@@ -33,8 +33,8 @@ class Humanbound < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -83,8 +83,8 @@ class Humanbound < Formula
   end
 
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/29/ca/4fffd4d5377a8c84de14f6ea5a18bd8060eeaba5f6921d1ca420db564756/posthog-7.60.1.tar.gz"
-    sha256 "99436369a40b2f9e628145e997f1dcd98a5e5389da1605d4ab630d742cc1bd5d"
+    url "https://files.pythonhosted.org/packages/38/a8/32f9749118b57e6418b81c8d4f0108116c69bfd9c2c8b80dc723ddf56f86/posthog-7.62.0.tar.gz"
+    sha256 "b5bb53bf3ab634ccfe3a8ac6b5ea3fa502b019db4b55313f929f1706bea098a7"
   end
 
   resource "pygments" do
