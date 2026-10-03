@@ -13,11 +13,11 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f4a3960886ab0e7031677bbe03605a1b724cfeec03522cd32fae086d9a926cbb"
-    sha256 arm64_tahoe:       "b4148308c75628f087db66c5ebac34f872f32723f76355a4bf64d255151284bc"
-    sha256 arm64_sequoia:     "0350f2d19a0705678bd4c38dfaadbca58fa9f4789ac381e522270fae7a10a5f7"
-    sha256 arm64_linux:       "a55da02a8c387fd4996612de6a49533c82ff27560ba9fcdcf86bc29158f98735"
-    sha256 x86_64_linux:      "996ee7af1459ac5daf0c9725a1e36940d80ad2d8a0973cc5080e55cc3928068f"
+    sha256 arm64_golden_gate: "e9dcfc12059b2fee336ef75e8b0c1d206d7a11f28e7548a16380e6f0f6651021"
+    sha256 arm64_tahoe:       "f6e3459c6d92274911c795f794e5cbae42be7f8d0a69a3b399eced8482ab6fb3"
+    sha256 arm64_sequoia:     "efe600abce3a5ea633349a78b04930a026f64ea2093943e1c45d47c0204b2232"
+    sha256 arm64_linux:       "c9838590fc6e10a10efd572ef90261fc7f534a43545240785cae59f518687d8d"
+    sha256 x86_64_linux:      "924b1b2be4276d84a569f25bd14f9e3c1b594a02386118155c507ff98fb2779c"
   end
 
   depends_on "libtommath"
