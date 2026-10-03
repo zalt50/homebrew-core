@@ -12,13 +12,11 @@ class Xorgproto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bb28476c91cde66390523a0c33d94e6b4cb0618c65989b6cf1e65bda49328abe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c65163b3daadd9160d9e2ba92f0541800577833c6b06b50c10aab69c1ce38f25"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c65163b3daadd9160d9e2ba92f0541800577833c6b06b50c10aab69c1ce38f25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c65163b3daadd9160d9e2ba92f0541800577833c6b06b50c10aab69c1ce38f25"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c65163b3daadd9160d9e2ba92f0541800577833c6b06b50c10aab69c1ce38f25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "22b221145e4420b8d0444ff4699d93726fc20c63ec1c789b41acf35075174a6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "22b221145e4420b8d0444ff4699d93726fc20c63ec1c789b41acf35075174a6d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8327b24ee8a0d4b3cd9dfb6d49eb20a80484c0f25535be6e726d1b908f444514"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8327b24ee8a0d4b3cd9dfb6d49eb20a80484c0f25535be6e726d1b908f444514"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8327b24ee8a0d4b3cd9dfb6d49eb20a80484c0f25535be6e726d1b908f444514"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "14bbb72aa9d9a989ea94f21ca6b31f3f40b1fe337438bf1e9b5b318eb3131899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "14bbb72aa9d9a989ea94f21ca6b31f3f40b1fe337438bf1e9b5b318eb3131899"
   end
 
   depends_on "pkgconf" => [:build, :test]
