@@ -6,6 +6,14 @@ class ChiselUbuntu < Formula
   license "AGPL-3.0-only"
   head "https://github.com/canonical/chisel.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "43499d372255a5e31003b434aee2793d3d132b72da15d5301b57621c979d9fdc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "43499d372255a5e31003b434aee2793d3d132b72da15d5301b57621c979d9fdc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "43499d372255a5e31003b434aee2793d3d132b72da15d5301b57621c979d9fdc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf3d56b054af0852cd0337744f8ccf4620e6b7e465f6cf68f38015d06ff0b20b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1e374454d4e8222ff63ad1b486c5b07de7e696701c8662e642d31186dfec00e9"
+  end
+
   depends_on "go" => :build
 
   deny_network_access! :build
