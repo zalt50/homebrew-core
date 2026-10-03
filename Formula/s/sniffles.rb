@@ -7,6 +7,14 @@ class Sniffles < Formula
   sha256 "9017d22e77ee0ef796e918ec307b6264a5efe7247d0ee5d50f662acc8af53f5f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "4189038b0b707ffa495d0f9a25969a7bf0222d53bd31a71af4f087465a0bbc67"
+    sha256 cellar: :any, arm64_tahoe:       "9480c9d33fd1412d60e9be51d004f05a73d0f318c4827d35932d26d082c17616"
+    sha256 cellar: :any, arm64_sequoia:     "d9eec24da712042a6a33e789755bb498a443f4537273fce0921fb3564da1cbc2"
+    sha256 cellar: :any, arm64_linux:       "e71b2f9a88fe607d9ac634d82b343545de9a1c9512dd70ff4ff95e2aba228411"
+    sha256 cellar: :any, x86_64_linux:      "d1891d05d791dad88aaace8bd1f33efbe9498e669ef4e7be3fc7c27233996050"
+  end
+
   depends_on "pybind11" => :build
   depends_on "samtools" => :test
   depends_on "htslib"
