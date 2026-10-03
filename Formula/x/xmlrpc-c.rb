@@ -1,8 +1,8 @@
 class XmlrpcC < Formula
   desc "Lightweight RPC library (based on XML and HTTP)"
   homepage "https://xmlrpc-c.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.64.03/xmlrpc-1.64.03.tgz"
-  sha256 "74729d364edbedbe42e782822da1e076f3f45c65c4278a3cfba5f2342d7cedbe"
+  url "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.64.04/xmlrpc-c-1.64.04.tgz"
+  sha256 "509c3a3bffb77c81e2c364175ac70b95b799e5b695cc37d4bf833ec28fdfe0b6"
   license "BSD-3-Clause"
 
   bottle do
@@ -27,9 +27,7 @@ class XmlrpcC < Formula
 
     ENV.deparallelize
     # --enable-libxml2-backend to lose some weight and not statically link in expat
-    system "./configure", "--enable-libxml2-backend",
-                          "--prefix=#{prefix}"
-
+    system "./configure", "--enable-libxml2-backend", *std_configure_args
     # xmlrpc-config.h cannot be found if only calling make install
     system "make"
     system "make", "install"
