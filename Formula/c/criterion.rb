@@ -1,8 +1,8 @@
 class Criterion < Formula
   desc "Cross-platform C and C++ unit testing framework for the 21st century"
   homepage "https://github.com/Snaipe/Criterion"
-  url "https://github.com/Snaipe/Criterion/releases/download/v2.4.3/criterion-2.4.3.tar.xz"
-  sha256 "8ec64e482a70b3bfc1836ace0988b3316e6c3cfeac883fb5a674dcea5083ea16"
+  url "https://github.com/Snaipe/Criterion/releases/download/v2.5.0/criterion-2.5.0.tar.xz"
+  sha256 "740d5a9c00ca6f58f59dc20ba1ebecb3505d28287a8fe4ea3029c7f8a1906496"
   license "MIT"
   head "https://github.com/Snaipe/Criterion.git", branch: "bleeding"
 
