@@ -1,8 +1,8 @@
 class Ratex < Formula
   desc "Fast TeX engine written in Rust"
   homepage "https://github.com/leoliu0/ratex"
-  url "https://github.com/leoliu0/ratex/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "1edd8dd7b9a40a4a1473b1fa631ad50e88ebceec53d2022ec1ec61dd03f13191"
+  url "https://github.com/leoliu0/ratex/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "469fb82b5aeb24cba427eee292315141565aab40178353a2b0802fb40c25504d"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/leoliu0/ratex.git", branch: "main"
 
