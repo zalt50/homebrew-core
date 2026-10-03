@@ -8,11 +8,11 @@ class Cfripper < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c51c0fde2f84447070450c02e46c5087012b8c73afe7998141db94f64bff41c5"
-    sha256 cellar: :any, arm64_tahoe:       "a3b774ad5ee37f0ec294dfc5a94b4de58832c290d9a8cb17cd89ae355f96c557"
-    sha256 cellar: :any, arm64_sequoia:     "4d21f2193a45b5707450b0bd780a0e4e82e0a573663b2543ec5807577a0dc492"
-    sha256 cellar: :any, arm64_linux:       "cd60e5ad6c5e22e83583abddd3f99614a7d227df954abddb008c4d40ea4ba540"
-    sha256 cellar: :any, x86_64_linux:      "e90748b9cbba2d8d3d5a50e14ba600e6aaf16831f6de67e5406f769e6d330eb2"
+    sha256 cellar: :any, arm64_golden_gate: "f3b8b6d7d5338c2550d357481f784d040e01001d659bb0a7ab64d8e33806ad56"
+    sha256 cellar: :any, arm64_tahoe:       "f357c8b25446a2444e4b5519c92512623256d4f0f3a0898efa011a3fe493cb13"
+    sha256 cellar: :any, arm64_sequoia:     "ba361aca53202baf9d05356d9eeb63961aa492eb51ba897c34269c220e971234"
+    sha256 cellar: :any, arm64_linux:       "8fd6d519c2ad92422df39e1d4ee0b4c63bd7850e065bb363ad314b7b3655d498"
+    sha256 cellar: :any, x86_64_linux:      "25b2b88f44d3663df3c19c4cd62de47f6b325b86b1921b8b0e61adf8ea7a297d"
   end
 
   depends_on "libyaml"
