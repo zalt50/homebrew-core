@@ -11,6 +11,14 @@ class Regenie < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "a1ceeafdc26399bddf01ec45c13fbc6d8147c0ad26824a42860a7f9ae6fb73fb"
+    sha256 cellar: :any, arm64_tahoe:       "a756b1984f78cc34264bc670311bdeb75d6bd19fd4a9d115fb521ea62cc233a7"
+    sha256 cellar: :any, arm64_sequoia:     "25da0962c05bfe203317514889555061a0bea3ffa9e17d784466dfde022b0607"
+    sha256 cellar: :any, arm64_linux:       "ac4ca62699360970fbac1d0f171bdb3223499e3baeb6444fa6acdd6d425c0853"
+    sha256 cellar: :any, x86_64_linux:      "10b9607bf96821246328091ebde2e8361a6645353b7a070b05aa120ad0b20a0c"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "gcc" # for libgfortran
