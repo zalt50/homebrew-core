@@ -13,15 +13,11 @@ class VulkanHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e270c1c47744b96c606fad05134f6b31e325a4f4f06496c97dafdafde5defd5f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0fb1c2646ada6cef155a0f358f901f460c778842508ebf42bd1fc853fc8d8525"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0fb1c2646ada6cef155a0f358f901f460c778842508ebf42bd1fc853fc8d8525"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0fb1c2646ada6cef155a0f358f901f460c778842508ebf42bd1fc853fc8d8525"
-    sha256 cellar: :any_skip_relocation, tahoe:             "d6fd30c40b9637003108d90c1de3b929b2e0c6f4eb99d463a4b5484680a9cf47"
-    sha256 cellar: :any_skip_relocation, sequoia:           "d6fd30c40b9637003108d90c1de3b929b2e0c6f4eb99d463a4b5484680a9cf47"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d6fd30c40b9637003108d90c1de3b929b2e0c6f4eb99d463a4b5484680a9cf47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d6fd30c40b9637003108d90c1de3b929b2e0c6f4eb99d463a4b5484680a9cf47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d6fd30c40b9637003108d90c1de3b929b2e0c6f4eb99d463a4b5484680a9cf47"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd0b8a24787166873dc36d747982d3164299c181340ef2e14d8968f7ca05636e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fd0b8a24787166873dc36d747982d3164299c181340ef2e14d8968f7ca05636e"
   end
 
   depends_on "cmake" => :build
