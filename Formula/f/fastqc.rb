@@ -7,8 +7,7 @@ class Fastqc < Formula
   head "https://github.com/s-andrews/FastQC.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b55cf3f17b3c62267f72029429f662fe70e19c817bbe61872f7b85b5149d7564"
+    sha256 cellar: :any_skip_relocation, all: "1c7fe2b894185e522e6d136bc612f491c7fab0f2d5d02c8bd11bb744a3863afd"
   end
 
   depends_on "openjdk"
