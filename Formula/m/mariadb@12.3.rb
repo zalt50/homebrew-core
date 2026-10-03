@@ -17,6 +17,14 @@ class MariadbAT123 < Formula
     end
   end
 
+  bottle do
+    sha256 arm64_golden_gate: "39619b7883e117921f9212d22be6a081e18ad131337589bd81f41480a397b06c"
+    sha256 arm64_tahoe:       "6918546ff109fd80df13ae4955787920c61c13d8b1413fa03741c727dd8965f0"
+    sha256 arm64_sequoia:     "0e271cc0bb85baf89350847218e526d73c854618ebc25565c4ed7571f1cde756"
+    sha256 arm64_linux:       "ba33f97e6295694e853d3bfc67bfd60caeec7bbf415a7e3bdb4997b5e7a6c043"
+    sha256 x86_64_linux:      "78440e316ef838206c7b2ac7c4b2d16f4c3fe7c06fdd36f2d792b5276b2179f6"
+  end
+
   keg_only :versioned_formula
 
   # End-of-life on 2029-06-12: https://mariadb.org/about/#maintenance-policy
