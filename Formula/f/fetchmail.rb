@@ -17,12 +17,11 @@ class Fetchmail < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "2f095b108758095c91d2bff271d80e7ee3e9f3a9228568c28ceefa22ea180b7b"
-    sha256 cellar: :any, arm64_tahoe:       "aad280f917a733f38667fd6d088b4e0aeac81e8e9186f86bda8878820976a9e9"
-    sha256 cellar: :any, arm64_sequoia:     "cef7c1c0b6778ca6b0bc03fb4d5af974d18ad023497cf816372e5d685894dceb"
-    sha256               arm64_linux:       "1ca0840d71fda47ec5853112e257fdf2fecdc6fa0b3ff7402bcd503b90f17d22"
-    sha256               x86_64_linux:      "5bbced3e4e5e5f7089ca48b845586a78e69a8760fb0ce6cc7189d3c2d7703a4b"
+    sha256 cellar: :any, arm64_golden_gate: "d73e6f6617ba37eefa3cbe7473ef752229193c7912a7869b6b05a60032d00e5e"
+    sha256 cellar: :any, arm64_tahoe:       "c5fb4e5a482ba203a4ff910696d66399f4d63f871e56f4ead0baa39f3c05dec9"
+    sha256 cellar: :any, arm64_sequoia:     "579119bde71dd04cb5cbd4aa7cd4a7213ae101bda9025ea6efa8593fc22ca5a1"
+    sha256               arm64_linux:       "e9376ab8d1eb0cda50af972ee9f251c0e07120fc2d9255e95150101fc8af076d"
+    sha256               x86_64_linux:      "e41888244da07c21886aea359dc96d1701b7219982ddf7c7c38e8f635f6f4695"
   end
 
   depends_on "pkgconf" => :build
