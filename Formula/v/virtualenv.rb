@@ -3,17 +3,17 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/01/59/5ebdaa984350ae7ef1dc14b4d0bd618f6e0d3fb13e7b336939433eebf37b/virtualenv-21.14.3.tar.gz"
-  sha256 "cb5cd3a87f12a6cfdc0cef6bc8bead6138221767f7718e0c00fee5fb907f9858"
+  url "https://files.pythonhosted.org/packages/f5/3e/5a73d53ce67e43d3c1dabfbfcda956d2c840f21c2a65dc7256eaffe5ac38/virtualenv-21.14.4.tar.gz"
+  sha256 "d7f167214b3c4f69df5386677dae5091dbc9c400fc46080187ae28064c9d453d"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91650ef54a3531cc3c4df9ac5af0506a4f4b9a08db3681e4d115626243e5be87"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91650ef54a3531cc3c4df9ac5af0506a4f4b9a08db3681e4d115626243e5be87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91650ef54a3531cc3c4df9ac5af0506a4f4b9a08db3681e4d115626243e5be87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf37317622bfad671e316bd4488ddcd16e68ba3d3097d62bacd3cce6a8210f7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bf37317622bfad671e316bd4488ddcd16e68ba3d3097d62bacd3cce6a8210f7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0092c6a53eefa56b2f12bfd1f61f54c3f16fce9b88e9dc303d42002d9c511854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0092c6a53eefa56b2f12bfd1f61f54c3f16fce9b88e9dc303d42002d9c511854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0092c6a53eefa56b2f12bfd1f61f54c3f16fce9b88e9dc303d42002d9c511854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "78aec7d9eb794f1f3172d6f7792199f024d02b31115199a7ce4c4103af96d9dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "78aec7d9eb794f1f3172d6f7792199f024d02b31115199a7ce4c4103af96d9dd"
   end
 
   depends_on "python@3.14"
