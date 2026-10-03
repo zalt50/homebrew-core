@@ -6,13 +6,11 @@ class Symengine < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "111c32b0a2791370cf601a95eb1ea9d6e24e29d8acfa2399e668c0fadccf46e8"
-    sha256 cellar: :any, arm64_tahoe:       "8b28f48a54a6d81388f45bc049629958a65e32bf2abf3d41249a6af959a373fa"
-    sha256 cellar: :any, arm64_sequoia:     "b464c90653102771a7cc93f72987b14201e870e853e1d0966abfaff08f18bcd4"
-    sha256 cellar: :any, arm64_sonoma:      "6c0a2a4b9e1c29b21c606273b087d3de2e5ad2c6c20e23ee2556f31b7a412a3d"
-    sha256 cellar: :any, sonoma:            "231d9a0381a4527eec52a88d18a2abb7804b5252180e9196dd4acf7b3c26c48e"
-    sha256 cellar: :any, arm64_linux:       "6ab8b93dbd2c4e254c7b0383b8549144cbce642feafe48c2f68a402d1c56418e"
-    sha256 cellar: :any, x86_64_linux:      "dc882e671021a8c90911fa06fce8d8a1a6a4fea8a1a137bd05d435978daa2d63"
+    sha256 cellar: :any, arm64_golden_gate: "801a3d5fa8670387af7ca4064a773c004fa292b2668cff252175b15eaa2bce87"
+    sha256 cellar: :any, arm64_tahoe:       "0c0cc9baa96d71eb7ef2434bc00acf7b0cef8156f800906125bc334c75685b26"
+    sha256 cellar: :any, arm64_sequoia:     "8f95dff39598085208a6ee4d3c68e42ad58fe1c503c6a959315a9bc47f2b65ef"
+    sha256 cellar: :any, arm64_linux:       "f2f2c1a6f048fa91634fe94e6ae84cff90cf3c8b5d796e422418c76ad7ba2ac7"
+    sha256 cellar: :any, x86_64_linux:      "5b96941e248f25cd56e9ddd5da5c332df15a72b84659fc5b9135046bf8f43c0e"
   end
 
   depends_on "cereal" => :build
