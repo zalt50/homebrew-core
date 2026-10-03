@@ -1,8 +1,8 @@
 class Minizign < Formula
   desc "Minisign reimplemented in Zig"
   homepage "https://github.com/jedisct1/zig-minisign"
-  url "https://github.com/jedisct1/zig-minisign/archive/refs/tags/0.1.13.tar.gz"
-  sha256 "018f768d5614a1fccedf806b62f5614a179507f4431e8df0574d2dd38e5d31e6"
+  url "https://github.com/jedisct1/zig-minisign/archive/refs/tags/0.1.14.tar.gz"
+  sha256 "cda224ceb7d6adb25b99f313f89212e4f6272f41108c1e6eb2a6ea2a05cedc34"
   license "ISC"
   head "https://github.com/jedisct1/zig-minisign.git", branch: "main"
 
@@ -16,7 +16,7 @@ class Minizign < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "a2f745cbd517ad2ce762fe8474ec3246b4ea1f67c5914d0f93dd4b6d4d0d8e02"
   end
 
-  depends_on "zig@0.16" => :build
+  depends_on "zig" => :build
 
   deny_network_access!
 
