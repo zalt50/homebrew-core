@@ -8,11 +8,11 @@ class Msgvault < Formula
   head "https://github.com/kenn-io/msgvault.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "df935de71931b589f303837f134c1d9a4fa3934377f1d8f5639c304a44b3e4a8"
-    sha256 cellar: :any, arm64_tahoe:       "ba685300bd8eafafd8a99c6cfbbbbbf927b5472fe86564045b5e966dd79b57b2"
-    sha256 cellar: :any, arm64_sequoia:     "646b7a4a050b3f38422f137a8c273d00a6455c04d83d250827361e40caca3b4d"
-    sha256 cellar: :any, arm64_linux:       "f1d4f54786ca6188261c1dbefe48c9cb4dbe9a857222a82191e79f015f2f0451"
-    sha256 cellar: :any, x86_64_linux:      "0c0230a82301e3d7f194298cef3175b1e6726c34a1ff3ac4870d0f23154a18e3"
+    sha256 cellar: :any, arm64_golden_gate: "35d74ba7def2199f87a59b855d15dfecd7ea225e5372c149ee181176f71508f4"
+    sha256 cellar: :any, arm64_tahoe:       "4bab8dd768565eff5b8e643418b49831c87985135c7a30b5bceec5a58be4542f"
+    sha256 cellar: :any, arm64_sequoia:     "6d89d19f2b42b285a0a99cff2cd5c24868bdfe7db8b40be315544e6e804fd85a"
+    sha256 cellar: :any, arm64_linux:       "a84ac2a12b1af0f91da87a6d3693e4f54687547d00862d56888afc7f36c9fdf5"
+    sha256 cellar: :any, x86_64_linux:      "42d7ca7e6ebe1d7c2c2bf7867f94e9b8c504714787de6a0b6a77cb5ec25fddda"
   end
 
   depends_on "bun" => :build
