@@ -32,12 +32,11 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a5a6c1b9ab0abb5fe0b5587ae4dd070995480fa4f3ab103b33774d9c1a0a5093"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0de95c4e5eef41062b71a971fb73ab1ef4f37801db1823b7e3789a021db812bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "849820437bb33216fa7b3ca3063262b0fdb74d36648ac7d34dcfb6d72352f015"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fd7562f7e481dd769020ca9fdac55301f1bf66c489aefdbd5559fef8fc2cd96d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4bc227af9374a1d9d7d2539f9c69c9cd7fc36b94abffca389b62629470cf9034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a9473b7a8c6ee091feb9dc7453d7b1b788db239ec7fdfd3542862053a16bf96e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ba546537d84991d18cf85ff335c77102faa131f7ccdc9dbba04097399800bc7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9feb0cc33a499bbc29443e78f7142aaacbca16afe2978c25cd500b50a43b9b16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79f7174c205aec69d72d01f671e1b8efb7ff39a43b11593457897d74a80ef462"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "171f44fcc1c070a2160a230f47be7506a4df5469f91a399acc1ef5f524b26bf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7e4554ba922b938f99d197d10b5da2de877b07c046c389854e247f5adadbe1b7"
   end
 
   head do
