@@ -8,7 +8,7 @@ class Khard < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3076560e118814a4585519a518165ad52799407453ab454b1e96bbf313bc0461"
+    sha256 cellar: :any_skip_relocation, all: "1a1e083cb3faabfdb3db3111e95290a04b8247c51abc5ff22e07bcec4593e18c"
   end
 
   depends_on "python@3.14"
