@@ -9,11 +9,11 @@ class Virtualenv < Formula
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91650ef54a3531cc3c4df9ac5af0506a4f4b9a08db3681e4d115626243e5be87"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91650ef54a3531cc3c4df9ac5af0506a4f4b9a08db3681e4d115626243e5be87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91650ef54a3531cc3c4df9ac5af0506a4f4b9a08db3681e4d115626243e5be87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf37317622bfad671e316bd4488ddcd16e68ba3d3097d62bacd3cce6a8210f7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bf37317622bfad671e316bd4488ddcd16e68ba3d3097d62bacd3cce6a8210f7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0092c6a53eefa56b2f12bfd1f61f54c3f16fce9b88e9dc303d42002d9c511854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0092c6a53eefa56b2f12bfd1f61f54c3f16fce9b88e9dc303d42002d9c511854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0092c6a53eefa56b2f12bfd1f61f54c3f16fce9b88e9dc303d42002d9c511854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "78aec7d9eb794f1f3172d6f7792199f024d02b31115199a7ce4c4103af96d9dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "78aec7d9eb794f1f3172d6f7792199f024d02b31115199a7ce4c4103af96d9dd"
   end
 
   depends_on "python@3.14"
