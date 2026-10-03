@@ -6,6 +6,7 @@ class RobotFramework < Formula
   url "https://files.pythonhosted.org/packages/66/77/5f60e5619082d387971d111c1354f1f529d2959ee742877982002d38d53d/robotframework-7.5.tar.gz"
   sha256 "ff6233ff752a200ece4d0a6c59f6f9f7d0e96dcff0a7a3458296b997b812482e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
@@ -56,8 +57,8 @@ class RobotFramework < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "invoke" do
@@ -116,8 +117,8 @@ class RobotFramework < Formula
   end
 
   resource "selenium" do
-    url "https://files.pythonhosted.org/packages/5d/1c/d4346c986b21ccaa0bbd9407191590557b77bc34336bd4fb4fa76526d5e7/selenium-4.49.0.tar.gz"
-    sha256 "c9d91274e5f55835e12b524adf1f231739ea811a8866d810e5bb42ba87cd8eda"
+    url "https://files.pythonhosted.org/packages/1f/6c/09a5bdf96a5f850a2bf69ee670a246ae30a132dca3975c7fb081aae09338/selenium-4.50.0.tar.gz"
+    sha256 "80402fb6f48e0ee2183ec1d58b257a593dcd5c8130c1e6419ee7509f2128be5d"
   end
 
   resource "sniffio" do
@@ -146,8 +147,8 @@ class RobotFramework < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "websocket-client" do
