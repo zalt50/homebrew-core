@@ -8,6 +8,14 @@ class Apkid < Formula
   license "GPL-3.0-only"
   head "https://github.com/rednaga/APKiD.git", branch: "master"
 
+  bottle do
+    sha256 arm64_golden_gate: "a619ba728210bcca5bcac54004f23ead7582b26a13451f7b0bd04fc4cc85df9d"
+    sha256 arm64_tahoe:       "88e4f4be8e08ed138b5bea2860075a655c6002f3de31ab124cd7a6480bbf53a6"
+    sha256 arm64_sequoia:     "10f11e9ad3150cb70444eefeac6b318612bcec544592a225f99d965de614b039"
+    sha256 arm64_linux:       "a48cb83cace0ecccbd065017e7babb6464dfd92f23c6811769223a1d2122bb9b"
+    sha256 x86_64_linux:      "e131cdc6cac6ab22968c6ccf08ca3e6d222f99e217dedc64662df45ff353b882"
+  end
+
   depends_on "python@3.14"
   depends_on "yara"
 
