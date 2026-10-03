@@ -6,6 +6,14 @@ class Goleft < Formula
   license "MIT"
   head "https://github.com/brentp/goleft.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2282aff08320904721abe0ee8c931fefe5bf5a3e8e8ee5f90631f55cb7791c33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2282aff08320904721abe0ee8c931fefe5bf5a3e8e8ee5f90631f55cb7791c33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2282aff08320904721abe0ee8c931fefe5bf5a3e8e8ee5f90631f55cb7791c33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b3dce642ff80d6068f6f9b9ffb612457e5c594a29a9734ce3d36a102199f4e84"
+    sha256 cellar: :any,                 x86_64_linux:      "156636082afe6fc7d9b1baee195d2ffa79f087bee3e6d8be762fa39cd3092f0f"
+  end
+
   depends_on "go" => :build
   # `goleft depth` and `goleft multidepth` run `samtools` from PATH.
   depends_on "samtools"
