@@ -7,12 +7,11 @@ class Rsql < Formula
   head "https://github.com/theseus-rs/rsql.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cec566f2650f943db78c7baff4df43c60ed5e0c5a6ee859c1df659a958693916"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c81a0a62ddcb71c9365b17d3954cc004cc394105f5e333edf31722af819fa6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e68209a6d3fa6fd007243054a6274f21e9bc285b453675dc19582f5bc5aa32d"
-    sha256 cellar: :any,                 arm64_linux:       "8abc40bf045b6da42d8f082ad6e5aa18e367dc23986b58c0da6302b104608c3f"
-    sha256 cellar: :any,                 x86_64_linux:      "6f5a7463e4872626cbab42ef99e0eb9ffc47f7839ac5088ba5480c1e80745d92"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4aa81270cd942a716e593c5969547919037dc450355b1f4f972036cd40ce5402"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "370688aff3e6650c19c54f335ba5f70e0358189ed548f8a03bad30a23139a2c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87b7f40d08a67490bbeed96864ff711c897921229dd62fd15fa9ab9ab615ac9c"
+    sha256 cellar: :any,                 arm64_linux:       "b42429ea9788d9d3ed074dc78195279914a2ff37b22fbfcf78017035269d2086"
+    sha256 cellar: :any,                 x86_64_linux:      "825ba844420236ad6dba89bee3e4911e17dcf9e1943639dd4cf70de83862307c"
   end
 
   depends_on "pkgconf" => :build
