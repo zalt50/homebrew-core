@@ -1,8 +1,8 @@
 class Asccli < Formula
   desc "App Store Connect CLI to manage apps, versions, and screenshots"
   homepage "https://github.com/tddworks/asc-cli"
-  url "https://github.com/tddworks/asc-cli/archive/refs/tags/v0.18.4.tar.gz"
-  sha256 "584cee19cdbd69d459f895070a7c8f10cde1eccca873848e9deb9316a185eb9d"
+  url "https://github.com/tddworks/asc-cli/archive/refs/tags/v0.18.5.tar.gz"
+  sha256 "6d8b1166277f39cd0a945b4cc199460528975d31695514c3b59fb2fb27b15555"
   license "MIT"
 
   bottle do
@@ -17,6 +17,14 @@ class Asccli < Formula
   uses_from_macos "swift" => :build
 
   def install
+    # Fix Swift 6.4 runtime compatibility: https://github.com/apple/swift-collections/issues/733
+    inreplace "Package.resolved", <<-OLD, <<-NEW
+        "revision" : "a66de878e87ef5a3d5d390e0f6d9002aa5541a43",
+        "version" : "1.7.0"
+    OLD
+        "revision" : "98ef3c98609a1e31b7e157b5b619579001a789d6",
+        "version" : "1.7.1"
+    NEW
     inreplace "Sources/ASCCommand/Version.swift", 'let ascVersion = "0.1.3"', %Q(let ascVersion = "#{version}")
     system "swift", "build", *std_swift_args
     bin.install ".build/release/asc" => "asccli"
