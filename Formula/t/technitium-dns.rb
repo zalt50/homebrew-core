@@ -1,8 +1,8 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https://technitium.com/dns/"
-  url "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.5.1.tar.gz"
-  sha256 "cfe66f9ca12af058351a022b31de28bd8e1b876f07975cbba7300e5f02da9c16"
+  url "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.6.0.tar.gz"
+  sha256 "cfe796e9f9c9ded70cc8002a90d68d9663f20765062c385d24e4e5ff1b13ddcd"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -68,7 +68,7 @@ class TechnitiumDns < Formula
       # Give the server time to start
       sleep 2
       # Use `dig` to resolve "localhost"
-      assert_match "Server was started successfully", r.gets
+      assert_match "was started successfully", r.gets
       output = shell_output("dig @127.0.0.1 localhost +tcp 2>&1")
       assert_match "ANSWER SECTION", output
       assert_match "localhost.", output
