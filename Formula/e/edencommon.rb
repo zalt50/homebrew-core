@@ -8,11 +8,11 @@ class Edencommon < Formula
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "77939fd41b4923c987d29bd85737fa085a694981a29f13fb09969de39873a8f4"
-    sha256 cellar: :any, arm64_tahoe:       "94a77e098baa7c7f4c3a1e326200e914a31046d3b0f02d30e860b7fdc73a9a28"
-    sha256 cellar: :any, arm64_sequoia:     "29790a434b3ebacd29239fdcf3f30656b606578df7150aed04ce862c1bf9adc9"
-    sha256 cellar: :any, arm64_linux:       "6e80d2c6bc5501b58d7167265c89c6d12d42971c32f277a9fe1592010f850e49"
-    sha256 cellar: :any, x86_64_linux:      "7d409d8a8e58cc0f45b0a5f022984648e64e77871b4081ad0f9904f539a54e00"
+    sha256 cellar: :any, arm64_golden_gate: "5b3eb6681dad3beb981fae2dc101be3bf73e4aee212611a50b9aa727a0f73ed3"
+    sha256 cellar: :any, arm64_tahoe:       "84d43ababeeec64eab5d34528a71983ee031ef44ba4c31a788dfbef135e51cd8"
+    sha256 cellar: :any, arm64_sequoia:     "65b1be468d1f07e32ffa86a75be382cf249eef5e51d4b858cf05c5f8f16e06cb"
+    sha256 cellar: :any, arm64_linux:       "3ae59074efdb6a65be776e8e5a45b4c5e584883ec732e169ab22b7bc1d297917"
+    sha256 cellar: :any, x86_64_linux:      "b0df4311dff4692de10e7588e09cd858b2744c16dc89758397e9ab146407c2ca"
   end
 
   depends_on "cmake" => :build
