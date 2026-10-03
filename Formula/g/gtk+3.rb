@@ -13,12 +13,11 @@ class Gtkx3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "846fdb9b039227c2f1a69709dad0390b3fb371f0eb29b84545214b8337e50eed"
-    sha256 arm64_tahoe:       "876a6859aa6618e476e0aa530918a686aa4a802e5fef602626ccd0ee5c545ea7"
-    sha256 arm64_sequoia:     "6ee9037312d555abef508aa0dbbb1c8dd4f3e6565245266d298c4ed1a6efa67e"
-    sha256 arm64_linux:       "0a180c47d631b683c752411f0fdaebde43dc8ecf1062c35365eaed41e05ba0fd"
-    sha256 x86_64_linux:      "5396f5547b354dd8448e30603aa177e5b9424c95425673dce4098c198a52648f"
+    sha256 arm64_golden_gate: "a999458cf54e8d440673da8f4c110481081b775b8258aaf7b47561792bdf9802"
+    sha256 arm64_tahoe:       "cfb433ae2b1ac08ef423491c7236861c7b25c31743bd1de899b103e7f9cb1a05"
+    sha256 arm64_sequoia:     "1e73c5fefdf1c6395fd3398eafbb484a70fc0059750973ced3c8b3ac9eb7bd01"
+    sha256 arm64_linux:       "d57c67a20ba76eafd8977be29bafd0f4c678177a66b361bf382d65f17a4df4a3"
+    sha256 x86_64_linux:      "513e03c1af12eb60337b6b840e37f0315af8c5b62b9f43dae5a5c2e7499d90d7"
   end
 
   depends_on "docbook" => :build
