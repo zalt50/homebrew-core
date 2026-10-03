@@ -1,10 +1,9 @@
 class Mlt < Formula
   desc "Author, manage, and run multitrack audio/video compositions"
   homepage "https://www.mltframework.org/"
-  url "https://github.com/mltframework/mlt/releases/download/v7.40.0/mlt-7.40.0.tar.gz"
-  sha256 "f11c30e21670f62a3dfc56a31306ac02f3feea00908a2821a4a0bf3e989d3d6a"
+  url "https://github.com/mltframework/mlt/releases/download/v7.42.0/mlt-7.42.0.tar.gz"
+  sha256 "8800e343f43aaa885bd5d9d23553030fa220aa3e2f0c94d9fd6a936d41638cdd"
   license "LGPL-2.1-only"
-  revision 2
   head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
@@ -55,13 +54,7 @@ class Mlt < Formula
     depends_on "pulseaudio"
   end
 
-  # Fix builds with FFmpeg 9. Remove with the next release.
-  patch do
-    url "https://github.com/mltframework/mlt/commit/68bceba12a3c3278ce69033c3e7dadaa13d45811.patch?full_index=1"
-    sha256 "a2e7acbb2c3b585a36ae5fcddada634220c8bb30ebb75922958b5b7b30d49f96"
-    type :backport
-    resolves "https://github.com/mltframework/mlt/pull/1281"
-  end
+  deny_network_access!
 
   def install
     rpaths = [rpath, rpath(source: lib/"mlt")]
@@ -88,6 +81,10 @@ class Mlt < Formula
   end
 
   test do
-    assert_match "help", shell_output("#{bin}/melt -help")
+    system bin/"melt", "-profile", "atsc_720p_25", "color:red", "out=4",
+           "-consumer", "avformat:output.mkv", "vcodec=ffv1", "an=1"
+    output = shell_output("#{formula_opt_bin("ffmpeg")}/ffprobe -v error -select_streams v:0 " \
+                          "-show_entries stream=codec_name,width,height -of csv=p=0 output.mkv")
+    assert_equal "ffv1,1280,720", output.strip
   end
 end
