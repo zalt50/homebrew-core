@@ -6,13 +6,11 @@ class Paps < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c62494b8dadb713c19b4ce12625946844f1b34406317643abc84572476ab9c31"
-    sha256 cellar: :any, arm64_tahoe:       "8d95f99591217a56718331ee68a6996b39f059ca4aecfe5d0921a11566d75735"
-    sha256 cellar: :any, arm64_sequoia:     "b26fed1929f8d01dac18fb575c540f386006b2db8ce860288001f1424b3e6baa"
-    sha256 cellar: :any, arm64_sonoma:      "e3679db03c165c79cdbb9a8ceac9fc0df4f3226622590452249e076e38ebe0ff"
-    sha256 cellar: :any, sonoma:            "183b02cb1d125fa77ad0320bd003589aa346d9077d530ab85779916c41503547"
-    sha256               arm64_linux:       "f8bff76dd84fc102e71509567f16a62036320efb8d3fb10240cee22ae5b70d19"
-    sha256               x86_64_linux:      "cf456bd3c1d9da480517bda9f2bf04ca1545c409538e802caba1c11411329029"
+    sha256 cellar: :any, arm64_golden_gate: "5caf704b51a5f4dfa8309f5745cac17aef8c7296f5b5e692eff890f8a7c9e219"
+    sha256 cellar: :any, arm64_tahoe:       "4b57c006cf85f7dcaea18e19b05d8c25b55d4c166b625bf480e35c7af03ee421"
+    sha256 cellar: :any, arm64_sequoia:     "06edd9a9aae62a9eb6de5c9533d888c5960fd2064e6bdeda2c189f4b70826920"
+    sha256 cellar: :any, arm64_linux:       "6924713364576ad033b3f8955ff6abbec70353a1f00d5e8a53deadea0510c916"
+    sha256 cellar: :any, x86_64_linux:      "2f7da263f2626c6f5a02ceed30c918826a1b0b64fb4633e07e1200577c97fe32"
   end
 
   depends_on "meson" => :build
