@@ -1,8 +1,8 @@
 class PinboardNotesBackup < Formula
   desc "Efficiently back up the notes you've saved to Pinboard"
   homepage "https://github.com/bdesham/pinboard-notes-backup"
-  url "https://github.com/bdesham/pinboard-notes-backup/archive/refs/tags/v1.0.7.1.tar.gz"
-  sha256 "8539a62b8a4a718a716ecc4bf17150d7cef8a358b43fbca458de3540db3d5177"
+  url "https://github.com/bdesham/pinboard-notes-backup/archive/refs/tags/v1.0.7.2.tar.gz"
+  sha256 "c3499d02171fadbb6104bd6559d3ca95a09217c78d056fe08f45be5dd50755ad"
   license "GPL-3.0-or-later"
   head "https://github.com/bdesham/pinboard-notes-backup.git", branch: "main"
 
