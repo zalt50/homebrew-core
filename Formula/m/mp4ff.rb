@@ -6,11 +6,11 @@ class Mp4ff < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56cca18c08711a1c254470a0368852db4eea81e080296b00f43f4ee1205387c6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56cca18c08711a1c254470a0368852db4eea81e080296b00f43f4ee1205387c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56cca18c08711a1c254470a0368852db4eea81e080296b00f43f4ee1205387c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6e26ae898def3894e86c746a6a646cf54e658cca86626b520d6792820e992d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a0cb6a80d587c8ae381a7b4411c1c78b5fcc80a888986e9f8833f32749e49938"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85a753a7dccbd39b181c0e5302c6683bc288bd91ed89c597744984f1210b95db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "85a753a7dccbd39b181c0e5302c6683bc288bd91ed89c597744984f1210b95db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85a753a7dccbd39b181c0e5302c6683bc288bd91ed89c597744984f1210b95db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "252206b32c97c5ab80cc79c9a7f7abed5fc4cf5d3fe0fad401879a57bb69f69e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0fb85133adbc92f84ab8a63f8cb271dfa38dc9610a333dd48042dcca3b0aa563"
   end
 
   depends_on "go" => :build
