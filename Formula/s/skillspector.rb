@@ -9,11 +9,11 @@ class Skillspector < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "303bc89cdd33fccfd903c7cff71a62e0f98523c675f895d405307eed38e42ff1"
-    sha256 cellar: :any, arm64_tahoe:       "bb40c8a5500db6ab36eba7158cdc471c919dd41ca8eee1327121ca2fe6f907d6"
-    sha256 cellar: :any, arm64_sequoia:     "b46370080b399db5619939e32d72380a87cd65dcdc8759351f41d16b4f96e2b3"
-    sha256 cellar: :any, arm64_linux:       "ef9e76a1a8ffd34d9f980f4209f80feb1bd20de3e09db891ef48ae5bb645bb68"
-    sha256 cellar: :any, x86_64_linux:      "60e2dc6d6dd0d5be98204fd3de2cf9fefe65eba74f3840cea7b1dde060ef71b3"
+    sha256 cellar: :any, arm64_golden_gate: "7cda90007d87b4249bd0670aaff16c351593597c9055e7510ff3d8336a46e77d"
+    sha256 cellar: :any, arm64_tahoe:       "d1975688ebed7b8ff74b5916008f56597bfe48fe6ed52af8fb9dff9f969983d3"
+    sha256 cellar: :any, arm64_sequoia:     "248f2f64c16151124bdd50c6f7e1bf01e47b42c128d32917748e984830a86aff"
+    sha256 cellar: :any, arm64_linux:       "0f14c535aa8dd21123aa0b818f01a1e07b5d12fc07a235fbc1e0d1e10bf6b085"
+    sha256 cellar: :any, x86_64_linux:      "dce4690df8a164380cf90769f6b8b51c39ed172573d542fc81f81e9bccba7b7a"
   end
 
   depends_on "pkgconf" => :build
