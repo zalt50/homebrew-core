@@ -10,7 +10,7 @@ class Tabulate < Formula
   ]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "636ac9d2ecadd40138dc030e967b464b296cba28f5eb180377c7e18d18778f97"
+    sha256 cellar: :any_skip_relocation, all: "ce5d77e92fb7364cf859996e0b9d7fd88780ce4b92b7e127b2e27ebb99ad33a2"
   end
 
   depends_on "cmake" => :build
