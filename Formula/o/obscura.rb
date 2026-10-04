@@ -1,8 +1,8 @@
 class Obscura < Formula
   desc "Headless browser for AI agents and web scraping"
   homepage "https://obscura.sh"
-  url "https://github.com/h4ckf0r0day/obscura/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "6c448e4c1deac7e057a146f53005c825ded428fb642379911a04f5dda8eaca4f"
+  url "https://github.com/h4ckf0r0day/obscura/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "e8cfbad9025bd79d4f22da55e2c0f9111b8a082b821805f258c6be2594f25111"
   license "Apache-2.0"
 
   bottle do
