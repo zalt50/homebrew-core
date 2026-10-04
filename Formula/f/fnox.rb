@@ -1,8 +1,8 @@
 class Fnox < Formula
   desc "Fort Knox for your secrets - flexible secret management tool"
   homepage "https://fnox.jdx.dev/"
-  url "https://github.com/jdx/fnox/archive/refs/tags/v1.36.0.tar.gz"
-  sha256 "4b92eecdc3cd15e4033029559ef87c27a78451be178663377b639d08c23757f0"
+  url "https://github.com/jdx/fnox/archive/refs/tags/v1.37.0.tar.gz"
+  sha256 "62161159a07debe06d22425e51ee368b10ee6ea4b3688866f9a652c75342cc96"
   license "MIT"
   head "https://github.com/jdx/fnox.git", branch: "main"
 
@@ -17,10 +17,10 @@ class Fnox < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "age" => :test
+  depends_on "openssl@3"
   depends_on "usage"
 
   on_linux do
-    depends_on "openssl@3"
     depends_on "systemd" # libudev
   end
 
