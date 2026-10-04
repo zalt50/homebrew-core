@@ -10,13 +10,11 @@ class SlitherAnalyzer < Formula
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "19724502843491477080c36281795a492eaf488055154fbd0ca4a22d24de11e5"
-    sha256 cellar: :any, arm64_tahoe:       "70cec7dab017fce0afee312e8b6a8f7d53e0be735fdeb526e4ca61f7f11edea3"
-    sha256 cellar: :any, arm64_sequoia:     "4e3d3fc67ec337b7b087c8c44ddc816ff6089dc70f976647863edfde5a6b5c4b"
-    sha256 cellar: :any, arm64_sonoma:      "a5ac113278ea76062f1a2b59f2f42395a386f1f735e6e00120c161a7cbdf951f"
-    sha256 cellar: :any, sonoma:            "126994fe95e6b39b0b0cd3626bc33891976f2dca37666c1fb47158bfbf282ad5"
-    sha256 cellar: :any, arm64_linux:       "5ce4e30bc0c2fba48c83a84e1605eeb4383f4abf42328d524733e35b1f3573d9"
-    sha256 cellar: :any, x86_64_linux:      "d623d851073dd204edec324e90ec8375426bb9e3a5fc57329f6e1653ac136623"
+    sha256 cellar: :any, arm64_golden_gate: "0dc1227df7126c52bd7724c6d046b2cafa3a5ef0069eea4472105ae7f0107ebb"
+    sha256 cellar: :any, arm64_tahoe:       "1713309c5b7ddd956905cc7eebac69159515d49f880c657521c656af62901f07"
+    sha256 cellar: :any, arm64_sequoia:     "fa6940462934c8d67cfb84f35974e4e197632c03af1e65aa8f98443290ccf2d1"
+    sha256 cellar: :any, arm64_linux:       "0ea613b29ac8ab7caa1d72f30ab2e4e9acf879c890038324955b25d60ec4d738"
+    sha256 cellar: :any, x86_64_linux:      "3d0bcbf5f0554bd3afa276bebb504ec09e4c4125e2991b118619c41c37904fc1"
   end
 
   depends_on "rust" => :build # for cbor2
