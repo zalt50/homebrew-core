@@ -1,8 +1,8 @@
 class Tabulate < Formula
   desc "Table Maker for Modern C++"
   homepage "https://github.com/p-ranav/tabulate"
-  url "https://github.com/p-ranav/tabulate/archive/refs/tags/v1.5.tar.gz"
-  sha256 "16b289f46306283544bb593f4601e80d6ea51248fde52e910cc569ef08eba3fb"
+  url "https://github.com/p-ranav/tabulate/archive/refs/tags/v2.0.tar.gz"
+  sha256 "80760758c713ce09a07106d5436938565a01a419e492f9a74593abd1b009c4f1"
   license all_of: [
     "MIT",
     "BSL-1.0",      # {optional,string_view,variant}_lite.hpp
