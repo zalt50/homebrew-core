@@ -20,28 +20,35 @@ class Gitversion < Formula
   depends_on "dotnet"
   depends_on "openssl@3"
 
+  deny_network_access!
+
+  def fetch
+    # GitVersion uses a global.json file to pin the latest SDK version, which may not be available
+    File.rename("global.json", "global.json.ignored")
+
+    system "dotnet", "restore", "src/GitVersion.App/GitVersion.App.csproj", "--use-current-runtime"
+  end
+
   def install
-    ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
 
     dotnet = Formula["dotnet"]
-
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
       --output #{libexec}
+      --no-restore
       --no-self-contained
       --use-current-runtime
       -p:PublishSingleFile=true
       -p:Version=#{version}
     ]
 
-    # GitVersion uses a global.json file to pin the latest SDK version, which may not be available
-    File.rename("global.json", "global.json.ignored")
     system "dotnet", "publish", "src/GitVersion.App/GitVersion.App.csproj", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}" }
     # Ensure OpenSSL is available for cryptography operations on Linux
-    env["LD_LIBRARY_PATH"] = "#{formula_opt_lib("openssl")}:$LD_LIBRARY_PATH" if OS.linux?
+    openssl = deps.find { |dep| dep.name.start_with?("openssl@") }
+    env["LD_LIBRARY_PATH"] = "#{formula_opt_lib(openssl.name)}:${LD_LIBRARY_PATH}" if OS.linux?
     (bin/"gitversion").write_env_script libexec/"gitversion", env
   end
 
