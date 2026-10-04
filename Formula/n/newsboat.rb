@@ -1,8 +1,8 @@
 class Newsboat < Formula
   desc "RSS/Atom feed reader for text terminals"
   homepage "https://newsboat.org/"
-  url "https://newsboat.org/releases/2.44/newsboat-2.44.tar.xz"
-  sha256 "8cb376b14c44809750a41b74c239a47092edb8e496f657c38af9b852dd8e4ea4"
+  url "https://newsboat.org/releases/2.45/newsboat-2.45.tar.xz"
+  sha256 "defe303d2518f3c4241780a9165e8750e9984e3f10aa341b7dde107579e34b3d"
   license "MIT"
   head "https://github.com/newsboat/newsboat.git", branch: "master"
 
@@ -56,6 +56,12 @@ class Newsboat < Formula
   resource("libstfl") do
     url "https://github.com/newsboat/stfl.git",
         revision: "bbb2404580e845df2556560112c8aefa27494d66"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
