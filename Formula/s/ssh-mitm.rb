@@ -10,11 +10,11 @@ class SshMitm < Formula
   head "https://github.com/ssh-mitm/ssh-mitm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "68f6c630c48797551421e068d0bcc679ba607fcea7b705bca226b2401269e2dc"
-    sha256 cellar: :any, arm64_tahoe:       "679e4382398d2881f3f59805bac91aa79a1cb4377a28a48a5b608f37ffe31762"
-    sha256 cellar: :any, arm64_sequoia:     "4c8ece7267231fea45d51494e9605492fd078c309fa7eb20b53d03b75091c878"
-    sha256 cellar: :any, arm64_linux:       "d4c2f62fa710163ffcdc44e6b47b9b8ed183693cb997901d039fb19abd925dc5"
-    sha256 cellar: :any, x86_64_linux:      "55750b59b69b43c6fa1f8f8d550c78b98be18cffca6a12688893ae0ce186b2db"
+    sha256 cellar: :any, arm64_golden_gate: "171f0609f698470bd823c9a82f679b3e8f3a9004c1a7c43b62cce4d7c65831ff"
+    sha256 cellar: :any, arm64_tahoe:       "941259010d382033b614021419074d97e2711d2b96cc88dccf446f77fe5f7b75"
+    sha256 cellar: :any, arm64_sequoia:     "46e9e144d8eebcada87e2712b4e96dc69808fafe231f57d523ff0dee48555f14"
+    sha256 cellar: :any, arm64_linux:       "ba3fcb2eb30e4bc9979fe6c875b18510893e9a3293f0c580eff2aab14d84d723"
+    sha256 cellar: :any, x86_64_linux:      "6054f10a28f3fb2854a9333f28b0ee4687b86ab1f3010953e326f7106319d137"
   end
 
   # `pkgconf` and `rust` are for bcrypt
