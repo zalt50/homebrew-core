@@ -11,6 +11,14 @@ class Baysor < Formula
     regex(/^cpp[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "15871ca312ff13755b07232a65deffc766848562f08d9df28d91c79c70b26df8"
+    sha256 cellar: :any, arm64_tahoe:       "64ee99bcb2ecbd0c1987495b81515b41ce025e5e348ab3e75446e05ea1483b3f"
+    sha256 cellar: :any, arm64_sequoia:     "115c3c8e82347b294400d7a1e64e5a5f05ec2a73c2b6f5ddf80e56cf30075c36"
+    sha256 cellar: :any, arm64_linux:       "bd96da2b869124532746134f67b904fdb40e50bde7b8a3e68f7f11299cd9383a"
+    sha256 cellar: :any, x86_64_linux:      "4b0c12ebc6ea6d514b3a2fc878723eea270587a0c10e018da8a0104ae8b6b39d"
+  end
+
   depends_on "cgal" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
