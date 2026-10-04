@@ -1,8 +1,8 @@
 class Fuc < Formula
   desc "Modern, performance focused unix commands"
   homepage "https://github.com/supercilex/fuc"
-  url "https://github.com/supercilex/fuc/archive/refs/tags/3.2.0.tar.gz"
-  sha256 "2f9f3572e7a956015593ec7e5f8225f704601404bac7d1e471e1d67632cbf074"
+  url "https://github.com/supercilex/fuc/archive/refs/tags/3.2.1.tar.gz"
+  sha256 "c9ee5227aa7344fae0444ff8d1da0c6f74240fea7226796dffc2438cc581aed3"
   license "Apache-2.0"
   head "https://github.com/supercilex/fuc.git", branch: "master"
 
@@ -17,6 +17,12 @@ class Fuc < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cpz")
