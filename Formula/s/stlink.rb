@@ -1,27 +1,10 @@
 class Stlink < Formula
   desc "STM32 discovery line Linux programmer"
   homepage "https://github.com/stlink-org/stlink"
+  url "https://github.com/stlink-org/stlink/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "10d6c3bff3d5a7f6aefd00e096339822cafc65acf32e43c842369e346d2e5069"
   license "BSD-3-Clause"
   head "https://github.com/stlink-org/stlink.git", branch: "testing"
-
-  stable do
-    url "https://github.com/stlink-org/stlink/archive/refs/tags/v1.8.0.tar.gz"
-    sha256 "cff760b5c212c2cc480f705b9ca7f3828d6b9c267950c6a547002cd0a1f5f6ac"
-
-    patch do
-      url "https://github.com/stlink-org/stlink/commit/4eafbb29d106b32221c8d3b375b31d78f07de182.patch?full_index=1"
-      sha256 "a745b3f10eb9c831838afc53e94038f61b29cdbe70970d3417d15f0db5301791"
-      type :unofficial
-      resolves "https://github.com/stlink-org/stlink/pull/1373"
-    end
-
-    patch do
-      url "https://github.com/stlink-org/stlink/commit/d742e752d896c0f8d4a61b282457401f7a681b16.patch?full_index=1"
-      sha256 "1f86ccdcb6bbf2d8cf53d6c96e76c1f11aef83c9de0e8dbe9b8d5cafab02c28d"
-      type :unofficial
-      resolves "https://github.com/stlink-org/stlink/pull/1373"
-    end
-  end
 
   bottle do
     rebuild 1
@@ -55,6 +38,8 @@ class Stlink < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    # Upstream also installs the shared library to bin, which is only needed for Windows DLLs
+    rm(bin.glob("libstlink*"))
   end
 
   test do
