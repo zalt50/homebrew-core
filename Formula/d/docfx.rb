@@ -11,11 +11,12 @@ class Docfx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b6c411f22dfebd4d5b180413a10e43fcff245941a650bda443bfcaf2e3af8044"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "818ce54b7758e28c16b2a2dc253ba330c03255c6b80c1a6431fb7479aa6e6a5e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9b313b54dac0708b74c7a36806159e3379926022a6b1cca45ac45fd09bbe93dd"
-    sha256 cellar: :any,                 arm64_linux:       "6a5d6998cd03ca39fcd555e7b1b21aaf41701b999baba3f4e4e4f06bbac5ab93"
-    sha256 cellar: :any,                 x86_64_linux:      "929ae6b515af388a34b2d66305e4a27486ba6809dc6c311b535712381a41ceb4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54c06778b7e7e7353fe4dae7788706b91435b7d4d2a4b4568180469d1b64272b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6cdc2af546d83db7ffecc8b5f22925955cea95f42afd8295a0005d2d06452c49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2feeda22090cec9d3f438a867f5dcb6f13fc0ac887ab8217d12ac180a5f6cf5"
+    sha256 cellar: :any,                 arm64_linux:       "8bb6ecc8e14a23814a8504c468d1c14270530c37a432b3156520e3100321c860"
+    sha256 cellar: :any,                 x86_64_linux:      "9b8f56686249ceaa9bdc5a01a3ad4897ceb95be4edefa6959562bb6398948325"
   end
 
   depends_on "node" => :build
