@@ -11,19 +11,11 @@ class Lrzsz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95baea49bd8cc814fa273cba43b776455038051cfb6df71a4d2a70a7e71fe557"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d775c475daffed711d6092a64ff59d2b70a4190d2a38a0d0546c745ab3f47be3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6009c2f7058febf2aff37e82a6b2c3fd7d553948facff288e10b7c9b681b75dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "427b498d1c8853fdcd90bc96572f5f622c7c17b229101382fa235aad6e95fd40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "e482e9c98553b62eb062bc44af16fe368ab8d58eea5802619e6f88c75204bbeb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey:    "d103f9f4cfdf4f19a69c5d47b80ab8bfcfa2e19ead1c187a25d89e49b70120a3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "af1dde66f4c633e9fdfa3b5108987626f79d3f8e3c5efc80b55f29c4720cef04"
-    sha256 cellar: :any_skip_relocation, sonoma:            "7e142df2d83321df66df998711fd74b4e69394064e11851506cefe77acdeb7b5"
-    sha256 cellar: :any_skip_relocation, ventura:           "4136c5c9b7272acc2d6bc646e25b100eac45357b83ad6c12dada8307ae138a8d"
-    sha256 cellar: :any_skip_relocation, monterey:          "7cdda25c0645a005a715e99bfd591c575425cb8eb4667b4c51aadaab097154dd"
-    sha256 cellar: :any_skip_relocation, big_sur:           "8030d909e2c336ada4563b4bb7e052f8ab382e3ea1325599bcf52b14a35fcbd0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "93671f7f8b73b5f063b8ac4aecfa47e907635368904089aa1ed55bfa693dc7b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9f5db00a0b2cdc4920a809f4aa1f352eb6962980270d15e65dd418a99ac61ab2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "204bbbdada772172509824967c5690b1f0b84f6a799da6334d1af7c554653acb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cd00be92ae2f7349032af8fb8016b6c219d3a0e77197a4e5a7b4f9b8772ca021"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8ceb366f9174c838545587c7f289e5de7f658620a5e418e15afaaaec29f329c9"
+    sha256 cellar: :any,                 arm64_linux:       "305a9e4b3ebe0077785dfee8478a1d0026874cdc9937cafd6d9092636d7a89aa"
+    sha256 cellar: :any,                 x86_64_linux:      "5117d768a062a72f82de07fb1508ae290af22b371c08c1007bc2a90e83d3a5c5"
   end
 
   conflicts_with "lrzip", because: "both install `lrz` binaries"
