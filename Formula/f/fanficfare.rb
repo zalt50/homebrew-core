@@ -3,10 +3,9 @@ class Fanficfare < Formula
 
   desc "Download fanfiction and original stories as e-books"
   homepage "https://github.com/JimmXinu/FanFicFare"
-  url "https://files.pythonhosted.org/packages/99/05/3c6e7cfe337f247e902c2220d4b43a1bf9f25cf0b670ce71ba2253e1d545/fanficfare-4.61.0.tar.gz"
-  sha256 "84bd204b5458972f18ca22dffd4a4b67778ed6a85330ee4e5369cc5109071b85"
+  url "https://files.pythonhosted.org/packages/92/24/a394ed6de5daf39237ce371cac34a72cd6936608b278d7568a43ef99c288/fanficfare-4.62.0.tar.gz"
+  sha256 "eee865d46b0b863cab470c6c7e60d59e102d25d4cea096ca08491337ab81b69e"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/JimmXinu/FanFicFare.git", branch: "main"
 
   bottle do
