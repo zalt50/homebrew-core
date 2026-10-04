@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/92/9f/7041747db883d8c82c223a3cbf0534948d35922075982feeac4946484234/mycli-2.28.0.tar.gz"
-  sha256 "965710d15acf40cbd141bfbabaa9fe9da287fbe34ecbfbe62d607be19ec3541d"
+  url "https://files.pythonhosted.org/packages/ba/16/68aa12b1ccbd32db6631ab098fe5ebd48d5f10a35da111d16d07d2256a2a/mycli-2.28.1.tar.gz"
+  sha256 "b99c045b6b0e0ba827ab29ae07407d7e52185f34d44c9e05231533001bcc2a43"
   license "BSD-3-Clause"
 
   bottle do
@@ -149,8 +149,8 @@ class Mycli < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "more-itertools" do
@@ -164,8 +164,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/45/69/59a8efa0e41e497041305459546ce27423829448682be7c1d192c5242f5e/openai-3.23.0.tar.gz"
-    sha256 "47381c61622d4dbdc3c8492dad18628fd940b8fbd9cb1f89ed46cf0bb6795bb8"
+    url "https://files.pythonhosted.org/packages/73/4f/e57670227cb7b61362d8f9bfba54d4e9f7bde799798c342782788bc12d6c/openai-3.24.0.tar.gz"
+    sha256 "1e7463f7d78773ab2ce4fe85710481aa5bd5ffefd54c8de4b067506cd2d42895"
   end
 
   resource "packaging" do
