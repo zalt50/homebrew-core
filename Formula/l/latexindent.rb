@@ -1,10 +1,9 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V4.0.2.tar.gz"
-  sha256 "06b70cd1cc2ca6509c66a9f0a29a01d38ff22122b2fd559549f6df075bad1693"
+  url "https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V4.0.3.tar.gz"
+  sha256 "80aef9350a404b03b2cb367e6f1321976b906aaa0ca61fcfaa4c82c82204bbf5"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b0558fcbe722e9f842173890c0973d48a2adbe273bdca6c84e74ce81f4ee71d0"
@@ -185,6 +184,8 @@ class Latexindent < Formula
     url "https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/namespace-clean-0.27.tar.gz"
     sha256 "8a10a83c3e183dc78f9e7b7aa4d09b47c11fb4e7d3a33b9a12912fd22e31af9d"
   end
+
+  deny_network_access!
 
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
