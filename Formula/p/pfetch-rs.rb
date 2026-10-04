@@ -1,8 +1,8 @@
 class PfetchRs < Formula
   desc "Pretty system information tool written in Rust"
   homepage "https://github.com/Gobidev/pfetch-rs"
-  url "https://github.com/Gobidev/pfetch-rs/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "4661b975f1a03716bef60a70fa48cfc8a469791da8119759a63306b2490c293b"
+  url "https://github.com/Gobidev/pfetch-rs/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "620936d3c485a549d22a26633f60aa1cda1ce2745b90ffc634ddb4e1137ffc07"
   license "MIT"
   head "https://github.com/Gobidev/pfetch-rs.git", branch: "main"
 
