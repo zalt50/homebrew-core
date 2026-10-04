@@ -12,11 +12,11 @@ class Ioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "312ad7b47bc980a90d127529a1e8b515c66e5e1723820fc31b01f0ff59a8fbaf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e263479512b263fe1b5ff536599aa32b3aa41d232f8a2b887de2f588adc7cfe2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e8ca25c0bcb26297c95b2ffd2ac5be1a677fdf34b15412d22d5765acd4c9d922"
-    sha256 cellar: :any,                 arm64_linux:       "ca2a05f410a749c099598e4d30e122dae23f51132dc71c3107e6a5c068bcacef"
-    sha256 cellar: :any,                 x86_64_linux:      "ab73db3567fb3616ce2e2f15b2fc5229de8f789f690ecb23f1d41c04d0f436f6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2fcf41ca1155b91fd0f8373e5e2e85e347555bf7a4885f92c7234ba0d221bf44"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "60fd09018c4786174137125eb9b8f872b6061615c25711c2a108ee60b50132de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f31b129127cbff9f44c081b7dd918c81b71364eaf212c910652f70c79c5de9ae"
+    sha256 cellar: :any,                 arm64_linux:       "762b98ea81b0f5dfdccc6020823b270b6abbd41c7a5d6a54ef14c810cf231b1f"
+    sha256 cellar: :any,                 x86_64_linux:      "717777474cb9f58e534a13e1deeb05ce5970725c80992080c47199add7c57401"
   end
 
   depends_on "go" => :build
