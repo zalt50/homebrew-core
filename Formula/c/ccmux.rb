@@ -7,11 +7,11 @@ class Ccmux < Formula
   revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "64c526fd9478d0564f026884fe78df030bb0b8a2a951e16e21637ad95e01abf2"
-    sha256 arm64_tahoe:       "e5cd255425435cab71584e530027c6787a3e4079243d2d415461614fb3a9f705"
-    sha256 arm64_sequoia:     "114a449e9a04dcedb4768f29ab5a1a10374f906d0c4da7ea5839519d5847c9e1"
-    sha256 arm64_linux:       "a7133aba24f66a252c546da949a793c161a27e631f0051d39cfa3591883ab990"
-    sha256 x86_64_linux:      "fbfaf15de9c7c7d6441216a12531678f1bd3aa782321519db0304f8cadeebab7"
+    sha256 arm64_golden_gate: "3183d0740a5749170245a95ae5152fc3e65e74686d4da28b95a8e43e0bba6352"
+    sha256 arm64_tahoe:       "4c247206b8507886f385b6ad3f7031de6058d697f913b8ca0a547aaaef838b17"
+    sha256 arm64_sequoia:     "8f3e55b9344a7f46e9cd135dc11bb57478d1a509042a4765ae663132aedb9b0a"
+    sha256 arm64_linux:       "a7bb70ef72830461039f276aa61bb11f598d641aa325fcd70ef78963e7306f14"
+    sha256 x86_64_linux:      "8fb83744293a4c267015b65732b0cd823f30a419e4f863755fbe95bf93e021ec"
   end
 
   depends_on "bun" => :build
