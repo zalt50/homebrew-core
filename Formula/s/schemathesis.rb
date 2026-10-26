@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/01/f9/cf39b47702bca657c37c76e502da6974a1088bbad295525353406e0d0d20/schemathesis-4.32.4.tar.gz"
-  sha256 "13faf4cc8a0f39f7a5c4b498cc656fa756205f2c1bc5d21d892323a85c3a0165"
+  url "https://files.pythonhosted.org/packages/20/50/0149a7be4db5a5b7fab41e3781aabbee0e5f9d72ad57d87243b6db9fa627/schemathesis-4.32.5.tar.gz"
+  sha256 "641fddfef22120f263b60616935f125fa9b71bd32cb3175c6210f38e5ed1cb2f"
   license "MIT"
 
   bottle do
@@ -41,8 +41,8 @@ class Schemathesis < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/fa/90/dfade6d16a55abb45e41b215fcdc940e4f119a6ac7d87430d45d020b659f/graphql_core-3.3.0.tar.gz"
-    sha256 "fd3424e88af3f3211931c6ff96350f1cd9069cf0f1a31b9972899e35d39136b5"
+    url "https://files.pythonhosted.org/packages/a4/91/223fbace7c8648690d7fb77855e29bd248c9ed1e0833ed3002ab29bc1441/graphql_core-3.3.1.tar.gz"
+    sha256 "8d9b6f95fb66b58b260904cf9e191f422782620533ec8fa0c96ab941b6659a2a"
   end
 
   resource "harfile" do
@@ -51,8 +51,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/05/a8/c290eb70e3d6d8e39d2d93556812bbcfc4269b839239505b246cf276e747/hypothesis-6.170.6.tar.gz"
-    sha256 "fc6a32aff0e042dd2d844b9cbf18346761835668025e40a9cc01d5c706e73285"
+    url "https://files.pythonhosted.org/packages/64/b2/65df6c4dda63902044377e9ee65c3e231a08fcf658ef91aab4fcfb310e97/hypothesis-6.170.10.tar.gz"
+    sha256 "bdeec686f6ffd93ad1e4dc987f44ad7add94b87e70641161f6744b26decf49f9"
   end
 
   resource "hypothesis-graphql" do
@@ -71,8 +71,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/eb/49/c93fca9ad43188d90609f92d0c65b27f872b9b2d5fada8ef0202ab7a073c/jsonschema_rs-0.60.0.tar.gz"
-    sha256 "e43f7354e616380e49a1469d534f08f60fc58c6cb47c69494e8fbb2f9e8e872e"
+    url "https://files.pythonhosted.org/packages/d9/08/2488c962c74830ba56807a495499d2c0e3ad0163fc38bcf11a03fb6af074/jsonschema_rs-0.60.1.tar.gz"
+    sha256 "5ae9fe266db602c9b6d47e64463c5be968f71616e9f80f89f2535a1bb719a4bb"
   end
 
   resource "markdown-it-py" do
