@@ -6,11 +6,11 @@ class Hunspell < Formula
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6392b443edd890774960ff3d5186e3aaf8dace6233346f1223de7a50bc4238fd"
-    sha256 cellar: :any, arm64_tahoe:       "05b22bd827bc59b91f6c976e0e3621399474bd220f39b39b1e30b5f59d8c65c8"
-    sha256 cellar: :any, arm64_sequoia:     "a3d2964292b7f77eb11ed6e67a1c2ac092a1268454da7befbc592793fc52f46e"
-    sha256 cellar: :any, arm64_linux:       "fa741149c48e7ab6809b4f2344a5b2ac379fa9d32a3d85750fc201d9f6077035"
-    sha256 cellar: :any, x86_64_linux:      "6b5eec2c32d6b05051b8f7ca228d20e48f908ecae3e4a0216eb79432bdefb4ed"
+    sha256 cellar: :any, arm64_golden_gate: "758f13e3e0cc168aec0e5d6145bd49607333a623cdf8c044a7794a4d153a9d66"
+    sha256 cellar: :any, arm64_tahoe:       "4d78ed9081b45b43e45abc361025acdf66eaa57b74825bf05a40196f0f145e08"
+    sha256 cellar: :any, arm64_sequoia:     "7fc71825c85bea935f4d3a365159543c40370c6211d7e5bb861a5de6511b1876"
+    sha256 cellar: :any, arm64_linux:       "6a78313bef94624260679982838a00603b681217dea27dd98e3eff4ae393121d"
+    sha256 cellar: :any, x86_64_linux:      "c953719ff9347151f38d3374bec68646700e5526e0ef1a6350a9f48079312235"
   end
 
   depends_on "gettext" => :build
