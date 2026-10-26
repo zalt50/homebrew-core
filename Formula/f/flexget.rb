@@ -3,10 +3,9 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/88/6e/aaf87a19e706366a4e7ccb831fecd04941c7da82c9e1e725cf6f6ac78d72/flexget-3.22.6.tar.gz"
-  sha256 "03bb4f6d213c75ef540bfd8cf1dfdfb280aa1233800108f4cb5570e9c505005b"
+  url "https://files.pythonhosted.org/packages/b7/73/ff4111cf27aac4f1dd78f1d694a773cd2ae590e770b446b5a0a9b9b2e7ff/flexget-3.22.7.tar.gz"
+  sha256 "a62d2b1518126f34379a08c5f09d1780cd3ae4e6fa943da59e7b0cd6fef0979b"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "afdb82da2679690e262628613461b072edeaa7c687e98faea4737ad0add6a205"
@@ -68,8 +67,8 @@ class Flexget < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "cheroot" do
