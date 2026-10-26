@@ -1,8 +1,8 @@
 class RedisAT82 < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-8.2.10.tar.gz"
-  sha256 "d33935732f7fc15476295fe05f5ce740927bc14847798e47b3f67b4f27b8b478"
+  url "https://download.redis.io/releases/redis-8.2.11.tar.gz"
+  sha256 "fba14b77c4bdcb2d5418b6741fc0cdaac4b78bc73eab9b2e5f3c255d597f16fa"
   license all_of: [
     "AGPL-3.0-only",
     "BSD-2-Clause", # deps/jemalloc, deps/linenoise, src/lzf*
@@ -27,6 +27,8 @@ class RedisAT82 < Formula
   keg_only :versioned_formula
 
   depends_on "openssl@4"
+
+  allow_network_access! :test
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
