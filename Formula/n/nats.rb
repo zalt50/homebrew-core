@@ -1,8 +1,8 @@
 class Nats < Formula
   desc "Utility for NATS Server and JetStream administration"
   homepage "https://github.com/nats-io/natscli"
-  url "https://github.com/nats-io/natscli/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "832f2fcd53de5eceeb9d497ab603cbf32698646dfe156d23b70553e40eb1438b"
+  url "https://github.com/nats-io/natscli/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "808a8905383949625e0a3f86821865eda29d381274021ff2d9ea7d7448c951fc"
   license "Apache-2.0"
   head "https://github.com/nats-io/natscli.git", branch: "main"
 
