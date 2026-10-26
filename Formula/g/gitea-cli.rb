@@ -7,11 +7,11 @@ class GiteaCli < Formula
   head "https://gitea.com/gitea/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fead28f4362ac22f7f9ddaed0de4edc7a1b7df63ec8569ca212f32578e9701e3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fead28f4362ac22f7f9ddaed0de4edc7a1b7df63ec8569ca212f32578e9701e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fead28f4362ac22f7f9ddaed0de4edc7a1b7df63ec8569ca212f32578e9701e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d2dc78585b9fc84a63a63b795434fd1948a6f3cbb235d95f1e9c7ea97a7e4101"
-    sha256 cellar: :any,                 x86_64_linux:      "3626037f94ce40cb6974279a1ee8deacb2da790cbff94b47ab4bf8ca779ecdff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3aeb3e12deb21ada4d48cf39179a77308ca44a009f4be1261cc48fa79895b46d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3aeb3e12deb21ada4d48cf39179a77308ca44a009f4be1261cc48fa79895b46d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3aeb3e12deb21ada4d48cf39179a77308ca44a009f4be1261cc48fa79895b46d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "44c34d0ed2117beb9768adf90d22674571717af685996e5dce761568082260b5"
+    sha256 cellar: :any,                 x86_64_linux:      "78fce00489c7f0087031c3698a3a93e05876e32e2513ec30a7370c299940f55d"
   end
 
   depends_on "go" => :build
