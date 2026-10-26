@@ -1,8 +1,8 @@
 class RustlsFfi < Formula
   desc "FFI bindings for the rustls TLS library"
   homepage "https://github.com/rustls/rustls-ffi"
-  url "https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.15.6.tar.gz"
-  sha256 "f56aecad524653138c1e46b90b3dcb65403716ce48db7b7954bdf0a14a051a86"
+  url "https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.15.7.tar.gz"
+  sha256 "7dc4335663bc904a5eae4d2a1099dff476873152b1859da16570e766a701a3bb"
   license any_of: ["Apache-2.0", "MIT", "ISC"]
   head "https://github.com/rustls/rustls-ffi.git", branch: "main"
 
@@ -34,7 +34,7 @@ class RustlsFfi < Formula
       #include <stdio.h>
       int main(void) {
         struct rustls_str version = rustls_version();
-        printf("%s", version.data);
+        printf("%.*s", (int)version.len, version.data);
         return 0;
       }
     C
