@@ -1,8 +1,8 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-8.10.2.tar.gz"
-  sha256 "b9ffee226b5eecdba98a679260dad764b2a4ebd90dce4ad5ac9e9f3eef9c02b3"
+  url "https://download.redis.io/releases/redis-8.10.3.tar.gz"
+  sha256 "edde778f6bdee7581e42fc139ca9e07e2822212092f7501f99989656e3629d02"
   license all_of: [
     "AGPL-3.0-only", # modules: VectorSimilarity, LibMR
     "Apache-2.0", # modules: ScalableVectorSearch, cpu_features, friso, cndict
@@ -13,7 +13,6 @@ class Redis < Formula
     { any_of: ["CC0-1.0", "BSD-2-Clause"] }, # deps/hdr_histogram
     any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"], # modules: phonetics
   ]
-  revision 1
   compatibility_version 1
   head "https://github.com/redis/redis.git", branch: "unstable"
 
