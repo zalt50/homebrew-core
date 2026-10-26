@@ -1,8 +1,8 @@
 class Fluxcd < Formula
   desc "Open and extensible continuous delivery solution for Kubernetes"
   homepage "https://fluxcd.io"
-  url "https://github.com/fluxcd/flux2/archive/refs/tags/v2.9.6.tar.gz"
-  sha256 "3ce69f8df361cdd8bf2751faccc4c86c9fa536a949f53d5632e078e27efbddce"
+  url "https://github.com/fluxcd/flux2/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "1b96e764547d572c0c217e8a2d326370a71cce977ab597cc16894aa9cd095b87"
   license "Apache-2.0"
 
   bottle do
