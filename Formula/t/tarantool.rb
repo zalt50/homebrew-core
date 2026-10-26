@@ -15,12 +15,11 @@ class Tarantool < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "9e6ccda0c367d2e11bab95da31c8e79148cb1bd7f8534a69466cf51bbdbad514"
-    sha256 cellar: :any, arm64_tahoe:       "7667caf672fb1a1226669da6567d999f16ac0ca67a066b68a1b08ea0e9566e6d"
-    sha256 cellar: :any, arm64_sequoia:     "d1bfc032e75731998b34d155bda4bab91042f316eec2a8aa138d9770ba568c66"
-    sha256 cellar: :any, arm64_linux:       "6977bf47be24c80c14163d2d4822e21e6f15ecc5c8df29f52f9b2bf96bfb9e8b"
-    sha256 cellar: :any, x86_64_linux:      "140e060e24b16885faacfb66713f1adaed09b99a49e5b1d0a512e25dc983d78f"
+    sha256 cellar: :any, arm64_golden_gate: "f618eddaf4623349b7862c51b33f90596a36adc7d70125ab9c5809c6d3e33e2a"
+    sha256 cellar: :any, arm64_tahoe:       "69e51ceadecce0a6c62f2164701f5f3855269dfa967e884203a4779e6cfaf767"
+    sha256 cellar: :any, arm64_sequoia:     "bf46e1dadea709cf177cad6885bad6633d0142561f4e2d00e7b4483e1c10454c"
+    sha256 cellar: :any, arm64_linux:       "257a0e1c81c7972763696a68828891947e492ddcdc2e81e3c5326660200fa70f"
+    sha256 cellar: :any, x86_64_linux:      "d2baaf2211c18dbae48a65ad23c7a3c3e0567388b56496e2681e07a9db9e8494"
   end
 
   depends_on "cmake" => :build
