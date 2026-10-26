@@ -2,8 +2,8 @@ class Openbao < Formula
   desc "Provides a software solution to manage, store, and distribute sensitive data"
   homepage "https://openbao.org/"
   url "https://github.com/openbao/openbao.git",
-      tag:      "v2.7.1",
-      revision: "a5db72cef75c24b920ade02065b18dd8eb666bac"
+      tag:      "v2.7.2",
+      revision: "9e0a0d3c3504a0a00b45e61355afac5e35c78379"
   license "MPL-2.0"
   head "https://github.com/openbao/openbao.git", branch: "main"
 
