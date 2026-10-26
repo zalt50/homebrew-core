@@ -3,8 +3,8 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/a9/65/338597a14c53ae2b9d004031dbcb61a0641484b20469b5b7bd5250a37a34/bump_my_version-1.6.5.tar.gz"
-  sha256 "0fd40347bca359bdee9999c93e101d2ad4612cf10319bc5e81181e57fc313e0d"
+  url "https://files.pythonhosted.org/packages/2b/df/ff4a0fc20547b4bf30b91fb6300cf0bd91d40a33dbb3cdb9cc698d0e71c0/bump_my_version-1.6.6.tar.gz"
+  sha256 "3f0a140b2a275dc030b2adc4dacb86247101ede38a5032d9fc9f291a17cfeb9d"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
@@ -118,8 +118,8 @@ class BumpMyVersion < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
-    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
   end
 
   def install
