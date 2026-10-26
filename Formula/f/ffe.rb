@@ -1,15 +1,11 @@
 class Ffe < Formula
   desc "Parse flat file structures and print them in different formats"
-  homepage "https://ff-extractor.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ff-extractor/0.3.9a/0.3.9a.tar.gz"
-  version "0.3.9a"
-  sha256 "3f3433c6e8714f9756826279e249bcf7f7ab8c45b5686003764e44f63eb225e7"
+  homepage "https://github.com/igitur/ffe"
+  url "https://github.com/igitur/ffe/archive/refs/tags/v0.4.1d.tar.gz"
+  version "0.4.1d"
+  sha256 "2a5914de7779b9021031810ccafbcb8c15d47b17662559e976b304478c3d949c"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/(?:ffe[._-])?v?(\d+(?:\.\d+)+(?:-\d+)?[a-z]?)\.t}i)
-  end
+  head "https://github.com/igitur/ffe.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,8 +20,16 @@ class Ffe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "95cd58d701bdd204a70498b668326d01679493ccb77d8b84b517472d9838df0b"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "texinfo" => :build
+  depends_on "libgcrypt"
+
+  deny_network_access!
+
   def install
     ENV.append "CFLAGS", "-std=gnu89" if DevelopmentTools.clang_build_version >= 1500
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
