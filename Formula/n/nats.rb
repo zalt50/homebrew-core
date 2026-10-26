@@ -7,11 +7,11 @@ class Nats < Formula
   head "https://github.com/nats-io/natscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "814deaeedd530ae32ef35d96fca56202640d75ead4a24ecec07687b9bfc55884"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "165673e92ba48954f7d1b3e3c4ca47f53beb9e3f640553ce07640f67a3161df0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0a3936a8133f4753b8cf5341464784c13b7f3db08ed09ef6eb68ed5ffb7a27e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2c67f22255a269f86a81c69715a091866195a9465cd3cd878b3d35a87676e578"
-    sha256 cellar: :any,                 x86_64_linux:      "d93bc98bc76cf8d88383117433fa28524bb509aae1a65ec4377faa208a6a3d94"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0874c83c1bd1c1cfd4a135c4cd47796242e129e82e1e2594122422e4a4b84751"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dccd6710994aaec87c4303f4c73242bd6f2c2773a4232a7a02a6a81ffd1c64e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b0b07f92419d681e843a8e703a6a71853fa9180353a92722152bb0f75dbfca5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb2374380592382003ba5ecd19cf300acf4c6128ab72f489d034b9dca2a7af8c"
+    sha256 cellar: :any,                 x86_64_linux:      "56d346fecdd7ad842af7212b93d4f6d2ab4b88771e79e78bebb30e5dac1dde97"
   end
 
   depends_on "go" => :build
