@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20261020/git-annex-10.20261020.tar.gz"
-  sha256 "aa804374f238143318fe61dd058541149f2149624109a8393f8093f6df895720"
+  url "https://hackage.haskell.org/package/git-annex-10.20261026/git-annex-10.20261026.tar.gz"
+  sha256 "fc080a8a556d364e3e9e6255e4ec1540cc53d568df01de30d93d4322e311d028"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -33,33 +33,14 @@ class GitAnnex < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # TODO: Remove when the ram compatibility fix is released:
-  # https://github.com/yesodweb/yesod/pull/1916
-  resource "yesod-static" do
-    url "https://github.com/yesodweb/yesod/archive/23f8d636842023c7cde36109ea24258df0d5ecd6.tar.gz"
-    version "1.6.1.4"
-    sha256 "0b523bd616673dad5e70da42149b426cfd19a7e5666e0550dad06bb9d989b82b"
-  end
-
   allow_network_access! :build
 
   def install
-    resource("yesod-static").stage do
-      (buildpath/"vendor").install "yesod-static"
-    end
-    (buildpath/"cabal.project.local").write "packages: . vendor/*/*.cabal\n"
-
     args = [
       # Workaround to build with GHC 9.14
       "--allow-newer=base,template-haskell",
-      # TODO: Remove when crypton-conduit supports the checked-key API:
-      # https://github.com/psibi/crypton-conduit/issues/5
-      "--constraint=crypton<2.0.1",
-      # Workaround for API breaking release of magic
-      "--constraint=magic<2",
-      # Workaround for QuickCheck 2.17+ providing its own `Arbitrary (NonEmpty a)`
-      # Upstream fix in commit 16cd931e9383ef295e4faf97f51c6fdfd2b9c61c, unreleased as of 10.20260901
-      "--constraint=QuickCheck<2.17",
+      # Workaround build failing if memory flag falls back to negated resolution
+      "--constraint=aws<0.25.3",
       # Unbundle sqlite
       "--constraint=persistent-sqlite +systemlib +use-pkgconfig",
     ]
