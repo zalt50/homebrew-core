@@ -12,12 +12,12 @@ class ArmNoneEabiGdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "80e78381224d85cc3bab5897502389c1ecca6adac478a037ac18e8defe495db9"
-    sha256 arm64_tahoe:       "69288dc1991206c7365cb2f20cf4554a5399c4befe3fcd3e089000707e5adbeb"
-    sha256 arm64_sequoia:     "ba1c4d8f59b2820b2bf55220af38ec234df83eb170c7aad52cd391f1b1dfe677"
-    sha256 arm64_linux:       "33c84ee436e668fc6de66d75007bd7b3450ead2e47824bba1a5a96ebd965879c"
-    sha256 x86_64_linux:      "0db8ff908b6f69fbd57b2ee7814a2f1b8f5f45e9c9f8be6282c2ad034574f772"
+    rebuild 2
+    sha256 arm64_golden_gate: "2320ab678e7e144c1a6044ce875f201fad9d09e3178446d72435094f77f1d9de"
+    sha256 arm64_tahoe:       "67fce6a2642eed6e634b1c81cab770c3ceee8484aa8d678f37089ac6948d442c"
+    sha256 arm64_sequoia:     "8842d13fad824a04177373ec80ff5f2c4f64f8d7890ab6d9353a00d806ec6650"
+    sha256 arm64_linux:       "f2735f9c9b6e491e9fda17607e6c7a6355a512085d6b19e05b117760a0d9ed0e"
+    sha256 x86_64_linux:      "2e8768e1e1120420dacd79c8d2b143418e785a4ee1c2164f75448065136cf23e"
   end
 
   depends_on "pkgconf" => :build
