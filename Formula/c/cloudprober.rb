@@ -1,8 +1,8 @@
 class Cloudprober < Formula
   desc "Active monitoring software to detect failures before your customers do"
   homepage "https://cloudprober.org"
-  url "https://github.com/cloudprober/cloudprober/archive/refs/tags/v0.14.6.tar.gz"
-  sha256 "5ee0bba29d64ee49eefcefc9e4dee6df279c34215729178265fbee2b200311ea"
+  url "https://github.com/cloudprober/cloudprober/archive/refs/tags/v0.14.7.tar.gz"
+  sha256 "ea4d84380546b761270d88c46c109002b96e93c609048f599f21c9f77dc77fad"
   license "Apache-2.0"
   head "https://github.com/cloudprober/cloudprober.git", branch: "main"
 
