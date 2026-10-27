@@ -4,6 +4,7 @@ class AwsSdkCpp < Formula
   url "https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.915.tar.gz"
   sha256 "14aae4edf6c1b389c2e43ed077889e767dd768495846a3f506c240a1e478f460"
   license "Apache-2.0"
+  revision 1
   compatibility_version 3
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
