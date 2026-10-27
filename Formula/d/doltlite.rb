@@ -1,8 +1,8 @@
 class Doltlite < Formula
   desc "SQLite fork with Git-style version control via prolly trees"
   homepage "https://github.com/dolthub/doltlite"
-  url "https://github.com/dolthub/doltlite/releases/download/v0.51.3/doltlite-autoconf-0.51.3.tar.gz"
-  sha256 "80e63f3d0f4cc2bcea774e29f5541a752630ab1a465d9ae91bad9c52fd360dca"
+  url "https://github.com/dolthub/doltlite/releases/download/v0.51.4/doltlite-autoconf-0.51.4.tar.gz"
+  sha256 "473747661ddeac9203770b3872d6a70c0f13b8c088baec2e852dfecffbe2e0d4"
   license all_of: ["Apache-2.0", "blessing"]
   head "https://github.com/dolthub/doltlite.git", branch: "master"
 
