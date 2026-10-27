@@ -1,10 +1,9 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
-  url "https://github.com/dathere/qsv/archive/refs/tags/26.0.0.tar.gz"
-  sha256 "166d3e9c9133098ba4705671e0dd68644c6daa343dc454f33718a6ba18963eec"
+  url "https://github.com/dathere/qsv/archive/refs/tags/27.0.1.tar.gz"
+  sha256 "23631f14cce714bd1aed45d07a04e71471ab26851f469ce25a503b471c8d3b4c"
   license any_of: ["MIT", "Unlicense"]
-  revision 1
   head "https://github.com/dathere/qsv.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
