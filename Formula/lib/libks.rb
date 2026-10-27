@@ -1,15 +1,14 @@
 class Libks < Formula
   desc "Foundational support for signalwire C products"
   homepage "https://github.com/signalwire/libks"
-  url "https://github.com/signalwire/libks/archive/refs/tags/v2.0.11.tar.gz"
-  sha256 "7142800a0c9095ce0e52308c815026a8ad2a197f519363c050fe441039de20be"
+  url "https://github.com/signalwire/libks/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "1e40d565e6a240eb3e767a50a759432ae1464ce1caa0116825d5d824e9a840ed"
   license all_of: [
     "MIT",
     "BSD-3-Clause", # src/ks_hash.c
     "HPND",         # src/ks_pool.c
     :public_domain, # src/ks_utf8.c, src/ks_printf.c
   ]
-  revision 1
   head "https://github.com/signalwire/libks.git", branch: "master"
 
   bottle do
