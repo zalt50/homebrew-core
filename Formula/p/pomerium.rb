@@ -8,11 +8,11 @@ class Pomerium < Formula
   head "https://github.com/pomerium/pomerium.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f9705d89631d2186ca29e957c45f68cbbbc8ee6264410e494ee648842c9d58b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "16b32a105e73d5e2a7f6732b244bae6f71d136094229f92bb830f5bfc31faf12"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c371bcbc867dcd19364d631dd1902fe1ca36fceb94b8bcae9d9da12821b9e502"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b613cfb5658a24b9ddda2058799ba5cfade9b9dfc347f34e77dd186733e1c1c"
-    sha256 cellar: :any,                 x86_64_linux:      "533184057a11d3e5ce27f684d7bee5ad7c268fdecacfb8a3f13447c1c0070486"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5838b147b04f1ef826ed1483de4d8b454b873e69886e41f7088b613ca319042b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6104560863460a8a3ad04e01ba19c4f638c83992853c956b0e5a262ea3a8d564"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "08d19ebc885ba92334b0bf3b8f74eb1ab030903a24b835c16ad5afc0222af1d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2aa1b910bf6ca6ad3494429ab5033805bdbbd6ad5db3821832e13be1b96769ea"
+    sha256 cellar: :any,                 x86_64_linux:      "b840f226a7248670d826e9c163208357090fe6ac83982b4661e4553ca695f9bd"
   end
 
   depends_on "go" => :build
