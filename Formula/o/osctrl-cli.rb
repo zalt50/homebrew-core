@@ -7,11 +7,11 @@ class OsctrlCli < Formula
   head "https://github.com/jmpsec/osctrl.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "db41c8bc7b26b56296e9417b6cca11b2d3a14a7716a05194903e2ba163d048b1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a8174766f0dccec6bb40b731a4b8c09aae669aa086254e1733d99dd7af85353"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcc4ff56abb91a379d4cd0b3e4344ac797bdb56bbd535b4096ffc50cbd0f8fe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "02d4b5b3efa954fd3c42312da4c95a025f356fb4b83b27d33c1ec0aab1ee2ffc"
-    sha256 cellar: :any,                 x86_64_linux:      "daf8e20b76a0ae71a04ff4282e14add1c8b682e31ea7aab1fed7e9406d914634"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "af477415d618ed1662f9e52bbcb337ab660c92ba062bd24d014a831c610aa91f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f3265412c92f68861f40e2fd4f1563951f08482a97208868b7cad31e7e6cae9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3889d04a8b0c7a559bcddb7a79ccf6f874445a5904d16ec6de9044453b1fd62a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "98e9fabf0fe6885a622c62540406c51dd6bad5f915aebdf67c6ac5a68c22d840"
+    sha256 cellar: :any,                 x86_64_linux:      "17d9a1fdea260e602625933d55bdf21579c7f425bc0e140e1e4883671aaac351"
   end
 
   depends_on "go" => :build
