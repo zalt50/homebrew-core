@@ -1,8 +1,8 @@
 class ChartReleaser < Formula
   desc "Hosting Helm Charts via GitHub Pages and Releases"
   homepage "https://github.com/helm/chart-releaser/"
-  url "https://github.com/helm/chart-releaser/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "288fd5a6c6b761312103f499a0e6a797f5ca11ae903f5ab88a6557712b962715"
+  url "https://github.com/helm/chart-releaser/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "454227be63cad9dd8449898ebb5649de165a32fdeb7fc8d96e3d2871f738ebe5"
   license "Apache-2.0"
   head "https://github.com/helm/chart-releaser.git", branch: "main"
 
