@@ -11,11 +11,11 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a6f2e7efbae163198afc1cc64d56ee9c95197630d4570dfc380648b25fae6c9b"
-    sha256 cellar: :any, arm64_tahoe:       "81dc3a77d3e94777e4c67126e3fb85fc2791342ec024ea15b01ad03bddac354e"
-    sha256 cellar: :any, arm64_sequoia:     "f53b464a31288f4313b52fac24932ad2e24fbfb184416f826c8c4ee28512dcda"
-    sha256 cellar: :any, arm64_linux:       "058ecd945d59ef0da43ae59647d9172d7ac595aeb2f246438de59ff09dda7e2c"
-    sha256 cellar: :any, x86_64_linux:      "5e269cb66de45ef6fc98766853bcb8c7ef58bb18ad756b0d646b02acfd5433fd"
+    sha256 cellar: :any, arm64_golden_gate: "48713883b4698fc00835867c335e564c65e4fe6f3ea8a33ab2f1da59e4a6a011"
+    sha256 cellar: :any, arm64_tahoe:       "84b6e303325d686c767c39a5301a104d650c1fa2f715b8f20b2939f5f81479ee"
+    sha256 cellar: :any, arm64_sequoia:     "de346a01cfa157ef07593224f51197082cf20dd156404fe62af79f6fdf098c44"
+    sha256 cellar: :any, arm64_linux:       "36dad5458c31e9c35bf91aad0604e72dd2fb0ca6b092bd94799b3760d98d2a00"
+    sha256 cellar: :any, x86_64_linux:      "aa141a231201fed69d8900810ab595c9a1d02e28e81bf417b5ee486c36b7e973"
   end
 
   depends_on "cmake" => [:build, :test]
