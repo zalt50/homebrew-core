@@ -1,8 +1,8 @@
 class OpenjdkAT25 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://github.com/openjdk/jdk25u/archive/refs/tags/jdk-25.0.5.0.2-ga.tar.gz"
-  sha256 "449dbdcf72899fa1a978dfbb7cac73988b389b72b548bcba2c4978bbdff01399"
+  url "https://github.com/openjdk/jdk25u/archive/refs/tags/jdk-25.0.5.0.3-ga.tar.gz"
+  sha256 "b4dfab0e1a41ed6cc8595555323102d4b3910a7e6e14bc9ec59d945028030072"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
   compatibility_version 1
 
