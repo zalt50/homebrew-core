@@ -7,11 +7,11 @@ class Doltlite < Formula
   head "https://github.com/dolthub/doltlite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5feeb87564b7c13ef29fd05b9444cf043d71002d3895043a009f626fd8298175"
-    sha256 cellar: :any, arm64_tahoe:       "d76d3e8d1dd73fa506ac3333ca9e14d1f97af0abbecefac06536e6b073f0ac09"
-    sha256 cellar: :any, arm64_sequoia:     "731224f0ae721c36d6438dbf585533df3e07ae1ee0adad35b837a14d2e0f878d"
-    sha256 cellar: :any, arm64_linux:       "8c622579f441ad21ad20f6c1ecd7087b463653f98ffd12539a6ca6b5a895a303"
-    sha256 cellar: :any, x86_64_linux:      "699d69742fc0b5c1220a4b23d39bd82873a98606ea9ea99e5c7558086d12b37b"
+    sha256 cellar: :any, arm64_golden_gate: "879cc08d908db84751a9837b9bf7b9cd78f1269627ffb74da1b6b8b5a3786896"
+    sha256 cellar: :any, arm64_tahoe:       "0562baea07165c985400387550f5e0f0a72258f33a7a1fa34485d9cb8eb9a1c7"
+    sha256 cellar: :any, arm64_sequoia:     "559e4a0e8152299598f45111307e73ee4ca8ee180a2093d0b9c69560d71536c4"
+    sha256 cellar: :any, arm64_linux:       "95da54a997f1f48be446321cb40d51fbab42f16b8698d61a072f9bf581e49d13"
+    sha256 cellar: :any, x86_64_linux:      "ca5f5c60aae34332546906a67766f488a67050d451add87cd7279d8b75c0d59a"
   end
 
   on_linux do
