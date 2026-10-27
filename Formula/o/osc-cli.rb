@@ -9,7 +9,8 @@ class OscCli < Formula
   revision 15
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1bbe0cf2379bc4fc9eaed98284fbea22ea9d0803983cdc108030aef66ce8ddf4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c302da506def984034f833df3da284ebdfcf8ada9fcfe34569efc142ca3a3b2b"
   end
 
   deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "octl"
