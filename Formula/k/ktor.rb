@@ -1,8 +1,8 @@
 class Ktor < Formula
   desc "Generates Ktor projects through the command-line interface"
   homepage "https://github.com/ktorio/ktor-cli"
-  url "https://github.com/ktorio/ktor-cli/archive/refs/tags/0.5.0.tar.gz"
-  sha256 "6bc452b6aa7e4a911649f10359a0c00d0017e8ab3a3c70b0e1412c026794f6a3"
+  url "https://github.com/ktorio/ktor-cli/archive/refs/tags/0.5.1.tar.gz"
+  sha256 "dae763ded73a786dd183258e71af6001bea9b63fa357f50be78d0c3c2dcc8953"
   license "Apache-2.0"
   head "https://github.com/ktorio/ktor-cli.git", branch: "main"
 
