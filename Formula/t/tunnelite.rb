@@ -1,8 +1,8 @@
 class Tunnelite < Formula
   desc "Secure tunneling to local applications"
   homepage "https://tunnelite.com"
-  url "https://github.com/cristipufu/tunnelite/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "58effe38dc41b5b355bc06eeb1c230d28f9f78dbd5433d0e1c90634d76efbe53"
+  url "https://github.com/cristipufu/tunnelite/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "384af1fbac09b5cda738127b55cd178deb5e43bd7dbb90e7f2e73f458212e726"
   license "MIT"
   head "https://github.com/cristipufu/tunnelite.git", branch: "master"
 
