@@ -2,8 +2,8 @@ class EpicsBase < Formula
   desc "Experimental Physics and Industrial Control System"
   homepage "https://epics-controls.org/"
   url "https://github.com/epics-base/epics-base.git",
-     tag:      "R7.0.10",
-     revision: "bf11a0c31c919ba85ba2e23b72bcf0b5f9f62e77"
+     tag:      "R7.0.11",
+     revision: "9d60f8d0d383dd54a3f02695bfdfcb4fad29586d"
   license "EPICS"
 
   bottle do
@@ -22,13 +22,6 @@ class EpicsBase < Formula
   depends_on "readline"
 
   conflicts_with "libffcall", because: "both install `callback.h` header"
-
-  patch do
-    url "https://github.com/epics-base/epics-base/commit/2c4d4714acbfd4ec6a26dcf0d7b9823475251d16.patch?full_index=1"
-    sha256 "d71ff147064b3d305365b2e05a7810d3d4beed10692a343b955a76ba13d440eb"
-    type :backport
-    resolves "https://github.com/epics-base/epics-base/issues/895"
-  end
 
   def install
     hostarch = Utils.safe_popen_read("./startup/EpicsHostArch").strip
