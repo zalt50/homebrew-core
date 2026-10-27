@@ -1,8 +1,8 @@
 class Hister < Formula
   desc "Self-hosted search engine for your browsing history"
   homepage "https://hister.org/"
-  url "https://github.com/asciimoo/hister/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "211743f169766ce9a8d7b8a4ebd69a9e5d3bd656150e76c7a0e2fe4e1321a623"
+  url "https://github.com/asciimoo/hister/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "b47d349d5c14b4b0c142ed7dd9583d276c20658677a483fcf7331beb9735bf0a"
   license "AGPL-3.0-or-later"
   head "https://github.com/asciimoo/hister.git", branch: "master"
 
