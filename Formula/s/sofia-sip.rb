@@ -6,11 +6,11 @@ class SofiaSip < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fabc44d97a1539149b2e2c7fe20aa6cf6717d7e3f6c4a66d67a4eea506d1e7e4"
-    sha256 cellar: :any, arm64_tahoe:       "9bffbe56e6ee6ec3320421daa7a3c28c96da2fe15fed243d8394a19f14263fde"
-    sha256 cellar: :any, arm64_sequoia:     "898727a0ec931db7ed9aed51e0c462ac5881e9cf3fbd540f12fe57e75a32de55"
-    sha256 cellar: :any, arm64_linux:       "e91f41de3912dad148b345bbe1f6496d57df5383e0434db4b3de083bfe3f7247"
-    sha256 cellar: :any, x86_64_linux:      "e5550ff6e6cd1f260155f9b65b7dfa2e1ceed6afaa8154e23dfd23de73f328c1"
+    sha256 cellar: :any, arm64_golden_gate: "67bdb2c21dbf6434f8750d7814cbc95432822b313516b51ec72a88e3dd00aa46"
+    sha256 cellar: :any, arm64_tahoe:       "8b5721163758ead84fa7f2d97b76b7ab16e59b4f7233cf8fe6f3d728025999c4"
+    sha256 cellar: :any, arm64_sequoia:     "170a0169e8969daaf6cee1fcb3062724748f93b1fa49238c84bac3e5e5763bf3"
+    sha256 cellar: :any, arm64_linux:       "54bb02e51d73c85c8e3e24b6d899e925f8a193ffe0cfbe49cf73d257db8fe43c"
+    sha256 cellar: :any, x86_64_linux:      "b6cd9923bed1cfe016cd2feaae0dea81ef54b140bf3e2106ef8484b5e393151e"
   end
 
   depends_on "autoconf" => :build
