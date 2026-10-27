@@ -8,12 +8,11 @@ class Pferd < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8bbf87b98faea821b2be0d193959cefdc6b9aaee6a30d57b500a4e1f22193448"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "241d5cfb873247c8c63ee779cb3fea71123cf70f84ccbc5d3a1df023ef4425aa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6cb831d2be2efb04d48233db1c9159f6d4fa3e235363d63b800a3ae9cf6366d3"
-    sha256 cellar: :any,                 arm64_linux:       "e5b53d97e76e46e14aa1990ccbf9f2a08c4994265115f73b93bdc3c44fd20ab8"
-    sha256 cellar: :any,                 x86_64_linux:      "5bce33d0ba67bbe60741ffe560145e78a0aed769d529148e5aca6e7c6626d8b0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7607e444eecec3a6de8df1c7653a93e080c7de2651398df0101d7515dfe56114"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7bb991a9a42a4701835b473c6ff1440f62ae2eca7a363fb362d1681378959a4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bb0cbda7c62ef404befd14a464594b4a2e3deab4e5ddfdaa139587ef6ee9fee2"
+    sha256 cellar: :any,                 arm64_linux:       "d9d4d71763fcbcf80b5198dcdea41b1033a576c67490a62045d8c6b720616190"
+    sha256 cellar: :any,                 x86_64_linux:      "83e8a0d20326b317c9acf9df5aa3add1249a39ec2a90426a3e702842d240304a"
   end
 
   depends_on "certifi" => :no_linkage
