@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://github.com/grafana/grafana/archive/refs/tags/v13.2.4.tar.gz"
-  sha256 "fdd57503b5f591e951ea3dff80ab53a41487c3373dc89370da2e36e7bf752f52"
+  url "https://github.com/grafana/grafana/archive/refs/tags/v13.3.0.tar.gz"
+  sha256 "f38dded2a24994e32f408aec2db1d75a4b5d00217d3ba7c3741d44cdffce4f6e"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -51,6 +51,9 @@ class Grafana < Formula
     system "make", "gen-go"
     system "make", "build-backend"
 
+    # Avoid Nx daemon and plugin worker sockets, which the build sandbox blocks
+    ENV["NX_DAEMON"] = "false"
+    ENV["NX_ISOLATE_PLUGINS"] = "false"
     system "yarn", "build"
 
     os = OS.kernel_name.downcase
