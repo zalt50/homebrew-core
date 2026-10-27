@@ -1,8 +1,8 @@
 class Aube < Formula
   desc "Fast Node.js package manager"
   homepage "https://aube.en.dev"
-  url "https://github.com/jdx/aube/archive/refs/tags/v2.8.3.tar.gz"
-  sha256 "fe8a03efa3c72a9d96d49cbe6bc17b7e858074277f541c93562af55d1af5ed75"
+  url "https://github.com/jdx/aube/archive/refs/tags/v2.8.4.tar.gz"
+  sha256 "6dff091636482b516d2af46bdae989671f36a82304cd69b901236a12c2731d82"
   license "MIT"
 
   livecheck do
