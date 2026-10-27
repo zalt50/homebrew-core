@@ -9,11 +9,12 @@ class SnowflakeCli < Formula
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a5aebe5d4f631e4af36aaa441946d3f0098118be5eed8fa501218e58e53b3bed"
-    sha256 cellar: :any, arm64_tahoe:       "a17dd1d4d092444bc8f46baccdc7d5692a4a217488a29b431eb0b1bddb9fbc6f"
-    sha256 cellar: :any, arm64_sequoia:     "e294b8f651af9e8c3472171c49e3e5393f50cec613a30a3313bd950f1239b9d6"
-    sha256 cellar: :any, arm64_linux:       "19a5951a92afced048d98d02626504cf7ea56881470d4807ba881c357c23c03c"
-    sha256 cellar: :any, x86_64_linux:      "d61ded49fb96ba8d6cbc8ba2898ff621db7ae6c56db1246c23aeee149c054549"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a96113cb8e43498b5f4a17aab23851b39fc99034e5579c654cc9a77798374406"
+    sha256 cellar: :any, arm64_tahoe:       "471d25e070abad66a4b7fba018d8f7bd111f770706a2874775a99ab14b457b7f"
+    sha256 cellar: :any, arm64_sequoia:     "60d2e31481cd26ace501b2672962e952c3534605cee2560e954537aab6ccbe8b"
+    sha256 cellar: :any, arm64_linux:       "f3b373582a31272d6d61f65d9e13a432f9b1782710cf397108db720229865f08"
+    sha256 cellar: :any, x86_64_linux:      "294b7d7136463ea9c0a5adbff64516c10d6ab780c3707e468f5347f5c99c2702"
   end
 
   depends_on "protobuf" => :build
@@ -339,21 +340,14 @@ class SnowflakeCli < Formula
     ENV["SNOWFLAKE_IS_PYTHON_RUNTIME_TEST"] = "1"
     venv.pip_install(resource("snowflake-snowpark-python"), build_isolation: false)
 
-    generate_completions_from_executable(bin/"snow", shell_parameter_format: :typer)
-
     # Remove pre-built libraries
-    os = OS.mac? ? "macos" : "linux"
-    arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
-    native_subdir = "#{os}_#{arch}"
-    native_subdir += "_glibc" if OS.linux?
-
-    venv.site_packages.glob("snowflake/connector/minicore/*").each do |dir|
-      next unless dir.directory?
-      next if dir.basename.to_s.start_with?("__")
-      next if dir.basename.to_s == native_subdir
-
-      rm_r(dir)
+    rm_r venv.site_packages/"snowflake/connector/minicore"
+    bin.each_child do |f|
+      f.unlink
+      f.write_env_script libexec/"bin"/f.basename, SNOWFLAKE_DISABLE_MINICORE: "1"
     end
+
+    generate_completions_from_executable(bin/"snow", shell_parameter_format: :typer)
   end
 
   test do
