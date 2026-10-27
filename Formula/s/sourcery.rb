@@ -1,10 +1,9 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
   homepage "https://github.com/krzysztofzablocki/Sourcery"
-  url "https://github.com/krzysztofzablocki/Sourcery/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "097aa2628cfbba2f8c2d412c57f7179c96082ab034fc6b2a2e905a0d344269e6"
+  url "https://github.com/krzysztofzablocki/Sourcery/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "09adaed81fbe6539b8f8eacc6e207d595f23dc8428e0de74a09c39aedd514b1d"
   license "MIT"
-  revision 1
   version_scheme 1
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
@@ -30,6 +29,12 @@ class Sourcery < Formula
     depends_on xcode: "14.3"
   end
 
+  # Fix version string, upstream PR ref, https://github.com/krzysztofzablocki/Sourcery/pull/1468
+  patch do
+    url "https://github.com/krzysztofzablocki/Sourcery/commit/31eb9213a681e80f57dd68f7aff159daaca30c0b.patch?full_index=1"
+    sha256 "2315a2c27c351144b5eb4652814b28b4965ff14cd2f08edeed225cf3dce47628"
+  end
+
   deny_network_access!
 
   def fetch
@@ -43,8 +48,12 @@ class Sourcery < Formula
   def install
     # Build script is unfortunately not customisable.
     # We want static stdlib on Linux as the stdlib is not ABI stable there
-    # and use our ld shim to help find Homebrew libraries
-    inreplace "Rakefile", "--disable-sandbox", "--static-swift-stdlib -Xswiftc -use-ld=ld" if OS.linux?
+    # and use our ld shim to help find Homebrew libraries.
+    # Swift Build bypasses our compiler and linker shims, so use the native build system.
+    if OS.linux?
+      inreplace "Rakefile", "--disable-sandbox",
+                "--build-system native --static-swift-stdlib -Xswiftc -use-ld=ld"
+    end
 
     system "rake", "build"
     bin.install "cli/bin/sourcery"
