@@ -6,11 +6,11 @@ class DbmlCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "f11c8653c01c1b936e9304ca671f5efdfca7d49da4d1867cdec6c6009db7a4cd"
-    sha256 cellar: :any,                 arm64_tahoe:       "f11c8653c01c1b936e9304ca671f5efdfca7d49da4d1867cdec6c6009db7a4cd"
-    sha256 cellar: :any,                 arm64_sequoia:     "f11c8653c01c1b936e9304ca671f5efdfca7d49da4d1867cdec6c6009db7a4cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "aff8683e7cb69dfc1f7136e7fbdd365e18d8d6c5d0ba7f6c496986c1c8dadfaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "339b6481969782a2110af8ea76b4de7792dd4d846bd21fa7411f3e1dd039570d"
+    sha256 cellar: :any,                 arm64_golden_gate: "12a9b733f44e036b72b4a16043b24822109bdbcbc1099ca2dbcd767cbade7c1b"
+    sha256 cellar: :any,                 arm64_tahoe:       "12a9b733f44e036b72b4a16043b24822109bdbcbc1099ca2dbcd767cbade7c1b"
+    sha256 cellar: :any,                 arm64_sequoia:     "12a9b733f44e036b72b4a16043b24822109bdbcbc1099ca2dbcd767cbade7c1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "68c6d760f2b52c5f570d7278d7fd821fecfa57404b4d92049e5e29c110190196"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bb6921cd94551257df469cf3d51ec657c851925818fa11a9eb98e5288d845181"
   end
 
   depends_on "node"
