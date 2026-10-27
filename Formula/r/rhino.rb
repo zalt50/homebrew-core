@@ -11,7 +11,7 @@ class Rhino < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "31d0c4e1e6a9316d307f3783f3151d949b6b16f1bc8446fb56579abb6f9662ee"
+    sha256 cellar: :any_skip_relocation, all: "71eea8e5a7f7a45cd2e7a16feef2fc368b1b3105d7970068ce3172d4a1d89058"
   end
 
   depends_on "openjdk@21"
