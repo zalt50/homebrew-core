@@ -12,11 +12,11 @@ class Certigo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d5049655362425ab210c2ff5b2b1896bfd9fdbf76464f45096bc83a6a08a0fa"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13dd94e83d080752ba52a320b9a6bc180e814ed8da2c65bc9361f0de3d551b51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "28efac5b1e1fb4c150009383f08fad6b71285c20a3645ebc225fd78ccfb6596d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bbe15940102e5d90c27e321fbdbd0dc5f19e66f5edab4ad3e5f88831e560934e"
-    sha256 cellar: :any,                 x86_64_linux:      "20e03fb7ec71f8a594e75e70af76f8e05bc1f7973639092e48ca71077914f067"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66e418225d8c827889ac59638663843652fef1e1c48b7946c3dfdde27026a937"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed417bb2fc43a4919012b7c622bed90fafa8374c9e6a2c2b08126e9be7d3930a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "af42a80a591f440ef0cdf3c94c8e09d2d1ac0478836d688c817fe3d288178968"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d362715b9e75e69a9f997c74b5c2fb6aa5961842638529bcf0db725e275d8fb9"
+    sha256 cellar: :any,                 x86_64_linux:      "25d966542eeab79fe5c94e21e41d53cadc2be17324a8ed319bb390150684eca1"
   end
 
   depends_on "go" => :build
