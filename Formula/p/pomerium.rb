@@ -1,8 +1,8 @@
 class Pomerium < Formula
   desc "Identity and context-aware access proxy"
   homepage "https://www.pomerium.com"
-  url "https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.4.tar.gz"
-  sha256 "477bb4909f44b32c73d30655ef21478bd5b403922cf2bbc1549c97286ff2658f"
+  url "https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.5.tar.gz"
+  sha256 "ffb246350427fb06b087e42bd717de6d43b254ad8aec679559f6f9544a6eab52"
   license "Apache-2.0"
 
   head "https://github.com/pomerium/pomerium.git", branch: "main"
@@ -15,8 +15,7 @@ class Pomerium < Formula
     sha256 cellar: :any,                 x86_64_linux:      "d66c849d2729e65199c05243e0732e8d8783a84ffb296c28b66949f586524389"
   end
 
-  # TODO: unpin go@1.26 when pomerium supports go 1.27
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
   depends_on "node" => :build
 
   # Upstream dropped darwin x86_64 support in 0.33.0
@@ -25,9 +24,27 @@ class Pomerium < Formula
     depends_on arch: :arm64
   end
 
-  def install
+  # Fix build with Go 1.27, upstream PR ref, https://github.com/pomerium/pomerium/pull/6914
+  patch do
+    url "https://github.com/pomerium/pomerium/commit/73371215d5b0e0f21b5d9cf2fc909af1a179c60d.patch?full_index=1"
+    sha256 "0362774a70882d2ef078977ff1c50f90c33b34a1c9db5736ea7fcb960ace7b09"
+  end
+
+  # `test do` block runs a local HTTP server
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
     system "make", "get-envoy"
-    system "make", "build-ui"
+    cd "ui" do
+      system "npm", "ci", *std_npm_args(prefix: false)
+    end
+  end
+
+  def install
+    cd "ui" do
+      system "npm", "--offline", "run", "build"
+    end
 
     ldflags = %W[
       -X github.com/pomerium/pomerium/internal/version.Version=#{version}
@@ -35,7 +52,6 @@ class Pomerium < Formula
       -X github.com/pomerium/pomerium/internal/version.ProjectName=pomerium
       -X github.com/pomerium/pomerium/internal/version.ProjectURL=github.com/pomerium/pomerium
     ]
-
     system "go", "build", *std_go_args(ldflags:), "./cmd/pomerium"
   end
 
