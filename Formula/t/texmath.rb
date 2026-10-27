@@ -7,11 +7,11 @@ class Texmath < Formula
   head "https://github.com/jgm/texmath.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5b5f891885d4232b517884c92d749bd2482bd338861e9d41f033f704b59f5293"
-    sha256 cellar: :any, arm64_tahoe:       "ac7791baa2a58cffa55b170a3624888cf93ab7263dc56229612c1d2b6506cfd8"
-    sha256 cellar: :any, arm64_sequoia:     "734a9bc159f1cb265bbb2525ad356535c66ad60ada809829818d79557becf400"
-    sha256 cellar: :any, arm64_linux:       "759df06f297c91e14b9411cbba950847bdb3205f9801abbba4cc2bae6cfdb653"
-    sha256 cellar: :any, x86_64_linux:      "a8f73f651e4af3577403bfa61415eb662805fe4233783899f9179c7750c3b368"
+    sha256 cellar: :any, arm64_golden_gate: "b2de4dbcc793b561534acdee7554abdbb6d0c56df7801d8fce6b0e1875b4a1e1"
+    sha256 cellar: :any, arm64_tahoe:       "958694d9953ce4f3c84cd38ea3d1a9d8df95f444927a5d5436578531f203bc0e"
+    sha256 cellar: :any, arm64_sequoia:     "47855bfd566aeefce5a4998895e84602b8e9d680114df14dfb49937eda1b50cf"
+    sha256 cellar: :any, arm64_linux:       "13a88deaf172ba2b053c1aebe7474f62907149cb7932a0ca6386a3a4a9dc5b99"
+    sha256 cellar: :any, x86_64_linux:      "8d241bdd8fff7c3c97fef73008ca0cd568591a100ac9c8d52c2de3a3260c5673"
   end
 
   depends_on "cabal-install" => :build
