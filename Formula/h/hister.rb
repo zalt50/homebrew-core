@@ -7,11 +7,11 @@ class Hister < Formula
   head "https://github.com/asciimoo/hister.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a2288fd976afade7a8c3df1ea771714beefb05145773fcf6cfd35071ae8c16d2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9bc3222548e48849aa508ed0697c8a7e14c7406920ccbabf3a4ae26bd4f55d1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36609203397832a88586d3a15d87fcf5b4d15c4a8f7f5ba346f5048d18069274"
-    sha256 cellar: :any,                 arm64_linux:       "7b8ede42875c8077bcd9c64444cc70f5ff3762cdef5241cf8f96e686010b3c3a"
-    sha256 cellar: :any,                 x86_64_linux:      "632870a8c1c0dd5abbb58a37bb805a272159f313fb5941c88d29f31d4ae275b8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fc1bdf302a57c4196af776d653a4b660702f0f0ef08f993b861df33c8aa6321b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "990dbbff43e4ef24bf054604107a4efdb1ed766f28664c37439c589527ec491f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23e9708c7c039ac7ce0b571c51a18757c149f667c4672625c877c465bdc51a6d"
+    sha256 cellar: :any,                 arm64_linux:       "cbf070c038bf7b0848f113b990e00fe735503fff9ab8c0f86f13cebdbf14d10e"
+    sha256 cellar: :any,                 x86_64_linux:      "76758589fbfbfa6af3b07dba818718e5ebb934bba78eda801d93496069672f15"
   end
 
   depends_on "go" => :build
