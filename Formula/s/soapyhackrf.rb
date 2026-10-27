@@ -1,10 +1,9 @@
 class Soapyhackrf < Formula
   desc "SoapySDR HackRF module"
   homepage "https://github.com/pothosware/SoapyHackRF/wiki"
-  url "https://github.com/pothosware/SoapyHackRF/archive/refs/tags/soapy-hackrf-0.3.5.tar.gz"
-  sha256 "0ef13ac8cf1ec0c0728bdfe8a775e38fd06574418948e3a30ea6794de5d5a06c"
+  url "https://github.com/pothosware/SoapyHackRF/archive/refs/tags/soapy-hackrf-0.3.6.tar.gz"
+  sha256 "7bdecb65074f0c30af707234fbb970687626d4b6e1768592325aa706ae46e572"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "1d5bf30e18eaa40c2323af3b8a7465b7fdcb7345220ec849d471dd47e17722b3"
