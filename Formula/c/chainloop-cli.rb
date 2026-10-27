@@ -12,11 +12,11 @@ class ChainloopCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "76460fabfe9fe4edb74826a7f3756007afd769ea8a0c1bd106be1e7ec1104c45"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "76460fabfe9fe4edb74826a7f3756007afd769ea8a0c1bd106be1e7ec1104c45"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76460fabfe9fe4edb74826a7f3756007afd769ea8a0c1bd106be1e7ec1104c45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "534a470934bd17d8bfae1d0df946903f5ddcf7b95b9c3f032adfe38fb498e136"
-    sha256 cellar: :any,                 x86_64_linux:      "3f6f60f78df1e6d6c7ccae91945ed8b1c35c21ea63513dcaf725cb19c4ab9625"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b4cdb1c26a6576c6b0bde4ecbb5daddaae67008fde5c9173cb99e9cce97a815"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b4cdb1c26a6576c6b0bde4ecbb5daddaae67008fde5c9173cb99e9cce97a815"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b4cdb1c26a6576c6b0bde4ecbb5daddaae67008fde5c9173cb99e9cce97a815"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5a46a43ff8c7d04a9cb3423c9a7fe4f1e79c31218c0fff470db331275dd6033d"
+    sha256 cellar: :any,                 x86_64_linux:      "d3799a3cdab982778ce7b66e931142c47bd32ab0472c30df7415d9a735706713"
   end
 
   depends_on "go" => :build
