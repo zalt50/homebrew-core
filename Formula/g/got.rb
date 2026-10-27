@@ -1,9 +1,9 @@
 class Got < Formula
   desc "Version control system"
   homepage "https://gameoftrees.org/", browsed: "2026-10-17"
-  url "https://gameoftrees.org/releases/portable/got-portable-0.130.tar.gz"
-  mirror "https://pkg.freebsd.org/ports-distfiles/got-portable-0.130.tar.gz"
-  sha256 "938307dead3d2f4c11e424e996821cea976dd6de494815721447501944bd251c"
+  url "https://gameoftrees.org/releases/portable/got-portable-0.130.1.tar.gz"
+  mirror "https://pkg.freebsd.org/ports-distfiles/got-portable-0.130.1.tar.gz"
+  sha256 "43c5fba2f3791e3cef202803baa819fd29c53c4ba1f89f90582e06c6a443beb4"
   license "ISC"
 
   # Since GitHub runners are not able to access the homepage, our Linux build
