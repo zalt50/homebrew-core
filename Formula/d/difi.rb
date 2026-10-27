@@ -1,8 +1,8 @@
 class Difi < Formula
   desc "Pixel-perfect terminal diff viewer"
   homepage "https://github.com/xguot/difi"
-  url "https://github.com/xguot/difi/archive/refs/tags/v0.2.31.tar.gz"
-  sha256 "8b2d6dc51d0f39d56013434176724739287f7f6173ab7af27b03628f7ffc99e6"
+  url "https://github.com/xguot/difi/archive/refs/tags/v0.2.32.tar.gz"
+  sha256 "1473f63d985b49c076605d6959e60ae2134490b5b9d7936aec6db936abfd00b1"
   license "MIT"
   head "https://github.com/xguot/difi.git", branch: "main"
 
