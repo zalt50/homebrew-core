@@ -1,8 +1,8 @@
 class MimoCode < Formula
   desc "AI coding agent with cross-session memory"
   homepage "https://github.com/XiaomiMiMo/MiMo-Code"
-  url "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.15.tgz"
-  sha256 "ce31274755f7924573c733588d5485c582e6bd63f0313e63860b4e74c0924470"
+  url "https://github.com/XiaomiMiMo/MiMo-Code/archive/refs/tags/v0.1.16.tar.gz"
+  sha256 "dff948e338bf58e7d580a18fc6385f6669c66512e001fa8e08113280d4cab6a6"
   license "MIT"
 
   bottle do
@@ -13,23 +13,34 @@ class MimoCode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "f51ce0b2f58de8c1f9e1ff5a337820a93aeed3cded3b3888db6d467396f11b1e"
   end
 
-  depends_on "node"
+  depends_on "bun" => :build
+  depends_on "python@3.15" => :build # for node-gyp
+  depends_on "ripgrep"
+
+  on_linux do
+    depends_on "icu4c@79"
+  end
 
   def install
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
-    bin.install_symlink libexec.glob("bin/*")
+    ENV["MIMOCODE_VERSION"] = version.to_s
+    ENV["MIMOCODE_CHANNEL"] = "latest"
 
-    # Remove binaries for other architectures, `-musl`, `-baseline`, and `-baseline-musl`
-    arch = Hardware::CPU.arm? ? "arm64" : "x64"
-    os = OS.linux? ? "linux" : "darwin"
-    (libexec/"lib/node_modules/@mimo-ai/cli/node_modules").children.each do |d|
-      next unless d.directory?
+    # The build refuses any Bun other than the exact `packageManager` pin, so pin the brewed one
+    bun_version = Formula["bun"].version
+    inreplace "package.json", /"packageManager": "bun@[\d.]+"/, "\"packageManager\": \"bun@#{bun_version}\""
 
-      rm_r d if d.basename.to_s != "mimocode-#{os}-#{arch}"
+    system "bun", "install", "--frozen-lockfile"
+
+    cd "packages/cli" do
+      system "bun", "--bun", "./script/build.ts", "--single", "--skip-install"
+      bin.install Pathname.pwd.glob("dist/mimocode-*/bin/mimo").first
     end
   end
 
   test do
+    ENV["MIMOCODE_DISABLE_AUTOUPDATE"] = "1"
+    ENV["MIMOCODE_DISABLE_MODELS_FETCH"] = "1"
+
     assert_match version.to_s, shell_output("#{bin}/mimo --version")
     assert_match "mimo", shell_output("#{bin}/mimo models")
   end
