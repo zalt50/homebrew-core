@@ -1,16 +1,10 @@
 class ClozureCl < Formula
   desc "Common Lisp implementation with a long history"
   homepage "https://ccl.clozure.com"
+  url "https://github.com/Clozure/ccl/archive/refs/tags/v1.14.tar.gz"
+  sha256 "b99cc0615ea41d3538aee068c998413aef12c3562684167905cc832bb77ef361"
   license "Apache-2.0"
   head "https://github.com/Clozure/ccl.git", branch: "master"
-
-  stable do
-    url "https://github.com/Clozure/ccl/archive/refs/tags/v1.13.tar.gz"
-    sha256 "bca7f8d70d49059f8937b82bc64f47f7d01c07dd18760002ec41b41c444f838c"
-
-    # TODO: Remove in the next release
-    depends_on arch: :x86_64
-  end
 
   livecheck do
     url :stable
@@ -24,14 +18,6 @@ class ClozureCl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9d0f7c8987f103a1002a96a696df47d99765c6604ab91630121a0e1209c6afbb"
   end
 
-  on_macos do
-    # Can be undeprecated if upstream decides to support arm64 macOS
-    # https://docs.brew.sh/Support-Tiers#future-macos-support
-    # TODO: Make linux-only when removing macOS support
-    deprecate! date: "2025-09-25", because: :unsupported
-    disable! date: "2026-09-25", because: :unsupported
-  end
-
   on_linux do
     depends_on "m4"
   end
@@ -39,22 +25,22 @@ class ClozureCl < Formula
   resource "bootstrap" do
     on_macos do
       on_arm do
-        url "https://github.com/Clozure/ccl/releases/download/v1.13-arm64-pre2/darwinarm64.tar.gz"
-        sha256 "382426a718af3fa9ae15d682fb47d5921dda3565b1a087c3d34d9ff45f3b3bfe"
+        url "https://github.com/Clozure/ccl/releases/download/v1.14/ccl-1.14-darwinarm64.tar.gz"
+        sha256 "c26d879053c6691182da779ceeadb7fd4e2d63d04a4a603cfff5a2f124be0211"
       end
       on_intel do
-        url "https://github.com/Clozure/ccl/releases/download/v1.13/darwinx86.tar.gz"
-        sha256 "0eceab57e519f82bd6db011c596eb2a28e2a510abcd76e217d49a10e90f4002f"
+        url "https://github.com/Clozure/ccl/releases/download/v1.14/ccl-1.14-darwinx86.tar.gz"
+        sha256 "f69a70ff50677877e989e36818f0baa19fa4cb186440a7984a9ccdcd07236276"
       end
     end
     on_linux do
       on_arm do
-        url "https://github.com/Clozure/ccl/releases/download/v1.13-arm64-pre2/linuxarm64.tar.gz"
-        sha256 "966a7182607e729e41e42159efea4618c2b305dc000e2b902ffe8aa7199ab449"
+        url "https://github.com/Clozure/ccl/releases/download/v1.14/ccl-1.14-linuxarm64.tar.gz"
+        sha256 "766c4ef63708ea9152f4565eb59d89a79ab3ddaf852a69c0ef91633f89f61332"
       end
       on_intel do
-        url "https://github.com/Clozure/ccl/releases/download/v1.13/linuxx86.tar.gz"
-        sha256 "dd7dcb1631305cc7e32aef67caaa89662e05999dd30e72fbfa554a96f9473e13"
+        url "https://github.com/Clozure/ccl/releases/download/v1.14/ccl-1.14-linuxx86.tar.gz"
+        sha256 "96fff67c53b56dc67acc06e92ff1774b73401564650669c95e7c63f1200a4f5d"
       end
     end
   end
