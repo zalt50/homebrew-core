@@ -1,8 +1,8 @@
 class Cracklib < Formula
   desc "LibCrack password checking library"
   homepage "https://github.com/cracklib/cracklib"
-  url "https://github.com/cracklib/cracklib/releases/download/v2.10.3/cracklib-2.10.3.tar.bz2"
-  sha256 "f3dcb54725d5604523f54a137b378c0427c1a0be3e91cfb8650281a485d10dae"
+  url "https://github.com/cracklib/cracklib/releases/download/v2.10.4/cracklib-2.10.4.tar.bz2"
+  sha256 "4f2d151a2930ab2644def5f9e0e4dad7446ccbd3f2dd41960e91398d93c3129e"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -38,7 +38,7 @@ class Cracklib < Formula
   end
 
   resource "cracklib-words" do
-    url "https://github.com/cracklib/cracklib/releases/download/v2.10.3/cracklib-words-2.10.3.bz2"
+    url "https://github.com/cracklib/cracklib/releases/download/v2.10.4/cracklib-words-2.10.4.bz2"
     sha256 "ec25ac4a474588c58d901715512d8902b276542b27b8dd197e9c2ad373739ec4"
 
     livecheck do
