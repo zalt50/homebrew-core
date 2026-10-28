@@ -18,12 +18,11 @@ class Cmake < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6614033037dd78df8ef4fea463235b7a463f92caba61fc9fc93214fcd948cbe4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30efb5adfba2b7441a0fd6980039fadba94aff6ee1052a383dad9fab9b078eeb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2a7da6b1f351024c84fe36af692f31a196cb21be74dae8a3f36925467fa676b"
-    sha256 cellar: :any,                 arm64_linux:       "0ed7f678a53d9f729dbf80444ecb56769da1e232e642b9e803c9ef8b4352cb3d"
-    sha256 cellar: :any,                 x86_64_linux:      "103c3634b5e6027b19bcf41100bbe02b0146a68aa88d563ec296afcba206c46e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d767a6fbc3ddd3af1776dfbeda0d16d5b00697ec4c6244e55a4069965a0da225"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "840a1c236fd7c7ea3b8754363866bb5e53153911b5cc50e32e951deb42efc5c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f70a117f6c44cb2133c8e349d910953d0f02f840b380cd3458e153b80419a8c"
+    sha256 cellar: :any,                 arm64_linux:       "2a3dfbc4bed150b0ce80cf460c607c121c7e6aa029fee1494468d03b467a8b60"
+    sha256 cellar: :any,                 x86_64_linux:      "ede8eaa9e36f2484a852280eedfec1dd5640045e45e3904a96a311c2e0dc2288"
   end
 
   uses_from_macos "ncurses"
