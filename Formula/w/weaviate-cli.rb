@@ -9,12 +9,11 @@ class WeaviateCli < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b47abc0014c277abccab8985a19167b28512d8c6d98b635597c44c4ade9adce9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e01006e1a5bd4f0be50dcc74f3ecf5adc947fb94fff5f5194ceacf9ea8d6f041"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fbfbf0bfc8d37b4d9882d2aea9733477d3fe8d25dfd06b17866535d34f3c1628"
-    sha256 cellar: :any,                 arm64_linux:       "e8c21a27620d8179baeef295252e77f5f0dbc1455c129ba3b850df8371d6d2bb"
-    sha256 cellar: :any,                 x86_64_linux:      "e63534647422ea0d2bc4e136a87c80146417e6baeedf1c0d45f2546ee614158d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b080069fd121700e5aaf1c5830e8219bda1da970a18d6a8967a1157ac5b75800"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "899002d7154134dab14571072469940bfe4096d66c045c362123dbe15bf33d76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "03ec96e255f1d6d602279ae39bda08cba378c28ab753783aaa23c540f42d02ff"
+    sha256 cellar: :any,                 arm64_linux:       "1300141c7bf56be78fd170f1b8d29c46a52c5266f242e29306982cd1c72b6e46"
+    sha256 cellar: :any,                 x86_64_linux:      "adf6a9041e4c9c60dff318cb9ce0f1a046ea9ed3d9a7da8cebf94ae301468c68"
   end
 
   depends_on "cmake" => :build # contourpy
