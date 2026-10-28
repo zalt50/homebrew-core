@@ -18,6 +18,8 @@ class Unciv < Formula
 
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     libexec.install "Unciv.jar"
     bin.write_jar_script libexec/"Unciv.jar", "unciv"
