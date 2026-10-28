@@ -9,12 +9,11 @@ class CheckJsonschema < Formula
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "93b905f127af2e8306965b66d8c050cdf01c3d062b11df043ef3b4bd8022b9e1"
-    sha256 cellar: :any, arm64_tahoe:       "a0c441c153694bca5d47b785c42d706638fdb19af06372dc2233e2cd109d9cc5"
-    sha256 cellar: :any, arm64_sequoia:     "11373c896cd85ca6f8ea6b74e6fa68d50a3c627fde54f59b1de89f9496aa1dd8"
-    sha256 cellar: :any, arm64_linux:       "7dbf8d44c1576dace6cbb75a5117a135bbeed0261fd577ba504c4882aec0a892"
-    sha256 cellar: :any, x86_64_linux:      "40dea15bc75b7cdf7c4ac7be97339b04b9cab2c75e7c228b0bccc28094f6fbfe"
+    sha256 cellar: :any, arm64_golden_gate: "16a70e0608e2a48eb99bdec6a1d0d2b923aaf7a9d1a494494ca749af863170c0"
+    sha256 cellar: :any, arm64_tahoe:       "6dd0cc67e06595c11162a14713bbe11ef69cc7fcb7d8f2d53794f95b1e6d9eb2"
+    sha256 cellar: :any, arm64_sequoia:     "54c2e3c49866902cebfced9b0f5533a5000629d9d4aa7e199b63cfe0582e97b1"
+    sha256 cellar: :any, arm64_linux:       "074d320930f8e643582a3e1707332b93c2a9b4280796d0d528491691326e86dc"
+    sha256 cellar: :any, x86_64_linux:      "1091f18dea09ec12604c8fdac83e7df8f4037d5b3fa0931457cb1b670f1c5e9e"
   end
 
   depends_on "rust" => :build # for regress
