@@ -16,11 +16,11 @@ class LaceworkCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "110e26e25e60931c62b76962a0334a803cdd17a5de878debb03241ff20047d61"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "110e26e25e60931c62b76962a0334a803cdd17a5de878debb03241ff20047d61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "110e26e25e60931c62b76962a0334a803cdd17a5de878debb03241ff20047d61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3de67b54a5792bbd4319b10ad40a4be1dc45fc8f63ae9d76c15c7b206384bf58"
-    sha256 cellar: :any,                 x86_64_linux:      "efc9d8ec3ef78f4236d9a760259d830fb0697de5966131560c1d6cf85392e555"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c1ae597a2c22a760fd9dc5f1c80cc8a9f45c99f521827928d771a570630e0be7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1ae597a2c22a760fd9dc5f1c80cc8a9f45c99f521827928d771a570630e0be7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1ae597a2c22a760fd9dc5f1c80cc8a9f45c99f521827928d771a570630e0be7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6f98bb16482b9d23d0986c2708ff0ad554c384490ba2da0cf1c3943bce0a41bd"
+    sha256 cellar: :any,                 x86_64_linux:      "2e10d8a0a266ea5b5c8d3f2b6ea60d3fadff18765a1a3876e782a463a22598ac"
   end
 
   depends_on "go" => :build
