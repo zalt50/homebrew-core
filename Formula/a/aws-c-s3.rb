@@ -7,11 +7,11 @@ class AwsCS3 < Formula
   compatibility_version 8
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5a155f8c8af43fc750200df0d9d4db127cc1a563167eca6d4645135360be6c9f"
-    sha256 cellar: :any, arm64_tahoe:       "330858293668f4f7f5bd60ad15e67a7d41211eb6adef3780d9346f9726acdf64"
-    sha256 cellar: :any, arm64_sequoia:     "7e785e7bf9bb820ebf43a818219b092428fe286c385ca6bb63893d515473ed5d"
-    sha256 cellar: :any, arm64_linux:       "843442360b434f0156bb08840d72ad493d9a70bee81b9bbbe54ae2d641870ede"
-    sha256 cellar: :any, x86_64_linux:      "ff4767388ce1eafe8b97f9e3e9ffb567f3dac555d7716215996775eb822c50ab"
+    sha256 cellar: :any, arm64_golden_gate: "1bd8bb00b68ebb764703cf73965692bca56414b2a6e3ad8a2e5b3d7001c009b5"
+    sha256 cellar: :any, arm64_tahoe:       "0ab0960943c6454a956e367efa21bae06cecd13e034ae1b23660cf896b6ad920"
+    sha256 cellar: :any, arm64_sequoia:     "2b26036b845d1740b6c69bb60bacfa835cf5f10ba6457fedfff927121348a60a"
+    sha256 cellar: :any, arm64_linux:       "82feb238a582fa47819b159ae0b35d9d3645fde61817fbc9a23c4d27d5d3128b"
+    sha256 cellar: :any, x86_64_linux:      "db4be9cdbe264b483fc4aea8e568c7d9073cd15c7ac4b1f9dc758cdedcce44af"
   end
 
   depends_on "cmake" => :build
