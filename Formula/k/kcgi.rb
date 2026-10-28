@@ -1,14 +1,10 @@
 class Kcgi < Formula
   desc "Minimal CGI and FastCGI library for C/C++"
-  homepage "https://kristaps.bsd.lv/kcgi/"
-  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-1.0.1.tgz"
-  sha256 "bc1cc29bca48eace5df4ba0f1aa1dfc2fe7ac773f750d4af84d80c52cece3c45"
+  homepage "https://kristaps.bsd.lv/kcgi/", browsed: "2026-10-28"
+  url "https://github.com/kristapsdz/kcgi/archive/refs/tags/VERSION_1_0_1.tar.gz"
+  sha256 "d2b9f377ca31c3ac6ec47e7ec0f46b8f208a33ca80701777a20e355937fc5934"
   license "ISC"
-
-  livecheck do
-    url "https://kristaps.bsd.lv/kcgi/snapshots/"
-    regex(/href=.*?kcgi[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  head "https://github.com/kristapsdz/kcgi.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,6 +23,8 @@ class Kcgi < Formula
     depends_on "libseccomp"
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "MANDIR=#{man}",
