@@ -6,15 +6,16 @@ class Awscli < Formula
   url "https://github.com/aws/aws-cli/archive/refs/tags/2.39.0.tar.gz"
   sha256 "2d90e0885289e16da3157d5b50c20c00e6cbfda1e9a8e3beaedbc6d84749ac8f"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "609d38c1dce257b4db429508979b04eaa174c9d92daeff94fd64371a0222484b"
-    sha256 cellar: :any, arm64_tahoe:       "535bd5a13fc8de30b3fdcc75a11c140627b58c204a163558fa315701190c7339"
-    sha256 cellar: :any, arm64_sequoia:     "15ec9a2a72f6b50f7a369b94676035353542b5b1af6930264bc81f5f989264e7"
-    sha256 cellar: :any, arm64_linux:       "099855fe718bc825b276bf7f63070b0f9758181336cac0cda3b116d2ccb93429"
-    sha256 cellar: :any, x86_64_linux:      "3b615bc00d4e84ed7a5af03b7241d073fe113477a8fe0ff18364883038b70a1f"
+    sha256 cellar: :any, arm64_golden_gate: "f733a3eee3bed2d307de2cbb3ff1d68b471137fb33c7b998fe0b36afcea69d7d"
+    sha256 cellar: :any, arm64_tahoe:       "d81e0a427a385d35196a42472ea136d91fbe7d9474b9bbd432d5ab30780789e8"
+    sha256 cellar: :any, arm64_sequoia:     "066304394b7341172eb2a6cfddc9f0b66ad10039b14e30f994f5c90d1a550861"
+    sha256 cellar: :any, arm64_linux:       "7d7cf323ed1c6bde2f2a44c7af06ed91c9c41593c20beaffde5b1ff47d4bafe2"
+    sha256 cellar: :any, x86_64_linux:      "099ca68444703b1326e8ca8f6a7ad9c36fe462464c6ef871c66f00a257e67f99"
   end
 
   depends_on "aws-c-auth"
