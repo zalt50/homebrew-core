@@ -1,8 +1,8 @@
 class ScalaAT33 < Formula
   desc "JVM-based programming language"
   homepage "https://www.scala-lang.org/"
-  url "https://github.com/scala/scala3/releases/download/3.3.8/scala3-3.3.8.tar.gz"
-  sha256 "17a03dd9c2a790b4230a7d03b741cdedca6514096e50e7189bc5e2d299db250a"
+  url "https://github.com/scala/scala3/releases/download/3.3.9/scala3-3.3.9.tar.gz"
+  sha256 "ba96214801ea01b0d0aee45f00c94d3f61ed40d0f2aa748aff11c7f136737d7c"
   license "Apache-2.0"
 
   livecheck do
