@@ -1,8 +1,8 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https://uxlfoundation.github.io/oneTBB/"
-  url "https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2023.1.0.tar.gz"
-  sha256 "191288b52e1e6b17198000b64d77d194bb65e791be46ebc606e9b091781e2070"
+  url "https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2023.2.0.tar.gz"
+  sha256 "80cb62e62defeee67ea1885a6f72d97ac81404f8fde9cded62fb51524808a30c"
   license "Apache-2.0"
   compatibility_version 1
 
@@ -29,9 +29,12 @@ class Tbb < Formula
 
     args = %W[
       -DTBB_TEST=OFF
+      -DTCM_TEST=OFF
       -DTBB4PY_BUILD=ON
       -DPYTHON_EXECUTABLE=#{python3}
     ]
+    # TCM links with GNU ld's `--version-script`, which Apple's linker doesn't support
+    args << "-DTCM_BUILD=OFF" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build/shared",
                     "-DBUILD_SHARED_LIBS=ON",
