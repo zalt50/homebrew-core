@@ -12,10 +12,11 @@ class ClozureCl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "dbf1d6fa306b45dd024bcb4affa6ecdae29269e2de18b6d97c9ed0a7bba5eeea"
-    sha256 cellar: :any_skip_relocation, ventura:      "77beee69a1b3748ed9f627c31b5ee91bd6914ee614e6b49fc027e1ab76f3ce86"
-    sha256 cellar: :any_skip_relocation, monterey:     "df21345c80cded7b9d732d1158a904bd0fe8118bd91da58fe99d3614c02f1e1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d0f7c8987f103a1002a96a696df47d99765c6604ab91630121a0e1209c6afbb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8b5b1be3282c54d8514b89cc45c91f6268bbac2cd5aa80a4777433f9653bced3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "25022257c0255ef2f2e180a2a8795965a9f8862aa53f4f8f1b44e6f616d54cb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ea12d8bcc5606182ab2561f78ceb262d534a051c4f60ab93415fd6b048e369b9"
+    sha256 cellar: :any,                 arm64_linux:       "cce229f0106748228548070a08beb92d6bc76676315772066698c1dd120df353"
+    sha256 cellar: :any,                 x86_64_linux:      "12f5ce9962be5ce7dc49039c2ec38f1e28c872d8a9780bc75f937c6ab85018a3"
   end
 
   on_linux do
