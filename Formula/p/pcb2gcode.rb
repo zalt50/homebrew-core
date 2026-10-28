@@ -1,26 +1,10 @@
 class Pcb2gcode < Formula
   desc "Command-line tool for isolation, routing and drilling of PCBs"
   homepage "https://github.com/pcb2gcode/pcb2gcode"
+  url "https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "1dc10343a16d291c058b3d79e6ded25f13a99584b1b0d572808cd33216358cc1"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/pcb2gcode/pcb2gcode.git", branch: "master"
-
-  stable do
-    url "https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v3.0.4.tar.gz"
-    sha256 "46351d4b7479059becae064cc68f2d1d68d42ae314ff7a1d9a240c71a3c0c98c"
-
-    # Backport fix for newer Boost
-    patch do
-      url "https://github.com/pcb2gcode/pcb2gcode/commit/1120553b454625a888b113d0f1e241f7f379d771.patch?full_index=1"
-      sha256 "f3da7ab233cf12d7d0fa209add3492aed435b5c85f6dd0b89d172f2cc8f3eaac"
-      type :backport
-    end
-    patch do
-      url "https://github.com/pcb2gcode/pcb2gcode/commit/b3e196f97fde0a0c5bf5c9c32c163876d13976e1.patch?full_index=1"
-      sha256 "eb155e538ba346adfb33027e1b3869c81b12aade39b25f1d1709471f749abecd"
-      type :backport
-    end
-  end
 
   livecheck do
     url :stable
@@ -41,8 +25,10 @@ class Pcb2gcode < Formula
   disable! date: "2027-08-28", because: "uses deprecated `gerbv` which needs EOL `gtk+`"
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
+  depends_on "geos"
   depends_on "gerbv"
   depends_on "glib"
 
