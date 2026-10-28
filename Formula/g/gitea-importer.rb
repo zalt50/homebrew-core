@@ -1,8 +1,8 @@
 class GiteaImporter < Formula
   desc "CLI to migrate repositories from GitHub, GitLab and Gitea into Gitea"
   homepage "https://gitea.com/gitea/importer"
-  url "https://gitea.com/gitea/importer/archive/v0.1.0.tar.gz"
-  sha256 "aee0711b52d1822f55499b4f5d0160fd6decb95224f8cb6ee1b89c8c2d082dcf"
+  url "https://gitea.com/gitea/importer/archive/v0.2.0.tar.gz"
+  sha256 "dc132301c893d6212cab543053ebbcb94d0cd42652e33869ca52d047b4b3a3ca"
   license "MIT"
   head "https://gitea.com/gitea/importer.git", branch: "main"
 
@@ -36,6 +36,6 @@ class GiteaImporter < Formula
     url = "http://127.0.0.1:#{free_port}"
     args = %W[--source-type gitea --source-url #{url} --source-auth pat://test --source-repos foo/bar]
     output = shell_output("#{bin}/gitea-importer scan #{args.join(" ")} 2>&1", 1)
-    assert_match "create gitea client: Get \"#{url}/api/v1/version\"", output
+    assert_match "Get \"#{url}/api/v1/", output
   end
 end
