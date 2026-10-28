@@ -1,10 +1,9 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https://nim-lang.org/"
-  url "https://nim-lang.org/download/nim-2.2.12.tar.xz"
-  sha256 "2639a06a5ea7a7fcf57df1e7e1ef4d1b2bee58c7ac9bd00dbd2aa5bea1e5a56a"
+  url "https://nim-lang.org/download/nim-2.4.0.tar.xz"
+  sha256 "4fa00853bc6ac92ebdd924d8e2ce42509d3f708d76a3ffcc034e16288e0e0325"
   license "MIT"
-  revision 1
   compatibility_version 1
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
 
@@ -28,6 +27,9 @@ class Nim < Formula
   end
 
   conflicts_with "atlas", "mongodb-atlas-cli", because: "both install `atlas` executable"
+
+  # Drop initializers added to `nre.nim` in 2.4.0 so the `pcre2` patches below apply
+  patch :DATA
 
   # Replace `pcre` with `pcre2` using commits from an unmerged upstream PR
   patch do
@@ -126,3 +128,53 @@ class Nim < Formula
     assert_equal "name: \"hello\"\n", shell_output("#{bin}/nimble dump").lines.first
   end
 end
+
+__END__
+--- a/lib/impure/nre.nim
++++ b/lib/impure/nre.nim
+@@ -247,7 +247,6 @@
+     `=destroy`(pattern.captureNameToId)
+ 
+ proc getinfo[T](pattern: Regex, opt: cint): T =
+-  result = default(T)
+   let retcode = pcre.fullinfo(pattern.pcreObj, pattern.pcreExtra, opt, addr result)
+ 
+   if retcode < 0:
+@@ -281,8 +280,8 @@
+     new(result, destroyRegex)
+   result.pattern = pattern
+ 
+-  var errorMsg: cstring = ""
+-  var errOffset: cint = 0
++  var errorMsg: cstring
++  var errOffset: cint
+ 
+   result.pcreObj = pcre.compile(cstring(pattern),
+                                 # better hope int is at least 4 bytes..
+@@ -294,7 +293,7 @@
+ 
+   if study:
+     var options: cint = 0
+-    var hasJit: cint = cint(0)
++    var hasJit: cint
+     if pcre.config(pcre.CONFIG_JIT, addr hasJit) == 0:
+       if hasJit == 1'i32:
+         options = pcre.STUDY_JIT_COMPILE
+@@ -319,7 +318,7 @@
+     return true
+ 
+   # get flags from build config
+-  var confFlags: cint = cint(0)
++  var confFlags: cint
+   if pcre.config(pcre.CONFIG_NEWLINE, addr confFlags) != 0:
+     assert(false, "CONFIG_NEWLINE apparently got screwed up")
+ 
+@@ -579,7 +578,7 @@
+     pcre.UTF8) > 0u32
+   let strlen = if endpos == int.high: str.len else: endpos+1
+   var offset = start
+-  var match: Option[RegexMatch] = default(Option[RegexMatch])
++  var match: Option[RegexMatch]
+   var neverMatched = true
+ 
+   while true:
