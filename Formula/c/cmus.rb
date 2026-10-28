@@ -1,36 +1,10 @@
 class Cmus < Formula
   desc "Music player with an ncurses based interface"
   homepage "https://cmus.github.io/"
+  url "https://github.com/cmus/cmus/archive/refs/tags/v2.13.0.tar.gz"
+  sha256 "7be478c476f0a9915cdefbf6aade825a40cd202a8ca6b5149399025d3c7fc09b"
   license "GPL-2.0-or-later"
-  revision 4
   head "https://github.com/cmus/cmus.git", branch: "master"
-
-  stable do
-    url "https://github.com/cmus/cmus/archive/refs/tags/v2.12.0.tar.gz"
-    sha256 "44b96cd5f84b0d84c33097c48454232d5e6a19cd33b9b6503ba9c13b6686bfc7"
-
-    # Backport FFmpeg 8 support using Debian patches as recommended by upstream
-    # The same patches are used by Arch Linux.
-    patch do
-      url "https://deb.debian.org/debian/pool/main/c/cmus/cmus_2.12.0-3.debian.tar.xz"
-      sha256 "dcdbda04f42785079be734c3282e8a114a1ee55da01505ac92da56778bd035a4"
-      type :backport
-      resolves "https://github.com/cmus/cmus/issues/1459"
-      apply "patches/0003-ip-ffmpeg-more-precise-seeking.patch",
-            "patches/0004-ip-ffmpeg-skip-samples-only-when-needed.patch",
-            "patches/0005-ip-ffmpeg-remove-excessive-version-checks.patch",
-            "patches/0006-ip-ffmpeg-major-refactor.patch",
-            "patches/0007-Validate-sample-format-in-ip_open.patch",
-            "patches/0008-ip-ffmpeg-flush-swresample-buffer-when-seeking.patch",
-            "patches/0009-ip-ffmpeg-remember-swr_frame-s-capacity.patch",
-            "patches/0010-ip-ffmpeg-reset-swr_frame_start-when-seeking.patch",
-            "patches/0011-ip-ffmpeg-better-frame-skipping-logic.patch",
-            "patches/0012-ip-ffmpeg-don-t-process-empty-frames.patch",
-            "patches/0013-ip-ffmpeg-improve-readability.patch",
-            "patches/0014-ip-ffmpeg-fix-building-for-ffmpeg-8.0.patch",
-            "patches/0015-ip-ffmpeg-change-sample-format-conversions.patch"
-    end
-  end
 
   bottle do
     sha256 arm64_golden_gate: "e8a9bd57f67c905a659ca77f16cdde838bb36abc86d74681eb0531d9ab096227"
@@ -90,11 +64,7 @@ class Cmus < Formula
       wav
       ao
     ]
-    expected_plugins += if OS.mac?
-      %w[coreaudio]
-    else
-      %w[alsa pulse]
-    end
+    expected_plugins += OS.mac? ? %w[coreaudio] : %w[alsa pulse]
 
     expected_plugins.each do |plugin|
       assert_match plugin, plugins, "#{plugin} plugin not found!"
