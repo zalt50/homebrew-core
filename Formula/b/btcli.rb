@@ -9,11 +9,12 @@ class Btcli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3b9219a0107cd35cbbefb8ba9f39d3e9f4c1bffb24a0836a2e4c70f32112db69"
-    sha256 cellar: :any, arm64_tahoe:       "cc37d9f43d902462a470e2e7967955abca730048e4d21be0eac33f47c59cd952"
-    sha256 cellar: :any, arm64_sequoia:     "dd990a2d34914b57b16fac362d77b40455e2e40e004779e027c13c0cb7e92bd3"
-    sha256 cellar: :any, arm64_linux:       "a26f9f6d873202f4e2a20a193e59e808197eb1e3759f63fea3381ff15046ea8e"
-    sha256 cellar: :any, x86_64_linux:      "0a8ada53299d2c5bac6ed075da570391433e358b8cff9711c9174955ed8f7d91"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "618772884f53325079c11c9a705059ceaaf630dbc3ba4486c2e38bb8428cf4eb"
+    sha256 cellar: :any, arm64_tahoe:       "a20f9df2cfb19458f8199d0ccbfd238c7cc7a83d8a8dc2d217310702c10acee1"
+    sha256 cellar: :any, arm64_sequoia:     "747d7d2b2ed643867ad7eeb461f303dd2d566e444c8092b5d9e26abb2ea9cd61"
+    sha256 cellar: :any, arm64_linux:       "77b08d812aaf25dc9779395cf567b4e2598463da6fccc4c9c5c7c59f2623b938"
+    sha256 cellar: :any, x86_64_linux:      "259b3d9958214a28ebfe47bbe106be8f81bbfae6c47f0c29a6547ef3d69a4e8d"
   end
 
   deprecate! date: "2026-07-19", because: :repo_removed, replacement_formula: "bittensor"
