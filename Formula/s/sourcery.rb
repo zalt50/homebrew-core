@@ -1,8 +1,8 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
   homepage "https://github.com/krzysztofzablocki/Sourcery"
-  url "https://github.com/krzysztofzablocki/Sourcery/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "09adaed81fbe6539b8f8eacc6e207d595f23dc8428e0de74a09c39aedd514b1d"
+  url "https://github.com/krzysztofzablocki/Sourcery/archive/refs/tags/2.4.1.tar.gz"
+  sha256 "6ed3b89e22dd9612d0558b75e47117edcfc745acf1825dade151fcc0c085afb2"
   license "MIT"
   version_scheme 1
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
@@ -25,12 +25,6 @@ class Sourcery < Formula
 
   on_macos do
     depends_on xcode: "14.3"
-  end
-
-  # Fix version string, upstream PR ref, https://github.com/krzysztofzablocki/Sourcery/pull/1468
-  patch do
-    url "https://github.com/krzysztofzablocki/Sourcery/commit/31eb9213a681e80f57dd68f7aff159daaca30c0b.patch?full_index=1"
-    sha256 "2315a2c27c351144b5eb4652814b28b4965ff14cd2f08edeed225cf3dce47628"
   end
 
   deny_network_access!
