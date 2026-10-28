@@ -10,7 +10,7 @@ class Git < Formula
     "BSD-3-Clause",      # xdiff/xhistogram.c; reftable/
     "MIT",               # khash.h; sha1dc/
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/git/git.git", branch: "master"
 
@@ -29,9 +29,10 @@ class Git < Formula
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
+  # TODO: Replace with `uses_from_macos` once Apple fixes their CA bundle.
+  depends_on "curl"
   depends_on "pcre2"
 
-  uses_from_macos "curl"
   uses_from_macos "expat"
 
   # Don't try to add a libiconv dependency without reading this PR first:
