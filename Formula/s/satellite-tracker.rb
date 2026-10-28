@@ -1,8 +1,8 @@
 class SatelliteTracker < Formula
   desc "Terminal-based real-time satellite tracking and orbit prediction application"
   homepage "https://github.com/ShenMian/tracker"
-  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "2cfb81377db86b39faba1159fbbc81481eeb9418ae8c943a49d1aba5bc2b1473"
+  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "f09223c10ae65d8b6e92a6ce2fac6489c6f0f110fb014514988160ef47f2cd1a"
   license "Apache-2.0"
 
   bottle do
