@@ -1,8 +1,8 @@
 class Proxsuite < Formula
   desc "Advanced Proximal Optimization Toolbox"
   homepage "https://github.com/Simple-Robotics/proxsuite"
-  url "https://github.com/Simple-Robotics/proxsuite/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "468864235f99b0ab2a07571ba42481dfd64a05ae28c71f8fbc684d874fd1fdb9"
+  url "https://github.com/Simple-Robotics/proxsuite/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "57201b1b2d175e120f9fd27e0d024c1b087b65004da84ee65f0317256f1ac235"
   license "BSD-2-Clause"
   head "https://github.com/Simple-Robotics/proxsuite.git", branch: "devel"
 
