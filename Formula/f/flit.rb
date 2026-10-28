@@ -9,8 +9,7 @@ class Flit < Formula
   head "https://github.com/pypa/flit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1d78badaa0336a1c35a39b260476e893e22c3ad85c20e884ca9a0845af5b5dcc"
+    sha256 cellar: :any_skip_relocation, all: "20df208a1b9fee13ca2dca5eb6f4fb4471e66f08d3f1428d6df3eb91722e0f17"
   end
 
   depends_on "certifi"
