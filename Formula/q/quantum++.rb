@@ -7,7 +7,7 @@ class Quantumxx < Formula
   head "https://github.com/softwareQinc/qpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3945ee9bbfaf5da8a42c01330615bb3aad9268ab5fe3c6e9f5330c8e0e8e9b96"
+    sha256 cellar: :any_skip_relocation, all: "0c114651134bfb8e648f6a430cff3343f003c0e9388a606433bcae402216d384"
   end
 
   depends_on "cmake" => [:build, :test]
