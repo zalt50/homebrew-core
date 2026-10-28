@@ -3,10 +3,9 @@ class OpentimestampsClient < Formula
 
   desc "Create and verify OpenTimestamps proofs"
   homepage "https://opentimestamps.org"
-  url "https://files.pythonhosted.org/packages/3d/cb/15156c9bc8ab404e1fc2750a3b5aa4ecafccd632923776d61c875f116702/opentimestamps-client-0.7.2.tar.gz"
-  sha256 "083a08f59c3123682d6742cc57d3e229ed7b3397807638836efe3a949517accb"
+  url "https://files.pythonhosted.org/packages/53/d0/f4dafe2577576515fc7b55324c6404cb2008b584c1c7cc29343a2340b59d/opentimestamps_client-0.8.0.tar.gz"
+  sha256 "df8a25be1163bb46b410f6e43e0129ca18427d0d16d2890164a1fda7e5199d1c"
   license "LGPL-3.0-or-later"
-  revision 9
   head "https://github.com/opentimestamps/opentimestamps-client.git", branch: "master"
 
   bottle do
@@ -22,11 +21,6 @@ class OpentimestampsClient < Formula
 
   pypi_packages exclude_packages: "certifi"
 
-  resource "appdirs" do
-    url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
-    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
   resource "gitdb" do
     url "https://files.pythonhosted.org/packages/72/94/63b0fc47eb32792c7ba1fe1b694daec9a63620db1e313033d18140c2320a/gitdb-4.0.12.tar.gz"
     sha256 "5ef71f855d191a3326fcfbc0d5da835f26b13fbcba60c32c21091c349ffdb571"
@@ -38,8 +32,13 @@ class OpentimestampsClient < Formula
   end
 
   resource "opentimestamps" do
-    url "https://files.pythonhosted.org/packages/fb/2a/5f19420091d137e5a4c49cbe3de1964a3741d3264bad5e0a528e54aaef15/opentimestamps-0.4.5.tar.gz"
-    sha256 "56726ccde97fb67f336a7f237ce36808e5593c3089d68d900b1c83d0ebf9dcfa"
+    url "https://files.pythonhosted.org/packages/f5/f3/d99d0fee5bbfe7a36c62b89067a0f802fb107bc5c7cd720912640c840a6f/opentimestamps-0.5.0.tar.gz"
+    sha256 "c38e20e3970b821273c827a14365d3f8542aad390f26f340091daf10d4d2e428"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/1a/43/8c4b5fe23f0e119cf4e1b16c2d16240ab9057cdbb138568c91d5a48abf81/platformdirs-4.13.6.tar.gz"
+    sha256 "211d176e24674b5895dedf9021c262bcf9fad008a70610bfb147d4a8d6d8fe1b"
   end
 
   resource "pycryptodomex" do
