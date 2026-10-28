@@ -1,8 +1,8 @@
 class Checkpwn < Formula
   desc "Check Have I Been Pwned and see if it's time for you to change passwords"
   homepage "https://github.com/brycx/checkpwn"
-  url "https://static.crates.io/crates/checkpwn/checkpwn-0.6.2.crate"
-  sha256 "ab3ba2a2fe867307ae05121d24eef96527b25ca1ca8ef10d808b24e2e51c271e"
+  url "https://static.crates.io/crates/checkpwn/checkpwn-0.6.3.crate"
+  sha256 "8559fe476ecdbeb38d75896c817fa275ace1502cbe19e17f19bc9e81e735de2a"
   license "MIT"
   head "https://github.com/brycx/checkpwn.git", branch: "master"
 
