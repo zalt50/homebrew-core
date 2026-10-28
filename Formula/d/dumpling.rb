@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://github.com/pingcap/tidb/archive/refs/tags/v26.3.21.tar.gz"
-  sha256 "4af9c875702ad53ba9c3e1466c2c43e6f2dc1fd0082600ad9a961138b81f4f2a"
+  url "https://github.com/pingcap/tidb/archive/refs/tags/v26.3.22.tar.gz"
+  sha256 "9bc4d7701064e0d66e4f400d5c9bcfce318da788ee9bcf1802588b79798d0da0"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -25,6 +25,8 @@ class Dumpling < Formula
 
   deny_network_access!
 
+  def go = deps.find { |d| d.name.match?(/^go(@\d+(\.\d+)*)?$/) }.to_formula
+
   def fetch
     system "go", "mod", "download"
   end
@@ -36,7 +38,7 @@ class Dumpling < Formula
       -X #{project}/cli.BuildTimestamp=#{time.iso8601}
       -X #{project}/cli.GitHash=#{tap.user}
       -X #{project}/cli.GitBranch=#{version}
-      -X #{project}/cli.GoVersion=go#{Formula["go"].version}
+      -X #{project}/cli.GoVersion=go#{go.version}
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./dumpling/cmd/dumpling"
