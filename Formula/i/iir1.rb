@@ -1,8 +1,8 @@
 class Iir1 < Formula
   desc "DSP IIR realtime filter library written in C++"
   homepage "https://berndporr.github.io/iir1/"
-  url "https://github.com/berndporr/iir1/archive/refs/tags/1.11.0.tar.gz"
-  sha256 "1a0f702f6787d9d38dd54e96ae82a4764766c506eeaff47f84f63eba9b5774e0"
+  url "https://github.com/berndporr/iir1/archive/refs/tags/1.11.1.tar.gz"
+  sha256 "ee3ffd1c8b7d406cd5610d537a9e033d93e00f5db208ea0341f0dbd0472e486a"
   license "MIT"
 
   bottle do
@@ -14,14 +14,6 @@ class Iir1 < Formula
   end
 
   depends_on "cmake" => :build
-
-  # Fix odd-order bandpass/bandstop setup with libc++ (macOS)
-  patch do
-    url "https://github.com/berndporr/iir1/commit/8bdfa0f2a53d0e63cb870b82c039476ffeb97487.patch?full_index=1"
-    sha256 "03e9a3350311e503909b78dc397fb7f4a6817421f433ea9e575424c21e1900a5"
-    type :unofficial
-    resolves "https://github.com/berndporr/iir1/pull/73"
-  end
 
   deny_network_access!
 
