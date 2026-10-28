@@ -1,8 +1,8 @@
 class AmplMp < Formula
   desc "Open-source library for mathematical programming"
   homepage "https://ampl.com/"
-  url "https://github.com/ampl/mp/archive/refs/tags/v4.1.0.tar.gz"
-  sha256 "c75274fe2ef8b61f67826267e3c2cb339021c62d724659ab89a5b63c3959067d"
+  url "https://github.com/ampl/mp/archive/refs/tags/v4.2.0.tar.gz"
+  sha256 "4dc9e5e86e5b5c32764243e405f82b5168c300b85e3a5000485837cf0cfe3f69"
   license "MIT"
 
   livecheck do
