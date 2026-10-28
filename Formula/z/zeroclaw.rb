@@ -7,11 +7,11 @@ class Zeroclaw < Formula
   head "https://github.com/zeroclaw-labs/zeroclaw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cf30730b40326b82f4bf37c4c6e425b692c3740e16584ecf8b79b171def15b3b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7bfdaae70d8c217bb4261493cd891ee6ebb571c02c7bf243fa5505753afcdfe6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f348a22bf283fe85c9941a187271a3678f8db816f04a3436345ac3a05b3ad7ec"
-    sha256 cellar: :any,                 arm64_linux:       "39c479b2d0e45ddc4cc2a7e9187c991c2cb3a6271c8226f72ada3beb676bbcfe"
-    sha256 cellar: :any,                 x86_64_linux:      "f75ab89c03458653b421484e1403b2d30deedb04489449427482b0e2bbd321ab"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "999bb31d3f49eb1a3f5ba8853023694c285e8bc1a1afe30d61a9036f7969baa5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "090053167d12a9f3c198f9066c4a760203c73a471edd8b94e64326258be3f300"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5cd18864cde1f401e28f19812db13cfb67f76e98feebdd02b4af37323761f69f"
+    sha256 cellar: :any,                 arm64_linux:       "8d2e8ad8eb4ac1cc5df35df166a8e8c79dc5060b39a52b0bfb31db1c9bec94f1"
+    sha256 cellar: :any,                 x86_64_linux:      "7da71b843d33b9f8480604cf4943b13121c188aabe1e12d676f7872011ce159a"
   end
 
   depends_on "rust" => :build
