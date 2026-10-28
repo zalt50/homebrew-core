@@ -1,8 +1,8 @@
 class Rmlint < Formula
   desc "Extremely fast tool to remove dupes and other lint from your filesystem"
   homepage "https://rmlint.readthedocs.io/en/master/"
-  url "https://github.com/sahib/rmlint/archive/refs/tags/v2.10.3.tar.gz"
-  sha256 "8ffdbd5d09d15c8717ae55497e90d6fa46f085b45ac1056f2727076da180c33e"
+  url "https://github.com/sahib/rmlint/archive/refs/tags/v2.10.4.tar.gz"
+  sha256 "cecb379b64e2abad7350db7030b945b5b0d021e7f9a1e8f14725ebffe049d041"
   license "GPL-3.0-or-later"
 
   bottle do
