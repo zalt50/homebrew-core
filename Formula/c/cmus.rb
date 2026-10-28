@@ -7,13 +7,11 @@ class Cmus < Formula
   head "https://github.com/cmus/cmus.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "e8a9bd57f67c905a659ca77f16cdde838bb36abc86d74681eb0531d9ab096227"
-    sha256 arm64_tahoe:       "210377c9fda621f2405c82368826b836f477a2b6c810074ade5827d838bf3dd3"
-    sha256 arm64_sequoia:     "cfe58b83c5dcd733e8d0b30920ab783cb68518e6369fd7fa66f2a15f806fa72e"
-    sha256 arm64_sonoma:      "f051ca658766a48c546040fc6fed6d76f2a5014174e2ac8dddd34b23cfa36a88"
-    sha256 sonoma:            "e557635620a6cb4182d3ad7dd754b41ccfd41060183346e808236c2a4438626c"
-    sha256 arm64_linux:       "27ad28ba4977fe3cba76ba21fca347507b66fd97e297761224da4bcb2cc73d9b"
-    sha256 x86_64_linux:      "74ac30d857315bdd36ca022035ba04b2326486ead7c9ab44853536a48e807670"
+    sha256 arm64_golden_gate: "5cdce6ee3cb238d69a4aba58fc2b82df0f7a095b106572cbf98c354cd36b8f08"
+    sha256 arm64_tahoe:       "af3d32f2a8e2cf4c3f6342d4a6fff0dd9afd59eb9f59f66ab275c75468401eec"
+    sha256 arm64_sequoia:     "461ef110ead5c0019313800b617d3845d0f62fb025e59e852665f1df43cc22c8"
+    sha256 arm64_linux:       "a9f2afd50e9a9eacd8327bf714d2ee2a0650af79c4343db732bb415ffb67f05e"
+    sha256 x86_64_linux:      "ee3a1d735bea68bc6d9dd2d5777bd3d67b17607c93ec33871b2b1d9778a6a9e7"
   end
 
   depends_on "pkgconf" => :build
