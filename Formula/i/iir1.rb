@@ -6,11 +6,11 @@ class Iir1 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3300d0d3c06a6e59a83b74c7126a3ac0c58e16cb3119680eebe96950dcba7a44"
-    sha256 cellar: :any, arm64_tahoe:       "28211e7716a723bc05b8e67aed8803d6e3092251ccaca1236d229e99bfa071ab"
-    sha256 cellar: :any, arm64_sequoia:     "7802e9fdeea8127613b4900b0462b1ee067f8d409bebf231bad482bc9bc47690"
-    sha256 cellar: :any, arm64_linux:       "4cb49bdc4f4d558c6671787f4d5beed9ec4745c6578fa3e1c54e4166b740f8c3"
-    sha256 cellar: :any, x86_64_linux:      "185130fc20414a3487e6f5cd879c14b7ef9ec2830286e0879c8582537351a6f7"
+    sha256 cellar: :any, arm64_golden_gate: "fb1447fc77cd41cd22080c4b3cbaea302319df9cd2ca86b84fdae381a6cb8a8b"
+    sha256 cellar: :any, arm64_tahoe:       "2dd89ed006de829e65d26195f19f1d9a2e7a68bcd052789c963f0d9f92d52946"
+    sha256 cellar: :any, arm64_sequoia:     "c7364004c8cfb3e774dd350005cad09020123b4e31710eb1c0b2a1fa7f6690e5"
+    sha256 cellar: :any, arm64_linux:       "76b6fc1a45e0963f1c5bcdae2eb445baf60d8249d6272012318364159a325813"
+    sha256 cellar: :any, x86_64_linux:      "0e462e7b0cb0dc9b0d5e58c5271e0f0f1f3f6d2b26e5129df3332c7d6dff80c2"
   end
 
   depends_on "cmake" => :build
