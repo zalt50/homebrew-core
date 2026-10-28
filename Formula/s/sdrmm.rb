@@ -1,8 +1,8 @@
 class Sdrmm < Formula
   desc "Modular, client-server software-defined radio"
   homepage "https://github.com/Newspicel/sdrminusminus"
-  url "https://github.com/Newspicel/sdrminusminus/releases/download/v2.3.0/sdrmm-2.3.0-src.tar.gz"
-  sha256 "3bf3742697bc63edc5a48ebbba94e104dc421c63e203dea4a44466671b2c03bf"
+  url "https://github.com/Newspicel/sdrminusminus/releases/download/v2.4.0/sdrmm-2.4.0-src.tar.gz"
+  sha256 "7ab8e7bee285df6b4c611f19d49e2623bc69267a740643a05cf7172fafcd61e4"
   license "AGPL-3.0-or-later"
 
   bottle do
@@ -19,7 +19,7 @@ class Sdrmm < Formula
   depends_on "ffmpeg"
 
   uses_from_macos "llvm" => :build
-  uses_from_macos "sqlite"
+  uses_from_macos "sqlite", since: :tahoe # requires sqlite3_set_clientdata
 
   # starts a server to test with
   allow_network_access! :test
