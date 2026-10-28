@@ -1,10 +1,9 @@
 class Et < Formula
   desc "Remote terminal with IP roaming"
   homepage "https://mistertea.github.io/EternalTerminal/"
-  url "https://github.com/MisterTea/EternalTerminal/archive/refs/tags/et-v7.0.0.tar.gz"
-  sha256 "3580962861589c0b69efd6b385ff92ad8fdf688c91d1a0edc1a83278205e28e8"
+  url "https://github.com/MisterTea/EternalTerminal/archive/refs/tags/et-v7.1.0.tar.gz"
+  sha256 "6c1eacb22f3465af8edcdd814318e5e23a4cf3b8fc2e50a2525d2b2b3bf44016"
   license "Apache-2.0"
-  revision 5
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "55753551805383574a06066cacd01561db9b36b019609d17f358a711fbb77f80"
@@ -46,6 +45,9 @@ class Et < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
+    # Remove Windows-specific script
+    rm bin/"et1.cmd"
+
     etc.install "etc/et.cfg"
   end
 
@@ -60,23 +62,21 @@ class Et < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"etserver", "--port", port.to_s, "--logtostdout"
-    end
+    # Avoid the default `$HOME/.local/share/etserver` fifo directory, whose
+    # ancestor checks open `/` for reading and fail inside the Linux sandbox.
+    pid = spawn bin/"etserver", "--port", port.to_s, "--serverfifo", testpath/"etserver.fifo", "--logtostdout"
 
-    begin
-      require "socket"
-      Timeout.timeout(60) do
-        loop do
-          TCPSocket.open("127.0.0.1", port).close
-          break
-        rescue Errno::ECONNREFUSED
-          sleep 1
-        end
+    require "socket"
+    Timeout.timeout(60) do
+      loop do
+        TCPSocket.open("127.0.0.1", port).close
+        break
+      rescue Errno::ECONNREFUSED
+        sleep 1
       end
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
     end
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
