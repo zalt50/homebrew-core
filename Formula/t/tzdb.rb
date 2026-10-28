@@ -1,8 +1,8 @@
 class Tzdb < Formula
   desc "Time Zone Database"
   homepage "https://www.iana.org/time-zones"
-  url "https://data.iana.org/time-zones/releases/tzdb-2026e.tar.lz"
-  sha256 "4e9c4e9d4587443e716ed42a7070466c1e5975938fb530244a17cf6db883990b"
+  url "https://data.iana.org/time-zones/releases/tzdb-2026f.tar.lz"
+  sha256 "357829e3a16a78224d23f1ae2327704c1da1fd35f6769a7aac0682755fb9027a"
   license all_of: ["BSD-3-Clause", :public_domain]
 
   livecheck do
@@ -22,15 +22,13 @@ class Tzdb < Formula
     depends_on "gettext"
   end
 
-  def localtime
-    etc/"localtime"
-  end
+  deny_network_access!
 
   def install
     make_args = %W[
       CFLAGS=#{ENV.cflags}
       USRDIR=#{prefix}
-      TZDEFAULT=#{localtime}
+      TZDEFAULT=#{etc/"localtime"}
     ]
     make_args << "LDLIBS=-lintl" if OS.mac?
 
