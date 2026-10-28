@@ -11,11 +11,11 @@ class KubectlRadar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cef20906c31cd3af59fed73cd6e447194a92603d559d0853139bca1eca2af7c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cbcd858929437c592ae028bac9703a8381312fd3792dd2b29623160aee08feb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "13ce9e1edf5693aeeb55732b4b3c8ff7d5782a517fb8905ba6d14f312daa4af5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cacdca2df2f2055929f472a6ec193ae02cf120fd0a17dea04574a37eac053ce5"
-    sha256 cellar: :any,                 x86_64_linux:      "d31e6880d9d7bf2af5f8703def5f2c842110f72dc5f6bc936655756198cd181f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f1a88521df8c4b5cc9b19e5782edeb0f41daa8b71029463d1eae4175a6d1990b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9c7a39dd3ec12cfdeaab1d99457dd05d9f27104818e10a053fe9f7b822f6aa5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2d43676fef7eeec0542e950c087b96ad4949fa8a9dfbb7612f059e9632a537d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e36bce53c78c8f760268eb7e099a939dc954c7f6e0310c5bf8418270ea1d9034"
+    sha256 cellar: :any,                 x86_64_linux:      "6540a48ff8e6a83deafcbbe5015d0dc281857eea70a5ea9ec86e32621c92bca5"
   end
 
   depends_on "go" => :build
