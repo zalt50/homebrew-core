@@ -3,10 +3,9 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/4c/9c/2bcc6edae61778a28333af98d91e60c7216b210326180aaa27fae11d4587/otterdog-1.6.1.tar.gz"
-  sha256 "0bfabbceb9c923055a5d4bcb542f11c2ffa37bc73bc1addf22946f3b140c1426"
+  url "https://files.pythonhosted.org/packages/c9/fd/033fac3fb5506b6edd81621b1f8ad47cb76f56e968906a6b6c97a633ad6f/otterdog-1.7.0.tar.gz"
+  sha256 "0bc09559a687409a4dfd8a408fdf2c4c47ebc3ade943c080e6583ef4081eb3bf"
   license "EPL-2.0"
-  revision 1
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
@@ -31,8 +30,8 @@ class Otterdog < Formula
   # No sdist on PyPI, so we use the GitHub tarball
   # Ref: https://github.com/microsoft/playwright-python/issues/2579
   resource "playwright" do
-    url "https://github.com/microsoft/playwright-python/archive/refs/tags/v1.62.0.tar.gz"
-    sha256 "30cc72a0c00a22c3d287539233d3d6abd579becbfe7d02aef80bd3e75c951455"
+    url "https://github.com/microsoft/playwright-python/archive/refs/tags/v1.64.1.tar.gz"
+    sha256 "7fb347825975afdeabbf7284a273d2335fd05e64b6a3ed1ec005afaa7b8696a9"
 
     # We track poetry.lock version while PyPI sdist is not available as it
     # guarantees a compatible version is installed.
@@ -188,8 +187,8 @@ class Otterdog < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "propcache" do
