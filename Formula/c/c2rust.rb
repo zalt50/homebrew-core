@@ -20,13 +20,28 @@ class C2rust < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "tinycbor" => :build
-  depends_on "llvm@21"
+  depends_on "llvm"
 
   # Allow to build c2rust using brewed tinycbor
   patch do
     url "https://raw.githubusercontent.com/immunant/c2rust/9199011134df8ba95a12b8703fe708a947f06c7f/nix-tinycbor-cmake.patch"
     sha256 "2ee5b463cee25893b274b59d555df524558a40be92a768caf63dd859e9615806"
     type :cherry_pick
+  end
+
+  # Backport to apply subsequent patch
+  patch do
+    url "https://github.com/immunant/c2rust/commit/50f5cb3cc6044591ddcb54aa343606c34c7edba8.patch?full_index=1"
+    sha256 "89dbdca4a8db48eb6960db0fe066579a3c989c156270afcbb5e7b07bd1f24651"
+    type :backport
+  end
+
+  # Backport to support LLVM 22+. Using local patch to remove test changes from commit:
+  # https://github.com/immunant/c2rust/commit/756b1f9444719331aa69326c81b93ea0562add51.patch?full_index=1
+  patch do
+    file "Patches/c2rust/clang-22.patch"
+    type :backport
+    resolves "https://github.com/immunant/c2rust/pull/1671"
   end
 
   deny_network_access!
