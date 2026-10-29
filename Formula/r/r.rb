@@ -1,10 +1,9 @@
 class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
-  url "https://cran.r-project.org/src/base/R-4/R-4.6.1.tar.gz"
-  sha256 "4da6e61d2c0aac5f14a2e7e432cb5fcc269efe83da4293050ba7f03dff4e2cf4"
+  url "https://cran.r-project.org/src/base/R-4/R-4.6.2.tar.gz"
+  sha256 "c297040f6392b1dac6e5c0eb398422cfdaedf540ae2205edb9ad0d10cb10ee00"
   license "GPL-2.0-or-later"
-  revision 2
   compatibility_version 2
 
   livecheck do
