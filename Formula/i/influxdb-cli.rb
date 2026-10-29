@@ -1,8 +1,8 @@
 class InfluxdbCli < Formula
   desc "CLI for managing resources in InfluxDB v2"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
-  url "https://github.com/influxdata/influx-cli/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "a507a4d0a0f4858d575f5a5c343c0f80e00151715c381d8be402c8bb6c9b8769"
+  url "https://github.com/influxdata/influx-cli/archive/refs/tags/v2.9.1.tar.gz"
+  sha256 "5a16c3866640518339a31fe03a25c341f6f9ae5c2fbd149c5bc47e95e6e9e8b9"
   license "MIT"
   head "https://github.com/influxdata/influx-cli.git", branch: "main"
 
