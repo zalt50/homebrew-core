@@ -9,12 +9,11 @@ class Nvchecker < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "8ebdbfba133809bdc4cff56aeab7fc0d7f1704725893d507eb306a0fb3ba550d"
-    sha256 cellar: :any, arm64_tahoe:       "594da078c3449f65cdf95e9f9d4db59c7243e42a808ba455ae261d8be2da400a"
-    sha256 cellar: :any, arm64_sequoia:     "787b7cf47e3a4f973bc0d8101ca56d9b8de4ede7e32aca37aa99e77cabd97cc6"
-    sha256 cellar: :any, arm64_linux:       "4d3fc5dac03004c53c22d320470e9bd4155ae04c53a09bea085a4a026c1f140b"
-    sha256 cellar: :any, x86_64_linux:      "2b8a0c6294a31964bfe75388a0f0c22dac248230b79f14c936176eab679c8abb"
+    sha256 cellar: :any, arm64_golden_gate: "eb4af1006a992c013d4ba52f8eca8c58cfd8eeecca56f6ca8e1aab66028b7117"
+    sha256 cellar: :any, arm64_tahoe:       "9a024559a1bd7c2090b3f27dabe1794bf7b4d909a2bc19bd9d645ebee843dafc"
+    sha256 cellar: :any, arm64_sequoia:     "20c0a1e45d6a07b2b1125643c5647acd47c243dfcdb1d9bf80162cd96e7e5c88"
+    sha256 cellar: :any, arm64_linux:       "b32cf59cbc0d062347cad5cd6874e21dbf3af6aec3723b7fe32d748923573d7c"
+    sha256 cellar: :any, x86_64_linux:      "ea18dd19dd725e4ba64fb8602c25ba3641f4d2532bc578ee7958b30865958d13"
   end
 
   depends_on "curl"
