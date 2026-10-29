@@ -1,8 +1,8 @@
 class KubernetesMcpServer < Formula
   desc "MCP server for Kubernetes"
   homepage "https://github.com/containers/kubernetes-mcp-server"
-  url "https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.69.tar.gz"
-  sha256 "621e07933333f9915a55e02abe479be61251627657ad9e8467963f783f7e1c2b"
+  url "https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "37189b9939dabab68d2d5f0cb4eac20525027b2317d1d7f468d9e4144c97410d"
   license "Apache-2.0"
   head "https://github.com/containers/kubernetes-mcp-server.git", branch: "main"
 
