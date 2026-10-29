@@ -1,8 +1,8 @@
 class Nono < Formula
   desc "Capability-based sandbox shell for AI agents with OS-enforced isolation"
   homepage "https://nono.sh"
-  url "https://github.com/nolabs-ai/nono/archive/refs/tags/v0.80.0.tar.gz"
-  sha256 "d216e714883f237a5bac468a0141dc781a979eab2535957f63ecf27a1fffdc09"
+  url "https://github.com/nolabs-ai/nono/archive/refs/tags/v0.81.0.tar.gz"
+  sha256 "837f45a2ae4dbd93ff48e46fef280387c2fda7871e66feff8a210b89df4a1d9e"
   license "Apache-2.0"
 
   livecheck do
