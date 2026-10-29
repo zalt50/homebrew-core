@@ -6,7 +6,7 @@ class Serialize < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d41ca1ec8dbdcea346f46e39451c3915606954f8a241db82c02fc7b772ed9d11"
+    sha256 cellar: :any_skip_relocation, all: "90ce4b107b46ad984f6759513b7778aa629bc1bf9baf0f2977e0abf81461b9e5"
   end
 
   depends_on "cmake" => :build
