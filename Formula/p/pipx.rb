@@ -3,17 +3,13 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://pipx.pypa.io"
-  url "https://files.pythonhosted.org/packages/b4/98/47784ec304f6d6ca6643548c7ef828aeee53a715de7a48b0e4f72cc5778e/pipx-1.18.6.tar.gz"
-  sha256 "09af52e9b12c2b005a8d26c29c0e7da74d9690f3e47f6166d561733d35ffe736"
+  url "https://files.pythonhosted.org/packages/d9/48/135b5ce453bdee14f5a7a20a432ec7bb51a079c0f3a85b011a68b9f25ebe/pipx-1.18.7.tar.gz"
+  sha256 "cdeac1c999977b1847bbbff6b39c14a7d27cf2284dddc911d4410bcaec4ccec4"
   license "MIT"
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d6cd6f61cfa5a8a41ef2a979af9881e863598055060c00b02579bb69beb5f17e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6cd6f61cfa5a8a41ef2a979af9881e863598055060c00b02579bb69beb5f17e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d6cd6f61cfa5a8a41ef2a979af9881e863598055060c00b02579bb69beb5f17e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0927ed375814394bfbdc7d1a75525526d891b56706ddeb537c683a2044e65799"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0927ed375814394bfbdc7d1a75525526d891b56706ddeb537c683a2044e65799"
+    sha256 cellar: :any_skip_relocation, all: "b37872b6aec0cbbf5f5ffcb34f5b927c981bbfca7a7076962b9422b6ba53c4ea"
   end
 
   depends_on "python@3.15"
@@ -39,8 +35,8 @@ class Pipx < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1a/43/8c4b5fe23f0e119cf4e1b16c2d16240ab9057cdbb138568c91d5a48abf81/platformdirs-4.13.6.tar.gz"
-    sha256 "211d176e24674b5895dedf9021c262bcf9fad008a70610bfb147d4a8d6d8fe1b"
+    url "https://files.pythonhosted.org/packages/35/e9/bf409046a91b6a9ca652e9b0ac3c39481674f6774e23e58b52315516099a/platformdirs-4.13.7.tar.gz"
+    sha256 "f7f351c027d6632c30471124e1fdb6ac0fef9ccc5cbac1b34cb333431b1fc3e1"
   end
 
   resource "userpath" do
