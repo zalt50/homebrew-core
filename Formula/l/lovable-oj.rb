@@ -1,8 +1,8 @@
 class LovableOj < Formula
   desc "Experimental next generation frontend tooling"
   homepage "https://github.com/lovablelabs/oj"
-  url "https://github.com/lovablelabs/oj/archive/refs/tags/v0.2.52.tar.gz"
-  sha256 "87056f156d0abd6469ef5cabd03bd4be4b4950325a8c7bd894bd073dec7ff263"
+  url "https://github.com/lovablelabs/oj/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "9b2cb6d53da1f9ae1a3565f2b773e2bcc87df9c400924ed81b19ccef884593ea"
   license "MIT"
   head "https://github.com/lovablelabs/oj.git", branch: "main"
 
@@ -28,6 +28,11 @@ class LovableOj < Formula
   allow_network_access! :build
 
   def install
+    # Work around SIGKILL on arm64 linux runner from fat LTO
+    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
+                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+    ENV["CARGO_PROFILE_RELEASE_LTO"] = "thin" if github_arm64_linux
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args(path: "crates/oj")
