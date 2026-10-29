@@ -1,8 +1,8 @@
 class Bqlog < Formula
   desc "Cross-language logging library"
   homepage "https://github.com/Tencent/BqLog"
-  url "https://github.com/Tencent/BqLog/archive/refs/tags/Release_2.7.2.tar.gz"
-  sha256 "7a8071333f3fccdf933f15f15024e370fae5717e076f3d7796de4000a3e47c81"
+  url "https://github.com/Tencent/BqLog/archive/refs/tags/Release_2.7.3.tar.gz"
+  sha256 "fa4fe3b29a79c23919206f9cc5d310614517afe58aad7e1aac1d08e04803a74a"
   license "Apache-2.0"
   head "https://github.com/Tencent/BqLog.git", branch: "main"
 
