@@ -1,8 +1,8 @@
 class Chopper < Formula
   desc "Filter and trim long-read sequencing data by quality and length"
   homepage "https://github.com/wdecoster/chopper"
-  url "https://github.com/wdecoster/chopper/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "899c3bb3e20da9b5ac232b413033dcc26e09c71f3aa222498ba25f4241fed56f"
+  url "https://github.com/wdecoster/chopper/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "9193c545fca75eb580b0d04f2434fa2f36fbb6a95969c38956546ba0aaac0576"
   license "MIT"
   head "https://github.com/wdecoster/chopper.git", branch: "master"
 
