@@ -1,9 +1,9 @@
 class Aspell < Formula
   desc "Spell checker with better logic than ispell"
   homepage "http://aspell.net/"
-  url "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.2.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/aspell/aspell-0.60.8.2.tar.gz"
-  sha256 "57fe4863eae6048f72245a8575b44b718fb85ca14b9f8c0afc41b254dfd76919"
+  url "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.3.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/aspell/aspell-0.60.8.3.tar.gz"
+  sha256 "0534eae11132405120d11e46bf595bd5dd189bc124ba77a5dd6aae861b48a162"
   license "LGPL-2.1-only"
   compatibility_version 1
 
@@ -122,9 +122,9 @@ class Aspell < Formula
   end
 
   resource "en" do
-    url "https://ftpmirror.gnu.org/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2"
-    mirror "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2"
-    sha256 "4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3"
+    url "https://ftpmirror.gnu.org/aspell/dict/en/aspell6-en-2026.02.25-0.tar.bz2"
+    mirror "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2026.02.25-0.tar.bz2"
+    sha256 "77a5cb437c45d1115f3b593802c20651d8c93803ed1073278dc1a1240016f10d"
   end
 
   resource "eo" do
