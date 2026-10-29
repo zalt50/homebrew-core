@@ -8,11 +8,11 @@ class Ffmpegthumbnailer < Formula
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ed1dfa202553d02e4725c73f39943a8d31588024c32bae86ded123c3e763cbfe"
-    sha256 cellar: :any, arm64_tahoe:       "e6fb754b04946426830ad3b6f75a19e197e01c512ca440904d4d1dfeb6b852a4"
-    sha256 cellar: :any, arm64_sequoia:     "f4a27514b90c933bff1ebfb2bebe39129d8e0acccc715c25b4143b6497ba2458"
-    sha256 cellar: :any, arm64_linux:       "8c5e09a4f51e223fac402580e5b5367fb28106eda87a2a71e0c6b397b0f39dcf"
-    sha256 cellar: :any, x86_64_linux:      "b5b3af4a888248c20f423018c45833ba1782a8ed234df12a4f83a7d7c0df6708"
+    sha256 cellar: :any, arm64_golden_gate: "45ea24d61f5136608419650a77691f3849d0b0399a4293bc507f859c43ac2523"
+    sha256 cellar: :any, arm64_tahoe:       "c9ff10aee8faa1ee031739de1e434218fd7925801618c48a0da688bbaba0bc31"
+    sha256 cellar: :any, arm64_sequoia:     "2b642810fe81ed407220413df34259e81aeebd2dd675f4f80252a68a16551385"
+    sha256 cellar: :any, arm64_linux:       "ddf034f5725cfbba42be4acf597af6d42e056eead5603c1ff13bfc9ef0494375"
+    sha256 cellar: :any, x86_64_linux:      "80160c522eaffd221af58efccc52d50d6a3dcd59c1555709f14ac1cb737bfa9a"
   end
 
   depends_on "cmake" => :build
