@@ -8,13 +8,11 @@ class Aspell < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "da86af9ecbf74819b43e3ab8078fb5c8405f1f07a2dcee5f43b2520dbf7694d2"
-    sha256 arm64_tahoe:       "1039dbbb1d5abd5d4f78a211fdcaa5657456a153b2282bda45ebffe6c0ab1b70"
-    sha256 arm64_sequoia:     "f071da3a05bb8d84d2df84df586f0e1a940934e630010f77673339ef69ee867d"
-    sha256 arm64_sonoma:      "59b57e67fc77ef33808fe1f09068374e26bedf89d6ac1401c6c3d4ebf944b617"
-    sha256 sonoma:            "d67764dd08b363fcb93aaf020abb592a42f7c21756f657d041107e5f2c103ad5"
-    sha256 arm64_linux:       "d1fa3353d7b6b6bd701d26c1bf3aeaf08c5651d1627d8752b5c875c16d4722d6"
-    sha256 x86_64_linux:      "e45cb5f81053dc9584b97659e14aa7c5e4698aa807fa9739b97008a1a62d8792"
+    sha256 arm64_golden_gate: "4a7c8cd4d55b0dc6179cbf23841947f2ed6e7e9847f744533af8f7dcd3d3f510"
+    sha256 arm64_tahoe:       "959842249ce6867739a9dcb33e90a1c229390e9f7c9330000565a5fae6e8af95"
+    sha256 arm64_sequoia:     "69f5322ba8aa4f5ff42aaea572a99531921cb157456cf61cf423f83dfea78755"
+    sha256 arm64_linux:       "c111297f4961accb404a063bfd7b65c40a12517e57dbd433ba2d6095f0f8251d"
+    sha256 x86_64_linux:      "52107876f0603c51d19e5633a1ceb47bf1d921ff1dc05c520472da784186b56c"
   end
 
   uses_from_macos "ncurses"
