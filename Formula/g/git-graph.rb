@@ -12,11 +12,11 @@ class GitGraph < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59a32f7666dfe4d56cb4584eb8f6cb3ebe5ced1a990d2712b242c12f8a490526"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ef93eb2d8ba2da7378ed0cf0dfd6405ce6de4e8d1e5a2dcf0380f276753b7899"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "497c5b47bda7bd9a6d42cc18d842bd1989d6be6a1be53fc6a7c8af71ac53b22f"
-    sha256 cellar: :any,                 arm64_linux:       "75fed9f1b4a1ade419c7475b46def26957e08cf861023de22dd964eb3c255194"
-    sha256 cellar: :any,                 x86_64_linux:      "d2656923d0df679f2718609aa65fa6b7a5008e289f976517050f265ed461aaac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29794bac9844c0a4961e6da18018387b4c55c2f54a281224b57c7e654807940a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fadb365cd2b141445e372c3bebfb3524ea1e6a2fb93e5f13a78796a85afd1802"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b993f1de711d7ffc13c87c7e4b6ed503dcf57176dfdaf4c0ac824f7be43e6f6a"
+    sha256 cellar: :any,                 arm64_linux:       "8284865603884f2d9068fcafe36dda48d3e6d33546b3424b5742324c7a8f68ae"
+    sha256 cellar: :any,                 x86_64_linux:      "af504cb499a38b38021cb386a5033a5d3c3a6dacc8c3545dac96d8dcf0588572"
   end
 
   depends_on "rust" => :build
