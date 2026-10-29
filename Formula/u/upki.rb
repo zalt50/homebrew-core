@@ -6,6 +6,14 @@ class Upki < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rustls/upki.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f63762c14c587321f93c77c46ade2c62ebee31ab6f81894d20f731faa1fcdfae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db282ce2e884226f663b69d68750c5cfa827cd9c0521c7749773d8d111fb2d6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "934200e02001b9654e768c45a10e5e1399606a90bd4637d2a5afd25ca59c39a7"
+    sha256 cellar: :any,                 arm64_linux:       "0e98aff119cb383b1d39afb75918454c656ab3aaab8003d5fa57aa06bb6277c9"
+    sha256 cellar: :any,                 x86_64_linux:      "b6495a7da4a093588ab618dd22e4c9cde2216863d965e31cad713cbc645b4f94"
+  end
+
   depends_on "rust" => :build
 
   allow_network_access! :test
