@@ -1,14 +1,15 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
-  url "https://github.com/halide/Halide/archive/refs/tags/v22.0.0.post1.tar.gz"
-  version "22.0.0"
-  sha256 "0f219a9b2cb0f0dcffcaded095587c5c495ea2ea663fc92b18157500a9f2c4ba"
+  url "https://github.com/halide/Halide/archive/refs/tags/v22.0.0.post3.tar.gz"
+  version "22.0.0.post3"
+  sha256 "de3e1a168de2a326eb9739e59fb2305fab58cb55085c8f11b2764adc0e1463d2"
   license "MIT"
   head "https://github.com/halide/Halide.git", branch: "main"
 
   livecheck do
     url :stable
+    regex(/^v?(\d+(?:\.\d+)+(?:\.post\d+)?)$/i)
     strategy :github_latest
   end
 
@@ -22,33 +23,16 @@ class Halide < Formula
 
   depends_on "cmake" => :build
   depends_on "flatbuffers" => :build
+  depends_on "nanobind" => :build
   depends_on "ninja" => :build
   depends_on "python@3.15" => [:build, :test]
-  depends_on "robin-map" => :build # for nanobind
   depends_on "lld"
   depends_on "llvm"
   depends_on "wabt" => :no_linkage
 
-  # Need nanobind < 2.12
-  resource "nanobind" do
-    url "https://github.com/wjakob/nanobind/archive/refs/tags/v2.11.0.tar.gz"
-    sha256 "62ba05e5f720c76c510d6ab2a77f8ccc17a76c5cea951bea47355a7dfa460449"
-  end
-
   deny_network_access!
 
   def install
-    resource("nanobind").stage do
-      system "cmake", "-S", ".", "-B", "build",
-                      "-DNB_TEST=OFF",
-                      "-DNB_USE_SUBMODULE_DEPS=OFF",
-                      "-DNB_CREATE_INSTALL_RULES=ON",
-                      *std_cmake_args(install_prefix: buildpath)
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-      ENV.prepend_path "CMAKE_PREFIX_PATH", buildpath/"nanobind"
-    end
-
     llvm = deps.map(&:name).find { |f| f.match?(/^llvm(@\d+(\.\d+)*)?$/) }
     site_packages = prefix/Language::Python.site_packages(python3)
     rpaths = [rpath, rpath(source: site_packages/"halide")]
@@ -57,11 +41,11 @@ class Halide < Formula
       "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
       "-DHalide_INSTALL_PYTHONDIR=#{site_packages}/halide",
       "-DHalide_LLVM_SHARED_LIBS=ON",
-      "-DWITH_TESTS=NO",
+      "-DWITH_TESTS=OFF",
     ]
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
-    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
