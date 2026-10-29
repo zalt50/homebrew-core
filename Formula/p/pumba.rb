@@ -1,8 +1,8 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
   homepage "https://github.com/alexei-led/pumba"
-  url "https://github.com/alexei-led/pumba/archive/refs/tags/1.3.0.tar.gz"
-  sha256 "f2f84bf57d97e5c4cf90307c7f1db284c0e4a25a42ac5d8c864af9cd0169303f"
+  url "https://github.com/alexei-led/pumba/archive/refs/tags/1.3.1.tar.gz"
+  sha256 "5cf7a678b309a780b7838d180c96491e99df38a25a3b23da2aac2c96f3793de3"
   license "Apache-2.0"
   head "https://github.com/alexei-led/pumba.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Pumba < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9d0bf4add8a5be45644c06dfa00ec910cb56ae2bb28522cc5da1d935b1f1921"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f9d0bf4add8a5be45644c06dfa00ec910cb56ae2bb28522cc5da1d935b1f1921"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f9d0bf4add8a5be45644c06dfa00ec910cb56ae2bb28522cc5da1d935b1f1921"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "363a886bfb0517e6ca6cdb6e7b7154a266a3ac58e71eb11c46953d440e5d7835"
-    sha256 cellar: :any,                 x86_64_linux:      "10fba1b46a4e3070ecd8d013703de58284daef6d075d54121cee1d61b803ec0f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33a37e1426852e2008e6ef3df325b0d125d4f4d53ca205970f64e0cc00dc7f38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33a37e1426852e2008e6ef3df325b0d125d4f4d53ca205970f64e0cc00dc7f38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "33a37e1426852e2008e6ef3df325b0d125d4f4d53ca205970f64e0cc00dc7f38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "99f953cc2bbabc2070b3783bd02994416b5672076246168de24acb41e89a2db9"
+    sha256 cellar: :any,                 x86_64_linux:      "596b0274ace51e39d8de9337e94ddc9923c8db7625ff98e5f7d11acf3f483b70"
   end
 
   depends_on "go" => :build
