@@ -6,7 +6,7 @@ class Sandvault < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a9da27a2d6e031b511f420c041ac43f7d9c7e7b89e71b393b5c5b06e3ad9403e"
+    sha256 cellar: :any_skip_relocation, all: "924e98ce47fdb7b2ddbb8846d7679e12374babf157f16b2c4c0b1eab2daac319"
   end
 
   depends_on :macos
