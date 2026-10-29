@@ -1,8 +1,8 @@
 class Lazycontainer < Formula
   desc "Terminal UI for Apple Containers"
   homepage "https://github.com/andreybleme/lazycontainer"
-  url "https://github.com/andreybleme/lazycontainer/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "b7aa9e050f947c7e99c7059eed75477711e1f558d0b0c90098421bee196e1a64"
+  url "https://github.com/andreybleme/lazycontainer/archive/refs/tags/v0.0.3.tar.gz"
+  sha256 "171388ec6706b67a30bc129addf56910b6fc3a1811f7fae4200a9314e5e834e0"
   license "MIT"
   head "https://github.com/andreybleme/lazycontainer.git", branch: "main"
 
