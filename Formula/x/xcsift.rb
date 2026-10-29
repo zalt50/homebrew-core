@@ -7,11 +7,11 @@ class Xcsift < Formula
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0349ce7a5aad0614659162d560fe82d5fa406a3bfe69be6975ca90f7d1384620"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "88d7a26071ac354ea56647c409e7cd2ba39dcb26e51f2e455398d6417290ea03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e695031baadd33bf209713016a067b2fffa4da0ef218cfc96bfa1b6698cfce4b"
-    sha256 cellar: :any,                 arm64_linux:       "095c0d8f59b762a6263f130843f405eeb8c50b6fad94a8fbb42897bf4d3cb85f"
-    sha256 cellar: :any,                 x86_64_linux:      "04c3e0260550045982b7740f4839de3c9edc983d7859f170d00c378be1718905"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4f7ae2aa8f384cf8553060293e2fa6b5d87bbdde82ad3c58d0e03e9b1b51c191"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7f5ac3889e178b6be3ed2204d6274df0ce81d7d56ddca84ed16de67ad1168fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3c895f540de06d3cd343215d68ccd05748279e95397fca36cae27617657b0241"
+    sha256 cellar: :any,                 arm64_linux:       "48c3ffb52c987460472384dd2499f1f1f9d32e9fd3735396724238bde84ff1ae"
+    sha256 cellar: :any,                 x86_64_linux:      "dce16b4f7d0fd23b4c8f36912868fc7c0d0a4f3719e016fc798353c3d5143e63"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma
