@@ -7,6 +7,10 @@ class Calcure < Formula
   sha256 "8789ca5bb14c8018809a58cd50e7be2974e1d1cb0f67fb0af170d1cccb0cfc9d"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "4ca5b71978d27bf939451a8deb88b7356a0621a629eb49ca86164dbde90a4e5f"
+  end
+
   depends_on "python@3.15"
 
   resource "holidays" do
