@@ -4,6 +4,7 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.7/VTK-9.7.1.tar.gz"
   sha256 "cae04fd355004cb916a409db79d53a208f1221e975aeacc7540ee67b148ee91a"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 4
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
@@ -40,7 +41,7 @@ class Vtk < Formula
   depends_on "nlohmann-json"
   depends_on "proj"
   depends_on "pugixml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "qtbase"
   depends_on "qtdeclarative"
   depends_on "sqlite"
