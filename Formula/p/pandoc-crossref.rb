@@ -7,11 +7,11 @@ class PandocCrossref < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5a609afd665dd410efee9f02f56492f9cf01b1e759f98c7e2c7415c0c6c27a1b"
-    sha256 cellar: :any, arm64_tahoe:       "0cc712dd5947e619e19884d9122b63de67cbb246683de98a37cd8c8390fe10d8"
-    sha256 cellar: :any, arm64_sequoia:     "3cb845d198d2b5bcbdd7de42fb5852bd268ac9cfbafb9a82dc2cb218fdbfc953"
-    sha256 cellar: :any, arm64_linux:       "408cb50591b572a3cd83ba64fbd90935e08dafba71651274f1b0fb6ef1dac916"
-    sha256 cellar: :any, x86_64_linux:      "3a4d7031b99556503d662c964d32e0ca4419e5fdb14fb39722d6a0ae8e661f89"
+    sha256 cellar: :any, arm64_golden_gate: "40055739827ce7268fb094e894dd6c717df224a5d7f14db76ea3ffbaa256e26c"
+    sha256 cellar: :any, arm64_tahoe:       "cc2d2cc96012d76a2df53d51e0cdb06eedf205745055ba6e2b88d2f9b9cdfcb7"
+    sha256 cellar: :any, arm64_sequoia:     "16d3ba470cdb85d60094be727ee974391a852fa35f37c5d1750ae1aa6b4c20e7"
+    sha256 cellar: :any, arm64_linux:       "dc949778c90c942fe81fd7e04fd2ba957ab7180cada566637d00f55d056b11a6"
+    sha256 cellar: :any, x86_64_linux:      "95bb6da0527fa0c6ce287c828ee21e5e60a2d020b9577b9265c01d1df6ec917d"
   end
 
   depends_on "cabal-install" => :build
