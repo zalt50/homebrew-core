@@ -7,12 +7,11 @@ class Tbb < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "6ae99a7c34b8c0a6cd72c3653dd512f8ad218a471075809b275098ad5f804de4"
-    sha256 cellar: :any, arm64_tahoe:       "5977af4c4c89fae7f009db5bd7d2135812f2c221292a807c647ab38a3bd304e0"
-    sha256 cellar: :any, arm64_sequoia:     "fd554cce2ad4eedac6dc6e3b02c7f5e8a747d11df848eb2ad4a7f45d07b8671a"
-    sha256 cellar: :any, arm64_linux:       "0fc12ed8515e5e018d90ff5e312c8060d41e89d0acc4760da7b0305b3e02120c"
-    sha256 cellar: :any, x86_64_linux:      "aa6c40cd2cdd30cc9943b294382a2bdb1cb241bcfca6521429f82a88da06b15e"
+    sha256 cellar: :any, arm64_golden_gate: "3d1677c85dad2c9d18fce14e69d12d3a0521226afa1c1b9e87bc6f2ed4e6078e"
+    sha256 cellar: :any, arm64_tahoe:       "245d6a77dc0e52db1c57c41558b175f9746bb08dea5cadc8fe0a46683479871d"
+    sha256 cellar: :any, arm64_sequoia:     "b42c154310ff3819dd5efcef8a52e6f12547bf52d2299c9e60bf88e4c22b46bd"
+    sha256 cellar: :any, arm64_linux:       "2f9bc4dafac1d7c87755199bb4473ab56ad2e614069e6a8ec552ccd2be215ab7"
+    sha256 cellar: :any, x86_64_linux:      "a487a69a8296f6f1cf116ab66fa01113dd2729993bf64da38030f5523c983805"
   end
 
   depends_on "cmake" => :build
