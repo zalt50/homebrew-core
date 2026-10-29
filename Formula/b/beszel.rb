@@ -6,6 +6,14 @@ class Beszel < Formula
   license "MIT"
   head "https://github.com/henrygd/beszel.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "64c234488976fa10ba49215fbb967e763446ba83b603b8c460df07a3788d152c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "64c234488976fa10ba49215fbb967e763446ba83b603b8c460df07a3788d152c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64c234488976fa10ba49215fbb967e763446ba83b603b8c460df07a3788d152c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "306555ef268d9090431d43f1a17d78ce5fe5cd5b8192d242b471de76f3953c4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5bb8fcaf6656abff89ed73f848ea46705ccb2ea9dc7b71df84b2af13e329175c"
+  end
+
   depends_on "go" => :build
   depends_on "node" => :build
 
