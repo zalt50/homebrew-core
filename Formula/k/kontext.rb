@@ -1,8 +1,8 @@
 class Kontext < Formula
   desc "Identity, credentials, and governance for AI agents"
   homepage "https://kontext.security"
-  url "https://github.com/kontext-security/kontext/archive/refs/tags/v1.17.0.tar.gz"
-  sha256 "8b99aee2c93857541de72f663d94ae29b94416e34769c609a9ac0d27f7c6a1bd"
+  url "https://github.com/kontext-security/kontext/archive/refs/tags/v1.17.1.tar.gz"
+  sha256 "d7bedbf14eba459ef19082b30d94af0ac6084539cd0696e4688fac1c072a769a"
   license "MIT"
   head "https://github.com/kontext-security/kontext.git", branch: "main"
 
