@@ -7,6 +7,14 @@ class Libkrunfw < Formula
   sha256 "df45d649fcbd07a4d0ca03fa836b2f640fdcf9b40187f3eb7023259c6e83d582"
   license all_of: ["LGPL-2.1-only", "GPL-2.0-only"]
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "8d4cd72051db87808843705c667a3c992d3a7a5d24ea268aece14b5577c901b7"
+    sha256 cellar: :any, arm64_tahoe:       "bc287d2702399aeca644a9aa37c015e5294cb9f87ee7324f1f75230e2b4175ef"
+    sha256 cellar: :any, arm64_sequoia:     "7ae8b88c80ed555bf2a71cc4eb3311db7e7c3b188fa3cb5b8b41694d1c8dfb33"
+    sha256 cellar: :any, arm64_linux:       "a41c4c317993e54d90da89e221cc8621ad17e536a2a71b458e7c468eeb5b7643"
+    sha256 cellar: :any, x86_64_linux:      "b3e1b3eab7d80456a75fc5e3e39d2cbef810d92ec2b45ae1b1c2520c08d4c0a6"
+  end
+
   depends_on "python@3.15" => :build
   depends_on "xz" => :build
 
