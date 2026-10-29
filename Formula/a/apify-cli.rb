@@ -1,8 +1,8 @@
 class ApifyCli < Formula
   desc "Apify command-line interface"
   homepage "https://docs.apify.com/cli/"
-  url "https://registry.npmjs.org/apify-cli/-/apify-cli-1.10.0.tgz"
-  sha256 "40322cc78c95f502e4995752bc9e7d53c6509204d6a94dc24b1f8ebc9174d2d5"
+  url "https://registry.npmjs.org/apify-cli/-/apify-cli-1.11.0.tgz"
+  sha256 "bdb2adfc374aeb876e0d183c6c4fb4975691b795a6e28b5758abf2277d15bb70"
   license "Apache-2.0"
 
   no_autobump! because: :bumped_by_upstream
