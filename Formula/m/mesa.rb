@@ -3,8 +3,6 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-26.2.6.tar.xz"
-  sha256 "b9436b3e1a8be76fbd4823dc884f90596ab7c6ac5e1867a305e66ffccfb31a92"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -23,6 +21,31 @@ class Mesa < Formula
   compatibility_version 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
+  stable do
+    url "https://archive.mesa3d.org/mesa-26.2.6.tar.xz"
+    sha256 "b9436b3e1a8be76fbd4823dc884f90596ab7c6ac5e1867a305e66ffccfb31a92"
+
+    # Backport support for libclc 23
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/1219dc3f7fe83b1f7f200190bf02a86ab57b3d4f.diff"
+      sha256 "fc37a2bd7b90ece96891b243f04cdeedfcb6b7174acade63265b75fa21ace948"
+      type :backport
+      resolves "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/44624"
+    end
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/62ee563fd398169005906245831db680f813b19f.diff"
+      sha256 "c34a45743e5426b89c869853c4989c856118bbc21b2556444df14f80c30c2679"
+      type :backport
+      resolves "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/44624"
+    end
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/6b9cd5ab9cc3bfd0c79d9500a07a5e74351c72d1.diff"
+      sha256 "873a8d0d632902604f9c46465e9dab58738092af18a6b748af529eb91fc26116"
+      type :backport
+      resolves "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/44624"
+    end
+  end
+
   bottle do
     sha256 arm64_golden_gate: "08a8d9a89a2e614fa307be2607bf0b327005c0ab09ae34179772cbaedaacbbc4"
     sha256 arm64_tahoe:       "103307b847dce793acdbdb7f6945bca4361804bae0d60709c0c4dac13f5832da"
@@ -33,13 +56,11 @@ class Mesa < Formula
 
   depends_on "bindgen" => :build
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
-  depends_on "cmake" => :build # for mesa-libclc
   depends_on "glslang" => :build
   depends_on "libxrandr" => :build
   depends_on "libxrender" => :build
   depends_on "libxshmfence" => :build
   depends_on "libyaml" => :build
-  depends_on "llvm@22" => :build # FIXME: https://github.com/rust-lang/rust-bindgen/issues/3397
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
@@ -47,6 +68,7 @@ class Mesa < Formula
   depends_on "rust" => :build
   depends_on "xorgproto" => :build
 
+  depends_on "libclc" => :no_linkage # OpenCL support needs libclc.spv files at runtime
   depends_on "libpng"
   depends_on "libx11"
   depends_on "libxcb"
@@ -115,18 +137,6 @@ class Mesa < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  # Mesa is not compatible with LLVM 23+ libclc as it no longer provides spirv64-mesa3d-.spv.
-  # Until Mesa updates to handle it, use mesa-libclc which Mesa applies fixes to:
-  # https://gitlab.freedesktop.org/mesa/mesa/-/commit/b8f6be5a51b0952e4b2fc2a71d42eedea884739e
-  resource "mesa-libclc" do
-    url "https://gitlab.freedesktop.org/karolherbst/mesa-libclc/-/archive/22.1.8.3/mesa-libclc-22.1.8.3.tar.bz2"
-    sha256 "ff6c01fb68c4b885e13400c50298ee6a8bfcf3ac5995cf3039565f6814095226"
-
-    livecheck do
-      url :url
-    end
-  end
-
   resource "glxgears.c", :test do
     url "https://gitlab.freedesktop.org/mesa/demos/-/raw/mesa-demos-9.0.0/src/xdemos/glxgears.c"
     sha256 "344a03aff01708350d90603fd6b841bccd295157670f519b459bbf3874acf847"
@@ -148,21 +158,8 @@ class Mesa < Formula
   end
 
   def install
-    resource("mesa-libclc").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-      ENV.prepend_path "PKG_CONFIG_PATH", share/"pkgconfig"
-    end
-
-    # TODO: Remove once bindgen issue is fixed: https://github.com/rust-lang/rust-bindgen/issues/3397
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("llvm@22"))}[^:]*/
-    ENV.remove "HOMEBREW_DEPENDENCIES", "llvm@22"
-    ENV["CLANG_PATH"] = formula_opt_bin("llvm@22")/"clang"
-
     venv = virtualenv_create(buildpath/"venv", python3)
-    venv.pip_install resources.reject { |r| r.test? || r.name == "mesa-libclc" || (OS.mac? && r.name == "ply") }
+    venv.pip_install resources.reject { |r| r.test? || (OS.mac? && r.name == "ply") }
     ENV.prepend_path "PYTHONPATH", venv.site_packages
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}" if OS.mac?
