@@ -7,11 +7,11 @@ class Forcecli < Formula
   head "https://github.com/ForceCLI/force.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c027a1147a8b1349fa0f0c57e5e0bc99b24c7acdfeac2bf36387b477ca898e8d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c027a1147a8b1349fa0f0c57e5e0bc99b24c7acdfeac2bf36387b477ca898e8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c027a1147a8b1349fa0f0c57e5e0bc99b24c7acdfeac2bf36387b477ca898e8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c7e892790050daa6de21e87e88a3eb392114156e1aca4c295725a99e61d64bbd"
-    sha256 cellar: :any,                 x86_64_linux:      "ac4d659cb5f8c3d32432d6a3db1cc19812046fb38a957c41c7505d1f05a59506"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52191a2927f2f3d134526f154b735120116c3c801002022085e2bbc0009be72e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52191a2927f2f3d134526f154b735120116c3c801002022085e2bbc0009be72e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "52191a2927f2f3d134526f154b735120116c3c801002022085e2bbc0009be72e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4a84a5bfd768cdc09ed3867705cc136daa3a0aed9e91a735add55d0c4a95248"
+    sha256 cellar: :any,                 x86_64_linux:      "633f0cb8ebab217e3f8dce324a72ad68c8bb5869687a503172f16222b8e5e855"
   end
 
   depends_on "go" => :build
