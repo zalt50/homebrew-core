@@ -1,11 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.5-source.tar.gz"
-  sha256 "98a5c10cda20c3992cdf76ff6b2a1149c32bd79cc796d3f703230b1185b7e934"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.6-source.tar.gz"
+  sha256 "dc85000640a45d90ca9b77b061f6ca67cce0c4d4fbecf8819647baf573eef101"
   license "AGPL-3.0-or-later"
-  revision 2
-  compatibility_version 8
+  compatibility_version 9
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -53,8 +52,8 @@ class Mupdf < Formula
   # Currently, some source of mujs is required for building mupdf, so can't use formula
   # Issue ref: https://bugs.ghostscript.com/show_bug.cgi?id=708968
   resource "mujs" do
-    url "https://mujs.com/downloads/mujs-1.3.10.tar.gz"
-    sha256 "6e36c15dbb84ff859320297c900852f241b131a7b6ddaea669ac9a65bd75571c"
+    url "https://mujs.com/downloads/mujs-1.3.11.tar.gz"
+    sha256 "456a395769daf110a30f9bf6f793044261e261481d5dca33b63cdc8714774ca4"
 
     # Resource `livecheck` blocks don't support package references (yet), so we
     # can't use `formula "mujs"` here.
