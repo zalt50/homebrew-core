@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-26.2.5.tar.xz"
-  sha256 "794b3d1729075dae7ebd47c7283b7ca0cdb5dec668f7f11cc0a5d82f6138a0a5"
+  url "https://archive.mesa3d.org/mesa-26.2.6.tar.xz"
+  sha256 "b9436b3e1a8be76fbd4823dc884f90596ab7c6ac5e1867a305e66ffccfb31a92"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -128,13 +128,23 @@ class Mesa < Formula
   end
 
   resource "glxgears.c", :test do
-    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/a533acd00ed0b6d1beda7df0c68a59a873dba2b3/src/xdemos/glxgears.c"
-    sha256 "36376674e73fb0657fd56a3738c330b828da6731c934e2b29d75253dc02ad03b"
+    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/mesa-demos-9.0.0/src/xdemos/glxgears.c"
+    sha256 "344a03aff01708350d90603fd6b841bccd295157670f519b459bbf3874acf847"
+
+    livecheck do
+      url "https://gitlab.freedesktop.org/mesa/demos.git"
+      regex(/^mesa-demos[._-]v?(\d+(?:\.\d+)+)$/i)
+    end
   end
 
   resource "gl_wrap.h", :test do
-    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/ddc35ca0ea2f18c5011c5573b4b624c128ca7616/src/util/gl_wrap.h"
+    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/mesa-demos-9.0.0/src/util/gl_wrap.h"
     sha256 "41f5a84f8f5abe8ea2a21caebf5ff31094a46953a83a738a19e21c010c433c88"
+
+    livecheck do
+      url "https://gitlab.freedesktop.org/mesa/demos.git"
+      regex(/^mesa-demos[._-]v?(\d+(?:\.\d+)+)$/i)
+    end
   end
 
   def install
