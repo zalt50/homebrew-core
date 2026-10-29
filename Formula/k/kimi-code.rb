@@ -1,8 +1,8 @@
 class KimiCode < Formula
   desc "AI coding agent for your terminal"
   homepage "https://moonshotai.github.io/kimi-code/"
-  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-2.3.3.tgz"
-  sha256 "3fa0f6ee8f0398c9af4cb6fd4859acf3ace847a93877c93073172eb350fd2d02"
+  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-2.4.0.tgz"
+  sha256 "1037267384134ad8901ea4fe62ee7a840fb7ec394ee381fe8f2046011586bb7a"
   license "MIT"
 
   bottle do
@@ -27,14 +27,12 @@ class KimiCode < Formula
     kimi_code_prefix = libexec/"lib/node_modules/@moonshot-ai/kimi-code"
     node_modules = kimi_code_prefix/"node_modules"
 
-    # Remove non-native architecture binaries from `native` and `node-pty`
+    # Remove non-native architecture binaries from `native`
     other_arch = Hardware::CPU.arm? ? "x64" : "arm64"
     os = OS.kernel_name.downcase
     rm_r kimi_code_prefix/"native/#{os}/prebuilds/#{os}-#{other_arch}"
 
     if OS.mac?
-      rm_r node_modules/"node-pty/prebuilds/darwin-#{other_arch}"
-
       # Strip universal binary to native architecture for `clipboard`
       deuniversalize_machos "#{node_modules}/@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"
     else
