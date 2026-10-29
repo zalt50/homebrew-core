@@ -1,8 +1,8 @@
 class GiteaImporter < Formula
   desc "CLI to migrate repositories from GitHub, GitLab and Gitea into Gitea"
   homepage "https://gitea.com/gitea/importer"
-  url "https://gitea.com/gitea/importer/archive/v0.2.0.tar.gz"
-  sha256 "dc132301c893d6212cab543053ebbcb94d0cd42652e33869ca52d047b4b3a3ca"
+  url "https://gitea.com/gitea/importer/archive/v0.3.0.tar.gz"
+  sha256 "d6b3c742da398589f63d9ebdf664df1a7220745c71e974f9a6aa101c5754c8da"
   license "MIT"
   head "https://gitea.com/gitea/importer.git", branch: "main"
 
