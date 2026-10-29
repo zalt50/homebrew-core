@@ -7,11 +7,11 @@ class Pyqt < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b90072e0f89ccd03c6753579645a6c335430ad83a3c4ea9f7d4c1d525ff97739"
-    sha256 cellar: :any, arm64_tahoe:       "d6b6d541314cd529c74db23573ecc353503a7a0c3fe3e72beec93f4b901cd0e4"
-    sha256 cellar: :any, arm64_sequoia:     "b36b1bb3ec6fd9f2b4828aea7455a87718df0522bae2e15fde12490f95e40d5f"
-    sha256 cellar: :any, arm64_linux:       "27c2fc0a0ccbe2b9e0aa96bdac8e296d48aa3e3ece841dffcd3cba99096e837a"
-    sha256 cellar: :any, x86_64_linux:      "7b3319a34dc736771a594819fc87ea6a3cb099690976a30b03ca6ce64215f5f1"
+    sha256 cellar: :any, arm64_golden_gate: "8eecdfad8a382c9c7a71781971b6373ae6830cebc77106f7e3b2637cdcc78153"
+    sha256 cellar: :any, arm64_tahoe:       "c9187889d43c1ebf9914bc83114ce1d01b876145920f74a53bbf1e3136f2d45c"
+    sha256 cellar: :any, arm64_sequoia:     "83b016be7185e955f31dec6a69da7846d4da07a888e498b3aee4f5d17c5fd1cb"
+    sha256 cellar: :any, arm64_linux:       "2bae9b307997beeb7b20c70be22f917b38b3a04f020c971b5d4315d3099300ac"
+    sha256 cellar: :any, x86_64_linux:      "95eaf20bb310b8a1859ddc100283f46e3af5b8be0ad6fb029ec8460bc4b70595"
   end
 
   depends_on "pyqt-builder" => :build
