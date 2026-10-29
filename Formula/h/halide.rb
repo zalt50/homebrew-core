@@ -14,11 +14,11 @@ class Halide < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c586c3da977b977e10474a44056f97cc9ff5195dda4a6555c8e754b649d95780"
-    sha256 cellar: :any, arm64_tahoe:       "85b61890e1fc5e57cd810402a3c37d0b25177b0d73c11c100abe799a032ba880"
-    sha256 cellar: :any, arm64_sequoia:     "6e1e564e06aa5de6d592f6e7152fbdbec297c56890cff6535d5b885780f062bb"
-    sha256 cellar: :any, arm64_linux:       "6f8526ee12cc6b07ddd4633b7ba26d348ddf7ba8f78b285e5551e17ad5194359"
-    sha256 cellar: :any, x86_64_linux:      "cb1c77d4b844ac31c049e768a5372840f7c6987da19aec845f510bd3a91c36af"
+    sha256 cellar: :any, arm64_golden_gate: "483d21a8c38026326fc7df178c3638a6ec1127747843ebfca8e01a93fdef444f"
+    sha256 cellar: :any, arm64_tahoe:       "6937758a4d2af171e360bce5cba8dd44db8fb5e926772f62b3e86a4b80e6d655"
+    sha256 cellar: :any, arm64_sequoia:     "047b709baad9f86a23649d0ff35144363de844892ae30f76c3bf4fde98ab5167"
+    sha256 cellar: :any, arm64_linux:       "d18c5922f95e0ebd91f9c2c409349f9df7c49c036eac4968c75a7030d01d6e76"
+    sha256 cellar: :any, x86_64_linux:      "b7ee7ee561a16a951e36b010862b2c4dd88ffab75076d1d41cd0323e58dec242"
   end
 
   depends_on "cmake" => :build
