@@ -6,11 +6,11 @@ class Et < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "591601341a4ac7fe17be9f6030d6f750caac91cd566d8a0e104ffc33dcd04b10"
-    sha256 cellar: :any, arm64_tahoe:       "6d0947a60d16068937fbb570905945c2c2df1b0d56b6c25d5a04bb2b8a75e0ad"
-    sha256 cellar: :any, arm64_sequoia:     "f56a0fbaa20f096c676508d115dc0d49d473b12652d18da61e206d43af7ceabd"
-    sha256 cellar: :any, arm64_linux:       "3e47f2720958daafa5e4ae0ad097f862fe36027f7519914e70fd63b6d23dafd4"
-    sha256 cellar: :any, x86_64_linux:      "497c4468115550480235663153265c5ed51ac246934592e01e49d0e074546703"
+    sha256 cellar: :any, arm64_golden_gate: "dc91389f42b64e0b88a0eb3c8dcd2d5c0c376d69e8d2cbcb964fda7263813ec4"
+    sha256 cellar: :any, arm64_tahoe:       "381012be6ccc37c626b73cbfb06463e0f64ba99092627163c9afa64751fc2a93"
+    sha256 cellar: :any, arm64_sequoia:     "428d43af63d8a75a9bf0726f70de8394c4261c868b41e89c2ddd3ec26e9f21d5"
+    sha256 cellar: :any, arm64_linux:       "c80bab11c9d161d746c748506257bf8f81c8f8905a656b2f2bfc9fbae2fa28f2"
+    sha256 cellar: :any, x86_64_linux:      "f0a406a9eaef5507f1690e9db57cd59576023724120743b90699ee0b1c3f3e83"
   end
 
   depends_on "cmake" => :build
