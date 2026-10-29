@@ -1,8 +1,8 @@
 class Openvdb < Formula
   desc "Sparse volumetric data processing toolkit"
   homepage "https://www.openvdb.org/"
-  url "https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v13.2.0.tar.gz"
-  sha256 "505c11d4eb1488518bd4d9a3656b27d547ee1a8b12f601e82407f1ae7dab5d31"
+  url "https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v14.0.0.tar.gz"
+  sha256 "2c38592a42a9dc1f3e9749418cc9d286d88ed912232dafee954ce5156174e5b0"
   license "MPL-2.0"
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
@@ -16,11 +16,9 @@ class Openvdb < Formula
 
   depends_on "cmake" => :build
 
-  depends_on "boost"
-  depends_on "c-blosc"
   depends_on "jemalloc"
-  depends_on "openexr"
   depends_on "tbb"
+  depends_on "zstd"
 
   on_linux do
     depends_on "zlib-ng-compat"
