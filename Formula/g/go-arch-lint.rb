@@ -1,8 +1,8 @@
 class GoArchLint < Formula
   desc "Architecture linter for Go projects"
   homepage "https://github.com/fe3dback/go-arch-lint"
-  url "https://github.com/fe3dback/go-arch-lint/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "9117679607ae73d64fb79f7ac2f2f7c989d79eada82770713d5ede3a8152c28f"
+  url "https://github.com/fe3dback/go-arch-lint/archive/refs/tags/v1.19.1.tar.gz"
+  sha256 "b3829f82788f6f5b0b741a25936d9d1d539fc8de6b3342bd2bfa34b0eabe53c9"
   license "MIT"
   head "https://github.com/fe3dback/go-arch-lint.git", branch: "master"
 
