@@ -7,13 +7,12 @@ class C2rust < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "05003cbffc60b9b0fa285262b8b730097ae5d9ffacfd979820fcf7ea15bd2fcb"
-    sha256 cellar: :any,                 arm64_tahoe:       "df88c851f1831af9a3e630295ffa9e798d2c0ab97b9b8cf6c24e7b35ee432aa3"
-    sha256 cellar: :any,                 arm64_sequoia:     "d76ce3419a9d46b791fb45641caa5b57c214d622095a05518a491f42c0750581"
-    sha256 cellar: :any,                 arm64_sonoma:      "ad5c82acd8ea345d143ceb5fd461f276b26626461b549318c2af9cc422acebdd"
-    sha256 cellar: :any,                 sonoma:            "c542f2ebe2d58181c143b71a6931fc143dd861792db988a6c5c446158b36e6a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9274c9595424047d95fae4ebba0178c55f427612cdd9fc93863a8d91189e83f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a3e5ca318401131f2e847996218bcbf7e2797f7e4c5cf893233bdfd8772750fe"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "5ced02018ae3d0640b8551011f1088007e929a3e0415cee5be512b2e4c33a3c0"
+    sha256 cellar: :any, arm64_tahoe:       "773ad17a6bd39b4207f6c55797968b2f4884a179282a4d15f5027482fce0bb04"
+    sha256 cellar: :any, arm64_sequoia:     "debf7581eaf94a16143d6ef4e1b9c3261dcf59a9012193c89b89fc27c84dbe61"
+    sha256 cellar: :any, arm64_linux:       "c74c38d5f9db674e4c3ffaffc073a6b38c2c16613b9e4552cc25607d196f9060"
+    sha256 cellar: :any, x86_64_linux:      "bdd7f324d5befc96ed912afd2955263f2f7807946046d0238897e50d2d75a9e0"
   end
 
   depends_on "cmake" => [:build, :test]
