@@ -5,6 +5,14 @@ class EntireCli < Formula
   sha256 "45beafa8e260c4fb3e74368b8e27ab7d77c407db5e4fa3e77ff38e67ff592e26"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1203d43fafe4cb7d64d8b94b127b7f5009bd7835cc5a6fd51cf16e1b655ad964"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1203d43fafe4cb7d64d8b94b127b7f5009bd7835cc5a6fd51cf16e1b655ad964"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1203d43fafe4cb7d64d8b94b127b7f5009bd7835cc5a6fd51cf16e1b655ad964"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5288a14abbd72ddce9c5495e9ad6bec1705041ee5f56caea75ae58875b21a48d"
+    sha256 cellar: :any,                 x86_64_linux:      "4d0626b8b5bc6f371ea02406d4ccdfa3629a19ef51911ade04639e019552e4dd"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
