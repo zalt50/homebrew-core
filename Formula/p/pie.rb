@@ -1,8 +1,8 @@
 class Pie < Formula
   desc "PHP Installer for Extensions"
   homepage "https://github.com/php/pie"
-  url "https://github.com/php/pie/releases/download/1.5.3/pie.phar"
-  sha256 "34a1315073b6089d4cdf4cc5a8295ecc6d36cfde683ef785582f7da0d74f127b"
+  url "https://github.com/php/pie/releases/download/1.5.4/pie.phar"
+  sha256 "3b7a7a1ab08705298b629e5eb4c13bb0d9abbb9ced6c86292a5549db71fc91ba"
   license "BSD-3-Clause"
 
   bottle do
