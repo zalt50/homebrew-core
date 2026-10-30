@@ -1,8 +1,8 @@
 class Superhtml < Formula
   desc "HTML Language Server & Templating Language Library"
   homepage "https://github.com/kristoff-it/superhtml"
-  url "https://github.com/kristoff-it/superhtml/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "92b2b76e6a38ac0aa2e10fe13ce4131366c2f1bb3d13131687aa8a2df82de82a"
+  url "https://github.com/kristoff-it/superhtml/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "a5092f06540749eb7e29025651e8f9c59819b6e8a574f7a13ebccb01243c2a32"
   license "MIT"
 
   bottle do
@@ -14,31 +14,6 @@ class Superhtml < Formula
   end
 
   depends_on "zig" => :build
-
-  # Backport fix for fmt
-  patch do
-    url "https://github.com/kristoff-it/superhtml/commit/269502486163f22e03f3ab5aa818ed729f8034b5.patch?full_index=1"
-    sha256 "9f01c36a089883c5c450f50562857ea869bb3dbfe940012d84b91acf3fcfbeea"
-    type :backport
-    resolves "https://github.com/kristoff-it/superhtml/issues/151"
-  end
-
-  # Backports for Zig 0.17 final release
-  patch do
-    url "https://github.com/kristoff-it/superhtml/commit/3e37d8b00b211ac1591766cfb0ea3efd2845bff2.patch?full_index=1"
-    sha256 "ed022f8c14de6803b30a576146d82dea6a10bd6ad6fa838e56f54f2ecf682d7c"
-    type :backport
-  end
-  patch do
-    url "https://github.com/kristoff-it/superhtml/commit/abd86c4ba995a37b0f0559801b32b35cde8bcef9.patch?full_index=1"
-    sha256 "fc7d5049191210804ac87130decf75006b738de403e9b1918e029f7949f4f3f5"
-    type :backport
-  end
-  patch do
-    url "https://github.com/kristoff-it/superhtml/commit/f0deee80ae422938d5cdc43a5598c417670db38b.patch?full_index=1"
-    sha256 "6b4e48705e52807e3c0286c938721749461c7947ca64dae09bc8de22a4b0ee8c"
-    type :backport
-  end
 
   deny_network_access!
 
