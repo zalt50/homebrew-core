@@ -1,8 +1,8 @@
 class Usbtree < Formula
   desc "Live USB device tree in your terminal"
   homepage "https://gnomeria.github.io/usbtree/"
-  url "https://github.com/gnomeria/usbtree/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "a315eeeb559911fffb1c2a17b6ebd418143168c888db5d3b737b05d8c34b3486"
+  url "https://github.com/gnomeria/usbtree/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "09631627589b43ac2e93f6d2a1cf6a10e490f62a159396f35b6871180ad03617"
   license "MIT"
   head "https://github.com/gnomeria/usbtree.git", branch: "main"
 
