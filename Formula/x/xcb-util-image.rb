@@ -34,6 +34,8 @@ class XcbUtilImage < Formula
   depends_on "libxcb"
   depends_on "xcb-util"
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-silent-rules",
