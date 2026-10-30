@@ -1,8 +1,8 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.135.tar.gz"
-  sha256 "281adab7405eb0e195607fc850179f3a5ed9f031c6e686d6b51eab864e799e11"
+  url "https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.136.tar.gz"
+  sha256 "9602d1a47b09c6cda7fe67b14fdb0653a0a6d022326d101dc8d692ea28463093"
   license "Apache-2.0"
 
   livecheck do
