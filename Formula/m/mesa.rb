@@ -47,11 +47,12 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "08a8d9a89a2e614fa307be2607bf0b327005c0ab09ae34179772cbaedaacbbc4"
-    sha256 arm64_tahoe:       "103307b847dce793acdbdb7f6945bca4361804bae0d60709c0c4dac13f5832da"
-    sha256 arm64_sequoia:     "96e5b64c034656883bae5fbda0d9365cb9aec983b827ceffa18cb67d54b6e0b7"
-    sha256 arm64_linux:       "08d2a6532a68e0b5f8f8ea3d948d8e5a6ef20315704d1702e8dd04d50e0b45d7"
-    sha256 x86_64_linux:      "2a26255c3fbf705ac787e14beace0167e95c406f405d1cfdb4020b0060be105a"
+    rebuild 1
+    sha256 arm64_golden_gate: "897e0d3f764d267662bde849fa4cf7d51ef7878e2a792b4ad29330990a52c4ed"
+    sha256 arm64_tahoe:       "5108b036f37f60527e13cd9e4b9a6b8b03c580bd9fe4f2b03bea6acb07e46bd2"
+    sha256 arm64_sequoia:     "04f8a08bd1fff4311e8014ca89054d0bfd4967548a76f3a5903295917884d484"
+    sha256 arm64_linux:       "2f887b328f704e50cbd546176edecae4ac63379cc58495e2ce2314b5b359a260"
+    sha256 x86_64_linux:      "3fd20b664ea4f77c4588e5714f3394df8647a42eacf3c945efd0334711ed1920"
   end
 
   depends_on "bindgen" => :build
