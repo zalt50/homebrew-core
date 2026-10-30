@@ -1,10 +1,10 @@
 class ApacheSpark < Formula
   desc "Engine for large-scale data processing"
   homepage "https://spark.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=spark/spark-4.2.1/spark-4.2.1-bin-hadoop3.tgz"
-  mirror "https://archive.apache.org/dist/spark/spark-4.2.1/spark-4.2.1-bin-hadoop3.tgz"
-  version "4.2.1"
-  sha256 "8766fd9132079ddf3f0b54a51796d05bf442871c62a51374ca9e18d345bb2bd6"
+  url "https://www.apache.org/dyn/closer.lua?path=spark/spark-4.3.0/spark-4.3.0-bin-hadoop3.tgz"
+  mirror "https://archive.apache.org/dist/spark/spark-4.3.0/spark-4.3.0-bin-hadoop3.tgz"
+  version "4.3.0"
+  sha256 "48f4eb55fe42758b3aff52c027b310479c7afe96205eddff3869cd951fa02505"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/apache/spark.git", branch: "master"
