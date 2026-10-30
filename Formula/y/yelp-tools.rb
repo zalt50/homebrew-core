@@ -21,6 +21,7 @@ class YelpTools < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "python-setuptools" => :build
   depends_on "itstool"
   depends_on "libxml2"
   depends_on "python@3.15"
@@ -47,6 +48,8 @@ class YelpTools < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     resource("mallard-rng").stage do
       system "./configure", "--disable-silent-rules", *std_configure_args(prefix: libexec)
@@ -54,7 +57,7 @@ class YelpTools < Formula
     end
 
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources.reject { |r| r.name == "mallard-rng" }
+    venv.pip_install resources.reject { |r| r.name == "mallard-rng" }, build_isolation: false
     ENV.prepend_path "PATH", venv.root/"bin"
 
     system "meson", "setup", "build", *std_meson_args
