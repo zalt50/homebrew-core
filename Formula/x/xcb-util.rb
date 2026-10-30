@@ -25,6 +25,8 @@ class XcbUtil < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "libxcb"
 
+  deny_network_access!
+
   def install
     args = %W[
       --sysconfdir=#{etc}
