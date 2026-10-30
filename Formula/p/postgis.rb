@@ -1,10 +1,9 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https://postgis.net/"
-  url "https://download.osgeo.org/postgis/source/postgis-3.6.4.tar.gz"
-  sha256 "ed8dc6679f1e06f7b113592b04cde2a7e00f1b1e681294c8ca2204058990cec6"
+  url "https://download.osgeo.org/postgis/source/postgis-3.7.0.tar.gz"
+  sha256 "832bbf50f2b6f57fab053bc9676b3bfe641e5bf966cdcb28c7926f8d4b3c5e04"
   license "GPL-2.0-or-later"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -34,6 +33,7 @@ class Postgis < Formula
 
   depends_on "gdal"
   depends_on "geos"
+  depends_on "gmp"
   depends_on "icu4c@79"
   depends_on "json-c"
   depends_on "libpq"
@@ -145,7 +145,7 @@ class Postgis < Formula
 
     result = shell_output("#{bin}/shp2pgsql #{testpath}/brew.shp")
     assert_match "Point", result
-    assert_match "AddGeometryColumn", result
+    assert_match "geometry(POINTZM,0)", result
 
     postgresqls.each do |postgresql|
       pg_version = postgresql.version.major
