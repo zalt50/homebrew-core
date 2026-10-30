@@ -9,12 +9,11 @@ class SigmaCli < Formula
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "12e9823b55736f03b8a0cbdbcb6a49097da106db7f44de68b2649ae95a67e619"
-    sha256 cellar: :any, arm64_tahoe:       "565430f809112fba99721693959219b23da559ee2b4e94369aa03493c9c12cef"
-    sha256 cellar: :any, arm64_sequoia:     "32043e2f46f5a689120f2e57efb777ca89781f941ba1abb9251f79a07d0f60aa"
-    sha256 cellar: :any, arm64_linux:       "2cfba78756752f072a62cc315d0b53b9bb4fac2981c88400335c60c969829915"
-    sha256 cellar: :any, x86_64_linux:      "8f71c638ef23e16908f330b4bfc24b011e5477949bf0640e9fc93fd40ea00ec7"
+    sha256 cellar: :any, arm64_golden_gate: "f3e049df6958a2f8f982610917e5da10777dcd695cd1c0c1da0f3d2072815550"
+    sha256 cellar: :any, arm64_tahoe:       "300662eea9c692d10528d96d775de5d86f0619292157bab4bdf519e89471cba6"
+    sha256 cellar: :any, arm64_sequoia:     "1af7af7f2480051d0edc064134b57eec609b5289bf09aed1187b0b663c4e10ef"
+    sha256 cellar: :any, arm64_linux:       "2299c38f72f519e89b9b6d4f488cb1704e9d9b093d09c5dcd72bbdca31d3c657"
+    sha256 cellar: :any, x86_64_linux:      "f21fc4912baa9093521659dfe8362afd3e232b2bbcb8d78fe98d9a4aa9b09200"
   end
 
   depends_on "pybind11" => :build # for `google-re2`
