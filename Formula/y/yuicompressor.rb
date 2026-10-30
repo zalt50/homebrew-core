@@ -19,6 +19,8 @@ class Yuicompressor < Formula
 
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     libexec.install "yuicompressor-#{version}.jar"
     bin.write_jar_script libexec/"yuicompressor-#{version}.jar", "yuicompressor"
