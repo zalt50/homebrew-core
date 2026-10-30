@@ -1,8 +1,8 @@
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.34.1.tgz"
-  sha256 "1a106a3a99d2d5d7a998c764b753e92cb577b1bf548b624dcfd4ea8a537509fa"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.34.2.tgz"
+  sha256 "55182615d351ec57fd23eb5f7ff0817af30fb63c8c19d212b25fa2e44d1a1be5"
   license "MIT"
 
   bottle do
@@ -20,7 +20,6 @@ class FirebaseCli < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/firebase-tools/node_modules"
-    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
 
     # Remove incompatible pre-built `bare-fs`/`bare-path`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
