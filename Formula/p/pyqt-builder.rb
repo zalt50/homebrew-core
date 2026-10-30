@@ -11,7 +11,7 @@ class PyqtBuilder < Formula
   head "https://github.com/Python-PyQt/PyQt-builder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "238b6f45e514ec8748f2c1f8d75e23baa3fb1fea41fcf27c59ac94e4403d17c7"
+    sha256 cellar: :any_skip_relocation, all: "a7305ccaeb363b43fc9582474a3fc3021f4e08bd5e58db02db7c27831feb8fd4"
   end
 
   depends_on "python@3.15"
