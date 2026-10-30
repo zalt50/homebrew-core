@@ -8,6 +8,14 @@ class Blint < Formula
   license "MIT"
   head "https://github.com/owasp-dep-scan/blint.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "4586811555d8ce189c012a33ec52784877c9f51ef3d163a722a0f7a4f9bc260f"
+    sha256 cellar: :any, arm64_tahoe:       "17823b6b1c00653cceb087469fda4f7adbcc42ca0d70eaf6bf4e91095b33c179"
+    sha256 cellar: :any, arm64_sequoia:     "ce0c1720df48c911e660f0ad78e9ec33edf533765fa5a5d71c2fbad222f1fae4"
+    sha256 cellar: :any, arm64_linux:       "288f1bcb8f1da3b16659b0e01c1446385cb3d01490b3849007ce4d9832fb9a5d"
+    sha256 cellar: :any, x86_64_linux:      "2392e0dd8ceda5692f90354c142be143a8c1e07df5e3524914255363fd476705"
+  end
+
   depends_on "cmake" => :build # for lief
   depends_on "ninja" => :build # for lief
   depends_on "rust" => :build
