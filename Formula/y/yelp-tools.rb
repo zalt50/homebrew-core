@@ -8,6 +8,7 @@ class YelpTools < Formula
   sha256 "3e496a4020d4145b99fd508a25fa09336a503a4e8900028421e72c6a4b11f905"
   license "GPL-2.0-or-later"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "77c8c92eb99e889b03952f2b35927d6f805401e1e3bfda3aa289a689b9c8cb04"

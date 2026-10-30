@@ -4,6 +4,7 @@ class XcbUtilCursor < Formula
   url "https://xcb.freedesktop.org/dist/xcb-util-cursor-0.1.6.tar.xz"
   sha256 "fdeb8bd127873519be5cc70dcd0d3b5d33b667877200f9925a59fdcad8f7a933"
   license "X11"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "f85f37dbc9e9a02407dfab26c917ab8303cea4da12bb930c0f93e686fe07b030"

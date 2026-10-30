@@ -7,6 +7,7 @@ class PythonMatplotlib < Formula
   sha256 "cec596316640f2b394b8f0daa0ea61a8eae82d017b620b9f202befb972a59ea4"
   license "PSF-2.0"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "480528f7169b0eeb01798199b15b5fc7178b76bbb553fdc7b96ab88640140d9a"
