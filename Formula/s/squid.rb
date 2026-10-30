@@ -1,8 +1,8 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
   homepage "https://www.squid-cache.org/"
-  url "https://github.com/squid-cache/squid/releases/download/SQUID_7_7/squid-7.7.tar.bz2"
-  sha256 "1a748b91722259e986f17d85e0da9d9403054a50bc20f78394ff90e46ef55601"
+  url "https://github.com/squid-cache/squid/releases/download/SQUID_7_8/squid-7.8.tar.bz2"
+  sha256 "0fcebf10aec14449abff30eb4cf7230f27d080601516d891f90a7e705de9f68e"
   license "GPL-2.0-or-later"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
