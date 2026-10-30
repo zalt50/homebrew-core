@@ -33,6 +33,8 @@ class XcbUtilKeysyms < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "libxcb"
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-silent-rules",
