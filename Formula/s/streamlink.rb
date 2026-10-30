@@ -9,12 +9,11 @@ class Streamlink < Formula
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "90ff7fe1e3e1c1dd0c21c94648041f09ef7c9f2013e1dc0724fa3992ddb6ded3"
-    sha256 cellar: :any, arm64_tahoe:       "8887767201550c631b1d2ee0e1e51a4b85f61d7428ac9cbedf5318e769e132f9"
-    sha256 cellar: :any, arm64_sequoia:     "4bb213892cdc12e563b8622147c8d7858db9c87aa05e509dd8b1b372f52a7f0d"
-    sha256 cellar: :any, arm64_linux:       "e5b5746f9a63da8a5880bd8a9edfe241928e392c89e2ffe70c225dd738ed045b"
-    sha256 cellar: :any, x86_64_linux:      "6845de4b7be34152eb59af8bc2742e0d0590e90035eb0519ef11a5837ae4d918"
+    sha256 cellar: :any, arm64_golden_gate: "93d25ff08f3e2d6fd46c68612205d2357aaf04a02b13acdaea1a02bf3198777f"
+    sha256 cellar: :any, arm64_tahoe:       "fbb6ba30505c741a2a95172796b2fa71034fc3357c802eada00a9c49488cd500"
+    sha256 cellar: :any, arm64_sequoia:     "46337dffcf2fbbdf0834fffad000b92d67d600597ab2e380b909bebec0da7f75"
+    sha256 cellar: :any, arm64_linux:       "d73da9a08c769d896718c8046d84a5aafa50f1f928548995e0abb697ac3f4cc4"
+    sha256 cellar: :any, x86_64_linux:      "dd068cb2d22ea4de476f4f65288d5879a1b8ea12297aef174bc0f71c3887910e"
   end
 
   depends_on "pkgconf" => :build
