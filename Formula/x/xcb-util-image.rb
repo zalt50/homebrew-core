@@ -4,6 +4,7 @@ class XcbUtilImage < Formula
   url "https://xcb.freedesktop.org/dist/xcb-util-image-0.4.1.tar.gz"
   sha256 "0ebd4cf809043fdeb4f980d58cdcf2b527035018924f8c14da76d1c81001293b"
   license "X11"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "26f5b827216a78252ee5652e4af380319311a0f21fc739b9f09d2c5e713dea4b"
