@@ -1,8 +1,8 @@
 class Dissent < Formula
   desc "GTK4 Discord client in Go"
   homepage "https://github.com/diamondburned/dissent"
-  url "https://github.com/diamondburned/dissent/archive/refs/tags/v0.0.37.tar.gz"
-  sha256 "b08ae331e5c69759eb7b9511908007fc3e9c7a28208bfa66ffbd84b6f335364a"
+  url "https://github.com/diamondburned/dissent/archive/refs/tags/v0.0.38.tar.gz"
+  sha256 "067dcfcca43d879db8fce1014943dd62b747f04538196296f8a2eb1c23a67872"
   license "GPL-3.0-or-later"
   head "https://github.com/diamondburned/dissent.git", branch: "main"
 
@@ -31,6 +31,7 @@ class Dissent < Formula
   depends_on "libcanberra"
   depends_on "libspelling"
   depends_on "pango"
+  depends_on "pcre2"
 
   on_macos do
     depends_on "gettext"
