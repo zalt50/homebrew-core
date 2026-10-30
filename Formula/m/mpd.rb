@@ -1,10 +1,9 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https://www.musicpd.org/"
-  url "https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.17.tar.gz"
-  sha256 "06f9da57872170e8d5232d21ae45960d04df2a1c9b168d425d215fab3f8d3515"
+  url "https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.18.tar.gz"
+  sha256 "7a754a4c51efc7bdd39408a2f7046b591bcd0513f08ccb46b223ebf154c46c6c"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
