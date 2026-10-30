@@ -5,6 +5,7 @@ class Xclip < Formula
   sha256 "ca5b8804e3c910a66423a882d79bf3c9450b875ac8528791fb60ec9de667f758"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "37c761d3fcd0ab9926ac62587fe8630232498a07539c064a341b9afa00a837ef"
