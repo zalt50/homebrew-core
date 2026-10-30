@@ -20,6 +20,10 @@ class Openbao < Formula
     sha256 cellar: :any,                 x86_64_linux:      "e36c742ee7f873bd29cdd6757d54ae7ed105390edcccba5099ba4934c437a2ff"
   end
 
+  # TODO: Remove deprecation once a release builds with a newer node
+  deprecate! date: "2026-10-30", because: "needs deprecated node@22 to build"
+  disable! date: "2027-10-30", because: "needs deprecated node@22 to build"
+
   depends_on "go" => :build
   depends_on "node@22" => :build # failed to build with node 23, https://github.com/openbao/openbao/issues/731
   depends_on "pnpm" => :build
