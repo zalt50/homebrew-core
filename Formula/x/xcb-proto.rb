@@ -14,6 +14,8 @@ class XcbProto < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.15" => [:build, :test]
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}
