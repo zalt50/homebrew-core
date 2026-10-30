@@ -29,6 +29,8 @@ class Yices2 < Formula
 
   uses_from_macos "gperf" => :build
 
+  deny_network_access!
+
   def install
     system "autoconf"
     system "./configure", "--disable-silent-rules", *std_configure_args
