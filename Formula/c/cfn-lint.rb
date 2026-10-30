@@ -9,11 +9,11 @@ class CfnLint < Formula
   head "https://github.com/aws-cloudformation/cfn-lint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7919ed1484db87b6477c9af8299b8b1cb0f4d1514c3686b197222d8d9fea8e8b"
-    sha256 cellar: :any, arm64_tahoe:       "fde1cc9c6ed62c8a7876f73db7172cf06dc3a5fb2f6a4d56288fb1bfbb0fff34"
-    sha256 cellar: :any, arm64_sequoia:     "22bb7144a7f90ae7fb532e1318b061513e9eba17d05c4685b7584bb620c38f4f"
-    sha256 cellar: :any, arm64_linux:       "2b2e671f9466f9ed322ecb4f913ac366c1892ad7d6a7dd2166e2a17034d973be"
-    sha256 cellar: :any, x86_64_linux:      "e9b311e110480b151fbbd0be4125d68e91ee6b666e7af1ebfe9b14f0b63653b7"
+    sha256 cellar: :any, arm64_golden_gate: "32b380614109c5515582d2f48bd018cf196913f62b524ac5aa18083fa270cfbf"
+    sha256 cellar: :any, arm64_tahoe:       "be1ae07fa2d918466ace17d15a08966f7aafda3824bb0f311bf345c7ea3162bd"
+    sha256 cellar: :any, arm64_sequoia:     "577d034aac2679610cc713312f93d219d9a5bb4b6a5c0cb0ebda7e9e91b4e40b"
+    sha256 cellar: :any, arm64_linux:       "a6e7a213dee4ce2780688fa547326fc540525d82a4597875f6a33a3479bc7ee4"
+    sha256 cellar: :any, x86_64_linux:      "00de1d38d7a7173e080b37efc42f054500d2a0c9a602e533b5ed4aa108783a4b"
   end
 
   depends_on "libyaml"
