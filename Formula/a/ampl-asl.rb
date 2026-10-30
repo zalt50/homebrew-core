@@ -1,8 +1,8 @@
 class AmplAsl < Formula
   desc "AMPL Solver Library"
   homepage "https://ampl.com/"
-  url "https://github.com/ampl/asl/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "57b767161fd95869757daa0761d9b19fa39ad5de4315f95a3c0dff08b0d4c4f2"
+  url "https://github.com/ampl/asl/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "cf907bcd14ed172d75e3d0fd34f11b3f8e42154d696cf0f8c73e217f5bf149c6"
   license "BSD-3-Clause"
 
   bottle do
