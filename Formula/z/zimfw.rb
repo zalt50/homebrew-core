@@ -6,7 +6,7 @@ class Zimfw < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ae6537e4e40ff0081fa0601ca4163a35e2f120502ce687c060257956b814f6bb"
+    sha256 cellar: :any_skip_relocation, all: "553a5ccd48dd8ebfad9d53f849fdc1acace18d6317e731390f50fc18d0c4d1e3"
   end
 
   uses_from_macos "zsh" => :test
