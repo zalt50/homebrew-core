@@ -6,11 +6,11 @@ class AiCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bf68071f6fdc1bf0b58d18e9c5f13e1134d84227cf9c0d0a87ad8f1bab49b58a"
-    sha256 cellar: :any, arm64_tahoe:       "bf68071f6fdc1bf0b58d18e9c5f13e1134d84227cf9c0d0a87ad8f1bab49b58a"
-    sha256 cellar: :any, arm64_sequoia:     "bf68071f6fdc1bf0b58d18e9c5f13e1134d84227cf9c0d0a87ad8f1bab49b58a"
-    sha256 cellar: :any, arm64_linux:       "1d066a235975bd8d69495ddb99849b92dc11e880f5a0186e5269e900d2a86c28"
-    sha256 cellar: :any, x86_64_linux:      "f9dcc9dfe377819cab7130947ae7af80c80fc2848bb776123393bd518ed7167a"
+    sha256 cellar: :any, arm64_golden_gate: "0ef8eabddb382dc31438075147b39fe45bf32702b717a034bd0dd6f7eba78873"
+    sha256 cellar: :any, arm64_tahoe:       "0ef8eabddb382dc31438075147b39fe45bf32702b717a034bd0dd6f7eba78873"
+    sha256 cellar: :any, arm64_sequoia:     "0ef8eabddb382dc31438075147b39fe45bf32702b717a034bd0dd6f7eba78873"
+    sha256 cellar: :any, arm64_linux:       "d6cb695d30275f010a0089a5dd6d41625f15dbb652b458b4a9f952701d0ecf87"
+    sha256 cellar: :any, x86_64_linux:      "1af804b5c00eb6da3a9c7cfee73d0e3e072ad429ff7ea6a50090fb9202c0c672"
   end
 
   depends_on "node"
