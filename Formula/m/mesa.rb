@@ -3,8 +3,6 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-26.2.6.tar.xz"
-  sha256 "b9436b3e1a8be76fbd4823dc884f90596ab7c6ac5e1867a305e66ffccfb31a92"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -23,23 +21,47 @@ class Mesa < Formula
   compatibility_version 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
+  stable do
+    url "https://archive.mesa3d.org/mesa-26.2.6.tar.xz"
+    sha256 "b9436b3e1a8be76fbd4823dc884f90596ab7c6ac5e1867a305e66ffccfb31a92"
+
+    # Backport support for libclc 23
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/1219dc3f7fe83b1f7f200190bf02a86ab57b3d4f.diff"
+      sha256 "fc37a2bd7b90ece96891b243f04cdeedfcb6b7174acade63265b75fa21ace948"
+      type :backport
+      resolves "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/44624"
+    end
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/62ee563fd398169005906245831db680f813b19f.diff"
+      sha256 "c34a45743e5426b89c869853c4989c856118bbc21b2556444df14f80c30c2679"
+      type :backport
+      resolves "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/44624"
+    end
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/6b9cd5ab9cc3bfd0c79d9500a07a5e74351c72d1.diff"
+      sha256 "873a8d0d632902604f9c46465e9dab58738092af18a6b748af529eb91fc26116"
+      type :backport
+      resolves "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/44624"
+    end
+  end
+
   bottle do
-    sha256 arm64_golden_gate: "08a8d9a89a2e614fa307be2607bf0b327005c0ab09ae34179772cbaedaacbbc4"
-    sha256 arm64_tahoe:       "103307b847dce793acdbdb7f6945bca4361804bae0d60709c0c4dac13f5832da"
-    sha256 arm64_sequoia:     "96e5b64c034656883bae5fbda0d9365cb9aec983b827ceffa18cb67d54b6e0b7"
-    sha256 arm64_linux:       "08d2a6532a68e0b5f8f8ea3d948d8e5a6ef20315704d1702e8dd04d50e0b45d7"
-    sha256 x86_64_linux:      "2a26255c3fbf705ac787e14beace0167e95c406f405d1cfdb4020b0060be105a"
+    rebuild 1
+    sha256 arm64_golden_gate: "897e0d3f764d267662bde849fa4cf7d51ef7878e2a792b4ad29330990a52c4ed"
+    sha256 arm64_tahoe:       "5108b036f37f60527e13cd9e4b9a6b8b03c580bd9fe4f2b03bea6acb07e46bd2"
+    sha256 arm64_sequoia:     "04f8a08bd1fff4311e8014ca89054d0bfd4967548a76f3a5903295917884d484"
+    sha256 arm64_linux:       "2f887b328f704e50cbd546176edecae4ac63379cc58495e2ce2314b5b359a260"
+    sha256 x86_64_linux:      "3fd20b664ea4f77c4588e5714f3394df8647a42eacf3c945efd0334711ed1920"
   end
 
   depends_on "bindgen" => :build
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
-  depends_on "cmake" => :build # for mesa-libclc
   depends_on "glslang" => :build
   depends_on "libxrandr" => :build
   depends_on "libxrender" => :build
   depends_on "libxshmfence" => :build
   depends_on "libyaml" => :build
-  depends_on "llvm@22" => :build # FIXME: https://github.com/rust-lang/rust-bindgen/issues/3397
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
@@ -47,6 +69,7 @@ class Mesa < Formula
   depends_on "rust" => :build
   depends_on "xorgproto" => :build
 
+  depends_on "libclc" => :no_linkage # OpenCL support needs libclc.spv files at runtime
   depends_on "libpng"
   depends_on "libx11"
   depends_on "libxcb"
@@ -115,18 +138,6 @@ class Mesa < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  # Mesa is not compatible with LLVM 23+ libclc as it no longer provides spirv64-mesa3d-.spv.
-  # Until Mesa updates to handle it, use mesa-libclc which Mesa applies fixes to:
-  # https://gitlab.freedesktop.org/mesa/mesa/-/commit/b8f6be5a51b0952e4b2fc2a71d42eedea884739e
-  resource "mesa-libclc" do
-    url "https://gitlab.freedesktop.org/karolherbst/mesa-libclc/-/archive/22.1.8.3/mesa-libclc-22.1.8.3.tar.bz2"
-    sha256 "ff6c01fb68c4b885e13400c50298ee6a8bfcf3ac5995cf3039565f6814095226"
-
-    livecheck do
-      url :url
-    end
-  end
-
   resource "glxgears.c", :test do
     url "https://gitlab.freedesktop.org/mesa/demos/-/raw/mesa-demos-9.0.0/src/xdemos/glxgears.c"
     sha256 "344a03aff01708350d90603fd6b841bccd295157670f519b459bbf3874acf847"
@@ -148,21 +159,8 @@ class Mesa < Formula
   end
 
   def install
-    resource("mesa-libclc").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-      ENV.prepend_path "PKG_CONFIG_PATH", share/"pkgconfig"
-    end
-
-    # TODO: Remove once bindgen issue is fixed: https://github.com/rust-lang/rust-bindgen/issues/3397
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("llvm@22"))}[^:]*/
-    ENV.remove "HOMEBREW_DEPENDENCIES", "llvm@22"
-    ENV["CLANG_PATH"] = formula_opt_bin("llvm@22")/"clang"
-
     venv = virtualenv_create(buildpath/"venv", python3)
-    venv.pip_install resources.reject { |r| r.test? || r.name == "mesa-libclc" || (OS.mac? && r.name == "ply") }
+    venv.pip_install resources.reject { |r| r.test? || (OS.mac? && r.name == "ply") }
     ENV.prepend_path "PYTHONPATH", venv.site_packages
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}" if OS.mac?
