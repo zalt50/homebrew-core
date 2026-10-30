@@ -1,8 +1,8 @@
 class MinijinjaCli < Formula
   desc "Render Jinja2 templates directly from the command-line to stdout"
   homepage "https://docs.rs/minijinja/latest/minijinja/"
-  url "https://github.com/mitsuhiko/minijinja/archive/refs/tags/3.0.4.tar.gz"
-  sha256 "c200618aee830aeee4581a6fd92232ccd248d7371170339553caa19733bfc1c4"
+  url "https://github.com/mitsuhiko/minijinja/archive/refs/tags/3.0.5.tar.gz"
+  sha256 "38c1e39d7a25dbdb507a7badd76c21157ef9e7c86cf666a5861c77140b83a139"
   license "Apache-2.0"
   head "https://github.com/mitsuhiko/minijinja.git", branch: "main"
 
