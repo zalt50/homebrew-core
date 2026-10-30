@@ -4,6 +4,7 @@ class WasmPack < Formula
   url "https://github.com/wasm-bindgen/wasm-pack/archive/refs/tags/v0.15.0.tar.gz"
   sha256 "04530d7c215a46cc5468796de3c69fd6620fd78612578545d57f9806aa0c64a4"
   license any_of: ["Apache-2.0", "MIT"]
+  compatibility_version 1
   head "https://github.com/wasm-bindgen/wasm-pack.git", branch: "master"
 
   bottle do
