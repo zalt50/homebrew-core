@@ -1,8 +1,8 @@
 class WasmPack < Formula
   desc "Your favorite rust -> wasm workflow tool!"
   homepage "https://wasm-bindgen.github.io/wasm-pack/"
-  url "https://github.com/wasm-bindgen/wasm-pack/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "04530d7c215a46cc5468796de3c69fd6620fd78612578545d57f9806aa0c64a4"
+  url "https://github.com/wasm-bindgen/wasm-pack/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "5e72eb8eb73091ef6376d1a9d2b33a45e727970f29c75664b4a969cb437fccb2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/wasm-bindgen/wasm-pack.git", branch: "master"
 
