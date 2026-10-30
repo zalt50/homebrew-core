@@ -1,8 +1,8 @@
 class Brename < Formula
   desc "Cross-platform command-line tool for safe batch renaming via regular expressions"
   homepage "https://github.com/shenwei356/brename"
-  url "https://github.com/shenwei356/brename/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "a16bceb25a75afa14c5dae2248c1244f1083b80b62783ce5dbf3e46ff68867d5"
+  url "https://github.com/shenwei356/brename/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "ad957eea95c7b1f8283a08c46f7128e0f944d29e139bf63557da17f1906b47df"
   license "MIT"
 
   bottle do
