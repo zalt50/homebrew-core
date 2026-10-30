@@ -18,6 +18,8 @@ class YelpXsl < Formula
 
   uses_from_macos "libxslt" => [:build, :test]
 
+  deny_network_access!
+
   def install
     inreplace "yelp-xsl.pc.in", "@prefix@", opt_prefix
 
